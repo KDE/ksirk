@@ -1,0 +1,354 @@
+2007/02/23
+  * complete refactoring of all animations. There is no more a global timer but
+    one to animate sprites, one to scroll the window when necessary and one to
+    run the main game events automaton.
+
+2007/02/18
+  * updated all public API documentation
+
+2007/02/03
+  * about button was crashing the game
+  * corrected known i18n problem
+
+2007/02/01
+  * player number increased to +1 in dialog
+  * working SVG version
+
+2007/01/01
+  * working QT4+KDE4 version
+
+2006/12/17
+  * crash when transmitting pixmaps in messages solved
+  * recycling choices by AI bug solved
+
+2006/12/15
+  * no more confirm with a dialog that a computer player wants to lose its turn
+
+2006/12/14
+  * enlarged messages window lines so that all letters are correctly displayed
+  * found where time was lost in AIColsonPlayer::Move
+
+2006/12/11
+  * on victory, if mode is "conquer the world" now display this as reached goal
+
+2006/12/10
+  * goals display: display also advancement of the goal
+  * made the game usable at 800x600 (by reworking new game dialog)
+
+2006/12/09
+  * updated Real Politiks skin
+  * progress of AIColson
+  * updated some translations
+
+2006/11/16
+  * New AI based on AIColson by Jean-Claude Colson from XFRisk 
+  * New skin "Real Politiks" based on a map from jrisk (GPL by Yura Mamyrin 
+    <yura@yura.net>)
+  * Replaced some specific methods in AnimSprite by overloaded methods in its
+    inherited classes (like InfantrySprite)
+
+2006/10/20
+  * ready to release version 1.7beta3
+  * bug: victory condition checking
+  * better victory dialog
+
+2006/10/19
+  * added a quick introduction displayed at startup
+  * Display the reached goal on victory
+
+2006/10/18
+  * better system messages
+  * better handling of the "next player" command. Now, a confirmation dialog
+    is displayed if no action were triggered tis turn. This avoids to 
+    unadvertedly cancel the turn of another player
+
+2006/10/17
+  * added flags and players names to battle message 
+
+2006/10/17
+  * chat line edit no more keep the focus
+  * message sender is now the current (or last) local player and not ever the
+    same one
+  * changed save file format to correctly display the number of loaded players
+  * quits in case of saved game loading error (instead of crashing later)
+  * corrected a typo in fr.po
+ 
+2006/10/07
+  * better chat dialog 
+    ° draw flags and print nation name with player name (Now possible, to do)
+    ° icon for system messages (Now possible, to do)
+    ° colors (Now possible, to complete)
+  * ready to release version 1.7beta2 
+
+2006/10/04
+  * default player name for each country
+  * corrected skin problem (definitions of one used with sprites of another one;
+    never appeared in released code)
+
+2006/10/01
+  * release 1.7beta1
+  * pixmaps in the messages box works as needed (example with dices)
+  * allow all clients to post messages instead of only the one of the current 
+    player !
+
+2006/09/27
+    * Added possibility to display any serie of text and pixmap in the messages
+      box
+
+2006/09/23
+    * corrected a crash when right-clicking on the grey background
+    * removed the false repetitive error message before starting to play
+    
+2006/09/13
+    * corrected goal load/save bug 
+    * hack to avoid too easy goals when two players only
+    * better label in a dialog
+    * avoid to display two times the main toolbar
+
+2006/09/12
+    * added a chat dialog (merged with the history.widget)
+
+2006/07/29
+    * countries names are now internationalized and drawn on the map at run time
+      (not hard coded on the map image as before)
+    * release version 1.6
+      
+2006/07/28
+    * added an history widget (idea by frank DOT muts A gmail DOT com).
+    * possibility to show messages in status bar, in history or in both
+    * Skins strings are now internationalized
+    * added a snapshot, a long name and a description to skins
+    * release version 1.5
+
+2006/07/23
+    * updated french translation
+    * KDE standard config management
+    * option to enable or disable sounds
+    * option to change sprites speed from slow to immediate
+    * added a central point different of the flag point to countries to reduce
+      dependence between the map mask and the flag point
+
+2006/07/22
+    * use keys 1,2,3 to choose the number of attackers and defenders
+
+2006/07/21
+    * better reset at end of game to cleanly start a new one (Completely 
+      solved???)
+
+2006/07/20
+    * no more show the "Lost connection" dialog if the game is over
+    * when loading a skin A game while the current skin is not A, sprites are
+      now found
+
+2006/07/18
+    * was crashing in starting bubble skin game with goals
+    * #6306 : Crash when client has a skin different than the server
+
+2006/07/17
+    * End of network game with goals had bad messages distribution.
+    * 2005/08 feature : playing with goals
+    * Moved a bunch of solved bugs from TODO to ChangeLog:
+      - [Solved] End of network game with goals: bad messages distribution.
+      - [SOLVED] AI remains locked on "Not owner of second country"   
+      - [SOLVED] Sometimes, a serie of attacks are not solved and cannons stay
+        at the fighting places
+      - [SOLVED] End of the turn of the second player (when there is 2 players)
+        without distribution (not every time)
+      - [SOLVED] Explosion drawing is messed
+      - [SOLVED] buttons are not shown at the time of  "Exchange armies again 
+        or continue"
+      - [SOLVED] when only computer players, after recycling, first player do 
+        not play
+      - goals displayed for computer players
+      - invalid names of players wanted to stop distribution 
+      - invalid number of armies initialy distributed
+
+
+2006/07/16
+    * Corrected a crash when reloading a game saved during an attack
+
+2006/07/15
+    * No more freeze after players creation when first one is AI
+    * No more wrongly cancels attacks
+    * Crash in goal checking
+    * In player setup dialog, select name entry initialy
+    * Select current skin in new game dialog
+    * Network AIs only game were freezing waiting for end of recycling decision even if
+    all players were OK to continue
+    * A flag was displayed at 0,0
+
+2006/06/25
+    * Upgraded bubble skin to format version 1.3
+
+2006/06/17
+    * Polish translation
+
+2005/08/16
+    * Networked i18n
+    * Load and save in network mode (with password for network players)
+    * IA working in network mode
+    * Local and network playing;
+    * List of available countries is updated and checked;
+    * Player identification flag is updated.
+    * No more default skin only;
+    * No more crash on client disconnect;
+
+
+2005/06/28
+    * Player mouse IO are now done by KGame library ; Added namespace
+    GameLogic and cleaned up inclusions
+
+2005/05/29
+    * Applied the patch by Dan Keshet that makes KsirK closer to KDE standards.
+      Only excluded the position of toolbars that are voluntarily at the 
+      bottom. This should be changeable in a configuration dialog.
+
+2005/05/14
+    * corrected neighbours of Paruby in the bubble skin (thanks to Dan Keshet)
+    * corrected bugs occuring in KDE 3.4 when crashes in slots (thanks to 
+      mrpengo, Dan Keshet and Stepan Kullow for their help)
+    * put all KGameWindow slots implementations in a separate files
+
+2005/03/05
+    * added a format number to ONU XML definition file
+    * positioning data are loaded from ONU XML definition file
+
+2005/03/04
+    * do not more display invasion buttons when it remains only one army in invader country
+
+2005/02/26
+    * bubble skin map finished. sprites are the default ones
+
+
+2005/02/23
+    * skins OK. 
+    * first unfinished bubble skin to show feasability
+
+2005/02/22
+    * players can choose their nationality at game start
+
+2005/02/21
+    * load OK
+    * display problems solved
+
+2005/02/20
+    * save game
+    * load is on the way
+    * confirm quit when clicking on close window widget
+    * skins are approaching
+
+2003/03/02
+    * enhanced error messages for wrong attacks
+
+2003/03/01
+    * Cannons did not chose the good direction when they were bring back after a
+      fight
+  
+2003/02/27
+    * Attack of Siberia by Alaska: the defender was moving toward left instead of 
+      right
+    * When Siberia is won by  Alaska: the cannon was moving through the map instead 
+      of going by the border of the map
+
+2003/02/22
+    * memory leak correction in the AnimSprite constructor and sequence construction 
+      method
+    * all classes are know in the namespace Ksirk
+  
+2003/01/17
+    * the computer defend with two armies when possible
+    * code cleanup for AIPlayer (breaked big methods into smaller ones)
+
+2003/01/16
+    * end game OK
+    * better attack/result indication messages
+    * splitted the toolbar in two to help the handling of changing buttons
+    * quit confirmation dialog
+    * buttons "Normal game" no longer appear before the distribution of armies
+    * the buttons appear at the desired moment when a human plays against the machine
+    * removed button "Next player" when computer distributes its armies between two
+      turns
+    * The move armies buttons are kept during movement : authorizes to move more 
+      than one armies at the same time. New bug : when you click "moving finished"
+      when some armies are still moving, they are lost :-(
+    * cannon point for Groenland moved for longless animations
+    * move up cavalry point for Niger
+    * mouse is now disabled when computer plays: before the human was able to choose
+      the countries where to place some armies !
+    * The computer places armies in countries that have some ennemy neighbours and
+      not entirely at random
+    * Changed the countries distribution algorithm for a lot simpler and bug free 
+      one. Also, this new algorithm is independent of the number of countries, 
+      continuing to raise the themability of the game
+    * Added a dialog to confirm the new game if there is already a game in play
+
+2003/01/03
+    * Implementation of the countries-map mask method to find the position of the
+      mouse.
+    * Generalizing the previous point, all world-related data come from external
+      resources. Consequently, the game is now themable, even if this themability
+      is not really user-friendly (files to be put in 2 or three directories, no DTD
+      for the XML configuration file,...)
+
+2003/01/05
+    * Release of KsirK 1.1 (= 1.0 with most points of 1.2 done) 
+
+2002/12/29
+    * Implemented movement by AI
+    * End of the silly AI (random choices)
+    * Removed support for exceptions as they are not widely supported by KDE, it seems.
+
+2002/12/14
+    * Partial implementation of the AI (started a long time ago)
+    * Added support for exceptions
+    * Using more and more the STL (I learned to use it at work. It's great !)
+    * Compile with gcc-3.2, KDE 3.0.3
+
+2002/09/04
+    * Added the bonus for the owners of complete continents
+    * Added a continent class. It is a first step towards the implementation of a
+      useful AI.
+
+2002/09/04
+    * The management of the playing player flag is finished
+
+2002/09/01
+    * Added a button in the status bar to diplay the flag. Updated at one place
+      only. To do: add all the necessary updates.
+    * Added a Nationality class. Will be used to put a player flag in the status
+      bar and to add some choices to the users (name, flag, etc.)
+    * The need for a graphics pool (archeologic artifact) is removed. Each sprite
+      has its own file and the canvas do not need to be subclassed
+
+2002/08/31
+    * allow sprites to navigate from Alaska to Siberie by the short link. Generalization
+      to all movements that would be shorter by the side, on x and y axis. Ready for
+      different maps
+    * Finished to switch all members names to English (Country, KGameWindow and
+      Player). All the API is in English. Only some local variables and some
+      implementation comments are still in French.
+    * Stop the timer when the window looses the focus. Start it again when the
+      window gets back the focus.
+
+2002/08/28
+    * Implemented AnimSprite framework necessary for the sprites being able to move
+      "through" the side of the world (to go from Alaska to Siberia)
+
+2002/08/22
+    * First public release (0.9 for tests)
+
+2002/04/28
+    * ready for first public release (0.8) ?
+    * tested up to the end of a game
+    * changeed back the number of armies at the beginning
+
+2002/04/27
+    * corrected the problem of relative path to resources (good KDE programming)
+
+2002/04/25
+    * changed all french texts to english (sigh...) with i18n
+    * finished to change the "changeItems" (to correct status display)
+
+2002/04/24
+    * change program name to a non copyrighted one. (KsirK ?)
+    * Put a maximum size for the window (and also a minimum) (min and max for the center frame)

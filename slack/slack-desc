@@ -1,0 +1,20 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|' on
+# the right side marks the last column you can put a character in.  You must make
+# exactly 11 lines for the formatting to be correct.  It's also customary to
+# leave one space after the ':'.
+
+     |-----handy-ruler-------------------------------------------------------|
+ksirk: KsirK (a computerized version of a strategy board game: Risk !)
+ksirk: 
+ksirk: It runs under KDE or  any  Linux  system  with  the KDE  libs and is
+ksirk: released   under  the  GPL . In  the  current   version,  KsirK is a
+ksirk: multi-player  network-enabled game  with a simple AI. Planned future
+ksirk: ksirk: versions will have a better AI and more enhancements (see the
+ksirk: web site or the distribution for details).
+ksirk: 
+ksirk:                   https://gna.org/projects/ksirk
+ksirk:                            WWW.SLACKY.IT
+ksirk: PackaGer Gohanz.
+

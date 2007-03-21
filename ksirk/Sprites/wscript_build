@@ -1,0 +1,11 @@
+#! /usr/bin/env python
+# encoding: utf-8
+# Thomas Nagy, 2006 (ita)
+
+#from Object import createObj
+obj = bld.create_obj('kde', 'shlib')
+obj.find_sources_in_dirs('.')
+obj.uselib = 'QT KDECORE'
+obj.target = 'ksirk_sprites'
+obj.includes = '. .. ../../kgame-patch'
+

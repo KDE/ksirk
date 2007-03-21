@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE kcfg SYSTEM "http://www.kde.org/standards/kcfg/1.0/kcfg.dtd">
+<kcfg> 
+  <kcfgfile name="ksirkrc"/> 
+  <group name="General"> 
+    <entry name="spritesSpeed" type="Int"> 
+      <label>The sprites speed: slow, normal, quick, immediate</label> 
+      <default>1</default>
+    </entry> 
+    <entry name="soundEnabled" type="Bool"> 
+      <label>If true, sounds are played; they are not otherwise.</label> 
+      <default>true</default>
+    </entry> 
+  </group> 
+</kcfg>

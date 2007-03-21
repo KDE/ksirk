@@ -1,0 +1,106 @@
+<html><head><title>Chapter 2. Using KsirK</title><link rel="stylesheet" href="help:/common/kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="KDE, kdegames, game, strategy, Risk, free, GPL, Network, AI"><link rel="start" href="index.html" title="The KsirK minimalistic Handbook"><link rel="up" href="index.html" title="The KsirK minimalistic Handbook"><link rel="prev" href="introduction.html" title="Chapter 1. Introduction"><link rel="next" href="commands.html" title="Chapter 3. Command Reference"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div style="background-image: url(help:/common/top-middle.png); width: 100%; height: 131px;"><div style="position: absolute;                      right: 0px;"><img src="help:/common/top-right-konqueror.png" style="margin: 0px" alt=""></div><div style="position: absolute; left: 0px;"><img src="help:/common/top-left.png" style="margin: 0px" alt=""></div><div style="position: absolute;                         top: 25px;                          right: 100px;                          text-align: right;                          font-size: xx-large;                          font-weight: bold;                          text-shadow: #fff 0px 0px 5px;                          color: #444">Using KsirK</div></div><div style="margin-top: 20px; background-color: #white;                        color: black;                       margin-left: 20px;                        margin-right: 20px;"><div style="position: absolute;                          left: 20px;"><a accesskey="p" href="introduction.html">Prev</a></div><div style="position: absolute;                          right: 20px;"><a accesskey="n" href="commands.html">Next</a></div><div class="navCenter"> </div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="using-kapp"></a>Chapter 2. Using KsirK</h2></div></div></div><p>
+
+
+
+<div class="screenshot"><div xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="mediaobject"><hr><img src="attack.png" alt="Screenshot"><hr></div></div>
+</p><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="playing-ksirk"></a>Playing <span class="application">KsirK</span></h2></div></div></div><p>Preliminary note : the map can be scrolled by three methods. First, you can put your
+mouse near a border of the window and the map will scroll in that direction. Second, you
+can use your mouse wheel: With no modifier, it will scroll verticaly; when pressing the Meta
+key, it will scroll horizontaly. And lastly, you can use the keyboard arrows.
+</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="distribution"></a>Distribution</h3></div></div></div><p>
+At the beginning of the game, countries are distributed to all the players. Each country contain
+one army (represented by an infantryman) at this moment. Each player has some armies to
+distribute to his countries at her turn (indicated by the presence of her name and her flag in
+the status bar). Note that five armies are represented by a cavalryman and 10 by
+a cannon.
+</p><p>
+To put an army on one of your countries, click on it with the left mouse button. To remove an
+army, click with the right button. Note, as a general rule, that you will never be able to remove
+more armies than the number you already put.
+</p><p>
+When a player has distributed all her armies, the next player is automatically selected to do the
+same task. When all players have finished to distribute their armies, there is two possibilities
+that can be selected by two buttons :
+<div class="variablelist"><dl><dt><span class="term">
+	<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">
+			<span class="inlinemediaobject"><img src="distributionArmees.png" alt="Redistribution"></span> : Redistribution
+		</span></span>
+</span></dt><dd><p>
+	<span class="action">
+	One player wants to change some of his choices. The first player can then remove an army he
+	just put in a country with the right mouse button and put it in another one with the left mouse
+	button. When he finish, he gives control to next player with the 'Next Player' button. When all
+	players have finished their redistribution, the two buttons are redisplayed.
+	</span>
+	</p></dd><dt><span class="term">
+	<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">
+			<span class="inlinemediaobject"><img src="distributionArmeesFinie.png" alt="End of redistribution"></span> : End of redistribution
+		</span></span>
+</span></dt><dd><p><span class="action">The redistribution is finished and the game can continue.
+</span></p></dd></dl></div>
+
+</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="fight"></a>Fight</h3></div></div></div><p>
+After the redistribution, a game turn can start. Each player plays at his turn. He has the choice to:
+<div class="variablelist"><dl><dt><span class="term">
+			<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">
+					<span class="inlinemediaobject"><img src="joueurSuivant.png" alt="Next player"></span> : Give hand to the next player
+				</span></span>
+		</span></dt><dd><p>
+		<span class="action">
+		The turn of the current player finishes and it's the turn of the next one.
+		</span></p></dd><dt><span class="term">
+			<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">
+					<span class="inlinemediaobject"><img src="attackOne.png" alt="Attack 1"></span>
+					 <span class="inlinemediaobject"><img src="attackTwo.png" alt="Attack 2"></span>
+					 <span class="inlinemediaobject"><img src="attackThree.png" alt="Attack 3"></span> : Attack with one, two or three armies
+				</span></span>
+		</span></dt><dd><p>
+				<span class="action">
+					For a country X to attack a country Y with x armies, 2 conditions must be fullfilled: 1. the two
+					countries must be neighbours; 2. country X must have at least x+1 armies before the attack.
+					When an attack is decided, the attacker must disignate the belligerants: he click on his country,
+					drag the pointer to the attacked country and "drop it" (release the mous button) there. If the attack
+					is valid, 2 defend buttons replace the three attack ones (only one if the attacker attacks with only
+					one army and also if the defender has only one army in his country). They give the
+					choice to the defender to defend with one or two armies.
+				</span>
+			</p><p>
+				The defender choice done, the fight will happen and be solved. This will described below.
+			</p></dd><dt><span class="term">
+			<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">
+					<span class="inlinemediaobject"><img src="moveArmies.png" alt="Move armies"></span> : Move Armies from one country to another
+				</span></span>
+		</span></dt><dd><p>
+				<span class="action">
+					This is the last action of a player's turn. It gives the possibility to move some armies
+					from one of his country to another, neighbour of the first one. To choose the two
+					countries, please drag'n drop as for an attack. When both countries are choosed,
+					the "Move armies" group of buttons appear (see below for a description  of their use).
+					Note that, before the user choose to terminate the move, he can always choose to
+					cancel it by hitting the Cancel button.
+				</span>
+			</p></dd></dl></div>
+</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="fight-solution"></a>Solution of the fight</h3></div></div></div><p>
+		To each army in the fight correspond a dice cast, a random number between 1 and 6. The
+		higher result of the attacker is opposed to the other one of the defender. If the attacker's
+		result is strictly higher than the defender one, he wins the fight and the defender army is
+		destroyed. Elsewhere, he looses and its army is destroyed. The same happen for second
+		higher dice of the attacker if there is two or three attackers and two defenders.
+	</p><p>
+		If the number of armies in the defender country reaches 0, the ownership of this country
+		changes to the attacker: his flag is set up and one of his attacking armies is installed in his
+		new country. The "Move armies" buttons are displayed in the toolbar to allow the attacker
+		to move some other armies from the attacking country to the newly gained one.
+	</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="end_of_turn"></a>End of the turn</h3></div></div></div><p>
+		When everybody have played, the turn is finished. Some armies are distributed to the
+		players, in function of the coutries they own: 1 for each group of three countries, with a
+		minimum of 3. There is also a bonus for players that own a complete continent, different for
+		each one. This bonus is of:
+		<div class="table"><a name="id2482830"></a><p class="title"><b>Table 2.1. Bonus due to the continents</b></p><table summary="Bonus due to the continents" border="1"><colgroup><col><col></colgroup><thead><tr><th>Continent</th><th>Bonus</th></tr></thead><tbody><tr><td>North America</td><td>5</td></tr><tr><td>South America</td><td>2</td></tr><tr><td>Europe</td><td>5</td></tr><tr><td>Africa</td><td>3</td></tr><tr><td>Asia</td><td>7</td></tr><tr><td>Pacific Area</td><td>2</td></tr></tbody></table></div>
+	</p><p>
+		New in 0.9.1-2, the bonus calculation is implemented !
+	</p><p>
+		When a player has finished distributing his armies, he clicks the "Next Player" button to
+		allow the next player to distribute his bonus. As for the initial distribution, when all player
+		have placed their armies, they can start a new redistribution cycle or start a new turn...
+	</p></div></div></div><div style="background-color: #white; color: black;                  margin-top: 20px; margin-left: 20px;                  margin-right: 20px;"><div style="position: absolute; left: 20px;"><a accesskey="p" href="introduction.html">Prev</a></div><div style="position: absolute; right: 20px;"><a accesskey="n" href="commands.html">Next</a></div><div align="center"><a accesskey="h" href="index.html">Home</a></div></div><div style="background-color: #white;   color: black;         margin-left: 20px;   margin-right: 20px;"><div class="navLeft">Introduction </div><div class="navRight"> Command Reference</div><div class="navCenter"><a accesskey="u" href="index.html">Up</a></div></div><br><br><div class="bannerBottom" style="background-image: url(help:/common/bottom-middle.png);                                        background-repeat: x-repeat;                                         width: 100%;                                         height: 100px;                                         bottom:0px;"><div class="BannerBottomRight"><img src="help:/common/bottom-right.png" style="margin: 0px" alt=""></div><div class="bannerBottomLeft"><img src="help:/common/bottom-left.png" style="margin: 0px;" alt=""></div></div></body></html>

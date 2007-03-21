@@ -1,0 +1,11 @@
+ksirk: KsirK (a computerized version of a strategy board game: Risk !)
+ksirk: 
+ksirk: It runs under KDE or  any  Linux  system  with  the KDE  libs and is
+ksirk: released   under  the  GPL . In  the  current   version,  KsirK is a
+ksirk: multi-player  network-enabled game  with a simple AI. Planned future
+ksirk: ksirk: versions will have a better AI and more enhancements (see the
+ksirk: web site or the distribution for details).
+ksirk: 
+ksirk:                   https://gna.org/projects/ksirk
+ksirk:                            WWW.SLACKY.IT
+ksirk: PackaGer Gohanz.

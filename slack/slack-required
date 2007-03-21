@@ -1,0 +1,14 @@
+cxxlibs >= 5.0.7-i486-1 | gcc-g++ >= 3.3.6-i486-1
+expat >= 1.95.8-i486-1
+gcc >= 3.3.6-i486-1
+glibc-solibs >= 2.3.5-i486-5
+kdegames >= 3.4.2-i486-1
+kdelibs >= 3.4.2-i486-2
+libart_lgpl >= 2.3.17-i486-1
+libidn >= 0.5.17-i486-1
+libjpeg >= 6b-i386-4
+libmng >= 1.0.5-i486-1
+libpng >= 1.2.8-i486-1
+qt >= 3.3.4-i486-2
+x11 >= 6.8.2-i486-6_slack10.2
+zlib >= 1.2.3-i486-1

@@ -1,0 +1,20 @@
+# KDE Config File
+[Desktop Entry]
+Type=Application
+Exec=ksirk -caption "%c" %i %m
+Icon=ksirk.png
+MiniIcon=ksirk.png
+DocPath=ksirk/index.html
+Comment=KsirK is a computerized version of a strategy board game: Risk !
+Comment[fr]=KsirK est une version sur ordinateur du jeu de plateau de stratégie: Risk !
+Comment[it]=Ksirk è la versione computerizzata del gioco da tavolo strategico: Risico! 
+Terminal=0
+Name=KsirK
+Name[de]=KsirK
+Name[it]=KsirK
+Name[fr]=KsirK
+GenericName=Risk Computerized
+GenericName[de]=
+GenericName[it]=Risico Computerizzato
+GenericName[fr]=Risk sur ordinateur
+Categories=Qt;KDE;Game;StrategyGame;

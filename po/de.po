@@ -1,0 +1,1864 @@
+# translation of de.po to
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Robin Doer <robin@robind.de>, 2005.
+# Jens-André Koch <jakoch@web.de>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-12-16 00:30+0100\n"
+"PO-Revision-Date: 2006-05-20 17:49+0200\n"
+"Last-Translator: Jens-André Koch <jakoch@web.de>\n"
+"Language-Team:  <de@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: ../ksirk/Dialogs/newGameDialogImpl.cpp:77
+msgid "Help currently unavailable."
+msgstr "Hilfe zurzeit nicht verfügbar."
+
+#: ../ksirk/Dialogs/newGameDialogImpl.cpp:77
+#, fuzzy
+msgid "KsirK - No help !"
+msgstr "KsirK - Fehler"
+
+#: ../ksirk/Dialogs/newGameDialogImpl.cpp:89
+#, fuzzy
+msgid ""
+"Skins directory not found - Verify your installation\n"
+"Program cannot continue"
+msgstr ""
+"Crash-Geräusch konnte nicht gefunden werden!\n"
+"Überprüfen Sie Ihre Installation auf Vollständigkeit.\n"
+"Programm muss beendet werden."
+
+#: ../ksirk/Dialogs/newGameDialogImpl.cpp:90
+#, fuzzy
+msgid "Fatal Error !"
+msgstr "Fataler Fehler"
+
+#: ../ksirk/Dialogs/kplayersetupdialog.cpp:58
+#, c-format
+msgid "Player Number %d, please type in your name<BR>and choose your nation:"
+msgstr ""
+"Spieler %d:<br> Bitte geben Sie Ihren Namen ein und wählen eine Nation:"
+
+#: ../ksirk/Dialogs/kplayersetupdialog.cpp:85
+msgid "Player %1, you have to choose a name!"
+msgstr "Spieler %1, Sie müssen einen Namen eingeben!"
+
+#: ../ksirk/Dialogs/kplayersetupdialog.cpp:92
+msgid "Player %1, you have to choose another name!<br>%2 is not unique."
+msgstr ""
+"Spieler %1, Sie müssen einen anderen Namen eingeben!<br>%2 wurde bereits "
+"vergeben."
+
+#: ../ksirk/Dialogs/kplayersetupdialog.cpp:130
+#: ../ksirk/Dialogs/kwaitedplayersetupdialog.cpp:84
+msgid ""
+"Flag image resource not found\n"
+"Program cannot continue"
+msgstr ""
+"Abbild der Flagge nicht gefunden!\n"
+"Programm muss beendet werden."
+
+#: ../ksirk/Dialogs/kplayersetupdialog.cpp:130
+#: ../ksirk/Dialogs/kwaitedplayersetupdialog.cpp:84
+#: ../ksirk/GameLogic/onu.cpp:118 ../ksirk/GameLogic/onu.cpp:128
+#: ../ksirk/GameLogic/onu.cpp:137 ../ksirk/Sprites/animsprite.cpp:54
+#: ../ksirk/Sprites/animsprite.cpp:59 ../ksirk/Sprites/animsprite.cpp:338
+#: ../ksirk/Sprites/animsprite.cpp:343 ../ksirk/Sprites/animsprite.cpp:441
+#: ../ksirk/Sprites/animsprite.cpp:456 ../ksirk/kgamewin.cpp:116
+#: ../ksirk/kgamewin.cpp:280 ../ksirk/kgamewin.cpp:341
+#: ../ksirk/kgamewin.cpp:956 ../ksirk/kgamewin.cpp:2592
+#: ../ksirk/kgamewin.cpp:2603 ../ksirk/kgamewin.cpp:2614
+#: ../ksirk/decoratedgameframe.cpp:67 ../ksirk/decoratedgameframe.cpp:85
+#: ../ksirk/gestionSprites.cpp:135 ../ksirk/gestionSprites.cpp:237
+#: ../ksirk/gestionSprites.cpp:250 ../ksirk/gestionSprites.cpp:316
+#: ../ksirk/gestionSprites.cpp:448 ../ksirk/gestionSprites.cpp:474
+#: ../ksirk/gestionSprites.cpp:484
+msgid "Error !"
+msgstr "Fehler"
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:285
+msgid "KsirK - Network configuration"
+msgstr "Ksirk - Netzwerkkonfiguration"
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:286
+msgid "Please type in the port number on which to offer connections:"
+msgstr "Bitte geben Sie den Port ein, um Netzwerkverbindungen anzubieten:"
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:748
+msgid ""
+"%1, you haven't played anything this turn.\n"
+"Do you really want to lose your turn ?"
+msgstr ""
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1001
+#, c-format
+msgid "Error - 2 nations minimum. Got %d."
+msgstr ""
+"Bitte mindestens zwei Nationen angeben.<BR> Sie haben nur %d eingegeben."
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1002
+#, fuzzy
+msgid "Fatal Error!"
+msgstr "Fataler Fehler"
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1033
+msgid "Port and Net players configuration"
+msgstr "Netzwerkkonfiguration des Spielers"
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1037
+msgid "Number of network players"
+msgstr "Anzahl der Netzwerkspieler"
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1109
+msgid "Join network game configuration"
+msgstr ""
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1113
+msgid "Network configuration"
+msgstr "Netzwerkkonfiguration"
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1281
+msgid "%1 (%2) joined game ; waiting for %3 players to connect"
+msgstr "%1 (%2) hat das Spiel betreten. Warte auf %3 weitere Spieler..."
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1373
+msgid "Please choose another name"
+msgstr "Bitte wählen Sie einen anderen Namen!"
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1373
+msgid "KsirK - Name already used !"
+msgstr "KsirK - Ihr Name wird bereits verwendet"
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1379 ../ksirk/kgamewin.cpp:1116
+#, c-format
+msgid "Player number %d, what's your name ?"
+msgstr "Spieler %d: Wie ist Ihr Name?"
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1386 ../ksirk/kgamewin.cpp:1122
+#, c-format
+msgid "Error - Player %d, you have to choose a name."
+msgstr "Fehler - Spieler %d: Sie müssen einen Namen auswählen!"
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1388 ../ksirk/kgamewin.cpp:1124
+#, c-format
+msgid "Player%d"
+msgstr "Spieler %d"
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1441
+msgid "Please choose another nation"
+msgstr "Bitte wählen Sie eine andere Nation aus!"
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1441
+msgid "KsirK - Nation already used !"
+msgstr "KsirK - Nation wird bereits benutzt"
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1522
+#, fuzzy
+msgid ""
+"KsirK - Lost connection to server !\n"
+"What do you want to do ?"
+msgstr ""
+"KsirK - Keine Verbindung zum Server\n"
+"Möchten Sie ein neues Spiel starten oder das Spiel verlassen ?"
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1523
+msgid "Starting a new game or exit."
+msgstr "Neues Spiel starten oder beenden"
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1524 ../ksirk/kgamewin.cpp:176
+#: rc.cpp:139
+#, no-c-format
+msgid "Exit"
+msgstr "Beenden"
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1524
+msgid "Do nothing"
+msgstr ""
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1546
+msgid ""
+"Lost connection to a client.\n"
+"For the moment, you can only save the game and start a new one or quit.\n"
+"This will be improved in a future version."
+msgstr ""
+"Die Verbindung zum Client ist unterbrochen!\n"
+"In diesem Augenblick können Sie das laufende Spiel speichern und ein neues "
+"starten,\n"
+"oder Sie beenden das Spiel.\n"
+"Das Verhalten wird in einer zukünftigen Version verbessert."
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1547
+msgid "KsirK - Lost connection to client !"
+msgstr "KsirK . Keine Verbindung zum Client"
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1548
+msgid "Do want to save your game?"
+msgstr "Wollen Sie das Spiel speichern?"
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1769 ../ksirk/kgamewin.cpp:1717
+#: ../ksirk/kgamewin.cpp:1930 ../ksirk/kgamewin.cpp:1992
+#: ../ksirk/kgamewin.cpp:2014 ../ksirk/kgamewin.cpp:2049
+#: ../ksirk/kgamewin.cpp:2131
+msgid "%1 : %2 armies to place"
+msgstr "%1: %2 Armeen platzieren"
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1781
+msgid "%1 choose to end recycling ; there is now %2 players who want so"
+msgstr ""
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1846 ../ksirk/gestionSprites.cpp:418
+msgid "Problem : no one destroyed"
+msgstr "Problem: Es wurde niemand zerstört!"
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1846
+msgid "Ksirk - Error !"
+msgstr "Ksirk - Fehler"
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1891
+msgid ""
+"You entered an invalid password.\n"
+"Please try again."
+msgstr ""
+"Sie haben ein falsches Passwort eingegeben!\n"
+"Bitte noch einmal versuchen."
+
+#: ../ksirk/GameLogic/gameautomaton.cpp:1891
+msgid "KsirK - Invalid password !"
+msgstr "KsirK - Falsches Passwort"
+
+#: ../ksirk/GameLogic/onu.cpp:63
+msgid "Cannot open file %1"
+msgstr "Kann %1 nicht öffnen"
+
+#: ../ksirk/GameLogic/onu.cpp:64 ../ksirk/GameLogic/onu.cpp:72
+msgid "Critical Error"
+msgstr "Kritischer Fehler"
+
+#: ../ksirk/GameLogic/onu.cpp:71
+msgid "Parsing error for file %1"
+msgstr "Fehler beim Parsen von %1!"
+
+#: ../ksirk/GameLogic/onu.cpp:87
+#, fuzzy
+msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+msgstr "Ungültiges Dateiformat für Skin-Definition. Erwartete %1 bekam aber %2"
+
+#: ../ksirk/GameLogic/onu.cpp:90 ../ksirk/GameLogic/aiplayer.cpp:420
+#: ../ksirk/Sprites/skinSpritesData.cpp:106
+#: ../ksirk/Sprites/skinSpritesData.cpp:122
+msgid "Fatal Error"
+msgstr "Fataler Fehler"
+
+#: ../ksirk/GameLogic/onu.cpp:117
+#, fuzzy
+msgid ""
+"Map image filename not found\n"
+"Program cannot continue"
+msgstr ""
+"Datei mit Map-Abbild nicht gefunden\n"
+"Programm muss beendet werden."
+
+#: ../ksirk/GameLogic/onu.cpp:127
+#, fuzzy
+msgid ""
+"Map mask image not found\n"
+"Program cannot continue"
+msgstr ""
+"Abbild der Bildmaske nicht gefunden!\n"
+"Programm muss beendet werden."
+
+#: ../ksirk/GameLogic/onu.cpp:136
+#, fuzzy
+msgid ""
+"Cannot load the map mask image\n"
+"Program cannot continue"
+msgstr ""
+"Kann Bildmaske der Map nicht laden!\n"
+"Programm muss beendet werden."
+
+#: ../ksirk/GameLogic/aiplayer.cpp:419
+msgid "Error - No receiving country selected while computer player "
+msgstr "Fehler - Kein Zielland ausgewählt vom Computergegner"
+
+#: ../ksirk/GameLogic/aiplayer.cpp:419
+msgid " had still "
+msgstr " hat noch "
+
+#: ../ksirk/GameLogic/aiplayer.cpp:419
+msgid " armies to place. This is bug probably #2232 at www.gna.org."
+msgstr " Armeen zu ziehen. Dieser Fehler ist wohl #2232 at www.gna.org."
+
+#: ../ksirk/GameLogic/player.cpp:299
+msgid ""
+"%1, your goal will be displayed. Please make sure that no other player can "
+"see it !"
+msgstr ""
+"%1, dein Ziel wird angezeigt. Stell sicher das kein anderer Spieler dies "
+"sehen kann!"
+
+#: ../ksirk/GameLogic/player.cpp:299
+#, fuzzy
+msgid "KsirK - Displaying Goal"
+msgstr "KsirK - Spiel laden"
+
+#: ../ksirk/GameLogic/goal.cpp:154
+#, fuzzy
+msgid "Error : no player to destroy"
+msgstr "Problem: Es wurde niemand zerstört!"
+
+#: ../ksirk/GameLogic/goal.cpp:189
+msgid ""
+"\n"
+"%1 is still alive..."
+msgstr ""
+
+#: ../ksirk/GameLogic/goal.cpp:193
+msgid ""
+"\n"
+"You now have to conquer %1"
+msgstr ""
+
+#: ../ksirk/GameLogic/goal.cpp:200
+msgid ""
+"\n"
+"%1, you have still %2 countries to conquer..."
+msgstr ""
+
+#: ../ksirk/GameLogic/goal.cpp:212
+msgid ""
+"\n"
+"%1, you have enough countries but you still have to put more than %2 armies "
+"on %3 of them..."
+msgstr ""
+
+#: ../ksirk/GameLogic/goal.cpp:217
+msgid ""
+"\n"
+"%1, you still have to conquer "
+msgstr ""
+
+#: ../ksirk/GameLogic/goal.cpp:223
+#, fuzzy
+msgid "%1 countries in %2"
+msgstr "%1 eroberte %2"
+
+#: ../ksirk/GameLogic/goal.cpp:243
+#, fuzzy
+msgid "%1 in %2"
+msgstr "%1 : "
+
+#: ../ksirk/GameLogic/goal.cpp:260
+#, fuzzy
+msgid "KsirK - Goal Display"
+msgstr "KsirK - Spiel laden"
+
+#: ../ksirk/Sprites/skinSpritesData.cpp:105
+msgid "Error - Unknown skin int data: "
+msgstr "Fehler - unbekannte skin int data: "
+
+#: ../ksirk/Sprites/skinSpritesData.cpp:121
+msgid "Error - Unknown skin string data: "
+msgstr "Error - unbekannte skin string data: "
+
+#: ../ksirk/Sprites/animsprite.cpp:54 ../ksirk/Sprites/animsprite.cpp:338
+msgid ""
+"Sprite images resource not found\n"
+"Program cannot continue"
+msgstr ""
+
+#: ../ksirk/Sprites/animsprite.cpp:59 ../ksirk/Sprites/animsprite.cpp:343
+msgid ""
+"Cannot load sprite image\n"
+"Program cannot continue"
+msgstr ""
+
+#: ../ksirk/Sprites/animsprite.cpp:441
+msgid "Cannot find Max X  for sprite: no background !"
+msgstr ""
+
+#: ../ksirk/Sprites/animsprite.cpp:456
+msgid "Cannot find Max Y  for sprite: no background !"
+msgstr ""
+
+#: ../ksirk/SaveLoad/ksirkgamexmlhandler.cpp:55
+#, fuzzy
+msgid "Wrong save game format. Waited %1 and got %2 !"
+msgstr "Ungültiges Dateiformat für Skin-Definition. Erwartete %1 bekam aber %2"
+
+#: ../ksirk/SaveLoad/ksirkgamexmlhandler.cpp:55
+#, fuzzy
+msgid "KsirK - Cannot load !"
+msgstr "KsirK - Kann nicht speichern!"
+
+#: ../ksirk/SaveLoad/ksirkgamexmlhandler.cpp:148
+msgid "Current player is: %1"
+msgstr "Aktueller Spieler: %1"
+
+#: ../ksirk/kgamewin.cpp:116 ../ksirk/kgamewin.cpp:341
+msgid ""
+"Cannot load icon\n"
+"Program cannot continue"
+msgstr ""
+"Kann Symbol nicht laden!\n"
+"Programm muss beendet werden."
+
+#: ../ksirk/kgamewin.cpp:178
+msgid "New game"
+msgstr "Neues Spiel"
+
+#: ../ksirk/kgamewin.cpp:180
+msgid "Join network game"
+msgstr "Netzwerkspiel beitreten"
+
+#: ../ksirk/kgamewin.cpp:183 ../ksirk/ksirkConfigDialog.cpp:61
+msgid "Preferences"
+msgstr ""
+
+#: ../ksirk/kgamewin.cpp:185
+msgid "Scroll up"
+msgstr "Auswärts scrollen"
+
+#: ../ksirk/kgamewin.cpp:186
+msgid "Scrolls up the map."
+msgstr "Map aufwärts scrollen"
+
+#: ../ksirk/kgamewin.cpp:188
+msgid "Scroll Down"
+msgstr "Abwärts scrollen"
+
+#: ../ksirk/kgamewin.cpp:189
+msgid "Scrolls down the map."
+msgstr "Map abwärts scrollen"
+
+#: ../ksirk/kgamewin.cpp:191
+msgid "Scroll left"
+msgstr "Nach links scrollen"
+
+#: ../ksirk/kgamewin.cpp:192
+msgid "Scrolls left the map."
+msgstr "Map nach links scrollen"
+
+#: ../ksirk/kgamewin.cpp:194
+msgid "Scroll right"
+msgstr "Nach rechts scrollen"
+
+#: ../ksirk/kgamewin.cpp:195
+msgid "Scrolls right the map."
+msgstr "Map nach rechts scrollen"
+
+#: ../ksirk/kgamewin.cpp:197
+msgid "Finish move"
+msgstr "Zug beenden"
+
+#: ../ksirk/kgamewin.cpp:198
+msgid ""
+"This action causes all moving sprites to immediatly go to their destination."
+msgstr ""
+
+#: ../ksirk/kgamewin.cpp:281
+msgid ""
+"UNO definition XML file not found - Verify your installation\n"
+"Program cannot continue"
+msgstr ""
+"Die XML-Datei mit den UNO-Daten konnte nicht gefunden werden!\n"
+"Überprüfen Sie Ihre Installation auf Vollständigkeit.\n"
+"Programm muss beendet werden."
+
+#: ../ksirk/kgamewin.cpp:508
+msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
+msgstr ""
+
+#: ../ksirk/kgamewin.cpp:538
+msgid "%1, you are defeated! Bye, bye..."
+msgstr "%1: Sie wurden besiegt! Bye, bye..."
+
+#: ../ksirk/kgamewin.cpp:539
+msgid "KsirK - Game Over !"
+msgstr "KsirK - Game Over"
+
+#: ../ksirk/kgamewin.cpp:577
+msgid "%1 : it's up to you again"
+msgstr ""
+
+#: ../ksirk/kgamewin.cpp:717
+msgid "The attacker <font color=\"red\">%1</font> ("
+msgstr ""
+
+#: ../ksirk/kgamewin.cpp:717
+msgid "%1) <font color=\"red\">loses %2 armies</font>."
+msgstr ""
+
+#: ../ksirk/kgamewin.cpp:722
+msgid "The defender <font color=\"blue\">%1</font> ("
+msgstr ""
+
+#: ../ksirk/kgamewin.cpp:722
+msgid "%1) <font color=\"blue\">loses %2 armies</font>."
+msgstr ""
+
+#: ../ksirk/kgamewin.cpp:741
+msgid "Before you quit, do want to save your game?"
+msgstr "Wollen Sie Ihr Spiel speichern bevor Sie KsirK beenden?"
+
+#: ../ksirk/kgamewin.cpp:756
+msgid "KsirK - Load Game"
+msgstr "KsirK - Spiel laden"
+
+#: ../ksirk/kgamewin.cpp:789
+msgid "Waiting for the connection of %1 network players."
+msgstr "Warte auf die Verbidung von %1 Netzwerkspielern."
+
+#: ../ksirk/kgamewin.cpp:813 ../ksirk/kgamewin.cpp:868
+msgid "Next Player"
+msgstr "Nächster Spieler"
+
+#: ../ksirk/kgamewin.cpp:845
+msgid "Redistribute"
+msgstr "Umverteilen"
+
+#: ../ksirk/kgamewin.cpp:846
+msgid "End redistribute"
+msgstr "Ende Umverteilung"
+
+#: ../ksirk/kgamewin.cpp:853 ../ksirk/kgamewin.cpp:866
+msgid "Open game"
+msgstr "Spiel öffnen"
+
+#: ../ksirk/kgamewin.cpp:867
+msgid "Save game"
+msgstr "Spiel speichern"
+
+#: ../ksirk/kgamewin.cpp:869
+msgid "Attack with one army"
+msgstr "Angreifen mit einer Armee"
+
+#: ../ksirk/kgamewin.cpp:870
+msgid "Attack with two armies"
+msgstr "Angreifen mit zwei Armeen"
+
+#: ../ksirk/kgamewin.cpp:871
+msgid "Attack with three armies"
+msgstr "Angreifen mit drei Armeen"
+
+#: ../ksirk/kgamewin.cpp:872
+msgid "Move armies"
+msgstr "Bewege Armeen"
+
+#: ../ksirk/kgamewin.cpp:887
+msgid "Defend with one army"
+msgstr "Verteidigen mit einer Armee"
+
+#: ../ksirk/kgamewin.cpp:888
+msgid "Defend with two armies"
+msgstr "Verteidigen mit zwei Armeen"
+
+#: ../ksirk/kgamewin.cpp:901
+msgid "Invade with one army"
+msgstr "Invasion mit einer Armee"
+
+#: ../ksirk/kgamewin.cpp:902
+msgid "Invade with five armies"
+msgstr "Invasion mit fünf Armeen"
+
+#: ../ksirk/kgamewin.cpp:903
+msgid "Invade with ten armies"
+msgstr "Invasion mit 10 Armeen"
+
+#: ../ksirk/kgamewin.cpp:904
+msgid "End Invasion"
+msgstr "Invasion beenden"
+
+#: ../ksirk/kgamewin.cpp:905
+msgid "Retract one army"
+msgstr "Eine Armee zurückziehen"
+
+#: ../ksirk/kgamewin.cpp:906
+msgid "Retract five armies"
+msgstr "Fünf Armeen zurückziehen"
+
+#: ../ksirk/kgamewin.cpp:907
+msgid "Retract ten armies"
+msgstr "10 Armeen zurückziehen"
+
+#: ../ksirk/kgamewin.cpp:956 ../ksirk/kgamewin.cpp:2592
+#: ../ksirk/kgamewin.cpp:2603 ../ksirk/kgamewin.cpp:2614
+msgid ""
+"Cannot load button image\n"
+"Program cannot continue"
+msgstr ""
+"Kann Schaltflächen-Bild nicht laden!\n"
+"Programm muss beendet werden."
+
+#: ../ksirk/kgamewin.cpp:1064
+msgid "Waiting for %1 players to connect"
+msgstr "Warte auf die Verbindung von %1 Spielern."
+
+#: ../ksirk/kgamewin.cpp:1458
+#, fuzzy
+msgid "%1 attacks %2 from %3 with <font color=\"red\">%4 armies</font>."
+msgstr "%1 aus %3 greift %2 mit %4 Armeen an."
+
+#: ../ksirk/kgamewin.cpp:1474
+#, fuzzy
+msgid ""
+"%1, you are attacked by <font color=\"red\">%2 armies</font> ; with how many "
+"armies do you <font color=\"blue\">defend %3</font> ?"
+msgstr ""
+"%1: Sie werden von %2 Armeen angegriffen. Mit wievielen Armeen wollen Sie %3 "
+"verteidigen?"
+
+#: ../ksirk/kgamewin.cpp:1489 ../ksirk/kgamewin.cpp:2195
+msgid "Battle between <font color=\"red\">%1</font> ("
+msgstr ""
+
+#: ../ksirk/kgamewin.cpp:1492 ../ksirk/kgamewin.cpp:2198
+msgid ""
+"%1) <font color=\"red\">with %2 armies</font> and <font color=\"blue\">%3</"
+"font> ("
+msgstr ""
+
+#: ../ksirk/kgamewin.cpp:1497 ../ksirk/kgamewin.cpp:2203
+msgid "%1) <font color=\"blue\">with %2 armies</font>."
+msgstr ""
+
+#: ../ksirk/kgamewin.cpp:1555
+msgid "There is no country here!"
+msgstr "Dort befindet sich kein Land!"
+
+#: ../ksirk/kgamewin.cpp:1559
+msgid "You are not the owner of the first country: %1 !"
+msgstr "Ihnen gehört das erste Land %1 nicht!"
+
+#: ../ksirk/kgamewin.cpp:1564
+msgid "You are not the owner of the second country: %1 !"
+msgstr "Ihnen gehört das zweite Land %1 nicht!"
+
+#: ../ksirk/kgamewin.cpp:1569
+msgid "You are trying to move armies from %1 to itself !"
+msgstr "Sie versuchen gerade Armeen von %1 in sich selbst zu verschieben!"
+
+#: ../ksirk/kgamewin.cpp:1575 ../ksirk/kgamewin.cpp:1833
+msgid "%1 is not a neighbour of %2 !"
+msgstr "%1 ist kein Nachbar von %2!"
+
+#: ../ksirk/kgamewin.cpp:1581
+msgid "Moving armies from %1 to %2."
+msgstr "Bewege Armeen von %1 nach %2."
+
+#: ../ksirk/kgamewin.cpp:1756
+msgid "<font color=\"orange\">No country here !</font>"
+msgstr ""
+
+#: ../ksirk/kgamewin.cpp:1772
+#, fuzzy
+msgid "<font color=\"orange\">You are not the owner of %1 !</font>"
+msgstr "Ihnen gehört %1 nicht!"
+
+#: ../ksirk/kgamewin.cpp:1779
+#, fuzzy
+msgid "<font color=\"orange\">There is only %1 armies in %2 !</font>"
+msgstr "In %2 gibt es nur %1 Armeen!"
+
+#: ../ksirk/kgamewin.cpp:1791
+#, fuzzy
+msgid "%1 attacks from %2 with <font color=\"red\">%3 armies</font>"
+msgstr "%1 aus %2 greift mit %3 Armeen an."
+
+#: ../ksirk/kgamewin.cpp:1823
+msgid "Invalid attacked country."
+msgstr "Das Land kann nicht angegriffen werden!"
+
+#: ../ksirk/kgamewin.cpp:1828
+msgid "You are trying to attack %1 from itself !"
+msgstr "Sie versuchen sich gerade selbst aus %1 anzugreifen!"
+
+#: ../ksirk/kgamewin.cpp:1838
+msgid "%1! You cannot attack %2! It's yours!"
+msgstr "%1: Sie können %2 nicht angreifen. Es gehört Ihnen!"
+
+#: ../ksirk/kgamewin.cpp:1844
+msgid "%1 ! You are not the owner of %2!"
+msgstr "%1: Ihnen gehört %2 nicht!"
+
+#: ../ksirk/kgamewin.cpp:1850
+msgid "Nothing to attack !"
+msgstr "Da ist nichts zum Angreifen!"
+
+#: ../ksirk/kgamewin.cpp:1857
+msgid "%1, with how many armies do you defend %2 ?"
+msgstr "%1: Mit wievielen Armeen wollen Sie %2 verteidigen?"
+
+#: ../ksirk/kgamewin.cpp:2072
+msgid "Exchange armies again or continue ?"
+msgstr "Armeen noch einmal umverteilen oder fortsetzen?"
+
+#: ../ksirk/kgamewin.cpp:2114
+msgid ""
+"You must distribute\n"
+"all your armies"
+msgstr "Sie müssen alle Ihre Armeen umverteilen!"
+
+#: ../ksirk/kgamewin.cpp:2165 ../ksirk/kgamewin.cpp:2263
+#: ../ksirk/kgamewin.cpp:2274 ../ksirk/kgamewin.cpp:2287
+#: ../ksirk/kgamewin.cpp:2491
+msgid "%1, it's up to you."
+msgstr ""
+
+#: ../ksirk/kgamewin.cpp:2180
+msgid "Attack with %1 armies : Designate the belligerants"
+msgstr "Mit %1 Armee angreifen: Bestimme den Angriffsort"
+
+#: ../ksirk/kgamewin.cpp:2246
+#, fuzzy
+msgid ""
+"<font color=\"orange\">Cannot remove %1 armies from %2</font>: %3 maximum."
+msgstr "Kann nicht %1 Armeen aus %2 entfernen. Das Maximum sind %3."
+
+#: ../ksirk/kgamewin.cpp:2317
+msgid "Do you really want to end your current game and start a new one ?"
+msgstr "Wollen Sie das aktuelle Spiel wirklich beenden und ein neues starten?"
+
+#: ../ksirk/kgamewin.cpp:2317
+msgid "New game confirmation"
+msgstr "Konfiguration neues Spiel"
+
+#: ../ksirk/kgamewin.cpp:2472
+msgid "%1, please change your distributions."
+msgstr "%1: Bitte ändern Sie nun die Aufteilung."
+
+#: ../ksirk/kgamewin.cpp:2586
+msgid ""
+"All commands are issued through changing toolbar buttons and drag & drop. "
+"Hit..."
+msgstr ""
+
+#: ../ksirk/kgamewin.cpp:2597
+#, fuzzy
+msgid " to start a new game;"
+msgstr "Neues Spiel starten oder beenden"
+
+#: ../ksirk/kgamewin.cpp:2608
+msgid " to join a network game (starting or reloading); and"
+msgstr ""
+
+#: ../ksirk/kgamewin.cpp:2619
+msgid " to open a saved game."
+msgstr ""
+
+#: ../ksirk/kgamewin.cpp:2623
+msgid ""
+"And then let the system guide you through messages and tooltips appearing on "
+"buttons when hovering above them."
+msgstr ""
+
+#: ../ksirk/decoratedgameframe.cpp:68
+#, fuzzy
+msgid ""
+"Cannot allocate timer\n"
+"Cannot continue program"
+msgstr ""
+"Kann Timer nicht starten!\n"
+"Programm muss beendet werden."
+
+#: ../ksirk/decoratedgameframe.cpp:86
+msgid ""
+"Timer removing impossible.\n"
+"Cannot continue !"
+msgstr ""
+"Kann Timer nicht stoppen!\n"
+"Programm muss beendet werden."
+
+#: ../ksirk/gestionSprites.cpp:70 ../ksirk/gestionSprites.cpp:115
+msgid "Cannot move %1 armies from %2 to %3"
+msgstr "Kann nicht %1 Armeen von %2 nach %3 bewegen!"
+
+#: ../ksirk/gestionSprites.cpp:77
+msgid "Moving %1 armies from %2 to %3"
+msgstr "Bewege %1 Armeen von %2 nach %3."
+
+#: ../ksirk/gestionSprites.cpp:135 ../ksirk/gestionSprites.cpp:237
+#: ../ksirk/gestionSprites.cpp:250 ../ksirk/gestionSprites.cpp:448
+#: ../ksirk/gestionSprites.cpp:474
+msgid ""
+"Sound roule not found - Verify your installation\n"
+"Program cannot continue"
+msgstr ""
+
+#: ../ksirk/gestionSprites.cpp:317
+msgid ""
+"Sound canon not found - Verify your installation\n"
+"Program cannot continue"
+msgstr ""
+"Kanonen-Geräusch konnte nicht gefunden werden!\n"
+"Überprüfen Sie Ihre Installation auf Vollständigkeit.\n"
+"Programm muss beendet werden."
+
+#: ../ksirk/gestionSprites.cpp:393
+msgid ""
+"Sound crash not found - Verify your installation\n"
+"Program cannot continue"
+msgstr ""
+"Crash-Geräusch konnte nicht gefunden werden!\n"
+"Überprüfen Sie Ihre Installation auf Vollständigkeit.\n"
+"Programm muss beendet werden."
+
+#: ../ksirk/gestionSprites.cpp:393
+msgid "KsirK - Error !"
+msgstr "KsirK - Fehler"
+
+#: ../ksirk/gestionSprites.cpp:484
+msgid "who should be 0, 1 or 2."
+msgstr "Wer soll 0, 1 oder 2 sein?"
+
+#: ../ksirk/main.cpp:30 ../ksirk/main.cpp:44
+msgid "KsirK"
+msgstr "KsirK"
+
+#: ../ksirk/main.cpp:36
+msgid "file to open"
+msgstr "Datei"
+
+#: ../ksirk/kgamewinslots.cpp:71
+msgid "%1 belongs to %2"
+msgstr "%1 behört zu %2"
+
+#: ../ksirk/kgamewinslots.cpp:183
+msgid "KsirK - Save Game"
+msgstr "KsirK - Spiel speichern"
+
+#: ../ksirk/kgamewinslots.cpp:192
+msgid "Only game master can save the game in network playing."
+msgstr "Nur der Master-Spieler kann ein Netzwerkspiel speichern!"
+
+#: ../ksirk/kgamewinslots.cpp:192
+msgid "KsirK - Cannot save !"
+msgstr "KsirK - Kann nicht speichern!"
+
+#: ../ksirk/_translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Robin Doer, Jens-André Koch"
+
+#: ../ksirk/_translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "robin@robind.de, jakoch@web.de"
+
+#: rc.cpp:3
+#, no-c-format
+msgid "Ksirk - New game properties"
+msgstr "Ksirk - Neues Spiel beginnen"
+
+#: rc.cpp:6
+#, no-c-format
+msgid "Number of players:"
+msgstr "Spieleranzahl:"
+
+#: rc.cpp:9
+#, no-c-format
+msgid "Skin:"
+msgstr "Skin:"
+
+#: rc.cpp:12
+#, no-c-format
+msgid "Spin this to choose the number of players."
+msgstr "Benutze das Drehfeld um die Anzahl der Spieler festzulegen."
+
+#: rc.cpp:15
+#, no-c-format
+msgid "A spin box to choose the number of players"
+msgstr "Ein Drehfeld um die Anzahl der Spieler festzulegen."
+
+#: rc.cpp:18
+#, no-c-format
+msgid "textLabel1"
+msgstr ""
+
+#: rc.cpp:21
+#, no-c-format
+msgid "Choose the skin (map, nationalities, etc.) to use for this game."
+msgstr "Bestimme das Aussehen (map, nationalities, usw.) für dieses Spiel."
+
+#: rc.cpp:24
+#, no-c-format
+msgid "A combo listing all the available skins."
+msgstr "Dieses Auswahlfeld zeigt alle verfügbaren "
+
+#: rc.cpp:27
+#, no-c-format
+msgid "Goal Mode"
+msgstr "Ziel Modus"
+
+#: rc.cpp:30
+#, no-c-format
+msgid "Reach a goal"
+msgstr "Erreiche ein Ziel"
+
+#: rc.cpp:34
+#, no-c-format
+msgid "Choose this to have a goal assigned to each player."
+msgstr "Wähle dies, um für jeden Spieler ein Spielziel festzulegen."
+
+#: rc.cpp:37
+#, no-c-format
+msgid ""
+"In this mode, a goal will be assigned to each player, which he will have to "
+"reach in order to win."
+msgstr ""
+"In diesem Modus, wird für jeden Spieler ein Ziel festgelegt,\n"
+"dass er erreichen muss um zu gewinnen."
+
+#: rc.cpp:40
+#, no-c-format
+msgid "Wor&ld conquest"
+msgstr "Weltherrschaft"
+
+#: rc.cpp:43
+#, fuzzy, no-c-format
+msgid "Alt+L"
+msgstr "ALT+C"
+
+#: rc.cpp:46
+#, no-c-format
+msgid "Choose this for players to have to conquer all the world to win."
+msgstr "Wähle dies, damit Spieler die Weltherrschaft zum Sieg benötigen."
+
+#: rc.cpp:49
+#, no-c-format
+msgid "In this mode, a player will have to conquer all the world to win."
+msgstr ""
+"In diesem Modus muss der Spieler die gesamte Welt erobern um zu gewinnen."
+
+#: rc.cpp:55
+#, no-c-format
+msgid "F1"
+msgstr "F1"
+
+#: rc.cpp:66
+#, fuzzy, no-c-format
+msgid "Ne&twork game"
+msgstr "&Netzwerkspiel"
+
+#: rc.cpp:69
+#, fuzzy, no-c-format
+msgid "Alt+T"
+msgstr "ALT+C"
+
+#: rc.cpp:72
+#, no-c-format
+msgid "Check this to create a network game"
+msgstr "Kontrollkästchen aktivieren, um ein Netzwerkspiel zu erzeugen"
+
+#: rc.cpp:75
+#, no-c-format
+msgid "A network game will be created if checked"
+msgstr ""
+"Wenn dieses Kontrollkästchen aktiviert ist,\n"
+"dann wird ein Netzwerkspiel erzeugt."
+
+#: rc.cpp:78
+#, no-c-format
+msgid "Player setup"
+msgstr "Spieler-Einstellungen"
+
+#: rc.cpp:81 rc.cpp:113
+#, no-c-format
+msgid "Choose your nation"
+msgstr "Wählen Sie eine Nation"
+
+#: rc.cpp:84 rc.cpp:116
+#, no-c-format
+msgid ""
+"A combo box that lists currently available nations.\n"
+"Choose one of them. It will be your nation during the game"
+msgstr ""
+"Dieses Auswahlfeld enthält alle zurzeit verfügbaren Nationen.\n"
+"Wählen Sie eine aus. Mit dieser Nation werden Sie spielen."
+
+#: rc.cpp:88
+#, no-c-format
+msgid "Player number %d, please enter your name<br>and choose your nation :"
+msgstr "Spieler %d:<br> Bitte geben Sie Ihren Namen an und wählen eine Nation:"
+
+#: rc.cpp:91
+#, no-c-format
+msgid "Pla&yer is computer"
+msgstr "&Computerspieler"
+
+#: rc.cpp:94
+#, no-c-format
+msgid "Alt+Y"
+msgstr "ALT+C"
+
+#: rc.cpp:98 rc.cpp:110
+#, no-c-format
+msgid "Enter your password :"
+msgstr "Bitte geben Sie Ihr Passwort ein:"
+
+#: rc.cpp:104
+#, no-c-format
+msgid "Saved player selection"
+msgstr "Gespeicherten Spieler auswählen"
+
+#: rc.cpp:107
+#, no-c-format
+msgid "Please select your saved player:"
+msgstr "Bitte wählen Sie Ihren gespeicherten Spieler aus:"
+
+#: rc.cpp:123
+#, no-c-format
+msgid "New Game or Exit"
+msgstr ""
+
+#: rc.cpp:130
+#, fuzzy, no-c-format
+msgid "Starts a new game"
+msgstr "Neues Spiel starten oder beenden"
+
+#: rc.cpp:133
+#, no-c-format
+msgid "Do Nothing"
+msgstr ""
+
+#: rc.cpp:136
+#, no-c-format
+msgid "Do nothing. Game buttons will be available"
+msgstr ""
+
+#: rc.cpp:142
+#, fuzzy, no-c-format
+msgid "Quit KsirK"
+msgstr "KsirK"
+
+#: rc.cpp:145
+#, fuzzy, no-c-format
+msgid "%1 won ! Do you want to play again ?"
+msgstr ""
+"%1, Sie haben gewonnen!\n"
+"Möchten Sie nocheinmal spielen?"
+
+#: rc.cpp:148
+#, no-c-format
+msgid "KsirK Preferences"
+msgstr ""
+
+#: rc.cpp:151
+#, no-c-format
+msgid "Sound enabled"
+msgstr ""
+
+#: rc.cpp:154
+#, no-c-format
+msgid "Sprites speed (slow, normal, rapid, immediate)"
+msgstr ""
+
+#: rc.cpp:157
+#, no-c-format
+msgid ""
+"This skin shows a world that looks like the real one with some nationalities "
+"randomly chosen and proposes various interesting goals"
+msgstr ""
+
+#: rc.cpp:160 rc.cpp:190
+#, no-c-format
+msgid ""
+"%1, you'll have to conquer %2 countries and place %3 armies in each one."
+msgstr ""
+
+#: rc.cpp:163 rc.cpp:193
+#, no-c-format
+msgid "%1, you'll have to conquer %2 countries."
+msgstr ""
+
+#: rc.cpp:166 rc.cpp:196
+#, no-c-format
+msgid "%1, you'll have to conquer %2, %3 and another continent at your choice."
+msgstr ""
+
+#: rc.cpp:169 rc.cpp:172 rc.cpp:175 rc.cpp:178 rc.cpp:181 rc.cpp:199
+#: rc.cpp:202 rc.cpp:205 rc.cpp:208 rc.cpp:211
+#, no-c-format
+msgid "%1, you'll have to conquer %2 and %3."
+msgstr ""
+
+#: rc.cpp:184 rc.cpp:214
+#, no-c-format
+msgid ""
+"%1, you'll have to eliminate %2. If it is eliminated by another player, "
+"you'll have to conquer %3 countries."
+msgstr ""
+
+#: rc.cpp:187
+#, no-c-format
+msgid ""
+"This skin shows a world that looks like the real one with some nationalities "
+"randomly chosen and proposes various interesting goals. Sprites are "
+"realistic."
+msgstr ""
+
+#: rc.cpp:217
+#, no-c-format
+msgid "Earth-like"
+msgstr ""
+
+#: rc.cpp:220
+#, no-c-format
+msgid "Western US"
+msgstr ""
+
+#: rc.cpp:223
+#, no-c-format
+msgid "Eastern US"
+msgstr ""
+
+#: rc.cpp:226 rc.cpp:547
+#, no-c-format
+msgid "Quebec"
+msgstr ""
+
+#: rc.cpp:229 rc.cpp:544
+#, no-c-format
+msgid "Ontario"
+msgstr ""
+
+#: rc.cpp:232 rc.cpp:532
+#, no-c-format
+msgid "Alberta"
+msgstr ""
+
+#: rc.cpp:235 rc.cpp:526
+#, no-c-format
+msgid "Alaska"
+msgstr ""
+
+#: rc.cpp:238
+#, no-c-format
+msgid "Groenland"
+msgstr ""
+
+#: rc.cpp:241
+#, no-c-format
+msgid "Mexico"
+msgstr ""
+
+#: rc.cpp:244
+#, no-c-format
+msgid "Colombia"
+msgstr ""
+
+#: rc.cpp:247
+#, no-c-format
+msgid "Brasil"
+msgstr ""
+
+#: rc.cpp:250
+#, no-c-format
+msgid "Paraguay"
+msgstr ""
+
+#: rc.cpp:253
+#, no-c-format
+msgid "Chili"
+msgstr ""
+
+#: rc.cpp:256
+#, no-c-format
+msgid "Island"
+msgstr ""
+
+#: rc.cpp:259 rc.cpp:349 rc.cpp:655
+#, no-c-format
+msgid "United Kingdom"
+msgstr ""
+
+#: rc.cpp:262
+#, no-c-format
+msgid "Benelux"
+msgstr ""
+
+#: rc.cpp:265 rc.cpp:346 rc.cpp:652
+#, no-c-format
+msgid "France"
+msgstr ""
+
+#: rc.cpp:268
+#, no-c-format
+msgid "Prussia"
+msgstr ""
+
+#: rc.cpp:271 rc.cpp:568
+#, no-c-format
+msgid "Scandinavia"
+msgstr ""
+
+#: rc.cpp:274
+#, no-c-format
+msgid "Russia"
+msgstr ""
+
+#: rc.cpp:277
+#, no-c-format
+msgid "Iran"
+msgstr ""
+
+#: rc.cpp:280 rc.cpp:610
+#, no-c-format
+msgid "China"
+msgstr ""
+
+#: rc.cpp:283
+#, no-c-format
+msgid "Pakistan"
+msgstr ""
+
+#: rc.cpp:286
+#, no-c-format
+msgid "Kazakstan"
+msgstr ""
+
+#: rc.cpp:289 rc.cpp:604
+#, no-c-format
+msgid "Siberia"
+msgstr ""
+
+#: rc.cpp:292 rc.cpp:631
+#, no-c-format
+msgid "Mongolia"
+msgstr ""
+
+#: rc.cpp:295 rc.cpp:358 rc.cpp:634 rc.cpp:664
+#, no-c-format
+msgid "Japan"
+msgstr ""
+
+#: rc.cpp:298
+#, no-c-format
+msgid "Algeria"
+msgstr ""
+
+#: rc.cpp:301
+#, no-c-format
+msgid "Niger"
+msgstr ""
+
+#: rc.cpp:304 rc.cpp:589
+#, no-c-format
+msgid "Egypt"
+msgstr ""
+
+#: rc.cpp:307
+#, no-c-format
+msgid "Gabon"
+msgstr ""
+
+#: rc.cpp:310
+#, no-c-format
+msgid "Zair"
+msgstr ""
+
+#: rc.cpp:313
+#, no-c-format
+msgid "South Africa"
+msgstr ""
+
+#: rc.cpp:316 rc.cpp:601
+#, no-c-format
+msgid "Madagascar"
+msgstr ""
+
+#: rc.cpp:319
+#, no-c-format
+msgid "Arabia"
+msgstr ""
+
+#: rc.cpp:322
+#, no-c-format
+msgid "Middle East"
+msgstr ""
+
+#: rc.cpp:325 rc.cpp:619
+#, no-c-format
+msgid "India"
+msgstr ""
+
+#: rc.cpp:328
+#, no-c-format
+msgid "Vietnam"
+msgstr ""
+
+#: rc.cpp:331 rc.cpp:640
+#, no-c-format
+msgid "Indonesia"
+msgstr ""
+
+#: rc.cpp:334
+#, no-c-format
+msgid "Papouasie"
+msgstr ""
+
+#: rc.cpp:337
+#, no-c-format
+msgid "Occidental Australia"
+msgstr ""
+
+#: rc.cpp:340
+#, no-c-format
+msgid "New South Walles"
+msgstr ""
+
+#: rc.cpp:343
+#, no-c-format
+msgid "New Zealand"
+msgstr ""
+
+#: rc.cpp:352 rc.cpp:658
+#, no-c-format
+msgid "United States"
+msgstr ""
+
+#: rc.cpp:355 rc.cpp:661
+#, no-c-format
+msgid "Belgium"
+msgstr ""
+
+#: rc.cpp:361 rc.cpp:667
+#, no-c-format
+msgid "Italy"
+msgstr ""
+
+#: rc.cpp:364
+#, no-c-format
+msgid "North America"
+msgstr ""
+
+#: rc.cpp:367
+#, no-c-format
+msgid "South America"
+msgstr ""
+
+#: rc.cpp:370 rc.cpp:676
+#, no-c-format
+msgid "Europe"
+msgstr ""
+
+#: rc.cpp:373 rc.cpp:679
+#, no-c-format
+msgid "Africa"
+msgstr ""
+
+#: rc.cpp:376 rc.cpp:682
+#, no-c-format
+msgid "Asia"
+msgstr ""
+
+#: rc.cpp:379
+#, no-c-format
+msgid "Pacific"
+msgstr ""
+
+#: rc.cpp:382
+#, no-c-format
+msgid "Bubble World"
+msgstr ""
+
+#: rc.cpp:385
+#, no-c-format
+msgid "Bubbol"
+msgstr ""
+
+#: rc.cpp:388
+#, no-c-format
+msgid "Bubblea"
+msgstr ""
+
+#: rc.cpp:391
+#, no-c-format
+msgid "Gobol"
+msgstr ""
+
+#: rc.cpp:394
+#, no-c-format
+msgid "Glup"
+msgstr ""
+
+#: rc.cpp:397
+#, no-c-format
+msgid "Albic"
+msgstr ""
+
+#: rc.cpp:400
+#, no-c-format
+msgid "Alub"
+msgstr ""
+
+#: rc.cpp:403
+#, no-c-format
+msgid "Groland"
+msgstr ""
+
+#: rc.cpp:406
+#, no-c-format
+msgid "Mexio"
+msgstr ""
+
+#: rc.cpp:409
+#, no-c-format
+msgid "Colimo"
+msgstr ""
+
+#: rc.cpp:412
+#, no-c-format
+msgid "Brawad"
+msgstr ""
+
+#: rc.cpp:415
+#, no-c-format
+msgid "Paruby"
+msgstr ""
+
+#: rc.cpp:418
+#, no-c-format
+msgid "Chobu"
+msgstr ""
+
+#: rc.cpp:421
+#, no-c-format
+msgid "Isly"
+msgstr ""
+
+#: rc.cpp:424
+#, no-c-format
+msgid "Modgnik"
+msgstr ""
+
+#: rc.cpp:427
+#, no-c-format
+msgid "Xuleneb"
+msgstr ""
+
+#: rc.cpp:430 rc.cpp:493
+#, no-c-format
+msgid "Ecnarf"
+msgstr ""
+
+#: rc.cpp:433
+#, no-c-format
+msgid "Aissurp"
+msgstr ""
+
+#: rc.cpp:436
+#, no-c-format
+msgid "Aivani"
+msgstr ""
+
+#: rc.cpp:439
+#, no-c-format
+msgid "Aissur"
+msgstr ""
+
+#: rc.cpp:442
+#, no-c-format
+msgid "Nari"
+msgstr ""
+
+#: rc.cpp:445
+#, no-c-format
+msgid "Anihc"
+msgstr ""
+
+#: rc.cpp:448
+#, no-c-format
+msgid "Natsikap"
+msgstr ""
+
+#: rc.cpp:451
+#, no-c-format
+msgid "Natskazak"
+msgstr ""
+
+#: rc.cpp:454
+#, no-c-format
+msgid "Airebis"
+msgstr ""
+
+#: rc.cpp:457
+#, no-c-format
+msgid "Ailognom"
+msgstr ""
+
+#: rc.cpp:460
+#, no-c-format
+msgid "Napaj"
+msgstr ""
+
+#: rc.cpp:463
+#, no-c-format
+msgid "Airegla"
+msgstr ""
+
+#: rc.cpp:466
+#, no-c-format
+msgid "Regin"
+msgstr ""
+
+#: rc.cpp:469
+#, no-c-format
+msgid "Tpyge"
+msgstr ""
+
+#: rc.cpp:472
+#, no-c-format
+msgid "Nobag"
+msgstr ""
+
+#: rc.cpp:475
+#, no-c-format
+msgid "Riaz"
+msgstr ""
+
+#: rc.cpp:478
+#, no-c-format
+msgid "Acirfa"
+msgstr ""
+
+#: rc.cpp:481
+#, no-c-format
+msgid "Racsagadam"
+msgstr ""
+
+#: rc.cpp:484
+#, no-c-format
+msgid "Tsea"
+msgstr ""
+
+#: rc.cpp:487
+#, no-c-format
+msgid "Aibara"
+msgstr ""
+
+#: rc.cpp:490
+#, no-c-format
+msgid "Aidni"
+msgstr ""
+
+#: rc.cpp:496
+#, no-c-format
+msgid "Golum"
+msgstr ""
+
+#: rc.cpp:499
+#, no-c-format
+msgid "Protuk"
+msgstr ""
+
+#: rc.cpp:502
+#, no-c-format
+msgid "Blawa"
+msgstr ""
+
+#: rc.cpp:505
+#, no-c-format
+msgid "Groubi"
+msgstr ""
+
+#: rc.cpp:508
+#, no-c-format
+msgid "Blup"
+msgstr ""
+
+#: rc.cpp:511
+#, no-c-format
+msgid "Dawco"
+msgstr ""
+
+#: rc.cpp:514
+#, no-c-format
+msgid "Kuliga"
+msgstr ""
+
+#: rc.cpp:517
+#, no-c-format
+msgid "Gum"
+msgstr ""
+
+#: rc.cpp:520
+#, no-c-format
+msgid "Pangee"
+msgstr ""
+
+#: rc.cpp:523
+#, no-c-format
+msgid "Real Politiks"
+msgstr ""
+
+#: rc.cpp:529
+#, no-c-format
+msgid "North-West-Territory"
+msgstr ""
+
+#: rc.cpp:535
+#, no-c-format
+msgid "Western-United-States"
+msgstr ""
+
+#: rc.cpp:538
+#, no-c-format
+msgid "Central-America"
+msgstr ""
+
+#: rc.cpp:541
+#, no-c-format
+msgid "Greenland"
+msgstr ""
+
+#: rc.cpp:550
+#, no-c-format
+msgid "Eastern-United-States"
+msgstr ""
+
+#: rc.cpp:553
+#, no-c-format
+msgid "Venezuela"
+msgstr ""
+
+#: rc.cpp:556
+#, no-c-format
+msgid "Peru"
+msgstr ""
+
+#: rc.cpp:559
+#, no-c-format
+msgid "Brazil"
+msgstr ""
+
+#: rc.cpp:562
+#, no-c-format
+msgid "Argentina"
+msgstr ""
+
+#: rc.cpp:565
+#, no-c-format
+msgid "Iceland"
+msgstr ""
+
+#: rc.cpp:571
+#, no-c-format
+msgid "Ukraine"
+msgstr ""
+
+#: rc.cpp:574
+#, no-c-format
+msgid "Great-Britain"
+msgstr ""
+
+#: rc.cpp:577
+#, no-c-format
+msgid "Northern-Europe"
+msgstr ""
+
+#: rc.cpp:580
+#, no-c-format
+msgid "Western-Europe"
+msgstr ""
+
+#: rc.cpp:583
+#, no-c-format
+msgid "Southern-Europe"
+msgstr ""
+
+#: rc.cpp:586
+#, no-c-format
+msgid "North-Africa"
+msgstr ""
+
+#: rc.cpp:592
+#, no-c-format
+msgid "Congo"
+msgstr ""
+
+#: rc.cpp:595
+#, no-c-format
+msgid "East-Africa"
+msgstr ""
+
+#: rc.cpp:598
+#, no-c-format
+msgid "South-Africa"
+msgstr ""
+
+#: rc.cpp:607
+#, no-c-format
+msgid "Ural"
+msgstr ""
+
+#: rc.cpp:613
+#, no-c-format
+msgid "Afghanistan"
+msgstr ""
+
+#: rc.cpp:616
+#, no-c-format
+msgid "Middle-East"
+msgstr ""
+
+#: rc.cpp:622
+#, no-c-format
+msgid "Siam"
+msgstr ""
+
+#: rc.cpp:625
+#, no-c-format
+msgid "Yakutsk"
+msgstr ""
+
+#: rc.cpp:628
+#, no-c-format
+msgid "Irkutsk"
+msgstr ""
+
+#: rc.cpp:637
+#, no-c-format
+msgid "Kamchatka"
+msgstr ""
+
+#: rc.cpp:643
+#, no-c-format
+msgid "New-Guinea"
+msgstr ""
+
+#: rc.cpp:646
+#, no-c-format
+msgid "Western-Australia"
+msgstr ""
+
+#: rc.cpp:649
+#, no-c-format
+msgid "Eastern-Australia"
+msgstr ""
+
+#: rc.cpp:670
+#, no-c-format
+msgid "North-America"
+msgstr ""
+
+#: rc.cpp:673
+#, no-c-format
+msgid "South-America"
+msgstr ""
+
+#: rc.cpp:685
+#, no-c-format
+msgid "Australia"
+msgstr ""
+
+#, fuzzy
+#~ msgid "Network Chat..."
+#~ msgstr "&Netzwerkspiel"
+
+#~ msgid "(%1) <-> (%2) ; Attacker loses %3 armies; Defender loses %4 armies."
+#~ msgstr ""
+#~ "%1 - %2: Angreifer verliert %3 Armeen, Verteidiger verliert %4 Armeen."
+
+#~ msgid ""
+#~ "(%1, %2) <-> (%3) ; Attacker loses %4 armies; Defender loses %5 armies."
+#~ msgstr ""
+#~ "(%1, %2) - %3: Angreifer verlieren %4 Armeen, Verteidiger verliert %5 "
+#~ "Armeen."
+
+#~ msgid ""
+#~ "(%1, %2) <-> (%3, %4) ; Attacker loses %5 armies; Defender loses %6 "
+#~ "armies."
+#~ msgstr ""
+#~ "(%1, %2) - (%3, %4): Angreifer verlieren %5 Armeen, Verteidiger verlieren "
+#~ "%6 Armeen."
+
+#~ msgid ""
+#~ "(%1, %2, %3) <-> (%4) ; Attacker loses %5 armies; Defender loses %6 "
+#~ "armies."
+#~ msgstr ""
+#~ "(%1, %2, %3) - %4: Angreifer verlieren %5 Armeen, Verteidiger verliert %6 "
+#~ "Armeen."
+
+#~ msgid ""
+#~ "(%1, %2, %3) <-> (%4, %5) ; Attacker loses %6 armies; Defender loses %7 "
+#~ "armies."
+#~ msgstr ""
+#~ "(%1, %2, %3) - (%4, %5): Angreifer verlieren %6 Armeen, Verteidiger "
+#~ "verlieren %7 Armeen."
+
+#, fuzzy
+#~ msgid "Battle between %1 with %2 armies and %3 with %4 armies."
+#~ msgstr "%1 aus %3 greift %2 mit %4 Armeen an."
+
+#~ msgid "No country here !"
+#~ msgstr "Hier ist kein Land!"
+
+#~ msgid ""
+#~ "Map image file not found\n"
+#~ "Program cannot continue"
+#~ msgstr ""
+#~ "Map-Abbilddatei konnte nicht gefunden werden!\n"
+#~ "Programm muss beendet werden."
+
+#~ msgid ""
+#~ "Cannot load map image\n"
+#~ "Program cannot continue"
+#~ msgstr ""
+#~ "Kann Map-Abbild nicht laden!\n"
+#~ "Programm muss beendet werden."
+
+#~ msgid "(%1, %2) <-> (%3, %4)"
+#~ msgstr "(%1, %2) - (%3, %4)"
+
+#, fuzzy
+#~ msgid "KsirK - End  of Game !"
+#~ msgstr "KsirK - Spiel laden"
+
+#, fuzzy
+#~ msgid "%1, you won ! Do you want to play again ?"
+#~ msgstr ""
+#~ "%1, Sie haben gewonnen!\n"
+#~ "Möchten Sie nocheinmal spielen?"
+
+#~ msgid "Cannot move %1 armies from %1 to %2"
+#~ msgstr "Kann nicht %1 Armeen von %2 nach %3 bewegen!"
+
+#~ msgid "Ksirk::NewGameDialogImpl"
+#~ msgstr "Ksirk::NewGameDialogImpl"
+
+#~ msgid "Ksirk::KWaitedPlayerSetupDialog"
+#~ msgstr "Ksirk::KWaitedPlayerSetupDialog"
+
+#~ msgid "Ksirk::KPlayerSetupDialog"
+#~ msgstr "Ksirk::KPlayerSetupDialog"
+
+#~ msgid "Ksirk::GameLogic::AIPlayer"
+#~ msgstr "Ksirk::GameLogic::AIPlayer"
+
+#~ msgid "Ksirk::GameLogic::Country"
+#~ msgstr "Ksirk::GameLogic::Country"
+
+#~ msgid "Ksirk::GameLogic::Player"
+#~ msgstr "Ksirk::GameLogic::Player"
+
+#~ msgid "Ksirk::GameLogic::GameAutomaton"
+#~ msgstr "Ksirk::GameLogic::Player"
+
+#~ msgid "Ksirk::DecoratedGameFrame"
+#~ msgstr "Ksirk::DecoratedGameFrame"
+
+#~ msgid "Ksirk::KGameWindow"
+#~ msgstr "Ksirk::KGameWindow"
+
+#~ msgid "Alt+N"
+#~ msgstr "Alt+N"

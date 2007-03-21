@@ -1,0 +1,280 @@
+/***************************************************************************
+                          onu.h  -  description
+                             -------------------
+    begin                : Wed Jul 18 2001
+    copyright            : (C) 2001 by Gaël de Chalendar
+    email                : Gael.de.Chalendar@free.fr
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+#define KDE_NO_COMPAT
+
+#ifndef ONU_H
+#define ONU_H
+
+#include <qdatastream.h>
+#include <QPixmap>
+#include <QFont>
+#include <QSvgRenderer>
+
+#include "country.h"
+#include "continent.h"
+#include "nationality.h"
+
+#include <iostream>
+#include <vector>
+
+namespace Ksirk
+{
+
+namespace GameLogic
+{
+
+class Country;
+
+/**
+  * Class ONU (Organisation des Nations Unies = UNO : United Nations 
+  * Organization) is simply the list of the countries. The data definining 
+  * each country is loaded from an XML configuration file located in the
+  * current skin data directory
+  */
+class ONU
+{
+public:
+  /**
+    * Constructor
+    * @param configFileName The name of the XML file defining this world. Built
+    * from the current skin dir and a default file name.
+    */
+  ONU(const QString& configFileName);
+  
+  /** Default destructor */
+  virtual ~ONU() {}
+  
+  //{@
+  /**
+   * Accessors
+   */
+  const QString& skin() const {return m_skin;}
+  const QString& name() const {return m_name;}
+  const QString& description() const {return m_description;}
+  const QString& mapFileName() const;
+  const QPixmap& map() const {return m_map;}
+  const QPixmap& snapshot() const {return m_snapshot;}
+  unsigned int width() const;
+  unsigned int height() const;
+  //@}
+  
+  /**
+    * This method returns a pointer to the country that contains the given 
+    * point. If there is no country there, the functions returns 0.
+    * @param point The point where to search for a country in the map mask
+    * @return The country at the given point or 0 if there is no country there.
+    */
+  Country* countryAt(QPointF point);
+
+  /**
+    * Calls its reset method for each country
+    */
+  void reset();
+
+  /**
+    * Return the countries list
+    */
+  std::vector<Country*>& getCountries();
+  
+  /**
+    * Returns the nationalities list
+    */
+  std::vector<Nationality*>& getNationalities();
+
+  //@{
+  /** Read property of std::vector<Continent*> continents. */
+  std::vector<Continent*>& getContinents();
+  const std::vector<Continent*>& getContinents() const;
+  //@}
+
+  /**
+    * Retrieves the continent with the given id
+    * @param id The id of the continent to retrieve
+    * @return A pointer to the retrieved continent or 0 if there is no 
+    * continent with the given id.
+    */
+  const Continent* continentWithId(const unsigned int id) const;
+  
+  /** 
+    * Returns the list of countries neighbours of the parameter country that 
+    * belongs to the argument player.
+    * @param country The country whose neighbours have to be tested
+    * @param player The countries that belong to this player will be retrieved
+    * @return A vector of pointers on countries neighbour to the given country 
+    * and belonging to the given player.
+    */
+  std::vector<Country*> neighboursBelongingTo(const Country& country, const Player* player);
+
+  /** Returns the list of countries neighbours of the parameter country that 
+    * does not belong to the argument player.
+    * @param country The country whose neighbours have to be tested
+    * @param player The countries that do not belong to this player will be 
+    * retrieved
+    * @return A vector of pointers on countries neighbour to the given country 
+    * and not belonging to the given player.
+    */
+    std::vector<Country*> neighboursNotBelongingTo(const Country& country, const Player* player);
+
+  /** 
+    * Returns the country named "name" ; 0 in case there is no such country.
+    * @param name The name of the country to retrieve.
+    * @return The country named name or 0 if there is no such country.
+    */
+  Country* countryNamed(const QString& name);
+
+  /** 
+    * Gets the number of countries in the world
+    * @return The number of countries in the world 
+    */
+  unsigned int getNbCountries() const;
+
+  /**
+    * Saves a XML representation of the world for game saving purpose
+    * @param xmlStream The stream to write on
+    */
+  void saveXml(std::ostream& xmlStream);
+  
+  /** 
+    * Returns the nation named "name" ; 0 in case there is no such nation 
+    * @param name The name of the nation to retrieve.
+    * @return The nation named name or 0 if there is no such nation.
+    */
+  Nationality* nationNamed(const QString& name);
+  
+  /**
+    * Transmit countries data to all network clients of the game. Called once
+    * during finalization of network game start.
+    * @param stream The stream to write countries data on
+    */
+  void sendCountries(QDataStream& stream);
+  
+  /** 
+    * Returns the continent named "name" ; 0 in case there is no such continent 
+    * @param name The name of the continent to retrieve.
+    * @return The continent named name or 0 if there is no such continent.
+    */
+  Continent* continentNamed(const QString& name);
+    
+private:
+  /**
+    * All data that have to be stored about the font to display countries names
+    * in this world's skin
+    */
+  struct FontDesc
+  {
+    QString family;
+    uint size;
+    QFont::Weight weight;
+    bool italic;
+    QString foregroundColor;
+    QString backgroundColor;
+  };
+  
+  /**
+    * The name of the XML file containing the world's definition
+    */
+  QString m_configFileName;
+  
+  /**
+    * The displayable name of the skin
+    */
+  QString m_name;
+  
+  /**
+    * The displayable long description of the skin
+    */
+  QString m_description;
+  
+  /**
+    * The map used by this skin, built at the proper size from its SVG source 
+    * and decorated with countries names 
+    */
+  QPixmap m_map;
+  
+  /**
+    * A snaphsot of a running game with this skin. Used at skin choice time.
+    */
+  QPixmap m_snapshot;
+  
+  /**
+    * The name of the SVG file containing the world's map
+    */
+  QString m_mapFileName;
+  
+  //@{
+  /**
+    * The width and height of the map file (will be used as canvas size). These
+    * measures do not take into account the zoom factor.
+    */
+  unsigned int m_width;
+  unsigned int m_height;
+  //@}
+
+  /**
+    * The list of countries
+    */
+  std::vector<Country*> countries;
+
+  /**
+    * The list of nationalities
+    */
+  std::vector<Nationality*> nationalities;
+
+  /**
+    * The continents of the world
+    */
+  std::vector<Continent*> m_continents;
+
+  /**
+    * This image stores the mask that defines the countries of the world.
+    * The blue RGB component value of each pixel gives the index of the
+    * country in the countries list.
+    */
+  QImage countriesMask;
+  
+  /**
+    * The path to the skin ; relative to the ksirk data dir ; loaded from the 
+    * XML file
+    */
+  QString m_skin;
+  
+  /** 
+    * The description of the font used to draw countries names onto the map.
+    */
+  FontDesc m_font;
+  
+  /** 
+    * Zoom factor
+    */
+  double m_zoom;
+
+  /**
+    * This SVG renderer stores the SVG file of the map, renders it at the
+    * desired zoom factor and the result is used to build the map image.
+    */
+  QSvgRenderer m_renderer;
+
+  /**
+   * Build the map from it's stored image and the countries names
+   */
+  void buildMap();
+};
+
+}
+}
+#endif // ONU_H
+

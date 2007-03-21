@@ -1,0 +1,21 @@
+pkgname=ksirk
+pkgver=1.8beta1
+pkgrel=1
+pkgdesc="KsirK is a strategy game for KDE inspired by the well known game Risk."
+url='http://www.kde-apps.org/content/show.php?content=21450'
+license="GPL"
+depends=('kdebase')
+makedepends=()
+conflicts=()
+replaces=()
+backup=()
+install=
+source=(http://download.gna.org/ksirk/ksirk-1.8beta8.tar.bz2)
+md5sums=(b199a0ce22a64c99144f6449f6403b39)
+
+build() {
+  cd $startdir/src/ksirk-1.8beta1
+  ./configure --prefix=$(kde-config --prefix)
+  make || return 1
+  ./waf.py --destdir=$startdir/pkg install
+}

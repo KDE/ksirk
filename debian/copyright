@@ -1,0 +1,18 @@
+This package was debianized by Christian Britz <cbritz@gmx.net> on
+Mon Sep 25 19:05:33 UTC 2006
+
+It was downloaded from <http://download.gna.org/ksirk/>
+
+Upstream Author: Gael de Chalendar aka Kleag <kleag@free.fr>
+                 
+                 Contributions (list started lately ; some are missing)
+                 Robin Doer
+                 Albert Astals Cid
+                 Michal Golunski (Polish translation)
+                 Dan Keshet
+
+License:
+  GNU GENERAL PUBLIC LICENSE Version 2, June 1991
+
+On Debian systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.

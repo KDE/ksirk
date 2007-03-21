@@ -1,0 +1,7 @@
+#! /usr/bin/env python
+# encoding: utf-8
+# Thomas Nagy, 2006 (ita)
+
+#from Object import createObj
+def build(bld):
+	obj=bld.create_obj('kde_translations', 'ksirk')

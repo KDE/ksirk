@@ -1,0 +1,157 @@
+<ui version="4.0" >
+ <class>QPlayerSetupDialog</class>
+ <widget class="QDialog" name="QPlayerSetupDialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>499</width>
+    <height>239</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Player setup</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset/>
+  </property>
+  <widget class="QComboBox" name="nationCombo" >
+   <property name="geometry" >
+    <rect>
+     <x>260</x>
+     <y>70</y>
+     <width>170</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="toolTip" >
+    <string>Choose your nation</string>
+   </property>
+   <property name="whatsThis" >
+    <string>A combo box that lists currently available nations.
+Choose one of them. It will be your nation during the game</string>
+   </property>
+   <property name="duplicatesEnabled" >
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="TextLabel1" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>424</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text" >
+    <string>Player number %d, please enter your name&lt;br>and choose your nation :</string>
+   </property>
+   <property name="wordWrap" >
+    <bool>false</bool>
+   </property>
+   <property name="buddy" >
+    <cstring></cstring>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="CheckBox1" >
+   <property name="geometry" >
+    <rect>
+     <x>130</x>
+     <y>200</y>
+     <width>300</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Pla&amp;yer is computer</string>
+   </property>
+   <property name="shortcut" >
+    <string>Alt+Y</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="LineEdit2" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>70</y>
+     <width>220</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="maxLength" >
+    <number>30</number>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignLeading</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="passwordLabel" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>120</y>
+     <width>220</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Enter your password :</string>
+   </property>
+   <property name="wordWrap" >
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="PushButton1" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>190</y>
+     <width>104</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>OK</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="passwordEdit" >
+   <property name="enabled" >
+    <bool>true</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>150</y>
+     <width>220</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="maxLength" >
+    <number>8</number>
+   </property>
+   <property name="echoMode" >
+    <enum>QLineEdit::Password</enum>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <tabstops>
+  <tabstop>LineEdit2</tabstop>
+  <tabstop>nationCombo</tabstop>
+  <tabstop>CheckBox1</tabstop>
+  <tabstop>passwordEdit</tabstop>
+  <tabstop>PushButton1</tabstop>
+ </tabstops>
+ <includes>
+  <include location="local" >kpassworddialog.h</include>
+ </includes>
+ <resources/>
+ <connections/>
+</ui>

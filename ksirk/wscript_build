@@ -1,0 +1,329 @@
+#! /usr/bin/env python
+# encoding: utf-8
+# Thomas Nagy, 2006 (ita)
+
+#from Object import createObj
+obj = bld.create_obj('kde', 'program')
+#obj.find_sources_in_dirs('.')
+obj.source = """
+"""
+
+obj.uselib = 'QT KDECORE KIO KPARTS KMDI KDEPRINT KDEGAMES CRYPT'
+obj.uselib_local = 'ksirk_dialogs ksirk_gamelogic ksirk_saveload ksirk_sprites'
+obj.target = 'ksirk'
+#obj.env.appendValue('LINKFLAGS', ['-export-dynamic'])
+#obj.env.appendValue('CPPFLAGS',  ['-trigraphs'])
+obj.includes = '../kgame-patch . Dialogs GameLogic SaveLoad Sprites'
+
+install_files('KDE_XDG',  '',             'ksirk.desktop')
+
+for size in ['16', '32', '48']:
+	install_as( 'KDE_ICONS', '/hicolor/%sx%s/apps/ksirk.png' % (size, size), 'hi%s-app-ksirk.png' % size)
+for size in ['16', '32']:
+	install_as( 'KDE_ICONS', '/locolor/%sx%s/apps/ksirk.png' % (size, size), 'lo%s-app-ksirk.png' % size)
+
+
+install_files('KDE_DATA', 'ksirk/skins/', 'skins/skinsdir')
+
+install_files('KDE_DATA', 'ksirk/skins/bubble/Data',     'skins/bubble/Data/onu.xml')
+install_files('KDE_DATA', 'ksirk/skins/default/Data',    'skins/default/Data/onu.xml')
+install_files('KDE_DATA', 'ksirk/skins/realpol/Data',    'skins/realpol/Data/onu.xml')
+
+
+pics_bubble = """
+./skins/bubble/Images/reddice1.png
+./skins/bubble/Images/reddice2.png
+./skins/bubble/Images/reddice3.png
+./skins/bubble/Images/reddice4.png
+./skins/bubble/Images/reddice5.png
+./skins/bubble/Images/reddice6.png
+./skins/bubble/Images/bluedice1.png
+./skins/bubble/Images/bluedice2.png
+./skins/bubble/Images/bluedice3.png
+./skins/bubble/Images/bluedice4.png
+./skins/bubble/Images/bluedice5.png
+./skins/bubble/Images/bluedice6.png
+./skins/bubble/Images/snapshot.jpg
+./skins/bubble/Images/moveFinish.png
+./skins/bubble/Images/joueurSuivant.png
+./skins/bubble/Images/moveBackFive.png
+./skins/bubble/Images/moveFive.png
+./skins/bubble/Images/newNetGame.png
+./skins/bubble/Images/moveArmies.png
+./skins/bubble/Images/saveGame.png
+./skins/bubble/Images/attackTwo.png
+./skins/bubble/Images/aide.png
+./skins/bubble/Images/map.png
+./skins/bubble/Images/pool.png
+./skins/bubble/Images/moveOne.png
+./skins/bubble/Images/preferences.png
+./skins/bubble/Images/sprites/exploding.png
+./skins/bubble/Images/sprites/blawa.png
+./skins/bubble/Images/sprites/infantry.png
+./skins/bubble/Images/sprites/protuk.png
+./skins/bubble/Images/sprites/golum.png
+./skins/bubble/Images/sprites/cavalry.png
+./skins/bubble/Images/sprites/8020.png
+./skins/bubble/Images/sprites/ecnarf.png
+./skins/bubble/Images/sprites/blup.png
+./skins/bubble/Images/sprites/cannon.png
+./skins/bubble/Images/sprites/firing.png
+./skins/bubble/Images/sprites/groubi.png
+./skins/bubble/Images/attackOne.png
+./skins/bubble/Images/annuler.png
+./skins/bubble/Images/map-mask.png
+./skins/bubble/Images/pool-en.png
+./skins/bubble/Images/quitter.png
+./skins/bubble/Images/moveBackTen.png
+./skins/bubble/Images/ouvrirJeu.png
+./skins/bubble/Images/logoRight.png
+./skins/bubble/Images/distributionArmeesFinie.png
+./skins/bubble/Images/distributionArmees.png
+./skins/bubble/Images/logoLeft.png
+./skins/bubble/Images/defendTwo.png
+./skins/bubble/Images/attackThree.png
+./skins/bubble/Images/SoldatAGenoux1.png
+./skins/bubble/Images/defendOne.png
+./skins/bubble/Images/nouveauJeu.png
+./skins/bubble/Images/moveTen.png
+./skins/bubble/Images/moveBackOne.png
+"""
+
+pics_default = """
+./skins/default/Images/reddice1.png
+./skins/default/Images/reddice2.png
+./skins/default/Images/reddice3.png
+./skins/default/Images/reddice4.png
+./skins/default/Images/reddice5.png
+./skins/default/Images/reddice6.png
+./skins/default/Images/bluedice1.png
+./skins/default/Images/bluedice2.png
+./skins/default/Images/bluedice3.png
+./skins/default/Images/bluedice4.png
+./skins/default/Images/bluedice5.png
+./skins/default/Images/bluedice6.png
+./skins/default/Images/snapshot.jpg
+./skins/default/Images/moveFinish.png
+./skins/default/Images/joueurSuivant.png
+./skins/default/Images/moveBackFive.png
+./skins/default/Images/moveFive.png
+./skins/default/Images/newNetGame.png
+./skins/default/Images/moveArmies.png
+./skins/default/Images/saveGame.png
+./skins/default/Images/attackTwo.png
+./skins/default/Images/aide.png
+./skins/default/Images/map.png
+./skins/default/Images/pool.png
+./skins/default/Images/moveOne.png
+./skins/default/Images/preferences.png
+./skins/default/Images/countries/vietnam.png
+./skins/default/Images/countries/japan.png
+./skins/default/Images/countries/westus.png
+./skins/default/Images/countries/middleeast.png
+./skins/default/Images/countries/ontario.png
+./skins/default/Images/countries/brazil.png
+./skins/default/Images/countries/mongolia.png
+./skins/default/Images/countries/algeria.png
+./skins/default/Images/countries/zair.png
+./skins/default/Images/countries/eastus.png
+./skins/default/Images/countries/france.png
+./skins/default/Images/countries/egypt.png
+./skins/default/Images/countries/prussia.png
+./skins/default/Images/countries/iran.png
+./skins/default/Images/countries/alaska.png
+./skins/default/Images/countries/kazakstan.png
+./skins/default/Images/countries/arabia.png
+./skins/default/Images/countries/chile.png
+./skins/default/Images/countries/scandinavia.png
+./skins/default/Images/countries/china.png
+./skins/default/Images/countries/island.png
+./skins/default/Images/countries/benelux.png
+./skins/default/Images/countries/quebec.png
+./skins/default/Images/countries/alberta.png
+./skins/default/Images/countries/papouasia.png
+./skins/default/Images/countries/gabon.png
+./skins/default/Images/countries/pakistan.png
+./skins/default/Images/countries/groenland.png
+./skins/default/Images/countries/india.png
+./skins/default/Images/countries/newzealand.png
+./skins/default/Images/countries/westernaustralia.png
+./skins/default/Images/countries/mexico.png
+./skins/default/Images/countries/uk.png
+./skins/default/Images/countries/russia.png
+./skins/default/Images/countries/paraguay.png
+./skins/default/Images/countries/siberia.png
+./skins/default/Images/countries/newsouthwalles.png
+./skins/default/Images/countries/niger.png
+./skins/default/Images/countries/madagascar.png
+./skins/default/Images/countries/columbia.png
+./skins/default/Images/countries/indonesia.png
+./skins/default/Images/countries/southafrica.png
+./skins/default/Images/sprites/exploding.png
+./skins/default/Images/sprites/belgium.png
+./skins/default/Images/sprites/japan.png
+./skins/default/Images/sprites/infantry.png
+./skins/default/Images/sprites/france.png
+./skins/default/Images/sprites/cavalry.png
+./skins/default/Images/sprites/8020.png
+./skins/default/Images/sprites/uk.png
+./skins/default/Images/sprites/us.png
+./skins/default/Images/sprites/cannon.png
+./skins/default/Images/sprites/firing.png
+./skins/default/Images/sprites/italy.png
+./skins/default/Images/attackOne.png
+./skins/default/Images/annuler.png
+./skins/default/Images/map-mask.png
+./skins/default/Images/pool-en.png
+./skins/default/Images/quitter.png
+./skins/default/Images/moveBackTen.png
+./skins/default/Images/ouvrirJeu.png
+./skins/default/Images/logoRight.png
+./skins/default/Images/distributionArmeesFinie.png
+./skins/default/Images/distributionArmees.png
+./skins/default/Images/logoLeft.png
+./skins/default/Images/defendTwo.png
+./skins/default/Images/attackThree.png
+./skins/default/Images/SoldatAGenoux1.png
+./skins/default/Images/defendOne.png
+./skins/default/Images/nouveauJeu.png
+./skins/default/Images/moveTen.png
+./skins/default/Images/moveBackOne.png
+"""
+
+pics_realpol = """
+./skins/realpol/Images/reddice1.png
+./skins/realpol/Images/reddice2.png
+./skins/realpol/Images/reddice3.png
+./skins/realpol/Images/reddice4.png
+./skins/realpol/Images/reddice5.png
+./skins/realpol/Images/reddice6.png
+./skins/realpol/Images/bluedice1.png
+./skins/realpol/Images/bluedice2.png
+./skins/realpol/Images/bluedice3.png
+./skins/realpol/Images/bluedice4.png
+./skins/realpol/Images/bluedice5.png
+./skins/realpol/Images/bluedice6.png
+./skins/realpol/Images/snapshot.jpg
+./skins/realpol/Images/moveFinish.png
+./skins/realpol/Images/joueurSuivant.png
+./skins/realpol/Images/moveBackFive.png
+./skins/realpol/Images/moveFive.png
+./skins/realpol/Images/newNetGame.png
+./skins/realpol/Images/moveArmies.png
+./skins/realpol/Images/saveGame.png
+./skins/realpol/Images/attackTwo.png
+./skins/realpol/Images/aide.png
+./skins/realpol/Images/map.png
+./skins/realpol/Images/pool.png
+./skins/realpol/Images/moveOne.png
+./skins/realpol/Images/preferences.png
+./skins/realpol/Images/countries/vietnam.png
+./skins/realpol/Images/countries/japan.png
+./skins/realpol/Images/countries/westus.png
+./skins/realpol/Images/countries/middleeast.png
+./skins/realpol/Images/countries/ontario.png
+./skins/realpol/Images/countries/brazil.png
+./skins/realpol/Images/countries/mongolia.png
+./skins/realpol/Images/countries/algeria.png
+./skins/realpol/Images/countries/zair.png
+./skins/realpol/Images/countries/eastus.png
+./skins/realpol/Images/countries/france.png
+./skins/realpol/Images/countries/egypt.png
+./skins/realpol/Images/countries/prussia.png
+./skins/realpol/Images/countries/iran.png
+./skins/realpol/Images/countries/alaska.png
+./skins/realpol/Images/countries/kazakstan.png
+./skins/realpol/Images/countries/arabia.png
+./skins/realpol/Images/countries/chile.png
+./skins/realpol/Images/countries/scandinavia.png
+./skins/realpol/Images/countries/china.png
+./skins/realpol/Images/countries/island.png
+./skins/realpol/Images/countries/benelux.png
+./skins/realpol/Images/countries/quebec.png
+./skins/realpol/Images/countries/alberta.png
+./skins/realpol/Images/countries/papouasia.png
+./skins/realpol/Images/countries/gabon.png
+./skins/realpol/Images/countries/pakistan.png
+./skins/realpol/Images/countries/groenland.png
+./skins/realpol/Images/countries/india.png
+./skins/realpol/Images/countries/newzealand.png
+./skins/realpol/Images/countries/westernaustralia.png
+./skins/realpol/Images/countries/mexico.png
+./skins/realpol/Images/countries/uk.png
+./skins/realpol/Images/countries/russia.png
+./skins/realpol/Images/countries/paraguay.png
+./skins/realpol/Images/countries/siberia.png
+./skins/realpol/Images/countries/newsouthwalles.png
+./skins/realpol/Images/countries/niger.png
+./skins/realpol/Images/countries/madagascar.png
+./skins/realpol/Images/countries/columbia.png
+./skins/realpol/Images/countries/indonesia.png
+./skins/realpol/Images/countries/southafrica.png
+./skins/realpol/Images/sprites/exploding.png
+./skins/realpol/Images/sprites/belgium.png
+./skins/realpol/Images/sprites/japan.png
+./skins/realpol/Images/sprites/infantry.png
+./skins/realpol/Images/sprites/france.png
+./skins/realpol/Images/sprites/cavalry.png
+./skins/realpol/Images/sprites/8020.png
+./skins/realpol/Images/sprites/uk.png
+./skins/realpol/Images/sprites/us.png
+./skins/realpol/Images/sprites/cannon.png
+./skins/realpol/Images/sprites/firing.png
+./skins/realpol/Images/sprites/italy.png
+./skins/realpol/Images/attackOne.png
+./skins/realpol/Images/annuler.png
+./skins/realpol/Images/map-mask.png
+./skins/realpol/Images/pool-en.png
+./skins/realpol/Images/quitter.png
+./skins/realpol/Images/moveBackTen.png
+./skins/realpol/Images/ouvrirJeu.png
+./skins/realpol/Images/logoRight.png
+./skins/realpol/Images/distributionArmeesFinie.png
+./skins/realpol/Images/distributionArmees.png
+./skins/realpol/Images/logoLeft.png
+./skins/realpol/Images/defendTwo.png
+./skins/realpol/Images/attackThree.png
+./skins/realpol/Images/SoldatAGenoux1.png
+./skins/realpol/Images/defendOne.png
+./skins/realpol/Images/nouveauJeu.png
+./skins/realpol/Images/moveTen.png
+./skins/realpol/Images/moveBackOne.png
+"""
+
+install_files('KDE_DATA', 'ksirk/skins/bubble/Images', pics_bubble)
+install_files('KDE_DATA', 'ksirk/skins/default/Images', pics_default)
+install_files('KDE_DATA', 'ksirk/skins/realpol/Images', pics_realpol)
+
+sprites = """
+8020.png belgium.png cannon.png 
+cavalry.png exploding.png firing.png france.png 
+infantry.png italy.png japan.png uk.png us.png"""
+
+sprites_bubble = """
+8020.png blawa.png cannon.png cavalry.png exploding.png 
+firing.png ecnarf.png infantry.png blup.png 
+groubi.png golum.png protuk.png
+"""
+
+sprites_realpol = """
+8020.png belgium.png cannon.png 
+cavalry.png exploding.png firing.png france.png 
+infantry.png italy.png japan.png uk.png us.png
+"""
+
+for i in sprites.split():
+	install_files('KDE_DATA', 'ksirk/skins/default/Images/sprites/', 'skins/default/Images/sprites/'+i)
+
+for i in sprites_bubble.split():
+    install_files('KDE_DATA', 'ksirk/skins/bubble/Images/sprites/', 'skins/bubble/Images/sprites/'+i)
+
+for i in sprites_realpol.split():
+    install_files('KDE_DATA', 'ksirk/skins/realpol/Images/sprites/', 'skins/realpol/Images/sprites/'+i)
+
+for i in 'canon.wav crash.wav roule.wav'.split():
+    install_files('KDE_DATA', 'ksirk/skins/bubble/Sounds', 'skins/bubble/Sons/'+i)
+    install_files('KDE_DATA', 'ksirk/skins/default/Sounds', 'skins/default/Sons/'+i)
+    install_files('KDE_DATA', 'ksirk/skins/realpol/Sounds', 'skins/realpol/Sons/'+i)
+
+

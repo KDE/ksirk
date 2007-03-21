@@ -1,0 +1,953 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1-Based Variant V1.0//EN" "dtd/kdex.dtd" [
+  <!ENTITY ksirk '<application>KsirK</application>'>
+  <!ENTITY kapp "&ksirk;"><!-- replace ksirk here -->
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % English "INCLUDE">
+]>
+
+<book lang="&language;">
+
+<bookinfo>
+<title>The KsirK minimalistic Handbook</title>
+
+<authorgroup>
+<author>
+<firstname>Gael</firstname>
+<othername>Kleag</othername>
+<surname>de Chalendar</surname>
+<affiliation>
+<address><email>Kleag@free.fr</email></address>
+</affiliation>
+</author>
+</authorgroup>
+
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+
+<copyright>
+<year>2002-2005</year>
+<holder>Gael de Chalendar</holder>
+</copyright>
+<!-- Translators: put here the copyright notice of the translation -->
+<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
+     and in the FDL itself on how to use it. -->
+<legalnotice>&FDLNotice;</legalnotice>
+
+<!-- Date and version information of the documentation
+Don't forget to include this last date and this last revision number, we
+need them for translation coordination !
+Please respect the format of the date (DD/MM/YYYY) and of the version
+(V.MM.LL), it could be used by automation scripts.
+Do NOT change these in the translation. -->
+
+<date>18/08/2005</date>
+<releaseinfo>1.03.00</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+<para>
+&ksirk; is a computerized version of a well known strategy game. A commercial
+version exists and also another GPL clone but I (Gael de Chalendar) created this game
+as a C++ learning exercise and so, I developped it up to this point (see README for details).
+</para>
+<para>
+In the current version, &ksirk; is a multi-player network-enabled game with a basic AI.
+(see TODO for details)
+</para>
+<para>
+This documentation gives the major information you need to start playing.
+Please read the tooltips and the status bar messages to complete your information. A chapter explains how to create new skins for &ksirk;
+</para>
+<para>
+The goal of the game is simply to conquer the World... It is done by attacking your neighbors
+with your armies. Peaceful, isn't it :-)
+</para>
+</abstract>
+
+<!-- This is a set of Keywords for indexing by search engines.
+Please at least include KDE, the KDE package it is in, the name
+ of your application, and a few relevant keywords. -->
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>kdegames</keyword>
+<keyword>game</keyword>
+<keyword>strategy</keyword>
+<keyword>Risk</keyword>
+<keyword>free</keyword>
+<keyword>GPL</keyword>
+<keyword>Network</keyword>
+<keyword>AI</keyword>
+</keywordset>
+
+</bookinfo>
+
+<!-- The contents of the documentation begin here.  Label
+each chapter so with the id attribute. This is necessary for two reasons: it
+allows you to easily reference the chapter from other chapters of your
+document, and if there is no ID, the name of the generated HTML files will vary
+from time to time making it hard to manage for maintainers and for the CVS
+system. Any chapter labelled (OPTIONAL) may be left out at the author's
+discretion. Other chapters should not be left out in order to maintain a
+consistent documentation style across all KDE apps. -->
+
+<chapter id="introduction">
+<title>Introduction</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+<para>
+&ksirk; is a computerized version of a well known strategy game. A commercial
+version exists and also another GPL clone but I (Gael de Chalendar) created this game
+as a C++ learning exercise and so, I developped it up to this point (see README for details).
+</para>
+<para>
+In the current version, &ksirk; is a multi-player network-enabled game with a basic AI.
+(see TODO for details)
+</para>
+<para>
+This documentation gives only the major information you need to start playing.
+Please read the tooltips and the status bar messages to complete your information.
+</para>
+<para>
+The goal of the game is simply to conquer the World... It is done by attacking your neighbors
+with your armies. Peaceful, isn't it ? :-)
+</para>
+</chapter>
+
+<chapter id="using-kapp">
+<title>Using KsirK</title>
+
+<!-- This chapter should tell the user how to use your app. You should use as
+many sections (Chapter, Sect1, Sect3, etc...) as is necessary to fully document
+your application. -->
+
+<para>
+
+<!-- Note that all graphics should be in .png format. Use no gifs because of
+patent issues. -->
+
+<screenshot>
+	<screeninfo>Here's a screenshot of &kapp;</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="attack.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>Screenshot</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+
+<sect1 id="playing-ksirk">
+<title>Playing &ksirk;</title>
+<para>Preliminary note : the map can be scrolled by three methods. First, you can put your
+mouse near a border of the window and the map will scroll in that direction. Second, you
+can use your mouse wheel: With no modifier, it will scroll verticaly; when pressing the Meta
+key, it will scroll horizontaly. And lastly, you can use the keyboard arrows.
+</para>
+<sect2 id="distribution" >
+<title>Distribution</title>
+<para>
+At the beginning of the game, countries are distributed to all the players. Each country contain
+one army (represented by an infantryman) at this moment. Each player has some armies to
+distribute to his countries at her turn (indicated by the presence of her name and her flag in
+the status bar). Note that five armies are represented by a cavalryman and 10 by
+a cannon.
+</para>
+<para>
+To put an army on one of your countries, click on it with the left mouse button. To remove an
+army, click with the right button. Note, as a general rule, that you will never be able to remove
+more armies than the number you already put.
+</para>
+<para>
+When a player has distributed all her armies, the next player is automatically selected to do the
+same task. When all players have finished to distribute their armies, there is two possibilities
+that can be selected by two buttons :
+<variablelist>
+<varlistentry>
+<term>
+	<menuchoice>
+		<guimenu>
+			<inlinemediaobject>
+				<imageobject>
+					<imagedata fileref="distributionArmees.png" format="PNG"/>
+				</imageobject>
+				<textobject>
+					<phrase>Redistribution</phrase>
+				</textobject>
+			</inlinemediaobject> : Redistribution
+		</guimenu>
+	</menuchoice>
+</term>
+<listitem>
+	<para>
+	<action>
+	One player wants to change some of his choices. The first player can then remove an army he
+	just put in a country with the right mouse button and put it in another one with the left mouse
+	button. When he finish, he gives control to next player with the 'Next Player' button. When all
+	players have finished their redistribution, the two buttons are redisplayed.
+	</action>
+	</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+	<menuchoice>
+		<guimenu>
+			<inlinemediaobject>
+				<imageobject>
+					<imagedata fileref="distributionArmeesFinie.png" format="PNG"/>
+				</imageobject>
+				<textobject>
+					<phrase>End of redistribution</phrase>
+				</textobject>
+			</inlinemediaobject> : End of redistribution
+		</guimenu>
+	</menuchoice>
+</term>
+<listitem><para><action>The redistribution is finished and the game can continue.
+</action></para></listitem>
+</varlistentry>
+</variablelist>
+
+</para>
+</sect2>
+
+<sect2 id="fight" >
+<title>Fight</title>
+<para>
+After the redistribution, a game turn can start. Each player plays at his turn. He has the choice to:
+<variablelist>
+	<varlistentry>
+		<term>
+			<menuchoice>
+				<guimenu>
+					<inlinemediaobject>
+						<imageobject>
+							<imagedata fileref="joueurSuivant.png" format="PNG"/>
+						</imageobject>
+						<textobject>
+							<phrase>Next player</phrase>
+						</textobject>
+					</inlinemediaobject> : Give hand to the next player
+				</guimenu>
+			</menuchoice>
+		</term>
+		<listitem><para>
+		<action>
+		The turn of the current player finishes and it's the turn of the next one.
+		</action></para></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<menuchoice>
+				<guimenu>
+					<inlinemediaobject>
+						<imageobject>
+							<imagedata fileref="attackOne.png" format="PNG"/>
+						</imageobject>
+						<textobject>
+							<phrase>Attack 1</phrase>
+						</textobject>
+					</inlinemediaobject>
+					&nbsp;<inlinemediaobject>
+						<imageobject>
+							<imagedata fileref="attackTwo.png" format="PNG"/>
+						</imageobject>
+						<textobject>
+							<phrase>Attack 2</phrase>
+						</textobject>
+					</inlinemediaobject>
+					&nbsp;<inlinemediaobject>
+						<imageobject>
+							<imagedata fileref="attackThree.png" format="PNG"/>
+						</imageobject>
+						<textobject>
+							<phrase>Attack 3</phrase>
+						</textobject>
+					</inlinemediaobject> : Attack with one, two or three armies
+				</guimenu>
+			</menuchoice>
+		</term>
+		<listitem>
+			<para>
+				<action>
+					For a country X to attack a country Y with x armies, 2 conditions must be fullfilled: 1. the two
+					countries must be neighbours; 2. country X must have at least x+1 armies before the attack.
+					When an attack is decided, the attacker must disignate the belligerants: he click on his country,
+					drag the pointer to the attacked country and "drop it" (release the mous button) there. If the attack
+					is valid, 2 defend buttons replace the three attack ones (only one if the attacker attacks with only
+					one army and also if the defender has only one army in his country). They give the
+					choice to the defender to defend with one or two armies.
+				</action>
+			</para>
+			<para>
+				The defender choice done, the fight will happen and be solved. This will described below.
+			</para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<menuchoice>
+				<guimenu>
+					<inlinemediaobject>
+						<imageobject>
+							<imagedata fileref="moveArmies.png" format="PNG"/>
+						</imageobject>
+						<textobject>
+							<phrase>Move armies</phrase>
+						</textobject>
+					</inlinemediaobject> : Move Armies from one country to another
+				</guimenu>
+			</menuchoice>
+		</term>
+		<listitem>
+			<para>
+				<action>
+					This is the last action of a player's turn. It gives the possibility to move some armies
+					from one of his country to another, neighbour of the first one. To choose the two
+					countries, please drag'n drop as for an attack. When both countries are choosed,
+					the "Move armies" group of buttons appear (see below for a description  of their use).
+					Note that, before the user choose to terminate the move, he can always choose to
+					cancel it by hitting the Cancel button.
+				</action>
+			</para>
+		</listitem>
+	</varlistentry>
+</variablelist>
+</para>
+</sect2>
+<sect2  id="fight-solution" >
+	<title>Solution of the fight</title>
+	<para>
+		To each army in the fight correspond a dice cast, a random number between 1 and 6. The
+		higher result of the attacker is opposed to the other one of the defender. If the attacker's
+		result is strictly higher than the defender one, he wins the fight and the defender army is
+		destroyed. Elsewhere, he looses and its army is destroyed. The same happen for second
+		higher dice of the attacker if there is two or three attackers and two defenders.
+	</para>
+	<para>
+		If the number of armies in the defender country reaches 0, the ownership of this country
+		changes to the attacker: his flag is set up and one of his attacking armies is installed in his
+		new country. The "Move armies" buttons are displayed in the toolbar to allow the attacker
+		to move some other armies from the attacking country to the newly gained one.
+	</para>
+</sect2>
+<sect2  id="end_of_turn" >
+	<title>End of the turn</title>
+	<para>
+		When everybody have played, the turn is finished. Some armies are distributed to the
+		players, in function of the coutries they own: 1 for each group of three countries, with a
+		minimum of 3. There is also a bonus for players that own a complete continent, different for
+		each one. This bonus is of:
+		<table>
+			<title>Bonus due to the continents</title>
+			<tgroup cols="2">
+				<thead>
+					<row><entry>Continent</entry><entry>Bonus</entry></row>
+				</thead>
+				<tbody>
+					<row><entry>North America</entry><entry>5</entry></row>
+					<row><entry>South America</entry><entry>2</entry></row>
+					<row><entry>Europe</entry><entry>5</entry></row>
+					<row><entry>Africa</entry><entry>3</entry></row>
+					<row><entry>Asia</entry><entry>7</entry></row>
+					<row><entry>Pacific Area</entry><entry>2</entry></row>
+				</tbody>
+			</tgroup>
+		</table>
+	</para>
+	<para>
+		New in 0.9.1-2, the bonus calculation is implemented !
+	</para>
+	<para>
+		When a player has finished distributing his armies, he clicks the "Next Player" button to
+		allow the next player to distribute his bonus. As for the initial distribution, when all player
+		have placed their armies, they can start a new redistribution cycle or start a new turn...
+	</para>
+</sect2>
+<!--
+<para>
+The Squiggle Tool <guiicon><inlinemediaobject>
+	  <imageobject>
+	    <imagedata fileref="squiggle.png" format="PNG"/>
+	  </imageobject>
+	  <imageobject>
+	    <imagedata fileref="squiggle.eps" format="EPS"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>Squiggle</phrase>
+	  </textobject>
+</inlinemediaobject></guiicon> is used to draw squiggly lines all over
+the &ksirk; main window. It's not a bug, it's a feature!
+</para>
+-->
+
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title>Command Reference</title>
+
+<sect1 id="kapp-mainwindow">
+<title>The main KsirK window</title>
+<para>
+There is at this time only one window and all operations are done by buttons
+in the toolbar. These buttons are inserted or removed when necessary. Each one have a
+tooltip; use it to remember yourself its usage. There is no menu nor shortcuts.
+</para>
+
+<sect2>
+<title>The buttons</title>
+<para>
+<variablelist>
+<varlistentry>
+<term>
+	<menuchoice>
+		<guimenu>
+			<inlinemediaobject>
+				<imageobject>
+					<imagedata fileref="quitter.png" format="PNG"/>
+				</imageobject>
+				<textobject>
+					<phrase>Quit Game</phrase>
+				</textobject>
+			</inlinemediaobject> : Quit t Game
+		</guimenu>
+	</menuchoice>
+</term>
+<listitem><para><action>
+Causes the program to imediatly quit, with no other warning ! Yes, it will be improved in a future
+version !
+</action></para></listitem>
+</varlistentry>
+<varlistentry>
+<term>
+	<menuchoice>
+		<guimenu>
+			<inlinemediaobject>
+				<imageobject>
+					<imagedata fileref="nouveauJeu.png" format="PNG"/>
+				</imageobject>
+				<textobject>
+					<phrase>New Game</phrase>
+				</textobject>
+			</inlinemediaobject> : New Game
+		</guimenu>
+	</menuchoice>
+</term>
+<listitem><para><action>Starts a new game. It will cause the displaying of a dialog asking
+the number of players. After that, each player will be asked its name with another dialog.
+</action></para></listitem>
+</varlistentry>
+<varlistentry>
+<term>
+	<menuchoice>
+		<guimenu>
+			<inlinemediaobject>
+				<imageobject>
+					<imagedata fileref="moveOne.png" format="PNG"/>
+				</imageobject>
+				<textobject>
+					<phrase>Invade with one army</phrase>
+				</textobject>
+			</inlinemediaobject>
+			&nbsp;<inlinemediaobject>
+				<imageobject>
+					<imagedata fileref="moveFive.png" format="PNG"/>
+				</imageobject>
+				<textobject>
+					<phrase>Invade with five armies</phrase>
+				</textobject>
+			</inlinemediaobject>
+			&nbsp;<inlinemediaobject>
+				<imageobject>
+					<imagedata fileref="moveTen.png" format="PNG"/>
+				</imageobject>
+				<textobject>
+					<phrase>Invade with ten armies</phrase>
+				</textobject>
+			</inlinemediaobject>
+			&nbsp;<inlinemediaobject>
+				<imageobject>
+					<imagedata fileref="moveFinish.png" format="PNG"/>
+				</imageobject>
+				<textobject>
+					<phrase>Invasion finished</phrase>
+				</textobject>
+			</inlinemediaobject>
+			&nbsp;<inlinemediaobject>
+				<imageobject>
+					<imagedata fileref="moveBackOne.png" format="PNG"/>
+				</imageobject>
+				<textobject>
+					<phrase>Retract one armies</phrase>
+				</textobject>
+			</inlinemediaobject>
+			&nbsp;<inlinemediaobject>
+				<imageobject>
+					<imagedata fileref="moveBackFive.png" format="PNG"/>
+				</imageobject>
+				<textobject>
+					<phrase>Retract five armies</phrase>
+				</textobject>
+			</inlinemediaobject>
+			&nbsp;<inlinemediaobject>
+				<imageobject>
+					<imagedata fileref="moveBackTen.png" format="PNG"/>
+				</imageobject>
+				<textobject>
+					<phrase>Retract ten armies</phrase>
+				</textobject>
+			</inlinemediaobject> : Move armies buttons
+		</guimenu>
+	</menuchoice>
+</term>
+<listitem><para><action>These buttons mean: invade with one, five or ten armies; stop the
+	movement; retract one, five or ten armies. Note that one can never retract more armies than
+	he has put.
+</action></para></listitem>
+</varlistentry>
+</variablelist>
+</para>
+
+</sect2>
+
+</sect1>
+</chapter>
+
+<chapter id="developers">
+  <title>Developer's Guide to KsirK</title>
+  
+  <para>
+    Please refer to the KDoc documentation for the API. It is quite complete, I think. In the
+    contrary the comments are inexistant in the <filename>.cpp</filename> implementation files.
+  </para>
+  <para>
+    Note that I originaly developped this game under Windoz with Borland C++ and WinG. I ported
+    it to Java before converting back to C++ and KDE. At the beginning I used French or a mix of
+    French and English to name the identifiers (classnames, methods, members, etc.). I also used
+    French for the comments. When I decided to distribute this game, I decided to convert all to
+    english... but I'm clearly not a native English speaker: please suggest or make and submit
+    corrections, to the code comments or to this documentation
+  </para>
+  
+</chapter>
+
+<chapter id="skins">
+  <title>Creating new skins</title>
+  <para>
+    KsirK is fully skinable. For who have graphic capabilities, creating a new skin is as simple as copying an existing one, editing or changings the graphics and updating the data in a XML configuration file. A last step is to edit the file describing what to install.
+  </para>
+  <para>All examples (text and images) are taken from the default skin of KsirK</para>
+  <sect1 id="sdf">
+    <title>Structure of directories and files</title>
+    <para>
+      <itemizedlist>
+        <listitem>
+          <para>Data/ : Data used by the program to handle the images of the skin.
+            <itemizedlist>
+              <listitem><para>Makefile.am : Describes what to install.</para></listitem>
+              <listitem><para>onu.xml : Main file for the description of the skin. See its description below.</para></listitem>
+            </itemizedlist>
+          </para>
+        </listitem>
+        <listitem>
+          <para>Images/ : The images of the skin (map, sprites, etc.)
+            <itemizedlist>
+              <listitem><para>Makefile.am : Describes what to install.</para></listitem>
+              <listitem><para>map.png : the map used in this skin.</para></listitem>
+              <listitem><para>map-mask.png : the image allowing the program to find which country the mouse is over during the game (see below).</para></listitem>
+              <listitem><para>*.png : the other images here are the buttons images.</para></listitem>
+              <listitem><para>sprites/ : This directory contains the images defining the sprites (armies and flags). See below.</para></listitem>
+            </itemizedlist>
+          </para>
+        </listitem>
+        <listitem><para>Makefile.am/ : Describes what to install.</para></listitem>
+        <listitem><para>Sons/ : sound files for the skin.</para></listitem>
+      </itemizedlist>
+    </para>
+  </sect1>
+  <sect1 id="tdd">
+    <title>The Data directory</title>
+    <sect2>
+      <title>The onu.xml file</title>
+      <para>
+        This files is a description of the content of the skin. It is used to describe the organization of the world and how to display it.
+        It has the following structure: 
+      </para>
+      <programlisting>
+        onu 
+        (
+          (skinSpritesData (intItem | strItem )*)
+          (country (flag-point cannons-point cavalry-point infantry-point neighbours (neighbour*) ) )*
+          nationality*
+          (continent (continent-country))*
+        )
+      </programlisting>
+      <para>
+        An onu tag contains a skinSpritesData tag, a number of country tags, a number of nationality tags and lastly a number of continent tags. The skinSpritesData itself contains a number of intItem or strItem tags. The country tag contains some object point tags and a neighbours tag, itself containing a number of neighbour tags.
+      </para>
+      <sect3>
+        <title>Tags parameters</title>
+        <para>
+          <table>
+            <title>The skin XML file tags</title>
+            <tgroup cols="3">
+              <thead><row><entry>Tag name</entry><entry>Attribute name</entry><entry>Attribute type and signification</entry></row></thead>
+              <tbody>
+                <row><entry>onu</entry><entry>width</entry><entry>The width of the skin's map</entry></row>
+                <row><entry></entry><entry>height</entry><entry>The height of the skin's map</entry></row>
+                <row><entry></entry><entry>skinpath</entry><entry>The path of the skin relative to the application data path (e.g. skins/default)</entry></row>
+                <row><entry></entry><entry>nb-countries</entry><entry>The number of countries (42 in the default skin). There should be the same number of country tags below</entry></row>
+                <row><entry></entry><entry>nb-nationalities</entry><entry>The number of nationalities (6 in the default skin). There should be the same number of nationality tags below</entry></row>
+                <row><entry></entry><entry>nb-continents</entry><entry>The number of continents (6 in the default skin). There should be the same number of continent tags below</entry></row>
+                <row><entry></entry><entry>map</entry><entry>The path and name of the map file relative to the skin path (e.g. Images/map.png)</entry></row>
+                <row><entry></entry><entry>map-mask</entry><entry>The path and name of the map mask file relative to the skin path (e.g. Images/map-mask.png)</entry></row>
+                <row><entry></entry><entry>format-version</entry><entry>The version of the skin file format (1.2, unsused for the moment)</entry></row>
+                <row><entry>intItem</entry><entry>key</entry><entry>The name of the item</entry></row>
+                <row><entry></entry><entry>value</entry><entry>The value of the item interpreted as an integer</entry></row>
+                <row><entry>strItem</entry><entry>key</entry><entry>The name of the item</entry></row>
+                <row><entry></entry><entry>value</entry><entry>The value of the item interprted as a string</entry></row>
+                <row><entry>country</entry><entry>id</entry><entry>The integer unique identification number of the country</entry></row>
+                <row><entry></entry><entry>name</entry><entry>The displayed name of the country, currently not internationalized</entry></row>
+                <row><entry>&lt;sprite&gt;-point</entry><entry></entry><entry>Each type of sprite (flag, infantry, etc.) in the country is displayed a a certain position defined by this tag</entry></row>
+                <row><entry></entry><entry>x</entry><entry>The X-coordinate at which the top left point of the object will be displayed  on the map (starting at left)</entry></row>
+                <row><entry></entry><entry>y</entry><entry>The Y-coordinate at which the top left point of the object will be displayed (starting at top)</entry></row>
+                <row><entry>neighbour</entry><entry>id</entry><entry>The id of a neighbour of the current country</entry></row>
+                <row><entry>nationality</entry><entry>name</entry><entry>The name of the nationality (e.g. Japan)</entry></row>
+                <row><entry></entry><entry>flag</entry><entry>The name of the country's flag sprite file</entry></row>
+                <row><entry>continent</entry><entry>name</entry><entry>The name of the continent (e.g. Africa)</entry></row>
+                <row><entry></entry><entry>bonus</entry><entry>The number of armies obtained at the end of the turn by the player owning all the countries of the continent</entry></row>
+                <row><entry>continent-country</entry><entry>id</entry><entry>The id of one of the countries inside the current continent</entry></row>
+              </tbody>
+            </tgroup>
+          </table>
+        </para>
+      </sect3>
+      <sect3>
+        <title>The skinSpritesData tag</title>
+        <para>
+          This tag has a special organization: each type of sprite (flag, infantry, cavalry, cannon, firing cannon and exploding cannon) is defined by some intItem and strItem and there is two more intItem giving positioning hints for animations. The table below shows all the elements of the skinSpritesData tag with some explanations. Only some sprites have a width data. These are used for relative positioning during animations: the cannons, firing or explosing should not "move" around the country's flag during fight.
+          <table>
+            <title>skinSpritesData tag attributes</title>
+            <tgroup cols="3">
+              <thead><row><entry>Key value</entry><entry>Entry type</entry><entry>Signification</entry><entry>Value in the default skin</entry></row></thead>
+              <tbody>
+                <row><entry>flag-width</entry><entry>intItem</entry><entry>The width of the flag sprites frames</entry><entry>20</entry></row>
+                <row><entry>flag-frames</entry><entry>intItem</entry><entry>The number of frames of the flag sprites</entry><entry>4</entry></row>
+                <row><entry>flag-versions</entry><entry>intItem</entry><entry>The number of versions of the flag sprites</entry><entry>1</entry></row>
+                <row><entry>infantry-file</entry><entry>strItem</entry><entry>The filename of the infantry sprite</entry><entry>infantry.png</entry></row>
+                <row><entry>infantry-frames</entry><entry>intItem</entry><entry>The number of frames of the infantry sprites</entry><entry>1</entry></row>
+                <row><entry>infantry-versions</entry><entry>intItem</entry><entry>The number of versions of the infantry sprites</entry><entry>3</entry></row>
+                <row><entry>cavalry-file</entry><entry>strItem</entry><entry>The filename of the cavalry sprite</entry><entry>cavalry.png</entry></row>
+                <row><entry>cavalry-frames</entry><entry>intItem</entry><entry>The number of frames of the cavalry sprites</entry><entry>1</entry></row>
+                <row><entry>cavalry-versions</entry><entry>intItem</entry><entry>The number of versions of the cavalry sprites</entry><entry>3</entry></row>
+                <row><entry>cannon-file</entry><entry>strItem</entry><entry>The filename of the cannon sprite</entry><entry>cannon.png</entry></row>
+                <row><entry>cannon-width</entry><entry>intItem</entry><entry>The width of the cannon sprites frames</entry><entry>32</entry></row>
+                <row><entry>cannon-frames</entry><entry>intItem</entry><entry>The number of frames of the cannon sprites</entry><entry>2</entry></row>
+                <row><entry>cannon-versions</entry><entry>intItem</entry><entry>The number of versions of the cannon sprites</entry><entry>3</entry></row>
+                <row><entry>firing-file</entry><entry>strItem</entry><entry>The filename of the firing cannon sprite</entry><entry>firing.png</entry></row>
+                <row><entry>firing-width</entry><entry>intItem</entry><entry>The width of the firing cannon sprites frames</entry><entry>64</entry></row>
+                <row><entry>firing-frames</entry><entry>intItem</entry><entry>The number of frames of the firing cannon sprites</entry><entry>4</entry></row>
+                <row><entry>firing-versions</entry><entry>intItem</entry><entry>The number of versions of the firing cannon sprites</entry><entry>2</entry></row>
+                <row><entry>exploding-file</entry><entry>strItem</entry><entry>The filename of the exploding cannon sprite</entry><entry>exploding.png</entry></row>
+                <row><entry>exploding-frames</entry><entry>intItem</entry><entry>The number of frames of the exploding cannon sprites</entry><entry>4</entry></row>
+                <row><entry>exploding-versions</entry><entry>intItem</entry><entry>The number of versions of the exploding cannon sprites</entry><entry>2</entry></row>
+                <row><entry>fighters-flag-y-diff</entry><entry>intItem</entry><entry>The height difference between flags and cannons sprites</entry><entry>-12</entry></row>
+                <row><entry>width-between-flag-and-fighter</entry><entry>intItem</entry><entry>The number of pixels between the left most pixel of the flag and the right most pixel of the simple cannon (when not firing nor exploding)</entry><entry>32</entry></row>
+              </tbody>
+            </tgroup>
+          </table>
+        </para>
+      </sect3>
+    </sect2>
+  </sect1>
+  <sect1 id="tid">
+    <title>The Images directory</title>
+    <para>
+      This directory contains the buttons of the game, the map and the sprites subdirectory.
+    </para>
+    <sect2>
+      <title>The map.png file</title>
+      <para>
+        This is just a png file representing the map of the skins's world. Countries can have arbitrary shapes, but should be grouped in eye-recognizable continents, by location only or by color.
+        <mediaobject>
+          <imageobject><imagedata fileref="map.png" format="PNG"/></imageobject>
+          <textobject><phrase>A sample map</phrase></textobject>
+        </mediaobject>
+      </para>
+    </sect2>
+    <sect2>
+      <title>The map-mask.png file</title>
+      <para>
+        This is a png file representing also the map of the skins's world, but with coded colors that allow to identify uniquely.each country. Countries must have at least the same shapes as the corresponding countries on the map.png file so that users can click anywhere in a viewable country and select the good one. Countries, like little islands as Indonesia in the default map can be greater than the equivalent in the map.png file to facilitate the selection of the country. 
+        <mediaobject>
+          <imageobject><imagedata fileref="map-mask.png" format="PNG"/></imageobject>
+          <textobject><phrase>A sample map-mask</phrase></textobject>
+        </mediaobject>
+      </para>
+      <para>
+        The blue component (in RGB model) of a country's color identifies the country: index 0 is country 0 in the onu.xml file, index 1 is country 1, etc. White (0xFFFFFF in RGB) identifies the absence of country (sees or, why not, no man's lands).
+      </para>
+    </sect2>
+    <sect2>
+      <title>The buttons images</title>
+      <para>All commands apart countries selection are triggered by the buttons, so they should be easily understandable, even if tooltips and "what's this" help to identify them. In the current version, they are inserted in a KDE toolbar and thus adopt the size of the toolbar. They should be created large enough to allow a good scaling at whatever final size. The filenames are hard-coded in the code, so they should not be modified. The table below shows all the buttons that should be provided, in the order in which they appear in the toolbar, knowing that the buttons are diplayed and hided when necessary.</para>
+      <table>
+      <title>The buttons of the GUI</title>
+      <tgroup cols="3">
+      <thead><row><entry>Image</entry><entry>Filname</entry><entry>Signification</entry></row></thead>
+      <tbody>
+        <row>
+          <entry><mediaobject><imageobject><imagedata fileref="quitter.png" format="PNG"/></imageobject></mediaobject></entry><entry>quitter.png</entry><entry>Quit the game. Asks if the current game should be saved</entry>
+        </row>
+        <row>
+          <entry><mediaobject><imageobject><imagedata fileref="nouveauJeu.png" format="PNG"/></imageobject></mediaobject></entry><entry>nouveauJeu.png</entry><entry>Creates a new game. Asks if the current game should be cancelled</entry>
+        </row>
+        <row>
+          <entry><mediaobject><imageobject><imagedata fileref="newNetGame.png" format="PNG"/></imageobject></mediaobject></entry><entry>newNetGame.png</entry><entry>Tries to join a network game</entry>
+        </row>
+        <row>
+          <entry><mediaobject><imageobject><imagedata fileref="aide.png" format="PNG"/></imageobject></mediaobject></entry><entry>aide.png</entry><entry>Should open the help document. Currently, it only opens the about data dialog box</entry>
+        </row>
+        <row>
+          <entry><mediaobject><imageobject><imagedata fileref="ouvrirJeu.png" format="PNG"/></imageobject></mediaobject></entry><entry>ouvrirJeu.png</entry><entry>Opens a saved game</entry>
+        </row>
+        <row>
+          <entry><mediaobject><imageobject><imagedata fileref="saveGame.png" format="PNG"/></imageobject></mediaobject></entry><entry>saveGame.png</entry><entry>Saves the current game to file</entry>
+        </row>
+
+        <row>
+          <entry><mediaobject><imageobject><imagedata fileref="annuler.png" format="PNG"/></imageobject></mediaobject></entry><entry>annuler.png</entry><entry>Cancels the current ongoing action</entry>
+        </row>
+        <row>
+          <entry><mediaobject><imageobject><imagedata fileref="distributionArmees.png" format="PNG"/></imageobject></mediaobject></entry><entry>distributionArmees.png</entry><entry>After all players have put their armies, it is possible to modify the distributions (named recycling). This button asks to do such a redistribution</entry>
+        </row>
+        <row>
+          <entry><mediaobject><imageobject><imagedata fileref="distributionArmeesFinie.png" format="PNG"/></imageobject></mediaobject></entry><entry>distributionArmeesFinie.png</entry><entry>Chooses not to redistribute. All clients windows must have this button clicked to really end the distribution</entry>
+        </row>
+        <row>
+          <entry><mediaobject><imageobject><imagedata fileref="joueurSuivant.png" format="PNG"/></imageobject></mediaobject></entry><entry>joueurSuivant.png</entry><entry>Ends the current player's turn and switch to the next one or to the next turn if the current player was the last one</entry>
+        </row>
+        <row>
+          <entry><mediaobject><imageobject><imagedata fileref="attackOne.png" format="PNG"/></imageobject></mediaobject></entry><entry>attackOne.png</entry><entry>Chooses to start an attack with one army</entry>
+        </row>
+        <row>
+          <entry><mediaobject><imageobject><imagedata fileref="attackTwo.png" format="PNG"/></imageobject></mediaobject></entry><entry>attackTwo.png</entry><entry>Chooses to start an attack with two armies</entry>
+        </row>
+        <row>
+          <entry><mediaobject><imageobject><imagedata fileref="attackThree.png" format="PNG"/></imageobject></mediaobject></entry><entry>attackThree.png</entry><entry>Chooses to start an attack with three armies</entry>
+        </row>
+        <row>
+          <entry><mediaobject><imageobject><imagedata fileref="defendOne.png" format="PNG"/></imageobject></mediaobject></entry><entry>defendOne.png</entry><entry>Chooses to defend an attacked country with one army</entry>
+        </row>
+        <row>
+          <entry><mediaobject><imageobject><imagedata fileref="defendTwo.png" format="PNG"/></imageobject></mediaobject></entry><entry>defendTwo.png</entry><entry>Chooses to defend an attacked country with two armies</entry>
+        </row>
+        <row>
+          <entry><mediaobject><imageobject><imagedata fileref="moveArmies.png" format="PNG"/></imageobject></mediaobject></entry><entry>moveArmies.png</entry><entry>Chooses to start the moving of armies between two countries (last action in the turn)</entry>
+        </row>
+        <row>
+          <entry><mediaobject><imageobject><imagedata fileref="moveOne.png" format="PNG"/></imageobject></mediaobject></entry><entry>moveOne.png</entry><entry>Chooses to move one army from the previously chosen source country to the target country</entry>
+        </row>
+        <row>
+          <entry><mediaobject><imageobject><imagedata fileref="moveFive.png" format="PNG"/></imageobject></mediaobject></entry><entry>moveFive.png</entry><entry>Chooses to move five armies from the previously chosen source country to the target country</entry>
+        </row>
+        <row>
+          <entry><mediaobject><imageobject><imagedata fileref="moveTen.png" format="PNG"/></imageobject></mediaobject></entry><entry>moveTen.png</entry><entry>Chooses to move ten armies from the previously chosen source country to the target country</entry>
+        </row>
+        <row>
+          <entry><mediaobject><imageobject><imagedata fileref="moveFinish.png" format="PNG"/></imageobject></mediaobject></entry><entry>moveFinish.png</entry><entry>Chooses to end the moving of armies at invasion or moving time</entry>
+        </row>
+        <row>
+          <entry><mediaobject><imageobject><imagedata fileref="moveBackOne.png" format="PNG"/></imageobject></mediaobject></entry><entry>moveBackOne.png</entry><entry>Chooses to retract one army from the target country and put it back in the source country during armies moving or invasion</entry>
+        </row>
+        <row>
+          <entry><mediaobject><imageobject><imagedata fileref="moveBackFive.png" format="PNG"/></imageobject></mediaobject></entry><entry>moveBackFive.png</entry><entry>Chooses to retract five armies from the target country and put it back in the source country during armies moving or invasion</entry>
+        </row>
+        <row>
+          <entry><mediaobject><imageobject><imagedata fileref="moveBackTen.png" format="PNG"/></imageobject></mediaobject></entry><entry>moveBackTen.png</entry><entry>Chooses to retract ten armies from the target country and put it back in the source country during armies moving or invasion</entry>
+        </row>
+      </tbody>
+      </tgroup>
+      </table>
+    </sect2>
+    <sect2>
+      <title>The sprites directory</title>
+      <para>
+        This directory contains the image files of the sprites used by the game. In the default skin, these are flags, infantry, cavalry and cannon. Infantry reprents one army, five for cavalry and ten for cannons. Cannons are also used to display ongoing battles. That's why there is three kinds of cannon sprites: normal static or moving cannon, firing one and exploding one.
+      </para>
+      <para>
+        Each sprite image is the concatenation of the various views of the object and for each view, its frames. Views are organized vertically and frames horizontally. Where to cut the image in individual frames is found bye dividing the height of the image by the number of views and the width by ne number of frames. These data are found in the onu.xml file.
+        <mediaobject><imageobject><imagedata fileref="cannon.png" format="PNG"/></imageobject><caption><para>An example of a sprite image: cannon.png</para></caption></mediaobject>
+      </para>
+      <para>
+        For armies sprites, there is three different views, from top to bottom: looking right, looking left and face. For flags, there is only one view. All sprites backgrounds should be set to transparent.
+        <mediaobject><imageobject><imagedata fileref="italy.png" format="PNG"/></imageobject><caption><para>An example of a flag sprite image: italy.png</para></caption></mediaobject>
+      </para>
+    </sect2>
+  </sect1>
+  <sect1 id="tsd">
+    <title>The Sons directory</title>
+    <para></para>
+  </sect1>
+</chapter>
+
+<chapter id="faq">
+<title>Questions and Answers</title>
+
+&reporting.bugs;
+&updating.documentation;
+
+<qandaset id="faqlist">
+<qandaentry>
+<question>
+<para>What will be the first question concerning &kapp;?</para>
+</question>
+<answer>
+</answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+<title>Credits and License</title>
+
+<para>
+&kapp;
+</para>
+<para>
+Program copyright 2002 Gael de Chalendar <email>Gael.de.Chalendar@free.fr</email>
+</para>
+<para>
+Contributors:
+Robin Doer,
+Albert Astals Cid,
+Michal Golunski (Polish translation).
+</para>
+
+<para>
+Documentation copyright 2002 Gael de Chalendar <email>Gael.de.Chalendar@free.fr</email>
+</para>
+
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
+
+&underFDL;               <!-- FDL: do not remove. Commercial development should -->
+<!-- replace this with their copyright and either remove it or re-set this.-->
+
+<!-- Determine which license your application is licensed under,
+     and delete all the remaining licenses below:
+
+     (NOTE:  All documentation are licensed under the FDL,
+     regardless of what license the application uses) -->
+
+&underGPL;        	 <!-- GPL License -->
+
+</chapter>
+
+<appendix id="installation">
+<title>Installation</title>
+
+<sect1 id="getting-ksirk">
+<title>How to obtain KsirK</title>
+
+<para>
+KsirK can be found at
+<ulink url="http://gna.org/projects/ksirk">http://gna.org/projects/ksirk</ulink>. There, you
+will find, depending of the version, a source archive (.tar.gz), a source RPM and a binary RPM made on a
+Mandrake Intal machine with KDE 3.4.x. 
+</para>
+<para>
+For any information, suggestion, comment or question, <emphasis>please</emphasis>
+mail to: <email>kleag@free.fr</email> or use one of the KsirK mailing lists that you can find on the Web site
+</para>
+</sect1>
+
+<sect1 id="requirements">
+<title>Requirements</title>
+<para>
+  To use &ksirk;, you will need the kdegames package. To compile it, you must have Qt 3.3 with STL support enabled (all modern GNU/Linux distributions have ths kind of Qt) and the development package of kdegames.
+</para>
+<!--
+List any special requirements for your application here. This should include:
+.Libraries or other software that is not included in kdesupport,
+kdelibs, or kdebase.
+.Hardware requirements like amount of RAM, disk space, graphics card
+capabilities, screen resolution, special expansion cards, etc.
+.Operating systems the app will run on. If your app is designed only for a
+specific OS, (you wrote a graphical LILO configurator for example) put this
+information here.
+-->
+
+<!-- For a list of updates, you may refer to the application web site
+or the ChangeLog file, or ... -->
+<para>
+For a list of updates, you may refer to the application web site
+or the ChangeLog file, or the README, etc.
+</para>
+</sect1>
+
+<sect1 id="compilation">
+<title>Compilation and Installation</title>
+
+<para>
+In order to compile and install &ksirk; on your system, type the following in the base
+directory of the &ksirk; distribution:
+<screen width="40">
+<prompt>%</prompt> <userinput>./configure --prefix=&lt;your-KDE-root-directory&gt;</userinput>
+<prompt>%</prompt> <userinput>make</userinput>
+<prompt>%</prompt> <userinput>make install</userinput>
+</screen>
+</para>
+
+<para>Since &ksirk; uses autoconf and automake you should have not trouble compiling it.
+Should you run into problems please report them to the &ksirk; mailing lists.</para>
+<para>Hopefully, I will also be able to distribute a rpm binary version of the package.</para>
+</sect1>
+
+<sect1 id="configuration">
+<title>Configuration</title>
+
+<para>Note that you can move the toolbar and its position will be remembered. There is no oher configuration needs.</para>
+
+</sect1>
+
+</appendix>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+

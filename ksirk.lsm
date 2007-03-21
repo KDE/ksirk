@@ -1,0 +1,14 @@
+Begin3
+Title:          KsirK
+Version:        1.8beta1
+Entered-date:   08/25/2002
+Description:    A Free and Open Source Strategy Game for KDE
+Keywords:       strategy, game, conquer, TEG, Risk, KDE, GPL, linux, free, open source
+Author:         Gael de Chalendar <kleag@free.fr> 
+Maintained-by:  The KsirK Team <ksirk@gna.org> 
+Primary-site:   http://gna.org/projects/ksirk
+Home-page:      http://home.gna.org/ksirk
+Original-site:  http://ksirk.tuxfamily.org
+Platforms:       Linux
+Copying-policy: GNU Public License
+End

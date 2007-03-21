@@ -1,0 +1,5 @@
+File=ksirksettings.kcfg
+ClassName=KsirkSettings
+Singleton=true 
+Mutators=true
+NameSpace=Ksirk

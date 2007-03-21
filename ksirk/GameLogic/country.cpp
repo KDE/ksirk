@@ -1,0 +1,445 @@
+/* This file is part of KsirK.
+   Copyright (C) 2001-2007 Gaël de Chalendar <kleag@free.fr>
+
+   KsirK is free software; you can redistribute it and/or
+   modify it under the terms of the GNU General Public
+   License as published by the Free Software Foundation, version 2.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program; see the file COPYING.  If not, write to
+   the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
+*/
+
+/* begin                : Wed Jul 18 2001 */
+
+#define KDE_NO_COMPAT
+#include "country.h"
+#include "player.h"
+#include "backgnd.h"
+#include "kgamewin.h"
+#include "Sprites/flagsprite.h"
+#include "Sprites/skinSpritesData.h"
+
+#include <qstring.h>
+#include <qapplication.h>
+#include <klocale.h>
+#include <kdebug.h>
+#include <qdatastream.h>
+
+#include <iostream>
+#include <stdexcept>
+
+namespace Ksirk
+{
+
+namespace GameLogic
+{
+
+Country::Country(const QString& theName,
+                  const QPointF& centralPoint,
+                  const QPointF& flagPoint, 
+                  const QPointF& cannonPoint, 
+                  const QPointF& cavalryPoint,
+                  const QPointF& infantryPoint, 
+                  unsigned int id) :
+  m_belongsTo(0), m_flag(0), m_name(theName),
+  m_centralPoint(centralPoint), 
+  m_pointFlag(flagPoint), 
+  m_pointCannon(cannonPoint), 
+  m_pointCavalry(cavalryPoint),
+  m_pointInfantry(infantryPoint),
+  m_id(id)
+{
+//   kDebug() << "Creating country " << m_name.toUtf8().data() << ", " << this << endl;
+  nbArmies(1);
+  nbAddedArmies(0);
+  
+}
+
+Country::~Country()
+{
+//   kDebug() << "Deleting country " << m_name << ", " << this << endl;
+  if (m_flag)
+  {
+    delete m_flag;
+  }
+}
+
+void Country::reset()
+{
+//   kDebug() << "Country::reset" << endl;
+  clearAllSprites();
+  m_belongsTo = 0;
+  nbArmies(1);
+  createArmiesSprites(GameAutomaton::changeable().game()->backGnd());
+  if (m_flag)
+  {
+    m_flag->hide();
+    delete m_flag;
+    m_flag = 0;
+  }
+}
+
+void Country::createArmiesSprites(BackGnd *backGnd)
+{
+//   kDebug() << "createArmiesSprites..." << endl;
+  unsigned int armies = nbArmies();
+  clearAllSprites();
+  int i = 0;
+  while (armies >= 10) // Ajout des sprites de canon
+  {
+    CannonSprite *sprite = new CannonSprite(
+        Sprites::SkinSpritesData::single().strData("cannon-file"), 
+        backGnd, 
+        Sprites::SkinSpritesData::single().intData("cannon-frames"), 
+        Sprites::SkinSpritesData::single().intData("cannon-versions"));
+    sprite-> setDestination(NULL);             // Sprite immobile
+    sprite-> setPos(m_pointCannon.x()+5*i,m_pointCannon.y()+5*i);
+    m_spritesCannons.append(sprite);
+    i++;
+    armies -= 10;
+  }
+  i = 0;
+  while (armies >= 5) // Adding the cavalryman  sprites
+  {
+    CavalrySprite *sprite = new CavalrySprite(
+        Sprites::SkinSpritesData::single().strData("cavalry-file"), 
+        backGnd, 
+        Sprites::SkinSpritesData::single().intData("cavalry-frames"), 
+        Sprites::SkinSpritesData::single().intData("cavalry-versions"));
+    sprite-> setDestination(NULL);             // Sprite immobile
+    sprite-> setPos(m_pointCavalry.x()+5*i,m_pointCavalry.y()+5*i);
+    m_spritesCavalry.append(sprite);
+    i++;
+    armies -= 5;
+  }
+  i = 0;
+  while (armies > 0) // Ajout des sprites de fantassin
+  {
+    InfantrySprite *sprite = new InfantrySprite(
+        Sprites::SkinSpritesData::single().strData("infantry-file"), 
+        backGnd, 
+        Sprites::SkinSpritesData::single().intData("infantry-frames"), 
+        Sprites::SkinSpritesData::single().intData("infantry-versions"));
+    sprite-> setDestination(NULL);             // Sprite immobile
+    sprite-> setPos(m_pointInfantry.x()+5*i,m_pointInfantry.y()+5*i);
+    m_spritesInfantry.append(sprite);
+    i++;
+    armies--;
+  }
+}
+
+void Country::flag(const QString& theFlagFileName, BackGnd *backGnd)
+{
+//   kDebug() << "Country("<<m_name<<", "<<this<<")::flag flagFileName " << theFlagFileName << endl;
+
+  if (m_flag) delete m_flag;
+  m_flag = new FlagSprite(theFlagFileName, backGnd, 
+      Sprites::SkinSpritesData::single().intData("flag-frames"), 
+      Sprites::SkinSpritesData::single().intData("flag-versions"));
+  m_flag-> setDestination(NULL);
+  m_flag-> setPos(m_pointFlag.x(),m_pointFlag.y());
+  m_flag-> setZValue(10);
+//    qDebug("OUT Country::flag");
+}
+
+bool Country::communicateWith(const Country* otherCountry) const
+{
+  if (!otherCountry)
+  {
+    kDebug() << "OUT otherCountry null Country::communicateWith" << endl;
+    return false;
+  }
+
+  // a country is considered to communicate with itself
+  if (otherCountry == this) {return true;}
+
+//    kDebug() << "Country::communicateWith (" << name() << ", " << otherCountry-> name() << ")" << endl << flush;
+  unsigned int nbNeighbours = neighbours().size();
+  for (unsigned int i = 0; i < nbNeighbours; i++)
+  {
+    if (neighbours().at(i) == otherCountry)
+    {
+//            kDebug() << "OUT true Country::communicateWith" << endl << flush;
+      return true;
+    }
+  }
+//    kDebug() << "OUT false Country::communicateWith" << endl << flush;
+  return false;
+}
+
+/** @returns a pointer on the Player that holds this Country */
+const Player * Country::owner() const
+{
+  return m_belongsTo;
+}
+
+Player * Country::owner() 
+{
+  return m_belongsTo;
+}
+
+/** At the end of this method, the Country belogns to the argument player */
+void Country::owner(Player *player)
+{  
+  m_belongsTo = player;
+  if (player != 0)
+  {
+    createArmiesSprites(GameLogic::GameAutomaton::changeable().game()-> backGnd());
+    flag(m_belongsTo->flagFileName(), GameLogic::GameAutomaton::changeable().game()-> backGnd());
+  }
+}
+
+unsigned int Country::nbArmies() const
+{
+  return m_nbArmies;
+}
+
+unsigned int Country::nbAddedArmies()
+{
+  return m_nbAddedArmies;
+}
+
+void Country::nbArmies(unsigned int nb)
+{
+  m_nbArmies = nb;
+}
+
+void Country::nbAddedArmies(unsigned int nb)
+{
+  m_nbAddedArmies = nb;
+}
+
+void Country::incrNbArmies(unsigned int nb)
+{
+  nbArmies(nbArmies() + nb);
+}
+
+void Country::incrNbAddedArmies(unsigned int nb)
+{
+  nbAddedArmies(nbAddedArmies() + nb);
+}
+
+void Country::decrNbAddedArmies(unsigned int nb)
+{
+  nbAddedArmies(nbAddedArmies() - nb);
+}
+
+void Country::decrNbArmies(unsigned int nb)
+{
+  nbArmies(nbArmies() - nb);
+}
+
+const QString Country::name() const
+{
+  return (m_name);
+}
+
+const QPointF& Country::centralPoint() const
+{
+  return (m_centralPoint);
+}
+
+const QPointF& Country::pointFlag() const
+{
+  return (m_pointFlag);
+}
+
+const QPointF& Country::pointCannon() const
+{
+  return (m_pointCannon);
+}
+
+const QPointF& Country::pointCavalry() const
+{
+  return (m_pointCavalry);
+}
+
+const QPointF& Country::pointInfantry() const
+{
+  return (m_pointInfantry);
+}
+
+void Country::centralPoint(const QPointF pt)
+{
+  m_centralPoint = pt;
+}
+
+void Country::pointFlag(const QPointF pt)
+{
+  m_pointFlag = pt;
+}
+
+void Country::pointCannon(const QPointF pt)
+{
+  m_pointCannon = pt;
+}
+
+void Country::pointCavalry(const QPointF pt)
+{
+  m_pointCavalry = pt;
+}
+
+void Country::pointInfantry(const QPointF pt)
+{
+  m_pointInfantry = pt;
+}
+
+AnimSpritesList< CannonSprite >& Country::spritesCannons()
+{
+  return (m_spritesCannons);
+}
+
+AnimSpritesList< CavalrySprite >& Country::spritesCavalry()
+{
+  return (m_spritesCavalry);
+}
+
+AnimSpritesList< InfantrySprite >& Country::spritesInfantry()
+{
+  return (m_spritesInfantry);
+}
+
+/** No descriptions */
+void Country::neighbours(const std::vector<Country*>& neighboursVect)
+{
+  m_neighbours = neighboursVect;
+}
+
+/** No descriptions */
+std::vector< Country* >& Country::neighbours()
+{
+//    kDebug() << "Country::neighbours" << endl << flush;
+  return m_neighbours;
+}
+
+/** No descriptions */
+const std::vector< Country* >& Country::neighbours() const
+{
+//    kDebug() << "Country::neighbours const" << endl << flush;
+  return m_neighbours;
+}
+
+/*!
+    \fn Ksirk::Country::clearAllSprites()
+ */
+void Country::clearAllSprites()
+{
+//  kDebug() << "Country::clearAllSprites()" << endl;
+  m_spritesCannons.hideAndRemoveAll();
+  m_spritesCavalry.hideAndRemoveAll();
+  m_spritesInfantry.hideAndRemoveAll();
+}
+
+const QPointF& Country::pointFor(const AnimSprite* sprite)
+{
+  if (dynamic_cast<const InfantrySprite*>(sprite))
+  {
+    return pointInfantry();
+  }
+  else if (dynamic_cast<const CavalrySprite*>(sprite))
+  {
+    return pointCavalry();
+  }
+  else if (dynamic_cast<const CannonSprite*>(sprite))
+  {
+    return pointCannon();
+  }
+  else if (dynamic_cast<const FlagSprite*>(sprite))
+  {
+    return pointFlag();
+  }
+  else 
+  {
+    std::cerr << "Unknown sprite type" << std::endl;
+    exit(1);
+  }
+}
+
+void Country::saveXml(std::ostream& xmlStream)
+{
+  QString name = m_name.toUtf8();
+  name = name.replace("&","&amp;");
+  name = name.replace("<","&lt;");
+  name = name.replace(">","&gt;");
+  xmlStream << "<country name=\""<<name.toUtf8().data()<<"\" owner=\"";
+  if (m_belongsTo == 0)
+    xmlStream << "none";
+  else
+  {
+    QString pname = m_belongsTo->name().toUtf8();
+    pname = pname.replace("&","&amp;");
+    pname = pname.replace("<","&lt;");
+    pname = pname.replace(">","&gt;");
+    xmlStream << pname.toUtf8().data();
+  }
+  xmlStream << "\" ";
+
+  xmlStream << "nbArmies=\""<<nbArmies() << "\" ";
+  xmlStream << "nbArmiesAdded=\""<<nbAddedArmies() << "\" ";
+
+    xmlStream << " />" << std::endl;
+
+/*    xmlStream << "<flagPoint x=\""<<m_pointFlag.x()<<"\" y=\""<<m_pointFlag.y()<<"\" />" << std::endl;
+    xmlStream << "<cavalryPoint x=\""<<m_pointCavalry.x()<<"\" y=\""<<m_pointCavalry.y()<<"\" />" << std::endl;
+    xmlStream << "<infantryPoint x=\""<<m_pointInfantry.x()<<"\" y=\""<<m_pointInfantry.y()<<"\" />" << std::endl;
+
+    xmlStream << "<neighbours>" << std::endl;
+    for (unsigned int i = 0; i < m_spritesCannons.size() ; i++)
+    {
+      xmlStream << "<neighbour name=\""<<m_neighbours.at(i)->name()<<"\" />" << std::endl;
+    }
+    xmlStream << "</neighbours>" << std::endl;
+    
+    m_spritesCannons.saveXmlAll(xmlStream);
+
+    m_spritesCavalry.saveXmlAll(xmlStream);
+
+    m_spritesInfantry.saveXmlAll(xmlStream);
+  
+  xmlStream << "</country>" << std::endl;
+*/
+}
+
+void Country::send(QDataStream& stream)
+{
+  
+stream << m_name << (m_belongsTo?m_belongsTo->name():"") << quint32(m_nbArmies) << quint32(m_nbAddedArmies);
+}
+
+bool Country::hasAdjacentEnemy()
+{
+  for (uint j = 0; j < m_neighbours.size(); j++)
+  {
+    if ( m_neighbours[j]->owner() != m_belongsTo )
+    {
+      return true;
+    }
+  }
+  return false;
+}
+
+QDataStream& operator>>(QDataStream& stream, Country* country)
+{
+  quint32 nbArmies, nbAddedArmies;
+  QString ownerName;
+  stream >> ownerName >> nbArmies >> nbAddedArmies;
+  country->owner(GameAutomaton::changeable().playerNamed(ownerName));
+  country->nbArmies(nbArmies);
+  country->nbAddedArmies(nbAddedArmies);
+  country->createArmiesSprites(GameAutomaton::changeable().game()->backGnd());
+  return stream;
+}
+
+
+} // closing namespace GameLogic
+
+} // closing namespace Ksirk
+
+#include "country.moc"

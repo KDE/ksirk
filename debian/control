@@ -1,0 +1,15 @@
+Source: ksirk
+Section: games
+Priority: optional
+Maintainer: Christian Britz <cbritz@gmx.net>
+Build-Depends: debhelper (>= 4.0.0), autotools-dev
+Standards-Version: 3.6.1
+
+Package: ksirk
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: A Free and Open Source Strategy Game for KDE (Risk like)
+ KsirK is a computerized version of a well known strategy board game: Risk ! 
+ It is a game for KDE released under the GPL. In the current version, KsirK is a 
+ usable multi-player network-enabled game with a basic AI.
+ The goal of the game is simply to conquer the World... It is done by attacking your neighbors with your armies.

@@ -1,0 +1,113 @@
+Before import in kdereview/playground:
+  * crash on exit (not the KsirK fault ?)
+  * max size of the window limited by the map size
+
+Quickly
+  * replace all QMessageBox by KMessageBox
+  * study the replacement of the global timer by more local ones
+
+Before 1.9:
+  * [DONE] finish porting to KDE4
+  * [DONE] port to QGraphicsView + SVG (maybe even for 2.0)
+  * [framework OK, controls to add] zoom
+  * add something similar to cards in Risk(R)
+  * add more visual clues during battle (number of cannons and explosions equal
+    to those involved, the nation flag, etc.)
+  * rework overall window presentation (size of maps, chat and info dialog, etc.)
+  * [DONE through chat and info widget] at first game launch, add an information step explaining the role of buttons
+    with a "Do not show again" check box.
+  * show opponent countries during battle
+  * handle plurals in messages
+  * [DONE through chat and info widget] clearly show the battle results (graphics)
+  * enhance the new AI (make it aware of goals,...)
+  * automaticaly choose the messages window lines height depending on the font
+  * replace ids by names in the skins onu.xml file format and make the countries
+    vector independent of the order in the ONU class
+  * make players order random at initialization
+  * possibility to save AI only games
+
+Before 2.0:
+  - if a fight starts outside of the displayed zone, automaticaly move to 
+    center on the fight (configurable)
+  - possibility to Drag and Drop the map
+  - perfect implementation of Risk rules (optional if some enhancements are
+    implemented) ;
+  - hability to save game at any point
+  - use khotnewstuff for new skins
+  - use GGZ or Jabber to offer or find network games
+
+Middle to long term:
+  - game periods (distribution of armies, attacks, ...) should be simultaneous
+    for all the players. But keep a turn-by-turn organization (partly-real-time) ;
+  - map  = 3D model, map = earth or other planet; could be zoomed and rotated.
+    sprites = flat images or (better) 3D models too.
+
+Ideas by Dre to be dispatched :
+ (3) [DONE] show the results of the dice rolled 
+ (4) [DONE] make it clearer who lost what in a battle
+ (1) [DONE] The animation is 
+      too slow
+ (6) [DONE] let me pick the number of armies to 
+      attack with using the keys - 1, 2, 3 - clicking takes too long if you are
+      doing a repeat battle
+ (5) [To be done for 1.9] I would initiate an attack by clicking on the attack 
+      armies and then when you drag you drag a canon with you to the target 
+      country - this dovetails nicely
+with opint (1), b/c then you don't have to slowly move the cannon afterwards
+ (2) [To be done for 2.0 ?] Color-code the countries by the owner - the flags are 
+      too hard to identify
+ (7) [To be done for 2.0 or before] have a "battle until troops exhausted" option - 
+      sometimes you just want a country no matter what the cost, but a cancel 
+      button would be useful too (in this case it would be nice if a dialog 
+      popped up with the two countries enlarged and the battle raging and 
+      soldiers falling in each round - hey, it's a wishlist,
+  I can dream, no ;-) ?
+
+
+Previous Releases
+Before 1.0 version:
+  - [There was still a lot :-(] bugs correction.
+
+Before 1.2 :
+  01- [Not so urgent] review API documentation ;
+  02- [DONE] stop the timer when the windows looses the focus ;
+  03- [DONE] implement basic AI ;
+  04- [DONE] stop to use a graphic pool (archeologic artefact !), use separate
+        images ;
+  05- [DONE] flag to indicate the current player inside status bar ;
+  06- [DONE example skin created; should create of a new skin instead; 
+      someone ?] translate the map... ;
+  07- [DONE] allow sprites to navigate from Alaska to Siberie by the short link
+  08- [Really good idea ?] change the buttons disabling solution from toolbar 
+      hiding to "graying" ;
+  09- [DONE] change the gestion of "multiple-territories countries": generalize
+      Each country should be composed of a number of separated territories with
+      a centralized gestion by extension, use the "mask solution" for the map.
+  10- [DONE] Change the remaining "hard-wired" sizes (sprites sizes in 
+      computations etc.) in the code and use the configuration file instead
+  11- [DONE] click or hit space to finish a move immediatly ;
+  12- [DONE] option to change sprites speed : from
+      slow to immediate
+
+Before 1.4 :
+  - [DONE] implements goals ;
+  - [DONE] make possible the changement of map : all map-related data should be
+    placed in resource files.
+  - [DONE] networked multiple players game
+  - [DONE] Test to add: if it remains only one army in a country that just 
+    conquered another, it is useless to display the invasion buttons
+  - [DONE] use keys 1,2,3 to choose the number of attackers and defenders
+  - [DONE] KDE standard config management
+  - [DONE] option to change sprites speed : from slow to immediate
+  - [DONE] option to enable or disable sounds
+  - [DONE] add a central point different of the flag point to countries to reduce 
+    dependence between the map mask and the flag point
+  - [DONE] add a cancel button to dialogs where cancelling is safe 
+
+Before 1.6 :
+  - [DONE] add an history, at least of battle events. GUI to be conceived (idea by 
+    frank DOT muts A gmail DOT com).
+  - [DONE] add a snapshot, a long name and a description to skins
+  - [DONE] countries names should be internationalized and drawn on the map at run 
+    time and not hard coded on the map image
+
