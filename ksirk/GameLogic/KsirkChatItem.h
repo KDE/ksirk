@@ -71,6 +71,6 @@ private:
   QList<QString> m_strings;
   QList<ElemType> m_order;
 } ; // class KsirkChatItem
-Q_DECLARE_METATYPE(KsirkChatItem);
+Q_DECLARE_METATYPE(KsirkChatItem)
 
 #endif // KSIRKCHATITEM_H

@@ -50,4 +50,4 @@ void InfantrySprite::setupTravel(
   }
 }
 
-};
+}

@@ -106,7 +106,7 @@ private:
   std::map<QString, QString> m_strDatas;
 };
 
-}; // closing namespace Sprites
-}; // closing namespace Ksirk
+} // closing namespace Sprites
+} // closing namespace Ksirk
 
 #endif // KSIRK_SPRITES_SKINSPRITESDATA_H

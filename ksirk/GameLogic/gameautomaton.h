@@ -97,7 +97,7 @@ enum KsirkMessagesIds {
     Winner, // 305
     NbPlayers, // 306
     FinalizePlayers, // 307
-    Acknowledge, // 308
+    Acknowledge // 308
 };
 
 /** Messages formats:

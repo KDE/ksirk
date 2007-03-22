@@ -76,6 +76,6 @@ private:
   static const unsigned int m_nbArmies = 1;
 };
 
-};
+}
 
 #endif

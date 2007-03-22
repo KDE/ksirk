@@ -95,7 +95,7 @@ AnimSprite::~AnimSprite()
 void AnimSprite::repaint()
 {
   update();
-};
+}
 
 void AnimSprite::setLook(TDir newLook)
 {

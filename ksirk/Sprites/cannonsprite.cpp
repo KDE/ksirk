@@ -45,4 +45,4 @@ void CannonSprite::setupTravel(
   }
 }
 
-};
+}

@@ -51,4 +51,4 @@ void CavalrySprite::setupTravel(
 }
 
 
-};
+}

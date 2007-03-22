@@ -46,7 +46,7 @@ public:
     NoGoal,     /**< The goal is to conquer all the world. */
     GoalPlayer, /**< The goal is to eliminate one player. */
     Countries,  /**< The goal is to conquier a given number of countries. */
-    Continents, /**< The goal is to conquier a few continents. */
+    Continents  /**< The goal is to conquier a few continents. */
   };
 
   

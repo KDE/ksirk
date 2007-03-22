@@ -161,7 +161,7 @@ void KGameWindow::evenementTimer()
 //     kDebug() << "restarting timer" << endl;
     m_timer.start(200);
   }
-};
+}
 
 void KGameWindow::slotLeftButtonDown(const QPointF& point)
 {

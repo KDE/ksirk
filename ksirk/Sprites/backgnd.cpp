@@ -35,12 +35,12 @@ BackGnd::BackGnd(QGraphicsScene *scene, const GameLogic::ONU* theWorld) :
   setPixmap(theWorld->map());
   setZValue(1);
   show();
-};
+}
 
 BackGnd::~BackGnd()
 {
 //   m_frame = 0;
-};
+}
 
 
 

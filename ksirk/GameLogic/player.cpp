@@ -73,7 +73,7 @@ Player::Player(
 bool Player::operator==(const Player& player) const
 {
   return (name() == player.name());
-};
+}
 
 
 /**  */

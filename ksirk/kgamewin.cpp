@@ -310,7 +310,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
 //   toolBar("mainToolBar")-> setBarPos(KToolBar::Bottom);
 //   toolBar("gameActionsToolBar")-> setBarPos(KToolBar::Bottom);
   m_frame->setFocus();
-};
+}
 
 void KGameWindow::initView()
 {

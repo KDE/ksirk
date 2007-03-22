@@ -57,6 +57,6 @@ public:
   virtual ~FlagSprite() {}
 };
 
-};
+}
 
 #endif

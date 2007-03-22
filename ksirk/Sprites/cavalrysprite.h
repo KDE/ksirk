@@ -75,6 +75,6 @@ private:
     static const unsigned int m_nbArmies = 5;
 };
 
-};
+}
 
 #endif

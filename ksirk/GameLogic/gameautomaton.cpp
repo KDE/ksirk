@@ -1012,7 +1012,7 @@ QDataStream& operator>>(QDataStream& s, GameAutomaton::GameState& state)
   s >> istate;
   state = GameAutomaton::GameState(istate);
   return s;
-};
+}
 
 
 bool GameAutomaton::setupPlayersNumberAndSkin(bool& networkGame, int& port, uint& newPlayersNumber)
@@ -2227,7 +2227,7 @@ void GameAutomaton::explosionFinished()
   }
 }
 
-}; // closing namespace GameLogic
-}; // closing namespace Ksirk
+} // closing namespace GameLogic
+} // closing namespace Ksirk
 
 #include "gameautomaton.moc"

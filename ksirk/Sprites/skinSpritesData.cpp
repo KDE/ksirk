@@ -115,5 +115,5 @@ void SkinSpritesData::intData(const QString& name, int data)
 }
     
 
-}; // closing namespace GameLogic
-}; // closing namespace Ksirk
+} // closing namespace GameLogic
+} // closing namespace Ksirk
