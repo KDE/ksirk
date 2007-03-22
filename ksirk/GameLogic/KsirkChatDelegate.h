@@ -18,10 +18,7 @@
 #ifndef KSIRKCHATDELEGATE_H
 #define KSIRKCHATDELEGATE_H
 
-#include <kchatbase.h>
 #include <kchatbaseitemdelegate.h>
-
-class KsirkChatModel;
 
 class KsirkChatDelegate : public KChatBaseItemDelegate
 {
@@ -36,11 +33,6 @@ public:
 
     QSize sizeHint(const QStyleOptionViewItem &option,
                     const QModelIndex &index ) const;
-
-    virtual KChatBaseModel* model();
-
-private:
-  KsirkChatModel* m_model;
 };
 
 #endif // KSIRKCHATDELEGATE_H
