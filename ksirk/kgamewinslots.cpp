@@ -18,7 +18,7 @@
 
 // application specific includes
 #include "kgamewin.h"
-#include "backgnd.h"
+#include "Sprites/backgnd.h"
 
 #include <kaboutapplicationdialog.h>
 

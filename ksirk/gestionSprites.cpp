@@ -46,7 +46,7 @@
  
 // application specific includes
 #include "kgamewin.h"
-#include "backgnd.h"
+#include "Sprites/backgnd.h"
 #include "ksirksettings.h"
 #include "Sprites/animspritesgroup.h"
 #include "Sprites/cannonsprite.h"

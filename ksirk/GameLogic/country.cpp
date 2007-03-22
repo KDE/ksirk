@@ -21,7 +21,7 @@
 #define KDE_NO_COMPAT
 #include "country.h"
 #include "player.h"
-#include "backgnd.h"
+#include "Sprites/backgnd.h"
 #include "kgamewin.h"
 #include "Sprites/flagsprite.h"
 #include "Sprites/skinSpritesData.h"

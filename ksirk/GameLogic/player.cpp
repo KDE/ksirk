@@ -20,7 +20,7 @@
 
 #define KDE_NO_COMPAT
 #include "player.h"
-#include "backgnd.h"
+#include "Sprites/backgnd.h"
 #include "Sprites/skinSpritesData.h"
 #include "GameLogic/gameautomaton.h"
 #include "GameLogic/goal.h"
