@@ -1,5 +1,5 @@
 /* This file is part of KsirK.
-   Copyright (C) 2001-2007 Gaël de Chalendar <kleag@free.fr>
+   Copyright (C) 2001-2007 Gael de Chalendar <kleag@free.fr>
 
    KsirK is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -11,9 +11,9 @@
    General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program; see the file COPYING.  If not, write to
-   the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+   02110-1301, USA
 */
 
 #define KDE_NO_COMPAT
@@ -63,7 +63,7 @@ public:
     * @param cannonPoint The point (top left corner) where the cannon sprite is drawn.
     * @param cavalryPoint The point (top left corner) where the cavalry sprite is drawn.
     * @param infantryPoint The point (top left corner) where the infantry sprite is drawn.
-    * @param id The uniq integer identifier of this country.
+    * @param id The unique integer identifier of this country.
     */
   Country(const QString& theName,
       const QPointF& centralPoint,
@@ -204,7 +204,7 @@ public:
   const QPointF& pointInfantry() const;
 
   /**
-    * Set the point guaranted to be inside this country territory and around 
+    * Set the point guaranteed to be inside this country territory and around 
     * which are drawn the fighters.
     */
   void centralPoint(const QPointF pt);
@@ -270,7 +270,7 @@ public:
   void send(QDataStream& stream);
 
   //@{
-  /** Accessors to this country's uniq integer identifier. */
+  /** Accessors to this country's unique integer identifier. */
   unsigned int id() const {return m_id;}
   unsigned int id() {return m_id;}
   void id(unsigned int id) {m_id = id;}
@@ -369,7 +369,7 @@ private:
     */
   AnimSpritesList< InfantrySprite > m_spritesInfantry;
   
-  /** The uniq integer identifier of this country. */
+  /** The unique integer identifier of this country. */
   unsigned int m_id;
 };
 

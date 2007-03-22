@@ -13,6 +13,10 @@
  *   the Free Software Foundation; either version 2 of the License, or     *
  *   (at your option) any later version.                                   *
  *                                                                         *
+ *   You should have received a copy of the GNU General Public License
+ *   along with this program; if not, write to the Free Software
+ *   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+ *   02110-1301, USA
  ***************************************************************************/
 
 /* Local includes */
@@ -70,7 +74,7 @@ AIPlayer :: AIPlayer(
 
 /**
   * This function is called whenever the player should choose an action (
-  * attack, defense, etc.). It has the responsability to choose the correct
+  * attack, defense, etc.). It has the responsibility to choose the correct
   * action depending on the state of the game.
   */
 void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
@@ -153,7 +157,7 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
 /**
   * Chooses the next action. In the current basic setting, chooses at random
   * between the three possibilities. For each, chooses randomly the parameters.
-  * If the randomly choosen parameters end by an impossible action,  continue
+  * If the randomly chosen parameters end by an impossible action,  continue
   * with next player.
   */
 void AIPlayer::chooseAttackMoveArmiesOrNextPlayer()
@@ -335,7 +339,7 @@ bool AIPlayer::attackAction()
   uint nbAttack = 0;
   if (srcNbArmies == 1)
   {
-    kError() << "AI player " << Player::name() << " country " << m_src->nbArmies() << "have only one army. Should not be choosed to attack." << endl;
+    kError() << "AI player " << Player::name() << " country " << m_src->nbArmies() << "have only one army. Should not be chosen to attack." << endl;
     exit();
   }
   if (srcNbArmies >= 2) {nbAttack = 1;}

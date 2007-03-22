@@ -1,5 +1,5 @@
 /* This file is part of KsirK.
-   Copyright (C) 2004-2007 Gaël de Chalendar <kleag@free.fr>
+   Copyright (C) 2004-2007 Gael de Chalendar <kleag@free.fr>
 
    KsirK is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -11,9 +11,9 @@
    General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program; see the file COPYING.  If not, write to
-   the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+   02110-1301, USA
 */
 
 #ifndef KSIRK_GAMELOGIC_GAMEAUTOMATON_H
@@ -166,7 +166,7 @@ public:
   /** 
     * Enques the given event the mouse being positioned at the given point
     * @param event The event to register
-    * @param point The point where the event occured
+    * @param point The point where the event occurred
     */
   void event(const std::string& event, const QPointF& point = QPointF());
   
@@ -197,7 +197,7 @@ public:
     *
     * Chooses the next player to make a move by setting setTurn(true,true)
     * in the current player object. If a last player is given then the new
-    * player will be choosen so that it is not the last player, i.e. the
+    * player will be chosen so that it is not the last player, i.e. the
     * players a swapped. If no last player is given then the current player
     * is reactiveted
     * @param last - the last player who made a move

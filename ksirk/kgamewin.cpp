@@ -1,5 +1,5 @@
 /* This file is part of KsirK.
-   Copyright (C) 2001-2007 Gaël de Chalendar <kleag@free.fr>
+   Copyright (C) 2001-2007 Gael de Chalendar <kleag@free.fr>
 
    KsirK is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -11,9 +11,9 @@
    General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program; see the file COPYING.  If not, write to
-   the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+   02110-1301, USA
 */
 
 /*  begin                : mer jui 11 22:27:28 EDT 2001   */
@@ -420,7 +420,7 @@ bool KGameWindow::attackEnd()
       QDataStream stream(&buffer, QIODevice::WriteOnly);
       GameLogic::GameAutomaton::changeable().sendMessage(buffer,DisplayNormalGameButtons);
       KMessageParts messageParts;
-      messageParts << I18N_NOOP("%1 : it's up to you again") << currentPlayer()-> name();
+      messageParts << I18N_NOOP("%1 : it is up to you again") << currentPlayer()-> name();
       broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
     }
   }
@@ -614,7 +614,7 @@ bool KGameWindow::actionOpenGame()
 //   kDebug() << "KGameWindow::actionOpenGame" << endl;
 //   haltTimer();
   QString fileName = KFileDialog::getOpenFileName(KUrl(), "*.xml", this, i18n("KsirK - Load Game")); 
-  if (fileName != "")
+  if (!fileName.isEmpty())
   {
     m_waitedPlayers.clear();
     Ksirk::SaveLoad::GameXmlLoader loader(fileName, *this, m_waitedPlayers);
@@ -808,7 +808,7 @@ void KGameWindow::addAButton(
     const std::string& toolBarName)
 {
 //   kDebug() << "addAButton: " << fileName << endl;
-  QString imageFileName = m_dirs-> findResource("appdata", GameAutomaton::changeable().skin() + "/" + fileName);
+  QString imageFileName = m_dirs-> findResource("appdata", GameAutomaton::changeable().skin() + '/' + fileName);
 //   kDebug() << "Trying to load button image file: " << imageFileName << endl;
   if (imageFileName.isNull())
   {
@@ -821,7 +821,7 @@ void KGameWindow::addAButton(
   if (shortcut != KShortcut())
   {
     QString str = " ";
-    if (txt != "")
+    if (!txt.isEmpty())
     {
       str = txt;
     }
@@ -973,7 +973,7 @@ bool KGameWindow::setupOnePlayer()
       bool network = true;
       KPlayerSetupDialog(m_theWorld, 1, nomEntre, network, password, computer, nations, nationName, this, "KDialogSetupPlayer").exec();
       kDebug() << "After KPlayerSetupDialog. name: " << nomEntre << endl;
-      if (nomEntre == "")
+      if (nomEntre.isEmpty())
       {
         mes = i18n("Error - Player %d, you have to choose a name.", 1);
         QMessageBox::warning(this, i18n("Error"), mes);
@@ -1594,7 +1594,7 @@ unsigned int KGameWindow::attacked(const QPointF& point)
   }
   else if (m_firstCountry-> owner() == secondCountry-> owner())
   {
-    messageParts << I18N_NOOP("%1! You cannot attack %2! It's yours!") << currentPlayer()-> name()
+    messageParts << I18N_NOOP("%1! You cannot attack %2! It is yours!") << currentPlayer()-> name()
             << secondCountry-> name();
     displayNormalGameButtons();
   }
@@ -1892,7 +1892,7 @@ bool KGameWindow::nextPlayerNormal()
     KMessageParts messageParts;
     messageParts 
       << pm
-      << I18N_NOOP("%1, it's up to you.") << currentPlayer()->name();
+      << I18N_NOOP("%1, it is up to you.") << currentPlayer()->name();
     broadcastChangeItem(messageParts, ID_STATUS_MSG2);
     clear();
     QByteArray buffer;
@@ -1990,7 +1990,7 @@ void KGameWindow::invasionFinished()
   QPixmap pm = currentPlayer()->getFlag()->image(0);
   messageParts 
     << pm 
-    << I18N_NOOP("%1, it's up to you.") << currentPlayer()->name();
+    << I18N_NOOP("%1, it is up to you.") << currentPlayer()->name();
   broadcastChangeItem(messageParts, ID_STATUS_MSG2);
 }
         
@@ -2001,7 +2001,7 @@ void KGameWindow::shiftFinished()
   KMessageParts messageParts;
   messageParts 
     << pm 
-    << I18N_NOOP("%1, it's up to you.") << currentPlayer()->name();
+    << I18N_NOOP("%1, it is up to you.") << currentPlayer()->name();
   broadcastChangeItem(messageParts, ID_STATUS_MSG2);
   slotNextPlayer();
 }
@@ -2014,7 +2014,7 @@ void KGameWindow::cancelAction()
   QPixmap pm = currentPlayer()->getFlag()->image(0);
   messageParts 
     << pm 
-    << I18N_NOOP("%1, it's up to you.") << currentPlayer()->name();
+    << I18N_NOOP("%1, it is up to you.") << currentPlayer()->name();
   broadcastChangeItem(messageParts, ID_STATUS_MSG2);
 }
 
@@ -2223,7 +2223,7 @@ void KGameWindow::actionRecyclingFinished()
     KMessageParts messageParts;
     messageParts 
       << pm
-      << I18N_NOOP("%1, it's up to you.") << currentPlayer()->name();
+      << I18N_NOOP("%1, it is up to you.") << currentPlayer()->name();
     broadcastChangeItem(messageParts, ID_STATUS_MSG2);
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
@@ -2309,7 +2309,7 @@ void KGameWindow::explain()
   message1Parts << I18N_NOOP("All commands are issued through changing toolbar buttons and drag & drop. Hit...");
   broadcastChangeItem(message1Parts, ID_NO_STATUS_MSG);
 
-  QString newGameImageFileName = m_dirs-> findResource("appdata", GameAutomaton::changeable().skin() + "/" + CM_NEWGAME);
+  QString newGameImageFileName = m_dirs-> findResource("appdata", GameAutomaton::changeable().skin() + '/' + CM_NEWGAME);
   if (newGameImageFileName.isNull())
   {
     QMessageBox::critical(0, i18n("Error !"), i18n("Cannot load button image\nProgram cannot continue"));
@@ -2320,7 +2320,7 @@ void KGameWindow::explain()
   message2Parts << "\t" << newGameButtonPix << I18N_NOOP(" to start a new game;");
   broadcastChangeItem(message2Parts, ID_NO_STATUS_MSG);
 
-  QString joinGameImageFileName = m_dirs-> findResource("appdata", GameAutomaton::changeable().skin() + "/" + CM_NEWNETGAME);
+  QString joinGameImageFileName = m_dirs-> findResource("appdata", GameAutomaton::changeable().skin() + '/' + CM_NEWNETGAME);
   if (joinGameImageFileName.isNull())
   {
     QMessageBox::critical(0, i18n("Error !"), i18n("Cannot load button image\nProgram cannot continue"));
@@ -2331,7 +2331,7 @@ void KGameWindow::explain()
   message3Parts << "\t" << joinGameButtonPix << I18N_NOOP(" to join a network game (starting or reloading); and");
   broadcastChangeItem(message3Parts, ID_NO_STATUS_MSG);
 
-  QString openGameImageFileName = m_dirs-> findResource("appdata", GameAutomaton::changeable().skin() + "/" + CM_OPENGAME);
+  QString openGameImageFileName = m_dirs-> findResource("appdata", GameAutomaton::changeable().skin() + '/' + CM_OPENGAME);
   if (openGameImageFileName.isNull())
   {
     QMessageBox::critical(0, i18n("Error !"), i18n("Cannot load button image\nProgram cannot continue"));

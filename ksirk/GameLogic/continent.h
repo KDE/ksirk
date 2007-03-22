@@ -1,5 +1,5 @@
 /* This file is part of KsirK.
-   Copyright (C) 2002-2007 Gaël de Chalendar <kleag@free.fr>
+   Copyright (C) 2002-2007 Gael de Chalendar <kleag@free.fr>
 
    KsirK is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -11,9 +11,9 @@
    General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program; see the file COPYING.  If not, write to
-   the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+   02110-1301, USA
 */
 
 #ifndef CONTINENT_H
@@ -42,7 +42,7 @@ public:
     * @param myCountries The countries that will be member of this continent.
     * @param myBonus The bonus of armies at end of turn for the player owning 
     * all this continent.
-    * @param id The uniq integer id of this continent.
+    * @param id The unique integer id of this continent.
     */
   Continent (const QString &myName, const std::vector<Country*>& myCountries, 
     const int myBonus, unsigned int id);
@@ -77,7 +77,7 @@ public:
   void saveXml(std::ostream& xmlStream);
 
   //@{
-  /** Accessors to the uniq integer identifier of this continent. */
+  /** Accessors to the unique integer identifier of this continent. */
   inline unsigned int id() const {return m_id;}
   inline unsigned int id() {return m_id;}
   inline void id(unsigned int id) {m_id = id;}
@@ -99,7 +99,7 @@ private: // Private attributes
   /** The bonus armies got by a user that owns all this continent */
   const int bonus;
 
-  /** The uniq integer identifier of this continent. */
+  /** The unique integer identifier of this continent. */
   unsigned int m_id;
 };
 

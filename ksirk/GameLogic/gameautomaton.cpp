@@ -1,5 +1,5 @@
 /* This file is part of KsirK.
-   Copyright (C) 2004-2007 Gaël de Chalendar <kleag@free.fr>
+   Copyright (C) 2004-2007 Gael de Chalendar <kleag@free.fr>
 
    KsirK is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -11,9 +11,9 @@
    General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program; see the file COPYING.  If not, write to
-   the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+   02110-1301, USA
 */
 
 #include "gameautomaton.h"
@@ -226,7 +226,7 @@ bool dnssdAvailable() {
   if (pid==0) return false; // not a pid
   return (kill(pid,0)==0 || errno==EPERM);
   // signal 0 only checks if process is running, mdnsd is probably owned 
-  // by 'nobody' so we will  get EPERM, if mdnsd is not running error will be ESRCH
+  // by 'nobody' so we will get EPERM, if mdnsd is not running error will be ESRCH
 }
 
 Player* GameAutomaton::getAnyLocalPlayer()
@@ -341,7 +341,7 @@ GameAutomaton::GameState GameAutomaton::run()
     }
     else
     {
-//        if (event != "")
+//        if (!event.isEmpty())
 //          kDebug() << "Unhandled event " << event << " during handling of " << stateName() << endl;
     }
     break;
@@ -372,7 +372,7 @@ GameAutomaton::GameState GameAutomaton::run()
     }
     else
     {
-//        if (event != "")
+      //        if (!event.isEmpty())
 //          kError() << "Unhandled event " << event << " during handling of " << stateName() endl;
     }
   break;
@@ -456,7 +456,7 @@ GameAutomaton::GameState GameAutomaton::run()
     }
     else
     {
-//        if (event != "")
+      //        if (!event.isEmpty())
 //          kError() << "Unhandled event " << event << " during handling of " << stateName() << endl;
     }
   break;
@@ -510,7 +510,7 @@ GameAutomaton::GameState GameAutomaton::run()
     }
     else
     {
-//        if (event != "")
+      //        if (!event.isEmpty())
 //          kError() << "Unhandled event " << event << " during handling of " << stateName() << endl;
     }
   break;
@@ -543,7 +543,7 @@ GameAutomaton::GameState GameAutomaton::run()
       }*/
     else
     {
-//        if (event != "")
+      //        if (!event.isEmpty())
 //          kError() << "Unhandled event " << event << " during handling of " << stateName() << endl;
     }
   break;
@@ -573,7 +573,7 @@ GameAutomaton::GameState GameAutomaton::run()
     }
     else
     {
-//        if (event != "")
+      //        if (!event.isEmpty())
 //          std::cerr << "Unhandled event " << event << " during handling of " << stateName() << std::endl;
     }
   break;
@@ -696,7 +696,7 @@ GameAutomaton::GameState GameAutomaton::run()
     }
     else
     {
-      if (event != "")
+      if (!event.isEmpty())
         kDebug() << "Unhandled event " << event << " during handling of " << stateName() << endl;
       else
       {
@@ -724,7 +724,7 @@ GameAutomaton::GameState GameAutomaton::run()
     }
     else
     {
-//        if (event != "")
+      //        if (!event.isEmpty())
 //          std::cerr << "Unhandled event " << event << " during handling of " << stateName() << std::endl;
     }
   break;
@@ -735,7 +735,7 @@ GameAutomaton::GameState GameAutomaton::run()
           || currentPlayer()->isAI()
           || m_currentPlayerPlayed  
           || (KMessageBox::questionYesNo (m_game,
-                i18n("%1, you haven't played anything this turn.\nDo you really want to lose your turn ?",m_currentPlayer), 
+                i18n("%1, you have not played anything this turn.\nDo you really want to lose your turn ?",m_currentPlayer),
                 "Really Next Player ?") == KMessageBox::Yes) )
       {
         QByteArray buffer;
@@ -776,7 +776,7 @@ GameAutomaton::GameState GameAutomaton::run()
     }
     else
     {
-//        if (event != "")
+      //        if (!event.isEmpty())
 //          std::cerr << "Unhandled event " << event << " during handling of " << stateName() << std::endl;
     }
     // other case : state dosn't change
@@ -1101,7 +1101,7 @@ void GameAutomaton::setGoalFor(Player* player)
     {
       unsigned int max = playerList()->count();
       unsigned int playerNum = Dice::roll(max);
-//       kDebug() << "Choosed player num " << playerNum << " on " << max << endl;
+//       kDebug() << "Choice player num " << playerNum << " on " << max << endl;
       PlayersArray::iterator itp = playerList()->begin();
       PlayersArray::iterator itp_end = playerList()->end();
       unsigned int j = 1;
@@ -1110,12 +1110,12 @@ void GameAutomaton::setGoalFor(Player* player)
     }
     if (target != 0)
     {
-//       kDebug() << "Target choosed for " << player->name() << ": " << target->name() << endl;
+//       kDebug() << "Target choice for " << player->name() << ": " << target->name() << endl;
       goal->players().insert(target->id());
     }
     else
     {
-//       kDebug() << "No target choosed for " << player->name() << endl;
+//       kDebug() << "No target chosen for " << player->name() << endl;
     }
   }
   /// @note hack to avoid too easy countries goal when there is only two players
@@ -1244,7 +1244,7 @@ Player* GameAutomaton::playerNamed(const QString& playerName)
 
 Player* GameAutomaton::currentPlayer() 
 {
-  if (m_game && m_currentPlayer!="")
+  if (m_game && !m_currentPlayer.isEmpty())
   {
     return playerNamed(m_currentPlayer);
   }
@@ -1425,7 +1425,7 @@ void GameAutomaton::changePlayerName(Player* player)
       QString password;
       KPlayerSetupDialog(m_game->theWorld(), 1, nomEntre, network, password, computer, nations, nationName, m_game, "KDialogSetupPlayer").exec();
 //     kDebug() << "After KPlayerSetupDialog. name: " << nomEntre << endl;
-      if (nomEntre == "")
+      if (nomEntre.isEmpty())
       {
         mes = i18n("Error - Player %d, you have to choose a name.", 1);
         KMessageBox::sorry(m_game, mes, i18n("Error"));
@@ -2132,7 +2132,7 @@ void GameAutomaton::countriesDistribution()
     // chooses randomly a position in the remaining countries vector
     int h = Dice::roll(vect.size()) - 1;
     
-    // moves an iterator up to the position choosed
+    // moves an iterator up to the position chosen
     std::list< int >::iterator it = vect.begin();
     for (int itPos = 0; itPos < h-1; itPos++) it++;
     

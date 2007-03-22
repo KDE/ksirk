@@ -1,14 +1,18 @@
-//
-// C++ Implementation: goal
-//
-// Description: 
-//
-//
-// Author: Gaël de Chalendar (aka Kleag) <kleag@free.fr>, (C) 2005
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/**
+ C++ Implementation: goal
+
+ Description:
+
+
+ Author: Gael de Chalendar (aka Kleag) <kleag@free.fr>, (C) 2005
+
+ Copyright: See COPYING file that comes with this distribution
+
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+   02110-1301, USA
+*/
 #include "goal.h"
 #include "player.h"
 #include "onu.h"
@@ -252,7 +256,7 @@ QString Goal::message(int displayType)
         }
         it++;
       }
-      mes += ".";
+      mes += '.';
       break;
     default:;
     }

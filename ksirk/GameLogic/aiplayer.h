@@ -1,5 +1,5 @@
 /* This file is part of KsirK.
-   Copyright (C) 2002-2007 Gaël de Chalendar <kleag@free.fr>
+   Copyright (C) 2002-2007 Gael de Chalendar <kleag@free.fr>
 
    KsirK is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -11,9 +11,9 @@
    General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program; see the file COPYING.  If not, write to
-   the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+   02110-1301, USA
 */
 
 #ifndef AIPLAYER_H
@@ -77,14 +77,14 @@ public:
     
   /**
     * Saves this AI player as XML. Used in game saving.
-    * @param xmlStream The stream on wich to write the XML
+    * @param xmlStream The stream on which to write the XML
     */
   virtual void saveXml(std::ostream& xmlStream);
 
 protected:
   /** 
     * This function is called whenever the player should choose an action 
-    * (attack, defense, etc.). It has the responsability to choose the correct
+    * (attack, defense, etc.). It has the responsibility to choose the correct
     * action depending on the state of the game.
     */
   virtual void actionChoice(GameLogic::GameAutomaton::GameState state);
@@ -96,7 +96,7 @@ protected:
   /**
     * Chooses the next action. In the current basic setting, chooses at random
     * between the three possibilities. For each, chooses randomly the
-    * parameters.If the randomly choosen parameters end by an impossible 
+    * parameters.If the randomly chosen parameters end by an impossible
     * action, continue with next player.
     */
   virtual void chooseAttackMoveArmiesOrNextPlayer();

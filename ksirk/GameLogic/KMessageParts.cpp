@@ -1,14 +1,20 @@
-//
-// C++ Implementation: kstringvector
-//
-// Description: 
-//
-//
-// Author: Gaël de Chalendar (aka Kleag) <kleag@free.fr>, (C) 2005
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/**
+ C++ Implementation: kstringvector
+
+ Description:
+
+
+ Author: Gael de Chalendar (aka Kleag) <kleag@free.fr>, (C) 2005
+
+ Copyright: See COPYING file that comes with this distribution
+
+
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+   02110-1301, USA
+*/
+
 #include "KMessageParts.h"
 #include "kdebug.h"
 

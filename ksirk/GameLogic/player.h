@@ -10,10 +10,10 @@
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
    General Public License for more details.
 
-   You should have received a copy of the GNU General Public License
-   along with this program; see the file COPYING.  If not, write to
-   the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+*   You should have received a copy of the GNU General Public License
+*   along with this program; if not, write to the Free Software
+*   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+*   02110-1301, USA
 */
 
 /*  begin                : Wed Jul 18 2001 */
@@ -125,7 +125,7 @@ public:
 
   /**
     * Saves this player as XML. Used in game saving.
-    * @param xmlStream The stream on wich to write the XML
+    * @param xmlStream The stream on which to write the XML
     */
   virtual void saveXml(std::ostream& xmlStream);
   
@@ -157,7 +157,7 @@ public:
 
   /**
     * Checks if this player's goal is reached or not.
-    * @return true if the goal of this player is fullfilled, false otherwise
+    * @return true if the goal of this player is fulfilled, false otherwise
     */
   bool checkGoal();
   
@@ -188,7 +188,7 @@ public:
 protected:
   /** 
     * Saving of private data 
-    * @param xmlStream The stream on wich to write the XML
+    * @param xmlStream The stream on which to write the XML
     */
   void innerSaveXml(std::ostream& xmlStream);
   
@@ -217,7 +217,7 @@ protected:
   KGamePropertyUInt m_nbDefense;
 
   /**
-    * The nation choosen by the player
+    * The nation chosen by the player
     */
   Nationality *m_nation;
 
@@ -237,7 +237,7 @@ protected:
     */
   QString m_delayedInitNationName;
 
-  /** Used to transmit uniq ids and request for an acknowledgement of 
+  /** Used to transmit unique ids and request for an acknowledgement
     * of their reception. */
   static unsigned int m_uid;
 

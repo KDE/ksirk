@@ -13,6 +13,10 @@
  *   the Free Software Foundation; either version 2 of the License, or     *
  *   (at your option) any later version.                                   *
  *                                                                         *
+ *   You should have received a copy of the GNU General Public License
+ *   along with this program; if not, write to the Free Software
+ *   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+ *   02110-1301, USA
  ***************************************************************************/
 #define KDE_NO_COMPAT
 #include <qfile.h>
@@ -110,7 +114,7 @@ ONU::ONU(const QString& configFileName):
 //    root.attribute("map");
   QString mapString = root.attribute("map");
   kDebug() << "Map path: " << mapString << endl;
-  m_mapFileName = KGlobal::dirs()-> findResource("appdata", m_skin + "/" + mapString);
+  m_mapFileName = KGlobal::dirs()-> findResource("appdata", m_skin + '/' + mapString);
   kDebug() << "Map file name: " << m_mapFileName << endl;
   if (m_mapFileName.isEmpty())
   {
@@ -121,7 +125,7 @@ ONU::ONU(const QString& configFileName):
   }
   m_map = QPixmap(m_mapFileName);
 
-  QString mapMaskFileName = KGlobal::dirs()-> findResource("appdata", m_skin + "/" + root.attribute("map-mask"));
+  QString mapMaskFileName = KGlobal::dirs()-> findResource("appdata", m_skin + '/' + root.attribute("map-mask"));
   kDebug() << "Map mask file name: " << mapMaskFileName << endl;
   if (mapMaskFileName.isNull())
   {
