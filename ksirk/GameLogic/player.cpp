@@ -241,7 +241,7 @@ bool Player::save (QDataStream &stream)
 Nationality* Player::getNation() 
 {
   kDebug() << "Player::getNation for " << name() << endl;
-  if (m_nation == 0 && m_delayedInitNationName != "")
+  if (m_nation == 0 && !m_delayedInitNationName.isEmpty())
   {
     kError() << "  retrieving delayed nation " << m_delayedInitNationName << endl;
     setNation(m_delayedInitNationName);

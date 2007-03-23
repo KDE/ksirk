@@ -114,7 +114,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
     
     QString password = atts.value("password");
     
-    if (password == "")
+    if (password.isEmpty())
     {
       m_game.addPlayer(name, nbAvailArmies, nbCountries, nationName, isAi, password, nbAttack, nbDefense);
     }
@@ -217,7 +217,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
   else if (localName == "continent" && m_inGoal)
   {
     kDebug() << "Getting id of continent named " << atts.value("name") << endl;
-    unsigned int id = (atts.value("name")!="") ? 
+    unsigned int id = (!atts.value("name").isEmpty()) ? 
         m_game.theWorld()->continentNamed(atts.value("name"))->id() :
         0;
     m_goal->continents().insert(id);

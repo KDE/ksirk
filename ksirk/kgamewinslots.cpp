@@ -1,5 +1,5 @@
 /* This file is part of KsirK.
-   Copyright (C) 2001-2007 Gael de Chalendar <kleag@free.fr>
+   Copyright (C) 2001-2007 Gael de Chalendar (aka Kleag) <kleag@free.fr>
 
    KsirK is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -67,7 +67,7 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
 
   if (mouseLocalisation)
   {
-    if (countryName != "")
+    if (!countryName.isEmpty())
     {
       QString status1Text = "";
       const Player* player = mouseLocalisation-> owner();
@@ -263,7 +263,7 @@ void KGameWindow::slotSaveGame()
   if (GameLogic::GameAutomaton::changeable().isAdmin())
   {
     QString fileName = KFileDialog::getSaveFileName (KUrl(), "*.xml", this, i18n("KsirK - Save Game")); 
-    if (fileName != "")
+    if (!fileName.isEmpty())
     {
       std::ofstream ofs(fileName.toUtf8().data());
       saveXml(ofs);

@@ -48,13 +48,13 @@ namespace Ksirk
 {
 
 KPlayerSetupDialog::KPlayerSetupDialog( GameLogic::ONU* onu,
-                                        unsigned int playerNumber, QString &playerName,
+                                        unsigned int playerNumber, QString& playerName,
                                         bool network, QString& password,
                                         bool &computerPlayer,
                                         std::map< QString, QString >& nations, 
                                         QString& nationName,
                                         QWidget *parent, const char */*name*/) :
-  QDialog(parent), Ui::QPlayerSetupDialog(/*parent, playerName, true*/), name(playerName),
+  QDialog(parent), Ui::QPlayerSetupDialog(), name(playerName),
     computer(computerPlayer), m_nationName(nationName), 
   m_nations(nations), m_onu(onu), m_nationsNames(), number(playerNumber), 
   m_password(password)

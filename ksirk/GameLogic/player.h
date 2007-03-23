@@ -237,7 +237,7 @@ protected:
     */
   QString m_delayedInitNationName;
 
-  /** Used to transmit unique ids and request for an acknowledgement
+  /** Used to transmit unique ids and request for an acknowledgment
     * of their reception. */
   static unsigned int m_uid;
 

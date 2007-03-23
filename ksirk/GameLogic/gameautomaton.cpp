@@ -2145,7 +2145,7 @@ void GameAutomaton::countriesDistribution()
     sendMessage(buffer,CountryOwner);
     m_game->setCurrentPlayerToNext(false);
     
-    // removes the choosen country number from the vector, thus reducing its size
+    // removes the chosen country number from the vector, thus reducing its size
     vect.erase(it);
   }
   it = playerList()->begin();

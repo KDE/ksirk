@@ -3,7 +3,7 @@
    Copyright (C) 2006-2007 Gael de Chalendar <kleag@free.fr>
 
    This file was initialy part of XFrisk
-   Copyright (C) 1995 and later Jean-Claude Colson and Others
+   Copyright (C) 1995 and later Jean-Claude Colson and Others <who@nowhere.org>
 
    KsirK is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
