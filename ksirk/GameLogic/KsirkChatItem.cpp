@@ -51,7 +51,7 @@ KsirkChatItem::KsirkChatItem(const KsirkChatItem& item) : KChatBaseMessage(item)
 void KsirkChatItem::paint(QPainter* p, 
                 const QStyleOptionViewItem &option, int row)
 {
-  std::cerr << "KsirkChatItem::paint" << std::endl;
+//   std::cerr << "KsirkChatItem::paint" << std::endl;
 
   QTextDocument fake; // used to allow to compute lines height
   fake.setHtml("gpl");
@@ -75,14 +75,14 @@ void KsirkChatItem::paint(QPainter* p,
     switch (m_order[i])
     {
     case Text:
-      kDebug() << "  paint string '" << m_strings[i] << "' at " << x << ", " << row*h << endl;
+//       kDebug() << "  paint string '" << m_strings[i] << "' at " << x << ", " << row*h << endl;
       p->drawPixmap(option.rect.x()+x,option.rect.y(),px);
       x += px.width();
     break;
     case Pixmap:
       if (! m_pixmaps[i].isNull())
       {
-        kDebug() << "  paint pixmap at " << x << ", " << row*h << endl;
+//         kDebug() << "  paint pixmap at " << x << ", " << row*h << endl;
         QPixmap scaled = m_pixmaps[i].scaledToHeight(h);
         p->drawPixmap(option.rect.x()+x,option.rect.y(),scaled);
         x+= scaled.width();
@@ -125,7 +125,7 @@ QSize KsirkChatItem::sizeHint(const QStyleOptionViewItem &option)
     default: ;
     }
   }
-  kDebug() << "KsirkChatItem::sizeHint: " << QSize(w,h) << endl;
+//   kDebug() << "KsirkChatItem::sizeHint: " << QSize(w,h) << endl;
   return QSize(w,h);
 }
 

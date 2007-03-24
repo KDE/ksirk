@@ -45,6 +45,7 @@
 class KPushButton;
 class KTextEdit;
 class KGameChat;
+class KToolBar;
 
 class QEvent;
 class QDockWidget;
@@ -733,6 +734,9 @@ private:
 
   QList<AnimSpritesGroup*> m_animSpritesGroups;
 
+  KToolBar* mainToolBar;
+  KToolBar* gameActionsToolBar;
+  
 private: // Private methods
   void attack(GameLogic::Country& attacker, GameLogic::Country& defender, unsigned int nb);
   void moveArmies(GameLogic::Country& src, GameLogic::Country& dest, unsigned int nb);

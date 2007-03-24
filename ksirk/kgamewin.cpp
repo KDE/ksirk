@@ -103,10 +103,13 @@ KGameWindow::KGameWindow(QWidget* parent) :
 //   m_accels(this), 
 //   m_chat(0), 
   m_chatDlg(0),
-  m_audioPlayer(0),//new Phonon::AudioPlayer( Phonon::NotificationCategory )),
-  m_timer(this)
+  m_audioPlayer(new Phonon::AudioPlayer( Phonon::NotificationCategory )),
+  m_timer(this),
+  mainToolBar(0),
+  gameActionsToolBar(0)
 {
   kDebug() << "KGameWindow constructor begin" << endl;
+
   statusBar()->addWidget(m_barFlagButton);
 
   m_config=KGlobal::config();
@@ -144,6 +147,8 @@ KGameWindow::KGameWindow(QWidget* parent) :
   
   kDebug() << "Setting skin" << endl;
   GameLogic::GameAutomaton::changeable().skin(m_config->readEntry("skin", "skins/default"));
+
+  
 //    kDebug() << "Before initActions" << endl;
 //   initActions();
 //    kDebug() << "Before initStatusBar" << endl;
@@ -176,14 +181,14 @@ KGameWindow::~KGameWindow()
 void KGameWindow::initActions()
 {
   kDebug() << "Adding exit toolBar button" << endl;
-  addAButton(CM_EXITGAME, SLOT(close()), i18n("Exit"), KShortcut(Qt::ALT+Qt::Key_F4), false, "mainToolBar");
+  addAButton(CM_EXITGAME, SLOT(close()), i18n("Exit"), KShortcut(Qt::ALT+Qt::Key_F4), false, "globalToolBar");
   kDebug() << "Adding new game toolBar button" << endl;
-  addAButton(CM_NEWGAME, SLOT(slotNewGame()), i18n("New game"), KShortcut(Qt::CTRL+Qt::Key_N), false, "mainToolBar");
+  addAButton(CM_NEWGAME, SLOT(slotNewGame()), i18n("New game"), KShortcut(Qt::CTRL+Qt::Key_N), false, "globalToolBar");
   kDebug() << "Adding new net game toolBar button" << endl;
-  addAButton(CM_NEWNETGAME, SLOT(slotJoinNetworkGame()), i18n("Join network game"), KShortcut(Qt::CTRL+Qt::Key_J), false, "mainToolBar");
+  addAButton(CM_NEWNETGAME, SLOT(slotJoinNetworkGame()), i18n("Join network game"), KShortcut(Qt::CTRL+Qt::Key_J), false, "globalToolBar");
   kDebug() << "Adding info toolBar button" << endl;
-  addAButton(CM_PREFERENCES, SLOT(optionsConfigure()), i18n("Preferences"), KShortcut(), false, "mainToolBar");
-  addAButton(CM_INFO, SLOT(slotShowAboutApplication()), i18n("About"), KShortcut(), false, "mainToolBar");
+  addAButton(CM_PREFERENCES, SLOT(optionsConfigure()), i18n("Preferences"), KShortcut(), false, "globalToolBar");
+  addAButton(CM_INFO, SLOT(slotShowAboutApplication()), i18n("About"), KShortcut(), false, "globalToolBar");
 }
 
 void KGameWindow::initStatusBar()
@@ -274,11 +279,11 @@ void KGameWindow::newSkin(const QString& onuFileName)
   loadDices();
 
   m_frame = new DecoratedGameFrame(this, m_theWorld->width(), m_theWorld->height());
-  setCentralWidget(m_frame);
   m_frame->setMaximumWidth(m_theWorld->width());
   m_frame->setMaximumHeight(m_theWorld->height());
   m_frame->setCacheMode( QGraphicsView::CacheBackground );
-
+  setCentralWidget(m_frame);
+  
   kDebug() << "ONU backgnd file name: " <<  m_theWorld->mapFileName() << endl;
   
   if (m_scene != 0)
@@ -302,13 +307,22 @@ void KGameWindow::newSkin(const QString& onuFileName)
 //   initTimer();
   kDebug() <<"End new skin" << endl;
 
+  mainToolBar = new KToolBar("globalToolBar",this, Qt::BottomToolBarArea);
+  mainToolBar-> setToolButtonStyle(Qt::ToolButtonIconOnly);
+  mainToolBar-> setAllowedAreas(Qt::BottomToolBarArea);
+  mainToolBar-> setIconSize(QSize(32,32));
+  mainToolBar->show();
+  gameActionsToolBar = new KToolBar("gameActionsToolBar", this, Qt::BottomToolBarArea);
+  gameActionsToolBar-> setToolButtonStyle(Qt::ToolButtonIconOnly);
+  gameActionsToolBar-> setAllowedAreas(Qt::BottomToolBarArea);
+  gameActionsToolBar-> setIconSize(QSize(32,32));
+  gameActionsToolBar->show();
+  
   initActions();
-  toolBar("mainToolBar")-> hide();
-  toolBar("gameActionsToolBar")-> hide();
-  toolBar("mainToolBar")-> show();
-  toolBar("gameActionsToolBar")-> show();
-//   toolBar("mainToolBar")-> setBarPos(KToolBar::Bottom);
-//   toolBar("gameActionsToolBar")-> setBarPos(KToolBar::Bottom);
+  mainToolBar-> hide();
+  gameActionsToolBar-> hide();
+  mainToolBar-> show();
+  gameActionsToolBar-> show();
   m_frame->setFocus();
 }
 
@@ -788,7 +802,7 @@ void KGameWindow::clearGameActionsToolbar(bool send)
     GameLogic::GameAutomaton::changeable().sendMessage(buffer,ClearGameActionsToolbar);
   }
   
-  (*toolBar("gameActionsToolBar")).clear();
+  gameActionsToolBar->clear();
   std::set< QString >::const_iterator it, it_end;
   it = m_temporaryAccelerators.begin(); it_end = m_temporaryAccelerators.end();
   for (; it != it_end; it++)
@@ -815,8 +829,20 @@ void KGameWindow::addAButton(
     QMessageBox::critical(0, i18n("Error !"), i18n("Cannot load button image\nProgram cannot continue"));
     exit(2);
   }
-  (*toolBar(toolBarName.c_str())).addAction(QPixmap(imageFileName), 
-      txt, this,  slot);
+  KToolBar* toolBar;
+  if (toolBarName == "globalToolBar")
+  {
+    toolBar = mainToolBar;
+  }
+  else if (toolBarName == "gameActionsToolBar")
+  {
+    toolBar = gameActionsToolBar;
+  }
+  else
+  {
+    kError() << "Unknown toolbar name" << endl;
+  }
+  toolBar->addAction(QPixmap(imageFileName), txt, this,  slot);
 //   kDebug() << "Button added " << txt << endl;
   if (shortcut != KShortcut())
   {
@@ -1502,7 +1528,7 @@ int KGameWindow::setCurrentPlayerToNext(bool restartRunningAIs)
 bool KGameWindow::terminateAttackSequence()
 {
   m_animFighters->hideAndRemoveAll();
-  toolBar("gameActionsToolBar")-> show();
+  gameActionsToolBar-> show();
   return attackEnd();
 }
 

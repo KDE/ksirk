@@ -28,18 +28,18 @@
 KsirkChatDelegate::KsirkChatDelegate(QObject *parent) : 
     KChatBaseItemDelegate(parent)
 {
-  kDebug() << "KsirkChatDelegate::KsirkChatDelegate" << endl;
+//   kDebug() << "KsirkChatDelegate::KsirkChatDelegate" << endl;
 }
 
 void KsirkChatDelegate::paint(QPainter *painter, 
                 const QStyleOptionViewItem &option,
                 const QModelIndex &index) const
 {
-  kDebug() << "KsirkChatDelegate::paint" << endl;
+//   kDebug() << "KsirkChatDelegate::paint" << endl;
   KsirkChatItem m  = index.model()->data(index, Qt::DisplayRole).value<KsirkChatItem>();
   if (!m.first.isEmpty())
   {
-    kDebug() << "  " <<m.first << " / " << m.second << endl;
+//     kDebug() << "  " <<m.first << " / " << m.second << endl;
     KChatBaseItemDelegate::paint(painter, option, index, m.first, m.second);
   }
   else
@@ -51,14 +51,14 @@ void KsirkChatDelegate::paint(QPainter *painter,
 QSize KsirkChatDelegate::sizeHint(const QStyleOptionViewItem &  option ,
         const QModelIndex &  index ) const
 {
-  kDebug() << "KsirkChatDelegate::sizeHint" << endl;
+//   kDebug() << "KsirkChatDelegate::sizeHint" << endl;
   KsirkChatItem m  = index.model()->data(index, Qt::DisplayRole).value<KsirkChatItem>();
   if (!m.first.isEmpty())
   {
     return KChatBaseItemDelegate::sizeHint(option, index, m.first, m.second);
   }
   QSize result = m.sizeHint(option);
-  kDebug() << "KsirkChatDelegate::sizeHint: " << result << endl;
+//   kDebug() << "KsirkChatDelegate::sizeHint: " << result << endl;
   return result;
 }
 

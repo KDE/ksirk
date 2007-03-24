@@ -42,7 +42,7 @@ KsirkChatModel::KsirkChatModel(QObject *parent)
 
 int KsirkChatModel::rowCount(const QModelIndex &parent) const
 {
-  kDebug() << "KsirkChatModel::rowCount" << endl;
+//   kDebug() << "KsirkChatModel::rowCount" << endl;
   if (parent.isValid())
     return 0;
   else
@@ -51,7 +51,7 @@ int KsirkChatModel::rowCount(const QModelIndex &parent) const
 
 QVariant KsirkChatModel::data(const QModelIndex &index, int role) const
 {
-  kDebug() << "KsirkChatModel::data " << index.row() << " ; m_messages size=" << m_messages.size() << endl;
+//   kDebug() << "KsirkChatModel::data " << index.row() << " ; m_messages size=" << m_messages.size() << endl;
   if (!index.isValid())
     return QVariant();
 
@@ -65,7 +65,7 @@ QVariant KsirkChatModel::data(const QModelIndex &index, int role) const
 
 void KsirkChatModel::addMessage(const KsirkChatItem& message)
 {
-  kDebug() << "KsirkChatModel::addMessage" << endl;
+//   kDebug() << "KsirkChatModel::addMessage" << endl;
   int row;
   row = m_messages.size();
   beginInsertRows(QModelIndex(), row, row);
