@@ -31,7 +31,7 @@ namespace GameLogic
 
 Nationality::Nationality(const QString &myName, const QString &myFlag, 
     const QString& leaderName) :
-  m_name(myName), m_flagFileName(myFlag), m_leaderName(leaderName)
+  m_name(myName), m_leaderName(leaderName), m_flagFileName(myFlag)
 {
 }
 
