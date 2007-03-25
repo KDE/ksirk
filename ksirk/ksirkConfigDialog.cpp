@@ -26,7 +26,6 @@
 #include <kconfig.h>
 #include <kurl.h>
 #include <ktabwidget.h>
-#include <kparts/partmanager.h>
 #include <kedittoolbar.h>
 // #include <kaccel.h>
 #include <kdebug.h>
