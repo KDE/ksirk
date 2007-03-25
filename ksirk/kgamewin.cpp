@@ -170,7 +170,6 @@ KGameWindow::KGameWindow(QWidget* parent) :
 KGameWindow::~KGameWindow()
 {
   m_dirs = 0;
-  m_config = 0;
   delete m_backGnd; m_backGnd = 0;
   delete m_scene; m_scene = 0;
   if (m_barFlagButton) {delete m_barFlagButton; m_barFlagButton = 0;}
