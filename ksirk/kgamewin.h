@@ -38,10 +38,6 @@
 // 
 // #include <kdialogbase.h>
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 class KPushButton;
 class KTextEdit;
 class KGameChat;

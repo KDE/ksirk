@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 {
   kDebug() << "Hello World!" << endl;
     KAboutData aboutData( "ksirk", I18N_NOOP("KsirK"),
-        VERSION, description, KAboutData::License_GPL,
+        KDE_VERSION_STRING, description, KAboutData::License_GPL,
         "(c) 2002-2005, Gaël de Chalendar\nFor help and user manuel, please see \nThe KsirK Web site (http://home.gna.org/ksirk)", 0, 0, "kleag@free.fr");
     aboutData.addAuthor("Gael de Chalendar aka Kleag",0, "kleag@free.fr");
     aboutData.addAuthor("Robin Doer",0, "");
