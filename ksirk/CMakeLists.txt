@@ -17,13 +17,6 @@ include_directories(
   ${CMAKE_CURRENT_BINARY_DIR}  
 )
 
-include_directories (
-  ${QDBUS_INCLUDE_DIRS} 
-  ${CMAKE_SOURCE_DIR} 
-  ${CMAKE_BINARY_DIR} 
-  ${KDE4_INCLUDES}
-)
-
 ########### next target ###############
 
 set(ksirk_SRCS 
@@ -66,19 +59,18 @@ set(ksirk_SRCS
   ksirkConfigDialog.cpp 
 )
 
-set(ksirk_dialogs_UI
+set(ksirk_UI
   Dialogs/qplayersetupdialog.ui
   Dialogs/newGameDialog.ui
   Dialogs/qwaitedplayersetupdialog.ui 
   Dialogs/restartOrExitDialog.ui
+  preferences.ui
 )
 
 
-kde4_add_ui_files(ksirk_SRCS ${ksirk_dialogs_UI} )
+kde4_add_ui_files(ksirk_SRCS ${ksirk_UI} )
 
 kde4_add_kcfg_files( ksirk_SRCS ksirksettings.kcfgc )
-
-kde4_add_ui_files( ksirk_SRCS preferences.ui )
 
 kde4_automoc(${ksirk_SRCS})
 
@@ -89,26 +81,13 @@ target_link_libraries(ksirk
 #   ksirk_gamelogic
 #   ksirk_saveload
 #   ksirk_sprites
-  ${QT_AND_KDECORE_LIBS} 
-  ${QT_QT_LIBRARY} 
-  ${QT_QTGUI_LIBRARY} 
-  ${QT_QTCORE_LIBRARY} 
   ${QT_QTXML_LIBRARY} 
   ${QT_QTSVG_LIBRARY} 
-  ${KDE4_KHTML_LIBS} 
-  ${KDE4_KPARTS_LIBS} 
-  ${KDE4_KDEUI_LIBS} 
-  ${KDE4_KDECORE_LIBS} 
   ${KDE4_KIO_LIBS} 
-  ${KDE4_PHONON_LIBS} 
-  ${KDE4_KDEPRINT_LIBS} 
-  ${KDE4_KWALLETCLIENT_LIBS} 
-  ${KDE4_KDEFX_LIBS} 
+  ${KDE4_PHONONCORE_LIBRARY}
   ${KDE4_KDEGAMES_LIBS} 
   ${CRYPT_LIBS}
   kdegames
-  phononcore
-  phononui
  )
 
 install( TARGETS ksirk DESTINATION ${BIN_INSTALL_DIR})
