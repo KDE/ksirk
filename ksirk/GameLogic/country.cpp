@@ -73,7 +73,7 @@ Country::~Country()
 
 void Country::reset()
 {
-//   kDebug() << "Country::reset" << endl;
+  kDebug() << "Country::reset " << m_name << endl;
   clearAllSprites();
   m_belongsTo = 0;
   nbArmies(1);

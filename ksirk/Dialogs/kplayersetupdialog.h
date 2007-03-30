@@ -55,7 +55,7 @@ public:
                      bool &computerPlayer,
                      std::map< QString, QString >& nations, 
                      QString & nationName,
-                     QWidget *parent=0, const char *name=0);
+                     QWidget *parent=0);
   
   virtual ~KPlayerSetupDialog();
 

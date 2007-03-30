@@ -205,7 +205,7 @@ void AnimSprite::nextFrame()
 void AnimSprite::setFrame(unsigned int numFrame)
 {
 // kDebug() << "AnimSprite::setFrame("<<numFrame<<") look="<<look<<" ; frames="<<frames<<" ; m_frames size="<<m_frames.size()<<endl;
-  if (numFrame < m_frames.size())
+  if (numFrame < (unsigned int)m_frames.size())
   {
     setPixmap(m_frames[(look-1)*frames+numFrame]);
   }
@@ -619,7 +619,7 @@ void AnimSprite::saveXml(std::ostream& /*xmlStream*/)
 QPixmap AnimSprite::image(unsigned int numFrame) const
 {
   kDebug() << "image(" << numFrame << ") / " << m_frames.size() << endl;
-  if (numFrame >= m_frames.size())
+  if (numFrame >= (unsigned int)m_frames.size())
   {
     return QPixmap();
   }

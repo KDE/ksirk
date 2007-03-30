@@ -53,14 +53,14 @@ KPlayerSetupDialog::KPlayerSetupDialog( GameLogic::ONU* onu,
                                         bool &computerPlayer,
                                         std::map< QString, QString >& nations, 
                                         QString& nationName,
-                                        QWidget *parent, const char */*name*/) :
+                                        QWidget *parent) :
   QDialog(parent), Ui::QPlayerSetupDialog(), name(playerName),
     computer(computerPlayer), m_nationName(nationName), 
   m_nations(nations), m_onu(onu), m_nationsNames(), number(playerNumber), 
   m_password(password)
 {
+  kDebug() << "KPlayerSetupDialog constructor" << endl;
   setupUi(this);
-//   kDebug() << "KPlayerSetupDialog constructor" << endl;
   QString labelString = i18n("Player Number %1, please type in your name<BR>and choose your nation:",number);
   TextLabel1-> setText(labelString);
   fillNationsCombo();
@@ -68,16 +68,19 @@ KPlayerSetupDialog::KPlayerSetupDialog( GameLogic::ONU* onu,
     passwordEdit->setEnabled(true);
   QObject::connect((const QObject *)PushButton1, SIGNAL(clicked()), this, SLOT(slotOK()) );
   
-//   kDebug() << "KPlayerSetupDialog connecting to playerJoinedGame" << endl;
+  kDebug() << "KPlayerSetupDialog connecting to playerJoinedGame" << endl;
   connect(&GameLogic::GameAutomaton::changeable(),SIGNAL(signalPlayerJoinedGame(KPlayer*)),
           this,SLOT(slotPlayerJoinedGame(KPlayer*)));
   
   LineEdit2->setFocus();
   
   connect(nationCombo, SIGNAL(activated(int)), this, SLOT(slotNationChanged()));
+
+  kDebug() << "KPlayerSetupDialog constructor done" << endl;
 }
 
 KPlayerSetupDialog::~KPlayerSetupDialog(){
+  hide();
 }
 
 void KPlayerSetupDialog::slotOK()
@@ -117,7 +120,7 @@ void KPlayerSetupDialog::reject() {
 
 void KPlayerSetupDialog::fillNationsCombo()
 {
-//   kDebug() << "Filling nations combo" << endl;
+  kDebug() << "Filling nations combo" << endl;
   KStandardDirs *m_dirs = KGlobal::dirs();
 
   std::map< QString, QString >::const_iterator nationsIt, nationsIt_end;
@@ -136,16 +139,15 @@ void KPlayerSetupDialog::fillNationsCombo()
         exit(2);
     }
 //     load image
-    QPixmap flag;
-    QSize size(flag.width()/Sprites::SkinSpritesData::single().intData("flag-frames"),flag.height());
+    QSvgRenderer renderer;
+    renderer.load(imgName);
+    QSize size(renderer.defaultSize().width()/Sprites::SkinSpritesData::single().intData("flag-frames"),renderer.defaultSize().height());
     QImage image(size, QImage::Format_ARGB32_Premultiplied);
     image.fill(0);
     QPainter p(&image);
-    QSvgRenderer renderer;
-    renderer.load(imgName);
     renderer.render(&p/*, svgid*/);
     QPixmap allpm = QPixmap::fromImage(image);
-    flag = allpm.copy(0, 0, size.width(), size.height());
+    QPixmap flag = allpm.copy(0, 0, size.width(), size.height());
 
 
 //     get name
@@ -155,7 +157,7 @@ void KPlayerSetupDialog::fillNationsCombo()
     nationCombo->addItem(QIcon(flag),name);
   }
   
-  
+  kDebug() << "Nations combo filled" << endl;
 }
 
 void KPlayerSetupDialog::slotPlayerJoinedGame(KPlayer* player)

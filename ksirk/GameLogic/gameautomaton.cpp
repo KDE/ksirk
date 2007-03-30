@@ -1423,7 +1423,7 @@ void GameAutomaton::changePlayerName(Player* player)
       mes = i18n("Player number %d, what's your name ?", 1);
       bool network = false;
       QString password;
-      KPlayerSetupDialog(m_game->theWorld(), 1, nomEntre, network, password, computer, nations, nationName, m_game, "KDialogSetupPlayer").exec();
+      KPlayerSetupDialog(m_game->theWorld(), 1, nomEntre, network, password, computer, nations, nationName, m_game).exec();
 //     kDebug() << "After KPlayerSetupDialog. name: " << nomEntre << endl;
       if (nomEntre.isEmpty())
       {
@@ -1484,7 +1484,7 @@ void GameAutomaton::changePlayerNation(Player* player)
   KMessageBox::information(m_game, i18n("Please choose another nation"), i18n("KsirK - Nation already used !"));
   bool network = false;
   QString password = false;
-  KPlayerSetupDialog(m_game->theWorld(), 1, nomEntre, network, password, computer, nations, nationName, m_game, "KDialogSetupPlayer").exec();
+  KPlayerSetupDialog(m_game->theWorld(), 1, nomEntre, network, password, computer, nations, nationName, m_game).exec();
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   stream << player->name() << nationName;
@@ -1522,13 +1522,15 @@ void GameAutomaton::slotPropertyChanged(KGamePropertyBase *prop,KGame *)
   kDebug() << "GameAutomaton::slotPropertyChanged " << prop->id() << endl;
   if (prop->id() == m_skinId)
   {
-//     kDebug() << "skin changed to: " << m_skin << endl;
+    kDebug() << "skin changed to: " << m_skin << endl;
     m_game->newSkin();
   }
+  kDebug() << "END GameAutomaton::slotPropertyChanged " << prop->id() << endl;
 }
 
 void GameAutomaton::slotClientJoinedGame(quint32 clientid, KGame* /*me*/)
 {
+  kDebug() << "GameAutomaton::slotClientJoinedGame " << clientid << endl;
   if (isAdmin() && clientid!=gameId())
   {
     QByteArray buffernbp;
@@ -1558,6 +1560,8 @@ void GameAutomaton::slotClientJoinedGame(quint32 clientid, KGame* /*me*/)
 
 void GameAutomaton::slotConnectionToServerBroken()
 {
+  kDebug() << "GameAutomaton::slotConnectionToServerBroken" << endl;
+
 //   m_game->haltTimer();
   if (m_state != GAME_OVER)
   {
@@ -1582,6 +1586,7 @@ void GameAutomaton::slotConnectionToServerBroken()
   
 void GameAutomaton::slotConnectionToClientBroken(KMessageIO *)
 {
+  kDebug() << "GameAutomaton::slotConnectionToClientBroken" << endl;
 //   m_game->haltTimer();
   if (m_state != GAME_OVER)
   {
@@ -1607,6 +1612,7 @@ void GameAutomaton::slotConnectionToClientBroken(KMessageIO *)
 
 void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32 receiver, quint32 sender)
 {
+  kDebug() << "GameAutomaton::slotNetworkData msg " << msgid << " ; rec="<<receiver << " snd=" << sender << endl;
   if (m_game == 0)
   {
     exit(0);
@@ -1862,7 +1868,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
 //       kDebug() << "VoteRecyclingFinished nb after : " << m_choosedToRecycleNumber << endl;
       messageParts << playersNames << QString::number(m_choosedToRecycleNumber);
       m_game->broadcastChangeItem(messageParts, ID_NO_STATUS_MSG);
-      if (m_choosedToRecycleNumber == playerList()->count())
+      if (m_choosedToRecycleNumber == (unsigned int)(playerList()->count()))
       {
         m_game->actionRecyclingFinished();
         m_choosedToRecycle.clear();

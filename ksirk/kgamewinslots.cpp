@@ -247,8 +247,12 @@ void KGameWindow::slotKey3()
 void KGameWindow::slotNewGame()
 {
 //   kDebug() << "Slot new game: posting event actionNewGame" << endl;
-  QPoint point;
-  GameAutomaton::changeable().event("actionNewGame", point);
+//   QPoint point;
+  if (actionNewGame())
+  {
+    GameAutomaton::changeable().state(GameAutomaton::INIT);
+  }
+//   GameAutomaton::changeable().event("actionNewGame", point);
 }
 
 void KGameWindow::slotOpenGame()
@@ -405,7 +409,7 @@ void KGameWindow::slotShowAboutApplication()
 
 void KGameWindow::slotJoinNetworkGame() 
 {
-//   kDebug() << "slotJoinNetworkGame" << endl;
+  kDebug() << "slotJoinNetworkGame" << endl;
   QPoint point;
   GameAutomaton::changeable().event("actionJoinNetworkGame", point);
 }
@@ -426,6 +430,7 @@ void KGameWindow::slotChatMessage()
 
 void KGameWindow::slotMovingFightersArrived(AnimSpritesGroup* sprites)
 {
+Q_UNUSED(sprites)
   kDebug() << "KGameWindow::slotMovingFightersArrived" << endl;
   GameAutomaton::changeable().movingFigthersArrived();
 }
@@ -460,6 +465,7 @@ void KGameWindow::slotMovingArmyArrived(AnimSprite* sprite)
 
 void KGameWindow::slotFiringFinished(AnimSpritesGroup* sprites)
 {
+Q_UNUSED(sprites)
   kDebug() << "KGameWindow::slotFiringFinished" << endl;
   GameAutomaton::changeable().firingFinished();
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <onu width="1016" height="638" skinpath="skins/realpol"
      nb-countries="42" nb-nationalities="6" nb-continents="6"
-     map="Images/map.png" map-mask="Images/map-mask.png" format-version="1.7"
+     map="Images/map.svg" map-mask="Images/map-mask.png" format-version="1.7"
      name="Real Politiks">
   <desc>This skin shows a world that looks like the real one with some nationalities randomly chosen and proposes various interesting goals. Sprites are realistic.</desc>
   <font>
@@ -16,21 +16,21 @@
     <intItem key="flag-width" value="20" />
     <intItem key="flag-frames" value="4" />
     <intItem key="flag-versions" value="1" /> 
-    <strItem key="infantry-file" value="infantry.png" />
+    <strItem key="infantry-file" value="infantry.svg" />
     <intItem key="infantry-frames" value="1" />
     <intItem key="infantry-versions" value="2" /> 
-    <strItem key="cavalry-file" value="cavalry.png" />
+    <strItem key="cavalry-file" value="cavalry.svg" />
     <intItem key="cavalry-frames" value="1" />
     <intItem key="cavalry-versions" value="2" /> 
-    <strItem key="cannon-file" value="cannon.png" />
+    <strItem key="cannon-file" value="cannon.svg" />
     <intItem key="cannon-width" value="35" />
     <intItem key="cannon-frames" value="1" />
     <intItem key="cannon-versions" value="2" /> 
-    <strItem key="firing-file" value="firing.png" />
+    <strItem key="firing-file" value="firing.svg" />
     <intItem key="firing-width" value="64" />
     <intItem key="firing-frames" value="4" />
     <intItem key="firing-versions" value="2" /> 
-    <strItem key="exploding-file" value="exploding.png" />
+    <strItem key="exploding-file" value="exploding.svg" />
     <intItem key="exploding-frames" value="4" />
     <intItem key="exploding-versions" value="2" /> 
     <intItem key="fighters-flag-y-diff" value="-12" />
@@ -578,12 +578,12 @@
       <neighbour id="41" />
     </neighbours>
   </country>
-  <nationality name="France" leader="de Gaulle" flag="france.png" />
-  <nationality name="United Kingdom" leader="Elisabeth" flag="uk.png" />
-  <nationality name="United States" leader="Kennedy" flag="us.png" />
-  <nationality name="Belgium" leader="Baudouin" flag="belgium.png" />
-  <nationality name="Japan" leader="Akihito" flag="japan.png" />
-  <nationality name="Italy" leader="Victor Emmanuel" flag="italy.png" />
+  <nationality name="France" leader="de Gaulle" flag="france.svg" />
+  <nationality name="United Kingdom" leader="Elisabeth" flag="uk.svg" />
+  <nationality name="United States" leader="Kennedy" flag="us.svg" />
+  <nationality name="Belgium" leader="Baudouin" flag="belgium.svg" />
+  <nationality name="Japan" leader="Akihito" flag="japan.svg" />
+  <nationality name="Italy" leader="Victor Emmanuel" flag="italy.svg" />
   <continent id="1" name="North-America" bonus="5" >
     <continent-country id="1" />
     <continent-country id="2" />

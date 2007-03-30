@@ -187,6 +187,7 @@ void KGameWindow::initActions()
   addAButton(CM_NEWNETGAME, SLOT(slotJoinNetworkGame()), i18n("Join network game"), KShortcut(Qt::CTRL+Qt::Key_J), false, "globalToolBar");
   kDebug() << "Adding info toolBar button" << endl;
   addAButton(CM_PREFERENCES, SLOT(optionsConfigure()), i18n("Preferences"), KShortcut(), false, "globalToolBar");
+  kDebug() << "Adding about toolBar button" << endl;
   addAButton(CM_INFO, SLOT(slotShowAboutApplication()), i18n("About"), KShortcut(), false, "globalToolBar");
 }
 
@@ -304,13 +305,23 @@ void KGameWindow::newSkin(const QString& onuFileName)
   setupGUI();
 
 //   initTimer();
-  kDebug() <<"End new skin" << endl;
 
+  kDebug() <<"Setting up toolbars" << endl;
+/*  if (mainToolBar != 0)
+  {
+    mainToolBar-> hide();
+    delete mainToolBar;
+  }*/
   mainToolBar = new KToolBar("globalToolBar",this, Qt::BottomToolBarArea);
   mainToolBar-> setToolButtonStyle(Qt::ToolButtonIconOnly);
   mainToolBar-> setAllowedAreas(Qt::BottomToolBarArea);
   mainToolBar-> setIconSize(QSize(32,32));
   mainToolBar->show();
+/*  if (gameActionsToolBar != 0)
+  {
+    gameActionsToolBar-> hide();
+    delete gameActionsToolBar;
+  }*/
   gameActionsToolBar = new KToolBar("gameActionsToolBar", this, Qt::BottomToolBarArea);
   gameActionsToolBar-> setToolButtonStyle(Qt::ToolButtonIconOnly);
   gameActionsToolBar-> setAllowedAreas(Qt::BottomToolBarArea);
@@ -323,6 +334,8 @@ void KGameWindow::newSkin(const QString& onuFileName)
   mainToolBar-> show();
   gameActionsToolBar-> show();
   m_frame->setFocus();
+
+  kDebug() <<"End new skin" << endl;
 }
 
 void KGameWindow::initView()
@@ -840,6 +853,7 @@ void KGameWindow::addAButton(
   else
   {
     kError() << "Unknown toolbar name" << endl;
+    exit(2);
   }
   toolBar->addAction(QPixmap(imageFileName), txt, this,  slot);
 //   kDebug() << "Button added " << txt << endl;
@@ -931,9 +945,8 @@ bool KGameWindow::setupPlayers()
 
     // After closing KPlayerSetupDialog, it is guaranteed, that nomEntre is a valid
     // username (not empty, unique)
-    KPlayerSetupDialog(m_theWorld, i+1, nomEntre, network, password, computer, nations, nationName,
-                       this, "KDialogSetupPlayer").exec();
-
+    KPlayerSetupDialog(m_theWorld, i+1, nomEntre, network, password,
+        computer, nations, nationName, this).exec();
     kDebug() << "Creating player " << nomEntre << "(computer: " << computer << "): " << nationName << endl;
     addPlayer(nomEntre, nbAvailArmies, 0, nationName, computer);
     nations.erase(nationName);
@@ -996,7 +1009,7 @@ bool KGameWindow::setupOnePlayer()
     {
       mes = i18n("Player number %d, what's your name ?", 1);
       bool network = true;
-      KPlayerSetupDialog(m_theWorld, 1, nomEntre, network, password, computer, nations, nationName, this, "KDialogSetupPlayer").exec();
+      KPlayerSetupDialog(m_theWorld, 1, nomEntre, network, password, computer, nations, nationName, this).exec();
       kDebug() << "After KPlayerSetupDialog. name: " << nomEntre << endl;
       if (nomEntre.isEmpty())
       {

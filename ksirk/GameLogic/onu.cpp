@@ -114,6 +114,7 @@ ONU::ONU(const QString& configFileName):
 //    root.attribute("map");
   QString mapString = root.attribute("map");
   kDebug() << "Map path: " << mapString << endl;
+  kDebug() << "Searching resource: " << (m_skin + '/' + mapString) << endl;
   m_mapFileName = KGlobal::dirs()-> findResource("appdata", m_skin + '/' + mapString);
   kDebug() << "Map file name: " << m_mapFileName << endl;
   if (m_mapFileName.isEmpty())
@@ -604,7 +605,7 @@ Continent* ONU::continentNamed(const QString& name)
 void ONU::buildMap()
 {
   kDebug() << "ONU::buildMap" << endl;
-  QSize size(m_renderer.defaultSize().width()*m_zoom,m_renderer.defaultSize().height()*m_zoom);
+  QSize size((int)(m_renderer.defaultSize().width()*m_zoom),(int)(m_renderer.defaultSize().height()*m_zoom));
   QImage image(size, QImage::Format_ARGB32_Premultiplied);
   image.fill(0);
   QPainter p(&image);
