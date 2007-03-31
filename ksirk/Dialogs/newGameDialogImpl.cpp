@@ -26,13 +26,9 @@
 #include <kstandarddirs.h>
 #include <kmessagebox.h>
 
-#include <qspinbox.h>
-#include <qcheckbox.h>
-#include <qcombobox.h>
 #include <qdir.h>
 #include <qstringlist.h>
-#include <qradiobutton.h>
-#include <qlabel.h>
+#include <qpushbutton.h>
 
 namespace Ksirk
 {
@@ -55,10 +51,10 @@ NewGameDialogImpl::NewGameDialogImpl(
   playersNumberEntry->setMinimum(2);
   playersNumberEntry->setMaximum(maxPlayers);
   fillSkinsCombo();
-  QObject::connect((const QObject *)buttonCancel, SIGNAL(clicked()), this, SLOT(slotCancel()) );
-  QObject::connect((const QObject *)buttonOk, SIGNAL(clicked()), this, SLOT(slotOK()) );
-  QObject::connect((const QObject *)buttonHelp, SIGNAL(clicked()), this, SLOT(slotHelp()) );
-  QObject::connect((const QObject *)skinCombo, SIGNAL(activated(int)), this, SLOT(slotSkinChanged(int)) );
+  QObject::connect(buttonbox->button(QDialogButtonBox::Cancel), SIGNAL(clicked()), this, SLOT(slotCancel()) );
+  QObject::connect(buttonbox->button(QDialogButtonBox::Ok), SIGNAL(clicked()), this, SLOT(slotOK()) );
+  QObject::connect(buttonbox->button(QDialogButtonBox::Help), SIGNAL(clicked()), this, SLOT(slotHelp()) );
+  QObject::connect(skinCombo, SIGNAL(activated(int)), this, SLOT(slotSkinChanged(int)) );
 }
 
 NewGameDialogImpl::~NewGameDialogImpl()
@@ -80,14 +76,14 @@ void NewGameDialogImpl::slotOK()
   m_networkGame  = networkGameCheckBox->isChecked();
   m_useGoals = (radioGoal->isChecked());
   m_ok = true;
-  close();
+  accept();
 }
 
 void NewGameDialogImpl::slotCancel()
 {
   kDebug() << "KPlayerSetupDialog slotCancel" << endl;
   m_ok = false;
-  close();
+  reject();
 }
 
 /** @todo implements a help */
