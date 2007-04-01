@@ -43,7 +43,7 @@ namespace GameLogic
 /**
   * This is the implementation of the player configuration dialog made with
   * QT Designer
-  * @author Gaël de Chalendar
+  * @author Gael de Chalendar
   */
 class KPlayerSetupDialog : public QDialog, public Ui::QPlayerSetupDialog
 {

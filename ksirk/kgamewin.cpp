@@ -272,7 +272,6 @@ void KGameWindow::newSkin(const QString& onuFileName)
   m_theWorld = new ONU(onuDefinitionFileName);
   if (m_frame != 0)
   {
-//     haltTimer();
     m_frame->hide();
     delete m_frame;
   }
@@ -303,8 +302,6 @@ void KGameWindow::newSkin(const QString& onuFileName)
   
   kDebug() << "Setting up GUI" << endl;
   setupGUI();
-
-//   initTimer();
 
   kDebug() <<"Setting up toolbars" << endl;
 /*  if (mainToolBar != 0)
@@ -420,7 +417,6 @@ bool KGameWindow::attackEnd()
              && ( (*currentPlayer()->goal()->players().begin()) == oldOwnerId) ) ) 
            || (GameLogic::GameAutomaton::changeable().playerList()->count() == 1) )
       {
-//         haltTimer();
         GameLogic::GameAutomaton::changeable().state(GameLogic::GameAutomaton::GAME_OVER);
         QByteArray buffer;
         QDataStream stream(&buffer, QIODevice::WriteOnly);
@@ -638,8 +634,7 @@ bool KGameWindow::queryClose()
 bool KGameWindow::actionOpenGame()
 {
 //   kDebug() << "KGameWindow::actionOpenGame" << endl;
-//   haltTimer();
-  QString fileName = KFileDialog::getOpenFileName(KUrl(), "*.xml", this, i18n("KsirK - Load Game")); 
+  QString fileName = KFileDialog::getOpenFileName(KUrl(), "*.xml", this, i18n("KsirK - Load Game"));
   if (!fileName.isEmpty())
   {
     m_waitedPlayers.clear();
@@ -663,9 +658,6 @@ bool KGameWindow::actionOpenGame()
       QDataStream stream(&buffer, QIODevice::WriteOnly);
       GameLogic::GameAutomaton::changeable().sendMessage(buffer,DisplayNormalGameButtons);
       GameLogic::GameAutomaton::changeable().setGameStatus(KGame::Run);
-//       kDebug() << "slotOpenGame before initTimer" << endl;
-//       initTimer();
-//       kDebug() << "slotOpenGame after initTimer" << endl;
       m_frame->setFocus();
       return false;
     }
@@ -903,7 +895,6 @@ void KGameWindow::setBarFlagButton(const Player* player)
 bool KGameWindow::setupPlayers()
 {
   kDebug() << "KGameWindow::setupPlayers" << endl;
-//   haltTimer();
   
   // Number of players
   bool networkGame = false;
@@ -967,7 +958,6 @@ bool KGameWindow::setupPlayers()
 bool KGameWindow::setupOnePlayer()
 {
   kDebug() << "KGameWindow::setupOnePlayer" << endl;
-//   haltTimer();
   
   kDebug() << "  building the list of available nations" << endl;
   std::map< QString, QString > nations = nationsList();
@@ -1048,7 +1038,6 @@ bool KGameWindow::setupOnePlayer()
 bool KGameWindow::setupOneWaitedPlayer()
 {
   kDebug() << "KGameWindow::setupOneWaitedPlayer" << endl;
-//   haltTimer();
   
   QString password;
   int result;
@@ -1058,14 +1047,12 @@ bool KGameWindow::setupOneWaitedPlayer()
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   stream << (quint32)result << password;
   GameLogic::GameAutomaton::changeable().sendMessage(buffer,ValidateWaitedPlayerPassword);
-//   initTimer();
   return true;
 }
 
 bool KGameWindow::createWaitedPlayer(quint32 waitedPlayerId)
 {
   kDebug() << "KGameWindow::createWaitedPlayer" << endl;
-//   haltTimer();
   
   PlayerMatrix& pm = m_waitedPlayers[waitedPlayerId];
   Player* player = 0;
@@ -2087,7 +2074,6 @@ bool KGameWindow::actionNewGame()
   {
     // @todo if new game is canceled, removed buttons should be displayed again
 //    clearGameActionsToolbar();
-//     haltTimer();
 /*    if (!(GameLogic::GameAutomaton::changeable().playerList()->isEmpty()))
     {
       GameLogic::GameAutomaton::changeable().playerList()->clear();
@@ -2245,7 +2231,6 @@ void KGameWindow::actionRecycling()
     << I18N_NOOP("%1, please change your distributions.") 
     << currentPlayer()->name();
   broadcastChangeItem(messageParts, ID_STATUS_MSG2);
-//   initTimer();
 }
 
 void KGameWindow::actionRecyclingFinished()
@@ -2268,7 +2253,6 @@ void KGameWindow::actionRecyclingFinished()
     GameLogic::GameAutomaton::changeable().sendMessage(buffer,DisplayNormalGameButtons);
     GameLogic::GameAutomaton::changeable().state(GameLogic::GameAutomaton::WAIT);
   }
-  //  initTimer();
 }
 
 void KGameWindow::finishMoves()

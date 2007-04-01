@@ -1081,7 +1081,8 @@ bool GameAutomaton::setupPlayersNumberAndSkin(bool& networkGame, int& port, uint
     if (dnssdAvailable())
       setDiscoveryInfo("_ksirk._tcp","wow");
     #endif
-
+    dialog->hide();
+    delete dialog;
   }
   return true;
 }

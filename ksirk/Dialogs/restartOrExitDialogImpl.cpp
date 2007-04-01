@@ -36,8 +36,7 @@ namespace Ksirk
 
 RestartOrExitDialogImpl::RestartOrExitDialogImpl(
       const QString& label,
-      QWidget *parent, 
-      const char *name) :
+      QWidget *parent) :
   QDialog(parent),
   Ui::RestartOrExitDialog()
 {
