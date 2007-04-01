@@ -1569,7 +1569,7 @@ void GameAutomaton::slotConnectionToServerBroken()
     if (KMessageBox::questionYesNoCancel(m_game,
                                   i18n("KsirK - Lost connection to server !\nWhat do you want to do ?"),
                                   i18n("Starting a new game or exit."), 
-                                  KGuiItem(i18n("New Game")), KGuiItem(i18n("Exit")), i18n("Do nothing")) == KMessageBox::Yes)
+                                  KGuiItem(i18n("New Game")), KGuiItem(i18n("Exit")), KGuiItem(i18n("Do nothing"))) == KMessageBox::Yes)
     {
       if (!m_game->actionNewGame())
         exit(0);

@@ -21,13 +21,11 @@
 #include "ksirksettings.h"
 #include "ui_preferences.h"
 
-#include <kkeydialog.h>
 #include <kfiledialog.h>
 #include <kconfig.h>
 #include <kurl.h>
 #include <ktabwidget.h>
 #include <kedittoolbar.h>
-// #include <kaccel.h>
 #include <kdebug.h>
 
 #include <kstandardaction.h>
