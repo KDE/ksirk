@@ -52,6 +52,7 @@ void KsirkChatItem::paint(QPainter* p,
                 const QStyleOptionViewItem &option, int row)
 {
 //   std::cerr << "KsirkChatItem::paint" << std::endl;
+  Q_UNUSED(row);
 
   QTextDocument fake; // used to allow to compute lines height
   fake.setHtml("gpl");
@@ -59,7 +60,7 @@ void KsirkChatItem::paint(QPainter* p,
   fake.adjustSize();
   fake.setTextWidth ( -1 );
   
-  unsigned int h = fake.size().height();
+  qreal h = fake.size().height();
   unsigned int x = 0;
   for (int i = 0 ; i < m_order.size(); i++)
   {
@@ -83,7 +84,7 @@ void KsirkChatItem::paint(QPainter* p,
       if (! m_pixmaps[i].isNull())
       {
 //         kDebug() << "  paint pixmap at " << x << ", " << row*h << endl;
-        QPixmap scaled = m_pixmaps[i].scaledToHeight(h);
+        QPixmap scaled = m_pixmaps[i].scaledToHeight((int)h);
         p->drawPixmap(option.rect.x()+x,option.rect.y(),scaled);
         x+= scaled.width();
       }
@@ -102,7 +103,7 @@ QSize KsirkChatItem::sizeHint(const QStyleOptionViewItem &option)
   fake.adjustSize();
   fake.setTextWidth ( -1 );
   
-  unsigned int h = fake.size().height();
+  qreal h = fake.size().height();
   for (int i = 0 ; i < m_order.size(); i++)
   {
     QTextDocument rt;
@@ -118,7 +119,7 @@ QSize KsirkChatItem::sizeHint(const QStyleOptionViewItem &option)
     case Pixmap:
       if (! m_pixmaps[i].isNull())
       {
-        QPixmap scaled = m_pixmaps[i].scaledToHeight(h);
+        QPixmap scaled = m_pixmaps[i].scaledToHeight((int)h);
          w+= scaled.width();
       }
     break;
@@ -126,7 +127,7 @@ QSize KsirkChatItem::sizeHint(const QStyleOptionViewItem &option)
     }
   }
 //   kDebug() << "KsirkChatItem::sizeHint: " << QSize(w,h) << endl;
-  return QSize(w,h);
+  return QSize(w,(int)h);
 }
 
 KsirkChatItem& KsirkChatItem::operator<<(const QString& text)
