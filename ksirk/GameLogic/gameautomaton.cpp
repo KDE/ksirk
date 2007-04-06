@@ -1047,7 +1047,8 @@ bool GameAutomaton::setupPlayersNumberAndSkin(bool& networkGame, int& port, uint
 /*  if (skinName != m_skin)
   {*/
 //     kDebug() << "Changing skin" << endl;
-    m_skin = skinName;
+#warning this is making it crash, do not ask me why, it is your game ;-)
+    //m_skin = skinName;
 //   }
   
   port = 20000;
