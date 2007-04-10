@@ -112,7 +112,6 @@ KGameWindow::KGameWindow(QWidget* parent) :
 
   statusBar()->addWidget(m_barFlagButton);
 
-  m_config=KGlobal::config();
   m_dirs = KGlobal::dirs();
 //   m_accels.setEnabled(true);
   
@@ -163,7 +162,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   GameAutomaton::changeable().init(this);
   
   kDebug() << "Setting skin" << endl;
-  GameLogic::GameAutomaton::changeable().skin(m_config->readEntry("skin", "skins/default"));
+  GameLogic::GameAutomaton::changeable().skin(KGlobal::config()->group("skin").readEntry("skin", "skins/default"));
 
   
 //    kDebug() << "Before initActions" << endl;

@@ -188,8 +188,8 @@ void KGameWindow::slotRightButtonDown(const QPointF& point)
 bool KGameWindow::queryExit()
 {
 //   kDebug() << "Writing skin m_config: " << GameAutomaton::changeable().skin() << endl;
-  m_config->writeEntry("skin", GameAutomaton::changeable().skin());
-  m_config->sync();
+  KGlobal::config()->group("skin").writeEntry("skin", GameAutomaton::changeable().skin());
+  KGlobal::config()->sync();
   return true;
 }
 

@@ -688,11 +688,6 @@ private:
   KStandardDirs* m_dirs;
 
   /**
-    * The configuration object of the application.
-    */
-  KSharedConfigPtr m_config;
-
-  /**
     * This button is used to display the flag of the currently active player
     * in the status bar.
     */
