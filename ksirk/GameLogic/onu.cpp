@@ -160,14 +160,14 @@ ONU::ONU(const QString& configFileName):
           QString key = itemEl.attribute("key");
           int val = itemEl.attribute("value").toInt();
           Sprites::SkinSpritesData::changeable().intData(key, val);  
-          kDebug() << "Loaded int item " << key << " = " << val << endl;
+//           kDebug() << "Loaded int item " << key << " = " << val << endl;
         }
         else if (itemNode.isElement() && itemNode.nodeName() == "strItem" )
         {
           QDomElement itemEl = itemNode.toElement();
           QString key(itemEl.attribute("key"));
           Sprites::SkinSpritesData::changeable().strData(key, itemEl.attribute("value"));  
-          kDebug() << "Loaded str item " << key << " = " << itemEl.attribute("value") << endl;
+//           kDebug() << "Loaded str item " << key << " = " << itemEl.attribute("value") << endl;
         }
         itemNode = itemNode.nextSibling();
       }
@@ -179,7 +179,7 @@ ONU::ONU(const QString& configFileName):
     }
     else if (node.isElement() && node.nodeName() == "font" )
     {
-      kDebug() << "reading font data..." << endl;
+//       kDebug() << "reading font data..." << endl;
       QDomNode itemNode = node.firstChild();
       while ( !itemNode.isNull() )
       {
@@ -187,14 +187,14 @@ ONU::ONU(const QString& configFileName):
         if (itemNode.isElement() && itemNode.nodeName() == "family" )
         {
           m_font.family = itemNode.toElement().text();
-          kDebug() << "  got family: " << m_font.family << endl;
+//           kDebug() << "  got family: " << m_font.family << endl;
         }
         else if (itemNode.isElement() && itemNode.nodeName() == "size" )
         {
           QString fs = itemNode.toElement().text();
           QTextStream is(&fs);
           is >> m_font.size;
-          kDebug() << "  got size: " << m_font.size << endl;
+//           kDebug() << "  got size: " << m_font.size << endl;
         }
         else if (itemNode.isElement() && itemNode.nodeName() == "weight" )
         {
@@ -219,7 +219,7 @@ ONU::ONU(const QString& configFileName):
           {
             m_font.weight = QFont::Black;
           }
-          kDebug() << "  got weight: " << m_font.weight << endl;
+//           kDebug() << "  got weight: " << m_font.weight << endl;
         }
         else if (itemNode.isElement() && itemNode.nodeName() == "italic" )
         {
@@ -232,17 +232,17 @@ ONU::ONU(const QString& configFileName):
           {
               m_font.italic = false;
           }
-          kDebug() << "  got italic: " << m_font.italic << endl;
+//           kDebug() << "  got italic: " << m_font.italic << endl;
         }
         else if (itemNode.isElement() && itemNode.nodeName() == "foreground-color" )
         {
           m_font.foregroundColor = itemNode.toElement().text();
-          kDebug() << "  got foreground color: " << m_font.foregroundColor << endl;
+//           kDebug() << "  got foreground color: " << m_font.foregroundColor << endl;
         }
         else if (itemNode.isElement() && itemNode.nodeName() == "background-color" )
         {
           m_font.backgroundColor = itemNode.toElement().text();
-          kDebug() << "  got background color: " << m_font.backgroundColor << endl;
+//           kDebug() << "  got background color: " << m_font.backgroundColor << endl;
         }
         itemNode = itemNode.nextSibling();
       }
@@ -276,7 +276,7 @@ ONU::ONU(const QString& configFileName):
                 infantryPoint = QPoint(x, y);
             countryChild = countryChild.nextSibling();
         }
-        kDebug() << "Creating country " << name << endl;
+//         kDebug() << "Creating country " << name << endl;
 //            kDebug() << "\tflag point: " << flagPoint.x() << " " << flagPoint.y() << endl;
         countries[id] = new Country(name, centralPoint, flagPoint,
             cannonPoint, cavalryPoint, infantryPoint, id);
@@ -287,7 +287,7 @@ ONU::ONU(const QString& configFileName):
         QString name = nationalityNode.attribute("name");
         QString leader = nationalityNode.attribute("leader");
         QString flag = nationalityNode.attribute("flag");
-        kDebug() << "Creating nationality " << name << " ; flag: " << flag << endl;
+//         kDebug() << "Creating nationality " << name << " ; flag: " << flag << endl;
         nationalities[nationalityId] = new Nationality(name, flag, leader);
         nationalityId++;
     }
@@ -309,7 +309,7 @@ ONU::ONU(const QString& configFileName):
         }
         continentChild = continentChild.nextSibling();
       }
-      kDebug() << "Creating continent " << name << endl;
+//       kDebug() << "Creating continent " << name << endl;
       m_continents[continentId++] = new Continent(name, continentList, bonus,id);
     }
     else if ( node.isElement() && node.nodeName() == "goals" )
@@ -319,7 +319,7 @@ ONU::ONU(const QString& configFileName):
       {
         if (goalNode.isElement() && goalNode.nodeName() == "goal" )
         {
-          kDebug() << "Goal: creating goal" << endl;
+//           kDebug() << "Goal: creating goal" << endl;
           Goal* goal = new Goal();
           QDomNode subGoalNode = goalNode.firstChild();
           while ( !subGoalNode.isNull() )
@@ -330,14 +330,14 @@ ONU::ONU(const QString& configFileName):
               QDomElement subGoalNodeEl = subGoalNode.toElement();
               unsigned int nb = subGoalNodeEl.attribute("nb").toUInt();
               goal->nbCountries(nb);
-              kDebug() << "  nb countries: " << nb << endl;
+//               kDebug() << "  nb countries: " << nb << endl;
             }
             else if (subGoalNode.isElement() && subGoalNode.nodeName() == "armiesByCountry" )
             {
               QDomElement subGoalNodeEl = subGoalNode.toElement();
               unsigned int nb = subGoalNodeEl.attribute("nb").toUInt();
               goal->nbArmiesByCountry(nb);
-              kDebug() << "  nb armies by country: " << nb << endl;
+//               kDebug() << "  nb armies by country: " << nb << endl;
             }
             else if (subGoalNode.isElement() && subGoalNode.nodeName() == "continent" )
             {
@@ -345,7 +345,7 @@ ONU::ONU(const QString& configFileName):
               QDomElement subGoalNodeEl = subGoalNode.toElement();
               unsigned int id = subGoalNodeEl.attribute("id").toUInt();
               goal->continents().insert(id);
-              kDebug() << "  continent: " << id << endl;
+//               kDebug() << "  continent: " << id << endl;
             }
             else if (subGoalNode.isElement() && subGoalNode.nodeName() == "player" )
             {
@@ -353,18 +353,18 @@ ONU::ONU(const QString& configFileName):
               QDomElement subGoalNodeEl = subGoalNode.toElement();
               unsigned int nb = subGoalNodeEl.attribute("nbCountriesFallback").toUInt();
               goal->nbCountries(nb);
-            kDebug() << "  player with fallback: " << nb << endl;
+//               kDebug() << "  player with fallback: " << nb << endl;
             }
             else if (subGoalNode.isElement() && subGoalNode.nodeName() == "desc" )
             {
               QDomElement subGoalNodeEl = subGoalNode.toElement();
               QString text = subGoalNodeEl.text();
               goal->description(text);
-              kDebug() << "  description: '" << text << "'" << endl;
+//               kDebug() << "  description: '" << text << "'" << endl;
             }
             subGoalNode = subGoalNode.nextSibling();
           }
-          kDebug() << "Inserting goal with type " << goal->type() << endl;
+//           kDebug() << "Inserting goal with type " << goal->type() << endl;
           GameLogic::GameAutomaton::changeable().goals().insert(goal);
           subGoalNode = subGoalNode.nextSibling();
         }
@@ -541,7 +541,7 @@ void ONU::saveXml(std::ostream& xmlStream)
 
 const QString& ONU::mapFileName() const
 {
-  kDebug() << "ONU::mapFileName() " << m_mapFileName << endl;
+//   kDebug() << "ONU::mapFileName() " << m_mapFileName << endl;
   return m_mapFileName;
 }
 
@@ -574,7 +574,7 @@ void ONU::sendCountries(QDataStream& stream)
   stream << quint32(countries.size());
   for (unsigned int i = 0; i < countries.size(); i++)
   {
-    kDebug() << "Sending country n° " << i+1 << " on " << countries.size() << endl;
+    kDebug() << "Sending country number " << i+1 << " on " << countries.size() << endl;
     countries[i]->send(stream);
   }
 }
@@ -605,7 +605,8 @@ Continent* ONU::continentNamed(const QString& name)
 void ONU::buildMap()
 {
   kDebug() << "ONU::buildMap" << endl;
-  QSize size((int)(m_renderer.defaultSize().width()*m_zoom),(int)(m_renderer.defaultSize().height()*m_zoom));
+//   QSize size((int)(m_renderer.defaultSize().width()*m_zoom),(int)(m_renderer.defaultSize().height()*m_zoom));
+  QSize size((int)(m_width*m_zoom),(int)(m_height*m_zoom));
   QImage image(size, QImage::Format_ARGB32_Premultiplied);
   image.fill(0);
   QPainter p(&image);
