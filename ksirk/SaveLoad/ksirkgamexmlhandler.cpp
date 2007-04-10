@@ -47,7 +47,9 @@ bool GameXmlHandler::startDocument()
 
 bool GameXmlHandler::startElement( const QString & namespaceURI, const QString & localName, const QString & qName, const QXmlAttributes & atts ) 
 {
-  kDebug() << "startElement " << localName << " / " << qName << endl;
+  Q_UNUSED(namespaceURI);
+  Q_UNUSED(qName);
+//   kDebug() << "startElement " << localName << " / " << qName << endl;
   if (localName == "ksirkSavedGame")
   {
     QString fv =atts.value("formatVersion");
@@ -216,7 +218,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
   }
   else if (localName == "continent" && m_inGoal)
   {
-    kDebug() << "Getting id of continent named " << atts.value("name") << endl;
+//     kDebug() << "Getting id of continent named " << atts.value("name") << endl;
     unsigned int id = (!atts.value("name").isEmpty()) ? 
         m_game.theWorld()->continentNamed(atts.value("name"))->id() :
         0;
@@ -227,7 +229,9 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
 
 bool GameXmlHandler::endElement(const QString& namespaceURI, const QString& localName, const QString& qName)
 {
-  kDebug() << "endElement " << localName << " / " << qName << endl;
+  Q_UNUSED(namespaceURI);
+  Q_UNUSED(qName);
+//   kDebug() << "endElement " << localName << " / " << qName << endl;
   if (localName == "game")
   {
     std::map<QString, QString>::const_iterator it, it_end;
