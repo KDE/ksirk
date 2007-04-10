@@ -1017,6 +1017,7 @@ QDataStream& operator>>(QDataStream& s, GameAutomaton::GameState& state)
 
 bool GameAutomaton::setupPlayersNumberAndSkin(bool& networkGame, int& port, uint& newPlayersNumber)
 {
+  kDebug() << "GameAutomaton::setupPlayersNumberAndSkin" << endl;
   std::map< QString, QString > nations = m_game->nationsList();
   if (nations.size() < 2)
   {
@@ -1046,9 +1047,8 @@ bool GameAutomaton::setupPlayersNumberAndSkin(bool& networkGame, int& port, uint
 //   kDebug() << "Got skin name: " << skinName << endl;
 /*  if (skinName != m_skin)
   {*/
-//     kDebug() << "Changing skin" << endl;
-#warning this is making it crash, do not ask me why, it is your game ;-)
-    //m_skin = skinName;
+    kDebug() << "Changing skin" << endl;
+    m_skin = skinName;
 //   }
   
   port = 20000;
