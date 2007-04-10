@@ -105,7 +105,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_chatDlg(0),
   m_audioPlayer(new Phonon::AudioPlayer( Phonon::NotificationCategory )),
   m_timer(this),
-  mainToolBar(0),
+  globalToolBar(0),
   gameActionsToolBar(0)
 {
   kDebug() << "KGameWindow constructor begin" << endl;
@@ -142,6 +142,23 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_bottomDock->setAllowedAreas(Qt::BottomDockWidgetArea);
   addDockWidget(Qt::BottomDockWidgetArea, m_bottomDock); // master dockwidget
 
+  kDebug() << "Setting up GUI" << endl;
+  setupGUI();
+
+  kDebug() <<"Setting up toolbars" << endl;
+  kDebug() <<"  creating globalToolBar" << endl;
+  globalToolBar = new KToolBar("globalToolBar",this, Qt::BottomToolBarArea);
+  globalToolBar-> setToolButtonStyle(Qt::ToolButtonIconOnly);
+  globalToolBar-> setAllowedAreas(Qt::BottomToolBarArea);
+  globalToolBar-> setIconSize(QSize(32,32));
+  globalToolBar->show();
+  kDebug() <<"  creating gameActionsToolBar" << endl;
+  gameActionsToolBar = new KToolBar("gameActionsToolBar", this, Qt::BottomToolBarArea);
+  gameActionsToolBar-> setToolButtonStyle(Qt::ToolButtonIconOnly);
+  gameActionsToolBar-> setAllowedAreas(Qt::BottomToolBarArea);
+  gameActionsToolBar-> setIconSize(QSize(32,32));
+  gameActionsToolBar->show();
+
   kDebug() << "Creating automaton" << endl;
   GameAutomaton::changeable().init(this);
   
@@ -150,7 +167,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
 
   
 //    kDebug() << "Before initActions" << endl;
-//   initActions();
+  initActions();
 //    kDebug() << "Before initStatusBar" << endl;
   initStatusBar();
   
@@ -296,40 +313,6 @@ void KGameWindow::newSkin(const QString& onuFileName)
   initView();
   kDebug() <<"Before m_backGnd" << endl;
   m_backGnd = new BackGnd(m_scene, m_theWorld); //Creation of the background
-//   m_frame->fitInView(m_backGnd, Qt::KeepAspectRatio);
-  kDebug() <<"Before paint" << endl;
-//   paint();
-  
-  kDebug() << "Setting up GUI" << endl;
-  setupGUI();
-
-  kDebug() <<"Setting up toolbars" << endl;
-/*  if (mainToolBar != 0)
-  {
-    mainToolBar-> hide();
-    delete mainToolBar;
-  }*/
-  mainToolBar = new KToolBar("globalToolBar",this, Qt::BottomToolBarArea);
-  mainToolBar-> setToolButtonStyle(Qt::ToolButtonIconOnly);
-  mainToolBar-> setAllowedAreas(Qt::BottomToolBarArea);
-  mainToolBar-> setIconSize(QSize(32,32));
-  mainToolBar->show();
-/*  if (gameActionsToolBar != 0)
-  {
-    gameActionsToolBar-> hide();
-    delete gameActionsToolBar;
-  }*/
-  gameActionsToolBar = new KToolBar("gameActionsToolBar", this, Qt::BottomToolBarArea);
-  gameActionsToolBar-> setToolButtonStyle(Qt::ToolButtonIconOnly);
-  gameActionsToolBar-> setAllowedAreas(Qt::BottomToolBarArea);
-  gameActionsToolBar-> setIconSize(QSize(32,32));
-  gameActionsToolBar->show();
-  
-  initActions();
-  mainToolBar-> hide();
-  gameActionsToolBar-> hide();
-  mainToolBar-> show();
-  gameActionsToolBar-> show();
   m_frame->setFocus();
 
   kDebug() <<"End new skin" << endl;
@@ -836,7 +819,7 @@ void KGameWindow::addAButton(
   KToolBar* toolBar;
   if (toolBarName == "globalToolBar")
   {
-    toolBar = mainToolBar;
+    toolBar = globalToolBar;
   }
   else if (toolBarName == "gameActionsToolBar")
   {
