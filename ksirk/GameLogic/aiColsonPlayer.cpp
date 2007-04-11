@@ -478,6 +478,7 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
   {
     std::vector<Continent*>::iterator contIt(m_world->getContinents().begin());
     std::vector<Continent*>::iterator contIt_end(m_world->getContinents().end());
+#warning continent can not be 0 in this code path - everything in this for loop is dead code
     for (;(contIt!=contIt_end) && (continent==0);contIt++)
     {
       const Continent* cont = *contIt;
