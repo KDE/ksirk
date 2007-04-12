@@ -125,6 +125,7 @@ const char* GameAutomaton::KsirkMessagesIdsNames[] = {
 "NbPlayers", // 306
 "FinalizePlayers", // 307
 "Acknowledge", // 308
+"DisplayGoals", // 309
 };
 
 GameAutomaton* GameAutomaton::m_singleton = 0;
@@ -286,6 +287,7 @@ GameAutomaton::GameState GameAutomaton::run()
   {
     if (m_game->actionOpenGame())
     {
+      kDebug() << "opened" << endl;
       #if KDE_IS_VERSION(3,4,0)
       if (dnssdAvailable())
         setDiscoveryInfo("_ksirk._tcp","wow");
@@ -303,6 +305,7 @@ GameAutomaton::GameState GameAutomaton::run()
     }
     else
     {
+      kDebug() << "opened" << endl;
       QTimer::singleShot(200, this, SLOT(run()));
       return m_state;
     }
@@ -801,20 +804,20 @@ void GameAutomaton::activateNeededAIPlayers()
   if ( currentPlayer() 
        && (currentPlayer()-> isAI() ) 
        && (!currentPlayer()->isVirtual())
-       && (!(static_cast< AIPlayer* >(currentPlayer())-> isRunning())) 
+       && (!(dynamic_cast< AIPlayer* >(currentPlayer())-> isRunning()))
      )
   {
-    static_cast< AIPlayer* >(currentPlayer())-> start();
+    dynamic_cast< AIPlayer* >(currentPlayer())-> start();
   }
   if (    ( m_state == WAITDEFENSE ) 
        && ( m_game->secondCountry()) 
        && ( m_game->secondCountry()->owner())
        && ( m_game->secondCountry()->owner()->isAI() ) 
        && ( !m_game->secondCountry()->owner()->isVirtual())
-       && ( !(static_cast< AIPlayer* >(m_game->secondCountry()->owner())-> isRunning())) 
+       && ( !(dynamic_cast< AIPlayer* >(m_game->secondCountry()->owner())-> isRunning()))
      )
   {
-    static_cast< AIPlayer* >(m_game->secondCountry()->owner())-> start();
+    dynamic_cast< AIPlayer* >(m_game->secondCountry()->owner())-> start();
   }
 }
 
@@ -863,14 +866,15 @@ void GameAutomaton::skin(const QString& newSkin)
 bool GameAutomaton::playerInput(QDataStream &msg, KPlayer* player)
 {
   kDebug() << "GameAutomaton: Player input" << endl;
-  // Convert the player to the right class
-  Player* p = static_cast<Player*>(player);
-
-  if (p->isVirtual())
+  if (player->isVirtual())
   {
 //     kDebug() << "Network player: nothing to do" << endl;
     return false;
   }
+
+  // Convert the player to the right class
+  Player* p = dynamic_cast<Player*>(player);
+
   QString action;
   QPointF point;
   msg >> action >> point;
@@ -1090,12 +1094,13 @@ bool GameAutomaton::setupPlayersNumberAndSkin(bool& networkGame, int& port, uint
 
 void GameAutomaton::setGoalFor(Player* player)
 {
+  kDebug() << "GameAutomaton::setGoalFor " << player->name() << endl;
   unsigned int max = m_goals.size();
   unsigned int goalId = Dice::roll(max);
   std::set< Goal* >::iterator it = m_goals.begin();
   for (unsigned int i = 1 ; i < goalId; it++,i++) {}
   Goal* goal = (*it);
-//   kDebug() << "Goal for " << player->name() << " is of type " << goal->type() << endl;
+  kDebug() << "Goal for " << player->name() << " is of type " << goal->type() << endl;
   if (goal->type() == Goal::GoalPlayer)
   {
     Player* target = 0;
@@ -1108,7 +1113,7 @@ void GameAutomaton::setGoalFor(Player* player)
       PlayersArray::iterator itp_end = playerList()->end();
       unsigned int j = 1;
       for (; j < playerNum; j++,itp++) {}
-      target = static_cast< Player* >(*itp);
+      target = dynamic_cast< Player* >(*itp);
     }
     if (target != 0)
     {
@@ -1130,6 +1135,7 @@ void GameAutomaton::setGoalFor(Player* player)
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   stream << player->id();
   stream << (*goal);
+  kDebug() << "Sending message GoalForIs ("<<GoalForIs<<") for " << player->name() << endl; 
   sendMessage(buffer,GoalForIs);
   delete goal;
   m_goals.erase(it);
@@ -1236,7 +1242,7 @@ Player* GameAutomaton::playerNamed(const QString& playerName)
   {
     if ( (*it)-> name() ==  playerName)
     {
-      return static_cast<Player*>(*it);
+      return dynamic_cast<Player*>(*it);
     }
   }
   kError() << "GameAutomaton::playerNamed: there is no player named " 
@@ -1285,7 +1291,7 @@ void GameAutomaton::currentPlayer(Player* player)
 void GameAutomaton::slotPlayerJoinedGame(KPlayer* player)
 {
   kDebug() << "slotPlayerJoinedGame currently " << playerList()->count() << " / " << maxPlayers() << endl;
-  Player* p = static_cast<Player*>(player);
+  Player* p = dynamic_cast<Player*>(player);
   
   if (isAdmin())
   {
@@ -1623,7 +1629,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     exit(0);
   }
 
-  if (msgid < CountryOwner || msgid> NbPlayers)
+  if (msgid < CountryOwner || msgid> DisplayGoals)
   {
     return;
   }
@@ -1996,7 +2002,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     {
 //       kDebug() << "CheckGoal: " << endl;
       stream >> playerId;
-      player = static_cast< Player* >(findPlayer(playerId));
+      player = dynamic_cast< Player* >(findPlayer(playerId));
       if (player)
       {
         if (player->checkGoal())
@@ -2017,15 +2023,19 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     if (isAdmin())
     {
       stream >> playerId;
-      setGoalFor(static_cast<Player*>(findPlayer(playerId)));
+      setGoalFor(dynamic_cast<Player*>(findPlayer(playerId)));
     }
     break;
   case GoalForIs:
-//     kDebug() << "GoalForIs: " << endl;
+    kDebug() << "GoalForIs: " << endl;
     stream >> playerId;
-//     kDebug() << "  player id: " << playerId << endl;
+    kDebug() << "  player id: " << playerId << endl;
     stream >> goal;
-    static_cast<Player*>(findPlayer(playerId))->goal(new Goal(goal));
+    player = dynamic_cast<Player*>(findPlayer(playerId));
+    if (player != 0)
+    {
+      player->goal(goal);
+    }
     break;
   case FinalizePlayers:
       kDebug() << "Got message FinalizePlayers" << endl;
@@ -2035,7 +2045,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     QObject::disconnect(messageServer(),SIGNAL(connectionLost(KMessageIO *)),
                         this,SLOT(slotConnectionToClientBroken(KMessageIO *)));
     stream >> playerId;
-    m_game->winner(static_cast<Player*>(findPlayer(playerId)));
+    m_game->winner(dynamic_cast<Player*>(findPlayer(playerId)));
     break;
   case NbPlayers:
     stream >> m_nbPlayers;
@@ -2044,7 +2054,11 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
       kDebug() << "Got message Acknowledge" << endl;
       stream >> playerId;
       stream >> ack;
-      acknowledge(static_cast<Player*>(findPlayer(playerId)), ack);
+      acknowledge(dynamic_cast<Player*>(findPlayer(playerId)), ack);
+    break;
+  case DisplayGoals:
+      kDebug() << "Got message DisplayGoals" << endl;
+      displayGoals();
     break;
   default: ;
   }
@@ -2057,8 +2071,10 @@ void GameAutomaton::finalizePlayers()
   PlayersArray::iterator it_end = playerList()->end();
   for (; it != it_end; it++)
   {
-    static_cast<Player*>(*it)-> finalize();
+    dynamic_cast<Player*>(*it)-> finalize();
   }
+  QByteArray buffer;
+  sendMessage(buffer,DisplayGoals);
 }
 
 /** @return true if all players are played by computer ; false otherwise */
@@ -2068,7 +2084,7 @@ bool GameAutomaton::allComputerPlayers()
   PlayersArray::iterator it_end = playerList()->end();
   for (; it != it_end; it++)
   {
-    if ( ! static_cast<Player*>(*it)-> isAI() )
+    if ( ! dynamic_cast<Player*>(*it)-> isAI() )
     {
       return false;
     }
@@ -2082,7 +2098,7 @@ bool GameAutomaton::allLocalPlayersComputer()
   PlayersArray::iterator it_end = playerList()->end();
   for (; it != it_end; it++)
   {
-    if ( ( ! static_cast<Player*>(*it)-> isVirtual() ) &&  ( ! static_cast<Player*>(*it)-> isAI() ) )
+    if ( ( ! dynamic_cast<Player*>(*it)-> isVirtual() ) &&  ( ! dynamic_cast<Player*>(*it)-> isAI() ) )
     {
       return false;
     }
@@ -2111,8 +2127,8 @@ void GameAutomaton::firstCountriesDistribution()
 //     m_game->initTimer();
     m_game->setCurrentPlayerToFirst();
     if ( currentPlayer()-> isAI()  && (!currentPlayer()->isVirtual()) )
-      if ( ! ( static_cast<AIPlayer *>(currentPlayer())-> isRunning()) )
-        static_cast<AIPlayer *>(currentPlayer())-> start();
+      if ( ! ( dynamic_cast<AIPlayer *>(currentPlayer())-> isRunning()) )
+        dynamic_cast<AIPlayer *>(currentPlayer())-> start();
     
     
   //    kDebug() << "OUT  KGameWindow::setupPlayers" << endl;
@@ -2235,6 +2251,26 @@ void GameAutomaton::explosionFinished()
   if (isAdmin())
   {
     state(FIGHT_BRINGBACK);
+  }
+}
+
+void GameAutomaton::displayGoals()
+{
+  kDebug() << "GameAutomaton::displayGoals" << endl;
+  PlayersArray::iterator it = playerList()->begin();
+  PlayersArray::iterator it_end = playerList()->end();
+  for (; it != it_end; it++)
+  {
+    if ( (dynamic_cast<Player*>(*it) != 0)
+        && ( ! dynamic_cast<Player*>(*it)-> isVirtual() )
+        && ( ! dynamic_cast<Player*>(*it)-> isAI() ) )
+    {
+      KMessageBox::information(
+          game(),
+          i18n("%1, your goal will be displayed. Please make sure that no other player can see it !",(*it)->name()),
+          i18n("KsirK - Displaying Goal"));
+      dynamic_cast<Player*>(*it)->goal().show();
+    }
   }
 }
 

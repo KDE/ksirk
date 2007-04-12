@@ -23,7 +23,6 @@
 #include "Sprites/backgnd.h"
 #include "Sprites/skinSpritesData.h"
 #include "GameLogic/gameautomaton.h"
-#include "GameLogic/goal.h"
 #include "GameLogic/onu.h"
 #include "kgamewin.h"
 
@@ -45,7 +44,7 @@ Player::Player(
     Nationality* nation) :
   KPlayer(),
   m_nation(nation),
-  m_goal(new Goal()),
+  m_goal(),
   m_delayedInitNationName(""),
   m_waitedAck(0),
   m_flag(0)
@@ -225,7 +224,7 @@ bool   Player::load (QDataStream &stream)
   stream >> nationName;
 //   kDebug() << "Player::load nationName=" << nationName << endl;
   setNation(nationName);
-  stream >> *m_goal;
+  stream >> m_goal;
   return true;
 }
 
@@ -234,7 +233,7 @@ bool Player::save (QDataStream &stream)
 //   kDebug() << "Player::save" << endl;
   if (!KPlayer::save(stream)) return false;
   stream << m_nation->name();
-  stream << *m_goal;
+  stream << m_goal;
   return true;
 }
 
@@ -276,26 +275,28 @@ void Player::setFlag()
   }
 }
 
-void Player::goal(Goal* goal) 
+void Player::goal(const Goal& goal)
 {
-  if (m_goal)
+  kDebug() << "Player::goal (setter) " << name() << endl;
+/*  if (m_goal)
   {
     delete m_goal;
-  }
-  m_goal = new Goal(*goal);
-  m_goal->player(this);
-  if (!isVirtual() && !isAI())
+  }*/
+  m_goal = Goal(goal);
+  m_goal.player(this);
+/*  if (!isVirtual() && !isAI())
   {
     KMessageBox::information(
-                              GameAutomaton::changeable().game(), 
-                              i18n("%1, your goal will be displayed. Please make sure that no other player can see it !",name()), i18n("KsirK - Displaying Goal"));
-    m_goal->show();    
-  }
+      GameAutomaton::changeable().game(),
+      i18n("%1, your goal will be displayed. Please make sure that no other player can see it !",name()),
+      i18n("KsirK - Displaying Goal"));
+    m_goal->show();
+  }*/
 }
 
 bool Player::checkGoal()
 {
-  return m_goal->checkFor(this);
+  return m_goal.checkFor(this);
 }
 
 /**
@@ -342,7 +343,7 @@ QDataStream& operator<<(QDataStream& stream, PlayerMatrix& p)
   {
     stream << (*it);
   }
-  stream << *p.goal;
+  stream << p.goal;
   return stream;
 }
 
@@ -360,9 +361,7 @@ QDataStream& operator>>(QDataStream& stream, PlayerMatrix& p)
     stream >> country;
     p.countries.insert(country);
   }
-  Goal* goal = new Goal();
-  stream >> *goal;
-  p.goal = goal;
+  stream >> p.goal;
   return stream;
 }
 

@@ -1,5 +1,5 @@
 /* This file is part of KsirK.
-   Copyright (C) 2005-2007 Gaël de Chalendar <kleag@free.fr>
+   Copyright (C) 2005-2007 Gael de Chalendar <kleag@free.fr>
 
    KsirK is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -34,7 +34,7 @@ class Player;
   *
   * A goal can be a combination of a number of countries to conquier, some 
   * continents to conquier entirely or some players to eliminate.
-  * @author Gaël de Chalendar
+  * @author Gael de Chalendar
   */
 class Goal
 {
@@ -156,7 +156,7 @@ public:
     * @param displayType the manner to display this goal: final goal or advance.
     * @return a string containing this goal's description.
     */
-  QString message(int displayType = GoalDesc); 
+  QString message(int displayType = GoalDesc) const;
 
 private:
   GoalType m_type;

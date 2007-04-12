@@ -97,7 +97,8 @@ enum KsirkMessagesIds {
     Winner, // 305
     NbPlayers, // 306
     FinalizePlayers, // 307
-    Acknowledge // 308
+    Acknowledge, // 308
+    DisplayGoals, // 309
 };
 
 /** Messages formats:
@@ -115,7 +116,7 @@ enum KsirkMessagesIds {
   * It is an automaton as its behavior depends on its state and on messages 
   * received from other parts of the game or from other clients on the network.
   * It is also a singleton accessible from anywhere in the process.
-  * @author Gaël de Chalendar
+  * @author Gael de Chalendar
   */
 class GameAutomaton : public KGame
 {
@@ -423,6 +424,8 @@ private:
   void acknowledge(Player* player, unsigned int ack);
 
   void activateNeededAIPlayers();
+
+  void displayGoals();
 
   static GameAutomaton* m_singleton ;
     

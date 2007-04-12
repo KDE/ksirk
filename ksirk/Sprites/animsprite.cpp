@@ -86,7 +86,7 @@ AnimSprite::AnimSprite(const QString &imgPath, BackGnd* aBackGnd,
 
 AnimSprite::~AnimSprite()
 {
-  kDebug() << "AnimSprite::~AnimSprite " << (void*)this << endl;
+//   kDebug() << "AnimSprite::~AnimSprite " << (void*)this << endl;
   m_timer.stop();
   disconnect(&m_timer,SIGNAL(timeout()),this,SLOT(animate()));
   setStatic();
@@ -618,7 +618,7 @@ void AnimSprite::saveXml(std::ostream& /*xmlStream*/)
 
 QPixmap AnimSprite::image(unsigned int numFrame) const
 {
-  kDebug() << "image(" << numFrame << ") / " << m_frames.size() << endl;
+//   kDebug() << "image(" << numFrame << ") / " << m_frames.size() << endl;
   if (numFrame >= (unsigned int)m_frames.size())
   {
     return QPixmap();

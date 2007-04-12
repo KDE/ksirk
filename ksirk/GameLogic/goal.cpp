@@ -41,13 +41,21 @@ Goal::Goal() :
 
 Goal::Goal(const Goal& goal)
 {
+  kDebug() << "Goal copy constructor :" << endl;
   m_type = goal.m_type;
+  kDebug() << "  type="<< m_type << endl;
   m_description = goal.m_description;
+  kDebug() << "  description="<< m_description << endl;
   m_nbCountries = goal.m_nbCountries;
+  kDebug() << "  nbCountries="<< m_nbCountries << endl;
   m_nbArmiesByCountry = goal.m_nbArmiesByCountry;
+  kDebug() << "  nbArmiesByCountry="<< m_nbArmiesByCountry << endl;
   m_continents = goal.m_continents;
+  kDebug() << "  continents: "<< m_continents.size() << endl;
   m_players = goal.m_players;
+  kDebug() << "  players: "<< m_players.size() << endl;
   m_player = goal.m_player;
+  kDebug() << "  player: "<< m_player << endl;
 }
 
 Goal::~Goal()
@@ -125,7 +133,7 @@ bool Goal::checkContinentsFor(const GameLogic::Player* player) const
   return otherFound;
 }
 
-QString Goal::message(int displayType)
+QString Goal::message(int displayType) const
 {
   KLocalizedString res;
 
@@ -276,37 +284,48 @@ void Goal::show(int displayType)
 
 QDataStream& operator<<(QDataStream& stream, const Goal& goal)
 {
+  kDebug() << "Goal operator<< : type" << goal.type()<< endl;
   stream << quint32(goal.type());
   if (goal.player() != 0)
   {
+    kDebug() << "Goal operator<< : player " << goal.player()->id() << endl;
     stream << quint32(goal.player()->id());
   }
   else
   {
+    kDebug() << "Goal operator<< : player " << 0 << endl;
     stream << quint32(0);
   }
+  kDebug() << "Goal operator<< : description " << goal.description() << endl;
   stream << goal.description();
   std::set< unsigned int >::iterator it, it_end;
   switch (goal.type())
   {
   case Goal::GoalPlayer :
+    kDebug() << "Goal operator<< : players " << goal.players().size() << endl;
     stream << quint32(goal.players().size());
     it = goal.players().begin(); it_end = goal.players().end();
     for (; it != it_end; it++)
     {
+      kDebug() << "Goal operator<< : player " << (*it) << endl;
       stream << quint32(*it);
     }
+    kDebug() << "Goal operator<< : nbCountries " << goal.nbCountries() << endl;
     stream << quint32(goal.nbCountries());
     break;
   case Goal::Countries:
+    kDebug() << "Goal operator<< : nbCountries " << goal.nbCountries() << endl;
     stream << quint32(goal.nbCountries());
+    kDebug() << "Goal operator<< : nbArmiesByCountry " << goal.nbArmiesByCountry() << endl;
     stream << quint32(goal.nbArmiesByCountry());
     break;
   case Goal::Continents:
+    kDebug() << "Goal operator<< : continents " << goal.continents().size() << endl;
     stream << quint32(goal.continents().size());
     it = goal.continents().begin(); it_end = goal.continents().end();
     for (; it != it_end; it++)
     {
+      kDebug() << "Goal operator<< : continent " << (*it) << endl;
       stream << quint32(*it);
     }
     break;
@@ -317,41 +336,52 @@ QDataStream& operator<<(QDataStream& stream, const Goal& goal)
 
 QDataStream& operator>>(QDataStream& stream, Goal& goal)
 {
+  kDebug() << "Goal operator>>" << endl;
   quint32 type;
   QString description;
   quint32 nb, nbp;
   quint32 id, ownerId;
   stream >> type;
+  kDebug() << "Goal operator>> type: " << type << endl;
   stream >> ownerId;
+  kDebug() << "Goal operator>> ownerId: " << ownerId << endl;
   goal.player(static_cast<Player*>(GameAutomaton::changeable().findPlayer(ownerId)));
   goal.type(Goal::GoalType(type));
   stream >> description;
+  kDebug() << "Goal operator>> description: " << description << endl;
   goal.description(description);
   switch (type)
   {
   case Goal::GoalPlayer :
     goal.players().clear();
     stream >> nbp;
+    kDebug() << "Goal operator>> nbp: " << nbp << endl;
     for (quint32 i = 0; i < nbp; i++)
     {
       stream >> id;
+      kDebug() << "Goal operator>> player id: " << id << endl;
       goal.players().insert(id);
     }
     stream >> nb;
+    kDebug() << "Goal operator>> nbCountries: " << nb << endl;
     goal.nbCountries(nb);
     break;
   case Goal::Countries:
     stream >> nb;
+    kDebug() << "Goal operator>> nbCountries: " << nb << endl;
     goal.nbCountries(nb);
     stream >> nb;
     goal.nbArmiesByCountry(nb);
+    kDebug() << "Goal operator>> nbArmiesByCountry: " << nb << endl;
     break;
   case Goal::Continents:
     stream >> nb;
+    kDebug() << "Goal operator>> nbContinents: " << nb << endl;
     goal.continents().clear();
     for (quint32 i = 0; i < nb; i++)
     {
       stream >> id;
+      kDebug() << "Goal operator>> continent: " << id << endl;
       goal.continents().insert(id);
     }
     break;

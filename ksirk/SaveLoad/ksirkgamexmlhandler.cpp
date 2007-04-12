@@ -279,7 +279,7 @@ bool GameXmlHandler::endElement(const QString& namespaceURI, const QString& loca
     {
       if (m_goal->player())
       {
-        m_goal->player()->goal(m_goal);
+        m_goal->player()->goal(*m_goal);
       }
       else
       {
@@ -289,7 +289,7 @@ bool GameXmlHandler::endElement(const QString& namespaceURI, const QString& loca
         {
           if ( (*itw).name == m_goalPlayerName )
           {
-            (*itw).goal = new GameLogic::Goal(*m_goal);
+            (*itw).goal = *m_goal;
             break;
           }
         }

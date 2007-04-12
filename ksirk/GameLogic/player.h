@@ -24,6 +24,7 @@
 
 #include "KsirkGlobalDefinitions.h"
 #include "GameLogic/gameautomaton.h"
+#include "GameLogic/goal.h"
 #include "nationality.h"
 #include "Sprites/animsprite.h"
 
@@ -39,7 +40,7 @@ namespace Ksirk
 {
 
 class BackGnd;
-class Goal;
+// class Goal;
 
 namespace GameLogic
 {
@@ -150,9 +151,9 @@ public:
   
   //@{
   /** Accessors for this player's goal */
-  inline Goal* goal() const {return m_goal;}
-  inline Goal* goal() {return m_goal;}
-  void goal(Goal* goal);
+  inline const Goal& goal() const {return m_goal;}
+  inline Goal& goal() {return m_goal;}
+  void goal(const Goal& goal);
   //@}
 
   /**
@@ -229,7 +230,7 @@ protected:
   /**
     * The goal to be reached by this player
     */
-  Goal* m_goal;
+  Goal m_goal;
 
   /**
     * Allows to initialize the nation name of the player even if the nation 
@@ -278,7 +279,7 @@ struct PlayerMatrix
   
   bool isAI;
   
-  Goal* goal;
+  Goal goal;
 };
 
 QDataStream& operator<<(QDataStream& stream, PlayerMatrix& p);

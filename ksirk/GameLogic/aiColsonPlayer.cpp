@@ -244,9 +244,9 @@ int AIColsonPlayer::getTotalArmiesOfPlayer(const Player* player)
 
 bool AIColsonPlayer::isContinentOfMission(const Player* player, const Continent* continent)
 {
-  if (player->goal()->type() != Goal::Continents)
+  if (player->goal().type() != Goal::Continents)
       return false;
-  return (player->goal()->continents().find(continent->id()) != player->goal()->continents().end());
+  return (player->goal().continents().find(continent->id()) != player->goal().continents().end());
 }
 
 bool AIColsonPlayer::isEnemyPlayer(const Player* player)

@@ -395,8 +395,8 @@ bool KGameWindow::attackEnd()
         kDebug() << "There is now " << GameLogic::GameAutomaton::changeable().playerList()->count() << " GameLogic::GameAutomaton::changeable().playerList()->" << endl;
       }
       if ( ( (GameLogic::GameAutomaton::changeable().useGoals()) 
-             && ( (currentPlayer()->goal()->type() == GameLogic::Goal::GoalPlayer) 
-             && ( (*currentPlayer()->goal()->players().begin()) == oldOwnerId) ) ) 
+             && ( (currentPlayer()->goal().type() == GameLogic::Goal::GoalPlayer)
+             && ( (*currentPlayer()->goal().players().begin()) == oldOwnerId) ) )
            || (GameLogic::GameAutomaton::changeable().playerList()->count() == 1) )
       {
         GameLogic::GameAutomaton::changeable().state(GameLogic::GameAutomaton::GAME_OVER);
@@ -441,7 +441,7 @@ void KGameWindow::winner(const Player* player)
   if (GameLogic::GameAutomaton::changeable().useGoals())
   {
     msg += QString("<br/>Winner's goal was stated like this:<br/><i>") 
-        += player->goal()->message()
+        += player->goal().message()
         += QString("</i><br/><br/>Do you want to play again ?");
   }
   else
@@ -615,7 +615,7 @@ bool KGameWindow::queryClose()
 
 bool KGameWindow::actionOpenGame()
 {
-//   kDebug() << "KGameWindow::actionOpenGame" << endl;
+  kDebug() << "KGameWindow::actionOpenGame" << endl;
   QString fileName = KFileDialog::getOpenFileName(KUrl(), "*.xml", this, i18n("KsirK - Load Game"));
   if (!fileName.isEmpty())
   {
@@ -624,7 +624,7 @@ bool KGameWindow::actionOpenGame()
     for (unsigned int i = 0; i < m_theWorld->getNbCountries(); i++)
     {
       Country* country = m_theWorld-> getCountries().at(i);
-//       kDebug() << "Adding sprites to " << country->name() << endl;    
+      kDebug() << "Adding sprites to " << country->name() << endl;
       country-> createArmiesSprites(m_backGnd);
       Player *player = country-> owner();
       if (player)
@@ -2105,7 +2105,7 @@ void KGameWindow::saveXml(std::ostream& xmlStream)
   it_end = GameLogic::GameAutomaton::changeable().playerList()->end();
   for (; it != it_end; it++)
   {
-    static_cast<Player*>(*it)->goal()->saveXml(xmlStream);
+    static_cast<Player*>(*it)->goal().saveXml(xmlStream);
   }
   xmlStream << "</goals>\n";
   xmlStream << "</game>" << std::endl;
