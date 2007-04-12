@@ -98,7 +98,7 @@ enum KsirkMessagesIds {
     NbPlayers, // 306
     FinalizePlayers, // 307
     Acknowledge, // 308
-    DisplayGoals, // 309
+    DisplayGoals // 309
 };
 
 /** Messages formats:
