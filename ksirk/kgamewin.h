@@ -32,7 +32,7 @@
 
 // include files for KDE
 #include <ksharedconfig.h>
-#include <KMainWindow>
+#include <KXmlGuiWindow>
 #include <KStandardDirs>
 #include <KShortcut>
 // 
@@ -73,7 +73,7 @@ class DecoratedGameFrame;
   * @author Gaël de Chalendar (aka Kleag)
   * @version $Id: kgamewin.h 243 2007-02-24 00:22:58Z kleag $
   */
-class KGameWindow: public KMainWindow
+class KGameWindow: public KXmlGuiWindow
 {
   Q_OBJECT
 

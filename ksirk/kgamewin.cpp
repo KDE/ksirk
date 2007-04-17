@@ -93,7 +93,7 @@ using namespace GameLogic;
 // port all occurrences of setBarPos
 
 KGameWindow::KGameWindow(QWidget* parent) :
-  KMainWindow(parent), NKD(0), NKA(0), 
+  KXmlGuiWindow(parent), NKD(0), NKA(0), 
   m_theWorld(0), m_scene(0), m_backGnd(0),
   m_animFighters(new AnimSpritesGroup(this,SLOT(slotMovingFightersArrived(AnimSpritesGroup*)))),
   m_nbMovedArmies(0),
