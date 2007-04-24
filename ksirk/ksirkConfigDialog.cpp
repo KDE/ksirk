@@ -48,11 +48,15 @@ KsirkConfigurationDialog::KsirkConfigurationDialog (
               QWidget *parent, const char *name, KConfigSkeleton *config, 
               FaceType dialogType, ButtonCodes dialogButtons, 
               ButtonCode defaultButton, bool modal) : 
-  KConfigDialog (parent, name, config, dialogType, dialogButtons, 
-      defaultButton, modal) , m_changed(false), 
+  KConfigDialog (parent, name, config)
+      , m_changed(false), 
       m_widget(new Ui::KsirkPreferencesWidget())
 
 {
+     setFaceType(dialogType);
+     setButtons(dialogButtons);
+     setDefaultButton(defaultButton);
+     setModal(modal);
      QWidget* w = new QWidget();
      m_widget->setupUi(w);
 
