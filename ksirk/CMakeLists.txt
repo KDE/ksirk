@@ -84,7 +84,7 @@ target_link_libraries(ksirk
   ${QT_QTXML_LIBRARY} 
   ${QT_QTSVG_LIBRARY} 
   ${KDE4_KIO_LIBS} 
-  ${KDE4_PHONONCORE_LIBRARY}
+  ${KDE4_PHONON_LIBRARY}
   ${KDE4_KDEGAMES_LIBS} 
   ${CRYPT_LIBS}
   kdegames
