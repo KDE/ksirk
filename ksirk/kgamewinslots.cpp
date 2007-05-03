@@ -21,6 +21,7 @@
 #include "Sprites/backgnd.h"
 
 #include <kaboutapplicationdialog.h>
+#include <ktoolbar.h>
 
 #include "GameLogic/gameautomaton.h"
 #include "GameLogic/country.h"
@@ -143,16 +144,16 @@ void KGameWindow::evenementTimer()
     restart = true;
   }
 
-//   if ( m_animFighters->isEmpty() )
-//   {
-//     if ( m_secondCountry && !( m_secondCountry-> owner() ) )
-//       kError() << m_secondCountry-> name() << " does not belong to anybody !" << endl;
-//     // handling of the AI player actions
-//     if ( !( ( ( currentPlayer() && currentPlayer()-> isAI() )
-//             || ( ( isMyState(GameLogic::GameAutomaton::WAITDEFENSE)  ) && ( m_secondCountry ) && (m_secondCountry->owner())
-//                  && ( m_secondCountry->owner()->isAI() ) ) ) ) )
-//       toolBar("gameActionsToolBar")-> show();
-//   }
+  if ( m_animFighters->isEmpty() )
+  {
+    if ( m_secondCountry && !( m_secondCountry-> owner() ) )
+      kError() << m_secondCountry-> name() << " does not belong to anybody !" << endl;
+    // handling of the AI player actions
+    if ( !( ( ( currentPlayer() && currentPlayer()-> isAI() )
+            || ( ( isMyState(GameLogic::GameAutomaton::WAITDEFENSE)  ) && ( m_secondCountry ) && (m_secondCountry->owner())
+                 && ( m_secondCountry->owner()->isAI() ) ) ) ) )
+      toolBar("gameActionsToolBar")-> show();
+  }
 
 
 //    kDebug() << "OUT KGameWindow::evenementTimer" << endl;
@@ -167,28 +168,28 @@ void KGameWindow::slotLeftButtonDown(const QPointF& point)
 {
 //   kDebug() << "slotLeftButtonDown" << endl;
 //   if (currentPlayer() && !(currentPlayer()-> isAI()) )
-    GameAutomaton::changeable().event("actionLButtonDown", point);
+    m_automaton->event("actionLButtonDown", point);
 }
 
 void KGameWindow::slotLeftButtonUp(const QPointF& point)
 {
 //     kDebug() << "slotLeftButtonUp" << endl;
 //     if (currentPlayer() && ! (currentPlayer()-> isAI()) )
-    GameAutomaton::changeable().event("actionLButtonUp", point);
+    m_automaton->event("actionLButtonUp", point);
 }
 
 void KGameWindow::slotRightButtonDown(const QPointF& point)
 {
 //   if (currentPlayer() && ! (currentPlayer()-> isAI()) )
-    GameAutomaton::changeable().event("actionRButtonDown", point);
+    m_automaton->event("actionRButtonDown", point);
   return;
 }
 
 /** @todo Clean exit with memory freeing */
 bool KGameWindow::queryExit()
 {
-//   kDebug() << "Writing skin m_config: " << GameAutomaton::changeable().skin() << endl;
-  KGlobal::config()->group("skin").writeEntry("skin", GameAutomaton::changeable().skin());
+//   kDebug() << "Writing skin m_config: " << m_automaton->skin() << endl;
+  KGlobal::config()->group("skin").writeEntry("skin", m_automaton->skin());
   KGlobal::config()->sync();
   return true;
 }
@@ -250,21 +251,22 @@ void KGameWindow::slotNewGame()
 //   QPoint point;
   if (actionNewGame())
   {
-    GameAutomaton::changeable().state(GameAutomaton::INIT);
+    m_automaton->state(GameAutomaton::INIT);
   }
-//   GameAutomaton::changeable().event("actionNewGame", point);
+//   m_automaton->event("actionNewGame", point);
 }
 
 void KGameWindow::slotOpenGame()
 {
-//   kDebug() << "Slot open game: posting event actionOpenGame" << endl;
+  kDebug() << "Slot open game: posting event actionOpenGame" << endl;
   QPoint point;
-  GameAutomaton::changeable().event("actionOpenGame", point);
+  m_automaton->event("actionOpenGame", point);
+//   actionOpenGame();
 }
 
 void KGameWindow::slotSaveGame()
 {
-  if (GameLogic::GameAutomaton::changeable().isAdmin())
+  if (m_automaton->isAdmin())
   {
     QString fileName = KFileDialog::getSaveFileName (KUrl(), "*.xml", this, i18n("KsirK - Save Game")); 
     if (!fileName.isEmpty())
@@ -282,103 +284,103 @@ void KGameWindow::slotSaveGame()
 void KGameWindow::slotRecycling()
 {
   QPoint point;
-  GameAutomaton::changeable().event("actionRecycling", point);
+  m_automaton->event("actionRecycling", point);
 }
 
 void KGameWindow::slotRecyclingFinished()
 {
   QPoint point;
-  GameAutomaton::changeable().event("actionRecyclingFinished", point);
+  m_automaton->event("actionRecyclingFinished", point);
 }
 
 void KGameWindow::slotNextPlayer()
 {
   QPoint point;
-  GameAutomaton::changeable().event("actionNextPlayer", point);
+  m_automaton->event("actionNextPlayer", point);
 }
 
 void KGameWindow::slotAttack1()
 {
   QPoint point;
-  GameAutomaton::changeable().event("actionAttack1", point);
+  m_automaton->event("actionAttack1", point);
 }
 
 void KGameWindow::slotAttack2()
 {
   QPoint point;
-  GameAutomaton::changeable().event("actionAttack2", point);
+  m_automaton->event("actionAttack2", point);
 }
 
 void KGameWindow::slotAttack3()
 {
   QPoint point;
-  GameAutomaton::changeable().event("actionAttack3", point);
+  m_automaton->event("actionAttack3", point);
 }
 
 void KGameWindow::slotDefense1()
 {
   QPoint point;
-  GameAutomaton::changeable().event("actionDefense1", point);
+  m_automaton->event("actionDefense1", point);
 }
 
 void KGameWindow::slotDefense2()
 {
   QPoint point;
-  GameAutomaton::changeable().event("actionDefense2", point);
+  m_automaton->event("actionDefense2", point);
 }
 
 void KGameWindow::slotInvade1()
 {
   QPoint point;
-  GameAutomaton::changeable().event("actionInvade1", point);
+  m_automaton->event("actionInvade1", point);
 }
 
 void KGameWindow::slotInvade5()
 {
   QPoint point;
-  GameAutomaton::changeable().event("actionInvade5", point);
+  m_automaton->event("actionInvade5", point);
 }
 
 void KGameWindow::slotInvade10()
 {
   QPoint point;
-  GameAutomaton::changeable().event("actionInvade10", point);
+  m_automaton->event("actionInvade10", point);
 }
 
 void KGameWindow::slotInvasionFinished()
 {
   QPoint point;
-  GameAutomaton::changeable().event("actionInvasionFinished", point);
+  m_automaton->event("actionInvasionFinished", point);
 }
 
 void KGameWindow::slotRetreat1()
 {
   QPoint point;
-  GameAutomaton::changeable().event("actionRetreat1", point);
+  m_automaton->event("actionRetreat1", point);
 }
 
 void KGameWindow::slotRetreat5()
 {
   QPoint point;
-  GameAutomaton::changeable().event("actionRetreat5", point);
+  m_automaton->event("actionRetreat5", point);
 }
 
 void KGameWindow::slotRetreat10()
 {
   QPoint point;
-  GameAutomaton::changeable().event("actionRetreat10", point);
+  m_automaton->event("actionRetreat10", point);
 }
 
 void KGameWindow::slotMove()
 {
   QPoint point;
-  GameAutomaton::changeable().event("actionMove", point);
+  m_automaton->event("actionMove", point);
 }
 
 void KGameWindow::slotCancel()
 {
   QPoint point;
-  GameAutomaton::changeable().event("actionCancel", point);
+  m_automaton->event("actionCancel", point);
 }
 
 void KGameWindow::slotDumpGameInformations()
@@ -394,7 +396,7 @@ void KGameWindow::slotFinishMoves()
 //   kDebug() << "slotFinishMoves" << endl;
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
-  GameLogic::GameAutomaton::changeable().sendMessage(buffer,FinishMoves);
+  m_automaton->sendMessage(buffer,FinishMoves);
 }
 
 void KGameWindow::slotShowAboutApplication()
@@ -411,7 +413,7 @@ void KGameWindow::slotJoinNetworkGame()
 {
   kDebug() << "slotJoinNetworkGame" << endl;
   QPoint point;
-  GameAutomaton::changeable().event("actionJoinNetworkGame", point);
+  m_automaton->event("actionJoinNetworkGame", point);
 }
 
 void KGameWindow::slotShowGoal()
@@ -432,7 +434,7 @@ void KGameWindow::slotMovingFightersArrived(AnimSpritesGroup* sprites)
 {
 Q_UNUSED(sprites)
   kDebug() << "KGameWindow::slotMovingFightersArrived" << endl;
-  GameAutomaton::changeable().movingFigthersArrived();
+  m_automaton->movingFigthersArrived();
 }
 
 void KGameWindow::slotMovingArmiesArrived(AnimSpritesGroup* sprites)
@@ -459,7 +461,7 @@ void KGameWindow::slotMovingArmyArrived(AnimSprite* sprite)
   kDebug() << "KGameWindow::slotMovingArmyArrived" << endl;
   sprite->setStatic();
   sprite->hide();
-  GameAutomaton::changeable().movingArmyArrived(sprite->getDestination(), 
+  m_automaton->movingArmyArrived(sprite->getDestination(),
     ((ArmySprite*)sprite)->nbArmies());
 }
 
@@ -467,7 +469,7 @@ void KGameWindow::slotFiringFinished(AnimSpritesGroup* sprites)
 {
 Q_UNUSED(sprites)
   kDebug() << "KGameWindow::slotFiringFinished" << endl;
-  GameAutomaton::changeable().firingFinished();
+  m_automaton->firingFinished();
 }
 
 void KGameWindow::slotExplosionFinished(AnimSpritesGroup* sprites)
@@ -480,7 +482,7 @@ void KGameWindow::slotExplosionFinished(AnimSpritesGroup* sprites)
     sprite->setStatic();
     delete sprite;
   }
-  GameAutomaton::changeable().explosionFinished();
+  m_automaton->explosionFinished();
 }
 
 } // closing namespace Ksirk

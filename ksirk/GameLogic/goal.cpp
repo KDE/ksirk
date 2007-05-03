@@ -19,6 +19,7 @@
 #include "player.h"
 #include "onu.h"
 #include "kgamewin.h"
+#include "gameautomaton.h"
 
 #include <kdebug.h>
 #include <klocale.h>
@@ -29,6 +30,7 @@ namespace Ksirk {
 namespace GameLogic {
 
 Goal::Goal() :
+  m_automaton(0),
   m_type(NoGoal),
   m_description(""),
   m_nbCountries(0),
@@ -39,8 +41,21 @@ Goal::Goal() :
 {
 }
 
+Goal::Goal(GameAutomaton* automaton) :
+m_automaton(automaton),
+m_type(NoGoal),
+m_description(""),
+m_nbCountries(0),
+m_nbArmiesByCountry(0),
+m_continents(),
+m_players(),
+m_player(0)
+{
+}
+
 Goal::Goal(const Goal& goal)
 {
+  m_automaton = goal.m_automaton;
   kDebug() << "Goal copy constructor :" << endl;
   m_type = goal.m_type;
   kDebug() << "  type="<< m_type << endl;
@@ -77,7 +92,7 @@ bool Goal::checkFor(const GameLogic::Player* player) const
     return checkContinentsFor(player);
     break;
   default:
-    return (player->getNbCountries() >= GameAutomaton::changeable().game()->theWorld()->getCountries().size());
+    return (player->getNbCountries() >= m_automaton->game()->theWorld()->getCountries().size());
   }
 }
 
@@ -110,8 +125,8 @@ bool Goal::checkContinentsFor(const GameLogic::Player* player) const
   for (; it != it_end; it++)
   {
     kDebug() << "Should be owned continent id: " << *it<< endl;
-    if ( GameAutomaton::changeable().game()->theWorld()->continentWithId(*it) == 0
-       || GameAutomaton::changeable().game()->theWorld()->continentWithId(*it)->owner() != player)
+    if ( m_automaton->game()->theWorld()->continentWithId(*it) == 0
+       || m_automaton->game()->theWorld()->continentWithId(*it)->owner() != player)
     {
       return false;
     }
@@ -119,7 +134,7 @@ bool Goal::checkContinentsFor(const GameLogic::Player* player) const
   bool otherFound = ( m_continents.find(0) == m_continents.end() );
   if (!otherFound)
   {
-    std::vector<Continent*> continents = GameAutomaton::changeable().game()->theWorld()->getContinents();
+    std::vector<Continent*> continents = m_automaton->game()->theWorld()->getContinents();
     for ( unsigned int j = 0; j < continents.size(); j++)
     {
       if ( ( m_continents.find((continents.at(j))->id()) == m_continents.end() )
@@ -158,15 +173,15 @@ QString Goal::message(int displayType) const
       if (!m_players.empty())
       {
         kDebug() << "  player num='" << (*m_players.begin()) << endl;
-        kDebug() << "  this is player='" << GameAutomaton::changeable().findPlayer(*m_players.begin()) << endl;
-        if (GameAutomaton::changeable().findPlayer(*m_players.begin())==0)
+        kDebug() << "  this is player='" << m_automaton->findPlayer(*m_players.begin()) << endl;
+        if (m_automaton->findPlayer(*m_players.begin())==0)
         {
           res = res.subs("?");
         }
         else
         {
-          kDebug() << "  its name is='" << GameAutomaton::changeable().findPlayer(*m_players.begin())->name() << endl;
-          res = res.subs(GameAutomaton::changeable().findPlayer(*m_players.begin())->name());
+          kDebug() << "  its name is='" << m_automaton->findPlayer(*m_players.begin())->name() << endl;
+          res = res.subs(m_automaton->findPlayer(*m_players.begin())->name());
         }
         res = res.subs(m_nbCountries);
       }
@@ -190,8 +205,8 @@ QString Goal::message(int displayType) const
       {
         if (*it != 0)
         {
-          kDebug() << "  arg = '" << GameAutomaton::changeable().game()->theWorld()->continentWithId(*it)->name() << "'" << endl;
-          res=res.subs(i18n(GameAutomaton::changeable().game()->theWorld()->continentWithId(*it)->name().toUtf8().data()));
+          kDebug() << "  arg = '" << m_automaton->game()->theWorld()->continentWithId(*it)->name() << "'" << endl;
+          res=res.subs(i18n(m_automaton->game()->theWorld()->continentWithId(*it)->name().toUtf8().data()));
           
         }
       }
@@ -206,9 +221,9 @@ QString Goal::message(int displayType) const
     switch (m_type)
     {
     case Goal::GoalPlayer :
-      if (GameAutomaton::changeable().findPlayer(*m_players.begin()) != 0)
+      if (m_automaton->findPlayer(*m_players.begin()) != 0)
       {
-        mes += i18n("\n%1 is still alive...",GameAutomaton::changeable().findPlayer(*m_players.begin())->name());
+        mes += i18n("\n%1 is still alive...",m_automaton->findPlayer(*m_players.begin())->name());
       }
       else
       {
@@ -240,7 +255,7 @@ QString Goal::message(int displayType) const
       it = m_continents.begin(); it_end = m_continents.end();
       if (*it != 0)
       {
-        Continent* continent = const_cast<Continent*>(GameAutomaton::changeable().game()->theWorld()->continentWithId(*it));
+        Continent* continent = const_cast<Continent*>(m_automaton->game()->theWorld()->continentWithId(*it));
         int nb = continent->getMembers().size() - continent->countriesOwnedBy(m_player).size();
         mes += i18n("%1 countries in %2",nb,continent->name());
       }
@@ -260,7 +275,7 @@ QString Goal::message(int displayType) const
         }
         if (*it != 0)
         {
-          Continent* continent = const_cast<Continent*>(GameAutomaton::changeable().game()->theWorld()->continentWithId(*it));
+          Continent* continent = const_cast<Continent*>(m_automaton->game()->theWorld()->continentWithId(*it));
           int nb = continent->getMembers().size() - continent->countriesOwnedBy(m_player).size();
           mes += joint + i18n("%1 in %2",nb,continent->name());
         }
@@ -277,7 +292,7 @@ QString Goal::message(int displayType) const
 void Goal::show(int displayType)
 {
   KMessageBox::information(
-                            GameAutomaton::changeable().game(), 
+                            m_automaton->game(),
                             message(displayType), 
                             i18n("KsirK - Goal Display"));
 }
@@ -345,7 +360,7 @@ QDataStream& operator>>(QDataStream& stream, Goal& goal)
   kDebug() << "Goal operator>> type: " << type << endl;
   stream >> ownerId;
   kDebug() << "Goal operator>> ownerId: " << ownerId << endl;
-  goal.player(static_cast<Player*>(GameAutomaton::changeable().findPlayer(ownerId)));
+  goal.player(static_cast<Player*>(goal.m_automaton->findPlayer(ownerId)));
   goal.type(Goal::GoalType(type));
   stream >> description;
   kDebug() << "Goal operator>> description: " << description << endl;
@@ -405,7 +420,7 @@ void Goal::saveXml(std::ostream& xmlStream) const
   itc = continents().begin(); itc_end = continents().end();
   for (; itc != itc_end; itc++)
   {
-    QString name = (*itc==0)?"":GameAutomaton::changeable().game()->theWorld()->continentWithId(*itc)->name();
+    QString name = (*itc==0)?"":m_automaton->game()->theWorld()->continentWithId(*itc)->name();
     xmlStream << "<continent name=\"" << name.toUtf8().data() << "\"/>\n";
   }
   xmlStream << "</continents>\n";
@@ -414,7 +429,7 @@ void Goal::saveXml(std::ostream& xmlStream) const
   itp = players().begin(); itp_end = players().end();
   for (; itp != itp_end; itp++)
   {
-    xmlStream << "<player name=\"" << GameAutomaton::changeable().findPlayer(*itp)->name().toUtf8().data() << "\"/>\n";
+    xmlStream << "<player name=\"" << m_automaton->findPlayer(*itp)->name().toUtf8().data() << "\"/>\n";
   }
   xmlStream << "</players>\n";
   xmlStream << "</goal>\n";

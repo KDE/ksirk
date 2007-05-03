@@ -25,6 +25,7 @@
 #include "GameLogic/nationality.h"
 #include "GameLogic/country.h"
 #include "GameLogic/gameautomaton.h"
+#include "GameLogic/onu.h"
 
 #include <qpoint.h>
 #include <qmessagebox.h>
@@ -41,7 +42,8 @@ namespace Ksirk
 using namespace GameLogic;
 
 AnimSprite::AnimSprite(const QString &imgPath, BackGnd* aBackGnd,
-                        unsigned int nbFrames, unsigned int nbDirs, unsigned int visibility) :
+                        unsigned int nbFrames, unsigned int nbDirs,
+                        unsigned int visibility) :
     QGraphicsPixmapItem(0, aBackGnd-> scene()),
     m_animated(false), look(right), nbVersions(nbDirs),
     backGnd(aBackGnd), destination(0), destinationPoint(), frames(nbFrames), actFrame(0),
@@ -51,15 +53,16 @@ AnimSprite::AnimSprite(const QString &imgPath, BackGnd* aBackGnd,
     m_frames(),
     m_renderer(0),
     m_numberOfShots(0),
-    m_timer(this)
+    m_timer(this),
+    m_skin(backGnd->onu()->skin())
 {
   setNone();
 
   KStandardDirs *m_dirs = KGlobal::dirs();
 
-  QString imgName = m_dirs-> findResource("appdata", GameLogic::GameAutomaton::single().skin() + "/Images/sprites/" + imgPath);
-//   kDebug() << "Sprite file name: " << imgName << endl;
-//   kDebug() << "    frames: " << frames << " ; nbVersions: " << nbVersions << endl;
+  QString imgName = m_dirs-> findResource("appdata", m_skin + "/Images/sprites/" + imgPath);
+  kDebug() << "Sprite file name: " << imgName << endl;
+  kDebug() << "    frames: " << frames << " ; nbVersions: " << nbVersions << endl;
   if (imgName.isNull())
   {
       QMessageBox::critical(0, i18n("Error !"), i18n("Sprite images resource not found\nProgram cannot continue"));
@@ -150,8 +153,8 @@ void AnimSprite::changeSequence(const QString &imgPath, unsigned int newNbFrames
   KStandardDirs *m_dirs = KGlobal::dirs();
 
 //   kDebug() << "Sprite file name: " << GameLogic::GameAutomaton::single().skin() + "/Images/sprites/" + imgPath << endl;
-  QString imgName = m_dirs-> findResource("appdata", GameLogic::GameAutomaton::single().skin() + "/Images/sprites/" + imgPath);
-
+  QString imgName = m_dirs-> findResource("appdata", m_skin + "/Images/sprites/" + imgPath);
+  
 //   kDebug() << "imgName= " << imgName << endl;
     
 //    QString imgName = m_dirs-> findResource("appdata", "Images/sprites/" + imgPath);

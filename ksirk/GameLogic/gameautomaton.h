@@ -124,6 +124,16 @@ Q_OBJECT
     
 public:
   /**
+    * This hackish member is here to allow AIs to run only when goals have been
+    * diplayed. In fact, the game state should be set to KGame::Run at this
+    * moment but if it is done there, then the IO messages are not transmited. I
+    * don't understand why. Is it a KGame bug ?
+    * As it is a hugly hack, it is made huglier by making it public...
+    * @TODO Remove this hack
+    */
+  bool m_aicannotrunhack;
+  
+  /**
     * The State enum enumerates all the possible states of the game. The
     * behavior of various method will vary in function of it
     */
@@ -148,15 +158,19 @@ public:
     INVALID
   };
 
+  GameAutomaton();
+  
+  virtual ~GameAutomaton();
+  
   /** static method to retrive the singleton as const */
-  static const GameAutomaton& single();
+//   static const GameAutomaton& single();
 
   /** static method to retrive the singleton as variable */
-  static GameAutomaton& changeable();
+//   static GameAutomaton& changeable();
 
   /** Creates the singleton member if necessary and associate it to the given
     * KGameWindow */
-  static void init(KGameWindow* gw);
+  void init(KGameWindow* gw);
 
   //@{
   /** Accessors to the game state. */
@@ -216,6 +230,7 @@ public:
   /** Retrives the game window. This one still contains too much game code 
     * that shouldn't be in a GUI class. */
   inline Ksirk::KGameWindow* game() {return m_game;}
+  inline const Ksirk::KGameWindow* game() const {return m_game;}
   
   /**
     * Reimplementation of a KGame method. It creates players of different 
@@ -401,11 +416,7 @@ protected:
   void setGoalFor(Player* player);
   
 private:
-  GameAutomaton();
-    
   GameAutomaton(const GameAutomaton& /*ga*/) : KGame() {};
-
-  virtual ~GameAutomaton();
 
   void countriesDistribution();
 
@@ -427,7 +438,7 @@ private:
 
   void displayGoals();
 
-  static GameAutomaton* m_singleton ;
+//   static GameAutomaton* m_singleton ;
     
   GameState m_state;
 //   KGameProperty< GameState > m_state;

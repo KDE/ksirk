@@ -27,6 +27,7 @@ namespace Ksirk {
 
 namespace GameLogic {
 
+class GameAutomaton;
 class Player;
 
 /**
@@ -60,6 +61,7 @@ public:
   
   /** Default constructor */
   Goal();
+  Goal(GameAutomaton* automaton);
   
   /** Copy constructor */
   Goal(const Goal& goal);
@@ -158,7 +160,8 @@ public:
     */
   QString message(int displayType = GoalDesc) const;
 
-private:
+  GameAutomaton* m_automaton;
+  private:
   GoalType m_type;
   QString m_description;
   unsigned int m_nbCountries;

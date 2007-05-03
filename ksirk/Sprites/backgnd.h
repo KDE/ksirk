@@ -53,6 +53,8 @@ public:
     */
   ~BackGnd();
 
+  inline const GameLogic::ONU* onu() const {return m_theWorld;}
+  
 protected:
   /**
     * Reimplemented of the inherited one to let the event be transmitted to the 
@@ -62,6 +64,8 @@ protected:
     */
   virtual bool sceneEvent ( QEvent * ) {return false;}
 
+private:
+  const GameLogic::ONU* m_theWorld;
 };
 }
 #endif //  BACKGND_H

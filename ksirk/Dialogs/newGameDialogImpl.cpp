@@ -34,6 +34,7 @@ namespace Ksirk
 {
 
 NewGameDialogImpl::NewGameDialogImpl(
+      GameLogic::GameAutomaton* automaton,
       bool& ok,
       unsigned int& nbPlayers, 
       unsigned int maxPlayers,
@@ -42,7 +43,9 @@ NewGameDialogImpl::NewGameDialogImpl(
       bool& useGoals,
       QWidget *parent) :
     QDialog(parent),
-    Ui::NewGameDialog(), m_ok(ok), m_nbPlayers(nbPlayers),
+    Ui::NewGameDialog(),
+  m_automaton(automaton),
+  m_ok(ok), m_nbPlayers(nbPlayers),
   m_skin(skin), m_networkGame(networkGame), m_useGoals(useGoals)
 {
   kDebug() << "Skin got by NewGameDialog: " << m_skin 
@@ -63,7 +66,7 @@ NewGameDialogImpl::~NewGameDialogImpl()
   it = m_worlds.begin(); it_end = m_worlds.end();
   for (; it != it_end; it++)
   {
-    delete(*it);
+//     delete(*it);
   }
 }
 
@@ -122,7 +125,7 @@ void NewGameDialogImpl::fillSkinsCombo()
     if (skinDir.exists())
     {
       kDebug() << "Got skin dir: " << skinDir.dirName() << endl;
-      GameLogic::ONU* world = new GameLogic::ONU(skinsDirName + skinDir.dirName() + "/Data/onu.xml");
+      GameLogic::ONU* world = new GameLogic::ONU(m_automaton,skinsDirName + skinDir.dirName() + "/Data/onu.xml");
       skinCombo->addItem(i18n(world->name().toUtf8().data()));
       m_worlds[i18n(world->name().toUtf8().data())] = world;
       if (QString("skins/")+skinDir.dirName() == m_skin)

@@ -45,7 +45,7 @@ class KWaitedPlayerSetupDialog : public QDialog, public Ui::QWaitedPlayerSetupDi
 {
   Q_OBJECT
 public:
-    KWaitedPlayerSetupDialog(
+    KWaitedPlayerSetupDialog(GameLogic::GameAutomaton* automaton,
                              QString& password,
                               int& result,
                              QWidget *parent=0);
@@ -55,6 +55,7 @@ public:
   inline int result() {return m_result;}
 
 private:
+  GameLogic::GameAutomaton* m_automaton;
   QString& m_password;
   int& m_result;
 /** Fills the waited players combo with players names, nations names and flag images */

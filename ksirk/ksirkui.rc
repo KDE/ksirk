@@ -1,0 +1,24 @@
+<!DOCTYPE kpartgui>
+<kpartgui name="ksirk" version="1">
+
+<MenuBar>
+  <Menu name="game"><text>&amp;Game</text>
+    <Action name="game_new" append="new_merge" />
+    <Action name="game_join" append="new_merge" />
+    <Action name="game_load" append="new_merge" />
+    <Action name="game_save" append="new_merge" />
+    <Action name="game_quit" append="new_merge" />
+  </Menu>
+  <Menu name="settings"><text>&amp;Settings</text>
+  </Menu>
+</MenuBar>
+
+<ToolBar name="mainToolBar" noMerge="1"><text>Main Toolbar</text>
+  <Action name="game_new" />
+  <Action name="game_join" />
+  <Action name="game_load" />
+  <Action name="game_save" />
+  <Action name="game_quit" />
+</ToolBar>
+
+</kpartgui>

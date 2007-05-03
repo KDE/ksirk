@@ -58,7 +58,7 @@ public:
   /**
     * Constructor with simple initializations
     */
-  Player(const QString &nomPlayer, unsigned int nbArmies, Nationality* myNation);
+  Player(GameAutomaton* automaton, const QString &nomPlayer, unsigned int nbArmies, Nationality* myNation);
 
   virtual ~Player() {}
 
@@ -193,7 +193,7 @@ protected:
     */
   void innerSaveXml(std::ostream& xmlStream);
   
-
+  GameAutomaton* m_automaton;
   /**
     * Number of armies used for an attack
     * (  0 <> 3, < nbArmies of the country )

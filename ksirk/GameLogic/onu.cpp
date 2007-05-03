@@ -42,7 +42,8 @@ namespace Ksirk
 namespace GameLogic
 {
 
-ONU::ONU(const QString& configFileName):
+ONU::ONU(GameAutomaton* automaton,
+  const QString& configFileName):
   m_configFileName(configFileName),
   countries(),
   nationalities(),
@@ -278,7 +279,7 @@ ONU::ONU(const QString& configFileName):
         }
 //         kDebug() << "Creating country " << name << endl;
 //            kDebug() << "\tflag point: " << flagPoint.x() << " " << flagPoint.y() << endl;
-        countries[id] = new Country(name, centralPoint, flagPoint,
+        countries[id] = new Country(automaton, name, centralPoint, flagPoint,
             cannonPoint, cavalryPoint, infantryPoint, id);
     }
     else if ( node.isElement() && node.nodeName() == "nationality" )
@@ -365,7 +366,7 @@ ONU::ONU(const QString& configFileName):
             subGoalNode = subGoalNode.nextSibling();
           }
 //           kDebug() << "Inserting goal with type " << goal->type() << endl;
-          GameLogic::GameAutomaton::changeable().goals().insert(goal);
+          automaton->goals().insert(goal);
           subGoalNode = subGoalNode.nextSibling();
         }
         goalNode = goalNode.nextSibling();

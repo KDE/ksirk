@@ -39,10 +39,12 @@ namespace GameLogic
 unsigned int Player::m_uid = 0;
 
 Player::Player(
+    GameAutomaton* automaton,
     const QString& playerName, 
     unsigned int nbArmies, 
     Nationality* nation) :
   KPlayer(),
+  m_automaton(automaton),
   m_nation(nation),
   m_goal(),
   m_delayedInitNationName(""),
@@ -250,7 +252,7 @@ Nationality* Player::getNation()
 
 void Player::setNation(const QString& nationName)
 {
-  m_nation = GameLogic::GameAutomaton::changeable().game()->theWorld()-> nationNamed(nationName);
+  m_nation = m_automaton->game()->theWorld()-> nationNamed(nationName);
   if (m_nation == 0)
   {
 //     kDebug() << "Delaying nation initialization ("<<nationName<<") for " << name() << endl;
@@ -268,7 +270,7 @@ void Player::setFlag()
   {
     m_flag = new AnimSprite(
                             m_nation->flagFileName(), 
-                            GameLogic::GameAutomaton::changeable().game()->backGnd(), 
+                            m_automaton->game()->backGnd(), 
                             Sprites::SkinSpritesData::single().intData("flag-frames"), 
                             Sprites::SkinSpritesData::single().intData("flag-versions"));
     m_flag->hide();
@@ -306,9 +308,9 @@ std::vector<Country*> Player::countries() const
 {
 //   kDebug() << name() << ": Player::countries()" << endl;
   std::vector<Country*> list;
-  for ( unsigned int i = 0; i < GameAutomaton::changeable().game()->theWorld()->getCountries().size(); i++ )
+  for ( unsigned int i = 0; i < m_automaton->game()->theWorld()->getCountries().size(); i++ )
   {
-    Country* c = GameAutomaton::changeable().game()->theWorld()->getCountries().at(i);
+    Country* c = m_automaton->game()->theWorld()->getCountries().at(i);
     if (c-> owner() == static_cast< const Player * >(this))
     {
 //            kDebug() << "\t" << c-> name() << endl;

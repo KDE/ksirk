@@ -33,6 +33,7 @@ namespace Ksirk
 namespace GameLogic
 {
     class ONU;
+    class GameAutomaton;
 }
 
 /**
@@ -45,6 +46,7 @@ class NewGameDialogImpl : public QDialog, public Ui::NewGameDialog
   Q_OBJECT
 public:
   NewGameDialogImpl(
+      GameLogic::GameAutomaton* automaton,
       bool& ok,
       unsigned int& nbPlayers, 
       unsigned int maxPlayers, 
@@ -56,6 +58,7 @@ public:
   virtual ~NewGameDialogImpl();
 
 private:
+  GameLogic::GameAutomaton* m_automaton;
   bool& m_ok;
   unsigned int& m_nbPlayers;
   QString& m_skin;

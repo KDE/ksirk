@@ -47,14 +47,16 @@
 namespace Ksirk
 {
 
-KPlayerSetupDialog::KPlayerSetupDialog( GameLogic::ONU* onu,
+KPlayerSetupDialog::KPlayerSetupDialog( GameLogic::GameAutomaton* automaton,
+                                        GameLogic::ONU* onu,
                                         unsigned int playerNumber, QString& playerName,
                                         bool network, QString& password,
                                         bool &computerPlayer,
                                         std::map< QString, QString >& nations, 
                                         QString& nationName,
                                         QWidget *parent) :
-  QDialog(parent), Ui::QPlayerSetupDialog(), name(playerName),
+  QDialog(parent), Ui::QPlayerSetupDialog(),
+  m_automaton(automaton), name(playerName),
     computer(computerPlayer), m_nationName(nationName), 
   m_nations(nations), m_onu(onu), m_nationsNames(), number(playerNumber), 
   m_password(password)
@@ -69,7 +71,7 @@ KPlayerSetupDialog::KPlayerSetupDialog( GameLogic::ONU* onu,
   QObject::connect((const QObject *)PushButton1, SIGNAL(clicked()), this, SLOT(slotOK()) );
   
   kDebug() << "KPlayerSetupDialog connecting to playerJoinedGame" << endl;
-  connect(&GameLogic::GameAutomaton::changeable(),SIGNAL(signalPlayerJoinedGame(KPlayer*)),
+  connect(automaton,SIGNAL(signalPlayerJoinedGame(KPlayer*)),
           this,SLOT(slotPlayerJoinedGame(KPlayer*)));
   
   LineEdit2->setFocus();
@@ -132,7 +134,7 @@ void KPlayerSetupDialog::fillNationsCombo()
   for (; nationsIt != nationsIt_end; nationsIt++)
   {
 //     kDebug() << "Adding nation " << i18n((*nationsIt).first) << " / " << (*nationsIt).second << endl;
-    QString imgName = m_dirs-> findResource("appdata", GameLogic::GameAutomaton::single().skin() + "/Images/sprites/" + (*nationsIt).second);
+    QString imgName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Images/sprites/" + (*nationsIt).second);
     if (imgName.isNull())
     {
       KMessageBox::error(this, i18n("Flag image resource not found\nProgram cannot continue"), i18n("Error !"));
@@ -180,9 +182,9 @@ inline bool KPlayerSetupDialog::testEmptyUserName(const QString& name) const {
 
 inline bool KPlayerSetupDialog::testUniqueUserName(const QString& name) const {
   GameLogic::PlayersArray::const_iterator it =
-    GameLogic::GameAutomaton::changeable().playerList()->constBegin();
+    m_automaton->playerList()->constBegin();
   const GameLogic::PlayersArray::const_iterator it_end =
-    GameLogic::GameAutomaton::changeable().playerList()->constEnd();
+    m_automaton->playerList()->constEnd();
 
   for (; it != it_end; it++) {
     if ((*it)->name() == name) {

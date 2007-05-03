@@ -208,7 +208,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   (pointDepartAttaquantX <= pointArriveeAttaquantX) ? attackingSprite-> setLookRight() : attackingSprite-> setLookLeft();
   m_animFighters->addSprite(attackingSprite);
 
-  QString sndRoulePath = m_dirs-> findResource("appdata", GameAutomaton::changeable().skin() + "/Sounds/roule.wav");
+  QString sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
   if (sndRoulePath.isNull())
   {
       QMessageBox::critical(0, i18n("Error !"), i18n("Sound roule not found - Verify your installation\nProgram cannot continue"));
@@ -222,7 +222,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   (pointDepartDefenseurX <= pointArriveeDefenseurX) ? defenderSprite-> setLookRight() : defenderSprite-> setLookLeft();
   m_animFighters->addSprite(defenderSprite);
 
-  sndRoulePath = m_dirs-> findResource("appdata", GameAutomaton::changeable().skin() + "/Sounds/roule.wav");
+  sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
   if (sndRoulePath.isNull())
   {
       QMessageBox::critical(0, i18n("Error !"), i18n("Sound roule not found - Verify your installation\nProgram cannot continue"));
@@ -252,7 +252,7 @@ void KGameWindow::animCombat()
     }
     sprite->setAnimated(1);
 
-    QString sndCanonPath = m_dirs-> findResource("appdata", GameAutomaton::changeable().skin() + "/Sounds/canon.wav");
+    QString sndCanonPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/canon.wav");
     if (sndCanonPath.isNull())
     {
       QMessageBox::critical(0, i18n("Error !"),
@@ -324,7 +324,7 @@ void KGameWindow::animExplosion(int who)
   }
   kDebug() << "  loop done" << endl;
 
-  QString sndCrashPath = m_dirs-> findResource("appdata", GameAutomaton::changeable().skin() + "/Sounds/crash.wav");
+  QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
   if (sndCrashPath.isNull())
   {
     KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error !"));
@@ -377,7 +377,7 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
         ((AnimSprite*)newSprite)-> setupTravel(paysDefenseur, paysDefenseur, newSprite-> pos(), paysDefenseur-> pointCannon());
         newSprite-> turnTowardDestination();
 
-        QString sndRoulePath = m_dirs-> findResource("appdata", GameAutomaton::changeable().skin() + "/Sounds/roule.wav");
+        QString sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
         if (sndRoulePath.isNull())
         {
             QMessageBox::critical(0, i18n("Error !"), i18n("Sound roule not found - Verify your installation\nProgram cannot continue"));
@@ -403,7 +403,7 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
         ((AnimSprite*)newSprite)-> setupTravel(paysDefenseur, paysAttaquant, newSprite-> pos(), paysAttaquant-> pointCannon());
         newSprite-> turnTowardDestination();
 
-        QString sndRoulePath = m_dirs-> findResource("appdata", GameAutomaton::changeable().skin() + "/Sounds/roule.wav");
+        QString sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
         if (sndRoulePath.isNull())
         {
             QMessageBox::critical(0, i18n("Error !"), i18n("Sound roule not found - Verify your installation\nProgram cannot continue"));

@@ -59,7 +59,7 @@ AIPlayer :: AIPlayer(
          PlayersArray& players,
          ONU* world,
          GameAutomaton* game ) :
-    Player(nomPlayer, nbArmies, myNation) ,
+    Player(game, nomPlayer, nbArmies, myNation) ,
   allPlayers(players),
   m_world(world),
   m_game(game),
@@ -79,8 +79,13 @@ AIPlayer :: AIPlayer(
   */
 void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
 {
-//   kDebug() << "AIPlayer " << name() << ": Action choice (state is " << GameLogic::GameAutomaton::single().stateName() << ")" << endl;
-  
+  kDebug() << "AIPlayer " << name() << ": Action choice (state is " << m_game-> stateName() << ")" << endl;
+  if (m_game->m_aicannotrunhack)
+  {
+    kDebug() << "HACK HACK AIPlayer " << name() 	
+        << ": game says AIs cannot run..." << endl;
+    return;
+  }
   if (m_game->game()->haveAnimFighters() )
   {
     return;
@@ -97,7 +102,7 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
   if ( (m_game-> currentPlayer() == this) || state == GameLogic::GameAutomaton::WAITDEFENSE
        ||  state == GameLogic::GameAutomaton::WAIT_RECYCLING)
   {
-//     kDebug() << name()  << " : choosing my action" << endl;
+    kDebug() << name()  << " : choosing my action" << endl;
     switch (state)
     {
       case GameLogic::GameAutomaton::WAITDEFENSE :
@@ -301,7 +306,7 @@ void AIPlayer::run()
   stopMe = false;
   while ( ! stopMe )
   {
-    actionChoice(GameLogic::GameAutomaton::single().state());
+    actionChoice(m_game->state());
     msleep( 500 );
   }
 //    kDebug() << "OUT AIPlayer::run()" << endl;
@@ -442,15 +447,16 @@ void AIPlayer::placeArmiesAction()
     QByteArray buffer2;
     QDataStream stream2(&buffer2, QIODevice::WriteOnly);
     QPointF p(m_waitedAck, m_waitedAck);
+    kDebug() << name() << " sending a request for ack " << m_waitedAck << endl;
     stream2 << QString("requestForAck") << p;
     aiPlayerIO()->sendInput(stream2,true);
   }
-  else if (GameAutomaton::changeable().state() != GameAutomaton::INTERLUDE)
+  else if (m_game->state() != GameAutomaton::INTERLUDE)
   {
     kDebug() << "No more armies to place: next player" << endl;
     stop();
     QPointF point;
-    GameAutomaton::changeable().event("actionNextPlayer", point);
+    m_game->event("actionNextPlayer", point);
   }
   else if (m_game->allLocalPlayersComputer())
   {

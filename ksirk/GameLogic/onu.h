@@ -57,7 +57,7 @@ public:
     * @param configFileName The name of the XML file defining this world. Built
     * from the current skin dir and a default file name.
     */
-  ONU(const QString& configFileName);
+  ONU(GameAutomaton* automaton, const QString& configFileName);
   
   /** Default destructor */
   virtual ~ONU() {}

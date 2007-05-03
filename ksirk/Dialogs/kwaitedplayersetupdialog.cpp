@@ -47,10 +47,12 @@ namespace Ksirk
 using namespace GameLogic;
 
 KWaitedPlayerSetupDialog::KWaitedPlayerSetupDialog(
+                          GameLogic::GameAutomaton* automaton,
                           QString& password,
                           int& result,
                           QWidget *parent) :
   QDialog(parent), QWaitedPlayerSetupDialog(), 
+  m_automaton(automaton),
   m_password(password), m_result(result)
 {
   setupUi(this);
@@ -79,12 +81,12 @@ void KWaitedPlayerSetupDialog::fillWaitedPlayersCombo()
   KStandardDirs *m_dirs = KGlobal::dirs();
 
   std::vector<PlayerMatrix>::iterator it, it_end;
-  it = GameAutomaton::changeable().game()->waitedPlayers().begin();
-  it_end = GameAutomaton::changeable().game()->waitedPlayers().end();
+  it = m_automaton->game()->waitedPlayers().begin();
+  it_end = m_automaton->game()->waitedPlayers().end();
   for (; it != it_end; it++)
   {
     kDebug() << "Adding waited player " << (*it).name << endl;
-    QString imgName = m_dirs-> findResource("appdata", GameLogic::GameAutomaton::single().skin() + "/Images/sprites/" + GameAutomaton::changeable().game()->theWorld()->nationNamed((*it).nation)->flagFileName());
+    QString imgName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Images/sprites/" + m_automaton->game()->theWorld()->nationNamed((*it).nation)->flagFileName());
     if (imgName.isNull())
     {
       KMessageBox::error(0, i18n("Flag image resource not found\nProgram cannot continue"), i18n("Error !"));

@@ -43,6 +43,7 @@ namespace GameLogic
 {
 class Player;
 class Continent;
+class GameAutomaton;
 
 /**
  * Each country of the map is represented by a Country object. It has a name,
@@ -65,13 +66,16 @@ public:
     * @param infantryPoint The point (top left corner) where the infantry sprite is drawn.
     * @param id The unique integer identifier of this country.
     */
-  Country(const QString& theName,
+  Country(GameAutomaton* game,
+           const QString& theName,
       const QPointF& centralPoint,
       const QPointF& flagPoint, const QPointF& cannonPoint, const QPointF& cavalryPoint,
       const QPointF& infantryPoint, unsigned int id);
 
   /** Default destructor */
   virtual ~Country();
+
+  GameAutomaton* automaton() {return m_automaton;}
 
   /**
     * Removes the sprites (flag and soldiers), the owner, etc.
@@ -283,7 +287,8 @@ public:
   bool hasAdjacentEnemy();
 
 private:
-
+  GameAutomaton* m_automaton;
+  
   /**
    * A pointer to the continent this country is in.
    */

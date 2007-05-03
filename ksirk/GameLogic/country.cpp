@@ -41,13 +41,15 @@ namespace Ksirk
 namespace GameLogic
 {
 
-Country::Country(const QString& theName,
+Country::Country(GameAutomaton* game,
+                  const QString& theName,
                   const QPointF& centralPoint,
                   const QPointF& flagPoint, 
                   const QPointF& cannonPoint, 
                   const QPointF& cavalryPoint,
                   const QPointF& infantryPoint, 
                   unsigned int id) :
+  m_automaton(game),
   m_belongsTo(0), m_flag(0), m_name(theName),
   m_centralPoint(centralPoint), 
   m_pointFlag(flagPoint), 
@@ -77,11 +79,11 @@ void Country::reset()
   clearAllSprites();
   m_belongsTo = 0;
   nbArmies(1);
-  createArmiesSprites(GameAutomaton::changeable().game()->backGnd());
+  createArmiesSprites(m_automaton->game()->backGnd());
   if (m_flag)
   {
     m_flag->hide();
-    delete m_flag;
+//     delete m_flag;
     m_flag = 0;
   }
 }
@@ -139,7 +141,7 @@ void Country::flag(const QString& theFlagFileName, BackGnd *backGnd)
 {
 //   kDebug() << "Country("<<m_name<<", "<<this<<")::flag flagFileName " << theFlagFileName << endl;
 
-  if (m_flag) delete m_flag;
+//   if (m_flag) delete m_flag;
   m_flag = new FlagSprite(theFlagFileName, backGnd, 
       Sprites::SkinSpritesData::single().intData("flag-frames"), 
       Sprites::SkinSpritesData::single().intData("flag-versions"));
@@ -191,8 +193,8 @@ void Country::owner(Player *player)
   m_belongsTo = player;
   if (player != 0)
   {
-    createArmiesSprites(GameLogic::GameAutomaton::changeable().game()-> backGnd());
-    flag(m_belongsTo->flagFileName(), GameLogic::GameAutomaton::changeable().game()-> backGnd());
+    createArmiesSprites(m_automaton->game()-> backGnd());
+    flag(m_belongsTo->flagFileName(), m_automaton->game()-> backGnd());
   }
 }
 
@@ -430,10 +432,10 @@ QDataStream& operator>>(QDataStream& stream, Country* country)
   quint32 nbArmies, nbAddedArmies;
   QString ownerName;
   stream >> ownerName >> nbArmies >> nbAddedArmies;
-  country->owner(GameAutomaton::changeable().playerNamed(ownerName));
+  country->owner(country->automaton()->playerNamed(ownerName));
   country->nbArmies(nbArmies);
   country->nbAddedArmies(nbAddedArmies);
-  country->createArmiesSprites(GameAutomaton::changeable().game()->backGnd());
+  country->createArmiesSprites(country->automaton()->game()->backGnd());
   return stream;
 }
 

@@ -128,11 +128,12 @@ const char* GameAutomaton::KsirkMessagesIdsNames[] = {
 "DisplayGoals", // 309
 };
 
-GameAutomaton* GameAutomaton::m_singleton = 0;
+// GameAutomaton* GameAutomaton::m_singleton = 0;
 //GameAutomaton::GameState  GameAutomaton::m_state = INIT;
 
 GameAutomaton::GameAutomaton() : 
     KGame(),
+m_aicannotrunhack(true),
     m_state(INIT),
     m_game(0),
     m_networkPlayersNumber(0),
@@ -142,7 +143,8 @@ GameAutomaton::GameAutomaton() :
     m_goals(),
     m_useGoals(true)
 {
-//   kDebug() << "GameAutomaton::GameAutomaton" << endl;
+  m_skin = "skins/default";
+  //   kDebug() << "GameAutomaton::GameAutomaton" << endl;
 //   m_stateId = m_state.registerData(dataHandler(),KGamePropertyBase::PolicyDirty,QString("m_state"));
   m_skinId = m_skin.registerData(dataHandler(),KGamePropertyBase::PolicyDirty,QString("m_skin"));
 //   m_currentPlayerId = m_currentPlayer.registerData(dataHandler(),KGamePropertyBase::PolicyDirty,QString("m_currentPlayer"));
@@ -175,29 +177,12 @@ GameAutomaton::GameAutomaton() :
 
 GameAutomaton::~GameAutomaton()
 {
-  delete m_singleton;
-  m_singleton = 0;
-}
-
-const GameAutomaton& GameAutomaton::single()
-{
-  if (m_singleton == 0)
-    m_singleton = new GameAutomaton();
-  return *m_singleton;
-}
-
-GameAutomaton& GameAutomaton::changeable()
-{
-  if (m_singleton == 0)
-    m_singleton = new GameAutomaton();
-  return *m_singleton;
+  kDebug() << "~GameAutomaton" << endl;
 }
 
 void GameAutomaton::init(KGameWindow* gw)
 {
-  if (m_singleton == 0)
-    m_singleton = new GameAutomaton();
-  m_singleton->m_game = gw;
+  m_game = gw;
 }
 
 GameAutomaton::GameState GameAutomaton::state() const
@@ -246,7 +231,7 @@ Player* GameAutomaton::getAnyLocalPlayer()
 
 GameAutomaton::GameState GameAutomaton::run()
 {
-//   kDebug() << "GameAutomaton::run" << endl;
+  kDebug() << "GameAutomaton::run" << endl;
   if (m_game == 0)
   {
     QTimer::singleShot(200, this, SLOT(run()));
@@ -265,7 +250,7 @@ GameAutomaton::GameState GameAutomaton::run()
     m_events.pop_front();
   }
 
-//   kDebug() << "Handling " << stateName() << " ; " << event << " ; " << point << endl;
+  kDebug() << "Handling " << stateName() << " ; " << event << " ; " << point << endl;
   if (event == "requestForAck")
   {
   }
@@ -858,11 +843,10 @@ void GameAutomaton::skin(const QString& newSkin)
   m_skin = newSkin;
 }
 
-// Called when a player input is received from the KGame object 
-// this is e-.g. a mous event
-// This is obviously the central function in the game as all player
-// moves, whether network or local, end up here. So do something 
-// sensible here. 
+// Called when a player input (e.g. a mouse event) is received from the KGame 
+// object
+// This is obviously the central function in the game as all player moves, 
+// whether network or local, end up here. So do something sensible here. 
 bool GameAutomaton::playerInput(QDataStream &msg, KPlayer* player)
 {
   kDebug() << "GameAutomaton: Player input" << endl;
@@ -879,9 +863,9 @@ bool GameAutomaton::playerInput(QDataStream &msg, KPlayer* player)
   QPointF point;
   msg >> action >> point;
 
-//   kDebug() << " ======================================================="<<endl;
-//   kDebug()  << "Player " << p->name() << " id=" << player->id() 
-//     << " uid=" << player->userId() << " : " << action << " at " << point << endl;
+  kDebug() << " ======================================================="<<endl;
+  kDebug()  << "Player " << p->name() << " id=" << player->id() 
+    << " uid=" << player->userId() << " : " << action << " at " << point << endl;
 
   if (action == "actionLButtonDown")
     m_game->slotLeftButtonDown( point );
@@ -1036,7 +1020,7 @@ bool GameAutomaton::setupPlayersNumberAndSkin(bool& networkGame, int& port, uint
   while ((newPlayersNumber < 2) || (newPlayersNumber > nations.size()))
   {
     bool ok;
-    NewGameDialogImpl(ok, newPlayersNumber, nations.size(), skinName, networkGame, m_useGoals, m_game).exec();
+    NewGameDialogImpl(this, ok, newPlayersNumber, nations.size(), skinName, networkGame, m_useGoals, m_game).exec();
     kDebug() << "Got " << ok << " ; " << newPlayersNumber << " ; " << skinName << endl;
     if (!ok)
     {
@@ -1087,7 +1071,7 @@ bool GameAutomaton::setupPlayersNumberAndSkin(bool& networkGame, int& port, uint
       setDiscoveryInfo("_ksirk._tcp","wow");
     #endif
     dialog->hide();
-    delete dialog;
+//     delete dialog;
   }
   return true;
 }
@@ -1137,7 +1121,7 @@ void GameAutomaton::setGoalFor(Player* player)
   stream << (*goal);
   kDebug() << "Sending message GoalForIs ("<<GoalForIs<<") for " << player->name() << endl; 
   sendMessage(buffer,GoalForIs);
-  delete goal;
+//   delete goal;
   m_goals.erase(it);
 }
 
@@ -1196,7 +1180,7 @@ KPlayer * GameAutomaton::createPlayer(int rtti,
   kDebug() << "GameAutomaton::createPlayer(" << rtti << ", " << isVirtual << ")" << endl;
   if (rtti == 1)
   {
-    Player* p = new Player("", 0, 0);
+    Player* p = new Player(this, "", 0, 0);
     p->setVirtual(isVirtual);
     if (!isVirtual)
     {
@@ -1220,7 +1204,7 @@ KPlayer * GameAutomaton::createPlayer(int rtti,
   else 
   {
     kError() << "No rtti given... creating a Player" << endl;
-    Player* p = new Player("", 0, 0);
+    Player* p = new Player(this, "", 0, 0);
     p->setVirtual(isVirtual);
     if (!isVirtual)
     {
@@ -1384,7 +1368,8 @@ bool GameAutomaton::startGame()
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     sendMessage(buffer,FinalizePlayers);
-
+m_aicannotrunhack = true;
+    kDebug() << "Setting game status to Run" << endl;
     setGameStatus(KGame::Run);
 //     m_game->initTimer();
 //     kDebug() << "    true" << endl;
@@ -1431,7 +1416,7 @@ void GameAutomaton::changePlayerName(Player* player)
       mes = i18n("Player number %d, what's your name ?", 1);
       bool network = false;
       QString password;
-      KPlayerSetupDialog(m_game->theWorld(), 1, nomEntre, network, password, computer, nations, nationName, m_game).exec();
+      KPlayerSetupDialog(this, m_game->theWorld(), 1, nomEntre, network, password, computer, nations, nationName, m_game).exec();
 //     kDebug() << "After KPlayerSetupDialog. name: " << nomEntre << endl;
       if (nomEntre.isEmpty())
       {
@@ -1492,7 +1477,7 @@ void GameAutomaton::changePlayerNation(Player* player)
   KMessageBox::information(m_game, i18n("Please choose another nation"), i18n("KsirK - Nation already used !"));
   bool network = false;
   QString password = false;
-  KPlayerSetupDialog(m_game->theWorld(), 1, nomEntre, network, password, computer, nations, nationName, m_game).exec();
+  KPlayerSetupDialog(this, m_game->theWorld(), 1, nomEntre, network, password, computer, nations, nationName, m_game).exec();
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   stream << player->name() << nationName;
@@ -1527,13 +1512,13 @@ QString& GameAutomaton::msgForId(quint32 id)
 
 void GameAutomaton::slotPropertyChanged(KGamePropertyBase *prop,KGame *)
 {
-  kDebug() << "GameAutomaton::slotPropertyChanged " << prop->id() << endl;
+  kDebug() << "GameAutomaton::slotPropertyChanged " << prop->id() << " (skin is " << m_skinId << ")" << endl;
   if (prop->id() == m_skinId)
   {
     kDebug() << "skin changed to: " << m_skin << endl;
     m_game->newSkin();
   }
-  kDebug() << "END GameAutomaton::slotPropertyChanged " << prop->id() << endl;
+  kDebug() << "END GameAutomaton::slotPropertyChanged " << prop->id() << " (skin is " << m_skinId << ")" << endl;
 }
 
 void GameAutomaton::slotClientJoinedGame(quint32 clientid, KGame* /*me*/)
@@ -1633,7 +1618,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   {
     return;
   }
-//   kDebug() << "GameAutomaton::slotNetworkData("<<KsirkMessagesIdsNames[msgid-(KGameMessage::IdUser+1)]<<", " << receiver << ", " << sender << ")" << endl;
+  kDebug() << "GameAutomaton::slotNetworkData("<<KsirkMessagesIdsNames[msgid-(KGameMessage::IdUser+1)]<<", " << receiver << ", " << sender << ")" << endl;
   QDataStream stream(const_cast<QByteArray*>(&buffer), QIODevice::ReadOnly);
   QString countryName, playerName, nationName;
   QPointF point;
@@ -1658,7 +1643,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   quint32 msgId;
   quint32 ack;
   QString msg;
-  Goal goal;
+  Goal goal(this);
   QString playersNames;
   QPixmap pm;
   if (currentPlayer() != 0)
@@ -2272,6 +2257,9 @@ void GameAutomaton::displayGoals()
       dynamic_cast<Player*>(*it)->goal().show();
     }
   }
+/*  kDebug() << "Setting game status to Run" << endl;
+  setGameStatus(KGame::Run);*/
+  m_aicannotrunhack = false;
 }
 
 } // closing namespace GameLogic

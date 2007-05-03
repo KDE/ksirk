@@ -390,6 +390,8 @@ private:
   unsigned int m_numberOfShots;
 
   QTimer m_timer;
+
+  QString m_skin;
 };
 
 } // closing namespace Ksirk

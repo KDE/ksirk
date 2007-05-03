@@ -70,13 +70,13 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
     std::istringstream issSkin(atts.value("skin").toUtf8().data());
     std::string skin;
     issSkin >> skin;
-    GameLogic::GameAutomaton::changeable().skin(skin.c_str());
+    m_game.automaton()->skin(skin.c_str());
     
     std::istringstream iss(atts.value("state").toUtf8().data());
     int istate;
     iss >> istate;
     m_savedState = GameLogic::GameAutomaton::GameState(istate);
-    GameLogic::GameAutomaton::changeable().savedState(m_savedState);
+    m_game.automaton()->savedState(m_savedState);
   }
   else if (localName == "players" && !m_inGoal)
   {
@@ -84,8 +84,8 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
     int nb;
     iss >> nb;
     kDebug() << "Setting min-max players to " << nb << endl;
-    GameLogic::GameAutomaton::changeable().setMinPlayers(nb);
-    GameLogic::GameAutomaton::changeable().setMaxPlayers(nb);
+    m_game.automaton()->setMinPlayers(nb);
+    m_game.automaton()->setMaxPlayers(nb);
   }
   else if (localName == "player" && !m_inGoal)
   {
@@ -145,31 +145,31 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
   }
   else if (localName == "currentPlayer")
   {
-    Player* currentPlayer = GameLogic::GameAutomaton::changeable().playerNamed(atts.value("name"));
+    Player* currentPlayer = m_game.automaton()->playerNamed(atts.value("name"));
     if (currentPlayer)
     {
 //       kDebug() << "Setting current player to " << atts.value("name") << " / " << currentPlayer << endl;
-      GameLogic::GameAutomaton::changeable().currentPlayer(currentPlayer);
+      m_game.automaton()->currentPlayer(currentPlayer);
       KMessageParts messageParts;
       messageParts << I18N_NOOP("Current player is: %1") << currentPlayer->name();
       m_game.broadcastChangeItem(messageParts, ID_STATUS_MSG2);
       QByteArray buffer;
       QDataStream stream(&buffer, QIODevice::WriteOnly);
       stream << currentPlayer->name();
-      GameLogic::GameAutomaton::changeable().sendMessage(buffer,SetBarFlagButton);
+      m_game.automaton()->sendMessage(buffer,SetBarFlagButton);
     }
-    GameLogic::GameAutomaton::changeable().savedPlayer(atts.value("name"));
+    m_game.automaton()->savedPlayer(atts.value("name"));
   }
   else if (localName == "ONU")
   {
-//     kDebug() << "GameXmlHandler starts new game with ONU file: " << atts.value("file") << endl;
-    if (!(GameLogic::GameAutomaton::changeable().playerList()->isEmpty()))
+    kDebug() << "GameXmlHandler starts new game with ONU file: " << atts.value("file") << endl;
+    if (!(m_game.automaton()->playerList()->isEmpty()))
     {
-      GameLogic::GameAutomaton::changeable().playerList()->clear();
-      GameLogic::GameAutomaton::changeable().currentPlayer(0);
-      kDebug() << "  playerList size = " << GameLogic::GameAutomaton::changeable().playerList()->count() << endl;
+      m_game.automaton()->playerList()->clear();
+      m_game.automaton()->currentPlayer(0);
+      kDebug() << "  playerList size = " << m_game.automaton()->playerList()->count() << endl;
     }
-    GameLogic::GameAutomaton::changeable().game()->newSkin(atts.value("file"));
+    m_game.automaton()->game()->newSkin(atts.value("file"));
   }
   else if (localName == "country")
   {
@@ -190,9 +190,9 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
   else if (localName == "goal")
   {
 //     kDebug() << "GameXmlHandler loads goal for: " << atts.value("player") << endl;
-    m_goal = new GameLogic::Goal();
+    m_goal = new GameLogic::Goal(m_game.automaton());
     m_goalPlayerName = atts.value("player");
-    Player* player = GameLogic::GameAutomaton::changeable().playerNamed(atts.value("player").toUtf8().data());
+    Player* player = m_game.automaton()->playerNamed(atts.value("player").toUtf8().data());
 //     kDebug() << "Got player pointer " << player << endl;
     m_goal->player(player);
     unsigned int type;
@@ -213,7 +213,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
   }
   else if (localName == "player" && m_inGoal)
   {
-    unsigned int id = GameLogic::GameAutomaton::changeable().playerNamed(atts.value("name"))->id();
+    unsigned int id = m_game.automaton()->playerNamed(atts.value("name"))->id();
     m_goal->players().insert(id);
   }
   else if (localName == "continent" && m_inGoal)
@@ -239,7 +239,7 @@ bool GameXmlHandler::endElement(const QString& namespaceURI, const QString& loca
     for (; it != it_end; it++)
     {
       Country* country = m_game.theWorld()->countryNamed((*it).first);
-      Player* owner = GameLogic::GameAutomaton::changeable().playerNamed((*it).second);
+      Player* owner = m_game.automaton()->playerNamed((*it).second);
       if (owner)
       {
 //         kDebug() << "Setting owner of " << country->name() << " to " << owner->name() << endl;
@@ -267,8 +267,8 @@ bool GameXmlHandler::endElement(const QString& namespaceURI, const QString& loca
     else
     {
       kDebug() << "GameXmlHandler set game state to: " << m_savedState << endl;
-      GameLogic::GameAutomaton::changeable().state(m_savedState);
-      GameLogic::GameAutomaton::changeable().setGameStatus(KGame::Run);
+      m_game.automaton()->state(m_savedState);
+      m_game.automaton()->setGameStatus(KGame::Run);
 //       m_game.initTimer();
     }
   }

@@ -38,6 +38,7 @@ namespace Ksirk
 namespace GameLogic
 {
   class ONU;
+  class GameAutomaton;
 }
 
 /**
@@ -49,7 +50,8 @@ class KPlayerSetupDialog : public QDialog, public Ui::QPlayerSetupDialog
 {
   Q_OBJECT
 public:
-  KPlayerSetupDialog(GameLogic::ONU* onu, unsigned int playerNumber, 
+  KPlayerSetupDialog(GameLogic::GameAutomaton* automaton,
+                     GameLogic::ONU* onu, unsigned int playerNumber,
                      QString &playerName, 
                      bool network, QString& password,
                      bool &computerPlayer,
@@ -63,6 +65,7 @@ protected:
   void reject();
 
 private:
+  GameLogic::GameAutomaton* m_automaton;
   QString &name;
   bool &computer;
   QString& m_nationName;

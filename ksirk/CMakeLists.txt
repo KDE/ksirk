@@ -99,6 +99,7 @@ kde4_install_icons( ${ICON_INSTALL_DIR} )
 install( FILES ksirksettings.kcfg DESTINATION ${KCFG_INSTALL_DIR} )
 install( FILES ksirk.desktop DESTINATION ${XDG_APPS_DIR} )
 install( FILES ksirk.desktop DESTINATION ${SERVICES_INSTALL_DIR} )
+install( FILES ksirkui.rc  DESTINATION  ${DATA_INSTALL_DIR}/ksirk )
 
 # install(FILES skins/skinsdir DESTINATION ${DATA_INSTALL_DIR}/ksirk/skins )
 # 

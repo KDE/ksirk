@@ -60,6 +60,7 @@ namespace GameLogic
 {
   class ONU;
   class KMessageParts;
+  class GameAutomaton;
 }
 
 // forward declaration of the KsirK classes
@@ -415,12 +416,15 @@ public:
   /** @return true if the given player is the last one ; false otherwise */
   bool isLastPlayer(const GameLogic::Player& player);
 
-  /** 
+  inline GameLogic::GameAutomaton* automaton() {return m_automaton;}
+  
+  /**
     * Gets the background sprite. Gives access to the scene and, furthermore, 
     * the background size, thus giving hints for positioning and annimation.
     */
   inline BackGnd* backGnd() {return m_backGnd;}
-
+  inline const BackGnd* backGnd() const {return m_backGnd;}
+  
   //@{
   /** 
     * Accessors to the number of available armies. This one is inherited from a
@@ -621,7 +625,8 @@ private slots:
   void evenementTimer();
 
 private:
-
+  GameLogic::GameAutomaton* m_automaton;
+  
   /**
    * The widget initialy docked at bottom where is displayed the events history
    */
