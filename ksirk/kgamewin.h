@@ -730,7 +730,6 @@ private:
 
   QList<AnimSpritesGroup*> m_animSpritesGroups;
 
-  KToolBar* globalToolBar;
   KToolBar* gameActionsToolBar;
   
 private: // Private methods

@@ -85,6 +85,7 @@
 #include <kglobal.h>
 #include <KStatusBar>
 #include <KToolBar>
+#include <KAction>
 
 #include <assert.h>
 
@@ -110,7 +111,6 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_chatDlg(0),
   m_audioPlayer(new Phonon::AudioPlayer( Phonon::NotificationCategory )),
   m_timer(this),
-  globalToolBar(0),
   gameActionsToolBar(0)
 {
   kDebug() << "KGameWindow constructor begin" << endl;
@@ -146,27 +146,13 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_bottomDock->setAllowedAreas(Qt::BottomDockWidgetArea);
   addDockWidget(Qt::BottomDockWidgetArea, m_bottomDock); // master dockwidget
 
-  kDebug() << "Setting up GUI" << endl;
-  QAction *action;
+//    kDebug() << "Before initActions" << endl;
+  initActions();
 
-  // game
-  action = (QAction*)KStandardGameAction::gameNew(this, SLOT(slotNewGame()), this);
-  actionCollection()->addAction(action->objectName(), action);
-  action = (QAction*)KStandardGameAction::load(this, SLOT(slotOpenGame()), this);
-  actionCollection()->addAction(action->objectName(), action);
-  action = (QAction*)KStandardGameAction::save(this, SLOT(slotSaveGame()), this);
-  actionCollection()->addAction(action->objectName(), action);
-  action = (QAction*)KStandardGameAction::quit(this, SLOT(close()), this);
-  actionCollection()->addAction(action->objectName(), action);
+  kDebug() << "Setting up GUI" << endl;
   setupGUI();
 
   kDebug() <<"Setting up toolbars" << endl;
-  kDebug() <<"  creating globalToolBar" << endl;
-  globalToolBar = new KToolBar("globalToolBar",this, Qt::BottomToolBarArea);
-  globalToolBar-> setToolButtonStyle(Qt::ToolButtonIconOnly);
-  globalToolBar-> setAllowedAreas(Qt::BottomToolBarArea);
-  globalToolBar-> setIconSize(QSize(32,32));
-  globalToolBar->show();
   kDebug() <<"  creating gameActionsToolBar" << endl;
   gameActionsToolBar = new KToolBar("gameActionsToolBar", this, Qt::BottomToolBarArea);
   gameActionsToolBar-> setToolButtonStyle(Qt::ToolButtonIconOnly);
@@ -181,15 +167,13 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_automaton->skin(KGlobal::config()->group("skin").readEntry("skin", "skins/default"));
 
   
-//    kDebug() << "Before initActions" << endl;
-  initActions();
 //    kDebug() << "Before initStatusBar" << endl;
   initStatusBar();
   
- menuBar()-> show();
+  menuBar()-> show();
   
-  displayOpenGameButton();
-  
+/*  displayOpenGameButton();*/
+
   connect(m_barFlagButton, SIGNAL(clicked()), this, SLOT(slotShowGoal()));
   explain();
   m_automaton->run();
@@ -212,16 +196,34 @@ KGameWindow::~KGameWindow()
 
 void KGameWindow::initActions()
 {
-  kDebug() << "Adding exit toolBar button" << endl;
-  addAButton(CM_EXITGAME, SLOT(close()), i18n("Exit"), KShortcut(Qt::ALT+Qt::Key_F4), false, "globalToolBar");
-  kDebug() << "Adding new game toolBar button" << endl;
-  addAButton(CM_NEWGAME, SLOT(slotNewGame()), i18n("New game"), KShortcut(Qt::CTRL+Qt::Key_N), false, "globalToolBar");
-  kDebug() << "Adding new net game toolBar button" << endl;
-  addAButton(CM_NEWNETGAME, SLOT(slotJoinNetworkGame()), i18n("Join network game"), KShortcut(Qt::CTRL+Qt::Key_J), false, "globalToolBar");
-  kDebug() << "Adding info toolBar button" << endl;
-  addAButton(CM_PREFERENCES, SLOT(optionsConfigure()), i18n("Preferences"), KShortcut(), false, "globalToolBar");
-  kDebug() << "Adding about toolBar button" << endl;
-  addAButton(CM_INFO, SLOT(slotShowAboutApplication()), i18n("About"), KShortcut(), false, "globalToolBar");
+  QAction *action;
+
+  // standard game actions
+  action = (QAction*)KStandardGameAction::gameNew(this, SLOT(slotNewGame()), this);
+  actionCollection()->addAction(action->objectName(), action);
+  action = (QAction*)KStandardGameAction::load(this, SLOT(slotOpenGame()), this);
+  actionCollection()->addAction(action->objectName(), action);
+  action = (QAction*)KStandardGameAction::save(this, SLOT(slotSaveGame()), this);
+  actionCollection()->addAction(action->objectName(), action);
+  action = (QAction*)KStandardGameAction::quit(this, SLOT(close()), this);
+  actionCollection()->addAction(action->objectName(), action);
+
+  // specific ksirk action
+  QString imageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_NEWNETGAME);
+//   kDebug() << "Trying to load button image file: " << imageFileName << endl;
+  if (imageFileName.isNull())
+  {
+    QMessageBox::critical(0, i18n("Error !"), i18n("Cannot load button image\nProgram cannot continue"));
+    exit(2);
+  }
+  QAction* joinAction = new QAction(QIcon(QPixmap(imageFileName)),
+        i18n("Join"), this);
+  joinAction->setShortcut(Qt::CTRL+Qt::Key_J);
+  joinAction->setStatusTip(i18n("Join network game"));
+  connect(joinAction,SIGNAL(triggered(bool)),this,SLOT(slotJoinNetworkGame()));
+   kDebug() << "Adding action game_join" << endl;
+  actionCollection()->addAction("game_join", joinAction);
+
 }
 
 void KGameWindow::initStatusBar()
@@ -757,8 +759,8 @@ void KGameWindow::displayNormalGameButtons()
   }
   else if (!currentPlayer()->isVirtual())
   {
-    addAButton(CM_OPENGAME, SLOT(slotOpenGame()), i18n("Open game"),KShortcut(Qt::CTRL+Qt::Key_O),true);
-    addAButton(CM_SAVEGAME, SLOT(slotSaveGame()), i18n("Save game"),KShortcut(Qt::CTRL+Qt::Key_S),true);
+/*    addAButton(CM_OPENGAME, SLOT(slotOpenGame()), i18n("Open game"),KShortcut(Qt::CTRL+Qt::Key_O),true);
+    addAButton(CM_SAVEGAME, SLOT(slotSaveGame()), i18n("Save game"),KShortcut(Qt::CTRL+Qt::Key_S),true);*/
     addAButton(CM_NEXTPLAYER,  SLOT(slotNextPlayer()), i18n("Next Player"),KShortcut(Qt::Key_Escape),true);
     addAButton(CM_ATTACK1,  SLOT(slotAttack1()), i18n("Attack with one army"),KShortcut(Qt::Key_1),true);
     addAButton(CM_ATTACK2,  SLOT(slotAttack2()), i18n("Attack with two armies"),KShortcut(Qt::Key_2),true);
@@ -858,11 +860,7 @@ void KGameWindow::addAButton(
     exit(2);
   }
   KToolBar* toolBar;
-  if (toolBarName == "globalToolBar")
-  {
-    toolBar = globalToolBar;
-  }
-  else if (toolBarName == "gameActionsToolBar")
+  if (toolBarName == "gameActionsToolBar")
   {
     toolBar = gameActionsToolBar;
   }
@@ -871,7 +869,7 @@ void KGameWindow::addAButton(
     kError() << "Unknown toolbar name" << endl;
     exit(2);
   }
-  toolBar->addAction(QPixmap(imageFileName), txt, this,  slot);
+  QAction* action = toolBar->addAction(QPixmap(imageFileName), txt, this,  slot);
 //   kDebug() << "Button added " << txt << endl;
   if (shortcut != KShortcut())
   {
@@ -880,6 +878,8 @@ void KGameWindow::addAButton(
     {
       str = txt;
     }
+    action->setShortcut(shortcut.primary());
+    action->setStatusTip(I18N_NOOP(str));
 /*    void* accel = m_accels.insert( txt, i18n(str),
                           i18n(str),
                           shortcut, this, slot );*/
@@ -2354,44 +2354,48 @@ void KGameWindow::explain()
   broadcastChangeItem(message0Parts, ID_NO_STATUS_MSG);
 
   KMessageParts message1Parts;
-  message1Parts << I18N_NOOP("All commands are issued through changing toolbar buttons and drag & drop. Hit...");
+  message1Parts << I18N_NOOP("All commands are issued through changing buttons and drag & drop.");
   broadcastChangeItem(message1Parts, ID_NO_STATUS_MSG);
 
-  QString newGameImageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_NEWGAME);
-  if (newGameImageFileName.isNull())
-  {
-    QMessageBox::critical(0, i18n("Error !"), i18n("Cannot load button image\nProgram cannot continue"));
-    exit(2);
-  }
-  QPixmap newGameButtonPix(newGameImageFileName); 
   KMessageParts message2Parts;
-  message2Parts << "\t" << newGameButtonPix << I18N_NOOP(" to start a new game;");
+  message2Parts << I18N_NOOP("Start a new game or join a network game with the menu or the toolbar...");
   broadcastChangeItem(message2Parts, ID_NO_STATUS_MSG);
 
-  QString joinGameImageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_NEWNETGAME);
-  if (joinGameImageFileName.isNull())
-  {
-    QMessageBox::critical(0, i18n("Error !"), i18n("Cannot load button image\nProgram cannot continue"));
-    exit(2);
-  }
-  QPixmap joinGameButtonPix(joinGameImageFileName); 
-  KMessageParts message3Parts;
-  message3Parts << "\t" << joinGameButtonPix << I18N_NOOP(" to join a network game (starting or reloading); and");
-  broadcastChangeItem(message3Parts, ID_NO_STATUS_MSG);
-
-  QString openGameImageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_OPENGAME);
-  if (openGameImageFileName.isNull())
-  {
-    QMessageBox::critical(0, i18n("Error !"), i18n("Cannot load button image\nProgram cannot continue"));
-    exit(2);
-  }
-  QPixmap openGameButtonPix(openGameImageFileName); 
-  KMessageParts message4Parts;
-  message4Parts << "\t" << openGameButtonPix << I18N_NOOP(" to open a saved game.");
-  broadcastChangeItem(message4Parts, ID_NO_STATUS_MSG);
+//   QString newGameImageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_NEWGAME);
+//   if (newGameImageFileName.isNull())
+//   {
+//     QMessageBox::critical(0, i18n("Error !"), i18n("Cannot load button image\nProgram cannot continue"));
+//     exit(2);
+//   }
+//   QPixmap newGameButtonPix(newGameImageFileName); 
+//   KMessageParts message2Parts;
+//   message2Parts << "\t" << newGameButtonPix << I18N_NOOP(" to start a new game;");
+//   broadcastChangeItem(message2Parts, ID_NO_STATUS_MSG);
+// 
+//   QString joinGameImageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_NEWNETGAME);
+//   if (joinGameImageFileName.isNull())
+//   {
+//     QMessageBox::critical(0, i18n("Error !"), i18n("Cannot load button image\nProgram cannot continue"));
+//     exit(2);
+//   }
+//   QPixmap joinGameButtonPix(joinGameImageFileName); 
+//   KMessageParts message3Parts;
+//   message3Parts << "\t" << joinGameButtonPix << I18N_NOOP(" to join a network game (starting or reloading); and");
+//   broadcastChangeItem(message3Parts, ID_NO_STATUS_MSG);
+// 
+//   QString openGameImageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_OPENGAME);
+//   if (openGameImageFileName.isNull())
+//   {
+//     QMessageBox::critical(0, i18n("Error !"), i18n("Cannot load button image\nProgram cannot continue"));
+//     exit(2);
+//   }
+//   QPixmap openGameButtonPix(openGameImageFileName); 
+//   KMessageParts message4Parts;
+//   message4Parts << "\t" << openGameButtonPix << I18N_NOOP(" to open a saved game.");
+//   broadcastChangeItem(message4Parts, ID_NO_STATUS_MSG);
 
   KMessageParts message5Parts;
-  message5Parts << I18N_NOOP("And then let the system guide you through messages and tooltips appearing on buttons when hovering above them.");
+  message5Parts << I18N_NOOP("and then let the system guide you through messages and tooltips appearing on buttons when hovering above them.");
   broadcastChangeItem(message5Parts, ID_NO_STATUS_MSG);
 }
 
