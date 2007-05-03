@@ -120,12 +120,6 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_dirs = KGlobal::dirs();
 //   m_accels.setEnabled(true);
   
-  kDebug() << "Setting up std game actions" << endl;
-  KStandardGameAction::gameNew( this, SLOT( slotNewGame() ), this );
-  KStandardGameAction::save( this, SLOT( slotSaveGame() ), this );
-  KStandardGameAction::load( this, SLOT( slotOpenGame() ), this );
-  KStandardGameAction::quit( this, SLOT( close() ), this );
-  
   QString iconFileName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Images/SoldatAGenoux1.png");
   if (iconFileName.isNull())
   {
@@ -199,13 +193,13 @@ void KGameWindow::initActions()
   QAction *action;
 
   // standard game actions
-  action = (QAction*)KStandardGameAction::gameNew(this, SLOT(slotNewGame()), this);
+  action = KStandardGameAction::gameNew(this, SLOT(slotNewGame()), this);
   actionCollection()->addAction(action->objectName(), action);
-  action = (QAction*)KStandardGameAction::load(this, SLOT(slotOpenGame()), this);
+  action = KStandardGameAction::load(this, SLOT(slotOpenGame()), this);
   actionCollection()->addAction(action->objectName(), action);
-  action = (QAction*)KStandardGameAction::save(this, SLOT(slotSaveGame()), this);
+  action = KStandardGameAction::save(this, SLOT(slotSaveGame()), this);
   actionCollection()->addAction(action->objectName(), action);
-  action = (QAction*)KStandardGameAction::quit(this, SLOT(close()), this);
+  action = KStandardGameAction::quit(this, SLOT(close()), this);
   actionCollection()->addAction(action->objectName(), action);
 
   // specific ksirk action
