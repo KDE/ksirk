@@ -71,7 +71,7 @@ class DecoratedGameFrame;
   * contain really too much code about game logics. This will change in the
   * future.
   *
-  * @author Gaël de Chalendar (aka Kleag)
+  * @author Gael de Chalendar (aka Kleag)
   * @version $Id: kgamewin.h 243 2007-02-24 00:22:58Z kleag $
   */
 class KGameWindow: public KXmlGuiWindow

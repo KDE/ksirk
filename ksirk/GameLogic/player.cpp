@@ -46,7 +46,7 @@ Player::Player(
   KPlayer(),
   m_automaton(automaton),
   m_nation(nation),
-  m_goal(),
+  m_goal(automaton),
   m_delayedInitNationName(""),
   m_waitedAck(0),
   m_flag(0)

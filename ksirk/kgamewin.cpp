@@ -279,15 +279,13 @@ void KGameWindow::newSkin(const QString& onuFileName)
 {
   kDebug() << "KGameWindow::newSkin '" << onuFileName << "'" << endl;
   clear();
-//   delete m_automaton;
-//   m_automaton = new GameAutomaton();
-  
-//   if (m_theWorld != 0)
-//   {
-//     m_theWorld-> reset();
-//     delete m_theWorld;
-//     m_theWorld = 0;
-//   }
+
+  if (m_theWorld != 0)
+  {
+    m_theWorld-> reset();
+    delete m_theWorld;
+    m_theWorld = 0;
+  }
 
   QString onuDefinitionFileName = onuFileName;
   if (onuDefinitionFileName.isEmpty())
@@ -309,20 +307,19 @@ void KGameWindow::newSkin(const QString& onuFileName)
   }
   loadDices();
 
-  m_frame = new DecoratedGameFrame(this, m_theWorld->width(), m_theWorld->height());
+  if (m_frame == 0)
+    m_frame = new DecoratedGameFrame(this, m_theWorld->width(), m_theWorld->height());
   m_frame->setMaximumWidth(m_theWorld->width());
   m_frame->setMaximumHeight(m_theWorld->height());
   m_frame->setCacheMode( QGraphicsView::CacheBackground );
   setCentralWidget(m_frame);
-  
   kDebug() << "ONU backgnd file name: " <<  m_theWorld->mapFileName() << endl;
   
-//   if (m_scene != 0)
-//   {
-//     delete m_scene;
-//   }
-
-  m_scene = new QGraphicsScene(0, 0, m_theWorld->width(), m_theWorld->height(),this);
+  if (m_scene != 0)
+  {
+    delete m_scene;
+  }
+    m_scene = new QGraphicsScene(0, 0, m_theWorld->width(), m_theWorld->height(),this);
 //   m_scene->setDoubleBuffering(true);
   kDebug() << "Before initView" << endl;
   initView();
