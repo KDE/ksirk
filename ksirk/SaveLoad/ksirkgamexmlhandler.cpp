@@ -89,6 +89,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
   }
   else if (localName == "player" && !m_inGoal)
   {
+    kDebug() << k_funcinfo << "Reading a player" << endl;
     m_playersNumber++;
     unsigned int nbAvailArmies;
     std::istringstream issNbAvailArmies(atts.value("nbAvailArmies").toUtf8().data());
@@ -118,7 +119,9 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
     
     if (password.isEmpty())
     {
-      m_game.addPlayer(name, nbAvailArmies, nbCountries, nationName, isAi, password, nbAttack, nbDefense);
+      kDebug() << "Adding the read player " << name << endl;
+      m_game.addPlayer(name, nbAvailArmies, nbCountries, nationName,
+                        isAi, password, nbAttack, nbDefense);
     }
     else
     {
@@ -189,7 +192,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
   }
   else if (localName == "goal")
   {
-//     kDebug() << "GameXmlHandler loads goal for: " << atts.value("player") << endl;
+    kDebug() << k_funcinfo << "loads goal for: " << atts.value("player") << endl;
     m_goal = new GameLogic::Goal(m_game.automaton());
     m_goalPlayerName = atts.value("player");
     Player* player = m_game.automaton()->playerNamed(atts.value("player").toUtf8().data());

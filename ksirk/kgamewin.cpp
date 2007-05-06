@@ -280,9 +280,24 @@ void KGameWindow::newSkin(const QString& onuFileName)
   kDebug() << "KGameWindow::newSkin '" << onuFileName << "'" << endl;
   clear();
 
+  if (m_frame != 0)
+  {
+    m_frame->hide();
+//     delete m_frame;
+  }
+
+// NOTE:I wanted to recreate the automaton here. But it isn't possible as this
+// method is called from inside a GameAutomaton method. Furthermore, it isn't
+// a good solution because the central KGame object should not be recreated
+// but reinitialized as needed
+//   m_automaton->init(0);
+//   delete m_automaton;
+//   m_automaton = new GameAutomaton();
+//   m_automaton->init(this);
+
   if (m_theWorld != 0)
   {
-    m_theWorld-> reset();
+//     m_theWorld-> reset();
     delete m_theWorld;
     m_theWorld = 0;
   }
@@ -300,11 +315,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
   }
   kDebug() << "Got ONU definition file name: " <<  onuDefinitionFileName << endl;
   m_theWorld = new ONU(m_automaton, onuDefinitionFileName);
-  if (m_frame != 0)
-  {
-    m_frame->hide();
-//     delete m_frame;
-  }
+
   loadDices();
 
   if (m_frame == 0)
@@ -321,10 +332,10 @@ void KGameWindow::newSkin(const QString& onuFileName)
   }
     m_scene = new QGraphicsScene(0, 0, m_theWorld->width(), m_theWorld->height(),this);
 //   m_scene->setDoubleBuffering(true);
-  kDebug() << "Before initView" << endl;
+  kDebug() << k_funcinfo << "Before initView" << endl;
   initView();
-  kDebug() <<"Before m_backGnd" << endl;
   m_backGnd = new BackGnd(m_scene, m_theWorld); //Creation of the background
+  kDebug() <<"After m_backGnd new="<< m_backGnd << endl;
   m_frame->setFocus();
 
   kDebug() <<"End new skin" << endl;
@@ -949,11 +960,12 @@ bool KGameWindow::setupPlayers()
     bool network = false;
     QString password;
 
-    // After closing KPlayerSetupDialog, it is guaranteed, that nomEntre is a valid
-    // username (not empty, unique)
-    KPlayerSetupDialog(m_automaton, m_theWorld, i+1, nomEntre, network, password,
-        computer, nations, nationName, this).exec();
-    kDebug() << "Creating player " << nomEntre << "(computer: " << computer << "): " << nationName << endl;
+    // After closing KPlayerSetupDialog, it is guaranteed, that nomEntre is a 
+    // valid username (not empty, unique)
+    KPlayerSetupDialog(m_automaton, m_theWorld, i+1, nomEntre, network,
+                        password, computer, nations, nationName, this).exec();
+    kDebug() << "Creating player " << nomEntre << "(computer: "
+             << computer << "): " << nationName << endl;
     addPlayer(nomEntre, nbAvailArmies, 0, nationName, computer);
     nations.erase(nationName);
   }
@@ -1070,32 +1082,11 @@ bool KGameWindow::createWaitedPlayer(quint32 waitedPlayerId)
   kDebug() << "KGameWindow::createWaitedPlayer" << endl;
   
   PlayerMatrix& pm = m_waitedPlayers[waitedPlayerId];
-  Player* player = 0;
-  if (pm.isAI)
-  {
-    player = new AIColsonPlayer(pm.name, pm.nbAvailArmies,
-                                      m_theWorld-> nationNamed(pm.nation), *m_automaton->playerList(),
-                                 m_theWorld, m_automaton);
-    m_automaton->addPlayer(player);
-    kDebug() << "Created Waited AI player " << player->name() << endl;
-    ((AIPlayer*)(player))->stop();
-    kDebug() << "Calling AI player createIO" << endl;
-    m_automaton->createIO(player, KGameIO::IOMode(AIPLAYERIO));
-  }
-  else
-  {
-    player = new Player(m_automaton, pm.name, pm.nbAvailArmies, m_theWorld-> nationNamed(pm.nation));
-    m_automaton->addPlayer(player);
-    kDebug() << "Created player " << player->name() << endl;
-    kDebug() << "Calling player createIO" << endl;
-    m_automaton->createIO(player,KGameIO::IOMode(KGameIO::MouseIO));
-    m_chatDlg->setFromPlayer(player);
-  }
-  player->setNbCountries(pm.nbCountries);
-  player->setNbAvailArmies(pm.nbAvailArmies);
-  player->setNbAttack(pm.nbAttack);
-  player->setNbDefense(pm.nbDefense);
-  player->setPassword(pm.password);
+  Player* player = addPlayer(pm.name, pm.nbAvailArmies,
+                              pm.nbCountries, pm.nation,
+                              pm.isAI, pm.password,
+                              pm.nbAttack, pm.nbDefense);
+
   player->goal(pm.goal);
   std::set<QString>::iterator it, it_end;
   it = pm.countries.begin(); it_end = pm.countries.end();
@@ -1108,9 +1099,6 @@ bool KGameWindow::createWaitedPlayer(quint32 waitedPlayerId)
   }
   return true;
 }
-
-
-
 
 void KGameWindow::distributeArmies()
 {
@@ -2158,7 +2146,7 @@ ONU* KGameWindow::theWorld()
 /**
   * @brief Adds a player
   */
-void KGameWindow::addPlayer(const QString& playerName, 
+Player* KGameWindow::addPlayer(const QString& playerName,
       unsigned int nbAvailArmies, 
       unsigned int nbCountries, 
       const QString& nationName, 
@@ -2167,41 +2155,24 @@ void KGameWindow::addPlayer(const QString& playerName,
       unsigned int nbAttack,
       unsigned int nbDefense)
 {
-  kDebug() << "Adding player (AI: " << isAI << ")" << endl;
-  Player* p = 0;
-  if (isAI)
+  kDebug() << k_funcinfo << "Adding player (AI: " << isAI << ")" << endl;
+  Player* p = dynamic_cast<Player*>(m_automaton->createPlayer(isAI?2:1,0,false));
+  if (p)
   {
-    AIPlayer *aiplayer = new AIColsonPlayer(playerName, nbAvailArmies,
-      m_theWorld-> nationNamed(nationName),
-      *m_automaton->playerList(), m_theWorld, m_automaton);
-    m_automaton->addPlayer(aiplayer);
-//     kDebug() << "Created AI player " << aiplayer->name() << endl;
-    aiplayer->stop();
-    aiplayer->setNbCountries(nbCountries);
-    aiplayer->setNbAvailArmies(nbAvailArmies);
-    aiplayer->setNbAttack(nbAttack);
-    aiplayer->setNbDefense(nbDefense);
-    aiplayer->setPassword(password);
-    kDebug() << "Calling AI player createIO" << endl;
-    m_automaton->createIO(aiplayer, KGameIO::IOMode(AIPLAYERIO));
-    p = aiplayer;
+    if (!isAI)
+    {
+      m_chatDlg->setFromPlayer(p);
+    }
+    p->setName(playerName);
+    p->setNation(nationName);
+    p->setNbCountries(nbCountries);
+    p->setNbAvailArmies(nbAvailArmies);
+    p->setNbAttack(nbAttack);
+    p->setNbDefense(nbDefense);
+    p->setPassword(password);
+    m_automaton->addPlayer(p);
   }
-  else
-  {
-    Player *player = new Player(m_automaton, playerName, nbAvailArmies, m_theWorld-> nationNamed(nationName));
-    m_automaton->addPlayer(player);
-    kDebug() << "Created player " << player->name() << endl;
-    player->setNbCountries(nbCountries);
-    player->setNbAvailArmies(nbAvailArmies);
-    player->setNbAttack(nbAttack);
-    player->setNbDefense(nbDefense);
-    player->setPassword(password);
-    kDebug() << "Calling player createIO" << endl;
-    m_automaton->createIO(player,KGameIO::IOMode(KGameIO::MouseIO));
-    p = player;
-    m_chatDlg->setFromPlayer(p);
-  }
-  
+  return p;
 }
 
 std::map< QString, QString > KGameWindow::nationsList()

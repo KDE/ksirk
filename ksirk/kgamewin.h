@@ -61,6 +61,7 @@ namespace GameLogic
   class ONU;
   class KMessageParts;
   class GameAutomaton;
+  class Player;
 }
 
 // forward declaration of the KsirK classes
@@ -377,7 +378,7 @@ public:
   /**
     * @brief Adds a player
     */
-  void addPlayer(const QString& playerName, 
+  GameLogic::Player* addPlayer(const QString& playerName,
         unsigned int nbAvailArmies, 
         unsigned int nbCountries, 
         const QString& nationName, 

@@ -162,12 +162,6 @@ public:
   
   virtual ~GameAutomaton();
   
-  /** static method to retrive the singleton as const */
-//   static const GameAutomaton& single();
-
-  /** static method to retrive the singleton as variable */
-//   static GameAutomaton& changeable();
-
   /** Creates the singleton member if necessary and associate it to the given
     * KGameWindow */
   void init(KGameWindow* gw);

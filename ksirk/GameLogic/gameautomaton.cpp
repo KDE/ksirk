@@ -231,7 +231,7 @@ Player* GameAutomaton::getAnyLocalPlayer()
 
 GameAutomaton::GameState GameAutomaton::run()
 {
-  kDebug() << "GameAutomaton::run" << endl;
+  kDebug() << "GameAutomaton::run (KGame running=" <<  (gameStatus()==KGame::Run) << ")" << endl;
   if (m_game == 0)
   {
     QTimer::singleShot(200, this, SLOT(run()));
@@ -251,8 +251,13 @@ GameAutomaton::GameState GameAutomaton::run()
   }
 
   kDebug() << "Handling " << stateName() << " ; " << event << " ; " << point << endl;
+  if (currentPlayer())
+  {
+    kDebug() << "current player=" << currentPlayer()->name() << " is active=" << currentPlayer()->isActive() << endl;
+  }
   if (event == "requestForAck")
   {
+    kDebug() << "requestForAck" << endl;
   }
   if (event == "actionNewGame")
   {
@@ -1193,6 +1198,7 @@ KPlayer * GameAutomaton::createPlayer(int rtti,
   {
     AIPlayer* aip = new AIColsonPlayer("", 0, 0,  *playerList(), m_game->theWorld(),
                                    this);
+    aip->stop();
     aip->setVirtual(isVirtual);
     if (!isVirtual)
     {
@@ -1299,6 +1305,7 @@ void GameAutomaton::slotPlayerJoinedGame(KPlayer* player)
       QByteArray buffer;
       QDataStream stream(&buffer, QIODevice::WriteOnly);
       stream << quint32(player->id());
+      kDebug() << "Sending ChangePlayerName for player id " << player->id() << endl;
       sendMessage(buffer,ChangePlayerName);
       
       return;
@@ -1308,7 +1315,7 @@ void GameAutomaton::slotPlayerJoinedGame(KPlayer* player)
       QByteArray buffer;
       QDataStream stream(&buffer, QIODevice::WriteOnly);
       stream << player->id();
-//       kDebug() << "Sending ChangePlayerNation for player id " << player->id() << endl;
+      kDebug() << "Sending ChangePlayerNation for player id " << player->id() << endl;
       sendMessage(buffer,ChangePlayerNation);
       
       return;
@@ -1321,9 +1328,8 @@ void GameAutomaton::slotPlayerJoinedGame(KPlayer* player)
     m_game->broadcastChangeItem(messageParts, ID_STATUS_MSG2);
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
-//     kDebug() << "Sending StartGame" << endl;
+    kDebug() << "Sending StartGame" << endl;
     sendMessage(buffer,StartGame);
-    
   }
 }
 
