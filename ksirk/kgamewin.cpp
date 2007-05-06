@@ -759,7 +759,7 @@ void KGameWindow::displayNormalGameButtons()
   {
     if (!(static_cast<AIPlayer *>(currentPlayer()))-> isRunning()) (static_cast<AIPlayer *>(currentPlayer()))-> start();
   }
-  else if (!currentPlayer()->isVirtual())
+  else if (currentPlayer() && !currentPlayer()->isVirtual())
   {
 /*    addAButton(CM_OPENGAME, SLOT(slotOpenGame()), i18n("Open game"),KShortcut(Qt::CTRL+Qt::Key_O),true);
     addAButton(CM_SAVEGAME, SLOT(slotSaveGame()), i18n("Save game"),KShortcut(Qt::CTRL+Qt::Key_S),true);*/
@@ -2156,7 +2156,7 @@ Player* KGameWindow::addPlayer(const QString& playerName,
       unsigned int nbDefense)
 {
   kDebug() << k_funcinfo << "Adding player (AI: " << isAI << ")" << endl;
-  Player* p = dynamic_cast<Player*>(m_automaton->createPlayer(isAI?2:1,0,false));
+  Player* p = dynamic_cast<Player*>(m_automaton->createPlayer(isAI?2:1,0,false)); 
   if (p)
   {
     if (!isAI)
