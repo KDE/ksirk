@@ -419,7 +419,8 @@ void KGameWindow::slotJoinNetworkGame()
 void KGameWindow::slotShowGoal()
 {
 //   kDebug() << "slotShowGoal" << endl;
-  if (!currentPlayer()->isVirtual() && !currentPlayer()->isAI())
+if (currentPlayer() && !currentPlayer()->isVirtual()
+    && !currentPlayer()->isAI())
   {
     currentPlayer()->goal().show(GameLogic::Goal::GoalDesc|GameLogic::Goal::GoalAdvance);
   }

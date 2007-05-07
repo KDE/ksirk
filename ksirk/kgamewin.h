@@ -29,6 +29,7 @@
 // include files for Qt
 #include <QPointF>
 #include <QPixmap>
+#include <QLabel>
 
 // include files for KDE
 #include <ksharedconfig.h>
@@ -38,7 +39,7 @@
 // 
 // #include <kdialogbase.h>
 
-class KPushButton;
+class QAction;
 class KTextEdit;
 class KGameChat;
 class KToolBar;
@@ -697,7 +698,8 @@ private:
     * This button is used to display the flag of the currently active player
     * in the status bar.
     */
-  KPushButton* m_barFlagButton;
+  QAction* m_goalAction;
+  QLabel* m_barFlag;
     
 //   KAccel m_accels;
   

@@ -42,28 +42,8 @@
 #include "Dialogs/restartOrExitDialogImpl.h"
 
 
-// STL include files
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <list>
-#include <vector>
-
 // include files for QT
-#include <qmetaobject.h>
-#include <qdir.h>
-#include <qprinter.h>
-#include <qpainter.h>
-#include <qmessagebox.h>
-#include <qinputdialog.h>
-#include <qregexp.h>
-#include <qcursor.h>
-#include <qevent.h>
-#include <qlayout.h>
-#include <qpushbutton.h>
-#include <QPixmap>
 #include <QDockWidget>
-#include <QAction>
 
 // include files for KDE
 #include <kiconloader.h>
@@ -105,8 +85,9 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_nbMovedArmies(0),
   m_firstCountry(0), m_secondCountry(0),
   m_frame(0),
-  m_barFlagButton(new KPushButton(KIcon(), "", 0)),
-//   m_accels(this), 
+  m_goalAction(0),
+  m_barFlag(new QLabel(this)),
+//   m_accels(this),
 //   m_chat(0), 
   m_chatDlg(0),
   m_audioPlayer(new Phonon::AudioPlayer( Phonon::NotificationCategory )),
@@ -115,7 +96,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
 {
   kDebug() << "KGameWindow constructor begin" << endl;
 
-  statusBar()->addWidget(m_barFlagButton);
+  statusBar()->addWidget(m_barFlag);
 
   m_dirs = KGlobal::dirs();
 //   m_accels.setEnabled(true);
@@ -149,9 +130,10 @@ KGameWindow::KGameWindow(QWidget* parent) :
   kDebug() <<"Setting up toolbars" << endl;
   kDebug() <<"  creating gameActionsToolBar" << endl;
   gameActionsToolBar = new KToolBar("gameActionsToolBar", this, Qt::BottomToolBarArea);
-  gameActionsToolBar-> setToolButtonStyle(Qt::ToolButtonIconOnly);
-  gameActionsToolBar-> setAllowedAreas(Qt::BottomToolBarArea);
-  gameActionsToolBar-> setIconSize(QSize(32,32));
+  gameActionsToolBar->setWindowTitle(i18n("Game Actions Toolbar"));
+  gameActionsToolBar->setToolButtonStyle(Qt::ToolButtonIconOnly);
+  gameActionsToolBar->setAllowedAreas(Qt::BottomToolBarArea);
+  gameActionsToolBar->setIconSize(QSize(32,32));
   gameActionsToolBar->show();
 
   kDebug() << "Creating automaton" << endl;
@@ -168,7 +150,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   
 /*  displayOpenGameButton();*/
 
-  connect(m_barFlagButton, SIGNAL(clicked()), this, SLOT(slotShowGoal()));
+//   connect(m_barFlagButton, SIGNAL(clicked()), this, SLOT(slotShowGoal()));
   explain();
   m_automaton->run();
   setMouseTracking(true);
@@ -183,7 +165,7 @@ KGameWindow::~KGameWindow()
   m_dirs = 0;
   delete m_backGnd; m_backGnd = 0;
   delete m_scene; m_scene = 0;
-  if (m_barFlagButton) {delete m_barFlagButton; m_barFlagButton = 0;}
+//   if (m_barFlagButton) {delete m_barFlagButton; m_barFlagButton = 0;}
   delete m_frame; m_frame = 0;
   delete m_audioPlayer;
 }
@@ -218,6 +200,14 @@ void KGameWindow::initActions()
    kDebug() << "Adding action game_join" << endl;
   actionCollection()->addAction("game_join", joinAction);
 
+  m_goalAction = new QAction(QIcon(), i18n("Goal"), this);
+  m_goalAction-> setText(i18n("Display the current player goal"));
+  m_goalAction-> setIconText("  ");
+  m_goalAction->setShortcut(Qt::CTRL+Qt::Key_G);
+  m_goalAction->setStatusTip(i18n("Display the current player goal"));
+  connect(m_goalAction,SIGNAL(triggered(bool)),this,SLOT(slotShowGoal()));
+  kDebug() << "Adding action game_goal" << endl;
+  actionCollection()->addAction("game_goal", m_goalAction);
 }
 
 void KGameWindow::initStatusBar()
@@ -227,7 +217,7 @@ void KGameWindow::initStatusBar()
   statusBar()-> setItemAlignment(ID_STATUS_MSG, Qt::AlignLeft | Qt::AlignVCenter);
   statusBar()->insertItem("", ID_STATUS_MSG2, 3);
   statusBar()-> setItemAlignment(ID_STATUS_MSG2, Qt::AlignLeft | Qt::AlignVCenter);
-  statusBar()->addWidget(m_barFlagButton);
+  statusBar()->addWidget(m_barFlag);
 }
 
 Country* KGameWindow::clickIn(const QPointF &pointf)
@@ -784,7 +774,11 @@ void KGameWindow::displayDefenseButtons()
   if (! (m_secondCountry-> owner()->isAI() ))
   {
     if (m_secondCountry && m_secondCountry-> owner() && m_secondCountry-> owner()-> getFlag())
-        m_barFlagButton-> setIcon(KIcon(m_secondCountry-> owner()->getFlag()-> image(0)));
+    {
+      m_goalAction-> setIcon(KIcon(m_secondCountry-> owner()->getFlag()-> image(0)));
+      m_goalAction-> setIconText(i18n("Goal"));
+      m_barFlag-> setPixmap(m_secondCountry-> owner()->getFlag()-> image(0));
+    }
     addAButton(CM_DEFENSE1, SLOT(slotDefense1()), i18n("Defend with one army"),KShortcut(Qt::Key_1),true);
     addAButton(CM_DEFENSE2, SLOT(slotDefense2()), i18n("Defend with two armies"),KShortcut(Qt::Key_2),true);
   }
@@ -836,6 +830,7 @@ void KGameWindow::clearGameActionsToolbar(bool send)
   }
   
   gameActionsToolBar->clear();
+  gameActionsToolBar->addSeparator();
   std::set< QString >::const_iterator it, it_end;
   it = m_temporaryAccelerators.begin(); it_end = m_temporaryAccelerators.end();
   for (; it != it_end; it++)
@@ -904,16 +899,20 @@ void KGameWindow::setBarFlagButton(const Player* player)
     if (currentPlayer() 
         && currentPlayer()-> getFlag())
     {
-      m_barFlagButton-> setIcon(KIcon(currentPlayer()->getFlag()-> image(0)));
-      m_barFlagButton->show();
+      m_goalAction-> setIcon(KIcon(currentPlayer()->getFlag()-> image(0)));
+      m_goalAction-> setIconText(i18n("Goal"));
+      m_barFlag-> setPixmap(currentPlayer()->getFlag()-> image(0));
+      m_barFlag->show();
     }
   }
   else
   {
     if (player-> getFlag())
     {
-      m_barFlagButton-> setIcon(KIcon(player-> getFlag()-> image(0)));
-      m_barFlagButton->show();
+      m_goalAction-> setIcon(KIcon(player-> getFlag()-> image(0)));
+      m_goalAction-> setIconText(i18n("Goal"));
+      m_barFlag-> setPixmap(player->getFlag()-> image(0));
+      m_barFlag->show();
     }
   }
   m_frame->setFocus();
@@ -1967,7 +1966,11 @@ void KGameWindow::defense(unsigned int nb)
   broadcastChangeItem(messageParts, ID_NO_STATUS_MSG);
 
   if (m_firstCountry && m_firstCountry-> owner() && m_firstCountry-> owner()-> getFlag())
-    m_barFlagButton-> setIcon(KIcon(m_firstCountry-> owner()->getFlag()-> image(0)));
+  {
+    m_goalAction-> setIcon(KIcon(m_firstCountry-> owner()->getFlag()-> image(0)));
+    m_goalAction-> setIconText(i18n("Goal"));
+    m_barFlag-> setPixmap(m_firstCountry-> owner()->getFlag()-> image(0));
+  }
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   m_automaton->sendMessage(buffer,InitCombatMovement);
