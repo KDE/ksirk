@@ -644,6 +644,7 @@ bool KGameWindow::actionOpenGame()
   QString fileName = KFileDialog::getOpenFileName(KUrl(), "*.xml", this, i18n("KsirK - Load Game"));
   if (!fileName.isEmpty())
   {
+    m_automaton->setGameStatus(KGame::End);
     m_waitedPlayers.clear();
     kDebug() << "KGameWindow::actionOpenGame loader" << endl;
     Ksirk::SaveLoad::GameXmlLoader loader(fileName, *this, m_waitedPlayers);
@@ -665,8 +666,8 @@ bool KGameWindow::actionOpenGame()
     {
       QByteArray buffer;
       QDataStream stream(&buffer, QIODevice::WriteOnly);
+      m_automaton->sendMessage(buffer,StartGame);
       m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
-      m_automaton->setGameStatus(KGame::Run);
       m_frame->setFocus();
       kDebug() << "KGameWindow::actionOpenGame false1" << endl;
       return false;
@@ -2085,7 +2086,9 @@ bool KGameWindow::actionNewGame()
       kDebug() << "  playerList size = " << m_automaton->playerList()->count() << endl;
     }
     theWorld()->reset();*/
-    
+    m_automaton->setGameStatus(KGame::End);
+    m_automaton->state(GameLogic::GameAutomaton::INIT);
+    m_automaton->savedState(GameLogic::GameAutomaton::INVALID);
     return (setupPlayers());
   }
   return false;

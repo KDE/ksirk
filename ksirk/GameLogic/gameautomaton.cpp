@@ -169,7 +169,7 @@ m_aicannotrunhack(true),
   
   connect(messageServer(),SIGNAL(connectionLost(KMessageIO *)),
           this,SLOT(slotConnectionToClientBroken(KMessageIO *)));
-  
+
   setPolicy(KGame::PolicyDirty,true);
   
 //   kDebug() << "GameAutomaton::GameAutomaton finished" << endl;
@@ -1338,7 +1338,8 @@ bool GameAutomaton::startGame()
   kDebug() << "GameAutomaton::startGame nb players = " << playerList()->count() << " / " << maxPlayers() << endl;
 //   kDebug() << "  state is " << GameStateNames[m_state] << endl;
 //   kDebug() << "  saved state is " << GameStateNames[m_savedState] << endl;
-  if (isAdmin() && int(playerList()->count()) == maxPlayers())
+  if (isAdmin() && int(playerList()->count()) == maxPlayers()
+      && gameStatus()!=KGame::Run)
   {
 //     m_game->haltTimer();
 
@@ -2049,7 +2050,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     break;
   case DisplayGoals:
       kDebug() << "Got message DisplayGoals" << endl;
-      displayGoals();
+      QTimer::singleShot(0,this,SLOT(displayGoals()));
     break;
   default: ;
   }
@@ -2263,8 +2264,6 @@ void GameAutomaton::displayGoals()
       dynamic_cast<Player*>(*it)->goal().show();
     }
   }
-/*  kDebug() << "Setting game status to Run" << endl;
-  setGameStatus(KGame::Run);*/
   m_aicannotrunhack = false;
 }
 

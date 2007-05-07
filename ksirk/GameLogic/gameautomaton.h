@@ -337,7 +337,7 @@ public:
   void firingFinished();
   void explosionFinished();
 
-public slots:
+public Q_SLOTS:
   /** Reacts to the current state eventualy processing one queued event */
   GameState run();
   
@@ -386,6 +386,10 @@ public slots:
     * Called when the network connection to a client is broken.
     */
   void slotConnectionToClientBroken(KMessageIO *);
+
+private Q_SLOTS:
+  void displayGoals();
+  
   
 protected:
   friend class KGameWindow;
@@ -429,8 +433,6 @@ private:
   void acknowledge(Player* player, unsigned int ack);
 
   void activateNeededAIPlayers();
-
-  void displayGoals();
 
 //   static GameAutomaton* m_singleton ;
     

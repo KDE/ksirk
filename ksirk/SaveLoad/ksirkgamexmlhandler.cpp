@@ -271,8 +271,6 @@ bool GameXmlHandler::endElement(const QString& namespaceURI, const QString& loca
     {
       kDebug() << "GameXmlHandler set game state to: " << m_savedState << endl;
       m_game.automaton()->state(m_savedState);
-      m_game.automaton()->setGameStatus(KGame::Run);
-//       m_game.initTimer();
     }
   }
   else if (localName == "goal")
