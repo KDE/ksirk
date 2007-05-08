@@ -18,15 +18,16 @@
  *   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
  *   02110-1301, USA
  ***************************************************************************/
-#include <qlayout.h>
-#include <qapplication.h>
-#include <qpainter.h>
-#include <qcolordialog.h>
-#include <qinputdialog.h>
-#include <qmessagebox.h>
-#include <QPixmap>
 #include "KsirkChatModel.h"
 #include "player.h"
+
+#include <QLayout>
+#include <QApplication>
+#include <QPainter>
+#include <QColorDialog>
+#include <QInputDialog>
+#include <QMessageBox>
+#include <QPixmap>
 
 // namespace Ksirk
 // {

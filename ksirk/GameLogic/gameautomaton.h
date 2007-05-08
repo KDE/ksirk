@@ -125,7 +125,7 @@ Q_OBJECT
 public:
   /**
     * This hackish member is here to allow AIs to run only when goals have been
-    * diplayed. In fact, the game state should be set to KGame::Run at this
+    * displayed. In fact, the game state should be set to KGame::Run at this
     * moment but if it is done there, then the IO messages are not transmited. I
     * don't understand why. Is it a KGame bug ?
     * As it is a hugly hack, it is made huglier by making it public...

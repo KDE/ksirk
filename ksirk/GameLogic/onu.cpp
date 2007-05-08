@@ -18,10 +18,16 @@
  *   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
  *   02110-1301, USA
  ***************************************************************************/
+#include "onu.h"
+#include "Sprites/skinSpritesData.h"
+#include "goal.h"
+#include "gameautomaton.h"
+#include "kgamewin.h"
+
 #define KDE_NO_COMPAT
-#include <qfile.h>
+#include <QFile>
 #include <qdom.h>
-#include <qpainter.h>
+#include <QPainter>
 #include <QPixmap>
 
 #include <kapplication.h>
@@ -30,12 +36,6 @@
 #include <klocale.h>
 #include <kdebug.h>
 #include <kmessagebox.h>
-
-#include "onu.h"
-#include "Sprites/skinSpritesData.h"
-#include "goal.h"
-#include "gameautomaton.h"
-#include "kgamewin.h"
 
 namespace Ksirk
 {

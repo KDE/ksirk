@@ -1015,7 +1015,7 @@ bool GameAutomaton::setupPlayersNumberAndSkin(bool& networkGame, int& port, uint
   if (nations.size() < 2)
   {
     QString mes = "";
-    mes = i18n("Error - 2 nations minimum. Got %d.",nations.size());
+    mes = i18n("Error - 2 nations minimum. Got %.1",nations.size());
     KMessageBox::error(m_game, mes, i18n("Fatal Error!"));
     exit(1);
   }
@@ -1420,16 +1420,16 @@ void GameAutomaton::changePlayerName(Player* player)
     bool emptyName = true;
     while (emptyName)
     {
-      mes = i18n("Player number %d, what's your name ?", 1);
+      mes = i18n("Player number %1, what's your name ?", 1);
       bool network = false;
       QString password;
       KPlayerSetupDialog(this, m_game->theWorld(), 1, nomEntre, network, password, computer, nations, nationName, m_game).exec();
 //     kDebug() << "After KPlayerSetupDialog. name: " << nomEntre << endl;
       if (nomEntre.isEmpty())
       {
-        mes = i18n("Error - Player %d, you have to choose a name.", 1);
+        mes = i18n("Error - Player %1, you have to choose a name.", 1);
         KMessageBox::sorry(m_game, mes, i18n("Error"));
-        nomEntre = i18n("Player%d", 1);
+        nomEntre = i18n("Player%1", 1);
       }
       else 
       {

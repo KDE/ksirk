@@ -52,10 +52,10 @@ class KPlayerSetupDialog : public QDialog, public Ui::QPlayerSetupDialog
 public:
   KPlayerSetupDialog(GameLogic::GameAutomaton* automaton,
                      GameLogic::ONU* onu, unsigned int playerNumber,
-                     QString &playerName, 
+                     QString &playerName,
                      bool network, QString& password,
                      bool &computerPlayer,
-                     std::map< QString, QString >& nations, 
+                     std::map< QString, QString >& nations,
                      QString & nationName,
                      QWidget *parent=0);
   

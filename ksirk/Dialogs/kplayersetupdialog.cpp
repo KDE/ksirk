@@ -22,7 +22,6 @@
 #include "kplayersetupdialog.h"
 #include "GameLogic/gameautomaton.h"
 #include "GameLogic/player.h"
-#include "GameLogic/gameautomaton.h"
 #include "GameLogic/nationality.h"
 #include "GameLogic/onu.h"
 #include "Sprites/skinSpritesData.h"
@@ -49,7 +48,8 @@ namespace Ksirk
 
 KPlayerSetupDialog::KPlayerSetupDialog( GameLogic::GameAutomaton* automaton,
                                         GameLogic::ONU* onu,
-                                        unsigned int playerNumber, QString& playerName,
+                                        unsigned int playerNumber,
+                                        QString& playerName,
                                         bool network, QString& password,
                                         bool &computerPlayer,
                                         std::map< QString, QString >& nations, 

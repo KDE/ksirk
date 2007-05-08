@@ -1031,15 +1031,15 @@ bool KGameWindow::setupOnePlayer()
     bool emptyName = true;
     while (emptyName)
     {
-      mes = i18n("Player number %d, what's your name ?", 1);
+      mes = i18n("Player number %1, what's your name ?", 1);
       bool network = true;
       KPlayerSetupDialog(m_automaton, m_theWorld, 1, nomEntre, network, password, computer, nations, nationName, this).exec();
       kDebug() << "After KPlayerSetupDialog. name: " << nomEntre << endl;
       if (nomEntre.isEmpty())
       {
-        mes = i18n("Error - Player %d, you have to choose a name.", 1);
+        mes = i18n("Error - Player %1, you have to choose a name.", 1);
         QMessageBox::warning(this, i18n("Error"), mes);
-        nomEntre = i18n("Player%d", 1);
+        nomEntre = i18n("Player%1", 1);
       }
       else 
       {

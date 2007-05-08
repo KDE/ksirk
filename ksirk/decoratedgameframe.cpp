@@ -18,6 +18,9 @@
 
 /*  begin                : Thu Jul 19 2001  */
 
+#include "decoratedgameframe.h"
+#include "GameLogic/player.h"
+
 #include <qmessagebox.h>
 #include <qcursor.h>
 #include <qsize.h>
@@ -29,9 +32,6 @@
 #include <kdebug.h>
 #include <kgame/kgameio.h>
 #include <kgame/kplayer.h>
-
-#include "decoratedgameframe.h"
-#include "GameLogic/player.h"
 
 namespace Ksirk
 {

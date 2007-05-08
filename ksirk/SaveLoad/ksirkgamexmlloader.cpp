@@ -18,9 +18,9 @@
 
 /*    begin                : Mon Feb 07 2005 */
  
-#include "KsirkGlobalDefinitions.h"
 #include "ksirkgamexmlloader.h"
 #include "ksirkgamexmlhandler.h"
+#include "KsirkGlobalDefinitions.h"
 
 #include <qxml.h>
 #include <KMessageBox>

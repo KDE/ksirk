@@ -1,15 +1,14 @@
-Before import in kdereview/playground:
-  * crash on exit (not the KsirK fault ?)
+Before KDE4.0:
   * max size of the window limited by the map size
 
 Quickly
   * replace all QMessageBox by KMessageBox
-  * study the replacement of the global timer by more local ones
+  * [DONE] study the replacement of the global timer by more local ones
 
 Before 1.9:
   * [DONE] finish porting to KDE4
   * [DONE] port to QGraphicsView + SVG (maybe even for 2.0)
-  * [framework OK, controls to add] zoom
+  * [DONE] zoom
   * add something similar to cards in Risk(R)
   * add more visual clues during battle (number of cannons and explosions equal
     to those involved, the nation flag, etc.)
@@ -20,11 +19,11 @@ Before 1.9:
   * handle plurals in messages
   * [DONE through chat and info widget] clearly show the battle results (graphics)
   * enhance the new AI (make it aware of goals,...)
-  * automaticaly choose the messages window lines height depending on the font
+  * [DONE] automaticaly choose the messages window lines height depending on the font
   * replace ids by names in the skins onu.xml file format and make the countries
     vector independent of the order in the ONU class
   * make players order random at initialization
-  * possibility to save AI only games
+  * [DONE] possibility to save AI only games
 
 Before 2.0:
   - if a fight starts outside of the displayed zone, automaticaly move to 
@@ -32,7 +31,7 @@ Before 2.0:
   - possibility to Drag and Drop the map
   - perfect implementation of Risk rules (optional if some enhancements are
     implemented) ;
-  - hability to save game at any point
+  - [DONE] hability to save game at any point
   - use khotnewstuff for new skins
   - use GGZ or Jabber to offer or find network games
 
