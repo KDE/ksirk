@@ -51,7 +51,11 @@ Country::Country(GameAutomaton* game,
                   const QPointF& infantryPoint, 
                   unsigned int id) :
   m_automaton(game),
-  m_belongsTo(0), m_flag(0), m_name(theName),
+  m_belongsTo(0),
+  m_flag(0),
+  m_nbArmies(0),
+  m_nbAddedArmies(0),
+  m_name(theName),
   m_centralPoint(centralPoint), 
   m_pointFlag(flagPoint), 
   m_pointCannon(cannonPoint), 
@@ -59,10 +63,7 @@ Country::Country(GameAutomaton* game,
   m_pointInfantry(infantryPoint),
   m_id(id)
 {
-//   kDebug() << "Creating country " << m_name.toUtf8().data() << ", " << this << endl;
-  nbArmies(1);
-  nbAddedArmies(0);
-  
+//   kDebug() << k_funcinfo << m_name << ", " << this << endl;
 }
 
 Country::~Country()
@@ -144,8 +145,11 @@ void Country::createArmiesSprites(BackGnd *backGnd)
     i++;
     armies--;
   }
-  
-  flag(m_belongsTo->flagFileName(), bg);
+
+  if (m_belongsTo)
+  {
+    flag(m_belongsTo->flagFileName(), bg);
+  }
 }
 
 void Country::flag(const QString& theFlagFileName, BackGnd *backGnd)
