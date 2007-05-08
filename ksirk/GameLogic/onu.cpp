@@ -624,27 +624,29 @@ void ONU::buildMap()
   QPainter painter(&m_map);
   QFont foregroundFont(m_font.family, m_font.size, m_font.weight, m_font.italic);
   QFont backgroundFont(m_font.family, m_font.size, QFont::Normal, m_font.italic);
+
   painter.drawPixmap(0,0,mapPixmap);
   
   for (uint i = 0; i < countries.size(); i++)
   {
     Country* country = countries[i];
     const QString& countryName = i18n(country->name().toUtf8().data());
-    QRect countryNameRect = painter.fontMetrics().boundingRect(countryName);
     if (m_font.backgroundColor != "none")
     {
       painter.setPen(m_font.backgroundColor);
       painter.setFont(backgroundFont);
+      QRect countryNameRect = painter.fontMetrics().boundingRect(countryName);
       painter.drawText(
-        int((country->centralPoint().x()-countryNameRect.width()/2+1)),
-        int((country->centralPoint().y()+countryNameRect.height()/2 + 1)),
+        int((country->centralPoint().x()*m_zoom-countryNameRect.width()/2+1)),
+        int((country->centralPoint().y()*m_zoom+countryNameRect.height()/2 + 1)),
         countryName);
     }
     painter.setPen(m_font.foregroundColor);
     painter.setFont(foregroundFont);
+    QRect countryNameRect = painter.fontMetrics().boundingRect(countryName);
     painter.drawText(
-        int((country->centralPoint().x()-countryNameRect.width()/2)),
-        int((country->centralPoint().y()+countryNameRect.height()/2)),
+    int((country->centralPoint().x()*m_zoom-countryNameRect.width()/2)),
+    int((country->centralPoint().y()*m_zoom+countryNameRect.height()/2)),
         countryName);
   }
 }
@@ -658,16 +660,15 @@ void ONU::applyZoomFactor(qreal zoomFactor)
   m_width *= zoomFactor;
   m_height *= zoomFactor;
 
-  std::vector<Country*>::iterator it, it_end;
-
-  it = countries.begin(); it_end = countries.end();
-  
   buildMap();
+
+  std::vector<Country*>::iterator it, it_end;
+  it = countries.begin(); it_end = countries.end();
   for ( ; it != it_end; it++ )
   {
     Country* country = *it;
-    country->centralPoint(country->centralPoint()*zoomFactor);
-/*    country->pointFlag(country->pointFlag()*m_zoom);
+/*    country->centralPoint(country->centralPoint()*zoomFactor);
+    country->pointFlag(country->pointFlag()*m_zoom);
     country->pointCannon(country->pointCannon()*m_zoom);
     country->pointCavalry(country->pointCavalry()*m_zoom);
     country->pointInfantry(country->pointInfantry()*m_zoom);*/
