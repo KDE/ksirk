@@ -58,9 +58,11 @@ public:
     * from the current skin dir and a default file name.
     */
   ONU(GameAutomaton* automaton, const QString& configFileName);
-  
+
   /** Default destructor */
   virtual ~ONU() {}
+
+  void applyZoomFactor(qreal zoomFactor);
   
   //{@
   /**
@@ -82,7 +84,7 @@ public:
     * @param point The point where to search for a country in the map mask
     * @return The country at the given point or 0 if there is no country there.
     */
-  Country* countryAt(QPointF point);
+  Country* countryAt(const QPointF& point);
 
   /**
     * Calls its reset method for each country
@@ -172,7 +174,9 @@ public:
     * @return The continent named name or 0 if there is no such continent.
     */
   Continent* continentNamed(const QString& name);
-    
+
+  inline double zoom() const {return m_zoom;}
+  
 private:
   /**
     * All data that have to be stored about the font to display countries names
@@ -187,6 +191,8 @@ private:
     QString foregroundColor;
     QString backgroundColor;
   };
+
+  GameAutomaton* m_automaton;
   
   /**
     * The name of the XML file containing the world's definition

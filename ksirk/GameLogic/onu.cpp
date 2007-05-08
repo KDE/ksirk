@@ -35,6 +35,7 @@
 #include "Sprites/skinSpritesData.h"
 #include "goal.h"
 #include "gameautomaton.h"
+#include "kgamewin.h"
 
 namespace Ksirk
 {
@@ -44,6 +45,7 @@ namespace GameLogic
 
 ONU::ONU(GameAutomaton* automaton,
   const QString& configFileName):
+  m_automaton(automaton),
   m_configFileName(configFileName),
   countries(),
   nationalities(),
@@ -53,7 +55,7 @@ ONU::ONU(GameAutomaton* automaton,
 {
   kDebug() << "ONU constructor: " << m_configFileName << endl;
   m_font.family = "URW Chancery L";
-  m_font.size = 13;
+  m_font.size = (uint)(13*m_zoom);
   m_font.weight = QFont::Bold;
   m_font.italic = true;
   m_font.foregroundColor = "black";
@@ -107,8 +109,8 @@ ONU::ONU(GameAutomaton* automaton,
       << KGlobal::dirs()-> findResource("appdata", m_skin + "/Images/snapshot.jpg") 
       << endl;
   }
-  m_width  = root.attribute("width").toUInt();
-  m_height  = root.attribute("height").toUInt();
+  m_width  = root.attribute("width").toUInt()*m_zoom;
+  m_height  = root.attribute("height").toUInt()*m_zoom;
   countries.resize(root.attribute("nb-countries").toUInt());
   nationalities.resize(root.attribute("nb-nationalities").toUInt());
   m_continents.resize(root.attribute("nb-continents").toUInt());
@@ -125,7 +127,9 @@ ONU::ONU(GameAutomaton* automaton,
                          i18n("Error !"));
       exit(2);
   }
-  m_map = QPixmap(m_mapFileName);
+  m_map = QPixmap();
+  m_renderer.load(m_mapFileName);
+//   m_map = QPixmap(m_mapFileName);
 
   QString mapMaskFileName = KGlobal::dirs()-> findResource("appdata", m_skin + '/' + root.attribute("map-mask"));
   kDebug() << "Map mask file name: " << mapMaskFileName << endl;
@@ -254,27 +258,27 @@ ONU::ONU(GameAutomaton* automaton,
         unsigned int id = countryNode.attribute("id").toUInt();
         QString name = countryNode.attribute("name");
         QDomNode countryChild = countryNode.firstChild();
-        QPoint centralPoint;
-        QPoint flagPoint;
-        QPoint cannonPoint;
-        QPoint cavalryPoint;
-        QPoint infantryPoint;
+        QPointF centralPoint;
+        QPointF flagPoint;
+        QPointF cannonPoint;
+        QPointF cavalryPoint;
+        QPointF infantryPoint;
         while ( !countryChild.isNull() )
         {
             QDomElement countryChildEl = countryChild.toElement();
-            unsigned int x = countryChildEl.attribute("x").toUInt();
-            unsigned int y = countryChildEl.attribute("y").toUInt();
+            qreal x = m_zoom * countryChildEl.attribute("x").toUInt();
+            qreal y = m_zoom * countryChildEl.attribute("y").toUInt();
 //                kDebug() << "Got attributes for " << countryChild.nodeName() << " x and y: " << countryChildEl.attribute("x") << " " << countryChildEl.attribute("y") << endl;
             if ( countryChild.isElement() && countryChild.nodeName() == "central-point" )
-                centralPoint = QPoint(x, y);
+                centralPoint = QPointF(x, y);
             else if ( countryChild.isElement() && countryChild.nodeName() == "flag-point" )
-                flagPoint = QPoint(x, y);
+                flagPoint = QPointF(x, y);
             else if ( countryChild.isElement() && countryChild.nodeName() == "cannons-point" )
-                cannonPoint = QPoint(x, y);
+                cannonPoint = QPointF(x, y);
             else if ( countryChild.isElement() && countryChild.nodeName() == "cavalry-point" )
-                cavalryPoint = QPoint(x, y);
+                cavalryPoint = QPointF(x, y);
             else if ( countryChild.isElement() && countryChild.nodeName() == "infantry-point" )
-                infantryPoint = QPoint(x, y);
+                infantryPoint = QPointF(x, y);
             countryChild = countryChild.nextSibling();
         }
 //         kDebug() << "Creating country " << name << endl;
@@ -413,14 +417,16 @@ ONU::ONU(GameAutomaton* automaton,
 
 /** This method returns a pointer to the country that contains the point (x,y).
 If there is no country at (x,y), the functions returns 0. */
-Country* ONU::countryAt(QPointF point)
+Country* ONU::countryAt(const QPointF& point)
 {
 //    kDebug() << "ONU::countryAt x y " << x << " " << y << endl;
-    if ( point.x() < 0 || point.x() >= countriesMask.width() 
-        || point.y() < 0 || point.y() >= countriesMask.height() )
+    QPointF norm = point;
+    norm /= m_zoom;
+    if ( norm.x() < 0 || norm.x() >= countriesMask.width()
+      || norm.y() < 0 || norm.y() >= countriesMask.height() )
       return 0;
 
-    unsigned int index = qBlue(countriesMask.pixel(point.toPoint()));
+    unsigned int index = qBlue(countriesMask.pixel(norm.toPoint()));
 //    kDebug() << "OUT ONU::countryAt: " << index << endl;
     if (index >= countries.size()) return 0;
     return countries.at(index);
@@ -605,16 +611,16 @@ Continent* ONU::continentNamed(const QString& name)
 
 void ONU::buildMap()
 {
-  kDebug() << "ONU::buildMap" << endl;
+  kDebug() << k_funcinfo << "with zoom="<< m_zoom << endl;
 //   QSize size((int)(m_renderer.defaultSize().width()*m_zoom),(int)(m_renderer.defaultSize().height()*m_zoom));
-  QSize size((int)(m_width*m_zoom),(int)(m_height*m_zoom));
+  QSize size((int)(m_width),(int)(m_height));
   QImage image(size, QImage::Format_ARGB32_Premultiplied);
   image.fill(0);
   QPainter p(&image);
   m_renderer.render(&p/*, svgid*/);
   QPixmap mapPixmap = QPixmap::fromImage(image);
 
-  m_map.scaled(mapPixmap.size());
+  m_map = mapPixmap;
   QPainter painter(&m_map);
   QFont foregroundFont(m_font.family, m_font.size, m_font.weight, m_font.italic);
   QFont backgroundFont(m_font.family, m_font.size, QFont::Normal, m_font.italic);
@@ -629,15 +635,43 @@ void ONU::buildMap()
     {
       painter.setPen(m_font.backgroundColor);
       painter.setFont(backgroundFont);
-      painter.drawText(int(country->centralPoint().x()-countryNameRect.width()/2+1),
-        int(country->centralPoint().y()+countryNameRect.height()/2 + 1),
+      painter.drawText(
+        int((country->centralPoint().x()-countryNameRect.width()/2+1)),
+        int((country->centralPoint().y()+countryNameRect.height()/2 + 1)),
         countryName);
     }
     painter.setPen(m_font.foregroundColor);
     painter.setFont(foregroundFont);
-    painter.drawText(int(country->centralPoint().x()-countryNameRect.width()/2),
-        int(country->centralPoint().y()+countryNameRect.height()/2),
+    painter.drawText(
+        int((country->centralPoint().x()-countryNameRect.width()/2)),
+        int((country->centralPoint().y()+countryNameRect.height()/2)),
         countryName);
+  }
+}
+
+void ONU::applyZoomFactor(qreal zoomFactor)
+{
+  kDebug() << k_funcinfo << "zoomFactor=" << zoomFactor << "old zoom=" << m_zoom << endl;
+  m_zoom *= zoomFactor;
+  kDebug() << "new zoom=" << m_zoom << endl;
+  m_font.size *= zoomFactor;
+  m_width *= zoomFactor;
+  m_height *= zoomFactor;
+
+  std::vector<Country*>::iterator it, it_end;
+
+  it = countries.begin(); it_end = countries.end();
+  
+  buildMap();
+  for ( ; it != it_end; it++ )
+  {
+    Country* country = *it;
+    country->centralPoint(country->centralPoint()*zoomFactor);
+/*    country->pointFlag(country->pointFlag()*m_zoom);
+    country->pointCannon(country->pointCannon()*m_zoom);
+    country->pointCavalry(country->pointCavalry()*m_zoom);
+    country->pointInfantry(country->pointInfantry()*m_zoom);*/
+    country->createArmiesSprites(m_automaton->game()->backGnd());
   }
 }
 

@@ -616,6 +616,8 @@ public slots:
   void slotMovingArmiesArrived(AnimSpritesGroup*);
   void slotMovingArmyArrived(AnimSprite*);
 
+  void slotZoomIn();
+  void slotZoomOut();
 private slots:
   void optionsConfigure();
 

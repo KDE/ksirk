@@ -115,7 +115,7 @@ void KGameWindow::evenementTimer()
   if ((mousePosition.x() < 10) && (mousePosition.x() >= 0)
       && (mousePosition.y() >= 0) && (mousePosition.y() <= m_frame-> viewport()->height()))
   {
-//     kDebug() << "scrollRight" << endl;
+    kDebug() << "scrollRight" << endl;
     m_frame-> horizontalScrollBar()->setValue ( m_frame-> horizontalScrollBar()->value() - 16);
     restart = true;
   }
@@ -124,14 +124,14 @@ void KGameWindow::evenementTimer()
       (mousePosition.x() <= m_frame-> viewport()->width())
       && (mousePosition.y() >= 0) && (mousePosition.y() <= m_frame-> viewport()->height()))
   {
-//     kDebug() << "scrollLeft" << endl;
+    kDebug() << "scrollLeft" << endl;
     m_frame-> horizontalScrollBar()->setValue ( m_frame-> horizontalScrollBar()->value() + 16);
     restart = true;
   }
   if ((mousePosition.y() < 10) && (mousePosition.y() >= 0)
       && (mousePosition.x() >= 0) && (mousePosition.x() <= m_frame-> viewport()->width()))
   {
-//     kDebug() << "scrollDown" << endl;
+    kDebug() << "scrollDown" << endl;
     m_frame-> verticalScrollBar()->setValue ( m_frame-> verticalScrollBar()->value() - 16);
     restart = true;
   }
@@ -139,7 +139,7 @@ void KGameWindow::evenementTimer()
       (mousePosition.y() <=  m_frame-> viewport()->height())
       && (mousePosition.x() >= 0) && (mousePosition.x() <= m_frame-> viewport()->width()))
   {
-//     kDebug() << "scrollUp" << endl;
+    kDebug() << "scrollUp " << m_frame-> verticalScrollBar()->value() << endl;
     m_frame-> verticalScrollBar()->setValue ( m_frame-> verticalScrollBar()->value() + 16);
     restart = true;
   }
@@ -411,7 +411,7 @@ void KGameWindow::slotShowAboutApplication()
 
 void KGameWindow::slotJoinNetworkGame() 
 {
-  kDebug() << "slotJoinNetworkGame" << endl;
+  kDebug() << k_funcinfo << endl;
   QPoint point;
   m_automaton->event("actionJoinNetworkGame", point);
 }
@@ -434,13 +434,13 @@ void KGameWindow::slotChatMessage()
 void KGameWindow::slotMovingFightersArrived(AnimSpritesGroup* sprites)
 {
 Q_UNUSED(sprites)
-  kDebug() << "KGameWindow::slotMovingFightersArrived" << endl;
+  kDebug() << k_funcinfo << endl;
   m_automaton->movingFigthersArrived();
 }
 
 void KGameWindow::slotMovingArmiesArrived(AnimSpritesGroup* sprites)
 {
-  kDebug() << "KGameWindow::slotMovingArmiesArrived" << endl;
+  kDebug() << k_funcinfo << endl;
   AnimSpritesGroup::iterator it, it_end;
   it = sprites->begin(); it_end = sprites->end();
   for (; it != it_end; it++)
@@ -459,7 +459,7 @@ void KGameWindow::slotMovingArmiesArrived(AnimSpritesGroup* sprites)
 
 void KGameWindow::slotMovingArmyArrived(AnimSprite* sprite)
 {
-  kDebug() << "KGameWindow::slotMovingArmyArrived" << endl;
+  kDebug() << k_funcinfo << endl;
   sprite->setStatic();
   sprite->hide();
   m_automaton->movingArmyArrived(sprite->getDestination(),
@@ -469,13 +469,13 @@ void KGameWindow::slotMovingArmyArrived(AnimSprite* sprite)
 void KGameWindow::slotFiringFinished(AnimSpritesGroup* sprites)
 {
 Q_UNUSED(sprites)
-  kDebug() << "KGameWindow::slotFiringFinished" << endl;
+  kDebug() << k_funcinfo << endl;
   m_automaton->firingFinished();
 }
 
 void KGameWindow::slotExplosionFinished(AnimSpritesGroup* sprites)
 {
-  kDebug() << "KGameWindow::slotExplosionFinished" << endl;
+  kDebug() << k_funcinfo << endl;
   while (!sprites->empty())
   {
     AnimSprite* sprite = sprites->front();
@@ -484,6 +484,27 @@ void KGameWindow::slotExplosionFinished(AnimSpritesGroup* sprites)
     delete sprite;
   }
   m_automaton->explosionFinished();
+}
+
+void KGameWindow::slotZoomIn()
+{
+  kDebug() << k_funcinfo << endl;
+  m_theWorld->applyZoomFactor(1.1);
+  m_frame->setMaximumSize(m_theWorld->width(),m_theWorld->height());
+  m_frame->updateGeometry();
+
+  m_backGnd->setPixmap(m_theWorld->map());
+  
+}
+
+void KGameWindow::slotZoomOut()
+{
+  kDebug() << k_funcinfo << endl;
+  m_theWorld->applyZoomFactor(1.0/1.1);
+  m_frame->setMaximumSize(m_theWorld->width(),m_theWorld->height());
+  m_frame->updateGeometry();
+  
+  m_backGnd->setPixmap(m_theWorld->map());
 }
 
 } // closing namespace Ksirk

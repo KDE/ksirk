@@ -20,6 +20,9 @@
   <Action name="game_load" />
   <Action name="game_save" />
   <Separator/>
+  <Action name="view_zoom_in" />
+  <Action name="view_zoom_out" />
+  <Separator/>
   <!--Action name="game_quit" /-->
   <!--Separator/-->
   <Action name="game_goal" />

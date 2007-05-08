@@ -52,8 +52,9 @@ public:
     * @param visibility Measures how much this sprite is visible. It gives its
     * Z value on the graphics scene.
     */
-  CannonSprite(const QString &imgPath, BackGnd* aBackGnd, unsigned int nbFrames, 
-      unsigned int nbDirs, unsigned int visibility = 200);
+  CannonSprite(const QString &imgPath, BackGnd* aBackGnd,
+              unsigned int nbFrames, unsigned int nbDirs,
+              double zoom, unsigned int visibility = 200);
 
   /** The default destructor */
   virtual ~CannonSprite() {}

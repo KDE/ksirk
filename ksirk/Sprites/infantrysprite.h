@@ -54,7 +54,7 @@ public:
     */
   InfantrySprite(const QString &imgPath, 
     BackGnd* aBackGnd, unsigned int nbFrames, unsigned int nbDirs, 
-    unsigned int visibility = 200);
+    double zoom, unsigned int visibility = 200);
 
   /** The default destructor */
   virtual ~InfantrySprite() {}

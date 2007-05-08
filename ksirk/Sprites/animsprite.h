@@ -76,8 +76,8 @@ public:
     * Z value on the graphics scene.
     */
   AnimSprite(const QString &imgPath, BackGnd* aBackGnd,
-              unsigned int nbFrames, unsigned int nbDirs, 
-              unsigned int visibility = 100);
+              unsigned int nbFrames, unsigned int nbDirs,
+              double zoom, unsigned int visibility = 100);
 
   /** The default destructor */
   virtual ~AnimSprite();
@@ -237,6 +237,8 @@ public:
 
   void setStatic();
 
+  void applyZoomFactor(qreal zoomFactor);
+  
 public slots:
   void animate();
 
@@ -273,7 +275,12 @@ protected:
 
   bool m_animated;
 
-private:
+  /**
+   * Zoom factor
+   */
+  double m_zoom;
+  
+  private:
 
   /**
     * Change the active frame to the next one in the list. Use the first one
@@ -328,11 +335,6 @@ private:
     * Position information needed to load graphics from the pool
     */
   double spriteHeight, spriteWidth;
-
-  /** 
-    * Zoom factor
-    */
-  double m_zoom;
 
   /** If this member is true, the sprite should approach its destination by
     * the left. So, if it is at the right side of its dest, it will continue

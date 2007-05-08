@@ -272,7 +272,8 @@ void Player::setFlag()
                             m_nation->flagFileName(), 
                             m_automaton->game()->backGnd(), 
                             Sprites::SkinSpritesData::single().intData("flag-frames"), 
-                            Sprites::SkinSpritesData::single().intData("flag-versions"));
+                            Sprites::SkinSpritesData::single().intData("flag-versions"),
+                            m_automaton->game()->backGnd()->onu()->zoom());
     m_flag->hide();
   }
 }

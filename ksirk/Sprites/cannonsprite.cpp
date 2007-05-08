@@ -28,8 +28,8 @@ namespace Ksirk {
 
 CannonSprite::CannonSprite(const QString &imgPath,
         BackGnd* aBackGnd, unsigned int nbFrames, unsigned int nbDirs, 
-        unsigned int visibility) :
-    ArmySprite(imgPath, aBackGnd, nbFrames, nbDirs, visibility)
+        double zoom, unsigned int visibility) :
+    ArmySprite(imgPath, aBackGnd, nbFrames, nbDirs, zoom, visibility)
 {
 }
 
@@ -41,11 +41,11 @@ void CannonSprite::setupTravel(
   if (dpi == 0) 
   {
     AnimSprite::setupTravel(src, dest, 
-      src->pointCannon(), dest-> pointCannon());
+                             src->pointCannon()*m_zoom, dest-> pointCannon()*m_zoom);
   }
   else 
   {
-    AnimSprite::setupTravel(src, dest, src->pointCannon(), *dpi);
+    AnimSprite::setupTravel(src, dest, src->pointCannon()*m_zoom, *dpi);
   }
 }
 

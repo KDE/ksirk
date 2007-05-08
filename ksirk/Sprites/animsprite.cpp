@@ -43,11 +43,11 @@ using namespace GameLogic;
 
 AnimSprite::AnimSprite(const QString &imgPath, BackGnd* aBackGnd,
                         unsigned int nbFrames, unsigned int nbDirs,
-                        unsigned int visibility) :
+                        double zoom, unsigned int visibility) :
     QGraphicsPixmapItem(0, aBackGnd-> scene()),
     m_animated(false), look(right), nbVersions(nbDirs),
     backGnd(aBackGnd), destination(0), destinationPoint(), frames(nbFrames), actFrame(0),
-    myState(NONE), m_zoom(1.0),
+    myState(NONE), m_zoom(zoom),
     approachDestByLeft(false), approachDestByRight(false),
     approachDestByTop(false), approachDestByBottom(false),
     m_frames(),
@@ -665,6 +665,16 @@ void AnimSprite::setStatic()
 //   AnimSpritePool::changeable().removeSprite(this);
 }
 
+void AnimSprite::applyZoomFactor(qreal zoomFactor)
+{
+  kDebug() << k_funcinfo << "old zoom=" << m_zoom << endl;
+  m_zoom *= zoomFactor;
+  spriteWidth *= m_zoom;
+  spriteHeight *= m_zoom;
+  
+  sequenceConstruction();
+  update();
+}
 
 } // closing namespace Ksirk
 

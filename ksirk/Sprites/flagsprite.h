@@ -46,9 +46,10 @@ public:
     * @param visibility Measures how much this sprite is visible. It gives its
     * Z value on the graphics scene.
     */
-  FlagSprite(const QString &imgPath,
-          BackGnd* aBackGnd, unsigned int nbFrames, unsigned int nbDirs) :
-      AnimSprite(imgPath, aBackGnd, nbFrames, nbDirs)
+  FlagSprite(const QString &imgPath, BackGnd* aBackGnd,
+              unsigned int nbFrames, unsigned int nbDirs,
+              double zoom) :
+      AnimSprite(imgPath, aBackGnd, nbFrames, nbDirs, zoom)
   {
     setAnimated();
   }

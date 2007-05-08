@@ -49,8 +49,8 @@ public:
     * Z value on the graphics scene.
     */
   ArmySprite(const QString &imgPath, BackGnd* aBackGnd, unsigned int nbFrames, 
-      unsigned int nbDirs, unsigned int visibility = 200) :
-    AnimSprite(imgPath, aBackGnd, nbFrames, nbDirs, visibility)
+      unsigned int nbDirs, double zoom, unsigned int visibility = 200) :
+    AnimSprite(imgPath, aBackGnd, nbFrames, nbDirs, zoom, visibility)
   {
     setStatic();
   }

@@ -26,8 +26,9 @@
 namespace Ksirk {
 
 CavalrySprite::CavalrySprite(const QString &imgPath,
-        BackGnd* aBackGnd, unsigned int nbFrames, unsigned int nbDirs, unsigned int visibility) :
-    ArmySprite(imgPath, aBackGnd, nbFrames, nbDirs, visibility)
+        BackGnd* aBackGnd, unsigned int nbFrames, unsigned int nbDirs,
+                              double zoom, unsigned int visibility) :
+    ArmySprite(imgPath, aBackGnd, nbFrames, nbDirs, zoom, visibility)
 {
 }
 
@@ -46,11 +47,11 @@ void CavalrySprite::setupTravel(
 {
   if (dpcav==0) 
   {
-    AnimSprite::setupTravel(src, dest, src->pointCavalry(), dest-> pointCavalry());
+    AnimSprite::setupTravel(src, dest, src->pointCavalry()*m_zoom, dest-> pointCavalry()*m_zoom);
   }
   else 
   {
-    AnimSprite::setupTravel(src, dest, src->pointCavalry(), *dpcav);
+    AnimSprite::setupTravel(src, dest, src->pointCavalry()*m_zoom, *dpcav);
   }
 }
 

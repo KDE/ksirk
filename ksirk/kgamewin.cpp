@@ -184,6 +184,12 @@ void KGameWindow::initActions()
   action = KStandardGameAction::quit(this, SLOT(close()), this);
   actionCollection()->addAction(action->objectName(), action);
 
+  action = KStandardAction::zoomIn(this, SLOT(slotZoomIn()), this);
+  actionCollection()->addAction(action->objectName(), action);
+
+  action = KStandardAction::zoomOut(this, SLOT(slotZoomOut()), this);
+  actionCollection()->addAction(action->objectName(), action);
+
   // specific ksirk action
   QString imageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_NEWNETGAME);
 //   kDebug() << "Trying to load button image file: " << imageFileName << endl;
@@ -314,6 +320,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
   m_frame->setMaximumHeight(m_theWorld->height());
   m_frame->setCacheMode( QGraphicsView::CacheBackground );
   setCentralWidget(m_frame);
+
   kDebug() << "ONU backgnd file name: " <<  m_theWorld->mapFileName() << endl;
   
   if (m_scene != 0)

@@ -54,7 +54,8 @@ public:
     * Z value on the graphics scene.
     */
     CavalrySprite(const QString &imgPath, BackGnd* aBackGnd,
-            unsigned int nbFrames, unsigned int nbDirs, unsigned int visibility = 200);
+                  unsigned int nbFrames, unsigned int nbDirs,
+                  double zoom, unsigned int visibility = 200);
 
   /** The default destructor */
     virtual ~CavalrySprite() {}

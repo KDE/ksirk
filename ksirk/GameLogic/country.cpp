@@ -25,6 +25,7 @@
 #include "kgamewin.h"
 #include "Sprites/flagsprite.h"
 #include "Sprites/skinSpritesData.h"
+#include "GameLogic/onu.h"
 
 #include <qstring.h>
 #include <qapplication.h>
@@ -80,6 +81,7 @@ void Country::reset()
   m_belongsTo = 0;
   nbArmies(1);
   createArmiesSprites(m_automaton->game()->backGnd());
+  
   if (m_flag)
   {
     m_flag->hide();
@@ -90,7 +92,9 @@ void Country::reset()
 
 void Country::createArmiesSprites(BackGnd *backGnd)
 {
-//   kDebug() << "createArmiesSprites..." << endl;
+  kDebug() << k_funcinfo << "zoom=" << backGnd->onu()->zoom() << endl;
+  BackGnd* bg = backGnd==0?m_automaton->game()->backGnd():backGnd;
+  
   unsigned int armies = nbArmies();
   clearAllSprites();
   int i = 0;
@@ -100,9 +104,10 @@ void Country::createArmiesSprites(BackGnd *backGnd)
         Sprites::SkinSpritesData::single().strData("cannon-file"), 
         backGnd, 
         Sprites::SkinSpritesData::single().intData("cannon-frames"), 
-        Sprites::SkinSpritesData::single().intData("cannon-versions"));
+        Sprites::SkinSpritesData::single().intData("cannon-versions"),
+        backGnd->onu()->zoom());
     sprite-> setDestination(NULL);             // Sprite immobile
-    sprite-> setPos(m_pointCannon.x()+5*i,m_pointCannon.y()+5*i);
+    sprite-> setPos((m_pointCannon.x()+5*i)*bg->onu()->zoom(),(m_pointCannon.y()+5*i)*bg->onu()->zoom());
     m_spritesCannons.append(sprite);
     i++;
     armies -= 10;
@@ -114,9 +119,11 @@ void Country::createArmiesSprites(BackGnd *backGnd)
         Sprites::SkinSpritesData::single().strData("cavalry-file"), 
         backGnd, 
         Sprites::SkinSpritesData::single().intData("cavalry-frames"), 
-        Sprites::SkinSpritesData::single().intData("cavalry-versions"));
+        Sprites::SkinSpritesData::single().intData("cavalry-versions"),
+        backGnd->onu()->zoom());
     sprite-> setDestination(NULL);             // Sprite immobile
-    sprite-> setPos(m_pointCavalry.x()+5*i,m_pointCavalry.y()+5*i);
+    sprite-> setPos((m_pointCavalry.x()+5*i)*bg->onu()->zoom(),
+                     (m_pointCavalry.y()+5*i)*bg->onu()->zoom());
     m_spritesCavalry.append(sprite);
     i++;
     armies -= 5;
@@ -128,25 +135,36 @@ void Country::createArmiesSprites(BackGnd *backGnd)
         Sprites::SkinSpritesData::single().strData("infantry-file"), 
         backGnd, 
         Sprites::SkinSpritesData::single().intData("infantry-frames"), 
-        Sprites::SkinSpritesData::single().intData("infantry-versions"));
+        Sprites::SkinSpritesData::single().intData("infantry-versions"),
+        backGnd->onu()->zoom());
     sprite-> setDestination(NULL);             // Sprite immobile
-    sprite-> setPos(m_pointInfantry.x()+5*i,m_pointInfantry.y()+5*i);
+    sprite-> setPos((m_pointInfantry.x()+5*i)*bg->onu()->zoom(),
+                     (m_pointInfantry.y()+5*i)*bg->onu()->zoom());
     m_spritesInfantry.append(sprite);
     i++;
     armies--;
   }
+  
+  flag(m_belongsTo->flagFileName(), bg);
 }
 
 void Country::flag(const QString& theFlagFileName, BackGnd *backGnd)
 {
 //   kDebug() << "Country("<<m_name<<", "<<this<<")::flag flagFileName " << theFlagFileName << endl;
 
-//   if (m_flag) delete m_flag;
-  m_flag = new FlagSprite(theFlagFileName, backGnd, 
+  if (m_flag)
+  {
+    m_flag->hide();
+        delete m_flag;
+    m_flag = 0;
+  }
+  
+  m_flag = new FlagSprite(theFlagFileName, backGnd,
       Sprites::SkinSpritesData::single().intData("flag-frames"), 
-      Sprites::SkinSpritesData::single().intData("flag-versions"));
+      Sprites::SkinSpritesData::single().intData("flag-versions"),
+                           backGnd->onu()->zoom());
   m_flag-> setDestination(NULL);
-  m_flag-> setPos(m_pointFlag.x(),m_pointFlag.y());
+  m_flag-> setPos(m_pointFlag.x()*backGnd->onu()->zoom(),m_pointFlag.y()*backGnd->onu()->zoom());
   m_flag-> setZValue(10);
 //    qDebug("OUT Country::flag");
 }
@@ -435,7 +453,7 @@ QDataStream& operator>>(QDataStream& stream, Country* country)
   country->owner(country->automaton()->playerNamed(ownerName));
   country->nbArmies(nbArmies);
   country->nbAddedArmies(nbAddedArmies);
-  country->createArmiesSprites(country->automaton()->game()->backGnd());
+  country->reset();
   return stream;
 }
 
