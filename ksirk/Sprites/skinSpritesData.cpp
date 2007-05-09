@@ -19,10 +19,10 @@
 #include "skinSpritesData.h"
 #include "kdebug.h"
 
-#include <QMessageBox>
 #include <QTextStream>
 
-#include <klocale.h>
+#include <KLocale>
+#include <KMessageBox>
 
 namespace Ksirk{
 namespace Sprites {
@@ -86,7 +86,7 @@ int SkinSpritesData::intData(const QString& name) const
   {
     QString msg;
     QTextStream(&msg) << i18n("Error - Unknown skin int data: ") << name;
-    QMessageBox::critical(0, i18n("Fatal Error"), msg);
+    KMessageBox::error(0, msg, i18n("Fatal Error"));
     exit(1);    
   }
   else
@@ -102,7 +102,7 @@ const QString& SkinSpritesData::strData(const QString& name) const
   {
     QString msg;
     QTextStream(&msg) << i18n("Error - Unknown skin string data: ") << name;
-    QMessageBox::critical(0, i18n("Fatal Error"), msg);
+    KMessageBox::error(0, msg, i18n("Fatal Error"));
     exit(1);    
   }
   else

@@ -431,10 +431,9 @@ void AIPlayer::placeArmiesAction()
     const Country* receiver = chooseReceivingCountry();
     if (receiver == 0)
     {
-      QString msg;
-      QTextStream(&msg) << i18n("Error - No receiving country selected while computer player ") << Player::name() << i18n(" had still ") << getNbAvailArmies() << i18n(" armies to place. This is bug probably #2232 at www.gna.org.");
+      QString msg = i18n("Error - No receiving country selected while computer player %1 had still %2 armies to place. This is bug probably #2232 at www.gna.org.", Player::name(), getNbAvailArmies());
       KMessageBox::error(0, msg, i18n("Fatal Error"));
-      exit();    
+      exit();
     }
     kDebug() << "Placing an army in " << receiver->name() 
         << " ; point=" << receiver->centralPoint() << endl;
