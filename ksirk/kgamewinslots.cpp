@@ -507,4 +507,16 @@ void KGameWindow::slotZoomOut()
   m_backGnd->setPixmap(m_theWorld->map());
 }
 
+void KGameWindow::slotRemoveMessage()
+{
+  kDebug() << k_funcinfo << endl;
+  if (m_message != 0)
+  {
+    kDebug() << "hiding and deleting" << endl;
+    m_message->hide();
+    delete m_message;
+    m_message = 0;
+  }
+}
+
 } // closing namespace Ksirk

@@ -56,7 +56,8 @@ set(ksirk_SRCS
   gestionSprites.cpp 
   kgamewin.cpp 
   kgamewinslots.cpp 
-  ksirkConfigDialog.cpp 
+  ksirkConfigDialog.cpp
+  MessageBubble.cpp
 )
 
 set(ksirk_UI

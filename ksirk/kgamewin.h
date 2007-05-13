@@ -47,6 +47,7 @@ class KToolBar;
 class QEvent;
 class QDockWidget;
 class QGraphicsScene;
+class QGraphicsTextItem;
 
 namespace Phonon
 {
@@ -476,6 +477,8 @@ public:
   /** Returns a pointer to the chat widget used to chat and to display messages. */
   inline KGameChat* chatWidget() {return m_chatDlg;}
 
+  void showMessage(const QString& message, quint32 delay=5);
+
 protected:
 
   /**
@@ -628,6 +631,8 @@ private slots:
     */
   void evenementTimer();
 
+  void slotRemoveMessage();
+
 private:
   GameLogic::GameAutomaton* m_automaton;
   
@@ -736,7 +741,9 @@ private:
   QList<AnimSpritesGroup*> m_animSpritesGroups;
 
   KToolBar* gameActionsToolBar;
-  
+
+  QGraphicsItem * m_message;
+
 private: // Private methods
   void attack(GameLogic::Country& attacker, GameLogic::Country& defender, unsigned int nb);
   void moveArmies(GameLogic::Country& src, GameLogic::Country& dest, unsigned int nb);

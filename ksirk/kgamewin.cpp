@@ -22,6 +22,7 @@
 #include "kgamewin.h"
 #include "ksirkConfigDialog.h"
 #include "ksirksettings.h"
+#include "MessageBubble.h"
 #include "Sprites/animspritesgroup.h"
 #include "GameLogic/aiplayer.h"
 #include "GameLogic/aiColsonPlayer.h"
@@ -92,7 +93,8 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_chatDlg(0),
   m_audioPlayer(new Phonon::AudioPlayer( Phonon::NotificationCategory )),
   m_timer(this),
-  gameActionsToolBar(0)
+  gameActionsToolBar(0),
+  m_message(0)
 {
   kDebug() << "KGameWindow constructor begin" << endl;
 
@@ -766,6 +768,8 @@ void KGameWindow::displayNormalGameButtons()
     addAButton(CM_ATTACK2,  SLOT(slotAttack2()), i18n("Attack with two armies"),KShortcut(Qt::Key_2),true);
     addAButton(CM_ATTACK3,  SLOT(slotAttack3()), i18n("Attack with three armies"),KShortcut(Qt::Key_3),true);
     addAButton(CM_SHIFT, SLOT(slotMove()), i18n("Move armies"),KShortcut(Qt::Key_M),true);
+
+    showMessage(i18n("Now, choose an action.<br/>If you choose an attack, press the mouse button in the attacking country<br/>and then <b>drag and drop</b> on its neighbour your want to attack."), 10);
   }
   gameActionsToolBar-> hide();
   gameActionsToolBar-> show();
@@ -1907,7 +1911,7 @@ bool KGameWindow::nextPlayerRecycling()
   */
 bool KGameWindow::nextPlayerNormal()
 {
-  kDebug() << "nextPlayerNormal" << endl;
+  kDebug() << k_funcinfo << endl;
   if (setCurrentPlayerToNext())
   {
     distributeArmies();
@@ -2372,6 +2376,25 @@ void KGameWindow::explain()
   KMessageParts message5Parts;
   message5Parts << I18N_NOOP("and then let the system guide you through messages and tooltips appearing on buttons when hovering above them.");
   broadcastChangeItem(message5Parts, ID_NO_STATUS_MSG);
+}
+
+void KGameWindow::showMessage(const QString& message, quint32 delay)
+{
+  kDebug() << k_funcinfo << endl;
+  if (m_message != 0)
+  {
+    QGraphicsItem* i = m_message;
+    m_message = 0;
+    delete i;
+  }
+
+  m_message  = new MessageBubble( message, 0, delay );
+
+  m_scene->addItem(m_message);
+  m_message->setZValue(1000);
+  QTimer::singleShot(delay*1000, this, SLOT(slotRemoveMessage()));
+
+  m_message->setPos(m_frame-> mapToScene(QPoint(30,30)));
 }
 
 

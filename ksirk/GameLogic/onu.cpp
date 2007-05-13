@@ -109,8 +109,8 @@ ONU::ONU(GameAutomaton* automaton,
       << KGlobal::dirs()-> findResource("appdata", m_skin + "/Images/snapshot.jpg") 
       << endl;
   }
-  m_width  = root.attribute("width").toUInt()*m_zoom;
-  m_height  = root.attribute("height").toUInt()*m_zoom;
+  m_width  = (unsigned int)(root.attribute("width").toUInt()*m_zoom);
+  m_height  = (unsigned int)(root.attribute("height").toUInt()*m_zoom);
   countries.resize(root.attribute("nb-countries").toUInt());
   nationalities.resize(root.attribute("nb-nationalities").toUInt());
   m_continents.resize(root.attribute("nb-continents").toUInt());
