@@ -444,8 +444,8 @@ public:
     * the attacker and the defender countries (or the source and the target) if 
     * the move is valid
     */
-  inline void firstCountry(GameLogic::Country* country) {m_firstCountry = country;}
-  inline void secondCountry(GameLogic::Country* country) {m_secondCountry = country;}
+  void firstCountry(GameLogic::Country* country);
+  void secondCountry(GameLogic::Country* country);
   inline GameLogic::Country* firstCountry() {return m_firstCountry;}
   inline GameLogic::Country* secondCountry() {return m_secondCountry;}
   //@}

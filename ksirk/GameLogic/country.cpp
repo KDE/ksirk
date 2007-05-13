@@ -61,7 +61,8 @@ Country::Country(GameAutomaton* game,
   m_pointCannon(cannonPoint), 
   m_pointCavalry(cavalryPoint),
   m_pointInfantry(infantryPoint),
-  m_id(id)
+  m_id(id),
+  m_highlighting(0)
 {
 //   kDebug() << k_funcinfo << m_name << ", " << this << endl;
 }
@@ -447,6 +448,42 @@ bool Country::hasAdjacentEnemy()
     }
   }
   return false;
+}
+
+void Country::highlight(const QColor& color)
+{
+  clearHighlighting();
+  
+  QBrush brush(color);
+  m_highlighting = new QGraphicsEllipseItem(
+      m_pointFlag.x(), m_pointFlag.y(),
+      m_flag->boundingRect().width(),
+      m_flag->boundingRect().height(),
+      m_automaton->game()->backGnd());
+
+  ((QGraphicsEllipseItem*)m_highlighting)->setBrush(brush);
+}
+
+void Country::highlightAsAttacker()
+{
+  QColor color(Qt::red);
+  highlight(color);
+}
+
+void Country::highlightAsDefender()
+{
+  QColor color(Qt::yellow);
+  highlight(color);
+}
+
+void Country::clearHighlighting()
+{
+  if (m_highlighting!=0)
+  {
+    m_highlighting->hide();
+    delete m_highlighting;
+    m_highlighting = 0;
+  }
 }
 
 QDataStream& operator>>(QDataStream& stream, Country* country)

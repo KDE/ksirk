@@ -286,7 +286,15 @@ public:
     */
   bool hasAdjacentEnemy();
 
-private:
+  void highlight(const QColor& color);
+
+  void highlightAsAttacker();
+  
+  void highlightAsDefender();
+  
+  void clearHighlighting();
+  
+  private:
   GameAutomaton* m_automaton;
   
   /**
@@ -376,6 +384,8 @@ private:
   
   /** The unique integer identifier of this country. */
   unsigned int m_id;
+
+  QGraphicsItem* m_highlighting;
 };
 
 QDataStream& operator>>(QDataStream& stream, Country* country);

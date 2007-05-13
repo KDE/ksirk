@@ -755,7 +755,6 @@ GameAutomaton::GameState GameAutomaton::run()
     else if (event == "actionMove")
     {
 //       kDebug() << "actionMove handling" << endl;
-      
       m_game->displayCancelButton();
       QByteArray buffer;
       QDataStream stream(&buffer, QIODevice::WriteOnly);
@@ -1761,10 +1760,12 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     break;
   case FirstCountry:
     stream >> countryName;
+    kDebug() << "FirstCountry " << countryName << endl;
     m_game->firstCountry(m_game->theWorld()->countryNamed(countryName));
     break;
   case SecondCountry:
     stream >> countryName;
+    kDebug() << "SecondCountry " << countryName << endl;
     m_game->secondCountry(m_game->theWorld()->countryNamed(countryName));
     break;
   case InitCombatMovement:

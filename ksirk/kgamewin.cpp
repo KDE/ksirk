@@ -1541,6 +1541,8 @@ int KGameWindow::setCurrentPlayerToNext(bool restartRunningAIs)
 
 bool KGameWindow::terminateAttackSequence()
 {
+  m_firstCountry->clearHighlighting();
+  m_secondCountry->clearHighlighting();
   m_animFighters->hideAndRemoveAll();
   gameActionsToolBar-> show();
   return attackEnd();
@@ -1548,6 +1550,7 @@ bool KGameWindow::terminateAttackSequence()
 
 bool KGameWindow::attacker(const QPointF& point)
 {
+  kDebug() << k_funcinfo << endl;
   Country* clickedCountry = clickIn(point);
   KMessageParts messageParts;
   if (clickedCountry == 0)
@@ -1564,7 +1567,7 @@ bool KGameWindow::attacker(const QPointF& point)
   QByteArray buffer2;
   QDataStream stream2(&buffer2, QIODevice::WriteOnly);
   stream2 << "";
-  m_automaton->sendMessage(buffer,SecondCountry);
+  m_automaton->sendMessage(buffer2,SecondCountry);
   
   if (clickedCountry-> owner() != currentPlayer())
   {
@@ -2397,6 +2400,38 @@ void KGameWindow::showMessage(const QString& message, quint32 delay)
   m_message->setPos(m_frame-> mapToScene(QPoint(30,30)));
 }
 
+
+void KGameWindow::firstCountry(GameLogic::Country* country)
+{
+  if (m_firstCountry != 0)
+  {
+    m_firstCountry->clearHighlighting();
+  }
+  kDebug() << k_funcinfo << endl;
+  m_firstCountry = country;
+  if (country == 0)
+  {
+    return;
+  }
+  kDebug() << k_funcinfo << country->name() << endl;
+  country->highlight(Qt::red);
+}
+
+void KGameWindow::secondCountry(GameLogic::Country* country)
+{
+  if (m_secondCountry != 0)
+  {
+    m_secondCountry->clearHighlighting();
+  }
+  kDebug() << k_funcinfo << endl;
+  m_secondCountry = country;
+  if (country == 0)
+  {
+    return;
+  }
+  kDebug() << k_funcinfo << country->name() << endl;
+  country->highlight(Qt::yellow);
+}
 
 
 } // closing namespace Ksirk

@@ -500,6 +500,10 @@ std::vector<Country*> ONU::neighboursNotBelongingTo(const Country& country, cons
   */
 Country* ONU::countryNamed(const QString& name)
 {
+  if (name == "")
+  {
+    return 0;
+  }
   for (unsigned int i = 0 ; i < countries.size(); i++)
   {
     Country *c = countries.at(i);
@@ -656,9 +660,9 @@ void ONU::applyZoomFactor(qreal zoomFactor)
   kDebug() << k_funcinfo << "zoomFactor=" << zoomFactor << "old zoom=" << m_zoom << endl;
   m_zoom *= zoomFactor;
   kDebug() << "new zoom=" << m_zoom << endl;
-  m_font.size *= zoomFactor;
-  m_width *= zoomFactor;
-  m_height *= zoomFactor;
+  m_font.size = (unsigned int)(m_font.size*zoomFactor);
+  m_width = (unsigned int)(m_width *zoomFactor);
+  m_height = (unsigned int)(m_height *zoomFactor);
 
   buildMap();
 
@@ -667,11 +671,6 @@ void ONU::applyZoomFactor(qreal zoomFactor)
   for ( ; it != it_end; it++ )
   {
     Country* country = *it;
-/*    country->centralPoint(country->centralPoint()*zoomFactor);
-    country->pointFlag(country->pointFlag()*m_zoom);
-    country->pointCannon(country->pointCannon()*m_zoom);
-    country->pointCavalry(country->pointCavalry()*m_zoom);
-    country->pointInfantry(country->pointInfantry()*m_zoom);*/
     country->createArmiesSprites(m_automaton->game()->backGnd());
   }
 }
