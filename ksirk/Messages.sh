@@ -1,3 +1,8 @@
 #! /usr/bin/env bash
+
+# process the .ui and .rc files
 $EXTRACTRC `find . -name \*.ui -o -name \*.rc` > rc.cpp
-$XGETTEXT *.cpp -o $podir/kttt.pot
+$EXTRACTRC --tag=desc `find skins -iname onu.xml` >> rc.cpp
+./extract-onu-names.pl  `find skins -iname onu.xml` >> rc.cpp
+
+$XGETTEXT `find $SRCDIR -name "*.cpp" -o -name "*.h"` rc.cpp -o $podir/ksirk.pot
