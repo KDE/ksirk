@@ -250,7 +250,7 @@ GameAutomaton::GameState GameAutomaton::run()
     m_events.pop_front();
   }
 
-  kDebug() << "Handling " << stateName() << " ; " << event << " ; " << point << endl;
+  kDebug() << k_funcinfo << "Handling " << stateName() << " ; " << event << " ; " << point << endl;
   if (currentPlayer())
   {
     kDebug() << "current player=" << currentPlayer()->name() << " is active=" << currentPlayer()->isActive() << endl;

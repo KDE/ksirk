@@ -751,7 +751,17 @@ void KGameWindow::displayOpenGameButton()
 
 void KGameWindow::displayNormalGameButtons()
 {
-  kDebug() << "KGameWindow::displayNormalGameButtons" << endl;
+  kDebug() << k_funcinfo << endl;
+  if (m_firstCountry != 0)
+  {
+    m_firstCountry->clearHighlighting();
+    m_firstCountry = 0;
+  }
+  if (m_secondCountry != 0)
+  {
+    m_secondCountry->clearHighlighting();
+    m_secondCountry = 0;
+  }
   gameActionsToolBar-> show();
 
   clearGameActionsToolbar(false);
@@ -1601,6 +1611,7 @@ bool KGameWindow::attacker(const QPointF& point)
 
 unsigned int KGameWindow::attacked(const QPointF& point)
 {
+  kDebug() << k_funcinfo << endl;
 //  if (currentPlayer()-> isAI()) return 3;
         
   unsigned int res = 0;
@@ -1629,6 +1640,7 @@ unsigned int KGameWindow::attacked(const QPointF& point)
   {
     messageParts << I18N_NOOP("You are trying to attack %1 from itself !") << m_firstCountry-> name();
     displayNormalGameButtons();
+    m_firstCountry = 0;
   }
   else if (!m_firstCountry-> communicateWith(secondCountry))
   {
