@@ -932,9 +932,10 @@ void GameAutomaton::acknowledge(Player* p, unsigned int ack)
 // demo game here we have only the mouse player available.
 void GameAutomaton::createIO(KPlayer *player,KGameIO::IOMode io)
 {
-  kDebug() << "createIO for " << player->name() << endl;
   // Error check
   if (!player) return;
+
+  kDebug() << "createIO for " << player->name() << endl;
 
   if (io&KGameIO::MouseIO)
   {
