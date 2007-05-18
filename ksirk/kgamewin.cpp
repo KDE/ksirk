@@ -2202,7 +2202,8 @@ Player* KGameWindow::addPlayer(const QString& playerName,
     p->setNbAttack(nbAttack);
     p->setNbDefense(nbDefense);
     p->setPassword(password);
-    m_automaton->addPlayer(p);
+    if (!m_automaton->addPlayer(p))
+        p = 0; // freed - weired API
   }
   return p;
 }
