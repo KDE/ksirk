@@ -792,9 +792,9 @@ void KGameWindow::displayDefenseButtons()
   {
     if (!(static_cast<AIPlayer *>(currentPlayer()))-> isRunning()) (static_cast<AIPlayer *>(currentPlayer()))-> start();
   }
-  if (! (m_secondCountry-> owner()->isAI() ))
+  if (m_secondCountry && ! (m_secondCountry-> owner()->isAI() ))
   {
-    if (m_secondCountry && m_secondCountry-> owner() && m_secondCountry-> owner()-> getFlag())
+    if (m_secondCountry-> owner() && m_secondCountry-> owner()-> getFlag())
     {
       m_goalAction-> setIcon(KIcon(m_secondCountry-> owner()->getFlag()-> image(0)));
       m_goalAction-> setIconText(i18n("Goal"));
