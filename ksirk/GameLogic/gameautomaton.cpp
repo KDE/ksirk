@@ -1282,6 +1282,7 @@ void GameAutomaton::slotPlayerJoinedGame(KPlayer* player)
 {
   kDebug() << "slotPlayerJoinedGame currently " << playerList()->count() << " / " << maxPlayers() << endl;
   Player* p = dynamic_cast<Player*>(player);
+  Q_ASSERT(p);
   
   if (isAdmin())
   {
