@@ -1631,7 +1631,13 @@ unsigned int KGameWindow::attacked(const QPointF& point)
 
   KMessageParts messageParts;
 
-  if (!secondCountry || !secondCountry-> owner()) 
+  if ( (m_firstCountry == NULL) || (secondCountry == NULL)
+          || (m_firstCountry-> owner() != currentPlayer()) )
+  {
+    messageParts << I18N_NOOP("Nothing to attack !");
+    displayNormalGameButtons();
+  } 
+  else if (!secondCountry-> owner()) 
   {
     messageParts << I18N_NOOP("Invalid attacked country.");
     displayNormalGameButtons();
@@ -1656,12 +1662,6 @@ unsigned int KGameWindow::attacked(const QPointF& point)
   else if (m_firstCountry-> owner() != currentPlayer()) 
   {
     messageParts << I18N_NOOP("%1 ! You are not the owner of %2!") << currentPlayer()-> name() << m_firstCountry-> name();
-    displayNormalGameButtons();
-  }
-  else if ( (m_firstCountry == NULL) || (secondCountry == NULL)
-          || (m_firstCountry-> owner() != currentPlayer()) )
-  {
-    messageParts << I18N_NOOP("Nothing to attack !");
     displayNormalGameButtons();
   }
   else if ((secondCountry-> nbArmies() > 1)
