@@ -1970,6 +1970,10 @@ void KGameWindow::attack(unsigned int nb)
 void KGameWindow::defense(unsigned int nb)
 {
   clearGameActionsToolbar();
+
+  if (!m_firstCountry) // anything left to do?
+     return;
+
   m_secondCountry-> owner()-> setNbDefense(nb);
   KMessageParts messageParts;
   
@@ -1991,7 +1995,7 @@ void KGameWindow::defense(unsigned int nb)
 
   broadcastChangeItem(messageParts, ID_NO_STATUS_MSG);
 
-  if (m_firstCountry && m_firstCountry-> owner() && m_firstCountry-> owner()-> getFlag())
+  if (m_firstCountry-> owner() && m_firstCountry-> owner()-> getFlag())
   {
     m_goalAction-> setIcon(KIcon(m_firstCountry-> owner()->getFlag()-> image(0)));
     m_goalAction-> setIconText(i18n("Goal"));
