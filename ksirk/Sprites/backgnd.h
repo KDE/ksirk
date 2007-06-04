@@ -33,7 +33,6 @@ namespace GameLogic
 {
   class ONU;
 }
-class DecoratedGameFrame;
 
 /**
  * BackGnd is the sprite used to display the background map image

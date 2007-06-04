@@ -40,14 +40,12 @@
 // #include <kdialogbase.h>
 
 class QAction;
-class KTextEdit;
 class KGameChat;
 class KToolBar;
 
 class QEvent;
 class QDockWidget;
 class QGraphicsScene;
-class QGraphicsTextItem;
 
 namespace Phonon
 {

@@ -39,7 +39,6 @@
 namespace Ksirk
 {
 
-class BackGnd;
 // class Goal;
 
 namespace GameLogic
