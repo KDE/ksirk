@@ -38,8 +38,8 @@ public:
     * This constructor allows to create a new @ref ArmySprite whose images are
     * taken from the given file name with the given number of frames and
     * number of look directions
-    * @param imgPath The (SVG) file name from which to load images
-    * @param aBackGnd The background giving info about the world geometry and 
+    * @param svgid The id of the SVG element from which to load images
+    * @param aBackGnd The background giving info about the world geometry and
     * access to the underlying QGraphicsScene
     * @param nbFrames The number of different frames in this sprite animation, 
     * thus the number of columns in the sprite image
@@ -48,9 +48,11 @@ public:
     * @param visibility Measures how much this sprite is visible. It gives its
     * Z value on the graphics scene.
     */
-  ArmySprite(const QString &imgPath, BackGnd* aBackGnd, unsigned int nbFrames, 
-      unsigned int nbDirs, double zoom, unsigned int visibility = 200) :
-    AnimSprite(imgPath, aBackGnd, nbFrames, nbDirs, zoom, visibility)
+  ArmySprite(const QString &svgid,
+              BackGnd* aBackGnd, unsigned int nbFrames,
+              unsigned int nbDirs, double zoom,
+              unsigned int visibility = 200) :
+    AnimSprite(svgid, aBackGnd, nbFrames, nbDirs, zoom, visibility)
   {
     setStatic();
   }

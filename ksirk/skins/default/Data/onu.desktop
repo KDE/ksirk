@@ -484,31 +484,37 @@ flag=italy
 
 #1
 [North America]
+id=1
 bonus=5
 continent-countries=0,1,2,3,4,5,6
 
 #2
 [South America]
+id=2
 bonus=2
 continent-countries=7,8,9,10,11
 
 #3
 [Europe]
+id=3
 bonus=5
 continent-countries=12,13,14,15,16,17,22
 
 #4
 [Africa]
+id=4
 bonus=3
 continent-countries=26,27,28,29,30,31,32,33,34
 
 #5
 [Asia]
+id=5
 bonus=7
 continent-countries=18,19,20,21,23,24,25,35,36
 
 #6
 [Pacific]
+id=6
 bonus=2
 continent-countries=37,38,39,40,41
 

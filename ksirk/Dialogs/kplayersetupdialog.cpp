@@ -134,20 +134,14 @@ void KPlayerSetupDialog::fillNationsCombo()
   for (; nationsIt != nationsIt_end; nationsIt++)
   {
 //     kDebug() << "Adding nation " << i18n((*nationsIt).first) << " / " << (*nationsIt).second << endl;
-    QString imgName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Images/sprites/" + (*nationsIt).second);
-    if (imgName.isNull())
-    {
-      KMessageBox::error(this, i18n("Flag image resource not found\nProgram cannot continue"), i18n("Error !"));
-        exit(2);
-    }
 //     load image
-    QSvgRenderer renderer;
-    renderer.load(imgName);
-    QSize size(renderer.defaultSize().width()/Sprites::SkinSpritesData::single().intData("flag-frames"),renderer.defaultSize().height());
+    QSize size(
+        m_onu->renderer()->boundsOnElement((*nationsIt).second).width()/Sprites::SkinSpritesData::single().intData("flag-frames"),
+        m_onu->renderer()->boundsOnElement((*nationsIt).second).height());
     QImage image(size, QImage::Format_ARGB32_Premultiplied);
     image.fill(0);
     QPainter p(&image);
-    renderer.render(&p/*, svgid*/);
+    m_onu->renderer()->render(&p, (*nationsIt).second);
     QPixmap allpm = QPixmap::fromImage(image);
     QPixmap flag = allpm.copy(0, 0, size.width(), size.height());
 

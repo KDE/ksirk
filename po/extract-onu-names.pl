@@ -12,14 +12,6 @@ for my $file_name ( @ARGV )
     next;
   }
 
-  my $string          = "";
-  my $in_text         = 0;
-  my $start_line_no   = 0;
-  my $in_skipped_prop = 0;
-  my $tag = "";
-  my $attr = "";
-  my $context = "";
-
   while ( <$fh> )
   {
     if ($_ =~ /name=(\"[^\"]*\")/)

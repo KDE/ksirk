@@ -178,6 +178,9 @@ public:
   inline double zoom() const {return m_zoom;}
 
   inline const QImage& mask() const {return countriesMask;}
+
+  inline QSvgRenderer* renderer() {return &m_renderer;}
+
 private:
   /**
     * All data that have to be stored about the font to display countries names

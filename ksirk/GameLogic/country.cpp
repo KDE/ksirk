@@ -104,8 +104,8 @@ void Country::createArmiesSprites(BackGnd *backGnd)
   while (armies >= 10) // Ajout des sprites de canon
   {
     CannonSprite *sprite = new CannonSprite(
-        Sprites::SkinSpritesData::single().strData("cannon-file"), 
-        backGnd, 
+        "cannon",
+        backGnd,
         Sprites::SkinSpritesData::single().intData("cannon-frames"), 
         Sprites::SkinSpritesData::single().intData("cannon-versions"),
         backGnd->onu()->zoom());
@@ -119,8 +119,8 @@ void Country::createArmiesSprites(BackGnd *backGnd)
   while (armies >= 5) // Adding the cavalryman  sprites
   {
     CavalrySprite *sprite = new CavalrySprite(
-        Sprites::SkinSpritesData::single().strData("cavalry-file"), 
-        backGnd, 
+        "cavalry",
+        backGnd,
         Sprites::SkinSpritesData::single().intData("cavalry-frames"), 
         Sprites::SkinSpritesData::single().intData("cavalry-versions"),
         backGnd->onu()->zoom());
@@ -135,8 +135,8 @@ void Country::createArmiesSprites(BackGnd *backGnd)
   while (armies > 0) // Ajout des sprites de fantassin
   {
     InfantrySprite *sprite = new InfantrySprite(
-        Sprites::SkinSpritesData::single().strData("infantry-file"), 
-        backGnd, 
+        "infantry",
+        backGnd,
         Sprites::SkinSpritesData::single().intData("infantry-frames"), 
         Sprites::SkinSpritesData::single().intData("infantry-versions"),
         backGnd->onu()->zoom());

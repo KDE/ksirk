@@ -41,37 +41,27 @@ namespace Ksirk
 
 using namespace GameLogic;
 
-AnimSprite::AnimSprite(const QString &imgPath, BackGnd* aBackGnd,
+AnimSprite::AnimSprite(const QString &svgid,
+                        BackGnd* aBackGnd,
                         unsigned int nbFrames, unsigned int nbDirs,
                         double zoom, unsigned int visibility) :
     QGraphicsPixmapItem(0, aBackGnd-> scene()),
-    m_animated(false), look(right), nbVersions(nbDirs),
+    m_animated(false), m_svgid(svgid),
+    look(right), nbVersions(nbDirs),
     backGnd(aBackGnd), destination(0), destinationPoint(), frames(nbFrames), actFrame(0),
     myState(NONE), m_zoom(zoom),
     approachDestByLeft(false), approachDestByRight(false),
     approachDestByTop(false), approachDestByBottom(false),
     m_frames(),
-    m_renderer(0),
+    m_renderer(const_cast<ONU*>(aBackGnd->onu())->renderer()),
     m_numberOfShots(0),
     m_timer(this),
     m_skin(backGnd->onu()->skin())
 {
   setNone();
 
-  KStandardDirs *m_dirs = KGlobal::dirs();
-
-  QString imgName = m_dirs-> findResource("appdata", m_skin + "/Images/sprites/" + imgPath);
-  kDebug() << "Sprite file name: " << imgName << endl;
-  kDebug() << "    frames: " << frames << " ; nbVersions: " << nbVersions << endl;
-  if (imgName.isNull())
-  {
-      QMessageBox::critical(0, i18n("Error !"), i18n("Sprite images resource not found\nProgram cannot continue"));
-      exit(2);
-  }
-  m_renderer.load(imgName);
-
-  spriteWidth = ((double)m_renderer.defaultSize().width()) / frames;
-  spriteHeight = ((double)m_renderer.defaultSize().height()) / nbVersions;
+  spriteWidth = ((double)m_renderer->boundsOnElement(svgid).width()) / frames;
+  spriteHeight = ((double)m_renderer->boundsOnElement(svgid).height()) / nbVersions;
 
   sequenceConstruction();
   setZValue(visibility);
@@ -124,7 +114,7 @@ void AnimSprite::sequenceConstruction()
   QImage image(size, QImage::Format_ARGB32_Premultiplied);
   image.fill(0);
   QPainter p(&image);
-  m_renderer.render(&p/*, svgid*/);
+  m_renderer->render(&p, m_svgid);
   QPixmap allpm = QPixmap::fromImage(image);
   for (unsigned int l = 0; l<nbVersions;l++)
   {
@@ -143,31 +133,16 @@ void AnimSprite::sequenceConstruction()
   setFrame(0);
 }
 
-void AnimSprite::changeSequence(const QString &imgPath, unsigned int newNbFrames, unsigned int nbDirs)
+void AnimSprite::changeSequence(const QString &svgid, unsigned int newNbFrames, unsigned int nbDirs)
 {
-//    kDebug()<<"AnimSprite::changeSequence" <<endl;
+  kDebug()<<"AnimSprite::changeSequence: " << svgid <<endl;
+  m_svgid = svgid;
   frames = newNbFrames;
   actFrame = 0;
   nbVersions = nbDirs;
 
-  KStandardDirs *m_dirs = KGlobal::dirs();
-
-//   kDebug() << "Sprite file name: " << GameLogic::GameAutomaton::single().skin() + "/Images/sprites/" + imgPath << endl;
-  QString imgName = m_dirs-> findResource("appdata", m_skin + "/Images/sprites/" + imgPath);
-  
-//   kDebug() << "imgName= " << imgName << endl;
-    
-//    QString imgName = m_dirs-> findResource("appdata", "Images/sprites/" + imgPath);
-  if (imgName.isNull())
-  {
-      QMessageBox::critical(0, i18n("Error !"), i18n("Sprite images resource not found\nProgram cannot continue"));
-      exit(2);
-  }
-
-  m_renderer.load(imgName);
-
-  spriteHeight = m_renderer.defaultSize().height() / nbVersions;
-  spriteWidth = m_renderer.defaultSize().width() / frames;
+  spriteHeight = m_renderer->boundsOnElement(svgid).height() / nbVersions;
+  spriteWidth = m_renderer->boundsOnElement(svgid).width() / frames;
 
   sequenceConstruction();
   update();

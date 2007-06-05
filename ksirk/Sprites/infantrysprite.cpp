@@ -25,10 +25,11 @@
 
 namespace Ksirk {
 
-InfantrySprite::InfantrySprite(const QString &imgPath,
-        BackGnd* aBackGnd, unsigned int nbFrames, unsigned int nbDirs,
-                                double zoom, unsigned int visibility) :
-    ArmySprite(imgPath, aBackGnd, nbFrames, nbDirs, zoom, visibility)
+InfantrySprite::InfantrySprite(const QString &svgid,
+              BackGnd* aBackGnd, unsigned int nbFrames,
+              unsigned int nbDirs,
+              double zoom, unsigned int visibility) :
+    ArmySprite(svgid, aBackGnd, nbFrames, nbDirs, zoom, visibility)
 {
 }
 
