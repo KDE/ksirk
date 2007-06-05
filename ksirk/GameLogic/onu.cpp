@@ -36,6 +36,7 @@
 #include <klocale.h>
 #include <kdebug.h>
 #include <kmessagebox.h>
+#include <kconfig.h>
 
 namespace Ksirk
 {
@@ -65,32 +66,13 @@ ONU::ONU(GameAutomaton* automaton,
   Sprites::SkinSpritesData::changeable().init();
   unsigned int nationalityId = 0;
   unsigned int continentId = 0;
-  // read the XML file and create DOM tree
-  QFile configFile( configFileName );
-  if ( !configFile.open( QIODevice::ReadOnly ) )
-  {
-      KMessageBox::error( 0,
-                          i18n( "Cannot open file %1",configFileName ),
-                          i18n( "Critical Error" ) );
-      exit(2);
-  }
-  QDomDocument domTree;
-  if ( !domTree.setContent( &configFile ) )
-  {
-      KMessageBox::error( 0,
-                          i18n( "Parsing error for file %1",configFileName ),
-                          i18n( "Critical Error" ) );
-      configFile.close();
-      exit(2);
-  }
-  configFile.close();
+  KConfig config(configFileName);
 
-  // get the header information from the DOM
-  QDomElement root = domTree.documentElement();
+  KConfigGroup onugroup = config.group("onu");
 
-  // read the attributes values of the root element
-  kDebug() << "ONU XML format version: " << root.attribute("format-version") << endl;
-  QString formatVersion = root.attribute("format-version");
+  kDebug() << "ONU XML format version: " << onugroup.readEntry("format-version") << endl;
+  QString formatVersion = onugroup.readEntry("format-version");
+
   if (formatVersion != ONU_FILE_FORMAT_VERSION)
   {
     KMessageBox::error(0,
@@ -99,8 +81,8 @@ ONU::ONU(GameAutomaton* automaton,
     exit(1);
   }
 
-  m_name = root.attribute("name");
-  m_skin = root.attribute("skinpath");
+  m_name = onugroup.readEntry("name");
+  m_skin = onugroup.readEntry("skinpath");
   kDebug() << "skin snapshot file: " << KGlobal::dirs()-> findResource("appdata", m_skin + "/Images/snapshot.jpg") << endl;
   m_snapshot = QPixmap(KGlobal::dirs()-> findResource("appdata", m_skin + "/Images/snapshot.jpg"));
   if (m_snapshot.isNull())
@@ -109,29 +91,29 @@ ONU::ONU(GameAutomaton* automaton,
       << KGlobal::dirs()-> findResource("appdata", m_skin + "/Images/snapshot.jpg") 
       << endl;
   }
-  m_width  = (unsigned int)(root.attribute("width").toUInt()*m_zoom);
-  m_height  = (unsigned int)(root.attribute("height").toUInt()*m_zoom);
-  countries.resize(root.attribute("nb-countries").toUInt());
-  nationalities.resize(root.attribute("nb-nationalities").toUInt());
-  m_continents.resize(root.attribute("nb-continents").toUInt());
+  m_width  = onugroup.readEntry("width",0);
+  m_height  = onugroup.readEntry("height",0);
+  m_description = onugroup.readEntry("desc");
+  countries.resize(onugroup.readEntry("nb-countries",0));
+  nationalities.resize(onugroup.readEntry("nb-nationalities",0));
+  m_continents.resize(onugroup.readEntry("nb-continents",0));
 //    root.attribute("map");
-  QString mapString = root.attribute("map");
-  kDebug() << "Map path: " << mapString << endl;
-  kDebug() << "Searching resource: " << (m_skin + '/' + mapString) << endl;
-  m_mapFileName = KGlobal::dirs()-> findResource("appdata", m_skin + '/' + mapString);
-  kDebug() << "Map file name: " << m_mapFileName << endl;
-  if (m_mapFileName.isEmpty())
+  QString poolString = onugroup.readEntry("pool");
+  kDebug() << "Pool path: " << poolString << endl;
+  kDebug() << "Searching resource: " << (m_skin + '/' + poolString) << endl;
+  QString poolFileName = KGlobal::dirs()-> findResource("appdata", m_skin + '/' + poolString);
+  kDebug() << "Pool file name: " << poolFileName << endl;
+  if (poolFileName.isEmpty())
   {
       KMessageBox::error(0, 
-                         i18n("Map image filename not found\nProgram cannot continue"),
+                         i18n("Pool filename not found\nProgram cannot continue"),
                          i18n("Error !"));
       exit(2);
   }
   m_map = QPixmap();
-  m_renderer.load(m_mapFileName);
-//   m_map = QPixmap(m_mapFileName);
+  m_renderer.load(poolFileName);
 
-  QString mapMaskFileName = KGlobal::dirs()-> findResource("appdata", m_skin + '/' + root.attribute("map-mask"));
+  QString mapMaskFileName = KGlobal::dirs()-> findResource("appdata", m_skin + '/' + onugroup.readEntry("map-mask"));
   kDebug() << "Map mask file name: " << mapMaskFileName << endl;
   if (mapMaskFileName.isNull())
   {
@@ -142,274 +124,159 @@ ONU::ONU(GameAutomaton* automaton,
   }
   kDebug() << "Loading map mask file: " << mapMaskFileName << endl;
   countriesMask = QImage(mapMaskFileName);
-//   if (countriesMask.isNull())
-//   {
-//       KMessageBox::error(KApplication::kApplication()->mainWidget(),
-//                          i18n("Cannot load the map mask image\nProgram cannot continue"),
-//                          i18n("Error !"));
-//       exit(2);
-//   }
 
-  QDomNode node = root.firstChild();
-  while ( !node.isNull() )
+  Sprites::SkinSpritesData::changeable().intData("flag-width", config.group("flag").readEntry("width",0));
+  Sprites::SkinSpritesData::changeable().intData("flag-frames", config.group("flag").readEntry("frames",0));
+  Sprites::SkinSpritesData::changeable().intData("flag-versions", config.group("flag").readEntry("versions",0));
+
+  Sprites::SkinSpritesData::changeable().strData("infantry-id", config.group("infantry").readEntry("id"));
+  Sprites::SkinSpritesData::changeable().intData("infantry-frames", config.group("infantry").readEntry("frames",0));
+  Sprites::SkinSpritesData::changeable().intData("infantry-versions", config.group("infantry").readEntry("versions",0));
+
+  Sprites::SkinSpritesData::changeable().strData("cavalry-id", config.group("cavalry").readEntry("id"));
+  Sprites::SkinSpritesData::changeable().intData("cavalry-frames", config.group("cavalry").readEntry("frames",0));
+  Sprites::SkinSpritesData::changeable().intData("cavalry-versions", config.group("cavalry").readEntry("versions",0));
+
+  Sprites::SkinSpritesData::changeable().strData("cannon-id", config.group("cannon").readEntry("id"));
+  Sprites::SkinSpritesData::changeable().intData("cannon-width", config.group("cannon").readEntry("width",0));
+  Sprites::SkinSpritesData::changeable().intData("cannon-frames", config.group("cannon").readEntry("frames",0));
+  Sprites::SkinSpritesData::changeable().intData("cannon-versions", config.group("cannon").readEntry("versions",0));
+
+  Sprites::SkinSpritesData::changeable().strData("firing-id", config.group("firing").readEntry("id"));
+  Sprites::SkinSpritesData::changeable().intData("firing-width", config.group("firing").readEntry("width",0));
+  Sprites::SkinSpritesData::changeable().intData("firing-frames", config.group("firing").readEntry("frames",0));
+  Sprites::SkinSpritesData::changeable().intData("firing-versions", config.group("firing").readEntry("versions",0));
+
+  Sprites::SkinSpritesData::changeable().strData("exploding-id", config.group("exploding").readEntry("id"));
+  Sprites::SkinSpritesData::changeable().intData("exploding-frames", config.group("exploding").readEntry("frames",0));
+  Sprites::SkinSpritesData::changeable().intData("exploding-versions", config.group("exploding").readEntry("versions",0));
+
+  KConfigGroup fontgroup = config.group("font");
+  m_font.family = fontgroup.readEntry("family","URW Chancery L");
+  m_font.size = fontgroup.readEntry("size",(uint)(13*m_zoom));
+  QString w = fontgroup.readEntry("weight", "bold");;
+  if (w == "normal")
   {
-    if (node.isElement() && node.nodeName() == "skinSpritesData" )
-    {
-      QDomNode itemNode = node.firstChild();
-      while ( !itemNode.isNull() )
-      {
-      
-        if (itemNode.isElement() && itemNode.nodeName() == "intItem" )
-        {
-          QDomElement itemEl = itemNode.toElement();
-          QString key = itemEl.attribute("key");
-          int val = itemEl.attribute("value").toInt();
-          Sprites::SkinSpritesData::changeable().intData(key, val);  
-//           kDebug() << "Loaded int item " << key << " = " << val << endl;
-        }
-        else if (itemNode.isElement() && itemNode.nodeName() == "strItem" )
-        {
-          QDomElement itemEl = itemNode.toElement();
-          QString key(itemEl.attribute("key"));
-          Sprites::SkinSpritesData::changeable().strData(key, itemEl.attribute("value"));  
-//           kDebug() << "Loaded str item " << key << " = " << itemEl.attribute("value") << endl;
-        }
-        itemNode = itemNode.nextSibling();
-      }
-    }
-    else if ( node.isElement() && node.nodeName() == "desc" )
-    {
-        QDomElement descNode = node.toElement();
-        m_description = descNode.text();
-    }
-    else if (node.isElement() && node.nodeName() == "font" )
-    {
-//       kDebug() << "reading font data..." << endl;
-      QDomNode itemNode = node.firstChild();
-      while ( !itemNode.isNull() )
-      {
-      
-        if (itemNode.isElement() && itemNode.nodeName() == "family" )
-        {
-          m_font.family = itemNode.toElement().text();
-//           kDebug() << "  got family: " << m_font.family << endl;
-        }
-        else if (itemNode.isElement() && itemNode.nodeName() == "size" )
-        {
-          QString fs = itemNode.toElement().text();
-          QTextStream is(&fs);
-          is >> m_font.size;
-//           kDebug() << "  got size: " << m_font.size << endl;
-        }
-        else if (itemNode.isElement() && itemNode.nodeName() == "weight" )
-        {
-          QString w = itemNode.toElement().text();
-          if (w == "normal")
-          {
-            m_font.weight = QFont::Normal;
-          }
-          else if (w == "light")
-          {
-            m_font.weight = QFont::Light;
-          }
-          else if (w == "demibold")
-          {
-            m_font.weight = QFont::DemiBold;
-          }
-          else if (w == "bold")
-          {
-            m_font.weight = QFont::Bold;
-          }
-          else if (w == "black")
-          {
-            m_font.weight = QFont::Black;
-          }
-//           kDebug() << "  got weight: " << m_font.weight << endl;
-        }
-        else if (itemNode.isElement() && itemNode.nodeName() == "italic" )
-        {
-          QString ital = itemNode.toElement().text();
-          if (ital == "true")
-          {
-              m_font.italic = true;
-          }
-          else if (ital == "false")
-          {
-              m_font.italic = false;
-          }
-//           kDebug() << "  got italic: " << m_font.italic << endl;
-        }
-        else if (itemNode.isElement() && itemNode.nodeName() == "foreground-color" )
-        {
-          m_font.foregroundColor = itemNode.toElement().text();
-//           kDebug() << "  got foreground color: " << m_font.foregroundColor << endl;
-        }
-        else if (itemNode.isElement() && itemNode.nodeName() == "background-color" )
-        {
-          m_font.backgroundColor = itemNode.toElement().text();
-//           kDebug() << "  got background color: " << m_font.backgroundColor << endl;
-        }
-        itemNode = itemNode.nextSibling();
-      }
-    }
-    else  if ( node.isElement() && node.nodeName() == "country" )
-    {
-        QDomElement countryNode = node.toElement();
-        unsigned int id = countryNode.attribute("id").toUInt();
-        QString name = countryNode.attribute("name");
-        QDomNode countryChild = countryNode.firstChild();
-        QPointF centralPoint;
-        QPointF flagPoint;
-        QPointF cannonPoint;
-        QPointF cavalryPoint;
-        QPointF infantryPoint;
-        while ( !countryChild.isNull() )
-        {
-            QDomElement countryChildEl = countryChild.toElement();
-            qreal x = m_zoom * countryChildEl.attribute("x").toUInt();
-            qreal y = m_zoom * countryChildEl.attribute("y").toUInt();
-//                kDebug() << "Got attributes for " << countryChild.nodeName() << " x and y: " << countryChildEl.attribute("x") << " " << countryChildEl.attribute("y") << endl;
-            if ( countryChild.isElement() && countryChild.nodeName() == "central-point" )
-                centralPoint = QPointF(x, y);
-            else if ( countryChild.isElement() && countryChild.nodeName() == "flag-point" )
-                flagPoint = QPointF(x, y);
-            else if ( countryChild.isElement() && countryChild.nodeName() == "cannons-point" )
-                cannonPoint = QPointF(x, y);
-            else if ( countryChild.isElement() && countryChild.nodeName() == "cavalry-point" )
-                cavalryPoint = QPointF(x, y);
-            else if ( countryChild.isElement() && countryChild.nodeName() == "infantry-point" )
-                infantryPoint = QPointF(x, y);
-            countryChild = countryChild.nextSibling();
-        }
+    m_font.weight = QFont::Normal;
+  }
+  else if (w == "light")
+  {
+    m_font.weight = QFont::Light;
+  }
+  else if (w == "demibold")
+  {
+    m_font.weight = QFont::DemiBold;
+  }
+  else if (w == "bold")
+  {
+    m_font.weight = QFont::Bold;
+  }
+  else if (w == "black")
+  {
+    m_font.weight = QFont::Black;
+  }
+  m_font.italic = fontgroup.readEntry("italic", true);
+  m_font.foregroundColor = fontgroup.readEntry("foreground-color", "black");
+  m_font.backgroundColor = fontgroup.readEntry("background-color", "white");
+
+  QStringList countriesList = onugroup.readEntry("countries", QStringList());
+  QString country;
+  foreach (country, countriesList)
+  { 
+    KConfigGroup countryGroup = config.group(country);
+    unsigned int id = countryGroup.readEntry("id",0);
+    QString name = country;
+    QPointF centralPoint = countryGroup.readEntry("central-point",QPoint())*m_zoom;
+    QPointF flagPoint = countryGroup.readEntry("flag-point",QPoint())*m_zoom;
+    QPointF cannonPoint = countryGroup.readEntry("cannon-point",QPoint())*m_zoom;
+    QPointF cavalryPoint = countryGroup.readEntry("cavalry-point",QPoint())*m_zoom;
+    QPointF infantryPoint = countryGroup.readEntry("infantry-point",QPoint())*m_zoom;
+
 //         kDebug() << "Creating country " << name << endl;
 //            kDebug() << "\tflag point: " << flagPoint.x() << " " << flagPoint.y() << endl;
-        countries[id] = new Country(automaton, name, centralPoint, flagPoint,
-            cannonPoint, cavalryPoint, infantryPoint, id);
-    }
-    else if ( node.isElement() && node.nodeName() == "nationality" )
-    {
-        QDomElement nationalityNode = node.toElement();
-        QString name = nationalityNode.attribute("name");
-        QString leader = nationalityNode.attribute("leader");
-        QString flag = nationalityNode.attribute("flag");
-//         kDebug() << "Creating nationality " << name << " ; flag: " << flag << endl;
-        nationalities[nationalityId] = new Nationality(name, flag, leader);
-        nationalityId++;
-    }
-    else if ( node.isElement() && node.nodeName() == "continent" )
-    {
-      QDomElement continentNode = node.toElement();
-      unsigned int id = continentNode.attribute("id").toUInt();
-      QString name = continentNode.attribute("name");
-      unsigned int bonus = continentNode.attribute("bonus").toUInt();
-      std::vector< Country* > continentList;
-      QDomNode continentChild = continentNode.firstChild();
-      while ( !continentChild.isNull() )
-      {
-        if ( continentChild.isElement() && continentChild.nodeName() == "continent-country" )
-        {
-          QDomElement continentChildEl = continentChild.toElement();
-          unsigned int id = continentChildEl.attribute("id").toUInt();
-          continentList.push_back(countries[id]);
-        }
-        continentChild = continentChild.nextSibling();
-      }
-//       kDebug() << "Creating continent " << name << endl;
-      m_continents[continentId++] = new Continent(name, continentList, bonus,id);
-    }
-    else if ( node.isElement() && node.nodeName() == "goals" )
-    {
-      QDomNode goalNode = node.firstChild();
-      while ( !goalNode.isNull() )
-      {
-        if (goalNode.isElement() && goalNode.nodeName() == "goal" )
-        {
-//           kDebug() << "Goal: creating goal" << endl;
-          Goal* goal = new Goal();
-          QDomNode subGoalNode = goalNode.firstChild();
-          while ( !subGoalNode.isNull() )
-          {
-            if (subGoalNode.isElement() && subGoalNode.nodeName() == "countries" )
-            {
-              goal->type(Goal::Countries);
-              QDomElement subGoalNodeEl = subGoalNode.toElement();
-              unsigned int nb = subGoalNodeEl.attribute("nb").toUInt();
-              goal->nbCountries(nb);
-//               kDebug() << "  nb countries: " << nb << endl;
-            }
-            else if (subGoalNode.isElement() && subGoalNode.nodeName() == "armiesByCountry" )
-            {
-              QDomElement subGoalNodeEl = subGoalNode.toElement();
-              unsigned int nb = subGoalNodeEl.attribute("nb").toUInt();
-              goal->nbArmiesByCountry(nb);
-//               kDebug() << "  nb armies by country: " << nb << endl;
-            }
-            else if (subGoalNode.isElement() && subGoalNode.nodeName() == "continent" )
-            {
-              goal->type(Goal::Continents);
-              QDomElement subGoalNodeEl = subGoalNode.toElement();
-              unsigned int id = subGoalNodeEl.attribute("id").toUInt();
-              goal->continents().insert(id);
-//               kDebug() << "  continent: " << id << endl;
-            }
-            else if (subGoalNode.isElement() && subGoalNode.nodeName() == "player" )
-            {
-              goal->type(Goal::GoalPlayer);
-              QDomElement subGoalNodeEl = subGoalNode.toElement();
-              unsigned int nb = subGoalNodeEl.attribute("nbCountriesFallback").toUInt();
-              goal->nbCountries(nb);
-//               kDebug() << "  player with fallback: " << nb << endl;
-            }
-            else if (subGoalNode.isElement() && subGoalNode.nodeName() == "desc" )
-            {
-              QDomElement subGoalNodeEl = subGoalNode.toElement();
-              QString text = subGoalNodeEl.text();
-              goal->description(text);
-//               kDebug() << "  description: '" << text << "'" << endl;
-            }
-            subGoalNode = subGoalNode.nextSibling();
-          }
-//           kDebug() << "Inserting goal with type " << goal->type() << endl;
-          automaton->goals().insert(goal);
-          subGoalNode = subGoalNode.nextSibling();
-        }
-        goalNode = goalNode.nextSibling();
-      }
-    }
-    node = node.nextSibling();
+    countries[id] = new Country(automaton, name, centralPoint, flagPoint,
+        cannonPoint, cavalryPoint, infantryPoint, id);
   }
-  // create the neighbours lists
-  node = root.firstChild();
-  while ( !node.isNull() )
+  QStringList nationalitiesList = onugroup.readEntry("nationalities", QStringList());
+  QString nationality;
+  foreach (nationality, nationalitiesList)
   {
-      if ( node.isElement() && node.nodeName() == "country" )
+    kDebug() << "Creating nationality " << nationality << endl;
+    KConfigGroup nationalityGroup = config.group(nationality);
+    QString leader = nationalityGroup.readEntry("leader","");
+    QString flag = nationalityGroup.readEntry("flag","");
+//         kDebug() << "Creating nationality " << name << " ; flag: " << flag << endl;
+    nationalities[nationalityId] = new Nationality(nationality, flag, leader);
+    nationalityId++;
+  }
+
+
+  QStringList continentsList = onugroup.readEntry("continents", QStringList());
+  QString continent;
+  foreach (continent, continentsList)
+  {
+    KConfigGroup continentGroup = config.group(continent);
+
+    unsigned int id = continentGroup.readEntry("id",0);
+    unsigned int bonus = continentGroup.readEntry("bonus",0);
+    QList<int> countryIdList = continentGroup.readEntry("continent-countries",QList<int>());
+    int countryId;
+    std::vector<Country*> continentList;
+    foreach(countryId, countryIdList)
+    {
+      continentList.push_back(countries[countryId]);
+    }
+//       kDebug() << "Creating continent " << name << endl;
+    m_continents[continentId++] = new Continent(continent, continentList, bonus,id);
+  }
+
+  QStringList goalsList = onugroup.readEntry("goals", QStringList());
+  QString goal;
+  foreach (goal, goalsList)
+  {
+    KConfigGroup goalGroup = config.group(goal);
+
+    Goal* goal = new Goal();
+    goal->description(goalGroup.readEntry("desc",""));
+    QString goalType = goalGroup.readEntry("type","");
+    if (goalType == "countries")
+    {
+      goal->type(Goal::Countries);
+      goal->nbCountries(goalGroup.readEntry("nb",0));
+      goal->nbArmiesByCountry(goalGroup.readEntry("nbArmiesByCountry",0));
+//               kDebug() << "  nb countries: " << nb << endl;
+    }
+    else if (goalType == "continents" )
+    {
+      goal->type(Goal::Continents);
+      QList<int> continentsList = goalGroup.readEntry("continents",QList<int>());
+      int continentId;
+      foreach(continentId, continentsList)
       {
-          std::vector< Country* > theNeighbours;
-          QDomElement countryNode = node.toElement();
-          unsigned int id = countryNode.attribute("id").toUInt();
-          QDomNode countryChild = countryNode.firstChild();
-          while ( !countryChild.isNull() )
-          {
-              QDomElement countryChildEl = countryNode.toElement();
-              if ( countryChild.isElement() && countryChild.nodeName() == "neighbours" )
-              {
-                  QDomElement neighboursNode = countryChild.toElement();
-                  QDomNode neighbour = neighboursNode.firstChild();
-                  while ( !neighbour.isNull() )
-                  {
-                      QDomElement neighbourEl = neighbour.toElement();
-                      unsigned int neighbourId = neighbourEl.attribute("id").toUInt();
-//                        kDebug() << "Got attribute for " << neighbour.nodeName() << ": " << neighbourId << endl;
-                      theNeighbours.resize(theNeighbours.size() + 1);
-                      theNeighbours[theNeighbours.size() - 1] =  countries[neighbourId];
-                      neighbour = neighbour.nextSibling();
-                  }
-              }
-              countryChild = countryChild.nextSibling();
-          }
-          countries.at(id)-> neighbours(theNeighbours);
+        goal->continents().insert(continentId);
       }
-      node = node.nextSibling();
+    }
+    else if (goalType == "player" )
+    {
+      goal->type(Goal::GoalPlayer);
+      unsigned int nb = goalGroup.readEntry("nbCountriesFallback",0);
+      goal->nbCountries(nb);
+    }
+    automaton->goals().insert(goal);
+  }
+
+  foreach (country, countriesList)
+  {
+    std::vector< Country* > theNeighbours;
+    KConfigGroup countryGroup = config.group(country);
+    QList<int> theNeighboursIds = countryGroup.readEntry("neighbours",QList<int>());
+    int neighbourId;
+    foreach(neighbourId, theNeighboursIds)
+    {
+
+      theNeighbours.push_back(countries[neighbourId]);
+    }
+    countries.at(countryGroup.readEntry("id",0))-> neighbours(theNeighbours);
   }
   buildMap();
 //    kDebug() << "OUT ONU::ONU" << endl;
@@ -550,12 +417,6 @@ void ONU::saveXml(std::ostream& xmlStream)
   xmlStream << "</ONU>" << std::endl;  
 }
 
-const QString& ONU::mapFileName() const
-{
-//   kDebug() << "ONU::mapFileName() " << m_mapFileName << endl;
-  return m_mapFileName;
-}
-
 unsigned int ONU::width() const
 {
   return m_width;
@@ -621,7 +482,7 @@ void ONU::buildMap()
   QImage image(size, QImage::Format_ARGB32_Premultiplied);
   image.fill(0);
   QPainter p(&image);
-  m_renderer.render(&p/*, svgid*/);
+  m_renderer.render(&p, "map");
   QPixmap mapPixmap = QPixmap::fromImage(image);
 
   m_map = mapPixmap;

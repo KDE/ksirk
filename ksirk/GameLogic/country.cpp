@@ -27,11 +27,12 @@
 #include "Sprites/skinSpritesData.h"
 #include "GameLogic/onu.h"
 
-#include <qstring.h>
-#include <qapplication.h>
 #include <klocale.h>
 #include <kdebug.h>
-#include <qdatastream.h>
+#include <QString>
+#include <QApplication>
+#include <QDataStream>
+#include <QBitmap>
 
 #include <iostream>
 #include <stdexcept>
@@ -455,13 +456,31 @@ void Country::highlight(const QColor& color)
   clearHighlighting();
   
   QBrush brush(color);
-  m_highlighting = new QGraphicsEllipseItem(
-      m_pointFlag.x(), m_pointFlag.y(),
-      m_flag->boundingRect().width(),
-      m_flag->boundingRect().height(),
-      m_automaton->game()->backGnd());
+//   m_highlighting = new QGraphicsEllipseItem(
+//       m_pointFlag.x()-m_flag->boundingRect().width()/2,
+//       m_pointFlag.y()-m_flag->boundingRect().height()/2,
+//       m_flag->boundingRect().width()*2,
+//       m_flag->boundingRect().height()*2,
+//       m_automaton->game()->backGnd());
 
+
+//   QImage image(m_automaton->game()->theWorld()->mask().createMaskFromColor(qRgb(0,0,m_id)));
+
+  QBitmap bm(QPixmap::fromImage(m_automaton->game()->theWorld()->mask()).createMaskFromColor(qRgb(0,0,m_id)));
+
+  /*  QImage image(image2.createMaskFromColor(qRgb(0,0,0),Qt::MaskOutColor));*/
+
+  QPixmap pm(m_automaton->game()->backGnd()->pixmap());
+//   pm.fill(Qt::black);
+  pm.setMask(bm);
+
+
+  m_highlighting = new QGraphicsPixmapItem(
+  pm,
+                                           m_automaton->game()->backGnd());
+                                           
   ((QGraphicsEllipseItem*)m_highlighting)->setBrush(brush);
+
 }
 
 void Country::highlightAsAttacker()

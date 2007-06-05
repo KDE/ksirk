@@ -303,7 +303,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
   QString onuDefinitionFileName = onuFileName;
   if (onuDefinitionFileName.isEmpty())
   {
-    onuDefinitionFileName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Data/onu.xml");
+    onuDefinitionFileName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Data/onu.desktop");
   }
   if (onuDefinitionFileName.isEmpty())
   {
@@ -323,8 +323,6 @@ void KGameWindow::newSkin(const QString& onuFileName)
   m_frame->setCacheMode( QGraphicsView::CacheBackground );
   setCentralWidget(m_frame);
 
-  kDebug() << "ONU backgnd file name: " <<  m_theWorld->mapFileName() << endl;
-  
   if (m_scene != 0)
   {
     delete m_scene;
@@ -2217,12 +2215,12 @@ std::map< QString, QString > KGameWindow::nationsList()
   std::map< QString, QString >  res;
   
   std::vector<Nationality*>& nationsList = m_theWorld->getNationalities();
-//   kDebug() << "There is " << nationsList.count() << " nations" << endl;
+  kDebug() << "There is " << nationsList.size() << " nations" << endl;
   std::vector<Nationality*>::iterator nationsIt = nationsList.begin();
   for (; nationsIt != nationsList.end(); nationsIt++ ) 
   {
-//     kDebug() << "Nation = " << *nationsIt << endl;
-    Nationality* nation = *nationsIt; 
+    Nationality* nation = *nationsIt;
+    kDebug() << "Nation '" << nation->name() << "' = " << nation << endl;
     res.insert(std::make_pair(nation->name(),nation->flagFileName()));
   } 
   return res;
@@ -2431,7 +2429,9 @@ void KGameWindow::firstCountry(GameLogic::Country* country)
     return;
   }
   kDebug() << k_funcinfo << country->name() << endl;
-  country->highlight(Qt::red);
+  QColor color(Qt::red);
+  color.setAlpha(128);
+  country->highlight(color);
 }
 
 void KGameWindow::secondCountry(GameLogic::Country* country)
@@ -2447,7 +2447,9 @@ void KGameWindow::secondCountry(GameLogic::Country* country)
     return;
   }
   kDebug() << k_funcinfo << country->name() << endl;
-  country->highlight(Qt::yellow);
+  QColor color(Qt::yellow);
+  color.setAlpha(128);
+  country->highlight(color);
 }
 
 

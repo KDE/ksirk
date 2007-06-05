@@ -33,7 +33,7 @@ namespace Sprites {
 /**
  * This class holds named values related to the current skin. It is a singleton
  * to be easily accessible from any game object.
- * @author Gaël de Chalendar (aka Kleag)
+ * @author Gael de Chalendar (aka Kleag)
  */
 class SkinSpritesData
 {

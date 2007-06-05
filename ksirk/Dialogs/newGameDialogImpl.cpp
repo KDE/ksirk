@@ -125,7 +125,7 @@ void NewGameDialogImpl::fillSkinsCombo()
     if (skinDir.exists())
     {
       kDebug() << "Got skin dir: " << skinDir.dirName() << endl;
-      GameLogic::ONU* world = new GameLogic::ONU(m_automaton,skinsDirName + skinDir.dirName() + "/Data/onu.xml");
+      GameLogic::ONU* world = new GameLogic::ONU(m_automaton,skinsDirName + skinDir.dirName() + "/Data/onu.desktop");
       skinCombo->addItem(i18n(world->name().toUtf8().data()));
       m_worlds[i18n(world->name().toUtf8().data())] = world;
       if (QString("skins/")+skinDir.dirName() == m_skin)

@@ -23,7 +23,7 @@ moveArmies.png
 saveGame.png
 attackTwo.png
 aide.png
-map.svg
+pool.svg
 moveOne.png
 preferences.png
 attackOne.png

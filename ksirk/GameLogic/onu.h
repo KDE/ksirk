@@ -176,7 +176,8 @@ public:
   Continent* continentNamed(const QString& name);
 
   inline double zoom() const {return m_zoom;}
-  
+
+  inline const QImage& mask() const {return countriesMask;}
 private:
   /**
     * All data that have to be stored about the font to display countries names
@@ -219,11 +220,6 @@ private:
     * A snaphsot of a running game with this skin. Used at skin choice time.
     */
   QPixmap m_snapshot;
-  
-  /**
-    * The name of the SVG file containing the world's map
-    */
-  QString m_mapFileName;
   
   //@{
   /**
