@@ -33,6 +33,7 @@
 #include <QApplication>
 #include <QDataStream>
 #include <QBitmap>
+#include <QGraphicsSvgItem>
 
 #include <iostream>
 #include <stdexcept>
@@ -456,30 +457,34 @@ void Country::highlight(const QColor& color)
   clearHighlighting();
   
   QBrush brush(color);
-//   m_highlighting = new QGraphicsEllipseItem(
+  m_highlighting = new QGraphicsSvgItem(m_automaton->game()->backGnd());
 //       m_pointFlag.x()-m_flag->boundingRect().width()/2,
 //       m_pointFlag.y()-m_flag->boundingRect().height()/2,
 //       m_flag->boundingRect().width()*2,
 //       m_flag->boundingRect().height()*2,
 //       m_automaton->game()->backGnd());
-
+  m_highlighting->setSharedRenderer(m_automaton->game()->theWorld()->renderer());
+  m_highlighting->setElementId(m_name);
+  m_highlighting->setPos(
+      m_centralPoint.x()-m_highlighting->boundingRect().width()/2,
+      m_centralPoint.y()-m_highlighting->boundingRect().height()/2);
 
 //   QImage image(m_automaton->game()->theWorld()->mask().createMaskFromColor(qRgb(0,0,m_id)));
 
-  QBitmap bm(QPixmap::fromImage(m_automaton->game()->theWorld()->mask()).createMaskFromColor(qRgb(0,0,m_id)));
+//   QBitmap bm(QPixmap::fromImage(m_automaton->game()->theWorld()->mask()).createMaskFromColor(qRgb(0,0,m_id)));
 
   /*  QImage image(image2.createMaskFromColor(qRgb(0,0,0),Qt::MaskOutColor));*/
 
-  QPixmap pm(m_automaton->game()->backGnd()->pixmap());
+//   QPixmap pm(m_automaton->game()->backGnd()->pixmap());
 //   pm.fill(Qt::black);
-  pm.setMask(bm);
+//   pm.setMask(bm);
 
 
-  m_highlighting = new QGraphicsPixmapItem(
-  pm,
-                                           m_automaton->game()->backGnd());
+//   m_highlighting = new QGraphicsPixmapItem(
+//   pm,
+//                                            m_automaton->game()->backGnd());
                                            
-  ((QGraphicsEllipseItem*)m_highlighting)->setBrush(brush);
+//   ((QGraphicsEllipseItem*)m_highlighting)->setBrush(brush);
 
 }
 

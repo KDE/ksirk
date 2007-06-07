@@ -14,7 +14,7 @@ name=Earth-like
 desc=This skin shows a world that looks like the real one with some nationalities randomly chosen and proposes various interesting goals
 fighters-flag-y-diff=-12
 width-between-flag-and-fighter=32
-countries=Western US,Eastern US,Quebec,Ontario,Alberta,Alaska,Groenland,Mexico,Colombia,Brasil,Paraguay,Chili,Island,United Kingdom,Benelux,France,Prussia,Scandinavia,Russia,Iran,China,Pakistan,Kazakstan,Siberia,Mongolia,Japan,Algeria,Niger,Egypt,Gabon,Zair,South Africa,Madagascar,Arabia,Middle East,India,Vietnam,Indonesia,Papouasie,Occidental Australia,New South Walles,New Zealand
+countries=Western US,Eastern US,Quebec,Ontario,Alberta,Alaska,Groenland,Mexico,Colombia,Brazil,Paraguay,Chili,Island,United Kingdom,Benelux,France,Prussia,Scandinavia,Russia,Iran,China,Pakistan,Kazakstan,Siberia,Mongolia,Japan,Algeria,Niger,Egypt,Gabon,Zair,South Africa,Madagascar,Arabia,Middle East,India,Vietnam,Indonesia,Papouasie,Occidental Australia,New South Walles,New Zealand
 nationalities=France,United Kingdom,United States,Belgium,Japan,Italy
 continents=North America,South America,Europe,Africa,Asia,Pacific
 goals=goal1,goal2,goal3,goal4,goal5,goal6,goal7,goal8,goal9
@@ -142,7 +142,7 @@ cavalry-point=261,471
 infantry-point=249,497
 neighbours=7,9,10
 
-[Brasil]
+[Brazil]
 id=9
 flag-point=318,494
 central-point=323,515
@@ -320,7 +320,7 @@ neighbours=9,26,28,29
 [Egypt]
 id=28
 flag-point=564,397
-central-point=561,420
+central-point=575,409
 cannons-point=538,366
 cavalry-point=530,395
 infantry-point=560,420
@@ -330,7 +330,7 @@ neighbours=26,27,29,33
 [Gabon]
 id=29
 flag-point=571,476
-central-point=560,476
+central-point=525,471
 cannons-point=497,436
 cavalry-point=551,457
 infantry-point=516,460

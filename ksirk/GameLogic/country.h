@@ -33,6 +33,8 @@
 
 #include <vector>
 
+class QGraphicsSvgItem;
+
 namespace Ksirk
 {
 
@@ -385,7 +387,7 @@ public:
   /** The unique integer identifier of this country. */
   unsigned int m_id;
 
-  QGraphicsItem* m_highlighting;
+  QGraphicsSvgItem* m_highlighting;
 };
 
 QDataStream& operator>>(QDataStream& stream, Country* country);

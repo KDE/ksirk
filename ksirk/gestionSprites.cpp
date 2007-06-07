@@ -89,7 +89,7 @@ bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *m_firstCou
           && (nbABouger < m_firstCountry-> nbArmies()))
   {
     sprite = new CannonSprite( 
-        Sprites::SkinSpritesData::single().strData("cannon-file"), m_backGnd,
+        Sprites::SkinSpritesData::single().strData("cannon-id"), m_backGnd,
         Sprites::SkinSpritesData::single().intData("cannon-frames"),
                               Sprites::SkinSpritesData::single().intData("cannon-versions"),       m_theWorld->zoom(),
                               200);
@@ -99,7 +99,7 @@ bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *m_firstCou
           && (nbABouger < m_firstCountry-> nbArmies()))
   {
     sprite = new CavalrySprite( Sprites::
-        SkinSpritesData::single().strData("cavalry-file"), m_backGnd, 
+        SkinSpritesData::single().strData("cavalry-id"), m_backGnd,
         Sprites::SkinSpritesData::single().intData("cavalry-frames"), 
                                 Sprites::SkinSpritesData::single().intData("cavalry-versions"),       m_theWorld->zoom(),
                                 200);
@@ -109,7 +109,7 @@ bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *m_firstCou
           && (nbABouger < m_firstCountry-> nbArmies()))
   {
     sprite = new InfantrySprite( 
-        Sprites::SkinSpritesData::single().strData("infantry-file"), m_backGnd, 
+        Sprites::SkinSpritesData::single().strData("infantry-id"), m_backGnd,
         Sprites::SkinSpritesData::single().intData("infantry-frames"), 
                                 Sprites::SkinSpritesData::single().intData("infantry-versions"),       m_theWorld->zoom(),
                                 200);
@@ -209,7 +209,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   kDebug() << k_funcinfo << "3: " << pointArriveeAttaquant << " ; " << pointArriveeDefenseur << endl;
   
   CannonSprite* attackingSprite = new CannonSprite(
-      Sprites::SkinSpritesData::single().strData("cannon-file"),
+      Sprites::SkinSpritesData::single().strData("cannon-id"),
       m_backGnd,
       Sprites::SkinSpritesData::single().intData("cannon-frames"),
       Sprites::SkinSpritesData::single().intData("cannon-versions"),
@@ -230,7 +230,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   
   kDebug() << k_funcinfo << "4" << endl;
   CannonSprite* defenderSprite = new CannonSprite(
-      Sprites::SkinSpritesData::single().strData("cannon-file"),
+      Sprites::SkinSpritesData::single().strData("cannon-id"),
       m_backGnd,
       Sprites::SkinSpritesData::single().intData("cannon-frames"),
       Sprites::SkinSpritesData::single().intData("cannon-versions"),
@@ -247,8 +247,8 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
       QMessageBox::critical(0, i18n("Error !"), i18n("Sound roule not found - Verify your installation\nProgram cannot continue"));
       exit(2);
   }
-  kDebug() << k_funcinfo << "5" << endl;
   m_audioPlayer->play(sndRoulePath);
+  kDebug() << k_funcinfo << "5" << endl;
 }
 
 void KGameWindow::animCombat()
@@ -262,7 +262,7 @@ void KGameWindow::animCombat()
   {
     CannonSprite* sprite = (CannonSprite*)(*it);
     sprite-> changeSequence(
-        Sprites::SkinSpritesData::single().strData("firing-file"),
+        Sprites::SkinSpritesData::single().strData("firing-id"),
         Sprites::SkinSpritesData::single().intData("firing-frames"), 
         Sprites::SkinSpritesData::single().intData("firing-versions"));
     int firingRelativePos = Sprites::SkinSpritesData::single().intData("cannon-width") - Sprites::SkinSpritesData::single().intData("firing-width");
@@ -295,7 +295,7 @@ void KGameWindow::stopCombat()
     CannonSprite* sprite = (CannonSprite*)(*it);
 //     it = m_animFighters.remove(it);
     sprite-> changeSequence(
-        Sprites::SkinSpritesData::single().strData("cannon-file"),
+        Sprites::SkinSpritesData::single().strData("cannon-id"),
         Sprites::SkinSpritesData::single().intData("cannon-frames"), 
         Sprites::SkinSpritesData::single().intData("cannon-versions"));
     if (sprite-> looksToLeft()) 
@@ -326,7 +326,7 @@ void KGameWindow::animExplosion(int who)
     {
       kDebug() << "  removing a sprite" << endl;
       sprite-> changeSequence(
-          Sprites::SkinSpritesData::single().strData("exploding-file"),
+          Sprites::SkinSpritesData::single().strData("exploding-id"),
           Sprites::SkinSpritesData::single().intData("exploding-frames"), 
           Sprites::SkinSpritesData::single().intData("exploding-versions"));
       sprite->setAnimated(1);
@@ -335,7 +335,7 @@ void KGameWindow::animExplosion(int who)
     {
       kDebug() << "  keeping a sprite" << endl;
       sprite-> changeSequence(
-          Sprites::SkinSpritesData::single().strData("cannon-file"),
+          Sprites::SkinSpritesData::single().strData("cannon-id"),
           Sprites::SkinSpritesData::single().intData("cannon-frames"), 
           Sprites::SkinSpritesData::single().intData("cannon-versions"));
       sprite->setStatic();
@@ -382,7 +382,7 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
     if (who == 0) //Attaquant detruit, ramene defenseur
     {
         newSprite = new CannonSprite(
-            Sprites::SkinSpritesData::single().strData("cannon-file"),
+            Sprites::SkinSpritesData::single().strData("cannon-id"),
             m_backGnd,
             Sprites::SkinSpritesData::single().intData("cannon-frames"),
             Sprites::SkinSpritesData::single().intData("cannon-versions"),
@@ -413,8 +413,13 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
     }
     else if (who == 1) //Defenseur detruit, ramene Attaquant
     {
-      newSprite = new CannonSprite( Sprites::SkinSpritesData::single().strData("cannon-file"), m_backGnd, Sprites::SkinSpritesData::single().intData("cannon-frames"), Sprites::SkinSpritesData::single().intData("cannon-versions"),       m_theWorld->zoom(),
-                                    200);
+      newSprite = new CannonSprite(
+          Sprites::SkinSpritesData::single().strData("cannon-id"),
+          m_backGnd,
+          Sprites::SkinSpritesData::single().intData("cannon-frames"),
+          Sprites::SkinSpritesData::single().intData("cannon-versions"),
+          m_theWorld->zoom(),
+          200);
         if ((paysAttaquant-> pointFlag().x() <= paysDefenseur-> pointFlag().x())
         && !(
         (qAbs(paysAttaquant-> pointFlag().x()-paysDefenseur-> pointFlag().x()) > (m_backGnd-> boundingRect().width() / 2))

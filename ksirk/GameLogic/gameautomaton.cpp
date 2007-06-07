@@ -344,30 +344,38 @@ GameAutomaton::GameState GameAutomaton::run()
       switch ( m_game->attacked(point) )
       {
         case 0:
+          kDebug() << k_funcinfo << "handling attacked value; 0" << endl;
           state(WAIT);
         break;
         case 1:
+          kDebug() << k_funcinfo << "handling attacked value; 1" << endl;
           m_currentPlayerPlayed = true;
           state(WAITDEFENSE);
         break;
         case 2:
+          kDebug() << k_funcinfo << "handling attacked value; 2" << endl;
           m_currentPlayerPlayed = true;
+          kDebug() << k_funcinfo << "calling defense(1)" << endl;
           m_game-> defense(1);
+          kDebug() << k_funcinfo << "setting state to FIGHT_BRING" << endl;
           state(FIGHT_BRING);
         break;
         case 3:
+          kDebug() << k_funcinfo << "handling attacked value; 3" << endl;
           // AI action: nothing to do.
         break;
         default:
           kError() << "Unknown return value from attacked" << endl;
           exit(1);
-      } 
+      }
+      kDebug() << k_funcinfo << "after switch" << endl;
     }
     else
     {
       //        if (!event.isEmpty())
 //          kError() << "Unhandled event " << event << " during handling of " << stateName() endl;
     }
+    kDebug() << k_funcinfo << "handling of ATTACK2 finished" << endl;
   break;
   case EXPLOSION_ANIMATE:
   break;

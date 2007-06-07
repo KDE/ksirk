@@ -362,14 +362,14 @@ void KGameWindow::initView()
 
 bool KGameWindow::attackEnd()
 {
-  kDebug() << "KGameWindow::attackEnd" << endl;
+  kDebug() << k_funcinfo << endl;
   if (m_firstCountry==0 || m_secondCountry == 0)
   {
     return false;
   }
   bool res = false;
   QString mes = "";
-  kDebug() << "There is now " << m_secondCountry-> nbArmies() << " armies in " << m_secondCountry->name() << "." << endl;
+  kDebug() << k_funcinfo << "There is now " << m_secondCountry-> nbArmies() << " armies in " << m_secondCountry->name() << "." << endl;
   if (m_secondCountry-> nbArmies() == 0)
   {
     QPixmap pm = currentPlayer()->getFlag()->image(0);
@@ -1629,6 +1629,7 @@ unsigned int KGameWindow::attacked(const QPointF& point)
 
   KMessageParts messageParts;
 
+  kDebug() << k_funcinfo << "2nd country is now set" << endl;
   if ( (m_firstCountry == NULL) || (secondCountry == NULL)
           || (m_firstCountry-> owner() != currentPlayer()) )
   {
@@ -1683,7 +1684,9 @@ unsigned int KGameWindow::attacked(const QPointF& point)
       << secondCountry-> name();
     res = 2;
   }
+  kDebug() << k_funcinfo << "will change item" << endl;
   broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
+  kDebug() << k_funcinfo << "change item broadcasted; returning " << res << endl;
   return res;
 }
 
@@ -1967,6 +1970,7 @@ void KGameWindow::attack(unsigned int nb)
 
 void KGameWindow::defense(unsigned int nb)
 {
+  kDebug() << k_funcinfo << endl;
   clearGameActionsToolbar();
 
   if (!m_firstCountry) // anything left to do?
@@ -2418,6 +2422,7 @@ void KGameWindow::showMessage(const QString& message, quint32 delay)
 
 void KGameWindow::firstCountry(GameLogic::Country* country)
 {
+  kDebug() << k_funcinfo << endl;
   if (m_firstCountry != 0)
   {
     m_firstCountry->clearHighlighting();
@@ -2436,6 +2441,7 @@ void KGameWindow::firstCountry(GameLogic::Country* country)
 
 void KGameWindow::secondCountry(GameLogic::Country* country)
 {
+  kDebug() << k_funcinfo << endl;
   if (m_secondCountry != 0)
   {
     m_secondCountry->clearHighlighting();

@@ -125,6 +125,10 @@ ONU::ONU(GameAutomaton* automaton,
   kDebug() << "Loading map mask file: " << mapMaskFileName << endl;
   countriesMask = QImage(mapMaskFileName);
 
+  Sprites::SkinSpritesData::changeable().intData("fighters-flag-y-diff", onugroup.readEntry("fighters-flag-y-diff",0));
+  Sprites::SkinSpritesData::changeable().intData("width-between-flag-and-fighter", onugroup.readEntry("width-between-flag-and-fighter",0));
+
+
   Sprites::SkinSpritesData::changeable().intData("flag-width", config.group("flag").readEntry("width",0));
   Sprites::SkinSpritesData::changeable().intData("flag-frames", config.group("flag").readEntry("frames",0));
   Sprites::SkinSpritesData::changeable().intData("flag-versions", config.group("flag").readEntry("versions",0));
