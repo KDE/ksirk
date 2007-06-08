@@ -139,7 +139,9 @@ void KGameWindow::evenementTimer()
       (mousePosition.y() <=  m_frame-> viewport()->height())
       && (mousePosition.x() >= 0) && (mousePosition.x() <= m_frame-> viewport()->width()))
   {
-    kDebug() << "scrollUp " << m_frame-> verticalScrollBar()->value() << endl;
+    kDebug() << "scrollUp " << m_frame-> verticalScrollBar()->value()
+      << "("<< m_frame-> verticalScrollBar()->minimum()
+      << ", " << m_frame-> verticalScrollBar()->maximum() << ")" << endl;
     m_frame-> verticalScrollBar()->setValue ( m_frame-> verticalScrollBar()->value() + 16);
     restart = true;
   }

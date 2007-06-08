@@ -196,8 +196,12 @@ ONU::ONU(GameAutomaton* automaton,
     QPointF cavalryPoint = countryGroup.readEntry("cavalry-point",QPoint())*m_zoom;
     QPointF infantryPoint = countryGroup.readEntry("infantry-point",QPoint())*m_zoom;
 
-//         kDebug() << "Creating country " << name << endl;
-//            kDebug() << "\tflag point: " << flagPoint.x() << " " << flagPoint.y() << endl;
+//     kDebug() << "Creating country " << name << endl;
+//     kDebug() << "\tflag point: " << flagPoint << endl;
+//     kDebug() << "\tcentral point: " << centralPoint << endl;
+//     kDebug() << "\tcannon point: " << cannonPoint << endl;
+//     kDebug() << "\tcavalry point: " << cavalryPoint << endl;
+//     kDebug() << "\tinfantry point: " << infantryPoint << endl;
     countries[id] = new Country(automaton, name, centralPoint, flagPoint,
         cannonPoint, cavalryPoint, infantryPoint, id);
   }

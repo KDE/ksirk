@@ -170,7 +170,7 @@ void AnimSprite::nextFrame()
     else if (m_numberOfShots != std::numeric_limits<unsigned int>::max())
     {
       m_numberOfShots--;
-      kDebug() << "numberOfShots is nom " << m_numberOfShots << endl;
+      kDebug() << "numberOfShots is now " << m_numberOfShots << endl;
     }
   }
   else if (actFrame > (frames-1))
@@ -182,7 +182,8 @@ void AnimSprite::nextFrame()
 
 void AnimSprite::setFrame(unsigned int numFrame)
 {
-// kDebug() << "AnimSprite::setFrame("<<numFrame<<") look="<<look<<" ; frames="<<frames<<" ; m_frames size="<<m_frames.size()<<endl;
+// kDebug() << k_funcinfo << " " << numFrame << " look=" << look <<" ; frames="
+//  <<frames<<" ; m_frames size="<<m_frames.size()<<endl;
   if (numFrame < (unsigned int)m_frames.size())
   {
     setPixmap(m_frames[(look-1)*frames+numFrame]);
@@ -191,8 +192,8 @@ void AnimSprite::setFrame(unsigned int numFrame)
 
 void AnimSprite::moveIt()
 {
-/*  kDebug() << "moveIt: Position of " << (void*)this << " is: " 
-    << pos() << " (destination point is: " << destinationPoint << ")" << endl;*/
+//   kDebug() << k_funcinfo << "Position of " << (void*)this << " is: "
+//     << pos() << " (destination point is: " << destinationPoint << ")" << endl;
   qreal delta = 5;
   switch (KsirkSettings::spritesSpeed())
   {
@@ -507,7 +508,7 @@ void AnimSprite::setupTravel(
         const QPointF& srcPoint, 
         const QPointF& destPoint)
 {
-   kDebug() << "AnimSprite::setupTravel (" << srcPoint << ") (" << destPoint << ")" << endl;
+   kDebug() << k_funcinfo << srcPoint << ", " << destPoint << endl;
 
   setDestination(dest);
   setDestinationPoint(destPoint);
