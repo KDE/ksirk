@@ -14,8 +14,8 @@ name=Earth-like
 desc=This skin shows a world that looks like the real one with some nationalities randomly chosen and proposes various interesting goals
 fighters-flag-y-diff=-12
 width-between-flag-and-fighter=32
-countries=Western US,Eastern US,Quebec,Ontario,Alberta,Alaska,Groenland,Mexico,Colombia,Brazil,Paraguay,Chili,Island,United Kingdom,Benelux,France,Prussia,Scandinavia,Russia,Iran,China,Pakistan,Kazakstan,Siberia,Mongolia,Japan,Algeria,Niger,Egypt,Gabon,Zair,South Africa,Madagascar,Arabia,Middle East,India,Vietnam,Indonesia,Papouasie,Occidental Australia,New South Walles,New Zealand
-nationalities=France,United Kingdom,United States,Belgium,Japan,Italy
+countries=Western US,Eastern US,Quebec,Ontario,Alberta,Alaska,Groenland,Mexico,Colombia,Brazil,Paraguay,Chile,Island,United Kingdom,Benelux,France,Prussia,Scandinavia,Russia,Iran,China,Pakistan,Kazakstan,Siberia,Mongolia,Japan,Algeria,Niger,Egypt,Gabon,Zair,South Africa,Madagascar,Arabia,Middle East,India,Vietnam,Indonesia,Papouasie,Occidental Australia,New South Walles,New Zealand
+nationalities=France,England,United States,Belgium,Japan,Italy
 continents=North America,South America,Europe,Africa,Asia,Pacific
 goals=goal1,goal2,goal3,goal4,goal5,goal6,goal7,goal8,goal9
 
@@ -64,7 +64,7 @@ versions=2
 [Western US]
 id=0
 flag-point=182,346
-central-point=152,326
+central-point=169,328
 cannon-point=126,282
 cavalry-point=162,292
 infantry-point=147,329
@@ -73,7 +73,7 @@ neighbours=1,3,7
 [Eastern US]
 id=1
 flag-point=269,283
-central-point=269,303
+central-point=250,328
 cannon-point=213,282
 cavalry-point=250,300
 infantry-point=214,330
@@ -82,7 +82,7 @@ neighbours=0,2,3,7
 [Quebec]
 id=2
 flag-point=258,232
-central-point=278,252
+central-point=270,250
 cannon-point=247,202
 cavalry-point=223,239
 infantry-point=275,235
@@ -91,7 +91,7 @@ neighbours=1,3,4,6
 [Ontario]
 id=3
 flag-point=192,248
-central-point=162,248
+central-point=157,243
 cannon-point=96,213
 cavalry-point=134,240
 infantry-point=183,217
@@ -100,7 +100,7 @@ neighbours=0,1,2,4,5
 [Alberta]
 id=4
 flag-point=189,187
-central-point=169,190
+central-point=195,175
 cannon-point=93,164
 cavalry-point=149,172
 infantry-point=189,154
@@ -108,7 +108,7 @@ neighbours=2,3,5,6
 
 [Alaska]
 id=5
-flag-point=61,163
+flag-point=56,165
 central-point=55,193
 cannon-point=20,147
 cavalry-point=45,174
@@ -118,7 +118,7 @@ neighbours=3,4,23
 [Groenland]
 id=6
 flag-point=369,129
-central-point=369,109
+central-point=339,129
 cannon-point=331,117
 cavalry-point=245,36
 infantry-point=337,72
@@ -160,7 +160,7 @@ cavalry-point=295,581
 infantry-point=319,547
 neighbours=8,9,11
 
-[Chili]
+[Chile]
 id=11
 flag-point=310,620
 central-point=295,630
@@ -462,7 +462,7 @@ neighbours=40
 leader=de Gaulle
 flag=france
 
-[United Kingdom]
+[England]
 leader=Elisabeth
 flag=uk
 

@@ -742,6 +742,8 @@ private:
 
   QGraphicsItem * m_message;
 
+  GameLogic::Country* m_mouseLocalisation;
+
 private: // Private methods
   void attack(GameLogic::Country& attacker, GameLogic::Country& defender, unsigned int nb);
   void moveArmies(GameLogic::Country& src, GameLogic::Country& dest, unsigned int nb);

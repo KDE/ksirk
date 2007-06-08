@@ -53,7 +53,7 @@ using namespace GameLogic;
 // void KGameWindow::slotTimerEvent()
 void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
 {
-//   kDebug() << "KGameWindow::mouseMoveEvent" << endl;
+//   kDebug() << k_funcinfo << endl;
   QString countryName;
   QPoint mousePos;
   QPoint mousePosGlobal;
@@ -65,9 +65,19 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
   mousePosition = m_frame-> mapToScene(mousePos); 
   mouseLocalisation = clickIn(mousePosition);
   countryName = (mouseLocalisation) ? mouseLocalisation->name() : "";
-
   if (mouseLocalisation)
   {
+    if (m_mouseLocalisation && m_mouseLocalisation!=mouseLocalisation)
+    {
+      m_mouseLocalisation->clearHighlighting();
+      m_mouseLocalisation = mouseLocalisation;
+      mouseLocalisation->highlightAsAttacker();
+    }
+    else if (m_mouseLocalisation == 0)
+    {
+      m_mouseLocalisation = mouseLocalisation;
+      mouseLocalisation->highlightAsAttacker();
+    }
     if (!countryName.isEmpty())
     {
       QString status1Text = "";
@@ -80,7 +90,15 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
       statusBar()-> changeItem(status1Text, ID_STATUS_MSG);
     }
   }
-  else statusBar()-> changeItem("", ID_STATUS_MSG); // Reset
+  else
+  {
+    if (m_mouseLocalisation!=0)
+    {
+      m_mouseLocalisation->clearHighlighting();
+      m_mouseLocalisation = 0;
+    }
+    statusBar()-> changeItem("", ID_STATUS_MSG); // Reset
+  }
 
   if ( (!m_timer.isActive())
     && ( ((mousePos.x() < 10) && (mousePos.x() >= 0)

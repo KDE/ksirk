@@ -94,7 +94,8 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_audioPlayer(new Phonon::AudioPlayer( Phonon::NotificationCategory )),
   m_timer(this),
   gameActionsToolBar(0),
-  m_message(0)
+  m_message(0),
+  m_mouseLocalisation(0)
 {
   kDebug() << "KGameWindow constructor begin" << endl;
 
