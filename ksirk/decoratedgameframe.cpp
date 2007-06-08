@@ -21,12 +21,11 @@
 #include "decoratedgameframe.h"
 #include "GameLogic/player.h"
 
-#include <qmessagebox.h>
-#include <qcursor.h>
-#include <qsize.h>
+#include <QSize>
 #include <QEvent>
 #include <QMouseEvent>
 #include <QGraphicsSceneMouseEvent>
+#include <QScrollBar>
 
 #include <klocale.h>
 #include <kdebug.h>
@@ -41,8 +40,9 @@ DecoratedGameFrame::DecoratedGameFrame(QWidget* parent,
       unsigned int mapW, unsigned int mapH)
   : QGraphicsView(parent), m_mapW(mapW), m_mapH(mapH)
 {
-  setVerticalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
-  setHorizontalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
+  kDebug() << k_funcinfo << "("<<mapW<<"x"<<mapH<<")" << endl;
+  setVerticalScrollBarPolicy( Qt::ScrollBarAlwaysOn );
+  setHorizontalScrollBarPolicy( Qt::ScrollBarAlwaysOn );
   setCacheMode(QGraphicsView::CacheBackground);
   setMinimumSize(200,100);
   setMaximumSize(mapW,mapH);
