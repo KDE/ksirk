@@ -289,14 +289,17 @@ public:
     */
   bool hasAdjacentEnemy();
 
-  void highlight(const QColor& color);
+  void highlight(const QColor& color = Qt::white, qreal opacity = 1.0);
 
   void highlightAsAttacker();
   
   void highlightAsDefender();
   
   void clearHighlighting();
-  
+
+  bool isHighlightingLocked();
+  void releaseHighlightingLock();
+
   private:
   GameAutomaton* m_automaton;
   
@@ -392,6 +395,7 @@ public:
 
   KSvgRenderer* m_renderer;
 
+  bool m_highlighting_locked;
 };
 
 QDataStream& operator>>(QDataStream& stream, Country* country);

@@ -66,7 +66,8 @@ Country::Country(GameAutomaton* game,
   m_pointInfantry(infantryPoint),
   m_id(id),
   m_highlighting(0),
-  m_renderer(new KSvgRenderer())
+  m_renderer(new KSvgRenderer()),
+  m_highlighting_locked(false)
 {
 //   kDebug() << k_funcinfo << m_name << ", " << this << endl;
 }
@@ -436,8 +437,13 @@ bool Country::hasAdjacentEnemy()
   return false;
 }
 
-void Country::highlight(const QColor& color)
+void Country::highlight(const QColor& color, qreal opacity)
 {
+  kDebug() << k_funcinfo << endl;
+  if (m_highlighting_locked)
+  {
+    return;
+  }
   clearHighlighting();
   
   QBrush brush(color);
@@ -446,6 +452,7 @@ void Country::highlight(const QColor& color)
 
   m_automaton->game()->theWorld()->svgDom()->setCurrentNode(countryElement);
   m_automaton->game()->theWorld()->svgDom()->setStyleProperty("fill", color.name());
+  m_automaton->game()->theWorld()->svgDom()->setStyleProperty("fill-opacity", QString::number(opacity));
 
   QByteArray svg = m_automaton->game()->theWorld()->svgDom()->nodeToByteArray();
   m_renderer->load(svg);
@@ -460,25 +467,41 @@ void Country::highlight(const QColor& color)
 
 void Country::highlightAsAttacker()
 {
-  QColor color(Qt::red);
-  highlight(color);
+  kDebug() << k_funcinfo << endl;
+  highlight(Qt::red, 0.6);
+  m_highlighting_locked = true;
 }
 
 void Country::highlightAsDefender()
 {
-  QColor color(Qt::yellow);
-  highlight(color);
+  kDebug() << k_funcinfo << endl;
+  highlight(Qt::yellow,0.6);
+  m_highlighting_locked = true;
 }
 
 void Country::clearHighlighting()
 {
-  if (m_highlighting!=0)
+  kDebug() << k_funcinfo << endl;
+  if (!m_highlighting_locked && m_highlighting!=0)
   {
     m_highlighting->hide();
     delete m_highlighting;
     m_highlighting = 0;
   }
 }
+
+bool Country::isHighlightingLocked()
+{
+  kDebug() << k_funcinfo << endl;
+  return m_highlighting_locked;
+}
+
+void Country::releaseHighlightingLock()
+{
+  kDebug() << k_funcinfo << endl;
+  m_highlighting_locked=false;
+}
+
 
 QDataStream& operator>>(QDataStream& stream, Country* country)
 {

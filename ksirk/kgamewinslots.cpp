@@ -71,12 +71,12 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
     {
       m_mouseLocalisation->clearHighlighting();
       m_mouseLocalisation = mouseLocalisation;
-      mouseLocalisation->highlightAsAttacker();
+      mouseLocalisation->highlight(Qt::white, 0.5);
     }
     else if (m_mouseLocalisation == 0)
     {
       m_mouseLocalisation = mouseLocalisation;
-      mouseLocalisation->highlightAsAttacker();
+      mouseLocalisation->highlight(Qt::white, 0.5);
     }
     if (!countryName.isEmpty())
     {

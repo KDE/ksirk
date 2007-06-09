@@ -368,6 +368,10 @@ bool KGameWindow::attackEnd()
   {
     return false;
   }
+  m_firstCountry->releaseHighlightingLock();
+  m_firstCountry->clearHighlighting();
+  m_secondCountry->releaseHighlightingLock();
+  m_secondCountry->clearHighlighting();
   bool res = false;
   QString mes = "";
   kDebug() << k_funcinfo << "There is now " << m_secondCountry-> nbArmies() << " armies in " << m_secondCountry->name() << "." << endl;
@@ -2435,9 +2439,7 @@ void KGameWindow::firstCountry(GameLogic::Country* country)
     return;
   }
   kDebug() << k_funcinfo << country->name() << endl;
-  QColor color(Qt::red);
-  color.setAlpha(128);
-  country->highlight(color);
+  country->highlightAsAttacker();
 }
 
 void KGameWindow::secondCountry(GameLogic::Country* country)
@@ -2454,9 +2456,7 @@ void KGameWindow::secondCountry(GameLogic::Country* country)
     return;
   }
   kDebug() << k_funcinfo << country->name() << endl;
-  QColor color(Qt::yellow);
-  color.setAlpha(128);
-  country->highlight(color);
+  country->highlightAsDefender();
 }
 
 
