@@ -67,6 +67,8 @@
 #include <KStatusBar>
 #include <KToolBar>
 #include <KAction>
+#include <KSvgRenderer>
+
 
 #include <assert.h>
 
@@ -246,24 +248,62 @@ Player* KGameWindow::currentPlayer()
 
 void KGameWindow::loadDices()
 {
-//   kDebug() << "KGameWindow::loadDices" << endl;
+  kDebug() << k_funcinfo << endl;
   
   m_dices[Blue] = std::vector<QPixmap>(6);
   m_dices[Red] = std::vector<QPixmap>(6);
-  QString dicesDir = m_dirs->findResourceDir("appdata", m_automaton->skin() + "/Images/reddice1.png") + m_automaton->skin() + "/Images/";
-  
-  m_dices[Blue][0] = QPixmap(dicesDir+"/bluedice1.png");
-  m_dices[Blue][1] = QPixmap(dicesDir+"/bluedice2.png");
-  m_dices[Blue][2] = QPixmap(dicesDir+"/bluedice3.png");
-  m_dices[Blue][3] = QPixmap(dicesDir+"/bluedice4.png");
-  m_dices[Blue][4] = QPixmap(dicesDir+"/bluedice5.png");
-  m_dices[Blue][5] = QPixmap(dicesDir+"/bluedice6.png");
-  m_dices[Red][0] = QPixmap(dicesDir+"/reddice1.png");
-  m_dices[Red][1] = QPixmap(dicesDir+"/reddice2.png");
-  m_dices[Red][2] = QPixmap(dicesDir+"/reddice3.png");
-  m_dices[Red][3] = QPixmap(dicesDir+"/reddice4.png");
-  m_dices[Red][4] = QPixmap(dicesDir+"/reddice5.png");
-  m_dices[Red][5] = QPixmap(dicesDir+"/reddice6.png");
+//   QString dicesDir = m_dirs->findResourceDir("appdata", m_automaton->skin() + "/Images/reddice1.png") + m_automaton->skin() + "/Images/";
+  m_dices[Blue][0] = buildDice(Blue, "bluedice1");
+  m_dices[Blue][1] = buildDice(Blue, "bluedice2");
+  m_dices[Blue][2] = buildDice(Blue, "bluedice3");
+  m_dices[Blue][3] = buildDice(Blue, "bluedice4");
+  m_dices[Blue][4] = buildDice(Blue, "bluedice5");
+  m_dices[Blue][5] = buildDice(Blue, "bluedice6");
+  m_dices[Red][0] = buildDice(Red, "reddice1");
+  m_dices[Red][1] = buildDice(Red, "reddice2");
+  m_dices[Red][2] = buildDice(Red, "reddice3");
+  m_dices[Red][3] = buildDice(Red, "reddice4");
+  m_dices[Red][4] = buildDice(Red, "reddice5");
+  m_dices[Red][5] = buildDice(Red, "reddice6");
+}
+
+QPixmap KGameWindow::buildDice(DiceColor color, const QString& id)
+{
+  kDebug() << k_funcinfo << endl;
+//   QString stop1Color, stop2Color;
+//   if (color == Red)
+//   {
+//     stop1Color = "#f07f7f";
+//     stop2Color = "#620000";
+//   }
+//   else
+//   {
+//     stop1Color = "#707fff";
+//     stop2Color = "#000062";
+//   }
+//   QDomNode stop1Element = m_theWorld->svgDom()->elementById("stop1LinearGradientDice");
+//   m_theWorld->svgDom()->setCurrentNode(stop1Element);
+//   m_theWorld->svgDom()->setStyleProperty("style", QString("stop-color:")+stop1Color+";stop-opacity:1");
+// 
+//   QDomNode stop2Element = m_theWorld->svgDom()->elementById("stop2LinearGradientDice");
+//   m_theWorld->svgDom()->setCurrentNode(stop2Element);
+//   m_theWorld->svgDom()->setStyleProperty("style", QString("stop-color:")+stop2Color+";stop-opacity:1");
+// 
+//   kDebug() << k_funcinfo << "after stops " << stop1Color << ", " << stop2Color << endl;
+// 
+//   QByteArray svg = m_theWorld->svgDom()->toByteArray();
+//   kDebug() << svg << endl;
+//   KSvgRenderer renderer;
+//   renderer.load(svg);
+//   kDebug() << k_funcinfo << "after loading" << endl;
+
+  QSize size(32,32);
+  QImage image(size, QImage::Format_ARGB32_Premultiplied);
+  image.fill(0);
+  QPainter p(&image);
+  m_theWorld->renderer()->render(&p, id);
+
+  return QPixmap::fromImage(image);
 }
 
 // void KGameWindow::resizeEvent ( QResizeEvent * event )

@@ -446,8 +446,6 @@ void Country::highlight(const QColor& color, qreal opacity)
   }
   clearHighlighting();
   
-  QBrush brush(color);
-
   QDomNode countryElement = m_automaton->game()->theWorld()->svgDom()->elementById(m_name);
 
   m_automaton->game()->theWorld()->svgDom()->setCurrentNode(countryElement);

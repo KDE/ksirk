@@ -749,6 +749,7 @@ private: // Private methods
   void moveArmies(GameLogic::Country& src, GameLogic::Country& dest, unsigned int nb);
   void saveXml(std::ostream& xmlStream);
   void loadDices();
+  QPixmap buildDice(DiceColor color, const QString& id);
 
 };
 

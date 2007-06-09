@@ -523,6 +523,7 @@ void ONU::buildMap()
     int((country->centralPoint().y()*m_zoom+countryNameRect.height()/2)),
         countryName);
   }
+  kDebug() << k_funcinfo << "done" << endl;
 }
 
 void ONU::applyZoomFactor(qreal zoomFactor)
