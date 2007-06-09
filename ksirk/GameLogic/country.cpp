@@ -29,6 +29,7 @@
 
 #include <klocale.h>
 #include <kdebug.h>
+#include <ksvgrenderer.h>
 #include <QString>
 #include <QApplication>
 #include <QDataStream>
@@ -64,7 +65,8 @@ Country::Country(GameAutomaton* game,
   m_pointCavalry(cavalryPoint),
   m_pointInfantry(infantryPoint),
   m_id(id),
-  m_highlighting(0)
+  m_highlighting(0),
+  m_renderer(new KSvgRenderer())
 {
 //   kDebug() << k_funcinfo << m_name << ", " << this << endl;
 }
@@ -76,6 +78,7 @@ Country::~Country()
   {
     delete m_flag;
   }
+  delete m_renderer;
 }
 
 void Country::reset()
@@ -411,27 +414,8 @@ void Country::saveXml(std::ostream& xmlStream)
   xmlStream << "nbArmies=\""<<nbArmies() << "\" ";
   xmlStream << "nbArmiesAdded=\""<<nbAddedArmies() << "\" ";
 
-    xmlStream << " />" << std::endl;
+  xmlStream << " />" << std::endl;
 
-/*    xmlStream << "<flagPoint x=\""<<m_pointFlag.x()<<"\" y=\""<<m_pointFlag.y()<<"\" />" << std::endl;
-    xmlStream << "<cavalryPoint x=\""<<m_pointCavalry.x()<<"\" y=\""<<m_pointCavalry.y()<<"\" />" << std::endl;
-    xmlStream << "<infantryPoint x=\""<<m_pointInfantry.x()<<"\" y=\""<<m_pointInfantry.y()<<"\" />" << std::endl;
-
-    xmlStream << "<neighbours>" << std::endl;
-    for (unsigned int i = 0; i < m_spritesCannons.size() ; i++)
-    {
-      xmlStream << "<neighbour name=\""<<m_neighbours.at(i)->name()<<"\" />" << std::endl;
-    }
-    xmlStream << "</neighbours>" << std::endl;
-    
-    m_spritesCannons.saveXmlAll(xmlStream);
-
-    m_spritesCavalry.saveXmlAll(xmlStream);
-
-    m_spritesInfantry.saveXmlAll(xmlStream);
-  
-  xmlStream << "</country>" << std::endl;
-*/
 }
 
 void Country::send(QDataStream& stream)
@@ -457,35 +441,21 @@ void Country::highlight(const QColor& color)
   clearHighlighting();
   
   QBrush brush(color);
+
+  QDomNode countryElement = m_automaton->game()->theWorld()->svgDom()->elementById(m_name);
+
+  m_automaton->game()->theWorld()->svgDom()->setCurrentNode(countryElement);
+  m_automaton->game()->theWorld()->svgDom()->setStyleProperty("fill", color.name());
+
+  QByteArray svg = m_automaton->game()->theWorld()->svgDom()->nodeToByteArray();
+  m_renderer->load(svg);
+
   m_highlighting = new QGraphicsSvgItem(m_automaton->game()->backGnd());
-//       m_pointFlag.x()-m_flag->boundingRect().width()/2,
-//       m_pointFlag.y()-m_flag->boundingRect().height()/2,
-//       m_flag->boundingRect().width()*2,
-//       m_flag->boundingRect().height()*2,
-//       m_automaton->game()->backGnd());
-  m_highlighting->setSharedRenderer(m_automaton->game()->theWorld()->renderer());
+  m_highlighting->setSharedRenderer(m_renderer);
   m_highlighting->setElementId(m_name);
   m_highlighting->setPos(
       m_centralPoint.x()-m_highlighting->boundingRect().width()/2,
       m_centralPoint.y()-m_highlighting->boundingRect().height()/2);
-
-//   QImage image(m_automaton->game()->theWorld()->mask().createMaskFromColor(qRgb(0,0,m_id)));
-
-//   QBitmap bm(QPixmap::fromImage(m_automaton->game()->theWorld()->mask()).createMaskFromColor(qRgb(0,0,m_id)));
-
-  /*  QImage image(image2.createMaskFromColor(qRgb(0,0,0),Qt::MaskOutColor));*/
-
-//   QPixmap pm(m_automaton->game()->backGnd()->pixmap());
-//   pm.fill(Qt::black);
-//   pm.setMask(bm);
-
-
-//   m_highlighting = new QGraphicsPixmapItem(
-//   pm,
-//                                            m_automaton->game()->backGnd());
-                                           
-//   ((QGraphicsEllipseItem*)m_highlighting)->setBrush(brush);
-
 }
 
 void Country::highlightAsAttacker()

@@ -112,6 +112,7 @@ ONU::ONU(GameAutomaton* automaton,
   }
   m_map = QPixmap();
   m_renderer.load(poolFileName);
+  m_svgDom.load(poolFileName);
 
   QString mapMaskFileName = KGlobal::dirs()-> findResource("appdata", m_skin + '/' + onugroup.readEntry("map-mask"));
   kDebug() << "Map mask file name: " << mapMaskFileName << endl;

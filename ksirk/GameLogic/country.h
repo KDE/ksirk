@@ -33,6 +33,7 @@
 
 #include <vector>
 
+class KSvgRenderer;
 class QGraphicsSvgItem;
 
 namespace Ksirk
@@ -388,6 +389,9 @@ public:
   unsigned int m_id;
 
   QGraphicsSvgItem* m_highlighting;
+
+  KSvgRenderer* m_renderer;
+
 };
 
 QDataStream& operator>>(QDataStream& stream, Country* country);

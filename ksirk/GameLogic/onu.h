@@ -23,6 +23,8 @@
 #ifndef ONU_H
 #define ONU_H
 
+#include <kgamesvgdocument.h>
+
 #include <qdatastream.h>
 #include <QPixmap>
 #include <QFont>
@@ -181,6 +183,8 @@ public:
 
   inline QSvgRenderer* renderer() {return &m_renderer;}
 
+  inline KGameSvgDocument* svgDom() {return &m_svgDom;}
+
 private:
   /**
     * All data that have to be stored about the font to display countries names
@@ -276,6 +280,8 @@ private:
     * desired zoom factor and the result is used to build the map image.
     */
   QSvgRenderer m_renderer;
+
+  KGameSvgDocument m_svgDom;
 
   /**
    * Build the map from it's stored image and the countries names
