@@ -445,22 +445,25 @@ void Country::highlight(const QColor& color, qreal opacity)
     return;
   }
   clearHighlighting();
-  
-  QDomNode countryElement = m_automaton->game()->theWorld()->svgDom()->elementById(m_name);
 
-  m_automaton->game()->theWorld()->svgDom()->setCurrentNode(countryElement);
-  m_automaton->game()->theWorld()->svgDom()->setStyleProperty("fill", color.name());
-  m_automaton->game()->theWorld()->svgDom()->setStyleProperty("fill-opacity", QString::number(opacity));
+  ONU* onu = m_automaton->game()->theWorld();
+  QDomNode countryElement = onu->svgDom()->elementById(m_name);
 
-  QByteArray svg = m_automaton->game()->theWorld()->svgDom()->nodeToByteArray();
+  onu->svgDom()->setCurrentNode(countryElement);
+  onu->svgDom()->setStyleProperty("fill", color.name());
+  onu->svgDom()->setStyleProperty("fill-opacity", QString::number(opacity));
+
+  QByteArray svg = onu->svgDom()->nodeToByteArray();
   m_renderer->load(svg);
 
   m_highlighting = new QGraphicsSvgItem(m_automaton->game()->backGnd());
   m_highlighting->setSharedRenderer(m_renderer);
   m_highlighting->setElementId(m_name);
   m_highlighting->setPos(
-      m_centralPoint.x()-m_highlighting->boundingRect().width()/2,
-      m_centralPoint.y()-m_highlighting->boundingRect().height()/2);
+      (m_centralPoint.x()-m_highlighting->boundingRect().width()/2)*onu->zoom(),
+      (m_centralPoint.y()-m_highlighting->boundingRect().height()/2)*onu->zoom());
+
+  m_highlighting->scale(onu->zoom(), onu->zoom());
 }
 
 void Country::highlightAsAttacker()
