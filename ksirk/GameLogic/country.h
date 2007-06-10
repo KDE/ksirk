@@ -71,6 +71,7 @@ public:
     */
   Country(GameAutomaton* game,
            const QString& theName,
+      const QPointF& anchorPoint,
       const QPointF& centralPoint,
       const QPointF& flagPoint, const QPointF& cannonPoint, const QPointF& cavalryPoint,
       const QPointF& infantryPoint, unsigned int id);
@@ -184,6 +185,7 @@ public:
     */
   const QString name() const;
 
+  const QPointF& anchorPoint() const;
   /**
     * Return a point inside the country territory around which are drawn the 
     * fighters.
@@ -339,6 +341,8 @@ public:
 
   /** the array of neigbours of this country */
   std::vector<Country*> m_neighbours;
+
+  QPointF m_anchorPoint;
 
   /**
     * a point situated inside this country teritory such that any click on

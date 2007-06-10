@@ -47,8 +47,9 @@ namespace GameLogic
 
 Country::Country(GameAutomaton* game,
                   const QString& theName,
+                  const QPointF& anchorPoint,
                   const QPointF& centralPoint,
-                  const QPointF& flagPoint, 
+                  const QPointF& flagPoint,
                   const QPointF& cannonPoint, 
                   const QPointF& cavalryPoint,
                   const QPointF& infantryPoint, 
@@ -59,8 +60,9 @@ Country::Country(GameAutomaton* game,
   m_nbArmies(0),
   m_nbAddedArmies(0),
   m_name(theName),
-  m_centralPoint(centralPoint), 
-  m_pointFlag(flagPoint), 
+  m_anchorPoint(anchorPoint),
+  m_centralPoint(centralPoint),
+  m_pointFlag(flagPoint),
   m_pointCannon(cannonPoint), 
   m_pointCavalry(cavalryPoint),
   m_pointInfantry(infantryPoint),
@@ -272,6 +274,11 @@ const QString Country::name() const
   return (m_name);
 }
 
+const QPointF& Country::anchorPoint() const
+{
+  return (m_anchorPoint);
+}
+
 const QPointF& Country::centralPoint() const
 {
   return (m_centralPoint);
@@ -447,23 +454,37 @@ void Country::highlight(const QColor& color, qreal opacity)
   clearHighlighting();
 
   ONU* onu = m_automaton->game()->theWorld();
+  if (onu == 0)
+  {
+    kWarning() << k_funcinfo << "onu is null" << endl;
+    return;
+  }
   QDomNode countryElement = onu->svgDom()->elementById(m_name);
+  if (countryElement.isNull())
+  {
+    kWarning() << k_funcinfo << "Got a null element" << endl;
+    return;
+  }
+  kDebug() << k_funcinfo <<"got country"<< endl;
 
   onu->svgDom()->setCurrentNode(countryElement);
   onu->svgDom()->setStyleProperty("fill", color.name());
   onu->svgDom()->setStyleProperty("fill-opacity", QString::number(opacity));
 
+  kDebug() << k_funcinfo <<"loading"<< endl;
   QByteArray svg = onu->svgDom()->nodeToByteArray();
   m_renderer->load(svg);
 
+  kDebug() << k_funcinfo <<"loaded"<< endl;
   m_highlighting = new QGraphicsSvgItem(m_automaton->game()->backGnd());
   m_highlighting->setSharedRenderer(m_renderer);
   m_highlighting->setElementId(m_name);
   m_highlighting->setPos(
-      (m_centralPoint.x()-m_highlighting->boundingRect().width()/2)*onu->zoom(),
-      (m_centralPoint.y()-m_highlighting->boundingRect().height()/2)*onu->zoom());
+      (m_anchorPoint.x()-m_highlighting->boundingRect().width()/2)*onu->zoom(),
+      (m_anchorPoint.y()-m_highlighting->boundingRect().height()/2)*onu->zoom());
 
   m_highlighting->scale(onu->zoom(), onu->zoom());
+  kDebug() << k_funcinfo << "done" << endl;
 }
 
 void Country::highlightAsAttacker()
@@ -489,6 +510,7 @@ void Country::clearHighlighting()
     delete m_highlighting;
     m_highlighting = 0;
   }
+  kDebug() << k_funcinfo << "done" << endl;
 }
 
 bool Country::isHighlightingLocked()
