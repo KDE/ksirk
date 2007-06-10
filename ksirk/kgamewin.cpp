@@ -334,6 +334,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
 //   m_automaton = new GameAutomaton();
 //   m_automaton->init(this);
 
+  m_mouseLocalisation = 0;
   if (m_theWorld != 0)
   {
 //     m_theWorld-> reset();
