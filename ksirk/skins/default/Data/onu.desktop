@@ -233,7 +233,7 @@ neighbours=14,15,17,18,22
 
 [Scandinavia]
 id=17
-flag-point x=529,165
+flag-point=529,165
 anchor-point=554,180
 central-point=540,165
 cannon-point=538,134
