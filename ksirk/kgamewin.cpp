@@ -798,11 +798,13 @@ void KGameWindow::displayNormalGameButtons()
   kDebug() << k_funcinfo << endl;
   if (m_firstCountry != 0)
   {
+    m_firstCountry->releaseHighlightingLock();
     m_firstCountry->clearHighlighting();
     m_firstCountry = 0;
   }
   if (m_secondCountry != 0)
   {
+    m_secondCountry->releaseHighlightingLock();
     m_secondCountry->clearHighlighting();
     m_secondCountry = 0;
   }
@@ -1614,15 +1616,7 @@ bool KGameWindow::attacker(const QPointF& point)
     displayNormalGameButtons();
     return false;
   }
-  QByteArray buffer;
-  QDataStream stream(&buffer, QIODevice::WriteOnly);
-  stream << clickedCountry->name();
-  m_automaton->sendMessage(buffer,FirstCountry);
-  QByteArray buffer2;
-  QDataStream stream2(&buffer2, QIODevice::WriteOnly);
-  stream2 << "";
-  m_automaton->sendMessage(buffer2,SecondCountry);
-  
+
   if (clickedCountry-> owner() != currentPlayer())
   {
     messageParts << I18N_NOOP("<font color=\"orange\">You are not the owner of %1 !</font>")  << clickedCountry-> name();
@@ -1641,6 +1635,15 @@ bool KGameWindow::attacker(const QPointF& point)
   }
   else
   {
+    QByteArray buffer;
+    QDataStream stream(&buffer, QIODevice::WriteOnly);
+    stream << clickedCountry->name();
+    m_automaton->sendMessage(buffer,FirstCountry);
+    QByteArray buffer2;
+    QDataStream stream2(&buffer2, QIODevice::WriteOnly);
+    stream2 << "";
+    m_automaton->sendMessage(buffer2,SecondCountry);
+
     QPixmap pm = currentPlayer()->getFlag()->image(0);
     messageParts
       << pm
@@ -1661,18 +1664,6 @@ unsigned int KGameWindow::attacked(const QPointF& point)
   unsigned int res = 0;
   Country* secondCountry = clickIn(point);
   m_secondCountry = secondCountry;
-  QByteArray buffer;
-  QDataStream stream(&buffer, QIODevice::WriteOnly);
-  if (secondCountry != 0)
-  {
-    stream << secondCountry->name();
-  }
-  else
-  {
-    stream << QString("");
-  }
-  m_automaton->sendMessage(buffer,SecondCountry);
-
   KMessageParts messageParts;
 
   kDebug() << k_funcinfo << "2nd country is now set" << endl;
@@ -1681,7 +1672,7 @@ unsigned int KGameWindow::attacked(const QPointF& point)
   {
     messageParts << I18N_NOOP("Nothing to attack !");
     displayNormalGameButtons();
-  } 
+  }
   else if (!secondCountry-> owner()) 
   {
     messageParts << I18N_NOOP("Invalid attacked country.");
@@ -1691,7 +1682,6 @@ unsigned int KGameWindow::attacked(const QPointF& point)
   {
     messageParts << I18N_NOOP("You are trying to attack %1 from itself !") << m_firstCountry-> name();
     displayNormalGameButtons();
-    m_firstCountry = 0;
   }
   else if (!m_firstCountry-> communicateWith(secondCountry))
   {
@@ -1712,18 +1702,41 @@ unsigned int KGameWindow::attacked(const QPointF& point)
   else if ((secondCountry-> nbArmies() > 1)
       && (currentPlayer()-> getNbAttack() >= 2))
   {
+    QByteArray buffer;
+    QDataStream stream(&buffer, QIODevice::WriteOnly);
+    if (secondCountry != 0)
+    {
+      stream << secondCountry->name();
+    }
+    else
+    {
+      stream << QString("");
+    }
+    m_automaton->sendMessage(buffer,SecondCountry);
+
     messageParts
       << I18N_NOOP("%1, with how many armies do you defend %2 ?") 
       << secondCountry->owner()-> name()
       << secondCountry-> name();
-    QByteArray buffer;
-    QDataStream stream(&buffer, QIODevice::WriteOnly);
-    stream << secondCountry->owner()->name();
-    m_automaton->sendMessage(buffer,DisplayDefenseButtons);
+    QByteArray buffer2;
+    QDataStream stream2(&buffer2, QIODevice::WriteOnly);
+    stream2 << secondCountry->owner()->name();
+    m_automaton->sendMessage(buffer2,DisplayDefenseButtons);
     res = 1;
   }
   else
   {
+    QByteArray buffer;
+    QDataStream stream(&buffer, QIODevice::WriteOnly);
+    if (secondCountry != 0)
+    {
+      stream << secondCountry->name();
+    }
+    else
+    {
+      stream << QString("");
+    }
+    m_automaton->sendMessage(buffer,SecondCountry);
     messageParts
       << I18N_NOOP("%1, you defend %2 with its unique army.") 
       << secondCountry->owner()-> name()
