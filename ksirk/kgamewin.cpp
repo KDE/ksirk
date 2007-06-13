@@ -224,11 +224,11 @@ void KGameWindow::initActions()
 void KGameWindow::initStatusBar()
 {
   statusBar()-> setSizeGripEnabled(true);
-  statusBar()->insertItem("", ID_STATUS_MSG, 2);
+  statusBar()->insertPermanentItem("", ID_STATUS_MSG, 2);
   statusBar()-> setItemAlignment(ID_STATUS_MSG, Qt::AlignLeft | Qt::AlignVCenter);
-  statusBar()->insertItem("", ID_STATUS_MSG2, 3);
+  statusBar()->insertPermanentItem("", ID_STATUS_MSG2, 3);
   statusBar()-> setItemAlignment(ID_STATUS_MSG2, Qt::AlignLeft | Qt::AlignVCenter);
-  statusBar()->addWidget(m_barFlag);
+  statusBar()->addPermanentWidget(m_barFlag);
 }
 
 Country* KGameWindow::clickIn(const QPointF &pointf)
@@ -825,7 +825,7 @@ void KGameWindow::displayNormalGameButtons()
     addAButton(CM_ATTACK3,  SLOT(slotAttack3()), i18n("Attack with three armies"),KShortcut(Qt::Key_3),true);
     addAButton(CM_SHIFT, SLOT(slotMove()), i18n("Move armies"),KShortcut(Qt::Key_M),true);
 
-    showMessage(i18n("Now, choose an action.<br/>If you choose an attack, press the mouse button in the attacking country<br/>and then <b>drag and drop</b> on its neighbour your want to attack."), 10);
+    showMessage(i18n("Now, choose an action with the buttons at the bottom.<br/>Note that moving armies is the last action of a turn."), 5);
   }
   gameActionsToolBar-> hide();
   gameActionsToolBar-> show();
@@ -846,6 +846,10 @@ void KGameWindow::displayDefenseButtons()
       m_goalAction-> setIconText(i18n("Goal"));
       m_barFlag-> setPixmap(m_secondCountry-> owner()->getFlag()-> image(0));
     }
+    showMessage(i18n("%1, use the buttons below to choose<br/>"
+                    "with how much armies you defend %2.",
+                      m_secondCountry-> owner()-> name(),
+                      m_secondCountry-> name()), 8);
     addAButton(CM_DEFENSE1, SLOT(slotDefense1()), i18n("Defend with one army"),KShortcut(Qt::Key_1),true);
     addAButton(CM_DEFENSE2, SLOT(slotDefense2()), i18n("Defend with two armies"),KShortcut(Qt::Key_2),true);
   }
@@ -2025,6 +2029,7 @@ void KGameWindow::attack(unsigned int nb)
   messageParts << I18N_NOOP("Attack with %1 armies : Designate the belligerants") 
     << QString::number(nb);
   broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
+  showMessage(i18n("To attack, press the mouse button in the attacking country<br/>and then <b>drag and drop</b> on its neighbour your want to attack."), 5);
 }
 
 void KGameWindow::defense(unsigned int nb)
@@ -2473,6 +2478,8 @@ void KGameWindow::showMessage(const QString& message, quint32 delay)
 
   m_scene->addItem(m_message);
   m_message->setZValue(1000);
+  /// @todo handle the timer stuff in MessageBubble and stop the timer in 
+  /// case of the creation of a new message.
   QTimer::singleShot(delay*1000, this, SLOT(slotRemoveMessage()));
 
   m_message->setPos(m_frame-> mapToScene(QPoint(30,30)));
