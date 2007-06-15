@@ -511,8 +511,8 @@ void KGameWindow::slotZoomIn()
   kDebug() << k_funcinfo << endl;
   m_theWorld->applyZoomFactor(1.1);
   m_frame->setMaximumSize(m_theWorld->width(),m_theWorld->height());
+  m_scene->setSceneRect ( QRectF() );
   m_frame->updateGeometry();
-
   m_backGnd->setPixmap(m_theWorld->map());
   
 }
@@ -522,6 +522,7 @@ void KGameWindow::slotZoomOut()
   kDebug() << k_funcinfo << endl;
   m_theWorld->applyZoomFactor(1.0/1.1);
   m_frame->setMaximumSize(m_theWorld->width(),m_theWorld->height());
+  m_scene->setSceneRect ( QRectF() );
   m_frame->updateGeometry();
   
   m_backGnd->setPixmap(m_theWorld->map());
