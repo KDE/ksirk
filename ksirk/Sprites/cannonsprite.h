@@ -53,9 +53,13 @@ public:
     * Z value on the graphics scene.
     */
   CannonSprite(const QString &svgid,
-              BackGnd* aBackGnd,
-              unsigned int nbFrames, unsigned int nbDirs,
-              double zoom, unsigned int visibility = 200);
+                unsigned int width,
+                unsigned int height,
+                unsigned int nbFrames,
+                unsigned int nbDirs,
+                double zoom,
+                BackGnd* aBackGnd,
+                unsigned int visibility = 200);
 
   /** The default destructor */
   virtual ~CannonSprite() {}

@@ -49,10 +49,13 @@ public:
     * Z value on the graphics scene.
     */
   ArmySprite(const QString &svgid,
-              BackGnd* aBackGnd, unsigned int nbFrames,
+              unsigned int width,
+              unsigned int height,
+              unsigned int nbFrames,
               unsigned int nbDirs, double zoom,
+              BackGnd* aBackGnd,
               unsigned int visibility = 200) :
-    AnimSprite(svgid, aBackGnd, nbFrames, nbDirs, zoom, visibility)
+              AnimSprite(svgid, width, height, nbFrames, nbDirs, zoom, aBackGnd, visibility)
   {
     setStatic();
   }

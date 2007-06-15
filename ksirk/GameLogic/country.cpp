@@ -112,10 +112,12 @@ void Country::createArmiesSprites(BackGnd *backGnd)
   {
     CannonSprite *sprite = new CannonSprite(
         "cannon",
-        backGnd,
-        Sprites::SkinSpritesData::single().intData("cannon-frames"), 
+        Sprites::SkinSpritesData::single().intData("cannon-width"),
+        Sprites::SkinSpritesData::single().intData("cannon-height"),
+        Sprites::SkinSpritesData::single().intData("cannon-frames"),
         Sprites::SkinSpritesData::single().intData("cannon-versions"),
-        backGnd->onu()->zoom());
+        backGnd->onu()->zoom(),
+        backGnd);
     sprite-> setDestination(NULL);             // Sprite immobile
     sprite-> setPos((m_pointCannon.x()+5*i)*bg->onu()->zoom(),(m_pointCannon.y()+5*i)*bg->onu()->zoom());
     m_spritesCannons.append(sprite);
@@ -127,10 +129,12 @@ void Country::createArmiesSprites(BackGnd *backGnd)
   {
     CavalrySprite *sprite = new CavalrySprite(
         "cavalry",
-        backGnd,
-        Sprites::SkinSpritesData::single().intData("cavalry-frames"), 
+        Sprites::SkinSpritesData::single().intData("cavalry-width"),
+        Sprites::SkinSpritesData::single().intData("cavalry-height"),
+        Sprites::SkinSpritesData::single().intData("cavalry-frames"),
         Sprites::SkinSpritesData::single().intData("cavalry-versions"),
-        backGnd->onu()->zoom());
+        backGnd->onu()->zoom(),
+        backGnd);
     sprite-> setDestination(NULL);             // Sprite immobile
     sprite-> setPos((m_pointCavalry.x()+5*i)*bg->onu()->zoom(),
                      (m_pointCavalry.y()+5*i)*bg->onu()->zoom());
@@ -143,10 +147,12 @@ void Country::createArmiesSprites(BackGnd *backGnd)
   {
     InfantrySprite *sprite = new InfantrySprite(
         "infantry",
-        backGnd,
-        Sprites::SkinSpritesData::single().intData("infantry-frames"), 
+        Sprites::SkinSpritesData::single().intData("infantry-width"),
+        Sprites::SkinSpritesData::single().intData("infantry-height"),
+        Sprites::SkinSpritesData::single().intData("infantry-frames"),
         Sprites::SkinSpritesData::single().intData("infantry-versions"),
-        backGnd->onu()->zoom());
+        backGnd->onu()->zoom(),
+        backGnd);
     sprite-> setDestination(NULL);             // Sprite immobile
     sprite-> setPos((m_pointInfantry.x()+5*i)*bg->onu()->zoom(),
                      (m_pointInfantry.y()+5*i)*bg->onu()->zoom());
@@ -172,10 +178,12 @@ void Country::flag(const QString& theFlagFileName, BackGnd *backGnd)
     m_flag = 0;
   }
   
-  m_flag = new FlagSprite(theFlagFileName, backGnd,
-      Sprites::SkinSpritesData::single().intData("flag-frames"), 
+  m_flag = new FlagSprite(theFlagFileName,
+                           Sprites::SkinSpritesData::single().intData("flag-width"),
+                           Sprites::SkinSpritesData::single().intData("flag-height"),
+                           Sprites::SkinSpritesData::single().intData("flag-frames"), 
       Sprites::SkinSpritesData::single().intData("flag-versions"),
-                           backGnd->onu()->zoom());
+                           backGnd->onu()->zoom(),backGnd);
   m_flag-> setDestination(NULL);
   m_flag-> setPos(m_pointFlag.x()*backGnd->onu()->zoom(),m_pointFlag.y()*backGnd->onu()->zoom());
   m_flag-> setZValue(10);

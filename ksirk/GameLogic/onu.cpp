@@ -131,28 +131,37 @@ ONU::ONU(GameAutomaton* automaton,
 
 
   Sprites::SkinSpritesData::changeable().intData("flag-width", config.group("flag").readEntry("width",0));
+  Sprites::SkinSpritesData::changeable().intData("flag-height", config.group("flag").readEntry("height",0));
   Sprites::SkinSpritesData::changeable().intData("flag-frames", config.group("flag").readEntry("frames",0));
   Sprites::SkinSpritesData::changeable().intData("flag-versions", config.group("flag").readEntry("versions",0));
 
   Sprites::SkinSpritesData::changeable().strData("infantry-id", config.group("infantry").readEntry("id"));
+  Sprites::SkinSpritesData::changeable().intData("infantry-width", config.group("infantry").readEntry("width",0));
+  Sprites::SkinSpritesData::changeable().intData("infantry-height", config.group("infantry").readEntry("height",0));
   Sprites::SkinSpritesData::changeable().intData("infantry-frames", config.group("infantry").readEntry("frames",0));
   Sprites::SkinSpritesData::changeable().intData("infantry-versions", config.group("infantry").readEntry("versions",0));
 
   Sprites::SkinSpritesData::changeable().strData("cavalry-id", config.group("cavalry").readEntry("id"));
+  Sprites::SkinSpritesData::changeable().intData("cavalry-width", config.group("cavalry").readEntry("width",0));
+  Sprites::SkinSpritesData::changeable().intData("cavalry-height", config.group("cavalry").readEntry("height",0));
   Sprites::SkinSpritesData::changeable().intData("cavalry-frames", config.group("cavalry").readEntry("frames",0));
   Sprites::SkinSpritesData::changeable().intData("cavalry-versions", config.group("cavalry").readEntry("versions",0));
 
   Sprites::SkinSpritesData::changeable().strData("cannon-id", config.group("cannon").readEntry("id"));
   Sprites::SkinSpritesData::changeable().intData("cannon-width", config.group("cannon").readEntry("width",0));
+  Sprites::SkinSpritesData::changeable().intData("cannon-height", config.group("cannon").readEntry("height",0));
   Sprites::SkinSpritesData::changeable().intData("cannon-frames", config.group("cannon").readEntry("frames",0));
   Sprites::SkinSpritesData::changeable().intData("cannon-versions", config.group("cannon").readEntry("versions",0));
 
   Sprites::SkinSpritesData::changeable().strData("firing-id", config.group("firing").readEntry("id"));
   Sprites::SkinSpritesData::changeable().intData("firing-width", config.group("firing").readEntry("width",0));
+  Sprites::SkinSpritesData::changeable().intData("firing-height", config.group("firing").readEntry("height",0));
   Sprites::SkinSpritesData::changeable().intData("firing-frames", config.group("firing").readEntry("frames",0));
   Sprites::SkinSpritesData::changeable().intData("firing-versions", config.group("firing").readEntry("versions",0));
 
   Sprites::SkinSpritesData::changeable().strData("exploding-id", config.group("exploding").readEntry("id"));
+  Sprites::SkinSpritesData::changeable().intData("exploding-width", config.group("exploding").readEntry("width",0));
+  Sprites::SkinSpritesData::changeable().intData("exploding-height", config.group("cannon").readEntry("height",0));
   Sprites::SkinSpritesData::changeable().intData("exploding-frames", config.group("exploding").readEntry("frames",0));
   Sprites::SkinSpritesData::changeable().intData("exploding-versions", config.group("exploding").readEntry("versions",0));
 

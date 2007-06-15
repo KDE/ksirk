@@ -31,33 +31,42 @@ background-color=gray
 
 [flag]
 width=20
+height=20
 frames=4
 versions=1
 
 [infantry]
 id=infantry
+width=32
+height=32
 frames=1
 versions=3
 
 [cavalry]
 id=cavalry
+width=32
+height=32
 frames=1
 versions=3
 
 [cannon]
 id=cannon
 width=32
+height=32
 frames=2
 versions=3
 
 [firing]
 id=firing
 width=64
+height=46
 frames=4
 versions=2
 
 [exploding]
 id=exploding
+width=32
+height=32
 frames=4
 versions=2
 

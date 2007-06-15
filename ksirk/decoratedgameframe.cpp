@@ -41,8 +41,8 @@ DecoratedGameFrame::DecoratedGameFrame(QWidget* parent,
   : QGraphicsView(parent), m_mapW(mapW), m_mapH(mapH)
 {
   kDebug() << k_funcinfo << "("<<mapW<<"x"<<mapH<<")" << endl;
-  setVerticalScrollBarPolicy( Qt::ScrollBarAlwaysOn );
-  setHorizontalScrollBarPolicy( Qt::ScrollBarAlwaysOn );
+  setVerticalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
+  setHorizontalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
   setCacheMode(QGraphicsView::CacheBackground);
   setMinimumSize(200,100);
   setMaximumSize(mapW,mapH);

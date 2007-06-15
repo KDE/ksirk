@@ -42,11 +42,16 @@ namespace Ksirk
 using namespace GameLogic;
 
 AnimSprite::AnimSprite(const QString &svgid,
-                        BackGnd* aBackGnd,
+                        unsigned int width,
+                        unsigned int height,
                         unsigned int nbFrames, unsigned int nbDirs,
-                        double zoom, unsigned int visibility) :
+                        double zoom,
+                        BackGnd* aBackGnd,
+                        unsigned int visibility) :
     QGraphicsPixmapItem(0, aBackGnd-> scene()),
     m_animated(false), m_svgid(svgid),
+    m_width(zoom*width),
+    m_height(zoom*height),
     look(right), nbVersions(nbDirs),
     backGnd(aBackGnd), destination(0), destinationPoint(), frames(nbFrames), actFrame(0),
     myState(NONE), m_zoom(zoom),
@@ -59,9 +64,6 @@ AnimSprite::AnimSprite(const QString &svgid,
     m_skin(backGnd->onu()->skin())
 {
   setNone();
-
-  spriteWidth = ((double)m_renderer->boundsOnElement(svgid).width()) / frames;
-  spriteHeight = ((double)m_renderer->boundsOnElement(svgid).height()) / nbVersions;
 
   sequenceConstruction();
   setZValue(visibility);
@@ -110,7 +112,7 @@ void AnimSprite::sequenceConstruction()
 {
   QList<QPixmap> list;
 
-  QSize size((int)(spriteWidth*frames*m_zoom), (int)(spriteHeight*nbVersions*m_zoom));
+  QSize size((int)(m_width*frames), (int)(m_height*nbVersions));
   QImage image(size, QImage::Format_ARGB32_Premultiplied);
   image.fill(0);
   QPainter p(&image);
@@ -120,11 +122,11 @@ void AnimSprite::sequenceConstruction()
   {
     for (unsigned int i = 0; i<frames;i++)
     {
-//       kDebug()<< "constr s : "<<spriteWidth<<" "<<spriteHeight<<" "<<look-1<<endl;
+//       kDebug()<< "constr s : "<<m_width<<" "<<m_height<<" "<<look-1<<endl;
       QPixmap pm =
         allpm.copy(
-            (int)(spriteWidth*i*m_zoom), (int)(spriteHeight*l*m_zoom),
-            (int)(spriteWidth*m_zoom), (int)(spriteHeight*m_zoom));
+            (int)(m_width*i), (int)(m_height*l),
+            (int)(m_width), (int)(m_height));
       list.push_back(pm);
     }
   }
@@ -133,16 +135,19 @@ void AnimSprite::sequenceConstruction()
   setFrame(0);
 }
 
-void AnimSprite::changeSequence(const QString &svgid, unsigned int newNbFrames, unsigned int nbDirs)
+void AnimSprite::changeSequence(const QString &svgid,
+                                 unsigned int width,
+                                 unsigned int height,
+                                 unsigned int newNbFrames,
+                                 unsigned int nbDirs)
 {
   kDebug()<<"AnimSprite::changeSequence: " << svgid <<endl;
   m_svgid = svgid;
+  m_width = width*m_zoom;
+  m_height = height*m_zoom;
   frames = newNbFrames;
   actFrame = 0;
   nbVersions = nbDirs;
-
-  spriteHeight = m_renderer->boundsOnElement(svgid).height() / nbVersions;
-  spriteWidth = m_renderer->boundsOnElement(svgid).width() / frames;
 
   sequenceConstruction();
   update();
@@ -194,17 +199,17 @@ void AnimSprite::moveIt()
 {
 //   kDebug() << k_funcinfo << "Position of " << (void*)this << " is: "
 //     << pos() << " (destination point is: " << destinationPoint << ")" << endl;
-  qreal delta = 5;
+  qreal delta = 5*m_zoom;
   switch (KsirkSettings::spritesSpeed())
   {
     case 0:
-      delta = 2;
+      delta = 2*m_zoom;
       break;
     case 1:
-      delta = 5;
+      delta = 5*m_zoom;
       break;
     case 2:
-      delta = 10;
+      delta = 10*m_zoom;
       break;
     case 3:
       setPos(destinationPoint);
@@ -213,8 +218,10 @@ void AnimSprite::moveIt()
       return;
       break;
     default:
-      delta = 5;
+      delta = 5*m_zoom;
   }
+  delta=delta<1.0?1.0:delta;
+  
 //   kDebug() << "delta="<<delta<<endl;
   if (getApproachDestByLeft())
   {
@@ -645,8 +652,8 @@ void AnimSprite::applyZoomFactor(qreal zoomFactor)
 {
   kDebug() << k_funcinfo << "old zoom=" << m_zoom << endl;
   m_zoom *= zoomFactor;
-  spriteWidth *= m_zoom;
-  spriteHeight *= m_zoom;
+  m_width *= m_zoom;
+  m_height *= m_zoom;
   
   sequenceConstruction();
   update();

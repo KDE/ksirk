@@ -47,10 +47,13 @@ public:
     * Z value on the graphics scene.
     */
   FlagSprite(const QString &svgid,
-              BackGnd* aBackGnd,
-              unsigned int nbFrames, unsigned int nbDirs,
-              double zoom) :
-      AnimSprite(svgid, aBackGnd, nbFrames, nbDirs, zoom)
+              unsigned int width,
+              unsigned int height,
+              unsigned int nbFrames,
+              unsigned int nbDirs,
+              double zoom,
+              BackGnd* aBackGnd) :
+              AnimSprite(svgid, width, height, nbFrames, nbDirs, zoom, aBackGnd)
   {
     setAnimated();
   }

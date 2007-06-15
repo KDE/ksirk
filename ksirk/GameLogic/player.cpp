@@ -270,10 +270,12 @@ void Player::setFlag()
   {
     m_flag = new AnimSprite(
                             m_nation->flagFileName(), 
-                            m_automaton->game()->backGnd(), 
+                            Sprites::SkinSpritesData::single().intData("flag-width"),
+                            Sprites::SkinSpritesData::single().intData("flag-height"),
                             Sprites::SkinSpritesData::single().intData("flag-frames"), 
                             Sprites::SkinSpritesData::single().intData("flag-versions"),
-                            m_automaton->game()->backGnd()->onu()->zoom());
+                            m_automaton->game()->backGnd()->onu()->zoom(),
+                            m_automaton->game()->backGnd());
     m_flag->hide();
   }
 }

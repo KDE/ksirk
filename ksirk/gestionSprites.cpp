@@ -89,29 +89,37 @@ bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *m_firstCou
           && (nbABouger < m_firstCountry-> nbArmies()))
   {
     sprite = new CannonSprite( 
-        Sprites::SkinSpritesData::single().strData("cannon-id"), m_backGnd,
-        Sprites::SkinSpritesData::single().intData("cannon-frames"),
-                              Sprites::SkinSpritesData::single().intData("cannon-versions"),       m_theWorld->zoom(),
-                              200);
+                              Sprites::SkinSpritesData::single().strData("cannon-id"), 
+                              Sprites::SkinSpritesData::single().intData("cannon-width"),
+                              Sprites::SkinSpritesData::single().intData("cannon-height"),
+                              Sprites::SkinSpritesData::single().intData("cannon-frames"),
+                              Sprites::SkinSpritesData::single().intData("cannon-versions"),
+                              m_theWorld->zoom(),
+                              m_backGnd,                              200);
     m_firstCountry-> decrNbArmies(10);
   }
   else if ((m_firstCountry-> nbArmies() > 5) && (nbABouger == 5)
           && (nbABouger < m_firstCountry-> nbArmies()))
   {
     sprite = new CavalrySprite( Sprites::
-        SkinSpritesData::single().strData("cavalry-id"), m_backGnd,
-        Sprites::SkinSpritesData::single().intData("cavalry-frames"), 
+        SkinSpritesData::single().strData("cavalry-id"), 
+                                Sprites::SkinSpritesData::single().intData("cavalry-width"),
+                                Sprites::SkinSpritesData::single().intData("cavalry-height"),
+                                Sprites::SkinSpritesData::single().intData("cavalry-frames"), 
                                 Sprites::SkinSpritesData::single().intData("cavalry-versions"),       m_theWorld->zoom(),
-                                200);
+                                m_backGnd,                                200);
     m_firstCountry-> decrNbArmies(5);
   }
   else if ((m_firstCountry-> nbArmies() > 1) && (nbABouger == 1)
           && (nbABouger < m_firstCountry-> nbArmies()))
   {
     sprite = new InfantrySprite( 
-        Sprites::SkinSpritesData::single().strData("infantry-id"), m_backGnd,
-        Sprites::SkinSpritesData::single().intData("infantry-frames"), 
+        Sprites::SkinSpritesData::single().strData("infantry-id"),
+                                Sprites::SkinSpritesData::single().intData("infantry-width"),
+                                Sprites::SkinSpritesData::single().intData("infantry-height"),
+        Sprites::SkinSpritesData::single().intData("infantry-frames"),
                                 Sprites::SkinSpritesData::single().intData("infantry-versions"),       m_theWorld->zoom(),
+                                m_backGnd,
                                 200);
     m_firstCountry->  decrNbArmies();
   }
@@ -157,11 +165,10 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   //  - point d'arrivee de l'attaquant (resp. du defenseur) (gauche ou droite de point drapeau defenseur
   //    selon position point drapeau attaquant)
   qreal pointArriveeAttaquantX;
-  qreal pointArriveeAttaquantY;
+  qreal pointArriveeY;
   qreal pointArriveeDefenseurX;
-  qreal pointArriveeDefenseurY;
   
-  pointArriveeAttaquantY = pointArriveeDefenseurY = (((paysDefenseur-> pointFlag().y() + Sprites::SkinSpritesData::single().intData("fighters-flag-y-diff")))* m_theWorld->zoom()) ;
+  pointArriveeY = (((paysDefenseur-> pointFlag().y() + Sprites::SkinSpritesData::single().intData("fighters-flag-y-diff")))* m_theWorld->zoom()) ;
   
   kDebug() << k_funcinfo << "2" << endl;
   if (!paysAttaquant->communicateWith(paysDefenseur))
@@ -176,8 +183,8 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   // The situation is reversed if the one of the attacker will need to go
   // through the world limit
 
-  int leftRelativePos = - (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("cannon-width"));
-  int rightRelativePos = Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("flag-width");
+  qreal leftRelativePos = - (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("cannon-width"))*      m_theWorld->zoom();
+  qreal rightRelativePos = (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("flag-width"))*m_theWorld->zoom();
   if (!((qAbs(pointFlagAttaquantX-pointFlagDefenseurX) > (m_backGnd-> boundingRect().width() / 2))))
   {
       if ( pointFlagAttaquantX <= pointFlagDefenseurX )
@@ -204,16 +211,18 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
           pointArriveeDefenseurX = pointFlagDefenseurX + rightRelativePos;
       }
   }
-  QPointF pointArriveeAttaquant(pointArriveeAttaquantX,pointArriveeAttaquantY);
-  QPointF pointArriveeDefenseur(pointArriveeDefenseurX,pointArriveeDefenseurY);
+  QPointF pointArriveeAttaquant(pointArriveeAttaquantX,pointArriveeY);
+  QPointF pointArriveeDefenseur(pointArriveeDefenseurX,pointArriveeY);
   kDebug() << k_funcinfo << "3: " << pointArriveeAttaquant << " ; " << pointArriveeDefenseur << endl;
   
   CannonSprite* attackingSprite = new CannonSprite(
       Sprites::SkinSpritesData::single().strData("cannon-id"),
-      m_backGnd,
+      Sprites::SkinSpritesData::single().intData("cannon-width"),
+      Sprites::SkinSpritesData::single().intData("cannon-height"),
       Sprites::SkinSpritesData::single().intData("cannon-frames"),
       Sprites::SkinSpritesData::single().intData("cannon-versions"),
       m_theWorld->zoom(),
+      m_backGnd,
       200);
   attackingSprite-> setAttacker();
   attackingSprite->setupTravel(paysAttaquant, paysDefenseur, &pointArriveeAttaquant);
@@ -231,10 +240,12 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   kDebug() << k_funcinfo << "4" << endl;
   CannonSprite* defenderSprite = new CannonSprite(
       Sprites::SkinSpritesData::single().strData("cannon-id"),
-      m_backGnd,
+      Sprites::SkinSpritesData::single().intData("cannon-width"),
+      Sprites::SkinSpritesData::single().intData("cannon-height"),
       Sprites::SkinSpritesData::single().intData("cannon-frames"),
       Sprites::SkinSpritesData::single().intData("cannon-versions"),
       m_theWorld->zoom(),
+      m_backGnd,
       200);
   defenderSprite-> setDefendant();
   defenderSprite-> setupTravel(paysDefenseur, paysDefenseur, &pointArriveeDefenseur);
@@ -263,12 +274,17 @@ void KGameWindow::animCombat()
     CannonSprite* sprite = (CannonSprite*)(*it);
     sprite-> changeSequence(
         Sprites::SkinSpritesData::single().strData("firing-id"),
-        Sprites::SkinSpritesData::single().intData("firing-frames"), 
-        Sprites::SkinSpritesData::single().intData("firing-versions"));
-    int firingRelativePos = Sprites::SkinSpritesData::single().intData("cannon-width") - Sprites::SkinSpritesData::single().intData("firing-width");
+                            Sprites::SkinSpritesData::single().intData("firing-width"),
+                            Sprites::SkinSpritesData::single().intData("firing-height"),
+                            Sprites::SkinSpritesData::single().intData("firing-frames"),
+                            Sprites::SkinSpritesData::single().intData("firing-versions"));
+                            
+    qreal firingRelativePos = (Sprites::SkinSpritesData::single().intData("cannon-width") - Sprites::SkinSpritesData::single().intData("firing-width"))*m_theWorld->zoom();
     if (sprite-> looksToLeft()) 
     {
-      sprite-> setPos(sprite-> x() + firingRelativePos,sprite-> y() - Sprites::SkinSpritesData::single().intData("fighters-flag-y-diff"));
+      sprite-> setPos(
+        sprite-> x() + firingRelativePos,
+        sprite-> y() );
     }
     sprite->setAnimated(1);
 
@@ -296,11 +312,15 @@ void KGameWindow::stopCombat()
 //     it = m_animFighters.remove(it);
     sprite-> changeSequence(
         Sprites::SkinSpritesData::single().strData("cannon-id"),
-        Sprites::SkinSpritesData::single().intData("cannon-frames"), 
+                            Sprites::SkinSpritesData::single().intData("cannon-width"),
+                            Sprites::SkinSpritesData::single().intData("cannon-height"),
+                            Sprites::SkinSpritesData::single().intData("cannon-frames"), 
         Sprites::SkinSpritesData::single().intData("cannon-versions"));
     if (sprite-> looksToLeft()) 
     {
-      sprite-> setPos(sprite->x() + Sprites::SkinSpritesData::single().intData("cannon-width"),sprite-> y() + Sprites::SkinSpritesData::single().intData("fighters-flag-y-diff"));
+      sprite-> setPos(
+        sprite->x() + (Sprites::SkinSpritesData::single().intData("cannon-width"))*m_theWorld->zoom(),
+        sprite-> y() );
     }
     else 
     {
@@ -327,8 +347,10 @@ void KGameWindow::animExplosion(int who)
       kDebug() << "  removing a sprite" << endl;
       sprite-> changeSequence(
           Sprites::SkinSpritesData::single().strData("exploding-id"),
-          Sprites::SkinSpritesData::single().intData("exploding-frames"), 
-          Sprites::SkinSpritesData::single().intData("exploding-versions"));
+          Sprites::SkinSpritesData::single().intData("exploding-width"),
+                              Sprites::SkinSpritesData::single().intData("exploding-height"),
+                              Sprites::SkinSpritesData::single().intData("exploding-frames"),
+                              Sprites::SkinSpritesData::single().intData("exploding-versions"));
       sprite->setAnimated(1);
     }
     else  // the sprite is not the one (or one the several) killed
@@ -336,7 +358,9 @@ void KGameWindow::animExplosion(int who)
       kDebug() << "  keeping a sprite" << endl;
       sprite-> changeSequence(
           Sprites::SkinSpritesData::single().strData("cannon-id"),
-          Sprites::SkinSpritesData::single().intData("cannon-frames"), 
+                              Sprites::SkinSpritesData::single().intData("cannon-width"),
+                              Sprites::SkinSpritesData::single().intData("cannon-height"),
+                              Sprites::SkinSpritesData::single().intData("cannon-frames"), 
           Sprites::SkinSpritesData::single().intData("cannon-versions"));
       sprite->setStatic();
       m_animFighters->oneArrived(0);
@@ -376,29 +400,31 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
     
     CannonSprite *newSprite;
 
-    int flagYDiff = Sprites::SkinSpritesData::single().intData("fighters-flag-y-diff");
-    int leftRelativePos = - (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("cannon-width"));
-    int rightRelativePos = Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("flag-width");
+    qreal flagYDiff = Sprites::SkinSpritesData::single().intData("fighters-flag-y-diff")*m_theWorld->zoom();
+    qreal leftRelativePos = - (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("cannon-width"))*m_theWorld->zoom();
+    qreal rightRelativePos = (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("flag-width"))*m_theWorld->zoom();
     if (who == 0) //Attaquant detruit, ramene defenseur
     {
         newSprite = new CannonSprite(
             Sprites::SkinSpritesData::single().strData("cannon-id"),
-            m_backGnd,
+            Sprites::SkinSpritesData::single().intData("cannon-width"),
+            Sprites::SkinSpritesData::single().intData("cannon-height"),
             Sprites::SkinSpritesData::single().intData("cannon-frames"),
             Sprites::SkinSpritesData::single().intData("cannon-versions"),
-                                     m_theWorld->zoom(),
-                                     200);
+            m_theWorld->zoom(),
+            m_backGnd,
+            200);
         if ((paysAttaquant-> pointFlag().x() <= paysDefenseur-> pointFlag().x())
         && !(
         (qAbs(paysAttaquant-> pointFlag().x()-paysDefenseur-> pointFlag().x()) > (m_backGnd-> boundingRect().width() / 2))
             && (paysAttaquant->communicateWith(paysDefenseur))
         ))
         {
-            newSprite-> setPos(  (paysDefenseur-> pointFlag())+QPoint(rightRelativePos, flagYDiff));
+            newSprite-> setPos(  (paysDefenseur-> pointFlag())+QPointF(rightRelativePos, flagYDiff));
         }
         else
         {
-            newSprite-> setPos(  (paysDefenseur-> pointFlag())+QPoint(leftRelativePos, flagYDiff));
+            newSprite-> setPos(  (paysDefenseur-> pointFlag())+QPointF(leftRelativePos, flagYDiff));
         }
         ((AnimSprite*)newSprite)-> setupTravel(paysDefenseur, paysDefenseur, newSprite-> pos(), paysDefenseur-> pointCannon());
         newSprite-> turnTowardDestination();
@@ -415,10 +441,12 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
     {
       newSprite = new CannonSprite(
           Sprites::SkinSpritesData::single().strData("cannon-id"),
-          m_backGnd,
+          Sprites::SkinSpritesData::single().intData("cannon-width"),
+          Sprites::SkinSpritesData::single().intData("cannon-height"),
           Sprites::SkinSpritesData::single().intData("cannon-frames"),
           Sprites::SkinSpritesData::single().intData("cannon-versions"),
           m_theWorld->zoom(),
+          m_backGnd,
           200);
         if ((paysAttaquant-> pointFlag().x() <= paysDefenseur-> pointFlag().x())
         && !(
@@ -426,11 +454,11 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
             && (paysAttaquant->communicateWith(paysDefenseur))
         ))
         {
-            newSprite-> setPos( (paysDefenseur-> pointFlag())+QPoint(leftRelativePos,flagYDiff));
+            newSprite-> setPos( (paysDefenseur-> pointFlag())+QPointF(leftRelativePos,flagYDiff));
         }
         else
         {
-            newSprite-> setPos( (paysDefenseur-> pointFlag())+QPoint(rightRelativePos,flagYDiff));
+            newSprite-> setPos( (paysDefenseur-> pointFlag())+QPointF(rightRelativePos,flagYDiff));
         }
         ((AnimSprite*)newSprite)-> setupTravel(paysDefenseur, paysAttaquant, newSprite-> pos(), paysAttaquant-> pointCannon());
         newSprite-> turnTowardDestination();

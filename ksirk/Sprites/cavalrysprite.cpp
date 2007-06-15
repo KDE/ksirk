@@ -26,9 +26,13 @@
 namespace Ksirk {
 
 CavalrySprite::CavalrySprite(const QString &svgid,
-        BackGnd* aBackGnd, unsigned int nbFrames, unsigned int nbDirs,
-                              double zoom, unsigned int visibility) :
-    ArmySprite(svgid, aBackGnd, nbFrames, nbDirs, zoom, visibility)
+                              unsigned int width,
+                              unsigned int height,
+                              unsigned int nbFrames,
+                              unsigned int nbDirs,
+                              double zoom,
+                              BackGnd* aBackGnd,                               unsigned int visibility) :
+                              ArmySprite(svgid, width, height, nbFrames, nbDirs, zoom, aBackGnd, visibility)
 {
 }
 

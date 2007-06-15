@@ -77,9 +77,12 @@ public:
     * Z value on the graphics scene.
     */
   AnimSprite(const QString &svgid,
-              BackGnd* aBackGnd,
+              unsigned int width,
+              unsigned int height,
               unsigned int nbFrames, unsigned int nbDirs,
-              double zoom, unsigned int visibility = 100);
+              double zoom,
+              BackGnd* aBackGnd,
+              unsigned int visibility = 100);
 
   /** The default destructor */
   virtual ~AnimSprite();
@@ -133,7 +136,10 @@ public:
     * @param newNbFrames The number of frames of the sprite in the new image
     * @param nbDirs The number of directions of the sprite in the new image
     */
-  void changeSequence(const QString &imgPath, unsigned int newNbFrames, unsigned int nbDirs);
+  void changeSequence(const QString &imgPath,
+                       unsigned int width,
+                       unsigned int height,
+                       unsigned int newNbFrames, unsigned int nbDirs);
 
   /** Turns the sprite towards left */
   void setLookLeft();
@@ -337,7 +343,7 @@ protected:
   /**
     * Position information needed to load graphics from the pool
     */
-  double spriteHeight, spriteWidth;
+  double m_height, m_width;
 
   /** If this member is true, the sprite should approach its destination by
     * the left. So, if it is at the right side of its dest, it will continue
