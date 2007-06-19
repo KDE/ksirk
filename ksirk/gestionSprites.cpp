@@ -150,20 +150,20 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   
   m_animFighters->clear();
   m_animFighters->changeTarget(this,SLOT(slotMovingFightersArrived(AnimSpritesGroup*)));
-  
-  // On doit connaitre
-  //  - point de depart de l'attaquant (pointCanonn)
+
+  // We must know
+  //  - attacker's departure point (pointCannon)
   qreal pointDepartAttaquantX = paysAttaquant-> pointCannon().x()*      m_theWorld->zoom();
-  //  - point de depart du defenseur (pointCannon)
+  //  - defender's departure point (pointCannon)
   qreal pointDepartDefenseurX = paysDefenseur-> pointCannon().x()*      m_theWorld->zoom();
-  
-  //  - point drapeau de l'attaquant
+
+  //  - attacker's flag point
   qreal pointFlagAttaquantX = paysAttaquant-> pointFlag().x()*      m_theWorld->zoom();
-  //  - point drapeau du defenseur
+  //  - defender's flag point
   qreal pointFlagDefenseurX = paysDefenseur-> pointFlag().x()*      m_theWorld->zoom();
   
-  //  - point d'arrivee de l'attaquant (resp. du defenseur) (gauche ou droite de point drapeau defenseur
-  //    selon position point drapeau attaquant)
+  //  - attacker's arrival point (resp. defender's) (left or right of the
+  //    defender's flag point depending on the attacker's flag point position)
   qreal pointArriveeAttaquantX;
   qreal pointArriveeY;
   qreal pointArriveeDefenseurX;
@@ -183,8 +183,9 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   // The situation is reversed if the one of the attacker will need to go
   // through the world limit
 
-  qreal leftRelativePos = - (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("cannon-width"))*      m_theWorld->zoom();
+  qreal leftRelativePos = - (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("cannon-width"))*m_theWorld->zoom();
   qreal rightRelativePos = (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("flag-width"))*m_theWorld->zoom();
+
   if (!((qAbs(pointFlagAttaquantX-pointFlagDefenseurX) > (m_backGnd-> boundingRect().width() / 2))))
   {
       if ( pointFlagAttaquantX <= pointFlagDefenseurX )
@@ -264,27 +265,34 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
 
 void KGameWindow::animCombat()
 {
-  kDebug()<<"KGameWindow::animCombat"<< endl;
+  kDebug()<<k_funcinfo<< endl;
   m_animFighters->changeTarget(this, SLOT(slotFiringFinished(AnimSpritesGroup*)));
 
   AnimSpritesGroup::iterator it, it_end;
   it = m_animFighters->begin(); it_end = m_animFighters->end();
   for (; it != it_end; it++)
   {
+    kDebug() << "a sprite position: " << (*it)->pos() << endl;
     CannonSprite* sprite = (CannonSprite*)(*it);
     sprite-> changeSequence(
         Sprites::SkinSpritesData::single().strData("firing-id"),
-                            Sprites::SkinSpritesData::single().intData("firing-width"),
-                            Sprites::SkinSpritesData::single().intData("firing-height"),
-                            Sprites::SkinSpritesData::single().intData("firing-frames"),
-                            Sprites::SkinSpritesData::single().intData("firing-versions"));
-                            
+        Sprites::SkinSpritesData::single().intData("firing-width"),
+        Sprites::SkinSpritesData::single().intData("firing-height"),
+        Sprites::SkinSpritesData::single().intData("firing-frames"),
+        Sprites::SkinSpritesData::single().intData("firing-versions"));
+
     qreal firingRelativePos = (Sprites::SkinSpritesData::single().intData("cannon-width") - Sprites::SkinSpritesData::single().intData("firing-width"))*m_theWorld->zoom();
     if (sprite-> looksToLeft()) 
     {
       sprite-> setPos(
         sprite-> x() + firingRelativePos,
         sprite-> y() );
+    }
+    else
+    {
+      sprite-> setPos(
+      sprite-> x() + firingRelativePos,
+                      sprite-> y() );
     }
     sprite->setAnimated(1);
 

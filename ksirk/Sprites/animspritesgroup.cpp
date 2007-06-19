@@ -28,7 +28,7 @@ namespace Ksirk
 AnimSpritesGroup::AnimSpritesGroup(QObject* target, char* slot):
   m_numberArrived(0), m_target(target), m_slot(slot)
 {
-  kDebug() << "AnimSpritesGroup::AnimSpritesGroup" << endl;
+  kDebug() << k_funcinfo << endl;
   connect (this,SIGNAL(arrived(AnimSpritesGroup*)),target,slot);
 }
 
@@ -38,7 +38,7 @@ AnimSpritesGroup::~AnimSpritesGroup()
 
 void AnimSpritesGroup::changeTarget(QObject* target, char* slot)
 {
-  kDebug() << "AnimSpritesGroup::changeTarget" << endl;
+  kDebug() << k_funcinfo << endl;
   if (m_target != 0)
   {
     disconnect(this,SIGNAL(arrived(AnimSpritesGroup*)),m_target,m_slot);
@@ -50,7 +50,7 @@ void AnimSpritesGroup::changeTarget(QObject* target, char* slot)
 
 void AnimSpritesGroup::clear()
 {
-  kDebug() << "AnimSpritesGroup::clear" << endl;
+  kDebug() << k_funcinfo << endl;
   disconnect(this,SIGNAL(arrived(AnimSpritesGroup*)),m_target,m_slot);
   m_target = 0; 
   m_slot = 0;
@@ -69,7 +69,7 @@ void AnimSpritesGroup::addSprite(AnimSprite* sprite)
 void AnimSpritesGroup::oneArrived(AnimSprite* sprite)
 {
   m_numberArrived++;
-  kDebug() << "AnimSpritesGroup::oneArrived: " << m_numberArrived 
+  kDebug() << k_funcinfo << m_numberArrived 
     << " on " << size() << endl;
   // if 0 is given, then one is count as arrived whithout action. Useful for 
   // non-animated sprites of the group, but ugly solution...

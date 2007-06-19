@@ -62,7 +62,7 @@ void DecoratedGameFrame::mouseMoveEvent ( QMouseEvent * event )
 
 QSize DecoratedGameFrame::sizeHint() const
 {
-  kDebug() << k_funcinfo << " " << m_mapW << "/" << m_mapH << endl;
+//   kDebug() << k_funcinfo << " " << m_mapW << "/" << m_mapH << endl;
   return QSize(m_mapW, m_mapH);
 }
 

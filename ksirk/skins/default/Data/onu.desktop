@@ -37,7 +37,7 @@ versions=1
 
 [infantry]
 id=infantry
-width=32
+width=25
 height=32
 frames=1
 versions=3
@@ -59,7 +59,7 @@ versions=3
 [firing]
 id=firing
 width=64
-height=46
+height=32
 frames=4
 versions=2
 

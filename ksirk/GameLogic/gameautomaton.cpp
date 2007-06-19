@@ -231,7 +231,7 @@ Player* GameAutomaton::getAnyLocalPlayer()
 
 GameAutomaton::GameState GameAutomaton::run()
 {
-  kDebug() << "GameAutomaton::run (KGame running=" <<  (gameStatus()==KGame::Run) << ")" << endl;
+//   kDebug() << "GameAutomaton::run (KGame running=" <<  (gameStatus()==KGame::Run) << ")" << endl;
   if (m_game == 0)
   {
     QTimer::singleShot(200, this, SLOT(run()));
@@ -250,10 +250,10 @@ GameAutomaton::GameState GameAutomaton::run()
     m_events.pop_front();
   }
 
-  kDebug() << k_funcinfo << "Handling " << stateName() << " ; " << event << " ; " << point << endl;
+//   kDebug() << k_funcinfo << "Handling " << stateName() << " ; " << event << " ; " << point << endl;
   if (currentPlayer())
   {
-    kDebug() << "current player=" << currentPlayer()->name() << " is active=" << currentPlayer()->isActive() << endl;
+//     kDebug() << "current player=" << currentPlayer()->name() << " is active=" << currentPlayer()->isActive() << endl;
   }
   if (event == "requestForAck")
   {
@@ -2219,7 +2219,7 @@ void GameAutomaton::sendCountries()
 
 void GameAutomaton::movingFigthersArrived()
 {
-  kDebug() << "GameAutomaton::movingFigthersArrived" << endl;
+  kDebug() << k_funcinfo << endl;
   state(FIGHT_ANIMATE);
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
@@ -2228,13 +2228,13 @@ void GameAutomaton::movingFigthersArrived()
 
 void GameAutomaton::movingArmiesArrived()
 {
-  kDebug() << "GameAutomaton::movingArmiesArrived" << endl;
+  kDebug() << k_funcinfo << endl;
 //   m_game->terminateAttackSequence();
 }
 
 void GameAutomaton::movingArmyArrived(Country* country, unsigned int number)
 {
-  kDebug() << "GameAutomaton::movingArmyArrived " << number << endl;
+  kDebug() << k_funcinfo << number << endl;
   country->incrNbAddedArmies(number);
   country->incrNbArmies(number);
   country->createArmiesSprites(m_game->backGnd());
