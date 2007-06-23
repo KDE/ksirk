@@ -34,6 +34,7 @@
 #include <qspinbox.h>
 #include <QPixmap>
 #include <QMouseEvent>
+#include <QFile>
 
 #include <klocale.h>
 #include <kdialog.h>
