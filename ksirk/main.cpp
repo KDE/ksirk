@@ -33,24 +33,20 @@ static const char *description =
 // INSERT A DESCRIPTION FOR YOUR APPLICATION HERE
     
 
-static KCmdLineOptions options[] =
-{
-  { "+[File]", I18N_NOOP("file to open"), 0 },
-  { 0, 0, 0 }
-    // INSERT YOUR COMMANDLINE OPTIONS HERE
-};
-
 int main(int argc, char *argv[])
 {
   kDebug() << "Hello World!" << endl;
-    KAboutData aboutData( "ksirk", I18N_NOOP("KsirK"),
-        KDE_VERSION_STRING, description, KAboutData::License_GPL,
-        "(c) 2002-2005, Gaël de Chalendar\n", "For help and user manuel, please see\nThe KsirK Web site", "http://home.gna.org/ksirk", "kleag@free.fr");
-    aboutData.addAuthor("Gael de Chalendar aka Kleag",0, "kleag@free.fr");
-    aboutData.addAuthor("Robin Doer",0, "");
-    aboutData.addAuthor("Albert Astals Cid",0, "");
-    aboutData.addAuthor("Michal Golunski (Polish translation)",0, "michalgolunski@o2.pl");
+    KAboutData aboutData( "ksirk", 0, ki18n("KsirK"),
+        KDE_VERSION_STRING, ki18n(description), KAboutData::License_GPL,
+        ki18n("(c) 2002-2005, Gaël de Chalendar\n"), ki18n("For help and user manuel, please see\nThe KsirK Web site"), "http://home.gna.org/ksirk", "kleag@free.fr");
+    aboutData.addAuthor(ki18n("Gael de Chalendar aka Kleag"),KLocalizedString(), "kleag@free.fr");
+    aboutData.addAuthor(ki18n("Robin Doer"));
+    aboutData.addAuthor(ki18n("Albert Astals Cid"));
+    aboutData.addAuthor(ki18n("Michal Golunski (Polish translation)"),KLocalizedString(), "michalgolunski@o2.pl");
     KCmdLineArgs::init( argc, argv, &aboutData );
+
+    KCmdLineOptions options;
+    options.add("+[File]", ki18n("file to open"));
     KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
     KApplication app;
