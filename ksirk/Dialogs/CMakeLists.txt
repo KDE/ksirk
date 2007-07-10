@@ -28,8 +28,6 @@ set(ksirk_dialogs_LIB_SRCS
   restartOrExitDialogImpl.cpp
 )
 
-kde4_automoc(${ksirk_dialogs_LIB_SRCS})
-
 set(ksirk_dialogs_UI
   qplayersetupdialog.ui
   newGameDialog.ui

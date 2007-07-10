@@ -34,8 +34,6 @@ set(ksirk_sprites_LIB_SRCS
   skinSpritesData.cpp
 )
 
-kde4_automoc(${ksirk_sprites_LIB_SRCS})
-
 kde4_add_library(ksirk_sprites SHARED ${ksirk_sprites_LIB_SRCS})
 
 # target_link_libraries(ksirk_sprites  ${KDE4_KDECORE_LIBS} ${QT_QTGUI_LIBRARY} ${QT_QTXML_LIBRARY} kdefx )
