@@ -41,7 +41,6 @@ set(ksirk_gamelogic_LIB_SRCS
   player.cpp
 )
 
-kde4_automoc(${ksirk_gamelogic_LIB_SRCS})
 
 kde4_add_library(ksirk_gamelogic SHARED ${ksirk_gamelogic_LIB_SRCS})
 

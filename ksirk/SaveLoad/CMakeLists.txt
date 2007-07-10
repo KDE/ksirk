@@ -27,7 +27,6 @@ set(ksirk_saveload_LIB_SRCS
   ksirkgamexmlloader.cpp
 )
 
-kde4_automoc(${ksirk_saveload_LIB_SRCS})
 
 kde4_add_library(ksirk_saveload SHARED ${ksirk_saveload_LIB_SRCS})
 
