@@ -63,6 +63,7 @@
 #include <KPushButton>
 #include <kchatdialog.h>
 #include <kgame/kgamechat.h>
+#include <kgamepopupitem.h>
 #include <kglobal.h>
 #include <KStatusBar>
 #include <KToolBar>
@@ -2467,22 +2468,18 @@ void KGameWindow::explain()
 void KGameWindow::showMessage(const QString& message, quint32 delay)
 {
   kDebug() << k_funcinfo << endl;
-  if (m_message != 0)
+  if (m_message == 0)
   {
-    QGraphicsItem* i = m_message;
-    m_message = 0;
-    delete i;
+    m_message  = new KGamePopupItem();
+    m_scene->addItem(m_message);
+    m_message->setSharpness(KGamePopupItem::Soft);
+    m_message->setBackgroundBrush(Qt::blue);
+    m_message->setZValue(1000);
   }
+  m_message->setMessageTimeout(delay*1000);
+  m_message->showMessage(message, KGamePopupItem::TopLeft, KGamePopupItem::ReplacePrevious);
 
-  m_message  = new MessageBubble( message, 0, delay );
-
-  m_scene->addItem(m_message);
-  m_message->setZValue(1000);
-  /// @todo handle the timer stuff in MessageBubble and stop the timer in 
-  /// case of the creation of a new message.
-  QTimer::singleShot(delay*1000, this, SLOT(slotRemoveMessage()));
-
-  m_message->setPos(m_frame-> mapToScene(QPoint(30,30)));
+//   m_message->setPos(m_frame-> mapToScene(QPoint(30,30)));
 }
 
 

@@ -45,6 +45,7 @@
 #include <kmessagebox.h>
 #include <KStatusBar>
 #include <kcomponentdata.h>
+#include <kgamepopupitem.h>
 
 namespace Ksirk
 {

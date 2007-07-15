@@ -41,6 +41,7 @@
 
 class QAction;
 class KGameChat;
+class KGamePopupItem;
 class KToolBar;
 
 class QEvent;
@@ -740,7 +741,7 @@ private:
 
   KToolBar* gameActionsToolBar;
 
-  QGraphicsItem * m_message;
+  KGamePopupItem * m_message;
 
   GameLogic::Country* m_mouseLocalisation;
 
