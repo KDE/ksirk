@@ -63,7 +63,7 @@ KPlayerSetupDialog::KPlayerSetupDialog( GameLogic::GameAutomaton* automaton,
 {
   kDebug() << "KPlayerSetupDialog constructor" << endl;
   setupUi(this);
-  QString labelString = i18n("Player Number %1, please type in your name<BR>and choose your nation:",number);
+  QString labelString = i18n("Player Number %1, please type in your name<br />and choose your nation:",number);
   TextLabel1-> setText(labelString);
   fillNationsCombo();
   if (network)
