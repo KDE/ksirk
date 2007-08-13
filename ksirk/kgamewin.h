@@ -50,7 +50,7 @@ class QGraphicsScene;
 
 namespace Phonon
 {
-  class AudioPlayer;
+  class MediaObject;
 }
 
 namespace Ksirk
@@ -729,7 +729,7 @@ private:
   enum DiceColor {Blue,Red};
   std::map< DiceColor, std::vector<QPixmap> > m_dices;
   
-  Phonon::AudioPlayer* m_audioPlayer;
+  Phonon::MediaObject* m_audioPlayer;
 
   /** 
     * This timer is used to scroll the window if the mouse stay unmoving near 

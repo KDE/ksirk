@@ -59,7 +59,7 @@
 #include <kmenubar.h>
 #include <kdebug.h>
 #include <ktextedit.h>
-#include <phonon/audioplayer.h>
+#include <phonon/mediaobject.h>
 #include <KPushButton>
 #include <kchatdialog.h>
 #include <kgame/kgamechat.h>
@@ -94,7 +94,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
 //   m_accels(this),
 //   m_chat(0), 
   m_chatDlg(0),
-  m_audioPlayer(new Phonon::AudioPlayer( Phonon::NotificationCategory )),
+  m_audioPlayer(Phonon::createPlayer( Phonon::NotificationCategory )),
   m_timer(this),
   gameActionsToolBar(0),
   m_message(0),

@@ -39,7 +39,7 @@
 #include <klocale.h>
 #include <kconfig.h>
 #include <kstandardaction.h>
-#include <phonon/audioplayer.h>
+#include <phonon/mediaobject.h>
 #include <kstandarddirs.h>
 #include <kdebug.h>
 #include <KToolBar>
@@ -236,7 +236,8 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
       QMessageBox::critical(0, i18n("Error !"), i18n("Sound roule not found - Verify your installation\nProgram cannot continue"));
       exit(2);
   }
-  m_audioPlayer->play(sndRoulePath);
+  m_audioPlayer->setCurrentSource(sndRoulePath);
+  m_audioPlayer->play();
   
   kDebug() << k_funcinfo << "4" << endl;
   CannonSprite* defenderSprite = new CannonSprite(
@@ -259,7 +260,8 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
       QMessageBox::critical(0, i18n("Error !"), i18n("Sound roule not found - Verify your installation\nProgram cannot continue"));
       exit(2);
   }
-  m_audioPlayer->play(sndRoulePath);
+  m_audioPlayer->setCurrentSource(sndRoulePath);
+  m_audioPlayer->play();
   kDebug() << k_funcinfo << "5" << endl;
 }
 
@@ -305,7 +307,8 @@ void KGameWindow::animCombat()
     }
     if (KsirkSettings::soundEnabled())
     {
-      m_audioPlayer->play(sndCanonPath);
+      m_audioPlayer->setCurrentSource(sndCanonPath);
+      m_audioPlayer->play();
     }
   }
 }
@@ -384,7 +387,8 @@ void KGameWindow::animExplosion(int who)
   }
   if (KsirkSettings::soundEnabled())
   {
-    m_audioPlayer->play(sndCrashPath);
+    m_audioPlayer->setCurrentSource(sndCrashPath);
+    m_audioPlayer->play();
   }
   kDebug() << "KGameWindow::animExplosion finished" << endl;
 //   m_frame-> initTimer();
@@ -443,7 +447,8 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
             QMessageBox::critical(0, i18n("Error !"), i18n("Sound roule not found - Verify your installation\nProgram cannot continue"));
             exit(2);
         }
-        m_audioPlayer->play(sndRoulePath);
+        m_audioPlayer->setCurrentSource(sndRoulePath);
+        m_audioPlayer->play();
     }
     else if (who == 1) //Defenseur detruit, ramene Attaquant
     {
@@ -477,7 +482,8 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
             QMessageBox::critical(0, i18n("Error !"), i18n("Sound roule not found - Verify your installation\nProgram cannot continue"));
             exit(2);
         }
-        m_audioPlayer->play(sndRoulePath);
+        m_audioPlayer->setCurrentSource(sndRoulePath);
+        m_audioPlayer->play();
     }
     else if (who == 2) 
     {
