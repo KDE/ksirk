@@ -49,9 +49,6 @@
      <property name="text" >
       <string>Ne&amp;twork game</string>
      </property>
-     <property name="shortcut" >
-      <string>Alt+T</string>
-     </property>
     </widget>
    </item>
    <item row="2" column="0" colspan="4" >
@@ -135,9 +132,6 @@
         </property>
         <property name="text" >
          <string>Wor&amp;ld conquest</string>
-        </property>
-        <property name="shortcut" >
-         <string>Alt+L</string>
         </property>
        </widget>
       </item>

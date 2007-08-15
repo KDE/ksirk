@@ -91,9 +91,6 @@ Choose one of them. It will be your nation during the game</string>
      <property name="text" >
       <string>Pla&amp;yer is computer</string>
      </property>
-     <property name="shortcut" >
-      <string>Alt+Y</string>
-     </property>
     </widget>
    </item>
   </layout>
