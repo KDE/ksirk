@@ -495,7 +495,7 @@ Continent* ONU::continentNamed(const QString& name)
 
 void ONU::buildMap()
 {
-  kDebug() << k_funcinfo << "with zoom="<< m_zoom << endl;
+  kDebug() << "with zoom="<< m_zoom << endl;
 //   QSize size((int)(m_renderer.defaultSize().width()*m_zoom),(int)(m_renderer.defaultSize().height()*m_zoom));
   QSize size((int)(m_width),(int)(m_height));
   QImage image(size, QImage::Format_ARGB32_Premultiplied);
@@ -533,12 +533,12 @@ void ONU::buildMap()
     int((country->centralPoint().y()*m_zoom+countryNameRect.height()/2)),
         countryName);
   }
-  kDebug() << k_funcinfo << "done" << endl;
+  kDebug() << "done" << endl;
 }
 
 void ONU::applyZoomFactor(qreal zoomFactor)
 {
-  kDebug() << k_funcinfo << "zoomFactor=" << zoomFactor << "old zoom=" << m_zoom << endl;
+  kDebug() << "zoomFactor=" << zoomFactor << "old zoom=" << m_zoom << endl;
   m_zoom *= zoomFactor;
   kDebug() << "new zoom=" << m_zoom << endl;
   m_font.size = (unsigned int)(m_font.size*zoomFactor);

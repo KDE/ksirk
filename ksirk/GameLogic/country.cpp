@@ -71,7 +71,7 @@ Country::Country(GameAutomaton* game,
   m_renderer(new KSvgRenderer()),
   m_highlighting_locked(false)
 {
-//   kDebug() << k_funcinfo << m_name << ", " << this << endl;
+//   kDebug() << m_name << ", " << this << endl;
 }
 
 Country::~Country()
@@ -102,7 +102,7 @@ void Country::reset()
 
 void Country::createArmiesSprites(BackGnd *backGnd)
 {
-  kDebug() << k_funcinfo << "zoom=" << backGnd->onu()->zoom() << endl;
+  kDebug() << "zoom=" << backGnd->onu()->zoom() << endl;
   BackGnd* bg = backGnd==0?m_automaton->game()->backGnd():backGnd;
   
   unsigned int armies = nbArmies();
@@ -454,7 +454,7 @@ bool Country::hasAdjacentEnemy()
 
 void Country::highlight(const QColor& color, qreal opacity)
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   if (m_highlighting_locked)
   {
     return;
@@ -464,26 +464,26 @@ void Country::highlight(const QColor& color, qreal opacity)
   ONU* onu = m_automaton->game()->theWorld();
   if (onu == 0)
   {
-    kWarning() << k_funcinfo << "onu is null" << endl;
+    kWarning() << "onu is null" << endl;
     return;
   }
   QDomNode countryElement = onu->svgDom()->elementById(m_name);
   if (countryElement.isNull())
   {
-    kWarning() << k_funcinfo << "Got a null element" << endl;
+    kWarning() << "Got a null element" << endl;
     return;
   }
-  kDebug() << k_funcinfo <<"got country"<< endl;
+  kDebug() <<"got country"<< endl;
 
   onu->svgDom()->setCurrentNode(countryElement);
   onu->svgDom()->setStyleProperty("fill", color.name());
   onu->svgDom()->setStyleProperty("fill-opacity", QString::number(opacity));
 
-  kDebug() << k_funcinfo <<"loading"<< endl;
+  kDebug() <<"loading"<< endl;
   QByteArray svg = onu->svgDom()->nodeToByteArray();
   m_renderer->load(svg);
 
-  kDebug() << k_funcinfo <<"loaded"<< endl;
+  kDebug() <<"loaded"<< endl;
   m_highlighting = new QGraphicsSvgItem(m_automaton->game()->backGnd());
   m_highlighting->setSharedRenderer(m_renderer);
   m_highlighting->setElementId(m_name);
@@ -492,44 +492,44 @@ void Country::highlight(const QColor& color, qreal opacity)
       (m_anchorPoint.y()-m_highlighting->boundingRect().height()/2)*onu->zoom());
 
   m_highlighting->scale(onu->zoom(), onu->zoom());
-  kDebug() << k_funcinfo << "done" << endl;
+  kDebug() << "done" << endl;
 }
 
 void Country::highlightAsAttacker()
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   highlight(Qt::red, 0.6);
   m_highlighting_locked = true;
 }
 
 void Country::highlightAsDefender()
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   highlight(Qt::yellow,0.6);
   m_highlighting_locked = true;
 }
 
 void Country::clearHighlighting()
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   if (!m_highlighting_locked && m_highlighting!=0)
   {
     m_highlighting->hide();
     delete m_highlighting;
     m_highlighting = 0;
   }
-  kDebug() << k_funcinfo << "done" << endl;
+  kDebug() << "done" << endl;
 }
 
 bool Country::isHighlightingLocked()
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   return m_highlighting_locked;
 }
 
 void Country::releaseHighlightingLock()
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   m_highlighting_locked=false;
 }
 

@@ -249,7 +249,7 @@ Player* KGameWindow::currentPlayer()
 
 void KGameWindow::loadDices()
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   
   m_dices[Blue] = std::vector<QPixmap>(6);
   m_dices[Red] = std::vector<QPixmap>(6);
@@ -270,7 +270,7 @@ void KGameWindow::loadDices()
 
 QPixmap KGameWindow::buildDice(DiceColor color, const QString& id)
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
 //   QString stop1Color, stop2Color;
 //   if (color == Red)
 //   {
@@ -290,13 +290,13 @@ QPixmap KGameWindow::buildDice(DiceColor color, const QString& id)
 //   m_theWorld->svgDom()->setCurrentNode(stop2Element);
 //   m_theWorld->svgDom()->setStyleProperty("style", QString("stop-color:")+stop2Color+";stop-opacity:1");
 // 
-//   kDebug() << k_funcinfo << "after stops " << stop1Color << ", " << stop2Color << endl;
+//   kDebug() << "after stops " << stop1Color << ", " << stop2Color << endl;
 // 
 //   QByteArray svg = m_theWorld->svgDom()->toByteArray();
 //   kDebug() << svg << endl;
 //   KSvgRenderer renderer;
 //   renderer.load(svg);
-//   kDebug() << k_funcinfo << "after loading" << endl;
+//   kDebug() << "after loading" << endl;
 
   QSize size(32,32);
   QImage image(size, QImage::Format_ARGB32_Premultiplied);
@@ -372,7 +372,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
   }
     m_scene = new QGraphicsScene(0, 0, m_theWorld->width(), m_theWorld->height(),this);
 //   m_scene->setDoubleBuffering(true);
-  kDebug() << k_funcinfo << "Before initView" << endl;
+  kDebug() << "Before initView" << endl;
   initView();
   m_backGnd = new BackGnd(m_scene, m_theWorld); //Creation of the background
   kDebug() <<"After m_backGnd new="<< m_backGnd << endl;
@@ -405,7 +405,7 @@ void KGameWindow::initView()
 
 bool KGameWindow::attackEnd()
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   if (m_firstCountry==0 || m_secondCountry == 0)
   {
     return false;
@@ -416,7 +416,7 @@ bool KGameWindow::attackEnd()
   m_secondCountry->clearHighlighting();
   bool res = false;
   QString mes = "";
-  kDebug() << k_funcinfo << "There is now " << m_secondCountry-> nbArmies() << " armies in " << m_secondCountry->name() << "." << endl;
+  kDebug() << "There is now " << m_secondCountry-> nbArmies() << " armies in " << m_secondCountry->name() << "." << endl;
   if (m_secondCountry-> nbArmies() == 0)
   {
     QPixmap pm = currentPlayer()->getFlag()->image(0);
@@ -796,7 +796,7 @@ void KGameWindow::displayOpenGameButton()
 
 void KGameWindow::displayNormalGameButtons()
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   if (m_firstCountry != 0)
   {
     m_firstCountry->releaseHighlightingLock();
@@ -1611,7 +1611,7 @@ bool KGameWindow::terminateAttackSequence()
 
 bool KGameWindow::attacker(const QPointF& point)
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   Country* clickedCountry = clickIn(point);
   KMessageParts messageParts;
   if (clickedCountry == 0)
@@ -1663,7 +1663,7 @@ bool KGameWindow::attacker(const QPointF& point)
 
 unsigned int KGameWindow::attacked(const QPointF& point)
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
 //  if (currentPlayer()-> isAI()) return 3;
         
   unsigned int res = 0;
@@ -1671,7 +1671,7 @@ unsigned int KGameWindow::attacked(const QPointF& point)
   m_secondCountry = secondCountry;
   KMessageParts messageParts;
 
-  kDebug() << k_funcinfo << "2nd country is now set" << endl;
+  kDebug() << "2nd country is now set" << endl;
   if ( (m_firstCountry == NULL) || (secondCountry == NULL)
           || (m_firstCountry-> owner() != currentPlayer()) )
   {
@@ -1748,9 +1748,9 @@ unsigned int KGameWindow::attacked(const QPointF& point)
       << secondCountry-> name();
     res = 2;
   }
-  kDebug() << k_funcinfo << "will change item" << endl;
+  kDebug() << "will change item" << endl;
   broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
-  kDebug() << k_funcinfo << "change item broadcasted; returning " << res << endl;
+  kDebug() << "change item broadcasted; returning " << res << endl;
   return res;
 }
 
@@ -1991,7 +1991,7 @@ bool KGameWindow::nextPlayerRecycling()
   */
 bool KGameWindow::nextPlayerNormal()
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   if (setCurrentPlayerToNext())
   {
     distributeArmies();
@@ -2035,7 +2035,7 @@ void KGameWindow::attack(unsigned int nb)
 
 void KGameWindow::defense(unsigned int nb)
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   clearGameActionsToolbar();
 
   if (!m_firstCountry) // anything left to do?
@@ -2258,7 +2258,7 @@ Player* KGameWindow::addPlayer(const QString& playerName,
       unsigned int nbAttack,
       unsigned int nbDefense)
 {
-  kDebug() << k_funcinfo << "Adding player (AI: " << isAI << ")" << endl;
+  kDebug() << "Adding player (AI: " << isAI << ")" << endl;
   Player* p = dynamic_cast<Player*>(m_automaton->createPlayer(isAI?2:1,0,false)); 
   if (p)
   {
@@ -2467,7 +2467,7 @@ void KGameWindow::explain()
 
 void KGameWindow::showMessage(const QString& message, quint32 delay)
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   if (m_message == 0)
   {
     m_message  = new KGamePopupItem();
@@ -2485,35 +2485,35 @@ void KGameWindow::showMessage(const QString& message, quint32 delay)
 
 void KGameWindow::firstCountry(GameLogic::Country* country)
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   if (m_firstCountry != 0)
   {
     m_firstCountry->clearHighlighting();
   }
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   m_firstCountry = country;
   if (country == 0)
   {
     return;
   }
-  kDebug() << k_funcinfo << country->name() << endl;
+  kDebug() << country->name() << endl;
   country->highlightAsAttacker();
 }
 
 void KGameWindow::secondCountry(GameLogic::Country* country)
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   if (m_secondCountry != 0)
   {
     m_secondCountry->clearHighlighting();
   }
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   m_secondCountry = country;
   if (country == 0)
   {
     return;
   }
-  kDebug() << k_funcinfo << country->name() << endl;
+  kDebug() << country->name() << endl;
   country->highlightAsDefender();
 }
 

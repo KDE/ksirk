@@ -144,7 +144,7 @@ bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *m_firstCou
 
 void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefenseur)
 {
-  kDebug() << k_funcinfo << "1" << endl;
+  kDebug() << "1" << endl;
 
   gameActionsToolBar-> hide();
   
@@ -170,7 +170,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   
   pointArriveeY = (((paysDefenseur-> pointFlag().y() + Sprites::SkinSpritesData::single().intData("fighters-flag-y-diff")))* m_theWorld->zoom()) ;
   
-  kDebug() << k_funcinfo << "2" << endl;
+  kDebug() << "2" << endl;
   if (!paysAttaquant->communicateWith(paysDefenseur))
   {
       kError() << "Error in KGameWindow::initCombatMovement: " << paysAttaquant-> name() << "  and "
@@ -214,7 +214,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   }
   QPointF pointArriveeAttaquant(pointArriveeAttaquantX,pointArriveeY);
   QPointF pointArriveeDefenseur(pointArriveeDefenseurX,pointArriveeY);
-  kDebug() << k_funcinfo << "3: " << pointArriveeAttaquant << " ; " << pointArriveeDefenseur << endl;
+  kDebug() << "3: " << pointArriveeAttaquant << " ; " << pointArriveeDefenseur << endl;
   
   CannonSprite* attackingSprite = new CannonSprite(
       Sprites::SkinSpritesData::single().strData("cannon-id"),
@@ -239,7 +239,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   m_audioPlayer->setCurrentSource(sndRoulePath);
   m_audioPlayer->play();
   
-  kDebug() << k_funcinfo << "4" << endl;
+  kDebug() << "4" << endl;
   CannonSprite* defenderSprite = new CannonSprite(
       Sprites::SkinSpritesData::single().strData("cannon-id"),
       Sprites::SkinSpritesData::single().intData("cannon-width"),
@@ -262,12 +262,12 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   }
   m_audioPlayer->setCurrentSource(sndRoulePath);
   m_audioPlayer->play();
-  kDebug() << k_funcinfo << "5" << endl;
+  kDebug() << "5" << endl;
 }
 
 void KGameWindow::animCombat()
 {
-  kDebug()<<k_funcinfo<< endl;
+  kDebug()<< endl;
   m_animFighters->changeTarget(this, SLOT(slotFiringFinished(AnimSpritesGroup*)));
 
   AnimSpritesGroup::iterator it, it_end;

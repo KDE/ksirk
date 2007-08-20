@@ -40,7 +40,7 @@ DecoratedGameFrame::DecoratedGameFrame(QWidget* parent,
       unsigned int mapW, unsigned int mapH)
   : QGraphicsView(parent), m_mapW(mapW), m_mapH(mapH)
 {
-  kDebug() << k_funcinfo << "("<<mapW<<"x"<<mapH<<")" << endl;
+  kDebug() << "("<<mapW<<"x"<<mapH<<")" << endl;
   setVerticalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
   setHorizontalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
   setCacheMode(QGraphicsView::CacheBackground);
@@ -62,7 +62,7 @@ void DecoratedGameFrame::mouseMoveEvent ( QMouseEvent * event )
 
 QSize DecoratedGameFrame::sizeHint() const
 {
-//   kDebug() << k_funcinfo << " " << m_mapW << "/" << m_mapH << endl;
+//   kDebug() << " " << m_mapW << "/" << m_mapH << endl;
   return QSize(m_mapW, m_mapH);
 }
 

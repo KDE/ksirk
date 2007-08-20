@@ -251,7 +251,7 @@ GameAutomaton::GameState GameAutomaton::run()
     m_events.pop_front();
   }
 
-//   kDebug() << k_funcinfo << "Handling " << stateName() << " ; " << event << " ; " << point << endl;
+//   kDebug() << "Handling " << stateName() << " ; " << event << " ; " << point << endl;
   if (currentPlayer())
   {
 //     kDebug() << "current player=" << currentPlayer()->name() << " is active=" << currentPlayer()->isActive() << endl;
@@ -345,38 +345,38 @@ GameAutomaton::GameState GameAutomaton::run()
       switch ( m_game->attacked(point) )
       {
         case 0:
-          kDebug() << k_funcinfo << "handling attacked value; 0" << endl;
+          kDebug() << "handling attacked value; 0" << endl;
           state(WAIT);
         break;
         case 1:
-          kDebug() << k_funcinfo << "handling attacked value; 1" << endl;
+          kDebug() << "handling attacked value; 1" << endl;
           m_currentPlayerPlayed = true;
           state(WAITDEFENSE);
         break;
         case 2:
-          kDebug() << k_funcinfo << "handling attacked value; 2" << endl;
+          kDebug() << "handling attacked value; 2" << endl;
           m_currentPlayerPlayed = true;
-          kDebug() << k_funcinfo << "calling defense(1)" << endl;
+          kDebug() << "calling defense(1)" << endl;
           m_game-> defense(1);
-          kDebug() << k_funcinfo << "setting state to FIGHT_BRING" << endl;
+          kDebug() << "setting state to FIGHT_BRING" << endl;
           state(FIGHT_BRING);
         break;
         case 3:
-          kDebug() << k_funcinfo << "handling attacked value; 3" << endl;
+          kDebug() << "handling attacked value; 3" << endl;
           // AI action: nothing to do.
         break;
         default:
           kError() << "Unknown return value from attacked" << endl;
           exit(1);
       }
-      kDebug() << k_funcinfo << "after switch" << endl;
+      kDebug() << "after switch" << endl;
     }
     else
     {
       //        if (!event.isEmpty())
 //          kError() << "Unhandled event " << event << " during handling of " << stateName() endl;
     }
-    kDebug() << k_funcinfo << "handling of ATTACK2 finished" << endl;
+    kDebug() << "handling of ATTACK2 finished" << endl;
   break;
   case EXPLOSION_ANIMATE:
   break;
@@ -2220,7 +2220,7 @@ void GameAutomaton::sendCountries()
 
 void GameAutomaton::movingFigthersArrived()
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   state(FIGHT_ANIMATE);
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
@@ -2229,13 +2229,13 @@ void GameAutomaton::movingFigthersArrived()
 
 void GameAutomaton::movingArmiesArrived()
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
 //   m_game->terminateAttackSequence();
 }
 
 void GameAutomaton::movingArmyArrived(Country* country, unsigned int number)
 {
-  kDebug() << k_funcinfo << number << endl;
+  kDebug() << number << endl;
   country->incrNbAddedArmies(number);
   country->incrNbArmies(number);
   country->createArmiesSprites(m_game->backGnd());

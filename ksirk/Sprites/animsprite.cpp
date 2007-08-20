@@ -81,7 +81,7 @@ AnimSprite::AnimSprite(const QString &svgid,
 
 AnimSprite::~AnimSprite()
 {
-//   kDebug() << k_funcinfo << (void*)this << endl;
+//   kDebug() << (void*)this << endl;
   m_timer.stop();
   disconnect(&m_timer,SIGNAL(timeout()),this,SLOT(animate()));
   setStatic();
@@ -141,7 +141,7 @@ void AnimSprite::changeSequence(const QString &svgid,
                                  unsigned int newNbFrames,
                                  unsigned int nbDirs)
 {
-  kDebug()<< k_funcinfo << svgid <<endl;
+  kDebug()<< svgid <<endl;
   m_svgid = svgid;
   m_width = width*m_zoom;
   m_height = height*m_zoom;
@@ -151,7 +151,7 @@ void AnimSprite::changeSequence(const QString &svgid,
 
   sequenceConstruction();
   update();
-  //    kDebug()<<k_funcinfo<<"OUT"<<endl;
+  //    kDebug()<<"OUT"<<endl;
 }
 
 void AnimSprite::nextFrame()
@@ -187,7 +187,7 @@ void AnimSprite::nextFrame()
 
 void AnimSprite::setFrame(unsigned int numFrame)
 {
-// kDebug() << k_funcinfo << " " << numFrame << " look=" << look <<" ; frames="
+// kDebug() << " " << numFrame << " look=" << look <<" ; frames="
 //  <<frames<<" ; m_frames size="<<m_frames.size()<<endl;
   if (numFrame < (unsigned int)m_frames.size())
   {
@@ -197,7 +197,7 @@ void AnimSprite::setFrame(unsigned int numFrame)
 
 void AnimSprite::moveIt()
 {
-  kDebug() << k_funcinfo << "Position of " << (void*)this << " is: "
+  kDebug() << "Position of " << (void*)this << " is: "
     << pos() << " (destination point is: " << destinationPoint << ")" << endl;
   qreal delta = 5*m_zoom;
   switch (KsirkSettings::spritesSpeed())
@@ -424,7 +424,7 @@ bool AnimSprite::getApproachDestByRight() const
 /** Write property of bool approachDestByRight. */
 void AnimSprite::setApproachDestByRight( const bool& _newVal)
 {
-  //    kDebug()<<k_funcinfo<<endl;
+  //    kDebug()<<endl;
     approachDestByRight = _newVal;
     if (_newVal) setApproachDestByLeft(false);
 }
@@ -438,7 +438,7 @@ bool AnimSprite::getApproachDestByLeft () const
 /** Write property of bool approachDestByLeft . */
 void AnimSprite::setApproachDestByLeft ( const bool& _newVal)
 {
-  //    kDebug()<<k_funcinfo<<endl;
+  //    kDebug()<<endl;
     approachDestByLeft  = _newVal;
     if (_newVal) setApproachDestByRight(false);
 }
@@ -515,7 +515,7 @@ void AnimSprite::setupTravel(
         const QPointF& srcPoint, 
         const QPointF& destPoint)
 {
-   kDebug() << k_funcinfo << srcPoint << ", " << destPoint << endl;
+   kDebug() << srcPoint << ", " << destPoint << endl;
 
   setDestination(dest);
   setDestinationPoint(destPoint);
@@ -563,7 +563,7 @@ void AnimSprite::setupTravel(
 
 void AnimSprite::arrival()
 {
-  kDebug()<< k_funcinfo << "at " << destinationPoint << endl;
+  kDebug()<< "at " << destinationPoint << endl;
   if (x() < getDestination()-> pointFlag().x())
         setLookRight();
   else setLookLeft();
@@ -617,7 +617,7 @@ QPixmap AnimSprite::image(unsigned int numFrame) const
 
 void AnimSprite::animate()
 {
-  //   kDebug() << k_funcinfo << (void*)this << endl;
+  //   kDebug() << (void*)this << endl;
   if (!destinationPoint.isNull() && pos() != destinationPoint)
   {
     moveIt();
@@ -626,7 +626,7 @@ void AnimSprite::animate()
   {
     nextFrame();
   }
-  //   kDebug() << k_funcinfo<<"finished for " << (void*)this << endl;
+  //   kDebug() <<"finished for " << (void*)this << endl;
   
 }
 
@@ -650,7 +650,7 @@ void AnimSprite::setStatic()
 
 void AnimSprite::applyZoomFactor(qreal zoomFactor)
 {
-  kDebug() << k_funcinfo << "old zoom=" << m_zoom << endl;
+  kDebug() << "old zoom=" << m_zoom << endl;
   m_zoom *= zoomFactor;
   m_width *= m_zoom;
   m_height *= m_zoom;

@@ -54,7 +54,7 @@ using namespace GameLogic;
 // void KGameWindow::slotTimerEvent()
 void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
 {
-//   kDebug() << k_funcinfo << endl;
+//   kDebug() << endl;
   QString countryName;
   QPoint mousePos;
   QPoint mousePosGlobal;
@@ -432,7 +432,7 @@ void KGameWindow::slotShowAboutApplication()
 
 void KGameWindow::slotJoinNetworkGame() 
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   QPoint point;
   m_automaton->event("actionJoinNetworkGame", point);
 }
@@ -455,13 +455,13 @@ void KGameWindow::slotChatMessage()
 void KGameWindow::slotMovingFightersArrived(AnimSpritesGroup* sprites)
 {
 Q_UNUSED(sprites)
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   m_automaton->movingFigthersArrived();
 }
 
 void KGameWindow::slotMovingArmiesArrived(AnimSpritesGroup* sprites)
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   AnimSpritesGroup::iterator it, it_end;
   it = sprites->begin(); it_end = sprites->end();
   for (; it != it_end; it++)
@@ -480,7 +480,7 @@ void KGameWindow::slotMovingArmiesArrived(AnimSpritesGroup* sprites)
 
 void KGameWindow::slotMovingArmyArrived(AnimSprite* sprite)
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   sprite->setStatic();
   sprite->hide();
   m_automaton->movingArmyArrived(sprite->getDestination(),
@@ -490,13 +490,13 @@ void KGameWindow::slotMovingArmyArrived(AnimSprite* sprite)
 void KGameWindow::slotFiringFinished(AnimSpritesGroup* sprites)
 {
 Q_UNUSED(sprites)
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   m_automaton->firingFinished();
 }
 
 void KGameWindow::slotExplosionFinished(AnimSpritesGroup* sprites)
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   while (!sprites->empty())
   {
     AnimSprite* sprite = sprites->front();
@@ -509,7 +509,7 @@ void KGameWindow::slotExplosionFinished(AnimSpritesGroup* sprites)
 
 void KGameWindow::slotZoomIn()
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   m_theWorld->applyZoomFactor(1.1);
   m_frame->setMaximumSize(m_theWorld->width(),m_theWorld->height());
   m_scene->setSceneRect ( QRectF() );
@@ -520,7 +520,7 @@ void KGameWindow::slotZoomIn()
 
 void KGameWindow::slotZoomOut()
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   m_theWorld->applyZoomFactor(1.0/1.1);
   m_frame->setMaximumSize(m_theWorld->width(),m_theWorld->height());
   m_scene->setSceneRect ( QRectF() );
@@ -531,7 +531,7 @@ void KGameWindow::slotZoomOut()
 
 void KGameWindow::slotRemoveMessage()
 {
-  kDebug() << k_funcinfo << endl;
+  kDebug() << endl;
   if (m_message != 0)
   {
     kDebug() << "hiding and deleting" << endl;
