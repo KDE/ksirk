@@ -100,7 +100,7 @@ void KPlayerSetupDialog::slotOK()
     // Name is not unique
     KMessageBox::error(this,
       "<html><center><b>" + i18n("Error") + "</b><br>" +
-      i18n("Player %1, you have to choose another name!<br>%2 is not unique.",number,LineEdit2->text()) +
+      i18n("Player %1, you have to choose another name!<br/>%2 is not unique.",number,LineEdit2->text()) +
           "</center></html>", i18n("Error"));
   }
   else {

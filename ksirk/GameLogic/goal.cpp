@@ -267,17 +267,17 @@ QString Goal::message(int displayType) const
         QString joint;
         if (it_next==it_end)
         {
-          joint = " and ";
+          joint = i18n(" and ");
         }
         else
         {
-          joint = ", ";
+          joint = i18n(", ");
         }
         if (*it != 0)
         {
           Continent* continent = const_cast<Continent*>(m_automaton->game()->theWorld()->continentWithId(*it));
           int nb = continent->getMembers().size() - continent->countriesOwnedBy(m_player).size();
-          mes += joint + i18n("%1 in %2",nb,continent->name());
+          mes += joint + i18nc("@info An element of the enumeration of the number of countries in the given continent", "%1 in %2",nb,continent->name());
         }
         it++;
       }

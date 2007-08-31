@@ -27,11 +27,11 @@
 #include "GameLogic/gameautomaton.h"
 #include "GameLogic/onu.h"
 
-#include <qpoint.h>
-#include <qmessagebox.h>
+#include <QPoint>
 #include <QPixmap>
 #include <QSvgRenderer>
 
+#include <kmessagebox.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
 #include <kdebug.h>
@@ -479,7 +479,7 @@ qreal AnimSprite::getMaxX() const
         return backGnd-> pixmap().width();
     else
     {
-        QMessageBox::critical(0, I18N_NOOP("Error !"), I18N_NOOP("Cannot find Max X  for sprite: no background !"));
+        KMessageBox::error(0, i18n("Cannot find Max X  for sprite: no background !"), i18n("Error !"));
         exit(2);
     }
 }
@@ -494,7 +494,7 @@ qreal AnimSprite::getMaxY() const
         return backGnd-> pixmap().height();
     else
     {
-        QMessageBox::critical(0, I18N_NOOP("Error !"), I18N_NOOP("Cannot find Max Y  for sprite: no background !"));
+        KMessageBox::error(0, i18n("Cannot find Max Y  for sprite: no background !"), i18n("Error !"));
         exit(2);
     }
 }

@@ -110,7 +110,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   QString iconFileName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Images/SoldatAGenoux1.png");
   if (iconFileName.isNull())
   {
-      QMessageBox::critical(0, i18n("Error !"), i18n("Cannot load icon\nProgram cannot continue"));
+      KMessageBox::error(0, i18n("Cannot load icon<br/>Program cannot continue"), i18n("Error !"));
       exit(2);
   }
   QPixmap icon(iconFileName);
@@ -201,7 +201,7 @@ void KGameWindow::initActions()
 //   kDebug() << "Trying to load button image file: " << imageFileName << endl;
   if (imageFileName.isNull())
   {
-    QMessageBox::critical(0, i18n("Error !"), i18n("Cannot load button image\nProgram cannot continue"));
+    KMessageBox::error(0, i18n("Cannot load button image<br/>Program cannot continue"), i18n("Error !"));
     exit(2);
   }
   QAction* joinAction = new QAction(QIcon(QPixmap(imageFileName)),
@@ -350,8 +350,8 @@ void KGameWindow::newSkin(const QString& onuFileName)
   }
   if (onuDefinitionFileName.isEmpty())
   {
-      QMessageBox::critical(0, i18n("Error !"),
-          i18n("UNO definition XML file not found - Verify your installation\nProgram cannot continue"));
+      KMessageBox::error(0,
+          i18n("UNO definition XML file not found - Verify your installation<br/>Program cannot continue"), i18n("Error !"));
       exit(2);
   }
   kDebug() << "Got ONU definition file name: " <<  onuDefinitionFileName << endl;
@@ -386,7 +386,7 @@ void KGameWindow::initView()
   QString iconFileName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Images/SoldatAGenoux1.png");
   if (iconFileName.isNull())
   {
-      QMessageBox::critical(0, i18n("Error !"), i18n("Cannot load icon\nProgram cannot continue"));
+      KMessageBox::error(0, i18n("Cannot load icon<br/>Program cannot continue"), i18n("Error !"));
       exit(2);
   }
 // to port : still necessary ?
@@ -926,7 +926,7 @@ void KGameWindow::addAButton(
 //   kDebug() << "Trying to load button image file: " << imageFileName << endl;
   if (imageFileName.isNull())
   {
-    QMessageBox::critical(0, i18n("Error !"), i18n("Cannot load button image\nProgram cannot continue"));
+    KMessageBox::error(0, i18n("Cannot load button image<br/>Program cannot continue"), i18n("Error !"));
     exit(2);
   }
   KToolBar* toolBar;
@@ -1103,8 +1103,8 @@ bool KGameWindow::setupOnePlayer()
       if (nomEntre.isEmpty())
       {
         mes = i18n("Error - Player %1, you have to choose a name.", 1);
-        QMessageBox::warning(this, i18n("Error"), mes);
-        nomEntre = i18n("Player%1", 1);
+        KMessageBox::sorry(this, mes, i18n("Error"));
+        nomEntre = i18nc("@info Forged player name", "Player%1", 1);
       }
       else 
       {
@@ -1961,7 +1961,7 @@ bool KGameWindow::nextPlayerRecycling()
   kDebug() << "nextPlayerRecycling" << endl;
   if ( currentPlayer() && currentPlayer()-> getNbAvailArmies() > 0 )
   {
-    QMessageBox::information(0, "KsirK", i18n("You must distribute\nall your armies"));
+    KMessageBox::sorry(0, i18n("You must distribute\nall your armies"), i18n("KsirK"));
     return false;
   }
   else
@@ -2430,7 +2430,7 @@ void KGameWindow::explain()
 //   QString newGameImageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_NEWGAME);
 //   if (newGameImageFileName.isNull())
 //   {
-//     QMessageBox::critical(0, i18n("Error !"), i18n("Cannot load button image\nProgram cannot continue"));
+//     KMessageBox::errot(0, i18n("Cannot load button image\nProgram cannot continue"), i18n("Error !"));
 //     exit(2);
 //   }
 //   QPixmap newGameButtonPix(newGameImageFileName); 
@@ -2441,7 +2441,7 @@ void KGameWindow::explain()
 //   QString joinGameImageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_NEWNETGAME);
 //   if (joinGameImageFileName.isNull())
 //   {
-//     QMessageBox::critical(0, i18n("Error !"), i18n("Cannot load button image\nProgram cannot continue"));
+//     KMessageBox::error(0, i18n("Cannot load button image\nProgram cannot continue"), i18n("Error !"));
 //     exit(2);
 //   }
 //   QPixmap joinGameButtonPix(joinGameImageFileName); 
@@ -2452,7 +2452,7 @@ void KGameWindow::explain()
 //   QString openGameImageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_OPENGAME);
 //   if (openGameImageFileName.isNull())
 //   {
-//     QMessageBox::critical(0, i18n("Error !"), i18n("Cannot load button image\nProgram cannot continue"));
+//     KMessageBox::error(0, i18n("Cannot load button image\nProgram cannot continue"), i18n("Error !"));
 //     exit(2);
 //   }
 //   QPixmap openGameButtonPix(openGameImageFileName); 

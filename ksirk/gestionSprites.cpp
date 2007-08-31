@@ -22,12 +22,23 @@
  * KGameWindow methods for sprites handling function of the state
  */
 
+// application specific includes
+#include "kgamewin.h"
+#include "Sprites/backgnd.h"
+#include "ksirksettings.h"
+#include "Sprites/animspritesgroup.h"
+#include "Sprites/cannonsprite.h"
+#include "Sprites/cavalrysprite.h"
+#include "Sprites/infantrysprite.h"
+#include "Sprites/skinSpritesData.h"
+#include "GameLogic/KMessageParts.h"
+#include "GameLogic/onu.h"
+
 // include files for QT
 #include <qmetaobject.h>
 #include <qdir.h>
 #include <qprinter.h>
 #include <qpainter.h>
-#include <qmessagebox.h>
 #include <qsound.h>
 #include <qinputdialog.h>
 #include <qglobal.h> // pour pouvoir utiliser qDebug()
@@ -44,18 +55,6 @@
 #include <kdebug.h>
 #include <KToolBar>
  
-// application specific includes
-#include "kgamewin.h"
-#include "Sprites/backgnd.h"
-#include "ksirksettings.h"
-#include "Sprites/animspritesgroup.h"
-#include "Sprites/cannonsprite.h"
-#include "Sprites/cavalrysprite.h"
-#include "Sprites/infantrysprite.h"
-#include "Sprites/skinSpritesData.h"
-#include "GameLogic/KMessageParts.h"
-#include "GameLogic/onu.h"
-
 namespace Ksirk
 {
 using namespace GameLogic;
@@ -233,7 +232,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   QString sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
   if (sndRoulePath.isNull())
   {
-      QMessageBox::critical(0, i18n("Error !"), i18n("Sound roule not found - Verify your installation\nProgram cannot continue"));
+      KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br/>Program cannot continue"), i18n("Error !"));
       exit(2);
   }
   m_audioPlayer->setCurrentSource(sndRoulePath);
@@ -257,7 +256,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
   if (sndRoulePath.isNull())
   {
-      QMessageBox::critical(0, i18n("Error !"), i18n("Sound roule not found - Verify your installation\nProgram cannot continue"));
+      KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br/>Program cannot continue"), i18n("Error !"));
       exit(2);
   }
   m_audioPlayer->setCurrentSource(sndRoulePath);
@@ -301,8 +300,8 @@ void KGameWindow::animCombat()
     QString sndCanonPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/canon.wav");
     if (sndCanonPath.isNull())
     {
-      QMessageBox::critical(0, i18n("Error !"),
-          i18n("Sound canon not found - Verify your installation\nProgram cannot continue"));
+      KMessageBox::error(0,
+          i18n("Sound canon not found - Verify your installation<br/>Program cannot continue"), i18n("Error !"));
       exit(2);
     }
     if (KsirkSettings::soundEnabled())
@@ -444,7 +443,7 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
         QString sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
         if (sndRoulePath.isNull())
         {
-            QMessageBox::critical(0, i18n("Error !"), i18n("Sound roule not found - Verify your installation\nProgram cannot continue"));
+            KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br/>Program cannot continue"), i18n("Error !"));
             exit(2);
         }
         m_audioPlayer->setCurrentSource(sndRoulePath);
@@ -479,7 +478,7 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
         QString sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
         if (sndRoulePath.isNull())
         {
-            QMessageBox::critical(0, i18n("Error !"), i18n("Sound roule not found - Verify your installation\nProgram cannot continue"));
+            KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br/>Program cannot continue"), i18n("Error !"));
             exit(2);
         }
         m_audioPlayer->setCurrentSource(sndRoulePath);
@@ -490,7 +489,7 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
     } //Attaquant ET Defenseur detruits
     else  // error
     {
-      QMessageBox::critical(0, i18n("Error !"), i18n("who should be 0, 1 or 2."));
+      kError() << k_funcinfo << __FILE__ << __LINE__ << i18n("Bug: who should be 0, 1 or 2.");
       exit(1);
     }
 }

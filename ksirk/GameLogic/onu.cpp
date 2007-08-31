@@ -386,7 +386,7 @@ std::vector<Country*> ONU::neighboursNotBelongingTo(const Country& country, cons
   */
 Country* ONU::countryNamed(const QString& name)
 {
-  if (name == "")
+  if (name.isEmpty())
   {
     return 0;
   }
