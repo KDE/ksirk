@@ -196,6 +196,8 @@ void KGameWindow::initActions()
   action = KStandardAction::zoomOut(this, SLOT(slotZoomOut()), this);
   actionCollection()->addAction(action->objectName(), action);
 
+  KStandardAction::preferences( this, SLOT( optionsConfigure() ), actionCollection() );
+
   // specific ksirk action
   QString imageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_NEWNETGAME);
 //   kDebug() << "Trying to load button image file: " << imageFileName << endl;
