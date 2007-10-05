@@ -73,8 +73,8 @@ void KsirkConfigurationDialog::settingChanged(int)
 {
 //   std::cerr << "KsirkConfigurationDialog::settingChanged" << std::endl;
   m_changed = true;
-  settingsChangedSlot();
-  updateButtons ();
+  //settingsChangedSlot();
+  //updateButtons ();
 }
 
 bool KsirkConfigurationDialog::hasChanged()
