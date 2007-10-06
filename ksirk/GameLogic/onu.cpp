@@ -37,6 +37,7 @@
 #include <kdebug.h>
 #include <kmessagebox.h>
 #include <kconfig.h>
+#include <kconfiggroup.h>
 
 namespace Ksirk
 {

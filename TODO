@@ -15,7 +15,7 @@ Before 1.9:
   * rework overall window presentation (size of maps, chat and info dialog, etc.)
   * [DONE through chat and info widget] at first game launch, add an information step explaining the role of buttons
     with a "Do not show again" check box.
-  * show opponent countries during battle
+  * [DONE] show opponent countries during battle
   * handle plurals in messages
   * [DONE through chat and info widget] clearly show the battle results (graphics)
   * enhance the new AI (make it aware of goals,...)
