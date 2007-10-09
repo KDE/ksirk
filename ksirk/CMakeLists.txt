@@ -5,14 +5,13 @@ add_subdirectory( skins )
 # add_subdirectory( Sprites ) 
 
 include_directories( 
-  ${CMAKE_SOURCE_DIR}/ksirk 
   ${CMAKE_BINARY_DIR}/ksirk 
-  ${CMAKE_SOURCE_DIR}/ksirk/Dialogs 
+  ./Dialogs 
   ${CMAKE_BINARY_DIR}/ksirk/Dialogs 
-  ${CMAKE_SOURCE_DIR}/ksirk/GameLogic 
-  ${CMAKE_SOURCE_DIR}/ksirk/SaveLoad 
-  ${CMAKE_SOURCE_DIR}/ksirk/skins 
-  ${CMAKE_SOURCE_DIR}/ksirk/Sprites 
+  ./GameLogic 
+  ./SaveLoad 
+  ./skins 
+  ./Sprites 
   ${CMAKE_CURRENT_SOURCE_DIR} 
   ${CMAKE_CURRENT_BINARY_DIR}  
 )

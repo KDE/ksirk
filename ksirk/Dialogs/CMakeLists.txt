@@ -4,19 +4,18 @@ project(ksirk_dialogs)
 KDE4_NO_ENABLE_FINAL(ksirk_dialogs)
 
 include_directories( 
-  ${CMAKE_SOURCE_DIR}/ksirk 
-  ${CMAKE_SOURCE_DIR}/ksirk/Dialogs 
-  ${CMAKE_SOURCE_DIR}/ksirk/GameLogic 
-  ${CMAKE_SOURCE_DIR}/ksirk/SaveLoad 
-  ${CMAKE_SOURCE_DIR}/ksirk/skins 
-  ${CMAKE_SOURCE_DIR}/ksirk/Sprites 
+  .. 
+  ../Dialogs 
+  ../GameLogic 
+  ../SaveLoad 
+  ../skins 
+  ../Sprites 
   ${CMAKE_CURRENT_SOURCE_DIR} 
   ${CMAKE_CURRENT_BINARY_DIR}  
   ${QDBUS_INCLUDE_DIRS} 
   ${CMAKE_SOURCE_DIR} 
   ${CMAKE_BINARY_DIR} 
   ${KDE4_INCLUDES}
-  ${KDE4_KDECORE_INCLUDES}
 )
 
 ########### next target ###############
