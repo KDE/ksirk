@@ -28,6 +28,8 @@
 #include <QGraphicsItem>
 #include <QTimer>
 
+#include <limits>
+
 class QSvgRenderer;
 
 namespace Ksirk
