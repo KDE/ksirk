@@ -43,7 +43,7 @@
 #include "Dialogs/restartOrExitDialogImpl.h"
 
 
-// include files for QT
+//include files for QT
 #include <QDockWidget>
 
 // include files for KDE
