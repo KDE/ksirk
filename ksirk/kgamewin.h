@@ -93,7 +93,7 @@ public:
   ~KGameWindow();
     
   /** Returns the game graphics view */
-  DecoratedGameFrame* frame() {return m_frame;}
+  DecoratedGameFrame* frame() {return (DecoratedGameFrame*)m_frame;}
     
   /**
     * Ask all the sprites to repaint themselves
@@ -693,7 +693,7 @@ private:
   /**
     * The frame of the game, its visual component ; the main widget
     */
-  DecoratedGameFrame* m_frame;
+  QGraphicsView* m_frame;
 
   /**
     * a shortcut to the standard dirs object.

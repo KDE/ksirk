@@ -33,6 +33,7 @@
 #include "Sprites/skinSpritesData.h"
 #include "GameLogic/KMessageParts.h"
 #include "GameLogic/onu.h"
+#include "fightArena.h"
 
 // include files for QT
 #include <qmetaobject.h>
