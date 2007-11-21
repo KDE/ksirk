@@ -2,7 +2,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
-Exec=ksirk -caption "%c" %i %m
+Exec=ksirk -caption "%c" %i
 Icon=ksirk.png
 MiniIcon=ksirk.png
 DocPath=ksirk/index.html
