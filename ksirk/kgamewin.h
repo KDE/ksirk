@@ -93,7 +93,7 @@ public:
   ~KGameWindow();
     
   /** Returns the game graphics view */
-  DecoratedGameFrame* frame() {return (DecoratedGameFrame*)m_frame;}
+  DecoratedGameFrame* frame() {return dynamic_cast<DecoratedGameFrame*>(m_frame);}
     
   /**
     * Ask all the sprites to repaint themselves
