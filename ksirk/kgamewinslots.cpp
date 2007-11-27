@@ -206,6 +206,13 @@ void KGameWindow::slotRightButtonDown(const QPointF& point)
   return;
 }
 
+void KGameWindow::slotRightButtonUp(const QPointF& point)
+{
+//   if (currentPlayer() && ! (currentPlayer()-> isAI()) )
+    m_automaton->event("actionRButtonUp", point);
+  return;
+}
+
 /** @todo Clean exit with memory freeing */
 bool KGameWindow::queryExit()
 {

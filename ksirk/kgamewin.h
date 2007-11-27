@@ -598,6 +598,7 @@ public slots:
   void slotLeftButtonDown(const QPointF&);
   void slotLeftButtonUp(const QPointF&);
   void slotRightButtonDown(const QPointF&);
+  void slotRightButtonUp(const QPointF&);
   //@}
 
   /** 

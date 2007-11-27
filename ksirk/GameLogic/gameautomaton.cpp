@@ -321,7 +321,7 @@ GameAutomaton::GameState GameAutomaton::run()
     }
     break;
   case ATTACK:
-    if  (event == "actionLButtonDown") 
+    if  (event == "actionLButtonDown" || event == "actionRButtonDown") 
     {
       if  ( m_game->attacker(point) ) 
         state(ATTACK2);
@@ -340,8 +340,12 @@ GameAutomaton::GameState GameAutomaton::run()
     }
     break;
   case ATTACK2:
-    if  (event == "actionLButtonUp") 
+    if  (event == "actionLButtonUp" || event == "actionRButtonUp") 
     {
+      if  (event == "actionRButtonUp") 
+      {
+        kDebug() << "Attack with zoom mode activated" << endl;
+      }
       switch ( m_game->attacked(point) )
       {
         case 0:
@@ -886,8 +890,8 @@ bool GameAutomaton::playerInput(QDataStream &msg, KPlayer* player)
     m_game->slotLeftButtonUp( point );
   else if (action == "actionRButtonDown")
     m_game->slotRightButtonDown( point );
-/*  else if (action == "actionRButtonUp")
-    m_game->slotRightButtonUp( point );*/
+  else if (action == "actionRButtonUp")
+    m_game->slotRightButtonUp( point );
   else if (action == "actionAttack1")
     m_game->slotAttack1();
   else if (action == "actionAttack2")
