@@ -89,6 +89,7 @@ void KsirkConfigurationDialog::updateSettings()
   m_changed = false;
   KsirkSettings::setSpritesSpeed(m_widget->spritesSpeed->value());
   KsirkSettings::setSoundEnabled(m_widget->soundEnabled->isChecked());
+  KsirkSettings::setHelpEnabled(m_widget->helpEnabled->isChecked());
   KsirkSettings::self()->writeConfig();
 }
 
@@ -99,6 +100,7 @@ void KsirkConfigurationDialog::updateWidgets()
   m_changed = false;
   m_widget->spritesSpeed->setValue(KsirkSettings::spritesSpeed());
   m_widget->soundEnabled->setChecked(KsirkSettings::soundEnabled());
+  m_widget->helpEnabled->setChecked(KsirkSettings::helpEnabled());
 }
 
 #include "ksirkConfigDialog.moc"

@@ -17,6 +17,7 @@
 */
 
 #include "gameautomaton.h"
+#include "ksirksettings.h"
 #include "kgamewin.h"
 #include "kdebug.h"
 #include "aiplayer.h"
@@ -1847,7 +1848,10 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     messageParts << pm << I18N_NOOP("%1 : %2 armies to place") << (currentPlayer()-> name()) 
       << QString::number(currentPlayer()-> getNbAvailArmies());
     m_game->broadcastChangeItem(messageParts, ID_STATUS_MSG2);
+  if(KsirkSettings::helpEnabled())
+  {
     m_game->showMessage(i18n("Now, place your armies in your countries<br/>by clicking in the target countries."));
+  }
     break;
   case PlayerRemovesArmy:
     stream >> point;
@@ -2208,8 +2212,10 @@ void GameAutomaton::countriesDistribution()
     <<  QString::number( initialNbArmies - distributedCountriesNumberMap[nextPlayerName]);
   kDebug() << "Message parts size= " << messageParts.size() << endl;
   m_game->broadcastChangeItem(messageParts, ID_STATUS_MSG2);
-  m_game->showMessage(i18n("Now, place your armies in your countries<br/>by clicking in the target countries."));
-    
+  if(KsirkSettings::helpEnabled())
+  {
+    m_game->showMessage(i18n("Now, place your armies in your countries<br/>by clicking in the target countries."));
+  }
   state(GameLogic::GameAutomaton::INTERLUDE);
 }
 

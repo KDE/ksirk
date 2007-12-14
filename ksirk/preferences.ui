@@ -117,6 +117,29 @@
           </property>
         </widget>
       </item>
+      <item>
+        <widget class="QCheckBox" name="helpEnabled" >
+          <property name="geometry" >
+            <rect>
+              <x>10</x>
+              <y>40</y>
+              <width>126</width>
+              <height>22</height>
+            </rect>
+          </property>
+          <property name="sizePolicy" >
+            <sizepolicy>
+              <hsizetype>3</hsizetype>
+              <vsizetype>3</vsizetype>
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+            </sizepolicy>
+          </property>
+          <property name="text" >
+            <string>Show help</string>
+          </property>
+        </widget>
+      </item>
     </layout>
   </widget>
   <layoutdefault spacing="6" margin="11" />
