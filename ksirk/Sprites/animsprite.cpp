@@ -557,7 +557,11 @@ void AnimSprite::setupTravel(
       // src is up to the dest, approch dest by top
       if (srcPoint. y() < destPoint.y()) setApproachDestByTop(true);
   }
-  (src->pointFlag().x() < dest-> pointFlag().x()) ? setLookRight() : setLookLeft();
+  if (src->pointFlag().x() < dest-> pointFlag().x()) {
+    setLookRight();
+  } else {
+    setLookLeft();
+  }
   setAnimated();
 }
 

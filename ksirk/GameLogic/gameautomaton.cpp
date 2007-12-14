@@ -345,13 +345,18 @@ GameAutomaton::GameState GameAutomaton::run()
     {
       if  (event == "actionRButtonUp") 
       {
-        kDebug() << "Attack with zoom mode activated" << endl;
+         kDebug() << "Attack with zoom mode activated" << endl;
+
+         // Change the world view by the arena view
+         m_game->frame()->hide();
+         m_game->arena()->show();
       }
       switch ( m_game->attacked(point) )
       {
         case 0:
           kDebug() << "handling attacked value; 0" << endl;
           state(WAIT);
+          m_game->frame()->show();
         break;
         case 1:
           kDebug() << "handling attacked value; 1" << endl;
@@ -372,6 +377,7 @@ GameAutomaton::GameState GameAutomaton::run()
         break;
         default:
           kError() << "Unknown return value from attacked" << endl;
+          m_game->frame()->show();
           exit(1);
       }
       kDebug() << "after switch" << endl;
@@ -381,7 +387,7 @@ GameAutomaton::GameState GameAutomaton::run()
       //        if (!event.isEmpty())
 //          kError() << "Unhandled event " << event << " during handling of " << stateName() endl;
     }
-    kDebug() << "handling of ATTACK2 finished" << endl;
+    kDebug() << "handling of ATTACK2 finished !" << endl;
   break;
   case EXPLOSION_ANIMATE:
   break;
@@ -397,6 +403,10 @@ GameAutomaton::GameState GameAutomaton::run()
       QDataStream stream(&buffer, QIODevice::WriteOnly);
       sendMessage(buffer,TerminateAttackSequence);
     }
+
+    // Change the arena view by the world view
+    m_game->arena()->hide();
+    m_game->frame()->show();
   break;
   case INTERLUDE:
     if  (event == "playersLooped")

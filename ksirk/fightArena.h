@@ -22,9 +22,18 @@
 #define FIGHTARENA_H
 
 #include "KsirkGlobalDefinitions.h"
+#include "GameLogic/country.h"
 
 #include <stdlib.h>
+#include <qtimer.h>
+#include <QMouseEvent>
 #include <QGraphicsView>
+
+namespace GameLogic
+{
+  class Country;
+}
+
 
 class KGameIO;
 
@@ -48,7 +57,16 @@ namespace Ksirk
       * @param mapH The height of the arena. Will be the height given in size hint.
       */
       FightArena(QWidget* parent, unsigned int mapW, unsigned int mapH);
-      
+
+      /**
+      * Creates the frame, its timer and set some parameters
+      * @param parent The parent widget, the main window
+      * @param mapW The width of the arena. Will be the width given in size hint.
+      * @param mapH The height of the arena. Will be the height given in size hint.
+      * @param sceneArena
+      */
+      FightArena(QWidget* parent, unsigned int mapW, unsigned int mapH, QGraphicsScene* sceneArena);
+
       /**
       * Destroy the frame : stops and deletes the timer
       */
@@ -59,10 +77,19 @@ namespace Ksirk
       * @return The size given to the constructor.
       */
       virtual QSize sizeHint() const;
-      
+
+      /**
+      * Initializes the fight arena with the two country which fight each other
+      */
+      void initFightArena (GameLogic::Country* countryA, GameLogic::Country* countryD);
+
       private:
       unsigned int m_mapW;
       unsigned int m_mapH;
+
+      GameLogic::Country* countryAttack;
+      GameLogic::Country* countryDefense;
+      QGraphicsScene* scene;
    };
    
 };

@@ -36,6 +36,18 @@ namespace Ksirk
       setMaximumSize(mapW,mapH);
       updateGeometry();
    }
+
+   FightArena::FightArena(QWidget* parent, unsigned int mapW, unsigned int mapH, QGraphicsScene* sceneArena)
+   {
+      setVerticalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
+      setHorizontalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
+      setCacheMode(QGraphicsView::CacheBackground);
+      setMinimumSize(200,100);
+      setMaximumSize(mapW,mapH);
+      updateGeometry();
+
+      this->scene = sceneArena;
+   }
    
    FightArena::~FightArena()
    {
@@ -44,6 +56,12 @@ namespace Ksirk
    QSize FightArena::sizeHint() const
    {
       return QSize(m_mapW, m_mapH);
+   }
+
+   void FightArena::initFightArena (Country* countryA, Country* countryD)
+   {
+      this->countryAttack = countryA;
+      this->countryDefense = countryD;
    }
 
 }

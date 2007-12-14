@@ -84,11 +84,12 @@ using namespace GameLogic;
 KGameWindow::KGameWindow(QWidget* parent) :
   KXmlGuiWindow(parent), m_automaton(new GameAutomaton()),
   NKD(0), NKA(0),
-  m_theWorld(0), m_scene(0), m_backGnd(0),
+  m_theWorld(0), m_scene_world(0), m_backGnd_world(0),
   m_animFighters(new AnimSpritesGroup(this,SLOT(slotMovingFightersArrived(AnimSpritesGroup*)))),
   m_nbMovedArmies(0),
   m_firstCountry(0), m_secondCountry(0),
   m_frame(0),
+  m_arena(0),
   m_goalAction(0),
   m_barFlag(new QLabel(this)),
 //   m_accels(this),
@@ -169,8 +170,8 @@ KGameWindow::~KGameWindow()
 {
   kDebug() << "~GameAutomaton" << endl;
   m_dirs = 0;
-  delete m_backGnd; m_backGnd = 0;
-  delete m_scene; m_scene = 0;
+  delete m_backGnd_world; m_backGnd_world = 0;
+  delete m_scene_world; m_scene_world = 0;
 //   if (m_barFlagButton) {delete m_barFlagButton; m_barFlagButton = 0;}
   delete m_frame; m_frame = 0;
   delete m_audioPlayer;
@@ -313,7 +314,7 @@ QPixmap KGameWindow::buildDice(DiceColor color, const QString& id)
 // {
 //   if (m_frame!=0)
 //   {
-//     m_frame->fitInView(m_backGnd, Qt::KeepAspectRatio);
+//     m_frame->fitInView(m_backGnd_world, Qt::KeepAspectRatio);
 //   }
 // }
 
@@ -361,23 +362,43 @@ void KGameWindow::newSkin(const QString& onuFileName)
 
   loadDices();
 
+  // create the world map view
   if (m_frame == 0)
     m_frame = new DecoratedGameFrame(this, m_theWorld->width(), m_theWorld->height());
   m_frame->setMaximumWidth(m_theWorld->width());
   m_frame->setMaximumHeight(m_theWorld->height());
   m_frame->setCacheMode( QGraphicsView::CacheBackground );
-  setCentralWidget(m_frame);
 
-  if (m_scene != 0)
+  // create the arena view
+  m_scene_arena = new QGraphicsScene(0, 0, m_theWorld->width(), m_theWorld->height(),this);
+  if (m_arena == 0)
+    m_arena = new FightArena(this, m_theWorld->width(), m_theWorld->height(), m_scene_arena);
+  m_arena->setMaximumWidth(m_theWorld->width());
+  m_arena->setMaximumHeight(m_theWorld->height());
+  m_arena->setCacheMode( QGraphicsView::CacheBackground );
+  m_arena->hide();
+
+  // Make a layout containing the both views
+  QVBoxLayout *m_centralLayout = new QVBoxLayout;
+  m_centralLayout->addWidget(m_frame);
+  m_centralLayout->addWidget(m_arena);
+
+  // set the layout on a new widget and put it as central widget of the frame
+  QWidget* widgetCentral = new QWidget(this);
+  widgetCentral->setLayout(m_centralLayout);
+  setCentralWidget(widgetCentral);
+
+  if (m_scene_world != 0)
   {
-    delete m_scene;
+    delete m_scene_world;
   }
-    m_scene = new QGraphicsScene(0, 0, m_theWorld->width(), m_theWorld->height(),this);
-//   m_scene->setDoubleBuffering(true);
+    m_scene_world = new QGraphicsScene(0, 0, m_theWorld->width(), m_theWorld->height(),this);
+    
+//   m_scene_world->setDoubleBuffering(true);
   kDebug() << "Before initView" << endl;
   initView();
-  m_backGnd = new BackGnd(m_scene, m_theWorld); //Creation of the background
-  kDebug() <<"After m_backGnd new="<< m_backGnd << endl;
+  m_backGnd_world = new BackGnd(m_scene_world, m_theWorld); //Creation of the background
+  kDebug() <<"After m_backGnd new="<< m_backGnd_world << endl;
   m_frame->setFocus();
 
   kDebug() <<"End new skin" << endl;
@@ -397,10 +418,14 @@ void KGameWindow::initView()
   disconnectMouse();
   reconnectMouse();
   setCaption("KsirK",false);
-  m_scene-> update();
-  m_frame->setScene(m_scene);
+  m_scene_world-> update();
+  m_frame->setScene(m_scene_world);
   m_frame-> show();
   adjustSize();
+  
+  m_scene_arena-> update();
+  m_arena->setScene(m_scene_arena);
+  m_arena-> hide();
 
   m_frame->setFocus();
 }
@@ -444,7 +469,7 @@ bool KGameWindow::attackEnd()
     m_secondCountry-> owner(currentPlayer());
     m_secondCountry-> nbArmies(1);
     m_firstCountry-> decrNbArmies();
-    m_scene-> update();
+    m_scene_world-> update();
     if (m_firstCountry->nbArmies() > 1)
     {
       res = true;
@@ -478,8 +503,8 @@ bool KGameWindow::attackEnd()
       }
     }
   }
-  m_firstCountry-> createArmiesSprites(m_backGnd);
-  m_secondCountry-> createArmiesSprites(m_backGnd);
+  m_firstCountry-> createArmiesSprites(m_backGnd_world);
+  m_secondCountry-> createArmiesSprites(m_backGnd_world);
   if (m_automaton->isAdmin())
   {
     if (res)
@@ -699,15 +724,15 @@ bool KGameWindow::actionOpenGame()
     {
       Country* country = m_theWorld-> getCountries().at(i);
       kDebug() << "Adding sprites to " << country->name() << endl;
-      country-> createArmiesSprites(m_backGnd);
+      country-> createArmiesSprites(m_backGnd_world);
       Player *player = country-> owner();
       if (player)
       {
-        country-> flag(player->flagFileName(), m_backGnd);
+        country-> flag(player->flagFileName(), m_backGnd_world);
       }
     }
-    m_backGnd->hide();
-    m_backGnd->show();
+    m_backGnd_world->hide();
+    m_backGnd_world->show();
     if (m_waitedPlayers.empty())
     {
       QByteArray buffer;
@@ -1802,7 +1827,7 @@ bool KGameWindow::playerPutsArmy(const QPointF& point, bool removable)
       if (removable) clickedCountry-> incrNbAddedArmies();
       clickedCountry-> incrNbArmies();
       clickedCountry-> incrNbAddedArmies();
-      clickedCountry-> createArmiesSprites(m_backGnd);
+      clickedCountry-> createArmiesSprites(m_backGnd_world);
       QPixmap pm = currentPlayer()->getFlag()->image(0);
       KMessageParts messageParts;
       messageParts 
@@ -1849,7 +1874,7 @@ bool KGameWindow::playerPutsInitialArmy(const QPointF& point)
         kDebug() << "owner new available armies=" << m_nbAvailArmies << endl;
         clickedCountry-> incrNbArmies();
         clickedCountry-> incrNbAddedArmies();
-        clickedCountry-> createArmiesSprites(m_backGnd);
+        clickedCountry-> createArmiesSprites(m_backGnd_world);
         if ( last )
         {
           PlayersArray::iterator it = m_automaton->playerList()->begin();
@@ -1932,7 +1957,7 @@ bool KGameWindow::playerRemovesArmy(const QPointF& point)
     }
     clickedCountry-> decrNbAddedArmies();
     clickedCountry-> decrNbArmies();
-    clickedCountry-> createArmiesSprites(m_backGnd);
+    clickedCountry-> createArmiesSprites(m_backGnd_world);
   }
   return true;
 }
@@ -2162,16 +2187,16 @@ void KGameWindow::cancelShiftSource()
   {
     m_firstCountry-> decrNbArmies(m_nbMovedArmies);
     m_secondCountry-> incrNbArmies(m_nbMovedArmies);
-    m_firstCountry-> createArmiesSprites(m_backGnd);
-    m_secondCountry-> createArmiesSprites(m_backGnd);
+    m_firstCountry-> createArmiesSprites(m_backGnd_world);
+    m_secondCountry-> createArmiesSprites(m_backGnd_world);
     m_nbMovedArmies = 0;
   }
   if (m_nbMovedArmies > 0)
   {
     m_firstCountry-> incrNbArmies(m_nbMovedArmies);
     m_secondCountry-> decrNbArmies(m_nbMovedArmies);
-    m_firstCountry-> createArmiesSprites(m_backGnd);
-    m_secondCountry-> createArmiesSprites(m_backGnd);
+    m_firstCountry-> createArmiesSprites(m_backGnd_world);
+    m_secondCountry-> createArmiesSprites(m_backGnd_world);
     m_nbMovedArmies = 0;
   }
 }
@@ -2478,7 +2503,7 @@ void KGameWindow::showMessage(const QString& message, quint32 delay)
   if (m_message == 0)
   {
     m_message  = new KGamePopupItem();
-    m_scene->addItem(m_message);
+    m_scene_world->addItem(m_message);
     m_message->setSharpness(KGamePopupItem::Soft);
     m_message->setBackgroundBrush(Qt::blue);
     m_message->setZValue(1000);

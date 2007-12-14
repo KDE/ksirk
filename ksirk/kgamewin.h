@@ -21,6 +21,7 @@
 
 #include "KsirkGlobalDefinitions.h"
 #include "decoratedgameframe.h"
+#include "fightArena.h"
 #include "GameLogic/gameautomaton.h"
 #include "GameLogic/player.h"
 #include "GameLogic/country.h"
@@ -93,7 +94,10 @@ public:
   ~KGameWindow();
     
   /** Returns the game graphics view */
-  DecoratedGameFrame* frame() {return dynamic_cast<DecoratedGameFrame*>(m_frame);}
+  DecoratedGameFrame* frame() {return m_frame;}
+    
+  /** Returns the arena graphics view */
+  FightArena* arena() {return m_arena;}
     
   /**
     * Ask all the sprites to repaint themselves
@@ -421,11 +425,18 @@ public:
   inline GameLogic::GameAutomaton* automaton() {return m_automaton;}
   
   /**
-    * Gets the background sprite. Gives access to the scene and, furthermore, 
+    * Gets the background world map sprite. Gives access to the scene and, furthermore, 
     * the background size, thus giving hints for positioning and annimation.
     */
-  inline BackGnd* backGnd() {return m_backGnd;}
-  inline const BackGnd* backGnd() const {return m_backGnd;}
+  inline BackGnd* backGnd() {return m_backGnd_world;}
+  inline const BackGnd* backGnd() const {return m_backGnd_world;}
+  
+  /**
+    * Gets the background arena sprite. Gives access to the scene and, furthermore, 
+    * the background size, thus giving hints for positioning and annimation.
+    */
+  inline BackGnd* backGndArena() {return m_backGnd_arena;}
+  inline const BackGnd* backGndArena() const {return m_backGnd_arena;}
   
   //@{
   /** 
@@ -658,15 +669,26 @@ private:
   GameLogic::ONU* m_theWorld;
 
   /**
-    * The main canvas
+    * The main canvas of the world map
     */
-  QGraphicsScene* m_scene;
+  QGraphicsScene* m_scene_world;
+
+  /**
+    * The main canvas of the arena
+    */
+  QGraphicsScene* m_scene_arena;
 
   /** 
-    * The background sprite. Gives access to the scene and, furthermore, 
+    * The background sprite of the world map. Gives access to the scene and, furthermore, 
     * the background size, thus giving hints for positioning and annimation.
     */
-  BackGnd* m_backGnd;
+  BackGnd* m_backGnd_world;
+
+  /** 
+    * The background sprite of the arena. Gives access to the scene and, furthermore, 
+    * the background size, thus giving hints for positioning and animation.
+    */
+  BackGnd* m_backGnd_arena;
 
   /**
     * The fighting fighters (represented by firing cannons)
@@ -692,9 +714,14 @@ private:
 //    QDialog *dialog;
 
   /**
-    * The frame of the game, its visual component ; the main widget
+    * The map frame of the game, its visual component ; the main widget
     */
-  QGraphicsView* m_frame;
+  DecoratedGameFrame* m_frame;
+
+  /**
+    * The arena frame of the game, its visual component ; the main widget
+    */
+  FightArena* m_arena;
 
   /**
     * a shortcut to the standard dirs object.

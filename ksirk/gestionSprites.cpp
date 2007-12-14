@@ -95,7 +95,7 @@ bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *m_firstCou
                               Sprites::SkinSpritesData::single().intData("cannon-frames"),
                               Sprites::SkinSpritesData::single().intData("cannon-versions"),
                               m_theWorld->zoom(),
-                              m_backGnd,                              200);
+                              m_backGnd_world,                              200);
     m_firstCountry-> decrNbArmies(10);
   }
   else if ((m_firstCountry-> nbArmies() > 5) && (nbABouger == 5)
@@ -107,7 +107,7 @@ bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *m_firstCou
                                 Sprites::SkinSpritesData::single().intData("cavalry-height"),
                                 Sprites::SkinSpritesData::single().intData("cavalry-frames"), 
                                 Sprites::SkinSpritesData::single().intData("cavalry-versions"),       m_theWorld->zoom(),
-                                m_backGnd,                                200);
+                                m_backGnd_world,                                200);
     m_firstCountry-> decrNbArmies(5);
   }
   else if ((m_firstCountry-> nbArmies() > 1) && (nbABouger == 1)
@@ -119,7 +119,7 @@ bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *m_firstCou
                                 Sprites::SkinSpritesData::single().intData("infantry-height"),
         Sprites::SkinSpritesData::single().intData("infantry-frames"),
                                 Sprites::SkinSpritesData::single().intData("infantry-versions"),       m_theWorld->zoom(),
-                                m_backGnd,
+                                m_backGnd_world,
                                 200);
     m_firstCountry->  decrNbArmies();
   }
@@ -134,9 +134,8 @@ bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *m_firstCou
   }
   connect(sprite,SIGNAL(atDestination(AnimSprite*)),this,SLOT(slotMovingArmyArrived(AnimSprite*)));
   sprite-> setupTravel(m_firstCountry, m_secondCountry);
-//   newGroup->addSprite(sprite);
   newGroup->addSprite(sprite);
-  m_firstCountry-> createArmiesSprites(this-> m_backGnd);
+  m_firstCountry-> createArmiesSprites(this-> m_backGnd_world);
   sprite->setAnimated();
 //   kDebug() << "initArmiesMovement returns true" << endl;
   return true;
@@ -186,7 +185,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   qreal leftRelativePos = - (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("cannon-width"))*m_theWorld->zoom();
   qreal rightRelativePos = (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("flag-width"))*m_theWorld->zoom();
 
-  if (!((qAbs(pointFlagAttaquantX-pointFlagDefenseurX) > (m_backGnd-> boundingRect().width() / 2))))
+  if (!((qAbs(pointFlagAttaquantX-pointFlagDefenseurX) > (m_backGnd_world-> boundingRect().width() / 2))))
   {
       if ( pointFlagAttaquantX <= pointFlagDefenseurX )
       {
@@ -223,11 +222,15 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
       Sprites::SkinSpritesData::single().intData("cannon-frames"),
       Sprites::SkinSpritesData::single().intData("cannon-versions"),
       m_theWorld->zoom(),
-      m_backGnd,
+      m_backGnd_world,
       200);
   attackingSprite-> setAttacker();
   attackingSprite->setupTravel(paysAttaquant, paysDefenseur, &pointArriveeAttaquant);
-  (pointDepartAttaquantX <= pointArriveeAttaquantX) ? attackingSprite-> setLookRight() : attackingSprite-> setLookLeft();
+  if (pointDepartAttaquantX <= pointArriveeAttaquantX) {
+    attackingSprite-> setLookRight();
+  } else {
+    attackingSprite-> setLookLeft();
+  }
   m_animFighters->addSprite(attackingSprite);
 
   QString sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
@@ -247,11 +250,15 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
       Sprites::SkinSpritesData::single().intData("cannon-frames"),
       Sprites::SkinSpritesData::single().intData("cannon-versions"),
       m_theWorld->zoom(),
-      m_backGnd,
+      m_backGnd_world,
       200);
   defenderSprite-> setDefendant();
   defenderSprite-> setupTravel(paysDefenseur, paysDefenseur, &pointArriveeDefenseur);
-  (pointDepartDefenseurX <= pointArriveeDefenseurX) ? defenderSprite-> setLookRight() : defenderSprite-> setLookLeft();
+  if (pointDepartDefenseurX <= pointArriveeDefenseurX) {
+    defenderSprite-> setLookRight();
+  } else {
+    defenderSprite-> setLookLeft();
+  }
   m_animFighters->addSprite(defenderSprite);
 
   sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
@@ -424,11 +431,11 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
             Sprites::SkinSpritesData::single().intData("cannon-frames"),
             Sprites::SkinSpritesData::single().intData("cannon-versions"),
             m_theWorld->zoom(),
-            m_backGnd,
+            m_backGnd_world,
             200);
         if ((paysAttaquant-> pointFlag().x() <= paysDefenseur-> pointFlag().x())
         && !(
-        (qAbs(paysAttaquant-> pointFlag().x()-paysDefenseur-> pointFlag().x()) > (m_backGnd-> boundingRect().width() / 2))
+        (qAbs(paysAttaquant-> pointFlag().x()-paysDefenseur-> pointFlag().x()) > (m_backGnd_world-> boundingRect().width() / 2))
             && (paysAttaquant->communicateWith(paysDefenseur))
         ))
         {
@@ -459,11 +466,11 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
           Sprites::SkinSpritesData::single().intData("cannon-frames"),
           Sprites::SkinSpritesData::single().intData("cannon-versions"),
           m_theWorld->zoom(),
-          m_backGnd,
+          m_backGnd_world,
           200);
         if ((paysAttaquant-> pointFlag().x() <= paysDefenseur-> pointFlag().x())
         && !(
-        (qAbs(paysAttaquant-> pointFlag().x()-paysDefenseur-> pointFlag().x()) > (m_backGnd-> boundingRect().width() / 2))
+        (qAbs(paysAttaquant-> pointFlag().x()-paysDefenseur-> pointFlag().x()) > (m_backGnd_world-> boundingRect().width() / 2))
             && (paysAttaquant->communicateWith(paysDefenseur))
         ))
         {
