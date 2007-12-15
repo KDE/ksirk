@@ -150,12 +150,6 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   m_animFighters->clear();
   m_animFighters->changeTarget(this,SLOT(slotMovingFightersArrived(AnimSpritesGroup*)));
 
-  // We must know
-  //  - attacker's departure point (pointCannon)
-  qreal pointDepartAttaquantX = paysAttaquant-> pointCannon().x()*      m_theWorld->zoom();
-  //  - defender's departure point (pointCannon)
-  qreal pointDepartDefenseurX = paysDefenseur-> pointCannon().x()*      m_theWorld->zoom();
-
   //  - attacker's flag point
   qreal pointFlagAttaquantX = paysAttaquant-> pointFlag().x()*      m_theWorld->zoom();
   //  - defender's flag point
@@ -166,7 +160,52 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   qreal pointArriveeAttaquantX;
   qreal pointArriveeY;
   qreal pointArriveeDefenseurX;
-  
+  qreal pointDepartAttaquantX;
+  qreal pointDepartDefenseurX;
+  qreal leftRelativePos;
+
+  if (!paysAttaquant->spritesInfantry().isEmpty())
+  {
+  	// We must know
+		//  - attacker's departure point (pointnfantry)
+  	pointDepartAttaquantX = paysAttaquant-> pointInfantry().x()*      m_theWorld->zoom();
+  }
+  else
+  {
+	if (!paysAttaquant->spritesCavalry().isEmpty())
+  	{
+		// We must know
+ 		//  - attacker's departure point (pointCavalry)
+  		pointDepartAttaquantX = paysAttaquant-> pointCavalry().x()*      m_theWorld->zoom();
+	}
+	else
+	{
+		// We must know
+ 		//  - attacker's departure point (pointCannon)
+  		pointDepartAttaquantX = paysAttaquant-> pointCannon().x()*      m_theWorld->zoom();
+	}
+  }
+
+  if (!paysDefenseur->spritesInfantry().isEmpty())
+  {
+  	//  - defender's departure point (pointInfantry)
+  	pointDepartDefenseurX = paysDefenseur-> pointInfantry().x()*      m_theWorld->zoom();
+	
+  }
+  else
+  {
+	if (!paysDefenseur->spritesCavalry().isEmpty())
+  	{
+  		//  - defender's departure point (pointCavalry)
+  		pointDepartDefenseurX = paysDefenseur-> pointCavalry().x()*      m_theWorld->zoom();
+	}
+	else
+	{
+  		//  - defender's departure point (pointCannon)
+  		pointDepartDefenseurX = paysDefenseur-> pointCannon().x()*      m_theWorld->zoom();
+	}
+  }
+
   pointArriveeY = (((paysDefenseur-> pointFlag().y() + Sprites::SkinSpritesData::single().intData("fighters-flag-y-diff")))* m_theWorld->zoom()) ;
   
   kDebug() << "2" << endl;
@@ -182,8 +221,24 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   // The situation is reversed if the one of the attacker will need to go
   // through the world limit
 
-  qreal leftRelativePos = - (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("cannon-width"))*m_theWorld->zoom();
-  qreal rightRelativePos = (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("flag-width"))*m_theWorld->zoom();
+  if (!paysAttaquant->spritesInfantry().isEmpty())
+  {
+  	leftRelativePos = - (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("infantry-width"))*m_theWorld->zoom();
+  }
+  else
+  {
+	if (!paysAttaquant->spritesCavalry().isEmpty())
+  	{
+		leftRelativePos = - (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("cavalry-width"))*m_theWorld->zoom();
+	}
+	else
+	{
+		leftRelativePos = - (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("cannon-width"))*m_theWorld->zoom();
+	}
+  }
+  
+  
+qreal rightRelativePos = (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("flag-width"))*m_theWorld->zoom();
 
   if (!((qAbs(pointFlagAttaquantX-pointFlagDefenseurX) > (m_backGnd_world-> boundingRect().width() / 2))))
   {
@@ -211,61 +266,136 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
           pointArriveeDefenseurX = pointFlagDefenseurX + rightRelativePos;
       }
   }
+
   QPointF pointArriveeAttaquant(pointArriveeAttaquantX,pointArriveeY);
   QPointF pointArriveeDefenseur(pointArriveeDefenseurX,pointArriveeY);
   kDebug() << "3: " << pointArriveeAttaquant << " ; " << pointArriveeDefenseur << endl;
+
+  QString sndRoulePath;
+  AnimSprite* defenderSprite;
+  AnimSprite* attackingSprite;
   
-  CannonSprite* attackingSprite = new CannonSprite(
-      Sprites::SkinSpritesData::single().strData("cannon-id"),
-      Sprites::SkinSpritesData::single().intData("cannon-width"),
-      Sprites::SkinSpritesData::single().intData("cannon-height"),
-      Sprites::SkinSpritesData::single().intData("cannon-frames"),
-      Sprites::SkinSpritesData::single().intData("cannon-versions"),
-      m_theWorld->zoom(),
-      m_backGnd_world,
-      200);
+  if (!paysAttaquant->spritesInfantry().isEmpty())
+  {
+	/*InfantrySprite**/ attackingSprite = new InfantrySprite(
+	Sprites::SkinSpritesData::single().strData("infantry-id"),
+	Sprites::SkinSpritesData::single().intData("infantry-width"),
+	Sprites::SkinSpritesData::single().intData("infantry-height"),
+	Sprites::SkinSpritesData::single().intData("infantry-frames"),
+	Sprites::SkinSpritesData::single().intData("infantry-versions"),
+	m_theWorld->zoom(),
+	m_backGnd_world,
+	200);
+
+	paysAttaquant->spritesInfantry().hideAndRemoveFirst();
+  }
+  else
+  {
+	if (!paysAttaquant->spritesCavalry().isEmpty())
+  	{
+		/*CavalrySprite**/ attackingSprite = new CavalrySprite(
+      		Sprites::SkinSpritesData::single().strData("cavalry-id"),
+		Sprites::SkinSpritesData::single().intData("cavalry-width"),
+		Sprites::SkinSpritesData::single().intData("cavalry-height"),
+		Sprites::SkinSpritesData::single().intData("cavalry-frames"),
+		Sprites::SkinSpritesData::single().intData("cavalry-versions"),
+		m_theWorld->zoom(),
+		m_backGnd_world,
+		200);
+
+		paysAttaquant->spritesCavalry().hideAndRemoveFirst();
+	}
+	else
+	{
+		/*CannonSprite**/ attackingSprite = new CannonSprite(
+      		Sprites::SkinSpritesData::single().strData("cannon-id"),
+      		Sprites::SkinSpritesData::single().intData("cannon-width"),
+      		Sprites::SkinSpritesData::single().intData("cannon-height"),
+      		Sprites::SkinSpritesData::single().intData("cannon-frames"),
+      		Sprites::SkinSpritesData::single().intData("cannon-versions"),
+      		m_theWorld->zoom(),
+      		m_backGnd_world,
+      		200);
+
+		paysAttaquant->spritesCannons().hideAndRemoveFirst();
+	}
+  }
+
   attackingSprite-> setAttacker();
   attackingSprite->setupTravel(paysAttaquant, paysDefenseur, &pointArriveeAttaquant);
-  if (pointDepartAttaquantX <= pointArriveeAttaquantX) {
-    attackingSprite-> setLookRight();
-  } else {
-    attackingSprite-> setLookLeft();
-  }
+  (pointDepartAttaquantX <= pointArriveeAttaquantX) ? attackingSprite-> setLookRight() : attackingSprite-> setLookLeft();
   m_animFighters->addSprite(attackingSprite);
-
-  QString sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
-  if (sndRoulePath.isNull())
-  {
-      KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br/>Program cannot continue"), i18n("Error !"));
-      exit(2);
-  }
-  m_audioPlayer->setCurrentSource(sndRoulePath);
-  m_audioPlayer->play();
-  
-  kDebug() << "4" << endl;
-  CannonSprite* defenderSprite = new CannonSprite(
-      Sprites::SkinSpritesData::single().strData("cannon-id"),
-      Sprites::SkinSpritesData::single().intData("cannon-width"),
-      Sprites::SkinSpritesData::single().intData("cannon-height"),
-      Sprites::SkinSpritesData::single().intData("cannon-frames"),
-      Sprites::SkinSpritesData::single().intData("cannon-versions"),
-      m_theWorld->zoom(),
-      m_backGnd_world,
-      200);
-  defenderSprite-> setDefendant();
-  defenderSprite-> setupTravel(paysDefenseur, paysDefenseur, &pointArriveeDefenseur);
-  if (pointDepartDefenseurX <= pointArriveeDefenseurX) {
-    defenderSprite-> setLookRight();
-  } else {
-    defenderSprite-> setLookLeft();
-  }
-  m_animFighters->addSprite(defenderSprite);
-
+		
   sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
   if (sndRoulePath.isNull())
   {
-      KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br/>Program cannot continue"), i18n("Error !"));
-      exit(2);
+	KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br/>Program cannot continue"), i18n("Error !"));
+	exit(2);
+  }
+  m_audioPlayer->setCurrentSource(sndRoulePath);
+  m_audioPlayer->play();
+
+  if (!paysDefenseur->spritesInfantry().isEmpty())
+  {
+  	kDebug() << "4" << endl;
+		
+	/*InfantrySprite**/ defenderSprite = new InfantrySprite(
+	Sprites::SkinSpritesData::single().strData("infantry-id"),
+	Sprites::SkinSpritesData::single().intData("infantry-width"),
+	Sprites::SkinSpritesData::single().intData("infantry-height"),
+	Sprites::SkinSpritesData::single().intData("infantry-frames"),
+	Sprites::SkinSpritesData::single().intData("infantry-versions"),
+	m_theWorld->zoom(),
+	m_backGnd_world,
+	200);
+
+	paysDefenseur->spritesInfantry().hideAndRemoveFirst();
+  }
+  else
+  {
+	if (!paysDefenseur->spritesCavalry().isEmpty())
+  	{
+		kDebug() << "4" << endl;
+		
+		/*CavalrySprite**/ defenderSprite = new CavalrySprite(
+		Sprites::SkinSpritesData::single().strData("cavalry-id"),
+		Sprites::SkinSpritesData::single().intData("cavalry-width"),
+		Sprites::SkinSpritesData::single().intData("cavalry-height"),
+		Sprites::SkinSpritesData::single().intData("cavalry-frames"),
+		Sprites::SkinSpritesData::single().intData("cavalry-versions"),
+		m_theWorld->zoom(),
+		m_backGnd_world,
+		200);
+		
+		paysDefenseur->spritesCavalry().hideAndRemoveFirst();
+	}
+	else
+	{
+		kDebug() << "4" << endl;
+  		/*CannonSprite**/ defenderSprite = new CannonSprite(
+		Sprites::SkinSpritesData::single().strData("cannon-id"),
+		Sprites::SkinSpritesData::single().intData("cannon-width"),
+		Sprites::SkinSpritesData::single().intData("cannon-height"),
+		Sprites::SkinSpritesData::single().intData("cannon-frames"),
+		Sprites::SkinSpritesData::single().intData("cannon-versions"),
+		m_theWorld->zoom(),
+		m_backGnd_world,
+		200);
+
+		paysDefenseur->spritesCannons().hideAndRemoveFirst();
+	}
+  }
+
+  defenderSprite-> setDefendant();
+  defenderSprite-> setupTravel(paysDefenseur, paysDefenseur, &pointArriveeDefenseur);
+  (pointDepartDefenseurX <= pointArriveeDefenseurX) ? defenderSprite-> setLookRight() : defenderSprite-> setLookLeft();
+  m_animFighters->addSprite(defenderSprite);
+		
+  sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
+  if (sndRoulePath.isNull())
+  {
+	KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br/>Program cannot continue"), i18n("Error !"));
+	exit(2);
   }
   m_audioPlayer->setCurrentSource(sndRoulePath);
   m_audioPlayer->play();
@@ -274,7 +404,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
 
 void KGameWindow::animCombat()
 {
-  kDebug()<< endl;
+ kDebug()<< endl;
   m_animFighters->changeTarget(this, SLOT(slotFiringFinished(AnimSpritesGroup*)));
 
   AnimSpritesGroup::iterator it, it_end;
@@ -320,8 +450,10 @@ void KGameWindow::animCombat()
   }
 }
 
+// not currently in use
 void KGameWindow::stopCombat()
 {
+/*
 //   kDebug()<<"KGameWindow::stopCombat"<< endl;
   AnimSpritesGroup::iterator it = m_animFighters->begin();
   while (it != m_animFighters->end())
@@ -344,7 +476,7 @@ void KGameWindow::stopCombat()
     {
 //       sprite-> setX(sprite-> x());
     }
-  }
+  }*/
 }
 
 void KGameWindow::animExplosion(int who)

@@ -57,6 +57,12 @@ public:
     */
   void hideAndRemoveAll();
 
+ /**
+    * hide the sprites of the list, remove them from the list  and call their
+    * destructors iff the liste is in auto-delete mode
+    */
+  void hideAndRemoveFirst();
+
   /**
     * return the first AnimSprite of the list that currently displays its last
     * frame
@@ -105,6 +111,15 @@ void AnimSpritesList< SpriteType >::hideAndRemoveAll()
     QList< SpriteType* >::pop_front();
     delete sprite;
   }
+}
+
+template < typename SpriteType >
+void AnimSpritesList< SpriteType >::hideAndRemoveFirst()
+{   
+    SpriteType* sprite = QList< SpriteType* >::front();
+    sprite-> hide();
+    QList< SpriteType* >::pop_front();
+    delete sprite;
 }
 
 template < typename SpriteType >
