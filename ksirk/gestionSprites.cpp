@@ -479,7 +479,7 @@ void KGameWindow::stopCombat()
   }*/
 }
 
-void KGameWindow::animExplosion(int who)
+void KGameWindow::animExplosion(int who,Country *paysAttaquant, Country *paysDefenseur)
 {
   kDebug() << "KGameWindow::animExplosion " << who << endl;
 
@@ -506,12 +506,75 @@ void KGameWindow::animExplosion(int who)
     else  // the sprite is not the one (or one the several) killed
     {
       kDebug() << "  keeping a sprite" << endl;
-      sprite-> changeSequence(
-          Sprites::SkinSpritesData::single().strData("cannon-id"),
-                              Sprites::SkinSpritesData::single().intData("cannon-width"),
-                              Sprites::SkinSpritesData::single().intData("cannon-height"),
-                              Sprites::SkinSpritesData::single().intData("cannon-frames"), 
-          Sprites::SkinSpritesData::single().intData("cannon-versions"));
+      
+      if (sprite->isAttacker())
+      {
+		if ((paysAttaquant->nbArmies() % 10) == 0)
+		{
+			sprite-> changeSequence(
+          			Sprites::SkinSpritesData::single().strData("cannon-id"),
+                              	Sprites::SkinSpritesData::single().intData("cannon-width"),
+                              	Sprites::SkinSpritesData::single().intData("cannon-height"),
+                              	Sprites::SkinSpritesData::single().intData("cannon-frames"), 
+          			Sprites::SkinSpritesData::single().intData("cannon-versions"));
+		}
+		else
+		{
+			if ((paysAttaquant->nbArmies() % 5) == 0)
+			{
+				sprite-> changeSequence(
+          				Sprites::SkinSpritesData::single().strData("cavalry-id"),
+					Sprites::SkinSpritesData::single().intData("cavalry-width"),
+					Sprites::SkinSpritesData::single().intData("cavalry-height"),
+					Sprites::SkinSpritesData::single().intData("cavalry-frames"), 
+					Sprites::SkinSpritesData::single().intData("cavalry-versions"));
+			}
+			else
+			{
+				sprite-> changeSequence(
+          				Sprites::SkinSpritesData::single().strData("infantry-id"),
+					Sprites::SkinSpritesData::single().intData("infantry-width"),
+					Sprites::SkinSpritesData::single().intData("infantry-height"),
+					Sprites::SkinSpritesData::single().intData("infantry-frames"), 
+					Sprites::SkinSpritesData::single().intData("infantry-versions"));
+			}
+		}
+      }
+
+      if (sprite->isDefendant())
+      {
+		if ((paysDefenseur->nbArmies() % 10) == 0)
+		{
+			sprite-> changeSequence(
+          			Sprites::SkinSpritesData::single().strData("cannon-id"),
+                              	Sprites::SkinSpritesData::single().intData("cannon-width"),
+                              	Sprites::SkinSpritesData::single().intData("cannon-height"),
+                              	Sprites::SkinSpritesData::single().intData("cannon-frames"), 
+          			Sprites::SkinSpritesData::single().intData("cannon-versions"));
+		}
+		else
+		{
+			if ((paysDefenseur->nbArmies() % 5) == 0)
+			{
+				sprite-> changeSequence(
+          				Sprites::SkinSpritesData::single().strData("cavalry-id"),
+					Sprites::SkinSpritesData::single().intData("cavalry-width"),
+					Sprites::SkinSpritesData::single().intData("cavalry-height"),
+					Sprites::SkinSpritesData::single().intData("cavalry-frames"), 
+					Sprites::SkinSpritesData::single().intData("cavalry-versions"));
+			}
+			else
+			{
+				sprite-> changeSequence(
+          				Sprites::SkinSpritesData::single().strData("infantry-id"),
+					Sprites::SkinSpritesData::single().intData("infantry-width"),
+					Sprites::SkinSpritesData::single().intData("infantry-height"),
+					Sprites::SkinSpritesData::single().intData("infantry-frames"), 
+					Sprites::SkinSpritesData::single().intData("infantry-versions"));
+			}
+		}
+      } 
+
       sprite->setStatic();
       m_animFighters->oneArrived(0);
     }

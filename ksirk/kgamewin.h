@@ -142,7 +142,8 @@ public:
   /**
     * Replaces the sequence of destroyed cannon(s) by the explosion sequence.
     */
-  void animExplosion(int);
+  void animExplosion(int,GameLogic::Country *attacker, 
+    GameLogic::Country *defender);
 
   /**
     * When all the explosion sequence has been shown for all explosing
