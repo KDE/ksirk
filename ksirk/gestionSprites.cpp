@@ -489,19 +489,58 @@ void KGameWindow::animExplosion(int who,Country *paysAttaquant, Country *paysDef
   AnimSpritesGroup::iterator it = m_animFighters->begin();
   for (;it != m_animFighters->end();it++)
   {
-    CannonSprite* sprite = (CannonSprite*)(*it);
+    AnimSprite* sprite = (AnimSprite*)(*it);
     if ( (who == 2) // both are killed
         || ((who == 0) && (sprite-> isAttacker()))  // Attacker is killed
         || ((who == 1) && (sprite-> isDefendant())) ) // Defender is killed
     {
-      kDebug() << "  removing a sprite" << endl;
-      sprite-> changeSequence(
-          Sprites::SkinSpritesData::single().strData("exploding-id"),
-          Sprites::SkinSpritesData::single().intData("exploding-width"),
-                              Sprites::SkinSpritesData::single().intData("exploding-height"),
-                              Sprites::SkinSpritesData::single().intData("exploding-frames"),
-                              Sprites::SkinSpritesData::single().intData("exploding-versions"));
-      sprite->setAnimated(1);
+	sprite-> changeSequence(
+			Sprites::SkinSpritesData::single().strData("exploding-id"),
+			Sprites::SkinSpritesData::single().intData("exploding-width"),
+			Sprites::SkinSpritesData::single().intData("exploding-height"),
+			Sprites::SkinSpritesData::single().intData("exploding-frames"),
+			Sprites::SkinSpritesData::single().intData("exploding-versions"));
+
+	if (sprite->isAttacker())
+	{
+		kDebug() << "  removing a sprite" << endl;
+		//kDebug() << "i attack" << i << endl;
+		kDebug() << "NKA" << NKA << endl;
+			
+		sprite->setAnimated(NKA);
+
+		QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
+		if (sndCrashPath.isNull())
+		{
+			KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error !"));
+			exit(2);
+		}
+		if (KsirkSettings::soundEnabled())
+		{
+			m_audioPlayer->setCurrentSource(sndCrashPath);
+			m_audioPlayer->play();
+		}
+	}
+	
+	if (sprite->isDefendant())
+	{
+		kDebug() << "  removing a sprite" << endl;
+		kDebug() << "NKD" << NKD << endl;
+			
+		sprite->setAnimated(NKD);
+
+		QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
+		if (sndCrashPath.isNull())
+		{
+			KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error !"));
+			exit(2);
+		}
+		if (KsirkSettings::soundEnabled())
+		{
+			m_audioPlayer->setCurrentSource(sndCrashPath);
+			m_audioPlayer->play();
+		}
+	}
     }
     else  // the sprite is not the one (or one the several) killed
     {
@@ -581,7 +620,7 @@ void KGameWindow::animExplosion(int who,Country *paysAttaquant, Country *paysDef
   }
   kDebug() << "  loop done" << endl;
 
-  QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
+  /*QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
   if (sndCrashPath.isNull())
   {
     KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error !"));
@@ -591,7 +630,7 @@ void KGameWindow::animExplosion(int who,Country *paysAttaquant, Country *paysDef
   {
     m_audioPlayer->setCurrentSource(sndCrashPath);
     m_audioPlayer->play();
-  }
+  }*/
   kDebug() << "KGameWindow::animExplosion finished" << endl;
 //   m_frame-> initTimer();
 //    kDebug()<<"OUT KGameWindow::animExplosion"<<endl;
