@@ -162,6 +162,8 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_automaton->run();
   setMouseTracking(true);
 
+  resize(800,600);
+
   m_timer.setSingleShot(true);
   connect(&m_timer,SIGNAL(timeout()),this,SLOT(evenementTimer()));
 }
@@ -370,7 +372,14 @@ void KGameWindow::newSkin(const QString& onuFileName)
   m_frame->setCacheMode( QGraphicsView::CacheBackground );
 
   // create the arena view
+  
+
+  if (m_scene_world != 0)
+  {
+    delete m_scene_arena;
+  }
   m_scene_arena = new QGraphicsScene(0, 0, m_theWorld->width(), m_theWorld->height(),this);
+
   if (m_arena == 0)
     m_arena = new FightArena(this, m_theWorld->width(), m_theWorld->height(), m_scene_arena);
   m_arena->setMaximumWidth(m_theWorld->width());
@@ -384,15 +393,19 @@ void KGameWindow::newSkin(const QString& onuFileName)
   m_centralLayout->addWidget(m_arena);
 
   // set the layout on a new widget and put it as central widget of the frame
-  QWidget* widgetCentral = new QWidget(this);
-  widgetCentral->setLayout(m_centralLayout);
-  setCentralWidget(widgetCentral);
+  if (centralWidget() == 0) {
+    QWidget* widgetCentral = new QWidget(this);
+    widgetCentral->setLayout(m_centralLayout);
+    setCentralWidget(widgetCentral);
+  } else {
+    centralWidget()->setLayout(m_centralLayout);
+  }
 
   if (m_scene_world != 0)
   {
     delete m_scene_world;
   }
-    m_scene_world = new QGraphicsScene(0, 0, m_theWorld->width(), m_theWorld->height(),this);
+  m_scene_world = new QGraphicsScene(0, 0, m_theWorld->width(), m_theWorld->height(),this);
     
 //   m_scene_world->setDoubleBuffering(true);
   kDebug() << "Before initView" << endl;
@@ -421,11 +434,12 @@ void KGameWindow::initView()
   m_scene_world-> update();
   m_frame->setScene(m_scene_world);
   m_frame-> show();
-  adjustSize();
   
   m_scene_arena-> update();
   m_arena->setScene(m_scene_arena);
   m_arena-> hide();
+
+  // adjustSize();
 
   m_frame->setFocus();
 }
