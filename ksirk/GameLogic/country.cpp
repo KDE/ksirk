@@ -116,8 +116,8 @@ void Country::createArmiesSprites(BackGnd *backGnd)
         Sprites::SkinSpritesData::single().intData("cannon-height"),
         Sprites::SkinSpritesData::single().intData("cannon-frames"),
         Sprites::SkinSpritesData::single().intData("cannon-versions"),
-        backGnd->onu()->zoom(),
-        backGnd);
+        bg->onu()->zoom(),
+        bg);
     sprite-> setDestination(NULL);             // Sprite immobile
     sprite-> setPos((m_pointCannon.x()+5*i)*bg->onu()->zoom(),(m_pointCannon.y()+5*i)*bg->onu()->zoom());
     m_spritesCannons.append(sprite);
@@ -133,8 +133,8 @@ void Country::createArmiesSprites(BackGnd *backGnd)
         Sprites::SkinSpritesData::single().intData("cavalry-height"),
         Sprites::SkinSpritesData::single().intData("cavalry-frames"),
         Sprites::SkinSpritesData::single().intData("cavalry-versions"),
-        backGnd->onu()->zoom(),
-        backGnd);
+        bg->onu()->zoom(),
+        bg);
     sprite-> setDestination(NULL);             // Sprite immobile
     sprite-> setPos((m_pointCavalry.x()+5*i)*bg->onu()->zoom(),
                      (m_pointCavalry.y()+5*i)*bg->onu()->zoom());
@@ -151,8 +151,8 @@ void Country::createArmiesSprites(BackGnd *backGnd)
         Sprites::SkinSpritesData::single().intData("infantry-height"),
         Sprites::SkinSpritesData::single().intData("infantry-frames"),
         Sprites::SkinSpritesData::single().intData("infantry-versions"),
-        backGnd->onu()->zoom(),
-        backGnd);
+        bg->onu()->zoom(),
+        bg);
     sprite-> setDestination(NULL);             // Sprite immobile
     sprite-> setPos((m_pointInfantry.x()+5*i)*bg->onu()->zoom(),
                      (m_pointInfantry.y()+5*i)*bg->onu()->zoom());
