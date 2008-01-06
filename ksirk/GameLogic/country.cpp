@@ -102,8 +102,8 @@ void Country::reset()
 
 void Country::createArmiesSprites(BackGnd *backGnd)
 {
-  kDebug() << "zoom=" << backGnd->onu()->zoom() << endl;
   BackGnd* bg = backGnd==0?m_automaton->game()->backGnd():backGnd;
+  kDebug() << "zoom=" << bg->onu()->zoom() << endl;
   
   unsigned int armies = nbArmies();
   clearAllSprites();
