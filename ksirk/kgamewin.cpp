@@ -396,6 +396,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
   m_centralWidget->addWidget(m_frame);
   m_centralWidget->addWidget(m_arena);
   m_centralWidget->setCurrentIndex(0);
+  m_currentDisplayedWidget = mapType;
 
   if (m_scene_world != 0)
   {
@@ -2559,6 +2560,25 @@ void KGameWindow::secondCountry(GameLogic::Country* country)
   country->highlightAsDefender();
 }
 
+
+void KGameWindow::showArena()
+{
+  dynamic_cast <QStackedWidget*>(centralWidget())->setCurrentIndex(1);
+  m_currentDisplayedWidget = arenaType;
+}
+
+
+void KGameWindow::showMap()
+{
+  dynamic_cast <QStackedWidget*>(centralWidget())->setCurrentIndex(0);
+  m_currentDisplayedWidget = mapType;
+}
+
+
+int KGameWindow::currentWidgetType()
+{
+  return m_currentDisplayedWidget;
+}
 
 } // closing namespace Ksirk
 

@@ -347,7 +347,8 @@ GameAutomaton::GameState GameAutomaton::run()
       {
          kDebug() << "Attack with zoom mode activated" << endl;
 
-         // Display the arena view
+         // init and display the arena view
+         game()->arena()->initFightArena(game()->firstCountry(),game()->secondCountry());
          game()->showArena();
       }
       switch ( m_game->attacked(point) )

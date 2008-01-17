@@ -494,12 +494,24 @@ public:
   /**
     * Replace the map widget by the arena widget.
     */
-  void showArena() {dynamic_cast <QStackedWidget*>(centralWidget())->setCurrentIndex(1);};
+  void showArena();
 
   /**
     * Replace the arena widget by the map widget.
     */
-  void showMap() {dynamic_cast <QStackedWidget*>(centralWidget())->setCurrentIndex(0);};
+  void showMap();
+
+  /**
+    * The two types of central widget possible. This enum is used for knowing witch
+    * is currently displayed (see m_currentDisplayedWidget var below).
+    */
+  enum widgetType {mapType,arenaType};
+
+  /**
+    * Give the central widget currently displayed.
+    * @return current widget
+    */
+  int currentWidgetType();
 
 protected:
 
@@ -660,7 +672,12 @@ private slots:
 
 private:
   GameLogic::GameAutomaton* m_automaton;
-  
+
+  /**
+    * State that say the widget that is currently displayed between the map and the arena.
+    */
+  int m_currentDisplayedWidget;
+
   /**
    * The widget initialy docked at bottom where is displayed the events history
    */
