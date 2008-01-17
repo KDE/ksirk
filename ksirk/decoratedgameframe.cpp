@@ -48,6 +48,9 @@ DecoratedGameFrame::DecoratedGameFrame(QWidget* parent,
   setMaximumSize(mapW,mapH);
   updateGeometry(); 
   setMouseTracking(true);
+
+  // redirect the mouse move event to the main windows
+  connect(this, SIGNAL(mouseMoveEventReceived(QMouseEvent *)), parent, SLOT(mouseMoveEvent(QMouseEvent *)));
 }
 
 DecoratedGameFrame::~DecoratedGameFrame()
@@ -57,6 +60,7 @@ DecoratedGameFrame::~DecoratedGameFrame()
 void DecoratedGameFrame::mouseMoveEvent ( QMouseEvent * event )
 {
 //   kDebug() << "DecoratedGameFrame::mouseMoveEvent" << endl;
+  emit (mouseMoveEventReceived(event));
   event->ignore();
 }
 

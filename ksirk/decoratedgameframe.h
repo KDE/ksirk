@@ -75,10 +75,19 @@ public slots:
     */
   void slotMouseInput(KGameIO *input,QDataStream &stream,
                       QMouseEvent *mouse, bool *eatevent);
+
+signals:
+  /**
+    * Signal that redirect the mouse event to the kmainwindows in
+    * order to process the event.
+    * @param event is the event received
+    */
+  void mouseMoveEventReceived(QMouseEvent * event);
   
 protected:
 
   void mouseMoveEvent ( QMouseEvent * event );
+
 
 private:
   unsigned int m_mapW;

@@ -510,7 +510,6 @@ protected:
     * Fundamental method !!!
     */
 //   void slotTimerEvent();
-  virtual void mouseMoveEvent ( QMouseEvent * event );
 
 //   void resizeEvent ( QResizeEvent * event );
 
@@ -566,6 +565,9 @@ protected:
   void explain();
 
 public slots:
+
+  virtual void mouseMoveEvent ( QMouseEvent * event );
+
   //@{
   /**
    * The slots associated to the keys
