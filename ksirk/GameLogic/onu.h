@@ -74,6 +74,7 @@ public:
   const QString& name() const {return m_name;}
   const QString& description() const {return m_description;}
   const QString& mapFileName() const;
+  const QString& getConfigFileName() const {return m_configFileName;}
   const QPixmap& map() const {return m_map;}
   const QPixmap& snapshot() const {return m_snapshot;}
   unsigned int width() const;

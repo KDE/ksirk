@@ -31,6 +31,7 @@
 #include <QPointF>
 #include <QPixmap>
 #include <QLabel>
+#include <QStackedWidget>
 
 // include files for KDE
 #include <ksharedconfig.h>
@@ -489,6 +490,16 @@ public:
   inline KGameChat* chatWidget() {return m_chatDlg;}
 
   void showMessage(const QString& message, quint32 delay=5);
+
+  /**
+    * Replace the map widget by the arena widget.
+    */
+  void showArena() {dynamic_cast <QStackedWidget*>(centralWidget())->setCurrentIndex(1);};
+
+  /**
+    * Replace the arena widget by the map widget.
+    */
+  void showMap() {dynamic_cast <QStackedWidget*>(centralWidget())->setCurrentIndex(0);};
 
 protected:
 

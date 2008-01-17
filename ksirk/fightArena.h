@@ -22,15 +22,21 @@
 #define FIGHTARENA_H
 
 #include "KsirkGlobalDefinitions.h"
+#include "GameLogic/onu.h"
 #include "GameLogic/country.h"
 
 #include <stdlib.h>
 #include <qtimer.h>
 #include <QMouseEvent>
 #include <QGraphicsView>
+#include <kstandarddirs.h>
+#include <kglobal.h>
+#include <kconfig.h>
+#include <kconfiggroup.h>
 
 namespace GameLogic
 {
+  class ONU;
   class Country;
 }
 
@@ -55,17 +61,10 @@ namespace Ksirk
       * @param parent The parent widget, the main window
       * @param mapW The width of the arena. Will be the width given in size hint.
       * @param mapH The height of the arena. Will be the height given in size hint.
+      * @param sceneArena where sprites will be added.
+      * @param onuObject onuObject for getting map and country informations
       */
-      FightArena(QWidget* parent, unsigned int mapW, unsigned int mapH);
-
-      /**
-      * Creates the frame, its timer and set some parameters
-      * @param parent The parent widget, the main window
-      * @param mapW The width of the arena. Will be the width given in size hint.
-      * @param mapH The height of the arena. Will be the height given in size hint.
-      * @param sceneArena
-      */
-      FightArena(QWidget* parent, unsigned int mapW, unsigned int mapH, QGraphicsScene* sceneArena);
+      FightArena(QWidget* parent, unsigned int mapW, unsigned int mapH, QGraphicsScene* sceneArena, GameLogic::ONU* onuObject);
 
       /**
       * Destroy the frame : stops and deletes the timer
@@ -87,9 +86,10 @@ namespace Ksirk
       unsigned int m_mapW;
       unsigned int m_mapH;
 
-      GameLogic::Country* countryAttack;
-      GameLogic::Country* countryDefense;
-      QGraphicsScene* scene;
+      GameLogic::Country* m_countryAttack;
+      GameLogic::Country* m_countryDefense;
+      QGraphicsScene* m_scene;
+      GameLogic::ONU* m_onu;
    };
    
 };

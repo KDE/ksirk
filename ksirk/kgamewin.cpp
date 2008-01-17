@@ -325,10 +325,9 @@ void KGameWindow::newSkin(const QString& onuFileName)
   kDebug() << "KGameWindow::newSkin '" << onuFileName << "'" << endl;
   clear();
 
-  if (m_frame != 0)
+  if (centralWidget() != 0)
   {
-    m_frame->hide();
-//     delete m_frame;
+     dynamic_cast <QStackedWidget*>(centralWidget())->setCurrentIndex(-1);
   }
 
 // NOTE:I wanted to recreate the automaton here. But it isn't possible as this
@@ -381,25 +380,22 @@ void KGameWindow::newSkin(const QString& onuFileName)
   m_scene_arena = new QGraphicsScene(0, 0, m_theWorld->width(), m_theWorld->height(),this);
 
   if (m_arena == 0)
-    m_arena = new FightArena(this, m_theWorld->width(), m_theWorld->height(), m_scene_arena);
+    m_arena = new FightArena(this, m_theWorld->width(), m_theWorld->height(), m_scene_arena, m_theWorld);
   m_arena->setMaximumWidth(m_theWorld->width());
   m_arena->setMaximumHeight(m_theWorld->height());
   m_arena->setCacheMode( QGraphicsView::CacheBackground );
-  m_arena->hide();
 
-  // Make a layout containing the both views
-  QVBoxLayout *m_centralLayout = new QVBoxLayout;
-  m_centralLayout->addWidget(m_frame);
-  m_centralLayout->addWidget(m_arena);
-
-  // set the layout on a new widget and put it as central widget of the frame
-  if (centralWidget() == 0) {
-    QWidget* widgetCentral = new QWidget(this);
-    widgetCentral->setLayout(m_centralLayout);
-    setCentralWidget(widgetCentral);
-  } else {
-    centralWidget()->setLayout(m_centralLayout);
+  // create a central widget if it doesent' exists
+  QStackedWidget *m_centralWidget = dynamic_cast <QStackedWidget*>(centralWidget());
+  if (m_centralWidget == 0) {
+    m_centralWidget = new QStackedWidget;
+    setCentralWidget(m_centralWidget);
   }
+
+  // put the map and arena in the central widget
+  m_centralWidget->addWidget(m_frame);
+  m_centralWidget->addWidget(m_arena);
+  m_centralWidget->setCurrentIndex(0);
 
   if (m_scene_world != 0)
   {
@@ -433,11 +429,11 @@ void KGameWindow::initView()
   setCaption("KsirK",false);
   m_scene_world-> update();
   m_frame->setScene(m_scene_world);
-  m_frame-> show();
-  
+
   m_scene_arena-> update();
   m_arena->setScene(m_scene_arena);
-  m_arena-> hide();
+
+  showMap();
 
   // adjustSize();
 

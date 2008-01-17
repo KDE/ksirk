@@ -343,20 +343,18 @@ GameAutomaton::GameState GameAutomaton::run()
   case ATTACK2:
     if  (event == "actionLButtonUp" || event == "actionRButtonUp") 
     {
-      if  (event == "actionRButtonUp") 
+      if  (event == "actionRButtonUp" && m_game->attacked(point) > 0 && m_game->attacked(point) < 4) 
       {
          kDebug() << "Attack with zoom mode activated" << endl;
 
-         // Change the world view by the arena view
-         m_game->frame()->hide();
-         m_game->arena()->show();
+         // Display the arena view
+         game()->showArena();
       }
       switch ( m_game->attacked(point) )
       {
         case 0:
           kDebug() << "handling attacked value; 0" << endl;
           state(WAIT);
-          m_game->frame()->show();
         break;
         case 1:
           kDebug() << "handling attacked value; 1" << endl;
@@ -377,7 +375,6 @@ GameAutomaton::GameState GameAutomaton::run()
         break;
         default:
           kError() << "Unknown return value from attacked" << endl;
-          m_game->frame()->show();
           exit(1);
       }
       kDebug() << "after switch" << endl;
@@ -404,9 +401,8 @@ GameAutomaton::GameState GameAutomaton::run()
       sendMessage(buffer,TerminateAttackSequence);
     }
 
-    // Change the arena view by the world view
-    m_game->arena()->hide();
-    m_game->frame()->show();
+    // Re-display the world view
+    game()->showMap();
   break;
   case INTERLUDE:
     if  (event == "playersLooped")

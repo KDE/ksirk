@@ -24,20 +24,10 @@
 namespace Ksirk
 {
    using namespace GameLogic;
-   
-   FightArena::FightArena(QWidget* parent, 
-   unsigned int mapW, unsigned int mapH)
-   : QGraphicsView(parent), m_mapW(mapW), m_mapH(mapH)
-   {
-      setVerticalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
-      setHorizontalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
-      setCacheMode(QGraphicsView::CacheBackground);
-      setMinimumSize(200,100);
-      setMaximumSize(mapW,mapH);
-      updateGeometry();
-   }
 
-   FightArena::FightArena(QWidget* parent, unsigned int mapW, unsigned int mapH, QGraphicsScene* sceneArena)
+   FightArena::FightArena(QWidget* parent, unsigned int mapW, unsigned int mapH, QGraphicsScene* sceneArena,ONU* onuObject):
+   m_scene(sceneArena),
+   m_onu(onuObject)
    {
       setVerticalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
       setHorizontalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
@@ -46,7 +36,20 @@ namespace Ksirk
       setMaximumSize(mapW,mapH);
       updateGeometry();
 
-      this->scene = sceneArena;
+      // search the background image
+      KConfig config(m_onu->getConfigFileName());
+      KConfigGroup onugroup = config.group("onu");
+      QString skin = onugroup.readEntry("skinpath");
+      QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/arena.svg");
+      kDebug() << "*** FOND SKIN : " << skin << endl;
+      kDebug() << "*** FOND RECHERCHE : " << skin + "/Images/arena.svg" << endl;
+      kDebug() << "*** FOND ARENE : " << imageFileName << endl;
+      // put the background image
+      QPixmap background;
+      background.load(imageFileName);
+      background = background.scaled(mapW,mapH,Qt::KeepAspectRatio);
+      setBackgroundBrush(background);
+      setCacheMode(QGraphicsView::CacheBackground);
    }
    
    FightArena::~FightArena()
@@ -60,8 +63,8 @@ namespace Ksirk
 
    void FightArena::initFightArena (Country* countryA, Country* countryD)
    {
-      this->countryAttack = countryA;
-      this->countryDefense = countryD;
+      this->m_countryAttack = countryA;
+      this->m_countryDefense = countryD;
    }
 
 }
