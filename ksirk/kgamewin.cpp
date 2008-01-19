@@ -176,6 +176,9 @@ KGameWindow::~KGameWindow()
   delete m_scene_world; m_scene_world = 0;
 //   if (m_barFlagButton) {delete m_barFlagButton; m_barFlagButton = 0;}
   delete m_frame; m_frame = 0;
+  delete m_backGnd_arena; m_backGnd_arena = 0;
+  delete m_scene_arena; m_scene_arena = 0;
+  delete m_arena; m_arena = 0;
   delete m_audioPlayer;
 }
 
@@ -2563,6 +2566,9 @@ void KGameWindow::secondCountry(GameLogic::Country* country)
 
 void KGameWindow::showArena()
 {
+  if (m_currentDisplayedWidget != arenaType) {
+    arena()->initFightArena(firstCountry(),secondCountry());
+  }
   dynamic_cast <QStackedWidget*>(centralWidget())->setCurrentIndex(1);
   m_currentDisplayedWidget = arenaType;
 }
