@@ -154,7 +154,7 @@ void AnimSpritesList< SpriteType >::moveAll()
       sp-> hide();
       it++;
       QList< SpriteType* >::remove(itToRemove);
-      sp-> getDestination()-> createArmiesSprites(sp-> getBackGnd());
+      sp-> getDestination()-> createArmiesSprites();
     }
     else it++;
   }
@@ -180,7 +180,7 @@ void AnimSpritesList< SpriteType >::moveAllToDestinationNow(bool clear)
       sp-> hide();
       it++;
       QList< SpriteType* >::erase(itToRemove);
-      sp-> getDestination()-> createArmiesSprites(sp-> getBackGnd());
+      sp-> getDestination()-> createArmiesSprites();
     }
     else
     {

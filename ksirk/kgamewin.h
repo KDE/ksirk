@@ -508,10 +508,22 @@ public:
   enum widgetType {mapType,arenaType};
 
   /**
+    * Give type of the central widget currently displayed.
+    * @return current widget type
+    */
+  int currentWidgetType();
+
+  /**
     * Give the central widget currently displayed.
     * @return current widget
     */
-  int currentWidgetType();
+  QGraphicsView* currentWidget();
+
+  /**
+    * Give the Background of the central widget currently displayed.
+    * @return current background
+    */
+  BackGnd* currentBackGnd();
 
 protected:
 
@@ -737,6 +749,12 @@ private:
     */
   GameLogic::Country* m_firstCountry;
   GameLogic::Country* m_secondCountry;
+
+  /**
+   * The 2 countries involved in a fight that will be displayed in arena
+   */
+  GameLogic::Country *m_firstCountryArena;
+  GameLogic::Country *m_secondCountryArena;
   //@}
 
   /**

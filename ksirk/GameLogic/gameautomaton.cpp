@@ -2254,7 +2254,7 @@ void GameAutomaton::movingArmyArrived(Country* country, unsigned int number)
   kDebug() << number << endl;
   country->incrNbAddedArmies(number);
   country->incrNbArmies(number);
-  country->createArmiesSprites(m_game->backGnd());
+  country->createArmiesSprites();
 }
 
 void GameAutomaton::firingFinished()

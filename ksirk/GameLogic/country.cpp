@@ -90,7 +90,7 @@ void Country::reset()
   clearAllSprites();
   m_belongsTo = 0;
   nbArmies(1);
-  createArmiesSprites(m_automaton->game()->backGnd());
+  createArmiesSprites();
   
   if (m_flag)
   {
@@ -100,9 +100,9 @@ void Country::reset()
   }
 }
 
-void Country::createArmiesSprites(BackGnd *backGnd)
+void Country::createArmiesSprites()
 {
-  BackGnd* bg = backGnd==0?m_automaton->game()->backGnd():backGnd;
+  BackGnd* bg = m_automaton->game()->backGnd();
   kDebug() << "zoom=" << bg->onu()->zoom() << endl;
   
   unsigned int armies = nbArmies();
@@ -232,7 +232,7 @@ void Country::owner(Player *player)
   m_belongsTo = player;
   if (player != 0)
   {
-    createArmiesSprites(m_automaton->game()-> backGnd());
+    createArmiesSprites();
     flag(m_belongsTo->flagFileName(), m_automaton->game()-> backGnd());
   }
 }

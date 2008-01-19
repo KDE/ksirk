@@ -517,8 +517,8 @@ bool KGameWindow::attackEnd()
       }
     }
   }
-  m_firstCountry-> createArmiesSprites(m_backGnd_world);
-  m_secondCountry-> createArmiesSprites(m_backGnd_world);
+  m_firstCountry-> createArmiesSprites();
+  m_secondCountry-> createArmiesSprites();
   if (m_automaton->isAdmin())
   {
     if (res)
@@ -738,7 +738,7 @@ bool KGameWindow::actionOpenGame()
     {
       Country* country = m_theWorld-> getCountries().at(i);
       kDebug() << "Adding sprites to " << country->name() << endl;
-      country-> createArmiesSprites(m_backGnd_world);
+      country-> createArmiesSprites();
       Player *player = country-> owner();
       if (player)
       {
@@ -1841,7 +1841,7 @@ bool KGameWindow::playerPutsArmy(const QPointF& point, bool removable)
       if (removable) clickedCountry-> incrNbAddedArmies();
       clickedCountry-> incrNbArmies();
       clickedCountry-> incrNbAddedArmies();
-      clickedCountry-> createArmiesSprites(m_backGnd_world);
+      clickedCountry-> createArmiesSprites();
       QPixmap pm = currentPlayer()->getFlag()->image(0);
       KMessageParts messageParts;
       messageParts 
@@ -1888,7 +1888,7 @@ bool KGameWindow::playerPutsInitialArmy(const QPointF& point)
         kDebug() << "owner new available armies=" << m_nbAvailArmies << endl;
         clickedCountry-> incrNbArmies();
         clickedCountry-> incrNbAddedArmies();
-        clickedCountry-> createArmiesSprites(m_backGnd_world);
+        clickedCountry-> createArmiesSprites();
         if ( last )
         {
           PlayersArray::iterator it = m_automaton->playerList()->begin();
@@ -1971,7 +1971,7 @@ bool KGameWindow::playerRemovesArmy(const QPointF& point)
     }
     clickedCountry-> decrNbAddedArmies();
     clickedCountry-> decrNbArmies();
-    clickedCountry-> createArmiesSprites(m_backGnd_world);
+    clickedCountry-> createArmiesSprites();
   }
   return true;
 }
@@ -2201,16 +2201,16 @@ void KGameWindow::cancelShiftSource()
   {
     m_firstCountry-> decrNbArmies(m_nbMovedArmies);
     m_secondCountry-> incrNbArmies(m_nbMovedArmies);
-    m_firstCountry-> createArmiesSprites(m_backGnd_world);
-    m_secondCountry-> createArmiesSprites(m_backGnd_world);
+    m_firstCountry-> createArmiesSprites();
+    m_secondCountry-> createArmiesSprites();
     m_nbMovedArmies = 0;
   }
   if (m_nbMovedArmies > 0)
   {
     m_firstCountry-> incrNbArmies(m_nbMovedArmies);
     m_secondCountry-> decrNbArmies(m_nbMovedArmies);
-    m_firstCountry-> createArmiesSprites(m_backGnd_world);
-    m_secondCountry-> createArmiesSprites(m_backGnd_world);
+    m_firstCountry-> createArmiesSprites();
+    m_secondCountry-> createArmiesSprites();
     m_nbMovedArmies = 0;
   }
 }
@@ -2584,6 +2584,24 @@ void KGameWindow::showMap()
 int KGameWindow::currentWidgetType()
 {
   return m_currentDisplayedWidget;
+}
+
+
+QGraphicsView* KGameWindow::currentWidget() {
+  if (currentWidgetType() == arenaType) {
+    return dynamic_cast <QGraphicsView*>(arena());
+  } else {
+    return dynamic_cast <QGraphicsView*>(frame());
+  }
+}
+
+
+BackGnd* KGameWindow::currentBackGnd() {
+  if (currentWidgetType() == arenaType) {
+    return backGndArena();
+  } else {
+    return backGnd();
+  }
 }
 
 } // closing namespace Ksirk

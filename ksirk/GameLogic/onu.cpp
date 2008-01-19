@@ -553,7 +553,7 @@ void ONU::applyZoomFactor(qreal zoomFactor)
   for ( ; it != it_end; it++ )
   {
     Country* country = *it;
-    country->createArmiesSprites(m_automaton->game()->backGnd());
+    country->createArmiesSprites();
   }
 }
 

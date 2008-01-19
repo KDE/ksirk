@@ -92,7 +92,7 @@ public:
     * Eventually removes previously existing sprites.
     * @param backGnd The background onto which this country sprites will be drawn.
     */
-  void createArmiesSprites(BackGnd *backGnd);
+  void createArmiesSprites();
 
   /**
     * Creates the sprite of the contry's flag. Eventually removes a previously

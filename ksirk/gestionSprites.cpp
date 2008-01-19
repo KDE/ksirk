@@ -135,7 +135,7 @@ bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *m_firstCou
   connect(sprite,SIGNAL(atDestination(AnimSprite*)),this,SLOT(slotMovingArmyArrived(AnimSprite*)));
   sprite-> setupTravel(m_firstCountry, m_secondCountry);
   newGroup->addSprite(sprite);
-  m_firstCountry-> createArmiesSprites(this-> m_backGnd_world);
+  m_firstCountry-> createArmiesSprites();
   sprite->setAnimated();
 //   kDebug() << "initArmiesMovement returns true" << endl;
   return true;
