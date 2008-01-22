@@ -484,7 +484,7 @@ void Country::highlight(const QColor& color, qreal opacity)
   m_renderer->load(svg);
 
   kDebug() <<"loaded"<< endl;
-  m_highlighting = new QGraphicsSvgItem(m_automaton->game()->backGnd());
+  m_highlighting = new QGraphicsSvgItem(m_automaton->game()->backGndWorld());
   m_highlighting->setSharedRenderer(m_renderer);
   m_highlighting->setElementId(m_name);
   m_highlighting->setPos(
@@ -546,6 +546,27 @@ QDataStream& operator>>(QDataStream& stream, Country* country)
   return stream;
 }
 
+
+void Country::copyForArena(Country* trueCountry) {
+  // remove existing elements
+  clearAllSprites();
+  if (m_flag)
+  {
+    m_flag->hide();
+    delete m_flag;
+    m_flag = 0;
+  }
+
+  // change parameters
+  m_name = trueCountry->m_name;
+  m_continent = trueCountry->m_continent;
+  m_belongsTo = trueCountry->m_belongsTo;
+  m_nbArmies = trueCountry->m_nbArmies;
+  m_id = trueCountry->m_id;
+
+  // make again the display
+  createArmiesSprites();
+}
 
 } // closing namespace GameLogic
 

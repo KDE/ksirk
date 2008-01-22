@@ -22,6 +22,7 @@
 #include "KsirkGlobalDefinitions.h"
 #include "decoratedgameframe.h"
 #include "fightArena.h"
+#include "GameLogic/onu.h"
 #include "GameLogic/gameautomaton.h"
 #include "GameLogic/player.h"
 #include "GameLogic/country.h"
@@ -38,6 +39,8 @@
 #include <KXmlGuiWindow>
 #include <KStandardDirs>
 #include <KShortcut>
+
+#include <vector>
 // 
 // #include <kdialogbase.h>
 
@@ -57,6 +60,10 @@ namespace Phonon
 
 namespace Ksirk
 {
+
+  // forward declaration of the KsirK classes
+  class DecoratedGameFrame;
+  class FightArena;
   class AnimSpritesGroup;
 
 namespace GameLogic
@@ -66,9 +73,6 @@ namespace GameLogic
   class GameAutomaton;
   class Player;
 }
-
-// forward declaration of the KsirK classes
-class DecoratedGameFrame;
 
 /**
   * This is the main window. Due to the history of KsirK, this GUI class 
@@ -430,8 +434,8 @@ public:
     * Gets the background world map sprite. Gives access to the scene and, furthermore, 
     * the background size, thus giving hints for positioning and annimation.
     */
-  inline BackGnd* backGnd() {return m_backGnd_world;}
-  inline const BackGnd* backGnd() const {return m_backGnd_world;}
+  inline BackGnd* backGndWorld() {return m_backGnd_world;}
+  inline const BackGnd* backGndWorld() const {return m_backGnd_world;}
   
   /**
     * Gets the background arena sprite. Gives access to the scene and, furthermore, 
@@ -439,6 +443,12 @@ public:
     */
   inline BackGnd* backGndArena() {return m_backGnd_arena;}
   inline const BackGnd* backGndArena() const {return m_backGnd_arena;}
+  
+  /**
+    * Gets the current background sprite. Gives access to the scene and, furthermore, 
+    * the background size, thus giving hints for positioning and annimation.
+    */
+  BackGnd* backGnd();
   
   //@{
   /** 
@@ -458,8 +468,8 @@ public:
     */
   void firstCountry(GameLogic::Country* country);
   void secondCountry(GameLogic::Country* country);
-  inline GameLogic::Country* firstCountry() {return m_firstCountry;}
-  inline GameLogic::Country* secondCountry() {return m_secondCountry;}
+  GameLogic::Country* firstCountry();
+  GameLogic::Country* secondCountry();
   //@}
 
   /** 
@@ -518,12 +528,6 @@ public:
     * @return current widget
     */
   QGraphicsView* currentWidget();
-
-  /**
-    * Give the Background of the central widget currently displayed.
-    * @return current background
-    */
-  BackGnd* currentBackGnd();
 
 protected:
 

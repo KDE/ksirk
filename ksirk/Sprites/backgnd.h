@@ -26,6 +26,9 @@
 #include "decoratedgameframe.h"
 #include <QGraphicsItem>
 #include <QGraphicsScene>
+#include <kglobal.h>
+#include <kconfig.h>
+#include <kconfiggroup.h>
 
 namespace Ksirk
 {
@@ -45,7 +48,7 @@ public:
     * @param scene The canvas where all the sprites are set up.
     * @param theWorld The world represented by this background 
     */
-  BackGnd(QGraphicsScene *scene, const GameLogic::ONU* theWorld);
+  BackGnd(QGraphicsScene *scene, const GameLogic::ONU* theWorld, bool arena = false);
 
   /**
     * Default destructor

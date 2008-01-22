@@ -33,6 +33,8 @@
 #include "country.h"
 #include "continent.h"
 #include "nationality.h"
+#include "kgamewin.h"
+#include "gameautomaton.h"
 
 #include <iostream>
 #include <vector>
@@ -178,13 +180,13 @@ public:
     */
   Continent* continentNamed(const QString& name);
 
-  inline double zoom() const {return m_zoom;}
+  double zoom() const;
+
+  QSvgRenderer* renderer();
+
+  KGameSvgDocument* svgDom();
 
   inline const QImage& mask() const {return countriesMask;}
-
-  inline QSvgRenderer* renderer() {return &m_renderer;}
-
-  inline KGameSvgDocument* svgDom() {return &m_svgDom;}
 
 private:
   /**

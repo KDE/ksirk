@@ -343,13 +343,13 @@ GameAutomaton::GameState GameAutomaton::run()
   case ATTACK2:
     if  (event == "actionLButtonUp" || event == "actionRButtonUp") 
     {
-      if  (event == "actionRButtonUp" && m_game->attacked(point) > 0 && m_game->attacked(point) < 4) 
+      /*if  (event == "actionRButtonUp" && m_game->attacked(point) > 0 && m_game->attacked(point) < 4) 
       {
          kDebug() << "Attack with zoom mode activated" << endl;
 
          // init and display the arena view
          game()->showArena();
-      }
+      }*/
       switch ( m_game->attacked(point) )
       {
         case 0:
@@ -367,9 +367,23 @@ GameAutomaton::GameState GameAutomaton::run()
           kDebug() << "calling defense(1)" << endl;
           m_game-> defense(1);
           kDebug() << "setting state to FIGHT_BRING" << endl;
+          if  (event == "actionRButtonUp") 
+          {
+            kDebug() << "Attack with zoom mode activated" << endl;
+
+            // init and display the arena view
+            game()->showArena();
+          }
           state(FIGHT_BRING);
         break;
         case 3:
+          if  (event == "actionRButtonUp") 
+          {
+            kDebug() << "Attack with zoom mode activated" << endl;
+
+            // init and display the arena view
+            game()->showArena();
+          }
           kDebug() << "handling attacked value; 3" << endl;
           // AI action: nothing to do.
         break;

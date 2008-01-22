@@ -34,17 +34,17 @@
 #include <kconfig.h>
 #include <kconfiggroup.h>
 
-namespace GameLogic
-{
-  class ONU;
-  class Country;
-}
-
 
 class KGameIO;
 
 namespace Ksirk
 {
+
+namespace GameLogic
+{
+  class ONU;
+  class Country;
+}
 
    /**
    * The DecoratedGameFrame class is the widget displayed while fights, and where

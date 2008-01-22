@@ -99,7 +99,10 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_timer(this),
   gameActionsToolBar(0),
   m_message(0),
-  m_mouseLocalisation(0)
+  m_mouseLocalisation(0),
+  m_currentDisplayedWidget(mapType),
+  m_firstCountryArena(0),
+  m_secondCountryArena(0)
 {
   kDebug() << "KGameWindow constructor begin" << endl;
 
@@ -382,11 +385,42 @@ void KGameWindow::newSkin(const QString& onuFileName)
   }
   m_scene_arena = new QGraphicsScene(0, 0, m_theWorld->width(), m_theWorld->height(),this);
 
+  // create the arena if it doesn't exist
   if (m_arena == 0)
     m_arena = new FightArena(this, m_theWorld->width(), m_theWorld->height(), m_scene_arena, m_theWorld);
   m_arena->setMaximumWidth(m_theWorld->width());
   m_arena->setMaximumHeight(m_theWorld->height());
   m_arena->setCacheMode( QGraphicsView::CacheBackground );
+
+  if (m_firstCountryArena == 0 && m_secondCountryArena == 0) {
+    // create the first country of the arena
+    m_firstCountryArena = new Country(m_automaton,
+                                      "",
+                                      QPointF(m_theWorld->width()/4,m_theWorld->height()/2),
+                                      QPointF(m_theWorld->width()/4,m_theWorld->height()/2),
+                                      QPointF(m_theWorld->width()/7,m_theWorld->height()/7),
+                                      QPointF(4*m_theWorld->width()/16,m_theWorld->height()/2),
+                                      QPointF(5*m_theWorld->width()/16,3*m_theWorld->height()/5),
+                                      QPointF(5*m_theWorld->width()/16,4*m_theWorld->height()/5),
+                                      0);
+    // create the second country of the arena
+    m_secondCountryArena = new Country(m_automaton,
+                                      "",
+                                      QPointF(3*m_theWorld->width()/4,m_theWorld->height()/2),
+                                      QPointF(3*m_theWorld->width()/4,m_theWorld->height()/2),
+                                      QPointF(6*m_theWorld->width()/7,m_theWorld->height()/7),
+                                      QPointF(12*m_theWorld->width()/16,m_theWorld->height()/2),
+                                      QPointF(11*m_theWorld->width()/16,3*m_theWorld->height()/5),
+                                      QPointF(11*m_theWorld->width()/16,4*m_theWorld->height()/5),
+                                      0);
+    // make the two arena countrys neighbours
+    vector<Country*> arenaFirstNeighbours;
+    arenaFirstNeighbours.insert(arenaFirstNeighbours.begin(), m_secondCountryArena);
+    m_firstCountryArena->neighbours(arenaFirstNeighbours);
+    vector<Country*> arenaSecondNeighbours;
+    arenaSecondNeighbours.insert(arenaSecondNeighbours.begin(), m_firstCountryArena);
+    m_secondCountryArena->neighbours(arenaSecondNeighbours);
+  }
 
   // create a central widget if it doesent' exists
   QStackedWidget *m_centralWidget = dynamic_cast <QStackedWidget*>(centralWidget());
@@ -412,6 +446,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
   initView();
   m_backGnd_world = new BackGnd(m_scene_world, m_theWorld); //Creation of the background
   kDebug() <<"After m_backGnd new="<< m_backGnd_world << endl;
+  m_backGnd_arena = new BackGnd(m_scene_arena, m_theWorld, true); //Creation of the arena background
   m_frame->setFocus();
 
   kDebug() <<"End new skin" << endl;
@@ -2531,12 +2566,10 @@ void KGameWindow::showMessage(const QString& message, quint32 delay)
 
 void KGameWindow::firstCountry(GameLogic::Country* country)
 {
-  kDebug() << endl;
   if (m_firstCountry != 0)
   {
     m_firstCountry->clearHighlighting();
   }
-  kDebug() << endl;
   m_firstCountry = country;
   if (country == 0)
   {
@@ -2548,12 +2581,10 @@ void KGameWindow::firstCountry(GameLogic::Country* country)
 
 void KGameWindow::secondCountry(GameLogic::Country* country)
 {
-  kDebug() << endl;
   if (m_secondCountry != 0)
   {
     m_secondCountry->clearHighlighting();
   }
-  kDebug() << endl;
   m_secondCountry = country;
   if (country == 0)
   {
@@ -2564,10 +2595,31 @@ void KGameWindow::secondCountry(GameLogic::Country* country)
 }
 
 
+GameLogic::Country* KGameWindow::firstCountry()
+{
+  if (m_currentDisplayedWidget == arenaType) {
+    return m_firstCountryArena;
+  }
+  return m_firstCountry;
+}
+
+
+GameLogic::Country* KGameWindow::secondCountry()
+{
+  if (m_currentDisplayedWidget == arenaType) {
+    return m_secondCountryArena;
+  }
+  return m_secondCountry;
+}
+
+
 void KGameWindow::showArena()
 {
   if (m_currentDisplayedWidget != arenaType) {
-    arena()->initFightArena(firstCountry(),secondCountry());
+    // synchronise the arena countrys
+    m_currentDisplayedWidget = arenaType;
+    m_firstCountryArena->copyForArena(m_firstCountry);
+    m_secondCountryArena->copyForArena(m_secondCountry);
   }
   dynamic_cast <QStackedWidget*>(centralWidget())->setCurrentIndex(1);
   m_currentDisplayedWidget = arenaType;
@@ -2596,11 +2648,11 @@ QGraphicsView* KGameWindow::currentWidget() {
 }
 
 
-BackGnd* KGameWindow::currentBackGnd() {
+BackGnd* KGameWindow::backGnd() {
   if (currentWidgetType() == arenaType) {
     return backGndArena();
   } else {
-    return backGnd();
+    return backGndWorld();
   }
 }
 

@@ -35,18 +35,6 @@ namespace Ksirk
       setMinimumSize(200,100);
       setMaximumSize(mapW,mapH);
       updateGeometry();
-
-      // search the background image
-      KConfig config(m_onu->getConfigFileName());
-      KConfigGroup onugroup = config.group("onu");
-      QString skin = onugroup.readEntry("skinpath");
-      QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/arena.svg");
-      // put the background image
-      QPixmap background;
-      background.load(imageFileName);
-      background = background.scaled(mapW,mapH,Qt::KeepAspectRatio);
-      setBackgroundBrush(background);
-      setCacheMode(QGraphicsView::CacheBackground);
    }
    
    FightArena::~FightArena()

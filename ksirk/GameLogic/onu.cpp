@@ -557,5 +557,26 @@ void ONU::applyZoomFactor(qreal zoomFactor)
   }
 }
 
+double ONU::zoom() const
+{
+  if (m_automaton->game()->currentWidgetType() == KGameWindow::mapType) {
+    return m_zoom;
+  }
+  return 1;
+}
+
+
+QSvgRenderer* ONU::renderer()
+{
+  return &m_renderer;
+}
+
+
+KGameSvgDocument* ONU::svgDom()
+{
+  return &m_svgDom;
+}
+
+
 } // closing namespace GameLogic
 } // closing namespace Ksirk
