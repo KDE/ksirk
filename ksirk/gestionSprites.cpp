@@ -95,7 +95,7 @@ bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *m_firstCou
                               Sprites::SkinSpritesData::single().intData("cannon-frames"),
                               Sprites::SkinSpritesData::single().intData("cannon-versions"),
                               m_theWorld->zoom(),
-                              m_backGnd_world,                              200);
+                              backGnd(),                              200);
     m_firstCountry-> decrNbArmies(10);
   }
   else if ((m_firstCountry-> nbArmies() > 5) && (nbABouger == 5)
@@ -107,7 +107,7 @@ bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *m_firstCou
                                 Sprites::SkinSpritesData::single().intData("cavalry-height"),
                                 Sprites::SkinSpritesData::single().intData("cavalry-frames"), 
                                 Sprites::SkinSpritesData::single().intData("cavalry-versions"),       m_theWorld->zoom(),
-                                m_backGnd_world,                                200);
+                                backGnd(),                                200);
     m_firstCountry-> decrNbArmies(5);
   }
   else if ((m_firstCountry-> nbArmies() > 1) && (nbABouger == 1)
@@ -119,7 +119,7 @@ bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *m_firstCou
                                 Sprites::SkinSpritesData::single().intData("infantry-height"),
         Sprites::SkinSpritesData::single().intData("infantry-frames"),
                                 Sprites::SkinSpritesData::single().intData("infantry-versions"),       m_theWorld->zoom(),
-                                m_backGnd_world,
+                                backGnd(),
                                 200);
     m_firstCountry->  decrNbArmies();
   }
@@ -240,7 +240,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   
 qreal rightRelativePos = (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("flag-width"))*m_theWorld->zoom();
 
-  if (!((qAbs(pointFlagAttaquantX-pointFlagDefenseurX) > (m_backGnd_world-> boundingRect().width() / 2))))
+  if (!((qAbs(pointFlagAttaquantX-pointFlagDefenseurX) > (backGnd()-> boundingRect().width() / 2))))
   {
       if ( pointFlagAttaquantX <= pointFlagDefenseurX )
       {
@@ -284,7 +284,7 @@ qreal rightRelativePos = (Sprites::SkinSpritesData::single().intData("width-betw
 	Sprites::SkinSpritesData::single().intData("infantry-frames"),
 	Sprites::SkinSpritesData::single().intData("infantry-versions"),
 	m_theWorld->zoom(),
-	m_backGnd_world,
+	backGnd(),
 	200);
 
 	paysAttaquant->spritesInfantry().hideAndRemoveFirst();
@@ -300,7 +300,7 @@ qreal rightRelativePos = (Sprites::SkinSpritesData::single().intData("width-betw
 		Sprites::SkinSpritesData::single().intData("cavalry-frames"),
 		Sprites::SkinSpritesData::single().intData("cavalry-versions"),
 		m_theWorld->zoom(),
-		m_backGnd_world,
+		backGnd(),
 		200);
 
 		paysAttaquant->spritesCavalry().hideAndRemoveFirst();
@@ -314,7 +314,7 @@ qreal rightRelativePos = (Sprites::SkinSpritesData::single().intData("width-betw
       		Sprites::SkinSpritesData::single().intData("cannon-frames"),
       		Sprites::SkinSpritesData::single().intData("cannon-versions"),
       		m_theWorld->zoom(),
-      		m_backGnd_world,
+      		backGnd(),
       		200);
 
 		paysAttaquant->spritesCannons().hideAndRemoveFirst();
@@ -346,7 +346,7 @@ qreal rightRelativePos = (Sprites::SkinSpritesData::single().intData("width-betw
 	Sprites::SkinSpritesData::single().intData("infantry-frames"),
 	Sprites::SkinSpritesData::single().intData("infantry-versions"),
 	m_theWorld->zoom(),
-	m_backGnd_world,
+	backGnd(),
 	200);
 
 	paysDefenseur->spritesInfantry().hideAndRemoveFirst();
@@ -364,7 +364,7 @@ qreal rightRelativePos = (Sprites::SkinSpritesData::single().intData("width-betw
 		Sprites::SkinSpritesData::single().intData("cavalry-frames"),
 		Sprites::SkinSpritesData::single().intData("cavalry-versions"),
 		m_theWorld->zoom(),
-		m_backGnd_world,
+		backGnd(),
 		200);
 		
 		paysDefenseur->spritesCavalry().hideAndRemoveFirst();
@@ -379,7 +379,7 @@ qreal rightRelativePos = (Sprites::SkinSpritesData::single().intData("width-betw
 		Sprites::SkinSpritesData::single().intData("cannon-frames"),
 		Sprites::SkinSpritesData::single().intData("cannon-versions"),
 		m_theWorld->zoom(),
-		m_backGnd_world,
+		backGnd(),
 		200);
 
 		paysDefenseur->spritesCannons().hideAndRemoveFirst();
@@ -665,11 +665,11 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
             Sprites::SkinSpritesData::single().intData("cannon-frames"),
             Sprites::SkinSpritesData::single().intData("cannon-versions"),
             m_theWorld->zoom(),
-            m_backGnd_world,
+            backGnd(),
             200);
         if ((paysAttaquant-> pointFlag().x() <= paysDefenseur-> pointFlag().x())
         && !(
-        (qAbs(paysAttaquant-> pointFlag().x()-paysDefenseur-> pointFlag().x()) > (m_backGnd_world-> boundingRect().width() / 2))
+        (qAbs(paysAttaquant-> pointFlag().x()-paysDefenseur-> pointFlag().x()) > (backGnd()-> boundingRect().width() / 2))
             && (paysAttaquant->communicateWith(paysDefenseur))
         ))
         {
@@ -700,11 +700,11 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
           Sprites::SkinSpritesData::single().intData("cannon-frames"),
           Sprites::SkinSpritesData::single().intData("cannon-versions"),
           m_theWorld->zoom(),
-          m_backGnd_world,
+          backGnd(),
           200);
         if ((paysAttaquant-> pointFlag().x() <= paysDefenseur-> pointFlag().x())
         && !(
-        (qAbs(paysAttaquant-> pointFlag().x()-paysDefenseur-> pointFlag().x()) > (m_backGnd_world-> boundingRect().width() / 2))
+        (qAbs(paysAttaquant-> pointFlag().x()-paysDefenseur-> pointFlag().x()) > (backGnd()-> boundingRect().width() / 2))
             && (paysAttaquant->communicateWith(paysDefenseur))
         ))
         {

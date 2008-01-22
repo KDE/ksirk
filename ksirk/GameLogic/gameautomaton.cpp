@@ -348,13 +348,6 @@ GameAutomaton::GameState GameAutomaton::run()
   case ATTACK2:
     if  (event == "actionLButtonUp" || event == "actionRButtonUp") 
     {
-      /*if  (event == "actionRButtonUp" && m_game->attacked(point) > 0 && m_game->attacked(point) < 4) 
-      {
-         kDebug() << "Attack with zoom mode activated" << endl;
-
-         // init and display the arena view
-         game()->showArena();
-      }*/
       switch ( m_game->attacked(point) )
       {
         case 0:
@@ -364,6 +357,13 @@ GameAutomaton::GameState GameAutomaton::run()
         case 1:
           kDebug() << "handling attacked value; 1" << endl;
           m_currentPlayerPlayed = true;
+          if  (event == "actionRButtonUp") 
+          {
+            kDebug() << "Attack with zoom mode activated" << endl;
+
+            // init and display the arena view
+            game()->showArena();
+          }
           state(WAITDEFENSE);
         break;
         case 2:

@@ -24,6 +24,7 @@
 #include "KsirkGlobalDefinitions.h"
 #include "GameLogic/onu.h"
 #include "GameLogic/country.h"
+#include "GameLogic/gameautomaton.h"
 
 #include <stdlib.h>
 #include <qtimer.h>
@@ -33,6 +34,8 @@
 #include <kglobal.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>
+
+#include <vector>
 
 
 class KGameIO;
@@ -44,6 +47,7 @@ namespace GameLogic
 {
   class ONU;
   class Country;
+  class GameAutomaton;
 }
 
    /**
@@ -63,8 +67,9 @@ namespace GameLogic
       * @param mapH The height of the arena. Will be the height given in size hint.
       * @param sceneArena where sprites will be added.
       * @param onuObject onuObject for getting map and country informations
+      * @param automaton automaton for the construction of countries
       */
-      FightArena(QWidget* parent, unsigned int mapW, unsigned int mapH, QGraphicsScene* sceneArena, GameLogic::ONU* onuObject);
+      FightArena(QWidget* parent, unsigned int mapW, unsigned int mapH, QGraphicsScene* sceneArena, GameLogic::ONU* onuObject, GameLogic::GameAutomaton* automaton);
 
       /**
       * Destroy the frame : stops and deletes the timer
@@ -79,8 +84,20 @@ namespace GameLogic
 
       /**
       * Initializes the fight arena with the two country which fight each other
+      * @param countryA Country attacker
+      * @param countryD Country defender
       */
       void initFightArena (GameLogic::Country* countryA, GameLogic::Country* countryD);
+
+      /**
+        * Get the attacking arena country
+        */
+      inline GameLogic::Country* countryAttack () {return m_countryAttack;}
+
+      /**
+        * Get the defensing arena country
+        */
+      inline GameLogic::Country* countryDefense () {return m_countryDefense;}
 
       private:
       unsigned int m_mapW;

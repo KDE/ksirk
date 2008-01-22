@@ -765,12 +765,6 @@ private:
     */
   GameLogic::Country* m_firstCountry;
   GameLogic::Country* m_secondCountry;
-
-  /**
-   * The 2 countries involved in a fight that will be displayed in arena
-   */
-  GameLogic::Country *m_firstCountryArena;
-  GameLogic::Country *m_secondCountryArena;
   //@}
 
   /**
