@@ -19,6 +19,7 @@
 #ifndef KGAMEWIN_H
 #define KGAMEWIN_H
 
+#include "krightdialog.h"
 #include "KsirkGlobalDefinitions.h"
 #include "decoratedgameframe.h"
 #include "fightArena.h"
@@ -33,6 +34,7 @@
 #include <QPixmap>
 #include <QLabel>
 #include <QStackedWidget>
+#include <QGroupBox>
 
 // include files for KDE
 #include <ksharedconfig.h>
@@ -65,6 +67,7 @@ namespace Ksirk
   class DecoratedGameFrame;
   class FightArena;
   class AnimSpritesGroup;
+  class KRightDialog;
 
 namespace GameLogic
 {
@@ -528,6 +531,10 @@ public:
     * @return current widget
     */
   QGraphicsView* currentWidget();
+ /**
+    * Return the right dialog
+    */
+  KRightDialog * getRightDialog();
 
 protected:
 
@@ -687,6 +694,11 @@ private slots:
   void slotRemoveMessage();
 
 private:
+
+  QDockWidget * m_rightDock;
+
+  KRightDialog * m_rightDialog;
+
   GameLogic::GameAutomaton* m_automaton;
 
   /**

@@ -183,6 +183,7 @@ KGameWindow::~KGameWindow()
   delete m_scene_arena; m_scene_arena = 0;
   delete m_arena; m_arena = 0;
   delete m_audioPlayer;
+  delete m_rightDialog;
 }
 
 void KGameWindow::initActions()
@@ -246,7 +247,10 @@ void KGameWindow::initStatusBar()
 Country* KGameWindow::clickIn(const QPointF &pointf)
 {
 //   kDebug() << "KGameWindow::clickIn " << pointf << endl;
-
+  if(isMyState(GameLogic::GameAutomaton::INIT) || m_theWorld-> countryAt( pointf )==0)
+  {
+    m_rightDock->hide();
+  }
   return m_theWorld-> countryAt( pointf );
 }
 
@@ -452,6 +456,11 @@ void KGameWindow::newSkin(const QString& onuFileName)
   kDebug() <<"End new skin" << endl;
 }
 
+KRightDialog * KGameWindow::getRightDialog()
+{
+   return m_rightDialog;
+}
+
 void KGameWindow::initView()
 {
   QString iconFileName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Images/SoldatAGenoux1.png");
@@ -471,6 +480,18 @@ void KGameWindow::initView()
 
   m_scene_arena-> update();
   m_arena->setScene(m_scene_arena);
+
+  //ADD a dock widget on the right
+  m_rightDock = new QDockWidget();
+  m_rightDock->setAllowedAreas(Qt::RightDockWidgetArea);
+  m_rightDock->setFeatures(QDockWidget::NoDockWidgetFeatures);
+  m_rightDock->setFixedWidth(50);
+
+  m_rightDialog = new KRightDialog(m_rightDock,theWorld());
+  m_rightDock->setWidget(m_rightDialog);
+
+  m_rightDock->hide();
+  addDockWidget(Qt::RightDockWidgetArea, m_rightDock);
 
   showMap();
 

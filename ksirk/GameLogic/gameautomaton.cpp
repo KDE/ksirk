@@ -30,6 +30,7 @@
 #include "KMessageParts.h"
 #include "Dialogs/newGameDialogImpl.h"
 #include "Dialogs/kplayersetupdialog.h"
+#include "krightdialog.h";
 
 #include <qlayout.h>
 #include <qspinbox.h>
@@ -260,6 +261,10 @@ GameAutomaton::GameState GameAutomaton::run()
   if (event == "requestForAck")
   {
     kDebug() << "requestForAck" << endl;
+  }
+  if(event == "actionRButtonDown")
+  {
+     m_game->getRightDialog()->displayCountryDetails(&point);
   }
   if (event == "actionNewGame")
   {

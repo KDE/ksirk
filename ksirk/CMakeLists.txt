@@ -58,6 +58,7 @@ set(ksirk_SRCS
   ksirkConfigDialog.cpp
   MessageBubble.cpp
   fightArena.cpp
+  krightdialog.cpp
 )
 
 set(ksirk_UI
