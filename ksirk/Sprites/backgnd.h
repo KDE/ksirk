@@ -56,6 +56,8 @@ public:
   ~BackGnd();
 
   inline const GameLogic::ONU* onu() const {return m_theWorld;}
+
+  inline const bool bgIsArena() const {return m_bgIsArena;}
   
 protected:
   /**
@@ -68,6 +70,7 @@ protected:
 
 private:
   const GameLogic::ONU* m_theWorld;
+  bool m_bgIsArena;
 };
 }
 #endif //  BACKGND_H

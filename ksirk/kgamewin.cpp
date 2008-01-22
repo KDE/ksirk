@@ -178,11 +178,17 @@ KGameWindow::~KGameWindow()
   delete m_scene_world; m_scene_world = 0;
 //   if (m_barFlagButton) {delete m_barFlagButton; m_barFlagButton = 0;}
   delete m_frame; m_frame = 0;
+  kDebug() << "~1" << endl;
   delete m_backGnd_arena; m_backGnd_arena = 0;
+  kDebug() << "~2" << endl;
   delete m_scene_arena; m_scene_arena = 0;
+  kDebug() << "~3" << endl;
   delete m_arena; m_arena = 0;
+  kDebug() << "~4" << endl;
   delete m_audioPlayer;
+  kDebug() << "~5" << endl;
   delete m_rightDialog;
+  kDebug() << "~GameAutomaton end" << endl;
 }
 
 void KGameWindow::initActions()

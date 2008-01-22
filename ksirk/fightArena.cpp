@@ -67,8 +67,6 @@ namespace Ksirk
    
    FightArena::~FightArena()
    {
-     delete m_countryAttack;
-     delete m_countryDefense;
    }
    
    QSize FightArena::sizeHint() const

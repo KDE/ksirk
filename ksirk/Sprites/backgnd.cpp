@@ -33,7 +33,7 @@ namespace Ksirk
 using namespace GameLogic;
 
 BackGnd::BackGnd(QGraphicsScene *scene, const GameLogic::ONU* theWorld, bool arena) :
-    QGraphicsPixmapItem(0, scene), m_theWorld(theWorld)
+    QGraphicsPixmapItem(0, scene), m_theWorld(theWorld), m_bgIsArena(arena)
 {
   kDebug() << "BackGnd constructor" << endl;
 

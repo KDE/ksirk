@@ -528,7 +528,7 @@ void AnimSprite::setupTravel(
       exit(2);
   }
   
-  if ( (qAbs(srcPoint.x() - destPoint.x())) > ((backGnd-> boundingRect().width())/2) ) 
+  if ( (qAbs(srcPoint.x() - destPoint.x())) > ((backGnd-> boundingRect().width())/2) && !backGnd->bgIsArena()) 
   {
       // src is at the right of dest, approch dest by left
       if (srcPoint.x() > destPoint.x()) setApproachDestByLeft(true);
@@ -543,7 +543,7 @@ void AnimSprite::setupTravel(
       if (srcPoint.x() < destPoint.x()) setApproachDestByLeft(true);
   }
 
-  if ( ((qAbs(srcPoint.y() - destPoint.y())) > ((backGnd-> boundingRect().height())/2)) )
+  if ( ((qAbs(srcPoint.y() - destPoint.y())) > ((backGnd-> boundingRect().height())/2)) && !backGnd->bgIsArena())
   {
       // src is under the dest, approch dest by top
       if (srcPoint.y() > destPoint.y()) setApproachDestByTop(true);

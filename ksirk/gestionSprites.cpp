@@ -152,9 +152,16 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
 
   //  - attacker's flag point
   qreal pointFlagAttaquantX = paysAttaquant-> pointFlag().x()*      m_theWorld->zoom();
+
   //  - defender's flag point
-  qreal pointFlagDefenseurX = paysDefenseur-> pointFlag().x()*      m_theWorld->zoom();
-  
+  qreal pointFlagDefenseurX;
+  if (!backGnd()->bgIsArena()) {
+    pointFlagDefenseurX = paysDefenseur-> pointFlag().x()*      m_theWorld->zoom();
+  } else {
+    // in case of arena, the meet will be between the two countries
+    pointFlagDefenseurX = backGnd()-> boundingRect().width() / 2;
+  }
+
   //  - attacker's arrival point (resp. defender's) (left or right of the
   //    defender's flag point depending on the attacker's flag point position)
   qreal pointArriveeAttaquantX;
@@ -162,13 +169,16 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   qreal pointArriveeDefenseurX;
   qreal pointDepartAttaquantX;
   qreal pointDepartDefenseurX;
+  qreal pointDepartAttaquantY;
+  qreal pointDepartDefenseurY;
   qreal leftRelativePos;
 
   if (!paysAttaquant->spritesInfantry().isEmpty())
   {
   	// We must know
-		//  - attacker's departure point (pointnfantry)
+	//  - attacker's departure point (pointInfantry)
   	pointDepartAttaquantX = paysAttaquant-> pointInfantry().x()*      m_theWorld->zoom();
+  	pointDepartAttaquantY = paysAttaquant-> pointInfantry().y()*      m_theWorld->zoom();
   }
   else
   {
@@ -177,12 +187,14 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
 		// We must know
  		//  - attacker's departure point (pointCavalry)
   		pointDepartAttaquantX = paysAttaquant-> pointCavalry().x()*      m_theWorld->zoom();
+		pointDepartAttaquantY = paysAttaquant-> pointCavalry().y()*      m_theWorld->zoom();
 	}
 	else
 	{
 		// We must know
  		//  - attacker's departure point (pointCannon)
   		pointDepartAttaquantX = paysAttaquant-> pointCannon().x()*      m_theWorld->zoom();
+  		pointDepartAttaquantY = paysAttaquant-> pointCannon().y()*      m_theWorld->zoom();
 	}
   }
 
@@ -190,6 +202,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   {
   	//  - defender's departure point (pointInfantry)
   	pointDepartDefenseurX = paysDefenseur-> pointInfantry().x()*      m_theWorld->zoom();
+  	pointDepartDefenseurY = paysDefenseur-> pointInfantry().y()*      m_theWorld->zoom();
 	
   }
   else
@@ -198,15 +211,24 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   	{
   		//  - defender's departure point (pointCavalry)
   		pointDepartDefenseurX = paysDefenseur-> pointCavalry().x()*      m_theWorld->zoom();
+  		pointDepartDefenseurY = paysDefenseur-> pointCavalry().y()*      m_theWorld->zoom();
 	}
 	else
 	{
   		//  - defender's departure point (pointCannon)
   		pointDepartDefenseurX = paysDefenseur-> pointCannon().x()*      m_theWorld->zoom();
+  		pointDepartDefenseurY = paysDefenseur-> pointCannon().y()*      m_theWorld->zoom();
 	}
   }
 
-  pointArriveeY = (((paysDefenseur-> pointFlag().y() + Sprites::SkinSpritesData::single().intData("fighters-flag-y-diff")))* m_theWorld->zoom()) ;
+
+  // vertical meet point
+  if (!backGnd()->bgIsArena()) {
+    pointArriveeY = (((paysDefenseur-> pointFlag().y() + Sprites::SkinSpritesData::single().intData("fighters-flag-y-diff")))* m_theWorld->zoom()) ;
+  } else {
+    // in case of arena, the vertical meet will be as soon as it's possible
+    pointArriveeY = (pointDepartAttaquantY+pointDepartDefenseurY)/2;
+  }
   
   kDebug() << "2" << endl;
   if (!paysAttaquant->communicateWith(paysDefenseur))
@@ -240,7 +262,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   
 qreal rightRelativePos = (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("flag-width"))*m_theWorld->zoom();
 
-  if (!((qAbs(pointFlagAttaquantX-pointFlagDefenseurX) > (backGnd()-> boundingRect().width() / 2))))
+  if (!(qAbs(pointFlagAttaquantX-pointFlagDefenseurX) > (backGnd()-> boundingRect().width() / 2)) || backGnd()->bgIsArena())
   {
       if ( pointFlagAttaquantX <= pointFlagDefenseurX )
       {
