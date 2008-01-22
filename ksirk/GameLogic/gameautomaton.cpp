@@ -264,7 +264,7 @@ GameAutomaton::GameState GameAutomaton::run()
   }
   if(event == "actionRButtonDown")
   {
-     m_game->getRightDialog()->displayCountryDetails(&point);
+     if (m_game->theWorld()->countryAt(point)!=0) m_game->getRightDialog()->displayCountryDetails(&point);
   }
   if (event == "actionNewGame")
   {
