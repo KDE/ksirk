@@ -49,6 +49,9 @@ DecoratedGameFrame::DecoratedGameFrame(QWidget* parent,
   updateGeometry(); 
   setMouseTracking(true);
 
+  this->m_parent = parent;
+  initMenu ();
+
   // redirect the mouse move event to the main windows
   connect(this, SIGNAL(mouseMoveEventReceived(QMouseEvent *)), parent, SLOT(mouseMoveEvent(QMouseEvent *)));
 }
@@ -68,6 +71,45 @@ QSize DecoratedGameFrame::sizeHint() const
 {
 //   kDebug() << " " << m_mapW << "/" << m_mapH << endl;
   return QSize(m_mapW, m_mapH);
+}
+
+void DecoratedGameFrame::initMenu ()
+{
+    this->menu = new QMenu(this);
+    
+    //QAction* action = KStandardGameAction::quit(this, SLOT(close()), this);
+    //m_frame->addAction(action);
+
+    ArenaAction = new QAction(i18n("Arena"), this);
+    ArenaAction->setCheckable(true);
+    connect(ArenaAction, SIGNAL(triggered()), this, SLOT(arenaState()));
+    connect(this, SIGNAL(arenaStateSignal(bool)), this->m_parent, SLOT(slotArena(bool)));
+
+    QAction* Attack1Action = new QAction(i18n("Attack1"), this);
+    connect(Attack1Action, SIGNAL(triggered()), this->m_parent, SLOT(slotAttack1()));
+
+    QAction* Attack2Action = new QAction(i18n("Attack2"), this);
+    connect(Attack2Action, SIGNAL(triggered()), this->m_parent, SLOT(slotAttack2()));
+
+    QAction* Attack3Action = new QAction(i18n("Attack3"), this);
+    connect(Attack3Action, SIGNAL(triggered()), this->m_parent, SLOT(slotAttack3()));
+
+    QAction* QuitAction = new QAction(i18n("Quit Game"), this);
+    connect(QuitAction, SIGNAL(triggered()),this->m_parent, SLOT(close()));
+		
+    menu->addAction(ArenaAction);
+    menu->addSeparator();
+    menu->addAction(Attack1Action);
+    menu->addAction(Attack2Action);
+    menu->addAction(Attack3Action);
+    menu->addSeparator();
+    menu->addAction(QuitAction);
+}
+
+void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
+{
+    menuPoint = QCursor::pos();
+    menu->exec(menuPoint);
 }
 
 /**
@@ -102,6 +144,10 @@ void DecoratedGameFrame::slotMouseInput(KGameIO *input,QDataStream &stream,QMous
     else if (((QGraphicsSceneMouseEvent*)e)->button() == Qt::RightButton)
     {
       kDebug() << "\tRight" << endl;
+
+      
+
+
       stream << QString("actionRButtonDown");
     }
     else
@@ -145,6 +191,26 @@ void DecoratedGameFrame::slotMouseInput(KGameIO *input,QDataStream &stream,QMous
   kDebug() << "Mouse input done... eatevent=true" << endl;
 }
 
+void DecoratedGameFrame::arenaState()
+{
+	if (ArenaAction->isChecked())
+	{
+		ArenaAction->setChecked(true);
+		emit(arenaStateSignal(true));
+	}
+	else
+	{
+		ArenaAction->setChecked(false);
+		emit(arenaStateSignal(false));
+	}
+
+	menu->exec(menuPoint);
+}
+
+QMenu * DecoratedGameFrame::getContextMenu()
+{
+	return this->menu;
+}
 }
 
 #include "decoratedgameframe.moc"

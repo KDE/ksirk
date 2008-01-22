@@ -327,7 +327,7 @@ GameAutomaton::GameState GameAutomaton::run()
     }
     break;
   case ATTACK:
-    if  (event == "actionLButtonDown" || event == "actionRButtonDown") 
+    if  (event == "actionLButtonDown") 
     {
       if  ( m_game->attacker(point) ) 
         state(ATTACK2);
@@ -346,7 +346,7 @@ GameAutomaton::GameState GameAutomaton::run()
     }
     break;
   case ATTACK2:
-    if  (event == "actionLButtonUp" || event == "actionRButtonUp") 
+    if  (event == "actionLButtonUp") 
     {
       switch ( m_game->attacked(point) )
       {
@@ -372,20 +372,19 @@ GameAutomaton::GameState GameAutomaton::run()
           kDebug() << "calling defense(1)" << endl;
           m_game-> defense(1);
           kDebug() << "setting state to FIGHT_BRING" << endl;
-          if  (event == "actionRButtonUp") 
-          {
-            kDebug() << "Attack with zoom mode activated" << endl;
 
+          if  (m_game->isArena())
+          {
+            kDebug() << "Attack with arena" << endl;
             // init and display the arena view
             game()->showArena();
           }
           state(FIGHT_BRING);
         break;
         case 3:
-          if  (event == "actionRButtonUp") 
+	  if  (m_game->isArena())
           {
-            kDebug() << "Attack with zoom mode activated" << endl;
-
+            kDebug() << "Attack with arena" << endl;
             // init and display the arena view
             game()->showArena();
           }
@@ -805,6 +804,23 @@ GameAutomaton::GameState GameAutomaton::run()
       sendMessage(buffer2,SecondCountry);
       state(SHIFT1);
     }
+    else if (event == "actionLButtonDown")
+    {
+	m_drag = true;
+	state(WAIT);
+    }
+    else if (event == "actionLButtonUp")
+    {
+	if (m_drag)
+    	{
+		m_game->frame()->getContextMenu()->exec(QCursor::pos());
+   	}
+	else
+	{
+        	m_drag = false;
+		state(WAIT);
+	}
+    }
     else
     {
       //        if (!event.isEmpty())
@@ -812,6 +828,9 @@ GameAutomaton::GameState GameAutomaton::run()
     }
     // other case : state dosn't change
     break;
+  /*case WAIT_INPUT:
+    
+    break;*/
   case WAIT_PLAYERS:
     break;
   case GAME_OVER:

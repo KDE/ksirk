@@ -536,6 +536,9 @@ public:
     */
   KRightDialog * getRightDialog();
 
+  /** Arena state */
+  bool isArena();
+
 protected:
 
   /**
@@ -640,6 +643,7 @@ public slots:
   void slotCancel();
   void slotDumpGameInformations();
   void slotFinishMoves();
+  void slotArena(bool);
   //@}
 
   /**
@@ -721,6 +725,8 @@ private:
     */
   int NKD, NKA;
   //@}
+  
+  bool ARENA;
 
   /**
     * the countries, continents, etc.

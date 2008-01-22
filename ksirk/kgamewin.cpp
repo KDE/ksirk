@@ -84,6 +84,7 @@ using namespace GameLogic;
 KGameWindow::KGameWindow(QWidget* parent) :
   KXmlGuiWindow(parent), m_automaton(new GameAutomaton()),
   NKD(0), NKA(0),
+  ARENA(0),
   m_theWorld(0), m_scene_world(0), m_backGnd_world(0),
   m_animFighters(new AnimSpritesGroup(this,SLOT(slotMovingFightersArrived(AnimSpritesGroup*)))),
   m_nbMovedArmies(0),
@@ -373,14 +374,15 @@ void KGameWindow::newSkin(const QString& onuFileName)
 
   // create the world map view
   if (m_frame == 0)
-    m_frame = new DecoratedGameFrame(this, m_theWorld->width(), m_theWorld->height());
+  {  
+	m_frame = new DecoratedGameFrame(this, m_theWorld->width(), m_theWorld->height());
+  }
+
   m_frame->setMaximumWidth(m_theWorld->width());
   m_frame->setMaximumHeight(m_theWorld->height());
   m_frame->setCacheMode( QGraphicsView::CacheBackground );
 
   // create the arena view
-  
-
   if (m_scene_world != 0)
   {
     delete m_scene_arena;
@@ -2642,6 +2644,11 @@ BackGnd* KGameWindow::backGnd() {
   } else {
     return backGndWorld();
   }
+}
+
+bool KGameWindow::isArena()
+{
+	return this->ARENA;
 }
 
 } // closing namespace Ksirk

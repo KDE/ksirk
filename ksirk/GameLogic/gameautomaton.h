@@ -482,6 +482,8 @@ private:
 
   std::set<int> m_choosedToRecycle;
 
+  bool m_drag;
+
 };
 
 QDataStream& operator>>(QDataStream& s, GameAutomaton::GameState& state);

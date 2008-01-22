@@ -273,6 +273,20 @@ void KGameWindow::slotKey3()
   } 
 }
 
+void KGameWindow::slotArena(bool isCheck)
+{
+	if (isCheck)
+	{
+		ARENA = true;
+		kDebug() << "*******Arena On******" << ARENA << endl;
+	}
+	else
+	{
+		ARENA = false;
+		kDebug() << "*******Arena Off******" << ARENA << endl;
+	}
+}
+
 void KGameWindow::slotNewGame()
 {
 //   kDebug() << "Slot new game: posting event actionNewGame" << endl;

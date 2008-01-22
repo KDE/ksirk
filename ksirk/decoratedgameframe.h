@@ -27,6 +27,7 @@
 #include <qtimer.h>
 #include <QMouseEvent>
 #include <QGraphicsView>
+#include <QMenu>
 
 class KGameIO;
 
@@ -62,6 +63,21 @@ public:
     */
   virtual QSize sizeHint() const;
 
+  /**
+    * initialisation of the contextual menu
+    */
+  void initMenu ();
+
+  /**
+    * Redefinition of the contextMenuEvent function
+    */
+  void contextMenuEvent( QContextMenuEvent * );
+
+  /**
+    * Getter to the context menu
+    */
+  QMenu * getContextMenu();
+
 public slots:
   /** 
     * Slot connected in the game/document object to catch and
@@ -75,6 +91,8 @@ public slots:
     */
   void slotMouseInput(KGameIO *input,QDataStream &stream,
                       QMouseEvent *mouse, bool *eatevent);
+  
+  void arenaState();
 
 signals:
   /**
@@ -83,6 +101,8 @@ signals:
     * @param event is the event received
     */
   void mouseMoveEventReceived(QMouseEvent * event);
+
+  void arenaStateSignal(bool);
   
 protected:
 
@@ -92,7 +112,10 @@ protected:
 private:
   unsigned int m_mapW;
   unsigned int m_mapH;
-
+  QWidget* m_parent;
+  QMenu* menu;
+  QAction* ArenaAction;
+  QPoint menuPoint;
 };
 
 }
