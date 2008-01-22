@@ -317,21 +317,9 @@ public:
   void secondCountryAt(const QPointF& point);
 
   /**
-    * Returns a pointer to the country that is currently attacked
-    * @return the attacked country ; 0 if none
-    */
-  const GameLogic::Country* getAttackedCountry() const;
-
-  /**
     * @brief setups window for recycling
     */
   void initRecycling();
-
-  /**
-    * Returns a pointer to the currently attacking  country
-    * @return the attacking country ; 0 if none
-    */
-  const GameLogic::Country* getAttackingCountry() const;
 
   /** Test if there is some sprites animated for a fight */
   bool haveAnimFighters() const;
@@ -839,7 +827,7 @@ private:
   GameLogic::Country* m_mouseLocalisation;
 
 private: // Private methods
-  void attack(GameLogic::Country& attacker, GameLogic::Country& defender, unsigned int nb);
+  /*void attack(GameLogic::Country& attacker, GameLogic::Country& defender, unsigned int nb);*/
   void moveArmies(GameLogic::Country& src, GameLogic::Country& dest, unsigned int nb);
   void saveXml(std::ostream& xmlStream);
   void loadDices();

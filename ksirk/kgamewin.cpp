@@ -1475,6 +1475,7 @@ GameLogic::GameAutomaton::GameState KGameWindow::getState() const
   return m_automaton->state();
 }
 
+/*
 void KGameWindow::attack(Country& attacker, Country& defender, unsigned int nb)
 {
   clearGameActionsToolbar();
@@ -1530,7 +1531,7 @@ void KGameWindow::attack(Country& attacker, Country& defender, unsigned int nb)
   else
   {
   }
-}
+}*/
 
 void KGameWindow::moveArmies(Country& src, Country& dest, unsigned int nb)
 {

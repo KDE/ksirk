@@ -357,13 +357,6 @@ GameAutomaton::GameState GameAutomaton::run()
         case 1:
           kDebug() << "handling attacked value; 1" << endl;
           m_currentPlayerPlayed = true;
-          if  (event == "actionRButtonUp") 
-          {
-            kDebug() << "Attack with zoom mode activated" << endl;
-
-            // init and display the arena view
-            game()->showArena();
-          }
           state(WAITDEFENSE);
         break;
         case 2:
@@ -372,22 +365,9 @@ GameAutomaton::GameState GameAutomaton::run()
           kDebug() << "calling defense(1)" << endl;
           m_game-> defense(1);
           kDebug() << "setting state to FIGHT_BRING" << endl;
-
-          if  (m_game->isArena())
-          {
-            kDebug() << "Attack with arena" << endl;
-            // init and display the arena view
-            game()->showArena();
-          }
           state(FIGHT_BRING);
         break;
         case 3:
-	  if  (m_game->isArena())
-          {
-            kDebug() << "Attack with arena" << endl;
-            // init and display the arena view
-            game()->showArena();
-          }
           kDebug() << "handling attacked value; 3" << endl;
           // AI action: nothing to do.
         break;
@@ -1829,6 +1809,12 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     m_game->secondCountry(m_game->theWorld()->countryNamed(countryName));
     break;
   case InitCombatMovement:
+    if  (m_game->isArena())
+    {
+      kDebug() << "Attack with arena" << endl;
+      // init and display the arena view
+      game()->showArena();
+    }
     m_game->initCombatMovement(m_game->firstCountry(), m_game->secondCountry());
     break;
   case AnimCombat:

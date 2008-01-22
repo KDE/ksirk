@@ -64,29 +64,29 @@ using namespace GameLogic;
  * Prepares the sprites to be moved : removes the nb necessary sprites from
  * source, creates the moving sprites and gives them their destination, etc
  */
-bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *m_firstCountry, Country *m_secondCountry)
+bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *firstCountry, Country *secondCountry)
 {
   kDebug() << "KGameWindow::initArmiesMovement -> " << nbABouger  << endl;
   KMessageParts messageParts;
 
-  if (m_firstCountry-> nbArmies() <= nbABouger)
+  if (firstCountry-> nbArmies() <= nbABouger)
   {
     messageParts << I18N_NOOP("Cannot move %1 armies from %2 to %3") << QString::number(nbABouger)
-      << m_firstCountry->name() << m_secondCountry->name();
+      << firstCountry->name() << secondCountry->name();
     broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
     return false;
   }
   else
   {
-    messageParts << I18N_NOOP("Moving %1 armies from %2 to %3") << QString::number(nbABouger) << m_firstCountry->name() << m_secondCountry->name();
+    messageParts << I18N_NOOP("Moving %1 armies from %2 to %3") << QString::number(nbABouger) << firstCountry->name() << secondCountry->name();
     broadcastChangeItem(messageParts, ID_STATUS_MSG2);
   }
 
   AnimSpritesGroup* newGroup = new AnimSpritesGroup(this,SLOT(slotMovingArmiesArrived(AnimSpritesGroup*)));
   m_animSpritesGroups.push_back(newGroup);
   AnimSprite* sprite;
-  if ((m_firstCountry-> nbArmies() > 10) && (nbABouger == 10)
-          && (nbABouger < m_firstCountry-> nbArmies()))
+  if ((firstCountry-> nbArmies() > 10) && (nbABouger == 10)
+          && (nbABouger < firstCountry-> nbArmies()))
   {
     sprite = new CannonSprite( 
                               Sprites::SkinSpritesData::single().strData("cannon-id"), 
@@ -96,10 +96,10 @@ bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *m_firstCou
                               Sprites::SkinSpritesData::single().intData("cannon-versions"),
                               m_theWorld->zoom(),
                               backGnd(),                              200);
-    m_firstCountry-> decrNbArmies(10);
+    firstCountry-> decrNbArmies(10);
   }
-  else if ((m_firstCountry-> nbArmies() > 5) && (nbABouger == 5)
-          && (nbABouger < m_firstCountry-> nbArmies()))
+  else if ((firstCountry-> nbArmies() > 5) && (nbABouger == 5)
+          && (nbABouger < firstCountry-> nbArmies()))
   {
     sprite = new CavalrySprite( Sprites::
         SkinSpritesData::single().strData("cavalry-id"), 
@@ -108,10 +108,10 @@ bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *m_firstCou
                                 Sprites::SkinSpritesData::single().intData("cavalry-frames"), 
                                 Sprites::SkinSpritesData::single().intData("cavalry-versions"),       m_theWorld->zoom(),
                                 backGnd(),                                200);
-    m_firstCountry-> decrNbArmies(5);
+    firstCountry-> decrNbArmies(5);
   }
-  else if ((m_firstCountry-> nbArmies() > 1) && (nbABouger == 1)
-          && (nbABouger < m_firstCountry-> nbArmies()))
+  else if ((firstCountry-> nbArmies() > 1) && (nbABouger == 1)
+          && (nbABouger < firstCountry-> nbArmies()))
   {
     sprite = new InfantrySprite( 
         Sprites::SkinSpritesData::single().strData("infantry-id"),
@@ -121,21 +121,21 @@ bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *m_firstCou
                                 Sprites::SkinSpritesData::single().intData("infantry-versions"),       m_theWorld->zoom(),
                                 backGnd(),
                                 200);
-    m_firstCountry->  decrNbArmies();
+    firstCountry->  decrNbArmies();
   }
   else 
   {
     messageParts << I18N_NOOP("Cannot move %1 armies from %2 to %3") 
       << QString::number(nbABouger) 
-      << m_firstCountry->name() 
-      << m_secondCountry->name();
+      << firstCountry->name() 
+      << secondCountry->name();
     broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
     return false;
   }
   connect(sprite,SIGNAL(atDestination(AnimSprite*)),this,SLOT(slotMovingArmyArrived(AnimSprite*)));
-  sprite-> setupTravel(m_firstCountry, m_secondCountry);
+  sprite->setupTravel(firstCountry, secondCountry);
   newGroup->addSprite(sprite);
-  m_firstCountry-> createArmiesSprites();
+  firstCountry-> createArmiesSprites();
   sprite->setAnimated();
 //   kDebug() << "initArmiesMovement returns true" << endl;
   return true;
@@ -768,25 +768,6 @@ void KGameWindow::reconnectMouse()
   if ( ! connect(m_frame, SIGNAL(signalRightButtonDown(const QPoint &)),
                     this, SLOT(slotRightButtonDown(const QPoint &))))
   kError() << "cannot connect slotRightButtonDown !" << endl;*/
-}
-
-
-/**
-returns a pointer to the country that is currently attacked
-@return the attacked country ; 0 if none
-*/
-const Country* KGameWindow::getAttackedCountry() const
-{
-    return m_secondCountry;
-}
-
-/**
-returns a pointer to the currently attacking  country
-@return the attacking country ; 0 if none
-*/
-const Country* KGameWindow::getAttackingCountry() const
-{
-    return m_firstCountry;
 }
 
 bool KGameWindow::haveAnimFighters() const

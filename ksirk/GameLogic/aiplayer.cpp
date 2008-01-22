@@ -510,7 +510,7 @@ void AIPlayer::chooseInvasionAction()
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   kDebug() << QString("AIPlayer::chooseInvasionAction") << endl;
-  int nbArmiesToMove = Dice::roll(m_game->game()-> getAttackingCountry()-> nbArmies()) - 1;
+  int nbArmiesToMove = Dice::roll(m_game->game()-> firstCountry()-> nbArmies()) - 1;
   QPointF point;
   while (nbArmiesToMove >= 10) 
   {
@@ -555,7 +555,7 @@ void AIPlayer::chooseDefenseAction()
 //         m_game->slotDefense1();
       break;
       case 2: ; case 3:
-        if (m_game-> game()-> getAttackedCountry()-> nbArmies() > 1)
+        if (m_game-> game()-> secondCountry()-> nbArmies() > 1)
           stream << QString("slotDefense2") << point;
 //       m_game->slotDefense2();
         else
