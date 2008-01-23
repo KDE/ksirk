@@ -142,6 +142,7 @@ public:
     INTERLUDE, // Waiting state after initial distribution of armies at game beginning
     NEWARMIES, 
     WAIT, // Basic state waiting a player action
+    WAIT1,
     WAIT_RECYCLING, 
     ATTACK,
     ATTACK2, 
@@ -481,9 +482,6 @@ private:
   quint32 m_nbPlayers;
 
   std::set<int> m_choosedToRecycle;
-
-  bool m_drag;
-
 };
 
 QDataStream& operator>>(QDataStream& s, GameAutomaton::GameState& state);

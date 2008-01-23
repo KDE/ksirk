@@ -95,6 +95,7 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
     kDebug() << Player::name() << " waiting to receive ack " << m_waitedAck << endl;
     return;
   }
+  QPointF point;
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   QByteArray buffer2;
@@ -116,7 +117,30 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
         break;
       case GameLogic::GameAutomaton::WAIT :
 //         kDebug() << "AIPlayer::actionChoice() WAIT " << name() << endl;
-        chooseAttackMoveArmiesOrNextPlayer();
+	chooseAttackMoveArmiesOrNextPlayer();
+	//if (m_src != 0 && m_dest != 0)
+        //{
+		//stream << QString("actionLButtonDown") << m_src->centralPoint();
+		//aiPlayerIO()->sendInput(stream,true);
+        	
+	//}
+        break;
+      case GameLogic::GameAutomaton::WAIT1:
+		/*if (m_dest != 0)
+        	{
+          		stream << QString("actionLButtonUp") << m_dest->centralPoint();
+          		m_src = 0;
+          		m_dest = 0;
+          		aiPlayerIO()->sendInput(stream,true);
+			//m_game->state(GameAutomaton::ATTACK2);
+        	}*/
+
+  
+    /*stream << QString("actionAttack2") << point;
+    
+      kError() << "The attacker tries to attack with a number of armies different of 1, 2 or 3: that's impossible!" << endl;
+      //exit();*/
+		
         break;
       case GameLogic::GameAutomaton::INIT: 
         break;
@@ -125,22 +149,22 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
         placeArmiesAction();
         break;
       case GameLogic::GameAutomaton::ATTACK2 :
-        if (m_dest != 0)
+        /*if (m_dest != 0)
         {
-          stream << QString("actionLButtonUp") << m_dest->centralPoint();
+          //stream << QString("actionLButtonUp") << m_dest->centralPoint();
           m_src = 0;
           m_dest = 0;
-          aiPlayerIO()->sendInput(stream,true);
-        }
+          //aiPlayerIO()->sendInput(stream,true);
+        }*/
         break;
       case GameLogic::GameAutomaton::SHIFT1 :
         if (m_src != 0 && m_dest != 0)
         {
-          stream << QString("actionLButtonDown") << m_src->centralPoint();
+          /*stream << QString("actionLButtonDown") << m_src->centralPoint();
           aiPlayerIO()->sendInput(stream,true);
           stream2 << QString("actionLButtonUp") << m_dest->centralPoint();
   //         m_toMove = 0;
-          aiPlayerIO()->sendInput(stream2,true);
+          aiPlayerIO()->sendInput(stream2,true);*/
         }
         break;
       case GameLogic::GameAutomaton::SHIFT2 :
@@ -335,6 +359,15 @@ bool AIPlayer::attackAction()
   }
   m_src = srcDest.first;
   m_dest = srcDest.second;
+
+stream << QString("actionLButtonDown") << m_src->centralPoint();
+aiPlayerIO()->sendInput(stream,true);
+
+QByteArray buffer2;
+QDataStream stream2(&buffer2, QIODevice::WriteOnly);
+stream2 << QString("actionLButtonUp") << m_dest->centralPoint();
+aiPlayerIO()->sendInput(stream2,true);
+
   uint srcNbArmies = m_src->nbArmies();
   kDebug() << Player::name()  << " : ATTACK" << endl;
   kDebug() << "    " << Player::name()  << " : attacks from "  << m_src-> name() 
@@ -368,20 +401,21 @@ bool AIPlayer::attackAction()
       kError() << "The attacker tries to attack with a number of armies different of 1, 2 or 3: that's impossible!" << endl;
       exit();      
   }
-  aiPlayerIO()->sendInput(stream,true);
-  QByteArray buffer2;
+  //aiPlayerIO()->sendInput(stream,true);
+  /*QByteArray buffer2;
   QDataStream stream2(&buffer2, QIODevice::WriteOnly);
   stream2 << QString("actionLButtonDown") << m_src->centralPoint();
-  aiPlayerIO()->sendInput(stream2,true);
+  aiPlayerIO()->sendInput(stream2,true);*/
   kDebug() << "AIPlayer " << Player::name()  << " : attackAction : "  << m_src-> name() << " " << m_dest-> name()
     << " " << nbAttack << endl;
+  aiPlayerIO()->sendInput(stream,true);
   return true;
 }
 
 /**
   * makes all what is necessary to prepare and start the moving of armies
   */
-bool AIPlayer::moveArmiesAction() 
+bool AIPlayer::moveArmiesAction()
 {
   kDebug() << "AIPlayer::moveArmiesAction" << endl;
   std::vector<Country*> srcList = countries() ;

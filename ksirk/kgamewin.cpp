@@ -2630,7 +2630,7 @@ void KGameWindow::secondCountry(GameLogic::Country* country)
 GameLogic::Country* KGameWindow::firstCountry()
 {
   if (m_currentDisplayedWidget == arenaType) {
-    return m_arena->countryAttack();
+     return m_arena->countryAttack();
   }
   return m_firstCountry;
 }

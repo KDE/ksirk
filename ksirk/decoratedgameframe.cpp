@@ -174,10 +174,6 @@ void DecoratedGameFrame::slotMouseInput(KGameIO *input,QDataStream &stream,QMous
     else if (((QGraphicsSceneMouseEvent*)e)->button() == Qt::RightButton)
     {
       kDebug() << "\tRight" << endl;
-
-      
-
-
       stream << QString("actionRButtonDown");
     }
     else

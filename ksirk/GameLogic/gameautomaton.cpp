@@ -307,6 +307,7 @@ GameAutomaton::GameState GameAutomaton::run()
       return m_state;
     }
   }
+
   switch (m_state)
   {
   case INIT:
@@ -755,7 +756,7 @@ GameAutomaton::GameState GameAutomaton::run()
         sendMessage(buffer,NextPlayerNormal);
       }
     }
-    else if (event == "actionAttack1")
+    /*else if (event == "actionAttack1")
     {
       m_game->attack(1);
       state(ATTACK);
@@ -783,35 +784,11 @@ GameAutomaton::GameState GameAutomaton::run()
       stream2 << QString("");
       sendMessage(buffer2,SecondCountry);
       state(SHIFT1);
-    }
+    }*/
     else if (event == "actionLButtonDown")
     {
 	m_game->firstCountryAt(point);
-	m_drag = true;
-	state(WAIT);
-    }
-    else if (event == "actionLButtonUp")
-    {
-	m_game->secondCountryAt(point);
-
-	if (m_drag && m_game->isMoveValid(point))
-    	{
-		m_game->frame()->getContextMenu()->exec(QCursor::pos());
-   	}
-	else
-	{
-		if (m_drag && m_game->isFightValid(point))
-		{
-			m_game->frame()->getContextMenu()->exec(QCursor::pos());
-		}
-		else
-		{
-        		//TODO correct the "it's up to you" message
-			m_drag = false;
-			m_game-> cancelAction();
-			state(WAIT);
-		}
-	}
+	state(WAIT1);
     }
     else
     {
@@ -820,6 +797,65 @@ GameAutomaton::GameState GameAutomaton::run()
     }
     // other case : state dosn't change
     break;
+  case WAIT1:
+    if (event == "actionAttack1")
+    {
+      kDebug() << "################ attaque 1 ################" << endl;
+      m_game->attack(1);
+      state(ATTACK);
+    }
+    else if (event == "actionAttack2")
+    {
+      kDebug() << "################ attaque 2 ################" << endl;
+      m_game->attack(2);
+      state(ATTACK);
+    }
+    else if (event == "actionAttack3")
+    {
+      kDebug() << "################ attaque 3 ################" << endl;
+      m_game->attack(3);
+      state(ATTACK);
+    }
+    else if (event == "actionMove")
+    {
+//       kDebug() << "actionMove handling" << endl;
+      m_game->displayCancelButton();
+      QByteArray buffer;
+      QDataStream stream(&buffer, QIODevice::WriteOnly);
+      stream << QString("");
+      sendMessage(buffer,FirstCountry);
+      QByteArray buffer2;
+      QDataStream stream2(&buffer2, QIODevice::WriteOnly);
+      stream2 << QString("");
+      sendMessage(buffer2,SecondCountry);
+      state(SHIFT1);
+    }
+    else if (event == "actionLButtonUp")
+    {
+      kDebug() << "################ bouton up ################" << endl;
+	m_game->secondCountryAt(point);
+
+	if (!currentPlayer()-> isAI())
+	{
+		if (m_game->isMoveValid(point))
+		{
+			m_game->frame()->getContextMenu()->exec(QCursor::pos());
+		}
+		else
+		{
+			if (m_game->isFightValid(point))
+			{
+				m_game->frame()->getContextMenu()->exec(QCursor::pos());
+			}
+			else
+			{
+				m_game-> cancelAction();
+				state(WAIT);
+			}
+		}
+	}
+    }
+   break;
   /*case WAIT_INPUT:
     
     break;*/
