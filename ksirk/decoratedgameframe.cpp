@@ -106,6 +106,36 @@ void DecoratedGameFrame::initMenu ()
     menu->addAction(QuitAction);
 }
 
+/*void DecoratedGameFrame::initCombatMenu ()
+{
+    QAction* Attack1Action = new QAction(i18n("Attack1"), this);
+    connect(Attack1Action, SIGNAL(triggered()), this->m_parent, SLOT(slotAttack1()));
+
+    QAction* Attack2Action = new QAction(i18n("Attack2"), this);
+    connect(Attack2Action, SIGNAL(triggered()), this->m_parent, SLOT(slotAttack2()));
+
+    QAction* Attack3Action = new QAction(i18n("Attack3"), this);
+    connect(Attack3Action, SIGNAL(triggered()), this->m_parent, SLOT(slotAttack3()));
+
+    QAction* QuitAction = new QAction(i18n("Quit Game"), this);
+    connect(QuitAction, SIGNAL(triggered()),this->m_parent, SLOT(close()));
+		
+    menu->addAction(Attack1Action);
+    menu->addAction(Attack2Action);
+    menu->addAction(Attack3Action);
+    menu->addSeparator();
+    menu->addAction(QuitAction);
+}
+
+void DecoratedGameFrame::initMoveMenu ()
+{
+    QAction* QuitAction = new QAction(i18n("Quit Game"), this);
+    connect(QuitAction, SIGNAL(triggered()),this->m_parent, SLOT(close()));
+		
+    menu->addSeparator();
+    menu->addAction(QuitAction);
+}*/
+
 void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
 {
     menuPoint = QCursor::pos();

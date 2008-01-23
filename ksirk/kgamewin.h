@@ -370,6 +370,12 @@ public:
     * @return true if the move is valid; false otherwise. 
     */
   bool isMoveValid(const QPointF& point);
+
+   /**
+    * Tests if the fight finishing at the given point is valid.
+    * @return true if the fight is valid; false otherwise. 
+    */
+  bool isFightValid(const QPointF& point);
   
   /**
     * @brief Accessor to the world

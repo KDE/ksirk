@@ -327,11 +327,11 @@ GameAutomaton::GameState GameAutomaton::run()
     }
     break;
   case ATTACK:
-    if  (event == "actionLButtonDown") 
+    /*if  (event == "actionLButtonDown") 
     {
-      if  ( m_game->attacker(point) ) 
+      if  ( m_game->attacker(point) )*/ 
         state(ATTACK2);
-      else
+      /*else
         state(WAIT);
     }
     else if (event == "actionCancel")
@@ -343,11 +343,11 @@ GameAutomaton::GameState GameAutomaton::run()
     {
 //        if (!event.isEmpty())
 //          kDebug() << "Unhandled event " << event << " during handling of " << stateName() << endl;
-    }
+    }*/
     break;
   case ATTACK2:
-    if  (event == "actionLButtonUp") 
-    {
+    //if  (event == "actionLButtonUp") 
+    //{
       switch ( m_game->attacked(point) )
       {
         case 0:
@@ -376,12 +376,12 @@ GameAutomaton::GameState GameAutomaton::run()
           exit(1);
       }
       kDebug() << "after switch" << endl;
-    }
+    /*}
     else
     {
       //        if (!event.isEmpty())
 //          kError() << "Unhandled event " << event << " during handling of " << stateName() endl;
-    }
+    }*/
     kDebug() << "handling of ATTACK2 finished !" << endl;
   break;
   case EXPLOSION_ANIMATE:
@@ -786,19 +786,31 @@ GameAutomaton::GameState GameAutomaton::run()
     }
     else if (event == "actionLButtonDown")
     {
+	m_game->firstCountryAt(point);
 	m_drag = true;
 	state(WAIT);
     }
     else if (event == "actionLButtonUp")
     {
-	if (m_drag)
+	m_game->secondCountryAt(point);
+
+	if (m_drag && m_game->isMoveValid(point))
     	{
 		m_game->frame()->getContextMenu()->exec(QCursor::pos());
    	}
 	else
 	{
-        	m_drag = false;
-		state(WAIT);
+		if (m_drag && m_game->isFightValid(point))
+		{
+			m_game->frame()->getContextMenu()->exec(QCursor::pos());
+		}
+		else
+		{
+        		//TODO correct the "it's up to you" message
+			m_drag = false;
+			m_game-> cancelAction();
+			state(WAIT);
+		}
 	}
     }
     else
