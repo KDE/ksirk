@@ -40,18 +40,9 @@ BackGnd::BackGnd(QGraphicsScene *scene, const GameLogic::ONU* theWorld, bool are
   QPixmap pix;
   if (arena == false) {
     pix = theWorld->map();
-  } else {
-    // search the background image for the arena
-    KConfig config(m_theWorld->getConfigFileName());
-    KConfigGroup onugroup = config.group("onu");
-    QString skin = onugroup.readEntry("skinpath");
-    QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/arena.svg");
-    // create the background image
-    pix.load(imageFileName);
-    pix = pix.scaled(m_theWorld->width(),m_theWorld->height(),Qt::KeepAspectRatio);
+    // put the image
+    setPixmap(pix);
   }
-  // and finaly put the image
-  setPixmap(pix);
 
   setZValue(1);
   show();

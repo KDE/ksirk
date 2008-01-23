@@ -25,11 +25,13 @@
 #include "GameLogic/onu.h"
 #include "GameLogic/country.h"
 #include "GameLogic/gameautomaton.h"
+#include "Sprites/backgnd.h"
 
 #include <stdlib.h>
 #include <qtimer.h>
 #include <QMouseEvent>
 #include <QGraphicsView>
+#include <QPixmap>
 #include <kstandarddirs.h>
 #include <kglobal.h>
 #include <kconfig.h>
@@ -86,8 +88,9 @@ namespace GameLogic
       * Initializes the fight arena with the two country which fight each other
       * @param countryA Country attacker
       * @param countryD Country defender
+      * @param bg backgroud where to paint the elements
       */
-      void initFightArena (GameLogic::Country* countryA, GameLogic::Country* countryD);
+      void initFightArena (GameLogic::Country* countryA, GameLogic::Country* countryD, BackGnd* bg);
 
       /**
         * Get the attacking arena country
@@ -107,6 +110,8 @@ namespace GameLogic
       GameLogic::Country* m_countryDefense;
       QGraphicsScene* m_scene;
       GameLogic::ONU* m_onu;
+      GameLogic::GameAutomaton* m_automaton;
+      QPixmap* m_bgImage;
    };
    
 };

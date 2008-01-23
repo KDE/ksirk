@@ -178,17 +178,11 @@ KGameWindow::~KGameWindow()
   delete m_scene_world; m_scene_world = 0;
 //   if (m_barFlagButton) {delete m_barFlagButton; m_barFlagButton = 0;}
   delete m_frame; m_frame = 0;
-  kDebug() << "~1" << endl;
   delete m_backGnd_arena; m_backGnd_arena = 0;
-  kDebug() << "~2" << endl;
   delete m_scene_arena; m_scene_arena = 0;
-  kDebug() << "~3" << endl;
   delete m_arena; m_arena = 0;
-  kDebug() << "~4" << endl;
   delete m_audioPlayer;
-  kDebug() << "~5" << endl;
   delete m_rightDialog;
-  kDebug() << "~GameAutomaton end" << endl;
 }
 
 void KGameWindow::initActions()
@@ -424,9 +418,9 @@ void KGameWindow::newSkin(const QString& onuFileName)
 //   m_scene_world->setDoubleBuffering(true);
   kDebug() << "Before initView" << endl;
   initView();
+  m_backGnd_arena = new BackGnd(m_scene_arena, m_theWorld, true); //Creation of the arena background
   m_backGnd_world = new BackGnd(m_scene_world, m_theWorld); //Creation of the background
   kDebug() <<"After m_backGnd new="<< m_backGnd_world << endl;
-  m_backGnd_arena = new BackGnd(m_scene_arena, m_theWorld, true); //Creation of the arena background
   m_frame->setFocus();
 
   kDebug() <<"End new skin" << endl;
@@ -2650,7 +2644,7 @@ void KGameWindow::showArena()
   if (m_currentDisplayedWidget != arenaType) {
     // synchronise the arena countrys
     m_currentDisplayedWidget = arenaType;
-    m_arena->initFightArena(m_firstCountry,m_secondCountry);
+    m_arena->initFightArena(m_firstCountry,m_secondCountry,m_backGnd_arena);
   }
   dynamic_cast <QStackedWidget*>(centralWidget())->setCurrentIndex(1);
   m_currentDisplayedWidget = arenaType;

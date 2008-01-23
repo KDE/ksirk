@@ -213,6 +213,11 @@ public:
   const QPointF& pointInfantry() const;
 
   /**
+    * Set the anchor point.
+    */
+  void anchorPoint(const QPointF pt);
+
+  /**
     * Set the point guaranteed to be inside this country territory and around 
     * which are drawn the fighters.
     */

@@ -27,7 +27,8 @@ namespace Ksirk
 
    FightArena::FightArena(QWidget* parent, unsigned int mapW, unsigned int mapH, QGraphicsScene* sceneArena,ONU* onuObject, GameAutomaton* automaton):
    m_scene(sceneArena),
-   m_onu(onuObject)
+   m_onu(onuObject),
+   m_automaton(automaton)
    {
       setVerticalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
       setHorizontalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
@@ -39,22 +40,22 @@ namespace Ksirk
       // create the first country of the arena
       m_countryAttack = new Country(automaton,
                                       "",
-                                      QPointF(m_onu->width()/4,m_onu->height()/2),
-                                      QPointF(m_onu->width()/4,m_onu->height()/2),
-                                      QPointF(m_onu->width()/7,m_onu->height()/7),
-                                      QPointF(4*m_onu->width()/16,m_onu->height()/2),
-                                      QPointF(5*m_onu->width()/16,3*m_onu->height()/5),
-                                      QPointF(5*m_onu->width()/16,4*m_onu->height()/5),
+                                      QPointF(0,0),
+                                      QPointF(0,0),
+                                      QPointF(0,0),
+                                      QPointF(0,0),
+                                      QPointF(0,0),
+                                      QPointF(0,0),
                                       0);
       // create the second country of the arena
       m_countryDefense = new Country(automaton,
                                       "",
-                                      QPointF(3*m_onu->width()/4,m_onu->height()/2),
-                                      QPointF(3*m_onu->width()/4,m_onu->height()/2),
-                                      QPointF(6*m_onu->width()/7,m_onu->height()/7),
-                                      QPointF(12*m_onu->width()/16,m_onu->height()/2),
-                                      QPointF(11*m_onu->width()/16,3*m_onu->height()/5),
-                                      QPointF(11*m_onu->width()/16,4*m_onu->height()/5),
+                                      QPointF(0,0),
+                                      QPointF(0,0),
+                                      QPointF(0,0),
+                                      QPointF(0,0),
+                                      QPointF(0,0),
+                                      QPointF(0,0),
                                       0);
       // make the two arena countrys neighbours
       vector<Country*> arenaAttackNeighbours;
@@ -63,6 +64,15 @@ namespace Ksirk
       vector<Country*> arenaDefenseNeighbours;
       arenaDefenseNeighbours.insert(arenaDefenseNeighbours.begin(), m_countryAttack);
       m_countryDefense->neighbours(arenaDefenseNeighbours);
+
+
+      // search the background image for the arena
+      KConfig config(onuObject->getConfigFileName());
+      KConfigGroup onugroup = config.group("onu");
+      QString skin = onugroup.readEntry("skinpath");
+      QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/arena.svg");
+      // create the background image
+      m_bgImage = new QPixmap(imageFileName);
    }
    
    FightArena::~FightArena()
@@ -79,8 +89,40 @@ namespace Ksirk
      * @param countryA attacker country
      * @param countryD defender country
      */
-   void FightArena::initFightArena (Country* countryA, Country* countryD)
+   void FightArena::initFightArena (Country* countryA, Country* countryD, BackGnd* bg)
    {
+     // new size
+     int width = m_automaton->game()->centralWidget()->width();
+     int height = m_automaton->game()->centralWidget()->height();
+     if (m_automaton->game()->getRightDialog()->isVisible()) {
+       int width = width - m_automaton->game()->getRightDialog()->width();
+     }
+
+     // resize the background image
+     QPixmap pix;
+     pix = m_bgImage->scaled(width,height);
+     // and put the image
+     bg->setPixmap(pix);
+
+     m_scene->setSceneRect ( 0, 0, width, height);
+     setMaximumSize(width, height);
+
+     // re-place the anchor point of the two countries
+     m_countryAttack->anchorPoint(QPointF(width/4,height/2));
+     m_countryAttack->centralPoint(QPointF(width/4,height/2));
+     m_countryAttack->pointFlag(QPointF(width/7,height/7));
+     m_countryAttack->pointCannon(QPointF(4*width/16,height/2));
+     m_countryAttack->pointCavalry(QPointF(5*width/16,3*height/5));
+     m_countryAttack->pointInfantry(QPointF(5*width/16,4*height/5));
+
+     m_countryDefense->anchorPoint(QPointF(3*width/4,height/2));
+     m_countryDefense->centralPoint(QPointF(3*width/4,height/2));
+     m_countryDefense->pointFlag(QPointF(6*width/7,height/7));
+     m_countryDefense->pointCannon(QPointF(12*width/16,height/2));
+     m_countryDefense->pointCavalry(QPointF(11*width/16,4*height/5));
+     m_countryDefense->pointInfantry(QPointF(11*width/16,3*height/5));
+
+     // create the arena countries with the originals
      m_countryAttack->copyForArena(countryA);
      m_countryDefense->copyForArena(countryD);
    }

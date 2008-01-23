@@ -568,9 +568,13 @@ void AnimSprite::setupTravel(
 void AnimSprite::arrival()
 {
   kDebug()<< "at " << destinationPoint << endl;
-  if (x() < getDestination()-> pointFlag().x())
-        setLookRight();
-  else setLookLeft();
+  if (!backGnd->bgIsArena())
+  {
+    if (x() < getDestination()-> pointFlag().x())
+      setLookRight();
+    else 
+      setLookLeft();
+  }
   repaint();
 }
 

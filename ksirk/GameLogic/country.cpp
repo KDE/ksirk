@@ -312,6 +312,11 @@ const QPointF& Country::pointInfantry() const
   return (m_pointInfantry);
 }
 
+void Country::anchorPoint(const QPointF pt)
+{
+  m_anchorPoint = pt;
+}
+
 void Country::centralPoint(const QPointF pt)
 {
   m_centralPoint = pt;
