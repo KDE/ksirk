@@ -104,6 +104,7 @@ void Country::createArmiesSprites()
 {
   BackGnd* bg = m_automaton->game()->backGnd();
   kDebug() << "zoom=" << bg->onu()->zoom() << endl;
+  kDebug() << "arena=" << m_automaton->game()->isArena() << endl;
   
   unsigned int armies = nbArmies();
   clearAllSprites();

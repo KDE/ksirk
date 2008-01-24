@@ -403,7 +403,7 @@ GameAutomaton::GameState GameAutomaton::run()
     }
 
     // Re-display the world view
-    game()->showMap();
+    m_game->showMap();
   break;
   case INTERLUDE:
     if  (event == "playersLooped")
@@ -1865,7 +1865,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     {
       kDebug() << "Attack with arena" << endl;
       // init and display the arena view
-      game()->showArena();
+      m_game->showArena();
     }
     m_game->initCombatMovement(m_game->firstCountry(), m_game->secondCountry());
     break;

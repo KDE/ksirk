@@ -53,6 +53,7 @@ ONU::ONU(GameAutomaton* automaton,
   nationalities(),
   m_continents(),
   m_zoom(1.0),
+  m_zoomArena(1.0),
   m_renderer(0)
 {
   kDebug() << "ONU constructor: " << m_configFileName << endl;
@@ -557,12 +558,13 @@ void ONU::applyZoomFactor(qreal zoomFactor)
   }
 }
 
+
 double ONU::zoom() const
 {
   if (m_automaton->game()->currentWidgetType() == KGameWindow::mapType) {
     return m_zoom;
   }
-  return 1;
+  return m_zoomArena;
 }
 
 

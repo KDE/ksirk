@@ -85,7 +85,9 @@ KGameWindow::KGameWindow(QWidget* parent) :
   KXmlGuiWindow(parent), m_automaton(new GameAutomaton()),
   NKD(0), NKA(0),
   ARENA(0),
-  m_theWorld(0), m_scene_world(0), m_backGnd_world(0),
+  m_theWorld(0),
+  m_scene_world(0), m_scene_arena(0),
+  m_backGnd_world(0), m_backGnd_arena(0),
   m_animFighters(new AnimSpritesGroup(this,SLOT(slotMovingFightersArrived(AnimSpritesGroup*)))),
   m_nbMovedArmies(0),
   m_firstCountry(0), m_secondCountry(0),
@@ -372,26 +374,47 @@ void KGameWindow::newSkin(const QString& onuFileName)
 
   loadDices();
 
-  // create the world map view
-  if (m_frame == 0)
-  {  
-	m_frame = new DecoratedGameFrame(this, m_theWorld->width(), m_theWorld->height(), m_automaton);
+  //Creation of the arena background
+  if (m_backGnd_arena != 0) {
+    kDebug() << "Before m_backGnd_arena delete" << endl;
+    delete m_backGnd_arena;
+  }
+  //Creation of the background
+  if (m_backGnd_world != 0) {
+    kDebug() << "Before m_backGnd_world delete" << endl;
+    delete m_backGnd_world;
   }
 
-  m_frame->setMaximumWidth(m_theWorld->width());
-  m_frame->setMaximumHeight(m_theWorld->height());
-  m_frame->setCacheMode( QGraphicsView::CacheBackground );
-
   // create the arena view
-  if (m_scene_world != 0)
+  if (m_scene_arena != 0)
   {
+    kDebug() << "Before m_scene_arena delete" << endl;
     delete m_scene_arena;
   }
   m_scene_arena = new QGraphicsScene(0, 0, m_theWorld->width(), m_theWorld->height(),this);
 
+  if (m_scene_world != 0)
+  {
+    kDebug() << "Before m_scene_world delete" << endl;
+    delete m_scene_world;
+  }
+  m_scene_world = new QGraphicsScene(0, 0, m_theWorld->width(), m_theWorld->height(),this);
+
+  // create the world map view
+  if (m_frame != 0)
+  {  
+	delete m_frame;
+  }
+  m_frame = new DecoratedGameFrame(this, m_theWorld->width(), m_theWorld->height(), m_automaton);
+  m_frame->setMaximumWidth(m_theWorld->width());
+  m_frame->setMaximumHeight(m_theWorld->height());
+  m_frame->setCacheMode( QGraphicsView::CacheBackground );
+
+
   // create the arena if it doesn't exist
-  if (m_arena == 0)
-    m_arena = new FightArena(this, m_theWorld->width(), m_theWorld->height(), m_scene_arena, m_theWorld, m_automaton);
+  if (m_arena != 0)
+    delete m_arena;
+  m_arena = new FightArena(this, m_theWorld->width(), m_theWorld->height(), m_scene_arena, m_theWorld, m_automaton);
   m_arena->setMaximumWidth(m_theWorld->width());
   m_arena->setMaximumHeight(m_theWorld->height());
   m_arena->setCacheMode( QGraphicsView::CacheBackground );
@@ -409,17 +432,13 @@ void KGameWindow::newSkin(const QString& onuFileName)
   m_centralWidget->setCurrentIndex(0);
   m_currentDisplayedWidget = mapType;
 
-  if (m_scene_world != 0)
-  {
-    delete m_scene_world;
-  }
-  m_scene_world = new QGraphicsScene(0, 0, m_theWorld->width(), m_theWorld->height(),this);
-    
+  m_backGnd_arena = new BackGnd(m_scene_arena, m_theWorld, true);
+
+  m_backGnd_world = new BackGnd(m_scene_world, m_theWorld);
+
 //   m_scene_world->setDoubleBuffering(true);
   kDebug() << "Before initView" << endl;
   initView();
-  m_backGnd_arena = new BackGnd(m_scene_arena, m_theWorld, true); //Creation of the arena background
-  m_backGnd_world = new BackGnd(m_scene_world, m_theWorld); //Creation of the background
   kDebug() <<"After m_backGnd new="<< m_backGnd_world << endl;
   m_frame->setFocus();
 
@@ -2654,7 +2673,6 @@ void KGameWindow::showArena()
     m_arena->initFightArena(m_firstCountry,m_secondCountry,m_backGnd_arena);
   }
   dynamic_cast <QStackedWidget*>(centralWidget())->setCurrentIndex(1);
-  m_currentDisplayedWidget = arenaType;
 }
 
 
@@ -2665,7 +2683,7 @@ void KGameWindow::showMap()
 }
 
 
-int KGameWindow::currentWidgetType()
+KGameWindow::widgetType KGameWindow::currentWidgetType()
 {
   return m_currentDisplayedWidget;
 }

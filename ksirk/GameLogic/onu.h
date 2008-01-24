@@ -188,6 +188,8 @@ public:
 
   inline const QImage& mask() const {return countriesMask;}
 
+  inline void setZoomArena(double newZoom) {m_zoomArena = newZoom;}
+
 private:
   /**
     * All data that have to be stored about the font to display countries names
@@ -277,6 +279,11 @@ private:
     * Zoom factor
     */
   double m_zoom;
+  
+  /** 
+    * Zoom arena factor
+    */
+  double m_zoomArena;
 
   /**
     * This SVG renderer stores the SVG file of the map, renders it at the

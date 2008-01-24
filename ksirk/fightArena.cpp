@@ -104,23 +104,30 @@ namespace Ksirk
      // and put the image
      bg->setPixmap(pix);
 
+     // resize the widget
      m_scene->setSceneRect ( 0, 0, width, height);
      setMaximumSize(width, height);
 
-     // re-place the anchor point of the two countries
-     m_countryAttack->anchorPoint(QPointF(width/4,height/2));
-     m_countryAttack->centralPoint(QPointF(width/4,height/2));
-     m_countryAttack->pointFlag(QPointF(width/7,height/7));
-     m_countryAttack->pointCannon(QPointF(4*width/16,height/2));
-     m_countryAttack->pointCavalry(QPointF(5*width/16,3*height/5));
-     m_countryAttack->pointInfantry(QPointF(5*width/16,4*height/5));
+     // new zoom
+     double newZ = height/280;
+     m_onu->setZoomArena(newZ);
 
-     m_countryDefense->anchorPoint(QPointF(3*width/4,height/2));
-     m_countryDefense->centralPoint(QPointF(3*width/4,height/2));
-     m_countryDefense->pointFlag(QPointF(6*width/7,height/7));
-     m_countryDefense->pointCannon(QPointF(12*width/16,height/2));
-     m_countryDefense->pointCavalry(QPointF(11*width/16,4*height/5));
-     m_countryDefense->pointInfantry(QPointF(11*width/16,3*height/5));
+  kDebug() << "$$$$$$$$$$$$$$ fightArena Zoom : " << m_onu->zoom() << endl;
+
+     // re-place the anchor point of the two countries
+     m_countryAttack->anchorPoint(QPointF((width/4)/newZ,(height/2)/newZ));
+     m_countryAttack->centralPoint(QPointF((width/4)/newZ,(height/2)/newZ));
+     m_countryAttack->pointFlag(QPointF((width/7)/newZ,(height/7)/newZ));
+     m_countryAttack->pointCannon(QPointF((4*width/16)/newZ,(height/2)/newZ));
+     m_countryAttack->pointCavalry(QPointF((5*width/16)/newZ,(3*height/5)/newZ));
+     m_countryAttack->pointInfantry(QPointF((5*width/16)/newZ,(4*height/5)/newZ));
+
+     m_countryDefense->anchorPoint(QPointF((3*width/4)/newZ,(height/2)/newZ));
+     m_countryDefense->centralPoint(QPointF((3*width/4)/newZ,(height/2)/newZ));
+     m_countryDefense->pointFlag(QPointF((6*width/7)/newZ,(height/7)/newZ));
+     m_countryDefense->pointCannon(QPointF((12*width/16)/newZ,(height/2)/newZ));
+     m_countryDefense->pointCavalry(QPointF((11*width/16)/newZ,(4*height/5)/newZ));
+     m_countryDefense->pointInfantry(QPointF((11*width/16)/newZ,(3*height/5)/newZ));
 
      // create the arena countries with the originals
      m_countryAttack->copyForArena(countryA);

@@ -43,7 +43,7 @@
 #include <KShortcut>
 
 #include <vector>
-// 
+
 // #include <kdialogbase.h>
 
 class QAction;
@@ -518,7 +518,7 @@ public:
     * Give type of the central widget currently displayed.
     * @return current widget type
     */
-  int currentWidgetType();
+  widgetType currentWidgetType();
 
   /**
     * Give the central widget currently displayed.
@@ -702,7 +702,7 @@ private:
   /**
     * State that say the widget that is currently displayed between the map and the arena.
     */
-  int m_currentDisplayedWidget;
+  widgetType m_currentDisplayedWidget;
 
   /**
    * The widget initialy docked at bottom where is displayed the events history
