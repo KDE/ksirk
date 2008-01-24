@@ -311,10 +311,10 @@ public:
   unsigned int attacked(const QPointF& point);
 
   /** Sets the first country in a fight to be the one at the given point. */
-  void firstCountryAt(const QPointF& point);
+  bool firstCountryAt(const QPointF& point);
 
   /** Sets the second country in a fight to be the one at the given point. */
-  void secondCountryAt(const QPointF& point);
+  bool secondCountryAt(const QPointF& point);
 
   /**
     * @brief setups window for recycling

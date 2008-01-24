@@ -159,6 +159,7 @@ protected: // Private attributes
   unsigned int m_toMove;
     
   bool m_hasVoted;
+  bool m_actionWaitingStart;
 private: // Private methods
   /**
     * chooses wether to defend with one or two armies. Always chooses the maximum possible

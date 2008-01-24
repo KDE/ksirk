@@ -59,6 +59,7 @@ const char* GameAutomaton::GameStateNames[] = {
     "INTERLUDE",
     "NEWARMIES",
     "WAIT",
+    "WAIT1",
     "WAIT_RECYCLING",
     "ATTACK",
     "ATTACK2",
@@ -240,6 +241,7 @@ GameAutomaton::GameState GameAutomaton::run()
     QTimer::singleShot(200, this, SLOT(run()));
     return m_state;
   }
+
       
   activateNeededAIPlayers();
 
@@ -787,8 +789,8 @@ GameAutomaton::GameState GameAutomaton::run()
     }*/
     else if (event == "actionLButtonDown")
     {
-	m_game->firstCountryAt(point);
-	state(WAIT1);
+	if (m_game->firstCountryAt(point))
+	  state(WAIT1);
     }
     else
     {
@@ -800,19 +802,16 @@ GameAutomaton::GameState GameAutomaton::run()
   case WAIT1:
     if (event == "actionAttack1")
     {
-      kDebug() << "################ attaque 1 ################" << endl;
       m_game->attack(1);
       state(ATTACK);
     }
     else if (event == "actionAttack2")
     {
-      kDebug() << "################ attaque 2 ################" << endl;
       m_game->attack(2);
       state(ATTACK);
     }
     else if (event == "actionAttack3")
     {
-      kDebug() << "################ attaque 3 ################" << endl;
       m_game->attack(3);
       state(ATTACK);
     }
@@ -832,7 +831,6 @@ GameAutomaton::GameState GameAutomaton::run()
     }
     else if (event == "actionLButtonUp")
     {
-      kDebug() << "################ bouton up ################" << endl;
 	m_game->secondCountryAt(point);
 
 	if (!currentPlayer()-> isAI())
@@ -854,6 +852,11 @@ GameAutomaton::GameState GameAutomaton::run()
 			}
 		}
 	}
+    }
+    else if (event == "actionLButtonDown")
+    {
+	m_game-> cancelAction();
+	state(WAIT);
     }
    break;
   /*case WAIT_INPUT:

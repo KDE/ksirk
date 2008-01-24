@@ -66,7 +66,8 @@ AIPlayer :: AIPlayer(
   stopMe(true),
   m_src(0), m_dest(0),
   m_toMove(std::numeric_limits< unsigned int>::max()),
-  m_hasVoted(false)
+  m_hasVoted(false),
+  m_actionWaitingStart(false)
 {
 //   kDebug() << "AIPlayer constructor" << endl;
 }
@@ -100,7 +101,7 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   QByteArray buffer2;
   QDataStream stream2(&buffer2, QIODevice::WriteOnly);
-  if ( (m_game-> currentPlayer() == this) || state == GameLogic::GameAutomaton::WAITDEFENSE
+  if ( (m_game-> currentPlayer() == this) || (state == GameLogic::GameAutomaton::WAITDEFENSE && (m_game-> currentPlayer() != this))
        ||  state == GameLogic::GameAutomaton::WAIT_RECYCLING)
   {
     kDebug() << name()  << " : choosing my action" << endl;
@@ -117,7 +118,8 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
         break;
       case GameLogic::GameAutomaton::WAIT :
 //         kDebug() << "AIPlayer::actionChoice() WAIT " << name() << endl;
-	chooseAttackMoveArmiesOrNextPlayer();
+	if (!m_actionWaitingStart)
+          chooseAttackMoveArmiesOrNextPlayer();
 	//if (m_src != 0 && m_dest != 0)
         //{
 		//stream << QString("actionLButtonDown") << m_src->centralPoint();
@@ -126,6 +128,7 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
 	//}
         break;
       case GameLogic::GameAutomaton::WAIT1:
+	m_actionWaitingStart = false;
 		/*if (m_dest != 0)
         	{
           		stream << QString("actionLButtonUp") << m_dest->centralPoint();
@@ -179,6 +182,8 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
       default :;
 //         kDebug() << "AIPlayer::actionChoice() OTHER STATE:" << state << " "  << name() << endl;
     }
+    if (m_game-> currentPlayer() != this)
+      m_actionWaitingStart = false;
   }
 //    kDebug() << "OUT AIPlayer::actionChoice()" << endl;
 }
@@ -192,6 +197,7 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
 void AIPlayer::chooseAttackMoveArmiesOrNextPlayer()
 {
 //     kDebug() << "AIPlayer::chooseAttackMoveArmiesOrNextPlayer() " << endl;
+  m_actionWaitingStart = true;
   if ( m_game->game()->haveMovingArmies())
   {
     return;
@@ -348,8 +354,6 @@ void AIPlayer::stop()
 bool AIPlayer::attackAction() 
 {
 //   kDebug() << "AIPlayer::attackAction" << endl;
-  QByteArray buffer;
-  QDataStream stream(&buffer, QIODevice::WriteOnly);
   std::pair<const Country* , const Country* > srcDest = chooseBelligerant();
   if ( (srcDest.first == 0) || (srcDest.second == 0) )
   {
@@ -360,13 +364,15 @@ bool AIPlayer::attackAction()
   m_src = srcDest.first;
   m_dest = srcDest.second;
 
-stream << QString("actionLButtonDown") << m_src->centralPoint();
-aiPlayerIO()->sendInput(stream,true);
+  QByteArray buffer;
+  QDataStream stream(&buffer, QIODevice::WriteOnly);
+  stream << QString("actionLButtonDown") << m_src->centralPoint();
+  aiPlayerIO()->sendInput(stream,true);
 
-QByteArray buffer2;
-QDataStream stream2(&buffer2, QIODevice::WriteOnly);
-stream2 << QString("actionLButtonUp") << m_dest->centralPoint();
-aiPlayerIO()->sendInput(stream2,true);
+  QByteArray buffer2;
+  QDataStream stream2(&buffer2, QIODevice::WriteOnly);
+  stream2 << QString("actionLButtonUp") << m_dest->centralPoint();
+  aiPlayerIO()->sendInput(stream2,true);
 
   uint srcNbArmies = m_src->nbArmies();
   kDebug() << Player::name()  << " : ATTACK" << endl;
@@ -385,30 +391,32 @@ aiPlayerIO()->sendInput(stream2,true);
   if (srcNbArmies >= 4) {nbAttack = 3;}
   m_nbAttack = nbAttack;
   kDebug() << "    " << Player::name()  << " : attacks with " << nbAttack << " armies." << endl;
+
   QPointF point;
+  QByteArray buffer3;
+  QDataStream stream3(&buffer3, QIODevice::WriteOnly);
   switch (nbAttack)
   {
     case 1: 
-    stream << QString("actionAttack1") << point;
+    stream3 << QString("actionAttack1") << point;
     break;
     case 2: 
-    stream << QString("actionAttack2") << point;
+    stream3 << QString("actionAttack2") << point;
     break;
     case 3: 
-    stream << QString("actionAttack3") << point;
+    stream3 << QString("actionAttack3") << point;
     break;
     default:
       kError() << "The attacker tries to attack with a number of armies different of 1, 2 or 3: that's impossible!" << endl;
-      exit();      
+      exit();
   }
-  //aiPlayerIO()->sendInput(stream,true);
+  aiPlayerIO()->sendInput(stream3,true);
   /*QByteArray buffer2;
   QDataStream stream2(&buffer2, QIODevice::WriteOnly);
   stream2 << QString("actionLButtonDown") << m_src->centralPoint();
   aiPlayerIO()->sendInput(stream2,true);*/
   kDebug() << "AIPlayer " << Player::name()  << " : attackAction : "  << m_src-> name() << " " << m_dest-> name()
     << " " << nbAttack << endl;
-  aiPlayerIO()->sendInput(stream,true);
   return true;
 }
 

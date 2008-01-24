@@ -1578,29 +1578,26 @@ bool KGameWindow::isMoveValid(const QPointF& point)
   Country* secondCountry = clickIn(point); 
   if  ( ( m_firstCountry == 0 ) || ( secondCountry == 0 ) )
   {
-    messageParts << I18N_NOOP("There is no country here!");
+    //messageParts << I18N_NOOP("There is no country here!");
   }
   else if  ( m_firstCountry->owner() != currentPlayer() )
   {
-    messageParts << I18N_NOOP("You are not the owner of the first country: %1 !")
-            << m_firstCountry->name();
+    //messageParts << I18N_NOOP("You are not the owner of the first country: %1 !") << m_firstCountry->name();
   }
   else if ( secondCountry->owner() != currentPlayer() )
   {
-  messageParts << I18N_NOOP("You are not the owner of the second country: %1 !")
-            << secondCountry->name();
+    //messageParts << I18N_NOOP("You are not the owner of the second country: %1 !") << secondCountry->name();
   }
   else if (m_firstCountry == secondCountry)
   {
-    messageParts << I18N_NOOP("You are trying to move armies from %1 to itself !")
-                << m_firstCountry->name();
+    //messageParts << I18N_NOOP("You are trying to move armies from %1 to itself !") << m_firstCountry->name();
   }
   else if (!m_firstCountry->communicateWith(secondCountry))
   {
-    messageParts 
+    /*messageParts 
       << I18N_NOOP("%1 is not a neighbour of %2 !") 
       << secondCountry-> name() 
-      << m_firstCountry-> name();
+      << m_firstCountry-> name();*/
   }
   else 
   {
@@ -1629,8 +1626,11 @@ bool KGameWindow::isFightValid(const QPointF& point)
   }
   else if ( secondCountry->owner() == currentPlayer() )
   {
-  messageParts << I18N_NOOP("You are the owner of the second country: %1 !")
-            << secondCountry->name();
+    //messageParts << I18N_NOOP("You are the owner of the second country: %1 !") << secondCountry->name();
+  }
+  else if (m_firstCountry == secondCountry)
+  {
+    //messageParts << I18N_NOOP("You are trying to move armies from %1 to itself !") << m_firstCountry->name();
   }
   else if (!m_firstCountry->communicateWith(secondCountry))
   {
@@ -1768,7 +1768,7 @@ bool KGameWindow::attacker(const QPointF& point)
 unsigned int KGameWindow::attacked(const QPointF& point)
 {
   kDebug() << endl;
-//  if (currentPlayer()-> isAI()) return 3;
+  //if (currentPlayer()-> isAI()) return 3;
         
   unsigned int res = 0;
   //Country* secondCountry = clickIn(point);
@@ -1808,8 +1808,7 @@ unsigned int KGameWindow::attacked(const QPointF& point)
     messageParts << I18N_NOOP("%1 ! You are not the owner of %2!") << currentPlayer()-> name() << m_firstCountry-> name();
     displayNormalGameButtons();
   }
-  else if ((m_secondCountry-> nbArmies() > 1)
-      && (currentPlayer()-> getNbAttack() >= 2))
+  else if (m_secondCountry-> nbArmies() - currentPlayer()-> getNbAttack() >= 1)
   {
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
@@ -1847,7 +1846,7 @@ unsigned int KGameWindow::attacked(const QPointF& point)
     }
     m_automaton->sendMessage(buffer,SecondCountry);
     messageParts
-      << I18N_NOOP("%1, you defend %2 with its unique army.") 
+      << I18N_NOOP("%1, you have to keep one army to defend %2.") 
       << m_secondCountry->owner()-> name()
       << m_secondCountry-> name();
     res = 2;
@@ -1858,18 +1857,24 @@ unsigned int KGameWindow::attacked(const QPointF& point)
   return res;
 }
 
-void KGameWindow::firstCountryAt(const QPointF& point)
+bool KGameWindow::firstCountryAt(const QPointF& point)
 {
-  if (clickIn(point))
+  Country* c = clickIn(point);
+  if (c)
   {
-    QByteArray buffer;
-    QDataStream stream(&buffer, QIODevice::WriteOnly);
-    stream << clickIn(point)->name();
-    m_automaton->sendMessage(buffer,FirstCountry);
+    if (c-> owner() == currentPlayer())
+    {
+      QByteArray buffer;
+      QDataStream stream(&buffer, QIODevice::WriteOnly);
+      stream << c->name();
+      m_automaton->sendMessage(buffer,FirstCountry);
+      return true;
+    }
   }
+  return false;
 }
 
-void KGameWindow::secondCountryAt(const QPointF& point)
+bool KGameWindow::secondCountryAt(const QPointF& point)
 {
   if (clickIn(point))
   {
@@ -1877,7 +1882,9 @@ void KGameWindow::secondCountryAt(const QPointF& point)
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     stream << clickIn(point)->name();
     m_automaton->sendMessage(buffer,SecondCountry);
+    return true;
   }
+  return false;
 }
 
 bool KGameWindow::playerPutsArmy(const QPointF& point, bool removable)
@@ -2134,10 +2141,10 @@ void KGameWindow::attack(unsigned int nb)
   messageParts << I18N_NOOP("Attack with %1 armies : Designate the belligerants") 
     << QString::number(nb);
   broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
-  if(KsirkSettings::helpEnabled())
+  /*if(KsirkSettings::helpEnabled())
   {
   showMessage(i18n("To attack, press the mouse button in the attacking country<br/>and then <b>drag and drop</b> on its neighbour your want to attack."), 5);
-  }
+  }*/
 }
 
 void KGameWindow::defense(unsigned int nb)
