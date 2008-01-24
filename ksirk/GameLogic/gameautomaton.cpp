@@ -843,6 +843,7 @@ GameAutomaton::GameState GameAutomaton::run()
 		{
 			if (m_game->isFightValid(point))
 			{
+				m_game->frame()->setMenuPoint(QCursor::pos());
 				m_game->frame()->getAttackContextMenu()->exec(QCursor::pos());
 			}
 			else

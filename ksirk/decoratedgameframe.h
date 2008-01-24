@@ -82,6 +82,8 @@ public:
   QMenu * getAttackContextMenu();
   QMenu * getMoveContextMenu();
 
+  void setMenuPoint(QPoint);
+
 public slots:
   /** 
     * Slot connected in the game/document object to catch and

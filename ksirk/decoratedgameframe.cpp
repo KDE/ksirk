@@ -33,36 +33,7 @@
 #include <kdebug.h>
 #include <kgame/kgameio.h>
 #include <kgame/kplayer.h>
-
-
-
-#include <kiconloader.h>
-#include <kmessagebox.h>
-#include <kfiledialog.h>
-#include <klocale.h>
-#include <kconfig.h>
-#include <kstandardgameaction.h>
-#include <kstandardaction.h>
-#include <kactioncollection.h>
-#include <kstandarddirs.h>
-#include <kmenubar.h>
-#include <kdebug.h>
-#include <ktextedit.h>
-#include <phonon/mediaobject.h>
-#include <KPushButton>
-#include <kchatdialog.h>
-#include <kgame/kgamechat.h>
-#include <kgamepopupitem.h>
-#include <kglobal.h>
-#include <KStatusBar>
-#include <KToolBar>
 #include <KAction>
-#include <KSvgRenderer>
-
-
-
-
-
 
 namespace Ksirk
 {
@@ -319,6 +290,11 @@ QMenu * DecoratedGameFrame::getAttackContextMenu()
 QMenu * DecoratedGameFrame::getMoveContextMenu()
 {
 	return this->moveMenu;
+}
+
+void DecoratedGameFrame::setMenuPoint(QPoint menuPoint)
+{
+	this->menuPoint = menuPoint;
 }
 
 }
