@@ -27,10 +27,42 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QScrollBar>
 
+#include <kstandardgameaction.h>
+#include <kstandardaction.h>
 #include <klocale.h>
 #include <kdebug.h>
 #include <kgame/kgameio.h>
 #include <kgame/kplayer.h>
+
+
+
+#include <kiconloader.h>
+#include <kmessagebox.h>
+#include <kfiledialog.h>
+#include <klocale.h>
+#include <kconfig.h>
+#include <kstandardgameaction.h>
+#include <kstandardaction.h>
+#include <kactioncollection.h>
+#include <kstandarddirs.h>
+#include <kmenubar.h>
+#include <kdebug.h>
+#include <ktextedit.h>
+#include <phonon/mediaobject.h>
+#include <KPushButton>
+#include <kchatdialog.h>
+#include <kgame/kgamechat.h>
+#include <kgamepopupitem.h>
+#include <kglobal.h>
+#include <KStatusBar>
+#include <KToolBar>
+#include <KAction>
+#include <KSvgRenderer>
+
+
+
+
+
 
 namespace Ksirk
 {
@@ -51,6 +83,8 @@ DecoratedGameFrame::DecoratedGameFrame(QWidget* parent,
 
   this->m_parent = parent;
   initMenu ();
+  initAttackMenu();
+  initMoveMenu();
 
   // redirect the mouse move event to the main windows
   connect(this, SIGNAL(mouseMoveEventReceived(QMouseEvent *)), parent, SLOT(mouseMoveEvent(QMouseEvent *)));
@@ -75,10 +109,56 @@ QSize DecoratedGameFrame::sizeHint() const
 
 void DecoratedGameFrame::initMenu ()
 {
-    this->menu = new QMenu(this);
+  this->menu = new QMenu(this);
     
-    //QAction* action = KStandardGameAction::quit(this, SLOT(close()), this);
-    //m_frame->addAction(action);
+  QAction* newAction = KStandardGameAction::gameNew(this->m_parent, SLOT(slotNewGame()), this);
+  
+  QAction* openAction = KStandardGameAction::load(this->m_parent, SLOT(slotOpenGame()), this);
+  
+  QAction* saveAction = KStandardGameAction::save(this->m_parent, SLOT(slotSaveGame()), this);
+  
+  QAction* zoomInAction = KStandardAction::zoomIn(this->m_parent, SLOT(slotZoomIn()), this);
+  
+  QAction* zoomOutAction = KStandardAction::zoomOut(this->m_parent, SLOT(slotZoomOut()), this);
+  
+  // specific ksirk action
+  /*QString imageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_NEWNETGAME);
+//   kDebug() << "Trying to load button image file: " << imageFileName << endl;
+  if (imageFileName.isNull())
+  {
+    KMessageBox::error(0, i18n("Cannot load button image<br/>Program cannot continue"), i18n("Error !"));
+    exit(2);
+  }
+
+  QAction* joinAction = new QAction(QIcon(QPixmap(imageFileName)),
+        i18n("Join"), this);
+  joinAction->setShortcut(Qt::CTRL+Qt::Key_J);
+  joinAction->setStatusTip(i18n("Join network game"));
+  connect(joinAction,SIGNAL(triggered(bool)),this,SLOT(slotJoinNetworkGame()));*/
+
+  /*QAction* goalAction = new QAction(QIcon(), i18n("Goal"), this);
+  goalAction->setShortcut(Qt::CTRL+Qt::Key_G);
+  connect(goalAction,SIGNAL(triggered(bool)),this->m_parent,SLOT(slotShowGoal()));*/
+ 
+  QAction* QuitAction = KStandardGameAction::quit(this->m_parent, SLOT(close()), this);
+
+  menu->addAction(newAction);
+  menu->addAction(openAction);
+  menu->addAction(saveAction);
+  menu->addSeparator();
+  menu->addAction(zoomInAction);
+  menu->addAction(zoomOutAction);
+  menu->addSeparator();
+  //menu->addAction(joinAction);
+  //menu->addSeparator();
+ // menu->addAction(goalAction);
+ // menu->addSeparator();			
+  menu->addAction(QuitAction);
+}
+
+void DecoratedGameFrame::initAttackMenu ()
+{
+    this->attackMenu = new QMenu(this);
 
     ArenaAction = new QAction(i18n("Arena"), this);
     ArenaAction->setCheckable(true);
@@ -96,45 +176,38 @@ void DecoratedGameFrame::initMenu ()
 
     QAction* QuitAction = new QAction(i18n("Quit Game"), this);
     connect(QuitAction, SIGNAL(triggered()),this->m_parent, SLOT(close()));
-		
-    menu->addAction(ArenaAction);
-    menu->addSeparator();
-    menu->addAction(Attack1Action);
-    menu->addAction(Attack2Action);
-    menu->addAction(Attack3Action);
-    menu->addSeparator();
-    menu->addAction(QuitAction);
-}
-
-/*void DecoratedGameFrame::initCombatMenu ()
-{
-    QAction* Attack1Action = new QAction(i18n("Attack1"), this);
-    connect(Attack1Action, SIGNAL(triggered()), this->m_parent, SLOT(slotAttack1()));
-
-    QAction* Attack2Action = new QAction(i18n("Attack2"), this);
-    connect(Attack2Action, SIGNAL(triggered()), this->m_parent, SLOT(slotAttack2()));
-
-    QAction* Attack3Action = new QAction(i18n("Attack3"), this);
-    connect(Attack3Action, SIGNAL(triggered()), this->m_parent, SLOT(slotAttack3()));
-
-    QAction* QuitAction = new QAction(i18n("Quit Game"), this);
-    connect(QuitAction, SIGNAL(triggered()),this->m_parent, SLOT(close()));
-		
-    menu->addAction(Attack1Action);
-    menu->addAction(Attack2Action);
-    menu->addAction(Attack3Action);
-    menu->addSeparator();
-    menu->addAction(QuitAction);
+	
+    attackMenu->addAction(ArenaAction);
+    attackMenu->addSeparator();	
+    attackMenu->addAction(Attack1Action);
+    attackMenu->addAction(Attack2Action);
+    attackMenu->addAction(Attack3Action);
+    attackMenu->addSeparator();
+    attackMenu->addAction(QuitAction);
 }
 
 void DecoratedGameFrame::initMoveMenu ()
 {
+    this->moveMenu = new QMenu(this);
+
+    QAction* Move1Action = new QAction(i18n("Move1"), this);
+    connect(Move1Action, SIGNAL(triggered()),this->m_parent, SLOT(slotInvade1()));
+
+    QAction* Move5Action = new QAction(i18n("Move5"), this);
+    connect(Move5Action, SIGNAL(triggered()),this->m_parent, SLOT(slotInvade5()));
+
+    QAction* Move10Action = new QAction(i18n("Move10"), this);
+    connect(Move10Action, SIGNAL(triggered()),this->m_parent, SLOT(slotInvade10()));
+
     QAction* QuitAction = new QAction(i18n("Quit Game"), this);
     connect(QuitAction, SIGNAL(triggered()),this->m_parent, SLOT(close()));
 		
-    menu->addSeparator();
-    menu->addAction(QuitAction);
-}*/
+    moveMenu->addAction(Move1Action);
+    moveMenu->addAction(Move5Action);
+    moveMenu->addAction(Move10Action);
+    moveMenu->addSeparator();
+    moveMenu->addAction(QuitAction);
+}
 
 void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
 {
@@ -237,6 +310,17 @@ QMenu * DecoratedGameFrame::getContextMenu()
 {
 	return this->menu;
 }
+
+QMenu * DecoratedGameFrame::getAttackContextMenu()
+{
+	return this->attackMenu;
+}
+
+QMenu * DecoratedGameFrame::getMoveContextMenu()
+{
+	return this->moveMenu;
+}
+
 }
 
 #include "decoratedgameframe.moc"

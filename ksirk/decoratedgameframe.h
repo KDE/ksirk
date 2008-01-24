@@ -67,6 +67,8 @@ public:
     * initialisation of the contextual menu
     */
   void initMenu ();
+  void initAttackMenu ();
+  void initMoveMenu ();
 
   /**
     * Redefinition of the contextMenuEvent function
@@ -77,6 +79,8 @@ public:
     * Getter to the context menu
     */
   QMenu * getContextMenu();
+  QMenu * getAttackContextMenu();
+  QMenu * getMoveContextMenu();
 
 public slots:
   /** 
@@ -114,6 +118,8 @@ private:
   unsigned int m_mapH;
   QWidget* m_parent;
   QMenu* menu;
+  QMenu* attackMenu;
+  QMenu* moveMenu;
   QAction* ArenaAction;
   QPoint menuPoint;
 };
