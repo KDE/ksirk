@@ -40,7 +40,7 @@ namespace Ksirk
 using namespace GameLogic;
 
 DecoratedGameFrame::DecoratedGameFrame(QWidget* parent, 
-      unsigned int mapW, unsigned int mapH)
+      unsigned int mapW, unsigned int mapH, GameAutomaton* automaton)
   : QGraphicsView(parent), m_mapW(mapW), m_mapH(mapH)
 {
   kDebug() << "("<<mapW<<"x"<<mapH<<")" << endl;
@@ -56,6 +56,8 @@ DecoratedGameFrame::DecoratedGameFrame(QWidget* parent,
   initMenu ();
   initAttackMenu();
   initMoveMenu();
+
+  this->m_automaton = automaton;
 
   // redirect the mouse move event to the main windows
   connect(this, SIGNAL(mouseMoveEventReceived(QMouseEvent *)), parent, SLOT(mouseMoveEvent(QMouseEvent *)));
@@ -183,7 +185,11 @@ void DecoratedGameFrame::initMoveMenu ()
 void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
 {
     menuPoint = QCursor::pos();
-    menu->exec(menuPoint);
+    kDebug() << "************state decoratedgameframe" << m_automaton->stateName() << endl;
+    if (m_automaton->stateName() != "INIT")
+    {
+    	menu->exec(menuPoint);
+    }
 }
 
 /**
@@ -274,7 +280,7 @@ void DecoratedGameFrame::arenaState()
 		emit(arenaStateSignal(false));
 	}
 
-	menu->exec(menuPoint);
+	attackMenu->exec(menuPoint);
 }
 
 QMenu * DecoratedGameFrame::getContextMenu()

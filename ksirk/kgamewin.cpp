@@ -375,7 +375,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
   // create the world map view
   if (m_frame == 0)
   {  
-	m_frame = new DecoratedGameFrame(this, m_theWorld->width(), m_theWorld->height());
+	m_frame = new DecoratedGameFrame(this, m_theWorld->width(), m_theWorld->height(), m_automaton);
   }
 
   m_frame->setMaximumWidth(m_theWorld->width());

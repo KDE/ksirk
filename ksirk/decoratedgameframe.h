@@ -23,6 +23,8 @@
 
 #include "KsirkGlobalDefinitions.h"
 
+#include "GameLogic/gameautomaton.h"
+
 #include <stdlib.h>
 #include <qtimer.h>
 #include <QMouseEvent>
@@ -50,7 +52,7 @@ public:
     * @param mapW The width of the map. Will be the width given in size hint.
     * @param mapH The height of the map. Will be the height given in size hint.
     */
-  DecoratedGameFrame(QWidget* parent, unsigned int mapW, unsigned int mapH);
+  DecoratedGameFrame(QWidget* parent, unsigned int mapW, unsigned int mapH, GameLogic::GameAutomaton* m_automaton);
 
   /**
     * Destroy the frame : stops and deletes the timer
@@ -119,6 +121,7 @@ private:
   unsigned int m_mapW;
   unsigned int m_mapH;
   QWidget* m_parent;
+  GameLogic::GameAutomaton* m_automaton;
   QMenu* menu;
   QMenu* attackMenu;
   QMenu* moveMenu;
