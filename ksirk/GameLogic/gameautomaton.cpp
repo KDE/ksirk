@@ -475,6 +475,7 @@ GameAutomaton::GameState GameAutomaton::run()
     }
   break;
   case INVADE:
+    kDebug () << "$$$$$$$STATE INVADE$$$$$$$$$$$" << endl;
     if (event == "actionInvade1")
     {
       QByteArray buffer;
@@ -592,6 +593,7 @@ GameAutomaton::GameState GameAutomaton::run()
     }
   break;
   case SHIFT2:
+    kDebug () << "$$$$$$$STATE SHIFT2$$$$$$$$$$$" << endl;
     if (event == "actionInvade1")
     {
 //       kDebug() << "actionInvade1" << endl;
@@ -756,6 +758,7 @@ GameAutomaton::GameState GameAutomaton::run()
         QDataStream stream(&buffer, QIODevice::WriteOnly);
         stream << (quint32)NEWARMIES;
         sendMessage(buffer,NextPlayerNormal);
+        m_game-> cancelAction();
       }
     }
     /*else if (event == "actionAttack1")
@@ -815,7 +818,7 @@ GameAutomaton::GameState GameAutomaton::run()
       m_game->attack(3);
       state(ATTACK);
     }
-    else if (event == "actionMove")
+    /*else if (event == "actionMove")
     {
 //       kDebug() << "actionMove handling" << endl;
       m_game->displayCancelButton();
@@ -828,6 +831,39 @@ GameAutomaton::GameState GameAutomaton::run()
       stream2 << QString("");
       sendMessage(buffer2,SecondCountry);
       state(SHIFT1);
+    }*/
+    else if (event == "actionInvade1")
+    {
+//       kDebug() << "actionInvade1" << endl;
+      m_currentPlayerPlayed = true;
+      QByteArray buffer;
+      QDataStream stream(&buffer, QIODevice::WriteOnly);
+      stream << quint32(1);
+      sendMessage(buffer,Invade);
+      state(WAIT);
+    }
+    else if (event == "actionInvade5")
+    {
+      m_currentPlayerPlayed = true;
+      QByteArray buffer;
+      QDataStream stream(&buffer, QIODevice::WriteOnly);
+      stream << quint32(5);
+      sendMessage(buffer,Invade);
+      state(WAIT);
+    }
+    else if (event == "actionInvade10")
+    {
+      m_currentPlayerPlayed = true;
+      QByteArray buffer;
+      QDataStream stream(&buffer, QIODevice::WriteOnly);
+      stream << quint32(10);
+      sendMessage(buffer,Invade);
+      state(WAIT);
+    }
+    else if (event == "actionInvasionFinished")
+    {
+      m_game-> shiftFinished();
+      state(WAIT);
     }
     else if (event == "actionLButtonUp")
     {

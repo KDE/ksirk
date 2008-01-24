@@ -129,14 +129,16 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
         break;
       case GameLogic::GameAutomaton::WAIT1:
 	m_actionWaitingStart = false;
-		/*if (m_dest != 0)
+	
+	chooseInvasionAction();	
+		if (m_src->owner() == m_dest->owner())
         	{
           		stream << QString("actionLButtonUp") << m_dest->centralPoint();
           		m_src = 0;
           		m_dest = 0;
           		aiPlayerIO()->sendInput(stream,true);
 			//m_game->state(GameAutomaton::ATTACK2);
-        	}*/
+        	}
 
   
     /*stream << QString("actionAttack2") << point;
@@ -454,10 +456,21 @@ bool AIPlayer::moveArmiesAction()
   m_src = osrc;
   m_dest = odest;
 
-  QByteArray buffer;
+  /*QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   stream <<  QString("actionMove") << osrc->centralPoint();
+  aiPlayerIO()->sendInput(stream,true);*/
+
+  QByteArray buffer;
+  QDataStream stream(&buffer, QIODevice::WriteOnly);
+  stream << QString("actionLButtonDown") << osrc->centralPoint();
   aiPlayerIO()->sendInput(stream,true);
+
+  QByteArray buffer2;
+  QDataStream stream2(&buffer2, QIODevice::WriteOnly);
+  stream2 << QString("actionLButtonUp") << odest->centralPoint();
+  aiPlayerIO()->sendInput(stream2,true);
+
   return true;
 }
 
