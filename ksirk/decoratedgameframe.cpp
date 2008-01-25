@@ -27,6 +27,7 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QScrollBar>
 
+#include <kgamewin.h>
 #include <kstandardgameaction.h>
 #include <kstandardaction.h>
 #include <klocale.h>
@@ -94,24 +95,9 @@ void DecoratedGameFrame::initMenu ()
   
   QAction* zoomOutAction = KStandardAction::zoomOut(this->m_parent, SLOT(slotZoomOut()), this);
   
-  // specific ksirk action
-  /*QString imageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_NEWNETGAME);
-//   kDebug() << "Trying to load button image file: " << imageFileName << endl;
-  if (imageFileName.isNull())
-  {
-    KMessageBox::error(0, i18n("Cannot load button image<br/>Program cannot continue"), i18n("Error !"));
-    exit(2);
-  }
-
-  QAction* joinAction = new QAction(QIcon(QPixmap(imageFileName)),
-        i18n("Join"), this);
-  joinAction->setShortcut(Qt::CTRL+Qt::Key_J);
-  joinAction->setStatusTip(i18n("Join network game"));
-  connect(joinAction,SIGNAL(triggered(bool)),this,SLOT(slotJoinNetworkGame()));*/
-
-  /*QAction* goalAction = new QAction(QIcon(), i18n("Goal"), this);
+  goalAction = new QAction(QIcon(), i18n("Goal"), this);
   goalAction->setShortcut(Qt::CTRL+Qt::Key_G);
-  connect(goalAction,SIGNAL(triggered(bool)),this->m_parent,SLOT(slotShowGoal()));*/
+  connect(goalAction,SIGNAL(triggered(bool)),this->m_parent,SLOT(slotShowGoal()));
  
   QAction* QuitAction = KStandardGameAction::quit(this->m_parent, SLOT(close()), this);
 
@@ -122,10 +108,8 @@ void DecoratedGameFrame::initMenu ()
   menu->addAction(zoomInAction);
   menu->addAction(zoomOutAction);
   menu->addSeparator();
-  //menu->addAction(joinAction);
-  //menu->addSeparator();
- // menu->addAction(goalAction);
- // menu->addSeparator();			
+  menu->addAction(goalAction);
+  menu->addSeparator();			
   menu->addAction(QuitAction);
 }
 
@@ -138,7 +122,7 @@ void DecoratedGameFrame::initAttackMenu ()
     connect(ArenaAction, SIGNAL(triggered()), this, SLOT(arenaState()));
     connect(this, SIGNAL(arenaStateSignal(bool)), this->m_parent, SLOT(slotArena(bool)));
 
-    QAction* Attack1Action = new QAction(i18n("Attack1"), this);
+    Attack1Action = new QAction(i18n("Attack1"), this);
     connect(Attack1Action, SIGNAL(triggered()), this->m_parent, SLOT(slotAttack1()));
 
     QAction* Attack2Action = new QAction(i18n("Attack2"), this);
@@ -149,7 +133,7 @@ void DecoratedGameFrame::initAttackMenu ()
 
     QAction* QuitAction = new QAction(i18n("Quit Game"), this);
     connect(QuitAction, SIGNAL(triggered()),this->m_parent, SLOT(close()));
-	
+
     attackMenu->addAction(ArenaAction);
     attackMenu->addSeparator();	
     attackMenu->addAction(Attack1Action);
@@ -188,7 +172,25 @@ void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
     kDebug() << "************state decoratedgameframe" << m_automaton->stateName() << endl;
     if (m_automaton->stateName() != "INIT")
     {
-    	menu->exec(menuPoint);
+    	if (goalAction-> icon().isNull())
+	{
+		goalAction-> setIcon(KIcon(m_automaton-> currentPlayer()->getFlag()-> image(0)));
+	}
+
+	/*if (Attack1Action-> icon().isNull())
+	{
+		// search the background image for the arena
+		KConfig config(m_automaton->game()->theWorld()->getConfigFileName());
+		KConfigGroup onugroup = config.group("onu");
+		QString skin = onugroup.readEntry("skinpath");
+		QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/attackOne.png");
+
+		kDebug() << "******imagefilename******" << imageFileName << endl;
+		
+		Attack1Action-> setIcon(QIcon(imageFileName));
+	}*/
+	
+	menu->exec(menuPoint);
     }
 }
 
