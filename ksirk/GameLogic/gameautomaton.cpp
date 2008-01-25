@@ -266,24 +266,24 @@ GameAutomaton::GameState GameAutomaton::run()
   }
   if(event == "actionRButtonDown")
   {
-     if (m_game->getRightDialog()->isVisible())
+     if (m_game->getRightDialog()->isOpen())
      {
-        m_game->getRightDialog()->hide();
+        m_game->getRightDialog()->close();
      }
      else
      {
         if(m_game->theWorld()->countryAt(point)!=0)
         {
            m_game->getRightDialog()->displayCountryDetails(&point);
-           m_game->getRightDialog()->show();
+           m_game->getRightDialog()->open();
         }
      }
   }
   if(event == "actionLButtonDown")
   {
-     if (m_game->getRightDialog()->isVisible())
+     if (m_game->getRightDialog()->isOpen())
      {
-        m_game->getRightDialog()->hide();
+        m_game->getRightDialog()->close();
      }
   }
 //GAEL
@@ -1919,14 +1919,14 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     m_game->secondCountry(m_game->theWorld()->countryNamed(countryName));
     break;
   case InitCombatMovement:
+    m_game->getRightDialog()->open();
+    m_game->getRightDialog()->displayFightDetails(m_game->firstCountry(),m_game->secondCountry(),m_game->firstCountry()->owner()->getNbAttack(),m_game->secondCountry()->owner()->getNbDefense());
     if  (m_game->isArena() && !currentPlayer()->isAI() && !currentPlayer()->isVirtual())
     {
       kDebug() << "Attack with arena" << endl;
       // init and display the arena view
       m_game->showArena();
     }
-    m_game->getRightDialog()->show();
-    m_game->getRightDialog()->displayFightDetails(m_game->firstCountry(),m_game->secondCountry(),m_game->firstCountry()->owner()->getNbAttack(),m_game->secondCountry()->owner()->getNbDefense());
     m_game->initCombatMovement(m_game->firstCountry(), m_game->secondCountry());
     break;
   case AnimCombat:

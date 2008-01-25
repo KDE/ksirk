@@ -43,9 +43,8 @@ namespace Ksirk
 	//mainLayout->setColumnMinimumWidth(0,30);
         setLayout(mainLayout);
         flag1 = new QLabel();flag2 = new QLabel();
-//QScrollArea * scrollArea = new QScrollArea(parent);
-//QScrollBar * scroll = new QScrollBar(Qt::Vertical,scrollArea);
-//scrollArea->setWidget(this);
+
+	setFixedSize(220,360);
 
 //scrollArea->setVerticalScrollBar(scroll);
 //scrollArea->setMinimumWidth(width());
@@ -63,6 +62,7 @@ namespace Ksirk
     // create the background image
     soldat.load(imageFileName);
     //soldat.setFixedSize(8,8);
+    show();
 }
 
    KRightDialog::~KRightDialog()
@@ -117,14 +117,16 @@ rightContents->at(3)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpandi
       unit->addWidget(rightContents->at(6));
       
       mainLayout->addLayout(unit,4,0,Qt::AlignLeft);
-mainLayout->addLayout(drap,1,0,Qt::AlignLeft);
+      mainLayout->addLayout(drap,1,0,Qt::AlignLeft);
       //mainLayout->addItem(contentLayout,0,0);
+
       m_parentWidget->show();
       repaint();
    }
 
    void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int nb_A, int nb_D)
    {
+
       clearLayout();
       initListLabel(10);      QGridLayout * hautGrid = new QGridLayout(this);
       QGridLayout * basGrid = new QGridLayout(this);
@@ -196,7 +198,6 @@ QHBoxLayout * box4 = new QHBoxLayout();
       basGrid->addLayout(box4,2,0,Qt::AlignLeft);
       basGrid->addWidget(rightContents->at(9),3,0,Qt::AlignCenter);
 
-
       mainLayout->addWidget(haut,0,0);
       mainLayout->addWidget(bas,2,0);
 //setAlignment(Qt::AlignTop | Qt::AlignLeft);
@@ -208,6 +209,7 @@ QHBoxLayout * box4 = new QHBoxLayout();
 
    void KRightDialog::displayFightResult(int A1=0, int A2=0, int A3=0, int D1=0, int D2=0,int nbA=0,int nbD=0)
    {
+
       QGridLayout * milieuGrid = new QGridLayout();   
       QHBoxLayout * deAtt = new QHBoxLayout();
       QHBoxLayout * deDef = new QHBoxLayout();
@@ -243,8 +245,8 @@ if(D2!=0 || D2!=-1)
       de5->setPixmap(game->getDice(KGameWindow::Blue,D2));
       rightContents->insert(0,de5);deDef->addWidget(de5);
 }
-           rightContents->insert(0,new QLabel(I18N_NOOP("The attacker <font color=\"red\">loose "+QString::number(nbA)+" armies.</font>")));
-rightContents->insert(0,new QLabel(I18N_NOOP("The defender <font color=\"blue\">loose "+QString::number(nbD)+" armies.</font>")));
+           rightContents->insert(0,new QLabel(I18N_NOOP("<font color=\"red\">loose armies : "+QString::number(nbA)+"</font>")));
+rightContents->insert(0,new QLabel(I18N_NOOP("<font color=\"blue\">loose armies : "+QString::number(nbD)+"</font>")));
       /*deAtt->addWidget(rightContents->at(6)); 
       deAtt->addWidget(rightContents->at(5));
       deAtt->addWidget(rightContents->at(4));

@@ -92,7 +92,7 @@ namespace Ksirk
    void FightArena::initFightArena (Country* countryA, Country* countryD, BackGnd* bg)
    {
      // new size
-     int width = m_automaton->game()->centralWidget()->width()- m_automaton->game()->getRightDialog()->width();
+     int width = m_automaton->game()->centralWidget()->width();
      int height = m_automaton->game()->centralWidget()->height();
 
      // resize the background image

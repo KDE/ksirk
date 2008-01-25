@@ -87,7 +87,13 @@ namespace GameLogic
      
       void clearLabel();
 
-      void clearLayout() ;  
+      void clearLayout() ;
+
+      inline void close() {m_parentWidget->hide();};
+
+      inline void open() {m_parentWidget->show();};
+
+      inline bool isOpen() {return m_parentWidget->isVisible();};
 
       private:
       /**
