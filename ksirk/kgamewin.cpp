@@ -45,7 +45,7 @@
 
 //include files for QT
 #include <QDockWidget>
-
+#include <QTreeView>
 // include files for KDE
 #include <kiconloader.h>
 #include <kmessagebox.h>
@@ -248,10 +248,10 @@ void KGameWindow::initStatusBar()
 Country* KGameWindow::clickIn(const QPointF &pointf)
 {
 //   kDebug() << "KGameWindow::clickIn " << pointf << endl;
-  if(isMyState(GameLogic::GameAutomaton::INIT) || m_theWorld-> countryAt( pointf )==0)
+ /* if(isMyState(GameLogic::GameAutomaton::INIT) || m_theWorld-> countryAt( pointf )==0)
   {
     m_rightDock->hide();
-  }
+  }*/
   return m_theWorld-> countryAt( pointf );
 }
 
@@ -321,6 +321,13 @@ QPixmap KGameWindow::buildDice(DiceColor color, const QString& id)
   m_theWorld->renderer()->render(&p, id);
 
   return QPixmap::fromImage(image);
+}
+
+QPixmap KGameWindow::getDice(DiceColor color, int num)
+{
+  if(num==0 || num==-1)
+{return NULL;}
+  else {return m_dices[color][num-1];}
 }
 
 // void KGameWindow::resizeEvent ( QResizeEvent * event )
@@ -420,15 +427,24 @@ void KGameWindow::newSkin(const QString& onuFileName)
   m_arena->setCacheMode( QGraphicsView::CacheBackground );
 
   // create a central widget if it doesent' exists
-  QStackedWidget *m_centralWidget = dynamic_cast <QStackedWidget*>(centralWidget());
+//GAEL
+//m_splitter = new QSplitter();
+  m_centralWidget = dynamic_cast <QStackedWidget*>(centralWidget());
   if (m_centralWidget == 0) {
     m_centralWidget = new QStackedWidget;
-    setCentralWidget(m_centralWidget);
+ setCentralWidget(m_centralWidget);
+//kDebug() << "azerty" << endl;
+//setCentralWidget(m_splitter);
+//kDebug() << "azertyuiop" << endl;
+//m_splitter->addWidget(m_centralWidget);
+//m_splitter->addWidget(new QLabel("&azertyu"));
+//m_splitter->addWidget(new QLabel("Wxcvgh"));
   }
-
+  
   // put the map and arena in the central widget
   m_centralWidget->addWidget(m_frame);
   m_centralWidget->addWidget(m_arena);
+  //m_centralWidget->addWidget(m_splitter);
   m_centralWidget->setCurrentIndex(0);
   m_currentDisplayedWidget = mapType;
 
@@ -471,16 +487,31 @@ void KGameWindow::initView()
   m_arena->setScene(m_scene_arena);
 
   //ADD a dock widget on the right
-  m_rightDock = new QDockWidget();
+
+  m_rightDock = new QDockWidget(this);
   m_rightDock->setAllowedAreas(Qt::RightDockWidgetArea);
   m_rightDock->setFeatures(QDockWidget::NoDockWidgetFeatures);
-  m_rightDock->setFixedWidth(50);
 
-  m_rightDialog = new KRightDialog(m_rightDock,theWorld());
+
+  m_rightDialog = new KRightDialog(m_rightDock,theWorld(),this);
   m_rightDock->setWidget(m_rightDialog);
+ // m_rightDock->setMaximumHeight(chatModel);
+  //QSplitter *splitter = new QSplitter();
+ // QTextEdit *textedit = new QTextEdit;
 
+  //splitter->addWidget(textedit);
+  //m_rightDock->setWidget(splitter);
+//QDockWidget * a = new QDockWidget();
+//a->setFixedWidth(3);
+//a->setFeatures(QDockWidget::NoDockWidgetFeatures);
   m_rightDock->hide();
   addDockWidget(Qt::RightDockWidgetArea, m_rightDock);
+  //addDockWidget(Qt::RightDockWidgetArea, a);
+
+
+//m_splitter->setOrientation(Qt::Vertical);
+
+//m_splitter->addWidget(new QLabel("test"));
 
   showMap();
 
@@ -749,6 +780,11 @@ void KGameWindow::resolveAttack()
   else if (NKA != 0) stream2 << quint32(0);
   else if (NKD != 0) stream2 << quint32(1);
   m_automaton->sendMessage(buffer2,AnimExplosion);
+
+  //GAEL
+kDebug()<< "A1:"<< A1<<", A2: " <<A2 <<"A3:" << A3<<endl;
+kDebug()<< "D1:"<< D1<<", D2: " <<D2<<endl;
+  m_rightDialog->displayFightResult(A1,A2,A3,D1,D2,NKA,NKD);
 }
 
 /**
@@ -1544,6 +1580,7 @@ void KGameWindow::attack(Country& attacker, Country& defender, unsigned int nb)
       << QString::number(1);
 
       initCombatMovement(m_firstCountry, m_secondCountry);
+
     }
     broadcastChangeItem(messageParts, ID_NO_STATUS_MSG);
   }

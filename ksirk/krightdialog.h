@@ -24,7 +24,7 @@
 #include "KsirkGlobalDefinitions.h"
 
 #include "GameLogic/onu.h"
-
+#include "GameLogic/country.h"
 #include <stdlib.h>
 #include <QGroupBox>
 #include <QGridLayout>
@@ -32,17 +32,22 @@
 #include <QDockWidget>
 #include <QList>
 #include <QLabel>
-
+#include <kglobal.h>
+#include <kconfig.h>
+#include <kconfiggroup.h>
+#include "kgamewin.h"
 namespace Ksirk
 {
+  class KGameWindow;
 namespace GameLogic
 {
   class ONU;
+  class Country;
 }
    /**
    * The KRightDialog class is the widget displayed on the right of the aplication
    */
-   class KRightDialog: public QGroupBox
+   class KRightDialog: public QWidget
    {
       Q_OBJECT
       
@@ -50,7 +55,7 @@ namespace GameLogic
       /**
       * Creates the group box which will contains the needed widgets
       */
-      KRightDialog(QDockWidget * parent,Ksirk::GameLogic::ONU * world);
+      KRightDialog(QDockWidget * parent,GameLogic::ONU * world,KGameWindow* m_game);
       
       /**
       * Destroy the widget
@@ -66,12 +71,12 @@ namespace GameLogic
       /**
       * 
       */
-      void displayFightDetails();
+      void displayFightDetails(GameLogic::Country * attaker, GameLogic::Country * defender,int nb_A, int nb_D);
 
       /**
       * 
       */
-      void displayFightResult();
+      void displayFightResult(int A1, int A2, int A3, int D1, int D2,int nbA,int nbD);
 
       /**
       * Add all labels in the layout
@@ -88,13 +93,26 @@ namespace GameLogic
       /**
       * The Layout
       */
+      //QLayout * mainLayout;
       QGridLayout * mainLayout;
-
+      
       QDockWidget * m_parentWidget;
 
       Ksirk::GameLogic::ONU * world;
     
       QList<QLabel*> * rightContents;
+
+      QLabel * flag1;
+
+      QLabel * flag2;
+
+      QWidget * bas; 
+
+      QWidget * haut;
+
+      QWidget * milieu;QPixmap soldat;
+
+      KGameWindow * game;
    };
    
 }

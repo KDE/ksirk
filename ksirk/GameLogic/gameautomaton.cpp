@@ -266,8 +266,28 @@ GameAutomaton::GameState GameAutomaton::run()
   }
   if(event == "actionRButtonDown")
   {
-     if (m_game->theWorld()->countryAt(point)!=0) m_game->getRightDialog()->displayCountryDetails(&point);
+     if (m_game->getRightDialog()->isVisible())
+     {
+        m_game->getRightDialog()->hide();
+     }
+     else
+     {
+        if(m_game->theWorld()->countryAt(point)!=0)
+        {
+           m_game->getRightDialog()->displayCountryDetails(&point);
+           m_game->getRightDialog()->show();
+        }
+     }
   }
+  if(event == "actionLButtonDown")
+  {
+     if (m_game->getRightDialog()->isVisible())
+     {
+        m_game->getRightDialog()->hide();
+     }
+  }
+//GAEL
+
   if (event == "actionNewGame")
   {
     if (m_game->actionNewGame())
@@ -1905,6 +1925,8 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
       // init and display the arena view
       m_game->showArena();
     }
+    m_game->getRightDialog()->show();
+    m_game->getRightDialog()->displayFightDetails(m_game->firstCountry(),m_game->secondCountry(),m_game->firstCountry()->owner()->getNbAttack(),m_game->secondCountry()->owner()->getNbDefense());
     m_game->initCombatMovement(m_game->firstCountry(), m_game->secondCountry());
     break;
   case AnimCombat:

@@ -35,6 +35,7 @@
 #include <QLabel>
 #include <QStackedWidget>
 #include <QGroupBox>
+#include <QSplitter>
 
 // include files for KDE
 #include <ksharedconfig.h>
@@ -531,7 +532,11 @@ public:
   KRightDialog * getRightDialog();
 
   /** Arena state */
-  bool isArena();
+  bool isArena(); 
+ 
+  enum DiceColor {Blue,Red};
+
+  QPixmap getDice(DiceColor color, int num);
 
 protected:
 
@@ -696,7 +701,9 @@ private:
   QDockWidget * m_rightDock;
 
   KRightDialog * m_rightDialog;
-
+//GAEL
+  QStackedWidget *m_centralWidget;
+//QSplitter *m_splitter;
   GameLogic::GameAutomaton* m_automaton;
 
   /**
@@ -813,7 +820,7 @@ private:
    */
   KGameChat *m_chatDlg;
 
-  enum DiceColor {Blue,Red};
+  
   std::map< DiceColor, std::vector<QPixmap> > m_dices;
   
   Phonon::MediaObject* m_audioPlayer;
