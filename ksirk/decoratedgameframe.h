@@ -126,6 +126,8 @@ private:
   QMenu* attackMenu;
   QMenu* moveMenu;
   QAction* ArenaAction;
+  QAction* goalAction;
+  QAction* Attack1Action;
   QPoint menuPoint;
 };
 
