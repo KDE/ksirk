@@ -893,6 +893,8 @@ GameAutomaton::GameState GameAutomaton::run()
     else if (event == "actionLButtonDown")
     {
 	m_game-> cancelAction();
+	if (m_game->firstCountryAt(point))
+		state(WAIT1);
 	state(WAIT);
     }
    break;
@@ -1897,7 +1899,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     m_game->secondCountry(m_game->theWorld()->countryNamed(countryName));
     break;
   case InitCombatMovement:
-    if  (m_game->isArena())
+    if  (m_game->isArena() && !currentPlayer()->isAI() && !currentPlayer()->isVirtual())
     {
       kDebug() << "Attack with arena" << endl;
       // init and display the arena view

@@ -120,7 +120,16 @@ void Country::createArmiesSprites()
         bg->onu()->zoom(),
         bg);
     sprite-> setDestination(NULL);             // Sprite immobile
-    sprite-> setPos((m_pointCannon.x()+5*i)*bg->onu()->zoom(),(m_pointCannon.y()+5*i)*bg->onu()->zoom());
+    if (m_automaton->game()->currentWidgetType() == KGameWindow::arenaType) {
+      sprite-> setPos(
+        m_pointCannon.x()*bg->onu()->zoom(),
+        (m_pointCannon.y()+(1-2*(i%2))*(Sprites::SkinSpritesData::single().intData("cannon-height")+8)*((i+1)/2))*bg->onu()->zoom());
+      if (this->id() == m_automaton->game()->secondCountry()->id()) {
+        sprite->setLookLeft();
+      }
+    } else {
+      sprite-> setPos((m_pointCannon.x()+5*i)*bg->onu()->zoom(),(m_pointCannon.y()+5*i)*bg->onu()->zoom());
+    }
     m_spritesCannons.append(sprite);
     i++;
     armies -= 10;
@@ -137,8 +146,16 @@ void Country::createArmiesSprites()
         bg->onu()->zoom(),
         bg);
     sprite-> setDestination(NULL);             // Sprite immobile
-    sprite-> setPos((m_pointCavalry.x()+5*i)*bg->onu()->zoom(),
-                     (m_pointCavalry.y()+5*i)*bg->onu()->zoom());
+    if (m_automaton->game()->currentWidgetType() == KGameWindow::arenaType) {
+      sprite-> setPos(
+        m_pointCavalry.x()*bg->onu()->zoom(),
+        (m_pointCavalry.y()+(1-2*(i%2))*(Sprites::SkinSpritesData::single().intData("cavalry-height")+8)*((i+1)/2))*bg->onu()->zoom());
+      if (this->id() == m_automaton->game()->secondCountry()->id()) {
+        sprite->setLookLeft();
+      }
+    } else {
+      sprite-> setPos((m_pointCavalry.x()+5*i)*bg->onu()->zoom(),(m_pointCavalry.y()+5*i)*bg->onu()->zoom());
+    }
     m_spritesCavalry.append(sprite);
     i++;
     armies -= 5;
@@ -155,8 +172,16 @@ void Country::createArmiesSprites()
         bg->onu()->zoom(),
         bg);
     sprite-> setDestination(NULL);             // Sprite immobile
-    sprite-> setPos((m_pointInfantry.x()+5*i)*bg->onu()->zoom(),
-                     (m_pointInfantry.y()+5*i)*bg->onu()->zoom());
+    if (m_automaton->game()->currentWidgetType() == KGameWindow::arenaType) {
+      sprite-> setPos(
+        m_pointInfantry.x()*bg->onu()->zoom(),
+        (m_pointInfantry.y()+(1-2*(i%2))*(Sprites::SkinSpritesData::single().intData("infantry-height")+8)*((i+1)/2))*bg->onu()->zoom());
+      if (this->id() == m_automaton->game()->secondCountry()->id()) {
+        sprite->setLookLeft();
+      }
+    } else {
+      sprite-> setPos((m_pointInfantry.x()+5*i)*bg->onu()->zoom(),(m_pointInfantry.y()+5*i)*bg->onu()->zoom());
+    }
     m_spritesInfantry.append(sprite);
     i++;
     armies--;
