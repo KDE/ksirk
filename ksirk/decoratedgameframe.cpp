@@ -54,6 +54,7 @@ DecoratedGameFrame::DecoratedGameFrame(QWidget* parent,
   setMouseTracking(true);
 
   this->m_parent = parent;
+  QuitAction = KStandardGameAction::quit(this->m_parent, SLOT(close()), this);
   initMenu ();
   initAttackMenu();
   initMoveMenu();
@@ -95,30 +96,35 @@ void DecoratedGameFrame::initMenu ()
   
   QAction* zoomOutAction = KStandardAction::zoomOut(this->m_parent, SLOT(slotZoomOut()), this);
   
+  detailsAction = new QAction(i18n("Details"), this);
+  //connect(detailsAction, SIGNAL(triggered()), this->m_parent, SLOT(slotDetails()));
+  connect(detailsAction, SIGNAL(triggered()), this, SLOT(slotDetails()));
+
   goalAction = new QAction(QIcon(), i18n("Goal"), this);
   goalAction->setShortcut(Qt::CTRL+Qt::Key_G);
   connect(goalAction,SIGNAL(triggered(bool)),this->m_parent,SLOT(slotShowGoal()));
  
-  QAction* QuitAction = KStandardGameAction::quit(this->m_parent, SLOT(close()), this);
-
   menu->addAction(newAction);
   menu->addAction(openAction);
   menu->addAction(saveAction);
   menu->addSeparator();
   menu->addAction(zoomInAction);
   menu->addAction(zoomOutAction);
+  menu->addAction(detailsAction);
   menu->addSeparator();
   menu->addAction(goalAction);
   menu->addSeparator();			
   menu->addAction(QuitAction);
+
+  detailsAction->setVisible(false);
 }
 
 void DecoratedGameFrame::initAttackMenu ()
 {
     this->attackMenu = new QMenu(this);
 
-    ArenaAction = new QAction(i18n("Arena"), this);
-    ArenaAction->setCheckable(true);
+    ArenaAction = new QAction(i18n("Enable Arena"), this);
+    //ArenaAction->setCheckable(true);
     connect(ArenaAction, SIGNAL(triggered()), this, SLOT(arenaState()));
     connect(this, SIGNAL(arenaStateSignal(bool)), this->m_parent, SLOT(slotArena(bool)));
 
@@ -131,8 +137,8 @@ void DecoratedGameFrame::initAttackMenu ()
     QAction* Attack3Action = new QAction(i18n("Attack3"), this);
     connect(Attack3Action, SIGNAL(triggered()), this->m_parent, SLOT(slotAttack3()));
 
-    QAction* QuitAction = new QAction(i18n("Quit Game"), this);
-    connect(QuitAction, SIGNAL(triggered()),this->m_parent, SLOT(close()));
+    /*QAction* QuitAction = new QAction(i18n("Quit Game"), this);
+    connect(QuitAction, SIGNAL(triggered()),this->m_parent, SLOT(close()));*/
 
     attackMenu->addAction(ArenaAction);
     attackMenu->addSeparator();	
@@ -156,8 +162,8 @@ void DecoratedGameFrame::initMoveMenu ()
     QAction* Move10Action = new QAction(i18n("Move10"), this);
     connect(Move10Action, SIGNAL(triggered()),this->m_parent, SLOT(slotInvade10()));
 
-    QAction* QuitAction = new QAction(i18n("Quit Game"), this);
-    connect(QuitAction, SIGNAL(triggered()),this->m_parent, SLOT(close()));
+    /*QAction* QuitAction = new QAction(i18n("Quit Game"), this);
+    connect(QuitAction, SIGNAL(triggered()),this->m_parent, SLOT(close()));*/
 		
     moveMenu->addAction(Move1Action);
     moveMenu->addAction(Move5Action);
@@ -179,7 +185,6 @@ void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
 
 	/*if (Attack1Action-> icon().isNull())
 	{
-		// search the background image for the arena
 		KConfig config(m_automaton->game()->theWorld()->getConfigFileName());
 		KConfigGroup onugroup = config.group("onu");
 		QString skin = onugroup.readEntry("skinpath");
@@ -188,6 +193,15 @@ void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
 		kDebug() << "******imagefilename******" << imageFileName << endl;
 		
 		Attack1Action-> setIcon(QIcon(imageFileName));
+	}
+
+        if(m_automaton->game()->theWorld()->countryAt(menuPoint)!=0)
+        {
+		detailsAction->setVisible(true);
+	}
+	else
+	{
+		detailsAction->setVisible(false);
 	}*/
 	
 	menu->exec(menuPoint);
@@ -271,19 +285,29 @@ void DecoratedGameFrame::slotMouseInput(KGameIO *input,QDataStream &stream,QMous
 
 void DecoratedGameFrame::arenaState()
 {
-	if (ArenaAction->isChecked())
+	//if (ArenaAction->isChecked())
+	if (ArenaAction->text().contains("Enable Arena", Qt::CaseInsensitive))
 	{
-		ArenaAction->setChecked(true);
+		ArenaAction->setText("Disable Arena");
 		emit(arenaStateSignal(true));
 	}
 	else
 	{
-		ArenaAction->setChecked(false);
+		ArenaAction->setText("Enable Arena");
 		emit(arenaStateSignal(false));
 	}
 
 	attackMenu->exec(menuPoint);
 }
+
+void DecoratedGameFrame::slotDetails()
+{
+	QPointF *point = new QPointF(menuPoint);
+
+	m_automaton->game()->getRightDialog()->displayCountryDetails(point);
+        m_automaton->game()->getRightDialog()->open();
+}
+
 
 QMenu * DecoratedGameFrame::getContextMenu()
 {

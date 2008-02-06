@@ -102,6 +102,8 @@ public slots:
   
   void arenaState();
 
+   void slotDetails();
+
 signals:
   /**
     * Signal that redirect the mouse event to the kmainwindows in
@@ -126,8 +128,10 @@ private:
   QMenu* attackMenu;
   QMenu* moveMenu;
   QAction* ArenaAction;
+  QAction* detailsAction;
   QAction* goalAction;
   QAction* Attack1Action;
+  QAction* QuitAction;
   QPoint menuPoint;
 };
 
