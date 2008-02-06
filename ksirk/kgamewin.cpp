@@ -527,14 +527,16 @@ bool KGameWindow::attackEnd()
   {
     return false;
   }
+
   m_firstCountry->releaseHighlightingLock();
   m_firstCountry->clearHighlighting();
   m_secondCountry->releaseHighlightingLock();
   m_secondCountry->clearHighlighting();
+
   bool res = false;
   QString mes = "";
   kDebug() << "There is now " << m_secondCountry-> nbArmies() << " armies in " << m_secondCountry->name() << "." << endl;
-  if (m_secondCountry-> nbArmies() == 0)
+  if (m_secondCountry-> nbArmies() < 1)
   {
     QPixmap pm = currentPlayer()->getFlag()->image(0);
 
@@ -605,12 +607,14 @@ bool KGameWindow::attackEnd()
     }
     else
     {
-      QByteArray buffer;
-      QDataStream stream(&buffer, QIODevice::WriteOnly);
-      m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
-      KMessageParts messageParts;
-      messageParts << I18N_NOOP("%1 : it is up to you again") << currentPlayer()-> name();
-      broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
+      if (m_firstCountry->nbArmies() < 2 || !m_automaton->isAttackAuto()) {
+        QByteArray buffer;
+        QDataStream stream(&buffer, QIODevice::WriteOnly);
+        m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
+        KMessageParts messageParts;
+        messageParts << I18N_NOOP("%1 : it is up to you again") << currentPlayer()-> name();
+        broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
+      }
     }
   }
   return res;
@@ -1825,7 +1829,7 @@ unsigned int KGameWindow::attacked(const QPointF& point)
 {
   kDebug() << endl;
   //if (currentPlayer()-> isAI()) return 3;
-        
+
   unsigned int res = 0;
   //Country* secondCountry = clickIn(point);
   //m_secondCountry = secondCountry;
@@ -1864,7 +1868,15 @@ unsigned int KGameWindow::attacked(const QPointF& point)
     messageParts << I18N_NOOP("%1 ! You are not the owner of %2!") << currentPlayer()-> name() << m_firstCountry-> name();
     displayNormalGameButtons();
   }
-  else if (m_secondCountry-> nbArmies() - currentPlayer()-> getNbAttack() >= 1)
+  else if (m_firstCountry->nbArmies() - currentPlayer()->getNbAttack() < 1)
+  {
+    messageParts
+      << I18N_NOOP("%1, you have to keep one army to defend %2.") 
+      << m_firstCountry->owner()-> name()
+      << m_firstCountry-> name();
+    displayNormalGameButtons();
+  }
+  else if (m_secondCountry-> nbArmies() > 1)
   {
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
@@ -1902,7 +1914,7 @@ unsigned int KGameWindow::attacked(const QPointF& point)
     }
     m_automaton->sendMessage(buffer,SecondCountry);
     messageParts
-      << I18N_NOOP("%1, you have to keep one army to defend %2.") 
+      << I18N_NOOP("%1, you defend with the only army you have in %2.") 
       << m_secondCountry->owner()-> name()
       << m_secondCountry-> name();
     res = 2;

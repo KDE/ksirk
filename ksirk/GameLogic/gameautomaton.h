@@ -338,6 +338,18 @@ public:
   void firingFinished();
   void explosionFinished();
 
+  /**
+    * Change the automatic attack state.
+    * @param activated new state
+    */
+  inline void setAttackAuto(bool activated) {m_attackAuto = activated;}
+
+  /**
+    * Get the automatic attack state.
+    * @return state
+    */
+  inline bool isAttackAuto() {return m_attackAuto;}
+
 public Q_SLOTS:
   /** Reacts to the current state eventualy processing one queued event */
   GameState run();
@@ -482,6 +494,9 @@ private:
   quint32 m_nbPlayers;
 
   std::set<int> m_choosedToRecycle;
+
+  // tell us if the automatic attack is enabled
+  bool m_attackAuto;
 };
 
 QDataStream& operator>>(QDataStream& s, GameAutomaton::GameState& state);

@@ -145,7 +145,8 @@ m_aicannotrunhack(true),
     m_currentPlayerPlayed(false),
     m_savedState(INVALID),
     m_goals(),
-    m_useGoals(true)
+    m_useGoals(true),
+    m_attackAuto(false)
 {
   m_skin = "skins/default";
   //   kDebug() << "GameAutomaton::GameAutomaton" << endl;
@@ -371,6 +372,13 @@ GameAutomaton::GameState GameAutomaton::run()
   case ATTACK2:
     //if  (event == "actionLButtonUp") 
     //{
+      kDebug() << "@@@############# ATTACK ##############@@@" << endl;
+      if (m_game->firstCountry() != NULL)
+      kDebug() << "@@@############# C1: " << m_game->firstCountry()->name() << endl;
+      else kDebug() << "@@@############# C1: NULL" << endl;
+      if (m_game->firstCountry() != NULL)
+      kDebug() << "@@@############# C2: " << m_game->secondCountry()->name() << endl;
+      else kDebug() << "@@@############# C2: NULL" << endl;
       switch ( m_game->attacked(point) )
       {
         case 0:
@@ -421,9 +429,6 @@ GameAutomaton::GameState GameAutomaton::run()
       QDataStream stream(&buffer, QIODevice::WriteOnly);
       sendMessage(buffer,TerminateAttackSequence);
     }
-
-    // Re-display the world view
-    m_game->showMap();
   break;
   case INTERLUDE:
     if  (event == "playersLooped")
@@ -820,7 +825,7 @@ GameAutomaton::GameState GameAutomaton::run()
       //        if (!event.isEmpty())
 //          std::cerr << "Unhandled event " << event << " during handling of " << stateName() << std::endl;
     }
-    // other case : state dosn't change
+    // other case : state doesn't change
     break;
   case WAIT1:
     if (event == "actionAttack1")
@@ -920,7 +925,7 @@ GameAutomaton::GameState GameAutomaton::run()
    break;
   /*case WAIT_INPUT:
     
-    break;*/
+    break;*/   
   case WAIT_PLAYERS:
     break;
   case GAME_OVER:
@@ -1934,13 +1939,41 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     break;
   case TerminateAttackSequence:
     {
+      // Re-display the world view
+      m_game->showMap();
+
       if (m_game->terminateAttackSequence() && isAdmin())
       {
+        setAttackAuto(false);
         state(INVADE);
       }
       else if (isAdmin())
       {
-        state(WAIT);
+        // if there is more than 1 army on my country and automatic
+        // attack is activated
+        if (m_game->firstCountry()->nbArmies() > 1 && isAttackAuto()) {
+          // continue automaticaly attacking by making the same attack
+      kDebug() << "@@@############# END ATTACK ##############@@@" << endl;
+      if (m_game->firstCountry() != NULL)
+      kDebug() << "@@@############# C1: " << m_game->firstCountry()->name() << endl;
+      else kDebug() << "@@@############# C1: NULL" << endl;
+      if (m_game->firstCountry() != NULL)
+      kDebug() << "@@@############# C2: " << m_game->secondCountry()->name() << endl;
+      else kDebug() << "@@@############# C2: NULL" << endl;
+          state(WAIT1);
+          if (m_game->firstCountry()->nbArmies() > 3) {
+            event("actionAttack3", m_game->secondCountry()->centralPoint());
+          } else if (m_game->firstCountry()->nbArmies() > 2) {
+            event("actionAttack2", m_game->secondCountry()->centralPoint());
+          } else {
+            event("actionAttack1", m_game->secondCountry()->centralPoint());
+          }
+
+        // else wait user choice
+        } else {
+          setAttackAuto(false);
+          state(WAIT);
+        }
       }
     }
     break;
