@@ -55,6 +55,7 @@ DecoratedGameFrame::DecoratedGameFrame(QWidget* parent,
 
   this->m_parent = parent;
   QuitAction = KStandardGameAction::quit(this->m_parent, SLOT(close()), this);
+  
   initMenu ();
   initAttackMenu();
   initMoveMenu();
@@ -131,10 +132,10 @@ void DecoratedGameFrame::initAttackMenu ()
     Attack1Action = new QAction(i18n("Attack1"), this);
     connect(Attack1Action, SIGNAL(triggered()), this->m_parent, SLOT(slotAttack1()));
 
-    QAction* Attack2Action = new QAction(i18n("Attack2"), this);
+    Attack2Action = new QAction(i18n("Attack2"), this);
     connect(Attack2Action, SIGNAL(triggered()), this->m_parent, SLOT(slotAttack2()));
 
-    QAction* Attack3Action = new QAction(i18n("Attack3"), this);
+    Attack3Action = new QAction(i18n("Attack3"), this);
     connect(Attack3Action, SIGNAL(triggered()), this->m_parent, SLOT(slotAttack3()));
 
     /*QAction* QuitAction = new QAction(i18n("Quit Game"), this);
@@ -153,13 +154,13 @@ void DecoratedGameFrame::initMoveMenu ()
 {
     this->moveMenu = new QMenu(this);
 
-    QAction* Move1Action = new QAction(i18n("Move1"), this);
+    Move1Action = new QAction(i18n("Move1"), this);
     connect(Move1Action, SIGNAL(triggered()),this->m_parent, SLOT(slotInvade1()));
 
-    QAction* Move5Action = new QAction(i18n("Move5"), this);
+    Move5Action = new QAction(i18n("Move5"), this);
     connect(Move5Action, SIGNAL(triggered()),this->m_parent, SLOT(slotInvade5()));
 
-    QAction* Move10Action = new QAction(i18n("Move10"), this);
+    Move10Action = new QAction(i18n("Move10"), this);
     connect(Move10Action, SIGNAL(triggered()),this->m_parent, SLOT(slotInvade10()));
 
     /*QAction* QuitAction = new QAction(i18n("Quit Game"), this);
@@ -193,16 +194,17 @@ void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
 		kDebug() << "******imagefilename******" << imageFileName << endl;
 		
 		Attack1Action-> setIcon(QIcon(imageFileName));
-	}
+	}*/
 
-        if(m_automaton->game()->theWorld()->countryAt(menuPoint)!=0)
+	kDebug() << "************detailPoint" << detailPoint << endl;
+        if(m_automaton->game()->theWorld()->countryAt(detailPoint)!=0)
         {
 		detailsAction->setVisible(true);
 	}
 	else
 	{
 		detailsAction->setVisible(false);
-	}*/
+	}
 	
 	menu->exec(menuPoint);
     }
@@ -278,6 +280,10 @@ void DecoratedGameFrame::slotMouseInput(KGameIO *input,QDataStream &stream,QMous
   }
   QPointF newPoint = ((QGraphicsSceneMouseEvent*)e)->scenePos();
   kDebug() << "\tPosition: " << newPoint << endl;
+
+  detailPoint.setX((int)newPoint.x());
+  detailPoint.setY((int)newPoint.y());
+
   stream << newPoint;
   *eatevent=true;
   kDebug() << "Mouse input done... eatevent=true" << endl;
@@ -302,7 +308,7 @@ void DecoratedGameFrame::arenaState()
 
 void DecoratedGameFrame::slotDetails()
 {
-	QPointF *point = new QPointF(menuPoint);
+	QPointF *point = new QPointF(detailPoint);
 
 	m_automaton->game()->getRightDialog()->displayCountryDetails(point);
         m_automaton->game()->getRightDialog()->open();
@@ -322,6 +328,36 @@ QMenu * DecoratedGameFrame::getAttackContextMenu()
 QMenu * DecoratedGameFrame::getMoveContextMenu()
 {
 	return this->moveMenu;
+}
+
+QAction* DecoratedGameFrame::getAttack1Action()
+{
+	return this->Attack1Action;
+}
+
+QAction* DecoratedGameFrame::getAttack2Action()
+{
+	return this->Attack2Action;
+}
+
+QAction* DecoratedGameFrame::getAttack3Action()
+{
+	return this->Attack3Action;
+}
+
+QAction* DecoratedGameFrame::getMove1Action()
+{
+	return this->Move1Action;
+}
+
+QAction* DecoratedGameFrame::getMove5Action()
+{
+	return this->Move5Action;
+}
+
+QAction* DecoratedGameFrame::getMove10Action()
+{
+	return this->Move10Action;
 }
 
 void DecoratedGameFrame::setMenuPoint(QPoint menuPoint)

@@ -84,6 +84,16 @@ public:
   QMenu * getAttackContextMenu();
   QMenu * getMoveContextMenu();
 
+  /**
+    * Getter to the action of the context menu
+    */
+  QAction* getAttack1Action();
+  QAction* getAttack2Action();
+  QAction* getAttack3Action();
+  QAction* getMove1Action();
+  QAction* getMove5Action();
+  QAction* getMove10Action();
+
   void setMenuPoint(QPoint);
 
 public slots:
@@ -102,7 +112,7 @@ public slots:
   
   void arenaState();
 
-   void slotDetails();
+  void slotDetails();
 
 signals:
   /**
@@ -131,8 +141,14 @@ private:
   QAction* detailsAction;
   QAction* goalAction;
   QAction* Attack1Action;
+  QAction* Attack2Action;
+  QAction* Attack3Action;
+  QAction* Move1Action;
+  QAction* Move5Action;
+  QAction* Move10Action;
   QAction* QuitAction;
   QPoint menuPoint;
+  QPoint detailPoint;
 };
 
 }

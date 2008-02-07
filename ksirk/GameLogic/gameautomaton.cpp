@@ -273,11 +273,11 @@ GameAutomaton::GameState GameAutomaton::run()
      }
      else
      {
-        if(m_game->theWorld()->countryAt(point)!=0)
+        /*if(m_game->theWorld()->countryAt(point)!=0)
         {
            m_game->getRightDialog()->displayCountryDetails(&point);
            m_game->getRightDialog()->open();
-        }
+        }*/
      }
   }
   if(event == "actionLButtonDown")
@@ -896,14 +896,63 @@ GameAutomaton::GameState GameAutomaton::run()
 
 	if (!currentPlayer()-> isAI())
 	{
-		if (m_game->isMoveValid(point))
+		if (m_game->isMoveValid(point) && m_game->firstCountry()->nbArmies() !=1)
 		{
+			if (m_game->firstCountry()->nbArmies() > 10)
+			{
+				m_game->frame()->getMove1Action()->setVisible(true);
+				m_game->frame()->getMove5Action()->setVisible(true);
+				m_game->frame()->getMove10Action()->setVisible(true);
+			}
+			else
+			{
+				if (m_game->firstCountry()->nbArmies() > 5)
+				{
+					m_game->frame()->getMove1Action()->setVisible(true);
+					m_game->frame()->getMove5Action()->setVisible(true);
+					m_game->frame()->getMove10Action()->setVisible(false);
+				}
+				else
+				{
+					if (m_game->firstCountry()->nbArmies() > 1)
+					{
+						m_game->frame()->getMove1Action()->setVisible(true);
+						m_game->frame()->getMove5Action()->setVisible(false);
+						m_game->frame()->getMove10Action()->setVisible(false);
+					}
+				}
+			}
 			m_game->frame()->getMoveContextMenu()->exec(QCursor::pos());
 		}
 		else
 		{
-			if (m_game->isFightValid(point))
+			if (m_game->isFightValid(point) && m_game->firstCountry()->nbArmies() != 1)
 			{
+				if (m_game->firstCountry()->nbArmies() > 3)
+				{
+					m_game->frame()->getAttack1Action()->setVisible(true);
+					m_game->frame()->getAttack2Action()->setVisible(true);
+					m_game->frame()->getAttack3Action()->setVisible(true);
+					
+				}
+				else
+				{
+					if (m_game->firstCountry()->nbArmies() > 2)
+					{
+						m_game->frame()->getAttack1Action()->setVisible(true);
+						m_game->frame()->getAttack2Action()->setVisible(true);
+						m_game->frame()->getAttack3Action()->setVisible(false);
+					}
+					else
+					{
+						if (m_game->firstCountry()->nbArmies() > 1)
+						{
+							m_game->frame()->getAttack1Action()->setVisible(true);
+							m_game->frame()->getAttack2Action()->setVisible(false);
+							m_game->frame()->getAttack3Action()->setVisible(false);
+						}
+					}
+				}
 				m_game->frame()->setMenuPoint(QCursor::pos());
 				m_game->frame()->getAttackContextMenu()->exec(QCursor::pos());
 			}
