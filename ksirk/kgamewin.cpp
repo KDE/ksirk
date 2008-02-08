@@ -595,8 +595,6 @@ bool KGameWindow::attackEnd()
       }
     }
   }
-  m_firstCountry-> createArmiesSprites();
-  m_secondCountry-> createArmiesSprites();
   if (m_automaton->isAdmin())
   {
     if (res)
@@ -789,6 +787,12 @@ void KGameWindow::resolveAttack()
 kDebug()<< "A1:"<< A1<<", A2: " <<A2 <<"A3:" << A3<<endl;
 kDebug()<< "D1:"<< D1<<", D2: " <<D2<<endl;
   m_rightDialog->displayFightResult(A1,A2,A3,D1,D2,NKA,NKD);
+
+  // if arena is displayed, update the arena countries too
+  if (currentWidgetType() == arenaType) {
+    arena()->countryAttack()->decrNbArmies(NKA);
+    arena()->countryDefense()->decrNbArmies(NKD);
+  }
 }
 
 /**

@@ -1988,11 +1988,15 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     break;
   case TerminateAttackSequence:
     {
-      // Re-display the world view
-      m_game->showMap();
-
       if (m_game->terminateAttackSequence() && isAdmin())
       {
+        // Re-display the world view
+        m_game->showMap();
+
+        // update country display
+        m_game->firstCountry()-> createArmiesSprites();
+        m_game->secondCountry()-> createArmiesSprites();
+
         setAttackAuto(false);
         state(INVADE);
       }
@@ -2001,14 +2005,11 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
         // if there is more than 1 army on my country and automatic
         // attack is activated
         if (m_game->firstCountry()->nbArmies() > 1 && isAttackAuto()) {
+          // update country display
+          m_game->firstCountry()-> createArmiesSprites();
+          m_game->secondCountry()-> createArmiesSprites();
+
           // continue automaticaly attacking by making the same attack
-      kDebug() << "@@@############# END ATTACK ##############@@@" << endl;
-      if (m_game->firstCountry() != NULL)
-      kDebug() << "@@@############# C1: " << m_game->firstCountry()->name() << endl;
-      else kDebug() << "@@@############# C1: NULL" << endl;
-      if (m_game->firstCountry() != NULL)
-      kDebug() << "@@@############# C2: " << m_game->secondCountry()->name() << endl;
-      else kDebug() << "@@@############# C2: NULL" << endl;
           state(WAIT1);
           if (m_game->firstCountry()->nbArmies() > 3) {
             event("actionAttack3", m_game->secondCountry()->centralPoint());
@@ -2020,6 +2021,13 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
 
         // else wait user choice
         } else {
+          // Re-display the world view
+          m_game->showMap();
+
+          // update country display
+          m_game->firstCountry()-> createArmiesSprites();
+          m_game->secondCountry()-> createArmiesSprites();
+
           setAttackAuto(false);
           state(WAIT);
         }

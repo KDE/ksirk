@@ -177,7 +177,7 @@ void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
 {
     menuPoint = QCursor::pos();
     kDebug() << "************state decoratedgameframe" << m_automaton->stateName() << endl;
-    if (m_automaton->stateName() != "INIT")
+    if (m_automaton->stateName() != "INIT" && m_automaton->stateName() != "INTERLUDE")
     {
     	if (goalAction-> icon().isNull())
 	{
