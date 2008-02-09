@@ -119,9 +119,6 @@ void DecoratedGameFrame::initMenu ()
   menu->addAction(nextPlayer);
   menu->addSeparator();			
   menu->addAction(QuitAction);
-
-  detailsAction->setVisible(false);
-  nextPlayer->setVisible(false);
 }
 
 void DecoratedGameFrame::initAttackMenu ()
@@ -141,9 +138,6 @@ void DecoratedGameFrame::initAttackMenu ()
 
     Attack3Action = new QAction(i18n("Attack3"), this);
     connect(Attack3Action, SIGNAL(triggered()), this->m_parent, SLOT(slotAttack3()));
-
-    /*QAction* QuitAction = new QAction(i18n("Quit Game"), this);
-    connect(QuitAction, SIGNAL(triggered()),this->m_parent, SLOT(close()));*/
 
     attackMenu->addAction(ArenaAction);
     attackMenu->addSeparator();	
@@ -166,9 +160,6 @@ void DecoratedGameFrame::initMoveMenu ()
 
     Move10Action = new QAction(i18n("Move10"), this);
     connect(Move10Action, SIGNAL(triggered()),this->m_parent, SLOT(slotInvade10()));
-
-    /*QAction* QuitAction = new QAction(i18n("Quit Game"), this);
-    connect(QuitAction, SIGNAL(triggered()),this->m_parent, SLOT(close()));*/
 		
     moveMenu->addAction(Move1Action);
     moveMenu->addAction(Move5Action);
@@ -188,6 +179,8 @@ void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
 		// set the goal icon to the proper flag
 		goalAction-> setIcon(KIcon(m_automaton-> currentPlayer()->getFlag()-> image(0)));
 
+		goalAction->setVisible(true);
+
 		nextPlayer->setVisible(true);
 
 		// we cannot see detail of country during the AI or virtual player game
@@ -204,8 +197,9 @@ void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
 	else
 	{
 		// as the context menu can be displayed when AI play
-		// we disabled the nextPlayer action 
+		// we disabled the nextPlayer action and the goal
 		nextPlayer->setVisible(false);
+		goalAction->setVisible(false);
 	}
 
 	menu->exec(menuPoint);
