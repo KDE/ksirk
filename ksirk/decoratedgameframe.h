@@ -96,6 +96,8 @@ public:
 
   void setMenuPoint(QPoint);
 
+  void setIcon();
+
 public slots:
   /** 
     * Slot connected in the game/document object to catch and
@@ -123,7 +125,7 @@ signals:
   void mouseMoveEventReceived(QMouseEvent * event);
 
   void arenaStateSignal(bool);
-  
+
 protected:
 
   void mouseMoveEvent ( QMouseEvent * event );
@@ -140,6 +142,7 @@ private:
   QAction* ArenaAction;
   QAction* detailsAction;
   QAction* goalAction;
+  QAction* nextPlayer;
   QAction* Attack1Action;
   QAction* Attack2Action;
   QAction* Attack3Action;

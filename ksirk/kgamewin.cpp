@@ -416,6 +416,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
   m_frame->setMaximumWidth(m_theWorld->width());
   m_frame->setMaximumHeight(m_theWorld->height());
   m_frame->setCacheMode( QGraphicsView::CacheBackground );
+  m_frame->setIcon();
 
 
   // create the arena if it doesn't exist

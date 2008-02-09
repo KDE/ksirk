@@ -96,9 +96,11 @@ void DecoratedGameFrame::initMenu ()
   QAction* zoomInAction = KStandardAction::zoomIn(this->m_parent, SLOT(slotZoomIn()), this);
   
   QAction* zoomOutAction = KStandardAction::zoomOut(this->m_parent, SLOT(slotZoomOut()), this);
-  
+
+  nextPlayer = 	new QAction(i18n("Next Player"), this);
+  connect(nextPlayer, SIGNAL(triggered()), this->m_parent, SLOT(slotNextPlayer()));
+
   detailsAction = new QAction(i18n("Details"), this);
-  //connect(detailsAction, SIGNAL(triggered()), this->m_parent, SLOT(slotDetails()));
   connect(detailsAction, SIGNAL(triggered()), this, SLOT(slotDetails()));
 
   goalAction = new QAction(QIcon(), i18n("Goal"), this);
@@ -114,10 +116,12 @@ void DecoratedGameFrame::initMenu ()
   menu->addAction(detailsAction);
   menu->addSeparator();
   menu->addAction(goalAction);
+  menu->addAction(nextPlayer);
   menu->addSeparator();			
   menu->addAction(QuitAction);
 
   detailsAction->setVisible(false);
+  nextPlayer->setVisible(false);
 }
 
 void DecoratedGameFrame::initAttackMenu ()
@@ -179,35 +183,73 @@ void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
     kDebug() << "************state decoratedgameframe" << m_automaton->stateName() << endl;
     if (m_automaton->stateName() != "INIT" && m_automaton->stateName() != "INTERLUDE")
     {
-    	if (goalAction-> icon().isNull())
+    	if (!m_automaton-> currentPlayer()->isAI() && !m_automaton-> currentPlayer()->isVirtual())
 	{
+		// set the goal icon to the proper flag
 		goalAction-> setIcon(KIcon(m_automaton-> currentPlayer()->getFlag()-> image(0)));
-	}
 
-	/*if (Attack1Action-> icon().isNull())
-	{
-		KConfig config(m_automaton->game()->theWorld()->getConfigFileName());
-		KConfigGroup onugroup = config.group("onu");
-		QString skin = onugroup.readEntry("skinpath");
-		QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/attackOne.png");
+		nextPlayer->setVisible(true);
 
-		kDebug() << "******imagefilename******" << imageFileName << endl;
-		
-		Attack1Action-> setIcon(QIcon(imageFileName));
-	}*/
-
-	kDebug() << "************detailPoint" << detailPoint << endl;
-        if(m_automaton->game()->theWorld()->countryAt(detailPoint)!=0)
-        {
-		detailsAction->setVisible(true);
+		// we cannot see detail of country during the AI or virtual player game
+		// as the right widget is reserved for combat
+		if(m_automaton->game()->theWorld()->countryAt(detailPoint)!=0)
+		{
+			detailsAction->setVisible(true);
+		}
+		else
+		{
+			detailsAction->setVisible(false);
+		}
 	}
 	else
 	{
-		detailsAction->setVisible(false);
+		// as the context menu can be displayed when AI play
+		// we disabled the nextPlayer action 
+		nextPlayer->setVisible(false);
 	}
-	
+
 	menu->exec(menuPoint);
     }
+}
+
+// set the contextual menu event Icon for non-standard action
+void DecoratedGameFrame::setIcon()
+{
+	KConfig config(m_automaton->game()->theWorld()->getConfigFileName());
+	KConfigGroup onugroup = config.group("onu");
+	QString skin = onugroup.readEntry("skinpath");
+	
+	QString imageFileName;
+
+	imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/attackOne.png");
+	Attack1Action-> setIcon(QIcon(imageFileName));
+
+	imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/attackTwo.png");
+	Attack2Action-> setIcon(QIcon(imageFileName));
+
+	imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/attackThree.png");
+	Attack3Action-> setIcon(QIcon(imageFileName));
+
+	imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/moveOne.png");
+	Move1Action-> setIcon(QIcon(imageFileName));
+
+	imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/moveFive.png");
+	Move5Action-> setIcon(QIcon(imageFileName));
+
+	imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/moveTen.png");
+	Move10Action-> setIcon(QIcon(imageFileName));
+
+	//temporary
+	imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/moveArmies.png");
+	ArenaAction-> setIcon(QIcon(imageFileName));
+
+	imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/joueurSuivant.png");
+	nextPlayer-> setIcon(QIcon(imageFileName));
+
+	// temporary
+	imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/newNetGame.png");
+	detailsAction-> setIcon(QIcon(imageFileName));
+
 }
 
 /**
