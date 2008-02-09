@@ -354,8 +354,11 @@ qreal rightRelativePos = (Sprites::SkinSpritesData::single().intData("width-betw
 	KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br/>Program cannot continue"), i18n("Error !"));
 	exit(2);
   }
-  m_audioPlayer->setCurrentSource(sndRoulePath);
-  m_audioPlayer->play();
+  if (KsirkSettings::soundEnabled())
+  {
+	m_audioPlayer->setCurrentSource(sndRoulePath);
+	m_audioPlayer->play();
+  }
 
   if (!paysDefenseur->spritesInfantry().isEmpty())
   {
@@ -419,8 +422,11 @@ qreal rightRelativePos = (Sprites::SkinSpritesData::single().intData("width-betw
 	KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br/>Program cannot continue"), i18n("Error !"));
 	exit(2);
   }
-  m_audioPlayer->setCurrentSource(sndRoulePath);
-  m_audioPlayer->play();
+  if (KsirkSettings::soundEnabled())
+  {
+	m_audioPlayer->setCurrentSource(sndRoulePath);
+	m_audioPlayer->play();
+  }
   kDebug() << "5" << endl;
 }
 
