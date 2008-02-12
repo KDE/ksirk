@@ -966,10 +966,7 @@ void KGameWindow::displayNormalGameButtons()
     addAButton(CM_ATTACK2,  SLOT(slotAttack2()), i18n("Attack with two armies"),KShortcut(Qt::Key_2),true);
     addAButton(CM_ATTACK3,  SLOT(slotAttack3()), i18n("Attack with three armies"),KShortcut(Qt::Key_3),true);
     addAButton(CM_SHIFT, SLOT(slotMove()), i18n("Move armies"),KShortcut(Qt::Key_M),true);
-  if(KsirkSettings::helpEnabled())
-  {
     showMessage(i18n("Now, choose an action with the buttons at the bottom.<br/>Note that moving armies is the last action of a turn."), 5);
-  }
   }
   gameActionsToolBar-> hide();
   gameActionsToolBar-> show();
@@ -2225,10 +2222,9 @@ void KGameWindow::attack(unsigned int nb)
   messageParts << I18N_NOOP("Attack with %1 armies : Designate the belligerants") 
     << QString::number(nb);
   broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
-  /*if(KsirkSettings::helpEnabled())
-  {
+  /*
   showMessage(i18n("To attack, press the mouse button in the attacking country<br/>and then <b>drag and drop</b> on its neighbour your want to attack."), 5);
-  }*/
+  */
 }
 
 void KGameWindow::defense(unsigned int nb)
@@ -2668,18 +2664,21 @@ void KGameWindow::explain()
 
 void KGameWindow::showMessage(const QString& message, quint32 delay)
 {
-  if (m_message == 0)
+  if(KsirkSettings::helpEnabled())
   {
-    m_message  = new KGamePopupItem();
-    m_scene_world->addItem(m_message);
-    m_message->setSharpness(KGamePopupItem::Soft);
-    m_message->setBackgroundBrush(Qt::blue);
-    m_message->setZValue(1000);
-  }
-  m_message->setMessageTimeout(delay*1000);
-  m_message->showMessage(message, KGamePopupItem::TopLeft, KGamePopupItem::ReplacePrevious);
+    if (m_message == 0)
+    {
+      m_message  = new KGamePopupItem();
+      m_scene_world->addItem(m_message);
+      m_message->setSharpness(KGamePopupItem::Soft);
+      m_message->setBackgroundBrush(Qt::blue);
+      m_message->setZValue(1000);
+    }
+    m_message->setMessageTimeout(delay*1000);
+    m_message->showMessage(message, KGamePopupItem::TopLeft, KGamePopupItem::ReplacePrevious);
 
 //   m_message->setPos(m_frame-> mapToScene(QPoint(30,30)));
+  }
 }
 
 
