@@ -103,7 +103,9 @@ KGameWindow::KGameWindow(QWidget* parent) :
   gameActionsToolBar(0),
   m_message(0),
   m_mouseLocalisation(0),
-  m_currentDisplayedWidget(mapType)
+  m_currentDisplayedWidget(mapType),
+  m_rightDock(0),
+  m_rightDialog(0)
 {
   kDebug() << "KGameWindow constructor begin" << endl;
 
@@ -489,10 +491,18 @@ void KGameWindow::initView()
 
   //ADD a dock widget on the right
 
+  if (m_rightDialog != 0) {
+    m_rightDialog->hide();
+    delete m_rightDialog;
+  }
+
+  if (m_rightDock != 0) {
+    m_rightDock->hide();
+    delete m_rightDock;
+  }
   m_rightDock = new QDockWidget(this);
   m_rightDock->setAllowedAreas(Qt::RightDockWidgetArea);
   m_rightDock->setFeatures(QDockWidget::NoDockWidgetFeatures);
-
 
   m_rightDialog = new KRightDialog(m_rightDock,theWorld(),this);
   m_rightDock->setWidget(m_rightDialog);
@@ -2138,6 +2148,7 @@ void KGameWindow::clear()
   m_nbMovedArmies = 0;
   m_firstCountry = m_secondCountry = 0;
   NKD = NKA = 0;
+  m_message = 0;
 }
 
 bool KGameWindow::nextPlayerRecycling()
@@ -2657,7 +2668,6 @@ void KGameWindow::explain()
 
 void KGameWindow::showMessage(const QString& message, quint32 delay)
 {
-  kDebug() << endl;
   if (m_message == 0)
   {
     m_message  = new KGamePopupItem();

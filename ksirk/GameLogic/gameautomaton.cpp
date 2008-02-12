@@ -372,13 +372,6 @@ GameAutomaton::GameState GameAutomaton::run()
   case ATTACK2:
     //if  (event == "actionLButtonUp") 
     //{
-      kDebug() << "@@@############# ATTACK ##############@@@" << endl;
-      if (m_game->firstCountry() != NULL)
-      kDebug() << "@@@############# C1: " << m_game->firstCountry()->name() << endl;
-      else kDebug() << "@@@############# C1: NULL" << endl;
-      if (m_game->firstCountry() != NULL)
-      kDebug() << "@@@############# C2: " << m_game->secondCountry()->name() << endl;
-      else kDebug() << "@@@############# C2: NULL" << endl;
       switch ( m_game->attacked(point) )
       {
         case 0:
