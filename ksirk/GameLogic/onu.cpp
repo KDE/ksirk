@@ -263,9 +263,10 @@ ONU::ONU(GameAutomaton* automaton,
     if (goalType == "countries")
     {
       goal->type(Goal::Countries);
-      goal->nbCountries(goalGroup.readEntry("nb",0));
+      goal->nbCountries(goalGroup.readEntry("nbCountries",0));
       goal->nbArmiesByCountry(goalGroup.readEntry("nbArmiesByCountry",0));
-//               kDebug() << "  nb countries: " << nb << endl;
+      kDebug() << "  nb countries: **********************************" << goal->nbCountries() << endl;
+      kDebug() << "  nbarmies countries: **********************************" << goal->nbArmiesByCountry() << endl;
     }
     else if (goalType == "continents" )
     {
