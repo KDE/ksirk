@@ -180,6 +180,7 @@ void AIColsonPlayer::chooseInvasionAction()
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   QPoint point;
+  kDebug() << "Moves *****************" << m_nbArmiesToMove << endl;
   if (m_nbArmiesToMove >= 10) 
   {
     kDebug() << "    choosing actionInvade10" << endl;
@@ -2066,10 +2067,20 @@ int AIColsonPlayer::AI_Move(int iSrcCountry, int iDstCountry, int iNumArmies)
   m_toMove = iNumArmies;
   kDebug() << "AIColsonPlayer::AI_Move " << iNumArmies << " armies from " 
       << m_src->name() << " to " << m_dest->name() << endl;
+  
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
-  stream <<  QString("actionMove") << m_src->centralPoint();
+  stream << QString("actionLButtonDown") << m_src->centralPoint();
   aiPlayerIO()->sendInput(stream,true);
+
+  QByteArray buffer2;
+  QDataStream stream2(&buffer2, QIODevice::WriteOnly);
+  stream2 << QString("actionLButtonUp") << m_dest->centralPoint();
+  aiPlayerIO()->sendInput(stream2,true);
+
+  Attack_SrcCountry = m_src->id();
+  Attack_DestCountry = m_dest->id();
+
   stop();
   return 0;
 }

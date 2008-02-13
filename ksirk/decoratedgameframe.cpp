@@ -176,12 +176,19 @@ void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
     {
     	if (!m_automaton-> currentPlayer()->isAI() && !m_automaton-> currentPlayer()->isVirtual())
 	{
+		if (m_automaton->stateName() != "WAIT_RECYCLING")
+		{
+			nextPlayer->setVisible(true);
+		}
+		else
+		{
+			nextPlayer->setVisible(false);
+		}
+		
 		// set the goal icon to the proper flag
 		goalAction-> setIcon(KIcon(m_automaton-> currentPlayer()->getFlag()-> image(0)));
 
 		goalAction->setVisible(true);
-
-		nextPlayer->setVisible(true);
 
 		// we cannot see detail of country during the AI or virtual player game
 		// as the right widget is reserved for combat

@@ -456,11 +456,6 @@ bool AIPlayer::moveArmiesAction()
   m_src = osrc;
   m_dest = odest;
 
-  /*QByteArray buffer;
-  QDataStream stream(&buffer, QIODevice::WriteOnly);
-  stream <<  QString("actionMove") << osrc->centralPoint();
-  aiPlayerIO()->sendInput(stream,true);*/
-
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   stream << QString("actionLButtonDown") << osrc->centralPoint();
@@ -470,6 +465,8 @@ bool AIPlayer::moveArmiesAction()
   QDataStream stream2(&buffer2, QIODevice::WriteOnly);
   stream2 << QString("actionLButtonUp") << odest->centralPoint();
   aiPlayerIO()->sendInput(stream2,true);
+
+  kDebug() << "AIPlayer ****************" << Player::name()  << " : moveAction : "  << osrc-> name() << " " << odest-> name() << endl;
 
   return true;
 }
