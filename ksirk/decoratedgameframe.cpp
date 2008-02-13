@@ -180,7 +180,7 @@ void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
     {
     	if (!m_automaton-> currentPlayer()->isAI() && !m_automaton-> currentPlayer()->isVirtual())
 	{
-		if (m_automaton->stateName() == "WAIT" && )
+		if (m_automaton->stateName() == "WAIT")
 		{
 			nextPlayer->setVisible(true);
 		}
