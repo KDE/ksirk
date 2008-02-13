@@ -54,15 +54,17 @@ namespace Ksirk
 //KStandardDirs* m_dirs=KGlobal::dirs();
 //QString iconFileName = m_dirs-> findResource("appdata", dynamic_cast<KGameWindow*>(parent->parentWidget())->automaton()->skin() + "/Images/SoldatAGenoux1.png");
 
-
-
-    // search the background image for the arena
+    // load the armie image
     KConfig config(world->getConfigFileName());
     KConfigGroup onugroup = config.group("onu");
     QString skin = onugroup.readEntry("skinpath");
     QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/sprites/infantry.svg");
-    // create the background image
     soldat.load(imageFileName);
+
+    // load the stopAttackAuto image
+    imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/stopAttackAuto.png");
+    stopAttackAuto.load(imageFileName);
+
     //soldat.setFixedSize(8,8);
     show();
 }
@@ -204,7 +206,7 @@ QHBoxLayout * box4 = new QHBoxLayout();
       mainLayout->addWidget(bas,2,0);
 
       if (game->automaton()->isAttackAuto()) {
-         QPushButton* bouton = new QPushButton("Stop Attack-auto");
+         QPushButton* bouton = new QPushButton(stopAttackAuto,"Stop Attack-auto");
          mainLayout->addWidget(bouton,3,0);
       }
 

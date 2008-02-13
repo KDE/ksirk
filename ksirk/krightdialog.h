@@ -116,7 +116,10 @@ namespace GameLogic
 
       QWidget * haut;
 
-      QWidget * milieu;QPixmap soldat;
+      QWidget * milieu;
+
+      QPixmap soldat;
+      QPixmap stopAttackAuto;
 
       KGameWindow * game;
    };
