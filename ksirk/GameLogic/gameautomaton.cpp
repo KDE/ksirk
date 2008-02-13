@@ -673,7 +673,7 @@ GameAutomaton::GameState GameAutomaton::run()
   break;
   case WAIT_RECYCLING:
 //     kDebug() << "event = '" << event << "'" << endl;
-    if  (event == "actionLButtonDown") 
+    /*if  (event == "actionLButtonDown") 
     {
       QByteArray buffer;
       QDataStream stream(&buffer, QIODevice::WriteOnly);
@@ -687,7 +687,7 @@ GameAutomaton::GameState GameAutomaton::run()
       stream << point;
       sendMessage(buffer,PlayerRemovesArmy);
     }
-    else if (event == "actionNextPlayer") 
+    else */if (event == "actionNextPlayer") 
     {
       QByteArray buffer;
       QDataStream stream(&buffer, QIODevice::WriteOnly);
