@@ -35,6 +35,8 @@
 #include <kglobal.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>
+#include <QPushButton>
+
 #include "kgamewin.h"
 namespace Ksirk
 {
@@ -122,6 +124,13 @@ namespace GameLogic
       QPixmap stopAttackAuto;
 
       KGameWindow * game;
+
+      QPushButton* buttonStopAttack;
+
+      private slots:
+      
+      void slotStopAttackAuto();
+
    };
    
 }

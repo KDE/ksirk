@@ -242,6 +242,8 @@ The goal of the game is simply to conquer the World... It is done by attacking y
       <usePermanentCaching>true</usePermanentCaching>
       <alwaysIncludeNamespaces>false</alwaysIncludeNamespaces>
       <includePaths>.;</includePaths>
+      <parseMissingHeadersExperimental>false</parseMissingHeadersExperimental>
+      <resolveIncludePathsUsingMakeExperimental>false</resolveIncludePathsUsingMakeExperimental>
     </codecompletion>
     <references/>
     <designerintegration>
@@ -264,7 +266,7 @@ The goal of the game is simply to conquer the World... It is done by attacking y
       <includestyle>3</includestyle>
       <designerintegration>EmbeddedKDevDesigner</designerintegration>
       <qmake>/usr/lib/qt3//bin/qmake</qmake>
-      <designer>/usr/bin/designer-qt3</designer>
+      <designer>/usr/lib/qt3//bin/designer</designer>
       <designerpluginpaths/>
     </qt>
   </kdevcppsupport>

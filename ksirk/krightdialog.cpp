@@ -31,7 +31,6 @@
 #include <kcmdlineargs.h>
 #include <QScrollBar>
 #include <QScrollArea>
-#include <QPushButton>
 
 namespace Ksirk
 {
@@ -206,8 +205,9 @@ QHBoxLayout * box4 = new QHBoxLayout();
       mainLayout->addWidget(bas,2,0);
 
       if (game->automaton()->isAttackAuto()) {
-         QPushButton* bouton = new QPushButton(stopAttackAuto,"Stop Attack-auto");
-         mainLayout->addWidget(bouton,3,0);
+         buttonStopAttack = new QPushButton(stopAttackAuto,"Stop Attack-auto");
+         mainLayout->addWidget(buttonStopAttack,3,0);
+         connect(buttonStopAttack, SIGNAL(clicked()), this, SLOT(slotStopAttackAuto()));
       }
 
       //mainLayout->setAlignment(Qt::AlignTop | Qt::AlignLeft);
@@ -303,5 +303,12 @@ milieuGrid->addWidget(rightContents->at(0),4,0,Qt::AlignCenter);
      if(mainLayout->indexOf(haut)!=-1) { mainLayout->removeWidget(haut); }
 
      
+   }
+
+   void KRightDialog::slotStopAttackAuto()
+   {
+       kDebug()<<"Recept signal button stop attack auto" << endl;
+       this->game->automaton()->setAttackAuto(false);
+       this->buttonStopAttack->setEnabled(false);
    }
 }
