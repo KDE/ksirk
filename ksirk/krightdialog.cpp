@@ -31,6 +31,8 @@
 #include <kcmdlineargs.h>
 #include <QScrollBar>
 #include <QScrollArea>
+#include <QPushButton>
+
 namespace Ksirk
 {
    using namespace GameLogic;
@@ -111,7 +113,7 @@ rightContents->at(3)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpandi
       mainLayout->addWidget(rightContents->at(2),3,0,Qt::AlignLeft);
       
       mainLayout->addWidget(rightContents->at(4),5,0,Qt::AlignLeft);
-     //setAlignment(Qt::AlignTop | Qt::AlignLeft);
+      //mainLayout->setAlignment(Qt::AlignTop | Qt::AlignLeft);
       
       unit->addWidget(rightContents->at(3));
       unit->addWidget(rightContents->at(6));
@@ -200,7 +202,13 @@ QHBoxLayout * box4 = new QHBoxLayout();
 
       mainLayout->addWidget(haut,0,0);
       mainLayout->addWidget(bas,2,0);
-//setAlignment(Qt::AlignTop | Qt::AlignLeft);
+
+      if (game->automaton()->isAttackAuto()) {
+         QPushButton* bouton = new QPushButton("Stop Attack-auto");
+         mainLayout->addWidget(bouton,3,0);
+      }
+
+      //mainLayout->setAlignment(Qt::AlignTop | Qt::AlignLeft);
       
       mainLayout->update();
       m_parentWidget->show();

@@ -45,6 +45,8 @@ nouveauJeu.png
 moveTen.png
 moveBackOne.png
 arena.svg
+attackAuto.png
+stopAttackAuto.png
 )
 install( FILES ${pics_default_DATA} DESTINATION ${DATA_INSTALL_DIR}/ksirk/skins/default/Images/ )
 

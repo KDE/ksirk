@@ -235,6 +235,9 @@ void DecoratedGameFrame::setIcon()
 	imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/attackThree.png");
 	Attack3Action-> setIcon(QIcon(imageFileName));
 
+	imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/attackAuto.png");
+	AutoAction-> setIcon(QIcon(imageFileName));
+
 	imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/moveOne.png");
 	Move1Action-> setIcon(QIcon(imageFileName));
 
