@@ -126,7 +126,6 @@ void DecoratedGameFrame::initAttackMenu ()
     this->attackMenu = new QMenu(this);
 
     ArenaAction = new QAction(i18n("Enable Arena"), this);
-    //ArenaAction->setCheckable(true);
     connect(ArenaAction, SIGNAL(triggered()), this, SLOT(arenaState()));
     connect(this, SIGNAL(arenaStateSignal(bool)), this->m_parent, SLOT(slotArena(bool)));
 
@@ -139,11 +138,16 @@ void DecoratedGameFrame::initAttackMenu ()
     Attack3Action = new QAction(i18n("Attack3"), this);
     connect(Attack3Action, SIGNAL(triggered()), this->m_parent, SLOT(slotAttack3()));
 
+    AutoAction = new QAction(i18n("Attack-auto"), this);
+    connect(AutoAction, SIGNAL(triggered()), this, SLOT(attackAuto()));
+
     attackMenu->addAction(ArenaAction);
     attackMenu->addSeparator();	
     attackMenu->addAction(Attack1Action);
     attackMenu->addAction(Attack2Action);
     attackMenu->addAction(Attack3Action);
+    attackMenu->addSeparator();	
+    attackMenu->addAction(AutoAction);
     attackMenu->addSeparator();
     attackMenu->addAction(QuitAction);
 }
@@ -176,7 +180,7 @@ void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
     {
     	if (!m_automaton-> currentPlayer()->isAI() && !m_automaton-> currentPlayer()->isVirtual())
 	{
-		if (m_automaton->stateName() != "WAIT_RECYCLING")
+		if (m_automaton->stateName() == "WAIT" && )
 		{
 			nextPlayer->setVisible(true);
 		}
@@ -347,6 +351,19 @@ void DecoratedGameFrame::arenaState()
 	}
 
 	attackMenu->exec(menuPoint);
+}
+
+void DecoratedGameFrame::attackAuto() {
+	m_automaton->setAttackAuto(true);
+	if (m_automaton->game()->firstCountry()->nbArmies() > 3) {
+		m_automaton->game()->slotAttack3();
+	} else if (m_automaton->game()->firstCountry()->nbArmies() > 2) {
+		m_automaton->game()->slotAttack2();
+	} else if (m_automaton->game()->firstCountry()->nbArmies() > 1) {
+		m_automaton->game()->slotAttack1();
+	} else {
+		m_automaton->setAttackAuto(false);
+	}
 }
 
 void DecoratedGameFrame::slotDetails()
