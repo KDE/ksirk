@@ -146,7 +146,8 @@ m_aicannotrunhack(true),
     m_savedState(INVALID),
     m_goals(),
     m_useGoals(true),
-    m_attackAuto(false)
+    m_attackAuto(false),
+    m_defenseAuto(true)
 {
   m_skin = "skins/default";
   //   kDebug() << "GameAutomaton::GameAutomaton" << endl;
@@ -1993,6 +1994,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
         m_game->secondCountry()-> createArmiesSprites();
 
         setAttackAuto(false);
+	setDefenseAuto(false);
         state(INVADE);
       }
       else if (isAdmin())

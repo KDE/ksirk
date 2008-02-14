@@ -350,6 +350,18 @@ public:
     */
   inline bool isAttackAuto() {return m_attackAuto;}
 
+  /**
+    * Change the automatic defense state.
+    * @param activated new state
+    */
+  inline void setDefenseAuto(bool activated) {m_defenseAuto = activated;}
+
+  /**
+    * Get the automatic defense state.
+    * @return state
+    */
+  inline bool isDefenseAuto() {return m_defenseAuto;}
+
 public Q_SLOTS:
   /** Reacts to the current state eventualy processing one queued event */
   GameState run();
@@ -497,6 +509,9 @@ private:
 
   // tell us if the automatic attack is enabled
   bool m_attackAuto;
+
+  // tell us if the automatic defense is enabled
+  bool m_defenseAuto;
 };
 
 QDataStream& operator>>(QDataStream& s, GameAutomaton::GameState& state);

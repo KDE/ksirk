@@ -148,6 +148,12 @@ protected: // Private attributes
     */
   GameAutomaton* m_game;
 
+ /**
+   * a pointer to the game attribute defenseAuto
+   *
+   */
+ // GameAutomaton* m_defenseAuto;
+
   /** indicates to the thread if the run method should return */
   bool stopMe;
 
