@@ -46,6 +46,9 @@
 //include files for QT
 #include <QDockWidget>
 #include <QTreeView>
+#include <QPushButton>
+#include <QVBoxLayout>
+
 // include files for KDE
 #include <kiconloader.h>
 #include <kmessagebox.h>
@@ -430,18 +433,11 @@ void KGameWindow::newSkin(const QString& onuFileName)
   m_arena->setCacheMode( QGraphicsView::CacheBackground );
 
   // create a central widget if it doesent' exists
-//GAEL
-//m_splitter = new QSplitter();
+
   m_centralWidget = dynamic_cast <QStackedWidget*>(centralWidget());
   if (m_centralWidget == 0) {
     m_centralWidget = new QStackedWidget;
  setCentralWidget(m_centralWidget);
-//kDebug() << "azerty" << endl;
-//setCentralWidget(m_splitter);
-//kDebug() << "azertyuiop" << endl;
-//m_splitter->addWidget(m_centralWidget);
-//m_splitter->addWidget(new QLabel("&azertyu"));
-//m_splitter->addWidget(new QLabel("Wxcvgh"));
   }
   
   // put the map and arena in the central widget
@@ -794,9 +790,8 @@ void KGameWindow::resolveAttack()
   else if (NKD != 0) stream2 << quint32(1);
   m_automaton->sendMessage(buffer2,AnimExplosion);
 
-  //GAEL
-kDebug()<< "A1:"<< A1<<", A2: " <<A2 <<"A3:" << A3<<endl;
-kDebug()<< "D1:"<< D1<<", D2: " <<D2<<endl;
+  //kDebug()<< "A1:"<< A1<<", A2: " <<A2 <<"A3:" << A3<<endl;
+  //kDebug()<< "D1:"<< D1<<", D2: " <<D2<<endl;
   m_rightDialog->displayFightResult(A1,A2,A3,D1,D2,NKA,NKD);
 
   // if arena is displayed, update the arena countries too
@@ -2770,6 +2765,81 @@ BackGnd* KGameWindow::backGnd() {
   } else {
     return backGndWorld();
   }
+}
+
+void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * defender)
+{
+  QLabel * nb = new QLabel();
+  QPixmap soldat;
+  
+  m_slideReleased=true;
+
+  m_nbLArmy = attack->nbArmies();
+  m_nbRArmy = defender->nbArmies();
+
+  m_nbLArmies = new QLabel(QString::number(m_nbLArmy));
+  m_nbRArmies = new QLabel(QString::number(m_nbRArmy));  
+
+  m_wSlide = new QDialog();
+  m_wSlide->setFixedWidth(380);
+  m_wSlide->setFixedHeight(250);
+
+  //Infantery picture
+  KConfig config(theWorld()->getConfigFileName());
+  KConfigGroup onugroup = config.group("onu");
+  QString skin = onugroup.readEntry("skinpath");
+  QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/sprites/infantry.svg");
+
+  soldat.load(imageFileName);
+  nb->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
+  nb->setFixedSize(35,35);
+
+  m_invadeSlide = new QSlider(Qt::Horizontal,m_wSlide);
+
+  m_invadeSlide->setTickInterval(1);
+  m_invadeSlide->setMinimum(0);
+  m_invadeSlide->setMaximum(attack->nbArmies()-1);
+  m_invadeSlide->setTickPosition(QSlider::TicksBelow);
+  m_currentSlideValue = m_invadeSlide->value();
+
+  QPushButton * ok = new QPushButton();
+  
+  ok->setText("Validate");
+  QGridLayout * wSlideLayout = new QGridLayout(m_wSlide);
+  QHBoxLayout * center = new QHBoxLayout(m_wSlide);
+  QVBoxLayout * left = new QVBoxLayout(m_wSlide);
+  QVBoxLayout * right = new QVBoxLayout(m_wSlide);
+
+  //init. main layout
+  wSlideLayout->addWidget(new QLabel(I18N_NOOP("You conquered <font color=\"blue\">"+defender->name()+"</font> with <font color=\"red\">"+attack->name()+"</font>!")),0,0);
+
+  wSlideLayout->addWidget(new QLabel(I18N_NOOP("<br><i>Choose the number of invade armies.</i>")),1,0);
+  wSlideLayout->addLayout(center,2,0);
+  wSlideLayout->addWidget(m_invadeSlide,3,0);
+  wSlideLayout->addWidget(ok,4,0);
+
+  //init. center layout
+  center->addLayout(left);
+  center->addWidget(nb);
+  center->addLayout(right);
+
+  //init. left layout
+  left->addWidget(new QLabel(I18N_NOOP("<b>"+attack->name()+"</b>")),Qt::AlignCenter);
+  left->addWidget(m_nbLArmies,Qt::AlignCenter);
+
+  //init. right layout
+  right->addWidget(new QLabel(I18N_NOOP("<b>"+defender->name()+"</b>")),Qt::AlignCenter);
+  right->addWidget(m_nbRArmies,Qt::AlignCenter);
+
+  //val->setText(QString::number(invadeSlide->value()));
+  connect(m_invadeSlide,SIGNAL(valueChanged(int)),this,SLOT(slideMove(int)));
+  connect(m_invadeSlide,SIGNAL(sliderReleased()),this,SLOT(slideReleased()));
+  connect(ok,SIGNAL(pressed()),this,SLOT(slideClose()));
+
+  m_wSlide->setWindowTitle("Invasion");
+  m_wSlide->setLayout(wSlideLayout);
+  m_wSlide->setWindowModality(Qt::ApplicationModal);
+  m_wSlide->show();
 }
 
 bool KGameWindow::isArena()

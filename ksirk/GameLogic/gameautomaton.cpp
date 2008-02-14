@@ -1995,6 +1995,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
 
         setAttackAuto(false);
 	setDefenseAuto(false);
+        if(!currentPlayer()->isAI())m_game->slideInvade(m_game->firstCountry(), m_game->secondCountry());
         state(INVADE);
       }
       else if (isAdmin())

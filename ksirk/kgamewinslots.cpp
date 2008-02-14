@@ -571,4 +571,80 @@ void KGameWindow::slotRemoveMessage()
   }
 }
 
+void KGameWindow::slideMove(int v)
+{
+  if(m_slideReleased) m_previousSlideValue = m_currentSlideValue;
+  m_slideReleased = false;
+  m_nbLArmy = m_nbLArmy-(v-m_currentSlideValue);
+  m_nbRArmy = m_nbRArmy+(v-m_currentSlideValue);
+  m_nbLArmies->setText(QString::number(m_nbLArmy));
+  m_nbRArmies->setText(QString::number(m_nbRArmy));
+  m_currentSlideValue = v;
+  m_wSlide->update();
+}
+
+void KGameWindow::slideReleased()
+{
+  m_slideReleased = true;
+  m_currentSlideValue = m_previousSlideValue;
+  QByteArray* buffer;
+
+  int units; 
+  if(m_invadeSlide->value()!=m_currentSlideValue) units = m_invadeSlide->value()-  m_currentSlideValue;
+
+  if (units<0) units*=(-1);
+  int reste10 = units%10;
+  int reste5;
+  for(int i=0;i<(units-reste10)/10;i++)
+  {
+    
+    buffer = new QByteArray();
+    QDataStream stream(buffer, QIODevice::WriteOnly);
+    stream << quint32(10);
+    if (m_invadeSlide->value()<m_currentSlideValue)
+    {
+    	automaton()->sendMessage(*buffer,Invade);
+    }
+    else
+    {
+        automaton()->sendMessage(*buffer,Retreat);
+    }
+  }
+
+  reste5 = reste10%5;
+  for(int i=0;i<(reste10-reste5)/5;i++)
+  {
+    buffer = new QByteArray();
+    QDataStream stream(buffer, QIODevice::WriteOnly);
+    stream << quint32(5);
+    if (m_invadeSlide->value()>m_currentSlideValue)
+    {
+    	automaton()->sendMessage(*buffer,Invade);
+    }
+    else
+    {
+        automaton()->sendMessage(*buffer,Retreat);
+    }
+  }
+  for(int i=0;i<reste5;i++)
+  {
+    buffer = new QByteArray();
+    QDataStream stream(buffer, QIODevice::WriteOnly);
+    stream << quint32(1);
+    if (m_invadeSlide->value()>m_currentSlideValue)
+    {
+    	automaton()->sendMessage(*buffer,Invade);
+    }
+    else
+    {
+        automaton()->sendMessage(*buffer,Retreat);
+    }
+  }
+  m_currentSlideValue = m_invadeSlide->value();
+}
+void KGameWindow::slideClose()
+{
+   m_wSlide->close();
+}
+
 } // closing namespace Ksirk

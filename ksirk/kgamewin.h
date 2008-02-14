@@ -36,7 +36,7 @@
 #include <QStackedWidget>
 #include <QGroupBox>
 #include <QSplitter>
-
+#include <QSlider>
 // include files for KDE
 #include <ksharedconfig.h>
 #include <KXmlGuiWindow>
@@ -538,6 +538,8 @@ public:
 
   QPixmap getDice(DiceColor color, int num);
 
+  void slideInvade(GameLogic::Country *,GameLogic::Country *);
+
 protected:
 
   /**
@@ -605,6 +607,9 @@ public slots:
 
   virtual void mouseMoveEvent ( QMouseEvent * event );
 
+  void slideMove(int v);
+  void slideReleased();  
+  void slideClose();
   //@{
   /**
    * The slots associated to the keys
@@ -702,10 +707,22 @@ private:
   QDockWidget * m_rightDock;
 
   KRightDialog * m_rightDialog;
-//GAEL
+
   QStackedWidget *m_centralWidget;
-//QSplitter *m_splitter;
+
   GameLogic::GameAutomaton* m_automaton;
+
+  QDialog * m_wSlide;
+
+  int m_nbRArmy;
+  int m_nbLArmy;
+  int m_currentSlideValue;
+  int m_previousSlideValue;
+
+  QLabel * m_nbLArmies;
+  QLabel * m_nbRArmies;
+  QSlider * m_invadeSlide;
+  bool m_slideReleased; 
 
   /**
     * State that say the widget that is currently displayed between the map and the arena.
