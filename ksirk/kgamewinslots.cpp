@@ -499,6 +499,12 @@ void KGameWindow::slotMovingArmiesArrived(AnimSpritesGroup* sprites)
   delete sprites;
 }
 
+void KGameWindow::slotBring(AnimSprite* sprite)
+{
+	kDebug() << "slot bring **************************" << endl;
+	m_automaton->game()->stopExplosion();
+}
+
 void KGameWindow::slotMovingArmyArrived(AnimSprite* sprite)
 {
   kDebug() << endl;
@@ -525,6 +531,9 @@ void KGameWindow::slotExplosionFinished(AnimSpritesGroup* sprites)
     sprite->setStatic();
     delete sprite;
   }
+  
+m_automaton->game()->initCombatBringBack(m_automaton->game()->firstCountry(), m_automaton->game()->secondCountry());
+
   m_automaton->explosionFinished();
 }
 

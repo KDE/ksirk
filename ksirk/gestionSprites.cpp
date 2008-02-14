@@ -646,6 +646,8 @@ void KGameWindow::animExplosion(int who,Country *paysAttaquant, Country *paysDef
       m_animFighters->oneArrived(0);
     }
   }
+
+  
   kDebug() << "  loop done" << endl;
 
   /*QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
@@ -684,6 +686,7 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
     qreal flagYDiff = Sprites::SkinSpritesData::single().intData("fighters-flag-y-diff")*m_theWorld->zoom();
     qreal leftRelativePos = - (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("cannon-width"))*m_theWorld->zoom();
     qreal rightRelativePos = (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("flag-width"))*m_theWorld->zoom();
+    
     if (who == 0) //Attaquant detruit, ramene defenseur
     {
         newSprite = new CannonSprite(
@@ -707,8 +710,10 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
         {
             newSprite-> setPos(  (paysDefenseur-> pointFlag())+QPointF(leftRelativePos, flagYDiff));
         }
+	connect(newSprite,SIGNAL(atDestination(AnimSprite*)),this,SLOT(slotBring(AnimSprite*)));
         ((AnimSprite*)newSprite)-> setupTravel(paysDefenseur, paysDefenseur, newSprite-> pos(), paysDefenseur-> pointCannon());
         newSprite-> turnTowardDestination();
+	m_animFighters->addSprite(newSprite);
 
         QString sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
         if (sndRoulePath.isNull())
@@ -742,8 +747,10 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
         {
             newSprite-> setPos( (paysDefenseur-> pointFlag())+QPointF(rightRelativePos,flagYDiff));
         }
-        ((AnimSprite*)newSprite)-> setupTravel(paysDefenseur, paysAttaquant, newSprite-> pos(), paysAttaquant-> pointCannon());
+        connect(newSprite,SIGNAL(atDestination(AnimSprite*)),this,SLOT(slotBring(AnimSprite*)));
+	((AnimSprite*)newSprite)-> setupTravel(paysDefenseur, paysAttaquant, newSprite-> pos(), paysAttaquant-> pointCannon());
         newSprite-> turnTowardDestination();
+	m_animFighters->addSprite(newSprite);
 
         QString sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
         if (sndRoulePath.isNull())

@@ -680,6 +680,7 @@ public slots:
   void slotFiringFinished(AnimSpritesGroup*);
   void slotExplosionFinished(AnimSpritesGroup*);
   void slotMovingArmiesArrived(AnimSpritesGroup*);
+  void slotBring(AnimSprite*);
   void slotMovingArmyArrived(AnimSprite*);
 
   void slotZoomIn();

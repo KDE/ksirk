@@ -242,7 +242,6 @@ GameAutomaton::GameState GameAutomaton::run()
     QTimer::singleShot(200, this, SLOT(run()));
     return m_state;
   }
-
       
   activateNeededAIPlayers();
 
@@ -416,12 +415,15 @@ GameAutomaton::GameState GameAutomaton::run()
   break;
   case FIGHT_BRINGBACK:
     // no more moving fighter returning home
-    if (!m_game->haveAnimFighters() && isAdmin())
-    {
-      QByteArray buffer;
-      QDataStream stream(&buffer, QIODevice::WriteOnly);
-      sendMessage(buffer,TerminateAttackSequence);
-    }
+
+kDebug () << "$$$$$$$STATE FIGHT_BRINGBACK $$$$$$$$$$$" << m_game->haveAnimFighters() << endl;
+
+	if (!m_game->haveAnimFighters() && isAdmin())
+	{
+		QByteArray buffer;
+		QDataStream stream(&buffer, QIODevice::WriteOnly);
+		sendMessage(buffer,TerminateAttackSequence);
+	}
   break;
   case INTERLUDE:
     if  (event == "playersLooped")
