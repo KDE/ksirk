@@ -412,6 +412,8 @@ public Q_SLOTS:
     */
   void slotConnectionToClientBroken(KMessageIO *);
 
+  Country * getDefCountry ();
+
 private Q_SLOTS:
   void displayGoals();
   
@@ -512,6 +514,9 @@ private:
 
   // tell us if the automatic defense is enabled
   bool m_defenseAuto;
+
+  // Save Defense country
+  Country * defCountry;
 };
 
 QDataStream& operator>>(QDataStream& s, GameAutomaton::GameState& state);

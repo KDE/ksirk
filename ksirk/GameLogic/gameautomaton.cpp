@@ -1328,6 +1328,11 @@ void GameAutomaton::setGoalFor(Player* player)
   m_goals.erase(it);
 }
 
+Country * GameAutomaton::getDefCountry ()
+{
+  return this->defCountry;
+}
+
 bool GameAutomaton::joinNetworkGame()
 {
   // Set default network parameter
@@ -1950,8 +1955,9 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     break;
   case DisplayDefenseButtons:
     stream >> playerName;
-    if ( (!playerNamed(playerName)->isVirtual()) && (!playerNamed(playerName)->isAI()))
+    if ( (!playerNamed(playerName)->isVirtual()) && (!playerNamed(playerName)->isAI()) && (!this->isDefenseAuto()))
     { //m_game->displayDefenseButtons();
+      defCountry = this->game()->secondCountry();
       m_game->displayDefenseWindow();
     }
     break;

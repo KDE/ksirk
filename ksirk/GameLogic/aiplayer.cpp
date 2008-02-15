@@ -595,8 +595,11 @@ void AIPlayer::chooseDefenseAction()
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   QPointF point;
-  if (m_game-> currentPlayer() == this && !m_game->isDefenseAuto())
+  if ((m_game-> currentPlayer() == this) && ((!m_game->isDefenseAuto()) || (m_game->game()->secondCountry() != m_game->getDefCountry())))
+  {
     kDebug() << "AIPlayer::chooseDefenseAction waiting defense of another one; nothing to do." << endl;
+    m_game->setDefenseAuto(false);
+  }
   else
   {
     kDebug() << "AIPlayer::chooseDefenseAction " << Player::name() << endl;
