@@ -114,6 +114,6 @@ namespace GameLogic
       QPixmap* m_bgImage;
    };
    
-};
+}
 
 #endif // FIGHTARENA_H
