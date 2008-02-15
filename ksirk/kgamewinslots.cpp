@@ -593,9 +593,11 @@ void KGameWindow::slideReleased()
   QByteArray* buffer;
 
   int units; 
-  if(m_invadeSlide->value()!=m_currentSlideValue) units = m_invadeSlide->value()-  m_currentSlideValue;
+  if(m_invadeSlide->value()!=m_currentSlideValue)
+    units = m_invadeSlide->value()-  m_currentSlideValue;
 
-  if (units<0) units*=(-1);
+  if (units<0)
+    units*=(-1);
   int reste10 = units%10;
   int reste5;
   for(int i=0;i<(units-reste10)/10;i++)
@@ -604,7 +606,7 @@ void KGameWindow::slideReleased()
     buffer = new QByteArray();
     QDataStream stream(buffer, QIODevice::WriteOnly);
     stream << quint32(10);
-    if (m_invadeSlide->value()<m_currentSlideValue)
+    if (m_invadeSlide->value()>m_currentSlideValue)
     {
     	automaton()->sendMessage(*buffer,Invade);
     }
@@ -647,7 +649,9 @@ void KGameWindow::slideReleased()
 }
 void KGameWindow::slideClose()
 {
-   m_wSlide->close();
+  m_wSlide->close();
+  QPoint point;
+  m_automaton->event("actionInvasionFinished", point);
 }
 
 } // closing namespace Ksirk

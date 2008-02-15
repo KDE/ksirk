@@ -37,13 +37,22 @@ namespace Ksirk
    using namespace GameLogic;
    
    KRightDialog::KRightDialog(QDockWidget * parent, ONU * world,KGameWindow* m_game)
-   : QWidget(parent), m_parentWidget(parent),world(world),game(m_game)
+   : QWidget(parent),
+   m_parentWidget(parent),
+   world(world),
+   game(m_game),
+   btRecycleWidget(0),
+   btValidWidget(0),
+   buttonStopAttack(0),
+   flag1(0),
+   flag2(0)
    {
 	rightContents = new QList<QLabel*>();
         mainLayout = new QGridLayout(this);
 	//mainLayout->setColumnMinimumWidth(0,30);
         setLayout(mainLayout);
         flag1 = new QLabel();flag2 = new QLabel();
+
 
 	setFixedSize(220,360);
 
@@ -63,6 +72,18 @@ namespace Ksirk
     // load the stopAttackAuto image
     imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/stopAttackAuto.png");
     stopAttackAuto.load(imageFileName);
+
+    // load the recycle image
+    imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/distributionArmees.png");
+    recycleContinue.load(imageFileName);
+
+    // load the finish recycle image
+    imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/distributionArmeesFinie.png");
+    recycleDone.load(imageFileName);
+
+    // load the next player image
+    imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/joueurSuivant.png");
+    recycleNextPlayer.load(imageFileName);
 
     //soldat.setFixedSize(8,8);
     show();
@@ -153,6 +174,7 @@ QHBoxLayout * box4 = new QHBoxLayout();
       QString owner_D = defender->owner()->name();
       QString nb_units_D = QString::number(defender->nbArmies());
       QString pays_D = defender->name();
+
       QPixmap picture1;
       QPixmap picture2;
       picture1 = attaker->owner()->getFlag()->image(0);
@@ -217,7 +239,104 @@ QHBoxLayout * box4 = new QHBoxLayout();
       repaint();
    }
 
-   void KRightDialog::displayFightResult(int A1=0, int A2=0, int A3=0, int D1=0, int D2=0,int nbA=0,int nbD=0)
+   void KRightDialog::displayRecycleDetails(GameLogic::Player * player) {
+      clearLayout();
+      initListLabel(4);
+
+      QGridLayout* recycleLayout = new QGridLayout();
+      QGridLayout* btRecycleLayout = new QGridLayout();
+      QGridLayout* btValidLayout = new QGridLayout();
+
+      QPushButton* buttonValid = new QPushButton(recycleNextPlayer, "Valid", this);
+      QPushButton* buttonRecycle = new QPushButton(recycleContinue, "Recycle", this);
+      QPushButton* buttonRecycleDone = new QPushButton(recycleDone, "Done", this);
+
+      connect(buttonValid, SIGNAL(clicked()), game, SLOT(slotNextPlayer()));
+      connect(buttonRecycle, SIGNAL(clicked()), game, SLOT(slotRecycling()));
+      connect(buttonRecycleDone, SIGNAL(clicked()), game, SLOT(slotRecyclingFinished()));
+
+      QHBoxLayout* title = new QHBoxLayout();
+
+      // Widget where display informations
+      haut = new QWidget();
+
+
+      // Widgets which contains buttons
+      btRecycleWidget = new QWidget();
+      btValidWidget = new QWidget();
+
+      btRecycleLayout->addWidget(buttonRecycle,0,0,Qt::AlignCenter);
+      btRecycleLayout->addWidget(buttonRecycleDone,0,1,Qt::AlignCenter);
+
+      btValidLayout->addWidget(buttonValid,0,0,Qt::AlignCenter);
+
+      btRecycleWidget->setLayout(btRecycleLayout);
+      btValidWidget->setLayout(btValidLayout);
+
+
+      rightContents->at(0)->setText(I18N_NOOP("<u><b>"+player->name()+"</b></u> "));
+      flag1->setPixmap(player->getFlag()->image(0));
+
+//      rightContents->at(2)->setText(I18N_NOOP("<u>test 1</u>"));
+//      rightContents->at(3)->setText(I18N_NOOP("<u>test 2</u>"));
+
+      rightContents->at(1)->setText(I18N_NOOP(QString::number(game->availArmies())+" armies to place"));
+
+      title->addWidget(rightContents->at(0));
+      title->addWidget(flag1);
+
+      recycleLayout->addLayout(title,0,0,Qt::AlignCenter);
+      recycleLayout->addWidget(rightContents->at(1),1,0,Qt::AlignCenter);
+
+      recycleLayout->addWidget(rightContents->at(2),2,0,Qt::AlignCenter);
+      recycleLayout->addWidget(rightContents->at(3),3,0,Qt::AlignCenter);
+
+      recycleLayout->addWidget(btRecycleWidget,4,0,Qt::AlignCenter);
+      recycleLayout->addWidget(btValidWidget,5,0,Qt::AlignCenter);
+
+      haut->setLayout(recycleLayout);
+      mainLayout->addWidget(haut,0,0);
+
+      // hide buttons initialy
+      btRecycleWidget->hide();
+      if (game->availArmies() > 0 || game->getState() == GameLogic::GameAutomaton::INTERLUDE) {
+        btValidWidget->hide();
+      } else {
+        btValidWidget->show();
+      }
+
+      mainLayout->update();
+      m_parentWidget->show();
+      repaint();
+   }
+
+   void KRightDialog::updateRecycleDetails(GameLogic::Country* country, bool recyclePhase) {
+
+      rightContents->at(1)->setText(I18N_NOOP(QString::number(game->availArmies())+" armies to place"));
+
+      if (recyclePhase) {
+        rightContents->at(2)->setText(I18N_NOOP(""));
+        rightContents->at(3)->setText(I18N_NOOP(""));
+
+        // show "redistribute" and "end redistribute" buttons
+        btRecycleWidget->show();
+        btValidWidget->hide();
+      } else {
+        rightContents->at(2)->setText(I18N_NOOP("<b>"+country->name()+"</b>"));
+        rightContents->at(3)->setText(I18N_NOOP("<b>Armies : "+QString::number(country->nbArmies())));
+        if (game->availArmies() > 0) {
+          btValidWidget->hide();
+        } else {
+          btValidWidget->show();
+        }
+      }
+
+      mainLayout->update();
+      repaint();
+
+   }
+
+   void KRightDialog::displayFightResult(int A1=0, int A2=0, int A3=0, int D1=0, int D2=0,int nbA=0,int nbD=0, bool win=false)
    {
 
       QGridLayout * milieuGrid = new QGridLayout();   
@@ -270,11 +389,17 @@ milieuGrid->addWidget(rightContents->at(0),4,0,Qt::AlignCenter);
 
       milieu->setLayout(milieuGrid);
       mainLayout->addWidget(milieu,1,0);
+
+      if (buttonStopAttack != 0 && win) {
+         buttonStopAttack->setEnabled(false);
+      }
+
       repaint();
    }
 
    void KRightDialog::initListLabel(int nb)
-   {     
+   {
+      removeListLabel();
       for (int i=0;i<nb;i++)
       {
          rightContents->push_back(new QLabel());
@@ -284,7 +409,11 @@ milieuGrid->addWidget(rightContents->at(0),4,0,Qt::AlignCenter);
    
    void KRightDialog::removeListLabel()
    {
-      rightContents->clear();
+      while (rightContents->size() > 0) {
+        QLabel* label = rightContents->first();
+        rightContents->removeFirst();
+        delete label;
+      }
    }
 
    void KRightDialog::clearLabel()
@@ -298,11 +427,31 @@ milieuGrid->addWidget(rightContents->at(0),4,0,Qt::AlignCenter);
    void KRightDialog::clearLayout()
    {
      for (int i=0;i<rightContents->size();i++) { mainLayout->removeWidget(rightContents->at(i)); }
-     if(mainLayout->indexOf(bas)!=-1) { mainLayout->removeWidget(bas); }
-     if(mainLayout->indexOf(milieu)!=-1) { mainLayout->removeWidget(milieu);  }
-     if(mainLayout->indexOf(haut)!=-1) { mainLayout->removeWidget(haut); }
-
-     
+     if(mainLayout->indexOf(bas)!=-1) {
+        mainLayout->removeWidget(bas);
+     }
+     if(mainLayout->indexOf(milieu)!=-1) {
+        mainLayout->removeWidget(milieu);
+     }
+     if(mainLayout->indexOf(haut)!=-1) {
+        mainLayout->removeWidget(haut);
+     }
+     if (btRecycleWidget != 0) {
+        delete btRecycleWidget;
+        btRecycleWidget = 0;
+     }
+     if (btValidWidget != 0) {
+        delete btValidWidget;
+        btValidWidget = 0;
+     }
+     if (buttonStopAttack != 0) {
+        delete buttonStopAttack;
+        buttonStopAttack = 0;
+     }
+     delete flag1;
+     flag1 = new QLabel();
+     delete flag2;
+     flag2 = new QLabel();
    }
 
    void KRightDialog::slotStopAttackAuto()

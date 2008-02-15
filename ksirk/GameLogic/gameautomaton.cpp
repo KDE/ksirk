@@ -265,29 +265,13 @@ GameAutomaton::GameState GameAutomaton::run()
   {
     kDebug() << "requestForAck" << endl;
   }
-  if(event == "actionRButtonDown")
-  {
-     if (m_game->getRightDialog()->isOpen())
-     {
-        m_game->getRightDialog()->close();
-     }
-     else
-     {
-        /*if(m_game->theWorld()->countryAt(point)!=0)
-        {
-           m_game->getRightDialog()->displayCountryDetails(&point);
-           m_game->getRightDialog()->open();
-        }*/
-     }
-  }
-  if(event == "actionLButtonDown")
+  if((event == "actionRButtonDown" || event == "actionLButtonDown") && (m_state != INIT && m_state != NEWARMIES && m_state != INTERLUDE && m_state != WAIT_RECYCLING))
   {
      if (m_game->getRightDialog()->isOpen())
      {
         m_game->getRightDialog()->close();
      }
   }
-//GAEL
 
   if (event == "actionNewGame")
   {
@@ -370,42 +354,33 @@ GameAutomaton::GameState GameAutomaton::run()
     }*/
     break;
   case ATTACK2:
-    //if  (event == "actionLButtonUp") 
-    //{
-      switch ( m_game->attacked(point) )
-      {
-        case 0:
-          kDebug() << "handling attacked value; 0" << endl;
-          state(WAIT);
-        break;
-        case 1:
-          kDebug() << "handling attacked value; 1" << endl;
-          m_currentPlayerPlayed = true;
-          state(WAITDEFENSE);
-        break;
-        case 2:
-          kDebug() << "handling attacked value; 2" << endl;
-          m_currentPlayerPlayed = true;
-          kDebug() << "calling defense(1)" << endl;
-          m_game-> defense(1);
-          kDebug() << "setting state to FIGHT_BRING" << endl;
-          state(FIGHT_BRING);
-        break;
-        case 3:
-          kDebug() << "handling attacked value; 3" << endl;
-          // AI action: nothing to do.
-        break;
-        default:
-          kError() << "Unknown return value from attacked" << endl;
-          exit(1);
-      }
-      kDebug() << "after switch" << endl;
-    /*}
-    else
+    switch ( m_game->attacked(point) )
     {
-      //        if (!event.isEmpty())
-//          kError() << "Unhandled event " << event << " during handling of " << stateName() endl;
-    }*/
+      case 0:
+        kDebug() << "handling attacked value; 0" << endl;
+        state(WAIT);
+      break;
+      case 1:
+        kDebug() << "handling attacked value; 1" << endl;
+        m_currentPlayerPlayed = true;
+        state(WAITDEFENSE);
+      break;
+      case 2:
+        kDebug() << "handling attacked value; 2" << endl;
+        m_currentPlayerPlayed = true;
+        kDebug() << "calling defense(1)" << endl;
+        m_game-> defense(1);
+        kDebug() << "setting state to FIGHT_BRING" << endl;
+        state(FIGHT_BRING);
+      break;
+      case 3:
+        kDebug() << "handling attacked value; 3" << endl;
+        // AI action: nothing to do.
+      break;
+      default:
+        kError() << "Unknown return value from attacked" << endl;
+        exit(1);
+    }
     kDebug() << "handling of ATTACK2 finished !" << endl;
   break;
   case EXPLOSION_ANIMATE:
@@ -739,6 +714,7 @@ kDebug () << "$$$$$$$STATE FIGHT_BRINGBACK $$$$$$$$$$$" << m_game->haveAnimFight
       {
       if (allLocalPlayersComputer())
         {
+          m_game->getRightDialog()->updateRecycleDetails(NULL,true);
           m_game->displayRecyclingButtons();
         }
       }
@@ -1576,9 +1552,11 @@ bool GameAutomaton::startGame()
     }
 
     kDebug() << "Sending message FinalizePlayers" << endl;
-    QByteArray buffer;
-    QDataStream stream(&buffer, QIODevice::WriteOnly);
-    sendMessage(buffer,FinalizePlayers);
+    //QByteArray buffer;
+    //QDataStream stream(&buffer, QIODevice::WriteOnly);
+    //sendMessage(buffer,FinalizePlayers);
+    finalizePlayers();
+
 m_aicannotrunhack = true;
     kDebug() << "Setting game status to Run" << endl;
     setGameStatus(KGame::Run);
@@ -1873,9 +1851,10 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     break;
   case PlayerPutsInitialArmy:
     stream >> point;
-    if (m_game->playerPutsInitialArmy(point) && isAdmin())
+    if (m_game->playerPutsInitialArmy(point))
     {
-      event("playersLooped", point);
+      if (isAdmin())
+        event("playersLooped", point);
     }
     break;
   case PlayerPutsArmy:
@@ -1937,6 +1916,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     m_game->changeItem(messageParts,statusBarId, logStatus);
     break;
   case DisplayRecyclingButtons:
+    m_game->getRightDialog()->updateRecycleDetails(NULL,true);
     m_game->displayRecyclingButtons();
     break;
   case DisplayNormalGameButtons:
@@ -2074,6 +2054,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     if (isAdmin())
     {
       stream >> newState;
+      m_game->clearGameActionsToolbar(false);
       if (m_game->nextPlayerRecycling())
       {
         m_choosedToRecycleNumber = 0;
@@ -2287,7 +2268,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     break;
   case FinalizePlayers:
       kDebug() << "Got message FinalizePlayers" << endl;
-      finalizePlayers();
+      //finalizePlayers();
     break;
   case Winner:
     QObject::disconnect(messageServer(),SIGNAL(connectionLost(KMessageIO *)),
@@ -2356,7 +2337,7 @@ bool GameAutomaton::allLocalPlayersComputer()
 
 void GameAutomaton::firstCountriesDistribution()
 {
-  kDebug() << "GameAutomaton::firstCountriesDistribution" << endl;    
+  kDebug() << "GameAutomaton::firstCountriesDistribution" << endl;
   
   if (isAdmin())
   {
@@ -2377,7 +2358,8 @@ void GameAutomaton::firstCountriesDistribution()
     if ( currentPlayer()-> isAI()  && (!currentPlayer()->isVirtual()) )
       if ( ! ( dynamic_cast<AIPlayer *>(currentPlayer())-> isRunning()) )
         dynamic_cast<AIPlayer *>(currentPlayer())-> start();
-    
+
+    m_game->getRightDialog()->displayRecycleDetails(m_game->currentPlayer());
     
   //    kDebug() << "OUT  KGameWindow::setupPlayers" << endl;
     
@@ -2412,12 +2394,8 @@ void GameAutomaton::countriesDistribution()
     for (int itPos = 0; itPos < h-1; itPos++) it++;
     
     // affect the country that have the number at this position
-//     kDebug() << "Setting owner of " << (theWorld()-> getCountries().at(*it)->name()) << " to " << currentPlayer()->name() << endl;
-    QByteArray buffer;
-    QDataStream stream(&buffer, QIODevice::WriteOnly);
-    stream << (m_game->theWorld()-> getCountries().at(*it)->name()) << currentPlayer()->name();
     distributedCountriesNumberMap[currentPlayer()-> name()] = distributedCountriesNumberMap[currentPlayer()-> name()]+1;
-    sendMessage(buffer,CountryOwner);
+    m_game->theWorld()->getCountries().at(*it)-> owner(currentPlayer());
     m_game->setCurrentPlayerToNext(false);
     
     // removes the chosen country number from the vector, thus reducing its size
@@ -2447,7 +2425,7 @@ void GameAutomaton::countriesDistribution()
     <<  QString::number( initialNbArmies - distributedCountriesNumberMap[nextPlayerName]);
   kDebug() << "Message parts size= " << messageParts.size() << endl;
   m_game->broadcastChangeItem(messageParts, ID_STATUS_MSG2);
-    m_game->showMessage(i18n("Now, place your armies in your countries<br/>by clicking in the target countries."));
+  m_game->showMessage(i18n("Now, place your armies in your countries<br/>by clicking in the target countries."));
   state(GameLogic::GameAutomaton::INTERLUDE);
 }
 

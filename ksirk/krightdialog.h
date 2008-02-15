@@ -25,6 +25,7 @@
 
 #include "GameLogic/onu.h"
 #include "GameLogic/country.h"
+#include "GameLogic/player.h"
 #include <stdlib.h>
 #include <QGroupBox>
 #include <QGridLayout>
@@ -66,7 +67,7 @@ namespace GameLogic
 
       /**
       * Display the country information after a right click mouse
-      * @param: contryPoint which is the point clicked
+      * @param contryPoint which is the point clicked
       */
       void displayCountryDetails(QPointF * countryPoint);
 
@@ -76,9 +77,22 @@ namespace GameLogic
       void displayFightDetails(GameLogic::Country * attaker, GameLogic::Country * defender,int nb_A, int nb_D);
 
       /**
+       * Display informations about the recycling processus
+       * @param player which we want to see informations
+       */
+      void displayRecycleDetails(GameLogic::Player* player);
+
+      /**
+       * Update informations about the recycling processus
+       * @param country country which gives his informations
+       * @param recyclePhase shows if we are in recycle phase or not
+       */
+      void updateRecycleDetails(GameLogic::Country* country, bool recyclePhase);
+
+      /**
       * 
       */
-      void displayFightResult(int A1, int A2, int A3, int D1, int D2,int nbA,int nbD);
+      void displayFightResult(int A1, int A2, int A3, int D1, int D2,int nbA,int nbD, bool win);
 
       /**
       * Add all labels in the layout
@@ -120,8 +134,17 @@ namespace GameLogic
 
       QWidget * milieu;
 
+      // Widgets and buttons used in displayRecycleDetails
+      QWidget * btRecycleWidget;
+
+      QWidget * btValidWidget;
+
+      // images for buttons
       QPixmap soldat;
       QPixmap stopAttackAuto;
+      QPixmap recycleContinue;
+      QPixmap recycleDone;
+      QPixmap recycleNextPlayer;
 
       KGameWindow * game;
 

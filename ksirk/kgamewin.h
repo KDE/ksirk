@@ -539,6 +539,11 @@ public:
 
   QPixmap getDice(DiceColor color, int num);
 
+  /**
+    * Returns the current player
+    */
+  GameLogic::Player* currentPlayer();
+
   void slideInvade(GameLogic::Country *,GameLogic::Country *);
 
 protected:
@@ -552,11 +557,6 @@ protected:
 //   void slotTimerEvent();
 
 //   void resizeEvent ( QResizeEvent * event );
-
-  /**
-    * Returns the current player
-    */
-  GameLogic::Player* currentPlayer();
 
   /**
     * Add the main toolbar buttons

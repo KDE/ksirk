@@ -176,7 +176,7 @@ void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
 {
     menuPoint = QCursor::pos();
     kDebug() << "************state decoratedgameframe" << m_automaton->stateName() << endl;
-    if (m_automaton->stateName() != "INIT" && m_automaton->stateName() != "INTERLUDE" && m_automaton->stateName() != "NEWARMIES")
+    if (m_automaton->stateName() != "INIT" && m_automaton->stateName() != "INTERLUDE" && m_automaton->stateName() != "NEWARMIES" && m_automaton->stateName() != "WAIT_RECYCLING")
     {
     	if (!m_automaton-> currentPlayer()->isAI() && !m_automaton-> currentPlayer()->isVirtual())
 	{
