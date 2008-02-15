@@ -220,6 +220,7 @@ public:
   void displayDefenseButtons();
   void displayInvasionButtons();
   void displayCancelButton();
+  void displayDefenseWindow();
   //@}
 
   void clearGameActionsToolbar(bool send = true);

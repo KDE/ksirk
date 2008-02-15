@@ -1951,7 +1951,11 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   case DisplayDefenseButtons:
     stream >> playerName;
     if (!playerNamed(playerName)->isVirtual())
-      m_game->displayDefenseButtons();
+    {  m_game->displayDefenseButtons();
+// test laurent benj
+    kDebug() << "TESTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT " << countryName << endl;
+      m_game->displayDefenseWindow();
+    }
     break;
   case ActionDefense:
     stream >> nbArmies;

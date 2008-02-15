@@ -46,6 +46,10 @@
 //include files for QT
 #include <QDockWidget>
 #include <QTreeView>
+#include <QDialog>
+#include <QPushButton>
+#include <QGridLayout>
+#include <QString>
 #include <QPushButton>
 #include <QVBoxLayout>
 
@@ -991,6 +995,58 @@ void KGameWindow::displayDefenseButtons()
   }
   gameActionsToolBar-> hide();
   gameActionsToolBar-> show();
+}
+
+void KGameWindow::displayDefenseWindow()
+{
+  // Create Window Dialog
+  QDialog * dial = new QDialog ();
+  QGridLayout * mainLayout = new QGridLayout(dial);
+  
+  // Create the differents layout for buttons and label
+  QGridLayout * bottomLayout = new QGridLayout();
+  QGridLayout * topLayout = new QGridLayout();
+
+  // Create and add the main Layout
+  dial->setLayout(mainLayout);
+  mainLayout->addLayout(bottomLayout, 1, 0, Qt::AlignCenter);
+  mainLayout->addLayout(topLayout, 0, 0, Qt::AlignCenter);
+  
+  // Creat buttons and label of defense
+  QPushButton * def1 = new QPushButton ("Defend 1");
+  QPushButton * def2 = new QPushButton ("Defend 2");
+  QPushButton * defAuto = new QPushButton ("Defend-Auto");
+  QLabel * labDef = new QLabel ();
+  labDef->setText("<font color=\"red\">"+this->firstCountry()->owner()->name()+"</font> attacks you from <font color=\"red\">"+ this->firstCountry()->name() +"</font> with " + QString::number(this->firstCountry()->owner()->getNbAttack()) + " armies !<br> How do you want to defend <font color=\"blue\">" + this->secondCountry()->name() + "</font> ?");
+
+  // Add icons on buttons
+  KConfig config(m_automaton->game()->theWorld()->getConfigFileName());
+  KConfigGroup onugroup = config.group("onu");
+  QString skin = onugroup.readEntry("skinpath");
+  QString imageFileName;
+
+  imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/defendOne.png");
+  def1->setIcon(QIcon(imageFileName));
+  imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/defendTwo.png");
+  def2->setIcon(QIcon(imageFileName));
+  imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/attackAuto.png");
+  defAuto->setIcon(QIcon(imageFileName));
+
+
+  // Disable Defend 2 when attack with 1 army or defender have only 1 army
+  if (this->firstCountry()->owner()->getNbAttack() == 1)
+     def2->setEnabled(false);
+
+  // Add buttons and layout
+  bottomLayout->addWidget(def1,0,0);
+  bottomLayout->addWidget(def2,0,1);
+  bottomLayout->addWidget(defAuto,0,2);
+  topLayout->addWidget(labDef, 0, 0);
+   
+  // Print the window dialog
+  dial->adjustSize();
+  dial->setFixedSize(dial->width(), dial->height());
+  dial->exec();
 }
 
 void KGameWindow::displayInvasionButtons()
