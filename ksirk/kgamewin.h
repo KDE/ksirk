@@ -637,6 +637,9 @@ public slots:
   void slotAttack3();
   void slotDefense1();
   void slotDefense2();
+  void slotDefAuto();
+  void slotWindowDef1();
+  void slotWindowDef2();
   void slotInvade1();
   void slotInvade5();
   void slotInvade10();
@@ -857,6 +860,8 @@ private:
   KGamePopupItem * m_message;
 
   GameLogic::Country* m_mouseLocalisation;
+
+  QDialog * dial;
 
 private: // Private methods
   /*void attack(GameLogic::Country& attacker, GameLogic::Country& defender, unsigned int nb);*/

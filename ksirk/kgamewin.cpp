@@ -1000,7 +1000,7 @@ void KGameWindow::displayDefenseButtons()
 void KGameWindow::displayDefenseWindow()
 {
   // Create Window Dialog
-  QDialog * dial = new QDialog ();
+  dial = new QDialog ();
   QGridLayout * mainLayout = new QGridLayout(dial);
   
   // Create the differents layout for buttons and label
@@ -1016,6 +1016,7 @@ void KGameWindow::displayDefenseWindow()
   QPushButton * def1 = new QPushButton ("Defend 1");
   QPushButton * def2 = new QPushButton ("Defend 2");
   QPushButton * defAuto = new QPushButton ("Defend-Auto");
+
   QLabel * labDef = new QLabel ();
   labDef->setText("<font color=\"red\">"+this->firstCountry()->owner()->name()+"</font> attacks you from <font color=\"red\">"+ this->firstCountry()->name() +"</font> with " + QString::number(this->firstCountry()->owner()->getNbAttack()) + " armies !<br> How do you want to defend <font color=\"blue\">" + this->secondCountry()->name() + "</font> ?");
 
@@ -1042,7 +1043,11 @@ void KGameWindow::displayDefenseWindow()
   bottomLayout->addWidget(def2,0,1);
   bottomLayout->addWidget(defAuto,0,2);
   topLayout->addWidget(labDef, 0, 0);
-   
+
+  connect(def1, SIGNAL(clicked()), this, SLOT(slotWindowDef1()));
+  connect(def2, SIGNAL(clicked()), this, SLOT(slotWindowDef2()));
+  connect(defAuto, SIGNAL(clicked()), this, SLOT(slotDefAuto()));
+
   // Print the window dialog
   dial->adjustSize();
   dial->setFixedSize(dial->width(), dial->height());
@@ -2900,7 +2905,35 @@ void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * 
 
 bool KGameWindow::isArena()
 {
-	return this->ARENA;
+  return this->ARENA;
+}
+
+void KGameWindow::slotDefAuto()
+{
+  QPoint point;
+  kDebug()<<"Recept signal defense auto" << endl;
+  m_automaton->setDefenseAuto(true);
+  if (this->firstCountry()->owner()->getNbAttack() == 1)
+    m_automaton->event("actionDefense1", point);
+  else
+    m_automaton->event("actionDefense2", point);
+  dial->close();
+}
+
+void KGameWindow::slotWindowDef1()
+{
+  QPoint point;
+  kDebug()<<"Recept signal defense with one army" << endl;
+  m_automaton->event("actionDefense1", point);
+  dial->close();
+}
+
+void KGameWindow::slotWindowDef2()
+{
+  QPoint point;
+  kDebug()<<"Recept signal defense with two army" << endl;
+  m_automaton->event("actionDefense2", point);
+  dial->close();
 }
 
 } // closing namespace Ksirk

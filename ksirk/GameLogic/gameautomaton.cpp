@@ -147,7 +147,7 @@ m_aicannotrunhack(true),
     m_goals(),
     m_useGoals(true),
     m_attackAuto(false),
-    m_defenseAuto(true)
+    m_defenseAuto(false)
 {
   m_skin = "skins/default";
   //   kDebug() << "GameAutomaton::GameAutomaton" << endl;
@@ -1950,10 +1950,8 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     break;
   case DisplayDefenseButtons:
     stream >> playerName;
-    if (!playerNamed(playerName)->isVirtual())
-    {  m_game->displayDefenseButtons();
-// test laurent benj
-    kDebug() << "TESTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT " << countryName << endl;
+    if ( (!playerNamed(playerName)->isVirtual()) && (!playerNamed(playerName)->isAI()))
+    { //m_game->displayDefenseButtons();
       m_game->displayDefenseWindow();
     }
     break;
