@@ -681,37 +681,140 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
     else if (NKD != 0) who = 1;
     else KMessageBox::information(0, i18n("Problem : no one destroyed"));
     
-    CannonSprite *newSprite;
+    //CannonSprite *newSprite;
+    AnimSprite* newSprite;
+
+    qreal leftRelativePos;
+    qreal pointDepartAttaquantY;
+    qreal pointDepartDefenseurY;
 
     qreal flagYDiff = Sprites::SkinSpritesData::single().intData("fighters-flag-y-diff")*m_theWorld->zoom();
-    qreal leftRelativePos = - (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("cannon-width"))*m_theWorld->zoom();
-    qreal rightRelativePos = (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("flag-width"))*m_theWorld->zoom();
+    qreal pointFlagX = backGnd()->boundingRect().width()/2;
     
+	if ((paysAttaquant->nbArmies() % 10) == 0)
+	{
+		pointDepartAttaquantY = paysAttaquant-> pointInfantry().y()*      m_theWorld->zoom();
+	}
+	else
+	{
+		if ((paysAttaquant->nbArmies() % 5) == 0)
+		{
+			pointDepartAttaquantY = paysAttaquant-> pointCavalry().y()*      m_theWorld->zoom();
+		}
+		else
+		{
+			pointDepartAttaquantY = paysAttaquant-> pointCannon().y()*      m_theWorld->zoom();
+		}
+	}
+
+	if ((paysDefenseur->nbArmies() % 10) == 0)
+  	{
+  		pointDepartDefenseurY = paysDefenseur-> pointInfantry().y()*      m_theWorld->zoom();
+  	}
+	else
+	{
+		if ((paysDefenseur->nbArmies() % 5) == 0)
+		{
+			pointDepartDefenseurY = paysDefenseur-> pointCavalry().y()*      m_theWorld->zoom();
+		}
+		else
+		{
+			pointDepartDefenseurY = paysDefenseur-> pointCannon().y()*      m_theWorld->zoom();
+		}
+	}
+
+    qreal pointArriveeY = (pointDepartAttaquantY+pointDepartDefenseurY)/2;
+
+    QPointF *start = new QPointF(pointFlagX,pointArriveeY);
+
+    qreal rightRelativePos = (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("flag-width"))*m_theWorld->zoom();
+
     if (who == 0) //Attaquant detruit, ramene defenseur
     {
-        newSprite = new CannonSprite(
-            Sprites::SkinSpritesData::single().strData("cannon-id"),
-            Sprites::SkinSpritesData::single().intData("cannon-width"),
-            Sprites::SkinSpritesData::single().intData("cannon-height"),
-            Sprites::SkinSpritesData::single().intData("cannon-frames"),
-            Sprites::SkinSpritesData::single().intData("cannon-versions"),
-            m_theWorld->zoom(),
-            backGnd(),
-            200);
-        if ((paysAttaquant-> pointFlag().x() <= paysDefenseur-> pointFlag().x())
-        && !(
-        (qAbs(paysAttaquant-> pointFlag().x()-paysDefenseur-> pointFlag().x()) > (backGnd()-> boundingRect().width() / 2))
-            && (paysAttaquant->communicateWith(paysDefenseur))
-        ))
+	if ((paysDefenseur->nbArmies() % 10) == 0)
+	{
+		/*CannonSprite**/ newSprite = new CannonSprite(
+		Sprites::SkinSpritesData::single().strData("cannon-id"),
+		Sprites::SkinSpritesData::single().intData("cannon-width"),
+		Sprites::SkinSpritesData::single().intData("cannon-height"),
+		Sprites::SkinSpritesData::single().intData("cannon-frames"),
+		Sprites::SkinSpritesData::single().intData("cannon-versions"),
+		m_theWorld->zoom(),
+		backGnd(),
+		200);
+
+		leftRelativePos = - (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("cannon-width"))*m_theWorld->zoom();
+	}
+	else
+	{
+		if ((paysDefenseur->nbArmies() % 5) == 0)
+		{
+			/*CavalrySprite**/ newSprite = new CavalrySprite(
+			Sprites::SkinSpritesData::single().strData("cavalry-id"),
+			Sprites::SkinSpritesData::single().intData("cavalry-width"),
+			Sprites::SkinSpritesData::single().intData("cavalry-height"),
+			Sprites::SkinSpritesData::single().intData("cavalry-frames"),
+			Sprites::SkinSpritesData::single().intData("cavalry-versions"),
+			m_theWorld->zoom(),
+			backGnd(),
+			200);
+
+			leftRelativePos = - (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("cavalry-width"))*m_theWorld->zoom();
+		}
+		else
+		{
+			/*InfantrySprite**/ newSprite = new InfantrySprite(
+			Sprites::SkinSpritesData::single().strData("infantry-id"),
+			Sprites::SkinSpritesData::single().intData("infantry-width"),
+			Sprites::SkinSpritesData::single().intData("infantry-height"),
+			Sprites::SkinSpritesData::single().intData("infantry-frames"),
+			Sprites::SkinSpritesData::single().intData("infantry-versions"),
+			m_theWorld->zoom(),
+			backGnd(),
+			200);
+
+			leftRelativePos = - (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("infantry-width"))*m_theWorld->zoom();
+		}
+	}
+        
+	if ((paysAttaquant-> pointFlag().x() <= paysDefenseur-> pointFlag().x()) && !((qAbs(paysAttaquant-> pointFlag().x()-paysDefenseur-> pointFlag().x()) > (backGnd()-> boundingRect().width() / 2)) && (paysAttaquant->communicateWith(paysDefenseur))))
         {
-            newSprite-> setPos(  (paysDefenseur-> pointFlag())+QPointF(rightRelativePos, flagYDiff));
+            newSprite-> setPos((*start)+QPointF(rightRelativePos, flagYDiff));
         }
         else
         {
-            newSprite-> setPos(  (paysDefenseur-> pointFlag())+QPointF(leftRelativePos, flagYDiff));
+            newSprite-> setPos((*start)+QPointF(leftRelativePos, flagYDiff));
         }
+
 	connect(newSprite,SIGNAL(atDestination(AnimSprite*)),this,SLOT(slotBring(AnimSprite*)));
-        ((AnimSprite*)newSprite)-> setupTravel(paysDefenseur, paysDefenseur, newSprite-> pos(), paysDefenseur-> pointCannon());
+        
+	QPointF* dest;
+	//int nbPos;
+	if ((paysDefenseur->nbArmies() % 10) == 0)
+	{
+		//nbPos = (paysDefenseur->nbArmies() / 10);
+		//dest = new QPointF(paysDefenseur-> pointCannon().x()*m_theWorld->zoom(),(paysDefenseur-> pointCannon().y()+(1-2*(nbPos%2))*(Sprites::SkinSpritesData::single().intData("cannon-height")+8)*((nbPos+1)/2))*m_theWorld->zoom());
+		dest = new QPointF(paysDefenseur-> pointCannon().x()*m_theWorld->zoom(),(paysDefenseur-> pointCannon().y()+(1-2*(0%2))*(Sprites::SkinSpritesData::single().intData("cannon-height")+8)*((0+1)/2))*m_theWorld->zoom());
+	}
+	else
+	{
+		if ((paysDefenseur->nbArmies() % 5) == 0)
+		{
+			//nbPos = (paysDefenseur->nbArmies() / 5);
+			//dest = new QPointF(paysDefenseur-> pointCavalry().x()*m_theWorld->zoom(),(paysDefenseur-> pointCavalry().y()+(1-2*(nbPos%2))*(Sprites::SkinSpritesData::single().intData("cavalry-height")+8)*((nbPos+1)/2))*m_theWorld->zoom());
+			dest = new QPointF(paysDefenseur-> pointCavalry().x()*m_theWorld->zoom(),(paysDefenseur-> pointCavalry().y()+(1-2*(0%2))*(Sprites::SkinSpritesData::single().intData("cavalry-height")+8)*((0+1)/2))*m_theWorld->zoom());
+		}
+		else
+		{
+			//nbPos = (paysDefenseur->nbArmies()) % 5;
+
+			//dest = new QPointF(paysDefenseur-> pointInfantry().x()*m_theWorld->zoom(),(paysDefenseur-> pointInfantry().y()+(1-2*(nbPos%2))*(Sprites::SkinSpritesData::single().intData("infantry-height")+8)*((nbPos+1)/2))*m_theWorld->zoom());
+			dest = new QPointF(paysDefenseur-> pointInfantry().x()*m_theWorld->zoom(),(paysDefenseur-> pointInfantry().y()+(1-2*(0%2))*(Sprites::SkinSpritesData::single().intData("infantry-height")+8)*((0+1)/2))*m_theWorld->zoom());
+		}
+	}
+
+        ((AnimSprite*)newSprite)-> setupTravel(paysDefenseur, paysDefenseur, newSprite-> pos(), *dest);
+
         newSprite-> turnTowardDestination();
 	m_animFighters->addSprite(newSprite);
 
@@ -726,29 +829,89 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
     }
     else if (who == 1) //Defenseur detruit, ramene Attaquant
     {
-      newSprite = new CannonSprite(
-          Sprites::SkinSpritesData::single().strData("cannon-id"),
-          Sprites::SkinSpritesData::single().intData("cannon-width"),
-          Sprites::SkinSpritesData::single().intData("cannon-height"),
-          Sprites::SkinSpritesData::single().intData("cannon-frames"),
-          Sprites::SkinSpritesData::single().intData("cannon-versions"),
-          m_theWorld->zoom(),
-          backGnd(),
-          200);
-        if ((paysAttaquant-> pointFlag().x() <= paysDefenseur-> pointFlag().x())
-        && !(
-        (qAbs(paysAttaquant-> pointFlag().x()-paysDefenseur-> pointFlag().x()) > (backGnd()-> boundingRect().width() / 2))
-            && (paysAttaquant->communicateWith(paysDefenseur))
-        ))
+	if ((paysAttaquant->nbArmies() % 10) == 0)
+	{
+		/*CannonSprite**/ newSprite = new CannonSprite(
+		Sprites::SkinSpritesData::single().strData("cannon-id"),
+		Sprites::SkinSpritesData::single().intData("cannon-width"),
+		Sprites::SkinSpritesData::single().intData("cannon-height"),
+		Sprites::SkinSpritesData::single().intData("cannon-frames"),
+		Sprites::SkinSpritesData::single().intData("cannon-versions"),
+		m_theWorld->zoom(),
+		backGnd(),
+		200);
+		
+		leftRelativePos = - (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("cannon-width"))*m_theWorld->zoom();
+	}
+	else
+	{
+		if ((paysAttaquant->nbArmies() % 5) == 0)
+		{
+			/*CavalrySprite**/ newSprite = new CavalrySprite(
+			Sprites::SkinSpritesData::single().strData("cavalry-id"),
+			Sprites::SkinSpritesData::single().intData("cavalry-width"),
+			Sprites::SkinSpritesData::single().intData("cavalry-height"),
+			Sprites::SkinSpritesData::single().intData("cavalry-frames"),
+			Sprites::SkinSpritesData::single().intData("cavalry-versions"),
+			m_theWorld->zoom(),
+			backGnd(),
+			200);
+			
+			leftRelativePos = - (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("cavalry-width"))*m_theWorld->zoom();
+		}
+		else
+		{
+			/*InfantrySprite**/ newSprite = new InfantrySprite(
+			Sprites::SkinSpritesData::single().strData("infantry-id"),
+			Sprites::SkinSpritesData::single().intData("infantry-width"),
+			Sprites::SkinSpritesData::single().intData("infantry-height"),
+			Sprites::SkinSpritesData::single().intData("infantry-frames"),
+			Sprites::SkinSpritesData::single().intData("infantry-versions"),
+			m_theWorld->zoom(),
+			backGnd(),
+			200);
+
+			leftRelativePos = - (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("infantry-width"))*m_theWorld->zoom();
+		}
+	}
+
+        if ((paysAttaquant-> pointFlag().x() <= paysDefenseur-> pointFlag().x()) && !((qAbs(paysAttaquant-> pointFlag().x()-paysDefenseur-> pointFlag().x()) > (backGnd()-> boundingRect().width() / 2)) && (paysAttaquant->communicateWith(paysDefenseur))))
         {
-            newSprite-> setPos( (paysDefenseur-> pointFlag())+QPointF(leftRelativePos,flagYDiff));
+            newSprite-> setPos((*start)+QPointF(leftRelativePos,flagYDiff));
         }
         else
         {
-            newSprite-> setPos( (paysDefenseur-> pointFlag())+QPointF(rightRelativePos,flagYDiff));
+            newSprite-> setPos((*start)+QPointF(rightRelativePos,flagYDiff));
         }
+
         connect(newSprite,SIGNAL(atDestination(AnimSprite*)),this,SLOT(slotBring(AnimSprite*)));
-	((AnimSprite*)newSprite)-> setupTravel(paysDefenseur, paysAttaquant, newSprite-> pos(), paysAttaquant-> pointCannon());
+	
+	QPointF* dest;
+	//int nbPos;
+	if ((paysAttaquant->nbArmies() % 10) == 0)
+	{
+		//nbPos = (paysAttaquant->nbArmies() / 10);
+		//dest = new QPointF(paysAttaquant-> pointCannon().x()*m_theWorld->zoom(),(paysAttaquant-> pointCannon().y()+(1-2*(nbPos%2))*(Sprites::SkinSpritesData::single().intData("cannon-height")+8)*((nbPos+1)/2))*m_theWorld->zoom());
+		dest = new QPointF(paysAttaquant-> pointCannon().x()*m_theWorld->zoom(),(paysAttaquant-> pointCannon().y()+(1-2*(0%2))*(Sprites::SkinSpritesData::single().intData("cannon-height")+8)*((0+1)/2))*m_theWorld->zoom());
+	}
+	else
+	{
+		if ((paysAttaquant->nbArmies() % 5) == 0)
+		{
+			//nbPos = (paysAttaquant->nbArmies() / 5);
+			//dest = new QPointF(paysAttaquant-> pointCavalry().x()*m_theWorld->zoom(),(paysAttaquant-> pointCavalry().y()+(1-2*(nbPos%2))*(Sprites::SkinSpritesData::single().intData("cavalry-height")+8)*((nbPos+1)/2))*m_theWorld->zoom());
+			dest = new QPointF(paysAttaquant-> pointCavalry().x()*m_theWorld->zoom(),(paysAttaquant-> pointCavalry().y()+(1-2*(0%2))*(Sprites::SkinSpritesData::single().intData("cavalry-height")+8)*((0+1)/2))*m_theWorld->zoom());
+		}
+		else
+		{
+			//nbPos = paysAttaquant->nbArmies() % 5;
+			//dest = new QPointF(paysAttaquant-> pointInfantry().x()*m_theWorld->zoom(),(paysAttaquant-> pointInfantry().y()+(1-2*(nbPos%2))*(Sprites::SkinSpritesData::single().intData("infantry-height")+8)*((nbPos+1)/2))*m_theWorld->zoom());
+			dest = new QPointF(paysAttaquant-> pointInfantry().x()*m_theWorld->zoom(),(paysAttaquant-> pointInfantry().y()+(1-2*(0%2))*(Sprites::SkinSpritesData::single().intData("infantry-height")+8)*((0+1)/2))*m_theWorld->zoom());
+		}
+	}
+
+        ((AnimSprite*)newSprite)-> setupTravel(paysDefenseur, paysAttaquant, newSprite-> pos(), *dest);
+
         newSprite-> turnTowardDestination();
 	m_animFighters->addSprite(newSprite);
 
