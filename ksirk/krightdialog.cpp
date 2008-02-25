@@ -315,8 +315,8 @@ QHBoxLayout * box4 = new QHBoxLayout();
       rightContents->at(1)->setText(I18N_NOOP(QString::number(game->availArmies())+" armies to place"));
 
       if (recyclePhase) {
-        rightContents->at(2)->setText(I18N_NOOP(""));
-        rightContents->at(3)->setText(I18N_NOOP(""));
+        rightContents->at(2)->setText(QString());
+        rightContents->at(3)->setText(QString());
 
         // show "redistribute" and "end redistribute" buttons
         btRecycleWidget->show();
