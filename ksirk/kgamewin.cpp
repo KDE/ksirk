@@ -1148,7 +1148,7 @@ void KGameWindow::addAButton(
       str = txt;
     }
     action->setShortcut(shortcut.primary());
-    action->setStatusTip(I18N_NOOP(str));
+    action->setStatusTip(str);
 /*    void* accel = m_accels.insert( txt, i18n(str),
                           i18n(str),
                           shortcut, this, slot );*/
@@ -2895,9 +2895,9 @@ void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * 
   QVBoxLayout * right = new QVBoxLayout(m_wSlide);
 
   //init. main layout
-  wSlideLayout->addWidget(new QLabel(I18N_NOOP("You conquered <font color=\"blue\">"+defender->name()+"</font> with <font color=\"red\">"+attack->name()+"</font>!")),0,0);
+  wSlideLayout->addWidget(new QLabel(i18n("You conquered <font color=\"blue\">%1</font> with <font color=\"red\">%2</font>!", defender->name(), attack->name())),0,0);
 
-  wSlideLayout->addWidget(new QLabel(I18N_NOOP("<br><i>Choose the number of invade armies.</i>")),1,0);
+  wSlideLayout->addWidget(new QLabel(i18n("<br><i>Choose the number of invade armies.</i>")),1,0);
   wSlideLayout->addLayout(center,2,0);
   wSlideLayout->addWidget(m_invadeSlide,3,0);
   wSlideLayout->addWidget(ok,4,0);
@@ -2908,11 +2908,11 @@ void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * 
   center->addLayout(right);
 
   //init. left layout
-  left->addWidget(new QLabel(I18N_NOOP("<b>"+attack->name()+"</b>")),Qt::AlignCenter);
+  left->addWidget(new QLabel("<b>"+attack->name()+"</b>"),Qt::AlignCenter);
   left->addWidget(m_nbLArmies,Qt::AlignCenter);
 
   //init. right layout
-  right->addWidget(new QLabel(I18N_NOOP("<b>"+defender->name()+"</b>")),Qt::AlignCenter);
+  right->addWidget(new QLabel("<b>"+defender->name()+"</b>"),Qt::AlignCenter);
   right->addWidget(m_nbRArmies,Qt::AlignCenter);
 
   //val->setText(QString::number(invadeSlide->value()));

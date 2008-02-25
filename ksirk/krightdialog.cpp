@@ -113,14 +113,14 @@ namespace Ksirk
       QString units = QString::number(world->countryAt(*countryPoint)->nbArmies());
       QString owner = world->countryAt(*countryPoint)->owner()->name();
 
-      rightContents->at(0)->setText(I18N_NOOP("<B>Nationality:</B>"));
-      rightContents->at(1)->setText(I18N_NOOP("<B>Continent:</B> "+continent));
-      rightContents->at(2)->setText(I18N_NOOP("<B>Country:</B> "+pays));
+      rightContents->at(0)->setText(i18n("<b>Nationality:</b>"));
+      rightContents->at(1)->setText(i18n("<b>Continent:</b> %1", continent));
+      rightContents->at(2)->setText(i18n("<b>Country:</b> %1", pays));
 
 rightContents->at(3)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));rightContents->at(3)->setFixedSize(35,35);
-      rightContents->at(6)->setText(I18N_NOOP(units));
-      rightContents->at(4)->setText(I18N_NOOP("<B>Owner:</B> "+owner));
-      rightContents->at(5)->setText(I18N_NOOP("<B><U>Country details</U></B>"));
+      rightContents->at(6)->setText(units);
+      rightContents->at(4)->setText(i18n("<b>Owner:</b> %1", owner));
+      rightContents->at(5)->setText(i18n("<b><u>Country details</u></b>"));
 
       flag1->setPixmap(0);
       flag2->setPixmap(0);
@@ -180,15 +180,15 @@ QHBoxLayout * box4 = new QHBoxLayout();
       picture1 = attaker->owner()->getFlag()->image(0);
       picture2 = defender->owner()->getFlag()->image(0);
       
-      rightContents->at(0)->setText(I18N_NOOP("<u><b>"+pays_A+"</b></u> "));
+      rightContents->at(0)->setText("<u><b>"+pays_A+"</b></u>");
       flag1->setPixmap(picture1);
       rightContents->at(1)->setText(I18N_NOOP("<i>("+owner_A+")</i> "));
       
       rightContents->at(2)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
       rightContents->at(2)->setFixedSize(35,35);
-      rightContents->at(3)->setText(I18N_NOOP("<b>"+nb_units_A+"</b> "));
+      rightContents->at(3)->setText("<b>"+nb_units_A+"</b>");
 
-      rightContents->at(4)->setText(I18N_NOOP("<font color=\"red\">Attack </font>with "+QString::number(nb_A)+" armies.<br>"));
+      rightContents->at(4)->setText(i18n("<font color=\"red\">Attack</font> with %1 armies.<br/>", nb_A));
 
       
       rightContents->at(5)->setText(I18N_NOOP("<u><b>"+pays_D+"</b></u> "));
@@ -199,7 +199,7 @@ QHBoxLayout * box4 = new QHBoxLayout();
       rightContents->at(7)->setFixedSize(35,35);
       rightContents->at(8)->setText(I18N_NOOP("<b>"+nb_units_D+"</b> "));
 
-      rightContents->at(9)->setText(I18N_NOOP("<font color=\"blue\">Defend </font>with "+QString::number(nb_D)+" armies.<br>"));
+      rightContents->at(9)->setText(i18n("<font color=\"blue\">Defend</font> with %1 armies.<br/>", nb_D));
 
       box1->addWidget(rightContents->at(0));
       box1->addWidget(flag1);
@@ -280,7 +280,7 @@ QHBoxLayout * box4 = new QHBoxLayout();
 //      rightContents->at(2)->setText(I18N_NOOP("<u>test 1</u>"));
 //      rightContents->at(3)->setText(I18N_NOOP("<u>test 2</u>"));
 
-      rightContents->at(1)->setText(I18N_NOOP(QString::number(game->availArmies())+" armies to place"));
+      rightContents->at(1)->setText(i18n("%1 armies to place", game->availArmies()));
 
       title->addWidget(rightContents->at(0));
       title->addWidget(flag1);
@@ -312,7 +312,7 @@ QHBoxLayout * box4 = new QHBoxLayout();
 
    void KRightDialog::updateRecycleDetails(GameLogic::Country* country, bool recyclePhase) {
 
-      rightContents->at(1)->setText(I18N_NOOP(QString::number(game->availArmies())+" armies to place"));
+      rightContents->at(1)->setText(i18n("%1 armies to place", game->availArmies()));
 
       if (recyclePhase) {
         rightContents->at(2)->setText(QString());
@@ -322,8 +322,8 @@ QHBoxLayout * box4 = new QHBoxLayout();
         btRecycleWidget->show();
         btValidWidget->hide();
       } else {
-        rightContents->at(2)->setText(I18N_NOOP("<b>"+country->name()+"</b>"));
-        rightContents->at(3)->setText(I18N_NOOP("<b>Armies : "+QString::number(country->nbArmies())));
+        rightContents->at(2)->setText("<b>"+country->name()+"</b>");
+        rightContents->at(3)->setText(i18n("<b>Armies: %1", country->nbArmies()));
         if (game->availArmies() > 0) {
           btValidWidget->hide();
         } else {
@@ -374,8 +374,8 @@ if(D2!=0 || D2!=-1)
       de5->setPixmap(game->getDice(KGameWindow::Blue,D2));
       rightContents->insert(0,de5);deDef->addWidget(de5);
 }
-           rightContents->insert(0,new QLabel(I18N_NOOP("<font color=\"red\">loose armies : "+QString::number(nbA)+"</font>")));
-rightContents->insert(0,new QLabel(I18N_NOOP("<font color=\"blue\">loose armies : "+QString::number(nbD)+"</font>")));
+           rightContents->insert(0,new QLabel(i18n("<font color=\"red\">loose armies: %1</font>", nbA)));
+rightContents->insert(0,new QLabel(i18n("<font color=\"blue\">loose armies: %1</font>", nbD)));
       /*deAtt->addWidget(rightContents->at(6)); 
       deAtt->addWidget(rightContents->at(5));
       deAtt->addWidget(rightContents->at(4));
