@@ -100,16 +100,16 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
     }
     statusBar()-> changeItem("", ID_STATUS_MSG); // Reset
   }
-
+int borderScrollSize = 50;
   if ( (!m_timer.isActive())
-    && ( ((mousePos.x() < 10) && (mousePos.x() >= 0)
+    && ( ((mousePos.x() < borderScrollSize) && (mousePos.x() >= 0)
           && (mousePos.y() >= 0) && (mousePos.y() <= m_frame-> viewport()->height()))
-        || ((mousePos.x() > m_frame-> viewport()->width() -10) &&
+        || ((mousePos.x() > m_frame-> viewport()->width() -borderScrollSize) &&
           (mousePos.x() <= m_frame-> viewport()->width())
           && (mousePos.y() >= 0) && (mousePos.y() <= m_frame-> viewport()->height()))
-        || ((mousePos.y() < 10) && (mousePos.y() >= 0)
+        || ((mousePos.y() < borderScrollSize) && (mousePos.y() >= 0)
           && (mousePos.x() >= 0) && (mousePos.x() <= m_frame-> viewport()->width()))
-        || ((mousePos.y() >  m_frame-> viewport()->height() -10) &&
+        || ((mousePos.y() >  m_frame-> viewport()->height() -borderScrollSize) &&
           (mousePos.y() <=  m_frame-> viewport()->height())
           && (mousePos.x() >= 0) && (mousePos.x() <= m_frame-> viewport()->width()))
     )
@@ -131,37 +131,39 @@ void KGameWindow::evenementTimer()
 //   kDebug() << "m_frame = ( " << m_frame-> viewport()->width() << " , " << m_frame-> viewport()->height() << " )" << endl;
 
   bool restart = false;
-  if ((mousePosition.x() < 10) && (mousePosition.x() >= 0)
+int borderScrollSize = 50;
+int borderScrollSpeed = 40;
+  if ((mousePosition.x() < borderScrollSize) && (mousePosition.x() >= 0)
       && (mousePosition.y() >= 0) && (mousePosition.y() <= m_frame-> viewport()->height()))
   {
     kDebug() << "scrollRight" << endl;
-    m_frame-> horizontalScrollBar()->setValue ( m_frame-> horizontalScrollBar()->value() - 16);
+    m_frame-> horizontalScrollBar()->setValue ( m_frame-> horizontalScrollBar()->value() - borderScrollSpeed);
     restart = true;
   }
 
-  if ((mousePosition.x() > m_frame-> viewport()->width() -10) &&
+  if ((mousePosition.x() > m_frame-> viewport()->width() -borderScrollSize) &&
       (mousePosition.x() <= m_frame-> viewport()->width())
       && (mousePosition.y() >= 0) && (mousePosition.y() <= m_frame-> viewport()->height()))
   {
     kDebug() << "scrollLeft" << endl;
-    m_frame-> horizontalScrollBar()->setValue ( m_frame-> horizontalScrollBar()->value() + 16);
+    m_frame-> horizontalScrollBar()->setValue ( m_frame-> horizontalScrollBar()->value() + borderScrollSpeed);
     restart = true;
   }
-  if ((mousePosition.y() < 10) && (mousePosition.y() >= 0)
+  if ((mousePosition.y() < borderScrollSize) && (mousePosition.y() >= 0)
       && (mousePosition.x() >= 0) && (mousePosition.x() <= m_frame-> viewport()->width()))
   {
     kDebug() << "scrollDown" << endl;
-    m_frame-> verticalScrollBar()->setValue ( m_frame-> verticalScrollBar()->value() - 16);
+    m_frame-> verticalScrollBar()->setValue ( m_frame-> verticalScrollBar()->value() - borderScrollSpeed);
     restart = true;
   }
-  if ((mousePosition.y() >  m_frame-> viewport()->height() -10) &&
+  if ((mousePosition.y() >  m_frame-> viewport()->height() -borderScrollSize) &&
       (mousePosition.y() <=  m_frame-> viewport()->height())
       && (mousePosition.x() >= 0) && (mousePosition.x() <= m_frame-> viewport()->width()))
   {
     kDebug() << "scrollUp " << m_frame-> verticalScrollBar()->value()
       << "("<< m_frame-> verticalScrollBar()->minimum()
       << ", " << m_frame-> verticalScrollBar()->maximum() << ")" << endl;
-    m_frame-> verticalScrollBar()->setValue ( m_frame-> verticalScrollBar()->value() + 16);
+    m_frame-> verticalScrollBar()->setValue ( m_frame-> verticalScrollBar()->value() + borderScrollSpeed);
     restart = true;
   }
 

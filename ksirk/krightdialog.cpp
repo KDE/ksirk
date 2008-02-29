@@ -423,7 +423,7 @@ milieuGrid->addWidget(rightContents->at(0),4,0,Qt::AlignCenter);
         rightContents->at(i)->setText("");rightContents->at(i)->setPixmap(0);
       }
    }
-   
+
    void KRightDialog::clearLayout()
    {
      for (int i=0;i<rightContents->size();i++) { mainLayout->removeWidget(rightContents->at(i)); }

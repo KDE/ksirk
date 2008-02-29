@@ -974,6 +974,28 @@ void KGameWindow::displayNormalGameButtons()
   gameActionsToolBar-> show();
 }
 
+//TODO créer sa propre méthode de choix de défense
+void KGameWindow::displayDefenseChoice()
+{
+/*
+ switch( QMessageBox::question( this, "KSirk",
+        "Choose your defense mode between:,\n",
+        1,
+        2,
+	0)) {
+    case 1: // def1 pressed
+        // try again
+        break;
+    case 2: // def2 pressed
+        // abort
+        break;
+    case 0: // autodefense pressed
+	break;
+    }
+*/
+}
+
+
 void KGameWindow::displayDefenseButtons()
 {
   clearGameActionsToolbar(false);

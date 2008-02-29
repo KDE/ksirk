@@ -218,6 +218,7 @@ public:
   void displayRecyclingButtons();
   void displayNormalGameButtons();
   void displayDefenseButtons();
+  void displayDefenseChoice();
   void displayInvasionButtons();
   void displayCancelButton();
   void displayDefenseWindow();
