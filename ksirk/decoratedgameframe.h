@@ -110,7 +110,7 @@ public slots:
     *
     */
   void slotMouseInput(KGameIO *input,QDataStream &stream,
-                      QMouseEvent *mouse, bool *eatevent);
+			QMouseEvent *mouse, bool *eatevent);
   
   void arenaState();
 

@@ -1053,6 +1053,10 @@ bool GameAutomaton::playerInput(QDataStream &msg, KPlayer* player)
     m_game->slotRightButtonDown( point );
   else if (action == "actionRButtonUp")
     m_game->slotRightButtonUp( point );
+  else if (action == "zoomInAction")
+    m_game->slotZoomIn();
+  else if (action == "zoomOutAction")
+    m_game->slotZoomOut();
   else if (action == "actionAttack1")
     m_game->slotAttack1();
   else if (action == "actionAttack2")
