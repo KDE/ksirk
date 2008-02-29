@@ -129,16 +129,35 @@ KGameWindow::KGameWindow(QWidget* parent) :
   }
   QPixmap icon(iconFileName);
 
-  m_bottomDock = new QDockWidget();
-  KsirkChatModel* chatModel = new KsirkChatModel(this);
-  KsirkChatDelegate* chatDelegate = new KsirkChatDelegate(this);
-  m_chatDlg = new KGameChat(m_automaton, 10000, this,chatModel,chatDelegate);
+  m_bottomDock = new QDockWidget(this);
+  m_bottomDock->setFeatures(QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
+  m_bottomDock->setAllowedAreas(Qt::BottomDockWidgetArea);
+
+  QWidget* titleChatWidget = new QWidget(m_bottomDock);
+  QHBoxLayout* titleChatLayout = new QHBoxLayout(titleChatWidget);
+  titleChatWidget->setLayout(titleChatLayout);
+  titleChatWidget->setFixedHeight(35);
+
+  KsirkChatModel* chatModel = new KsirkChatModel(m_bottomDock);
+  KsirkChatDelegate* chatDelegate = new KsirkChatDelegate(m_bottomDock);
+  m_chatDlg = new KGameChat(m_automaton, 10000, m_bottomDock,chatModel,chatDelegate);
   connect(m_chatDlg,
           SIGNAL(signalReturnPressed(const QString&)),
           this,
           SLOT(slotChatMessage()));
+
+  QLabel* newMessageChat = new QLabel("Aucun message...");
+  QPushButton* reduceChatButton = new QPushButton(QPixmap(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/downArrow.png")),"");
+  QPushButton* floatChatButton = new QPushButton(QPixmap(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/2UpArrow.png")),"");
+  reduceChatButton->setFixedSize(30,30);
+  floatChatButton->setFixedSize(30,30);
+
+  titleChatLayout->addWidget(newMessageChat);
+  titleChatLayout->addWidget(reduceChatButton);
+  titleChatLayout->addWidget(floatChatButton);
+
   m_bottomDock->setWidget(m_chatDlg);
-  m_bottomDock->setAllowedAreas(Qt::BottomDockWidgetArea);
+  m_bottomDock->setTitleBarWidget(titleChatWidget);
   addDockWidget(Qt::BottomDockWidgetArea, m_bottomDock); // master dockwidget
 
 //    kDebug() << "Before initActions" << endl;
@@ -501,7 +520,7 @@ void KGameWindow::initView()
     delete m_rightDock;
   }
   m_rightDock = new QDockWidget(this);
-  m_rightDock->setAllowedAreas(Qt::RightDockWidgetArea);
+  m_rightDock->setAllowedAreas(Qt::RightDockWidgetArea | Qt::LeftDockWidgetArea);
   m_rightDock->setFeatures(QDockWidget::NoDockWidgetFeatures);
 
   m_rightDialog = new KRightDialog(m_rightDock,theWorld(),this);
@@ -1400,9 +1419,9 @@ void KGameWindow::distributeArmies()
   PlayersArray::iterator it_end = m_automaton->playerList()->end();
   for (; it != it_end; it++)
   {
-    unsigned int nb = nbNewArmies(static_cast<Player*>(*it));
+    unsigned int nb = nbNewArmies(dynamic_cast<Player*>(*it));
 //     kDebug() << "    Giving " << nb << " armies to " << static_cast<Player*>(*it)->name() << endl;
-    static_cast<Player*>(*it)-> setNbAvailArmies(nb);
+    dynamic_cast<Player*>(*it)-> setNbAvailArmies(nb);
   }
 }
 

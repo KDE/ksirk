@@ -37,6 +37,8 @@
 #include <QGroupBox>
 #include <QSplitter>
 #include <QSlider>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
 // include files for KDE
 #include <ksharedconfig.h>
 #include <KXmlGuiWindow>
