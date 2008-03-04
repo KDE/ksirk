@@ -475,6 +475,26 @@ void KGameWindow::slotChatMessage()
   setFocus();
 }
 
+void KGameWindow::slotChatFloatButtonPressed()
+{
+  // change the floating state
+  m_bottomDock->setFloating(!m_bottomDock->isFloating());
+}
+
+void KGameWindow::slotChatFloatChanged(bool value)
+{
+  // change the float button image
+  if (!m_bottomDock->isFloating()) {
+    m_floatChatButton->setIcon(m_upChatFloatPix);
+  } else {
+    m_floatChatButton->setIcon(m_downChatFloatPix);
+  }
+}
+
+void KGameWindow::slotChatReduceButton()
+{
+}
+
 void KGameWindow::slotMovingFightersArrived(AnimSpritesGroup* sprites)
 {
 Q_UNUSED(sprites)

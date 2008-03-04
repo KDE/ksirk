@@ -33,6 +33,7 @@
 #include <QPointF>
 #include <QPixmap>
 #include <QLabel>
+#include <QPushButton>
 #include <QStackedWidget>
 #include <QGroupBox>
 #include <QSplitter>
@@ -500,6 +501,9 @@ public:
   
   /** Returns a pointer to the chat widget used to chat and to display messages. */
   inline KGameChat* chatWidget() {return m_chatDlg;}
+  
+  /** Returns a pointer to the title chat message label used to display messages. */
+  inline QLabel* titleChatMessage() {return m_titleChatMsg;}
 
   void showMessage(const QString& message, quint32 delay=5);
 
@@ -683,10 +687,12 @@ public slots:
   void slotShowGoal();
   
   /** 
-    * Connected to the chat widget returnPressed signal. Allows to take back
-    * the focus.
+    * Connected to the chat signals.
     */
   void slotChatMessage();
+  void slotChatReduceButton();
+  void slotChatFloatButtonPressed();
+  void slotChatFloatChanged(bool value = true);
 
   void slotMovingFightersArrived(AnimSpritesGroup* sprites);
   void slotFiringFinished(AnimSpritesGroup*);
@@ -845,6 +851,11 @@ private:
    */
   KGameChat *m_chatDlg;
 
+  /**
+    * Show the beginning of the last message received.
+    */
+  QLabel* m_titleChatMsg;
+
   
   std::map< DiceColor, std::vector<QPixmap> > m_dices;
   
@@ -865,6 +876,15 @@ private:
   GameLogic::Country* m_mouseLocalisation;
 
   QDialog * dial;
+
+  // components that will be re-used of the chat
+  QPixmap m_upChatReducePix;
+  QPixmap m_downChatReducePix;
+  QPixmap m_upChatFloatPix;
+  QPixmap m_downChatFloatPix;
+
+  QPushButton* m_reduceChatButton;
+  QPushButton* m_floatChatButton;
 
 private: // Private methods
   /*void attack(GameLogic::Country& attacker, GameLogic::Country& defender, unsigned int nb);*/

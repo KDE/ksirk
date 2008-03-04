@@ -138,6 +138,10 @@ KGameWindow::KGameWindow(QWidget* parent) :
   titleChatWidget->setLayout(titleChatLayout);
   titleChatWidget->setFixedHeight(35);
 
+  QWidget* newMessageChat = new QWidget(titleChatWidget);
+  QHBoxLayout* newMessageChatLayout = new QHBoxLayout(newMessageChat);
+  newMessageChat->setLayout(newMessageChatLayout);
+
   KsirkChatModel* chatModel = new KsirkChatModel(m_bottomDock);
   KsirkChatDelegate* chatDelegate = new KsirkChatDelegate(m_bottomDock);
   m_chatDlg = new KGameChat(m_automaton, 10000, m_bottomDock,chatModel,chatDelegate);
@@ -146,15 +150,32 @@ KGameWindow::KGameWindow(QWidget* parent) :
           this,
           SLOT(slotChatMessage()));
 
-  QLabel* newMessageChat = new QLabel("Aucun message...");
-  QPushButton* reduceChatButton = new QPushButton(QPixmap(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/downArrow.png")),"");
-  QPushButton* floatChatButton = new QPushButton(QPixmap(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/2UpArrow.png")),"");
-  reduceChatButton->setFixedSize(30,30);
-  floatChatButton->setFixedSize(30,30);
+  m_upChatReducePix.load(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/upArrow.png"));
+  m_downChatReducePix.load(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/downArrow.png"));
+  m_upChatFloatPix.load(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/2UpArrow.png"));
+  m_downChatFloatPix.load(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/2DownArrow.png"));
+
+  m_titleChatMsg = new QLabel("Aucun message...");
+  m_reduceChatButton = new QPushButton(m_downChatReducePix,"");
+  m_floatChatButton = new QPushButton(m_upChatFloatPix,"");
+  m_reduceChatButton->setFixedSize(30,30);
+  m_floatChatButton->setFixedSize(30,30);
+  connect(m_floatChatButton,
+          SIGNAL(clicked()),
+          this,
+          SLOT(slotChatFloatButtonPressed()));
+  connect(m_bottomDock,
+          SIGNAL(topLevelChanged(bool)),
+          this,
+          SLOT(slotChatFloatChanged(bool)));
+
+  newMessageChatLayout->addWidget(m_titleChatMsg);
+  m_titleChatMsg->hide();
+  
 
   titleChatLayout->addWidget(newMessageChat);
-  titleChatLayout->addWidget(reduceChatButton);
-  titleChatLayout->addWidget(floatChatButton);
+  titleChatLayout->addWidget(m_reduceChatButton);
+  titleChatLayout->addWidget(m_floatChatButton);
 
   m_bottomDock->setWidget(m_chatDlg);
   m_bottomDock->setTitleBarWidget(titleChatWidget);
