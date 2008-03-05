@@ -131,7 +131,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
 
   m_bottomDock = new QDockWidget(this);
   m_bottomDock->setFeatures(QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
-  m_bottomDock->setAllowedAreas(Qt::BottomDockWidgetArea);
+  m_bottomDock->setAllowedAreas(Qt::BottomDockWidgetArea|Qt::TopDockWidgetArea);
 
   QWidget* titleChatWidget = new QWidget(m_bottomDock);
   QHBoxLayout* titleChatLayout = new QHBoxLayout(titleChatWidget);
@@ -154,6 +154,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_downChatReducePix.load(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/downArrow.png"));
   m_upChatFloatPix.load(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/2UpArrow.png"));
   m_downChatFloatPix.load(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/2DownArrow.png"));
+  m_chatIsReduced = false;
 
   m_titleChatMsg = new QLabel("Aucun message...");
   m_reduceChatButton = new QPushButton(m_downChatReducePix,"");
@@ -168,10 +169,13 @@ KGameWindow::KGameWindow(QWidget* parent) :
           SIGNAL(topLevelChanged(bool)),
           this,
           SLOT(slotChatFloatChanged(bool)));
+  connect(m_reduceChatButton,
+          SIGNAL(clicked()),
+          this,
+          SLOT(slotChatReduceButton()));
 
   newMessageChatLayout->addWidget(m_titleChatMsg);
   m_titleChatMsg->hide();
-  
 
   titleChatLayout->addWidget(newMessageChat);
   titleChatLayout->addWidget(m_reduceChatButton);

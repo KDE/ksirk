@@ -493,6 +493,31 @@ void KGameWindow::slotChatFloatChanged(bool value)
 
 void KGameWindow::slotChatReduceButton()
 {
+  m_chatIsReduced = !m_chatIsReduced;
+
+  // change the reduce button image, hide or show the chat and the short last message
+  if (m_chatIsReduced) {
+    // save the last width
+    m_lastWidthChat = m_bottomDock->width();
+
+    // reduce the chat
+    m_reduceChatButton->setIcon(m_upChatReducePix);
+    m_chatDlg->hide();
+    m_titleChatMsg->show();
+  } else {
+    // restore the chat
+    m_reduceChatButton->setIcon(m_downChatReducePix);
+    m_chatDlg->show();
+    m_titleChatMsg->hide();
+    m_bottomDock->setMaximumSize(16777215,16777215);
+    m_bottomDock->resize(m_lastWidthChat,38+m_chatDlg->height());
+  }
+
+  kDebug() << "*************************************" << endl;
+  kDebug() << "*** m_titleChatMsg (" << m_titleChatMsg->width() << "," << m_titleChatMsg->height() << ")" << endl;
+  kDebug() << "*** m_chatDlg (" << m_chatDlg->width() << "," << m_chatDlg->height() << ")" << endl;
+  kDebug() << "*** m_bottomDock (" << m_bottomDock->width() << "," << m_bottomDock->height() << ")" << endl << endl;
+  kDebug() << "*** max m_bottomDock (" << m_bottomDock->maximumWidth() << "," << m_bottomDock->maximumHeight() << ")" << endl << endl;
 }
 
 void KGameWindow::slotMovingFightersArrived(AnimSpritesGroup* sprites)
@@ -523,7 +548,6 @@ void KGameWindow::slotMovingArmiesArrived(AnimSpritesGroup* sprites)
 
 void KGameWindow::slotBring(AnimSprite* sprite)
 {
-	kDebug() << "slot bring **************************" << endl;
 	m_automaton->game()->stopExplosion();
 }
 

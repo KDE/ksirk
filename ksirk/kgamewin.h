@@ -45,6 +45,8 @@
 #include <KXmlGuiWindow>
 #include <KStandardDirs>
 #include <KShortcut>
+// include files for kde games
+#include <kgame/kgamechat.h>
 
 #include <vector>
 
@@ -856,9 +858,19 @@ private:
     */
   QLabel* m_titleChatMsg;
 
-  
+  /**
+    * Reduced state of the chat widget.
+    */
+  bool m_chatIsReduced;
+
+  /**
+    * Contains all dices of the game.
+    */
   std::map< DiceColor, std::vector<QPixmap> > m_dices;
-  
+
+  /**
+    * Audio player object: play all the sounds of the game.
+    */
   Phonon::MediaObject* m_audioPlayer;
 
   /** 
@@ -882,6 +894,9 @@ private:
   QPixmap m_downChatReducePix;
   QPixmap m_upChatFloatPix;
   QPixmap m_downChatFloatPix;
+
+  // last width of the floating chat not reduced
+  int m_lastWidthChat;
 
   QPushButton* m_reduceChatButton;
   QPushButton* m_floatChatButton;
