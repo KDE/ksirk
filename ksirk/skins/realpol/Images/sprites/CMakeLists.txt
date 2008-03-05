@@ -8,6 +8,9 @@ france.svg
 infantry.svg 
 italy.svg 
 japan.svg 
+infantry1.svg 
+infantry2.svg 
+infantry3.svg 
 uk.svg 
 us.svg)
 

@@ -6,6 +6,9 @@ exploding.svg
 firing.svg 
 france.svg 
 infantry.svg 
+infantry1.svg 
+infantry2.svg 
+infantry3.svg 
 italy.svg 
 japan.svg 
 uk.svg 

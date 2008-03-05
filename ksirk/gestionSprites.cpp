@@ -299,12 +299,24 @@ qreal rightRelativePos = (Sprites::SkinSpritesData::single().intData("width-betw
   
   if (!paysAttaquant->spritesInfantry().isEmpty())
   {
+	// search the correct infantry string (normal sprite, with number 1, 2, or 3)
+	QString infantryString;
+	if (backGnd()->bgIsArena()) {
+		infantryString = "infantry";
+	} else if (paysAttaquant->owner()->getNbAttack() == 1) {
+		infantryString = "infantry1";
+	} else if (paysAttaquant->owner()->getNbAttack() == 2) {
+		infantryString = "infantry2";
+	} else {
+		infantryString = "infantry3";
+	}
+
 	/*InfantrySprite**/ attackingSprite = new InfantrySprite(
-	Sprites::SkinSpritesData::single().strData("infantry-id"),
-	Sprites::SkinSpritesData::single().intData("infantry-width"),
-	Sprites::SkinSpritesData::single().intData("infantry-height"),
-	Sprites::SkinSpritesData::single().intData("infantry-frames"),
-	Sprites::SkinSpritesData::single().intData("infantry-versions"),
+	Sprites::SkinSpritesData::single().strData(infantryString+"-id"),
+	Sprites::SkinSpritesData::single().intData(infantryString+"-width"),
+	Sprites::SkinSpritesData::single().intData(infantryString+"-height"),
+	Sprites::SkinSpritesData::single().intData(infantryString+"-frames"),
+	Sprites::SkinSpritesData::single().intData(infantryString+"-versions"),
 	m_theWorld->zoom(),
 	backGnd(),
 	200);
@@ -362,14 +374,24 @@ qreal rightRelativePos = (Sprites::SkinSpritesData::single().intData("width-betw
 
   if (!paysDefenseur->spritesInfantry().isEmpty())
   {
-  	kDebug() << "4" << endl;
+	// search the correct infantry string (normal sprite, with number 1, 2, or 3)
+	QString infantryString;
+	if (backGnd()->bgIsArena()) {
+		infantryString = "infantry";
+	} else if (paysDefenseur->owner()->getNbDefense() == 1) {
+		infantryString = "infantry1";
+	} else if (paysDefenseur->owner()->getNbDefense() == 2) {
+		infantryString = "infantry2";
+	} else {
+		infantryString = "infantry3";
+	}
 		
 	/*InfantrySprite**/ defenderSprite = new InfantrySprite(
-	Sprites::SkinSpritesData::single().strData("infantry-id"),
-	Sprites::SkinSpritesData::single().intData("infantry-width"),
-	Sprites::SkinSpritesData::single().intData("infantry-height"),
-	Sprites::SkinSpritesData::single().intData("infantry-frames"),
-	Sprites::SkinSpritesData::single().intData("infantry-versions"),
+	Sprites::SkinSpritesData::single().strData(infantryString+"-id"),
+	Sprites::SkinSpritesData::single().intData(infantryString+"-width"),
+	Sprites::SkinSpritesData::single().intData(infantryString+"-height"),
+	Sprites::SkinSpritesData::single().intData(infantryString+"-frames"),
+	Sprites::SkinSpritesData::single().intData(infantryString+"-versions"),
 	m_theWorld->zoom(),
 	backGnd(),
 	200);
@@ -680,7 +702,7 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
     else if (NKA != 0) who = 0;
     else if (NKD != 0) who = 1;
     else KMessageBox::information(0, i18n("Problem : no one destroyed"));
-    
+
     //CannonSprite *newSprite;
     AnimSprite* newSprite;
 
@@ -690,38 +712,38 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
 
     qreal flagYDiff = Sprites::SkinSpritesData::single().intData("fighters-flag-y-diff")*m_theWorld->zoom();
     qreal pointFlagX = backGnd()->boundingRect().width()/2;
-    
-	if ((paysAttaquant->nbArmies() % 10) == 0)
-	{
-		pointDepartAttaquantY = paysAttaquant-> pointInfantry().y()*      m_theWorld->zoom();
-	}
-	else
-	{
-		if ((paysAttaquant->nbArmies() % 5) == 0)
-		{
-			pointDepartAttaquantY = paysAttaquant-> pointCavalry().y()*      m_theWorld->zoom();
-		}
-		else
-		{
-			pointDepartAttaquantY = paysAttaquant-> pointCannon().y()*      m_theWorld->zoom();
-		}
-	}
 
-	if ((paysDefenseur->nbArmies() % 10) == 0)
-  	{
-  		pointDepartDefenseurY = paysDefenseur-> pointInfantry().y()*      m_theWorld->zoom();
-  	}
-	else
-	{
-		if ((paysDefenseur->nbArmies() % 5) == 0)
-		{
-			pointDepartDefenseurY = paysDefenseur-> pointCavalry().y()*      m_theWorld->zoom();
-		}
-		else
-		{
-			pointDepartDefenseurY = paysDefenseur-> pointCannon().y()*      m_theWorld->zoom();
-		}
-	}
+    if ((paysAttaquant->nbArmies() % 10) == 0)
+    {
+        pointDepartAttaquantY = paysAttaquant-> pointInfantry().y()*      m_theWorld->zoom();
+    }
+    else
+    {
+        if ((paysAttaquant->nbArmies() % 5) == 0)
+        {
+            pointDepartAttaquantY = paysAttaquant-> pointCavalry().y()*      m_theWorld->zoom();
+        }
+        else
+        {
+            pointDepartAttaquantY = paysAttaquant-> pointCannon().y()*      m_theWorld->zoom();
+        }
+    }
+
+    if ((paysDefenseur->nbArmies() % 10) == 0)
+    {
+        pointDepartDefenseurY = paysDefenseur-> pointInfantry().y()*      m_theWorld->zoom();
+    }
+    else
+    {
+        if ((paysDefenseur->nbArmies() % 5) == 0)
+        {
+            pointDepartDefenseurY = paysDefenseur-> pointCavalry().y()*      m_theWorld->zoom();
+        }
+        else
+        {
+            pointDepartDefenseurY = paysDefenseur-> pointCannon().y()*      m_theWorld->zoom();
+        }
+    }
 
     qreal pointArriveeY = (pointDepartAttaquantY+pointDepartDefenseurY)/2;
 
@@ -777,7 +799,7 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
 		}
 	}
         
-	if ((paysAttaquant-> pointFlag().x() <= paysDefenseur-> pointFlag().x()) && !((qAbs(paysAttaquant-> pointFlag().x()-paysDefenseur-> pointFlag().x()) > (backGnd()-> boundingRect().width() / 2)) && (paysAttaquant->communicateWith(paysDefenseur))))
+	if (backGnd()->bgIsArena() || ((paysAttaquant-> pointFlag().x() <= paysDefenseur-> pointFlag().x()) && !((qAbs(paysAttaquant-> pointFlag().x()-paysDefenseur-> pointFlag().x()) > (backGnd()-> boundingRect().width() / 2)) && (paysAttaquant->communicateWith(paysDefenseur)))))
         {
             newSprite-> setPos((*start)+QPointF(rightRelativePos, flagYDiff));
         }
@@ -875,7 +897,7 @@ void KGameWindow::initCombatBringBack(Country *paysAttaquant, Country *paysDefen
 		}
 	}
 
-        if ((paysAttaquant-> pointFlag().x() <= paysDefenseur-> pointFlag().x()) && !((qAbs(paysAttaquant-> pointFlag().x()-paysDefenseur-> pointFlag().x()) > (backGnd()-> boundingRect().width() / 2)) && (paysAttaquant->communicateWith(paysDefenseur))))
+        if (backGnd()->bgIsArena() || ((paysAttaquant-> pointFlag().x() <= paysDefenseur-> pointFlag().x()) && !((qAbs(paysAttaquant-> pointFlag().x()-paysDefenseur-> pointFlag().x()) > (backGnd()-> boundingRect().width() / 2)) && (paysAttaquant->communicateWith(paysDefenseur)))))
         {
             newSprite-> setPos((*start)+QPointF(leftRelativePos,flagYDiff));
         }

@@ -19,6 +19,15 @@
     <strItem key="infantry-file" value="infantry.svg" />
     <intItem key="infantry-frames" value="1" />
     <intItem key="infantry-versions" value="2" /> 
+    <strItem key="infantry1-file" value="infantry1.svg" />
+    <intItem key="infantry1-frames" value="1" />
+    <intItem key="infantry1-versions" value="3" /> 
+    <strItem key="infantry2-file" value="infantry2.svg" />
+    <intItem key="infantry2-frames" value="1" />
+    <intItem key="infantry2-versions" value="3" /> 
+    <strItem key="infantry3-file" value="infantry3.svg" />
+    <intItem key="infantry3-frames" value="1" />
+    <intItem key="infantry3-versions" value="3" /> 
     <strItem key="cavalry-file" value="cavalry.svg" />
     <intItem key="cavalry-frames" value="1" />
     <intItem key="cavalry-versions" value="2" /> 

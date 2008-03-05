@@ -512,12 +512,6 @@ void KGameWindow::slotChatReduceButton()
     m_bottomDock->setMaximumSize(16777215,16777215);
     m_bottomDock->resize(m_lastWidthChat,38+m_chatDlg->height());
   }
-
-  kDebug() << "*************************************" << endl;
-  kDebug() << "*** m_titleChatMsg (" << m_titleChatMsg->width() << "," << m_titleChatMsg->height() << ")" << endl;
-  kDebug() << "*** m_chatDlg (" << m_chatDlg->width() << "," << m_chatDlg->height() << ")" << endl;
-  kDebug() << "*** m_bottomDock (" << m_bottomDock->width() << "," << m_bottomDock->height() << ")" << endl << endl;
-  kDebug() << "*** max m_bottomDock (" << m_bottomDock->maximumWidth() << "," << m_bottomDock->maximumHeight() << ")" << endl << endl;
 }
 
 void KGameWindow::slotMovingFightersArrived(AnimSpritesGroup* sprites)

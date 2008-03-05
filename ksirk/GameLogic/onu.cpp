@@ -143,6 +143,24 @@ ONU::ONU(GameAutomaton* automaton,
   Sprites::SkinSpritesData::changeable().intData("infantry-frames", config.group("infantry").readEntry("frames",0));
   Sprites::SkinSpritesData::changeable().intData("infantry-versions", config.group("infantry").readEntry("versions",0));
 
+  Sprites::SkinSpritesData::changeable().strData("infantry1-id", config.group("infantry1").readEntry("id"));
+  Sprites::SkinSpritesData::changeable().intData("infantry1-width", config.group("infantry1").readEntry("width",0));
+  Sprites::SkinSpritesData::changeable().intData("infantry1-height", config.group("infantry1").readEntry("height",0));
+  Sprites::SkinSpritesData::changeable().intData("infantry1-frames", config.group("infantry1").readEntry("frames",0));
+  Sprites::SkinSpritesData::changeable().intData("infantry1-versions", config.group("infantry1").readEntry("versions",0));
+
+  Sprites::SkinSpritesData::changeable().strData("infantry2-id", config.group("infantry2").readEntry("id"));
+  Sprites::SkinSpritesData::changeable().intData("infantry2-width", config.group("infantry2").readEntry("width",0));
+  Sprites::SkinSpritesData::changeable().intData("infantry2-height", config.group("infantry2").readEntry("height",0));
+  Sprites::SkinSpritesData::changeable().intData("infantry2-frames", config.group("infantry2").readEntry("frames",0));
+  Sprites::SkinSpritesData::changeable().intData("infantry2-versions", config.group("infantry2").readEntry("versions",0));
+
+  Sprites::SkinSpritesData::changeable().strData("infantry3-id", config.group("infantry3").readEntry("id"));
+  Sprites::SkinSpritesData::changeable().intData("infantry3-width", config.group("infantry3").readEntry("width",0));
+  Sprites::SkinSpritesData::changeable().intData("infantry3-height", config.group("infantry3").readEntry("height",0));
+  Sprites::SkinSpritesData::changeable().intData("infantry3-frames", config.group("infantry3").readEntry("frames",0));
+  Sprites::SkinSpritesData::changeable().intData("infantry3-versions", config.group("infantry3").readEntry("versions",0));
+
   Sprites::SkinSpritesData::changeable().strData("cavalry-id", config.group("cavalry").readEntry("id"));
   Sprites::SkinSpritesData::changeable().intData("cavalry-width", config.group("cavalry").readEntry("width",0));
   Sprites::SkinSpritesData::changeable().intData("cavalry-height", config.group("cavalry").readEntry("height",0));
