@@ -559,6 +559,7 @@ void ONU::buildMap()
 
 void ONU::applyZoomFactor(qreal zoomFactor)
 {
+/*
   kDebug() << "zoomFactor=" << zoomFactor << "old zoom=" << m_zoom << endl;
   m_zoom *= zoomFactor;
   kDebug() << "new zoom=" << m_zoom << endl;
@@ -574,7 +575,8 @@ void ONU::applyZoomFactor(qreal zoomFactor)
   {
     Country* country = *it;
     country->createArmiesSprites();
-  }
+  }*/
+  m_automaton->game()->frame()->scale(zoomFactor,zoomFactor);
 }
 
 
