@@ -117,7 +117,7 @@ namespace GameLogic
       */
       //QLayout * mainLayout;
       QGridLayout * mainLayout;
-      
+      QLabel * loadingLabel;
       QDockWidget * m_parentWidget;
 
       Ksirk::GameLogic::ONU * world;

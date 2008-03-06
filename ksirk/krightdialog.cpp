@@ -22,16 +22,20 @@
 #include "GameLogic/country.h"
 #include "GameLogic/player.h"
 #include "Sprites/animsprite.h"
-
+#include <qdrawutil.h>
 #include <QGroupBox>
 #include <QLabel>
+#include <QColor>
+#include <QBrush>
+#include <QBitmap>
 #include <QPixmap>
 #include <QString>
 #include <QGridLayout>
 #include <kcmdlineargs.h>
 #include <QScrollBar>
 #include <QScrollArea>
-
+#include <QPalette>
+#include <QMovie>
 namespace Ksirk
 {
    using namespace GameLogic;
@@ -159,7 +163,28 @@ QHBoxLayout * box2 = new QHBoxLayout();
 QHBoxLayout * box3 = new QHBoxLayout();
 QHBoxLayout * box4 = new QHBoxLayout();
 
+	QGridLayout * tp = new QGridLayout();
+	QLabel *l1 = new QLabel();
+	loadingLabel = new QLabel();
+	loadingLabel->setFixedSize(25,25);
+	QLabel *l3 = new QLabel();
+	QMovie * loading = new QMovie("/home/kde-devel/kde/src/KDE/games/ksirk/ksirk/skins/default/Images/loader.gif");
+	loadingLabel->setMovie(loading);
+	loading->start();
+	l1->setFixedHeight(15);
+	l3->setFixedHeight(20);
+	tp->addWidget(l1,0,0);
+	tp->addWidget(loadingLabel,0,1);
+	tp->addWidget(l3,0,2);
 
+	QWidget * temporaire = new QWidget(this);
+	temporaire->setAutoFillBackground(true);
+	QPalette * tempP = new QPalette(temporaire->palette());
+	tempP->setColor(QPalette::Window,QColor(210,210,210));
+	temporaire->setPalette(*tempP);
+
+	temporaire->setLayout(tp);
+	
      haut = new QWidget();
      bas = new QWidget();
 
@@ -213,17 +238,18 @@ QHBoxLayout * box4 = new QHBoxLayout();
       box4->addWidget(rightContents->at(7));
       box4->addWidget(rightContents->at(8));
 
-      hautGrid->addLayout(box1,0,0,Qt::AlignLeft);
+      hautGrid->addLayout(box1,0,0,Qt::AlignCenter);
       hautGrid->addWidget(rightContents->at(1),1,0,Qt::AlignCenter);
       hautGrid->addLayout(box2,2,0,Qt::AlignLeft);
-      hautGrid->addWidget(rightContents->at(4),3,0,Qt::AlignCenter);
+      hautGrid->addWidget(rightContents->at(4),3,0,Qt::AlignLeft);
       
-      basGrid->addLayout(box3,0,0,Qt::AlignLeft);
+      basGrid->addLayout(box3,0,0,Qt::AlignCenter);
       basGrid->addWidget(rightContents->at(6),1,0,Qt::AlignCenter);
       basGrid->addLayout(box4,2,0,Qt::AlignLeft);
-      basGrid->addWidget(rightContents->at(9),3,0,Qt::AlignCenter);
+      basGrid->addWidget(rightContents->at(9),3,0,Qt::AlignLeft);
 
       mainLayout->addWidget(haut,0,0);
+      mainLayout->addWidget(temporaire,1,0);
       mainLayout->addWidget(bas,2,0);
 
       if (game->automaton()->isAttackAuto()) {
@@ -338,7 +364,7 @@ QHBoxLayout * box4 = new QHBoxLayout();
 
    void KRightDialog::displayFightResult(int A1=0, int A2=0, int A3=0, int D1=0, int D2=0,int nbA=0,int nbD=0, bool win=false)
    {
-
+loadingLabel->clear();
       QGridLayout * milieuGrid = new QGridLayout();   
       QHBoxLayout * deAtt = new QHBoxLayout();
       QHBoxLayout * deDef = new QHBoxLayout();
@@ -346,7 +372,7 @@ QHBoxLayout * box4 = new QHBoxLayout();
 
 if(A1!=0 || A1!=-1)
 {kDebug()<<"De attack 1" << endl;
-      QLabel * de1 = new QLabel();
+      QLabel * de1 = new QLabel();kDebug()<<"*********Label des de:"<<de1->width()<<","<<de1->height() <<"*********"<<endl;
       de1->setPixmap(game->getDice(KGameWindow::Red,A1));
       rightContents->insert(0,de1);deAtt->addWidget(de1);
 }
@@ -364,7 +390,7 @@ if(A3!=0 || A3!=-1)
 }
 if(D1!=0 || D1!=-1)
 {kDebug()<<"De defense 1" << endl;
-      QLabel * de4= new QLabel();
+      QLabel * de4= new QLabel();   
       de4->setPixmap(game->getDice(KGameWindow::Blue,D1));
       rightContents->insert(0,de4);deDef->addWidget(de4);
 }
@@ -374,8 +400,12 @@ if(D2!=0 || D2!=-1)
       de5->setPixmap(game->getDice(KGameWindow::Blue,D2));
       rightContents->insert(0,de5);deDef->addWidget(de5);
 }
-           rightContents->insert(0,new QLabel(i18n("<font color=\"red\">loose armies: %1</font>", nbA)));
-rightContents->insert(0,new QLabel(i18n("<font color=\"blue\">loose armies: %1</font>", nbD)));
+QLabel * jjjj = new QLabel(i18n("<font color=\"red\">loose armies: %1</font>", nbA));
+           rightContents->insert(0,jjjj);
+kDebug()<<"*********Label libelle Attack:"<<jjjj->width()<<","<<jjjj->height() <<"*********"<<endl;
+QLabel * kkkk = new QLabel(i18n("<font color=\"blue\">loose armies: %1</font>", nbD));
+rightContents->insert(0,kkkk);
+kDebug()<<"*********Label libelle Defense:"<<kkkk->width()<<","<<kkkk->height() <<"*********"<<endl;
       /*deAtt->addWidget(rightContents->at(6)); 
       deAtt->addWidget(rightContents->at(5));
       deAtt->addWidget(rightContents->at(4));

@@ -52,7 +52,7 @@
 #include <QString>
 #include <QPushButton>
 #include <QVBoxLayout>
-
+#include <QMovie>
 // include files for KDE
 #include <kiconloader.h>
 #include <kmessagebox.h>
