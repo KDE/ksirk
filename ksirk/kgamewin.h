@@ -109,6 +109,8 @@ public:
     
   /** Returns the game graphics view */
   DecoratedGameFrame* frame() {return m_frame;}
+/** Returns the game graphics scene*/
+//  QGraphicsScene* graphicsscene() {return m_
     
   /** Returns the arena graphics view */
   FightArena* arena() {return m_arena;}
@@ -163,7 +165,12 @@ void determinePointArriveeForArena(GameLogic::Country *paysAttaquant, GameLogic:
     * Prepare the fighting animation : replace the sprites sequence by the
     * sequence of explosion
     */
+
   void animCombat();
+  /** 
+    *  Center the map on the fight so that the user can see what's happening 
+  */
+  void centerOnFight();
 
   /**
     * Replaces the animated fighters by the simple cannon image

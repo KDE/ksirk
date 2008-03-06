@@ -1979,6 +1979,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   case InitCombatMovement:
     m_game->getRightDialog()->open();
     m_game->getRightDialog()->displayFightDetails(m_game->firstCountry(),m_game->secondCountry(),m_game->firstCountry()->owner()->getNbAttack(),m_game->secondCountry()->owner()->getNbDefense());
+    m_game->centerOnFight();  //center the game on the fight 
     if  (m_game->isArena() && !currentPlayer()->isAI() && !currentPlayer()->isVirtual())
     {
       kDebug() << "Attack with arena" << endl;

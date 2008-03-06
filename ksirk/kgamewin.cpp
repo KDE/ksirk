@@ -716,6 +716,7 @@ void KGameWindow::winner(const Player* player)
 
 void KGameWindow::resolveAttack()
 {
+
 //    kDebug() << "KGameWindow::resolveAttack" << endl;
 
   int A1 = -1; int A2 = -1; int A3 = -1; int AE = -1;
@@ -1966,6 +1967,7 @@ bool KGameWindow::attacker(const QPointF& point)
 
 unsigned int KGameWindow::attacked(const QPointF& point)
 {
+
   kDebug() << endl;
   //if (currentPlayer()-> isAI()) return 3;
 
@@ -2357,9 +2359,67 @@ bool KGameWindow::nextPlayerNormal()
     return false;
   }
 }
-
-void KGameWindow::attack(unsigned int nb)
+void KGameWindow::centerOnFight()
 {
+
+
+
+  qreal aj=m_rightDialog->width();		//get the width of the right widget
+  qreal ay=m_chatDlg->height();			//get the height of the bottom widget
+
+//Larg 
+  qreal larg=((m_secondCountry->centralPoint().x())-(m_firstCountry->centralPoint().x()));
+  if (larg<0)
+  {
+ 	larg=-larg;		//si negatif alors on remet en positif
+  }
+//Long
+  qreal longu=((m_secondCountry->centralPoint().y())-(m_firstCountry->centralPoint().y()));
+  if (longu<0)
+  {
+ 	longu=-longu;		//si negatif alors on remet en positif
+  }
+//Point NordOuest
+  qreal minx=m_secondCountry->centralPoint().x();	
+  qreal miny=m_secondCountry->centralPoint().y();
+  if (minx>m_firstCountry->centralPoint().x())
+  {
+	minx=m_firstCountry->centralPoint().x();
+  }
+  if (miny>m_firstCountry->centralPoint().y())
+  {
+	miny=m_firstCountry->centralPoint().y();
+  }
+
+  QSizeF size (larg,longu); 	//creation de la size  (2x la largeur entre les deux pays)
+  QPointF NO (minx,miny);	//creation du point Nord Ouest
+  QRectF rect(NO,size);		//creation du rect 
+  m_frame->ensureVisible(rect);
+
+// centering on the middle point
+  qreal xx=((m_secondCountry->centralPoint().x())+(m_firstCountry->centralPoint().x()))/2;
+  if (xx<0)
+  {
+ 	xx=-xx;		//si negatif alors on remet en positif
+  }
+  qreal yy=((m_secondCountry->centralPoint().y())+(m_firstCountry->centralPoint().y()))/2;
+  if (yy<0)
+  {
+ 	yy=-yy;		//si negatif alors on remet en positif
+  }
+
+  QPointF mid (xx,yy);
+  m_frame->centerOn(mid);	    //center on the point
+
+  m_frame->translate(-aj/2,-ay/2);  //translate to center perfectly
+//end Benjamin M.
+
+
+}
+void KGameWindow::attack(unsigned int nb)
+{  
+  centerOnFight();				//center the view on the fight Benj
+  
   displayCancelButton();
   currentPlayer()-> setNbAttack(nb);
   KMessageParts messageParts;

@@ -559,6 +559,9 @@ void ONU::buildMap()
 
 void ONU::applyZoomFactor(qreal zoomFactor)
 {
+
+/** Zoom 1: First method (take a long time to zoom) :
+*/
 /*
   kDebug() << "zoomFactor=" << zoomFactor << "old zoom=" << m_zoom << endl;
   m_zoom *= zoomFactor;
@@ -576,7 +579,12 @@ void ONU::applyZoomFactor(qreal zoomFactor)
     Country* country = *it;
     country->createArmiesSprites();
   }*/
-  m_automaton->game()->frame()->scale(zoomFactor,zoomFactor);
+ 
+/** Zoom 2 : Second method , Very performent.  Carefull ! Can cause the game to lag. 
+ To try this, comment all the first method and uncomment these lines
+*/
+  m_automaton->game()->frame()->scale(zoomFactor, zoomFactor);
+
 }
 
 
