@@ -135,6 +135,23 @@ public:
     */
   bool initArmiesMovement(unsigned int nb, GameLogic::Country* src, GameLogic::Country* dest);
 
+
+
+
+bool initArmiesMultipleCombat(unsigned int nb, GameLogic::Country* src, GameLogic::Country* dest, QPointF);
+
+QPointF* determinePointDepartArena(GameLogic::Country *pays, int relativePos);
+
+void determinePointArrivee(GameLogic::Country *paysAttaquant, GameLogic::Country *paysDefenseur,QPointF*,QPointF*);
+
+void determinePointArriveeForArena(GameLogic::Country *paysAttaquant, GameLogic::Country *paysDefenseur,int relative, QPointF * pointArriveeAttaquant,QPointF * pointArriveeDefenseur);
+
+
+
+
+
+
+
   /**
     * Initializes the sprites that will fight for the attacker and the
     * defender. Prepares them for moving
@@ -168,7 +185,7 @@ public:
   /**
     * Set up the eventual survivor(s) to come back home
     */
-  void initCombatBringBack(GameLogic::Country *, GameLogic::Country *);
+  void initCombatBringBackForArena(GameLogic::Country *, GameLogic::Country *);
 
   /**
     * Tests if there is currently moving armies (infantrymen, cavalrymen,
@@ -176,6 +193,11 @@ public:
     * @return true if there is moving armies; false otherwise
     */
   bool haveMovingArmies() const {return !m_animSpritesGroups.empty();}
+
+  void setNbAttack (int nb);
+
+  void setNbDefense (int nb);
+
 
 /************** END OF METHODS DEFINED IN gestionSprites.cpp *****************/
 
@@ -419,6 +441,7 @@ public:
     * during an invasion or an end of turn move 
     */
   bool invade(unsigned int nb = 1);
+  bool simultaneousAttack(int ,int );
   bool retreat(unsigned int nb = 1);
   //@}
 
@@ -650,6 +673,9 @@ public slots:
   void slotWindowDef1();
   void slotWindowDef2();
   void slotInvade1();
+
+void slotSimultaneousAttack(int);
+
   void slotInvade5();
   void slotInvade10();
   void slotInvasionFinished();
@@ -761,6 +787,9 @@ private:
   //@}
   
   bool ARENA;
+
+  int relativePosInArenaAttack;
+  int relativePosInArenaDefense;
 
   /**
     * the countries, continents, etc.

@@ -100,6 +100,8 @@ const char* GameAutomaton::KsirkMessagesIdsNames[] = {
 "DecrNbArmies", // 277
 "DisplayNextPlayerButton", // 278
 "Invade", // 279
+"SimultaneousAttackA",
+"SimultaneousAttackD",
 "Retreat", // 280
 "NextPlayerNormal", // 281
 "NextPlayerRecycling", // 282
@@ -388,6 +390,20 @@ GameAutomaton::GameState GameAutomaton::run()
   case FIGHT_ANIMATE:
   break;
   case FIGHT_BRING:
+    if (event == "actionSimultaneousAttackA")
+    {
+      QByteArray buffer;
+      QDataStream stream(&buffer, QIODevice::WriteOnly);
+      stream << quint32(1);
+      sendMessage(buffer,SimultaneousAttackA);
+    }
+    else if (event == "actionSimultaneousAttackD")
+    {
+      QByteArray buffer;
+      QDataStream stream(&buffer, QIODevice::WriteOnly);
+      stream << quint32(1);
+      sendMessage(buffer,SimultaneousAttackD);
+    }
   break;
   case FIGHT_BRINGBACK:
     // no more moving fighter returning home
@@ -2038,6 +2054,18 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     if (m_game-> invade(nbArmies))
       m_game-> incrNbMovedArmies(nbArmies);
     break;
+
+
+ case SimultaneousAttackA:
+    stream >> nbArmies;
+    m_game-> simultaneousAttack(nbArmies,0);
+    break;
+
+ case SimultaneousAttackD:
+    stream >> nbArmies;
+    m_game-> simultaneousAttack(nbArmies,1);
+    break;
+
   case Retreat:
     stream >> nbArmies;
     if (m_game-> retreat(nbArmies))

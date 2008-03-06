@@ -69,6 +69,8 @@ enum KsirkMessagesIds {
     DecrNbArmies, // 277
     DisplayNextPlayerButton, // 278
     Invade, // 279
+    SimultaneousAttackA,
+    SimultaneousAttackD,
     Retreat, // 280
     NextPlayerNormal, // 281
     NextPlayerRecycling, // 282

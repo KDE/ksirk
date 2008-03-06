@@ -92,6 +92,8 @@ KGameWindow::KGameWindow(QWidget* parent) :
   KXmlGuiWindow(parent), m_automaton(new GameAutomaton()),
   NKD(0), NKA(0),
   ARENA(0),
+  relativePosInArenaAttack(0),
+  relativePosInArenaDefense(0),
   m_theWorld(0),
   m_scene_world(0), m_scene_arena(0),
   m_backGnd_world(0), m_backGnd_arena(0),
@@ -2429,11 +2431,44 @@ bool KGameWindow::invade(unsigned int nb )
 {
   bool res = initArmiesMovement(nb, m_firstCountry, m_secondCountry);
   kDebug() << "invade("<<nb<<") returns " << res << endl;
-  kDebug() << "*************************INVADE************************" << res << endl;
   QPoint point;
   m_automaton->event("actionNextPlayer", point);
   return res;
 }
+
+bool KGameWindow::simultaneousAttack(int nb, int state)
+{
+  bool res;
+  QPointF *pointAttaquant = new QPointF(0,0);
+  QPointF *pointDefenseur = new QPointF(0,0);
+
+  //determinePointArrivee(m_firstCountry, m_secondCountry,pointAttaquant,pointDefenseur);
+
+  if (state == 0)
+  {
+	determinePointArriveeForArena(firstCountry(), secondCountry(),relativePosInArenaAttack, pointAttaquant,pointDefenseur);
+
+	kDebug() << "****point att****" << *pointAttaquant << endl;
+
+	kDebug() << "****SIMULTANEOUS ATTACK****" << endl;
+	res = initArmiesMultipleCombat(nb, firstCountry(), secondCountry(),*pointAttaquant);
+
+	relativePosInArenaAttack++;
+  }
+  else
+  {
+	determinePointArriveeForArena(secondCountry(), firstCountry(),relativePosInArenaDefense, pointAttaquant,pointDefenseur);
+
+	kDebug() << "****point def****" << *pointAttaquant << endl;
+
+	kDebug() << "****SIMULTANEOUS DEFENSE****" << endl;
+	res = initArmiesMultipleCombat(nb, secondCountry(), secondCountry(),*pointAttaquant);
+
+	relativePosInArenaDefense++;
+  }
+  return res;
+}
+
 
 bool KGameWindow::retreat(unsigned int nb)
 {

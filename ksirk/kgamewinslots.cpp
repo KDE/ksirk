@@ -379,6 +379,24 @@ void KGameWindow::slotInvade1()
   m_automaton->event("actionInvade1", point);
 }
 
+void KGameWindow::slotSimultaneousAttack(int state)
+{
+  QPoint point;
+  
+  kDebug() << "slotSimultaneousAttack" << state << endl;
+
+  // Attack
+  if (state==0)
+  {
+  	m_automaton->event("actionSimultaneousAttackA", point);
+  }
+  else
+  {
+	// Defense	
+	m_automaton->event("actionSimultaneousAttackD", point);
+  }
+}
+
 void KGameWindow::slotInvade5()
 {
   QPoint point;
@@ -572,9 +590,9 @@ void KGameWindow::slotExplosionFinished(AnimSpritesGroup* sprites)
     delete sprite;
   }
   
-  if (ARENA)
+  if (isArena())
   {
-	m_automaton->game()->initCombatBringBack(m_automaton->game()->firstCountry(), m_automaton->game()->secondCountry());
+	m_automaton->game()->initCombatBringBackForArena(m_automaton->game()->firstCountry(), m_automaton->game()->secondCountry());
   }
 
   m_automaton->explosionFinished();
