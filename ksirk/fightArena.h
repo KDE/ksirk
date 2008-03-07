@@ -53,7 +53,7 @@ namespace GameLogic
 }
 
    /**
-   * The DecoratedGameFrame class is the widget displayed while fights, and where
+   * The FightArena class is the widget displayed while fights, and where
    * all the units sprites are displayed. It is linked to its parent widget (the main 
    * window)
    */

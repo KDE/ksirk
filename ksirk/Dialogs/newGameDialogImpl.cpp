@@ -80,6 +80,10 @@ void NewGameDialogImpl::slotOK()
   m_useGoals = (radioGoal->isChecked());
   m_ok = true;
   accept();
+
+  // Return to the view of the map
+  kDebug() << "*********** Show the map !!! ***********" << endl;
+  //m_automaton->game()->showMap();
 }
 
 void NewGameDialogImpl::slotCancel()

@@ -102,6 +102,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_firstCountry(0), m_secondCountry(0),
   m_frame(0),
   m_arena(0),
+  m_mainMenu(0),
   m_goalAction(0),
   m_barFlag(new QLabel(this)),
 //   m_accels(this),
@@ -112,7 +113,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   gameActionsToolBar(0),
   m_message(0),
   m_mouseLocalisation(0),
-  m_currentDisplayedWidget(mapType),
+  m_currentDisplayedWidget(mainMenuType),
   m_rightDock(0),
   m_rightDialog(0)
 {
@@ -238,6 +239,7 @@ KGameWindow::~KGameWindow()
   delete m_backGnd_arena; m_backGnd_arena = 0;
   delete m_scene_arena; m_scene_arena = 0;
   delete m_arena; m_arena = 0;
+  delete m_mainMenu; m_mainMenu = 0;
   delete m_audioPlayer;
   delete m_rightDialog;
 }
@@ -462,6 +464,14 @@ void KGameWindow::newSkin(const QString& onuFileName)
   }
   m_scene_world = new QGraphicsScene(0, 0, m_theWorld->width(), m_theWorld->height(),this);
 
+  // create the main menu
+  bool firstCall = false;
+  if (m_mainMenu == 0)
+  {
+    m_mainMenu = new mainMenu(this, m_theWorld->width(), m_theWorld->height(), m_automaton);
+    firstCall = true;
+  }
+
   // create the world map view
   if (m_frame != 0)
   {  
@@ -483,19 +493,26 @@ void KGameWindow::newSkin(const QString& onuFileName)
   m_arena->setCacheMode( QGraphicsView::CacheBackground );
 
   // create a central widget if it doesent' exists
-
   m_centralWidget = dynamic_cast <QStackedWidget*>(centralWidget());
   if (m_centralWidget == 0) {
     m_centralWidget = new QStackedWidget;
  setCentralWidget(m_centralWidget);
   }
   
-  // put the map and arena in the central widget
+  // put the menu, map and arena in the central widget
+  m_centralWidget->addWidget(m_mainMenu);
   m_centralWidget->addWidget(m_frame);
   m_centralWidget->addWidget(m_arena);
-  //m_centralWidget->addWidget(m_splitter);
-  m_centralWidget->setCurrentIndex(0);
-  m_currentDisplayedWidget = mapType;
+  //m_centralWidget->addWidget(m_splitter);m_centralWidget
+  if (firstCall) {
+    m_centralWidget->setCurrentIndex(0);
+    m_currentDisplayedWidget = mainMenuType;
+    m_bottomDock->hide();
+  } else {
+    m_centralWidget->setCurrentIndex(1);
+    m_currentDisplayedWidget = mapType;
+    m_bottomDock->show();
+  }
 
   m_backGnd_arena = new BackGnd(m_scene_arena, m_theWorld, true);
 
@@ -565,12 +582,9 @@ void KGameWindow::initView()
   addDockWidget(Qt::RightDockWidgetArea, m_rightDock);
   //addDockWidget(Qt::RightDockWidgetArea, a);
 
-
 //m_splitter->setOrientation(Qt::Vertical);
 
 //m_splitter->addWidget(new QLabel("test"));
-
-  showMap();
 
   // adjustSize();
 
@@ -860,14 +874,28 @@ void KGameWindow::resolveAttack()
   */
 bool KGameWindow::queryClose()
 {
-    switch ( KMessageBox::warningYesNoCancel( this, i18n("Before you quit, do want to save your game?")) ) {
-    case KMessageBox::Yes :
-        slotSaveGame();
-        return true;
-    case KMessageBox::No :
-        return true;
-    default: // cancel
-        return false;
+    // TODO : Test si jeu en cours
+
+    if ((m_automaton->state() == GameAutomaton::INIT) || (m_automaton->state() ==  GameAutomaton::INTERLUDE))
+    {
+      switch ( KMessageBox::warningYesNo( this, i18n("Do you want to quit the game ?")) ) {
+      case KMessageBox::Yes :
+          return true;
+      default:
+          return false;
+      }
+    }
+    else
+    {
+      switch ( KMessageBox::warningYesNoCancel( this, i18n("Before you quit, do want to save your game?")) ) {
+      case KMessageBox::Yes :
+          slotSaveGame();
+          return true;
+      case KMessageBox::No :
+          return true;
+      default: // cancel
+          return false;
+      }
     }
 }
 
@@ -2978,14 +3006,20 @@ void KGameWindow::showArena()
     m_currentDisplayedWidget = arenaType;
     m_arena->initFightArena(m_firstCountry,m_secondCountry,m_backGnd_arena);
   }
-  dynamic_cast <QStackedWidget*>(centralWidget())->setCurrentIndex(1);
+  dynamic_cast <QStackedWidget*>(centralWidget())->setCurrentIndex(2);
 }
 
 
 void KGameWindow::showMap()
 {
-  dynamic_cast <QStackedWidget*>(centralWidget())->setCurrentIndex(0);
+  dynamic_cast <QStackedWidget*>(centralWidget())->setCurrentIndex(1);
   m_currentDisplayedWidget = mapType;
+}
+
+void KGameWindow::showMainMenu()
+{
+  dynamic_cast <QStackedWidget*>(centralWidget())->setCurrentIndex(0);
+  m_currentDisplayedWidget = mainMenuType;
 }
 
 
@@ -2999,7 +3033,11 @@ QGraphicsView* KGameWindow::currentWidget() {
   if (currentWidgetType() == arenaType) {
     return dynamic_cast <QGraphicsView*>(arena());
   } else {
+  if (currentWidgetType() == mainMenuType) {
+    return dynamic_cast <QGraphicsView*>(mMenu());
+  } else {
     return dynamic_cast <QGraphicsView*>(frame());
+  }
   }
 }
 

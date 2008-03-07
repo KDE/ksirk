@@ -23,6 +23,7 @@
 #include "KsirkGlobalDefinitions.h"
 #include "decoratedgameframe.h"
 #include "fightArena.h"
+#include "mainMenu.h"
 #include "GameLogic/onu.h"
 #include "GameLogic/gameautomaton.h"
 #include "GameLogic/player.h"
@@ -72,6 +73,7 @@ namespace Ksirk
   // forward declaration of the KsirK classes
   class DecoratedGameFrame;
   class FightArena;
+  class mainMenu;
   class AnimSpritesGroup;
   class KRightDialog;
 
@@ -114,6 +116,9 @@ public:
     
   /** Returns the arena graphics view */
   FightArena* arena() {return m_arena;}
+
+  /** Returns the menu graphics view */
+  mainMenu* mMenu() {return m_mainMenu;}
     
   /**
     * Ask all the sprites to repaint themselves
@@ -550,10 +555,15 @@ void determinePointArriveeForArena(GameLogic::Country *paysAttaquant, GameLogic:
   void showMap();
 
   /**
-    * The two types of central widget possible. This enum is used for knowing witch
+    * Replace the mainMenu widget by the map widget.
+    */
+  void showMainMenu();
+
+  /**
+    * The three types of central widget possible. This enum is used for knowing witch
     * is currently displayed (see m_currentDisplayedWidget var below).
     */
-  enum widgetType {mapType,arenaType};
+  enum widgetType {mainMenuType, mapType,arenaType};
 
   /**
     * Give type of the central widget currently displayed.
@@ -857,6 +867,11 @@ private:
     * The arena frame of the game, its visual component ; the main widget
     */
   FightArena* m_arena;
+
+  /**
+    * The menu frame of the game, its visual component ; the main widget
+    */
+  mainMenu* m_mainMenu;
 
   /**
     * a shortcut to the standard dirs object.
