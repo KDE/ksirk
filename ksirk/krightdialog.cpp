@@ -164,23 +164,24 @@ QHBoxLayout * box3 = new QHBoxLayout();
 QHBoxLayout * box4 = new QHBoxLayout();
 
 	QGridLayout * tp = new QGridLayout();
-	QLabel *l1 = new QLabel();
+	infoProcess = new QLabel();
+	infoProcess->setText(i18n("<i>Fighting in progress...</i>"));
 	loadingLabel = new QLabel();
 	loadingLabel->setFixedSize(25,25);
 	QLabel *l3 = new QLabel();
 	QMovie * loading = new QMovie("/home/kde-devel/kde/src/KDE/games/ksirk/ksirk/skins/default/Images/loader.gif");
 	loadingLabel->setMovie(loading);
 	loading->start();
-	l1->setFixedHeight(15);
+	infoProcess->setFixedHeight(15);
 	l3->setFixedHeight(20);
-	tp->addWidget(l1,0,0);
-	tp->addWidget(loadingLabel,0,1);
-	tp->addWidget(l3,0,2);
+	tp->addWidget(infoProcess,0,0,Qt::AlignCenter);
+	tp->addWidget(loadingLabel,1,0,Qt::AlignCenter);
+	tp->addWidget(l3,2,0);
 
 	QWidget * temporaire = new QWidget(this);
 	temporaire->setAutoFillBackground(true);
 	QPalette * tempP = new QPalette(temporaire->palette());
-	tempP->setColor(QPalette::Window,QColor(210,210,210));
+	tempP->setColor(QPalette::Window,QColor(190,190,190));
 	temporaire->setPalette(*tempP);
 
 	temporaire->setLayout(tp);
@@ -365,6 +366,7 @@ QHBoxLayout * box4 = new QHBoxLayout();
    void KRightDialog::displayFightResult(int A1=0, int A2=0, int A3=0, int D1=0, int D2=0,int nbA=0,int nbD=0, bool win=false)
    {
 loadingLabel->clear();
+infoProcess->clear();
       QGridLayout * milieuGrid = new QGridLayout();   
       QHBoxLayout * deAtt = new QHBoxLayout();
       QHBoxLayout * deDef = new QHBoxLayout();
