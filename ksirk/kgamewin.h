@@ -188,6 +188,9 @@ void determinePointArriveeForArena(GameLogic::Country *paysAttaquant, GameLogic:
   void animExplosion(int,GameLogic::Country *attacker, 
     GameLogic::Country *defender);
 
+  void animExplosionForArena(GameLogic::Country *attacker, 
+    GameLogic::Country *defender);
+
   /**
     * When all the explosion sequence has been shown for all explosing
     * devices, removes these sprites
@@ -804,6 +807,9 @@ private:
   //@}
   
   bool ARENA;
+
+  int nbSpriteAttacking;
+  int nbSpriteDefending;
 
   int relativePosInArenaAttack;
   int relativePosInArenaDefense;

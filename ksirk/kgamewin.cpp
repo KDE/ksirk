@@ -92,6 +92,8 @@ KGameWindow::KGameWindow(QWidget* parent) :
   KXmlGuiWindow(parent), m_automaton(new GameAutomaton()),
   NKD(0), NKA(0),
   ARENA(0),
+  nbSpriteAttacking(0),
+  nbSpriteDefending(0),
   relativePosInArenaAttack(0),
   relativePosInArenaDefense(0),
   m_theWorld(0),

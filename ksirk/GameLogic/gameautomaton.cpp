@@ -2191,10 +2191,22 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     break;
   case AnimExplosion:
     stream >> explosing;
-    if (explosing != 0 && explosing != 1 && explosing != 2)
-      KMessageBox::information(m_game, i18n("Problem : no one destroyed"), i18n("Ksirk - Error !"));
+    
+    if (m_game->isArena())
+    {
+	m_game->animExplosionForArena(m_game->firstCountry(), m_game->secondCountry());
+    }
     else
-      m_game->animExplosion(explosing,m_game->firstCountry(), m_game->secondCountry());
+    {
+	if (explosing != 0 && explosing != 1 && explosing != 2)
+	{
+	KMessageBox::information(m_game, i18n("Problem : no one destroyed"), i18n("Ksirk - Error !"));
+	}
+	else
+	{
+		m_game->animExplosion(explosing,m_game->firstCountry(), m_game->secondCountry());
+	}
+    }
     break;
   case SetupOnePlayer:
     if (receiver == gameId())
