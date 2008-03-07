@@ -169,11 +169,17 @@ QHBoxLayout * box4 = new QHBoxLayout();
 	loadingLabel = new QLabel();
 	loadingLabel->setFixedSize(25,25);
 	QLabel *l3 = new QLabel();
-	QMovie * loading = new QMovie("/home/kde-devel/kde/src/KDE/games/ksirk/ksirk/skins/default/Images/loader.gif");
+
+KConfig config(world->getConfigFileName());
+    KConfigGroup onugroup = config.group("onu");
+    QString skin = onugroup.readEntry("skinpath");
+    QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/loader.gif");
+
+	QMovie * loading = new QMovie(imageFileName);
 	loadingLabel->setMovie(loading);
 	loading->start();
-	infoProcess->setFixedHeight(15);
-	l3->setFixedHeight(20);
+	infoProcess->setFixedHeight(20);
+	l3->setFixedHeight(15);
 	tp->addWidget(infoProcess,0,0,Qt::AlignCenter);
 	tp->addWidget(loadingLabel,1,0,Qt::AlignCenter);
 	tp->addWidget(l3,2,0);
