@@ -48,6 +48,8 @@ namespace Ksirk
    btRecycleWidget(0),
    btValidWidget(0),
    buttonStopAttack(0),
+   milieu(0),
+   milieu2(0),
    flag1(0),
    flag2(0)
    {
@@ -55,16 +57,9 @@ namespace Ksirk
         mainLayout = new QGridLayout(this);
 	//mainLayout->setColumnMinimumWidth(0,30);
         setLayout(mainLayout);
-        flag1 = new QLabel();flag2 = new QLabel();
 
 
 	setFixedSize(220,360);
-
-//scrollArea->setVerticalScrollBar(scroll);
-//scrollArea->setMinimumWidth(width());
-//scrollArea->setWidgetResizable(false);
-//KStandardDirs* m_dirs=KGlobal::dirs();
-//QString iconFileName = m_dirs-> findResource("appdata", dynamic_cast<KGameWindow*>(parent->parentWidget())->automaton()->skin() + "/Images/SoldatAGenoux1.png");
 
     // load the armie image
     KConfig config(world->getConfigFileName());
@@ -100,10 +95,11 @@ namespace Ksirk
 
    void KRightDialog::displayCountryDetails(QPointF * countryPoint)
    {
-
       clearLayout();
       QHBoxLayout * unit = new QHBoxLayout();
       QHBoxLayout * drap = new QHBoxLayout();
+      flag1 = new QLabel();
+      flag2 = new QLabel();
       initListLabel(7);
 
       //QGridLayout * contentLayout = new QGridLayout();
@@ -121,14 +117,13 @@ namespace Ksirk
       rightContents->at(1)->setText(i18n("<b>Continent:</b> %1", continent));
       rightContents->at(2)->setText(i18n("<b>Country:</b> %1", pays));
 
-rightContents->at(3)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));rightContents->at(3)->setFixedSize(35,35);
+      rightContents->at(3)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));rightContents->at(3)->setFixedSize(35,35);
       rightContents->at(6)->setText(units);
       rightContents->at(4)->setText(i18n("<b>Owner:</b> %1", owner));
       rightContents->at(5)->setText(i18n("<b><u>Country details</u></b>"));
 
       flag1->setPixmap(0);
       flag2->setPixmap(0);
-      rightContents->push_back(flag1);
       flag1->setPixmap(picture);
       flag1->setFixedSize(picture.width(),picture.height());  
 
@@ -137,7 +132,7 @@ rightContents->at(3)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpandi
       mainLayout->addWidget(rightContents->at(5),0,0,Qt::AlignLeft);
       mainLayout->addWidget(rightContents->at(1),2,0,Qt::AlignLeft);
       mainLayout->addWidget(rightContents->at(2),3,0,Qt::AlignLeft);
-      
+
       mainLayout->addWidget(rightContents->at(4),5,0,Qt::AlignLeft);
       //mainLayout->setAlignment(Qt::AlignTop | Qt::AlignLeft);
       
@@ -156,47 +151,55 @@ rightContents->at(3)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpandi
    {
 
       clearLayout();
-      initListLabel(10);      QGridLayout * hautGrid = new QGridLayout(this);
+      initListLabel(10);
+
+      haut = new QWidget();
+      bas = new QWidget();
+      QGridLayout * hautGrid = new QGridLayout(this);
       QGridLayout * basGrid = new QGridLayout(this);
-QHBoxLayout * box1 = new QHBoxLayout();
-QHBoxLayout * box2 = new QHBoxLayout();
-QHBoxLayout * box3 = new QHBoxLayout();
-QHBoxLayout * box4 = new QHBoxLayout();
 
-	QGridLayout * tp = new QGridLayout();
-	infoProcess = new QLabel();
-	infoProcess->setText(i18n("<i>Fighting in progress...</i>"));
-	loadingLabel = new QLabel();
-	loadingLabel->setFixedSize(25,25);
-	QLabel *l3 = new QLabel();
+      flag1 = new QLabel();
+      flag2 = new QLabel();
 
-KConfig config(world->getConfigFileName());
-    KConfigGroup onugroup = config.group("onu");
-    QString skin = onugroup.readEntry("skinpath");
-    QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/loader.gif");
+      QHBoxLayout * box1 = new QHBoxLayout();
+      QHBoxLayout * box2 = new QHBoxLayout();
+      QHBoxLayout * box3 = new QHBoxLayout();
+      QHBoxLayout * box4 = new QHBoxLayout();
 
-	QMovie * loading = new QMovie(imageFileName);
-	loadingLabel->setMovie(loading);
-	loading->start();
-	infoProcess->setFixedHeight(20);
-	l3->setFixedHeight(15);
-	tp->addWidget(infoProcess,0,0,Qt::AlignCenter);
-	tp->addWidget(loadingLabel,1,0,Qt::AlignCenter);
-	tp->addWidget(l3,2,0);
+      QGridLayout * tp = new QGridLayout();
+      infoProcess = new QLabel();
+      infoProcess->setText(i18n("<i>Fighting in progress...</i>"));
+      loadingLabel = new QLabel();
+      loadingLabel->setFixedSize(25,25);
+      QLabel *l3 = new QLabel();
+      QLabel *l4 = new QLabel();
 
-	QWidget * temporaire = new QWidget(this);
-	temporaire->setAutoFillBackground(true);
-	QPalette * tempP = new QPalette(temporaire->palette());
-	tempP->setColor(QPalette::Window,QColor(190,190,190));
-	temporaire->setPalette(*tempP);
+      KConfig config(world->getConfigFileName());
+      KConfigGroup onugroup = config.group("onu");
+      QString skin = onugroup.readEntry("skinpath");
+      QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/loader.gif");
 
-	temporaire->setLayout(tp);
-	
-     haut = new QWidget();
-     bas = new QWidget();
+      QMovie * loading = new QMovie(imageFileName);
+      loadingLabel->setMovie(loading);
+      loading->start();
+      infoProcess->setFixedHeight(20);
+      //l3->setFixedHeight(15);
+      tp->addWidget(l3,0,0);
+      tp->addWidget(infoProcess,1,0,Qt::AlignCenter);
+      tp->addWidget(loadingLabel,2,0,Qt::AlignCenter);
+      tp->addWidget(l4,3,0);
 
-     haut->setLayout(hautGrid);
-     bas->setLayout(basGrid);
+      milieu2 = new QWidget(this);
+      milieu2->setAutoFillBackground(true);
+      QPalette * tempP = new QPalette(milieu2->palette());
+      tempP->setColor(QPalette::Window,QColor(190,190,190));
+      milieu2->setPalette(*tempP);
+      milieu2->setFixedHeight(100);
+
+      milieu2->setLayout(tp);
+
+      haut->setLayout(hautGrid);
+      bas->setLayout(basGrid);
 
       //ATTACKER
       QString owner_A = attaker->owner()->name();
@@ -256,7 +259,7 @@ KConfig config(world->getConfigFileName());
       basGrid->addWidget(rightContents->at(9),3,0,Qt::AlignLeft);
 
       mainLayout->addWidget(haut,0,0);
-      mainLayout->addWidget(temporaire,1,0);
+      mainLayout->addWidget(milieu2,1,0);
       mainLayout->addWidget(bas,2,0);
 
       if (game->automaton()->isAttackAuto()) {
@@ -272,9 +275,12 @@ KConfig config(world->getConfigFileName());
       repaint();
    }
 
-   void KRightDialog::displayRecycleDetails(GameLogic::Player * player) {
+   void KRightDialog::displayRecycleDetails(GameLogic::Player * player, int nbAvailArmies) {
       clearLayout();
       initListLabel(4);
+
+      flag1 = new QLabel();
+      flag2 = new QLabel();
 
       QGridLayout* recycleLayout = new QGridLayout();
       QGridLayout* btRecycleLayout = new QGridLayout();
@@ -310,10 +316,7 @@ KConfig config(world->getConfigFileName());
       rightContents->at(0)->setText(I18N_NOOP("<u><b>"+player->name()+"</b></u> "));
       flag1->setPixmap(player->getFlag()->image(0));
 
-//      rightContents->at(2)->setText(I18N_NOOP("<u>test 1</u>"));
-//      rightContents->at(3)->setText(I18N_NOOP("<u>test 2</u>"));
-
-      rightContents->at(1)->setText(i18n("%1 armies to place", game->availArmies()));
+      rightContents->at(1)->setText(i18n("%1 armies to place", nbAvailArmies));
 
       title->addWidget(rightContents->at(0));
       title->addWidget(flag1);
@@ -332,7 +335,7 @@ KConfig config(world->getConfigFileName());
 
       // hide buttons initialy
       btRecycleWidget->hide();
-      if (game->availArmies() > 0 || game->getState() == GameLogic::GameAutomaton::INTERLUDE) {
+      if (nbAvailArmies > 0 || game->getState() == GameLogic::GameAutomaton::INTERLUDE || player->isAI() || player->isVirtual()) {
         btValidWidget->hide();
       } else {
         btValidWidget->show();
@@ -343,9 +346,9 @@ KConfig config(world->getConfigFileName());
       repaint();
    }
 
-   void KRightDialog::updateRecycleDetails(GameLogic::Country* country, bool recyclePhase) {
+   void KRightDialog::updateRecycleDetails(GameLogic::Country* country, bool recyclePhase, int nbAvailArmies) {
 
-      rightContents->at(1)->setText(i18n("%1 armies to place", game->availArmies()));
+      rightContents->at(1)->setText(i18n("%1 armies to place", nbAvailArmies));
 
       if (recyclePhase) {
         rightContents->at(2)->setText(QString());
@@ -357,7 +360,7 @@ KConfig config(world->getConfigFileName());
       } else {
         rightContents->at(2)->setText("<b>"+country->name()+"</b>");
         rightContents->at(3)->setText(i18n("<b>Armies: %1", country->nbArmies()));
-        if (game->availArmies() > 0) {
+        if (nbAvailArmies > 0 || country->owner()->isAI() || country->owner()->isVirtual()) {
           btValidWidget->hide();
         } else {
           btValidWidget->show();
@@ -371,12 +374,19 @@ KConfig config(world->getConfigFileName());
 
    void KRightDialog::displayFightResult(int A1=0, int A2=0, int A3=0, int D1=0, int D2=0,int nbA=0,int nbD=0, bool win=false)
    {
-loadingLabel->clear();
-infoProcess->clear();
+      loadingLabel->clear();
+      infoProcess->clear();
+
+      milieu = new QWidget(this);
+      milieu->setAutoFillBackground(true);
+      QPalette * tempP = new QPalette(milieu->palette());
+      tempP->setColor(QPalette::Window,QColor(190,190,190));
+      milieu->setPalette(*tempP);
+      milieu->setFixedHeight(100);
+
       QGridLayout * milieuGrid = new QGridLayout();   
       QHBoxLayout * deAtt = new QHBoxLayout();
       QHBoxLayout * deDef = new QHBoxLayout();
-      milieu = new QWidget();
 
 if(A1!=0 || A1!=-1)
 {kDebug()<<"De attack 1" << endl;
@@ -458,21 +468,28 @@ milieuGrid->addWidget(rightContents->at(0),4,0,Qt::AlignCenter);
    {
       for (int i=0;i<rightContents->size();i++)
       {
-        rightContents->at(i)->setText("");rightContents->at(i)->setPixmap(0);
+        rightContents->at(i)->setText("");
+        rightContents->at(i)->setPixmap(0);
       }
    }
 
    void KRightDialog::clearLayout()
    {
-     for (int i=0;i<rightContents->size();i++) { mainLayout->removeWidget(rightContents->at(i)); }
-     if(mainLayout->indexOf(bas)!=-1) {
-        mainLayout->removeWidget(bas);
+     while (rightContents->size() > 0) {
+       QLabel* obj = rightContents->first();
+       rightContents->removeFirst();
+       mainLayout->removeWidget(obj);
+       delete obj;
      }
-     if(mainLayout->indexOf(milieu)!=-1) {
-        mainLayout->removeWidget(milieu);
+     if (flag1 != 0) {
+        mainLayout->removeWidget(flag1);
+        delete flag1;
+        flag1 = 0;
      }
-     if(mainLayout->indexOf(haut)!=-1) {
-        mainLayout->removeWidget(haut);
+     if (flag2 != 0) {
+        mainLayout->removeWidget(flag2);
+        delete flag2;
+        flag2 = 0;
      }
      if (btRecycleWidget != 0) {
         delete btRecycleWidget;
@@ -483,13 +500,30 @@ milieuGrid->addWidget(rightContents->at(0),4,0,Qt::AlignCenter);
         btValidWidget = 0;
      }
      if (buttonStopAttack != 0) {
+        mainLayout->removeWidget(buttonStopAttack);
         delete buttonStopAttack;
         buttonStopAttack = 0;
      }
-     delete flag1;
-     flag1 = new QLabel();
-     delete flag2;
-     flag2 = new QLabel();
+     if(mainLayout->indexOf(bas)!=-1) {
+        mainLayout->removeWidget(bas);
+        delete bas;
+     }
+     if(milieu != 0) {
+        mainLayout->removeWidget(milieu);
+        delete milieu;
+        milieu = 0;
+     }
+     if (milieu2 != 0) {
+        mainLayout->removeWidget(milieu2);
+        delete loadingLabel;
+        delete infoProcess;
+        delete milieu2;
+        milieu2 = 0;
+     }
+     if(mainLayout->indexOf(haut)!=-1) {
+        mainLayout->removeWidget(haut);
+        delete haut;
+     }
    }
 
    void KRightDialog::slotStopAttackAuto()

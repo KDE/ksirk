@@ -175,7 +175,8 @@ int borderScrollSpeed = 40;
     if ( !( ( ( currentPlayer() && currentPlayer()-> isAI() )
             || ( ( isMyState(GameLogic::GameAutomaton::WAITDEFENSE)  ) && ( m_secondCountry ) && (m_secondCountry->owner())
                  && ( m_secondCountry->owner()->isAI() ) ) ) ) )
-      toolBar("gameActionsToolBar")-> show();
+      kDebug() << "scrollUp " << endl;
+      //toolBar("gameActionsToolBar")-> show();
   }
 
 

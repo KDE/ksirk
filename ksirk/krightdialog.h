@@ -80,14 +80,14 @@ namespace GameLogic
        * Display informations about the recycling processus
        * @param player which we want to see informations
        */
-      void displayRecycleDetails(GameLogic::Player* player);
+      void displayRecycleDetails(GameLogic::Player* player, int nbAvailArmies);
 
       /**
        * Update informations about the recycling processus
        * @param country country which gives his informations
        * @param recyclePhase shows if we are in recycle phase or not
        */
-      void updateRecycleDetails(GameLogic::Country* country, bool recyclePhase);
+      void updateRecycleDetails(GameLogic::Country* country, bool recyclePhase, int nbAvailArmies);
 
       /**
       * 
@@ -118,7 +118,7 @@ namespace GameLogic
       //QLayout * mainLayout;
       QGridLayout * mainLayout;
       QLabel * loadingLabel;
-QLabel *infoProcess;
+      QLabel *infoProcess;
       QDockWidget * m_parentWidget;
 
       Ksirk::GameLogic::ONU * world;
@@ -134,6 +134,8 @@ QLabel *infoProcess;
       QWidget * haut;
 
       QWidget * milieu;
+
+      QWidget * milieu2;
 
       // Widgets and buttons used in displayRecycleDetails
       QWidget * btRecycleWidget;

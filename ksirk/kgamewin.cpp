@@ -203,7 +203,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   gameActionsToolBar->setToolButtonStyle(Qt::ToolButtonIconOnly);
   gameActionsToolBar->setAllowedAreas(Qt::BottomToolBarArea);
   gameActionsToolBar->setIconSize(QSize(32,32));
-  gameActionsToolBar->show();
+  //gameActionsToolBar->show();
 
   kDebug() << "Creating automaton" << endl;
   m_automaton->init(this);
@@ -968,7 +968,7 @@ void KGameWindow::displayNextPlayerButton()
                 SLOT(slotNextPlayer()), i18n("Next Player"),KShortcut(Qt::Key_Escape),true);
   }
   gameActionsToolBar-> hide();
-  gameActionsToolBar-> show();
+  //gameActionsToolBar-> show();
 }
 
 void KGameWindow::displayRecyclingButtons()
@@ -1003,7 +1003,7 @@ void KGameWindow::displayRecyclingButtons()
     addAButton(CM_RECYCLINGFINISHED, SLOT(slotRecyclingFinished()), i18n("End redistribute"), KShortcut(Qt::Key_Tab), true);
   }
   gameActionsToolBar-> hide();
-  gameActionsToolBar-> show();
+  //gameActionsToolBar-> show();
 }
 
 void KGameWindow::displayOpenGameButton()
@@ -1011,7 +1011,7 @@ void KGameWindow::displayOpenGameButton()
   clearGameActionsToolbar();
   addAButton(CM_OPENGAME, SLOT(slotOpenGame()), i18n("Open game"),KShortcut(Qt::CTRL+Qt::Key_O),true);
   gameActionsToolBar-> hide();
-  gameActionsToolBar-> show();
+  //gameActionsToolBar-> show();
 }
 
 void KGameWindow::displayNormalGameButtons()
@@ -1029,7 +1029,7 @@ void KGameWindow::displayNormalGameButtons()
     m_secondCountry->clearHighlighting();
     m_secondCountry = 0;
   }
-  gameActionsToolBar-> show();
+  //gameActionsToolBar-> show();
 
   clearGameActionsToolbar(false);
   if (currentPlayer() && currentPlayer()-> isAI() && (!currentPlayer()->isVirtual()))
@@ -1048,7 +1048,7 @@ void KGameWindow::displayNormalGameButtons()
     showMessage(i18n("Now, choose an action with the buttons at the bottom.<br/>Note that moving armies is the last action of a turn."), 5);
   }
   gameActionsToolBar-> hide();
-  gameActionsToolBar-> show();
+  //gameActionsToolBar-> show();
 }
 
 //TODO créer sa propre méthode de choix de défense
@@ -1096,7 +1096,7 @@ void KGameWindow::displayDefenseButtons()
     addAButton(CM_DEFENSE2, SLOT(slotDefense2()), i18n("Defend with two armies"),KShortcut(Qt::Key_2),true);
   }
   gameActionsToolBar-> hide();
-  gameActionsToolBar-> show();
+  //gameActionsToolBar-> show();
 }
 
 void KGameWindow::displayDefenseWindow()
@@ -1174,7 +1174,7 @@ void KGameWindow::displayInvasionButtons()
     addAButton(CM_RETREAT10, SLOT(slotRetreat10()), i18n("Retract ten armies"),KShortcut(Qt::CTRL+Qt::Key_0),true);
   }
   gameActionsToolBar-> hide();
-  gameActionsToolBar-> show();
+  //gameActionsToolBar-> show();
 }
 
 void KGameWindow::displayCancelButton()
@@ -1186,12 +1186,11 @@ void KGameWindow::displayCancelButton()
   }
   else addAButton(CM_CANCEL, SLOT(slotCancel()), i18n("Cancel"), KShortcut(Qt::Key_Escape), true);
   gameActionsToolBar-> hide();
-  gameActionsToolBar-> show();
+  //gameActionsToolBar-> show();
 }
 
 void KGameWindow::clearGameActionsToolbar(bool send)
 {
-  kDebug()<< "KGameWindow::clearGameActionsToolbar " << send << endl;
   if (send)
   {
     QByteArray buffer;
@@ -1209,6 +1208,7 @@ void KGameWindow::clearGameActionsToolbar(bool send)
   }
   m_temporaryAccelerators.clear();
 //   m_accels.updateConnections();
+  kDebug()<< "Fin KGameWindow::clearGameActionsToolbar " << endl;
 }
 
 void KGameWindow::addAButton(
@@ -1939,7 +1939,7 @@ bool KGameWindow::terminateAttackSequence()
   m_firstCountry->clearHighlighting();
   m_secondCountry->clearHighlighting();
   m_animFighters->hideAndRemoveAll();
-  gameActionsToolBar-> show();
+  //gameActionsToolBar-> show();
   return attackEnd();
 }
 
@@ -2159,7 +2159,7 @@ bool KGameWindow::playerPutsArmy(const QPointF& point, bool removable)
         << QString::number(nbAvailArmies);
       broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
 
-      getRightDialog()->updateRecycleDetails(clickedCountry,false);
+      getRightDialog()->updateRecycleDetails(clickedCountry,false,nbAvailArmies);
 
       if (m_automaton->isAdmin())
       {
@@ -2228,7 +2228,7 @@ bool KGameWindow::playerPutsInitialArmy(const QPointF& point)
             stream << (quint32)m_nbAvailArmies;
             m_automaton->sendMessage(buffer,KGameWinAvailArmies);
             getRightDialog()->close();
-            getRightDialog()->displayRecycleDetails((Player*)(*it));
+            getRightDialog()->displayRecycleDetails((Player*)(*it),m_nbAvailArmies);
           }
           if (m_automaton->isAdmin())
           {
@@ -2241,7 +2241,7 @@ bool KGameWindow::playerPutsInitialArmy(const QPointF& point)
         }
         else
         {
-          getRightDialog()->updateRecycleDetails(clickedCountry,false);
+          getRightDialog()->updateRecycleDetails(clickedCountry,false,m_nbAvailArmies);
           QPixmap pm = currentPlayer()->getFlag()->image(0);
           KMessageParts messageParts;
           messageParts << pm << I18N_NOOP("%1 : %2 armies to place") 
@@ -2273,8 +2273,8 @@ bool KGameWindow::playerRemovesArmy(const QPointF& point)
       && ( clickedCountry-> nbArmies() > 1)
       && ( clickedCountry-> nbAddedArmies() >0 ) )
   {
-    m_nbAvailArmies++;
     unsigned int newNbAvailArmies = currentPlayer()-> getNbAvailArmies() + 1;
+    m_nbAvailArmies = newNbAvailArmies;
 
     if ( m_automaton->isAdmin() )
     {
@@ -2289,7 +2289,7 @@ bool KGameWindow::playerRemovesArmy(const QPointF& point)
     clickedCountry-> decrNbArmies();
     clickedCountry-> createArmiesSprites();
 
-    getRightDialog()->updateRecycleDetails(clickedCountry,false);
+    getRightDialog()->updateRecycleDetails(clickedCountry,false,newNbAvailArmies);
   }
   return true;
 }
@@ -2340,8 +2340,8 @@ bool KGameWindow::nextPlayerRecycling()
       QDataStream stream(&buffer, QIODevice::WriteOnly);
       m_nbAvailArmies = currentPlayer()->getNbAvailArmies();
       getRightDialog()->close();
-      getRightDialog()->displayRecycleDetails(currentPlayer());
       m_automaton->sendMessage(buffer,DisplayNextPlayerButton);
+      getRightDialog()->displayRecycleDetails(currentPlayer(),currentPlayer()-> getNbAvailArmies());
       QPixmap pm = currentPlayer()->getFlag()->image(0);
       messageParts <<pm<< I18N_NOOP("%1 : %2 armies to place") << currentPlayer()-> name() 
         << QString::number(currentPlayer()-> getNbAvailArmies());
@@ -2356,7 +2356,6 @@ bool KGameWindow::nextPlayerRecycling()
   */
 bool KGameWindow::nextPlayerNormal()
 {
-  kDebug() << endl;
   if (setCurrentPlayerToNext())
   {
     distributeArmies();
@@ -2371,7 +2370,7 @@ bool KGameWindow::nextPlayerNormal()
     m_automaton->sendMessage(buffer2,DisplayNextPlayerButton);
     m_nbAvailArmies = currentPlayer()->getNbAvailArmies();
     getRightDialog()->close();
-    getRightDialog()->displayRecycleDetails(currentPlayer());
+    getRightDialog()->displayRecycleDetails(currentPlayer(),nbNewArmies(currentPlayer()));
     return true;
   }
   else
@@ -2781,7 +2780,7 @@ void KGameWindow::actionRecycling()
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   m_automaton->sendMessage(buffer,DisplayNextPlayerButton);
   getRightDialog()->close();
-  getRightDialog()->displayRecycleDetails(currentPlayer());
+  getRightDialog()->displayRecycleDetails(currentPlayer(),0);
   KMessageParts messageParts;
   QPixmap pm = currentPlayer()->getFlag()->image(0);
   messageParts 

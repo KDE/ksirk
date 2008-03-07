@@ -730,7 +730,7 @@ kDebug () << "$$$$$$$STATE FIGHT_BRINGBACK $$$$$$$$$$$" << m_game->haveAnimFight
       {
       if (allLocalPlayersComputer())
         {
-          m_game->getRightDialog()->updateRecycleDetails(NULL,true);
+          m_game->getRightDialog()->updateRecycleDetails(NULL,true,0);
           m_game->displayRecyclingButtons();
         }
       }
@@ -1572,10 +1572,10 @@ bool GameAutomaton::startGame()
     }
 
     kDebug() << "Sending message FinalizePlayers" << endl;
-    //QByteArray buffer;
-    //QDataStream stream(&buffer, QIODevice::WriteOnly);
-    //sendMessage(buffer,FinalizePlayers);
-    finalizePlayers();
+    QByteArray buffer;
+    QDataStream stream(&buffer, QIODevice::WriteOnly);
+    sendMessage(buffer,FinalizePlayers);
+    //finalizePlayers();
 
 m_aicannotrunhack = true;
     kDebug() << "Setting game status to Run" << endl;
@@ -1936,7 +1936,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     m_game->changeItem(messageParts,statusBarId, logStatus);
     break;
   case DisplayRecyclingButtons:
-    m_game->getRightDialog()->updateRecycleDetails(NULL,true);
+    m_game->getRightDialog()->updateRecycleDetails(NULL,true,0);
     m_game->displayRecyclingButtons();
     break;
   case DisplayNormalGameButtons:
@@ -1977,9 +1977,9 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     m_game->secondCountry(m_game->theWorld()->countryNamed(countryName));
     break;
   case InitCombatMovement:
-    m_game->getRightDialog()->open();
+    m_game->getRightDialog()->close();
     m_game->getRightDialog()->displayFightDetails(m_game->firstCountry(),m_game->secondCountry(),m_game->firstCountry()->owner()->getNbAttack(),m_game->secondCountry()->owner()->getNbDefense());
-    m_game->centerOnFight();  //center the game on the fight 
+    m_game->centerOnFight();  //center the game on the fight
     if  (m_game->isArena() && !currentPlayer()->isAI() && !currentPlayer()->isVirtual())
     {
       kDebug() << "Attack with arena" << endl;
@@ -2313,7 +2313,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     break;
   case FinalizePlayers:
       kDebug() << "Got message FinalizePlayers" << endl;
-      //finalizePlayers();
+      finalizePlayers();
     break;
   case Winner:
     QObject::disconnect(messageServer(),SIGNAL(connectionLost(KMessageIO *)),
@@ -2404,7 +2404,7 @@ void GameAutomaton::firstCountriesDistribution()
       if ( ! ( dynamic_cast<AIPlayer *>(currentPlayer())-> isRunning()) )
         dynamic_cast<AIPlayer *>(currentPlayer())-> start();
 
-    m_game->getRightDialog()->displayRecycleDetails(m_game->currentPlayer());
+    m_game->getRightDialog()->displayRecycleDetails(m_game->currentPlayer(),m_game->availArmies());
     
   //    kDebug() << "OUT  KGameWindow::setupPlayers" << endl;
     
@@ -2439,8 +2439,12 @@ void GameAutomaton::countriesDistribution()
     for (int itPos = 0; itPos < h-1; itPos++) it++;
     
     // affect the country that have the number at this position
+    QByteArray buffer;
+    QDataStream stream(&buffer, QIODevice::WriteOnly);
+    stream << (m_game->theWorld()->getCountries().at(*it)->name()) << currentPlayer()-> name();
     distributedCountriesNumberMap[currentPlayer()-> name()] = distributedCountriesNumberMap[currentPlayer()-> name()]+1;
-    m_game->theWorld()->getCountries().at(*it)-> owner(currentPlayer());
+    sendMessage(buffer,CountryOwner);
+    //m_game->theWorld()->getCountries().at(*it)-> owner(currentPlayer());
     m_game->setCurrentPlayerToNext(false);
     
     // removes the chosen country number from the vector, thus reducing its size
