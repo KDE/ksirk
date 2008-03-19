@@ -316,17 +316,17 @@ GameAutomaton::GameState GameAutomaton::run()
       return m_state;
     }
   }
+  if (event == "actionJoinNetworkGame")
+  {
+    joinNetworkGame();
+    QTimer::singleShot(200, this, SLOT(run()));
+    return m_state;
+  }
 
   switch (m_state)
   {
   case INIT:
-    if (event == "actionJoinNetworkGame")
-    {
-      joinNetworkGame();
-      QTimer::singleShot(200, this, SLOT(run()));
-      return m_state;
-    }
-    else if (currentPlayer() != 0 && isAdmin())
+    if (currentPlayer() != 0 && isAdmin())
     {
       if  ( (event == "actionLButtonDown") && (m_game->playerPutsInitialArmy(point)) )
       {
