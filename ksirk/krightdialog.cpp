@@ -325,7 +325,7 @@ namespace Ksirk
 
       // hide buttons initialy
       btRecycleWidget->hide();
-      if (nbAvailArmies > 0 || game->getState() == GameLogic::GameAutomaton::INTERLUDE || player->isAI() || player->isVirtual()) {
+      if (nbAvailArmies > 0 || game->getState() == GameLogic::GameAutomaton::INTERLUDE) {
         btValidWidget->hide();
       } 
       else 
@@ -352,7 +352,7 @@ namespace Ksirk
       } else {
         rightContents->at(2)->setText("<b>"+country->name()+"</b>");
         rightContents->at(3)->setText(i18n("<b>Armies: %1", country->nbArmies()));
-        if (nbAvailArmies > 0 || country->owner()->isAI() || country->owner()->isVirtual()) {
+        if (nbAvailArmies > 0) {
           btValidWidget->hide();
         } else {
           btValidWidget->show();

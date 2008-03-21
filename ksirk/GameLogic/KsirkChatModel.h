@@ -30,8 +30,11 @@
 
 #include <kchatbasemodel.h>
 #include "KsirkChatItem.h"
-// namespace Ksirk
-// {
+#include "../kgamewin.h"
+namespace Ksirk
+{
+   class KGameWindow;
+}
 
 // namespace GameLogic
 // {
@@ -43,7 +46,7 @@ class KsirkChatModel : public KChatBaseModel
   Q_OBJECT
 
   public:
-    KsirkChatModel(QObject *parent = 0);
+    KsirkChatModel(QObject *parent, Ksirk::KGameWindow* game);
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const;
     QVariant data(const QModelIndex &index, int role) const;
@@ -54,6 +57,7 @@ class KsirkChatModel : public KChatBaseModel
 
   private:
     QList< KsirkChatItem > m_messages;
+    Ksirk::KGameWindow* m_game;
 };
 
 // } // closing namespace GameLogic

@@ -1331,50 +1331,57 @@ Country * GameAutomaton::getDefCountry ()
 
 bool GameAutomaton::joinNetworkGame()
 {
-  // Set default network parameter
-  QString host = "localhost";
-  int port = 20000;
-  
-// porting  
-  KDialog* dialog = new KDialog(m_game);
-  dialog->setCaption( i18n("Join network game configuration" ) );
-  dialog->setButtons( KDialog::Ok | KDialog::Cancel );
-  
-  QGroupBox* mRemoteGroup=new QGroupBox(i18n("Network configuration"), dialog);
-  KLineEdit* hostEdit = new KLineEdit( 0 );
-  hostEdit->setText(host);
-  KLineEdit* portEdit = new KLineEdit( 0 );
-  portEdit->setText(QString::number(port));
+   if (stateName() == "INIT" || (KMessageBox::warningContinueCancel(m_game,i18n("Do you really want to end your current game and join another ?"),i18n("New game confirmation"),KStandardGuiItem::yes()) == KMessageBox::Continue)) {
 
-  QVBoxLayout *vbox = new QVBoxLayout;
-  vbox->addWidget(hostEdit);
-  vbox->addWidget(portEdit);
-  vbox->addStretch(1);
-  mRemoteGroup->setLayout(vbox);
+      // Set default network parameter
+      QString host = "localhost";
+      int port = 20000;
 
+      // porting  
+      KDialog* dialog = new KDialog(m_game);
+      dialog->setCaption( i18n("Join network game configuration" ) );
+      dialog->setButtons( KDialog::Ok | KDialog::Cancel );
 
+      QGroupBox* mRemoteGroup=new QGroupBox(i18n("Network configuration"), dialog);
+      KLineEdit* hostEdit = new KLineEdit( 0 );
+      hostEdit->setText(host);
+      KLineEdit* portEdit = new KLineEdit( 0 );
+      portEdit->setText(QString::number(port));
 
-  dialog->setMainWidget(mRemoteGroup);
-  QDialog::DialogCode valid = QDialog::DialogCode(dialog->exec());
-  
-  if (valid == QDialog::Rejected)
-  {
-    return false;
-  }
-  host = hostEdit->text();
-  port = portEdit->text().toInt();
-  
-  if (messageServer() != 0)
-  {
-    QObject::disconnect(messageServer(),SIGNAL(connectionLost(KMessageIO *)),
-          this,SLOT(slotConnectionToClientBroken(KMessageIO *)));
-  }
-kDebug() << "Before connectToServer" << endl;
-  bool status = connectToServer(host, port);
-kDebug() << "After connectToServer" << endl;
-  connect(messageServer(),SIGNAL(connectionLost(KMessageIO *)),
-          this,SLOT(slotConnectionToClientBroken(KMessageIO *)));
-  return status;
+      QVBoxLayout *vbox = new QVBoxLayout;
+      vbox->addWidget(hostEdit);
+      vbox->addWidget(portEdit);
+      vbox->addStretch(1);
+      mRemoteGroup->setLayout(vbox);
+
+      dialog->setMainWidget(mRemoteGroup);
+      QDialog::DialogCode valid = QDialog::DialogCode(dialog->exec());
+
+      if (valid == QDialog::Rejected)
+      {
+         return false;
+      }
+
+      // stop game
+      setGameStatus(KGame::End);
+      state(GameLogic::GameAutomaton::INIT);
+      savedState(GameLogic::GameAutomaton::INVALID);
+
+      host = hostEdit->text();
+      port = portEdit->text().toInt();
+
+      if (messageServer() != 0)
+      {
+         QObject::disconnect(messageServer(),SIGNAL(connectionLost(KMessageIO *)),
+         this,SLOT(slotConnectionToClientBroken(KMessageIO *)));
+      }
+      kDebug() << "Before connectToServer" << endl;
+      bool status = connectToServer(host, port);
+      kDebug() << "After connectToServer" << endl;
+      connect(messageServer(),SIGNAL(connectionLost(KMessageIO *)),
+         this,SLOT(slotConnectionToClientBroken(KMessageIO *)));
+      return status;
+   }
 }
 
 KPlayer * GameAutomaton::createPlayer(int rtti, 

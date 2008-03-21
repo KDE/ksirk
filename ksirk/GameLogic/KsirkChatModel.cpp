@@ -28,16 +28,17 @@
 #include <QInputDialog>
 #include <QMessageBox>
 #include <QPixmap>
-
-// namespace Ksirk
-// {
+namespace Ksirk
+{
+   class KGameWindow;
+}
 
 // namespace GameLogic
 // {
 
 
-KsirkChatModel::KsirkChatModel(QObject *parent)
-     : KChatBaseModel(parent), m_messages()
+KsirkChatModel::KsirkChatModel(QObject* parent, Ksirk::KGameWindow* game)
+     : KChatBaseModel(parent), m_messages(), m_game(game)
 {
 }
 
@@ -65,6 +66,18 @@ QVariant KsirkChatModel::data(const QModelIndex &index, int role) const
 
 void KsirkChatModel::addMessage(const KsirkChatItem& message)
 {
+  QString msg;
+  if ((QString(message.first)).length() == 0) {
+     msg = "No message...";
+  } else {
+     msg = "<b>"+message.first+":</b> "+message.second;
+     if (msg.length() > 77) {
+        msg.resize(64);
+        msg += " ...";
+     }
+  }
+  m_game->titleChatMessage()->setText(msg);
+
   int row;
   row = m_messages.size();
   beginInsertRows(QModelIndex(), row, row);

@@ -174,10 +174,11 @@ int borderScrollSpeed = 40;
     if ( m_secondCountry && !( m_secondCountry-> owner() ) )
       kError() << m_secondCountry-> name() << " does not belong to anybody !" << endl;
     // handling of the AI player actions
-    if ( !( ( ( currentPlayer() && currentPlayer()-> isAI() )
+    /*if ( !( ( ( currentPlayer() && currentPlayer()-> isAI() )
             || ( ( isMyState(GameLogic::GameAutomaton::WAITDEFENSE)  ) && ( m_secondCountry ) && (m_secondCountry->owner())
-                 && ( m_secondCountry->owner()->isAI() ) ) ) ) )
-      //toolBar("gameActionsToolBar")-> show();
+                 && ( m_secondCountry->owner()->isAI() ) ) ) ) ) {
+      toolBar("gameActionsToolBar")-> show();
+    }*/
   }
 
 
