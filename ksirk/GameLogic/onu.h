@@ -29,12 +29,15 @@
 #include <QPixmap>
 #include <QFont>
 #include <QSvgRenderer>
-
+#include <QTimer>
+#include <QObject>
 #include "country.h"
 #include "continent.h"
 #include "nationality.h"
 #include "kgamewin.h"
 #include "gameautomaton.h"
+
+
 
 #include <iostream>
 #include <vector>
@@ -53,9 +56,12 @@ class Country;
   * each country is loaded from an XML configuration file located in the
   * current skin data directory
   */
-class ONU
+class ONU: public QObject
 {
+  Q_OBJECT
+
 public:
+
   /**
     * Constructor
     * @param configFileName The name of the XML file defining this world. Built
@@ -66,8 +72,10 @@ public:
   /** Default destructor */
   virtual ~ONU() {}
 
-  void applyZoomFactor(qreal zoomFactor);
-  
+  /** Zoom methods: */
+    void applyZoomFactor(qreal zoomFactor);
+    void applyZoomFactorFast(qreal zoomFactor);		//benj
+
   //{@
   /**
    * Accessors
@@ -286,6 +294,21 @@ private:
   double m_zoomArena;
 
   /**
+    * Counter to know how many zooms have been asked by user 
+    */
+    int m_nbZooms;
+
+  /**
+    * Zoom used to change size of map
+    */
+    qreal m_zoomFactorFinal;
+
+  /** 
+    * Timer for the ZoomfactorFast
+    */
+    QTimer * m_timerFast;
+    int bo;
+  /**
     * This SVG renderer stores the SVG file of the map, renders it at the
     * desired zoom factor and the result is used to build the map image.
     */
@@ -297,6 +320,11 @@ private:
    * Build the map from it's stored image and the countries names
    */
   void buildMap();
+
+ /** SLOTS */
+public slots:
+  void changingZoom();
+
 };
 
 }

@@ -54,8 +54,11 @@ ONU::ONU(GameAutomaton* automaton,
   m_continents(),
   m_zoom(1.0),
   m_zoomArena(1.0),
-  m_renderer(0)
+  m_renderer(0),
+  m_nbZooms(0),
+  m_zoomFactorFinal(1)
 {
+
   kDebug() << "ONU constructor: " << m_configFileName << endl;
   m_font.family = "URW Chancery L";
   m_font.size = (uint)(13*m_zoom);
@@ -64,6 +67,8 @@ ONU::ONU(GameAutomaton* automaton,
   m_font.foregroundColor = "black";
   m_font.backgroundColor = "white";
   
+  m_timerFast=new QTimer();		//instanciation of the timer 
+  QObject::connect(m_timerFast,SIGNAL(timeout()), this, SLOT(changingZoom()));	//connect the timer to the good slot
   
   Sprites::SkinSpritesData::changeable().init();
   unsigned int nationalityId = 0;
@@ -319,6 +324,7 @@ ONU::ONU(GameAutomaton* automaton,
     countries.at(countryGroup.readEntry("id",0))-> neighbours(theNeighbours);
   }
   buildMap();
+
 //    kDebug() << "OUT ONU::ONU" << endl;
 }
 
@@ -517,7 +523,7 @@ Continent* ONU::continentNamed(const QString& name)
 void ONU::buildMap()
 {
   kDebug() << "with zoom="<< m_zoom << endl;
-//   QSize size((int)(m_renderer.defaultSize().width()*m_zoom),(int)(m_renderer.defaultSize().height()*m_zoom));
+  //QSize size((int)(m_renderer.defaultSize().width()*m_zoom),(int)(m_renderer.defaultSize().height()*m_zoom));
   QSize size((int)(m_width),(int)(m_height));
   QImage image(size, QImage::Format_ARGB32_Premultiplied);
   image.fill(0);
@@ -526,6 +532,7 @@ void ONU::buildMap()
   QPixmap mapPixmap = QPixmap::fromImage(image);
 
   m_map = mapPixmap;
+
   QPainter painter(&m_map);
   QFont foregroundFont(m_font.family, m_font.size, m_font.weight, m_font.italic);
   QFont backgroundFont(m_font.family, m_font.size, QFont::Normal, m_font.italic);
@@ -554,21 +561,21 @@ void ONU::buildMap()
     int((country->centralPoint().y()*m_zoom+countryNameRect.height()/2)),
         countryName);
   }
-  kDebug() << "done" << endl;
+
 }
 
 void ONU::applyZoomFactor(qreal zoomFactor)
 {
-
 /** Zoom 1: First method (take a long time to zoom) :
 */
-/*
   kDebug() << "zoomFactor=" << zoomFactor << "old zoom=" << m_zoom << endl;
-  m_zoom *= zoomFactor;
   kDebug() << "new zoom=" << m_zoom << endl;
-  m_font.size = (unsigned int)(m_font.size*zoomFactor);
-  m_width = (unsigned int)(m_width *zoomFactor);
-  m_height = (unsigned int)(m_height *zoomFactor);
+
+  m_zoom *= zoomFactor;
+
+  //m_font.size = (unsigned int)(m_font.size*m_zoom);
+  //m_width = (unsigned int)(m_width *m_zoom);
+  //m_height = (unsigned int)(m_height *m_zoom);
 
   buildMap();
 
@@ -578,15 +585,58 @@ void ONU::applyZoomFactor(qreal zoomFactor)
   {
     Country* country = *it;
     country->createArmiesSprites();
-  }*/
+  }
  
+}
+
+void ONU::applyZoomFactorFast(qreal zoomFactor)		//benj
+{
+
 /** Zoom 2 : Second method , Very performent.  Carefull ! Can cause the game to lag. 
  To try this, comment all the first method and uncomment these lines
 */
-  m_automaton->game()->frame()->scale(zoomFactor, zoomFactor);
+   kDebug() << "zoomFactor FASTTTTTTT"<<endl;
+   int nbLimitZooms = 6;
 
+  //Application of zoom
+    if (zoomFactor > 1 && m_nbZooms < nbLimitZooms)
+    {  
+	m_font.size = (unsigned int)(m_font.size*zoomFactor);
+  	m_width = (unsigned int)(m_width *zoomFactor);
+  	m_height = (unsigned int)(m_height *zoomFactor);
+
+       m_nbZooms++; // zoom forward
+       m_automaton->game()->frame()->scale(zoomFactor, zoomFactor);
+       m_zoomFactorFinal *= zoomFactor;
+
+       //starting timer
+       /*if  (m_timerFast->isActive())
+       {
+         m_timerFast->stop();
+       }
+       m_timerFast->start(4000);
+       m_timerFast->setSingleShot(true);*/
+
+    }
+    else if (zoomFactor < 1 && m_nbZooms > -nbLimitZooms)
+    {
+	m_font.size = (unsigned int)(m_font.size*zoomFactor);
+  	m_width = (unsigned int)(m_width *zoomFactor);
+  	m_height = (unsigned int)(m_height *zoomFactor);
+
+       m_nbZooms--; // zoom backward
+       m_automaton->game()->frame()->scale(zoomFactor, zoomFactor);
+       m_zoomFactorFinal *= zoomFactor;
+
+       //starting timer
+       /*if  (m_timerFast->isActive())
+       {
+         m_timerFast->stop();
+       }
+       m_timerFast->start(4000);
+       m_timerFast->setSingleShot(true);*/
+    }
 }
-
 
 double ONU::zoom() const
 {
@@ -607,7 +657,25 @@ KGameSvgDocument* ONU::svgDom()
 {
   return &m_svgDom;
 }
+/** the SLOTS METHODS FOR THE ONU CLASS*/
+void ONU::changingZoom()
+{
+/*
+  m_automaton->game()->frame()->resetTransform();
+  qreal m_zo=m_zoomFactorFinal;
+  m_zoomFactorFinal=1;
+  applyZoomFactor(m_zo);*/
+
+ // m_automaton->game()->frame()->scale(1/m_zoomFactorFinal, 1/m_zoomFactorFinal);
+
+  m_automaton->game()->frame()->resetTransform();
+  applyZoomFactor(m_zoomFactorFinal);
+  m_zoomFactorFinal=1.0;
 
 
+
+}
+
+/**END OF SLOTS METHODS FOR THE ONU*/
 } // closing namespace GameLogic
 } // closing namespace Ksirk

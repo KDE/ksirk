@@ -12,7 +12,9 @@
 
    You should have received a copy of the GNU General Public License
    along with this program; if not, write to the Free Software
-   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+   Foundation, Inc., 51 Ffile:///home/kde-devel/playground/games/ksirk/ksirk/GameLogic/onu.cpp
+file:///home/kde-devel/playground/games/ksirk/ksirk/GameLogic/onu.h
+ranklin Street, Fifth Floor, Boston, MA
    02110-1301, USA
 */
 
@@ -175,7 +177,6 @@ int borderScrollSpeed = 40;
     if ( !( ( ( currentPlayer() && currentPlayer()-> isAI() )
             || ( ( isMyState(GameLogic::GameAutomaton::WAITDEFENSE)  ) && ( m_secondCountry ) && (m_secondCountry->owner())
                  && ( m_secondCountry->owner()->isAI() ) ) ) ) )
-      kDebug() << "scrollUp " << endl;
       //toolBar("gameActionsToolBar")-> show();
   }
 
@@ -602,7 +603,7 @@ void KGameWindow::slotExplosionFinished(AnimSpritesGroup* sprites)
 void KGameWindow::slotZoomIn()
 {
   kDebug() << endl;
-  m_theWorld->applyZoomFactor(1.1);
+  m_theWorld->applyZoomFactorFast(1.1);					//Call to the fast method (benj)
   m_frame->setMaximumSize(m_theWorld->width(),m_theWorld->height());
   m_scene_world->setSceneRect ( QRectF() );
   m_frame->updateGeometry();
@@ -613,11 +614,10 @@ void KGameWindow::slotZoomIn()
 void KGameWindow::slotZoomOut()
 {
   kDebug() << endl;
-  m_theWorld->applyZoomFactor(1.0/1.1);
+  m_theWorld->applyZoomFactorFast(1.0/1.1);				//call to the fast method
   m_frame->setMaximumSize(m_theWorld->width(),m_theWorld->height());
   m_scene_world->setSceneRect ( QRectF() );
   m_frame->updateGeometry();
-  
   m_backGnd_world->setPixmap(m_theWorld->map());
 }
 
