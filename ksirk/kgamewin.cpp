@@ -440,6 +440,17 @@ void KGameWindow::newSkin(const QString& onuFileName)
 
   loadDices();
 
+  // put the size to the window size if it's the main menu
+  int width;
+  int height;
+  if (m_scene_arena == 0) {
+     width = 2000;
+     height = 2000;
+  } else {
+     width = m_theWorld->width();
+     height = m_theWorld->height();
+  }
+
   //Creation of the arena background
   if (m_backGnd_arena != 0) {
     kDebug() << "Before m_backGnd_arena delete" << endl;
@@ -457,20 +468,20 @@ void KGameWindow::newSkin(const QString& onuFileName)
     kDebug() << "Before m_scene_arena delete" << endl;
     delete m_scene_arena;
   }
-  m_scene_arena = new QGraphicsScene(0, 0, m_theWorld->width(), m_theWorld->height(),this);
+  m_scene_arena = new QGraphicsScene(0, 0, width, height,this);
 
   if (m_scene_world != 0)
   {
     kDebug() << "Before m_scene_world delete" << endl;
     delete m_scene_world;
   }
-  m_scene_world = new QGraphicsScene(0, 0, m_theWorld->width(), m_theWorld->height(),this);
+  m_scene_world = new QGraphicsScene(0, 0, width, height,this);
 
   // create the main menu
   bool firstCall = false;
   if (m_mainMenu == 0)
   {
-    m_mainMenu = new mainMenu(this, m_theWorld->width(), m_theWorld->height(), m_automaton);
+    m_mainMenu = new mainMenu(this, width, height, m_automaton);
     firstCall = true;
   }
 
@@ -479,9 +490,9 @@ void KGameWindow::newSkin(const QString& onuFileName)
   {  
 	delete m_frame;
   }
-  m_frame = new DecoratedGameFrame(this, m_theWorld->width(), m_theWorld->height(), m_automaton);
-  m_frame->setMaximumWidth(m_theWorld->width());
-  m_frame->setMaximumHeight(m_theWorld->height());
+  m_frame = new DecoratedGameFrame(this,width, height, m_automaton);
+  m_frame->setMaximumWidth(width);
+  m_frame->setMaximumHeight(height);
   m_frame->setCacheMode( QGraphicsView::CacheBackground );
   m_frame->setIcon();
 
@@ -489,9 +500,9 @@ void KGameWindow::newSkin(const QString& onuFileName)
   // create the arena if it doesn't exist
   if (m_arena != 0)
     delete m_arena;
-  m_arena = new FightArena(this, m_theWorld->width(), m_theWorld->height(), m_scene_arena, m_theWorld, m_automaton);
-  m_arena->setMaximumWidth(m_theWorld->width());
-  m_arena->setMaximumHeight(m_theWorld->height());
+  m_arena = new FightArena(this, width, height, m_scene_arena, m_theWorld, m_automaton);
+  m_arena->setMaximumWidth(width);
+  m_arena->setMaximumHeight(height);
   m_arena->setCacheMode( QGraphicsView::CacheBackground );
 
   // create a central widget if it doesent' exists
