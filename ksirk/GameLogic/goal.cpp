@@ -153,67 +153,75 @@ QString Goal::message(int displayType) const
   KLocalizedString res;
 
   std::set<unsigned int>::const_iterator it, it_end, it_next;
-  if (displayType & GoalDesc)
+  
+  if(type()==NoGoal) {
+    QString mes = (QString)"You must conquer the World !";
+    return mes;
+  }
+  else
   {
-    res = ki18n(m_description.toUtf8().data());
-    if (m_player == 0)
+    if (displayType & GoalDesc)
     {
-      res = res.subs("");
-    }
-    else
-    {
-      res = res.subs(m_player->name());
-    }
-    kDebug() << "Goal type='" << m_type << "' mes = '" << res.toString() << "'" << endl;
-    
-    std::set<unsigned int>::const_iterator it, it_end;
-    switch (m_type)
-    {
-    case Goal::GoalPlayer :
-      if (!m_players.empty())
+      res = ki18n(m_description.toUtf8().data());
+      if (m_player == 0)
       {
-        kDebug() << "  player num='" << (*m_players.begin()) << endl;
-        kDebug() << "  this is player='" << m_automaton->findPlayer(*m_players.begin()) << endl;
-        if (m_automaton->findPlayer(*m_players.begin())==0)
-        {
-          res = res.subs("?");
-        }
-        else
-        {
-          kDebug() << "  its name is='" << m_automaton->findPlayer(*m_players.begin())->name() << endl;
-          res = res.subs(m_automaton->findPlayer(*m_players.begin())->name());
-        }
-        res = res.subs(m_nbCountries);
+        res = res.subs("");
       }
       else
       {
-        res = res.subs(i18n("Error : no player to destroy"));
+        res = res.subs(m_player->name());
       }
-      break;
-    case Goal::Countries:
-      kDebug() << "  arg1 = '" << m_nbCountries << "'" << endl;
-      res=res.subs(m_nbCountries);
-      if (m_nbArmiesByCountry > 0)
+      kDebug() << "Goal type='" << m_type << "' mes = '" << res.toString() << "'" << endl;
+    
+      std::set<unsigned int>::const_iterator it, it_end;
+      switch (m_type)
       {
-        kDebug() << "  arg2 = '" << m_nbArmiesByCountry << "'" << endl;
-        res=res.subs(m_nbArmiesByCountry);
-      }
-      break;
-    case Goal::Continents:
-      it = m_continents.begin(); it_end = m_continents.end();
-      for (; it != it_end; it++)
-      {
-        if (*it != 0)
+      case Goal::GoalPlayer :
+        if (!m_players.empty())
         {
-          kDebug() << "  arg = '" << m_automaton->game()->theWorld()->continentWithId(*it)->name() << "'" << endl;
-          res=res.subs(i18n(m_automaton->game()->theWorld()->continentWithId(*it)->name().toUtf8().data()));
-          
+          kDebug() << "  player num='" << (*m_players.begin()) << endl;
+          kDebug() << "  this is player='" << m_automaton->findPlayer(*m_players.begin()) << endl;
+          if (m_automaton->findPlayer(*m_players.begin())==0)
+          {
+            res = res.subs("?");
+          }
+          else
+          {
+            kDebug() << "  its name is='" << m_automaton->findPlayer(*m_players.begin())->name() << endl;
+            res = res.subs(m_automaton->findPlayer(*m_players.begin())->name());
+          }
+          res = res.subs(m_nbCountries);
         }
+        else
+        {
+          res = res.subs(i18n("Error : no player to destroy"));
+        }
+        break;
+      case Goal::Countries:
+        kDebug() << "  arg1 = '" << m_nbCountries << "'" << endl;
+        res=res.subs(m_nbCountries);
+        if (m_nbArmiesByCountry > 0)
+        {
+          kDebug() << "  arg2 = '" << m_nbArmiesByCountry << "'" << endl;
+          res=res.subs(m_nbArmiesByCountry);
+        }
+        break;
+      case Goal::Continents:
+        it = m_continents.begin(); it_end = m_continents.end();
+        for (; it != it_end; it++)
+        {
+          if (*it != 0)
+          {
+            kDebug() << "  arg = '" << m_automaton->game()->theWorld()->continentWithId(*it)->name() << "'" << endl;
+            res=res.subs(i18n(m_automaton->game()->theWorld()->continentWithId(*it)->name().toUtf8().data()));
+          }
+        }
+        break;
+      default:;
       }
-      break;
-    default:;
     }
   }
+
   QString mes = res.toString();
   if (displayType & GoalAdvance)
   {
@@ -283,9 +291,12 @@ QString Goal::message(int displayType) const
       }
       mes += '.';
       break;
-    default:;
+    default:
+      break;
+;
     }
   }
+
   return mes;
 }
   
@@ -345,7 +356,7 @@ QDataStream& operator<<(QDataStream& stream, const Goal& goal)
       stream << quint32(*it);
     }
     break;
-  default:;
+  default: break;
   }
   return stream;
 }
