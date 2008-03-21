@@ -43,6 +43,9 @@ int main(int argc, char *argv[])
     aboutData.addAuthor(ki18n("Robin Doer"));
     aboutData.addAuthor(ki18n("Albert Astals Cid"));
     aboutData.addAuthor(ki18n("Michal Golunski (Polish translation)"),KLocalizedString(), "michalgolunski@o2.pl");
+    aboutData.addAuthor(ki18n("French students of the 'IUP ISI 2007-2008' :"));
+
+    aboutData.addAuthor(ki18n("&nbsp;&nbsp;Anthony Rey<br/>&nbsp;&nbsp;Benjamin Lucas<br/>&nbsp;&nbsp;Benjamin Moreau<br/>&nbsp;&nbsp;Gaël Clouet<br/>&nbsp;&nbsp;Guillaume Pelouas<br/>&nbsp;&nbsp;Joël Marco<br/>&nbsp;&nbsp;Laurent Dang<br/>&nbsp;&nbsp;Nicolas Linard<br/>&nbsp;&nbsp;Vincent Sac"));
     KCmdLineArgs::init( argc, argv, &aboutData );
 
     KCmdLineOptions options;
