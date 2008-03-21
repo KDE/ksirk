@@ -1045,7 +1045,7 @@ void KGameWindow::displayNormalGameButtons()
     addAButton(CM_ATTACK2,  SLOT(slotAttack2()), i18n("Attack with two armies"),KShortcut(Qt::Key_2),true);
     addAButton(CM_ATTACK3,  SLOT(slotAttack3()), i18n("Attack with three armies"),KShortcut(Qt::Key_3),true);
     addAButton(CM_SHIFT, SLOT(slotMove()), i18n("Move armies"),KShortcut(Qt::Key_M),true);
-    showMessage(i18n("Now, choose an action with the buttons at the bottom.<br/>Note that moving armies is the last action of a turn."), 5);
+    showMessage(i18n("Now, choose an action by using the right mouse click.<br/>Note that moving armies is the last action of a turn."), 5);
   }
   gameActionsToolBar-> hide();
   //gameActionsToolBar-> show();
@@ -1880,17 +1880,19 @@ bool KGameWindow::isFightValid(const QPointF& point)
 
 int KGameWindow::setCurrentPlayerToFirst()
 {
-//   kDebug() << "KGameWindow::setCurrentPlayerToFirst()" << endl;
-  if (    ( currentPlayer() ) &&
-            ( currentPlayer()-> isAI()) && ( static_cast<AIPlayer *>(currentPlayer())-> isRunning() ) )
-        static_cast<AIPlayer *>(currentPlayer())-> stop();
-
+  if (currentPlayer() && currentPlayer()->isAI() 
+                      && (static_cast<AIPlayer *>(currentPlayer())->isRunning()))
+  {
+        static_cast<AIPlayer *>(currentPlayer())->stop();
+  }
   m_automaton->currentPlayer((Player*)(*m_automaton->playerList()->begin()));
 
-  if ( currentPlayer() && currentPlayer()-> isAI()  && (!currentPlayer()->isVirtual()) )
-      if ( ! ( static_cast<AIPlayer *>(currentPlayer())-> isRunning()) )
-          static_cast<AIPlayer *>(currentPlayer())-> start();
-//    kDebug() << "OUT KGameWindow::setCurrentPlayerToFirst()" << endl;
+  if (currentPlayer() && currentPlayer()->isAI() && !currentPlayer()->isVirtual()
+      && !(static_cast<AIPlayer *>(currentPlayer())->isRunning()))
+  {
+          static_cast<AIPlayer *>(currentPlayer())->start();
+          kDebug() <<"setCurrentPlayerToFirst : etape 3"<< endl;
+  }
   m_frame->setFocus();
   return 0;
 }
@@ -1924,7 +1926,7 @@ int KGameWindow::setCurrentPlayerToNext(bool restartRunningAIs)
 
   if ( restartRunningAIs && currentPlayer() && currentPlayer()-> isAI() && (!currentPlayer()->isVirtual()) )
   {
-    if ( ! (static_cast< AIPlayer* >(currentPlayer())-> isRunning()) )
+    if ( ! (static_cast< AIPlayer* >(currentPlayer())-> isRunning()))
     {
       static_cast< AIPlayer* >(currentPlayer())-> start();
     }
@@ -2131,16 +2133,14 @@ bool KGameWindow::playerPutsArmy(const QPointF& point, bool removable)
   kDebug() << "KGameWindow::playerPutsArmy" << endl;
   Country* clickedCountry = clickIn(point);
 
-  if ( (clickedCountry) )
+  if (clickedCountry)
   {
     kDebug() << "clickedCountry name=" << clickedCountry->name()  << endl;
     kDebug() << "clickedCountry owner=" << clickedCountry-> owner()->name() << endl;
     kDebug() << "currentPlayer=" << currentPlayer()->name() << endl;
     kDebug() << "nbAvailArmies=" << currentPlayer()->getNbAvailArmies() << endl;
     unsigned int nbAvailArmies = currentPlayer()->getNbAvailArmies();
-    if (
-          (clickedCountry-> owner() == currentPlayer()) &&
-          (nbAvailArmies > 0))
+    if (clickedCountry->owner() == currentPlayer() &&  nbAvailArmies > 0)
     {
       m_nbAvailArmies--;
       nbAvailArmies--;

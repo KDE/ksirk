@@ -72,7 +72,7 @@ namespace GameLogic
       void displayCountryDetails(QPointF * countryPoint);
 
       /**
-      * 
+      * Display the fight details
       */
       void displayFightDetails(GameLogic::Country * attaker, GameLogic::Country * defender,int nb_A, int nb_D);
 
@@ -90,13 +90,10 @@ namespace GameLogic
       void updateRecycleDetails(GameLogic::Country* country, bool recyclePhase, int nbAvailArmies);
 
       /**
-      * 
+      * Display the dice
       */
       void displayFightResult(int A1, int A2, int A3, int D1, int D2,int nbA,int nbD, bool win);
 
-      /**
-      * Add all labels in the layout
-      */
       void initListLabel(int i);
 
       void removeListLabel(); 
@@ -112,13 +109,13 @@ namespace GameLogic
       inline bool isOpen() {return m_parentWidget->isVisible();};
 
       private:
-      /**
-      * The Layout
-      */
-      //QLayout * mainLayout;
+ 
       QGridLayout * mainLayout;
+      
       QLabel * loadingLabel;
+      
       QLabel *infoProcess;
+      
       QDockWidget * m_parentWidget;
 
       Ksirk::GameLogic::ONU * world;

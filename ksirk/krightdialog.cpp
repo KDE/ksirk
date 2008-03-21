@@ -17,7 +17,6 @@
 
 /* begin                : Thu JAN 22 2008 */
 
-
 #include "krightdialog.h"
 #include "GameLogic/country.h"
 #include "GameLogic/player.h"
@@ -36,6 +35,7 @@
 #include <QScrollArea>
 #include <QPalette>
 #include <QMovie>
+
 namespace Ksirk
 {
    using namespace GameLogic;
@@ -53,39 +53,36 @@ namespace Ksirk
    flag1(0),
    flag2(0)
    {
-	rightContents = new QList<QLabel*>();
-        mainLayout = new QGridLayout(this);
-	//mainLayout->setColumnMinimumWidth(0,30);
-        setLayout(mainLayout);
+	 rightContents = new QList<QLabel*>();
+     mainLayout = new QGridLayout(this);
+     setLayout(mainLayout);
+	 setFixedSize(220,360);
 
+     // load the armie image
+     KConfig config(world->getConfigFileName());
+     KConfigGroup onugroup = config.group("onu");
+     QString skin = onugroup.readEntry("skinpath");
+     QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/sprites/infantry.svg");
+     soldat.load(imageFileName);
 
-	setFixedSize(220,360);
+     // load the stopAttackAuto image
+     imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/stopAttackAuto.png");
+     stopAttackAuto.load(imageFileName);
 
-    // load the armie image
-    KConfig config(world->getConfigFileName());
-    KConfigGroup onugroup = config.group("onu");
-    QString skin = onugroup.readEntry("skinpath");
-    QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/sprites/infantry.svg");
-    soldat.load(imageFileName);
+     // load the recycle image
+     imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/distributionArmees.png");
+     recycleContinue.load(imageFileName);
 
-    // load the stopAttackAuto image
-    imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/stopAttackAuto.png");
-    stopAttackAuto.load(imageFileName);
+     // load the finish recycle image
+     imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/distributionArmeesFinie.png");
+     recycleDone.load(imageFileName);
 
-    // load the recycle image
-    imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/distributionArmees.png");
-    recycleContinue.load(imageFileName);
+     // load the next player image
+     imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/joueurSuivant.png");
+     recycleNextPlayer.load(imageFileName);
 
-    // load the finish recycle image
-    imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/distributionArmeesFinie.png");
-    recycleDone.load(imageFileName);
-
-    // load the next player image
-    imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/joueurSuivant.png");
-    recycleNextPlayer.load(imageFileName);
-
-    //soldat.setFixedSize(8,8);
-    show();
+     //soldat.setFixedSize(8,8);
+     show();
 }
 
    KRightDialog::~KRightDialog()
@@ -101,8 +98,6 @@ namespace Ksirk
       flag1 = new QLabel();
       flag2 = new QLabel();
       initListLabel(7);
-
-      //QGridLayout * contentLayout = new QGridLayout();
 
       QPixmap picture;
 
@@ -134,14 +129,12 @@ namespace Ksirk
       mainLayout->addWidget(rightContents->at(2),3,0,Qt::AlignLeft);
 
       mainLayout->addWidget(rightContents->at(4),5,0,Qt::AlignLeft);
-      //mainLayout->setAlignment(Qt::AlignTop | Qt::AlignLeft);
-      
+       
       unit->addWidget(rightContents->at(3));
       unit->addWidget(rightContents->at(6));
       
       mainLayout->addLayout(unit,4,0,Qt::AlignLeft);
       mainLayout->addLayout(drap,1,0,Qt::AlignLeft);
-      //mainLayout->addItem(contentLayout,0,0);
 
       m_parentWidget->show();
       repaint();
@@ -183,7 +176,7 @@ namespace Ksirk
       loadingLabel->setMovie(loading);
       loading->start();
       infoProcess->setFixedHeight(20);
-      //l3->setFixedHeight(15);
+
       tp->addWidget(l3,0,0);
       tp->addWidget(infoProcess,1,0,Qt::AlignCenter);
       tp->addWidget(loadingLabel,2,0,Qt::AlignCenter);
@@ -267,9 +260,7 @@ namespace Ksirk
          mainLayout->addWidget(buttonStopAttack,3,0);
          connect(buttonStopAttack, SIGNAL(clicked()), this, SLOT(slotStopAttackAuto()));
       }
-
-      //mainLayout->setAlignment(Qt::AlignTop | Qt::AlignLeft);
-      
+     
       mainLayout->update();
       m_parentWidget->show();
       repaint();
@@ -296,7 +287,6 @@ namespace Ksirk
 
       QHBoxLayout* title = new QHBoxLayout();
 
-      // Widget where display informations
       haut = new QWidget();
 
 
@@ -337,7 +327,9 @@ namespace Ksirk
       btRecycleWidget->hide();
       if (nbAvailArmies > 0 || game->getState() == GameLogic::GameAutomaton::INTERLUDE || player->isAI() || player->isVirtual()) {
         btValidWidget->hide();
-      } else {
+      } 
+      else 
+      {
         btValidWidget->show();
       }
 
@@ -388,60 +380,54 @@ namespace Ksirk
       QHBoxLayout * deAtt = new QHBoxLayout();
       QHBoxLayout * deDef = new QHBoxLayout();
 
-if(A1!=0 || A1!=-1)
-{kDebug()<<"De attack 1" << endl;
-      QLabel * de1 = new QLabel();kDebug()<<"*********Label des de:"<<de1->width()<<","<<de1->height() <<"*********"<<endl;
-      de1->setPixmap(game->getDice(KGameWindow::Red,A1));
-      rightContents->insert(0,de1);deAtt->addWidget(de1);
-}
-if(A2!=0 || A2!=-1)
-{kDebug()<<"De attack 2" << endl;
-      QLabel * de2= new QLabel();
-      de2->setPixmap(game->getDice(KGameWindow::Red,A2));
-      rightContents->insert(0,de2);deAtt->addWidget(de2);
-}
-if(A3!=0 || A3!=-1)
-{kDebug()<<"De attack 3" << endl;
-      QLabel * de3= new QLabel();
-      de3->setPixmap(game->getDice(KGameWindow::Red,A3));
-      rightContents->insert(0,de3);deAtt->addWidget(de3);
-}
-if(D1!=0 || D1!=-1)
-{kDebug()<<"De defense 1" << endl;
-      QLabel * de4= new QLabel();   
-      de4->setPixmap(game->getDice(KGameWindow::Blue,D1));
-      rightContents->insert(0,de4);deDef->addWidget(de4);
-}
-if(D2!=0 || D2!=-1)
-{kDebug()<<"De defense 2" << endl;
-      QLabel * de5= new QLabel();
-      de5->setPixmap(game->getDice(KGameWindow::Blue,D2));
-      rightContents->insert(0,de5);deDef->addWidget(de5);
-}
-QLabel * jjjj = new QLabel(i18n("<font color=\"red\">loose armies: %1</font>", nbA));
-           rightContents->insert(0,jjjj);
-kDebug()<<"*********Label libelle Attack:"<<jjjj->width()<<","<<jjjj->height() <<"*********"<<endl;
-QLabel * kkkk = new QLabel(i18n("<font color=\"blue\">loose armies: %1</font>", nbD));
-rightContents->insert(0,kkkk);
-kDebug()<<"*********Label libelle Defense:"<<kkkk->width()<<","<<kkkk->height() <<"*********"<<endl;
-      /*deAtt->addWidget(rightContents->at(6)); 
-      deAtt->addWidget(rightContents->at(5));
-      deAtt->addWidget(rightContents->at(4));
-      deDef->addWidget(rightContents->at(3));
-      deDef->addWidget(rightContents->at(2));*/
+	  if(A1!=0 || A1!=-1)
+	  {
+      	QLabel * de1 = new QLabel();
+      	de1->setPixmap(game->getDice(KGameWindow::Red,A1));
+      	rightContents->insert(0,de1);deAtt->addWidget(de1);
+	  }
+	  if(A2!=0 || A2!=-1)
+	  {
+      	QLabel * de2= new QLabel();
+      	de2->setPixmap(game->getDice(KGameWindow::Red,A2));
+      	rightContents->insert(0,de2);deAtt->addWidget(de2);
+	  }
+	  if(A3!=0 || A3!=-1)
+	  {
+      	QLabel * de3= new QLabel();
+      	de3->setPixmap(game->getDice(KGameWindow::Red,A3));
+      	rightContents->insert(0,de3);deAtt->addWidget(de3);
+	  }
+	  if(D1!=0 || D1!=-1)
+	  {
+      	QLabel * de4= new QLabel();   
+      	de4->setPixmap(game->getDice(KGameWindow::Blue,D1));
+      	rightContents->insert(0,de4);deDef->addWidget(de4);
+	  }
+	  if(D2!=0 || D2!=-1)
+	  {
+      	QLabel * de5= new QLabel();
+      	de5->setPixmap(game->getDice(KGameWindow::Blue,D2));
+     	 rightContents->insert(0,de5);deDef->addWidget(de5);
+	  }
+	  QLabel * rLabelR = new QLabel(i18n("<font color=\"red\">loose armies: %1</font>", nbA));
+      rightContents->insert(0,rLabelR);
+
+	  QLabel * rLabelB = new QLabel(i18n("<font color=\"blue\">loose armies: %1</font>", nbD));
+	  rightContents->insert(0,rLabelB);
     
-milieuGrid->addWidget(rightContents->at(1),0,0,Qt::AlignCenter);
-milieuGrid->addLayout(deAtt,1,0,Qt::AlignCenter);
-milieuGrid->addLayout(deDef,2,0,Qt::AlignCenter);
-milieuGrid->addWidget(rightContents->at(0),4,0,Qt::AlignCenter); 
+	  milieuGrid->addWidget(rightContents->at(1),0,0,Qt::AlignCenter);
+	  milieuGrid->addLayout(deAtt,1,0,Qt::AlignCenter);
+	  milieuGrid->addLayout(deDef,2,0,Qt::AlignCenter);
+	  milieuGrid->addWidget(rightContents->at(0),4,0,Qt::AlignCenter); 
 
       milieu->setLayout(milieuGrid);
       mainLayout->addWidget(milieu,1,0);
 
-      if (buttonStopAttack != 0 && win) {
+      if (buttonStopAttack != 0 && win) 
+      {
          buttonStopAttack->setEnabled(false);
       }
-
       repaint();
    }
 
