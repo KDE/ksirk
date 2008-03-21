@@ -1,75 +1,38 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://web.resource.org/cc/"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="748"
-   height="573"
-   id="svg2160"
-   sodipodi:version="0.32"
-   inkscape:version="0.45.1"
-   sodipodi:docbase="C:\Documents and Settings\Guillaume\Bureau"
-   sodipodi:docname="arena.svg"
-   inkscape:output_extension="org.inkscape.output.svg.inkscape">
-  <defs />
-  <sodipodi:namedview
-     inkscape:document-units="mm"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="0.43415836"
-     inkscape:cx="490"
-     inkscape:cy="390.24594"
-     inkscape:current-layer="layer1"
-     id="namedview2164"
-     inkscape:window-width="748"
-     inkscape:window-height="573"
-     inkscape:window-x="165"
-     inkscape:window-y="71" />
-  <metadata
-     id="metadata2166">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1">
-    <rect
-	 style="fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1;fill:#dc420d"
-       id="left"
-       width="374"
-       height="573"
-       x="0"
-       y="0"
-       ry="0" />
-    <rect
-	 style="fill:#dcdb0d;fill-opacity:1;fill-rule:evenodd;stroke:#4e2300;stroke-width:0.99366057px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       id="right"
-       width="374"
-       height="573"
-       x="374"
-       y="0"
-       ry="0" />
-    <rect
-	 style="fill:#c0b5c2;fill-opacity:1;fill-rule:evenodd;stroke:#4e2300;stroke-opacity:1"
-       id="border"
-       width="6"
-       height="573"
-       x="374"
-       y="0" />
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created using Karbon14, part of koffice: http://www.koffice.org/karbon -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="748px" height="573px">
+  <defs>
+    <linearGradient id="defitem1" gradientUnits="userSpaceOnUse" x1="5.75879" y1="32.765" x2="31.6734" y2="10.812" spreadMethod="reflect" >
+      <stop stop-color="#ff0000" offset="0.480519" stop-opacity="1" />
+      <stop stop-color="#ffff00" offset="0.50974" stop-opacity="1" />
+    </linearGradient>
+  </defs>
+  <g id="Layer">
+    <g id="Layer">
+      <g id="Layer">
+        <g id="Layer">
+          <g id="Layer">
+            <path fill="url(#defitem1)" stroke="#000000" stroke-width="3.54331" d="M0.832996 2.087L0.832996 574.008L748.579 574.008L748.579 2.087L0.832996 2.087Z"  />
+            <path fill="#8c5004" stroke="#000000" stroke-width="3.54331" d="M10.8301 14.108L10.8301 563.057L735.56 563.057L734.534 11.024L10.8301 14.108Z"  />
+          </g>
+          <path fill="#088c00" fill-opacity="0.17" stroke="#000000" stroke-width="0" d="M10.8301 15.103L10.8301 564.051L735.56 564.051L734.534 12.018L10.8301 15.103Z"  />
+          <path fill="#088c00" fill-opacity="0.17" stroke="#000000" stroke-width="0" d="M8.46838 562.909C26.4822 548.835 -14.5041 72.339 77.5097 134.984C169.524 197.627 119.537 254.449 186.551 340.967C253.565 427.484 218.579 257.295 297.592 244.374C376.606 231.452 424.62 245.526 355.634 324.239C286.648 402.952 413.661 406.087 419.675 306.648C425.689 207.209 470.703 281.656 463.716 329.39C456.73 377.124 496.744 314.61 523.758 307.642C550.772 300.674 711.785 573.004 729.799 558.931"  />
+          <path fill="#088c00" fill-opacity="0.17" stroke="#000000" stroke-width="0" d="M280.151 17.457C293.42 0.654 278.688 138.987 337.957 202.685C397.225 266.383 409.494 154.012 486.762 237.546C564.031 321.08 720.299 546.82 733.567 558.701C746.836 570.582 710.104 320.87 643.373 303.86C576.641 286.85 666.91 201.223 701.178 260.838C735.447 320.453 714.715 184.21 661.984 143.438C609.252 102.665 672.521 91.728 710.789 135.537C749.057 179.345 716.326 31.275 729.594 14.473"  />
+          <path fill="#088c00" fill-opacity="0.17" stroke="#000000" stroke-width="0" d="M9.14772 17.084C8.81446 102.355 46.4812 127.961 52.1479 120.751C57.8147 113.541 24.4814 32.744 74.1482 43.683C105.815 35.728 57.4816 107.574 121.148 141.635C184.815 175.695 138.482 214.729 182.149 245.809C225.815 276.889 293.482 242.334 302.149 202.805C310.816 163.275 224.482 133.687 227.149 103.853C229.816 74.019 269.483 66.813 275.149 59.603C280.816 52.393 281.483 16.341 230.149 15.095"  />
+          <path fill="#8c5004" fill-opacity="0.44" stroke="#000000" stroke-width="0" d="M344.539 431.638C240.539 314.595 266.254 496.401 147.457 393.972C28.661 291.543 100.376 404.096 53.3757 443.572C6.3757 483.048 82.661 532.95 171.457 479.249C260.254 425.548 332.539 516.859 344.539 431.638Z"  />
+          <path fill="#8c5004" fill-opacity="0.44" stroke="#000000" stroke-width="0" d="M503 87.972C422 73.861 384.61 -14.069 377.756 34.66C370.903 83.388 305.512 110.656 349.512 114.822C393.512 118.989 390.903 58.745 496.756 160.179C602.61 261.614 628 191.584 503 87.972Z"  />
+        </g>
+        <path fill="#0a7200" fill-opacity="0.26" stroke="#000000" stroke-width="0" d="M670.098 544.792C670.098 516.554 607.623 418.084 522.732 381.289C437.84 344.494 293.366 527.493 397.366 482.141C501.366 436.79 477.84 330.401 562.732 458.686C647.623 586.971 563.098 414.911 670.098 544.792Z"  />
+        <path fill="#0a7200" fill-opacity="0.26" stroke="#000000" stroke-width="0" d="M263.157 498.922C263.682 502.2 342.42 531.983 425.866 534.166C509.312 536.35 630.759 491.665 530.212 499.487C429.664 507.308 524.578 530.019 439.43 517.215C354.283 504.412 369.887 511.367 263.157 498.922Z"  />
+        <path fill="#0a7200" fill-opacity="0.26" stroke="#000000" stroke-width="0" d="M241.317 153.218C241.317 133.633 146.753 44.168 123.854 44.168C100.954 44.168 187.39 143.578 178.39 185.041C169.39 226.504 220.954 261.275 219.854 220.502C218.753 179.729 241.317 172.803 241.317 153.218Z"  />
+        <path fill="#0a7200" fill-opacity="0.26" stroke="#000000" stroke-width="0" d="M674.195 44.58C674.195 36.381 594.314 23.768 579.659 23.768C565.003 23.768 585.122 38.37 553.122 38.613C521.122 38.855 565.003 53.457 579.659 53.457C594.314 53.457 632.195 96.534 674.195 44.58Z"  />
+        <path fill="#0a7200" fill-opacity="0.26" stroke="#000000" stroke-width="0" d="M647.34 334.836C619.874 300.694 405.999 124.929 442.78 161.301C479.562 197.673 608.218 302.011 629.684 353.059C651.15 404.108 695.025 441.642 700.244 476.872C705.463 512.101 725.806 404.779 647.34 334.836Z"  />
+        <path fill="#0a7200" fill-opacity="0.26" stroke="#000000" stroke-width="0" d="M348.488 301.101C348.488 293.813 349.35 227.244 307.61 260.062C265.87 292.879 259.732 310.719 248.732 356.79C237.732 402.862 291.87 315.291 305.61 315.291C319.35 315.291 329.488 341.205 348.488 301.101Z"  />
+        <path fill="#0a7200" fill-opacity="0.26" stroke="#000000" stroke-width="0" d="M102.683 212.134C72.6829 206.851 103.114 149.41 61.2439 186.205C19.374 223 60.8049 341.103 27.8049 372.241C-5.19512 403.379 69.374 369.33 67.2439 280.824C65.1138 192.317 173.683 374.539 102.683 212.134Z"  />
+        <path fill="#ba0b00" fill-opacity="0.27" stroke="#000000" stroke-width="1.53071" d="M389.845 560.789C360.171 555.702 360.171 554.684 360.171 554.684C360.171 553.667 369.171 553.667 375.311 531.281L367.682 490.949L385.821 474.437L378.566 441.945L363.241 419.352L376.171 394.907L383.613 375.597L381.589 356.356L367.264 345.163L378.288 323.679L371.427 292.159L384.45 273.82L370.404 254.509L376.264 220.375L368.357 191.097L381.52 178.609L383.659 145.33L377.613 123.431C360.264 106.781 364.264 99.842 364.264 99.842C364.264 100.861 384.171 71.236 384.171 72.253C384.171 73.272 384.171 73.272 364.264 44.896L378.404 20.613L371.427 13.352L12.2786 14.369L10.2321 560.789L371.427 561.808L371.427 561.808"  />
+        <path fill="#dfdb00" fill-opacity="0.18" stroke="#000000" stroke-width="0" d="M394.961 560.789L732.621 560.789L731.598 12.334L377.566 12.334L379.613 20.475L368.357 44.896L385.752 72.37L363.241 103.913L378.589 122.229L385.752 144.615L382.682 181.246L368.357 190.404C377.566 225.001 376.543 225.001 376.543 225.001C375.52 225.001 375.52 225.001 375.52 240.264L371.427 255.527L383.705 271.808L374.496 291.141L375.52 309.457L378.589 322.684L376.543 333.878L367.334 345.071L373.473 351.176L379.613 358.299L383.705 372.545L378.589 390.86L366.311 417.316L366.311 421.386L378.589 438.685L383.705 473.281L369.38 492.614L373.473 519.071L374.496 540.439L363.241 553.667L379.613 557.737L389.845 560.789L389.845 560.789"  />
+      </g>
+    </g>
   </g>
 </svg>

@@ -2940,7 +2940,8 @@ void KGameWindow::showMessage(const QString& message, quint32 delay)
       m_message  = new KGamePopupItem();
       m_scene_world->addItem(m_message);
       m_message->setSharpness(KGamePopupItem::Soft);
-      m_message->setBackgroundBrush(Qt::blue);
+      QColor color = QColor(102,102,255);
+      m_message->setBackgroundBrush(color);
       m_message->setZValue(1000);
     }
     m_message->setMessageTimeout(delay*1000);
