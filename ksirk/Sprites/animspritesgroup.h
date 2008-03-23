@@ -33,13 +33,13 @@ class AnimSpritesGroup : public QObject, public AnimSpritesList<AnimSprite>
 {
   Q_OBJECT
 public:
-  AnimSpritesGroup(QObject* target, char* slot);
+  AnimSpritesGroup(QObject* target, const char* slot);
 
   virtual ~AnimSpritesGroup();
 
   void addSprite(AnimSprite* sprite);
 
-  void changeTarget(QObject* target, char* slot);
+  void changeTarget(QObject* target, const char* slot);
 
   void clear();
 
@@ -52,7 +52,7 @@ signals:
 private:
   unsigned int m_numberArrived;
   QObject* m_target;
-  char* m_slot;
+  const char* m_slot;
 };
 
 

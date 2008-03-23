@@ -37,6 +37,10 @@ public:
 
     QSize sizeHint(const QStyleOptionViewItem &option,
                     const QModelIndex &index ) const;
+
+    QSize sizeHint(const QStyleOptionViewItem &option,
+                    const QModelIndex &index, const QString& sender,
+                            const QString& message) const;
 };
 
 #endif // KSIRKCHATDELEGATE_H

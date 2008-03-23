@@ -180,7 +180,7 @@ public:
     * @param event The event to register
     * @param point The point where the event occurred
     */
-  void event(const std::string& event, const QPointF& point = QPointF());
+  void gameEvent(const std::string& event, const QPointF& point);
   
   /** returns the name of the current state */
   QString stateName() const;

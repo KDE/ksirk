@@ -194,27 +194,27 @@ void KGameWindow::slotLeftButtonDown(const QPointF& point)
 {
 //   kDebug() << "slotLeftButtonDown" << endl;
 //   if (currentPlayer() && !(currentPlayer()-> isAI()) )
-    m_automaton->event("actionLButtonDown", point);
+    m_automaton->gameEvent("actionLButtonDown", point);
 }
 
 void KGameWindow::slotLeftButtonUp(const QPointF& point)
 {
 //     kDebug() << "slotLeftButtonUp" << endl;
 //     if (currentPlayer() && ! (currentPlayer()-> isAI()) )
-    m_automaton->event("actionLButtonUp", point);
+    m_automaton->gameEvent("actionLButtonUp", point);
 }
 
 void KGameWindow::slotRightButtonDown(const QPointF& point)
 {
 //   if (currentPlayer() && ! (currentPlayer()-> isAI()) )
-    m_automaton->event("actionRButtonDown", point);
+    m_automaton->gameEvent("actionRButtonDown", point);
   return;
 }
 
 void KGameWindow::slotRightButtonUp(const QPointF& point)
 {
 //   if (currentPlayer() && ! (currentPlayer()-> isAI()) )
-    m_automaton->event("actionRButtonUp", point);
+    m_automaton->gameEvent("actionRButtonUp", point);
   return;
 }
 
@@ -300,14 +300,14 @@ void KGameWindow::slotNewGame()
   {
     m_automaton->state(GameAutomaton::INIT);
   }
-//   m_automaton->event("actionNewGame", point);
+//   m_automaton->gameEvent("actionNewGame", point);
 }
 
 void KGameWindow::slotOpenGame()
 {
   kDebug() << "Slot open game: posting event actionOpenGame" << endl;
   QPoint point;
-  m_automaton->event("actionOpenGame", point);
+  m_automaton->gameEvent("actionOpenGame", point);
 //   actionOpenGame();
 }
 
@@ -331,55 +331,55 @@ void KGameWindow::slotSaveGame()
 void KGameWindow::slotRecycling()
 {
   QPoint point;
-  m_automaton->event("actionRecycling", point);
+  m_automaton->gameEvent("actionRecycling", point);
 }
 
 void KGameWindow::slotRecyclingFinished()
 {
   QPoint point;
-  m_automaton->event("actionRecyclingFinished", point);
+  m_automaton->gameEvent("actionRecyclingFinished", point);
 }
 
 void KGameWindow::slotNextPlayer()
 {
   QPoint point;
-  m_automaton->event("actionNextPlayer", point);
+  m_automaton->gameEvent("actionNextPlayer", point);
 }
 
 void KGameWindow::slotAttack1()
 {
   QPoint point;
-  m_automaton->event("actionAttack1", point);
+  m_automaton->gameEvent("actionAttack1", point);
 }
 
 void KGameWindow::slotAttack2()
 {
   QPoint point;
-  m_automaton->event("actionAttack2", point);
+  m_automaton->gameEvent("actionAttack2", point);
 }
 
 void KGameWindow::slotAttack3()
 {
   QPoint point;
-  m_automaton->event("actionAttack3", point);
+  m_automaton->gameEvent("actionAttack3", point);
 }
 
 void KGameWindow::slotDefense1()
 {
   QPoint point;
-  m_automaton->event("actionDefense1", point);
+  m_automaton->gameEvent("actionDefense1", point);
 }
 
 void KGameWindow::slotDefense2()
 {
   QPoint point;
-  m_automaton->event("actionDefense2", point);
+  m_automaton->gameEvent("actionDefense2", point);
 }
 
 void KGameWindow::slotInvade1()
 {
   QPoint point;
-  m_automaton->event("actionInvade1", point);
+  m_automaton->gameEvent("actionInvade1", point);
 }
 
 void KGameWindow::slotSimultaneousAttack(int state)
@@ -391,61 +391,61 @@ void KGameWindow::slotSimultaneousAttack(int state)
   // Attack
   if (state==0)
   {
-  	m_automaton->event("actionSimultaneousAttackA", point);
+  	m_automaton->gameEvent("actionSimultaneousAttackA", point);
   }
   else
   {
 	// Defense	
-	m_automaton->event("actionSimultaneousAttackD", point);
+	m_automaton->gameEvent("actionSimultaneousAttackD", point);
   }
 }
 
 void KGameWindow::slotInvade5()
 {
   QPoint point;
-  m_automaton->event("actionInvade5", point);
+  m_automaton->gameEvent("actionInvade5", point);
 }
 
 void KGameWindow::slotInvade10()
 {
   QPoint point;
-  m_automaton->event("actionInvade10", point);
+  m_automaton->gameEvent("actionInvade10", point);
 }
 
 void KGameWindow::slotInvasionFinished()
 {
   QPoint point;
-  m_automaton->event("actionInvasionFinished", point);
+  m_automaton->gameEvent("actionInvasionFinished", point);
 }
 
 void KGameWindow::slotRetreat1()
 {
   QPoint point;
-  m_automaton->event("actionRetreat1", point);
+  m_automaton->gameEvent("actionRetreat1", point);
 }
 
 void KGameWindow::slotRetreat5()
 {
   QPoint point;
-  m_automaton->event("actionRetreat5", point);
+  m_automaton->gameEvent("actionRetreat5", point);
 }
 
 void KGameWindow::slotRetreat10()
 {
   QPoint point;
-  m_automaton->event("actionRetreat10", point);
+  m_automaton->gameEvent("actionRetreat10", point);
 }
 
 void KGameWindow::slotMove()
 {
   QPoint point;
-  m_automaton->event("actionMove", point);
+  m_automaton->gameEvent("actionMove", point);
 }
 
 void KGameWindow::slotCancel()
 {
   QPoint point;
-  m_automaton->event("actionCancel", point);
+  m_automaton->gameEvent("actionCancel", point);
 }
 
 void KGameWindow::slotDumpGameInformations()
@@ -478,7 +478,7 @@ void KGameWindow::slotJoinNetworkGame()
 {
   kDebug() << endl;
   QPoint point;
-  m_automaton->event("actionJoinNetworkGame", point);
+  m_automaton->gameEvent("actionJoinNetworkGame", point);
 }
 
 void KGameWindow::slotShowGoal()
@@ -652,12 +652,16 @@ void KGameWindow::slideReleased()
   m_currentSlideValue = m_previousSlideValue;
   QByteArray* buffer;
 
-  int units; 
+  int units=0; 
   if(m_invadeSlide->value()!=m_currentSlideValue)
-    units = m_invadeSlide->value()-  m_currentSlideValue;
-
+  {
+    units = m_invadeSlide->value() - m_currentSlideValue;
+  }
+  
   if (units<0)
+  {
     units*=(-1);
+  }
   int reste10 = units%10;
   int reste5;
   for(int i=0;i<(units-reste10)/10;i++)
@@ -711,7 +715,7 @@ void KGameWindow::slideClose()
 {
   m_wSlide->close();
   QPoint point;
-  m_automaton->event("actionInvasionFinished", point);
+  m_automaton->gameEvent("actionInvasionFinished", point);
 }
 
 } // closing namespace Ksirk

@@ -44,14 +44,14 @@ namespace Ksirk
    : QWidget(parent),
    m_parentWidget(parent),
    world(world),
-   game(m_game),
-   btRecycleWidget(0),
-   btValidWidget(0),
-   buttonStopAttack(0),
+   flag1(0),
+   flag2(0),
    milieu(0),
    milieu2(0),
-   flag1(0),
-   flag2(0)
+   btRecycleWidget(0),
+   btValidWidget(0),
+   game(m_game),
+   buttonStopAttack(0)
    {
 	 rightContents = new QList<QLabel*>();
      mainLayout = new QGridLayout(this);

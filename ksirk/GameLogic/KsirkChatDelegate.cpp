@@ -62,4 +62,11 @@ QSize KsirkChatDelegate::sizeHint(const QStyleOptionViewItem &  option ,
   return result;
 }
 
+QSize KsirkChatDelegate::sizeHint(const QStyleOptionViewItem &option,
+                    const QModelIndex &index, const QString& sender,
+                            const QString& message) const
+{
+  return KChatBaseItemDelegate::sizeHint(option,index,sender,message);
+}
+
 #include "KsirkChatDelegate.moc"

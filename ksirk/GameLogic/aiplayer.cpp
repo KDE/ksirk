@@ -507,7 +507,7 @@ void AIPlayer::placeArmiesAction()
     kDebug() << "No more armies to place: next player" << endl;
     stop();
     QPointF point;
-    m_game->event("actionNextPlayer", point);
+    m_game->gameEvent("actionNextPlayer", point);
   }
   else if (m_game->allLocalPlayersComputer())
   {

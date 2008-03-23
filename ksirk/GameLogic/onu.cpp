@@ -54,9 +54,9 @@ ONU::ONU(GameAutomaton* automaton,
   m_continents(),
   m_zoom(1.0),
   m_zoomArena(1.0),
-  m_renderer(0),
   m_nbZooms(0),
-  m_zoomFactorFinal(1)
+  m_zoomFactorFinal(1),
+  m_renderer(0)
 {
 
   kDebug() << "ONU constructor: " << m_configFileName << endl;

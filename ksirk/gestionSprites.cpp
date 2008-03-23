@@ -177,47 +177,48 @@ bool KGameWindow::initArmiesMultipleCombat(unsigned int nbA, Country *firstCount
 
     firstCountry->spritesInfantry().hideAndRemoveFirst();
   }
-  /*else 
+  // cannot comment out this comment below otherwise will use sprite uninitialized
+  else
   {
     messageParts << I18N_NOOP("Cannot move %1 armies from %2 to %3") 
-      << QString::number(nbABouger) 
+      << QString::number(nbA) 
       << firstCountry->name() 
       << secondCountry->name();
     broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
     return false;
-  }*/
+  }
   //connect(sprite,SIGNAL(atDestination(AnimSprite*)),this,SLOT(slotMovingArmyArrived(AnimSprite*)));
   
   if (isArena())
   {
-	int relativePosInArena=0;
+    int relativePosInArena=0;
 
-	if (firstCountry->id() == secondCountry->id())
-  	{
-		sprite->setDefendant();
-		relativePosInArena = relativePosInArenaDefense;
-		//relativePosInArenaDefense++;
-  	}
-  	else
-  	{
-		sprite->setAttacker();
-		relativePosInArena = relativePosInArenaAttack;
-		//relativePosInArenaAttack++;
-  	}
+    if (firstCountry->id() == secondCountry->id())
+    {
+      sprite->setDefendant();
+      relativePosInArena = relativePosInArenaDefense;
+      //relativePosInArenaDefense++;
+    }
+    else
+    {
+      sprite->setAttacker();
+      relativePosInArena = relativePosInArenaAttack;
+      //relativePosInArenaAttack++;
+    }
 
-	kDebug() << "****Test relativePos**** " << relativePosInArena << endl;
-	QPointF *dep = determinePointDepartArena(firstCountry,relativePosInArena);
-	
-	sprite-> setPos(*dep);
+    kDebug() << "****Test relativePos**** " << relativePosInArena << endl;
+    QPointF *dep = determinePointDepartArena(firstCountry,relativePosInArena);
 
-	kDebug() << "****dep point**** " << *dep << endl;
-	kDebug() << "****dest point**** " << dest << endl;
-	sprite->setupTravel(firstCountry, secondCountry,*dep,dest);
+    sprite-> setPos(*dep);
+
+    kDebug() << "****dep point**** " << *dep << endl;
+    kDebug() << "****dest point**** " << dest << endl;
+    sprite->setupTravel(firstCountry, secondCountry,*dep,dest);
   }
   else
   {
-	kDebug() << "***************Setup travel normal ************** " << endl;
-	sprite->setupTravel(firstCountry, secondCountry,&dest);
+    kDebug() << "***************Setup travel normal ************** " << endl;
+    sprite->setupTravel(firstCountry, secondCountry,&dest);
   }
 
   kDebug() << "KGameWindow::initArmiesMultipleCombat -> "<< firstCountry->name() << secondCountry->name() << endl;
@@ -523,8 +524,8 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   m_animFighters->changeTarget(this,SLOT(slotMovingFightersArrived(AnimSpritesGroup*)));
 
   QString sndRoulePath;
-  AnimSprite* defenderSprite;
-  AnimSprite* attackingSprite;
+  AnimSprite* defenderSprite=0;
+  AnimSprite* attackingSprite=0;
 
   QPointF *pointArriveeAttaquant = new QPointF(0,0);
   QPointF *pointArriveeDefenseur = new QPointF(0,0);
@@ -540,19 +541,19 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
 
   if (!paysAttaquant->spritesInfantry().isEmpty() && ((paysAttaquant->nbArmies() % 5) >= paysAttaquant->owner()->getNbAttack()) && isArena())
   {
-	kDebug() << "**NB-ATTACK**" << paysAttaquant->owner()->getNbAttack() << endl;
+    kDebug() << "**NB-ATTACK**" << paysAttaquant->owner()->getNbAttack() << endl;
 
-	int i;
-	for (i=0; i < paysAttaquant->owner()->getNbAttack() ; i++)
-	{
-		slotSimultaneousAttack(0);
-	}
-	nbSpriteAttacking=i;
+    unsigned int i=0;
+    for (; i < paysAttaquant->owner()->getNbAttack() ; i++)
+    {
+      slotSimultaneousAttack(0);
+    }
+    nbSpriteAttacking=i;
   }
   else
   {
-	nbSpriteAttacking=1;
-	if (!paysAttaquant->spritesInfantry().isEmpty() && !isArena())
+    nbSpriteAttacking=1;
+    if (!paysAttaquant->spritesInfantry().isEmpty() && !isArena())
   	{
 		// search the correct infantry string (normal sprite, with number 1, 2, or 3)
 		QString infantryString;
@@ -633,7 +634,11 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
 			}
 		}
 	}
-
+  if (attackingSprite==0)
+  {
+    kError() << "null attackingSprite at " << __FILE__ << ", line " << __LINE__ << endl;
+    return;
+  }
 	attackingSprite-> setAttacker();
 	attackingSprite->setupTravel(paysAttaquant, paysDefenseur, pointArriveeAttaquant);
 	//(pointDepartAttaquantX <= pointArriveeAttaquantX) ? attackingSprite-> setLookRight() : attackingSprite-> setLookLeft();
@@ -656,9 +661,9 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   if (!paysDefenseur->spritesInfantry().isEmpty() && ((paysDefenseur->nbArmies() % 5) >= paysDefenseur->owner()->getNbDefense()) && isArena())
   {
 	kDebug() << "**NB-DEFENSE**" << paysDefenseur->owner()->getNbDefense() << endl;
-	
-	int i;
-	for (i=0;i< paysDefenseur->owner()->getNbDefense();i++)
+
+  unsigned int i=0;
+	for (;i< paysDefenseur->owner()->getNbDefense();i++)
 	{
 		slotSimultaneousAttack(1);
 	}
@@ -667,7 +672,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   else
   {
   	nbSpriteDefending=1;
-	if (!paysDefenseur->spritesInfantry().isEmpty() && !isArena())
+    if (!paysDefenseur->spritesInfantry().isEmpty() && !isArena())
   	{
 		// search the correct infantry string (normal sprite, with number 1, 2, or 3)
 		QString infantryString;
@@ -747,8 +752,13 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
 				}
 			}
 		}
-        }
+  }
 
+  if (defenderSprite==0)
+  {
+    kError() << "null defenderSprite at " << __FILE__ << ", line " << __LINE__ << endl;
+    return;
+  }
 	defenderSprite-> setDefendant();
  	defenderSprite-> setupTravel(paysDefenseur, paysDefenseur, pointArriveeDefenseur);
   	//(pointDepartDefenseurX <= pointArriveeDefenseurX) ? defenderSprite-> setLookRight() : defenderSprite-> setLookLeft();
@@ -849,7 +859,7 @@ void KGameWindow::stopCombat()
 
 void KGameWindow::animExplosion(int who,Country *paysAttaquant, Country *paysDefenseur)
 {
-  kDebug() << "KGameWindow::animExplosion " << who << endl;
+  kDebug() << who << endl;
 
   m_animFighters->changeTarget(this, SLOT(slotExplosionFinished(AnimSpritesGroup*)));
 

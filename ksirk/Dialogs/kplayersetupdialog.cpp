@@ -123,7 +123,6 @@ void KPlayerSetupDialog::reject() {
 void KPlayerSetupDialog::fillNationsCombo()
 {
   kDebug() << "Filling nations combo" << endl;
-  KStandardDirs *m_dirs = KGlobal::dirs();
 
   std::map< QString, QString >::const_iterator nationsIt, nationsIt_end;
   nationsIt = m_nations.begin(); nationsIt_end = m_nations.end();

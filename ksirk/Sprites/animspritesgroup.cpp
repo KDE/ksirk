@@ -25,7 +25,7 @@
 namespace Ksirk
 {
 
-AnimSpritesGroup::AnimSpritesGroup(QObject* target, char* slot):
+AnimSpritesGroup::AnimSpritesGroup(QObject* target, const char* slot):
   m_numberArrived(0), m_target(target), m_slot(slot)
 {
   kDebug() << endl;
@@ -36,7 +36,7 @@ AnimSpritesGroup::~AnimSpritesGroup()
 {
 }
 
-void AnimSpritesGroup::changeTarget(QObject* target, char* slot)
+void AnimSpritesGroup::changeTarget(QObject* target, const char* slot)
 {
   kDebug() << endl;
   if (m_target != 0)
