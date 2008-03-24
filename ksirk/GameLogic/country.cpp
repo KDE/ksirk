@@ -483,7 +483,7 @@ bool Country::hasAdjacentEnemy()
 
 void Country::highlight(const QColor& color, qreal opacity)
 {
-  kDebug() << endl;
+//   kDebug() << endl;
   if (m_highlighting_locked)
   {
     return;
@@ -502,17 +502,17 @@ void Country::highlight(const QColor& color, qreal opacity)
     kWarning() << "Got a null element" << endl;
     return;
   }
-  kDebug() <<"got country"<< endl;
+//   kDebug() <<"got country"<< endl;
 
   onu->svgDom()->setCurrentNode(countryElement);
   onu->svgDom()->setStyleProperty("fill", color.name());
   onu->svgDom()->setStyleProperty("fill-opacity", QString::number(opacity));
 
-  kDebug() <<"loading"<< endl;
+//   kDebug() <<"loading"<< endl;
   QByteArray svg = onu->svgDom()->nodeToByteArray();
   m_renderer->load(svg);
 
-  kDebug() <<"loaded"<< endl;
+//   kDebug() <<"loaded"<< endl;
   m_highlighting = new QGraphicsSvgItem(m_automaton->game()->backGndWorld());
   m_highlighting->setSharedRenderer(m_renderer);
   m_highlighting->setElementId(m_name);
@@ -521,44 +521,44 @@ void Country::highlight(const QColor& color, qreal opacity)
       (m_anchorPoint.y()-m_highlighting->boundingRect().height()/2)*onu->zoom());
 
   m_highlighting->scale(onu->zoom(), onu->zoom());
-  kDebug() << "done" << endl;
+//   kDebug() << "done" << endl;
 }
 
 void Country::highlightAsAttacker()
 {
-  kDebug() << endl;
+//   kDebug() << endl;
   highlight(Qt::red, 0.6);
   m_highlighting_locked = true;
 }
 
 void Country::highlightAsDefender()
 {
-  kDebug() << endl;
+//   kDebug() << endl;
   highlight(Qt::yellow,0.6);
   m_highlighting_locked = true;
 }
 
 void Country::clearHighlighting()
 {
-  kDebug() << endl;
+//   kDebug() << endl;
   if (!m_highlighting_locked && m_highlighting!=0)
   {
     m_highlighting->hide();
     delete m_highlighting;
     m_highlighting = 0;
   }
-  kDebug() << "done" << endl;
+//   kDebug() << "done" << endl;
 }
 
 bool Country::isHighlightingLocked()
 {
-  kDebug() << endl;
+//   kDebug() << endl;
   return m_highlighting_locked;
 }
 
 void Country::releaseHighlightingLock()
 {
-  kDebug() << endl;
+//   kDebug() << endl;
   m_highlighting_locked=false;
 }
 

@@ -334,14 +334,14 @@ bool AIPlayer::isAI() const
 
 void AIPlayer::run()
 {
-//    kDebug() << name() << " : AIPlayer::run()" << endl;
+  kDebug() << name() << endl;
   stopMe = false;
   while ( ! stopMe )
   {
     actionChoice(m_game->state());
     msleep( 500 );
   }
-//    kDebug() << "OUT AIPlayer::run()" << endl;
+  kDebug() << name()  << "OUT" << endl;
 }
 
 /** set stopMe to true in order for the run method to return */

@@ -92,6 +92,7 @@ namespace Ksirk
 
    void KRightDialog::displayCountryDetails(QPointF * countryPoint)
    {
+      kDebug();
       clearLayout();
       QHBoxLayout * unit = new QHBoxLayout();
       QHBoxLayout * drap = new QHBoxLayout();
@@ -142,6 +143,7 @@ namespace Ksirk
 
    void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int nb_A, int nb_D)
    {
+      kDebug();
 
       clearLayout();
       initListLabel(10);
@@ -266,7 +268,10 @@ namespace Ksirk
       repaint();
    }
 
-   void KRightDialog::displayRecycleDetails(GameLogic::Player * player, int nbAvailArmies) {
+   void KRightDialog::displayRecycleDetails(GameLogic::Player * player, int nbAvailArmies)
+   {
+      kDebug();
+
       clearLayout();
       initListLabel(4);
 
@@ -325,12 +330,16 @@ namespace Ksirk
 
       // hide buttons initialy
       btRecycleWidget->hide();
-      if (nbAvailArmies > 0 || game->getState() == GameLogic::GameAutomaton::INTERLUDE) {
+      if (nbAvailArmies > 0 || game->getState() == GameLogic::GameAutomaton::INTERLUDE)
+      {
         btValidWidget->hide();
       } 
       else 
       {
-        btValidWidget->show();
+        if (!game->currentPlayer()->isVirtual() && !game->currentPlayer()->isAI())
+        {
+          btValidWidget->show();
+        }
       }
 
       mainLayout->update();
@@ -338,24 +347,38 @@ namespace Ksirk
       repaint();
    }
 
-   void KRightDialog::updateRecycleDetails(GameLogic::Country* country, bool recyclePhase, int nbAvailArmies) {
+   void KRightDialog::updateRecycleDetails(GameLogic::Country* country, bool recyclePhase, int nbAvailArmies)
+   {
+      kDebug() << (void*)country << recyclePhase << nbAvailArmies;
 
       rightContents->at(1)->setText(i18n("%1 armies to place", nbAvailArmies));
 
-      if (recyclePhase) {
+      if (recyclePhase)
+      {
         rightContents->at(2)->setText(QString());
         rightContents->at(3)->setText(QString());
 
         // show "redistribute" and "end redistribute" buttons
-        btRecycleWidget->show();
+        if (!game->automaton()->allLocalPlayersComputer())
+        {
+          btRecycleWidget->show();
+        }
         btValidWidget->hide();
-      } else {
+      }
+      else
+      {
         rightContents->at(2)->setText("<b>"+country->name()+"</b>");
         rightContents->at(3)->setText(i18n("<b>Armies: %1", country->nbArmies()));
-        if (nbAvailArmies > 0) {
+        if (nbAvailArmies > 0)
+        {
           btValidWidget->hide();
-        } else {
-          btValidWidget->show();
+        }
+        else
+        {
+          if (!game->currentPlayer()->isVirtual() && !game->currentPlayer()->isAI())
+          {
+            btValidWidget->show();
+          }
         }
       }
 
@@ -366,6 +389,8 @@ namespace Ksirk
 
    void KRightDialog::displayFightResult(int A1=0, int A2=0, int A3=0, int D1=0, int D2=0,int nbA=0,int nbD=0, bool win=false)
    {
+      kDebug();
+
       loadingLabel->clear();
       infoProcess->clear();
 
@@ -433,6 +458,8 @@ namespace Ksirk
 
    void KRightDialog::initListLabel(int nb)
    {
+      kDebug();
+   
       removeListLabel();
       for (int i=0;i<nb;i++)
       {
@@ -443,6 +470,7 @@ namespace Ksirk
    
    void KRightDialog::removeListLabel()
    {
+      kDebug();
       while (rightContents->size() > 0) {
         QLabel* label = rightContents->first();
         rightContents->removeFirst();
@@ -452,6 +480,7 @@ namespace Ksirk
 
    void KRightDialog::clearLabel()
    {
+      kDebug();
       for (int i=0;i<rightContents->size();i++)
       {
         rightContents->at(i)->setText("");
@@ -461,6 +490,7 @@ namespace Ksirk
 
    void KRightDialog::clearLayout()
    {
+      kDebug();
      while (rightContents->size() > 0) {
        QLabel* obj = rightContents->first();
        rightContents->removeFirst();
@@ -514,7 +544,7 @@ namespace Ksirk
 
    void KRightDialog::slotStopAttackAuto()
    {
-       kDebug()<<"Recept signal button stop attack auto" << endl;
+       kDebug()<<"Recept signal button stop attack auto";
        this->game->automaton()->setAttackAuto(false);
        this->buttonStopAttack->setEnabled(false);
    }

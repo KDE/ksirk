@@ -681,14 +681,14 @@ kDebug () << "$$$$$$$STATE FIGHT_BRINGBACK $$$$$$$$$$$" << m_game->haveAnimFight
       stream << point;
       sendMessage(buffer,PlayerRemovesArmy);
     }
-    else */if (event == "actionNextPlayer") 
+    else if (event == "actionNextPlayer")
     {
       QByteArray buffer;
       QDataStream stream(&buffer, QIODevice::WriteOnly);
       stream << -1;
       sendMessage(buffer,NextPlayerRecycling);
     }
-    else if (event == "actionRecycling") 
+    else*/ if (event == "actionRecycling") 
     {
       QByteArray buffer;
       QDataStream stream(&buffer, QIODevice::WriteOnly);
@@ -954,10 +954,12 @@ kDebug () << "$$$$$$$STATE FIGHT_BRINGBACK $$$$$$$$$$$" << m_game->haveAnimFight
     }
     else if (event == "actionLButtonDown")
     {
-	m_game-> cancelAction();
-	if (m_game->firstCountryAt(point))
-		state(WAIT1);
-	state(WAIT);
+      m_game-> cancelAction();
+      if (m_game->firstCountryAt(point))
+      {
+        state(WAIT1);
+      }
+      state(WAIT);
     }
    break;
   /*case WAIT_INPUT:
@@ -1365,8 +1367,8 @@ bool GameAutomaton::joinNetworkGame()
 
       // stop game
       setGameStatus(KGame::End);
-      state(GameLogic::GameAutomaton::INIT);
-      savedState(GameLogic::GameAutomaton::INVALID);
+      state(INIT);
+      savedState(INVALID);
 
       host = hostEdit->text();
       port = portEdit->text().toInt();
@@ -1573,6 +1575,7 @@ bool GameAutomaton::startGame()
     else if (m_state == WAIT_PLAYERS)
     {
       sendCountries();
+      kDebug() << "at " <<  __FILE__ << ", line " << __LINE__ << ", setting state to " << m_savedState << endl;
       state(m_savedState);
       currentPlayer(playerNamed(m_savedPlayer));
       m_game->displayButtonsForState(m_savedState);
@@ -1945,7 +1948,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     m_game->changeItem(messageParts,statusBarId, logStatus);
     break;
   case DisplayRecyclingButtons:
-    m_game->getRightDialog()->updateRecycleDetails(NULL,true,0);
+    m_game->getRightDialog()->updateRecycleDetails(0,true,0);
     m_game->displayRecyclingButtons();
     break;
   case DisplayNormalGameButtons:
@@ -2012,7 +2015,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
         m_game->secondCountry()-> createArmiesSprites();
 
         setAttackAuto(false);
-	setDefenseAuto(false);
+        setDefenseAuto(false);
         if(!currentPlayer()->isAI())m_game->slideInvade(m_game->firstCountry(), m_game->secondCountry());
         state(INVADE);
       }
@@ -2066,12 +2069,12 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     break;
 
 
- case SimultaneousAttackA:
+  case SimultaneousAttackA:
     stream >> nbArmies;
     m_game-> simultaneousAttack(nbArmies,0);
     break;
 
- case SimultaneousAttackD:
+  case SimultaneousAttackD:
     stream >> nbArmies;
     m_game-> simultaneousAttack(nbArmies,1);
     break;
@@ -2088,7 +2091,10 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
       if (m_game->nextPlayerNormal())
       {
         if (newState > 0)
+        {
+          kDebug() << "at " <<  __FILE__ << ", line " << __LINE__ << ", setting state to " << newState << endl;
           state(GameState(newState));
+        }
       }
     }
     break;
@@ -2101,7 +2107,10 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
       {
         m_choosedToRecycleNumber = 0;
         if (newState > 0)
+        {
+          kDebug() << "at " <<  __FILE__ << ", line " << __LINE__ << ", setting state to " << newState << endl;
           state(GameState(newState));
+        }
       }
     }
     break;
@@ -2203,18 +2212,18 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     
     if (m_game->isArena())
     {
-	m_game->animExplosionForArena(m_game->firstCountry(), m_game->secondCountry());
+      m_game->animExplosionForArena(m_game->firstCountry(), m_game->secondCountry());
     }
     else
     {
-	if (explosing != 0 && explosing != 1 && explosing != 2)
-	{
-	KMessageBox::information(m_game, i18n("Problem : no one destroyed"), i18n("Ksirk - Error !"));
-	}
-	else
-	{
-		m_game->animExplosion(explosing,m_game->firstCountry(), m_game->secondCountry());
-	}
+      if (explosing != 0 && explosing != 1 && explosing != 2)
+      {
+      KMessageBox::information(m_game, i18n("Problem : no one destroyed"), i18n("Ksirk - Error !"));
+      }
+      else
+      {
+        m_game->animExplosion(explosing,m_game->firstCountry(), m_game->secondCountry());
+      }
     }
     break;
   case SetupOnePlayer:
@@ -2484,7 +2493,7 @@ void GameAutomaton::countriesDistribution()
   kDebug() << "Message parts size= " << messageParts.size() << endl;
   m_game->broadcastChangeItem(messageParts, ID_STATUS_MSG2);
   m_game->showMessage(i18n("Now, place your armies in your countries<br/>by clicking in the target countries."));
-  state(GameLogic::GameAutomaton::INTERLUDE);
+  state(INTERLUDE);
 }
 
 void GameAutomaton::sendCountries()

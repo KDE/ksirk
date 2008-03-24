@@ -89,7 +89,11 @@ using namespace GameLogic;
 // port all occurrences of setBarPos
 
 KGameWindow::KGameWindow(QWidget* parent) :
-  KXmlGuiWindow(parent), m_automaton(new GameAutomaton()),
+  KXmlGuiWindow(parent),
+  m_rightDock(0),
+  m_rightDialog(0),
+  m_automaton(new GameAutomaton()),
+  m_currentDisplayedWidget(mainMenuType),
   NKD(0), NKA(0),
   ARENA(0),
   nbSpriteAttacking(0),
@@ -114,10 +118,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_timer(this),
   gameActionsToolBar(0),
   m_message(0),
-  m_mouseLocalisation(0),
-  m_currentDisplayedWidget(mainMenuType),
-  m_rightDock(0),
-  m_rightDialog(0)
+  m_mouseLocalisation(0)
 {
   kDebug() << "KGameWindow constructor begin" << endl;
 
@@ -984,7 +985,7 @@ void KGameWindow::displayNextPlayerButton()
 
 void KGameWindow::displayRecyclingButtons()
 {
-//   kDebug() << "KGameWindow::displayRecyclingButtons" << endl;
+  kDebug() << endl;
   clearGameActionsToolbar(false);
   if (m_automaton->allLocalPlayersComputer())
   {
@@ -2331,7 +2332,7 @@ void KGameWindow::clear()
 
 bool KGameWindow::nextPlayerRecycling()
 {
-  kDebug() << "nextPlayerRecycling" << endl;
+  kDebug();
   if ( currentPlayer() && currentPlayer()-> getNbAvailArmies() > 0 )
   {
     KMessageBox::sorry(0, i18n("You must distribute\nall your armies"), i18n("KsirK"));
@@ -2803,7 +2804,7 @@ void KGameWindow::actionRecycling()
 
 void KGameWindow::actionRecyclingFinished()
 {
-  kDebug() << "KGameWindow::actionRecyclingFinished" << endl;
+  kDebug() << endl;
   getRightDialog()->close();
   if (m_automaton->isAdmin())
   {
