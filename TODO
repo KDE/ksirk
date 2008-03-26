@@ -1,5 +1,12 @@
-Before KDE4.0:
+Bugs:
+  * status bar coherence (current player for example and number of armies to place)
+  * should not ask to validate armies placed when computer player
+
+
+Before KDE4.1:
   * max size of the window limited by the map size
+  * display somewhere the number of armies in the hovered country
+  
 
 Quickly
   * replace all QMessageBox by KMessageBox

@@ -42,8 +42,10 @@ namespace Ksirk
    
    KRightDialog::KRightDialog(QDockWidget * parent, ONU * world,KGameWindow* m_game)
    : QWidget(parent),
+   mainLayout(new QGridLayout(this)),
    m_parentWidget(parent),
    world(world),
+   rightContents(new QList<QLabel*>()),
    flag1(0),
    flag2(0),
    milieu(0),
@@ -53,10 +55,8 @@ namespace Ksirk
    game(m_game),
    buttonStopAttack(0)
    {
-	 rightContents = new QList<QLabel*>();
-     mainLayout = new QGridLayout(this);
      setLayout(mainLayout);
-	 setFixedSize(220,360);
+     setFixedSize(220,360);
 
      // load the armie image
      KConfig config(world->getConfigFileName());
@@ -121,7 +121,7 @@ namespace Ksirk
       flag1->setPixmap(0);
       flag2->setPixmap(0);
       flag1->setPixmap(picture);
-      flag1->setFixedSize(picture.width(),picture.height());  
+      flag1->setFixedSize(picture.width(),picture.height());
 
       drap->addWidget(rightContents->at(0));
       drap->addWidget(flag1);
@@ -270,7 +270,7 @@ namespace Ksirk
 
    void KRightDialog::displayRecycleDetails(GameLogic::Player * player, int nbAvailArmies)
    {
-      kDebug();
+      kDebug() << player->name() << nbAvailArmies;
 
       clearLayout();
       initListLabel(4);
@@ -333,8 +333,8 @@ namespace Ksirk
       if (nbAvailArmies > 0 || game->getState() == GameLogic::GameAutomaton::INTERLUDE)
       {
         btValidWidget->hide();
-      } 
-      else 
+      }
+      else
       {
         if (!game->currentPlayer()->isVirtual() && !game->currentPlayer()->isAI())
         {
@@ -351,6 +351,14 @@ namespace Ksirk
    {
       kDebug() << (void*)country << recyclePhase << nbAvailArmies;
 
+      if (btValidWidget == 0)
+      {
+        if (country == 0)
+        {
+          return;
+        }
+        displayRecycleDetails(country->owner(),nbAvailArmies);
+      }
       rightContents->at(1)->setText(i18n("%1 armies to place", nbAvailArmies));
 
       if (recyclePhase)
@@ -381,7 +389,7 @@ namespace Ksirk
           }
         }
       }
-
+      kDebug() << "before update and repaint";
       mainLayout->update();
       repaint();
 
@@ -401,7 +409,7 @@ namespace Ksirk
       milieu->setPalette(*tempP);
       milieu->setFixedHeight(100);
 
-      QGridLayout * milieuGrid = new QGridLayout();   
+      QGridLayout * milieuGrid = new QGridLayout();
       QHBoxLayout * deAtt = new QHBoxLayout();
       QHBoxLayout * deDef = new QHBoxLayout();
 
@@ -425,7 +433,7 @@ namespace Ksirk
 	  }
 	  if(D1!=0 || D1!=-1)
 	  {
-      	QLabel * de4= new QLabel();   
+      	QLabel * de4= new QLabel();
       	de4->setPixmap(game->getDice(KGameWindow::Blue,D1));
       	rightContents->insert(0,de4);deDef->addWidget(de4);
 	  }
@@ -444,12 +452,12 @@ namespace Ksirk
 	  milieuGrid->addWidget(rightContents->at(1),0,0,Qt::AlignCenter);
 	  milieuGrid->addLayout(deAtt,1,0,Qt::AlignCenter);
 	  milieuGrid->addLayout(deDef,2,0,Qt::AlignCenter);
-	  milieuGrid->addWidget(rightContents->at(0),4,0,Qt::AlignCenter); 
+	  milieuGrid->addWidget(rightContents->at(0),4,0,Qt::AlignCenter);
 
       milieu->setLayout(milieuGrid);
       mainLayout->addWidget(milieu,1,0);
 
-      if (buttonStopAttack != 0 && win) 
+      if (buttonStopAttack != 0 && win)
       {
          buttonStopAttack->setEnabled(false);
       }
