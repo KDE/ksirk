@@ -2048,6 +2048,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
           m_game->secondCountry()-> createArmiesSprites();
 
           setAttackAuto(false);
+          setDefenseAuto(false);
           state(WAIT);
         }
       }

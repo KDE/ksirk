@@ -35,7 +35,7 @@ static const char *description =
 
 int main(int argc, char *argv[])
 {
-  kDebug() << "Hello World!" << endl;
+  kDebug() << "Hello World!";
     KAboutData aboutData( "ksirk", 0, ki18n("KsirK"),
         KDE_VERSION_STRING, ki18n(description), KAboutData::License_GPL,
         ki18n("(c) 2002-2005, Gaël de Chalendar\n"), ki18n("For help and user manuel, please see\nThe KsirK Web site"), "http://home.gna.org/ksirk", "kleag@free.fr");
@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
     }
     else 
     {
-      kDebug() << "Creating main window" << endl;
+      kDebug() << "Creating main window";
       Ksirk::KGameWindow *ksirk = new Ksirk::KGameWindow();
 //       connect(app,SIGNAL(lastWindowClosed()),app,SLOT(quit()));
 //         app.setMainWidget(ksirk);
@@ -68,6 +68,6 @@ int main(int argc, char *argv[])
         KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
         args->clear();
     }
-    kDebug() << "Executing app" << endl;
+    kDebug() << "Executing app";
     return app.exec();
 }  

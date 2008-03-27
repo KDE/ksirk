@@ -66,7 +66,7 @@ using namespace GameLogic;
  */
 bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *firstCountry, Country *secondCountry)
 {
-  kDebug() << "KGameWindow::initArmiesMovement -> " << nbABouger  << endl;
+  kDebug() << "-> " << nbABouger ;
   KMessageParts messageParts;
 
   if (firstCountry-> nbArmies() <= nbABouger)
@@ -137,7 +137,7 @@ bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *firstCount
   newGroup->addSprite(sprite);
   firstCountry-> createArmiesSprites();
   sprite->setAnimated();
-//   kDebug() << "initArmiesMovement returns true" << endl;
+//   kDebug() << "initArmiesMovement returns true";
   return true;
 }
 
@@ -158,7 +158,7 @@ bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *firstCount
 
 bool KGameWindow::initArmiesMultipleCombat(unsigned int nbA, Country *firstCountry, Country *secondCountry, QPointF dest)
 {
-  kDebug() << "KGameWindow::initArmiesMultipleCombat -> " << nbA  << endl;
+  kDebug() << "-> " << nbA ;
   KMessageParts messageParts;
 
   //AnimSpritesGroup* newGroup = new AnimSpritesGroup(this,SLOT(slotMovingArmiesArrived(AnimSpritesGroup*)));
@@ -206,28 +206,28 @@ bool KGameWindow::initArmiesMultipleCombat(unsigned int nbA, Country *firstCount
       //relativePosInArenaAttack++;
     }
 
-    kDebug() << "****Test relativePos**** " << relativePosInArena << endl;
+    kDebug() << "****Test relativePos**** " << relativePosInArena;
     QPointF *dep = determinePointDepartArena(firstCountry,relativePosInArena);
 
     sprite-> setPos(*dep);
 
-    kDebug() << "****dep point**** " << *dep << endl;
-    kDebug() << "****dest point**** " << dest << endl;
+    kDebug() << "****dep point**** " << *dep;
+    kDebug() << "****dest point**** " << dest;
     sprite->setupTravel(firstCountry, secondCountry,*dep,dest);
   }
   else
   {
-    kDebug() << "***************Setup travel normal ************** " << endl;
+    kDebug() << "***************Setup travel normal ************** ";
     sprite->setupTravel(firstCountry, secondCountry,&dest);
   }
 
-  kDebug() << "KGameWindow::initArmiesMultipleCombat -> "<< firstCountry->name() << secondCountry->name() << endl;
+  kDebug() << "-> "<< firstCountry->name() << secondCountry->name();
   //sprite->setupTravel(firstCountry, secondCountry,&dest);
   //newGroup->addSprite(sprite);
   m_animFighters->addSprite(sprite);
   //firstCountry-> createArmiesSprites();
   //sprite->setAnimated();
-//   kDebug() << "initArmiesMovement returns true" << endl;
+//   kDebug() << "initArmiesMovement returns true";
   return true;
 }
 
@@ -309,11 +309,11 @@ void KGameWindow::determinePointArrivee(Country *paysAttaquant, Country *paysDef
   // vertical meet point
   pointArriveeY = (((paysDefenseur-> pointFlag().y() + Sprites::SkinSpritesData::single().intData("fighters-flag-y-diff")))* m_theWorld->zoom()) ;
   
-  kDebug() << "2" << endl;
+  kDebug() << "2";
   if (!paysAttaquant->communicateWith(paysDefenseur))
   {
       kError() << "Error in KGameWindow::initCombatMovement: " << paysAttaquant-> name() << "  and "
-              << paysDefenseur-> name() << " do not communicate!" << endl;
+              << paysDefenseur-> name() << " do not communicate!";
       exit(2);
   }
   
@@ -371,7 +371,7 @@ void KGameWindow::determinePointArrivee(Country *paysAttaquant, Country *paysDef
   pointArriveeAttaquant->setY(pointArriveeY);
   pointArriveeDefenseur->setX(pointArriveeDefenseurX);
   pointArriveeDefenseur->setY(pointArriveeY);
-  kDebug() << "3: " << pointArriveeAttaquant << " ; " << pointArriveeDefenseur << endl;
+  kDebug() << "3: " << pointArriveeAttaquant << " ; " << pointArriveeDefenseur;
 }
 
 
@@ -448,11 +448,11 @@ void KGameWindow::determinePointArriveeForArena(Country *paysAttaquant, Country 
   // in case of arena, the vertical meet will be as soon as it's possible
   pointArriveeY = (pointDepartAttaquantY+pointDepartDefenseurY)/2;
   
-  kDebug() << "2" << endl;
+  kDebug() << "2";
   if (!paysAttaquant->communicateWith(paysDefenseur))
   {
       kError() << "Error in KGameWindow::initCombatMovement: " << paysAttaquant-> name() << "  and "
-              << paysDefenseur-> name() << " do not communicate!" << endl;
+              << paysDefenseur-> name() << " do not communicate!";
       exit(2);
   }
   // If the flag of the attacker is to the left of the flag of the defender,
@@ -510,13 +510,13 @@ void KGameWindow::determinePointArriveeForArena(Country *paysAttaquant, Country 
   pointArriveeAttaquant->setY(pointArriveeY);
   pointArriveeDefenseur->setX(pointArriveeDefenseurX);
   pointArriveeDefenseur->setY(pointArriveeY);
-  kDebug() << "3: " << pointArriveeAttaquant << " ; " << pointArriveeDefenseur << endl;
+  kDebug() << "3: " << pointArriveeAttaquant << " ; " << pointArriveeDefenseur;
 }
 
 
 void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefenseur)
 {
-  kDebug() << "1" << endl;
+  kDebug() << "1";
 
   gameActionsToolBar-> hide();
   
@@ -541,7 +541,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
 
   if (!paysAttaquant->spritesInfantry().isEmpty() && ((paysAttaquant->nbArmies() % 5) >= paysAttaquant->owner()->getNbAttack()) && isArena())
   {
-    kDebug() << "**NB-ATTACK**" << paysAttaquant->owner()->getNbAttack() << endl;
+    kDebug() << "**NB-ATTACK**" << paysAttaquant->owner()->getNbAttack();
 
     unsigned int i=0;
     for (; i < paysAttaquant->owner()->getNbAttack() ; i++)
@@ -636,7 +636,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
 	}
   if (attackingSprite==0)
   {
-    kError() << "null attackingSprite at " << __FILE__ << ", line " << __LINE__ << endl;
+    kError() << "null attackingSprite at " << __FILE__ << ", line " << __LINE__;
     return;
   }
 	attackingSprite-> setAttacker();
@@ -660,7 +660,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
 
   if (!paysDefenseur->spritesInfantry().isEmpty() && ((paysDefenseur->nbArmies() % 5) >= paysDefenseur->owner()->getNbDefense()) && isArena())
   {
-	kDebug() << "**NB-DEFENSE**" << paysDefenseur->owner()->getNbDefense() << endl;
+	kDebug() << "**NB-DEFENSE**" << paysDefenseur->owner()->getNbDefense();
 
   unsigned int i=0;
 	for (;i< paysDefenseur->owner()->getNbDefense();i++)
@@ -756,7 +756,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
 
   if (defenderSprite==0)
   {
-    kError() << "null defenderSprite at " << __FILE__ << ", line " << __LINE__ << endl;
+    kError() << "null defenderSprite at " << __FILE__ << ", line " << __LINE__;
     return;
   }
 	defenderSprite-> setDefendant();
@@ -776,19 +776,19 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
 	m_audioPlayer->setCurrentSource(sndRoulePath);
 	m_audioPlayer->play();
   }
-  kDebug() << "2" << endl;
+  kDebug() << "2";
 }
 
 void KGameWindow::animCombat()
 {
- kDebug()<< endl;
+ kDebug();
   m_animFighters->changeTarget(this, SLOT(slotFiringFinished(AnimSpritesGroup*)));
 
   AnimSpritesGroup::iterator it, it_end;
   it = m_animFighters->begin(); it_end = m_animFighters->end();
   for (; it != it_end; it++)
   {
-    kDebug() << "a sprite position: " << (*it)->pos() << endl;
+    kDebug() << "a sprite position: " << (*it)->pos();
     CannonSprite* sprite = (CannonSprite*)(*it);
     sprite-> changeSequence(
         Sprites::SkinSpritesData::single().strData("firing-id"),
@@ -831,7 +831,7 @@ void KGameWindow::animCombat()
 void KGameWindow::stopCombat()
 {
 /*
-//   kDebug()<<"KGameWindow::stopCombat"<< endl;
+//   kDebug();
   AnimSpritesGroup::iterator it = m_animFighters->begin();
   while (it != m_animFighters->end())
   {
@@ -859,11 +859,11 @@ void KGameWindow::stopCombat()
 
 void KGameWindow::animExplosion(int who,Country *paysAttaquant, Country *paysDefenseur)
 {
-  kDebug() << who << endl;
+  kDebug() << who;
 
   m_animFighters->changeTarget(this, SLOT(slotExplosionFinished(AnimSpritesGroup*)));
 
-  kDebug() << "KGameWindow::animExplosion hidden; " << m_animFighters->size() << " fighters" << endl;
+  kDebug() << "KGameWindow::animExplosion hidden; " << m_animFighters->size() << " fighters";
   AnimSpritesGroup::iterator it = m_animFighters->begin();
   for (;it != m_animFighters->end();it++)
   {
@@ -881,9 +881,9 @@ void KGameWindow::animExplosion(int who,Country *paysAttaquant, Country *paysDef
 
 	if (sprite->isAttacker())
 	{
-		kDebug() << "  removing a sprite" << endl;
-		//kDebug() << "i attack" << i << endl;
-		kDebug() << "NKA" << NKA << endl;
+		kDebug() << "  removing a sprite";
+		//kDebug() << "i attack" << i;
+		kDebug() << "NKA" << NKA;
 			
 		sprite->setAnimated(NKA);
 
@@ -902,8 +902,8 @@ void KGameWindow::animExplosion(int who,Country *paysAttaquant, Country *paysDef
 	
 	if (sprite->isDefendant())
 	{
-		kDebug() << "  removing a sprite" << endl;
-		kDebug() << "NKD" << NKD << endl;
+		kDebug() << "  removing a sprite";
+		kDebug() << "NKD" << NKD;
 			
 		sprite->setAnimated(NKD);
 
@@ -922,7 +922,7 @@ void KGameWindow::animExplosion(int who,Country *paysAttaquant, Country *paysDef
     }
     else  // the sprite is not the one (or one the several) killed
     {
-      kDebug() << "  keeping a sprite" << endl;
+      kDebug() << "  keeping a sprite";
       
       if (sprite->isAttacker())
       {
@@ -996,7 +996,7 @@ void KGameWindow::animExplosion(int who,Country *paysAttaquant, Country *paysDef
       m_animFighters->oneArrived(0);
     }
   }
-  kDebug() << "  loop done" << endl;
+  kDebug() << "  loop done";
 
   /*QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
   if (sndCrashPath.isNull())
@@ -1009,19 +1009,19 @@ void KGameWindow::animExplosion(int who,Country *paysAttaquant, Country *paysDef
     m_audioPlayer->setCurrentSource(sndCrashPath);
     m_audioPlayer->play();
   }*/
-  kDebug() << "KGameWindow::animExplosion finished" << endl;
+  kDebug() << "finished";
 //   m_frame-> initTimer();
-//    kDebug()<<"OUT KGameWindow::animExplosion"<<endl;
+//    kDebug()<<"OUT";
 }
 
 
 void KGameWindow::animExplosionForArena(Country *paysAttaquant, Country *paysDefenseur)
 {
-  kDebug() << "KGameWindow::animExplosion " << endl;
+  kDebug();
 
   m_animFighters->changeTarget(this, SLOT(slotExplosionFinished(AnimSpritesGroup*)));
 
-  kDebug() << "KGameWindow::animExplosion hidden; " << m_animFighters->size() << " fighters" << endl;
+  kDebug() << "hidden; " << m_animFighters->size() << " fighters";
   AnimSpritesGroup::iterator it = m_animFighters->begin();
   
   int nbSpriteTreated=0;
@@ -1029,20 +1029,20 @@ void KGameWindow::animExplosionForArena(Country *paysAttaquant, Country *paysDef
   int nbAttackerSurvivor=paysAttaquant->owner()->getNbAttack()-NKA;
   int nbDefenderSurvivor=paysDefenseur->owner()->getNbDefense()-NKD;
 
-  kDebug() << "nbAttackerSurvivor" << nbAttackerSurvivor << endl;
-  kDebug() << "nbDefenderSurvivor" << nbDefenderSurvivor << endl;
+  kDebug() << "nbAttackerSurvivor" << nbAttackerSurvivor;
+  kDebug() << "nbDefenderSurvivor" << nbDefenderSurvivor;
 
 
   for (;nbSpriteTreated < nbSpriteAttacking;it++)
   {
     AnimSprite* sprite = (AnimSprite*)(*it);
 
-    kDebug() << "nbSpriteTreated" << nbSpriteTreated << endl;
-    kDebug() << "nbSpriteAttacking" << nbSpriteAttacking << endl;
+    kDebug() << "nbSpriteTreated" << nbSpriteTreated;
+    kDebug() << "nbSpriteAttacking" << nbSpriteAttacking;
 
     if(dynamic_cast<CannonSprite*>(sprite) != NULL)
     {
-	kDebug() << "*******CANNON*******" <<  endl;
+	kDebug() << "*******CANNON*******";
 
 	if (NKA>0)
 	{
@@ -1055,9 +1055,9 @@ void KGameWindow::animExplosionForArena(Country *paysAttaquant, Country *paysDef
 
 		if (sprite->isAttacker())
 		{
-			kDebug() << "  removing a sprite" << endl;
-			//kDebug() << "i attack" << i << endl;
-			kDebug() << "NKA" << NKA << endl;
+			kDebug() << "  removing a sprite";
+			//kDebug() << "i attack" << i;
+			kDebug() << "NKA" << NKA;
 				
 			sprite->setAnimated(NKA);
 	
@@ -1091,7 +1091,7 @@ void KGameWindow::animExplosionForArena(Country *paysAttaquant, Country *paysDef
     {
 	if(dynamic_cast<CavalrySprite*>(sprite) != NULL)
 	{
-		kDebug() << "*******CAVALIER*******" <<  endl;
+		kDebug() << "*******CAVALIER*******";
 	
 		if (NKA>0)
 		{
@@ -1104,9 +1104,9 @@ void KGameWindow::animExplosionForArena(Country *paysAttaquant, Country *paysDef
 	
 			if (sprite->isAttacker())
 			{
-				kDebug() << "  removing a sprite" << endl;
-				//kDebug() << "i attack" << i << endl;
-				kDebug() << "NKA" << NKA << endl;
+				kDebug() << "  removing a sprite";
+				//kDebug() << "i attack" << i;
+				kDebug() << "NKA" << NKA;
 					
 				sprite->setAnimated(NKA);
 		
@@ -1149,9 +1149,9 @@ void KGameWindow::animExplosionForArena(Country *paysAttaquant, Country *paysDef
 		
 			if (sprite->isAttacker())
 			{
-				kDebug() << "  removing a sprite" << endl;
-				//kDebug() << "i attack" << i << endl;
-				kDebug() << "NKA" << NKA << endl;
+				kDebug() << "  removing a sprite";
+				//kDebug() << "i attack" << i;
+				kDebug() << "NKA" << NKA;
 					
 				sprite->setAnimated(1);
 		
@@ -1170,7 +1170,7 @@ void KGameWindow::animExplosionForArena(Country *paysAttaquant, Country *paysDef
 		}
 		else
 		{
-			kDebug() << "  keeping a sprite" << endl;
+			kDebug() << "  keeping a sprite";
 			if (sprite->isAttacker())
 			{
 				sprite-> changeSequence(
@@ -1191,7 +1191,7 @@ void KGameWindow::animExplosionForArena(Country *paysAttaquant, Country *paysDef
     nbSpriteTreated++;
   }
 
-  kDebug() << "  loop done attack" << endl;
+  kDebug() << "  loop done attack";
 
   nbSpriteTreated=0;
 
@@ -1199,13 +1199,13 @@ void KGameWindow::animExplosionForArena(Country *paysAttaquant, Country *paysDef
   {
     AnimSprite* sprite = (AnimSprite*)(*it);
 
-    kDebug() << "nbSpriteTreated" << nbSpriteTreated << endl;
-    kDebug() << "nbSpriteDefending" << nbSpriteAttacking << endl;
+    kDebug() << "nbSpriteTreated" << nbSpriteTreated;
+    kDebug() << "nbSpriteDefending" << nbSpriteAttacking;
     
 
     if(dynamic_cast<CannonSprite*>(sprite) != NULL)
     {
-	kDebug() << "*******CANNON*******" <<  endl;
+	kDebug() << "*******CANNON*******";
 
 	if (NKD>0)
 	{
@@ -1218,9 +1218,9 @@ void KGameWindow::animExplosionForArena(Country *paysAttaquant, Country *paysDef
 
 		if (sprite->isDefendant())
 		{
-			kDebug() << "  removing a sprite" << endl;
-			//kDebug() << "i attack" << i << endl;
-			kDebug() << "NKD" << NKD << endl;
+			kDebug() << "  removing a sprite";
+			//kDebug() << "i attack" << i;
+			kDebug() << "NKD" << NKD;
 				
 			sprite->setAnimated(NKD);
 	
@@ -1254,7 +1254,7 @@ void KGameWindow::animExplosionForArena(Country *paysAttaquant, Country *paysDef
     {
     	if(dynamic_cast<CavalrySprite*>(sprite) != NULL)
     	{
-		kDebug() << "*******CAVALIER*******" <<  endl;
+		kDebug() << "*******CAVALIER*******";
 
 		if (NKD>0)
 		{
@@ -1267,9 +1267,9 @@ void KGameWindow::animExplosionForArena(Country *paysAttaquant, Country *paysDef
 	
 			if (sprite->isDefendant())
 			{
-				kDebug() << "  removing a sprite" << endl;
-				//kDebug() << "i attack" << i << endl;
-				kDebug() << "NKD" << NKD << endl;
+				kDebug() << "  removing a sprite";
+				//kDebug() << "i attack" << i;
+				kDebug() << "NKD" << NKD;
 					
 				sprite->setAnimated(NKD);
 		
@@ -1312,8 +1312,8 @@ void KGameWindow::animExplosionForArena(Country *paysAttaquant, Country *paysDef
 		
 			if (sprite->isDefendant())
 			{
-				kDebug() << "  removing a sprite" << endl;
-				kDebug() << "NKD" << NKD << endl;
+				kDebug() << "  removing a sprite";
+				kDebug() << "NKD" << NKD;
 					
 				sprite->setAnimated(1);
 		
@@ -1332,7 +1332,7 @@ void KGameWindow::animExplosionForArena(Country *paysAttaquant, Country *paysDef
 		}
 		else  // the sprite is not the one (or one the several) killed
 		{
-			kDebug() << "  keeping a sprite" << endl;
+			kDebug() << "  keeping a sprite";
 			
 			if (sprite->isDefendant())
 			{
@@ -1354,7 +1354,7 @@ void KGameWindow::animExplosionForArena(Country *paysAttaquant, Country *paysDef
     nbSpriteTreated++;
   }
 
-  kDebug() << "  loop done defense" << endl;
+  kDebug() << "  loop done defense";
 
   /*QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
   if (sndCrashPath.isNull())
@@ -1367,20 +1367,20 @@ void KGameWindow::animExplosionForArena(Country *paysAttaquant, Country *paysDef
     m_audioPlayer->setCurrentSource(sndCrashPath);
     m_audioPlayer->play();
   }*/
-  kDebug() << "KGameWindow::animExplosion finished" << endl;
+  kDebug() << "finished";
 //   m_frame-> initTimer();
-//    kDebug()<<"OUT KGameWindow::animExplosion"<<endl;
+//    kDebug()<<"OUT";
 }
 
 void KGameWindow::stopExplosion()
 {
-    kDebug()<<"KGameWindow::stopExplosion"<<endl;
+    kDebug();
     m_animFighters->hideAndRemoveAll();
 }
 
 void KGameWindow::initCombatBringBackForArena(Country *paysAttaquant, Country *paysDefenseur)
 {
-    kDebug()<<"KGameWindow::initCombatBringBack"<<endl;
+    kDebug();
     int who = 0;
     if ((NKD != 0)&&(NKA != 0)) who = 2;
     else if (NKA != 0) who = 0;
@@ -1679,13 +1679,13 @@ void KGameWindow::disconnectMouse()
 {
 /*  if ( ! disconnect(m_frame, SIGNAL(signalLeftButtonDown(const QPoint &)),
                     this, SLOT(slotLeftButtonDown(const QPoint&))))
-    kError() << "cannot connect slotLeftButtonDown !" << endl;
+    kError() << "cannot connect slotLeftButtonDown !";
   if ( ! disconnect(m_frame, SIGNAL(signalLeftButtonUp(const QPoint &)),
                     this, SLOT(slotLeftButtonUp(const QPoint &))))
-    kError() << "cannot connect slotLeftButtonUp !" << endl;
+    kError() << "cannot connect slotLeftButtonUp !";
   if ( ! disconnect(m_frame, SIGNAL(signalRightButtonDown(const QPoint &)),
                     this, SLOT(slotRightButtonDown(const QPoint &))))
-    kError() << "cannot connect slotRightButtonDown !" << endl;*/
+    kError() << "cannot connect slotRightButtonDown !";*/
 }
 
 /**
@@ -1696,13 +1696,13 @@ void KGameWindow::reconnectMouse()
 {
 /*  if ( ! connect(m_frame, SIGNAL(signalLeftButtonDown(const QPoint &)),
                     this, SLOT(slotLeftButtonDown(const QPoint&))))
-  kError() << "cannot connect slotLeftButtonDown !" << endl;
+  kError() << "cannot connect slotLeftButtonDown !";
   if ( ! connect(m_frame, SIGNAL(signalLeftButtonUp(const QPoint &)),
                     this, SLOT(slotLeftButtonUp(const QPoint &))))
-  kError() << "cannot connect slotLeftButtonUp !" << endl;
+  kError() << "cannot connect slotLeftButtonUp !";
   if ( ! connect(m_frame, SIGNAL(signalRightButtonDown(const QPoint &)),
                     this, SLOT(slotRightButtonDown(const QPoint &))))
-  kError() << "cannot connect slotRightButtonDown !" << endl;*/
+  kError() << "cannot connect slotRightButtonDown !";*/
 }
 
 bool KGameWindow::haveAnimFighters() const

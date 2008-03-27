@@ -99,7 +99,7 @@ namespace Ksirk
 
   void mainMenu::slotMainNewGame()
   {
-    kDebug()<<"************ New Game ************" << endl;
+    kDebug()<<"************ New Game ************";
   }
 }
 

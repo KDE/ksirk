@@ -56,7 +56,7 @@ using namespace GameLogic;
 // void KGameWindow::slotTimerEvent()
 void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
 {
-//   kDebug() << endl;
+//   kDebug();
   QString countryName;
   QPoint mousePos;
   QPoint mousePosGlobal;
@@ -126,11 +126,11 @@ void KGameWindow::evenementTimer()
   QPoint mousePos;
   QPointF mousePosition;
 
-//   kDebug() << "KGameWindow::evenementTimer" << endl;
+//   kDebug() << "KGameWindow::evenementTimer";
   mousePos = QCursor::pos();
   mousePosition =  m_frame-> mapFromGlobal(mousePos);
-//   kDebug() << "mousePosition = ( " << mousePosition.x() << " , " << mousePosition.y() << " )" << endl;
-//   kDebug() << "m_frame = ( " << m_frame-> viewport()->width() << " , " << m_frame-> viewport()->height() << " )" << endl;
+//   kDebug() << "mousePosition = ( " << mousePosition.x() << " , " << mousePosition.y() << " )";
+//   kDebug() << "m_frame = ( " << m_frame-> viewport()->width() << " , " << m_frame-> viewport()->height() << " )";
 
   bool restart = false;
 int borderScrollSize = 50;
@@ -138,7 +138,7 @@ int borderScrollSpeed = 40;
   if ((mousePosition.x() < borderScrollSize) && (mousePosition.x() >= 0)
       && (mousePosition.y() >= 0) && (mousePosition.y() <= m_frame-> viewport()->height()))
   {
-    kDebug() << "scrollRight" << endl;
+    kDebug() << "scrollRight";
     m_frame-> horizontalScrollBar()->setValue ( m_frame-> horizontalScrollBar()->value() - borderScrollSpeed);
     restart = true;
   }
@@ -147,14 +147,14 @@ int borderScrollSpeed = 40;
       (mousePosition.x() <= m_frame-> viewport()->width())
       && (mousePosition.y() >= 0) && (mousePosition.y() <= m_frame-> viewport()->height()))
   {
-    kDebug() << "scrollLeft" << endl;
+    kDebug() << "scrollLeft";
     m_frame-> horizontalScrollBar()->setValue ( m_frame-> horizontalScrollBar()->value() + borderScrollSpeed);
     restart = true;
   }
   if ((mousePosition.y() < borderScrollSize) && (mousePosition.y() >= 0)
       && (mousePosition.x() >= 0) && (mousePosition.x() <= m_frame-> viewport()->width()))
   {
-    kDebug() << "scrollDown" << endl;
+    kDebug() << "scrollDown";
     m_frame-> verticalScrollBar()->setValue ( m_frame-> verticalScrollBar()->value() - borderScrollSpeed);
     restart = true;
   }
@@ -164,7 +164,7 @@ int borderScrollSpeed = 40;
   {
     kDebug() << "scrollUp " << m_frame-> verticalScrollBar()->value()
       << "("<< m_frame-> verticalScrollBar()->minimum()
-      << ", " << m_frame-> verticalScrollBar()->maximum() << ")" << endl;
+      << ", " << m_frame-> verticalScrollBar()->maximum() << ")";
     m_frame-> verticalScrollBar()->setValue ( m_frame-> verticalScrollBar()->value() + borderScrollSpeed);
     restart = true;
   }
@@ -172,7 +172,7 @@ int borderScrollSpeed = 40;
   if ( m_animFighters->isEmpty() )
   {
     if ( m_secondCountry && !( m_secondCountry-> owner() ) )
-      kError() << m_secondCountry-> name() << " does not belong to anybody !" << endl;
+      kError() << m_secondCountry-> name() << " does not belong to anybody !";
     // handling of the AI player actions
     /*if ( !( ( ( currentPlayer() && currentPlayer()-> isAI() )
             || ( ( isMyState(GameLogic::GameAutomaton::WAITDEFENSE)  ) && ( m_secondCountry ) && (m_secondCountry->owner())
@@ -182,24 +182,24 @@ int borderScrollSpeed = 40;
   }
 
 
-//    kDebug() << "OUT KGameWindow::evenementTimer" << endl;
+//    kDebug() << "OUT KGameWindow::evenementTimer";
   if (restart)
   {
-//     kDebug() << "restarting timer" << endl;
+//     kDebug() << "restarting timer";
     m_timer.start(200);
   }
 }
 
 void KGameWindow::slotLeftButtonDown(const QPointF& point)
 {
-//   kDebug() << "slotLeftButtonDown" << endl;
+//   kDebug() << "slotLeftButtonDown";
 //   if (currentPlayer() && !(currentPlayer()-> isAI()) )
     m_automaton->gameEvent("actionLButtonDown", point);
 }
 
 void KGameWindow::slotLeftButtonUp(const QPointF& point)
 {
-//     kDebug() << "slotLeftButtonUp" << endl;
+//     kDebug() << "slotLeftButtonUp";
 //     if (currentPlayer() && ! (currentPlayer()-> isAI()) )
     m_automaton->gameEvent("actionLButtonUp", point);
 }
@@ -221,7 +221,7 @@ void KGameWindow::slotRightButtonUp(const QPointF& point)
 /** @todo Clean exit with memory freeing */
 bool KGameWindow::queryExit()
 {
-//   kDebug() << "Writing skin m_config: " << m_automaton->skin() << endl;
+//   kDebug() << "Writing skin m_config: " << m_automaton->skin();
   KGlobal::config()->group("skin").writeEntry("skin", m_automaton->skin());
   KGlobal::config()->sync();
   return true;
@@ -283,18 +283,18 @@ void KGameWindow::slotArena(bool isCheck)
 	if (isCheck)
 	{
 		ARENA = true;
-		kDebug() << "*******Arena On******" << ARENA << endl;
+		kDebug() << "*******Arena On******" << ARENA;
 	}
 	else
 	{
 		ARENA = false;
-		kDebug() << "*******Arena Off******" << ARENA << endl;
+		kDebug() << "*******Arena Off******" << ARENA;
 	}
 }
 
 void KGameWindow::slotNewGame()
 {
-//   kDebug() << "Slot new game: posting event actionNewGame" << endl;
+//   kDebug() << "Slot new game: posting event actionNewGame";
 //   QPoint point;
   if (actionNewGame())
   {
@@ -305,7 +305,7 @@ void KGameWindow::slotNewGame()
 
 void KGameWindow::slotOpenGame()
 {
-  kDebug() << "Slot open game: posting event actionOpenGame" << endl;
+  kDebug() << "Slot open game: posting event actionOpenGame";
   QPoint point;
   m_automaton->gameEvent("actionOpenGame", point);
 //   actionOpenGame();
@@ -386,7 +386,7 @@ void KGameWindow::slotSimultaneousAttack(int state)
 {
   QPoint point;
   
-  kDebug() << "slotSimultaneousAttack" << state << endl;
+  kDebug() << "slotSimultaneousAttack" << state;
 
   // Attack
   if (state==0)
@@ -450,15 +450,15 @@ void KGameWindow::slotCancel()
 
 void KGameWindow::slotDumpGameInformations()
 {
-//   kDebug() << "Game information : " << endl;
-//    kDebug() << "  state : " << GameStateNames[getState()] << endl;
+//   kDebug() << "Game information : ";
+//    kDebug() << "  state : " << GameStateNames[getState()];
 //   kDebug() << "  current player : " 
-//       << ((currentPlayer()) ? currentPlayer()-> name() : "nobody") << endl;
+//       << ((currentPlayer()) ? currentPlayer()-> name() : "nobody");
 }
 
 void KGameWindow::slotFinishMoves()
 {
-//   kDebug() << "slotFinishMoves" << endl;
+//   kDebug() << "slotFinishMoves";
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   m_automaton->sendMessage(buffer,FinishMoves);
@@ -466,7 +466,7 @@ void KGameWindow::slotFinishMoves()
 
 void KGameWindow::slotShowAboutApplication()
 {
-    //kDebug() << "Dans mon About !" << endl;
+    //kDebug() << "Dans mon About !";
 
 /*  KAboutApplication kAA;
   kAA.exec();*/
@@ -476,14 +476,14 @@ void KGameWindow::slotShowAboutApplication()
 
 void KGameWindow::slotJoinNetworkGame() 
 {
-  kDebug() << endl;
+  kDebug();
   QPoint point;
   m_automaton->gameEvent("actionJoinNetworkGame", point);
 }
 
 void KGameWindow::slotShowGoal()
 {
-//   kDebug() << "slotShowGoal" << endl;
+//   kDebug() << "slotShowGoal";
 if (currentPlayer() && !currentPlayer()->isVirtual()
     && !currentPlayer()->isAI())
   {
@@ -538,13 +538,13 @@ void KGameWindow::slotChatReduceButton()
 void KGameWindow::slotMovingFightersArrived(AnimSpritesGroup* sprites)
 {
 Q_UNUSED(sprites)
-  kDebug() << endl;
+  kDebug();
   m_automaton->movingFigthersArrived();
 }
 
 void KGameWindow::slotMovingArmiesArrived(AnimSpritesGroup* sprites)
 {
-  kDebug() << endl;
+  kDebug();
   AnimSpritesGroup::iterator it, it_end;
   it = sprites->begin(); it_end = sprites->end();
   for (; it != it_end; it++)
@@ -568,7 +568,7 @@ void KGameWindow::slotBring(AnimSprite* sprite)
 
 void KGameWindow::slotMovingArmyArrived(AnimSprite* sprite)
 {
-  kDebug() << endl;
+  kDebug();
   sprite->setStatic();
   sprite->hide();
   m_automaton->movingArmyArrived(sprite->getDestination(),
@@ -578,13 +578,13 @@ void KGameWindow::slotMovingArmyArrived(AnimSprite* sprite)
 void KGameWindow::slotFiringFinished(AnimSpritesGroup* sprites)
 {
 Q_UNUSED(sprites)
-  kDebug() << endl;
+  kDebug();
   m_automaton->firingFinished();
 }
 
 void KGameWindow::slotExplosionFinished(AnimSpritesGroup* sprites)
 {
-  kDebug() << endl;
+  kDebug();
   while (!sprites->empty())
   {
     AnimSprite* sprite = sprites->front();
@@ -603,7 +603,7 @@ void KGameWindow::slotExplosionFinished(AnimSpritesGroup* sprites)
 
 void KGameWindow::slotZoomIn()
 {
-  kDebug() << endl;
+  kDebug();
   m_theWorld->applyZoomFactorFast(1.1);					//Call to the fast method (benj)
   m_frame->setMaximumSize(m_theWorld->width(),m_theWorld->height());
   m_scene_world->setSceneRect ( QRectF() );
@@ -614,7 +614,7 @@ void KGameWindow::slotZoomIn()
 
 void KGameWindow::slotZoomOut()
 {
-  kDebug() << endl;
+  kDebug();
   m_theWorld->applyZoomFactorFast(1.0/1.1);				//call to the fast method
   m_frame->setMaximumSize(m_theWorld->width(),m_theWorld->height());
   m_scene_world->setSceneRect ( QRectF() );
@@ -624,10 +624,10 @@ void KGameWindow::slotZoomOut()
 
 void KGameWindow::slotRemoveMessage()
 {
-  kDebug() << endl;
+  kDebug();
   if (m_message != 0)
   {
-    kDebug() << "hiding and deleting" << endl;
+    kDebug() << "hiding and deleting";
     m_message->hide();
     delete m_message;
     m_message = 0;

@@ -44,7 +44,7 @@ DecoratedGameFrame::DecoratedGameFrame(QWidget* parent,
       unsigned int mapW, unsigned int mapH, GameAutomaton* automaton)
   : QGraphicsView(parent), m_mapW(mapW), m_mapH(mapH)
 {
-  kDebug() << "("<<mapW<<"x"<<mapH<<")" << endl;
+  kDebug() << "("<<mapW<<"x"<<mapH<<")";
   setVerticalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
   setHorizontalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
   setCacheMode(QGraphicsView::CacheBackground);
@@ -72,14 +72,14 @@ DecoratedGameFrame::~DecoratedGameFrame()
 
 void DecoratedGameFrame::mouseMoveEvent ( QMouseEvent * event )
 {
-//   kDebug() << "DecoratedGameFrame::mouseMoveEvent" << endl;
+//   kDebug();
   emit (mouseMoveEventReceived(event));
   event->ignore();
 }
 
 QSize DecoratedGameFrame::sizeHint() const
 {
-//   kDebug() << " " << m_mapW << "/" << m_mapH << endl;
+//   kDebug() << " " << m_mapW << "/" << m_mapH;
   return QSize(m_mapW, m_mapH);
 }
 
@@ -175,7 +175,7 @@ void DecoratedGameFrame::initMoveMenu ()
 void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
 {
     menuPoint = QCursor::pos();
-    kDebug() << "************state decoratedgameframe" << m_automaton->stateName() << endl;
+    kDebug() << "************state decoratedgameframe" << m_automaton->stateName();
     if (m_automaton->stateName() != "INIT" && m_automaton->stateName() != "INTERLUDE" && m_automaton->stateName() != "NEWARMIES" && m_automaton->stateName() != "WAIT_RECYCLING")
     {
     	if (!m_automaton-> currentPlayer()->isAI() && !m_automaton-> currentPlayer()->isVirtual())
@@ -270,28 +270,28 @@ void DecoratedGameFrame::setIcon()
  */
 void DecoratedGameFrame::slotMouseInput(KGameIO *input,QDataStream &stream,QMouseEvent *e,bool *eatevent)
 {
-  kDebug() << "DecoratedGameFrame::slotMouseInput()" << endl;
+  kDebug();
   
   KPlayer *player=input->player();
   if (!player->myTurn())
   {
-    kDebug() << "Player " << dynamic_cast<Player*>(player)->name() << ": not my turn!" << endl;
+    kDebug() << "Player " << dynamic_cast<Player*>(player)->name() << ": not my turn!";
     *eatevent=false;
     e->setAccepted(false);
     return;
   }
-  kDebug() << "Player " << dynamic_cast<Player*>(player)->name() << " " << e->type() << endl;
+  kDebug() << "Player " << dynamic_cast<Player*>(player)->name() << " " << e->type();
   if (e->type() == QEvent::GraphicsSceneMousePress)
   {
-    kDebug() << "\tQEvent::MouseButtonPress" << endl;
+    kDebug() << "\tQEvent::MouseButtonPress";
     if (((QGraphicsSceneMouseEvent*)e)->button() == Qt::LeftButton)
     {
-      kDebug() << "\tLeft" << endl;
+      kDebug() << "\tLeft";
       stream << QString("actionLButtonDown");
     }
     else if (((QGraphicsSceneMouseEvent*)e)->button() == Qt::RightButton)
     {
-      kDebug() << "\tRight" << endl;
+      kDebug() << "\tRight";
       stream << QString("actionRButtonDown");
     }
     else
@@ -303,20 +303,20 @@ void DecoratedGameFrame::slotMouseInput(KGameIO *input,QDataStream &stream,QMous
   }
   else if (e->type() == QEvent::GraphicsSceneMouseRelease)
   {
-    kDebug() << "\tQEvent::MouseButtonRelease" << endl;
+    kDebug() << "\tQEvent::MouseButtonRelease";
     if (((QGraphicsSceneMouseEvent*)e)->button() == Qt::LeftButton)
     {
-      kDebug() << "\tLeft" << endl;
+      kDebug() << "\tLeft";
       stream << QString("actionLButtonUp");
     }
     else if (((QGraphicsSceneMouseEvent*)e)->button() == Qt::RightButton)
     {
-      kDebug() << "\tRight" << endl;
+      kDebug() << "\tRight";
       stream << QString("actionRButtonUp");
     }
     else
     {
-      kDebug() << "\tOther:" << e->button() << endl;
+      kDebug() << "\tOther:" << e->button();
       *eatevent=false;
       e->setAccepted(false);
       return;
@@ -324,22 +324,22 @@ void DecoratedGameFrame::slotMouseInput(KGameIO *input,QDataStream &stream,QMous
   }
   else if (e->type() == QWheelEvent::GraphicsSceneWheel)
   {
-    kDebug() << "\tUsing mouse scroll" << endl;
-    kDebug() << "\tdelta : " << ((QGraphicsSceneWheelEvent*)e)->delta() << endl;
+    kDebug() << "\tUsing mouse scroll";
+    kDebug() << "\tdelta : " << ((QGraphicsSceneWheelEvent*)e)->delta();
     if (((QGraphicsSceneWheelEvent*)e)->delta () > 0)
     {
-      	kDebug() << "\tForward" << endl;
+      	kDebug() << "\tForward";
         stream << QString("zoomInAction");
     }
     else if (((QGraphicsSceneWheelEvent*)e)->delta () < 0)
     {
-      kDebug() << "\tBackward" << endl;
+      kDebug() << "\tBackward";
       stream << QString("zoomOutAction");
 
     }
     else
     {
-      kDebug() << "\tOther:" << e->button() << endl;
+      kDebug() << "\tOther:" << e->button();
       *eatevent=false;
       e->setAccepted(false);
       return;
@@ -352,14 +352,14 @@ void DecoratedGameFrame::slotMouseInput(KGameIO *input,QDataStream &stream,QMous
     return;
   }
   QPointF newPoint = ((QGraphicsSceneMouseEvent*)e)->scenePos();
-  kDebug() << "\tPosition: " << newPoint << endl;
+  kDebug() << "\tPosition: " << newPoint;
 
   detailPoint.setX((int)newPoint.x());
   detailPoint.setY((int)newPoint.y());
 
   stream << newPoint;
   *eatevent=true;
-  kDebug() << "Mouse input done... eatevent=true" << endl;
+  kDebug() << "Mouse input done... eatevent=true";
 }
 
 void DecoratedGameFrame::arenaState()
