@@ -315,6 +315,13 @@ void KGameWindow::slotSaveGame()
 {
   if (m_automaton->isAdmin())
   {
+    if (isMyState(GameLogic::GameAutomaton::WAITDEFENSE))
+    {
+      KMessageBox::sorry(this,
+          i18n("Cannot save when waiting for a defense."),
+          i18n("KsirK - Cannot save !"));
+      return;
+    }
     QString fileName = KFileDialog::getSaveFileName (KUrl(), "*.xml", this, i18n("KsirK - Save Game")); 
     if (!fileName.isEmpty())
     {
