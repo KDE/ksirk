@@ -751,6 +751,18 @@ kDebug () << "$$$$$$$STATE FIGHT_BRINGBACK $$$$$$$$$$$" << m_game->haveAnimFight
       stream << quint32(2);
       sendMessage(buffer,ActionDefense);
     }
+    else if (!m_game->secondCountry()->owner()->isVirtual() && isDefenseAuto())
+    {
+      quint32 nbDefense = 1;
+      if (m_game->secondCountry()->nbArmies() > 1)
+      {
+        nbDefense = 2;
+      }
+      QByteArray buffer;
+      QDataStream stream(&buffer, QIODevice::WriteOnly);
+      stream << nbDefense;
+      sendMessage(buffer,ActionDefense);
+    }
     else
     {
       //        if (!event.isEmpty())
