@@ -664,7 +664,9 @@ bool KGameWindow::attackEnd()
         int i = m_automaton->playerList()->indexOf(oldOwner);
         if (i != -1)
           delete m_automaton->playerList()->takeAt(i);
-        kDebug() << "There is now " << m_automaton->playerList()->count() << " m_automaton->playerList()->";
+        kDebug() << "There is now " << m_automaton->playerList()->count() << " players";
+        m_automaton->setMinPlayers(m_automaton->playerList()->count());
+        m_automaton->setGameStatus(KGame::Run);
       }
       if ( ( (m_automaton->useGoals())
              && ( (currentPlayer()->goal().type() == GameLogic::Goal::GoalPlayer)
@@ -700,6 +702,7 @@ bool KGameWindow::attackEnd()
       }
     }
   }
+  m_automaton->setGameStatus(KGame::Run);
   return res;
 }
 

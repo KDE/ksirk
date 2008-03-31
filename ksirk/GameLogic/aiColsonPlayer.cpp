@@ -60,7 +60,7 @@ AIColsonPlayer::AIColsonPlayer(
   m_placeData(0),
   m_nbArmiesToMove(-1)
 {
-  kDebug() << "AIColsonPlayer constructor" << endl;
+  kDebug();
 }
 
 AIColsonPlayer::~AIColsonPlayer() 
@@ -73,8 +73,8 @@ AIColsonPlayer::~AIColsonPlayer()
 
 std::pair< const Country*, const Country* > AIColsonPlayer::chooseBelligerant()
 {
-Fortify();
-  kDebug() << "AIColsonPlayer::chooseBelligerant" << endl;
+  kDebug();
+  Fortify();
   Country* src = 0;
   Country* dest = 0;
   
@@ -93,7 +93,7 @@ Fortify();
     src = m_world->getCountries().at(Attack_SrcCountry);
   if ( (Attack_DestCountry>=0) && (Attack_DestCountry<m_world->getCountries().size() ) )
     dest = m_world->getCountries().at(Attack_DestCountry);
-//   kDebug() << "chose belligerants " << src << " and " << dest << endl;
+//   kDebug() << "chose belligerants " << src << " and " << dest;
   return std::make_pair(src,dest);
 }
 
@@ -103,7 +103,7 @@ Fortify();
   */
 void AIColsonPlayer::chooseAttackMoveArmiesOrNextPlayer()
 {
-  kDebug() << "AIColsonPlayer::chooseAttackMoveArmiesOrNextPlayer() " << endl;
+  kDebug();
   if (m_game->game()->haveAnimFighters() || m_game->game()->haveMovingArmies())
   {
     return;
@@ -120,7 +120,7 @@ void AIColsonPlayer::chooseAttackMoveArmiesOrNextPlayer()
       nextPlayerAction();
     }
   }
-//    kDebug() <<"OUT AIColsonPlayer::chooseAttackMoveArmiesOrNextPlayer()" << endl;
+//    kDebug() <<"OUT AIColsonPlayer::chooseAttackMoveArmiesOrNextPlayer()";
 }
 
 /**
@@ -128,7 +128,7 @@ void AIColsonPlayer::chooseAttackMoveArmiesOrNextPlayer()
   */
 Country* AIColsonPlayer::chooseReceivingCountry()
 {
-  kDebug() << "AIColsonPlayer::chooseReceivingCountry" << endl;
+  kDebug();
   if (m_placeData == 0)
   {
     if (!Place())
@@ -151,9 +151,9 @@ Country* AIColsonPlayer::chooseReceivingCountry()
  */
 void AIColsonPlayer::chooseInvasionAction()
 {
-  kDebug() << "AIColsonPlayer::chooseInvasionAction" << endl;
-  kDebug() << "    Attack_SrcCountry  = " << Attack_SrcCountry << endl;
-  kDebug() << "    Attack_DestCountry = " << Attack_DestCountry << endl;
+  kDebug();
+  kDebug() << "    Attack_SrcCountry  = " << Attack_SrcCountry;
+  kDebug() << "    Attack_DestCountry = " << Attack_DestCountry;
   if (Attack_SrcCountry == - 1 || Attack_DestCountry == -1)
   {
     return;
@@ -163,27 +163,27 @@ void AIColsonPlayer::chooseInvasionAction()
   {
     int nbEnemiesAdjacentToSrc = NbToEqualEnemyAdjacent(m_world->getCountries().at(Attack_SrcCountry));
     int nbEnemiesAdjacentToDest = NbToEqualEnemyAdjacent(m_world->getCountries().at(Attack_DestCountry));
-    kDebug() << "    nb on src  = " << RISK_GetNumArmiesOfCountry(Attack_SrcCountry) << endl;
-    kDebug() << "    nb adj to src  = " << nbEnemiesAdjacentToSrc << endl;
-    kDebug() << "    nb adj to dest = " << nbEnemiesAdjacentToDest << endl;
+    kDebug() << "    nb on src  = " << RISK_GetNumArmiesOfCountry(Attack_SrcCountry);
+    kDebug() << "    nb adj to src  = " << nbEnemiesAdjacentToSrc;
+    kDebug() << "    nb adj to dest = " << nbEnemiesAdjacentToDest;
     int diff = nbEnemiesAdjacentToDest - nbEnemiesAdjacentToSrc;
-    kDebug() << "    diff  = " << diff << endl;
+    kDebug() << "    diff  = " << diff;
   
   
     
     m_nbArmiesToMove = (diff>RISK_GetNumArmiesOfCountry(Attack_SrcCountry)-1)?RISK_GetNumArmiesOfCountry(Attack_SrcCountry)-1:diff;
     if (m_nbArmiesToMove < 0)
       m_nbArmiesToMove = 0; 
-    kDebug() << "    moves " << m_nbArmiesToMove << endl;
+    kDebug() << "    moves " << m_nbArmiesToMove;
   }
 
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   QPoint point;
-  kDebug() << "Moves *****************" << m_nbArmiesToMove << endl;
+  kDebug() << "Moves *****************" << m_nbArmiesToMove;
   if (m_nbArmiesToMove >= 10) 
   {
-    kDebug() << "    choosing actionInvade10" << endl;
+    kDebug() << "    choosing actionInvade10";
     stop(); 
     stream << QString("actionInvade10") << point;
     aiPlayerIO()->sendInput(stream,true);
@@ -191,7 +191,7 @@ void AIColsonPlayer::chooseInvasionAction()
   }
   else if (m_nbArmiesToMove >= 5) 
   { 
-    kDebug() << "    choosing actionInvade5" << endl;
+    kDebug() << "    choosing actionInvade5";
     stop();
     stream << QString("actionInvade5") << point;
     aiPlayerIO()->sendInput(stream,true);
@@ -199,7 +199,7 @@ void AIColsonPlayer::chooseInvasionAction()
   }
   else if (m_nbArmiesToMove >= 1) 
   { 
-    kDebug() << "    choosing actionInvade1" << endl;
+    kDebug() << "    choosing actionInvade1";
     stop();
     stream << QString("actionInvade1") << point;
     aiPlayerIO()->sendInput(stream,true);
@@ -207,7 +207,7 @@ void AIColsonPlayer::chooseInvasionAction()
   }
   else
   {
-    kDebug() << "    choosing actionInvasionFinished" << endl;
+    kDebug() << "    choosing actionInvasionFinished";
     stop();
     stream << QString("actionInvasionFinished") << point;
     aiPlayerIO()->sendInput(stream,true);
@@ -220,9 +220,9 @@ void AIColsonPlayer::chooseInvasionAction()
   */
 bool AIColsonPlayer::moveArmiesAction() 
 {
-  kDebug() << "AIColsonPlayer::moveArmiesAction" << endl;
+  kDebug();
   bool res = Move();
-  kDebug() << "AIColsonPlayer::moveArmiesAction Move got " << res << endl;
+  kDebug() << "Move got " << res;
   return res;
 }
 
@@ -263,7 +263,7 @@ return (player==this);
 
 int AIColsonPlayer::getNumEnemy()
 {
-  kDebug() << "AIColsonPlayer::getNumEnemy" << endl;
+  kDebug();
   int nb = 0;
 
   PlayersArray::iterator it = m_game->playerList()->begin();
@@ -324,7 +324,7 @@ bool AIColsonPlayer::isContinentOfPlayer(const Continent* continent, const Playe
 
 const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
 {
-//   kDebug() << "AIColsonPlayer::computeChoiceOfContinent" << endl;
+//   kDebug();
   std::map< const KPlayer*, std::map <const Continent*, int > > piCount;
   std::map< const KPlayer*, std::map <const Continent*, bool > > maxContinent;
   std::map< const KPlayer*, std::map <const Continent*, bool > > posContinent;
@@ -343,9 +343,9 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
     for (; continentsIt != continentsIt_end; continentsIt++)
     {
       Continent *continent = *continentsIt;
-//       kDebug() << "    " << continent << endl;
+//       kDebug() << "    " << continent;
       if (continent == 0) continue;
-//       kDebug() << "    " << continent->name() << endl;
+//       kDebug() << "    " << continent->name();
       piCount[((Player*)(*it))][continent] = 0;
       maxContinent[((Player*)(*it))][continent] = false;
       posContinent[((Player*)(*it))][continent] = false;
@@ -359,17 +359,17 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
   for (; countriesIt != countriesIt_end; countriesIt++)
   {*/
     Country* country = m_world->getCountries().at(i);
-//     std::cerr << "country " << country << std::endl;
-//     std::cerr << "country " << country->name().toUtf8().data() << std::endl;
+//     kDebug() << "country " << country << ;
+//     kDebug() << "country " << country->name().toUtf8().data();
     if ( country->owner() != 0 && country->continent() != 0)
     {
       piCount[country->owner()][country->continent()]++;
-//       std::cerr << "piCount[" << country->owner()->name().toUtf8().data() << "][" << country->continent()->name().toUtf8().data() << "] " << std::endl;
-//       std::cerr << " is now " << piCount[country->owner()][country->continent()] << std::endl;
+//       kDebug() << "piCount[" << country->owner()->name().toUtf8().data() << "][" << country->continent()->name().toUtf8().data() << "] ";
+//       kDebug() << " is now " << piCount[country->owner()][country->continent()];
     }
     else 
     {
-//       std::cerr << "owner or continent of country " << country->name().toUtf8().data() << " is null..." << std::endl; 
+//       kDebug() << "owner or continent of country " << country->name().toUtf8().data() << " is null...";
     }
   }
 
@@ -391,7 +391,7 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
           if ( (piCount[*it][continent] == continent->getMembers().size())
                 && (continent->getBonus()>bonus))
           {
-            std::cerr << "pt2" << std::endl;
+            kDebug() << "pt2";
             max = piCount[*it][continent];
             bonus = continent->getBonus();
             maxContinent[*it][continent] = true;
@@ -549,7 +549,7 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
       Player* pi = static_cast<Player*>(*iit);
       posContinent[pi][continent] = false;
     }
-    std::cerr << "pt5" << std::endl;
+    kDebug() << "pt5";
     return continent;
   }
 
@@ -602,7 +602,7 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
       Player* pi = static_cast<Player*>(*iit);
       posContinent[pi][continent] = false;
     }
-    std::cerr << "pt6" << std::endl;
+    kDebug() << "pt6";
     return continent;
   }
 
@@ -645,7 +645,7 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
         maxContinent[this][cont] = false;
       }
     }
-    std::cerr << "pt7" << std::endl;
+    kDebug() << "pt7";
     return continent;
   }
 
@@ -683,7 +683,7 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
         maxContinent[this][cont] = false;
       }
     }
-    std::cerr << "pt8" << std::endl;
+    kDebug() << "pt8";
     return continent;
   }
 
@@ -700,7 +700,7 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
   }
 
 //   kDebug() << "AIColsonPlayer::computeChoiceOfContinent for " << name().toUtf8().data()
-//     << " is " << continent << endl;
+//     << " is " << continent;
   return continent;
 }
 
@@ -711,9 +711,9 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
   */
 const Continent* AIColsonPlayer::GetContinentToFortify(int *attack)
 {
-  kDebug() << "AIColsonPlayer::GetContinentToFortify" << endl;
+  kDebug();
   const Continent* continent = computeChoiceOfContinent();
-  kDebug() << "  computeChoiceOfContinent got " << continent << endl;
+  kDebug() << "  computeChoiceOfContinent got " << continent;
   *attack = 0;
   for (int i=0; i!=m_world->getCountries().size(); i++)
   {
@@ -724,7 +724,7 @@ const Continent* AIColsonPlayer::GetContinentToFortify(int *attack)
       (*attack)++;
     }
   }
-  kDebug() << "AIColsonPlayer::GetContinentToFortify found " << continent << endl;
+  kDebug() << "found " << continent;
   return(continent);
 }
 
@@ -734,7 +734,7 @@ const Continent* AIColsonPlayer::GetContinentToFortify(int *attack)
   */
 const Continent* AIColsonPlayer::getContinentToConquier(int *attack)
 {
-  kDebug() << "AIColsonPlayer::getContinentToConquier" << endl;
+  kDebug();
   std::map<const Continent*, int> piCount;
   std::map<const Continent*, int> piOppo;
   std::map<const Continent*, int> piAttac;
@@ -781,9 +781,9 @@ const Continent* AIColsonPlayer::getContinentToConquier(int *attack)
   for (; contIt != contIt_end; contIt++)
   {
     const Continent* cont = *contIt;
-    kDebug() << "    " << cont << endl;
+    kDebug() << "    " << cont;
     if (cont != 0)
-      kDebug() << "    " << cont->name() << endl;
+      kDebug() << "    " << cont->name();
     if (isContinentOfMission(this, cont))
     {
       piOppo[cont] -= piOppo[cont]/3;
@@ -877,7 +877,7 @@ int AIColsonPlayer::NbToAverageEnemyAdjacent(Country* iCountry)
   nbe = (nbe + nbi)/nb;
 //   if ((nbi - nbe)< 10)
 //       nbe = nbi - 10;
-  kDebug() << "NbToAverageEnemyAdjacent of " << iCountry->name() << " is " << nbe << endl;
+  kDebug() << "NbToAverageEnemyAdjacent of " << iCountry->name() << " is " << nbe;
   return nbe;
 }
 
@@ -899,7 +899,7 @@ int AIColsonPlayer::NbToEqualEnemyAdjacent(Country* iCountry)
   }
   int nbi = iCountry->nbArmies();
   int nb = (nbe - nbi);
-  kDebug() << "NbToEqualEnemyAdjacent of " << iCountry->name() << " is " << nb << endl;
+  kDebug() << "NbToEqualEnemyAdjacent of " << iCountry->name() << " is " << nb;
   return nb;
 }
 
@@ -908,7 +908,7 @@ int AIColsonPlayer::NbToEqualEnemyAdjacent(Country* iCountry)
 
 bool AIColsonPlayer::ComputerAttack(int destCountry, bool die, int dif)
 {
-  kDebug() << "AIColsonPlayer::ComputerAttack " << destCountry << endl;
+  kDebug() << destCountry;
 
   if (Attack_SrcCountry!=-1 && Attack_DestCountry!=-1
       && (RISK_GetOwnerOfCountry(Attack_DestCountry) != this)
@@ -916,7 +916,7 @@ bool AIColsonPlayer::ComputerAttack(int destCountry, bool die, int dif)
           && (die || (   RISK_GetNumArmiesOfCountry(Attack_SrcCountry)
                        > RISK_GetNumArmiesOfCountry(Attack_DestCountry))))
   {
-    kDebug() << "    Retry attack" << endl;
+    kDebug() << "    Retry attack";
     return true;
   }
 
@@ -940,7 +940,7 @@ bool AIColsonPlayer::ComputerAttack(int destCountry, bool die, int dif)
     Attack_DestCountry = -1;
     return false;
   }
-  kDebug() << "    srcCountry = " << srcCountry << endl;
+  kDebug() << "    srcCountry = " << srcCountry;
 
   Attack_SrcCountry = srcCountry;
   Attack_DestCountry = destCountry;
@@ -950,12 +950,12 @@ bool AIColsonPlayer::ComputerAttack(int destCountry, bool die, int dif)
 
 bool AIColsonPlayer::Fortify()
 {
-  kDebug() << "AIColsonPlayer::Fortify 1" << endl;
+  kDebug() << "1";
 
   int nb;
   const Continent* continent = GetContinentToFortify(&nb);
   
-  kDebug() << "AIColsonPlayer::Fortify 2" << endl;
+  kDebug() << "2";
   if (nb > 0)
   {
     nb = rand() % nb;
@@ -977,7 +977,7 @@ bool AIColsonPlayer::Fortify()
     }
   }
   
-  kDebug() << "AIColsonPlayer::Fortify 3" << endl;
+  kDebug() << "3";
   for ( int iCountry = 0;
         iCountry < m_world->getCountries().size();
         iCountry++)
@@ -990,7 +990,7 @@ bool AIColsonPlayer::Fortify()
     }
   }
   
-  kDebug() << "AIColsonPlayer::Fortify 4" << endl;
+  kDebug() << "4";
   for ( int iCountry = 0;
         iCountry < m_world->getCountries().size();
         iCountry++)
@@ -1006,12 +1006,12 @@ bool AIColsonPlayer::Fortify()
 
 bool AIColsonPlayer::Place()
 {
-  kDebug() << "AIColsonPlayer::Place" << endl;
+  kDebug();
 
   /* Try to destroy a weak enemy player. 
    * NOTE this could be an error
    * if destroying this player is another player goal... */
-  kDebug() << "AIColsonPlayer::Place 1. Try to destroy a enemy player" << endl;
+  kDebug() << "1. Try to destroy a enemy player";
   
   for (int iCountry = 0; iCountry < m_world->getCountries().size(); iCountry++)
   {
@@ -1030,8 +1030,7 @@ bool AIColsonPlayer::Place()
               && (RISK_GetNumArmiesOfCountry(iCountry) < (2*RISK_GetNumArmiesOfCountry(destCountry))+3) )
         {
           kDebug() << " iCountry: " << RISK_GetNumArmiesOfCountry(iCountry)
-            << " ; destCountry: " << RISK_GetNumArmiesOfCountry(destCountry)
-            << endl;
+            << " ; destCountry: " << RISK_GetNumArmiesOfCountry(destCountry);
           AI_Place (iCountry, 1);
           return true;
         }
@@ -1043,7 +1042,7 @@ bool AIColsonPlayer::Place()
   int nbCountriesWithAdjacentEnemies;
   const Continent* continent = GetContinentToFortify(&nbCountriesWithAdjacentEnemies);
   /* Try to conquier an entire continent, attack enemy */
-  kDebug() << "AIColsonPlayer::Place 2. Try to conquier an entire continent, attack enemy" << endl;
+  kDebug() << "2. Try to conquier an entire continent, attack enemy";
   
   for (int destCountry = 0; 
        destCountry < m_world->getCountries().size();
@@ -1070,7 +1069,7 @@ bool AIColsonPlayer::Place()
   }
 
   /* Try to destroy a player */
-  kDebug() << "AIColsonPlayer::Place 3. Try to destroy a player" << endl;
+  kDebug() << "3. Try to destroy a player";
   for (int iCountry = 0;
        iCountry < m_world->getCountries().size();
        iCountry++)
@@ -1100,7 +1099,7 @@ bool AIColsonPlayer::Place()
   }
 
   /* Try to conquier an entire continent */
-  kDebug() << "AIColsonPlayer::Place 4. Try to conquier an entire continent" << endl;
+  kDebug() << "4. Try to conquier an entire continent";
   for (int destCountry = 0; 
        destCountry < m_world->getCountries().size();
        destCountry++)
@@ -1126,7 +1125,7 @@ bool AIColsonPlayer::Place()
   }
 
   /* Try to defend an entire continent */
-  kDebug() << "AIColsonPlayer::Place 5. Try to defend an entire continent" << endl;
+  kDebug() << "5. Try to defend an entire continent";
   if ( (nbCountriesWithAdjacentEnemies > 0) 
         && (RISK_GetNumArmiesOfPlayer(this) > 0) )
   {
@@ -1157,7 +1156,7 @@ bool AIColsonPlayer::Place()
     }
   }
 
-  kDebug() << "AIColsonPlayer::Place 6. Try to conquier an entire continent, attack enemy" << endl;
+  kDebug() << "6. Try to conquier an entire continent, attack enemy";
   continent = getContinentToConquier(&nbCountriesWithAdjacentEnemies);
   /* Try to conquier an entire continent, attack enemy */
   for (int iCountry = 0;
@@ -1180,7 +1179,7 @@ bool AIColsonPlayer::Place()
         {
           kDebug() << "iCountry " << RISK_GetNumArmiesOfCountry(iCountry)
                     << " ; destCountry " 
-                    << RISK_GetNumArmiesOfCountry(destCountry) << endl;
+                    << RISK_GetNumArmiesOfCountry(destCountry);
           AI_Place (iCountry, 1);
           return true;
         }
@@ -1189,7 +1188,7 @@ bool AIColsonPlayer::Place()
     }
   }
 
-  kDebug() << "AIColsonPlayer::Place 7. Try to conquier an entire continent" << endl;
+  kDebug() << "7. Try to conquier an entire continent";
   /* Try to conquier an entire continent */
   for (int   iCountry = 0;
        iCountry < m_world->getCountries().size();
@@ -1217,7 +1216,7 @@ bool AIColsonPlayer::Place()
     }
   }
 
-  kDebug() << "AIColsonPlayer::Place 8. Try to defend an entire continent" << endl;
+  kDebug() << "8. Try to defend an entire continent";
   /* Try to defend an entire continent */
   if (nbCountriesWithAdjacentEnemies > 0)
   {
@@ -1249,7 +1248,7 @@ bool AIColsonPlayer::Place()
     }
   }
 
-  kDebug() << "AIColsonPlayer::Place 9. Try to prepare an enemy attack, find a lowest defence" << endl;
+  kDebug() << "9. Try to prepare an enemy attack, find a lowest defence";
   /* Try to prepare an enemy attack, find a lowest defence */
   int selected = 0;
   int myDefenceDelta = std::numeric_limits<int>::max();
@@ -1288,7 +1287,7 @@ bool AIColsonPlayer::Place()
     return true;
   }
 
-  kDebug() << "AIColsonPlayer::Place 10.Try to prepare an enemy attack" << endl;
+  kDebug() << "10. Try to prepare an enemy attack";
   /* Try to prepare an enemy attack */
   bool boool10 = false;
   myDefenceDelta = std::numeric_limits<int>::max();
@@ -1296,8 +1295,8 @@ bool AIColsonPlayer::Place()
        iCountry < m_world->getCountries().size();
        iCountry++)
   {
-//     kDebug() << "    looking at iCountry " << iCountry << endl;
-//     kDebug() << "    owner " << RISK_GetOwnerOfCountry(iCountry) << endl;
+//     kDebug() << "    looking at iCountry " << iCountry;
+//     kDebug() << "    owner " << RISK_GetOwnerOfCountry(iCountry);
     if (    (RISK_GetOwnerOfCountry(iCountry) == this)
           &&  GAME_IsEnemyAdjacent(iCountry))
     {
@@ -1307,14 +1306,14 @@ bool AIColsonPlayer::Place()
         int destCountry = RISK_GetAdjCountryOfCountry(iCountry, i);
         int delta = RISK_GetNumArmiesOfCountry(iCountry) - RISK_GetNumArmiesOfCountry(destCountry);
         Player* iEnemy = RISK_GetOwnerOfCountry(destCountry);
-//         kDebug() << "        looking at destCountry " << destCountry << endl;
-//         kDebug() << "        iEnemy " << RISK_GetOwnerOfCountry(destCountry) << endl;
-//         kDebug() << "        isEnemyPlayer? " << isEnemyPlayer(iEnemy) << endl;
-//         kDebug() << "    delta / myDefenceDelta " << delta << " / " << myDefenceDelta << endl;
+//         kDebug() << "        looking at destCountry " << destCountry;
+//         kDebug() << "        iEnemy " << RISK_GetOwnerOfCountry(destCountry);
+//         kDebug() << "        isEnemyPlayer? " << isEnemyPlayer(iEnemy);
+//         kDebug() << "    delta / myDefenceDelta " << delta << " / " << myDefenceDelta;
         if ((iEnemy != this) && isEnemyPlayer(iEnemy) 
               && (delta < myDefenceDelta ) )
         {
-//           kDebug() << "    GOT IT " << iCountry << endl;
+//           kDebug() << "    GOT IT " << iCountry;
           myDefenceDelta = delta;
           boool10 = true;
           selected = iCountry;
@@ -1333,7 +1332,7 @@ bool AIColsonPlayer::Place()
   // cannot reach this line ???
 //   assert(false);
 
-  kDebug() << "AIColsonPlayer::Place 11.Try to prepare an attack" << endl;
+  kDebug() << "11. Try to prepare an attack";
   /* Try to prepare an attack */
   for (int iCountry = 0;
        iCountry < m_world->getCountries().size();
@@ -1347,7 +1346,7 @@ bool AIColsonPlayer::Place()
     }
   }
 
-  kDebug() << "AIColsonPlayer::Place 12.Try to place" << endl;
+  kDebug() << "12. Try to place";
   /* Try to place */
   for (int iCountry = 0; 
        iCountry < m_world->getCountries().size(); 
@@ -1365,7 +1364,7 @@ bool AIColsonPlayer::Place()
 /** @return KsirK change: true if an attack have been tempted; false otherwise */
 bool AIColsonPlayer::AttackEnemy()
 {
-  kDebug() << "AIColsonPlayer::AttackEnemy" << endl;
+  kDebug();
 
   int nbCountriesWithAdjacentEnemies;
   const Continent* continent = GetContinentToFortify(&nbCountriesWithAdjacentEnemies);
@@ -1376,18 +1375,18 @@ bool AIColsonPlayer::AttackEnemy()
                             (RISK_GetNumArmiesOfCountry(Attack_DestCountry) < 5)?1:
                                 ((nbCountriesWithAdjacentEnemies > 4)?RISK_GetNumArmiesOfCountry(Attack_DestCountry):3)))
   {
-    kDebug() << "Attack tempted again." << endl;
+    kDebug() << "Attack tempted again.";
     return true;
   }
 
 
-  kDebug() << "AIColsonPlayer::AttackEnemy 1 Try to conquier an entire continent, attack player of other species " << endl;
+  kDebug() << "1 Try to conquier an entire continent, attack player of other species ";
   /* Try to conquier an entire continent, attack player of other species */
   for ( int destCountry = 0;
         destCountry < m_world->getCountries().size();
         destCountry++)
   {
-//     kDebug() << "destCountry=" << destCountry << " / m_world->getCountries().size()=" << m_world->getCountries().size() << endl;
+//     kDebug() << "destCountry=" << destCountry << " / m_world->getCountries().size()=" << m_world->getCountries().size();
     Player* iEnemy = RISK_GetOwnerOfCountry(destCountry);
     if (    (RISK_GetContinentOfCountry(destCountry) == continent)
           && (iEnemy != this) && isEnemyPlayer(iEnemy))
@@ -1397,13 +1396,13 @@ bool AIColsonPlayer::AttackEnemy()
                                     ((nbCountriesWithAdjacentEnemies > 4)?RISK_GetNumArmiesOfCountry(destCountry):3)))
       {
         destCountry = 0;
-        kDebug() << "Attack tempted." << endl;
+        kDebug() << "Attack tempted.";
         return true;
       }
     }
   }
 
-  kDebug() << "AIColsonPlayer::AttackEnemy 2 Try to conquier an entire continent: " << continent << endl;
+  kDebug() << "2 Try to conquier an entire continent: " << continent;
   /* Try to conquier an entire continent */
   
   for (int destCountry = 0; destCountry < m_world->getCountries().size(); destCountry++)
@@ -1415,24 +1414,24 @@ bool AIColsonPlayer::AttackEnemy()
                           (RISK_GetNumArmiesOfCountry(destCountry) < 3)?1:50))
       {
         destCountry = 0;
-        kDebug() << "Attack tempted." << endl;
+        kDebug() << "Attack tempted.";
         return true;
       }
     }
   }
 
-  kDebug() << "AIColsonPlayer::AttackEnemy should abandon ?" << endl;
+  kDebug() << "should abandon ?";
   if (    !isContinentOfPlayer(continent, this)
        && (m_numTurn[this] <= 2)
        && (allPlayers.count() > m_world->getContinents().size()/2))
   {
-    kDebug() << "AIColsonPlayer::AttackEnemy No attack tried" << endl;
+    kDebug() << "No attack tried";
     Attack_SrcCountry = -1;
     Attack_DestCountry = -1;
     return false;
   }
 
-  kDebug() << "AIColsonPlayer::AttackEnemy 3 Try to destroy a human player" << endl;
+  kDebug() << "3 Try to destroy a human player";
   /* Try to destroy a human player */
   continent = getContinentToConquier(&nbCountriesWithAdjacentEnemies);
 
@@ -1448,13 +1447,13 @@ bool AIColsonPlayer::AttackEnemy()
         if (ComputerAttack (destCountry, true,
                                   (nbCountriesWithAdjacentEnemies > 2)?10:2))
         {
-          kDebug() << "Attack tempted." << endl;
+          kDebug() << "Attack tempted.";
           return true;
         }
     }
   }
 
-  kDebug() << "AIColsonPlayer::AttackEnemy 4 Try to destroy a enemy player" << endl;
+  kDebug() << "4 Try to destroy a enemy player";
   /* Try to destroy a enemy player */
   for (int destCountry = 0;
         destCountry < m_world->getCountries().size();
@@ -1466,13 +1465,13 @@ bool AIColsonPlayer::AttackEnemy()
       if (ComputerAttack (destCountry, true,
                                 (nbCountriesWithAdjacentEnemies > 2)?20:2))
       {
-        kDebug() << "Attack tempted." << endl;
+        kDebug() << "Attack tempted.";
         return true;
       }
     }
   }
 
-  kDebug() << "AIColsonPlayer::AttackEnemy Try to destroy a player" << endl;
+  kDebug() << "Try to destroy a player";
   /* Try to destroy a player */
   for (int destCountry = 0;
         destCountry < m_world->getCountries().size();
@@ -1484,13 +1483,13 @@ bool AIColsonPlayer::AttackEnemy()
       if (ComputerAttack (destCountry, true,
                                 (nbCountriesWithAdjacentEnemies> 2)?20:2))
       {
-        kDebug() << "Attack tempted." << endl;
+        kDebug() << "Attack tempted.";
         return true;
       }
     }
   }
 
-  kDebug() << "AIColsonPlayer::AttackEnemy 5 Try to conquier an entire continent, attack player of other species" << endl;
+  kDebug() << "5 Try to conquier an entire continent, attack player of other species";
   /* Try to conquier an entire continent, attack player of other species */
   for (int destCountry = 0;
         destCountry < m_world->getCountries().size();
@@ -1505,13 +1504,13 @@ bool AIColsonPlayer::AttackEnemy()
                                     ((nbCountriesWithAdjacentEnemies > 4)?RISK_GetNumArmiesOfCountry(destCountry):3)))
       {
         destCountry = 0;
-        kDebug() << "Attack tempted." << endl;
+        kDebug() << "Attack tempted.";
         return true;
       }
     }
   }
 
-  kDebug() << "AIColsonPlayer::AttackEnemy 6 Try to conquier an entire continent" << endl;
+  kDebug() << "6 Try to conquier an entire continent";
   /* Try to conquier an entire continent */
   for (int destCountry = 0;
         destCountry < m_world->getCountries().size();
@@ -1524,13 +1523,13 @@ bool AIColsonPlayer::AttackEnemy()
                           (RISK_GetNumArmiesOfCountry(destCountry) < 3)?1:50))
       {
         destCountry = 0;
-        kDebug() << "Attack tempted." << endl;
+        kDebug() << "Attack tempted.";
         return true;
       }
     }
   }
 
-  kDebug() << "AIColsonPlayer::AttackEnemy 7 Try to attack a stronger human player for a card" << endl;
+  kDebug() << "7 Try to attack a stronger human player for a card";
   /* Try to attack a stronger human player for a card */
   for (int destCountry = 0;
         destCountry < m_world->getCountries().size();
@@ -1544,13 +1543,13 @@ bool AIColsonPlayer::AttackEnemy()
       if (ComputerAttack (destCountry, false,
                           (RISK_GetNumArmiesOfCountry(destCountry) < 3)?1:((nbCountriesWithAdjacentEnemies > 2)?10:2)))
       {
-        kDebug() << "Attack tempted." << endl;
+        kDebug() << "Attack tempted.";
         return true;
       }
     }
   }
 
-  kDebug() << "AIColsonPlayer::AttackEnemy 8 Try to attack an human player for a card" << endl;
+  kDebug() << "8 Try to attack an human player for a card";
   /* Try to attack an human player for a card */
   for (int destCountry = 0;
         destCountry < m_world->getCountries().size();
@@ -1563,13 +1562,13 @@ bool AIColsonPlayer::AttackEnemy()
       if (ComputerAttack (destCountry, false,
                           (RISK_GetNumArmiesOfCountry(destCountry) < 3)?1:((nbCountriesWithAdjacentEnemies > 2)?10:2)))
       {
-        kDebug() << "Attack tempted." << endl;
+        kDebug() << "Attack tempted.";
         return true;
       }
     }
   }
 
-  kDebug() << "AIColsonPlayer::AttackEnemy 9 Try to attack enemy player for a card" << endl;
+  kDebug() << "9 Try to attack enemy player for a card";
   /* Try to attack enemy player for a card */
   for (int destCountry = 0;
         destCountry < m_world->getCountries().size();
@@ -1581,13 +1580,13 @@ bool AIColsonPlayer::AttackEnemy()
                             (RISK_GetNumArmiesOfCountry(destCountry) < 3)?1:((nbCountriesWithAdjacentEnemies > 2)?10:2)))
     {
       {
-        kDebug() << "Attack tempted." << endl;
+        kDebug() << "Attack tempted.";
         return true;
       }
     }
   }
 
-  kDebug() << "AIColsonPlayer::AttackEnemy 10 Try to attack for a card, attack a stronger player" << endl;
+  kDebug() << "10 Try to attack for a card, attack a stronger player";
   /* Try to attack for a card, attack a stronger player */
   for (int destCountry = 0;
         destCountry < m_world->getCountries().size();
@@ -1600,13 +1599,13 @@ bool AIColsonPlayer::AttackEnemy()
       if (ComputerAttack (destCountry, false,
                           (RISK_GetNumArmiesOfCountry(destCountry) < 2)?1:100))
       {
-        kDebug() << "Attack tempted." << endl;
+        kDebug() << "Attack tempted.";
         return true;
       }
     }
   }
 
-  kDebug() << "AIColsonPlayer::AttackEnemy 11 Try to attack for a card" << endl;
+  kDebug() << "11 Try to attack for a card";
   /* Try to attack for a card */
   for (int destCountry = 0;
         destCountry < m_world->getCountries().size();
@@ -1619,13 +1618,13 @@ bool AIColsonPlayer::AttackEnemy()
 //                           (RISK_GetNumArmiesOfCountry(destCountry) < 2)?1:100
                           ))
       {
-        kDebug() << "Attack tempted." << endl;
+        kDebug() << "Attack tempted.";
         return true;
       }
     }
   }
 
-  kDebug() << "AIColsonPlayer::AttackEnemy No attack tried" << endl;
+  kDebug() << "No attack tried";
   // No attack tried
   Attack_SrcCountry = -1;
   Attack_DestCountry = -1;
@@ -1634,7 +1633,7 @@ bool AIColsonPlayer::AttackEnemy()
 
 bool AIColsonPlayer::Attack()
 {
-  kDebug() << "AIColsonPlayer::Attack" << endl;
+  kDebug();
   int enemyAlive;
 
 //   if (RISK_GetAttackModeOfPlayer (player) != ACTION_DOORDIE)
@@ -1673,7 +1672,7 @@ int AIColsonPlayer::FindEnemyAdjacent(int iCountry, int distance)
   {
     return m_enemyAdjacent[std::make_pair(iCountry,distance)];
   }
-  kDebug() << "AIColsonPlayer::FindEnemyAdjacent(" << iCountry << ", " << distance << ")" << endl;
+  kDebug() << iCountry << distance;
   int i, min, res, dest;
 
   Player* iPlayer = RISK_GetOwnerOfCountry(iCountry);
@@ -1703,7 +1702,7 @@ int AIColsonPlayer::FindEnemyAdjacent(int iCountry, int distance)
 
 int AIColsonPlayer::GAME_FindEnemyAdjacent(int iCountry)
 {
-  kDebug() << "AIColsonPlayer::GAME_FindEnemyAdjacent(" << iCountry << ")" << endl;
+  kDebug() << iCountry;
   m_enemyAdjacent.clear();
   int i, min, res, dest, destCountry;
   Player* iPlayer = RISK_GetOwnerOfCountry(iCountry);
@@ -1711,7 +1710,7 @@ int AIColsonPlayer::GAME_FindEnemyAdjacent(int iCountry)
   min = 100000;
   for (i=0; i!=6 && RISK_GetAdjCountryOfCountry(iCountry, i)!=-1; i++)
   {
-    kDebug() << "  i = " << i << endl;
+    kDebug() << "  i = " << i;
     dest = RISK_GetAdjCountryOfCountry(iCountry, i);
     if (RISK_GetOwnerOfCountry(dest) == iPlayer)
     {
@@ -1735,14 +1734,14 @@ int AIColsonPlayer::GAME_FindEnemyAdjacent(int iCountry)
 
 bool AIColsonPlayer::Move()
 {
-  kDebug() << "AIColsonPlayer::Move 1" << endl;
+  kDebug();
 
   /* Try to move an unused max army in a frontier */
   int iCountry = -1;
   int max = 1;
   for (int i=0; i < m_world->getCountries().size();i++)
   {
-    kDebug() << "AIColsonPlayer::Move 1: " << i << endl;
+    kDebug() << "1: " << i;
     if (    (RISK_GetOwnerOfCountry(i) == this)
           && (RISK_GetNumArmiesOfCountry(i) > max)
           && !GAME_IsEnemyAdjacent(i))
@@ -1751,21 +1750,21 @@ bool AIColsonPlayer::Move()
       iCountry = i;
     }
   }
-  kDebug() << "AIColsonPlayer::Move 1p iCountry=" << iCountry << endl;
+  kDebug() << "1p iCountry=" << iCountry;
   if (iCountry>=0)
   {
     int destCountry = GAME_FindEnemyAdjacent(iCountry);
-    kDebug() << "  found adjacent enemy " << destCountry << endl;
+    kDebug() << "  found adjacent enemy " << destCountry;
     if (destCountry >= 0)
     {
       AI_Move (iCountry, destCountry,
                   RISK_GetNumArmiesOfCountry(iCountry)-1);
-      kDebug() << "    Moved " << RISK_GetNumArmiesOfCountry(iCountry)-1 << endl;
+      kDebug() << "    Moved " << RISK_GetNumArmiesOfCountry(iCountry)-1;
       return true;
     }
   }
 
-  kDebug() << "AIColsonPlayer::Move 2" << endl;
+  kDebug() << "2";
   /* Try to move an unused army in a country witch have a frontier */
   for (int iCountry = 0;iCountry < m_world->getCountries().size();iCountry++)
   {
@@ -1778,13 +1777,13 @@ bool AIColsonPlayer::Move()
       {
         AI_Move (iCountry, destCountry,
                   RISK_GetNumArmiesOfCountry(iCountry)-1);
-      kDebug() << "    Moved " << RISK_GetNumArmiesOfCountry(iCountry)-1 << endl;
+      kDebug() << "    Moved " << RISK_GetNumArmiesOfCountry(iCountry)-1;
         return true;
       }
     }
   }
 
-  kDebug() << "AIColsonPlayer::Move 3" << endl;
+  kDebug() << "3";
   for (int iCountry = 0;(iCountry < m_world->getCountries().size()); iCountry++)
   {
     if (    (RISK_GetOwnerOfCountry(iCountry) == this)
@@ -1798,13 +1797,13 @@ bool AIColsonPlayer::Move()
         {
           AI_Move (iCountry, destCountry,
                     RISK_GetNumArmiesOfCountry(iCountry)/2);
-          kDebug() << "    Moved " << RISK_GetNumArmiesOfCountry(iCountry)/2 << endl;
+          kDebug() << "    Moved " << RISK_GetNumArmiesOfCountry(iCountry)/2;
           return true;
         }
       }
     }
   }
-  kDebug() << "    Nothing Moved " << endl;
+  kDebug() << "    Nothing Moved ";
 
   return false;
 }
@@ -2022,7 +2021,7 @@ bool AIColsonPlayer::Move()
 
 void AIColsonPlayer::finalize()
 {
-  kDebug() <<"AIColsonPlayer::finalize" << endl; 
+  kDebug(); 
 
   for (unsigned int i=0; i<m_game->playerList()->count(); i++)
   {
@@ -2046,13 +2045,13 @@ void AIColsonPlayer::finalize()
   m_levelEnemy = 3;
   computeChoiceOfContinent();
   m_initialized = true;
-  kDebug() <<"    init done." << endl; 
+  kDebug() <<"    init done.";
 }
 
 int AIColsonPlayer::AI_Place(int iCountry, int iNumArmies)
 {
-  kDebug() << "AIColsonPlayer::AI_Place " << iNumArmies 
-            << " on country number " << iCountry << endl;
+  kDebug() << iNumArmies 
+            << " on country number " << iCountry;
   m_placeData = new PlaceData();
   m_placeData->dest = m_game->game()->theWorld()->getCountries()[iCountry];
   m_placeData->nb = iNumArmies;
@@ -2061,12 +2060,12 @@ int AIColsonPlayer::AI_Place(int iCountry, int iNumArmies)
 
 int AIColsonPlayer::AI_Move(int iSrcCountry, int iDstCountry, int iNumArmies)
 {
-  kDebug() << "AIColsonPlayer::AI_Move(" << iSrcCountry << ", " << iDstCountry << ", " << iNumArmies << ")" << endl;
+  kDebug() << iSrcCountry << ", " << iDstCountry << ", " << iNumArmies;
   m_src = m_game->game()->theWorld()->getCountries()[iSrcCountry];
   m_dest = m_game->game()->theWorld()->getCountries()[iDstCountry];
   m_toMove = iNumArmies;
-  kDebug() << "AIColsonPlayer::AI_Move " << iNumArmies << " armies from " 
-      << m_src->name() << " to " << m_dest->name() << endl;
+  kDebug() << iNumArmies << " armies from "
+      << m_src->name() << " to " << m_dest->name();
   
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
@@ -2103,7 +2102,7 @@ Continent* AIColsonPlayer::RISK_GetContinentOfCountry(int i)
 
 bool AIColsonPlayer::GAME_IsEnemyAdjacent(int i)
 {
-  kDebug() << "AIColsonPlayer::GAME_IsEnemyAdjacent " << i << endl;
+  kDebug() << i;
   return m_game->game()->theWorld()->getCountries()[i]->hasAdjacentEnemy();
 }
 
