@@ -600,7 +600,7 @@ void KGameWindow::slotExplosionFinished(AnimSpritesGroup* sprites)
     delete sprite;
   }
   
-  if (isArena())
+  if (backGnd()->bgIsArena())
   {
 	m_automaton->game()->initCombatBringBackForArena(m_automaton->game()->firstCountry(), m_automaton->game()->secondCountry());
   }

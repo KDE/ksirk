@@ -142,20 +142,6 @@ bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *firstCount
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 bool KGameWindow::initArmiesMultipleCombat(unsigned int nbA, Country *firstCountry, Country *secondCountry, QPointF dest)
 {
   kDebug() << "-> " << nbA ;
@@ -189,7 +175,7 @@ bool KGameWindow::initArmiesMultipleCombat(unsigned int nbA, Country *firstCount
   }
   //connect(sprite,SIGNAL(atDestination(AnimSprite*)),this,SLOT(slotMovingArmyArrived(AnimSprite*)));
   
-  if (isArena())
+  if (backGnd()->bgIsArena())
   {
     int relativePosInArena=0;
 
@@ -479,7 +465,7 @@ void KGameWindow::determinePointArriveeForArena(Country *paysAttaquant, Country 
   
   qreal rightRelativePos = (Sprites::SkinSpritesData::single().intData("width-between-flag-and-fighter") + Sprites::SkinSpritesData::single().intData("flag-width"))*m_theWorld->zoom();
 
-  //if (!(qAbs(pointFlagAttaquantX-pointFlagDefenseurX) > (backGnd()-> boundingRect().width() / 2)) || isArena())
+  //if (!(qAbs(pointFlagAttaquantX-pointFlagDefenseurX) > (backGnd()-> boundingRect().width() / 2)) || backGnd()->bgIsArena())
   //{
       if ( pointFlagAttaquantX <= pointFlagDefenseurX )
       {
@@ -530,7 +516,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   QPointF *pointArriveeAttaquant = new QPointF(0,0);
   QPointF *pointArriveeDefenseur = new QPointF(0,0);
  
-  if (isArena())
+  if (backGnd()->bgIsArena())
   {
 	determinePointArriveeForArena(paysAttaquant,paysDefenseur,0,pointArriveeAttaquant,pointArriveeDefenseur);
   }
@@ -539,7 +525,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   	determinePointArrivee(paysAttaquant,paysDefenseur,pointArriveeAttaquant,pointArriveeDefenseur);
   }
 
-  if (!paysAttaquant->spritesInfantry().isEmpty() && ((paysAttaquant->nbArmies() % 5) >= paysAttaquant->owner()->getNbAttack()) && isArena())
+  if (!paysAttaquant->spritesInfantry().isEmpty() && ((paysAttaquant->nbArmies() % 5) >= paysAttaquant->owner()->getNbAttack()) && backGnd()->bgIsArena())
   {
     kDebug() << "**NB-ATTACK**" << paysAttaquant->owner()->getNbAttack();
 
@@ -553,7 +539,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   else
   {
     nbSpriteAttacking=1;
-    if (!paysAttaquant->spritesInfantry().isEmpty() && !isArena())
+    if (!paysAttaquant->spritesInfantry().isEmpty() && !backGnd()->bgIsArena())
   	{
 		// search the correct infantry string (normal sprite, with number 1, 2, or 3)
 		QString infantryString;
@@ -617,7 +603,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
 			else
 			{
 				// if the soldier have not attack yet in the arena it means that it must be the last to do so
-				if (!paysAttaquant->spritesInfantry().isEmpty() && isArena())
+				if (!paysAttaquant->spritesInfantry().isEmpty() && backGnd()->bgIsArena())
   				{
 					attackingSprite = new InfantrySprite(
 					Sprites::SkinSpritesData::single().strData("infantry-id"),
@@ -658,7 +644,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   }
 
 
-  if (!paysDefenseur->spritesInfantry().isEmpty() && ((paysDefenseur->nbArmies() % 5) >= paysDefenseur->owner()->getNbDefense()) && isArena())
+  if (!paysDefenseur->spritesInfantry().isEmpty() && ((paysDefenseur->nbArmies() % 5) >= paysDefenseur->owner()->getNbDefense()) && backGnd()->bgIsArena())
   {
 	kDebug() << "**NB-DEFENSE**" << paysDefenseur->owner()->getNbDefense();
 
@@ -672,7 +658,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   else
   {
   	nbSpriteDefending=1;
-    if (!paysDefenseur->spritesInfantry().isEmpty() && !isArena())
+    if (!paysDefenseur->spritesInfantry().isEmpty() && !backGnd()->bgIsArena())
   	{
 		// search the correct infantry string (normal sprite, with number 1, 2, or 3)
 		QString infantryString;
@@ -736,7 +722,7 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
 			else
 			{
 				// if the soldier have not defend yet in the arena it means that it must be the last to do so
-				if (!paysDefenseur->spritesInfantry().isEmpty() && isArena())
+				if (!paysDefenseur->spritesInfantry().isEmpty() && backGnd()->bgIsArena())
   				{
 					attackingSprite = new InfantrySprite(
 					Sprites::SkinSpritesData::single().strData("infantry-id"),
@@ -1649,27 +1635,6 @@ void KGameWindow::initCombatBringBackForArena(Country *paysAttaquant, Country *p
     relativePosInArenaAttack=0;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /**
   * Disconnects the mouse events signals from their slots to avoid human

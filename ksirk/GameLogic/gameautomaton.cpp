@@ -2223,7 +2223,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   case AnimExplosion:
     stream >> explosing;
     
-    if (m_game->isArena())
+    if (m_game->backGnd()->bgIsArena())
     {
       m_game->animExplosionForArena(m_game->firstCountry(), m_game->secondCountry());
     }

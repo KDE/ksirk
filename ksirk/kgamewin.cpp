@@ -2562,12 +2562,12 @@ bool KGameWindow::simultaneousAttack(int nb, int state)
   else
   {
 	determinePointArriveeForArena(secondCountry(), firstCountry(),relativePosInArenaDefense, pointAttaquant,pointDefenseur);
-
+	
 	kDebug() << "****point def****" << *pointAttaquant;
-
+	
 	kDebug() << "****SIMULTANEOUS DEFENSE****";
 	res = initArmiesMultipleCombat(nb, secondCountry(), secondCountry(),*pointAttaquant);
-
+	
 	relativePosInArenaDefense++;
   }
   return res;
