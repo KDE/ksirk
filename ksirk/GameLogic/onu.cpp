@@ -280,7 +280,7 @@ ONU::ONU(GameAutomaton* automaton,
   {
     KConfigGroup goalGroup = config.group(goal);
 
-    Goal* goal = new Goal();
+    Goal* goal = new Goal(automaton);
     goal->description(goalGroup.readEntry("desc",""));
     QString goalType = goalGroup.readEntry("type","");
     if (goalType == "countries")

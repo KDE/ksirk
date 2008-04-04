@@ -1750,6 +1750,7 @@ void GameAutomaton::slotPropertyChanged(KGamePropertyBase *prop,KGame *)
   {
     kDebug() << "skin changed to: " << m_skin << endl;
     m_game->newSkin();
+    m_game->theWorld()->reset();
   }
   kDebug() << "END GameAutomaton::slotPropertyChanged " << prop->id() << " (skin is " << m_skinId << ")" << endl;
 }
@@ -1867,7 +1868,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   KMessageParts messageParts;
   QString messagePart;
   Player* player;
-  PlayerMatrix waitedPlayerDef;
+  PlayerMatrix waitedPlayerDef(this);
   quint32 nbWaitedPlayers;
   quint32 waitedPlayerId;
   QString waitedPlayerPassword;
@@ -2290,7 +2291,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     {
       stream >> countryName;
       country = m_game->theWorld()->countryNamed(countryName);
-//       kDebug() << "Setting up country n°" << i << " on " << nbCountries << ", " << country << " named " << countryName << endl;
+      kDebug() << "Setting up country n°" << i << " on " << nbCountries << ", " << (void*)country << " named " << countryName << endl;
       if (country)
       {
         stream >> country;

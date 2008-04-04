@@ -86,12 +86,7 @@ void KWaitedPlayerSetupDialog::fillWaitedPlayersCombo()
   for (; it != it_end; it++)
   {
     kDebug() << "Adding waited player " << (*it).name << endl;
-    QString imgName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Images/sprites/" + m_automaton->game()->theWorld()->nationNamed((*it).nation)->flagFileName());
-    if (imgName.isNull())
-    {
-      KMessageBox::error(0, i18n("Flag image resource not found\nProgram cannot continue"), i18n("Error !"));
-        exit(2);
-    }
+    QString imgName = m_automaton->game()->theWorld()->nationNamed((*it).nation)->flagFileName();
 //     load image
     QPixmap flag;
     QSize size(flag.width()/Sprites::SkinSpritesData::single().intData("flag-frames"),flag.height());

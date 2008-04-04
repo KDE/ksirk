@@ -117,7 +117,10 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
     
     QString password = atts.value("password");
     
-    if (password.isEmpty())
+    bool isLocal = true; // local player by default
+    if (atts.value("local") == "false") isLocal = false;
+
+    if (isLocal)
     {
       kDebug() << "Adding the read player " << name << endl;
       m_game.addPlayer(name, nbAvailArmies, nbCountries, nationName,
@@ -125,7 +128,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
     }
     else
     {
-      PlayerMatrix pm;
+      PlayerMatrix pm(m_game.automaton());
       pm.name = name;
       pm.nbAttack = nbAttack;
       pm.nbCountries = nbCountries;

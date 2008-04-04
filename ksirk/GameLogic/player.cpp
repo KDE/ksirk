@@ -216,6 +216,7 @@ void Player::innerSaveXml(std::ostream& xmlStream)
   nationName = nationName.replace(">","&gt;");
   xmlStream << " nation=\"" << nationName.toUtf8().data() << "\"";
   xmlStream << " password=\"" << m_password.value().toUtf8().data() << "\"";
+  xmlStream << " local=\"" << (isVirtual()?"false":"true") << "\"";
 }
 
 bool   Player::load (QDataStream &stream)

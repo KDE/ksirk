@@ -257,6 +257,7 @@ typedef KGame::KGamePlayerList PlayersArray;
   */
 struct PlayerMatrix
 {
+  PlayerMatrix(GameLogic::GameAutomaton* automaton): goal(automaton){}
 
   QString name;
   

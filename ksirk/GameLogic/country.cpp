@@ -465,8 +465,7 @@ void Country::saveXml(std::ostream& xmlStream)
 
 void Country::send(QDataStream& stream)
 {
-  
-stream << m_name << (m_belongsTo?m_belongsTo->name():"") << quint32(m_nbArmies) << quint32(m_nbAddedArmies);
+  stream << m_name << (m_belongsTo?m_belongsTo->name():"") << quint32(m_nbArmies) << quint32(m_nbAddedArmies);
 }
 
 bool Country::hasAdjacentEnemy()

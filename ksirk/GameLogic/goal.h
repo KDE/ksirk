@@ -59,8 +59,6 @@ public:
     GoalAdvance = 2 /**< The advance step. */
   };
   
-  /** Default constructor */
-  Goal();
   Goal(GameAutomaton* automaton);
   
   /** Copy constructor */
@@ -162,6 +160,9 @@ public:
 
   GameAutomaton* m_automaton;
   private:
+    /** Default constructor */
+  Goal();
+
   GoalType m_type;
   QString m_description;
   unsigned int m_nbCountries;

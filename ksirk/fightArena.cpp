@@ -25,7 +25,9 @@ namespace Ksirk
 {
    using namespace GameLogic;
 
-   FightArena::FightArena(QWidget* parent, unsigned int mapW, unsigned int mapH, QGraphicsScene* sceneArena,ONU* onuObject, GameAutomaton* automaton):
+   FightArena::FightArena(QWidget* parent, unsigned int mapW, unsigned int mapH,
+      QGraphicsScene* sceneArena,ONU* onuObject, GameAutomaton* automaton):
+   QGraphicsView(parent),
    m_scene(sceneArena),
    m_onu(onuObject),
    m_automaton(automaton)

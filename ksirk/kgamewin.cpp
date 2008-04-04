@@ -2192,13 +2192,14 @@ bool KGameWindow::playerPutsArmy(const QPointF& point, bool removable)
 bool KGameWindow::playerPutsInitialArmy(const QPointF& point)
 {
   {
-    kDebug() << "KGameWindow::playerPutsInitialArmy " << point;
+    kDebug() << point;
     Country* clickedCountry = clickIn(point);
     
     if ( (clickedCountry) )
     {
       kDebug() << "clickedCountry name=" << clickedCountry->name() ;
       kDebug() << "clickedCountry owner=" << clickedCountry-> owner()->name();
+      kDebug() << "clickedCountry had armies=" << clickedCountry-> nbArmies();
       kDebug() << "currentPlayer=" << currentPlayer()->name();
       kDebug() << "m_nbAvailArmies=" << m_nbAvailArmies;
       
