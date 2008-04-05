@@ -465,6 +465,7 @@ void Country::saveXml(std::ostream& xmlStream)
 
 void Country::send(QDataStream& stream)
 {
+  kDebug() << (m_belongsTo?m_belongsTo->name():"") << quint32(m_nbArmies) << quint32(m_nbAddedArmies);
   stream << m_name << (m_belongsTo?m_belongsTo->name():"") << quint32(m_nbArmies) << quint32(m_nbAddedArmies);
 }
 
@@ -564,13 +565,15 @@ void Country::releaseHighlightingLock()
 
 QDataStream& operator>>(QDataStream& stream, Country* country)
 {
+  country->reset();
   quint32 nbArmies, nbAddedArmies;
   QString ownerName;
   stream >> ownerName >> nbArmies >> nbAddedArmies;
+  kDebug() << ownerName << nbArmies << nbAddedArmies;
   country->owner(country->automaton()->playerNamed(ownerName));
   country->nbArmies(nbArmies);
   country->nbAddedArmies(nbAddedArmies);
-  country->reset();
+  country->createArmiesSprites();
   return stream;
 }
 
