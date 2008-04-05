@@ -2623,10 +2623,20 @@ void KGameWindow::shiftFinished()
 void KGameWindow::cancelAction()
 {
   kDebug() << "KGameWindow::cancelAction";
-  displayNormalGameButtons();
- // KMessageParts messageParts;
+  QByteArray buffer;
+  QDataStream stream(&buffer, QIODevice::WriteOnly);
+  stream << "";
+  m_automaton->sendMessage(buffer,FirstCountry);
+  QByteArray buffer2;
+  QDataStream stream2(&buffer2, QIODevice::WriteOnly);
+  stream2 << "";
+  m_automaton->sendMessage(buffer2,SecondCountry);
+
+displayNormalGameButtons();
+
+/*KMessageParts messageParts;
   QPixmap pm = currentPlayer()->getFlag()->image(0);
-  /*messageParts 
+  messageParts
     << pm 
     << I18N_NOOP("%1, it is up to you.") << currentPlayer()->name();
   broadcastChangeItem(messageParts, ID_STATUS_MSG2);*/
@@ -2975,8 +2985,10 @@ void KGameWindow::showMessage(const QString& message, quint32 delay)
 
 void KGameWindow::firstCountry(GameLogic::Country* country)
 {
+  kDebug() << (void*)country;
   if (m_firstCountry != 0)
   {
+    m_firstCountry->releaseHighlightingLock();
     m_firstCountry->clearHighlighting();
   }
   m_firstCountry = country;

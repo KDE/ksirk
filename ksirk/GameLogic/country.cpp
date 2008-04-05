@@ -483,7 +483,7 @@ bool Country::hasAdjacentEnemy()
 
 void Country::highlight(const QColor& color, qreal opacity)
 {
-//   kDebug() << endl;
+  kDebug() << color;
   if (m_highlighting_locked)
   {
     return;
@@ -540,7 +540,7 @@ void Country::highlightAsDefender()
 
 void Country::clearHighlighting()
 {
-//   kDebug() << endl;
+  kDebug() << m_highlighting_locked << (void*)m_highlighting;
   if (!m_highlighting_locked && m_highlighting!=0)
   {
     m_highlighting->hide();
