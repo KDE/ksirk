@@ -102,7 +102,7 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
     }
     statusBar()-> changeItem("", ID_STATUS_MSG); // Reset
   }
-int borderScrollSize = 50;
+  int borderScrollSize = 50;
   if ( (!m_timer.isActive())
     && ( ((mousePos.x() < borderScrollSize) && (mousePos.x() >= 0)
           && (mousePos.y() >= 0) && (mousePos.y() <= m_frame-> viewport()->height()))
@@ -602,10 +602,11 @@ void KGameWindow::slotExplosionFinished(AnimSpritesGroup* sprites)
   
   if (backGnd()->bgIsArena())
   {
-	m_automaton->game()->initCombatBringBackForArena(m_automaton->game()->firstCountry(), m_automaton->game()->secondCountry());
+    m_automaton->game()->initCombatBringBackForArena(m_automaton->game()->firstCountry(), m_automaton->game()->secondCountry());
   }
 
   m_automaton->explosionFinished();
+  kDebug()<<"DONE";
 }
 
 void KGameWindow::slotZoomIn()

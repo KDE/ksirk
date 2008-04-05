@@ -2015,7 +2015,7 @@ bool KGameWindow::attacker(const QPointF& point)
 unsigned int KGameWindow::attacked(const QPointF& point)
 {
 
-  kDebug();
+  kDebug() << point;
   //if (currentPlayer()-> isAI()) return 3;
 
   unsigned int res = 0;
@@ -2023,17 +2023,22 @@ unsigned int KGameWindow::attacked(const QPointF& point)
   //m_secondCountry = secondCountry;
   KMessageParts messageParts;
 
-  kDebug() << "2nd country is now set";
+//   kDebug() << "2nd country is now set";
   if ( (m_firstCountry == NULL) || (m_secondCountry == NULL)
           || (m_firstCountry-> owner() != currentPlayer()) )
   {
     //messageParts << I18N_NOOP("Nothing to attack !");
     displayNormalGameButtons();
   }
-  else if (!m_secondCountry-> owner()) 
+  else if (!m_secondCountry-> owner())
   {
     // messageParts << I18N_NOOP("Invalid attacked country.");
     displayNormalGameButtons();
+  }
+  else if (!m_secondCountry-> owner()->isVirtual())
+  {
+    // messageParts << I18N_NOOP("Invalid attacked country.");
+    return 3;
   }
   else if (m_firstCountry == m_secondCountry)
   {

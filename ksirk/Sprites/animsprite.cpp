@@ -30,6 +30,7 @@
 #include <QPoint>
 #include <QPixmap>
 #include <QSvgRenderer>
+#include <QMutexLocker>
 
 #include <kmessagebox.h>
 #include <klocale.h>
@@ -110,6 +111,7 @@ void AnimSprite::setLook(TDir newLook)
  */
 void AnimSprite::sequenceConstruction()
 {
+//   QMutexLocker locker(&m_myMutex);
   QList<QPixmap> list;
 
   QSize size((int)(m_width*frames), (int)(m_height*nbVersions));
@@ -141,7 +143,7 @@ void AnimSprite::changeSequence(const QString &svgid,
                                  unsigned int newNbFrames,
                                  unsigned int nbDirs)
 {
-  kDebug()<< svgid <<endl;
+  kDebug() << (void*)this << svgid <<endl;
   m_svgid = svgid;
   m_width = width*m_zoom;
   m_height = height*m_zoom;

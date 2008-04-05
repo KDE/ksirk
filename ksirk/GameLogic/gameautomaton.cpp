@@ -2380,7 +2380,10 @@ void GameAutomaton::finalizePlayers()
     dynamic_cast<Player*>(*it)-> finalize();
   }
   QByteArray buffer;
-  sendMessage(buffer,DisplayGoals);
+  if (isAdmin())
+  {
+    sendMessage(buffer,DisplayGoals);
+  }
 }
 
 /** @return true if all players are played by computer ; false otherwise */

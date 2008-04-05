@@ -849,7 +849,8 @@ void KGameWindow::animExplosion(int who,Country *paysAttaquant, Country *paysDef
 
   m_animFighters->changeTarget(this, SLOT(slotExplosionFinished(AnimSpritesGroup*)));
 
-  kDebug() << "KGameWindow::animExplosion hidden; " << m_animFighters->size() << " fighters";
+  kDebug() << m_animFighters->size() << " fighters";
+  unsigned int toArrive = 0;
   AnimSpritesGroup::iterator it = m_animFighters->begin();
   for (;it != m_animFighters->end();it++)
   {
@@ -858,131 +859,95 @@ void KGameWindow::animExplosion(int who,Country *paysAttaquant, Country *paysDef
         || ((who == 0) && (sprite-> isAttacker()))  // Attacker is killed
         || ((who == 1) && (sprite-> isDefendant())) ) // Defender is killed
     {
-	sprite-> changeSequence(
-			Sprites::SkinSpritesData::single().strData("exploding-id"),
-			Sprites::SkinSpritesData::single().intData("exploding-width"),
-			Sprites::SkinSpritesData::single().intData("exploding-height"),
-			Sprites::SkinSpritesData::single().intData("exploding-frames"),
-			Sprites::SkinSpritesData::single().intData("exploding-versions"));
+      sprite-> changeSequence(
+          Sprites::SkinSpritesData::single().strData("exploding-id"),
+          Sprites::SkinSpritesData::single().intData("exploding-width"),
+          Sprites::SkinSpritesData::single().intData("exploding-height"),
+          Sprites::SkinSpritesData::single().intData("exploding-frames"),
+          Sprites::SkinSpritesData::single().intData("exploding-versions"));
 
-	if (sprite->isAttacker())
-	{
-		kDebug() << "  removing a sprite";
-		//kDebug() << "i attack" << i;
-		kDebug() << "NKA" << NKA;
-			
-		sprite->setAnimated(NKA);
+      if (sprite->isAttacker())
+      {
+        kDebug() << "  removing a sprite";
+        //kDebug() << "i attack" << i;
+        kDebug() << "NKA" << NKA;
 
-		QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
-		if (sndCrashPath.isNull())
-		{
-			KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error !"));
-			exit(2);
-		}
-		if (KsirkSettings::soundEnabled())
-		{
-			m_audioPlayer->setCurrentSource(sndCrashPath);
-			m_audioPlayer->play();
-		}
-	}
-	
-	if (sprite->isDefendant())
-	{
-		kDebug() << "  removing a sprite";
-		kDebug() << "NKD" << NKD;
-			
-		sprite->setAnimated(NKD);
+        sprite->setAnimated(NKA);
 
-		QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
-		if (sndCrashPath.isNull())
-		{
-			KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error !"));
-			exit(2);
-		}
-		if (KsirkSettings::soundEnabled())
-		{
-			m_audioPlayer->setCurrentSource(sndCrashPath);
-			m_audioPlayer->play();
-		}
-	}
+        QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
+        if (sndCrashPath.isNull())
+        {
+          KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error !"));
+          exit(2);
+        }
+        if (KsirkSettings::soundEnabled())
+        {
+          m_audioPlayer->setCurrentSource(sndCrashPath);
+          m_audioPlayer->play();
+        }
+      }
+
+      if (sprite->isDefendant())
+      {
+        kDebug() << "  removing a sprite";
+        kDebug() << "NKD" << NKD;
+
+        sprite->setAnimated(NKD);
+
+        QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
+        if (sndCrashPath.isNull())
+        {
+          KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error !"));
+          exit(2);
+        }
+        if (KsirkSettings::soundEnabled())
+        {
+          m_audioPlayer->setCurrentSource(sndCrashPath);
+          m_audioPlayer->play();
+        }
+      }
     }
     else  // the sprite is not the one (or one the several) killed
     {
       kDebug() << "  keeping a sprite";
       
-      if (sprite->isAttacker())
+      if ((paysAttaquant->nbArmies() % 10) == 0)
       {
-		if ((paysAttaquant->nbArmies() % 10) == 0)
-		{
-			sprite-> changeSequence(
-          			Sprites::SkinSpritesData::single().strData("cannon-id"),
-                              	Sprites::SkinSpritesData::single().intData("cannon-width"),
-                              	Sprites::SkinSpritesData::single().intData("cannon-height"),
-                              	Sprites::SkinSpritesData::single().intData("cannon-frames"), 
-          			Sprites::SkinSpritesData::single().intData("cannon-versions"));
-		}
-		else
-		{
-			if ((paysAttaquant->nbArmies() % 5) == 0)
-			{
-				sprite-> changeSequence(
-          				Sprites::SkinSpritesData::single().strData("cavalry-id"),
-					Sprites::SkinSpritesData::single().intData("cavalry-width"),
-					Sprites::SkinSpritesData::single().intData("cavalry-height"),
-					Sprites::SkinSpritesData::single().intData("cavalry-frames"), 
-					Sprites::SkinSpritesData::single().intData("cavalry-versions"));
-			}
-			else
-			{
-				sprite-> changeSequence(
-          				Sprites::SkinSpritesData::single().strData("infantry-id"),
-					Sprites::SkinSpritesData::single().intData("infantry-width"),
-					Sprites::SkinSpritesData::single().intData("infantry-height"),
-					Sprites::SkinSpritesData::single().intData("infantry-frames"), 
-					Sprites::SkinSpritesData::single().intData("infantry-versions"));
-			}
-		}
+        sprite-> changeSequence(
+            Sprites::SkinSpritesData::single().strData("cannon-id"),
+            Sprites::SkinSpritesData::single().intData("cannon-width"),
+            Sprites::SkinSpritesData::single().intData("cannon-height"),
+            Sprites::SkinSpritesData::single().intData("cannon-frames"),
+            Sprites::SkinSpritesData::single().intData("cannon-versions"));
+      }
+      else if ((paysAttaquant->nbArmies() % 5) == 0)
+      {
+        sprite-> changeSequence(
+            Sprites::SkinSpritesData::single().strData("cavalry-id"),
+            Sprites::SkinSpritesData::single().intData("cavalry-width"),
+            Sprites::SkinSpritesData::single().intData("cavalry-height"),
+            Sprites::SkinSpritesData::single().intData("cavalry-frames"), 
+            Sprites::SkinSpritesData::single().intData("cavalry-versions"));
+      }
+      else
+      {
+        sprite-> changeSequence(
+            Sprites::SkinSpritesData::single().strData("infantry-id"),
+            Sprites::SkinSpritesData::single().intData("infantry-width"),
+            Sprites::SkinSpritesData::single().intData("infantry-height"),
+            Sprites::SkinSpritesData::single().intData("infantry-frames"), 
+            Sprites::SkinSpritesData::single().intData("infantry-versions"));
       }
 
-      if (sprite->isDefendant())
-      {
-		if ((paysDefenseur->nbArmies() % 10) == 0)
-		{
-			sprite-> changeSequence(
-          			Sprites::SkinSpritesData::single().strData("cannon-id"),
-                              	Sprites::SkinSpritesData::single().intData("cannon-width"),
-                              	Sprites::SkinSpritesData::single().intData("cannon-height"),
-                              	Sprites::SkinSpritesData::single().intData("cannon-frames"), 
-          			Sprites::SkinSpritesData::single().intData("cannon-versions"));
-		}
-		else
-		{
-			if ((paysDefenseur->nbArmies() % 5) == 0)
-			{
-				sprite-> changeSequence(
-          				Sprites::SkinSpritesData::single().strData("cavalry-id"),
-					Sprites::SkinSpritesData::single().intData("cavalry-width"),
-					Sprites::SkinSpritesData::single().intData("cavalry-height"),
-					Sprites::SkinSpritesData::single().intData("cavalry-frames"), 
-					Sprites::SkinSpritesData::single().intData("cavalry-versions"));
-			}
-			else
-			{
-				sprite-> changeSequence(
-          				Sprites::SkinSpritesData::single().strData("infantry-id"),
-					Sprites::SkinSpritesData::single().intData("infantry-width"),
-					Sprites::SkinSpritesData::single().intData("infantry-height"),
-					Sprites::SkinSpritesData::single().intData("infantry-frames"), 
-					Sprites::SkinSpritesData::single().intData("infantry-versions"));
-			}
-		}
-      } 
-
       sprite->setStatic();
-      m_animFighters->oneArrived(0);
+      toArrive++;
     }
   }
-  kDebug() << "  loop done";
+  for (unsigned int i=0; i < toArrive; i++)
+  {
+    m_animFighters->oneArrived(0);
+  }
+  kDebug() << "loop done";
 
   /*QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
   if (sndCrashPath.isNull())
