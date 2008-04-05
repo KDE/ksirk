@@ -30,7 +30,6 @@
 #include <QPoint>
 #include <QPixmap>
 #include <QSvgRenderer>
-#include <QMutexLocker>
 
 #include <kmessagebox.h>
 #include <klocale.h>
@@ -105,13 +104,12 @@ void AnimSprite::setLook(TDir newLook)
 }
 
 /**
- * updates the sequence of images used by the underlying QCanvasSprite with
- * the ones taken from the image found at imgPath. It is function of the
+ * updates the sequence of images used by the underlying QGraphicsPixmapItem 
+ * with the ones taken from the image found at imgPath. It is function of the
  * direction of the look and the geometry of the sprite
  */
 void AnimSprite::sequenceConstruction()
 {
-//   QMutexLocker locker(&m_myMutex);
   QList<QPixmap> list;
 
   QSize size((int)(m_width*frames), (int)(m_height*nbVersions));

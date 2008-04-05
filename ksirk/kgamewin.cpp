@@ -866,7 +866,13 @@ void KGameWindow::resolveAttack()
                  << m_secondCountry->owner()-> name() << QString::number(NKD);
     broadcastChangeItem(messagePartsD, ID_NO_STATUS_MSG);*/
   }
-  
+
+  QByteArray buffer3;
+  QDataStream stream3(&buffer3, QIODevice::WriteOnly);
+  stream3 << (quint32)A1 << (quint32)A2 << (quint32)A3 << (quint32)D1 << (quint32)D2 << (quint32)NKA << (quint32)NKD << (quint32)(secondOldNbArmies-NKD < 1);
+  kDebug() << "sending DisplayFightResult";
+  m_automaton->sendMessage(buffer3,DisplayFightResult);
+
   QByteArray buffer2;
   QDataStream stream2(&buffer2, QIODevice::WriteOnly);
   
@@ -877,14 +883,14 @@ void KGameWindow::resolveAttack()
 
   //kDebug()<< "A1:"<< A1<<", A2: " <<A2 <<"A3:" << A3;
   //kDebug()<< "D1:"<< D1<<", D2: " <<D2;
-  m_rightDialog->displayFightResult(A1,A2,A3,D1,D2,NKA,NKD,secondOldNbArmies-NKD < 1);
-
   // if arena is displayed, update the arena countries too
   if (currentWidgetType() == arenaType) {
     arena()->countryAttack()->decrNbArmies(NKA);
     arena()->countryDefense()->decrNbArmies(NKD);
   }
 }
+
+
 
 /**
   * Reimplementation of the inherited function called when a window close event arise

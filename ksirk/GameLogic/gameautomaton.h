@@ -100,8 +100,10 @@ enum KsirkMessagesIds {
     NbPlayers, // 306
     FinalizePlayers, // 307
     Acknowledge, // 308
-    DisplayGoals // 309
+    DisplayGoals, // 309
+    DisplayFightResult // 310
 };
+#define MSGIDMAX DisplayFightResult
 
 /** Messages formats:
   * 
@@ -463,8 +465,6 @@ private:
 
   void activateNeededAIPlayers();
 
-//   static GameAutomaton* m_singleton ;
-    
   GameState m_state;
 //   KGameProperty< GameState > m_state;
 //     int m_stateId;

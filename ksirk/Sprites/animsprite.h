@@ -27,7 +27,6 @@
 
 #include <QGraphicsItem>
 #include <QTimer>
-#include <QMutex>
 
 #include <limits>
 
@@ -406,8 +405,6 @@ protected:
   QTimer m_timer;
 
   QString m_skin;
-
-  QMutex m_myMutex;
 };
 
 } // closing namespace Ksirk

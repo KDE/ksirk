@@ -132,12 +132,10 @@ const char* GameAutomaton::KsirkMessagesIdsNames[] = {
 "FinalizePlayers", // 307
 "Acknowledge", // 308
 "DisplayGoals", // 309
+"DisplayFightResult", // 310
 };
 
-// GameAutomaton* GameAutomaton::m_singleton = 0;
-//GameAutomaton::GameState  GameAutomaton::m_state = INIT;
-
-GameAutomaton::GameAutomaton() : 
+GameAutomaton::GameAutomaton() :
     KGame(),
     m_aicannotrunhack(true),
     m_state(INIT),
@@ -1848,7 +1846,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     exit(0);
   }
 
-  if (msgid < CountryOwner || msgid> DisplayGoals)
+  if (msgid < CountryOwner || msgid> MSGIDMAX)
   {
     return;
   }
@@ -1880,6 +1878,9 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   Goal goal(this);
   QString playersNames;
   QPixmap pm;
+  quint32 A1, A2, A3, D1, D2, NKA, NKD;
+  quint32 win;
+  
   if (currentPlayer() != 0)
   {
     pm = currentPlayer()->getFlag()->image(0);
@@ -2365,6 +2366,11 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   case DisplayGoals:
       kDebug() << "Got message DisplayGoals" << endl;
       QTimer::singleShot(0,this,SLOT(displayGoals()));
+    break;
+  case DisplayFightResult:
+      kDebug() << "Got message DisplayFightResult" << endl;
+      stream >> A1 >> A2 >> A3 >> D1 >> D2 >> NKA >> NKD >> win;
+      m_game->getRightDialog()->displayFightResult(A1,A2,A3,D1,D2,NKA,NKD,win);
     break;
   default: ;
   }
