@@ -1,8 +1,15 @@
 Bugs:
   * status bar coherence (current player for example and number of armies to place)
-  * should not ask to validate armies placed when computer player
-
-
+  * missing status bar information
+  * current player flag is not rightly updated
+  * space bar should finish move
+  * hovering should display the number of armies on a country, possibly the right information panel
+  * number of fighters should be displayed on all fighting sprites
+  * when a client have chosen not to recycle, remove the right dialog
+  * if a client chose to recycle, show the dialog again on other clients
+  * hide/show or disable/enable the next player button in the toolbar
+  * better access to the contextual help (add to toolbar and context menu)
+  
 Before KDE4.1:
   * max size of the window limited by the map size
   * display somewhere the number of armies in the hovered country
@@ -11,6 +18,7 @@ Before KDE4.1:
 Quickly
   * replace all QMessageBox by KMessageBox
   * [DONE] study the replacement of the global timer by more local ones
+  * study the replacement local timers for sprites by a global one
 
 Before 1.9:
   * [DONE] finish porting to KDE4
