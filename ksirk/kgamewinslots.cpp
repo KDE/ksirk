@@ -726,4 +726,15 @@ void KGameWindow::slideClose()
   m_automaton->gameEvent("actionInvasionFinished", point);
 }
 
+void KGameWindow::slotContextualHelp()
+{
+  switch (m_automaton->state())
+  {
+    case GameLogic::GameAutomaton::WAIT:
+      showMessage(i18n("Now, attack by dragging from the attacking country<br/>and droping to the attacked one<br/>or choose another action by using the right mouse click.<br/>Note that moving armies is the last action of a turn."), 5);
+    break;
+    default:;
+  }
+}
+
 } // closing namespace Ksirk

@@ -992,6 +992,7 @@ kDebug () << "$$$$$$$STATE FIGHT_BRINGBACK $$$$$$$$$$$" << m_game->haveAnimFight
 
 void GameAutomaton::activateNeededAIPlayers()
 {
+//   kDebug();
   if ( currentPlayer() 
        && (currentPlayer()-> isAI() ) 
        && (!currentPlayer()->isVirtual())

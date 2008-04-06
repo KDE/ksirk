@@ -80,7 +80,7 @@ AIPlayer :: AIPlayer(
   */
 void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
 {
-  kDebug() << "AIPlayer " << name() << ": Action choice (state is " << m_game-> stateName() << ")" << endl;
+  kDebug() << name() << ": (state is " << m_game-> stateName() << ")" << endl;
   if (m_game->m_aicannotrunhack)
   {
     kDebug() << "HACK HACK AIPlayer " << name() 	
@@ -117,7 +117,7 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
         chooseInvasionAction();
         break;
       case GameLogic::GameAutomaton::WAIT :
-//         kDebug() << "AIPlayer::actionChoice() WAIT " << name() << endl;
+//         kDebug() << "WAIT " << name() << endl;
 	if (!m_actionWaitingStart)
           chooseAttackMoveArmiesOrNextPlayer();
 	//if (m_src != 0 && m_dest != 0)
@@ -182,12 +182,12 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
         stop();
         break;
       default :;
-//         kDebug() << "AIPlayer::actionChoice() OTHER STATE:" << state << " "  << name() << endl;
+//         kDebug() << "OTHER STATE:" << state << " "  << name() << endl;
     }
     if (m_game-> currentPlayer() != this)
       m_actionWaitingStart = false;
   }
-//    kDebug() << "OUT AIPlayer::actionChoice()" << endl;
+//    kDebug() << "OUT" << endl;
 }
 
 /**
@@ -334,14 +334,14 @@ bool AIPlayer::isAI() const
 
 void AIPlayer::run()
 {
-  kDebug() << name() << endl;
+  kDebug() << name();
   stopMe = false;
   while ( ! stopMe )
   {
     actionChoice(m_game->state());
     msleep( 500 );
   }
-  kDebug() << name()  << "OUT" << endl;
+  kDebug() << name()  << "OUT";
 }
 
 /** set stopMe to true in order for the run method to return */
@@ -566,19 +566,19 @@ void AIPlayer::chooseInvasionAction()
   QPointF point;
   while (nbArmiesToMove >= 10) 
   {
-      stop(); 
+    stop(); 
     stream << QString("actionInvade10") << point;
-      nbArmiesToMove -= 10;
+    nbArmiesToMove -= 10;
   }
   while (nbArmiesToMove >= 5) 
   { 
-      stop();
+    stop();
     stream << QString("actionInvade5") << point;
-      nbArmiesToMove -= 5;
+    nbArmiesToMove -= 5;
   }
   while (nbArmiesToMove >= 1) 
   { 
-      stop();
+    stop();
     stream << QString("actionInvade1") << point;
     nbArmiesToMove--;
   }

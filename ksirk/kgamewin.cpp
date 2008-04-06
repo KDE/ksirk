@@ -293,6 +293,20 @@ void KGameWindow::initActions()
   connect(m_goalAction,SIGNAL(triggered(bool)),this,SLOT(slotShowGoal()));
   kDebug() << "Adding action game_goal";
   actionCollection()->addAction("game_goal", m_goalAction);
+
+  QAction* contextualHelpAction = new QAction(QIcon(),
+        i18n("Contextual help"), this);
+  contextualHelpAction->setShortcut(Qt::CTRL+Qt::Key_F1);
+  connect(contextualHelpAction,SIGNAL(triggered(bool)),this,SLOT(slotContextualHelp()));
+  actionCollection()->addAction("help_contextual", contextualHelpAction);
+
+
+  QString nextPlayerActionImageFileName = KGlobal::dirs()->findResource("appdata", m_automaton->skin() + "/Images/joueurSuivant.png");
+  QAction* nextPlayerAction =  new QAction(QIcon(nextPlayerActionImageFileName),
+        i18n("Next Player"), this);
+  connect(nextPlayerAction, SIGNAL(triggered(bool)), this, SLOT(slotNextPlayer()));
+  contextualHelpAction->setStatusTip(i18n("Lets the next player play"));
+  actionCollection()->addAction("game_nextplayer", nextPlayerAction);
 }
 
 void KGameWindow::initStatusBar()
@@ -1066,7 +1080,7 @@ void KGameWindow::displayNormalGameButtons()
     addAButton(CM_ATTACK2,  SLOT(slotAttack2()), i18n("Attack with two armies"),KShortcut(Qt::Key_2),true);
     addAButton(CM_ATTACK3,  SLOT(slotAttack3()), i18n("Attack with three armies"),KShortcut(Qt::Key_3),true);
     addAButton(CM_SHIFT, SLOT(slotMove()), i18n("Move armies"),KShortcut(Qt::Key_M),true);
-    showMessage(i18n("Now, choose an action by using the right mouse click.<br/>Note that moving armies is the last action of a turn."), 5);
+    slotContextualHelp();
   }
   gameActionsToolBar-> hide();
   //gameActionsToolBar-> show();
@@ -2041,11 +2055,11 @@ unsigned int KGameWindow::attacked(const QPointF& point)
     // messageParts << I18N_NOOP("Invalid attacked country.");
     displayNormalGameButtons();
   }
-  else if (!m_secondCountry-> owner()->isVirtual())
+/*  else if (!m_secondCountry-> owner()->isVirtual())
   {
     // messageParts << I18N_NOOP("Invalid attacked country.");
     return 3;
-  }
+  }*/
   else if (m_firstCountry == m_secondCountry)
   {
    // messageParts << I18N_NOOP("You are trying to attack %1 from itself !") << m_firstCountry-> name();

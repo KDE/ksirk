@@ -763,6 +763,8 @@ private slots:
 
   void slotRemoveMessage();
 
+  void slotContextualHelp();
+
 private:
 
   QDockWidget * m_rightDock;

@@ -42,7 +42,8 @@ using namespace GameLogic;
 
 DecoratedGameFrame::DecoratedGameFrame(QWidget* parent, 
       unsigned int mapW, unsigned int mapH, GameAutomaton* automaton)
-  : QGraphicsView(parent), m_mapW(mapW), m_mapH(mapH)
+  : QGraphicsView(parent), m_mapW(mapW), m_mapH(mapH), m_parent(parent),
+  m_automaton(automaton)
 {
   kDebug() << "("<<mapW<<"x"<<mapH<<")";
   setVerticalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
@@ -53,14 +54,11 @@ DecoratedGameFrame::DecoratedGameFrame(QWidget* parent,
   updateGeometry(); 
   setMouseTracking(true);
 
-  this->m_parent = parent;
   QuitAction = KStandardGameAction::quit(this->m_parent, SLOT(close()), this);
   
   initMenu ();
   initAttackMenu();
   initMoveMenu();
-
-  this->m_automaton = automaton;
 
   // redirect the mouse move event to the main windows
   connect(this, SIGNAL(mouseMoveEventReceived(QMouseEvent *)), parent, SLOT(mouseMoveEvent(QMouseEvent *)));

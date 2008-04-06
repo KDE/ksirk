@@ -7,9 +7,17 @@
     <Action name="game_join" append="new_merge" />
     <Action name="game_load" append="new_merge" />
     <Action name="game_save" append="new_merge" />
+    <Separator/>
+    <Action name="game_nextplayer" />
+    <Separator/>
+    <Action name="game_goal" />
+    <Separator/>
     <Action name="game_quit" append="new_merge" />
   </Menu>
   <Menu name="settings"><text>&amp;Settings</text>
+  </Menu>
+  <Menu name="help"><text>&amp;Help</text>
+    <Action name="help_contextual" append="new_merge" />
   </Menu>
 </MenuBar>
 
@@ -23,8 +31,8 @@
   <Action name="view_zoom_in" />
   <Action name="view_zoom_out" />
   <Separator/>
-  <!--Action name="game_quit" /-->
-  <!--Separator/-->
+  <Action name="game_nextplayer" />
+  <Separator/>
   <Action name="game_goal" />
 </ToolBar>
 
