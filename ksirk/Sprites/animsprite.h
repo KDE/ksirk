@@ -248,6 +248,8 @@ public:
   void setStatic();
 
   void applyZoomFactor(qreal zoomFactor);
+
+  void addDecoration(const QString& svgid, const QRectF& geometry);
   
 public slots:
   void animate();

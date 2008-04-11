@@ -344,6 +344,7 @@ void KGameWindow::slotRecycling()
 void KGameWindow::slotRecyclingFinished()
 {
   QPoint point;
+  m_rightDock->hide();
   m_automaton->gameEvent("actionRecyclingFinished", point);
 }
 
@@ -728,6 +729,10 @@ void KGameWindow::slideClose()
 
 void KGameWindow::slotContextualHelp()
 {
+  if (currentPlayer()->isAI())
+  {
+    return;
+  }
   switch (m_automaton->state())
   {
     case GameLogic::GameAutomaton::WAIT:

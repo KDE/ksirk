@@ -667,6 +667,19 @@ void AnimSprite::applyZoomFactor(qreal zoomFactor)
   update();
 }
 
+void AnimSprite::addDecoration(const QString& svgid, const QRectF& geometry)
+{
+  QSize size(geometry.size().toSize());
+  QImage image(size, QImage::Format_ARGB32_Premultiplied);
+  image.fill(0);
+  QPainter p(&image);
+  m_renderer->render(&p, svgid);
+  QPixmap pm = QPixmap::fromImage(image);
+  QGraphicsPixmapItem* item = new QGraphicsPixmapItem(pm,this);
+  item->setPos(geometry.topLeft());
+  item->show();
+}
+
 } // closing namespace Ksirk
 
 #include "animsprite.moc"

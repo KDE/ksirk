@@ -1376,12 +1376,17 @@ bool KGameWindow::setupPlayers()
   }
   if (networkGame)
   {
+    m_bottomDock->hide();
     kDebug() << "In setupPlayers: networkGame";
     m_automaton->offerConnections(port);
     KMessageParts messageParts;
     messageParts << I18N_NOOP("Waiting for %1 players to connect")
       << QString::number(m_automaton->networkPlayersNumber());
     broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
+  }
+  else
+  {
+    m_bottomDock->show();
   }
   m_frame->setFocus();
   return true;
@@ -1934,6 +1939,7 @@ int KGameWindow::setCurrentPlayerToFirst()
 
 int KGameWindow::setCurrentPlayerToNext(bool restartRunningAIs)
 {
+  m_rightDock->hide();
   int looped(0);
 //   kDebug() << "KGameWindow::setCurrentPlayerToNext()";
   if ( currentPlayer() && ( currentPlayer()-> isAI())  && ( static_cast<AIPlayer *>(currentPlayer())-> isRunning() ) )
@@ -2362,7 +2368,8 @@ void KGameWindow::clear()
 bool KGameWindow::nextPlayerRecycling()
 {
   kDebug();
-  if ( currentPlayer() && currentPlayer()-> getNbAvailArmies() > 0 )
+  if ( currentPlayer() && currentPlayer()-> getNbAvailArmies() > 0
+      && !currentPlayer()->isVirtual() && !currentPlayer()->isAI())
   {
     KMessageBox::sorry(0, i18n("You must distribute\nall your armies"), i18n("KsirK"));
     return false;

@@ -540,92 +540,93 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   {
     nbSpriteAttacking=1;
     if (!paysAttaquant->spritesInfantry().isEmpty() && !backGnd()->bgIsArena())
-  	{
-		// search the correct infantry string (normal sprite, with number 1, 2, or 3)
-		QString infantryString;
-		if (paysAttaquant->owner()->getNbAttack() == 1) 
-		{
-			infantryString = "infantry1";
-		} 
-		else if (paysAttaquant->owner()->getNbAttack() == 2) 
-		{
-			infantryString = "infantry2";
-		} 
-		else 
-		{
-			infantryString = "infantry3";
-		}		
+    {
+    // search the correct infantry string (normal sprite, with number 1, 2, or 3)
+    QString infantryString = "infantry";
 
-		attackingSprite = new InfantrySprite(
-		Sprites::SkinSpritesData::single().strData(infantryString+"-id"),
-		Sprites::SkinSpritesData::single().intData(infantryString+"-width"),
-		Sprites::SkinSpritesData::single().intData(infantryString+"-height"),
-		Sprites::SkinSpritesData::single().intData(infantryString+"-frames"),
-		Sprites::SkinSpritesData::single().intData(infantryString+"-versions"),
-		m_theWorld->zoom(),
-		backGnd(),
-		200);
-		
-		paysAttaquant->spritesInfantry().hideAndRemoveFirst();
-	}
-	else
-	{
-		if (!paysAttaquant->spritesCavalry().isEmpty())
-		{
-			attackingSprite = new CavalrySprite(
-			Sprites::SkinSpritesData::single().strData("cavalry-id"),
-			Sprites::SkinSpritesData::single().intData("cavalry-width"),
-			Sprites::SkinSpritesData::single().intData("cavalry-height"),
-			Sprites::SkinSpritesData::single().intData("cavalry-frames"),
-			Sprites::SkinSpritesData::single().intData("cavalry-versions"),
-			m_theWorld->zoom(),
-			backGnd(),
-			200);
-	
-			paysAttaquant->spritesCavalry().hideAndRemoveFirst();
-		}
-		else
-		{
-			if (!paysAttaquant->spritesCannons().isEmpty())
-			{
-				attackingSprite = new CannonSprite(
-				Sprites::SkinSpritesData::single().strData("cannon-id"),
-				Sprites::SkinSpritesData::single().intData("cannon-width"),
-				Sprites::SkinSpritesData::single().intData("cannon-height"),
-				Sprites::SkinSpritesData::single().intData("cannon-frames"),
-				Sprites::SkinSpritesData::single().intData("cannon-versions"),
-				m_theWorld->zoom(),
-				backGnd(),
-				200);
-		
-				paysAttaquant->spritesCannons().hideAndRemoveFirst();
-			}
-			else
-			{
-				// if the soldier have not attack yet in the arena it means that it must be the last to do so
-				if (!paysAttaquant->spritesInfantry().isEmpty() && backGnd()->bgIsArena())
-  				{
-					attackingSprite = new InfantrySprite(
-					Sprites::SkinSpritesData::single().strData("infantry-id"),
-					Sprites::SkinSpritesData::single().intData("infantry-width"),
-					Sprites::SkinSpritesData::single().intData("infantry-height"),
-					Sprites::SkinSpritesData::single().intData("infantry-frames"),
-					Sprites::SkinSpritesData::single().intData("infantry-versions"),
-					m_theWorld->zoom(),
-					backGnd(),
-					200);
-					
-					paysAttaquant->spritesInfantry().hideAndRemoveFirst();
-				}
-			}
-		}
-	}
+    attackingSprite = new InfantrySprite(
+    Sprites::SkinSpritesData::single().strData(infantryString+"-id"),
+    Sprites::SkinSpritesData::single().intData(infantryString+"-width"),
+    Sprites::SkinSpritesData::single().intData(infantryString+"-height"),
+    Sprites::SkinSpritesData::single().intData(infantryString+"-frames"),
+    Sprites::SkinSpritesData::single().intData(infantryString+"-versions"),
+    m_theWorld->zoom(),
+    backGnd(),
+    200);
+
+    paysAttaquant->spritesInfantry().hideAndRemoveFirst();
+  }
+  else
+  {
+    if (!paysAttaquant->spritesCavalry().isEmpty())
+    {
+      attackingSprite = new CavalrySprite(
+      Sprites::SkinSpritesData::single().strData("cavalry-id"),
+      Sprites::SkinSpritesData::single().intData("cavalry-width"),
+      Sprites::SkinSpritesData::single().intData("cavalry-height"),
+      Sprites::SkinSpritesData::single().intData("cavalry-frames"),
+      Sprites::SkinSpritesData::single().intData("cavalry-versions"),
+      m_theWorld->zoom(),
+      backGnd(),
+      200);
+
+      paysAttaquant->spritesCavalry().hideAndRemoveFirst();
+    }
+    else
+    {
+      if (!paysAttaquant->spritesCannons().isEmpty())
+      {
+        attackingSprite = new CannonSprite(
+        Sprites::SkinSpritesData::single().strData("cannon-id"),
+        Sprites::SkinSpritesData::single().intData("cannon-width"),
+        Sprites::SkinSpritesData::single().intData("cannon-height"),
+        Sprites::SkinSpritesData::single().intData("cannon-frames"),
+        Sprites::SkinSpritesData::single().intData("cannon-versions"),
+        m_theWorld->zoom(),
+        backGnd(),
+        200);
+
+        paysAttaquant->spritesCannons().hideAndRemoveFirst();
+      }
+      else
+      {
+        // if the soldier have not attack yet in the arena it means that it must be the last to do so
+        if (!paysAttaquant->spritesInfantry().isEmpty() && backGnd()->bgIsArena())
+          {
+          attackingSprite = new InfantrySprite(
+          Sprites::SkinSpritesData::single().strData("infantry-id"),
+          Sprites::SkinSpritesData::single().intData("infantry-width"),
+          Sprites::SkinSpritesData::single().intData("infantry-height"),
+          Sprites::SkinSpritesData::single().intData("infantry-frames"),
+          Sprites::SkinSpritesData::single().intData("infantry-versions"),
+          m_theWorld->zoom(),
+          backGnd(),
+          200);
+
+          paysAttaquant->spritesInfantry().hideAndRemoveFirst();
+        }
+      }
+    }
+  }
   if (attackingSprite==0)
   {
     kError() << "null attackingSprite at " << __FILE__ << ", line " << __LINE__;
     return;
   }
-	attackingSprite-> setAttacker();
+  if (paysAttaquant->owner()->getNbAttack() == 1)
+  {
+    attackingSprite->addDecoration("mark1", QRect(0,0,10,10));
+  }
+  else if (paysAttaquant->owner()->getNbAttack() == 2)
+  {
+    attackingSprite->addDecoration("mark2", QRect(0,0,10,10));
+  }
+  else
+  {
+    attackingSprite->addDecoration("mark3", QRect(0,0,10,10));
+  }
+  
+  attackingSprite-> setAttacker();
 	attackingSprite->setupTravel(paysAttaquant, paysDefenseur, pointArriveeAttaquant);
 	//(pointDepartAttaquantX <= pointArriveeAttaquantX) ? attackingSprite-> setLookRight() : attackingSprite-> setLookLeft();
 	m_animFighters->addSprite(attackingSprite);
@@ -657,87 +658,75 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
   }
   else
   {
-  	nbSpriteDefending=1;
+    nbSpriteDefending=1;
     if (!paysDefenseur->spritesInfantry().isEmpty() && !backGnd()->bgIsArena())
-  	{
-		// search the correct infantry string (normal sprite, with number 1, 2, or 3)
-		QString infantryString;
-		if (paysDefenseur->owner()->getNbDefense() == 1) 
-		{
-			infantryString = "infantry1";
-		} 
-		else if (paysDefenseur->owner()->getNbDefense() == 2) 
-		{
-			infantryString = "infantry2";
-		} 
-		else 
-		{
-			infantryString = "infantry3";
-		}
-		
-		/*InfantrySprite**/ defenderSprite = new InfantrySprite(
-		Sprites::SkinSpritesData::single().strData(infantryString+"-id"),
-		Sprites::SkinSpritesData::single().intData(infantryString+"-width"),
-		Sprites::SkinSpritesData::single().intData(infantryString+"-height"),
-		Sprites::SkinSpritesData::single().intData(infantryString+"-frames"),
-		Sprites::SkinSpritesData::single().intData(infantryString+"-versions"),
-		m_theWorld->zoom(),
-		backGnd(),
-		200);
-		
-		paysDefenseur->spritesInfantry().hideAndRemoveFirst();
-	}
-	else
-	{
-		if (!paysDefenseur->spritesCavalry().isEmpty())
-		{
-			defenderSprite = new CavalrySprite(
-			Sprites::SkinSpritesData::single().strData("cavalry-id"),
-			Sprites::SkinSpritesData::single().intData("cavalry-width"),
-			Sprites::SkinSpritesData::single().intData("cavalry-height"),
-			Sprites::SkinSpritesData::single().intData("cavalry-frames"),
-			Sprites::SkinSpritesData::single().intData("cavalry-versions"),
-			m_theWorld->zoom(),
-			backGnd(),
-			200);
-			
-			paysDefenseur->spritesCavalry().hideAndRemoveFirst();
-		}
-		else
-		{
-			if (!paysDefenseur->spritesCannons().isEmpty())
-			{
-				defenderSprite = new CannonSprite(
-				Sprites::SkinSpritesData::single().strData("cannon-id"),
-				Sprites::SkinSpritesData::single().intData("cannon-width"),
-				Sprites::SkinSpritesData::single().intData("cannon-height"),
-				Sprites::SkinSpritesData::single().intData("cannon-frames"),
-				Sprites::SkinSpritesData::single().intData("cannon-versions"),
-				m_theWorld->zoom(),
-				backGnd(),
-				200);
-		
-				paysDefenseur->spritesCannons().hideAndRemoveFirst();
-			}
-			else
-			{
-				// if the soldier have not defend yet in the arena it means that it must be the last to do so
-				if (!paysDefenseur->spritesInfantry().isEmpty() && backGnd()->bgIsArena())
-  				{
-					attackingSprite = new InfantrySprite(
-					Sprites::SkinSpritesData::single().strData("infantry-id"),
-					Sprites::SkinSpritesData::single().intData("infantry-width"),
-					Sprites::SkinSpritesData::single().intData("infantry-height"),
-					Sprites::SkinSpritesData::single().intData("infantry-frames"),
-					Sprites::SkinSpritesData::single().intData("infantry-versions"),
-					m_theWorld->zoom(),
-					backGnd(),
-					200);
-					
-					paysDefenseur->spritesInfantry().hideAndRemoveFirst();
-				}
-			}
-		}
+    {
+    // search the correct infantry string (normal sprite, with number 1, 2, or 3)
+    QString infantryString = "infantry";
+
+    /*InfantrySprite**/ defenderSprite = new InfantrySprite(
+    Sprites::SkinSpritesData::single().strData(infantryString+"-id"),
+    Sprites::SkinSpritesData::single().intData(infantryString+"-width"),
+    Sprites::SkinSpritesData::single().intData(infantryString+"-height"),
+    Sprites::SkinSpritesData::single().intData(infantryString+"-frames"),
+    Sprites::SkinSpritesData::single().intData(infantryString+"-versions"),
+    m_theWorld->zoom(),
+    backGnd(),
+    200);
+  
+    paysDefenseur->spritesInfantry().hideAndRemoveFirst();
+  }
+  else
+  {
+    if (!paysDefenseur->spritesCavalry().isEmpty())
+    {
+      defenderSprite = new CavalrySprite(
+      Sprites::SkinSpritesData::single().strData("cavalry-id"),
+      Sprites::SkinSpritesData::single().intData("cavalry-width"),
+      Sprites::SkinSpritesData::single().intData("cavalry-height"),
+      Sprites::SkinSpritesData::single().intData("cavalry-frames"),
+      Sprites::SkinSpritesData::single().intData("cavalry-versions"),
+      m_theWorld->zoom(),
+      backGnd(),
+      200);
+
+      paysDefenseur->spritesCavalry().hideAndRemoveFirst();
+    }
+    else
+    {
+      if (!paysDefenseur->spritesCannons().isEmpty())
+      {
+        defenderSprite = new CannonSprite(
+        Sprites::SkinSpritesData::single().strData("cannon-id"),
+        Sprites::SkinSpritesData::single().intData("cannon-width"),
+        Sprites::SkinSpritesData::single().intData("cannon-height"),
+        Sprites::SkinSpritesData::single().intData("cannon-frames"),
+        Sprites::SkinSpritesData::single().intData("cannon-versions"),
+        m_theWorld->zoom(),
+        backGnd(),
+        200);
+
+        paysDefenseur->spritesCannons().hideAndRemoveFirst();
+      }
+      else
+      {
+        // if the soldier have not defend yet in the arena it means that it must be the last to do so
+        if (!paysDefenseur->spritesInfantry().isEmpty() && backGnd()->bgIsArena())
+          {
+          attackingSprite = new InfantrySprite(
+          Sprites::SkinSpritesData::single().strData("infantry-id"),
+          Sprites::SkinSpritesData::single().intData("infantry-width"),
+          Sprites::SkinSpritesData::single().intData("infantry-height"),
+          Sprites::SkinSpritesData::single().intData("infantry-frames"),
+          Sprites::SkinSpritesData::single().intData("infantry-versions"),
+          m_theWorld->zoom(),
+          backGnd(),
+          200);
+
+          paysDefenseur->spritesInfantry().hideAndRemoveFirst();
+        }
+      }
+    }
   }
 
   if (defenderSprite==0)
@@ -745,16 +734,26 @@ void KGameWindow::initCombatMovement(Country *paysAttaquant, Country *paysDefens
     kError() << "null defenderSprite at " << __FILE__ << ", line " << __LINE__;
     return;
   }
-	defenderSprite-> setDefendant();
- 	defenderSprite-> setupTravel(paysDefenseur, paysDefenseur, pointArriveeDefenseur);
-  	//(pointDepartDefenseurX <= pointArriveeDefenseurX) ? defenderSprite-> setLookRight() : defenderSprite-> setLookLeft();
-  	m_animFighters->addSprite(defenderSprite);
+  
+  if (paysDefenseur->owner()->getNbDefense() == 1)
+  {
+    defenderSprite->addDecoration("mark1", QRect(0,0,10,10));
+  }
+  else if (paysDefenseur->owner()->getNbDefense() == 2)
+  {
+    defenderSprite->addDecoration("mark2", QRect(0,0,10,10));
+  }
+  
+  defenderSprite-> setDefendant();
+  defenderSprite-> setupTravel(paysDefenseur, paysDefenseur, pointArriveeDefenseur);
+  //(pointDepartDefenseurX <= pointArriveeDefenseurX) ? defenderSprite-> setLookRight() : defenderSprite-> setLookLeft();
+  m_animFighters->addSprite(defenderSprite);
   }
 
   sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
   if (sndRoulePath.isNull())
   {
-	KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br/>Program cannot continue"), i18n("Error !"));
+    KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br/>Program cannot continue"), i18n("Error !"));
 	exit(2);
   }
   if (KsirkSettings::soundEnabled())
