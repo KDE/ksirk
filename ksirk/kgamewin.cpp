@@ -307,6 +307,15 @@ void KGameWindow::initActions()
   connect(nextPlayerAction, SIGNAL(triggered(bool)), this, SLOT(slotNextPlayer()));
   contextualHelpAction->setStatusTip(i18n("Lets the next player play"));
   actionCollection()->addAction("game_nextplayer", nextPlayerAction);
+
+  QAction* finishMovesAction = new QAction(QIcon(),
+        i18n("Finish moves"), this);
+  finishMovesAction->setShortcut(Qt::Key_Space);
+  finishMovesAction->setStatusTip(i18n("Finish now current sprites movements"));
+  connect(finishMovesAction,SIGNAL(triggered(bool)),this,SLOT(slotFinishMoves()));
+  actionCollection()->addAction("game_finish_moves", finishMovesAction);
+
+
 }
 
 void KGameWindow::initStatusBar()
@@ -972,6 +981,8 @@ bool KGameWindow::actionOpenGame()
       m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
       m_frame->setFocus();
       kDebug() << "KGameWindow::actionOpenGame false1";
+      reduceChat();
+
       return false;
     }
     else
@@ -980,6 +991,7 @@ bool KGameWindow::actionOpenGame()
       messageParts << I18N_NOOP("Waiting for the connection of %1 network players.") << QString::number(m_waitedPlayers.size());
       broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
       kDebug() << "KGameWindow::actionOpenGame true";
+      unreduceChat();
       return true;
     }
   }
@@ -1329,7 +1341,7 @@ void KGameWindow::setBarFlagButton(const Player* player)
 
 bool KGameWindow::setupPlayers()
 {
-  kDebug() << "KGameWindow::setupPlayers";
+  kDebug();
   
   // Number of players
   bool networkGame = false;
@@ -1380,7 +1392,7 @@ bool KGameWindow::setupPlayers()
   }
   if (networkGame)
   {
-    m_bottomDock->hide();
+    unreduceChat();
     kDebug() << "In setupPlayers: networkGame";
     m_automaton->offerConnections(port);
     KMessageParts messageParts;
@@ -1390,7 +1402,7 @@ bool KGameWindow::setupPlayers()
   }
   else
   {
-    m_bottomDock->show();
+    reduceChat();
   }
   m_frame->setFocus();
   return true;
@@ -2879,6 +2891,7 @@ void KGameWindow::actionRecyclingFinished()
 
 void KGameWindow::finishMoves()
 {
+  kDebug();
   m_animFighters->moveAllToDestinationNow();
 }
 
@@ -3226,6 +3239,33 @@ void KGameWindow::slotWindowDef2()
   m_automaton->gameEvent("actionDefense2", point);
   dial->close();
 }
+
+void KGameWindow::reduceChat()
+{
+  kDebug();
+  m_chatIsReduced = true;
+
+  m_lastWidthChat = m_bottomDock->width();
+
+  // reduce the chat
+  m_reduceChatButton->setIcon(m_upChatReducePix);
+  m_chatDlg->hide();
+  m_titleChatMsg->show();
+}
+
+void KGameWindow::unreduceChat()
+{
+  kDebug();
+  m_chatIsReduced = false;
+
+  // restore the chat
+  m_reduceChatButton->setIcon(m_downChatReducePix);
+  m_chatDlg->show();
+  m_titleChatMsg->hide();
+  m_bottomDock->setMaximumSize(16777215,16777215);
+  m_bottomDock->resize(m_lastWidthChat,38+m_chatDlg->height());
+}
+
 
 } // closing namespace Ksirk
 

@@ -656,6 +656,9 @@ protected:
   /** Shows some explanations on how to start playing */
   void explain();
 
+  void reduceChat();
+  void unreduceChat();
+
 public slots:
 
   virtual void mouseMoveEvent ( QMouseEvent * event );

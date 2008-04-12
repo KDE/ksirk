@@ -133,12 +133,12 @@ void KGameWindow::evenementTimer()
 //   kDebug() << "m_frame = ( " << m_frame-> viewport()->width() << " , " << m_frame-> viewport()->height() << " )";
 
   bool restart = false;
-int borderScrollSize = 50;
-int borderScrollSpeed = 40;
+  int borderScrollSize = 50;
+  int borderScrollSpeed = 40;
   if ((mousePosition.x() < borderScrollSize) && (mousePosition.x() >= 0)
       && (mousePosition.y() >= 0) && (mousePosition.y() <= m_frame-> viewport()->height()))
   {
-    kDebug() << "scrollRight";
+//     kDebug() << "scrollRight";
     m_frame-> horizontalScrollBar()->setValue ( m_frame-> horizontalScrollBar()->value() - borderScrollSpeed);
     restart = true;
   }
@@ -147,14 +147,14 @@ int borderScrollSpeed = 40;
       (mousePosition.x() <= m_frame-> viewport()->width())
       && (mousePosition.y() >= 0) && (mousePosition.y() <= m_frame-> viewport()->height()))
   {
-    kDebug() << "scrollLeft";
+//     kDebug() << "scrollLeft";
     m_frame-> horizontalScrollBar()->setValue ( m_frame-> horizontalScrollBar()->value() + borderScrollSpeed);
     restart = true;
   }
   if ((mousePosition.y() < borderScrollSize) && (mousePosition.y() >= 0)
       && (mousePosition.x() >= 0) && (mousePosition.x() <= m_frame-> viewport()->width()))
   {
-    kDebug() << "scrollDown";
+//     kDebug() << "scrollDown";
     m_frame-> verticalScrollBar()->setValue ( m_frame-> verticalScrollBar()->value() - borderScrollSpeed);
     restart = true;
   }
@@ -162,9 +162,9 @@ int borderScrollSpeed = 40;
       (mousePosition.y() <=  m_frame-> viewport()->height())
       && (mousePosition.x() >= 0) && (mousePosition.x() <= m_frame-> viewport()->width()))
   {
-    kDebug() << "scrollUp " << m_frame-> verticalScrollBar()->value()
-      << "("<< m_frame-> verticalScrollBar()->minimum()
-      << ", " << m_frame-> verticalScrollBar()->maximum() << ")";
+//     kDebug() << "scrollUp " << m_frame-> verticalScrollBar()->value()
+//       << "("<< m_frame-> verticalScrollBar()->minimum()
+//       << ", " << m_frame-> verticalScrollBar()->maximum() << ")";
     m_frame-> verticalScrollBar()->setValue ( m_frame-> verticalScrollBar()->value() + borderScrollSpeed);
     restart = true;
   }
@@ -468,7 +468,7 @@ void KGameWindow::slotDumpGameInformations()
 
 void KGameWindow::slotFinishMoves()
 {
-//   kDebug() << "slotFinishMoves";
+  kDebug();
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   m_automaton->sendMessage(buffer,FinishMoves);
@@ -524,24 +524,16 @@ void KGameWindow::slotChatFloatChanged(bool value)
 
 void KGameWindow::slotChatReduceButton()
 {
-  m_chatIsReduced = !m_chatIsReduced;
+  kDebug();
 
   // change the reduce button image, hide or show the chat and the short last message
-  if (m_chatIsReduced) {
-    // save the last width
-    m_lastWidthChat = m_bottomDock->width();
-
-    // reduce the chat
-    m_reduceChatButton->setIcon(m_upChatReducePix);
-    m_chatDlg->hide();
-    m_titleChatMsg->show();
-  } else {
-    // restore the chat
-    m_reduceChatButton->setIcon(m_downChatReducePix);
-    m_chatDlg->show();
-    m_titleChatMsg->hide();
-    m_bottomDock->setMaximumSize(16777215,16777215);
-    m_bottomDock->resize(m_lastWidthChat,38+m_chatDlg->height());
+  if (!m_chatIsReduced)
+  {
+    reduceChat();
+  }
+  else
+  {
+    unreduceChat();
   }
 }
 

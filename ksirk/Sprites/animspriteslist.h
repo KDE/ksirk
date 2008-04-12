@@ -30,6 +30,8 @@
 #include <QList>
 #include <QObject>
 
+#include <kdebug.h>
+
 namespace Ksirk
 {
 
@@ -102,7 +104,7 @@ template < typename SpriteType >
 void AnimSpritesList< SpriteType >::hideAndRemoveAll()
 {    // cache tous les sprites du tableau, puis les enleve et les
     // detruit si le tableau n'etait pas en auto delete
-//    qDebug("AnimSpritesList< SpriteType >::hideAndRemoveAll");
+//    kDebug();
 
   while (!QList< SpriteType* >::empty())
   {
@@ -163,6 +165,7 @@ void AnimSpritesList< SpriteType >::moveAll()
 template < typename SpriteType >
 void AnimSpritesList< SpriteType >::moveAllToDestinationNow(bool clear)
 {
+  kDebug() << clear;
   typename AnimSpritesList< SpriteType >::iterator it, it_end;
   it = QList< SpriteType* >::begin();
   it_end = QList< SpriteType* >::end();
@@ -172,6 +175,7 @@ void AnimSpritesList< SpriteType >::moveAllToDestinationNow(bool clear)
 
     const QPointF& destinationPoint = sp-> getDestinationPoint();
     sp->setPos(destinationPoint);
+    sp->moveIt();
 
     if (clear)
     {
