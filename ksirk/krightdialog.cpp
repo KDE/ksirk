@@ -362,10 +362,12 @@ namespace Ksirk
         }
         displayRecycleDetails(country->owner(),nbAvailArmies);
       }
-      rightContents->at(1)->setText(i18n("%1 armies to place", nbAvailArmies));
 
       if (recyclePhase)
       {
+        rightContents->at(0)->setText(i18n("<u><b>Change some<br/>placements ?</b></u> "));
+        flag1->hide();
+        rightContents->at(1)->setText(QString());
         rightContents->at(2)->setText(QString());
         rightContents->at(3)->setText(QString());
 
@@ -378,6 +380,7 @@ namespace Ksirk
       }
       else
       {
+        rightContents->at(1)->setText(i18n("%1 armies to place", nbAvailArmies));
         rightContents->at(2)->setText("<b>"+country->name()+"</b>");
         rightContents->at(3)->setText(i18n("<b>Armies: %1", country->nbArmies()));
         if (nbAvailArmies > 0)

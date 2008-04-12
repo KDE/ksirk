@@ -582,12 +582,14 @@ void KGameWindow::initView()
 
   //ADD a dock widget on the right
 
-  if (m_rightDialog != 0) {
+  if (m_rightDialog != 0)
+  {
     m_rightDialog->hide();
     delete m_rightDialog;
   }
 
-  if (m_rightDock != 0) {
+  if (m_rightDock != 0)
+  {
     m_rightDock->hide();
     delete m_rightDock;
   }
@@ -606,6 +608,7 @@ void KGameWindow::initView()
 //QDockWidget * a = new QDockWidget();
 //a->setFixedWidth(3);
 //a->setFeatures(QDockWidget::NoDockWidgetFeatures);
+  kDebug() << "hiding right dock";
   m_rightDock->hide();
   addDockWidget(Qt::RightDockWidgetArea, m_rightDock);
   //addDockWidget(Qt::RightDockWidgetArea, a);
@@ -1034,6 +1037,7 @@ void KGameWindow::displayRecyclingButtons()
   }
   else
   {
+    m_rightDock->show();
     addAButton(CM_RECYCLING, SLOT(slotRecycling()), i18n("Redistribute"),KShortcut(Qt::Key_R),true);
     addAButton(CM_RECYCLINGFINISHED, SLOT(slotRecyclingFinished()), i18n("End redistribute"), KShortcut(Qt::Key_Tab), true);
   }
@@ -1939,6 +1943,7 @@ int KGameWindow::setCurrentPlayerToFirst()
 
 int KGameWindow::setCurrentPlayerToNext(bool restartRunningAIs)
 {
+  kDebug();
   m_rightDock->hide();
   int looped(0);
 //   kDebug() << "KGameWindow::setCurrentPlayerToNext()";
@@ -2404,6 +2409,7 @@ bool KGameWindow::nextPlayerRecycling()
   */
 bool KGameWindow::nextPlayerNormal()
 {
+  kDebug();
   if (setCurrentPlayerToNext())
   {
     distributeArmies();

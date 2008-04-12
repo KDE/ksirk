@@ -343,6 +343,7 @@ void KGameWindow::slotRecycling()
 
 void KGameWindow::slotRecyclingFinished()
 {
+  kDebug();
   QPoint point;
   m_rightDock->hide();
   m_automaton->gameEvent("actionRecyclingFinished", point);
@@ -350,6 +351,7 @@ void KGameWindow::slotRecyclingFinished()
 
 void KGameWindow::slotNextPlayer()
 {
+  kDebug();
   QPoint point;
   m_automaton->gameEvent("actionNextPlayer", point);
 }
@@ -729,6 +731,7 @@ void KGameWindow::slideClose()
 
 void KGameWindow::slotContextualHelp()
 {
+  kDebug();
   if (currentPlayer()->isAI())
   {
     return;
