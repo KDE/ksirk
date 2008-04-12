@@ -4,18 +4,18 @@ Bugs:
   * current player flag is not rightly updated
   * space bar should finish move
   * hovering should display the number of armies on a country, possibly the right information panel
-  * number of fighters should be displayed on all fighting sprites (programaticaly and not by duplicating sprites)
-  * when a client have chosen not to recycle, remove the right dialog
+  * [DONE] number of fighters should be displayed on all fighting sprites (programaticaly and not by duplicating sprites)
+  * [DONE] when a client have chosen not to recycle, remove the right dialog
   * if a client chose to recycle, show the dialog again on other clients
   * better access to the contextual help (add to toolbar and context menu)
   * display only the first frame of flags in player setup dialog
   * change initial size of player setup dialog
   * change size of "will display goal" dialog
-  * automaticaly hide chat window in non-network games (but show it in network games)
-  * remove the player name, etc in right window during recycling choice
-  * hide right window content when changing current player
-  * don't show context help for computer players
-  * don't show "you must distribute all..." for computer players
+  * [TESTING] automaticaly hide chat window in non-network games (but show it in network games)
+  * [DONE] remove the player name, etc in right window during recycling choice
+  * [DONE] hide right window content when changing current player
+  * [TESTING] don't show context help for computer players
+  * [DONE] don't show "you must distribute all..." for computer players
   
 Before KDE4.1:
   * max size of the window limited by the map size
