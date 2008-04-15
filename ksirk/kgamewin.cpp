@@ -1102,28 +1102,6 @@ void KGameWindow::displayNormalGameButtons()
   //gameActionsToolBar-> show();
 }
 
-//TODO créer sa propre méthode de choix de défense
-void KGameWindow::displayDefenseChoice()
-{
-/*
- switch( QMessageBox::question( this, "KSirk",
-        "Choose your defense mode between:,\n",
-        1,
-        2,
-	0)) {
-    case 1: // def1 pressed
-        // try again
-        break;
-    case 2: // def2 pressed
-        // abort
-        break;
-    case 0: // autodefense pressed
-	break;
-    }
-*/
-}
-
-
 void KGameWindow::displayDefenseButtons()
 {
   clearGameActionsToolbar(false);
@@ -2379,6 +2357,10 @@ void KGameWindow::clear()
   m_nbMovedArmies = 0;
   m_firstCountry = m_secondCountry = 0;
   NKD = NKA = 0;
+  if (m_message !=0)
+  {
+    delete m_message;
+  }
   m_message = 0;
 }
 
@@ -3010,11 +2992,15 @@ void KGameWindow::explain()
 
 void KGameWindow::showMessage(const QString& message, quint32 delay)
 {
+  kDebug();
+  QString lmessage = message + "<br/><a href=\"dontshowagain\">"+i18n("Don't show messages anymore") + "</a>";
   if(KsirkSettings::helpEnabled())
   {
     if (m_message == 0)
     {
+      kDebug() << "Creating KGamePopupItem";
       m_message  = new KGamePopupItem();
+      connect(m_message,SIGNAL(linkActivated(const QString &)),this,SLOT(slotDisableHelp(const QString &)));
       m_scene_world->addItem(m_message);
       m_message->setSharpness(KGamePopupItem::Soft);
       QColor color = QColor(102,102,255);
@@ -3022,7 +3008,7 @@ void KGameWindow::showMessage(const QString& message, quint32 delay)
       m_message->setZValue(1000);
     }
     m_message->setMessageTimeout(delay*1000);
-    m_message->showMessage(message, KGamePopupItem::TopLeft, KGamePopupItem::ReplacePrevious);
+    m_message->showMessage(lmessage, KGamePopupItem::TopLeft, KGamePopupItem::ReplacePrevious);
 
 //   m_message->setPos(m_frame-> mapToScene(QPoint(30,30)));
   }

@@ -1,4 +1,7 @@
-Bugs:
+Before KDE4.1:
+  * max size of the window limited by the map size
+  * display somewhere the number of armies in the hovered country
+  * hide/show or disable/enable the next player button in the toolbar
   * status bar coherence (current player for example and number of armies to place)
   * missing status bar information
   * hovering should display the number of armies on a country, possibly the right information panel
@@ -6,25 +9,24 @@ Bugs:
   * better access to the contextual help (add to toolbar and context menu)
   * display only the first frame of flags in player setup dialog
   * change size of "will display goal" dialog (kdelibs bug?)
+  * moving armies should use the invasion slider instead of a one shot menu
+  * sprites should be enhanced
+  * goal showing button should not display raw html
+  * remove quit action from context menu
   * [DONE] current player flag is not rightly updated
   * [DONE] space bar should finish move
   * [DONE] number of fighters should be displayed on all fighting sprites (programaticaly and not by duplicating sprites)
   * [DONE] when a client have chosen not to recycle, remove the right dialog
   * [DONE] change initial size of player setup dialog
   * [DONE] remove the player name, etc in right window during recycling choice
-  * [DONE] hide right window content when changing current player
+  * [ONGOING] hide right window content when changing current player but show it again when necessary
   * [DONE] don't show "you must distribute all..." for computer players
   * [DONE] automaticaly hide chat window in non-network games (but show it in network games)
-  * [TESTING] don't show context help for computer players
-
-Before KDE4.1:
-  * max size of the window limited by the map size
-  * display somewhere the number of armies in the hovered country
-  * hide/show or disable/enable the next player button in the toolbar
+  * [ONGOING] don't show context help for computer players
   
 
 Quickly
-  * replace all QMessageBox by KMessageBox
+  * [DONE] replace all QMessageBox by KMessageBox
   * [DONE] study the replacement of the global timer by more local ones
   * study the replacement local timers for sprites by a global one
 
@@ -49,7 +51,7 @@ Before 1.9:
   * [DONE] possibility to save AI only games
 
 Before 2.0:
-  - if a fight starts outside of the displayed zone, automaticaly move to 
+  - [DONE, Toulouse 2008 students, configuration option missing] if a fight starts outside of the displayed zone, automaticaly move to
     center on the fight (configurable)
   - possibility to Drag and Drop the map
   - perfect implementation of Risk rules (optional if some enhancements are

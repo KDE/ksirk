@@ -260,7 +260,6 @@ void determinePointArriveeForArena(GameLogic::Country *paysAttaquant, GameLogic:
   void displayRecyclingButtons();
   void displayNormalGameButtons();
   void displayDefenseButtons();
-  void displayDefenseChoice();
   void displayInvasionButtons();
   void displayCancelButton();
   void displayDefenseWindow();
@@ -767,6 +766,8 @@ private slots:
   void slotRemoveMessage();
 
   void slotContextualHelp();
+
+  void slotDisableHelp(const QString &);
 
 private:
 

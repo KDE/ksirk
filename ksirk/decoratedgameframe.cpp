@@ -32,6 +32,7 @@
 #include <kstandardaction.h>
 #include <klocale.h>
 #include <kdebug.h>
+#include <kgamepopupitem.h>
 #include <kgame/kgameio.h>
 #include <kgame/kplayer.h>
 #include <KAction>
@@ -72,7 +73,7 @@ void DecoratedGameFrame::mouseMoveEvent ( QMouseEvent * event )
 {
 //   kDebug();
   emit (mouseMoveEventReceived(event));
-  event->ignore();
+//   event->ignore();
 }
 
 QSize DecoratedGameFrame::sizeHint() const
@@ -270,6 +271,19 @@ void DecoratedGameFrame::slotMouseInput(KGameIO *input,QDataStream &stream,QMous
 {
   kDebug();
   
+  QGraphicsItem* item = itemAt(mapFromScene(((QGraphicsSceneMouseEvent*)e)->scenePos()));
+  while (item->parentItem()!=0 && dynamic_cast<KGamePopupItem*>(item)==0)
+  {
+    item = item->parentItem();
+  }
+
+  if (dynamic_cast<KGamePopupItem*>(item)!=0)
+  {
+    *eatevent=false;
+    e->setAccepted(false);
+    return;
+  }
+
   KPlayer *player=input->player();
   if (!player->myTurn())
   {

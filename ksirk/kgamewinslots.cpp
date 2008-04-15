@@ -20,6 +20,7 @@ ranklin Street, Fifth Floor, Boston, MA
 
 // application specific includes
 #include "kgamewin.h"
+#include "ksirksettings.h"
 #include "Sprites/backgnd.h"
 
 #include <kaboutapplicationdialog.h>
@@ -735,6 +736,12 @@ void KGameWindow::slotContextualHelp()
     break;
     default:;
   }
+}
+
+void KGameWindow::slotDisableHelp(const QString & link)
+{
+  kDebug() << link;
+  KsirkSettings::setHelpEnabled(false);
 }
 
 } // closing namespace Ksirk
