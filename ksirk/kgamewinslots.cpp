@@ -640,6 +640,7 @@ void KGameWindow::slotRemoveMessage()
 
 void KGameWindow::slideMove(int v)
 {
+  kDebug();
   if(m_slideReleased) m_previousSlideValue = m_currentSlideValue;
   m_slideReleased = false;
   m_nbLArmy = m_nbLArmy-(v-m_currentSlideValue);
@@ -648,10 +649,13 @@ void KGameWindow::slideMove(int v)
   m_nbRArmies->setText(QString::number(m_nbRArmy));
   m_currentSlideValue = v;
   m_wSlide->update();
+
+  slideReleased();
 }
 
 void KGameWindow::slideReleased()
 {
+  kDebug();
   m_slideReleased = true;
   m_currentSlideValue = m_previousSlideValue;
   QByteArray* buffer;
