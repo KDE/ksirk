@@ -19,7 +19,6 @@
 #ifndef KSIRK_GAMELOGICEVENTSLISTPROPERTY_H
 #define KSIRK_GAMELOGICEVENTSLISTPROPERTY_H
 
-#include "kgame/kgamepropertylist.h"
 #include<qstring.h>
 #include<qpoint.h>
 #include<qpair.h>
