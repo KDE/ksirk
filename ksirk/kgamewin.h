@@ -98,6 +98,8 @@ class KGameWindow: public KXmlGuiWindow
   Q_OBJECT
 
 public:
+  enum MessageShowingType {OnConfig, ForceShowing};
+  enum InvasionType {Invasion, Moving};
     
   /**
     * Create the window and initializes its members
@@ -544,7 +546,7 @@ void determinePointArriveeForArena(GameLogic::Country *paysAttaquant, GameLogic:
   /** Returns a pointer to the title chat message label used to display messages. */
   inline QLabel* titleChatMessage() {return m_titleChatMsg;}
 
-  void showMessage(const QString& message, quint32 delay=5);
+  void showMessage(const QString& message, quint32 delay=5, MessageShowingType forcing=OnConfig);
 
   /**
     * Replace the map widget by the arena widget.
@@ -595,7 +597,7 @@ void determinePointArriveeForArena(GameLogic::Country *paysAttaquant, GameLogic:
     */
   GameLogic::Player* currentPlayer();
 
-  void slideInvade(GameLogic::Country *,GameLogic::Country *);
+  void slideInvade(GameLogic::Country *,GameLogic::Country *, InvasionType invasionType = Invasion);
 
 protected:
 

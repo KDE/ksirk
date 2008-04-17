@@ -150,6 +150,7 @@ bool Goal::checkContinentsFor(const GameLogic::Player* player) const
 
 QString Goal::message(int displayType) const
 {
+  kDebug();
   KLocalizedString res;
 
   std::set<unsigned int>::const_iterator it, it_end, it_next;
@@ -302,11 +303,12 @@ QString Goal::message(int displayType) const
   
 void Goal::show(int displayType)
 {
-//   m_automaton->game()->showMessage(message(displayType),5);
-  KMessageBox::information(
+  kDebug() << message(displayType);
+  m_automaton->game()->showMessage(message(displayType),5, KGameWindow::ForceShowing);
+/*  KMessageBox::information(
                             m_automaton->game(),
                             message(displayType), 
-                            i18n("KsirK - Goal Display"));
+                            i18n("KsirK - Goal Display"));*/
 }
 
 QDataStream& operator<<(QDataStream& stream, const Goal& goal)

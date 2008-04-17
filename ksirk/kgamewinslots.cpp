@@ -207,6 +207,7 @@ void KGameWindow::slotLeftButtonUp(const QPointF& point)
 
 void KGameWindow::slotRightButtonDown(const QPointF& point)
 {
+  kDebug();
 //   if (currentPlayer() && ! (currentPlayer()-> isAI()) )
     m_automaton->gameEvent("actionRButtonDown", point);
   return;
@@ -214,6 +215,7 @@ void KGameWindow::slotRightButtonDown(const QPointF& point)
 
 void KGameWindow::slotRightButtonUp(const QPointF& point)
 {
+  kDebug();
 //   if (currentPlayer() && ! (currentPlayer()-> isAI()) )
     m_automaton->gameEvent("actionRButtonUp", point);
   return;
@@ -494,8 +496,8 @@ void KGameWindow::slotJoinNetworkGame()
 
 void KGameWindow::slotShowGoal()
 {
-//   kDebug() << "slotShowGoal";
-if (currentPlayer() && !currentPlayer()->isVirtual()
+  kDebug();
+  if (currentPlayer() && !currentPlayer()->isVirtual()
     && !currentPlayer()->isAI())
   {
     currentPlayer()->goal().show(GameLogic::Goal::GoalDesc|GameLogic::Goal::GoalAdvance);

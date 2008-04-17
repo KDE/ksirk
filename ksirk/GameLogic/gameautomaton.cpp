@@ -133,6 +133,7 @@ const char* GameAutomaton::KsirkMessagesIdsNames[] = {
 "Acknowledge", // 308
 "DisplayGoals", // 309
 "DisplayFightResult", // 310
+"MoveSlide", // 311
 };
 
 GameAutomaton::GameAutomaton() :
@@ -890,77 +891,73 @@ kDebug () << "$$$$$$$STATE FIGHT_BRINGBACK $$$$$$$$$$$" << m_game->haveAnimFight
     }
     else if (event == "actionLButtonUp")
     {
-	m_game->secondCountryAt(point);
+      kDebug() << "actionLButtonUp in WAIT1";
+      m_game->secondCountryAt(point);
 
-	if (!currentPlayer()-> isAI())
-	{
-		if (m_game->isMoveValid(point) && m_game->firstCountry()->nbArmies() !=1)
-		{
-			if (m_game->firstCountry()->nbArmies() > 10)
-			{
-				m_game->frame()->getMove1Action()->setVisible(true);
-				m_game->frame()->getMove5Action()->setVisible(true);
-				m_game->frame()->getMove10Action()->setVisible(true);
-			}
-			else
-			{
-				if (m_game->firstCountry()->nbArmies() > 5)
-				{
-					m_game->frame()->getMove1Action()->setVisible(true);
-					m_game->frame()->getMove5Action()->setVisible(true);
-					m_game->frame()->getMove10Action()->setVisible(false);
-				}
-				else
-				{
-					if (m_game->firstCountry()->nbArmies() > 1)
-					{
-						m_game->frame()->getMove1Action()->setVisible(true);
-						m_game->frame()->getMove5Action()->setVisible(false);
-						m_game->frame()->getMove10Action()->setVisible(false);
-					}
-				}
-			}
-			m_game->frame()->getMoveContextMenu()->exec(QCursor::pos());
-		}
-		else
-		{
-			if (m_game->isFightValid(point) && m_game->firstCountry()->nbArmies() != 1)
-			{
-				if (m_game->firstCountry()->nbArmies() > 3)
-				{
-					m_game->frame()->getAttack1Action()->setVisible(true);
-					m_game->frame()->getAttack2Action()->setVisible(true);
-					m_game->frame()->getAttack3Action()->setVisible(true);
-					
-				}
-				else
-				{
-					if (m_game->firstCountry()->nbArmies() > 2)
-					{
-						m_game->frame()->getAttack1Action()->setVisible(true);
-						m_game->frame()->getAttack2Action()->setVisible(true);
-						m_game->frame()->getAttack3Action()->setVisible(false);
-					}
-					else
-					{
-						if (m_game->firstCountry()->nbArmies() > 1)
-						{
-							m_game->frame()->getAttack1Action()->setVisible(true);
-							m_game->frame()->getAttack2Action()->setVisible(false);
-							m_game->frame()->getAttack3Action()->setVisible(false);
-						}
-					}
-				}
-				m_game->frame()->setMenuPoint(QCursor::pos());
-				m_game->frame()->getAttackContextMenu()->exec(QCursor::pos());
-			}
-			else
-			{
-				m_game-> cancelAction();
-				state(WAIT);
-			}
-		}
-	}
+      if (!currentPlayer()-> isAI())
+      {
+        if (m_game->isMoveValid(point) && m_game->firstCountry()->nbArmies() !=1)
+        {
+//           if (m_game->firstCountry()->nbArmies() > 10)
+//           {
+//             m_game->frame()->getMove1Action()->setVisible(true);
+//             m_game->frame()->getMove5Action()->setVisible(true);
+//             m_game->frame()->getMove10Action()->setVisible(true);
+//           }
+//           else if (m_game->firstCountry()->nbArmies() > 5)
+//           {
+//             m_game->frame()->getMove1Action()->setVisible(true);
+//             m_game->frame()->getMove5Action()->setVisible(true);
+//             m_game->frame()->getMove10Action()->setVisible(false);
+//           }
+//           else
+//           {
+//             if (m_game->firstCountry()->nbArmies() > 1)
+//             {
+//               m_game->frame()->getMove1Action()->setVisible(true);
+//               m_game->frame()->getMove5Action()->setVisible(false);
+//               m_game->frame()->getMove10Action()->setVisible(false);
+//             }
+//           }
+//           m_game->frame()->getMoveContextMenu()->exec(QCursor::pos());
+          kDebug() << "Sending MoveSlide";
+          QByteArray buffer;
+          QDataStream stream(&buffer, QIODevice::WriteOnly);
+          sendMessage(buffer,MoveSlide);
+
+// m_game->slideInvade(m_game->firstCountry(), m_game->secondCountry());
+        }
+        else if (m_game->isFightValid(point)
+                && m_game->firstCountry()->nbArmies() != 1)
+        {
+          if (m_game->firstCountry()->nbArmies() > 3)
+          {
+            m_game->frame()->getAttack1Action()->setVisible(true);
+            m_game->frame()->getAttack2Action()->setVisible(true);
+            m_game->frame()->getAttack3Action()->setVisible(true);
+
+          }
+          else if (m_game->firstCountry()->nbArmies() > 2)
+          {
+            m_game->frame()->getAttack1Action()->setVisible(true);
+            m_game->frame()->getAttack2Action()->setVisible(true);
+            m_game->frame()->getAttack3Action()->setVisible(false);
+          }
+          else if (m_game->firstCountry()->nbArmies() > 1)
+          {
+            m_game->frame()->getAttack1Action()->setVisible(true);
+            m_game->frame()->getAttack2Action()->setVisible(false);
+            m_game->frame()->getAttack3Action()->setVisible(false);
+          }
+          m_game->frame()->setMenuPoint(QCursor::pos());
+          m_game->frame()->getAttackContextMenu()->exec(QCursor::pos());
+        }
+        else
+        {
+          m_game-> cancelAction();
+          state(WAIT);
+        }
+      }
     }
     else if (event == "actionLButtonDown")
     {
@@ -1847,7 +1844,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     exit(0);
   }
 
-  if (msgid < CountryOwner || msgid> MSGIDMAX)
+  if (msgid < CountryOwner || msgid>= UnusedLastMessageId)
   {
     return;
   }
@@ -2373,13 +2370,17 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
       stream >> A1 >> A2 >> A3 >> D1 >> D2 >> NKA >> NKD >> win;
       m_game->getRightDialog()->displayFightResult(A1,A2,A3,D1,D2,NKA,NKD,win);
     break;
+  case MoveSlide:
+      kDebug() << "Got message MoveSlide";
+      moveSlide();
+    break;
   default: ;
   }
 }
 
 void GameAutomaton::finalizePlayers()
 {
-  kDebug() << endl;
+  kDebug();
   PlayersArray::iterator it = playerList()->begin();
   PlayersArray::iterator it_end = playerList()->end();
   for (; it != it_end; it++)
@@ -2591,6 +2592,14 @@ void GameAutomaton::displayGoals()
   }
   m_aicannotrunhack = false;
 }
+
+void GameAutomaton::moveSlide()
+{
+  kDebug();
+  if (!currentPlayer()->isVirtual())
+    m_game->slideInvade(m_game->firstCountry(), m_game->secondCountry(),KGameWindow::Moving);
+}
+
 
 } // closing namespace GameLogic
 } // closing namespace Ksirk

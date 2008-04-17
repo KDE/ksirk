@@ -9,20 +9,25 @@ Before KDE4.1:
   * better access to the contextual help (add to toolbar and context menu)
   * display only the first frame of flags in player setup dialog
   * change size of "will display goal" dialog (kdelibs bug?)
-  * moving armies should use the invasion slider instead of a one shot menu
+  * moving armies should count as an action (avoid end of turn confirmation that allows to cheat)
   * sprites should be enhanced
-  * goal showing button should not display raw html
-  * remove quit action from context menu
+  * save action should confirm before replacing a file
+  * [????] remove quit action from context menu
+  * [ONGOING] hide right window content when changing current player but show it again when necessary
+  * [ONGOING] don't show context help for computer players
+  * [HELP NEEDED] correct the layout of initial window (with main menu) when resizing
+  * make work again the network games
+  * [DONE] invasion slider should work when clicked also (and not only if slided)
+  * [DONE] goal showing button should not display raw html
   * [DONE] current player flag is not rightly updated
   * [DONE] space bar should finish move
   * [DONE] number of fighters should be displayed on all fighting sprites (programaticaly and not by duplicating sprites)
   * [DONE] when a client have chosen not to recycle, remove the right dialog
   * [DONE] change initial size of player setup dialog
   * [DONE] remove the player name, etc in right window during recycling choice
-  * [ONGOING] hide right window content when changing current player but show it again when necessary
   * [DONE] don't show "you must distribute all..." for computer players
   * [DONE] automaticaly hide chat window in non-network games (but show it in network games)
-  * [ONGOING] don't show context help for computer players
+  * [DONE] moving armies should use the invasion slider instead of a one shot menu
   
 
 Quickly

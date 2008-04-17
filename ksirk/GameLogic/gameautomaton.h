@@ -101,9 +101,10 @@ enum KsirkMessagesIds {
     FinalizePlayers, // 307
     Acknowledge, // 308
     DisplayGoals, // 309
-    DisplayFightResult // 310
+    DisplayFightResult, // 310
+    MoveSlide, // 311
+    UnusedLastMessageId
 };
-#define MSGIDMAX DisplayFightResult
 
 /** Messages formats:
   * 
@@ -341,6 +342,8 @@ public:
   void movingArmyArrived(Country* country, unsigned int number);
   void firingFinished();
   void explosionFinished();
+
+  void moveSlide();
 
   /**
     * Change the automatic attack state.

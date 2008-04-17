@@ -1149,7 +1149,7 @@ void KGameWindow::displayDefenseWindow()
   QPushButton * defAuto = new QPushButton ("Defend-Auto");
 
   QLabel * labDef = new QLabel ();
-  labDef->setText("<font color=\"red\">"+this->firstCountry()->owner()->name()+"</font> attacks you from <font color=\"red\">"+ this->firstCountry()->name() +"</font> with " + QString::number(this->firstCountry()->owner()->getNbAttack()) + " armies !<br> How do you want to defend <font color=\"blue\">" + this->secondCountry()->name() + "</font> ?");
+  labDef->setText("<font color=\"red\">"+this->firstCountry()->owner()->name()+"</font> attacks you from <font color=\"red\">"+ this->firstCountry()->name() +"</font> with " + QString::number(this->firstCountry()->owner()->getNbAttack()) + " armies !<br/> How do you want to defend <font color=\"blue\">" + this->secondCountry()->name() + "</font> ?");
 
   // Add icons on buttons
   KConfig config(m_automaton->game()->theWorld()->getConfigFileName());
@@ -1187,6 +1187,7 @@ void KGameWindow::displayDefenseWindow()
 
 void KGameWindow::displayInvasionButtons()
 {
+  kDebug();
   clearGameActionsToolbar(false);
   if (currentPlayer() && currentPlayer()-> isAI()  && (!currentPlayer()->isVirtual()))
   {
@@ -2990,11 +2991,11 @@ void KGameWindow::explain()
   broadcastChangeItem(message5Parts, ID_NO_STATUS_MSG);
 }
 
-void KGameWindow::showMessage(const QString& message, quint32 delay)
+void KGameWindow::showMessage(const QString& message, quint32 delay, MessageShowingType forcing)
 {
   kDebug();
   QString lmessage = message + "<br/><a href=\"dontshowagain\">"+i18n("Don't show messages anymore") + "</a>";
-  if(KsirkSettings::helpEnabled())
+  if(KsirkSettings::helpEnabled() || forcing == ForceShowing)
   {
     if (m_message == 0)
     {
@@ -3117,7 +3118,7 @@ BackGnd* KGameWindow::backGnd() {
   }
 }
 
-void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * defender)
+void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * defender, InvasionType invasionType)
 {
   QLabel * nb = new QLabel();
   QPixmap soldat;
@@ -3131,8 +3132,8 @@ void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * 
   m_nbRArmies = new QLabel(QString::number(m_nbRArmy));  
 
   m_wSlide = new QDialog();
-  m_wSlide->setFixedWidth(380);
-  m_wSlide->setFixedHeight(250);
+//   m_wSlide->setFixedWidth(380);
+//   m_wSlide->setFixedHeight(250);
 
   //Infantery picture
   KConfig config(theWorld()->getConfigFileName());
@@ -3161,9 +3162,17 @@ void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * 
   QVBoxLayout * right = new QVBoxLayout(m_wSlide);
 
   //init. main layout
-  wSlideLayout->addWidget(new QLabel(i18n("You conquered <font color=\"blue\">%1</font> with <font color=\"red\">%2</font>!", defender->name(), attack->name())),0,0);
+  if (invasionType == Invasion)
+  {
+    wSlideLayout->addWidget(new QLabel(i18n("You conquered <font color=\"blue\">%1</font> with <font color=\"red\">%2</font>!", defender->name(), attack->name())),0,0);
+    wSlideLayout->addWidget(new QLabel(i18n("<br><i>Choose the number of invade armies.</i>")),1,0);
+  }
+  else if (invasionType == Moving)
+  {
+    wSlideLayout->addWidget(new QLabel(i18n("You are moving armies from <font color=\"red\">%1</font> from <font color=\"blue\">%2</font>!", attack->name(), defender->name())),0,0);
+    wSlideLayout->addWidget(new QLabel(i18n("<br><i>Choose the number of moved armies.</i>")),1,0);
+}
 
-  wSlideLayout->addWidget(new QLabel(i18n("<br><i>Choose the number of invade armies.</i>")),1,0);
   wSlideLayout->addLayout(center,2,0);
   wSlideLayout->addWidget(m_invadeSlide,3,0);
   wSlideLayout->addWidget(ok,4,0);
