@@ -595,47 +595,47 @@ void ONU::applyZoomFactorFast(qreal zoomFactor)		//benj
 /** Zoom 2 : Second method , Very performent.  Carefull ! Can cause the game to lag. 
  To try this, comment all the first method and uncomment these lines
 */
-   kDebug() << "zoomFactor FASTTTTTTT"<<endl;
-   int nbLimitZooms = 6;
+  kDebug() << "zoomFactor FASTTTTTTT"<<endl;
+  int nbLimitZooms = 6;
 
   //Application of zoom
-    if (zoomFactor > 1 && m_nbZooms < nbLimitZooms)
-    {  
-	m_font.size = (unsigned int)(m_font.size*zoomFactor);
-  	m_width = (unsigned int)(m_width *zoomFactor);
-  	m_height = (unsigned int)(m_height *zoomFactor);
+  if (zoomFactor > 1 && m_nbZooms < nbLimitZooms)
+  {
+    m_font.size = (unsigned int)(m_font.size*zoomFactor);
+    m_width = (unsigned int)(m_width *zoomFactor);
+    m_height = (unsigned int)(m_height *zoomFactor);
 
-       m_nbZooms++; // zoom forward
-       m_automaton->game()->frame()->scale(zoomFactor, zoomFactor);
-       m_zoomFactorFinal *= zoomFactor;
+      m_nbZooms++; // zoom forward
+      m_automaton->game()->frame()->scale(zoomFactor, zoomFactor);
+      m_zoomFactorFinal *= zoomFactor;
 
-       //starting timer
-       /*if  (m_timerFast->isActive())
-       {
-         m_timerFast->stop();
-       }
-       m_timerFast->start(4000);
-       m_timerFast->setSingleShot(true);*/
+      //starting timer
+      /*if  (m_timerFast->isActive())
+      {
+        m_timerFast->stop();
+      }
+      m_timerFast->start(4000);
+      m_timerFast->setSingleShot(true);*/
 
-    }
-    else if (zoomFactor < 1 && m_nbZooms > -nbLimitZooms)
-    {
-	m_font.size = (unsigned int)(m_font.size*zoomFactor);
-  	m_width = (unsigned int)(m_width *zoomFactor);
-  	m_height = (unsigned int)(m_height *zoomFactor);
+  }
+  else if (zoomFactor < 1 && m_nbZooms > -nbLimitZooms)
+  {
+    m_font.size = (unsigned int)(m_font.size*zoomFactor);
+    m_width = (unsigned int)(m_width *zoomFactor);
+    m_height = (unsigned int)(m_height *zoomFactor);
 
-       m_nbZooms--; // zoom backward
-       m_automaton->game()->frame()->scale(zoomFactor, zoomFactor);
-       m_zoomFactorFinal *= zoomFactor;
+      m_nbZooms--; // zoom backward
+      m_automaton->game()->frame()->scale(zoomFactor, zoomFactor);
+      m_zoomFactorFinal *= zoomFactor;
 
-       //starting timer
-       /*if  (m_timerFast->isActive())
-       {
-         m_timerFast->stop();
-       }
-       m_timerFast->start(4000);
-       m_timerFast->setSingleShot(true);*/
-    }
+      //starting timer
+      /*if  (m_timerFast->isActive())
+      {
+        m_timerFast->stop();
+      }
+      m_timerFast->start(4000);
+      m_timerFast->setSingleShot(true);*/
+  }
 }
 
 double ONU::zoom() const

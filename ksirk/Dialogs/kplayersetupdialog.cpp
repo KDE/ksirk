@@ -208,7 +208,6 @@ void KPlayerSetupDialog::slotNationChanged()
   LineEdit2-> setText(nation->leaderName());
 }
 
-
 }
 
 #include "kplayersetupdialog.moc"

@@ -9,11 +9,11 @@ Before KDE4.1:
   * change size of "will display goal" dialog (kdelibs bug?)
   * save action should confirm before replacing a file
   * sprites should be enhanced
-  * add an option to show number of armies directly on the countries
   * [????] remove quit action from context menu
   * [ONGOING] hide right window content when changing current player but show it again when necessary
   * [ONGOING] don't show context help for computer players
   * [HELP NEEDED] correct the layout of initial window (with main menu) when resizing
+  * [DONE] add an option to show number of armies directly on the countries
   * [DONE] hovering should display the number of armies on a country
   * [DONE] create a skin copy of the default one but with less animations
   * [DONE] display only the first frame of flags in player setup dialog

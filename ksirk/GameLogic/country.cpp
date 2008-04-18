@@ -23,6 +23,7 @@
 #include "player.h"
 #include "Sprites/backgnd.h"
 #include "kgamewin.h"
+#include "ksirksettings.h"
 #include "Sprites/flagsprite.h"
 #include "Sprites/skinSpritesData.h"
 #include "GameLogic/onu.h"
@@ -69,7 +70,8 @@ Country::Country(GameAutomaton* game,
   m_id(id),
   m_highlighting(0),
   m_renderer(new KSvgRenderer()),
-  m_highlighting_locked(false)
+  m_highlighting_locked(false),
+  m_nbArmiesItem(0)
 {
 //   kDebug() << m_name << ", " << this << endl;
 }
@@ -189,6 +191,23 @@ void Country::createArmiesSprites()
   {
     flag(m_belongsTo->flagFileName(), bg);
   }
+
+  if (m_nbArmiesItem == 0)
+  {
+    m_nbArmiesItem = new QGraphicsSimpleTextItem(QString::number(m_nbArmies),bg);
+    m_nbArmiesItem->setPos((m_pointFlag.x()+5),(m_pointFlag.y()+7));
+    m_nbArmiesItem->setZValue(20);
+    m_nbArmiesItem->setBrush(Qt::white);
+    m_nbArmiesItem->setPen(QPen(Qt::yellow));
+  }
+  if (!KsirkSettings::showArmiesNumbers())
+  {
+    m_nbArmiesItem->hide();
+  }
+  else
+  {
+    m_nbArmiesItem->show();
+  }
 }
 
 void Country::flag(const QString& theFlagFileName, BackGnd *backGnd)
@@ -211,6 +230,7 @@ void Country::flag(const QString& theFlagFileName, BackGnd *backGnd)
   m_flag-> setDestination(NULL);
   m_flag-> setPos(m_pointFlag.x()*backGnd->onu()->zoom(),m_pointFlag.y()*backGnd->onu()->zoom());
   m_flag-> setZValue(10);
+
 //    qDebug("OUT Country::flag");
 }
 
@@ -274,6 +294,10 @@ unsigned int Country::nbAddedArmies()
 void Country::nbArmies(unsigned int nb)
 {
   m_nbArmies = nb;
+  if (m_nbArmiesItem!=0)
+  {
+    m_nbArmiesItem->setText(QString::number(m_nbArmies));
+  }
 }
 
 void Country::nbAddedArmies(unsigned int nb)

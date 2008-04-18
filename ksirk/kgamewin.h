@@ -660,7 +660,7 @@ protected:
   void reduceChat();
   void unreduceChat();
 
-public slots:
+public Q_SLOTS:
 
   virtual void mouseMoveEvent ( QMouseEvent * event );
 
@@ -698,7 +698,7 @@ public slots:
   void slotWindowDef2();
   void slotInvade1();
 
-void slotSimultaneousAttack(int);
+  void slotSimultaneousAttack(int);
 
   void slotInvade5();
   void slotInvade10();
@@ -755,7 +755,7 @@ void slotSimultaneousAttack(int);
 
   void slotZoomIn();
   void slotZoomOut();
-private slots:
+private Q_SLOTS:
   void optionsConfigure();
 
   /**
@@ -771,6 +771,8 @@ private slots:
 
   void slotDisableHelp(const QString &);
 
+  void slotArmiesNumberChanged(int);
+  
 private:
 
   QDockWidget * m_rightDock;

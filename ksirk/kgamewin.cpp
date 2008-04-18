@@ -2934,7 +2934,9 @@ void KGameWindow::optionsConfigure()
   //KConfigDialog didn't find an instance of this dialog, so lets create it : 
   KsirkConfigurationDialog* dialog = new KsirkConfigurationDialog( this, "settings", 
                                              KsirkSettings::self() ); 
-  
+
+  connect(dialog,SIGNAL(armiesNumberShowingChanged(int)),
+      this,SLOT(slotArmiesNumberChanged(int)));
 
   dialog->show();
 }

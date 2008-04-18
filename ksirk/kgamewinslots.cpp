@@ -751,4 +751,17 @@ void KGameWindow::slotDisableHelp(const QString & link)
   KsirkSettings::setHelpEnabled(false);
 }
 
+void KGameWindow::slotArmiesNumberChanged(int checked)
+{
+  kDebug() << checked;
+  KsirkSettings::setShowArmiesNumbers(checked);
+
+  foreach (Country* country, m_theWorld->getCountries())
+  {
+    country->createArmiesSprites();
+  }
+}
+
+
+
 } // closing namespace Ksirk

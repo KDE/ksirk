@@ -49,11 +49,15 @@ public:
   /** Destructor */
   virtual ~KsirkConfigurationDialog ();
 
-protected slots:
+Q_SIGNALS:
+  void armiesNumberShowingChanged(int);
+
+protected Q_SLOTS:
   virtual void updateSettings();
   virtual void updateWidgets();
   void settingChanged(int);
-
+//   void slotArmiesNumberChanged(int);
+  
 protected:
   virtual bool hasChanged();
 

@@ -411,6 +411,8 @@ public:
   KSvgRenderer* m_renderer;
 
   bool m_highlighting_locked;
+
+  QGraphicsSimpleTextItem* m_nbArmiesItem;
 };
 
 QDataStream& operator>>(QDataStream& stream, Country* country);
