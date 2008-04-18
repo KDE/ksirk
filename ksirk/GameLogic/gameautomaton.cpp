@@ -2040,7 +2040,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
           m_game->firstCountry()-> createArmiesSprites();
           m_game->secondCountry()-> createArmiesSprites();
 
-          // continue automaticaly attacking by making the same attack
+          // continue automatically attacking by making the same attack
           state(WAIT1);
           if (m_game->firstCountry()->nbArmies() > 3) {
             gameEvent("actionAttack3", m_game->secondCountry()->centralPoint());

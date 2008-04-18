@@ -49,7 +49,8 @@ namespace GameLogic
   class Country;
 }
    /**
-   * The KRightDialog class is the widget displayed on the right of the aplication
+   * The KRightDialog class is the widget displayed on the right of
+   * the application
    */
    class KRightDialog: public QWidget
    {
@@ -78,14 +79,14 @@ namespace GameLogic
       void displayFightDetails(GameLogic::Country * attaker, GameLogic::Country * defender,int nb_A, int nb_D);
 
       /**
-       * Display informations about the recycling processus
-       * @param player which we want to see informations
+       * Display information about the recycling processus
+       * @param player which we want to see information
        */
       void displayRecycleDetails(GameLogic::Player* player, int nbAvailArmies);
 
       /**
-       * Update informations about the recycling processus
-       * @param country country which gives his informations
+       * Update information about the recycling processus
+       * @param country country which gives his information
        * @param recyclePhase shows if we are in recycle phase or not
        */
       void updateRecycleDetails(GameLogic::Country* country, bool recyclePhase, int nbAvailArmies);

@@ -131,7 +131,7 @@ protected: // Private attributes
   AIPlayerIO* aiPlayerIO();
   
 /**
-    * Pointer to the players. Informations about them is necessary decide of
+    * Pointer to the players. Information about them is necessary decide of
     * a strategy
     */
   PlayersArray& allPlayers;
@@ -168,7 +168,7 @@ protected: // Private attributes
   bool m_actionWaitingStart;
 private: // Private methods
   /**
-    * chooses wether to defend with one or two armies. Always chooses the maximum possible
+    * chooses whether to defend with one or two armies. Always chooses the maximum possible
     */
   void chooseDefenseAction();
   

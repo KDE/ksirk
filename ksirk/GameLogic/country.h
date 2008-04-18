@@ -308,7 +308,7 @@ public:
   void releaseHighlightingLock();
 
   /**
-    * Copy informations of the real country in a country of the arena.
+    * Copy information of the real country in a country of the arena.
     * @param trueCountry is the real country
     */
   void copyForArena(Country* trueCountry);

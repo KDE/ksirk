@@ -588,7 +588,7 @@ void AIPlayer::chooseInvasionAction()
 }
 
 /**
-  * chooses wether to defend with one or two armies. Always chooses the maximum possible
+  * chooses whether to defend with one or two armies. Always chooses the maximum possible
   */
 void AIPlayer::chooseDefenseAction()
 {

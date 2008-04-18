@@ -55,8 +55,8 @@ namespace GameLogic
 
    /**
    * The FightArena class is the widget displayed while fights, and where
-   * all the units sprites are displayed. It is linked to its parent widget (the main 
-   * window)
+   * all the units sprites are displayed. It is linked to its parent 
+   * widget (the main window)
    */
    class FightArena: public QGraphicsView
    {
@@ -69,7 +69,7 @@ namespace GameLogic
       * @param mapW The width of the arena. Will be the width given in size hint.
       * @param mapH The height of the arena. Will be the height given in size hint.
       * @param sceneArena where sprites will be added.
-      * @param onuObject onuObject for getting map and country informations
+      * @param onuObject onuObject for getting map and country information
       * @param automaton automaton for the construction of countries
       */
       FightArena(QWidget* parent, unsigned int mapW, unsigned int mapH, QGraphicsScene* sceneArena, GameLogic::ONU* onuObject, GameLogic::GameAutomaton* automaton);

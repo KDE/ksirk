@@ -46,11 +46,9 @@
 //include files for QT
 #include <QDockWidget>
 #include <QTreeView>
-#include <QDialog>
 #include <QPushButton>
 #include <QGridLayout>
 #include <QString>
-#include <QPushButton>
 #include <QVBoxLayout>
 #include <QMovie>
 // include files for KDE
@@ -76,6 +74,7 @@
 #include <KToolBar>
 #include <KAction>
 #include <KSvgRenderer>
+#include <kdialog.h>
 
 
 #include <assert.h>
@@ -1131,7 +1130,7 @@ void KGameWindow::displayDefenseButtons()
 void KGameWindow::displayDefenseWindow()
 {
   // Create Window Dialog
-  dial = new QDialog ();
+  dial = new KDialog ();
   QGridLayout * mainLayout = new QGridLayout(dial);
   
   // Create the differents layout for buttons and label
@@ -3072,7 +3071,7 @@ GameLogic::Country* KGameWindow::secondCountry()
 void KGameWindow::showArena()
 {
   if (m_currentDisplayedWidget != arenaType) {
-    // synchronise the arena countrys
+    // synchronize the arena countrys
     m_currentDisplayedWidget = arenaType;
     m_arena->initFightArena(m_firstCountry,m_secondCountry,m_backGnd_arena);
   }
@@ -3133,7 +3132,7 @@ void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * 
   m_nbLArmies = new QLabel(QString::number(m_nbLArmy));
   m_nbRArmies = new QLabel(QString::number(m_nbRArmy));  
 
-  m_wSlide = new QDialog();
+  m_wSlide = new KDialog();
 //   m_wSlide->setFixedWidth(380);
 //   m_wSlide->setFixedHeight(250);
 
