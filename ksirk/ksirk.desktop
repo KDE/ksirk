@@ -1,10 +1,8 @@
 # KDE Config File
 [Desktop Entry]
-Encoding=UTF-8
 Type=Application
 Exec=ksirk -caption "%c" %i
-Icon=ksirk.png
-MiniIcon=ksirk.png
+Icon=ksirk
 DocPath=ksirk/index.html
 Comment=KsirK is a computerized version of a strategy board game: Risk !
 Comment[bg]=KsirK е компютърна версия на стратегическата игра Risk !
@@ -18,7 +16,7 @@ Comment[pt]=O KsirK é uma versão para computador de um jogo estratégico de ta
 Comment[pt_BR]=O KsirK é uma versão para computador de um jogo estratégico de tabuleiro: o Risco !
 Comment[sv]=KsirK är en datoriserad version av strategibrädspelet Risk!
 Comment[xx]=xxKsirK is a computerized version of a strategy board game: Risk !xx
-Terminal=0
+Terminal=false
 Name=KsirK
 Name[xx]=xxKsirKxx
 GenericName=Risk Computerized
