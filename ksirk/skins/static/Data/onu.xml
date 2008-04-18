@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<onu width="1024" height="768" skinpath="skins/default"
+    nb-countries="42" nb-nationalities="6" nb-continents="6"
+    map="Images/map.svg" map-mask="Images/map-mask.png" format-version="1.7"
+    name="Earth-like">
+  <desc>This skin shows a world that looks like the real one with some nationalities randomly chosen and proposes various interesting goals</desc>
+  <font>
+      <family>URW Chancery L</family>
+      <size>14</size>
+      <weight>bold</weight>
+      <italic>true</italic>
+      <foreground-color>black</foreground-color>
+      <background-color>gray</background-color>
+  </font>
+  <skinSpritesData>
+    <intItem key="flag-width" value="20" />
+    <intItem key="flag-frames" value="4" />
+    <intItem key="flag-versions" value="1" /> 
+    <strItem key="infantry-file" value="infantry.svg" />
+    <intItem key="infantry-frames" value="1" />
+    <intItem key="infantry-versions" value="3" /> 
+    <strItem key="infantry1-file" value="infantry1.svg" />
+    <intItem key="infantry1-frames" value="1" />
+    <intItem key="infantry1-versions" value="3" /> 
+    <strItem key="infantry2-file" value="infantry2.svg" />
+    <intItem key="infantry2-frames" value="1" />
+    <intItem key="infantry2-versions" value="3" /> 
+    <strItem key="infantry3-file" value="infantry3.svg" />
+    <intItem key="infantry3-frames" value="1" />
+    <intItem key="infantry3-versions" value="3" /> 
+    <strItem key="cavalry-file" value="cavalry.svg" />
+    <intItem key="cavalry-frames" value="1" />
+    <intItem key="cavalry-versions" value="3" /> 
+    <strItem key="cannon-file" value="cannon.svg" />
+    <intItem key="cannon-width" value="32" />
+    <intItem key="cannon-frames" value="2" />
+    <intItem key="cannon-versions" value="3" /> 
+    <strItem key="firing-file" value="firing.svg" />
+    <intItem key="firing-width" value="64" />
+    <intItem key="firing-frames" value="4" />
+    <intItem key="firing-versions" value="2" /> 
+    <strItem key="exploding-file" value="exploding.svg" />
+    <intItem key="exploding-frames" value="4" />
+    <intItem key="exploding-versions" value="2" /> 
+    <intItem key="fighters-flag-y-diff" value="-12" />
+    <intItem key="width-between-flag-and-fighter" value="32" /> 
+  </skinSpritesData>
+  <country id="0" name="Western US" >
+    <flag-point x="182" y="346" />
+    <central-point x="152" y="326" />
+    <cannons-point x="126" y="282" />
+    <cavalry-point x="162" y="292" />
+    <infantry-point x="147" y="329" />
+    <neighbours>
+      <neighbour id="1" />
+      <neighbour id="3" />
+      <neighbour id="7" />
+    </neighbours>
+  </country>
+  <country id="1" name="Eastern US" >
+    <flag-point x="269" y="283" />
+    <central-point x="269" y="303" />
+    <cannons-point x="213" y="282" />
+    <cavalry-point x="250" y="300" />
+    <infantry-point x="214" y="330" />
+    <neighbours>
+      <neighbour id="0" />
+      <neighbour id="2" />
+      <neighbour id="3" />
+      <neighbour id="7" />
+    </neighbours>
+  </country>
+  <country id="2" name="Quebec" >
+    <flag-point x="258" y="232" />
+    <central-point x="278" y="252" />
+    <cannons-point x="247" y="202" />
+    <cavalry-point x="223" y="239" />
+    <infantry-point x="275" y="235" />
+    <neighbours>
+      <neighbour id="1" />
+      <neighbour id="3" />
+      <neighbour id="4" />
+      <neighbour id="6" />
+    </neighbours>
+  </country>
+  <country id="3" name="Ontario" >
+    <flag-point x="192" y="248" />
+    <central-point x="162" y="248" />
+    <cannons-point x="96" y="213" />
+    <cavalry-point x="134" y="240" />
+    <infantry-point x="183" y="217" />
+    <neighbours>
+      <neighbour id="0" />
+      <neighbour id="1" />
+      <neighbour id="2" />
+      <neighbour id="4" />
+      <neighbour id="5" />
+    </neighbours>
+  </country>
+  <country id="4" name="Alberta" >
+    <flag-point x="189" y="187" />
+    <central-point x="169" y="190" />
+    <cannons-point x="93" y="164" />
+    <cavalry-point x="149" y="172" />
+    <infantry-point x="189" y="154" />
+    <neighbours>
+      <neighbour id="2" />
+      <neighbour id="3" />
+      <neighbour id="5" />
+      <neighbour id="6" />
+    </neighbours>
+  </country>
+  <country id="5" name="Alaska" >
+    <flag-point x="61" y="163" />
+    <central-point x="55" y="193" />
+    <cannons-point x="20" y="147" />
+    <cavalry-point x="45" y="174" />
+    <infantry-point x="16" y="191" />
+    <neighbours>
+      <neighbour id="3" />
+      <neighbour id="4" />
+      <neighbour id="23" />
+    </neighbours>
+  </country>
+  <country id="6" name="Groenland" >
+    <flag-point x="369" y="129" />
+    <central-point x="369" y="109" />
+    <cannons-point x="331" y="117" />
+    <cavalry-point x="245" y="36" />
+    <infantry-point x="337" y="72" />
+    <neighbours>
+      <neighbour id="2" />
+      <neighbour id="4" />
+      <neighbour id="12" />
+    </neighbours>
+  </country>
+  <country id="7" name="Mexico" >
+    <flag-point x="225" y="425" />
+    <central-point x="225" y="425" />
+    <cannons-point x="170" y="381" />
+    <cavalry-point x="197" y="396" />
+    <infantry-point x="236" y="387" />
+    <neighbours>
+      <neighbour id="0" />
+      <neighbour id="1" />
+      <neighbour id="8" />
+    </neighbours>
+  </country>
+  <country id="8" name="Colombia" >
+    <flag-point x="277" y="508" />
+    <central-point x="272" y="495" />
+    <cannons-point x="247" y="450" />
+    <cavalry-point x="261" y="471" />
+    <infantry-point x="249" y="497" />
+    <neighbours>
+      <neighbour id="7" />
+      <neighbour id="9" />
+      <neighbour id="10" />
+    </neighbours>
+  </country>
+  <country id="9" name="Brasil" >
+    <flag-point x="318" y="494" />
+    <central-point x="323" y="515" />
+    <cannons-point x="300" y="458" />
+    <cavalry-point x="298" y="500" />
+    <infantry-point x="335" y="497" />
+    <neighbours>
+      <neighbour id="8" />
+      <neighbour id="10" />
+      <neighbour id="27" />
+    </neighbours>
+  </country>
+  <country id="10" name="Paraguay" >
+    <flag-point x="282" y="575" />
+    <central-point x="310" y="575" />
+    <cannons-point x="274" y="546" />
+    <cavalry-point x="295" y="581" />
+    <infantry-point x="319" y="547" />
+    <neighbours>
+      <neighbour id="8" />
+      <neighbour id="9" />
+      <neighbour id="11" />
+    </neighbours>
+  </country>
+  <country id="11" name="Chili" >
+    <flag-point x="310" y="620" />
+    <central-point x="295" y="630" />
+    <cannons-point x="273" y="617" />
+    <cavalry-point x="270" y="647" />
+    <infantry-point x="263" y="677" />
+    <neighbours>
+      <neighbour id="10" />
+    </neighbours>
+  </country>
+  <country id="12" name="Island" >
+    <flag-point x="429" y="189" />
+    <central-point x="425" y="188" />
+    <cannons-point x="425" y="155" />
+    <cavalry-point x="393" y="155" />
+    <infantry-point x="400" y="180" />
+    <neighbours>
+      <neighbour id="6" />
+      <neighbour id="13" />
+    </neighbours>
+  </country>
+  <country id="13" name="United Kingdom" >
+    <flag-point x="464" y="214" />
+    <central-point x="464" y="224" />
+    <cannons-point x="434" y="209" />
+    <cavalry-point x="472" y="205" />
+    <infantry-point x="446" y="230" />
+    <neighbours>
+      <neighbour id="12" />
+      <neighbour id="14" />
+      <neighbour id="15" />
+    </neighbours>
+  </country>
+  <country id="14" name="Benelux" >
+    <flag-point x="537" y="240" />
+    <central-point x="525" y="240" />
+    <cannons-point x="491" y="232" />
+    <cavalry-point x="499" y="214" />
+    <infantry-point x="519" y="216" />
+    <neighbours>
+      <neighbour id="13" />
+      <neighbour id="15" />
+      <neighbour id="16" />
+      <neighbour id="17" />
+    </neighbours>
+  </country>
+  <country id="15" name="France" >
+    <flag-point x="530" y="264" />
+    <central-point x="533" y="270" />
+    <cannons-point x="483" y="255" />
+    <cavalry-point x="464" y="282" />
+    <infantry-point x="510" y="255" />
+    <neighbours>
+      <neighbour id="13" />
+      <neighbour id="14" />
+      <neighbour id="16" />
+      <neighbour id="26" />
+    </neighbours>
+  </country>
+  <country id="16" name="Prussia" >
+    <flag-point x="581" y="240" />
+    <central-point x="580" y="240" />
+    <cannons-point x="559" y="200" />
+    <cavalry-point x="561" y="225" />
+    <infantry-point x="558" y="245" />
+    <neighbours>
+      <neighbour id="14" />
+      <neighbour id="15" />
+      <neighbour id="17" />
+      <neighbour id="18" />
+      <neighbour id="22" />
+    </neighbours>
+  </country>
+  <country id="17" name="Scandinavia" >
+    <flag-point x="529" y="165" />
+    <central-point x="540" y="165" />
+    <cannons-point x="538" y="134" />
+    <cavalry-point x="559" y="158" />
+    <infantry-point x="498" y="169" />
+    <neighbours>
+      <neighbour id="14" />
+      <neighbour id="16" />
+    </neighbours>
+  </country>
+  <country id="18" name="Russia" >
+    <flag-point x="673" y="160" />
+    <central-point x="713" y="160" />
+    <cannons-point x="642" y="174" />
+    <cavalry-point x="744" y="176" />
+    <infantry-point x="720" y="123" />
+    <neighbours>
+      <neighbour id="16" />
+      <neighbour id="22" />
+      <neighbour id="23" />
+    </neighbours>
+  </country>
+  <country id="19" name="Iran" >
+    <flag-point x="631" y="325" />
+    <central-point x="631" y="322" />
+    <cannons-point x="600" y="286" />
+    <cavalry-point x="624" y="307" />
+    <infantry-point x="609" y="335" />
+    <neighbours>
+      <neighbour id="21" />
+      <neighbour id="22" />
+      <neighbour id="33" />
+      <neighbour id="34" />
+      <neighbour id="35" />
+    </neighbours>
+  </country>
+  <country id="20" name="China" >
+    <flag-point x="792" y="321" />
+    <central-point x="772" y="321" />
+    <cannons-point x="716" y="268" />
+    <cavalry-point x="733" y="310" />
+    <infantry-point x="775" y="278" />
+    <neighbours>
+      <neighbour id="21" />
+      <neighbour id="24" />
+      <neighbour id="25" />
+      <neighbour id="35" />
+      <neighbour id="36" />
+    </neighbours>
+  </country>
+  <country id="21" name="Pakistan" >
+    <flag-point x="660" y="340" />
+    <central-point x="685" y="340" />
+    <cannons-point x="667" y="269" />
+    <cavalry-point x="650" y="294" />
+    <infantry-point x="675" y="320" />
+    <neighbours>
+      <neighbour id="19" />
+      <neighbour id="20" />
+      <neighbour id="22" />
+      <neighbour id="35" />
+    </neighbours>
+  </country>
+  <country id="22" name="Kazakstan" >
+    <flag-point x="650" y="255" />
+    <central-point x="650" y="255" />
+    <cannons-point x="628" y="216" />
+    <cavalry-point x="676" y="221" />
+    <infantry-point x="605" y="246" />
+    <neighbours>
+      <neighbour id="16" />
+      <neighbour id="18" />
+      <neighbour id="19" />
+      <neighbour id="21" />
+      <neighbour id="24" />
+    </neighbours>
+  </country>
+  <country id="23" name="Siberia" >
+    <flag-point x="871" y="162" />
+    <central-point x="871" y="172" />
+    <cannons-point x="809" y="159" />
+    <cavalry-point x="933" y="166" />
+    <infantry-point x="835" y="191" />
+    <neighbours>
+      <neighbour id="5" />
+      <neighbour id="18" />
+      <neighbour id="24" />
+    </neighbours>
+  </country>
+  <country id="24" name="Mongolia" >
+    <flag-point x="803" y="240" />
+    <central-point x="803" y="240" />
+    <cannons-point x="744" y="232" />
+    <cavalry-point x="776" y="213" />
+    <infantry-point x="824" y="226" />
+    <neighbours>
+      <neighbour id="20" />
+      <neighbour id="22" />
+      <neighbour id="23" />
+    </neighbours>
+  </country>
+  <country id="25" name="Japan" >
+    <flag-point x="884" y="311" />
+    <central-point x="884" y="321" />
+    <cannons-point x="887" y="283" />
+    <cavalry-point x="851" y="335" />
+    <infantry-point x="861" y="302" />
+    <neighbours>
+      <neighbour id="20" />
+    </neighbours>
+  </country>
+  <country id="26" name="Algeria" >
+    <flag-point x="468" y="346" />
+    <central-point x="485" y="360" />
+    <cannons-point x="467" y="329" />
+    <cavalry-point x="446" y="358" />
+    <infantry-point x="490" y="352" />
+    <neighbours>
+      <neighbour id="15" />
+      <neighbour id="27" />
+      <neighbour id="28" />
+    </neighbours>
+  </country>
+  <country id="27" name="Niger" >
+    <flag-point x="502" y="411" />
+    <central-point x="492" y="411" />
+    <cannons-point x="437" y="390" />
+    <cavalry-point x="467" y="407" />
+    <infantry-point x="485" y="386" />
+    <neighbours>
+      <neighbour id="9" />
+      <neighbour id="26" />
+      <neighbour id="28" />
+      <neighbour id="29" />
+    </neighbours>
+  </country>
+  <country id="28" name="Egypt" >
+    <flag-point x="564" y="397" />
+    <central-point x="561" y="420" />
+    <cannons-point x="538" y="366" />
+    <cavalry-point x="530" y="395" />
+    <infantry-point x="560" y="420" />
+    <neighbours>
+      <neighbour id="26" />
+      <neighbour id="27" />
+      <neighbour id="29" />
+      <neighbour id="33" />
+    </neighbours>
+  </country>
+  <country id="29" name="Gabon" >
+    <flag-point x="571" y="476" />
+    <central-point x="560" y="476" />
+    <cannons-point x="497" y="436" />
+    <cavalry-point x="551" y="457" />
+    <infantry-point x="516" y="460" />
+    <neighbours>
+      <neighbour id="27" />
+      <neighbour id="28" />
+      <neighbour id="30" />
+    </neighbours>
+  </country>
+  <country id="30" name="Zair" >
+    <flag-point x="566" y="533" />
+    <central-point x="560" y="533" />
+    <cannons-point x="520" y="499" />
+    <cavalry-point x="559" y="500" />
+    <infantry-point x="532" y="522" />
+    <neighbours>
+      <neighbour id="29" />
+      <neighbour id="31" />
+      <neighbour id="32" />
+    </neighbours>
+  </country>
+  <country id="31" name="South Africa" >
+    <flag-point x="548" y="575" />
+    <central-point x="548" y="585" />
+    <cannons-point x="529" y="600" />
+    <cavalry-point x="552" y="558" />
+    <infantry-point x="511" y="560" />
+    <neighbours>
+      <neighbour id="30" />
+      <neighbour id="32" />
+    </neighbours>
+  </country>
+  <country id="32" name="Madagascar" >
+    <flag-point x="616" y="542" />
+    <central-point x="616" y="550" />
+    <cannons-point x="590" y="546" />
+    <cavalry-point x="598" y="521" />
+    <infantry-point x="597" y="570" />
+    <neighbours>
+      <neighbour id="30" />
+      <neighbour id="31" />
+    </neighbours>
+  </country>
+  <country id="33" name="Arabia" >
+    <flag-point x="600" y="368" />
+    <central-point x="600" y="380" />
+    <cannons-point x="598" y="396" />
+    <cavalry-point x="610" y="366" />
+    <infantry-point x="569" y="355" />
+    <neighbours>
+      <neighbour id="19" />
+      <neighbour id="28" />
+      <neighbour id="34" />
+    </neighbours>
+  </country>
+  <country id="34" name="Middle East" >
+    <flag-point x="595" y="328" />
+    <central-point x="590" y="333" />
+    <cannons-point x="549" y="304" />
+    <cavalry-point x="577" y="297" />
+    <infantry-point x="571" y="318" />
+    <neighbours>
+      <neighbour id="19" />
+      <neighbour id="33" />
+    </neighbours>
+  </country>
+  <country id="35" name="India" >
+    <flag-point x="700" y="388" />
+    <central-point x="700" y="388" />
+    <cannons-point x="699" y="369" />
+    <cavalry-point x="682" y="400" />
+    <infantry-point x="663" y="370" />
+    <neighbours>
+      <neighbour id="19" />
+      <neighbour id="20" />
+      <neighbour id="21" />
+      <neighbour id="36" />
+    </neighbours>
+  </country>
+  <country id="36" name="Vietnam" >
+    <flag-point x="768" y="403" />
+    <central-point x="768" y="403" />
+    <cannons-point x="738" y="366" />
+    <cavalry-point x="772" y="369" />
+    <infantry-point x="741" y="403" />
+    <neighbours>
+      <neighbour id="20" />
+      <neighbour id="35" />
+      <neighbour id="37" />
+    </neighbours>
+  </country>
+  <country id="37" name="Indonesia" >
+    <flag-point x="797" y="460" />
+    <central-point x="792" y="470" />
+    <cannons-point x="752" y="471" />
+    <cavalry-point x="783" y="481" />
+    <infantry-point x="797" y="438" />
+    <neighbours>
+      <neighbour id="36" />
+      <neighbour id="38" />
+    </neighbours>
+  </country>
+  <country id="38" name="Papouasie" >
+    <flag-point x="865" y="472" />
+    <central-point x="875" y="497" />
+    <cannons-point x="861" y="470" />
+    <cavalry-point x="846" y="491" />
+    <infantry-point x="879" y="489" />
+    <neighbours>
+      <neighbour id="37" />
+      <neighbour id="39" />
+      <neighbour id="40" />
+    </neighbours>
+  </country>
+  <country id="39" name="Occidental Australia" >
+    <flag-point x="843" y="563" />
+    <central-point x="833" y="563" />
+    <cannons-point x="803" y="560" />
+    <cavalry-point x="816" y="587" />
+    <infantry-point x="826" y="530" />
+    <neighbours>
+      <neighbour id="38" />
+      <neighbour id="40" />
+    </neighbours>
+  </country>
+  <country id="40" name="New South Walles" >
+    <flag-point x="908" y="584" />
+    <central-point x="908" y="589" />
+    <cannons-point x="871" y="600" />
+    <cavalry-point x="872" y="538" />
+    <infantry-point x="861" y="569" />
+    <neighbours>
+      <neighbour id="38" />
+      <neighbour id="39" />
+      <neighbour id="41" />
+    </neighbours>
+  </country>
+  <country id="41" name="New Zealand" >
+    <flag-point x="970" y="635" />
+    <central-point x="970" y="645" />
+    <cannons-point x="964" y="616" />
+    <cavalry-point x="940" y="648" />
+    <infantry-point x="955" y="645" />
+    <neighbours>
+      <neighbour id="40" />
+    </neighbours>
+  </country>
+  <nationality name="France" leader="de Gaulle" flag="france.svg" />
+  <nationality name="United Kingdom" leader="Elisabeth" flag="uk.svg" />
+  <nationality name="United States" leader="Kennedy" flag="us.svg" />
+  <nationality name="Belgium" leader="Baudouin" flag="belgium.svg" />
+  <nationality name="Japan" leader="Akihito" flag="japan.svg" />
+  <nationality name="Italy" leader="Victor Emmanuel" flag="italy.svg" />
+  <continent id="1" name="North America" bonus="5" >
+    <continent-country id="0" />
+    <continent-country id="1" />
+    <continent-country id="2" />
+    <continent-country id="3" />
+    <continent-country id="4" />
+    <continent-country id="5" />
+    <continent-country id="6" />
+  </continent>
+  <continent id="2" name="South America" bonus="2" >
+    <continent-country id="7" />
+    <continent-country id="8" />
+    <continent-country id="9" />
+    <continent-country id="10" />
+    <continent-country id="11" />
+  </continent>
+  <continent id="3" name="Europe" bonus="5" >
+    <continent-country id="12" />
+    <continent-country id="13" />
+    <continent-country id="14" />
+    <continent-country id="15" />
+    <continent-country id="16" />
+    <continent-country id="17" />
+    <continent-country id="22" />
+  </continent>
+  <continent id="4" name="Africa" bonus="3" >
+    <continent-country id="26" />
+    <continent-country id="27" />
+    <continent-country id="28" />
+    <continent-country id="29" />
+    <continent-country id="30" />
+    <continent-country id="31" />
+    <continent-country id="32" />
+    <continent-country id="33" />
+    <continent-country id="34" />
+  </continent>
+  <continent id="5" name="Asia" bonus="7" >
+    <continent-country id="18" />
+    <continent-country id="19" />
+    <continent-country id="20" />
+    <continent-country id="21" />
+    <continent-country id="23" />
+    <continent-country id="24" />
+    <continent-country id="25" />
+    <continent-country id="35" />
+    <continent-country id="36" />
+  </continent>
+  <continent id="6" name="Pacific" bonus="2" >
+    <continent-country id="37" />
+    <continent-country id="38" />
+    <continent-country id="39" />
+    <continent-country id="40" />
+    <continent-country id="41" />
+  </continent>
+  <goals>
+    <goal type="Countries">
+      <countries nb="18"/>
+      <armiesByCountry nb="2"/>
+      <desc>%1, you'll have to conquer %2 countries and place %3 armies in each one.</desc>
+    </goal>
+    <goal type="Countries"><countries nb="24"/><desc>%1, you'll have to conquer %2 countries.</desc></goal>
+    <goal type="Continents"><continent id="0"/><continent id="3"/><continent id="6"/><desc>%1, you'll have to conquer %2, %3 and another continent at your choice.</desc></goal>
+    <goal type="Continents"><continent id="1"/><continent id="4"/><desc>%1, you'll have to conquer %2 and %3.</desc></goal>
+    <goal type="Continents"><continent id="3"/><continent id="2"/><desc>%1, you'll have to conquer %2 and %3.</desc></goal>
+    <goal type="Continents"><continent id="1"/><continent id="6"/><desc>%1, you'll have to conquer %2 and %3.</desc></goal>
+    <goal type="Continents"><continent id="4"/><continent id="5"/><desc>%1, you'll have to conquer %2 and %3.</desc></goal>
+    <goal type="Continents"><continent id="2"/><continent id="5"/><desc>%1, you'll have to conquer %2 and %3.</desc></goal>
+    <goal type="Player"><player nbCountriesFallback="24"/><desc>%1, you'll have to eliminate %2. If it is eliminated by another player, you'll have to conquer %3 countries.</desc></goal>
+  </goals>
+</onu>
