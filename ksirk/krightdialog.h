@@ -1,4 +1,5 @@
 /* This file is part of KsirK.
+   Copyright (C) 2008 Gael Clouet <pelouas@hotmail.fr>
 
    KsirK is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
