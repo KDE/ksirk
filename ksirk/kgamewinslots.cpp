@@ -658,6 +658,7 @@ void KGameWindow::slideMove(int v)
 void KGameWindow::slideReleased()
 {
   kDebug();
+  m_automaton->currentPlayerPlayed(true);
   m_slideReleased = true;
   m_currentSlideValue = m_previousSlideValue;
   QByteArray* buffer;
@@ -738,7 +739,7 @@ void KGameWindow::slotContextualHelp()
   switch (m_automaton->state())
   {
     case GameLogic::GameAutomaton::WAIT:
-      showMessage(i18n("Now, attack by dragging from the attacking country<br/>and droping to the attacked one<br/>or choose another action by using the right mouse click.<br/>Note that moving armies is the last action of a turn."), 5);
+      showMessage(i18n("Attack by drag & drop between countries<br/>Move armies the same way (last action of a turn)."), 5);
     break;
     default:;
   }

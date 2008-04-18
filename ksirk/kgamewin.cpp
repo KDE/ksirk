@@ -3169,7 +3169,7 @@ void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * 
   }
   else if (invasionType == Moving)
   {
-    wSlideLayout->addWidget(new QLabel(i18n("You are moving armies from <font color=\"red\">%1</font> from <font color=\"blue\">%2</font>!", attack->name(), defender->name())),0,0);
+    wSlideLayout->addWidget(new QLabel(i18n("You are moving armies from <font color=\"red\">%1</font> to <font color=\"blue\">%2</font>!", attack->name(), defender->name())),0,0);
     wSlideLayout->addWidget(new QLabel(i18n("<br><i>Choose the number of moved armies.</i>")),1,0);
 }
 

@@ -25,6 +25,7 @@
 #include "GameLogic/nationality.h"
 #include "GameLogic/onu.h"
 #include "Sprites/skinSpritesData.h"
+#include "Sprites/flagsprite.h"
 
 #include <QString>
 #include <QLabel>
@@ -132,17 +133,27 @@ void KPlayerSetupDialog::fillNationsCombo()
 
   for (; nationsIt != nationsIt_end; nationsIt++)
   {
-//     kDebug() << "Adding nation " << i18n((*nationsIt).first) << " / " << (*nationsIt).second << endl;
+    kDebug() << "Adding nation " << I18N_NOOP((*nationsIt).first) << " / " << (*nationsIt).second << endl;
 //     load image
-    QSize size(
-        m_onu->renderer()->boundsOnElement((*nationsIt).second).width()/Sprites::SkinSpritesData::single().intData("flag-frames"),
-        m_onu->renderer()->boundsOnElement((*nationsIt).second).height());
-    QImage image(size, QImage::Format_ARGB32_Premultiplied);
-    image.fill(0);
-    QPainter p(&image);
-    m_onu->renderer()->render(&p, (*nationsIt).second);
-    QPixmap allpm = QPixmap::fromImage(image);
-    QPixmap flag = allpm.copy(0, 0, size.width(), size.height());
+
+    FlagSprite flagsprite((*nationsIt).second,
+                  Sprites::SkinSpritesData::single().intData("flag-width"),
+                  Sprites::SkinSpritesData::single().intData("flag-height"),
+                  Sprites::SkinSpritesData::single().intData("flag-frames"),
+                  Sprites::SkinSpritesData::single().intData("flag-versions"),
+                  1.0,m_automaton->game()->backGndWorld());
+
+    QPixmap flag = flagsprite.image(0);
+    
+//     QSize size(
+//         m_onu->renderer()->boundsOnElement((*nationsIt).second).width()/Sprites::SkinSpritesData::single().intData("flag-frames"),
+//         m_onu->renderer()->boundsOnElement((*nationsIt).second).height());
+//     QImage image(size, QImage::Format_ARGB32_Premultiplied);
+//     image.fill(0);
+//     QPainter p(&image);
+//     m_onu->renderer()->render(&p, (*nationsIt).second);
+//     QPixmap allpm = QPixmap::fromImage(image);
+//     QPixmap flag = allpm.copy(0, 0, size.width(), size.height());
 
 
 //     get name
