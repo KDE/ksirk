@@ -57,6 +57,7 @@ class QAction;
 class KGameChat;
 class KGamePopupItem;
 class KToolBar;
+class KDialog;
 
 class QEvent;
 class QDockWidget;
@@ -783,7 +784,7 @@ private:
 
   GameLogic::GameAutomaton* m_automaton;
 
-  QDialog * m_wSlide;
+  KDialog * m_wSlide;
 
   int m_nbRArmy;
   int m_nbLArmy;
@@ -954,7 +955,7 @@ private:
 
   GameLogic::Country* m_mouseLocalisation;
 
-  QDialog * dial;
+  KDialog * dial;
 
   // components that will be re-used of the chat
   QPixmap m_upChatReducePix;

@@ -724,6 +724,7 @@ void KGameWindow::slideReleased()
 }
 void KGameWindow::slideClose()
 {
+  kDebug();
   m_wSlide->close();
   QPoint point;
   m_automaton->gameEvent("actionInvasionFinished", point);

@@ -74,7 +74,7 @@
 #include <KToolBar>
 #include <KAction>
 #include <KSvgRenderer>
-#include <kdialog.h>
+#include <KDialog>
 
 
 #include <assert.h>
@@ -1131,14 +1131,17 @@ void KGameWindow::displayDefenseWindow()
 {
   // Create Window Dialog
   dial = new KDialog ();
-  QGridLayout * mainLayout = new QGridLayout(dial);
+  dial->setButtons( KDialog::None );
+
+  QWidget* widget = new QWidget(dial);
+  QGridLayout * mainLayout = new QGridLayout(widget);
   
   // Create the differents layout for buttons and label
   QGridLayout * bottomLayout = new QGridLayout();
   QGridLayout * topLayout = new QGridLayout();
 
   // Create and add the main Layout
-  dial->setLayout(mainLayout);
+  widget->setLayout(mainLayout);
   mainLayout->addLayout(bottomLayout, 1, 0, Qt::AlignCenter);
   mainLayout->addLayout(topLayout, 0, 0, Qt::AlignCenter);
   
@@ -1178,9 +1181,10 @@ void KGameWindow::displayDefenseWindow()
   connect(def2, SIGNAL(clicked()), this, SLOT(slotWindowDef2()));
   connect(defAuto, SIGNAL(clicked()), this, SLOT(slotDefAuto()));
 
+  dial->setMainWidget(widget);
   // Print the window dialog
-  dial->adjustSize();
-  dial->setFixedSize(dial->width(), dial->height());
+//   dial->adjustSize();
+//   dial->setFixedSize(widget->width(), widget->height());
   dial->exec();
 }
 
@@ -3132,7 +3136,13 @@ void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * 
   m_nbLArmies = new QLabel(QString::number(m_nbLArmy));
   m_nbRArmies = new QLabel(QString::number(m_nbRArmy));  
 
+
   m_wSlide = new KDialog();
+  m_wSlide->setButtons( KDialog::Ok );
+  m_wSlide->setButtonText (KDialog::Ok, i18n("Validate"));
+
+  QWidget* widget = new QWidget(m_wSlide);
+
 //   m_wSlide->setFixedWidth(380);
 //   m_wSlide->setFixedHeight(250);
 
@@ -3146,7 +3156,7 @@ void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * 
   nb->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
   nb->setFixedSize(35,35);
 
-  m_invadeSlide = new QSlider(Qt::Horizontal,m_wSlide);
+  m_invadeSlide = new QSlider(Qt::Horizontal,widget);
 
   m_invadeSlide->setTickInterval(1);
   m_invadeSlide->setMinimum(0);
@@ -3154,13 +3164,13 @@ void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * 
   m_invadeSlide->setTickPosition(QSlider::TicksBelow);
   m_currentSlideValue = m_invadeSlide->value();
 
-  QPushButton * ok = new QPushButton();
+//   QPushButton * ok = new QPushButton();
   
-  ok->setText("Validate");
-  QGridLayout * wSlideLayout = new QGridLayout(m_wSlide);
-  QHBoxLayout * center = new QHBoxLayout(m_wSlide);
-  QVBoxLayout * left = new QVBoxLayout(m_wSlide);
-  QVBoxLayout * right = new QVBoxLayout(m_wSlide);
+//   ok->setText(i18n("Validate"));
+  QGridLayout * wSlideLayout = new QGridLayout(widget);
+  QHBoxLayout * center = new QHBoxLayout(widget);
+  QVBoxLayout * left = new QVBoxLayout(widget);
+  QVBoxLayout * right = new QVBoxLayout(widget);
 
   //init. main layout
   if (invasionType == Invasion)
@@ -3176,7 +3186,7 @@ void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * 
 
   wSlideLayout->addLayout(center,2,0);
   wSlideLayout->addWidget(m_invadeSlide,3,0);
-  wSlideLayout->addWidget(ok,4,0);
+//   wSlideLayout->addWidget(ok,4,0);
 
   //init. center layout
   center->addLayout(left);
@@ -3194,9 +3204,11 @@ void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * 
   //val->setText(QString::number(invadeSlide->value()));
   connect(m_invadeSlide,SIGNAL(valueChanged(int)),this,SLOT(slideMove(int)));
   connect(m_invadeSlide,SIGNAL(sliderReleased()),this,SLOT(slideReleased()));
-  connect(ok,SIGNAL(pressed()),this,SLOT(slideClose()));
-  connect(ok,SIGNAL(rejected ()),this,SLOT(slideClose()));
+  connect(m_wSlide,SIGNAL(okClicked()),this,SLOT(slideClose()));
+//   connect(ok,SIGNAL(rejected ()),this,SLOT(slideClose()));
 
+  m_wSlide->setMainWidget(widget);
+  
   m_wSlide->setWindowTitle("Invasion");
   m_wSlide->setLayout(wSlideLayout);
   m_wSlide->setWindowModality(Qt::ApplicationModal);
