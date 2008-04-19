@@ -9,6 +9,7 @@ Before KDE4.1:
   * change size of "will display goal" dialog (kdelibs bug?)
   * save action should confirm before replacing a file
   * sprites should be enhanced
+  * [????] show goals in dialogs again and not in popups
   * [????] remove quit action from context menu
   * [ONGOING] hide right window content when changing current player but show it again when necessary
   * [ONGOING] don't show context help for computer players
