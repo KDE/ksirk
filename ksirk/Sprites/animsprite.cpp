@@ -188,7 +188,7 @@ void AnimSprite::nextFrame()
 void AnimSprite::setFrame(unsigned int numFrame)
 {
 // kDebug() << " " << numFrame << " look=" << look <<" ; frames="
-//  <<frames<<" ; m_frames size="<<m_frames.size()<<endl;
+//  <<frames<<" ; m_frames size="<<m_frames.size();
   if (numFrame < (unsigned int)m_frames.size())
   {
     setPixmap(m_frames[(look-1)*frames+numFrame]);
@@ -197,8 +197,8 @@ void AnimSprite::setFrame(unsigned int numFrame)
 
 void AnimSprite::moveIt()
 {
-  kDebug() << "Position of " << (void*)this << " is: "
-    << pos() << " (destination point is: " << destinationPoint << ")" << endl;
+//   kDebug() << "Position of " << (void*)this << " is: "
+//     << pos() << " (destination point is: " << destinationPoint << ")" << endl;
   qreal delta = 5*m_zoom;
   switch (KsirkSettings::spritesSpeed())
   {
