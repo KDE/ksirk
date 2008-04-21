@@ -2547,10 +2547,13 @@ void KGameWindow::defense(unsigned int nb)
     m_goalAction-> setIconText(i18n("Goal"));
     m_barFlag-> setPixmap(m_firstCountry-> owner()->getFlag()-> image(0));
   }
-  QByteArray buffer;
-  QDataStream stream(&buffer, QIODevice::WriteOnly);
-  m_automaton->sendMessage(buffer,InitCombatMovement);
-  m_automaton->state(GameLogic::GameAutomaton::FIGHT_BRING);
+  if (m_automaton->isAdmin())
+  {
+    QByteArray buffer;
+    QDataStream stream(&buffer, QIODevice::WriteOnly);
+    m_automaton->sendMessage(buffer,InitCombatMovement);
+    m_automaton->state(GameLogic::GameAutomaton::FIGHT_BRING);
+  }
 }
 
 int KGameWindow::nbMovedArmies()
