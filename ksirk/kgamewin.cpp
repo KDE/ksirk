@@ -1742,65 +1742,6 @@ GameLogic::GameAutomaton::GameState KGameWindow::getState() const
   return m_automaton->state();
 }
 
-/*
-void KGameWindow::attack(Country& attacker, Country& defender, unsigned int nb)
-{
-  clearGameActionsToolbar();
-  currentPlayer()-> setNbAttack( nb );
-  KMessageParts messageParts;
-  messageParts << I18N_NOOP("%1 attacks %2 from %3 with <font color=\"red\">%4 armies</font>.") 
-    << currentPlayer()-> name() 
-    << defender.name() 
-    << attacker.name() 
-    << QString::number(nb);
-  broadcastChangeItem(messageParts, ID_STATUS_MSG2);
-  
-
-  messageParts.clear();
-  if (! (defender.owner()->isAI()))
-  {
-    if ((m_secondCountry-> nbArmies() > 1)
-        && (nb >= 2))
-    {
-      QPixmap pm = m_secondCountry->owner()->getFlag()->image(0);
-
-      messageParts <<pm<< I18N_NOOP("%1, you are attacked by <font color=\"red\">%2 armies</font> ; with how many armies do you <font color=\"blue\">defend %3</font> ?") 
-        << m_secondCountry->owner()->name() 
-        << QString::number(nb)
-        << m_secondCountry-> name();
-      QByteArray buffer;
-      QDataStream stream(&buffer, QIODevice::WriteOnly);
-      stream << m_secondCountry->owner()->name();
-      m_automaton->sendMessage(buffer,DisplayDefenseButtons);
-    }
-    else
-    {
-    QPixmap pmA = m_firstCountry-> owner()->getFlag()->image(0);
-    QPixmap pmD = m_secondCountry-> owner()->getFlag()->image(0);
-
-    messageParts 
-      << I18N_NOOP("Battle between <font color=\"red\">%1</font> (")
-      << m_firstCountry-> name()
-      << pmA
-      << I18N_NOOP("%1) <font color=\"red\">with %2 armies</font> and <font color=\"blue\">%3</font> (")
-      << m_firstCountry->owner()->name()
-      << QString::number(nb)
-      << m_secondCountry-> name()
-      << pmD
-      << I18N_NOOP("%1) <font color=\"blue\">with %2 armies</font>.") 
-      << m_secondCountry->owner()->name()
-      << QString::number(1);
-
-      initCombatMovement(m_firstCountry, m_secondCountry);
-
-    }
-    broadcastChangeItem(messageParts, ID_NO_STATUS_MSG);
-  }
-  else
-  {
-  }
-}*/
-
 void KGameWindow::moveArmies(Country& src, Country& dest, unsigned int nb)
 {
 //    kDebug() << "KGameWindow::moveArmies()";
@@ -2580,36 +2521,42 @@ bool KGameWindow::invade(unsigned int nb )
   return res;
 }
 
-bool KGameWindow::simultaneousAttack(int nb, int state)
+AnimSprite* KGameWindow::simultaneousAttack(int nb, FightType state)
 {
-  bool res;
-  QPointF *pointAttaquant = new QPointF(0,0);
-  QPointF *pointDefenseur = new QPointF(0,0);
+  kDebug() << nb << state << relativePosInArenaAttack << relativePosInArenaDefense;
+  AnimSprite* res;
 
   //determinePointArrivee(m_firstCountry, m_secondCountry,pointAttaquant,pointDefenseur);
 
-  if (state == 0)
+  if (state == Attack)
   {
-	determinePointArriveeForArena(firstCountry(), secondCountry(),relativePosInArenaAttack, pointAttaquant,pointDefenseur);
+    QPointF pointAttaquant(0,0);
+    QPointF pointDefenseur(0,0);
+    determinePointArriveeForArena(firstCountry(), secondCountry(),
+        relativePosInArenaAttack, pointAttaquant,pointDefenseur);
 
-	kDebug() << "****point att****" << *pointAttaquant;
+    kDebug() << "****point att****" << pointAttaquant;
 
-	kDebug() << "****SIMULTANEOUS ATTACK****";
-	res = initArmiesMultipleCombat(nb, firstCountry(), secondCountry(),*pointAttaquant);
+    kDebug() << "****SIMULTANEOUS ATTACK****" << pointAttaquant;
+    res = initArmiesMultipleCombat(nb, firstCountry(), secondCountry(), pointAttaquant);
 
-	relativePosInArenaAttack++;
+    relativePosInArenaAttack++;
   }
-  else
+  else // Defense
   {
-	determinePointArriveeForArena(secondCountry(), firstCountry(),relativePosInArenaDefense, pointAttaquant,pointDefenseur);
-	
-	kDebug() << "****point def****" << *pointAttaquant;
-	
-	kDebug() << "****SIMULTANEOUS DEFENSE****";
-	res = initArmiesMultipleCombat(nb, secondCountry(), secondCountry(),*pointAttaquant);
-	
-	relativePosInArenaDefense++;
+    QPointF pointAttaquant(0,0);
+    QPointF pointDefenseur(0,0);
+    determinePointArriveeForArena(secondCountry(), firstCountry(),
+      relativePosInArenaDefense, pointDefenseur, pointAttaquant);
+
+    kDebug() << "****point def****" << pointAttaquant;
+
+    kDebug() << "****SIMULTANEOUS DEFENSE****" << pointDefenseur;
+    res = initArmiesMultipleCombat(nb, secondCountry(), secondCountry(), pointDefenseur);
+
+    relativePosInArenaDefense++;
   }
+  kDebug() << (void*)res;
   return res;
 }
 
@@ -3077,11 +3024,14 @@ GameLogic::Country* KGameWindow::secondCountry()
 
 void KGameWindow::showArena()
 {
-  if (m_currentDisplayedWidget != arenaType) {
-    // synchronize the arena countrys
+  kDebug();
+  if (m_currentDisplayedWidget != arenaType)
+  {
+    // synchronize the arena countries
     m_currentDisplayedWidget = arenaType;
     m_arena->initFightArena(m_firstCountry,m_secondCountry,m_backGnd_arena);
   }
+  kDebug() << "before setCurrentIndex";
   dynamic_cast <QStackedWidget*>(centralWidget())->setCurrentIndex(2);
 }
 

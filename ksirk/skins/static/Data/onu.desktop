@@ -47,7 +47,7 @@ id=cavalry
 width=32
 height=32
 frames=1
-versions=1
+versions=3
 
 [cannon]
 id=cannon

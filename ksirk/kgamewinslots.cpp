@@ -395,24 +395,6 @@ void KGameWindow::slotInvade1()
   m_automaton->gameEvent("actionInvade1", point);
 }
 
-void KGameWindow::slotSimultaneousAttack(int state)
-{
-  QPoint point;
-  
-  kDebug() << "slotSimultaneousAttack" << state;
-
-  // Attack
-  if (state==0)
-  {
-  	m_automaton->gameEvent("actionSimultaneousAttackA", point);
-  }
-  else
-  {
-	// Defense	
-	m_automaton->gameEvent("actionSimultaneousAttackD", point);
-  }
-}
-
 void KGameWindow::slotInvade5()
 {
   QPoint point;
@@ -595,7 +577,7 @@ void KGameWindow::slotExplosionFinished(AnimSpritesGroup* sprites)
     AnimSprite* sprite = sprites->front();
     sprites->pop_front();
     sprite->setStatic();
-    delete sprite;
+    sprite->deleteLater();
   }
   
   if (backGnd()->bgIsArena())

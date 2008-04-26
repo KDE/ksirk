@@ -101,6 +101,7 @@ class KGameWindow: public KXmlGuiWindow
 public:
   enum MessageShowingType {OnConfig, ForceShowing};
   enum InvasionType {Invasion, Moving};
+  enum FightType {Attack, Defense};
     
   /**
     * Create the window and initializes its members
@@ -145,21 +146,24 @@ public:
     */
   bool initArmiesMovement(unsigned int nb, GameLogic::Country* src, GameLogic::Country* dest);
 
+  AnimSprite* initArmiesMultipleCombat(unsigned int nb,
+      GameLogic::Country* src,
+      GameLogic::Country* dest, QPointF);
 
+  QPointF determinePointDepartArena(GameLogic::Country *pays, int relativePos);
 
+  void determinePointArrivee(
+      GameLogic::Country *paysAttaquant,
+      GameLogic::Country *paysDefenseur,
+      QPointF& pointArriveeAttaquant,
+      QPointF& pointArriveeDefenseur);
 
-bool initArmiesMultipleCombat(unsigned int nb, GameLogic::Country* src, GameLogic::Country* dest, QPointF);
-
-QPointF* determinePointDepartArena(GameLogic::Country *pays, int relativePos);
-
-void determinePointArrivee(GameLogic::Country *paysAttaquant, GameLogic::Country *paysDefenseur,QPointF*,QPointF*);
-
-void determinePointArriveeForArena(GameLogic::Country *paysAttaquant, GameLogic::Country *paysDefenseur,int relative, QPointF * pointArriveeAttaquant,QPointF * pointArriveeDefenseur);
-
-
-
-
-
+  void determinePointArriveeForArena(
+      GameLogic::Country *paysAttaquant,
+      GameLogic::Country *paysDefenseur,
+      int relative,
+      QPointF& pointArriveeAttaquant,
+      QPointF& pointArriveeDefenseur);
 
 
   /**
@@ -458,7 +462,7 @@ void determinePointArriveeForArena(GameLogic::Country *paysAttaquant, GameLogic:
     * during an invasion or an end of turn move 
     */
   bool invade(unsigned int nb = 1);
-  bool simultaneousAttack(int ,int );
+  AnimSprite* simultaneousAttack(int nbArmies, FightType type);
   bool retreat(unsigned int nb = 1);
   //@}
 
@@ -698,8 +702,6 @@ public Q_SLOTS:
   void slotWindowDef1();
   void slotWindowDef2();
   void slotInvade1();
-
-  void slotSimultaneousAttack(int);
 
   void slotInvade5();
   void slotInvade10();

@@ -99,31 +99,35 @@ void Player::setNbAvailArmies(unsigned int nb, bool /*transmit*/)
 /**  */
 unsigned int Player::getNbAttack()
 {
-    return (m_nbAttack);
+  kDebug() << m_nbAttack;
+  return (m_nbAttack);
 }
 
 /**  */
 void Player::setNbAttack(unsigned int nb)
 {
-    m_nbAttack = nb;
+  kDebug() << name() << nb;
+  m_nbAttack = nb;
 }
 
 /**  */
 unsigned int Player::getNbDefense()
 {
-    return (m_nbDefense);
+  kDebug() << m_nbDefense;
+  return (m_nbDefense);
 }
 
 /**  */
 void Player::setNbDefense(unsigned int nb)
 {
-    m_nbDefense = nb;
+  kDebug() << name() << nb;
+  m_nbDefense = nb;
 }
 
 /** */
 unsigned int Player::getNbCountries() const
 {
-    return (m_nbCountries);
+  return (m_nbCountries);
 }
 
 /** add nb armies to the number of available armies */

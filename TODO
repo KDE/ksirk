@@ -35,6 +35,7 @@ Quickly
   * [DONE] replace all QMessageBox by KMessageBox
   * [DONE] study the replacement of the global timer by more local ones
   * study the replacement local timers for sprites by a global one
+  * refactoring of fighting in arena. code is too complex
 
 Before 1.9:
   * [DONE] finish porting to KDE4

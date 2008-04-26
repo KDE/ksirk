@@ -100,8 +100,6 @@ const char* GameAutomaton::KsirkMessagesIdsNames[] = {
 "DecrNbArmies", // 277
 "DisplayNextPlayerButton", // 278
 "Invade", // 279
-"SimultaneousAttackA",
-"SimultaneousAttackD",
 "Retreat", // 280
 "NextPlayerNormal", // 281
 "NextPlayerRecycling", // 282
@@ -389,20 +387,6 @@ GameAutomaton::GameState GameAutomaton::run()
   case FIGHT_ANIMATE:
   break;
   case FIGHT_BRING:
-    if (event == "actionSimultaneousAttackA")
-    {
-      QByteArray buffer;
-      QDataStream stream(&buffer, QIODevice::WriteOnly);
-      stream << quint32(1);
-      sendMessage(buffer,SimultaneousAttackA);
-    }
-    else if (event == "actionSimultaneousAttackD")
-    {
-      QByteArray buffer;
-      QDataStream stream(&buffer, QIODevice::WriteOnly);
-      stream << quint32(1);
-      sendMessage(buffer,SimultaneousAttackD);
-    }
   break;
   case FIGHT_BRINGBACK:
     // no more moving fighter returning home
@@ -2001,15 +1985,6 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     m_game->secondCountry(m_game->theWorld()->countryNamed(countryName));
     break;
   case InitCombatMovement:
-    m_game->getRightDialog()->close();
-    m_game->getRightDialog()->displayFightDetails(m_game->firstCountry(),m_game->secondCountry(),m_game->firstCountry()->owner()->getNbAttack(),m_game->secondCountry()->owner()->getNbDefense());
-    m_game->centerOnFight();  //center the game on the fight
-    if  (m_game->isArena() && !currentPlayer()->isAI() && !currentPlayer()->isVirtual())
-    {
-      kDebug() << "Attack with arena" << endl;
-      // init and display the arena view
-      m_game->showArena();
-    }
     m_game->initCombatMovement(m_game->firstCountry(), m_game->secondCountry());
     break;
   case AnimCombat:
@@ -2080,18 +2055,6 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     if (m_game-> invade(nbArmies))
       m_game-> incrNbMovedArmies(nbArmies);
     break;
-
-
-  case SimultaneousAttackA:
-    stream >> nbArmies;
-    m_game-> simultaneousAttack(nbArmies,0);
-    break;
-
-  case SimultaneousAttackD:
-    stream >> nbArmies;
-    m_game-> simultaneousAttack(nbArmies,1);
-    break;
-
   case Retreat:
     stream >> nbArmies;
     if (m_game-> retreat(nbArmies))
@@ -2222,7 +2185,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     break;
   case AnimExplosion:
     stream >> explosing;
-    
+    kDebug() << "AnimExplosion" << explosing;
     if (m_game->backGnd()->bgIsArena())
     {
       m_game->animExplosionForArena(m_game->firstCountry(), m_game->secondCountry());
@@ -2231,7 +2194,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     {
       if (explosing != 0 && explosing != 1 && explosing != 2)
       {
-      KMessageBox::information(m_game, i18n("Problem : no one destroyed"), i18n("Ksirk - Error !"));
+        KMessageBox::information(m_game, i18n("Problem : no one destroyed"), i18n("Ksirk - Error !"));
       }
       else
       {

@@ -61,8 +61,8 @@ void AnimSpritesGroup::clear()
 
 void AnimSpritesGroup::addSprite(AnimSprite* sprite)
 {
-  kDebug();
   push_back(sprite);
+  kDebug() << "now" << size();
   connect(sprite, SIGNAL(atDestination(AnimSprite*)),this,SLOT(oneArrived(AnimSprite*)));
   connect(sprite, SIGNAL(animationFinished(AnimSprite*)),this,SLOT(oneArrived(AnimSprite*)));
 }
