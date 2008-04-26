@@ -219,8 +219,7 @@ ONU::ONU(GameAutomaton* automaton,
   m_font.backgroundColor = fontgroup.readEntry("background-color", "white");
 
   QStringList countriesList = onugroup.readEntry("countries", QStringList());
-  QString country;
-  foreach (country, countriesList)
+  foreach (const QString &country, countriesList)
   { 
     KConfigGroup countryGroup = config.group(country);
     unsigned int id = countryGroup.readEntry("id",0);
@@ -242,8 +241,7 @@ ONU::ONU(GameAutomaton* automaton,
         flagPoint, cannonPoint, cavalryPoint, infantryPoint, id);
   }
   QStringList nationalitiesList = onugroup.readEntry("nationalities", QStringList());
-  QString nationality;
-  foreach (nationality, nationalitiesList)
+  foreach (const QString &nationality, nationalitiesList)
   {
     kDebug() << "Creating nationality " << nationality << endl;
     KConfigGroup nationalityGroup = config.group(nationality);
@@ -256,8 +254,7 @@ ONU::ONU(GameAutomaton* automaton,
 
 
   QStringList continentsList = onugroup.readEntry("continents", QStringList());
-  QString continent;
-  foreach (continent, continentsList)
+  foreach (const QString &continent, continentsList)
   {
     KConfigGroup continentGroup = config.group(continent);
 
@@ -275,8 +272,7 @@ ONU::ONU(GameAutomaton* automaton,
   }
 
   QStringList goalsList = onugroup.readEntry("goals", QStringList());
-  QString goal;
-  foreach (goal, goalsList)
+  foreach (const QString &goal, goalsList)
   {
     KConfigGroup goalGroup = config.group(goal);
 
@@ -310,7 +306,7 @@ ONU::ONU(GameAutomaton* automaton,
     automaton->goals().insert(goal);
   }
 
-  foreach (country, countriesList)
+  foreach (const QString &country, countriesList)
   {
     std::vector< Country* > theNeighbours;
     KConfigGroup countryGroup = config.group(country);
