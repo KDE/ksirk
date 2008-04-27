@@ -33,6 +33,7 @@
 
 #include <map>
 #include <set>
+#include <iostream>
 
 namespace Ksirk {
 class KGameWindow;

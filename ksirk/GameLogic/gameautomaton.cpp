@@ -48,7 +48,7 @@
 #include <kgame/kmessageserver.h>
 #include <kgame/kgamechat.h>
 
-
+#include <list>
 #include <sstream>
 
 namespace Ksirk{

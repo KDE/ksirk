@@ -35,6 +35,7 @@
 #include <qstring.h>
 
 #include <set>
+#include <vector>
 
 namespace Ksirk
 {

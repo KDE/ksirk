@@ -19,7 +19,8 @@
 #ifndef KSIRK_GAMELOGICGOAL_H
 #define KSIRK_GAMELOGICGOAL_H
 
-#include<set>
+#include <set>
+#include <iostream>
 
 #include <qdatastream.h>
 

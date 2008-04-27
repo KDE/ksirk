@@ -29,6 +29,7 @@
 #include <QTimer>
 
 #include <limits>
+#include <iostream>
 
 class QSvgRenderer;
 

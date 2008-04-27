@@ -23,7 +23,7 @@
 #define NATIONALITY_H
 
 #include <QString>
-
+#include <iostream>
 
 namespace Ksirk
 {
