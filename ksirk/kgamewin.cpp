@@ -665,7 +665,6 @@ bool KGameWindow::attackEnd()
       QDataStream stream(&buffer, QIODevice::WriteOnly);
       stream << currentPlayer()->id();
       m_automaton->sendMessage(buffer,CheckGoal);
-      
     }
     
     m_secondCountry-> owner(currentPlayer());
@@ -707,6 +706,9 @@ bool KGameWindow::attackEnd()
       }
     }
   }
+  m_firstCountry->createArmiesSprites();
+  m_secondCountry->createArmiesSprites();
+
   if (m_automaton->isAdmin())
   {
     if (res)
@@ -1980,9 +1982,10 @@ bool KGameWindow::attacker(const QPointF& point)
 
 unsigned int KGameWindow::attacked(const QPointF& point)
 {
-
   kDebug() << point;
   //if (currentPlayer()-> isAI()) return 3;
+  // executed on the admin side only
+  if (!m_automaton->isAdmin()) return 3;
 
   unsigned int res = 0;
   //Country* secondCountry = clickIn(point);
@@ -1994,12 +1997,16 @@ unsigned int KGameWindow::attacked(const QPointF& point)
           || (m_firstCountry-> owner() != currentPlayer()) )
   {
     //messageParts << I18N_NOOP("Nothing to attack !");
-    displayNormalGameButtons();
+    QByteArray buffer;
+    QDataStream stream(&buffer, QIODevice::WriteOnly);
+    m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
   }
   else if (!m_secondCountry-> owner())
   {
     // messageParts << I18N_NOOP("Invalid attacked country.");
-    displayNormalGameButtons();
+    QByteArray buffer;
+    QDataStream stream(&buffer, QIODevice::WriteOnly);
+    m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
   }
 /*  else if (!m_secondCountry-> owner()->isVirtual())
   {
@@ -2009,23 +2016,31 @@ unsigned int KGameWindow::attacked(const QPointF& point)
   else if (m_firstCountry == m_secondCountry)
   {
    // messageParts << I18N_NOOP("You are trying to attack %1 from itself !") << m_firstCountry-> name();
-    displayNormalGameButtons();
+    QByteArray buffer;
+    QDataStream stream(&buffer, QIODevice::WriteOnly);
+    m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
   }
   else if (!m_firstCountry-> communicateWith(m_secondCountry))
   {
     //messageParts << I18N_NOOP("%1 is not a neighbour of %2 !") << m_secondCountry-> name() << m_firstCountry-> name();
-    displayNormalGameButtons();
+    QByteArray buffer;
+    QDataStream stream(&buffer, QIODevice::WriteOnly);
+    m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
   }
   else if (m_firstCountry-> owner() == m_secondCountry-> owner())
   {
     //messageParts << I18N_NOOP("%1! You cannot attack %2! It is yours!") << currentPlayer()-> name()
            // << m_secondCountry-> name();
-    displayNormalGameButtons();
+    QByteArray buffer;
+    QDataStream stream(&buffer, QIODevice::WriteOnly);
+    m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
   }
   else if (m_firstCountry-> owner() != currentPlayer()) 
   {
     //messageParts << I18N_NOOP("%1 ! You are not the owner of %2!") << currentPlayer()-> name() << m_firstCountry-> name();
-    displayNormalGameButtons();
+    QByteArray buffer;
+    QDataStream stream(&buffer, QIODevice::WriteOnly);
+    m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
   }
   else if (m_firstCountry->nbArmies() - currentPlayer()->getNbAttack() < 1)
   {
@@ -2033,7 +2048,9 @@ unsigned int KGameWindow::attacked(const QPointF& point)
       << I18N_NOOP("%1, you have to keep one army to defend %2.") 
       << m_firstCountry->owner()-> name()
       << m_firstCountry-> name();*/
-    displayNormalGameButtons();
+    QByteArray buffer;
+    QDataStream stream(&buffer, QIODevice::WriteOnly);
+    m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
   }
   else if (m_secondCountry-> nbArmies() > 1)
   {
@@ -2049,10 +2066,10 @@ unsigned int KGameWindow::attacked(const QPointF& point)
     }
     m_automaton->sendMessage(buffer,SecondCountry);
 
-   /* messageParts
-      << I18N_NOOP("%1, with how many armies do you defend %2 ?") 
-      << m_secondCountry->owner()-> name()
-      << m_secondCountry-> name();*/
+    /* messageParts
+        << I18N_NOOP("%1, with how many armies do you defend %2 ?")
+        << m_secondCountry->owner()-> name()
+        << m_secondCountry-> name();*/
     QByteArray buffer2;
     QDataStream stream2(&buffer2, QIODevice::WriteOnly);
     stream2 << m_secondCountry->owner()->name();
@@ -3135,7 +3152,7 @@ void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * 
   {
     wSlideLayout->addWidget(new QLabel(i18n("You are moving armies from <font color=\"red\">%1</font> to <font color=\"blue\">%2</font>!", attack->name(), defender->name())),0,0);
     wSlideLayout->addWidget(new QLabel(i18n("<br><i>Choose the number of moved armies.</i>")),1,0);
-}
+  }
 
   wSlideLayout->addLayout(center,2,0);
   wSlideLayout->addWidget(m_invadeSlide,3,0);
@@ -3171,34 +3188,6 @@ void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * 
 bool KGameWindow::isArena()
 {
   return this->ARENA;
-}
-
-void KGameWindow::slotDefAuto()
-{
-  QPoint point;
-  kDebug()<<"Recept signal defense auto";
-  m_automaton->setDefenseAuto(true);
-  if (this->firstCountry()->owner()->getNbAttack() == 1)
-    m_automaton->gameEvent("actionDefense1", point);
-  else
-    m_automaton->gameEvent("actionDefense2", point);
-  dial->close();
-}
-
-void KGameWindow::slotWindowDef1()
-{
-  QPoint point;
-  kDebug()<<"Recept signal defense with one army";
-  m_automaton->gameEvent("actionDefense1", point);
-  dial->close();
-}
-
-void KGameWindow::slotWindowDef2()
-{
-  QPoint point;
-  kDebug()<<"Recept signal defense with two army";
-  m_automaton->gameEvent("actionDefense2", point);
-  dial->close();
 }
 
 void KGameWindow::reduceChat()

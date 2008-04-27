@@ -745,6 +745,34 @@ void KGameWindow::slotArmiesNumberChanged(int checked)
   }
 }
 
+void KGameWindow::slotDefAuto()
+{
+  QPoint point;
+  kDebug()<<"Recept signal defense auto";
+  m_automaton->setDefenseAuto(true);
+  if (this->firstCountry()->owner()->getNbAttack() == 1)
+    m_automaton->gameEvent("actionDefense1", point);
+  else
+    m_automaton->gameEvent("actionDefense2", point);
+  dial->close();
+}
+
+void KGameWindow::slotWindowDef1()
+{
+  QPoint point;
+  kDebug()<<"Recept signal defense with one army";
+  m_automaton->gameEvent("actionDefense1", point);
+  dial->close();
+}
+
+void KGameWindow::slotWindowDef2()
+{
+  QPoint point;
+  kDebug()<<"Recept signal defense with two army";
+  m_automaton->gameEvent("actionDefense2", point);
+  dial->close();
+}
+
 
 
 } // closing namespace Ksirk

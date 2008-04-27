@@ -620,8 +620,20 @@ void KGameWindow::initCombatMovement(
   }
   else
   {
-    kDebug() << "creating attackingSprite";
+    kDebug() << "creating attackingSprite"
+              << attackingCountry->name()
+              << attackingCountry->nbArmies()
+              << attackingCountry->spritesInfantry().size()
+              << attackingCountry->spritesCavalry().size()
+              << attackingCountry->spritesCannons().size();
     nbSpriteAttacking=1;
+    if ( (attackingCountry->nbArmies() != 0)
+      && attackingCountry->spritesInfantry().isEmpty()
+      && attackingCountry->spritesCavalry().isEmpty()
+      && attackingCountry->spritesCannons().isEmpty())
+    {
+      attackingCountry->createArmiesSprites();
+    }
     if (!attackingCountry->spritesCavalry().isEmpty())
     {
       kDebug() << "cavalry" << backGnd()->bgIsArena();
@@ -749,8 +761,19 @@ void KGameWindow::initCombatMovement(
   }
   else
   {
-    kDebug() << "creating defenderSprite";
+    kDebug() << "creating defenderSprite" << defendingCountry->name()
+              << defendingCountry->nbArmies()
+              << defendingCountry->spritesInfantry().size()
+              << defendingCountry->spritesCavalry().size()
+              << defendingCountry->spritesCannons().size();
     nbSpriteDefending=1;
+    if ( (defendingCountry->nbArmies() != 0) 
+      && defendingCountry->spritesInfantry().isEmpty()
+      && defendingCountry->spritesCavalry().isEmpty()
+      && defendingCountry->spritesCannons().isEmpty())
+    {
+      defendingCountry->createArmiesSprites();
+    }
     if (!defendingCountry->spritesCavalry().isEmpty())
     {
       kDebug() << "cavalry" << backGnd()->bgIsArena();

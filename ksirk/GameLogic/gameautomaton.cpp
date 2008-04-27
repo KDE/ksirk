@@ -255,11 +255,11 @@ GameAutomaton::GameState GameAutomaton::run()
     m_events.pop_front();
   }
 
-//   kDebug() << "Handling " << stateName() << " ; " << event << " ; " << point << endl;
-  if (currentPlayer())
-  {
+  kDebug() << "Handling " << stateName() << " ; " << event << " ; " << point << endl;
+//   if (currentPlayer())
+//   {
 //     kDebug() << "current player=" << currentPlayer()->name() << " is active=" << currentPlayer()->isActive() << endl;
-  }
+//   }
   if (event == "requestForAck")
   {
     kDebug() << "requestForAck" << endl;
@@ -353,32 +353,36 @@ GameAutomaton::GameState GameAutomaton::run()
     }*/
     break;
   case ATTACK2:
-    switch ( m_game->attacked(point) )
+    kDebug() << "Handling ATTACK2";
+    if (isAdmin())
     {
-      case 0:
-        kDebug() << "handling attacked value; 0" << endl;
-        state(WAIT);
-      break;
-      case 1:
-        kDebug() << "handling attacked value; 1" << endl;
-        m_currentPlayerPlayed = true;
-        state(WAITDEFENSE);
-      break;
-      case 2:
-        kDebug() << "handling attacked value; 2" << endl;
-        m_currentPlayerPlayed = true;
-        kDebug() << "calling defense(1)" << endl;
-        m_game-> defense(1);
-        kDebug() << "setting state to FIGHT_BRING" << endl;
-        state(FIGHT_BRING);
-      break;
-      case 3:
-        kDebug() << "handling attacked value; 3" << endl;
-        // AI action: nothing to do.
-      break;
-      default:
-        kError() << "Unknown return value from attacked" << endl;
-        exit(1);
+      switch ( m_game->attacked(point) )
+      {
+        case 0:
+          kDebug() << "handling attacked value; 0" << endl;
+          state(WAIT);
+        break;
+        case 1:
+          kDebug() << "handling attacked value; 1" << endl;
+          m_currentPlayerPlayed = true;
+          state(WAITDEFENSE);
+        break;
+        case 2:
+          kDebug() << "handling attacked value; 2" << endl;
+          m_currentPlayerPlayed = true;
+          kDebug() << "calling defense(1)" << endl;
+          m_game-> defense(1);
+          kDebug() << "setting state to FIGHT_BRING" << endl;
+          state(FIGHT_BRING);
+        break;
+        case 3:
+          kDebug() << "handling attacked value; 3" << endl;
+          // AI action: nothing to do.
+        break;
+        default:
+          kError() << "Unknown return value from attacked" << endl;
+          exit(1);
+      }
     }
     kDebug() << "handling of ATTACK2 finished !" << endl;
   break;
@@ -1963,7 +1967,8 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     break;
   case DisplayDefenseButtons:
     stream >> playerName;
-    if ( (!playerNamed(playerName)->isVirtual()) && (!playerNamed(playerName)->isAI()) && (!this->isDefenseAuto()))
+    if ( (!playerNamed(playerName)->isVirtual())
+      && (!playerNamed(playerName)->isAI()) && (!this->isDefenseAuto()))
     { //m_game->displayDefenseButtons();
       defCountry = this->game()->secondCountry();
       m_game->displayDefenseWindow();
@@ -1971,7 +1976,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     break;
   case ActionDefense:
     stream >> nbArmies;
-    if (!currentPlayer()->isVirtual())
+    if (isAdmin())
       m_game->defense((unsigned int)nbArmies);
     break;
   case FirstCountry:
@@ -1992,47 +1997,52 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     break;
   case TerminateAttackSequence:
     {
-      if (m_game->terminateAttackSequence() && isAdmin())
+      // update country display
+      m_game->firstCountry()-> createArmiesSprites();
+      m_game->secondCountry()-> createArmiesSprites();
+      if (m_game->terminateAttackSequence())
       {
         // Re-display the world view
         m_game->showMap();
 
-        // update country display
-        m_game->firstCountry()-> createArmiesSprites();
-        m_game->secondCountry()-> createArmiesSprites();
-
         setAttackAuto(false);
         setDefenseAuto(false);
-        if(!currentPlayer()->isAI())m_game->slideInvade(m_game->firstCountry(), m_game->secondCountry());
-        state(INVADE);
+        if(!currentPlayer()->isAI() && !currentPlayer()->isVirtual())
+        {
+          m_game->slideInvade(m_game->firstCountry(), m_game->secondCountry());
+        }
+        if (isAdmin())
+        {
+          state(INVADE);
+        }
       }
       else if (isAdmin())
       {
         // if there is more than 1 army on my country and automatic
         // attack is activated
-        if (m_game->firstCountry()->nbArmies() > 1 && isAttackAuto()) {
-          // update country display
-          m_game->firstCountry()-> createArmiesSprites();
-          m_game->secondCountry()-> createArmiesSprites();
-
+        if (m_game->firstCountry()->nbArmies() > 1 && isAttackAuto())
+        {
           // continue automatically attacking by making the same attack
           state(WAIT1);
-          if (m_game->firstCountry()->nbArmies() > 3) {
+          if (m_game->firstCountry()->nbArmies() > 3)
+          {
             gameEvent("actionAttack3", m_game->secondCountry()->centralPoint());
-          } else if (m_game->firstCountry()->nbArmies() > 2) {
+          }
+          else if (m_game->firstCountry()->nbArmies() > 2)
+          {
             gameEvent("actionAttack2", m_game->secondCountry()->centralPoint());
-          } else {
+          }
+          else
+          {
             gameEvent("actionAttack1", m_game->secondCountry()->centralPoint());
           }
 
         // else wait user choice
-        } else {
+        }
+        else
+        {
           // Re-display the world view
           m_game->showMap();
-
-          // update country display
-          m_game->firstCountry()-> createArmiesSprites();
-          m_game->secondCountry()-> createArmiesSprites();
 
           setAttackAuto(false);
           setDefenseAuto(false);

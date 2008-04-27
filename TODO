@@ -4,30 +4,41 @@ Before KDE4.1:
   * status bar coherence (current player for example and number of armies to place)
   * missing status bar information
   * if a client chose to recycle, show the dialog again on other clients
-  * make work again the network games
   * better access to the contextual help (add to toolbar and context menu)
   * change size of "will display goal" dialog (kdelibs bug?)
   * save action should confirm before replacing a file
   * sprites should be enhanced
+  * right window not update when changing player distributing armies in network mode
+  * slider bug in network mode (wrong nb armies)
+  * moving the slider during an invasion should cancel the current move and
+    start a new one
+  * show invasion slider dialog on the attacker client
+  * make attack auto work for non admin clients
   * [????] remove quit action from context menu
-  * [ONGOING] hide right window content when changing current player but show it again when necessary
+  * [ONGOING] hide right window content when changing current player but show
+    it again when necessary
   * [ONGOING] don't show context help for computer players
-  * [HELP NEEDED] correct the layout of initial window (with main menu) when resizing
+  * [HELP NEEDED] correct the layout of initial window (with main menu) when
+    resizing
+  * [DONE] make work again the network games
   * [DONE] add an option to show number of armies directly on the countries
   * [DONE] hovering should display the number of armies on a country
   * [DONE] create a skin copy of the default one but with less animations
   * [DONE] display only the first frame of flags in player setup dialog
-  * [DONE] moving armies should count as an action (avoid end of turn confirmation that allows to cheat)
+  * [DONE] moving armies should count as an action (avoid end of turn
+    confirmation that allows to cheat)
   * [DONE] invasion slider should work when clicked also (and not only if slided)
   * [DONE] goal showing button should not display raw html
   * [DONE] current player flag is not rightly updated
   * [DONE] space bar should finish move
-  * [DONE] number of fighters should be displayed on all fighting sprites (programaticaly and not by duplicating sprites)
+  * [DONE] number of fighters should be displayed on all fighting sprites
+    (programaticaly and not by duplicating sprites)
   * [DONE] when a client have chosen not to recycle, remove the right dialog
   * [DONE] change initial size of player setup dialog
   * [DONE] remove the player name, etc in right window during recycling choice
   * [DONE] don't show "you must distribute all..." for computer players
-  * [DONE] automaticaly hide chat window in non-network games (but show it in network games)
+  * [DONE] automaticaly hide chat window in non-network games (but show it in
+    network games)
   * [DONE] moving armies should use the invasion slider instead of a one shot menu
   
 
@@ -45,21 +56,24 @@ Before 1.9:
   * add more visual clues during battle (number of cannons and explosions equal
     to those involved, the nation flag, etc.)
   * rework overall window presentation (size of maps, chat and info dialog, etc.)
-  * [DONE through chat and info widget] at first game launch, add an information step explaining the role of buttons
-    with a "Do not show again" check box.
+  * [DONE through chat and info widget] at first game launch, add an
+    information step explaining the role of buttons with a "Do not show again"
+    check box.
   * [DONE] show opponent countries during battle
   * handle plurals in messages
   * [DONE through chat and info widget] clearly show the battle results (graphics)
   * enhance the new AI (make it aware of goals,...)
-  * [DONE] automaticaly choose the messages window lines height depending on the font
+  * [DONE] automaticaly choose the messages window lines height depending on
+    the font
   * replace ids by names in the skins onu.xml file format and make the countries
     vector independent of the order in the ONU class
   * make players order random at initialization
   * [DONE] possibility to save AI only games
 
 Before 2.0:
-  - [DONE, Toulouse 2008 students, configuration option missing] if a fight starts outside of the displayed zone, automaticaly move to
-    center on the fight (configurable)
+  - [DONE, Toulouse 2008 students, configuration option missing] if a fight
+    starts outside of the displayed zone, automaticaly move to center on the
+    fight (configurable)
   - possibility to Drag and Drop the map
   - perfect implementation of Risk rules (optional if some enhancements are
     implemented) ;
