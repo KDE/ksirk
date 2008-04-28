@@ -796,7 +796,6 @@ private:
   QLabel * m_nbLArmies;
   QLabel * m_nbRArmies;
   QSlider * m_invadeSlide;
-  bool m_slideReleased; 
 
   /**
     * State that say the widget that is currently displayed between the map and the arena.
@@ -970,6 +969,9 @@ private:
 
   QPushButton* m_reduceChatButton;
   QPushButton* m_floatChatButton;
+
+  // the current saved game file name
+  QString m_fileName;
 
 private: // Private methods
   /*void attack(GameLogic::Country& attacker, GameLogic::Country& defender, unsigned int nb);*/

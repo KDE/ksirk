@@ -91,7 +91,7 @@ namespace Ksirk
       delete mainLayout;
    }
 
-   void KRightDialog::displayCountryDetails(QPointF * countryPoint)
+   void KRightDialog::displayCountryDetails(const QPointF& countryPoint)
    {
       kDebug();
       clearLayout();
@@ -103,12 +103,12 @@ namespace Ksirk
 
       QPixmap picture;
 
-      picture = world->countryAt(*countryPoint)->owner()->getFlag()->image(0);
+      picture = world->countryAt(countryPoint)->owner()->getFlag()->image(0);
 
-      QString continent = world->countryAt(*countryPoint)->continent()->name();
-      QString pays = world->countryAt(*countryPoint)->name();
-      QString units = QString::number(world->countryAt(*countryPoint)->nbArmies());
-      QString owner = world->countryAt(*countryPoint)->owner()->name();
+      QString continent = world->countryAt(countryPoint)->continent()->name();
+      QString pays = world->countryAt(countryPoint)->name();
+      QString units = QString::number(world->countryAt(countryPoint)->nbArmies());
+      QString owner = world->countryAt(countryPoint)->owner()->name();
 
       rightContents->at(0)->setText(i18n("<b>Nationality:</b>"));
       rightContents->at(1)->setText(i18n("<b>Continent:</b> %1", continent));
@@ -272,6 +272,7 @@ namespace Ksirk
    void KRightDialog::displayRecycleDetails(GameLogic::Player * player, int nbAvailArmies)
    {
       kDebug() << player->name() << nbAvailArmies;
+      this->show();
 
       clearLayout();
       initListLabel(4);
@@ -354,7 +355,7 @@ namespace Ksirk
    void KRightDialog::updateRecycleDetails(GameLogic::Country* country, bool recyclePhase, int nbAvailArmies)
    {
       kDebug() << (void*)country << recyclePhase << nbAvailArmies;
-
+      this->show();
       if (btValidWidget == 0)
       {
         if (country == 0)

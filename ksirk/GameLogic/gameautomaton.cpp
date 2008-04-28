@@ -132,6 +132,9 @@ const char* GameAutomaton::KsirkMessagesIdsNames[] = {
 "DisplayGoals", // 309
 "DisplayFightResult", // 310
 "MoveSlide", // 311
+"InvasionFinished", // 312
+"AttackAuto", // 313
+"DisplayRecycleDetails", // 314
 };
 
 GameAutomaton::GameAutomaton() :
@@ -255,7 +258,7 @@ GameAutomaton::GameState GameAutomaton::run()
     m_events.pop_front();
   }
 
-  kDebug() << "Handling " << stateName() << " ; " << event << " ; " << point << endl;
+//   kDebug() << "Handling " << stateName() << " ; " << event << " ; " << point << endl;
 //   if (currentPlayer())
 //   {
 //     kDebug() << "current player=" << currentPlayer()->name() << " is active=" << currentPlayer()->isActive() << endl;
@@ -395,15 +398,15 @@ GameAutomaton::GameState GameAutomaton::run()
   case FIGHT_BRINGBACK:
     // no more moving fighter returning home
 
-kDebug () << "$$$$$$$STATE FIGHT_BRINGBACK $$$$$$$$$$$" << m_game->haveAnimFighters() << endl;
+//     kDebug () << "$$$$$$$STATE FIGHT_BRINGBACK $$$$$$$$$$$" << m_game->haveAnimFighters() << endl;
 
-	if (!m_game->haveAnimFighters() && isAdmin())
-	{
-		QByteArray buffer;
-		QDataStream stream(&buffer, QIODevice::WriteOnly);
-		sendMessage(buffer,TerminateAttackSequence);
-	}
-  break;
+    if (!m_game->haveAnimFighters() && isAdmin())
+    {
+      QByteArray buffer;
+      QDataStream stream(&buffer, QIODevice::WriteOnly);
+      sendMessage(buffer,TerminateAttackSequence);
+    }
+    break;
   case INTERLUDE:
     if  (event == "playersLooped")
     {
@@ -474,7 +477,7 @@ kDebug () << "$$$$$$$STATE FIGHT_BRINGBACK $$$$$$$$$$$" << m_game->haveAnimFight
     }
   break;
   case INVADE:
-    kDebug () << "$$$$$$$STATE INVADE$$$$$$$$$$$" << endl;
+//     kDebug () << "$$$$$$$STATE INVADE$$$$$$$$$$$" << endl;
     if (event == "actionInvade1")
     {
       QByteArray buffer;
@@ -592,7 +595,7 @@ kDebug () << "$$$$$$$STATE FIGHT_BRINGBACK $$$$$$$$$$$" << m_game->haveAnimFight
     }
   break;
   case SHIFT2:
-    kDebug () << "$$$$$$$STATE SHIFT2$$$$$$$$$$$" << endl;
+//     kDebug () << "$$$$$$$STATE SHIFT2$$$$$$$$$$$" << endl;
     if (event == "actionInvade1")
     {
 //       kDebug() << "actionInvade1" << endl;
@@ -1866,6 +1869,8 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   QPixmap pm;
   quint32 A1, A2, A3, D1, D2, NKA, NKD;
   quint32 win;
+  quint32 attackAutoValue;
+  quint32 availArmies;
   
   if (currentPlayer() != 0)
   {
@@ -2020,7 +2025,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
       {
         // if there is more than 1 army on my country and automatic
         // attack is activated
-        if (m_game->firstCountry()->nbArmies() > 1 && isAttackAuto())
+        if (m_game->firstCountry()->nbArmies() > 1 && m_attackAuto)
         {
           // continue automatically attacking by making the same attack
           state(WAIT1);
@@ -2347,6 +2352,24 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
       kDebug() << "Got message MoveSlide";
       moveSlide();
     break;
+  case InvasionFinished:
+      kDebug() << "Got message InvasionFinished";
+      if (isAdmin())
+      {
+        gameEvent("actionInvasionFinished", point);
+      }
+    break;
+  case AttackAuto:
+      kDebug() << "Got message AttackAuto";
+      stream >> attackAutoValue;
+      m_attackAuto = attackAutoValue;
+    break;
+  case DisplayRecycleDetails:
+      stream >> playerName;
+      stream >> availArmies;
+      kDebug() << "Got message DisplayRecycleDetails " << availArmies;
+      m_game->getRightDialog()->displayRecycleDetails(playerNamed(playerName),availArmies);
+    break;
   default: ;
   }
 }
@@ -2420,7 +2443,14 @@ void GameAutomaton::firstCountriesDistribution()
       if ( ! ( dynamic_cast<AIPlayer *>(currentPlayer())-> isRunning()) )
         dynamic_cast<AIPlayer *>(currentPlayer())-> start();
 
-    m_game->getRightDialog()->displayRecycleDetails(m_game->currentPlayer(),m_game->availArmies());
+    QByteArray buffer;
+    QDataStream stream(&buffer, QIODevice::WriteOnly);
+    stream << currentPlayer()->name();
+    stream << (quint32)m_game->availArmies();
+    kDebug() << "sending DisplayRecycleDetails " << currentPlayer()->name() << m_game->availArmies()
+      << " at " << __FILE__ << ", line " << __LINE__;
+    sendMessage(buffer,DisplayRecycleDetails);
+
     
   //    kDebug() << "OUT  KGameWindow::setupPlayers" << endl;
     
@@ -2571,6 +2601,19 @@ void GameAutomaton::moveSlide()
   kDebug();
   if (!currentPlayer()->isVirtual())
     m_game->slideInvade(m_game->firstCountry(), m_game->secondCountry(),KGameWindow::Moving);
+}
+
+/**
+  * Change the automatic attack state.
+  * @param activated new state
+  */
+void GameAutomaton::setAttackAuto(bool activated)
+{
+  QByteArray buffer;
+  QDataStream stream(&buffer, QIODevice::WriteOnly);
+  stream << (quint32)activated;
+
+  sendMessage(buffer,AttackAuto);
 }
 
 

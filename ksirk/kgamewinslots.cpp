@@ -320,21 +320,42 @@ void KGameWindow::slotSaveGame()
   {
     if (isMyState(GameLogic::GameAutomaton::WAITDEFENSE))
     {
-      KMessageBox::sorry(this,
-          i18n("Cannot save when waiting for a defense."),
-          i18n("KsirK - Cannot save !"));
+      m_message->setMessageTimeout(3000);
+      m_message->showMessage(i18n("Cannot save when waiting for a defense."),
+          KGamePopupItem::TopLeft,
+          KGamePopupItem::ReplacePrevious);
       return;
     }
-    QString fileName = KFileDialog::getSaveFileName (KUrl(), "*.xml", this, i18n("KsirK - Save Game")); 
-    if (!fileName.isEmpty())
+    if (m_fileName.isEmpty())
     {
-      std::ofstream ofs(fileName.toUtf8().data());
+      QString fileName = KFileDialog::getSaveFileName (KUrl(), "*.xml", this, i18n("KsirK - Save Game"));
+      if ( QFile::exists(fileName)
+          && (KMessageBox::questionYesNo (this,
+                i18n("%1 exists.\nDo you really want to overwrite it ?",fileName),
+                "Overwrite file ?") == KMessageBox::No) )
+      {
+        m_message->setMessageTimeout(3000);
+        m_message->showMessage(i18n("Saving canceled"), KGamePopupItem::TopLeft,
+            KGamePopupItem::ReplacePrevious);
+        return;
+      }
+      m_fileName = fileName;
+    }
+    if (!m_fileName.isEmpty())
+    {
+      std::ofstream ofs(m_fileName.toUtf8().data());
       saveXml(ofs);
+      m_message->setMessageTimeout(3000);
+      m_message->showMessage(i18n("Game saved to %1",m_fileName),
+          KGamePopupItem::TopLeft, KGamePopupItem::ReplacePrevious);
     }
   }
   else
   {
-    KMessageBox::sorry(this, i18n("Only game master can save the game in network playing."),i18n("KsirK - Cannot save !"));
+    m_message->setMessageTimeout(3000);
+    m_message->showMessage(
+        i18n("Only game master can save the game in network playing."),
+        KGamePopupItem::TopLeft, KGamePopupItem::ReplacePrevious);
   }
 }
 
@@ -497,12 +518,15 @@ void KGameWindow::slotChatFloatButtonPressed()
   m_bottomDock->setFloating(!m_bottomDock->isFloating());
 }
 
-void KGameWindow::slotChatFloatChanged(bool value)
+void KGameWindow::slotChatFloatChanged(bool /*value*/)
 {
   // change the float button image
-  if (!m_bottomDock->isFloating()) {
+  if (!m_bottomDock->isFloating())
+  {
     m_floatChatButton->setIcon(m_upChatFloatPix);
-  } else {
+  }
+  else
+  {
     m_floatChatButton->setIcon(m_downChatFloatPix);
   }
 }
@@ -537,7 +561,7 @@ void KGameWindow::slotMovingArmiesArrived(AnimSpritesGroup* sprites)
   for (; it != it_end; it++)
   {
     (*it)->hide();
-    delete *it;
+    (*it)->deleteLater();
   }
   sprites->clear();
   int index = m_animSpritesGroups.indexOf(sprites);
@@ -548,7 +572,7 @@ void KGameWindow::slotMovingArmiesArrived(AnimSpritesGroup* sprites)
   delete sprites;
 }
 
-void KGameWindow::slotBring(AnimSprite* sprite)
+void KGameWindow::slotBring(AnimSprite* /*sprite*/)
 {
 	m_automaton->game()->stopExplosion();
 }
@@ -624,92 +648,58 @@ void KGameWindow::slotRemoveMessage()
 
 void KGameWindow::slideMove(int v)
 {
-  kDebug();
-  if(m_slideReleased) m_previousSlideValue = m_currentSlideValue;
-  m_slideReleased = false;
+  kDebug() << v;
   m_nbLArmy = m_nbLArmy-(v-m_currentSlideValue);
   m_nbRArmy = m_nbRArmy+(v-m_currentSlideValue);
   m_nbLArmies->setText(QString::number(m_nbLArmy));
   m_nbRArmies->setText(QString::number(m_nbRArmy));
-  m_currentSlideValue = v;
   m_wSlide->update();
-
-  slideReleased();
+  m_currentSlideValue = v;
+  
+  m_automaton->currentPlayerPlayed(true);
 }
 
 void KGameWindow::slideReleased()
 {
+  kDebug() << "do nothing";
+}
+
+void KGameWindow::slideClose()
+{
   kDebug();
   m_automaton->currentPlayerPlayed(true);
-  m_slideReleased = true;
-  m_currentSlideValue = m_previousSlideValue;
-  QByteArray* buffer;
-
-  int units=0; 
-  if(m_invadeSlide->value()!=m_currentSlideValue)
-  {
-    units = m_invadeSlide->value() - m_currentSlideValue;
-  }
   
-  if (units<0)
-  {
-    units*=(-1);
-  }
+  int units=m_invadeSlide->value();
+  
   int reste10 = units%10;
   int reste5;
   for(int i=0;i<(units-reste10)/10;i++)
   {
-    
-    buffer = new QByteArray();
-    QDataStream stream(buffer, QIODevice::WriteOnly);
+    QByteArray buffer;
+    QDataStream stream(&buffer, QIODevice::WriteOnly);
     stream << quint32(10);
-    if (m_invadeSlide->value()>m_currentSlideValue)
-    {
-    	automaton()->sendMessage(*buffer,Invade);
-    }
-    else
-    {
-        automaton()->sendMessage(*buffer,Retreat);
-    }
+    automaton()->sendMessage(buffer,Invade);
   }
-
+  
   reste5 = reste10%5;
   for(int i=0;i<(reste10-reste5)/5;i++)
   {
-    buffer = new QByteArray();
-    QDataStream stream(buffer, QIODevice::WriteOnly);
+    QByteArray buffer;
+    QDataStream stream(&buffer, QIODevice::WriteOnly);
     stream << quint32(5);
-    if (m_invadeSlide->value()>m_currentSlideValue)
-    {
-    	automaton()->sendMessage(*buffer,Invade);
-    }
-    else
-    {
-        automaton()->sendMessage(*buffer,Retreat);
-    }
+    automaton()->sendMessage(buffer,Invade);
   }
   for(int i=0;i<reste5;i++)
   {
-    buffer = new QByteArray();
-    QDataStream stream(buffer, QIODevice::WriteOnly);
+    QByteArray buffer;
+    QDataStream stream(&buffer, QIODevice::WriteOnly);
     stream << quint32(1);
-    if (m_invadeSlide->value()>m_currentSlideValue)
-    {
-    	automaton()->sendMessage(*buffer,Invade);
-    }
-    else
-    {
-        automaton()->sendMessage(*buffer,Retreat);
-    }
+    automaton()->sendMessage(buffer,Invade);
   }
-  m_currentSlideValue = m_invadeSlide->value();
-}
-void KGameWindow::slideClose()
-{
-  kDebug();
   m_wSlide->close();
-  QPoint point;
-  m_automaton->gameEvent("actionInvasionFinished", point);
+  
+  QByteArray buffer;
+  automaton()->sendMessage(buffer,InvasionFinished);
 }
 
 void KGameWindow::slotContextualHelp()

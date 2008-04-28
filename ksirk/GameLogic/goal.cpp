@@ -304,11 +304,11 @@ QString Goal::message(int displayType) const
 void Goal::show(int displayType)
 {
   kDebug() << message(displayType);
-  m_automaton->game()->showMessage(message(displayType),5, KGameWindow::ForceShowing);
-/*  KMessageBox::information(
+//   m_automaton->game()->showMessage(message(displayType),5, KGameWindow::ForceShowing);
+  KMessageBox::information(
                             m_automaton->game(),
                             message(displayType), 
-                            i18n("KsirK - Goal Display"));*/
+                            i18n("KsirK - Goal Display"));
 }
 
 QDataStream& operator<<(QDataStream& stream, const Goal& goal)

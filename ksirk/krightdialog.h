@@ -71,7 +71,7 @@ namespace GameLogic
       * Display the country information after a right click mouse
       * @param contryPoint which is the point clicked
       */
-      void displayCountryDetails(QPointF * countryPoint);
+      void displayCountryDetails(const QPointF& countryPoint);
 
       /**
       * Display the fight details

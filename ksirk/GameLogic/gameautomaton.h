@@ -101,6 +101,9 @@ enum KsirkMessagesIds {
     DisplayGoals, // 309
     DisplayFightResult, // 310
     MoveSlide, // 311
+    InvasionFinished, // 312
+    AttackAuto, // 313
+    DisplayRecycleDetails, // 314
     UnusedLastMessageId
 };
 
@@ -347,7 +350,7 @@ public:
     * Change the automatic attack state.
     * @param activated new state
     */
-  inline void setAttackAuto(bool activated) {m_attackAuto = activated;}
+  void setAttackAuto(bool activated);
 
   /**
     * Get the automatic attack state.

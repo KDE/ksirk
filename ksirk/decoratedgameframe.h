@@ -98,6 +98,8 @@ public:
 
   void setIcon();
 
+  void setArenaOptionEnabled(bool option);
+
 public slots:
   /** 
     * Slot connected in the game/document object to catch and

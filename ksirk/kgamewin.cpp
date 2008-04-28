@@ -117,7 +117,8 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_timer(this),
   gameActionsToolBar(0),
   m_message(0),
-  m_mouseLocalisation(0)
+  m_mouseLocalisation(0),
+  m_fileName()
 {
   kDebug() << "KGameWindow constructor begin";
 
@@ -466,21 +467,26 @@ void KGameWindow::newSkin(const QString& onuFileName)
   // put the size to the window size if it's the main menu
   int width;
   int height;
-  if (m_scene_arena == 0) {
+  if (m_scene_arena == 0)
+  {
      width = 2000;
      height = 2000;
-  } else {
+  }
+  else
+  {
      width = m_theWorld->width();
      height = m_theWorld->height();
   }
 
   //Creation of the arena background
-  if (m_backGnd_arena != 0) {
+  if (m_backGnd_arena != 0)
+  {
     kDebug() << "Before m_backGnd_arena delete";
     delete m_backGnd_arena;
   }
   //Creation of the background
-  if (m_backGnd_world != 0) {
+  if (m_backGnd_world != 0)
+  {
     kDebug() << "Before m_backGnd_world delete";
     delete m_backGnd_world;
   }
@@ -511,7 +517,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
   // create the world map view
   if (m_frame != 0)
   {  
-	delete m_frame;
+    delete m_frame;
   }
   m_frame = new DecoratedGameFrame(this,width, height, m_automaton);
   m_frame->setMaximumWidth(width);
@@ -530,9 +536,10 @@ void KGameWindow::newSkin(const QString& onuFileName)
 
   // create a central widget if it doesent' exists
   m_centralWidget = dynamic_cast <QStackedWidget*>(centralWidget());
-  if (m_centralWidget == 0) {
+  if (m_centralWidget == 0)
+  {
     m_centralWidget = new QStackedWidget;
- setCentralWidget(m_centralWidget);
+    setCentralWidget(m_centralWidget);
   }
   
   // put the menu, map and arena in the central widget
@@ -540,11 +547,14 @@ void KGameWindow::newSkin(const QString& onuFileName)
   m_centralWidget->addWidget(m_frame);
   m_centralWidget->addWidget(m_arena);
   //m_centralWidget->addWidget(m_splitter);m_centralWidget
-  if (firstCall) {
+  if (firstCall)
+  {
     m_centralWidget->setCurrentIndex(0);
     m_currentDisplayedWidget = mainMenuType;
     m_bottomDock->hide();
-  } else {
+  }
+  else
+  {
     m_centralWidget->setCurrentIndex(1);
     m_currentDisplayedWidget = mapType;
     m_bottomDock->show();
@@ -565,7 +575,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
 
 KRightDialog * KGameWindow::getRightDialog()
 {
-   return m_rightDialog;
+  return m_rightDialog;
 }
 
 void KGameWindow::initView()
@@ -956,6 +966,7 @@ bool KGameWindow::actionOpenGame()
   QString fileName = KFileDialog::getOpenFileName(KUrl(), "*.xml", this, i18n("KsirK - Load Game"));
   if (!fileName.isEmpty())
   {
+    m_fileName = fileName;
     m_automaton->setGameStatus(KGame::End);
     m_waitedPlayers.clear();
     kDebug() << "KGameWindow::actionOpenGame loader";
@@ -982,6 +993,7 @@ bool KGameWindow::actionOpenGame()
       m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
       m_frame->setFocus();
       kDebug() << "KGameWindow::actionOpenGame false1";
+      m_frame->setArenaOptionEnabled(true);
       reduceChat();
 
       return false;
@@ -993,6 +1005,7 @@ bool KGameWindow::actionOpenGame()
       broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
       kDebug() << "KGameWindow::actionOpenGame true";
       unreduceChat();
+      m_frame->setArenaOptionEnabled(false);
       return true;
     }
   }
@@ -1376,6 +1389,7 @@ bool KGameWindow::setupPlayers()
   }
   if (networkGame)
   {
+    m_frame->setArenaOptionEnabled(false);
     unreduceChat();
     kDebug() << "In setupPlayers: networkGame";
     m_automaton->offerConnections(port);
@@ -1386,6 +1400,7 @@ bool KGameWindow::setupPlayers()
   }
   else
   {
+    m_frame->setArenaOptionEnabled(true);
     reduceChat();
   }
   m_frame->setFocus();
@@ -1880,7 +1895,7 @@ int KGameWindow::setCurrentPlayerToFirst()
 
 int KGameWindow::setCurrentPlayerToNext(bool restartRunningAIs)
 {
-  kDebug();
+  kDebug() << restartRunningAIs;
   m_rightDock->hide();
   int looped(0);
 //   kDebug() << "KGameWindow::setCurrentPlayerToNext()";
@@ -2232,7 +2247,15 @@ bool KGameWindow::playerPutsInitialArmy(const QPointF& point)
             stream << (quint32)m_nbAvailArmies;
             m_automaton->sendMessage(buffer,KGameWinAvailArmies);
             getRightDialog()->close();
-            getRightDialog()->displayRecycleDetails((Player*)(*it),m_nbAvailArmies);
+
+            QByteArray buffer2;
+            QDataStream stream2(&buffer2, QIODevice::WriteOnly);
+            stream2 << ((Player*)(*it))->name();
+            stream2 << (quint32)m_nbAvailArmies;
+            kDebug() << "sending DisplayRecycleDetails "
+              << ((Player*)(*it))->name() << m_nbAvailArmies
+              << " at " << __FILE__ << ", line " << __LINE__;
+            m_automaton->sendMessage(buffer2,DisplayRecycleDetails);
           }
           if (m_automaton->isAdmin())
           {
@@ -2307,6 +2330,7 @@ void KGameWindow::initRecycling()
   setCurrentPlayerToFirst();
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
+  stream << quint32(0);
   m_automaton->sendMessage(buffer,DisplayRecyclingButtons);
   
   KMessageParts messageParts;
@@ -2346,11 +2370,18 @@ bool KGameWindow::nextPlayerRecycling()
     {
       //KMessageParts messageParts;
       QByteArray buffer;
-      QDataStream stream(&buffer, QIODevice::WriteOnly);
       m_nbAvailArmies = currentPlayer()->getNbAvailArmies();
-      getRightDialog()->close();
       m_automaton->sendMessage(buffer,DisplayNextPlayerButton);
-      getRightDialog()->displayRecycleDetails(currentPlayer(),currentPlayer()-> getNbAvailArmies());
+
+      QByteArray buffer2;
+      QDataStream stream2(&buffer2, QIODevice::WriteOnly);
+      stream2 << currentPlayer()->name();
+      stream2 << (quint32)currentPlayer()-> getNbAvailArmies();
+      kDebug() << "sending DisplayRecycleDetails "
+        << currentPlayer()->name() << currentPlayer()-> getNbAvailArmies()
+        << " at " << __FILE__ << ", line " << __LINE__;
+      m_automaton->sendMessage(buffer2,DisplayRecycleDetails);
+
       QPixmap pm = currentPlayer()->getFlag()->image(0);
       //messageParts <<pm<< I18N_NOOP("%1 : %2 armies to place") << currentPlayer()-> name() 
     //    << QString::number(currentPlayer()-> getNbAvailArmies());
@@ -2371,16 +2402,22 @@ bool KGameWindow::nextPlayerNormal()
     distributeArmies();
   
     QByteArray buffer;
-    QDataStream stream(&buffer, QIODevice::WriteOnly);
     m_automaton->sendMessage(buffer,ShowArmiesToPlace);
     
     clear();
     QByteArray buffer2;
-    QDataStream stream2(&buffer2, QIODevice::WriteOnly);
     m_automaton->sendMessage(buffer2,DisplayNextPlayerButton);
     m_nbAvailArmies = currentPlayer()->getNbAvailArmies();
     getRightDialog()->close();
-    getRightDialog()->displayRecycleDetails(currentPlayer(),nbNewArmies(currentPlayer()));
+
+    QByteArray buffer3;
+    QDataStream stream3(&buffer3, QIODevice::WriteOnly);
+    stream3 << currentPlayer()-> name();
+    stream3 << (quint32)nbNewArmies(currentPlayer());
+    kDebug() << "sending DisplayRecycleDetails "
+        << currentPlayer()->name() << nbNewArmies(currentPlayer())
+        << " at " << __FILE__ << ", line " << __LINE__;
+    m_automaton->sendMessage(buffer3,DisplayRecycleDetails);
     return true;
   }
   else
@@ -2580,22 +2617,22 @@ AnimSprite* KGameWindow::simultaneousAttack(int nb, FightType state)
 
 bool KGameWindow::retreat(unsigned int nb)
 {
-    if (m_nbMovedArmies >= int(nb))
-      return initArmiesMovement(nb, m_secondCountry, m_firstCountry);
-    else
-    {
-     /* KMessageParts messageParts;
-      messageParts << I18N_NOOP("<font color=\"orange\">Cannot remove %1 armies from %2</font>: %3 maximum.") 
-        << QString::number(nb)
-        << m_secondCountry->name() 
-        << QString::number(m_nbMovedArmies);*/
-      //broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
-      return false;
-    }
+  bool res;
+  if (m_nbMovedArmies >= int(nb))
+  {
+    res = initArmiesMovement(nb, m_secondCountry, m_firstCountry);
+  }
+  else
+  {
+    res = false;
+  }
+  kDebug() << "retreat("<<nb<<") returns " << res;
+  return res;
 }
 
 void KGameWindow::invasionFinished()
 {
+  kDebug();
   displayNormalGameButtons();
  //KMessageParts messageParts;
 
@@ -3098,8 +3135,6 @@ void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * 
   QLabel * nb = new QLabel();
   QPixmap soldat;
   
-  m_slideReleased=true;
-
   m_nbLArmy = attack->nbArmies();
   m_nbRArmy = defender->nbArmies();
 
