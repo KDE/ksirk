@@ -94,6 +94,7 @@ void AnimSprite::repaint()
 
 void AnimSprite::setLook(TDir newLook)
 {
+  kDebug();
   if (newLook != look)
   {
 //        kDebug()<<"setLook : " << newLook << ")" << endl;
@@ -188,7 +189,7 @@ void AnimSprite::nextFrame()
 void AnimSprite::setFrame(unsigned int numFrame)
 {
 // kDebug() << " " << numFrame << " look=" << look <<" ; frames="
-//  <<frames<<" ; m_frames size="<<m_frames.size()<<endl;
+//  <<frames<<" ; m_frames size="<<m_frames.size();
   if (numFrame < (unsigned int)m_frames.size())
   {
     setPixmap(m_frames[(look-1)*frames+numFrame]);
@@ -197,8 +198,8 @@ void AnimSprite::setFrame(unsigned int numFrame)
 
 void AnimSprite::moveIt()
 {
-  kDebug() << "Position of " << (void*)this << " is: "
-    << pos() << " (destination point is: " << destinationPoint << ")" << endl;
+//   kDebug() << "Position of " << (void*)this << " is: "
+//     << pos() << " (destination point is: " << destinationPoint << ")" << endl;
   qreal delta = 5*m_zoom;
   switch (KsirkSettings::spritesSpeed())
   {
@@ -396,13 +397,15 @@ void AnimSprite::setNone()
 /** turn the sprite towards left */
 void AnimSprite::setLookLeft()
 {
-    setLook(left);
+  kDebug();
+  setLook(left);
 }
 
 /** tourne le sprite vers la droite */
 void AnimSprite::setLookRight()
 {
-    setLook(right);
+  kDebug();
+  setLook(right);
 }
 /** No descriptions */
 bool AnimSprite::looksToLeft() const
@@ -515,7 +518,7 @@ void AnimSprite::setupTravel(
         const QPointF& srcPoint, 
         const QPointF& destPoint)
 {
-   kDebug() << srcPoint << ", " << destPoint << endl;
+   kDebug() << src->name() << srcPoint << ", " << dest->name() << destPoint << endl;
 
   setDestination(dest);
   setDestinationPoint(destPoint);
@@ -563,6 +566,7 @@ void AnimSprite::setupTravel(
     setLookLeft();
   }
   setAnimated();
+  kDebug() << "Done";
 }
 
 void AnimSprite::arrival()
@@ -580,8 +584,9 @@ void AnimSprite::arrival()
 
 void AnimSprite::setupTravel(Country* src, Country* dest, const QPointF* dpi)
 {
-    if (dpi ==0) AnimSprite::setupTravel(src, dest, src->centralPoint(), dest-> centralPoint());
-    else AnimSprite::setupTravel(src, dest, src->centralPoint(), *dpi);
+  kDebug() << src->name() << dest->name() << (void*)dpi;
+  if (dpi ==0) AnimSprite::setupTravel(src, dest, src->centralPoint(), dest-> centralPoint());
+  else AnimSprite::setupTravel(src, dest, src->centralPoint(), *dpi);
 }
 
 /** Return true if the state of the sprite is the argument; false otherwise */

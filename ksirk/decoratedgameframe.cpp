@@ -84,7 +84,7 @@ QSize DecoratedGameFrame::sizeHint() const
 
 void DecoratedGameFrame::initMenu ()
 {
-  this->menu = new QMenu(this);
+  menu = new QMenu(this);
     
   QAction* newAction = KStandardGameAction::gameNew(this->m_parent, SLOT(slotNewGame()), this);
   
@@ -120,24 +120,34 @@ void DecoratedGameFrame::initMenu ()
   menu->addAction(QuitAction);
 }
 
+void DecoratedGameFrame::setArenaOptionEnabled(bool option)
+{
+  kDebug() << option;
+  ArenaAction->setEnabled(option);
+  if (option == false)
+  {
+    emit(arenaStateSignal(false));
+  }
+}
+
 void DecoratedGameFrame::initAttackMenu ()
 {
-    this->attackMenu = new QMenu(this);
+    attackMenu = new QMenu(this);
 
     ArenaAction = new QAction(i18n("Enable Arena"), this);
     connect(ArenaAction, SIGNAL(triggered()), this, SLOT(arenaState()));
     connect(this, SIGNAL(arenaStateSignal(bool)), this->m_parent, SLOT(slotArena(bool)));
-
-    Attack1Action = new QAction(i18n("Attack1"), this);
+    
+    Attack1Action = new QAction(i18n("Attack 1"), this);
     connect(Attack1Action, SIGNAL(triggered()), this->m_parent, SLOT(slotAttack1()));
 
-    Attack2Action = new QAction(i18n("Attack2"), this);
+    Attack2Action = new QAction(i18n("Attack 2"), this);
     connect(Attack2Action, SIGNAL(triggered()), this->m_parent, SLOT(slotAttack2()));
 
-    Attack3Action = new QAction(i18n("Attack3"), this);
+    Attack3Action = new QAction(i18n("Attack 3"), this);
     connect(Attack3Action, SIGNAL(triggered()), this->m_parent, SLOT(slotAttack3()));
 
-    AutoAction = new QAction(i18n("Attack-auto"), this);
+    AutoAction = new QAction(i18n("Auto attack"), this);
     connect(AutoAction, SIGNAL(triggered()), this, SLOT(attackAuto()));
 
     attackMenu->addAction(ArenaAction);
@@ -147,41 +157,43 @@ void DecoratedGameFrame::initAttackMenu ()
     attackMenu->addAction(Attack3Action);
     attackMenu->addSeparator();  
     attackMenu->addAction(AutoAction);
-    attackMenu->addSeparator();
-    attackMenu->addAction(QuitAction);
+//     attackMenu->addSeparator();
+//     attackMenu->addAction(QuitAction);
 }
 
 void DecoratedGameFrame::initMoveMenu ()
 {
-    this->moveMenu = new QMenu(this);
+    moveMenu = new QMenu(this);
 
-    Move1Action = new QAction(i18n("Move1"), this);
+    Move1Action = new QAction(i18n("Move 1"), this);
     connect(Move1Action, SIGNAL(triggered()),this->m_parent, SLOT(slotInvade1()));
 
-    Move5Action = new QAction(i18n("Move5"), this);
+    Move5Action = new QAction(i18n("Move 5"), this);
     connect(Move5Action, SIGNAL(triggered()),this->m_parent, SLOT(slotInvade5()));
 
-    Move10Action = new QAction(i18n("Move10"), this);
+    Move10Action = new QAction(i18n("Move 10"), this);
     connect(Move10Action, SIGNAL(triggered()),this->m_parent, SLOT(slotInvade10()));
   
     moveMenu->addAction(Move1Action);
     moveMenu->addAction(Move5Action);
     moveMenu->addAction(Move10Action);
-    moveMenu->addSeparator();
-    moveMenu->addAction(QuitAction);
+//     moveMenu->addSeparator();
+//     moveMenu->addAction(QuitAction);
 }
 
 void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
 {
   menuPoint = QCursor::pos();
   kDebug() << "************state decoratedgameframe" << m_automaton->stateName();
-  if (m_automaton->stateName() != "INIT" && m_automaton->stateName() != "INTERLUDE"
-      && m_automaton->stateName() != "NEWARMIES" && m_automaton->stateName() != "WAIT_RECYCLING")
+  if (m_automaton->state() != GameAutomaton::INIT
+    && m_automaton->state() != GameAutomaton::INTERLUDE
+    && m_automaton->state() != GameAutomaton::NEWARMIES
+    && m_automaton->state() != GameAutomaton::WAIT_RECYCLING)
   {
     if (!m_automaton-> currentPlayer()->isAI()
         && !m_automaton-> currentPlayer()->isVirtual())
     {
-      if (m_automaton->stateName() == "WAIT")
+      if (m_automaton->state() == GameAutomaton::WAIT)
       {
         nextPlayer->setVisible(true);
       }
@@ -378,40 +390,47 @@ void DecoratedGameFrame::slotMouseInput(KGameIO *input,QDataStream &stream,QMous
 
 void DecoratedGameFrame::arenaState()
 {
+  kDebug();
   //if (ArenaAction->isChecked())
-  if (ArenaAction->text().contains("Enable Arena", Qt::CaseInsensitive))
+  if (ArenaAction->text().contains(i18n("Enable Arena"), Qt::CaseInsensitive))
   {
-    ArenaAction->setText("Disable Arena");
+    ArenaAction->setText(i18n("Disable Arena"));
     emit(arenaStateSignal(true));
   }
   else
   {
-    ArenaAction->setText("Enable Arena");
+    ArenaAction->setText(i18n("Enable Arena"));
     emit(arenaStateSignal(false));
   }
 
   attackMenu->exec(menuPoint);
 }
 
-void DecoratedGameFrame::attackAuto() {
-  m_automaton->setAttackAuto(true);
-  if (m_automaton->game()->firstCountry()->nbArmies() > 3) {
+void DecoratedGameFrame::attackAuto()
+{
+  kDebug();
+  unsigned int firstCountryNbArmies =
+      m_automaton->game()->firstCountry()->nbArmies();
+  m_automaton->setAttackAuto(firstCountryNbArmies>0);
+  if (firstCountryNbArmies > 3)
+  {
     m_automaton->game()->slotAttack3();
-  } else if (m_automaton->game()->firstCountry()->nbArmies() > 2) {
+  }
+  else if (firstCountryNbArmies > 2)
+  {
     m_automaton->game()->slotAttack2();
-  } else if (m_automaton->game()->firstCountry()->nbArmies() > 1) {
+  }
+  else if (firstCountryNbArmies > 1)
+  {
     m_automaton->game()->slotAttack1();
-  } else {
-    m_automaton->setAttackAuto(false);
   }
 }
 
 void DecoratedGameFrame::slotDetails()
 {
-  QPointF *point = new QPointF(detailPoint);
-
-  m_automaton->game()->getRightDialog()->displayCountryDetails(point);
-        m_automaton->game()->getRightDialog()->open();
+  kDebug();
+  m_automaton->game()->getRightDialog()->displayCountryDetails(detailPoint);
+  m_automaton->game()->getRightDialog()->open();
 }
 
 

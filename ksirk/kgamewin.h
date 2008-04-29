@@ -101,6 +101,7 @@ class KGameWindow: public KXmlGuiWindow
 public:
   enum MessageShowingType {OnConfig, ForceShowing};
   enum InvasionType {Invasion, Moving};
+  enum FightType {Attack, Defense};
     
   /**
     * Create the window and initializes its members
@@ -145,21 +146,24 @@ public:
     */
   bool initArmiesMovement(unsigned int nb, GameLogic::Country* src, GameLogic::Country* dest);
 
+  AnimSprite* initArmiesMultipleCombat(unsigned int nb,
+      GameLogic::Country* src,
+      GameLogic::Country* dest, QPointF);
 
+  QPointF determinePointDepartArena(GameLogic::Country *pays, int relativePos);
 
+  void determinePointArrivee(
+      GameLogic::Country *paysAttaquant,
+      GameLogic::Country *paysDefenseur,
+      QPointF& pointArriveeAttaquant,
+      QPointF& pointArriveeDefenseur);
 
-bool initArmiesMultipleCombat(unsigned int nb, GameLogic::Country* src, GameLogic::Country* dest, QPointF);
-
-QPointF* determinePointDepartArena(GameLogic::Country *pays, int relativePos);
-
-void determinePointArrivee(GameLogic::Country *paysAttaquant, GameLogic::Country *paysDefenseur,QPointF*,QPointF*);
-
-void determinePointArriveeForArena(GameLogic::Country *paysAttaquant, GameLogic::Country *paysDefenseur,int relative, QPointF * pointArriveeAttaquant,QPointF * pointArriveeDefenseur);
-
-
-
-
-
+  void determinePointArriveeForArena(
+      GameLogic::Country *paysAttaquant,
+      GameLogic::Country *paysDefenseur,
+      int relative,
+      QPointF& pointArriveeAttaquant,
+      QPointF& pointArriveeDefenseur);
 
 
   /**
@@ -458,7 +462,7 @@ void determinePointArriveeForArena(GameLogic::Country *paysAttaquant, GameLogic:
     * during an invasion or an end of turn move 
     */
   bool invade(unsigned int nb = 1);
-  bool simultaneousAttack(int ,int );
+  AnimSprite* simultaneousAttack(int nbArmies, FightType type);
   bool retreat(unsigned int nb = 1);
   //@}
 
@@ -699,8 +703,6 @@ public Q_SLOTS:
   void slotWindowDef2();
   void slotInvade1();
 
-  void slotSimultaneousAttack(int);
-
   void slotInvade5();
   void slotInvade10();
   void slotInvasionFinished();
@@ -794,7 +796,6 @@ private:
   QLabel * m_nbLArmies;
   QLabel * m_nbRArmies;
   QSlider * m_invadeSlide;
-  bool m_slideReleased; 
 
   /**
     * State that say the widget that is currently displayed between the map and the arena.
@@ -968,6 +969,9 @@ private:
 
   QPushButton* m_reduceChatButton;
   QPushButton* m_floatChatButton;
+
+  // the current saved game file name
+  QString m_fileName;
 
 private: // Private methods
   /*void attack(GameLogic::Country& attacker, GameLogic::Country& defender, unsigned int nb);*/

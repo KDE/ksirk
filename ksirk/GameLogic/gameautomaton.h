@@ -70,8 +70,6 @@ enum KsirkMessagesIds {
     DecrNbArmies, // 277
     DisplayNextPlayerButton, // 278
     Invade, // 279
-    SimultaneousAttackA,
-    SimultaneousAttackD,
     Retreat, // 280
     NextPlayerNormal, // 281
     NextPlayerRecycling, // 282
@@ -104,6 +102,10 @@ enum KsirkMessagesIds {
     DisplayGoals, // 309
     DisplayFightResult, // 310
     MoveSlide, // 311
+    InvasionFinished, // 312
+    AttackAuto, // 313
+    DisplayRecycleDetails, // 314
+    CurrentPlayerPlayed, // 315
     UnusedLastMessageId
 };
 
@@ -350,7 +352,7 @@ public:
     * Change the automatic attack state.
     * @param activated new state
     */
-  inline void setAttackAuto(bool activated) {m_attackAuto = activated;}
+  void setAttackAuto(bool activated);
 
   /**
     * Get the automatic attack state.

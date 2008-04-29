@@ -97,18 +97,20 @@ void Country::reset()
   if (m_flag)
   {
     m_flag->hide();
-//     delete m_flag;
+    delete m_flag;
     m_flag = 0;
   }
 }
 
 void Country::createArmiesSprites()
 {
+  kDebug();
   BackGnd* bg = m_automaton->game()->backGnd();
   
   unsigned int armies = nbArmies();
   clearAllSprites();
   int i = 0;
+  kDebug() << "adding cannons";
   while (armies >= 10) // Ajout des sprites de canon
   {
     CannonSprite *sprite = new CannonSprite(
@@ -135,32 +137,40 @@ void Country::createArmiesSprites()
     armies -= 10;
   }
   i = 0;
+  kDebug() << "adding cavalries" << armies;
   while (armies >= 5) // Adding the cavalryman  sprites
   {
-    CavalrySprite *sprite = new CavalrySprite(
-        "cavalry",
+    kDebug() << i << armies;
+    CavalrySprite *sprite = new CavalrySprite("cavalry",
         Sprites::SkinSpritesData::single().intData("cavalry-width"),
         Sprites::SkinSpritesData::single().intData("cavalry-height"),
         Sprites::SkinSpritesData::single().intData("cavalry-frames"),
         Sprites::SkinSpritesData::single().intData("cavalry-versions"),
-        bg->onu()->zoom(),
-        bg);
-    sprite-> setDestination(NULL);             // Sprite immobile
-    if (m_automaton->game()->currentWidgetType() == KGameWindow::arenaType) {
+        bg->onu()->zoom(), bg);
+    sprite-> setDestination(0);             // Sprite immobile
+    if (m_automaton->game()->currentWidgetType() == KGameWindow::arenaType)
+    {
+      kDebug() << "arena";
       sprite-> setPos(
         m_pointCavalry.x()*bg->onu()->zoom(),
         (m_pointCavalry.y()+(1-2*(i%2))*(Sprites::SkinSpritesData::single().intData("cavalry-height")+8)*((i+1)/2))*bg->onu()->zoom());
-      if (this->id() == m_automaton->game()->secondCountry()->id()) {
+      kDebug() << "setPos done";
+      if (this->id() == m_automaton->game()->secondCountry()->id())
+      {
         sprite->setLookLeft();
       }
-    } else {
+    }
+    else
+    {
       sprite-> setPos((m_pointCavalry.x()+5*i)*bg->onu()->zoom(),(m_pointCavalry.y()+5*i)*bg->onu()->zoom());
     }
+    kDebug() << "appending";
     m_spritesCavalry.append(sprite);
     i++;
     armies -= 5;
   }
   i = 0;
+  kDebug() << "adding infantries";
   while (armies > 0) // Ajout des sprites de fantassin
   {
     InfantrySprite *sprite = new InfantrySprite(
@@ -187,11 +197,13 @@ void Country::createArmiesSprites()
     armies--;
   }
 
+  kDebug() << "adding flag";
   if (m_belongsTo)
   {
     flag(m_belongsTo->flagFileName(), bg);
   }
 
+  kDebug() << "adding nb armies text";
   if (m_nbArmiesItem == 0)
   {
     m_nbArmiesItem = new QGraphicsSimpleTextItem(QString::number(m_nbArmies),bg);
@@ -208,6 +220,7 @@ void Country::createArmiesSprites()
   {
     m_nbArmiesItem->show();
   }
+  kDebug() << "Done";
 }
 
 void Country::flag(const QString& theFlagFileName, BackGnd *backGnd)
@@ -217,7 +230,7 @@ void Country::flag(const QString& theFlagFileName, BackGnd *backGnd)
   if (m_flag)
   {
     m_flag->hide();
-        delete m_flag;
+    delete m_flag;
     m_flag = 0;
   }
   
@@ -430,7 +443,7 @@ const std::vector< Country* >& Country::neighbours() const
  */
 void Country::clearAllSprites()
 {
-//  kDebug() << "Country::clearAllSprites()" << endl;
+  kDebug();
   m_spritesCannons.hideAndRemoveAll();
   m_spritesCavalry.hideAndRemoveAll();
   m_spritesInfantry.hideAndRemoveAll();
@@ -602,7 +615,9 @@ QDataStream& operator>>(QDataStream& stream, Country* country)
 }
 
 
-void Country::copyForArena(Country* trueCountry) {
+void Country::copyForArena(Country* trueCountry)
+{
+  kDebug() << trueCountry->name();
   // remove existing elements
   clearAllSprites();
   if (m_flag)

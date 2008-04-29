@@ -80,7 +80,10 @@ namespace Ksirk
    
    FightArena::~FightArena()
    {
-   }
+     delete m_countryAttack; m_countryAttack = 0;
+     delete m_countryDefense; m_countryDefense= 0;
+     delete m_bgImage; m_bgImage = 0;
+}
    
    QSize FightArena::sizeHint() const
    {
@@ -94,6 +97,7 @@ namespace Ksirk
      */
    void FightArena::initFightArena (Country* countryA, Country* countryD, BackGnd* bg)
    {
+     kDebug();
      // new size
      int width = m_automaton->game()->centralWidget()->width();
      int height = m_automaton->game()->centralWidget()->height();
@@ -112,6 +116,7 @@ namespace Ksirk
      double newZ = height/280;
      m_onu->setZoomArena(newZ);
 
+     kDebug() << "Hi";
      // re-place the anchor point of the two countries
      m_countryAttack->anchorPoint(QPointF((width/4)/newZ,(height/2)/newZ));
      m_countryAttack->centralPoint(QPointF((width/4)/newZ,(height/2)/newZ));
@@ -127,9 +132,12 @@ namespace Ksirk
      m_countryDefense->pointCavalry(QPointF((14*width/18)/newZ,(3*height/5)/newZ));
      m_countryDefense->pointInfantry(QPointF((12*width/18)/newZ,(2*height/5)/newZ));
 
+     kDebug() << "Ho";
      // create the arena countries with the originals
      m_countryAttack->copyForArena(countryA);
      m_countryDefense->copyForArena(countryD);
+     
+     kDebug() << "Done";
    }
 
 }
