@@ -318,8 +318,8 @@ namespace Ksirk
       title->addWidget(rightContents->at(0));
       title->addWidget(flag1);
 
-      if (nbAvailArmies > 0 || game->getState() == GameLogic::GameAutomaton::INTERLUDE)
-      {
+//       if (nbAvailArmies > 0 || game->getState() == GameLogic::GameAutomaton::INTERLUDE)
+//       {
         recycleLayout->addLayout(title,0,0,Qt::AlignCenter);
         recycleLayout->addWidget(rightContents->at(1),1,0,Qt::AlignCenter);
 
@@ -328,7 +328,7 @@ namespace Ksirk
 
         recycleLayout->addWidget(btRecycleWidget,4,0,Qt::AlignCenter);
         recycleLayout->addWidget(btValidWidget,5,0,Qt::AlignCenter);
-      }
+//       }
   
       haut->setLayout(recycleLayout);
       mainLayout->addWidget(haut,0,0);

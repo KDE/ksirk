@@ -137,7 +137,6 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
       pm.nation = nationName;
       pm.password = password;
       pm.isAI = isAi;
-      m_waitedPlayers.push_back(pm);
       std::map<QString,QString>::iterator it, it_end;
       it = m_ownersMap.begin(); it_end = m_ownersMap.end();
       for (; it != it_end; it++)
@@ -147,6 +146,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
           pm.countries.insert((*it).first);
         }
       }
+      m_waitedPlayers.push_back(pm);
     }
   }
   else if (localName == "currentPlayer")
@@ -219,8 +219,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
   }
   else if (localName == "player" && m_inGoal)
   {
-    unsigned int id = m_game.automaton()->playerNamed(atts.value("name"))->id();
-    m_goal->players().insert(id);
+    m_goal->players().push_back(atts.value("name"));
   }
   else if (localName == "continent" && m_inGoal)
   {

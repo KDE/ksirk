@@ -688,7 +688,7 @@ bool KGameWindow::attackEnd()
     kDebug() << oldOwner-> name() << " now owns " << newOldOwnerNbCountries << " countries.";
     if (newOldOwnerNbCountries == 0)
     {
-      unsigned int oldOwnerId = oldOwner->id();
+      QString oldOwnerId = oldOwner->name();
       KMessageBox::information(this,
                                i18n("%1, you are defeated! Bye, bye...",oldOwner->name()),
                                i18n("KsirK - Game Over !"));
@@ -2845,8 +2845,15 @@ void KGameWindow::actionRecycling()
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   m_automaton->sendMessage(buffer,DisplayNextPlayerButton);
-  getRightDialog()->close();
-  getRightDialog()->displayRecycleDetails(currentPlayer(),0);
+  QByteArray buffer2;
+  QDataStream stream2(&buffer2, QIODevice::WriteOnly);
+  stream2 << currentPlayer()->name();
+  stream2 << (quint32)0;
+  kDebug() << "sending DisplayRecycleDetails "
+    << currentPlayer()->name() << 0
+    << " at " << __FILE__ << ", line " << __LINE__;
+  m_automaton->sendMessage(buffer2,DisplayRecycleDetails);
+
   //KMessageParts messageParts;
   QPixmap pm = currentPlayer()->getFlag()->image(0);
   /*messageParts 

@@ -104,6 +104,7 @@ enum KsirkMessagesIds {
     InvasionFinished, // 312
     AttackAuto, // 313
     DisplayRecycleDetails, // 314
+    CurrentPlayerPlayed, // 315
     UnusedLastMessageId
 };
 

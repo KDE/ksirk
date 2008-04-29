@@ -180,16 +180,16 @@ QString Goal::message(int displayType) const
       case Goal::GoalPlayer :
         if (!m_players.empty())
         {
-          kDebug() << "  player num='" << (*m_players.begin()) << endl;
-          kDebug() << "  this is player='" << m_automaton->findPlayer(*m_players.begin()) << endl;
-          if (m_automaton->findPlayer(*m_players.begin())==0)
+          kDebug() << "  player name='" << *m_players.begin() << endl;
+          kDebug() << "  this is player='" << m_automaton->playerNamed(*m_players.begin()) << endl;
+          if (m_automaton->playerNamed(*m_players.begin())==0)
           {
             res = res.subs("?");
           }
           else
           {
-            kDebug() << "  its name is='" << m_automaton->findPlayer(*m_players.begin())->name() << endl;
-            res = res.subs(m_automaton->findPlayer(*m_players.begin())->name());
+            kDebug() << "  its name is='" << *m_players.begin() << endl;
+            res = res.subs(*m_players.begin());
           }
           res = res.subs(m_nbCountries);
         }
@@ -230,9 +230,9 @@ QString Goal::message(int displayType) const
     switch (m_type)
     {
     case Goal::GoalPlayer :
-      if (m_automaton->findPlayer(*m_players.begin()) != 0)
+      if (m_automaton->playerNamed(*m_players.begin()) != 0)
       {
-        mes += i18n("<br/>%1 is still alive...",m_automaton->findPlayer(*m_players.begin())->name());
+        mes += i18n("<br/>%1 is still alive...",*m_players.begin());
       }
       else
       {
@@ -327,17 +327,18 @@ QDataStream& operator<<(QDataStream& stream, const Goal& goal)
   }
   kDebug() << "Goal operator<< : description " << goal.description() << endl;
   stream << goal.description();
-  std::set< unsigned int >::iterator it, it_end;
+  QList<QString>::ConstIterator it, it_end;
+  std::set<unsigned int>::iterator itc, itc_end;
   switch (goal.type())
   {
   case Goal::GoalPlayer :
     kDebug() << "Goal operator<< : players " << goal.players().size() << endl;
     stream << quint32(goal.players().size());
-    it = goal.players().begin(); it_end = goal.players().end();
+    it = goal.players().constBegin(); it_end = goal.players().constEnd();
     for (; it != it_end; it++)
     {
       kDebug() << "Goal operator<< : player " << (*it) << endl;
-      stream << quint32(*it);
+      stream << *it;
     }
     kDebug() << "Goal operator<< : nbCountries " << goal.nbCountries() << endl;
     stream << quint32(goal.nbCountries());
@@ -351,11 +352,11 @@ QDataStream& operator<<(QDataStream& stream, const Goal& goal)
   case Goal::Continents:
     kDebug() << "Goal operator<< : continents " << goal.continents().size() << endl;
     stream << quint32(goal.continents().size());
-    it = goal.continents().begin(); it_end = goal.continents().end();
-    for (; it != it_end; it++)
+    itc = goal.continents().begin(); itc_end = goal.continents().end();
+    for (; itc != itc_end; itc++)
     {
       kDebug() << "Goal operator<< : continent " << (*it) << endl;
-      stream << quint32(*it);
+      stream << quint32(*itc);
     }
     break;
   default: break;
@@ -368,6 +369,7 @@ QDataStream& operator>>(QDataStream& stream, Goal& goal)
   kDebug() << "Goal operator>>" << endl;
   quint32 type;
   QString description;
+  QString playerName;
   quint32 nb, nbp;
   quint32 id, ownerId;
   stream >> type;
@@ -387,9 +389,9 @@ QDataStream& operator>>(QDataStream& stream, Goal& goal)
     kDebug() << "Goal operator>> nbp: " << nbp << endl;
     for (quint32 i = 0; i < nbp; i++)
     {
-      stream >> id;
-      kDebug() << "Goal operator>> player id: " << id << endl;
-      goal.players().insert(id);
+      stream >> playerName;
+      kDebug() << "Goal operator>> player name: " << playerName << endl;
+      goal.players().push_back(playerName);
     }
     stream >> nb;
     kDebug() << "Goal operator>> nbCountries: " << nb << endl;
@@ -439,11 +441,11 @@ void Goal::saveXml(std::ostream& xmlStream) const
   }
   xmlStream << "</continents>\n";
   xmlStream << "<players>\n";
-  std::set< unsigned int >::iterator itp, itp_end;
-  itp = players().begin(); itp_end = players().end();
+  QList<QString>::ConstIterator itp, itp_end;
+  itp = m_players.constBegin(); itp_end = m_players.constEnd();
   for (; itp != itp_end; itp++)
   {
-    xmlStream << "<player name=\"" << m_automaton->findPlayer(*itp)->name().toUtf8().data() << "\"/>\n";
+    xmlStream << "<player name=\"" << (*itp).toUtf8().data() << "\"/>\n";
   }
   xmlStream << "</players>\n";
   xmlStream << "</goal>\n";

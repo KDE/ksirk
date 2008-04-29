@@ -104,8 +104,8 @@ public:
 
   //@{
   /** Accessors for the list of players to eliminate to reach this goal */
-  inline std::set<unsigned int>& players() {return m_players;}
-  inline const std::set<unsigned int>& players() const {return m_players;}
+  inline QList<QString>& players() {return m_players;}
+  inline const QList<QString>& players() const {return m_players;}
   //@}
 
   //@{
@@ -168,7 +168,7 @@ public:
   unsigned int m_nbCountries;
   unsigned int m_nbArmiesByCountry;
   std::set<unsigned int> m_continents;
-  std::set<unsigned int> m_players;
+  QList<QString> m_players;
   Player* m_player;
 };
 

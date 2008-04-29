@@ -7,13 +7,14 @@ Before KDE4.1:
   * sprites should be enhanced
   * resize bug in network mode
   * hide/show or disable/enable the next player button in the toolbar
-  * test if player played in the current turn does not work for non admin clients
-  * recycling does not work in network mode
-  * [ONGOING] hide right window content when changing current player but show
-    it again when necessary
   * [ONGOING] don't show context help for computer players
   * [HELP NEEDED] correct the layout of initial window (with main menu) when
     resizing
+  * [DONE] crash when loading the target player when the goal is to destroy it
+  * [DONE] hide right window content when changing current player but show
+    it again when necessary
+  * [DONE] recycling does not work in network mode
+  * [DONE] test if player played in the current turn does not work for non admin clients
   * [DONE] right window not updated when changing player distributing armies in
     network mode
   * [DONE] save action should confirm before replacing a file

@@ -361,6 +361,7 @@ void KGameWindow::slotSaveGame()
 
 void KGameWindow::slotRecycling()
 {
+  kDebug();
   QPoint point;
   m_automaton->gameEvent("actionRecycling", point);
 }
