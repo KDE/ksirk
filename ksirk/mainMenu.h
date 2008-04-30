@@ -36,15 +36,12 @@
 #include <kstandardgameaction.h>
 #include <KAction>
 
-class KGameIO;
 
 namespace Ksirk
 {
 
   namespace GameLogic
   {
-    class ONU;
-    class Country;
     class GameAutomaton;
   }
 

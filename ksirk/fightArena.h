@@ -41,7 +41,6 @@
 #include <vector>
 
 
-class KGameIO;
 
 namespace Ksirk
 {
