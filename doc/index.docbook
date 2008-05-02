@@ -9,7 +9,7 @@
 <book lang="&language;">
 
 <bookinfo>
-<title>The &ksirk; minimalistic Handbook</title>
+<title>The &kapp; Handbook</title>
 
 <authorgroup>
 <author>
@@ -25,7 +25,7 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 
 <copyright>
-<year>2002-2005</year>
+<year>2002-2008</year>
 <holder>Gael de Chalendar</holder>
 </copyright>
 <!-- Translators: put here the copyright notice of the translation -->
@@ -47,17 +47,17 @@ Do NOT change these in the translation. -->
 
 <abstract>
 <para>
-&ksirk; is a computerized version of a well known strategy game. A commercial
-version exists and also another GPL clone but I (Gael de Chalendar) created this game
+&kapp; is a computerized version of a well known strategy game. A commercial
+version exists and also another GPL clone but I (Gaël de Chalendar) created this game
 as a C++ learning exercise and so, I developped it up to this point (see README for details).
 </para>
 <para>
-In the current version, &ksirk; is a multi-player network-enabled game with a basic AI.
+In the current version, &kapp; is a multi-player network-enabled game with an AI.
 (see TODO for details)
 </para>
 <para>
 This documentation gives the major information you need to start playing.
-Please read the tooltips and the status bar messages to complete your information. A chapter explains how to create new skins for &ksirk;
+Please read the tooltips and the status bar messages to complete your information. A chapter explains how to create new skins for &kapp;
 </para>
 <para>
 The goal of the game is simply to conquer the World... It is done by attacking your neighbors
@@ -100,12 +100,12 @@ application that explains what it does and where to report
 problems. Basically a long version of the abstract.  Don't include a
 revision history. (see installation appendix comment) -->
 <para>
-&ksirk; is a computerized version of a well known strategy game. A commercial
-version exists and also another GPL clone but I (Gael de Chalendar) created this game
+&kapp; is a computerized version of a well known strategy game. A commercial
+version exists and also another GPL clone but I (Gaël de Chalendar) created this game
 as a C++ learning exercise and so, I developped it up to this point (see README for details).
 </para>
 <para>
-In the current version, &ksirk; is a multi-player network-enabled game with a basic AI.
+In the current version, &kapp; is a multi-player network-enabled game with an AI.
 (see TODO for details)
 </para>
 <para>
@@ -119,7 +119,7 @@ with your armies. Peaceful, isn't it ? :-)
 </chapter>
 
 <chapter id="using-kapp">
-<title>Using &ksirk;</title>
+<title>Using &kapp;</title>
 
 <!-- This chapter should tell the user how to use your app. You should use as
 many sections (Chapter, Sect1, Sect3, etc...) as is necessary to fully document
@@ -131,7 +131,7 @@ your application. -->
 patent issues. -->
 
 <screenshot>
-	<screeninfo>Here's a screenshot of &ksirk;</screeninfo>
+	<screeninfo>Here's a screenshot of &kapp;</screeninfo>
 	<mediaobject>
 	  <imageobject>
 	    <imagedata fileref="attack.png" format="PNG"/>
@@ -145,12 +145,90 @@ patent issues. -->
 
 
 <sect1 id="playing-ksirk">
-<title>Playing &ksirk;</title>
+<title>Playing &kapp;</title>
 <para>Preliminary note : the map can be scrolled by three methods. First, you can put your
 mouse near a border of the window and the map will scroll in that direction. Second, you
 can use your mouse wheel: With no modifier, it will scroll verticaly; when pressing the Meta
 key, it will scroll horizontaly. And lastly, you can use the keyboard arrows.
 </para>
+<sect2 id="mainmenu" >
+<title>Starting a game</title>
+<para>
+When &kapp; starts, you are presented with a main menu.
+<screenshot>
+  <screeninfo>The main menu of &kapp;</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="introscreen.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase>Main menu</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<variablelist>
+<varlistentry>
+<term>
+  <menuchoice>
+    <guimenu>New game</guimenu>
+  </menuchoice>
+</term>
+<listitem>
+  <para>
+  <action>Starts a new game</action>
+  </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+  <term>
+    <menuchoice>
+      <guimenu>Join</guimenu>
+    </menuchoice>
+  </term>
+  <listitem>
+    <para>
+      <action>Allow to join a network game as a client</action>
+    </para>
+  </listitem>
+</varlistentry>
+<varlistentry>
+  <term>
+    <menuchoice>
+      <guimenu>Load</guimenu>
+    </menuchoice>
+  </term>
+  <listitem>
+    <para>
+      <action>Use this to load a previously saved game</action>
+    </para>
+  </listitem>
+</varlistentry>
+<varlistentry>
+  <term>
+    <menuchoice>
+      <guimenu>Quit</guimenu>
+    </menuchoice>
+  </term>
+  <listitem>
+    <para>
+      <action>Maybe you finally don't want to play ?</action>
+    </para>
+  </listitem>
+</varlistentry>
+</variablelist>
+</para>
+<para>
+If you hit, New Game, you will be presented with the New game dialog where you will chose the number of players, the skin (or theme) to use, the game type (conquer the goal or have a specific goal) and finally if this game will be played with online players or if it is purely local.
+</para>
+<para>
+Let's suppose you keep all the default settings and hit OK. You will then setup two players, one after one. For each one, you'll chose its name, its nationality and, if you want, setup a password such that nobody else than you can reuse this player when reloading this saved game. Lastly, you will here specify if this player is played by the computer or by a human being.
+</para>
+<para>
+Then, if you chosed to play with goal, the goal of each local player is displayed, preceded by a warning such that other players looking at the same computer can discreetly turn their look.
+</para>
+</sect2>
+
 <sect2 id="distribution" >
 <title>Distribution</title>
 <para>
@@ -168,7 +246,7 @@ more armies than the number you already put.
 <para>
 When a player has distributed all her armies, the next player is automatically selected to do the
 same task. When all players have finished to distribute their armies, there is two possibilities
-that can be selected by two buttons :
+that can be selected by two buttons showed in the right panel:
 <variablelist>
 <varlistentry>
 <term>
@@ -190,8 +268,8 @@ that can be selected by two buttons :
 	<action>
 	One player wants to change some of his choices. The first player can then remove an army he
 	just put in a country with the right mouse button and put it in another one with the left mouse
-	button. When he finish, he gives control to next player with the 'Next Player' button. When all
-	players have finished their redistribution, the two buttons are redisplayed.
+	button. When he finish, he gives control to next player with the 'Valid' button. When all
+	players have finished their redistribution, the two buttons are displayed again.
 	</action>
 	</para>
 </listitem>
@@ -235,14 +313,17 @@ After the redistribution, a game turn can start. Each player plays at his turn. 
 						<textobject>
 							<phrase>Next player</phrase>
 						</textobject>
-					</inlinemediaobject> : Give hand to the next player
+					</inlinemediaobject> : Give hand to the next player (button in the toolbar)
 				</guimenu>
 			</menuchoice>
 		</term>
-		<listitem><para>
-		<action>
-		The turn of the current player finishes and it's the turn of the next one.
-		</action></para></listitem>
+		<listitem>
+      <para>
+        <action>
+          The turn of the current player finishes and it's the turn of the next one.
+        </action>
+      </para>
+    </listitem>
 	</varlistentry>
 	<varlistentry>
 		<term>
@@ -272,19 +353,24 @@ After the redistribution, a game turn can start. Each player plays at his turn. 
 							<phrase>Attack 3</phrase>
 						</textobject>
 					</inlinemediaobject> : Attack with one, two or three armies
+          &nbsp;<inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="autoattack.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase>Attack auto</phrase>
+            </textobject>
+          </inlinemediaobject>
 				</guimenu>
 			</menuchoice>
 		</term>
 		<listitem>
 			<para>
 				<action>
+          To attack, drag with the mouse from the attacking country and drop to the attacked one. You will then be presented with a contextual menu showing the above entries.
 					For a country X to attack a country Y with x armies, 2 conditions must be fullfilled: 1. the two
 					countries must be neighbours; 2. country X must have at least x+1 armies before the attack.
-					When an attack is decided, the attacker must disignate the belligerants: he click on his country,
-					drag the pointer to the attacked country and "drop it" (release the mous button) there. If the attack
-					is valid, 2 defend buttons replace the three attack ones (only one if the attacker attacks with only
-					one army and also if the defender has only one army in his country). They give the
-					choice to the defender to defend with one or two armies.
+          If the attack is valid, a dialog is displayed if necessary for the defender to choose if he wants to defend with one or two armies or let the computer decide.
 				</action>
 			</para>
 			<para>
@@ -313,9 +399,7 @@ After the redistribution, a game turn can start. Each player plays at his turn. 
 					This is the last action of a player's turn. It gives the possibility to move some armies
 					from one of his country to another, neighbour of the first one. To choose the two
 					countries, please drag'n drop as for an attack. When both countries are choosed,
-					the "Move armies" group of buttons appear (see below for a description  of their use).
-					Note that, before the user choose to terminate the move, he can always choose to
-					cancel it by hitting the Cancel button.
+					a slider is displayed on which you can choose how much armies there will be on each country afterwards.
 				</action>
 			</para>
 		</listitem>
@@ -329,23 +413,25 @@ After the redistribution, a game turn can start. Each player plays at his turn. 
 		To each army in the fight correspond a dice cast, a random number between 1 and 6. The
 		higher result of the attacker is opposed to the other one of the defender. If the attacker's
 		result is strictly higher than the defender one, he wins the fight and the defender army is
-		destroyed. Elsewhere, he looses and its army is destroyed. The same happen for second
+		destroyed. Elsewhere, he looses and its army is destroyed. The same happens for second
 		higher dice of the attacker if there is two or three attackers and two defenders.
 	</para>
 	<para>
 		If the number of armies in the defender country reaches 0, the ownership of this country
 		changes to the attacker: his flag is set up and one of his attacking armies is installed in his
-		new country. The "Move armies" buttons are displayed in the toolbar to allow the attacker
-		to move some other armies from the attacking country to the newly gained one.
+		new country. The "Move armies" slider is displayed as for the moves of the end of the turn.
 	</para>
 </sect2>
 <sect2  id="end_of_turn" >
 	<title>End of the turn</title>
+  <para>
+    To finish your current turn, if you don't want to move armies, you can hit the "Next Player" button in the toolbar.
+  </para>
 	<para>
 		When everybody have played, the turn is finished. Some armies are distributed to the
 		players, in function of the coutries they own: 1 for each group of three countries, with a
 		minimum of 3. There is also a bonus for players that own a complete continent, different for
-		each one. This bonus is of:
+		each one. This bonus is of, fot the default skin:
 		<table>
 			<title>Bonus due to the continents</title>
 			<tgroup cols="2">
@@ -364,10 +450,7 @@ After the redistribution, a game turn can start. Each player plays at his turn. 
 		</table>
 	</para>
 	<para>
-		New in 0.9.1-2, the bonus calculation is implemented !
-	</para>
-	<para>
-		When a player has finished distributing his armies, he clicks the "Next Player" button to
+		When a player has finished distributing his armies, he clicks the "Valid" button to
 		allow the next player to distribute his bonus. As for the initial distribution, when all player
 		have placed their armies, they can start a new redistribution cycle or start a new turn...
 	</para>
@@ -385,7 +468,7 @@ The Squiggle Tool <guiicon><inlinemediaobject>
 	    <phrase>Squiggle</phrase>
 	  </textobject>
 </inlinemediaobject></guiicon> is used to draw squiggly lines all over
-the &ksirk; main window. It's not a bug, it's a feature!
+the &kapp; main window. It's not a bug, it's a feature!
 </para>
 -->
 
@@ -397,12 +480,6 @@ the &ksirk; main window. It's not a bug, it's a feature!
 
 <sect1 id="kapp-mainwindow">
 <title>The main KsirK window</title>
-<para>
-There is at this time only one window and all operations are done by buttons
-in the toolbar. These buttons are inserted or removed when necessary. Each one have a
-tooltip; use it to remember yourself its usage. There is no menu nor shortcuts.
-</para>
-
 <sect2>
 <title>The buttons</title>
 <para>
@@ -418,13 +495,12 @@ tooltip; use it to remember yourself its usage. There is no menu nor shortcuts.
 				<textobject>
 					<phrase>Quit Game</phrase>
 				</textobject>
-			</inlinemediaobject> : Quit t Game
+			</inlinemediaobject> : Quit Game
 		</guimenu>
 	</menuchoice>
 </term>
 <listitem><para><action>
-Causes the program to imediatly quit, with no other warning ! Yes, it will be improved in a future
-version !
+Causes the program to quit.
 </action></para></listitem>
 </varlistentry>
 <varlistentry>
@@ -446,74 +522,6 @@ version !
 the number of players. After that, each player will be asked its name with another dialog.
 </action></para></listitem>
 </varlistentry>
-<varlistentry>
-<term>
-	<menuchoice>
-		<guimenu>
-			<inlinemediaobject>
-				<imageobject>
-					<imagedata fileref="moveOne.png" format="PNG"/>
-				</imageobject>
-				<textobject>
-					<phrase>Invade with one army</phrase>
-				</textobject>
-			</inlinemediaobject>
-			&nbsp;<inlinemediaobject>
-				<imageobject>
-					<imagedata fileref="moveFive.png" format="PNG"/>
-				</imageobject>
-				<textobject>
-					<phrase>Invade with five armies</phrase>
-				</textobject>
-			</inlinemediaobject>
-			&nbsp;<inlinemediaobject>
-				<imageobject>
-					<imagedata fileref="moveTen.png" format="PNG"/>
-				</imageobject>
-				<textobject>
-					<phrase>Invade with ten armies</phrase>
-				</textobject>
-			</inlinemediaobject>
-			&nbsp;<inlinemediaobject>
-				<imageobject>
-					<imagedata fileref="moveFinish.png" format="PNG"/>
-				</imageobject>
-				<textobject>
-					<phrase>Invasion finished</phrase>
-				</textobject>
-			</inlinemediaobject>
-			&nbsp;<inlinemediaobject>
-				<imageobject>
-					<imagedata fileref="moveBackOne.png" format="PNG"/>
-				</imageobject>
-				<textobject>
-					<phrase>Retract one armies</phrase>
-				</textobject>
-			</inlinemediaobject>
-			&nbsp;<inlinemediaobject>
-				<imageobject>
-					<imagedata fileref="moveBackFive.png" format="PNG"/>
-				</imageobject>
-				<textobject>
-					<phrase>Retract five armies</phrase>
-				</textobject>
-			</inlinemediaobject>
-			&nbsp;<inlinemediaobject>
-				<imageobject>
-					<imagedata fileref="moveBackTen.png" format="PNG"/>
-				</imageobject>
-				<textobject>
-					<phrase>Retract ten armies</phrase>
-				</textobject>
-			</inlinemediaobject> : Move armies buttons
-		</guimenu>
-	</menuchoice>
-</term>
-<listitem><para><action>These buttons mean: invade with one, five or ten armies; stop the
-	movement; retract one, five or ten armies. Note that one can never retract more armies than
-	he has put.
-</action></para></listitem>
-</varlistentry>
 </variablelist>
 </para>
 
@@ -526,16 +534,12 @@ the number of players. After that, each player will be asked its name with anoth
   <title>Developer's Guide to KsirK</title>
   
   <para>
-    Please refer to the KDoc documentation for the API. It is quite complete, I think. In the
-    contrary the comments are inexistant in the <filename>.cpp</filename> implementation files.
+    Please refer to the KDoc documentation for the API. It was quite complete but is currently a little bit outdated.The comments are inexistant in the <filename>.cpp</filename> implementation files.
   </para>
   <para>
     Note that I originaly developped this game under Windoz with Borland C++ and WinG. I ported
     it to &Java; before converting back to C++ and &kde;. At the beginning I used French or a mix of
-    French and English to name the identifiers (classnames, methods, members, &etc;). I also used
-    French for the comments. When I decided to distribute this game, I decided to convert all to
-    english... but I am clearly not a native English speaker: please suggest or make and submit
-    corrections, to the code comments or to this documentation
+    French and English to name the identifiers (classnames, methods, members, &etc;). I also used French for the comments. When I decided to distribute this game, I decided to convert all to english... but I am clearly not a native English speaker: please suggest or make and submit corrections, to the code comments or to this documentation
   </para>
   
 </chapter>
@@ -543,7 +547,7 @@ the number of players. After that, each player will be asked its name with anoth
 <chapter id="skins">
   <title>Creating new skins</title>
   <para>
-    KsirK is fully skinable. For who have graphic capabilities, creating a new skin is as simple as copying an existing one, editing or changings the graphics and updating the data in a XML configuration file. A last step is to edit the file describing what to install.
+    KsirK is fully skinable. For who have graphic capabilities, creating a new skin is as simple as copying an existing one, editing or changings the graphics and updating the data in a .desktop configuration file. A last step is to edit the file describing what to install.
   </para>
   <para>All examples (text and images) are taken from the default skin of KsirK</para>
   <sect1 id="sdf">
@@ -553,33 +557,32 @@ the number of players. After that, each player will be asked its name with anoth
         <listitem>
           <para>Data/ : Data used by the program to handle the images of the skin.
             <itemizedlist>
-              <listitem><para>Makefile.am : Describes what to install.</para></listitem>
-              <listitem><para>onu.xml : Main file for the description of the skin. See its description below.</para></listitem>
+              <listitem><para>CMakeLists.txt : Describes what to install.</para></listitem>
+              <listitem><para>onu.desktop : Main file for the description of the skin. See its description below.</para></listitem>
             </itemizedlist>
           </para>
         </listitem>
         <listitem>
           <para>Images/ : The images of the skin (map, sprites, etc.)
             <itemizedlist>
-              <listitem><para>Makefile.am : Describes what to install.</para></listitem>
-              <listitem><para>map.png : the map used in this skin.</para></listitem>
+              <listitem><para>CMakeLists.txt : Describes what to install.</para></listitem>
+              <listitem><para>pool.svg : the map and all the sprites used in this skin.</para></listitem>
               <listitem><para>map-mask.png : the image allowing the program to find which country the mouse is over during the game (see below).</para></listitem>
-              <listitem><para>*.png : the other images here are the buttons images.</para></listitem>
-              <listitem><para>sprites/ : This directory contains the images defining the sprites (armies and flags). See below.</para></listitem>
+              <listitem><para>*.png : the other images here are buttons images.</para></listitem>
             </itemizedlist>
           </para>
         </listitem>
-        <listitem><para>Makefile.am/ : Describes what to install.</para></listitem>
-        <listitem><para>Sons/ : sound files for the skin.</para></listitem>
+        <listitem><para>CMakeLists.txt/ : Describes what to install.</para></listitem>
+        <listitem><para>Sounds/ : sound files for the skin.</para></listitem>
       </itemizedlist>
     </para>
   </sect1>
   <sect1 id="tdd">
     <title>The Data directory</title>
     <sect2>
-      <title>The onu.xml file</title>
+      <title>The onu.desktop file</title>
       <para>
-        This files is a description of the content of the skin. It is used to describe the organization of the world and how to display it.
+        This file is a description of the content of the skin. It is used to describe the organization of the world and how to display it.
         It has the following structure: 
       </para>
       <programlisting>
@@ -809,7 +812,7 @@ the number of players. After that, each player will be asked its name with anoth
 <qandaset id="faqlist">
 <qandaentry>
 <question>
-<para>What will be the first question concerning &ksirk;?</para>
+<para>What will be the first question concerning &kapp;?</para>
 </question>
 <answer>
 </answer>
@@ -827,7 +830,7 @@ distribution. -->
 <title>Credits and License</title>
 
 <para>
-&ksirk;
+&kapp;
 </para>
 <para>
 Program copyright 2002 Gael de Chalendar <email>Gael.de.Chalendar@free.fr</email>
@@ -862,24 +865,24 @@ Documentation copyright 2002 Gael de Chalendar <email>Gael.de.Chalendar@free.fr<
 <title>Installation</title>
 
 <sect1 id="getting-ksirk">
-<title>How to obtain &ksirk;</title>
+<title>How to obtain &kapp;</title>
 
 <para>
-&ksirk; can be found at
+&kapp; can be found at
 <ulink url="http://gna.org/projects/ksirk">http://gna.org/projects/ksirk</ulink>. There, you
 will find, depending of the version, a source archive (.tar.gz), a source RPM and a binary RPM made on a
 Mandrake Intal machine with &kde; 3.4.x.
 </para>
 <para>
 For any information, suggestion, comment or question, <emphasis>please</emphasis>
-mail to: <email>kleag@free.fr</email> or use one of the &ksirk; mailing lists that you can find on the Web site
+mail to: <email>kleag@free.fr</email> or use one of the &kapp; mailing lists that you can find on the Web site
 </para>
 </sect1>
 
 <sect1 id="requirements">
 <title>Requirements</title>
 <para>
-  To use &ksirk;, you will need the kdegames package. To compile it, you must have &Qt; 3.3 with STL support enabled (all modern &GNU;/&Linux; distributions have ths kind of &Qt;) and the development package of kdegames.
+  To use &kapp;, you will need the kdegames package. To compile it, you must have &Qt; 4.4 with STL support enabled (all modern &GNU;/&Linux; distributions have ths kind of &Qt;) and the development package of kdegames.
 </para>
 <!--
 List any special requirements for your application here. This should include:
@@ -904,8 +907,8 @@ or the ChangeLog file, or the README, etc.
 <title>Compilation and Installation</title>
 
 <para>
-In order to compile and install &ksirk; on your system, type the following in the base
-directory of the &ksirk; distribution:
+In order to compile and install &kapp; on your system, type the following in the base
+directory of the &kapp; distribution:
 <screen width="40">
 <prompt>%</prompt> <userinput>./configure --prefix=&lt;your-KDE-root-directory&gt;</userinput>
 <prompt>%</prompt> <userinput>make</userinput>
@@ -913,8 +916,8 @@ directory of the &ksirk; distribution:
 </screen>
 </para>
 
-<para>Since &ksirk; uses autoconf and automake you should have not trouble compiling it.
-Should you run into problems please report them to the &ksirk; mailing lists.</para>
+<para>Since &kapp; uses autoconf and automake you should have not trouble compiling it.
+Should you run into problems please report them to the &kapp; mailing lists.</para>
 <para>Hopefully, I will also be able to distribute a rpm binary version of the package.</para>
 </sect1>
 
