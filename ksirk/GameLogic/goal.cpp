@@ -232,18 +232,18 @@ QString Goal::message(int displayType) const
     case Goal::GoalPlayer :
       if (m_automaton->playerNamed(*m_players.begin()) != 0)
       {
-        mes += i18n("<br/>%1 is still alive...",*m_players.begin());
+        mes += i18n("<br>%1 is still alive...",*m_players.begin());
       }
       else
       {
-        mes += i18n("<br/>You now have to conquer %1",m_nbCountries);
+        mes += i18n("<br>You now have to conquer %1",m_nbCountries);
       }
     break;
     case Goal::Countries:
       diff  = m_nbCountries-m_player->countries().size();
       if (diff > 0)
       {
-        mes += i18n("<br/>%1, you have still %2 countries to conquer...",m_player->name(),diff);
+        mes += i18n("<br>%1, you have still %2 countries to conquer...",m_player->name(),diff);
       }
       else
       {
@@ -255,12 +255,12 @@ QString Goal::message(int displayType) const
             nbOk++;
           }
         }
-        mes += i18n("<br/>%1, you have enough countries but you still have to put more than %2 armies on %3 of them...",m_player->name(),m_nbArmiesByCountry,m_nbCountries-nbOk);
+        mes += i18n("<br>%1, you have enough countries but you still have to put more than %2 armies on %3 of them...",m_player->name(),m_nbArmiesByCountry,m_nbCountries-nbOk);
         
       }
       break;
     case Goal::Continents:
-      mes += i18n("<br/>%1, you still have to conquer ",m_player->name());
+      mes += i18n("<br>%1, you still have to conquer ",m_player->name());
       it = m_continents.begin(); it_end = m_continents.end();
       if (*it != 0)
       {

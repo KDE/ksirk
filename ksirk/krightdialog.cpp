@@ -219,7 +219,7 @@ namespace Ksirk
       rightContents->at(2)->setFixedSize(35,35);
       rightContents->at(3)->setText("<b>"+nb_units_A+"</b>");
 
-      rightContents->at(4)->setText(i18n("<font color=\"red\">Attack</font> with %1 armies.<br/>", nb_A));
+      rightContents->at(4)->setText(i18n("<font color=\"red\">Attack</font> with %1 armies.<br>", nb_A));
 
       
       rightContents->at(5)->setText(I18N_NOOP("<u><b>"+pays_D+"</b></u> "));
@@ -230,7 +230,7 @@ namespace Ksirk
       rightContents->at(7)->setFixedSize(35,35);
       rightContents->at(8)->setText(I18N_NOOP("<b>"+nb_units_D+"</b> "));
 
-      rightContents->at(9)->setText(i18n("<font color=\"blue\">Defend</font> with %1 armies.<br/>", nb_D));
+      rightContents->at(9)->setText(i18n("<font color=\"blue\">Defend</font> with %1 armies.<br>", nb_D));
 
       box1->addWidget(rightContents->at(0));
       box1->addWidget(flag1);
@@ -367,7 +367,7 @@ namespace Ksirk
 
       if (recyclePhase)
       {
-        rightContents->at(0)->setText(i18n("<u><b>Change some<br/>placements ?</b></u> "));
+        rightContents->at(0)->setText(i18n("<u><b>Change some<br>placements ?</b></u> "));
         flag1->hide();
         rightContents->at(1)->setText(QString());
         rightContents->at(2)->setText(QString());

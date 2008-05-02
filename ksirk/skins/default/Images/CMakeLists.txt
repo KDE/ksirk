@@ -1,49 +1,22 @@
-add_subdirectory( sprites ) 
+#add_subdirectory( sprites ) 
 
 set (pics_default_DATA
-reddice1.png
-reddice2.png
-reddice3.png
-reddice4.png
-reddice5.png
-reddice6.png
-bluedice1.png
-bluedice2.png
-bluedice3.png
-bluedice4.png
-bluedice5.png
-bluedice6.png
-snapshot.jpg
-moveFinish.png
 joueurSuivant.png
-moveBackFive.png
-moveFive.png
 newNetGame.png
 moveArmies.png
-saveGame.png
-attackTwo.png
-aide.png
 pool.svg
-moveOne.png
-preferences.png
 attackOne.png
+attackTwo.png
+attackThree.png
+defendOne.png
+defendTwo.png
 annuler.png
 map-mask.png
-pool-en.png
-quitter.png
-moveBackTen.png
-ouvrirJeu.png
 logoRight.png
 distributionArmeesFinie.png
 distributionArmees.png
 logoLeft.png
-defendTwo.png
-attackThree.png
 SoldatAGenoux1.png
-defendOne.png
-nouveauJeu.png
-moveTen.png
-moveBackOne.png
 arena.svg
 attackAuto.png
 stopAttackAuto.png
@@ -52,6 +25,36 @@ downArrow.png
 upArrow.png
 2UpArrow.png
 loader.gif
+
+
+
+# reddice1.png
+# reddice2.png
+# reddice3.png
+# reddice4.png
+# reddice5.png
+# reddice6.png
+# bluedice1.png
+# bluedice2.png
+# bluedice3.png
+# bluedice4.png
+# bluedice5.png
+# bluedice6.png
+# snapshot.jpg
+# moveFinish.png
+# moveBackFive.png
+# moveFive.png
+# saveGame.png
+# aide.png
+# moveOne.png
+# preferences.png
+# pool-en.png
+# quitter.png
+# moveBackTen.png
+# ouvrirJeu.png
+# nouveauJeu.png
+# moveTen.png
+# moveBackOne.png
 )
 install( FILES ${pics_default_DATA} DESTINATION ${DATA_INSTALL_DIR}/ksirk/skins/default/Images/ )
 

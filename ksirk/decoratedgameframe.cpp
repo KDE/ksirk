@@ -283,7 +283,7 @@ void DecoratedGameFrame::setIcon()
  */
 void DecoratedGameFrame::slotMouseInput(KGameIO *input,QDataStream &stream,QMouseEvent *e,bool *eatevent)
 {
-  kDebug();
+  kDebug() << e;
   
   QGraphicsItem* item = itemAt(mapFromScene(((QGraphicsSceneMouseEvent*)e)->scenePos()));
   while (item->parentItem()!=0 && dynamic_cast<KGamePopupItem*>(item)==0)
@@ -350,26 +350,7 @@ void DecoratedGameFrame::slotMouseInput(KGameIO *input,QDataStream &stream,QMous
   }
   else if (e->type() == QWheelEvent::GraphicsSceneWheel)
   {
-    kDebug() << "\tUsing mouse scroll";
-    kDebug() << "\tdelta : " << ((QGraphicsSceneWheelEvent*)e)->delta();
-    if (((QGraphicsSceneWheelEvent*)e)->delta () > 0)
-    {
-        kDebug() << "\tForward";
-        stream << QString("zoomInAction");
-    }
-    else if (((QGraphicsSceneWheelEvent*)e)->delta () < 0)
-    {
-      kDebug() << "\tBackward";
-      stream << QString("zoomOutAction");
-
-    }
-    else
-    {
-      kDebug() << "\tOther:" << e->button();
-      *eatevent=false;
-      e->setAccepted(false);
-      return;
-    }
+    kDebug() << "Using mouse scroll";
   }
   else
   {

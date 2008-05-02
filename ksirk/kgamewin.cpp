@@ -130,7 +130,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   QString iconFileName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Images/SoldatAGenoux1.png");
   if (iconFileName.isNull())
   {
-      KMessageBox::error(0, i18n("Cannot load icon<br/>Program cannot continue"), i18n("Error !"));
+      KMessageBox::error(0, i18n("Cannot load icon<br>Program cannot continue"), i18n("Error !"));
       exit(2);
   }
   QPixmap icon(iconFileName);
@@ -274,7 +274,7 @@ void KGameWindow::initActions()
 //   kDebug() << "Trying to load button image file: " << imageFileName;
   if (imageFileName.isNull())
   {
-    KMessageBox::error(0, i18n("Cannot load button image<br/>Program cannot continue"), i18n("Error !"));
+    KMessageBox::error(0, i18n("Cannot load button image %1<br>Program cannot continue",QString(CM_NEWNETGAME)), i18n("Error !"));
     exit(2);
   }
   QAction* joinAction = new QAction(QIcon(QPixmap(imageFileName)),
@@ -456,7 +456,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
   if (onuDefinitionFileName.isEmpty())
   {
       KMessageBox::error(0,
-          i18n("UNO definition XML file not found - Verify your installation<br/>Program cannot continue"), i18n("Error !"));
+          i18n("UNO definition XML file not found - Verify your installation<br>Program cannot continue"), i18n("Error !"));
       exit(2);
   }
   kDebug() << "Got ONU definition file name: " <<  onuDefinitionFileName;
@@ -583,7 +583,7 @@ void KGameWindow::initView()
   QString iconFileName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Images/SoldatAGenoux1.png");
   if (iconFileName.isNull())
   {
-      KMessageBox::error(0, i18n("Cannot load icon<br/>Program cannot continue"), i18n("Error !"));
+      KMessageBox::error(0, i18n("Cannot load icon<br>Program cannot continue"), i18n("Error !"));
       exit(2);
   }
 // to port : still necessary ?
@@ -752,19 +752,19 @@ void KGameWindow::winner(const Player* player)
   }
   if (m_automaton->useGoals())
   {
-    msg += QString("<br/>Winner's goal was stated like this:<br/><i>") 
+    msg += QString("<br>Winner's goal was stated like this:<br><i>")
         += player->goal().message()
-        += QString("</i><br/><br/>Do you want to play again ?");
+        += QString("</i><br><br>Do you want to play again ?");
   }
   else
   {
     if (!player->isVirtual())
     {
-      msg += "<br/>You conquered all the world!";
+      msg += "<br>You conquered all the world!";
     }
     else
     {
-      msg += "<br/>He conquered all the world!";
+      msg += "<br>He conquered all the world!";
     }
   }
   RestartOrExitDialogImpl* restartDia = new RestartOrExitDialogImpl(i18n(msg.toUtf8().data(),player->name()).toUtf8().data());
@@ -947,7 +947,7 @@ bool KGameWindow::queryClose()
     }
     else
     {
-      switch ( KMessageBox::warningYesNoCancel( this, i18n("Before you quit, do want to save your game?")) ) {
+      switch ( KMessageBox::warningYesNoCancel( this, i18n("Before you quit, do you want to save your game?")) ) {
       case KMessageBox::Yes :
           slotSaveGame();
           return true;
@@ -1131,7 +1131,7 @@ void KGameWindow::displayDefenseButtons()
       m_goalAction-> setIconText(i18n("Goal"));
       m_barFlag-> setPixmap(m_secondCountry-> owner()->getFlag()-> image(0));
     }
-    /*showMessage(i18n("%1, use the buttons below to choose<br/>"
+    /*showMessage(i18n("%1, use the buttons below to choose<br>"
                     "with how much armies you defend %2.",
                       m_secondCountry-> owner()-> name(),
                       m_secondCountry-> name()), 8);*/
@@ -1166,7 +1166,7 @@ void KGameWindow::displayDefenseWindow()
   QPushButton * defAuto = new QPushButton ("Defend-Auto");
 
   QLabel * labDef = new QLabel ();
-  labDef->setText("<font color=\"red\">"+this->firstCountry()->owner()->name()+"</font> attacks you from <font color=\"red\">"+ this->firstCountry()->name() +"</font> with " + QString::number(this->firstCountry()->owner()->getNbAttack()) + " armies !<br/> How do you want to defend <font color=\"blue\">" + this->secondCountry()->name() + "</font> ?");
+  labDef->setText("<font color=\"red\">"+this->firstCountry()->owner()->name()+"</font> attacks you from <font color=\"red\">"+ this->firstCountry()->name() +"</font> with " + QString::number(this->firstCountry()->owner()->getNbAttack()) + " armies !<br> How do you want to defend <font color=\"blue\">" + this->secondCountry()->name() + "</font> ?");
 
   // Add icons on buttons
   KConfig config(m_automaton->game()->theWorld()->getConfigFileName());
@@ -1272,7 +1272,7 @@ void KGameWindow::addAButton(
 //   kDebug() << "Trying to load button image file: " << imageFileName;
   if (imageFileName.isNull())
   {
-    KMessageBox::error(0, i18n("Cannot load button image<br/>Program cannot continue"), i18n("Error !"));
+    KMessageBox::error(0, i18n("Cannot load button image %1<br>Program cannot continue",fileName), i18n("Error !"));
     exit(2);
   }
   KToolBar* toolBar;
@@ -2503,7 +2503,7 @@ void KGameWindow::attack(unsigned int nb)
     << QString::number(nb);
   broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);*/
   /*
-  showMessage(i18n("To attack, press the mouse button in the attacking country<br/>and then <b>drag and drop</b> on its neighbour your want to attack."), 5);
+  showMessage(i18n("To attack, press the mouse button in the attacking country<br>and then <b>drag and drop</b> on its neighbour your want to attack."), 5);
   */
 }
 
@@ -3010,7 +3010,7 @@ void KGameWindow::explain()
 void KGameWindow::showMessage(const QString& message, quint32 delay, MessageShowingType forcing)
 {
   kDebug();
-  QString lmessage = message + "<br/><a href=\"dontshowagain\">"+i18n("Don't show messages anymore") + "</a>";
+  QString lmessage = message + "<br><a href=\"dontshowagain\">"+i18n("Don't show messages anymore") + "</a>";
   if(KsirkSettings::helpEnabled() || forcing == ForceShowing)
   {
     if (m_message == 0)

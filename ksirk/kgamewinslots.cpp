@@ -713,7 +713,7 @@ void KGameWindow::slotContextualHelp()
   switch (m_automaton->state())
   {
     case GameLogic::GameAutomaton::WAIT:
-      showMessage(i18n("Attack by drag & drop between countries<br/>Move armies the same way (last action of a turn)."), 5);
+      showMessage(i18n("Attack by drag & drop between countries<br>Move armies the same way (last action of a turn)."), 5);
     break;
     default:;
   }

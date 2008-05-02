@@ -731,7 +731,7 @@ void KGameWindow::initCombatMovement(
       sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
       if (sndRoulePath.isNull())
       {
-        KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br/>Program cannot continue"), i18n("Error !"));
+        KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error !"));
         exit(2);
       }
       if (KsirkSettings::soundEnabled())
@@ -864,7 +864,7 @@ void KGameWindow::initCombatMovement(
       sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
       if (sndRoulePath.isNull())
       {
-        KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br/>Program cannot continue"), i18n("Error !"));
+        KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error !"));
         exit(2);
       }
       if (KsirkSettings::soundEnabled())
@@ -914,7 +914,7 @@ void KGameWindow::animCombat()
     if (sndCanonPath.isNull())
     {
       KMessageBox::error(0,
-          i18n("Sound canon not found - Verify your installation<br/>Program cannot continue"), i18n("Error !"));
+          i18n("Sound canon not found - Verify your installation<br>Program cannot continue"), i18n("Error !"));
       exit(2);
     }
     if (KsirkSettings::soundEnabled())
@@ -1566,7 +1566,7 @@ void KGameWindow::initCombatBringBackForArena(Country *attackingCountry, Country
     QString sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
     if (sndRoulePath.isNull())
     {
-        KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br/>Program cannot continue"), i18n("Error !"));
+        KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error !"));
         exit(2);
     }
     if (KsirkSettings::soundEnabled())
@@ -1667,7 +1667,7 @@ void KGameWindow::initCombatBringBackForArena(Country *attackingCountry, Country
       QString sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
       if (sndRoulePath.isNull())
       {
-          KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br/>Program cannot continue"), i18n("Error !"));
+          KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error !"));
           exit(2);
       }
       if (KsirkSettings::soundEnabled())
