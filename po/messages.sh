@@ -37,8 +37,8 @@ echo "extracting the strings"
 # process the .ui and .rc files
 $EXTRACTRC `find $SRCDIR -iname *.rc` >> rc.cpp
 $EXTRACTRC `find $SRCDIR -iname *.ui` >> rc.cpp
-$EXTRACTRC --tag=desc `find $SRCDIR/skins -iname onu.xml` >> rc.cpp
-./extract-onu-names.pl  `find $SRCDIR/skins -iname onu.xml` >> rc.cpp
+$EXTRACTRC --tag=desc `find $SRCDIR/skins -iname onu.desktop` >> rc.cpp
+./extract-onu-names.pl  `find $SRCDIR/skins -iname onu.desktop` >> rc.cpp
 echo -e 'i18n("_: NAME OF TRANSLATORS\\n"\n"Your names")\ni18n("_: EMAIL OF TRANSLATORS\\n"\n"Your emails")' > $SRCDIR/_translatorinfo.cpp
 
 # process the tips - $SRCDIR is supposed to be where the tips are living
