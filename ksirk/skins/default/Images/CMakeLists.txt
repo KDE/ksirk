@@ -15,6 +15,13 @@ map-mask.png
 logoRight.png
 distributionArmeesFinie.png
 distributionArmees.png
+moveOne.png
+moveFive.png
+moveTen.png
+moveFinish.png
+moveBackOne.png
+moveBackFive.png
+moveBackTen.png
 logoLeft.png
 SoldatAGenoux1.png
 arena.svg
@@ -25,8 +32,7 @@ downArrow.png
 upArrow.png
 2UpArrow.png
 loader.gif
-
-
+snapshot.jpg
 
 # reddice1.png
 # reddice2.png
@@ -40,21 +46,13 @@ loader.gif
 # bluedice4.png
 # bluedice5.png
 # bluedice6.png
-# snapshot.jpg
-# moveFinish.png
-# moveBackFive.png
-# moveFive.png
 # saveGame.png
 # aide.png
-# moveOne.png
 # preferences.png
 # pool-en.png
 # quitter.png
-# moveBackTen.png
 # ouvrirJeu.png
 # nouveauJeu.png
-# moveTen.png
-# moveBackOne.png
 )
 install( FILES ${pics_default_DATA} DESTINATION ${DATA_INSTALL_DIR}/ksirk/skins/default/Images/ )
 

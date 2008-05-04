@@ -7,6 +7,8 @@ Before KDE4.1:
   * sprites should be enhanced
   * resize bug in network mode
   * hide/show or disable/enable the next player button in the toolbar
+  * set an icon to the preferences dialog page
+  * still some sprites handling bugs in arena mode
   * [ONGOING] don't show context help for computer players
   * [HELP NEEDED] correct the layout of initial window (with main menu) when
     resizing
