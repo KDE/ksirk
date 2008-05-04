@@ -585,106 +585,187 @@ the number of players. After that, each player will be asked its name with anoth
         This file is a description of the content of the skin. It is used to describe the organization of the world and how to display it.
         It has the following structure: 
       </para>
-      <programlisting>
-        onu 
-        (
-          (skinSpritesData (intItem | strItem )*)
-          (country (flag-point cannons-point cavalry-point infantry-point neighbours (neighbour*) ) )*
-          nationality*
-          (continent (continent-country))*
-        )
-      </programlisting>
       <para>
-        An onu tag contains a skinSpritesData tag, a number of country tags, a number of nationality tags and lastly a number of continent tags. The skinSpritesData itself contains a number of intItem or strItem tags. The country tag contains some object point tags and a neighbours tag, itself containing a number of neighbour tags.
+        An onu group contains a number of countries entry, a number of nationalities entry and lastly a number of continent tags. Then various groups contain the description of the different skins, the description of the different countries, continents, nationalities and goals.
+      </para>
+      <para>
+        The following section describe the content of each group.
       </para>
       <sect3>
-        <title>Tags parameters</title>
+        <title>The onu group</title>
         <para>
           <table>
-            <title>The skin &XML; file tags</title>
-            <tgroup cols="3">
-              <thead><row><entry>Tag name</entry><entry>Attribute name</entry><entry>Attribute type and signification</entry></row></thead>
+            <title>The onu group entries</title>
+            <tgroup cols="2">
+              <thead><row><entry>Entry name</entry><entry>Signification</entry></row></thead>
               <tbody>
-                <row><entry>onu</entry><entry>width</entry><entry>The width of the skin's map</entry></row>
-                <row><entry></entry><entry>height</entry><entry>The height of the skin's map</entry></row>
-                <row><entry></entry><entry>skinpath</entry><entry>The path of the skin relative to the application data path (e.g. skins/default)</entry></row>
-                <row><entry></entry><entry>nb-countries</entry><entry>The number of countries (42 in the default skin). There should be the same number of country tags below</entry></row>
-                <row><entry></entry><entry>nb-nationalities</entry><entry>The number of nationalities (6 in the default skin). There should be the same number of nationality tags below</entry></row>
-                <row><entry></entry><entry>nb-continents</entry><entry>The number of continents (6 in the default skin). There should be the same number of continent tags below</entry></row>
-                <row><entry></entry><entry>map</entry><entry>The path and name of the map file relative to the skin path (e.g. Images/map.png)</entry></row>
-                <row><entry></entry><entry>map-mask</entry><entry>The path and name of the map mask file relative to the skin path (e.g. Images/map-mask.png)</entry></row>
-                <row><entry></entry><entry>format-version</entry><entry>The version of the skin file format (1.2, unsused for the moment)</entry></row>
-                <row><entry>intItem</entry><entry>key</entry><entry>The name of the item</entry></row>
-                <row><entry></entry><entry>value</entry><entry>The value of the item interpreted as an integer</entry></row>
-                <row><entry>strItem</entry><entry>key</entry><entry>The name of the item</entry></row>
-                <row><entry></entry><entry>value</entry><entry>The value of the item interprted as a string</entry></row>
-                <row><entry>country</entry><entry>id</entry><entry>The integer unique identification number of the country</entry></row>
-                <row><entry></entry><entry>name</entry><entry>The displayed name of the country, currently not internationalized</entry></row>
-                <row><entry>&lt;sprite&gt;-point</entry><entry></entry><entry>Each type of sprite (flag, infantry, etc.) in the country is displayed a a certain position defined by this tag</entry></row>
-                <row><entry></entry><entry>x</entry><entry>The X-coordinate at which the top left point of the object will be displayed  on the map (starting at left)</entry></row>
-                <row><entry></entry><entry>y</entry><entry>The Y-coordinate at which the top left point of the object will be displayed (starting at top)</entry></row>
-                <row><entry>neighbour</entry><entry>id</entry><entry>The id of a neighbour of the current country</entry></row>
-                <row><entry>nationality</entry><entry>name</entry><entry>The name of the nationality (e.g. Japan)</entry></row>
-                <row><entry></entry><entry>flag</entry><entry>The name of the country's flag sprite file</entry></row>
-                <row><entry>continent</entry><entry>name</entry><entry>The name of the continent (e.g. Africa)</entry></row>
-                <row><entry></entry><entry>bonus</entry><entry>The number of armies obtained at the end of the turn by the player owning all the countries of the continent</entry></row>
-                <row><entry>continent-country</entry><entry>id</entry><entry>The id of one of the countries inside the current continent</entry></row>
+                <row><entry>width</entry><entry>The width of the skin's map</entry></row>
+                <row><entry>height</entry><entry>The height of the skin's map</entry></row>
+                <row><entry>skinpath</entry><entry>The path of the skin relative to the application data path (e.g. skins/default)</entry></row>
+                <row><entry>nb-countries</entry><entry>The number of countries (42 in the default skin). There should be the same number of country tags below</entry></row>
+                <row><entry>nb-nationalities</entry><entry>The number of nationalities (6 in the default skin). There should be the same number of nationality tags below</entry></row>
+                <row><entry>nb-continents</entry><entry>The number of continents (6 in the default skin). There should be the same number of continent tags below</entry></row>
+                <row><entry>pool</entry><entry>The path and name of the pool file relative to the skin path (e.g. Images/pool.svg)</entry></row>
+                <row><entry>map-mask</entry><entry>The path and name of the map mask file relative to the skin path (e.g. Images/map-mask.png)</entry></row>
+                <row><entry>format-version</entry><entry>The version of the skin file format (2.0, unsused for the moment)</entry></row>
+                <row><entry>name</entry><entry>The display name of the skin</entry></row>
+                <row><entry>desc</entry><entry>The long description of the skin</entry></row>
+                <row><entry>fighters-flag-y-diff</entry><entry>The height difference between flags and cannons sprites</entry></row>
+                <row><entry>width-between-flag-and-fighter</entry><entry>The number of pixels between the left most pixel of the flag and the right most pixel of the simple cannon (when not firing nor exploding)</entry></row>
               </tbody>
             </tgroup>
           </table>
         </para>
       </sect3>
+
       <sect3>
-        <title>The skinSpritesData tag</title>
+        <title>The sprites description groups</title>
         <para>
-          This tag has a special organization: each type of sprite (flag, infantry, cavalry, cannon, firing cannon and exploding cannon) is defined by some intItem and strItem and there is two more intItem giving positioning hints for animations. The table below shows all the elements of the skinSpritesData tag with some explanations. Only some sprites have a width data. These are used for relative positioning during animations: the cannons, firing or explosing should not "move" around the country's flag during fight.
+          Each type of sprite (flag, infantry, cavalry, cannon, firing cannon and exploding cannon) is defined by a group. Only some sprites have a width entry. This entry is used for relative positioning during animations: the cannons, firing or explosing should not "move" around the country's flag during fight.
           <table>
-            <title>skinSpritesData tag attributes</title>
-            <tgroup cols="3">
-              <thead><row><entry>Key value</entry><entry>Entry type</entry><entry>Signification</entry><entry>Value in the default skin</entry></row></thead>
+            <title>Sprite description group entries</title>
+            <tgroup cols="2">
+              <thead><row><entry>Entry</entry><entry>Signification</entry></row></thead>
               <tbody>
-                <row><entry>flag-width</entry><entry>intItem</entry><entry>The width of the flag sprites frames</entry><entry>20</entry></row>
-                <row><entry>flag-frames</entry><entry>intItem</entry><entry>The number of frames of the flag sprites</entry><entry>4</entry></row>
-                <row><entry>flag-versions</entry><entry>intItem</entry><entry>The number of versions of the flag sprites</entry><entry>1</entry></row>
-                <row><entry>infantry-file</entry><entry>strItem</entry><entry>The filename of the infantry sprite</entry><entry>infantry.png</entry></row>
-                <row><entry>infantry-frames</entry><entry>intItem</entry><entry>The number of frames of the infantry sprites</entry><entry>1</entry></row>
-                <row><entry>infantry-versions</entry><entry>intItem</entry><entry>The number of versions of the infantry sprites</entry><entry>3</entry></row>
-                <row><entry>cavalry-file</entry><entry>strItem</entry><entry>The filename of the cavalry sprite</entry><entry>cavalry.png</entry></row>
-                <row><entry>cavalry-frames</entry><entry>intItem</entry><entry>The number of frames of the cavalry sprites</entry><entry>1</entry></row>
-                <row><entry>cavalry-versions</entry><entry>intItem</entry><entry>The number of versions of the cavalry sprites</entry><entry>3</entry></row>
-                <row><entry>cannon-file</entry><entry>strItem</entry><entry>The filename of the cannon sprite</entry><entry>cannon.png</entry></row>
-                <row><entry>cannon-width</entry><entry>intItem</entry><entry>The width of the cannon sprites frames</entry><entry>32</entry></row>
-                <row><entry>cannon-frames</entry><entry>intItem</entry><entry>The number of frames of the cannon sprites</entry><entry>2</entry></row>
-                <row><entry>cannon-versions</entry><entry>intItem</entry><entry>The number of versions of the cannon sprites</entry><entry>3</entry></row>
-                <row><entry>firing-file</entry><entry>strItem</entry><entry>The filename of the firing cannon sprite</entry><entry>firing.png</entry></row>
-                <row><entry>firing-width</entry><entry>intItem</entry><entry>The width of the firing cannon sprites frames</entry><entry>64</entry></row>
-                <row><entry>firing-frames</entry><entry>intItem</entry><entry>The number of frames of the firing cannon sprites</entry><entry>4</entry></row>
-                <row><entry>firing-versions</entry><entry>intItem</entry><entry>The number of versions of the firing cannon sprites</entry><entry>2</entry></row>
-                <row><entry>exploding-file</entry><entry>strItem</entry><entry>The filename of the exploding cannon sprite</entry><entry>exploding.png</entry></row>
-                <row><entry>exploding-frames</entry><entry>intItem</entry><entry>The number of frames of the exploding cannon sprites</entry><entry>4</entry></row>
-                <row><entry>exploding-versions</entry><entry>intItem</entry><entry>The number of versions of the exploding cannon sprites</entry><entry>2</entry></row>
-                <row><entry>fighters-flag-y-diff</entry><entry>intItem</entry><entry>The height difference between flags and cannons sprites</entry><entry>-12</entry></row>
-                <row><entry>width-between-flag-and-fighter</entry><entry>intItem</entry><entry>The number of pixels between the left most pixel of the flag and the right most pixel of the simple cannon (when not firing nor exploding)</entry><entry>32</entry></row>
+                <row><entry>width</entry><entry>The reference width of the flag sprite frames</entry></row>
+                <row><entry>height</entry><entry>The reference height of the flag sprite frames</entry></row>
+                <row><entry>frames</entry><entry>The number of frames of the sprite</entry></row>
+                <row><entry>versions</entry><entry>The number of versions of the flag sprites</entry></row>
               </tbody>
             </tgroup>
           </table>
         </para>
       </sect3>
+
+      <sect3>
+        <title>The countries description groups</title>
+        <para>
+          Each country listed in the onu group, countries entry has its own group whose label is the country name. The table below lists the entries of these groups.
+        </para>
+        <para>
+          <table>
+            <title>Country entries</title>
+            <tgroup cols="2">
+              <thead><row><entry>Entry name</entry><entry>Signification</entry></row></thead>
+              <tbody>
+                <row><entry>id</entry><entry>The integer unique identification number of the country</entry></row>
+                <row><entry>name</entry><entry>The displayed name of the country</entry></row>
+                <row><entry>&lt;sprite&gt;-point</entry><entry>Each type of sprite (flag, infantry, etc.) in the country is displayed at a certain position defined by this entry made of two integers separated by a comma</entry></row>
+                <row><entry>neighbours</entry><entry>The list of the ids of the neighbours of the current country</entry></row>
+              </tbody>
+            </tgroup>
+          </table>
+        </para>
+      </sect3>
+
+      <sect3>
+        <title>The nationalities description groups</title>
+        <para>
+          Each nationality listed in the onu group, nationalities entry has its own group whose label is the nationality name. The table below lists the entries of these groups.
+        </para>
+        <para>
+          <table>
+            <title>Nationality entries</title>
+            <tgroup cols="2">
+              <thead><row><entry>Entry name</entry><entry>Signification</entry></row></thead>
+              <tbody>
+                <row><entry>name</entry><entry>The name of the nationality (e.g. Japan)</entry></row>
+                <row><entry>leader</entry><entry>The name that will be proposed to the player choosing this nationality</entry></row>
+                <row><entry>flag</entry><entry>The name of the country's flag sprite element in the onu SVG file</entry></row>
+              </tbody>
+            </tgroup>
+          </table>
+        </para>
+      </sect3>
+
+      <sect3>
+        <title>The continents description groups</title>
+        <para>
+          Each continent listed in the onu group, continents entry has its own group whose label is the continent name. The table below lists the entries of these groups.
+        </para>
+        <para>
+          <table>
+            <title>Continent entries</title>
+            <tgroup cols="2">
+              <thead><row><entry>Entry name</entry><entry>Signification</entry></row></thead>
+              <tbody>
+                <row><entry>name</entry><entry>The name of the continent (e.g. Africa)</entry></row>
+                <row><entry>id</entry><entry>The integer unique identification number of the continent</entry></row>
+                <row><entry>bonus</entry><entry>The number of armies obtained at the end of the turn by the player owning all the countries of the continent</entry></row>
+                <row><entry>continent-countries</entry><entry>The list of the ids of the countries inside the current continent</entry></row>
+              </tbody>
+            </tgroup>
+          </table>
+        </para>
+      </sect3>
+
+      <sect3>
+        <title>The goals description groups</title>
+        <para>
+          Each goal listed in the onu group, goals entry has its own group whose label is the goal name. The table below lists the entries of these groups.
+        </para>
+        <para>
+          <table>
+            <title>Goal entries</title>
+            <tgroup cols="2">
+              <thead><row><entry>Entry name</entry><entry>Signification</entry></row></thead>
+              <tbody>
+                <row><entry>type</entry><entry>The type of goal. Can be continents, countries or player</entry></row>
+                <row><entry>nbArmiesByCountry</entry><entry>set the minimal number of armies the player will have to put on each country</entry></row>
+                <row><entry>nbCountries</entry><entry>set the number of countries the player must possess</entry></row>
+                <row><entry>nbCountriesFallback</entry><entry>For a player goal type, if the target player is killed by another one, this sets the number of countries the player will have to conquer instead</entry></row>
+                <row><entry>desc</entry><entry>A full text description of the goal with appropriate placeholders (needs more doc here)</entry></row>
+                <row><entry>continents</entry><entry>The list of continents ids the player will have to conquer</entry></row>
+              </tbody>
+            </tgroup>
+          </table>
+        </para>
+      </sect3>
+
     </sect2>
   </sect1>
   <sect1 id="tid">
     <title>The Images directory</title>
     <para>
-      This directory contains the buttons of the game, the map and the sprites subdirectory.
+      This directory contains the buttons specific to &kapp; and the pool SVG file that contains the map and all sprites.
     </para>
     <sect2>
-      <title>The map.png file</title>
+      <title>The pool.svg file</title>
       <para>
-        This is just a png file representing the map of the skins's world. Countries can have arbitrary shapes, but should be grouped in eye-recognizable continents, by location only or by color.
-        <mediaobject>
-          <imageobject><imagedata fileref="map.png" format="PNG"/></imageobject>
-          <textobject><phrase>A sample map</phrase></textobject>
-        </mediaobject>
+        This SVG file contains the map and all the sprites of the game. Each element is named such that the game can select and render separately each of them.
+      </para>
+      <para>
+        In the default skin, the sprites are flags, infantry, cavalry and cannon. Infantry reprents one army, five for cavalry and ten for cannons. Cannons are also used to display fighting armies. That's why there is three kinds of cannon sprites: normal static or moving cannon, firing one and exploding one.
+      </para>
+      <para>
+        Each sprite image is the concatenation of the various views of the object and for each view, its frames. Views are organized vertically and frames horizontally. Where to cut the image in individual frames is found by dividing the height of the image by the number of views and the width by ne number of frames. These data are found in the onu.desktop file.
+        <mediaobject><imageobject><imagedata fileref="cannon.png" format="PNG"/></imageobject><caption><para>An example of a sprite image: cannon.png</para></caption></mediaobject>
+      </para>
+      <para>
+        For armies sprites, there is three different views, from top to bottom: looking right, looking left and face. For flags, there is only one view. All sprites backgrounds should be set to transparent.
+        <mediaobject><imageobject><imagedata fileref="italy.png" format="PNG"/></imageobject><caption><para>An example of a flag sprite image: italy.png</para></caption></mediaobject>
+      </para>
+      <para>
+      <table>
+      <title>The elements of the pool</title>
+      <tgroup cols="3">
+      <thead><row><entry>Element name</entry><entry>Sample Image</entry><entry>Signification</entry></row></thead>
+      <tbody>
+        <row>
+          <entry>map</entry><entry><mediaobject><imageobject><imagedata fileref="map.png" format="PNG"/></imageobject></mediaobject></entry><entry>Map of the skins's world. Countries can have arbitrary shapes, but should be grouped in eye-recognizable continents, by location only or by color</entry>
+          <entry>italy</entry><entry><mediaobject><imageobject><imagedata fileref="italy.png" format="PNG"/></imageobject></mediaobject></entry><entry>The flag of the Italy nation. There one such entry for each nation</entry>
+          <entry>infantry</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
+          <entry>cavalry</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
+          <entry>cannon</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
+          <entry>firing</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
+          <entry>exploding</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
+          <entry>Alaska</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
+          <entry>reddices</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
+          <entry>mark1</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
+        </row>
+      </tbody>
+      </tgroup>
+      </table>
       </para>
     </sect2>
     <sect2>
@@ -702,31 +783,15 @@ the number of players. After that, each player will be asked its name with anoth
     </sect2>
     <sect2>
       <title>The buttons images</title>
-      <para>All commands apart countries selection are triggered by the buttons, so they should be easily understandable, even if tooltips and "what's this" help to identify them. In the current version, they are inserted in a &kde; toolbar and thus adopt the size of the toolbar. They should be created large enough to allow a good scaling at whatever final size. The filenames are hard-coded in the code, so they should not be modified. The table below shows all the buttons that should be provided, in the order in which they appear in the toolbar, knowing that the buttons are diplayed and hided when necessary.</para>
+      <para>The filenames are hard-coded in the code, so they should not be modified. The table below shows all the buttons that should be provided.</para>
       <table>
       <title>The buttons of the &GUI;</title>
       <tgroup cols="3">
-      <thead><row><entry>Image</entry><entry>Filname</entry><entry>Signification</entry></row></thead>
+      <thead><row><entry>Image</entry><entry>Filename</entry><entry>Signification</entry></row></thead>
       <tbody>
-        <row>
-          <entry><mediaobject><imageobject><imagedata fileref="quitter.png" format="PNG"/></imageobject></mediaobject></entry><entry>quitter.png</entry><entry>Quit the game. Asks if the current game should be saved</entry>
-        </row>
-        <row>
-          <entry><mediaobject><imageobject><imagedata fileref="nouveauJeu.png" format="PNG"/></imageobject></mediaobject></entry><entry>nouveauJeu.png</entry><entry>Creates a new game. Asks if the current game should be cancelled</entry>
-        </row>
         <row>
           <entry><mediaobject><imageobject><imagedata fileref="newNetGame.png" format="PNG"/></imageobject></mediaobject></entry><entry>newNetGame.png</entry><entry>Tries to join a network game</entry>
         </row>
-        <row>
-          <entry><mediaobject><imageobject><imagedata fileref="aide.png" format="PNG"/></imageobject></mediaobject></entry><entry>aide.png</entry><entry>Should open the help document. Currently, it only opens the about data dialog box</entry>
-        </row>
-        <row>
-          <entry><mediaobject><imageobject><imagedata fileref="ouvrirJeu.png" format="PNG"/></imageobject></mediaobject></entry><entry>ouvrirJeu.png</entry><entry>Opens a saved game</entry>
-        </row>
-        <row>
-          <entry><mediaobject><imageobject><imagedata fileref="saveGame.png" format="PNG"/></imageobject></mediaobject></entry><entry>saveGame.png</entry><entry>Saves the current game to file</entry>
-        </row>
-
         <row>
           <entry><mediaobject><imageobject><imagedata fileref="annuler.png" format="PNG"/></imageobject></mediaobject></entry><entry>annuler.png</entry><entry>Cancels the current ongoing action</entry>
         </row>
@@ -757,49 +822,14 @@ the number of players. After that, each player will be asked its name with anoth
         <row>
           <entry><mediaobject><imageobject><imagedata fileref="moveArmies.png" format="PNG"/></imageobject></mediaobject></entry><entry>moveArmies.png</entry><entry>Chooses to start the moving of armies between two countries (last action in the turn)</entry>
         </row>
-        <row>
-          <entry><mediaobject><imageobject><imagedata fileref="moveOne.png" format="PNG"/></imageobject></mediaobject></entry><entry>moveOne.png</entry><entry>Chooses to move one army from the previously chosen source country to the target country</entry>
-        </row>
-        <row>
-          <entry><mediaobject><imageobject><imagedata fileref="moveFive.png" format="PNG"/></imageobject></mediaobject></entry><entry>moveFive.png</entry><entry>Chooses to move five armies from the previously chosen source country to the target country</entry>
-        </row>
-        <row>
-          <entry><mediaobject><imageobject><imagedata fileref="moveTen.png" format="PNG"/></imageobject></mediaobject></entry><entry>moveTen.png</entry><entry>Chooses to move ten armies from the previously chosen source country to the target country</entry>
-        </row>
-        <row>
-          <entry><mediaobject><imageobject><imagedata fileref="moveFinish.png" format="PNG"/></imageobject></mediaobject></entry><entry>moveFinish.png</entry><entry>Chooses to end the moving of armies at invasion or moving time</entry>
-        </row>
-        <row>
-          <entry><mediaobject><imageobject><imagedata fileref="moveBackOne.png" format="PNG"/></imageobject></mediaobject></entry><entry>moveBackOne.png</entry><entry>Chooses to retract one army from the target country and put it back in the source country during armies moving or invasion</entry>
-        </row>
-        <row>
-          <entry><mediaobject><imageobject><imagedata fileref="moveBackFive.png" format="PNG"/></imageobject></mediaobject></entry><entry>moveBackFive.png</entry><entry>Chooses to retract five armies from the target country and put it back in the source country during armies moving or invasion</entry>
-        </row>
-        <row>
-          <entry><mediaobject><imageobject><imagedata fileref="moveBackTen.png" format="PNG"/></imageobject></mediaobject></entry><entry>moveBackTen.png</entry><entry>Chooses to retract ten armies from the target country and put it back in the source country during armies moving or invasion</entry>
-        </row>
       </tbody>
       </tgroup>
       </table>
     </sect2>
-    <sect2>
-      <title>The sprites directory</title>
-      <para>
-        This directory contains the image files of the sprites used by the game. In the default skin, these are flags, infantry, cavalry and cannon. Infantry reprents one army, five for cavalry and ten for cannons. Cannons are also used to display ongoing battles. That's why there is three kinds of cannon sprites: normal static or moving cannon, firing one and exploding one.
-      </para>
-      <para>
-        Each sprite image is the concatenation of the various views of the object and for each view, its frames. Views are organized vertically and frames horizontally. Where to cut the image in individual frames is found bye dividing the height of the image by the number of views and the width by ne number of frames. These data are found in the onu.xml file.
-        <mediaobject><imageobject><imagedata fileref="cannon.png" format="PNG"/></imageobject><caption><para>An example of a sprite image: cannon.png</para></caption></mediaobject>
-      </para>
-      <para>
-        For armies sprites, there is three different views, from top to bottom: looking right, looking left and face. For flags, there is only one view. All sprites backgrounds should be set to transparent.
-        <mediaobject><imageobject><imagedata fileref="italy.png" format="PNG"/></imageobject><caption><para>An example of a flag sprite image: italy.png</para></caption></mediaobject>
-      </para>
-    </sect2>
   </sect1>
   <sect1 id="tsd">
-    <title>The Sons directory</title>
-    <para></para>
+    <title>The Sounds directory</title>
+    <para>This directory contains three sound files: roule.wav played when armies are moving; canon.wav played when firing and crash.wav played when a cannon exploses.</para>
   </sect1>
 </chapter>
 
