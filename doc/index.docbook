@@ -105,6 +105,19 @@ version exists and also another GPL clone but I (Gaël de Chalendar) created thi
 as a C++ learning exercise and so, I developped it up to this point (see README for details).
 </para>
 <para>
+<screenshot>
+	<screeninfo>Here's a screenshot of &kapp;</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="firing-screenshot.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>Screenshot</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+</para>
+<para>
 In the current version, &kapp; is a multi-player network-enabled game with an AI.
 (see TODO for details)
 </para>
@@ -125,23 +138,6 @@ with your armies. Peaceful, isn't it ? :-)
 many sections (Chapter, Sect1, Sect3, etc...) as is necessary to fully document
 your application. -->
 
-<para>
-
-<!-- Note that all graphics should be in .png format. Use no gifs because of
-patent issues. -->
-
-<screenshot>
-	<screeninfo>Here's a screenshot of &kapp;</screeninfo>
-	<mediaobject>
-	  <imageobject>
-	    <imagedata fileref="attack.png" format="PNG"/>
-	  </imageobject>
-	  <textobject>
-	    <phrase>Screenshot</phrase>
-	  </textobject>
-	</mediaobject>
-</screenshot>
-</para>
 
 
 <sect1 id="playing-ksirk">
@@ -490,7 +486,7 @@ the &kapp; main window. It's not a bug, it's a feature!
 		<guimenu>
 			<inlinemediaobject>
 				<imageobject>
-					<imagedata fileref="quitter.png" format="PNG"/>
+					<imagedata fileref="quit.png" format="PNG"/>
 				</imageobject>
 				<textobject>
 					<phrase>Quit Game</phrase>
@@ -509,7 +505,7 @@ Causes the program to quit.
 		<guimenu>
 			<inlinemediaobject>
 				<imageobject>
-					<imagedata fileref="nouveauJeu.png" format="PNG"/>
+					<imagedata fileref="newGame.png" format="PNG"/>
 				</imageobject>
 				<textobject>
 					<phrase>New Game</phrase>
@@ -586,7 +582,7 @@ the number of players. After that, each player will be asked its name with anoth
         It has the following structure: 
       </para>
       <para>
-        An onu group contains a number of countries entry, a number of nationalities entry and lastly a number of continent tags. Then various groups contain the description of the different skins, the description of the different countries, continents, nationalities and goals.
+        An onu group contains a number of countries entries, a number of nationalities entries and lastly a number of continents entries. Then various groups contain the description of the different sprites, the description of the different countries, continents, nationalities and goals.
       </para>
       <para>
         The following section describe the content of each group.
@@ -602,9 +598,9 @@ the number of players. After that, each player will be asked its name with anoth
                 <row><entry>width</entry><entry>The width of the skin's map</entry></row>
                 <row><entry>height</entry><entry>The height of the skin's map</entry></row>
                 <row><entry>skinpath</entry><entry>The path of the skin relative to the application data path (e.g. skins/default)</entry></row>
-                <row><entry>nb-countries</entry><entry>The number of countries (42 in the default skin). There should be the same number of country tags below</entry></row>
-                <row><entry>nb-nationalities</entry><entry>The number of nationalities (6 in the default skin). There should be the same number of nationality tags below</entry></row>
-                <row><entry>nb-continents</entry><entry>The number of continents (6 in the default skin). There should be the same number of continent tags below</entry></row>
+                <row><entry>nb-countries</entry><entry>The number of countries (42 in the default skin). There should be the same number of country groups below</entry></row>
+                <row><entry>nb-nationalities</entry><entry>The number of nationalities (6 in the default skin). There should be the same number of nationality groups below</entry></row>
+                <row><entry>nb-continents</entry><entry>The number of continents (6 in the default skin). There should be the same number of continent groups below</entry></row>
                 <row><entry>pool</entry><entry>The path and name of the pool file relative to the skin path (e.g. Images/pool.svg)</entry></row>
                 <row><entry>map-mask</entry><entry>The path and name of the map mask file relative to the skin path (e.g. Images/map-mask.png)</entry></row>
                 <row><entry>format-version</entry><entry>The version of the skin file format (2.0, unsused for the moment)</entry></row>
@@ -753,14 +749,32 @@ the number of players. After that, each player will be asked its name with anoth
       <tbody>
         <row>
           <entry>map</entry><entry><mediaobject><imageobject><imagedata fileref="map.png" format="PNG"/></imageobject></mediaobject></entry><entry>Map of the skins's world. Countries can have arbitrary shapes, but should be grouped in eye-recognizable continents, by location only or by color</entry>
-          <entry>italy</entry><entry><mediaobject><imageobject><imagedata fileref="italy.png" format="PNG"/></imageobject></mediaobject></entry><entry>The flag of the Italy nation. There one such entry for each nation</entry>
+	</row>
+        <row>
+          <entry>italy</entry><entry><mediaobject><imageobject><imagedata fileref="italy.png" format="PNG"/></imageobject></mediaobject></entry><entry>The flag of the Italy nation. There is one such entry for each nation</entry>
+	</row>
+        <row>
           <entry>infantry</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
+	</row>
+        <row>
           <entry>cavalry</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
+	</row>
+        <row>
           <entry>cannon</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
+	</row>
+        <row>
           <entry>firing</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
+	</row>
+        <row>
           <entry>exploding</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
+	</row>
+        <row>
           <entry>Alaska</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
+	</row>
+        <row>
           <entry>reddices</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
+	</row>
+        <row>
           <entry>mark1</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
         </row>
       </tbody>
@@ -791,9 +805,6 @@ the number of players. After that, each player will be asked its name with anoth
       <tbody>
         <row>
           <entry><mediaobject><imageobject><imagedata fileref="newNetGame.png" format="PNG"/></imageobject></mediaobject></entry><entry>newNetGame.png</entry><entry>Tries to join a network game</entry>
-        </row>
-        <row>
-          <entry><mediaobject><imageobject><imagedata fileref="annuler.png" format="PNG"/></imageobject></mediaobject></entry><entry>annuler.png</entry><entry>Cancels the current ongoing action</entry>
         </row>
         <row>
           <entry><mediaobject><imageobject><imagedata fileref="distributionArmees.png" format="PNG"/></imageobject></mediaobject></entry><entry>distributionArmees.png</entry><entry>After all players have put their armies, it is possible to modify the distributions (named recycling). This button asks to do such a redistribution</entry>
@@ -863,7 +874,7 @@ distribution. -->
 &kapp;
 </para>
 <para>
-Program copyright 2002 Gael de Chalendar <email>Gael.de.Chalendar@free.fr</email>
+Program copyright 2002-2008 Gael de Chalendar <email>kleag@free.fr</email>
 </para>
 <para>
 Contributors:
@@ -873,7 +884,7 @@ Michal Golunski (Polish translation).
 </para>
 
 <para>
-Documentation copyright 2002 Gael de Chalendar <email>Gael.de.Chalendar@free.fr</email>
+Documentation copyright 2002-2008 Gael de Chalendar <email>kleag@free.fr</email>
 </para>
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
@@ -896,66 +907,40 @@ Documentation copyright 2002 Gael de Chalendar <email>Gael.de.Chalendar@free.fr<
 
 <sect1 id="getting-ksirk">
 <title>How to obtain &kapp;</title>
-
-<para>
-&kapp; can be found at
-<ulink url="http://gna.org/projects/ksirk">http://gna.org/projects/ksirk</ulink>. There, you
-will find, depending of the version, a source archive (.tar.gz), a source RPM and a binary RPM made on a
-Mandrake Intal machine with &kde; 3.4.x.
-</para>
-<para>
-For any information, suggestion, comment or question, <emphasis>please</emphasis>
-mail to: <email>kleag@free.fr</email> or use one of the &kapp; mailing lists that you can find on the Web site
-</para>
-</sect1>
-
-<sect1 id="requirements">
-<title>Requirements</title>
-<para>
-  To use &kapp;, you will need the kdegames package. To compile it, you must have &Qt; 4.4 with STL support enabled (all modern &GNU;/&Linux; distributions have ths kind of &Qt;) and the development package of kdegames.
-</para>
-<!--
-List any special requirements for your application here. This should include:
-.Libraries or other software that is not included in kdesupport,
-kdelibs, or kdebase.
-.Hardware requirements like amount of RAM, disk space, graphics card
-capabilities, screen resolution, special expansion cards, etc.
-.Operating systems the app will run on. If your app is designed only for a
-specific OS, (you wrote a graphical LILO configurator for example) put this
-information here.
--->
-
-<!-- For a list of updates, you may refer to the application web site
-or the ChangeLog file, or ... -->
-<para>
-For a list of updates, you may refer to the application web site
-or the ChangeLog file, or the README, etc.
-</para>
+&install.intro.documentation;
 </sect1>
 
 <sect1 id="compilation">
 <title>Compilation and Installation</title>
-
-<para>
-In order to compile and install &kapp; on your system, type the following in the base
-directory of the &kapp; distribution:
-<screen width="40">
-<prompt>%</prompt> <userinput>./configure --prefix=&lt;your-KDE-root-directory&gt;</userinput>
-<prompt>%</prompt> <userinput>make</userinput>
-<prompt>%</prompt> <userinput>make install</userinput>
-</screen>
-</para>
-
-<para>Since &kapp; uses autoconf and automake you should have not trouble compiling it.
-Should you run into problems please report them to the &kapp; mailing lists.</para>
-<para>Hopefully, I will also be able to distribute a rpm binary version of the package.</para>
+&install.compile.documentation;
 </sect1>
 
 <sect1 id="configuration">
 <title>Configuration</title>
 
-<para>Note that you can move the toolbar and its position will be remembered. There is no oher configuration needs.</para>
-
+<para>The settings menu entry allows you to&nbsp;:</para>
+      <itemizedlist>
+        <listitem>
+          <para>
+	    enable or disable the sounds&nbsp;;
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+	    set the speed of the sprites (from slow to immediate)&nbsp;;
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+	    enable or disable the contextual helps displayed in popups&nbsp;;
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+	    show or hide the number of armies on each country.
+          </para>
+        </listitem>
+      </itemizedlist>
 </sect1>
 
 </appendix>
