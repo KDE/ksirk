@@ -47,9 +47,9 @@ Do NOT change these in the translation. -->
 
 <abstract>
 <para>
-&kapp; is a computerized version of a well known strategy game. A commercial
-version exists and also another GPL clone but I (Gaël de Chalendar) created this game
-as a C++ learning exercise and so, I developped it up to this point (see README for details).
+&kapp; is a computerized version of a well known strategy game. Commercial
+and other Free Software versions exist but I (Gaël de Chalendar) created this game
+initialy as a C++ learning exercise and so, I developped it up to this point (see README for details).
 </para>
 <para>
 In the current version, &kapp; is a multi-player network-enabled game with an AI.
@@ -100,9 +100,9 @@ application that explains what it does and where to report
 problems. Basically a long version of the abstract.  Don't include a
 revision history. (see installation appendix comment) -->
 <para>
-&kapp; is a computerized version of a well known strategy game. A commercial
-version exists and also another GPL clone but I (Gaël de Chalendar) created this game
-as a C++ learning exercise and so, I developped it up to this point (see README for details).
+&kapp; is a computerized version of a well known strategy game. Commercial
+and other Free Software versions exist but I (Gaël de Chalendar) created this game
+initialy as a C++ learning exercise and so, I developped it up to this point (see README for details).
 </para>
 <para>
 <screenshot>
@@ -144,7 +144,7 @@ your application. -->
 <title>Playing &kapp;</title>
 <para>Preliminary note : the map can be scrolled by three methods. First, you can put your
 mouse near a border of the window and the map will scroll in that direction. Second, you
-can use your mouse wheel: With no modifier, it will scroll verticaly; when pressing the Meta
+can use your mouse wheel: with no modifier, it will scroll verticaly; when pressing the Meta
 key, it will scroll horizontaly. And lastly, you can use the keyboard arrows.
 </para>
 <sect2 id="mainmenu" >
@@ -216,12 +216,99 @@ When &kapp; starts, you are presented with a main menu.
 </para>
 <para>
 If you hit, New Game, you will be presented with the New game dialog where you will chose the number of players, the skin (or theme) to use, the game type (conquer the goal or have a specific goal) and finally if this game will be played with online players or if it is purely local.
+<screenshot>
+  <screeninfo>The New Game dialog</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="newgamedialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase>The New Game dialog</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para>
+To start a network game, check the "Network game" check box on the right of the number of players spin box. After clicking OK, you will be able to chose the network parameters: number of network players and TCP port on which waiting for connections.
+<screenshot>
+  <screeninfo>Network game parameters dialog</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="numnetplayersdialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase>Network game parameters dialog</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para>
+Then, network players will be able to connect by chosing Join on the introduction screen and by indicating the IP or hostname of your host and the port number jou just set.
+<screenshot>
+  <screeninfo>Joining network game dialog</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="joinnetgame.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase>Joining network game dialog</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para>
+Each connection is indicated by the message below in the status bar.
+<screenshot>
+  <screeninfo>Connection message</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="justjoined.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase>Connection message</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
 </para>
 <para>
 Let's suppose you keep all the default settings and hit OK. You will then setup two players, one after one. For each one, you'll chose its name, its nationality and, if you want, setup a password such that nobody else than you can reuse this player when reloading this saved game. Lastly, you will here specify if this player is played by the computer or by a human being.
+<screenshot>
+  <screeninfo>The Player Setup dialog</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="playersetupdialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase>The Player Setup dialog</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
 </para>
 <para>
 Then, if you chosed to play with goal, the goal of each local player is displayed, preceded by a warning such that other players looking at the same computer can discreetly turn their look.
+<screenshot>
+  <screeninfo>The Goal Display dialog</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="displaygoalmessage.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase>The Goal Display dialog</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<screenshot>
+  <screeninfo>The Goal Display warning message</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="displaygoalwarningmessage.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase>The Goal Display warning message</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
 </para>
 </sect2>
 
@@ -238,6 +325,18 @@ a cannon.
 To put an army on one of your countries, click on it with the left mouse button. To remove an
 army, click with the right button. Note, as a general rule, that you will never be able to remove
 more armies than the number you already put.
+<screenshot>
+  <screeninfo>Placing armies</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="placingarmies.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase>Placing armies</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
 </para>
 <para>
 When a player has distributed all her armies, the next player is automatically selected to do the
@@ -362,15 +461,35 @@ After the redistribution, a game turn can start. Each player plays at his turn. 
 		</term>
 		<listitem>
 			<para>
-				<action>
           To attack, drag with the mouse from the attacking country and drop to the attacked one. You will then be presented with a contextual menu showing the above entries.
+          <screenshot>
+            <screeninfo>Attack menu</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="attackmenu.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase>Attack menu</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
 					For a country X to attack a country Y with x armies, 2 conditions must be fullfilled: 1. the two
 					countries must be neighbours; 2. country X must have at least x+1 armies before the attack.
           If the attack is valid, a dialog is displayed if necessary for the defender to choose if he wants to defend with one or two armies or let the computer decide.
-				</action>
 			</para>
 			<para>
 				The defender choice done, the fight will happen and be solved. This will described below.
+          <screenshot>
+            <screeninfo>Defense dialog</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="defensedialog.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase>Defense dialog</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
 			</para>
 		</listitem>
 	</varlistentry>
@@ -411,11 +530,33 @@ After the redistribution, a game turn can start. Each player plays at his turn. 
 		result is strictly higher than the defender one, he wins the fight and the defender army is
 		destroyed. Elsewhere, he looses and its army is destroyed. The same happens for second
 		higher dice of the attacker if there is two or three attackers and two defenders.
+          <screenshot>
+            <screeninfo>Attack result displayed</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="shownumberofarmies.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase>Attack result displayed</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
 	</para>
 	<para>
 		If the number of armies in the defender country reaches 0, the ownership of this country
 		changes to the attacker: his flag is set up and one of his attacking armies is installed in his
 		new country. The "Move armies" slider is displayed as for the moves of the end of the turn.
+          <screenshot>
+            <screeninfo>Invasion slider</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="invasionslider.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase>Invasion slider</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
 	</para>
 </sect2>
 <sect2  id="end_of_turn" >
@@ -451,23 +592,24 @@ After the redistribution, a game turn can start. Each player plays at his turn. 
 		have placed their armies, they can start a new redistribution cycle or start a new turn...
 	</para>
 </sect2>
-<!--
+<sect2 id="sending-messages" >
+<title>Sending messages to other players</title>
 <para>
-The Squiggle Tool <guiicon><inlinemediaobject>
-	  <imageobject>
-	    <imagedata fileref="squiggle.png" format="PNG"/>
-	  </imageobject>
-	  <imageobject>
-	    <imagedata fileref="squiggle.eps" format="EPS"/>
-	  </imageobject>
-	  <textobject>
-	    <phrase>Squiggle</phrase>
-	  </textobject>
-</inlinemediaobject></guiicon> is used to draw squiggly lines all over
-the &kapp; main window. It's not a bug, it's a feature!
-</para>
--->
+If you play a local game and want to communicate with the other players, well, let's speak (supposing you have no accessibility problems)... But if you are playing a network game, you can use the chat frame at the bottom of the window (it can be hidden or showed using the arrows). Just type in your message and hit Enter.
+          <screenshot>
+            <screeninfo>Sending messages</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="messagesent.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase>Sending messages</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
 
+</para>
+</sect2>
 </sect1>
 </chapter>
 
@@ -918,7 +1060,20 @@ Documentation copyright 2002-2008 Gael de Chalendar <email>kleag@free.fr</email>
 <sect1 id="configuration">
 <title>Configuration</title>
 
-<para>The settings menu entry allows you to&nbsp;:</para>
+<para>
+  The settings menu entry opens a dialog that allows you to&nbsp;:
+          <screenshot>
+            <screeninfo>Preferences dialog</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="preferences.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase>Preferences dialog</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+</para>
       <itemizedlist>
         <listitem>
           <para>
@@ -937,10 +1092,23 @@ Documentation copyright 2002-2008 Gael de Chalendar <email>kleag@free.fr</email>
         </listitem>
         <listitem>
           <para>
-	    show or hide the number of armies on each country.
+            show or hide the number of armies on each country. The following  snapshot shows the map when the number of armies are displayed.
+            <screenshot>
+              <screeninfo>Display of the number of armies</screeninfo>
+              <mediaobject>
+                <imageobject>
+                  <imagedata fileref="shownumberofarmies.png" format="PNG"/>
+                </imageobject>
+                <textobject>
+                  <phrase>Display of the number of armies</phrase>
+                </textobject>
+              </mediaobject>
+            </screenshot>
+
           </para>
         </listitem>
       </itemizedlist>
+
 </sect1>
 
 </appendix>
