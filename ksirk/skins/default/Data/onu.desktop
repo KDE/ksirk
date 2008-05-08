@@ -42,27 +42,6 @@ height=32
 frames=1
 versions=3
 
-[infantry1]
-id=infantry1
-width=30
-height=32
-frames=1
-versions=3
-
-[infantry2]
-id=infantry2
-width=30
-height=32
-frames=1
-versions=3
-
-[infantry3]
-id=infantry3
-width=30
-height=32
-frames=1
-versions=3
-
 [cavalry]
 id=cavalry
 width=32

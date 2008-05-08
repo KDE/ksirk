@@ -978,6 +978,15 @@ void KGameWindow::animExplosion(int who,Country *attackingCountry, Country *defe
           Sprites::SkinSpritesData::single().intData("exploding-frames"),
           Sprites::SkinSpritesData::single().intData("exploding-versions"));
 
+
+      qreal firingRelativePos = (Sprites::SkinSpritesData::single().intData("firing-width") - Sprites::SkinSpritesData::single().intData("exploding-width"))*m_theWorld->zoom();
+      if (sprite-> looksToLeft())
+      {
+        sprite-> setPos(
+          sprite-> x() + firingRelativePos,
+          sprite-> y() );
+      }
+
       if (sprite->isAttacker())
       {
         kDebug() << "  removing a sprite";
