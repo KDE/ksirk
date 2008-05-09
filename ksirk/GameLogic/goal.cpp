@@ -328,7 +328,7 @@ QDataStream& operator<<(QDataStream& stream, const Goal& goal)
   kDebug() << "Goal operator<< : description " << goal.description() << endl;
   stream << goal.description();
   QList<QString>::ConstIterator it, it_end;
-  std::set<unsigned int>::iterator itc, itc_end;
+  std::set<unsigned int>::const_iterator itc, itc_end;
   switch (goal.type())
   {
   case Goal::GoalPlayer :
@@ -432,7 +432,7 @@ void Goal::saveXml(std::ostream& xmlStream) const
   xmlStream << "\" type=\"" << m_type << "\" description=\"" << m_description.toUtf8().data();
   xmlStream << "\" nbCountries=\"" << m_nbCountries << "\" nbArmiesByCountry=\"" << m_nbArmiesByCountry << "\">\n";
   xmlStream << "<continents>\n";
-  std::set< unsigned int >::iterator itc, itc_end;
+  std::set< unsigned int >::const_iterator itc, itc_end;
   itc = continents().begin(); itc_end = continents().end();
   for (; itc != itc_end; itc++)
   {

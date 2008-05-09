@@ -272,9 +272,9 @@ ONU::ONU(GameAutomaton* automaton,
   }
 
   QStringList goalsList = onugroup.readEntry("goals", QStringList());
-  foreach (const QString &goal, goalsList)
+  foreach (const QString &_goal, goalsList)
   {
-    KConfigGroup goalGroup = config.group(goal);
+    KConfigGroup goalGroup = config.group(_goal);
 
     Goal* goal = new Goal(automaton);
     goal->description(goalGroup.readEntry("desc",""));
