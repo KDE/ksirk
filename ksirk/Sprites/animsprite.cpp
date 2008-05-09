@@ -347,7 +347,7 @@ int AnimSprite::operator==(const AnimSprite& Arg) const
     return (memcmp(this,&Arg,sizeof(AnimSprite)));
 }
 
-void AnimSprite::setDestination(Country::Country* country)
+void AnimSprite::setDestination(Country* country)
 {
     destination = country;
 }
