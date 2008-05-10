@@ -973,6 +973,8 @@ private:
   // the current saved game file name
   QString m_fileName;
 
+  QAction* m_nextPlayerAction;
+
 private: // Private methods
   /*void attack(GameLogic::Country& attacker, GameLogic::Country& defender, unsigned int nb);*/
   void moveArmies(GameLogic::Country& src, GameLogic::Country& dest, unsigned int nb);

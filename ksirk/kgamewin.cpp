@@ -302,11 +302,11 @@ void KGameWindow::initActions()
 
 
   QString nextPlayerActionImageFileName = KGlobal::dirs()->findResource("appdata", m_automaton->skin() + "/Images/joueurSuivant.png");
-  QAction* nextPlayerAction =  new QAction(QIcon(nextPlayerActionImageFileName),
+  m_nextPlayerAction =  new QAction(QIcon(nextPlayerActionImageFileName),
         i18n("Next Player"), this);
-  connect(nextPlayerAction, SIGNAL(triggered(bool)), this, SLOT(slotNextPlayer()));
+  connect(m_nextPlayerAction, SIGNAL(triggered(bool)), this, SLOT(slotNextPlayer()));
   contextualHelpAction->setStatusTip(i18n("Lets the next player play"));
-  actionCollection()->addAction("game_nextplayer", nextPlayerAction);
+  actionCollection()->addAction("game_nextplayer", m_nextPlayerAction);
 
   QAction* finishMovesAction = new QAction(QIcon(),
         i18n("Finish moves"), this);
@@ -1930,6 +1930,15 @@ int KGameWindow::setCurrentPlayerToNext(bool restartRunningAIs)
     }
   }
 
+  if ( currentPlayer()->isAI() || currentPlayer()->isVirtual() )
+  {
+    m_nextPlayerAction->setEnabled(false);
+  }
+  else
+  {
+    m_nextPlayerAction->setEnabled(true);
+  }
+  
 //   kDebug() << "New current player is " << currentPlayer()->name() << " ; return value is " << looped;
   return looped;
 }
