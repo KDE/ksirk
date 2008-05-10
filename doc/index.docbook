@@ -613,7 +613,7 @@ If you play a local game and want to communicate with the other players, well, l
 <title>Command Reference</title>
 
 <sect1 id="kapp-mainwindow">
-<title>The main KsirK window</title>
+<title>The main &kapp; window</title>
 <sect2>
 <title>The buttons</title>
 <para>
@@ -665,7 +665,7 @@ the number of players. After that, each player will be asked its name with anoth
 </chapter>
 
 <chapter id="developers">
-  <title>Developer's Guide to KsirK</title>
+  <title>Developer's Guide to &kapp;</title>
   
   <para>
     Please refer to the KDoc documentation for the API. It was quite complete but is currently a little bit outdated.The comments are inexistant in the <filename>.cpp</filename> implementation files.
@@ -681,11 +681,11 @@ the number of players. After that, each player will be asked its name with anoth
 <chapter id="skins">
   <title>Creating new skins</title>
   <para>
-    KsirK is fully skinable. For who have graphic capabilities, creating a new skin is as simple as copying an existing one, editing or changings the graphics and updating the data in a .desktop configuration file. A last step is to edit the file describing what to install.
+    &kapp; is fully skinable. For who have graphic capabilities, creating a new skin is as simple as copying an existing one, editing or changings the graphics and updating the data in a .desktop configuration file. A last step is to edit the file describing what to install.
   </para>
-  <para>All examples (text and images) are taken from the default skin of KsirK</para>
+  <para>All examples (text and images) are taken from the default skin of &kapp;</para>
   <sect1 id="sdf">
-    <title>Structure of directories and files</title>
+    <title>Structure of folders and files</title>
     <para>
       <itemizedlist>
         <listitem>
@@ -712,7 +712,7 @@ the number of players. After that, each player will be asked its name with anoth
     </para>
   </sect1>
   <sect1 id="tdd">
-    <title>The Data directory</title>
+    <title>The Data folder</title>
     <sect2>
       <title>The onu.desktop file</title>
       <para>
@@ -859,9 +859,9 @@ the number of players. After that, each player will be asked its name with anoth
     </sect2>
   </sect1>
   <sect1 id="tid">
-    <title>The Images directory</title>
+    <title>The Images folder</title>
     <para>
-      This directory contains the buttons specific to &kapp; and the pool SVG file that contains the map and all sprites.
+      This folder contains the buttons specific to &kapp; and the pool SVG file that contains the map and all sprites.
     </para>
     <sect2>
       <title>The pool.svg file</title>
@@ -977,8 +977,8 @@ the number of players. After that, each player will be asked its name with anoth
     </sect2>
   </sect1>
   <sect1 id="tsd">
-    <title>The Sounds directory</title>
-    <para>This directory contains three sound files: roule.wav played when armies are moving; canon.wav played when firing and crash.wav played when a cannon exploses.</para>
+    <title>The Sounds folder</title>
+    <para>This folder contains three sound files: roule.wav played when armies are moving; canon.wav played when firing and crash.wav played when a cannon exploses.</para>
   </sect1>
 </chapter>
 
