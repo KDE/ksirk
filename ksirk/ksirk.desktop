@@ -3,7 +3,7 @@
 Type=Application
 Exec=ksirk -caption "%c" %i
 Icon=ksirk
-DocPath=ksirk/index.html
+X-DocPath=ksirk/index.html
 Comment=KsirK is a computerized version of a strategy board game: Risk !
 Comment[km]=KsirK គឺ​ជា​កំណែ​កុំព្យូទ័រ​​នៃល្បែង​ក្ដារ​យុទ្ធសាស្ត្រ ៖ គ្រោះថ្នាក់ !
 Comment[sv]=Ksirk är en datoriserad version av strategispelet Risk

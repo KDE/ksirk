@@ -63,12 +63,13 @@ AIPlayer :: AIPlayer(
   allPlayers(players),
   m_world(world),
   m_game(game),
-  stopMe(true),
   m_src(0), m_dest(0),
   m_toMove(std::numeric_limits< unsigned int>::max()),
   m_hasVoted(false),
-  m_actionWaitingStart(false)
+  m_actionWaitingStart(false),
+  m_thread(*this)
 {
+  m_thread.setStopMe(true);
 //   kDebug() << "AIPlayer constructor" << endl;
 }
 
@@ -332,22 +333,22 @@ bool AIPlayer::isAI() const
   return true;
 }
 
-void AIPlayer::run()
+void AIPlayer::MyThread::run()
 {
-  kDebug() << name();
+  kDebug();
   stopMe = false;
   while ( ! stopMe )
   {
-    actionChoice(m_game->state());
-    msleep( 500 );
+    me.actionChoice(me.m_game->state());
+    mssleep( 500 );
   }
-  kDebug() << name()  << "OUT";
+  kDebug() << "OUT";
 }
 
 /** set stopMe to true in order for the run method to return */
 void AIPlayer::stop()
 {
-  stopMe = true;
+  m_thread.setStopMe(true);
 }
 
 /**
@@ -386,7 +387,7 @@ bool AIPlayer::attackAction()
   if (srcNbArmies == 1)
   {
     kError() << "AI player " << Player::name() << " country " << m_src->nbArmies() << "have only one army. Should not be chosen to attack." << endl;
-    exit();
+    m_thread.exit();
   }
   if (srcNbArmies >= 2) {nbAttack = 1;}
   if (srcNbArmies >= 3) {nbAttack = 2;}
@@ -410,7 +411,7 @@ bool AIPlayer::attackAction()
     break;
     default:
       kError() << "The attacker tries to attack with a number of armies different of 1, 2 or 3: that's impossible!" << endl;
-      exit();
+      m_thread.exit();
   }
   aiPlayerIO()->sendInput(stream3,true);
   /*QByteArray buffer2;
@@ -485,7 +486,7 @@ void AIPlayer::placeArmiesAction()
     {
       QString msg = i18n("Error - No receiving country selected while computer player %1 had still %2 armies to place. This is bug probably #2232 at www.gna.org.", Player::name(), getNbAvailArmies());
       KMessageBox::error(0, msg, i18n("Fatal Error"));
-      exit();
+      m_thread.exit();
     }
     kDebug() << "Placing an army in " << receiver->name() 
         << " ; point=" << receiver->centralPoint() << endl;
@@ -619,7 +620,7 @@ void AIPlayer::chooseDefenseAction()
       break;
       default:
         kError() << "The attacker attacks with a number of armies different of 1, 2 or 3: that's impossible!" << endl;
-        exit();
+        m_thread.exit();
     }
     stop();
     aiPlayerIO()->sendInput(stream,true);

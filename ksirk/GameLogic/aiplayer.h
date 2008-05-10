@@ -43,7 +43,7 @@ class GameAutomaton;
   * This class represents a computer player. It holds all strategic routines.
   * @author Gael de Chalendar (aka Kleag)
   */
-class AIPlayer : public Player, public QThread
+class AIPlayer : public Player
 {
 Q_OBJECT
 
@@ -80,6 +80,11 @@ public:
     * @param xmlStream The stream on which to write the XML
     */
   virtual void saveXml(std::ostream& xmlStream);
+
+  bool isRunning () const {return m_thread.isRunning();}
+
+public Q_SLOTS:
+  void start ( QThread::Priority priority = QThread::InheritPriority ) {m_thread.start(priority);}
 
 protected:
   /** 
@@ -128,6 +133,21 @@ protected:
   void nextPlayerAction();
   
 protected: // Private attributes
+  class MyThread: public QThread
+  {
+  protected:
+    virtual void run ();
+    
+  public:
+    MyThread(AIPlayer& p) : me(p) {}
+    void mssleep ( unsigned long msecs ) {QThread::msleep(msecs);}
+    void setStopMe ( bool value ) { stopMe = value; }
+  private:
+    /** indicates to the thread if the run method should return */
+    bool stopMe;
+    AIPlayer& me;
+  };
+
   AIPlayerIO* aiPlayerIO();
   
 /**
@@ -154,9 +174,6 @@ protected: // Private attributes
    */
  // GameAutomaton* m_defenseAuto;
 
-  /** indicates to the thread if the run method should return */
-  bool stopMe;
-
   /** pointers to the source and target country of an attack */
   const Country* m_src;
   const Country* m_dest;
@@ -166,6 +183,9 @@ protected: // Private attributes
     
   bool m_hasVoted;
   bool m_actionWaitingStart;
+
+  MyThread m_thread;
+
 private: // Private methods
   /**
     * chooses whether to defend with one or two armies. Always chooses the maximum possible
