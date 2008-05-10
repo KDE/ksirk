@@ -49,7 +49,7 @@ Do NOT change these in the translation. -->
 <para>
 &kapp; is a computerized version of a well known strategy game. Commercial
 and other Free Software versions exist but I (Gaël de Chalendar) created this game
-initialy as a C++ learning exercise and so, I developped it up to this point (see README for details).
+initialy as a C++ learning exercise and so, I developed it up to this point (see README for details).
 </para>
 <para>
 In the current version, &kapp; is a multi-player network-enabled game with an AI.
@@ -102,7 +102,7 @@ revision history. (see installation appendix comment) -->
 <para>
 &kapp; is a computerized version of a well known strategy game. Commercial
 and other Free Software versions exist but I (Gaël de Chalendar) created this game
-initialy as a C++ learning exercise and so, I developped it up to this point (see README for details).
+initialy as a C++ learning exercise and so, I developed it up to this point (see README for details).
 </para>
 <para>
 <screenshot>
@@ -144,8 +144,8 @@ your application. -->
 <title>Playing &kapp;</title>
 <para>Preliminary note : the map can be scrolled by three methods. First, you can put your
 mouse near a border of the window and the map will scroll in that direction. Second, you
-can use your mouse wheel: with no modifier, it will scroll verticaly; when pressing the Meta
-key, it will scroll horizontaly. And lastly, you can use the keyboard arrows.
+can use your mouse wheel: with no modifier, it will scroll vertically; when pressing the Meta
+key, it will scroll horizontally. And lastly, you can use the keyboard arrows.
 </para>
 <sect2 id="mainmenu" >
 <title>Starting a game</title>
@@ -215,7 +215,7 @@ When &kapp; starts, you are presented with a main menu.
 </variablelist>
 </para>
 <para>
-If you hit, New Game, you will be presented with the New game dialog where you will chose the number of players, the skin (or theme) to use, the game type (conquer the goal or have a specific goal) and finally if this game will be played with online players or if it is purely local.
+If you hit, New Game, you will be presented with the New game dialog where you will be able to choose the number of players, the skin (or theme) to use, the game type (conquer the goal or have a specific goal) and finally if this game will be played with online players or if it is purely local.
 <screenshot>
   <screeninfo>The New Game dialog</screeninfo>
   <mediaobject>
@@ -243,7 +243,7 @@ To start a network game, check the "Network game" check box on the right of the 
 </screenshot>
 </para>
 <para>
-Then, network players will be able to connect by chosing Join on the introduction screen and by indicating the IP or hostname of your host and the port number jou just set.
+Then, network players will be able to connect by choosing Join on the introduction screen and by indicating the IP or hostname of the host and the port number youjust set.
 <screenshot>
   <screeninfo>Joining network game dialog</screeninfo>
   <mediaobject>
@@ -272,7 +272,7 @@ Each connection is indicated by the message below in the status bar.
 
 </para>
 <para>
-Let's suppose you keep all the default settings and hit OK. You will then setup two players, one after one. For each one, you'll chose its name, its nationality and, if you want, setup a password such that nobody else than you can reuse this player when reloading this saved game. Lastly, you will here specify if this player is played by the computer or by a human being.
+Let's suppose you keep all the default settings and hit OK. You will then setup two players, one after one. For each one, you'll chose a name, a nationality and, if you want, setup a password such that nobody else than you can reuse this player when reloading this saved game. Lastly, you will here specify if this player is played by the computer or by a human being.
 <screenshot>
   <screeninfo>The Player Setup dialog</screeninfo>
   <mediaobject>
@@ -286,7 +286,7 @@ Let's suppose you keep all the default settings and hit OK. You will then setup 
 </screenshot>
 </para>
 <para>
-Then, if you chosed to play with goal, the goal of each local player is displayed, preceded by a warning such that other players looking at the same computer can discreetly turn their look.
+Then, if you chose to play with goal, the goal of each local player is displayed, preceded by a warning such that other players looking at the same computer can discreetly turn away while the goal is being viewed.
 <screenshot>
   <screeninfo>The Goal Display dialog</screeninfo>
   <mediaobject>
@@ -315,16 +315,16 @@ Then, if you chosed to play with goal, the goal of each local player is displaye
 <sect2 id="distribution" >
 <title>Distribution</title>
 <para>
-At the beginning of the game, countries are distributed to all the players. Each country contain
-one army (represented by an infantryman) at this moment. Each player has some armies to
-distribute to his countries at her turn (indicated by the presence of her name and her flag in
+At the beginning of the game, countries are distributed to all the players. Each country contains
+one army (represented by an infantryman) at the start. Each player has some armies to
+distribute to his countries at there turn (indicated by the presence of there name and there flag in
 the status bar). Note that five armies are represented by a cavalryman and 10 by
 a cannon.
 </para>
 <para>
 To put an army on one of your countries, click on it with the left mouse button. To remove an
 army, click with the right button. Note, as a general rule, that you will never be able to remove
-more armies than the number you already put.
+more armies than the number you placed.
 <screenshot>
   <screeninfo>Placing armies</screeninfo>
   <mediaobject>
@@ -339,8 +339,8 @@ more armies than the number you already put.
 
 </para>
 <para>
-When a player has distributed all her armies, the next player is automatically selected to do the
-same task. When all players have finished to distribute their armies, there is two possibilities
+When a player has distributed all there armies, the next player is automatically selected to do the
+same task. When all players have finished to distributing their armies, there is two possibilities
 that can be selected by two buttons showed in the right panel:
 <variablelist>
 <varlistentry>
@@ -363,7 +363,7 @@ that can be selected by two buttons showed in the right panel:
 	<action>
 	One player wants to change some of his choices. The first player can then remove an army he
 	just put in a country with the right mouse button and put it in another one with the left mouse
-	button. When he finish, he gives control to next player with the 'Valid' button. When all
+	button. When he finishes, he gives control to next player with the 'Valid' button. When all
 	players have finished their redistribution, the two buttons are displayed again.
 	</action>
 	</para>
@@ -395,7 +395,7 @@ that can be selected by two buttons showed in the right panel:
 <sect2 id="fight" >
 <title>Fight</title>
 <para>
-After the redistribution, a game turn can start. Each player plays at his turn. He has the choice to:
+After the redistribution, a turn starts. Each player plays at his turn. He has the choice to:
 <variablelist>
 	<varlistentry>
 		<term>
@@ -473,12 +473,12 @@ After the redistribution, a game turn can start. Each player plays at his turn. 
               </textobject>
             </mediaobject>
           </screenshot>
-					For a country X to attack a country Y with x armies, 2 conditions must be fullfilled: 1. the two
-					countries must be neighbours; 2. country X must have at least x+1 armies before the attack.
+					For a country X to attack a country Y with x armies, 2 conditions must be fulfilled: 1. the two
+					countries must be neighbors; 2. country X must have at least x+1 armies before the attack.
           If the attack is valid, a dialog is displayed if necessary for the defender to choose if he wants to defend with one or two armies or let the computer decide.
 			</para>
 			<para>
-				The defender choice done, the fight will happen and be solved. This will described below.
+				When the defenders choice is done, the fight will occur and be completed. This will described below.
           <screenshot>
             <screeninfo>Defense dialog</screeninfo>
             <mediaobject>
@@ -512,9 +512,9 @@ After the redistribution, a game turn can start. Each player plays at his turn. 
 			<para>
 				<action>
 					This is the last action of a player's turn. It gives the possibility to move some armies
-					from one of his country to another, neighbour of the first one. To choose the two
-					countries, please drag'n drop as for an attack. When both countries are choosed,
-					a slider is displayed on which you can choose how much armies there will be on each country afterwards.
+					from one of his country to another, neighboring the first one. To choose the two
+					countries, please drag and drop like you use during an attack. When both countries are selected,
+					a slider is displayed on which you can choose how many armies there will be on each country afterwards.
 				</action>
 			</para>
 		</listitem>
@@ -525,11 +525,7 @@ After the redistribution, a game turn can start. Each player plays at his turn. 
 <sect2  id="fight-solution" >
 	<title>Solution of the fight</title>
 	<para>
-		To each army in the fight correspond a dice cast, a random number between 1 and 6. The
-		higher result of the attacker is opposed to the other one of the defender. If the attacker's
-		result is strictly higher than the defender one, he wins the fight and the defender army is
-		destroyed. Elsewhere, he looses and its army is destroyed. The same happens for second
-		higher dice of the attacker if there is two or three attackers and two defenders.
+		For each army in the fight there is a corresponding die cast. The player who rolls a higher number on the dice, whether being from the attacker or defender, wins and the one to roll a smaller number on the dice loses armies according to the number of dice thrown.
           <screenshot>
             <screeninfo>Attack result displayed</screeninfo>
             <mediaobject>
@@ -565,10 +561,10 @@ After the redistribution, a game turn can start. Each player plays at his turn. 
     To finish your current turn, if you don't want to move armies, you can hit the "Next Player" button in the toolbar.
   </para>
 	<para>
-		When everybody have played, the turn is finished. Some armies are distributed to the
+		When everybody has played, the turn is finished. Some armies are distributed to the
 		players, in function of the coutries they own: 1 for each group of three countries, with a
 		minimum of 3. There is also a bonus for players that own a complete continent, different for
-		each one. This bonus is of, fot the default skin:
+		each one. The values of the bonuses for the default skin are:
 		<table>
 			<title>Bonus due to the continents</title>
 			<tgroup cols="2">
@@ -588,7 +584,7 @@ After the redistribution, a game turn can start. Each player plays at his turn. 
 	</para>
 	<para>
 		When a player has finished distributing his armies, he clicks the "Valid" button to
-		allow the next player to distribute his bonus. As for the initial distribution, when all player
+		allow the next player to distribute his bonus armies. As for the initial distribution, when all player
 		have placed their armies, they can start a new redistribution cycle or start a new turn...
 	</para>
 </sect2>
@@ -788,8 +784,8 @@ the number of players. After that, each player will be asked its name with anoth
               <tbody>
                 <row><entry>id</entry><entry>The integer unique identification number of the country</entry></row>
                 <row><entry>name</entry><entry>The displayed name of the country</entry></row>
-                <row><entry>&lt;sprite&gt;-point</entry><entry>Each type of sprite (flag, infantry, etc.) in the country is displayed at a certain position defined by this entry made of two integers separated by a comma</entry></row>
-                <row><entry>neighbours</entry><entry>The list of the ids of the neighbours of the current country</entry></row>
+                <row><entry>&lt;sprite&gt;-point</entry><entry>Each type of sprite (flag, infantry, etc.) in the country is displayed at a certain position defined by this entry made of two integers seperated by a comma</entry></row>
+                <row><entry>neighbours</entry><entry>The list of the ids of the neighbors of the current country</entry></row>
               </tbody>
             </tgroup>
           </table>
@@ -927,7 +923,7 @@ the number of players. After that, each player will be asked its name with anoth
     <sect2>
       <title>The map-mask.png file</title>
       <para>
-        This is a png file representing also the map of the skins's world, but with coded colors that allow to identify uniquely.each country. Countries must have at least the same shapes as the corresponding countries on the map.png file so that users can click anywhere in a viewable country and select the good one. Countries, like little islands as Indonesia in the default map can be greater than the equivalent in the map.png file to facilitate the selection of the country. 
+        This is a png file representing also the map of the skins's world, but with coded colors that allows one to identify uniquely each country. Countries must have at least the same shapes as the corresponding countries on the map.png file so that users can click anywhere in a viewable country and select the good one. Countries, like little islands as Indonesia in the default map can be greater than the equivalent in the map.png file to facilitate the selection of the country. 
         <mediaobject>
           <imageobject><imagedata fileref="map-mask.png" format="PNG"/></imageobject>
           <textobject><phrase>A sample map-mask</phrase></textobject>
