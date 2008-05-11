@@ -604,6 +604,8 @@ public:
 
   void slideInvade(GameLogic::Country *,GameLogic::Country *, InvasionType invasionType = Invasion);
 
+  void setNextPlayerActionEnabled(bool value);
+
 protected:
 
   /**

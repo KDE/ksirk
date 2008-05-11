@@ -1067,6 +1067,7 @@ void KGameWindow::displayRecyclingButtons()
     addAButton(CM_RECYCLING, SLOT(slotRecycling()), i18n("Redistribute"),KShortcut(Qt::Key_R),true);
     addAButton(CM_RECYCLINGFINISHED, SLOT(slotRecyclingFinished()), i18n("End redistribute"), KShortcut(Qt::Key_Tab), true);
   }
+  m_nextPlayerAction->setEnabled(false);
   gameActionsToolBar-> hide();
   //gameActionsToolBar-> show();
 }
@@ -1100,6 +1101,7 @@ void KGameWindow::displayNormalGameButtons()
   if (currentPlayer() && currentPlayer()-> isAI() && (!currentPlayer()->isVirtual()))
   {
     if (!(static_cast<AIPlayer *>(currentPlayer()))-> isRunning()) (static_cast<AIPlayer *>(currentPlayer()))-> start();
+    m_nextPlayerAction->setEnabled(false);
   }
   else if (currentPlayer() && !currentPlayer()->isVirtual())
   {
@@ -1111,6 +1113,11 @@ void KGameWindow::displayNormalGameButtons()
     addAButton(CM_ATTACK3,  SLOT(slotAttack3()), i18n("Attack with three armies"),KShortcut(Qt::Key_3),true);
     addAButton(CM_SHIFT, SLOT(slotMove()), i18n("Move armies"),KShortcut(Qt::Key_M),true);
     slotContextualHelp();
+    m_nextPlayerAction->setEnabled(true);
+  }
+  else
+  {
+    m_nextPlayerAction->setEnabled(false);
   }
   gameActionsToolBar-> hide();
   //gameActionsToolBar-> show();
@@ -1256,7 +1263,7 @@ void KGameWindow::clearGameActionsToolbar(bool send)
   }
   m_temporaryAccelerators.clear();
 //   m_accels.updateConnections();
-  kDebug()<< "Fin KGameWindow::clearGameActionsToolbar ";
+//   kDebug()<< "Fin KGameWindow::clearGameActionsToolbar ";
 }
 
 void KGameWindow::addAButton(
@@ -2336,6 +2343,8 @@ bool KGameWindow::playerRemovesArmy(const QPointF& point)
 void KGameWindow::initRecycling()
 {
   kDebug() << "Initiating recycling";
+  m_nextPlayerAction->setEnabled(false);
+
   setCurrentPlayerToFirst();
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
@@ -2362,6 +2371,7 @@ void KGameWindow::clear()
 bool KGameWindow::nextPlayerRecycling()
 {
   kDebug();
+  m_nextPlayerAction->setEnabled(false);
   if ( currentPlayer() && currentPlayer()-> getNbAvailArmies() > 0
       && !currentPlayer()->isVirtual() && !currentPlayer()->isAI())
   {
@@ -3265,6 +3275,12 @@ void KGameWindow::unreduceChat()
   m_titleChatMsg->hide();
   m_bottomDock->setMaximumSize(16777215,16777215);
   m_bottomDock->resize(m_lastWidthChat,38+m_chatDlg->height());
+}
+
+void KGameWindow::setNextPlayerActionEnabled(bool value)
+{
+  kDebug() << value;
+  m_nextPlayerAction->setEnabled(value);
 }
 
 

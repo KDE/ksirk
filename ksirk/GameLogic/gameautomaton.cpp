@@ -1979,6 +1979,7 @@ void GameAutomaton::countriesDistribution()
   m_game->broadcastChangeItem(messageParts, ID_STATUS_MSG2);
   m_game->showMessage(i18n("Now, place your armies in your countries<br>by clicking in the target countries."));
   state(INTERLUDE);
+  m_game->setNextPlayerActionEnabled(false);
 }
 
 void GameAutomaton::sendCountries()
@@ -2616,6 +2617,16 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
       kDebug() << "Got message DisplayRecycleDetails "
           << playerName << availArmies;
       m_game->getRightDialog()->displayRecycleDetails(playerNamed(playerName),availArmies);
+//       bool value;
+//       if (playerNamed(playerName)->isAI() || playerNamed(playerName)->isVirtual())
+//       {
+//         value = false;
+//       }
+//       else
+//       {
+//         value = true;
+//       }
+      m_game->setNextPlayerActionEnabled(false);
     break;
   case CurrentPlayerPlayed:
     m_currentPlayerPlayed = true;
