@@ -323,6 +323,7 @@ void KGameWindow::initStatusBar()
   statusBar()-> setSizeGripEnabled(true);
   statusBar()->insertPermanentItem("", ID_STATUS_MSG, 2);
   statusBar()-> setItemAlignment(ID_STATUS_MSG, Qt::AlignLeft | Qt::AlignVCenter);
+
   statusBar()->insertPermanentItem("", ID_STATUS_MSG2, 3);
   statusBar()-> setItemAlignment(ID_STATUS_MSG2, Qt::AlignLeft | Qt::AlignVCenter);
   statusBar()->addPermanentWidget(m_barFlag);
@@ -660,9 +661,9 @@ bool KGameWindow::attackEnd()
   {
     QPixmap pm = currentPlayer()->getFlag()->image(0);
 
-    /*KMessageParts messageParts;
+    KMessageParts messageParts;
     messageParts << pm << I18N_NOOP("<font color=\"red\">%1 conquered %2 from %3</font>") << currentPlayer()->name() << m_secondCountry-> name() << m_firstCountry-> name();
-    broadcastChangeItem(messageParts, ID_NO_STATUS_MSG);*/
+    broadcastChangeItem(messageParts, ID_NO_STATUS_MSG);
     
     Player* oldOwner = m_secondCountry-> owner();
     unsigned int newOldOwnerNbCountries = oldOwner-> getNbCountries() - 1;
@@ -1151,6 +1152,7 @@ void KGameWindow::displayDefenseButtons()
 
 void KGameWindow::displayDefenseWindow()
 {
+  kDebug();
   // Create Window Dialog
   dial = new KDialog ();
   dial->setButtons( KDialog::None );
@@ -1815,22 +1817,22 @@ bool KGameWindow::isMoveValid(const QPointF& point)
   }
   else if  ( m_firstCountry->owner() != currentPlayer() )
   {
-    //messageParts << I18N_NOOP("You are not the owner of the first country: %1 !") << m_firstCountry->name();
+    messageParts << I18N_NOOP("You are not the owner of the first country: %1 !") << m_firstCountry->name();
   }
   else if ( secondCountry->owner() != currentPlayer() )
   {
-    //messageParts << I18N_NOOP("You are not the owner of the second country: %1 !") << secondCountry->name();
+    messageParts << I18N_NOOP("You are not the owner of the second country: %1 !") << secondCountry->name();
   }
   else if (m_firstCountry == secondCountry)
   {
-    //messageParts << I18N_NOOP("You are trying to move armies from %1 to itself !") << m_firstCountry->name();
+    messageParts << I18N_NOOP("You are trying to move armies from %1 to itself !") << m_firstCountry->name();
   }
   else if (!m_firstCountry->communicateWith(secondCountry))
   {
-    /*messageParts 
+    messageParts
       << I18N_NOOP("%1 is not a neighbour of %2 !") 
       << secondCountry-> name() 
-      << m_firstCountry-> name();*/
+      << m_firstCountry-> name();
   }
   else 
   {
@@ -1859,11 +1861,11 @@ bool KGameWindow::isFightValid(const QPointF& point)
   }
   else if ( secondCountry->owner() == currentPlayer() )
   {
-    //messageParts << I18N_NOOP("You are the owner of the second country: %1 !") << secondCountry->name();
+    messageParts << I18N_NOOP("You are the owner of the second country: %1 !") << secondCountry->name();
   }
   else if (m_firstCountry == secondCountry)
   {
-    //messageParts << I18N_NOOP("You are trying to move armies from %1 to itself !") << m_firstCountry->name();
+    messageParts << I18N_NOOP("You are trying to move armies from %1 to itself !") << m_firstCountry->name();
   }
   else if (!m_firstCountry->communicateWith(secondCountry))
   {
@@ -1874,8 +1876,8 @@ bool KGameWindow::isFightValid(const QPointF& point)
   }
   else 
   {
-    	messageParts << I18N_NOOP("Ready to fight !");
-	res = true;
+    messageParts << I18N_NOOP("Ready to fight !");
+    res = true;
   }
   broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
   return res;    
@@ -2442,11 +2444,11 @@ bool KGameWindow::nextPlayerNormal()
   else
   {
     QPixmap pm = currentPlayer()->getFlag()->image(0);
-   /* KMessageParts messageParts;
+    KMessageParts messageParts;
     messageParts 
       << pm
       << I18N_NOOP("%1, it is up to you.") << currentPlayer()->name();
-    broadcastChangeItem(messageParts, ID_STATUS_MSG2);*/
+    broadcastChangeItem(messageParts, ID_STATUS_MSG2);
     clear();
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
@@ -2535,25 +2537,25 @@ void KGameWindow::defense(unsigned int nb)
      return;
 
   m_secondCountry-> owner()-> setNbDefense(nb);
- // KMessageParts messageParts;
   
   QPixmap pmA = m_firstCountry-> owner()->getFlag()->image(0);
   QPixmap pmD = m_secondCountry-> owner()->getFlag()->image(0);
 
- /* messageParts 
-    << I18N_NOOP("Battle between <font color=\"red\">%1</font> (")
-    << m_firstCountry-> name()
-    << pmA
-    << I18N_NOOP("%1) <font color=\"red\">with %2 armies</font> and <font color=\"blue\">%3</font> (")
-    << m_firstCountry->owner()->name()
-    << QString::number(currentPlayer()-> getNbAttack())
-    << m_secondCountry-> name()
-    << pmD
-    << I18N_NOOP("%1) <font color=\"blue\">with %2 armies</font>.") 
-    << m_secondCountry->owner()->name()
-    << QString::number(nb);
+  KMessageParts messageParts;
+  messageParts << I18N_NOOP("Battle ongoing.");
+//     << I18N_NOOP("Battle between <font color=\"red\">%1</font> (")
+//     << m_firstCountry-> name()
+//     << pmA
+//     << I18N_NOOP("%1) <font color=\"red\">with %2 armies</font> and <font color=\"blue\">%3</font> (")
+//     << m_firstCountry->owner()->name()
+//     << QString::number(currentPlayer()-> getNbAttack())
+//     << m_secondCountry-> name()
+//     << pmD
+//     << I18N_NOOP("%1) <font color=\"blue\">with %2 armies</font>.") 
+//     << m_secondCountry->owner()->name()
+//     << QString::number(nb);
 
-  broadcastChangeItem(messageParts, ID_NO_STATUS_MSG);*/
+  broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
 
   if (m_firstCountry-> owner() && m_firstCountry-> owner()-> getFlag())
   {
@@ -2656,21 +2658,22 @@ void KGameWindow::invasionFinished()
  //KMessageParts messageParts;
 
   QPixmap pm = currentPlayer()->getFlag()->image(0);
- /* messageParts 
+  KMessageParts messageParts;
+  messageParts
     << pm 
     << I18N_NOOP("%1, it is up to you.") << currentPlayer()->name();
-  broadcastChangeItem(messageParts, ID_STATUS_MSG2);*/
+  broadcastChangeItem(messageParts, ID_STATUS_MSG2);
 }
         
 void KGameWindow::shiftFinished()
 {
   displayNormalGameButtons();
   QPixmap pm = currentPlayer()->getFlag()->image(0);
- /* KMessageParts messageParts;
+  KMessageParts messageParts;
   messageParts 
     << pm 
     << I18N_NOOP("%1, it is up to you.") << currentPlayer()->name();
-  broadcastChangeItem(messageParts, ID_STATUS_MSG2);*/
+  broadcastChangeItem(messageParts, ID_STATUS_MSG2);
   slotNextPlayer();
 }
 
@@ -2688,12 +2691,12 @@ void KGameWindow::cancelAction()
 
 displayNormalGameButtons();
 
-/*KMessageParts messageParts;
+KMessageParts messageParts;
   QPixmap pm = currentPlayer()->getFlag()->image(0);
   messageParts
     << pm 
     << I18N_NOOP("%1, it is up to you.") << currentPlayer()->name();
-  broadcastChangeItem(messageParts, ID_STATUS_MSG2);*/
+  broadcastChangeItem(messageParts, ID_STATUS_MSG2);
 }
 
 void KGameWindow::cancelShiftSource()
@@ -2893,11 +2896,11 @@ void KGameWindow::actionRecyclingFinished()
       m_theWorld-> getCountries().at(i)-> nbAddedArmies(0);
     }
     QPixmap pm = currentPlayer()->getFlag()->image(0);
-  /*  KMessageParts messageParts;
+    KMessageParts messageParts;
     messageParts 
       << pm
       << I18N_NOOP("%1, it is up to you.") << currentPlayer()->name();
-    broadcastChangeItem(messageParts, ID_STATUS_MSG2);*/
+    broadcastChangeItem(messageParts, ID_STATUS_MSG2);
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
@@ -2981,7 +2984,7 @@ void KGameWindow::explain()
   broadcastChangeItem(message0Parts, ID_NO_STATUS_MSG);
 
   KMessageParts message1Parts;
-  message1Parts << I18N_NOOP("All commands are issued through changing buttons and drag & drop.");
+  message1Parts << I18N_NOOP("Attacks and moves are issued through drag & drop between neighbour countries.");
   broadcastChangeItem(message1Parts, ID_NO_STATUS_MSG);
 
   KMessageParts message2Parts;

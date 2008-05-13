@@ -26,6 +26,7 @@ ranklin Street, Fifth Floor, Boston, MA
 #include <kaboutapplicationdialog.h>
 #include <ktoolbar.h>
 
+#include "GameLogic/KMessageParts.h"
 #include "GameLogic/gameautomaton.h"
 #include "GameLogic/country.h"
 #include "GameLogic/onu.h"
@@ -88,7 +89,7 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
       const Player* player = mouseLocalisation-> owner();
       if (player)
       {
-        status1Text = i18n("%1 belongs to %2. %3 armies",countryName,player->name(),mouseLocalisation->nbArmies());
+        status1Text = i18n("%1 belongs to %2. %3 armies.",countryName,player->name(),mouseLocalisation->nbArmies());
       }
 
       statusBar()-> changeItem(status1Text, ID_STATUS_MSG);
@@ -571,6 +572,8 @@ void KGameWindow::slotMovingArmiesArrived(AnimSpritesGroup* sprites)
     m_animSpritesGroups.removeAt(index);
   }
   delete sprites;
+  KMessageParts messageParts;
+  broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
 }
 
 void KGameWindow::slotBring(AnimSprite* /*sprite*/)

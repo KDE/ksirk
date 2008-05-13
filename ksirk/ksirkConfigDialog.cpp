@@ -60,7 +60,7 @@ KsirkConfigurationDialog::KsirkConfigurationDialog (
   m_widget->setupUi(w);
 
  
-  addPage( w, i18n("Preferences"), "preferences", i18n("Preferences"), false); 
+  addPage( w, i18n("Preferences"), "games-config-options"/*, i18n("Preferences"), false*/);
   // below, connection to activate the apply button
 //   connect(m_widget->reloadOnChangeMode, SIGNAL(clicked(int)), this, SLOT(settingChanged(int)));
   connect(m_widget->armiesNumbers, SIGNAL(stateChanged (int)), this, SIGNAL(armiesNumberShowingChanged(int)));

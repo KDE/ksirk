@@ -1,16 +1,14 @@
 Before KDE4.1:
-  * max size of the window limited by the map size
-  * status bar coherence (current player for example and number of armies to place)
-  * missing status bar information
-  * better access to the contextual help (add to toolbar and context menu)
-  * change size of "will display goal" dialog (kdelibs bug?)
-  * sprites should be enhanced
   * resize bug in network mode
-  * set an icon to the preferences dialog page
   * still some sprites handling bugs in arena mode
-  * [ONGOING] don't show context help for computer players
+  * [REPORT BUG] change size of "will display goal" dialog (kdelibs bug?)
+  * [HELP NEEDED] sprites should be enhanced
+  * [HELP NEEDED] max size of the window limited by the map size
   * [HELP NEEDED] correct the layout of initial window (with main menu) when
     resizing
+  * [DONE] set an icon to the preferences dialog page
+  * [DONE] status bar coherence (current player for example and number of armies to place)
+  * [DONE] missing status bar information
   * [DONE] hide/show or disable/enable the next player button in the toolbar
   * [DONE] solve the warning "Class AIPlayer inherits from two QObject subclasses Player and QThread. This is not supported!" by making the thread a member
   * [DONE] crash when loading the target player when the goal is to destroy it

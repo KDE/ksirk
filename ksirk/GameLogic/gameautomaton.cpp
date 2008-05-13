@@ -2225,6 +2225,8 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
       defCountry = this->game()->secondCountry();
       m_game->displayDefenseWindow();
     }
+    messageParts << I18N_NOOP("%1 chooses its defense") << playerName;
+    m_game->broadcastChangeItem(messageParts, ID_STATUS_MSG2);
     break;
   case ActionDefense:
     stream >> nbArmies;
