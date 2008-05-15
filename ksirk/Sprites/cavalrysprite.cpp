@@ -21,9 +21,23 @@
 
 #include "cavalrysprite.h"
 
+#include "skinSpritesData.h"
+
 #include "GameLogic/country.h"
 
 namespace Ksirk {
+
+CavalrySprite::CavalrySprite(double zoom,
+                              BackGnd* aBackGnd,
+                              unsigned int visibility) :
+                              ArmySprite(
+        "cavalry",
+        Sprites::SkinSpritesData::single().intData("cavalry-width"),
+        Sprites::SkinSpritesData::single().intData("cavalry-height"),
+        Sprites::SkinSpritesData::single().intData("cavalry-frames"),
+        Sprites::SkinSpritesData::single().intData("cavalry-versions"), zoom, aBackGnd, visibility)
+{
+}
 
 CavalrySprite::CavalrySprite(const QString &svgid,
                               unsigned int width,

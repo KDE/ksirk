@@ -19,6 +19,7 @@
 /*  begin                : Wed Jul 18 2001  */
 
 #include "animsprite.h"
+#include "skinSpritesData.h"
 #include "backgnd.h"
 #include "kgamewin.h"
 #include "ksirksettings.h"
@@ -136,6 +137,16 @@ void AnimSprite::sequenceConstruction()
   setFrame(0);
 }
 
+void AnimSprite::changeSequence(const QString &id)
+{
+  kDebug() << (void*)this << id <<endl;
+  changeSequence(
+          Sprites::SkinSpritesData::single().strData(id+"-id"),
+          Sprites::SkinSpritesData::single().intData(id+"-width"),
+          Sprites::SkinSpritesData::single().intData(id+"-height"),
+          Sprites::SkinSpritesData::single().intData(id+"-frames"),
+          Sprites::SkinSpritesData::single().intData(id+"-versions"));
+}
 void AnimSprite::changeSequence(const QString &svgid,
                                  unsigned int width,
                                  unsigned int height,

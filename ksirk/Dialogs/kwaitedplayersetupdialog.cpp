@@ -78,7 +78,6 @@ void KWaitedPlayerSetupDialog::slotOK()
 void KWaitedPlayerSetupDialog::fillWaitedPlayersCombo()
 {
   kDebug() << "Filling nations combo" << endl;
-  KStandardDirs *m_dirs = KGlobal::dirs();
 
   std::vector<PlayerMatrix>::iterator it, it_end;
   it = m_automaton->game()->waitedPlayers().begin();

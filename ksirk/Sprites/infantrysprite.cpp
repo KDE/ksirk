@@ -20,10 +20,25 @@
  ***************************************************************************/
 
 #include "infantrysprite.h"
+#include "skinSpritesData.h"
 
 #include "GameLogic/country.h"
 
 namespace Ksirk {
+
+InfantrySprite::InfantrySprite(double zoom,
+                              BackGnd* aBackGnd,
+                              unsigned int visibility) :
+                              ArmySprite(
+        "infantry",
+        Sprites::SkinSpritesData::single().intData("infantry-width"),
+        Sprites::SkinSpritesData::single().intData("infantry-height"),
+        Sprites::SkinSpritesData::single().intData("infantry-frames"),
+        Sprites::SkinSpritesData::single().intData("infantry-versions"),
+        zoom, aBackGnd, visibility)
+{
+}
+
 
   InfantrySprite::InfantrySprite(const QString &svgid,
                                   unsigned int width,

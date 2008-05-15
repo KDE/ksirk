@@ -39,16 +39,30 @@ class CannonSprite : public ArmySprite
 {
 public:
   /**
-    * This constructor allows to create a new @ref CannonSprite whose images are
-    * taken from the given file name with the given number of frames and
-    * number of look directions
-    * @param svgid The id of the SVG element from which to load images
+    * This simplified constructor allows to create a new @ref CannonSpritewith
+    * default values for svg pool id and skin elements names
+    * @param zoom The current zoom factor
     * @param aBackGnd The background giving info about the world geometry and
     * access to the underlying QGraphicsScene
-    * @param nbFrames The number of different frames in this sprite animation, 
+    * @param visibility Measures how much this sprite is visible. It gives its
+    * Z value on the graphics scene.
+    */
+  CannonSprite(double zoom,
+                BackGnd* aBackGnd,
+                unsigned int visibility = 200);
+
+  /**
+    * This constructor allows to create a new @ref CannonSprite whose images are
+    * taken from the given svg pool element with the given number of frames and
+    * number of look directions
+    * @param svgid The id of the SVG element from which to load images
+    * @param nbFrames The number of different frames in this sprite animation,
     * thus the number of columns in the sprite image
-    * @param nbDirs The number of different views on the sprite, 
+    * @param nbDirs The number of different views on the sprite,
     * thus the number of rows in the sprite image
+    * @param zoom The current zoom factor
+    * @param aBackGnd The background giving info about the world geometry and
+    * access to the underlying QGraphicsScene
     * @param visibility Measures how much this sprite is visible. It gives its
     * Z value on the graphics scene.
     */

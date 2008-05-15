@@ -134,6 +134,13 @@ public:
   void turnTowardDestination();
 
   /**
+    * Simplified changing of the images sequence of the sprite. Use default
+    * values built from the given id
+    * @param id The base id from which skin data is accessed
+    */
+  void changeSequence(const QString &id);
+
+  /**
     * Change the images sequence of the sprite.
     * @param imgPath The path to the SVG file containing the sprite's new images
     * @param newNbFrames The number of frames of the sprite in the new image

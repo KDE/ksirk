@@ -20,6 +20,7 @@
 #define KSIRKFLAGSPRITE_H
 
 #include "animsprite.h"
+#include "skinSpritesData.h"
 
 namespace Ksirk {
 
@@ -33,7 +34,29 @@ class FlagSprite : public AnimSprite
 {
 public:
   /**
-    * This constructor allows to create a new @ref AnimSprite whose images are
+    * This simplified constructor allows to create a new @ref FlagSprite with
+    * default values for skin elements names
+    * @param svgid The id of the SVG element from which to load images, usualy
+    * the flag's country id
+    * @param zoom The current zoom factor
+    * @param aBackGnd The background giving info about the world geometry and
+    * access to the underlying QGraphicsScene
+    */
+  FlagSprite(const QString &svgid,
+                double zoom,
+                BackGnd* aBackGnd) :
+              AnimSprite(svgid,
+                  Sprites::SkinSpritesData::single().intData("flag-width"),
+                  Sprites::SkinSpritesData::single().intData("flag-height"),
+                  Sprites::SkinSpritesData::single().intData("flag-frames"),
+                  Sprites::SkinSpritesData::single().intData("flag-versions"),
+                  zoom, aBackGnd)
+  {
+    setAnimated();
+  }
+
+  /**
+    * This constructor allows to create a new @ref FlagSprite whose images are
     * taken from the given file name with the given number of frames and
     * number of look directions
     * @param svgid The id of the SVG element from which to load images

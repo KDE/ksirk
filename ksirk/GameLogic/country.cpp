@@ -104,32 +104,29 @@ void Country::reset()
 
 void Country::createArmiesSprites()
 {
-  kDebug();
+  kDebug() << name() << nbArmies();
   BackGnd* bg = m_automaton->game()->backGnd();
   
   unsigned int armies = nbArmies();
   clearAllSprites();
   int i = 0;
-  kDebug() << "adding cannons";
   while (armies >= 10) // Ajout des sprites de canon
   {
-    CannonSprite *sprite = new CannonSprite(
-        "cannon",
-        Sprites::SkinSpritesData::single().intData("cannon-width"),
-        Sprites::SkinSpritesData::single().intData("cannon-height"),
-        Sprites::SkinSpritesData::single().intData("cannon-frames"),
-        Sprites::SkinSpritesData::single().intData("cannon-versions"),
-        bg->onu()->zoom(),
-        bg);
+    kDebug() << "  cannon" << i << armies;
+    CannonSprite *sprite = new CannonSprite(bg->onu()->zoom(), bg);
     sprite-> setDestination(NULL);             // Sprite immobile
-    if (m_automaton->game()->currentWidgetType() == KGameWindow::arenaType) {
+    if (m_automaton->game()->currentWidgetType() == KGameWindow::arenaType)
+    {
       sprite-> setPos(
         m_pointCannon.x()*bg->onu()->zoom(),
         (m_pointCannon.y()+(1-2*(i%2))*(Sprites::SkinSpritesData::single().intData("cannon-height")+8)*((i+1)/2))*bg->onu()->zoom());
-      if (this->id() == m_automaton->game()->secondCountry()->id()) {
+      if (this->id() == m_automaton->game()->secondCountry()->id())
+      {
         sprite->setLookLeft();
       }
-    } else {
+    }
+    else
+    {
       sprite-> setPos((m_pointCannon.x()+5*i)*bg->onu()->zoom(),(m_pointCannon.y()+5*i)*bg->onu()->zoom());
     }
     m_spritesCannons.append(sprite);
@@ -140,13 +137,8 @@ void Country::createArmiesSprites()
   kDebug() << "adding cavalries" << armies;
   while (armies >= 5) // Adding the cavalryman  sprites
   {
-    kDebug() << i << armies;
-    CavalrySprite *sprite = new CavalrySprite("cavalry",
-        Sprites::SkinSpritesData::single().intData("cavalry-width"),
-        Sprites::SkinSpritesData::single().intData("cavalry-height"),
-        Sprites::SkinSpritesData::single().intData("cavalry-frames"),
-        Sprites::SkinSpritesData::single().intData("cavalry-versions"),
-        bg->onu()->zoom(), bg);
+    kDebug() << "  cavalry" << i << armies;
+    CavalrySprite *sprite = new CavalrySprite(bg->onu()->zoom(), bg);
     sprite-> setDestination(0);             // Sprite immobile
     if (m_automaton->game()->currentWidgetType() == KGameWindow::arenaType)
     {
@@ -173,23 +165,21 @@ void Country::createArmiesSprites()
   kDebug() << "adding infantries";
   while (armies > 0) // Ajout des sprites de fantassin
   {
-    InfantrySprite *sprite = new InfantrySprite(
-        "infantry",
-        Sprites::SkinSpritesData::single().intData("infantry-width"),
-        Sprites::SkinSpritesData::single().intData("infantry-height"),
-        Sprites::SkinSpritesData::single().intData("infantry-frames"),
-        Sprites::SkinSpritesData::single().intData("infantry-versions"),
-        bg->onu()->zoom(),
-        bg);
+    kDebug() << "  infantry" << i << armies;
+    InfantrySprite *sprite = new InfantrySprite(bg->onu()->zoom(), bg);
     sprite-> setDestination(NULL);             // Sprite immobile
-    if (m_automaton->game()->currentWidgetType() == KGameWindow::arenaType) {
+    if (m_automaton->game()->currentWidgetType() == KGameWindow::arenaType)
+    {
       sprite-> setPos(
         m_pointInfantry.x()*bg->onu()->zoom(),
         (m_pointInfantry.y()+(1-2*(i%2))*(Sprites::SkinSpritesData::single().intData("infantry-height")+8)*((i+1)/2))*bg->onu()->zoom());
-      if (this->id() == m_automaton->game()->secondCountry()->id()) {
+      if (this->id() == m_automaton->game()->secondCountry()->id())
+      {
         sprite->setLookLeft();
       }
-    } else {
+    }
+    else
+    {
       sprite-> setPos((m_pointInfantry.x()+5*i)*bg->onu()->zoom(),(m_pointInfantry.y()+5*i)*bg->onu()->zoom());
     }
     m_spritesInfantry.append(sprite);
@@ -234,12 +224,7 @@ void Country::flag(const QString& theFlagFileName, BackGnd *backGnd)
     m_flag = 0;
   }
   
-  m_flag = new FlagSprite(theFlagFileName,
-                           Sprites::SkinSpritesData::single().intData("flag-width"),
-                           Sprites::SkinSpritesData::single().intData("flag-height"),
-                           Sprites::SkinSpritesData::single().intData("flag-frames"), 
-      Sprites::SkinSpritesData::single().intData("flag-versions"),
-                           backGnd->onu()->zoom(),backGnd);
+  m_flag = new FlagSprite(theFlagFileName, backGnd->onu()->zoom(), backGnd);
   m_flag-> setDestination(NULL);
   m_flag-> setPos(m_pointFlag.x()*backGnd->onu()->zoom(),m_pointFlag.y()*backGnd->onu()->zoom());
   m_flag-> setZValue(10);

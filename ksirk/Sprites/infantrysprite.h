@@ -39,6 +39,19 @@ class InfantrySprite : public ArmySprite
 {
 public:
   /**
+    * This simplified constructor allows to create a new @ref InfantrySprite with
+    * default values for svg pool id and skin elements names
+    * @param zoom The current zoom factor
+    * @param aBackGnd The background giving info about the world geometry and
+    * access to the underlying QGraphicsScene
+    * @param visibility Measures how much this sprite is visible. It gives its
+    * Z value on the graphics scene.
+    */
+  InfantrySprite(double zoom,
+                BackGnd* aBackGnd,
+                unsigned int visibility = 200);
+
+  /**
     * This constructor allows to create a new @ref AnimSprite whose images are
     * taken from the given file name with the given number of frames and
     * number of look directions

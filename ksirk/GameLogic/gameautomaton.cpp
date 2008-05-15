@@ -2046,7 +2046,8 @@ void GameAutomaton::displayGoals()
     {
       KMessageBox::information(
           game(),
-          i18n("%1, your goal will be displayed. Please make sure that no other player can see it !",(*it)->name()),
+          i18n("%1, your goal will be displayed. Please<br>"
+               "make sure that no other player can see it !",(*it)->name()),
           i18n("KsirK - Displaying Goal"));
       dynamic_cast<Player*>(*it)->goal().show();
     }
@@ -2252,8 +2253,6 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   case TerminateAttackSequence:
     {
       // update country display
-      m_game->firstCountry()-> createArmiesSprites();
-      m_game->secondCountry()-> createArmiesSprites();
       if (m_game->terminateAttackSequence())
       {
         // Re-display the world view
@@ -2303,6 +2302,8 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
           state(WAIT);
         }
       }
+      m_game->firstCountry()-> createArmiesSprites();
+      m_game->secondCountry()-> createArmiesSprites();
     }
     break;
   case DisplayInvasionButtons:

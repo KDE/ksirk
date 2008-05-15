@@ -20,10 +20,24 @@
  ***************************************************************************/
 
 #include "cannonsprite.h"
+#include "skinSpritesData.h"
 
 #include "GameLogic/country.h"
 
 namespace Ksirk {
+
+CannonSprite::CannonSprite(double zoom,
+                              BackGnd* aBackGnd,
+                              unsigned int visibility) :
+                              ArmySprite(
+        "cannon",
+        Sprites::SkinSpritesData::single().intData("cannon-width"),
+        Sprites::SkinSpritesData::single().intData("cannon-height"),
+        Sprites::SkinSpritesData::single().intData("cannon-frames"),
+        Sprites::SkinSpritesData::single().intData("cannon-versions"), zoom, aBackGnd, visibility)
+{
+}
+
 
 
   CannonSprite::CannonSprite(const QString &svgid,
