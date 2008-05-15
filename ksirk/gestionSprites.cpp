@@ -359,9 +359,11 @@ void KGameWindow::determinePointArriveeForArena(
     QPointF& pointArriveeAttaquant,
     QPointF& pointArriveeDefenseur)
 {
-  kDebug() << m_firstCountry->name() << "("<<(void*)m_firstCountry<<")" << m_secondCountry->name() << "("<<(void*)m_secondCountry<<")";
-  kDebug() << attackingCountry->name() << "("<<(void*)attackingCountry<<")" << defendingCountry->name() << "("<<(void*)defendingCountry<<")"
-    << relative << pointArriveeAttaquant << pointArriveeDefenseur;
+  kDebug() << m_firstCountry->name() << "("<<(void*)m_firstCountry<<")"
+      << m_secondCountry->name() << "("<<(void*)m_secondCountry<<")";
+  kDebug() << attackingCountry->name() << "("<<(void*)attackingCountry<<")"
+      << defendingCountry->name() << "("<<(void*)defendingCountry<<")"
+      << relative << pointArriveeAttaquant << pointArriveeDefenseur;
   //  - attacker's flag point
   qreal pointFlagAttaquantX = attackingCountry-> pointFlag().x()*m_theWorld->zoom();
 

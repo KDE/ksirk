@@ -122,7 +122,7 @@ namespace GameLogic
 
       Ksirk::GameLogic::ONU * world;
     
-      QList<QLabel*> * rightContents;
+      QList<QLabel*> rightContents;
 
       QLabel * flag1;
 

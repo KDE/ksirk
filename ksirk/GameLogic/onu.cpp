@@ -324,6 +324,34 @@ ONU::ONU(GameAutomaton* automaton,
 //    kDebug() << "OUT ONU::ONU" << endl;
 }
 
+ONU::~ONU()
+{
+  delete m_timerFast;
+
+  std::vector<Country*>::iterator countriesIt, countriesIt_end;
+  countriesIt = countries.begin(); countriesIt_end = countries.end();
+  for (; countriesIt != countriesIt_end; countriesIt++)
+  {
+    delete *countriesIt;
+  }
+
+  std::vector<Nationality*>::iterator nationalitiesIt, nationalitiesIt_end;
+  nationalitiesIt = nationalities.begin(); nationalitiesIt_end = nationalities.end();
+  for (; nationalitiesIt != nationalitiesIt_end; nationalitiesIt++)
+  {
+    delete *nationalitiesIt;
+  }
+  
+  std::vector<Continent*>::iterator continentsIt, continentsIt_end;
+  continentsIt = m_continents.begin(); continentsIt_end = m_continents.end();
+  for (; continentsIt != continentsIt_end; continentsIt++)
+  {
+    delete *continentsIt;
+  }
+
+}
+
+
 /** This method returns a pointer to the country that contains the point (x,y).
 If there is no country at (x,y), the functions returns 0. */
 Country* ONU::countryAt(const QPointF& point)

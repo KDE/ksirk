@@ -808,8 +808,8 @@ GameAutomaton::GameState GameAutomaton::run()
     }*/
     else if (event == "actionLButtonDown")
     {
-	if (m_game->firstCountryAt(point))
-	  state(WAIT1);
+      if (m_game->firstCountryAt(point))
+        state(WAIT1);
     }
     else
     {

@@ -1,11 +1,12 @@
 Before KDE4.1:
   * resize bug in network mode
-  * still some sprites handling bugs in arena mode
-  * [REPORT BUG] change size of "will display goal" dialog (kdelibs bug?)
+  * [BUG 162033] change size of "will display goal" dialog (kdelibs bug?)
   * [HELP NEEDED] sprites should be enhanced
   * [HELP NEEDED] max size of the window limited by the map size
   * [HELP NEEDED] correct the layout of initial window (with main menu) when
     resizing
+  * [DONE] crash on quit after using the arena
+  * [DONE] still some sprites handling bugs in arena mode
   * [DONE] set an icon to the preferences dialog page
   * [DONE] status bar coherence (current player for example and number of armies to place)
   * [DONE] missing status bar information

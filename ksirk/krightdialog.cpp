@@ -46,7 +46,7 @@ namespace Ksirk
    mainLayout(new QGridLayout(this)),
    m_parentWidget(parent),
    world(world),
-   rightContents(new QList<QLabel*>()),
+   rightContents(),
    flag1(0),
    flag2(0),
    milieu(0),
@@ -110,30 +110,30 @@ namespace Ksirk
       QString units = QString::number(world->countryAt(countryPoint)->nbArmies());
       QString owner = world->countryAt(countryPoint)->owner()->name();
 
-      rightContents->at(0)->setText(i18n("<b>Nationality:</b>"));
-      rightContents->at(1)->setText(i18n("<b>Continent:</b> %1", continent));
-      rightContents->at(2)->setText(i18n("<b>Country:</b> %1", pays));
+      rightContents.at(0)->setText(i18n("<b>Nationality:</b>"));
+      rightContents.at(1)->setText(i18n("<b>Continent:</b> %1", continent));
+      rightContents.at(2)->setText(i18n("<b>Country:</b> %1", pays));
 
-      rightContents->at(3)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));rightContents->at(3)->setFixedSize(35,35);
-      rightContents->at(6)->setText(units);
-      rightContents->at(4)->setText(i18n("<b>Owner:</b> %1", owner));
-      rightContents->at(5)->setText(i18n("<b><u>Country details</u></b>"));
+      rightContents.at(3)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));rightContents.at(3)->setFixedSize(35,35);
+      rightContents.at(6)->setText(units);
+      rightContents.at(4)->setText(i18n("<b>Owner:</b> %1", owner));
+      rightContents.at(5)->setText(i18n("<b><u>Country details</u></b>"));
 
       flag1->setPixmap(0);
       flag2->setPixmap(0);
       flag1->setPixmap(picture);
       flag1->setFixedSize(picture.width(),picture.height());
 
-      drap->addWidget(rightContents->at(0));
+      drap->addWidget(rightContents.at(0));
       drap->addWidget(flag1);
-      mainLayout->addWidget(rightContents->at(5),0,0,Qt::AlignLeft);
-      mainLayout->addWidget(rightContents->at(1),2,0,Qt::AlignLeft);
-      mainLayout->addWidget(rightContents->at(2),3,0,Qt::AlignLeft);
+      mainLayout->addWidget(rightContents.at(5),0,0,Qt::AlignLeft);
+      mainLayout->addWidget(rightContents.at(1),2,0,Qt::AlignLeft);
+      mainLayout->addWidget(rightContents.at(2),3,0,Qt::AlignLeft);
 
-      mainLayout->addWidget(rightContents->at(4),5,0,Qt::AlignLeft);
+      mainLayout->addWidget(rightContents.at(4),5,0,Qt::AlignLeft);
        
-      unit->addWidget(rightContents->at(3));
-      unit->addWidget(rightContents->at(6));
+      unit->addWidget(rightContents.at(3));
+      unit->addWidget(rightContents.at(6));
       
       mainLayout->addLayout(unit,4,0,Qt::AlignLeft);
       mainLayout->addLayout(drap,1,0,Qt::AlignLeft);
@@ -187,9 +187,9 @@ namespace Ksirk
 
       milieu2 = new QWidget(this);
       milieu2->setAutoFillBackground(true);
-      QPalette * tempP = new QPalette(milieu2->palette());
-      tempP->setColor(QPalette::Window,QColor(190,190,190));
-      milieu2->setPalette(*tempP);
+      QPalette tempP(milieu2->palette());
+      tempP.setColor(QPalette::Window,QColor(190,190,190));
+      milieu2->setPalette(tempP);
       milieu2->setFixedHeight(100);
 
       milieu2->setLayout(tp);
@@ -211,48 +211,48 @@ namespace Ksirk
       picture1 = attaker->owner()->getFlag()->image(0);
       picture2 = defender->owner()->getFlag()->image(0);
       
-      rightContents->at(0)->setText("<u><b>"+pays_A+"</b></u>");
+      rightContents.at(0)->setText("<u><b>"+pays_A+"</b></u>");
       flag1->setPixmap(picture1);
-      rightContents->at(1)->setText(I18N_NOOP("<i>("+owner_A+")</i> "));
+      rightContents.at(1)->setText(I18N_NOOP("<i>("+owner_A+")</i> "));
       
-      rightContents->at(2)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
-      rightContents->at(2)->setFixedSize(35,35);
-      rightContents->at(3)->setText("<b>"+nb_units_A+"</b>");
+      rightContents.at(2)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
+      rightContents.at(2)->setFixedSize(35,35);
+      rightContents.at(3)->setText("<b>"+nb_units_A+"</b>");
 
-      rightContents->at(4)->setText(i18n("<font color=\"red\">Attack</font> with %1 armies.<br>", nb_A));
+      rightContents.at(4)->setText(i18n("<font color=\"red\">Attack</font> with %1 armies.<br>", nb_A));
 
       
-      rightContents->at(5)->setText(I18N_NOOP("<u><b>"+pays_D+"</b></u> "));
+      rightContents.at(5)->setText(I18N_NOOP("<u><b>"+pays_D+"</b></u> "));
       flag2->setPixmap(picture2);
-      rightContents->at(6)->setText(I18N_NOOP("<i>("+owner_D+")</i> "));
+      rightContents.at(6)->setText(I18N_NOOP("<i>("+owner_D+")</i> "));
       
-      rightContents->at(7)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
-      rightContents->at(7)->setFixedSize(35,35);
-      rightContents->at(8)->setText(I18N_NOOP("<b>"+nb_units_D+"</b> "));
+      rightContents.at(7)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
+      rightContents.at(7)->setFixedSize(35,35);
+      rightContents.at(8)->setText(I18N_NOOP("<b>"+nb_units_D+"</b> "));
 
-      rightContents->at(9)->setText(i18n("<font color=\"blue\">Defend</font> with %1 armies.<br>", nb_D));
+      rightContents.at(9)->setText(i18n("<font color=\"blue\">Defend</font> with %1 armies.<br>", nb_D));
 
-      box1->addWidget(rightContents->at(0));
+      box1->addWidget(rightContents.at(0));
       box1->addWidget(flag1);
       
-      box2->addWidget(rightContents->at(2));
-      box2->addWidget(rightContents->at(3));
+      box2->addWidget(rightContents.at(2));
+      box2->addWidget(rightContents.at(3));
       
-      box3->addWidget(rightContents->at(5));
+      box3->addWidget(rightContents.at(5));
       box3->addWidget(flag2);
 
-      box4->addWidget(rightContents->at(7));
-      box4->addWidget(rightContents->at(8));
+      box4->addWidget(rightContents.at(7));
+      box4->addWidget(rightContents.at(8));
 
       hautGrid->addLayout(box1,0,0,Qt::AlignCenter);
-      hautGrid->addWidget(rightContents->at(1),1,0,Qt::AlignCenter);
+      hautGrid->addWidget(rightContents.at(1),1,0,Qt::AlignCenter);
       hautGrid->addLayout(box2,2,0,Qt::AlignLeft);
-      hautGrid->addWidget(rightContents->at(4),3,0,Qt::AlignLeft);
+      hautGrid->addWidget(rightContents.at(4),3,0,Qt::AlignLeft);
       
       basGrid->addLayout(box3,0,0,Qt::AlignCenter);
-      basGrid->addWidget(rightContents->at(6),1,0,Qt::AlignCenter);
+      basGrid->addWidget(rightContents.at(6),1,0,Qt::AlignCenter);
       basGrid->addLayout(box4,2,0,Qt::AlignLeft);
-      basGrid->addWidget(rightContents->at(9),3,0,Qt::AlignLeft);
+      basGrid->addWidget(rightContents.at(9),3,0,Qt::AlignLeft);
 
       mainLayout->addWidget(haut,0,0);
       mainLayout->addWidget(milieu2,1,0);
@@ -310,21 +310,21 @@ namespace Ksirk
       btValidWidget->setLayout(btValidLayout);
 
 
-      rightContents->at(0)->setText(I18N_NOOP("<u><b>"+player->name()+"</b></u> "));
+      rightContents.at(0)->setText(I18N_NOOP("<u><b>"+player->name()+"</b></u> "));
       flag1->setPixmap(player->getFlag()->image(0));
 
-      rightContents->at(1)->setText(i18n("%1 armies to place", nbAvailArmies));
+      rightContents.at(1)->setText(i18n("%1 armies to place", nbAvailArmies));
 
-      title->addWidget(rightContents->at(0));
+      title->addWidget(rightContents.at(0));
       title->addWidget(flag1);
 
 //       if (nbAvailArmies > 0 || game->getState() == GameLogic::GameAutomaton::INTERLUDE)
 //       {
         recycleLayout->addLayout(title,0,0,Qt::AlignCenter);
-        recycleLayout->addWidget(rightContents->at(1),1,0,Qt::AlignCenter);
+        recycleLayout->addWidget(rightContents.at(1),1,0,Qt::AlignCenter);
 
-        recycleLayout->addWidget(rightContents->at(2),2,0,Qt::AlignCenter);
-        recycleLayout->addWidget(rightContents->at(3),3,0,Qt::AlignCenter);
+        recycleLayout->addWidget(rightContents.at(2),2,0,Qt::AlignCenter);
+        recycleLayout->addWidget(rightContents.at(3),3,0,Qt::AlignCenter);
 
         recycleLayout->addWidget(btRecycleWidget,4,0,Qt::AlignCenter);
         recycleLayout->addWidget(btValidWidget,5,0,Qt::AlignCenter);
@@ -367,11 +367,11 @@ namespace Ksirk
 
       if (recyclePhase)
       {
-        rightContents->at(0)->setText(i18n("<u><b>Change some<br>placements ?</b></u> "));
+        rightContents.at(0)->setText(i18n("<u><b>Change some<br>placements ?</b></u> "));
         flag1->hide();
-        rightContents->at(1)->setText(QString());
-        rightContents->at(2)->setText(QString());
-        rightContents->at(3)->setText(QString());
+        rightContents.at(1)->setText(QString());
+        rightContents.at(2)->setText(QString());
+        rightContents.at(3)->setText(QString());
 
         // show "redistribute" and "end redistribute" buttons
         if (!game->automaton()->allLocalPlayersComputer())
@@ -382,9 +382,9 @@ namespace Ksirk
       }
       else
       {
-        rightContents->at(1)->setText(i18n("%1 armies to place", nbAvailArmies));
-        rightContents->at(2)->setText("<b>"+country->name()+"</b>");
-        rightContents->at(3)->setText(i18n("<b>Armies: %1", country->nbArmies()));
+        rightContents.at(1)->setText(i18n("%1 armies to place", nbAvailArmies));
+        rightContents.at(2)->setText("<b>"+country->name()+"</b>");
+        rightContents.at(3)->setText(i18n("<b>Armies: %1", country->nbArmies()));
         if (nbAvailArmies > 0)
         {
           btValidWidget->hide();
@@ -412,9 +412,9 @@ namespace Ksirk
 
       milieu = new QWidget(this);
       milieu->setAutoFillBackground(true);
-      QPalette * tempP = new QPalette(milieu->palette());
-      tempP->setColor(QPalette::Window,QColor(190,190,190));
-      milieu->setPalette(*tempP);
+      QPalette tempP(milieu->palette());
+      tempP.setColor(QPalette::Window,QColor(190,190,190));
+      milieu->setPalette(tempP);
       milieu->setFixedHeight(100);
 
       QGridLayout * milieuGrid = new QGridLayout();
@@ -425,42 +425,42 @@ namespace Ksirk
 	  {
       	QLabel * de1 = new QLabel();
       	de1->setPixmap(game->getDice(KGameWindow::Red,A1));
-      	rightContents->insert(0,de1);deAtt->addWidget(de1);
+      	rightContents.insert(0,de1);deAtt->addWidget(de1);
 	  }
 	  if(A2!=0 || A2!=-1)
 	  {
       	QLabel * de2= new QLabel();
       	de2->setPixmap(game->getDice(KGameWindow::Red,A2));
-      	rightContents->insert(0,de2);deAtt->addWidget(de2);
+      	rightContents.insert(0,de2);deAtt->addWidget(de2);
 	  }
 	  if(A3!=0 || A3!=-1)
 	  {
       	QLabel * de3= new QLabel();
       	de3->setPixmap(game->getDice(KGameWindow::Red,A3));
-      	rightContents->insert(0,de3);deAtt->addWidget(de3);
+      	rightContents.insert(0,de3);deAtt->addWidget(de3);
 	  }
 	  if(D1!=0 || D1!=-1)
 	  {
       	QLabel * de4= new QLabel();
       	de4->setPixmap(game->getDice(KGameWindow::Blue,D1));
-      	rightContents->insert(0,de4);deDef->addWidget(de4);
+      	rightContents.insert(0,de4);deDef->addWidget(de4);
 	  }
 	  if(D2!=0 || D2!=-1)
 	  {
       	QLabel * de5= new QLabel();
       	de5->setPixmap(game->getDice(KGameWindow::Blue,D2));
-     	 rightContents->insert(0,de5);deDef->addWidget(de5);
+     	 rightContents.insert(0,de5);deDef->addWidget(de5);
 	  }
 	  QLabel * rLabelR = new QLabel(i18n("<font color=\"red\">loose armies: %1</font>", nbA));
-      rightContents->insert(0,rLabelR);
+      rightContents.insert(0,rLabelR);
 
 	  QLabel * rLabelB = new QLabel(i18n("<font color=\"blue\">loose armies: %1</font>", nbD));
-	  rightContents->insert(0,rLabelB);
+	  rightContents.insert(0,rLabelB);
     
-	  milieuGrid->addWidget(rightContents->at(1),0,0,Qt::AlignCenter);
+	  milieuGrid->addWidget(rightContents.at(1),0,0,Qt::AlignCenter);
 	  milieuGrid->addLayout(deAtt,1,0,Qt::AlignCenter);
 	  milieuGrid->addLayout(deDef,2,0,Qt::AlignCenter);
-	  milieuGrid->addWidget(rightContents->at(0),4,0,Qt::AlignCenter);
+	  milieuGrid->addWidget(rightContents.at(0),4,0,Qt::AlignCenter);
 
       milieu->setLayout(milieuGrid);
       mainLayout->addWidget(milieu,1,0);
@@ -479,7 +479,7 @@ namespace Ksirk
       removeListLabel();
       for (int i=0;i<nb;i++)
       {
-         rightContents->push_back(new QLabel());
+         rightContents.push_back(new QLabel());
       }
       clearLabel();
    }
@@ -487,9 +487,9 @@ namespace Ksirk
    void KRightDialog::removeListLabel()
    {
       kDebug();
-      while (rightContents->size() > 0) {
-        QLabel* label = rightContents->first();
-        rightContents->removeFirst();
+      while (rightContents.size() > 0) {
+        QLabel* label = rightContents.first();
+        rightContents.removeFirst();
         delete label;
       }
    }
@@ -497,19 +497,19 @@ namespace Ksirk
    void KRightDialog::clearLabel()
    {
       kDebug();
-      for (int i=0;i<rightContents->size();i++)
+      for (int i=0;i<rightContents.size();i++)
       {
-        rightContents->at(i)->setText("");
-        rightContents->at(i)->setPixmap(0);
+        rightContents.at(i)->setText("");
+        rightContents.at(i)->setPixmap(0);
       }
    }
 
    void KRightDialog::clearLayout()
    {
       kDebug();
-     while (rightContents->size() > 0) {
-       QLabel* obj = rightContents->first();
-       rightContents->removeFirst();
+     while (rightContents.size() > 0) {
+       QLabel* obj = rightContents.first();
+       rightContents.removeFirst();
        mainLayout->removeWidget(obj);
        delete obj;
      }

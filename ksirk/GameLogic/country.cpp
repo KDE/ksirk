@@ -81,7 +81,9 @@ Country::~Country()
 //   kDebug() << "Deleting country " << m_name << ", " << this << endl;
   if (m_flag)
   {
+    m_flag->hide();
     delete m_flag;
+    m_flag = 0;
   }
   delete m_renderer;
 }
@@ -93,7 +95,7 @@ void Country::reset()
   m_belongsTo = 0;
   nbArmies(1);
   createArmiesSprites();
-  
+
   if (m_flag)
   {
     m_flag->hide();
@@ -134,7 +136,6 @@ void Country::createArmiesSprites()
     armies -= 10;
   }
   i = 0;
-  kDebug() << "adding cavalries" << armies;
   while (armies >= 5) // Adding the cavalryman  sprites
   {
     kDebug() << "  cavalry" << i << armies;
@@ -162,7 +163,6 @@ void Country::createArmiesSprites()
     armies -= 5;
   }
   i = 0;
-  kDebug() << "adding infantries";
   while (armies > 0) // Ajout des sprites de fantassin
   {
     kDebug() << "  infantry" << i << armies;

@@ -33,6 +33,8 @@ namespace Ksirk
    m_onu(onuObject),
    m_automaton(automaton)
    {
+      kDebug();
+      
       setVerticalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
       setHorizontalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
       setCacheMode(QGraphicsView::CacheBackground);
@@ -78,17 +80,18 @@ namespace Ksirk
       m_bgImage = new QPixmap(imageFileName);
    }
    
-   FightArena::~FightArena()
-   {
+  FightArena::~FightArena()
+  {
+    kDebug();
      delete m_countryAttack; m_countryAttack = 0;
      delete m_countryDefense; m_countryDefense= 0;
      delete m_bgImage; m_bgImage = 0;
-}
+  }
    
-   QSize FightArena::sizeHint() const
-   {
-      return QSize(m_mapW, m_mapH);
-   }
+  QSize FightArena::sizeHint() const
+  {
+    return QSize(m_mapW, m_mapH);
+  }
 
    /**
      * Init the arena with the two countries engaged

@@ -70,7 +70,7 @@ public:
   ONU(GameAutomaton* automaton, const QString& configFileName);
 
   /** Default destructor */
-  virtual ~ONU() {}
+  virtual ~ONU();
 
   /** Zoom methods: */
     void applyZoomFactor(qreal zoomFactor);

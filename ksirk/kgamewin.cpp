@@ -240,8 +240,8 @@ KGameWindow::~KGameWindow()
 //   if (m_barFlagButton) {delete m_barFlagButton; m_barFlagButton = 0;}
   delete m_frame; m_frame = 0;
   delete m_backGnd_arena; m_backGnd_arena = 0;
-  delete m_scene_arena; m_scene_arena = 0;
   delete m_arena; m_arena = 0;
+  delete m_scene_arena; m_scene_arena = 0;
   delete m_mainMenu; m_mainMenu = 0;
   delete m_audioPlayer;
   delete m_rightDialog;
@@ -717,9 +717,16 @@ bool KGameWindow::attackEnd()
       }
     }
   }
-  m_firstCountry->createArmiesSprites();
-  m_secondCountry->createArmiesSprites();
-
+  if (backGnd()->bgIsArena())
+  {
+    m_arena->countryAttack()->createArmiesSprites();
+    m_arena->countryDefense()->createArmiesSprites();
+  }
+  else
+  {
+    m_firstCountry->createArmiesSprites();
+    m_secondCountry->createArmiesSprites();
+  }
   if (m_automaton->isAdmin())
   {
     if (res)
@@ -1608,10 +1615,10 @@ void KGameWindow::changeItem( KMessageParts& strings, int id, bool log )
       argument = KLocalizedString();
     arguing = true;
   }
-  KsirkChatItem* item = new KsirkChatItem();
+  KsirkChatItem item;
   if (it.curIsPix())
   {
-    (*item) << it.curPix();
+    item << it.curPix();
   }
   it++;
   for (; it != it_end; it++)
@@ -1641,14 +1648,14 @@ void KGameWindow::changeItem( KMessageParts& strings, int id, bool log )
 //         kDebug() << "  storing";
         if (argument.isEmpty())
         {
-          (*item) << QString("");
+          item << QString("");
         }
         else
         {
-          (*item) << argument.toString();
+          item << argument.toString();
         }
       }
-      (*item) << it.curPix();
+      item << it.curPix();
       arguing = false;
     }
   }
@@ -1656,16 +1663,16 @@ void KGameWindow::changeItem( KMessageParts& strings, int id, bool log )
   {
     if (argument.isEmpty())
     {
-      (*item) << QString("");
+      item << QString("");
     }
     else
     {
-      (*item) << argument.toString();
+      item << argument.toString();
     }
   }
   if (log)
   {
-    ((KsirkChatModel*)(m_chatDlg->model()))->addMessage(*item);
+    ((KsirkChatModel*)(m_chatDlg->model()))->addMessage(item);
   }
   if (id != ID_NO_STATUS_MSG)
   {
