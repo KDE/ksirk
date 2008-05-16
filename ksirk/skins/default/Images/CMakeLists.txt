@@ -1,18 +1,15 @@
 set (pics_default_DATA
 2DownArrow.png
 2UpArrow.png
-annuler.png
 arena.svg
 attackAuto.png
 attackOne.png
 attackThree.png
 attackTwo.png
+cancel.png
 defendOne.png
 defendTwo.png
-distributionArmeesFinie.png
-distributionArmees.png
 downArrow.png
-joueurSuivant.png
 loader.gif
 logoLeft.png
 logoRight.png
@@ -26,9 +23,12 @@ moveFive.png
 moveOne.png
 moveTen.png
 newNetGame.png
+nextPlayer.png
 pool.svg
+recyclingFinished.png
+recycling.png
 snapshot.jpg
-SoldatAGenoux1.png
+soldierKneeling.png
 stopAttackAuto.png
 upArrow.png
 )

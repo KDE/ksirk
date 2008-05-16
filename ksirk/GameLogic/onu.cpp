@@ -59,7 +59,7 @@ ONU::ONU(GameAutomaton* automaton,
   m_renderer(0)
 {
 
-  kDebug() << "ONU constructor: " << m_configFileName << endl;
+  kDebug() << "ONU constructor: " << m_configFileName;
   m_font.family = "URW Chancery L";
   m_font.size = (uint)(13*m_zoom);
   m_font.weight = QFont::Bold;
@@ -77,7 +77,7 @@ ONU::ONU(GameAutomaton* automaton,
 
   KConfigGroup onugroup = config.group("onu");
 
-  kDebug() << "ONU XML format version: " << onugroup.readEntry("format-version") << endl;
+  kDebug() << "ONU XML format version: " << onugroup.readEntry("format-version");
   QString formatVersion = onugroup.readEntry("format-version");
 
   if (formatVersion != ONU_FILE_FORMAT_VERSION)
@@ -90,7 +90,7 @@ ONU::ONU(GameAutomaton* automaton,
 
   m_name = onugroup.readEntry("name");
   m_skin = onugroup.readEntry("skinpath");
-  kDebug() << "skin snapshot file: " << KGlobal::dirs()-> findResource("appdata", m_skin + "/Images/snapshot.jpg") << endl;
+  kDebug() << "skin snapshot file: " << KGlobal::dirs()-> findResource("appdata", m_skin + "/Images/snapshot.jpg");
   m_snapshot = QPixmap(KGlobal::dirs()-> findResource("appdata", m_skin + "/Images/snapshot.jpg"));
   if (m_snapshot.isNull())
   {
@@ -106,10 +106,10 @@ ONU::ONU(GameAutomaton* automaton,
   m_continents.resize(onugroup.readEntry("nb-continents",0));
 //    root.attribute("map");
   QString poolString = onugroup.readEntry("pool");
-  kDebug() << "Pool path: " << poolString << endl;
-  kDebug() << "Searching resource: " << (m_skin + '/' + poolString) << endl;
+  kDebug() << "Pool path: " << poolString;
+  kDebug() << "Searching resource: " << (m_skin + '/' + poolString);
   QString poolFileName = KGlobal::dirs()-> findResource("appdata", m_skin + '/' + poolString);
-  kDebug() << "Pool file name: " << poolFileName << endl;
+  kDebug() << "Pool file name: " << poolFileName;
   if (poolFileName.isEmpty())
   {
       KMessageBox::error(0, 
@@ -122,7 +122,7 @@ ONU::ONU(GameAutomaton* automaton,
   m_svgDom.load(poolFileName);
 
   QString mapMaskFileName = KGlobal::dirs()-> findResource("appdata", m_skin + '/' + onugroup.readEntry("map-mask"));
-  kDebug() << "Map mask file name: " << mapMaskFileName << endl;
+  kDebug() << "Map mask file name: " << mapMaskFileName;
   if (mapMaskFileName.isNull())
   {
       KMessageBox::error(0, 
@@ -130,7 +130,7 @@ ONU::ONU(GameAutomaton* automaton,
                          i18n("Error !"));
       exit(2);
   }
-  kDebug() << "Loading map mask file: " << mapMaskFileName << endl;
+  kDebug() << "Loading map mask file: " << mapMaskFileName;
   countriesMask = QImage(mapMaskFileName);
 
   Sprites::SkinSpritesData::changeable().intData("fighters-flag-y-diff", onugroup.readEntry("fighters-flag-y-diff",0));
@@ -231,23 +231,23 @@ ONU::ONU(GameAutomaton* automaton,
     QPointF cavalryPoint = countryGroup.readEntry("cavalry-point",QPoint())*m_zoom;
     QPointF infantryPoint = countryGroup.readEntry("infantry-point",QPoint())*m_zoom;
 
-//     kDebug() << "Creating country " << name << endl;
-//     kDebug() << "\tflag point: " << flagPoint << endl;
-//     kDebug() << "\tcentral point: " << centralPoint << endl;
-//     kDebug() << "\tcannon point: " << cannonPoint << endl;
-//     kDebug() << "\tcavalry point: " << cavalryPoint << endl;
-//     kDebug() << "\tinfantry point: " << infantryPoint << endl;
+//     kDebug() << "Creating country " << name;
+//     kDebug() << "\tflag point: " << flagPoint;
+//     kDebug() << "\tcentral point: " << centralPoint;
+//     kDebug() << "\tcannon point: " << cannonPoint;
+//     kDebug() << "\tcavalry point: " << cavalryPoint;
+//     kDebug() << "\tinfantry point: " << infantryPoint;
     countries[id] = new Country(automaton, name, anchorPoint, centralPoint,
         flagPoint, cannonPoint, cavalryPoint, infantryPoint, id);
   }
   QStringList nationalitiesList = onugroup.readEntry("nationalities", QStringList());
   foreach (const QString &nationality, nationalitiesList)
   {
-    kDebug() << "Creating nationality " << nationality << endl;
+    kDebug() << "Creating nationality " << nationality;
     KConfigGroup nationalityGroup = config.group(nationality);
     QString leader = nationalityGroup.readEntry("leader","");
     QString flag = nationalityGroup.readEntry("flag","");
-//         kDebug() << "Creating nationality " << name << " ; flag: " << flag << endl;
+//         kDebug() << "Creating nationality " << name << " ; flag: " << flag;
     nationalities[nationalityId] = new Nationality(nationality, flag, leader);
     nationalityId++;
   }
@@ -267,13 +267,14 @@ ONU::ONU(GameAutomaton* automaton,
     {
       continentList.push_back(countries[countryId]);
     }
-//       kDebug() << "Creating continent " << name << endl;
+//       kDebug() << "Creating continent " << name;
     m_continents[continentId++] = new Continent(continent, continentList, bonus,id);
   }
 
   QStringList goalsList = onugroup.readEntry("goals", QStringList());
   foreach (const QString &_goal, goalsList)
   {
+    kDebug() << "init goal " << _goal;
     KConfigGroup goalGroup = config.group(_goal);
 
     Goal* goal = new Goal(automaton);
@@ -284,8 +285,8 @@ ONU::ONU(GameAutomaton* automaton,
       goal->type(Goal::Countries);
       goal->nbCountries(goalGroup.readEntry("nbCountries",0));
       goal->nbArmiesByCountry(goalGroup.readEntry("nbArmiesByCountry",0));
-      kDebug() << "  nb countries: **********************************" << goal->nbCountries() << endl;
-      kDebug() << "  nbarmies countries: **********************************" << goal->nbArmiesByCountry() << endl;
+      kDebug() << "  nb countries: **********************************" << goal->nbCountries();
+      kDebug() << "  nbarmies countries: **********************************" << goal->nbArmiesByCountry();
     }
     else if (goalType == "continents" )
     {
@@ -308,6 +309,7 @@ ONU::ONU(GameAutomaton* automaton,
 
   foreach (const QString &country, countriesList)
   {
+    kDebug() << "building neighbours list of " << country;
     std::vector< Country* > theNeighbours;
     KConfigGroup countryGroup = config.group(country);
     QList<int> theNeighboursIds = countryGroup.readEntry("neighbours",QList<int>());
@@ -321,7 +323,7 @@ ONU::ONU(GameAutomaton* automaton,
   }
   buildMap();
 
-//    kDebug() << "OUT ONU::ONU" << endl;
+   kDebug() << "OUT";
 }
 
 ONU::~ONU()
@@ -356,7 +358,7 @@ ONU::~ONU()
 If there is no country at (x,y), the functions returns 0. */
 Country* ONU::countryAt(const QPointF& point)
 {
-//    kDebug() << "ONU::countryAt x y " << x << " " << y << endl;
+//    kDebug() << "ONU::countryAt x y " << x << " " << y;
     QPointF norm = point;
     norm /= m_zoom;
     if ( norm.x() < 0 || norm.x() >= countriesMask.width()
@@ -364,14 +366,14 @@ Country* ONU::countryAt(const QPointF& point)
       return 0;
 
     unsigned int index = qBlue(countriesMask.pixel(norm.toPoint()));
-//    kDebug() << "OUT ONU::countryAt: " << index << endl;
+//    kDebug() << "OUT ONU::countryAt: " << index;
     if (index >= countries.size()) return 0;
     return countries.at(index);
 }
 
 void ONU::reset()
 {
-  kDebug() << "ONU::reset" << endl;
+  kDebug();
   for (unsigned int i = 0; i < countries.size(); i++) 
   {
     countries.at(i)-> reset();
@@ -516,7 +518,7 @@ void ONU::sendCountries(QDataStream& stream)
   stream << quint32(countries.size());
   for (unsigned int i = 0; i < countries.size(); i++)
   {
-    kDebug() << "Sending country number " << i+1 << " on " << countries.size() << endl;
+    kDebug() << "Sending country number " << i+1 << " on " << countries.size();
     countries[i]->send(stream);
   }
 }
@@ -546,7 +548,7 @@ Continent* ONU::continentNamed(const QString& name)
 
 void ONU::buildMap()
 {
-  kDebug() << "with zoom="<< m_zoom << endl;
+  kDebug() << "with zoom="<< m_zoom;
   //QSize size((int)(m_renderer.defaultSize().width()*m_zoom),(int)(m_renderer.defaultSize().height()*m_zoom));
   QSize size((int)(m_width),(int)(m_height));
   QImage image(size, QImage::Format_ARGB32_Premultiplied);
@@ -592,8 +594,8 @@ void ONU::applyZoomFactor(qreal zoomFactor)
 {
 /** Zoom 1: First method (take a long time to zoom) :
 */
-  kDebug() << "zoomFactor=" << zoomFactor << "old zoom=" << m_zoom << endl;
-  kDebug() << "new zoom=" << m_zoom << endl;
+  kDebug() << "zoomFactor=" << zoomFactor << "old zoom=" << m_zoom;
+  kDebug() << "new zoom=" << m_zoom;
 
   m_zoom *= zoomFactor;
 

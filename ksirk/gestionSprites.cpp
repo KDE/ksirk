@@ -674,7 +674,7 @@ void KGameWindow::initCombatMovement(
       kDebug() << "add a sprite 2";
       m_animFighters->addSprite(attackingSprite);
       //(pointDepartAttaquantX <= pointArriveeAttaquantX) ? attackingSprite-> setLookRight() : attackingSprite-> setLookLeft();
-      sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
+      sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roll.wav");
       if (sndRoulePath.isNull())
       {
         KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error !"));
@@ -789,7 +789,7 @@ void KGameWindow::initCombatMovement(
       //(pointDepartDefenseurX <= pointArriveeDefenseurX) ? defenderSprite-> setLookRight() : defenderSprite-> setLookLeft();
       kDebug() << "add a sprite 3";
       m_animFighters->addSprite(defenderSprite);
-      sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
+      sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roll.wav");
       if (sndRoulePath.isNull())
       {
         KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error !"));
@@ -833,11 +833,11 @@ void KGameWindow::animCombat()
     }
     sprite->setAnimated(1);
 
-    QString sndCanonPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/canon.wav");
+    QString sndCanonPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/cannon.wav");
     if (sndCanonPath.isNull())
     {
       KMessageBox::error(0,
-          i18n("Sound canon not found - Verify your installation<br>Program cannot continue"), i18n("Error !"));
+          i18n("Sound cannon not found - Verify your installation<br>Program cannot continue"), i18n("Error !"));
       exit(2);
     }
     if (KsirkSettings::soundEnabled())
@@ -1386,7 +1386,7 @@ void KGameWindow::initCombatBringBackForArena(Country *attackingCountry, Country
     kDebug() << "add a sprite 4";
     m_animFighters->addSprite(newSprite);
 
-    QString sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
+    QString sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roll.wav");
     if (sndRoulePath.isNull())
     {
         KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error !"));
@@ -1463,7 +1463,7 @@ void KGameWindow::initCombatBringBackForArena(Country *attackingCountry, Country
       kDebug() << "add a sprite 5";
       m_animFighters->addSprite(newSprite);
 
-      QString sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roule.wav");
+      QString sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roll.wav");
       if (sndRoulePath.isNull())
       {
           KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error !"));

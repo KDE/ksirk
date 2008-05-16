@@ -31,16 +31,16 @@
 #define ID_STATUS_MSG 1
 #define ID_STATUS_MSG2 2
 
-#define CM_CANCEL    "Images/annuler.png"
+#define CM_CANCEL    "Images/cancel.png"
 #define CM_INFO        "Images/aide.png"
 #define CM_NEWGAME        "Images/nouveauJeu.png"
 #define CM_NEWNETGAME        "Images/newNetGame.png"
 #define CM_OPENGAME    "Images/ouvrirJeu.png"
 #define CM_SAVEGAME    "Images/saveGame.png"
 #define CM_EXITGAME    "Images/quitter.png"
-#define CM_RECYCLING        "Images/distributionArmees.png"
-#define CM_NEXTPLAYER    "Images/joueurSuivant.png"
-#define CM_RECYCLINGFINISHED    "Images/distributionArmeesFinie.png"
+#define CM_RECYCLING        "Images/recycling.png"
+#define CM_NEXTPLAYER    "Images/nextPlayer.png"
+#define CM_RECYCLINGFINISHED    "Images/recyclingFinished.png"
 #define CM_ATTACK1    "Images/attackOne.png"
 #define CM_ATTACK2    "Images/attackTwo.png"
 #define CM_ATTACK3    "Images/attackThree.png"

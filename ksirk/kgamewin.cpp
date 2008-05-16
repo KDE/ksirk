@@ -127,7 +127,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_dirs = KGlobal::dirs();
 //   m_accels.setEnabled(true);
   
-  QString iconFileName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Images/SoldatAGenoux1.png");
+  QString iconFileName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Images/soldierKneeling.png");
   if (iconFileName.isNull())
   {
       KMessageBox::error(0, i18n("Cannot load icon<br>Program cannot continue"), i18n("Error !"));
@@ -301,7 +301,7 @@ void KGameWindow::initActions()
   actionCollection()->addAction("help_contextual", contextualHelpAction);
 
 
-  QString nextPlayerActionImageFileName = KGlobal::dirs()->findResource("appdata", m_automaton->skin() + "/Images/joueurSuivant.png");
+  QString nextPlayerActionImageFileName = KGlobal::dirs()->findResource("appdata", m_automaton->skin() + "/" + CM_NEXTPLAYER);
   m_nextPlayerAction =  new QAction(QIcon(nextPlayerActionImageFileName),
         i18n("Next Player"), this);
   connect(m_nextPlayerAction, SIGNAL(triggered(bool)), this, SLOT(slotNextPlayer()));
@@ -452,15 +452,15 @@ void KGameWindow::newSkin(const QString& onuFileName)
   QString onuDefinitionFileName = onuFileName;
   if (onuDefinitionFileName.isEmpty())
   {
-    onuDefinitionFileName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Data/onu.desktop");
+    onuDefinitionFileName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Data/world.desktop");
   }
   if (onuDefinitionFileName.isEmpty())
   {
       KMessageBox::error(0,
-          i18n("UNO definition XML file not found - Verify your installation<br>Program cannot continue"), i18n("Error !"));
+          i18n("World definition file not found - Verify your installation<br>Program cannot continue"), i18n("Error !"));
       exit(2);
   }
-  kDebug() << "Got ONU definition file name: " <<  onuDefinitionFileName;
+  kDebug() << "Got World definition file name: " <<  onuDefinitionFileName;
   m_theWorld = new ONU(m_automaton, onuDefinitionFileName);
 
   loadDices();
@@ -581,7 +581,7 @@ KRightDialog * KGameWindow::getRightDialog()
 
 void KGameWindow::initView()
 {
-  QString iconFileName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Images/SoldatAGenoux1.png");
+  QString iconFileName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Images/soldierKneeling.png");
   if (iconFileName.isNull())
   {
       KMessageBox::error(0, i18n("Cannot load icon<br>Program cannot continue"), i18n("Error !"));

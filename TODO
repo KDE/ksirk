@@ -1,9 +1,11 @@
 Before KDE4.1:
+  * add visual feedback for map scrolling
   * [BUG 162033] change size of "will display goal" dialog (kdelibs bug?)
   * [HELP NEEDED] sprites should be enhanced
   * [HELP NEEDED] max size of the window should be limited by the map size
   * [HELP NEEDED] correct the layout of initial window (with main menu) when
     resizing
+  * [DONE] translate all remaining French strings in skins
   * [DONE] attack auto + defense auto does not work in network mode
   * [DONE] stop attack auto should be displayed only to attacker's client
   * [DONE] crash on quit after using the arena

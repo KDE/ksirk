@@ -264,7 +264,7 @@ void DecoratedGameFrame::setIcon()
   imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/moveArmies.png");
   ArenaAction-> setIcon(QIcon(imageFileName));
 
-  imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/joueurSuivant.png");
+  imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/" + CM_NEXTPLAYER);
   nextPlayer-> setIcon(QIcon(imageFileName));
 
   // temporary
