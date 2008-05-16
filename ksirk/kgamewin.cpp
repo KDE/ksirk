@@ -933,6 +933,7 @@ void KGameWindow::resolveAttack()
     arena()->countryAttack()->decrNbArmies(NKA);
     arena()->countryDefense()->decrNbArmies(NKD);
   }
+  m_secondCountry-> owner()-> setNbDefense(0);
 }
 
 

@@ -258,7 +258,8 @@ namespace Ksirk
       mainLayout->addWidget(milieu2,1,0);
       mainLayout->addWidget(bas,2,0);
 
-      if (game->automaton()->isAttackAuto()) {
+      if (game->automaton()->isAttackAuto()
+          && !game->automaton()->currentPlayer()->isVirtual()) {
          buttonStopAttack = new QPushButton(stopAttackAuto,"Stop Attack-auto");
          mainLayout->addWidget(buttonStopAttack,3,0);
          connect(buttonStopAttack, SIGNAL(clicked()), this, SLOT(slotStopAttackAuto()));

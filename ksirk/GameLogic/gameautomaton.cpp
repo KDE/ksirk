@@ -742,13 +742,16 @@ GameAutomaton::GameState GameAutomaton::run()
       stream << quint32(2);
       sendMessage(buffer,ActionDefense);
     }
-    else if (!m_game->secondCountry()->owner()->isVirtual() && isDefenseAuto())
+    else if ( !m_game->secondCountry()->owner()->isVirtual()
+          && isDefenseAuto()
+          &&  (m_game->secondCountry()->owner()->getNbDefense() == 0) )
     {
       quint32 nbDefense = 1;
       if (m_game->secondCountry()->nbArmies() > 1)
       {
         nbDefense = 2;
       }
+      m_game->secondCountry()->owner()->setNbDefense(nbDefense);
       QByteArray buffer;
       QDataStream stream(&buffer, QIODevice::WriteOnly);
       stream << nbDefense;
