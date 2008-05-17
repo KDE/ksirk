@@ -24,6 +24,7 @@
 #include "ksirksettings.h"
 #include "MessageBubble.h"
 #include "Sprites/animspritesgroup.h"
+#include "Sprites/arrowsprite.h"
 #include "GameLogic/aiplayer.h"
 #include "GameLogic/aiColsonPlayer.h"
 #include "GameLogic/aiplayerio.h"
@@ -564,6 +565,26 @@ void KGameWindow::newSkin(const QString& onuFileName)
   m_backGnd_arena = new BackGnd(m_scene_arena, m_theWorld, true);
 
   m_backGnd_world = new BackGnd(m_scene_world, m_theWorld);
+
+  Sprites::ArrowSprite* uparrow = new Sprites::ArrowSprite(Qt::UpArrow, m_backGnd_world);
+  m_scene_world->addItem(uparrow);
+  uparrow->setZValue(1000);
+  uparrow->setPos(100,100);
+
+  Sprites::ArrowSprite* downarrow = new Sprites::ArrowSprite(Qt::DownArrow, m_backGnd_world);
+  m_scene_world->addItem(downarrow);
+  downarrow->setZValue(1000);
+  downarrow->setPos(100,200);
+
+  Sprites::ArrowSprite* leftarrow = new Sprites::ArrowSprite(Qt::LeftArrow, m_backGnd_world);
+  m_scene_world->addItem(leftarrow);
+  leftarrow->setZValue(1000);
+  leftarrow->setPos(50,100);
+
+  Sprites::ArrowSprite* rightarrow = new Sprites::ArrowSprite(Qt::RightArrow, m_backGnd_world);
+  m_scene_world->addItem(rightarrow);
+  rightarrow->setZValue(1000);
+  rightarrow->setPos(200,100);
 
 //   m_scene_world->setDoubleBuffering(true);
   kDebug() << "Before initView";

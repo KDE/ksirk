@@ -24,6 +24,7 @@ set(ksirk_SRCS
   Sprites/infantrysprite.cpp
   Sprites/cannonsprite.cpp
   Sprites/skinSpritesData.cpp
+  Sprites/arrowsprite.cpp
   SaveLoad/ksirkgamexmlhandler.cpp
   SaveLoad/ksirkgamexmlloader.cpp
   GameLogic/aiColsonPlayer.cpp

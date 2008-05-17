@@ -32,11 +32,10 @@ set(ksirk_sprites_LIB_SRCS
   infantrysprite.cpp
   cannonsprite.cpp
   skinSpritesData.cpp
+  arrowsprite.cpp
 )
 
 kde4_add_library(ksirk_sprites SHARED ${ksirk_sprites_LIB_SRCS})
-
-# target_link_libraries(ksirk_sprites  ${KDE4_KDECORE_LIBS} ${QT_QTGUI_LIBRARY} ${QT_QTXML_LIBRARY} kdefx )
 
 set_target_properties(ksirk_sprites PROPERTIES VERSION 1.9.0 SOVERSION 1 )
 install(TARGETS ksirk_sprites  DESTINATION ${LIB_INSTALL_DIR} )
