@@ -429,7 +429,7 @@ private Q_SLOTS:
   
   
 protected:
-  friend class KGameWindow;
+  friend class Ksirk::KGameWindow;
   
   /**
     * Main method of the KGame which has to be overwritten in our
@@ -475,7 +475,7 @@ private:
 //   KGameProperty< GameState > m_state;
 //     int m_stateId;
   
-  KGameWindow *m_game;
+  Ksirk::KGameWindow *m_game;
   
   EventsListProperty m_events;
   

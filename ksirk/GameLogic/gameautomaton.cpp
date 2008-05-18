@@ -16,6 +16,8 @@
    02110-1301, USA
 */
 
+#include <iostream>
+
 #include "gameautomaton.h"
 #include "ksirksettings.h"
 #include "kgamewin.h"
@@ -1008,11 +1010,12 @@ void GameAutomaton::activateNeededAIPlayers()
   }
 }
 
-void GameAutomaton::gameEvent(const std::string& event, const QPointF& point)
+void GameAutomaton::gameEvent(const ::std::string& event, const QPointF& point)
 {
   QString ev = event.c_str();
   m_events.push_back(qMakePair(ev, point));
 }
+
 
 /** returns the name of the current state */
 QString GameAutomaton::stateName() const
@@ -1020,7 +1023,7 @@ QString GameAutomaton::stateName() const
   if (m_state < 0 
       || (unsigned int)(m_state) >= sizeof(GameStateNames))
   {
-    std::ostringstream oss;
+    ::std::ostringstream oss;
     oss << "Invalid stored state id: " << m_state;
     kError() << oss.str().c_str() << endl;
     return QString::fromUtf8(oss.str().c_str());
@@ -1031,9 +1034,9 @@ QString GameAutomaton::stateName() const
   }
 }
 
-void GameAutomaton::saveXml(std::ostream& xmlStream)
+void GameAutomaton::saveXml(::std::ostream& xmlStream)
 {
-    xmlStream << "<gameautomaton state=\"" << GameStateNames[m_state] << "\" />" << std::endl;
+    xmlStream << "<gameautomaton state=\"" << GameStateNames[m_state] << "\" />" << ::std::endl;
 }
 
 const QString& GameAutomaton::skin() const
@@ -1214,7 +1217,7 @@ QDataStream& operator>>(QDataStream& s, GameAutomaton::GameState& state)
 bool GameAutomaton::setupPlayersNumberAndSkin(bool& networkGame, int& port, uint& newPlayersNumber)
 {
   kDebug() << endl;
-  std::map< QString, QString > nations = m_game->nationsList();
+  ::std::map< QString, QString > nations = m_game->nationsList();
   if (nations.size() < 2)
   {
     QString mes = "";
@@ -1289,7 +1292,7 @@ void GameAutomaton::setGoalFor(Player* player)
   kDebug() << player->name() << endl;
   unsigned int max = m_goals.size();
   unsigned int goalId = Dice::roll(max);
-  std::set< Goal* >::iterator it = m_goals.begin();
+  ::std::set< Goal* >::iterator it = m_goals.begin();
   for (unsigned int i = 1 ; i < goalId; it++,i++) {}
   Goal* goal = (*it);
   kDebug() << "Goal for " << player->name() << " is of type " << goal->type() << endl;
@@ -1613,12 +1616,12 @@ void GameAutomaton::changePlayerName(Player* player)
 {
 //   kDebug() << endl;
   
-  std::map< QString, QString > nations = m_game->nationsList();
+  ::std::map< QString, QString > nations = m_game->nationsList();
   PlayersArray::iterator it = playerList()->begin();
   PlayersArray::iterator it_end = playerList()->end();
   for (; it != it_end; it++)
   {
-    std::map<QString,QString>::iterator nationsIt;
+    ::std::map<QString,QString>::iterator nationsIt;
     nationsIt = nations.find(((Player*)(*it))-> getNation()->name());
     if (nationsIt !=  nations.end())
     {
@@ -1682,12 +1685,12 @@ void GameAutomaton::changePlayerNation(Player* player)
 {
 //   kDebug() << endl;
   
-  std::map< QString, QString > nations = m_game->nationsList();
+  ::std::map< QString, QString > nations = m_game->nationsList();
   PlayersArray::iterator it = playerList()->begin();
   PlayersArray::iterator it_end = playerList()->end();
   for (; it != it_end; it++)
   {
-    std::map<QString,QString>::iterator nationsIt;
+    ::std::map<QString,QString>::iterator nationsIt;
     nationsIt = nations.find(((Player*)(*it))-> getNation()->name());
     if (nationsIt !=  nations.end())
     {
@@ -1716,7 +1719,7 @@ void GameAutomaton::changePlayerNation(Player* player)
 
 quint32 GameAutomaton::idForMsg(const QString& msg)
 {
-  std::map<QString,quint32>::iterator it = m_msgs2ids.find(msg);
+  ::std::map<QString,quint32>::iterator it = m_msgs2ids.find(msg);
   if (it != m_msgs2ids.end())
   {
     return (*it).second;
@@ -1768,7 +1771,7 @@ void GameAutomaton::slotClientJoinedGame(quint32 clientid, KGame* /*me*/)
     else
     {
       stream << quint32(m_game->waitedPlayers().size());
-      std::vector<PlayerMatrix>::iterator it, it_end;
+      ::std::vector<PlayerMatrix>::iterator it, it_end;
       it = m_game->waitedPlayers().begin(); it_end = m_game->waitedPlayers().end();
       for (; it != it_end; it++)
       {
@@ -1921,8 +1924,8 @@ void GameAutomaton::countriesDistribution()
 {
 //   kDebug() << "KGameWindow::countriesDistribution" << endl;
   unsigned int initialNbArmies;
-  std::list< int > vect;
-  std::map<QString,unsigned int> distributedCountriesNumberMap;
+  ::std::list< int > vect;
+  ::std::map<QString,unsigned int> distributedCountriesNumberMap;
   PlayersArray::iterator it = playerList()->begin();
   initialNbArmies = ((Player*)(*playerList()->begin()))->getNbAvailArmies();
   PlayersArray::iterator it_end = playerList()->end();
@@ -1941,7 +1944,7 @@ void GameAutomaton::countriesDistribution()
     int h = Dice::roll(vect.size()) - 1;
 
     // moves an iterator up to the position chosen
-    std::list< int >::iterator it = vect.begin();
+    ::std::list< int >::iterator it = vect.begin();
     for (int itPos = 0; itPos < h-1; itPos++) it++;
 
     // affect the country that have the number at this position
@@ -2165,10 +2168,10 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     break;
   case RegisterCountry:
     stream >> countryName >> propId >> prop2Id;
-    m_nbArmiesIdsNamesCountriesMap.insert(std::make_pair(int(propId),countryName));
-    m_namesNbArmiesIdsCountriesMap.insert(std::make_pair(countryName,int(propId)));;
-    m_nbAddedArmiesIdsNamesCountriesMap.insert(std::make_pair(int(prop2Id),countryName));
-    m_namesNbAddedArmiesIdsCountriesMap.insert(std::make_pair(countryName,int(prop2Id)));
+    m_nbArmiesIdsNamesCountriesMap.insert(::std::make_pair(int(propId),countryName));
+    m_namesNbArmiesIdsCountriesMap.insert(::std::make_pair(countryName,int(propId)));;
+    m_nbAddedArmiesIdsNamesCountriesMap.insert(::std::make_pair(int(prop2Id),countryName));
+    m_namesNbAddedArmiesIdsCountriesMap.insert(::std::make_pair(countryName,int(prop2Id)));
     break;
   case PlayerAvailArmies:
     if (sender == gameId()) break;
@@ -2530,8 +2533,8 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     break;
   case AddMsgIdPair:
     stream >> msg >> msgId;
-    m_msgs2ids.insert(std::make_pair(msg,msgId));
-    m_ids2msgs.insert(std::make_pair(msgId,msg));
+    m_msgs2ids.insert(::std::make_pair(msg,msgId));
+    m_ids2msgs.insert(::std::make_pair(msgId,msg));
     break;
   case CheckGoal:
     if (isAdmin())

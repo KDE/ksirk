@@ -117,7 +117,7 @@ void Country::createArmiesSprites()
     kDebug() << "  cannon" << i << armies;
     CannonSprite *sprite = new CannonSprite(bg->onu()->zoom(), bg);
     sprite-> setDestination(NULL);             // Sprite immobile
-    if (m_automaton->game()->currentWidgetType() == KGameWindow::arenaType)
+    if (m_automaton->game()->currentWidgetType() == Ksirk::KGameWindow::arenaType)
     {
       sprite-> setPos(
         m_pointCannon.x()*bg->onu()->zoom(),
@@ -141,7 +141,7 @@ void Country::createArmiesSprites()
     kDebug() << "  cavalry" << i << armies;
     CavalrySprite *sprite = new CavalrySprite(bg->onu()->zoom(), bg);
     sprite-> setDestination(0);             // Sprite immobile
-    if (m_automaton->game()->currentWidgetType() == KGameWindow::arenaType)
+    if (m_automaton->game()->currentWidgetType() == Ksirk::KGameWindow::arenaType)
     {
       kDebug() << "arena";
       sprite-> setPos(
@@ -168,7 +168,7 @@ void Country::createArmiesSprites()
     kDebug() << "  infantry" << i << armies;
     InfantrySprite *sprite = new InfantrySprite(bg->onu()->zoom(), bg);
     sprite-> setDestination(NULL);             // Sprite immobile
-    if (m_automaton->game()->currentWidgetType() == KGameWindow::arenaType)
+    if (m_automaton->game()->currentWidgetType() == Ksirk::KGameWindow::arenaType)
     {
       sprite-> setPos(
         m_pointInfantry.x()*bg->onu()->zoom(),
