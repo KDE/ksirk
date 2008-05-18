@@ -32,7 +32,7 @@ namespace GameLogic
 {
 
 /** The constructor-initializer */
-Continent::Continent (const QString &myName, const std::vector<Country*>& myCountries, int myBonus,
+Continent::Continent (const QString &myName, const std::vector<Country*>& myCountries, const int myBonus,
                      unsigned int id) :
   m_members(myCountries), m_name(myName), bonus(myBonus), m_id(id)
 {
