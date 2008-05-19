@@ -20,9 +20,9 @@
 <address><email>Kleag@free.fr</email></address>
 </affiliation>
 </author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<!-- TRANS:ROLES_OF_TRANSLATORS -->
 
 <copyright>
 <year>2002-2008</year>
@@ -106,15 +106,15 @@ initialy as a C++ learning exercise and so, I developed it up to this point (see
 </para>
 <para>
 <screenshot>
-	<screeninfo>Here's a screenshot of &kapp;</screeninfo>
-	<mediaobject>
-	  <imageobject>
-	    <imagedata fileref="firing-screenshot.png" format="PNG"/>
-	  </imageobject>
-	  <textobject>
-	    <phrase>Screenshot</phrase>
-	  </textobject>
-	</mediaobject>
+  <screeninfo>Here's a screenshot of &kapp;</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="firing-screenshot.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase>Screenshot</phrase>
+    </textobject>
+  </mediaobject>
 </screenshot>
 </para>
 <para>
@@ -345,44 +345,44 @@ that can be selected by two buttons showed in the right panel:
 <variablelist>
 <varlistentry>
 <term>
-	<menuchoice>
-		<guimenu>
-			<inlinemediaobject>
-				<imageobject>
-					<imagedata fileref="distributionArmees.png" format="PNG"/>
-				</imageobject>
-				<textobject>
-					<phrase>Redistribution</phrase>
-				</textobject>
-			</inlinemediaobject> : Redistribution
-		</guimenu>
-	</menuchoice>
+  <menuchoice>
+    <guimenu>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="distributionArmees.png" format="PNG"/>
+        </imageobject>
+        <textobject>
+          <phrase>Redistribution</phrase>
+        </textobject>
+      </inlinemediaobject> : Redistribution
+    </guimenu>
+  </menuchoice>
 </term>
 <listitem>
-	<para>
-	<action>
-	One player wants to change some of his choices. The first player can then remove an army he
-	just put in a country with the right mouse button and put it in another one with the left mouse
-	button. When he finishes, he gives control to next player with the 'Valid' button. When all
-	players have finished their redistribution, the two buttons are displayed again.
-	</action>
-	</para>
+  <para>
+  <action>
+  One player wants to change some of his choices. The first player can then remove an army he
+  just put in a country with the right mouse button and put it in another one with the left mouse
+  button. When he finishes, he gives control to next player with the 'Valid' button. When all
+  players have finished their redistribution, the two buttons are displayed again.
+  </action>
+  </para>
 </listitem>
 </varlistentry>
 <varlistentry>
 <term>
-	<menuchoice>
-		<guimenu>
-			<inlinemediaobject>
-				<imageobject>
-					<imagedata fileref="distributionArmeesFinie.png" format="PNG"/>
-				</imageobject>
-				<textobject>
-					<phrase>End of redistribution</phrase>
-				</textobject>
-			</inlinemediaobject> : End of redistribution
-		</guimenu>
-	</menuchoice>
+  <menuchoice>
+    <guimenu>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="distributionArmeesFinie.png" format="PNG"/>
+        </imageobject>
+        <textobject>
+          <phrase>End of redistribution</phrase>
+        </textobject>
+      </inlinemediaobject> : End of redistribution
+    </guimenu>
+  </menuchoice>
 </term>
 <listitem><para><action>The redistribution is finished and the game can continue.
 </action></para></listitem>
@@ -397,57 +397,57 @@ that can be selected by two buttons showed in the right panel:
 <para>
 After the redistribution, a turn starts. Each player plays at his turn. He has the choice to:
 <variablelist>
-	<varlistentry>
-		<term>
-			<menuchoice>
-				<guimenu>
-					<inlinemediaobject>
-						<imageobject>
-							<imagedata fileref="joueurSuivant.png" format="PNG"/>
-						</imageobject>
-						<textobject>
-							<phrase>Next player</phrase>
-						</textobject>
-					</inlinemediaobject> : Give hand to the next player (button in the toolbar)
-				</guimenu>
-			</menuchoice>
-		</term>
-		<listitem>
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <guimenu>
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="joueurSuivant.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase>Next player</phrase>
+            </textobject>
+          </inlinemediaobject> : Give hand to the next player (button in the toolbar)
+        </guimenu>
+      </menuchoice>
+    </term>
+    <listitem>
       <para>
         <action>
           The turn of the current player finishes and it's the turn of the next one.
         </action>
       </para>
     </listitem>
-	</varlistentry>
-	<varlistentry>
-		<term>
-			<menuchoice>
-				<guimenu>
-					<inlinemediaobject>
-						<imageobject>
-							<imagedata fileref="attackOne.png" format="PNG"/>
-						</imageobject>
-						<textobject>
-							<phrase>Attack 1</phrase>
-						</textobject>
-					</inlinemediaobject>
-					&nbsp;<inlinemediaobject>
-						<imageobject>
-							<imagedata fileref="attackTwo.png" format="PNG"/>
-						</imageobject>
-						<textobject>
-							<phrase>Attack 2</phrase>
-						</textobject>
-					</inlinemediaobject>
-					&nbsp;<inlinemediaobject>
-						<imageobject>
-							<imagedata fileref="attackThree.png" format="PNG"/>
-						</imageobject>
-						<textobject>
-							<phrase>Attack 3</phrase>
-						</textobject>
-					</inlinemediaobject> : Attack with one, two or three armies
+  </varlistentry>
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <guimenu>
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="attackOne.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase>Attack 1</phrase>
+            </textobject>
+          </inlinemediaobject>
+          &nbsp;<inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="attackTwo.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase>Attack 2</phrase>
+            </textobject>
+          </inlinemediaobject>
+          &nbsp;<inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="attackThree.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase>Attack 3</phrase>
+            </textobject>
+          </inlinemediaobject> : Attack with one, two or three armies
           &nbsp;<inlinemediaobject>
             <imageobject>
               <imagedata fileref="autoattack.png" format="PNG"/>
@@ -456,11 +456,11 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
               <phrase>Attack auto</phrase>
             </textobject>
           </inlinemediaobject>
-				</guimenu>
-			</menuchoice>
-		</term>
-		<listitem>
-			<para>
+        </guimenu>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
           To attack, drag with the mouse from the attacking country and drop to the attacked one. You will then be presented with a contextual menu showing the above entries.
           <screenshot>
             <screeninfo>Attack menu</screeninfo>
@@ -473,12 +473,12 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
               </textobject>
             </mediaobject>
           </screenshot>
-					For a country X to attack a country Y with x armies, 2 conditions must be fulfilled: 1. the two
-					countries must be neighbors; 2. country X must have at least x+1 armies before the attack.
+          For a country X to attack a country Y with x armies, 2 conditions must be fulfilled: 1. the two
+          countries must be neighbors; 2. country X must have at least x+1 armies before the attack.
           If the attack is valid, a dialog is displayed if necessary for the defender to choose if he wants to defend with one or two armies or let the computer decide.
-			</para>
-			<para>
-				When the defenders choice is done, the fight will occur and be completed. This will described below.
+      </para>
+      <para>
+        When the defenders choice is done, the fight will occur and be completed. This will described below.
           <screenshot>
             <screeninfo>Defense dialog</screeninfo>
             <mediaobject>
@@ -490,42 +490,42 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
               </textobject>
             </mediaobject>
           </screenshot>
-			</para>
-		</listitem>
-	</varlistentry>
-	<varlistentry>
-		<term>
-			<menuchoice>
-				<guimenu>
-					<inlinemediaobject>
-						<imageobject>
-							<imagedata fileref="moveArmies.png" format="PNG"/>
-						</imageobject>
-						<textobject>
-							<phrase>Move armies</phrase>
-						</textobject>
-					</inlinemediaobject> : Move Armies from one country to another
-				</guimenu>
-			</menuchoice>
-		</term>
-		<listitem>
-			<para>
-				<action>
-					This is the last action of a player's turn. It gives the possibility to move some armies
-					from one of his country to another, neighboring the first one. To choose the two
-					countries, please drag and drop like you use during an attack. When both countries are selected,
-					a slider is displayed on which you can choose how many armies there will be on each country afterwards.
-				</action>
-			</para>
-		</listitem>
-	</varlistentry>
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <guimenu>
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="moveArmies.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase>Move armies</phrase>
+            </textobject>
+          </inlinemediaobject> : Move Armies from one country to another
+        </guimenu>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        <action>
+          This is the last action of a player's turn. It gives the possibility to move some armies
+          from one of his country to another, neighboring the first one. To choose the two
+          countries, please drag and drop like you use during an attack. When both countries are selected,
+          a slider is displayed on which you can choose how many armies there will be on each country afterwards.
+        </action>
+      </para>
+    </listitem>
+  </varlistentry>
 </variablelist>
 </para>
 </sect2>
 <sect2  id="fight-solution" >
-	<title>Solution of the fight</title>
-	<para>
-		For each army in the fight there is a corresponding die cast. The player who rolls a higher number on the dice, whether being from the attacker or defender, wins and the one to roll a smaller number on the dice loses armies according to the number of dice thrown.
+  <title>Solution of the fight</title>
+  <para>
+    For each army in the fight there is a corresponding die cast. The player who rolls a higher number on the dice, whether being from the attacker or defender, wins and the one to roll a smaller number on the dice loses armies according to the number of dice thrown.
           <screenshot>
             <screeninfo>Attack result displayed</screeninfo>
             <mediaobject>
@@ -537,11 +537,11 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
               </textobject>
             </mediaobject>
           </screenshot>
-	</para>
-	<para>
-		If the number of armies in the defender country reaches 0, the ownership of this country
-		changes to the attacker: his flag is set up and one of his attacking armies is installed in his
-		new country. The "Move armies" slider is displayed as for the moves of the end of the turn.
+  </para>
+  <para>
+    If the number of armies in the defender country reaches 0, the ownership of this country
+    changes to the attacker: his flag is set up and one of his attacking armies is installed in his
+    new country. The "Move armies" slider is displayed as for the moves of the end of the turn.
           <screenshot>
             <screeninfo>Invasion slider</screeninfo>
             <mediaobject>
@@ -553,40 +553,40 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
               </textobject>
             </mediaobject>
           </screenshot>
-	</para>
+  </para>
 </sect2>
 <sect2  id="end_of_turn" >
-	<title>End of the turn</title>
+  <title>End of the turn</title>
   <para>
     To finish your current turn, if you don't want to move armies, you can hit the "Next Player" button in the toolbar.
   </para>
-	<para>
-		When everybody has played, the turn is finished. Some armies are distributed to the
-		players, in function of the coutries they own: 1 for each group of three countries, with a
-		minimum of 3. There is also a bonus for players that own a complete continent, different for
-		each one. The values of the bonuses for the default skin are:
-		<table>
-			<title>Bonus due to the continents</title>
-			<tgroup cols="2">
-				<thead>
-					<row><entry>Continent</entry><entry>Bonus</entry></row>
-				</thead>
-				<tbody>
-					<row><entry>North America</entry><entry>5</entry></row>
-					<row><entry>South America</entry><entry>2</entry></row>
-					<row><entry>Europe</entry><entry>5</entry></row>
-					<row><entry>Africa</entry><entry>3</entry></row>
-					<row><entry>Asia</entry><entry>7</entry></row>
-					<row><entry>Pacific Area</entry><entry>2</entry></row>
-				</tbody>
-			</tgroup>
-		</table>
-	</para>
-	<para>
-		When a player has finished distributing his armies, he clicks the "Valid" button to
-		allow the next player to distribute his bonus armies. As for the initial distribution, when all player
-		have placed their armies, they can start a new redistribution cycle or start a new turn...
-	</para>
+  <para>
+    When everybody has played, the turn is finished. Some armies are distributed to the
+    players, in function of the coutries they own: 1 for each group of three countries, with a
+    minimum of 3. There is also a bonus for players that own a complete continent, different for
+    each one. The values of the bonuses for the default skin are:
+    <table>
+      <title>Bonus due to the continents</title>
+      <tgroup cols="2">
+        <thead>
+          <row><entry>Continent</entry><entry>Bonus</entry></row>
+        </thead>
+        <tbody>
+          <row><entry>North America</entry><entry>5</entry></row>
+          <row><entry>South America</entry><entry>2</entry></row>
+          <row><entry>Europe</entry><entry>5</entry></row>
+          <row><entry>Africa</entry><entry>3</entry></row>
+          <row><entry>Asia</entry><entry>7</entry></row>
+          <row><entry>Pacific Area</entry><entry>2</entry></row>
+        </tbody>
+      </tgroup>
+    </table>
+  </para>
+  <para>
+    When a player has finished distributing his armies, he clicks the "Valid" button to
+    allow the next player to distribute his bonus armies. As for the initial distribution, when all player
+    have placed their armies, they can start a new redistribution cycle or start a new turn...
+  </para>
 </sect2>
 <sect2 id="sending-messages" >
 <title>Sending messages to other players</title>
@@ -620,18 +620,18 @@ If you play a local game and want to communicate with the other players, well, l
 <variablelist>
 <varlistentry>
 <term>
-	<menuchoice>
-		<guimenu>
-			<inlinemediaobject>
-				<imageobject>
-					<imagedata fileref="quit.png" format="PNG"/>
-				</imageobject>
-				<textobject>
-					<phrase>Quit Game</phrase>
-				</textobject>
-			</inlinemediaobject> : Quit Game
-		</guimenu>
-	</menuchoice>
+  <menuchoice>
+    <guimenu>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="quit.png" format="PNG"/>
+        </imageobject>
+        <textobject>
+          <phrase>Quit Game</phrase>
+        </textobject>
+      </inlinemediaobject> : Quit Game
+    </guimenu>
+  </menuchoice>
 </term>
 <listitem><para><action>
 Causes the program to quit.
@@ -639,18 +639,18 @@ Causes the program to quit.
 </varlistentry>
 <varlistentry>
 <term>
-	<menuchoice>
-		<guimenu>
-			<inlinemediaobject>
-				<imageobject>
-					<imagedata fileref="newGame.png" format="PNG"/>
-				</imageobject>
-				<textobject>
-					<phrase>New Game</phrase>
-				</textobject>
-			</inlinemediaobject> : New Game
-		</guimenu>
-	</menuchoice>
+  <menuchoice>
+    <guimenu>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="newGame.png" format="PNG"/>
+        </imageobject>
+        <textobject>
+          <phrase>New Game</phrase>
+        </textobject>
+      </inlinemediaobject> : New Game
+    </guimenu>
+  </menuchoice>
 </term>
 <listitem><para><action>Starts a new game. It will cause the displaying of a dialog asking
 the number of players. After that, each player will be asked its name with another dialog.
@@ -741,7 +741,7 @@ the number of players. After that, each player will be asked its name with anoth
                 <row><entry>nb-continents</entry><entry>The number of continents (6 in the default skin). There should be the same number of continent groups below</entry></row>
                 <row><entry>pool</entry><entry>The path and name of the pool file relative to the skin path (e.g. Images/pool.svg)</entry></row>
                 <row><entry>map-mask</entry><entry>The path and name of the map mask file relative to the skin path (e.g. Images/map-mask.png)</entry></row>
-                <row><entry>format-version</entry><entry>The version of the skin file format (2.0, unsused for the moment)</entry></row>
+                <row><entry>format-version</entry><entry>The version of the skin file format (2.0)</entry></row>
                 <row><entry>name</entry><entry>The display name of the skin</entry></row>
                 <row><entry>desc</entry><entry>The long description of the skin</entry></row>
                 <row><entry>fighters-flag-y-diff</entry><entry>The height difference between flags and cannons sprites</entry></row>
@@ -782,7 +782,7 @@ the number of players. After that, each player will be asked its name with anoth
             <tgroup cols="2">
               <thead><row><entry>Entry name</entry><entry>Signification</entry></row></thead>
               <tbody>
-                <row><entry>id</entry><entry>The integer unique identification number of the country</entry></row>
+                <row><entry>id</entry><entry>The integer unique identification number of the country, must start at zero (0)</entry></row>
                 <row><entry>name</entry><entry>The displayed name of the country</entry></row>
                 <row><entry>&lt;sprite&gt;-point</entry><entry>Each type of sprite (flag, infantry, etc.) in the country is displayed at a certain position defined by this entry made of two integers seperated by a comma</entry></row>
                 <row><entry>neighbours</entry><entry>The list of the ids of the neighbors of the current country</entry></row>
@@ -887,31 +887,31 @@ the number of players. After that, each player will be asked its name with anoth
       <tbody>
         <row>
           <entry>map</entry><entry><mediaobject><imageobject><imagedata fileref="map.png" format="PNG"/></imageobject></mediaobject></entry><entry>Map of the skins's world. Countries can have arbitrary shapes, but should be grouped in eye-recognizable continents, by location only or by color</entry>
-	</row>
+  </row>
         <row>
           <entry>italy</entry><entry><mediaobject><imageobject><imagedata fileref="italy.png" format="PNG"/></imageobject></mediaobject></entry><entry>The flag of the Italy nation. There is one such entry for each nation</entry>
-	</row>
+  </row>
         <row>
           <entry>infantry</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
-	</row>
+  </row>
         <row>
           <entry>cavalry</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
-	</row>
+  </row>
         <row>
           <entry>cannon</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
-	</row>
+  </row>
         <row>
           <entry>firing</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
-	</row>
+  </row>
         <row>
           <entry>exploding</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
-	</row>
+  </row>
         <row>
           <entry>Alaska</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
-	</row>
+  </row>
         <row>
           <entry>reddices</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
-	</row>
+  </row>
         <row>
           <entry>mark1</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
         </row>
@@ -945,13 +945,13 @@ the number of players. After that, each player will be asked its name with anoth
           <entry><mediaobject><imageobject><imagedata fileref="newNetGame.png" format="PNG"/></imageobject></mediaobject></entry><entry>newNetGame.png</entry><entry>Tries to join a network game</entry>
         </row>
         <row>
-          <entry><mediaobject><imageobject><imagedata fileref="distributionArmees.png" format="PNG"/></imageobject></mediaobject></entry><entry>distributionArmees.png</entry><entry>After all players have put their armies, it is possible to modify the distributions (named recycling). This button asks to do such a redistribution</entry>
+          <entry><mediaobject><imageobject><imagedata fileref="recycling.png" format="PNG"/></imageobject></mediaobject></entry><entry>distributionArmees.png</entry><entry>After all players have put their armies, it is possible to modify the distributions (named recycling). This button asks to do such a redistribution</entry>
         </row>
         <row>
-          <entry><mediaobject><imageobject><imagedata fileref="distributionArmeesFinie.png" format="PNG"/></imageobject></mediaobject></entry><entry>distributionArmeesFinie.png</entry><entry>Chooses not to redistribute. All clients windows must have this button clicked to really end the distribution</entry>
+          <entry><mediaobject><imageobject><imagedata fileref="recyclingFinished.png" format="PNG"/></imageobject></mediaobject></entry><entry>distributionArmeesFinie.png</entry><entry>Chooses not to redistribute. All clients windows must have this button clicked to really end the distribution</entry>
         </row>
         <row>
-          <entry><mediaobject><imageobject><imagedata fileref="joueurSuivant.png" format="PNG"/></imageobject></mediaobject></entry><entry>joueurSuivant.png</entry><entry>Ends the current player's turn and switch to the next one or to the next turn if the current player was the last one</entry>
+          <entry><mediaobject><imageobject><imagedata fileref="nextPlayer.png" format="PNG"/></imageobject></mediaobject></entry><entry>joueurSuivant.png</entry><entry>Ends the current player's turn and switch to the next one or to the next turn if the current player was the last one</entry>
         </row>
         <row>
           <entry><mediaobject><imageobject><imagedata fileref="attackOne.png" format="PNG"/></imageobject></mediaobject></entry><entry>attackOne.png</entry><entry>Chooses to start an attack with one army</entry>
@@ -978,7 +978,7 @@ the number of players. After that, each player will be asked its name with anoth
   </sect1>
   <sect1 id="tsd">
     <title>The Sounds folder</title>
-    <para>This folder contains three sound files: roule.wav played when armies are moving; canon.wav played when firing and crash.wav played when a cannon exploses.</para>
+    <para>This folder contains three sound files: roll.wav played when armies are moving; cannon.wav played when firing and crash.wav played when a cannon exploses.</para>
   </sect1>
 </chapter>
 
@@ -1036,7 +1036,7 @@ Documentation copyright 2002-2008 Gael de Chalendar <email>kleag@free.fr</email>
      (NOTE:  All documentation are licensed under the FDL,
      regardless of what license the application uses) -->
 
-&underGPL;        	 <!-- GPL License -->
+&underGPL;           <!-- GPL License -->
 
 </chapter>
 
@@ -1073,17 +1073,17 @@ Documentation copyright 2002-2008 Gael de Chalendar <email>kleag@free.fr</email>
       <itemizedlist>
         <listitem>
           <para>
-	    enable or disable the sounds&nbsp;;
+      enable or disable the sounds&nbsp;;
           </para>
         </listitem>
         <listitem>
           <para>
-	    set the speed of the sprites (from slow to immediate)&nbsp;;
+      set the speed of the sprites (from slow to immediate)&nbsp;;
           </para>
         </listitem>
         <listitem>
           <para>
-	    enable or disable the contextual helps displayed in popups&nbsp;;
+      enable or disable the contextual helps displayed in popups&nbsp;;
           </para>
         </listitem>
         <listitem>
