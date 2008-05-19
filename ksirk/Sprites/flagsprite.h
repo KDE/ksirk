@@ -36,7 +36,7 @@ public:
   /**
     * This simplified constructor allows to create a new @ref FlagSprite with
     * default values for skin elements names
-    * @param svgid The id of the SVG element from which to load images, usualy
+    * @param svgid The id of the SVG element from which to load images, usually
     * the flag's country id
     * @param zoom The current zoom factor
     * @param aBackGnd The background giving info about the world geometry and

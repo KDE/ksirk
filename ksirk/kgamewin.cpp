@@ -302,7 +302,7 @@ void KGameWindow::initActions()
   actionCollection()->addAction("help_contextual", contextualHelpAction);
 
 
-  QString nextPlayerActionImageFileName = KGlobal::dirs()->findResource("appdata", m_automaton->skin() + "/" + CM_NEXTPLAYER);
+  QString nextPlayerActionImageFileName = KGlobal::dirs()->findResource("appdata", m_automaton->skin() + '/' + CM_NEXTPLAYER);
   m_nextPlayerAction =  new QAction(QIcon(nextPlayerActionImageFileName),
         i18n("Next Player"), this);
   connect(m_nextPlayerAction, SIGNAL(triggered(bool)), this, SLOT(slotNextPlayer()));
@@ -566,7 +566,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
 
   m_backGnd_world = new BackGnd(m_scene_world, m_theWorld);
 
-  Sprites::ArrowSprite* uparrow = new Sprites::ArrowSprite(Qt::UpArrow, m_backGnd_world);
+/*  Sprites::ArrowSprite* uparrow = new Sprites::ArrowSprite(Qt::UpArrow, m_backGnd_world);
   m_scene_world->addItem(uparrow);
   uparrow->setZValue(1000);
   uparrow->setPos(100,100);
@@ -584,8 +584,8 @@ void KGameWindow::newSkin(const QString& onuFileName)
   Sprites::ArrowSprite* rightarrow = new Sprites::ArrowSprite(Qt::RightArrow, m_backGnd_world);
   m_scene_world->addItem(rightarrow);
   rightarrow->setZValue(1000);
-  rightarrow->setPos(200,100);
-
+  rightarrow->setPos(200,100);*/
+  
 //   m_scene_world->setDoubleBuffering(true);
   kDebug() << "Before initView";
   initView();

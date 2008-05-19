@@ -19,6 +19,7 @@
 #include <iostream>
 
 #include "gameautomaton.h"
+
 #include "ksirksettings.h"
 #include "kgamewin.h"
 #include "kdebug.h"

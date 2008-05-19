@@ -71,15 +71,15 @@ namespace Ksirk
      stopAttackAuto.load(imageFileName);
 
      // load the recycle image
-     imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/" +CM_RECYCLING);
+     imageFileName = KGlobal::dirs()->findResource("appdata", skin + '/' +CM_RECYCLING);
      recycleContinue.load(imageFileName);
 
      // load the finish recycle image
-     imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/" + CM_RECYCLINGFINISHED);
+     imageFileName = KGlobal::dirs()->findResource("appdata", skin + '/' + CM_RECYCLINGFINISHED);
      recycleDone.load(imageFileName);
 
      // load the next player image
-     imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/" + CM_NEXTPLAYER);
+     imageFileName = KGlobal::dirs()->findResource("appdata", skin + '/' + CM_NEXTPLAYER);
      recycleNextPlayer.load(imageFileName);
 
      //soldat.setFixedSize(8,8);
