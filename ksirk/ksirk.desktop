@@ -12,6 +12,7 @@ GenericName[ga]=Cluiche Fhorlámhas an Domhain
 GenericName[pt]=Jogo Estratégico de Conquista do Mundo
 GenericName[pt_BR]=Jogo Estratégico de Conquista do Mundo
 GenericName[uk]=Стратегічна гра у світове панування
+GenericName[zh_TW]=征服世界戰略遊戲
 Categories=Qt;KDE;Game;StrategyGame;
 X-KDE-StartupNotify=true
 X-DBUS-StartupType=Multi
