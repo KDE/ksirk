@@ -317,6 +317,10 @@ void KGameWindow::slotOpenGame()
 
 void KGameWindow::slotSaveGame()
 {
+  if (m_message == 0)
+  {
+    setupPopupMessage();
+  }
   if (m_automaton->isAdmin())
   {
     if (isMyState(GameLogic::GameAutomaton::WAITDEFENSE))

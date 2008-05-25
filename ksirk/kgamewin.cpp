@@ -3315,6 +3315,20 @@ void KGameWindow::setNextPlayerActionEnabled(bool value)
   m_nextPlayerAction->setEnabled(value);
 }
 
+void KGameWindow::setupPopupMessage()
+{
+  if (m_message == 0)
+  {
+    kDebug();
+    m_message  = new KGamePopupItem();
+    connect(m_message,SIGNAL(linkActivated(const QString &)),this,SLOT(slotDisableHelp(const QString &)));
+    m_scene_world->addItem(m_message);
+    m_message->setSharpness(KGamePopupItem::Soft);
+    QColor color = QColor(102,102,255);
+    m_message->setBackgroundBrush(color);
+    m_message->setZValue(1000);
+  }
+}
 
 } // closing namespace Ksirk
 

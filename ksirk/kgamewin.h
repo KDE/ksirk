@@ -983,6 +983,7 @@ private: // Private methods
   void saveXml(std::ostream& xmlStream);
   void loadDices();
   QPixmap buildDice(DiceColor color, const QString& id);
+  void setupPopupMessage();
 
 };
 
