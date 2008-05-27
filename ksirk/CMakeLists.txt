@@ -85,7 +85,7 @@ target_link_libraries(ksirk
   ${KDEGAMES_LIBRARY}
  )
 
-install( TARGETS ksirk DESTINATION ${BIN_INSTALL_DIR})
+install( TARGETS ksirk ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
 
