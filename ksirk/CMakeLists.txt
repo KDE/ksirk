@@ -72,6 +72,7 @@ kde4_add_ui_files(ksirk_SRCS ${ksirk_UI} )
 
 kde4_add_kcfg_files( ksirk_SRCS ksirksettings.kcfgc )
 
+kde4_add_app_icon(ksirk_SRCS "hi*-app-ksirk.png")
 
 kde4_add_executable(ksirk ${ksirk_SRCS})
 
