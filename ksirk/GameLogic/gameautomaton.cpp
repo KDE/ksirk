@@ -774,7 +774,7 @@ GameAutomaton::GameState GameAutomaton::run()
           || m_currentPlayerPlayed  
           || (KMessageBox::questionYesNo (m_game,
                 i18n("%1, you have not played anything this turn.\nDo you really want to lose your turn ?",m_currentPlayer),
-                "Really Next Player ?") == KMessageBox::Yes) )
+                i18n("Really Next Player ?")) == KMessageBox::Yes) )
       {
         QByteArray buffer;
         QDataStream stream(&buffer, QIODevice::WriteOnly);

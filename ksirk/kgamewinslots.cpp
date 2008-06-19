@@ -337,7 +337,7 @@ void KGameWindow::slotSaveGame()
       if ( QFile::exists(fileName)
           && (KMessageBox::questionYesNo (this,
                 i18n("%1 exists.\nDo you really want to overwrite it ?",fileName),
-                "Overwrite file ?") == KMessageBox::No) )
+                i18n("Overwrite file ?")) == KMessageBox::No) )
       {
         m_message->setMessageTimeout(3000);
         m_message->showMessage(i18n("Saving canceled"), KGamePopupItem::TopLeft,
