@@ -19,7 +19,7 @@
 /* begin                : Fri  21 2007 */
 
 #include "mainMenu.h"
-
+#include <KLocale>
 namespace Ksirk
 {
   using namespace GameLogic;
@@ -49,10 +49,10 @@ namespace Ksirk
     mainLayout->addLayout(topLayout, 0, 0, Qt::AlignCenter);
 
     // Creates the buttons and label
-    pbNewGame = new QPushButton("New Game");
-    pbJoin = new QPushButton("Join");
-    pbLoad = new QPushButton("Load");
-    pbQuit = new QPushButton("Quit");
+    pbNewGame = new QPushButton(i18n("New Game"));
+    pbJoin = new QPushButton(i18n("Join"));
+    pbLoad = new QPushButton(i18n("Load"));
+    pbQuit = new QPushButton(i18n("Quit"));
     QLabel * lTitle = new QLabel ();
     QLabel * lImage1 = new QLabel();
     QLabel * lImage2 = new QLabel();

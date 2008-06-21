@@ -163,7 +163,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_downChatFloatPix.load(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/2DownArrow.png"));
   m_chatIsReduced = false;
 
-  m_titleChatMsg = new QLabel("No message...");
+  m_titleChatMsg = new QLabel(i18n("No message..."));
   m_reduceChatButton = new QPushButton(m_downChatReducePix,"");
   m_floatChatButton = new QPushButton(m_upChatFloatPix,"");
   m_reduceChatButton->setFixedSize(30,30);
@@ -1199,9 +1199,9 @@ void KGameWindow::displayDefenseWindow()
   mainLayout->addLayout(topLayout, 0, 0, Qt::AlignCenter);
   
   // Creat buttons and label of defense
-  QPushButton * def1 = new QPushButton ("Defend 1");
-  QPushButton * def2 = new QPushButton ("Defend 2");
-  QPushButton * defAuto = new QPushButton ("Defend-Auto");
+  QPushButton * def1 = new QPushButton (i18n("Defend 1"));
+  QPushButton * def2 = new QPushButton (i18n("Defend 2"));
+  QPushButton * defAuto = new QPushButton (i18n("Defend-Auto"));
 
   QLabel * labDef = new QLabel ();
   labDef->setText("<font color=\"red\">"+this->firstCountry()->owner()->name()+"</font> attacks you from <font color=\"red\">"+ this->firstCountry()->name() +"</font> with " + QString::number(this->firstCountry()->owner()->getNbAttack()) + " armies !<br> How do you want to defend <font color=\"blue\">" + this->secondCountry()->name() + "</font> ?");
