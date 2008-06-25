@@ -23,7 +23,7 @@ goals=goal1,goal2,goal3,goal4,goal5,goal6,goal7,goal8,goal9
 
 [font]
 family=URW Chancery L
-size=14
+size=11
 weight=bold
 italic=true
 foreground-color=black
@@ -73,7 +73,7 @@ versions=2
 [Western US]
 id=0
 flag-point=182,346
-anchor-point=169,330
+anchor-point=180,356
 central-point=169,328
 cannon-point=126,282
 cavalry-point=162,292
@@ -83,8 +83,8 @@ neighbours=1,3,7
 [Eastern US]
 id=1
 flag-point=269,283
-anchor-point=254,331
-central-point=250,328
+anchor-point=254,354
+central-point=250,348
 cannon-point=213,282
 cavalry-point=250,300
 infantry-point=214,330
@@ -93,8 +93,8 @@ neighbours=0,2,3,7
 [Quebec]
 id=2
 flag-point=258,232
-anchor-point=270,247
-central-point=270,250
+anchor-point=270,282
+central-point=275,270
 cannon-point=247,202
 cavalry-point=223,239
 infantry-point=275,235
@@ -103,8 +103,8 @@ neighbours=1,3,4,6
 [Ontario]
 id=3
 flag-point=192,248
-anchor-point=150,244
-central-point=157,243
+anchor-point=150,256
+central-point=157,263
 cannon-point=96,213
 cavalry-point=134,240
 infantry-point=183,217
@@ -113,8 +113,8 @@ neighbours=0,1,2,4,5
 [Alberta]
 id=4
 flag-point=189,187
-anchor-point=195,170
-central-point=195,175
+anchor-point=187,162
+central-point=185,205
 cannon-point=93,164
 cavalry-point=149,172
 infantry-point=189,154
@@ -123,8 +123,8 @@ neighbours=2,3,5,6
 [Alaska]
 id=5
 flag-point=56,165
-anchor-point=48,195
-central-point=55,193
+anchor-point=37,227
+central-point=50,213
 cannon-point=20,147
 cavalry-point=45,174
 infantry-point=16,191
@@ -133,8 +133,8 @@ neighbours=3,4,23
 [Groenland]
 id=6
 flag-point=369,129
-anchor-point=333,127
-central-point=339,129
+anchor-point=339,176
+central-point=334,149
 cannon-point=331,117
 cavalry-point=245,36
 infantry-point=337,72
@@ -143,8 +143,8 @@ neighbours=2,4,12
 [Mexico]
 id=7
 flag-point=225,425
-anchor-point=220,418
-central-point=225,425
+anchor-point=228,422
+central-point=225,405
 cannon-point=170,381
 cavalry-point=197,396
 infantry-point=236,387
@@ -153,8 +153,8 @@ neighbours=0,1,8
 [Colombia]
 id=8
 flag-point=277,508
-anchor-point=272,496
-central-point=272,495
+anchor-point=282,482
+central-point=272,475
 cannon-point=247,450
 cavalry-point=261,471
 infantry-point=249,497
@@ -164,7 +164,7 @@ neighbours=7,9,10
 id=9
 flag-point=318,494
 anchor-point=333,499
-central-point=323,515
+central-point=343,500
 cannon-point=300,458
 cavalry-point=298,500
 infantry-point=335,497
@@ -173,8 +173,8 @@ neighbours=8,10,27
 [Paraguay]
 id=10
 flag-point=282,575
-anchor-point=319,582
-central-point=310,575
+anchor-point=314,573
+central-point=310,555
 cannon-point=274,546
 cavalry-point=295,581
 infantry-point=319,547
@@ -183,8 +183,8 @@ neighbours=8,9,11
 [Chile]
 id=11
 flag-point=310,620
-anchor-point=301,671
-central-point=295,630
+anchor-point=291,645
+central-point=285,630
 cannon-point=273,617
 cavalry-point=270,647
 infantry-point=263,677
@@ -193,7 +193,7 @@ neighbours=10
 [Island]
 id=12
 flag-point=429,189
-anchor-point=422,188
+anchor-point=407,226
 central-point=425,188
 cannon-point=425,155
 cavalry-point=393,155
@@ -203,7 +203,7 @@ neighbours=6,13
 [United Kingdom]
 id=13
 flag-point=464,214
-anchor-point=479,239
+anchor-point=485,274
 central-point=464,224
 cannon-point=434,209
 cavalry-point=472,205
@@ -213,7 +213,7 @@ neighbours=12,14,15
 [Benelux]
 id=14
 flag-point=537,240
-anchor-point=533,242
+anchor-point=538,281
 central-point=525,240
 cannon-point=491,232
 cavalry-point=499,214
@@ -223,7 +223,7 @@ neighbours=13,15,16,17
 [France]
 id=15
 flag-point=530,264
-anchor-point=511,287
+anchor-point=516,321
 central-point=533,270
 cannon-point=483,255
 cavalry-point=464,282
@@ -233,7 +233,7 @@ neighbours=13,14,16,26
 [Prussia]
 id=16
 flag-point=581,240
-anchor-point=580,240
+anchor-point=589,285
 central-point=580,240
 cannon-point=559,200
 cavalry-point=561,225
@@ -243,7 +243,7 @@ neighbours=14,15,17,18,22
 [Scandinavia]
 id=17
 flag-point=529,165
-anchor-point=554,180
+anchor-point=560,185
 central-point=540,165
 cannon-point=538,134
 cavalry-point=559,158
@@ -293,7 +293,7 @@ neighbours=19,20,22,35
 [Kazakstan]
 id=22
 flag-point=650,255
-anchor-point=695,254
+anchor-point=702,287
 central-point=650,255
 cannon-point=628,216
 cavalry-point=676,221
@@ -334,78 +334,78 @@ neighbours=20
 
 [Algeria]
 id=26
-flag-point=468,346
-anchor-point=485,364
-central-point=485,360
-cannon-point=467,329
-cavalry-point=446,358
-infantry-point=490,352
+flag-point=480,346
+anchor-point=508,374
+central-point=518,360
+cannon-point=500,329
+cavalry-point=479,358
+infantry-point=523,352
 neighbours=15,27,28
 
 
 [Niger]
 id=27
-flag-point=502,411
-anchor-point=484,417
-central-point=492,411
-cannon-point=437,390
-cavalry-point=467,407
-infantry-point=485,386
+flag-point=529,411
+anchor-point=511,417
+central-point=519,411
+cannon-point=464,390
+cavalry-point=494,407
+infantry-point=512,386
 neighbours=9,26,28,29
 
 
 [Egypt]
 id=28
-flag-point=564,397
-anchor-point=575,407
-central-point=575,409
-cannon-point=538,366
-cavalry-point=530,395
-infantry-point=560,420
+flag-point=560,401
+anchor-point=598,411
+central-point=598,413
+cannon-point=561,370
+cavalry-point=553,399
+infantry-point=583,424
 neighbours=26,27,29,33
 
 
 [Gabon]
 id=29
-flag-point=571,476
-anchor-point=525,471
-central-point=525,471
-cannon-point=497,436
-cavalry-point=551,457
-infantry-point=516,460
+flag-point=592,455
+anchor-point=546,450
+central-point=546,450
+cannon-point=518,415
+cavalry-point=572,436
+infantry-point=537,439
 neighbours=27,28,30
 
 
 [Zair]
 id=30
-flag-point=566,533
-anchor-point=554,533
-central-point=560,533
-cannon-point=520,499
-cavalry-point=559,500
-infantry-point=532,522
+flag-point=572,500
+anchor-point=560,500
+central-point=566,500
+cannon-point=526,466
+cavalry-point=565,467
+infantry-point=538,489
 neighbours=29,31,32
 
 
 [South Africa]
 id=31
-flag-point=548,575
-anchor-point=548,591
-central-point=548,585
-cannon-point=529,600
-cavalry-point=552,558
-infantry-point=511,560
+flag-point=562,527
+anchor-point=562,543
+central-point=562,537
+cannon-point=543,552
+cavalry-point=566,506
+infantry-point=525,512
 neighbours=30,32
 
 
 [Madagascar]
 id=32
-flag-point=616,542
-anchor-point=611,560
-central-point=616,550
-cannon-point=590,546
-cavalry-point=598,521
-infantry-point=597,570
+flag-point=628,503
+anchor-point=623,521
+central-point=628,511
+cannon-point=602,503
+cavalry-point=610,482
+infantry-point=609,531
 neighbours=30,31
 
 
