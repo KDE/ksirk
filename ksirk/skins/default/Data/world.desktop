@@ -252,42 +252,42 @@ neighbours=14,16
 
 [Russia]
 id=18
-flag-point=673,160
-anchor-point=696,156
-central-point=713,160
-cannon-point=642,174
-cavalry-point=744,176
-infantry-point=720,123
+flag-point=703,193
+anchor-point=726,189
+central-point=743,193
+cannon-point=672,207
+cavalry-point=774,209
+infantry-point=750,156
 neighbours=16,22,23
 
 [Iran]
 id=19
-flag-point=631,325
-anchor-point=629,337
-central-point=631,322
-cannon-point=600,286
-cavalry-point=624,307
-infantry-point=609,335
+flag-point=618,344
+anchor-point=616,356
+central-point=618,341
+cannon-point=587,305
+cavalry-point=611,326
+infantry-point=596,354
 neighbours=21,22,33,34,35
 
 [China]
 id=20
-flag-point=792,321
-anchor-point=790,315
-central-point=772,321
-cannon-point=716,268
-cavalry-point=733,310
-infantry-point=775,278
+flag-point=812,338
+anchor-point=810,332
+central-point=792,338
+cannon-point=736,285
+cavalry-point=753,327
+infantry-point=795,295
 neighbours=21,24,25,35,36
 
 [Pakistan]
 id=21
-flag-point=660,340
-anchor-point=686,318
-central-point=685,340
-cannon-point=667,269
-cavalry-point=650,294
-infantry-point=675,320
+flag-point=665,376
+anchor-point=691,354
+central-point=690,376
+cannon-point=672,305
+cavalry-point=655,330
+infantry-point=680,356
 neighbours=19,20,22,35
 
 [Kazakstan]
@@ -302,33 +302,33 @@ neighbours=16,18,19,21,24
 
 [Siberia]
 id=23
-flag-point=871,162
-anchor-point=896,190
-central-point=871,172
-cannon-point=809,159
-cavalry-point=933,166
-infantry-point=835,191
+flag-point=876,185
+anchor-point=901,213
+central-point=876,195
+cannon-point=814,182
+cavalry-point=938,189
+infantry-point=840,214
 neighbours=5,18,24
 
 [Mongolia]
 id=24
-flag-point=803,240
-anchor-point=795,240
-central-point=803,240
-cannon-point=744,232
-cavalry-point=776,213
-infantry-point=824,226
+flag-point=823,286
+anchor-point=816,286
+central-point=823,286
+cannon-point=764,278
+cavalry-point=794,259
+infantry-point=820,272
 neighbours=20,22,23
 
 
 [Japan]
 id=25
-flag-point=884,311
-anchor-point=878,327
-central-point=884,321
-cannon-point=887,283
-cavalry-point=851,335
-infantry-point=861,302
+flag-point=879,323
+anchor-point=873,339
+central-point=879,333
+cannon-point=882,295
+cavalry-point=846,347
+infantry-point=856,314
 neighbours=20
 
 
@@ -411,100 +411,100 @@ neighbours=30,31
 
 [Arabia]
 id=33
-flag-point=600,368
-anchor-point=605,395
-central-point=600,380
-cannon-point=598,396
-cavalry-point=610,366
-infantry-point=569,355
+flag-point=623,373
+anchor-point=628,400
+central-point=623,385
+cannon-point=721,401
+cavalry-point=633,371
+infantry-point=592,360
 neighbours=19,28,34
 
 
 [Middle East]
 id=34
-flag-point=595,328
-anchor-point=587,332
-central-point=590,333
-cannon-point=549,304
-cavalry-point=577,297
-infantry-point=571,318
+flag-point=608,370
+anchor-point=600,374
+central-point=603,375
+cannon-point=562,346
+cavalry-point=590,339
+infantry-point=584,360
 neighbours=19,33
 
 
 [India]
 id=35
-flag-point=700,388
-anchor-point=698,412
-central-point=700,388
-cannon-point=699,369
-cavalry-point=682,400
-infantry-point=663,370
+flag-point=719,377
+anchor-point=717,401
+central-point=719,377
+cannon-point=718,358
+cavalry-point=701,589
+infantry-point=682,359
 neighbours=19,20,21,36
 
 
 [Vietnam]
 id=36
-flag-point=768,403
-anchor-point=782,417
-central-point=768,403
-cannon-point=738,366
-cavalry-point=772,369
-infantry-point=741,403
+flag-point=770,383
+anchor-point=784,397
+central-point=770,383
+cannon-point=740,346
+cavalry-point=774,349
+infantry-point=743,383
 neighbours=20,35,37
 
 
 [Indonesia]
 id=37
-flag-point=797,460
-anchor-point=789,488
-central-point=792,470
-cannon-point=752,471
-cavalry-point=783,481
-infantry-point=797,438
+flag-point=834,424
+anchor-point=826,452
+central-point=829,434
+cannon-point=789,435
+cavalry-point=820,445
+infantry-point=834,402
 neighbours=36,38
 
 
 [Papouasie]
 id=38
-flag-point=865,472
-anchor-point=885,507
-central-point=875,497
-cannon-point=861,470
-cavalry-point=846,491
-infantry-point=879,489
+flag-point=908,465
+anchor-point=928,500
+central-point=918,490
+cannon-point=904,463
+cavalry-point=889,484
+infantry-point=922,487
 neighbours=37,39,40
 
 
 [Occidental Australia]
 id=39
-flag-point=843,563
-anchor-point=840,581
-central-point=833,563
-cannon-point=803,560
-cavalry-point=816,587
-infantry-point=826,530
+flag-point=853,528
+anchor-point=850,546
+central-point=843,528
+cannon-point=813,525
+cavalry-point=826,552
+infantry-point=836,495
 neighbours=38,40
 
 
 [New South Walles]
 id=40
-flag-point=908,584
-anchor-point=890,591
-central-point=908,589
-cannon-point=871,600
-cavalry-point=872,538
-infantry-point=861,569
+flag-point=912,554
+anchor-point=894,561
+central-point=912,559
+cannon-point=875,570
+cavalry-point=876,508
+infantry-point=865,539
 neighbours=38,39,41
 
 
 [New Zealand]
 id=41
-flag-point=970,635
-anchor-point=969,652
-central-point=970,645
-cannon-point=964,616
-cavalry-point=940,648
-infantry-point=955,645
+flag-point=974,620
+anchor-point=973,637
+central-point=974,630
+cannon-point=968,601
+cavalry-point=944,633
+infantry-point=959,630
 neighbours=40
 
 
