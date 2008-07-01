@@ -72,42 +72,42 @@ versions=2
 
 [Western US]
 id=0
-flag-point=182,346
+flag-point=182,376
 anchor-point=180,356
 central-point=169,328
-cannon-point=126,282
-cavalry-point=162,292
-infantry-point=147,329
+cannon-point=126,312
+cavalry-point=162,322
+infantry-point=147,359
 neighbours=1,3,7
 
 [Eastern US]
 id=1
-flag-point=269,283
+flag-point=269,317
 anchor-point=254,354
 central-point=250,348
-cannon-point=213,282
-cavalry-point=250,300
-infantry-point=214,330
+cannon-point=213,314
+cavalry-point=250,334
+infantry-point=214,364
 neighbours=0,2,3,7
 
 [Quebec]
 id=2
-flag-point=258,232
+flag-point=258,282
 anchor-point=270,282
 central-point=275,270
-cannon-point=247,202
-cavalry-point=223,239
-infantry-point=275,235
+cannon-point=247,252
+cavalry-point=223,289
+infantry-point=275,285
 neighbours=1,3,4,6
 
 [Ontario]
 id=3
-flag-point=192,248
+flag-point=192,278
 anchor-point=150,256
 central-point=157,263
-cannon-point=96,213
-cavalry-point=134,240
-infantry-point=183,217
+cannon-point=96,243
+cavalry-point=134,270
+infantry-point=183,247
 neighbours=0,1,2,4,5
 
 [Alberta]
@@ -115,29 +115,29 @@ id=4
 flag-point=189,187
 anchor-point=187,162
 central-point=185,205
-cannon-point=93,164
-cavalry-point=149,172
+cannon-point=83,184
+cavalry-point=139,192
 infantry-point=189,154
 neighbours=2,3,5,6
 
 [Alaska]
 id=5
-flag-point=56,165
+flag-point=56,189
 anchor-point=37,227
 central-point=50,213
-cannon-point=20,147
-cavalry-point=45,174
-infantry-point=16,191
+cannon-point=20,187
+cavalry-point=45,234
+infantry-point=16,231
 neighbours=3,4,23
 
 [Groenland]
 id=6
-flag-point=369,129
+flag-point=357,129
 anchor-point=339,176
 central-point=334,149
-cannon-point=331,117
-cavalry-point=245,36
-infantry-point=337,72
+cannon-point=331,217
+cavalry-point=308,116
+infantry-point=337,172
 neighbours=2,4,12
 
 [Mexico]
@@ -145,19 +145,19 @@ id=7
 flag-point=225,425
 anchor-point=228,422
 central-point=225,405
-cannon-point=170,381
-cavalry-point=197,396
-infantry-point=236,387
+cannon-point=170,401
+cavalry-point=197,420
+infantry-point=236,417
 neighbours=0,1,8
 
 [Colombia]
 id=8
-flag-point=277,508
+flag-point=292,498
 anchor-point=282,482
 central-point=272,475
-cannon-point=247,450
-cavalry-point=261,471
-infantry-point=249,497
+cannon-point=262,440
+cavalry-point=276,461
+infantry-point=264,487
 neighbours=7,9,10
 
 [Brazil]
@@ -192,12 +192,12 @@ neighbours=10
 
 [Island]
 id=12
-flag-point=429,189
+flag-point=416,209
 anchor-point=407,226
 central-point=425,188
-cannon-point=425,155
-cavalry-point=393,155
-infantry-point=400,180
+cannon-point=412,198
+cavalry-point=380,198
+infantry-point=387,223
 neighbours=6,13
 
 [United Kingdom]
@@ -222,12 +222,12 @@ neighbours=13,15,16,17
 
 [France]
 id=15
-flag-point=530,264
+flag-point=530,294
 anchor-point=516,321
-central-point=533,270
-cannon-point=483,255
-cavalry-point=464,282
-infantry-point=510,255
+central-point=517,308
+cannon-point=483,295
+cavalry-point=469,318
+infantry-point=533,315
 neighbours=13,14,16,26
 
 [Prussia]
