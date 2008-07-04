@@ -19,7 +19,7 @@
 /*  begin                : mer jui 11 22:27:28 EDT 2001   */
 
 // application specific includes
-#include "kgamewin.h"
+#include "kgamewin.h" 
 #include "ksirkConfigDialog.h"
 #include "ksirksettings.h"
 #include "MessageBubble.h"

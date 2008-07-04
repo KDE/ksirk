@@ -4,7 +4,7 @@
 width=1024
 height=768
 skinpath=skins/default
-nb-countries=42
+nb-countries=41
 nb-nationalities=6
 nb-continents=6
 pool=Images/pool.svg
@@ -14,12 +14,12 @@ name=Earth-like
 desc=This skin shows a world that looks like the real one with some nationalities\nrandomly chosen and proposes various interesting goals
 fighters-flag-y-diff=-12
 width-between-flag-and-fighter=32
-countries=Western US,Eastern US,Quebec,Ontario,Alberta,Alaska,Groenland,Mexico,Colombia,Brazil,Paraguay,Chile,Island,United Kingdom,Benelux,France,Prussia,Scandinavia,Russia,Iran,China,Pakistan,Kazakstan,Siberia,Mongolia,Japan,Algeria,Niger,Egypt,Gabon,Zair,South Africa,Madagascar,Arabia,Middle East,India,Vietnam,Indonesia,Papouasie,Occidental Australia,New South Walles,New Zealand
+countries=Western US,Eastern US,Quebec,Ontario,Alberta,Alaska,Groenland,Mexico,Colombia,Brazil,Paraguay,Chile,Island,United Kingdom,Benelux,France,Prussia,Scandinavia,Russia,Iran,China,Pakistan,Kazakstan,Siberia,Mongolia,Japan,Algeria,Niger,Egypt,Gabon,Zair,South Africa,Madagascar,Arabia,New Zealand,India,Vietnam,Indonesia,Papouasie,Occidental Australia,New South Walles
 nationalities=France,England,United States,Belgium,Japan,Italy
 continents=North America,South America,Europe,Africa,Asia,Pacific
 goals=goal1,goal2,goal3,goal4,goal5,goal6,goal7,goal8,goal9
 
-
+# Middle East
 
 [font]
 family=URW Chancery L
@@ -72,22 +72,22 @@ versions=2
 
 [Western US]
 id=0
-flag-point=182,376
+flag-point=167,342
 anchor-point=180,356
 central-point=169,328
-cannon-point=126,312
-cavalry-point=162,322
-infantry-point=147,359
+cannon-point=131,312
+cavalry-point=177,371
+infantry-point=144,354
 neighbours=1,3,7
 
 [Eastern US]
 id=1
 flag-point=269,317
 anchor-point=254,354
-central-point=250,348
-cannon-point=213,314
-cavalry-point=250,334
-infantry-point=214,364
+central-point=250,343
+cannon-point=213,319
+cavalry-point=250,344
+infantry-point=214,360
 neighbours=0,2,3,7
 
 [Quebec]
@@ -104,10 +104,10 @@ neighbours=1,3,4,6
 id=3
 flag-point=192,278
 anchor-point=150,256
-central-point=157,263
+central-point=157,260
 cannon-point=96,243
 cavalry-point=134,270
-infantry-point=183,247
+infantry-point=183,240
 neighbours=0,1,2,4,5
 
 [Alberta]
@@ -116,7 +116,7 @@ flag-point=189,187
 anchor-point=187,162
 central-point=185,205
 cannon-point=83,184
-cavalry-point=139,192
+cavalry-point=134,192
 infantry-point=189,154
 neighbours=2,3,5,6
 
@@ -152,72 +152,72 @@ neighbours=0,1,8
 
 [Colombia]
 id=8
-flag-point=292,498
+flag-point=292,493
 anchor-point=282,482
 central-point=272,475
 cannon-point=262,440
-cavalry-point=276,461
+cavalry-point=276,456
 infantry-point=264,487
 neighbours=7,9,10
 
 [Brazil]
 id=9
-flag-point=318,494
+flag-point=318,484
 anchor-point=333,499
 central-point=343,500
-cannon-point=300,458
-cavalry-point=298,500
-infantry-point=335,497
+cannon-point=305,458
+cavalry-point=298,505
+infantry-point=345,507
 neighbours=8,10,27
 
 [Paraguay]
 id=10
-flag-point=282,575
+flag-point=282,570
 anchor-point=314,573
 central-point=310,555
-cannon-point=274,546
-cavalry-point=295,581
-infantry-point=319,547
+cannon-point=274,541
+cavalry-point=295,571
+infantry-point=319,537
 neighbours=8,9,11
 
 [Chile]
 id=11
 flag-point=310,620
 anchor-point=291,645
-central-point=285,630
-cannon-point=273,617
-cavalry-point=270,647
-infantry-point=263,677
+central-point=285,620
+cannon-point=273,607
+cavalry-point=270,637
+infantry-point=263,667
 neighbours=10
 
 [Island]
 id=12
-flag-point=416,209
+flag-point=406,199
 anchor-point=407,226
-central-point=425,188
-cannon-point=412,198
-cavalry-point=380,198
-infantry-point=387,223
+central-point=420,178
+cannon-point=407,188
+cavalry-point=375,188
+infantry-point=387,213
 neighbours=6,13
 
 [United Kingdom]
 id=13
-flag-point=464,214
+flag-point=478,250
 anchor-point=485,274
-central-point=464,224
-cannon-point=434,209
-cavalry-point=472,205
-infantry-point=446,230
+central-point=478,260
+cannon-point=448,245
+cavalry-point=486,241
+infantry-point=460,266
 neighbours=12,14,15
 
 [Benelux]
 id=14
-flag-point=537,240
+flag-point=547,270
 anchor-point=538,281
-central-point=525,240
-cannon-point=491,232
-cavalry-point=499,214
-infantry-point =519,216
+central-point=535,280
+cannon-point=501,272
+cavalry-point=509,254
+infantry-point =529,256
 neighbours=13,15,16,17
 
 [France]
@@ -232,72 +232,73 @@ neighbours=13,14,16,26
 
 [Prussia]
 id=16
-flag-point=581,240
+flag-point=598,295
 anchor-point=589,285
-central-point=580,240
-cannon-point=559,200
-cavalry-point=561,225
-infantry-point=558,245
+central-point=597,280
+cannon-point=576,240
+cavalry-point=578,255
+infantry-point=565,295
 neighbours=14,15,17,18,22
 
 [Scandinavia]
 id=17
-flag-point=529,165
+flag-point=543,190
 anchor-point=560,185
-central-point=540,165
-cannon-point=538,134
-cavalry-point=559,158
-infantry-point=498,169
+central-point=562,212
+cannon-point=552,179
+cavalry-point=573,193
+infantry-point=522,224
 neighbours=14,16
 
 [Russia]
 id=18
-flag-point=703,193
+flag-point=693,193
 anchor-point=726,189
 central-point=743,193
-cannon-point=672,207
+cannon-point=652,207
 cavalry-point=774,209
-infantry-point=750,156
+infantry-point=740,156
 neighbours=16,22,23
 
 [Iran]
 id=19
-flag-point=618,344
+flag-point=606,325
 anchor-point=616,356
 central-point=618,341
-cannon-point=587,305
-cavalry-point=611,326
-infantry-point=596,354
-neighbours=21,22,33,34,35
+cannon-point=574,332
+cavalry-point=616,353
+infantry-point=637,361
+neighbours=21,22,33,35
+# ,34
 
 [China]
 id=20
-flag-point=812,338
+flag-point=812,318
 anchor-point=810,332
-central-point=792,338
-cannon-point=736,285
-cavalry-point=753,327
-infantry-point=795,295
+central-point=780,336
+cannon-point=775,360
+cavalry-point=768,311
+infantry-point=845,289
 neighbours=21,24,25,35,36
 
 [Pakistan]
 id=21
-flag-point=665,376
+flag-point=680,325
 anchor-point=691,354
-central-point=690,376
-cannon-point=672,305
-cavalry-point=655,330
-infantry-point=680,356
+central-point=680,345
+cannon-point=698,326
+cavalry-point=646,325
+infantry-point=659,357
 neighbours=19,20,22,35
 
 [Kazakstan]
 id=22
-flag-point=650,255
+flag-point=690,265
 anchor-point=702,287
-central-point=650,255
-cannon-point=628,216
-cavalry-point=676,221
-infantry-point=605,246
+central-point=702,279
+cannon-point=724,264
+cavalry-point=717,293
+infantry-point=637,280
 neighbours=16,18,19,21,24
 
 [Siberia]
@@ -312,23 +313,23 @@ neighbours=5,18,24
 
 [Mongolia]
 id=24
-flag-point=823,286
+flag-point=829,245
 anchor-point=816,286
-central-point=823,286
-cannon-point=764,278
-cavalry-point=794,259
-infantry-point=820,272
+central-point=812,270
+cannon-point=775,288
+cavalry-point=788,245
+infantry-point=851,249
 neighbours=20,22,23
 
 
 [Japan]
 id=25
-flag-point=879,323
+flag-point=889,323
 anchor-point=873,339
-central-point=879,333
-cannon-point=882,295
-cavalry-point=846,347
-infantry-point=856,314
+central-point=879,340
+cannon-point=882,305
+cavalry-point=856,350
+infantry-point=866,314
 neighbours=20
 
 
@@ -336,43 +337,43 @@ neighbours=20
 id=26
 flag-point=480,346
 anchor-point=508,374
-central-point=518,360
-cannon-point=500,329
-cavalry-point=479,358
-infantry-point=523,352
+central-point=518,361
+cannon-point=495,349
+cavalry-point=464,358
+infantry-point=540,360
 neighbours=15,27,28
 
 
 [Niger]
 id=27
-flag-point=529,411
+flag-point=519,401
 anchor-point=511,417
-central-point=519,411
-cannon-point=464,390
-cavalry-point=494,407
-infantry-point=512,386
+central-point=504,394
+cannon-point=452,390
+cavalry-point=533,397
+infantry-point=450,407
 neighbours=9,26,28,29
 
 
 [Egypt]
 id=28
-flag-point=560,401
+flag-point=580,401
 anchor-point=598,411
 central-point=598,413
-cannon-point=561,370
-cavalry-point=553,399
-infantry-point=583,424
+cannon-point=556,370
+cavalry-point=563,384
+infantry-point=588,424
 neighbours=26,27,29,33
 
 
 [Gabon]
 id=29
-flag-point=592,455
+flag-point=540,441
 anchor-point=546,450
-central-point=546,450
-cannon-point=518,415
-cavalry-point=572,436
-infantry-point=537,439
+central-point=529,430
+cannon-point=486,419
+cavalry-point=590,453
+infantry-point=562,440
 neighbours=27,28,30
 
 
@@ -380,21 +381,21 @@ neighbours=27,28,30
 id=30
 flag-point=572,500
 anchor-point=560,500
-central-point=566,500
-cannon-point=526,466
-cavalry-point=565,467
-infantry-point=538,489
+central-point=556,490
+cannon-point=526,471
+cavalry-point=565,472
+infantry-point=543,504
 neighbours=29,31,32
 
 
 [South Africa]
 id=31
-flag-point=562,527
+flag-point=562,532
 anchor-point=562,543
-central-point=562,537
-cannon-point=543,552
-cavalry-point=566,506
-infantry-point=525,512
+central-point=562,547
+cannon-point=543,560
+cavalry-point=569,509
+infantry-point=525,520
 neighbours=30,32
 
 
@@ -403,7 +404,7 @@ id=32
 flag-point=628,503
 anchor-point=623,521
 central-point=628,511
-cannon-point=602,503
+cannon-point=602,520
 cavalry-point=610,482
 infantry-point=609,531
 neighbours=30,31
@@ -411,56 +412,57 @@ neighbours=30,31
 
 [Arabia]
 id=33
-flag-point=623,373
+flag-point=613,368
 anchor-point=628,400
-central-point=623,385
-cannon-point=721,401
-cavalry-point=633,371
-infantry-point=592,360
-neighbours=19,28,34
+central-point=620,383
+cannon-point=582,358
+cavalry-point=631,393
+infantry-point=608,396
+neighbours=19,28
+# ,34
 
 
-[Middle East]
-id=34
-flag-point=608,370
-anchor-point=600,374
-central-point=603,375
-cannon-point=562,346
-cavalry-point=590,339
-infantry-point=584,360
-neighbours=19,33
+# [Middle East]
+# id=34
+# flag-point=584,350
+# anchor-point=600,374
+# central-point=584,365
+# cannon-point=562,346
+# cavalry-point=590,339
+# infantry-point=584,360
+# neighbours=19,33
 
 
 [India]
 id=35
-flag-point=719,377
+flag-point=717,389
 anchor-point=717,401
 central-point=719,377
-cannon-point=718,358
-cavalry-point=701,589
-infantry-point=682,359
+cannon-point=714,362
+cavalry-point=695,407
+infantry-point=685,387
 neighbours=19,20,21,36
 
 
 [Vietnam]
 id=36
-flag-point=770,383
+flag-point=773,383
 anchor-point=784,397
-central-point=770,383
-cannon-point=740,346
-cavalry-point=774,349
-infantry-point=743,383
+central-point=770,398
+cannon-point=742,385
+cavalry-point=790,376
+infantry-point=773,409
 neighbours=20,35,37
 
 
 [Indonesia]
 id=37
-flag-point=834,424
+flag-point=834,428
 anchor-point=826,452
-central-point=829,434
-cannon-point=789,435
-cavalry-point=820,445
-infantry-point=834,402
+central-point=829,444
+cannon-point=764,450
+cavalry-point=790,466
+infantry-point=824,402
 neighbours=36,38
 
 
@@ -469,42 +471,42 @@ id=38
 flag-point=908,465
 anchor-point=928,500
 central-point=918,490
-cannon-point=904,463
-cavalry-point=889,484
-infantry-point=922,487
+cannon-point=924,473
+cavalry-point=870,460
+infantry-point=967,490
 neighbours=37,39,40
 
 
 [Occidental Australia]
 id=39
-flag-point=853,528
+flag-point=858,508
 anchor-point=850,546
-central-point=843,528
-cannon-point=813,525
-cavalry-point=826,552
-infantry-point=836,495
+central-point=823,528
+cannon-point=837,551
+cavalry-point=808,550
+infantry-point=841,495
 neighbours=38,40
 
 
 [New South Walles]
 id=40
-flag-point=912,554
+flag-point=912,534
 anchor-point=894,561
-central-point=912,559
-cannon-point=875,570
+central-point=932,549
+cannon-point=885,575
 cavalry-point=876,508
-infantry-point=865,539
-neighbours=38,39,41
+infantry-point=870,554
+neighbours=38,39,34
 
-
+# 41 -> 34
 [New Zealand]
-id=41
-flag-point=974,620
+id=34
+flag-point=974,610
 anchor-point=973,637
-central-point=974,630
-cannon-point=968,601
-cavalry-point=944,633
-infantry-point=959,630
+central-point=974,625
+cannon-point=958,591
+cavalry-point=940,633
+infantry-point=969,635
 neighbours=40
 
 
@@ -555,7 +557,8 @@ continent-countries=12,13,14,15,16,17,22
 [Africa]
 id=4
 bonus=3
-continent-countries=26,27,28,29,30,31,32,33,34
+continent-countries=26,27,28,29,30,31,32,33
+# ,34
 
 #5
 [Asia]
@@ -567,7 +570,7 @@ continent-countries=18,19,20,21,23,24,25,35,36
 [Pacific]
 id=6
 bonus=2
-continent-countries=37,38,39,40,41
+continent-countries=37,38,39,40,34
 
 [goal1]
 type=countries
