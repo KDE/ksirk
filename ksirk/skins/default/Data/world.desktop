@@ -82,22 +82,22 @@ neighbours=1,3,7
 
 [Eastern US]
 id=1
-flag-point=269,317
+flag-point=274,322
 anchor-point=254,354
 central-point=250,343
 cannon-point=213,319
 cavalry-point=250,344
-infantry-point=214,360
+infantry-point=210,358
 neighbours=0,2,3,7
 
 [Quebec]
 id=2
 flag-point=258,282
 anchor-point=270,282
-central-point=275,270
-cannon-point=247,252
-cavalry-point=223,289
-infantry-point=275,285
+central-point=275,267
+cannon-point=250,247
+cavalry-point=275,280
+infantry-point=223,280
 neighbours=1,3,4,6
 
 [Ontario]
@@ -245,8 +245,8 @@ id=17
 flag-point=543,190
 anchor-point=560,185
 central-point=562,212
-cannon-point=552,179
-cavalry-point=573,193
+cannon-point=542,169
+cavalry-point=573,183
 infantry-point=522,224
 neighbours=14,16
 
@@ -306,9 +306,9 @@ id=23
 flag-point=876,185
 anchor-point=901,213
 central-point=876,195
-cannon-point=814,182
+cannon-point=840,214
 cavalry-point=938,189
-infantry-point=840,214
+infantry-point=814,162
 neighbours=5,18,24
 
 [Mongolia]
@@ -382,9 +382,9 @@ id=30
 flag-point=572,500
 anchor-point=560,500
 central-point=556,490
-cannon-point=526,471
+cannon-point=543,504
 cavalry-point=565,472
-infantry-point=543,504
+infantry-point=521,461
 neighbours=29,31,32
 
 
