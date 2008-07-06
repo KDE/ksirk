@@ -2618,6 +2618,10 @@ void KGameWindow::decrNbMovedArmies(unsigned int nb)
 
 bool KGameWindow::invade(unsigned int nb )
 {
+  if (m_firstCountry==0 || m_secondCountry==0)
+  {
+    kDebug() << "invade("<<nb<<") returns " << false;
+  }
   bool res = initArmiesMovement(nb, m_firstCountry, m_secondCountry);
   kDebug() << "invade("<<nb<<") returns " << res;
   QPoint point;
