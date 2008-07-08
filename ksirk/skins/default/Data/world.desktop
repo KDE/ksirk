@@ -238,7 +238,7 @@ central-point=597,280
 cannon-point=576,240
 cavalry-point=578,255
 infantry-point=565,295
-neighbours=14,15,17,18,22
+neighbours=14,15,17,18,19,22
 
 [Scandinavia]
 id=17
@@ -258,7 +258,7 @@ central-point=733,203
 cannon-point=652,207
 cavalry-point=774,209
 infantry-point=740,156
-neighbours=16,22,23
+neighbours=16,22,23,24
 
 [Iran]
 id=19
@@ -268,7 +268,7 @@ central-point=618,341
 cannon-point=574,332
 cavalry-point=616,353
 infantry-point=637,361
-neighbours=21,22,33,35
+neighbours=16,21,33,35
 # ,34
 
 [China]
@@ -299,7 +299,7 @@ central-point=702,279
 cannon-point=724,264
 cavalry-point=717,293
 infantry-point=637,270
-neighbours=16,18,19,21,24
+neighbours=16,18,21,24
 
 [Siberia]
 id=23
@@ -319,7 +319,7 @@ central-point=812,270
 cannon-point=775,288
 cavalry-point=788,245
 infantry-point=851,249
-neighbours=20,22,23
+neighbours=18,20,22,23
 
 
 [Japan]
@@ -413,7 +413,7 @@ neighbours=30,31
 [Arabia]
 id=33
 flag-point=613,368
-anchor-point=628,400
+anchor-point=618,390
 central-point=620,383
 cannon-point=582,358
 cavalry-point=631,393

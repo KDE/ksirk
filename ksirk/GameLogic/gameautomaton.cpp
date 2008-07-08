@@ -206,6 +206,7 @@ void GameAutomaton::state(GameAutomaton::GameState state)
 {
   kDebug() << "new state (id=" << state << ") is " << GameStateNames[state] << endl;
   m_state = state;
+  m_game->setSaveGameActionEnabled(m_state == WAIT);
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   stream << state;
@@ -1021,8 +1022,7 @@ void GameAutomaton::gameEvent(const ::std::string& event, const QPointF& point)
 /** returns the name of the current state */
 QString GameAutomaton::stateName() const
 {
-  if (m_state < 0 
-      || (unsigned int)(m_state) >= sizeof(GameStateNames))
+  if ((size_t)(m_state) >= sizeof(GameStateNames))
   {
     ::std::ostringstream oss;
     oss << "Invalid stored state id: " << m_state;

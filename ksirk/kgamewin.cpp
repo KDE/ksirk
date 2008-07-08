@@ -257,8 +257,8 @@ void KGameWindow::initActions()
   actionCollection()->addAction(action->objectName(), action);
   action = KStandardGameAction::load(this, SLOT(slotOpenGame()), this);
   actionCollection()->addAction(action->objectName(), action);
-  action = KStandardGameAction::save(this, SLOT(slotSaveGame()), this);
-  actionCollection()->addAction(action->objectName(), action);
+  m_saveGameAction = KStandardGameAction::save(this, SLOT(slotSaveGame()), this);
+  actionCollection()->addAction(m_saveGameAction->objectName(), m_saveGameAction);
   action = KStandardGameAction::quit(this, SLOT(close()), this);
   actionCollection()->addAction(action->objectName(), action);
 
@@ -2487,55 +2487,54 @@ bool KGameWindow::nextPlayerNormal()
 }
 void KGameWindow::centerOnFight()
 {
+  kDebug();
 
-
-
-  qreal aj=m_rightDialog->width();		//get the width of the right widget
-  qreal ay=m_chatDlg->height();			//get the height of the bottom widget
+  qreal aj=m_rightDialog->width();    //get the width of the right widget
+  qreal ay=m_chatDlg->height();      //get the height of the bottom widget
 
 //Larg 
   qreal larg=((m_secondCountry->centralPoint().x())-(m_firstCountry->centralPoint().x()));
   if (larg<0)
   {
- 	larg=-larg;		//si negatif alors on remet en positif
+   larg=-larg;    //si negatif alors on remet en positif
   }
 //Long
   qreal longu=((m_secondCountry->centralPoint().y())-(m_firstCountry->centralPoint().y()));
   if (longu<0)
   {
- 	longu=-longu;		//si negatif alors on remet en positif
+   longu=-longu;    //si negatif alors on remet en positif
   }
 //Point NordOuest
-  qreal minx=m_secondCountry->centralPoint().x();	
+  qreal minx=m_secondCountry->centralPoint().x();  
   qreal miny=m_secondCountry->centralPoint().y();
   if (minx>m_firstCountry->centralPoint().x())
   {
-	minx=m_firstCountry->centralPoint().x();
+  minx=m_firstCountry->centralPoint().x();
   }
   if (miny>m_firstCountry->centralPoint().y())
   {
-	miny=m_firstCountry->centralPoint().y();
+  miny=m_firstCountry->centralPoint().y();
   }
 
-  QSizeF size (larg,longu); 	//creation de la size  (2x la largeur entre les deux pays)
-  QPointF NO (minx,miny);	//creation du point Nord Ouest
-  QRectF rect(NO,size);		//creation du rect 
+  QSizeF size (larg,longu);   //creation de la size  (2x la largeur entre les deux pays)
+  QPointF NO (minx,miny);  //creation du point Nord Ouest
+  QRectF rect(NO,size);    //creation du rect
   m_frame->ensureVisible(rect);
 
 // centering on the middle point
   qreal xx=((m_secondCountry->centralPoint().x())+(m_firstCountry->centralPoint().x()))/2;
   if (xx<0)
   {
- 	xx=-xx;		//si negatif alors on remet en positif
+   xx=-xx;    //si negatif alors on remet en positif
   }
   qreal yy=((m_secondCountry->centralPoint().y())+(m_firstCountry->centralPoint().y()))/2;
   if (yy<0)
   {
- 	yy=-yy;		//si negatif alors on remet en positif
+   yy=-yy;    //si negatif alors on remet en positif
   }
 
   QPointF mid (xx,yy);
-  m_frame->centerOn(mid);	    //center on the point
+  m_frame->centerOn(mid);      //center on the point
 
   m_frame->translate(-aj/2,-ay/2);  //translate to center perfectly
 //end Benjamin M.
@@ -2544,7 +2543,7 @@ void KGameWindow::centerOnFight()
 }
 void KGameWindow::attack(unsigned int nb)
 {  
-  centerOnFight();				//center the view on the fight Benj
+  centerOnFight();        //center the view on the fight Benj
   
   displayCancelButton();
   currentPlayer()-> setNbAttack(nb);
@@ -3317,6 +3316,12 @@ void KGameWindow::setNextPlayerActionEnabled(bool value)
 {
   kDebug() << value;
   m_nextPlayerAction->setEnabled(value);
+}
+
+void KGameWindow::setSaveGameActionEnabled(bool value)
+{
+  kDebug() << value;
+  m_saveGameAction->setEnabled(value);
 }
 
 void KGameWindow::setupPopupMessage()

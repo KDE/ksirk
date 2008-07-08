@@ -605,6 +605,7 @@ public:
   void slideInvade(GameLogic::Country *,GameLogic::Country *, InvasionType invasionType = Invasion);
 
   void setNextPlayerActionEnabled(bool value);
+  void setSaveGameActionEnabled(bool value);
 
 protected:
 
@@ -976,6 +977,7 @@ private:
   QString m_fileName;
 
   QAction* m_nextPlayerAction;
+  QAction* m_saveGameAction;
 
 private: // Private methods
   /*void attack(GameLogic::Country& attacker, GameLogic::Country& defender, unsigned int nb);*/

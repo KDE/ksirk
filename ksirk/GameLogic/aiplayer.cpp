@@ -84,7 +84,7 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
   kDebug() << name() << ": (state is " << m_game-> stateName() << ")" << endl;
   if (m_game->m_aicannotrunhack)
   {
-    kDebug() << "HACK HACK AIPlayer " << name() 	
+    kDebug() << "HACK HACK AIPlayer " << name()   
         << ": game says AIs cannot run..." << endl;
     return;
   }
@@ -119,34 +119,35 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
         break;
       case GameLogic::GameAutomaton::WAIT :
 //         kDebug() << "WAIT " << name() << endl;
-	if (!m_actionWaitingStart)
+        if (!m_actionWaitingStart)
           chooseAttackMoveArmiesOrNextPlayer();
-	//if (m_src != 0 && m_dest != 0)
+  //if (m_src != 0 && m_dest != 0)
         //{
-		//stream << QString("actionLButtonDown") << m_src->centralPoint();
-		//aiPlayerIO()->sendInput(stream,true);
-        	
-	//}
+    //stream << QString("actionLButtonDown") << m_src->centralPoint();
+    //aiPlayerIO()->sendInput(stream,true);
+          
+  //}
         break;
       case GameLogic::GameAutomaton::WAIT1:
-	m_actionWaitingStart = false;
-	
-	chooseInvasionAction();	
-		if (m_src->owner() == m_dest->owner())
-        	{
-          		stream << QString("actionLButtonUp") << m_dest->centralPoint();
-          		m_src = 0;
-          		m_dest = 0;
-          		aiPlayerIO()->sendInput(stream,true);
-			//m_game->state(GameAutomaton::ATTACK2);
-        	}
+        m_actionWaitingStart = false;
+
+        chooseInvasionAction();
+        if (m_src != 0 && m_dest != 0
+            && m_src->owner() == m_dest->owner())
+        {
+          stream << QString("actionLButtonUp") << m_dest->centralPoint();
+          m_src = 0;
+          m_dest = 0;
+          aiPlayerIO()->sendInput(stream,true);
+          //m_game->state(GameAutomaton::ATTACK2);
+        }
 
   
     /*stream << QString("actionAttack2") << point;
     
       kError() << "The attacker tries to attack with a number of armies different of 1, 2 or 3: that's impossible!" << endl;
       //exit();*/
-		
+  
         break;
       case GameLogic::GameAutomaton::INIT: 
         break;
