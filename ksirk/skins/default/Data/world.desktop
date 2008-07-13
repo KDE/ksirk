@@ -78,7 +78,7 @@ central-point=169,328
 cannon-point=131,312
 cavalry-point=177,365
 infantry-point=144,354
-neighbours=1,3,7
+neighbours=1,2,3,7
 
 [Eastern US]
 id=1
@@ -88,7 +88,7 @@ central-point=250,343
 cannon-point=218,319
 cavalry-point=240,355
 infantry-point=210,358
-neighbours=0,2,3,7
+neighbours=0,2,7
 
 [Quebec]
 id=2
@@ -98,7 +98,7 @@ central-point=275,267
 cannon-point=250,247
 cavalry-point=275,280
 infantry-point=223,280
-neighbours=1,3,4,6
+neighbours=0,1,3,4,6
 
 [Ontario]
 id=3
@@ -108,7 +108,7 @@ central-point=157,260
 cannon-point=96,243
 cavalry-point=134,270
 infantry-point=183,240
-neighbours=0,1,2,4,5
+neighbours=0,2,4,5
 
 [Alberta]
 id=4
@@ -413,7 +413,7 @@ neighbours=30,31
 [Arabia]
 id=33
 flag-point=613,368
-anchor-point=618,390
+anchor-point=623,395
 central-point=620,383
 cannon-point=582,358
 cavalry-point=631,393

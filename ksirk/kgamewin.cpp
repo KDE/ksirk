@@ -2492,7 +2492,12 @@ void KGameWindow::centerOnFight()
   qreal aj=m_rightDialog->width();    //get the width of the right widget
   qreal ay=m_chatDlg->height();      //get the height of the bottom widget
 
-//Larg 
+//Larg
+  if (m_firstCountry==0 || m_secondCountry==0)
+  {
+    kError() << "countries should not be null ("<<(void*)m_firstCountry<<","<<(void*)m_secondCountry<<") at "<<__FILE__<<", line "<<__LINE__;
+    return;
+  }
   qreal larg=((m_secondCountry->centralPoint().x())-(m_firstCountry->centralPoint().x()));
   if (larg<0)
   {
@@ -2620,6 +2625,7 @@ bool KGameWindow::invade(unsigned int nb )
   if (m_firstCountry==0 || m_secondCountry==0)
   {
     kDebug() << "invade("<<nb<<") returns " << false;
+    return false;
   }
   bool res = initArmiesMovement(nb, m_firstCountry, m_secondCountry);
   kDebug() << "invade("<<nb<<") returns " << res;
