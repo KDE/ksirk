@@ -910,7 +910,9 @@ bool AIColsonPlayer::ComputerAttack(int destCountry, bool die, int dif)
 {
   kDebug() << destCountry;
 
-  if (Attack_SrcCountry!=-1 && Attack_DestCountry!=-1
+  if (  Attack_SrcCountry!=-1
+      && RISK_GetOwnerOfCountry(Attack_SrcCountry) == this
+      && Attack_DestCountry!=-1
       && (RISK_GetOwnerOfCountry(Attack_DestCountry) != this)
           && (RISK_GetNumArmiesOfCountry(Attack_SrcCountry) > 1)
           && (die || (   RISK_GetNumArmiesOfCountry(Attack_SrcCountry)
@@ -1369,7 +1371,9 @@ bool AIColsonPlayer::AttackEnemy()
   int nbCountriesWithAdjacentEnemies;
   const Continent* continent = GetContinentToFortify(&nbCountriesWithAdjacentEnemies);
 
-  if (Attack_SrcCountry!=-1 && Attack_DestCountry != -1
+  if (Attack_SrcCountry!=-1
+      && (RISK_GetOwnerOfCountry(Attack_SrcCountry)==this)
+      && Attack_DestCountry != -1
       && (RISK_GetOwnerOfCountry(Attack_DestCountry)!=this)
       && ComputerAttack (Attack_DestCountry, true,
                             (RISK_GetNumArmiesOfCountry(Attack_DestCountry) < 5)?1:
