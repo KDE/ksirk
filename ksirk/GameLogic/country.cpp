@@ -260,17 +260,20 @@ bool Country::communicateWith(const Country* otherCountry) const
 /** @returns a pointer on the Player that holds this Country */
 const Player * Country::owner() const
 {
+//   kDebug() << (m_belongsTo!=0?m_belongsTo->name():"NONE");
   return m_belongsTo;
 }
 
 Player * Country::owner() 
 {
+//   kDebug() << (m_belongsTo!=0?m_belongsTo->name():"NONE");
   return m_belongsTo;
 }
 
-/** At the end of this method, the Country belogns to the argument player */
+/** At the end of this method, the Country belongs to the argument player */
 void Country::owner(Player *player)
-{  
+{
+  kDebug() << (player!=0?player->name():"NONE");
   m_belongsTo = player;
   if (player != 0)
   {

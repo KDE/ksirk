@@ -110,6 +110,8 @@ namespace GameLogic
 
       inline bool isOpen() {return m_parentWidget->isVisible();};
 
+      QList<QLabel*>& getRightContents() {return rightContents;}
+      
       private:
  
       QGridLayout * mainLayout;

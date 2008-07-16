@@ -2,6 +2,9 @@ Before KDE4.2:
   * add visual feedback for map scrolling
 
 Before KDE4.1:
+  * [DONE] number of armies on countries should be updated on right panel just after resolving fight
+  * [DONE] on auto-attack, highlighting is not set on attacker
+  * [DONE] highlighting is not removed from the target country in case of an invalid attack
   * With computer only players, first player is skipped when placing armies at 
     turn change
   * Placement of the left firing cannon

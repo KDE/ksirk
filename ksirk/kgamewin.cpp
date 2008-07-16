@@ -410,8 +410,7 @@ QPixmap KGameWindow::buildDice(DiceColor color, const QString& id)
 
 QPixmap KGameWindow::getDice(DiceColor color, int num)
 {
-  if(num==0 || num==-1)
-{return NULL;}
+  if(num==0 || num==-1) {return 0;}
   else {return m_dices[color][num-1];}
 }
 
@@ -1870,6 +1869,11 @@ bool KGameWindow::isMoveValid(const QPointF& point)
             << secondCountry->name();
     res = true;
   }
+  if (secondCountry && res==false)
+  {
+    secondCountry->releaseHighlightingLock();
+    secondCountry->clearHighlighting();
+  }
   broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
   return res;    
 }
@@ -1983,7 +1987,9 @@ int KGameWindow::setCurrentPlayerToNext(bool restartRunningAIs)
 
 bool KGameWindow::terminateAttackSequence()
 {
+  m_firstCountry->releaseHighlightingLock();
   m_firstCountry->clearHighlighting();
+  m_secondCountry->releaseHighlightingLock();
   m_secondCountry->clearHighlighting();
   m_animFighters->hideAndRemoveAll();
   //gameActionsToolBar-> show();
@@ -2055,7 +2061,7 @@ unsigned int KGameWindow::attacked(const QPointF& point)
   KMessageParts messageParts;
 
 //   kDebug() << "2nd country is now set";
-  if ( (m_firstCountry == NULL) || (m_secondCountry == NULL)
+  if ( (m_firstCountry == 0) || (m_secondCountry == 0)
           || (m_firstCountry-> owner() != currentPlayer()) )
   {
     //messageParts << I18N_NOOP("Nothing to attack !");
@@ -2078,7 +2084,7 @@ unsigned int KGameWindow::attacked(const QPointF& point)
   else if (m_firstCountry == m_secondCountry)
   {
    // messageParts << I18N_NOOP("You are trying to attack %1 from itself !") << m_firstCountry-> name();
-    QByteArray buffer;
+   QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
   }
@@ -2092,7 +2098,7 @@ unsigned int KGameWindow::attacked(const QPointF& point)
   else if (m_firstCountry-> owner() == m_secondCountry-> owner())
   {
     //messageParts << I18N_NOOP("%1! You cannot attack %2! It is yours!") << currentPlayer()-> name()
-           // << m_secondCountry-> name();
+    // << m_secondCountry-> name();
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
@@ -3103,6 +3109,11 @@ void KGameWindow::firstCountry(GameLogic::Country* country)
   m_firstCountry = country;
   if (country == 0)
   {
+    if (m_secondCountry)
+    {
+      m_secondCountry->releaseHighlightingLock();
+      m_secondCountry->clearHighlighting();
+    }
     return;
   }
   kDebug() << country->name();

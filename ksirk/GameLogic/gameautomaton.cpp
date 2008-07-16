@@ -591,7 +591,19 @@ GameAutomaton::GameState GameAutomaton::run()
       }
       else
       {
-//         state(WAIT);
+        kDebug() << "Invalid move" << (void*)m_game->firstCountry()
+        << (void*)m_game->secondCountry();
+        if (m_game->firstCountry())
+        {
+          m_game->firstCountry()->releaseHighlightingLock();
+          m_game->firstCountry()->clearHighlighting();
+        }
+        if (m_game->secondCountry())
+        {
+          m_game->secondCountry()->releaseHighlightingLock();
+          m_game->secondCountry()->clearHighlighting();
+        }
+        //         state(WAIT);
       }
     }
     else
@@ -952,10 +964,35 @@ GameAutomaton::GameState GameAutomaton::run()
             m_game->frame()->getAttack3Action()->setVisible(false);
           }
           m_game->frame()->setMenuPoint(QCursor::pos());
-          m_game->frame()->getAttackContextMenu()->exec(QCursor::pos());
+          QAction* action = m_game->frame()->getAttackContextMenu()->exec(QCursor::pos());
+          if (action==0)
+          {
+            if (m_game->firstCountry())
+            {
+              m_game->firstCountry()->releaseHighlightingLock();
+              m_game->firstCountry()->clearHighlighting();
+            }
+            if (m_game->secondCountry())
+            {
+              m_game->secondCountry()->releaseHighlightingLock();
+              m_game->secondCountry()->clearHighlighting();
+            }
+          }
         }
         else
         {
+          kDebug() << "Invalid move" << (void*)m_game->firstCountry()
+          << (void*)m_game->secondCountry();
+          if (m_game->firstCountry())
+          {
+            m_game->firstCountry()->releaseHighlightingLock();
+            m_game->firstCountry()->clearHighlighting();
+          }
+          if (m_game->secondCountry())
+          {
+            m_game->secondCountry()->releaseHighlightingLock();
+            m_game->secondCountry()->clearHighlighting();
+          }
           m_game-> cancelAction();
           state(WAIT);
         }
@@ -2282,6 +2319,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
         // attack is activated
         if (m_game->firstCountry()->nbArmies() > 1 && m_attackAuto)
         {
+          m_game->firstCountry()->highlightAsAttacker();
           // continue automatically attacking by making the same attack
           state(WAIT1);
           if (m_game->firstCountry()->nbArmies() > 3)
@@ -2319,6 +2357,14 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   case DecrNbArmies:
     stream >> countryName >> nbArmies;
     m_game->theWorld()->countryNamed(countryName)->decrNbArmies(nbArmies);
+    if (m_game->firstCountry() && countryName==m_game->firstCountry()->name())
+    {
+      m_game->getRightDialog()->getRightContents().at(3)->setText("<b><i>"+QString::number(m_game->firstCountry()->nbArmies())+"</i></b>");
+    }
+    if (m_game->secondCountry() && countryName==m_game->secondCountry()->name())
+    {
+      m_game->getRightDialog()->getRightContents().at(8)->setText("<b><i>"+QString::number(m_game->secondCountry()->nbArmies())+"</i></b>");
+    }
   case DisplayNextPlayerButton:
     m_game->displayNextPlayerButton();
     break;
