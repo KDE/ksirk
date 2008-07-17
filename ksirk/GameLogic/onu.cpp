@@ -705,3 +705,5 @@ void ONU::changingZoom()
 /**END OF SLOTS METHODS FOR THE ONU*/
 } // closing namespace GameLogic
 } // closing namespace Ksirk
+
+#include "onu.moc"

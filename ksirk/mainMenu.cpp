@@ -105,3 +105,5 @@ namespace Ksirk
 }
 
 
+
+#include "mainMenu.moc"

@@ -566,3 +566,5 @@ namespace Ksirk
        this->buttonStopAttack->setEnabled(false);
    }
 }
+
+#include "krightdialog.moc"
