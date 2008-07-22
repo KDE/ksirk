@@ -1059,7 +1059,7 @@ void GameAutomaton::gameEvent(const ::std::string& event, const QPointF& point)
 /** returns the name of the current state */
 QString GameAutomaton::stateName() const
 {
-  if ((size_t)(m_state) >= sizeof(GameStateNames))
+  if ((m_state) >= (int)sizeof(GameStateNames))
   {
     ::std::ostringstream oss;
     oss << "Invalid stored state id: " << m_state;
@@ -2304,7 +2304,8 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
 
         setAttackAuto(false);
         setDefenseAuto(false);
-        if(!currentPlayer()->isAI() && !currentPlayer()->isVirtual())
+        if( !currentPlayer()->isAI() && !currentPlayer()->isVirtual()
+          &&  playerList()->size()>1 )
         {
           m_game->slideInvade(m_game->firstCountry(), m_game->secondCountry());
         }
