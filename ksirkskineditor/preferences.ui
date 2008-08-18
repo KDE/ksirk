@@ -1,0 +1,32 @@
+<ui version="4.0" >
+ <class>KsirkSkinEditorPreferencesWidget</class>
+ <widget class="QWidget" name="KsirkSkinEditorPreferencesWidget" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>533</width>
+    <height>294</height>
+   </rect>
+  </property>
+  <property name="sizePolicy" >
+   <sizepolicy vsizetype="Minimum" hsizetype="Minimum" >
+    <horstretch>15</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize" >
+   <size>
+    <width>100</width>
+    <height>100</height>
+   </size>
+  </property>
+  <property name="windowTitle" >
+   <string>KsirK Skin Editor Preferences</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout" />
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <resources/>
+ <connections/>
+</ui>

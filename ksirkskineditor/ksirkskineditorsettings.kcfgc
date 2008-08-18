@@ -1,0 +1,5 @@
+File=ksirkskineditorsettings.kcfg
+ClassName=KsirkSkinEditorSettings
+Singleton=true 
+Mutators=true
+NameSpace=KsirkSkinEditor

@@ -1,0 +1,28 @@
+<!DOCTYPE kpartgui>
+<kpartgui name="ksirkskineditor" version="1">
+
+<MenuBar>
+  <Menu name="game"><text>&amp;Game</text>
+    <Action name="game_new" append="new_merge" />
+    <Action name="game_load" append="new_merge" />
+    <Action name="game_save" append="new_merge" />
+    <Separator/>
+    <Action name="game_quit" append="new_merge" />
+  </Menu>
+  <Menu name="settings"><text>&amp;Settings</text>
+  </Menu>
+  <Menu name="help"><text>&amp;Help</text>
+  </Menu>
+</MenuBar>
+
+<ToolBar name="mainToolBar" noMerge="1"><text>Main Toolbar</text>
+  <Action name="game_new" />
+  <Action name="game_load" />
+  <Action name="game_save" />
+  <Separator/>
+  <Action name="view_zoom_in" />
+  <Action name="view_zoom_out" />
+  <Separator/>
+</ToolBar>
+
+</kpartgui>

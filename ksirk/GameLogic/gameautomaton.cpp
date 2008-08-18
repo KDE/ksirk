@@ -1022,7 +1022,7 @@ void GameAutomaton::gameEvent(const ::std::string& event, const QPointF& point)
 /** returns the name of the current state */
 QString GameAutomaton::stateName() const
 {
-  if ((size_t)(m_state) >= sizeof(GameStateNames))
+  if (m_state >= sizeof(GameStateNames))
   {
     ::std::ostringstream oss;
     oss << "Invalid stored state id: " << m_state;
