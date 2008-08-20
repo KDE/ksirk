@@ -100,7 +100,7 @@ public:
   /**
     * Return the name of the country
     */
-  const QString name() const;
+  const QString& name() const;
 
   const QPointF& anchorPoint() const;
   /**

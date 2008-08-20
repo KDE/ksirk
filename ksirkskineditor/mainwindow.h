@@ -48,6 +48,10 @@ class QEvent;
 class QDockWidget;
 class QGraphicsScene;
 class QGraphicsView;
+class QListWidgetItem;
+
+class KSirkSkinDefinitionWidget;
+class KsirkCountryDefinitionWidget;
 
 namespace Phonon
 {
@@ -56,7 +60,6 @@ namespace Phonon
 
 namespace KsirkSkinEditor
 {
-
 /**
   * This is the main window.
   *
@@ -130,10 +133,14 @@ private Q_SLOTS:
 
   void slotPosition(const QPointF&);
   void slotPressPosition(const QPointF&);
-  
+
+  void slotCountrySelected(QListWidgetItem* item);
+
 private:
   void saveXml(std::ostream& xmlStream);
-
+  void initCountryWidgetWith(Country* country);
+  Country* currentCountry();
+  
   /**
     * a shortcut to the standard dirs object.
     */
@@ -155,6 +162,9 @@ private:
   SpriteType m_selectedSprite;
 
   ONU* m_onu;
+
+  KSirkSkinDefinitionWidget* m_skinDefWidget;
+  KsirkCountryDefinitionWidget* m_countryDefWidget;
 };
 
 } // closing namespace KsirkSkinEditor

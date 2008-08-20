@@ -100,7 +100,7 @@ and flag:</string>
      </widget>
     </item>
     <item>
-     <widget class="QListWidget" name="countriesListWidget" />
+     <widget class="QListWidget" name="countrieslist" />
     </item>
    </layout>
   </widget>

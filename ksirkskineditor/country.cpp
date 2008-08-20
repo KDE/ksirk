@@ -103,7 +103,7 @@ bool Country::communicateWith(const Country* otherCountry) const
   return false;
 }
 
-const QString Country::name() const
+const QString& Country::name() const
 {
   return (m_name);
 }
