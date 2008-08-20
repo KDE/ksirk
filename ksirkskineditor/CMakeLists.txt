@@ -12,11 +12,21 @@ set(ksirkskineditor_SRCS
   main.cpp
   mainwindow.cpp
   ksirkSkinEditorConfigDialog.cpp
+  ksirkskineditorscene.cpp
+  onu.cpp
+  continent.cpp
+  country.cpp
+  nationality.cpp
+  skinSpritesData.cpp
+  goal.cpp
 )
 
 set(ksirkskineditor_UI
 #   ksirkskineditor.ui
   preferences.ui
+  ksirkskineditorwidget.ui
+  ksirkskindefinition.ui
+  ksirkcountrydefinition.ui
 )
 
 
@@ -33,6 +43,7 @@ target_link_libraries(ksirkskineditor
   ${QT_QTSVG_LIBRARY} 
   ${KDE4_KIO_LIBS} 
   ${KDE4_PHONON_LIBRARY}
+  kdegames
   ${CRYPT_LIBS}
   ${KDEGAMES_LIBRARY}
  )

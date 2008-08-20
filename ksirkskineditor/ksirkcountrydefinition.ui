@@ -1,0 +1,251 @@
+<ui version="4.0" >
+ <class>KsirkCountryDefinition</class>
+ <widget class="QDockWidget" name="KsirkCountryDefinition" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>297</width>
+    <height>550</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Country</string>
+  </property>
+  <widget class="QWidget" name="dockWidgetContents" >
+   <layout class="QVBoxLayout" name="verticalLayout" >
+    <item>
+     <layout class="QGridLayout" name="gridLayout" >
+      <item row="0" column="0" >
+       <widget class="QLabel" name="label" >
+        <property name="text" >
+         <string>Flag:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" >
+       <widget class="QLineEdit" name="lineEdit" >
+        <property name="text" >
+         <string>1024</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2" >
+       <widget class="QLabel" name="label_2" >
+        <property name="text" >
+         <string>x</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3" >
+       <widget class="QLineEdit" name="lineEdit_2" >
+        <property name="text" >
+         <string>1000</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" >
+       <widget class="QLabel" name="label_3" >
+        <property name="text" >
+         <string>Anchor:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" >
+       <widget class="QLineEdit" name="lineEdit_4" >
+        <property name="text" >
+         <string>1024</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2" >
+       <widget class="QLabel" name="label_4" >
+        <property name="text" >
+         <string>x</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3" >
+       <widget class="QLineEdit" name="lineEdit_3" >
+        <property name="text" >
+         <string>1000</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" >
+       <widget class="QLabel" name="label_5" >
+        <property name="text" >
+         <string>Center:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" >
+       <widget class="QLineEdit" name="lineEdit_6" >
+        <property name="text" >
+         <string>1024</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2" >
+       <widget class="QLabel" name="label_6" >
+        <property name="text" >
+         <string>x</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3" >
+       <widget class="QLineEdit" name="lineEdit_5" >
+        <property name="text" >
+         <string>1000</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" >
+       <widget class="QLabel" name="label_7" >
+        <property name="text" >
+         <string>Infantry:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" >
+       <widget class="QLineEdit" name="lineEdit_8" >
+        <property name="text" >
+         <string>1024</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2" >
+       <widget class="QLabel" name="label_8" >
+        <property name="text" >
+         <string>x</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="3" >
+       <widget class="QLineEdit" name="lineEdit_7" >
+        <property name="text" >
+         <string>1000</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0" >
+       <widget class="QLabel" name="label_9" >
+        <property name="text" >
+         <string>Cavalry:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1" >
+       <widget class="QLineEdit" name="lineEdit_9" >
+        <property name="text" >
+         <string>1024</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2" >
+       <widget class="QLabel" name="label_10" >
+        <property name="text" >
+         <string>x</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="3" >
+       <widget class="QLineEdit" name="lineEdit_10" >
+        <property name="text" >
+         <string>1000</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0" >
+       <widget class="QLabel" name="label_12" >
+        <property name="text" >
+         <string>Cannon:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1" >
+       <widget class="QLineEdit" name="lineEdit_11" >
+        <property name="text" >
+         <string>1024</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="2" >
+       <widget class="QLabel" name="label_11" >
+        <property name="text" >
+         <string>x</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="3" >
+       <widget class="QLineEdit" name="lineEdit_12" >
+        <property name="text" >
+         <string>1000</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout" >
+      <item>
+       <widget class="KPushButton" name="kpushbutton" >
+        <property name="text" >
+         <string>Neighbours:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QListWidget" name="listWidget" />
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KPushButton</class>
+   <extends>QPushButton</extends>
+   <header>kpushbutton.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

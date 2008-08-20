@@ -20,6 +20,9 @@
 #include "mainwindow.h"
 #include "ksirkSkinEditorConfigDialog.h"
 #include "ksirkskineditorsettings.h"
+#include "ksirkskineditorscene.h"
+#include "ksirkskindefinition.h"
+#include "ksirkcountrydefinition.h"
 
 //include files for QT
 #include <QDockWidget>
@@ -29,6 +32,10 @@
 #include <QString>
 #include <QVBoxLayout>
 #include <QMovie>
+#include <QGraphicsScene>
+#include <QGraphicsView>
+#include <QGraphicsPixmapItem>
+
 // include files for KDE
 #include <kiconloader.h>
 #include <kmessagebox.h>
@@ -60,9 +67,56 @@ namespace KsirkSkinEditor
 {
 
 MainWindow::MainWindow(QWidget* parent) :
-  KXmlGuiWindow(parent)
+  KXmlGuiWindow(parent),
+  m_selectedSprite(None)
 {
   kDebug() << "MainWindow constructor begin";
+  m_onu = new ONU("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default");
+  KSirkSkinEditorWidget* mainWidget = new KSirkSkinEditorWidget(this);
+  setCentralWidget(mainWidget);
+
+  m_mapScene = new Scene(0,0,1024,768,this);
+  connect(m_mapScene,SIGNAL(position(const QPointF&)),this,SLOT(slotPosition(const QPointF&)));
+  m_mapView = new QGraphicsView(m_mapScene,this);
+  connect(m_mapScene,SIGNAL(pressPosition(const QPointF&)),this,SLOT(slotPressPosition(const QPointF&)));
+  m_mapView = new QGraphicsView(m_mapScene,this);
+
+  QPixmap mapPixmap("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/map.png");
+  m_mapScene->addPixmap(mapPixmap);
+
+  mainWidget->mapScrollArea->setBackgroundRole(QPalette::Dark);
+  mainWidget->mapScrollArea->setWidget(m_mapView);
+  
+  QHBoxLayout* layout = new QHBoxLayout;
+  mainWidget->buttonsScrollArea->setLayout(layout);
+
+  QPixmap flagIcon("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/flag.png");
+  QPushButton* flagButton = new QPushButton(mainWidget->buttonsScrollArea);
+  flagButton->setIcon(flagIcon);
+  flagButton->setIconSize(QSize(20,20));
+  layout->addWidget(flagButton);
+  connect(flagButton,SIGNAL(clicked()),this,SLOT(slotFlagButtonClicked()));
+  
+  QPixmap infantryIcon("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/infantry.png");
+  QPushButton* infantryButton = new QPushButton(mainWidget->buttonsScrollArea);
+  infantryButton->setIcon(infantryIcon);
+  infantryButton->setIconSize(QSize(23,32));
+  layout->addWidget(infantryButton);
+  connect(infantryButton,SIGNAL(clicked()),this,SLOT(slotInfantryButtonClicked()));
+
+  QPixmap cavalryIcon("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/cavalry.png");
+  QPushButton* cavalryButton = new QPushButton(mainWidget->buttonsScrollArea);
+  cavalryButton->setIcon(cavalryIcon);
+  cavalryButton->setIconSize(QSize(32,32));
+  layout->addWidget(cavalryButton);
+  connect(cavalryButton,SIGNAL(clicked()),this,SLOT(slotCavalryButtonClicked()));
+
+  QPixmap cannonIcon("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/cannon.png");
+  QPushButton* cannonButton = new QPushButton(mainWidget->buttonsScrollArea);
+  cannonButton->setIcon(cannonIcon);
+  cannonButton->setIconSize(QSize(32,32));
+  layout->addWidget(cannonButton);
+  connect(cannonButton,SIGNAL(clicked()),this,SLOT(slotCannonButtonClicked()));
 
   m_dirs = KGlobal::dirs();
 //   m_accels.setEnabled(true);
@@ -88,6 +142,11 @@ MainWindow::MainWindow(QWidget* parent) :
   
   setMouseTracking(true);
 
+  KSirkSkinDefinitionWidget* skinDefWidget = new KSirkSkinDefinitionWidget(this);
+  addDockWidget ( Qt::LeftDockWidgetArea, skinDefWidget);
+  
+  KsirkCountryDefinitionWidget* countryDefWidget = new KsirkCountryDefinitionWidget(this);
+  addDockWidget ( Qt::LeftDockWidgetArea, countryDefWidget);
 }
 
 MainWindow::~MainWindow()
@@ -181,6 +240,77 @@ bool MainWindow::queryExit()
   return true;
 }
 
+void MainWindow::slotFlagButtonClicked()
+{
+  QPixmap flagIcon("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/flag.png");
+  m_mapView->setCursor(QCursor(flagIcon.scaled(20,20),0,0));
+  m_selectedSprite = Flag;
+}
+
+void MainWindow::slotInfantryButtonClicked()
+{
+  QPixmap infantryIcon("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/infantry.png");
+  m_mapView->setCursor(QCursor(infantryIcon.scaled(23,32),0,0));
+  m_selectedSprite = Infantry;
+}
+
+void MainWindow::slotCavalryButtonClicked()
+{
+  QPixmap cavalryIcon("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/cavalry.png");
+  m_mapView->setCursor(QCursor(cavalryIcon.scaled(32,32),0,0));
+  m_selectedSprite = Cavalry;
+}
+
+void MainWindow::slotCannonButtonClicked()
+{
+  QPixmap cannonIcon("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/cannon.png");
+  m_mapView->setCursor(QCursor(cannonIcon.scaled(32,32),0,0));
+  m_selectedSprite = Cannon;
+}
+
+void MainWindow::slotPosition(const QPointF& point)
+{
+  kDebug() << point;
+  QString message("");
+  QTextStream ts( &message );
+  ts << point.x() << " x " << point.y();
+  statusBar()->showMessage(message);
+}
+
+void MainWindow::slotPressPosition(const QPointF& point)
+{
+  kDebug() << point;
+  QPixmap pix;
+  QGraphicsPixmapItem* item = 0;
+  switch (m_selectedSprite)
+  {
+    case Flag:
+      pix = QPixmap("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/flag.png");
+      pix = pix.scaled(20,20);
+      item = m_mapScene->addPixmap(pix);
+      break;
+    case Infantry:
+      pix = QPixmap("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/infantry.png");
+      pix = pix.scaled(23,32);
+      item = m_mapScene->addPixmap(pix);
+      break;
+    case Cavalry:
+      pix = QPixmap("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/cavalry.png");
+      pix = pix.scaled(32,32);
+      item = m_mapScene->addPixmap(pix);
+      break;
+    case Cannon:
+      pix = QPixmap("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/cannon.png");
+      pix = pix.scaled(32,32);
+      item = m_mapScene->addPixmap(pix);
+      break;
+    default: ;
+  }
+  if (item != 0)
+  {
+    item->setPos(point);
+  }
+}
 
 } // closing namespace
 

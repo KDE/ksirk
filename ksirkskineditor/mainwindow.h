@@ -19,6 +19,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "ksirkskineditorwidget.h"
+#include "onu.h"
+
 // include files for Qt
 #include <QPointF>
 #include <QPixmap>
@@ -44,6 +47,7 @@ class KDialog;
 class QEvent;
 class QDockWidget;
 class QGraphicsScene;
+class QGraphicsView;
 
 namespace Phonon
 {
@@ -64,6 +68,15 @@ class MainWindow : public KXmlGuiWindow
   Q_OBJECT
 
 public:
+  enum SpriteType
+  {
+    None,
+    Flag,
+    Infantry,
+    Cavalry,
+    Cannon
+  };
+  
   /**
     * Create the window and initializes its members
     */
@@ -110,6 +123,14 @@ public Q_SLOTS:
 private Q_SLOTS:
   void optionsConfigure();
 
+  void slotFlagButtonClicked();
+  void slotInfantryButtonClicked();
+  void slotCavalryButtonClicked();
+  void slotCannonButtonClicked();
+
+  void slotPosition(const QPointF&);
+  void slotPressPosition(const QPointF&);
+  
 private:
   void saveXml(std::ostream& xmlStream);
 
@@ -128,7 +149,12 @@ private:
 
   QAction* m_saveGameAction;
 
+  QGraphicsView* m_mapView;
+  QGraphicsScene* m_mapScene;
+  
+  SpriteType m_selectedSprite;
 
+  ONU* m_onu;
 };
 
 } // closing namespace KsirkSkinEditor
