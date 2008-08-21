@@ -26,15 +26,17 @@
 #include "country.h"
 #include "continent.h"
 #include "nationality.h"
+#include "spritetype.h"
 
-#include <qdatastream.h>
 #include <QPixmap>
 #include <QFont>
 #include <QSvgRenderer>
-#include <QTimer>
 #include <QObject>
+#include <QMap>
 
 #include <kgamesvgdocument.h>
+
+class QGraphicsPixmapItem;
 
 namespace KsirkSkinEditor
 {
@@ -154,7 +156,10 @@ public:
 
   KGameSvgDocument* svgDom();
 
+  inline QMap<QGraphicsPixmapItem*, QPair<Country*, SpriteType> >& itemsMap() {return m_itemsMap;}
 
+  QGraphicsPixmapItem* itemFor(const Country* country, SpriteType spriteType);
+  
 private:
   /**
     * All data that have to be stored about the font to display countries names
@@ -246,21 +251,6 @@ private:
   FontDesc m_font;
 
   /**
-    * Counter to know how many zooms have been asked by user 
-    */
-    int m_nbZooms;
-
-  /**
-    * Zoom used to change size of map
-    */
-    qreal m_zoomFactorFinal;
-
-  /** 
-    * Timer for the ZoomfactorFast
-    */
-    QTimer * m_timerFast;
-    int bo;
-  /**
     * This SVG renderer stores the SVG file of the map, renders it at the
     * desired zoom factor and the result is used to build the map image.
     */
@@ -268,6 +258,7 @@ private:
 
   KGameSvgDocument m_svgDom;
   
+  QMap<QGraphicsPixmapItem*, QPair<Country*, SpriteType> > m_itemsMap;
 };
 
 }

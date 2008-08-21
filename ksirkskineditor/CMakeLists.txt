@@ -13,6 +13,7 @@ set(ksirkskineditor_SRCS
   mainwindow.cpp
   ksirkSkinEditorConfigDialog.cpp
   ksirkskineditorscene.cpp
+  ksirkskineditorpixmapitem.cpp
   onu.cpp
   continent.cpp
   country.cpp

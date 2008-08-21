@@ -21,8 +21,10 @@
 
 #include "ksirkskineditorwidget.h"
 #include "onu.h"
+#include "spritetype.h"
 
 // include files for Qt
+
 #include <QPointF>
 #include <QPixmap>
 #include <QLabel>
@@ -49,6 +51,7 @@ class QDockWidget;
 class QGraphicsScene;
 class QGraphicsView;
 class QListWidgetItem;
+class QPushButton;
 
 class KSirkSkinDefinitionWidget;
 class KsirkCountryDefinitionWidget;
@@ -60,6 +63,8 @@ namespace Phonon
 
 namespace KsirkSkinEditor
 {
+class PixmapItem;
+
 /**
   * This is the main window.
   *
@@ -71,15 +76,6 @@ class MainWindow : public KXmlGuiWindow
   Q_OBJECT
 
 public:
-  enum SpriteType
-  {
-    None,
-    Flag,
-    Infantry,
-    Cavalry,
-    Cannon
-  };
-  
   /**
     * Create the window and initializes its members
     */
@@ -135,7 +131,8 @@ private Q_SLOTS:
   void slotPressPosition(const QPointF&);
 
   void slotCountrySelected(QListWidgetItem* item);
-
+  void slotPixmapPlaced(PixmapItem*, const QPointF&);
+  
 private:
   void saveXml(std::ostream& xmlStream);
   void initCountryWidgetWith(Country* country);
@@ -165,6 +162,11 @@ private:
 
   KSirkSkinDefinitionWidget* m_skinDefWidget;
   KsirkCountryDefinitionWidget* m_countryDefWidget;
+
+  QPushButton* m_flagButton;
+  QPushButton* m_infantryButton;
+  QPushButton* m_cavalryButton;
+  QPushButton* m_cannonButton;
 };
 
 } // closing namespace KsirkSkinEditor

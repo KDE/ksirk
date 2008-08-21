@@ -17,51 +17,33 @@
 */
 
 // application specific includes
-#include "ksirkskineditorscene.h"
+#include "ksirkskineditorpixmapitem.h"
 
-#include <QGraphicsScene>
-#include <QGraphicsSceneMouseEvent>
-#include <KDebug>
+#include<QGraphicsSceneMouseEvent>
+
+#include<KDebug>
 
 namespace KsirkSkinEditor
 {
 
-Scene::Scene(QObject* parent) :
-  QGraphicsScene(parent)
+PixmapItem::PixmapItem(QGraphicsItem* parent) :
+      QGraphicsPixmapItem(parent)
 {
   kDebug();
 }
 
-Scene::Scene(qreal x, qreal y, qreal width, qreal height, QObject* parent) :
-  QGraphicsScene(x, y, width, height, parent)
-{
-}
-
-Scene::~Scene()
+PixmapItem::~PixmapItem()
 {
   kDebug();
 }
 
-void Scene::mouseMoveEvent(QGraphicsSceneMouseEvent* mouseEvent)
-{
-  kDebug() << mouseEvent->scenePos();
-  emit position(mouseEvent->scenePos());
-  QGraphicsScene::mouseMoveEvent( mouseEvent );
-}
-
-void Scene::mousePressEvent(QGraphicsSceneMouseEvent* mouseEvent)
-{
-  kDebug() << mouseEvent->scenePos();
-  emit pressPosition(mouseEvent->scenePos());
-  QGraphicsScene::mousePressEvent( mouseEvent );
-}
-
-void Scene::dropEvent ( QGraphicsSceneDragDropEvent * event )
+void PixmapItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 {
   kDebug() << event->scenePos();
-  QGraphicsScene::dropEvent(event);
+  emit placed(this, event->scenePos());
+  QGraphicsItem::mouseReleaseEvent(event);
 }
 
 } // closing namespace
 
-#include "ksirkskineditorscene.moc"
+#include "ksirkskineditorpixmapitem.moc"

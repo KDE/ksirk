@@ -16,51 +16,43 @@
    02110-1301, USA
 */
 
-#ifndef KSIRKSKINEDITORSCENE_H
-#define KSIRKSKINEDITORSCENE_H
+#ifndef KSIRKSKINEDITORPIXMAPITEM_H
+#define KSIRKSKINEDITORPIXMAPITEM_H
 
-#include <QGraphicsScene>
+// include files for Qt
+#include <QGraphicsPixmapItem>
+#include <QObject>
+#include <QPointF>
+
+// include files for KDE
+
+// include files for kde games
 
 class QGraphicsSceneMouseEvent;
 
 namespace KsirkSkinEditor
 {
-
-/**
-  * This is the main window.
-  *
-  * @author Gael de Chalendar (aka Kleag)
-  * @version $Id: $
-  */
-class Scene : public QGraphicsScene
+class PixmapItem : public QObject, public QGraphicsPixmapItem
 {
-  Q_OBJECT
+Q_OBJECT
 
 public:
   /**
-    * 
+    * Create the window and initializes its members
     */
-  Scene(QObject* parent=0);
-  Scene (qreal x, qreal y, qreal width, qreal height, QObject* parent=0);
+  PixmapItem(QGraphicsItem* parent=0);
+  
   /**
-    *
+    * Deletes the background and the pool
     */
-  ~Scene();
-    
-protected:
-  virtual void mouseMoveEvent ( QGraphicsSceneMouseEvent * mouseEvent );
-  virtual void mousePressEvent ( QGraphicsSceneMouseEvent * mouseEvent );
-  virtual void dropEvent ( QGraphicsSceneDragDropEvent * event );
-  
+  ~PixmapItem();
+
 Q_SIGNALS:
-  void position(const QPointF&);
-  void pressPosition(const QPointF&);
+  void placed(PixmapItem*, const QPointF&);
   
-public Q_SLOTS:
-
-private Q_SLOTS:
-
-private:
+protected:
+  virtual void mouseReleaseEvent (QGraphicsSceneMouseEvent* event);
+  
 };
 
 } // closing namespace KsirkSkinEditor

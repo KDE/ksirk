@@ -23,6 +23,7 @@
 #include "ksirkskineditorscene.h"
 #include "ksirkskindefinition.h"
 #include "ksirkcountrydefinition.h"
+#include "ksirkskineditorpixmapitem.h"
 
 //include files for QT
 #include <QDockWidget>
@@ -34,7 +35,7 @@
 #include <QMovie>
 #include <QGraphicsScene>
 #include <QGraphicsView>
-#include <QGraphicsPixmapItem>
+#include <QBitmap>
 
 // include files for KDE
 #include <kiconloader.h>
@@ -78,6 +79,7 @@ MainWindow::MainWindow(QWidget* parent) :
   m_mapScene = new Scene(0,0,1024,768,this);
   connect(m_mapScene,SIGNAL(position(const QPointF&)),this,SLOT(slotPosition(const QPointF&)));
   m_mapView = new QGraphicsView(m_mapScene,this);
+  m_mapView->setInteractive(true);
   connect(m_mapScene,SIGNAL(pressPosition(const QPointF&)),this,SLOT(slotPressPosition(const QPointF&)));
   m_mapView = new QGraphicsView(m_mapScene,this);
 
@@ -91,32 +93,36 @@ MainWindow::MainWindow(QWidget* parent) :
   mainWidget->buttonsScrollArea->setLayout(layout);
 
   QPixmap flagIcon("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/flag.png");
-  QPushButton* flagButton = new QPushButton(mainWidget->buttonsScrollArea);
-  flagButton->setIcon(flagIcon);
-  flagButton->setIconSize(QSize(20,20));
-  layout->addWidget(flagButton);
-  connect(flagButton,SIGNAL(clicked()),this,SLOT(slotFlagButtonClicked()));
+  m_flagButton = new QPushButton(mainWidget->buttonsScrollArea);
+  m_flagButton->setIcon(flagIcon);
+  m_flagButton->setIconSize(QSize(20,20));
+  layout->addWidget(m_flagButton);
+  m_flagButton->setCheckable(true);
+  connect(m_flagButton,SIGNAL(clicked()),this,SLOT(slotFlagButtonClicked()));
 
   QPixmap infantryIcon("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/infantry.png");
-  QPushButton* infantryButton = new QPushButton(mainWidget->buttonsScrollArea);
-  infantryButton->setIcon(infantryIcon);
-  infantryButton->setIconSize(QSize(23,32));
-  layout->addWidget(infantryButton);
-  connect(infantryButton,SIGNAL(clicked()),this,SLOT(slotInfantryButtonClicked()));
+  m_infantryButton = new QPushButton(mainWidget->buttonsScrollArea);
+  m_infantryButton->setIcon(infantryIcon);
+  m_infantryButton->setIconSize(QSize(23,32));
+  layout->addWidget(m_infantryButton);
+  m_infantryButton->setCheckable(true);
+  connect(m_infantryButton,SIGNAL(clicked()),this,SLOT(slotInfantryButtonClicked()));
 
   QPixmap cavalryIcon("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/cavalry.png");
-  QPushButton* cavalryButton = new QPushButton(mainWidget->buttonsScrollArea);
-  cavalryButton->setIcon(cavalryIcon);
-  cavalryButton->setIconSize(QSize(32,32));
-  layout->addWidget(cavalryButton);
-  connect(cavalryButton,SIGNAL(clicked()),this,SLOT(slotCavalryButtonClicked()));
+  m_cavalryButton = new QPushButton(mainWidget->buttonsScrollArea);
+  m_cavalryButton->setIcon(cavalryIcon);
+  m_cavalryButton->setIconSize(QSize(32,32));
+  layout->addWidget(m_cavalryButton);
+  m_cavalryButton->setCheckable(true);
+  connect(m_cavalryButton,SIGNAL(clicked()),this,SLOT(slotCavalryButtonClicked()));
 
   QPixmap cannonIcon("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/cannon.png");
-  QPushButton* cannonButton = new QPushButton(mainWidget->buttonsScrollArea);
-  cannonButton->setIcon(cannonIcon);
-  cannonButton->setIconSize(QSize(32,32));
-  layout->addWidget(cannonButton);
-  connect(cannonButton,SIGNAL(clicked()),this,SLOT(slotCannonButtonClicked()));
+  m_cannonButton = new QPushButton(mainWidget->buttonsScrollArea);
+  m_cannonButton->setIcon(cannonIcon);
+  m_cannonButton->setIconSize(QSize(32,32));
+  layout->addWidget(m_cannonButton);
+  m_cannonButton->setCheckable(true);
+  connect(m_cannonButton,SIGNAL(clicked()),this,SLOT(slotCannonButtonClicked()));
 
   m_dirs = KGlobal::dirs();
 //   m_accels.setEnabled(true);
@@ -255,41 +261,65 @@ bool MainWindow::queryExit()
 
 void MainWindow::slotFlagButtonClicked()
 {
-  if (m_skinDefWidget->countrieslist->currentItem()!=0)
+  if (m_selectedSprite == Flag)
+  {
+    m_flagButton->setChecked(false);
+    m_mapView->unsetCursor();
+  }
+  else if (m_skinDefWidget->countrieslist->currentItem()!=0)
   {
     QPixmap flagIcon("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/flag.png");
     m_mapView->setCursor(QCursor(flagIcon.scaled(20,20),0,0));
     m_selectedSprite = Flag;
+    m_flagButton->setChecked(true);
   }
 }
 
 void MainWindow::slotInfantryButtonClicked()
 {
-  if (m_skinDefWidget->countrieslist->currentItem()!=0)
+  if (m_selectedSprite == Infantry)
+  {
+    m_infantryButton->setChecked(false);
+    m_mapView->unsetCursor();
+  }
+  else if (m_skinDefWidget->countrieslist->currentItem()!=0)
   {
     QPixmap infantryIcon("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/infantry.png");
     m_mapView->setCursor(QCursor(infantryIcon.scaled(23,32),0,0));
     m_selectedSprite = Infantry;
+    m_infantryButton->setChecked(true);
   }
 }
 
 void MainWindow::slotCavalryButtonClicked()
 {
-  if (m_skinDefWidget->countrieslist->currentItem()!=0)
+  if (m_selectedSprite == Cavalry)
+  {
+    m_cavalryButton->setChecked(false);
+    m_mapView->unsetCursor();
+  }
+  else if (m_skinDefWidget->countrieslist->currentItem()!=0)
   {
     QPixmap cavalryIcon("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/cavalry.png");
     m_mapView->setCursor(QCursor(cavalryIcon.scaled(32,32),0,0));
     m_selectedSprite = Cavalry;
+    m_cavalryButton->setChecked(true);
   }
 }
 
 void MainWindow::slotCannonButtonClicked()
 {
-  if (m_skinDefWidget->countrieslist->currentItem()!=0)
+  if (m_selectedSprite == Cannon)
+  {
+    m_cannonButton->setChecked(false);
+    m_mapView->unsetCursor();
+  }
+  else if (m_skinDefWidget->countrieslist->currentItem()!=0)
   {
     QPixmap cannonIcon("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/cannon.png");
     m_mapView->setCursor(QCursor(cannonIcon.scaled(32,32),0,0));
     m_selectedSprite = Cannon;
+    m_cannonButton->setChecked(true);
   }
 }
 
@@ -306,45 +336,60 @@ void MainWindow::slotPressPosition(const QPointF& point)
 {
   kDebug() << point;
   QPixmap pix;
-  QGraphicsPixmapItem* item = 0;
+  QPixmap alphacopy;
+  if (currentCountry() == 0
+    || m_onu->itemFor(currentCountry(), m_selectedSprite) != 0)
+  {
+    kDebug() << (void*)currentCountry() << (void*)m_onu->itemFor(currentCountry(), m_selectedSprite);
+    return;
+  }
+  PixmapItem* item = new PixmapItem();
+  connect(item, SIGNAL(placed(PixmapItem*, const QPointF&)),
+           this, SLOT(slotPixmapPlaced(PixmapItem*, const QPointF&)));
+  
   switch (m_selectedSprite)
   {
     case Flag:
       pix = QPixmap("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/flag.png");
       pix = pix.scaled(20,20);
-      item = m_mapScene->addPixmap(pix);
       m_countryDefWidget->flagx->setText(QString::number(point.x()));
       m_countryDefWidget->flagy->setText(QString::number(point.y()));
       currentCountry()->pointFlag(point);
+      m_onu->itemsMap().insert(item,qMakePair(currentCountry(),Flag));
       break;
     case Infantry:
       pix = QPixmap("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/infantry.png");
       pix = pix.scaled(23,32);
-      item = m_mapScene->addPixmap(pix);
       m_countryDefWidget->infantryx->setText(QString::number(point.x()));
       m_countryDefWidget->infantryy->setText(QString::number(point.y()));
       currentCountry()->pointInfantry(point);
+      m_onu->itemsMap().insert(item,qMakePair(currentCountry(),Infantry));
       break;
     case Cavalry:
       pix = QPixmap("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/cavalry.png");
       pix = pix.scaled(32,32);
-      item = m_mapScene->addPixmap(pix);
       m_countryDefWidget->cavalryx->setText(QString::number(point.x()));
       m_countryDefWidget->cavalryy->setText(QString::number(point.y()));
       currentCountry()->pointCavalry(point);
+      m_onu->itemsMap().insert(item,qMakePair(currentCountry(),Cavalry));
       break;
     case Cannon:
+      kDebug() << "Adding cannon";
       pix = QPixmap("/home/kleag/Developpements/C++/kde-kdegames-trunk/ksirk/ksirk/skins/default/Images/cannon.png");
       pix = pix.scaled(32,32);
-      item = m_mapScene->addPixmap(pix);
       m_countryDefWidget->cannonx->setText(QString::number(point.x()));
       m_countryDefWidget->cannony->setText(QString::number(point.y()));
       currentCountry()->pointCannon(point);
+      m_onu->itemsMap().insert(item,qMakePair(currentCountry(),Cannon));
       break;
     default: ;
   }
   if (item != 0)
   {
+    item->setPixmap(pix);
+    m_mapScene->addItem(item);
+    item->setFlag(QGraphicsItem::ItemIsMovable, true);
+    item->setFlag(QGraphicsItem::ItemIsSelectable, true);
     item->setPos(point);
   }
 }
@@ -383,7 +428,44 @@ void MainWindow::initCountryWidgetWith(Country* country)
 
 Country* MainWindow::currentCountry()
 {
+  if (m_skinDefWidget->countrieslist->currentItem() == 0)
+    return 0;
+  kDebug() << m_skinDefWidget->countrieslist->currentItem()->text();
   return m_onu->countryNamed(m_skinDefWidget->countrieslist->currentItem()->text());
+}
+
+void MainWindow::slotPixmapPlaced(PixmapItem* item, const QPointF& point)
+{
+  kDebug();
+  if (m_onu->itemsMap().contains(item))
+  {
+    Country* country = m_onu->itemsMap()[item].first;
+    SpriteType type = m_onu->itemsMap()[item].second;
+    switch (type)
+    {
+      case Flag:
+        country->pointFlag(point);
+        m_countryDefWidget->flagx->setText(QString::number(point.x()));
+        m_countryDefWidget->flagy->setText(QString::number(point.y()));
+        break;
+      case Infantry:
+        country->pointInfantry(point);
+        m_countryDefWidget->infantryx->setText(QString::number(point.x()));
+        m_countryDefWidget->infantryy->setText(QString::number(point.y()));
+        break;
+      case Cavalry:
+        country->pointCavalry(point);
+        m_countryDefWidget->cavalryx->setText(QString::number(point.x()));
+        m_countryDefWidget->cavalryy->setText(QString::number(point.y()));
+        break;
+      case Cannon:
+        country->pointCannon(point);
+        m_countryDefWidget->cannonx->setText(QString::number(point.x()));
+        m_countryDefWidget->cannony->setText(QString::number(point.y()));
+        break;
+      default:;
+    }
+  }
 }
 
 } // closing namespace

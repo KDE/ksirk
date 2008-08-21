@@ -16,52 +16,21 @@
    02110-1301, USA
 */
 
-#ifndef KSIRKSKINEDITORSCENE_H
-#define KSIRKSKINEDITORSCENE_H
-
-#include <QGraphicsScene>
-
-class QGraphicsSceneMouseEvent;
+#ifndef KSIRKSKINEDITORSPRITETYPE_H
+#define KSIRKSKINEDITORSPRITETYPE_H
 
 namespace KsirkSkinEditor
 {
 
-/**
-  * This is the main window.
-  *
-  * @author Gael de Chalendar (aka Kleag)
-  * @version $Id: $
-  */
-class Scene : public QGraphicsScene
+enum SpriteType
 {
-  Q_OBJECT
-
-public:
-  /**
-    * 
-    */
-  Scene(QObject* parent=0);
-  Scene (qreal x, qreal y, qreal width, qreal height, QObject* parent=0);
-  /**
-    *
-    */
-  ~Scene();
-    
-protected:
-  virtual void mouseMoveEvent ( QGraphicsSceneMouseEvent * mouseEvent );
-  virtual void mousePressEvent ( QGraphicsSceneMouseEvent * mouseEvent );
-  virtual void dropEvent ( QGraphicsSceneDragDropEvent * event );
-  
-Q_SIGNALS:
-  void position(const QPointF&);
-  void pressPosition(const QPointF&);
-  
-public Q_SLOTS:
-
-private Q_SLOTS:
-
-private:
+  None,
+  Flag,
+  Infantry,
+  Cavalry,
+  Cannon
 };
+  
 
 } // closing namespace KsirkSkinEditor
 

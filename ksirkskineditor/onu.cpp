@@ -28,6 +28,7 @@
 // #include <QDom>
 #include <QPainter>
 #include <QPixmap>
+#include <QGraphicsPixmapItem>
 
 #include <kstandarddirs.h>
 #include <kglobal.h>
@@ -46,7 +47,8 @@ ONU::ONU(const QString& configDir):
   countries(),
   nationalities(),
   m_continents(),
-  m_renderer(0)
+  m_renderer(0),
+  m_itemsMap()
 {
 
   kDebug() << "ONU constructor: " << m_configFileName;
@@ -532,6 +534,21 @@ QSvgRenderer* ONU::renderer()
 KGameSvgDocument* ONU::svgDom()
 {
   return &m_svgDom;
+}
+
+QGraphicsPixmapItem* ONU::itemFor(const Country* country, SpriteType spriteType)
+{
+  if (country==0 || spriteType == None) return 0;
+  foreach (QGraphicsPixmapItem* item, m_itemsMap.keys())
+  {
+    if (m_itemsMap[item].first == country && m_itemsMap[item].second == spriteType)
+    {
+      kDebug() << item << (void*)country << spriteType;
+      return item;
+    }
+  }
+  kDebug() << 0;
+  return 0;
 }
 
 }

@@ -26,7 +26,7 @@
       <item row="0" column="1" >
        <widget class="QLineEdit" name="flagx" >
         <property name="text" >
-         <string>1024</string>
+         <string/>
         </property>
         <property name="alignment" >
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -46,7 +46,7 @@
       <item row="0" column="3" >
        <widget class="QLineEdit" name="flagy" >
         <property name="text" >
-         <string>1000</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -60,7 +60,7 @@
       <item row="1" column="1" >
        <widget class="QLineEdit" name="anchorx" >
         <property name="text" >
-         <string>1024</string>
+         <string/>
         </property>
         <property name="alignment" >
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -80,7 +80,7 @@
       <item row="1" column="3" >
        <widget class="QLineEdit" name="anchory" >
         <property name="text" >
-         <string>1000</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -94,7 +94,7 @@
       <item row="2" column="1" >
        <widget class="QLineEdit" name="centerx" >
         <property name="text" >
-         <string>1024</string>
+         <string/>
         </property>
         <property name="alignment" >
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -114,7 +114,7 @@
       <item row="2" column="3" >
        <widget class="QLineEdit" name="centery" >
         <property name="text" >
-         <string>1000</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -128,7 +128,7 @@
       <item row="3" column="1" >
        <widget class="QLineEdit" name="infantryx" >
         <property name="text" >
-         <string>1024</string>
+         <string/>
         </property>
         <property name="alignment" >
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -148,7 +148,7 @@
       <item row="3" column="3" >
        <widget class="QLineEdit" name="infantryy" >
         <property name="text" >
-         <string>1000</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -162,7 +162,7 @@
       <item row="4" column="1" >
        <widget class="QLineEdit" name="cavalryx" >
         <property name="text" >
-         <string>1024</string>
+         <string/>
         </property>
         <property name="alignment" >
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -182,7 +182,7 @@
       <item row="4" column="3" >
        <widget class="QLineEdit" name="cavalryy" >
         <property name="text" >
-         <string>1000</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -190,16 +190,6 @@
        <widget class="QLabel" name="label_12" >
         <property name="text" >
          <string>Cannon:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="1" >
-       <widget class="QLineEdit" name="cannonx" >
-        <property name="text" >
-         <string>1024</string>
-        </property>
-        <property name="alignment" >
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>
@@ -216,7 +206,17 @@
       <item row="5" column="3" >
        <widget class="QLineEdit" name="cannony" >
         <property name="text" >
-         <string>1000</string>
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1" >
+       <widget class="QLineEdit" name="cannonx" >
+        <property name="text" >
+         <string/>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>
