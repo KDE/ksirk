@@ -44,7 +44,6 @@ Country::Country(
                   const QPointF& cavalryPoint,
                   const QPointF& infantryPoint, 
                   unsigned int id) :
-  m_flag(),
   m_name(theName),
   m_anchorPoint(anchorPoint),
   m_centralPoint(centralPoint),
@@ -69,13 +68,6 @@ Country::~Country()
 void Country::reset()
 {
 //   kDebug() << "Country::reset " << m_name << endl;
-}
-
-void Country::flag(const QString& theFlagFileName)
-{
-//   kDebug() << "Country("<<m_name<<", "<<this<<")::flag flagFileName " << theFlagFileName << endl;
-
-  m_flag = theFlagFileName;
 }
 
 bool Country::communicateWith(const Country* otherCountry) const
@@ -208,7 +200,7 @@ void Country::highlight(const QColor& color, qreal opacity)
   }
   clearHighlighting();
 
-  ONU* onu;
+  ONU* onu = 0;
   if (onu == 0)
   {
     kWarning() << "onu is null" << endl;

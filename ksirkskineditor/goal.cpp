@@ -127,7 +127,7 @@ QString Goal::message(int displayType) const
   QString mes = res.toString();
   if (displayType & GoalAdvance)
   {
-    int diff = 0;
+//     int diff = 0;
     switch (m_type)
     {
     case Goal::GoalPlayer :

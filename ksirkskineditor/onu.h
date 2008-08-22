@@ -42,7 +42,7 @@ namespace KsirkSkinEditor
 {
 
 class Country;
-
+class Goal;
 /**
   * Class ONU (Organisation des Nations Unies = UNO : United Nations 
   * Organization) is simply the list of the countries. The data definining 
@@ -69,15 +69,14 @@ public:
   /**
    * Accessors
    */
-  const QString& skin() const {return m_skin;}
-  const QString& name() const {return m_name;}
-  const QString& description() const {return m_description;}
-  const QString& mapFileName() const;
-  const QString& getConfigFileName() const {return m_configFileName;}
-  const QPixmap& map() const {return m_map;}
-  const QPixmap& snapshot() const {return m_snapshot;}
-  unsigned int width() const;
-  unsigned int height() const;
+  inline const QString& skin() const {return m_skin;}
+  inline const QString& name() const {return m_name;}
+  inline const QString& description() const {return m_description;}
+  inline const QString& configFileName() const {return m_configFileName;}
+  inline const QPixmap& map() const {return m_map;}
+  inline const QPixmap& snapshot() const {return m_snapshot;}
+  inline unsigned int width() const {return m_width;}
+  inline unsigned int height() const {return m_height;}
   //@}
   
   /**
@@ -96,18 +95,20 @@ public:
   /**
     * Return the countries list
     */
-  QList<Country*>& getCountries();
+  inline QList<Country*>& countries() {return m_countries;}
   
   /**
     * Returns the nationalities list
     */
-  QList<Nationality*>& getNationalities();
+  inline QList<Nationality*>& nationalities() {return m_nationalities;}
 
   //@{
   /** Read property of QList<Continent*> continents. */
-  QList<Continent*>& getContinents();
-  const QList<Continent*>& getContinents() const;
+  inline QList<Continent*>& continents() {return m_continents;}
+  inline const QList<Continent*>& continents() const {return m_continents;}
   //@}
+
+  inline QList<Goal*>& goals() {return m_goals;}
 
   /**
     * Retrieves the continent with the given id
@@ -152,14 +153,23 @@ public:
 
   QSvgRenderer* renderer();
 
-  inline const QImage& mask() const {return countriesMask;}
+  inline const QImage& mask() const {return m_countriesMask;}
 
   KGameSvgDocument* svgDom();
 
   inline QMap<QGraphicsPixmapItem*, QPair<Country*, SpriteType> >& itemsMap() {return m_itemsMap;}
 
   QGraphicsPixmapItem* itemFor(const Country* country, SpriteType spriteType);
-  
+
+  QPixmap pixmapForId(const QString& id, int width, int height);
+
+  inline const QPixmap& flagIcon() const {return m_flagIcon;}
+  inline const QPixmap& infantryIcon() const {return m_infantryIcon;}
+  inline const QPixmap& cavalryIcon() const {return m_cavalryIcon;}
+  inline const QPixmap& cannonIcon() const {return m_cannonIcon;}
+
+  void saveConfig(const QString& configFileName = QString());
+
 private:
   /**
     * All data that have to be stored about the font to display countries names
@@ -220,12 +230,12 @@ private:
   /**
     * The list of countries
     */
-  QList<Country*> countries;
+  QList<Country*> m_countries;
 
   /**
     * The list of nationalities
     */
-  QList<Nationality*> nationalities;
+  QList<Nationality*> m_nationalities;
 
   /**
     * The continents of the world
@@ -237,7 +247,7 @@ private:
     * The blue RGB component value of each pixel gives the index of the
     * country in the countries list.
     */
-  QImage countriesMask;
+  QImage m_countriesMask;
   
   /**
     * The path to the skin ; relative to the ksirk data dir ; loaded from the 
@@ -259,6 +269,15 @@ private:
   KGameSvgDocument m_svgDom;
   
   QMap<QGraphicsPixmapItem*, QPair<Country*, SpriteType> > m_itemsMap;
+
+  QPixmap m_flagIcon;
+  QPixmap m_infantryIcon;
+  QPixmap m_cavalryIcon;
+  QPixmap m_cannonIcon;
+
+  QString m_poolString;
+
+  QList<Goal*> m_goals;
 };
 
 }

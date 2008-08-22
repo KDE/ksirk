@@ -42,7 +42,7 @@
 #include <KShortcut>
 // include files for kde games
 
-class QAction;
+class KAction;
 class KToolBar;
 class KDialog;
 
@@ -133,7 +133,10 @@ private Q_SLOTS:
   void slotCountrySelected(QListWidgetItem* item);
   void slotPixmapPlaced(PixmapItem*, const QPointF&);
   
-private:
+  void slotOpenSkin();
+  void slotSaveSkin();
+  
+  private:
   void saveXml(std::ostream& xmlStream);
   void initCountryWidgetWith(Country* country);
   Country* currentCountry();
@@ -151,7 +154,7 @@ private:
   // the current saved game file name
   QString m_fileName;
 
-  QAction* m_saveGameAction;
+  KAction* m_saveGameAction;
 
   QGraphicsView* m_mapView;
   QGraphicsScene* m_mapScene;

@@ -197,11 +197,6 @@ public:
   Continent* m_continent;
   
   /**
-    * A pointer to the sprite of the country's flag
-    */
-  QString m_flag;
-
-  /**
     * The name of the country
     */
   QString m_name;

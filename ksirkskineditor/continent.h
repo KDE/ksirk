@@ -50,16 +50,16 @@ public:
   /**
     * Read property of m_members, the countries of this continent.
     */
-  virtual const QList<Country*>& getMembers() const;
+  inline const QList<Country*>& members() const {return m_members;}
 
   /** Return the name of this continent. */
-  virtual const QString& name() const;
+  inline const QString& name() const {return m_name;}
 
   /** 
     * Return the bonus of armies at end of turn for the player owning all this 
     * continent.
     */
-  virtual const int& getBonus() const;
+  inline int bonus() const {return m_bonus;}
 
   /**
     * Saves a XML representation of this continent for game saving purpose
@@ -71,7 +71,7 @@ public:
   /** Accessors to the unique integer identifier of this continent. */
   inline unsigned int id() const {return m_id;}
   inline unsigned int id() {return m_id;}
-  inline void id(unsigned int id) {m_id = id;}
+  inline void setId(unsigned int id) {m_id = id;}
   //@}
 
 private: // Private attributes
@@ -85,7 +85,7 @@ private: // Private attributes
   const QString m_name;
 
   /** The bonus armies got by a user that owns all this continent */
-  const int bonus;
+  unsigned int m_bonus;
 
   /** The unique integer identifier of this continent. */
   unsigned int m_id;
