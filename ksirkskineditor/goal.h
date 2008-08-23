@@ -20,6 +20,7 @@
 #define KSIRK_GAMELOGICGOAL_H
 
 #include <QDataStream>
+#include <iostream>
 
 namespace KsirkSkinEditor
 {

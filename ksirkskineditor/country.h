@@ -30,6 +30,8 @@
 class KSvgRenderer;
 class QGraphicsSvgItem;
 
+#include <ostream>
+
 namespace KsirkSkinEditor
 {
 
