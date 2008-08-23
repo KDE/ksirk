@@ -37,6 +37,13 @@ PixmapItem::~PixmapItem()
   kDebug();
 }
 
+void PixmapItem::mousePressEvent(QGraphicsSceneMouseEvent* event)
+{
+  kDebug();
+  emit pressed(this);
+  QGraphicsItem::mousePressEvent(event);
+}
+
 void PixmapItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 {
   kDebug() << event->scenePos();

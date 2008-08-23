@@ -48,9 +48,11 @@ public:
   ~PixmapItem();
 
 Q_SIGNALS:
-  void placed(PixmapItem*, const QPointF&);
+  void pressed(QGraphicsItem*);
+  void placed(QGraphicsItem*, const QPointF&);
   
 protected:
+  virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
   virtual void mouseReleaseEvent (QGraphicsSceneMouseEvent* event);
   
 };

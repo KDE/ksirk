@@ -16,25 +16,41 @@
    02110-1301, USA
 */
 
-#ifndef KSIRKSKINEDITORSPRITETYPE_H
-#define KSIRKSKINEDITORSPRITETYPE_H
+// application specific includes
+#include "ksirkskineditortextitem.h"
+
+#include<QGraphicsSceneMouseEvent>
+
+#include<KDebug>
 
 namespace KsirkSkinEditor
 {
 
-enum SpriteType
+TextItem::TextItem(QGraphicsItem* parent) :
+      QGraphicsTextItem(parent)
 {
-  None,
-  Flag,
-  Infantry,
-  Cavalry,
-  Cannon,
-  Anchor,
-  Center
-};
-  
+  kDebug();
+}
 
-} // closing namespace KsirkSkinEditor
+TextItem::~TextItem()
+{
+  kDebug();
+}
 
-#endif 
+void TextItem::mousePressEvent(QGraphicsSceneMouseEvent* event)
+{
+  kDebug();
+  emit pressed(this);
+  QGraphicsItem::mousePressEvent(event);
+}
 
+void TextItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
+{
+  kDebug() << event->scenePos();
+  emit placed(this, event->scenePos());
+  QGraphicsItem::mouseReleaseEvent(event);
+}
+
+} // closing namespace
+
+#include "ksirkskineditortextitem.moc"

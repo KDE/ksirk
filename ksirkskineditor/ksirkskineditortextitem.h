@@ -16,23 +16,46 @@
    02110-1301, USA
 */
 
-#ifndef KSIRKSKINEDITORSPRITETYPE_H
-#define KSIRKSKINEDITORSPRITETYPE_H
+#ifndef KSIRKSKINEDITORTEXTITEM_H
+#define KSIRKSKINEDITORTEXTITEM_H
+
+// include files for Qt
+#include <QGraphicsTextItem>
+#include <QObject>
+#include <QPointF>
+
+// include files for KDE
+
+// include files for kde games
+
+class QGraphicsSceneMouseEvent;
 
 namespace KsirkSkinEditor
 {
-
-enum SpriteType
+class TextItem : public QGraphicsTextItem
 {
-  None,
-  Flag,
-  Infantry,
-  Cavalry,
-  Cannon,
-  Anchor,
-  Center
-};
+Q_OBJECT
+
+public:
+  /**
+    * Create the window and initializes its members
+    */
+  TextItem(QGraphicsItem* parent=0);
   
+  /**
+    * Deletes the background and the pool
+    */
+  ~TextItem();
+
+Q_SIGNALS:
+  void pressed(QGraphicsItem*);
+  void placed(QGraphicsItem*, const QPointF&);
+  
+protected:
+  virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
+  virtual void mouseReleaseEvent (QGraphicsSceneMouseEvent* event);
+  
+};
 
 } // closing namespace KsirkSkinEditor
 

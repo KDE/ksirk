@@ -40,11 +40,13 @@
 #include <KXmlGuiWindow>
 #include <KStandardDirs>
 #include <KShortcut>
+#include <KUrl>
 // include files for kde games
 
 class KAction;
 class KToolBar;
 class KDialog;
+class KRecentFilesAction;
 
 class QEvent;
 class QDockWidget;
@@ -52,6 +54,7 @@ class QGraphicsScene;
 class QGraphicsView;
 class QListWidgetItem;
 class QPushButton;
+class QGraphicsPixmapItem;
 
 class KSirkSkinDefinitionWidget;
 class KsirkCountryDefinitionWidget;
@@ -126,20 +129,39 @@ private Q_SLOTS:
   void slotInfantryButtonClicked();
   void slotCavalryButtonClicked();
   void slotCannonButtonClicked();
-
+  void slotAnchorButtonClicked();
+  void slotCenterButtonClicked();
+  
   void slotPosition(const QPointF&);
   void slotPressPosition(const QPointF&);
 
   void slotCountrySelected(QListWidgetItem* item);
-  void slotPixmapPlaced(PixmapItem*, const QPointF&);
+  void slotItemPressed(QGraphicsItem*);
+  void slotItemPlaced(QGraphicsItem*, const QPointF&);
   
-  void slotOpenSkin();
+  void slotOpenSkin(const QString& dir = QString());
   void slotSaveSkin();
+
+  void slotURLSelected(const KUrl&);
+
+  void slotSkinNameEdited();
+  void slotSkinWidthEdited();
+  void slotSkinHeightEdited();
+  void slotSkinDescriptionEdited();
+
+  void slotSkinHeightDiffEdited();
+  void slotSkinWidthDiffEdited();
+
+  void slotNewCountry();
+  void slotDeleteCountry();
+
+  void slotNeighbours();
   
   private:
   void saveXml(std::ostream& xmlStream);
   void initCountryWidgetWith(Country* country);
   Country* currentCountry();
+  void createPixmapFor(Country* country, SpriteType type);
   
   /**
     * a shortcut to the standard dirs object.
@@ -170,6 +192,12 @@ private Q_SLOTS:
   QPushButton* m_infantryButton;
   QPushButton* m_cavalryButton;
   QPushButton* m_cannonButton;
+  QPushButton* m_anchorButton;
+  QPushButton* m_centerButton;
+  
+  KRecentFilesAction* m_rfa;
+
+  QGraphicsPixmapItem* m_mapItem;
 };
 
 } // closing namespace KsirkSkinEditor

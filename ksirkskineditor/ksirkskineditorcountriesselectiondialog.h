@@ -16,25 +16,27 @@
    02110-1301, USA
 */
 
-#ifndef KSIRKSKINEDITORSPRITETYPE_H
-#define KSIRKSKINEDITORSPRITETYPE_H
 
-namespace KsirkSkinEditor
-{
+#ifndef _KSIRKSKINEDITORCOUNTRIESSELECTIONDIALOG_H_
+#define _KSIRKSKINEDITORCOUNTRIESSELECTIONDIALOG_H_
 
-enum SpriteType
+#include "ui_ksirkskineditorcountriesselectiondialog.h"
+
+#include <QDialog>
+
+/**
+ * This is the KsirK Skin Editor configuration dialog. Based on KConfigDialog.
+ *
+ * @short Configuration dialog
+ * @author Gaël de Chalendar (aka Kleag) <kleag@free.fr>
+ */
+class KsirkSkinEditorCountriesSelectionDialog :public QDialog, public Ui::CountriesSelectionDialog
 {
-  None,
-  Flag,
-  Infantry,
-  Cavalry,
-  Cannon,
-  Anchor,
-  Center
+  public:
+    KsirkSkinEditorCountriesSelectionDialog(QWidget* parent) : QDialog(parent)
+    {
+      setupUi(this);
+    }
 };
-  
 
-} // closing namespace KsirkSkinEditor
-
-#endif 
-
+#endif

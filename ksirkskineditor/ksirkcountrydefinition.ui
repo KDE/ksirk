@@ -5,7 +5,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>297</width>
+    <width>288</width>
     <height>550</height>
    </rect>
   </property>
@@ -225,7 +225,7 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout" >
       <item>
-       <widget class="KPushButton" name="kpushbutton" >
+       <widget class="KPushButton" name="neighboursbutton" >
         <property name="text" >
          <string>Neighbours:</string>
         </property>

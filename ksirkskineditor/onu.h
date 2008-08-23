@@ -36,7 +36,7 @@
 
 #include <kgamesvgdocument.h>
 
-class QGraphicsPixmapItem;
+class QGraphicsItem;
 
 namespace KsirkSkinEditor
 {
@@ -71,12 +71,16 @@ public:
    */
   inline const QString& skin() const {return m_skin;}
   inline const QString& name() const {return m_name;}
+  inline void setName(const QString& n) {m_name = n;}
   inline const QString& description() const {return m_description;}
+  inline void setDescription(const QString& d) {m_description = d;}
   inline const QString& configFileName() const {return m_configFileName;}
   inline const QPixmap& map() const {return m_map;}
   inline const QPixmap& snapshot() const {return m_snapshot;}
   inline unsigned int width() const {return m_width;}
+  inline void setWidth(unsigned int w) {m_width = w;}
   inline unsigned int height() const {return m_height;}
+  inline void setHeight(unsigned int h) {m_height = h;}
   //@}
   
   /**
@@ -157,9 +161,9 @@ public:
 
   KGameSvgDocument* svgDom();
 
-  inline QMap<QGraphicsPixmapItem*, QPair<Country*, SpriteType> >& itemsMap() {return m_itemsMap;}
+  inline QMap<QGraphicsItem*, QPair<Country*, SpriteType> >& itemsMap() {return m_itemsMap;}
 
-  QGraphicsPixmapItem* itemFor(const Country* country, SpriteType spriteType);
+  QGraphicsItem* itemFor(const Country* country, SpriteType spriteType);
 
   QPixmap pixmapForId(const QString& id, int width, int height);
 
@@ -170,6 +174,13 @@ public:
 
   void saveConfig(const QString& configFileName = QString());
 
+  QFont foregroundFont();
+  QFont backgroundFont();
+
+  void createCountry(const QString& newCountryName);
+
+  void deleteCountry(Country* country);
+  
 private:
   /**
     * All data that have to be stored about the font to display countries names
@@ -268,7 +279,7 @@ private:
 
   KGameSvgDocument m_svgDom;
   
-  QMap<QGraphicsPixmapItem*, QPair<Country*, SpriteType> > m_itemsMap;
+  QMap<QGraphicsItem*, QPair<Country*, SpriteType> > m_itemsMap;
 
   QPixmap m_flagIcon;
   QPixmap m_infantryIcon;

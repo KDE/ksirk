@@ -24,6 +24,8 @@
 #include "ksirkskindefinition.h"
 #include "ksirkcountrydefinition.h"
 #include "ksirkskineditorpixmapitem.h"
+#include "ksirkskineditortextitem.h"
+#include "ksirkskineditorcountriesselectiondialog.h"
 #include "skinSpritesData.h"
 
 //include files for QT
@@ -36,7 +38,9 @@
 #include <QMovie>
 #include <QGraphicsScene>
 #include <QGraphicsView>
+#include <QGraphicsPixmapItem>
 #include <QBitmap>
+#include <QInputDialog>
 
 // include files for KDE
 #include <kiconloader.h>
@@ -60,6 +64,7 @@
 #include <KSvgRenderer>
 #include <KDialog>
 #include <KAboutApplicationDialog>
+#include <KRecentFilesAction>
 
 
 #include <assert.h>
@@ -71,7 +76,8 @@ namespace KsirkSkinEditor
 MainWindow::MainWindow(QWidget* parent) :
   KXmlGuiWindow(parent),
   m_selectedSprite(None),
-  m_onu(0)
+  m_onu(0),
+  m_rfa(0)
 {
   kDebug() << "MainWindow constructor begin";
   KSirkSkinEditorWidget* mainWidget = new KSirkSkinEditorWidget(this);
@@ -110,7 +116,34 @@ MainWindow::MainWindow(QWidget* parent) :
   connect(m_cannonButton,SIGNAL(clicked()),this,SLOT(slotCannonButtonClicked()));
 
   m_dirs = KGlobal::dirs();
-//   m_accels.setEnabled(true);
+
+  QString anchorFileName = m_dirs-> findResource("appdata", "cross.png");
+  if (anchorFileName.isNull())
+  {
+    KMessageBox::error(0, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error !"));
+    exit(2);
+  }
+  QPixmap anchorPix = QPixmap(anchorFileName);
+  m_anchorButton = new QPushButton(mainWidget->buttonsScrollArea);
+  m_anchorButton->setIcon(anchorPix);
+  layout->addWidget(m_anchorButton);
+  m_anchorButton->setCheckable(true);
+  connect(m_anchorButton,SIGNAL(clicked()),this,SLOT(slotAnchorButtonClicked()));
+  
+  QString centerFileName = m_dirs-> findResource("appdata", "target.png");
+  if (centerFileName.isNull())
+  {
+    KMessageBox::error(0, i18n("Cannot load center icon<br>Program cannot continue"), i18n("Error !"));
+    exit(2);
+  }
+  QPixmap centerPix = QPixmap(centerFileName);
+  m_centerButton = new QPushButton(mainWidget->buttonsScrollArea);
+  m_centerButton->setIcon(centerPix);
+  layout->addWidget(m_centerButton);
+  m_centerButton->setCheckable(true);
+  connect(m_centerButton,SIGNAL(clicked()),this,SLOT(slotCenterButtonClicked()));
+  
+  //   m_accels.setEnabled(true);
   
   QString iconFileName = m_dirs-> findResource("appdata", "ksirkskineditor.png");
 /*  if (iconFileName.isNull())
@@ -137,6 +170,9 @@ MainWindow::MainWindow(QWidget* parent) :
   addDockWidget ( Qt::LeftDockWidgetArea, m_skinDefWidget);
   
   m_countryDefWidget = new KsirkCountryDefinitionWidget(this);
+  m_countryDefWidget->neighbourslist->setSortingEnabled(true);
+  m_countryDefWidget->neighbourslist->setSelectionMode(QAbstractItemView::ExtendedSelection);
+  
   addDockWidget ( Qt::LeftDockWidgetArea, m_countryDefWidget);
 
   m_skinDefWidget->countrieslist->setSortingEnabled (true);
@@ -153,6 +189,12 @@ MainWindow::~MainWindow()
 {
   kDebug();
   m_dirs = 0;
+  KSharedConfig::Ptr config = KGlobal::config();
+  if (m_rfa != 0)
+  {
+    kDebug() << "saving recent files";
+    m_rfa->saveEntries(KGlobal::config()->group("ksirkskineditor"));
+  }
 }
 
 void MainWindow::initActions()
@@ -162,6 +204,12 @@ void MainWindow::initActions()
   action = KStandardGameAction::load(this, SLOT(slotOpenSkin()), this);
   actionCollection()->addAction(action->objectName(), action);
 
+  m_rfa = KStandardGameAction::loadRecent (this, SLOT(slotURLSelected(const KUrl&)), this);
+  actionCollection()->addAction(m_rfa->objectName(), m_rfa);
+  KSharedConfig::Ptr config = KGlobal::config();
+  kDebug() << "loading recent files";
+  m_rfa->loadEntries(KGlobal::config()->group("ksirkskineditor"));
+  
   m_saveGameAction = KStandardGameAction::save(this, SLOT(slotSaveSkin()), this);
   actionCollection()->addAction(m_saveGameAction->objectName(), m_saveGameAction);
   
@@ -209,7 +257,7 @@ void MainWindow::optionsConfigure()
   //in which case you want to display the cached dialog instead of creating 
   //another one 
   if ( KsirkSkinEditorConfigurationDialog::showDialog( "settings" ) ) 
-    return; 
+    return;
  
   //KConfigDialog didn't find an instance of this dialog, so lets create it : 
   KsirkSkinEditorConfigurationDialog* dialog = new KsirkSkinEditorConfigurationDialog(
@@ -244,6 +292,11 @@ bool MainWindow::queryExit()
 
 void MainWindow::slotFlagButtonClicked()
 {
+  m_infantryButton->setChecked(false);
+  m_cavalryButton->setChecked(false);
+  m_cannonButton->setChecked(false);
+  m_anchorButton->setChecked(false);
+  m_centerButton->setChecked(false);
   if (m_selectedSprite == Flag)
   {
     m_flagButton->setChecked(false);
@@ -259,6 +312,11 @@ void MainWindow::slotFlagButtonClicked()
 
 void MainWindow::slotInfantryButtonClicked()
 {
+  m_flagButton->setChecked(false);
+  m_cavalryButton->setChecked(false);
+  m_cannonButton->setChecked(false);
+  m_anchorButton->setChecked(false);
+  m_centerButton->setChecked(false);
   if (m_selectedSprite == Infantry)
   {
     m_infantryButton->setChecked(false);
@@ -274,6 +332,11 @@ void MainWindow::slotInfantryButtonClicked()
 
 void MainWindow::slotCavalryButtonClicked()
 {
+  m_flagButton->setChecked(false);
+  m_infantryButton->setChecked(false);
+  m_cannonButton->setChecked(false);
+  m_anchorButton->setChecked(false);
+  m_centerButton->setChecked(false);
   if (m_selectedSprite == Cavalry)
   {
     m_cavalryButton->setChecked(false);
@@ -289,6 +352,11 @@ void MainWindow::slotCavalryButtonClicked()
 
 void MainWindow::slotCannonButtonClicked()
 {
+  m_flagButton->setChecked(false);
+  m_infantryButton->setChecked(false);
+  m_cavalryButton->setChecked(false);
+  m_anchorButton->setChecked(false);
+  m_centerButton->setChecked(false);
   if (m_selectedSprite == Cannon)
   {
     m_cannonButton->setChecked(false);
@@ -299,6 +367,63 @@ void MainWindow::slotCannonButtonClicked()
     m_mapView->setCursor(QCursor(m_onu->cannonIcon(),0,0));
     m_selectedSprite = Cannon;
     m_cannonButton->setChecked(true);
+  }
+}
+
+void MainWindow::slotAnchorButtonClicked()
+{
+  m_flagButton->setChecked(false);
+  m_infantryButton->setChecked(false);
+  m_cavalryButton->setChecked(false);
+  m_cannonButton->setChecked(false);
+  m_centerButton->setChecked(false);
+  if (m_selectedSprite == Anchor)
+  {
+    m_anchorButton->setChecked(false);
+    m_mapView->unsetCursor();
+  }
+  else if (m_skinDefWidget->countrieslist->currentItem()!=0)
+  {
+    QString anchorFileName = m_dirs-> findResource("appdata", "cross.png");
+    if (anchorFileName.isNull())
+    {
+      KMessageBox::error(0, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error !"));
+      exit(2);
+    }
+    QPixmap anchorPix = QPixmap(anchorFileName);
+    anchorPix = anchorPix.scaled(16,16);
+    
+    m_mapView->setCursor(QCursor(anchorPix,0,0));
+    m_selectedSprite = Anchor;
+    m_anchorButton->setChecked(true);
+  }
+}
+
+void MainWindow::slotCenterButtonClicked()
+{
+  m_flagButton->setChecked(false);
+  m_infantryButton->setChecked(false);
+  m_cavalryButton->setChecked(false);
+  m_cannonButton->setChecked(false);
+  m_anchorButton->setChecked(false);
+  if (m_selectedSprite == Center)
+  {
+    m_centerButton->setChecked(false);
+    m_mapView->unsetCursor();
+  }
+  else if (m_skinDefWidget->countrieslist->currentItem()!=0)
+  {
+    QString centerFileName = m_dirs-> findResource("appdata", "target.png");
+    if (centerFileName.isNull())
+    {
+      KMessageBox::error(0, i18n("Cannot load center icon<br>Program cannot continue"), i18n("Error !"));
+      exit(2);
+    }
+    QPixmap centerPix = QPixmap(centerFileName);
+    centerPix = centerPix.scaled(16,16);
+    m_mapView->setCursor(QCursor(centerPix,0,0));
+    m_selectedSprite = Center;
+    m_centerButton->setChecked(true);
   }
 }
 
@@ -316,6 +441,8 @@ void MainWindow::slotPressPosition(const QPointF& point)
   kDebug() << point;
   QPixmap pix;
   QPixmap alphacopy;
+  QString fileName;
+  
   if (currentCountry() == 0
     || m_onu->itemFor(currentCountry(), m_selectedSprite) != 0)
   {
@@ -323,8 +450,9 @@ void MainWindow::slotPressPosition(const QPointF& point)
     return;
   }
   PixmapItem* item = new PixmapItem();
-  connect(item, SIGNAL(placed(PixmapItem*, const QPointF&)),
-           this, SLOT(slotPixmapPlaced(PixmapItem*, const QPointF&)));
+  item->setZValue(10);
+  connect(item, SIGNAL(pressed(QGraphicsItem*)),this, SLOT(slotItemPressed(QGraphicsItem*)));
+  connect(item, SIGNAL(placed(QGraphicsItem*, const QPointF&)),this, SLOT(slotItemPlaced(QGraphicsItem*, const QPointF&)));
   
   switch (m_selectedSprite)
   {
@@ -360,6 +488,36 @@ void MainWindow::slotPressPosition(const QPointF& point)
       m_countryDefWidget->cannony->setText(QString::number(point.y()));
       currentCountry()->pointCannon(point);
       m_onu->itemsMap().insert(item,qMakePair(currentCountry(),Cannon));
+      break;
+    case Anchor:
+      kDebug() << "Adding anchor";
+      fileName = m_dirs-> findResource("appdata", "cross.png");
+      if (fileName.isNull())
+      {
+        KMessageBox::error(0, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error !"));
+        exit(2);
+      }
+      pix = QPixmap(fileName);
+      pix = pix.scaled(16,16);
+      m_countryDefWidget->anchorx->setText(QString::number(point.x()));
+      m_countryDefWidget->anchory->setText(QString::number(point.y()));
+      currentCountry()->anchorPoint(point);
+      m_onu->itemsMap().insert(item,qMakePair(currentCountry(),Anchor));
+      break;
+    case Center:
+      kDebug() << "Adding center";
+      fileName = m_dirs-> findResource("appdata", "target.png");
+      if (fileName.isNull())
+      {
+        KMessageBox::error(0, i18n("Cannot load center icon<br>Program cannot continue"), i18n("Error !"));
+        exit(2);
+      }
+      pix = QPixmap(fileName);
+      pix = pix.scaled(16,16);
+      m_countryDefWidget->centerx->setText(QString::number(point.x()));
+      m_countryDefWidget->centery->setText(QString::number(point.y()));
+      currentCountry()->centralPoint(point);
+      m_onu->itemsMap().insert(item,qMakePair(currentCountry(),Center));
       break;
     default: ;
   }
@@ -403,6 +561,18 @@ void MainWindow::initCountryWidgetWith(Country* country)
 
   m_countryDefWidget->cannonx->setText(QString::number(country->pointCannon().x()));
   m_countryDefWidget->cannony->setText(QString::number(country->pointCannon().y()));
+
+  m_countryDefWidget->anchorx->setText(QString::number(country->anchorPoint().x()));
+  m_countryDefWidget->anchory->setText(QString::number(country->anchorPoint().y()));
+
+  m_countryDefWidget->centerx->setText(QString::number(country->centralPoint().x()));
+  m_countryDefWidget->centery->setText(QString::number(country->centralPoint().y()));
+
+  m_countryDefWidget->neighbourslist->clear();
+  foreach(Country* neighbour, country->neighbours())
+  {
+    m_countryDefWidget->neighbourslist->addItem(neighbour->name());
+  }
 }
 
 Country* MainWindow::currentCountry()
@@ -413,46 +583,95 @@ Country* MainWindow::currentCountry()
   return m_onu->countryNamed(m_skinDefWidget->countrieslist->currentItem()->text());
 }
 
-void MainWindow::slotPixmapPlaced(PixmapItem* item, const QPointF& point)
+void MainWindow::slotItemPlaced(QGraphicsItem* item, const QPointF&)
 {
   kDebug();
   if (m_onu->itemsMap().contains(item))
   {
     Country* country = m_onu->itemsMap()[item].first;
     SpriteType type = m_onu->itemsMap()[item].second;
+    initCountryWidgetWith(country);
+    for (int i = 0; i != m_skinDefWidget->countrieslist->count(); i++)
+    {
+      if (m_skinDefWidget->countrieslist->item(i)->text() == country->name())
+      {
+        m_skinDefWidget->countrieslist->setCurrentRow (i, QItemSelectionModel::ClearAndSelect);
+        break;
+      }
+    }
+    QPointF anchorPos;
     switch (type)
     {
       case Flag:
-        country->pointFlag(point);
-        m_countryDefWidget->flagx->setText(QString::number(point.x()));
-        m_countryDefWidget->flagy->setText(QString::number(point.y()));
+        country->pointFlag(item->scenePos());
+        m_countryDefWidget->flagx->setText(QString::number(item->scenePos().x()));
+        m_countryDefWidget->flagy->setText(QString::number(item->scenePos().y()));
         break;
       case Infantry:
-        country->pointInfantry(point);
-        m_countryDefWidget->infantryx->setText(QString::number(point.x()));
-        m_countryDefWidget->infantryy->setText(QString::number(point.y()));
+        country->pointInfantry(item->scenePos());
+        m_countryDefWidget->infantryx->setText(QString::number(item->scenePos().x()));
+        m_countryDefWidget->infantryy->setText(QString::number(item->scenePos().y()));
         break;
       case Cavalry:
-        country->pointCavalry(point);
-        m_countryDefWidget->cavalryx->setText(QString::number(point.x()));
-        m_countryDefWidget->cavalryy->setText(QString::number(point.y()));
+        country->pointCavalry(item->scenePos());
+        m_countryDefWidget->cavalryx->setText(QString::number(item->scenePos().x()));
+        m_countryDefWidget->cavalryy->setText(QString::number(item->scenePos().y()));
         break;
       case Cannon:
-        country->pointCannon(point);
-        m_countryDefWidget->cannonx->setText(QString::number(point.x()));
-        m_countryDefWidget->cannony->setText(QString::number(point.y()));
+        country->pointCannon(item->scenePos());
+        m_countryDefWidget->cannonx->setText(QString::number(item->scenePos().x()));
+        m_countryDefWidget->cannony->setText(QString::number(item->scenePos().y()));
+        break;
+      case Anchor:
+        anchorPos = QPointF(item->scenePos().x()+(item->boundingRect().width()/2),item->scenePos().y()+(item->boundingRect().height()/2));
+        country->anchorPoint(anchorPos);
+        m_countryDefWidget->anchorx->setText(QString::number(anchorPos.x()));
+        m_countryDefWidget->anchory->setText(QString::number(anchorPos.y()));
+        break;
+      case Center:
+        country->centralPoint(item->scenePos());
+        m_countryDefWidget->centerx->setText(QString::number(item->scenePos().x()));
+        m_countryDefWidget->centery->setText(QString::number(item->scenePos().y()));
         break;
       default:;
     }
   }
 }
 
-void MainWindow::slotOpenSkin()
+void MainWindow::slotItemPressed(QGraphicsItem* item)
 {
-  QString skinDir = KFileDialog::getExistingDirectory(
-      KUrl(), this, i18n("Choose the root folder of the skin to open"));
+  kDebug();
+  if (m_onu->itemsMap().contains(item))
+  {
+    Country* country = m_onu->itemsMap()[item].first;
+    initCountryWidgetWith(country);
+    for (int i = 0; i != m_skinDefWidget->countrieslist->count(); i++)
+    {
+      if (m_skinDefWidget->countrieslist->item(i)->text() == country->name())
+      {
+        m_skinDefWidget->countrieslist->setCurrentRow (i, QItemSelectionModel::ClearAndSelect);
+        break;
+      }
+    }
+  }
+}
 
-      
+void MainWindow::slotOpenSkin(const QString& dir)
+{
+  kDebug() << dir;
+  QString skinDir = dir;
+  if (dir.isNull())
+  {
+    skinDir = KFileDialog::getExistingDirectory(
+      KUrl(), this, i18n("Choose the root folder of the skin to open"));
+  }
+
+  if (m_rfa != 0)
+  {
+    kDebug() << "Adding" << skinDir << "to recent files";
+    m_rfa->addUrl(KUrl::fromPath(skinDir));
+  }
+
   m_mapScene->clear();
 
   if (m_onu != 0)
@@ -461,8 +680,39 @@ void MainWindow::slotOpenSkin()
   }
   m_onu = new ONU(skinDir);
 
+  connect (m_countryDefWidget->neighboursbutton, SIGNAL(clicked()), this, SLOT(slotNeighbours()));
+  
+  m_skinDefWidget->skinNameLineEdit->setText(m_onu->name());
+  connect (m_skinDefWidget->skinNameLineEdit, SIGNAL(editingFinished()), this, SLOT(slotSkinNameEdited()));
+
+  QIntValidator* skinWidthValidator = new QIntValidator(this);
+  m_skinDefWidget->widthLineEdit->setValidator(skinWidthValidator);
+  m_skinDefWidget->widthLineEdit->setText(QString::number(m_onu->width()));
+  connect (m_skinDefWidget->widthLineEdit, SIGNAL(editingFinished()), this, SLOT(slotSkinWidthEdited()));
+  
+  QIntValidator* skinHeightValidator = new QIntValidator(this);
+  m_skinDefWidget->heightLineEdit->setValidator(skinHeightValidator);
+  m_skinDefWidget->heightLineEdit->setText(QString::number(m_onu->height()));
+  connect (m_skinDefWidget->heightLineEdit, SIGNAL(editingFinished()), this, SLOT(slotSkinHeightEdited()));
+  
+  m_skinDefWidget->descriptionTextEdit->setText(m_onu->description());
+  connect (m_skinDefWidget->descriptionTextEdit,SIGNAL(textChanged()), this, SLOT(slotSkinDescriptionEdited()));
+  
+  QIntValidator* heightDiffValidator = new QIntValidator(this);
+  m_skinDefWidget->heightDiffLineEdit->setValidator(heightDiffValidator);
+  m_skinDefWidget->heightDiffLineEdit->setText(QString::number(SkinSpritesData::changeable().intData("fighters-flag-y-diff")));
+  connect (m_skinDefWidget->heightDiffLineEdit, SIGNAL(editingFinished()), this, SLOT(slotSkinHeightDiffEdited()));
+  
+  QIntValidator* widthDiffValidator = new QIntValidator(this);
+  m_skinDefWidget->widthDiffLineEdit->setValidator(widthDiffValidator);
+  m_skinDefWidget->widthDiffLineEdit->setText(QString::number(SkinSpritesData::changeable().intData("width-between-flag-and-fighter")));
+  connect (m_skinDefWidget->widthDiffLineEdit, SIGNAL(editingFinished()), this, SLOT(slotSkinWidthDiffEdited()));
+
+  connect(m_skinDefWidget->newCountryButton, SIGNAL(clicked()), this, SLOT(slotNewCountry()));
+  connect(m_skinDefWidget->deleteCountryButton, SIGNAL(clicked()), this, SLOT(slotDeleteCountry()));
+  
   QPixmap mapPixmap(m_onu->pixmapForId("map", m_onu->width(), m_onu->height()));
-  m_mapScene->addPixmap(mapPixmap);
+  m_mapItem = m_mapScene->addPixmap(mapPixmap);
 
   m_flagButton->setIcon(m_onu->flagIcon());
 //   m_flagButton->setIconSize(QSize(flagWidth,flagHeight));
@@ -475,10 +725,37 @@ void MainWindow::slotOpenSkin()
 
   m_cannonButton->setIcon(m_onu->cannonIcon());
 //   m_cannonButton->setIconSize(QSize(cannonWidth,cannonHeight));
-  
+
+  kDebug() << "Adding countries items";
   foreach (Country* country, m_onu->countries())
   {
+    kDebug() << "Adding "<<country->name()<<" items";
     m_skinDefWidget->countrieslist->addItem(country->name());
+
+    if (!country->pointFlag().isNull())
+    {
+      createPixmapFor(country, Flag);
+    }
+    if (!country->pointInfantry().isNull())
+    {
+      createPixmapFor(country, Infantry);
+    }
+    if (!country->pointCavalry().isNull())
+    {
+      createPixmapFor(country, Cavalry);
+    }
+    if (!country->pointCannon().isNull())
+    {
+      createPixmapFor(country, Cannon);
+    }
+    if (!country->anchorPoint().isNull())
+    {
+      createPixmapFor(country, Anchor);
+    }
+    if (!country->centralPoint().isNull())
+    {
+      createPixmapFor(country, Center);
+    }
   }
 }
 
@@ -486,6 +763,250 @@ void MainWindow::slotSaveSkin()
 {
   kDebug();
   m_onu->saveConfig();
+}
+
+void MainWindow::createPixmapFor(Country* country, SpriteType type)
+{
+  kDebug() << country->name() << type;
+  QPixmap pix;
+  QPixmap alphacopy;
+  QPointF point;
+  QString fileName;
+  if (country == 0
+    || m_onu->itemFor(country, type) != 0)
+  {
+    kDebug() << (void*)country << (void*)m_onu->itemFor(country, type);
+    return;
+  }
+  QGraphicsItem* item = 0;
+                    
+  switch (type)
+  {
+    case Flag:
+      item = new PixmapItem();
+      pix = m_onu->flagIcon();
+      ((PixmapItem*)item)->setPixmap(pix);
+      //       pix = pix.scaled(20,20);
+      point = country->pointFlag();
+      m_countryDefWidget->flagx->setText(QString::number(point.x()));
+      m_countryDefWidget->flagy->setText(QString::number(point.y()));
+      m_onu->itemsMap().insert(item,qMakePair(country,Flag));
+      break;
+    case Infantry:
+      item = new PixmapItem();
+      pix = m_onu->infantryIcon();
+      ((PixmapItem*)item)->setPixmap(pix);
+      point = country->pointInfantry();
+      //       pix = pix.scaled(23,32);
+      m_countryDefWidget->infantryx->setText(QString::number(point.x()));
+      m_countryDefWidget->infantryy->setText(QString::number(point.y()));
+      m_onu->itemsMap().insert(item,qMakePair(country,Infantry));
+      break;
+    case Cavalry:
+      item = new PixmapItem();
+      pix = m_onu->cavalryIcon();
+      ((PixmapItem*)item)->setPixmap(pix);
+      point = country->pointCavalry();
+      //       pix = pix.scaled(32,32);
+      m_countryDefWidget->cavalryx->setText(QString::number(point.x()));
+      m_countryDefWidget->cavalryy->setText(QString::number(point.y()));
+      m_onu->itemsMap().insert(item,qMakePair(country,Cavalry));
+      break;
+    case Cannon:
+      item = new PixmapItem();
+      kDebug() << "Adding cannon";
+      pix = m_onu->cannonIcon();
+      ((PixmapItem*)item)->setPixmap(pix);
+      point = country->pointCannon();
+      //       pix = pix.scaled(32,32);
+      m_countryDefWidget->cannonx->setText(QString::number(point.x()));
+      m_countryDefWidget->cannony->setText(QString::number(point.y()));
+      m_onu->itemsMap().insert(item,qMakePair(country,Cannon));
+      break;
+    case Anchor:
+      item = new TextItem();
+      ((TextItem*)item)->setFont(m_onu->foregroundFont());
+      kDebug() << "Adding anchor";
+      fileName = m_dirs-> findResource("appdata", "cross.png");
+      if (fileName.isNull())
+      {
+        KMessageBox::error(0, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error !"));
+        exit(2);
+      }
+      pix = QPixmap(fileName);
+      point = country->anchorPoint();
+      pix = pix.scaled(16,16);
+      ((TextItem*)item)->setPlainText(country->name());
+      m_countryDefWidget->anchorx->setText(QString::number(point.x()));
+      m_countryDefWidget->anchory->setText(QString::number(point.y()));
+      m_onu->itemsMap().insert(item,qMakePair(country,Anchor));
+      break;
+    case Center:
+      item = new PixmapItem();
+      kDebug() << "Adding center";
+      fileName = m_dirs-> findResource("appdata", "target.png");
+      if (fileName.isNull())
+      {
+        KMessageBox::error(0, i18n("Cannot load center icon<br>Program cannot continue"), i18n("Error !"));
+        exit(2);
+      }
+      pix = QPixmap(fileName);
+      point = country->centralPoint();
+      pix = pix.scaled(16,16);
+      ((PixmapItem*)item)->setPixmap(pix);
+      m_countryDefWidget->anchorx->setText(QString::number(point.x()));
+      m_countryDefWidget->anchory->setText(QString::number(point.y()));
+      m_onu->itemsMap().insert(item,qMakePair(country,Center));
+      break;
+    default: ;
+  }
+  if (item != 0 && !point.isNull())
+  {
+    if (dynamic_cast<PixmapItem*>(item) != 0)
+    {
+      connect(dynamic_cast<PixmapItem*>(item),SIGNAL(pressed(QGraphicsItem*)),this, SLOT(slotItemPressed(QGraphicsItem*)));
+      connect(dynamic_cast<PixmapItem*>(item),SIGNAL(placed(QGraphicsItem*, const QPointF&)),this, SLOT(slotItemPlaced(QGraphicsItem*, const QPointF&)));
+      item->setPos(point);
+    }
+    else if (dynamic_cast<TextItem*>(item) != 0)
+    {
+      connect(dynamic_cast<TextItem*>(item),SIGNAL(pressed(QGraphicsItem*)),this, SLOT(slotItemPressed(QGraphicsItem*)));
+      connect(dynamic_cast<TextItem*>(item), SIGNAL(placed(QGraphicsItem*, const QPointF&)),this, SLOT(slotItemPlaced(QGraphicsItem*, const QPointF&)));
+      QPointF pos(point.x()-(item->boundingRect().width()/2),
+                   point.y()-(item->boundingRect().height()/2));
+      item->setPos(pos);
+    }
+    item->setZValue(10);
+    m_mapScene->addItem(item);
+    item->setFlag(QGraphicsItem::ItemIsMovable, true);
+    item->setFlag(QGraphicsItem::ItemIsSelectable, true);
+  }
+}
+
+void MainWindow::slotURLSelected(const KUrl& url)
+{
+  kDebug();
+  if ( url.isLocalFile() )
+  {
+    QString path = url.path();
+    slotOpenSkin(path);
+  }
+}
+
+void MainWindow::slotSkinNameEdited()
+{
+  m_onu->setName(m_skinDefWidget->skinNameLineEdit->text());
+}
+
+void MainWindow::slotSkinWidthEdited()
+{
+  bool ok = false;
+  int w = m_skinDefWidget->widthLineEdit->text().toInt(&ok);
+  m_onu->setWidth(w);
+
+  QPixmap mapPixmap(m_onu->pixmapForId("map", m_onu->width(), m_onu->height()));
+  m_mapItem->setPixmap(mapPixmap);
+}
+
+void MainWindow::slotSkinHeightEdited()
+{
+  bool ok = false;
+  int h = m_skinDefWidget->heightLineEdit->text().toInt(&ok);
+  m_onu->setHeight(h);
+
+  QPixmap mapPixmap(m_onu->pixmapForId("map", m_onu->width(), m_onu->height()));
+  m_mapItem->setPixmap(mapPixmap);
+}
+
+void MainWindow::slotSkinDescriptionEdited()
+{
+  kDebug() << m_skinDefWidget->descriptionTextEdit->toPlainText();
+  m_onu->setDescription(m_skinDefWidget->descriptionTextEdit->toPlainText());
+}
+
+void MainWindow::slotSkinHeightDiffEdited()
+{
+  kDebug();
+  bool ok = false;
+  int wd = m_skinDefWidget->heightDiffLineEdit->text().toInt(&ok);
+  SkinSpritesData::changeable().intData("fighters-flag-y-diff", wd);
+}
+
+void MainWindow::slotSkinWidthDiffEdited()
+{
+  kDebug();
+  bool ok = false;
+  int wd = m_skinDefWidget->widthDiffLineEdit->text().toInt(&ok);
+  SkinSpritesData::changeable().intData("width-between-flag-and-fighter", wd);
+}
+
+void MainWindow::slotNewCountry()
+{
+  kDebug();
+  QString newCountryName = QInputDialog::getText(this, i18n("New country name"), i18n("Enter the name of the new country"));
+  m_onu->createCountry(newCountryName);
+  m_skinDefWidget->countrieslist->addItem(newCountryName);
+}
+
+void MainWindow::slotDeleteCountry()
+{
+  kDebug();
+  int answer = KMessageBox::warningContinueCancel(this, i18n("Do you really want to delete country '%1'?", m_skinDefWidget->countrieslist->currentItem()->text()), i18n("Really delete country?"));
+  if (answer == KMessageBox::Cancel)
+  {
+    return;
+  }
+
+  int row = m_skinDefWidget->countrieslist->row(m_skinDefWidget->countrieslist->currentItem());
+  QListWidgetItem* item = m_skinDefWidget->countrieslist->takeItem(row);
+
+  Country* country = m_onu->countryNamed(item->text());
+  m_onu->deleteCountry(country);
+  
+  delete item;
+}
+
+void MainWindow::slotNeighbours()
+{
+  kDebug();
+  if (m_skinDefWidget->countrieslist->currentItem() == 0)
+  {
+    return;
+  }
+
+  KsirkSkinEditorCountriesSelectionDialog* dialog = new KsirkSkinEditorCountriesSelectionDialog(this);
+  dialog->countriesList->setSortingEnabled(true);
+  dialog->countriesList->setSelectionMode(QAbstractItemView::ExtendedSelection);
+  foreach (Country* country, m_onu->countries())
+  {
+    if (country->name() != m_skinDefWidget->countrieslist->currentItem()->text())
+    {
+      dialog->countriesList->addItem(country->name());
+    }
+  }
+  foreach (Country* country, m_onu->countryNamed(m_skinDefWidget->countrieslist->currentItem()->text())->neighbours())
+  {
+    QList<QListWidgetItem *> list = dialog->countriesList->findItems(country->name(),Qt::MatchExactly);
+    foreach (QListWidgetItem* item, list)
+    {
+      dialog->countriesList->setCurrentItem(item,QItemSelectionModel::Select);
+    }
+  }
+  if (dialog->exec())
+  {
+    QList<QListWidgetItem *> list = dialog->countriesList->selectedItems();
+    Country* country =  m_onu->countryNamed(m_skinDefWidget->countrieslist->currentItem()->text());
+    QList<Country*> newNeighbours;
+    m_countryDefWidget->neighbourslist->clear();
+    foreach (QListWidgetItem* item, list)
+    {
+      Country* neighbour = m_onu->countryNamed(item->text());
+      newNeighbours.push_back(neighbour);
+      m_countryDefWidget->neighbourslist->addItem(neighbour->name());
+    }
+    country->neighbours() = newNeighbours;
+
+  }
 }
 
 } // closing namespace

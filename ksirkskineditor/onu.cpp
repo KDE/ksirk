@@ -28,7 +28,8 @@
 // #include <QDom>
 #include <QPainter>
 #include <QPixmap>
-#include <QGraphicsPixmapItem>
+#include <QGraphicsItem>
+#include <QGraphicsScene>
 
 #include <kstandarddirs.h>
 #include <kglobal.h>
@@ -729,7 +730,7 @@ void ONU::buildMap()
 
 QPixmap ONU::pixmapForId(const QString& id, int width, int height)
 {
-  kDebug() << id;
+  kDebug() << id << width << height;
   //QSize size((int)(m_renderer.defaultSize().width()),(int)(m_renderer.defaultSize().height()));
   QSize size(width,height);
   QImage image(size, QImage::Format_ARGB32_Premultiplied);
@@ -750,10 +751,10 @@ KGameSvgDocument* ONU::svgDom()
   return &m_svgDom;
 }
 
-QGraphicsPixmapItem* ONU::itemFor(const Country* country, SpriteType spriteType)
+QGraphicsItem* ONU::itemFor(const Country* country, SpriteType spriteType)
 {
   if (country==0 || spriteType == None) return 0;
-  foreach (QGraphicsPixmapItem* item, m_itemsMap.keys())
+  foreach (QGraphicsItem* item, m_itemsMap.keys())
   {
     if (m_itemsMap[item].first == country && m_itemsMap[item].second == spriteType)
     {
@@ -763,6 +764,52 @@ QGraphicsPixmapItem* ONU::itemFor(const Country* country, SpriteType spriteType)
   }
   kDebug() << 0;
   return 0;
+}
+
+QFont ONU::foregroundFont()
+{
+  QFont foregroundFont(m_font.family, m_font.size, m_font.weight, m_font.italic);
+  return foregroundFont;
+}
+
+QFont ONU::backgroundFont()
+{
+  QFont backgroundFont(m_font.family, m_font.size, QFont::Normal, m_font.italic);
+  return backgroundFont;
+}
+
+void ONU::createCountry(const QString& newCountryName)
+{
+  kDebug();
+  Country* newCountry = new Country(newCountryName, QPointF(), QPointF(), QPointF(), QPointF(), QPointF(), QPointF(), m_countries.size());
+  m_countries.push_back(newCountry);
+}
+
+void ONU::deleteCountry(Country* country)
+{
+  kDebug() << country->name();
+  QList<QGraphicsItem*> itemsToRemove;
+  foreach (QGraphicsItem* item, m_itemsMap.keys())
+  {
+    if (m_itemsMap[item].first == country)
+    {
+      itemsToRemove.push_back(item);
+    }
+  }
+  foreach (QGraphicsItem* item, itemsToRemove)
+  {
+    kDebug() << "remove an item";
+    item->hide();
+    item->scene()->removeItem(item);
+    m_itemsMap.remove(item);
+    delete item;
+  }
+  kDebug() << "remove and delete the country";
+  KConfig config(m_configFileName);
+  config.deleteGroup(country->name());
+
+  m_countries.removeAll(country);
+  delete country;
 }
 
 }

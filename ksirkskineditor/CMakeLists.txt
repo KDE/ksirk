@@ -14,6 +14,7 @@ set(ksirkskineditor_SRCS
   ksirkSkinEditorConfigDialog.cpp
   ksirkskineditorscene.cpp
   ksirkskineditorpixmapitem.cpp
+  ksirkskineditortextitem.cpp
   onu.cpp
   continent.cpp
   country.cpp
@@ -28,6 +29,7 @@ set(ksirkskineditor_UI
   ksirkskineditorwidget.ui
   ksirkskindefinition.ui
   ksirkcountrydefinition.ui
+  ksirkskineditorcountriesselectiondialog.ui
 )
 
 
@@ -58,3 +60,9 @@ kde4_install_icons( ${ICON_INSTALL_DIR} )
 install( FILES ksirkskineditorsettings.kcfg DESTINATION ${KCFG_INSTALL_DIR} )
 install( FILES ksirkskineditor.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} )
 install( FILES ksirkskineditorui.rc  DESTINATION  ${DATA_INSTALL_DIR}/ksirkskineditor )
+
+set (pics_default_DATA
+cross.png
+target.png
+)
+install( FILES ${pics_default_DATA} DESTINATION ${DATA_INSTALL_DIR}/ksirkskineditor/ )
