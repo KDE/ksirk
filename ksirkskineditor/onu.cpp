@@ -234,6 +234,7 @@ ONU::ONU(const QString& configDir):
     m_countries[id] = new Country(name, anchorPoint, centralPoint,
         flagPoint, cannonPoint, cavalryPoint, infantryPoint, id);
   }
+  
   kDebug() << "Loading nationalities data";
   QStringList nationalitiesList = onugroup.readEntry("nationalities", QStringList());
   while (m_nationalities.size() < nationalitiesList.size())
@@ -496,9 +497,10 @@ void ONU::saveConfig(const QString& configFileName)
   unsigned int countryNum = 0;
   foreach (Country* country, m_countries)
   {
-    kDebug() << "Saving"<<country->name()<<"data";
+    kDebug() << "Saving"<<country->name()<<"data" << countryNum;
     KConfigGroup countryGroup = config.group(country->name());
-    countryGroup.writeEntry("id",++countryNum);
+    countryGroup.writeEntry("id",countryNum);
+    countryNum++;
     countryGroup.writeEntry("anchor-point",country->anchorPoint());
     countryGroup.writeEntry("central-point",country->centralPoint());
     countryGroup.writeEntry("flag-point",country->pointFlag());
