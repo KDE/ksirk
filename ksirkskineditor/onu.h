@@ -180,6 +180,8 @@ public:
   void createCountry(const QString& newCountryName);
 
   void deleteCountry(Country* country);
+
+  void updateIcon(SpriteType type);
   
 private:
   /**

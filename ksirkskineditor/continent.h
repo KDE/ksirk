@@ -50,7 +50,7 @@ public:
   /**
     * Read property of m_members, the countries of this continent.
     */
-  inline const QList<Country*>& members() const {return m_members;}
+  inline QList<Country*>& members() {return m_members;}
 
   /** Return the name of this continent. */
   inline const QString& name() const {return m_name;}
@@ -60,7 +60,8 @@ public:
     * continent.
     */
   inline int bonus() const {return m_bonus;}
-
+  inline void setBonus(int b) {m_bonus = b;}
+  
   /**
     * Saves a XML representation of this continent for game saving purpose
     * @param xmlStream The stream to write on

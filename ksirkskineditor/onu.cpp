@@ -812,4 +812,60 @@ void ONU::deleteCountry(Country* country)
   delete country;
 }
 
+void ONU::updateIcon(SpriteType type)
+{
+  int flagWidth;
+  int flagHeight;
+  int flagFrames;
+  int flagVersions;
+  int infantryWidth;
+  int infantryHeight;
+  int infantryFrames;
+  int infantryVersions;
+  int cavalryWidth;
+  int cavalryHeight;
+  int cavalryFrames;
+  int cavalryVersions;
+  int cannonWidth;
+  int cannonHeight;
+  int cannonFrames;
+  int cannonVersions;
+
+  switch (type)
+  {
+    case Flag:
+      flagWidth = SkinSpritesData::changeable().intData("flag-width");
+      flagHeight = SkinSpritesData::changeable().intData("flag-height");
+      flagFrames = SkinSpritesData::changeable().intData("flag-frames");
+      flagVersions = SkinSpritesData::changeable().intData("flag-versions");
+      m_flagIcon = QPixmap(pixmapForId(nationalities()[0]->name().toLower(),flagWidth*flagFrames,flagHeight*flagVersions).copy(0,0,flagWidth,flagHeight));
+      break;
+    case Infantry:
+      infantryWidth = SkinSpritesData::changeable().intData("infantry-width");
+      infantryHeight = SkinSpritesData::changeable().intData("infantry-height");
+      infantryFrames = SkinSpritesData::changeable().intData("infantry-frames");
+      infantryVersions = SkinSpritesData::changeable().intData("infantry-versions");
+      m_infantryIcon = QPixmap(
+      pixmapForId("infantry",infantryWidth*infantryFrames,infantryHeight*infantryVersions).copy(0,0,infantryWidth,infantryHeight));
+      break;
+    case Cavalry:
+      cavalryWidth = SkinSpritesData::changeable().intData("cavalry-width");
+      cavalryHeight = SkinSpritesData::changeable().intData("cavalry-height");
+      cavalryFrames = SkinSpritesData::changeable().intData("cavalry-frames");
+      cavalryVersions = SkinSpritesData::changeable().intData("cavalry-versions");
+      m_cavalryIcon = QPixmap(
+      pixmapForId("cavalry",cavalryWidth*cavalryFrames,cavalryHeight*cavalryVersions).copy(0,0,cavalryWidth,cavalryHeight));
+      break;
+    case Cannon:
+      cannonWidth = SkinSpritesData::changeable().intData("cannon-width");
+      cannonHeight = SkinSpritesData::changeable().intData("cannon-height");
+      cannonFrames = SkinSpritesData::changeable().intData("cannon-frames");
+      cannonVersions = SkinSpritesData::changeable().intData("cannon-versions");
+      m_cannonIcon = QPixmap(
+      pixmapForId("cannon",cannonWidth*cannonFrames,cannonHeight*cannonVersions).copy(0,0,cannonWidth,cannonHeight));
+      break;
+    default:;
+  }
+}
+
 }

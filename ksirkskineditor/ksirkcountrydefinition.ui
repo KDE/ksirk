@@ -223,18 +223,14 @@
      </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout" >
-      <item>
-       <widget class="KPushButton" name="neighboursbutton" >
-        <property name="text" >
-         <string>Neighbours:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QListWidget" name="neighbourslist" />
-      </item>
-     </layout>
+     <widget class="KPushButton" name="neighboursbutton" >
+      <property name="text" >
+       <string>Neighbours:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QListWidget" name="neighbourslist" />
     </item>
    </layout>
   </widget>

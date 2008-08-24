@@ -23,6 +23,9 @@
 #include "ksirkskineditorscene.h"
 #include "ksirkskindefinition.h"
 #include "ksirkcountrydefinition.h"
+#include "ksirkcontinentdefinition.h"
+#include "ksirkgoaldefinition.h"
+#include "ksirkspritesdefinition.h"
 #include "ksirkskineditorpixmapitem.h"
 #include "ksirkskineditortextitem.h"
 #include "ksirkskineditorcountriesselectiondialog.h"
@@ -156,33 +159,106 @@ MainWindow::MainWindow(QWidget* parent) :
 //    kDebug() << "Before initActions";
   initActions();
 
-  kDebug() << "Setting up GUI";
-  setupGUI();
-
-//    kDebug() << "Before initStatusBar";
-  initStatusBar();
-  
-  menuBar()-> show();
-  
-  setMouseTracking(true);
-
   m_skinDefWidget = new KSirkSkinDefinitionWidget(this);
+  m_skinDefWidget->countrieslist->setSortingEnabled (true);
   addDockWidget ( Qt::LeftDockWidgetArea, m_skinDefWidget);
   
   m_countryDefWidget = new KsirkCountryDefinitionWidget(this);
   m_countryDefWidget->neighbourslist->setSortingEnabled(true);
   m_countryDefWidget->neighbourslist->setSelectionMode(QAbstractItemView::ExtendedSelection);
+  addDockWidget ( Qt::RightDockWidgetArea, m_countryDefWidget);
+  m_countryDefWidget->hide();
   
-  addDockWidget ( Qt::LeftDockWidgetArea, m_countryDefWidget);
+  m_continentDefWidget = new KsirkContinentDefinitionWidget(this);
+  m_continentDefWidget->countrieslist->setSortingEnabled(true);
+  m_continentDefWidget->countrieslist->setSelectionMode(QAbstractItemView::ExtendedSelection);
+  addDockWidget ( Qt::RightDockWidgetArea, m_continentDefWidget);
+  m_continentDefWidget->hide();
+  
+  m_goalDefWidget = new KsirkGoalDefinitionWidget(this);
+  addDockWidget ( Qt::RightDockWidgetArea, m_goalDefWidget);
+  m_goalDefWidget->hide();
+  
+  m_spritesDefWidget = new KsirkSpritesDefinitionWidget(this);
+  addDockWidget ( Qt::RightDockWidgetArea, m_spritesDefWidget);
+  m_spritesDefWidget->hide();
+  connect(m_spritesDefWidget->flagw, SIGNAL(valueChanged(int)), this, SLOT(slotFlagWidthChanged(int)));
+  connect(m_spritesDefWidget->flagh, SIGNAL(valueChanged(int)), this, SLOT(slotFlagHeightChanged(int)));
+  connect(m_spritesDefWidget->flagf, SIGNAL(valueChanged(int)), this, SLOT(slotFlagFramesChanged(int)));
+  connect(m_spritesDefWidget->flagv, SIGNAL(valueChanged(int)), this, SLOT(slotFlagVersionsChanged(int)));
 
-  m_skinDefWidget->countrieslist->setSortingEnabled (true);
+  connect(m_spritesDefWidget->infantryw, SIGNAL(valueChanged(int)), this, SLOT(slotInfantryWidthChanged(int)));
+  connect(m_spritesDefWidget->infantryh, SIGNAL(valueChanged(int)), this, SLOT(slotInfantryHeightChanged(int)));
+  connect(m_spritesDefWidget->infantryf, SIGNAL(valueChanged(int)), this, SLOT(slotInfantryFramesChanged(int)));
+  connect(m_spritesDefWidget->infantryv, SIGNAL(valueChanged(int)), this, SLOT(slotInfantryVersionsChanged(int)));
+  
+  connect(m_spritesDefWidget->cavalryw, SIGNAL(valueChanged(int)), this, SLOT(slotCavalryWidthChanged(int)));
+  connect(m_spritesDefWidget->cavalryh, SIGNAL(valueChanged(int)), this, SLOT(slotCavalryHeightChanged(int)));
+  connect(m_spritesDefWidget->cavalryf, SIGNAL(valueChanged(int)), this, SLOT(slotCavalryFramesChanged(int)));
+  connect(m_spritesDefWidget->cavalryv, SIGNAL(valueChanged(int)), this, SLOT(slotCavalryVersionsChanged(int)));
+  
+  connect(m_spritesDefWidget->cannonw, SIGNAL(valueChanged(int)), this, SLOT(slotCannonWidthChanged(int)));
+  connect(m_spritesDefWidget->cannonh, SIGNAL(valueChanged(int)), this, SLOT(slotCannonHeightChanged(int)));
+  connect(m_spritesDefWidget->cannonf, SIGNAL(valueChanged(int)), this, SLOT(slotCannonFramesChanged(int)));
+  connect(m_spritesDefWidget->cannonv, SIGNAL(valueChanged(int)), this, SLOT(slotCannonVersionsChanged(int)));
+  
+  connect(m_spritesDefWidget->firingw, SIGNAL(valueChanged(int)), this, SLOT(slotFiringWidthChanged(int)));
+  connect(m_spritesDefWidget->firingh, SIGNAL(valueChanged(int)), this, SLOT(slotFiringHeightChanged(int)));
+  connect(m_spritesDefWidget->firingf, SIGNAL(valueChanged(int)), this, SLOT(slotFiringFramesChanged(int)));
+  connect(m_spritesDefWidget->firingv, SIGNAL(valueChanged(int)), this, SLOT(slotFiringVersionsChanged(int)));
+  
+  connect(m_spritesDefWidget->explodingw, SIGNAL(valueChanged(int)), this, SLOT(slotExplodingWidthChanged(int)));
+  connect(m_spritesDefWidget->explodingh, SIGNAL(valueChanged(int)), this, SLOT(slotExplodingHeightChanged(int)));
+  connect(m_spritesDefWidget->explodingf, SIGNAL(valueChanged(int)), this, SLOT(slotExplodingFramesChanged(int)));
+  connect(m_spritesDefWidget->explodingv, SIGNAL(valueChanged(int)), this, SLOT(slotExplodingVersionsChanged(int)));
+  
+  
+  connect(m_skinDefWidget->ktabwidget, SIGNAL(currentChanged (int)), this, SLOT(slotSkinPartTabChanged(int)));
+  m_skinDefWidget->ktabwidget-> setCurrentIndex(0);
+  
+  connect(m_skinDefWidget->countrieslist, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(slotCountrySelected(QListWidgetItem*)));
 
-  connect(
-    m_skinDefWidget->countrieslist,
-    SIGNAL(itemClicked(QListWidgetItem*)),
-    this,
-    SLOT(slotCountrySelected(QListWidgetItem*)));
+  connect (m_countryDefWidget->neighboursbutton, SIGNAL(clicked()), this, SLOT(slotNeighbours()));
 
+  connect (m_skinDefWidget->skinNameLineEdit, SIGNAL(editingFinished()), this, SLOT(slotSkinNameEdited()));
+
+  QIntValidator* skinWidthValidator = new QIntValidator(this);
+  m_skinDefWidget->widthLineEdit->setValidator(skinWidthValidator);
+  connect (m_skinDefWidget->widthLineEdit, SIGNAL(editingFinished()), this, SLOT(slotSkinWidthEdited()));
+
+  QIntValidator* skinHeightValidator = new QIntValidator(this);
+  m_skinDefWidget->heightLineEdit->setValidator(skinHeightValidator);
+  connect (m_skinDefWidget->heightLineEdit, SIGNAL(editingFinished()), this, SLOT(slotSkinHeightEdited()));
+
+  connect (m_skinDefWidget->descriptionTextEdit,SIGNAL(textChanged()), this, SLOT(slotSkinDescriptionEdited()));
+
+  QIntValidator* heightDiffValidator = new QIntValidator(this);
+  m_skinDefWidget->heightDiffLineEdit->setValidator(heightDiffValidator);
+  connect (m_skinDefWidget->heightDiffLineEdit, SIGNAL(editingFinished()), this, SLOT(slotSkinHeightDiffEdited()));
+
+  QIntValidator* widthDiffValidator = new QIntValidator(this);
+  m_skinDefWidget->widthDiffLineEdit->setValidator(widthDiffValidator);
+  connect (m_skinDefWidget->widthDiffLineEdit, SIGNAL(editingFinished()), this, SLOT(slotSkinWidthDiffEdited()));
+
+  connect(m_skinDefWidget->newCountryButton, SIGNAL(clicked()), this, SLOT(slotNewCountry()));
+  connect(m_skinDefWidget->deleteCountryButton, SIGNAL(clicked()), this, SLOT(slotDeleteCountry()));    
+
+  connect(m_skinDefWidget->continentslist, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(slotContinentSelected(QListWidgetItem*)));
+
+  connect (m_continentDefWidget->selectcountriesbutton, SIGNAL(clicked()), this, SLOT(slotContinentCountries()));
+  
+  connect (m_continentDefWidget->bonus, SIGNAL(editingFinished()), this, SLOT(slotContinentBonusEdited()));
+  
+  kDebug() << "Setting up GUI";
+  setupGUI();
+  
+  //    kDebug() << "Before initStatusBar";
+  initStatusBar();
+  
+  menuBar()-> show();
+  
+  setMouseTracking(true);
+  
 }
 
 MainWindow::~MainWindow()
@@ -234,6 +310,131 @@ void MainWindow::initStatusBar()
   statusBar()-> setSizeGripEnabled(true);
 }
 
+void MainWindow::slotOpenSkin(const QString& dir)
+{
+  kDebug() << dir;
+  QString skinDir = dir;
+  if (dir.isNull())
+  {
+    skinDir = KFileDialog::getExistingDirectory(
+    KUrl(), this, i18n("Choose the root folder of the skin to open"));
+  }
+  
+  if (m_rfa != 0)
+  {
+    kDebug() << "Adding" << skinDir << "to recent files";
+    m_rfa->addUrl(KUrl::fromPath(skinDir));
+  }
+  
+  m_mapScene->clear();
+  m_skinDefWidget->countrieslist->clear();
+  m_skinDefWidget->continentslist->clear();
+  m_skinDefWidget->goalslist->clear();
+  
+  if (m_onu != 0)
+  {
+    delete m_onu;
+  }
+  m_onu = new ONU(skinDir);
+  
+  m_skinDefWidget->skinNameLineEdit->setText(m_onu->name());
+  m_skinDefWidget->widthLineEdit->setText(QString::number(m_onu->width()));
+  m_skinDefWidget->heightLineEdit->setText(QString::number(m_onu->height()));
+  m_skinDefWidget->descriptionTextEdit->setText(m_onu->description());
+  m_skinDefWidget->heightDiffLineEdit->setText(QString::number(SkinSpritesData::changeable().intData("fighters-flag-y-diff")));
+  m_skinDefWidget->widthDiffLineEdit->setText(QString::number(SkinSpritesData::changeable().intData("width-between-flag-and-fighter")));
+
+  m_spritesDefWidget->flagw->setValue(SkinSpritesData::changeable().intData("flag-width"));
+  m_spritesDefWidget->flagh->setValue(SkinSpritesData::changeable().intData("flag-height"));
+  m_spritesDefWidget->flagf->setValue(SkinSpritesData::changeable().intData("flag-frames"));
+  m_spritesDefWidget->flagv->setValue(SkinSpritesData::changeable().intData("flag-versions"));
+  
+  m_spritesDefWidget->infantryw->setValue(SkinSpritesData::changeable().intData("infantry-width"));
+  m_spritesDefWidget->infantryh->setValue(SkinSpritesData::changeable().intData("infantry-height"));
+  m_spritesDefWidget->infantryf->setValue(SkinSpritesData::changeable().intData("infantry-frames"));
+  m_spritesDefWidget->infantryv->setValue(SkinSpritesData::changeable().intData("infantry-versions"));
+  
+  m_spritesDefWidget->cavalryw->setValue(SkinSpritesData::changeable().intData("cavalry-width"));
+  m_spritesDefWidget->cavalryh->setValue(SkinSpritesData::changeable().intData("cavalry-height"));
+  m_spritesDefWidget->cavalryf->setValue(SkinSpritesData::changeable().intData("cavalry-frames"));
+  m_spritesDefWidget->cavalryv->setValue(SkinSpritesData::changeable().intData("cavalry-versions"));
+  
+  m_spritesDefWidget->cannonw->setValue(SkinSpritesData::changeable().intData("cannon-width"));
+  m_spritesDefWidget->cannonh->setValue(SkinSpritesData::changeable().intData("cannon-height"));
+  m_spritesDefWidget->cannonf->setValue(SkinSpritesData::changeable().intData("cannon-frames"));
+  m_spritesDefWidget->cannonv->setValue(SkinSpritesData::changeable().intData("cannon-versions"));
+  
+  m_spritesDefWidget->firingw->setValue(SkinSpritesData::changeable().intData("firing-width"));
+  m_spritesDefWidget->firingh->setValue(SkinSpritesData::changeable().intData("firing-height"));
+  m_spritesDefWidget->firingf->setValue(SkinSpritesData::changeable().intData("firing-frames"));
+  m_spritesDefWidget->firingv->setValue(SkinSpritesData::changeable().intData("firing-versions"));
+  
+  m_spritesDefWidget->explodingw->setValue(SkinSpritesData::changeable().intData("exploding-width"));
+  m_spritesDefWidget->explodingh->setValue(SkinSpritesData::changeable().intData("exploding-height"));
+  m_spritesDefWidget->explodingf->setValue(SkinSpritesData::changeable().intData("exploding-frames"));
+  m_spritesDefWidget->explodingv->setValue(SkinSpritesData::changeable().intData("exploding-versions"));
+  
+  QPixmap mapPixmap(m_onu->pixmapForId("map", m_onu->width(), m_onu->height()));
+  m_mapItem = m_mapScene->addPixmap(mapPixmap);
+  
+  m_flagButton->setIcon(m_onu->flagIcon());
+  //   m_flagButton->setIconSize(QSize(flagWidth,flagHeight));
+  
+  m_infantryButton->setIcon(m_onu->infantryIcon());
+  //   m_infantryButton->setIconSize(QSize(infantryWidth,infantryHeight));
+  
+  m_cavalryButton->setIcon(m_onu->cavalryIcon());
+  //   m_cavalryButton->setIconSize(QSize(cavalryWidth,cavalryHeight));
+  
+  m_cannonButton->setIcon(m_onu->cannonIcon());
+  //   m_cannonButton->setIconSize(QSize(cannonWidth,cannonHeight));
+  
+  kDebug() << "Adding countries items";
+  foreach (Country* country, m_onu->countries())
+  {
+    kDebug() << "Adding "<<country->name()<<" items";
+    m_skinDefWidget->countrieslist->addItem(country->name());
+    
+    if (!country->pointFlag().isNull())
+    {
+      createPixmapFor(country, Flag);
+    }
+    if (!country->pointInfantry().isNull())
+    {
+      createPixmapFor(country, Infantry);
+    }
+    if (!country->pointCavalry().isNull())
+    {
+      createPixmapFor(country, Cavalry);
+    }
+    if (!country->pointCannon().isNull())
+    {
+      createPixmapFor(country, Cannon);
+    }
+    if (!country->anchorPoint().isNull())
+    {
+      createPixmapFor(country, Anchor);
+    }
+    if (!country->centralPoint().isNull())
+    {
+      createPixmapFor(country, Center);
+    }
+  }
+
+  kDebug() << "Adding continents items";
+  foreach (Continent* continent, m_onu->continents())
+  {
+    kDebug() << "Adding "<<continent->name()<<" items";
+    m_skinDefWidget->continentslist->addItem(continent->name());
+  }
+}
+
+void MainWindow::slotSaveSkin()
+{
+  kDebug();
+  m_onu->saveConfig();
+}
+
 /**
   * Reimplementation of the inherited function called when a window close event arise
   */
@@ -242,14 +443,6 @@ bool MainWindow::queryClose()
     // TODO : Test si jeu en cours
   return true;
 }
-
-void MainWindow::saveXml(std::ostream& xmlStream)
-{
-  xmlStream << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" << std::endl;
-  xmlStream << "<ksirkskin formatVersion=\"2.0\" >" << std::endl;
-  xmlStream << "</ksirkskin>" << std::endl;
-}
-
 
 void MainWindow::optionsConfigure()
 {
@@ -575,6 +768,28 @@ void MainWindow::initCountryWidgetWith(Country* country)
   }
 }
 
+void MainWindow::slotContinentSelected(QListWidgetItem* item)
+{
+  kDebug();
+  Continent* continent = m_onu->continentNamed(item->text());
+  if (continent != 0)
+  {
+    initContinentWidgetWith(continent);
+  }
+}
+
+void MainWindow::initContinentWidgetWith(Continent* continent)
+{
+  kDebug();
+  m_continentDefWidget->bonus->setText(QString::number(continent->bonus()));
+
+    m_continentDefWidget->countrieslist->clear();
+  foreach(Country* country, continent->members())
+  {
+    m_continentDefWidget->countrieslist->addItem(country->name());
+  }
+}
+
 Country* MainWindow::currentCountry()
 {
   if (m_skinDefWidget->countrieslist->currentItem() == 0)
@@ -654,115 +869,6 @@ void MainWindow::slotItemPressed(QGraphicsItem* item)
       }
     }
   }
-}
-
-void MainWindow::slotOpenSkin(const QString& dir)
-{
-  kDebug() << dir;
-  QString skinDir = dir;
-  if (dir.isNull())
-  {
-    skinDir = KFileDialog::getExistingDirectory(
-      KUrl(), this, i18n("Choose the root folder of the skin to open"));
-  }
-
-  if (m_rfa != 0)
-  {
-    kDebug() << "Adding" << skinDir << "to recent files";
-    m_rfa->addUrl(KUrl::fromPath(skinDir));
-  }
-
-  m_mapScene->clear();
-
-  if (m_onu != 0)
-  {
-    delete m_onu;
-  }
-  m_onu = new ONU(skinDir);
-
-  connect (m_countryDefWidget->neighboursbutton, SIGNAL(clicked()), this, SLOT(slotNeighbours()));
-  
-  m_skinDefWidget->skinNameLineEdit->setText(m_onu->name());
-  connect (m_skinDefWidget->skinNameLineEdit, SIGNAL(editingFinished()), this, SLOT(slotSkinNameEdited()));
-
-  QIntValidator* skinWidthValidator = new QIntValidator(this);
-  m_skinDefWidget->widthLineEdit->setValidator(skinWidthValidator);
-  m_skinDefWidget->widthLineEdit->setText(QString::number(m_onu->width()));
-  connect (m_skinDefWidget->widthLineEdit, SIGNAL(editingFinished()), this, SLOT(slotSkinWidthEdited()));
-  
-  QIntValidator* skinHeightValidator = new QIntValidator(this);
-  m_skinDefWidget->heightLineEdit->setValidator(skinHeightValidator);
-  m_skinDefWidget->heightLineEdit->setText(QString::number(m_onu->height()));
-  connect (m_skinDefWidget->heightLineEdit, SIGNAL(editingFinished()), this, SLOT(slotSkinHeightEdited()));
-  
-  m_skinDefWidget->descriptionTextEdit->setText(m_onu->description());
-  connect (m_skinDefWidget->descriptionTextEdit,SIGNAL(textChanged()), this, SLOT(slotSkinDescriptionEdited()));
-  
-  QIntValidator* heightDiffValidator = new QIntValidator(this);
-  m_skinDefWidget->heightDiffLineEdit->setValidator(heightDiffValidator);
-  m_skinDefWidget->heightDiffLineEdit->setText(QString::number(SkinSpritesData::changeable().intData("fighters-flag-y-diff")));
-  connect (m_skinDefWidget->heightDiffLineEdit, SIGNAL(editingFinished()), this, SLOT(slotSkinHeightDiffEdited()));
-  
-  QIntValidator* widthDiffValidator = new QIntValidator(this);
-  m_skinDefWidget->widthDiffLineEdit->setValidator(widthDiffValidator);
-  m_skinDefWidget->widthDiffLineEdit->setText(QString::number(SkinSpritesData::changeable().intData("width-between-flag-and-fighter")));
-  connect (m_skinDefWidget->widthDiffLineEdit, SIGNAL(editingFinished()), this, SLOT(slotSkinWidthDiffEdited()));
-
-  connect(m_skinDefWidget->newCountryButton, SIGNAL(clicked()), this, SLOT(slotNewCountry()));
-  connect(m_skinDefWidget->deleteCountryButton, SIGNAL(clicked()), this, SLOT(slotDeleteCountry()));
-  
-  QPixmap mapPixmap(m_onu->pixmapForId("map", m_onu->width(), m_onu->height()));
-  m_mapItem = m_mapScene->addPixmap(mapPixmap);
-
-  m_flagButton->setIcon(m_onu->flagIcon());
-//   m_flagButton->setIconSize(QSize(flagWidth,flagHeight));
-
-  m_infantryButton->setIcon(m_onu->infantryIcon());
-//   m_infantryButton->setIconSize(QSize(infantryWidth,infantryHeight));
-
-  m_cavalryButton->setIcon(m_onu->cavalryIcon());
-//   m_cavalryButton->setIconSize(QSize(cavalryWidth,cavalryHeight));
-
-  m_cannonButton->setIcon(m_onu->cannonIcon());
-//   m_cannonButton->setIconSize(QSize(cannonWidth,cannonHeight));
-
-  kDebug() << "Adding countries items";
-  foreach (Country* country, m_onu->countries())
-  {
-    kDebug() << "Adding "<<country->name()<<" items";
-    m_skinDefWidget->countrieslist->addItem(country->name());
-
-    if (!country->pointFlag().isNull())
-    {
-      createPixmapFor(country, Flag);
-    }
-    if (!country->pointInfantry().isNull())
-    {
-      createPixmapFor(country, Infantry);
-    }
-    if (!country->pointCavalry().isNull())
-    {
-      createPixmapFor(country, Cavalry);
-    }
-    if (!country->pointCannon().isNull())
-    {
-      createPixmapFor(country, Cannon);
-    }
-    if (!country->anchorPoint().isNull())
-    {
-      createPixmapFor(country, Anchor);
-    }
-    if (!country->centralPoint().isNull())
-    {
-      createPixmapFor(country, Center);
-    }
-  }
-}
-
-void MainWindow::slotSaveSkin()
-{
-  kDebug();
-  m_onu->saveConfig();
 }
 
 void MainWindow::createPixmapFor(Country* country, SpriteType type)
@@ -895,11 +1001,13 @@ void MainWindow::slotURLSelected(const KUrl& url)
 
 void MainWindow::slotSkinNameEdited()
 {
+  if (m_onu == 0) return;
   m_onu->setName(m_skinDefWidget->skinNameLineEdit->text());
 }
 
 void MainWindow::slotSkinWidthEdited()
 {
+  if (m_onu == 0) return;
   bool ok = false;
   int w = m_skinDefWidget->widthLineEdit->text().toInt(&ok);
   m_onu->setWidth(w);
@@ -910,6 +1018,7 @@ void MainWindow::slotSkinWidthEdited()
 
 void MainWindow::slotSkinHeightEdited()
 {
+  if (m_onu == 0) return;
   bool ok = false;
   int h = m_skinDefWidget->heightLineEdit->text().toInt(&ok);
   m_onu->setHeight(h);
@@ -920,12 +1029,14 @@ void MainWindow::slotSkinHeightEdited()
 
 void MainWindow::slotSkinDescriptionEdited()
 {
+  if (m_onu == 0) return;
   kDebug() << m_skinDefWidget->descriptionTextEdit->toPlainText();
   m_onu->setDescription(m_skinDefWidget->descriptionTextEdit->toPlainText());
 }
 
 void MainWindow::slotSkinHeightDiffEdited()
 {
+  if (m_onu == 0) return;
   kDebug();
   bool ok = false;
   int wd = m_skinDefWidget->heightDiffLineEdit->text().toInt(&ok);
@@ -934,6 +1045,7 @@ void MainWindow::slotSkinHeightDiffEdited()
 
 void MainWindow::slotSkinWidthDiffEdited()
 {
+  if (m_onu == 0) return;
   kDebug();
   bool ok = false;
   int wd = m_skinDefWidget->widthDiffLineEdit->text().toInt(&ok);
@@ -942,6 +1054,7 @@ void MainWindow::slotSkinWidthDiffEdited()
 
 void MainWindow::slotNewCountry()
 {
+  if (m_onu == 0) return;
   kDebug();
   QString newCountryName = QInputDialog::getText(this, i18n("New country name"), i18n("Enter the name of the new country"));
   m_onu->createCountry(newCountryName);
@@ -950,6 +1063,7 @@ void MainWindow::slotNewCountry()
 
 void MainWindow::slotDeleteCountry()
 {
+  if (m_onu == 0) return;
   kDebug();
   int answer = KMessageBox::warningContinueCancel(this, i18n("Do you really want to delete country '%1'?", m_skinDefWidget->countrieslist->currentItem()->text()), i18n("Really delete country?"));
   if (answer == KMessageBox::Cancel)
@@ -968,6 +1082,7 @@ void MainWindow::slotDeleteCountry()
 
 void MainWindow::slotNeighbours()
 {
+  if (m_onu == 0) return;
   kDebug();
   if (m_skinDefWidget->countrieslist->currentItem() == 0)
   {
@@ -1005,7 +1120,307 @@ void MainWindow::slotNeighbours()
       m_countryDefWidget->neighbourslist->addItem(neighbour->name());
     }
     country->neighbours() = newNeighbours;
+  }
+  delete dialog;
+}
 
+void MainWindow::slotSkinPartTabChanged(int index)
+{
+  kDebug();
+
+  switch (index)
+  {
+    case 0:
+      m_spritesDefWidget->show();
+      m_countryDefWidget->hide();
+      m_continentDefWidget->hide();
+      m_goalDefWidget->hide();
+      break;
+    case 1:
+      m_spritesDefWidget->hide();
+      m_countryDefWidget->show();
+      m_continentDefWidget->hide();
+      m_goalDefWidget->hide();
+      break;
+    case 2:
+      m_spritesDefWidget->hide();
+      m_countryDefWidget->hide();
+      m_continentDefWidget->show();
+      m_goalDefWidget->hide();
+      break;
+    case 3:
+      m_spritesDefWidget->hide();
+      m_countryDefWidget->hide();
+      m_continentDefWidget->hide();
+      m_goalDefWidget->show();
+      break;
+    default:
+      m_countryDefWidget->hide();
+      m_continentDefWidget->hide();
+      m_goalDefWidget->hide();
+      m_spritesDefWidget->hide();
+  }
+}
+
+void MainWindow::slotContinentCountries()
+{
+  if (m_onu == 0) return;
+  kDebug();
+  if (m_skinDefWidget->continentslist->currentItem() == 0)
+  {
+    return;
+  }
+  
+  KsirkSkinEditorCountriesSelectionDialog* dialog = new KsirkSkinEditorCountriesSelectionDialog(this);
+  dialog->countriesList->setSortingEnabled(true);
+  dialog->countriesList->setSelectionMode(QAbstractItemView::ExtendedSelection);
+  foreach (Country* country, m_onu->countries())
+  {
+    dialog->countriesList->addItem(country->name());
+  }
+  foreach (Country* country, m_onu->continentNamed(m_skinDefWidget->continentslist->currentItem()->text())->members())
+  {
+    QList<QListWidgetItem*> list = dialog->countriesList->findItems(country->name(),Qt::MatchExactly);
+    foreach (QListWidgetItem* item, list)
+    {
+      dialog->countriesList->setCurrentItem(item,QItemSelectionModel::Select);
+    }
+  }
+  if (dialog->exec())
+  {
+    QList<QListWidgetItem *> list = dialog->countriesList->selectedItems();
+    kDebug() << list.size();
+    Continent* continent =  m_onu->continentNamed(m_skinDefWidget->continentslist->currentItem()->text());
+    kDebug() << (void*)continent;
+    kDebug() << continent->name();
+    QList<Country*> newCountries;
+    m_continentDefWidget->countrieslist->clear();
+    foreach (QListWidgetItem* item, list)
+    {
+      Country* country = m_onu->countryNamed(item->text());
+      kDebug() << (void*)country;
+      kDebug() << country->name();
+      newCountries.push_back(country);
+      m_continentDefWidget->countrieslist->addItem(country->name());
+    }
+    kDebug() << "set members";
+    continent->members() = newCountries;
+  }
+  delete dialog;
+}
+
+void MainWindow::slotContinentBonusEdited()
+{
+  kDebug();
+  Continent* continent =  m_onu->continentNamed(m_skinDefWidget->continentslist->currentItem()->text());
+  bool ok;
+  continent->setBonus(m_continentDefWidget->bonus->text().toUInt(&ok));
+}
+
+void MainWindow::slotFlagWidthChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("flag-width", v);
+  updateSprites(Flag);
+}
+
+void MainWindow::slotFlagHeightChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("flag-height", v);
+  updateSprites(Flag);
+}
+
+void MainWindow::slotFlagFramesChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("flag-frames", v);
+  updateSprites(Flag);
+}
+
+void MainWindow::slotFlagVersionsChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("flag-versions", v);
+  updateSprites(Flag);
+}
+
+
+void MainWindow::slotInfantryWidthChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("infantry-width", v);
+  updateSprites(Infantry);
+}
+
+void MainWindow::slotInfantryHeightChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("infantry-height", v);
+  updateSprites(Infantry);
+}
+
+void MainWindow::slotInfantryFramesChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("infantry-frames", v);
+  updateSprites(Infantry);
+}
+
+void MainWindow::slotInfantryVersionsChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("infantry-versions", v);
+  updateSprites(Infantry);
+}
+
+
+void MainWindow::slotCavalryWidthChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("cavalry-width", v);
+  updateSprites(Cavalry);
+}
+
+void MainWindow::slotCavalryHeightChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("cavalry-height", v);
+  updateSprites(Cavalry);
+}
+
+void MainWindow::slotCavalryFramesChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("cavalry-frames", v);
+  updateSprites(Cavalry);
+}
+
+void MainWindow::slotCavalryVersionsChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("cavalry-versions", v);
+  updateSprites(Cavalry);
+}
+
+
+void MainWindow::slotCannonWidthChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("cannon-width", v);
+  updateSprites(Cannon);
+}
+
+void MainWindow::slotCannonHeightChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("cannon-height", v);
+  updateSprites(Cannon);
+}
+
+void MainWindow::slotCannonFramesChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("cannon-frames", v);
+  updateSprites(Cannon);
+}
+
+void MainWindow::slotCannonVersionsChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("cannon-versions", v);
+  updateSprites(Cannon);
+}
+
+void MainWindow::slotFiringWidthChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("firing-width", v);
+}
+
+void MainWindow::slotFiringHeightChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("firing-height", v);
+}
+
+void MainWindow::slotFiringFramesChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("firing-frames", v);
+}
+
+void MainWindow::slotFiringVersionsChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("firing-versions", v);
+}
+
+void MainWindow::slotExplodingWidthChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("exploding-width", v);
+}
+
+void MainWindow::slotExplodingHeightChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("exploding-height", v);
+}
+
+void MainWindow::slotExplodingFramesChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("exploding-frames", v);
+}
+
+void MainWindow::slotExplodingVersionsChanged(int v)
+{
+  kDebug();
+  SkinSpritesData::changeable().intData("exploding-versions", v);
+}
+
+void MainWindow::updateSprites(SpriteType type)
+{
+  kDebug() << type;
+  QPixmap pix;
+  QPixmap alphacopy;
+  QPointF point;
+  QString fileName;
+
+  m_onu->updateIcon(type);
+  foreach (Country* country, m_onu->countries())
+  {
+    QGraphicsItem* item = m_onu->itemFor(country, type);
+    if (item == 0)
+    {
+      kError() << "item " << type << "not found for" << country->name();
+      continue;
+    }
+    switch (type)
+    {
+      case Flag:
+        pix = m_onu->flagIcon();
+        ((PixmapItem*)item)->setPixmap(pix);
+        m_flagButton->setIcon(m_onu->flagIcon());
+        break;
+      case Infantry:
+        pix = m_onu->infantryIcon();
+        ((PixmapItem*)item)->setPixmap(pix);
+        m_infantryButton->setIcon(m_onu->infantryIcon());
+        break;
+      case Cavalry:
+        pix = m_onu->cavalryIcon();
+        ((PixmapItem*)item)->setPixmap(pix);
+        m_cavalryButton->setIcon(m_onu->cavalryIcon());
+        break;
+      case Cannon:
+        pix = m_onu->cannonIcon();
+        ((PixmapItem*)item)->setPixmap(pix);
+        m_cannonButton->setIcon(m_onu->cannonIcon());
+        break;
+      default: ;
+    }
   }
 }
 

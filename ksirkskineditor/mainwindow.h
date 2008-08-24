@@ -58,6 +58,9 @@ class QGraphicsPixmapItem;
 
 class KSirkSkinDefinitionWidget;
 class KsirkCountryDefinitionWidget;
+class KsirkContinentDefinitionWidget;
+class KsirkGoalDefinitionWidget;
+class KsirkSpritesDefinitionWidget;
 
 namespace Phonon
 {
@@ -136,6 +139,8 @@ private Q_SLOTS:
   void slotPressPosition(const QPointF&);
 
   void slotCountrySelected(QListWidgetItem* item);
+  void slotContinentSelected(QListWidgetItem* item);
+  
   void slotItemPressed(QGraphicsItem*);
   void slotItemPlaced(QGraphicsItem*, const QPointF&);
   
@@ -156,10 +161,45 @@ private Q_SLOTS:
   void slotDeleteCountry();
 
   void slotNeighbours();
+  void slotSkinPartTabChanged(int index);
+  void slotContinentCountries();
+  void slotContinentBonusEdited();
+
+  void slotFlagWidthChanged(int);
+  void slotFlagHeightChanged(int);
+  void slotFlagFramesChanged(int);
+  void slotFlagVersionsChanged(int);
+  
+  void slotInfantryWidthChanged(int);
+  void slotInfantryHeightChanged(int);
+  void slotInfantryFramesChanged(int);
+  void slotInfantryVersionsChanged(int);
+  
+  void slotCavalryWidthChanged(int);
+  void slotCavalryHeightChanged(int);
+  void slotCavalryFramesChanged(int);
+  void slotCavalryVersionsChanged(int);
+  
+  void slotCannonWidthChanged(int);
+  void slotCannonHeightChanged(int);
+  void slotCannonFramesChanged(int);
+  void slotCannonVersionsChanged(int);
+  
+  void slotFiringWidthChanged(int);
+  void slotFiringHeightChanged(int);
+  void slotFiringFramesChanged(int);
+  void slotFiringVersionsChanged(int);
+  
+  void slotExplodingWidthChanged(int);
+  void slotExplodingHeightChanged(int);
+  void slotExplodingFramesChanged(int);
+  void slotExplodingVersionsChanged(int);
   
   private:
-  void saveXml(std::ostream& xmlStream);
   void initCountryWidgetWith(Country* country);
+  void initContinentWidgetWith(Continent* continent);
+  void updateSprites(SpriteType type);
+  
   Country* currentCountry();
   void createPixmapFor(Country* country, SpriteType type);
   
@@ -187,7 +227,10 @@ private Q_SLOTS:
 
   KSirkSkinDefinitionWidget* m_skinDefWidget;
   KsirkCountryDefinitionWidget* m_countryDefWidget;
-
+  KsirkContinentDefinitionWidget* m_continentDefWidget;
+  KsirkGoalDefinitionWidget* m_goalDefWidget;
+  KsirkSpritesDefinitionWidget* m_spritesDefWidget;
+  
   QPushButton* m_flagButton;
   QPushButton* m_infantryButton;
   QPushButton* m_cavalryButton;

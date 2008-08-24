@@ -29,6 +29,9 @@ set(ksirkskineditor_UI
   ksirkskineditorwidget.ui
   ksirkskindefinition.ui
   ksirkcountrydefinition.ui
+  ksirkcontinentdefinition.ui
+  ksirkgoaldefinition.ui
+  ksirkspritesdefinition.ui
   ksirkskineditorcountriesselectiondialog.ui
 )
 
