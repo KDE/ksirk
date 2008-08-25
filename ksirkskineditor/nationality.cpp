@@ -30,13 +30,6 @@ Nationality::Nationality(const QString &myName, const QString &myFlag,
 {
 }
 
-
-/** Read property of QString flagFileName. */
-const QString& Nationality::flagFileName() const
-{
-    return m_flagFileName;
-}
-
 void Nationality::saveXml(QTextStream& xmlStream)
 {
   QString name = m_name;
@@ -44,16 +37,6 @@ void Nationality::saveXml(QTextStream& xmlStream)
   name = name.replace("<","&lt;");
   name = name.replace(">","&gt;");
   xmlStream << "<nationality name=\"" << name << "\" flag=\"" << m_flagFileName << "\" />";
-}
-
-const QString& Nationality::name() const
-{
-  return m_name;
-}
-
-const QString& Nationality::leaderName() const
-{
-  return m_leaderName;
 }
 
 }

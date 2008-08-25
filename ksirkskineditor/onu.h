@@ -155,6 +155,8 @@ public:
     */
   Continent* continentNamed(const QString& name);
 
+  Nationality* nationalityNamed(const QString& name);
+
   QSvgRenderer* renderer();
 
   inline const QImage& mask() const {return m_countriesMask;}
@@ -177,6 +179,13 @@ public:
   QFont foregroundFont();
   QFont backgroundFont();
 
+  QColor foregroundColor() {return QColor(m_font.foregroundColor);}
+  QColor backgroundColor() {return QColor(m_font.backgroundColor);}
+  
+  void setFont(const QFont& font);
+  void setFontFgColor(const QColor& color);
+  void setFontBgColor(const QColor& color);
+  
   void createCountry(const QString& newCountryName);
   void deleteCountry(Country* country);
   
@@ -187,6 +196,9 @@ public:
 
   void createGoal();
   void deleteGoal(int g);
+
+  void createNationality(const QString& newNationalityName);
+  void deleteNationality(Nationality* nationality);
   
   private:
   /**

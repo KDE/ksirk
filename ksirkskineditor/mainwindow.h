@@ -61,6 +61,7 @@ class KsirkCountryDefinitionWidget;
 class KsirkContinentDefinitionWidget;
 class KsirkGoalDefinitionWidget;
 class KsirkSpritesDefinitionWidget;
+class KsirkNationalityDefinitionWidget;
 
 namespace Phonon
 {
@@ -212,11 +213,23 @@ private Q_SLOTS:
   void slotGoalContinents();
   void slotNewGoal();
   void slotDeleteGoal();
+
+  void slotNationalitySelected(QListWidgetItem* item);
+  void slotNationalityNameEdited();
+  void slotNationalityLeaderNameEdited();
+  void slotNationalityFlagEdited();
+  void slotNewNationality();
+  void slotDeleteNationality();
   
+  void slotFontSelected(const QFont& font);
+  void slotFgSelected(const QColor& color);
+  void slotBgColorSelected(const QColor& color);
+
   private:
   void initCountryWidgetWith(Country* country);
   void initContinentWidgetWith(Continent* continent);
   void initGoalWidgetWith(Goal* continent);
+  void initNationalityWidgetWith(Nationality* nationality);
   void updateSprites(SpriteType type);
   
   Country* currentCountry();
@@ -249,6 +262,7 @@ private Q_SLOTS:
   KsirkContinentDefinitionWidget* m_continentDefWidget;
   KsirkGoalDefinitionWidget* m_goalDefWidget;
   KsirkSpritesDefinitionWidget* m_spritesDefWidget;
+  KsirkNationalityDefinitionWidget* m_nationalityDefWidget;
   
   QPushButton* m_flagButton;
   QPushButton* m_infantryButton;

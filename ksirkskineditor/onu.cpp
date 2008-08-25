@@ -70,7 +70,7 @@ ONU::ONU(const QString& configDir):
   kDebug() << "ONU XML format version: " << onugroup.readEntry("format-version");
   QString formatVersion = onugroup.readEntry("format-version");
 
-  if (formatVersion != ONU_FILE_FORMAT_VERSION)
+  if (formatVersion != "" && formatVersion != ONU_FILE_FORMAT_VERSION)
   {
     KMessageBox::error(0,
             i18n("Error - Invalid skin definition file format. Expected %1 and got %2",QString(ONU_FILE_FORMAT_VERSION),formatVersion),
@@ -87,14 +87,18 @@ ONU::ONU(const QString& configDir):
     kError() << "Was not able to load the snapshot image: " 
     << m_configDir + "/Images/snapshot.jpg";
   }
-  m_width  = onugroup.readEntry("width",0);
-  m_height = onugroup.readEntry("height",0);
+  m_width  = onugroup.readEntry("width",1024);
+  m_height = onugroup.readEntry("height",768);
   m_description = onugroup.readEntry("desc");
 //   countries.resize(onugroup.readEntry("nb-countries",0));
 //   nationalities.resize(onugroup.readEntry("nb-nationalities",0));
 //   m_continents.resize(onugroup.readEntry("nb-continents",0));
 //    root.attribute("map");
   m_poolString = onugroup.readEntry("pool");
+  if (m_poolString == "")
+  {
+    m_poolString = "Images/pool.svg";
+  }
   kDebug() << "Pool path: " << m_poolString;
   kDebug() << "Searching resource: " << (m_configDir + '/' + m_poolString);
   QString poolFileName = m_configDir + '/' + m_poolString;
@@ -110,6 +114,11 @@ ONU::ONU(const QString& configDir):
   m_renderer.load(poolFileName);
 
   QString mapMaskFileName = m_configDir + '/' + onugroup.readEntry("map-mask");
+  kDebug() << "Map mask file name init: " << mapMaskFileName;
+  if (mapMaskFileName == (m_configDir + '/'))
+  {
+    mapMaskFileName = m_configDir + '/' + "Images/map-mask.png";
+  }
   kDebug() << "Map mask file name: " << mapMaskFileName;
   if (mapMaskFileName.isNull())
   {
@@ -126,63 +135,63 @@ ONU::ONU(const QString& configDir):
 
 
   kDebug() << "Loading flag data";
-  SkinSpritesData::changeable().intData("flag-width", config.group("flag").readEntry("width",0));
-  SkinSpritesData::changeable().intData("flag-height", config.group("flag").readEntry("height",0));
-  SkinSpritesData::changeable().intData("flag-frames", config.group("flag").readEntry("frames",0));
-  SkinSpritesData::changeable().intData("flag-versions", config.group("flag").readEntry("versions",0));
+  SkinSpritesData::changeable().intData("flag-width", config.group("flag").readEntry("width",20));
+  SkinSpritesData::changeable().intData("flag-height", config.group("flag").readEntry("height",20));
+  SkinSpritesData::changeable().intData("flag-frames", config.group("flag").readEntry("frames",4));
+  SkinSpritesData::changeable().intData("flag-versions", config.group("flag").readEntry("versions",1));
 
   kDebug() << "Loading infantry data";
-  SkinSpritesData::changeable().strData("infantry-id", config.group("infantry").readEntry("id"));
-  SkinSpritesData::changeable().intData("infantry-width", config.group("infantry").readEntry("width",0));
-  SkinSpritesData::changeable().intData("infantry-height", config.group("infantry").readEntry("height",0));
-  SkinSpritesData::changeable().intData("infantry-frames", config.group("infantry").readEntry("frames",0));
-  SkinSpritesData::changeable().intData("infantry-versions", config.group("infantry").readEntry("versions",0));
+//   SkinSpritesData::changeable().strData("infantry-id", config.group("infantry").readEntry("id"));
+  SkinSpritesData::changeable().intData("infantry-width", config.group("infantry").readEntry("width",23));
+  SkinSpritesData::changeable().intData("infantry-height", config.group("infantry").readEntry("height",32));
+  SkinSpritesData::changeable().intData("infantry-frames", config.group("infantry").readEntry("frames",1));
+  SkinSpritesData::changeable().intData("infantry-versions", config.group("infantry").readEntry("versions",3));
 
-  SkinSpritesData::changeable().strData("infantry1-id", config.group("infantry1").readEntry("id"));
+//   SkinSpritesData::changeable().strData("infantry1-id", config.group("infantry1").readEntry("id"));
   SkinSpritesData::changeable().intData("infantry1-width", config.group("infantry1").readEntry("width",0));
   SkinSpritesData::changeable().intData("infantry1-height", config.group("infantry1").readEntry("height",0));
   SkinSpritesData::changeable().intData("infantry1-frames", config.group("infantry1").readEntry("frames",0));
   SkinSpritesData::changeable().intData("infantry1-versions", config.group("infantry1").readEntry("versions",0));
 
-  SkinSpritesData::changeable().strData("infantry2-id", config.group("infantry2").readEntry("id"));
+//   SkinSpritesData::changeable().strData("infantry2-id", config.group("infantry2").readEntry("id"));
   SkinSpritesData::changeable().intData("infantry2-width", config.group("infantry2").readEntry("width",0));
   SkinSpritesData::changeable().intData("infantry2-height", config.group("infantry2").readEntry("height",0));
   SkinSpritesData::changeable().intData("infantry2-frames", config.group("infantry2").readEntry("frames",0));
   SkinSpritesData::changeable().intData("infantry2-versions", config.group("infantry2").readEntry("versions",0));
 
-  SkinSpritesData::changeable().strData("infantry3-id", config.group("infantry3").readEntry("id"));
+//   SkinSpritesData::changeable().strData("infantry3-id", config.group("infantry3").readEntry("id"));
   SkinSpritesData::changeable().intData("infantry3-width", config.group("infantry3").readEntry("width",0));
   SkinSpritesData::changeable().intData("infantry3-height", config.group("infantry3").readEntry("height",0));
   SkinSpritesData::changeable().intData("infantry3-frames", config.group("infantry3").readEntry("frames",0));
   SkinSpritesData::changeable().intData("infantry3-versions", config.group("infantry3").readEntry("versions",0));
 
   kDebug() << "Loading cavalry data";
-  SkinSpritesData::changeable().strData("cavalry-id", config.group("cavalry").readEntry("id"));
-  SkinSpritesData::changeable().intData("cavalry-width", config.group("cavalry").readEntry("width",0));
-  SkinSpritesData::changeable().intData("cavalry-height", config.group("cavalry").readEntry("height",0));
-  SkinSpritesData::changeable().intData("cavalry-frames", config.group("cavalry").readEntry("frames",0));
-  SkinSpritesData::changeable().intData("cavalry-versions", config.group("cavalry").readEntry("versions",0));
+//   SkinSpritesData::changeable().strData("cavalry-id", config.group("cavalry").readEntry("id"));
+  SkinSpritesData::changeable().intData("cavalry-width", config.group("cavalry").readEntry("width",32));
+  SkinSpritesData::changeable().intData("cavalry-height", config.group("cavalry").readEntry("height",32));
+  SkinSpritesData::changeable().intData("cavalry-frames", config.group("cavalry").readEntry("frames",1));
+  SkinSpritesData::changeable().intData("cavalry-versions", config.group("cavalry").readEntry("versions",3));
 
   kDebug() << "Loading cannon data";
-  SkinSpritesData::changeable().strData("cannon-id", config.group("cannon").readEntry("id"));
-  SkinSpritesData::changeable().intData("cannon-width", config.group("cannon").readEntry("width",0));
-  SkinSpritesData::changeable().intData("cannon-height", config.group("cannon").readEntry("height",0));
-  SkinSpritesData::changeable().intData("cannon-frames", config.group("cannon").readEntry("frames",0));
-  SkinSpritesData::changeable().intData("cannon-versions", config.group("cannon").readEntry("versions",0));
+//   SkinSpritesData::changeable().strData("cannon-id", config.group("cannon").readEntry("id"));
+  SkinSpritesData::changeable().intData("cannon-width", config.group("cannon").readEntry("width",32));
+  SkinSpritesData::changeable().intData("cannon-height", config.group("cannon").readEntry("height",32));
+  SkinSpritesData::changeable().intData("cannon-frames", config.group("cannon").readEntry("frames",2));
+  SkinSpritesData::changeable().intData("cannon-versions", config.group("cannon").readEntry("versions",3));
 
   kDebug() << "Loading firing data";
-  SkinSpritesData::changeable().strData("firing-id", config.group("firing").readEntry("id"));
-  SkinSpritesData::changeable().intData("firing-width", config.group("firing").readEntry("width",0));
-  SkinSpritesData::changeable().intData("firing-height", config.group("firing").readEntry("height",0));
-  SkinSpritesData::changeable().intData("firing-frames", config.group("firing").readEntry("frames",0));
-  SkinSpritesData::changeable().intData("firing-versions", config.group("firing").readEntry("versions",0));
+//   SkinSpritesData::changeable().strData("firing-id", config.group("firing").readEntry("id"));
+  SkinSpritesData::changeable().intData("firing-width", config.group("firing").readEntry("width",64));
+  SkinSpritesData::changeable().intData("firing-height", config.group("firing").readEntry("height",32));
+  SkinSpritesData::changeable().intData("firing-frames", config.group("firing").readEntry("frames",4));
+  SkinSpritesData::changeable().intData("firing-versions", config.group("firing").readEntry("versions",3));
 
   kDebug() << "Loading exploding data";
-  SkinSpritesData::changeable().strData("exploding-id", config.group("exploding").readEntry("id"));
-  SkinSpritesData::changeable().intData("exploding-width", config.group("exploding").readEntry("width",0));
-  SkinSpritesData::changeable().intData("exploding-height", config.group("cannon").readEntry("height",0));
-  SkinSpritesData::changeable().intData("exploding-frames", config.group("exploding").readEntry("frames",0));
-  SkinSpritesData::changeable().intData("exploding-versions", config.group("exploding").readEntry("versions",0));
+//   SkinSpritesData::changeable().strData("exploding-id", config.group("exploding").readEntry("id"));
+  SkinSpritesData::changeable().intData("exploding-width", config.group("exploding").readEntry("width",32));
+  SkinSpritesData::changeable().intData("exploding-height", config.group("cannon").readEntry("height",32));
+  SkinSpritesData::changeable().intData("exploding-frames", config.group("exploding").readEntry("frames",4));
+  SkinSpritesData::changeable().intData("exploding-versions", config.group("exploding").readEntry("versions",3));
 
   kDebug() << "Loading font data";
   KConfigGroup fontgroup = config.group("font");
@@ -333,13 +342,22 @@ ONU::ONU(const QString& configDir):
   }
   kDebug() << "Building map";
   buildMap();
-
+  kDebug() << "Map built";
+  
+  kDebug() << "Building flag icon";
   int flagWidth = SkinSpritesData::changeable().intData("flag-width");
   int flagHeight = SkinSpritesData::changeable().intData("flag-height");
   int flagFrames = SkinSpritesData::changeable().intData("flag-frames");
   int flagVersions = SkinSpritesData::changeable().intData("flag-versions");
-  m_flagIcon = QPixmap(pixmapForId(nationalities()[0]->name().toLower(),flagWidth*flagFrames,flagHeight*flagVersions).copy(0,0,flagWidth,flagHeight));
-                     
+  if (m_nationalities.empty())
+  {
+    m_flagIcon = QPixmap(flagWidth,flagHeight);
+  }
+  else
+  {
+    m_flagIcon = QPixmap(pixmapForId(m_nationalities[0]->name().toLower(),flagWidth*flagFrames,flagHeight*flagVersions).copy(0,0,flagWidth,flagHeight));
+  }
+  kDebug() << "Building infantry icon";
   int infantryWidth = SkinSpritesData::changeable().intData("infantry-width");
   int infantryHeight = SkinSpritesData::changeable().intData("infantry-height");
   int infantryFrames = SkinSpritesData::changeable().intData("infantry-frames");
@@ -347,6 +365,7 @@ ONU::ONU(const QString& configDir):
   m_infantryIcon = QPixmap(
   pixmapForId("infantry",infantryWidth*infantryFrames,infantryHeight*infantryVersions).copy(0,0,infantryWidth,infantryHeight));
 
+  kDebug() << "Building cavalry icon";
   int cavalryWidth = SkinSpritesData::changeable().intData("cavalry-width");
   int cavalryHeight = SkinSpritesData::changeable().intData("cavalry-height");
   int cavalryFrames = SkinSpritesData::changeable().intData("cavalry-frames");
@@ -354,6 +373,7 @@ ONU::ONU(const QString& configDir):
   m_cavalryIcon = QPixmap(
   pixmapForId("cavalry",cavalryWidth*cavalryFrames,cavalryHeight*cavalryVersions).copy(0,0,cavalryWidth,cavalryHeight));
   
+  kDebug() << "Building cannon icon";
   int cannonWidth = SkinSpritesData::changeable().intData("cannon-width");
   int cannonHeight = SkinSpritesData::changeable().intData("cannon-height");
   int cannonFrames = SkinSpritesData::changeable().intData("cannon-frames");
@@ -396,12 +416,6 @@ void ONU::saveConfig(const QString& configFileName)
     m_configFileName = configFileName;
   }
   kDebug() << m_configFileName;
-  m_font.family = "URW Chancery L";
-  m_font.size = (uint)(13);
-  m_font.weight = QFont::Bold;
-  m_font.italic = true;
-  m_font.foregroundColor = "black";
-  m_font.backgroundColor = "white";
 
   KConfig config(m_configFileName);
 
@@ -428,35 +442,35 @@ void ONU::saveConfig(const QString& configFileName)
   config.group("flag").readEntry("versions",SkinSpritesData::changeable().intData("flag-versions"));
 
   kDebug() << "Saving infantry data";
-  config.group("infantry").writeEntry("id",SkinSpritesData::changeable().strData("infantry-id"));
+//   config.group("infantry").writeEntry("id",SkinSpritesData::changeable().strData("infantry-id"));
   config.group("infantry").writeEntry("width",SkinSpritesData::changeable().intData("infantry-width"));
   config.group("infantry").writeEntry("height",SkinSpritesData::changeable().intData("infantry-height"));
   config.group("infantry").writeEntry("frames",SkinSpritesData::changeable().intData("infantry-frames"));
   config.group("infantry").writeEntry("versions",SkinSpritesData::changeable().intData("infantry-versions"));
 
   kDebug() << "Saving cavalry data";
-  config.group("cavalry").writeEntry("id",SkinSpritesData::changeable().strData("cavalry-id"));
+//   config.group("cavalry").writeEntry("id",SkinSpritesData::changeable().strData("cavalry-id"));
   config.group("cavalry").writeEntry("width",SkinSpritesData::changeable().intData("cavalry-width"));
   config.group("cavalry").writeEntry("height",SkinSpritesData::changeable().intData("cavalry-height"));
   config.group("cavalry").writeEntry("frames",SkinSpritesData::changeable().intData("cavalry-frames"));
   config.group("cavalry").writeEntry("versions",SkinSpritesData::changeable().intData("cavalry-versions"));
 
   kDebug() << "Saving cannon data";
-  config.group("cannon").writeEntry("id",SkinSpritesData::changeable().strData("cannon-id"));
+//   config.group("cannon").writeEntry("id",SkinSpritesData::changeable().strData("cannon-id"));
   config.group("cannon").writeEntry("width",SkinSpritesData::changeable().intData("cannon-width"));
   config.group("cannon").writeEntry("height",SkinSpritesData::changeable().intData("cannon-height"));
   config.group("cannon").writeEntry("frames",SkinSpritesData::changeable().intData("cannon-frames"));
   config.group("cannon").writeEntry("versions",SkinSpritesData::changeable().intData("cannon-versions"));
 
   kDebug() << "Saving firing data";
-  config.group("firing").writeEntry("id",SkinSpritesData::changeable().strData("firing-id"));
+//   config.group("firing").writeEntry("id",SkinSpritesData::changeable().strData("firing-id"));
   config.group("firing").writeEntry("width",SkinSpritesData::changeable().intData("firing-width"));
   config.group("firing").writeEntry("height",SkinSpritesData::changeable().intData("firing-height"));
   config.group("firing").writeEntry("frames",SkinSpritesData::changeable().intData("firing-frames"));
   config.group("firing").writeEntry("versions",SkinSpritesData::changeable().intData("firing-versions"));
 
   kDebug() << "Saving exploding data";
-  config.group("exploding").writeEntry("id",SkinSpritesData::changeable().strData("exploding-id"));
+//   config.group("exploding").writeEntry("id",SkinSpritesData::changeable().strData("exploding-id"));
   config.group("exploding").writeEntry("width",SkinSpritesData::changeable().intData("exploding-width"));
   config.group("cannon").writeEntry("height",SkinSpritesData::changeable().intData("exploding-height"));
   config.group("exploding").writeEntry("frames",SkinSpritesData::changeable().intData("exploding-frames"));
@@ -780,6 +794,25 @@ QFont ONU::backgroundFont()
   return backgroundFont;
 }
 
+void ONU::setFont(const QFont& font)
+{
+  m_font.family = font.family();
+  m_font.size = font.pointSize();
+  m_font.weight = (QFont::Weight)font.weight();
+  m_font.italic = font.italic();
+}
+
+void ONU::setFontFgColor(const QColor& color)
+{
+  m_font.foregroundColor = color.name();
+}
+
+void ONU::setFontBgColor(const QColor& color)
+{
+  m_font.backgroundColor = color.name();
+}
+
+
 void ONU::createCountry(const QString& newCountryName)
 {
   kDebug();
@@ -834,6 +867,7 @@ void ONU::deleteContinent(Continent* continent)
 
 void ONU::updateIcon(SpriteType type)
 {
+  kDebug() << type;
   int flagWidth;
   int flagHeight;
   int flagFrames;
@@ -858,7 +892,14 @@ void ONU::updateIcon(SpriteType type)
       flagHeight = SkinSpritesData::changeable().intData("flag-height");
       flagFrames = SkinSpritesData::changeable().intData("flag-frames");
       flagVersions = SkinSpritesData::changeable().intData("flag-versions");
-      m_flagIcon = QPixmap(pixmapForId(nationalities()[0]->name().toLower(),flagWidth*flagFrames,flagHeight*flagVersions).copy(0,0,flagWidth,flagHeight));
+      if (m_nationalities.empty())
+      {
+        m_flagIcon = QPixmap(flagWidth,flagHeight);
+      }
+      else
+      {
+        m_flagIcon = QPixmap(pixmapForId(nationalities()[0]->name().toLower(),flagWidth*flagFrames,flagHeight*flagVersions).copy(0,0,flagWidth,flagHeight));
+      }
       break;
     case Infantry:
       infantryWidth = SkinSpritesData::changeable().intData("infantry-width");
@@ -907,5 +948,34 @@ void ONU::deleteGoal(int g)
   delete goal;
 }
 
+Nationality* ONU::nationalityNamed(const QString& name)
+{
+  foreach (Nationality* nationality, m_nationalities)
+  {
+    if (nationality->name() == name)
+    {
+      return nationality;
+    }
+  }
+  return 0;
+}
+
+void ONU::createNationality(const QString& newNationalityName)
+{
+  Nationality* nationality = new Nationality(newNationalityName, "", "");
+  
+  m_nationalities.push_back(nationality);
+}
+
+void ONU::deleteNationality(Nationality* nationality)
+{
+  kDebug();
+  
+  KConfig config(m_configFileName);
+  config.deleteGroup(nationality->name());
+  
+  m_nationalities.removeAll(nationality);
+  delete nationality;
+}
 
 }

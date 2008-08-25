@@ -25,6 +25,7 @@
 #include "ksirkcountrydefinition.h"
 #include "ksirkcontinentdefinition.h"
 #include "ksirkgoaldefinition.h"
+#include "ksirknationalitydefinition.h"
 #include "ksirkspritesdefinition.h"
 #include "ksirkskineditorpixmapitem.h"
 #include "ksirkskineditortextitem.h"
@@ -161,9 +162,12 @@ MainWindow::MainWindow(QWidget* parent) :
   initActions();
 
   m_skinDefWidget = new KSirkSkinDefinitionWidget(this);
-  m_skinDefWidget->countrieslist->setSortingEnabled (true);
   addDockWidget ( Qt::LeftDockWidgetArea, m_skinDefWidget);
   
+  connect(m_skinDefWidget->fontrequester, SIGNAL(fontSelected(const QFont &)), this, SLOT(slotFontSelected(const QFont&)));
+  connect(m_skinDefWidget->fgcolorbutton, SIGNAL(changed(const QColor&)), this, SLOT(slotFgSelected(const QColor&)));
+  connect(m_skinDefWidget->bgcolorbutton, SIGNAL(changed(const QColor&)), this, SLOT(slotBgColorSelected(const QColor&)));
+
   m_countryDefWidget = new KsirkCountryDefinitionWidget(this);
   m_countryDefWidget->neighbourslist->setSortingEnabled(true);
   m_countryDefWidget->neighbourslist->setSelectionMode(QAbstractItemView::ExtendedSelection);
@@ -180,7 +184,6 @@ MainWindow::MainWindow(QWidget* parent) :
   addDockWidget ( Qt::RightDockWidgetArea, m_goalDefWidget);
   m_goalDefWidget->hide();
   connect(m_goalDefWidget->worldtype,SIGNAL(clicked()),this,SLOT(slotGoalTypeWorldClicked()));
-  m_spritesDefWidget = new KsirkSpritesDefinitionWidget(this);
   connect(m_goalDefWidget->playertype,SIGNAL(clicked()),this,SLOT(slotGoalTypePlayerClicked()));
   connect(m_goalDefWidget->countriestype,SIGNAL(clicked()),this,SLOT(slotGoalTypeCountriesClicked()));
   connect(m_goalDefWidget->continentstype,SIGNAL(clicked()),this,SLOT(slotGoalTypeContinentsClicked()));
@@ -192,6 +195,9 @@ MainWindow::MainWindow(QWidget* parent) :
   connect(m_skinDefWidget->newGoalButton, SIGNAL(clicked()), this, SLOT(slotNewGoal()));
   connect(m_skinDefWidget->deleteGoalButton, SIGNAL(clicked()), this, SLOT(slotDeleteGoal()));
   
+  m_nationalityDefWidget = new KsirkNationalityDefinitionWidget(this);
+  addDockWidget ( Qt::RightDockWidgetArea, m_nationalityDefWidget);
+  m_nationalityDefWidget->hide();
   
   m_spritesDefWidget = new KsirkSpritesDefinitionWidget(this);
   addDockWidget ( Qt::RightDockWidgetArea, m_spritesDefWidget);
@@ -230,6 +236,7 @@ MainWindow::MainWindow(QWidget* parent) :
   connect(m_skinDefWidget->ktabwidget, SIGNAL(currentChanged (int)), this, SLOT(slotSkinPartTabChanged(int)));
   m_skinDefWidget->ktabwidget-> setCurrentIndex(0);
   
+  m_skinDefWidget->countrieslist->setSortingEnabled (true);
   connect(m_skinDefWidget->countrieslist, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(slotCountrySelected(QListWidgetItem*)));
 
   connect(m_skinDefWidget->goalslist, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(slotGoalSelected(QListWidgetItem*)));
@@ -249,16 +256,27 @@ MainWindow::MainWindow(QWidget* parent) :
   connect (m_skinDefWidget->descriptionTextEdit,SIGNAL(textChanged()), this, SLOT(slotSkinDescriptionEdited()));
 
   QIntValidator* heightDiffValidator = new QIntValidator(this);
-  m_skinDefWidget->heightDiffLineEdit->setValidator(heightDiffValidator);
-  connect (m_skinDefWidget->heightDiffLineEdit, SIGNAL(editingFinished()), this, SLOT(slotSkinHeightDiffEdited()));
+  m_spritesDefWidget->heightDiffLineEdit->setValidator(heightDiffValidator);
+  connect (m_spritesDefWidget->heightDiffLineEdit, SIGNAL(editingFinished()), this, SLOT(slotSkinHeightDiffEdited()));
 
   QIntValidator* widthDiffValidator = new QIntValidator(this);
-  m_skinDefWidget->widthDiffLineEdit->setValidator(widthDiffValidator);
-  connect (m_skinDefWidget->widthDiffLineEdit, SIGNAL(editingFinished()), this, SLOT(slotSkinWidthDiffEdited()));
+  m_spritesDefWidget->widthDiffLineEdit->setValidator(widthDiffValidator);
+  connect (m_spritesDefWidget->widthDiffLineEdit, SIGNAL(editingFinished()), this, SLOT(slotSkinWidthDiffEdited()));
 
+  m_skinDefWidget->nationalitieslist->setSortingEnabled (true);
+  connect(m_skinDefWidget->nationalitieslist, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(slotNationalitySelected(QListWidgetItem*)));
+  connect(m_skinDefWidget->newNationalityButton, SIGNAL(clicked()), this, SLOT(slotNewNationality()));
+  connect(m_skinDefWidget->deleteNationalityButton, SIGNAL(clicked()), this, SLOT(slotDeleteNationality()));
+
+  connect(m_nationalityDefWidget->name,SIGNAL(editingFinished()), this, SLOT(slotNationalityNameEdited()));
+  connect(m_nationalityDefWidget->leader,SIGNAL(editingFinished()), this, SLOT(slotNationalityLeaderNameEdited()));
+  connect(m_nationalityDefWidget->flag,SIGNAL(editingFinished()), this, SLOT(slotNationalityFlagEdited()));
+  
+  
   connect(m_skinDefWidget->newCountryButton, SIGNAL(clicked()), this, SLOT(slotNewCountry()));
   connect(m_skinDefWidget->deleteCountryButton, SIGNAL(clicked()), this, SLOT(slotDeleteCountry()));    
 
+  m_skinDefWidget->continentslist->setSortingEnabled (true);
   connect(m_skinDefWidget->continentslist, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(slotContinentSelected(QListWidgetItem*)));
 
   connect(m_skinDefWidget->newContinentButton, SIGNAL(clicked()), this, SLOT(slotNewContinent()));
@@ -355,13 +373,17 @@ void MainWindow::slotOpenSkin(const QString& dir)
     delete m_onu;
   }
   m_onu = new ONU(skinDir);
+
+  m_skinDefWidget->fontrequester->setFont(m_onu->foregroundFont());
+  m_skinDefWidget->fgcolorbutton->setColor(m_onu->foregroundColor());
+  m_skinDefWidget->bgcolorbutton->setColor(m_onu->backgroundColor());
   
   m_skinDefWidget->skinNameLineEdit->setText(m_onu->name());
   m_skinDefWidget->widthLineEdit->setText(QString::number(m_onu->width()));
   m_skinDefWidget->heightLineEdit->setText(QString::number(m_onu->height()));
   m_skinDefWidget->descriptionTextEdit->setText(m_onu->description());
-  m_skinDefWidget->heightDiffLineEdit->setText(QString::number(SkinSpritesData::changeable().intData("fighters-flag-y-diff")));
-  m_skinDefWidget->widthDiffLineEdit->setText(QString::number(SkinSpritesData::changeable().intData("width-between-flag-and-fighter")));
+  m_spritesDefWidget->heightDiffLineEdit->setText(QString::number(SkinSpritesData::changeable().intData("fighters-flag-y-diff")));
+  m_spritesDefWidget->widthDiffLineEdit->setText(QString::number(SkinSpritesData::changeable().intData("width-between-flag-and-fighter")));
 
   m_spritesDefWidget->flagw->setValue(SkinSpritesData::changeable().intData("flag-width"));
   m_spritesDefWidget->flagh->setValue(SkinSpritesData::changeable().intData("flag-height"));
@@ -408,7 +430,14 @@ void MainWindow::slotOpenSkin(const QString& dir)
   m_cannonButton->setIcon(m_onu->cannonIcon());
   //   m_cannonButton->setIconSize(QSize(cannonWidth,cannonHeight));
   
+  kDebug() << "Adding nationalities items";
+  foreach (Nationality* nationality, m_onu->nationalities())
+  {
+    kDebug() << "Adding "<<nationality->name()<<" items";
+    m_skinDefWidget->nationalitieslist->addItem(nationality->name());
+  }
   kDebug() << "Adding countries items";
+    
   foreach (Country* country, m_onu->countries())
   {
     kDebug() << "Adding "<<country->name()<<" items";
@@ -748,6 +777,24 @@ void MainWindow::slotPressPosition(const QPointF& point)
     item->setFlag(QGraphicsItem::ItemIsSelectable, true);
     item->setPos(point);
   }
+}
+
+void MainWindow::slotNationalitySelected(QListWidgetItem* item)
+{
+  kDebug();
+  Nationality* nationality = m_onu->nationalityNamed(item->text());
+  if (nationality != 0)
+  {
+    initNationalityWidgetWith(nationality);
+  }
+}
+
+void MainWindow::initNationalityWidgetWith(Nationality* nationality)
+{
+  kDebug();
+  m_nationalityDefWidget->name->setText(nationality->name());
+  m_nationalityDefWidget->leader->setText(nationality->leaderName());
+  m_nationalityDefWidget->flag->setText(nationality->flagFileName());
 }
 
 void MainWindow::slotCountrySelected(QListWidgetItem* item)
@@ -1129,7 +1176,7 @@ void MainWindow::slotSkinHeightDiffEdited()
   if (m_onu == 0) return;
   kDebug();
   bool ok = false;
-  int wd = m_skinDefWidget->heightDiffLineEdit->text().toInt(&ok);
+  int wd = m_spritesDefWidget->heightDiffLineEdit->text().toInt(&ok);
   SkinSpritesData::changeable().intData("fighters-flag-y-diff", wd);
 }
 
@@ -1138,7 +1185,7 @@ void MainWindow::slotSkinWidthDiffEdited()
   if (m_onu == 0) return;
   kDebug();
   bool ok = false;
-  int wd = m_skinDefWidget->widthDiffLineEdit->text().toInt(&ok);
+  int wd = m_spritesDefWidget->widthDiffLineEdit->text().toInt(&ok);
   SkinSpritesData::changeable().intData("width-between-flag-and-fighter", wd);
 }
 
@@ -1250,30 +1297,42 @@ void MainWindow::slotSkinPartTabChanged(int index)
   {
     case 0:
       m_spritesDefWidget->show();
+      m_nationalityDefWidget->hide();
       m_countryDefWidget->hide();
       m_continentDefWidget->hide();
       m_goalDefWidget->hide();
       break;
     case 1:
       m_spritesDefWidget->hide();
-      m_countryDefWidget->show();
+      m_nationalityDefWidget->show();
+      m_countryDefWidget->hide();
       m_continentDefWidget->hide();
       m_goalDefWidget->hide();
       break;
     case 2:
       m_spritesDefWidget->hide();
-      m_countryDefWidget->hide();
-      m_continentDefWidget->show();
+      m_nationalityDefWidget->hide();
+      m_countryDefWidget->show();
+      m_continentDefWidget->hide();
       m_goalDefWidget->hide();
       break;
     case 3:
       m_spritesDefWidget->hide();
+      m_nationalityDefWidget->hide();
+      m_countryDefWidget->hide();
+      m_continentDefWidget->show();
+      m_goalDefWidget->hide();
+      break;
+    case 4:
+      m_spritesDefWidget->hide();
+      m_nationalityDefWidget->hide();
       m_countryDefWidget->hide();
       m_continentDefWidget->hide();
       m_goalDefWidget->show();
       break;
     default:
       m_countryDefWidget->hide();
+      m_nationalityDefWidget->hide();
       m_continentDefWidget->hide();
       m_goalDefWidget->hide();
       m_spritesDefWidget->hide();
@@ -1329,6 +1388,7 @@ void MainWindow::slotContinentCountries()
 
 void MainWindow::slotContinentBonusEdited()
 {
+  if (m_onu == 0 || m_skinDefWidget->continentslist->currentItem() == 0) return;
   kDebug();
   Continent* continent =  m_onu->continentNamed(m_skinDefWidget->continentslist->currentItem()->text());
   bool ok;
@@ -1507,6 +1567,22 @@ void MainWindow::updateSprites(SpriteType type)
   QString fileName;
 
   m_onu->updateIcon(type);
+  switch (type)
+  {
+    case Flag:
+      m_flagButton->setIcon(m_onu->flagIcon());
+      break;
+    case Infantry:
+      m_infantryButton->setIcon(m_onu->infantryIcon());
+      break;
+    case Cavalry:
+      m_cavalryButton->setIcon(m_onu->cavalryIcon());
+      break;
+    case Cannon:
+      m_cannonButton->setIcon(m_onu->cannonIcon());
+      break;
+    default: ;
+  }
   foreach (Country* country, m_onu->countries())
   {
     QGraphicsItem* item = m_onu->itemFor(country, type);
@@ -1520,22 +1596,21 @@ void MainWindow::updateSprites(SpriteType type)
       case Flag:
         pix = m_onu->flagIcon();
         ((PixmapItem*)item)->setPixmap(pix);
-        m_flagButton->setIcon(m_onu->flagIcon());
         break;
       case Infantry:
         pix = m_onu->infantryIcon();
         ((PixmapItem*)item)->setPixmap(pix);
-        m_infantryButton->setIcon(m_onu->infantryIcon());
         break;
       case Cavalry:
         pix = m_onu->cavalryIcon();
         ((PixmapItem*)item)->setPixmap(pix);
-        m_cavalryButton->setIcon(m_onu->cavalryIcon());
         break;
       case Cannon:
         pix = m_onu->cannonIcon();
         ((PixmapItem*)item)->setPixmap(pix);
-        m_cannonButton->setIcon(m_onu->cannonIcon());
+        break;
+      case Anchor:
+        ((TextItem*)item)->setFont(m_onu->foregroundFont());
         break;
       default: ;
     }
@@ -1596,7 +1671,7 @@ void MainWindow::slotGoalTypeContinentsClicked()
 
 void MainWindow::slotGoalDescriptionEdited()
 {
-  if (m_onu == 0) return;
+  if (m_onu == 0 || m_skinDefWidget->goalslist->currentItem() == 0) return;
   kDebug();
   int row = m_skinDefWidget->goalslist->row(m_skinDefWidget->goalslist->currentItem());
   Goal* goal = m_onu->goals()[row];
@@ -1605,7 +1680,7 @@ void MainWindow::slotGoalDescriptionEdited()
 
 void MainWindow::slotGoalNbCountriesChanged(int)
 {
-  if (m_onu == 0) return;
+  if (m_onu == 0 || m_skinDefWidget->goalslist->currentItem() == 0) return;
   kDebug();
   int row = m_skinDefWidget->goalslist->row(m_skinDefWidget->goalslist->currentItem());
   Goal* goal = m_onu->goals()[row];
@@ -1614,7 +1689,7 @@ void MainWindow::slotGoalNbCountriesChanged(int)
 
 void MainWindow::slotGoalNbArmiesByCountryChanged(int)
 {
-  if (m_onu == 0) return;
+  if (m_onu == 0 || m_skinDefWidget->goalslist->currentItem() == 0) return;
   kDebug();
   int row = m_skinDefWidget->goalslist->row(m_skinDefWidget->goalslist->currentItem());
   Goal* goal = m_onu->goals()[row];
@@ -1623,7 +1698,7 @@ void MainWindow::slotGoalNbArmiesByCountryChanged(int)
 
 void MainWindow::slotGoalAnyContinentChanged(int state)
 {
-  if (m_onu == 0) return;
+  if (m_onu == 0 || m_skinDefWidget->goalslist->currentItem() == 0) return;
   kDebug();
   int row = m_skinDefWidget->goalslist->row(m_skinDefWidget->goalslist->currentItem());
   Goal* goal = m_onu->goals()[row];
@@ -1720,6 +1795,91 @@ void MainWindow::slotDeleteGoal()
   delete item;
 }
 
+void MainWindow::slotNationalityNameEdited()
+{
+  if (m_onu == 0 || m_skinDefWidget->nationalitieslist->currentItem() ==0) return;
+  kDebug() << m_skinDefWidget->nationalitieslist->currentItem()->text();
+  Nationality* nationality =  m_onu->nationalityNamed(m_skinDefWidget->nationalitieslist->currentItem()->text());
+  nationality->setName(m_nationalityDefWidget->name->text());
+  m_skinDefWidget->nationalitieslist->currentItem()->setText(m_nationalityDefWidget->name->text());
+}
+
+void MainWindow::slotNationalityLeaderNameEdited()
+{
+  if (m_onu == 0 || m_skinDefWidget->nationalitieslist->currentItem() ==0) return;
+  kDebug() << m_skinDefWidget->nationalitieslist->currentItem()->text();
+  kDebug() << m_nationalityDefWidget->leader->text();
+  Nationality* nationality =  m_onu->nationalityNamed(m_skinDefWidget->nationalitieslist->currentItem()->text());
+  kDebug() << nationality;
+  nationality->setLeaderName(m_nationalityDefWidget->leader->text());
+}
+
+void MainWindow::slotNationalityFlagEdited()
+{
+  if (m_onu == 0 || m_skinDefWidget->nationalitieslist->currentItem() ==0) return;
+  kDebug() << m_skinDefWidget->nationalitieslist->currentItem()->text();
+  Nationality* nationality =  m_onu->nationalityNamed(m_skinDefWidget->nationalitieslist->currentItem()->text());
+  QString previousFlagFileName = nationality->flagFileName();
+  nationality->setFlagFileName(m_nationalityDefWidget->flag->text());
+
+  if (previousFlagFileName == ""
+    && nationality->flagFileName() != "")
+  {
+    updateSprites(Flag);
+  }
+}
+
+void MainWindow::slotNewNationality()
+{
+  if (m_onu == 0) return;
+  kDebug();
+  QString newNationalityName = QInputDialog::getText(this, i18n("New nationality name"), i18n("Enter the name of the new nationality"));
+  m_onu->createNationality(newNationalityName);
+  m_skinDefWidget->nationalitieslist->addItem(newNationalityName);
+}
+
+void MainWindow::slotDeleteNationality()
+{
+  if (m_onu == 0) return;
+  kDebug();
+  int answer = KMessageBox::warningContinueCancel(this, i18n("Do you really want to delete nationality '%1'?", m_skinDefWidget->nationalitieslist->currentItem()->text()), i18n("Really delete nationality?"));
+  if (answer == KMessageBox::Cancel)
+  {
+    return;
+  }
+  
+  int row = m_skinDefWidget->nationalitieslist->row(m_skinDefWidget->nationalitieslist->currentItem());
+  QListWidgetItem* item = m_skinDefWidget->nationalitieslist->takeItem(row);
+  
+  Nationality* nationality = m_onu->nationalityNamed(item->text());
+  m_onu->deleteNationality(nationality);
+  
+  delete item;
+}
+
+void MainWindow::slotFontSelected(const QFont &font)
+{
+  if (m_onu == 0) return;
+  kDebug();
+  m_onu->setFont(font);
+  updateSprites(Anchor);
+}
+
+void MainWindow::slotFgSelected(const QColor& color)
+{
+  if (m_onu == 0) return;
+  kDebug();
+  m_onu->setFontFgColor(color);
+  updateSprites(Anchor);
+}
+
+void MainWindow::slotBgColorSelected(const QColor& color)
+{
+  if (m_onu == 0) return;
+  kDebug();
+  m_onu->setFontBgColor(color);
+  updateSprites(Anchor);
+}
 
 } // closing namespace
 

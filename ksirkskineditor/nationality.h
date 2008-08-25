@@ -51,13 +51,17 @@ public:
   virtual ~Nationality() {}
   
   /** Read property of QString m_flagFileName. */
-  virtual const QString& flagFileName() const;
-
+  inline const QString& flagFileName() const {return m_flagFileName;}
+  inline void setFlagFileName(const QString& f)
+  {m_flagFileName = f;}
+  
   /** Read property of QString m_name. */
-  const QString& name() const;
+  inline const QString& name() const {return m_name;}
+  inline void setName(const QString& n) {m_name = n;}
   
   /** Read property of QString m_leaderName. */
-  const QString& leaderName() const;
+  inline const QString& leaderName() const {return m_leaderName;}
+  inline void setLeaderName(const QString& l) {m_leaderName = l;}
   
   /**
     * Saves a XML representation of the nationality for game saving purpose
@@ -74,7 +78,7 @@ private: // Private attributes
   QString m_leaderName;
 
   /** The name of the file containing this nation's flag  */
-  const QString m_flagFileName;
+  QString m_flagFileName;
 };
 
 }
