@@ -194,6 +194,9 @@ private Q_SLOTS:
   void slotExplodingHeightChanged(int);
   void slotExplodingFramesChanged(int);
   void slotExplodingVersionsChanged(int);
+
+  void slotNewContinent();
+  void slotDeleteContinent();
   
   private:
   void initCountryWidgetWith(Country* country);

@@ -178,8 +178,10 @@ public:
   QFont backgroundFont();
 
   void createCountry(const QString& newCountryName);
-
   void deleteCountry(Country* country);
+  
+  void createContinent(const QString& newCountryName);
+  void deleteContinent(Continent* country);
 
   void updateIcon(SpriteType type);
   

@@ -812,6 +812,24 @@ void ONU::deleteCountry(Country* country)
   delete country;
 }
 
+void ONU::createContinent(const QString& newContinentName)
+{
+  kDebug();
+  Continent* newContinent = new Continent(newContinentName, QList<Country*>(), 0, 0);
+  m_continents.push_back(newContinent);
+}
+
+void ONU::deleteContinent(Continent* continent)
+{
+  kDebug() << continent->name();
+  kDebug() << "remove and delete the continent";
+  KConfig config(m_configFileName);
+  config.deleteGroup(continent->name());
+  
+  m_continents.removeAll(continent);
+  delete continent;
+}
+
 void ONU::updateIcon(SpriteType type)
 {
   int flagWidth;

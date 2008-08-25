@@ -245,6 +245,9 @@ MainWindow::MainWindow(QWidget* parent) :
 
   connect(m_skinDefWidget->continentslist, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(slotContinentSelected(QListWidgetItem*)));
 
+  connect(m_skinDefWidget->newContinentButton, SIGNAL(clicked()), this, SLOT(slotNewContinent()));
+  connect(m_skinDefWidget->deleteContinentButton, SIGNAL(clicked()), this, SLOT(slotDeleteContinent()));
+  
   connect (m_continentDefWidget->selectcountriesbutton, SIGNAL(clicked()), this, SLOT(slotContinentCountries()));
   
   connect (m_continentDefWidget->bonus, SIGNAL(editingFinished()), this, SLOT(slotContinentBonusEdited()));
@@ -1076,6 +1079,34 @@ void MainWindow::slotDeleteCountry()
 
   Country* country = m_onu->countryNamed(item->text());
   m_onu->deleteCountry(country);
+  
+  delete item;
+}
+
+void MainWindow::slotNewContinent()
+{
+  if (m_onu == 0) return;
+  kDebug();
+  QString newContinentName = QInputDialog::getText(this, i18n("New continent name"), i18n("Enter the name of the new continent"));
+  m_onu->createContinent(newContinentName);
+  m_skinDefWidget->continentslist->addItem(newContinentName);
+}
+
+void MainWindow::slotDeleteContinent()
+{
+  if (m_onu == 0) return;
+  kDebug();
+  int answer = KMessageBox::warningContinueCancel(this, i18n("Do you really want to delete continent '%1'?", m_skinDefWidget->continentslist->currentItem()->text()), i18n("Really delete continent?"));
+  if (answer == KMessageBox::Cancel)
+  {
+    return;
+  }
+  
+  int row = m_skinDefWidget->continentslist->row(m_skinDefWidget->continentslist->currentItem());
+  QListWidgetItem* item = m_skinDefWidget->continentslist->takeItem(row);
+  
+  Continent* continent = m_onu->continentNamed(item->text());
+  m_onu->deleteContinent(continent);
   
   delete item;
 }
