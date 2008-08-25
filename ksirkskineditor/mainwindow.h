@@ -69,8 +69,9 @@ namespace Phonon
 
 namespace KsirkSkinEditor
 {
-class PixmapItem;
-
+  class PixmapItem;
+  class Goal;
+  
 /**
   * This is the main window.
   *
@@ -197,10 +198,25 @@ private Q_SLOTS:
 
   void slotNewContinent();
   void slotDeleteContinent();
+
+  void slotGoalSelected(QListWidgetItem* item);
+
+  void slotGoalTypeWorldClicked();
+  void slotGoalTypePlayerClicked();
+  void slotGoalTypeCountriesClicked();
+  void slotGoalTypeContinentsClicked();
+  void slotGoalDescriptionEdited();
+  void slotGoalNbCountriesChanged(int);
+  void slotGoalNbArmiesByCountryChanged(int);
+  void slotGoalAnyContinentChanged(int);
+  void slotGoalContinents();
+  void slotNewGoal();
+  void slotDeleteGoal();
   
   private:
   void initCountryWidgetWith(Country* country);
   void initContinentWidgetWith(Continent* continent);
+  void initGoalWidgetWith(Goal* continent);
   void updateSprites(SpriteType type);
   
   Country* currentCountry();

@@ -109,15 +109,15 @@ QString Goal::message(int displayType) const
         }
         break;
       case Goal::Continents:
-        it = m_continents.begin(); it_end = m_continents.end();
-        for (; it != it_end; it++)
-        {
-          if (*it != 0)
-          {
+//         it = m_continents.begin(); it_end = m_continents.end();
+//         for (; it != it_end; it++)
+//         {
+//           if (*it != 0)
+//           {
 /*            kDebug() << "  arg = '" << m_automaton->game()->theWorld()->continentWithId(*it)->name() << "'" << endl;
             res=res.subs(i18n(m_automaton->game()->theWorld()->continentWithId(*it)->name().toUtf8().data()));*/
-          }
-        }
+//           }
+//         }
         break;
       default:;
       }
@@ -253,11 +253,11 @@ QDataStream& operator<<(QDataStream& stream, const Goal& goal)
   case Goal::Continents:
     kDebug() << "Goal operator<< : continents " << goal.continents().size() << endl;
     stream << quint32(goal.continents().size());
-    itc = goal.continents().begin(); itc_end = goal.continents().end();
-    for (; itc != itc_end; itc++)
+    it = goal.continents().begin(); it_end = goal.continents().end();
+    for (; it != it_end; it++)
     {
-      kDebug() << "Goal operator<< : continent " << (*itc) << endl;
-      stream << quint32(*itc);
+      kDebug() << "Goal operator<< : continent " << (*it) << endl;
+      stream << (*it);
     }
     break;
   default: break;
@@ -272,15 +272,16 @@ QDataStream& operator>>(QDataStream& stream, Goal& goal)
   QString description;
   QString playerName;
   quint32 nb, nbp;
-  quint32 id, ownerId;
+  QString id;
+  quint32 ownerId;
   stream >> type;
   kDebug() << "Goal operator>> type: " << type << endl;
   stream >> ownerId;
   kDebug() << "Goal operator>> ownerId: " << ownerId << endl;
-  goal.type(Goal::GoalType(type));
+  goal.setType(Goal::GoalType(type));
   stream >> description;
   kDebug() << "Goal operator>> description: " << description << endl;
-  goal.description(description);
+  goal.setDescription(description);
   switch (type)
   {
   case Goal::GoalPlayer :
@@ -295,14 +296,14 @@ QDataStream& operator>>(QDataStream& stream, Goal& goal)
     }
     stream >> nb;
     kDebug() << "Goal operator>> nbCountries: " << nb << endl;
-    goal.nbCountries(nb);
+    goal.setNbCountries(nb);
     break;
   case Goal::Countries:
     stream >> nb;
     kDebug() << "Goal operator>> nbCountries: " << nb << endl;
-    goal.nbCountries(nb);
+    goal.setNbCountries(nb);
     stream >> nb;
-    goal.nbArmiesByCountry(nb);
+    goal.setNbArmiesByCountry(nb);
     kDebug() << "Goal operator>> nbArmiesByCountry: " << nb << endl;
     break;
   case Goal::Continents:
@@ -332,7 +333,7 @@ void Goal::saveXml(std::ostream& xmlStream) const
   xmlStream << "\" type=\"" << m_type << "\" description=\"" << m_description.toUtf8().data();
   xmlStream << "\" nbCountries=\"" << m_nbCountries << "\" nbArmiesByCountry=\"" << m_nbArmiesByCountry << "\">\n";
   xmlStream << "<continents>\n";
-  QList< unsigned int >::const_iterator itc, itc_end;
+  QList<QString>::const_iterator itc, itc_end;
   itc = continents().begin(); itc_end = continents().end();
   for (; itc != itc_end; itc++)
   {

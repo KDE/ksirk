@@ -184,8 +184,11 @@ public:
   void deleteContinent(Continent* country);
 
   void updateIcon(SpriteType type);
+
+  void createGoal();
+  void deleteGoal(int g);
   
-private:
+  private:
   /**
     * All data that have to be stored about the font to display countries names
     * in this world's skin

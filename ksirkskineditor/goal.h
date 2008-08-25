@@ -66,21 +66,21 @@ public:
   /** Accessors for the goal type */
   inline GoalType type() const {return m_type;}
   inline GoalType type() {return m_type;}
-  inline void type(GoalType type) {m_type = type;}
+  inline void setType(GoalType type) {m_type = type;}
   //@}
 
   //@{
   /** Accessors for the goal description */
   inline const QString& description() const {return m_description;}
   inline QString& description() {return m_description;}
-  inline void description(const QString& desc) {m_description = desc;}
+  inline void setDescription(const QString& desc) {m_description = desc;}
   //@}
 
   //@{
   /** Accessors for the number of countries to conquier to reach this goal */
   inline unsigned int nbCountries() const {return m_nbCountries;}
   inline unsigned int nbCountries() {return m_nbCountries;}
-  inline void nbCountries(unsigned int nb) {m_nbCountries = nb;}
+  inline void setNbCountries(unsigned int nb) {m_nbCountries = nb;}
   //@}
 
   //@{
@@ -88,13 +88,13 @@ public:
     * reach this goal */
   inline unsigned int nbArmiesByCountry() const {return m_nbArmiesByCountry;}
   inline unsigned int nbArmiesByCountry() {return m_nbArmiesByCountry;}
-  inline void nbArmiesByCountry(unsigned int nb) {m_nbArmiesByCountry = nb;}
+  inline void setNbArmiesByCountry(unsigned int nb) {m_nbArmiesByCountry = nb;}
   //@}
 
   //@{
   /** Accessors for the list of continents to conquier to reach this goal */
-  inline QList<unsigned int>& continents() {return m_continents;}
-  inline const QList<unsigned int>& continents() const {return m_continents;}
+  inline QList<QString>& continents() {return m_continents;}
+  inline const QList<QString>& continents() const {return m_continents;}
   //@}
 
   //@{
@@ -129,7 +129,7 @@ public:
   QString m_description;
   unsigned int m_nbCountries;
   unsigned int m_nbArmiesByCountry;
-  QList<unsigned int> m_continents;
+  QList<QString> m_continents;
   QList<QString> m_players;
 };
 

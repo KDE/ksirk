@@ -286,31 +286,33 @@ ONU::ONU(const QString& configDir):
     KConfigGroup goalGroup = config.group(_goal);
 
     Goal* goal = new Goal();
-    goal->description(goalGroup.readEntry("desc",""));
+    goal->setDescription(goalGroup.readEntry("desc",""));
     QString goalType = goalGroup.readEntry("type","");
     if (goalType == "countries")
     {
-      goal->type(Goal::Countries);
-      goal->nbCountries(goalGroup.readEntry("nbCountries",0));
-      goal->nbArmiesByCountry(goalGroup.readEntry("nbArmiesByCountry",0));
+      goal->setType(Goal::Countries);
+      goal->setNbCountries(goalGroup.readEntry("nbCountries",0));
+      goal->setNbArmiesByCountry(goalGroup.readEntry("nbArmiesByCountry",0));
       kDebug() << "  nb countries: **********************************" << goal->nbCountries();
       kDebug() << "  nbarmies countries: **********************************" << goal->nbArmiesByCountry();
     }
     else if (goalType == "continents" )
     {
-      goal->type(Goal::Continents);
-      QList<int> continentsList = goalGroup.readEntry("continents",QList<int>());
-      int continentId;
-      foreach(continentId, continentsList)
+      goal->setType(Goal::Continents);
+      QList<QString> continentsList = goalGroup.readEntry("continents",QList<QString>());
+      foreach(const QString& continentId, continentsList)
       {
-        goal->continents().push_back(continentId);
+        if (continentId == "")
+          goal->continents().push_back(QString());
+        else
+          goal->continents().push_back(continentId);
       }
     }
     else if (goalType == "player" )
     {
-      goal->type(Goal::GoalPlayer);
+      goal->setType(Goal::GoalPlayer);
       unsigned int nb = goalGroup.readEntry("nbCountriesFallback",0);
-      goal->nbCountries(nb);
+      goal->setNbCountries(nb);
     }
     m_goals.push_back(goal);
   }
@@ -559,7 +561,7 @@ void ONU::saveConfig(const QString& configFileName)
     KConfigGroup goalGroup = config.group(name);
 
     goalGroup.writeEntry("desc",goal->description());
-    QList<int> continentsList;
+    QList<QString> continentsList;
     switch(goal->type())
     {
       case Goal::Countries:
@@ -569,7 +571,7 @@ void ONU::saveConfig(const QString& configFileName)
         break;
       case Goal::Continents:
         goalGroup.writeEntry("type","continents");
-        foreach(unsigned int continent, goal->continents())
+        foreach(const QString& continent, goal->continents())
         {
           continentsList.push_back(continent);
         }
@@ -885,5 +887,25 @@ void ONU::updateIcon(SpriteType type)
     default:;
   }
 }
+
+void ONU::createGoal()
+{
+  Goal* goal = new Goal();
+  m_goals.push_back(goal);
+}
+
+void ONU::deleteGoal(int g)
+{
+  kDebug() << m_goals.size() << g;
+
+  KConfig config(m_configFileName);
+  QString groupName = QString("goal")+QString::number(g+1);
+  kDebug() << "delete group" << groupName;
+  config.deleteGroup(groupName);
+  
+  Goal* goal = m_goals.takeAt(g);
+  delete goal;
+}
+
 
 }

@@ -31,10 +31,17 @@
          <x>20</x>
          <y>40</y>
          <width>221</width>
-         <height>101</height>
+         <height>118</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout" >
+        <item>
+         <widget class="QRadioButton" name="worldtype" >
+          <property name="text" >
+           <string>World Conquest</string>
+          </property>
+         </widget>
+        </item>
         <item>
          <widget class="QRadioButton" name="playertype" >
           <property name="text" >
@@ -86,16 +93,6 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="1" >
-       <widget class="QLineEdit" name="nbcountries" >
-        <property name="text" >
-         <string/>
-        </property>
-        <property name="alignment" >
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
       <item row="1" column="0" >
        <widget class="QLabel" name="label_2" >
         <property name="text" >
@@ -103,8 +100,11 @@
         </property>
        </widget>
       </item>
+      <item row="0" column="1" >
+       <widget class="QSpinBox" name="nbcountries" />
+      </item>
       <item row="1" column="1" >
-       <widget class="QLineEdit" name="armiesbycountry" />
+       <widget class="QSpinBox" name="armiesbycountry" />
       </item>
      </layout>
     </item>
@@ -116,11 +116,22 @@
      </widget>
     </item>
     <item>
-     <widget class="QCheckBox" name="checkBox" >
-      <property name="text" >
-       <string>Any continent</string>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="horizontalLayout" >
+      <item>
+       <widget class="QPushButton" name="selectcontinentsbutton" >
+        <property name="text" >
+         <string>Select continents</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="anycontinent" >
+        <property name="text" >
+         <string>Any</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item>
      <widget class="QListWidget" name="continentslist" />

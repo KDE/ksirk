@@ -30,6 +30,7 @@
 #include "ksirkskineditortextitem.h"
 #include "ksirkskineditorcountriesselectiondialog.h"
 #include "skinSpritesData.h"
+#include "goal.h"
 
 //include files for QT
 #include <QDockWidget>
@@ -178,6 +179,19 @@ MainWindow::MainWindow(QWidget* parent) :
   m_goalDefWidget = new KsirkGoalDefinitionWidget(this);
   addDockWidget ( Qt::RightDockWidgetArea, m_goalDefWidget);
   m_goalDefWidget->hide();
+  connect(m_goalDefWidget->worldtype,SIGNAL(clicked()),this,SLOT(slotGoalTypeWorldClicked()));
+  m_spritesDefWidget = new KsirkSpritesDefinitionWidget(this);
+  connect(m_goalDefWidget->playertype,SIGNAL(clicked()),this,SLOT(slotGoalTypePlayerClicked()));
+  connect(m_goalDefWidget->countriestype,SIGNAL(clicked()),this,SLOT(slotGoalTypeCountriesClicked()));
+  connect(m_goalDefWidget->continentstype,SIGNAL(clicked()),this,SLOT(slotGoalTypeContinentsClicked()));
+  connect (m_goalDefWidget->description,SIGNAL(textChanged()), this, SLOT(slotGoalDescriptionEdited()));
+  connect (m_goalDefWidget->nbcountries,SIGNAL(valueChanged(int)), this, SLOT(slotGoalNbCountriesChanged(int)));
+  connect (m_goalDefWidget->armiesbycountry,SIGNAL(valueChanged(int)), this, SLOT(slotGoalNbArmiesByCountryChanged(int)));
+  connect (m_goalDefWidget->anycontinent,SIGNAL(stateChanged(int)), this, SLOT(slotGoalAnyContinentChanged(int)));
+  connect (m_goalDefWidget->selectcontinentsbutton, SIGNAL(clicked()), this, SLOT(slotGoalContinents()));
+  connect(m_skinDefWidget->newGoalButton, SIGNAL(clicked()), this, SLOT(slotNewGoal()));
+  connect(m_skinDefWidget->deleteGoalButton, SIGNAL(clicked()), this, SLOT(slotDeleteGoal()));
+  
   
   m_spritesDefWidget = new KsirkSpritesDefinitionWidget(this);
   addDockWidget ( Qt::RightDockWidgetArea, m_spritesDefWidget);
@@ -218,6 +232,8 @@ MainWindow::MainWindow(QWidget* parent) :
   
   connect(m_skinDefWidget->countrieslist, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(slotCountrySelected(QListWidgetItem*)));
 
+  connect(m_skinDefWidget->goalslist, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(slotGoalSelected(QListWidgetItem*)));
+  
   connect (m_countryDefWidget->neighboursbutton, SIGNAL(clicked()), this, SLOT(slotNeighbours()));
 
   connect (m_skinDefWidget->skinNameLineEdit, SIGNAL(editingFinished()), this, SLOT(slotSkinNameEdited()));
@@ -429,6 +445,13 @@ void MainWindow::slotOpenSkin(const QString& dir)
   {
     kDebug() << "Adding "<<continent->name()<<" items";
     m_skinDefWidget->continentslist->addItem(continent->name());
+  }
+
+  kDebug() << "Adding goals items";
+  for (int i = 1; i <= m_onu->goals().size(); i++)
+  {
+    kDebug() << "Adding goal"<<i<<" items";
+    m_skinDefWidget->goalslist->addItem("goal" + QString::number(i));
   }
 }
 
@@ -790,6 +813,70 @@ void MainWindow::initContinentWidgetWith(Continent* continent)
   foreach(Country* country, continent->members())
   {
     m_continentDefWidget->countrieslist->addItem(country->name());
+  }
+}
+
+void MainWindow::slotGoalSelected(QListWidgetItem* item)
+{
+  kDebug();
+  int row = m_skinDefWidget->goalslist->row(item);
+  Goal* goal = m_onu->goals()[row];
+  if (goal != 0)
+  {
+    initGoalWidgetWith(goal);
+  }
+}
+
+void MainWindow::initGoalWidgetWith(Goal* goal)
+{
+  kDebug();
+  switch (goal->type())
+  {
+    case Goal::NoGoal:
+      m_goalDefWidget->worldtype->setChecked(true);
+      m_goalDefWidget->playertype->setChecked(false);
+      m_goalDefWidget->countriestype->setChecked(false);
+      m_goalDefWidget->continentstype->setChecked(false);
+      break;
+    case Goal::GoalPlayer:
+      m_goalDefWidget->worldtype->setChecked(false);
+      m_goalDefWidget->playertype->setChecked(true);
+      m_goalDefWidget->countriestype->setChecked(false);
+      m_goalDefWidget->continentstype->setChecked(false);
+      break;
+    case Goal::Countries:
+      m_goalDefWidget->worldtype->setChecked(false);
+      m_goalDefWidget->playertype->setChecked(false);
+      m_goalDefWidget->countriestype->setChecked(true);
+      m_goalDefWidget->continentstype->setChecked(false);
+      break;
+    case Goal::Continents:
+      m_goalDefWidget->worldtype->setChecked(false);
+      m_goalDefWidget->playertype->setChecked(false);
+      m_goalDefWidget->countriestype->setChecked(false);
+      m_goalDefWidget->continentstype->setChecked(true);
+      break;
+    default:;
+  }
+  m_goalDefWidget->description->setText(goal->description());
+  m_goalDefWidget->nbcountries->setValue(goal->nbCountries());
+  m_goalDefWidget->armiesbycountry->setValue(goal->nbArmiesByCountry());
+  m_goalDefWidget->anycontinent->setChecked(false);
+  m_goalDefWidget->continentslist->clear();
+  foreach(const QString& id, goal->continents())
+  {
+    kDebug() << "continent" << id;
+    if (id.isNull())
+    {
+      m_goalDefWidget->anycontinent->setChecked(true);
+    }
+    foreach(Continent* continent, m_onu->continents())
+    {
+      if (continent->name() == id)
+      {
+        m_goalDefWidget->continentslist->addItem(continent->name());
+      }
+    }
   }
 }
 
@@ -1454,6 +1541,185 @@ void MainWindow::updateSprites(SpriteType type)
     }
   }
 }
+
+void MainWindow::slotGoalTypeWorldClicked()
+{
+  if (m_onu == 0) return;
+  kDebug();
+  if (m_skinDefWidget->goalslist->currentItem() == 0)
+  {
+    return;
+  }
+  int row = m_skinDefWidget->goalslist->row(m_skinDefWidget->goalslist->currentItem());
+  Goal* goal = m_onu->goals()[row];
+  goal->setType(Goal::NoGoal);
+}
+
+void MainWindow::slotGoalTypePlayerClicked()
+{
+  if (m_onu == 0) return;
+  kDebug();
+  if (m_skinDefWidget->goalslist->currentItem() == 0)
+  {
+    return;
+  }
+  int row = m_skinDefWidget->goalslist->row(m_skinDefWidget->goalslist->currentItem());
+  Goal* goal = m_onu->goals()[row];
+  goal->setType(Goal::GoalPlayer);
+}
+
+void MainWindow::slotGoalTypeCountriesClicked()
+{
+  if (m_onu == 0) return;
+  kDebug();
+  if (m_skinDefWidget->goalslist->currentItem() == 0)
+  {
+    return;
+  }
+  int row = m_skinDefWidget->goalslist->row(m_skinDefWidget->goalslist->currentItem());
+  Goal* goal = m_onu->goals()[row];
+  goal->setType(Goal::Countries);
+}
+
+void MainWindow::slotGoalTypeContinentsClicked()
+{
+  if (m_onu == 0) return;
+  kDebug();
+  if (m_skinDefWidget->goalslist->currentItem() == 0)
+  {
+    return;
+  }
+  int row = m_skinDefWidget->goalslist->row(m_skinDefWidget->goalslist->currentItem());
+  Goal* goal = m_onu->goals()[row];
+  goal->setType(Goal::Continents);
+}
+
+void MainWindow::slotGoalDescriptionEdited()
+{
+  if (m_onu == 0) return;
+  kDebug();
+  int row = m_skinDefWidget->goalslist->row(m_skinDefWidget->goalslist->currentItem());
+  Goal* goal = m_onu->goals()[row];
+  goal->setDescription(m_goalDefWidget->description->toPlainText());
+}
+
+void MainWindow::slotGoalNbCountriesChanged(int)
+{
+  if (m_onu == 0) return;
+  kDebug();
+  int row = m_skinDefWidget->goalslist->row(m_skinDefWidget->goalslist->currentItem());
+  Goal* goal = m_onu->goals()[row];
+  goal->setNbCountries(m_goalDefWidget->nbcountries->value());
+}
+
+void MainWindow::slotGoalNbArmiesByCountryChanged(int)
+{
+  if (m_onu == 0) return;
+  kDebug();
+  int row = m_skinDefWidget->goalslist->row(m_skinDefWidget->goalslist->currentItem());
+  Goal* goal = m_onu->goals()[row];
+  goal->setNbArmiesByCountry(m_goalDefWidget->armiesbycountry->value());
+}
+
+void MainWindow::slotGoalAnyContinentChanged(int state)
+{
+  if (m_onu == 0) return;
+  kDebug();
+  int row = m_skinDefWidget->goalslist->row(m_skinDefWidget->goalslist->currentItem());
+  Goal* goal = m_onu->goals()[row];
+  switch (state)
+  {
+    case Qt::Unchecked:
+      goal->continents().removeAll(QString());
+      break;
+    case Qt::Checked:
+      if (!goal->continents().contains(QString()))
+      {
+        goal->continents().push_back(QString());
+      }
+      break;
+    default:;
+  }
+  goal->setNbArmiesByCountry(m_goalDefWidget->armiesbycountry->value());
+}
+
+void MainWindow::slotGoalContinents()
+{
+  if (m_onu == 0) return;
+  kDebug();
+  if (m_skinDefWidget->goalslist->currentItem() == 0)
+  {
+    return;
+  }
+
+  int row = m_skinDefWidget->goalslist->row(m_skinDefWidget->goalslist->currentItem());
+  Goal* goal = m_onu->goals()[row];
+
+  KsirkSkinEditorCountriesSelectionDialog* dialog = new KsirkSkinEditorCountriesSelectionDialog(this);
+  dialog->countriesList->setSortingEnabled(true);
+  dialog->countriesList->setSelectionMode(QAbstractItemView::ExtendedSelection);
+  foreach (Continent* continent, m_onu->continents())
+  {
+    dialog->countriesList->addItem(continent->name());
+  }
+  foreach (const QString& continentName, goal->continents())
+  {
+    QList<QListWidgetItem*> list = dialog->countriesList->findItems(continentName,Qt::MatchExactly);
+    foreach (QListWidgetItem* item, list)
+    {
+      dialog->countriesList->setCurrentItem(item,QItemSelectionModel::Select);
+    }
+  }
+  if (dialog->exec())
+  {
+    QList<QListWidgetItem *> list = dialog->countriesList->selectedItems();
+    kDebug() << list.size();
+    QList<QString> newContinents;
+    m_goalDefWidget->continentslist->clear();
+    foreach (QListWidgetItem* item, list)
+    {
+      Continent* continent = m_onu->continentNamed(item->text());
+      kDebug() << (void*)continent;
+      kDebug() << continent->name();
+      newContinents.push_back(continent->name());
+      m_goalDefWidget->continentslist->addItem(continent->name());
+    }
+    kDebug() << "set members";
+    goal->continents() = newContinents;
+  }
+  delete dialog;
+}
+
+void MainWindow::slotNewGoal()
+{
+  if (m_onu == 0) return;
+  kDebug();
+  QString newGoalName = QString("goal") + QString::number(m_skinDefWidget->goalslist->count()+1);
+  m_onu->createGoal();
+  m_skinDefWidget->goalslist->addItem(newGoalName);
+}
+
+void MainWindow::slotDeleteGoal()
+{
+  if (m_onu == 0) return;
+  kDebug();
+  int answer = KMessageBox::warningContinueCancel(this, i18n("Do you really want to delete goal '%1'?", m_skinDefWidget->goalslist->currentItem()->text()), i18n("Really delete goal?"));
+  if (answer == KMessageBox::Cancel)
+  {
+    return;
+  }
+  
+  int row = m_skinDefWidget->goalslist->row(m_skinDefWidget->goalslist->currentItem());
+  kDebug() << "row=" << row;
+  QListWidgetItem* item = m_skinDefWidget->goalslist->takeItem(m_skinDefWidget->goalslist->count()-1);
+  kDebug() << "item=" << item;
+  
+  m_onu->deleteGoal(row);
+  kDebug() << "goal deleted";
+  
+  delete item;
+}
+
 
 } // closing namespace
 
