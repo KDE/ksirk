@@ -32,13 +32,12 @@ namespace GameLogic
 {
 
 /** The constructor-initializer */
-Continent::Continent (const QString &myName, const std::vector<Country*>& myCountries, const int myBonus,
-                     unsigned int id) :
-  m_members(myCountries), m_name(myName), bonus(myBonus), m_id(id)
+Continent::Continent (const QString &myName, const QList<Country*>& myCountries, const int myBonus) :
+  m_members(myCountries), m_name(myName), bonus(myBonus)
 {
-  for ( uint i = 0; i < myCountries.size(); ++i )
+  foreach (Country* c, myCountries)
   {    
-    myCountries.at(i)->setContinent(this);
+    c->setContinent(this);
   }
 }
 
@@ -47,7 +46,7 @@ Continent::~Continent()
 }
 
 /** Read property of QList<Country> m_members. */
-const std::vector<Country*>& Continent::getMembers() const
+const QList<Country*>& Continent::getMembers() const
 {
 //   kDebug() << "There is " << m_members.size() << " countries in " << name() << endl;
   return m_members;
@@ -72,7 +71,7 @@ const Player* Continent::owner() const
 {
 //    kDebug() << "Continent::owner for "  << m_name;
     /** The owner of the first country is the owner if there is any one*/
-  std::vector<Country*>::const_iterator it = m_members.begin();
+  QList<Country*>::const_iterator it = m_members.begin();
   const Country* firstOne = *(it);
   const Player* owner = firstOne-> owner();
 //    kDebug() << "\t"  << firstOne-> name()  << " is owned by "  << owner-> name();
@@ -102,7 +101,7 @@ void Continent::saveXml(std::ostream& xmlStream)
   name = name.replace("<","&lt;");
   name = name.replace(">","&gt;");
   xmlStream << "<continent name=\""<<name.toUtf8().data()<<"\" bonus=\""<<bonus<<"\" >" << std::endl;
-  std::vector< Country* >::const_iterator it, it_end;
+  QList< Country* >::const_iterator it, it_end;
   it = m_members.begin(); it_end = m_members.end();
   for (; it != it_end; it++)
   {
@@ -113,14 +112,14 @@ void Continent::saveXml(std::ostream& xmlStream)
 }
 
 /** Returns the list of countries owned by @ref player */
-std::vector<Country*> Continent::countriesOwnedBy(const Player* player) 
+QList<Country*> Continent::countriesOwnedBy(const Player* player)
 {
-  std::vector<Country*> res;
-  for ( uint i = 0; i < m_members.size(); ++i )
+  QList<Country*> res;
+  foreach (Country*c, m_members)
   {    
-    if ( m_members.at(i)->owner() == player )
+    if ( c->owner() == player )
     {
-      res.push_back(m_members.at(i));
+      res.push_back(c);
     }
   }
   kDebug() << player->name() << " owns " << res.size() << " in " << name() << endl;

@@ -19,7 +19,7 @@
 #ifndef KSIRK_GAMELOGICGOAL_H
 #define KSIRK_GAMELOGICGOAL_H
 
-#include <set>
+// #include <set>
 #include <iostream>
 
 #include <qdatastream.h>
@@ -99,8 +99,8 @@ public:
 
   //@{
   /** Accessors for the list of continents to conquier to reach this goal */
-  inline std::set<unsigned int>& continents() {return m_continents;}
-  inline const std::set<unsigned int>& continents() const {return m_continents;}
+  inline QList<QString>& continents() {return m_continents;}
+  inline const QList<QString>& continents() const {return m_continents;}
   //@}
 
   //@{
@@ -168,7 +168,7 @@ public:
   QString m_description;
   unsigned int m_nbCountries;
   unsigned int m_nbArmiesByCountry;
-  std::set<unsigned int> m_continents;
+  QList<QString> m_continents;
   QList<QString> m_players;
   Player* m_player;
 };

@@ -49,8 +49,6 @@
 // include files for kde games
 #include <kgame/kgamechat.h>
 
-#include <vector>
-
 // #include <kdialogbase.h>
 
 class QAction;
@@ -531,7 +529,7 @@ public:
     * Returns the list of players definitions whose connection from the network
     * is waited after loading a saved game. 
     */
-  inline std::vector<GameLogic::PlayerMatrix>& waitedPlayers() {return m_waitedPlayers;}
+  inline QList<GameLogic::PlayerMatrix>& waitedPlayers() {return m_waitedPlayers;}
 
   /** Displays the buttons associated to the given game state. */
   void displayButtonsForState(GameLogic::GameAutomaton::GameState state);
@@ -543,7 +541,7 @@ public:
   void winner(const GameLogic::Player* player);
 
   /** Returns a list of the nations names associated to their flag's file name. */
-  std::map< QString, QString > nationsList();
+  QMap< QString, QString > nationsList();
   
   /** Returns a pointer to the chat widget used to chat and to display messages. */
   inline KGameChat* chatWidget() {return m_chatDlg;}
@@ -642,7 +640,7 @@ protected:
       const QString& txt, 
       const  KShortcut& shortcut, 
       bool isTemp = false, 
-      const std::string& toolBarName = "gameActionsToolBar");
+      const QString& toolBarName = "gameActionsToolBar");
 
   /**
     * Reimplementation of the inherited function : starts the timer.
@@ -908,7 +906,7 @@ private:
     
 //   KAccel m_accels;
   
-  std::set< QString > m_temporaryAccelerators;
+  QList<QString> m_temporaryAccelerators;
     
   /** Used during countries distribution to handle network lags on the player member */
   unsigned int m_nbAvailArmies; 
@@ -917,7 +915,7 @@ private:
     * The list of players description whose connection is waited after loading 
     * a saved game. 
     */
-  std::vector<GameLogic::PlayerMatrix> m_waitedPlayers;
+  QList<GameLogic::PlayerMatrix> m_waitedPlayers;
 
   /**
    * The prompter where the game events and chat between network players are 
@@ -938,7 +936,7 @@ private:
   /**
     * Contains all dices of the game.
     */
-  std::map< DiceColor, std::vector<QPixmap> > m_dices;
+  QMap< DiceColor, QList<QPixmap> > m_dices;
 
   /**
     * Audio player object: play all the sounds of the game.

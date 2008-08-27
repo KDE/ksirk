@@ -38,7 +38,7 @@
 #include <QGraphicsSvgItem>
 
 #include <iostream>
-#include <stdexcept>
+// #include <stdexcept>
 
 namespace Ksirk
 {
@@ -53,8 +53,7 @@ Country::Country(GameAutomaton* game,
                   const QPointF& flagPoint,
                   const QPointF& cannonPoint, 
                   const QPointF& cavalryPoint,
-                  const QPointF& infantryPoint, 
-                  unsigned int id) :
+                  const QPointF& infantryPoint) :
   m_automaton(game),
   m_belongsTo(0),
   m_flag(0),
@@ -67,7 +66,6 @@ Country::Country(GameAutomaton* game,
   m_pointCannon(cannonPoint), 
   m_pointCavalry(cavalryPoint),
   m_pointInfantry(infantryPoint),
-  m_id(id),
   m_highlighting(0),
   m_renderer(new KSvgRenderer()),
   m_highlighting_locked(false),
@@ -122,7 +120,7 @@ void Country::createArmiesSprites()
       sprite-> setPos(
         m_pointCannon.x()*bg->onu()->zoom(),
         (m_pointCannon.y()+(1-2*(i%2))*(Sprites::SkinSpritesData::single().intData("cannon-height")+8)*((i+1)/2))*bg->onu()->zoom());
-      if (this->id() == m_automaton->game()->secondCountry()->id())
+      if (this->name() == m_automaton->game()->secondCountry()->name())
       {
         sprite->setLookLeft();
       }
@@ -148,7 +146,7 @@ void Country::createArmiesSprites()
         m_pointCavalry.x()*bg->onu()->zoom(),
         (m_pointCavalry.y()+(1-2*(i%2))*(Sprites::SkinSpritesData::single().intData("cavalry-height")+8)*((i+1)/2))*bg->onu()->zoom());
       kDebug() << "setPos done";
-      if (this->id() == m_automaton->game()->secondCountry()->id())
+      if (this->name() == m_automaton->game()->secondCountry()->name())
       {
         sprite->setLookLeft();
       }
@@ -173,7 +171,7 @@ void Country::createArmiesSprites()
       sprite-> setPos(
         m_pointInfantry.x()*bg->onu()->zoom(),
         (m_pointInfantry.y()+(1-2*(i%2))*(Sprites::SkinSpritesData::single().intData("infantry-height")+8)*((i+1)/2))*bg->onu()->zoom());
-      if (this->id() == m_automaton->game()->secondCountry()->id())
+      if (this->name() == m_automaton->game()->secondCountry()->name())
       {
         sprite->setLookLeft();
       }
@@ -187,9 +185,10 @@ void Country::createArmiesSprites()
     armies--;
   }
 
-  kDebug() << "adding flag";
+  kDebug() << "adding flag" << m_belongsTo ;
   if (m_belongsTo)
   {
+    kDebug() << m_belongsTo->flagFileName();
     flag(m_belongsTo->flagFileName(), bg);
   }
 
@@ -244,10 +243,10 @@ bool Country::communicateWith(const Country* otherCountry) const
   if (otherCountry == this) {return true;}
 
 //    kDebug() << "Country::communicateWith (" << name() << ", " << otherCountry-> name() << ")" << endl << flush;
-  unsigned int nbNeighbours = neighbours().size();
-  for (unsigned int i = 0; i < nbNeighbours; i++)
+//   unsigned int nbNeighbours = neighbours().size();
+  foreach (Country* neighbour, neighbours())
   {
-    if (neighbours().at(i) == otherCountry)
+    if (neighbour == otherCountry)
     {
 //            kDebug() << "OUT true Country::communicateWith" << endl << flush;
       return true;
@@ -404,20 +403,20 @@ AnimSpritesList< InfantrySprite >& Country::spritesInfantry()
 }
 
 /** No descriptions */
-void Country::neighbours(const std::vector<Country*>& neighboursVect)
+void Country::neighbours(const QList<Country*>& neighboursVect)
 {
   m_neighbours = neighboursVect;
 }
 
 /** No descriptions */
-std::vector< Country* >& Country::neighbours()
+QList< Country* >& Country::neighbours()
 {
 //    kDebug() << "Country::neighbours" << endl << flush;
   return m_neighbours;
 }
 
 /** No descriptions */
-const std::vector< Country* >& Country::neighbours() const
+const QList< Country* >& Country::neighbours() const
 {
 //    kDebug() << "Country::neighbours const" << endl << flush;
   return m_neighbours;
@@ -493,7 +492,7 @@ void Country::send(QDataStream& stream)
 
 bool Country::hasAdjacentEnemy()
 {
-  for (uint j = 0; j < m_neighbours.size(); j++)
+  for (int j = 0; j < m_neighbours.size(); j++)
   {
     if ( m_neighbours[j]->owner() != m_belongsTo )
     {
@@ -617,7 +616,7 @@ void Country::copyForArena(Country* trueCountry)
   m_continent = trueCountry->m_continent;
   m_belongsTo = trueCountry->m_belongsTo;
   m_nbArmies = trueCountry->m_nbArmies;
-  m_id = trueCountry->m_id;
+//   m_id = trueCountry->m_id;
 
   // make again the display
   createArmiesSprites();

@@ -239,10 +239,10 @@ std::pair<const Country*, const Country*> AIPlayer::chooseBelligerant()
 
 //     kDebug() << name() << " : AIPlayer::chooseBelligerant()" << endl;
     // Builds the list of countries of the player that have enough armies and a good neighbour
-  std::vector< Country* > list = countries();
+  QList<Country*> list = countries();
   if ( ! list.empty() )
   {
-    std::vector< Country* >::iterator outer = list.begin();
+    QList<Country*>::iterator outer = list.begin();
     const Country* candidateSource;
 //        kDebug() << name() << "  choosing belligerants, candidate sources " << endl;
     while ( ( outer != list.end()) && ( (candidateSource = *outer) != 0 ) )
@@ -301,13 +301,13 @@ std::pair<const Country*, const Country*> AIPlayer::chooseBelligerant()
 Country* AIPlayer::chooseReceivingCountry()
 {
 //     kDebug() << "AIPlayer::chooseReceivingCountry()" << endl;
-  std::vector<Country*> myCountries = countries();
+  QList<Country*> myCountries = countries();
   if (myCountries.size() == 0)
   {
     kError() << "AIPlayer::chooseReceivingCountry() EMPTY LIST" << endl;
     return 0;
   }
-  std::vector<Country*> withNeighbours;
+  QList<Country*> withNeighbours;
   
   for (unsigned int i = 0 ; i < myCountries.size(); i++)
   {
@@ -430,7 +430,7 @@ bool AIPlayer::attackAction()
 bool AIPlayer::moveArmiesAction()
 {
   kDebug() << "AIPlayer::moveArmiesAction" << endl;
-  std::vector<Country*> srcList = countries() ;
+  QList<Country*> srcList = countries() ;
   if (srcList.size() == 0) 
   {
     nextPlayerAction(); 
@@ -445,7 +445,7 @@ bool AIPlayer::moveArmiesAction()
     return false;
   }
 //    kDebug() << "AIPlayer::moveArmiesAction() MOVEARMIES 2" << endl;
-  std::vector<Country*> destList( m_world-> neighboursBelongingTo(*osrc, this) );
+  QList<Country*> destList( m_world-> neighboursBelongingTo(*osrc, this) );
 //    kDebug() << "AIPlayer::moveArmiesAction() MOVEARMIES 3" << endl;
   if (destList.size() == 0) 
   {

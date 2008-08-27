@@ -32,7 +32,7 @@ namespace SaveLoad
 {
 
 GameXmlLoader::GameXmlLoader(const QString& fileName, KGameWindow& game, 
-    std::vector<GameLogic::PlayerMatrix>& waitedPlayers)
+    QList<GameLogic::PlayerMatrix>& waitedPlayers)
 {
   GameXmlHandler handler(game, waitedPlayers);
   

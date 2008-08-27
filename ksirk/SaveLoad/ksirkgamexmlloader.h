@@ -26,8 +26,7 @@
 #include "GameLogic/player.h"
 
 #include <qxml.h>
-
-#include <vector>
+#include <QList>
 
 namespace Ksirk
 {
@@ -49,7 +48,7 @@ public:
     * from the network will be waited for.
     */
   GameXmlLoader(const QString& fileName, KGameWindow& game, 
-        std::vector<GameLogic::PlayerMatrix>& waitedPlayers);
+        QList<GameLogic::PlayerMatrix>& waitedPlayers);
   
 private:
   QString m_onuFile;

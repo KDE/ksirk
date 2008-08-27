@@ -42,7 +42,7 @@ public:
     * @param id The unique integer id of this continent.
     */
   Continent (const QString &myName, const QList<Country*>& myCountries,
-    const int myBonus, unsigned int id);
+    const int myBonus);
 
   /** Default destructor. */
   virtual ~Continent();
@@ -66,13 +66,13 @@ public:
     * Saves a XML representation of this continent for game saving purpose
     * @param xmlStream The stream to write on
     */
-  void saveXml(std::ostream& xmlStream);
+//   void saveXml(std::ostream& xmlStream);
 
   //@{
   /** Accessors to the unique integer identifier of this continent. */
-  inline unsigned int id() const {return m_id;}
+/*  inline unsigned int id() const {return m_id;}
   inline unsigned int id() {return m_id;}
-  inline void setId(unsigned int id) {m_id = id;}
+  inline void setId(unsigned int id) {m_id = id;}*/
   //@}
 
 private: // Private attributes
@@ -89,7 +89,7 @@ private: // Private attributes
   unsigned int m_bonus;
 
   /** The unique integer identifier of this continent. */
-  unsigned int m_id;
+//   unsigned int m_id;
 };
 
 }

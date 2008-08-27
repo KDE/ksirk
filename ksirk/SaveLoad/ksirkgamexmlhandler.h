@@ -30,9 +30,6 @@
 #include <qstring.h>
 #include <qxml.h>
 
-#include <map>
-#include <vector>
-
 namespace Ksirk
 {
 
@@ -52,7 +49,7 @@ public:
     * @param waitedPlayers This list will be filled by the description of the 
     * network players whose connection will be waited for
     */
-  GameXmlHandler(KGameWindow& game, std::vector<GameLogic::PlayerMatrix>& waitedPlayers) : 
+  GameXmlHandler(KGameWindow& game, QList<GameLogic::PlayerMatrix>& waitedPlayers) :
     m_game(game),
     m_waitedPlayers(waitedPlayers),
     m_playersNumber(0),
@@ -92,8 +89,8 @@ public:
 private:
   KGameWindow& m_game;
   GameLogic::GameAutomaton::GameState m_savedState;
-  std::map<QString,QString> m_ownersMap;
-  std::vector<GameLogic::PlayerMatrix>& m_waitedPlayers;
+  QMap<QString,QString> m_ownersMap;
+  QList<GameLogic::PlayerMatrix>& m_waitedPlayers;
   unsigned int m_playersNumber;
   bool m_inGoal;
   GameLogic::Goal* m_goal;

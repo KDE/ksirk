@@ -352,21 +352,21 @@ void KGameWindow::loadDices()
 {
   kDebug();
   
-  m_dices[Blue] = std::vector<QPixmap>(6);
-  m_dices[Red] = std::vector<QPixmap>(6);
+  m_dices[Blue] = QList<QPixmap>();
+  m_dices[Red] = QList<QPixmap>();
 //   QString dicesDir = m_dirs->findResourceDir("appdata", m_automaton->skin() + "/Images/reddice1.png") + m_automaton->skin() + "/Images/";
-  m_dices[Blue][0] = buildDice(Blue, "bluedice1");
-  m_dices[Blue][1] = buildDice(Blue, "bluedice2");
-  m_dices[Blue][2] = buildDice(Blue, "bluedice3");
-  m_dices[Blue][3] = buildDice(Blue, "bluedice4");
-  m_dices[Blue][4] = buildDice(Blue, "bluedice5");
-  m_dices[Blue][5] = buildDice(Blue, "bluedice6");
-  m_dices[Red][0] = buildDice(Red, "reddice1");
-  m_dices[Red][1] = buildDice(Red, "reddice2");
-  m_dices[Red][2] = buildDice(Red, "reddice3");
-  m_dices[Red][3] = buildDice(Red, "reddice4");
-  m_dices[Red][4] = buildDice(Red, "reddice5");
-  m_dices[Red][5] = buildDice(Red, "reddice6");
+  m_dices[Blue].push_back(buildDice(Blue, "bluedice1"));
+  m_dices[Blue].push_back(buildDice(Blue, "bluedice2"));
+  m_dices[Blue].push_back(buildDice(Blue, "bluedice3"));
+  m_dices[Blue].push_back(buildDice(Blue, "bluedice4"));
+  m_dices[Blue].push_back(buildDice(Blue, "bluedice5"));
+  m_dices[Blue].push_back(buildDice(Blue, "bluedice6"));
+  m_dices[Red].push_back(buildDice(Red, "reddice1"));
+  m_dices[Red].push_back(buildDice(Red, "reddice2"));
+  m_dices[Red].push_back(buildDice(Red, "reddice3"));
+  m_dices[Red].push_back(buildDice(Red, "reddice4"));
+  m_dices[Red].push_back(buildDice(Red, "reddice5"));
+  m_dices[Red].push_back(buildDice(Red, "reddice6"));
 }
 
 QPixmap KGameWindow::buildDice(DiceColor color, const QString& id)
@@ -1286,8 +1286,8 @@ void KGameWindow::clearGameActionsToolbar(bool send)
   
   gameActionsToolBar->clear();
   gameActionsToolBar->addSeparator();
-  std::set< QString >::const_iterator it, it_end;
-  it = m_temporaryAccelerators.begin(); it_end = m_temporaryAccelerators.end();
+  QList<QString>::ConstIterator it, it_end;
+  it = m_temporaryAccelerators.constBegin(); it_end = m_temporaryAccelerators.constEnd();
   for (; it != it_end; it++)
   {
 //     m_accels.remove(*it);
@@ -1303,7 +1303,7 @@ void KGameWindow::addAButton(
     const QString& txt, 
     const KShortcut& shortcut,
     bool isTemp, 
-    const std::string& toolBarName)
+    const QString& toolBarName)
 {
   kDebug() << "addAButton: " << fileName;
   QString imageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + fileName);
@@ -1342,7 +1342,7 @@ void KGameWindow::addAButton(
   }
   if (isTemp)
   {
-    m_temporaryAccelerators.insert(txt);
+    m_temporaryAccelerators.push_back(txt);
   }
 }
 
@@ -1396,7 +1396,7 @@ bool KGameWindow::setupPlayers()
   theWorld()->reset();
   clearGameActionsToolbar();
   
-  std::map< QString, QString > nations = nationsList();
+  QMap< QString, QString > nations = nationsList();
   if (!(m_automaton->playerList()->isEmpty()))
   {
     m_automaton->playerList()->clear();
@@ -1423,7 +1423,7 @@ bool KGameWindow::setupPlayers()
     kDebug() << "Creating player " << nomEntre << "(computer: "
              << computer << "): " << nationName;
     addPlayer(nomEntre, nbAvailArmies, 0, nationName, computer);
-    nations.erase(nationName);
+    nations.remove(nationName);
   }
   if (networkGame)
   {
@@ -1450,7 +1450,7 @@ bool KGameWindow::setupOnePlayer()
   kDebug() << "KGameWindow::setupOnePlayer";
   
   kDebug() << "  building the list of available nations";
-  std::map< QString, QString > nations = nationsList();
+  QMap< QString, QString > nations = nationsList();
   PlayersArray::iterator it = m_automaton->playerList()->begin();
   PlayersArray::iterator it_end = m_automaton->playerList()->end();
   for (; it != it_end; it++)
@@ -1463,7 +1463,7 @@ bool KGameWindow::setupOnePlayer()
     Nationality* nation = player-> getNation();
     kDebug() << "    got player nation " << nation;
     QString nationName = nation->name();
-    std::map<QString,QString>::iterator nationsIt;
+    QMap<QString,QString>::iterator nationsIt;
     nationsIt = nations.find(nationName);
     if (nationsIt !=  nations.end())
     {
@@ -1519,7 +1519,7 @@ bool KGameWindow::setupOnePlayer()
         << "(computer: " << computer << "): " << nationName 
         << " password: " << password;
       addPlayer(nomEntre, nbAvailArmies, 0, nationName, computer, password);
-      nations.erase(nationName);
+      nations.remove(nationName);
     }
   }
   return true;
@@ -1551,7 +1551,7 @@ bool KGameWindow::createWaitedPlayer(quint32 waitedPlayerId)
                               pm.nbAttack, pm.nbDefense);
 
   player->goal(pm.goal);
-  std::set<QString>::iterator it, it_end;
+  QList<QString>::iterator it, it_end;
   it = pm.countries.begin(); it_end = pm.countries.end();
   for (; it != it_end; it++)
   {
@@ -1586,8 +1586,8 @@ int KGameWindow::nbNewArmies(Player *player)
       if (m_theWorld-> getCountries().at(i)-> owner() == player) res++;
   res = (res/3) < 3 ? 3 : res/3 ;
 
-  std::vector<Continent*>& continents = m_theWorld-> getContinents();
-  std::vector<Continent*>::iterator it = continents.begin();
+  QList<Continent*>& continents = m_theWorld-> getContinents();
+  QList<Continent*>::iterator it = continents.begin();
   for (; it != continents.end(); it++)
   {
     Continent* currCont = *it;
@@ -2863,23 +2863,26 @@ Player* KGameWindow::addPlayer(const QString& playerName,
     p->setNbDefense(nbDefense);
     p->setPassword(password);
     if (!m_automaton->addPlayer(p))
-        p = 0; // freed - weired API
+    {
+      kDebug() << p->name() << "NOT added!";
+      p = 0; // freed - weired API
+    }
   }
   return p;
 }
 
-std::map< QString, QString > KGameWindow::nationsList()
+QMap< QString, QString > KGameWindow::nationsList()
 {
-  std::map< QString, QString >  res;
+  QMap< QString, QString >  res;
   
-  std::vector<Nationality*>& nationsList = m_theWorld->getNationalities();
+  QList<Nationality*>& nationsList = m_theWorld->getNationalities();
   kDebug() << "There is " << nationsList.size() << " nations";
-  std::vector<Nationality*>::iterator nationsIt = nationsList.begin();
+  QList<Nationality*>::iterator nationsIt = nationsList.begin();
   for (; nationsIt != nationsList.end(); nationsIt++ ) 
   {
     Nationality* nation = *nationsIt;
     kDebug() << "Nation '" << nation->name() << "' = " << nation;
-    res.insert(std::make_pair(nation->name(),nation->flagFileName()));
+    res.insert(nation->name(),nation->flagFileName());
   } 
   return res;
 }

@@ -42,8 +42,8 @@ Country::Country(
                   const QPointF& flagPoint,
                   const QPointF& cannonPoint, 
                   const QPointF& cavalryPoint,
-                  const QPointF& infantryPoint, 
-                  unsigned int id) :
+                  const QPointF& infantryPoint/*, 
+                  unsigned int id*/) :
   m_name(theName),
   m_anchorPoint(anchorPoint),
   m_centralPoint(centralPoint),
@@ -51,7 +51,7 @@ Country::Country(
   m_pointCannon(cannonPoint), 
   m_pointCavalry(cavalryPoint),
   m_pointInfantry(infantryPoint),
-  m_id(id),
+//   m_id(id),
   m_highlighting(0),
   m_renderer(new KSvgRenderer()),
   m_highlighting_locked(false)
@@ -180,16 +180,16 @@ const QList< Country* >& Country::neighbours() const
   return m_neighbours;
 }
 
-void Country::saveXml(std::ostream& xmlStream)
-{
-  QString name = m_name.toUtf8();
-  name = name.replace("&","&amp;");
-  name = name.replace("<","&lt;");
-  name = name.replace(">","&gt;");
-  xmlStream << "<country name=\""<<name.toUtf8().data()<<"\" owner=\"";
-  xmlStream << "none";
-  xmlStream << "\" />" << std::endl;
-}
+// void Country::saveXml(std::ostream& xmlStream)
+// {
+//   QString name = m_name.toUtf8();
+//   name = name.replace("&","&amp;");
+//   name = name.replace("<","&lt;");
+//   name = name.replace(">","&gt;");
+//   xmlStream << "<country name=\""<<name.toUtf8().data()<<"\" owner=\"";
+//   xmlStream << "none";
+//   xmlStream << "\" />" << std::endl;
+// }
 
 void Country::highlight(const QColor& color, qreal opacity)
 {

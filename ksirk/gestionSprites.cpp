@@ -171,7 +171,7 @@ AnimSprite* KGameWindow::initArmiesMultipleCombat(unsigned int nbA,
   {
     int relativePosInArena=0;
 
-    if (firstCountry->id() == secondCountry->id())
+    if (firstCountry->name() == secondCountry->name())
     {
       sprite->setDefendant();
       relativePosInArena = relativePosInArenaDefense;
@@ -785,7 +785,7 @@ void KGameWindow::initCombatMovement(
       }
 
       defenderSprite-> setDefendant();
-      defenderSprite-> setupTravel(defendingCountry, attackingCountry, &pointArriveeDefenseur);
+      defenderSprite-> setupTravel(defendingCountry, defendingCountry, &pointArriveeDefenseur);
       //(pointDepartDefenseurX <= pointArriveeDefenseurX) ? defenderSprite-> setLookRight() : defenderSprite-> setLookLeft();
       kDebug() << "add a sprite 3";
       m_animFighters->addSprite(defenderSprite);

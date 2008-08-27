@@ -44,8 +44,7 @@ public:
     * all this continent.
     * @param id The unique integer id of this continent.
     */
-  Continent (const QString &myName, const std::vector<Country*>& myCountries, 
-    const int myBonus, unsigned int id);
+  Continent (const QString &myName, const QList<Country*>& myCountries, const int myBonus);
 
   /** Default destructor. */
   virtual ~Continent();
@@ -53,7 +52,7 @@ public:
   /**
     * Read property of m_members, the countries of this continent.
     */
-  virtual const std::vector<Country*>& getMembers() const;
+  virtual const QList<Country*>& getMembers() const;
 
   /** Return the name of this continent. */
   virtual const QString& name() const;
@@ -78,20 +77,20 @@ public:
 
   //@{
   /** Accessors to the unique integer identifier of this continent. */
-  inline unsigned int id() const {return m_id;}
+/*  inline unsigned int id() const {return m_id;}
   inline unsigned int id() {return m_id;}
-  inline void id(unsigned int id) {m_id = id;}
+  inline void id(unsigned int id) {m_id = id;}*/
   //@}
 
   /** Returns the list of countries of this continent owned by @ref player */
-  std::vector<Country*> countriesOwnedBy(const Player* player);
+  QList<Country*> countriesOwnedBy(const Player* player);
 
 private: // Private attributes
 
   /** This is the list of the countries that forms this continent. This member
     * is constant as it will not change during the game.
     */
-  std::vector<Country*> m_members;
+  QList<Country*> m_members;
 
   /** The name of the continent */
   const QString m_name;
@@ -100,7 +99,7 @@ private: // Private attributes
   const int bonus;
 
   /** The unique integer identifier of this continent. */
-  unsigned int m_id;
+//   unsigned int m_id;
 };
 
 }

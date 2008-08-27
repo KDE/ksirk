@@ -38,10 +38,6 @@
 #include <kconfig.h>
 #include <kconfiggroup.h>
 
-#include <vector>
-
-
-
 namespace Ksirk
 {
 

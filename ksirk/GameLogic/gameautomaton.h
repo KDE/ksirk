@@ -31,8 +31,6 @@
 #include <QPointF>
 #include <QString>
 
-#include <map>
-#include <set>
 #include <iostream>
 
 namespace Ksirk {
@@ -186,7 +184,7 @@ public:
     * @param event The event to register
     * @param point The point where the event occurred
     */
-  void gameEvent(const std::string& event, const QPointF& point);
+  void gameEvent(const QString& event, const QPointF& point);
   
   /** returns the name of the current state */
   QString stateName() const;
@@ -273,8 +271,8 @@ public:
 
   //@{
   /** Accessors to the map associating messages to their ids */
-  inline std::map<quint32,QString>& ids2msgs() {return m_ids2msgs;}
-  inline std::map<QString,quint32>& msgs2ids() {return m_msgs2ids;}
+  inline QMap<quint32,QString>& ids2msgs() {return m_ids2msgs;}
+  inline QMap<QString,quint32>& msgs2ids() {return m_msgs2ids;}
   //@}
 
   //@{
@@ -285,8 +283,8 @@ public:
 
   //@{
   /** Accessors to the goals known by this game. */
-  inline const std::set< Goal* >& goals() const {return m_goals;}
-  inline std::set< Goal* >& goals() {return m_goals;}
+  inline const QList< Goal* >& goals() const {return m_goals;}
+  inline QList< Goal* >& goals() {return m_goals;}
   //@}
 
   /** If the game use goals, return true else (all players have to conquier the 
@@ -334,10 +332,10 @@ public:
   
   //@{
   /** Some accessors to data really necessary... */
-  inline std::map< int, QString >& nbArmiesIdsNamesCountriesMap() {return m_nbArmiesIdsNamesCountriesMap;}
-  inline std::map< QString, int >& namesNbArmiesIdsCountriesMap() {return m_namesNbArmiesIdsCountriesMap;}
-  inline std::map< int, QString >& nbAddedArmiesIdsNamesCountriesMap() {return m_nbAddedArmiesIdsNamesCountriesMap;}
-  inline std::map< QString, int >& namesNbAddedArmiesIdsCountriesMap() {return m_namesNbAddedArmiesIdsCountriesMap;}
+  inline QMap< int, QString >& nbArmiesIdsNamesCountriesMap() {return m_nbArmiesIdsNamesCountriesMap;}
+  inline QMap< QString, int >& namesNbArmiesIdsCountriesMap() {return m_namesNbArmiesIdsCountriesMap;}
+  inline QMap< int, QString >& nbAddedArmiesIdsNamesCountriesMap() {return m_nbAddedArmiesIdsNamesCountriesMap;}
+  inline QMap< QString, int >& namesNbAddedArmiesIdsCountriesMap() {return m_namesNbAddedArmiesIdsCountriesMap;}
   //@}
 
   void movingFigthersArrived();
@@ -497,25 +495,25 @@ private:
   bool m_currentPlayerPlayed;
 //   int m_currentPlayerId;
   
-  std::map< int, QString > m_nbArmiesIdsNamesCountriesMap;
-  std::map< QString, int > m_namesNbArmiesIdsCountriesMap;
-  std::map< int, QString > m_nbAddedArmiesIdsNamesCountriesMap;
-  std::map< QString, int > m_namesNbAddedArmiesIdsCountriesMap;
+  QMap< int, QString > m_nbArmiesIdsNamesCountriesMap;
+  QMap< QString, int > m_namesNbArmiesIdsCountriesMap;
+  QMap< int, QString > m_nbAddedArmiesIdsNamesCountriesMap;
+  QMap< QString, int > m_namesNbAddedArmiesIdsCountriesMap;
 
   quint32 m_choosedToRecycleNumber;
   
   QString m_savedPlayer;
   GameState m_savedState;
   
-  std::map<quint32,QString> m_ids2msgs;
-  std::map<QString,quint32> m_msgs2ids;
+  QMap<quint32,QString> m_ids2msgs;
+  QMap<QString,quint32> m_msgs2ids;
   
-  std::set< Goal* > m_goals;
+  QList< Goal* > m_goals;
   bool m_useGoals;
   
   quint32 m_nbPlayers;
 
-  std::set<int> m_choosedToRecycle;
+  QList<int> m_choosedToRecycle;
 
   // tell us if the automatic attack is enabled
   bool m_attackAuto;

@@ -312,13 +312,12 @@ bool Player::checkGoal()
 /**
   * Returns the list of the countries owned by this player
   */
-std::vector<Country*> Player::countries() const
+QList<Country*> Player::countries() const
 {
 //   kDebug() << name() << ": Player::countries()" << endl;
-  std::vector<Country*> list;
-  for ( unsigned int i = 0; i < m_automaton->game()->theWorld()->getCountries().size(); i++ )
+  QList<Country*> list;
+  foreach (Country* c, m_automaton->game()->theWorld()->getCountries())
   {
-    Country* c = m_automaton->game()->theWorld()->getCountries().at(i);
     if (c-> owner() == static_cast< const Player * >(this))
     {
 //            kDebug() << "\t" << c-> name() << endl;
@@ -347,11 +346,9 @@ QDataStream& operator<<(QDataStream& stream, PlayerMatrix& p)
 {
   stream << p.name << quint32(p.nbAttack) << quint32(p.nbCountries) << quint32(p.nbAvailArmies)
     << quint32(p.nbDefense) << p.nation << quint32(p.isAI) << quint32(p.countries.size());
-  std::set<QString>::iterator it, it_end;
-  it = p.countries.begin(); it_end = p.countries.end();
-  for (; it != it_end; it++)
+  foreach (const QString& s, p.countries)
   {
-    stream << (*it);
+    stream << s;
   }
   stream << p.goal;
   return stream;
@@ -369,7 +366,7 @@ QDataStream& operator>>(QDataStream& stream, PlayerMatrix& p)
   {
     QString country;
     stream >> country;
-    p.countries.insert(country);
+    p.countries.push_back(country);
   }
   stream >> p.goal;
   return stream;

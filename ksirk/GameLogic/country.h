@@ -31,8 +31,6 @@
 #include <qpoint.h>
 #include <qstring.h>
 
-#include <vector>
-
 class KSvgRenderer;
 class QGraphicsSvgItem;
 
@@ -70,11 +68,13 @@ public:
     * @param id The unique integer identifier of this country.
     */
   Country(GameAutomaton* game,
-           const QString& theName,
+      const QString& theName,
       const QPointF& anchorPoint,
       const QPointF& centralPoint,
-      const QPointF& flagPoint, const QPointF& cannonPoint, const QPointF& cavalryPoint,
-      const QPointF& infantryPoint, unsigned int id);
+      const QPointF& flagPoint,
+      const QPointF& cannonPoint,
+      const QPointF& cavalryPoint,
+      const QPointF& infantryPoint);
 
   /** Default destructor */
   virtual ~Country();
@@ -259,12 +259,12 @@ public:
   AnimSpritesList< InfantrySprite >& spritesInfantry();
 
   /** Sets the list of neighbour countries. */
-  void neighbours(const std::vector<Country*>& neighboursVect);
+  void neighbours(const QList<Country*>& neighboursVect);
 
   //@{
   /** Returns the list of neighbour countries */
-  std::vector< Country* >& neighbours();
-  const std::vector< Country* >& neighbours() const;
+  QList< Country* >& neighbours();
+  const QList< Country* >& neighbours() const;
   //@}
   void clearAllSprites();
 
@@ -285,9 +285,9 @@ public:
 
   //@{
   /** Accessors to this country's unique integer identifier. */
-  unsigned int id() const {return m_id;}
+/*  unsigned int id() const {return m_id;}
   unsigned int id() {return m_id;}
-  void id(unsigned int id) {m_id = id;}
+  void id(unsigned int id) {m_id = id;}*/
   //@}
 
   /**
@@ -351,7 +351,7 @@ public:
   QString m_name;
 
   /** the array of neigbours of this country */
-  std::vector<Country*> m_neighbours;
+  QList<Country*> m_neighbours;
 
   QPointF m_anchorPoint;
 
@@ -404,7 +404,7 @@ public:
   AnimSpritesList< InfantrySprite > m_spritesInfantry;
   
   /** The unique integer identifier of this country. */
-  unsigned int m_id;
+//   unsigned int m_id;
 
   QGraphicsSvgItem* m_highlighting;
 

@@ -50,8 +50,7 @@ namespace Ksirk
                                       QPointF(0,0),
                                       QPointF(0,0),
                                       QPointF(0,0),
-                                      QPointF(0,0),
-                                      0);
+                                      QPointF(0,0));
       // create the second country of the arena
       m_countryDefense = new Country(automaton,
                                       "",
@@ -60,13 +59,12 @@ namespace Ksirk
                                       QPointF(0,0),
                                       QPointF(0,0),
                                       QPointF(0,0),
-                                      QPointF(0,0),
-                                      0);
+                                      QPointF(0,0));
       // make the two arena countrys neighbours
-      vector<Country*> arenaAttackNeighbours;
+      QList<Country*> arenaAttackNeighbours;
       arenaAttackNeighbours.insert(arenaAttackNeighbours.begin(), m_countryDefense);
       m_countryAttack->neighbours(arenaAttackNeighbours);
-      vector<Country*> arenaDefenseNeighbours;
+      QList<Country*> arenaDefenseNeighbours;
       arenaDefenseNeighbours.insert(arenaDefenseNeighbours.begin(), m_countryAttack);
       m_countryDefense->neighbours(arenaDefenseNeighbours);
 

@@ -40,7 +40,6 @@
 
 
 #include <iostream>
-#include <vector>
 
 namespace Ksirk
 {
@@ -107,17 +106,17 @@ public:
   /**
     * Return the countries list
     */
-  std::vector<Country*>& getCountries();
+  QList<Country*>& getCountries();
   
   /**
     * Returns the nationalities list
     */
-  std::vector<Nationality*>& getNationalities();
+  QList<Nationality*>& getNationalities();
 
   //@{
-  /** Read property of std::vector<Continent*> continents. */
-  std::vector<Continent*>& getContinents();
-  const std::vector<Continent*>& getContinents() const;
+  /** Read property of QList<Continent*> continents. */
+  QList<Continent*>& getContinents();
+  const QList<Continent*>& getContinents() const;
   //@}
 
   /**
@@ -126,7 +125,7 @@ public:
     * @return A pointer to the retrieved continent or 0 if there is no 
     * continent with the given id.
     */
-  const Continent* continentWithId(const unsigned int id) const;
+//   const Continent* continentWithId(const unsigned int id) const;
   
   /** 
     * Returns the list of countries neighbours of the parameter country that 
@@ -136,7 +135,7 @@ public:
     * @return A vector of pointers on countries neighbour to the given country 
     * and belonging to the given player.
     */
-  std::vector<Country*> neighboursBelongingTo(const Country& country, const Player* player);
+  QList<Country*> neighboursBelongingTo(const Country& country, const Player* player);
 
   /** Returns the list of countries neighbours of the parameter country that 
     * does not belong to the argument player.
@@ -146,7 +145,7 @@ public:
     * @return A vector of pointers on countries neighbour to the given country 
     * and not belonging to the given player.
     */
-    std::vector<Country*> neighboursNotBelongingTo(const Country& country, const Player* player);
+    QList<Country*> neighboursNotBelongingTo(const Country& country, const Player* player);
 
   /** 
     * Returns the country named "name" ; 0 in case there is no such country.
@@ -253,17 +252,17 @@ private:
   /**
     * The list of countries
     */
-  std::vector<Country*> countries;
+  QList<Country*> countries;
 
   /**
     * The list of nationalities
     */
-  std::vector<Nationality*> nationalities;
+  QList<Nationality*> nationalities;
 
   /**
     * The continents of the world
     */
-  std::vector<Continent*> m_continents;
+  QList<Continent*> m_continents;
 
   /**
     * This image stores the mask that defines the countries of the world.

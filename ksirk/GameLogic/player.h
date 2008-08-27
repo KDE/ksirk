@@ -34,9 +34,6 @@
 
 #include <qstring.h>
 
-#include <set>
-#include <vector>
-
 namespace Ksirk
 {
 
@@ -165,7 +162,7 @@ public:
   /**
     * @return The list of the countries owned by this player
     */
-  std::vector<Country*> countries() const;
+  QList<Country*> countries() const;
   
   #define AUTHOR "Kleag"
   /** Method added during the porting of the AIColsonPlayer AI from XFrisk */
@@ -274,7 +271,7 @@ struct PlayerMatrix
   
   QString password;
   
-  std::set<QString> countries;
+  QList<QString> countries;
   
   GameLogic::GameAutomaton::GameState state;
   

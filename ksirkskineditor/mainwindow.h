@@ -124,8 +124,8 @@ public Q_SLOTS:
     */
   void slotShowAboutApplication();
 
-  void slotZoomIn();
-  void slotZoomOut();
+//   void slotZoomIn();
+//   void slotZoomOut();
 
 private Q_SLOTS:
   void optionsConfigure();

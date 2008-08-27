@@ -141,7 +141,7 @@ void AnimSprite::changeSequence(const QString &id)
 {
   kDebug() << (void*)this << id <<endl;
   changeSequence(
-          Sprites::SkinSpritesData::single().strData(id+"-id"),
+          id,
           Sprites::SkinSpritesData::single().intData(id+"-width"),
           Sprites::SkinSpritesData::single().intData(id+"-height"),
           Sprites::SkinSpritesData::single().intData(id+"-frames"),
@@ -513,6 +513,13 @@ qreal AnimSprite::getMaxY() const
     }
 }
 
+void AnimSprite::setupTravel(Country* src, Country* dest, const QPointF* dpi)
+{
+  kDebug() << src->name() << dest->name() << *dpi << (dpi==0?QPointF():*dpi);
+  if (dpi ==0) AnimSprite::setupTravel(src, dest, src->centralPoint(), dest-> centralPoint());
+  else AnimSprite::setupTravel(src, dest, src->centralPoint(), *dpi);
+}
+
 /**
   * This function chooses the approach mode of a sprite towards its destination:
   * if the distance between the origin and the destination is higher than half
@@ -585,19 +592,13 @@ void AnimSprite::arrival()
   kDebug()<< "at " << destinationPoint << endl;
   if (!backGnd->bgIsArena())
   {
+    kDebug()<< "x=" << x() << "pf=" << getDestination()->pointFlag().x();
     if (x() < getDestination()-> pointFlag().x())
       setLookRight();
     else 
       setLookLeft();
   }
   repaint();
-}
-
-void AnimSprite::setupTravel(Country* src, Country* dest, const QPointF* dpi)
-{
-  kDebug() << src->name() << dest->name() << (void*)dpi;
-  if (dpi ==0) AnimSprite::setupTravel(src, dest, src->centralPoint(), dest-> centralPoint());
-  else AnimSprite::setupTravel(src, dest, src->centralPoint(), *dpi);
 }
 
 /** Return true if the state of the sprite is the argument; false otherwise */

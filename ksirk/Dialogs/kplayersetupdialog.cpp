@@ -42,7 +42,7 @@
 #include <kmessagebox.h>
 
 #define _XOPEN_SOURCE_
-#include <unistd.h>
+// #include <unistd.h>
 
 namespace Ksirk
 {
@@ -53,7 +53,7 @@ KPlayerSetupDialog::KPlayerSetupDialog( GameLogic::GameAutomaton* automaton,
                                         QString& playerName,
                                         bool network, QString& password,
                                         bool &computerPlayer,
-                                        std::map< QString, QString >& nations, 
+                                        QMap< QString, QString >& nations,
                                         QString& nationName,
                                         QWidget *parent) :
   QDialog(parent), Ui::QPlayerSetupDialog(),
@@ -125,18 +125,19 @@ void KPlayerSetupDialog::fillNationsCombo()
 {
   kDebug() << "Filling nations combo" << endl;
 
-  std::map< QString, QString >::const_iterator nationsIt, nationsIt_end;
+  QMap< QString, QString >::const_iterator nationsIt, nationsIt_end;
   nationsIt = m_nations.begin(); nationsIt_end = m_nations.end();
   
-  GameLogic::Nationality* nation = m_onu->nationNamed((*nationsIt).first);
+  GameLogic::Nationality* nation = m_onu->nationNamed(*m_nations.keys().begin());
   LineEdit2-> setText(nation->leaderName());
 
-  for (; nationsIt != nationsIt_end; nationsIt++)
+  foreach (const QString& k,m_nations.keys())
   {
-    kDebug() << "Adding nation " << I18N_NOOP((*nationsIt).first) << " / " << (*nationsIt).second << endl;
+    const QString& v =m_nations[k];
+    kDebug() << "Adding nation " << I18N_NOOP(k) << " / " << v << endl;
 //     load image
 
-    FlagSprite flagsprite((*nationsIt).second,
+    FlagSprite flagsprite(v,
                   Sprites::SkinSpritesData::single().intData("flag-width"),
                   Sprites::SkinSpritesData::single().intData("flag-height"),
                   Sprites::SkinSpritesData::single().intData("flag-frames"),
@@ -157,8 +158,8 @@ void KPlayerSetupDialog::fillNationsCombo()
 
 
 //     get name
-    QString name = i18n((*nationsIt).first.toUtf8().data());
-    m_nationsNames.insert(std::make_pair(name,(*nationsIt).first)); 
+    QString name = i18n(k.toUtf8().data());
+    m_nationsNames.insert(name,k);
 //     fill a combo entry
     nationCombo->addItem(QIcon(flag),name);
   }

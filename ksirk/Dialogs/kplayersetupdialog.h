@@ -28,7 +28,7 @@
 
 #include <qwidget.h>
 
-#include <map>
+#include <QMap>
 
 class KPlayer;
 
@@ -55,7 +55,7 @@ public:
                      QString &playerName,
                      bool network, QString& password,
                      bool &computerPlayer,
-                     std::map< QString, QString >& nations,
+                     QMap< QString, QString >& nations,
                      QString & nationName,
                      QWidget *parent=0);
   
@@ -70,11 +70,11 @@ private:
   bool &computer;
   QString& m_nationName;
   /** list of nation name , flag file name pairs */
-  std::map< QString, QString >& m_nations;
+  QMap< QString, QString >& m_nations;
   GameLogic::ONU* m_onu;
   
   /** list of internationalized nations names. Used to retrive the internal name after choice in UI */
-  std::map< QString, QString > m_nationsNames;
+  QMap< QString, QString > m_nationsNames;
   unsigned int number ;
   
   QString& m_password;

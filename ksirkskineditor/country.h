@@ -62,7 +62,7 @@ public:
       const QPointF& anchorPoint,
       const QPointF& centralPoint,
       const QPointF& flagPoint, const QPointF& cannonPoint, const QPointF& cavalryPoint,
-      const QPointF& infantryPoint, unsigned int id);
+      const QPointF& infantryPoint/*, unsigned int id*/);
 
   /** Default destructor */
   virtual ~Country();
@@ -175,13 +175,13 @@ public:
     * Saves a XML representation of the country for game saving purpose
     * @param xmlStream The stream to write on
     */
-  void saveXml(std::ostream& xmlStream);
+//   void saveXml(std::ostream& xmlStream);
 
   //@{
   /** Accessors to this country's unique integer identifier. */
-  unsigned int id() const {return m_id;}
+/*  unsigned int id() const {return m_id;}
   unsigned int id() {return m_id;}
-  void id(unsigned int id) {m_id = id;}
+  void id(unsigned int id) {m_id = id;}*/
   //@}
 
   void highlight(const QColor& color = Qt::white, qreal opacity = 1.0);
@@ -239,7 +239,7 @@ public:
   QPointF m_pointInfantry;
 
   /** The unique integer identifier of this country. */
-  unsigned int m_id;
+//   unsigned int m_id;
 
   QGraphicsSvgItem* m_highlighting;
 

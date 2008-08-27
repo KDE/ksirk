@@ -61,8 +61,8 @@ ONU::ONU(const QString& configDir):
   m_font.backgroundColor = "white";
   
   SkinSpritesData::changeable().init();
-  unsigned int nationalityId = 0;
-  unsigned int continentId = 0;
+//   unsigned int nationalityId = 0;
+//   unsigned int continentId = 0;
   KConfig config(m_configFileName);
 
   KConfigGroup onugroup = config.group("onu");
@@ -224,15 +224,15 @@ ONU::ONU(const QString& configDir):
 
   kDebug() << "Loading countries data";
   QStringList countriesList = onugroup.readEntry("countries", QStringList());
-  while (m_countries.size() < countriesList.size())
+/*  while (m_countries.size() < countriesList.size())
   {
     m_countries.push_back(0);
-  }
+  }*/
   foreach (const QString &country, countriesList)
   { 
     kDebug() << "Loading"<<country<<"data";
     KConfigGroup countryGroup = config.group(country);
-    unsigned int id = countryGroup.readEntry("id",0);
+//     unsigned int id = countryGroup.readEntry("id",0);
     QString name = country;
     QPointF anchorPoint = countryGroup.readEntry("anchor-point",QPoint());
     QPointF centralPoint = countryGroup.readEntry("central-point",QPoint());
@@ -241,16 +241,16 @@ ONU::ONU(const QString& configDir):
     QPointF cavalryPoint = countryGroup.readEntry("cavalry-point",QPoint());
     QPointF infantryPoint = countryGroup.readEntry("infantry-point",QPoint());
 
-    m_countries[id] = new Country(name, anchorPoint, centralPoint,
-        flagPoint, cannonPoint, cavalryPoint, infantryPoint, id);
+    m_countries.push_back(new Country(name, anchorPoint, centralPoint,
+        flagPoint, cannonPoint, cavalryPoint, infantryPoint));
   }
   
   kDebug() << "Loading nationalities data";
   QStringList nationalitiesList = onugroup.readEntry("nationalities", QStringList());
-  while (m_nationalities.size() < nationalitiesList.size())
+/*  while (m_nationalities.size() < nationalitiesList.size())
   {
     m_nationalities.push_back(0);
-  }
+  }*/
   foreach (const QString &nationality, nationalitiesList)
   {
     kDebug() << "Creating nationality " << nationality;
@@ -258,33 +258,33 @@ ONU::ONU(const QString& configDir):
     QString leader = nationalityGroup.readEntry("leader","");
     QString flag = nationalityGroup.readEntry("flag","");
 //         kDebug() << "Creating nationality " << name << " ; flag: " << flag;
-    m_nationalities[nationalityId] = new Nationality(nationality, flag, leader);
-    nationalityId++;
+    m_nationalities.push_back(new Nationality(nationality, flag, leader));
+//     nationalityId++;
   }
 
 
   kDebug() << "Loading continents data";
   QStringList continentsList = onugroup.readEntry("continents", QStringList());
-  while (m_continents.size() < continentsList.size())
+/*  while (m_continents.size() < continentsList.size())
   {
     m_continents.push_back(0);
-  }
+  }*/
   foreach (const QString &continent, continentsList)
   {
     kDebug() << "Loading"<<continent<<"data";
     KConfigGroup continentGroup = config.group(continent);
 
-    unsigned int id = continentGroup.readEntry("id",0);
+//     unsigned int id = continentGroup.readEntry("id",0);
     unsigned int bonus = continentGroup.readEntry("bonus",0);
-    QList<int> countryIdList = continentGroup.readEntry("continent-countries",QList<int>());
-    int countryId;
+    QList<QString> countryIdList = continentGroup.readEntry("continent-countries",QList<QString>());
+//     int countryId;
     QList<Country*> continentList;
-    foreach(countryId, countryIdList)
+    foreach(const QString& countryId, countryIdList)
     {
-      continentList.push_back(m_countries[countryId]);
+      continentList.push_back(countryNamed(countryId));
     }
 //       kDebug() << "Creating continent " << name;
-    m_continents[continentId++] = new Continent(continent, continentList, bonus,id);
+    m_continents.push_back(new Continent(continent, continentList, bonus));
   }
 
   kDebug() << "Loading goals data";
@@ -331,14 +331,14 @@ ONU::ONU(const QString& configDir):
     kDebug() << "building neighbours list of " << country;
     QList< Country* > theNeighbours;
     KConfigGroup countryGroup = config.group(country);
-    QList<int> theNeighboursIds = countryGroup.readEntry("neighbours",QList<int>());
-    int neighbourId;
-    foreach(neighbourId, theNeighboursIds)
+    QList<QString> theNeighboursIds = countryGroup.readEntry("neighbours",QList<QString>());
+//     int neighbourId;
+    foreach(const QString& neighbourId, theNeighboursIds)
     {
 
-      theNeighbours.push_back(m_countries[neighbourId]);
+      theNeighbours.push_back(countryNamed(neighbourId));
     }
-    m_countries.at(countryGroup.readEntry("id",0))-> neighbours(theNeighbours);
+    countryNamed(country)-> neighbours(theNeighbours);
   }
   kDebug() << "Building map";
   buildMap();
@@ -516,7 +516,7 @@ void ONU::saveConfig(const QString& configFileName)
   {
     kDebug() << "Saving"<<country->name()<<"data" << countryNum;
     KConfigGroup countryGroup = config.group(country->name());
-    countryGroup.writeEntry("id",countryNum);
+//     countryGroup.writeEntry("id",countryNum);
     countryNum++;
     countryGroup.writeEntry("anchor-point",country->anchorPoint());
     countryGroup.writeEntry("central-point",country->centralPoint());
@@ -549,19 +549,19 @@ void ONU::saveConfig(const QString& configFileName)
     continentsList.push_back(continent->name());
   }
   onugroup.writeEntry("continents", continentsList);
-  unsigned int continentNum = 0;
+//   unsigned int continentNum = 0;
   foreach (Continent* continent, m_continents)
   {
     kDebug() << "Saving"<<continent->name()<<"data";
     KConfigGroup continentGroup = config.group(continent->name());
 
-    continentGroup.writeEntry("id",++continentNum);
+//     continentGroup.writeEntry("id",++continentNum);
     continentGroup.writeEntry("bonus",continent->bonus());
 
-    QList<int> countryIdList;
+    QList<QString> countryIdList;
     foreach(Country* country, continent->members())
     {
-      countryIdList.push_back(m_countries.indexOf(country));
+      countryIdList.push_back(country->name());
     }
     continentGroup.writeEntry("continent-countries",countryIdList);
   }
@@ -604,11 +604,11 @@ void ONU::saveConfig(const QString& configFileName)
   
   foreach (Country* country, m_countries)
   {
-    QList<int> theNeighboursIds;
+    QList<QString> theNeighboursIds;
     KConfigGroup countryGroup = config.group(country->name());
     foreach(Country* theNeighbour, country->neighbours())
     {
-      theNeighboursIds.push_back(m_countries.indexOf(theNeighbour));
+      theNeighboursIds.push_back(theNeighbour->name());
     }
     countryGroup.writeEntry("neighbours",theNeighboursIds);
   }
@@ -678,17 +678,17 @@ Nationality* ONU::nationNamed(const QString& name)
   return 0;
 }
 
-const Continent* ONU::continentWithId(const unsigned int id) const
-{
-  foreach (const Continent* c, m_continents)
-  {
-    if (c->id() == id)
-    {
-      return c;
-    }
-  }
-  return 0;
-}
+// const Continent* ONU::continentWithId(const unsigned int id) const
+// {
+//   foreach (const Continent* c, m_continents)
+//   {
+//     if (c->id() == id)
+//     {
+//       return c;
+//     }
+//   }
+//   return 0;
+// }
 
 Continent* ONU::continentNamed(const QString& name)
 {
@@ -816,7 +816,7 @@ void ONU::setFontBgColor(const QColor& color)
 void ONU::createCountry(const QString& newCountryName)
 {
   kDebug();
-  Country* newCountry = new Country(newCountryName, QPointF(), QPointF(), QPointF(), QPointF(), QPointF(), QPointF(), m_countries.size());
+  Country* newCountry = new Country(newCountryName, QPointF(), QPointF(), QPointF(), QPointF(), QPointF(), QPointF()/*, m_countries.size()*/);
   m_countries.push_back(newCountry);
 }
 
@@ -850,7 +850,7 @@ void ONU::deleteCountry(Country* country)
 void ONU::createContinent(const QString& newContinentName)
 {
   kDebug();
-  Continent* newContinent = new Continent(newContinentName, QList<Country*>(), 0, 0);
+  Continent* newContinent = new Continent(newContinentName, QList<Country*>(), 0);
   m_continents.push_back(newContinent);
 }
 

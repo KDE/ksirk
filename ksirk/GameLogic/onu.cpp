@@ -71,8 +71,8 @@ ONU::ONU(GameAutomaton* automaton,
   QObject::connect(m_timerFast,SIGNAL(timeout()), this, SLOT(changingZoom()));	//connect the timer to the good slot
   
   Sprites::SkinSpritesData::changeable().init();
-  unsigned int nationalityId = 0;
-  unsigned int continentId = 0;
+//   unsigned int nationalityId = 0;
+//   unsigned int continentId = 0;
   KConfig config(configFileName);
 
   KConfigGroup onugroup = config.group("onu");
@@ -101,9 +101,9 @@ ONU::ONU(GameAutomaton* automaton,
   m_width  = onugroup.readEntry("width",0);
   m_height  = onugroup.readEntry("height",0);
   m_description = onugroup.readEntry("desc");
-  countries.resize(onugroup.readEntry("nb-countries",0));
-  nationalities.resize(onugroup.readEntry("nb-nationalities",0));
-  m_continents.resize(onugroup.readEntry("nb-continents",0));
+//   countries.resize(onugroup.readEntry("nb-countries",0));
+//   nationalities.resize(onugroup.readEntry("nb-nationalities",0));
+//   m_continents.resize(onugroup.readEntry("nb-continents",0));
 //    root.attribute("map");
   QString poolString = onugroup.readEntry("pool");
   kDebug() << "Pool path: " << poolString;
@@ -142,49 +142,49 @@ ONU::ONU(GameAutomaton* automaton,
   Sprites::SkinSpritesData::changeable().intData("flag-frames", config.group("flag").readEntry("frames",0));
   Sprites::SkinSpritesData::changeable().intData("flag-versions", config.group("flag").readEntry("versions",0));
 
-  Sprites::SkinSpritesData::changeable().strData("infantry-id", config.group("infantry").readEntry("id"));
+//   Sprites::SkinSpritesData::changeable().strData("infantry-id", config.group("infantry").readEntry("id"));
   Sprites::SkinSpritesData::changeable().intData("infantry-width", config.group("infantry").readEntry("width",0));
   Sprites::SkinSpritesData::changeable().intData("infantry-height", config.group("infantry").readEntry("height",0));
   Sprites::SkinSpritesData::changeable().intData("infantry-frames", config.group("infantry").readEntry("frames",0));
   Sprites::SkinSpritesData::changeable().intData("infantry-versions", config.group("infantry").readEntry("versions",0));
 
-  Sprites::SkinSpritesData::changeable().strData("infantry1-id", config.group("infantry1").readEntry("id"));
+//   Sprites::SkinSpritesData::changeable().strData("infantry1-id", config.group("infantry1").readEntry("id"));
   Sprites::SkinSpritesData::changeable().intData("infantry1-width", config.group("infantry1").readEntry("width",0));
   Sprites::SkinSpritesData::changeable().intData("infantry1-height", config.group("infantry1").readEntry("height",0));
   Sprites::SkinSpritesData::changeable().intData("infantry1-frames", config.group("infantry1").readEntry("frames",0));
   Sprites::SkinSpritesData::changeable().intData("infantry1-versions", config.group("infantry1").readEntry("versions",0));
 
-  Sprites::SkinSpritesData::changeable().strData("infantry2-id", config.group("infantry2").readEntry("id"));
+//   Sprites::SkinSpritesData::changeable().strData("infantry2-id", config.group("infantry2").readEntry("id"));
   Sprites::SkinSpritesData::changeable().intData("infantry2-width", config.group("infantry2").readEntry("width",0));
   Sprites::SkinSpritesData::changeable().intData("infantry2-height", config.group("infantry2").readEntry("height",0));
   Sprites::SkinSpritesData::changeable().intData("infantry2-frames", config.group("infantry2").readEntry("frames",0));
   Sprites::SkinSpritesData::changeable().intData("infantry2-versions", config.group("infantry2").readEntry("versions",0));
 
-  Sprites::SkinSpritesData::changeable().strData("infantry3-id", config.group("infantry3").readEntry("id"));
+//   Sprites::SkinSpritesData::changeable().strData("infantry3-id", config.group("infantry3").readEntry("id"));
   Sprites::SkinSpritesData::changeable().intData("infantry3-width", config.group("infantry3").readEntry("width",0));
   Sprites::SkinSpritesData::changeable().intData("infantry3-height", config.group("infantry3").readEntry("height",0));
   Sprites::SkinSpritesData::changeable().intData("infantry3-frames", config.group("infantry3").readEntry("frames",0));
   Sprites::SkinSpritesData::changeable().intData("infantry3-versions", config.group("infantry3").readEntry("versions",0));
 
-  Sprites::SkinSpritesData::changeable().strData("cavalry-id", config.group("cavalry").readEntry("id"));
+//   Sprites::SkinSpritesData::changeable().strData("cavalry-id", config.group("cavalry").readEntry("id"));
   Sprites::SkinSpritesData::changeable().intData("cavalry-width", config.group("cavalry").readEntry("width",0));
   Sprites::SkinSpritesData::changeable().intData("cavalry-height", config.group("cavalry").readEntry("height",0));
   Sprites::SkinSpritesData::changeable().intData("cavalry-frames", config.group("cavalry").readEntry("frames",0));
   Sprites::SkinSpritesData::changeable().intData("cavalry-versions", config.group("cavalry").readEntry("versions",0));
 
-  Sprites::SkinSpritesData::changeable().strData("cannon-id", config.group("cannon").readEntry("id"));
+//   Sprites::SkinSpritesData::changeable().strData("cannon-id", config.group("cannon").readEntry("id"));
   Sprites::SkinSpritesData::changeable().intData("cannon-width", config.group("cannon").readEntry("width",0));
   Sprites::SkinSpritesData::changeable().intData("cannon-height", config.group("cannon").readEntry("height",0));
   Sprites::SkinSpritesData::changeable().intData("cannon-frames", config.group("cannon").readEntry("frames",0));
   Sprites::SkinSpritesData::changeable().intData("cannon-versions", config.group("cannon").readEntry("versions",0));
 
-  Sprites::SkinSpritesData::changeable().strData("firing-id", config.group("firing").readEntry("id"));
+//   Sprites::SkinSpritesData::changeable().strData("firing-id", config.group("firing").readEntry("id"));
   Sprites::SkinSpritesData::changeable().intData("firing-width", config.group("firing").readEntry("width",0));
   Sprites::SkinSpritesData::changeable().intData("firing-height", config.group("firing").readEntry("height",0));
   Sprites::SkinSpritesData::changeable().intData("firing-frames", config.group("firing").readEntry("frames",0));
   Sprites::SkinSpritesData::changeable().intData("firing-versions", config.group("firing").readEntry("versions",0));
 
-  Sprites::SkinSpritesData::changeable().strData("exploding-id", config.group("exploding").readEntry("id"));
+//   Sprites::SkinSpritesData::changeable().strData("exploding-id", config.group("exploding").readEntry("id"));
   Sprites::SkinSpritesData::changeable().intData("exploding-width", config.group("exploding").readEntry("width",0));
   Sprites::SkinSpritesData::changeable().intData("exploding-height", config.group("cannon").readEntry("height",0));
   Sprites::SkinSpritesData::changeable().intData("exploding-frames", config.group("exploding").readEntry("frames",0));
@@ -222,7 +222,7 @@ ONU::ONU(GameAutomaton* automaton,
   foreach (const QString &country, countriesList)
   { 
     KConfigGroup countryGroup = config.group(country);
-    unsigned int id = countryGroup.readEntry("id",0);
+//     unsigned int id = countryGroup.readEntry("id",0);
     QString name = country;
     QPointF anchorPoint = countryGroup.readEntry("anchor-point",QPoint())*m_zoom;
     QPointF centralPoint = countryGroup.readEntry("central-point",QPoint())*m_zoom;
@@ -237,8 +237,8 @@ ONU::ONU(GameAutomaton* automaton,
 //     kDebug() << "\tcannon point: " << cannonPoint;
 //     kDebug() << "\tcavalry point: " << cavalryPoint;
 //     kDebug() << "\tinfantry point: " << infantryPoint;
-    countries[id] = new Country(automaton, name, anchorPoint, centralPoint,
-        flagPoint, cannonPoint, cavalryPoint, infantryPoint, id);
+    countries.push_back(new Country(automaton, name, anchorPoint, centralPoint,
+        flagPoint, cannonPoint, cavalryPoint, infantryPoint));
   }
   QStringList nationalitiesList = onugroup.readEntry("nationalities", QStringList());
   foreach (const QString &nationality, nationalitiesList)
@@ -248,8 +248,8 @@ ONU::ONU(GameAutomaton* automaton,
     QString leader = nationalityGroup.readEntry("leader","");
     QString flag = nationalityGroup.readEntry("flag","");
 //         kDebug() << "Creating nationality " << name << " ; flag: " << flag;
-    nationalities[nationalityId] = new Nationality(nationality, flag, leader);
-    nationalityId++;
+    nationalities.push_back(new Nationality(nationality, flag, leader));
+//     nationalityId++;
   }
 
 
@@ -258,17 +258,18 @@ ONU::ONU(GameAutomaton* automaton,
   {
     KConfigGroup continentGroup = config.group(continent);
 
-    unsigned int id = continentGroup.readEntry("id",0);
+//     unsigned int id = continentGroup.readEntry("id",0);
     unsigned int bonus = continentGroup.readEntry("bonus",0);
-    QList<int> countryIdList = continentGroup.readEntry("continent-countries",QList<int>());
-    int countryId;
-    std::vector<Country*> continentList;
-    foreach(countryId, countryIdList)
+    QList<QString> countryIdList = continentGroup.readEntry("continent-countries",QList<QString>());
+//     int countryId;
+    QList<Country*> continentList;
+    foreach(const QString& countryId, countryIdList)
     {
-      continentList.push_back(countries[countryId]);
+      kDebug() << "Adding" << countryId << "to" << continent << "list";
+      continentList.push_back(countryNamed(countryId));
     }
 //       kDebug() << "Creating continent " << name;
-    m_continents[continentId++] = new Continent(continent, continentList, bonus,id);
+    m_continents.push_back(new Continent(continent, continentList, bonus));
   }
 
   QStringList goalsList = onugroup.readEntry("goals", QStringList());
@@ -291,11 +292,10 @@ ONU::ONU(GameAutomaton* automaton,
     else if (goalType == "continents" )
     {
       goal->type(Goal::Continents);
-      QList<int> continentsList = goalGroup.readEntry("continents",QList<int>());
-      int continentId;
-      foreach(continentId, continentsList)
+      QList<QString> continentsList = goalGroup.readEntry("continents",QList<QString>());
+      foreach(const QString& continentId, continentsList)
       {
-        goal->continents().insert(continentId);
+        goal->continents().push_back(continentId);
       }
     }
     else if (goalType == "player" )
@@ -304,47 +304,47 @@ ONU::ONU(GameAutomaton* automaton,
       unsigned int nb = goalGroup.readEntry("nbCountriesFallback",0);
       goal->nbCountries(nb);
     }
-    automaton->goals().insert(goal);
+    automaton->goals().push_back(goal);
   }
 
   foreach (const QString &country, countriesList)
   {
     kDebug() << "building neighbours list of " << country;
-    std::vector< Country* > theNeighbours;
+    QList< Country* > theNeighbours;
     KConfigGroup countryGroup = config.group(country);
-    QList<int> theNeighboursIds = countryGroup.readEntry("neighbours",QList<int>());
-    int neighbourId;
-    foreach(neighbourId, theNeighboursIds)
+    QList<QString> theNeighboursIds = countryGroup.readEntry("neighbours",QList<QString>());
+//     int neighbourId;
+    foreach(const QString& neighbourId, theNeighboursIds)
     {
 
-      theNeighbours.push_back(countries[neighbourId]);
+      theNeighbours.push_back(countryNamed(neighbourId));
     }
-    countries.at(countryGroup.readEntry("id",0))-> neighbours(theNeighbours);
+    countryNamed(country)-> neighbours(theNeighbours);
   }
   buildMap();
 
-   kDebug() << "OUT";
+  kDebug() << "OUT";
 }
 
 ONU::~ONU()
 {
   delete m_timerFast;
 
-  std::vector<Country*>::iterator countriesIt, countriesIt_end;
+  QList<Country*>::iterator countriesIt, countriesIt_end;
   countriesIt = countries.begin(); countriesIt_end = countries.end();
   for (; countriesIt != countriesIt_end; countriesIt++)
   {
     delete *countriesIt;
   }
 
-  std::vector<Nationality*>::iterator nationalitiesIt, nationalitiesIt_end;
+  QList<Nationality*>::iterator nationalitiesIt, nationalitiesIt_end;
   nationalitiesIt = nationalities.begin(); nationalitiesIt_end = nationalities.end();
   for (; nationalitiesIt != nationalitiesIt_end; nationalitiesIt++)
   {
     delete *nationalitiesIt;
   }
   
-  std::vector<Continent*>::iterator continentsIt, continentsIt_end;
+  QList<Continent*>::iterator continentsIt, continentsIt_end;
   continentsIt = m_continents.begin(); continentsIt_end = m_continents.end();
   for (; continentsIt != continentsIt_end; continentsIt++)
   {
@@ -374,30 +374,30 @@ Country* ONU::countryAt(const QPointF& point)
 void ONU::reset()
 {
   kDebug();
-  for (unsigned int i = 0; i < countries.size(); i++) 
+  foreach (Country* country, countries)
   {
-    countries.at(i)-> reset();
+    country-> reset();
   }
 }
 
 
-std::vector<Country*>& ONU::getCountries()
+QList<Country*>& ONU::getCountries()
 {
   return countries;
 }
 
-std::vector<Nationality*>& ONU::getNationalities()
+QList<Nationality*>& ONU::getNationalities()
 {
   return nationalities;
 }
 
-/** Read property of std::vector<Continent*> continents. */
-const std::vector<Continent*>& ONU::getContinents() const
+/** Read property of QList<Continent*> continents. */
+const QList<Continent*>& ONU::getContinents() const
 {
   return m_continents;
 }
 
-std::vector<Continent*>& ONU::getContinents()
+QList<Continent*>& ONU::getContinents()
 {
   return m_continents;
 }
@@ -406,32 +406,30 @@ std::vector<Continent*>& ONU::getContinents()
   * Returns the list of countries neighbours of this country that does not
   * belongs to the argument player.
   */
-std::vector<Country*> ONU::neighboursBelongingTo(const Country& country, const Player* player)
+QList<Country*> ONU::neighboursBelongingTo(const Country& country, const Player* player)
 {
-    std::vector<Country*> list;
-    for (unsigned int i = 0 ; i < country.neighbours().size(); i++)
-    {
-        Country *c = country.neighbours().at(i);
-        if ((country.communicateWith(c)) && (c-> owner() == player))
-            {list.push_back(c);}
-    }
-    return list;
+  QList<Country*> list;
+  foreach (Country *c,  country.neighbours())
+  {
+    if ((country.communicateWith(c)) && (c-> owner() == player))
+      {list.push_back(c);}
+  }
+  return list;
 }
 
 /**
   * Returns the list of countries neighbours of this country that does not
   * belongs to the argument player.
   */
-std::vector<Country*> ONU::neighboursNotBelongingTo(const Country& country, const Player* player)
+QList<Country*> ONU::neighboursNotBelongingTo(const Country& country, const Player* player)
 {
-    std::vector<Country*> list;
-    for (unsigned int i = 0 ; i < country.neighbours().size(); i++)
-    {
-        Country *c = country.neighbours().at(i); 
-        if ((country.communicateWith(c)) && (c-> owner() != player))
-            {list.push_back(c);}
-    }
-    return list;
+  QList<Country*> list;
+  foreach (Country *c,  country.neighbours())
+  {
+    if ((country.communicateWith(c)) && (c-> owner() != player))
+      {list.push_back(c);}
+  }
+  return list;
 }
 
 /**
@@ -443,9 +441,8 @@ Country* ONU::countryNamed(const QString& name)
   {
     return 0;
   }
-  for (unsigned int i = 0 ; i < countries.size(); i++)
+  foreach (Country *c, countries)
   {
-    Country *c = countries.at(i);
     if (c-> name() == name)
       return c;
   }
@@ -463,9 +460,8 @@ void ONU::saveXml(std::ostream& xmlStream)
   xmlStream << "<ONU file=\"" << m_configFileName.toUtf8().data() << "\" >" << std::endl;
 
   xmlStream << "<countries>" << std::endl;
-  for (unsigned int i = 0 ; i < countries.size(); i++)
+  foreach (Country *c, countries)
   {
-      Country *c = countries.at(i);
       c->saveXml(xmlStream);
   }
   xmlStream << "</countries>" << std::endl;
@@ -502,9 +498,8 @@ unsigned int ONU::height() const
 /** Returns the nation named "name" ; 0 in case there is no such nation */
 Nationality* ONU::nationNamed(const QString& name)
 {
-  for (unsigned int i = 0 ; i < nationalities.size(); i++)
+  foreach (Nationality *n, nationalities)
   {
-    Nationality *n = nationalities.at(i);
     if (n->name() == name)
     {
       return n;
@@ -516,14 +511,14 @@ Nationality* ONU::nationNamed(const QString& name)
 void ONU::sendCountries(QDataStream& stream)
 {
   stream << quint32(countries.size());
-  for (unsigned int i = 0; i < countries.size(); i++)
+  foreach (Country* country, countries)
   {
-    kDebug() << "Sending country number " << i+1 << " on " << countries.size();
-    countries[i]->send(stream);
+    kDebug() << "Sending country " << country->name();
+    country->send(stream);
   }
 }
 
-const Continent* ONU::continentWithId(const unsigned int id) const
+/*const Continent* ONU::continentWithId(const unsigned int id) const
 {
   for (unsigned int i = 0; i < m_continents.size(); i++)
   {
@@ -534,12 +529,11 @@ const Continent* ONU::continentWithId(const unsigned int id) const
   }
   return 0;
 }
-
+*/
 Continent* ONU::continentNamed(const QString& name)
 {
-  for (unsigned int i = 0 ; i < m_continents.size(); i++)
+  foreach (Continent *c, m_continents)
   {
-    Continent *c = m_continents.at(i);
     if (c-> name() == name)
       return c;
   }
@@ -565,9 +559,8 @@ void ONU::buildMap()
 
   painter.drawPixmap(0,0,mapPixmap);
   
-  for (uint i = 0; i < countries.size(); i++)
+  foreach (Country* country, countries)
   {
-    Country* country = countries[i];
     const QString& countryName = i18n(country->name().toUtf8().data());
     if (m_font.backgroundColor != "none")
     {
@@ -605,11 +598,8 @@ void ONU::applyZoomFactor(qreal zoomFactor)
 
   buildMap();
 
-  std::vector<Country*>::iterator it, it_end;
-  it = countries.begin(); it_end = countries.end();
-  for ( ; it != it_end; it++ )
+  foreach (Country* country, countries)
   {
-    Country* country = *it;
     country->createArmiesSprites();
   }
  

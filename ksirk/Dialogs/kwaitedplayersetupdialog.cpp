@@ -79,7 +79,7 @@ void KWaitedPlayerSetupDialog::fillWaitedPlayersCombo()
 {
   kDebug() << "Filling nations combo" << endl;
 
-  std::vector<PlayerMatrix>::iterator it, it_end;
+  QList<PlayerMatrix>::iterator it, it_end;
   it = m_automaton->game()->waitedPlayers().begin();
   it_end = m_automaton->game()->waitedPlayers().end();
   for (; it != it_end; it++)

@@ -247,7 +247,7 @@ bool AIColsonPlayer::isContinentOfMission(const Player* player, const Continent*
 {
   if (player->goal().type() != Goal::Continents)
       return false;
-  return (player->goal().continents().find(continent->id()) != player->goal().continents().end());
+  return (player->goal().continents().contains(continent->name()));
 }
 
 bool AIColsonPlayer::isEnemyPlayer(const Player* player)
@@ -330,8 +330,8 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
   std::map< const KPlayer*, std::map <const Continent*, bool > > posContinent;
   std::map<const KPlayer*, const Continent*> m_piContinent;
 
-  std::vector<Continent*>::iterator continentsIt = (m_world->getContinents().begin());
-  std::vector<Continent*>::iterator continentsIt_end = (m_world->getContinents().end());
+  QList<Continent*>::iterator continentsIt = (m_world->getContinents().begin());
+  QList<Continent*>::iterator continentsIt_end = (m_world->getContinents().end());
 
   PlayersArray::iterator it = m_game->playerList()->begin();
   PlayersArray::iterator it_end = m_game->playerList()->end();
@@ -354,8 +354,8 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
 
   for (unsigned int i=0; i<m_world->getCountries().size(); i++)
   {
-/*  std::vector<Country*>::iterator countriesIt(m_world->getCountries().begin());
-  std::vector<Country*>::iterator countriesIt_end(m_world->getCountries().end());
+/*  QList<Country*>::iterator countriesIt(m_world->getCountries().begin());
+  QList<Country*>::iterator countriesIt_end(m_world->getCountries().end());
   for (; countriesIt != countriesIt_end; countriesIt++)
   {*/
     Country* country = m_world->getCountries().at(i);
@@ -407,8 +407,8 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
         }
         else if (piCount[*it][continent] > max)
         {
-          std::vector<Continent*>::iterator jit(m_world->getContinents().begin());
-          std::vector<Continent*>::iterator jit_end(m_world->getContinents().end());
+          QList<Continent*>::iterator jit(m_world->getContinents().begin());
+          QList<Continent*>::iterator jit_end(m_world->getContinents().end());
           for (; jit!=jit_end; jit++)
           {
             Continent* j = *jit;
@@ -448,8 +448,8 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
 
   /* Search a continent with no conflict */
   const Continent* continent = 0;
-  std::vector<Continent*>::iterator contIt(m_world->getContinents().begin());
-  std::vector<Continent*>::iterator contIt_end(m_world->getContinents().end());
+  QList<Continent*>::iterator contIt(m_world->getContinents().begin());
+  QList<Continent*>::iterator contIt_end(m_world->getContinents().end());
   for (;(contIt!=contIt_end) && (continent==0);contIt++)
   {
     const Continent* cont = *contIt;
@@ -477,8 +477,8 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
 
   if (isFriendPlayer(this) && (continent!=0))
   {
-    std::vector<Continent*>::iterator contIt(m_world->getContinents().begin());
-    std::vector<Continent*>::iterator contIt_end(m_world->getContinents().end());
+    QList<Continent*>::iterator contIt(m_world->getContinents().begin());
+    QList<Continent*>::iterator contIt_end(m_world->getContinents().end());
 #ifdef __GNUC__
 #warning continent can not be 0 in this code path - everything in this for loop is dead code
 #endif
@@ -530,8 +530,8 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
 
   if (continent!=0)
   {
-    std::vector<Continent*>::iterator contIt(m_world->getContinents().begin());
-    std::vector<Continent*>::iterator contIt_end(m_world->getContinents().end());
+    QList<Continent*>::iterator contIt(m_world->getContinents().begin());
+    QList<Continent*>::iterator contIt_end(m_world->getContinents().end());
     for (;contIt!=contIt_end;contIt++)
     {
       const Continent* cont = *contIt;
@@ -583,8 +583,8 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
 
   if (continent!=0)
   {
-    std::vector<Continent*>::iterator contIt(m_world->getContinents().begin());
-    std::vector<Continent*>::iterator contIt_end(m_world->getContinents().end());
+    QList<Continent*>::iterator contIt(m_world->getContinents().begin());
+    QList<Continent*>::iterator contIt_end(m_world->getContinents().end());
     for (;contIt!=contIt_end;contIt++)
     {
       const Continent* cont = *contIt;
@@ -635,8 +635,8 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
 
   if (continent!=0)
   {
-    std::vector<Continent*>::iterator contIt(m_world->getContinents().begin());
-    std::vector<Continent*>::iterator contIt_end(m_world->getContinents().end());
+    QList<Continent*>::iterator contIt(m_world->getContinents().begin());
+    QList<Continent*>::iterator contIt_end(m_world->getContinents().end());
     for (;contIt!=contIt_end;contIt++)
     {
       const Continent* cont = *contIt;
@@ -673,8 +673,8 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
 
   if (continent!=0)
   {
-    std::vector<Continent*>::iterator contIt(m_world->getContinents().begin());
-    std::vector<Continent*>::iterator contIt_end(m_world->getContinents().end());
+    QList<Continent*>::iterator contIt(m_world->getContinents().begin());
+    QList<Continent*>::iterator contIt_end(m_world->getContinents().end());
     for (;contIt!=contIt_end;contIt++)
     {
       const Continent* cont = *contIt;
@@ -740,8 +740,8 @@ const Continent* AIColsonPlayer::getContinentToConquier(int *attack)
   std::map<const Continent*, int> piAttac;
 
   /* Init. */
-  std::vector<Continent*>::iterator contIt(m_world->getContinents().begin());
-  std::vector<Continent*>::iterator contIt_end(m_world->getContinents().end());
+  QList<Continent*>::iterator contIt(m_world->getContinents().begin());
+  QList<Continent*>::iterator contIt_end(m_world->getContinents().end());
   for (;contIt!=contIt_end;contIt++)
   {
     const Continent* cont = *contIt;
@@ -751,8 +751,8 @@ const Continent* AIColsonPlayer::getContinentToConquier(int *attack)
   }
 
   /* Count up how many countries the player has in each of the continents */
-  std::vector<Country*>::iterator countriesIt(m_world->getCountries().begin());
-  std::vector<Country*>::iterator countriesIt_end(m_world->getCountries().end());
+  QList<Country*>::iterator countriesIt(m_world->getCountries().begin());
+  QList<Country*>::iterator countriesIt_end(m_world->getCountries().end());
   for (; countriesIt != countriesIt_end; countriesIt++)
   {
     Country* country = *countriesIt;
@@ -820,7 +820,7 @@ int AIColsonPlayer::NbEnemyAdjacent(Country* iCountry)
   }
   Player* iEnemy = 0;
   Country* destCountry;
-  std::vector< Country* >::const_iterator it, it_end;
+  QList<Country*>::const_iterator it, it_end;
   it = iCountry->neighbours().begin();
   it_end = iCountry->neighbours().end();
   for (;it != it_end; it++)
@@ -859,7 +859,7 @@ int AIColsonPlayer::NbToAverageEnemyAdjacent(Country* iCountry)
   int nbe = 0;
   int nb = 0;
   int i = 0;
-  std::vector< Country* >::const_iterator neighbourIt, neighbourIt_end;
+  QList<Country*>::const_iterator neighbourIt, neighbourIt_end;
   neighbourIt = iCountry->neighbours().begin();
   neighbourIt_end = iCountry->neighbours().end();
   for (;neighbourIt != neighbourIt_end; neighbourIt++)
@@ -885,7 +885,7 @@ int AIColsonPlayer::NbToAverageEnemyAdjacent(Country* iCountry)
 int AIColsonPlayer::NbToEqualEnemyAdjacent(Country* iCountry)
 {
   int nbe = 0;
-  std::vector< Country* >::const_iterator neighbourIt, neighbourIt_end;
+  QList<Country*>::const_iterator neighbourIt, neighbourIt_end;
   neighbourIt = iCountry->neighbours().begin();
   neighbourIt_end = iCountry->neighbours().end();
   for (;neighbourIt != neighbourIt_end; neighbourIt++)
@@ -2077,8 +2077,8 @@ int AIColsonPlayer::AI_Move(int iSrcCountry, int iDstCountry, int iNumArmies)
   stream2 << QString("actionLButtonUp") << m_dest->centralPoint();
   aiPlayerIO()->sendInput(stream2,true);
 
-  Attack_SrcCountry = m_src->id();
-  Attack_DestCountry = m_dest->id();
+  Attack_SrcCountry = m_game->game()->theWorld()->getCountries().indexOf(const_cast<Country*>(m_src));
+  Attack_DestCountry = m_game->game()->theWorld()->getCountries().indexOf(const_cast<Country*>(m_dest));
 
   stop();
   return 0;

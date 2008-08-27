@@ -41,7 +41,7 @@ namespace SaveLoad
 
 bool GameXmlHandler::startDocument()
 { 
-//   kDebug() << "startDocument" << endl;
+  kDebug() << "startDocument" << endl;
   return true;
 }
 
@@ -49,7 +49,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
 {
   Q_UNUSED(namespaceURI);
   Q_UNUSED(qName);
-//   kDebug() << "startElement " << localName << " / " << qName << endl;
+  kDebug() << "startElement " << localName << " / " << qName << endl;
   if (localName == "ksirkSavedGame")
   {
     QString fv =atts.value("formatVersion");
@@ -65,7 +65,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
   }
   else if (localName == "game")
   {
-//     kDebug() << "GameXmlHandler stored game state is: " << atts.value("state") << endl;
+    kDebug() << "GameXmlHandler stored game state is: " << atts.value("state") << endl;
     
     std::istringstream issSkin(atts.value("skin").toUtf8().data());
     std::string skin;
@@ -128,6 +128,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
     }
     else
     {
+      kDebug() << "Player" << name << "stored in matrix";
       PlayerMatrix pm(m_game.automaton());
       pm.name = name;
       pm.nbAttack = nbAttack;
@@ -137,13 +138,11 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
       pm.nation = nationName;
       pm.password = password;
       pm.isAI = isAi;
-      std::map<QString,QString>::iterator it, it_end;
-      it = m_ownersMap.begin(); it_end = m_ownersMap.end();
-      for (; it != it_end; it++)
+      foreach (const QString& k, m_ownersMap.keys())
       {
-        if ( (*it).second == name )
+        if ( m_ownersMap[k] == name )
         {
-          pm.countries.insert((*it).first);
+          pm.countries.push_back(k);
         }
       }
       m_waitedPlayers.push_back(pm);
@@ -190,8 +189,9 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
     std::istringstream issNbAddedArmies(atts.value("nbArmiesAdded").toUtf8().data());
     issNbArmies >> gotNbAddedArmies;
     country->nbAddedArmies(gotNbAddedArmies);
-    
-    m_ownersMap[atts.value("name")] = atts.value("owner");
+
+    kDebug() << "Storing" << atts.value("owner") << "as owner of" << atts.value("name");
+    m_ownersMap.insert(atts.value("name"), atts.value("owner"));
   }
   else if (localName == "goal")
   {
@@ -224,10 +224,10 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
   else if (localName == "continent" && m_inGoal)
   {
 //     kDebug() << "Getting id of continent named " << atts.value("name") << endl;
-    unsigned int id = (!atts.value("name").isEmpty()) ? 
-        m_game.theWorld()->continentNamed(atts.value("name"))->id() :
-        0;
-    m_goal->continents().insert(id);
+    QString id;
+    if (!atts.value("name").isEmpty())
+        id = atts.value("name");
+    m_goal->continents().push_back(id);
   }
   return true;
 }
@@ -239,12 +239,11 @@ bool GameXmlHandler::endElement(const QString& namespaceURI, const QString& loca
 //   kDebug() << "endElement " << localName << " / " << qName << endl;
   if (localName == "game")
   {
-    std::map<QString, QString>::const_iterator it, it_end;
-    it = m_ownersMap.begin(); it_end = m_ownersMap.end();
-    for (; it != it_end; it++)
+    foreach (const QString& k, m_ownersMap.keys())
     {
-      Country* country = m_game.theWorld()->countryNamed((*it).first);
-      Player* owner = m_game.automaton()->playerNamed((*it).second);
+//       kDebug() << "Setting owner of " << k << " to " << m_ownersMap[k] << endl;
+      Country* country = m_game.theWorld()->countryNamed(k);
+      Player* owner = m_game.automaton()->playerNamed(m_ownersMap[k]);
       if (owner)
       {
 //         kDebug() << "Setting owner of " << country->name() << " to " << owner->name() << endl;
@@ -252,13 +251,14 @@ bool GameXmlHandler::endElement(const QString& namespaceURI, const QString& loca
       }
       else
       {
-        std::vector<GameLogic::PlayerMatrix>::iterator itw,itw_end;
+//         kDebug() << "Player" << m_ownersMap[k] << "not found";
+        QList<GameLogic::PlayerMatrix>::iterator itw,itw_end;
         itw = m_waitedPlayers.begin(); itw_end = m_waitedPlayers.end();
         for (; itw != itw_end; itw++)
         {
-          if ( (*itw).name == (*it).second )
+          if ( (*itw).name == m_ownersMap[k] )
           {
-            (*itw).countries.insert((*it).first);
+            (*itw).countries.push_back(k);
             break;
           }
         }
@@ -266,12 +266,12 @@ bool GameXmlHandler::endElement(const QString& namespaceURI, const QString& loca
     }
     if (!m_waitedPlayers.empty())
     {
-      kDebug() << "There is waited players: does not change state nor run game..." << endl;
+//       kDebug() << "There is waited players: does not change state nor run game..." << endl;
       m_waitedPlayers[0].state = m_savedState;
     }
     else
     {
-      kDebug() << "GameXmlHandler set game state to: " << m_savedState << endl;
+//       kDebug() << "GameXmlHandler set game state to: " << m_savedState << endl;
       m_game.automaton()->state(m_savedState);
     }
   }
@@ -286,7 +286,7 @@ bool GameXmlHandler::endElement(const QString& namespaceURI, const QString& loca
       }
       else
       {
-        std::vector<GameLogic::PlayerMatrix>::iterator itw,itw_end;
+        QList<GameLogic::PlayerMatrix>::iterator itw,itw_end;
         itw = m_waitedPlayers.begin(); itw_end = m_waitedPlayers.end();
         for (; itw != itw_end; itw++)
         {

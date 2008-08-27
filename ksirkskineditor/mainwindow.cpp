@@ -332,11 +332,11 @@ void MainWindow::initActions()
 //   action = KStandardGameAction::gameNew(this, SLOT(slotNewGame()), this);
 //   actionCollection()->addAction(action->objectName(), action);
 
-  action = KStandardAction::zoomIn(this, SLOT(slotZoomIn()), this);
-  actionCollection()->addAction(action->objectName(), action);
+//   action = KStandardAction::zoomIn(this, SLOT(slotZoomIn()), this);
+//   actionCollection()->addAction(action->objectName(), action);
 
-  action = KStandardAction::zoomOut(this, SLOT(slotZoomOut()), this);
-  actionCollection()->addAction(action->objectName(), action);
+//   action = KStandardAction::zoomOut(this, SLOT(slotZoomOut()), this);
+//   actionCollection()->addAction(action->objectName(), action);
 
   KStandardAction::preferences( this, SLOT( optionsConfigure() ), actionCollection() );
 
@@ -472,6 +472,7 @@ void MainWindow::slotOpenSkin(const QString& dir)
   kDebug() << "Adding continents items";
   foreach (Continent* continent, m_onu->continents())
   {
+    kDebug() << "Adding "<<continent<<" items";
     kDebug() << "Adding "<<continent->name()<<" items";
     m_skinDefWidget->continentslist->addItem(continent->name());
   }
@@ -515,15 +516,15 @@ void MainWindow::optionsConfigure()
   dialog->show();
 }
 
-void MainWindow::slotZoomIn()
-{
-  kDebug();
-}
+// void MainWindow::slotZoomIn()
+// {
+//   kDebug();
+// }
 
-void MainWindow::slotZoomOut()
-{
-  kDebug();
-}
+// void MainWindow::slotZoomOut()
+// {
+//   kDebug();
+// }
 
 void MainWindow::slotShowAboutApplication()
 {

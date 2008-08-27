@@ -102,9 +102,9 @@ bool Goal::checkCountriesFor(const GameLogic::Player* player) const
   if (player->getNbCountries() >= m_nbCountries)
   {
     uint nbCountriesOk = 0;
-    for (unsigned int i = 0; i < player->countries().size(); i++)
+    foreach (Country* country, player->countries())
     {
-      if ((player->countries().at(i))->nbArmies() >= m_nbArmiesByCountry)
+      if (country->nbArmies() >= m_nbArmiesByCountry)
       {
         nbCountriesOk++;
       }
@@ -120,25 +120,23 @@ bool Goal::checkCountriesFor(const GameLogic::Player* player) const
 bool Goal::checkContinentsFor(const GameLogic::Player* player) const
 {
   kDebug() << "Goal::checkContinentsFor " << player->name() << endl;
-  std::set<unsigned int>::const_iterator it, it_end;
-  it = m_continents.begin(); it_end = m_continents.end();
-  for (; it != it_end; it++)
+  foreach (const QString& continent, m_continents)
   {
-    kDebug() << "Should be owned continent id: " << *it<< endl;
-    if ( m_automaton->game()->theWorld()->continentWithId(*it) == 0
-       || m_automaton->game()->theWorld()->continentWithId(*it)->owner() != player)
+    kDebug() << "Should be owned continent id: " << continent<< endl;
+    if ( m_automaton->game()->theWorld()->continentNamed(continent) == 0
+       || m_automaton->game()->theWorld()->continentNamed(continent)->owner() != player)
     {
       return false;
     }
   }
-  bool otherFound = ( m_continents.find(0) == m_continents.end() );
+  bool otherFound = ( m_continents.contains(QString()) );
   if (!otherFound)
   {
-    std::vector<Continent*> continents = m_automaton->game()->theWorld()->getContinents();
-    for ( unsigned int j = 0; j < continents.size(); j++)
+    QList<Continent*>& continents = m_automaton->game()->theWorld()->getContinents();
+    foreach (Continent* continent, continents)
     {
-      if ( ( m_continents.find((continents.at(j))->id()) == m_continents.end() )
-           && ( continents.at(j)->owner() == player) )
+      if ( ( !m_continents.contains(continent->name()) )
+           && ( continent->owner() == player) )
       {
         otherFound = true;
         break;
@@ -153,7 +151,7 @@ QString Goal::message(int displayType) const
   kDebug();
   KLocalizedString res;
 
-  std::set<unsigned int>::const_iterator it, it_end, it_next;
+  QList<QString>::const_iterator it, it_end, it_next;
   
   if(type()==NoGoal) {
     QString mes = (QString)"You must conquer the World !";
@@ -174,7 +172,7 @@ QString Goal::message(int displayType) const
       }
       kDebug() << "Goal type='" << m_type << "' mes = '" << res.toString() << "'" << endl;
     
-      std::set<unsigned int>::const_iterator it, it_end;
+      QList<unsigned int>::const_iterator it, it_end;
       switch (m_type)
       {
       case Goal::GoalPlayer :
@@ -208,13 +206,12 @@ QString Goal::message(int displayType) const
         }
         break;
       case Goal::Continents:
-        it = m_continents.begin(); it_end = m_continents.end();
-        for (; it != it_end; it++)
+        foreach (const QString& continent, m_continents)
         {
-          if (*it != 0)
+          if (continent != QString())
           {
-            kDebug() << "  arg = '" << m_automaton->game()->theWorld()->continentWithId(*it)->name() << "'" << endl;
-            res=res.subs(i18n(m_automaton->game()->theWorld()->continentWithId(*it)->name().toUtf8().data()));
+            kDebug() << "  arg = '" << continent << "'" << endl;
+            res=res.subs(i18n(continent.toUtf8().data()));
           }
         }
         break;
@@ -264,7 +261,7 @@ QString Goal::message(int displayType) const
       it = m_continents.begin(); it_end = m_continents.end();
       if (*it != 0)
       {
-        Continent* continent = const_cast<Continent*>(m_automaton->game()->theWorld()->continentWithId(*it));
+        Continent* continent = const_cast<Continent*>(m_automaton->game()->theWorld()->continentNamed(*it));
         int nb = continent->getMembers().size() - continent->countriesOwnedBy(m_player).size();
         mes += i18n("%1 countries in %2",nb,continent->name());
       }
@@ -284,7 +281,7 @@ QString Goal::message(int displayType) const
         }
         if (*it != 0)
         {
-          Continent* continent = const_cast<Continent*>(m_automaton->game()->theWorld()->continentWithId(*it));
+          Continent* continent = const_cast<Continent*>(m_automaton->game()->theWorld()->continentNamed(*it));
           int nb = continent->getMembers().size() - continent->countriesOwnedBy(m_player).size();
           mes += joint + i18nc("@info An element of the enumeration of the number of countries in the given continent", "%1 in %2",nb,continent->name());
         }
@@ -328,7 +325,7 @@ QDataStream& operator<<(QDataStream& stream, const Goal& goal)
   kDebug() << "Goal operator<< : description " << goal.description() << endl;
   stream << goal.description();
   QList<QString>::ConstIterator it, it_end;
-  std::set<unsigned int>::const_iterator itc, itc_end;
+  QList<QString>::ConstIterator itc, itc_end;
   switch (goal.type())
   {
   case Goal::GoalPlayer :
@@ -352,11 +349,11 @@ QDataStream& operator<<(QDataStream& stream, const Goal& goal)
   case Goal::Continents:
     kDebug() << "Goal operator<< : continents " << goal.continents().size() << endl;
     stream << quint32(goal.continents().size());
-    itc = goal.continents().begin(); itc_end = goal.continents().end();
+    itc = goal.continents().constBegin(); itc_end = goal.continents().constEnd();
     for (; itc != itc_end; itc++)
     {
       kDebug() << "Goal operator<< : continent " << (*itc) << endl;
-      stream << quint32(*itc);
+      stream << (*itc);
     }
     break;
   default: break;
@@ -371,7 +368,8 @@ QDataStream& operator>>(QDataStream& stream, Goal& goal)
   QString description;
   QString playerName;
   quint32 nb, nbp;
-  quint32 id, ownerId;
+  QString id;
+  quint32 ownerId;
   stream >> type;
   kDebug() << "Goal operator>> type: " << type << endl;
   stream >> ownerId;
@@ -413,7 +411,7 @@ QDataStream& operator>>(QDataStream& stream, Goal& goal)
     {
       stream >> id;
       kDebug() << "Goal operator>> continent: " << id << endl;
-      goal.continents().insert(id);
+      goal.continents().push_back(id);
     }
     break;
   default:;
@@ -432,11 +430,11 @@ void Goal::saveXml(std::ostream& xmlStream) const
   xmlStream << "\" type=\"" << m_type << "\" description=\"" << m_description.toUtf8().data();
   xmlStream << "\" nbCountries=\"" << m_nbCountries << "\" nbArmiesByCountry=\"" << m_nbArmiesByCountry << "\">\n";
   xmlStream << "<continents>\n";
-  std::set< unsigned int >::const_iterator itc, itc_end;
-  itc = continents().begin(); itc_end = continents().end();
+  QList<QString>::ConstIterator itc, itc_end;
+  itc = continents().constBegin(); itc_end = continents().constEnd();
   for (; itc != itc_end; itc++)
   {
-    QString name = (*itc==0)?"":m_automaton->game()->theWorld()->continentWithId(*itc)->name();
+    QString name = (*itc==QString())?"":(*itc);
     xmlStream << "<continent name=\"" << name.toUtf8().data() << "\"/>\n";
   }
   xmlStream << "</continents>\n";
