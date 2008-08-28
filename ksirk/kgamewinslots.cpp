@@ -22,6 +22,7 @@ ranklin Street, Fifth Floor, Boston, MA
 #include "kgamewin.h"
 #include "ksirksettings.h"
 #include "Sprites/backgnd.h"
+#include "Sprites/arrowsprite.h"
 
 #include <kaboutapplicationdialog.h>
 #include <ktoolbar.h>
@@ -67,7 +68,7 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
 
   mousePosGlobal = event->globalPos();
   mousePos = m_frame->mapFromGlobal(mousePosGlobal);
-  mousePosition = m_frame-> mapToScene(mousePos); 
+  mousePosition = m_frame->mapToScene(mousePos);
   mouseLocalisation = clickIn(mousePosition);
   countryName = (mouseLocalisation) ? mouseLocalisation->name() : "";
   if (mouseLocalisation)
@@ -108,7 +109,7 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
   if ( (!m_timer.isActive())
     && ( ((mousePos.x() < borderScrollSize) && (mousePos.x() >= 0)
           && (mousePos.y() >= 0) && (mousePos.y() <= m_frame-> viewport()->height()))
-        || ((mousePos.x() > m_frame-> viewport()->width() -borderScrollSize) &&
+        || ((mousePos.x() > m_frame->viewport()->width() -borderScrollSize) &&
           (mousePos.x() <= m_frame-> viewport()->width())
           && (mousePos.y() >= 0) && (mousePos.y() <= m_frame-> viewport()->height()))
         || ((mousePos.y() < borderScrollSize) && (mousePos.y() >= 0)
@@ -120,6 +121,65 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
   )
   {
     m_timer.start(200);
+    if ((mousePos.y() < borderScrollSize) && (mousePos.y() >= 0)
+      && (mousePos.x() >= 0) && (mousePos.x() <= m_frame-> viewport()->width()))
+    {
+      QPointF pos = currentWidget()->mapToScene(QPoint(m_frame->viewport()->width()/2,0));
+      pos = pos + QPointF(-(m_uparrow->boundingRect().width()/2),m_uparrow->boundingRect().height());
+      m_uparrow->setPos(pos);
+      m_uparrow->setActive(true);
+    }
+    if ((mousePos.y() >  m_frame->viewport()->height() -borderScrollSize) &&
+      (mousePos.y() <=  m_frame->viewport()->height())
+      && (mousePos.x() >= 0) && (mousePos.x() <= m_frame-> viewport()->width()))
+    {
+      QPointF pos = currentWidget()->mapToScene(QPoint(m_frame->viewport()->width()/2,m_frame->viewport()->height()));
+      pos = pos - QPointF(m_downarrow->boundingRect().width()/2,m_downarrow->boundingRect().height());
+      m_downarrow->setPos(pos);
+      m_downarrow->setActive(true);
+    }
+    if ((mousePos.x() < borderScrollSize) && (mousePos.x() >= 0)
+      && (mousePos.y() >= 0) && (mousePos.y() <= m_frame-> viewport()->height()))
+    {
+      QPointF pos = currentWidget()->mapToScene(QPoint(0,m_frame->viewport()->height()/2));
+      pos = pos + QPointF(m_leftarrow->boundingRect().width(),-(m_leftarrow->boundingRect().height()/2));
+      m_leftarrow->setPos(pos);
+      m_leftarrow->setActive(true);
+    }
+    if ((mousePos.x() > m_frame->viewport()->width() -borderScrollSize) &&
+      (mousePos.x() <= m_frame-> viewport()->width())
+      && (mousePos.y() >= 0) && (mousePos.y() <= m_frame-> viewport()->height()))
+    {
+      QPointF pos = currentWidget()->mapToScene(QPoint(m_frame->viewport()->width(),m_frame->viewport()->height()/2));
+      pos = pos - QPointF(m_rightarrow->boundingRect().width(),m_rightarrow->boundingRect().height()/2);
+      m_rightarrow->setPos(pos);
+      m_rightarrow->setActive(true);
+      m_rightarrow->update();
+    }
+  }
+  if (m_frame->horizontalScrollBar()->value() == m_frame->horizontalScrollBar()->maximum())
+  {
+    m_rightarrow->hide();
+  }
+  else
+  {
+    m_rightarrow->show();
+  }
+  if (m_frame->verticalScrollBar()->value() == m_frame->verticalScrollBar()->maximum())
+  {
+    m_downarrow->hide();
+  }
+  else
+  {
+    m_downarrow->show();
+  }
+  if (m_frame->verticalScrollBar()->value() == m_frame->verticalScrollBar()->minimum())
+  {
+    m_uparrow->hide();
+  }
+  else
+  {
+    m_uparrow->show();
   }
 }
 
@@ -141,25 +201,60 @@ void KGameWindow::evenementTimer()
       && (mousePosition.y() >= 0) && (mousePosition.y() <= m_frame-> viewport()->height()))
   {
 //     kDebug() << "scrollRight";
-    m_frame-> horizontalScrollBar()->setValue ( m_frame-> horizontalScrollBar()->value() - borderScrollSpeed);
+    m_frame->horizontalScrollBar()->setValue(m_frame->horizontalScrollBar()->value() - borderScrollSpeed);
+    if (m_frame->horizontalScrollBar()->value() == m_frame->horizontalScrollBar()->minimum())
+    {
+      m_leftarrow->hide();
+    }
+    else
+    {
+      m_leftarrow->show();
+    }
+    m_leftarrow->setActive(true);
     restart = true;
   }
-
+  else
+  {
+    m_leftarrow->setActive(false);
+  }
+  QPointF pos = currentWidget()->mapToScene(QPoint(0,m_frame->viewport()->height()/2));
+  pos = pos + QPointF(m_leftarrow->boundingRect().width(),-(m_leftarrow->boundingRect().height()/2));
+  m_leftarrow->setPos(pos);
+  
   if ((mousePosition.x() > m_frame-> viewport()->width() -borderScrollSize) &&
       (mousePosition.x() <= m_frame-> viewport()->width())
       && (mousePosition.y() >= 0) && (mousePosition.y() <= m_frame-> viewport()->height()))
   {
 //     kDebug() << "scrollLeft";
     m_frame-> horizontalScrollBar()->setValue ( m_frame-> horizontalScrollBar()->value() + borderScrollSpeed);
-    restart = true;
+    m_rightarrow->setActive(true);
+    m_rightarrow->update();
+   restart = true;
   }
+  else
+  {
+    m_rightarrow->setActive(false);
+  }
+  pos = currentWidget()->mapToScene(QPoint(m_frame->viewport()->width(),m_frame->viewport()->height()/2));
+  pos = pos - QPointF(m_rightarrow->boundingRect().width(),m_rightarrow->boundingRect().height()/2);
+  m_rightarrow->setPos(pos);
+  
   if ((mousePosition.y() < borderScrollSize) && (mousePosition.y() >= 0)
       && (mousePosition.x() >= 0) && (mousePosition.x() <= m_frame-> viewport()->width()))
   {
 //     kDebug() << "scrollDown";
     m_frame-> verticalScrollBar()->setValue ( m_frame-> verticalScrollBar()->value() - borderScrollSpeed);
+    m_uparrow->setActive(true);
     restart = true;
   }
+  else
+  {
+    m_uparrow->setActive(false);
+  }
+  pos = currentWidget()->mapToScene(QPoint(m_frame->viewport()->width()/2,0));
+  pos = pos + QPointF(-(m_uparrow->boundingRect().width()/2),m_uparrow->boundingRect().height());
+  m_uparrow->setPos(pos);
+  
   if ((mousePosition.y() >  m_frame-> viewport()->height() -borderScrollSize) &&
       (mousePosition.y() <=  m_frame-> viewport()->height())
       && (mousePosition.x() >= 0) && (mousePosition.x() <= m_frame-> viewport()->width()))
@@ -168,9 +263,17 @@ void KGameWindow::evenementTimer()
 //       << "("<< m_frame-> verticalScrollBar()->minimum()
 //       << ", " << m_frame-> verticalScrollBar()->maximum() << ")";
     m_frame-> verticalScrollBar()->setValue ( m_frame-> verticalScrollBar()->value() + borderScrollSpeed);
+    m_downarrow->setActive(true);
     restart = true;
   }
-
+  else
+  {
+    m_downarrow->setActive(false);
+  }
+  pos = currentWidget()->mapToScene(QPoint(m_frame->viewport()->width()/2,m_frame->viewport()->height()));
+  pos = pos - QPointF(m_downarrow->boundingRect().width()/2,m_downarrow->boundingRect().height());
+  m_downarrow->setPos(pos);
+  
   if ( m_animFighters->isEmpty() )
   {
     if ( m_secondCountry && !( m_secondCountry-> owner() ) )
@@ -183,8 +286,40 @@ void KGameWindow::evenementTimer()
     }*/
   }
 
-
-//    kDebug() << "OUT KGameWindow::evenementTimer";
+  if (m_frame->horizontalScrollBar()->value() == m_frame->horizontalScrollBar()->minimum())
+  {
+    m_leftarrow->hide();
+  }
+  else
+  {
+    m_leftarrow->show();
+  }
+  if (m_frame->horizontalScrollBar()->value() == m_frame->horizontalScrollBar()->maximum())
+  {
+    m_rightarrow->hide();
+  }
+  else
+  {
+    m_rightarrow->show();
+  }
+  if (m_frame->verticalScrollBar()->value() == m_frame->verticalScrollBar()->maximum())
+  {
+    m_downarrow->hide();
+  }
+  else
+  {
+    m_downarrow->show();
+  }
+  if (m_frame->verticalScrollBar()->value() == m_frame->verticalScrollBar()->minimum())
+  {
+    m_uparrow->hide();
+  }
+  else
+  {
+    m_uparrow->show();
+  }
+  
+  //    kDebug() << "OUT KGameWindow::evenementTimer";
   if (restart)
   {
 //     kDebug() << "restarting timer";

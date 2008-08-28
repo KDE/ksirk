@@ -44,6 +44,8 @@ public:
 
   /** The default destructor */
   virtual ~ArrowSprite();
+
+  void setActive(bool value);
 };
 
 } // closing namespace Sprites

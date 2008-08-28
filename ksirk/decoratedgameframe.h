@@ -132,9 +132,9 @@ signals:
 
 protected:
 
-  void mouseMoveEvent ( QMouseEvent * event );
-
-
+  void mouseMoveEvent (QMouseEvent* event);
+  bool viewportEvent (QEvent* event);
+  
 private:
   unsigned int m_mapW;
   unsigned int m_mapH;

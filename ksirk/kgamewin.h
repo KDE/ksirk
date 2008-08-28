@@ -76,6 +76,11 @@ namespace Ksirk
   class AnimSpritesGroup;
   class KRightDialog;
 
+namespace Sprites
+{
+  class ArrowSprite;
+}
+
 namespace GameLogic
 {
   class ONU;
@@ -605,6 +610,8 @@ public:
   void setNextPlayerActionEnabled(bool value);
   void setSaveGameActionEnabled(bool value);
 
+  void updateScrollArrows();
+
 protected:
 
   /**
@@ -666,6 +673,7 @@ protected:
   void reduceChat();
   void unreduceChat();
 
+  
 public Q_SLOTS:
 
   virtual void mouseMoveEvent ( QMouseEvent * event );
@@ -977,6 +985,11 @@ private:
   QAction* m_nextPlayerAction;
   QAction* m_saveGameAction;
 
+  Sprites::ArrowSprite* m_uparrow;
+  Sprites::ArrowSprite* m_downarrow;
+  Sprites::ArrowSprite* m_leftarrow;
+  Sprites::ArrowSprite* m_rightarrow;
+  
 private: // Private methods
   /*void attack(GameLogic::Country& attacker, GameLogic::Country& defender, unsigned int nb);*/
   void moveArmies(GameLogic::Country& src, GameLogic::Country& dest, unsigned int nb);

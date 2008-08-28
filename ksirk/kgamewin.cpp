@@ -119,8 +119,12 @@ KGameWindow::KGameWindow(QWidget* parent) :
   gameActionsToolBar(0),
   m_message(0),
   m_mouseLocalisation(0),
-  m_fileName()
-{
+  m_fileName(),
+  m_uparrow(0),
+  m_downarrow(0),
+  m_leftarrow(0),
+  m_rightarrow(0)
+  {
   kDebug() << "KGameWindow constructor begin";
 
   statusBar()->addWidget(m_barFlag);
@@ -518,7 +522,11 @@ void KGameWindow::newSkin(const QString& onuFileName)
 
   // create the world map view
   if (m_frame != 0)
-  {  
+  {
+    m_uparrow = 0;
+    m_downarrow = 0;
+    m_leftarrow = 0;
+    m_rightarrow = 0;
     delete m_frame;
   }
   m_frame = new DecoratedGameFrame(this,width, height, m_automaton);
@@ -566,25 +574,6 @@ void KGameWindow::newSkin(const QString& onuFileName)
 
   m_backGnd_world = new BackGnd(m_scene_world, m_theWorld);
 
-/*  Sprites::ArrowSprite* uparrow = new Sprites::ArrowSprite(Qt::UpArrow, m_backGnd_world);
-  m_scene_world->addItem(uparrow);
-  uparrow->setZValue(1000);
-  uparrow->setPos(100,100);
-
-  Sprites::ArrowSprite* downarrow = new Sprites::ArrowSprite(Qt::DownArrow, m_backGnd_world);
-  m_scene_world->addItem(downarrow);
-  downarrow->setZValue(1000);
-  downarrow->setPos(100,200);
-
-  Sprites::ArrowSprite* leftarrow = new Sprites::ArrowSprite(Qt::LeftArrow, m_backGnd_world);
-  m_scene_world->addItem(leftarrow);
-  leftarrow->setZValue(1000);
-  leftarrow->setPos(50,100);
-
-  Sprites::ArrowSprite* rightarrow = new Sprites::ArrowSprite(Qt::RightArrow, m_backGnd_world);
-  m_scene_world->addItem(rightarrow);
-  rightarrow->setZValue(1000);
-  rightarrow->setPos(200,100);*/
   
 //   m_scene_world->setDoubleBuffering(true);
   kDebug() << "Before initView";
@@ -592,6 +581,34 @@ void KGameWindow::newSkin(const QString& onuFileName)
   kDebug() <<"After m_backGnd new="<< m_backGnd_world;
   m_frame->setFocus();
 
+  m_uparrow = new Sprites::ArrowSprite(Qt::UpArrow, m_backGnd_world);
+  m_uparrow->setZValue(1000);
+  QPointF pos = m_frame->mapToScene(QPoint(m_frame->viewport()->width()/2,0));
+  pos = pos + QPointF(-(m_uparrow->boundingRect().width()/2),m_uparrow->boundingRect().height());
+  m_uparrow->setPos(pos);
+  m_uparrow->setActive(false);
+  
+  m_downarrow = new Sprites::ArrowSprite(Qt::DownArrow, m_backGnd_world);
+  m_downarrow->setZValue(1000);
+  pos = m_frame->mapToScene(QPoint(m_frame->viewport()->width()/2,m_frame->viewport()->height()));
+  pos = pos - QPointF(m_downarrow->boundingRect().width()/2,m_downarrow->boundingRect().height());
+  m_downarrow->setPos(pos);
+  m_downarrow->setActive(false);
+  pos = m_frame->mapToScene(QPoint(0,m_frame->viewport()->height()/2));
+  
+  m_leftarrow = new Sprites::ArrowSprite(Qt::LeftArrow, m_backGnd_world);
+  m_leftarrow->setZValue(1000);
+  pos = pos + QPointF(m_leftarrow->boundingRect().width(),-(m_leftarrow->boundingRect().height()/2));
+  m_leftarrow->setPos(pos);
+  m_leftarrow->setActive(false);
+  
+  m_rightarrow = new Sprites::ArrowSprite(Qt::RightArrow, m_backGnd_world);
+  m_rightarrow->setZValue(1000);
+  pos = m_frame->mapToScene(QPoint(m_frame->viewport()->width(),m_frame->viewport()->height()/2));
+  pos = pos - QPointF(m_rightarrow->boundingRect().width(),m_rightarrow->boundingRect().height()/2);
+  m_rightarrow->setPos(pos);
+  m_rightarrow->setActive(false);
+  
   kDebug() <<"End new skin";
 }
 
@@ -602,6 +619,7 @@ KRightDialog * KGameWindow::getRightDialog()
 
 void KGameWindow::initView()
 {
+  kDebug();
   QString iconFileName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Images/soldierKneeling.png");
   if (iconFileName.isNull())
   {
@@ -616,7 +634,7 @@ void KGameWindow::initView()
   setCaption("KsirK",false);
   m_scene_world-> update();
   m_frame->setScene(m_scene_world);
-
+  
   m_scene_arena-> update();
   m_arena->setScene(m_scene_arena);
 
@@ -3345,6 +3363,42 @@ void KGameWindow::setupPopupMessage()
     QColor color = QColor(102,102,255);
     m_message->setBackgroundBrush(color);
     m_message->setZValue(1000);
+  }
+}
+
+void KGameWindow::updateScrollArrows()
+{
+  kDebug();
+  if (m_uparrow != 0)
+  {
+    QPointF pos = m_frame->mapToScene(QPoint(m_frame->viewport()->width()/2,0));
+    pos = pos + QPointF(-(m_uparrow->boundingRect().width()/2),m_uparrow->boundingRect().height());
+    m_uparrow->setPos(pos);
+    m_uparrow->setActive(false);
+  }
+  if (m_downarrow != 0)
+  {
+    QPointF pos = m_frame->mapToScene(QPoint(m_frame->viewport()->width()/2,m_frame->viewport()->height()));
+    pos = pos - QPointF(m_downarrow->boundingRect().width()/2,m_downarrow->boundingRect().height());
+    m_downarrow->setPos(pos);
+    m_downarrow->setActive(false);
+  }
+  if (m_leftarrow != 0)
+  {
+    QPointF pos = m_frame->mapToScene(QPoint(0,m_frame->viewport()->height()/2));
+    pos = pos - QPointF(m_downarrow->boundingRect().width()/2,m_downarrow->boundingRect().height());
+    pos = pos + QPointF(m_leftarrow->boundingRect().width(),-(m_leftarrow->boundingRect().height()/2));
+    m_leftarrow->setPos(pos);
+    m_leftarrow->setActive(false);
+  }
+  if (m_rightarrow != 0)
+  {
+    QPointF pos = m_frame->mapToScene(QPoint(m_frame->viewport()->width(),m_frame->viewport()->height()/2));
+    pos = pos - QPointF(m_rightarrow->boundingRect().width(),m_rightarrow->boundingRect().height()/2);
+    m_rightarrow->hide();
+    m_rightarrow->setPos(pos);
+    m_rightarrow->show();
+    m_rightarrow->setActive(false);
   }
 }
 
