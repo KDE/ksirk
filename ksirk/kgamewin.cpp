@@ -42,6 +42,7 @@
 #include "Dialogs/kplayersetupdialog.h"
 #include "Dialogs/kwaitedplayersetupdialog.h"
 #include "Dialogs/restartOrExitDialogImpl.h"
+#include "Dialogs/newGameDialogImpl.h"
 
 
 //include files for QT
@@ -123,7 +124,10 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_uparrow(0),
   m_downarrow(0),
   m_leftarrow(0),
-  m_rightarrow(0)
+  m_rightarrow(0),
+  m_newGameDialog(0),
+  m_stateBeforeNewGame(GameAutomaton::INVALID),
+  m_stackWidgetBeforeNewGame(-1)
   {
   kDebug() << "KGameWindow constructor begin";
 
@@ -202,6 +206,11 @@ KGameWindow::KGameWindow(QWidget* parent) :
   kDebug() << "Setting up GUI";
   setupGUI();
 
+  // create a central widget if it doesent' exists
+  m_centralWidget = new QStackedWidget(this);
+  setCentralWidget(m_centralWidget);
+
+  
   kDebug() <<"Setting up toolbars";
   kDebug() <<"  creating gameActionsToolBar";
   gameActionsToolBar = new KToolBar("gameActionsToolBar", this, Qt::BottomToolBarArea);
@@ -505,6 +514,17 @@ void KGameWindow::newSkin(const QString& onuFileName)
   }
   m_scene_arena = new QGraphicsScene(0, 0, width, height,this);
 
+  if (m_frame != 0)
+  {
+    m_frame->setUpdatesEnabled(false);
+    m_uparrow = 0;
+    m_downarrow = 0;
+    m_leftarrow = 0;
+    m_rightarrow = 0;
+    m_centralWidget->removeWidget(m_frame);
+    delete m_frame;
+    m_frame = 0;
+  }
   if (m_scene_world != 0)
   {
     kDebug() << "Before m_scene_world delete";
@@ -519,43 +539,45 @@ void KGameWindow::newSkin(const QString& onuFileName)
     m_mainMenu = new mainMenu(this, width, height, m_automaton);
     firstCall = true;
   }
-
-  // create the world map view
-  if (m_frame != 0)
+  else
   {
-    m_uparrow = 0;
-    m_downarrow = 0;
-    m_leftarrow = 0;
-    m_rightarrow = 0;
-    delete m_frame;
+    m_centralWidget->removeWidget(m_mainMenu);
   }
+
+  if (m_newGameDialog == 0)
+  {
+    m_newGameDialog = new NewGameDialogImpl(this);
+    connect(m_newGameDialog,SIGNAL(newGameOK(unsigned int, const QString&, bool, bool)), this, SLOT(slotNewGameOK(unsigned int, const QString&, bool, bool)));
+    connect(m_newGameDialog,SIGNAL(newGameKO()), this, SLOT(slotNewGameKO()));
+  }
+  else
+  {
+    m_centralWidget->removeWidget(m_newGameDialog);
+  }
+    
+  kDebug() << "create the world map view";
   m_frame = new DecoratedGameFrame(this,width, height, m_automaton);
   m_frame->setMaximumWidth(width);
   m_frame->setMaximumHeight(height);
   m_frame->setCacheMode( QGraphicsView::CacheBackground );
   m_frame->setIcon();
 
-
-  // create the arena if it doesn't exist
+  kDebug() << "create the arena if it doesn't exist";
   if (m_arena != 0)
+  {
+    m_centralWidget->removeWidget(m_arena);
     delete m_arena;
+  }
   m_arena = new FightArena(this, width, height, m_scene_arena, m_theWorld, m_automaton);
   m_arena->setMaximumWidth(width);
   m_arena->setMaximumHeight(height);
   m_arena->setCacheMode( QGraphicsView::CacheBackground );
 
-  // create a central widget if it doesent' exists
-  m_centralWidget = dynamic_cast <QStackedWidget*>(centralWidget());
-  if (m_centralWidget == 0)
-  {
-    m_centralWidget = new QStackedWidget;
-    setCentralWidget(m_centralWidget);
-  }
-  
-  // put the menu, map and arena in the central widget
+  kDebug() << "put the menu, map and arena in the central widget";
   m_centralWidget->addWidget(m_mainMenu);
   m_centralWidget->addWidget(m_frame);
   m_centralWidget->addWidget(m_arena);
+  m_centralWidget->addWidget(m_newGameDialog);
   //m_centralWidget->addWidget(m_splitter);m_centralWidget
   if (firstCall)
   {
@@ -571,10 +593,8 @@ void KGameWindow::newSkin(const QString& onuFileName)
   }
 
   m_backGnd_arena = new BackGnd(m_scene_arena, m_theWorld, true);
-
   m_backGnd_world = new BackGnd(m_scene_world, m_theWorld);
 
-  
 //   m_scene_world->setDoubleBuffering(true);
   kDebug() << "Before initView";
   initView();
@@ -1397,14 +1417,14 @@ bool KGameWindow::setupPlayers()
   kDebug();
   
   // Number of players
-  bool networkGame = false;
-  int port;
-  uint newPlayersNumber = 0;
-  if (!m_automaton->setupPlayersNumberAndSkin(networkGame, port, newPlayersNumber))
-  {
-    return false;
-  }
-  
+  m_networkGame = false;
+  m_newPlayersNumber = 0;
+  m_automaton->setupPlayersNumberAndSkin();
+  return false;
+}
+
+bool KGameWindow::finishSetupPlayers()
+{
   if (!(m_automaton->playerList()->isEmpty()))
   {
     m_automaton->playerList()->clear();
@@ -1419,14 +1439,14 @@ bool KGameWindow::setupPlayers()
   {
     m_automaton->playerList()->clear();
   }
-  kDebug() << "KGameWindow::setupPlayers: before switch; newPlayersNumber = " << newPlayersNumber;
-  unsigned int nbAvailArmies = (unsigned int)(m_theWorld->getNbCountries() * 2.5 / newPlayersNumber);
+  kDebug() << "KGameWindow::setupPlayers: before switch; newPlayersNumber = " << m_newPlayersNumber;
+  unsigned int nbAvailArmies = (unsigned int)(m_theWorld->getNbCountries() * 2.5 / m_newPlayersNumber);
   kDebug() << "KGameWindow::setupPlayers: nbAvailArmies = " << nbAvailArmies << " ; nb countries = " << m_theWorld->getNbCountries();
   // Players names
   QString mes = "";
   QString nationName;
   for (unsigned int i = 0; 
-       i < newPlayersNumber - m_automaton->networkPlayersNumber();
+       i < m_newPlayersNumber - m_automaton->networkPlayersNumber();
        i++)
   {
     QString nomEntre = "";
@@ -1443,12 +1463,12 @@ bool KGameWindow::setupPlayers()
     addPlayer(nomEntre, nbAvailArmies, 0, nationName, computer);
     nations.remove(nationName);
   }
-  if (networkGame)
+  if (m_networkGame)
   {
     m_frame->setArenaOptionEnabled(false);
     unreduceChat();
     kDebug() << "In setupPlayers: networkGame";
-    m_automaton->offerConnections(port);
+    m_automaton->offerConnections(m_port);
     KMessageParts messageParts;
     messageParts << I18N_NOOP("Waiting for %1 players to connect")
       << QString::number(m_automaton->networkPlayersNumber());
@@ -2796,7 +2816,8 @@ bool KGameWindow::actionNewGame()
     m_automaton->setGameStatus(KGame::End);
     m_automaton->state(GameLogic::GameAutomaton::INIT);
     m_automaton->savedState(GameLogic::GameAutomaton::INVALID);
-    return (setupPlayers());
+    setupPlayers();
+//     return (setupPlayers());
   }
   return false;
 }
@@ -3366,40 +3387,15 @@ void KGameWindow::setupPopupMessage()
   }
 }
 
-void KGameWindow::updateScrollArrows()
+bool KGameWindow::newGameDialog(unsigned int maxPlayers,
+                   const QString& skin)
 {
-  kDebug();
-  if (m_uparrow != 0)
-  {
-    QPointF pos = m_frame->mapToScene(QPoint(m_frame->viewport()->width()/2,0));
-    pos = pos + QPointF(-(m_uparrow->boundingRect().width()/2),m_uparrow->boundingRect().height());
-    m_uparrow->setPos(pos);
-    m_uparrow->setActive(false);
-  }
-  if (m_downarrow != 0)
-  {
-    QPointF pos = m_frame->mapToScene(QPoint(m_frame->viewport()->width()/2,m_frame->viewport()->height()));
-    pos = pos - QPointF(m_downarrow->boundingRect().width()/2,m_downarrow->boundingRect().height());
-    m_downarrow->setPos(pos);
-    m_downarrow->setActive(false);
-  }
-  if (m_leftarrow != 0)
-  {
-    QPointF pos = m_frame->mapToScene(QPoint(0,m_frame->viewport()->height()/2));
-    pos = pos - QPointF(m_downarrow->boundingRect().width()/2,m_downarrow->boundingRect().height());
-    pos = pos + QPointF(m_leftarrow->boundingRect().width(),-(m_leftarrow->boundingRect().height()/2));
-    m_leftarrow->setPos(pos);
-    m_leftarrow->setActive(false);
-  }
-  if (m_rightarrow != 0)
-  {
-    QPointF pos = m_frame->mapToScene(QPoint(m_frame->viewport()->width(),m_frame->viewport()->height()/2));
-    pos = pos - QPointF(m_rightarrow->boundingRect().width(),m_rightarrow->boundingRect().height()/2);
-    m_rightarrow->hide();
-    m_rightarrow->setPos(pos);
-    m_rightarrow->show();
-    m_rightarrow->setActive(false);
-  }
+  m_stateBeforeNewGame = m_automaton->state();
+  m_automaton->state(GameAutomaton::STARTING_GAME);
+  m_newGameDialog->init(m_automaton, maxPlayers, skin);
+  m_stackWidgetBeforeNewGame = m_centralWidget->currentIndex();
+  m_centralWidget->setCurrentIndex(3);
+  return false;
 }
 
 } // closing namespace Ksirk

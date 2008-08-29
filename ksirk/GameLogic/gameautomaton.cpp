@@ -74,7 +74,8 @@ const char* GameAutomaton::GameStateNames[] = {
     "EXPLOSION_ANIMATE",
     "WAIT_PLAYERS",
     "GAME_OVER",
-    "INVALID"
+    "INVALID",
+    "STARTING_GAME"
 };
 
 const char* GameAutomaton::KsirkMessagesIdsNames[] = {
@@ -976,6 +977,8 @@ GameAutomaton::GameState GameAutomaton::run()
     break;
   case GAME_OVER:
     break;
+  case STARTING_GAME:
+    break;
   default:
     kError() << "Unhandled state: " << stateName() << ". Event was: " << event << endl; 
     exit(1); // @todo handle this error
@@ -1212,7 +1215,7 @@ QDataStream& operator>>(QDataStream& s, GameAutomaton::GameState& state)
 }
 
 
-bool GameAutomaton::setupPlayersNumberAndSkin(bool& networkGame, int& port, uint& newPlayersNumber)
+bool GameAutomaton::setupPlayersNumberAndSkin()
 {
   kDebug() << endl;
   QMap< QString, QString > nations = m_game->nationsList();
@@ -1223,19 +1226,15 @@ bool GameAutomaton::setupPlayersNumberAndSkin(bool& networkGame, int& port, uint
     KMessageBox::error(m_game, mes, i18n("Fatal Error!"));
     exit(1);
   }
-  // Number of m_players
-  QString skinName = m_skin;
 
-  while ((newPlayersNumber < 2) || (newPlayersNumber > nations.size()))
-  {
-    bool ok;
-    NewGameDialogImpl(this, ok, newPlayersNumber, nations.size(), skinName, networkGame, m_useGoals, m_game).exec();
-    kDebug() << "Got " << ok << " ; " << newPlayersNumber << " ; " << skinName << endl;
-    if (!ok)
-    {
-      return false;
-    }
-  }
+  m_game->newGameDialog(nations.size(), m_skin.value());
+
+  return false;
+}
+
+bool GameAutomaton::finishSetupPlayersNumberAndSkin(const QString& skin, bool networkGame, uint newPlayersNumber)
+{
+  state(INIT);
   setMinPlayers(newPlayersNumber);
   setMaxPlayers(newPlayersNumber);
   m_nbPlayers = newPlayersNumber;
@@ -1244,18 +1243,18 @@ bool GameAutomaton::setupPlayersNumberAndSkin(bool& networkGame, int& port, uint
 //   kDebug() << "Got skin name: " << skinName << endl;
 /*  if (skinName != m_skin)
   {*/
-    kDebug() << "Changing skin" << endl;
-    m_skin = skinName;
+  kDebug() << "Changing skin" << endl;
+  m_skin = skin;
 //   }
   
-  port = 20000;
+  int port = 20000;
   if (networkGame)
   {
 // porting    
     KDialog* dialog = new KDialog( m_game );
     dialog->setCaption( i18n("Port and Net players configuration") );
     dialog->setButtons( KDialog::Ok );
-    
+
     QGroupBox* mRemoteGroup=new QGroupBox(i18n("Number of network players"), dialog);
     QSpinBox* spinBox = new QSpinBox(0);
     spinBox->setMinimum(1);
@@ -1282,7 +1281,7 @@ bool GameAutomaton::setupPlayersNumberAndSkin(bool& networkGame, int& port, uint
     dialog->hide();
 //     delete dialog;
   }
-  return true;
+  return m_game->finishSetupPlayers();
 }
 
 void GameAutomaton::setGoalFor(Player* player)
@@ -1553,7 +1552,7 @@ void GameAutomaton::slotPlayerJoinedGame(KPlayer* player)
 
 bool GameAutomaton::startGame()
 {
-  kDebug() << "nb players = " << playerList()->count() << " / " << maxPlayers() << endl;
+  kDebug() << stateName() << "nb players = " << playerList()->count() << " / " << maxPlayers() << endl;
 //   kDebug() << "  state is " << GameStateNames[m_state] << endl;
 //   kDebug() << "  saved state is " << GameStateNames[m_savedState] << endl;
   if (isAdmin() && int(playerList()->count()) == maxPlayers()

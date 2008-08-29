@@ -51,7 +51,7 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="0" colspan="4" >
+   <item row="3" column="0" colspan="4" >
     <widget class="Line" name="line1" >
      <property name="frameShape" >
       <enum>QFrame::HLine</enum>
@@ -64,7 +64,7 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="0" >
+   <item row="4" column="0" >
     <widget class="QLabel" name="textLabel2" >
      <property name="text" >
       <string>Skin:</string>
@@ -74,7 +74,7 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="1" colspan="3" >
+   <item row="4" column="1" colspan="2" >
     <widget class="QComboBox" name="skinCombo" >
      <property name="toolTip" >
       <string>Choose the skin (map, nationalities, etc.) to use for this game.</string>
@@ -84,7 +84,7 @@
      </property>
     </widget>
    </item>
-   <item row="4" column="0" colspan="4" >
+   <item row="5" column="0" colspan="4" >
     <widget class="QLabel" name="skinDescLabel" >
      <property name="text" >
       <string>textLabel1</string>
@@ -97,26 +97,7 @@
      </property>
     </widget>
    </item>
-   <item row="5" column="2" colspan="2" >
-    <widget class="QLabel" name="skinSnapshotPixmap" >
-     <property name="sizePolicy" >
-      <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="pixmap" >
-      <pixmap/>
-     </property>
-     <property name="scaledContents" >
-      <bool>true</bool>
-     </property>
-     <property name="wordWrap" >
-      <bool>false</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="0" colspan="2" >
+   <item row="6" column="0" colspan="2" >
     <widget class="QGroupBox" name="goalGroup" >
      <property name="title" >
       <string>Goal Type</string>
@@ -159,7 +140,7 @@
         <property name="orientation" >
          <enum>Qt::Vertical</enum>
         </property>
-        <property name="sizeHint" >
+        <property name="sizeHint" stdset="0" >
          <size>
           <width>20</width>
           <height>40</height>
@@ -170,10 +151,36 @@
      </layout>
     </widget>
    </item>
-   <item row="6" column="0" colspan="4" >
+   <item row="6" column="2" colspan="2" >
+    <widget class="QLabel" name="skinSnapshotPixmap" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="pixmap" >
+      <pixmap/>
+     </property>
+     <property name="scaledContents" >
+      <bool>true</bool>
+     </property>
+     <property name="wordWrap" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0" colspan="4" >
     <widget class="KDialogButtonBox" name="buttonbox" >
      <property name="standardButtons" >
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Help|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="3" >
+    <widget class="KPushButton" name="ghnsbutton" >
+     <property name="text" >
+      <string>Download new skins</string>
      </property>
     </widget>
    </item>
@@ -185,6 +192,11 @@
    <class>KDialogButtonBox</class>
    <extends>QDialogButtonBox</extends>
    <header>kdialogbuttonbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KPushButton</class>
+   <extends>QPushButton</extends>
+   <header>kpushbutton.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

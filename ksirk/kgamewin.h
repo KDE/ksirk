@@ -75,7 +75,8 @@ namespace Ksirk
   class mainMenu;
   class AnimSpritesGroup;
   class KRightDialog;
-
+  class NewGameDialogImpl;
+  
 namespace Sprites
 {
   class ArrowSprite;
@@ -235,7 +236,7 @@ public:
   bool setupOneWaitedPlayer();
   bool createWaitedPlayer(quint32 waitedPlayerId);
     
-/**
+  /**
     * Do the distribution of armies for all players in function of their
     * number of countries
     */
@@ -612,7 +613,13 @@ public:
 
   void updateScrollArrows();
 
-protected:
+  bool newGameDialog(
+                     unsigned int maxPlayers,
+                     const QString& skin);
+
+  bool finishSetupPlayers();
+
+  protected:
 
   /**
     * Connected to the frame timer, it manages the behavior of the game in
@@ -767,6 +774,10 @@ public Q_SLOTS:
 
   void slotZoomIn();
   void slotZoomOut();
+
+  void slotNewGameOK(unsigned int nbPlayers, const QString& skin, bool networkGame, bool useGoals);
+  void slotNewGameKO();
+  
 private Q_SLOTS:
   void optionsConfigure();
 
@@ -998,6 +1009,14 @@ private: // Private methods
   QPixmap buildDice(DiceColor color, const QString& id);
   void setupPopupMessage();
 
+  bool m_networkGame;
+  int m_port;
+  uint m_newPlayersNumber;
+
+  NewGameDialogImpl* m_newGameDialog;
+
+  GameLogic::GameAutomaton::GameState m_stateBeforeNewGame;
+  int m_stackWidgetBeforeNewGame;
 };
 
 } // closing namespace Ksirk

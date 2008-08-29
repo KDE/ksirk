@@ -79,7 +79,7 @@ Before 1.9:
   * enhance the new AI (make it aware of goals,...)
   * [DONE] automaticaly choose the messages window lines height depending on
     the font
-  * replace ids by names in the skins onu.xml file format and make the countries
+  * [DONE] replace ids by names in the skins onu.xml file format and make the countries
     vector independent of the order in the ONU class
   * make players order random at initialization
   * [DONE] possibility to save AI only games
@@ -92,7 +92,7 @@ Before 2.0:
   - perfect implementation of Risk rules (optional if some enhancements are
     implemented) ;
   - [DONE] hability to save game at any point
-  - use khotnewstuff for new skins
+  - [DONE] use khotnewstuff for new skins
   - use GGZ or Jabber to offer or find network games
 
 Middle to long term:
@@ -115,7 +115,7 @@ Ideas by Dre to be dispatched :
 with opint (1), b/c then you don't have to slowly move the cannon afterwards
  (2) [To be done for 2.0 ?] Color-code the countries by the owner - the flags are 
       too hard to identify
- (7) [To be done for 2.0 or before] have a "battle until troops exhausted" option - 
+ (7) [DONE] have a "battle until troops exhausted" option -
       sometimes you just want a country no matter what the cost, but a cancel 
       button would be useful too (in this case it would be nice if a dialog 
       popped up with the two countries enlarged and the battle raging and 
@@ -137,7 +137,7 @@ Before 1.2 :
   06- [DONE example skin created; should create of a new skin instead; 
       someone ?] translate the map... ;
   07- [DONE] allow sprites to navigate from Alaska to Siberie by the short link
-  08- [Really good idea ?] change the buttons disabling solution from toolbar 
+  08- [DONE] change the buttons disabling solution from toolbar
       hiding to "graying" ;
   09- [DONE] change the gestion of "multiple-territories countries": generalize
       Each country should be composed of a number of separated territories with

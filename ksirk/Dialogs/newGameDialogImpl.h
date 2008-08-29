@@ -45,38 +45,39 @@ class NewGameDialogImpl : public QDialog, public Ui::NewGameDialog
 {
   Q_OBJECT
 public:
-  NewGameDialogImpl(
-      GameLogic::GameAutomaton* automaton,
-      bool& ok,
-      unsigned int& nbPlayers, 
-      unsigned int maxPlayers, 
-      QString& skin,
-      bool& networkGame,
-      bool& useGoals,
-      QWidget *parent=0);
+  NewGameDialogImpl(QWidget *parent=0);
+
+  void init(GameLogic::GameAutomaton* automaton,
+             unsigned int maxPlayers,
+             const QString& skin);
 
   virtual ~NewGameDialogImpl();
 
-private:
-  GameLogic::GameAutomaton* m_automaton;
-  bool& m_ok;
-  unsigned int& m_nbPlayers;
-  QString& m_skin;
-  bool& m_networkGame;
-  bool& m_useGoals;
-  QMap<QString, GameLogic::ONU*> m_worlds;
-  
-/** 
-    * Fills the skins combo with skins dir names found in the Ksirk app data dir
-    * @todo Use skins names instead of dir names
-    */
-  void fillSkinsCombo();
-    
-public slots:
+public Q_SLOTS:
     virtual void slotOK();
     virtual void slotCancel();
     virtual void slotHelp();
     void slotSkinChanged(int skinNum);
+    void slotGHNS();
+
+Q_SIGNALS:
+  void newGameOK(unsigned int nbPlayers, const QString& skin, bool networkGame, bool useGoals);
+  void newGameKO();
+
+private:
+  /**
+  * Fills the skins combo with skins dir names found in the Ksirk app data dir
+  * @todo Use skins names instead of dir names
+  */
+  void fillSkinsCombo();
+  
+  GameLogic::GameAutomaton* m_automaton;
+  unsigned int m_nbPlayers;
+  QString m_skin;
+  bool m_networkGame;
+  bool m_useGoals;
+  QMap<QString, GameLogic::ONU*> m_worlds;
+
 };
 
 } // closing namespace Ksirk

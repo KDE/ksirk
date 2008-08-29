@@ -435,10 +435,13 @@ void KGameWindow::slotNewGame()
 {
 //   kDebug() << "Slot new game: posting event actionNewGame";
 //   QPoint point;
-  if (actionNewGame())
+  actionNewGame();
+
+  /// @TODO set the state to init when new game is started
+/*  if (actionNewGame())
   {
     m_automaton->state(GameAutomaton::INIT);
-  }
+  }*/
 //   m_automaton->gameEvent("actionNewGame", point);
 }
 
@@ -906,6 +909,20 @@ void KGameWindow::slotWindowDef2()
   dial->close();
 }
 
+void KGameWindow::slotNewGameOK(unsigned int nbPlayers, const QString& skin, bool networkGame, bool useGoals)
+{
+  kDebug() << nbPlayers << skin << networkGame << useGoals;
+  m_newPlayersNumber = nbPlayers;
+  m_automaton->state(m_stateBeforeNewGame);
+  m_centralWidget->setCurrentIndex(m_stackWidgetBeforeNewGame);
+  m_automaton->finishSetupPlayersNumberAndSkin(skin, networkGame, nbPlayers);
+}
 
+void KGameWindow::slotNewGameKO()
+{
+  kDebug() << m_stateBeforeNewGame << m_stackWidgetBeforeNewGame;
+  m_automaton->state(m_stateBeforeNewGame);
+  m_centralWidget->setCurrentIndex(m_stackWidgetBeforeNewGame);
+}
 
 } // closing namespace Ksirk

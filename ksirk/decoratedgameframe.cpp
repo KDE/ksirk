@@ -468,12 +468,13 @@ void DecoratedGameFrame::setMenuPoint(QPoint menuPoint)
 
 bool DecoratedGameFrame::viewportEvent(QEvent* event)
 {
-  QGraphicsView::viewportEvent(event);
+  bool res = QGraphicsView::viewportEvent(event);
   if (event->type() == QEvent::Resize)
   {
     kDebug();
     m_automaton->game()->updateScrollArrows();
   }
+  return res;
 }
 
 }

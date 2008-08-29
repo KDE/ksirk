@@ -30,6 +30,7 @@
 #include "Sprites/cannonsprite.h"
 #include "Sprites/cavalrysprite.h"
 #include "Sprites/infantrysprite.h"
+#include "Sprites/arrowsprite.h"
 #include "Sprites/skinSpritesData.h"
 #include "GameLogic/KMessageParts.h"
 #include "GameLogic/onu.h"
@@ -1525,6 +1526,42 @@ void KGameWindow::reconnectMouse()
 bool KGameWindow::haveAnimFighters() const
 {
     return !m_animFighters->empty();
+}
+
+void KGameWindow::updateScrollArrows()
+{
+  kDebug();
+  if (m_uparrow != 0)
+  {
+    QPointF pos = m_frame->mapToScene(QPoint(m_frame->viewport()->width()/2,0));
+    pos = pos + QPointF(-(m_uparrow->boundingRect().width()/2),m_uparrow->boundingRect().height());
+    m_uparrow->setPos(pos);
+    m_uparrow->setActive(false);
+  }
+  if (m_downarrow != 0)
+  {
+    QPointF pos = m_frame->mapToScene(QPoint(m_frame->viewport()->width()/2,m_frame->viewport()->height()));
+    pos = pos - QPointF(m_downarrow->boundingRect().width()/2,m_downarrow->boundingRect().height());
+    m_downarrow->setPos(pos);
+    m_downarrow->setActive(false);
+  }
+  if (m_leftarrow != 0)
+  {
+    QPointF pos = m_frame->mapToScene(QPoint(0,m_frame->viewport()->height()/2));
+    pos = pos - QPointF(m_downarrow->boundingRect().width()/2,m_downarrow->boundingRect().height());
+    pos = pos + QPointF(m_leftarrow->boundingRect().width(),-(m_leftarrow->boundingRect().height()/2));
+    m_leftarrow->setPos(pos);
+    m_leftarrow->setActive(false);
+  }
+  if (m_rightarrow != 0)
+  {
+    QPointF pos = m_frame->mapToScene(QPoint(m_frame->viewport()->width(),m_frame->viewport()->height()/2));
+    pos = pos - QPointF(m_rightarrow->boundingRect().width(),m_rightarrow->boundingRect().height()/2);
+    m_rightarrow->hide();
+    m_rightarrow->setPos(pos);
+    m_rightarrow->show();
+    m_rightarrow->setActive(false);
+  }
 }
 
 } // closing namespace KsirK

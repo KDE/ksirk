@@ -2,7 +2,7 @@
 <!DOCTYPE kcfg SYSTEM "http://www.kde.org/standards/kcfg/1.0/kcfg.dtd">
 <kcfg> 
   <kcfgfile name="ksirkrc"/> 
-  <group name="General"> 
+  <group name="General">
     <entry name="spritesSpeed" type="Int"> 
       <label>The sprites speed: slow, normal, quick, immediate</label> 
       <default>1</default>
@@ -19,5 +19,8 @@
       <label>If true, the number of armies is displayed on each country.</label>
       <default>false</default>
     </entry>
-  </group>
+    <entry name="Theme" type="String" key="Theme">
+      <label>The graphical theme to be used.</label>
+    </entry>
+    </group>
 </kcfg>

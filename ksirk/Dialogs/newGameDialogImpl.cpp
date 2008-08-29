@@ -18,13 +18,17 @@
  *   02110-1301, USA
  ***************************************************************************/
 #include "newGameDialogImpl.h"
+#include "ksirksettings.h"
 
 #include "GameLogic/onu.h"
 
-#include <klocale.h>
-#include <kdebug.h>
-#include <kstandarddirs.h>
-#include <kmessagebox.h>
+#include <KLocale>
+#include <KDebug>
+#include <KStandardDirs>
+#include <KMessageBox>
+#include <KConfigDialog>
+#include <KGameThemeSelector>
+#include <knewstuff2/engine.h>
 
 #include <qdir.h>
 #include <qstringlist.h>
@@ -33,31 +37,33 @@
 namespace Ksirk
 {
 
-NewGameDialogImpl::NewGameDialogImpl(
-      GameLogic::GameAutomaton* automaton,
-      bool& ok,
-      unsigned int& nbPlayers, 
-      unsigned int maxPlayers,
-      QString &skin,
-      bool& networkGame,
-      bool& useGoals,
-      QWidget *parent) :
+NewGameDialogImpl::NewGameDialogImpl(QWidget *parent) :
     QDialog(parent),
-    Ui::NewGameDialog(),
-  m_automaton(automaton),
-  m_ok(ok), m_nbPlayers(nbPlayers),
-  m_skin(skin), m_networkGame(networkGame), m_useGoals(useGoals)
+    Ui::NewGameDialog()
 {
-  kDebug() << "Skin got by NewGameDialog: " << m_skin 
-    << " ; maxPlayers=" << maxPlayers << endl;
+  kDebug() << "Skin got by NewGameDialog";
   setupUi(this);
-  playersNumberEntry->setMinimum(2);
-  playersNumberEntry->setMaximum(maxPlayers);
-  fillSkinsCombo();
   QObject::connect(buttonbox->button(QDialogButtonBox::Cancel), SIGNAL(clicked()), this, SLOT(slotCancel()) );
   QObject::connect(buttonbox->button(QDialogButtonBox::Ok), SIGNAL(clicked()), this, SLOT(slotOK()) );
   QObject::connect(buttonbox->button(QDialogButtonBox::Help), SIGNAL(clicked()), this, SLOT(slotHelp()) );
   QObject::connect(skinCombo, SIGNAL(activated(int)), this, SLOT(slotSkinChanged(int)) );
+  QObject::connect(ghnsbutton, SIGNAL(clicked()), this, SLOT(slotGHNS()) );
+}
+
+void NewGameDialogImpl::init(GameLogic::GameAutomaton* automaton,
+unsigned int maxPlayers, const QString& skin)
+{
+  kDebug() << "Skin got by NewGameDialog: " << m_skin
+  << " ; maxPlayers=" << maxPlayers;
+  m_automaton = automaton;
+  m_nbPlayers = 2;
+  m_skin = skin;
+  m_networkGame = false;
+  m_useGoals = true;
+
+  playersNumberEntry->setMinimum(m_nbPlayers);
+  playersNumberEntry->setMaximum(maxPlayers);
+  fillSkinsCombo();
 }
 
 NewGameDialogImpl::~NewGameDialogImpl()
@@ -72,70 +78,74 @@ NewGameDialogImpl::~NewGameDialogImpl()
 
 void NewGameDialogImpl::slotOK()
 {
-  kDebug() << "KPlayerSetupDialog slotOk" << endl;
+  kDebug() << "KPlayerSetupDialog slotOk";
   m_nbPlayers = playersNumberEntry->value();
   m_skin = m_worlds[skinCombo->currentText()]->skin();
-  kDebug() << "  m_skin is " << m_skin << endl;
+  kDebug() << "  m_skin is " << m_skin;
   m_networkGame  = networkGameCheckBox->isChecked();
   m_useGoals = (radioGoal->isChecked());
-  m_ok = true;
-  accept();
-
-  // Return to the view of the map
-  kDebug() << "*********** Show the map !!! ***********" << endl;
-  //m_automaton->game()->showMap();
+  emit newGameOK(m_nbPlayers, m_skin, m_networkGame, m_useGoals);
+//   accept();
 }
 
 void NewGameDialogImpl::slotCancel()
 {
-  kDebug() << "KPlayerSetupDialog slotCancel" << endl;
-  m_ok = false;
-  reject();
+  kDebug() << "KPlayerSetupDialog slotCancel";
+  emit newGameKO();
+//   reject();
 }
 
 /** @todo implements a help */
 void NewGameDialogImpl::slotHelp()
 {
-  kDebug() << "KPlayerSetupDialog slotHelp not already implemented" << endl;
+  kDebug() << "KPlayerSetupDialog slotHelp not already implemented";
   KMessageBox::sorry(this, i18n("Help currently unavailable."),i18n("KsirK - No help !"));
 }
 
-/** @todo Add a thumbnail of the skin map for example */
 void NewGameDialogImpl::fillSkinsCombo()
 {
-  kDebug() << "Filling skins combo" << endl;
-  KStandardDirs *m_dirs = KGlobal::dirs();
-  QString skinsDirName = m_dirs-> findResourceDir("appdata", "skins/skinsdir");
-  if (skinsDirName.isEmpty())
+  kDebug() << "Filling skins combo";
+
+  skinCombo->clear();
+  foreach (GameLogic::ONU* onu,  m_worlds)
   {
-    KMessageBox::error(0,
-                       i18n("Skins directory not found - Verify your installation\nProgram cannot continue"),
-                       i18n("Fatal Error !"));
-    exit(2);
+    delete onu;
   }
-  skinsDirName += "skins/";
-  kDebug() << "Got skins dir name: " << skinsDirName << endl;
-  QDir skinsDir(skinsDirName);
-  QStringList skinsDirsNames = skinsDir.entryList(QStringList("[a-zA-Z]*"), QDir::Dirs);
   
+  KStandardDirs *m_dirs = KGlobal::dirs();
+  QStringList skinsDirs = m_dirs->findDirs("appdata","skins");
+  kDebug() << skinsDirs;
   uint skinNum = 0;
   uint currentSkinNum = 0;
-  QStringList::iterator it, it_end;
-  it = skinsDirsNames.begin(); it_end = skinsDirsNames.end();
-  for (; it != it_end; it++, skinNum++)
+  foreach (QString skinsDirName, skinsDirs)
   {
-    kDebug() << "Got skin dir name: " << *it << endl;
-    QDir skinDir(skinsDirName + *it);
-    if (skinDir.exists())
+  //   QString skinsDirName = m_dirs->findResourceDir("appdata", "skins/skinsdir");
+    if (skinsDirName.isEmpty())
     {
-      kDebug() << "Got skin dir: " << skinDir.dirName() << endl;
-      GameLogic::ONU* world = new GameLogic::ONU(m_automaton,skinsDirName + skinDir.dirName() + "/Data/world.desktop");
-      skinCombo->addItem(i18n(world->name().toUtf8().data()));
-      m_worlds[i18n(world->name().toUtf8().data())] = world;
-      if (QString("skins/")+skinDir.dirName() == m_skin)
+      KMessageBox::error(0,
+                        i18n("Skins directory not found - Verify your installation\nProgram cannot continue"),
+                        i18n("Fatal Error !"));
+      exit(2);
+    }
+    kDebug() << "Got skins dir name: " << skinsDirName;
+    QDir skinsDir(skinsDirName);
+    QStringList skinsDirsNames = skinsDir.entryList(QStringList("[a-zA-Z]*"), QDir::Dirs);
+
+    foreach (const QString& name, skinsDirsNames)
+    {
+      kDebug() << "Got skin dir name: " << name;
+      QDir skinDir(skinsDirName + name);
+      if (skinDir.exists())
       {
-        kDebug() << "Setting currentSkinNum to " << skinNum << endl;
-        currentSkinNum = skinNum;
+        kDebug() << "Got skin dir: " << skinDir.dirName();
+        GameLogic::ONU* world = new GameLogic::ONU(m_automaton,skinsDirName + skinDir.dirName() + "/Data/world.desktop");
+        skinCombo->addItem(i18n(world->name().toUtf8().data()));
+        m_worlds[i18n(world->name().toUtf8().data())] = world;
+        if (QString("skins/")+skinDir.dirName() == m_skin)
+        {
+          kDebug() << "Setting currentSkinNum to " << skinNum;
+          currentSkinNum = skinNum;
+        }
       }
     }
   }
@@ -148,10 +158,29 @@ void NewGameDialogImpl::slotSkinChanged(int skinNum)
     kDebug() << "NewGameDialogImpl::slotSkinChanged " 
               << skinNum << " ; " << skinCombo->currentText() 
               << " ; " << m_worlds[skinCombo->currentText()]->name() << " ; " 
-              << m_worlds[skinCombo->currentText()]->description() << endl;
+              << m_worlds[skinCombo->currentText()]->description();
     skinDescLabel->setText(i18n(m_worlds[skinCombo->currentText()]->description().toUtf8().data()));
     skinSnapshotPixmap->setPixmap(m_worlds[skinCombo->currentText()]->snapshot());
 }
+
+void NewGameDialogImpl::slotGHNS()
+{
+  if ( KConfigDialog::showDialog("settings") ) {
+    return;
+  }
+  kDebug();
+  KNS::Entry::List entries = KNS::Engine::download();
+  qDeleteAll(entries);
+  fillSkinsCombo();
+/*  KConfigDialog *dialog = new KConfigDialog(this, "settings", KsirkSettings::self());
+  KGameThemeSelector* kgts = new KGameThemeSelector(dialog, KsirkSettings::self());
+  dialog->addPage(kgts, i18n("Theme"), "games-config-theme");*/
+/*  connect(dialog, SIGNAL(settingsChanged(const QString &)), view, SLOT(settingsChanged()));
+  connect(dialog, SIGNAL(hidden()), view, SLOT(resumeFromConfigure()));*/
+//   dialog->show();
+  
+}
+
 
 }
 

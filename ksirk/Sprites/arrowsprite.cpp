@@ -62,11 +62,11 @@ ArrowSprite::~ArrowSprite()
 void ArrowSprite::setActive(bool value)
 {
   int alpha = (value?128:64);
-  kDebug() << value << alpha;
+//   kDebug() << value << alpha;
   QBrush b = brush();
   QColor color = b.color();
   color.setAlpha(alpha);
-  kDebug() << color.alpha();
+//   kDebug() << color.alpha();
   b.setColor(color);
   setBrush(b);
 }

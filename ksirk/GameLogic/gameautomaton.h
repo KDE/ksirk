@@ -162,7 +162,8 @@ public:
     EXPLOSION_ANIMATE, 
     WAIT_PLAYERS, 
     GAME_OVER, // Game finished
-    INVALID
+    INVALID,
+    STARTING_GAME // when displaying the new game ui
   };
 
   GameAutomaton();
@@ -306,8 +307,7 @@ public:
     * will contain the port on which we will wait for connections.
     * @param newPlayersNumber Will contain the number players of the new game.
     */
-  bool setupPlayersNumberAndSkin(bool& networkGame, int& port,
-                                 uint& newPlayersNumber);
+  bool setupPlayersNumberAndSkin();
   
     /**
      * Create an IO device like Mouse or Keyboard for the given player
@@ -369,6 +369,8 @@ public:
     * @return state
     */
   inline bool isDefenseAuto() {return m_defenseAuto;}
+
+  bool finishSetupPlayersNumberAndSkin(const QString& skin, bool networkGame, uint newPlayersNumber);
 
 public Q_SLOTS:
   /** Reacts to the current state eventualy processing one queued event */
