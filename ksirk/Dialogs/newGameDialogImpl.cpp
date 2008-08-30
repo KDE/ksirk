@@ -117,7 +117,7 @@ void NewGameDialogImpl::fillSkinsCombo()
   kDebug() << skinsDirs;
   uint skinNum = 0;
   uint currentSkinNum = 0;
-  foreach (QString skinsDirName, skinsDirs)
+  foreach (const QString &skinsDirName, skinsDirs)
   {
   //   QString skinsDirName = m_dirs->findResourceDir("appdata", "skins/skinsdir");
     if (skinsDirName.isEmpty())
