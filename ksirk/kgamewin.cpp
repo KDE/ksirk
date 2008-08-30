@@ -3222,7 +3222,6 @@ void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * 
 
   m_wSlide = new KDialog();
   m_wSlide->setButtons( KDialog::Ok );
-  m_wSlide->setButtonText (KDialog::Ok, i18n("Validate"));
 
   QWidget* widget = new QWidget(m_wSlide);
 
