@@ -112,7 +112,8 @@ ONU::ONU(const QString& configDir):
   }
   m_map = QPixmap();
   m_renderer.load(poolFileName);
-
+  m_svgDom.load(poolFileName);
+  
   QString mapMaskFileName = m_configDir + '/' + onugroup.readEntry("map-mask");
   kDebug() << "Map mask file name init: " << mapMaskFileName;
   if (mapMaskFileName == (m_configDir + '/'))
@@ -234,12 +235,12 @@ ONU::ONU(const QString& configDir):
     KConfigGroup countryGroup = config.group(country);
 //     unsigned int id = countryGroup.readEntry("id",0);
     QString name = country;
-    QPointF anchorPoint = countryGroup.readEntry("anchor-point",QPoint());
-    QPointF centralPoint = countryGroup.readEntry("central-point",QPoint());
-    QPointF flagPoint = countryGroup.readEntry("flag-point",QPoint());
-    QPointF cannonPoint = countryGroup.readEntry("cannon-point",QPoint());
-    QPointF cavalryPoint = countryGroup.readEntry("cavalry-point",QPoint());
-    QPointF infantryPoint = countryGroup.readEntry("infantry-point",QPoint());
+    QPointF anchorPoint = countryGroup.readEntry("anchor-point",QPointF());
+    QPointF centralPoint = countryGroup.readEntry("central-point",QPointF());
+    QPointF flagPoint = countryGroup.readEntry("flag-point",QPointF());
+    QPointF cannonPoint = countryGroup.readEntry("cannon-point",QPointF());
+    QPointF cavalryPoint = countryGroup.readEntry("cavalry-point",QPointF());
+    QPointF infantryPoint = countryGroup.readEntry("infantry-point",QPointF());
 
     m_countries.push_back(new Country(name, anchorPoint, centralPoint,
         flagPoint, cannonPoint, cavalryPoint, infantryPoint));

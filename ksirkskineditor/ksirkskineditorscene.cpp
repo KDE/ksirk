@@ -56,6 +56,13 @@ void Scene::mousePressEvent(QGraphicsSceneMouseEvent* mouseEvent)
   QGraphicsScene::mousePressEvent( mouseEvent );
 }
 
+void Scene::mouseReleaseEvent(QGraphicsSceneMouseEvent* mouseEvent)
+{
+  kDebug() << mouseEvent->scenePos();
+  emit releasePosition(mouseEvent->scenePos());
+  QGraphicsScene::mouseReleaseEvent( mouseEvent );
+}
+
 void Scene::dropEvent ( QGraphicsSceneDragDropEvent * event )
 {
   kDebug() << event->scenePos();

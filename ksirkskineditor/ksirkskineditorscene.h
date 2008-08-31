@@ -50,11 +50,13 @@ public:
 protected:
   virtual void mouseMoveEvent ( QGraphicsSceneMouseEvent * mouseEvent );
   virtual void mousePressEvent ( QGraphicsSceneMouseEvent * mouseEvent );
+  virtual void mouseReleaseEvent ( QGraphicsSceneMouseEvent * mouseEvent );
   virtual void dropEvent ( QGraphicsSceneDragDropEvent * event );
   
 Q_SIGNALS:
   void position(const QPointF&);
   void pressPosition(const QPointF&);
+  void releasePosition(const QPointF&);
   
 public Q_SLOTS:
 

@@ -29,6 +29,7 @@
 
 class KSvgRenderer;
 class QGraphicsSvgItem;
+class QGraphicsScene;
 
 #include <ostream>
 
@@ -36,6 +37,7 @@ namespace KsirkSkinEditor
 {
 
 class Continent;
+class ONU;
 
 /**
  * Each country of the map is represented by a Country object. It has a name,
@@ -184,13 +186,15 @@ public:
   void id(unsigned int id) {m_id = id;}*/
   //@}
 
-  void highlight(const QColor& color = Qt::white, qreal opacity = 1.0);
+  void highlight(QGraphicsScene* scene, ONU* onu, const QColor& color = Qt::white, qreal opacity = 1.0);
 
   void clearHighlighting();
 
   bool isHighlightingLocked();
   void releaseHighlightingLock();
 
+  inline QGraphicsSvgItem* highlighting() {return m_highlighting;}
+  
   private:
   
   /**

@@ -224,7 +224,8 @@ private Q_SLOTS:
   void slotFontSelected(const QFont& font);
   void slotFgSelected(const QColor& color);
   void slotBgColorSelected(const QColor& color);
-
+  void slotReleasePosition(const QPointF&);
+  
   private:
   void initCountryWidgetWith(Country* country);
   void initContinentWidgetWith(Continent* continent);
@@ -274,6 +275,8 @@ private Q_SLOTS:
   KRecentFilesAction* m_rfa;
 
   QGraphicsPixmapItem* m_mapItem;
+
+  bool m_updateHighlightPosition;
 };
 
 } // closing namespace KsirkSkinEditor

@@ -224,12 +224,12 @@ ONU::ONU(GameAutomaton* automaton,
     KConfigGroup countryGroup = config.group(country);
 //     unsigned int id = countryGroup.readEntry("id",0);
     QString name = country;
-    QPointF anchorPoint = countryGroup.readEntry("anchor-point",QPoint())*m_zoom;
-    QPointF centralPoint = countryGroup.readEntry("central-point",QPoint())*m_zoom;
-    QPointF flagPoint = countryGroup.readEntry("flag-point",QPoint())*m_zoom;
-    QPointF cannonPoint = countryGroup.readEntry("cannon-point",QPoint())*m_zoom;
-    QPointF cavalryPoint = countryGroup.readEntry("cavalry-point",QPoint())*m_zoom;
-    QPointF infantryPoint = countryGroup.readEntry("infantry-point",QPoint())*m_zoom;
+    QPointF anchorPoint = countryGroup.readEntry("anchor-point",QPointF())*m_zoom;
+    QPointF centralPoint = countryGroup.readEntry("central-point",QPointF())*m_zoom;
+    QPointF flagPoint = countryGroup.readEntry("flag-point",QPointF())*m_zoom;
+    QPointF cannonPoint = countryGroup.readEntry("cannon-point",QPointF())*m_zoom;
+    QPointF cavalryPoint = countryGroup.readEntry("cavalry-point",QPointF())*m_zoom;
+    QPointF infantryPoint = countryGroup.readEntry("infantry-point",QPointF())*m_zoom;
 
 //     kDebug() << "Creating country " << name;
 //     kDebug() << "\tflag point: " << flagPoint;

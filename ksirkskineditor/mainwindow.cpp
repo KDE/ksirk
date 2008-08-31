@@ -44,6 +44,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QGraphicsPixmapItem>
+#include <QGraphicsSvgItem>
 #include <QBitmap>
 #include <QInputDialog>
 
@@ -82,7 +83,8 @@ MainWindow::MainWindow(QWidget* parent) :
   KXmlGuiWindow(parent),
   m_selectedSprite(None),
   m_onu(0),
-  m_rfa(0)
+  m_rfa(0),
+  m_updateHighlightPosition(false)
 {
   kDebug() << "MainWindow constructor begin";
   KSirkSkinEditorWidget* mainWidget = new KSirkSkinEditorWidget(this);
@@ -91,6 +93,7 @@ MainWindow::MainWindow(QWidget* parent) :
   m_mapScene = new Scene(0,0,1024,768,this);
   connect(m_mapScene,SIGNAL(position(const QPointF&)),this,SLOT(slotPosition(const QPointF&)));
   connect(m_mapScene,SIGNAL(pressPosition(const QPointF&)),this,SLOT(slotPressPosition(const QPointF&)));
+  connect(m_mapScene,SIGNAL(releasePosition(const QPointF&)),this,SLOT(slotReleasePosition(const QPointF&)));
   m_mapView = new QGraphicsView(m_mapScene,mainWidget->mapScrollArea);
   m_mapView->setInteractive(true);
 
@@ -683,19 +686,35 @@ void MainWindow::slotPosition(const QPointF& point)
   QTextStream ts( &message );
   ts << point.x() << " x " << point.y();
   statusBar()->showMessage(message);
+  kDebug() << "selected sprite:" << m_selectedSprite;
+  if (currentCountry() != 0 && m_selectedSprite == Anchor
+    && m_onu->itemFor(currentCountry(), m_selectedSprite) != 0 && m_updateHighlightPosition)
+  {
+    kDebug() << (void*)currentCountry() << (void*)m_onu->itemFor(currentCountry(), m_selectedSprite);
+    currentCountry()->anchorPoint(point);
+    currentCountry()->highlighting()->setPos((currentCountry()->anchorPoint().x()-currentCountry()->highlighting()->boundingRect().width()/2),(currentCountry()->anchorPoint().y()-currentCountry()->highlighting()->boundingRect().height()/2));
+
+    return;
+  }
+  
 }
 
 void MainWindow::slotPressPosition(const QPointF& point)
 {
-  kDebug() << point;
+  kDebug() << point << (void*)currentCountry() << m_selectedSprite;
   QPixmap pix;
   QPixmap alphacopy;
   QString fileName;
   
+  m_updateHighlightPosition = true;
   if (currentCountry() == 0
     || m_onu->itemFor(currentCountry(), m_selectedSprite) != 0)
   {
     kDebug() << (void*)currentCountry() << (void*)m_onu->itemFor(currentCountry(), m_selectedSprite);
+    if (currentCountry() != 0)
+    {
+      currentCountry()->clearHighlighting();
+    }
     return;
   }
   PixmapItem* item = new PixmapItem();
@@ -752,6 +771,7 @@ void MainWindow::slotPressPosition(const QPointF& point)
       m_countryDefWidget->anchory->setText(QString::number(point.y()));
       currentCountry()->anchorPoint(point);
       m_onu->itemsMap().insert(item,qMakePair(currentCountry(),Anchor));
+      m_updateHighlightPosition = true;
       break;
     case Center:
       kDebug() << "Adding center";
@@ -778,6 +798,12 @@ void MainWindow::slotPressPosition(const QPointF& point)
     item->setFlag(QGraphicsItem::ItemIsSelectable, true);
     item->setPos(point);
   }
+}
+
+void MainWindow::slotReleasePosition(const QPointF& point)
+{
+  kDebug();
+  m_updateHighlightPosition = false;
 }
 
 void MainWindow::slotNationalitySelected(QListWidgetItem* item)
@@ -1006,6 +1032,36 @@ void MainWindow::slotItemPressed(QGraphicsItem* item)
         break;
       }
     }
+    switch (m_onu->itemsMap()[item].second)
+    {
+      case Flag:
+        m_selectedSprite = Flag;
+        country->clearHighlighting();
+        break;
+      case Infantry:
+        m_selectedSprite = Infantry;
+        country->clearHighlighting();
+        break;
+      case Cavalry:
+        m_selectedSprite = Cavalry;
+        country->clearHighlighting();
+        break;
+      case Cannon:
+        m_selectedSprite = Cannon;
+        country->clearHighlighting();
+        break;
+      case Anchor:
+        m_selectedSprite = Anchor;
+        country->highlight(m_mapScene, m_onu, Qt::white,128);
+        break;
+      case Center:
+        m_selectedSprite = Center;
+        country->clearHighlighting();
+        break;
+      default:
+        m_selectedSprite = None;
+        country->clearHighlighting();
+    }
   }
 }
 
@@ -1028,6 +1084,7 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
   {
     case Flag:
       item = new PixmapItem();
+      item->setZValue(3);
       pix = m_onu->flagIcon();
       ((PixmapItem*)item)->setPixmap(pix);
       //       pix = pix.scaled(20,20);
@@ -1038,6 +1095,7 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
       break;
     case Infantry:
       item = new PixmapItem();
+      item->setZValue(3);
       pix = m_onu->infantryIcon();
       ((PixmapItem*)item)->setPixmap(pix);
       point = country->pointInfantry();
@@ -1048,6 +1106,7 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
       break;
     case Cavalry:
       item = new PixmapItem();
+      item->setZValue(3);
       pix = m_onu->cavalryIcon();
       ((PixmapItem*)item)->setPixmap(pix);
       point = country->pointCavalry();
@@ -1058,6 +1117,7 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
       break;
     case Cannon:
       item = new PixmapItem();
+      item->setZValue(3);
       kDebug() << "Adding cannon";
       pix = m_onu->cannonIcon();
       ((PixmapItem*)item)->setPixmap(pix);
@@ -1068,8 +1128,8 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
       m_onu->itemsMap().insert(item,qMakePair(country,Cannon));
       break;
     case Anchor:
-      item = new TextItem();
-      ((TextItem*)item)->setFont(m_onu->foregroundFont());
+      item = new PixmapItem();
+      item->setZValue(3);
       kDebug() << "Adding anchor";
       fileName = m_dirs-> findResource("appdata", "cross.png");
       if (fileName.isNull())
@@ -1080,13 +1140,15 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
       pix = QPixmap(fileName);
       point = country->anchorPoint();
       pix = pix.scaled(16,16);
-      ((TextItem*)item)->setPlainText(country->name());
+      ((PixmapItem*)item)->setPixmap(pix);
       m_countryDefWidget->anchorx->setText(QString::number(point.x()));
       m_countryDefWidget->anchory->setText(QString::number(point.y()));
       m_onu->itemsMap().insert(item,qMakePair(country,Anchor));
       break;
     case Center:
-      item = new PixmapItem();
+      item = new TextItem();
+      item->setZValue(2);
+      ((TextItem*)item)->setFont(m_onu->foregroundFont());
       kDebug() << "Adding center";
       fileName = m_dirs-> findResource("appdata", "target.png");
       if (fileName.isNull())
@@ -1097,9 +1159,9 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
       pix = QPixmap(fileName);
       point = country->centralPoint();
       pix = pix.scaled(16,16);
-      ((PixmapItem*)item)->setPixmap(pix);
-      m_countryDefWidget->anchorx->setText(QString::number(point.x()));
-      m_countryDefWidget->anchory->setText(QString::number(point.y()));
+      ((TextItem*)item)->setPlainText(country->name());
+      m_countryDefWidget->centerx->setText(QString::number(point.x()));
+      m_countryDefWidget->centery->setText(QString::number(point.y()));
       m_onu->itemsMap().insert(item,qMakePair(country,Center));
       break;
     default: ;
@@ -1120,7 +1182,6 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
                    point.y()-(item->boundingRect().height()/2));
       item->setPos(pos);
     }
-    item->setZValue(10);
     m_mapScene->addItem(item);
     item->setFlag(QGraphicsItem::ItemIsMovable, true);
     item->setFlag(QGraphicsItem::ItemIsSelectable, true);

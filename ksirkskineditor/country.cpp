@@ -30,6 +30,7 @@
 #include <QDataStream>
 #include <QBitmap>
 #include <QGraphicsSvgItem>
+#include <QGraphicsScene>
 #include <QDomNode>
 
 namespace KsirkSkinEditor
@@ -132,6 +133,7 @@ const QPointF& Country::pointInfantry() const
 
 void Country::anchorPoint(const QPointF pt)
 {
+  kDebug();
   m_anchorPoint = pt;
 }
 
@@ -191,21 +193,15 @@ const QList< Country* >& Country::neighbours() const
 //   xmlStream << "\" />" << std::endl;
 // }
 
-void Country::highlight(const QColor& color, qreal opacity)
+void Country::highlight(QGraphicsScene* scene, ONU* onu, const QColor& color, qreal opacity)
 {
-//   kDebug() << color;
+  kDebug() << m_name << color << opacity;
   if (m_highlighting_locked)
   {
     return;
   }
   clearHighlighting();
 
-  ONU* onu = 0;
-  if (onu == 0)
-  {
-    kWarning() << "onu is null" << endl;
-    return;
-  }
   QDomNode countryElement = onu->svgDom()->elementById(m_name);
   if (countryElement.isNull())
   {
@@ -223,13 +219,14 @@ void Country::highlight(const QColor& color, qreal opacity)
   m_renderer->load(svg);
 
 //   kDebug() <<"loaded"<< endl;
-  m_highlighting = new QGraphicsSvgItem(0);
+  m_highlighting = new QGraphicsSvgItem();
   m_highlighting->setSharedRenderer(m_renderer);
   m_highlighting->setElementId(m_name);
   m_highlighting->setPos(
       (m_anchorPoint.x()-m_highlighting->boundingRect().width()/2),
       (m_anchorPoint.y()-m_highlighting->boundingRect().height()/2));
-
+  m_highlighting->setZValue(5);
+  scene->addItem(m_highlighting);
 //   m_highlighting->scale(onu->zoom(), onu->zoom());
 //   kDebug() << "done" << endl;
 }
