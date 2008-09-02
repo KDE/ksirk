@@ -19,7 +19,7 @@
       <enum>QFrame::NoFrame</enum>
      </property>
      <property name="text" >
-      <string>Player number %d, please enter your name and choose your nation :</string>
+      <string>Player number %1, please enter your name and choose your nation :</string>
      </property>
      <property name="wordWrap" >
       <bool>true</bool>
