@@ -34,6 +34,7 @@ ranklin Street, Fifth Floor, Boston, MA
 #include "GameLogic/goal.h"
 #include "SaveLoad/ksirkgamexmlloader.h"
 #include "Sprites/animspritesgroup.h"
+#include "Dialogs/jabberconnect.h"
 
 // STL include files
 #include <fstream>
@@ -41,6 +42,9 @@ ranklin Street, Fifth Floor, Boston, MA
 // include files for QT
 #include <QCursor>
 #include <QScrollBar>
+#include <QUuid>
+#include <QTextStream>
+#include <QInputDialog>
 
 // include files for KDE
 #include <kfiledialog.h>
@@ -51,6 +55,8 @@ ranklin Street, Fifth Floor, Boston, MA
 #include <KStatusBar>
 #include <kcomponentdata.h>
 #include <kgamepopupitem.h>
+#include <KPasswordDialog>
+#include <KInputDialog>
 
 namespace Ksirk
 {
@@ -916,6 +922,12 @@ void KGameWindow::slotNewGameOK(unsigned int nbPlayers, const QString& skin, boo
   m_automaton->state(m_stateBeforeNewGame);
   m_centralWidget->setCurrentIndex(m_stackWidgetBeforeNewGame);
   m_automaton->finishSetupPlayersNumberAndSkin(skin, networkGame, nbPlayers);
+
+  if (networkGame && m_jabberClient && m_jabberClient->isConnected())
+  {
+    m_advertizedHostName = QInputDialog::getText(this, i18n("Hostname"), i18n("What is the hostname to present\non the Jabber network?"), QLineEdit::Normal, m_advertizedHostName);
+    sendGameInfoToJabber();
+  }
 }
 
 void KGameWindow::slotNewGameKO()
@@ -924,5 +936,361 @@ void KGameWindow::slotNewGameKO()
   m_automaton->state(m_stateBeforeNewGame);
   m_centralWidget->setCurrentIndex(m_stackWidgetBeforeNewGame);
 }
+
+void KGameWindow::slotJabberConnect()
+{
+  kDebug();
+  JabberConnectDialog* d = new JabberConnectDialog(this);
+  if (d->exec())
+  {
+    XMPP::Jid jid(d->jabberid->text());
+    jid.setResource(d->jabberid->text());
+    QString password = d->password->text();
+    XMPP::Jid roomjid(d->roomjid->text());
+    m_groupchatHost = roomjid.domain();
+    m_groupchatRoom = roomjid.node();
+    m_groupchatNick = d->nickname->text();
+    
+//     m_jabberClient->setUseSSL ( true );
+    m_jabberClient->setAllowPlainTextPassword ( true );
+    m_jabberClient->setOverrideHost ( true, jid.domain(), 5222 );
+    JabberClient::ErrorCode res = m_jabberClient->connect(jid, password);
+    
+    switch (res)
+    {
+      case JabberClient::Ok:
+        kDebug() << "Succesfull connexion";
+        m_jabberClient->requestRoster ();
+        break;
+      case JabberClient::InvalidPassword:
+        kError() << "Password used to connect to the server was incorrect.";
+        break;
+      case JabberClient::AlreadyConnected:
+        kError() << "A new connection was attempted while the previous one hasn't been closed.";
+        break;
+      case JabberClient::NoTLS:
+        kError() << "Use of TLS has been forced (see @ref forceTLS) but TLS is not available, either server- or client-side.";
+        break;
+      case JabberClient::InvalidPasswordForMUC:
+        kError() << "A password is require to enter on this Multi-User Chat";
+        break;
+      case JabberClient::NicknameConflict:
+        kError() << "There is already someone with that nick connected to the Multi-User Chat";
+        break;
+      case JabberClient::BannedFromThisMUC:
+        kError() << "You can't join this Multi-User Chat because you were bannished";
+        break;
+      case JabberClient::MaxUsersReachedForThisMuc:
+        kError() << "You can't join this Multi-User Chat because it is full";
+        break;
+      default:;
+    }
+  }
+  else
+  {
+    kDebug() << "Cancel";
+  }
+  delete d;
+}
+
+void KGameWindow::slotConnected ()
+{
+  kDebug () << "Connected to Jabber server.";
+  
+  #ifdef SUPPORT_JINGLE
+  if(!m_voiceCaller)
+  {
+    kDebug() << "Creating Jingle Voice caller...";
+    m_voiceCaller = new JingleVoiceCaller( this );
+    QObject::connect(m_voiceCaller,SIGNAL(incoming(const Jid&)),this,SLOT(slotIncomingVoiceCall( const Jid& )));
+    m_voiceCaller->initialize();
+  }
+  
+  #if 0
+  if(!m_jingleSessionManager)
+  {
+    kDebug() << "Creating Jingle Session Manager...";
+    m_jingleSessionManager = new JingleSessionManager( this );
+    QObject::connect(m_jingleSessionManager, SIGNAL(incomingSession(const QString &, JingleSession *)), this, SLOT(slotIncomingJingleSession(const QString &, JingleSession *)));
+}
+#endif
+
+// Set caps extensions
+m_jabberClient->m_jabberClient->addExtension("voice-v1", Features(QString("http://www.google.com/xmpp/protocol/voice/v1")));
+#endif
+
+kDebug () << "Requesting roster...";
+m_jabberClient->requestRoster ();
+}
+
+void KGameWindow::slotRosterRequestFinished ( bool success )
+{
+  kDebug() << success;
+  if ( success )
+  {
+    // the roster was imported successfully, clear
+    // all "dirty" items from the contact list
+//     contactPool()->cleanUp ();
+  }
+  
+  /* Since we are online now, set initial presence. Don't do this
+  * before the roster request or we will receive presence
+  * information before we have updated our roster with actual
+  * contacts from the server! (Iris won't forward presence
+  * information in that case either). */
+  kDebug () << "Setting initial presence...";
+  setPresence ( m_initialPresence );
+
+  kDebug () << "Joining group chat...";
+  m_jabberClient->joinGroupChat ( m_groupchatHost, m_groupchatRoom, m_groupchatNick);
+}
+
+void KGameWindow::slotCSDisconnected ()
+{
+  kDebug () << "Disconnected from Jabber server.";
+  
+  /*
+  * We should delete the JabberClient instance here,
+  * but timers etc prevent us from doing so. Iris does
+  * not like to be deleted from a slot.
+  */
+
+  /* It seems that we don't get offline notifications when going offline
+  * with the protocol, so clear all resources manually. */
+//   resourcePool()->clear();
+  
+}
+
+void KGameWindow::slotReceivedMessage (const XMPP::Message & message)
+{
+  kDebug () << "New message from " << message.from().full () << ": " << message.body();
+
+  QString body = message.body();
+  QString nick = message.from().resource();
+
+  if ( message.type() == "groupchat" )
+  {
+    XMPP::Jid jid ( message.from().userHost () );
+    if (body.startsWith("I'm starting a game with skin"))
+    {
+      kDebug() << "start game message";
+      QRegExp rxlen("I'm starting a game with skin '([^']*)' and '(\\d+)' network players on '([^']*)', port '(\\d+)'");
+      int pos = rxlen.indexIn(body);
+      QString skin = rxlen.cap(1); // "189"
+      int nbNetPlayers = rxlen.cap(2).toInt();  // "cm"
+      QString host = rxlen.cap(3); // "189"
+      int port = rxlen.cap(4).toInt();  // "cm"
+      kDebug() << "emiting newJabberGame" << nick << host << port << skin;
+      emit newJabberGame(nick, host, port, skin);
+    }
+    else if (body.startsWith("Who propose online KsirK games here?"))
+    {
+      kDebug() << "online games question" << m_automaton->stateName();
+      if (m_automaton->startingGame())
+      {
+        sendGameInfoToJabber();
+      }
+    }
+  }
+}
+void KGameWindow::slotHandleTLSWarning (QCA::TLS::IdentityResult identityResult, QCA::Validity validityResult )
+{
+  kDebug (  ) << "Handling TLS warning...";
+}
+
+void KGameWindow::slotClientError ( JabberClient::ErrorCode errorCode )
+{
+  kDebug (  ) << "Handling client error...";
+
+  switch ( errorCode )
+  {
+    case JabberClient::NoTLS:
+    default:
+      KMessageBox::queuedMessageBox ( 0, KMessageBox::Error,
+                                                                                i18n ("An encrypted connection with the Jabber server could not be established."),
+                                                                                i18n ("Jabber Connection Error"));
+//                                                                                 disconnect ( 0/*Kopete::Account::Manual*/ );
+                                                                                break;
+                                            }
+}
+
+void KGameWindow::slotCSError ( int error )
+{
+  kDebug() << "Error in stream signalled.";
+  
+  if ( ( error == XMPP::ClientStream::ErrAuth )
+    && ( m_jabberClient->clientStream()->errorCondition () == XMPP::ClientStream::NotAuthorized ) )
+  {
+    kDebug (  ) << "Incorrect password, retrying.";
+//     disconnect(/*Kopete::Account::BadPassword*/0);
+  }
+  else
+  {
+    int errorClass =  0;
+    
+    kDebug (  ) << "Disconnecting.";
+    
+    // display message to user
+//     if(!m_removing) //when removing the account, connection errors are normal.
+//       handleStreamError (error, m_jabberClient->clientStream()->errorCondition (), m_jabberClient->clientConnector()->errorCode (), server (), errorClass, m_jabberClient->clientStream()->errorText());
+//     
+//     disconnect ( errorClass );
+    
+    /*  slotCSDisconnected  will not be called*/
+//     resourcePool()->clear();
+  }
+  
+}
+
+void KGameWindow::slotClientDebugMessage ( const QString &msg )
+{
+  kDebug () << msg;
+}
+
+void KGameWindow::slotGroupChatJoined (const XMPP::Jid & jid)
+{
+  kDebug () << "Joined groupchat " << jid.full ();
+  
+  /*    <message type="chat" to="kleag@localhost" id="aabca" >
+  <body>hello</body>
+  </message>*/
+  XMPP::Message message(m_groupchatRoom+"@"+m_groupchatHost);
+  message.setType("groupchat");
+  message.setId(QUuid::createUuid().toString().remove("{").remove("}").remove("-"));
+  message.setBody("Hello, I'm a KsirK Game");
+  m_jabberClient->sendMessage(message);
+  // Create new meta contact that holds the groupchat contact.
+  //  Kopete::MetaContact *metaContact = new Kopete::MetaContact ();
+  
+  //  metaContact->setTemporary ( true );
+  
+  // Create a groupchat contact for this room
+//   JabberGroupContact *groupContact = dynamic_cast<JabberGroupContact *>( contactPool()->addGroupContact ( XMPP::RosterItem ( jid ), true, false ) );
+  
+//   if(groupContact)
+//   {
+    // Add the groupchat contact to the meta contact.
+    //metaContact->addContact ( groupContact );
+    
+    //    Kopete::ContactList::self ()->addMetaContact ( metaContact );
+//   }
+  //  else
+  //    delete metaContact;
+  
+  /**
+  * Add an initial resource for this contact to the pool. We need
+  * to do this to be able to lock the group status to our own presence.
+  * Our own presence will be updated right after this method returned
+  * by slotGroupChatPresence(), since the server will signal our own
+  * presence back to us.
+  */
+//   resourcePool()->addResource ( XMPP::Jid ( jid.userHost () ), XMPP::Resource ( jid.resource () ) );
+  
+  // lock the room to our own status
+//   resourcePool()->lockToResource ( XMPP::Jid ( jid.userHost () ), jid.resource () );
+  
+  //  m_bookmarks->insertGroupChat(jid);
+}
+
+void KGameWindow::slotGroupChatLeft (const XMPP::Jid & jid)
+{
+  kDebug () << "Left groupchat " << jid.full ();
+  
+  // remove group contact from list
+  //  Kopete::Contact *contact =
+  //      Kopete::ContactList::self()->findContact( protocol()->pluginId() , accountId() , jid.userHost() );
+  //
+  //  if ( contact )
+  //  {
+    //    Kopete::MetaContact *metaContact= contact->metaContact();
+    //    if( metaContact && metaContact->isTemporary() )
+    //      Kopete::ContactList::self()->removeMetaContact ( metaContact );
+    //    else
+    //      contact->deleteLater();
+    //  }
+    
+    // now remove it from our pool, which should clean up all subcontacts as well
+//     contactPool()->removeContact ( XMPP::Jid ( jid.userHost () ) );
+    
+}
+
+void KGameWindow::slotGroupChatPresence (const XMPP::Jid & jid, const XMPP::Status & status)
+{
+  kDebug () << "Received groupchat presence for room " << jid.full ();
+  
+  // fetch room contact (the one without resource)
+//   JabberGroupContact *groupContact = dynamic_cast<JabberGroupContact *>( contactPool()->findExactMatch ( XMPP::Jid ( jid.userHost () ) ) );
+  
+//   if ( !groupContact )
+//   {
+//     kDebug (  ) << "WARNING: Groupchat presence signalled, but we don't have a room contact?";
+//     return;
+//   }
+  
+  if ( !status.isAvailable () )
+  {
+    kDebug (  ) << jid.full () << " has become unavailable, removing from room";
+    
+    // remove the resource from the pool
+//     resourcePool()->removeResource ( jid, XMPP::Resource ( jid.resource (), status ) );
+    
+    // the person has become unavailable, remove it
+//     groupContact->removeSubContact ( XMPP::RosterItem ( jid ) );
+  }
+  else
+  {
+    // add a resource for this contact to the pool (existing resources will be updated)
+//     resourcePool()->addResource ( jid, XMPP::Resource ( jid.resource (), status ) );
+    
+    // make sure the contact exists in the room (if it exists already, it won't be added twice)
+//     groupContact->addSubContact ( XMPP::RosterItem ( jid ) );
+  }
+  
+}
+
+void KGameWindow::slotGroupChatError (const XMPP::Jid &jid, int error, const QString &reason)
+{
+  kDebug () << "Group chat error - room " << jid.full () << " had error " << error << " (" << reason << ")";
+  
+  switch (error)
+  {
+    case JabberClient::InvalidPasswordForMUC:
+    {
+      KPasswordDialog dlg(0);
+      dlg.setPrompt(i18n("A password is required to join the room %1.", jid.node()));
+      if (dlg.exec() == KPasswordDialog::Accepted)
+        m_jabberClient->joinGroupChat(jid.domain(), jid.node(), jid.resource(), dlg.password());
+    }
+    break;
+    
+    case JabberClient::NicknameConflict:
+    {
+      bool ok;
+      QString nickname = KInputDialog::getText(i18n("Error trying to join %1 : nickname %2 is already in use", jid.node(), jid.resource()), i18n("Provide your nickname"), QString(), &ok);
+      if (ok)
+      {
+        m_jabberClient->joinGroupChat(jid.domain(), jid.node(), nickname);
+      }
+    }
+    break;
+    
+    case JabberClient::BannedFromThisMUC:
+      KMessageBox::queuedMessageBox ( 0, KMessageBox::Error, i18n ("You cannot join the room %1 because you have been banned", jid.node()), i18n ("Jabber Group Chat") );
+      break;
+                                      
+    case JabberClient::MaxUsersReachedForThisMuc:
+      KMessageBox::queuedMessageBox ( 0, KMessageBox::Error, i18n ("You cannot join the room %1 because the maximum number of users has been reached", jid.node()), i18n ("Jabber Group Chat") );
+      break;
+                                      
+    default:
+    {
+      QString detailedReason = reason.isEmpty () ? i18n ( "No reason given by the server" ) : reason;
+      
+      KMessageBox::queuedMessageBox ( 0, KMessageBox::Error, i18n ("There was an error processing your request for groupchat %1. (Reason: %2, Code %3)", jid.full (), detailedReason, error ), i18n ("Jabber Group Chat") );
+    }
+  }
+}
+
+
 
 } // closing namespace Ksirk

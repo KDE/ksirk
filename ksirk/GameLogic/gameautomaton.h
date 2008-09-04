@@ -372,6 +372,15 @@ public:
 
   bool finishSetupPlayersNumberAndSkin(const QString& skin, bool networkGame, uint newPlayersNumber);
 
+  inline int port() const {return m_port;}
+
+  void askForJabberGames();
+
+  inline bool startingGame() const {return m_startingGame;}
+  
+Q_SIGNALS:
+  void newJabberGame(const QString&, const QString&, int, const QString&);
+    
 public Q_SLOTS:
   /** Reacts to the current state eventualy processing one queued event */
   GameState run();
@@ -525,6 +534,10 @@ private:
 
   // Save Defense country
   Country * defCountry;
+
+  int m_port;
+  
+  bool m_startingGame;
 };
 
 QDataStream& operator>>(QDataStream& s, GameAutomaton::GameState& state);

@@ -12,6 +12,8 @@
     <Separator/>
     <Action name="game_goal" />
     <Separator/>
+    <Action name="game_jabber" />
+    <Separator/>
     <Action name="game_quit" append="new_merge" />
   </Menu>
   <Menu name="settings"><text>&amp;Settings</text>

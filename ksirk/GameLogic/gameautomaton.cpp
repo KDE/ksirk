@@ -32,6 +32,7 @@
 #include "Dialogs/newGameDialogImpl.h"
 #include "Dialogs/kplayersetupdialog.h"
 #include "krightdialog.h"
+#include "Dialogs/joingame.h"
 
 #include <qlayout.h>
 #include <qspinbox.h>
@@ -140,6 +141,8 @@ const char* GameAutomaton::KsirkMessagesIdsNames[] = {
 "CurrentPlayerPlayed", // 315
 };
 
+#define KSIRK_DEFAULT_PORT 20000
+
 GameAutomaton::GameAutomaton() :
     KGame(),
     m_aicannotrunhack(true),
@@ -152,7 +155,9 @@ GameAutomaton::GameAutomaton() :
     m_goals(),
     m_useGoals(true),
     m_attackAuto(false),
-    m_defenseAuto(false)
+    m_defenseAuto(false),
+    m_port(KSIRK_DEFAULT_PORT),
+    m_startingGame(false)
 {
   m_skin = "skins/default";
   //   kDebug() << endl;
@@ -302,13 +307,12 @@ GameAutomaton::GameState GameAutomaton::run()
       if (dnssdAvailable())
         setDiscoveryInfo("_ksirk._tcp","wow");
       #endif
-      int port = 20000;
       bool ok;
-      port = KInputDialog::getInteger(
+      m_port = KInputDialog::getInteger(
               i18n("KsirK - Network configuration"), 
               i18n("Please type in the port number on which to offer connections:"), 
-              port, 0, 32000, 1, 10, &ok, m_game);
-      offerConnections(port);
+              m_port, 0, 32000, 1, 10, &ok, m_game);
+      offerConnections(m_port);
       state(WAIT_PLAYERS);
       QTimer::singleShot(200, this, SLOT(run()));
       return WAIT_PLAYERS;
@@ -1234,6 +1238,7 @@ bool GameAutomaton::setupPlayersNumberAndSkin()
 
 bool GameAutomaton::finishSetupPlayersNumberAndSkin(const QString& skin, bool networkGame, uint newPlayersNumber)
 {
+  m_startingGame = true;
   state(INIT);
   setMinPlayers(newPlayersNumber);
   setMaxPlayers(newPlayersNumber);
@@ -1247,7 +1252,6 @@ bool GameAutomaton::finishSetupPlayersNumberAndSkin(const QString& skin, bool ne
   m_skin = skin;
 //   }
   
-  int port = 20000;
   if (networkGame)
   {
 // porting    
@@ -1267,17 +1271,18 @@ bool GameAutomaton::finishSetupPlayersNumberAndSkin(const QString& skin, bool ne
     vbox->addStretch(1);
     mRemoteGroup->setLayout(vbox);
 
-    edit->setText(QString::number(port));
+    edit->setText(QString::number(m_port));
     dialog->setMainWidget(mRemoteGroup);
     dialog->exec();
     
     m_networkPlayersNumber = spinBox->value();
-    port = edit->text().toInt();
+    m_port = edit->text().toInt();
+    offerConnections(m_port);
     kDebug() << "There will be " << m_networkPlayersNumber << " network players." << endl;
-    #if KDE_IS_VERSION(3,4,0)
+/*    #if KDE_IS_VERSION(3,4,0)
     if (dnssdAvailable())
       setDiscoveryInfo("_ksirk._tcp","wow");
-    #endif
+    #endif*/
     dialog->hide();
 //     delete dialog;
   }
@@ -1344,26 +1349,11 @@ bool GameAutomaton::joinNetworkGame()
 
       // Set default network parameter
       QString host = "localhost";
-      int port = 20000;
+      int port = KSIRK_DEFAULT_PORT;
 
-      // porting  
-      KDialog* dialog = new KDialog(m_game);
-      dialog->setCaption( i18n("Join network game configuration" ) );
-      dialog->setButtons( KDialog::Ok | KDialog::Cancel );
-
-      QGroupBox* mRemoteGroup=new QGroupBox(i18n("Network configuration"), dialog);
-      KLineEdit* hostEdit = new KLineEdit( 0 );
-      hostEdit->setText(host);
-      KLineEdit* portEdit = new KLineEdit( 0 );
-      portEdit->setText(QString::number(port));
-
-      QVBoxLayout *vbox = new QVBoxLayout;
-      vbox->addWidget(hostEdit);
-      vbox->addWidget(portEdit);
-      vbox->addStretch(1);
-      mRemoteGroup->setLayout(vbox);
-
-      dialog->setMainWidget(mRemoteGroup);
+      // porting
+      JoinGameDialog* dialog = new JoinGameDialog(this, host, port, m_game);
+      askForJabberGames();
       QDialog::DialogCode valid = QDialog::DialogCode(dialog->exec());
 
       if (valid == QDialog::Rejected)
@@ -1376,8 +1366,8 @@ bool GameAutomaton::joinNetworkGame()
       state(INIT);
       savedState(INVALID);
 
-      host = hostEdit->text();
-      port = portEdit->text().toInt();
+      host = dialog->hostEdit->text();
+      port = dialog->portEdit->text().toInt();
 
       if (messageServer() != 0)
       {
@@ -1848,6 +1838,7 @@ void GameAutomaton::finalizePlayers()
   {
     sendMessage(buffer,DisplayGoals);
   }
+  m_startingGame = false;
 }
 
 /** @return true if all players are played by computer ; false otherwise */
@@ -2641,6 +2632,10 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   }
 }
 
+void GameAutomaton::askForJabberGames()
+{
+  m_game->askForJabberGames();
+}
 
 } // closing namespace GameLogic
 } // closing namespace Ksirk

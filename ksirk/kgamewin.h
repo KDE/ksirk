@@ -29,6 +29,9 @@
 #include "GameLogic/player.h"
 #include "GameLogic/country.h"
 #include "Sprites/animspriteslist.h"
+#include "Jabber/jabberclient.h"
+
+#include "qca.h"
 
 // include files for Qt
 #include <QPointF>
@@ -60,6 +63,8 @@ class KDialog;
 class QEvent;
 class QDockWidget;
 class QGraphicsScene;
+
+// class JabberClient;
 
 namespace Phonon
 {
@@ -619,7 +624,10 @@ public:
 
   bool finishSetupPlayers();
 
-  protected:
+  void askForJabberGames();
+  void sendGameInfoToJabber();
+  
+protected:
 
   /**
     * Connected to the frame timer, it manages the behavior of the game in
@@ -680,7 +688,15 @@ public:
   void reduceChat();
   void unreduceChat();
 
-  
+  /**
+  * Sets our own presence. Updates our resource in the
+  * resource pool and sends a presence packet to the server.
+  */
+  void setPresence ( const XMPP::Status &status );
+
+Q_SIGNALS:
+    void newJabberGame(const QString&, const QString&, int, const QString&);
+    
 public Q_SLOTS:
 
   virtual void mouseMoveEvent ( QMouseEvent * event );
@@ -777,6 +793,8 @@ public Q_SLOTS:
 
   void slotNewGameOK(unsigned int nbPlayers, const QString& skin, bool networkGame, bool useGoals);
   void slotNewGameKO();
+
+  void slotJabberConnect();
   
 private Q_SLOTS:
   void optionsConfigure();
@@ -795,6 +813,87 @@ private Q_SLOTS:
   void slotDisableHelp(const QString &);
 
   void slotArmiesNumberChanged(int);
+
+  /* Connects to the server. */
+//   void slotConnect ();
+  
+  /* Disconnects from the server. */
+//   void slotDisconnect ();
+  
+  // handle a TLS warning
+  void slotHandleTLSWarning ( QCA::TLS::IdentityResult identityResult, QCA::Validity validityResult );
+  
+  // handle client errors
+  void slotClientError ( JabberClient::ErrorCode errorCode );
+  
+  // we are connected to the server
+  void slotConnected ();
+  
+  /* Called from Psi: tells us when we've been disconnected from the server. */
+  void slotCSDisconnected ();
+  
+  /* Called from Psi: alerts us to a protocol error. */
+  void slotCSError (int);
+  
+  /* Called from Psi: roster request finished */
+  void slotRosterRequestFinished ( bool success );
+  
+  /* Called from Psi: incoming file transfer */
+//   void slotIncomingFileTransfer ();
+  
+  /* Called from Psi: debug messages from the backend. */
+  void slotClientDebugMessage (const QString &msg);
+  
+  /* XMPP console dialog */
+//   void slotXMPPConsole ();
+  
+  /* Slots for handling groupchats. */
+//   void slotJoinNewChat ();
+  void slotGroupChatJoined ( const XMPP::Jid &jid );
+  void slotGroupChatLeft ( const XMPP::Jid &jid );
+  void slotGroupChatPresence ( const XMPP::Jid &jid, const XMPP::Status &status );
+  void slotGroupChatError ( const XMPP::Jid &jid, int error, const QString &reason );
+  
+  /* Incoming subscription request. */
+//   void slotSubscription ( const XMPP::Jid &jid, const QString &type );
+  
+  /* the dialog that asked to add the contact was closed   (that dialog is shown in slotSubscription) */
+//   void slotAddedInfoEventActionActivated ( uint actionId );
+  
+  /**
+  * A new item appeared in our roster, synch it with the
+  * contact list.
+  * (or the contact has been updated
+  */
+//   void slotContactUpdated ( const XMPP::RosterItem & );
+  
+  /**
+  * An item has been deleted from our roster,
+  * delete it from our contact pool.
+  */
+//   void slotContactDeleted ( const XMPP::RosterItem & );
+  
+  
+  /* Someone on our contact list had (another) resource come online. */
+//   void slotResourceAvailable ( const XMPP::Jid &, const XMPP::Resource & );
+  
+  /* Someone on our contact list had (another) resource go offline. */
+//   void slotResourceUnavailable ( const XMPP::Jid &, const XMPP::Resource & );
+  
+  /* Displays a new message. */
+  void slotReceivedMessage ( const XMPP::Message & );
+  
+  /* Gets the user's vCard from the server for editing. */
+//   void slotEditVCard ();
+  
+  /* Get the services list from the server for management. */
+//   void slotGetServices ();
+  
+  /* we received a voice invitation */
+//  void slotIncomingVoiceCall(const Jid&);
+
+/* the unregister task finished */
+//   void slotUnregisterFinished();
   
 private:
 
@@ -921,6 +1020,7 @@ private:
     * in the status bar.
     */
   QAction* m_goalAction;
+  QAction* m_jabberAction;
   QLabel* m_barFlag;
     
 //   KAccel m_accels;
@@ -1017,6 +1117,18 @@ private: // Private methods
 
   GameLogic::GameAutomaton::GameState m_stateBeforeNewGame;
   int m_stackWidgetBeforeNewGame;
+
+  JabberClient* m_jabberClient;
+
+  /* Initial presence to set after connecting. */
+  XMPP::Status m_initialPresence;
+
+  QString m_groupchatHost;
+  QString m_groupchatRoom;
+  QString m_groupchatNick;
+  QString m_groupchatPassword;
+
+  QString m_advertizedHostName;
 };
 
 } // closing namespace Ksirk

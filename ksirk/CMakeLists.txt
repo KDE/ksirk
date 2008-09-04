@@ -1,4 +1,10 @@
+add_definitions(-DQT3_SUPPORT -DQT3_SUPPORT_WARNINGS)
+
 add_subdirectory( skins )
+add_subdirectory( libiris )
+
+FIND_PACKAGE(QCA2 REQUIRED)
+macro_log_feature(QCA2_FOUND "QCA2" "Qt Cryptographic Architecture" "http://delta.affinix.com/qca" FALSE "2.0.0" "Needed to build Kopete's GroupWise and Jabberprotocols.")
 
 include_directories( 
   ${CMAKE_BINARY_DIR}/ksirk 
@@ -10,7 +16,18 @@ include_directories(
   ./Sprites 
   ${CMAKE_CURRENT_SOURCE_DIR} 
   ${CMAKE_CURRENT_BINARY_DIR}  
-)
+  ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/include/
+  ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/jabber/
+  ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/xmpp-core/
+  ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/xmpp-im/
+  ${CMAKE_CURRENT_SOURCE_DIR}/libiris/cutestuff/util/
+  ${CMAKE_CURRENT_SOURCE_DIR}/libiris/cutestuff/network/
+  ${CMAKE_CURRENT_SOURCE_DIR}/libiris/cutestuff/
+  ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/
+  ${QCA2_INCLUDE_DIR}
+  )
+
+link_directories( ${CMAKE_CURRENT_BINARY_DIR}/libiris/ )
 
 ########### next target ###############
 
@@ -47,6 +64,7 @@ set(ksirk_SRCS
   Dialogs/newGameDialogImpl.cpp
   Dialogs/kwaitedplayersetupdialog.cpp
   Dialogs/restartOrExitDialogImpl.cpp
+  Dialogs/joingame.cpp
   main.cpp 
   decoratedgameframe.cpp 
   gestionSprites.cpp 
@@ -57,6 +75,13 @@ set(ksirk_SRCS
   fightArena.cpp
   mainMenu.cpp
   krightdialog.cpp
+#   Jabber/jabberaccount.cpp
+  Jabber/jabberbytestream.cpp
+  Jabber/jabberclient.cpp
+  Jabber/jabberconnector.cpp
+  Jabber/privacylist.cpp
+  Jabber/privacylistitem.cpp
+  Jabber/privacymanager.cpp
 )
 
 set(ksirk_UI
@@ -64,6 +89,8 @@ set(ksirk_UI
   Dialogs/newGameDialog.ui
   Dialogs/qwaitedplayersetupdialog.ui 
   Dialogs/restartOrExitDialog.ui
+  Dialogs/jabberconnect.ui
+  Dialogs/joingame.ui
   preferences.ui
 )
 
@@ -84,6 +111,7 @@ target_link_libraries(ksirk
   kdegames
   ${CRYPT_LIBS}
   ${KDEGAMES_LIBRARY}
+  iris_ksirk
  )
 
 install( TARGETS ksirk ${INSTALL_TARGETS_DEFAULT_ARGS})
