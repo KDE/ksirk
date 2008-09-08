@@ -1,3 +1,0 @@
-SSH_AUTH_SOCK=/tmp/ssh-XXzaSNZ0/agent.906; export SSH_AUTH_SOCK;
-SSH_AGENT_PID=907; export SSH_AGENT_PID;
-echo Agent pid 907;
