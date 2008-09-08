@@ -69,28 +69,28 @@ const int& Continent::getBonus() const
   */
 const Player* Continent::owner() const
 {
-//    kDebug() << "Continent::owner for "  << m_name;
+   kDebug() << "Continent::owner for "  << m_name;
     /** The owner of the first country is the owner if there is any one*/
   QList<Country*>::const_iterator it = m_members.begin();
   const Country* firstOne = *(it);
   const Player* owner = firstOne-> owner();
-//    kDebug() << "\t"  << firstOne-> name()  << " is owned by "  << owner-> name();
+  kDebug() << "\t"  << firstOne-> name()  << " is owned by "  << owner-> name();
 
   for (it++; it != m_members.end(); it++)
   {
-//        kDebug() << "\t"  << c-> name() << " is owned by "  << c-> owner()-> name();
+    kDebug() << "\t"  << (*it)-> name() << " is owned by "  << (*it)-> owner()-> name();
     /** if the owner of the current country is not the owner of th first
       * one, then there is two different owners and the function should
       * return 0
       */
     if ((*it)-> owner() != owner)
     {
-//            kDebug() << "Nobody owns " << m_name << endl;
+      kDebug() << "Nobody owns " << m_name << endl;
       return 0;
     }
   }
-    /** There is only one owner for all hte countries ; lets return it */
-//    kDebug() << "The owner of " << m_name << " is "  << owner-> name();
+  /** There is only one owner for all the countries ; lets return it */
+  kDebug() << "The owner of " << m_name << " is "  << owner-> name();
   return owner;
 }
 

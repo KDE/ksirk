@@ -129,18 +129,19 @@ bool Goal::checkContinentsFor(const GameLogic::Player* player) const
       return false;
     }
   }
-  bool otherFound = ( m_continents.contains(QString()) );
-  if (!otherFound)
+  if (!m_continents.contains(QString()))
   {
-    QList<Continent*>& continents = m_automaton->game()->theWorld()->getContinents();
-    foreach (Continent* continent, continents)
+    return true;
+  }
+  bool otherFound = false;
+  QList<Continent*>& continents = m_automaton->game()->theWorld()->getContinents();
+  foreach (Continent* continent, continents)
+  {
+    if ( ( !m_continents.contains(continent->name()) )
+          && ( continent->owner() == player) )
     {
-      if ( ( !m_continents.contains(continent->name()) )
-           && ( continent->owner() == player) )
-      {
-        otherFound = true;
-        break;
-      }
+      otherFound = true;
+      break;
     }
   }
   return otherFound;
