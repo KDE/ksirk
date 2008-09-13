@@ -33,12 +33,14 @@
 #include "Dialogs/kplayersetupdialog.h"
 #include "krightdialog.h"
 #include "Dialogs/joingame.h"
+#include "Jabber/kmessagejabber.h"
 
 #include <qlayout.h>
 #include <qspinbox.h>
 #include <QPixmap>
 #include <QMouseEvent>
 #include <QFile>
+#include <QUuid>
 
 #include <klocale.h>
 #include <kdialog.h>
@@ -1351,8 +1353,9 @@ bool GameAutomaton::joinNetworkGame()
       QString host = "localhost";
       int port = KSIRK_DEFAULT_PORT;
 
+      QString nick;
       // porting
-      JoinGameDialog* dialog = new JoinGameDialog(this, host, port, m_game);
+      JoinGameDialog* dialog = new JoinGameDialog(this, nick, host, port, m_game);
       askForJabberGames();
       QDialog::DialogCode valid = QDialog::DialogCode(dialog->exec());
 
@@ -1374,11 +1377,24 @@ bool GameAutomaton::joinNetworkGame()
          QObject::disconnect(messageServer(),SIGNAL(connectionLost(KMessageIO *)),
          this,SLOT(slotConnectionToClientBroken(KMessageIO *)));
       }
+
       kDebug() << "Before connectToServer" << endl;
-      bool status = connectToServer(host, port);
-      kDebug() << "After connectToServer" << endl;
-      connect(messageServer(),SIGNAL(connectionLost(KMessageIO *)),
-         this,SLOT(slotConnectionToClientBroken(KMessageIO *)));
+      m_game->setServerJid(nick);
+      KMessageJabber* messageIO = new KMessageJabber(m_game->serverJid().full(), m_game->jabberClient(), this);
+      bool status = connectToServer(messageIO);
+//       bool status = connectToServer(host, port);
+      kDebug() << "After connectToServer" << status << endl;
+      if (status)
+      {
+        QByteArray msg("connect");
+        XMPP::Message message(m_game->serverJid().full());
+        message.setType("ksirkgame");
+        message.setId(QUuid::createUuid().toString().remove("{").remove("}").remove("-"));
+        message.setBody(msg);
+        m_game->jabberClient()->sendMessage(message);
+      }
+//       connect(messageServer(),SIGNAL(connectionLost(KMessageIO *)),
+//          this,SLOT(slotConnectionToClientBroken(KMessageIO *)));
       return status;
    }
    return false;

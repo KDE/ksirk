@@ -51,9 +51,10 @@ class JoinGameDialog : public QDialog, public Ui::JoinGameDialog
   Q_OBJECT
 public:
   JoinGameDialog(GameLogic::GameAutomaton* automaton,
-                  QString& host,
-                  int& port,
-                  QWidget *parent=0);
+                 QString& nick,
+                 QString& host,
+                 int& port,
+                 QWidget *parent=0);
   
   virtual ~JoinGameDialog();
 
@@ -72,10 +73,10 @@ private Q_SLOTS:
   void slotCellClicked(int row, int column);
 
 private:
-  GameLogic::GameAutomaton* m_automaton;
+//   GameLogic::GameAutomaton* m_automaton;
   QString &m_host;
   int& m_port;
-
+  QString& m_nick;
 };
 
 }

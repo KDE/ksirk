@@ -16,17 +16,19 @@
    02110-1301, USA
 */
 
-#ifndef JABBERCONNECTDIALOG_H
-#define JABBERCONNECTDIALOG_H
+#include "jabberconnect.h"
+#include "ksirksettings.h"
 
-#include "ui_jabberconnect.h"
+#include <KDebug>
 
-#include <QDialog>
-
-class JabberConnectDialog : public QDialog, public Ui::JabberConnectDialog
+JabberConnectDialog::JabberConnectDialog(QWidget* parent) : QDialog(parent)
 {
-public:
-  JabberConnectDialog(QWidget* parent);
-};
-
-#endif
+  kDebug();
+  
+  setupUi(this);
+  jabberid->setText(Ksirk::KsirkSettings::jabberId());
+  password->setText(Ksirk::KsirkSettings::jabberPassword());
+  roomjid->setText(Ksirk::KsirkSettings::roomJid());
+  roompassword->setText(Ksirk::KsirkSettings::roomPassword());
+  nickname->setText(Ksirk::KsirkSettings::nickname());
+}

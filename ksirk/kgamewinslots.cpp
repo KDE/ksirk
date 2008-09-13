@@ -35,6 +35,9 @@ ranklin Street, Fifth Floor, Boston, MA
 #include "SaveLoad/ksirkgamexmlloader.h"
 #include "Sprites/animspritesgroup.h"
 #include "Dialogs/jabberconnect.h"
+#include "Jabber/kmessagejabber.h"
+
+#include "kgame/kmessageserver.h"
 
 // STL include files
 #include <fstream>
@@ -943,13 +946,21 @@ void KGameWindow::slotJabberConnect()
   JabberConnectDialog* d = new JabberConnectDialog(this);
   if (d->exec())
   {
+    KsirkSettings::setJabberId(d->jabberid->text());
     XMPP::Jid jid(d->jabberid->text());
     jid.setResource(d->jabberid->text());
     QString password = d->password->text();
+    KsirkSettings::setJabberPassword(password);
+    KsirkSettings::setRoomJid(d->roomjid->text());
     XMPP::Jid roomjid(d->roomjid->text());
     m_groupchatHost = roomjid.domain();
     m_groupchatRoom = roomjid.node();
+    KsirkSettings::setNickname(d->nickname->text());
     m_groupchatNick = d->nickname->text();
+    KsirkSettings::setNickname(d->nickname->text());
+    KsirkSettings::setRoomPassword(d->roompassword->text());
+    
+    KsirkSettings::self()->writeConfig();
     
 //     m_jabberClient->setUseSSL ( true );
     m_jabberClient->setAllowPlainTextPassword ( true );
@@ -1066,7 +1077,7 @@ void KGameWindow::slotReceivedMessage (const XMPP::Message & message)
   kDebug () << "New message from " << message.from().full () << ": " << message.body();
 
   QString body = message.body();
-  QString nick = message.from().resource();
+  QString nick = message.from().full();
 
   if ( message.type() == "groupchat" )
   {
@@ -1090,6 +1101,23 @@ void KGameWindow::slotReceivedMessage (const XMPP::Message & message)
       {
         sendGameInfoToJabber();
       }
+    }
+  }
+  else if ( message.type() == "ksirkgame" )
+  {
+    XMPP::Jid jid ( message.from() );
+    if (body == "connect")
+    {
+      kDebug() << "received connect from" << jid.full();
+      KMessageJabber* messageIO = new KMessageJabber(jid.full(), m_jabberClient, this);
+      if (m_automaton->messageServer())
+      {
+        m_automaton->messageServer()->addClient(messageIO);
+      }
+    }
+    else
+    {
+      m_automaton->messageServer();
     }
   }
 }
@@ -1239,6 +1267,11 @@ void KGameWindow::slotGroupChatPresence (const XMPP::Jid & jid, const XMPP::Stat
   }
   else
   {
+    XMPP::Message message(jid);
+    message.setType("ksirkgame");
+    message.setId(QUuid::createUuid().toString().remove("{").remove("}").remove("-"));
+    message.setBody(QString("Hello, ")+jid.full());
+    m_jabberClient->sendMessage(message);
     // add a resource for this contact to the pool (existing resources will be updated)
 //     resourcePool()->addResource ( jid, XMPP::Resource ( jid.resource (), status ) );
     

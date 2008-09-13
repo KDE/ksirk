@@ -65,6 +65,7 @@ set(ksirk_SRCS
   Dialogs/kwaitedplayersetupdialog.cpp
   Dialogs/restartOrExitDialogImpl.cpp
   Dialogs/joingame.cpp
+  Dialogs/jabberconnect.cpp
   main.cpp 
   decoratedgameframe.cpp 
   gestionSprites.cpp 
@@ -76,6 +77,7 @@ set(ksirk_SRCS
   mainMenu.cpp
   krightdialog.cpp
 #   Jabber/jabberaccount.cpp
+  Jabber/kmessagejabber.cpp
   Jabber/jabberbytestream.cpp
   Jabber/jabberclient.cpp
   Jabber/jabberconnector.cpp
@@ -108,11 +110,11 @@ target_link_libraries(ksirk
   ${QT_QTSVG_LIBRARY} 
   ${KDE4_KIO_LIBS} 
   ${KDE4_PHONON_LIBRARY}
-  kdegames
   ${CRYPT_LIBS}
   ${KDEGAMES_LIBRARY}
   iris_ksirk
- )
+  kdegames
+  )
 
 install( TARGETS ksirk ${INSTALL_TARGETS_DEFAULT_ARGS})
 

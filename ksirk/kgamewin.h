@@ -624,9 +624,13 @@ public:
 
   bool finishSetupPlayers();
 
+  inline JabberClient* jabberClient() {return m_jabberClient;}
   void askForJabberGames();
   void sendGameInfoToJabber();
-  
+
+  inline XMPP::Jid& serverJid() {return m_serverJid;}
+  inline void setServerJid(const XMPP::Jid& jid) {m_serverJid = jid;}
+
 protected:
 
   /**
@@ -1119,7 +1123,8 @@ private: // Private methods
   int m_stackWidgetBeforeNewGame;
 
   JabberClient* m_jabberClient;
-
+  XMPP::Jid m_serverJid;
+  
   /* Initial presence to set after connecting. */
   XMPP::Status m_initialPresence;
 
