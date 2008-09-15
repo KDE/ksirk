@@ -159,7 +159,8 @@ GameAutomaton::GameAutomaton() :
     m_attackAuto(false),
     m_defenseAuto(false),
     m_port(KSIRK_DEFAULT_PORT),
-    m_startingGame(false)
+    m_startingGame(false),
+    m_pixmapCache("GameAutomaton")
 {
   m_skin = "skins/default";
   //   kDebug() << endl;
@@ -2651,6 +2652,24 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
 void GameAutomaton::askForJabberGames()
 {
   m_game->askForJabberGames();
+}
+
+QSvgRenderer& GameAutomaton::rendererFor(const QString& skinName)
+{
+  if (!m_renderers.contains(skinName))
+  {
+    m_renderers.insert(skinName,new QSvgRenderer(this));
+  }
+  return *m_renderers[skinName];
+}
+
+KGameSvgDocument& GameAutomaton::svgDomFor(const QString& skinName)
+{
+  if (!m_svgDoms.contains(skinName))
+  {
+    m_svgDoms.insert(skinName,KGameSvgDocument());
+  }
+  return m_svgDoms[skinName];
 }
 
 } // closing namespace GameLogic

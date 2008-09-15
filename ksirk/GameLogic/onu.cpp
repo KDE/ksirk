@@ -55,8 +55,7 @@ ONU::ONU(GameAutomaton* automaton,
   m_zoom(1.0),
   m_zoomArena(1.0),
   m_nbZooms(0),
-  m_zoomFactorFinal(1),
-  m_renderer(0)
+  m_zoomFactorFinal(1)
 {
 
   kDebug() << "ONU constructor: " << m_configFileName;
@@ -91,12 +90,17 @@ ONU::ONU(GameAutomaton* automaton,
   m_name = onugroup.readEntry("name");
   m_skin = onugroup.readEntry("skinpath");
   kDebug() << "skin snapshot file: " << KGlobal::dirs()-> findResource("appdata", m_skin + "/Images/snapshot.jpg");
-  m_snapshot = QPixmap(KGlobal::dirs()-> findResource("appdata", m_skin + "/Images/snapshot.jpg"));
-  if (m_snapshot.isNull())
+  if (!m_automaton->pixmapCache().find(m_skin+"snapshot", m_snapshot))
   {
-    kError() << "Was not able to load the snapshot image: " 
-      << KGlobal::dirs()-> findResource("appdata", m_skin + "/Images/snapshot.jpg") 
+    // Pixmap isn't in the cache, create it and insert to cache
+    m_snapshot = QPixmap(KGlobal::dirs()-> findResource("appdata", m_skin + "/Images/snapshot.jpg"));
+    if (m_snapshot.isNull())
+    {
+      kError() << "Was not able to load the snapshot image: "
+      << KGlobal::dirs()-> findResource("appdata", m_skin + "/Images/snapshot.jpg")
       << endl;
+    }
+    m_automaton->pixmapCache().insert(m_skin+"snapshot", m_snapshot);
   }
   m_width  = onugroup.readEntry("width",0);
   m_height  = onugroup.readEntry("height",0);
@@ -118,9 +122,13 @@ ONU::ONU(GameAutomaton* automaton,
       exit(2);
   }
   m_map = QPixmap();
-  m_renderer.load(poolFileName);
-  m_svgDom.load(poolFileName);
-
+  kDebug() << m_skin << "before pool loading";
+  if (!m_automaton->rendererFor(m_skin).isValid())
+    m_automaton->rendererFor(m_skin).load(poolFileName);
+  if (m_automaton->svgDomFor(m_skin).svgFilename().isNull())
+    m_automaton->svgDomFor(m_skin).load(poolFileName);
+  kDebug() << m_skin << "after pool loading";
+  
   QString mapMaskFileName = KGlobal::dirs()-> findResource("appdata", m_skin + '/' + onugroup.readEntry("map-mask"));
   kDebug() << "Map mask file name: " << mapMaskFileName;
   if (mapMaskFileName.isNull())
@@ -131,8 +139,22 @@ ONU::ONU(GameAutomaton* automaton,
       exit(2);
   }
   kDebug() << "Loading map mask file: " << mapMaskFileName;
-  countriesMask = QImage(mapMaskFileName);
+  QPixmap countriesMaskPix;
+  if (!m_automaton->pixmapCache().find(m_skin+"mapmask", countriesMaskPix))
+  {
+    // Pixmap isn't in the cache, create it and insert to cache
+    countriesMaskPix = QPixmap(mapMaskFileName);
+    if (countriesMaskPix.isNull())
+    {
+      kError() << "Was not able to load the map mask image: " << mapMaskFileName << endl;
+    }
+    m_automaton->pixmapCache().insert(m_skin+"mapmask", countriesMaskPix);
+  }
+//   countriesMask = QImage(mapMaskFileName);
+  countriesMask = QImage(countriesMaskPix);
+  
 
+  
   Sprites::SkinSpritesData::changeable().intData("fighters-flag-y-diff", onugroup.readEntry("fighters-flag-y-diff",0));
   Sprites::SkinSpritesData::changeable().intData("width-between-flag-and-fighter", onugroup.readEntry("width-between-flag-and-fighter",0));
 
@@ -543,44 +565,48 @@ Continent* ONU::continentNamed(const QString& name)
 void ONU::buildMap()
 {
   kDebug() << "with zoom="<< m_zoom;
-  //QSize size((int)(m_renderer.defaultSize().width()*m_zoom),(int)(m_renderer.defaultSize().height()*m_zoom));
-  QSize size((int)(m_width),(int)(m_height));
-  QImage image(size, QImage::Format_ARGB32_Premultiplied);
-  image.fill(0);
-  QPainter p(&image);
-  m_renderer.render(&p, "map");
-  QPixmap mapPixmap = QPixmap::fromImage(image);
-
-  m_map = mapPixmap;
-
-  QPainter painter(&m_map);
-  QFont foregroundFont(m_font.family, m_font.size, m_font.weight, m_font.italic);
-  QFont backgroundFont(m_font.family, m_font.size, QFont::Normal, m_font.italic);
-
-  painter.drawPixmap(0,0,mapPixmap);
-  
-  foreach (Country* country, countries)
+  //QSize size((int)(m_automaton->rendererFor(m_skin).defaultSize().width()*m_zoom),(int)(m_automaton->rendererFor(m_skin).defaultSize().height()*m_zoom));
+  if (!m_automaton->pixmapCache().find(m_skin+"map"+QString::number(m_width)+QString::number(m_height), m_map))
   {
-    const QString& countryName = i18n(country->name().toUtf8().data());
-    if (m_font.backgroundColor != "none")
+    // Pixmap isn't in the cache, create it and insert to cache
+    QSize size((int)(m_width),(int)(m_height));
+    QImage image(size, QImage::Format_ARGB32_Premultiplied);
+    image.fill(0);
+    QPainter p(&image);
+    m_automaton->rendererFor(m_skin).render(&p, "map");
+    m_map = QPixmap::fromImage(image);
+    
+    
+    QPainter painter(&m_map);
+    QFont foregroundFont(m_font.family, m_font.size, m_font.weight, m_font.italic);
+    QFont backgroundFont(m_font.family, m_font.size, QFont::Normal, m_font.italic);
+    
+    painter.drawPixmap(0,0,m_map);
+    
+    foreach (Country* country, countries)
     {
-      painter.setPen(m_font.backgroundColor);
-      painter.setFont(backgroundFont);
+      const QString& countryName = i18n(country->name().toUtf8().data());
+      if (m_font.backgroundColor != "none")
+      {
+        painter.setPen(m_font.backgroundColor);
+        painter.setFont(backgroundFont);
+        QRect countryNameRect = painter.fontMetrics().boundingRect(countryName);
+        painter.drawText(
+        int((country->centralPoint().x()*m_zoom-countryNameRect.width()/2+1)),
+                         int((country->centralPoint().y()*m_zoom+countryNameRect.height()/2 + 1)),
+                         countryName);
+      }
+      painter.setPen(m_font.foregroundColor);
+      painter.setFont(foregroundFont);
       QRect countryNameRect = painter.fontMetrics().boundingRect(countryName);
       painter.drawText(
-        int((country->centralPoint().x()*m_zoom-countryNameRect.width()/2+1)),
-        int((country->centralPoint().y()*m_zoom+countryNameRect.height()/2 + 1)),
-        countryName);
+      int((country->centralPoint().x()*m_zoom-countryNameRect.width()/2)),
+                       int((country->centralPoint().y()*m_zoom+countryNameRect.height()/2)),
+                       countryName);
     }
-    painter.setPen(m_font.foregroundColor);
-    painter.setFont(foregroundFont);
-    QRect countryNameRect = painter.fontMetrics().boundingRect(countryName);
-    painter.drawText(
-    int((country->centralPoint().x()*m_zoom-countryNameRect.width()/2)),
-    int((country->centralPoint().y()*m_zoom+countryNameRect.height()/2)),
-        countryName);
-  }
 
+    m_automaton->pixmapCache().insert(m_skin+"map"+QString::number(m_width)+QString::number(m_height), m_map);
+  }
 }
 
 void ONU::applyZoomFactor(qreal zoomFactor)
@@ -665,13 +691,13 @@ double ONU::zoom() const
 
 QSvgRenderer* ONU::renderer()
 {
-  return &m_renderer;
+  return &m_automaton->rendererFor(m_skin);
 }
 
 
 KGameSvgDocument* ONU::svgDom()
 {
-  return &m_svgDom;
+  return &m_automaton->svgDomFor(m_skin);
 }
 /** the SLOTS METHODS FOR THE ONU CLASS*/
 void ONU::changingZoom()

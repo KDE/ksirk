@@ -92,7 +92,10 @@ public:
 
 protected Q_SLOTS:
   virtual void slotMessageReceived ( const XMPP::Message &message );
-
+  virtual void slotGroupChatLeft(const XMPP::Message&);
+  virtual void slotResourceUnavailable(const Jid&, const Resource&);
+  virtual void slotGroupChatPresence(const XMPP::Jid&, const XMPP::Status&);
+  
 protected:
   JabberClient* mClient;
   bool mAwaitingHeader;

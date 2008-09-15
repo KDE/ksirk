@@ -449,32 +449,6 @@ void KGameWindow::loadDices()
 QPixmap KGameWindow::buildDice(DiceColor color, const QString& id)
 {
   kDebug();
-//   QString stop1Color, stop2Color;
-//   if (color == Red)
-//   {
-//     stop1Color = "#f07f7f";
-//     stop2Color = "#620000";
-//   }
-//   else
-//   {
-//     stop1Color = "#707fff";
-//     stop2Color = "#000062";
-//   }
-//   QDomNode stop1Element = m_theWorld->svgDom()->elementById("stop1LinearGradientDice");
-//   m_theWorld->svgDom()->setCurrentNode(stop1Element);
-//   m_theWorld->svgDom()->setStyleProperty("style", QString("stop-color:")+stop1Color+";stop-opacity:1");
-// 
-//   QDomNode stop2Element = m_theWorld->svgDom()->elementById("stop2LinearGradientDice");
-//   m_theWorld->svgDom()->setCurrentNode(stop2Element);
-//   m_theWorld->svgDom()->setStyleProperty("style", QString("stop-color:")+stop2Color+";stop-opacity:1");
-// 
-//   kDebug() << "after stops " << stop1Color << ", " << stop2Color;
-// 
-//   QByteArray svg = m_theWorld->svgDom()->toByteArray();
-//   kDebug() << svg;
-//   KSvgRenderer renderer;
-//   renderer.load(svg);
-//   kDebug() << "after loading";
 
   QSize size(32,32);
   QImage image(size, QImage::Format_ARGB32_Premultiplied);

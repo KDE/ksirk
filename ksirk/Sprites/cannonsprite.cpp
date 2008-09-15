@@ -40,7 +40,7 @@ CannonSprite::CannonSprite(double zoom,
 
 
 
-  CannonSprite::CannonSprite(const QString &svgid,
+CannonSprite::CannonSprite(const QString &svgid,
                               unsigned int width,
                               unsigned int height,
                               unsigned int nbFrames,

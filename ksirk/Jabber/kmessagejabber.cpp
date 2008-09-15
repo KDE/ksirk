@@ -34,8 +34,16 @@ KMessageJabber::KMessageJabber (const QString& peerJid, JabberClient* jabberClie
 {
   kDebug() << peerJid;
 //   initSocket ();
-  connect(jabberClient, SIGNAL(messageReceived(const XMPP::Message&)),
-           this, SLOT(slotMessageReceived(const XMPP::Message&)));
+  connect(jabberClient, SIGNAL(messageReceived(const XMPP::Message&)), this, SLOT(slotMessageReceived(const XMPP::Message&)));
+         
+  connect(jabberClient, SIGNAL(resourceUnavailable (const Jid&, const Resource&)), this, SLOT(slotResourceUnavailable(const Jid&, const Resource&)));
+                  
+  connect(jabberClient, SIGNAL(groupChatLeft(const XMPP::Jid&)), this, SLOT(slotGroupChatLeft(const XMPP::Message&)));
+
+  connect(jabberClient, SIGNAL(groupChatPresence(const XMPP::Jid&, const XMPP::Status&)), this, SLOT(slotGroupChatPresence(const XMPP::Jid&, const XMPP::Status&)));
+
+  
+  
 }
 
 KMessageJabber::~KMessageJabber ()
@@ -70,6 +78,21 @@ void KMessageJabber::slotMessageReceived(const XMPP::Message &message)
 QString KMessageJabber::peerName () const
 {
   return mPeerJid;
+}
+
+void KMessageJabber::slotGroupChatLeft(const XMPP::Message& msg)
+{
+  kDebug() << msg.from().full() << msg.to().full() << msg.body();
+}
+
+void KMessageJabber::slotResourceUnavailable(const Jid& jid, const Resource& resource)
+{
+  kDebug() << jid.full();
+}
+
+void KMessageJabber::slotGroupChatPresence(const XMPP::Jid& jid, const XMPP::Status& status)
+{
+  kDebug() << jid.full() << status.status();
 }
 
 #include "kmessagejabber.moc"

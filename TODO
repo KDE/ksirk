@@ -70,6 +70,7 @@ Before 1.9:
   * add more visual clues during battle (number of cannons and explosions equal
     to those involved, the nation flag, etc.)
   * rework overall window presentation (size of maps, chat and info dialog, etc.)
+  * add Next/Back buttons during game initialization
   * [DONE through chat and info widget] at first game launch, add an
     information step explaining the role of buttons with a "Do not show again"
     check box.
