@@ -114,21 +114,39 @@ void AnimSprite::sequenceConstruction()
 {
   QList<QPixmap> list;
 
-  QSize size((int)(m_width*frames), (int)(m_height*nbVersions));
-  QImage image(size, QImage::Format_ARGB32_Premultiplied);
-  image.fill(0);
-  QPainter p(&image);
-  m_renderer->render(&p, m_svgid);
-  QPixmap allpm = QPixmap::fromImage(image);
+  KPixmapCache& cache = const_cast<ONU*>(backGnd->onu())->automaton()->pixmapCache();
+
+  QPixmap allpm;
+  QString allpmCacheId = m_skin+m_svgid+QString::number(m_width*frames)+"x"+QString::number(m_height*nbVersions);
+  if (!cache.find(allpmCacheId, allpm))
+  {
+    // Pixmap isn't in the cache, create it and insert to cache
+    QSize size((int)(m_width*frames), (int)(m_height*nbVersions));
+    QImage image(size, QImage::Format_ARGB32_Premultiplied);
+    image.fill(0);
+    QPainter p(&image);
+    m_renderer->render(&p, m_svgid);
+    allpm = QPixmap::fromImage(image);
+
+    cache.insert(allpmCacheId, allpm);
+  }
+  
   for (unsigned int l = 0; l<nbVersions;l++)
   {
     for (unsigned int i = 0; i<frames;i++)
     {
 //       kDebug()<< "constr s : "<<m_width<<" "<<m_height<<" "<<look-1<<endl;
-      QPixmap pm =
-        allpm.copy(
-            (int)(m_width*i), (int)(m_height*l),
-            (int)(m_width), (int)(m_height));
+      QPixmap pm;
+      QString pmCacheId = m_skin+m_svgid+QString::number(m_width*frames)+"x"+QString::number(m_height*nbVersions)+"-"+QString::number(i)+":"+QString::number(l);
+      if (!cache.find(pmCacheId, pm))
+      {
+        // Pixmap isn't in the cache, create it and insert to cache
+        pm = allpm.copy((int)(m_width*i), (int)(m_height*l),
+                   (int)(m_width), (int)(m_height));
+                   
+        cache.insert(pmCacheId, pm);
+      }
+
       list.push_back(pm);
     }
   }

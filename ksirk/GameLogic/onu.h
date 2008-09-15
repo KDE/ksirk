@@ -197,6 +197,7 @@ public:
 
   inline void setZoomArena(double newZoom) {m_zoomArena = newZoom;}
 
+  inline GameAutomaton* automaton() {return m_automaton;}
 private:
   /**
     * All data that have to be stored about the font to display countries names
