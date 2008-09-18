@@ -145,7 +145,7 @@ your application. -->
 <para>Preliminary note : the map can be scrolled by three methods:</para>
 <itemizedlist><listitem><para>You can put your
 mouse near a border of the window and the map will scroll in that direction</para></listitem>
-<listitem><para>You can use your mouse wheel: with no modifier, it will scroll vertically; when pressing the Meta
+<listitem><para>You can use your mouse wheel: with no modifier, it will scroll vertically; when pressing the &Alt;
 key, it will scroll horizontally</para></listitem>
 <listitem><para>You can use the keyboard arrows</para></listitem></itemizedlist>
 <sect2 id="mainmenu" >
@@ -346,8 +346,6 @@ that can be selected by two buttons showed in the right panel:
 <variablelist>
 <varlistentry>
 <term>
-  <menuchoice>
-    <guimenu>
       <inlinemediaobject>
         <imageobject>
           <imagedata fileref="distributionArmees.png" format="PNG"/>
@@ -355,9 +353,8 @@ that can be selected by two buttons showed in the right panel:
         <textobject>
           <phrase>Redistribution</phrase>
         </textobject>
-      </inlinemediaobject> : Redistribution
-    </guimenu>
-  </menuchoice>
+      </inlinemediaobject>
+    <guibutton>Recycle</guibutton>
 </term>
 <listitem>
   <para>
@@ -372,8 +369,6 @@ that can be selected by two buttons showed in the right panel:
 </varlistentry>
 <varlistentry>
 <term>
-  <menuchoice>
-    <guimenu>
       <inlinemediaobject>
         <imageobject>
           <imagedata fileref="distributionArmeesFinie.png" format="PNG"/>
@@ -381,9 +376,8 @@ that can be selected by two buttons showed in the right panel:
         <textobject>
           <phrase>End of redistribution</phrase>
         </textobject>
-      </inlinemediaobject> : End of redistribution
-    </guimenu>
-  </menuchoice>
+      </inlinemediaobject>
+    <guibutton>Done</guibutton>
 </term>
 <listitem><para><action>The redistribution is finished and the game can continue.
 </action></para></listitem>
@@ -623,8 +617,6 @@ If you play a local game and want to communicate with the other players, well, l
 <variablelist>
 <varlistentry>
 <term>
-  <menuchoice>
-    <guimenu>
       <inlinemediaobject>
         <imageobject>
           <imagedata fileref="quit.png" format="PNG"/>
@@ -632,9 +624,8 @@ If you play a local game and want to communicate with the other players, well, l
         <textobject>
           <phrase>Quit Game</phrase>
         </textobject>
-      </inlinemediaobject> : Quit Game
-    </guimenu>
-  </menuchoice>
+      </inlinemediaobject>
+    <guibutton>Quit</guibutton>
 </term>
 <listitem><para><action>
 Causes the program to quit.
@@ -642,8 +633,6 @@ Causes the program to quit.
 </varlistentry>
 <varlistentry>
 <term>
-  <menuchoice>
-    <guimenu>
       <inlinemediaobject>
         <imageobject>
           <imagedata fileref="newGame.png" format="PNG"/>
@@ -651,9 +640,8 @@ Causes the program to quit.
         <textobject>
           <phrase>New Game</phrase>
         </textobject>
-      </inlinemediaobject> : New Game
-    </guimenu>
-  </menuchoice>
+      </inlinemediaobject>
+    <guibutton>New Game</guibutton>
 </term>
 <listitem><para><action>Starts a new game. It will cause the displaying of a dialog asking
 the number of players. After that, each player will be asked its name with another dialog.
@@ -671,7 +659,7 @@ the number of players. After that, each player will be asked its name with anoth
   <title>Developer's Guide to &kappname;</title>
   
   <para>
-    Please refer to the KDoc documentation for the API. It was quite complete but is currently a little bit outdated.The comments are inexistant in the <filename>.cpp</filename> implementation files.
+    Please refer to <ulink url="http://api.kde.org/">http://api.kde.org/</ulink> for the documentation of the API. It was quite complete but is currently a little bit outdated.There are no comments in the <filename>.cpp</filename> implementation files.
   </para>
   <para>
     Note that I originally developed this game under &Windows; with Borland C++ and WinG. I ported
