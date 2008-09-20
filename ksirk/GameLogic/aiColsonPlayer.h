@@ -32,6 +32,8 @@
 // #include "game.h"
 // #include "utils.h"
 
+#include <map>
+
 #define MAX_CARDS       10
 
 namespace Ksirk

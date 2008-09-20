@@ -21,6 +21,8 @@
 #include "KsirkChatModel.h"
 #include "player.h"
 
+#include <KLocale>
+
 #include <QLayout>
 #include <QApplication>
 #include <QPainter>
@@ -67,9 +69,9 @@ void KsirkChatModel::addMessage(const KsirkChatItem& message)
 {
   QString msg;
   if ((QString(message.first)).length() == 0) {
-     msg = "No message...";
+     msg = i18n("No message...");
   } else {
-     msg = "<b>"+message.first+":</b> "+message.second;
+    msg = i18n("<b>%1:</b> %2", message.first, message.second);
      if (msg.length() > 77) {
         msg.resize(64);
         msg += " ...";

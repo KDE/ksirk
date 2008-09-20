@@ -99,7 +99,7 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
       const Player* player = mouseLocalisation-> owner();
       if (player)
       {
-        status1Text = i18n("%1 belongs to %2. %3 armies.",countryName,player->name(),mouseLocalisation->nbArmies());
+        status1Text = i18n("%1 belongs to %2. %3 armies.",i18n(countryName.toUtf8().data()),player->name(),mouseLocalisation->nbArmies());
       }
 
       statusBar()-> changeItem(status1Text, ID_STATUS_MSG);
