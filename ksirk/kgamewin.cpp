@@ -1203,7 +1203,11 @@ void KGameWindow::displayDefenseWindow()
   QPushButton * defAuto = new QPushButton (i18n("Defend-Auto"));
 
   QLabel * labDef = new QLabel ();
-  labDef->setText("<font color=\"red\">"+this->firstCountry()->owner()->name()+"</font> attacks you from <font color=\"red\">"+ this->firstCountry()->name() +"</font> with " + QString::number(this->firstCountry()->owner()->getNbAttack()) + " armies !<br> How do you want to defend <font color=\"blue\">" + this->secondCountry()->name() + "</font> ?");
+  labDef->setText(i18n("<font color=\"red\">%1</font> attacks you from <font color=\"red\">%2</font> with %3 armies !<br> How do you want to defend <font color=\"blue\">%4</font> ?",
+                        this->firstCountry()->owner()->name(),
+                        this->firstCountry()->name(),
+                        QString::number(this->firstCountry()->owner()->getNbAttack()),
+                        this->secondCountry()->name()));
 
   // Add icons on buttons
   KConfig config(m_automaton->game()->theWorld()->getConfigFileName());
@@ -3024,7 +3028,7 @@ void KGameWindow::optionsConfigure()
 void KGameWindow::explain()
 {
   KMessageParts message0Parts;
-  message0Parts << "<b>KsirK quick Introduction</b>";
+  message0Parts << I18N_NOOP("<b>KsirK quick Introduction</b>");
   broadcastChangeItem(message0Parts, ID_NO_STATUS_MSG);
 
   KMessageParts message1Parts;

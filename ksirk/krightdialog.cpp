@@ -105,8 +105,8 @@ namespace Ksirk
 
       picture = world->countryAt(countryPoint)->owner()->getFlag()->image(0);
 
-      QString continent = world->countryAt(countryPoint)->continent()->name();
-      QString pays = world->countryAt(countryPoint)->name();
+      QString continent = i18n(world->countryAt(countryPoint)->continent()->name().toUtf8().data());
+      QString pays = i18n(world->countryAt(countryPoint)->name().toUtf8().data());
       QString units = QString::number(world->countryAt(countryPoint)->nbArmies());
       QString owner = world->countryAt(countryPoint)->owner()->name();
 
@@ -211,9 +211,9 @@ namespace Ksirk
       picture1 = attaker->owner()->getFlag()->image(0);
       picture2 = defender->owner()->getFlag()->image(0);
       
-      rightContents.at(0)->setText("<u><b>"+pays_A+"</b></u>");
+      rightContents.at(0)->setText("<u><b>"+i18n(pays_A.toUtf8().data())+"</b></u>");
       flag1->setPixmap(picture1);
-      rightContents.at(1)->setText(I18N_NOOP("<i>("+owner_A+")</i> "));
+      rightContents.at(1)->setText("<i>("+owner_A+")</i> ");
       
       rightContents.at(2)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
       rightContents.at(2)->setFixedSize(35,35);
@@ -222,13 +222,13 @@ namespace Ksirk
       rightContents.at(4)->setText(i18n("<font color=\"red\">Attack</font> with %1 armies.<br>", nb_A));
 
       
-      rightContents.at(5)->setText(I18N_NOOP("<u><b>"+pays_D+"</b></u> "));
+      rightContents.at(5)->setText("<u><b>"+i18n(pays_D.toUtf8().data())+"</b></u> ");
       flag2->setPixmap(picture2);
-      rightContents.at(6)->setText(I18N_NOOP("<i>("+owner_D+")</i> "));
+      rightContents.at(6)->setText("<i>("+owner_D+")</i> ");
       
       rightContents.at(7)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
       rightContents.at(7)->setFixedSize(35,35);
-      rightContents.at(8)->setText(I18N_NOOP("<b>"+nb_units_D+"</b> "));
+      rightContents.at(8)->setText("<b>"+nb_units_D+"</b> ");
 
       rightContents.at(9)->setText(i18n("<font color=\"blue\">Defend</font> with %1 armies.<br>", nb_D));
 
@@ -260,7 +260,7 @@ namespace Ksirk
 
       if (game->automaton()->isAttackAuto()
           && !game->automaton()->currentPlayer()->isVirtual()) {
-         buttonStopAttack = new QPushButton(stopAttackAuto,"Stop Attack-auto");
+         buttonStopAttack = new QPushButton(stopAttackAuto,i18n("Stop Attack-auto"));
          mainLayout->addWidget(buttonStopAttack,3,0);
          connect(buttonStopAttack, SIGNAL(clicked()), this, SLOT(slotStopAttackAuto()));
       }
@@ -285,9 +285,9 @@ namespace Ksirk
       QGridLayout* btRecycleLayout = new QGridLayout();
       QGridLayout* btValidLayout = new QGridLayout();
 
-      QPushButton* buttonValid = new QPushButton(recycleNextPlayer, "Valid", this);
-      QPushButton* buttonRecycle = new QPushButton(recycleContinue, "Recycle", this);
-      QPushButton* buttonRecycleDone = new QPushButton(recycleDone, "Done", this);
+      QPushButton* buttonValid = new QPushButton(recycleNextPlayer, i18n("Valid"), this);
+      QPushButton* buttonRecycle = new QPushButton(recycleContinue, i18n("Recycle"), this);
+      QPushButton* buttonRecycleDone = new QPushButton(recycleDone, i18n("Done"), this);
 
       connect(buttonValid, SIGNAL(clicked()), game, SLOT(slotNextPlayer()));
       connect(buttonRecycle, SIGNAL(clicked()), game, SLOT(slotRecycling()));
@@ -311,7 +311,7 @@ namespace Ksirk
       btValidWidget->setLayout(btValidLayout);
 
 
-      rightContents.at(0)->setText(I18N_NOOP("<u><b>"+player->name()+"</b></u> "));
+      rightContents.at(0)->setText("<u><b>"+player->name()+"</b></u> ");
       flag1->setPixmap(player->getFlag()->image(0));
 
       rightContents.at(1)->setText(i18n("%1 armies to place", nbAvailArmies));
@@ -384,7 +384,7 @@ namespace Ksirk
       else
       {
         rightContents.at(1)->setText(i18n("%1 armies to place", nbAvailArmies));
-        rightContents.at(2)->setText("<b>"+country->name()+"</b>");
+        rightContents.at(2)->setText("<b>"+i18n(country->name().toUtf8().data())+"</b>");
         rightContents.at(3)->setText(i18n("<b>Armies: %1", country->nbArmies()));
         if (nbAvailArmies > 0)
         {

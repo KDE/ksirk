@@ -156,7 +156,7 @@ QString Goal::message(int displayType) const
   std::set<unsigned int>::const_iterator it, it_end, it_next;
   
   if(type()==NoGoal) {
-    QString mes = (QString)"You must conquer the World !";
+    QString mes = i18n("You must conquer the World !");
     return mes;
   }
   else

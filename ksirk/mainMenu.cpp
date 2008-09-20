@@ -56,7 +56,7 @@ namespace Ksirk
     QLabel * lTitle = new QLabel ();
     QLabel * lImage1 = new QLabel();
     QLabel * lImage2 = new QLabel();
-    lTitle->setText("<h1>KsirK</h1>");
+    lTitle->setText(i18n("<h1>KsirK</h1>"));
 
     // Fixe size of the buttons
     pbNewGame->setFixedSize(400, 100);
