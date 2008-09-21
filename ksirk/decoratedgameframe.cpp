@@ -286,6 +286,13 @@ void DecoratedGameFrame::slotMouseInput(KGameIO *input,QDataStream &stream,QMous
   kDebug() << e;
   
   QGraphicsItem* item = itemAt(mapFromScene(((QGraphicsSceneMouseEvent*)e)->scenePos()));
+  if (item == 0)
+  {
+    *eatevent=false;
+    e->setAccepted(false);
+    return;
+  }
+
   while (item->parentItem()!=0 && dynamic_cast<KGamePopupItem*>(item)==0)
   {
     item = item->parentItem();
