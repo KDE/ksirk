@@ -312,7 +312,7 @@ public:
     * will contain the port on which we will wait for connections.
     * @param newPlayersNumber Will contain the number players of the new game.
     */
-  bool setupPlayersNumberAndSkin();
+  bool setupPlayersNumberAndSkin(bool socket);
   
     /**
      * Create an IO device like Mouse or Keyboard for the given player
@@ -551,7 +551,8 @@ private:
   KPixmapCache m_pixmapCache;
   QMap<QString, QSvgRenderer*> m_renderers;
   QMap<QString, KGameSvgDocument> m_svgDoms;
-  
+
+  bool m_socketkGame;
 };
 
 QDataStream& operator>>(QDataStream& s, GameAutomaton::GameState& state);

@@ -1,5 +1,5 @@
 /* This file is part of KsirK.
-   Copyright (C) 2008 Guillaume Pelouas <pelouas@hotmail.fr>
+   Copyright (C) 2008 Gael de Chalendar <kleag@free.fr>
 
    KsirK is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -16,38 +16,21 @@
    02110-1301, USA
 */
 
-/* begin                : Fri  21 2007 */
+#include "jabbergameui.h"
+#include "ksirksettings.h"
 
-#ifndef MAINMENU_H
-#define MAINMENU_H
+#include <KDebug>
 
-#include "ui_mainMenu.h"
-
-#include "KsirkGlobalDefinitions.h"
-
-#include <QWidget>
-
-
-namespace Ksirk
+KsirkJabberGameWidget::KsirkJabberGameWidget(QWidget* parent) : QWidget(parent)
 {
-  namespace GameLogic
-  {
-    class GameAutomaton;
-  }
+  kDebug();
+  
+  setupUi(this);
+  jabberid->setText(Ksirk::KsirkSettings::jabberId());
+  password->setText(Ksirk::KsirkSettings::jabberPassword());
+  roomjid->setText(Ksirk::KsirkSettings::roomJid());
+  roompassword->setText(Ksirk::KsirkSettings::roomPassword());
+  nickname->setText(Ksirk::KsirkSettings::nickname());
 }
 
-/**
-  * The mainMenu class is the widget displayed in the main window
-  */
-class mainMenu : public QWidget, public Ui::MainMenu
-{
-  Q_OBJECT
-
-public:
-  mainMenu(Ksirk::GameLogic::GameAutomaton* automaton, QWidget* parent = 0);
-
-  ~mainMenu() {}
-};
-
-
-#endif
+#include "jabbergameui.moc"

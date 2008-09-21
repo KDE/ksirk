@@ -66,6 +66,7 @@ set(ksirk_SRCS
   Dialogs/restartOrExitDialogImpl.cpp
   Dialogs/joingame.cpp
   Dialogs/jabberconnect.cpp
+  Dialogs/jabbergameui.cpp
   main.cpp 
   decoratedgameframe.cpp 
   gestionSprites.cpp 
@@ -93,8 +94,10 @@ set(ksirk_UI
   Dialogs/restartOrExitDialog.ui
   Dialogs/jabberconnect.ui
   Dialogs/joingame.ui
+  Dialogs/jabbergameui.ui
   preferences.ui
-)
+  mainMenu.ui
+  )
 
 
 kde4_add_ui_files(ksirk_SRCS ${ksirk_UI} )

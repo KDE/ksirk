@@ -82,7 +82,7 @@ void NewGameDialogImpl::slotOK()
   m_nbPlayers = playersNumberEntry->value();
   m_skin = m_worlds[skinCombo->currentText()]->skin();
   kDebug() << "  m_skin is " << m_skin;
-  m_networkGame  = networkGameCheckBox->isChecked();
+//   m_networkGame  = networkGameCheckBox->isChecked();
   m_useGoals = (radioGoal->isChecked());
   emit newGameOK(m_nbPlayers, m_skin, m_networkGame, m_useGoals);
 //   accept();

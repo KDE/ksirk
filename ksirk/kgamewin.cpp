@@ -19,7 +19,8 @@
 /*  begin                : mer jui 11 22:27:28 EDT 2001   */
 
 // application specific includes
-#include "kgamewin.h" 
+#include "kgamewin.h"
+#include "mainMenu.h"
 #include "ksirkConfigDialog.h"
 #include "ksirksettings.h"
 #include "MessageBubble.h"
@@ -43,6 +44,7 @@
 #include "Dialogs/kwaitedplayersetupdialog.h"
 #include "Dialogs/restartOrExitDialogImpl.h"
 #include "Dialogs/newGameDialogImpl.h"
+#include "Dialogs/jabbergameui.h"
 #include "im.h"
 #include "xmpp_tasks.h"
 
@@ -574,7 +576,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
   bool firstCall = false;
   if (m_mainMenu == 0)
   {
-    m_mainMenu = new mainMenu(this, width, height, m_automaton);
+    m_mainMenu = new mainMenu(m_automaton, this);
     firstCall = true;
   }
   else
@@ -611,21 +613,24 @@ void KGameWindow::newSkin(const QString& onuFileName)
   m_arena->setMaximumHeight(height);
   m_arena->setCacheMode( QGraphicsView::CacheBackground );
 
+  m_jabberGameWidget = new KsirkJabberGameWidget(this);
+  
   kDebug() << "put the menu, map and arena in the central widget";
   m_centralWidget->addWidget(m_mainMenu);
   m_centralWidget->addWidget(m_frame);
   m_centralWidget->addWidget(m_arena);
   m_centralWidget->addWidget(m_newGameDialog);
+  m_centralWidget->addWidget(m_jabberGameWidget);
   //m_centralWidget->addWidget(m_splitter);m_centralWidget
   if (firstCall)
   {
-    m_centralWidget->setCurrentIndex(0);
+    m_centralWidget->setCurrentIndex(MAINMENU_INDEX);
     m_currentDisplayedWidget = mainMenuType;
     m_bottomDock->hide();
   }
   else
   {
-    m_centralWidget->setCurrentIndex(1);
+    m_centralWidget->setCurrentIndex(MAP_INDEX);
     m_currentDisplayedWidget = mapType;
     m_bottomDock->show();
   }
@@ -1454,14 +1459,14 @@ void KGameWindow::setBarFlagButton(const Player* player)
   m_frame->setFocus();
 }
 
-bool KGameWindow::setupPlayers()
+bool KGameWindow::setupPlayers(bool socket)
 {
   kDebug();
   
   // Number of players
   m_networkGame = false;
   m_newPlayersNumber = 0;
-  m_automaton->setupPlayersNumberAndSkin();
+  m_automaton->setupPlayersNumberAndSkin(socket);
   return false;
 }
 
@@ -2838,7 +2843,7 @@ void KGameWindow::cancelShiftSource()
   }
 }
 
-bool KGameWindow::actionNewGame()
+bool KGameWindow::actionNewGame(bool socket)
 {
 //   kDebug() << "KGameWindow::actionNewGame()";
   if  ( ( m_automaton->playerList()->count() == 0 ) ||
@@ -2858,7 +2863,7 @@ bool KGameWindow::actionNewGame()
     m_automaton->setGameStatus(KGame::End);
     m_automaton->state(GameLogic::GameAutomaton::INIT);
     m_automaton->savedState(GameLogic::GameAutomaton::INVALID);
-    setupPlayers();
+    setupPlayers(socket);
 //     return (setupPlayers());
   }
   return false;
@@ -3237,19 +3242,19 @@ void KGameWindow::showArena()
     m_arena->initFightArena(m_firstCountry,m_secondCountry,m_backGnd_arena);
   }
   kDebug() << "before setCurrentIndex";
-  dynamic_cast <QStackedWidget*>(centralWidget())->setCurrentIndex(2);
+  dynamic_cast <QStackedWidget*>(centralWidget())->setCurrentIndex(ARENA_INDEX);
 }
 
 
 void KGameWindow::showMap()
 {
-  dynamic_cast <QStackedWidget*>(centralWidget())->setCurrentIndex(1);
+  dynamic_cast <QStackedWidget*>(centralWidget())->setCurrentIndex(MAP_INDEX);
   m_currentDisplayedWidget = mapType;
 }
 
 void KGameWindow::showMainMenu()
 {
-  dynamic_cast <QStackedWidget*>(centralWidget())->setCurrentIndex(0);
+  dynamic_cast <QStackedWidget*>(centralWidget())->setCurrentIndex(MAINMENU_INDEX);
   m_currentDisplayedWidget = mainMenuType;
 }
 
@@ -3435,7 +3440,7 @@ bool KGameWindow::newGameDialog(unsigned int maxPlayers,
   m_automaton->state(GameAutomaton::STARTING_GAME);
   m_newGameDialog->init(m_automaton, maxPlayers, skin);
   m_stackWidgetBeforeNewGame = m_centralWidget->currentIndex();
-  m_centralWidget->setCurrentIndex(3);
+  m_centralWidget->setCurrentIndex(NEWGAME_INDEX);
   return false;
 }
 

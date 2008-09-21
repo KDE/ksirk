@@ -289,7 +289,7 @@ GameAutomaton::GameState GameAutomaton::run()
 
   if (event == "actionNewGame")
   {
-    if (m_game->actionNewGame())
+    if (m_game->actionNewGame(false))
     {
       state(INIT);
       QTimer::singleShot(200, this, SLOT(run()));
@@ -1222,7 +1222,7 @@ QDataStream& operator>>(QDataStream& s, GameAutomaton::GameState& state)
 }
 
 
-bool GameAutomaton::setupPlayersNumberAndSkin()
+bool GameAutomaton::setupPlayersNumberAndSkin(bool socket)
 {
   kDebug() << endl;
   QMap< QString, QString > nations = m_game->nationsList();
@@ -1233,7 +1233,7 @@ bool GameAutomaton::setupPlayersNumberAndSkin()
     KMessageBox::error(m_game, mes, i18n("Fatal Error!"));
     exit(1);
   }
-
+  m_socketkGame = socket;
   m_game->newGameDialog(nations.size(), m_skin.value());
 
   return false;
@@ -1255,7 +1255,7 @@ bool GameAutomaton::finishSetupPlayersNumberAndSkin(const QString& skin, bool ne
   m_skin = skin;
 //   }
   
-  if (networkGame)
+  if (m_socketkGame)
   {
 // porting    
     KDialog* dialog = new KDialog( m_game );
@@ -1801,7 +1801,7 @@ void GameAutomaton::slotConnectionToServerBroken()
         KGuiItem(i18n("Do nothing")))
             == KMessageBox::Yes)
     {
-      if (!m_game->actionNewGame())
+      if (!m_game->actionNewGame(false))
         exit(0);
     }
     else
@@ -1832,7 +1832,7 @@ void GameAutomaton::slotConnectionToClientBroken(KMessageIO *)
     case KMessageBox::No :;
     default: ;
     }
-    if (!m_game->actionNewGame())
+    if (!m_game->actionNewGame(false))
       exit(1);
   }
 //   else

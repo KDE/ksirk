@@ -8,7 +8,7 @@
     <x>0</x>
     <y>0</y>
     <width>526</width>
-    <height>424</height>
+    <height>403</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -28,26 +28,13 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="0" colspan="3" >
+   <item row="1" column="0" colspan="4" >
     <widget class="QSpinBox" name="playersNumberEntry" >
      <property name="toolTip" >
       <string>Spin this to choose the number of players.</string>
      </property>
      <property name="whatsThis" >
       <string>A spin box to choose the number of players</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="3" >
-    <widget class="QCheckBox" name="networkGameCheckBox" >
-     <property name="toolTip" >
-      <string>Check this to create a network game</string>
-     </property>
-     <property name="whatsThis" >
-      <string>A network game will be created if checked</string>
-     </property>
-     <property name="text" >
-      <string>Ne&amp;twork game</string>
      </property>
     </widget>
    </item>
@@ -204,7 +191,6 @@
   <tabstop>playersNumberEntry</tabstop>
   <tabstop>radioWorld</tabstop>
   <tabstop>radioGoal</tabstop>
-  <tabstop>networkGameCheckBox</tabstop>
  </tabstops>
  <resources/>
  <connections/>

@@ -53,7 +53,8 @@ int main(int argc, char *argv[])
     KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
     KApplication app;
- 
+    KGlobal::locale()->insertCatalog("libkdegames");
+    
     if (app.isSessionRestored())
     {
         RESTORE(Ksirk::KGameWindow);

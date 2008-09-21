@@ -66,10 +66,10 @@ namespace Ksirk
   hostEdit->setFocus();
 
   QStringList headers;
-  headers.push_back("Nickname");
-  headers.push_back("Host");
-  headers.push_back("Port");
-  headers.push_back("Skin");
+  headers.push_back(i18n("Nickname"));
+  headers.push_back(i18n("Host"));
+  headers.push_back(i18n("Port"));
+  headers.push_back(i18n("Skin"));
   jabberTable->setHorizontalHeaderLabels(headers); 
 }
 

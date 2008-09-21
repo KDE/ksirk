@@ -442,15 +442,34 @@ void KGameWindow::slotArena(bool isCheck)
 
 void KGameWindow::slotNewGame()
 {
-//   kDebug() << "Slot new game: posting event actionNewGame";
-//   QPoint point;
-  actionNewGame();
-
+  //   kDebug() << "Slot new game: posting event actionNewGame";
+  //   QPoint point;
+  actionNewGame(false);
+  
   /// @TODO set the state to init when new game is started
-/*  if (actionNewGame())
+  /*  if (actionNewGame())
   {
     m_automaton->state(GameAutomaton::INIT);
-  }*/
+}*/
+//   m_automaton->gameEvent("actionNewGame", point);
+}
+
+void KGameWindow::slotJabberGame()
+{
+  m_centralWidget->setCurrentIndex(JABBERGAME_INDEX);
+}
+
+void KGameWindow::slotNewSocketGame()
+{
+  //   kDebug() << "Slot new game: posting event actionNewGame";
+  //   QPoint point;
+  actionNewGame(true);
+  
+  /// @TODO set the state to init when new game is started
+  /*  if (actionNewGame())
+  {
+    m_automaton->state(GameAutomaton::INIT);
+}*/
 //   m_automaton->gameEvent("actionNewGame", point);
 }
 

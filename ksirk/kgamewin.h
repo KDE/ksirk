@@ -54,6 +54,9 @@
 
 // #include <kdialogbase.h>
 
+class KsirkJabberGameWidget;
+class mainMenu;
+
 class QAction;
 class KGameChat;
 class KGamePopupItem;
@@ -77,7 +80,6 @@ namespace Ksirk
   // forward declaration of the KsirK classes
   class DecoratedGameFrame;
   class FightArena;
-  class mainMenu;
   class AnimSpritesGroup;
   class KRightDialog;
   class NewGameDialogImpl;
@@ -111,7 +113,13 @@ public:
   enum MessageShowingType {OnConfig, ForceShowing};
   enum InvasionType {Invasion, Moving};
   enum FightType {Attack, Defense};
-    
+  enum TabbedWidgetsIndexesType
+  {
+    MAINMENU_INDEX /*0*/,
+    MAP_INDEX /*1*/,
+    ARENA_INDEX /*2*/,
+    NEWGAME_INDEX /*3*/,
+    JABBERGAME_INDEX /*4*/};
   /**
     * Create the window and initializes its members
     */
@@ -236,7 +244,7 @@ public:
     * Prepares the players for the game with human interaction. Return true
     * if successful or false if failure or cancel
     */
-  bool setupPlayers();
+  bool setupPlayers(bool socket);
   bool setupOnePlayer();
   bool setupOneWaitedPlayer();
   bool createWaitedPlayer(quint32 waitedPlayerId);
@@ -411,7 +419,7 @@ public:
   void cancelShiftSource();
 
   /** Called when the user clicks the new game button. */
-  bool actionNewGame();
+  bool actionNewGame(bool socket);
 
   /** Called when the user clicks the open game button. */
   bool actionOpenGame();
@@ -723,6 +731,8 @@ public Q_SLOTS:
     * The slots associated to the buttons
     */
   void slotNewGame();
+  void slotJabberGame();
+  void slotNewSocketGame();
   void slotJoinNetworkGame();
   void slotOpenGame();
   void slotSaveGame();
@@ -1134,6 +1144,8 @@ private: // Private methods
   QString m_groupchatPassword;
 
   QString m_advertizedHostName;
+
+  KsirkJabberGameWidget* m_jabberGameWidget;
 };
 
 } // closing namespace Ksirk
