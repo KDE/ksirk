@@ -145,6 +145,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   QPixmap icon(iconFileName);
 
   m_bottomDock = new QDockWidget(this);
+  m_bottomDock->setObjectName("bottom-dock");
   m_bottomDock->setFeatures(QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
   m_bottomDock->setAllowedAreas(Qt::BottomDockWidgetArea|Qt::TopDockWidgetArea);
 
@@ -672,6 +673,7 @@ void KGameWindow::initView()
     delete m_rightDock;
   }
   m_rightDock = new QDockWidget(this);
+  m_rightDock->setObjectName("right-dock");
   m_rightDock->setAllowedAreas(Qt::RightDockWidgetArea | Qt::LeftDockWidgetArea);
   m_rightDock->setFeatures(QDockWidget::NoDockWidgetFeatures);
 
