@@ -452,10 +452,10 @@ namespace Ksirk
       	de5->setPixmap(game->getDice(KGameWindow::Blue,D2));
      	 rightContents.insert(0,de5);deDef->addWidget(de5);
 	  }
-	  QLabel * rLabelR = new QLabel(i18n("<font color=\"red\">loose armies: %1</font>", nbA));
+	  QLabel * rLabelR = new QLabel(i18n("<font color=\"red\">lost armies: %1</font>", nbA));
       rightContents.insert(0,rLabelR);
 
-	  QLabel * rLabelB = new QLabel(i18n("<font color=\"blue\">loose armies: %1</font>", nbD));
+	  QLabel * rLabelB = new QLabel(i18n("<font color=\"blue\">lost armies: %1</font>", nbD));
 	  rightContents.insert(0,rLabelB);
     
 	  milieuGrid->addWidget(rightContents.at(1),0,0,Qt::AlignCenter);
