@@ -32,6 +32,10 @@ link_directories( ${CMAKE_CURRENT_BINARY_DIR}/libiris/ )
 ########### next target ###############
 
 set(ksirk_SRCS 
+  GameLogic/gameautomaton.cpp
+  kgamewin.cpp
+  kgamewinslots.cpp
+  gestionSprites.cpp
   Sprites/backgnd.cpp 
   Sprites/animsprite.cpp
   Sprites/cavalrysprite.cpp
@@ -51,7 +55,6 @@ set(ksirk_SRCS
   GameLogic/country.cpp
   GameLogic/dice.cpp
   GameLogic/eventslistproperty.cpp
-  GameLogic/gameautomaton.cpp
   GameLogic/goal.cpp
   GameLogic/KsirkChatItem.cpp
   GameLogic/KsirkChatModel.cpp
@@ -69,9 +72,6 @@ set(ksirk_SRCS
   Dialogs/jabbergameui.cpp
   main.cpp 
   decoratedgameframe.cpp 
-  gestionSprites.cpp 
-  kgamewin.cpp 
-  kgamewinslots.cpp 
   ksirkConfigDialog.cpp
   MessageBubble.cpp
   fightArena.cpp

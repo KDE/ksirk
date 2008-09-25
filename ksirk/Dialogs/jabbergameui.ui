@@ -16,7 +16,7 @@
    <item row="0" column="0" >
     <widget class="QStackedWidget" name="stackedWidget" >
      <property name="currentIndex" >
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="jabberconnectpage" >
       <layout class="QVBoxLayout" name="verticalLayout_4" >
@@ -221,19 +221,17 @@
          </property>
         </spacer>
        </item>
+       <item>
+        <widget class="QLabel" name="label_11" >
+         <property name="text" >
+          <string>&lt;b>Note:&lt;/b> Playing over the Jabber network is an experimental feature in KsirK.&lt;br/>Particularly, the distribution of armies at game beginning is very slow (expect something like one minute).</string>
+         </property>
+         <property name="wordWrap" >
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
       </layout>
-      <zorder>joinroombutton</zorder>
-      <zorder>roompassword</zorder>
-      <zorder>nickname</zorder>
-      <zorder>label_5</zorder>
-      <zorder>label_4</zorder>
-      <zorder>roomjid</zorder>
-      <zorder>label_3</zorder>
-      <zorder>label_9</zorder>
-      <zorder>verticalSpacer_2</zorder>
-      <zorder></zorder>
-      <zorder>verticalSpacer_2</zorder>
-      <zorder>layoutWidget</zorder>
      </widget>
      <widget class="QWidget" name="roomgamespage" >
       <layout class="QGridLayout" name="gridLayout" >
@@ -253,7 +251,26 @@
        <item row="1" column="0" >
         <layout class="QHBoxLayout" name="horizontalLayout" >
          <item>
-          <widget class="QTableWidget" name="tableWidget" />
+          <widget class="QTableWidget" name="jabberTable" >
+           <property name="alternatingRowColors" >
+            <bool>true</bool>
+           </property>
+           <property name="selectionMode" >
+            <enum>QAbstractItemView::SingleSelection</enum>
+           </property>
+           <property name="selectionBehavior" >
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <property name="sortingEnabled" >
+            <bool>true</bool>
+           </property>
+           <property name="columnCount" >
+            <number>3</number>
+           </property>
+           <column/>
+           <column/>
+           <column/>
+          </widget>
          </item>
          <item>
           <layout class="QVBoxLayout" name="verticalLayout" >
@@ -314,6 +331,13 @@
    </item>
    <item row="2" column="0" >
     <layout class="QHBoxLayout" name="horizontalLayout_2" >
+     <item>
+      <widget class="KPushButton" name="cancelbutton" >
+       <property name="text" >
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
      <item>
       <spacer name="horizontalSpacer" >
        <property name="orientation" >

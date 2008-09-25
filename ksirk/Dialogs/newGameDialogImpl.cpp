@@ -51,18 +51,26 @@ NewGameDialogImpl::NewGameDialogImpl(QWidget *parent) :
 }
 
 void NewGameDialogImpl::init(GameLogic::GameAutomaton* automaton,
-unsigned int maxPlayers, const QString& skin)
+unsigned int maxPlayers, const QString& skin, bool networkGame)
 {
-  kDebug() << "Skin got by NewGameDialog: " << m_skin
-  << " ; maxPlayers=" << maxPlayers;
+  kDebug() << "Skin got by NewGameDialog: " << skin
+  << " ; maxPlayers=" << maxPlayers << " ; network=" << networkGame;
+  if (networkGame)
+  {
+    localPlayersNumberEntry->show();
+  }
+  else
+  {
+    localPlayersNumberEntry->hide();
+  }
+  
   m_automaton = automaton;
-  m_nbPlayers = 2;
   m_skin = skin;
-  m_networkGame = false;
-  m_useGoals = true;
 
-  playersNumberEntry->setMinimum(m_nbPlayers);
+  playersNumberEntry->setMinimum(2);
   playersNumberEntry->setMaximum(maxPlayers);
+  localPlayersNumberEntry->setMinimum(1);
+  localPlayersNumberEntry->setMaximum(maxPlayers-1);
   fillSkinsCombo();
 }
 
@@ -79,12 +87,13 @@ NewGameDialogImpl::~NewGameDialogImpl()
 void NewGameDialogImpl::slotOK()
 {
   kDebug() << "KPlayerSetupDialog slotOk";
-  m_nbPlayers = playersNumberEntry->value();
-  m_skin = m_worlds[skinCombo->currentText()]->skin();
-  kDebug() << "  m_skin is " << m_skin;
+  kDebug() << "  skin is " << m_worlds[skinCombo->currentText()]->skin();
 //   m_networkGame  = networkGameCheckBox->isChecked();
-  m_useGoals = (radioGoal->isChecked());
-  emit newGameOK(m_nbPlayers, m_skin, m_networkGame, m_useGoals);
+  emit newGameOK(
+                 playersNumberEntry->value(),
+                 m_worlds[skinCombo->currentText()]->skin(),
+                 playersNumberEntry->value()-localPlayersNumberEntry->value(),
+                 radioGoal->isChecked());
 //   accept();
 }
 
@@ -165,7 +174,8 @@ void NewGameDialogImpl::slotSkinChanged(int skinNum)
 
 void NewGameDialogImpl::slotGHNS()
 {
-  if ( KConfigDialog::showDialog("settings") ) {
+  if ( KConfigDialog::showDialog("settings") )
+  {
     return;
   }
   kDebug();

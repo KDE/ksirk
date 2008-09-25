@@ -20,90 +20,38 @@
  ***************************************************************************/
 #define KDE_NO_COMPAT
 #include "joingame.h"
-#include "GameLogic/gameautomaton.h"
-// #include "GameLogic/player.h"
-// #include "GameLogic/nationality.h"
-// #include "GameLogic/onu.h"
-// #include "Sprites/skinSpritesData.h"
-// #include "Sprites/flagsprite.h"
 
 #include <QString>
 #include <QLineEdit>
 
 #include <KLocale>
 #include <KDebug>
-// #include <kstandarddirs.h>
-// #include <kpassworddialog.h>
-// #include <kmessagebox.h>
-
-// #define _XOPEN_SOURCE_
-// #include <unistd.h>
 
 namespace Ksirk
 {
-
-  JoinGameDialog::JoinGameDialog(GameLogic::GameAutomaton* automaton,
-                                 QString& nick,
-                                  QString& host,
+  JoinGameDialog::JoinGameDialog(QString& host,
                                   int& port,
                                   QWidget *parent) :
   QDialog(parent), Ui::JoinGameDialog(),
-//   m_automaton(automaton),
     m_host(host),
-    m_port(port),
-    m_nick(nick)
+    m_port(port)
 {
   kDebug();
   setupUi(this);
   hostEdit-> setText(m_host);
   portEdit-> setText(QString::number(m_port));
-//   QObject::connect(automaton, SIGNAL(clicked()), this, SLOT(slotOK()) );
-
-  ::QObject::connect( automaton, SIGNAL(newJabberGame(const QString&, const QString&, int, const QString&)), this, SLOT(slotNewJabberGame(const QString&, const QString&, int, const QString&) ) );
-  
-  QObject::connect(jabberTable, SIGNAL(cellClicked(int,int)), this, SLOT(slotCellClicked(int,int)));
 
   hostEdit->setFocus();
-
-  QStringList headers;
-  headers.push_back(i18n("Nickname"));
-  headers.push_back(i18n("Host"));
-  headers.push_back(i18n("Port"));
-  headers.push_back(i18n("Skin"));
-  jabberTable->setHorizontalHeaderLabels(headers); 
 }
 
 JoinGameDialog::~JoinGameDialog(){
   hide();
 }
 
-void JoinGameDialog::slotNewJabberGame(const QString& nick,
-                        const QString& host,
-                        int port,
-                        const QString& skin
-                        )
-{
-  kDebug() << nick << host << port << skin;
-  jabberTable->setSortingEnabled(false);
-  jabberTable->setRowCount(jabberTable->rowCount()+1);
-  
-  QTableWidgetItem *newItem = new QTableWidgetItem(nick);
-  jabberTable->setItem(jabberTable->rowCount()-1,0,newItem);
-  newItem = new QTableWidgetItem(host);
-  jabberTable->setItem(jabberTable->rowCount()-1,1,newItem);
-  newItem = new QTableWidgetItem(QString::number(port));
-  jabberTable->setItem(jabberTable->rowCount()-1,2,newItem);
-  newItem = new QTableWidgetItem(skin);
-  jabberTable->setItem(jabberTable->rowCount()-1,3,newItem);
-  
-  jabberTable->setSortingEnabled(false);
-}
-
 void JoinGameDialog::accept()
 {
   kDebug();
 
-  m_nick = jabberTable->item(jabberTable->currentRow(),0)->text();
   m_host = hostEdit->text();
   m_port = hostEdit->text().toInt();
   QDialog::accept();
@@ -114,20 +62,6 @@ void JoinGameDialog::reject() {
   QDialog::reject();
 }
 
-void JoinGameDialog::slotCellClicked(int row, int column)
-{
-  Q_UNUSED(column);
-  kDebug() << row;
-  m_nick = jabberTable->item(row,0)->text();
-  m_host = jabberTable->item(row,1)->text();
-  m_port = jabberTable->item(row,2)->text().toInt();
-  kDebug() << m_host << m_port;
-  
-  hostEdit->setText(m_host);
-  portEdit->setText(QString::number(m_port));
-
-  
-}
 
 }
 

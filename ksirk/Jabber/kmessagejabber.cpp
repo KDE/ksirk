@@ -93,6 +93,10 @@ void KMessageJabber::slotResourceUnavailable(const Jid& jid, const Resource& res
 void KMessageJabber::slotGroupChatPresence(const XMPP::Jid& jid, const XMPP::Status& status)
 {
   kDebug() << jid.full() << status.status();
+  if (jid.full() == mPeerJid && !status.isAvailable())
+  {
+    emit connectionBroken();
+  }
 }
 
 #include "kmessagejabber.moc"

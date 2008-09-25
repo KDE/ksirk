@@ -49,7 +49,8 @@ public:
 
   void init(GameLogic::GameAutomaton* automaton,
              unsigned int maxPlayers,
-             const QString& skin);
+             const QString& skin,
+             bool networkGame);
 
   virtual ~NewGameDialogImpl();
 
@@ -61,7 +62,7 @@ public Q_SLOTS:
     void slotGHNS();
 
 Q_SIGNALS:
-  void newGameOK(unsigned int nbPlayers, const QString& skin, bool networkGame, bool useGoals);
+  void newGameOK(unsigned int nbPlayers, const QString& skin, unsigned int nbNetworkPlayers, bool useGoals);
   void newGameKO();
 
 private:
@@ -72,10 +73,7 @@ private:
   void fillSkinsCombo();
   
   GameLogic::GameAutomaton* m_automaton;
-  unsigned int m_nbPlayers;
   QString m_skin;
-  bool m_networkGame;
-  bool m_useGoals;
   QMap<QString, GameLogic::ONU*> m_worlds;
 
 };

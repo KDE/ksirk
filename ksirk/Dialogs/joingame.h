@@ -20,7 +20,6 @@
  ***************************************************************************/
 #define KDE_NO_COMPAT
 
-
 #ifndef JOINGAMEDIALOG_H
 #define JOINGAMEDIALOG_H
 
@@ -28,18 +27,10 @@
 
 #include <QDialog>
 
-#include <QMap>
-
 class KPlayer;
 
 namespace Ksirk
 {
-
-namespace GameLogic
-{
-  class ONU;
-  class GameAutomaton;
-}
 
 /**
   * This is the implementation of the player configuration dialog made with
@@ -50,9 +41,7 @@ class JoinGameDialog : public QDialog, public Ui::JoinGameDialog
 {
   Q_OBJECT
 public:
-  JoinGameDialog(GameLogic::GameAutomaton* automaton,
-                 QString& nick,
-                 QString& host,
+  JoinGameDialog(QString& host,
                  int& port,
                  QWidget *parent=0);
   
@@ -62,21 +51,9 @@ protected:
   void accept();
   void reject();
   
-public Q_SLOTS:
-  void slotNewJabberGame(const QString& nick,
-                          const QString& host,
-                          int port,
-                          const QString& skin
-                          );
-
-private Q_SLOTS:
-  void slotCellClicked(int row, int column);
-
 private:
-//   GameLogic::GameAutomaton* m_automaton;
   QString &m_host;
   int& m_port;
-  QString& m_nick;
 };
 
 }

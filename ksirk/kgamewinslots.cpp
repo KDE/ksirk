@@ -440,11 +440,16 @@ void KGameWindow::slotArena(bool isCheck)
 	}
 }
 
+void KGameWindow::slotJabberGame()
+{
+  m_centralWidget->setCurrentIndex(JABBERGAME_INDEX);
+}
+
 void KGameWindow::slotNewGame()
 {
   //   kDebug() << "Slot new game: posting event actionNewGame";
   //   QPoint point;
-  actionNewGame(false);
+  actionNewGame(GameAutomaton::None);
   
   /// @TODO set the state to init when new game is started
   /*  if (actionNewGame())
@@ -454,16 +459,16 @@ void KGameWindow::slotNewGame()
 //   m_automaton->gameEvent("actionNewGame", point);
 }
 
-void KGameWindow::slotJabberGame()
+void KGameWindow::slotNewJabberGame()
 {
-  m_centralWidget->setCurrentIndex(JABBERGAME_INDEX);
+  actionNewGame(GameAutomaton::Jabber);
 }
 
 void KGameWindow::slotNewSocketGame()
 {
   //   kDebug() << "Slot new game: posting event actionNewGame";
   //   QPoint point;
-  actionNewGame(true);
+  actionNewGame(GameAutomaton::Socket);
   
   /// @TODO set the state to init when new game is started
   /*  if (actionNewGame())
@@ -937,17 +942,17 @@ void KGameWindow::slotWindowDef2()
   dial->close();
 }
 
-void KGameWindow::slotNewGameOK(unsigned int nbPlayers, const QString& skin, bool networkGame, bool useGoals)
+void KGameWindow::slotNewGameOK(unsigned int nbPlayers, const QString& skin, unsigned int nbNetworkPlayers, bool useGoals)
 {
-  kDebug() << nbPlayers << skin << networkGame << useGoals;
+  kDebug() << nbPlayers << skin << nbNetworkPlayers << useGoals;
+  showMap();
   m_newPlayersNumber = nbPlayers;
   m_automaton->state(m_stateBeforeNewGame);
-  m_centralWidget->setCurrentIndex(m_stackWidgetBeforeNewGame);
-  m_automaton->finishSetupPlayersNumberAndSkin(skin, networkGame, nbPlayers);
+  m_automaton->setNetworkPlayersNumber(m_automaton->networkGameType()==GameAutomaton::None?0:nbNetworkPlayers);
+  m_automaton->finishSetupPlayersNumberAndSkin(skin, m_automaton->networkGameType(), nbPlayers);
 
-  if (networkGame && m_jabberClient && m_jabberClient->isConnected())
+  if (m_automaton->networkGameType()==GameAutomaton::Jabber && m_jabberClient && m_jabberClient->isConnected())
   {
-    m_advertizedHostName = QInputDialog::getText(this, i18n("Hostname"), i18n("What is the hostname to present\non the Jabber network?"), QLineEdit::Normal, m_advertizedHostName);
     sendGameInfoToJabber();
   }
 }
@@ -1027,30 +1032,8 @@ void KGameWindow::slotConnected ()
 {
   kDebug () << "Connected to Jabber server.";
   
-  #ifdef SUPPORT_JINGLE
-  if(!m_voiceCaller)
-  {
-    kDebug() << "Creating Jingle Voice caller...";
-    m_voiceCaller = new JingleVoiceCaller( this );
-    QObject::connect(m_voiceCaller,SIGNAL(incoming(const Jid&)),this,SLOT(slotIncomingVoiceCall( const Jid& )));
-    m_voiceCaller->initialize();
-  }
-  
-  #if 0
-  if(!m_jingleSessionManager)
-  {
-    kDebug() << "Creating Jingle Session Manager...";
-    m_jingleSessionManager = new JingleSessionManager( this );
-    QObject::connect(m_jingleSessionManager, SIGNAL(incomingSession(const QString &, JingleSession *)), this, SLOT(slotIncomingJingleSession(const QString &, JingleSession *)));
-}
-#endif
-
-// Set caps extensions
-m_jabberClient->m_jabberClient->addExtension("voice-v1", Features(QString("http://www.google.com/xmpp/protocol/voice/v1")));
-#endif
-
-kDebug () << "Requesting roster...";
-m_jabberClient->requestRoster ();
+  kDebug () << "Requesting roster...";
+  m_jabberClient->requestRoster ();
 }
 
 void KGameWindow::slotRosterRequestFinished ( bool success )
@@ -1093,25 +1076,26 @@ void KGameWindow::slotCSDisconnected ()
 
 void KGameWindow::slotReceivedMessage (const XMPP::Message & message)
 {
-  kDebug () << "New message from " << message.from().full () << ": " << message.body();
+  kDebug () << "New " << message.type() << " message from " << message.from().full () << ": " << message.body();
 
   QString body = message.body();
   QString nick = message.from().full();
 
   if ( message.type() == "groupchat" )
   {
+    kDebug() << "my jid:" << m_groupchatRoom+'@'+m_groupchatHost+'/'+m_groupchatNick;
     XMPP::Jid jid ( message.from().userHost () );
-    if (body.startsWith("I'm starting a game with skin"))
+    if (body.startsWith("I'm starting a game with skin")
+      && m_presents.contains(message.from().full ())
+      && message.from().full() != m_groupchatRoom+'@'+m_groupchatHost+'/'+m_groupchatNick)
     {
       kDebug() << "start game message";
-      QRegExp rxlen("I'm starting a game with skin '([^']*)' and '(\\d+)' network players on '([^']*)', port '(\\d+)'");
+      QRegExp rxlen("I'm starting a game with skin '([^']*)' and '(\\d+)' players");
       int pos = rxlen.indexIn(body);
       QString skin = rxlen.cap(1); // "189"
-      int nbNetPlayers = rxlen.cap(2).toInt();  // "cm"
-      QString host = rxlen.cap(3); // "189"
-      int port = rxlen.cap(4).toInt();  // "cm"
-      kDebug() << "emiting newJabberGame" << nick << host << port << skin;
-      emit newJabberGame(nick, host, port, skin);
+      int nbPlayers = rxlen.cap(2).toInt();  // "cm"
+      kDebug() << "emiting newJabberGame" << nick << nbPlayers << skin;
+      emit newJabberGame(nick, nbPlayers, skin);
     }
     else if (body.startsWith("Who propose online KsirK games here?"))
     {
@@ -1136,7 +1120,7 @@ void KGameWindow::slotReceivedMessage (const XMPP::Message & message)
     }
     else
     {
-      m_automaton->messageServer();
+      kDebug() << "non connect ksirkgame message";
     }
   }
 }
@@ -1206,98 +1190,32 @@ void KGameWindow::slotGroupChatJoined (const XMPP::Jid & jid)
   message.setId(QUuid::createUuid().toString().remove("{").remove("}").remove("-"));
   message.setBody("Hello, I'm a KsirK Game");
   m_jabberClient->sendMessage(message);
-  // Create new meta contact that holds the groupchat contact.
-  //  Kopete::MetaContact *metaContact = new Kopete::MetaContact ();
-  
-  //  metaContact->setTemporary ( true );
-  
-  // Create a groupchat contact for this room
-//   JabberGroupContact *groupContact = dynamic_cast<JabberGroupContact *>( contactPool()->addGroupContact ( XMPP::RosterItem ( jid ), true, false ) );
-  
-//   if(groupContact)
-//   {
-    // Add the groupchat contact to the meta contact.
-    //metaContact->addContact ( groupContact );
-    
-    //    Kopete::ContactList::self ()->addMetaContact ( metaContact );
-//   }
-  //  else
-  //    delete metaContact;
-  
-  /**
-  * Add an initial resource for this contact to the pool. We need
-  * to do this to be able to lock the group status to our own presence.
-  * Our own presence will be updated right after this method returned
-  * by slotGroupChatPresence(), since the server will signal our own
-  * presence back to us.
-  */
-//   resourcePool()->addResource ( XMPP::Jid ( jid.userHost () ), XMPP::Resource ( jid.resource () ) );
-  
-  // lock the room to our own status
-//   resourcePool()->lockToResource ( XMPP::Jid ( jid.userHost () ), jid.resource () );
-  
-  //  m_bookmarks->insertGroupChat(jid);
+
+  askForJabberGames();
 }
 
 void KGameWindow::slotGroupChatLeft (const XMPP::Jid & jid)
 {
   kDebug () << "Left groupchat " << jid.full ();
-  
-  // remove group contact from list
-  //  Kopete::Contact *contact =
-  //      Kopete::ContactList::self()->findContact( protocol()->pluginId() , accountId() , jid.userHost() );
-  //
-  //  if ( contact )
-  //  {
-    //    Kopete::MetaContact *metaContact= contact->metaContact();
-    //    if( metaContact && metaContact->isTemporary() )
-    //      Kopete::ContactList::self()->removeMetaContact ( metaContact );
-    //    else
-    //      contact->deleteLater();
-    //  }
-    
-    // now remove it from our pool, which should clean up all subcontacts as well
-//     contactPool()->removeContact ( XMPP::Jid ( jid.userHost () ) );
-    
 }
 
 void KGameWindow::slotGroupChatPresence (const XMPP::Jid & jid, const XMPP::Status & status)
 {
-  kDebug () << "Received groupchat presence for room " << jid.full ();
+  kDebug () << "Received groupchat presence for room " << jid.full() << status.isAvailable();
   
-  // fetch room contact (the one without resource)
-//   JabberGroupContact *groupContact = dynamic_cast<JabberGroupContact *>( contactPool()->findExactMatch ( XMPP::Jid ( jid.userHost () ) ) );
-  
-//   if ( !groupContact )
-//   {
-//     kDebug (  ) << "WARNING: Groupchat presence signalled, but we don't have a room contact?";
-//     return;
-//   }
-  
-  if ( !status.isAvailable () )
-  {
-    kDebug (  ) << jid.full () << " has become unavailable, removing from room";
-    
-    // remove the resource from the pool
-//     resourcePool()->removeResource ( jid, XMPP::Resource ( jid.resource (), status ) );
-    
-    // the person has become unavailable, remove it
-//     groupContact->removeSubContact ( XMPP::RosterItem ( jid ) );
-  }
-  else
+  if (status.isAvailable())
   {
     XMPP::Message message(jid);
     message.setType("ksirkgame");
     message.setId(QUuid::createUuid().toString().remove("{").remove("}").remove("-"));
     message.setBody(QString("Hello, ")+jid.full());
     m_jabberClient->sendMessage(message);
-    // add a resource for this contact to the pool (existing resources will be updated)
-//     resourcePool()->addResource ( jid, XMPP::Resource ( jid.resource (), status ) );
-    
-    // make sure the contact exists in the room (if it exists already, it won't be added twice)
-//     groupContact->addSubContact ( XMPP::RosterItem ( jid ) );
+    m_presents.insert(jid.full());
   }
-  
+  else
+  {
+    m_presents.remove(jid.full());
+  }
 }
 
 void KGameWindow::slotGroupChatError (const XMPP::Jid &jid, int error, const QString &reason)

@@ -20,14 +20,56 @@
 #define JABBERGAMEWIDGET_H
 
 #include "ui_jabbergameui.h"
+#include "Jabber/jabberclient.h"
 
 #include <QWidget>
 
+#include <qca.h>
+
+namespace Ksirk
+{
+  namespace GameLogic
+  {
+    class GameAutomaton;
+  }
+}
 class KsirkJabberGameWidget : public QWidget, public Ui::KsirkJabberGameWidget
 {
   Q_OBJECT
 public:
-  KsirkJabberGameWidget(QWidget* parent);
+  KsirkJabberGameWidget(Ksirk::GameLogic::GameAutomaton* automaton, QWidget* parent);
+
+public Q_SLOTS:
+  void slotNewJabberGame(const QString& nick,
+                          int nbPlayers,
+                          const QString& skin);
+
+private Q_SLOTS:
+  void slotNextButtonClicked();
+  void slotPreviousButtonClicked();
+  void slotJabberConnectButtonClicked();
+  void slotJabberDisconnected();
+  void slotJabberError(int);
+  void slotHandleTLSWarning(QCA::TLS::IdentityResult, QCA::Validity);
+  void slotJabberConnected();
+  void slotJabberClientError(JabberClient::ErrorCode);
+
+  void slotRosterRequestFinished ( bool );
+  
+  void slotJoinRoom();
+  void slotGroupChatJoined (const XMPP::Jid & jid);
+  void slotGroupChatLeft (const XMPP::Jid & jid);
+  void slotGroupChatPresence (const XMPP::Jid & jid, const XMPP::Status & status);
+  void slotGroupChatError (const XMPP::Jid & jid, int error, const QString & reason);
+
+  void slotJoinJabberGame();
+  
+  void slotCellClicked(int row, int column);
+  
+private:
+  Ksirk::GameLogic::GameAutomaton* m_automaton;
+  QString m_nick;
+  int m_nbPlayers;
 };
 
 #endif

@@ -93,7 +93,6 @@ namespace GameLogic
 {
   class ONU;
   class KMessageParts;
-  class GameAutomaton;
   class Player;
 }
 
@@ -244,7 +243,7 @@ public:
     * Prepares the players for the game with human interaction. Return true
     * if successful or false if failure or cancel
     */
-  bool setupPlayers(bool socket);
+  bool setupPlayers(GameLogic::GameAutomaton::NetworkGameType socket);
   bool setupOnePlayer();
   bool setupOneWaitedPlayer();
   bool createWaitedPlayer(quint32 waitedPlayerId);
@@ -419,7 +418,7 @@ public:
   void cancelShiftSource();
 
   /** Called when the user clicks the new game button. */
-  bool actionNewGame(bool socket);
+  bool actionNewGame(GameLogic::GameAutomaton::NetworkGameType socket);
 
   /** Called when the user clicks the open game button. */
   bool actionOpenGame();
@@ -628,7 +627,8 @@ public:
 
   bool newGameDialog(
                      unsigned int maxPlayers,
-                     const QString& skin);
+                     const QString& skin,
+                     bool networkGame);
 
   bool finishSetupPlayers();
 
@@ -639,7 +639,23 @@ public:
   inline XMPP::Jid& serverJid() {return m_serverJid;}
   inline void setServerJid(const XMPP::Jid& jid) {m_serverJid = jid;}
 
-protected:
+  /**
+  * Sets our own presence. Updates our resource in the
+  * resource pool and sends a presence packet to the server.
+  */
+  void setPresence ( const XMPP::Status &status );
+
+  inline void setGroupchatHost(const QString& str) {m_groupchatHost = str;}
+  inline void setGroupchatRoom(const QString& str) {m_groupchatRoom = str;}
+  inline void setGroupchatNick(const QString& str) {m_groupchatNick = str;}
+  inline void setGroupchatPassword(const QString& str) {m_groupchatPassword = str;}
+  
+  const QString& groupchatHost() const {return m_groupchatHost;}
+  const QString& groupchatRoom() const {return m_groupchatRoom;}
+  const QString& groupchatNick() const {return m_groupchatNick;}
+  const QString& groupchatPassword() const {return m_groupchatPassword;}
+  
+  protected:
 
   /**
     * Connected to the frame timer, it manages the behavior of the game in
@@ -700,14 +716,8 @@ protected:
   void reduceChat();
   void unreduceChat();
 
-  /**
-  * Sets our own presence. Updates our resource in the
-  * resource pool and sends a presence packet to the server.
-  */
-  void setPresence ( const XMPP::Status &status );
-
 Q_SIGNALS:
-    void newJabberGame(const QString&, const QString&, int, const QString&);
+    void newJabberGame(const QString&, int, const QString&);
     
 public Q_SLOTS:
 
@@ -730,8 +740,9 @@ public Q_SLOTS:
   /**
     * The slots associated to the buttons
     */
-  void slotNewGame();
   void slotJabberGame();
+  void slotNewGame();
+  void slotNewJabberGame();
   void slotNewSocketGame();
   void slotJoinNetworkGame();
   void slotOpenGame();
@@ -805,7 +816,7 @@ public Q_SLOTS:
   void slotZoomIn();
   void slotZoomOut();
 
-  void slotNewGameOK(unsigned int nbPlayers, const QString& skin, bool networkGame, bool useGoals);
+  void slotNewGameOK(unsigned int nbPlayers, const QString& skin, unsigned int nbNetworkPlayers, bool useGoals);
   void slotNewGameKO();
 
   void slotJabberConnect();
@@ -1146,6 +1157,8 @@ private: // Private methods
   QString m_advertizedHostName;
 
   KsirkJabberGameWidget* m_jabberGameWidget;
+
+  QSet<QString> m_presents;
 };
 
 } // closing namespace Ksirk
