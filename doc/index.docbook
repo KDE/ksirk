@@ -2,6 +2,7 @@
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
   <!ENTITY ksirk '<application>KsirK</application>'>
   <!ENTITY kappname "&ksirk;"><!-- replace ksirk here -->
+  <!ENTITY package "kdegames">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % English "INCLUDE">
 ]>
@@ -394,8 +395,6 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
 <variablelist>
   <varlistentry>
     <term>
-      <menuchoice>
-        <guimenu>
           <inlinemediaobject>
             <imageobject>
               <imagedata fileref="joueurSuivant.png" format="PNG"/>
@@ -403,9 +402,8 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
             <textobject>
               <phrase>Next player</phrase>
             </textobject>
-          </inlinemediaobject> : Give hand to the next player (button in the toolbar)
-        </guimenu>
-      </menuchoice>
+          </inlinemediaobject>
+        <guibutton>Next Player</guibutton>
     </term>
     <listitem>
       <para>
@@ -417,8 +415,6 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
   </varlistentry>
   <varlistentry>
     <term>
-      <menuchoice>
-        <guimenu>
           <inlinemediaobject>
             <imageobject>
               <imagedata fileref="attackOne.png" format="PNG"/>
@@ -442,7 +438,7 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
             <textobject>
               <phrase>Attack 3</phrase>
             </textobject>
-          </inlinemediaobject> : Attack with one, two or three armies
+          </inlinemediaobject><guibutton>Attack with one, two or three armies</guibutton>
           &nbsp;<inlinemediaobject>
             <imageobject>
               <imagedata fileref="autoattack.png" format="PNG"/>
@@ -451,8 +447,7 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
               <phrase>Attack auto</phrase>
             </textobject>
           </inlinemediaobject>
-        </guimenu>
-      </menuchoice>
+          <guibutton>Attack auto</guibutton>
     </term>
     <listitem>
       <para>
@@ -492,8 +487,6 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
   </varlistentry>
   <varlistentry>
     <term>
-      <menuchoice>
-        <guimenu>
           <inlinemediaobject>
             <imageobject>
               <imagedata fileref="moveArmies.png" format="PNG"/>
@@ -501,9 +494,8 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
             <textobject>
               <phrase>Move armies</phrase>
             </textobject>
-          </inlinemediaobject> : Move Armies from one country to another
-        </guimenu>
-      </menuchoice>
+          </inlinemediaobject>
+          <guibutton>Move Armies from one country to another</guibutton>
     </term>
     <listitem>
       <para>
