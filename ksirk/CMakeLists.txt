@@ -68,7 +68,6 @@ set(ksirk_SRCS
   Dialogs/kwaitedplayersetupdialog.cpp
   Dialogs/restartOrExitDialogImpl.cpp
   Dialogs/joingame.cpp
-  Dialogs/jabberconnect.cpp
   Dialogs/jabbergameui.cpp
   main.cpp 
   decoratedgameframe.cpp 
@@ -92,7 +91,6 @@ set(ksirk_UI
   Dialogs/newGameDialog.ui
   Dialogs/qwaitedplayersetupdialog.ui 
   Dialogs/restartOrExitDialog.ui
-  Dialogs/jabberconnect.ui
   Dialogs/joingame.ui
   Dialogs/jabbergameui.ui
   preferences.ui
@@ -128,4 +126,5 @@ kde4_install_icons( ${ICON_INSTALL_DIR} )
 install( FILES ksirksettings.kcfg DESTINATION ${KCFG_INSTALL_DIR} )
 install( FILES ksirk.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} )
 install( FILES ksirkui.rc  DESTINATION  ${DATA_INSTALL_DIR}/ksirk )
+install( FILES jabber.png  DESTINATION  ${DATA_INSTALL_DIR}/ksirk )
 install( FILES ksirk.knsrc  DESTINATION  ${CONFIG_INSTALL_DIR} )

@@ -28,9 +28,11 @@
 using namespace Ksirk;
 using namespace Ksirk::GameLogic;
 
-KsirkJabberGameWidget::KsirkJabberGameWidget(GameAutomaton* automaton, QWidget* parent) :
+KsirkJabberGameWidget::KsirkJabberGameWidget(GameAutomaton* automaton,
+                                              QWidget* parent) :
     QWidget(parent),
-    m_automaton(automaton)
+    m_automaton(automaton),
+    m_previousGuiIndex(-1)
 {
   kDebug();
   
@@ -42,16 +44,11 @@ KsirkJabberGameWidget::KsirkJabberGameWidget(GameAutomaton* automaton, QWidget* 
   roompassword->setText(Ksirk::KsirkSettings::roomPassword());
   nickname->setText(Ksirk::KsirkSettings::nickname());
 
-  nextbutton->setEnabled( false );
-  previousbutton->setEnabled( false );
-
   jabberstateled->setState(
       (m_automaton->game()->jabberClient()->isConnected())
       ? KLed::On : KLed::Off);
   chatroomstateled->setState(KLed::Off);
       
-  connect(nextbutton,SIGNAL(clicked()),this,SLOT(slotNextButtonClicked()));
-  connect(previousbutton,SIGNAL(clicked()),this,SLOT(slotPreviousButtonClicked()));
   connect(connectbutton,SIGNAL(clicked()),this,SLOT(slotJabberConnectButtonClicked()));
 
   connect(startnewgamebutton,SIGNAL(clicked()),m_automaton->game(),SLOT(slotNewJabberGame()));
@@ -87,31 +84,8 @@ KsirkJabberGameWidget::KsirkJabberGameWidget(GameAutomaton* automaton, QWidget* 
   headers.push_back(i18n("Nb players"));
   jabberTable->setHorizontalHeaderLabels(headers);
 
-}
-
-void KsirkJabberGameWidget::slotNextButtonClicked()
-{
-  kDebug();
-  stackedWidget->setCurrentIndex(stackedWidget->currentIndex()+1);
-  previousbutton->setEnabled(true);
-  if (stackedWidget->currentIndex() == stackedWidget->count()-1)
-  {
-    nextbutton->setEnabled(false);
-  }
-  else if (stackedWidget->currentIndex() == 1 && chatroomstateled->state() == KLed::Off)
-  {
-    nextbutton->setEnabled(false);
-  }
-}
-
-void KsirkJabberGameWidget::slotPreviousButtonClicked()
-{
-  kDebug();
-  stackedWidget->setCurrentIndex(stackedWidget->currentIndex()-1);
-  if (stackedWidget->currentIndex() == 0)
-  {
-    previousbutton->setEnabled(false);
-  }
+  QObject::connect(cancelbutton, SIGNAL(clicked()),this,SLOT(slotCancel()));
+  QObject::connect(this, SIGNAL(cancelled(int)), m_automaton->game(), SLOT(slotJabberGameCanceled(int)));
 }
 
 void KsirkJabberGameWidget::slotJabberConnectButtonClicked()
@@ -167,7 +141,6 @@ void KsirkJabberGameWidget::slotJabberDisconnected()
 {
   kDebug();
   stackedWidget->setCurrentIndex(0);
-  nextbutton->setEnabled( false );
   jabberstateled->setState(KLed::Off);
 }
 
@@ -184,9 +157,7 @@ void KsirkJabberGameWidget::slotHandleTLSWarning(QCA::TLS::IdentityResult result
 void KsirkJabberGameWidget::slotJabberConnected()
 {
   kDebug () << "Connected to Jabber server.";
-  
-  kDebug () << "Requesting roster...";
-  m_automaton->game()->jabberClient()->requestRoster ();
+  jabberstateled->setState(KLed::On);
 }
 
 void KsirkJabberGameWidget::slotJabberClientError(JabberClient::ErrorCode error)
@@ -199,19 +170,7 @@ void KsirkJabberGameWidget::slotRosterRequestFinished ( bool success )
   kDebug() << success;
   if ( success )
   {
-    nextbutton->setEnabled( true );
-    jabberstateled->setState(KLed::On);
-
-    /* Since we are online now, set initial presence. Don't do this
-      * before the roster request or we will receive presence
-      * information before we have updated our roster with actual
-      * contacts from the server! (Iris won't forward presence
-      * information in that case either). */
-    kDebug () << "Setting initial presence...";
-    m_automaton->game()->setPresence ( XMPP::Status ( "", "", 5, true ) );
-  }
-  else
-  {
+    stackedWidget->setCurrentIndex(1);
   }
 }
 
@@ -225,19 +184,22 @@ void KsirkJabberGameWidget::slotJoinRoom()
   m_automaton->game()->setGroupchatRoom(groupchatRoom);
   QString groupchatNick = nickname->text();
   m_automaton->game()->setGroupchatNick(groupchatNick);
-  m_automaton->game()->setGroupchatPassword(roompassword->text());
+  QString groupchatPassword = roompassword->text();
+  m_automaton->game()->setGroupchatPassword(groupchatPassword);
   KsirkSettings::setRoomJid(groupchatRoom+"@"+groupchatHost);
   KsirkSettings::setNickname(groupchatNick);
-  KsirkSettings::setRoomPassword(roompassword->text());
+  KsirkSettings::setRoomPassword(groupchatPassword);
   KsirkSettings::self()->writeConfig();
-  
-  m_automaton->game()->jabberClient()->joinGroupChat ( groupchatHost, groupchatRoom, groupchatNick);
+
+  if (groupchatPassword.isEmpty())
+    m_automaton->game()->jabberClient()->joinGroupChat ( groupchatHost, groupchatRoom, groupchatNick);
+  else
+    m_automaton->game()->jabberClient()->joinGroupChat ( groupchatHost, groupchatRoom, groupchatNick, groupchatPassword);
 }
 
 void KsirkJabberGameWidget::slotGroupChatJoined(const XMPP::Jid & jid)
 {
   kDebug() << jid.full();
-  nextbutton->setEnabled( true );
   chatroomstateled->setState(KLed::On);
 
   kDebug () << "Joined groupchat " << jid.full ();
@@ -251,7 +213,22 @@ void KsirkJabberGameWidget::slotGroupChatLeft (const XMPP::Jid & jid)
 
 void KsirkJabberGameWidget::slotGroupChatPresence (const XMPP::Jid & jid, const XMPP::Status & status)
 {
-  kDebug();
+  kDebug() << jid.full() << status.isAvailable();
+  if (!status.isAvailable())
+  {
+    int i = 0;
+    while ( i < jabberTable->rowCount())
+    {
+      if (jabberTable->itemAt(0,i)->text() == jid.full())
+      {
+        jabberTable->removeRow(i);
+      }
+      else
+      {
+        i++;
+      }
+    }
+  }
 }
 
 void KsirkJabberGameWidget::slotGroupChatError (const XMPP::Jid & jid, int error, const QString & reason)
@@ -301,5 +278,10 @@ void KsirkJabberGameWidget::slotJoinJabberGame()
   m_automaton->joinJabberGame(m_nick);
 }
 
+void KsirkJabberGameWidget::slotCancel()
+{
+  kDebug();
+  emit cancelled(m_previousGuiIndex);
+}
                                         
 #include "jabbergameui.moc"

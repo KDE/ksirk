@@ -37,16 +37,20 @@ class KsirkJabberGameWidget : public QWidget, public Ui::KsirkJabberGameWidget
 {
   Q_OBJECT
 public:
-  KsirkJabberGameWidget(Ksirk::GameLogic::GameAutomaton* automaton, QWidget* parent);
+  KsirkJabberGameWidget(Ksirk::GameLogic::GameAutomaton* automaton,
+                         QWidget* parent);
 
+  inline void setPreviousGuiIndex(int previousIndex) {m_previousGuiIndex = previousIndex;}
+
+Q_SIGNALS:
+  void cancelled(int);
+  
 public Q_SLOTS:
   void slotNewJabberGame(const QString& nick,
                           int nbPlayers,
                           const QString& skin);
 
 private Q_SLOTS:
-  void slotNextButtonClicked();
-  void slotPreviousButtonClicked();
   void slotJabberConnectButtonClicked();
   void slotJabberDisconnected();
   void slotJabberError(int);
@@ -65,11 +69,14 @@ private Q_SLOTS:
   void slotJoinJabberGame();
   
   void slotCellClicked(int row, int column);
+
+  void slotCancel();
   
 private:
   Ksirk::GameLogic::GameAutomaton* m_automaton;
   QString m_nick;
   int m_nbPlayers;
+  int m_previousGuiIndex;
 };
 
 #endif

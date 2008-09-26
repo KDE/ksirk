@@ -34,7 +34,7 @@ ranklin Street, Fifth Floor, Boston, MA
 #include "GameLogic/goal.h"
 #include "SaveLoad/ksirkgamexmlloader.h"
 #include "Sprites/animspritesgroup.h"
-#include "Dialogs/jabberconnect.h"
+#include "Dialogs/jabbergameui.h"
 #include "Jabber/kmessagejabber.h"
 
 #include "kgame/kmessageserver.h"
@@ -442,6 +442,7 @@ void KGameWindow::slotArena(bool isCheck)
 
 void KGameWindow::slotJabberGame()
 {
+  m_jabberGameWidget->setPreviousGuiIndex(m_centralWidget->currentIndex());
   m_centralWidget->setCurrentIndex(JABBERGAME_INDEX);
 }
 
@@ -964,71 +965,7 @@ void KGameWindow::slotNewGameKO()
   m_centralWidget->setCurrentIndex(m_stackWidgetBeforeNewGame);
 }
 
-void KGameWindow::slotJabberConnect()
-{
-  kDebug();
-  JabberConnectDialog* d = new JabberConnectDialog(this);
-  if (d->exec())
-  {
-    KsirkSettings::setJabberId(d->jabberid->text());
-    XMPP::Jid jid(d->jabberid->text());
-    jid.setResource(d->jabberid->text());
-    QString password = d->password->text();
-    KsirkSettings::setJabberPassword(password);
-    KsirkSettings::setRoomJid(d->roomjid->text());
-    XMPP::Jid roomjid(d->roomjid->text());
-    m_groupchatHost = roomjid.domain();
-    m_groupchatRoom = roomjid.node();
-    KsirkSettings::setNickname(d->nickname->text());
-    m_groupchatNick = d->nickname->text();
-    KsirkSettings::setNickname(d->nickname->text());
-    KsirkSettings::setRoomPassword(d->roompassword->text());
-    
-    KsirkSettings::self()->writeConfig();
-    
-//     m_jabberClient->setUseSSL ( true );
-    m_jabberClient->setAllowPlainTextPassword ( true );
-    m_jabberClient->setOverrideHost ( true, jid.domain(), 5222 );
-    JabberClient::ErrorCode res = m_jabberClient->connect(jid, password);
-    
-    switch (res)
-    {
-      case JabberClient::Ok:
-        kDebug() << "Succesfull connexion";
-        m_jabberClient->requestRoster ();
-        break;
-      case JabberClient::InvalidPassword:
-        kError() << "Password used to connect to the server was incorrect.";
-        break;
-      case JabberClient::AlreadyConnected:
-        kError() << "A new connection was attempted while the previous one hasn't been closed.";
-        break;
-      case JabberClient::NoTLS:
-        kError() << "Use of TLS has been forced (see @ref forceTLS) but TLS is not available, either server- or client-side.";
-        break;
-      case JabberClient::InvalidPasswordForMUC:
-        kError() << "A password is require to enter on this Multi-User Chat";
-        break;
-      case JabberClient::NicknameConflict:
-        kError() << "There is already someone with that nick connected to the Multi-User Chat";
-        break;
-      case JabberClient::BannedFromThisMUC:
-        kError() << "You can't join this Multi-User Chat because you were bannished";
-        break;
-      case JabberClient::MaxUsersReachedForThisMuc:
-        kError() << "You can't join this Multi-User Chat because it is full";
-        break;
-      default:;
-    }
-  }
-  else
-  {
-    kDebug() << "Cancel";
-  }
-  delete d;
-}
-
-void KGameWindow::slotConnected ()
+void KGameWindow::slotConnected()
 {
   kDebug () << "Connected to Jabber server.";
   
@@ -1039,12 +976,6 @@ void KGameWindow::slotConnected ()
 void KGameWindow::slotRosterRequestFinished ( bool success )
 {
   kDebug() << success;
-  if ( success )
-  {
-    // the roster was imported successfully, clear
-    // all "dirty" items from the contact list
-//     contactPool()->cleanUp ();
-  }
   
   /* Since we are online now, set initial presence. Don't do this
   * before the roster request or we will receive presence
@@ -1053,9 +984,6 @@ void KGameWindow::slotRosterRequestFinished ( bool success )
   * information in that case either). */
   kDebug () << "Setting initial presence...";
   setPresence ( m_initialPresence );
-
-  kDebug () << "Joining group chat...";
-  m_jabberClient->joinGroupChat ( m_groupchatHost, m_groupchatRoom, m_groupchatNick);
 }
 
 void KGameWindow::slotCSDisconnected ()
@@ -1261,6 +1189,11 @@ void KGameWindow::slotGroupChatError (const XMPP::Jid &jid, int error, const QSt
   }
 }
 
+void KGameWindow::slotJabberGameCanceled(int previousIndex)
+{
+  kDebug() << previousIndex;
+  m_centralWidget->setCurrentIndex(previousIndex);
+}
 
 
 } // closing namespace Ksirk

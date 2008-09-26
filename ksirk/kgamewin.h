@@ -819,7 +819,7 @@ public Q_SLOTS:
   void slotNewGameOK(unsigned int nbPlayers, const QString& skin, unsigned int nbNetworkPlayers, bool useGoals);
   void slotNewGameKO();
 
-  void slotJabberConnect();
+  void slotJabberGameCanceled(int previousIndex);
   
 private Q_SLOTS:
   void optionsConfigure();

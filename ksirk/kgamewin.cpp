@@ -262,11 +262,11 @@ KGameWindow::KGameWindow(QWidget* parent) :
   QObject::connect ( m_jabberClient, SIGNAL ( csDisconnected () ), this, SLOT ( slotCSDisconnected () ) );
   QObject::connect ( m_jabberClient, SIGNAL ( csError ( int ) ), this, SLOT ( slotCSError ( int ) ) );
   QObject::connect ( m_jabberClient, SIGNAL ( tlsWarning ( QCA::TLS::IdentityResult, QCA::Validity ) ), this, SLOT ( slotHandleTLSWarning ( QCA::TLS::IdentityResult, QCA::Validity ) ) );
-//   QObject::connect ( m_jabberClient, SIGNAL ( connected () ), this, SLOT ( slotConnected () ) );
+  QObject::connect ( m_jabberClient, SIGNAL ( connected () ), this, SLOT ( slotConnected () ) );
   QObject::connect ( m_jabberClient, SIGNAL ( error ( JabberClient::ErrorCode ) ), this, SLOT ( slotClientError ( JabberClient::ErrorCode ) ) );
   
 //   QObject::connect ( m_jabberClient, SIGNAL ( subscription ( const XMPP::Jid &, const QString & ) ), this, SLOT ( slotSubscription ( const XMPP::Jid &, const QString & ) ) );
-//   QObject::connect ( m_jabberClient, SIGNAL ( rosterRequestFinished ( bool ) ), this, SLOT ( slotRosterRequestFinished ( bool ) ) );
+  QObject::connect ( m_jabberClient, SIGNAL ( rosterRequestFinished ( bool ) ), this, SLOT ( slotRosterRequestFinished ( bool ) ) );
 //   QObject::connect ( m_jabberClient, SIGNAL ( newContact ( const XMPP::RosterItem & ) ), this, SLOT ( slotContactUpdated ( const XMPP::RosterItem & ) ) );
 //   QObject::connect ( m_jabberClient, SIGNAL ( contactUpdated ( const XMPP::RosterItem & ) ), this, SLOT ( slotContactUpdated ( const XMPP::RosterItem & ) ) );
 //   QObject::connect ( m_jabberClient, SIGNAL ( contactDeleted ( const XMPP::RosterItem & ) ), this, SLOT ( slotContactDeleted ( const XMPP::RosterItem & ) ) );
@@ -343,41 +343,67 @@ void KGameWindow::initActions()
   KStandardAction::preferences( this, SLOT( optionsConfigure() ), actionCollection() );
 
   // specific ksirk action
-  QString imageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_NEWNETGAME);
-//   kDebug() << "Trying to load button image file: " << imageFileName;
+  QString imageFileName = m_dirs-> findResource("appdata", "jabber.png");
+  //   kDebug() << "Trying to load button image file: " << imageFileName;
+  if (imageFileName.isNull())
+  {
+    KMessageBox::error(0, i18n("Cannot load button image %1<br>Program cannot continue",QString("jabber.png")), i18n("Error !"));
+    exit(2);
+  }
+  m_jabberAction = new QAction(QIcon(QPixmap(imageFileName)), i18n("Play over Jabber"), this);
+  m_jabberAction-> setText(i18n("Play KsirK over the Jabber Network"));
+  m_jabberAction-> setIconText("Jabber");
+  m_jabberAction->setShortcut(Qt::CTRL+Qt::Key_J);
+  m_jabberAction->setStatusTip(i18n("Allow to connect to a KsirK Jabber Multi User Gaming Room to create new games or to join present games"));
+  connect(m_jabberAction,SIGNAL(triggered(bool)),this,SLOT(slotJabberGame()));
+  kDebug() << "Adding action game_jabber";
+  actionCollection()->addAction("game_jabber", m_jabberAction);
+  
+  // specific ksirk action
+  imageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_NEWNETGAME);
+  //   kDebug() << "Trying to load button image file: " << imageFileName;
+  if (imageFileName.isNull())
+  {
+    KMessageBox::error(0, i18n("Cannot load button image %1<br>Program cannot continue",QString(CM_NEWNETGAME)), i18n("Error !"));
+    exit(2);
+  }
+  QAction* newSocketAction = new QAction(QIcon(QPixmap(imageFileName)), i18n("New Standard TCP/IP Network Game"), this);
+  newSocketAction-> setIconText("New TCP/IP");
+  newSocketAction->setShortcut(Qt::CTRL+Qt::Key_T);
+  newSocketAction->setStatusTip(i18n("Create a new standard TCP/IP network game"));
+  connect(newSocketAction,SIGNAL(triggered(bool)),this,SLOT(slotNewSocketGame()));
+  kDebug() << "Adding action game_new_socket";
+  actionCollection()->addAction("game_new_socket", newSocketAction);
+  
+                                     
+  // specific ksirk action
+  imageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_NEWNETGAME);
+  //   kDebug() << "Trying to load button image file: " << imageFileName;
   if (imageFileName.isNull())
   {
     KMessageBox::error(0, i18n("Cannot load button image %1<br>Program cannot continue",QString(CM_NEWNETGAME)), i18n("Error !"));
     exit(2);
   }
   QAction* joinAction = new QAction(QIcon(QPixmap(imageFileName)),
-        i18n("Join"), this);
-  joinAction->setShortcut(Qt::CTRL+Qt::Key_J);
-  joinAction->setStatusTip(i18n("Join network game"));
+        i18n("Join a Standard TCP/IP Network Game"), this);
+  joinAction->setIconText("Join TCP/IP");
+  joinAction->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_J);
+  joinAction->setStatusTip(i18n("Join a standard TCP/IP network game"));
   connect(joinAction,SIGNAL(triggered(bool)),this,SLOT(slotJoinNetworkGame()));
-   kDebug() << "Adding action game_join";
-  actionCollection()->addAction("game_join", joinAction);
+   kDebug() << "Adding action game_join_socket";
+  actionCollection()->addAction("game_join_socket", joinAction);
 
   m_goalAction = new QAction(QIcon(), i18n("Goal"), this);
-  m_goalAction-> setText(i18n("Display the current player goal"));
+  m_goalAction-> setText(i18n("Display the Current Player's Goal"));
   m_goalAction-> setIconText("  ");
   m_goalAction->setShortcut(Qt::CTRL+Qt::Key_G);
-  m_goalAction->setStatusTip(i18n("Display the current player goal"));
+  m_goalAction->setStatusTip(i18n("Display the current player's goal"));
   connect(m_goalAction,SIGNAL(triggered(bool)),this,SLOT(slotShowGoal()));
   kDebug() << "Adding action game_goal";
   actionCollection()->addAction("game_goal", m_goalAction);
   
-  m_jabberAction = new QAction(QIcon(), i18n("Connect to Jabber"), this);
-  m_jabberAction-> setText(i18n("Connect to a KsirK Jabber Multi User Gaming Room"));
-  m_jabberAction-> setIconText("  ");
-  m_jabberAction->setShortcut(Qt::CTRL+Qt::Key_J);
-  m_jabberAction->setStatusTip(i18n("Connect to a KsirK Jabber Multi User Gaming Room"));
-  connect(m_jabberAction,SIGNAL(triggered(bool)),this,SLOT(slotJabberConnect()));
-  kDebug() << "Adding action game_jabber";
-  actionCollection()->addAction("game_jabber", m_jabberAction);
-  
   QAction* contextualHelpAction = new QAction(QIcon(),
-        i18n("Contextual help"), this);
+        i18n("Contextual Help"), this);
   contextualHelpAction->setShortcut(Qt::CTRL+Qt::Key_F1);
   connect(contextualHelpAction,SIGNAL(triggered(bool)),this,SLOT(slotContextualHelp()));
   actionCollection()->addAction("help_contextual", contextualHelpAction);
