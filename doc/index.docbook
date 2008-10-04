@@ -967,8 +967,8 @@ the number of players. After that, each player will be asked its name with anoth
     <title>The Sounds folder</title>
     <para>This folder contains three sound files:</para>
     <itemizedlist><listitem><para>roll.wav played when armies are moving </para></listitem>
-    <listitem><para>cannon.wav played when firing and crash.wav </para></listitem><listitem>
-    <para>played when a cannon explodes</para></listitem></itemizedlist>
+    <listitem><para>cannon.wav played when firing and </para></listitem><listitem>
+    <para>crash.wav played when a cannon explodes</para></listitem></itemizedlist>
   </sect1>
 </chapter>
 
