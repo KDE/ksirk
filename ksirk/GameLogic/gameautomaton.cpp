@@ -52,6 +52,10 @@
 #include <sstream>
 #include <iostream>
 
+#include <errno.h>
+#include <sys/types.h>
+#include <signal.h>
+
 namespace Ksirk{
 namespace GameLogic {
 
@@ -211,10 +215,6 @@ void GameAutomaton::state(GameAutomaton::GameState state)
   stream << state;
   sendMessage(buffer,StateChange);
 }
-
-#include <errno.h>
-#include <sys/types.h>
-#include <signal.h>
 
 bool dnssdAvailable() {
   QFile f("/var/run/mdnsd.pid");
