@@ -57,7 +57,7 @@ public:
 
   inline const GameLogic::ONU* onu() const {return m_theWorld;}
 
-  inline const bool bgIsArena() const {return m_bgIsArena;}
+  inline bool bgIsArena() const {return m_bgIsArena;}
   
 protected:
   /**
