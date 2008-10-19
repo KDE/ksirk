@@ -93,15 +93,12 @@ void KsirkJabberGameWidget::slotJabberConnectButtonClicked()
   kDebug();
   
   KsirkSettings::setJabberId(jabberid->text());
-  XMPP::Jid jid(jabberid->text());
-  jid.setResource(jabberid->text());
+  XMPP::Jid jid(jabberid->text()+"/"+jabberid->text());
   QString pass = password->text();
   KsirkSettings::setJabberPassword(pass);
 
   KsirkSettings::self()->writeConfig();
 
-  //     m_automaton->game()->jabberClient()->setUseSSL ( true );
-  m_automaton->game()->jabberClient()->setAllowPlainTextPassword ( true );
   m_automaton->game()->jabberClient()->setOverrideHost ( true, jid.domain(), 5222 );
   JabberClient::ErrorCode res = m_automaton->game()->jabberClient()->connect(jid, pass);
 

@@ -1,10 +1,11 @@
 add_definitions(-DQT3_SUPPORT -DQT3_SUPPORT_WARNINGS)
 
 add_subdirectory( skins )
-add_subdirectory( libiris )
+add_subdirectory( iris )
 
 FIND_PACKAGE(QCA2 REQUIRED)
-macro_log_feature(QCA2_FOUND "QCA2" "Qt Cryptographic Architecture" "http://delta.affinix.com/qca" FALSE "2.0.0" "Needed to build Kopete's GroupWise and Jabberprotocols.")
+FIND_PACKAGE(ZLIB REQUIRED)
+macro_log_feature(QCA2_FOUND "QCA2" "Qt Cryptographic Architecture" "http://delta.affinix.com/qca" FALSE "2.0.0" "Needed to build Ksirk Jabber support's GroupWise and Jabberprotocols.")
 
 include_directories( 
   ${CMAKE_BINARY_DIR}/ksirk 
@@ -16,18 +17,20 @@ include_directories(
   ./Sprites 
   ${CMAKE_CURRENT_SOURCE_DIR} 
   ${CMAKE_CURRENT_BINARY_DIR}  
-  ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/include/
-  ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/jabber/
-  ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/xmpp-core/
-  ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/xmpp-im/
-  ${CMAKE_CURRENT_SOURCE_DIR}/libiris/cutestuff/util/
-  ${CMAKE_CURRENT_SOURCE_DIR}/libiris/cutestuff/network/
-  ${CMAKE_CURRENT_SOURCE_DIR}/libiris/cutestuff/
-  ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/
+  ${CMAKE_CURRENT_SOURCE_DIR}/iris/include/iris
+  ${CMAKE_CURRENT_SOURCE_DIR}/iris/src
+#   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/include/
+#   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/jabber/
+#   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/xmpp-core/
+#   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/xmpp-im/
+#   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/cutestuff/util/
+#   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/cutestuff/network/
+#   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/cutestuff/
+#   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/
   ${QCA2_INCLUDE_DIR}
   )
 
-link_directories( ${CMAKE_CURRENT_BINARY_DIR}/libiris/ )
+link_directories( ${CMAKE_CURRENT_BINARY_DIR}/iris/ )
 
 ########### next target ###############
 

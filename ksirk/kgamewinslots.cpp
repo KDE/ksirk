@@ -1012,7 +1012,7 @@ void KGameWindow::slotReceivedMessage (const XMPP::Message & message)
   if ( message.type() == "groupchat" )
   {
     kDebug() << "my jid:" << m_groupchatRoom+'@'+m_groupchatHost+'/'+m_groupchatNick;
-    XMPP::Jid jid ( message.from().userHost () );
+    XMPP::Jid jid ( message.from().domain() );
     if (body.startsWith("I'm starting a game with skin")
       && m_presents.contains(message.from().full ())
       && message.from().full() != m_groupchatRoom+'@'+m_groupchatHost+'/'+m_groupchatNick)

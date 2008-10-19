@@ -282,7 +282,9 @@ KGameWindow::KGameWindow(QWidget* parent) :
   QObject::connect ( m_jabberClient, SIGNAL ( debugMessage ( const QString & ) ), this, SLOT ( slotClientDebugMessage ( const QString & ) ) );
   
   m_jabberClient->setUseXMPP09 ( true );
-  
+//     m_jabberClient->setUseSSL ( true );
+  m_jabberClient->setAllowPlainTextPassword ( true );
+
   uname (&utsBuf);
   m_jabberClient->setClientName ("KsirK");
   m_jabberClient->setClientVersion (KGlobal::mainComponent().aboutData()->version ());
