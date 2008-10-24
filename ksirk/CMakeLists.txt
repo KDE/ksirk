@@ -83,7 +83,6 @@ target_link_libraries(ksirk
   ${KDE4_PHONON_LIBRARY}
   kdegames
   ${CRYPT_LIBS}
-  ${KDEGAMES_LIBRARY}
  )
 
 install( TARGETS ksirk ${INSTALL_TARGETS_DEFAULT_ARGS})
