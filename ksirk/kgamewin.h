@@ -56,6 +56,7 @@ class KGameChat;
 class KGamePopupItem;
 class KToolBar;
 class KDialog;
+class KAction;
 
 class QEvent;
 class QDockWidget;
@@ -920,7 +921,7 @@ private:
     * This button is used to display the flag of the currently active player
     * in the status bar.
     */
-  QAction* m_goalAction;
+  KAction* m_goalAction;
   QLabel* m_barFlag;
     
 //   KAccel m_accels;
@@ -994,7 +995,7 @@ private:
   QString m_fileName;
 
   QAction* m_nextPlayerAction;
-  QAction* m_saveGameAction;
+  KAction* m_saveGameAction;
 
   Sprites::ArrowSprite* m_uparrow;
   Sprites::ArrowSprite* m_downarrow;

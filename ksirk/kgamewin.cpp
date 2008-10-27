@@ -292,7 +292,7 @@ void KGameWindow::initActions()
     KMessageBox::error(0, i18n("Cannot load button image %1<br>Program cannot continue",QString(CM_NEWNETGAME)), i18n("Error !"));
     exit(2);
   }
-  QAction* joinAction = new QAction(QIcon(QPixmap(imageFileName)),
+  KAction* joinAction = new KAction(KIcon(QPixmap(imageFileName)),
         i18n("Join"), this);
   joinAction->setShortcut(Qt::CTRL+Qt::Key_J);
   joinAction->setStatusTip(i18n("Join network game"));
@@ -300,7 +300,7 @@ void KGameWindow::initActions()
    kDebug() << "Adding action game_join";
   actionCollection()->addAction("game_join", joinAction);
 
-  m_goalAction = new QAction(QIcon(), i18n("Goal"), this);
+  m_goalAction = new KAction(KIcon(), i18n("Goal"), this);
   m_goalAction-> setText(i18n("Display the current player goal"));
   m_goalAction-> setIconText("  ");
   m_goalAction->setShortcut(Qt::CTRL+Qt::Key_G);
@@ -309,7 +309,7 @@ void KGameWindow::initActions()
   kDebug() << "Adding action game_goal";
   actionCollection()->addAction("game_goal", m_goalAction);
 
-  QAction* contextualHelpAction = new QAction(QIcon(),
+  KAction* contextualHelpAction = new KAction(KIcon(),
         i18n("Contextual help"), this);
   contextualHelpAction->setShortcut(Qt::CTRL+Qt::Key_F1);
   connect(contextualHelpAction,SIGNAL(triggered(bool)),this,SLOT(slotContextualHelp()));
@@ -317,13 +317,13 @@ void KGameWindow::initActions()
 
 
   QString nextPlayerActionImageFileName = KGlobal::dirs()->findResource("appdata", m_automaton->skin() + '/' + CM_NEXTPLAYER);
-  m_nextPlayerAction =  new QAction(QIcon(nextPlayerActionImageFileName),
+  m_nextPlayerAction =  new KAction(KIcon(nextPlayerActionImageFileName),
         i18n("Next Player"), this);
   connect(m_nextPlayerAction, SIGNAL(triggered(bool)), this, SLOT(slotNextPlayer()));
   contextualHelpAction->setStatusTip(i18n("Lets the next player play"));
   actionCollection()->addAction("game_nextplayer", m_nextPlayerAction);
 
-  QAction* finishMovesAction = new QAction(QIcon(),
+  KAction* finishMovesAction = new KAction(KIcon(),
         i18n("Finish moves"), this);
   finishMovesAction->setShortcut(Qt::Key_Space);
   finishMovesAction->setStatusTip(i18n("Finish now current sprites movements"));
