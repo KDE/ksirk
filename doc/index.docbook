@@ -231,7 +231,7 @@ If you hit <guibutton>New Game</guibutton> you will be presented with the <guila
 </screenshot>
 </para>
 <para>
-To start a network game, check the <guilabel>Network game</guilabel> check box on the right of the number of players spin box. After clicking <guibutton>OK</guibutton>, you will be able to chose the network parameters: number of network players and TCP port on which waiting for connections.
+To start a network game, check the <guilabel>Network game</guilabel> check box on the right of the number of players spin box. After clicking <guibutton>OK</guibutton>, you will be able to choose the network parameters: number of network players and TCP port on which waiting for connections.
 <screenshot>
   <screeninfo>Network game parameters dialog</screeninfo>
   <mediaobject>
@@ -245,7 +245,7 @@ To start a network game, check the <guilabel>Network game</guilabel> check box o
 </screenshot>
 </para>
 <para>
-Then, network players will be able to connect by choosing Join on the introduction screen and by indicating the IP or hostname of the host and the port number youjust set.
+Then, network players will be able to connect by choosing <guilabel>Join</guilabel> on the introduction screen and by indicating the IP or hostname of the host and the port number you just set.
 <screenshot>
   <screeninfo>Joining network game dialog</screeninfo>
   <mediaobject>
@@ -274,7 +274,7 @@ Each connection is indicated by the message below in the status bar.
 
 </para>
 <para>
-Let's suppose you keep all the default settings and hit <guibutton>OK</guibutton>. You will then setup two players, one after one. For each one, you'll chose a name, a nationality and, if you want, setup a password such that nobody else than you can reuse this player when reloading this saved game. Lastly, you will here specify if this player is played by the computer or by a human being.
+Let's suppose you keep all the default settings and hit <guibutton>OK</guibutton>. You will then setup two players, one after one. For each one, you'll choose a name, a nationality and, if you want, setup a password such that nobody else than you can reuse this player when reloading this saved game. Lastly, you will here specify if this player is played by the computer or by a human being.
 <screenshot>
   <screeninfo>The Player Setup dialog</screeninfo>
   <mediaobject>
@@ -288,7 +288,7 @@ Let's suppose you keep all the default settings and hit <guibutton>OK</guibutton
 </screenshot>
 </para>
 <para>
-Then, if you chose to play with goal, the goal of each local player is displayed, preceded by a warning such that other players looking at the same computer can discreetly turn away while the goal is being viewed.
+Then, if you choose to play with goal, the goal of each local player is displayed, preceded by a warning such that other players looking at the same computer can discreetly turn away while the goal is being viewed.
 <screenshot>
   <screeninfo>The Goal Display dialog</screeninfo>
   <mediaobject>
@@ -319,7 +319,7 @@ Then, if you chose to play with goal, the goal of each local player is displayed
 <para>
 At the beginning of the game, countries are distributed to all the players. Each country contains
 one army (represented by an infantryman) at the start. Each player has some armies to
-distribute to his countries at there turn (indicated by the presence of there name and there flag in
+distribute to his countries at their turn (indicated by the presence of their name and their flag in
 the status bar). Note that five armies are represented by a cavalryman and 10 by
 a cannon.
 </para>
@@ -444,10 +444,10 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
               <imagedata fileref="autoattack.png" format="PNG"/>
             </imageobject>
             <textobject>
-              <phrase>Attack auto</phrase>
+              <phrase>Auto attack</phrase>
             </textobject>
           </inlinemediaobject>
-          <guibutton>Attack auto</guibutton>
+          <guibutton>Auto attack</guibutton>
     </term>
     <listitem>
       <para>
@@ -651,7 +651,7 @@ the number of players. After that, each player will be asked its name with anoth
   <title>Developer's Guide to &kappname;</title>
   
   <para>
-    Please refer to <ulink url="http://api.kde.org/">http://api.kde.org/</ulink> for the documentation of the API. It was quite complete but is currently a little bit outdated.There are no comments in the <filename>.cpp</filename> implementation files.
+    Please refer to <ulink url="http://api.kde.org/">http://api.kde.org/</ulink> for the documentation of the API. It was quite complete but is currently a little bit outdated. There are no comments in the <filename>.cpp</filename> implementation files.
   </para>
   <para>
     Note that I originally developed this game under &Windows; with Borland C++ and WinG. I ported
