@@ -157,6 +157,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   QPixmap icon(iconFileName);
 
   m_bottomDock = new QDockWidget(this);
+  m_bottomDock->setObjectName("bottom-dock");
   m_bottomDock->setFeatures(QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
   m_bottomDock->setAllowedAreas(Qt::BottomDockWidgetArea|Qt::TopDockWidgetArea);
 
@@ -369,8 +370,8 @@ void KGameWindow::initActions()
     KMessageBox::error(0, i18n("Cannot load button image %1<br>Program cannot continue",QString(CM_NEWNETGAME)), i18n("Error !"));
     exit(2);
   }
-  QAction* newSocketAction = new QAction(QIcon(QPixmap(imageFileName)), i18n("New Standard TCP/IP Network Game"), this);
-  newSocketAction-> setIconText("New TCP/IP");
+  KAction* newSocketAction = new KAction(KIcon(QPixmap(imageFileName)), i18n("New Standard TCP/IP Network Game"), this);
+  newSocketAction->setIconText("New TCP/IP");
   newSocketAction->setShortcut(Qt::CTRL+Qt::Key_T);
   newSocketAction->setStatusTip(i18n("Create a new standard TCP/IP network game"));
   connect(newSocketAction,SIGNAL(triggered(bool)),this,SLOT(slotNewSocketGame()));
@@ -386,7 +387,7 @@ void KGameWindow::initActions()
     KMessageBox::error(0, i18n("Cannot load button image %1<br>Program cannot continue",QString(CM_NEWNETGAME)), i18n("Error !"));
     exit(2);
   }
-  QAction* joinAction = new QAction(QIcon(QPixmap(imageFileName)),
+  KAction* joinAction = new KAction(KIcon(QPixmap(imageFileName)),
         i18n("Join a Standard TCP/IP Network Game"), this);
   joinAction->setIconText("Join TCP/IP");
   joinAction->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_J);
@@ -395,7 +396,7 @@ void KGameWindow::initActions()
    kDebug() << "Adding action game_join_socket";
   actionCollection()->addAction("game_join_socket", joinAction);
 
-  m_goalAction = new QAction(QIcon(), i18n("Goal"), this);
+  m_goalAction = new KAction(KIcon(), i18n("Goal"), this);
   m_goalAction-> setText(i18n("Display the Current Player's Goal"));
   m_goalAction-> setIconText("  ");
   m_goalAction->setShortcut(Qt::CTRL+Qt::Key_G);
@@ -404,7 +405,7 @@ void KGameWindow::initActions()
   kDebug() << "Adding action game_goal";
   actionCollection()->addAction("game_goal", m_goalAction);
   
-  QAction* contextualHelpAction = new QAction(QIcon(),
+  KAction* contextualHelpAction = new KAction(KIcon(),
         i18n("Contextual Help"), this);
   contextualHelpAction->setShortcut(Qt::CTRL+Qt::Key_F1);
   connect(contextualHelpAction,SIGNAL(triggered(bool)),this,SLOT(slotContextualHelp()));
@@ -412,13 +413,13 @@ void KGameWindow::initActions()
 
 
   QString nextPlayerActionImageFileName = KGlobal::dirs()->findResource("appdata", m_automaton->skin() + '/' + CM_NEXTPLAYER);
-  m_nextPlayerAction =  new QAction(QIcon(nextPlayerActionImageFileName),
+  m_nextPlayerAction =  new KAction(KIcon(nextPlayerActionImageFileName),
         i18n("Next Player"), this);
   connect(m_nextPlayerAction, SIGNAL(triggered(bool)), this, SLOT(slotNextPlayer()));
   contextualHelpAction->setStatusTip(i18n("Lets the next player play"));
   actionCollection()->addAction("game_nextplayer", m_nextPlayerAction);
 
-  QAction* finishMovesAction = new QAction(QIcon(),
+  KAction* finishMovesAction = new KAction(KIcon(),
         i18n("Finish moves"), this);
   finishMovesAction->setShortcut(Qt::Key_Space);
   finishMovesAction->setStatusTip(i18n("Finish now current sprites movements"));
@@ -753,6 +754,7 @@ void KGameWindow::initView()
     delete m_rightDock;
   }
   m_rightDock = new QDockWidget(this);
+  m_rightDock->setObjectName("right-dock");
   m_rightDock->setAllowedAreas(Qt::RightDockWidgetArea | Qt::LeftDockWidgetArea);
   m_rightDock->setFeatures(QDockWidget::NoDockWidgetFeatures);
 

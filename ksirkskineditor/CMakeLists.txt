@@ -52,7 +52,6 @@ target_link_libraries(ksirkskineditor
   ${KDE4_PHONON_LIBRARY}
   kdegames
   ${CRYPT_LIBS}
-  ${KDEGAMES_LIBRARY}
  )
 
 install( TARGETS ksirkskineditor ${INSTALL_TARGETS_DEFAULT_ARGS})

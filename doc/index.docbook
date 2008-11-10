@@ -1,7 +1,8 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
   <!ENTITY ksirk '<application>KsirK</application>'>
-  <!ENTITY kapp "&ksirk;"><!-- replace ksirk here -->
+  <!ENTITY kappname "&ksirk;"><!-- replace ksirk here -->
+  <!ENTITY package "kdegames">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % English "INCLUDE">
 ]>
@@ -9,7 +10,7 @@
 <book lang="&language;">
 
 <bookinfo>
-<title>The &kapp; Handbook</title>
+<title>The &kappname; Handbook</title>
 
 <authorgroup>
 <author>
@@ -40,24 +41,24 @@ Please respect the format of the date (DD/MM/YYYY) and of the version
 (V.MM.LL), it could be used by automation scripts.
 Do NOT change these in the translation. -->
 
-<date>18/08/2005</date>
-<releaseinfo>1.03.00</releaseinfo>
+<date>18/09/2008</date>
+<releaseinfo>4.1.2</releaseinfo>
 
 <!-- Abstract about this handbook -->
 
 <abstract>
 <para>
-&kapp; is a computerized version of a well known strategy game. Commercial
+&kappname; is a computerized version of a well known strategy game. Commercial
 and other Free Software versions exist but I (Gaël de Chalendar) created this game
-initialy as a C++ learning exercise and so, I developed it up to this point (see README for details).
+initially as a C++ learning exercise and so, I developed it up to this point (see README for details).
 </para>
 <para>
-In the current version, &kapp; is a multi-player network-enabled game with an AI.
+In the current version, &kappname; is a multi-player network-enabled game with an AI.
 (see TODO for details)
 </para>
 <para>
 This documentation gives the major information you need to start playing.
-Please read the tooltips and the status bar messages to complete your information. A chapter explains how to create new skins for &kapp;
+Please read the tooltips and the status bar messages to complete your information. A chapter explains how to create new skins for &kappname;
 </para>
 <para>
 The goal of the game is simply to conquer the World... It is done by attacking your neighbors
@@ -88,7 +89,7 @@ each chapter so with the id attribute. This is necessary for two reasons: it
 allows you to easily reference the chapter from other chapters of your
 document, and if there is no ID, the name of the generated HTML files will vary
 from time to time making it hard to manage for maintainers and for the CVS
-system. Any chapter labelled (OPTIONAL) may be left out at the author's
+system. Any chapter labeled (OPTIONAL) may be left out at the author's
 discretion. Other chapters should not be left out in order to maintain a
 consistent documentation style across all KDE apps. -->
 
@@ -100,13 +101,13 @@ application that explains what it does and where to report
 problems. Basically a long version of the abstract.  Don't include a
 revision history. (see installation appendix comment) -->
 <para>
-&kapp; is a computerized version of a well known strategy game. Commercial
+&kappname; is a computerized version of a well known strategy game. Commercial
 and other Free Software versions exist but I (Gaël de Chalendar) created this game
-initialy as a C++ learning exercise and so, I developed it up to this point (see README for details).
+initially as a C++ learning exercise and so, I developed it up to this point (see README for details).
 </para>
 <para>
 <screenshot>
-  <screeninfo>Here's a screenshot of &kapp;</screeninfo>
+  <screeninfo>Here's a screenshot of &kappname;</screeninfo>
   <mediaobject>
     <imageobject>
       <imagedata fileref="firing-screenshot.png" format="PNG"/>
@@ -118,7 +119,7 @@ initialy as a C++ learning exercise and so, I developed it up to this point (see
 </screenshot>
 </para>
 <para>
-In the current version, &kapp; is a multi-player network-enabled game with an AI.
+In the current version, &kappname; is a multi-player network-enabled game with an AI.
 (see TODO for details)
 </para>
 <para>
@@ -132,7 +133,7 @@ with your armies. Peaceful, isn't it ? :-)
 </chapter>
 
 <chapter id="using-kapp">
-<title>Using &kapp;</title>
+<title>Using &kappname;</title>
 
 <!-- This chapter should tell the user how to use your app. You should use as
 many sections (Chapter, Sect1, Sect3, etc...) as is necessary to fully document
@@ -141,18 +142,19 @@ your application. -->
 
 
 <sect1 id="playing-ksirk">
-<title>Playing &kapp;</title>
-<para>Preliminary note : the map can be scrolled by three methods. First, you can put your
-mouse near a border of the window and the map will scroll in that direction. Second, you
-can use your mouse wheel: with no modifier, it will scroll vertically; when pressing the Meta
-key, it will scroll horizontally. And lastly, you can use the keyboard arrows.
-</para>
+<title>Playing &kappname;</title>
+<para>Preliminary note : the map can be scrolled by three methods:</para>
+<itemizedlist><listitem><para>You can put your
+mouse near a border of the window and the map will scroll in that direction</para></listitem>
+<listitem><para>You can use your mouse wheel: with no modifier, it will scroll vertically; when pressing the &Alt;
+key, it will scroll horizontally</para></listitem>
+<listitem><para>You can use the keyboard arrows</para></listitem></itemizedlist>
 <sect2 id="mainmenu" >
 <title>Starting a game</title>
 <para>
-When &kapp; starts, you are presented with a main menu.
+When &kappname; starts, you are presented with a main menu.
 <screenshot>
-  <screeninfo>The main menu of &kapp;</screeninfo>
+  <screeninfo>The main menu of &kappname;</screeninfo>
   <mediaobject>
     <imageobject>
       <imagedata fileref="introscreen.png" format="PNG"/>
@@ -167,7 +169,7 @@ When &kapp; starts, you are presented with a main menu.
 <varlistentry>
 <term>
   <menuchoice>
-    <guimenu>New game</guimenu>
+    <guimenu>New Game</guimenu>
   </menuchoice>
 </term>
 <listitem>
@@ -215,7 +217,7 @@ When &kapp; starts, you are presented with a main menu.
 </variablelist>
 </para>
 <para>
-If you hit, New Game, you will be presented with the New game dialog where you will be able to choose the number of players, the skin (or theme) to use, the game type (conquer the goal or have a specific goal) and finally if this game will be played with online players or if it is purely local.
+If you hit <guibutton>New Game</guibutton> you will be presented with the <guilabel>New game properties</guilabel> dialog where you will be able to choose the number of players, the skin (or theme) to use, the game type (conquer the goal or have a specific goal) and finally if this game will be played with online players or if it is purely local.
 <screenshot>
   <screeninfo>The New Game dialog</screeninfo>
   <mediaobject>
@@ -229,7 +231,7 @@ If you hit, New Game, you will be presented with the New game dialog where you w
 </screenshot>
 </para>
 <para>
-To start a network game, check the "Network game" check box on the right of the number of players spin box. After clicking OK, you will be able to chose the network parameters: number of network players and TCP port on which waiting for connections.
+To start a network game, check the <guilabel>Network game</guilabel> check box on the right of the number of players spin box. After clicking <guibutton>OK</guibutton>, you will be able to choose the network parameters: number of network players and TCP port on which waiting for connections.
 <screenshot>
   <screeninfo>Network game parameters dialog</screeninfo>
   <mediaobject>
@@ -243,7 +245,7 @@ To start a network game, check the "Network game" check box on the right of the 
 </screenshot>
 </para>
 <para>
-Then, network players will be able to connect by choosing Join on the introduction screen and by indicating the IP or hostname of the host and the port number youjust set.
+Then, network players will be able to connect by choosing <guilabel>Join</guilabel> on the introduction screen and by indicating the IP or hostname of the host and the port number you just set.
 <screenshot>
   <screeninfo>Joining network game dialog</screeninfo>
   <mediaobject>
@@ -272,7 +274,7 @@ Each connection is indicated by the message below in the status bar.
 
 </para>
 <para>
-Let's suppose you keep all the default settings and hit OK. You will then setup two players, one after one. For each one, you'll chose a name, a nationality and, if you want, setup a password such that nobody else than you can reuse this player when reloading this saved game. Lastly, you will here specify if this player is played by the computer or by a human being.
+Let's suppose you keep all the default settings and hit <guibutton>OK</guibutton>. You will then setup two players, one after one. For each one, you'll choose a name, a nationality and, if you want, setup a password such that nobody else than you can reuse this player when reloading this saved game. Lastly, you will here specify if this player is played by the computer or by a human being.
 <screenshot>
   <screeninfo>The Player Setup dialog</screeninfo>
   <mediaobject>
@@ -286,7 +288,7 @@ Let's suppose you keep all the default settings and hit OK. You will then setup 
 </screenshot>
 </para>
 <para>
-Then, if you chose to play with goal, the goal of each local player is displayed, preceded by a warning such that other players looking at the same computer can discreetly turn away while the goal is being viewed.
+Then, if you choose to play with goal, the goal of each local player is displayed, preceded by a warning such that other players looking at the same computer can discreetly turn away while the goal is being viewed.
 <screenshot>
   <screeninfo>The Goal Display dialog</screeninfo>
   <mediaobject>
@@ -317,7 +319,7 @@ Then, if you chose to play with goal, the goal of each local player is displayed
 <para>
 At the beginning of the game, countries are distributed to all the players. Each country contains
 one army (represented by an infantryman) at the start. Each player has some armies to
-distribute to his countries at there turn (indicated by the presence of there name and there flag in
+distribute to his countries at their turn (indicated by the presence of their name and their flag in
 the status bar). Note that five armies are represented by a cavalryman and 10 by
 a cannon.
 </para>
@@ -345,8 +347,6 @@ that can be selected by two buttons showed in the right panel:
 <variablelist>
 <varlistentry>
 <term>
-  <menuchoice>
-    <guimenu>
       <inlinemediaobject>
         <imageobject>
           <imagedata fileref="distributionArmees.png" format="PNG"/>
@@ -354,16 +354,15 @@ that can be selected by two buttons showed in the right panel:
         <textobject>
           <phrase>Redistribution</phrase>
         </textobject>
-      </inlinemediaobject> : Redistribution
-    </guimenu>
-  </menuchoice>
+      </inlinemediaobject>
+    <guibutton>Recycle</guibutton>
 </term>
 <listitem>
   <para>
   <action>
   One player wants to change some of his choices. The first player can then remove an army he
   just put in a country with the right mouse button and put it in another one with the left mouse
-  button. When he finishes, he gives control to next player with the 'Valid' button. When all
+  button. When he finishes, he gives control to next player with the <guibutton>Valid</guibutton> button. When all
   players have finished their redistribution, the two buttons are displayed again.
   </action>
   </para>
@@ -371,8 +370,6 @@ that can be selected by two buttons showed in the right panel:
 </varlistentry>
 <varlistentry>
 <term>
-  <menuchoice>
-    <guimenu>
       <inlinemediaobject>
         <imageobject>
           <imagedata fileref="distributionArmeesFinie.png" format="PNG"/>
@@ -380,9 +377,8 @@ that can be selected by two buttons showed in the right panel:
         <textobject>
           <phrase>End of redistribution</phrase>
         </textobject>
-      </inlinemediaobject> : End of redistribution
-    </guimenu>
-  </menuchoice>
+      </inlinemediaobject>
+    <guibutton>Done</guibutton>
 </term>
 <listitem><para><action>The redistribution is finished and the game can continue.
 </action></para></listitem>
@@ -399,8 +395,6 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
 <variablelist>
   <varlistentry>
     <term>
-      <menuchoice>
-        <guimenu>
           <inlinemediaobject>
             <imageobject>
               <imagedata fileref="joueurSuivant.png" format="PNG"/>
@@ -408,9 +402,8 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
             <textobject>
               <phrase>Next player</phrase>
             </textobject>
-          </inlinemediaobject> : Give hand to the next player (button in the toolbar)
-        </guimenu>
-      </menuchoice>
+          </inlinemediaobject>
+        <guibutton>Next Player</guibutton>
     </term>
     <listitem>
       <para>
@@ -422,8 +415,6 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
   </varlistentry>
   <varlistentry>
     <term>
-      <menuchoice>
-        <guimenu>
           <inlinemediaobject>
             <imageobject>
               <imagedata fileref="attackOne.png" format="PNG"/>
@@ -447,17 +438,16 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
             <textobject>
               <phrase>Attack 3</phrase>
             </textobject>
-          </inlinemediaobject> : Attack with one, two or three armies
+          </inlinemediaobject><guibutton>Attack with one, two or three armies</guibutton>
           &nbsp;<inlinemediaobject>
             <imageobject>
               <imagedata fileref="autoattack.png" format="PNG"/>
             </imageobject>
             <textobject>
-              <phrase>Attack auto</phrase>
+              <phrase>Auto attack</phrase>
             </textobject>
           </inlinemediaobject>
-        </guimenu>
-      </menuchoice>
+          <guibutton>Auto attack</guibutton>
     </term>
     <listitem>
       <para>
@@ -473,8 +463,10 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
               </textobject>
             </mediaobject>
           </screenshot>
-          For a country X to attack a country Y with x armies, 2 conditions must be fulfilled: 1. the two
-          countries must be neighbors; 2. country X must have at least x+1 armies before the attack.
+          For a country X to attack a country Y with x armies, 2 conditions must be fulfilled:</para>
+          <itemizedlist><listitem><para> the two countries must be neighbors;</para></listitem>
+          <listitem><para>country X must have at least x+1 armies before the attack.</para></listitem></itemizedlist>
+        <para>
           If the attack is valid, a dialog is displayed if necessary for the defender to choose if he wants to defend with one or two armies or let the computer decide.
       </para>
       <para>
@@ -495,8 +487,6 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
   </varlistentry>
   <varlistentry>
     <term>
-      <menuchoice>
-        <guimenu>
           <inlinemediaobject>
             <imageobject>
               <imagedata fileref="moveArmies.png" format="PNG"/>
@@ -504,9 +494,8 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
             <textobject>
               <phrase>Move armies</phrase>
             </textobject>
-          </inlinemediaobject> : Move Armies from one country to another
-        </guimenu>
-      </menuchoice>
+          </inlinemediaobject>
+          <guibutton>Move Armies from one country to another</guibutton>
     </term>
     <listitem>
       <para>
@@ -558,11 +547,11 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
 <sect2  id="end_of_turn" >
   <title>End of the turn</title>
   <para>
-    To finish your current turn, if you don't want to move armies, you can hit the "Next Player" button in the toolbar.
+    To finish your current turn, if you don't want to move armies, you can hit the <guibutton>Next Player</guibutton> button in the toolbar.
   </para>
   <para>
     When everybody has played, the turn is finished. Some armies are distributed to the
-    players, in function of the coutries they own: 1 for each group of three countries, with a
+    players, in function of the countries they own: 1 for each group of three countries, with a
     minimum of 3. There is also a bonus for players that own a complete continent, different for
     each one. The values of the bonuses for the default skin are:
     <table>
@@ -583,7 +572,7 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
     </table>
   </para>
   <para>
-    When a player has finished distributing his armies, he clicks the "Valid" button to
+    When a player has finished distributing his armies, he clicks the <guibutton>Valid</guibutton> button to
     allow the next player to distribute his bonus armies. As for the initial distribution, when all player
     have placed their armies, they can start a new redistribution cycle or start a new turn...
   </para>
@@ -591,7 +580,7 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
 <sect2 id="sending-messages" >
 <title>Sending messages to other players</title>
 <para>
-If you play a local game and want to communicate with the other players, well, let's speak (supposing you have no accessibility problems)... But if you are playing a network game, you can use the chat frame at the bottom of the window (it can be hidden or showed using the arrows). Just type in your message and hit Enter.
+If you play a local game and want to communicate with the other players, well, let's speak (supposing you have no accessibility problems)... But if you are playing a network game, you can use the chat frame at the bottom of the window (it can be hidden or showed using the arrows). Just type in your message and hit &Enter;.
           <screenshot>
             <screeninfo>Sending messages</screeninfo>
             <mediaobject>
@@ -613,15 +602,13 @@ If you play a local game and want to communicate with the other players, well, l
 <title>Command Reference</title>
 
 <sect1 id="kapp-mainwindow">
-<title>The main &kapp; window</title>
+<title>The main &kappname; window</title>
 <sect2>
 <title>The buttons</title>
 <para>
 <variablelist>
 <varlistentry>
 <term>
-  <menuchoice>
-    <guimenu>
       <inlinemediaobject>
         <imageobject>
           <imagedata fileref="quit.png" format="PNG"/>
@@ -629,9 +616,8 @@ If you play a local game and want to communicate with the other players, well, l
         <textobject>
           <phrase>Quit Game</phrase>
         </textobject>
-      </inlinemediaobject> : Quit Game
-    </guimenu>
-  </menuchoice>
+      </inlinemediaobject>
+    <guibutton>Quit</guibutton>
 </term>
 <listitem><para><action>
 Causes the program to quit.
@@ -639,8 +625,6 @@ Causes the program to quit.
 </varlistentry>
 <varlistentry>
 <term>
-  <menuchoice>
-    <guimenu>
       <inlinemediaobject>
         <imageobject>
           <imagedata fileref="newGame.png" format="PNG"/>
@@ -648,9 +632,8 @@ Causes the program to quit.
         <textobject>
           <phrase>New Game</phrase>
         </textobject>
-      </inlinemediaobject> : New Game
-    </guimenu>
-  </menuchoice>
+      </inlinemediaobject>
+    <guibutton>New Game</guibutton>
 </term>
 <listitem><para><action>Starts a new game. It will cause the displaying of a dialog asking
 the number of players. After that, each player will be asked its name with another dialog.
@@ -665,13 +648,13 @@ the number of players. After that, each player will be asked its name with anoth
 </chapter>
 
 <chapter id="developers">
-  <title>Developer's Guide to &kapp;</title>
+  <title>Developer's Guide to &kappname;</title>
   
   <para>
-    Please refer to the KDoc documentation for the API. It was quite complete but is currently a little bit outdated.The comments are inexistant in the <filename>.cpp</filename> implementation files.
+    Please refer to <ulink url="http://api.kde.org/">http://api.kde.org/</ulink> for the documentation of the API. It was quite complete but is currently a little bit outdated. There are no comments in the <filename>.cpp</filename> implementation files.
   </para>
   <para>
-    Note that I originaly developped this game under Windoz with Borland C++ and WinG. I ported
+    Note that I originally developed this game under &Windows; with Borland C++ and WinG. I ported
     it to &Java; before converting back to C++ and &kde;. At the beginning I used French or a mix of
     French and English to name the identifiers (classnames, methods, members, &etc;). I also used French for the comments. When I decided to distribute this game, I decided to convert all to english... but I am clearly not a native English speaker: please suggest or make and submit corrections, to the code comments or to this documentation
   </para>
@@ -681,9 +664,9 @@ the number of players. After that, each player will be asked its name with anoth
 <chapter id="skins">
   <title>Creating new skins</title>
   <para>
-    &kapp; is fully skinable. For who have graphic capabilities, creating a new skin is as simple as copying an existing one, editing or changings the graphics and updating the data in a .desktop configuration file. A last step is to edit the file describing what to install.
+    &kappname; is fully skinable. For who have graphic capabilities, creating a new skin is as simple as copying an existing one, editing or changing the graphics and updating the data in a .desktop configuration file. A last step is to edit the file describing what to install.
   </para>
-  <para>All examples (text and images) are taken from the default skin of &kapp;</para>
+  <para>All examples (text and images) are taken from the default skin of &kappname;</para>
   <sect1 id="sdf">
     <title>Structure of folders and files</title>
     <para>
@@ -720,7 +703,7 @@ the number of players. After that, each player will be asked its name with anoth
         It has the following structure: 
       </para>
       <para>
-        An onu group contains a number of countries entries, a number of nationalities entries and lastly a number of continents entries. Then various groups contain the description of the different sprites, the description of the different countries, continents, nationalities and goals.
+        An onu group contains a number of country entries, a number of nationality entries and lastly a number of continent entries. Then various groups contain the description of the different sprites, the description of the different countries, continents, nationalities and goals.
       </para>
       <para>
         The following section describe the content of each group.
@@ -755,7 +738,7 @@ the number of players. After that, each player will be asked its name with anoth
       <sect3>
         <title>The sprites description groups</title>
         <para>
-          Each type of sprite (flag, infantry, cavalry, cannon, firing cannon and exploding cannon) is defined by a group. Only some sprites have a width entry. This entry is used for relative positioning during animations: the cannons, firing or explosing should not "move" around the country's flag during fight.
+          Each type of sprite (flag, infantry, cavalry, cannon, firing cannon and exploding cannon) is defined by a group. Only some sprites have a width entry. This entry is used for relative positioning during animations: the cannons, firing or exploding should not "move" around the country's flag during fight.
           <table>
             <title>Sprite description group entries</title>
             <tgroup cols="2">
@@ -784,7 +767,7 @@ the number of players. After that, each player will be asked its name with anoth
               <tbody>
                 <row><entry>id</entry><entry>The integer unique identification number of the country, must start at zero (0)</entry></row>
                 <row><entry>name</entry><entry>The displayed name of the country</entry></row>
-                <row><entry>&lt;sprite&gt;-point</entry><entry>Each type of sprite (flag, infantry, etc.) in the country is displayed at a certain position defined by this entry made of two integers seperated by a comma</entry></row>
+                <row><entry>&lt;sprite&gt;-point</entry><entry>Each type of sprite (flag, infantry, etc.) in the country is displayed at a certain position defined by this entry made of two integers separated by a comma</entry></row>
                 <row><entry>neighbours</entry><entry>The list of the ids of the neighbors of the current country</entry></row>
               </tbody>
             </tgroup>
@@ -861,7 +844,7 @@ the number of players. After that, each player will be asked its name with anoth
   <sect1 id="tid">
     <title>The Images folder</title>
     <para>
-      This folder contains the buttons specific to &kapp; and the pool SVG file that contains the map and all sprites.
+      This folder contains the buttons specific to &kappname; and the pool SVG file that contains the map and all sprites.
     </para>
     <sect2>
       <title>The pool.svg file</title>
@@ -869,14 +852,18 @@ the number of players. After that, each player will be asked its name with anoth
         This SVG file contains the map and all the sprites of the game. Each element is named such that the game can select and render separately each of them.
       </para>
       <para>
-        In the default skin, the sprites are flags, infantry, cavalry and cannon. Infantry reprents one army, five for cavalry and ten for cannons. Cannons are also used to display fighting armies. That's why there is three kinds of cannon sprites: normal static or moving cannon, firing one and exploding one.
+        In the default skin, the sprites are flags, infantry, cavalry and cannon. Infantry represents one army, five for cavalry and ten for cannons. Cannons are also used to display fighting armies. That's why there is three kinds of cannon sprites: normal static or moving cannon, firing one and exploding one.
       </para>
       <para>
-        Each sprite image is the concatenation of the various views of the object and for each view, its frames. Views are organized vertically and frames horizontally. Where to cut the image in individual frames is found by dividing the height of the image by the number of views and the width by ne number of frames. These data are found in the onu.desktop file.
+        Each sprite image is the concatenation of the various views of the object and for each view, its frames. Views are organized vertically and frames horizontally. Where to cut the image in individual frames is found by dividing the height of the image by the number of views and the width by the number of frames. These data are found in the onu.desktop file.
         <mediaobject><imageobject><imagedata fileref="cannon.png" format="PNG"/></imageobject><caption><para>An example of a sprite image: cannon.png</para></caption></mediaobject>
       </para>
       <para>
-        For armies sprites, there is three different views, from top to bottom: looking right, looking left and face. For flags, there is only one view. All sprites backgrounds should be set to transparent.
+        For armies sprites, there is three different views, from top to bottom:</para>
+        <itemizedlist><listitem><para>looking right</para></listitem>
+        <listitem><para>looking left and</para></listitem><listitem>
+        <para>facer</para></listitem></itemizedlist>
+         <para> For flags, there is only one view. All sprites backgrounds should be set to transparent.
         <mediaobject><imageobject><imagedata fileref="italy.png" format="PNG"/></imageobject><caption><para>An example of a flag sprite image: italy.png</para></caption></mediaobject>
       </para>
       <para>
@@ -978,7 +965,10 @@ the number of players. After that, each player will be asked its name with anoth
   </sect1>
   <sect1 id="tsd">
     <title>The Sounds folder</title>
-    <para>This folder contains three sound files: roll.wav played when armies are moving; cannon.wav played when firing and crash.wav played when a cannon exploses.</para>
+    <para>This folder contains three sound files:</para>
+    <itemizedlist><listitem><para>roll.wav played when armies are moving </para></listitem>
+    <listitem><para>cannon.wav played when firing and </para></listitem><listitem>
+    <para>crash.wav played when a cannon explodes</para></listitem></itemizedlist>
   </sect1>
 </chapter>
 
@@ -991,7 +981,7 @@ the number of players. After that, each player will be asked its name with anoth
 <qandaset id="faqlist">
 <qandaentry>
 <question>
-<para>What will be the first question concerning &kapp;?</para>
+<para>What will be the first question concerning &kappname;?</para>
 </question>
 <answer>
 </answer>
@@ -1009,7 +999,7 @@ distribution. -->
 <title>Credits and License</title>
 
 <para>
-&kapp;
+&kappname;
 </para>
 <para>
 Program copyright 2002-2008 Gael de Chalendar <email>kleag@free.fr</email>
@@ -1044,7 +1034,7 @@ Documentation copyright 2002-2008 Gael de Chalendar <email>kleag@free.fr</email>
 <title>Installation</title>
 
 <sect1 id="getting-ksirk">
-<title>How to obtain &kapp;</title>
+<title>How to obtain &kappname;</title>
 &install.intro.documentation;
 </sect1>
 
