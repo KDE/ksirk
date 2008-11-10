@@ -349,7 +349,7 @@ that can be selected by two buttons showed in the right panel:
 <term>
       <inlinemediaobject>
         <imageobject>
-          <imagedata fileref="distributionArmees.png" format="PNG"/>
+          <imagedata fileref="recycling.png" format="PNG"/>
         </imageobject>
         <textobject>
           <phrase>Redistribution</phrase>
@@ -372,7 +372,7 @@ that can be selected by two buttons showed in the right panel:
 <term>
       <inlinemediaobject>
         <imageobject>
-          <imagedata fileref="distributionArmeesFinie.png" format="PNG"/>
+          <imagedata fileref="recyclingFinished.png" format="PNG"/>
         </imageobject>
         <textobject>
           <phrase>End of redistribution</phrase>
@@ -879,28 +879,31 @@ the number of players. After that, each player will be asked its name with anoth
           <entry>italy</entry><entry><mediaobject><imageobject><imagedata fileref="italy.png" format="PNG"/></imageobject></mediaobject></entry><entry>The flag of the Italy nation. There is one such entry for each nation</entry>
   </row>
         <row>
-          <entry>infantry</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
+          <entry>infantry</entry><entry><mediaobject><imageobject><imagedata fileref="infantry.png" format="PNG"/></imageobject></mediaobject></entry><entry>Icon representing one army</entry>
   </row>
         <row>
-          <entry>cavalry</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
+          <entry>cavalry</entry><entry><mediaobject><imageobject><imagedata fileref="cavalry.png" format="PNG"/></imageobject></mediaobject></entry><entry>Icon representing five armies</entry>
   </row>
         <row>
-          <entry>cannon</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
+          <entry>cannon</entry><entry><mediaobject><imageobject><imagedata fileref="cannon.png" format="PNG"/></imageobject></mediaobject></entry><entry>Icon representing ten armies</entry>
   </row>
         <row>
-          <entry>firing</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
+          <entry>firing</entry><entry><mediaobject><imageobject><imagedata fileref="firing.png" format="PNG"/></imageobject></mediaobject></entry><entry>Icon representing armies during a fight</entry>
   </row>
         <row>
-          <entry>exploding</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
+          <entry>exploding</entry><entry><mediaobject><imageobject><imagedata fileref="exploding.png" format="PNG"/></imageobject></mediaobject></entry><entry>Icon representing armies when losing a fight</entry>
   </row>
         <row>
-          <entry>Alaska</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
+          <entry>Alaska</entry><entry><mediaobject><imageobject><imagedata fileref="alaska.png" format="PNG"/></imageobject></mediaobject></entry><entry>The shape of the Alaska country. This is used to highligth the country. There is one such shape for each country. Its color is not used. As such, the color is free.</entry>
   </row>
         <row>
-          <entry>reddices</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
+          <entry>reddices</entry><entry><mediaobject><imageobject><imagedata fileref="reddices.png" format="PNG"/></imageobject></mediaobject></entry><entry>The red dices used to show battles results</entry>
   </row>
         <row>
-          <entry>mark1</entry><entry><mediaobject><imageobject><imagedata fileref="" format="PNG"/></imageobject></mediaobject></entry><entry></entry>
+          <entry>bluedices</entry><entry><mediaobject><imageobject><imagedata fileref="bluedices.png" format="PNG"/></imageobject></mediaobject></entry><entry>The blue dices used to show battles results</entry>
+  </row>
+        <row>
+          <entry>mark1</entry><entry><mediaobject><imageobject><imagedata fileref="mark1.png" format="PNG"/></imageobject></mediaobject></entry><entry>This mark is added to fighting sprites to show the number of armies they represent, here 1. There is also a mark2 and a mark3 elements.</entry>
         </row>
       </tbody>
       </tgroup>
@@ -932,10 +935,10 @@ the number of players. After that, each player will be asked its name with anoth
           <entry><mediaobject><imageobject><imagedata fileref="newNetGame.png" format="PNG"/></imageobject></mediaobject></entry><entry>newNetGame.png</entry><entry>Tries to join a network game</entry>
         </row>
         <row>
-          <entry><mediaobject><imageobject><imagedata fileref="recycling.png" format="PNG"/></imageobject></mediaobject></entry><entry>distributionArmees.png</entry><entry>After all players have put their armies, it is possible to modify the distributions (named recycling). This button asks to do such a redistribution</entry>
+          <entry><mediaobject><imageobject><imagedata fileref="recycling.png" format="PNG"/></imageobject></mediaobject></entry><entry>recycling.png</entry><entry>After all players have put their armies, it is possible to modify the distributions (named recycling). This button asks to do such a redistribution</entry>
         </row>
         <row>
-          <entry><mediaobject><imageobject><imagedata fileref="recyclingFinished.png" format="PNG"/></imageobject></mediaobject></entry><entry>distributionArmeesFinie.png</entry><entry>Chooses not to redistribute. All clients windows must have this button clicked to really end the distribution</entry>
+          <entry><mediaobject><imageobject><imagedata fileref="recyclingFinished.png" format="PNG"/></imageobject></mediaobject></entry><entry>recyclingFinished.png</entry><entry>Chooses not to redistribute. All clients windows must have this button clicked to really end the distribution</entry>
         </row>
         <row>
           <entry><mediaobject><imageobject><imagedata fileref="nextPlayer.png" format="PNG"/></imageobject></mediaobject></entry><entry>joueurSuivant.png</entry><entry>Ends the current player's turn and switch to the next one or to the next turn if the current player was the last one</entry>
