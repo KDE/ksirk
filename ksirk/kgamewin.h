@@ -60,7 +60,6 @@ class mainMenu;
 class QAction;
 class KGameChat;
 class KGamePopupItem;
-class KToolBar;
 class KDialog;
 class KAction;
 
@@ -279,17 +278,11 @@ public:
     * Display and removes various toolbar buttons in function of the state
     * of the game.
     */
-  void displayOpenGameButton();
-  void displayNextPlayerButton();
   void displayRecyclingButtons();
-  void displayNormalGameButtons();
-  void displayDefenseButtons();
-  void displayInvasionButtons();
-  void displayCancelButton();
+  void clearHighlighting();
+  void startLocalCurrentAI();
   void displayDefenseWindow();
   //@}
-
-  void clearGameActionsToolbar(bool send = true);
 
   /**
     * Updates the flag in the statusbar with the one of the current player
@@ -682,16 +675,6 @@ public:
     * creates and display the main frame with the background
     */
   void initView();
-
-  /**
-    * Add a button to the toolbar
-    */
-  void addAButton(const QString& fileName, 
-      const char* slot, 
-      const QString& txt, 
-      const  KShortcut& shortcut, 
-      bool isTemp = false, 
-      const QString& toolBarName = "gameActionsToolBar");
 
   /**
     * Reimplementation of the inherited function : starts the timer.
@@ -1095,8 +1078,6 @@ private:
   QTimer m_timer;
 
   QList<AnimSpritesGroup*> m_animSpritesGroups;
-
-  KToolBar* gameActionsToolBar;
 
   KGamePopupItem * m_message;
 

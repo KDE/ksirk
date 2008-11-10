@@ -151,11 +151,13 @@ namespace GameLogic
       KGameWindow * game;
 
       QPushButton* buttonStopAttack;
-
+      QPushButton* buttonStopDefense;
+      
       private slots:
       
       void slotStopAttackAuto();
-
+      void slotStopDefenseAuto();
+      
    };
    
 }

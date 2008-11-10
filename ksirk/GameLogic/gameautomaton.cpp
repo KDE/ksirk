@@ -95,7 +95,7 @@ const char* GameAutomaton::KsirkMessagesIdsNames[] = {
 "KGameWinAvailArmies", // 263
 "ChangeItem", // 264
 "DisplayRecyclingButtons", // 265
-"DisplayNormalGameButtons", // 266
+"ClearHighlighting", // 266
 "ActionRecycling", // 267
 "ClearGameActionsToolbar", // 268
 "DisplayDefenseButtons", // 269
@@ -104,10 +104,10 @@ const char* GameAutomaton::KsirkMessagesIdsNames[] = {
 "SecondCountry", // 272
 "InitCombatMovement", // 273
 "AnimCombat", // 274
-"DisplayInvasionButtons", // 275
+ // 275
 "TerminateAttackSequence", // 276
 "DecrNbArmies", // 277
-"DisplayNextPlayerButton", // 278
+"StartLocalCurrentAI", // 278
 "Invade", // 279
 "Retreat", // 280
 "NextPlayerNormal", // 281
@@ -458,7 +458,6 @@ GameAutomaton::GameState GameAutomaton::run()
       QByteArray buffer;
       QDataStream stream(&buffer, QIODevice::WriteOnly);
 //       stream << currentPlayer()->name();
-      m_game->clearGameActionsToolbar(false);
       PlayersArray::iterator it = playerList()->begin();
       PlayersArray::iterator it_end = playerList()->end();
       quint32 nbLocal = 0;
@@ -564,16 +563,11 @@ GameAutomaton::GameState GameAutomaton::run()
       stream << quint32(WAIT_RECYCLING);
       sendMessage(buffer,NextPlayerRecycling);
     }
-/*      else if (event == "actionRecyclingFinished")
-      {
-        m_game-> displayNormalGameButtons();
-        state(WAIT);
-      }*/
-    else
-    {
-      //        if (!event.isEmpty())
+//     else
+//     {
+//              if (!event.isEmpty())
 //          kError() << "Unhandled event " << event << " during handling of " << stateName() << endl;
-    }
+//     }
   break;
   case SHIFT1:
     if (event == "actionCancel")
@@ -590,7 +584,7 @@ GameAutomaton::GameState GameAutomaton::run()
       m_game->secondCountryAt(point);
       if (m_game->isMoveValid(point))
       {
-        m_game->displayInvasionButtons();
+        m_game->startLocalCurrentAI();
         QByteArray buffer;
         sendMessage(buffer,CurrentPlayerPlayed);
         state(SHIFT2);
@@ -700,7 +694,6 @@ GameAutomaton::GameState GameAutomaton::run()
       QByteArray buffer;
       QDataStream stream(&buffer, QIODevice::WriteOnly);
 //       stream << currentPlayer()->name();
-      m_game->clearGameActionsToolbar(false);
       PlayersArray::iterator it = playerList()->begin();
       PlayersArray::iterator it_end = playerList()->end();
       quint32 nbLocal = 0;
@@ -790,35 +783,6 @@ GameAutomaton::GameState GameAutomaton::run()
         m_game-> cancelAction();
       }
     }
-    /*else if (event == "actionAttack1")
-    {
-      m_game->attack(1);
-      state(ATTACK);
-    }
-    else if (event == "actionAttack2")
-    {
-      m_game->attack(2);
-      state(ATTACK);
-    }
-    else if (event == "actionAttack3")
-    {
-      m_game->attack(3);
-      state(ATTACK);
-    }
-    else if (event == "actionMove")
-    {
-//       kDebug() << "actionMove handling" << endl;
-      m_game->displayCancelButton();
-      QByteArray buffer;
-      QDataStream stream(&buffer, QIODevice::WriteOnly);
-      stream << QString("");
-      sendMessage(buffer,FirstCountry);
-      QByteArray buffer2;
-      QDataStream stream2(&buffer2, QIODevice::WriteOnly);
-      stream2 << QString("");
-      sendMessage(buffer2,SecondCountry);
-      state(SHIFT1);
-    }*/
     else if (event == "actionLButtonDown")
     {
       if (m_game->firstCountryAt(point))
@@ -847,20 +811,6 @@ GameAutomaton::GameState GameAutomaton::run()
       m_game->attack(3);
       state(ATTACK);
     }
-    /*else if (event == "actionMove")
-    {
-//       kDebug() << "actionMove handling" << endl;
-      m_game->displayCancelButton();
-      QByteArray buffer;
-      QDataStream stream(&buffer, QIODevice::WriteOnly);
-      stream << QString("");
-      sendMessage(buffer,FirstCountry);
-      QByteArray buffer2;
-      QDataStream stream2(&buffer2, QIODevice::WriteOnly);
-      stream2 << QString("");
-      sendMessage(buffer2,SecondCountry);
-      state(SHIFT1);
-    }*/
     else if (event == "actionInvade1")
     {
 //       kDebug() << "actionInvade1" << endl;
@@ -2232,8 +2182,8 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     m_game->getRightDialog()->updateRecycleDetails(0,true,0);
     m_game->displayRecyclingButtons();
     break;
-  case DisplayNormalGameButtons:
-    m_game->displayNormalGameButtons();
+  case ClearHighlighting:
+    m_game->clearHighlighting();
     break;
   case ActionRecycling:
     if (isAdmin())
@@ -2243,14 +2193,12 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     }
     break;
   case ClearGameActionsToolbar:
-    if (sender == gameId()) break;
-    m_game->clearGameActionsToolbar(false);
     break;
   case DisplayDefenseButtons:
     stream >> playerName;
     if ( (!playerNamed(playerName)->isVirtual())
-      && (!playerNamed(playerName)->isAI()) && (!this->isDefenseAuto()))
-    { //m_game->displayDefenseButtons();
+      && (!playerNamed(playerName)->isAI()) && (!isDefenseAuto()))
+    {
       defCountry = this->game()->secondCountry();
       m_game->displayDefenseWindow();
     }
@@ -2287,7 +2235,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
         m_game->showMap();
 
         setAttackAuto(false);
-        setDefenseAuto(false);
+//         setDefenseAuto(false);
         if(!currentPlayer()->isAI() && !currentPlayer()->isVirtual())
         {
           m_game->slideInvade(m_game->firstCountry(), m_game->secondCountry());
@@ -2326,7 +2274,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
           m_game->showMap();
 
           setAttackAuto(false);
-          setDefenseAuto(false);
+//           setDefenseAuto(false);
           state(WAIT);
         }
       }
@@ -2334,14 +2282,11 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
       m_game->secondCountry()-> createArmiesSprites();
     }
     break;
-  case DisplayInvasionButtons:
-    m_game->displayInvasionButtons();
-    break;
   case DecrNbArmies:
     stream >> countryName >> nbArmies;
     m_game->theWorld()->countryNamed(countryName)->decrNbArmies(nbArmies);
-  case DisplayNextPlayerButton:
-    m_game->displayNextPlayerButton();
+  case StartLocalCurrentAI:
+    m_game->startLocalCurrentAI();
     break;
   case Invade:
     stream >> nbArmies;
@@ -2371,7 +2316,6 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     if (isAdmin())
     {
       stream >> newState;
-      m_game->clearGameActionsToolbar(false);
       if (m_game->nextPlayerRecycling())
       {
         m_choosedToRecycleNumber = 0;
@@ -2693,6 +2637,26 @@ bool GameAutomaton::startingGame() const
 {
   kDebug() << m_startingGame;
   return m_startingGame;
+}
+
+bool GameAutomaton::isDefenseAuto()
+{
+  return m_defenseAuto.isDefenseAuto(m_game->firstCountry(),m_game->secondCountry());
+}
+
+void GameAutomaton::setDefenseAuto(bool activated)
+{
+  m_defenseAuto.value = activated;
+  if (activated)
+  {
+    m_defenseAuto.firstCountry = m_game->firstCountry();
+    m_defenseAuto.secondCountry= m_game->secondCountry();
+  }
+  else
+  {
+    m_defenseAuto.firstCountry = 0;
+    m_defenseAuto.secondCountry= 0;
+  }
 }
 
 } // closing namespace GameLogic

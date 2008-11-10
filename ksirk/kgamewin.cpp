@@ -125,7 +125,6 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_chatDlg(0),
   m_audioPlayer(Phonon::createPlayer( Phonon::NotificationCategory )),
   m_timer(this),
-  gameActionsToolBar(0),
   m_message(0),
   m_mouseLocalisation(0),
   m_fileName(),
@@ -223,31 +222,17 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_centralWidget = new QStackedWidget(this);
   setCentralWidget(m_centralWidget);
 
-  
-  kDebug() <<"Setting up toolbars";
-  kDebug() <<"  creating gameActionsToolBar";
-  gameActionsToolBar = new KToolBar("gameActionsToolBar", this, Qt::BottomToolBarArea);
-  gameActionsToolBar->setWindowTitle(i18n("Game Actions Toolbar"));
-  gameActionsToolBar->setToolButtonStyle(Qt::ToolButtonIconOnly);
-  gameActionsToolBar->setAllowedAreas(Qt::BottomToolBarArea);
-  gameActionsToolBar->setIconSize(QSize(32,32));
-  //gameActionsToolBar->show();
-
   kDebug() << "Creating automaton";
   m_automaton->init(this);
   
   kDebug() << "Setting skin";
   m_automaton->skin(KGlobal::config()->group("skin").readEntry("skin", "skins/default"));
-
   
 //    kDebug() << "Before initStatusBar";
   initStatusBar();
   
   menuBar()-> show();
   
-/*  displayOpenGameButton();*/
-
-//   connect(m_barFlagButton, SIGNAL(clicked()), this, SLOT(slotShowGoal()));
   explain();
   m_automaton->run();
   setMouseTracking(true);
@@ -875,14 +860,14 @@ bool KGameWindow::attackEnd()
     {
       QByteArray buffer;
       QDataStream stream(&buffer, QIODevice::WriteOnly);
-      m_automaton->sendMessage(buffer,DisplayInvasionButtons);
+      m_automaton->sendMessage(buffer,StartLocalCurrentAI);
     }
     else
     {
       if (m_firstCountry->nbArmies() < 2 || !m_automaton->isAttackAuto()) {
         QByteArray buffer;
         QDataStream stream(&buffer, QIODevice::WriteOnly);
-        m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
+        m_automaton->sendMessage(buffer,ClearHighlighting);
         KMessageParts messageParts;
         messageParts << I18N_NOOP("%1 : it is up to you again") << currentPlayer()-> name();
         broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
@@ -1141,7 +1126,7 @@ bool KGameWindow::actionOpenGame()
       QByteArray buffer;
       QDataStream stream(&buffer, QIODevice::WriteOnly);
       m_automaton->sendMessage(buffer,StartGame);
-      m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
+      m_automaton->sendMessage(buffer,ClearHighlighting);
       m_frame->setFocus();
       kDebug() << "KGameWindow::actionOpenGame false1";
       m_frame->setArenaOptionEnabled(true);
@@ -1164,32 +1149,9 @@ bool KGameWindow::actionOpenGame()
   return false;
 }
 
-void KGameWindow::displayNextPlayerButton()
-{
-//   kDebug() << "displayNextPlayerButton";
-  clearGameActionsToolbar(false);
-  if (currentPlayer() && !currentPlayer()->isVirtual() && currentPlayer()-> isAI())
-  {
-//     kDebug() << "... NOT adding button: AI";
-    if (!(static_cast<AIPlayer *>(currentPlayer()))-> isRunning()) 
-    {
-      (static_cast< AIPlayer * >(currentPlayer()))-> start();
-    }
-  }
-  else if (!currentPlayer()->isVirtual())
-  {
-//     kDebug() << "... adding button";
-    addAButton( CM_NEXTPLAYER, 
-                SLOT(slotNextPlayer()), i18n("Next Player"),KShortcut(Qt::Key_Escape),true);
-  }
-  gameActionsToolBar-> hide();
-  //gameActionsToolBar-> show();
-}
-
 void KGameWindow::displayRecyclingButtons()
 {
   kDebug();
-  clearGameActionsToolbar(false);
   if (m_automaton->allLocalPlayersComputer())
   {
 //     kDebug() << "There is only computer local players";
@@ -1215,23 +1177,11 @@ void KGameWindow::displayRecyclingButtons()
   else
   {
     m_rightDock->show();
-    addAButton(CM_RECYCLING, SLOT(slotRecycling()), i18n("Redistribute"),KShortcut(Qt::Key_R),true);
-    addAButton(CM_RECYCLINGFINISHED, SLOT(slotRecyclingFinished()), i18n("End redistribute"), KShortcut(Qt::Key_Tab), true);
   }
   m_nextPlayerAction->setEnabled(false);
-  gameActionsToolBar-> hide();
-  //gameActionsToolBar-> show();
 }
 
-void KGameWindow::displayOpenGameButton()
-{
-  clearGameActionsToolbar();
-  addAButton(CM_OPENGAME, SLOT(slotOpenGame()), i18n("Open game"),KShortcut(Qt::CTRL+Qt::Key_O),true);
-  gameActionsToolBar-> hide();
-  //gameActionsToolBar-> show();
-}
-
-void KGameWindow::displayNormalGameButtons()
+void KGameWindow::clearHighlighting()
 {
   kDebug();
   if (m_firstCountry != 0)
@@ -1246,9 +1196,7 @@ void KGameWindow::displayNormalGameButtons()
     m_secondCountry->clearHighlighting();
     m_secondCountry = 0;
   }
-  //gameActionsToolBar-> show();
 
-  clearGameActionsToolbar(false);
   if (currentPlayer() && currentPlayer()-> isAI() && (!currentPlayer()->isVirtual()))
   {
     if (!(static_cast<AIPlayer *>(currentPlayer()))-> isRunning()) (static_cast<AIPlayer *>(currentPlayer()))-> start();
@@ -1256,13 +1204,6 @@ void KGameWindow::displayNormalGameButtons()
   }
   else if (currentPlayer() && !currentPlayer()->isVirtual())
   {
-/*    addAButton(CM_OPENGAME, SLOT(slotOpenGame()), i18n("Open game"),KShortcut(Qt::CTRL+Qt::Key_O),true);
-    addAButton(CM_SAVEGAME, SLOT(slotSaveGame()), i18n("Save game"),KShortcut(Qt::CTRL+Qt::Key_S),true);*/
-    addAButton(CM_NEXTPLAYER,  SLOT(slotNextPlayer()), i18n("Next Player"),KShortcut(Qt::Key_Escape),true);
-    addAButton(CM_ATTACK1,  SLOT(slotAttack1()), i18n("Attack with one army"),KShortcut(Qt::Key_1),true);
-    addAButton(CM_ATTACK2,  SLOT(slotAttack2()), i18n("Attack with two armies"),KShortcut(Qt::Key_2),true);
-    addAButton(CM_ATTACK3,  SLOT(slotAttack3()), i18n("Attack with three armies"),KShortcut(Qt::Key_3),true);
-    addAButton(CM_SHIFT, SLOT(slotMove()), i18n("Move armies"),KShortcut(Qt::Key_M),true);
     slotContextualHelp();
     m_nextPlayerAction->setEnabled(true);
   }
@@ -1270,34 +1211,6 @@ void KGameWindow::displayNormalGameButtons()
   {
     m_nextPlayerAction->setEnabled(false);
   }
-  gameActionsToolBar-> hide();
-  //gameActionsToolBar-> show();
-}
-
-void KGameWindow::displayDefenseButtons()
-{
-  clearGameActionsToolbar(false);
-  if (currentPlayer() && currentPlayer()-> isAI()  && (!currentPlayer()->isVirtual()))
-  {
-    if (!(static_cast<AIPlayer *>(currentPlayer()))-> isRunning()) (static_cast<AIPlayer *>(currentPlayer()))-> start();
-  }
-  if (m_secondCountry && ! (m_secondCountry-> owner()->isAI() ))
-  {
-    if (m_secondCountry-> owner() && m_secondCountry-> owner()-> getFlag())
-    {
-      m_goalAction-> setIcon(KIcon(m_secondCountry-> owner()->getFlag()-> image(0)));
-      m_goalAction-> setIconText(i18n("Goal"));
-      m_barFlag-> setPixmap(m_secondCountry-> owner()->getFlag()-> image(0));
-    }
-    /*showMessage(i18n("%1, use the buttons below to choose<br>"
-                    "with how much armies you defend %2.",
-                      m_secondCountry-> owner()-> name(),
-                      m_secondCountry-> name()), 8);*/
-    addAButton(CM_DEFENSE1, SLOT(slotDefense1()), i18n("Defend with one army"),KShortcut(Qt::Key_1),true);
-    addAButton(CM_DEFENSE2, SLOT(slotDefense2()), i18n("Defend with two armies"),KShortcut(Qt::Key_2),true);
-  }
-  gameActionsToolBar-> hide();
-  //gameActionsToolBar-> show();
 }
 
 void KGameWindow::displayDefenseWindow()
@@ -1366,108 +1279,13 @@ void KGameWindow::displayDefenseWindow()
   dial->exec();
 }
 
-void KGameWindow::displayInvasionButtons()
+void KGameWindow::startLocalCurrentAI()
 {
   kDebug();
-  clearGameActionsToolbar(false);
   if (currentPlayer() && currentPlayer()-> isAI()  && (!currentPlayer()->isVirtual()))
   {
-    if (!(static_cast<AIPlayer *>(currentPlayer()))-> isRunning()) (static_cast<AIPlayer *>(currentPlayer()))-> start();
-  }
-  else if (!currentPlayer()->isVirtual())
-  {
-    addAButton(CM_INVADE1, SLOT(slotInvade1()), i18n("Invade with one army"),KShortcut(Qt::Key_1),true);
-    addAButton(CM_INVADE5, SLOT(slotInvade5()), i18n("Invade with five armies"),KShortcut(Qt::Key_5),true);
-    addAButton(CM_INVADE10, SLOT(slotInvade10()), i18n("Invade with ten armies"),KShortcut(Qt::Key_0),true);
-    addAButton(CM_INVASIONFINISHED, SLOT(slotInvasionFinished()), i18n("End Invasion"),KShortcut(Qt::Key_Return),true);
-    addAButton(CM_RETREAT1, SLOT(slotRetreat1()), i18n("Retract one army"),KShortcut(Qt::CTRL+Qt::Key_1),true);
-    addAButton(CM_RETREAT5, SLOT(slotRetreat5()), i18n("Retract five armies"),KShortcut(Qt::CTRL+Qt::Key_5),true);
-    addAButton(CM_RETREAT10, SLOT(slotRetreat10()), i18n("Retract ten armies"),KShortcut(Qt::CTRL+Qt::Key_0),true);
-  }
-  gameActionsToolBar-> hide();
-  //gameActionsToolBar-> show();
-}
-
-void KGameWindow::displayCancelButton()
-{
-  clearGameActionsToolbar();
-  if (currentPlayer() && currentPlayer()-> isAI()  && (!currentPlayer()->isVirtual()))
-  {
-    if (!(static_cast<AIPlayer *>(currentPlayer()))-> isRunning()) (static_cast<AIPlayer *>(currentPlayer()))-> start();
-  }
-  else addAButton(CM_CANCEL, SLOT(slotCancel()), i18n("Cancel"), KShortcut(Qt::Key_Escape), true);
-  gameActionsToolBar-> hide();
-  //gameActionsToolBar-> show();
-}
-
-void KGameWindow::clearGameActionsToolbar(bool send)
-{
-  if (send)
-  {
-    QByteArray buffer;
-    QDataStream stream(&buffer, QIODevice::WriteOnly);
-    m_automaton->sendMessage(buffer,ClearGameActionsToolbar);
-  }
-  
-  gameActionsToolBar->clear();
-  gameActionsToolBar->addSeparator();
-  QList<QString>::ConstIterator it, it_end;
-  it = m_temporaryAccelerators.constBegin(); it_end = m_temporaryAccelerators.constEnd();
-  for (; it != it_end; it++)
-  {
-//     m_accels.remove(*it);
-  }
-  m_temporaryAccelerators.clear();
-//   m_accels.updateConnections();
-//   kDebug()<< "Fin KGameWindow::clearGameActionsToolbar ";
-}
-
-void KGameWindow::addAButton(
-    const QString& fileName, 
-    const char* slot, 
-    const QString& txt, 
-    const KShortcut& shortcut,
-    bool isTemp, 
-    const QString& toolBarName)
-{
-  kDebug() << "addAButton: " << fileName;
-  QString imageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + fileName);
-//   kDebug() << "Trying to load button image file: " << imageFileName;
-  if (imageFileName.isNull())
-  {
-    KMessageBox::error(0, i18n("Cannot load button image %1<br>Program cannot continue",fileName), i18n("Error !"));
-    exit(2);
-  }
-  KToolBar* toolBar;
-  if (toolBarName == "gameActionsToolBar")
-  {
-    toolBar = gameActionsToolBar;
-  }
-  else
-  {
-    kError() << "Unknown toolbar name";
-    exit(2);
-  }
-  QAction* action = toolBar->addAction(QPixmap(imageFileName), txt, this,  slot);
-//   kDebug() << "Button added " << txt;
-  if (shortcut != KShortcut())
-  {
-    QString str = " ";
-    if (!txt.isEmpty())
-    {
-      str = txt;
-    }
-    action->setShortcut(shortcut.primary());
-    action->setStatusTip(str);
-/*    void* accel = m_accels.insert( txt, i18n(str),
-                          i18n(str),
-                          shortcut, this, slot );*/
-//     kDebug() << "Inserted accelerator " << accel;
-    
-  }
-  if (isTemp)
-  {
-    m_temporaryAccelerators.push_back(txt);
+    if (!(static_cast<AIPlayer *>(currentPlayer()))-> isRunning())
+      (static_cast<AIPlayer *>(currentPlayer()))-> start();
   }
 }
 
@@ -1519,7 +1337,6 @@ bool KGameWindow::finishSetupPlayers()
     kDebug() << "  playerList size = " << m_automaton->playerList()->count();
   }
   theWorld()->reset();
-  clearGameActionsToolbar();
   
   QMap< QString, QString > nations = nationsList();
   if (!(m_automaton->playerList()->isEmpty()))
@@ -2124,14 +1941,14 @@ bool KGameWindow::attacker(const QPointF& point)
   {
     messageParts << I18N_NOOP("<font color=\"orange\">No country here !</font>");
     broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
-    displayNormalGameButtons();
+    clearHighlighting();
     return false;
   }
 
   if (clickedCountry-> owner() != currentPlayer())
   {
     messageParts << I18N_NOOP("<font color=\"orange\">You are not the owner of %1 !</font>")  << clickedCountry-> name();
-    displayNormalGameButtons();
+    clearHighlighting();
     broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
     return false;
   }
@@ -2140,7 +1957,7 @@ bool KGameWindow::attacker(const QPointF& point)
     messageParts << I18N_NOOP("<font color=\"orange\">There is only %1 armies in %2 !</font>") 
       << QString::number(clickedCountry-> nbArmies())
       << clickedCountry-> name();
-    displayNormalGameButtons();
+    clearHighlighting();
     broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
     return false;
   }
@@ -2186,14 +2003,14 @@ unsigned int KGameWindow::attacked(const QPointF& point)
     //messageParts << I18N_NOOP("Nothing to attack !");
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
-    m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
+    m_automaton->sendMessage(buffer,ClearHighlighting);
   }
   else if (!m_secondCountry-> owner())
   {
     // messageParts << I18N_NOOP("Invalid attacked country.");
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
-    m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
+    m_automaton->sendMessage(buffer,ClearHighlighting);
   }
 /*  else if (!m_secondCountry-> owner()->isVirtual())
   {
@@ -2205,14 +2022,14 @@ unsigned int KGameWindow::attacked(const QPointF& point)
    // messageParts << I18N_NOOP("You are trying to attack %1 from itself !") << m_firstCountry-> name();
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
-    m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
+    m_automaton->sendMessage(buffer,ClearHighlighting);
   }
   else if (!m_firstCountry-> communicateWith(m_secondCountry))
   {
     //messageParts << I18N_NOOP("%1 is not a neighbour of %2 !") << m_secondCountry-> name() << m_firstCountry-> name();
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
-    m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
+    m_automaton->sendMessage(buffer,ClearHighlighting);
   }
   else if (m_firstCountry-> owner() == m_secondCountry-> owner())
   {
@@ -2220,14 +2037,14 @@ unsigned int KGameWindow::attacked(const QPointF& point)
            // << m_secondCountry-> name();
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
-    m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
+    m_automaton->sendMessage(buffer,ClearHighlighting);
   }
   else if (m_firstCountry-> owner() != currentPlayer()) 
   {
     //messageParts << I18N_NOOP("%1 ! You are not the owner of %2!") << currentPlayer()-> name() << m_firstCountry-> name();
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
-    m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
+    m_automaton->sendMessage(buffer,ClearHighlighting);
   }
   else if (m_firstCountry->nbArmies() - currentPlayer()->getNbAttack() < 1)
   {
@@ -2237,7 +2054,7 @@ unsigned int KGameWindow::attacked(const QPointF& point)
       << m_firstCountry-> name();*/
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
-    m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
+    m_automaton->sendMessage(buffer,ClearHighlighting);
   }
   else if (m_secondCountry-> nbArmies() > 1)
   {
@@ -2546,7 +2363,7 @@ bool KGameWindow::nextPlayerRecycling()
       //KMessageParts messageParts;
       QByteArray buffer;
       m_nbAvailArmies = currentPlayer()->getNbAvailArmies();
-      m_automaton->sendMessage(buffer,DisplayNextPlayerButton);
+      m_automaton->sendMessage(buffer,StartLocalCurrentAI);
 
       QByteArray buffer2;
       QDataStream stream2(&buffer2, QIODevice::WriteOnly);
@@ -2581,7 +2398,7 @@ bool KGameWindow::nextPlayerNormal()
     
     clear();
     QByteArray buffer2;
-    m_automaton->sendMessage(buffer2,DisplayNextPlayerButton);
+    m_automaton->sendMessage(buffer2,StartLocalCurrentAI);
     m_nbAvailArmies = currentPlayer()->getNbAvailArmies();
     getRightDialog()->close();
 
@@ -2606,7 +2423,7 @@ bool KGameWindow::nextPlayerNormal()
     clear();
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
-    m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
+    m_automaton->sendMessage(buffer,ClearHighlighting);
     return false;
   }
 }
@@ -2675,7 +2492,6 @@ void KGameWindow::attack(unsigned int nb)
 {  
   centerOnFight();        //center the view on the fight Benj
   
-  displayCancelButton();
   currentPlayer()-> setNbAttack(nb);
   /*KMessageParts messageParts;
   messageParts << I18N_NOOP("Attack with %1 armies : Designate the belligerants") 
@@ -2689,7 +2505,6 @@ void KGameWindow::attack(unsigned int nb)
 void KGameWindow::defense(unsigned int nb)
 {
   kDebug();
-  clearGameActionsToolbar();
 
   if (!m_firstCountry) // anything left to do?
      return;
@@ -2817,7 +2632,7 @@ bool KGameWindow::retreat(unsigned int nb)
 void KGameWindow::invasionFinished()
 {
   kDebug();
-  displayNormalGameButtons();
+  clearHighlighting();
  //KMessageParts messageParts;
 
   QPixmap pm = currentPlayer()->getFlag()->image(0);
@@ -2830,7 +2645,7 @@ void KGameWindow::invasionFinished()
         
 void KGameWindow::shiftFinished()
 {
-  displayNormalGameButtons();
+  clearHighlighting();
   QPixmap pm = currentPlayer()->getFlag()->image(0);
   KMessageParts messageParts;
   messageParts 
@@ -2852,9 +2667,9 @@ void KGameWindow::cancelAction()
   stream2 << "";
   m_automaton->sendMessage(buffer2,SecondCountry);
 
-displayNormalGameButtons();
+  clearHighlighting();
 
-KMessageParts messageParts;
+  KMessageParts messageParts;
   QPixmap pm = currentPlayer()->getFlag()->image(0);
   messageParts
     << pm 
@@ -2864,7 +2679,6 @@ KMessageParts messageParts;
 
 void KGameWindow::cancelShiftSource()
 {
-//        clearGameActionsToolbar();
   if (m_nbMovedArmies < 0)
   {
     m_firstCountry-> decrNbArmies(m_nbMovedArmies);
@@ -2892,7 +2706,6 @@ bool KGameWindow::actionNewGame(GameAutomaton::NetworkGameType socket)
 
   {
     // @todo if new game is canceled, removed buttons should be displayed again
-//    clearGameActionsToolbar();
 /*    if (!(m_automaton->playerList()->isEmpty()))
     {
       m_automaton->playerList()->clear();
@@ -3033,7 +2846,7 @@ void KGameWindow::actionRecycling()
   setCurrentPlayerToFirst();
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
-  m_automaton->sendMessage(buffer,DisplayNextPlayerButton);
+  m_automaton->sendMessage(buffer,StartLocalCurrentAI);
   QByteArray buffer2;
   QDataStream stream2(&buffer2, QIODevice::WriteOnly);
   stream2 << currentPlayer()->name();
@@ -3070,7 +2883,7 @@ void KGameWindow::actionRecyclingFinished()
     broadcastChangeItem(messageParts, ID_STATUS_MSG2);
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
-    m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
+    m_automaton->sendMessage(buffer,ClearHighlighting);
     m_automaton->state(GameLogic::GameAutomaton::WAIT);
   }
 }
@@ -3088,13 +2901,13 @@ void KGameWindow::displayButtonsForState(GameAutomaton::GameState state)
   switch (state)
   {
   case GameLogic::GameAutomaton::WAIT:;
-    m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
+    m_automaton->sendMessage(buffer,ClearHighlighting);
     break;
   case GameLogic::GameAutomaton::WAIT_RECYCLING:;
-    m_automaton->sendMessage(buffer,DisplayNextPlayerButton);
+    m_automaton->sendMessage(buffer,StartLocalCurrentAI);
     break;
   case GameLogic::GameAutomaton::NEWARMIES:;
-    m_automaton->sendMessage(buffer,DisplayNextPlayerButton);
+    m_automaton->sendMessage(buffer,StartLocalCurrentAI);
     break;
   case GameLogic::GameAutomaton::INIT:;
     break;
@@ -3122,7 +2935,7 @@ void KGameWindow::displayButtonsForState(GameAutomaton::GameState state)
     break;
     
   default: 
-    m_automaton->sendMessage(buffer,DisplayNormalGameButtons);
+    m_automaton->sendMessage(buffer,ClearHighlighting);
   }
 }
 

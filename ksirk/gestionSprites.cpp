@@ -530,8 +530,6 @@ void KGameWindow::initCombatMovement(
 {
   kDebug() << "1";
 
-  gameActionsToolBar-> hide();
-
   getRightDialog()->close();
   getRightDialog()->displayFightDetails(firstCountry(), secondCountry(),
       firstCountry()->owner()->getNbAttack(), secondCountry()->owner()->getNbDefense());

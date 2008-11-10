@@ -253,7 +253,7 @@ std::pair<const Country*, const Country*> AIPlayer::chooseBelligerant()
       {
 //                kDebug() << name() << "  choosing belligerants, candidate source has enough armies." << endl;
 //                kDebug() << name() << "  choosing belligerants, candidate targets " << endl;
-        for ( unsigned int inner = 0; inner < m_world-> getCountries().size(); inner++)
+        for ( int inner = 0; inner < m_world-> getCountries().size(); inner++)
         {
           const Country* candidateTarget = m_world-> getCountries().at(inner);
 //                    kDebug() << name() << "  choosing belligerants, looking at candidate target : " << candidateTarget-> name() << endl;
@@ -309,7 +309,7 @@ Country* AIPlayer::chooseReceivingCountry()
   }
   QList<Country*> withNeighbours;
   
-  for (unsigned int i = 0 ; i < myCountries.size(); i++)
+  for (int i = 0 ; i < myCountries.size(); i++)
   {
     if ( ( m_world-> neighboursNotBelongingTo(*(myCountries.at(i)), static_cast< const Player * >(this) ) ).size() )
         withNeighbours.push_back(myCountries.at(i));

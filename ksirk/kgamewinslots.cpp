@@ -1019,7 +1019,7 @@ void KGameWindow::slotReceivedMessage (const XMPP::Message & message)
     {
       kDebug() << "start game message";
       QRegExp rxlen("I'm starting a game with skin '([^']*)' and '(\\d+)' players");
-      int pos = rxlen.indexIn(body);
+//       int pos = rxlen.indexIn(body);
       QString skin = rxlen.cap(1); // "189"
       int nbPlayers = rxlen.cap(2).toInt();  // "cm"
       kDebug() << "emiting newJabberGame" << nick << nbPlayers << skin;
@@ -1054,7 +1054,7 @@ void KGameWindow::slotReceivedMessage (const XMPP::Message & message)
 }
 void KGameWindow::slotHandleTLSWarning (QCA::TLS::IdentityResult identityResult, QCA::Validity validityResult )
 {
-  kDebug (  ) << "Handling TLS warning...";
+  kDebug (  ) << "Handling TLS warning..." << identityResult << validityResult;
 }
 
 void KGameWindow::slotClientError ( JabberClient::ErrorCode errorCode )
@@ -1085,7 +1085,7 @@ void KGameWindow::slotCSError ( int error )
   }
   else
   {
-    int errorClass =  0;
+//     int errorClass =  0;
     
     kDebug (  ) << "Disconnecting.";
     

@@ -387,7 +387,7 @@ Country* ONU::countryAt(const QPointF& point)
       || norm.y() < 0 || norm.y() >= countriesMask.height() )
       return 0;
 
-    unsigned int index = qBlue(countriesMask.pixel(norm.toPoint()));
+    int index = qBlue(countriesMask.pixel(norm.toPoint()));
 //    kDebug() << "OUT ONU::countryAt: " << index;
     if (index >= countries.size()) return 0;
     return countries.at(index);

@@ -59,7 +59,7 @@ enum KsirkMessagesIds {
     KGameWinAvailArmies, // 263
     ChangeItem, // 264
     DisplayRecyclingButtons, // 265
-    DisplayNormalGameButtons, // 266
+    ClearHighlighting, // 266
     ActionRecycling, // 267
     ClearGameActionsToolbar, // 268
     DisplayDefenseButtons, // 269
@@ -68,10 +68,10 @@ enum KsirkMessagesIds {
     SecondCountry, // 272
     InitCombatMovement, // 273
     AnimCombat, // 274
-    DisplayInvasionButtons, // 275
+ // 275
     TerminateAttackSequence, // 276
     DecrNbArmies, // 277
-    DisplayNextPlayerButton, // 278
+    StartLocalCurrentAI, // 278
     Invade, // 279
     Retreat, // 280
     NextPlayerNormal, // 281
@@ -374,13 +374,13 @@ public:
     * Change the automatic defense state.
     * @param activated new state
     */
-  inline void setDefenseAuto(bool activated) {m_defenseAuto = activated;}
+  void setDefenseAuto(bool activated);
 
   /**
     * Get the automatic defense state.
     * @return state
     */
-  inline bool isDefenseAuto() {return m_defenseAuto;}
+  bool isDefenseAuto();
 
   bool finishSetupPlayersNumberAndSkin(const QString& skin, NetworkGameType networkGame, uint newPlayersNumber);
 
@@ -451,7 +451,7 @@ public Q_SLOTS:
     */
   void slotConnectionToClientBroken(KMessageIO *);
 
-  Country * getDefCountry ();
+  Country* getDefCountry();
 
 private Q_SLOTS:
   void displayGoals();
@@ -550,7 +550,25 @@ private:
   bool m_attackAuto;
 
   // tell us if the automatic defense is enabled
-  bool m_defenseAuto;
+  struct AutoDefenseStruct
+  {
+    AutoDefenseStruct() : value(false), firstCountry(0), secondCountry(0) {}
+    AutoDefenseStruct(bool v) : value(v), firstCountry(0), secondCountry(0) {}
+    bool isDefenseAuto(Country* first, Country* second)
+    {
+      if (firstCountry!=first || secondCountry!=second)
+      {
+        firstCountry = 0;
+        secondCountry = 0;
+        value = false;
+      }
+      return value;
+    }
+    bool value;
+    Country* firstCountry;
+    Country* secondCountry;
+  };
+  AutoDefenseStruct m_defenseAuto;
 
   // Save Defense country
   Country * defCountry;

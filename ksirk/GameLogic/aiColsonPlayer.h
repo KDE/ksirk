@@ -129,7 +129,7 @@ private:
     * Returns the position in the countries list of the ith adjacent country of
     * country iCountry 
     */
-  int RISK_GetAdjCountryOfCountry(int iCountry, unsigned int i);
+  int RISK_GetAdjCountryOfCountry(int iCountry, int i);
   int RISK_GetNumCountriesOfPlayer(const Player* player);
   bool GAME_IsEnemyAdjacent(int i);
   int FindEnemyAdjacent(int iCountry, int distance);

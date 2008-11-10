@@ -232,7 +232,7 @@ bool AIColsonPlayer::moveArmiesAction()
 int AIColsonPlayer::getTotalArmiesOfPlayer(const Player* player)
 {
   int nb = 0;
-  for (unsigned int i=0; i<m_world->getCountries().size(); i++)
+  for (int i=0; i<m_world->getCountries().size(); i++)
   {
     if (m_world->getCountries().at(i)->owner() == player)
     {
@@ -352,7 +352,7 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
     }
   }
 
-  for (unsigned int i=0; i<m_world->getCountries().size(); i++)
+  for (int i=0; i<m_world->getCountries().size(); i++)
   {
 /*  QList<Country*>::iterator countriesIt(m_world->getCountries().begin());
   QList<Country*>::iterator countriesIt_end(m_world->getCountries().end());
@@ -2023,7 +2023,7 @@ void AIColsonPlayer::finalize()
 {
   kDebug(); 
 
-  for (unsigned int i=0; i<m_game->playerList()->count(); i++)
+  for (int i=0; i<m_game->playerList()->count(); i++)
   {
     m_isEnemyPlayer[(Player*)m_game->playerList()->at(i)] = 0;
   }
@@ -2113,7 +2113,7 @@ int AIColsonPlayer::RISK_GetNumArmiesOfCountry(int i)
 
 
 /** Returns the position in the countries list of the ith adjacent country of country iCountry */
-int AIColsonPlayer::RISK_GetAdjCountryOfCountry(int iCountry, unsigned int j)
+int AIColsonPlayer::RISK_GetAdjCountryOfCountry(int iCountry, int j)
 {
   Country* country = m_world->getCountries().at(iCountry);
   if (j >= country->neighbours().size())
@@ -2121,7 +2121,7 @@ int AIColsonPlayer::RISK_GetAdjCountryOfCountry(int iCountry, unsigned int j)
     return -1;
   }
   Country* neighbour = country->neighbours()[j];
-  for (unsigned int i=0; i<m_world->getCountries().size(); i++)
+  for (int i=0; i<m_world->getCountries().size(); i++)
   {
     if (m_world->getCountries().at(i) == neighbour)
     {
