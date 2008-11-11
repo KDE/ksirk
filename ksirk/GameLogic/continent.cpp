@@ -71,7 +71,7 @@ const Player* Continent::owner() const
 {
    kDebug() << "Continent::owner for "  << m_name;
     /** The owner of the first country is the owner if there is any one*/
-  QList<Country*>::const_iterator it = m_members.begin();
+  QList<Country*>::const_iterator it = m_members.constBegin();
   const Country* firstOne = *(it);
   const Player* owner = firstOne-> owner();
   kDebug() << "\t"  << firstOne-> name()  << " is owned by "  << owner-> name();
@@ -102,7 +102,7 @@ void Continent::saveXml(std::ostream& xmlStream)
   name = name.replace(">","&gt;");
   xmlStream << "<continent name=\""<<name.toUtf8().data()<<"\" bonus=\""<<bonus<<"\" >" << std::endl;
   QList< Country* >::const_iterator it, it_end;
-  it = m_members.begin(); it_end = m_members.end();
+  it = m_members.constBegin(); it_end = m_members.constEnd();
   for (; it != it_end; it++)
   {
     (*it)->saveXml(xmlStream);

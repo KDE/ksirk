@@ -126,7 +126,7 @@ void KPlayerSetupDialog::fillNationsCombo()
   kDebug() << "Filling nations combo" << endl;
 
   QMap< QString, QString >::const_iterator nationsIt, nationsIt_end;
-  nationsIt = m_nations.begin(); nationsIt_end = m_nations.end();
+  nationsIt = m_nations.constBegin(); nationsIt_end = m_nations.constEnd();
   
   GameLogic::Nationality* nation = m_onu->nationNamed(*m_nations.keys().begin());
   LineEdit2-> setText(nation->leaderName());

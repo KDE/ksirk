@@ -214,7 +214,7 @@ void JT_Register::setForm(const Form &form)
 		query.appendChild(textTag(doc(), "key", form.key()));
 
 	// fields
-	for(Form::ConstIterator it = form.begin(); it != form.end(); ++it) {
+	for(Form::ConstIterator it = form.constBegin(); it != form.constEnd(); ++it) {
 		const FormField &f = *it;
 		query.appendChild(textTag(doc(), f.realName(), f.value()));
 	}
@@ -395,7 +395,7 @@ void JT_Roster::set(const Jid &jid, const QString &name, const QStringList &grou
 	item.setAttribute("jid", jid.full());
 	if(!name.isEmpty())
 		item.setAttribute("name", name);
-	for(QStringList::ConstIterator it = groups.begin(); it != groups.end(); ++it)
+	for(QStringList::ConstIterator it = groups.constBegin(); it != groups.constEnd(); ++it)
 		item.appendChild(textTag(doc(), "group", *it));
 	d->itemList += item;
 }
@@ -420,7 +420,7 @@ void JT_Roster::onGo()
 		QDomElement query = doc()->createElement("query");
 		query.setAttribute("xmlns", "jabber:iq:roster");
 		iq.appendChild(query);
-		for(QList<QDomElement>::ConstIterator it = d->itemList.begin(); it != d->itemList.end(); ++it)
+		for(QList<QDomElement>::ConstIterator it = d->itemList.constBegin(); it != d->itemList.constEnd(); ++it)
 			query.appendChild(*it);
 		send(iq);
 	}
@@ -438,7 +438,7 @@ QString JT_Roster::toString() const
 
 	QDomElement i = doc()->createElement("request");
 	i.setAttribute("type", "JT_Roster");
-	for(QList<QDomElement>::ConstIterator it = d->itemList.begin(); it != d->itemList.end(); ++it)
+	for(QList<QDomElement>::ConstIterator it = d->itemList.constBegin(); it != d->itemList.constEnd(); ++it)
 		i.appendChild(*it);
 	return lineEncode(Stream::xmlToString(i));
 	return "";
@@ -1123,7 +1123,7 @@ void JT_Search::set(const Form &form)
 		query.appendChild(textTag(doc(), "key", form.key()));
 
 	// fields
-	for(Form::ConstIterator it = form.begin(); it != form.end(); ++it) {
+	for(Form::ConstIterator it = form.constBegin(); it != form.constEnd(); ++it) {
 		const FormField &f = *it;
 		query.appendChild(textTag(doc(), f.realName(), f.value()));
 	}
@@ -1468,7 +1468,7 @@ bool JT_ServInfo::take(const QDomElement &e)
 
 			// Client-specific features
 			QStringList clientFeatures = client()->features().list();
-			for (QStringList::ConstIterator i = clientFeatures.begin(); i != clientFeatures.end(); ++i) {
+			for (QStringList::ConstIterator i = clientFeatures.constBegin(); i != clientFeatures.constEnd(); ++i) {
 				feature = doc()->createElement("feature");
 				feature.setAttribute("var", *i);
 				query.appendChild(feature);
@@ -1481,9 +1481,9 @@ bool JT_ServInfo::take(const QDomElement &e)
 			if (node.isEmpty()) {
 				// Extended features
 				QStringList exts = client()->extensions();
-				for (QStringList::ConstIterator i = exts.begin(); i != exts.end(); ++i) {
+				for (QStringList::ConstIterator i = exts.constBegin(); i != exts.constEnd(); ++i) {
 					const QStringList& l = client()->extension(*i).list();
-					for ( QStringList::ConstIterator j = l.begin(); j != l.end(); ++j ) {
+					for ( QStringList::ConstIterator j = l.constBegin(); j != l.constEnd(); ++j ) {
 						feature = doc()->createElement("feature");
 						feature.setAttribute("var", *j);
 						query.appendChild(feature);
@@ -1495,7 +1495,7 @@ bool JT_ServInfo::take(const QDomElement &e)
 			QString ext = node.right(node.length()-client()->capsNode().length()-1);
 			if (client()->extensions().contains(ext)) {
 				const QStringList& l = client()->extension(ext).list();
-				for ( QStringList::ConstIterator it = l.begin(); it != l.end(); ++it ) {
+				for ( QStringList::ConstIterator it = l.constBegin(); it != l.constEnd(); ++it ) {
 					feature = doc()->createElement("feature");
 					feature.setAttribute("var", *it);
 					query.appendChild(feature);
@@ -1872,8 +1872,8 @@ void JT_DiscoPublish::set(const Jid &j, const DiscoList &list)
 	//if ( !node.isEmpty() )
 	//	query.setAttribute("node", node);
 
-	DiscoList::ConstIterator it = list.begin();
-	for ( ; it != list.end(); ++it) {
+	DiscoList::ConstIterator it = list.constBegin();
+	for ( ; it != list.constEnd(); ++it) {
 		QDomElement w = doc()->createElement("item");
 
 		w.setAttribute("jid", (*it).jid().full());

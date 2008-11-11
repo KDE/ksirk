@@ -821,8 +821,8 @@ int AIColsonPlayer::NbEnemyAdjacent(Country* iCountry)
   Player* iEnemy = 0;
   Country* destCountry;
   QList<Country*>::const_iterator it, it_end;
-  it = iCountry->neighbours().begin();
-  it_end = iCountry->neighbours().end();
+  it = iCountry->neighbours().constBegin();
+  it_end = iCountry->neighbours().constEnd();
   for (;it != it_end; it++)
     {
       destCountry = *it;
@@ -860,8 +860,8 @@ int AIColsonPlayer::NbToAverageEnemyAdjacent(Country* iCountry)
   int nb = 0;
   int i = 0;
   QList<Country*>::const_iterator neighbourIt, neighbourIt_end;
-  neighbourIt = iCountry->neighbours().begin();
-  neighbourIt_end = iCountry->neighbours().end();
+  neighbourIt = iCountry->neighbours().constBegin();
+  neighbourIt_end = iCountry->neighbours().constEnd();
   for (;neighbourIt != neighbourIt_end; neighbourIt++)
   {
     Country* destCountry = *neighbourIt;
@@ -886,8 +886,8 @@ int AIColsonPlayer::NbToEqualEnemyAdjacent(Country* iCountry)
 {
   int nbe = 0;
   QList<Country*>::const_iterator neighbourIt, neighbourIt_end;
-  neighbourIt = iCountry->neighbours().begin();
-  neighbourIt_end = iCountry->neighbours().end();
+  neighbourIt = iCountry->neighbours().constBegin();
+  neighbourIt_end = iCountry->neighbours().constEnd();
   for (;neighbourIt != neighbourIt_end; neighbourIt++)
   {
     Country* destCountry = *neighbourIt;
