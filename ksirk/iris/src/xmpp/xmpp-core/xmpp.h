@@ -38,7 +38,7 @@
 namespace QCA
 {
 	class TLS;
-};
+}
 
 #ifndef CS_XMPP
 class ByteStream;
@@ -236,6 +236,6 @@ namespace XMPP
 		class Private;
 		Private *d;
 	};
-};
+}
 
 #endif
