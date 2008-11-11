@@ -364,13 +364,13 @@ public:
     * Change the automatic defense state.
     * @param activated new state
     */
-  inline void setDefenseAuto(bool activated) {m_defenseAuto = activated;}
+  void setDefenseAuto(bool activated);
 
   /**
     * Get the automatic defense state.
     * @return state
     */
-  inline bool isDefenseAuto() {return m_defenseAuto;}
+  bool isDefenseAuto();
 
 public Q_SLOTS:
   /** Reacts to the current state eventualy processing one queued event */
@@ -521,7 +521,25 @@ private:
   bool m_attackAuto;
 
   // tell us if the automatic defense is enabled
-  bool m_defenseAuto;
+  struct AutoDefenseStruct
+  {
+    AutoDefenseStruct() : value(false), firstCountry(0), secondCountry(0) {}
+    AutoDefenseStruct(bool v) : value(v), firstCountry(0), secondCountry(0) {}
+    bool isDefenseAuto(Country* first, Country* second)
+    {
+      if (firstCountry!=first || secondCountry!=second)
+      {
+        firstCountry = 0;
+        secondCountry = 0;
+        value = false;
+      }
+      return value;
+    }
+    bool value;
+    Country* firstCountry;
+    Country* secondCountry;
+  };
+  AutoDefenseStruct m_defenseAuto;
 
   // Save Defense country
   Country * defCountry;

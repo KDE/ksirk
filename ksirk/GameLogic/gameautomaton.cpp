@@ -2303,7 +2303,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
         m_game->showMap();
 
         setAttackAuto(false);
-        setDefenseAuto(false);
+//         setDefenseAuto(false);
         if( !currentPlayer()->isAI() && !currentPlayer()->isVirtual()
           &&  playerList()->size()>1 )
         {
@@ -2344,7 +2344,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
           m_game->showMap();
 
           setAttackAuto(false);
-          setDefenseAuto(false);
+//           setDefenseAuto(false);
           state(WAIT);
         }
       }
@@ -2692,6 +2692,26 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   }
 }
 
+
+bool GameAutomaton::isDefenseAuto()
+{
+  return m_defenseAuto.isDefenseAuto(m_game->firstCountry(),m_game->secondCountry());
+}
+
+void GameAutomaton::setDefenseAuto(bool activated)
+{
+  m_defenseAuto.value = activated;
+  if (activated)
+  {
+    m_defenseAuto.firstCountry = m_game->firstCountry();
+    m_defenseAuto.secondCountry= m_game->secondCountry();
+  }
+  else
+  {
+    m_defenseAuto.firstCountry = 0;
+    m_defenseAuto.secondCountry= 0;
+  }
+}
 
 } // closing namespace GameLogic
 } // closing namespace Ksirk

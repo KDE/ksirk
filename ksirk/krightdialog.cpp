@@ -54,10 +54,11 @@ namespace Ksirk
    btRecycleWidget(0),
    btValidWidget(0),
    game(m_game),
-   buttonStopAttack(0)
+   buttonStopAttack(0),
+   buttonStopDefense(0)
    {
      setLayout(mainLayout);
-     setFixedSize(220,360);
+     setBaseSize(220,360);
 
      // load the armie image
      KConfig config(world->getConfigFileName());
@@ -114,7 +115,8 @@ namespace Ksirk
       rightContents.at(1)->setText(i18n("<b>Continent:</b> %1", continent));
       rightContents.at(2)->setText(i18n("<b>Country:</b> %1", pays));
 
-      rightContents.at(3)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));rightContents.at(3)->setFixedSize(35,35);
+      rightContents.at(3)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
+      rightContents.at(3)->setFixedSize(35,35);
       rightContents.at(6)->setText(units);
       rightContents.at(4)->setText(i18n("<b>Owner:</b> %1", owner));
       rightContents.at(5)->setText(i18n("<b><u>Country details</u></b>"));
@@ -164,6 +166,7 @@ namespace Ksirk
 
       QGridLayout * tp = new QGridLayout();
       infoProcess = new QLabel();
+      infoProcess->setWordWrap(true);
       infoProcess->setText(i18n("<i>Fighting in progress...</i>"));
       loadingLabel = new QLabel();
       loadingLabel->setFixedSize(25,25);
@@ -259,12 +262,22 @@ namespace Ksirk
       mainLayout->addWidget(bas,2,0);
 
       if (game->automaton()->isAttackAuto()
-          && !game->automaton()->currentPlayer()->isVirtual()) {
-         buttonStopAttack = new QPushButton(stopAttackAuto,i18n("Stop Attack-auto"));
+        && !game->automaton()->currentPlayer()->isAI()
+          && !game->automaton()->currentPlayer()->isVirtual())
+      {
+         buttonStopAttack = new QPushButton(stopAttackAuto,i18n("Stop Auto-Attack"));
          mainLayout->addWidget(buttonStopAttack,3,0);
          connect(buttonStopAttack, SIGNAL(clicked()), this, SLOT(slotStopAttackAuto()));
       }
-     
+      if (game->automaton()->isDefenseAuto()
+        && !game->automaton()->currentPlayer()->isAI()
+        && !game->automaton()->currentPlayer()->isVirtual())
+      {
+        buttonStopDefense = new QPushButton(stopAttackAuto,i18n("Stop Auto-Defense"));
+        mainLayout->addWidget(buttonStopDefense,4,0);
+        connect(buttonStopDefense, SIGNAL(clicked()), this, SLOT(slotStopDefenseAuto()));
+      }
+      
       mainLayout->update();
       m_parentWidget->show();
       repaint();
@@ -453,9 +466,13 @@ namespace Ksirk
      	 rightContents.insert(0,de5);deDef->addWidget(de5);
 	  }
 	  QLabel * rLabelR = new QLabel(i18n("<font color=\"red\">lost armies: %1</font>", nbA));
+          rLabelR->setWordWrap(true);
+
       rightContents.insert(0,rLabelR);
 
 	  QLabel * rLabelB = new QLabel(i18n("<font color=\"blue\">lost armies: %1</font>", nbD));
+          rLabelB->setWordWrap(true);
+
 	  rightContents.insert(0,rLabelB);
     
 	  milieuGrid->addWidget(rightContents.at(1),0,0,Qt::AlignCenter);
@@ -480,7 +497,9 @@ namespace Ksirk
       removeListLabel();
       for (int i=0;i<nb;i++)
       {
-         rightContents.push_back(new QLabel());
+        QLabel* label = new QLabel();
+        label->setWordWrap ( true );
+        rightContents.push_back(label);
       }
       clearLabel();
    }
@@ -533,9 +552,14 @@ namespace Ksirk
         btValidWidget = 0;
      }
      if (buttonStopAttack != 0) {
-        mainLayout->removeWidget(buttonStopAttack);
-        delete buttonStopAttack;
-        buttonStopAttack = 0;
+       mainLayout->removeWidget(buttonStopAttack);
+       delete buttonStopAttack;
+       buttonStopAttack = 0;
+     }
+     if (buttonStopDefense != 0) {
+       mainLayout->removeWidget(buttonStopDefense);
+       delete buttonStopDefense;
+       buttonStopDefense = 0;
      }
      if(mainLayout->indexOf(bas)!=-1) {
         mainLayout->removeWidget(bas);
@@ -559,10 +583,18 @@ namespace Ksirk
      }
    }
 
-   void KRightDialog::slotStopAttackAuto()
-   {
-       kDebug()<<"Recept signal button stop attack auto";
-       this->game->automaton()->setAttackAuto(false);
-       this->buttonStopAttack->setEnabled(false);
-   }
+  void KRightDialog::slotStopAttackAuto()
+  {
+    kDebug();
+    this->game->automaton()->setAttackAuto(false);
+    this->buttonStopAttack->setEnabled(false);
+  }
+
+  void KRightDialog::slotStopDefenseAuto()
+  {
+    kDebug();
+    this->game->automaton()->setDefenseAuto(false);
+    this->buttonStopDefense->setEnabled(false);
+  }
+
 }
