@@ -56,14 +56,15 @@ Player::Player(
   dataHandler()->setPolicy(KGamePropertyBase::PolicyClean,false);
   m_nbAttack.registerData(dataHandler(),KGamePropertyBase::PolicyClean,QString("m_nbAttack"));
   m_nbCountries.registerData(dataHandler(),KGamePropertyBase::PolicyClean,QString("m_nbCountries"));
-  m_nbAvailArmies.registerData(dataHandler(),KGamePropertyBase::PolicyClean,QString("m_nbAvailArmies"));
+//   m_nbAvailArmies.registerData(dataHandler(),KGamePropertyBase::PolicyClean,QString("m_nbAvailArmies"));
   m_nbDefense.registerData(dataHandler(),KGamePropertyBase::PolicyClean,QString("m_nbDefense"));
   m_password.registerData(dataHandler(),KGamePropertyBase::PolicyClean,QString("m_password"));
   
   m_nbAttack = 0;
   m_nbDefense = 0;
   m_nbCountries = 0;
-  m_nbAvailArmies = nbArmies;
+  m_distributionData.init(nbArmies, m_automaton->game()->theWorld()->getNbCountries());
+//   m_nbAvailArmies = nbArmies;
   m_password = "";
   
   setName(playerName);
@@ -76,17 +77,25 @@ bool Player::operator==(const Player& player) const
   return (name() == player.name());
 }
 
+void Player::reset()
+{
+  m_distributionData.init(0, m_automaton->game()->theWorld()->getNbCountries());
+}
+
 
 /**  */
-unsigned int Player::getNbAvailArmies(){
-    return (m_nbAvailArmies);
+unsigned int Player::getNbAvailArmies()
+{
+  return (m_distributionData.nbToPlace());
+//   return (m_nbAvailArmies);
 }
 
 /**  */
 void Player::setNbAvailArmies(unsigned int nb, bool /*transmit*/)
 {
 //   kDebug() << name() << " setNbAvailArmies: " << nb << " transmit=" << transmit << endl;
-  m_nbAvailArmies = nb;
+  m_distributionData.setNbToPlace(nb);
+// m_nbAvailArmies = nb;
 /*  if (transmit)
   {
     QByteArray buffer;
@@ -133,20 +142,53 @@ unsigned int Player::getNbCountries() const
 /** add nb armies to the number of available armies */
 void Player::incrNbAvailArmies(unsigned int nb)
 {
-  setNbAvailArmies(m_nbAvailArmies + nb);
+  m_distributionData.setNbToPlace(m_distributionData.nbToPlace() + nb);
+//   setNbAvailArmies(m_nbAvailArmies + nb);
 }
 
 /** remove nb armies to the number of available armies */
 void Player::decrNbAvailArmies(unsigned int nb)
 {
 //   kDebug() << "Player::decrNbAvailArmies " << name() << " " << nb << endl;
-  if (nb > m_nbAvailArmies)
+  if (nb > m_distributionData.nbToPlace()/*m_nbAvailArmies*/)
   {
-    kError() << "Removing " << nb << " armies while owning " << m_nbAvailArmies << endl;
+    kError() << "Removing " << nb << " armies while owning " << m_distributionData.nbToPlace()/*m_nbAvailArmies*/ << endl;
     exit(1);
   }
-  setNbAvailArmies(m_nbAvailArmies - nb);
+  m_distributionData.setNbToPlace(m_distributionData.nbToPlace() - nb);
+//   setNbAvailArmies(m_nbAvailArmies - nb);
 }
+
+void Player::putArmiesInto(int nb, int country)
+{
+  kDebug() << nb << country << m_distributionData[country];
+  if (nb > m_distributionData.nbToPlace()/*m_nbAvailArmies*/)
+  {
+    kError() << "Removing " << nb << " armies while owning " << m_distributionData.nbToPlace()/*m_nbAvailArmies*/ << endl;
+    exit(1);
+  }
+  m_distributionData.setNbToPlace(m_distributionData.nbToPlace() - nb);
+  m_distributionData[country] = m_distributionData[country] + nb;
+}
+
+void Player::removeArmiesFrom(int nb, int country)
+{
+  kDebug() << nb << m_distributionData[country];
+  if (nb > m_distributionData[country])
+  {
+    kError() << "Trying to remove " << nb << " armies while x were added: x=" << m_distributionData[country] << endl;
+    exit(1);
+  }
+  m_distributionData.setNbToPlace(m_distributionData.nbToPlace() + nb);
+  m_distributionData[country] = m_distributionData[country] - nb;
+}
+
+bool Player::canRemoveArmiesFrom(int nb, int country)
+{
+  kDebug() << nb << m_distributionData[country];
+  return (nb <= m_distributionData[country]);
+}
+
 
 /**  */
 void Player::setNbCountries(unsigned int nb)
@@ -211,7 +253,7 @@ void Player::innerSaveXml(std::ostream& xmlStream)
   theName = theName.replace(">","&gt;");
   xmlStream << " name=\"" << theName.toUtf8().data() << "\"";
   xmlStream << " nbCountries=\"" << m_nbCountries << "\"";
-  xmlStream << " nbAvailArmies=\"" << m_nbAvailArmies << "\"";
+  xmlStream << " nbAvailArmies=\"" << m_distributionData.nbToPlace() << "\"";
   xmlStream << " nbAttack=\"" << m_nbAttack << "\"";
   xmlStream << " nbDefense=\"" << m_nbDefense << "\"";
   QString nationName = m_nation->name();

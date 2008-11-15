@@ -23,6 +23,7 @@
 #define PLAYER_H
 
 #include "KsirkGlobalDefinitions.h"
+#include "GameLogic/distributiondata.h"
 #include "GameLogic/gameautomaton.h"
 #include "GameLogic/goal.h"
 #include "nationality.h"
@@ -93,7 +94,10 @@ public:
   void incrNbAvailArmies(unsigned int nb=1);
   void decrNbAvailArmies(unsigned int nb=1);
   //@}
-
+  void putArmiesInto(int nb, int country);
+  void removeArmiesFrom(int nb, int country);
+  bool canRemoveArmiesFrom(int nb, int country);
+  
   //@{
   /**
     * Add/Remove nb countries to the player (defaults to 1)
@@ -183,6 +187,8 @@ public:
     */
   bool acknowledge(unsigned int ack);
 
+  void reset();
+
 protected:
   /** 
     * Saving of private data 
@@ -205,7 +211,7 @@ protected:
   /**
     * Number of armies the player can distribute
     */
-  KGamePropertyUInt m_nbAvailArmies;
+//   KGamePropertyUInt m_nbAvailArmies;
 //   unsigned int m_nbAvailArmies;
 
   /**
@@ -245,6 +251,8 @@ private:
   void setFlag();
   
   AnimSprite* m_flag;
+
+  DistributionData m_distributionData;
 };
 
 typedef KGame::KGamePlayerList PlayersArray;

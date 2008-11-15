@@ -402,9 +402,6 @@ public:
     * country
     */
   AnimSpritesList< InfantrySprite > m_spritesInfantry;
-  
-  /** The unique integer identifier of this country. */
-//   unsigned int m_id;
 
   QGraphicsSvgItem* m_highlighting;
 

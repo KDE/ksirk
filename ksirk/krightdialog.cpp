@@ -355,7 +355,7 @@ namespace Ksirk
       }
       else
       {
-        if (!game->currentPlayer()->isVirtual() && !game->currentPlayer()->isAI())
+        if (!player->isVirtual() && !player->isAI())
         {
           btValidWidget->show();
         }

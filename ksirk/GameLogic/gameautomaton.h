@@ -56,7 +56,7 @@ enum KsirkMessagesIds {
     PlayerChange, // 260
     RegisterCountry, // 261
     PlayerAvailArmies, // 262
-    KGameWinAvailArmies, // 263
+    ResetPlayersDistributionData, // 263
     ChangeItem, // 264
     DisplayRecyclingButtons, // 265
     ClearHighlighting, // 266
@@ -500,6 +500,8 @@ private:
 
   void activateNeededAIPlayers();
 
+  void resetPlayersDistributionData();
+  
   GameState m_state;
 //   KGameProperty< GameState > m_state;
 //     int m_stateId;
@@ -582,6 +584,7 @@ private:
   QMap<QString, KGameSvgDocument> m_svgDoms;
 
   NetworkGameType m_netGameType;
+
 };
 
 QDataStream& operator>>(QDataStream& s, GameAutomaton::GameState& state);

@@ -92,7 +92,7 @@ const char* GameAutomaton::KsirkMessagesIdsNames[] = {
 "PlayerChange", // 260
 "RegisterCountry", // 261
 "PlayerAvailArmies", // 262
-"KGameWinAvailArmies", // 263
+"ResetPlayersDistributionData", // 263
 "ChangeItem", // 264
 "DisplayRecyclingButtons", // 265
 "ClearHighlighting", // 266
@@ -1881,10 +1881,13 @@ void GameAutomaton::firstCountriesDistribution()
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     stream << currentPlayer()->name();
-    stream << (quint32)m_game->availArmies();
-    kDebug() << "sending DisplayRecycleDetails " << currentPlayer()->name() << m_game->availArmies()
+//     stream << (quint32)m_game->availArmies();
+    stream << (quint32)currentPlayer()->getNbAvailArmies();
+    kDebug() << "sending DisplayRecycleDetails " << currentPlayer()->name() << (quint32)currentPlayer()->getNbAvailArmies()
       << " at " << __FILE__ << ", line " << __LINE__;
-    sendMessage(buffer,DisplayRecycleDetails);
+//       kDebug() << "sending DisplayRecycleDetails " << currentPlayer()->name() << m_game->availArmies()
+//       << " at " << __FILE__ << ", line " << __LINE__;
+      sendMessage(buffer,DisplayRecycleDetails);
 
 
   //    kDebug() << "OUT  KGameWindow::setupPlayers" << endl;
@@ -1940,12 +1943,12 @@ void GameAutomaton::countriesDistribution()
   }
 //   kDebug() << "All countries are now distributed." << endl;
   QString nextPlayerName = (*playerList()->begin())-> name();
-  m_game->availArmies(initialNbArmies - distributedCountriesNumberMap[nextPlayerName]);
+  ((GameLogic::Player*)(*playerList()->begin()))->setNbAvailArmies(initialNbArmies - distributedCountriesNumberMap[nextPlayerName]);
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
-  stream << (quint32)m_game->availArmies();
-  sendMessage(buffer,KGameWinAvailArmies);
-  kDebug() << "  Setting status " << nextPlayerName << " / " << m_game->availArmies() << endl;
+  stream << (quint32)((GameLogic::Player*)(*playerList()->begin()))->getNbAvailArmies();
+//   sendMessage(buffer,KGameWinAvailArmies);
+//   kDebug() << "  Setting status " << nextPlayerName << " / " << m_game->availArmies() << endl;
   QPixmap pm = playerNamed(nextPlayerName)->getFlag()->image(0);
   KMessageParts messageParts;
   messageParts
@@ -2150,10 +2153,10 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     stream >> playerName >> nbArmies;
     playerNamed(playerName)->setNbAvailArmies((unsigned int)nbArmies, false);
     break;
-  case KGameWinAvailArmies:
+/*  case KGameWinAvailArmies:
     if (sender == gameId()) break;
     stream >> nbArmies;
-    m_game->availArmies(nbArmies);
+    m_game->availArmies(nbArmies);*/
     break;
   case ChangeItem:
     if (sender == gameId()) break;
@@ -2606,6 +2609,9 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   case CurrentPlayerPlayed:
     m_currentPlayerPlayed = true;
     break;
+  case ResetPlayersDistributionData:
+    resetPlayersDistributionData();
+    break;
   default: ;
   }
 }
@@ -2656,6 +2662,17 @@ void GameAutomaton::setDefenseAuto(bool activated)
   {
     m_defenseAuto.firstCountry = 0;
     m_defenseAuto.secondCountry= 0;
+  }
+}
+
+void GameAutomaton::resetPlayersDistributionData()
+{
+  foreach (KPlayer* p, *playerList())
+  {
+    if ( !p->isVirtual() )
+    {
+      ((GameLogic::Player*)p)->reset();
+    }
   }
 }
 

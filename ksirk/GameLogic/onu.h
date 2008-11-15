@@ -160,6 +160,8 @@ public:
     */
   unsigned int getNbCountries() const;
 
+  unsigned int indexOfCountry(Country*) const;
+  
   /**
     * Saves a XML representation of the world for game saving purpose
     * @param xmlStream The stream to write on
@@ -307,7 +309,6 @@ private:
     * Timer for the ZoomfactorFast
     */
     QTimer * m_timerFast;
-    int bo;
     
   /**
     * This SVG renderer stores the SVG file of the map, renders it at the
@@ -323,7 +324,7 @@ private:
   void buildMap();
 
  /** SLOTS */
-public slots:
+public Q_SLOTS:
   void changingZoom();
 
 };

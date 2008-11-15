@@ -66,6 +66,7 @@ set(ksirk_SRCS
   GameLogic/nationality.cpp
   GameLogic/onu.cpp
   GameLogic/player.cpp
+  GameLogic/distributiondata.cpp
   Dialogs/kplayersetupdialog.cpp
   Dialogs/newGameDialogImpl.cpp
   Dialogs/kwaitedplayersetupdialog.cpp

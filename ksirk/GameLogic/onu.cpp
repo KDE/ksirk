@@ -699,6 +699,13 @@ KGameSvgDocument* ONU::svgDom()
 {
   return &m_automaton->svgDomFor(m_skin);
 }
+
+unsigned int ONU::indexOfCountry(Country* c) const
+{
+  return countries.indexOf(c);
+}
+
+
 /** the SLOTS METHODS FOR THE ONU CLASS*/
 void ONU::changingZoom()
 {
@@ -713,9 +720,6 @@ void ONU::changingZoom()
   m_automaton->game()->frame()->resetTransform();
   applyZoomFactor(m_zoomFactorFinal);
   m_zoomFactorFinal=1.0;
-
-
-
 }
 
 /**END OF SLOTS METHODS FOR THE ONU*/

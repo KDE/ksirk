@@ -515,8 +515,8 @@ public:
     * long time ago and should probably be replaced by available armies local 
     * to players. 
     */
-  inline void availArmies(unsigned int nb) {m_nbAvailArmies = nb;}
-  inline unsigned int availArmies() {return m_nbAvailArmies;}
+/*  inline void availArmies(unsigned int nb) {m_nbAvailArmies = nb;}
+  inline unsigned int availArmies() {return m_nbAvailArmies;}*/
   //@}
 
   //@{
@@ -1037,7 +1037,7 @@ private:
   QList<QString> m_temporaryAccelerators;
     
   /** Used during countries distribution to handle network lags on the player member */
-  unsigned int m_nbAvailArmies; 
+//   unsigned int m_nbAvailArmies; 
   
   /** 
     * The list of players description whose connection is waited after loading 

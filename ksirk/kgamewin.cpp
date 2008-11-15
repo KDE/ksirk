@@ -2149,7 +2149,7 @@ bool KGameWindow::playerPutsArmy(const QPointF& point, bool removable)
     unsigned int nbAvailArmies = currentPlayer()->getNbAvailArmies();
     if (clickedCountry->owner() == currentPlayer() &&  nbAvailArmies > 0)
     {
-      m_nbAvailArmies--;
+//       m_nbAvailArmies--;
       nbAvailArmies--;
       currentPlayer()-> setNbAvailArmies(nbAvailArmies);
       kDebug() << "owner new available armies=" << nbAvailArmies;
@@ -2193,17 +2193,18 @@ bool KGameWindow::playerPutsInitialArmy(const QPointF& point)
       kDebug() << "clickedCountry owner=" << clickedCountry-> owner()->name();
       kDebug() << "clickedCountry had armies=" << clickedCountry-> nbArmies();
       kDebug() << "currentPlayer=" << currentPlayer()->name();
-      kDebug() << "m_nbAvailArmies=" << m_nbAvailArmies;
+//       kDebug() << "m_nbAvailArmies=" << m_nbAvailArmies;
       
       if (
            (clickedCountry-> owner() == currentPlayer()) &&
-           (m_nbAvailArmies > 0))
+           (((GameLogic::Player*)currentPlayer())-> getNbAvailArmies() > 0))
       {
-        m_nbAvailArmies--;
-        bool last = (m_nbAvailArmies == 0);
-        unsigned int currentAvailArmiesNumber = m_nbAvailArmies;
-        currentPlayer()-> setNbAvailArmies(currentAvailArmiesNumber);
-        kDebug() << "owner new available armies=" << m_nbAvailArmies;
+        unsigned int currentAvailArmiesNumber = ((GameLogic::Player*)currentPlayer())-> getNbAvailArmies() - 1;
+//         m_nbAvailArmies--;
+        bool last = (currentAvailArmiesNumber == 0);
+//         currentPlayer()-> setNbAvailArmies(currentAvailArmiesNumber);
+        currentPlayer()->putArmiesInto(currentAvailArmiesNumber, theWorld()->indexOfCountry(clickedCountry));
+        kDebug() << "owner new available armies=" << currentAvailArmiesNumber;
         clickedCountry-> incrNbArmies();
         clickedCountry-> incrNbAddedArmies();
         clickedCountry-> createArmiesSprites();
@@ -2230,19 +2231,20 @@ bool KGameWindow::playerPutsInitialArmy(const QPointF& point)
               << I18N_NOOP("%1 : %2 armies to place") << ((Player*)(*it))-> name()
               << QString::number(((Player*)(*it))-> getNbAvailArmies());
             broadcastChangeItem(messageParts, ID_STATUS_MSG2);*/
-            m_nbAvailArmies = ((Player*)(*it))-> getNbAvailArmies();
+/*            m_nbAvailArmies = ((Player*)(*it))-> getNbAvailArmies();
             QByteArray buffer;
             QDataStream stream(&buffer, QIODevice::WriteOnly);
             stream << (quint32)m_nbAvailArmies;
-            m_automaton->sendMessage(buffer,KGameWinAvailArmies);
+            m_automaton->sendMessage(buffer,KGameWinAvailArmies);*/
             getRightDialog()->close();
 
             QByteArray buffer2;
             QDataStream stream2(&buffer2, QIODevice::WriteOnly);
-            stream2 << ((Player*)(*it))->name();
-            stream2 << (quint32)m_nbAvailArmies;
+            stream2 << ((GameLogic::Player*)(*it))->name();
+            stream2 << (quint32) ((GameLogic::Player*)(*it))->getNbAvailArmies();
+//             stream2 << (quint32) m_nbAvailArmies;
             kDebug() << "sending DisplayRecycleDetails "
-              << ((Player*)(*it))->name() << m_nbAvailArmies
+              << ((Player*)(*it))->name() << (quint32) ((GameLogic::Player*)(*it))->getNbAvailArmies()
               << " at " << __FILE__ << ", line " << __LINE__;
             m_automaton->sendMessage(buffer2,DisplayRecycleDetails);
           }
@@ -2257,12 +2259,12 @@ bool KGameWindow::playerPutsInitialArmy(const QPointF& point)
         }
         else
         {
-          getRightDialog()->updateRecycleDetails(clickedCountry,false,m_nbAvailArmies);
+          getRightDialog()->updateRecycleDetails(clickedCountry,false,(quint32) ((GameLogic::Player*)(currentPlayer()))->getNbAvailArmies());
           QPixmap pm = currentPlayer()->getFlag()->image(0);
           KMessageParts messageParts;
           messageParts << pm << I18N_NOOP("%1 : %2 armies to place") 
             << currentPlayer()-> name()
-            << QString::number(m_nbAvailArmies);
+            << QString::number((quint32) ((GameLogic::Player*)(currentPlayer()))->getNbAvailArmies());
           changeItem(messageParts, ID_STATUS_MSG2, false);
         }
       }
@@ -2284,13 +2286,17 @@ bool KGameWindow::playerRemovesArmy(const QPointF& point)
   kDebug() << "  owner=" << clickedCountry-> owner()->name();
   kDebug() << "  nbArmies=" << clickedCountry->nbArmies();
   kDebug() << "  nbAddedArmies=" << clickedCountry->nbAddedArmies();
+  kDebug() << "  canRemoveArmiesFrom=" << clickedCountry-> owner()->canRemoveArmiesFrom(1, theWorld()->indexOfCountry(clickedCountry) );
   if ( clickedCountry
       && ( clickedCountry-> owner() == currentPlayer() )
       && ( clickedCountry-> nbArmies() > 1)
-      && ( clickedCountry-> nbAddedArmies() >0 ) )
+      && ( clickedCountry-> owner()->canRemoveArmiesFrom(1, theWorld()->indexOfCountry(clickedCountry) ) )
+//       && ( clickedCountry-> nbAddedArmies() >0 )
+  )
   {
-    unsigned int newNbAvailArmies = currentPlayer()-> getNbAvailArmies() + 1;
-    m_nbAvailArmies = newNbAvailArmies;
+    clickedCountry-> owner()->removeArmiesFrom(1, theWorld()->indexOfCountry(clickedCountry) );
+    unsigned int newNbAvailArmies = currentPlayer()-> getNbAvailArmies() /*+ 1*/;
+//     m_nbAvailArmies = newNbAvailArmies;
 
     if ( m_automaton->isAdmin() )
     {
@@ -2306,8 +2312,9 @@ bool KGameWindow::playerRemovesArmy(const QPointF& point)
     clickedCountry-> createArmiesSprites();
 
     getRightDialog()->updateRecycleDetails(clickedCountry,false,newNbAvailArmies);
+    return true;
   }
-  return true;
+  return false;
 }
 
 /**
@@ -2362,7 +2369,7 @@ bool KGameWindow::nextPlayerRecycling()
     {
       //KMessageParts messageParts;
       QByteArray buffer;
-      m_nbAvailArmies = currentPlayer()->getNbAvailArmies();
+//       m_nbAvailArmies = currentPlayer()->getNbAvailArmies();
       m_automaton->sendMessage(buffer,StartLocalCurrentAI);
 
       QByteArray buffer2;
@@ -2399,7 +2406,7 @@ bool KGameWindow::nextPlayerNormal()
     clear();
     QByteArray buffer2;
     m_automaton->sendMessage(buffer2,StartLocalCurrentAI);
-    m_nbAvailArmies = currentPlayer()->getNbAvailArmies();
+//     m_nbAvailArmies = currentPlayer()->getNbAvailArmies();
     getRightDialog()->close();
 
     QByteArray buffer3;
@@ -2881,9 +2888,15 @@ void KGameWindow::actionRecyclingFinished()
       << pm
       << I18N_NOOP("%1, it is up to you.") << currentPlayer()->name();
     broadcastChangeItem(messageParts, ID_STATUS_MSG2);
+
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     m_automaton->sendMessage(buffer,ClearHighlighting);
+
+    QByteArray buffer2;
+    QDataStream stream2(&buffer2, QIODevice::WriteOnly);
+    m_automaton->sendMessage(buffer2,ResetPlayersDistributionData);    
+
     m_automaton->state(GameLogic::GameAutomaton::WAIT);
   }
 }
