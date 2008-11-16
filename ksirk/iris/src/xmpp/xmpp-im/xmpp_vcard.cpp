@@ -60,7 +60,8 @@ QString image2type(const QByteArray &ba)
 	if ( format.toUpper() == "JPEG" )
 		return "image/jpeg";
 
-	qWarning(QString("WARNING! VCard::image2type: unknown format = '%1'").arg(format.isNull() ? QString("UNKNOWN") : format).toAscii());
+	const QByteArray formatAscii = format.toAscii();
+	qWarning("WARNING! VCard::image2type: unknown format = '%s'", format.isNull() ? "UNKNOWN" : formatAscii.constData());
 
 	return "image/unknown";
 }
