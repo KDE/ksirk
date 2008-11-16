@@ -141,22 +141,9 @@ public:
   unsigned int nbArmies() const;
 
   /**
-    * Return the number of armies that has been added during the last
-    * armies movement. Used to allow changes in distribution before the final
-    * validation.
-    */
-  unsigned int nbAddedArmies();
-
-  /**
     * Change the number of armies to nb
     */
   void nbArmies(unsigned int nb);
-
-  /**
-    * Change the number of armies that has been added during the last
-    * armies movement to nb
-    */
-  void nbAddedArmies(unsigned int nb);
 
   /**
     * Add nb armies. Defaults to 1.
@@ -164,21 +151,9 @@ public:
   void incrNbArmies(unsigned int nb=1);
 
   /**
-    * Add nb armies to the number of armies that has been added during the
-    * last armies movement. Defaults to 1.
-    */
-  void incrNbAddedArmies(unsigned int nb=1);
-
-  /**
     * Remove nb armies. Defaults to 1.
     */
   void decrNbArmies(unsigned int nb=1);
-
-  /**
-    * Remove nb armies to the number of armies that has been added during the
-    * last armies movement. Defaults to 1.
-    */
-  void decrNbAddedArmies(unsigned int nb=1);
 
   /**
     * Return the name of the country
@@ -337,13 +312,6 @@ public:
     * of soldiers, horses and cannons
     */
   unsigned int  m_nbArmies;
-  
-  /**
-    * the number of armies added after the capture of the country or during an
-    * armies move. It must stay positive as one cannot remove more armies than
-    * he has added
-    */
-  unsigned int m_nbAddedArmies;
   
   /**
     * The name of the country

@@ -283,139 +283,133 @@ namespace Ksirk
       repaint();
    }
 
-   void KRightDialog::displayRecycleDetails(GameLogic::Player * player, int nbAvailArmies)
-   {
-      kDebug() << player->name() << nbAvailArmies;
-      this->show();
+ void KRightDialog::displayRecycleDetails(GameLogic::Player * player, int nbAvailArmies)
+ {
+    kDebug() << player->name() << nbAvailArmies;
+    this->show();
 
-      clearLayout();
-      initListLabel(4);
+    clearLayout();
+    initListLabel(4);
 
-      flag1 = new QLabel();
-      flag2 = new QLabel();
+    flag1 = new QLabel();
+    flag2 = new QLabel();
 
-      QGridLayout* recycleLayout = new QGridLayout();
-      QGridLayout* btRecycleLayout = new QGridLayout();
-      QGridLayout* btValidLayout = new QGridLayout();
+    QGridLayout* recycleLayout = new QGridLayout();
+    QGridLayout* btRecycleLayout = new QGridLayout();
+    QGridLayout* btValidLayout = new QGridLayout();
 
-      QPushButton* buttonValid = new QPushButton(recycleNextPlayer, i18n("Valid"), this);
-      QPushButton* buttonRecycle = new QPushButton(recycleContinue, i18n("Recycle"), this);
-      QPushButton* buttonRecycleDone = new QPushButton(recycleDone, i18n("Done"), this);
+    QPushButton* buttonValid = new QPushButton(recycleNextPlayer, i18n("Valid"), this);
+    QPushButton* buttonRecycle = new QPushButton(recycleContinue, i18n("Recycle"), this);
+    QPushButton* buttonRecycleDone = new QPushButton(recycleDone, i18n("Done"), this);
 
-      connect(buttonValid, SIGNAL(clicked()), game, SLOT(slotNextPlayer()));
-      connect(buttonRecycle, SIGNAL(clicked()), game, SLOT(slotRecycling()));
-      connect(buttonRecycleDone, SIGNAL(clicked()), game, SLOT(slotRecyclingFinished()));
+    connect(buttonValid, SIGNAL(clicked()), game, SLOT(slotNextPlayer()));
+    connect(buttonRecycle, SIGNAL(clicked()), game, SLOT(slotRecycling()));
+    connect(buttonRecycleDone, SIGNAL(clicked()), game, SLOT(slotRecyclingFinished()));
 
-      QHBoxLayout* title = new QHBoxLayout();
+    QHBoxLayout* title = new QHBoxLayout();
 
-      haut = new QWidget();
-
-
-      // Widgets which contains buttons
-      btRecycleWidget = new QWidget();
-      btValidWidget = new QWidget();
-
-      btRecycleLayout->addWidget(buttonRecycle,0,0,Qt::AlignCenter);
-      btRecycleLayout->addWidget(buttonRecycleDone,0,1,Qt::AlignCenter);
-
-      btValidLayout->addWidget(buttonValid,0,0,Qt::AlignCenter);
-
-      btRecycleWidget->setLayout(btRecycleLayout);
-      btValidWidget->setLayout(btValidLayout);
+    haut = new QWidget();
 
 
-      rightContents.at(0)->setText("<u><b>"+player->name()+"</b></u> ");
-      flag1->setPixmap(player->getFlag()->image(0));
+    // Widgets which contains buttons
+    btRecycleWidget = new QWidget();
+    btValidWidget = new QWidget();
 
-      rightContents.at(1)->setText(i18n("%1 armies to place", nbAvailArmies));
+    btRecycleLayout->addWidget(buttonRecycle,0,0,Qt::AlignCenter);
+    btRecycleLayout->addWidget(buttonRecycleDone,0,1,Qt::AlignCenter);
 
-      title->addWidget(rightContents.at(0));
-      title->addWidget(flag1);
+    btValidLayout->addWidget(buttonValid,0,0,Qt::AlignCenter);
 
-//       if (nbAvailArmies > 0 || game->getState() == GameLogic::GameAutomaton::INTERLUDE)
-//       {
-        recycleLayout->addLayout(title,0,0,Qt::AlignCenter);
-        recycleLayout->addWidget(rightContents.at(1),1,0,Qt::AlignCenter);
+    btRecycleWidget->setLayout(btRecycleLayout);
+    btValidWidget->setLayout(btValidLayout);
 
-        recycleLayout->addWidget(rightContents.at(2),2,0,Qt::AlignCenter);
-        recycleLayout->addWidget(rightContents.at(3),3,0,Qt::AlignCenter);
 
-        recycleLayout->addWidget(btRecycleWidget,4,0,Qt::AlignCenter);
-        recycleLayout->addWidget(btValidWidget,5,0,Qt::AlignCenter);
-//       }
-  
-      haut->setLayout(recycleLayout);
-      mainLayout->addWidget(haut,0,0);
+    rightContents.at(0)->setText("<u><b>"+player->name()+"</b></u> ");
+    flag1->setPixmap(player->getFlag()->image(0));
 
-      // hide buttons initialy
-      btRecycleWidget->hide();
-      if (nbAvailArmies > 0 || game->getState() == GameLogic::GameAutomaton::INTERLUDE)
+    rightContents.at(1)->setText(i18n("%1 armies to place", nbAvailArmies));
+
+    title->addWidget(rightContents.at(0));
+    title->addWidget(flag1);
+
+    recycleLayout->addLayout(title,0,0,Qt::AlignCenter);
+    recycleLayout->addWidget(rightContents.at(1),1,0,Qt::AlignCenter);
+
+    recycleLayout->addWidget(rightContents.at(2),2,0,Qt::AlignCenter);
+    recycleLayout->addWidget(rightContents.at(3),3,0,Qt::AlignCenter);
+
+    recycleLayout->addWidget(btRecycleWidget,4,0,Qt::AlignCenter);
+    recycleLayout->addWidget(btValidWidget,5,0,Qt::AlignCenter);
+
+    haut->setLayout(recycleLayout);
+    mainLayout->addWidget(haut,0,0);
+
+    // hide buttons initialy
+    btRecycleWidget->hide();
+    if (nbAvailArmies > 0 || game->getState() == GameLogic::GameAutomaton::INTERLUDE || player->isVirtual() || player->isAI())
+    {
+      btValidWidget->hide();
+    }
+    else
+    {
+      btValidWidget->show();
+    }
+
+    mainLayout->update();
+    m_parentWidget->show();
+    repaint();
+ }
+
+void KRightDialog::updateRecycleDetails(GameLogic::Country* country, bool recyclePhase, int nbAvailArmies)
+{
+  kDebug() << (void*)country << recyclePhase << nbAvailArmies;
+  this->show();
+  if (btValidWidget == 0)
+  {
+    if (country == 0)
+    {
+      return;
+    }
+    displayRecycleDetails(country->owner(),nbAvailArmies);
+  }
+
+  if (recyclePhase)
+  {
+    rightContents.at(0)->setText(i18n("<u><b>Change some<br>placements ?</b></u> "));
+    flag1->hide();
+    rightContents.at(1)->setText(QString());
+    rightContents.at(2)->setText(QString());
+    rightContents.at(3)->setText(QString());
+
+    // show "redistribute" and "end redistribute" buttons
+    if (!game->automaton()->allLocalPlayersComputer())
+    {
+      btRecycleWidget->show();
+    }
+    btValidWidget->hide();
+  }
+  else
+  {
+    rightContents.at(1)->setText(i18n("%1 armies to place", nbAvailArmies));
+    rightContents.at(2)->setText("<b>"+i18n(country->name().toUtf8().data())+"</b>");
+    rightContents.at(3)->setText(i18n("<b>Armies:</b> %1", country->nbArmies()));
+    if (nbAvailArmies > 0)
+    {
+      btValidWidget->hide();
+    }
+    else
+    {
+      if (!game->currentPlayer()->isVirtual() && !game->currentPlayer()->isAI())
       {
-        btValidWidget->hide();
+        btValidWidget->show();
       }
-      else
-      {
-        if (!player->isVirtual() && !player->isAI())
-        {
-          btValidWidget->show();
-        }
-      }
+    }
+  }
+  kDebug() << "before update and repaint";
+  mainLayout->update();
+  repaint();
 
-      mainLayout->update();
-      m_parentWidget->show();
-      repaint();
-   }
-
-   void KRightDialog::updateRecycleDetails(GameLogic::Country* country, bool recyclePhase, int nbAvailArmies)
-   {
-      kDebug() << (void*)country << recyclePhase << nbAvailArmies;
-      this->show();
-      if (btValidWidget == 0)
-      {
-        if (country == 0)
-        {
-          return;
-        }
-        displayRecycleDetails(country->owner(),nbAvailArmies);
-      }
-
-      if (recyclePhase)
-      {
-        rightContents.at(0)->setText(i18n("<u><b>Change some<br>placements ?</b></u> "));
-        flag1->hide();
-        rightContents.at(1)->setText(QString());
-        rightContents.at(2)->setText(QString());
-        rightContents.at(3)->setText(QString());
-
-        // show "redistribute" and "end redistribute" buttons
-        if (!game->automaton()->allLocalPlayersComputer())
-        {
-          btRecycleWidget->show();
-        }
-        btValidWidget->hide();
-      }
-      else
-      {
-        rightContents.at(1)->setText(i18n("%1 armies to place", nbAvailArmies));
-        rightContents.at(2)->setText("<b>"+i18n(country->name().toUtf8().data())+"</b>");
-        rightContents.at(3)->setText(i18n("<b>Armies: %1", country->nbArmies()));
-        if (nbAvailArmies > 0)
-        {
-          btValidWidget->hide();
-        }
-        else
-        {
-          if (!game->currentPlayer()->isVirtual() && !game->currentPlayer()->isAI())
-          {
-            btValidWidget->show();
-          }
-        }
-      }
-      kDebug() << "before update and repaint";
-      mainLayout->update();
-      repaint();
-
-   }
+}
 
    void KRightDialog::displayFightResult(int A1=0, int A2=0, int A3=0, int D1=0, int D2=0,int nbA=0,int nbD=0, bool win=false)
    {
@@ -533,21 +527,25 @@ namespace Ksirk
        mainLayout->removeWidget(obj);
        delete obj;
      }
-     if (flag1 != 0) {
+     if (flag1 != 0)
+     {
         mainLayout->removeWidget(flag1);
         delete flag1;
         flag1 = 0;
      }
-     if (flag2 != 0) {
+     if (flag2 != 0)
+     {
         mainLayout->removeWidget(flag2);
         delete flag2;
         flag2 = 0;
      }
-     if (btRecycleWidget != 0) {
+     if (btRecycleWidget != 0)
+     {
         delete btRecycleWidget;
         btRecycleWidget = 0;
      }
-     if (btValidWidget != 0) {
+     if (btValidWidget != 0)
+     {
         delete btValidWidget;
         btValidWidget = 0;
      }

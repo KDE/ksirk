@@ -91,18 +91,17 @@ unsigned int Player::getNbAvailArmies()
 }
 
 /**  */
-void Player::setNbAvailArmies(unsigned int nb, bool /*transmit*/)
+void Player::setNbAvailArmies(unsigned int nb, bool transmit)
 {
-//   kDebug() << name() << " setNbAvailArmies: " << nb << " transmit=" << transmit << endl;
+  kDebug() << name() << " setNbAvailArmies: " << nb << " transmit=" << transmit << endl;
   m_distributionData.setNbToPlace(nb);
-// m_nbAvailArmies = nb;
-/*  if (transmit)
+  if (transmit)
   {
     QByteArray buffer;
-    QDataStream stream(buffer, QIODevice::WriteOnly);
-    stream << name() << m_nbAvailArmies;
-    GameAutomaton::changeable().sendMessage(buffer, PlayerAvailArmies);
-  }*/
+    QDataStream stream(&buffer, QIODevice::WriteOnly);
+    stream << name() << m_distributionData.nbToPlace();
+    m_automaton->sendMessage(buffer, PlayerAvailArmies);
+  }
 }
 
 /**  */
@@ -143,7 +142,6 @@ unsigned int Player::getNbCountries() const
 void Player::incrNbAvailArmies(unsigned int nb)
 {
   m_distributionData.setNbToPlace(m_distributionData.nbToPlace() + nb);
-//   setNbAvailArmies(m_nbAvailArmies + nb);
 }
 
 /** remove nb armies to the number of available armies */
@@ -153,10 +151,9 @@ void Player::decrNbAvailArmies(unsigned int nb)
   if (nb > m_distributionData.nbToPlace()/*m_nbAvailArmies*/)
   {
     kError() << "Removing " << nb << " armies while owning " << m_distributionData.nbToPlace()/*m_nbAvailArmies*/ << endl;
-    exit(1);
+    Q_ASSERT(false);
   }
   m_distributionData.setNbToPlace(m_distributionData.nbToPlace() - nb);
-//   setNbAvailArmies(m_nbAvailArmies - nb);
 }
 
 void Player::putArmiesInto(int nb, int country)
@@ -274,6 +271,17 @@ bool   Player::load (QDataStream &stream)
 //   kDebug() << "Player::load nationName=" << nationName << endl;
   setNation(nationName);
   stream >> m_goal;
+  int nbToPlace;
+  stream >> nbToPlace;
+  int nbCountries;
+  stream >> nbCountries;
+  m_distributionData.init(nbToPlace, nbCountries);
+  for (int i = 0; i < nbCountries; i++)
+  {
+    int nb;
+    stream >> nb;
+    m_distributionData[i] = nb;
+  }
   return true;
 }
 
@@ -283,6 +291,12 @@ bool Player::save (QDataStream &stream)
   if (!KPlayer::save(stream)) return false;
   stream << m_nation->name();
   stream << m_goal;
+  stream << m_distributionData.nbToPlace();
+  stream << m_distributionData.size();
+  for (int i = 0; i < m_distributionData.size(); i++)
+  {
+    stream << m_distributionData[i];
+  }
   return true;
 }
 
@@ -393,6 +407,12 @@ QDataStream& operator<<(QDataStream& stream, PlayerMatrix& p)
     stream << s;
   }
   stream << p.goal;
+/*  stream << m_distributionData.nbToPlace();
+  stream << m_distributionData.size();
+  for (int i = 0; i < m_distributionData.size(); i++)
+  {
+    stream << m_distributionData[i];
+  }*/
   return stream;
 }
 
@@ -411,6 +431,17 @@ QDataStream& operator>>(QDataStream& stream, PlayerMatrix& p)
     p.countries.push_back(country);
   }
   stream >> p.goal;
+/*  int nbToPlace;
+  stream >> nbToPlace;
+  int nbCountries;
+  stream >> nbCountries;
+  m_distributionData.init(nbToPlace, nbCountries);
+  for (int i = 0; i < nbCountries; i++)
+  {
+    int nb;
+    stream >> nb;
+    m_distributionData[i] = nb;
+  }*/
   return stream;
 }
 

@@ -185,10 +185,10 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
     issNbArmies >> gotNbArmies;
     country->nbArmies(gotNbArmies);
     
-    unsigned int gotNbAddedArmies;
-    std::istringstream issNbAddedArmies(atts.value("nbArmiesAdded").toUtf8().data());
-    issNbArmies >> gotNbAddedArmies;
-    country->nbAddedArmies(gotNbAddedArmies);
+//     unsigned int gotNbAddedArmies;
+//     std::istringstream issNbAddedArmies(atts.value("nbArmiesAdded").toUtf8().data());
+//     issNbArmies >> gotNbAddedArmies;
+//     country->nbAddedArmies(gotNbAddedArmies);
 
     kDebug() << "Storing" << atts.value("owner") << "as owner of" << atts.value("name");
     m_ownersMap.insert(atts.value("name"), atts.value("owner"));

@@ -346,7 +346,7 @@ public:
   /** Some accessors to data really necessary... */
   inline QMap< int, QString >& nbArmiesIdsNamesCountriesMap() {return m_nbArmiesIdsNamesCountriesMap;}
   inline QMap< QString, int >& namesNbArmiesIdsCountriesMap() {return m_namesNbArmiesIdsCountriesMap;}
-  inline QMap< int, QString >& nbAddedArmiesIdsNamesCountriesMap() {return m_nbAddedArmiesIdsNamesCountriesMap;}
+//   inline QMap< int, QString >& nbAddedArmiesIdsNamesCountriesMap() {return m_nbAddedArmiesIdsNamesCountriesMap;}
   inline QMap< QString, int >& namesNbAddedArmiesIdsCountriesMap() {return m_namesNbAddedArmiesIdsCountriesMap;}
   //@}
 
@@ -530,7 +530,7 @@ private:
   
   QMap< int, QString > m_nbArmiesIdsNamesCountriesMap;
   QMap< QString, int > m_namesNbArmiesIdsCountriesMap;
-  QMap< int, QString > m_nbAddedArmiesIdsNamesCountriesMap;
+//   QMap< int, QString > m_nbAddedArmiesIdsNamesCountriesMap;
   QMap< QString, int > m_namesNbAddedArmiesIdsCountriesMap;
 
   quint32 m_choosedToRecycleNumber;

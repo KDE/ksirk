@@ -58,7 +58,6 @@ Country::Country(GameAutomaton* game,
   m_belongsTo(0),
   m_flag(0),
   m_nbArmies(0),
-  m_nbAddedArmies(0),
   m_name(theName),
   m_anchorPoint(anchorPoint),
   m_centralPoint(centralPoint),
@@ -283,11 +282,6 @@ unsigned int Country::nbArmies() const
   return m_nbArmies;
 }
 
-unsigned int Country::nbAddedArmies()
-{
-  return m_nbAddedArmies;
-}
-
 void Country::nbArmies(unsigned int nb)
 {
   m_nbArmies = nb;
@@ -297,24 +291,9 @@ void Country::nbArmies(unsigned int nb)
   }
 }
 
-void Country::nbAddedArmies(unsigned int nb)
-{
-  m_nbAddedArmies = nb;
-}
-
 void Country::incrNbArmies(unsigned int nb)
 {
   nbArmies(nbArmies() + nb);
-}
-
-void Country::incrNbAddedArmies(unsigned int nb)
-{
-  nbAddedArmies(nbAddedArmies() + nb);
-}
-
-void Country::decrNbAddedArmies(unsigned int nb)
-{
-  nbAddedArmies(nbAddedArmies() - nb);
 }
 
 void Country::decrNbArmies(unsigned int nb)
@@ -478,7 +457,7 @@ void Country::saveXml(std::ostream& xmlStream)
   xmlStream << "\" ";
 
   xmlStream << "nbArmies=\""<<nbArmies() << "\" ";
-  xmlStream << "nbArmiesAdded=\""<<nbAddedArmies() << "\" ";
+//   xmlStream << "nbArmiesAdded=\""<<nbAddedArmies() << "\" ";
 
   xmlStream << " />" << std::endl;
 
@@ -486,8 +465,8 @@ void Country::saveXml(std::ostream& xmlStream)
 
 void Country::send(QDataStream& stream)
 {
-  kDebug() << (m_belongsTo?m_belongsTo->name():"") << quint32(m_nbArmies) << quint32(m_nbAddedArmies);
-  stream << m_name << (m_belongsTo?m_belongsTo->name():"") << quint32(m_nbArmies) << quint32(m_nbAddedArmies);
+  kDebug() << (m_belongsTo?m_belongsTo->name():"") << quint32(m_nbArmies);
+  stream << m_name << (m_belongsTo?m_belongsTo->name():"") << quint32(m_nbArmies);
 }
 
 bool Country::hasAdjacentEnemy()
@@ -587,13 +566,13 @@ void Country::releaseHighlightingLock()
 QDataStream& operator>>(QDataStream& stream, Country* country)
 {
   country->reset();
-  quint32 nbArmies, nbAddedArmies;
+  quint32 nbArmies/*, nbAddedArmies*/;
   QString ownerName;
-  stream >> ownerName >> nbArmies >> nbAddedArmies;
-  kDebug() << ownerName << nbArmies << nbAddedArmies;
+  stream >> ownerName >> nbArmies/* >> nbAddedArmies*/;
+  kDebug() << ownerName << nbArmies/* << nbAddedArmies*/;
   country->owner(country->automaton()->playerNamed(ownerName));
   country->nbArmies(nbArmies);
-  country->nbAddedArmies(nbAddedArmies);
+//   country->nbAddedArmies(nbAddedArmies);
   country->createArmiesSprites();
   return stream;
 }
