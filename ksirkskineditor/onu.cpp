@@ -48,7 +48,7 @@ ONU::ONU(const QString& configDir):
   m_countries(),
   m_nationalities(),
   m_continents(),
-  m_renderer(0),
+  m_renderer(),
   m_itemsMap()
 {
 
