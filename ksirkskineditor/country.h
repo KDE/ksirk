@@ -53,6 +53,7 @@ public:
   /**
     * Constructor
     * @param theName The name of this country.
+    * @param anchorPoint The point around which the highlighting will be placed.
     * @param centralPoint The point around which the fighter will be placed.
     * @param flagPoint The point (top left corner) where the flag sprite is drawn.
     * @param cannonPoint The point (top left corner) where the cannon sprite is drawn.

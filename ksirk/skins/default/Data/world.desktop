@@ -4,40 +4,40 @@ continent-countries=Algeria,Arabia,Egypt,Madagascar,Niger,Gabon,South Africa,Zai
 id=4
 
 [Alaska]
-anchor-point=44.5,227.5
+anchor-point=43,227
 cannon-point=20,187
 cavalry-point=48,230
-central-point=11,201.5
+central-point=45,218.5
 flag-point=56,189
 id=5
 infantry-point=16,231
 neighbours=Alberta,Ontario,Siberia
 
 [Alberta]
-anchor-point=187.5,161.5
+anchor-point=189.5,161.5
 cannon-point=160,167
 cavalry-point=119,201
-central-point=185,205
+central-point=183.5,218
 flag-point=189,187
 id=4
 infantry-point=95,181
 neighbours=Alaska,Groenland,Ontario,Quebec
 
 [Algeria]
-anchor-point=508.5,379.5
+anchor-point=509,380
 cannon-point=502,350
 cavalry-point=456,360
-central-point=506,366
+central-point=508.5,377
 flag-point=482,347
 id=26
 infantry-point=542,363
 neighbours=France,Niger,Egypt
 
 [Arabia]
-anchor-point=625.5,398.5
+anchor-point=626,400
 cannon-point=582,358
 cavalry-point=631,393
-central-point=620,383
+central-point=617,393
 flag-point=613,368
 id=33
 infantry-point=608,396
@@ -53,17 +53,17 @@ flag=belgium
 leader=Baudouin
 
 [Benelux]
-anchor-point=541.5,284.5
+anchor-point=542,282
 cannon-point=501,279
 cavalry-point=509,254
-central-point=535,280
+central-point=544.5,287
 flag-point=559,251
 id=14
 infantry-point=538,254
 neighbours=United Kingdom,France,Prussia,Scandinavia
 
 [Brazil]
-anchor-point=333.5,501.5
+anchor-point=332.5,496.5
 cannon-point=305,458
 cavalry-point=301,509
 central-point=343,500
@@ -73,50 +73,50 @@ infantry-point=345,511
 neighbours=Colombia,Paraguay,Niger
 
 [Chile]
-anchor-point=290.5,647.5
+anchor-point=294.5,647.5
 cannon-point=286,602
 cavalry-point=264,646
-central-point=277,626
+central-point=280,632
 flag-point=271,605
 id=11
 infantry-point=278,672
 neighbours=Paraguay
 
 [China]
-anchor-point=818,342
+anchor-point=811,334
 cannon-point=775,360
 cavalry-point=768,311
-central-point=780,336
+central-point=784.5,344
 flag-point=811,314
 id=20
 infantry-point=842,289
 neighbours=Pakistan,India,Vietnam,Mongolia,Japan
 
 [Colombia]
-anchor-point=283.5,480.5
+anchor-point=286.5,479.5
 cannon-point=258,438
 cavalry-point=283,448
-central-point=272,475
+central-point=280,484
 flag-point=260,456
 id=8
 infantry-point=270,493
 neighbours=Mexico,Brazil
 
 [Eastern US]
-anchor-point=253.5,355.5
+anchor-point=257.5,356.5
 cannon-point=219,323
 cavalry-point=236,353
-central-point=250,343
+central-point=239.5,352
 flag-point=264,322
 id=1
 infantry-point=210,358
 neighbours=Mexico,Quebec,Western US
 
 [Egypt]
-anchor-point=606.5,419.5
+anchor-point=598,411
 cannon-point=556,370
 cavalry-point=563,384
-central-point=598,413
+central-point=586,422
 flag-point=580,401
 id=28
 infantry-point=588,424
@@ -132,10 +132,10 @@ continent-countries=Scandinavia,United Kingdom,Kazakstan,Island,France,Benelux,P
 id=3
 
 [France]
-anchor-point=519.5,326.5
+anchor-point=519,324
 cannon-point=481,296
 cavalry-point=464,330
-central-point=517,308
+central-point=509,315
 flag=france
 flag-point=532,298
 id=15
@@ -144,20 +144,20 @@ leader=de Gaulle
 neighbours=United Kingdom,Benelux,Algeria,Prussia
 
 [Gabon]
-anchor-point=546.5,452.5
+anchor-point=547,448
 cannon-point=474,422
 cavalry-point=594,450
-central-point=529,430
+central-point=530.5,439
 flag-point=543,444
 id=29
 infantry-point=564,442
 neighbours=Egypt,Niger,Zair
 
 [Groenland]
-anchor-point=340.5,175.5
+anchor-point=343.5,178.5
 cannon-point=321,210
 cavalry-point=308,116
-central-point=334,149
+central-point=340,162
 flag-point=357,129
 id=6
 infantry-point=349,173
@@ -167,7 +167,7 @@ neighbours=Island,Alberta,Quebec
 anchor-point=715,404
 cannon-point=714,362
 cavalry-point=695,407
-central-point=693.5,371.5
+central-point=707,393.5
 flag-point=728,375
 id=35
 infantry-point=677,383
@@ -177,27 +177,27 @@ neighbours=China,Pakistan,Vietnam
 anchor-point=826,456
 cannon-point=765,441
 cavalry-point=790,466
-central-point=804,452
+central-point=787,461
 flag-point=814,433
 id=37
 infantry-point=824,402
 neighbours=Vietnam,Papouasie
 
 [Iran]
-anchor-point=624.5,364.5
-cannon-point=574,332
-cavalry-point=616,353
-central-point=618,341
+anchor-point=617,358
+cannon-point=570,333
+cavalry-point=618,355
+central-point=614.5,351
 flag-point=606,325
 id=19
 infantry-point=637,361
 neighbours=Prussia,Arabia,Pakistan
 
 [Island]
-anchor-point=409.5,226.5
+anchor-point=408,224
 cannon-point=407,188
 cavalry-point=375,188
-central-point=403,218
+central-point=403,223
 flag-point=406,199
 id=12
 infantry-point=386,221
@@ -211,7 +211,7 @@ leader=Victor Emmanuel
 anchor-point=881,336
 cannon-point=882,305
 cavalry-point=856,350
-central-point=873,341
+central-point=875,347
 flag=japan
 flag-point=889,323
 id=25
@@ -223,37 +223,37 @@ neighbours=China
 anchor-point=707,290
 cannon-point=724,264
 cavalry-point=717,293
-central-point=652.5,262.5
+central-point=697,292.5
 flag-point=690,265
 id=22
 infantry-point=637,270
 neighbours=Scandinavia,Prussia,Russia,Mongolia,China,Pakistan
 
 [Madagascar]
-anchor-point=623.5,521.5
+anchor-point=623.5,523.5
 cannon-point=597,519
 cavalry-point=606,485
-central-point=618,506
+central-point=619,520
 flag-point=630,495
 id=32
 infantry-point=609,531
 neighbours=South Africa,Zair
 
 [Mexico]
-anchor-point=231.5,423.5
+anchor-point=231.5,427.5
 cannon-point=170,401
 cavalry-point=197,422
-central-point=189,406
+central-point=203,420
 flag-point=225,425
 id=7
 infantry-point=236,417
 neighbours=Eastern US,Colombia,Western US
 
 [Mongolia]
-anchor-point=817,288
+anchor-point=820.5,286.5
 cannon-point=775,288
 cavalry-point=788,245
-central-point=812,270
+central-point=825.5,273
 flag-point=829,245
 id=24
 infantry-point=860,245
@@ -263,7 +263,7 @@ neighbours=Russia,Siberia,Kazakstan,China
 anchor-point=902,571
 cannon-point=885,575
 cavalry-point=876,508
-central-point=932,549
+central-point=900,566
 flag-point=912,534
 id=40
 infantry-point=870,554
@@ -273,17 +273,17 @@ neighbours=Papouasie,Occidental Australia,New Zealand
 anchor-point=973,639
 cannon-point=958,591
 cavalry-point=940,633
-central-point=974,605
+central-point=974,625
 flag-point=979,599
 id=34
 infantry-point=969,635
 neighbours=New South Walles
 
 [Niger]
-anchor-point=511.5,417.5
+anchor-point=515,416
 cannon-point=452,390
-cavalry-point=540,402
-central-point=504,394
+cavalry-point=535,405
+central-point=497.5,405
 flag-point=528,396
 id=27
 infantry-point=450,407
@@ -298,17 +298,17 @@ id=1
 anchor-point=860,555
 cannon-point=837,551
 cavalry-point=808,550
-central-point=823,528
+central-point=843.5,540
 flag-point=858,508
 id=39
 infantry-point=841,495
 neighbours=Papouasie,New South Walles
 
 [Ontario]
-anchor-point=156.5,258.5
+anchor-point=154.5,257.5
 cannon-point=87,236
 cavalry-point=134,270
-central-point=122,242.5
+central-point=158,262.5
 flag-point=192,278
 id=3
 infantry-point=192,240
@@ -320,30 +320,30 @@ continent-countries=Indonesia,Papouasie,Occidental Australia,New South Walles,Ne
 id=6
 
 [Pakistan]
-anchor-point=694,359
+anchor-point=694.5,359.5
 cannon-point=698,326
 cavalry-point=646,325
-central-point=639.5,327.5
+central-point=683,351.5
 flag-point=680,325
 id=21
 infantry-point=659,357
 neighbours=Iran,Kazakstan,China,India
 
 [Papouasie]
-anchor-point=929,502
+anchor-point=937.5,510.5
 cannon-point=924,473
 cavalry-point=861,457
-central-point=827,455
+central-point=891.5,485
 flag-point=896,461
 id=38
 infantry-point=967,490
 neighbours=Indonesia,Occidental Australia,New South Walles
 
 [Paraguay]
-anchor-point=318.5,576.5
+anchor-point=315.5,574.5
 cannon-point=274,541
-cavalry-point=301,572
-central-point=310,555
+cavalry-point=304,576
+central-point=304,563
 flag-point=276,578
 id=10
 infantry-point=322,535
@@ -353,34 +353,34 @@ neighbours=Chile,Brazil
 anchor-point=591.5,287.5
 cannon-point=580,236
 cavalry-point=578,255
-central-point=563.5,262.5
+central-point=591.5,284.5
 flag-point=601,298
 id=16
 infantry-point=559,296
 neighbours=Scandinavia,Benelux,France,Kazakstan,Iran,Russia
 
 [Quebec]
-anchor-point=271.5,287.5
+anchor-point=267.5,287.5
 cannon-point=257,250
-cavalry-point=266,287
-central-point=275,267
-flag-point=258,282
+cavalry-point=288,283
+central-point=283.5,282
+flag-point=257,281
 id=2
 infantry-point=223,280
 neighbours=Alberta,Groenland,Ontario,Western US,Eastern US
 
 [Russia]
-anchor-point=735,202
+anchor-point=726.5,193.5
 cannon-point=637,219
 cavalry-point=774,209
-central-point=733,203
+central-point=702,216
 flag-point=688,172
 id=18
 infantry-point=740,156
 neighbours=Scandinavia,Prussia,Siberia,Kazakstan,Mongolia
 
 [Scandinavia]
-anchor-point=563.5,183.5
+anchor-point=565,185
 cannon-point=542,169
 cavalry-point=573,183
 central-point=570,213
@@ -390,10 +390,10 @@ infantry-point=521,219
 neighbours=Benelux,Russia,Prussia
 
 [Siberia]
-anchor-point=912,223
+anchor-point=902,211
 cannon-point=834,212
 cavalry-point=946,194
-central-point=876,195
+central-point=889.5,205
 flag-point=870,177
 id=23
 infantry-point=814,162
@@ -403,7 +403,7 @@ neighbours=Alaska,Mongolia,Russia
 anchor-point=564,544
 cannon-point=532,561
 cavalry-point=571,514
-central-point=562,547
+central-point=560,557
 flag-point=554,533
 id=31
 infantry-point=525,520
@@ -418,7 +418,7 @@ id=2
 anchor-point=487.5,274.5
 cannon-point=448,245
 cavalry-point=486,241
-central-point=481,270
+central-point=476.5,273
 flag-point=478,250
 id=13
 infantry-point=460,266
@@ -429,30 +429,30 @@ flag=us
 leader=Kennedy
 
 [Vietnam]
-anchor-point=786.5,402.5
-cannon-point=742,385
+anchor-point=783,401
+cannon-point=746,377
 cavalry-point=790,376
-central-point=770,398
+central-point=764,407
 flag-point=773,383
 id=36
 infantry-point=773,409
 neighbours=India,China,Indonesia
 
 [Western US]
-anchor-point=181.5,353.5
+anchor-point=184.5,360.5
 cannon-point=144,310
 cavalry-point=174,365
-central-point=115.5,316.5
+central-point=169,337.5
 flag-point=171,346
 id=0
 infantry-point=145,344
 neighbours=Ontario,Quebec,Eastern US,Mexico
 
 [Zair]
-anchor-point=564,500
+anchor-point=562.5,504.5
 cannon-point=533,507
 cavalry-point=573,475
-central-point=556,490
+central-point=555,493
 flag-point=576,497
 id=30
 infantry-point=527,461

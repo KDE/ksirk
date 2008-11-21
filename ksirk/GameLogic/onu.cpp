@@ -29,6 +29,7 @@
 #include <qdom.h>
 #include <QPainter>
 #include <QPixmap>
+#include <QFileInfo>
 
 #include <kapplication.h>
 #include <kstandarddirs.h>
@@ -57,8 +58,14 @@ ONU::ONU(GameAutomaton* automaton,
   m_nbZooms(0),
   m_zoomFactorFinal(1)
 {
-
   kDebug() << "ONU constructor: " << m_configFileName;
+  QFileInfo qfi(m_configFileName);
+  kDebug() << "skin written at :" << qfi.lastModified().toTime_t();
+  kDebug() << "cache created at:" << m_automaton->pixmapCache().timestamp();
+  if (m_automaton->pixmapCache().timestamp() < qfi.lastModified().toTime_t())
+  {
+    m_automaton->pixmapCache().discard();
+  }
   m_font.family = "URW Chancery L";
   m_font.size = (uint)(13*m_zoom);
   m_font.weight = QFont::Bold;
@@ -253,12 +260,12 @@ ONU::ONU(GameAutomaton* automaton,
     QPointF cavalryPoint = countryGroup.readEntry("cavalry-point",QPointF())*m_zoom;
     QPointF infantryPoint = countryGroup.readEntry("infantry-point",QPointF())*m_zoom;
 
-//     kDebug() << "Creating country " << name;
-//     kDebug() << "\tflag point: " << flagPoint;
-//     kDebug() << "\tcentral point: " << centralPoint;
-//     kDebug() << "\tcannon point: " << cannonPoint;
-//     kDebug() << "\tcavalry point: " << cavalryPoint;
-//     kDebug() << "\tinfantry point: " << infantryPoint;
+    kDebug() << "Creating country " << name;
+    kDebug() << "\tflag point: " << flagPoint;
+    kDebug() << "\tcentral point: " << centralPoint;
+    kDebug() << "\tcannon point: " << cannonPoint;
+    kDebug() << "\tcavalry point: " << cavalryPoint;
+    kDebug() << "\tinfantry point: " << infantryPoint;
     countries.push_back(new Country(automaton, name, anchorPoint, centralPoint,
         flagPoint, cannonPoint, cavalryPoint, infantryPoint));
   }
@@ -592,17 +599,23 @@ void ONU::buildMap()
         painter.setFont(backgroundFont);
         QRect countryNameRect = painter.fontMetrics().boundingRect(countryName);
         painter.drawText(
-        int((country->centralPoint().x()*m_zoom-countryNameRect.width()/2+1)),
-                         int((country->centralPoint().y()*m_zoom+countryNameRect.height()/2 + 1)),
-                         countryName);
+          int( (country->centralPoint().x()*m_zoom) - (countryNameRect.width()/2) + 1 ),
+         // HACK HACK see the same below
+          int( (country->centralPoint().y()*m_zoom) + 4/*(countryNameRect.height()/2)*/ + 1 ),
+          countryName);
       }
       painter.setPen(m_font.foregroundColor);
       painter.setFont(foregroundFont);
       QRect countryNameRect = painter.fontMetrics().boundingRect(countryName);
+      kDebug() << countryName << "countryNameRect=" << countryNameRect;
+      kDebug() << "draw at" << int( (country->centralPoint().x()*m_zoom) - (countryNameRect.width()/2) ) <<
+      int( (country->centralPoint().y()*m_zoom) /*- (countryNameRect.height()/2)*/ );
+      
       painter.drawText(
-      int((country->centralPoint().x()*m_zoom-countryNameRect.width()/2)),
-                       int((country->centralPoint().y()*m_zoom+countryNameRect.height()/2)),
-                       countryName);
+        int( (country->centralPoint().x()*m_zoom) - (countryNameRect.width()/2) ),
+        // HACK HACK why is this 4 necessary below instead of the commented correction ???
+        int( (country->centralPoint().y()*m_zoom) + 4/*- (countryNameRect.height()/2)*/ ),
+        countryName);
     }
 
     m_automaton->pixmapCache().insert(m_skin+"map"+QString::number(m_width)+QString::number(m_height), m_map);

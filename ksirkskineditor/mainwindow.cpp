@@ -439,8 +439,8 @@ void MainWindow::slotOpenSkin(const QString& dir)
     kDebug() << "Adding "<<nationality->name()<<" items";
     m_skinDefWidget->nationalitieslist->addItem(nationality->name());
   }
+  
   kDebug() << "Adding countries items";
-    
   foreach (Country* country, m_onu->countries())
   {
     kDebug() << "Adding "<<country->name()<<" items";
@@ -688,7 +688,8 @@ void MainWindow::slotPosition(const QPointF& point)
   statusBar()->showMessage(message);
   kDebug() << "selected sprite:" << m_selectedSprite;
   if (currentCountry() != 0 && m_selectedSprite == Anchor
-    && m_onu->itemFor(currentCountry(), m_selectedSprite) != 0 && m_updateHighlightPosition)
+    && m_onu->itemFor(currentCountry(), m_selectedSprite) != 0 && m_updateHighlightPosition
+    && currentCountry()->highlighting() != 0)
   {
     kDebug() << (void*)currentCountry() << (void*)m_onu->itemFor(currentCountry(), m_selectedSprite);
     currentCountry()->anchorPoint(point);
@@ -696,16 +697,15 @@ void MainWindow::slotPosition(const QPointF& point)
 
     return;
   }
-  
 }
 
-void MainWindow::slotPressPosition(const QPointF& point)
+void MainWindow::slotPressPosition(const QPointF& clickedPoint)
 {
-  kDebug() << point << (void*)currentCountry() << m_selectedSprite;
+  kDebug() << clickedPoint << (void*)currentCountry() << m_selectedSprite;
   QPixmap pix;
   QPixmap alphacopy;
   QString fileName;
-  
+  QPointF point = clickedPoint;
   m_updateHighlightPosition = true;
   if (currentCountry() == 0
     || m_onu->itemFor(currentCountry(), m_selectedSprite) != 0)
@@ -767,6 +767,7 @@ void MainWindow::slotPressPosition(const QPointF& point)
       }
       pix = QPixmap(fileName);
       pix = pix.scaled(16,16);
+      point += QPointF(-pix.width()/2,-pix.height()/2);
       m_countryDefWidget->anchorx->setText(QString::number(point.x()));
       m_countryDefWidget->anchory->setText(QString::number(point.y()));
       currentCountry()->anchorPoint(point);
@@ -783,6 +784,7 @@ void MainWindow::slotPressPosition(const QPointF& point)
       }
       pix = QPixmap(fileName);
       pix = pix.scaled(16,16);
+      point += QPointF(-pix.width()/2,-pix.height()/2);
       m_countryDefWidget->centerx->setText(QString::number(point.x()));
       m_countryDefWidget->centery->setText(QString::number(point.y()));
       currentCountry()->centralPoint(point);
@@ -800,7 +802,7 @@ void MainWindow::slotPressPosition(const QPointF& point)
   }
 }
 
-void MainWindow::slotReleasePosition(const QPointF& point)
+void MainWindow::slotReleasePosition(const QPointF&)
 {
   kDebug();
   m_updateHighlightPosition = false;
@@ -979,6 +981,7 @@ void MainWindow::slotItemPlaced(QGraphicsItem* item, const QPointF&)
       }
     }
     QPointF anchorPos;
+    QPointF centerPos;
     switch (type)
     {
       case Flag:
@@ -1008,9 +1011,10 @@ void MainWindow::slotItemPlaced(QGraphicsItem* item, const QPointF&)
         m_countryDefWidget->anchory->setText(QString::number(anchorPos.y()));
         break;
       case Center:
-        country->centralPoint(item->scenePos());
-        m_countryDefWidget->centerx->setText(QString::number(item->scenePos().x()));
-        m_countryDefWidget->centery->setText(QString::number(item->scenePos().y()));
+        centerPos = QPointF(item->scenePos().x()+(item->boundingRect().width()/2),item->scenePos().y()+(item->boundingRect().height()/2));
+        country->centralPoint(centerPos);
+        m_countryDefWidget->centerx->setText(QString::number(centerPos.x()));
+        m_countryDefWidget->centery->setText(QString::number(centerPos.y()));
         break;
       default:;
     }
