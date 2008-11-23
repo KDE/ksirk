@@ -39,16 +39,16 @@ PixmapItem::~PixmapItem()
 
 void PixmapItem::mousePressEvent(QGraphicsSceneMouseEvent* event)
 {
-  kDebug();
-  emit pressed(this);
+  kDebug() << event->scenePos();
   QGraphicsItem::mousePressEvent(event);
+  emit pressed(this,event->scenePos());
 }
 
 void PixmapItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 {
   kDebug() << event->scenePos();
-  emit placed(this, event->scenePos());
   QGraphicsItem::mouseReleaseEvent(event);
+  emit placed(this, event->scenePos());
 }
 
 } // closing namespace

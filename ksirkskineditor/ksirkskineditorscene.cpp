@@ -44,21 +44,21 @@ Scene::~Scene()
 
 void Scene::mouseMoveEvent(QGraphicsSceneMouseEvent* mouseEvent)
 {
-  kDebug() << mouseEvent->scenePos();
+//   kDebug() << mouseEvent->scenePos();
   emit position(mouseEvent->scenePos());
   QGraphicsScene::mouseMoveEvent( mouseEvent );
 }
 
 void Scene::mousePressEvent(QGraphicsSceneMouseEvent* mouseEvent)
 {
-  kDebug() << mouseEvent->scenePos();
+//   kDebug() << mouseEvent->scenePos();
   emit pressPosition(mouseEvent->scenePos());
   QGraphicsScene::mousePressEvent( mouseEvent );
 }
 
 void Scene::mouseReleaseEvent(QGraphicsSceneMouseEvent* mouseEvent)
 {
-  kDebug() << mouseEvent->scenePos();
+//   kDebug() << mouseEvent->scenePos();
   emit releasePosition(mouseEvent->scenePos());
   QGraphicsScene::mouseReleaseEvent( mouseEvent );
 }

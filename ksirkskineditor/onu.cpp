@@ -775,7 +775,7 @@ QGraphicsItem* ONU::itemFor(const Country* country, SpriteType spriteType)
   {
     if (m_itemsMap[item].first == country && m_itemsMap[item].second == spriteType)
     {
-      kDebug() << item << (void*)country << spriteType;
+//       kDebug() << item << (void*)country << spriteType;
       return item;
     }
   }

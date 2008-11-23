@@ -143,7 +143,7 @@ private Q_SLOTS:
   void slotCountrySelected(QListWidgetItem* item);
   void slotContinentSelected(QListWidgetItem* item);
   
-  void slotItemPressed(QGraphicsItem*);
+  void slotItemPressed(QGraphicsItem*, const QPointF&);
   void slotItemPlaced(QGraphicsItem*, const QPointF&);
   
   void slotOpenSkin(const QString& dir = QString());

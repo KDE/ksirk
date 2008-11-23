@@ -133,7 +133,7 @@ const QPointF& Country::pointInfantry() const
 
 void Country::anchorPoint(const QPointF pt)
 {
-  kDebug();
+  kDebug() << pt;
   m_anchorPoint = pt;
 }
 
@@ -222,6 +222,9 @@ void Country::highlight(QGraphicsScene* scene, ONU* onu, const QColor& color, qr
   m_highlighting = new QGraphicsSvgItem();
   m_highlighting->setSharedRenderer(m_renderer);
   m_highlighting->setElementId(m_name);
+  kDebug() << "anchor point=" << m_anchorPoint;
+  kDebug() << "set highlighting pos to " << (m_anchorPoint.x()-m_highlighting->boundingRect().width()/2)
+  << (m_anchorPoint.y()-m_highlighting->boundingRect().height()/2) ;
   m_highlighting->setPos(
       (m_anchorPoint.x()-m_highlighting->boundingRect().width()/2),
       (m_anchorPoint.y()-m_highlighting->boundingRect().height()/2));

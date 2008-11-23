@@ -681,19 +681,24 @@ void MainWindow::slotCenterButtonClicked()
 
 void MainWindow::slotPosition(const QPointF& point)
 {
-  kDebug() << point;
   QString message("");
   QTextStream ts( &message );
   ts << point.x() << " x " << point.y();
   statusBar()->showMessage(message);
-  kDebug() << "selected sprite:" << m_selectedSprite;
+//   kDebug() << "selected sprite:" << m_selectedSprite;
   if (currentCountry() != 0 && m_selectedSprite == Anchor
     && m_onu->itemFor(currentCountry(), m_selectedSprite) != 0 && m_updateHighlightPosition
     && currentCountry()->highlighting() != 0)
   {
-    kDebug() << (void*)currentCountry() << (void*)m_onu->itemFor(currentCountry(), m_selectedSprite);
+    kDebug() << point << (void*)currentCountry() << (void*)m_onu->itemFor(currentCountry(), m_selectedSprite);
+    QGraphicsItem* anchorItem = m_onu->itemFor(currentCountry(), Anchor);
+    kDebug() << "anchorItem=" << anchorItem;
     currentCountry()->anchorPoint(point);
-    currentCountry()->highlighting()->setPos((currentCountry()->anchorPoint().x()-currentCountry()->highlighting()->boundingRect().width()/2),(currentCountry()->anchorPoint().y()-currentCountry()->highlighting()->boundingRect().height()/2));
+    QPointF anchorPoint = currentCountry()->anchorPoint();
+
+    double hw = currentCountry()->highlighting()->boundingRect().width();
+    double hh = currentCountry()->highlighting()->boundingRect().height();
+    currentCountry()->highlighting()->setPos(anchorPoint - QPointF(hw/2,hh/2 ));
 
     return;
   }
@@ -719,7 +724,7 @@ void MainWindow::slotPressPosition(const QPointF& clickedPoint)
   }
   PixmapItem* item = new PixmapItem();
   item->setZValue(10);
-  connect(item, SIGNAL(pressed(QGraphicsItem*)),this, SLOT(slotItemPressed(QGraphicsItem*)));
+  connect(item, SIGNAL(pressed(QGraphicsItem*, const QPointF&)),this, SLOT(slotItemPressed(QGraphicsItem*, const QPointF&)));
   connect(item, SIGNAL(placed(QGraphicsItem*, const QPointF&)),this, SLOT(slotItemPlaced(QGraphicsItem*, const QPointF&)));
   
   switch (m_selectedSprite)
@@ -802,10 +807,22 @@ void MainWindow::slotPressPosition(const QPointF& clickedPoint)
   }
 }
 
-void MainWindow::slotReleasePosition(const QPointF&)
+void MainWindow::slotReleasePosition(const QPointF& point)
 {
-  kDebug();
+  kDebug() << point;
   m_updateHighlightPosition = false;
+
+  kDebug() << "selected sprite:" << m_selectedSprite;
+  if (currentCountry() != 0 && m_selectedSprite == Anchor
+    && m_onu->itemFor(currentCountry(), m_selectedSprite) != 0 && m_updateHighlightPosition
+    && currentCountry()->highlighting() != 0)
+  {
+    kDebug() << (void*)currentCountry() << (void*)m_onu->itemFor(currentCountry(), m_selectedSprite);
+    currentCountry()->anchorPoint(point);
+    currentCountry()->highlighting()->setPos((currentCountry()->anchorPoint().x()-currentCountry()->highlighting()->boundingRect().width()/2),(currentCountry()->anchorPoint().y()-currentCountry()->highlighting()->boundingRect().height()/2));
+    
+    return;
+  }
 }
 
 void MainWindow::slotNationalitySelected(QListWidgetItem* item)
@@ -960,7 +977,7 @@ Country* MainWindow::currentCountry()
 {
   if (m_skinDefWidget->countrieslist->currentItem() == 0)
     return 0;
-  kDebug() << m_skinDefWidget->countrieslist->currentItem()->text();
+//   kDebug() << m_skinDefWidget->countrieslist->currentItem()->text();
   return m_onu->countryNamed(m_skinDefWidget->countrieslist->currentItem()->text());
 }
 
@@ -1021,7 +1038,7 @@ void MainWindow::slotItemPlaced(QGraphicsItem* item, const QPointF&)
   }
 }
 
-void MainWindow::slotItemPressed(QGraphicsItem* item)
+void MainWindow::slotItemPressed(QGraphicsItem* item, const QPointF& point)
 {
   kDebug();
   if (m_onu->itemsMap().contains(item))
@@ -1056,7 +1073,17 @@ void MainWindow::slotItemPressed(QGraphicsItem* item)
         break;
       case Anchor:
         m_selectedSprite = Anchor;
+        item = m_onu->itemFor(country, Anchor);
+        if (item == 0)
+        {
+          kError() << "item " << Anchor << "not found for" << country->name();
+          break;
+        }
+        country->anchorPoint(point);
+        item->setPos( point - QPointF(item->boundingRect().width()/2, item->boundingRect().height()/2) );
         country->highlight(m_mapScene, m_onu, Qt::white,128);
+//         item->setPos((country->anchorPoint().x()-country->highlighting()->boundingRect().width()/2),
+//                      (country->anchorPoint().y()-country->highlighting()->boundingRect().height()/2));
         break;
       case Center:
         m_selectedSprite = Center;
@@ -1142,28 +1169,21 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
         exit(2);
       }
       pix = QPixmap(fileName);
-      point = country->anchorPoint();
       pix = pix.scaled(16,16);
       ((PixmapItem*)item)->setPixmap(pix);
+      point = country->anchorPoint() - QPointF(item->boundingRect().width()/2, item->boundingRect().height()/2);
       m_countryDefWidget->anchorx->setText(QString::number(point.x()));
       m_countryDefWidget->anchory->setText(QString::number(point.y()));
       m_onu->itemsMap().insert(item,qMakePair(country,Anchor));
       break;
     case Center:
+      kDebug() << "Adding center";
       item = new TextItem();
       item->setZValue(2);
       ((TextItem*)item)->setFont(m_onu->foregroundFont());
-      kDebug() << "Adding center";
-      fileName = m_dirs-> findResource("appdata", "target.png");
-      if (fileName.isNull())
-      {
-        KMessageBox::error(0, i18n("Cannot load center icon<br>Program cannot continue"), i18n("Error !"));
-        exit(2);
-      }
-      pix = QPixmap(fileName);
-      point = country->centralPoint();
-      pix = pix.scaled(16,16);
       ((TextItem*)item)->setPlainText(country->name());
+      point = country->centralPoint() - QPointF(item->boundingRect().width()/2, item->boundingRect().height()/2);
+      kDebug() << "Adding center" << country->centralPoint() << point;
       m_countryDefWidget->centerx->setText(QString::number(point.x()));
       m_countryDefWidget->centery->setText(QString::number(point.y()));
       m_onu->itemsMap().insert(item,qMakePair(country,Center));
@@ -1172,19 +1192,16 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
   }
   if (item != 0 && !point.isNull())
   {
+    item->setPos(point);
     if (dynamic_cast<PixmapItem*>(item) != 0)
     {
-      connect(dynamic_cast<PixmapItem*>(item),SIGNAL(pressed(QGraphicsItem*)),this, SLOT(slotItemPressed(QGraphicsItem*)));
+      connect(dynamic_cast<PixmapItem*>(item),SIGNAL(pressed(QGraphicsItem*, const QPointF&)),this, SLOT(slotItemPressed(QGraphicsItem*, const QPointF&)));
       connect(dynamic_cast<PixmapItem*>(item),SIGNAL(placed(QGraphicsItem*, const QPointF&)),this, SLOT(slotItemPlaced(QGraphicsItem*, const QPointF&)));
-      item->setPos(point);
     }
     else if (dynamic_cast<TextItem*>(item) != 0)
     {
-      connect(dynamic_cast<TextItem*>(item),SIGNAL(pressed(QGraphicsItem*)),this, SLOT(slotItemPressed(QGraphicsItem*)));
+      connect(dynamic_cast<TextItem*>(item),SIGNAL(pressed(QGraphicsItem*, const QPointF&)),this, SLOT(slotItemPressed(QGraphicsItem*, const QPointF&)));
       connect(dynamic_cast<TextItem*>(item), SIGNAL(placed(QGraphicsItem*, const QPointF&)),this, SLOT(slotItemPlaced(QGraphicsItem*, const QPointF&)));
-      QPointF pos(point.x()-(item->boundingRect().width()/2),
-                   point.y()-(item->boundingRect().height()/2));
-      item->setPos(pos);
     }
     m_mapScene->addItem(item);
     item->setFlag(QGraphicsItem::ItemIsMovable, true);

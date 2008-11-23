@@ -48,7 +48,7 @@ public:
   ~PixmapItem();
 
 Q_SIGNALS:
-  void pressed(QGraphicsItem*);
+  void pressed(QGraphicsItem*, const QPointF&);
   void placed(QGraphicsItem*, const QPointF&);
   
 protected:

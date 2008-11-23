@@ -41,7 +41,7 @@ void TextItem::mousePressEvent(QGraphicsSceneMouseEvent* event)
 {
   kDebug();
 //   setPosition(event->scenePos().x()-width()/2,event->scenePos().y()-height()/2)
-  emit pressed(this);
+  emit pressed(this, event->scenePos());
   QGraphicsItem::mousePressEvent(event);
 }
 
