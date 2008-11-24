@@ -30,11 +30,7 @@ extern "C"
 #include <stddef.h>		/* size_t */
 
 #include <qglobal.h>
-#if defined(Q_OS_WIN32) && !defined(Q_CC_GNU)
-typedef int ssize_t;
-#else
 #include <unistd.h>		/* ssize_t */
-#endif
 
 #include <libidn/idn-int.h>		/* my_uint32_t */
 #include "qint.h"

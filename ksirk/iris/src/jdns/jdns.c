@@ -24,6 +24,9 @@
 #include "jdns_p.h"
 
 #include <time.h>
+#ifdef WIN32
+# include <winsock2.h>
+#endif
 
 #include "jdns_packet.h"
 #include "jdns_mdnsd.h"

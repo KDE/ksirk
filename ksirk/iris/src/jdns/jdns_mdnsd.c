@@ -26,6 +26,9 @@
 
 #include <stdlib.h>
 #include <string.h>
+#ifdef WIN32
+# include <winsock2.h>
+#endif
 
 #define QTYPE_A     JDNS_RTYPE_A
 #define QTYPE_AAAA  JDNS_RTYPE_AAAA
