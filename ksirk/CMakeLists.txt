@@ -115,7 +115,8 @@ target_link_libraries(ksirk
   ${QT_QTSVG_LIBRARY} 
   ${KDE4_KIO_LIBS} 
   ${KDE4_PHONON_LIBRARY}
-  ${CRYPT_LIBS}
+  ${KDE4_KNEWSTUFF2_LIBRARY}
+  ${QCA2_LIBRARIES}
   iris_ksirk
   kdegames
   )

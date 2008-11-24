@@ -5,7 +5,7 @@
 
 #ifndef IRIS_EXPORT
 # ifdef Q_OS_WIN
-#  ifdef MAKE_IRIS_KOPETE_LIB
+#  ifdef MAKE_IRIS_KSIRK_LIB
 #   define IRIS_EXPORT Q_DECL_EXPORT
 #  else
 #   define IRIS_EXPORT Q_DECL_IMPORT

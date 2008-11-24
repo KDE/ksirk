@@ -138,7 +138,11 @@ if(HAVE_NSL_LIBRARY)
 endif(HAVE_NSL_LIBRARY)
 target_link_libraries(iris_ksirk ${iris_ksirk_libs})
     
-set_target_properties(iris_ksirk PROPERTIES VERSION 2.0.0 SOVERSION 2 )
+set_target_properties(iris_ksirk PROPERTIES
+                      VERSION 2.0.0
+                      SOVERSION 2
+                      COMPILE_FLAGS -DIRISNET_STATIC
+                      )
 install(TARGETS iris_ksirk ${INSTALL_TARGETS_DEFAULT_ARGS})
     
     ########### install files ###############
