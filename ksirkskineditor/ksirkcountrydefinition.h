@@ -23,13 +23,17 @@
 
 #include <QDockWidget>
 
+namespace KsirkSkinEditor
+{
+  class Country;
+}
+
 class KsirkCountryDefinitionWidget : public QDockWidget, public Ui::KsirkCountryDefinition
 {
 public:
-  KsirkCountryDefinitionWidget(QWidget* parent) : QDockWidget(parent)
-  {
-    setupUi(this);
-  }
+  KsirkCountryDefinitionWidget(QWidget* parent);
+
+  void initWith(const KsirkSkinEditor::Country* country);
 };
 
 #endif

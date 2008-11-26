@@ -226,8 +226,9 @@ private Q_SLOTS:
   void slotBgColorSelected(const QColor& color);
   void slotReleasePosition(const QPointF&);
   
-  private:
-  void initCountryWidgetWith(Country* country);
+private:
+  void initSpritesButtonsWith(const Country* country);
+    
   void initContinentWidgetWith(Continent* continent);
   void initGoalWidgetWith(Goal* continent);
   void initNationalityWidgetWith(Nationality* nationality);

@@ -15,6 +15,7 @@ set(ksirkskineditor_SRCS
   ksirkskineditorscene.cpp
   ksirkskineditorpixmapitem.cpp
   ksirkskineditortextitem.cpp
+  ksirkcountrydefinition.cpp
   onu.cpp
   continent.cpp
   country.cpp

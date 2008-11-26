@@ -106,21 +106,25 @@ MainWindow::MainWindow(QWidget* parent) :
   m_flagButton = new QPushButton(mainWidget->buttonsScrollArea);
   layout->addWidget(m_flagButton);
   m_flagButton->setCheckable(true);
+  m_flagButton->setEnabled(false);
   connect(m_flagButton,SIGNAL(clicked()),this,SLOT(slotFlagButtonClicked()));
 
   m_infantryButton = new QPushButton(mainWidget->buttonsScrollArea);
   layout->addWidget(m_infantryButton);
   m_infantryButton->setCheckable(true);
+  m_infantryButton->setEnabled(false);
   connect(m_infantryButton,SIGNAL(clicked()),this,SLOT(slotInfantryButtonClicked()));
 
   m_cavalryButton = new QPushButton(mainWidget->buttonsScrollArea);
   layout->addWidget(m_cavalryButton);
   m_cavalryButton->setCheckable(true);
+  m_cavalryButton->setEnabled(false);
   connect(m_cavalryButton,SIGNAL(clicked()),this,SLOT(slotCavalryButtonClicked()));
 
   m_cannonButton = new QPushButton(mainWidget->buttonsScrollArea);
   layout->addWidget(m_cannonButton);
   m_cannonButton->setCheckable(true);
+  m_cannonButton->setEnabled(false);
   connect(m_cannonButton,SIGNAL(clicked()),this,SLOT(slotCannonButtonClicked()));
 
   m_dirs = KGlobal::dirs();
@@ -136,6 +140,7 @@ MainWindow::MainWindow(QWidget* parent) :
   m_anchorButton->setIcon(anchorPix);
   layout->addWidget(m_anchorButton);
   m_anchorButton->setCheckable(true);
+  m_anchorButton->setEnabled(false);
   connect(m_anchorButton,SIGNAL(clicked()),this,SLOT(slotAnchorButtonClicked()));
   
   QString centerFileName = m_dirs-> findResource("appdata", "target.png");
@@ -149,7 +154,9 @@ MainWindow::MainWindow(QWidget* parent) :
   m_centerButton->setIcon(centerPix);
   layout->addWidget(m_centerButton);
   m_centerButton->setCheckable(true);
+  m_centerButton->setEnabled(false);
   connect(m_centerButton,SIGNAL(clicked()),this,SLOT(slotCenterButtonClicked()));
+
   
   //   m_accels.setEnabled(true);
   
@@ -849,41 +856,8 @@ void MainWindow::slotCountrySelected(QListWidgetItem* item)
   Country* country = m_onu->countryNamed(item->text());
   if (country != 0)
   {
-    initCountryWidgetWith(country);
-  }
-}
-
-void MainWindow::initCountryWidgetWith(Country* country)
-{
-  kDebug();
-  m_countryDefWidget->flagx->setText(QString::number(country->pointFlag().x()));
-  m_countryDefWidget->flagy->setText(QString::number(country->pointFlag().y()));
-
-  m_countryDefWidget->anchorx->setText(QString::number(country->anchorPoint().x()));
-  m_countryDefWidget->anchory->setText(QString::number(country->anchorPoint().y()));
-
-  m_countryDefWidget->centerx->setText(QString::number(country->centralPoint().x()));
-  m_countryDefWidget->centery->setText(QString::number(country->centralPoint().y()));
-
-  m_countryDefWidget->infantryx->setText(QString::number(country->pointInfantry().x()));
-  m_countryDefWidget->infantryy->setText(QString::number(country->pointInfantry().y()));
-
-  m_countryDefWidget->cavalryx->setText(QString::number(country->pointCavalry().x()));
-  m_countryDefWidget->cavalryy->setText(QString::number(country->pointCavalry().y()));
-
-  m_countryDefWidget->cannonx->setText(QString::number(country->pointCannon().x()));
-  m_countryDefWidget->cannony->setText(QString::number(country->pointCannon().y()));
-
-  m_countryDefWidget->anchorx->setText(QString::number(country->anchorPoint().x()));
-  m_countryDefWidget->anchory->setText(QString::number(country->anchorPoint().y()));
-
-  m_countryDefWidget->centerx->setText(QString::number(country->centralPoint().x()));
-  m_countryDefWidget->centery->setText(QString::number(country->centralPoint().y()));
-
-  m_countryDefWidget->neighbourslist->clear();
-  foreach(Country* neighbour, country->neighbours())
-  {
-    m_countryDefWidget->neighbourslist->addItem(neighbour->name());
+    m_countryDefWidget->initWith(country);
+    initSpritesButtonsWith(country);
   }
 }
 
@@ -988,7 +962,7 @@ void MainWindow::slotItemPlaced(QGraphicsItem* item, const QPointF&)
   {
     Country* country = m_onu->itemsMap()[item].first;
     SpriteType type = m_onu->itemsMap()[item].second;
-    initCountryWidgetWith(country);
+    m_countryDefWidget->initWith(country);
     for (int i = 0; i != m_skinDefWidget->countrieslist->count(); i++)
     {
       if (m_skinDefWidget->countrieslist->item(i)->text() == country->name())
@@ -1005,33 +979,51 @@ void MainWindow::slotItemPlaced(QGraphicsItem* item, const QPointF&)
         country->pointFlag(item->scenePos());
         m_countryDefWidget->flagx->setText(QString::number(item->scenePos().x()));
         m_countryDefWidget->flagy->setText(QString::number(item->scenePos().y()));
+        m_flagButton->setChecked(false);
+        m_flagButton->setEnabled(false);
+        m_mapView->unsetCursor();
         break;
       case Infantry:
         country->pointInfantry(item->scenePos());
         m_countryDefWidget->infantryx->setText(QString::number(item->scenePos().x()));
         m_countryDefWidget->infantryy->setText(QString::number(item->scenePos().y()));
+        m_infantryButton->setChecked(false);
+        m_infantryButton->setEnabled(false);
+        m_mapView->unsetCursor();
         break;
       case Cavalry:
         country->pointCavalry(item->scenePos());
         m_countryDefWidget->cavalryx->setText(QString::number(item->scenePos().x()));
         m_countryDefWidget->cavalryy->setText(QString::number(item->scenePos().y()));
+        m_cavalryButton->setChecked(false);
+        m_cavalryButton->setEnabled(false);
+        m_mapView->unsetCursor();
         break;
       case Cannon:
         country->pointCannon(item->scenePos());
         m_countryDefWidget->cannonx->setText(QString::number(item->scenePos().x()));
         m_countryDefWidget->cannony->setText(QString::number(item->scenePos().y()));
+        m_cannonButton->setChecked(false);
+        m_cannonButton->setEnabled(false);
+        m_mapView->unsetCursor();
         break;
       case Anchor:
         anchorPos = QPointF(item->scenePos().x()+(item->boundingRect().width()/2),item->scenePos().y()+(item->boundingRect().height()/2));
         country->anchorPoint(anchorPos);
         m_countryDefWidget->anchorx->setText(QString::number(anchorPos.x()));
         m_countryDefWidget->anchory->setText(QString::number(anchorPos.y()));
+        m_anchorButton->setChecked(false);
+        m_anchorButton->setEnabled(false);
+        m_mapView->unsetCursor();
         break;
       case Center:
         centerPos = QPointF(item->scenePos().x()+(item->boundingRect().width()/2),item->scenePos().y()+(item->boundingRect().height()/2));
         country->centralPoint(centerPos);
         m_countryDefWidget->centerx->setText(QString::number(centerPos.x()));
         m_countryDefWidget->centery->setText(QString::number(centerPos.y()));
+        m_centerButton->setChecked(false);
+        m_centerButton->setEnabled(false);
+        m_mapView->unsetCursor();
         break;
       default:;
     }
@@ -1044,7 +1036,7 @@ void MainWindow::slotItemPressed(QGraphicsItem* item, const QPointF& point)
   if (m_onu->itemsMap().contains(item))
   {
     Country* country = m_onu->itemsMap()[item].first;
-    initCountryWidgetWith(country);
+    m_countryDefWidget->initWith(country);
     for (int i = 0; i != m_skinDefWidget->countrieslist->count(); i++)
     {
       if (m_skinDefWidget->countrieslist->item(i)->text() == country->name())
@@ -1962,6 +1954,16 @@ void MainWindow::slotBgColorSelected(const QColor& color)
   kDebug();
   m_onu->setFontBgColor(color);
   updateSprites(Anchor);
+}
+
+void MainWindow::initSpritesButtonsWith(const Country* country)
+{
+  m_flagButton->setEnabled(m_onu->itemFor(country, Flag) == 0);
+  m_infantryButton->setEnabled(m_onu->itemFor(country, Infantry) == 0);
+  m_cavalryButton->setEnabled(m_onu->itemFor(country, Cavalry) == 0);
+  m_cannonButton->setEnabled(m_onu->itemFor(country, Cannon) == 0);
+  m_anchorButton->setEnabled(m_onu->itemFor(country, Anchor) == 0);
+  m_centerButton->setEnabled(m_onu->itemFor(country, Center) == 0);
 }
 
 } // closing namespace
