@@ -885,7 +885,7 @@ void KGameWindow::slideClose()
 void KGameWindow::slotContextualHelp()
 {
   kDebug();
-  if (currentPlayer()->isAI())
+  if (currentPlayer() == 0 || currentPlayer()->isAI())
   {
     return;
   }
