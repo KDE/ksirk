@@ -39,249 +39,246 @@
 
 namespace Ksirk
 {
-   using namespace GameLogic;
-   
-   KRightDialog::KRightDialog(QDockWidget * parent, ONU * world,KGameWindow* m_game)
-   : QWidget(parent),
-   mainLayout(new QGridLayout(this)),
-   m_parentWidget(parent),
-   world(world),
-   rightContents(),
-   flag1(0),
-   flag2(0),
-   milieu(0),
-   milieu2(0),
-   btRecycleWidget(0),
-   btValidWidget(0),
-   game(m_game),
-   buttonStopAttack(0),
-   buttonStopDefense(0)
-   {
-     setLayout(mainLayout);
-     setBaseSize(220,360);
+  using namespace GameLogic;
 
-     // load the armie image
-     KConfig config(world->getConfigFileName());
-     KConfigGroup onugroup = config.group("onu");
-     QString skin = onugroup.readEntry("skinpath");
-     QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/sprites/infantry.svg");
-     soldat.load(imageFileName);
+KRightDialog::KRightDialog(QDockWidget * parent, ONU * world,KGameWindow* m_game)
+  : QWidget(parent),
+  mainLayout(new QGridLayout(this)),
+  m_parentWidget(parent),
+  world(world),
+  rightContents(),
+  flag1(0),
+  flag2(0),
+  milieu(0),
+  milieu2(0),
+  btRecycleWidget(0),
+  btValidWidget(0),
+  game(m_game),
+  buttonStopAttack(0),
+  buttonStopDefense(0)
+{
+    setLayout(mainLayout);
+//      setBaseSize(220,360);
 
-     // load the stopAttackAuto image
-     imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/stopAttackAuto.png");
-     stopAttackAuto.load(imageFileName);
+    // load the armie image
+    KConfig config(world->getConfigFileName());
+    KConfigGroup onugroup = config.group("onu");
+    QString skin = onugroup.readEntry("skinpath");
+    QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/sprites/infantry.svg");
+    soldat.load(imageFileName);
 
-     // load the recycle image
-     imageFileName = KGlobal::dirs()->findResource("appdata", skin + '/' +CM_RECYCLING);
-     recycleContinue.load(imageFileName);
+    // load the stopAttackAuto image
+    imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/stopAttackAuto.png");
+    stopAttackAuto.load(imageFileName);
 
-     // load the finish recycle image
-     imageFileName = KGlobal::dirs()->findResource("appdata", skin + '/' + CM_RECYCLINGFINISHED);
-     recycleDone.load(imageFileName);
+    // load the recycle image
+    imageFileName = KGlobal::dirs()->findResource("appdata", skin + '/' +CM_RECYCLING);
+    recycleContinue.load(imageFileName);
 
-     // load the next player image
-     imageFileName = KGlobal::dirs()->findResource("appdata", skin + '/' + CM_NEXTPLAYER);
-     recycleNextPlayer.load(imageFileName);
+    // load the finish recycle image
+    imageFileName = KGlobal::dirs()->findResource("appdata", skin + '/' + CM_RECYCLINGFINISHED);
+    recycleDone.load(imageFileName);
 
-     //soldat.setFixedSize(8,8);
-     show();
+    // load the next player image
+    imageFileName = KGlobal::dirs()->findResource("appdata", skin + '/' + CM_NEXTPLAYER);
+    recycleNextPlayer.load(imageFileName);
+
+    show();
 }
 
-   KRightDialog::~KRightDialog()
-   {
-      delete mainLayout;
-   }
+KRightDialog::~KRightDialog()
+{
+  delete mainLayout;
+}
 
-   void KRightDialog::displayCountryDetails(const QPointF& countryPoint)
-   {
-      kDebug();
-      clearLayout();
-      QHBoxLayout * unit = new QHBoxLayout();
-      QHBoxLayout * drap = new QHBoxLayout();
-      flag1 = new QLabel();
-      flag2 = new QLabel();
-      initListLabel(7);
+void KRightDialog::displayCountryDetails(const QPointF& countryPoint)
+{
+  kDebug();
+  Country* country = world->countryAt(countryPoint);
+  if (country == 0)
+  {
+    return;
+  }
+  clearLayout();
+  QHBoxLayout * unit = new QHBoxLayout();
+  QHBoxLayout * drap = new QHBoxLayout();
+  flag1 = new QLabel();
+  flag2 = new QLabel();
+  initListLabel(7);
 
-      QPixmap picture;
+  QPixmap picture;
 
-      picture = world->countryAt(countryPoint)->owner()->getFlag()->image(0);
+  picture = country->owner()->getFlag()->image(0);
 
-      QString continent = i18n(world->countryAt(countryPoint)->continent()->name().toUtf8().data());
-      QString pays = i18n(world->countryAt(countryPoint)->name().toUtf8().data());
-      QString units = QString::number(world->countryAt(countryPoint)->nbArmies());
-      QString owner = world->countryAt(countryPoint)->owner()->name();
+  QString continent = i18n(country->continent()->name().toUtf8().data());
+  QString pays = i18n(country->name().toUtf8().data());
+  QString units = QString::number(country->nbArmies());
+  QString owner = country->owner()->name();
 
-      rightContents.at(0)->setText(i18n("<b>Nationality:</b>"));
-      rightContents.at(1)->setText(i18n("<b>Continent:</b> %1", continent));
-      rightContents.at(2)->setText(i18n("<b>Country:</b> %1", pays));
+  rightContents.at(0)->setText(i18n("<b>Nationality:</b>"));
+  rightContents.at(1)->setText(i18n("<b>Continent:</b> %1", continent));
+  rightContents.at(2)->setText(i18n("<b>Country:</b> %1", pays));
 
-      rightContents.at(3)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
-      rightContents.at(3)->setFixedSize(35,35);
-      rightContents.at(6)->setText(units);
-      rightContents.at(4)->setText(i18n("<b>Owner:</b> %1", owner));
-      rightContents.at(5)->setText(i18n("<b><u>Country details</u></b>"));
+  rightContents.at(3)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
+  rightContents.at(6)->setText(units);
+  rightContents.at(4)->setText(i18n("<b>Owner:</b> %1", owner));
+  rightContents.at(5)->setText(i18n("<b><u>Country details</u></b>"));
 
-      flag1->setPixmap(0);
-      flag2->setPixmap(0);
-      flag1->setPixmap(picture);
-      flag1->setFixedSize(picture.width(),picture.height());
+  flag1->setPixmap(0);
+  flag2->setPixmap(0);
+  flag1->setPixmap(picture);
 
-      drap->addWidget(rightContents.at(0));
-      drap->addWidget(flag1);
-      mainLayout->addWidget(rightContents.at(5),0,0,Qt::AlignLeft);
-      mainLayout->addWidget(rightContents.at(1),2,0,Qt::AlignLeft);
-      mainLayout->addWidget(rightContents.at(2),3,0,Qt::AlignLeft);
+  drap->addWidget(rightContents.at(0));
+  drap->addWidget(flag1);
+  mainLayout->addWidget(rightContents.at(5),0,0,Qt::AlignLeft);
+  mainLayout->addWidget(rightContents.at(1),2,0,Qt::AlignLeft);
+  mainLayout->addWidget(rightContents.at(2),3,0,Qt::AlignLeft);
 
-      mainLayout->addWidget(rightContents.at(4),5,0,Qt::AlignLeft);
-       
-      unit->addWidget(rightContents.at(3));
-      unit->addWidget(rightContents.at(6));
-      
-      mainLayout->addLayout(unit,4,0,Qt::AlignLeft);
-      mainLayout->addLayout(drap,1,0,Qt::AlignLeft);
+  mainLayout->addWidget(rightContents.at(4),5,0,Qt::AlignLeft);
 
-      m_parentWidget->show();
-      repaint();
-   }
+  unit->addWidget(rightContents.at(3));
+  unit->addWidget(rightContents.at(6));
 
-   void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int nb_A, int nb_D)
-   {
-      kDebug();
+  mainLayout->addLayout(unit,4,0,Qt::AlignLeft);
+  mainLayout->addLayout(drap,1,0,Qt::AlignLeft);
 
-      clearLayout();
-      initListLabel(10);
+  m_parentWidget->show();
+  repaint();
+}
 
-      haut = new QWidget();
-      bas = new QWidget();
-      QGridLayout * hautGrid = new QGridLayout(this);
-      QGridLayout * basGrid = new QGridLayout(this);
+void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int nb_A, int nb_D)
+{
+  kDebug();
 
-      flag1 = new QLabel();
-      flag2 = new QLabel();
+  clearLayout();
+  initListLabel(10);
 
-      QHBoxLayout * box1 = new QHBoxLayout();
-      QHBoxLayout * box2 = new QHBoxLayout();
-      QHBoxLayout * box3 = new QHBoxLayout();
-      QHBoxLayout * box4 = new QHBoxLayout();
+  haut = new QWidget();
+  bas = new QWidget();
+  QGridLayout * hautGrid = new QGridLayout(this);
+  QGridLayout * basGrid = new QGridLayout(this);
 
-      QGridLayout * tp = new QGridLayout();
-      infoProcess = new QLabel();
-      infoProcess->setWordWrap(true);
-      infoProcess->setText(i18n("<i>Fighting in progress...</i>"));
-      loadingLabel = new QLabel();
-      loadingLabel->setFixedSize(25,25);
-      QLabel *l3 = new QLabel();
-      QLabel *l4 = new QLabel();
+  flag1 = new QLabel();
+  flag2 = new QLabel();
 
-      KConfig config(world->getConfigFileName());
-      KConfigGroup onugroup = config.group("onu");
-      QString skin = onugroup.readEntry("skinpath");
-      QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/loader.gif");
+  QHBoxLayout * box1 = new QHBoxLayout();
+  QHBoxLayout * box2 = new QHBoxLayout();
+  QHBoxLayout * box3 = new QHBoxLayout();
+  QHBoxLayout * box4 = new QHBoxLayout();
 
-      QMovie * loading = new QMovie(imageFileName);
-      loadingLabel->setMovie(loading);
-      loading->start();
-      infoProcess->setFixedHeight(20);
+  QGridLayout * tp = new QGridLayout();
+  infoProcess = new QLabel();
+  infoProcess->setWordWrap(true);
+  infoProcess->setText(i18n("<i>Fighting in progress...</i>"));
+  loadingLabel = new QLabel();
+  QLabel *l3 = new QLabel();
+  QLabel *l4 = new QLabel();
 
-      tp->addWidget(l3,0,0);
-      tp->addWidget(infoProcess,1,0,Qt::AlignCenter);
-      tp->addWidget(loadingLabel,2,0,Qt::AlignCenter);
-      tp->addWidget(l4,3,0);
+  KConfig config(world->getConfigFileName());
+  KConfigGroup onugroup = config.group("onu");
+  QString skin = onugroup.readEntry("skinpath");
+  QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/loader.gif");
 
-      milieu2 = new QWidget(this);
-      milieu2->setAutoFillBackground(true);
-      QPalette tempP(milieu2->palette());
-      tempP.setColor(QPalette::Window,QColor(190,190,190));
-      milieu2->setPalette(tempP);
-      milieu2->setFixedHeight(100);
+  QMovie * loading = new QMovie(imageFileName);
+  loadingLabel->setMovie(loading);
+  loading->start();
 
-      milieu2->setLayout(tp);
+  tp->addWidget(l3,0,0);
+  tp->addWidget(infoProcess,1,0,Qt::AlignCenter);
+  tp->addWidget(loadingLabel,2,0,Qt::AlignCenter);
+  tp->addWidget(l4,3,0);
 
-      haut->setLayout(hautGrid);
-      bas->setLayout(basGrid);
+  milieu2 = new QWidget(this);
+  milieu2->setAutoFillBackground(true);
+  QPalette tempP(milieu2->palette());
+  tempP.setColor(QPalette::Window,QColor(190,190,190));
+  milieu2->setPalette(tempP);
 
-      //ATTACKER
-      QString owner_A = attaker->owner()->name();
-      QString nb_units_A = QString::number(attaker->nbArmies());
-      QString pays_A = attaker->name();
+  milieu2->setLayout(tp);
 
-      QString owner_D = defender->owner()->name();
-      QString nb_units_D = QString::number(defender->nbArmies());
-      QString pays_D = defender->name();
+  haut->setLayout(hautGrid);
+  bas->setLayout(basGrid);
 
-      QPixmap picture1;
-      QPixmap picture2;
-      picture1 = attaker->owner()->getFlag()->image(0);
-      picture2 = defender->owner()->getFlag()->image(0);
-      
-      rightContents.at(0)->setText("<u><b>"+i18n(pays_A.toUtf8().data())+"</b></u>");
-      flag1->setPixmap(picture1);
-      rightContents.at(1)->setText("<i>("+owner_A+")</i> ");
-      
-      rightContents.at(2)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
-      rightContents.at(2)->setFixedSize(35,35);
-      rightContents.at(3)->setText("<b>"+nb_units_A+"</b>");
+  //ATTACKER
+  QString owner_A = attaker->owner()->name();
+  QString nb_units_A = QString::number(attaker->nbArmies());
+  QString pays_A = attaker->name();
 
-      rightContents.at(4)->setText(i18n("<font color=\"red\">Attack</font> with %1 armies.<br>", nb_A));
+  QString owner_D = defender->owner()->name();
+  QString nb_units_D = QString::number(defender->nbArmies());
+  QString pays_D = defender->name();
 
-      
-      rightContents.at(5)->setText("<u><b>"+i18n(pays_D.toUtf8().data())+"</b></u> ");
-      flag2->setPixmap(picture2);
-      rightContents.at(6)->setText("<i>("+owner_D+")</i> ");
-      
-      rightContents.at(7)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
-      rightContents.at(7)->setFixedSize(35,35);
-      rightContents.at(8)->setText("<b>"+nb_units_D+"</b> ");
+  QPixmap picture1;
+  QPixmap picture2;
+  picture1 = attaker->owner()->getFlag()->image(0);
+  picture2 = defender->owner()->getFlag()->image(0);
 
-      rightContents.at(9)->setText(i18n("<font color=\"blue\">Defend</font> with %1 armies.<br>", nb_D));
+  rightContents.at(0)->setText("<u><b>"+i18n(pays_A.toUtf8().data())+"</b></u>");
+  flag1->setPixmap(picture1);
+  rightContents.at(1)->setText("<i>("+owner_A+")</i> ");
 
-      box1->addWidget(rightContents.at(0));
-      box1->addWidget(flag1);
-      
-      box2->addWidget(rightContents.at(2));
-      box2->addWidget(rightContents.at(3));
-      
-      box3->addWidget(rightContents.at(5));
-      box3->addWidget(flag2);
+  rightContents.at(2)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
+  rightContents.at(3)->setText("<b>"+nb_units_A+"</b>");
 
-      box4->addWidget(rightContents.at(7));
-      box4->addWidget(rightContents.at(8));
+  rightContents.at(4)->setText(i18n("<font color=\"red\">Attack</font> with %1 armies.<br>", nb_A));
 
-      hautGrid->addLayout(box1,0,0,Qt::AlignCenter);
-      hautGrid->addWidget(rightContents.at(1),1,0,Qt::AlignCenter);
-      hautGrid->addLayout(box2,2,0,Qt::AlignLeft);
-      hautGrid->addWidget(rightContents.at(4),3,0,Qt::AlignLeft);
-      
-      basGrid->addLayout(box3,0,0,Qt::AlignCenter);
-      basGrid->addWidget(rightContents.at(6),1,0,Qt::AlignCenter);
-      basGrid->addLayout(box4,2,0,Qt::AlignLeft);
-      basGrid->addWidget(rightContents.at(9),3,0,Qt::AlignLeft);
 
-      mainLayout->addWidget(haut,0,0);
-      mainLayout->addWidget(milieu2,1,0);
-      mainLayout->addWidget(bas,2,0);
+  rightContents.at(5)->setText("<u><b>"+i18n(pays_D.toUtf8().data())+"</b></u> ");
+  flag2->setPixmap(picture2);
+  rightContents.at(6)->setText("<i>("+owner_D+")</i> ");
 
-      if (game->automaton()->isAttackAuto()
-        && !game->automaton()->currentPlayer()->isAI()
-          && !game->automaton()->currentPlayer()->isVirtual())
-      {
-         buttonStopAttack = new QPushButton(stopAttackAuto,i18n("Stop Auto-Attack"));
-         mainLayout->addWidget(buttonStopAttack,3,0);
-         connect(buttonStopAttack, SIGNAL(clicked()), this, SLOT(slotStopAttackAuto()));
-      }
-      if (game->automaton()->isDefenseAuto()
-        && !game->automaton()->currentPlayer()->isAI()
-        && !game->automaton()->currentPlayer()->isVirtual())
-      {
-        buttonStopDefense = new QPushButton(stopAttackAuto,i18n("Stop Auto-Defense"));
-        mainLayout->addWidget(buttonStopDefense,4,0);
-        connect(buttonStopDefense, SIGNAL(clicked()), this, SLOT(slotStopDefenseAuto()));
-      }
-      
-      mainLayout->update();
-      m_parentWidget->show();
-      repaint();
-   }
+  rightContents.at(7)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
+  rightContents.at(8)->setText("<b>"+nb_units_D+"</b> ");
+
+  rightContents.at(9)->setText(i18n("<font color=\"blue\">Defend</font> with %1 armies.<br>", nb_D));
+
+  box1->addWidget(rightContents.at(0));
+  box1->addWidget(flag1);
+
+  box2->addWidget(rightContents.at(2));
+  box2->addWidget(rightContents.at(3));
+
+  box3->addWidget(rightContents.at(5));
+  box3->addWidget(flag2);
+
+  box4->addWidget(rightContents.at(7));
+  box4->addWidget(rightContents.at(8));
+
+  hautGrid->addLayout(box1,0,0,Qt::AlignCenter);
+  hautGrid->addWidget(rightContents.at(1),1,0,Qt::AlignCenter);
+  hautGrid->addLayout(box2,2,0,Qt::AlignLeft);
+  hautGrid->addWidget(rightContents.at(4),3,0,Qt::AlignLeft);
+
+  basGrid->addLayout(box3,0,0,Qt::AlignCenter);
+  basGrid->addWidget(rightContents.at(6),1,0,Qt::AlignCenter);
+  basGrid->addLayout(box4,2,0,Qt::AlignLeft);
+  basGrid->addWidget(rightContents.at(9),3,0,Qt::AlignLeft);
+
+  mainLayout->addWidget(haut,0,0);
+  mainLayout->addWidget(milieu2,1,0);
+  mainLayout->addWidget(bas,2,0);
+
+  if (game->automaton()->isAttackAuto()
+    && !game->automaton()->currentPlayer()->isAI()
+      && !game->automaton()->currentPlayer()->isVirtual())
+  {
+      buttonStopAttack = new QPushButton(stopAttackAuto,i18n("Stop Auto-Attack"));
+      mainLayout->addWidget(buttonStopAttack,3,0);
+      connect(buttonStopAttack, SIGNAL(clicked()), this, SLOT(slotStopAttackAuto()));
+  }
+  if (game->automaton()->isDefenseAuto()
+    && !game->automaton()->currentPlayer()->isAI()
+    && !game->automaton()->currentPlayer()->isVirtual())
+  {
+    buttonStopDefense = new QPushButton(stopAttackAuto,i18n("Stop Auto-Defense"));
+    mainLayout->addWidget(buttonStopDefense,4,0);
+    connect(buttonStopDefense, SIGNAL(clicked()), this, SLOT(slotStopDefenseAuto()));
+  }
+
+  mainLayout->update();
+  m_parentWidget->show();
+  repaint();
+}
 
  void KRightDialog::displayRecycleDetails(GameLogic::Player * player, int nbAvailArmies)
  {
@@ -411,78 +408,77 @@ void KRightDialog::updateRecycleDetails(GameLogic::Country* country, bool recycl
 
 }
 
-   void KRightDialog::displayFightResult(int A1=0, int A2=0, int A3=0, int D1=0, int D2=0,int nbA=0,int nbD=0, bool win=false)
-   {
-      kDebug();
+void KRightDialog::displayFightResult(int A1=0, int A2=0, int A3=0, int D1=0, int D2=0,int nbA=0,int nbD=0, bool win=false)
+{
+  kDebug();
 
-      loadingLabel->clear();
-      infoProcess->clear();
+  loadingLabel->clear();
+  infoProcess->clear();
 
-      milieu = new QWidget(this);
-      milieu->setAutoFillBackground(true);
-      QPalette tempP(milieu->palette());
-      tempP.setColor(QPalette::Window,QColor(190,190,190));
-      milieu->setPalette(tempP);
-      milieu->setFixedHeight(100);
+  milieu = new QWidget(this);
+  milieu->setAutoFillBackground(true);
+  QPalette tempP(milieu->palette());
+  tempP.setColor(QPalette::Window,QColor(190,190,190));
+  milieu->setPalette(tempP);
 
-      QGridLayout * milieuGrid = new QGridLayout();
-      QHBoxLayout * deAtt = new QHBoxLayout();
-      QHBoxLayout * deDef = new QHBoxLayout();
+  QGridLayout * milieuGrid = new QGridLayout();
+  QHBoxLayout * deAtt = new QHBoxLayout();
+  QHBoxLayout * deDef = new QHBoxLayout();
 
-	  if(A1!=0 || A1!=-1)
-	  {
-      	QLabel * de1 = new QLabel();
-      	de1->setPixmap(game->getDice(KGameWindow::Red,A1));
-      	rightContents.insert(0,de1);deAtt->addWidget(de1);
-	  }
-	  if(A2!=0 || A2!=-1)
-	  {
-      	QLabel * de2= new QLabel();
-      	de2->setPixmap(game->getDice(KGameWindow::Red,A2));
-      	rightContents.insert(0,de2);deAtt->addWidget(de2);
-	  }
-	  if(A3!=0 || A3!=-1)
-	  {
-      	QLabel * de3= new QLabel();
-      	de3->setPixmap(game->getDice(KGameWindow::Red,A3));
-      	rightContents.insert(0,de3);deAtt->addWidget(de3);
-	  }
-	  if(D1!=0 || D1!=-1)
-	  {
-      	QLabel * de4= new QLabel();
-      	de4->setPixmap(game->getDice(KGameWindow::Blue,D1));
-      	rightContents.insert(0,de4);deDef->addWidget(de4);
-	  }
-	  if(D2!=0 || D2!=-1)
-	  {
-      	QLabel * de5= new QLabel();
-      	de5->setPixmap(game->getDice(KGameWindow::Blue,D2));
-     	 rightContents.insert(0,de5);deDef->addWidget(de5);
-	  }
-	  QLabel * rLabelR = new QLabel(i18n("<font color=\"red\">lost armies: %1</font>", nbA));
-          rLabelR->setWordWrap(true);
+  if(A1!=0 || A1!=-1)
+  {
+    QLabel * de1 = new QLabel();
+    de1->setPixmap(game->getDice(KGameWindow::Red,A1));
+    rightContents.insert(0,de1);deAtt->addWidget(de1);
+  }
+  if(A2!=0 || A2!=-1)
+  {
+    QLabel * de2= new QLabel();
+    de2->setPixmap(game->getDice(KGameWindow::Red,A2));
+    rightContents.insert(0,de2);deAtt->addWidget(de2);
+  }
+  if(A3!=0 || A3!=-1)
+  {
+    QLabel * de3= new QLabel();
+    de3->setPixmap(game->getDice(KGameWindow::Red,A3));
+    rightContents.insert(0,de3);deAtt->addWidget(de3);
+  }
+  if(D1!=0 || D1!=-1)
+  {
+    QLabel * de4= new QLabel();
+    de4->setPixmap(game->getDice(KGameWindow::Blue,D1));
+    rightContents.insert(0,de4);deDef->addWidget(de4);
+  }
+  if(D2!=0 || D2!=-1)
+  {
+    QLabel * de5= new QLabel();
+    de5->setPixmap(game->getDice(KGameWindow::Blue,D2));
+    rightContents.insert(0,de5);deDef->addWidget(de5);
+  }
+  QLabel * rLabelR = new QLabel(i18n("<font color=\"red\">lost armies: %1</font>", nbA));
+      rLabelR->setWordWrap(true);
 
-      rightContents.insert(0,rLabelR);
+  rightContents.insert(0,rLabelR);
 
-	  QLabel * rLabelB = new QLabel(i18n("<font color=\"blue\">lost armies: %1</font>", nbD));
-          rLabelB->setWordWrap(true);
+  QLabel * rLabelB = new QLabel(i18n("<font color=\"blue\">lost armies: %1</font>", nbD));
+      rLabelB->setWordWrap(true);
 
-	  rightContents.insert(0,rLabelB);
-    
-	  milieuGrid->addWidget(rightContents.at(1),0,0,Qt::AlignCenter);
-	  milieuGrid->addLayout(deAtt,1,0,Qt::AlignCenter);
-	  milieuGrid->addLayout(deDef,2,0,Qt::AlignCenter);
-	  milieuGrid->addWidget(rightContents.at(0),4,0,Qt::AlignCenter);
+  rightContents.insert(0,rLabelB);
 
-      milieu->setLayout(milieuGrid);
-      mainLayout->addWidget(milieu,1,0);
+  milieuGrid->addWidget(rightContents.at(1),0,0,Qt::AlignCenter);
+  milieuGrid->addLayout(deAtt,1,0,Qt::AlignCenter);
+  milieuGrid->addLayout(deDef,2,0,Qt::AlignCenter);
+  milieuGrid->addWidget(rightContents.at(0),4,0,Qt::AlignCenter);
 
-      if (buttonStopAttack != 0 && win)
-      {
-         buttonStopAttack->setEnabled(false);
-      }
-      repaint();
-   }
+  milieu->setLayout(milieuGrid);
+  mainLayout->addWidget(milieu,1,0);
+
+  if (buttonStopAttack != 0 && win)
+  {
+      buttonStopAttack->setEnabled(false);
+  }
+  repaint();
+}
 
    void KRightDialog::initListLabel(int nb)
    {

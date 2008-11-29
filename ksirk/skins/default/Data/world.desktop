@@ -8,6 +8,7 @@ anchor-point=39,226
 cannon-point=20,187
 cavalry-point=48,230
 central-point=48,220.5
+flag-point=51,195
 id=5
 infantry-point=16,231
 neighbours=Alberta,Ontario,Siberia
@@ -226,7 +227,7 @@ central-point=697,292.5
 flag-point=690,265
 id=22
 infantry-point=637,270
-neighbours=Scandinavia,Prussia,Russia,Mongolia,China,Pakistan
+neighbours=Prussia,Russia,Mongolia,China,Pakistan
 
 [Madagascar]
 anchor-point=621,522
