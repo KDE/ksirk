@@ -480,116 +480,124 @@ void KRightDialog::displayFightResult(int A1=0, int A2=0, int A3=0, int D1=0, in
   repaint();
 }
 
-   void KRightDialog::initListLabel(int nb)
-   {
-      kDebug();
-   
-      removeListLabel();
-      for (int i=0;i<nb;i++)
-      {
-        QLabel* label = new QLabel();
-        label->setWordWrap ( true );
-        rightContents.push_back(label);
-      }
-      clearLabel();
-   }
-   
-   void KRightDialog::removeListLabel()
-   {
-      kDebug();
-      while (rightContents.size() > 0) {
-        QLabel* label = rightContents.first();
-        rightContents.removeFirst();
-        delete label;
-      }
-   }
+void KRightDialog::initListLabel(int nb)
+{
+  kDebug();
 
-   void KRightDialog::clearLabel()
-   {
-      kDebug();
-      for (int i=0;i<rightContents.size();i++)
-      {
-        rightContents.at(i)->setText("");
-        rightContents.at(i)->setPixmap(0);
-      }
-   }
-
-   void KRightDialog::clearLayout()
-   {
-      kDebug();
-     while (rightContents.size() > 0) {
-       QLabel* obj = rightContents.first();
-       rightContents.removeFirst();
-       mainLayout->removeWidget(obj);
-       delete obj;
-     }
-     if (flag1 != 0)
-     {
-        mainLayout->removeWidget(flag1);
-        delete flag1;
-        flag1 = 0;
-     }
-     if (flag2 != 0)
-     {
-        mainLayout->removeWidget(flag2);
-        delete flag2;
-        flag2 = 0;
-     }
-     if (btRecycleWidget != 0)
-     {
-        delete btRecycleWidget;
-        btRecycleWidget = 0;
-     }
-     if (btValidWidget != 0)
-     {
-        delete btValidWidget;
-        btValidWidget = 0;
-     }
-     if (buttonStopAttack != 0) {
-       mainLayout->removeWidget(buttonStopAttack);
-       delete buttonStopAttack;
-       buttonStopAttack = 0;
-     }
-     if (buttonStopDefense != 0) {
-       mainLayout->removeWidget(buttonStopDefense);
-       delete buttonStopDefense;
-       buttonStopDefense = 0;
-     }
-     if(mainLayout->indexOf(bas)!=-1) {
-        mainLayout->removeWidget(bas);
-        delete bas;
-     }
-     if(milieu != 0) {
-        mainLayout->removeWidget(milieu);
-        delete milieu;
-        milieu = 0;
-     }
-     if (milieu2 != 0) {
-        mainLayout->removeWidget(milieu2);
-        delete loadingLabel;
-        delete infoProcess;
-        delete milieu2;
-        milieu2 = 0;
-     }
-     if(mainLayout->indexOf(haut)!=-1) {
-        mainLayout->removeWidget(haut);
-        delete haut;
-     }
-   }
-
-  void KRightDialog::slotStopAttackAuto()
+  removeListLabel();
+  for (int i=0;i<nb;i++)
   {
-    kDebug();
-    this->game->automaton()->setAttackAuto(false);
-    this->buttonStopAttack->setEnabled(false);
+    QLabel* label = new QLabel();
+    label->setWordWrap ( true );
+    rightContents.push_back(label);
   }
+  clearLabel();
+}
 
-  void KRightDialog::slotStopDefenseAuto()
+void KRightDialog::removeListLabel()
+{
+  kDebug();
+  while (rightContents.size() > 0)
   {
-    kDebug();
-    this->game->automaton()->setDefenseAuto(false);
-    this->buttonStopDefense->setEnabled(false);
+    QLabel* label = rightContents.first();
+    rightContents.removeFirst();
+    delete label;
   }
+}
+
+void KRightDialog::clearLabel()
+{
+  kDebug();
+  for (int i=0;i<rightContents.size();i++)
+  {
+    rightContents.at(i)->setText("");
+    rightContents.at(i)->setPixmap(0);
+  }
+}
+
+void KRightDialog::clearLayout()
+{
+  kDebug();
+  while (rightContents.size() > 0)
+  {
+    QLabel* obj = rightContents.first();
+    rightContents.removeFirst();
+    mainLayout->removeWidget(obj);
+    delete obj;
+  }
+  if (flag1 != 0)
+  {
+    mainLayout->removeWidget(flag1);
+    delete flag1;
+    flag1 = 0;
+  }
+  if (flag2 != 0)
+  {
+    mainLayout->removeWidget(flag2);
+    delete flag2;
+    flag2 = 0;
+  }
+  if (btRecycleWidget != 0)
+  {
+    delete btRecycleWidget;
+    btRecycleWidget = 0;
+  }
+  if (btValidWidget != 0)
+  {
+    delete btValidWidget;
+    btValidWidget = 0;
+  }
+  if (buttonStopAttack != 0)
+  {
+    mainLayout->removeWidget(buttonStopAttack);
+    delete buttonStopAttack;
+    buttonStopAttack = 0;
+  }
+  if (buttonStopDefense != 0)
+  {
+    mainLayout->removeWidget(buttonStopDefense);
+    delete buttonStopDefense;
+    buttonStopDefense = 0;
+  }
+  if(mainLayout->indexOf(bas)!=-1)
+  {
+    mainLayout->removeWidget(bas);
+    delete bas;
+  }
+  if(milieu != 0)
+  {
+    mainLayout->removeWidget(milieu);
+    delete milieu;
+    milieu = 0;
+  }
+  if (milieu2 != 0)
+  {
+    mainLayout->removeWidget(milieu2);
+    delete loadingLabel;
+    delete infoProcess;
+    delete milieu2;
+    milieu2 = 0;
+  }
+  if(mainLayout->indexOf(haut)!=-1)
+  {
+    mainLayout->removeWidget(haut);
+    delete haut;
+  }
+}
+
+void KRightDialog::slotStopAttackAuto()
+{
+  kDebug();
+  this->game->automaton()->setAttackAuto(false);
+  this->buttonStopAttack->setEnabled(false);
+}
+
+void KRightDialog::slotStopDefenseAuto()
+{
+  kDebug();
+  this->game->automaton()->setDefenseAuto(false);
+  this->buttonStopDefense->setEnabled(false);
+}
 
 }
 

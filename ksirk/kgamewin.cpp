@@ -745,26 +745,9 @@ void KGameWindow::initView()
 
   m_rightDialog = new KRightDialog(m_rightDock,theWorld(),this);
   m_rightDock->setWidget(m_rightDialog);
- // m_rightDock->setMaximumHeight(chatModel);
-  //QSplitter *splitter = new QSplitter();
- // QTextEdit *textedit = new QTextEdit;
-
-  //splitter->addWidget(textedit);
-  //m_rightDock->setWidget(splitter);
-//QDockWidget * a = new QDockWidget();
-//a->setFixedWidth(3);
-//a->setFeatures(QDockWidget::NoDockWidgetFeatures);
   kDebug() << "hiding right dock";
   m_rightDock->hide();
   addDockWidget(Qt::RightDockWidgetArea, m_rightDock);
-  //addDockWidget(Qt::RightDockWidgetArea, a);
-
-//m_splitter->setOrientation(Qt::Vertical);
-
-//m_splitter->addWidget(new QLabel("test"));
-
-  // adjustSize();
-
   m_frame->setFocus();
 }
 

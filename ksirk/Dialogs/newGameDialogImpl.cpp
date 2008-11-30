@@ -57,10 +57,12 @@ unsigned int maxPlayers, const QString& skin, bool networkGame)
   << " ; maxPlayers=" << maxPlayers << " ; network=" << networkGame;
   if (networkGame)
   {
+    localPlayersNumberLabel->show();
     localPlayersNumberEntry->show();
   }
   else
   {
+    localPlayersNumberLabel->hide();
     localPlayersNumberEntry->hide();
   }
   

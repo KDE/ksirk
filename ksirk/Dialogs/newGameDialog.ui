@@ -47,7 +47,7 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout" >
        <item>
-        <widget class="QLabel" name="label" >
+        <widget class="QLabel" name="localPlayersNumberLabel" >
          <property name="text" >
           <string>Number of local players:</string>
          </property>
