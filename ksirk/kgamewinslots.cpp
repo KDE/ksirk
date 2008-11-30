@@ -128,6 +128,7 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
           && (mousePos.x() >= 0) && (mousePos.x() <= m_frame-> viewport()->width()))
     )
   )
+  if (currentWidget() != 0)
   {
     m_timer.start(200);
     if ((mousePos.y() < borderScrollSize) && (mousePos.y() >= 0)
@@ -166,7 +167,7 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
       m_rightarrow->update();
     }
   }
-  if (m_frame->horizontalScrollBar()->value() == m_frame->horizontalScrollBar()->maximum())
+  if (m_frame && m_frame->horizontalScrollBar()->value() == m_frame->horizontalScrollBar()->maximum())
   {
     m_rightarrow->hide();
   }
@@ -174,7 +175,7 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
   {
     m_rightarrow->show();
   }
-  if (m_frame->verticalScrollBar()->value() == m_frame->verticalScrollBar()->maximum())
+  if (m_frame && m_frame->verticalScrollBar()->value() == m_frame->verticalScrollBar()->maximum())
   {
     m_downarrow->hide();
   }
@@ -182,7 +183,7 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
   {
     m_downarrow->show();
   }
-  if (m_frame->verticalScrollBar()->value() == m_frame->verticalScrollBar()->minimum())
+  if (m_frame && m_frame->verticalScrollBar()->value() == m_frame->verticalScrollBar()->minimum())
   {
     m_uparrow->hide();
   }

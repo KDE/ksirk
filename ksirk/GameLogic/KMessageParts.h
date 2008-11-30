@@ -43,7 +43,7 @@ class KMessageParts
 {
 public:
   /** The possible types of the elements. */
-  enum ElemType {Text,Pixmap};
+  enum ElemType {Text,Pixmap,StringId};
 
   /** Inner class to iterate on the message parts with the various standard 
     * functions of a STL iterator */

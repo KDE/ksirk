@@ -2096,6 +2096,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   quint32 win;
   quint32 attackAutoValue;
   quint32 availArmies;
+  quint32 elemType;
   
   if (currentPlayer() != 0)
   {
@@ -2157,18 +2158,22 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     break;
   case ChangeItem:
     if (sender == gameId()) break;
-    stream >> statusBarId >> logStatus >> messagePartsNb >> msgId;
-    messageParts << m_ids2msgs[msgId];
+    stream >> statusBarId >> logStatus >> messagePartsNb;
     kDebug() << "Got ChangeItem on " << statusBarId << " ; nb= " << messagePartsNb << endl;
-    for (messagePartsCounter = 1; messagePartsCounter < messagePartsNb; messagePartsCounter++)
+    for (messagePartsCounter = 0; messagePartsCounter < messagePartsNb; messagePartsCounter++)
     {
-      int elemType;
       stream >> elemType;
       if (elemType == KMessageParts::Text)
       {
         stream >> messagePart;
         messageParts << messagePart;
-//       kDebug() << " message part: " << messagePart << endl;
+        kDebug() << " message part: " << messagePart << endl;
+      }
+      else if (elemType == KMessageParts::StringId)
+      {
+        stream >> msgId;
+        messageParts << msgForId(msgId);
+        kDebug() << " message part for id "<<msgId<<": " << msgForId(msgId) << endl;
       }
       else if (elemType == KMessageParts::Pixmap)
       {

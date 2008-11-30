@@ -582,7 +582,7 @@ public:
     * The three types of central widget possible. This enum is used for knowing witch
     * is currently displayed (see m_currentDisplayedWidget var below).
     */
-  enum widgetType {mainMenuType, mapType,arenaType};
+  enum widgetType {mainMenuType, mapType, arenaType};
 
   /**
     * Give type of the central widget currently displayed.

@@ -1544,7 +1544,7 @@ void KGameWindow::changeItem( const QString& text, int id, bool log )
 
 void KGameWindow::changeItem( KMessageParts& strings, int id, bool log )
 {
-//  kDebug() << "KGameWindow::changeItem(KMessageParts,int, log)" << log;
+ kDebug() << "KGameWindow::changeItem(KMessageParts,int, log)" << strings.size() << id << log;
   if (strings.begin() == strings.end())
   {
 //     kDebug() << "  nothing " << strings.size();
@@ -1552,39 +1552,54 @@ void KGameWindow::changeItem( KMessageParts& strings, int id, bool log )
   }
   bool arguing = false;
   KLocalizedString argument;
+  KsirkChatItem item;
   KMessageParts::iterator it, it_end;
   it = strings.begin(); it_end = strings.end();
   if (it.curIsStr())
   {
     if (!it.curStr().isEmpty())
+    {
+      kDebug() << "setting argument to: '" << it.curStr() << "'";
       argument = ki18n(it.curStr().toUtf8().data());
+    }
     else
+    {
+      kDebug() << "setting argument to empty";
       argument = KLocalizedString();
+    }
     arguing = true;
   }
-  KsirkChatItem item;
-  if (it.curIsPix())
+  else if (it.curIsPix())
   {
+    kDebug() << "first item is pixmap";
     item << it.curPix();
   }
+  
   it++;
   for (; it != it_end; it++)
   {
+    kDebug() << "next item";
     if (it.curIsStr())
     {
-//       kDebug() << "argument current string: '" << it.curStr() << "'";
+      kDebug() << "item is: '" << it.curStr() << "'";
       if (arguing)
       {
-//         kDebug() << "  substituting";
+        kDebug() << "  substituting";
         argument=argument.subs(it.curStr());
       }
       else
       {
-//         kDebug() << "  assigning new argument";
+        kDebug() << "  assigning new argument";
         if (!it.curStr().isEmpty())
+        {
+          kDebug() << "setting argument to: '" << it.curStr() << "'";
           argument = ki18n(it.curStr().toUtf8().data());
+        }
         else
+        {
+          kDebug() << "setting argument to empty";
           argument = KLocalizedString();
+        }
         arguing = true;
       }
     }
@@ -1592,7 +1607,7 @@ void KGameWindow::changeItem( KMessageParts& strings, int id, bool log )
     {
       if (arguing)
       {
-//         kDebug() << "  storing";
+        kDebug() << "  storing";
         if (argument.isEmpty())
         {
           item << QString("");
@@ -1606,6 +1621,7 @@ void KGameWindow::changeItem( KMessageParts& strings, int id, bool log )
       arguing = false;
     }
   }
+  kDebug() << "no more items";
   if (arguing)
   {
     if (argument.isEmpty())
@@ -1627,12 +1643,12 @@ void KGameWindow::changeItem( KMessageParts& strings, int id, bool log )
     {
       kError() << "received a (I18N_EMPTY_MESSAGE)";
     }
-//     kDebug() << "  argument: " << argument.toString();
+    kDebug() << "  argument: " << argument.toString();
     statusBar()-> changeItem(argument.toString(), id);
   }
 }
 
-void KGameWindow::broadcastChangeItem ( KMessageParts& strings, int id, bool log )
+void KGameWindow::broadcastChangeItem(KMessageParts& strings, int id, bool log)
 {
   if (strings.empty())
   {
@@ -1643,34 +1659,37 @@ void KGameWindow::broadcastChangeItem ( KMessageParts& strings, int id, bool log
 //   kDebug() << "Broadcasting change item, size=" << strings.size();
   stream << (quint32)id << (quint32)log << (quint32)strings.size();
   
-  /// @TODO finish the port to new KMessageParts
-//   QString s;
-//   strings >> s;
-//   stream << m_automaton->idForMsg(s);
-//   while (!strings.empty())
-//   {
-//     strings >> s;
-//     kDebug() << "Pushing string '" << s << "'";
-//     stream << s;
-//   }
-
-  
   KMessageParts::iterator it, it_end;
   it = strings.begin(); it_end = strings.end();
   if (it != it_end)
   {
-    stream << m_automaton->idForMsg(it.curStr());
-    it++;
+/*    // if first element is string, convert it to id 
+    if (it.curIsStr())
+    {
+      kDebug() << "Pushing first element: id "<<m_automaton->idForMsg(it.curStr())<<" for '" << it.curStr() << "'";
+      stream << (quint32)KMessageParts::StringId << m_automaton->idForMsg(it.curStr());
+    }
+    else if (it.curIsPix())
+    {
+      kDebug() << "Pushing first element pix";
+      stream << (quint32)KMessageParts::Pixmap << it.curPix();
+    }
+    else
+    {
+      kError() << "Unsuported KMessageParts elem type ";
+    }
+    it++;*/
     for (; it != it_end; it++)
     {
       if (it.curIsStr())
       {
-//         kDebug() << "Pushing string '" << it.curStr() << "'";
-        stream << KMessageParts::Text << it.curStr();
+        kDebug() << "Pushing string '" << it.curStr() << "'";
+        stream << (quint32)KMessageParts::Text << it.curStr();
       }
       else if (it.curIsPix())
       {
-        stream << KMessageParts::Pixmap << it.curPix();
+        kDebug() << "Pushing pix";
+        stream << (quint32)KMessageParts::Pixmap << it.curPix();
       }
       else
       {
@@ -1679,7 +1698,7 @@ void KGameWindow::broadcastChangeItem ( KMessageParts& strings, int id, bool log
     }
   }
   m_automaton->sendMessage(buffer,ChangeItem);
-  changeItem( strings, id, log );
+  changeItem(strings, id, log );
 }
 
 void KGameWindow::enterEvent(QEvent* /*ev*/)
@@ -3098,16 +3117,23 @@ KGameWindow::widgetType KGameWindow::currentWidgetType()
 }
 
 
-QGraphicsView* KGameWindow::currentWidget() {
-  if (currentWidgetType() == arenaType) {
-    return dynamic_cast <QGraphicsView*>(arena());
-  } else {
-  if (currentWidgetType() == mainMenuType) {
-    return dynamic_cast <QGraphicsView*>(mMenu());
-  } else {
-    return dynamic_cast <QGraphicsView*>(frame());
+QGraphicsView* KGameWindow::currentWidget()
+{
+  switch (currentWidgetType())
+  {
+    case arenaType:
+      return dynamic_cast <QGraphicsView*>(arena());
+      break;
+    case mainMenuType:
+      return 0;
+      break;
+    case mapType:
+      return dynamic_cast <QGraphicsView*>(frame());
+      break;
+    default:
+      return 0;
   }
-  }
+  return 0;
 }
 
 
