@@ -36,8 +36,11 @@ Continent::Continent (const QString &myName, const QList<Country*>& myCountries,
   m_members(myCountries), m_name(myName), bonus(myBonus)
 {
   foreach (Country* c, myCountries)
-  {    
-    c->setContinent(this);
+  {
+    if (c)
+    {
+      c->setContinent(this);
+    }
   }
 }
 

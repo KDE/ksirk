@@ -295,7 +295,11 @@ ONU::ONU(GameAutomaton* automaton,
     foreach(const QString& countryId, countryIdList)
     {
       kDebug() << "Adding" << countryId << "to" << continent << "list";
-      continentList.push_back(countryNamed(countryId));
+      Country *c = countryNamed(countryId);
+      if (c)
+      {
+        continentList.push_back(c);
+      }
     }
 //       kDebug() << "Creating continent " << name;
     m_continents.push_back(new Continent(continent, continentList, bonus));
@@ -336,19 +340,30 @@ ONU::ONU(GameAutomaton* automaton,
     automaton->goals().push_back(goal);
   }
 
-  foreach (const QString &country, countriesList)
+  foreach (const QString &countryName, countriesList)
   {
-    kDebug() << "building neighbours list of " << country;
+    Country *country = countryNamed(countryName);
+
+    if (!country)
+    {
+      continue;
+    }
+
+    kDebug() << "building neighbours list of " << countryName;
     QList< Country* > theNeighbours;
-    KConfigGroup countryGroup = config.group(country);
+    KConfigGroup countryGroup = config.group(countryName);
     QList<QString> theNeighboursIds = countryGroup.readEntry("neighbours",QList<QString>());
 //     int neighbourId;
     foreach(const QString& neighbourId, theNeighboursIds)
     {
-
-      theNeighbours.push_back(countryNamed(neighbourId));
+      Country *c = countryNamed(neighbourId);
+      if (c)
+      {
+        theNeighbours.push_back(c);
+      }
     }
-    countryNamed(country)-> neighbours(theNeighbours);
+
+    country-> neighbours(theNeighbours);
   }
   buildMap();
 
@@ -468,13 +483,17 @@ Country* ONU::countryNamed(const QString& name)
 {
   if (name.isEmpty())
   {
+    kDebug() << "request for country with empty name";
     return 0;
   }
+
   foreach (Country *c, countries)
   {
     if (c-> name() == name)
       return c;
   }
+
+  kDebug() << "request for country" << name << "which doesn't seem to exist.";
   return 0;
 }
 
