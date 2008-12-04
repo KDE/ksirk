@@ -115,10 +115,11 @@ public:
   enum TabbedWidgetsIndexesType
   {
     MAINMENU_INDEX /*0*/,
-    MAP_INDEX /*1*/,
-    ARENA_INDEX /*2*/,
-    NEWGAME_INDEX /*3*/,
-    JABBERGAME_INDEX /*4*/};
+    NEWGAME_INDEX /*1*/,
+    JABBERGAME_INDEX /*2*/,
+    MAP_INDEX /*3*/,
+    ARENA_INDEX /*4*/,
+  };
   /**
     * Create the window and initializes its members
     */
@@ -619,10 +620,7 @@ public:
 
   void updateScrollArrows();
 
-  bool newGameDialog(
-                     unsigned int maxPlayers,
-                     const QString& skin,
-                     bool networkGame);
+  bool newGameDialog(const QString& skin, bool networkGame);
 
   bool finishSetupPlayers();
 

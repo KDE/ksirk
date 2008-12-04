@@ -73,9 +73,9 @@ ONU::ONU(const QString& configDir):
   if (formatVersion != "" && formatVersion != ONU_FILE_FORMAT_VERSION)
   {
     KMessageBox::error(0,
-            i18n("Error - Invalid skin definition file format. Expected %1 and got %2",QString(ONU_FILE_FORMAT_VERSION),formatVersion),
-            i18n("Fatal Error"));
-    exit(1);
+                        i18n("Error - Invalid skin definition file format. Expected %1 and got %2",QString(ONU_FILE_FORMAT_VERSION),formatVersion) + "<br>" + m_configFileName,
+                        i18n("Error !"));
+//     exit(1);
   }
 
   m_name = onugroup.readEntry("name");

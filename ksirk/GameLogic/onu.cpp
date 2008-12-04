@@ -53,6 +53,7 @@ ONU::ONU(GameAutomaton* automaton,
   countries(),
   nationalities(),
   m_continents(),
+  m_skin(),
   m_zoom(1.0),
   m_zoomArena(1.0),
   m_nbZooms(0),
@@ -88,10 +89,11 @@ ONU::ONU(GameAutomaton* automaton,
 
   if (formatVersion != ONU_FILE_FORMAT_VERSION)
   {
-    KMessageBox::error(0,
-            i18n("Error - Invalid skin definition file format. Expected %1 and got %2",QString(ONU_FILE_FORMAT_VERSION),formatVersion),
-            i18n("Fatal Error"));
-    exit(1);
+    kError() << "Error - Invalid skin definition file format. Expected "<<QString(ONU_FILE_FORMAT_VERSION)<<" and got " << formatVersion << "in" << m_configFileName << ". You should remove this skin folder";
+//     KMessageBox::error(0,
+//                         i18n("Error - Invalid skin definition file format. Expected %1 and got %2",QString(ONU_FILE_FORMAT_VERSION),formatVersion) + "<br>" + m_configFileName,
+//                         i18n("Fatal Error"));
+    return;
   }
 
   m_name = onugroup.readEntry("name");

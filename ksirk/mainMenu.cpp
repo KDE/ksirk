@@ -33,20 +33,22 @@ mainMenu::mainMenu(Ksirk::GameLogic::GameAutomaton* automaton, QWidget* parent) 
   setupUi(this);
   
   // Load image
-  KConfig config(automaton->game()->theWorld()->getConfigFileName());
-  KConfigGroup onugroup = config.group("onu");
-  QString skin = onugroup.readEntry("skinpath");
-  QString imageFileName;
-  QPixmap imag1, imag2;
+  if (automaton->game()->theWorld() != 0)
+  {
+    KConfig config(automaton->game()->theWorld()->getConfigFileName());
+    KConfigGroup onugroup = config.group("onu");
+    QString skin = onugroup.readEntry("skinpath");
+    QString imageFileName;
+    QPixmap imag1, imag2;
 
-  imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/logoRight.png");
-  imag1.load(imageFileName);
-  imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/logoLeft.png");
-  imag2.load(imageFileName);
+    imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/logoRight.png");
+    imag1.load(imageFileName);
+    imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/logoLeft.png");
+    imag2.load(imageFileName);
 
-  lImage1->setPixmap(imag1.scaled(100,100,Qt::KeepAspectRatioByExpanding));
-  lImage2->setPixmap(imag2.scaled(100,100,Qt::KeepAspectRatioByExpanding));
-
+    lImage1->setPixmap(imag1.scaled(100,100,Qt::KeepAspectRatioByExpanding));
+    lImage2->setPixmap(imag2.scaled(100,100,Qt::KeepAspectRatioByExpanding));
+  }
   connect(pbNewGame, SIGNAL(clicked()), parent, SLOT(slotNewGame()));
   connect(pbJabberGame, SIGNAL(clicked()), parent, SLOT(slotJabberGame()));
   connect(pbNewSocketGame, SIGNAL(clicked()), parent, SLOT(slotNewSocketGame()));

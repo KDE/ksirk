@@ -48,7 +48,6 @@ public:
   NewGameDialogImpl(QWidget *parent=0);
 
   void init(GameLogic::GameAutomaton* automaton,
-             unsigned int maxPlayers,
              const QString& skin,
              bool networkGame);
 

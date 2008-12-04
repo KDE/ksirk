@@ -472,7 +472,10 @@ QPixmap KGameWindow::buildDice(DiceColor color, const QString& id)
   QImage image(size, QImage::Format_ARGB32_Premultiplied);
   image.fill(0);
   QPainter p(&image);
-  m_theWorld->renderer()->render(&p, id);
+  if (m_theWorld != 0)
+  {
+    m_theWorld->renderer()->render(&p, id);
+  }
 
   return QPixmap::fromImage(image);
 }
@@ -532,7 +535,11 @@ void KGameWindow::newSkin(const QString& onuFileName)
   }
   kDebug() << "Got World definition file name: " <<  onuDefinitionFileName;
   m_theWorld = new ONU(m_automaton, onuDefinitionFileName);
-
+  if (m_theWorld->skin().isEmpty())
+  {
+    delete m_theWorld;
+    m_theWorld = 0;
+  }
   loadDices();
 
   // put the size to the window size if it's the main menu
@@ -612,22 +619,29 @@ void KGameWindow::newSkin(const QString& onuFileName)
   }
     
   kDebug() << "create the world map view";
-  m_frame = new DecoratedGameFrame(this,width, height, m_automaton);
-  m_frame->setMaximumWidth(width);
-  m_frame->setMaximumHeight(height);
-  m_frame->setCacheMode( QGraphicsView::CacheBackground );
-  m_frame->setIcon();
-
+  if (m_theWorld != 0)
+  {
+    m_frame = new DecoratedGameFrame(this,width, height, m_automaton);
+    m_frame->setMaximumWidth(width);
+    m_frame->setMaximumHeight(height);
+    m_frame->setCacheMode( QGraphicsView::CacheBackground );
+    m_frame->setIcon();
+  }
+  
   if (m_arena != 0)
   {
     m_centralWidget->removeWidget(m_arena);
     delete m_arena;
+    m_arena = 0;
   }
-  m_arena = new FightArena(this, width, height, m_scene_arena, m_theWorld, m_automaton);
-  m_arena->setMaximumWidth(width);
-  m_arena->setMaximumHeight(height);
-  m_arena->setCacheMode( QGraphicsView::CacheBackground );
-
+  if (m_theWorld != 0)
+  {
+    m_arena = new FightArena(this, width, height, m_scene_arena, m_theWorld, m_automaton);
+    m_arena->setMaximumWidth(width);
+    m_arena->setMaximumHeight(height);
+    m_arena->setCacheMode( QGraphicsView::CacheBackground );
+  }
+  
   kDebug() << "create the Jabber widget if it doesn't exist";
   if (m_jabberGameWidget == 0)
   {
@@ -640,14 +654,20 @@ void KGameWindow::newSkin(const QString& onuFileName)
   
   kDebug() << "put the menu, map and arena in the central widget";
   m_centralWidget->addWidget(m_mainMenu);
-  m_centralWidget->addWidget(m_frame);
-  m_centralWidget->addWidget(m_arena);
   m_centralWidget->addWidget(m_newGameDialog);
   m_centralWidget->addWidget(m_jabberGameWidget);
-  //m_centralWidget->addWidget(m_splitter);m_centralWidget
-  if (firstCall)
+  if (m_frame != 0)
   {
-    kDebug() << "first call: showing menu";
+    m_centralWidget->addWidget(m_frame);
+  }
+  if (m_arena != 0)
+  {
+    m_centralWidget->addWidget(m_arena);
+  }
+  //m_centralWidget->addWidget(m_splitter);m_centralWidget
+  if (firstCall || m_theWorld == 0)
+  {
+    kDebug() << "first call or null world: showing menu";
     m_centralWidget->setCurrentIndex(MAINMENU_INDEX);
     m_currentDisplayedWidget = mainMenuType;
     m_bottomDock->hide();
@@ -659,6 +679,10 @@ void KGameWindow::newSkin(const QString& onuFileName)
     m_bottomDock->show();
   }
 
+  if (m_theWorld == 0)
+  {
+    return;
+  }
   m_backGnd_arena = new BackGnd(m_scene_arena, m_theWorld, true);
   m_backGnd_world = new BackGnd(m_scene_world, m_theWorld);
 
@@ -2808,7 +2832,10 @@ Player* KGameWindow::addPlayer(const QString& playerName,
 QMap< QString, QString > KGameWindow::nationsList()
 {
   QMap< QString, QString >  res;
-  
+  if (m_theWorld == 0)
+  {
+    return res;
+  }
   QList<Nationality*>& nationsList = m_theWorld->getNationalities();
   kDebug() << "There is " << nationsList.size() << " nations";
   QList<Nationality*>::iterator nationsIt = nationsList.begin();
@@ -3292,12 +3319,11 @@ void KGameWindow::setupPopupMessage()
   }
 }
 
-bool KGameWindow::newGameDialog(unsigned int maxPlayers,
-                   const QString& skin, bool networkGame)
+bool KGameWindow::newGameDialog(const QString& skin, bool networkGame)
 {
   m_stateBeforeNewGame = m_automaton->state();
   m_automaton->state(GameAutomaton::STARTING_GAME);
-  m_newGameDialog->init(m_automaton, maxPlayers, skin, networkGame);
+  m_newGameDialog->init(m_automaton, skin, networkGame);
   m_stackWidgetBeforeNewGame = m_centralWidget->currentIndex();
   m_centralWidget->setCurrentIndex(NEWGAME_INDEX);
   return false;

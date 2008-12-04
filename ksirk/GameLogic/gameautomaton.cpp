@@ -1175,16 +1175,8 @@ QDataStream& operator>>(QDataStream& s, GameAutomaton::GameState& state)
 bool GameAutomaton::setupPlayersNumberAndSkin(NetworkGameType netGameType)
 {
   kDebug() << netGameType <<  endl;
-  QMap< QString, QString > nations = m_game->nationsList();
-  if (nations.size() < 2)
-  {
-    QString mes = "";
-    mes = i18nc("@info Report the wrong number of nations given", "Error - 2 nations minimum. Got %1.",nations.size());
-    KMessageBox::error(m_game, mes, i18n("Fatal Error!"));
-    exit(1);
-  }
   m_netGameType = netGameType;
-  m_game->newGameDialog(nations.size(), m_skin.value(), m_netGameType);
+  m_game->newGameDialog(m_skin.value(), m_netGameType);
 
 //   m_networkPlayersNumber = ???;
   return false;
@@ -1716,7 +1708,10 @@ void GameAutomaton::slotPropertyChanged(KGamePropertyBase *prop,KGame *)
   {
     kDebug() << "skin changed to: " << m_skin << endl;
     m_game->newSkin();
-    m_game->theWorld()->reset();
+    if (m_game->theWorld()!=0)
+    {
+      m_game->theWorld()->reset();
+    }
   }
   kDebug() << "END GameAutomaton::slotPropertyChanged " << prop->id() << " (skin is " << m_skinId << ")" << endl;
 }

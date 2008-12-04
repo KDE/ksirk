@@ -50,11 +50,9 @@ NewGameDialogImpl::NewGameDialogImpl(QWidget *parent) :
   QObject::connect(ghnsbutton, SIGNAL(clicked()), this, SLOT(slotGHNS()) );
 }
 
-void NewGameDialogImpl::init(GameLogic::GameAutomaton* automaton,
-unsigned int maxPlayers, const QString& skin, bool networkGame)
+void NewGameDialogImpl::init(GameLogic::GameAutomaton* automaton, const QString& skin, bool networkGame)
 {
-  kDebug() << "Skin got by NewGameDialog: " << skin
-  << " ; maxPlayers=" << maxPlayers << " ; network=" << networkGame;
+  kDebug() << "Skin got by NewGameDialog: " << skin << " ; network=" << networkGame;
   if (networkGame)
   {
     localPlayersNumberLabel->show();
@@ -69,10 +67,6 @@ unsigned int maxPlayers, const QString& skin, bool networkGame)
   m_automaton = automaton;
   m_skin = skin;
 
-  playersNumberEntry->setMinimum(2);
-  playersNumberEntry->setMaximum(maxPlayers);
-  localPlayersNumberEntry->setMinimum(1);
-  localPlayersNumberEntry->setMaximum(maxPlayers-1);
   fillSkinsCombo();
 }
 
@@ -150,12 +144,19 @@ void NewGameDialogImpl::fillSkinsCombo()
       {
         kDebug() << "Got skin dir: " << skinDir.dirName();
         GameLogic::ONU* world = new GameLogic::ONU(m_automaton,skinsDirName + skinDir.dirName() + "/Data/world.desktop");
-        skinCombo->addItem(i18n(world->name().toUtf8().data()));
-        m_worlds[i18n(world->name().toUtf8().data())] = world;
-        if (QString("skins/")+skinDir.dirName() == m_skin)
+        if (!world->skin().isEmpty())
         {
-          kDebug() << "Setting currentSkinNum to " << skinNum;
-          currentSkinNum = skinNum;
+          skinCombo->addItem(i18n(world->name().toUtf8().data()));
+          m_worlds[i18n(world->name().toUtf8().data())] = world;
+          if (QString("skins/")+skinDir.dirName() == m_skin)
+          {
+            kDebug() << "Setting currentSkinNum to " << skinNum;
+            currentSkinNum = skinNum;
+          }
+        }
+        else
+        {
+          delete world;
         }
       }
     }
@@ -172,6 +173,11 @@ void NewGameDialogImpl::slotSkinChanged(int skinNum)
               << m_worlds[skinCombo->currentText()]->description();
     skinDescLabel->setText(i18n(m_worlds[skinCombo->currentText()]->description().toUtf8().data()));
     skinSnapshotPixmap->setPixmap(m_worlds[skinCombo->currentText()]->snapshot());
+    
+    playersNumberEntry->setMinimum(2);
+    playersNumberEntry->setMaximum(m_worlds[skinCombo->currentText()]->getNationalities().size());
+    localPlayersNumberEntry->setMinimum(1);
+    localPlayersNumberEntry->setMaximum(m_worlds[skinCombo->currentText()]->getNationalities().size()-1);
 }
 
 void NewGameDialogImpl::slotGHNS()
