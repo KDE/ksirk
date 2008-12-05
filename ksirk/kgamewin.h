@@ -118,7 +118,7 @@ public:
     NEWGAME_INDEX /*1*/,
     JABBERGAME_INDEX /*2*/,
     MAP_INDEX /*3*/,
-    ARENA_INDEX /*4*/,
+    ARENA_INDEX /*4*/
   };
   /**
     * Create the window and initializes its members
