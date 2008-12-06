@@ -1077,29 +1077,41 @@ void KGameWindow::resolveAttack()
   */
 bool KGameWindow::queryClose()
 {
-    // TODO : Test si jeu en cours
+  // TODO : Test si jeu en cours
 
-    if ((m_automaton->state() == GameAutomaton::INIT) || (m_automaton->state() ==  GameAutomaton::INTERLUDE))
+  if ((m_automaton->state() == GameAutomaton::INIT) || (m_automaton->state() ==  GameAutomaton::INTERLUDE))
+  {
+    switch ( KMessageBox::warningYesNo( this, i18n("Do you want to quit the game ?")) )
     {
-      switch ( KMessageBox::warningYesNo( this, i18n("Do you want to quit the game ?")) ) {
-      case KMessageBox::Yes :
-          return true;
-      default:
-          return false;
-      }
+    case KMessageBox::Yes :
+        break;
+    default:
+        return false;
     }
-    else
+  }
+  else
+  {
+    switch ( KMessageBox::warningYesNoCancel( this, i18n("Before you quit, do you want to save your game?")) )
     {
-      switch ( KMessageBox::warningYesNoCancel( this, i18n("Before you quit, do you want to save your game?")) ) {
-      case KMessageBox::Yes :
-          slotSaveGame();
-          return true;
-      case KMessageBox::No :
-          return true;
-      default: // cancel
-          return false;
-      }
+    case KMessageBox::Yes :
+        slotSaveGame();
+        break;
+    case KMessageBox::No :
+        break;
+    default: // cancel
+        return false;
     }
+  }
+  PlayersArray::iterator it = m_automaton->playerList()->begin();
+  PlayersArray::iterator it_end = m_automaton->playerList()->end();
+  for (; it != it_end; it++)
+  {
+    if (static_cast<Player*>(*it)-> isAI())
+    {
+      (static_cast<AIPlayer*>(*it))-> stop();
+    }
+  }
+  return true;
 }
 
 bool KGameWindow::actionOpenGame()

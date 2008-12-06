@@ -2093,7 +2093,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   quint32 availArmies;
   quint32 elemType;
   
-  if (currentPlayer() != 0)
+  if (currentPlayer() != 0 && currentPlayer()->getFlag() != 0)
   {
     pm = currentPlayer()->getFlag()->image(0);
   }
