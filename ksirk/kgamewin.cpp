@@ -296,6 +296,8 @@ KGameWindow::~KGameWindow()
 {
   kDebug() << "~GameAutomaton";
   m_dirs = 0;
+  m_automaton->setGameStatus( KGame::End );
+  delete m_automaton; m_automaton = 0;
   delete m_backGnd_world; m_backGnd_world = 0;
   delete m_scene_world; m_scene_world = 0;
 //   if (m_barFlagButton) {delete m_barFlagButton; m_barFlagButton = 0;}
