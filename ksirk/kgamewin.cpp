@@ -225,8 +225,8 @@ KGameWindow::KGameWindow(QWidget* parent) :
   kDebug() << "Creating automaton";
   m_automaton->init(this);
   
-  kDebug() << "Setting skin";
-  m_automaton->skin(KGlobal::config()->group("skin").readEntry("skin", "skins/default"));
+//   kDebug() << "Setting skin";
+//   m_automaton->skin(KGlobal::config()->group("skin").readEntry("skin", "skins/default"));
   
 //    kDebug() << "Before initStatusBar";
   initStatusBar();
@@ -290,6 +290,8 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_initialPresence = XMPP::Status ( "", "", 5, true );
 
   connect (this, SIGNAL(newJabberGame(const QString&, int, const QString&)), m_automaton, SIGNAL(newJabberGame(const QString&, int, const QString&)));
+
+  m_automaton->skin("skins/default");
 }
 
 KGameWindow::~KGameWindow()
@@ -547,7 +549,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
   // put the size to the window size if it's the main menu
   int width;
   int height;
-  if (m_scene_arena == 0)
+  if (m_scene_arena == 0 || m_theWorld == 0)
   {
      width = 2000;
      height = 2000;
@@ -1266,9 +1268,7 @@ void KGameWindow::displayDefenseWindow()
                         this->secondCountry()->name()));
 
   // Add icons on buttons
-  KConfig config(m_automaton->game()->theWorld()->getConfigFileName());
-  KConfigGroup onugroup = config.group("onu");
-  QString skin = onugroup.readEntry("skinpath");
+  QString skin = m_automaton->game()->theWorld()->skin();
   QString imageFileName;
 
   imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/defendOne.png");
@@ -3009,39 +3009,6 @@ void KGameWindow::explain()
   message2Parts << I18N_NOOP("Start a new game or join a network game with the menu or the toolbar...");
   broadcastChangeItem(message2Parts, ID_NO_STATUS_MSG);
 
-//   QString newGameImageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_NEWGAME);
-//   if (newGameImageFileName.isNull())
-//   {
-//     KMessageBox::errot(0, i18n("Cannot load button image\nProgram cannot continue"), i18n("Error !"));
-//     exit(2);
-//   }
-//   QPixmap newGameButtonPix(newGameImageFileName); 
-//   KMessageParts message2Parts;
-//   message2Parts << "\t" << newGameButtonPix << I18N_NOOP(" to start a new game;");
-//   broadcastChangeItem(message2Parts, ID_NO_STATUS_MSG);
-// 
-//   QString joinGameImageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_NEWNETGAME);
-//   if (joinGameImageFileName.isNull())
-//   {
-//     KMessageBox::error(0, i18n("Cannot load button image\nProgram cannot continue"), i18n("Error !"));
-//     exit(2);
-//   }
-//   QPixmap joinGameButtonPix(joinGameImageFileName); 
-//   KMessageParts message3Parts;
-//   message3Parts << "\t" << joinGameButtonPix << I18N_NOOP(" to join a network game (starting or reloading); and");
-//   broadcastChangeItem(message3Parts, ID_NO_STATUS_MSG);
-// 
-//   QString openGameImageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_OPENGAME);
-//   if (openGameImageFileName.isNull())
-//   {
-//     KMessageBox::error(0, i18n("Cannot load button image\nProgram cannot continue"), i18n("Error !"));
-//     exit(2);
-//   }
-//   QPixmap openGameButtonPix(openGameImageFileName); 
-//   KMessageParts message4Parts;
-//   message4Parts << "\t" << openGameButtonPix << I18N_NOOP(" to open a saved game.");
-//   broadcastChangeItem(message4Parts, ID_NO_STATUS_MSG);
-
   KMessageParts message5Parts;
   message5Parts << I18N_NOOP("and then let the system guide you through messages and tooltips appearing on buttons when hovering above them. You can disable bubble help in the options window.");
   broadcastChangeItem(message5Parts, ID_NO_STATUS_MSG);
@@ -3207,9 +3174,7 @@ void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * 
 //   m_wSlide->setFixedHeight(250);
 
   //Infantery picture
-  KConfig config(theWorld()->getConfigFileName());
-  KConfigGroup onugroup = config.group("onu");
-  QString skin = onugroup.readEntry("skinpath");
+  QString skin = theWorld()->skin();
   QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/sprites/infantry.svg");
 
   soldat.load(imageFileName);

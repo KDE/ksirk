@@ -75,6 +75,10 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
   QPointF mousePosition;
   Country *mouseLocalisation;
 
+  if (m_frame == 0)
+  {
+    return;
+  }
   mousePosGlobal = event->globalPos();
   mousePos = m_frame->mapFromGlobal(mousePosGlobal);
   mousePosition = m_frame->mapToScene(mousePos);
@@ -371,7 +375,7 @@ void KGameWindow::slotRightButtonUp(const QPointF& point)
 bool KGameWindow::queryExit()
 {
 //   kDebug() << "Writing skin m_config: " << m_automaton->skin();
-  KGlobal::config()->group("skin").writeEntry("skin", m_automaton->skin());
+//   KGlobal::config()->group("skin").writeEntry("skin", m_automaton->skin());
   KGlobal::config()->sync();
   return true;
 }
