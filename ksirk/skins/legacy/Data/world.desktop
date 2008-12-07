@@ -423,10 +423,10 @@ continent-countries=Mexico,Colombia,Brazil,Chile,Paraguay
 id=2
 
 [United Kingdom]
-anchor-point=478,237
+anchor-point=477,240
 cannon-point=434,209
 cavalry-point=472,205
-central-point=469,237
+central-point=474,250
 flag-point=464,214
 id=13
 infantry-point=446,230
