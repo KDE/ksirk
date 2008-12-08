@@ -344,7 +344,7 @@ void KGameWindow::initActions()
   }
   m_jabberAction = new QAction(QIcon(QPixmap(imageFileName)), i18n("Play over Jabber"), this);
   m_jabberAction-> setText(i18n("Play KsirK over the Jabber Network"));
-  m_jabberAction-> setIconText("Jabber");
+  m_jabberAction-> setIconText(i18n("Jabber"));
   m_jabberAction->setShortcut(Qt::CTRL+Qt::Key_J);
   m_jabberAction->setStatusTip(i18n("Allow to connect to a KsirK Jabber Multi User Gaming Room to create new games or to join present games"));
   connect(m_jabberAction,SIGNAL(triggered(bool)),this,SLOT(slotJabberGame()));
@@ -360,7 +360,7 @@ void KGameWindow::initActions()
     exit(2);
   }
   KAction* newSocketAction = new KAction(KIcon(QPixmap(imageFileName)), i18n("New Standard TCP/IP Network Game"), this);
-  newSocketAction->setIconText("New TCP/IP");
+  newSocketAction->setIconText(i18n("New TCP/IP"));
   newSocketAction->setShortcut(Qt::CTRL+Qt::Key_T);
   newSocketAction->setStatusTip(i18n("Create a new standard TCP/IP network game"));
   connect(newSocketAction,SIGNAL(triggered(bool)),this,SLOT(slotNewSocketGame()));
@@ -378,7 +378,7 @@ void KGameWindow::initActions()
   }
   KAction* joinAction = new KAction(KIcon(QPixmap(imageFileName)),
         i18n("Join a Standard TCP/IP Network Game"), this);
-  joinAction->setIconText("Join TCP/IP");
+  joinAction->setIconText(i18n("Join TCP/IP"));
   joinAction->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_J);
   joinAction->setStatusTip(i18n("Join a standard TCP/IP network game"));
   connect(joinAction,SIGNAL(triggered(bool)),this,SLOT(slotJoinNetworkGame()));
