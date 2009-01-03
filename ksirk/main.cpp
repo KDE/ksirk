@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 
     KApplication app;
     KGlobal::locale()->insertCatalog("libkdegames");
-    
+
     if (app.isSessionRestored())
     {
         RESTORE(Ksirk::KGameWindow);
@@ -70,5 +70,7 @@ int main(int argc, char *argv[])
         args->clear();
     }
     kDebug() << "Executing app";
-    return app.exec();
+    int res =  app.exec();
+    KGlobal::locale()->removeCatalog( "libkdegames" );
+    return res;
 }  
