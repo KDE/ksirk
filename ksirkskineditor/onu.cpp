@@ -408,6 +408,10 @@ ONU::~ONU()
     delete *continentsIt;
   }
 
+  foreach (Goal* goal, m_goals)
+  {
+    delete goal;
+  }
 }
 
 void ONU::saveConfig(const QString& configFileName)
@@ -423,7 +427,7 @@ void ONU::saveConfig(const QString& configFileName)
   KConfigGroup onugroup = config.group("onu");
 
   kDebug() << "ONU XML format version: ";
-  onugroup.readEntry("format-version",ONU_FILE_FORMAT_VERSION);
+  onugroup.writeEntry("format-version",ONU_FILE_FORMAT_VERSION);
 
   onugroup.writeEntry("name",m_name);
   onugroup.writeEntry("skinpath",m_skin);
@@ -440,7 +444,7 @@ void ONU::saveConfig(const QString& configFileName)
   config.group("flag").writeEntry("width",SkinSpritesData::changeable().intData("flag-width"));
   config.group("flag").writeEntry("height",SkinSpritesData::changeable().intData("flag-height"));
   config.group("flag").writeEntry("frames",SkinSpritesData::changeable().intData("flag-frames"));
-  config.group("flag").readEntry("versions",SkinSpritesData::changeable().intData("flag-versions"));
+  config.group("flag").writeEntry("versions",SkinSpritesData::changeable().intData("flag-versions"));
 
   kDebug() << "Saving infantry data";
 //   config.group("infantry").writeEntry("id",SkinSpritesData::changeable().strData("infantry-id"));
