@@ -577,6 +577,6 @@ nb-continents=6
 nb-countries=42
 nb-nationalities=6
 pool=Images/pool.svg
-skinpath=skins/static
+skinpath=skins/legacy
 width=1024
 width-between-flag-and-fighter=32
