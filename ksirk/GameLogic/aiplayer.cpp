@@ -73,6 +73,11 @@ AIPlayer :: AIPlayer(
 //   kDebug() << "AIPlayer constructor" << endl;
 }
 
+AIPlayer::~AIPlayer()
+{
+  kDebug() << name();
+  m_thread.wait();
+}
 
 /**
   * This function is called whenever the player should choose an action (
@@ -81,7 +86,7 @@ AIPlayer :: AIPlayer(
   */
 void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
 {
-  kDebug() << name() << ": (state is " << m_game-> stateName() << ")" << endl;
+  kDebug() << name() << ": (state is " << m_game-> stateName() << ", current player is "<<m_game-> currentPlayer()->name()<<")" << endl;
   if (m_game->m_aicannotrunhack)
   {
     kDebug() << "HACK HACK AIPlayer " << name()   
@@ -336,12 +341,12 @@ bool AIPlayer::isAI() const
 
 void AIPlayer::MyThread::run()
 {
-  kDebug();
+  kDebug() << me.name();
   stopMe = false;
   while ( ! stopMe )
   {
     me.actionChoice(me.m_game->state());
-    mssleep( 500 );
+    msleep( 500 );
   }
   kDebug() << "OUT";
 }
@@ -415,12 +420,11 @@ bool AIPlayer::attackAction()
       m_thread.exit();
   }
   aiPlayerIO()->sendInput(stream3,true);
-  /*QByteArray buffer2;
-  QDataStream stream2(&buffer2, QIODevice::WriteOnly);
-  stream2 << QString("actionLButtonDown") << m_src->centralPoint();
-  aiPlayerIO()->sendInput(stream2,true);*/
+  requestAck();
+
   kDebug() << "AIPlayer " << Player::name()  << " : attackAction : "  << m_src-> name() << " " << m_dest-> name()
     << " " << nbAttack << endl;
+  stop();
   return true;
 }
 
@@ -467,7 +471,8 @@ bool AIPlayer::moveArmiesAction()
   QDataStream stream2(&buffer2, QIODevice::WriteOnly);
   stream2 << QString("actionLButtonUp") << odest->centralPoint();
   aiPlayerIO()->sendInput(stream2,true);
-
+  requestAck();
+  
   kDebug() << "AIPlayer ****************" << Player::name()  << " : moveAction : "  << osrc-> name() << " " << odest-> name() << endl;
 
   return true;
@@ -496,13 +501,7 @@ void AIPlayer::placeArmiesAction()
     stream << QString("actionLButtonDown") << receiver->centralPoint();
     aiPlayerIO()->sendInput(stream,true);
 
-    m_waitedAck = ++m_uid;
-    QByteArray buffer2;
-    QDataStream stream2(&buffer2, QIODevice::WriteOnly);
-    QPointF p(m_waitedAck, m_waitedAck);
-    kDebug() << name() << " sending a request for ack " << m_waitedAck << endl;
-    stream2 << QString("requestForAck") << p;
-    aiPlayerIO()->sendInput(stream2,true);
+    requestAck();
   }
   else if (m_game->state() != GameAutomaton::INTERLUDE)
   {
@@ -587,6 +586,7 @@ void AIPlayer::chooseInvasionAction()
   stream << QString("actionInvasionFinished") << point;
   stop();
   aiPlayerIO()->sendInput(stream,true);
+  requestAck();
 }
 
 /**
@@ -625,6 +625,7 @@ void AIPlayer::chooseDefenseAction()
     }
     stop();
     aiPlayerIO()->sendInput(stream,true);
+    requestAck();
   }
 }
 
@@ -639,6 +640,7 @@ void AIPlayer::nextPlayerAction()
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   stream << QString("actionNextPlayer") << point;
   aiPlayerIO()->sendInput(stream,true);
+  requestAck();
   stop();
 }
 
@@ -701,6 +703,17 @@ AIPlayerIO* AIPlayer::aiPlayerIO()
       return dynamic_cast<AIPlayerIO*>(iolist->at(i));
   
   return 0;
+}
+
+void AIPlayer::requestAck()
+{
+  m_waitedAck = ++m_uid;
+  QByteArray buffer;
+  QDataStream stream(&buffer, QIODevice::WriteOnly);
+  QPointF p(m_waitedAck, m_waitedAck);
+  kDebug() << name() << " sending a request for ack " << m_waitedAck << endl;
+  stream << QString("requestForAck") << p;
+  aiPlayerIO()->sendInput(stream,true);
 }
 
 } // closing namespace GameLogic

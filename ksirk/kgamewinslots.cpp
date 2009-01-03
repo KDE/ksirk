@@ -953,6 +953,7 @@ void KGameWindow::slotNewGameOK(unsigned int nbPlayers, const QString& skin, uns
   kDebug() << nbPlayers << skin << nbNetworkPlayers << useGoals;
   showMap();
   m_newPlayersNumber = nbPlayers;
+  m_automaton->setUseGoals(useGoals);
   m_automaton->state(m_stateBeforeNewGame);
   m_automaton->setNetworkPlayersNumber(m_automaton->networkGameType()==GameAutomaton::None?0:nbNetworkPlayers);
   m_automaton->finishSetupPlayersNumberAndSkin(skin, m_automaton->networkGameType(), nbPlayers);
@@ -1198,6 +1199,13 @@ void KGameWindow::slotJabberGameCanceled(int previousIndex)
 {
   kDebug() << previousIndex;
   m_centralWidget->setCurrentIndex(previousIndex);
+}
+
+void KGameWindow::slotExit()
+{
+  hide();
+  delete m_automaton;
+  close();
 }
 
 

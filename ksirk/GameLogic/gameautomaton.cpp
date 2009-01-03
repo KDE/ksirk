@@ -200,7 +200,7 @@ GameAutomaton::GameAutomaton() :
 
 GameAutomaton::~GameAutomaton()
 {
-  kDebug() << "~GameAutomaton" << endl;
+  kDebug();
 }
 
 void GameAutomaton::init(KGameWindow* gw)
@@ -745,9 +745,10 @@ GameAutomaton::GameState GameAutomaton::run()
       stream << quint32(2);
       sendMessage(buffer,ActionDefense);
     }
-    else if ( !m_game->secondCountry()->owner()->isVirtual()
+    else if ( m_game->secondCountry() != 0
+          && !m_game->secondCountry()->owner()->isVirtual()
           && isDefenseAuto()
-          &&  (m_game->secondCountry()->owner()->getNbDefense() == 0) )
+          && (m_game->secondCountry()->owner()->getNbDefense() == 0) )
     {
       quint32 nbDefense = 1;
       if (m_game->secondCountry()->nbArmies() > 1)
@@ -763,25 +764,13 @@ GameAutomaton::GameState GameAutomaton::run()
     else
     {
       //        if (!event.isEmpty())
-//          std::cerr << "Unhandled event " << event << " during handling of " << stateName() << std::endl;
+         kDebug() << "Unhandled event " << event << " during handling of " << stateName();
     }
   break;
   case WAIT:
     if (event == "actionNextPlayer") 
     {
-      if ( currentPlayer()->isVirtual()
-          || currentPlayer()->isAI()
-          || m_currentPlayerPlayed  
-          || (KMessageBox::questionYesNo (m_game,
-                i18n("%1, you have not played anything this turn.\nDo you really want to lose your turn ?",m_currentPlayer),
-                i18n("Really Next Player ?")) == KMessageBox::Yes) )
-      {
-        QByteArray buffer;
-        QDataStream stream(&buffer, QIODevice::WriteOnly);
-        stream << (quint32)NEWARMIES;
-        sendMessage(buffer,NextPlayerNormal);
-        m_game-> cancelAction();
-      }
+      actionNextPlayer();
     }
     else if (event == "actionLButtonDown")
     {
@@ -796,7 +785,11 @@ GameAutomaton::GameState GameAutomaton::run()
     // other case : state doesn't change
     break;
   case WAIT1:
-    if (event == "actionAttack1")
+    if (event == "actionNextPlayer")
+    {
+      actionNextPlayer();
+    }
+    else if (event == "actionAttack1")
     {
       m_game->attack(1);
       state(ATTACK);
@@ -1013,7 +1006,7 @@ void GameAutomaton::skin(const QString& newSkin)
 // whether network or local, end up here. So do something sensible here. 
 bool GameAutomaton::playerInput(QDataStream &msg, KPlayer* player)
 {
-  kDebug() << endl;
+  kDebug();
   if (player->isVirtual())
   {
 //     kDebug() << "Network player: nothing to do" << endl;
@@ -2130,8 +2123,11 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     break;
   case PlayerChange:
     stream >> playerName;
-    m_currentPlayer = playerName;
-    m_currentPlayerPlayed = false;
+    if (!isAdmin())
+    {
+      m_currentPlayer = playerName;
+      m_currentPlayerPlayed = false;
+    }
     break;
   case RegisterCountry:
     stream >> countryName >> propId >> prop2Id;
@@ -2221,7 +2217,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     m_game->secondCountry(m_game->theWorld()->countryNamed(countryName));
     break;
   case InitCombatMovement:
-    m_game->initCombatMovement(m_game->firstCountry(), m_game->secondCountry());
+    m_game->initCombatMovement();
     break;
   case AnimCombat:
     m_game->animCombat();
@@ -2301,8 +2297,9 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   case  NextPlayerNormal:
     if (isAdmin())
     {
+      stream >> playerName;
       stream >> newState;
-      if (m_game->nextPlayerNormal())
+      if (playerName == currentPlayer()->name() &&  m_game->nextPlayerNormal())
       {
         if (newState > 0)
         {
@@ -2425,7 +2422,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     kDebug() << "AnimExplosion" << explosing;
     if (m_game->backGnd()->bgIsArena())
     {
-      m_game->animExplosionForArena(m_game->firstCountry(), m_game->secondCountry());
+      m_game->animExplosionForArena();
     }
     else
     {
@@ -2435,7 +2432,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
       }
       else
       {
-        m_game->animExplosion(explosing,m_game->firstCountry(), m_game->secondCountry());
+        m_game->animExplosion(explosing);
       }
     }
     break;
@@ -2672,6 +2669,27 @@ void GameAutomaton::resetPlayersDistributionData()
     }
   }
 }
+
+void GameAutomaton::actionNextPlayer()
+{
+  if ( currentPlayer()->isVirtual()
+    || currentPlayer()->isAI()
+    || m_currentPlayerPlayed
+    || (KMessageBox::questionYesNo (m_game,
+                                     i18n("%1, you have not played anything this turn.\nDo you really want to lose your turn ?",m_currentPlayer),
+                                     i18n("Really Next Player ?")) == KMessageBox::Yes) )
+  {
+    QByteArray buffer;
+    QDataStream stream(&buffer, QIODevice::WriteOnly);
+    stream << currentPlayer()->name();
+    stream << (quint32)NEWARMIES;
+    kDebug() << "sending NextPlayerNormal" << currentPlayer()->name() << NEWARMIES;
+    sendMessage(buffer,NextPlayerNormal);
+    m_game-> cancelAction();
+  }
+}
+
+
 
 } // closing namespace GameLogic
 } // closing namespace Ksirk

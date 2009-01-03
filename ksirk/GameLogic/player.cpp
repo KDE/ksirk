@@ -390,10 +390,12 @@ bool Player::acknowledge(unsigned int ack)
   if (ack == m_waitedAck)
   {
     m_waitedAck = 0;
+    kDebug() << ack << true;
     return true;
   }
   else
   {
+    kDebug() << ack << false;
     return false;
   }
 }

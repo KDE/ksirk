@@ -218,11 +218,18 @@ QPointF KGameWindow::determinePointDepartArena(Country *pays, int relativePos)
 }
 
 
-void KGameWindow::determinePointArrivee(Country *attackingCountry,
-        Country *defendingCountry,
+void KGameWindow::determinePointArrivee(
         QPointF& pointArriveeAttaquant,
         QPointF& pointArriveeDefenseur)
 {
+  Country *attackingCountry = firstCountry();
+  Country *defendingCountry = secondCountry();
+  if (attackingCountry == 0 || m_secondCountry == 0)
+  {
+    kError() << "attackingCountry=" << (void*)attackingCountry << "defendingCountry=" << (void*)defendingCountry;
+    return;
+  }
+  
   //  - attacker's flag point
   qreal pointFlagAttaquantX = attackingCountry-> pointFlag().x()*m_theWorld->zoom();
 
@@ -354,12 +361,13 @@ void KGameWindow::determinePointArrivee(Country *attackingCountry,
 
 // point arriveedefenseur inutile
 void KGameWindow::determinePointArriveeForArena(
-    Country *attackingCountry,
-    Country *defendingCountry,
     int relative,
     QPointF& pointArriveeAttaquant,
     QPointF& pointArriveeDefenseur)
 {
+  Country *attackingCountry = firstCountry();
+  Country *defendingCountry = secondCountry();
+  
   kDebug() << m_firstCountry->name() << "("<<(void*)m_firstCountry<<")"
       << m_secondCountry->name() << "("<<(void*)m_secondCountry<<")";
   kDebug() << attackingCountry->name() << "("<<(void*)attackingCountry<<")"
@@ -524,15 +532,25 @@ void KGameWindow::determinePointArriveeForArena(
 }
 
 
-void KGameWindow::initCombatMovement(
-    Country *attackingCountry,
-    Country *defendingCountry)
+void KGameWindow::initCombatMovement()
 {
   kDebug() << "1";
 
+  Country *attackingCountry = firstCountry();
+  Country *defendingCountry = secondCountry();
+  if (attackingCountry == 0 || defendingCountry == 0)
+  {
+    kError() << "attackingCountry=" << (void*)attackingCountry << "defendingCountry=" << (void*)defendingCountry;
+    return;
+  }
+  
   getRightDialog()->close();
-  getRightDialog()->displayFightDetails(firstCountry(), secondCountry(),
-      firstCountry()->owner()->getNbAttack(), secondCountry()->owner()->getNbDefense());
+  if (firstCountry() != 0 && firstCountry()->owner() != 0 
+    && secondCountry() != 0 && secondCountry()->owner() != 0)
+  {
+    getRightDialog()->displayFightDetails(firstCountry(), secondCountry(),
+        firstCountry()->owner()->getNbAttack(), secondCountry()->owner()->getNbDefense());
+  }
   centerOnFight();  //center the game on the fight
   if  (isArena()
       && ! m_automaton->currentPlayer()->isAI()
@@ -547,21 +565,20 @@ void KGameWindow::initCombatMovement(
   m_animFighters->changeTarget(this,SLOT(slotMovingFightersArrived(AnimSpritesGroup*)));
 
   QString sndRoulePath;
-  AnimSprite* defenderSprite=0;
-  AnimSprite* attackingSprite=0;
+  AnimSprite* defenderSprite = 0;
+  AnimSprite* attackingSprite = 0;
 
   QPointF pointArriveeAttaquant(0,0);
   QPointF pointArriveeDefenseur(0,0);
  
   if (backGnd()->bgIsArena())
   {
-    determinePointArriveeForArena(attackingCountry, defendingCountry, 0,
+    determinePointArriveeForArena(0,
         pointArriveeAttaquant, pointArriveeDefenseur);
   }
   else
   {
-    determinePointArrivee(attackingCountry, defendingCountry,
-        pointArriveeAttaquant, pointArriveeDefenseur);
+    determinePointArrivee(pointArriveeAttaquant, pointArriveeDefenseur);
   }
 
   if (!attackingCountry->spritesInfantry().isEmpty()
@@ -763,14 +780,14 @@ void KGameWindow::initCombatMovement(
     }
     else
     {
-      kDebug() << "No sprite on defending country";
-      assert(false);
+      kError() << "No sprite on defending country" << defendingCountry->name();
+      return;
     }
 
     if (defenderSprite==0)
     {
       kError() << "ERROR: null defenderSprite at " << __FILE__ << ", line " << __LINE__;
-//       return;
+      return;
     }
     else
     {
@@ -873,10 +890,11 @@ void KGameWindow::stopCombat()
 }
 
 
-void KGameWindow::animExplosion(int who,Country *attackingCountry, Country *defendingCountry)
+void KGameWindow::animExplosion(int who)
 {
   kDebug() << who;
-
+  Country *attackingCountry = firstCountry();
+  
   m_animFighters->changeTarget(this, SLOT(slotExplosionFinished(AnimSpritesGroup*)));
 
   kDebug() << m_animFighters->size() << " fighters";
@@ -984,9 +1002,12 @@ void KGameWindow::animExplosion(int who,Country *attackingCountry, Country *defe
 }
 
 
-void KGameWindow::animExplosionForArena(Country *attackingCountry, Country *defendingCountry)
+void KGameWindow::animExplosionForArena()
 {
   kDebug();
+
+  Country *attackingCountry = firstCountry();
+  Country *defendingCountry = secondCountry();
 
   m_animFighters->changeTarget(this, SLOT(slotExplosionFinished(AnimSpritesGroup*)));
 

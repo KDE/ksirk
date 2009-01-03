@@ -911,8 +911,9 @@ bool AIColsonPlayer::ComputerAttack(int destCountry, bool die, int dif)
   kDebug() << destCountry;
 
   if (Attack_SrcCountry!=-1 && Attack_DestCountry!=-1
-      && (RISK_GetOwnerOfCountry(Attack_DestCountry) != this)
-          && (RISK_GetNumArmiesOfCountry(Attack_SrcCountry) > 1)
+    && (RISK_GetOwnerOfCountry(Attack_SrcCountry) == this)
+    && (RISK_GetOwnerOfCountry(Attack_DestCountry) != this)
+    && (RISK_GetNumArmiesOfCountry(Attack_SrcCountry) > 1)
           && (die || (   RISK_GetNumArmiesOfCountry(Attack_SrcCountry)
                        > RISK_GetNumArmiesOfCountry(Attack_DestCountry))))
   {
@@ -1370,8 +1371,9 @@ bool AIColsonPlayer::AttackEnemy()
   const Continent* continent = GetContinentToFortify(&nbCountriesWithAdjacentEnemies);
 
   if (Attack_SrcCountry!=-1 && Attack_DestCountry != -1
-      && (RISK_GetOwnerOfCountry(Attack_DestCountry)!=this)
-      && ComputerAttack (Attack_DestCountry, true,
+    && (RISK_GetOwnerOfCountry(Attack_SrcCountry)==this)
+    && (RISK_GetOwnerOfCountry(Attack_DestCountry)!=this)
+    && ComputerAttack (Attack_DestCountry, true,
                             (RISK_GetNumArmiesOfCountry(Attack_DestCountry) < 5)?1:
                                 ((nbCountriesWithAdjacentEnemies > 4)?RISK_GetNumArmiesOfCountry(Attack_DestCountry):3)))
   {
@@ -1747,10 +1749,11 @@ bool AIColsonPlayer::Move()
           && !GAME_IsEnemyAdjacent(i))
     {
       max = RISK_GetNumArmiesOfCountry(i);
+      kDebug() << "country " << i << ", num armies:" << max;
       iCountry = i;
     }
   }
-  kDebug() << "1p iCountry=" << iCountry;
+  kDebug() << "1p iCountry=" << iCountry << "; max=" << max;
   if (iCountry>=0)
   {
     int destCountry = GAME_FindEnemyAdjacent(iCountry);
@@ -2052,6 +2055,10 @@ int AIColsonPlayer::AI_Place(int iCountry, int iNumArmies)
 {
   kDebug() << iNumArmies 
             << " on country number " << iCountry;
+  if (m_placeData != 0)
+  {
+    delete m_placeData;
+  }
   m_placeData = new PlaceData();
   m_placeData->dest = m_game->game()->theWorld()->getCountries()[iCountry];
   m_placeData->nb = iNumArmies;

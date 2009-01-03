@@ -29,9 +29,6 @@
 #include <klocale.h>
 #include <kmessagebox.h>
 
-#include <sstream>
-#include <map>
-
 namespace Ksirk
 {
 using namespace GameLogic;
@@ -67,22 +64,14 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
   {
     kDebug() << "GameXmlHandler stored game state is: " << atts.value("state") << endl;
     
-    std::istringstream issSkin(atts.value("skin").toUtf8().data());
-    std::string skin;
-    issSkin >> skin;
-    m_game.automaton()->skin(skin.c_str());
+    m_game.automaton()->skin(atts.value("skin"));
     
-    std::istringstream iss(atts.value("state").toUtf8().data());
-    int istate;
-    iss >> istate;
-    m_savedState = GameLogic::GameAutomaton::GameState(istate);
+    m_savedState = GameLogic::GameAutomaton::GameState(atts.value("state").toInt());
     m_game.automaton()->savedState(m_savedState);
   }
   else if (localName == "players" && !m_inGoal)
   {
-    std::istringstream iss(atts.value("nb").toUtf8().data());
-    int nb;
-    iss >> nb;
+    int nb = atts.value("nb").toInt();
     kDebug() << "Setting min-max players to " << nb << endl;
     m_game.automaton()->setMinPlayers(nb);
     m_game.automaton()->setMaxPlayers(nb);
@@ -91,26 +80,17 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
   {
     kDebug() << "Reading a player" << endl;
     m_playersNumber++;
-    unsigned int nbAvailArmies;
-    std::istringstream issNbAvailArmies(atts.value("nbAvailArmies").toUtf8().data());
-    issNbAvailArmies >> nbAvailArmies;
+    unsigned int nbAvailArmies = atts.value("nbAvailArmies").toInt();
     
-    unsigned int nbCountries;
-    std::istringstream issNbCountries(atts.value("nbCountries").toUtf8().data());
-    issNbCountries >> nbCountries;
+    unsigned int nbCountries = atts.value("nbCountries").toInt();
     
     QString name = atts.value("name");
     
     QString nationName = atts.value("nation");
     
-    unsigned int nbAttack;
-    std::istringstream issNbAttack(atts.value("nbAttack").toUtf8().data());
-    issNbAvailArmies >> nbAttack;
+    unsigned int nbAttack = atts.value("nbAttack").toInt();
     
-    unsigned int nbDefense;
-    std::istringstream issNbDefense(atts.value("nbDefense").toUtf8().data());
-    issNbAvailArmies >> nbDefense;
-    
+    unsigned int nbDefense = atts.value("nbDefense").toInt();
     
     bool isAi = false;
     if (atts.value("ai") == "true") isAi = true;
@@ -180,16 +160,9 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
   {
 //   kDebug() << "GameXmlHandler loads country: " << atts.value("name") << endl;
     Country* country = m_game.theWorld()->countryNamed(atts.value("name"));
-    unsigned int gotNbArmies;
-    std::istringstream issNbArmies(atts.value("nbArmies").toUtf8().data());
-    issNbArmies >> gotNbArmies;
+    unsigned int gotNbArmies = atts.value("nbArmies").toInt();
     country->nbArmies(gotNbArmies);
     
-//     unsigned int gotNbAddedArmies;
-//     std::istringstream issNbAddedArmies(atts.value("nbArmiesAdded").toUtf8().data());
-//     issNbArmies >> gotNbAddedArmies;
-//     country->nbAddedArmies(gotNbAddedArmies);
-
     kDebug() << "Storing" << atts.value("owner") << "as owner of" << atts.value("name");
     m_ownersMap.insert(atts.value("name"), atts.value("owner"));
   }
@@ -201,18 +174,12 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
     Player* player = m_game.automaton()->playerNamed(atts.value("player").toUtf8().data());
 //     kDebug() << "Got player pointer " << player << endl;
     m_goal->player(player);
-    unsigned int type;
-    std::istringstream issType(atts.value("type").toUtf8().data());
-    issType >> type;
+    unsigned int type = atts.value("type").toInt();
     m_goal->type(GameLogic::Goal::GoalType(type));
     m_goal->description(atts.value("description"));
-    unsigned int nbCountries;
-    std::istringstream issNbCountries(atts.value("nbCountries").toUtf8().data());
-    issNbCountries >> nbCountries;
+    unsigned int nbCountries = atts.value("nbCountries").toInt();
     m_goal->nbCountries(nbCountries);
-    unsigned int nbArmiesByCountry;
-    std::istringstream issNbArmiesByCountry(atts.value("nbArmiesByCountry").toUtf8().data());
-    issNbArmiesByCountry>> nbArmiesByCountry;
+    unsigned int nbArmiesByCountry = atts.value("nbArmiesByCountry").toInt();
     m_goal->nbArmiesByCountry(nbArmiesByCountry);
     
     m_inGoal = true;

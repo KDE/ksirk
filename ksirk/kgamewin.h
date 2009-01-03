@@ -170,14 +170,10 @@ public:
   QPointF determinePointDepartArena(GameLogic::Country *pays, int relativePos);
 
   void determinePointArrivee(
-      GameLogic::Country *paysAttaquant,
-      GameLogic::Country *paysDefenseur,
       QPointF& pointArriveeAttaquant,
       QPointF& pointArriveeDefenseur);
 
   void determinePointArriveeForArena(
-      GameLogic::Country *paysAttaquant,
-      GameLogic::Country *paysDefenseur,
       int relative,
       QPointF& pointArriveeAttaquant,
       QPointF& pointArriveeDefenseur);
@@ -187,8 +183,7 @@ public:
     * Initializes the sprites that will fight for the attacker and the
     * defender. Prepares them for moving
     */
-  void initCombatMovement(GameLogic::Country *attacker, 
-    GameLogic::Country *defender);
+  void initCombatMovement();
     
   /**
     * Prepare the fighting animation : replace the sprites sequence by the
@@ -209,11 +204,9 @@ public:
   /**
     * Replaces the sequence of destroyed cannon(s) by the explosion sequence.
     */
-  void animExplosion(int,GameLogic::Country *attacker, 
-    GameLogic::Country *defender);
+  void animExplosion(int who);
 
-  void animExplosionForArena(GameLogic::Country *attacker, 
-    GameLogic::Country *defender);
+  void animExplosionForArena();
 
   /**
     * When all the explosion sequence has been shown for all explosing
@@ -901,6 +894,7 @@ private Q_SLOTS:
 
 /* the unregister task finished */
 //   void slotUnregisterFinished();
+  void slotExit();
   
 private:
 

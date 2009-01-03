@@ -171,6 +171,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
 
   KsirkChatModel* chatModel = new KsirkChatModel(m_bottomDock,this);
   KsirkChatDelegate* chatDelegate = new KsirkChatDelegate(m_bottomDock);
+  // m_bottomDock is the KGameChat parent widget
   m_chatDlg = new KGameChat(m_automaton, 10000, m_bottomDock,chatModel,chatDelegate);
   connect(m_chatDlg,
           SIGNAL(signalReturnPressed(const QString&)),
@@ -296,7 +297,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
 
 KGameWindow::~KGameWindow()
 {
-  kDebug() << "~GameAutomaton";
+  kDebug();
   m_dirs = 0;
   m_automaton->setGameStatus( KGame::End );
   delete m_automaton; m_automaton = 0;
@@ -828,9 +829,10 @@ bool KGameWindow::attackEnd()
     if (newOldOwnerNbCountries == 0)
     {
       QString oldOwnerId = oldOwner->name();
-      KMessageBox::information(this,
+      showMessage(i18n("%1, you are defeated! Bye, bye...",oldOwner->name()), 10, ForceShowing);
+/*      KMessageBox::information(this,
                                i18n("%1, you are defeated! Bye, bye...",oldOwner->name()),
-                               i18n("KsirK - Game Over !"));
+                               i18n("KsirK - Game Over !"));*/
       if (m_automaton->isAdmin())
       {
         kDebug() << "Removing player " << oldOwner-> name();
@@ -841,7 +843,7 @@ bool KGameWindow::attackEnd()
         m_automaton->setMinPlayers(m_automaton->playerList()->count());
         m_automaton->setGameStatus(KGame::Run);
       }
-      if ( ( (m_automaton->useGoals())
+/*      if ( ( (m_automaton->useGoals())
              && ( (currentPlayer()->goal().type() == GameLogic::Goal::GoalPlayer)
              && ( (*currentPlayer()->goal().players().begin()) == oldOwnerId) ) )
            || (m_automaton->playerList()->count() == 1) )
@@ -852,7 +854,7 @@ bool KGameWindow::attackEnd()
         stream << currentPlayer()->id();
         m_automaton->sendMessage(buffer,Winner);
         return res;
-      }
+      }*/
     }
   }
   if (backGnd()->bgIsArena())
@@ -923,7 +925,7 @@ void KGameWindow::winner(const Player* player)
   connect((QObject*)restartDia->exitButton,
               SIGNAL(clicked()),
               this,
-              SLOT(close()));
+              SLOT(slotExit()));
 
   restartDia->show();
 }
@@ -1528,7 +1530,7 @@ bool KGameWindow::createWaitedPlayer(quint32 waitedPlayerId)
 
 void KGameWindow::distributeArmies()
 {
-//   kDebug() << "KGameWindow::distributeArmies";
+  kDebug() << "KGameWindow::distributeArmies";
   PlayersArray::iterator it = m_automaton->playerList()->begin();
   PlayersArray::iterator it_end = m_automaton->playerList()->end();
   for (; it != it_end; it++)
@@ -1863,23 +1865,28 @@ bool KGameWindow::isFightValid(const QPointF& point)
   Country* secondCountry = clickIn(point); 
   if  ( ( m_firstCountry == 0 ) || ( secondCountry == 0 ) )
   {
+    kDebug() << "There is no country here!";
     messageParts << I18N_NOOP("There is no country here!");
   }
   else if  ( m_firstCountry->owner() != currentPlayer() )
   {
+    kDebug() << "You are not the owner of the first country: "<< m_firstCountry->name();
     messageParts << I18N_NOOP("You are not the owner of the first country: %1 !")
             << m_firstCountry->name();
   }
   else if ( secondCountry->owner() == currentPlayer() )
   {
+    kDebug() << "You are the owner of the second country: " << secondCountry->name();
     messageParts << I18N_NOOP("You are the owner of the second country: %1 !") << secondCountry->name();
   }
   else if (m_firstCountry == secondCountry)
   {
+    kDebug() <<"You are trying to move armies from "<<m_firstCountry->name()<<" to itself ";
     messageParts << I18N_NOOP("You are trying to move armies from %1 to itself !") << m_firstCountry->name();
   }
   else if (!m_firstCountry->communicateWith(secondCountry))
   {
+    kDebug() << secondCountry-> name() << "is not a neighbour of " << secondCountry-> name();
     messageParts 
       << I18N_NOOP("%1 is not a neighbour of %2 !") 
       << secondCountry-> name() 
@@ -1887,6 +1894,7 @@ bool KGameWindow::isFightValid(const QPointF& point)
   }
   else 
   {
+    kDebug() << "Ready to fight !";
     messageParts << I18N_NOOP("Ready to fight !");
     res = true;
   }
@@ -1903,12 +1911,12 @@ int KGameWindow::setCurrentPlayerToFirst()
   }
   m_automaton->currentPlayer((Player*)(*m_automaton->playerList()->begin()));
 
-  if (currentPlayer() && currentPlayer()->isAI() && !currentPlayer()->isVirtual()
+/*  if (currentPlayer() && currentPlayer()->isAI() && !currentPlayer()->isVirtual()
       && !(static_cast<AIPlayer *>(currentPlayer())->isRunning()))
   {
           static_cast<AIPlayer *>(currentPlayer())->start();
-          kDebug() <<"setCurrentPlayerToFirst : etape 3";
-  }
+          kDebug() <<"setCurrentPlayerToFirst : step 3";
+  }*/
   m_frame->setFocus();
   return 0;
 }
@@ -1942,7 +1950,7 @@ int KGameWindow::setCurrentPlayerToNext(bool restartRunningAIs)
     m_automaton->currentPlayer((Player*)(*it));
   }
 
-  if ( restartRunningAIs && currentPlayer() && currentPlayer()-> isAI() && (!currentPlayer()->isVirtual()) )
+  if ( restartRunningAIs && currentPlayer() && currentPlayer()-> isAI() && (!currentPlayer()->isVirtual()) && !looped)
   {
     if ( ! (static_cast< AIPlayer* >(currentPlayer())-> isRunning()))
     {
@@ -1959,7 +1967,7 @@ int KGameWindow::setCurrentPlayerToNext(bool restartRunningAIs)
     m_nextPlayerAction->setEnabled(true);
   }
   
-//   kDebug() << "New current player is " << currentPlayer()->name() << " ; return value is " << looped;
+  kDebug() << "New current player is " << currentPlayer()->name() << " ; return value is " << looped;
   return looped;
 }
 
@@ -2026,7 +2034,7 @@ bool KGameWindow::attacker(const QPointF& point)
 
 unsigned int KGameWindow::attacked(const QPointF& point)
 {
-  kDebug() << point;
+  kDebug() << point << (void*)m_firstCountry << (void*)m_secondCountry;
   //if (currentPlayer()-> isAI()) return 3;
   // executed on the admin side only
   if (!m_automaton->isAdmin()) return 3;
@@ -2040,14 +2048,14 @@ unsigned int KGameWindow::attacked(const QPointF& point)
   if ( (m_firstCountry == NULL) || (m_secondCountry == NULL)
           || (m_firstCountry-> owner() != currentPlayer()) )
   {
-    //messageParts << I18N_NOOP("Nothing to attack !");
+    kDebug() << ("Nothing to attack !");
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     m_automaton->sendMessage(buffer,ClearHighlighting);
   }
   else if (!m_secondCountry-> owner())
   {
-    // messageParts << I18N_NOOP("Invalid attacked country.");
+    kDebug() << ("Invalid attacked country.");
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     m_automaton->sendMessage(buffer,ClearHighlighting);
@@ -2059,39 +2067,39 @@ unsigned int KGameWindow::attacked(const QPointF& point)
   }*/
   else if (m_firstCountry == m_secondCountry)
   {
-   // messageParts << I18N_NOOP("You are trying to attack %1 from itself !") << m_firstCountry-> name();
+   kDebug() << ("You are trying to attack %1 from itself !") << m_firstCountry-> name();
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     m_automaton->sendMessage(buffer,ClearHighlighting);
   }
   else if (!m_firstCountry-> communicateWith(m_secondCountry))
   {
-    //messageParts << I18N_NOOP("%1 is not a neighbour of %2 !") << m_secondCountry-> name() << m_firstCountry-> name();
+    kDebug() << ("%1 is not a neighbour of %2 !") << m_secondCountry-> name() << m_firstCountry-> name();
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     m_automaton->sendMessage(buffer,ClearHighlighting);
   }
   else if (m_firstCountry-> owner() == m_secondCountry-> owner())
   {
-    //messageParts << I18N_NOOP("%1! You cannot attack %2! It is yours!") << currentPlayer()-> name()
-           // << m_secondCountry-> name();
+    kDebug() << ("%1! You cannot attack %2! It is yours!") << currentPlayer()-> name()
+           << m_secondCountry-> name();
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     m_automaton->sendMessage(buffer,ClearHighlighting);
   }
   else if (m_firstCountry-> owner() != currentPlayer()) 
   {
-    //messageParts << I18N_NOOP("%1 ! You are not the owner of %2!") << currentPlayer()-> name() << m_firstCountry-> name();
+    kDebug() << ("%1 ! You are not the owner of %2!") << currentPlayer()-> name() << m_firstCountry-> name();
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     m_automaton->sendMessage(buffer,ClearHighlighting);
   }
   else if (m_firstCountry->nbArmies() - currentPlayer()->getNbAttack() < 1)
   {
-   /* messageParts
-      << I18N_NOOP("%1, you have to keep one army to defend %2.") 
+   kDebug()
+      << ("%1, you have to keep one army to defend %2.")
       << m_firstCountry->owner()-> name()
-      << m_firstCountry-> name();*/
+      << m_firstCountry-> name();
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     m_automaton->sendMessage(buffer,ClearHighlighting);
@@ -2110,10 +2118,10 @@ unsigned int KGameWindow::attacked(const QPointF& point)
     }
     m_automaton->sendMessage(buffer,SecondCountry);
 
-    /* messageParts
-        << I18N_NOOP("%1, with how many armies do you defend %2 ?")
+    kDebug()
+        << ("%1, with how many armies do you defend %2 ?")
         << m_secondCountry->owner()-> name()
-        << m_secondCountry-> name();*/
+        << m_secondCountry-> name();
     QByteArray buffer2;
     QDataStream stream2(&buffer2, QIODevice::WriteOnly);
     stream2 << m_secondCountry->owner()->name();
@@ -2380,10 +2388,13 @@ bool KGameWindow::nextPlayerRecycling()
 {
   kDebug();
   m_nextPlayerAction->setEnabled(false);
-  if ( currentPlayer() && currentPlayer()-> getNbAvailArmies() > 0
-      && !currentPlayer()->isVirtual() && !currentPlayer()->isAI())
+  if ( currentPlayer() && currentPlayer()-> getNbAvailArmies() > 0)
   {
-    KMessageBox::sorry(0, i18n("You must distribute\nall your armies"), i18n("KsirK"));
+    kDebug() << "You must distribute all your armies";
+    if (!currentPlayer()->isVirtual() && !currentPlayer()->isAI())
+    {
+      KMessageBox::sorry(0, i18n("You must distribute\nall your armies"), i18n("KsirK"));
+    }
     return false;
   }
   else
@@ -2422,7 +2433,7 @@ bool KGameWindow::nextPlayerRecycling()
   */
 bool KGameWindow::nextPlayerNormal()
 {
-  kDebug();
+  kDebug() << " (current is" << currentPlayer()->name()<<")";
   if (setCurrentPlayerToNext())
   {
     distributeArmies();
@@ -2612,14 +2623,11 @@ AnimSprite* KGameWindow::simultaneousAttack(int nb, FightType state)
   kDebug() << nb << state << relativePosInArenaAttack << relativePosInArenaDefense;
   AnimSprite* res;
 
-  //determinePointArrivee(m_firstCountry, m_secondCountry,pointAttaquant,pointDefenseur);
-
   if (state == Attack)
   {
     QPointF pointAttaquant(0,0);
     QPointF pointDefenseur(0,0);
-    determinePointArriveeForArena(firstCountry(), secondCountry(),
-        relativePosInArenaAttack, pointAttaquant,pointDefenseur);
+    determinePointArriveeForArena(relativePosInArenaAttack, pointAttaquant,pointDefenseur);
 
     kDebug() << "****point att****" << pointAttaquant;
 
@@ -2632,7 +2640,7 @@ AnimSprite* KGameWindow::simultaneousAttack(int nb, FightType state)
   {
     QPointF pointAttaquant(0,0);
     QPointF pointDefenseur(0,0);
-    determinePointArriveeForArena(secondCountry(), firstCountry(),
+    determinePointArriveeForArena(/*secondCountry(), firstCountry(),*/
       relativePosInArenaDefense, pointDefenseur, pointAttaquant);
 
     kDebug() << "****point def****" << pointAttaquant;

@@ -559,7 +559,7 @@ void KRightDialog::clearLayout()
     delete buttonStopDefense;
     buttonStopDefense = 0;
   }
-  if(mainLayout->indexOf(bas)!=-1)
+  if(bas != 0 && mainLayout->indexOf(bas)!=-1)
   {
     mainLayout->removeWidget(bas);
     delete bas;

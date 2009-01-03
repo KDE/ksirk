@@ -303,6 +303,7 @@ public:
   /** If the game use goals, return true else (all players have to conquier the 
     * world) return false. */
   inline bool useGoals() {return m_useGoals;}
+  inline void setUseGoals(bool value) {m_useGoals = value;}
   
   //@{
   /** Accessors to the number of players of this game. */
@@ -501,6 +502,8 @@ private:
   void activateNeededAIPlayers();
 
   void resetPlayersDistributionData();
+
+  void actionNextPlayer();
   
   GameState m_state;
 //   KGameProperty< GameState > m_state;

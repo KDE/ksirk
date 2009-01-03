@@ -57,7 +57,7 @@ public:
           GameAutomaton* game );
 
   /** Default destructor. */
-  virtual ~AIPlayer() {}
+  virtual ~AIPlayer();
 
   /**
     * The idendification of the player. Overwrite this in
@@ -140,7 +140,6 @@ protected: // Private attributes
     
   public:
     MyThread(AIPlayer& p) : me(p) {}
-    void mssleep ( unsigned long msecs ) {QThread::msleep(msecs);}
     void setStopMe ( bool value ) { stopMe = value; }
   private:
     /** indicates to the thread if the run method should return */
@@ -208,6 +207,7 @@ private: // Private methods
   /** Starts the timer of this player that will make it "think" all 200 ms. */
   void run();
 
+  void requestAck();
 };
 
 } // closing namespace GameLogic

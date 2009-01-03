@@ -95,7 +95,7 @@ void AnimSprite::repaint()
 
 void AnimSprite::setLook(TDir newLook)
 {
-  kDebug();
+//   kDebug();
   if (newLook != look)
   {
 //        kDebug()<<"setLook : " << newLook << ")" << endl;

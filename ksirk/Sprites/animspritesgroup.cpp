@@ -50,11 +50,12 @@ void AnimSpritesGroup::changeTarget(QObject* target, const char* slot)
 
 void AnimSpritesGroup::clear()
 {
-  kDebug();
+  kDebug() << size();
   disconnect(this,SIGNAL(arrived(AnimSpritesGroup*)),m_target,m_slot);
   m_target = 0; 
   m_slot = 0;
   m_numberArrived = 0;
+  hideAndRemoveAll();
   AnimSpritesList<AnimSprite>::clear();
 }
 
