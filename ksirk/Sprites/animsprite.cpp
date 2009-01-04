@@ -670,7 +670,6 @@ void AnimSprite::animate()
     nextFrame();
   }
   //   kDebug() <<"finished for " << (void*)this << endl;
-  
 }
 
 void AnimSprite::setAnimated(unsigned int numberOfShots)

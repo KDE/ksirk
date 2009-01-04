@@ -951,10 +951,14 @@ void KGameWindow::slotWindowDef2()
 void KGameWindow::slotNewGameOK(unsigned int nbPlayers, const QString& skin, unsigned int nbNetworkPlayers, bool useGoals)
 {
   kDebug() << nbPlayers << skin << nbNetworkPlayers << useGoals;
+  m_automaton->setGameStatus(KGame::End);
+  m_automaton->removeAllPlayers();
+
   showMap();
   m_newPlayersNumber = nbPlayers;
   m_automaton->setUseGoals(useGoals);
-  m_automaton->state(m_stateBeforeNewGame);
+  m_automaton->state(GameLogic::GameAutomaton::INIT);
+  m_automaton->savedState(GameLogic::GameAutomaton::INVALID);
   m_automaton->setNetworkPlayersNumber(m_automaton->networkGameType()==GameAutomaton::None?0:nbNetworkPlayers);
   m_automaton->finishSetupPlayersNumberAndSkin(skin, m_automaton->networkGameType(), nbPlayers);
 
@@ -969,6 +973,7 @@ void KGameWindow::slotNewGameKO()
   kDebug() << m_stateBeforeNewGame << m_stackWidgetBeforeNewGame;
   m_automaton->state(m_stateBeforeNewGame);
   m_centralWidget->setCurrentIndex(m_stackWidgetBeforeNewGame);
+  m_automaton->setGameStatus(KGame::Run);
 }
 
 void KGameWindow::slotConnected()

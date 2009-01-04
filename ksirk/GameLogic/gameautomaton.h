@@ -399,6 +399,8 @@ public:
 
   bool joinJabberGame(const QString& nick);
 
+  void removeAllPlayers();
+  
 Q_SIGNALS:
   void newJabberGame(const QString&, int, const QString&);
     

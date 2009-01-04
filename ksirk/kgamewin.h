@@ -155,6 +155,8 @@ public:
     * Loads a new skin.
     */
   void newSkin(const QString& onuDefinitionFileName = "");
+
+  void setStateBeforeNewGame(GameLogic::GameAutomaton::GameState state) {m_stateBeforeNewGame = state;}
   
 /************** METHODS BELOW ARE DEFINED IN gestionSprites.cpp **************/
   /**

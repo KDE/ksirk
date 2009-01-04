@@ -492,14 +492,6 @@ QPixmap KGameWindow::getDice(DiceColor color, int num)
   else {return m_dices[color][num-1];}
 }
 
-// void KGameWindow::resizeEvent ( QResizeEvent * event )
-// {
-//   if (m_frame!=0)
-//   {
-//     m_frame->fitInView(m_backGnd_world, Qt::KeepAspectRatio);
-//   }
-// }
-
 void KGameWindow::newSkin(const QString& onuFileName)
 {
   kDebug() << onuFileName;
@@ -2740,23 +2732,15 @@ void KGameWindow::cancelShiftSource()
 
 bool KGameWindow::actionNewGame(GameAutomaton::NetworkGameType socket)
 {
-//   kDebug() << "KGameWindow::actionNewGame()";
+  kDebug();
   if  ( ( m_automaton->playerList()->count() == 0 ) ||
   ( isMyState(GameLogic::GameAutomaton::GAME_OVER)  ) ||
         (KMessageBox::warningContinueCancel(this,i18n("Do you really want to end your current game and start a new one ?"),i18n("New game confirmation"),KStandardGuiItem::yes()) == KMessageBox::Continue ) )
 
   {
-    // @todo if new game is canceled, removed buttons should be displayed again
-/*    if (!(m_automaton->playerList()->isEmpty()))
-    {
-      m_automaton->playerList()->clear();
-      m_automaton->currentPlayer(0);
-      kDebug() << "  playerList size = " << m_automaton->playerList()->count();
-    }
-    theWorld()->reset();*/
-    m_automaton->setGameStatus(KGame::End);
+/*    m_automaton->setGameStatus(KGame::End);
     m_automaton->state(GameLogic::GameAutomaton::INIT);
-    m_automaton->savedState(GameLogic::GameAutomaton::INVALID);
+    m_automaton->savedState(GameLogic::GameAutomaton::INVALID);*/
     setupPlayers(socket);
 //     return (setupPlayers());
   }
@@ -3308,6 +3292,8 @@ void KGameWindow::setupPopupMessage()
 
 bool KGameWindow::newGameDialog(const QString& skin, bool networkGame)
 {
+  kDebug() << "state is" << m_automaton->stateName();
+  m_automaton->setGameStatus( KGame::Pause );
   m_stateBeforeNewGame = m_automaton->state();
   m_automaton->state(GameAutomaton::STARTING_GAME);
   m_newGameDialog->init(m_automaton, skin, networkGame);

@@ -252,7 +252,7 @@ Player* GameAutomaton::getAnyLocalPlayer()
 GameAutomaton::GameState GameAutomaton::run()
 {
 //   kDebug() << "(KGame running=" <<  (gameStatus()==KGame::Run) << ")" << endl;
-  if (m_game == 0)
+  if (m_game == 0 || gameStatus() == KGame::Pause)
   {
     QTimer::singleShot(200, this, SLOT(run()));
     return m_state;
@@ -1512,7 +1512,8 @@ void GameAutomaton::slotPlayerJoinedGame(KPlayer* player)
 bool GameAutomaton::startGame()
 {
   kDebug() << stateName() << "nb players = " << playerList()->count() << " / " << maxPlayers() << endl;
-//   kDebug() << "  state is " << GameStateNames[m_state] << endl;
+  m_aicannotrunhack = true;
+  //   kDebug() << "  state is " << GameStateNames[m_state] << endl;
 //   kDebug() << "  saved state is " << GameStateNames[m_savedState] << endl;
   if (isAdmin() && int(playerList()->count()) == maxPlayers()
       && gameStatus()!=KGame::Run)
@@ -1552,7 +1553,6 @@ bool GameAutomaton::startGame()
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     sendMessage(buffer,FinalizePlayers);
 
-    m_aicannotrunhack = true;
     kDebug() << "Setting game status to Run" << endl;
     setGameStatus(KGame::Run);
 //     m_game->initTimer();
@@ -1883,7 +1883,7 @@ void GameAutomaton::firstCountriesDistribution()
 
 void GameAutomaton::countriesDistribution()
 {
-//   kDebug() << "KGameWindow::countriesDistribution" << endl;
+  kDebug();
   unsigned int initialNbArmies;
   QList< int > vect;
   QMap<QString,unsigned int> distributedCountriesNumberMap;
@@ -1912,6 +1912,7 @@ void GameAutomaton::countriesDistribution()
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     stream << (m_game->theWorld()->getCountries().at(*it)->name()) << currentPlayer()-> name();
+    kDebug() << (m_game->theWorld()->getCountries().at(*it)->name()) << currentPlayer()-> name();
     distributedCountriesNumberMap[currentPlayer()-> name()] = distributedCountriesNumberMap[currentPlayer()-> name()]+1;
     sendMessage(buffer,CountryOwner);
     //m_game->theWorld()->getCountries().at(*it)-> owner(currentPlayer());
@@ -1994,7 +1995,15 @@ void GameAutomaton::explosionFinished()
   kDebug() << endl;
   if (isAdmin())
   {
-    state(FIGHT_BRINGBACK);
+    switch (gameStatus())
+    {
+      case KGame::Pause:
+        m_game->setStateBeforeNewGame(FIGHT_BRINGBACK);
+        break;
+      case KGame::Run:;
+      default:
+        state(FIGHT_BRINGBACK);
+    }
   }
 }
 
@@ -2689,7 +2698,16 @@ void GameAutomaton::actionNextPlayer()
   }
 }
 
-
+void GameAutomaton::removeAllPlayers()
+{
+  kDebug();
+  m_currentPlayer = "";
+  foreach (KPlayer*p, *playerList())
+  {
+    delete p;
+  }
+  playerList()->clear();
+}
 
 } // closing namespace GameLogic
 } // closing namespace Ksirk

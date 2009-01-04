@@ -76,6 +76,7 @@ AIPlayer :: AIPlayer(
 AIPlayer::~AIPlayer()
 {
   kDebug() << name();
+  m_thread.terminate();
   m_thread.wait();
 }
 
@@ -491,8 +492,10 @@ void AIPlayer::placeArmiesAction()
     if (receiver == 0)
     {
       QString msg = i18n("Error - No receiving country selected while computer player %1 had still %2 armies to place. This is bug probably #2232 at www.gna.org.", Player::name(), getNbAvailArmies());
+      kError() << msg;
       KMessageBox::error(0, msg, i18n("Fatal Error"));
       m_thread.exit();
+      m_thread.wait();
     }
     kDebug() << "Placing an army in " << receiver->name() 
         << " ; point=" << receiver->centralPoint() << endl;
