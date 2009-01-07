@@ -33,7 +33,8 @@
 #include <kgame/kgame.h>
 #include <kgame/kgameproperty.h>
 
-#include <qstring.h>
+#include <QString>
+#include <QMutex>
 
 namespace Ksirk
 {
@@ -185,7 +186,7 @@ public:
     * @param ack an id to acknowledge if it is the waited one
     * @return true if the ack received was the waited one; false otherwise.
     */
-  bool acknowledge(unsigned int ack);
+  bool acknowledge(const QString& ack);
 
   void reset();
 
@@ -241,12 +242,10 @@ protected:
     */
   QString m_delayedInitNationName;
 
-  /** Used to transmit unique ids and request for an acknowledgment
-    * of their reception. */
-  static unsigned int m_uid;
+  QString m_waitedAck;
 
-  unsigned int m_waitedAck;
-
+  QMutex m_waitedAckMutex;
+  
 private:
   void setFlag();
   
