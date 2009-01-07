@@ -35,13 +35,15 @@
 #include <kdebug.h>
 #include <klocale.h>
 #include <kmessagebox.h>
+#include <QUuid>
+#include <QMutexLocker>
 
 
 /* Includes for the STL */
-#include <utility>
-#include <map>
+// #include <utility>
+// #include <map>
 
-#include <stdlib.h>
+// #include <stdlib.h>
 
 namespace Ksirk
 {
@@ -98,7 +100,7 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
   {
     return;
   }
-  if (m_waitedAck != 0)
+  if (!m_waitedAck.isEmpty())
   {
     kDebug() << Player::name() << " waiting to receive ack " << m_waitedAck << endl;
     return;
@@ -192,6 +194,7 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
       default :;
 //         kDebug() << "OTHER STATE:" << state << " "  << name() << endl;
     }
+    requestAck();
     if (m_game-> currentPlayer() != this)
       m_actionWaitingStart = false;
   }
@@ -421,7 +424,7 @@ bool AIPlayer::attackAction()
       m_thread.exit();
   }
   aiPlayerIO()->sendInput(stream3,true);
-  requestAck();
+//   requestAck();
 
   kDebug() << "AIPlayer " << Player::name()  << " : attackAction : "  << m_src-> name() << " " << m_dest-> name()
     << " " << nbAttack << endl;
@@ -472,7 +475,7 @@ bool AIPlayer::moveArmiesAction()
   QDataStream stream2(&buffer2, QIODevice::WriteOnly);
   stream2 << QString("actionLButtonUp") << odest->centralPoint();
   aiPlayerIO()->sendInput(stream2,true);
-  requestAck();
+//   requestAck();
   
   kDebug() << "AIPlayer ****************" << Player::name()  << " : moveAction : "  << osrc-> name() << " " << odest-> name() << endl;
 
@@ -504,7 +507,7 @@ void AIPlayer::placeArmiesAction()
     stream << QString("actionLButtonDown") << receiver->centralPoint();
     aiPlayerIO()->sendInput(stream,true);
 
-    requestAck();
+//     requestAck();
   }
   else if (m_game->state() != GameAutomaton::INTERLUDE)
   {
@@ -517,11 +520,9 @@ void AIPlayer::placeArmiesAction()
   {
     if (!m_hasVoted)
     {
-      QByteArray buffer;
-      QDataStream stream(&buffer, QIODevice::WriteOnly);
-      QPointF point;
-      stream << QString("slotRecyclingFinished") << point;
-      aiPlayerIO()->sendInput(stream,true);
+      kDebug() << Player::name()  << "Voting for recycling finished" << endl;
+      QPointF p;
+      m_game->gameEvent( "actionRecyclingFinished", p );
       m_hasVoted = true;
     }
   }
@@ -542,8 +543,9 @@ void AIPlayer::chooseWetherToRecycle()
       QByteArray buffer;
       QDataStream stream(&buffer, QIODevice::WriteOnly);
       QPointF point;
-      stream << QString("slotRecyclingFinished") << point;
-      aiPlayerIO()->sendInput(stream,true);
+      m_game->gameEvent( "actionRecyclingFinished", point );
+/*      stream << QString("slotRecyclingFinished") << point;
+      aiPlayerIO()->sendInput(stream,true);*/
       m_hasVoted = true;
     }
     else
@@ -589,7 +591,7 @@ void AIPlayer::chooseInvasionAction()
   stream << QString("actionInvasionFinished") << point;
   stop();
   aiPlayerIO()->sendInput(stream,true);
-  requestAck();
+//   requestAck();
 }
 
 /**
@@ -628,7 +630,7 @@ void AIPlayer::chooseDefenseAction()
     }
     stop();
     aiPlayerIO()->sendInput(stream,true);
-    requestAck();
+//     requestAck();
   }
 }
 
@@ -643,7 +645,7 @@ void AIPlayer::nextPlayerAction()
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   stream << QString("actionNextPlayer") << point;
   aiPlayerIO()->sendInput(stream,true);
-  requestAck();
+//   requestAck();
   stop();
 }
 
@@ -710,12 +712,13 @@ AIPlayerIO* AIPlayer::aiPlayerIO()
 
 void AIPlayer::requestAck()
 {
-  m_waitedAck = ++m_uid;
+  QMutexLocker locker(&m_waitedAckMutex);
+  m_waitedAck = QUuid::createUuid().toString();
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
-  QPointF p(m_waitedAck, m_waitedAck);
+  QPointF p;
   kDebug() << name() << " sending a request for ack " << m_waitedAck << endl;
-  stream << QString("requestForAck") << p;
+  stream << QString("requestForAck") << p << m_waitedAck;
   aiPlayerIO()->sendInput(stream,true);
 }
 

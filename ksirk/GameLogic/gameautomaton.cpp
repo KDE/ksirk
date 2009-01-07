@@ -1007,7 +1007,8 @@ void GameAutomaton::skin(const QString& newSkin)
 bool GameAutomaton::playerInput(QDataStream &msg, KPlayer* player)
 {
   kDebug();
-  if (player->isVirtual())
+//   if (player->isVirtual())
+  if (!isAdmin())
   {
 //     kDebug() << "Network player: nothing to do" << endl;
     return false;
@@ -1046,6 +1047,7 @@ bool GameAutomaton::playerInput(QDataStream &msg, KPlayer* player)
     m_game->slotMove();
   else if (action == "slotRecyclingFinished")
     m_game->slotRecyclingFinished();
+    
   else if (action == "actionInvade10")
     m_game->slotInvade10();
   else if (action == "actionInvade5")
@@ -1062,26 +1064,24 @@ bool GameAutomaton::playerInput(QDataStream &msg, KPlayer* player)
     m_game->slotNextPlayer();
   else if (action == "requestForAck")
   {
-    kDebug() << "acknowledging " << point.x() << " / " << m_game->frame()->mapFromScene(point).x() << endl;
-    acknowledge(p, point.toPoint().x());
+    QString ack;
+    msg >> ack;
+    kDebug() << "acknowledging " << ack;
+    if (p->isVirtual())
+    {
+      kDebug() << p->name() << "is virtual; sending message";
+      QByteArray buffer;
+      QDataStream stream(&buffer, QIODevice::WriteOnly);
+      stream << p->id() << ack;
+      sendMessage(buffer,Acknowledge);
+    }
+    else
+    {
+      kDebug() << p->name() << "is local; acknowledging";
+      p->acknowledge(ack);
+    }
   }
   return false;
-}
-
-void GameAutomaton::acknowledge(Player* p, unsigned int ack)
-{
-  kDebug() << "("<<p->name()<<","<<ack<<")"<<endl;
-  if (p->isVirtual())
-  {
-    QByteArray buffer;
-    QDataStream stream(&buffer, QIODevice::WriteOnly);
-    stream << p->id() << ack;
-    sendMessage(buffer,Acknowledge);
-  }
-  else
-  {
-    p->acknowledge(ack);
-  }
 }
 
 // Create an IO device for the player. We could create any
@@ -2084,7 +2084,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   quint32 nbCountries;
   Country* country;
   quint32 msgId;
-  quint32 ack;
+  QString ack;
   QString msg;
   Goal goal(this);
   QString playersNames;
@@ -2562,10 +2562,13 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     stream >> m_nbPlayers;
     break;
   case Acknowledge:
-      kDebug() << "Got message Acknowledge" << endl;
       stream >> playerId;
       stream >> ack;
-      acknowledge(dynamic_cast<Player*>(findPlayer(playerId)), ack);
+      if (!isAdmin() && !dynamic_cast<Player*>(findPlayer(playerId))->isVirtual())
+      {
+        kDebug() << "Got message Acknowledge" << playerId << ack;
+        dynamic_cast<Player*>(findPlayer(playerId))->acknowledge(ack);
+      }
     break;
   case DisplayGoals:
       kDebug() << "Got message DisplayGoals" << endl;

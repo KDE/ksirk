@@ -499,8 +499,6 @@ private:
 
   void finalizePlayers();
   
-  void acknowledge(Player* player, unsigned int ack);
-
   void activateNeededAIPlayers();
 
   void resetPlayersDistributionData();

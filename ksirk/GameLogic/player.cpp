@@ -36,8 +36,6 @@ namespace Ksirk
 namespace GameLogic
 {
 
-unsigned int Player::m_uid = 0;
-
 Player::Player(
     GameAutomaton* automaton,
     const QString& playerName, 
@@ -48,7 +46,7 @@ Player::Player(
   m_nation(nation),
   m_goal(automaton),
   m_delayedInitNationName(""),
-  m_waitedAck(0),
+  m_waitedAck(""),
   m_flag(0)
 {
   kDebug() << "Player constructor" << endl;
@@ -385,11 +383,13 @@ QList<Country*> Player::countries() const
   return list;
 }
 
-bool Player::acknowledge(unsigned int ack)
+bool Player::acknowledge(const QString& ack)
 {
+  QMutexLocker locker(&m_waitedAckMutex);
+  
   if (ack == m_waitedAck)
   {
-    m_waitedAck = 0;
+    m_waitedAck = "";
     kDebug() << ack << true;
     return true;
   }
