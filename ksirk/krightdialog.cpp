@@ -412,6 +412,9 @@ void KRightDialog::displayFightResult(int A1=0, int A2=0, int A3=0, int D1=0, in
 {
   kDebug();
 
+  QMovie* movie = loadingLabel->movie();
+  delete movie;
+  
   loadingLabel->clear();
   infoProcess->clear();
 
@@ -573,6 +576,9 @@ void KRightDialog::clearLayout()
   if (milieu2 != 0)
   {
     mainLayout->removeWidget(milieu2);
+    QMovie* movie = loadingLabel->movie();
+    loadingLabel->clear();
+    delete movie;
     delete loadingLabel;
     delete infoProcess;
     delete milieu2;
