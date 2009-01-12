@@ -110,8 +110,10 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   QByteArray buffer2;
   QDataStream stream2(&buffer2, QIODevice::WriteOnly);
-  if ( (m_game-> currentPlayer() == this) || (state == GameLogic::GameAutomaton::WAITDEFENSE && (m_game-> currentPlayer() != this))
-       ||  state == GameLogic::GameAutomaton::WAIT_RECYCLING)
+  if ( (m_game-> currentPlayer() == this)
+    || (state == GameLogic::GameAutomaton::WAITDEFENSE && (m_game-> currentPlayer() != this))
+    ||  (state == GameLogic::GameAutomaton::WAIT_RECYCLING
+    && m_game-> currentPlayer()->isVirtual() ) )
   {
     kDebug() << name()  << " : choosing my action" << endl;
     switch (state)
@@ -516,15 +518,9 @@ void AIPlayer::placeArmiesAction()
     QPointF point;
     m_game->gameEvent("actionNextPlayer", point);
   }
-  else if (m_game->allLocalPlayersComputer())
+  else
   {
-    if (!m_hasVoted)
-    {
-      kDebug() << Player::name()  << "Voting for recycling finished" << endl;
-      QPointF p;
-      m_game->gameEvent( "actionRecyclingFinished", p );
-      m_hasVoted = true;
-    }
+    chooseWetherToRecycle();
   }
   
 }
@@ -534,18 +530,14 @@ void AIPlayer::placeArmiesAction()
  */
 void AIPlayer::chooseWetherToRecycle() 
 {
-  kDebug() << "AIPlayer::chooseWetherToRecycle" << Player::name() << endl;
+  kDebug() << Player::name();
   if (m_game->allLocalPlayersComputer())
   {
     if (!m_hasVoted)
     {
       kDebug() << "Voting for end of recycling" << endl;
-      QByteArray buffer;
-      QDataStream stream(&buffer, QIODevice::WriteOnly);
-      QPointF point;
-      m_game->gameEvent( "actionRecyclingFinished", point );
-/*      stream << QString("slotRecyclingFinished") << point;
-      aiPlayerIO()->sendInput(stream,true);*/
+      QPointF p;
+      m_game->gameEvent( "actionRecyclingFinished", p );
       m_hasVoted = true;
     }
     else

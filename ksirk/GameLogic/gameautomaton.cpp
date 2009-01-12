@@ -201,6 +201,10 @@ GameAutomaton::GameAutomaton() :
 GameAutomaton::~GameAutomaton()
 {
   kDebug();
+  foreach (Goal* goal, m_goals)
+  {
+    delete goal;
+  }
 }
 
 void GameAutomaton::init(KGameWindow* gw)
@@ -455,6 +459,7 @@ GameAutomaton::GameState GameAutomaton::run()
     }
     else if (event == "actionRecyclingFinished") 
     {
+      kDebug() << "actionRecyclingFinished";
       QByteArray buffer;
       QDataStream stream(&buffer, QIODevice::WriteOnly);
 //       stream << currentPlayer()->name();
@@ -465,13 +470,14 @@ GameAutomaton::GameState GameAutomaton::run()
       {
         if ( !((Player*)(*it))->isVirtual() )
         {
+          kDebug() << "Local:" << ((Player*)(*it))->name();
           nbLocal++;
         }
       }
+      kDebug() << "Nb Local:" << nbLocal;
       stream << nbLocal;
-      it = playerList()->begin();
-      it_end = playerList()->end();
-      for (; it != it_end; it++)
+
+      for (it = playerList()->begin(); it != it_end; it++)
       {
         if ( !((Player*)(*it))->isVirtual() )
         {
@@ -1022,47 +1028,51 @@ bool GameAutomaton::playerInput(QDataStream &msg, KPlayer* player)
   msg >> action >> point;
 
   kDebug() << " ======================================================="<<endl;
-  kDebug()  << "Player " << p->name() << " id=" << player->id() 
-    << " uid=" << player->userId() << " : " << action << " at " << point << endl;
-
-  if (action == "actionLButtonDown")
-    m_game->slotLeftButtonDown( point );
-  else if (action == "actionLButtonUp")
-    m_game->slotLeftButtonUp( point );
-  else if (action == "actionRButtonDown")
-    m_game->slotRightButtonDown( point );
-  else if (action == "actionRButtonUp")
-    m_game->slotRightButtonUp( point );
-  else if (action == "zoomInAction")
-    m_game->slotZoomIn();
-  else if (action == "zoomOutAction")
-    m_game->slotZoomOut();
-  else if (action == "actionAttack1")
-    m_game->slotAttack1();
-  else if (action == "actionAttack2")
-    m_game->slotAttack2();
-  else if (action == "actionAttack3")
-    m_game->slotAttack3();
-  else if (action == "actionMove")
-    m_game->slotMove();
-  else if (action == "slotRecyclingFinished")
-    m_game->slotRecyclingFinished();
-    
-  else if (action == "actionInvade10")
-    m_game->slotInvade10();
-  else if (action == "actionInvade5")
-    m_game->slotInvade5();
-  else if (action == "actionInvade1")
-    m_game->slotInvade1();
-  else if (action == "actionInvasionFinished")
-    m_game->slotInvasionFinished();
-  else if (action == "slotDefense1")
-    m_game->slotDefense1();
-  else if (action == "slotDefense2")
-    m_game->slotDefense2();
-  else if (action == "actionNextPlayer")
-    m_game->slotNextPlayer();
-  else if (action == "requestForAck")
+  kDebug()  << "Player " << p->name() << " id=" << player->id()
+  << " uid=" << player->userId() << " : " << action << " at " << point
+  << "current is" << currentPlayer()->name();
+  
+  if (p->name() == currentPlayer()->name()
+    || (m_state == WAITDEFENSE) )
+  {
+    if (action == "actionLButtonDown")
+      m_game->slotLeftButtonDown( point );
+    else if (action == "actionLButtonUp")
+      m_game->slotLeftButtonUp( point );
+    else if (action == "actionRButtonDown")
+      m_game->slotRightButtonDown( point );
+    else if (action == "actionRButtonUp")
+      m_game->slotRightButtonUp( point );
+    else if (action == "zoomInAction")
+      m_game->slotZoomIn();
+    else if (action == "zoomOutAction")
+      m_game->slotZoomOut();
+    else if (action == "actionAttack1")
+      m_game->slotAttack1();
+    else if (action == "actionAttack2")
+      m_game->slotAttack2();
+    else if (action == "actionAttack3")
+      m_game->slotAttack3();
+    else if (action == "actionMove")
+      m_game->slotMove();
+    else if (action == "slotRecyclingFinished")
+      m_game->slotRecyclingFinished();
+    else if (action == "actionInvade10")
+      m_game->slotInvade10();
+    else if (action == "actionInvade5")
+      m_game->slotInvade5();
+    else if (action == "actionInvade1")
+      m_game->slotInvade1();
+    else if (action == "actionInvasionFinished")
+      m_game->slotInvasionFinished();
+    else if (action == "slotDefense1")
+      m_game->slotDefense1();
+    else if (action == "slotDefense2")
+      m_game->slotDefense2();
+    else if (action == "actionNextPlayer")
+      m_game->slotNextPlayer();
+  }
+  if (action == "requestForAck")
   {
     QString ack;
     msg >> ack;

@@ -48,6 +48,7 @@ namespace GameLogic
 
 ONU::ONU(GameAutomaton* automaton,
   const QString& configFileName):
+  QObject(automaton),
   m_automaton(automaton),
   m_configFileName(configFileName),
   countries(),
@@ -74,7 +75,7 @@ ONU::ONU(GameAutomaton* automaton,
   m_font.foregroundColor = "black";
   m_font.backgroundColor = "white";
   
-  m_timerFast=new QTimer();		//instanciation of the timer 
+  m_timerFast=new QTimer(this);		//instanciation of the timer
   QObject::connect(m_timerFast,SIGNAL(timeout()), this, SLOT(changingZoom()));	//connect the timer to the good slot
   
   Sprites::SkinSpritesData::changeable().init();
