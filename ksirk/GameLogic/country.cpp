@@ -83,7 +83,6 @@ Country::~Country()
     m_flag = 0;
   }
   delete m_renderer;
-  delete m_highlighting;
 }
 
 void Country::reset()
@@ -307,6 +306,11 @@ const QString Country::name() const
   return (m_name);
 }
 
+const QString Country::i18name() const
+{
+  return (i18n(m_name.toUtf8().data()));
+}
+
 const QPointF& Country::anchorPoint() const
 {
   return (m_anchorPoint);
@@ -514,10 +518,6 @@ void Country::highlight(const QColor& color, qreal opacity)
   m_renderer->load(svg);
 
 //   kDebug() <<"loaded"<< endl;
-  if (m_highlighting != 0)
-  {
-    delete m_highlighting;
-  }
   m_highlighting = new QGraphicsSvgItem(m_automaton->game()->backGndWorld());
   m_highlighting->setSharedRenderer(m_renderer);
   m_highlighting->setElementId(m_name);

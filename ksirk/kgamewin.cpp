@@ -3192,12 +3192,12 @@ void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * 
   //init. main layout
   if (invasionType == Invasion)
   {
-    wSlideLayout->addWidget(new QLabel(i18n("You conquered <font color=\"blue\">%1</font> with <font color=\"red\">%2</font>!", defender->name(), attack->name())),0,0);
+    wSlideLayout->addWidget(new QLabel(i18n("You conquered <font color=\"blue\">%1</font> with <font color=\"red\">%2</font>!", defender->i18name(), attack->i18name())),0,0);
     wSlideLayout->addWidget(new QLabel(i18n("<br><i>Choose the number of invade armies.</i>")),1,0);
   }
   else if (invasionType == Moving)
   {
-    wSlideLayout->addWidget(new QLabel(i18n("You are moving armies from <font color=\"red\">%1</font> to <font color=\"blue\">%2</font>!", attack->name(), defender->name())),0,0);
+    wSlideLayout->addWidget(new QLabel(i18n("You are moving armies from <font color=\"red\">%1</font> to <font color=\"blue\">%2</font>!", attack->i18name(), defender->i18name())),0,0);
     wSlideLayout->addWidget(new QLabel(i18n("<br><i>Choose the number of moved armies.</i>")),1,0);
   }
 
@@ -3211,11 +3211,11 @@ void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * 
   center->addLayout(right);
 
   //init. left layout
-  left->addWidget(new QLabel("<b>"+attack->name()+"</b>"),Qt::AlignCenter);
+  left->addWidget(new QLabel("<b>"+attack->i18name()+"</b>"),Qt::AlignCenter);
   left->addWidget(m_nbLArmies,Qt::AlignCenter);
 
   //init. right layout
-  right->addWidget(new QLabel("<b>"+defender->name()+"</b>"),Qt::AlignCenter);
+  right->addWidget(new QLabel("<b>"+defender->i18name()+"</b>"),Qt::AlignCenter);
   right->addWidget(m_nbRArmies,Qt::AlignCenter);
 
   //val->setText(QString::number(invadeSlide->value()));
@@ -3226,7 +3226,7 @@ void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * 
 
   m_wSlide->setMainWidget(widget);
   
-  m_wSlide->setWindowTitle("Invasion");
+  m_wSlide->setWindowTitle(i18n("Invasion"));
   m_wSlide->setLayout(wSlideLayout);
   m_wSlide->setWindowModality(Qt::ApplicationModal);
   m_wSlide->show();
