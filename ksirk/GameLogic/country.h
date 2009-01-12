@@ -160,6 +160,11 @@ public:
     */
   const QString name() const;
 
+  /**
+    * Return the localized name of the country
+    */
+  const QString i18name() const;
+
   const QPointF& anchorPoint() const;
   /**
     * Return a point inside the country territory around which are drawn the 

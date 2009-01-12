@@ -306,6 +306,11 @@ const QString Country::name() const
   return (m_name);
 }
 
+const QString Country::i18name() const
+{
+  return (i18n(m_name.toUtf8().data()));
+}
+
 const QPointF& Country::anchorPoint() const
 {
   return (m_anchorPoint);
