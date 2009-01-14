@@ -1100,14 +1100,10 @@ bool KGameWindow::queryClose()
         return false;
     }
   }
-  PlayersArray::iterator it = m_automaton->playerList()->begin();
-  PlayersArray::iterator it_end = m_automaton->playerList()->end();
-  for (; it != it_end; it++)
+  hide();
+  while (!m_automaton->playerList()->isEmpty())
   {
-    if (static_cast<Player*>(*it)-> isAI())
-    {
-      (static_cast<AIPlayer*>(*it))-> stop();
-    }
+    delete m_automaton->playerList()->takeFirst();
   }
   return true;
 }
