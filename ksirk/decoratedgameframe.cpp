@@ -397,8 +397,8 @@ void DecoratedGameFrame::arenaState()
 void DecoratedGameFrame::attackAuto()
 {
   kDebug();
-  unsigned int firstCountryNbArmies =
-      m_automaton->game()->firstCountry()->nbArmies();
+  unsigned int firstCountryNbArmies = ( m_automaton!=0 && m_automaton->game()!=0 && m_automaton->game()->firstCountry()!=0 )
+      ? m_automaton->game()->firstCountry()->nbArmies() : 0 ;
   m_automaton->setAttackAuto(firstCountryNbArmies>0);
   if (firstCountryNbArmies > 3)
   {
