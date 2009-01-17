@@ -102,7 +102,7 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
   }
   if (!m_waitedAck.isEmpty())
   {
-    kDebug() << Player::name() << " waiting to receive ack " << m_waitedAck << endl;
+    kDebug() << Player::name() << " waiting to receive ack " << m_waitedAck;
     return;
   }
   QPointF point;
@@ -112,10 +112,9 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
   QDataStream stream2(&buffer2, QIODevice::WriteOnly);
   if ( (m_game-> currentPlayer() == this)
     || (state == GameLogic::GameAutomaton::WAITDEFENSE && (m_game-> currentPlayer() != this))
-    ||  (state == GameLogic::GameAutomaton::WAIT_RECYCLING
-    && m_game-> currentPlayer()->isVirtual() ) )
+    ||  (state == GameLogic::GameAutomaton::WAIT_RECYCLING && m_game-> currentPlayer()->isVirtual() ) )
   {
-    kDebug() << name()  << " : choosing my action" << endl;
+    kDebug() << name()  << " : choosing my action";
     switch (state)
     {
       case GameLogic::GameAutomaton::WAITDEFENSE :

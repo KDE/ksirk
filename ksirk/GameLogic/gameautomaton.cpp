@@ -850,39 +850,16 @@ GameAutomaton::GameState GameAutomaton::run()
     {
       kDebug() << "actionLButtonUp in WAIT1";
       m_game->secondCountryAt(point);
-
+      
       if (!currentPlayer()-> isAI())
       {
         if (m_game->isMoveValid(point) && m_game->firstCountry()->nbArmies() !=1)
         {
-//           if (m_game->firstCountry()->nbArmies() > 10)
-//           {
-//             m_game->frame()->getMove1Action()->setVisible(true);
-//             m_game->frame()->getMove5Action()->setVisible(true);
-//             m_game->frame()->getMove10Action()->setVisible(true);
-//           }
-//           else if (m_game->firstCountry()->nbArmies() > 5)
-//           {
-//             m_game->frame()->getMove1Action()->setVisible(true);
-//             m_game->frame()->getMove5Action()->setVisible(true);
-//             m_game->frame()->getMove10Action()->setVisible(false);
-//           }
-//           else
-//           {
-//             if (m_game->firstCountry()->nbArmies() > 1)
-//             {
-//               m_game->frame()->getMove1Action()->setVisible(true);
-//               m_game->frame()->getMove5Action()->setVisible(false);
-//               m_game->frame()->getMove10Action()->setVisible(false);
-//             }
-//           }
-//           m_game->frame()->getMoveContextMenu()->exec(QCursor::pos());
+          state(WAIT);
           kDebug() << "Sending MoveSlide";
           QByteArray buffer;
           QDataStream stream(&buffer, QIODevice::WriteOnly);
           sendMessage(buffer,MoveSlide);
-
-// m_game->slideInvade(m_game->firstCountry(), m_game->secondCountry());
         }
         else if (m_game->isFightValid(point)
                 && m_game->firstCountry()->nbArmies() != 1)
