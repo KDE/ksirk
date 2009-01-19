@@ -1208,8 +1208,8 @@ void KGameWindow::slotJabberGameCanceled(int previousIndex)
 
 void KGameWindow::slotExit()
 {
-  hide();
-  delete m_automaton;
+//   hide();
+//   delete m_automaton;
   close();
 }
 

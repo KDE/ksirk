@@ -1109,11 +1109,13 @@ bool KGameWindow::queryClose()
         return false;
     }
   }
-  hide();
+//   hide();
   disconnect(&m_timer,SIGNAL(timeout()),this,SLOT(evenementTimer()));
   disconnectMouse();
   m_mouseLocalisation = 0;
-  if (m_theWorld != 0)
+  m_automaton->setGameStatus(KGame::End);
+  
+/*  if (m_theWorld != 0)
   {
     delete m_theWorld;
     m_theWorld = 0;
@@ -1122,7 +1124,7 @@ bool KGameWindow::queryClose()
   {
     delete m_automaton->playerList()->takeFirst();
   }
-  delete m_automaton; m_automaton = 0;
+  delete m_automaton; m_automaton = 0;*/
   return true;
 }
 
