@@ -306,10 +306,8 @@ GameAutomaton::GameState GameAutomaton::run()
     if (m_game->actionOpenGame())
     {
       kDebug() << "opened" << endl;
-      #if KDE_IS_VERSION(3,4,0)
       if (dnssdAvailable())
         setDiscoveryInfo("_ksirk._tcp","wow");
-      #endif
       bool ok;
       m_port = KInputDialog::getInteger(
               i18n("KsirK - Network configuration"), 
