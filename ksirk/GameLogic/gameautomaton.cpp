@@ -35,8 +35,8 @@
 #include "Dialogs/joingame.h"
 #include "Jabber/kmessagejabber.h"
 
-#include <qlayout.h>
-#include <qspinbox.h>
+#include <QLayout>
+#include <QSpinBox>
 #include <QPixmap>
 #include <QMouseEvent>
 #include <QFile>
@@ -228,17 +228,6 @@ void GameAutomaton::state(GameAutomaton::GameState state)
   sendMessage(buffer,StateChange);
 }
 
-bool dnssdAvailable() {
-  QFile f("/var/run/mdnsd.pid");
-  if (!f.open(QIODevice::ReadOnly)) return false; // no pidfile
-  QByteArray line = f.readLine();
-  unsigned int pid = line.toUInt();
-  if (pid==0) return false; // not a pid
-  return (kill(pid,0)==0 || errno==EPERM);
-  // signal 0 only checks if process is running, mdnsd is probably owned 
-  // by 'nobody' so we will get EPERM, if mdnsd is not running error will be ESRCH
-}
-
 Player* GameAutomaton::getAnyLocalPlayer()
 {
   PlayersArray::iterator it = playerList()->begin();
@@ -310,10 +299,6 @@ GameAutomaton::GameState GameAutomaton::run()
     if (m_game->actionOpenGame())
     {
       kDebug() << "opened" << endl;
-      #if KDE_IS_VERSION(3,4,0)
-      if (dnssdAvailable())
-        setDiscoveryInfo("_ksirk._tcp","wow");
-      #endif
       bool ok;
       m_port = KInputDialog::getInteger(
               i18n("KsirK - Network configuration"), 

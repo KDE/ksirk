@@ -806,12 +806,8 @@ bool KGameWindow::attackEnd()
     {
       currentPlayer()-> incrNbCountries();
       oldOwner-> decrNbCountries();
-      QByteArray buffer;
-      QDataStream stream(&buffer, QIODevice::WriteOnly);
-      stream << currentPlayer()->id();
-      m_automaton->sendMessage(buffer,CheckGoal);
     }
-    
+
     m_secondCountry-> owner(currentPlayer());
     m_secondCountry-> nbArmies(1);
     m_firstCountry-> decrNbArmies();
@@ -851,6 +847,14 @@ bool KGameWindow::attackEnd()
         m_automaton->sendMessage(buffer,Winner);
 //         return res;
       }
+      else if (m_automaton->isAdmin())
+      {
+        QByteArray buffer;
+        QDataStream stream(&buffer, QIODevice::WriteOnly);
+        stream << currentPlayer()->id();
+        m_automaton->sendMessage(buffer,CheckGoal);
+      }
+      
     }
   }
   if (backGnd()->bgIsArena())
@@ -889,6 +893,7 @@ bool KGameWindow::attackEnd()
 
 void KGameWindow::winner(const Player* player)
 {
+  kDebug() << player->name();
   QString msg = "%1 won !";
   if (!player->isVirtual())
   {
