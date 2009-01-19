@@ -845,7 +845,7 @@ bool KGameWindow::attackEnd()
         QDataStream stream(&buffer, QIODevice::WriteOnly);
         stream << currentPlayer()->id();
         m_automaton->sendMessage(buffer,Winner);
-//         return res;
+        res = false;
       }
       else if (m_automaton->isAdmin())
       {
