@@ -25,6 +25,16 @@
       </item>
       <item>
        <widget class="QLineEdit" name="bonus" >
+        <property name="toolTip" >
+         <string>Number of bonus points when owning the full continent</string>
+        </property>
+        <property name="whatsThis" >
+         <string>Number of bonus points when owning the full continent.
+
+At the end of each turn a number of armies is distributed to each player. If one player owns all the countries of this continent, he/she gains this bonus.
+
+The bonus should be proportional to the continent's size and to the difficulty to conquer it or to keep it.</string>
+        </property>
         <property name="text" >
          <string/>
         </property>
@@ -37,13 +47,28 @@
     </item>
     <item>
      <widget class="KPushButton" name="selectcountriesbutton" >
+      <property name="toolTip" >
+       <string>Select the countries contained in this continent</string>
+      </property>
+      <property name="whatsThis" >
+       <string>Click here to select the countries contained in this continent. 
+
+A list of all the world's countries will be shown and you will be able to select the countries using the mouse and the Ctrl and Shift keys.</string>
+      </property>
       <property name="text" >
-       <string>Select Countries</string>
+       <string>Countries:</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QListWidget" name="countrieslist" />
+     <widget class="QListWidget" name="countrieslist" >
+      <property name="toolTip" >
+       <string>Continent's countries</string>
+      </property>
+      <property name="whatsThis" >
+       <string>This is the list of countries currently forming this continent.</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>

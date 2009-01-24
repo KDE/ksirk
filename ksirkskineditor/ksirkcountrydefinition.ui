@@ -25,6 +25,16 @@
       </item>
       <item row="0" column="1" >
        <widget class="QLineEdit" name="flagx" >
+        <property name="toolTip" >
+         <string>Flag's sprite top left point x-coordinate</string>
+        </property>
+        <property name="whatsThis" >
+         <string>Flag's sprite top left point x-coordinate. 
+
+This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
+
+This value will be automaticaly updated if you move the flag by drag and drop.</string>
+        </property>
         <property name="text" >
          <string/>
         </property>
@@ -45,6 +55,16 @@
       </item>
       <item row="0" column="3" >
        <widget class="QLineEdit" name="flagy" >
+        <property name="toolTip" >
+         <string>Flag's sprite top left point y-coordinate</string>
+        </property>
+        <property name="whatsThis" >
+         <string>Flag's sprite top left point y-coordinate. 
+
+This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
+
+This value will be automaticaly updated if you move the flag by drag and drop.</string>
+        </property>
         <property name="text" >
          <string/>
         </property>
@@ -59,6 +79,16 @@
       </item>
       <item row="1" column="1" >
        <widget class="QLineEdit" name="anchorx" >
+        <property name="toolTip" >
+         <string>Center of the highlighting x-coordinate</string>
+        </property>
+        <property name="whatsThis" >
+         <string>Center of the highlighting x-coordinate.
+
+This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
+
+This value will be automaticaly updated if you move the highlighting by drag and droping its cross icon.</string>
+        </property>
         <property name="text" >
          <string/>
         </property>
@@ -79,6 +109,16 @@
       </item>
       <item row="1" column="3" >
        <widget class="QLineEdit" name="anchory" >
+        <property name="toolTip" >
+         <string>Center of the highlighting y-coordinate</string>
+        </property>
+        <property name="whatsThis" >
+         <string>Center of the highlighting y-coordinate.
+
+This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
+
+This value will be automaticaly updated if you move the highlighting by drag and droping its cross icon.</string>
+        </property>
         <property name="text" >
          <string/>
         </property>
@@ -93,6 +133,18 @@
       </item>
       <item row="2" column="1" >
        <widget class="QLineEdit" name="centerx" >
+        <property name="toolTip" >
+         <string>Point around which the country name is drawn x-coordinate </string>
+        </property>
+        <property name="whatsThis" >
+         <string>Point around which the country name is drawn x-coordinate.
+
+Note that this point should be located inside the limits of the country on the map mask.
+
+This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
+
+This value will be automaticaly updated if you move the country name by drag and droping its target icon.</string>
+        </property>
         <property name="text" >
          <string/>
         </property>
@@ -113,6 +165,19 @@
       </item>
       <item row="2" column="3" >
        <widget class="QLineEdit" name="centery" >
+        <property name="toolTip" >
+         <string>Point around which the country name is drawn y-coordinate </string>
+        </property>
+        <property name="whatsThis" >
+         <string>Point around which the country name is drawn y-coordinate.
+
+Note that this point should be located inside the limits of the country on the map mask.
+
+This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
+
+This value will be automaticaly updated if you move the country name by drag and droping its target icon.
+</string>
+        </property>
         <property name="text" >
          <string/>
         </property>
@@ -127,6 +192,16 @@
       </item>
       <item row="3" column="1" >
        <widget class="QLineEdit" name="infantryx" >
+        <property name="toolTip" >
+         <string>Infantry's sprite top left point x-coordinate</string>
+        </property>
+        <property name="whatsThis" >
+         <string>Infantry's sprite top left point x-coordinate. 
+
+This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
+
+This value will be automaticaly updated if you move the infantry.</string>
+        </property>
         <property name="text" >
          <string/>
         </property>
@@ -147,6 +222,16 @@
       </item>
       <item row="3" column="3" >
        <widget class="QLineEdit" name="infantryy" >
+        <property name="toolTip" >
+         <string>Infantry's sprite top left point y-coordinate</string>
+        </property>
+        <property name="whatsThis" >
+         <string>Infantry's sprite top left point y-coordinate. 
+
+This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
+
+This value will be automaticaly updated if you move the infantry by drag and drop.</string>
+        </property>
         <property name="text" >
          <string/>
         </property>
@@ -161,6 +246,16 @@
       </item>
       <item row="4" column="1" >
        <widget class="QLineEdit" name="cavalryx" >
+        <property name="toolTip" >
+         <string>Cavalry's sprite top left point x-coordinate</string>
+        </property>
+        <property name="whatsThis" >
+         <string>Cavalry's sprite top left point x-coordinate. 
+
+This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
+
+This value will be automaticaly updated if you move the cavalry.</string>
+        </property>
         <property name="text" >
          <string/>
         </property>
@@ -181,6 +276,16 @@
       </item>
       <item row="4" column="3" >
        <widget class="QLineEdit" name="cavalryy" >
+        <property name="toolTip" >
+         <string>Cavalry's sprite top left point y-coordinate</string>
+        </property>
+        <property name="whatsThis" >
+         <string>Cavalry's sprite top left point y-coordinate. 
+
+This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
+
+This value will be automaticaly updated if you move the cavalry by drag and drop.</string>
+        </property>
         <property name="text" >
          <string/>
         </property>
@@ -205,6 +310,16 @@
       </item>
       <item row="5" column="3" >
        <widget class="QLineEdit" name="cannony" >
+        <property name="toolTip" >
+         <string>Cannon's sprite top left point y-coordinate</string>
+        </property>
+        <property name="whatsThis" >
+         <string>Cannon's sprite top left point y-coordinate. 
+
+This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
+
+This value will be automaticaly updated if you move the cannon by drag and drop.</string>
+        </property>
         <property name="text" >
          <string/>
         </property>
@@ -212,6 +327,16 @@
       </item>
       <item row="5" column="1" >
        <widget class="QLineEdit" name="cannonx" >
+        <property name="toolTip" >
+         <string>Cannon's sprite top left point x-coordinate</string>
+        </property>
+        <property name="whatsThis" >
+         <string>Cannon's sprite top left point x-coordinate. 
+
+This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
+
+This value will be automaticaly updated if you move the cannon.</string>
+        </property>
         <property name="text" >
          <string/>
         </property>
@@ -224,13 +349,28 @@
     </item>
     <item>
      <widget class="KPushButton" name="neighboursbutton" >
+      <property name="toolTip" >
+       <string>Select this country's neighbours</string>
+      </property>
+      <property name="whatsThis" >
+       <string>Click here to select this country's neighbours. 
+
+A list of all the world's countries will be shown and you will be able to select the countries using the mouse and the Ctrl and Shift keys.</string>
+      </property>
       <property name="text" >
        <string>Neighbours:</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QListWidget" name="neighbourslist" />
+     <widget class="QListWidget" name="neighbourslist" >
+      <property name="toolTip" >
+       <string>This country's neighbours</string>
+      </property>
+      <property name="whatsThis" >
+       <string>This is the list of countries currently considered as neighbours of this country.</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
