@@ -1,14 +1,27 @@
+Before KDE4.3:
+  * Correct Arena bugs
+  * Placement of sprites during fight in network games
+  * Add a Cancel button on the invasion slider
+  * Use widgets on graphics view for invasion slider ?
+  * Correct size of the right panel
+  * Refactor the right panel
+  * Don't show Invasion slider when game is won
+  * Rewrite AI code or at least correct most problems related in bug #170777. Volunteers wanted!
+  * Previous/Next in start new game as described in bug #170774
+  * Polish the skin editor (doc, contextual help, ...)
+  * Boost playing over Jabber
+   
 Before KDE4.2:
-  * add visual feedback for map scrolling
+  * [DONE] add visual feedback for map scrolling
 
 Before KDE4.1:
-  * With computer only players, first player is skipped when placing armies at 
+  * [DONE] With computer only players, first player is skipped when placing armies at 
     turn change
-  * Placement of the left firing cannon
-  * [BUG 162033] change size of "will display goal" dialog (kdelibs bug?)
-  * [HELP NEEDED] sprites should be enhanced
+  * [DONE] Placement of the left firing cannon
+  * [DONE][BUG 162033] change size of "will display goal" dialog (kdelibs bug?)
+  * [DONE by it-s][HELP NEEDED] sprites should be enhanced
   * [HELP NEEDED] max size of the window should be limited by the map size
-  * [HELP NEEDED] correct the layout of initial window (with main menu) when
+  * [DONE] correct the layout of initial window (with main menu) when
     resizing
   * [DONE] translate all remaining French strings in skins
   * [DONE] attack auto + defense auto does not work in network mode

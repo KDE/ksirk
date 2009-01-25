@@ -35,8 +35,8 @@
 #include "Dialogs/joingame.h"
 #include "Jabber/kmessagejabber.h"
 
-#include <qlayout.h>
-#include <qspinbox.h>
+#include <QLayout>
+#include <QSpinBox>
 #include <QPixmap>
 #include <QMouseEvent>
 #include <QFile>
@@ -201,6 +201,10 @@ GameAutomaton::GameAutomaton() :
 GameAutomaton::~GameAutomaton()
 {
   kDebug();
+  foreach (Goal* goal, m_goals)
+  {
+    delete goal;
+  }
 }
 
 void GameAutomaton::init(KGameWindow* gw)
@@ -222,17 +226,6 @@ void GameAutomaton::state(GameAutomaton::GameState state)
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   stream << state;
   sendMessage(buffer,StateChange);
-}
-
-bool dnssdAvailable() {
-  QFile f("/var/run/mdnsd.pid");
-  if (!f.open(QIODevice::ReadOnly)) return false; // no pidfile
-  QByteArray line = f.readLine();
-  unsigned int pid = line.toUInt();
-  if (pid==0) return false; // not a pid
-  return (kill(pid,0)==0 || errno==EPERM);
-  // signal 0 only checks if process is running, mdnsd is probably owned 
-  // by 'nobody' so we will get EPERM, if mdnsd is not running error will be ESRCH
 }
 
 Player* GameAutomaton::getAnyLocalPlayer()
@@ -306,8 +299,6 @@ GameAutomaton::GameState GameAutomaton::run()
     if (m_game->actionOpenGame())
     {
       kDebug() << "opened" << endl;
-      if (dnssdAvailable())
-        setDiscoveryInfo("_ksirk._tcp","wow");
       bool ok;
       m_port = KInputDialog::getInteger(
               i18n("KsirK - Network configuration"), 
@@ -453,6 +444,7 @@ GameAutomaton::GameState GameAutomaton::run()
     }
     else if (event == "actionRecyclingFinished") 
     {
+      kDebug() << "actionRecyclingFinished";
       QByteArray buffer;
       QDataStream stream(&buffer, QIODevice::WriteOnly);
 //       stream << currentPlayer()->name();
@@ -463,13 +455,14 @@ GameAutomaton::GameState GameAutomaton::run()
       {
         if ( !((Player*)(*it))->isVirtual() )
         {
+          kDebug() << "Local:" << ((Player*)(*it))->name();
           nbLocal++;
         }
       }
+      kDebug() << "Nb Local:" << nbLocal;
       stream << nbLocal;
-      it = playerList()->begin();
-      it_end = playerList()->end();
-      for (; it != it_end; it++)
+
+      for (it = playerList()->begin(); it != it_end; it++)
       {
         if ( !((Player*)(*it))->isVirtual() )
         {
@@ -842,39 +835,16 @@ GameAutomaton::GameState GameAutomaton::run()
     {
       kDebug() << "actionLButtonUp in WAIT1";
       m_game->secondCountryAt(point);
-
+      
       if (!currentPlayer()-> isAI())
       {
         if (m_game->isMoveValid(point) && m_game->firstCountry()->nbArmies() !=1)
         {
-//           if (m_game->firstCountry()->nbArmies() > 10)
-//           {
-//             m_game->frame()->getMove1Action()->setVisible(true);
-//             m_game->frame()->getMove5Action()->setVisible(true);
-//             m_game->frame()->getMove10Action()->setVisible(true);
-//           }
-//           else if (m_game->firstCountry()->nbArmies() > 5)
-//           {
-//             m_game->frame()->getMove1Action()->setVisible(true);
-//             m_game->frame()->getMove5Action()->setVisible(true);
-//             m_game->frame()->getMove10Action()->setVisible(false);
-//           }
-//           else
-//           {
-//             if (m_game->firstCountry()->nbArmies() > 1)
-//             {
-//               m_game->frame()->getMove1Action()->setVisible(true);
-//               m_game->frame()->getMove5Action()->setVisible(false);
-//               m_game->frame()->getMove10Action()->setVisible(false);
-//             }
-//           }
-//           m_game->frame()->getMoveContextMenu()->exec(QCursor::pos());
+          state(WAIT);
           kDebug() << "Sending MoveSlide";
           QByteArray buffer;
           QDataStream stream(&buffer, QIODevice::WriteOnly);
           sendMessage(buffer,MoveSlide);
-
-// m_game->slideInvade(m_game->firstCountry(), m_game->secondCountry());
         }
         else if (m_game->isFightValid(point)
                 && m_game->firstCountry()->nbArmies() != 1)
@@ -1020,10 +990,12 @@ bool GameAutomaton::playerInput(QDataStream &msg, KPlayer* player)
   msg >> action >> point;
 
   kDebug() << " ======================================================="<<endl;
-  kDebug()  << "Player " << p->name() << " id=" << player->id() 
-    << " uid=" << player->userId() << " : " << action << " at " << point << endl;
-
-  if (p->name() == currentPlayer()->name())
+  kDebug()  << "Player " << p->name() << " id=" << player->id()
+  << " uid=" << player->userId() << " : " << action << " at " << point
+  << "current is" << currentPlayer()->name();
+  
+  if (p->name() == currentPlayer()->name()
+    || (m_state == WAITDEFENSE) )
   {
     if (action == "actionLButtonDown")
       m_game->slotLeftButtonDown( point );

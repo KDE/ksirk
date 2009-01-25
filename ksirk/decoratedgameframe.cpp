@@ -150,14 +150,14 @@ void DecoratedGameFrame::initAttackMenu ()
     AutoAction = new QAction(i18n("Auto attack"), this);
     connect(AutoAction, SIGNAL(triggered()), this, SLOT(attackAuto()));
 
-    attackMenu->addAction(ArenaAction);
+    attackMenu->addAction(AutoAction);
     attackMenu->addSeparator();  
     attackMenu->addAction(Attack1Action);
     attackMenu->addAction(Attack2Action);
     attackMenu->addAction(Attack3Action);
     attackMenu->addSeparator();  
-    attackMenu->addAction(AutoAction);
-//     attackMenu->addSeparator();
+    attackMenu->addAction(ArenaAction);
+    //     attackMenu->addSeparator();
 //     attackMenu->addAction(QuitAction);
 }
 
@@ -397,8 +397,8 @@ void DecoratedGameFrame::arenaState()
 void DecoratedGameFrame::attackAuto()
 {
   kDebug();
-  unsigned int firstCountryNbArmies =
-      m_automaton->game()->firstCountry()->nbArmies();
+  unsigned int firstCountryNbArmies = ( m_automaton!=0 && m_automaton->game()!=0 && m_automaton->game()->firstCountry()!=0 )
+      ? m_automaton->game()->firstCountry()->nbArmies() : 0 ;
   m_automaton->setAttackAuto(firstCountryNbArmies>0);
   if (firstCountryNbArmies > 3)
   {

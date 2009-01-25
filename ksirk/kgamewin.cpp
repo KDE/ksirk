@@ -299,8 +299,11 @@ KGameWindow::~KGameWindow()
 {
   kDebug();
   m_dirs = 0;
-  m_automaton->setGameStatus( KGame::End );
-  delete m_automaton; m_automaton = 0;
+  if (m_automaton != 0)
+  {
+    m_automaton->setGameStatus( KGame::End );
+    delete m_automaton; m_automaton = 0;
+  }
   delete m_backGnd_world; m_backGnd_world = 0;
   delete m_scene_world; m_scene_world = 0;
 //   if (m_barFlagButton) {delete m_barFlagButton; m_barFlagButton = 0;}
@@ -803,12 +806,8 @@ bool KGameWindow::attackEnd()
     {
       currentPlayer()-> incrNbCountries();
       oldOwner-> decrNbCountries();
-      QByteArray buffer;
-      QDataStream stream(&buffer, QIODevice::WriteOnly);
-      stream << currentPlayer()->id();
-      m_automaton->sendMessage(buffer,CheckGoal);
     }
-    
+
     m_secondCountry-> owner(currentPlayer());
     m_secondCountry-> nbArmies(1);
     m_firstCountry-> decrNbArmies();
@@ -835,18 +834,27 @@ bool KGameWindow::attackEnd()
         m_automaton->setMinPlayers(m_automaton->playerList()->count());
         m_automaton->setGameStatus(KGame::Run);
       }
-/*      if ( ( (m_automaton->useGoals())
-             && ( (currentPlayer()->goal().type() == GameLogic::Goal::GoalPlayer)
-             && ( (*currentPlayer()->goal().players().begin()) == oldOwnerId) ) )
-           || (m_automaton->playerList()->count() == 1) )
+      if ( m_automaton->isAdmin()
+        && ( ( m_automaton->useGoals()
+             && ( currentPlayer()->goal().type() == GameLogic::Goal::GoalPlayer)
+             && ( *currentPlayer()->goal().players().begin() == oldOwnerId ) )
+           || (m_automaton->playerList()->count() == 1) ) )
       {
         m_automaton->state(GameLogic::GameAutomaton::GAME_OVER);
         QByteArray buffer;
         QDataStream stream(&buffer, QIODevice::WriteOnly);
         stream << currentPlayer()->id();
         m_automaton->sendMessage(buffer,Winner);
-        return res;
-      }*/
+        res = false;
+      }
+      else if (m_automaton->isAdmin())
+      {
+        QByteArray buffer;
+        QDataStream stream(&buffer, QIODevice::WriteOnly);
+        stream << currentPlayer()->id();
+        m_automaton->sendMessage(buffer,CheckGoal);
+      }
+      
     }
   }
   if (backGnd()->bgIsArena())
@@ -885,6 +893,7 @@ bool KGameWindow::attackEnd()
 
 void KGameWindow::winner(const Player* player)
 {
+  kDebug() << player->name();
   QString msg = "%1 won !";
   if (!player->isVirtual())
   {
@@ -1075,7 +1084,7 @@ void KGameWindow::resolveAttack()
   */
 bool KGameWindow::queryClose()
 {
-  // TODO : Test si jeu en cours
+  kDebug();
 
   if ((m_automaton->state() == GameAutomaton::INIT) || (m_automaton->state() ==  GameAutomaton::INTERLUDE))
   {
@@ -1100,15 +1109,22 @@ bool KGameWindow::queryClose()
         return false;
     }
   }
-  PlayersArray::iterator it = m_automaton->playerList()->begin();
-  PlayersArray::iterator it_end = m_automaton->playerList()->end();
-  for (; it != it_end; it++)
+//   hide();
+  disconnect(&m_timer,SIGNAL(timeout()),this,SLOT(evenementTimer()));
+  disconnectMouse();
+  m_mouseLocalisation = 0;
+  m_automaton->setGameStatus(KGame::End);
+  
+/*  if (m_theWorld != 0)
   {
-    if (static_cast<Player*>(*it)-> isAI())
-    {
-      (static_cast<AIPlayer*>(*it))-> stop();
-    }
+    delete m_theWorld;
+    m_theWorld = 0;
   }
+  while (!m_automaton->playerList()->isEmpty())
+  {
+    delete m_automaton->playerList()->takeFirst();
+  }
+  delete m_automaton; m_automaton = 0;*/
   return true;
 }
 
@@ -1965,10 +1981,12 @@ int KGameWindow::setCurrentPlayerToNext(bool restartRunningAIs)
 
 bool KGameWindow::terminateAttackSequence()
 {
-  m_firstCountry->clearHighlighting();
-  m_secondCountry->clearHighlighting();
-  m_animFighters->hideAndRemoveAll();
-  //gameActionsToolBar-> show();
+  if (m_firstCountry != 0)
+    m_firstCountry->clearHighlighting();
+  if (m_secondCountry != 0)
+    m_secondCountry->clearHighlighting();
+  if (m_animFighters != 0)
+    m_animFighters->hideAndRemoveAll();
   return attackEnd();
 }
 

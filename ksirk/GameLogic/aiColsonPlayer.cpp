@@ -65,6 +65,7 @@ AIColsonPlayer::AIColsonPlayer(
 
 AIColsonPlayer::~AIColsonPlayer() 
 {
+  delete m_placeData;
 }
 
 //////////////////////////////////////////////////////////
