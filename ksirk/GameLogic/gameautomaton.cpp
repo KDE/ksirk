@@ -1277,7 +1277,7 @@ bool GameAutomaton::joinNetworkGame()
 {
   kDebug();
    if (stateName() == "INIT"
-     || (KMessageBox::warningContinueCancel(m_game,i18n("Do you really want to end your current game and join another ?"),i18n("New game confirmation"),KStandardGuiItem::yes()) == KMessageBox::Continue))
+     || (KMessageBox::warningContinueCancel(m_game,i18n("Do you really want to end your current game and join another?"),i18n("New game confirmation"),KStandardGuiItem::yes()) == KMessageBox::Continue))
    {
       // Set default network parameter
       QString host = "localhost";
@@ -1318,7 +1318,7 @@ bool GameAutomaton::joinNetworkGame()
 
 bool GameAutomaton::joinJabberGame(const QString& nick)
 {
-  if (stateName() == "INIT" || (KMessageBox::warningContinueCancel(m_game,i18n("Do you really want to end your current game and join another ?"),i18n("New game confirmation"),KStandardGuiItem::yes()) == KMessageBox::Continue))
+  if (stateName() == "INIT" || (KMessageBox::warningContinueCancel(m_game,i18n("Do you really want to end your current game and join another?"),i18n("New game confirmation"),KStandardGuiItem::yes()) == KMessageBox::Continue))
   {
     // stop game
     setGameStatus(KGame::End);
@@ -1591,13 +1591,13 @@ void GameAutomaton::changePlayerName(Player* player)
   bool computer = player->isAI();
   
   bool found = true;
-  KMessageBox::information(m_game, i18n("Please choose another name"), i18n("KsirK - Name already used !"));
+  KMessageBox::information(m_game, i18n("Please choose another name"), i18n("KsirK - Name already used!"));
   while(found)
   {
     bool emptyName = true;
     while (emptyName)
     {
-      mes = i18n("Player number %1, what's your name ?", 1);
+      mes = i18n("Player number %1, what's your name?", 1);
       bool network = false;
       QString password;
       KPlayerSetupDialog(this, m_game->theWorld(), 1, nomEntre, network, password, computer, nations, nationName, m_game).exec();
@@ -1658,7 +1658,7 @@ void GameAutomaton::changePlayerNation(Player* player)
   
   QString nomEntre = player->name();
   bool computer = player->isAI();
-  KMessageBox::information(m_game, i18n("Please choose another nation"), i18n("KsirK - Nation already used !"));
+  KMessageBox::information(m_game, i18n("Please choose another nation"), i18n("KsirK - Nation already used!"));
   bool network = false;
   QString password = false;
   KPlayerSetupDialog(this, m_game->theWorld(), 1, nomEntre, network, password, computer, nations, nationName, m_game).exec();
@@ -1747,7 +1747,7 @@ void GameAutomaton::slotConnectionToServerBroken()
   if (m_state != GAME_OVER)
   {
     if (KMessageBox::questionYesNoCancel(m_game,
-        i18n("KsirK - Lost connection to server !\nWhat do you want to do ?"),
+        i18n("KsirK - Lost connection to server!\nWhat do you want to do?"),
         i18n("Starting a new game or exit."), 
         KGuiItem(i18n("New Game")),
         KGuiItem(i18n("Exit")),
@@ -1776,7 +1776,7 @@ void GameAutomaton::slotConnectionToClientBroken(KMessageIO *)
   {
     KMessageBox::information(m_game, 
                             i18n("Lost connection to a client.\nFor the moment, you can only save the game and start a new one or quit.\nThis will be improved in a future version."), 
-                            i18n("KsirK - Lost connection to client !"));
+                            i18n("KsirK - Lost connection to client!"));
     switch ( KMessageBox::warningYesNo( m_game, i18n("Do want to save your game?")) ) 
     {
     case KMessageBox::Yes :
@@ -1939,7 +1939,7 @@ void GameAutomaton::countriesDistribution()
   KMessageParts messageParts;
   messageParts
     << pm
-    << I18N_NOOP("%1 : %2 armies to place")
+    << I18N_NOOP("%1: %2 armies to place")
     << nextPlayerName
     <<  QString::number( initialNbArmies - distributedCountriesNumberMap[nextPlayerName]);
   kDebug() << "Message parts size= " << messageParts.size() << endl;
@@ -2021,7 +2021,7 @@ void GameAutomaton::displayGoals()
       KMessageBox::information(
           game(),
           i18n("%1, your goal will be displayed. Please<br>"
-               "make sure that no other player can see it !",(*it)->name()),
+               "make sure that no other player can see it!",(*it)->name()),
           i18n("KsirK - Displaying Goal"));
       dynamic_cast<Player*>(*it)->goal().show();
     }
@@ -2334,7 +2334,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     }
     break;
   case ShowArmiesToPlace:
-    messageParts << pm << I18N_NOOP("%1 : %2 armies to place") << (currentPlayer()-> name()) 
+    messageParts << pm << I18N_NOOP("%1: %2 armies to place") << (currentPlayer()-> name()) 
       << QString::number(currentPlayer()-> getNbAvailArmies());
     m_game->broadcastChangeItem(messageParts, ID_STATUS_MSG2);
     m_game->showMessage(i18n("Now, place your armies in your countries<br>by clicking in the target countries."));
@@ -2437,7 +2437,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     {
       if (explosing != 0 && explosing != 1 && explosing != 2)
       {
-        KMessageBox::information(m_game, i18n("Problem : no one destroyed"), i18n("Ksirk - Error !"));
+        KMessageBox::information(m_game, i18n("Problem : no one destroyed"), i18n("Ksirk - Error!"));
       }
       else
       {
@@ -2486,7 +2486,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   case InvalidPassword:
     if (receiver == gameId())
     {
-      KMessageBox::information(m_game, i18n("You entered an invalid password.\nPlease try again."), i18n("KsirK - Invalid password !"));
+      KMessageBox::information(m_game, i18n("You entered an invalid password.\nPlease try again."), i18n("KsirK - Invalid password!"));
       m_game->setupOneWaitedPlayer();
     }
     break;
@@ -2688,8 +2688,8 @@ void GameAutomaton::actionNextPlayer()
     || currentPlayer()->isAI()
     || m_currentPlayerPlayed
     || (KMessageBox::questionYesNo (m_game,
-                                     i18n("%1, you have not played anything this turn.\nDo you really want to lose your turn ?",m_currentPlayer),
-                                     i18n("Really Next Player ?")) == KMessageBox::Yes) )
+                                     i18n("%1, you have not played anything this turn.\nDo you really want to lose your turn?",m_currentPlayer),
+                                     i18n("Really Next Player?")) == KMessageBox::Yes) )
   {
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);

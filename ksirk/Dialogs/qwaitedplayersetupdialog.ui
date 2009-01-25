@@ -47,7 +47,7 @@ Choose one of them. It will be your nation during the game</string>
    <item row="2" column="0" >
     <widget class="QLabel" name="passwordLabel" >
      <property name="text" >
-      <string>Enter your password :</string>
+      <string>Enter your password:</string>
      </property>
      <property name="wordWrap" >
       <bool>false</bool>

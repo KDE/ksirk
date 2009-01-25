@@ -372,7 +372,7 @@ void KRightDialog::updateRecycleDetails(GameLogic::Country* country, bool recycl
 
   if (recyclePhase)
   {
-    rightContents.at(0)->setText(i18n("<u><b>Change some<br>placements ?</b></u> "));
+    rightContents.at(0)->setText(i18n("<u><b>Change some<br>placements?</b></u> "));
     flag1->hide();
     rightContents.at(1)->setText(QString());
     rightContents.at(2)->setText(QString());

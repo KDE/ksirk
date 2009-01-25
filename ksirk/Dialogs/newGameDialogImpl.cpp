@@ -104,7 +104,7 @@ void NewGameDialogImpl::slotCancel()
 void NewGameDialogImpl::slotHelp()
 {
   kDebug() << "KPlayerSetupDialog slotHelp not already implemented";
-  KMessageBox::sorry(this, i18n("Help currently unavailable."),i18n("KsirK - No help !"));
+  KMessageBox::sorry(this, i18n("Help currently unavailable."),i18n("KsirK - No help!"));
 }
 
 void NewGameDialogImpl::fillSkinsCombo()
@@ -129,7 +129,7 @@ void NewGameDialogImpl::fillSkinsCombo()
     {
       KMessageBox::error(0,
                         i18n("Skins directory not found - Verify your installation\nProgram cannot continue"),
-                        i18n("Fatal Error !"));
+                        i18n("Fatal Error!"));
       exit(2);
     }
     kDebug() << "Got skins dir name: " << skinsDirName;

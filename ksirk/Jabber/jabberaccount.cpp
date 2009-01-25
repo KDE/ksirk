@@ -1524,7 +1524,7 @@ void JabberAccount::slotGroupChatError (const XMPP::Jid &jid, int error, const Q
 	case JabberClient::NicknameConflict:
 		{
 			bool ok;
-			QString nickname = KInputDialog::getText(i18n("Error trying to join %1 : nickname %2 is already in use", jid.node(), jid.resource()),
+			QString nickname = KInputDialog::getText(i18n("Error trying to join %1: nickname %2 is already in use", jid.node(), jid.resource()),
 									i18n("Provide your nickname"),
 									QString(),
 									&ok);

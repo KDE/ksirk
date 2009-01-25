@@ -155,7 +155,7 @@ QString Goal::message(int displayType) const
   QList<QString>::const_iterator it, it_end, it_next;
   
   if(type()==NoGoal) {
-    QString mes = i18n("You must conquer the World !");
+    QString mes = i18n("You must conquer the World!");
     return mes;
   }
   else
@@ -194,7 +194,7 @@ QString Goal::message(int displayType) const
         }
         else
         {
-          res = res.subs(i18n("Error : no player to destroy"));
+          res = res.subs(i18n("Error: no player to destroy"));
         }
         break;
       case Goal::Countries:

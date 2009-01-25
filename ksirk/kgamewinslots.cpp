@@ -513,8 +513,8 @@ void KGameWindow::slotSaveGame()
       QString fileName = KFileDialog::getSaveFileName (KUrl(), "*.xml", this, i18n("KsirK - Save Game"));
       if ( QFile::exists(fileName)
           && (KMessageBox::questionYesNo (this,
-                i18n("%1 exists.\nDo you really want to overwrite it ?",fileName),
-                i18n("Overwrite file ?")) == KMessageBox::No) )
+                i18n("%1 exists.\nDo you really want to overwrite it?",fileName),
+                i18n("Overwrite file?")) == KMessageBox::No) )
       {
         m_message->setMessageTimeout(3000);
         m_message->showMessage(i18n("Saving canceled"), KGamePopupItem::TopLeft,
@@ -1175,7 +1175,7 @@ void KGameWindow::slotGroupChatError (const XMPP::Jid &jid, int error, const QSt
     case JabberClient::NicknameConflict:
     {
       bool ok;
-      QString nickname = KInputDialog::getText(i18n("Error trying to join %1 : nickname %2 is already in use", jid.node(), jid.resource()), i18n("Provide your nickname"), QString(), &ok);
+      QString nickname = KInputDialog::getText(i18n("Error trying to join %1: nickname %2 is already in use", jid.node(), jid.resource()), i18n("Provide your nickname"), QString(), &ok);
       if (ok)
       {
         m_jabberClient->joinGroupChat(jid.domain(), jid.node(), nickname);

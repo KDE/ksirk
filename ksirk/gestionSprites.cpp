@@ -693,7 +693,7 @@ void KGameWindow::initCombatMovement()
       sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roll.wav");
       if (sndRoulePath.isNull())
       {
-        KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error !"));
+        KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error!"));
         exit(2);
       }
       if (KsirkSettings::soundEnabled())
@@ -808,7 +808,7 @@ void KGameWindow::initCombatMovement()
       sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roll.wav");
       if (sndRoulePath.isNull())
       {
-        KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error !"));
+        KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error!"));
         exit(2);
       }
       if (KsirkSettings::soundEnabled())
@@ -853,7 +853,7 @@ void KGameWindow::animCombat()
     if (sndCanonPath.isNull())
     {
       KMessageBox::error(0,
-          i18n("Sound cannon not found - Verify your installation<br>Program cannot continue"), i18n("Error !"));
+          i18n("Sound cannon not found - Verify your installation<br>Program cannot continue"), i18n("Error!"));
       exit(2);
     }
     if (KsirkSettings::soundEnabled())
@@ -928,7 +928,7 @@ void KGameWindow::animExplosion(int who)
         QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
         if (sndCrashPath.isNull())
         {
-          KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error !"));
+          KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
           exit(2);
         }
         if (KsirkSettings::soundEnabled())
@@ -948,7 +948,7 @@ void KGameWindow::animExplosion(int who)
         QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
         if (sndCrashPath.isNull())
         {
-          KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error !"));
+          KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
           exit(2);
         }
         if (KsirkSettings::soundEnabled())
@@ -988,7 +988,7 @@ void KGameWindow::animExplosion(int who)
   /*QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
   if (sndCrashPath.isNull())
   {
-    KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error !"));
+    KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
     exit(2);
   }
   if (KsirkSettings::soundEnabled())
@@ -1049,7 +1049,7 @@ void KGameWindow::animExplosionForArena()
           QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
-            KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error !"));
+            KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
             exit(2);
           }
           if (KsirkSettings::soundEnabled())
@@ -1086,7 +1086,7 @@ void KGameWindow::animExplosionForArena()
           QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
-            KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error !"));
+            KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
             exit(2);
           }
           if (KsirkSettings::soundEnabled())
@@ -1121,7 +1121,7 @@ void KGameWindow::animExplosionForArena()
           QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
-            KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error !"));
+            KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
             exit(2);
           }
           if (KsirkSettings::soundEnabled())
@@ -1175,7 +1175,7 @@ void KGameWindow::animExplosionForArena()
           QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
-            KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error !"));
+            KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
             exit(2);
           }
           if (KsirkSettings::soundEnabled())
@@ -1212,7 +1212,7 @@ void KGameWindow::animExplosionForArena()
           QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
-            KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error !"));
+            KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
             exit(2);
           }
           if (KsirkSettings::soundEnabled())
@@ -1246,7 +1246,7 @@ void KGameWindow::animExplosionForArena()
           QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
-            KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error !"));
+            KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
             exit(2);
           }
           if (KsirkSettings::soundEnabled())
@@ -1290,7 +1290,7 @@ void KGameWindow::initCombatBringBackForArena(Country *attackingCountry, Country
   if ((NKD != 0)&&(NKA != 0)) who = 2;
   else if (NKA != 0) who = 0;
   else if (NKD != 0) who = 1;
-  else KMessageBox::information(0, i18n("Problem : no one destroyed"));
+  else KMessageBox::information(0, i18n("Problem: no one destroyed"));
 
   //CannonSprite *newSprite;
   AnimSprite* newSprite;
@@ -1409,7 +1409,7 @@ void KGameWindow::initCombatBringBackForArena(Country *attackingCountry, Country
     QString sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roll.wav");
     if (sndRoulePath.isNull())
     {
-        KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error !"));
+        KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error!"));
         exit(2);
     }
     if (KsirkSettings::soundEnabled())
@@ -1486,7 +1486,7 @@ void KGameWindow::initCombatBringBackForArena(Country *attackingCountry, Country
       QString sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roll.wav");
       if (sndRoulePath.isNull())
       {
-          KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error !"));
+          KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error!"));
           exit(2);
       }
       if (KsirkSettings::soundEnabled())
