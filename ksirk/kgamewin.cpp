@@ -23,7 +23,6 @@
 #include "mainMenu.h"
 #include "ksirkConfigDialog.h"
 #include "ksirksettings.h"
-#include "MessageBubble.h"
 #include "Sprites/animspritesgroup.h"
 #include "Sprites/arrowsprite.h"
 #include "GameLogic/aiplayer.h"
