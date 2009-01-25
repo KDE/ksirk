@@ -1708,7 +1708,7 @@ void KGameWindow::broadcastChangeItem(KMessageParts& strings, int id, bool log)
     }
     else
     {
-      kError() << "Unsuported KMessageParts elem type ";
+      kError() << "Unsupported KMessageParts elem type ";
     }
     it++;*/
     for (; it != it_end; it++)
@@ -1725,7 +1725,7 @@ void KGameWindow::broadcastChangeItem(KMessageParts& strings, int id, bool log)
       }
       else
       {
-        kError() << "Unsuported KMessageParts elem type ";
+        kError() << "Unsupported KMessageParts elem type ";
       }
     }
   }
