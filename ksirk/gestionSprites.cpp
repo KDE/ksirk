@@ -291,7 +291,8 @@ void KGameWindow::determinePointArrivee(
   }
 
   // vertical meet point
-  pointArriveeY = (((defendingCountry-> pointFlag().y() + Sprites::SkinSpritesData::single().intData("fighters-flag-y-diff")))* m_theWorld->zoom()) ;
+  int diff = Sprites::SkinSpritesData::single().intData("flag-height") - Sprites::SkinSpritesData::single().intData("cannon-height");
+  pointArriveeY = (((defendingCountry-> pointFlag().y() + diff))* m_theWorld->zoom()) ;
   
   kDebug() << "2 " << defendingCountry-> pointFlag().y() << pointArriveeY;
   if (!attackingCountry->communicateWith(defendingCountry))
@@ -1299,7 +1300,7 @@ void KGameWindow::initCombatBringBackForArena(Country *attackingCountry, Country
   qreal pointDepartAttaquantY;
   qreal pointDepartDefenseurY;
 
-  qreal flagYDiff = Sprites::SkinSpritesData::single().intData("fighters-flag-y-diff")*m_theWorld->zoom();
+  qreal flagYDiff = (Sprites::SkinSpritesData::single().intData("flag-height") - Sprites::SkinSpritesData::single().intData("cannon-height"))*m_theWorld->zoom();
   qreal pointFlagX = backGnd()->boundingRect().width()/2;
 
   if ((attackingCountry->nbArmies() % 10) == 0)

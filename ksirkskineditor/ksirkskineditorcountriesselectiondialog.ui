@@ -14,7 +14,14 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" >
    <item>
-    <widget class="KListWidget" name="countriesList" />
+    <widget class="KListWidget" name="countriesList" >
+     <property name="toolTip" >
+      <string>Countries list</string>
+     </property>
+     <property name="whatsThis" >
+      <string>List of all the countries defined in the world. Currently selected countries are highlighted. You can modify the selection using the mouse and Ctrl and Shift keys.</string>
+     </property>
+    </widget>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox" >

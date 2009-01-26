@@ -156,7 +156,6 @@ private Q_SLOTS:
   void slotSkinHeightEdited();
   void slotSkinDescriptionEdited();
 
-  void slotSkinHeightDiffEdited();
   void slotSkinWidthDiffEdited();
 
   void slotNewCountry();

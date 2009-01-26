@@ -5,7 +5,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>265</width>
+    <width>293</width>
     <height>523</height>
    </rect>
   </property>
@@ -15,44 +15,53 @@
   <widget class="QWidget" name="dockWidgetContents" >
    <layout class="QVBoxLayout" name="verticalLayout_5" >
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_3" >
-      <item>
-       <widget class="QLabel" name="label_25" >
-        <property name="text" >
-         <string>Height between tops
-of fighter and flag:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="heightDiffLineEdit" />
-      </item>
-     </layout>
-    </item>
-    <item>
      <layout class="QHBoxLayout" name="horizontalLayout_4" >
       <item>
        <widget class="QLabel" name="label_26" >
+        <property name="enabled" >
+         <bool>true</bool>
+        </property>
+        <property name="whatsThis" >
+         <string/>
+        </property>
         <property name="text" >
          <string>Width between figther
 and flag:</string>
         </property>
+        <property name="textInteractionFlags" >
+         <set>Qt::NoTextInteraction</set>
+        </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="widthDiffLineEdit" />
+       <widget class="QLineEdit" name="widthDiffLineEdit" >
+        <property name="toolTip" >
+         <string>Empty space size between fighting cannon and flag</string>
+        </property>
+        <property name="whatsThis" >
+         <string>Empty space size between fighting cannon and flag.
+
+During a battle, firing (end exploding) cannons of each player are placed in both sides of the defender country flag. This parameter is the number of pixels between the flag and each cannon, measured relatively to the map base size as set in the main skin definition panel.</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
     <item>
      <widget class="KTabWidget" name="ktabwidget" >
+      <property name="toolTip" >
+       <string>Data about all sprites</string>
+      </property>
       <property name="tabPosition" >
        <enum>QTabWidget::West</enum>
       </property>
       <property name="currentIndex" >
        <number>5</number>
       </property>
-      <widget class="QWidget" name="tab" >
+      <widget class="QWidget" name="flagTab" >
+       <property name="toolTip" >
+        <string>Data about the flag sprite</string>
+       </property>
        <attribute name="title" >
         <string>Flag</string>
        </attribute>
@@ -67,7 +76,20 @@ and flag:</string>
            </widget>
           </item>
           <item row="0" column="1" >
-           <widget class="QSpinBox" name="flagw" />
+           <widget class="QSpinBox" name="flagw" >
+            <property name="toolTip" >
+             <string>Flag individual frame width</string>
+            </property>
+            <property name="whatsThis" >
+             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Flag individual frame width.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">flag&lt;/span> element will be rendered on a pixmap of width : &lt;span style=" font-style:italic;">Width&lt;/span> * &lt;span style=" font-style:italic;">number of frames&lt;/span> and  then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+            </property>
+           </widget>
           </item>
           <item row="1" column="0" >
            <widget class="QLabel" name="label_2" >
@@ -77,7 +99,16 @@ and flag:</string>
            </widget>
           </item>
           <item row="1" column="1" >
-           <widget class="QSpinBox" name="flagh" />
+           <widget class="QSpinBox" name="flagh" >
+            <property name="toolTip" >
+             <string>Flag individual frame height</string>
+            </property>
+            <property name="whatsThis" >
+             <string>Flag individual frame height.
+
+The pool flag element will be rendered on a pixmap of height : Height * number of versions and  then split into individual frames.</string>
+            </property>
+           </widget>
           </item>
           <item row="2" column="0" >
            <widget class="QLabel" name="label_3" >
@@ -87,7 +118,20 @@ and flag:</string>
            </widget>
           </item>
           <item row="2" column="1" >
-           <widget class="QSpinBox" name="flagf" />
+           <widget class="QSpinBox" name="flagf" >
+            <property name="toolTip" >
+             <string>Flag number of individual frames</string>
+            </property>
+            <property name="whatsThis" >
+             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Flag number of individual frames.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">flag&lt;/span> element will be rendered on a pixmap of width : &lt;span style=" font-style:italic;">Width&lt;/span> * N&lt;span style=" font-style:italic;">umber of frames&lt;/span> and  then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+            </property>
+           </widget>
           </item>
           <item row="3" column="0" >
            <widget class="QLabel" name="label_4" >
@@ -97,7 +141,18 @@ and flag:</string>
            </widget>
           </item>
           <item row="3" column="1" >
-           <widget class="QSpinBox" name="flagv" />
+           <widget class="QSpinBox" name="flagv" >
+            <property name="toolTip" >
+             <string>Flag number of versions</string>
+            </property>
+            <property name="whatsThis" >
+             <string>Flag number of versions.
+
+The pool flag element will be rendered on a pixmap of height : Height * Number of versions and  then split into individual frames.
+
+Each version shows the sprite visible from one direction: the first one is directed towards the right, the second towards the left, the third one from front and the last one from the back. But all sprites don't need all versions.</string>
+            </property>
+           </widget>
           </item>
           <item row="4" column="0" >
            <spacer name="verticalSpacer_6" >
@@ -116,7 +171,10 @@ and flag:</string>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_2" >
+      <widget class="QWidget" name="infantryTab" >
+       <property name="toolTip" >
+        <string>Data about the infantry sprite</string>
+       </property>
        <attribute name="title" >
         <string>Infantry</string>
        </attribute>
@@ -129,7 +187,20 @@ and flag:</string>
          </widget>
         </item>
         <item row="0" column="1" >
-         <widget class="QSpinBox" name="infantryw" />
+         <widget class="QSpinBox" name="infantryw" >
+          <property name="toolTip" >
+           <string>Infantry individual frame width</string>
+          </property>
+          <property name="whatsThis" >
+           <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Infantry individual frame width.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">infantry&lt;/span> element will be rendered on a pixmap of width : &lt;span style=" font-style:italic;">Width&lt;/span> * &lt;span style=" font-style:italic;">number of frames&lt;/span> and  then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+          </property>
+         </widget>
         </item>
         <item row="1" column="0" >
          <widget class="QLabel" name="label_6" >
@@ -139,7 +210,20 @@ and flag:</string>
          </widget>
         </item>
         <item row="1" column="1" >
-         <widget class="QSpinBox" name="infantryh" />
+         <widget class="QSpinBox" name="infantryh" >
+          <property name="toolTip" >
+           <string>Infantry individual frame height</string>
+          </property>
+          <property name="whatsThis" >
+           <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Infantry individual frame height.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">infantry&lt;/span> element will be rendered on a pixmap of height : &lt;span style=" font-style:italic;">Height&lt;/span> * &lt;span style=" font-style:italic;">number of versions&lt;/span> and  then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+          </property>
+         </widget>
         </item>
         <item row="2" column="0" >
          <widget class="QLabel" name="label_8" >
@@ -149,7 +233,20 @@ and flag:</string>
          </widget>
         </item>
         <item row="2" column="1" >
-         <widget class="QSpinBox" name="infantryf" />
+         <widget class="QSpinBox" name="infantryf" >
+          <property name="toolTip" >
+           <string>Infantry number of individual frames</string>
+          </property>
+          <property name="whatsThis" >
+           <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Infantry number of individual frames.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">infantry&lt;/span> element will be rendered on a pixmap of width : &lt;span style=" font-style:italic;">Width&lt;/span> * N&lt;span style=" font-style:italic;">umber of frames&lt;/span> and  then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+          </property>
+         </widget>
         </item>
         <item row="3" column="0" >
          <widget class="QLabel" name="label_7" >
@@ -159,7 +256,22 @@ and flag:</string>
          </widget>
         </item>
         <item row="3" column="1" >
-         <widget class="QSpinBox" name="infantryv" />
+         <widget class="QSpinBox" name="infantryv" >
+          <property name="toolTip" >
+           <string>Infantry number of versions</string>
+          </property>
+          <property name="whatsThis" >
+           <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Infantry number of versions.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">infantry&lt;/span> element will be rendered on a pixmap of height : &lt;span style=" font-style:italic;">Height&lt;/span> * &lt;span style=" font-style:italic;">Number of versions&lt;/span> and  then split into individual frames.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Each version shows the sprite visible from one direction: the first one is directed towards the right, the second towards the left, the third one from front and the last one from the back. But all sprites don't need all versions.&lt;/p>&lt;/body>&lt;/html></string>
+          </property>
+         </widget>
         </item>
         <item row="4" column="0" >
          <spacer name="verticalSpacer_5" >
@@ -176,7 +288,10 @@ and flag:</string>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_3" >
+      <widget class="QWidget" name="cavalryTab" >
+       <property name="toolTip" >
+        <string>Data about the cavalry sprite</string>
+       </property>
        <attribute name="title" >
         <string>Cavalry</string>
        </attribute>
@@ -189,7 +304,20 @@ and flag:</string>
          </widget>
         </item>
         <item row="0" column="1" >
-         <widget class="QSpinBox" name="cavalryw" />
+         <widget class="QSpinBox" name="cavalryw" >
+          <property name="toolTip" >
+           <string>Cavalry individual frame width</string>
+          </property>
+          <property name="whatsThis" >
+           <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Cavalry individual frame width.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">cavalry&lt;/span> element will be rendered on a pixmap of width : &lt;span style=" font-style:italic;">Width&lt;/span> * &lt;span style=" font-style:italic;">number of frames&lt;/span> and  then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+          </property>
+         </widget>
         </item>
         <item row="1" column="0" >
          <widget class="QLabel" name="label_9" >
@@ -199,7 +327,20 @@ and flag:</string>
          </widget>
         </item>
         <item row="1" column="1" >
-         <widget class="QSpinBox" name="cavalryh" />
+         <widget class="QSpinBox" name="cavalryh" >
+          <property name="toolTip" >
+           <string>Cavalry individual frame height</string>
+          </property>
+          <property name="whatsThis" >
+           <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Cavalry individual frame height.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">cavalry&lt;/span> element will be rendered on a pixmap of height : &lt;span style=" font-style:italic;">Height&lt;/span> * &lt;span style=" font-style:italic;">number of versions&lt;/span> and  then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+          </property>
+         </widget>
         </item>
         <item row="2" column="0" >
          <widget class="QLabel" name="label_11" >
@@ -209,7 +350,20 @@ and flag:</string>
          </widget>
         </item>
         <item row="2" column="1" >
-         <widget class="QSpinBox" name="cavalryf" />
+         <widget class="QSpinBox" name="cavalryf" >
+          <property name="toolTip" >
+           <string>Cavalry number of individual frames</string>
+          </property>
+          <property name="whatsThis" >
+           <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Cavalry number of individual frames.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">calvalry&lt;/span> element will be rendered on a pixmap of width : &lt;span style=" font-style:italic;">Width&lt;/span> * N&lt;span style=" font-style:italic;">umber of frames&lt;/span> and  then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+          </property>
+         </widget>
         </item>
         <item row="3" column="0" >
          <widget class="QLabel" name="label_12" >
@@ -219,7 +373,22 @@ and flag:</string>
          </widget>
         </item>
         <item row="3" column="1" >
-         <widget class="QSpinBox" name="cavalryv" />
+         <widget class="QSpinBox" name="cavalryv" >
+          <property name="toolTip" >
+           <string>Cavalry number of versions</string>
+          </property>
+          <property name="whatsThis" >
+           <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Cavalry number of versions.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool caval&lt;span style=" font-style:italic;">ry&lt;/span> element will be rendered on a pixmap of height : &lt;span style=" font-style:italic;">Height&lt;/span> * &lt;span style=" font-style:italic;">Number of versions&lt;/span> and  then split into individual frames.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Each version shows the sprite visible from one direction: the first one is directed towards the right, the second towards the left, the third one from front and the last one from the back. But all sprites don't need all versions.&lt;/p>&lt;/body>&lt;/html></string>
+          </property>
+         </widget>
         </item>
         <item row="4" column="0" >
          <spacer name="verticalSpacer_4" >
@@ -236,7 +405,10 @@ and flag:</string>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_4" >
+      <widget class="QWidget" name="cannonTab" >
+       <property name="toolTip" >
+        <string>Data about the cannon sprite</string>
+       </property>
        <attribute name="title" >
         <string>Cannon</string>
        </attribute>
@@ -251,7 +423,20 @@ and flag:</string>
            </widget>
           </item>
           <item row="0" column="1" >
-           <widget class="QSpinBox" name="cannonw" />
+           <widget class="QSpinBox" name="cannonw" >
+            <property name="toolTip" >
+             <string>Cannon individual frame width</string>
+            </property>
+            <property name="whatsThis" >
+             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Cannon individual frame width.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">cannon&lt;/span> element will be rendered on a pixmap of width : &lt;span style=" font-style:italic;">Width&lt;/span> * &lt;span style=" font-style:italic;">number of frames&lt;/span> and  then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+            </property>
+           </widget>
           </item>
           <item row="1" column="0" >
            <widget class="QLabel" name="label_13" >
@@ -261,7 +446,20 @@ and flag:</string>
            </widget>
           </item>
           <item row="1" column="1" >
-           <widget class="QSpinBox" name="cannonh" />
+           <widget class="QSpinBox" name="cannonh" >
+            <property name="toolTip" >
+             <string>Cannon individual frame height</string>
+            </property>
+            <property name="whatsThis" >
+             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Cannon individual frame height.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">cannon&lt;/span> element will be rendered on a pixmap of height : &lt;span style=" font-style:italic;">Height&lt;/span> * &lt;span style=" font-style:italic;">number of versions&lt;/span> and  then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+            </property>
+           </widget>
           </item>
           <item row="2" column="0" >
            <widget class="QLabel" name="label_15" >
@@ -271,7 +469,20 @@ and flag:</string>
            </widget>
           </item>
           <item row="2" column="1" >
-           <widget class="QSpinBox" name="cannonf" />
+           <widget class="QSpinBox" name="cannonf" >
+            <property name="toolTip" >
+             <string>Cannon number of individual frames</string>
+            </property>
+            <property name="whatsThis" >
+             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Cannon number of individual frames.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">cannon&lt;/span> element will be rendered on a pixmap of width : &lt;span style=" font-style:italic;">Width&lt;/span> * N&lt;span style=" font-style:italic;">umber of frames&lt;/span> and  then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+            </property>
+           </widget>
           </item>
           <item row="3" column="0" >
            <widget class="QLabel" name="label_16" >
@@ -281,7 +492,22 @@ and flag:</string>
            </widget>
           </item>
           <item row="3" column="1" >
-           <widget class="QSpinBox" name="cannonv" />
+           <widget class="QSpinBox" name="cannonv" >
+            <property name="toolTip" >
+             <string>Cannon number of versions</string>
+            </property>
+            <property name="whatsThis" >
+             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Cannon number of versions.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">cannon&lt;/span> element will be rendered on a pixmap of height : &lt;span style=" font-style:italic;">Height&lt;/span> * &lt;span style=" font-style:italic;">Number of versions&lt;/span> and  then split into individual frames.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Each version shows the sprite visible from one direction: the first one is directed towards the right, the second towards the left, the third one from front and the last one from the back. But all sprites don't need all versions.&lt;/p>&lt;/body>&lt;/html></string>
+            </property>
+           </widget>
           </item>
           <item row="4" column="0" >
            <spacer name="verticalSpacer_3" >
@@ -300,7 +526,10 @@ and flag:</string>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_5" >
+      <widget class="QWidget" name="firingTab" >
+       <property name="toolTip" >
+        <string>Data about the firing sprite</string>
+       </property>
        <attribute name="title" >
         <string>Firing</string>
        </attribute>
@@ -315,7 +544,20 @@ and flag:</string>
            </widget>
           </item>
           <item row="0" column="1" >
-           <widget class="QSpinBox" name="firingw" />
+           <widget class="QSpinBox" name="firingw" >
+            <property name="toolTip" >
+             <string>Firing cannon individual frame width</string>
+            </property>
+            <property name="whatsThis" >
+             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Firing cannon individual frame width.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">firing cannon&lt;/span> element will be rendered on a pixmap of width : &lt;span style=" font-style:italic;">Width&lt;/span> * &lt;span style=" font-style:italic;">number of frames&lt;/span> and  then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+            </property>
+           </widget>
           </item>
           <item row="1" column="0" >
            <widget class="QLabel" name="label_17" >
@@ -325,7 +567,20 @@ and flag:</string>
            </widget>
           </item>
           <item row="1" column="1" >
-           <widget class="QSpinBox" name="firingh" />
+           <widget class="QSpinBox" name="firingh" >
+            <property name="toolTip" >
+             <string>Firing cannon individual frame height</string>
+            </property>
+            <property name="whatsThis" >
+             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Firing cannon individual frame height.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">firing cannon&lt;/span> element will be rendered on a pixmap of height : &lt;span style=" font-style:italic;">Height&lt;/span> * &lt;span style=" font-style:italic;">number of versions&lt;/span> and  then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+            </property>
+           </widget>
           </item>
           <item row="2" column="0" >
            <widget class="QLabel" name="label_19" >
@@ -335,7 +590,20 @@ and flag:</string>
            </widget>
           </item>
           <item row="2" column="1" >
-           <widget class="QSpinBox" name="firingf" />
+           <widget class="QSpinBox" name="firingf" >
+            <property name="toolTip" >
+             <string>Firing cannon number of individual frames</string>
+            </property>
+            <property name="whatsThis" >
+             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Firing cannon number of individual frames.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">firing cannon&lt;/span> element will be rendered on a pixmap of width : &lt;span style=" font-style:italic;">Width&lt;/span> * N&lt;span style=" font-style:italic;">umber of frames&lt;/span> and  then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+            </property>
+           </widget>
           </item>
           <item row="3" column="0" >
            <widget class="QLabel" name="label_20" >
@@ -345,7 +613,22 @@ and flag:</string>
            </widget>
           </item>
           <item row="3" column="1" >
-           <widget class="QSpinBox" name="firingv" />
+           <widget class="QSpinBox" name="firingv" >
+            <property name="toolTip" >
+             <string>Firing cannon number of versions</string>
+            </property>
+            <property name="whatsThis" >
+             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Firing cannon number of versions.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">firing cannon&lt;/span> element will be rendered on a pixmap of height : &lt;span style=" font-style:italic;">Height&lt;/span> * &lt;span style=" font-style:italic;">Number of versions&lt;/span> and  then split into individual frames.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Each version shows the sprite visible from one direction: the first one is directed towards the right, the second towards the left, the third one from front and the last one from the back. But all sprites don't need all versions.&lt;/p>&lt;/body>&lt;/html></string>
+            </property>
+           </widget>
           </item>
           <item row="4" column="0" >
            <spacer name="verticalSpacer" >
@@ -364,7 +647,10 @@ and flag:</string>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_6" >
+      <widget class="QWidget" name="explodingTab" >
+       <property name="toolTip" >
+        <string>Data about the exploding sprite</string>
+       </property>
        <attribute name="title" >
         <string>Exploding</string>
        </attribute>
@@ -379,7 +665,20 @@ and flag:</string>
            </widget>
           </item>
           <item row="0" column="1" >
-           <widget class="QSpinBox" name="explodingw" />
+           <widget class="QSpinBox" name="explodingw" >
+            <property name="toolTip" >
+             <string>Exploding cannon individual frame width</string>
+            </property>
+            <property name="whatsThis" >
+             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Exploding cannon individual frame width.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">exploding &lt;/span>element will be rendered on a pixmap of width : &lt;span style=" font-style:italic;">Width&lt;/span> * &lt;span style=" font-style:italic;">number of frames&lt;/span> and  then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+            </property>
+           </widget>
           </item>
           <item row="1" column="0" >
            <widget class="QLabel" name="label_21" >
@@ -389,7 +688,20 @@ and flag:</string>
            </widget>
           </item>
           <item row="1" column="1" >
-           <widget class="QSpinBox" name="explodingh" />
+           <widget class="QSpinBox" name="explodingh" >
+            <property name="toolTip" >
+             <string>Exploding cannon individual frame height</string>
+            </property>
+            <property name="whatsThis" >
+             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Exploding cannon individual frame height.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">exploding&lt;/span> element will be rendered on a pixmap of height : &lt;span style=" font-style:italic;">Height&lt;/span> * &lt;span style=" font-style:italic;">number of versions&lt;/span> and  then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+            </property>
+           </widget>
           </item>
           <item row="2" column="0" >
            <widget class="QLabel" name="label_23" >
@@ -399,7 +711,20 @@ and flag:</string>
            </widget>
           </item>
           <item row="2" column="1" >
-           <widget class="QSpinBox" name="explodingf" />
+           <widget class="QSpinBox" name="explodingf" >
+            <property name="toolTip" >
+             <string>Exploding cannon number of individual frames</string>
+            </property>
+            <property name="whatsThis" >
+             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Exploding cannon number of individual frames.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">exploding &lt;/span>element will be rendered on a pixmap of width : &lt;span style=" font-style:italic;">Width&lt;/span> * N&lt;span style=" font-style:italic;">umber of frames&lt;/span> and  then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+            </property>
+           </widget>
           </item>
           <item row="3" column="0" >
            <widget class="QLabel" name="label_24" >
@@ -409,7 +734,22 @@ and flag:</string>
            </widget>
           </item>
           <item row="3" column="1" >
-           <widget class="QSpinBox" name="explodingv" />
+           <widget class="QSpinBox" name="explodingv" >
+            <property name="toolTip" >
+             <string>Exploding cannon number of versions</string>
+            </property>
+            <property name="whatsThis" >
+             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Exploding cannon number of versions.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">exploding &lt;/span>element will be rendered on a pixmap of height : &lt;span style=" font-style:italic;">Height&lt;/span> * &lt;span style=" font-style:italic;">Number of versions&lt;/span> and  then split into individual frames.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Each version shows the sprite visible from one direction: the first one is directed towards the right, the second towards the left, the third one from front and the last one from the back. But all sprites don't need all versions.&lt;/p>&lt;/body>&lt;/html></string>
+            </property>
+           </widget>
           </item>
           <item row="4" column="0" >
            <spacer name="verticalSpacer_2" >

@@ -131,7 +131,6 @@ ONU::ONU(const QString& configDir):
   kDebug() << "Loading map mask file: " << mapMaskFileName;
   m_countriesMask = QImage(mapMaskFileName);
 
-  SkinSpritesData::changeable().intData("fighters-flag-y-diff", onugroup.readEntry("fighters-flag-y-diff",0));
   SkinSpritesData::changeable().intData("width-between-flag-and-fighter", onugroup.readEntry("width-between-flag-and-fighter",0));
 
 
@@ -436,7 +435,6 @@ void ONU::saveConfig(const QString& configFileName)
   onugroup.writeEntry("desc",m_description);
   onugroup.writeEntry("pool",m_poolString);
 
-  onugroup.writeEntry("fighters-flag-y-diff", SkinSpritesData::changeable().intData("fighters-flag-y-diff"));
   onugroup.writeEntry("width-between-flag-and-fighter",SkinSpritesData::changeable().intData("width-between-flag-and-fighter"));
 
 

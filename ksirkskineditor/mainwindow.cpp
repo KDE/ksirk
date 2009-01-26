@@ -265,10 +265,6 @@ MainWindow::MainWindow(QWidget* parent) :
 
   connect (m_skinDefWidget->descriptionTextEdit,SIGNAL(textChanged()), this, SLOT(slotSkinDescriptionEdited()));
 
-  QIntValidator* heightDiffValidator = new QIntValidator(this);
-  m_spritesDefWidget->heightDiffLineEdit->setValidator(heightDiffValidator);
-  connect (m_spritesDefWidget->heightDiffLineEdit, SIGNAL(editingFinished()), this, SLOT(slotSkinHeightDiffEdited()));
-
   QIntValidator* widthDiffValidator = new QIntValidator(this);
   m_spritesDefWidget->widthDiffLineEdit->setValidator(widthDiffValidator);
   connect (m_spritesDefWidget->widthDiffLineEdit, SIGNAL(editingFinished()), this, SLOT(slotSkinWidthDiffEdited()));
@@ -366,7 +362,11 @@ void MainWindow::slotOpenSkin(const QString& dir)
     skinDir = KFileDialog::getExistingDirectory(
     KUrl(), this, i18n("Choose the root folder of the skin to open"));
   }
-  
+  if (skinDir.isEmpty())
+  {
+    return;
+  }
+
   if (m_rfa != 0)
   {
     kDebug() << "Adding" << skinDir << "to recent files";
@@ -392,7 +392,6 @@ void MainWindow::slotOpenSkin(const QString& dir)
   m_skinDefWidget->widthLineEdit->setText(QString::number(m_onu->width()));
   m_skinDefWidget->heightLineEdit->setText(QString::number(m_onu->height()));
   m_skinDefWidget->descriptionTextEdit->setText(m_onu->description());
-  m_spritesDefWidget->heightDiffLineEdit->setText(QString::number(SkinSpritesData::changeable().intData("fighters-flag-y-diff")));
   m_spritesDefWidget->widthDiffLineEdit->setText(QString::number(SkinSpritesData::changeable().intData("width-between-flag-and-fighter")));
 
   m_spritesDefWidget->flagw->setValue(SkinSpritesData::changeable().intData("flag-width"));
@@ -1244,15 +1243,6 @@ void MainWindow::slotSkinDescriptionEdited()
   if (m_onu == 0) return;
   kDebug() << m_skinDefWidget->descriptionTextEdit->toPlainText();
   m_onu->setDescription(m_skinDefWidget->descriptionTextEdit->toPlainText());
-}
-
-void MainWindow::slotSkinHeightDiffEdited()
-{
-  if (m_onu == 0) return;
-  kDebug();
-  bool ok = false;
-  int wd = m_spritesDefWidget->heightDiffLineEdit->text().toInt(&ok);
-  SkinSpritesData::changeable().intData("fighters-flag-y-diff", wd);
 }
 
 void MainWindow::slotSkinWidthDiffEdited()
