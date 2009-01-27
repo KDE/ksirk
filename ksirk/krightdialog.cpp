@@ -324,7 +324,7 @@ void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int
     rightContents.at(0)->setText("<u><b>"+player->name()+"</b></u> ");
     flag1->setPixmap(player->getFlag()->image(0));
 
-    rightContents.at(1)->setText(i18n("%1 armies to place", nbAvailArmies));
+    rightContents.at(1)->setText(i18np("%1 army to place", "%1 armies to place", nbAvailArmies));
 
     title->addWidget(rightContents.at(0));
     title->addWidget(flag1);
