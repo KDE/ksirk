@@ -8,9 +8,15 @@ Before KDE4.3:
   * Don't show Invasion slider when game is won
   * Rewrite AI code or at least correct most problems related in bug #170777. Volunteers wanted!
   * Previous/Next in start new game as described in bug #170774
-  * Polish the skin editor (doc, contextual help, ...)
+  * Skin editor: documentation
+  * [DONE] Skin editor: contextual help (tooltips and whatsthis)
   * Skin editor: check skin, check pool, coherence tests
-  * Boost playing over Jabber
+  * Skin editor: add a "New" button, creating a copy of the default skin
+  * Skin editor: reload if the pool.svg file is modified
+  * Skin editor: button to start a SVG editor (the system default) on the pool
+  * Skin editor: ONU::pixmapForId should produce a default pixmap in case of an unknown id
+  * Menu entry to start the skin editor from the game
+  * Boost (speed up) playing over Jabber
    
 Before KDE4.2:
   * [DONE] add visual feedback for map scrolling

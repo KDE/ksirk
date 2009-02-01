@@ -27,7 +27,6 @@
 #include "continent.h"
 #include "nationality.h"
 #include "spritetype.h"
-#include "poolloader.h"
 
 #include <QPixmap>
 #include <QFont>
