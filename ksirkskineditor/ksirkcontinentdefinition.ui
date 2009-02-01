@@ -24,7 +24,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="bonus" >
+       <widget class="KIntNumInput" name="bonus" >
         <property name="toolTip" >
          <string>Number of bonus points when owning the full continent</string>
         </property>
@@ -35,11 +35,8 @@ At the end of each turn a number of armies is distributed to each player. If one
 
 The bonus should be proportional to the continent's size and to the difficulty to conquer it or to keep it.</string>
         </property>
-        <property name="text" >
+        <property name="text" stdset="0" >
          <string/>
-        </property>
-        <property name="alignment" >
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>
@@ -74,6 +71,11 @@ A list of all the world's countries will be shown and you will be able to select
   </widget>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>KIntNumInput</class>
+   <extends>QWidget</extends>
+   <header>knuminput.h</header>
+  </customwidget>
   <customwidget>
    <class>KPushButton</class>
    <extends>QPushButton</extends>

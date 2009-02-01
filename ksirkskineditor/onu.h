@@ -27,6 +27,7 @@
 #include "continent.h"
 #include "nationality.h"
 #include "spritetype.h"
+#include "poolloader.h"
 
 #include <QPixmap>
 #include <QFont>
@@ -71,16 +72,19 @@ public:
    */
   inline const QString& skin() const {return m_skin;}
   inline const QString& name() const {return m_name;}
-  inline void setName(const QString& n) {m_name = n;}
+  inline void setName(const QString& n) { if (m_name != n) {m_name = n; m_dirty = true;} }
   inline const QString& description() const {return m_description;}
-  inline void setDescription(const QString& d) {m_description = d;}
+  inline void setDescription(const QString& d) { if (m_description != d) {m_description = d; m_dirty=true;} }
   inline const QString& configFileName() const {return m_configFileName;}
   inline const QPixmap& map() const {return m_map;}
   inline const QPixmap& snapshot() const {return m_snapshot;}
   inline unsigned int width() const {return m_width;}
-  inline void setWidth(unsigned int w) {m_width = w;}
+  inline void setWidth(unsigned int w) { if (m_width != w) {m_width = w; m_dirty = true;} }
   inline unsigned int height() const {return m_height;}
-  inline void setHeight(unsigned int h) {m_height = h;}
+  inline void setHeight(unsigned int h) { if (m_height != h) {m_height = h; m_dirty = true;} }
+  inline const QStringList& poolIds() const {return m_poolIds;}
+  inline bool dirty() const {return m_dirty;}
+  inline void setDirty() {m_dirty = true;}
   //@}
   
   /**
@@ -219,6 +223,8 @@ public:
   * Build the map from it's stored image and the countries names
   */
   void buildMap();
+
+  void loadPoolIds(const QString& fileName);
   
   QString m_configDir;
 
@@ -308,6 +314,10 @@ public:
   QString m_poolString;
 
   QList<Goal*> m_goals;
+
+  QStringList m_poolIds;
+
+  bool m_dirty;
 };
 
 }

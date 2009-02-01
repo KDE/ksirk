@@ -1,5 +1,5 @@
 HISTORY OF KsirK
-http://ksirk.tuxfamily.org/
+http://games.kde.org/game.php?game=ksirk
 
 I started this game during 1995 (?) in order to learn C++ and Windows 95 programming.
 It was initialy named "Risk". I used a book about WinG, one of the first Microsoft
@@ -13,30 +13,29 @@ but really slowly.That was due to the use of an early version of Java but also t
 a really uggly programming.
 
 In the meantime, for my work, I learned Smalltalk (VisualWorks), THE OO language (try
-it, you really cannot experience higher OO programming pleasure ; I'm addict)and so
+it, you really cannot experience higher OO programming pleasure ; I was an addict)and so
 discovered all the power of good OOP. I started also to use Linux and KDE. I wanted
 to learn KDE programming and so decided to convert back my lovely project to C++ !
-KRisk was born ! But with my experience of Smalltalk and the APIs of QT and KDE, my
+KRisk was born ! But with my experience of Smalltalk and the APIs of Qt and KDE, my
 work has been, I think, quite better.
 
 At the time of 04/24/2002, some architectural problems due to this complex history
 remained, but it worked good and I think I could release a public version. I choosed to
 rename it in order to avoid copyright problems : welcome to KsirK !
 
-Now, in early 2003, the evolution continue with a minimal AI (for artificial idiot as its
-decisions are choosen completly at random) and the themability of the world.
+In early 2003, the evolution continued with a minimal AI (for Artificial Idiot as its
+decisions were chosen completly at random) and the themability of the world.
 This last point is a direct consequence of the improvements of the overall
 architecture of the game.
 
-In parallel, the online tools linked to the game continue to improve: with the
-current version appear a mailing list and a CVS repository (See the Contacts and
-Download pages of the Web site) !
+In parallel, the online tools linked to the game continued to improve: with this
+version appeared a mailing list and a CVS repository!
 
 INSTALLATION
 Please read INSTALL
 
 USING KsirK
-Please read tooltips on buttons, the statusbars and the KsirK HTML manual
+Please read tooltips on buttons, the statusbars and the KsirK HTML manual.
 - map scrolling : place your mouse near a window border or use your mouse wheel
   (with the Alt modifier for horizontal scrolling)
 - armies distribution : Left-click to put an army, Right-click to remove one
@@ -44,4 +43,4 @@ Please read tooltips on buttons, the statusbars and the KsirK HTML manual
   target one
 
 CONTACT
-mailto:ksirk@tuxfamily.org
+mailto:kleag@free.fr

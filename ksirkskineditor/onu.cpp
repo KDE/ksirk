@@ -30,6 +30,7 @@
 #include <QPixmap>
 #include <QGraphicsItem>
 #include <QGraphicsScene>
+#include <QXmlStreamReader>
 
 #include <kstandarddirs.h>
 #include <kglobal.h>
@@ -49,7 +50,8 @@ ONU::ONU(const QString& configDir):
   m_nationalities(),
   m_continents(),
   m_renderer(),
-  m_itemsMap()
+  m_itemsMap(),
+  m_dirty(false)
 {
 
   kDebug() << "ONU constructor: " << m_configFileName;
@@ -113,6 +115,7 @@ ONU::ONU(const QString& configDir):
   m_map = QPixmap();
   m_renderer.load(poolFileName);
   m_svgDom.load(poolFileName);
+  loadPoolIds(poolFileName);
   
   QString mapMaskFileName = m_configDir + '/' + onugroup.readEntry("map-mask");
   kDebug() << "Map mask file name init: " << mapMaskFileName;
@@ -616,6 +619,7 @@ void ONU::saveConfig(const QString& configFileName)
     countryGroup.writeEntry("neighbours",theNeighboursIds);
   }
 
+  m_dirty = false;
   kDebug() << "OUT";
 }
 
@@ -799,20 +803,32 @@ QFont ONU::backgroundFont()
 
 void ONU::setFont(const QFont& font)
 {
+  if (m_font.family == font.family()
+      && m_font.size == font.pointSize()
+      && m_font.weight == (QFont::Weight)font.weight()
+      && m_font.italic == font.italic())
+    return;
   m_font.family = font.family();
   m_font.size = font.pointSize();
   m_font.weight = (QFont::Weight)font.weight();
   m_font.italic = font.italic();
+  m_dirty = true;
 }
 
 void ONU::setFontFgColor(const QColor& color)
 {
+  if (m_font.foregroundColor == color.name())
+    return;
   m_font.foregroundColor = color.name();
+  m_dirty = true;
 }
 
 void ONU::setFontBgColor(const QColor& color)
 {
+  if (m_font.backgroundColor == color.name())
+    return;
   m_font.backgroundColor = color.name();
+  m_dirty = true;
 }
 
 
@@ -821,6 +837,7 @@ void ONU::createCountry(const QString& newCountryName)
   kDebug();
   Country* newCountry = new Country(newCountryName, QPointF(), QPointF(), QPointF(), QPointF(), QPointF(), QPointF()/*, m_countries.size()*/);
   m_countries.push_back(newCountry);
+  m_dirty = true;
 }
 
 void ONU::deleteCountry(Country* country)
@@ -848,6 +865,7 @@ void ONU::deleteCountry(Country* country)
 
   m_countries.removeAll(country);
   delete country;
+  m_dirty = true;
 }
 
 void ONU::createContinent(const QString& newContinentName)
@@ -855,6 +873,7 @@ void ONU::createContinent(const QString& newContinentName)
   kDebug();
   Continent* newContinent = new Continent(newContinentName, QList<Country*>(), 0);
   m_continents.push_back(newContinent);
+  m_dirty = true;
 }
 
 void ONU::deleteContinent(Continent* continent)
@@ -866,6 +885,7 @@ void ONU::deleteContinent(Continent* continent)
   
   m_continents.removeAll(continent);
   delete continent;
+  m_dirty = true;
 }
 
 void ONU::updateIcon(SpriteType type)
@@ -936,6 +956,7 @@ void ONU::createGoal()
 {
   Goal* goal = new Goal();
   m_goals.push_back(goal);
+  m_dirty = true;
 }
 
 void ONU::deleteGoal(int g)
@@ -949,6 +970,7 @@ void ONU::deleteGoal(int g)
   
   Goal* goal = m_goals.takeAt(g);
   delete goal;
+  m_dirty = true;
 }
 
 Nationality* ONU::nationalityNamed(const QString& name)
@@ -968,6 +990,7 @@ void ONU::createNationality(const QString& newNationalityName)
   Nationality* nationality = new Nationality(newNationalityName, "", "");
   
   m_nationalities.push_back(nationality);
+  m_dirty = true;
 }
 
 void ONU::deleteNationality(Nationality* nationality)
@@ -979,6 +1002,43 @@ void ONU::deleteNationality(Nationality* nationality)
   
   m_nationalities.removeAll(nationality);
   delete nationality;
+  m_dirty = true;
+}
+
+void ONU::loadPoolIds(const QString& fileName)
+{
+  kDebug() << fileName;
+  QFile file(fileName);
+  if (!file.open(QFile::ReadOnly | QFile::Text))
+  {
+    KMessageBox::sorry(0,
+                        i18n("Cannot read file %1:\n%2.",fileName,file.errorString()),
+                        i18n("PoolLoader"));
+                        return;
+  }
+  
+  QXmlStreamReader xml(&file);
+  QRegExp reg("\\D+\\d+");
+  while (!xml.atEnd())
+  {
+    QXmlStreamReader::TokenType type = xml.readNext();
+    if (type == QXmlStreamReader::StartElement)
+    {
+      kDebug() << xml.text().toString();
+      QXmlStreamAttributes attributes = xml.attributes ();
+      QStringRef id = attributes.value("", "id" );
+      if (!id.isEmpty() && !reg.exactMatch(id.toString()))
+      {
+        m_poolIds.push_back(id.toString());
+      }
+    }
+  }
+  if (xml.hasError())
+  {
+    kError() << "Error: " << xml.errorString();
+    // do error handling
+  }
+  m_poolIds.sort();
 }
 
 }

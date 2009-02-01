@@ -28,29 +28,29 @@ KsirkCountryDefinitionWidget::KsirkCountryDefinitionWidget(QWidget* parent) : QD
 
 void KsirkCountryDefinitionWidget::initWith(const Country* country)
 {
-  flagx->setText(QString::number(country->pointFlag().x()));
-  flagy->setText(QString::number(country->pointFlag().y()));
+  flagx->setValue((country->pointFlag().x()));
+  flagy->setValue(country->pointFlag().y());
   
-  anchorx->setText(QString::number(country->anchorPoint().x()));
-  anchory->setText(QString::number(country->anchorPoint().y()));
+  anchorx->setValue(country->anchorPoint().x());
+  anchory->setValue(country->anchorPoint().y());
   
-  centerx->setText(QString::number(country->centralPoint().x()));
-  centery->setText(QString::number(country->centralPoint().y()));
+  centerx->setValue(country->centralPoint().x());
+  centery->setValue(country->centralPoint().y());
   
-  infantryx->setText(QString::number(country->pointInfantry().x()));
-  infantryy->setText(QString::number(country->pointInfantry().y()));
+  infantryx->setValue(country->pointInfantry().x());
+  infantryy->setValue(country->pointInfantry().y());
   
-  cavalryx->setText(QString::number(country->pointCavalry().x()));
-  cavalryy->setText(QString::number(country->pointCavalry().y()));
+  cavalryx->setValue(country->pointCavalry().x());
+  cavalryy->setValue(country->pointCavalry().y());
   
-  cannonx->setText(QString::number(country->pointCannon().x()));
-  cannony->setText(QString::number(country->pointCannon().y()));
+  cannonx->setValue(country->pointCannon().x());
+  cannony->setValue(country->pointCannon().y());
   
-  anchorx->setText(QString::number(country->anchorPoint().x()));
-  anchory->setText(QString::number(country->anchorPoint().y()));
+  anchorx->setValue(country->anchorPoint().x());
+  anchory->setValue(country->anchorPoint().y());
   
-  centerx->setText(QString::number(country->centralPoint().x()));
-  centery->setText(QString::number(country->centralPoint().y()));
+  centerx->setValue(country->centralPoint().x());
+  centery->setValue(country->centralPoint().y());
   
   neighbourslist->clear();
   foreach(Country* neighbour, country->neighbours())

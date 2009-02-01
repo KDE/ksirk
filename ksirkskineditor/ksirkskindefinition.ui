@@ -5,7 +5,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>302</width>
+    <width>328</width>
     <height>841</height>
    </rect>
   </property>
@@ -48,7 +48,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="widthLineEdit" >
+       <widget class="KIntNumInput" name="widthLineEdit" >
         <property name="toolTip" >
          <string>Map's width</string>
         </property>
@@ -66,7 +66,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="heightLineEdit" >
+       <widget class="KIntNumInput" name="heightLineEdit" >
         <property name="toolTip" >
          <string>Map's height</string>
         </property>
@@ -446,6 +446,11 @@ During game, each player must choose a nationality. Then you should add at least
    <class>KFontRequester</class>
    <extends>QWidget</extends>
    <header>kfontrequester.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KIntNumInput</class>
+   <extends>QWidget</extends>
+   <header>knuminput.h</header>
   </customwidget>
   <customwidget>
    <class>KPushButton</class>

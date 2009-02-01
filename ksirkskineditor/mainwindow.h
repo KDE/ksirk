@@ -152,8 +152,8 @@ private Q_SLOTS:
   void slotURLSelected(const KUrl&);
 
   void slotSkinNameEdited();
-  void slotSkinWidthEdited();
-  void slotSkinHeightEdited();
+  void slotSkinWidthEdited(int);
+  void slotSkinHeightEdited(int);
   void slotSkinDescriptionEdited();
 
   void slotSkinWidthDiffEdited();
@@ -164,7 +164,7 @@ private Q_SLOTS:
   void slotNeighbours();
   void slotSkinPartTabChanged(int index);
   void slotContinentCountries();
-  void slotContinentBonusEdited();
+  void slotContinentBonusEdited(int);
 
   void slotFlagWidthChanged(int);
   void slotFlagHeightChanged(int);
@@ -216,7 +216,7 @@ private Q_SLOTS:
   void slotNationalitySelected(QListWidgetItem* item);
   void slotNationalityNameEdited();
   void slotNationalityLeaderNameEdited();
-  void slotNationalityFlagEdited();
+  void slotNationalityFlagEdited(int);
   void slotNewNationality();
   void slotDeleteNationality();
   
@@ -224,6 +224,19 @@ private Q_SLOTS:
   void slotFgSelected(const QColor& color);
   void slotBgColorSelected(const QColor& color);
   void slotReleasePosition(const QPointF&);
+
+  void slotFLagxValueChanged(int);
+  void slotFLagyValueChanged(int v);
+  void slotCenterxValueChanged(int);
+  void slotCenteryValueChanged(int v);
+  void slotAnchorxValueChanged(int);
+  void slotAnchoryValueChanged(int v);
+  void slotCavalryxValueChanged(int);
+  void slotCavalryyValueChanged(int v);
+  void slotCannonxValueChanged(int);
+  void slotCannonyValueChanged(int v);
+  void slotInfantryxValueChanged(int);
+  void slotInfantryyValueChanged(int v);
   
 private:
   void initSpritesButtonsWith(const Country* country);
