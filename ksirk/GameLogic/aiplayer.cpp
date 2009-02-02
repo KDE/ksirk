@@ -37,6 +37,7 @@
 #include <kmessagebox.h>
 #include <QUuid>
 #include <QMutexLocker>
+#include <QMap>
 
 
 /* Includes for the STL */
@@ -245,7 +246,7 @@ void AIPlayer::chooseAttackMoveArmiesOrNextPlayer()
   */
 std::pair<const Country*, const Country*> AIPlayer::chooseBelligerant()
 {
-  std::multimap<const Country*, const Country*> candidates;
+  QMultiMap<const Country*, const Country*> candidates;
 
 //     kDebug() << name() << " : AIPlayer::chooseBelligerant()" << endl;
     // Builds the list of countries of the player that have enough armies and a good neighbour
@@ -275,7 +276,7 @@ std::pair<const Country*, const Country*> AIPlayer::chooseBelligerant()
           {
 //                        kDebug() << name() << "  choosing belligerants, adding target / source : "
 //                                << candidateSource-> name() << " / " << candidateTarget-> name() << endl;
-              candidates.insert(std::make_pair(candidateSource, candidateTarget));
+              candidates.insert(candidateSource, candidateTarget);
           }
         }
       }
@@ -288,14 +289,14 @@ std::pair<const Country*, const Country*> AIPlayer::chooseBelligerant()
     }
     uint which = Dice::roll(candidates.size()) - 1;
 //        kDebug() << "Which = " << which <<endl;
-    std::multimap<const Country*, const Country*>::const_iterator it;
+    QMultiMap<const Country*, const Country*>::const_iterator it;
     unsigned int i = 0;
     for ( it = candidates.begin(); it != candidates.end() ; it++, i++ )
     {
       if (which == i )
       {
 //                kDebug() << "OUT AIPlayer::chooseBelligerant() : " << endl ;
-        return (*it);
+         return std::make_pair(it.key(), it.value());
       }
     }
   }
