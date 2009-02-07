@@ -384,7 +384,7 @@ During game, each player must choose a nationality. Then you should add at least
              <string>Creates a new goal</string>
             </property>
             <property name="whatsThis" >
-             <string>Click here to add a new goal. It will be named automaticaly.</string>
+             <string>Click here to add a new goal. It will be named automatically.</string>
             </property>
             <property name="text" >
              <string>New goal</string>

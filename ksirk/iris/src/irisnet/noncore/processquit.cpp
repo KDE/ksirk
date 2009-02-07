@@ -119,7 +119,7 @@ public:
 #ifdef Q_OS_WIN
 		use_handler = !is_gui_app();
 		if(use_handler)
-			SetConsoleCtrlHandler((PHANDLER_ROUTINE)winHandler, TRUE);
+			SetConsoleCtrlHandler((PHANDLER_ROUTINE)winHandler, true);
 #endif
 #ifdef Q_OS_UNIX
 		pipe(sig_pipe);
@@ -135,7 +135,7 @@ public:
 	{
 #ifdef Q_OS_WIN
 		if(use_handler)
-			SetConsoleCtrlHandler((PHANDLER_ROUTINE)winHandler, FALSE);
+			SetConsoleCtrlHandler((PHANDLER_ROUTINE)winHandler, false);
 #endif
 #ifdef Q_OS_UNIX
 		unixWatchRemove(SIGINT);
@@ -152,7 +152,7 @@ public:
 	{
 		Q_UNUSED(ctrlType);
 		QMetaObject::invokeMethod(g_pq->d, "ctrl_ready", Qt::QueuedConnection);
-		return TRUE;
+		return true;
 	}
 #endif
 

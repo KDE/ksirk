@@ -84,7 +84,7 @@
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
-This value will be automaticaly updated if you move the infantry.</string>
+This value will be automatically updated if you move the infantry.</string>
         </property>
         <property name="text" stdset="0" >
          <string/>
@@ -111,7 +111,7 @@ This value will be automaticaly updated if you move the infantry.</string>
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
-This value will be automaticaly updated if you move the infantry by drag and drop.</string>
+This value will be automatically updated if you move the infantry by drag and drop.</string>
         </property>
         <property name="text" stdset="0" >
          <string/>
@@ -135,7 +135,7 @@ This value will be automaticaly updated if you move the infantry by drag and dro
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
-This value will be automaticaly updated if you move the cavalry.</string>
+This value will be automatically updated if you move the cavalry.</string>
         </property>
         <property name="text" stdset="0" >
          <string/>
@@ -162,7 +162,7 @@ This value will be automaticaly updated if you move the cavalry.</string>
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
-This value will be automaticaly updated if you move the cavalry by drag and drop.</string>
+This value will be automatically updated if you move the cavalry by drag and drop.</string>
         </property>
         <property name="text" stdset="0" >
          <string/>
@@ -196,7 +196,7 @@ This value will be automaticaly updated if you move the cavalry by drag and drop
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
-This value will be automaticaly updated if you move the cannon by drag and drop.</string>
+This value will be automatically updated if you move the cannon by drag and drop.</string>
         </property>
         <property name="text" stdset="0" >
          <string/>
@@ -213,7 +213,7 @@ This value will be automaticaly updated if you move the cannon by drag and drop.
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
-This value will be automaticaly updated if you move the cannon.</string>
+This value will be automatically updated if you move the cannon.</string>
         </property>
         <property name="text" stdset="0" >
          <string/>
@@ -232,7 +232,7 @@ Note that this point should be located inside the limits of the country on the m
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
-This value will be automaticaly updated if you move the country name by drag and droping its target icon.
+This value will be automatically updated if you move the country name by drag and droping its target icon.
 </string>
         </property>
         <property name="text" stdset="0" >
@@ -252,7 +252,7 @@ Note that this point should be located inside the limits of the country on the m
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
-This value will be automaticaly updated if you move the country name by drag and droping its target icon.</string>
+This value will be automatically updated if you move the country name by drag and droping its target icon.</string>
         </property>
         <property name="text" stdset="0" >
          <string/>
@@ -269,7 +269,7 @@ This value will be automaticaly updated if you move the country name by drag and
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
-This value will be automaticaly updated if you move the highlighting by drag and droping its cross icon.</string>
+This value will be automatically updated if you move the highlighting by drag and droping its cross icon.</string>
         </property>
         <property name="text" stdset="0" >
          <string/>
@@ -286,7 +286,7 @@ This value will be automaticaly updated if you move the highlighting by drag and
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
-This value will be automaticaly updated if you move the highlighting by drag and droping its cross icon.</string>
+This value will be automatically updated if you move the highlighting by drag and droping its cross icon.</string>
         </property>
         <property name="text" stdset="0" >
          <string/>
@@ -303,7 +303,7 @@ This value will be automaticaly updated if you move the highlighting by drag and
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
-This value will be automaticaly updated if you move the flag by drag and drop.</string>
+This value will be automatically updated if you move the flag by drag and drop.</string>
         </property>
         <property name="text" stdset="0" >
          <string/>
@@ -320,7 +320,7 @@ This value will be automaticaly updated if you move the flag by drag and drop.</
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
-This value will be automaticaly updated if you move the flag by drag and drop.</string>
+This value will be automatically updated if you move the flag by drag and drop.</string>
         </property>
         <property name="text" stdset="0" >
          <string/>
