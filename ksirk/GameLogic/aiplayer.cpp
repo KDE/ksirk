@@ -291,7 +291,7 @@ std::pair<const Country*, const Country*> AIPlayer::chooseBelligerant()
 //        kDebug() << "Which = " << which <<endl;
     QMultiMap<const Country*, const Country*>::const_iterator it;
     unsigned int i = 0;
-    for ( it = candidates.begin(); it != candidates.end() ; it++, i++ )
+    for ( it = candidates.constBegin(); it != candidates.constEnd() ; it++, i++ )
     {
       if (which == i )
       {
