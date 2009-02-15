@@ -1124,9 +1124,9 @@ void KGameWindow::slotGroupChatJoined (const XMPP::Jid & jid)
   /*    <message type="chat" to="kleag@localhost" id="aabca" >
   <body>hello</body>
   </message>*/
-  XMPP::Message message(m_groupchatRoom+"@"+m_groupchatHost);
+  XMPP::Message message(m_groupchatRoom+'@'+m_groupchatHost);
   message.setType("groupchat");
-  message.setId(QUuid::createUuid().toString().remove("{").remove("}").remove("-"));
+  message.setId(QUuid::createUuid().toString().remove('{').remove('}').remove('-'));
   message.setBody("Hello, I'm a KsirK Game");
   m_jabberClient->sendMessage(message);
 
@@ -1146,7 +1146,7 @@ void KGameWindow::slotGroupChatPresence (const XMPP::Jid & jid, const XMPP::Stat
   {
     XMPP::Message message(jid);
     message.setType("ksirkgame");
-    message.setId(QUuid::createUuid().toString().remove("{").remove("}").remove("-"));
+    message.setId(QUuid::createUuid().toString().remove('{').remove('}').remove('-'));
     message.setBody(QString("Hello, ")+jid.full());
     m_jabberClient->sendMessage(message);
     m_presents.insert(jid.full());

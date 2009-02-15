@@ -2788,9 +2788,9 @@ void KGameWindow::saveXml(std::ostream& xmlStream)
   if (player)
   {
     QString name = player->name().toUtf8();
-    name = name.replace("&","&amp;");
-    name = name.replace("<","&lt;");
-    name = name.replace(">","&gt;");
+    name = name.replace('&',"&amp;");
+    name = name.replace('<',"&lt;");
+    name = name.replace('>',"&gt;");
     xmlStream << "<currentPlayer name=\"" << name.toUtf8().data() << "\" />" << std::endl;
   }
   else
@@ -3377,12 +3377,12 @@ void KGameWindow::askForJabberGames()
 {
   if (m_jabberClient && m_jabberClient->isConnected())
   {
-    XMPP::Message message(m_groupchatRoom+"@"+m_groupchatHost);
+    XMPP::Message message(m_groupchatRoom+'@'+m_groupchatHost);
     message.setType("groupchat");
-    message.setId(QUuid::createUuid().toString().remove("{").remove("}").remove("-"));
+    message.setId(QUuid::createUuid().toString().remove('{').remove('}').remove('-'));
     QString body("Who propose online KsirK games here?");
     message.setBody(body);
-    kDebug() << "Sending message: <<" << body << ">> to" << (m_groupchatRoom+"@"+m_groupchatHost);
+    kDebug() << "Sending message: <<" << body << ">> to" << (m_groupchatRoom+'@'+m_groupchatHost);
     m_jabberClient->sendMessage(message);
   }
 }
@@ -3395,14 +3395,14 @@ void KGameWindow::sendGameInfoToJabber()
     && m_automaton->startingGame())
   {
     kDebug() << "Sending 'I'm starting a game with ...'";
-    XMPP::Message message(m_groupchatRoom+"@"+m_groupchatHost);
+    XMPP::Message message(m_groupchatRoom+'@'+m_groupchatHost);
     message.setType("groupchat");
-    message.setId(QUuid::createUuid().toString().remove("{").remove("}").remove("-"));
+    message.setId(QUuid::createUuid().toString().remove('{').remove('}').remove('-'));
     QString body;
     QTextStream qts(&body);
     qts <<"I'm starting a game with skin '" << m_automaton->skin() << "' and '" << m_automaton->nbPlayers() << "' players";
     message.setBody(body);
-    kDebug() << "Sending message: <<" << body << ">> to" << (m_groupchatRoom+"@"+m_groupchatHost);
+    kDebug() << "Sending message: <<" << body << ">> to" << (m_groupchatRoom+'@'+m_groupchatHost);
     m_jabberClient->sendMessage(message);
   }
 }

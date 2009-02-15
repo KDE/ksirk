@@ -93,7 +93,7 @@ void KsirkJabberGameWidget::slotJabberConnectButtonClicked()
   kDebug();
   
   KsirkSettings::setJabberId(jabberid->text());
-  XMPP::Jid jid(jabberid->text()+"/"+jabberid->text());
+  XMPP::Jid jid(jabberid->text()+'/'+jabberid->text());
   QString pass = password->text();
   KsirkSettings::setJabberPassword(pass);
 
@@ -183,7 +183,7 @@ void KsirkJabberGameWidget::slotJoinRoom()
   m_automaton->game()->setGroupchatNick(groupchatNick);
   QString groupchatPassword = roompassword->text();
   m_automaton->game()->setGroupchatPassword(groupchatPassword);
-  KsirkSettings::setRoomJid(groupchatRoom+"@"+groupchatHost);
+  KsirkSettings::setRoomJid(groupchatRoom+'@'+groupchatHost);
   KsirkSettings::setNickname(groupchatNick);
   KsirkSettings::setRoomPassword(groupchatPassword);
   KsirkSettings::self()->writeConfig();
