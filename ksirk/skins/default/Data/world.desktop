@@ -259,7 +259,7 @@ id=24
 infantry-point=860,245
 neighbours=Russia,Siberia,Kazakstan,China
 
-[New South Walles]
+[New South Wales]
 anchor-point=894,561
 cannon-point=885,575
 cavalry-point=876,508
@@ -277,7 +277,7 @@ central-point=974,625
 flag-point=979,599
 id=34
 infantry-point=969,635
-neighbours=New South Walles
+neighbours=New South Wales
 
 [Niger]
 anchor-point=511,415
@@ -302,7 +302,7 @@ central-point=843.5,540
 flag-point=858,508
 id=39
 infantry-point=841,495
-neighbours=Papouasie,New South Walles
+neighbours=Papouasie,New South Wales
 
 [Ontario]
 anchor-point=152,257
@@ -316,7 +316,7 @@ neighbours=Alaska,Alberta,Quebec,Western US
 
 [Pacific]
 bonus=2
-continent-countries=Indonesia,Papouasie,Occidental Australia,New South Walles,New Zealand
+continent-countries=Indonesia,Papouasie,Occidental Australia,New South Wales,New Zealand
 id=6
 
 [Pakistan]
@@ -337,7 +337,7 @@ central-point=891.5,485
 flag-point=896,461
 id=38
 infantry-point=967,490
-neighbours=Indonesia,Occidental Australia,New South Walles
+neighbours=Indonesia,Occidental Australia,New South Wales
 
 [Paraguay]
 anchor-point=313,572
@@ -556,7 +556,7 @@ width=20
 
 [onu]
 continents=North America,South America,Europe,Africa,Asia,Pacific
-countries=Western US,Eastern US,Quebec,Ontario,Alberta,Alaska,Groenland,Mexico,Colombia,Brazil,Paraguay,Chile,Island,United Kingdom,Benelux,France,Prussia,Scandinavia,Russia,Iran,China,Pakistan,Kazakstan,Siberia,Mongolia,Japan,Algeria,Niger,Egypt,Gabon,Zair,South Africa,Madagascar,Arabia,New Zealand,India,Vietnam,Indonesia,Papouasie,Occidental Australia,New South Walles
+countries=Western US,Eastern US,Quebec,Ontario,Alberta,Alaska,Groenland,Mexico,Colombia,Brazil,Paraguay,Chile,Island,United Kingdom,Benelux,France,Prussia,Scandinavia,Russia,Iran,China,Pakistan,Kazakstan,Siberia,Mongolia,Japan,Algeria,Niger,Egypt,Gabon,Zair,South Africa,Madagascar,Arabia,New Zealand,India,Vietnam,Indonesia,Papouasie,Occidental Australia,New South Wales
 desc=This skin shows a world that looks like the real one with some nationalities\nrandomly chosen and proposes various interesting goals
 fighters-flag-y-diff=-12
 format-version=3.0

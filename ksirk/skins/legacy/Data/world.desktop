@@ -267,7 +267,7 @@ id=24
 infantry-point=832,222
 neighbours=Kazakstan,China,Siberia
 
-[New South Walles]
+[New South Wales]
 anchor-point=890,589
 cannon-point=878,627
 cavalry-point=872,538
@@ -285,7 +285,7 @@ central-point=970,645
 flag-point=970,635
 id=41
 infantry-point=955,645
-neighbours=New South Walles
+neighbours=New South Wales
 
 [Niger]
 anchor-point=485,417
@@ -310,7 +310,7 @@ central-point=833,563
 flag-point=841,567
 id=39
 infantry-point=826,530
-neighbours=Papouasie,New South Walles
+neighbours=Papouasie,New South Wales
 
 [Ontario]
 anchor-point=150,245
@@ -324,7 +324,7 @@ neighbours=Alaska,Alberta,Quebec,Eastern US,Western US
 
 [Pacific]
 bonus=2
-continent-countries=Indonesia,Papouasie,Occidental Australia,New South Walles,New Zealand
+continent-countries=Indonesia,Papouasie,Occidental Australia,New South Wales,New Zealand
 id=6
 
 [Pakistan]
@@ -345,7 +345,7 @@ central-point=875,497
 flag-point=865,472
 id=38
 infantry-point=879,489
-neighbours=Indonesia,Occidental Australia,New South Walles
+neighbours=Indonesia,Occidental Australia,New South Wales
 
 [Paraguay]
 anchor-point=320,580
@@ -564,7 +564,7 @@ width=23
 
 [onu]
 continents=North America,South America,Europe,Africa,Asia,Pacific
-countries=Western US,Eastern US,Quebec,Ontario,Alberta,Alaska,Groenland,Mexico,Colombia,Brazil,Paraguay,Chile,Island,United Kingdom,Benelux,France,Prussia,Scandinavia,Russia,Iran,China,Pakistan,Kazakstan,Siberia,Mongolia,Japan,Algeria,Niger,Egypt,Gabon,Zair,South Africa,Madagascar,Arabia,Middle East,India,Vietnam,Indonesia,Papouasie,Occidental Australia,New South Walles,New Zealand
+countries=Western US,Eastern US,Quebec,Ontario,Alberta,Alaska,Groenland,Mexico,Colombia,Brazil,Paraguay,Chile,Island,United Kingdom,Benelux,France,Prussia,Scandinavia,Russia,Iran,China,Pakistan,Kazakstan,Siberia,Mongolia,Japan,Algeria,Niger,Egypt,Gabon,Zair,South Africa,Madagascar,Arabia,Middle East,India,Vietnam,Indonesia,Papouasie,Occidental Australia,New South Wales,New Zealand
 desc=This skin shows a world that looks like the real one with some nationalities randomly chosen and proposes various interesting goals.\nIt looks like KsirK before vector graphics.
 fighters-flag-y-diff=-12
 format-version=3.0

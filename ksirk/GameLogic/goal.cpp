@@ -92,7 +92,7 @@ bool Goal::checkFor(const GameLogic::Player* player) const
     return checkContinentsFor(player);
     break;
   default:
-    return (player->getNbCountries() >= m_automaton->game()->theWorld()->getCountries().size());
+    return ((int) player->getNbCountries() >= m_automaton->game()->theWorld()->getCountries().size());
   }
 }
 
@@ -241,19 +241,19 @@ QString Goal::message(int displayType) const
       diff  = m_nbCountries-m_player->countries().size();
       if (diff > 0)
       {
-        mes += i18n("<br>%1, you have still %2 countries to conquer...",m_player->name(),diff);
+        mes += i18np("<br>%2, you still have 1 country to conquer...","<br>%2, you still have %1 countries to conquer...",diff,m_player->name());
       }
       else
       {
         int nbOk = 0;
-        for (unsigned int i = 0; i < m_player->countries().size();i++)
+        for (int i = 0; i < m_player->countries().size();++i)
         {
           if (m_player->countries().at(i)->nbArmies() >= m_nbArmiesByCountry)
           {
             nbOk++;
           }
         }
-        mes += i18n("<br>%1, you have enough countries but you still have to put more than %2 armies on %3 of them...",m_player->name(),m_nbArmiesByCountry,m_nbCountries-nbOk);
+        mes += i18np("<br>%2, you have enough countries but you still have to put more than 1 army on %3 of them...","<br>%2, you have enough countries but you still have to put more than %1 armies on %3 of them...",m_nbArmiesByCountry,m_player->name(),m_nbCountries-nbOk);
         
       }
       break;
@@ -264,7 +264,7 @@ QString Goal::message(int displayType) const
       {
         Continent* continent = const_cast<Continent*>(m_automaton->game()->theWorld()->continentNamed(*it));
         int nb = continent->getMembers().size() - continent->countriesOwnedBy(m_player).size();
-        mes += i18n("%1 countries in %2",nb,continent->name());
+        mes += i18np("1 country in %2","%1 countries in %2",nb,continent->name());
       }
       it++;
       while (it != it_end)

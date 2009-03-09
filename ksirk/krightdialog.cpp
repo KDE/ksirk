@@ -220,7 +220,7 @@ void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int
   rightContents.at(2)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
   rightContents.at(3)->setText("<b>"+nb_units_A+"</b>");
 
-  rightContents.at(4)->setText(i18n("<font color=\"red\">Attack</font> with %1 armies.<br>", nb_A));
+  rightContents.at(4)->setText(i18np("<font color=\"red\">Attack</font> with 1 army.<br>","<font color=\"red\">Attack</font> with %1 armies.<br>", nb_A));
 
 
   rightContents.at(5)->setText("<u><b>"+i18n(pays_D.toUtf8().data())+"</b></u> ");
@@ -230,7 +230,7 @@ void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int
   rightContents.at(7)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
   rightContents.at(8)->setText("<b>"+nb_units_D+"</b> ");
 
-  rightContents.at(9)->setText(i18n("<font color=\"blue\">Defend</font> with %1 armies.<br>", nb_D));
+  rightContents.at(9)->setText(i18np("<font color=\"blue\">Defend</font> with 1 army.<br>","<font color=\"blue\">Defend</font> with %1 armies.<br>", nb_D));
 
   box1->addWidget(rightContents.at(0));
   box1->addWidget(flag1);
@@ -387,7 +387,7 @@ void KRightDialog::updateRecycleDetails(GameLogic::Country* country, bool recycl
   }
   else
   {
-    rightContents.at(1)->setText(i18n("%1 armies to place", nbAvailArmies));
+    rightContents.at(1)->setText(i18np("1 army to place", "%1 armies to place", nbAvailArmies));
     rightContents.at(2)->setText("<b>"+i18n(country->name().toUtf8().data())+"</b>");
     rightContents.at(3)->setText(i18n("<b>Armies:</b> %1", country->nbArmies()));
     if (nbAvailArmies > 0)

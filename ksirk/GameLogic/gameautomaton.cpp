@@ -940,7 +940,7 @@ void GameAutomaton::gameEvent(const QString& event, const QPointF& point)
 /** returns the name of the current state */
 QString GameAutomaton::stateName() const
 {
-  if (m_state >= sizeof(GameStateNames))
+  if (m_state >= (int) sizeof(GameStateNames))
   {
     ::std::ostringstream oss;
     oss << "Invalid stored state id: " << m_state;
@@ -2319,7 +2319,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     if (isAdmin())
     {
 //       stream >> playerName;
-      messageParts << I18N_NOOP("%1 choose to end recycling ; there is now %2 players who want so");
+      messageParts << I18N_NOOP("%1 choose to end recycling; there are now %2 players who want so");
       stream >> nbVotes;
       stream >> playerId;
       playersNames = ((Player*)(findPlayer(playerId)))->name();

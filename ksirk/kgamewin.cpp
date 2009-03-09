@@ -414,7 +414,7 @@ void KGameWindow::initActions()
   KAction* finishMovesAction = new KAction(KIcon(),
         i18n("Finish moves"), this);
   finishMovesAction->setShortcut(Qt::Key_Space);
-  finishMovesAction->setStatusTip(i18n("Finish now current sprites movements"));
+  finishMovesAction->setStatusTip(i18n("Finish moving the current sprites"));
   connect(finishMovesAction,SIGNAL(triggered(bool)),this,SLOT(slotFinishMoves()));
   actionCollection()->addAction("game_finish_moves", finishMovesAction);
 
@@ -1270,10 +1270,11 @@ void KGameWindow::displayDefenseWindow()
   QPushButton * defAuto = new QPushButton (i18n("Defend-Auto"));
 
   QLabel * labDef = new QLabel ();
-  labDef->setText(i18n("<font color=\"red\">%1</font> attacks you from <font color=\"red\">%2</font> with %3 armies!<br> How do you want to defend <font color=\"blue\">%4</font>?",
+  labDef->setText(i18np("<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> with 1 army!<br> How do you want to defend <font color=\"blue\">%4</font>?",
+                        "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> with %1 armies!<br> How do you want to defend <font color=\"blue\">%4</font>?",
+                        QString::number(this->firstCountry()->owner()->getNbAttack()),                        
                         this->firstCountry()->owner()->name(),
-                        this->firstCountry()->name(),
-                        QString::number(this->firstCountry()->owner()->getNbAttack()),
+                        this->firstCountry()->name(),                        
                         this->secondCountry()->name()));
 
   // Add icons on buttons
@@ -3209,13 +3210,13 @@ void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * 
   //init. main layout
   if (invasionType == Invasion)
   {
-    wSlideLayout->addWidget(new QLabel(i18n("You conquered <font color=\"blue\">%1</font> with <font color=\"red\">%2</font>!", defender->i18name(), attack->i18name())),0,0);
-    wSlideLayout->addWidget(new QLabel(i18n("<br><i>Choose the number of invade armies.</i>")),1,0);
+    wSlideLayout->addWidget(new QLabel(i18n("You are invading <font color=\"blue\">%1</font> with <font color=\"red\">%2</font>!", defender->i18name(), attack->i18name())),0,0);
+    wSlideLayout->addWidget(new QLabel(i18n("<br><i>Choose the number of invading armies.</i>")),1,0);
   }
   else if (invasionType == Moving)
   {
     wSlideLayout->addWidget(new QLabel(i18n("You are moving armies from <font color=\"red\">%1</font> to <font color=\"blue\">%2</font>!", attack->i18name(), defender->i18name())),0,0);
-    wSlideLayout->addWidget(new QLabel(i18n("<br><i>Choose the number of moved armies.</i>")),1,0);
+    wSlideLayout->addWidget(new QLabel(i18n("<br><i>Choose the number of armies to move.</i>")),1,0);
   }
 
   wSlideLayout->addLayout(center,2,0);
