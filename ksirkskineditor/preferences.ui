@@ -26,7 +26,6 @@
   </property>
   <layout class="QGridLayout" name="gridLayout" />
  </widget>
- <layoutdefault spacing="6" margin="11" />
  <resources/>
  <connections/>
 </ui>

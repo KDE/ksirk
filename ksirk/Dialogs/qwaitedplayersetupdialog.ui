@@ -73,7 +73,6 @@ Choose one of them. It will be your nation during the game</string>
    </item>
   </layout>
  </widget>
- <layoutdefault spacing="6" margin="11" />
  <includes>
   <include location="local" >kpassworddialog.h</include>
  </includes>

@@ -440,7 +440,6 @@
    </item>
   </layout>
  </widget>
- <layoutdefault spacing="6" margin="11" />
   <tabstops>
   <tabstop>le_jid</tabstop>
   <tabstop>le_user</tabstop>
