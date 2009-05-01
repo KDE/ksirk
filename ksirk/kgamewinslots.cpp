@@ -75,7 +75,7 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
   QPointF mousePosition;
   Country *mouseLocalisation;
 
-  if (m_frame == 0)
+  if (m_frame == 0 || m_reinitializingGame)
   {
     return;
   }
@@ -132,6 +132,11 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
           && (mousePos.x() >= 0) && (mousePos.x() <= m_frame-> viewport()->width()))
     )
   )
+  // safety check for NULL arrow pointers, can happen with Qt 4.5
+  if (m_uparrow == 0 || m_downarrow == 0 || m_leftarrow == 0 || m_rightarrow == 0)
+  {
+    return;
+  }
   if (currentWidget() != 0)
   {
     m_timer.start(200);
@@ -952,6 +957,7 @@ void KGameWindow::slotNewGameOK(unsigned int nbPlayers, const QString& skin, uns
 {
   kDebug() << nbPlayers << skin << nbNetworkPlayers << useGoals;
   m_automaton->setGameStatus(KGame::End);
+  m_reinitializingGame = true;
   m_automaton->removeAllPlayers();
 
   showMap();
@@ -961,6 +967,7 @@ void KGameWindow::slotNewGameOK(unsigned int nbPlayers, const QString& skin, uns
   m_automaton->savedState(GameLogic::GameAutomaton::INVALID);
   m_automaton->setNetworkPlayersNumber(m_automaton->networkGameType()==GameAutomaton::None?0:nbNetworkPlayers);
   m_automaton->finishSetupPlayersNumberAndSkin(skin, m_automaton->networkGameType(), nbPlayers);
+  m_reinitializingGame = false;
 
   if (m_automaton->networkGameType()==GameAutomaton::Jabber && m_jabberClient && m_jabberClient->isConnected())
   {

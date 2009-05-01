@@ -131,6 +131,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_downarrow(0),
   m_leftarrow(0),
   m_rightarrow(0),
+  m_reinitializingGame(false),
   m_newGameDialog(0),
   m_stateBeforeNewGame(GameAutomaton::INVALID),
   m_stackWidgetBeforeNewGame(-1),
