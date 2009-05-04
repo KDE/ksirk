@@ -23,7 +23,7 @@
        </sizepolicy>
       </property>
       <property name="title" >
-       <string>Goal type</string>
+       <string>Goal Type</string>
       </property>
       <widget class="QWidget" name="layoutWidget" >
        <property name="geometry" >
@@ -44,7 +44,7 @@
            <string>Conquer all the world</string>
           </property>
           <property name="text" >
-           <string>World Conquest</string>
+           <string>World conquest</string>
           </property>
          </widget>
         </item>
@@ -137,7 +137,7 @@ p, li { white-space: pre-wrap; }
       <item row="0" column="0" >
        <widget class="QLabel" name="label" >
         <property name="text" >
-         <string>Countries Nb:</string>
+         <string>Countries nb:</string>
         </property>
        </widget>
       </item>
@@ -202,7 +202,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">You will be prompted with a list of this world's continents. Select those to conquer with the mouse and the Ctrl and Shift keys.&lt;/p>&lt;/body>&lt;/html></string>
         </property>
         <property name="text" >
-         <string>Select continents</string>
+         <string>Select Continents</string>
         </property>
        </widget>
       </item>

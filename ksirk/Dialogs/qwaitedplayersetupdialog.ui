@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle" >
-   <string>Saved player selection</string>
+   <string>Saved Player Selection</string>
   </property>
   <layout class="QGridLayout" >
    <item row="0" column="0" colspan="2" >

@@ -96,7 +96,7 @@
    <item row="2" column="3" >
     <widget class="KPushButton" name="ghnsbutton" >
      <property name="text" >
-      <string>Download new skins</string>
+      <string>Download New Skins</string>
      </property>
     </widget>
    </item>

@@ -203,7 +203,7 @@ in the right dock</string>
              <string>Click here to add a new nationality. You will be prompted for its name.</string>
             </property>
             <property name="text" >
-             <string>New nationality</string>
+             <string>New Nationality</string>
             </property>
            </widget>
           </item>
@@ -267,7 +267,7 @@ During game, each player must choose a nationality. Then you should add at least
              <string>Click here to add a new country. You will be prompted for its name.</string>
             </property>
             <property name="text" >
-             <string>New country</string>
+             <string>New Country</string>
             </property>
            </widget>
           </item>
@@ -327,7 +327,7 @@ During game, each player must choose a nationality. Then you should add at least
              <string>Click here to add a new continent. You will be prompted for its name.</string>
             </property>
             <property name="text" >
-             <string>New continent</string>
+             <string>New Continent</string>
             </property>
            </widget>
           </item>
@@ -387,7 +387,7 @@ During game, each player must choose a nationality. Then you should add at least
              <string>Click here to add a new goal. It will be named automatically.</string>
             </property>
             <property name="text" >
-             <string>New goal</string>
+             <string>New Goal</string>
             </property>
            </widget>
           </item>

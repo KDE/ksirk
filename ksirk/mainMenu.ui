@@ -101,7 +101,7 @@
        <item>
         <widget class="KPushButton" name="pbJabberGame" >
          <property name="text" >
-          <string>Play KsirK over the Jabber Network</string>
+          <string>Play KsirK over Jabber Network</string>
          </property>
         </widget>
        </item>
@@ -115,7 +115,7 @@
        <item>
         <widget class="KPushButton" name="pbJoin" >
          <property name="text" >
-          <string>Join a Standard TCP/IP Network Game</string>
+          <string>Join Standard TCP/IP Network Game</string>
          </property>
         </widget>
        </item>

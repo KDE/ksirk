@@ -10,13 +10,13 @@
    </rect>
   </property>
   <property name="windowTitle" >
-   <string>Join network game configuration</string>
+   <string>Join Network Game Configuration</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" >
    <item>
     <widget class="QGroupBox" name="groupBox" >
      <property name="title" >
-      <string>Network configuration</string>
+      <string>Network Configuration</string>
      </property>
      <layout class="QFormLayout" name="formLayout" >
       <item row="0" column="0" >

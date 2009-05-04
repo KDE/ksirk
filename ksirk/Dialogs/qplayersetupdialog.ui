@@ -10,7 +10,7 @@
    </rect>
   </property>
   <property name="windowTitle" >
-   <string>Player setup</string>
+   <string>Player Setup</string>
   </property>
   <layout class="QGridLayout" >
    <item row="0" column="0" colspan="3" >
