@@ -305,7 +305,9 @@ During game, each player must choose a nationality. Then you should add at least
            <string>Countries list</string>
           </property>
           <property name="whatsThis" >
-           <string>This list shows the countries defined. \n\nEach country name should be unique. Select a country and edit its details in the right dock.</string>
+		  <string>This list shows the countries defined. 
+
+Each country name should be unique. Select a country and edit its details in the right dock.</string>
           </property>
          </widget>
         </item>
@@ -365,7 +367,9 @@ During game, each player must choose a nationality. Then you should add at least
            <string>Continents list</string>
           </property>
           <property name="whatsThis" >
-           <string>This list shows the continents defined. \n\nEach continent name should be unique. Select a continent and edit its details in the right dock.</string>
+		  <string>This list shows the continents defined. 
+
+Each continent name should be unique. Select a continent and edit its details in the right dock.</string>
           </property>
          </widget>
         </item>
@@ -425,7 +429,9 @@ During game, each player must choose a nationality. Then you should add at least
            <string>Goals list</string>
           </property>
           <property name="whatsThis" >
-           <string>This list shows the goals defined. \n\nEach goal name should be unique. Select a goal and edit its details in the right dock.</string>
+		  <string>This list shows the goals defined. 
+
+Each goal name should be unique. Select a goal and edit its details in the right dock.</string>
           </property>
          </widget>
         </item>
