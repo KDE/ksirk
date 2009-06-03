@@ -491,18 +491,8 @@ There is three main steps to create a new skin: creating the folders hierarchy; 
 <chapter id="faq">
 <title>Questions and Answers</title>
 
-&reporting.bugs;
 &updating.documentation;
 
-<qandaset id="faqlist">
-<qandaentry>
-<question>
-<para>What will be the first question concerning &ksirk;?</para>
-</question>
-<answer>
-</answer>
-</qandaentry>
-</qandaset>
 </chapter>
 
 <chapter id="credits">
