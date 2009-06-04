@@ -35,7 +35,6 @@ This is the standard main function of a KDE application
 static const char *description =
     I18N_NOOP("KsirK Skin Editor");
 // INSERT A DESCRIPTION FOR YOUR APPLICATION HERE
-    
 
 int main(int argc, char *argv[])
 {
@@ -51,7 +50,7 @@ int main(int argc, char *argv[])
     KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
     KApplication app;
- 
+    KGlobal::locale()->insertCatalog("libkdegames");
     if (app.isSessionRestored())
     {
         RESTORE(KsirkSkinEditor::MainWindow);
