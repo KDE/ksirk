@@ -1113,6 +1113,7 @@ private: // Private methods
   bool m_networkGame;
   int m_port;
   uint m_newPlayersNumber;
+  bool m_reinitializingGame;
 
   NewGameDialogImpl* m_newGameDialog;
 
