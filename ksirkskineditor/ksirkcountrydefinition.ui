@@ -232,7 +232,7 @@ Note that this point should be located inside the limits of the country on the m
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
-This value will be automatically updated if you move the country name by drag and droping its target icon.
+This value will be automatically updated if you move the country name by dragging and dropping its target icon.
 </string>
         </property>
         <property name="text" stdset="0" >
@@ -252,7 +252,7 @@ Note that this point should be located inside the limits of the country on the m
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
-This value will be automatically updated if you move the country name by drag and droping its target icon.</string>
+This value will be automatically updated if you move the country name by dragging and dropping its target icon.</string>
         </property>
         <property name="text" stdset="0" >
          <string/>
@@ -269,7 +269,7 @@ This value will be automatically updated if you move the country name by drag an
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
-This value will be automatically updated if you move the highlighting by drag and droping its cross icon.</string>
+This value will be automatically updated if you move the highlighting by dragging and dropping its cross icon.</string>
         </property>
         <property name="text" stdset="0" >
          <string/>
@@ -286,7 +286,7 @@ This value will be automatically updated if you move the highlighting by drag an
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
-This value will be automatically updated if you move the highlighting by drag and droping its cross icon.</string>
+This value will be automatically updated if you move the highlighting by dragging and dropping its cross icon.</string>
         </property>
         <property name="text" stdset="0" >
          <string/>
