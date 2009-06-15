@@ -1593,7 +1593,7 @@ void KGameWindow::changeItem( const QString& text, int id, bool log )
 
 void KGameWindow::changeItem( KMessageParts& strings, int id, bool log )
 {
- kDebug() << "KGameWindow::changeItem(KMessageParts,int, log)" << strings.size() << id << log;
+//  kDebug() << "KGameWindow::changeItem(KMessageParts,int, log)" << strings.size() << id << log;
   if (strings.begin() == strings.end())
   {
 //     kDebug() << "  nothing " << strings.size();
@@ -1608,45 +1608,45 @@ void KGameWindow::changeItem( KMessageParts& strings, int id, bool log )
   {
     if (!it.curStr().isEmpty())
     {
-      kDebug() << "setting argument to: '" << it.curStr() << "'";
+//       kDebug() << "setting argument to: '" << it.curStr() << "'";
       argument = ki18n(it.curStr().toUtf8().data());
     }
     else
     {
-      kDebug() << "setting argument to empty";
+//       kDebug() << "setting argument to empty";
       argument = KLocalizedString();
     }
     arguing = true;
   }
   else if (it.curIsPix())
   {
-    kDebug() << "first item is pixmap";
+//     kDebug() << "first item is pixmap";
     item << it.curPix();
   }
   
   it++;
   for (; it != it_end; it++)
   {
-    kDebug() << "next item";
+//     kDebug() << "next item";
     if (it.curIsStr())
     {
-      kDebug() << "item is: '" << it.curStr() << "'";
+//       kDebug() << "item is: '" << it.curStr() << "'";
       if (arguing)
       {
-        kDebug() << "  substituting";
+//         kDebug() << "  substituting";
         argument=argument.subs(it.curStr());
       }
       else
       {
-        kDebug() << "  assigning new argument";
+//         kDebug() << "  assigning new argument";
         if (!it.curStr().isEmpty())
         {
-          kDebug() << "setting argument to: '" << it.curStr() << "'";
+//           kDebug() << "setting argument to: '" << it.curStr() << "'";
           argument = ki18n(it.curStr().toUtf8().data());
         }
         else
         {
-          kDebug() << "setting argument to empty";
+//           kDebug() << "setting argument to empty";
           argument = KLocalizedString();
         }
         arguing = true;
@@ -1656,7 +1656,7 @@ void KGameWindow::changeItem( KMessageParts& strings, int id, bool log )
     {
       if (arguing)
       {
-        kDebug() << "  storing";
+//         kDebug() << "  storing";
         if (argument.isEmpty())
         {
           item << QString("");
@@ -1670,7 +1670,7 @@ void KGameWindow::changeItem( KMessageParts& strings, int id, bool log )
       arguing = false;
     }
   }
-  kDebug() << "no more items";
+//   kDebug() << "no more items";
   if (arguing)
   {
     if (argument.isEmpty())
@@ -1692,7 +1692,7 @@ void KGameWindow::changeItem( KMessageParts& strings, int id, bool log )
     {
       kError() << "received a (I18N_EMPTY_MESSAGE)";
     }
-    kDebug() << "  argument: " << argument.toString();
+//     kDebug() << "  argument: " << argument.toString();
     statusBar()-> changeItem(argument.toString(), id);
   }
 }
@@ -1732,12 +1732,12 @@ void KGameWindow::broadcastChangeItem(KMessageParts& strings, int id, bool log)
     {
       if (it.curIsStr())
       {
-        kDebug() << "Pushing string '" << it.curStr() << "'";
+//         kDebug() << "Pushing string '" << it.curStr() << "'";
         stream << (quint32)KMessageParts::Text << it.curStr();
       }
       else if (it.curIsPix())
       {
-        kDebug() << "Pushing pix";
+//         kDebug() << "Pushing pix";
         stream << (quint32)KMessageParts::Pixmap << it.curPix();
       }
       else
@@ -2625,7 +2625,6 @@ bool KGameWindow::invade(unsigned int nb )
   bool res = initArmiesMovement(nb, m_firstCountry, m_secondCountry);
   kDebug() << "invade("<<nb<<") returns " << res;
   QPoint point;
-  m_automaton->gameEvent("actionNextPlayer", point);
   return res;
 }
 

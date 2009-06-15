@@ -2066,6 +2066,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   quint32 attackAutoValue;
   quint32 availArmies;
   quint32 elemType;
+  quint32 nb;
   
   if (currentPlayer() != 0 && currentPlayer()->getFlag() != 0)
   {
@@ -2267,8 +2268,26 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     break;
   case Invade:
     stream >> nbArmies;
-    if (m_game-> invade(nbArmies))
-      m_game-> incrNbMovedArmies(nbArmies);
+    nb = nbArmies;
+    while (nb >= 10)
+    {
+      if (m_game-> invade(10))
+        m_game-> incrNbMovedArmies(10);
+      nb -= 10;
+    }
+    while (nb >= 5)
+    {
+      if (m_game-> invade(5))
+        m_game-> incrNbMovedArmies(5);
+      nb -= 5;
+    }
+    while (nb > 0)
+    {
+      if (m_game-> invade(1))
+        m_game-> incrNbMovedArmies(1);
+      nb--;
+    }
+    
     break;
   case Retreat:
     stream >> nbArmies;

@@ -856,40 +856,20 @@ void KGameWindow::slideReleased()
 
 void KGameWindow::slideClose()
 {
-  kDebug();
-  m_automaton->currentPlayerPlayed(true);
-  
-  int units=m_invadeSlide->value();
-  
-  int reste10 = units%10;
-  int reste5;
-  for(int i=0;i<(units-reste10)/10;i++)
-  {
-    QByteArray buffer;
-    QDataStream stream(&buffer, QIODevice::WriteOnly);
-    stream << quint32(10);
-    automaton()->sendMessage(buffer,Invade);
-  }
-  
-  reste5 = reste10%5;
-  for(int i=0;i<(reste10-reste5)/5;i++)
-  {
-    QByteArray buffer;
-    QDataStream stream(&buffer, QIODevice::WriteOnly);
-    stream << quint32(5);
-    automaton()->sendMessage(buffer,Invade);
-  }
-  for(int i=0;i<reste5;i++)
-  {
-    QByteArray buffer;
-    QDataStream stream(&buffer, QIODevice::WriteOnly);
-    stream << quint32(1);
-    automaton()->sendMessage(buffer,Invade);
-  }
-  m_wSlide->close();
+  kDebug() << m_currentSlideValue;
   
   QByteArray buffer;
-  automaton()->sendMessage(buffer,InvasionFinished);
+  QDataStream stream(&buffer, QIODevice::WriteOnly);
+  stream << quint32(m_currentSlideValue);
+  automaton()->sendMessage(buffer,Invade);
+  
+  m_wSlide->close();
+  
+  QByteArray buffer2;
+  automaton()->sendMessage(buffer2,InvasionFinished);
+  m_automaton->currentPlayerPlayed(true);
+  QPointF point;
+  m_automaton->gameEvent("actionNextPlayer", point);
 }
 
 void KGameWindow::slotContextualHelp()

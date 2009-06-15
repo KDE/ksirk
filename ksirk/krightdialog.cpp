@@ -217,7 +217,8 @@ void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int
   flag1->setPixmap(picture1);
   rightContents.at(1)->setText("<i>("+owner_A+")</i> ");
 
-  rightContents.at(2)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
+  if (!soldat.isNull())
+    rightContents.at(2)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
   rightContents.at(3)->setText("<b>"+nb_units_A+"</b>");
 
   rightContents.at(4)->setText(i18np("<font color=\"red\">Attack</font> with 1 army.<br>","<font color=\"red\">Attack</font> with %1 armies.<br>", nb_A));
@@ -227,7 +228,8 @@ void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int
   flag2->setPixmap(picture2);
   rightContents.at(6)->setText("<i>("+owner_D+")</i> ");
 
-  rightContents.at(7)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
+  if (!soldat.isNull())
+    rightContents.at(7)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
   rightContents.at(8)->setText("<b>"+nb_units_D+"</b> ");
 
   rightContents.at(9)->setText(i18np("<font color=\"blue\">Defend</font> with 1 army.<br>","<font color=\"blue\">Defend</font> with %1 armies.<br>", nb_D));
