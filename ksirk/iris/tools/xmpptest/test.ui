@@ -234,7 +234,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QSpinBox" name="sb_ssfmin" />
+                <widget class="KIntSpinBox" name="sb_ssfmin" />
                </item>
                <item>
                 <widget class="QLabel" name="textLabel2" >
@@ -244,7 +244,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QSpinBox" name="sb_ssfmax" />
+                <widget class="KIntSpinBox" name="sb_ssfmax" />
                </item>
               </layout>
              </item>
@@ -440,6 +440,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KIntSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>knuminput.h</header>
+  </customwidget>
+ </customwidgets>
   <tabstops>
   <tabstop>le_jid</tabstop>
   <tabstop>le_user</tabstop>

@@ -149,7 +149,7 @@ p, li { white-space: pre-wrap; }
        </widget>
       </item>
       <item row="0" column="1" >
-       <widget class="QSpinBox" name="nbcountries" >
+       <widget class="KIntSpinBox" name="nbcountries" >
         <property name="toolTip" >
          <string>Number of countries to conquer</string>
         </property>
@@ -163,7 +163,7 @@ p, li { white-space: pre-wrap; }
        </widget>
       </item>
       <item row="1" column="1" >
-       <widget class="QSpinBox" name="armiesbycountry" >
+       <widget class="KIntSpinBox" name="armiesbycountry" >
         <property name="toolTip" >
          <string>Number of armies to put on each country</string>
         </property>
@@ -240,6 +240,13 @@ p, li { white-space: pre-wrap; }
    </layout>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KIntSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>knuminput.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

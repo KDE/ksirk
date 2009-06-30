@@ -33,7 +33,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QSpinBox" name="playersNumberEntry" >
+        <widget class="KIntSpinBox" name="playersNumberEntry" >
          <property name="toolTip" >
           <string>Spin this to choose the number of players.</string>
          </property>
@@ -54,7 +54,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QSpinBox" name="localPlayersNumberEntry" />
+        <widget class="KIntSpinBox" name="localPlayersNumberEntry" />
        </item>
       </layout>
      </item>
@@ -200,6 +200,11 @@
    <class>KDialogButtonBox</class>
    <extends>QDialogButtonBox</extends>
    <header>kdialogbuttonbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KIntSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>knuminput.h</header>
   </customwidget>
   <customwidget>
    <class>KPushButton</class>

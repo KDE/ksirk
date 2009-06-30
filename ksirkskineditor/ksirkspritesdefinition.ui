@@ -76,7 +76,7 @@ During a battle, firing (end exploding) cannons of each player are placed in bot
            </widget>
           </item>
           <item row="0" column="1" >
-           <widget class="QSpinBox" name="flagw" >
+           <widget class="KIntSpinBox" name="flagw" >
             <property name="toolTip" >
              <string>Flag individual frame width</string>
             </property>
@@ -99,7 +99,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="1" column="1" >
-           <widget class="QSpinBox" name="flagh" >
+           <widget class="KIntSpinBox" name="flagh" >
             <property name="toolTip" >
              <string>Flag individual frame height</string>
             </property>
@@ -118,7 +118,7 @@ The pool flag element will be rendered on a pixmap of height : Height * number o
            </widget>
           </item>
           <item row="2" column="1" >
-           <widget class="QSpinBox" name="flagf" >
+           <widget class="KIntSpinBox" name="flagf" >
             <property name="toolTip" >
              <string>Flag number of individual frames</string>
             </property>
@@ -141,7 +141,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="3" column="1" >
-           <widget class="QSpinBox" name="flagv" >
+           <widget class="KIntSpinBox" name="flagv" >
             <property name="toolTip" >
              <string>Flag number of versions</string>
             </property>
@@ -187,7 +187,7 @@ Each version shows the sprite visible from one direction: the first one is direc
          </widget>
         </item>
         <item row="0" column="1" >
-         <widget class="QSpinBox" name="infantryw" >
+         <widget class="KIntSpinBox" name="infantryw" >
           <property name="toolTip" >
            <string>Infantry individual frame width</string>
           </property>
@@ -210,7 +210,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="1" column="1" >
-         <widget class="QSpinBox" name="infantryh" >
+         <widget class="KIntSpinBox" name="infantryh" >
           <property name="toolTip" >
            <string>Infantry individual frame height</string>
           </property>
@@ -233,7 +233,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="2" column="1" >
-         <widget class="QSpinBox" name="infantryf" >
+         <widget class="KIntSpinBox" name="infantryf" >
           <property name="toolTip" >
            <string>Infantry number of individual frames</string>
           </property>
@@ -256,7 +256,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="3" column="1" >
-         <widget class="QSpinBox" name="infantryv" >
+         <widget class="KIntSpinBox" name="infantryv" >
           <property name="toolTip" >
            <string>Infantry number of versions</string>
           </property>
@@ -304,7 +304,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="0" column="1" >
-         <widget class="QSpinBox" name="cavalryw" >
+         <widget class="KIntSpinBox" name="cavalryw" >
           <property name="toolTip" >
            <string>Cavalry individual frame width</string>
           </property>
@@ -327,7 +327,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="1" column="1" >
-         <widget class="QSpinBox" name="cavalryh" >
+         <widget class="KIntSpinBox" name="cavalryh" >
           <property name="toolTip" >
            <string>Cavalry individual frame height</string>
           </property>
@@ -350,7 +350,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="2" column="1" >
-         <widget class="QSpinBox" name="cavalryf" >
+         <widget class="KIntSpinBox" name="cavalryf" >
           <property name="toolTip" >
            <string>Cavalry number of individual frames</string>
           </property>
@@ -373,7 +373,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="3" column="1" >
-         <widget class="QSpinBox" name="cavalryv" >
+         <widget class="KIntSpinBox" name="cavalryv" >
           <property name="toolTip" >
            <string>Cavalry number of versions</string>
           </property>
@@ -423,7 +423,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="0" column="1" >
-           <widget class="QSpinBox" name="cannonw" >
+           <widget class="KIntSpinBox" name="cannonw" >
             <property name="toolTip" >
              <string>Cannon individual frame width</string>
             </property>
@@ -446,7 +446,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="1" column="1" >
-           <widget class="QSpinBox" name="cannonh" >
+           <widget class="KIntSpinBox" name="cannonh" >
             <property name="toolTip" >
              <string>Cannon individual frame height</string>
             </property>
@@ -469,7 +469,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="2" column="1" >
-           <widget class="QSpinBox" name="cannonf" >
+           <widget class="KIntSpinBox" name="cannonf" >
             <property name="toolTip" >
              <string>Cannon number of individual frames</string>
             </property>
@@ -492,7 +492,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="3" column="1" >
-           <widget class="QSpinBox" name="cannonv" >
+           <widget class="KIntSpinBox" name="cannonv" >
             <property name="toolTip" >
              <string>Cannon number of versions</string>
             </property>
@@ -544,7 +544,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="0" column="1" >
-           <widget class="QSpinBox" name="firingw" >
+           <widget class="KIntSpinBox" name="firingw" >
             <property name="toolTip" >
              <string>Firing cannon individual frame width</string>
             </property>
@@ -567,7 +567,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="1" column="1" >
-           <widget class="QSpinBox" name="firingh" >
+           <widget class="KIntSpinBox" name="firingh" >
             <property name="toolTip" >
              <string>Firing cannon individual frame height</string>
             </property>
@@ -590,7 +590,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="2" column="1" >
-           <widget class="QSpinBox" name="firingf" >
+           <widget class="KIntSpinBox" name="firingf" >
             <property name="toolTip" >
              <string>Firing cannon number of individual frames</string>
             </property>
@@ -613,7 +613,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="3" column="1" >
-           <widget class="QSpinBox" name="firingv" >
+           <widget class="KIntSpinBox" name="firingv" >
             <property name="toolTip" >
              <string>Firing cannon number of versions</string>
             </property>
@@ -665,7 +665,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="0" column="1" >
-           <widget class="QSpinBox" name="explodingw" >
+           <widget class="KIntSpinBox" name="explodingw" >
             <property name="toolTip" >
              <string>Exploding cannon individual frame width</string>
             </property>
@@ -688,7 +688,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="1" column="1" >
-           <widget class="QSpinBox" name="explodingh" >
+           <widget class="KIntSpinBox" name="explodingh" >
             <property name="toolTip" >
              <string>Exploding cannon individual frame height</string>
             </property>
@@ -711,7 +711,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="2" column="1" >
-           <widget class="QSpinBox" name="explodingf" >
+           <widget class="KIntSpinBox" name="explodingf" >
             <property name="toolTip" >
              <string>Exploding cannon number of individual frames</string>
             </property>
@@ -734,7 +734,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="3" column="1" >
-           <widget class="QSpinBox" name="explodingv" >
+           <widget class="KIntSpinBox" name="explodingv" >
             <property name="toolTip" >
              <string>Exploding cannon number of versions</string>
             </property>
@@ -774,6 +774,11 @@ p, li { white-space: pre-wrap; }
   </widget>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>KIntSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>knuminput.h</header>
+  </customwidget>
   <customwidget>
    <class>KTabWidget</class>
    <extends>QTabWidget</extends>
