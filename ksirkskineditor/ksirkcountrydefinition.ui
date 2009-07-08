@@ -80,7 +80,7 @@
          <string>Infantry's sprite top left point x-coordinate</string>
         </property>
         <property name="whatsThis" >
-         <string>Infantry's sprite top left point x-coordinate. 
+         <string>Infantry's sprite top left point x-coordinate.
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
@@ -107,7 +107,7 @@ This value will be automatically updated if you move the infantry.</string>
          <string>Infantry's sprite top left point y-coordinate</string>
         </property>
         <property name="whatsThis" >
-         <string>Infantry's sprite top left point y-coordinate. 
+         <string>Infantry's sprite top left point y-coordinate.
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
@@ -131,7 +131,7 @@ This value will be automatically updated if you move the infantry by drag and dr
          <string>Cavalry's sprite top left point x-coordinate</string>
         </property>
         <property name="whatsThis" >
-         <string>Cavalry's sprite top left point x-coordinate. 
+         <string>Cavalry's sprite top left point x-coordinate.
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
@@ -158,7 +158,7 @@ This value will be automatically updated if you move the cavalry.</string>
          <string>Cavalry's sprite top left point y-coordinate</string>
         </property>
         <property name="whatsThis" >
-         <string>Cavalry's sprite top left point y-coordinate. 
+         <string>Cavalry's sprite top left point y-coordinate.
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
@@ -192,7 +192,7 @@ This value will be automatically updated if you move the cavalry by drag and dro
          <string>Cannon's sprite top left point y-coordinate</string>
         </property>
         <property name="whatsThis" >
-         <string>Cannon's sprite top left point y-coordinate. 
+         <string>Cannon's sprite top left point y-coordinate.
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
@@ -209,7 +209,7 @@ This value will be automatically updated if you move the cannon by drag and drop
          <string>Cannon's sprite top left point x-coordinate</string>
         </property>
         <property name="whatsThis" >
-         <string>Cannon's sprite top left point x-coordinate. 
+         <string>Cannon's sprite top left point x-coordinate.
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
@@ -223,7 +223,7 @@ This value will be automatically updated if you move the cannon.</string>
       <item row="2" column="3" >
        <widget class="KIntNumInput" name="centery" >
         <property name="toolTip" >
-         <string>Point around which the country name is drawn y-coordinate </string>
+         <string>Point around which the country name is drawn y-coordinate</string>
         </property>
         <property name="whatsThis" >
          <string>Point around which the country name is drawn y-coordinate.
@@ -243,7 +243,7 @@ This value will be automatically updated if you move the country name by draggin
       <item row="2" column="1" >
        <widget class="KIntNumInput" name="centerx" >
         <property name="toolTip" >
-         <string>Point around which the country name is drawn x-coordinate </string>
+         <string>Point around which the country name is drawn x-coordinate</string>
         </property>
         <property name="whatsThis" >
          <string>Point around which the country name is drawn x-coordinate.
@@ -299,7 +299,7 @@ This value will be automatically updated if you move the highlighting by draggin
          <string>Flag's sprite top left point y-coordinate</string>
         </property>
         <property name="whatsThis" >
-         <string>Flag's sprite top left point y-coordinate. 
+         <string>Flag's sprite top left point y-coordinate.
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
@@ -316,7 +316,7 @@ This value will be automatically updated if you move the flag by drag and drop.<
          <string>Flag's sprite top left point x-coordinate</string>
         </property>
         <property name="whatsThis" >
-         <string>Flag's sprite top left point x-coordinate. 
+         <string>Flag's sprite top left point x-coordinate.
 
 This is given relatively to the top left of the map, sized as defined in the main skin definition widget.
 
@@ -335,7 +335,7 @@ This value will be automatically updated if you move the flag by drag and drop.<
        <string>Select this country's neighbours</string>
       </property>
       <property name="whatsThis" >
-       <string>Click here to select this country's neighbours. 
+       <string>Click here to select this country's neighbours.
 
 A list of all the world's countries will be shown and you will be able to select the countries using the mouse and the Ctrl and Shift keys.</string>
       </property>

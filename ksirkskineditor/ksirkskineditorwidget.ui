@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle" >
-   <string>Ksirk Skin Editor</string>
+   <string>KsirK Skin Editor</string>
   </property>
   <property name="frameShape" >
    <enum>QFrame::StyledPanel</enum>
