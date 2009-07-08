@@ -71,7 +71,7 @@ p, li { white-space: pre-wrap; }
            <string>Conquer a given number of countries</string>
           </property>
           <property name="whatsThis" >
-           <string>Conquer a given number of countries. 
+           <string>Conquer a given number of countries.
 
 You can also make the player to have to put a given number of armies on each country.</string>
           </property>

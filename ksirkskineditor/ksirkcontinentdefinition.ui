@@ -48,7 +48,7 @@ The bonus should be proportional to the continent's size and to the difficulty t
        <string>Select the countries contained in this continent</string>
       </property>
       <property name="whatsThis" >
-       <string>Click here to select the countries contained in this continent. 
+       <string>Click here to select the countries contained in this continent.
 
 A list of all the world's countries will be shown and you will be able to select the countries using the mouse and the Ctrl and Shift keys.</string>
       </property>
