@@ -924,7 +924,7 @@ void KGameWindow::winner(const Player* player)
       msg += "<br>He conquered all the world!";
     }
   }
-  RestartOrExitDialogImpl* restartDia = new RestartOrExitDialogImpl(i18n(msg.toUtf8().data(),player->name()).toUtf8().data());
+  RestartOrExitDialogImpl* restartDia = new RestartOrExitDialogImpl(i18n(msg.toUtf8().data(),player->name()));
               
   connect((QObject*)restartDia->newGameButton,
               SIGNAL(clicked()),
