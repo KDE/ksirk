@@ -1,0 +1,10 @@
+To implement graphic choice of various elements in the skin, for example countries flags
+- prepare a QSvgRenderer on the pool
+- read the XML of the SVG (with QXmlReader). For each element possibly an item (at least with an id), render it to a pixmap
+- store each id with the corresponding pixmap
+- to chose a country flag, fill in the flag entry with the list of pixmaps associated to the ids (gray out those already used but they can still be used here and removed from elsewhere)
+- when the user choses one entry, retrieve its id to store it in the skin.
+
+
+Don't forget to include a "Unknown/Not set" entry in the case the pool is not already complete. It will also be used as the initial value.
+
