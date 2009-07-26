@@ -73,6 +73,7 @@ set(ksirk_SRCS
   Dialogs/restartOrExitDialogImpl.cpp
   Dialogs/joingame.cpp
   Dialogs/jabbergameui.cpp
+  Dialogs/InvasionSlider.cpp
   main.cpp 
   decoratedgameframe.cpp 
   ksirkConfigDialog.cpp

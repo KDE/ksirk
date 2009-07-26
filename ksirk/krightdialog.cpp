@@ -64,11 +64,14 @@ KRightDialog::KRightDialog(QDockWidget * parent, ONU * world,KGameWindow* m_game
     KConfig config(world->getConfigFileName());
     KConfigGroup onugroup = config.group("onu");
     QString skin = onugroup.readEntry("skinpath");
-    QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/sprites/infantry.svg");
-    soldat.load(imageFileName);
 
+    InfantrySprite *sprite = new InfantrySprite(1.0, m_game->backGnd());
+    sprite-> setDestination(0);             // Sprite immobile
+    soldat = sprite->image(0).scaled(24,24,Qt::KeepAspectRatioByExpanding);
+    delete sprite;
+    
     // load the stopAttackAuto image
-    imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/stopAttackAuto.png");
+    QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/stopAttackAuto.png");
     stopAttackAuto.load(imageFileName);
 
     // load the recycle image
@@ -119,7 +122,7 @@ void KRightDialog::displayCountryDetails(const QPointF& countryPoint)
   rightContents.at(1)->setText(i18n("<b>Continent:</b> %1", continent));
   rightContents.at(2)->setText(i18n("<b>Country:</b> %1", pays));
 
-  rightContents.at(3)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
+  rightContents.at(3)->setPixmap(soldat);
   rightContents.at(6)->setText(units);
   rightContents.at(4)->setText(i18n("<b>Owner:</b> %1", owner));
   rightContents.at(5)->setText(i18n("<b><u>Country details</u></b>"));
@@ -218,7 +221,7 @@ void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int
   rightContents.at(1)->setText("<i>("+owner_A+")</i> ");
 
   if (!soldat.isNull())
-    rightContents.at(2)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
+    rightContents.at(2)->setPixmap(soldat);
   rightContents.at(3)->setText("<b>"+nb_units_A+"</b>");
 
   rightContents.at(4)->setText(i18np("<font color=\"red\">Attack</font> with 1 army.<br>","<font color=\"red\">Attack</font> with %1 armies.<br>", nb_A));
@@ -229,7 +232,7 @@ void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int
   rightContents.at(6)->setText("<i>("+owner_D+")</i> ");
 
   if (!soldat.isNull())
-    rightContents.at(7)->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
+    rightContents.at(7)->setPixmap(soldat);
   rightContents.at(8)->setText("<b>"+nb_units_D+"</b> ");
 
   rightContents.at(9)->setText(i18np("<font color=\"blue\">Defend</font> with 1 army.<br>","<font color=\"blue\">Defend</font> with %1 armies.<br>", nb_D));

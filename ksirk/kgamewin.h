@@ -28,6 +28,7 @@
 #include "GameLogic/gameautomaton.h"
 #include "GameLogic/player.h"
 #include "GameLogic/country.h"
+#include "Dialogs/InvasionSlider.h"
 #include "Sprites/animspriteslist.h"
 #include "Jabber/jabberclient.h"
 
@@ -110,7 +111,6 @@ class KGameWindow: public KXmlGuiWindow
 
 public:
   enum MessageShowingType {OnConfig, ForceShowing};
-  enum InvasionType {Invasion, Moving};
   enum FightType {Attack, Defense};
   enum TabbedWidgetsIndexesType
   {
@@ -278,6 +278,7 @@ public:
   void clearHighlighting();
   void startLocalCurrentAI();
   void displayDefenseWindow();
+  
   //@}
 
   /**
@@ -575,16 +576,16 @@ public:
   void showMainMenu();
 
   /**
-    * The three types of central widget possible. This enum is used for knowing witch
-    * is currently displayed (see m_currentDisplayedWidget var below).
+    * The three types of possible central widget. This enum is used to know which
+    * one is currently displayed (see m_currentDisplayedWidget member below).
     */
-  enum widgetType {mainMenuType, mapType, arenaType};
+  enum WidgetType {MainMenu, Map, Arena};
 
   /**
     * Give type of the central widget currently displayed.
     * @return current widget type
     */
-  widgetType currentWidgetType();
+  WidgetType currentWidgetType();
 
   /**
     * Give the central widget currently displayed.
@@ -608,7 +609,7 @@ public:
     */
   GameLogic::Player* currentPlayer();
 
-  void slideInvade(GameLogic::Country *,GameLogic::Country *, InvasionType invasionType = Invasion);
+  void slideInvade(GameLogic::Country *,GameLogic::Country *, Ksirk::InvasionSlider::InvasionType invasionType = Ksirk::InvasionSlider::Invasion);
 
   void setNextPlayerActionEnabled(bool value);
   void setSaveGameActionEnabled(bool value);
@@ -700,19 +701,6 @@ public Q_SLOTS:
 
   virtual void mouseMoveEvent ( QMouseEvent * event );
 
-  void slideMove(int v);
-  void slideReleased();  
-  void slideClose();
-  //@{
-  /**
-   * The slots associated to the keys
-   * Will initiate different actions depending on the game state
-   */
-  void slotKey1();
-  void slotKey2();
-  void slotKey3();
-  //@}
-  
   //@{
   /**
     * The slots associated to the buttons
@@ -898,8 +886,15 @@ private Q_SLOTS:
 //   void slotUnregisterFinished();
   void slotExit();
   
-private:
-
+private: // Private methods
+  void createDefenseDialog();
+  void moveArmies(GameLogic::Country& src, GameLogic::Country& dest, unsigned int nb);
+  void saveXml(std::ostream& xmlStream);
+  void loadDices();
+  QPixmap buildDice(DiceColor color, const QString& id);
+  void setupPopupMessage();
+    
+private: // Private members
   QDockWidget * m_rightDock;
 
   KRightDialog * m_rightDialog;
@@ -908,21 +903,12 @@ private:
 
   GameLogic::GameAutomaton* m_automaton;
 
-  KDialog * m_wSlide;
-
-  int m_nbRArmy;
-  int m_nbLArmy;
-  int m_currentSlideValue;
-  int m_previousSlideValue;
-
-  QLabel * m_nbLArmies;
-  QLabel * m_nbRArmies;
-  QSlider * m_invadeSlide;
+  InvasionSlider * m_wSlide;
 
   /**
     * State that say the widget that is currently displayed between the map and the arena.
     */
-  widgetType m_currentDisplayedWidget;
+  WidgetType m_currentDisplayedWidget;
 
   /**
    * The widget initialy docked at bottom where is displayed the events history
@@ -940,7 +926,7 @@ private:
   int NKD, NKA;
   //@}
   
-  bool ARENA;
+  bool m_useArena;
 
   int nbSpriteAttacking;
   int nbSpriteDefending;
@@ -1077,11 +1063,9 @@ private:
 
   GameLogic::Country* m_mouseLocalisation;
 
-  KDialog * dial;
+  KDialog * m_defenseDialog;
 
   // components that will be re-used of the chat
-  QPixmap m_upChatReducePix;
-  QPixmap m_downChatReducePix;
   QPixmap m_upChatFloatPix;
   QPixmap m_downChatFloatPix;
 
@@ -1102,40 +1086,33 @@ private:
   Sprites::ArrowSprite* m_leftarrow;
   Sprites::ArrowSprite* m_rightarrow;
   
-private: // Private methods
-  /*void attack(GameLogic::Country& attacker, GameLogic::Country& defender, unsigned int nb);*/
-  void moveArmies(GameLogic::Country& src, GameLogic::Country& dest, unsigned int nb);
-  void saveXml(std::ostream& xmlStream);
-  void loadDices();
-  QPixmap buildDice(DiceColor color, const QString& id);
-  void setupPopupMessage();
-
   bool m_networkGame;
   int m_port;
   uint m_newPlayersNumber;
   bool m_reinitializingGame;
-
+  
   NewGameDialogImpl* m_newGameDialog;
-
+  
   GameLogic::GameAutomaton::GameState m_stateBeforeNewGame;
   int m_stackWidgetBeforeNewGame;
-
+  
   JabberClient* m_jabberClient;
   XMPP::Jid m_serverJid;
   
   /* Initial presence to set after connecting. */
   XMPP::Status m_initialPresence;
-
+  
   QString m_groupchatHost;
   QString m_groupchatRoom;
   QString m_groupchatNick;
   QString m_groupchatPassword;
-
+  
   QString m_advertizedHostName;
-
+  
   KsirkJabberGameWidget* m_jabberGameWidget;
-
+  
   QSet<QString> m_presents;
+
 };
 
 } // closing namespace Ksirk

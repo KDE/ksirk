@@ -101,9 +101,10 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_rightDock(0),
   m_rightDialog(0),
   m_automaton(new GameAutomaton()),
-  m_currentDisplayedWidget(mainMenuType),
+  m_wSlide(0),
+  m_currentDisplayedWidget(MainMenu),
   NKD(0), NKA(0),
-  ARENA(0),
+  m_useArena(false),
   nbSpriteAttacking(0),
   nbSpriteDefending(0),
   relativePosInArenaAttack(0),
@@ -119,8 +120,6 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_mainMenu(0),
   m_goalAction(0),
   m_barFlag(new QLabel(this)),
-//   m_accels(this),
-//   m_chat(0), 
   m_chatDlg(0),
   m_audioPlayer(Phonon::createPlayer( Phonon::NotificationCategory )),
   m_timer(this),
@@ -138,7 +137,8 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_jabberClient(new JabberClient()),
   m_advertizedHostName(QHostInfo::localHostName()),
   m_jabberGameWidget(0),
-  m_presents()
+  m_presents(),
+  m_defenseDialog(0)
   {
   kDebug() << "KGameWindow constructor begin";
 
@@ -178,14 +178,14 @@ KGameWindow::KGameWindow(QWidget* parent) :
           this,
           SLOT(slotChatMessage()));
 
-  m_upChatReducePix.load(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/upArrow.png"));
-  m_downChatReducePix.load(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/downArrow.png"));
+
   m_upChatFloatPix.load(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/2UpArrow.png"));
   m_downChatFloatPix.load(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/2DownArrow.png"));
   m_chatIsReduced = false;
 
   m_titleChatMsg = new QLabel(i18n("No message..."));
-  m_reduceChatButton = new QPushButton(m_downChatReducePix,"");
+  QPixmap downChatReducePix(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/downArrow.png"));
+  m_reduceChatButton = new QPushButton(downChatReducePix,"");
   m_floatChatButton = new QPushButton(m_upChatFloatPix,"");
   m_reduceChatButton->setFixedSize(30,30);
   m_floatChatButton->setFixedSize(30,30);
@@ -314,6 +314,7 @@ KGameWindow::~KGameWindow()
   delete m_mainMenu; m_mainMenu = 0;
   delete m_audioPlayer;
   delete m_rightDialog;
+  delete m_defenseDialog;
 }
 
 void KGameWindow::initActions()
@@ -669,13 +670,13 @@ void KGameWindow::newSkin(const QString& onuFileName)
   {
     kDebug() << "first call or null world: showing menu";
     m_centralWidget->setCurrentIndex(MAINMENU_INDEX);
-    m_currentDisplayedWidget = mainMenuType;
+    m_currentDisplayedWidget = MainMenu;
     m_bottomDock->hide();
   }
   else
   {
     m_centralWidget->setCurrentIndex(MAP_INDEX);
-    m_currentDisplayedWidget = mapType;
+    m_currentDisplayedWidget = Map;
     m_bottomDock->show();
   }
 
@@ -854,7 +855,13 @@ bool KGameWindow::attackEnd()
         stream << currentPlayer()->id();
         m_automaton->sendMessage(buffer,CheckGoal);
       }
-      
+    }
+    else if (m_automaton->isAdmin())
+    {
+      QByteArray buffer;
+      QDataStream stream(&buffer, QIODevice::WriteOnly);
+      stream << currentPlayer()->id();
+      m_automaton->sendMessage(buffer,CheckGoal);
     }
   }
   if (backGnd()->bgIsArena())
@@ -877,7 +884,8 @@ bool KGameWindow::attackEnd()
     }
     else
     {
-      if (m_firstCountry->nbArmies() < 2 || !m_automaton->isAttackAuto()) {
+      if (m_firstCountry->nbArmies() < 2 || !m_automaton->isAttackAuto())
+      {
         QByteArray buffer;
         QDataStream stream(&buffer, QIODevice::WriteOnly);
         m_automaton->sendMessage(buffer,ClearHighlighting);
@@ -1070,7 +1078,7 @@ void KGameWindow::resolveAttack()
   //kDebug()<< "A1:"<< A1<<", A2: " <<A2 <<"A3:" << A3;
   //kDebug()<< "D1:"<< D1<<", D2: " <<D2;
   // if arena is displayed, update the arena countries too
-  if (currentWidgetType() == arenaType) {
+  if (currentWidgetType() == Arena) {
     arena()->countryAttack()->decrNbArmies(NKA);
     arena()->countryDefense()->decrNbArmies(NKD);
   }
@@ -1246,14 +1254,14 @@ void KGameWindow::clearHighlighting()
   }
 }
 
-void KGameWindow::displayDefenseWindow()
+void KGameWindow::createDefenseDialog()
 {
   kDebug();
   // Create Window Dialog
-  dial = new KDialog ();
-  dial->setButtons( KDialog::None );
+  m_defenseDialog = new KDialog ();
+  m_defenseDialog->setButtons( KDialog::None );
 
-  QWidget* widget = new QWidget(dial);
+  QWidget* widget = new QWidget(m_defenseDialog);
   QGridLayout * mainLayout = new QGridLayout(widget);
   
   // Create the differents layout for buttons and label
@@ -1304,11 +1312,15 @@ void KGameWindow::displayDefenseWindow()
   connect(def2, SIGNAL(clicked()), this, SLOT(slotWindowDef2()));
   connect(defAuto, SIGNAL(clicked()), this, SLOT(slotDefAuto()));
 
-  dial->setMainWidget(widget);
-  // Print the window dialog
-//   dial->adjustSize();
-//   dial->setFixedSize(widget->width(), widget->height());
-  dial->exec();
+  m_defenseDialog->setMainWidget(widget);
+}
+
+void KGameWindow::displayDefenseWindow()
+{
+  kDebug();
+  if (m_defenseDialog == 0)
+    createDefenseDialog();
+  m_defenseDialog->exec();
 }
 
 void KGameWindow::startLocalCurrentAI()
@@ -3084,7 +3096,7 @@ void KGameWindow::secondCountry(GameLogic::Country* country)
 
 GameLogic::Country* KGameWindow::firstCountry()
 {
-  if (m_currentDisplayedWidget == arenaType) {
+  if (m_currentDisplayedWidget == Arena) {
      return m_arena->countryAttack();
   }
   return m_firstCountry;
@@ -3093,7 +3105,7 @@ GameLogic::Country* KGameWindow::firstCountry()
 
 GameLogic::Country* KGameWindow::secondCountry()
 {
-  if (m_currentDisplayedWidget == arenaType) {
+  if (m_currentDisplayedWidget == Arena) {
     return m_arena->countryDefense();
   }
   return m_secondCountry;
@@ -3103,10 +3115,10 @@ GameLogic::Country* KGameWindow::secondCountry()
 void KGameWindow::showArena()
 {
   kDebug();
-  if (m_currentDisplayedWidget != arenaType)
+  if (m_currentDisplayedWidget != Arena)
   {
     // synchronize the arena countries
-    m_currentDisplayedWidget = arenaType;
+    m_currentDisplayedWidget = Arena;
     m_arena->initFightArena(m_firstCountry,m_secondCountry,m_backGnd_arena);
   }
   kDebug() << "before setCurrentIndex";
@@ -3118,18 +3130,18 @@ void KGameWindow::showMap()
 {
   kDebug();
   m_centralWidget->setCurrentIndex(MAP_INDEX);
-  m_currentDisplayedWidget = mapType;
+  m_currentDisplayedWidget = Map;
 }
 
 void KGameWindow::showMainMenu()
 {
   kDebug();
   m_centralWidget->setCurrentIndex(MAINMENU_INDEX);
-  m_currentDisplayedWidget = mainMenuType;
+  m_currentDisplayedWidget = MainMenu;
 }
 
 
-KGameWindow::widgetType KGameWindow::currentWidgetType()
+KGameWindow::WidgetType KGameWindow::currentWidgetType()
 {
   return m_currentDisplayedWidget;
 }
@@ -3139,13 +3151,13 @@ QGraphicsView* KGameWindow::currentWidget()
 {
   switch (currentWidgetType())
   {
-    case arenaType:
+    case Arena:
       return dynamic_cast <QGraphicsView*>(arena());
       break;
-    case mainMenuType:
+    case MainMenu:
       return 0;
       break;
-    case mapType:
+    case Map:
       return dynamic_cast <QGraphicsView*>(frame());
       break;
     default:
@@ -3156,103 +3168,27 @@ QGraphicsView* KGameWindow::currentWidget()
 
 
 BackGnd* KGameWindow::backGnd() {
-  if (currentWidgetType() == arenaType) {
+  if (currentWidgetType() == Arena) {
     return backGndArena();
   } else {
     return backGndWorld();
   }
 }
 
-void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * defender, InvasionType invasionType)
+void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * defender, InvasionSlider::InvasionType invasionType)
 {
-  QLabel * nb = new QLabel();
-  QPixmap soldat;
-  
-  m_nbLArmy = attack->nbArmies();
-  m_nbRArmy = defender->nbArmies();
-
-  m_nbLArmies = new QLabel(QString::number(m_nbLArmy));
-  m_nbRArmies = new QLabel(QString::number(m_nbRArmy));  
-
-
-  m_wSlide = new KDialog();
-  m_wSlide->setButtons( KDialog::Ok );
-
-  QWidget* widget = new QWidget(m_wSlide);
-
-//   m_wSlide->setFixedWidth(380);
-//   m_wSlide->setFixedHeight(250);
-
-  //Infantery picture
-  QString skin = theWorld()->skin();
-  QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/sprites/infantry.svg");
-
-  soldat.load(imageFileName);
-  nb->setPixmap(soldat.scaled(35,35,Qt::KeepAspectRatioByExpanding));
-  nb->setFixedSize(35,35);
-
-  m_invadeSlide = new QSlider(Qt::Horizontal,widget);
-
-  m_invadeSlide->setTickInterval(1);
-  m_invadeSlide->setMinimum(0);
-  m_invadeSlide->setMaximum(attack->nbArmies()-1);
-  m_invadeSlide->setTickPosition(QSlider::TicksBelow);
-  m_currentSlideValue = m_invadeSlide->value();
-
-//   QPushButton * ok = new QPushButton();
-  
-//   ok->setText(i18n("Validate"));
-  QGridLayout * wSlideLayout = new QGridLayout(widget);
-  QHBoxLayout * center = new QHBoxLayout(widget);
-  QVBoxLayout * left = new QVBoxLayout(widget);
-  QVBoxLayout * right = new QVBoxLayout(widget);
-
-  //init. main layout
-  if (invasionType == Invasion)
+  if (m_wSlide != 0)
   {
-    wSlideLayout->addWidget(new QLabel(i18n("You are invading <font color=\"blue\">%1</font> with <font color=\"red\">%2</font>!", defender->i18name(), attack->i18name())),0,0);
-    wSlideLayout->addWidget(new QLabel(i18n("<br><i>Choose the number of invading armies.</i>")),1,0);
+    m_wSlide->hide();
+    delete m_wSlide;
   }
-  else if (invasionType == Moving)
-  {
-    wSlideLayout->addWidget(new QLabel(i18n("You are moving armies from <font color=\"red\">%1</font> to <font color=\"blue\">%2</font>!", attack->i18name(), defender->i18name())),0,0);
-    wSlideLayout->addWidget(new QLabel(i18n("<br><i>Choose the number of armies to move.</i>")),1,0);
-  }
-
-  wSlideLayout->addLayout(center,2,0);
-  wSlideLayout->addWidget(m_invadeSlide,3,0);
-//   wSlideLayout->addWidget(ok,4,0);
-
-  //init. center layout
-  center->addLayout(left);
-  center->addWidget(nb);
-  center->addLayout(right);
-
-  //init. left layout
-  left->addWidget(new QLabel("<b>"+attack->i18name()+"</b>"),Qt::AlignCenter);
-  left->addWidget(m_nbLArmies,Qt::AlignCenter);
-
-  //init. right layout
-  right->addWidget(new QLabel("<b>"+defender->i18name()+"</b>"),Qt::AlignCenter);
-  right->addWidget(m_nbRArmies,Qt::AlignCenter);
-
-  //val->setText(QString::number(invadeSlide->value()));
-  connect(m_invadeSlide,SIGNAL(valueChanged(int)),this,SLOT(slideMove(int)));
-  connect(m_invadeSlide,SIGNAL(sliderReleased()),this,SLOT(slideReleased()));
-  connect(m_wSlide,SIGNAL(okClicked()),this,SLOT(slideClose()));
-//   connect(ok,SIGNAL(rejected ()),this,SLOT(slideClose()));
-
-  m_wSlide->setMainWidget(widget);
-  
-  m_wSlide->setWindowTitle(i18n("Invasion"));
-  m_wSlide->setLayout(wSlideLayout);
-  m_wSlide->setWindowModality(Qt::ApplicationModal);
+  m_wSlide = new InvasionSlider(this,attack,defender,invasionType);
   m_wSlide->show();
 }
 
 bool KGameWindow::isArena()
 {
-  return this->ARENA;
+  return m_useArena;
 }
 
 void KGameWindow::reduceChat()
@@ -3263,7 +3199,8 @@ void KGameWindow::reduceChat()
   m_lastWidthChat = m_bottomDock->width();
 
   // reduce the chat
-  m_reduceChatButton->setIcon(m_upChatReducePix);
+  QPixmap upChatReducePix(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/upArrow.png"));
+  m_reduceChatButton->setIcon(upChatReducePix);
   m_chatDlg->hide();
   m_titleChatMsg->show();
 }
@@ -3274,7 +3211,8 @@ void KGameWindow::unreduceChat()
   m_chatIsReduced = false;
 
   // restore the chat
-  m_reduceChatButton->setIcon(m_downChatReducePix);
+  QPixmap downChatReducePix(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/downArrow.png"));
+  m_reduceChatButton->setIcon(downChatReducePix);
   m_chatDlg->show();
   m_titleChatMsg->hide();
   m_bottomDock->setMaximumSize(16777215,16777215);

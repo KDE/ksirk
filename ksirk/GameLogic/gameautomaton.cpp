@@ -2005,7 +2005,7 @@ void GameAutomaton::moveSlide()
 {
   kDebug();
   if (!currentPlayer()->isVirtual())
-    m_game->slideInvade(m_game->firstCountry(), m_game->secondCountry(),KGameWindow::Moving);
+    m_game->slideInvade(m_game->firstCountry(), m_game->secondCountry(),InvasionSlider::Moving);
 }
 
 /**
@@ -2502,20 +2502,20 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   case CheckGoal:
     if (isAdmin())
     {
-//       kDebug() << "CheckGoal: " << endl;
+      kDebug() << "CheckGoal: " << endl;
       stream >> playerId;
       player = dynamic_cast< Player* >(findPlayer(playerId));
       if (player)
       {
         if (player->checkGoal())
         {
-//           kDebug() << "    goal reached for " << player->name() << endl;
-//           kDebug() << "    setting state to " << GameStateNames[GAME_OVER] << endl;
+          kDebug() << "    goal reached for " << player->name() << endl;
+          kDebug() << "    setting state to " << GameStateNames[GAME_OVER] << endl;
 //           m_game->haltTimer();
           setGameStatus(KGame::End);
           state(GAME_OVER);
           sendStream << player->id();
-//           kDebug() << "    sending Winner" << endl;
+          kDebug() << "    sending Winner" << endl;
           sendMessage(sendBuffer,Winner);
         }
       }
