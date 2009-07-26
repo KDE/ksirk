@@ -713,7 +713,7 @@ void ONU::applyZoomFactorFast(qreal zoomFactor)		//benj
 
 double ONU::zoom() const
 {
-  if (m_automaton->game()->currentWidgetType() == KGameWindow::mapType) {
+  if (m_automaton->game()->currentWidgetType() == KGameWindow::Map) {
     return m_zoom;
   }
   return m_zoomArena;

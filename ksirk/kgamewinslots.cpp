@@ -12,9 +12,7 @@
 
    You should have received a copy of the GNU General Public License
    along with this program; if not, write to the Free Software
-   Foundation, Inc., 51 Ffile:///home/kde-devel/playground/games/ksirk/ksirk/GameLogic/onu.cpp
-file:///home/kde-devel/playground/games/ksirk/ksirk/GameLogic/onu.h
-ranklin Street, Fifth Floor, Boston, MA
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
    02110-1301, USA
 */
 
@@ -385,69 +383,18 @@ bool KGameWindow::queryExit()
   return true;
 }
 
-void KGameWindow::slotKey1()
-{
-  if (    ( isMyState(GameLogic::GameAutomaton::WAITDEFENSE)  ) 
-       && ( m_secondCountry ) 
-       && ( m_secondCountry->owner())
-       && ( !m_secondCountry->owner()->isAI() ) 
-       && ( !m_secondCountry->owner()->isVirtual())
-     ) 
-  {
-    slotDefense1();
-  }
-  else if (    ( isMyState(GameLogic::GameAutomaton::WAIT)  ) 
-       && ( !currentPlayer()->isAI() ) 
-       && ( !currentPlayer()->isVirtual())
-       )
-  {
-    slotAttack1();
-  } 
-}
-
-void KGameWindow::slotKey2()
-{
-  if (    ( isMyState(GameLogic::GameAutomaton::WAITDEFENSE)  ) 
-       && ( m_secondCountry ) 
-       && ( m_secondCountry->owner())
-       && ( !m_secondCountry->owner()->isAI() ) 
-       && ( !m_secondCountry->owner()->isVirtual())
-     ) 
-  {
-    slotDefense2();
-  }
-  else if (    ( isMyState(GameLogic::GameAutomaton::WAIT)  ) 
-       && ( !currentPlayer()->isAI() ) 
-       && ( !currentPlayer()->isVirtual())
-       )
-  {
-    slotAttack2();
-  } 
-}
-
-void KGameWindow::slotKey3()
-{
-  if (    ( isMyState(GameLogic::GameAutomaton::WAIT)  ) 
-       && ( !currentPlayer()->isAI() ) 
-       && ( !currentPlayer()->isVirtual())
-       )
-  {
-    slotAttack3();
-  } 
-}
-
 void KGameWindow::slotArena(bool isCheck)
 {
-	if (isCheck)
-	{
-		ARENA = true;
-		kDebug() << "*******Arena On******" << ARENA;
-	}
-	else
-	{
-		ARENA = false;
-		kDebug() << "*******Arena Off******" << ARENA;
-	}
+  if (isCheck)
+  {
+    m_useArena = true;
+    kDebug() << "*******Arena On******" << m_useArena;
+  }
+  else
+  {
+    m_useArena = false;
+    kDebug() << "*******Arena Off******" << m_useArena;
+  }
 }
 
 void KGameWindow::slotJabberGame()
@@ -836,42 +783,6 @@ void KGameWindow::slotRemoveMessage()
   }
 }
 
-void KGameWindow::slideMove(int v)
-{
-  kDebug() << v;
-  m_nbLArmy = m_nbLArmy-(v-m_currentSlideValue);
-  m_nbRArmy = m_nbRArmy+(v-m_currentSlideValue);
-  m_nbLArmies->setText(QString::number(m_nbLArmy));
-  m_nbRArmies->setText(QString::number(m_nbRArmy));
-  m_wSlide->update();
-  m_currentSlideValue = v;
-  
-  m_automaton->currentPlayerPlayed(true);
-}
-
-void KGameWindow::slideReleased()
-{
-  kDebug() << "do nothing";
-}
-
-void KGameWindow::slideClose()
-{
-  kDebug() << m_currentSlideValue;
-  
-  QByteArray buffer;
-  QDataStream stream(&buffer, QIODevice::WriteOnly);
-  stream << quint32(m_currentSlideValue);
-  automaton()->sendMessage(buffer,Invade);
-  
-  m_wSlide->close();
-  
-  QByteArray buffer2;
-  automaton()->sendMessage(buffer2,InvasionFinished);
-  m_automaton->currentPlayerPlayed(true);
-  QPointF point;
-  m_automaton->gameEvent("actionNextPlayer", point);
-}
-
 void KGameWindow::slotContextualHelp()
 {
   kDebug();
@@ -914,7 +825,7 @@ void KGameWindow::slotDefAuto()
     m_automaton->gameEvent("actionDefense1", point);
   else
     m_automaton->gameEvent("actionDefense2", point);
-  dial->close();
+  m_defenseDialog->close();
 }
 
 void KGameWindow::slotWindowDef1()
@@ -922,7 +833,7 @@ void KGameWindow::slotWindowDef1()
   QPoint point;
   kDebug()<<"Recept signal defense with one army";
   m_automaton->gameEvent("actionDefense1", point);
-  dial->close();
+  m_defenseDialog->close();
 }
 
 void KGameWindow::slotWindowDef2()
@@ -930,7 +841,7 @@ void KGameWindow::slotWindowDef2()
   QPoint point;
   kDebug()<<"Recept signal defense with two army";
   m_automaton->gameEvent("actionDefense2", point);
-  dial->close();
+  m_defenseDialog->close();
 }
 
 void KGameWindow::slotNewGameOK(unsigned int nbPlayers, const QString& skin, unsigned int nbNetworkPlayers, bool useGoals)
