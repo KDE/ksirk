@@ -533,7 +533,7 @@ bool MainWindow::queryClose()
 {
   kDebug();
   // TODO : Test si jeu en cours
-  if (m_onu->dirty())
+  if (m_onu && m_onu->dirty())
   {
     switch (KMessageBox::warningYesNoCancel(this,i18n("There is unsaved changes. What do you want to do ?"),
       i18n("Exit Anyway ?"),
