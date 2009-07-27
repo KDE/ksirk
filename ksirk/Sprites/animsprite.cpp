@@ -64,6 +64,7 @@ AnimSprite::AnimSprite(const QString &svgid,
     m_timer(this),
     m_skin(backGnd->onu()->skin())
 {
+  kDebug() << svgid << nbFrames;
   setNone();
 
   sequenceConstruction();
@@ -192,15 +193,15 @@ void AnimSprite::nextFrame()
   }
   actFrame++;    // next image
 
-  if (actFrame == (frames-1))
+  if (actFrame > (frames-1))
   {
+    actFrame=0; // come back to start
     if (m_numberOfShots == 1)
     {
       setStatic();
       m_numberOfShots = std::numeric_limits<unsigned int>::max();
       kDebug() << "Emiting animationFinished" << endl;
       emit animationFinished(this);
-      return;
     }
     else if (m_numberOfShots != std::numeric_limits<unsigned int>::max())
     {
@@ -208,17 +209,13 @@ void AnimSprite::nextFrame()
       kDebug() << "numberOfShots is now " << m_numberOfShots << endl;
     }
   }
-  else if (actFrame > (frames-1))
-  {
-    actFrame=0; // come back to start
-  }
   setFrame(actFrame);
 }
 
 void AnimSprite::setFrame(unsigned int numFrame)
 {
-// kDebug() << " " << numFrame << " look=" << look <<" ; frames="
-//  <<frames<<" ; m_frames size="<<m_frames.size();
+//   kDebug() << " " << numFrame << " look=" << look <<" ; frames="
+//           <<frames<<" ; m_frames size="<<m_frames.size();
   if (numFrame < (unsigned int)m_frames.size())
   {
     setPixmap(m_frames[(look-1)*frames+numFrame]);
