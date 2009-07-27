@@ -32,7 +32,7 @@
          <string/>
         </property>
         <property name="whatsThis" >
-         <string>Type here the skin's short name. This should be a identifier-like string</string>
+         <string>Type here the skin's short name. This should be an identifier-like string</string>
         </property>
        </widget>
       </item>
