@@ -834,12 +834,12 @@ GameAutomaton::GameState GameAutomaton::run()
     else if (event == "actionLButtonUp")
     {
       kDebug() << "actionLButtonUp in WAIT1";
-      m_game->secondCountryAt(point);
       
       if (!currentPlayer()-> isAI())
       {
         if (m_game->isMoveValid(point) && m_game->firstCountry()->nbArmies() !=1)
         {
+          m_game->secondCountryAt(point);
           state(WAIT);
           kDebug() << "Sending MoveSlide";
           QByteArray buffer;
@@ -849,6 +849,7 @@ GameAutomaton::GameState GameAutomaton::run()
         else if (m_game->isFightValid(point)
                 && m_game->firstCountry()->nbArmies() != 1)
         {
+          m_game->secondCountryAt(point);
           if (m_game->firstCountry()->nbArmies() > 3)
           {
             m_game->frame()->getAttack1Action()->setVisible(true);
@@ -876,6 +877,10 @@ GameAutomaton::GameState GameAutomaton::run()
           m_game-> cancelAction();
           state(WAIT);
         }
+      }
+      else
+      {
+        m_game->secondCountryAt(point);
       }
     }
     else if (event == "actionLButtonDown")
