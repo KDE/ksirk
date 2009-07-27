@@ -36,41 +36,43 @@ static const char *description =
 int main(int argc, char *argv[])
 {
   kDebug() << "Hello World!";
-    KAboutData aboutData( "ksirk", 0, ki18n("KsirK"),
-        KDE_VERSION_STRING, ki18n(description), KAboutData::License_GPL,
-        ki18n("(c) 2002-2005, Gaël de Chalendar\n"), ki18n("For help and user manual, please see\nthe KsirK web site."), "http://home.gna.org/ksirk", "kleag@free.fr");
-    aboutData.addAuthor(ki18n("Gael de Chalendar aka Kleag"),KLocalizedString(), "kleag@free.fr");
-    aboutData.addAuthor(ki18n("Robin Doer"));
-    aboutData.addAuthor(ki18n("Albert Astals Cid"));
-    aboutData.addAuthor(ki18n("Michal Golunski (Polish translation)"),KLocalizedString(), "michalgolunski@o2.pl");
-    aboutData.addAuthor(ki18n("French students of the 'IUP ISI 2007-2008':"));
+  KAboutData aboutData( "ksirk", 0, ki18n("KsirK"),
+    KDE_VERSION_STRING, ki18n(description), KAboutData::License_GPL,
+    ki18n("(c) 2002-2005, Gaël de Chalendar\n"),
+    ki18n("For help and user manual, please see\nthe KsirK web site."),
+    "http://games.kde.org/game.php?game=ksirk");
+  aboutData.addAuthor(ki18n("Gael de Chalendar aka Kleag"),KLocalizedString(), "kleag@free.fr");
+  aboutData.addAuthor(ki18n("Robin Doer"));
+  aboutData.addAuthor(ki18n("Albert Astals Cid"));
+  aboutData.addAuthor(ki18n("Michal Golunski (Polish translation)"),KLocalizedString(), "michalgolunski@o2.pl");
+  aboutData.addAuthor(ki18n("French students of the 'IUP ISI 2007-2008':"));
 
-    aboutData.addAuthor(ki18n("&nbsp;&nbsp;Anthony Rey<br/>&nbsp;&nbsp;Benjamin Lucas<br/>&nbsp;&nbsp;Benjamin Moreau<br/>&nbsp;&nbsp;Gaël Clouet<br/>&nbsp;&nbsp;Guillaume Pelouas<br/>&nbsp;&nbsp;Joël Marco<br/>&nbsp;&nbsp;Laurent Dang<br/>&nbsp;&nbsp;Nicolas Linard<br/>&nbsp;&nbsp;Vincent Sac"));
-    KCmdLineArgs::init( argc, argv, &aboutData );
+  aboutData.addAuthor(ki18n("&nbsp;&nbsp;Anthony Rey<br/>&nbsp;&nbsp;Benjamin Lucas<br/>&nbsp;&nbsp;Benjamin Moreau<br/>&nbsp;&nbsp;Gaël Clouet<br/>&nbsp;&nbsp;Guillaume Pelouas<br/>&nbsp;&nbsp;Joël Marco<br/>&nbsp;&nbsp;Laurent Dang<br/>&nbsp;&nbsp;Nicolas Linard<br/>&nbsp;&nbsp;Vincent Sac"));
+  KCmdLineArgs::init( argc, argv, &aboutData );
 
-    KCmdLineOptions options;
-    options.add("+[File]", ki18n("file to open"));
-    KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
+  KCmdLineOptions options;
+  options.add("+[File]", ki18n("file to open"));
+  KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
-    KApplication app;
-    KGlobal::locale()->insertCatalog("libkdegames");
+  KApplication app;
+  KGlobal::locale()->insertCatalog("libkdegames");
 
-    if (app.isSessionRestored())
-    {
-        RESTORE(Ksirk::KGameWindow);
-    }
-    else 
-    {
-      kDebug() << "Creating main window";
-      Ksirk::KGameWindow *ksirk = new Ksirk::KGameWindow();
+  if (app.isSessionRestored())
+  {
+      RESTORE(Ksirk::KGameWindow);
+  }
+  else
+  {
+    kDebug() << "Creating main window";
+    Ksirk::KGameWindow *ksirk = new Ksirk::KGameWindow();
 //       connect(app,SIGNAL(lastWindowClosed()),app,SLOT(quit()));
 //         app.setMainWidget(ksirk);
-        ksirk->show();
-        KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-        args->clear();
-    }
-    kDebug() << "Executing app";
-    int res =  app.exec();
-    KGlobal::locale()->removeCatalog( "libkdegames" );
-    return res;
+      ksirk->show();
+      KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+      args->clear();
+  }
+  kDebug() << "Executing app";
+  int res =  app.exec();
+  KGlobal::locale()->removeCatalog( "libkdegames" );
+  return res;
 }  

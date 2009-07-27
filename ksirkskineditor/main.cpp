@@ -39,30 +39,38 @@ static const char *description =
 int main(int argc, char *argv[])
 {
   kDebug() << "Hello World!";
-    KAboutData aboutData( "ksirkskineditor", 0, ki18n("KsirK Skin Editor"),
-        KDE_VERSION_STRING, ki18n(description), KAboutData::License_GPL,
-        ki18n("(c) 2008, Gaël de Chalendar\n"), ki18n("For help and user manual, please see\nThe KsirK Web site"), "http://games.kde.org/game.php?game=ksirk", "kleag@free.fr");
-    aboutData.addAuthor(ki18n("Gael de Chalendar aka Kleag"),KLocalizedString(), "kleag@free.fr");
-    KCmdLineArgs::init( argc, argv, &aboutData );
+  KAboutData aboutData(
+    "ksirkskineditor",
+    0,
+    ki18n("KsirK Skin Editor"),
+    KDE_VERSION_STRING,
+    ki18n(description),
+    KAboutData::License_GPL,
+    ki18n("(c) 2008, Gaël de Chalendar\n"),
+    ki18n("For help and user manual, please see\nThe KsirK Web site"),
+    "http://games.kde.org/game.php?game=ksirk");
+  aboutData.addAuthor(ki18n("Gael de Chalendar aka Kleag"),KLocalizedString(), "kleag@free.fr");
 
-    KCmdLineOptions options;
-    options.add("+[File]", ki18n("file to open"));
-    KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
+  KCmdLineArgs::init( argc, argv, &aboutData );
 
-    KApplication app;
-    KGlobal::locale()->insertCatalog("libkdegames");
-    if (app.isSessionRestored())
-    {
-        RESTORE(KsirkSkinEditor::MainWindow);
-    }
-    else 
-    {
-      kDebug() << "Creating main window";
-      KsirkSkinEditor::MainWindow *ksirkskineditor = new KsirkSkinEditor::MainWindow();
-      ksirkskineditor->show();
-      KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-      args->clear();
-    }
-    kDebug() << "Executing app";
-    return app.exec();
+  KCmdLineOptions options;
+  options.add("+[File]", ki18n("file to open"));
+  KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
+
+  KApplication app;
+  KGlobal::locale()->insertCatalog("libkdegames");
+  if (app.isSessionRestored())
+  {
+      RESTORE(KsirkSkinEditor::MainWindow);
+  }
+  else
+  {
+    kDebug() << "Creating main window";
+    KsirkSkinEditor::MainWindow *ksirkskineditor = new KsirkSkinEditor::MainWindow();
+    ksirkskineditor->show();
+    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+    args->clear();
+  }
+  kDebug() << "Executing app";
+  return app.exec();
 }  
