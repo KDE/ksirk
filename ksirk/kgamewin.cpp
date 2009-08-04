@@ -299,6 +299,11 @@ KGameWindow::~KGameWindow()
 {
   kDebug();
   m_dirs = 0;
+  if (m_jabberClient != 0)
+  {
+    delete m_jabberClient;
+    m_jabberClient = 0;
+  }
   if (m_automaton != 0)
   {
     m_automaton->setGameStatus( KGame::End );
