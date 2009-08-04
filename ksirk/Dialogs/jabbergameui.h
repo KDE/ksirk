@@ -40,6 +40,8 @@ public:
   KsirkJabberGameWidget(Ksirk::GameLogic::GameAutomaton* automaton,
                          QWidget* parent);
 
+  ~KsirkJabberGameWidget() {}
+  
   inline void setPreviousGuiIndex(int previousIndex) {m_previousGuiIndex = previousIndex;}
 
 Q_SIGNALS:

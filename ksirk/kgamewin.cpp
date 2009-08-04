@@ -125,6 +125,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_timer(this),
   m_message(0),
   m_mouseLocalisation(0),
+  m_defenseDialog(0),
   m_fileName(),
   m_uparrow(0),
   m_downarrow(0),
@@ -137,8 +138,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_jabberClient(new JabberClient()),
   m_advertizedHostName(QHostInfo::localHostName()),
   m_jabberGameWidget(0),
-  m_presents(),
-  m_defenseDialog(0)
+  m_presents()
   {
   kDebug() << "KGameWindow constructor begin";
 
@@ -299,6 +299,11 @@ KGameWindow::~KGameWindow()
 {
   kDebug();
   m_dirs = 0;
+  if (m_jabberClient != 0)
+  {
+    delete m_jabberClient;
+    m_jabberClient = 0;
+  }
   if (m_automaton != 0)
   {
     m_automaton->setGameStatus( KGame::End );
