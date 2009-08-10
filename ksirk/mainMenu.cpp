@@ -26,35 +26,33 @@
 
 #include <KLocale>
 
-mainMenu::mainMenu(Ksirk::GameLogic::GameAutomaton* automaton, QWidget* parent) : QWidget(parent)
+mainMenu::mainMenu(Ksirk::KGameWindow* game, QWidget* parent) : QWidget(parent)
 {
   kDebug();
-  
   setupUi(this);
-  
+
   // Load image
-  if (automaton->game()->theWorld() != 0)
-  {
-    KConfig config(automaton->game()->theWorld()->getConfigFileName());
-    KConfigGroup onugroup = config.group("onu");
-    QString skin = onugroup.readEntry("skinpath");
-    QString imageFileName;
-    QPixmap imag1, imag2;
+  QString imageFileName;
+  QPixmap imag1, imag2;
+  
+  imageFileName = KGlobal::dirs()->findResource("appdata", "skins/default/Images/logoRight.png");
+  imag1.load(imageFileName);
+  imageFileName = KGlobal::dirs()->findResource("appdata", "skins/default/Images/logoLeft.png");
+  imag2.load(imageFileName);
+  
+  lImage1->setPixmap(imag1.scaled(100,100,Qt::KeepAspectRatioByExpanding));
+  lImage2->setPixmap(imag2.scaled(100,100,Qt::KeepAspectRatioByExpanding));
 
-    imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/logoRight.png");
-    imag1.load(imageFileName);
-    imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/logoLeft.png");
-    imag2.load(imageFileName);
+  connect(pbNewGame, SIGNAL(clicked()), game, SLOT(slotNewGame()));
+  connect(pbJabberGame, SIGNAL(clicked()), game, SLOT(slotJabberGame()));
+  connect(pbNewSocketGame, SIGNAL(clicked()), game, SLOT(slotNewSocketGame()));
+  connect(pbJoin, SIGNAL(clicked()), game, SLOT(slotJoinNetworkGame()));
+  connect(pbLoad, SIGNAL(clicked()), game, SLOT(slotOpenGame()));
+  connect(pbQuit, SIGNAL(clicked()), game, SLOT(close()));
+}
 
-    lImage1->setPixmap(imag1.scaled(100,100,Qt::KeepAspectRatioByExpanding));
-    lImage2->setPixmap(imag2.scaled(100,100,Qt::KeepAspectRatioByExpanding));
-  }
-  connect(pbNewGame, SIGNAL(clicked()), parent, SLOT(slotNewGame()));
-  connect(pbJabberGame, SIGNAL(clicked()), parent, SLOT(slotJabberGame()));
-  connect(pbNewSocketGame, SIGNAL(clicked()), parent, SLOT(slotNewSocketGame()));
-  connect(pbJoin, SIGNAL(clicked()), parent, SLOT(slotJoinNetworkGame()));
-  connect(pbLoad, SIGNAL(clicked()), parent, SLOT(slotOpenGame()));
-  connect(pbQuit, SIGNAL(clicked()), parent, SLOT(close()));
+void mainMenu::init(Ksirk::GameLogic::ONU* theWorld)
+{
 }
 
 #include "mainMenu.moc"

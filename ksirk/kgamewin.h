@@ -83,7 +83,8 @@ namespace Ksirk
   class FightArena;
   class AnimSpritesGroup;
   class KRightDialog;
-  class NewGameDialogImpl;
+  class NewGameWidget;
+  class KPlayerSetupWidget;
   
 namespace Sprites
 {
@@ -117,8 +118,10 @@ public:
     MAINMENU_INDEX /*0*/,
     NEWGAME_INDEX /*1*/,
     JABBERGAME_INDEX /*2*/,
-    MAP_INDEX /*3*/,
-    ARENA_INDEX /*4*/
+    NEWPLAYER_INDEX /*3*/,
+    NEWGAMESUMMARY_INDEX /*4*/,
+    MAP_INDEX /*5*/,
+    ARENA_INDEX /*6*/
   };
   /**
     * Create the window and initializes its members
@@ -140,7 +143,9 @@ public:
 
   /** Returns the menu graphics view */
   mainMenu* mMenu() {return m_mainMenu;}
-    
+
+  NewGameSetup* newGameSetup() {return m_newGameSetup;}
+  
   /**
     * Ask all the sprites to repaint themselves
     */
@@ -643,7 +648,7 @@ public:
   const QString& groupchatNick() const {return m_groupchatNick;}
   const QString& groupchatPassword() const {return m_groupchatPassword;}
   
-  protected:
+protected:
 
   /**
     * Connected to the frame timer, it manages the behavior of the game in
@@ -781,10 +786,15 @@ public Q_SLOTS:
   void slotZoomIn();
   void slotZoomOut();
 
+  void slotNewGameNext();
   void slotNewGameOK(unsigned int nbPlayers, const QString& skin, unsigned int nbNetworkPlayers, bool useGoals);
   void slotNewGameKO();
 
   void slotJabberGameCanceled(int previousIndex);
+
+  void slotNewPlayerNext();
+
+  void slotStartNewGame();
   
 private Q_SLOTS:
   void optionsConfigure();
@@ -891,7 +901,7 @@ private: // Private methods
   void moveArmies(GameLogic::Country& src, GameLogic::Country& dest, unsigned int nb);
   void saveXml(std::ostream& xmlStream);
   void loadDices();
-  QPixmap buildDice(DiceColor color, const QString& id);
+  QPixmap buildDice(const QString& id);
   void setupPopupMessage();
     
 private: // Private members
@@ -1091,7 +1101,8 @@ private: // Private members
   uint m_newPlayersNumber;
   bool m_reinitializingGame;
   
-  NewGameDialogImpl* m_newGameDialog;
+  NewGameWidget* m_newGameDialog;
+  KPlayerSetupWidget* m_newPlayerWidget;
   
   GameLogic::GameAutomaton::GameState m_stateBeforeNewGame;
   int m_stackWidgetBeforeNewGame;
@@ -1113,6 +1124,7 @@ private: // Private members
   
   QSet<QString> m_presents;
 
+  NewGameSetup* m_newGameSetup;
 };
 
 } // closing namespace Ksirk

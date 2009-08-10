@@ -1,43 +1,44 @@
-<ui version="4.0" >
- <author>Gaël de Chalendar &lt;kleag@free.fr></author>
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Gaël de Chalendar &lt;kleag@free.fr&gt;</author>
  <comment>Enables to choose the number of players and the game skin used</comment>
  <class>NewGameDialog</class>
- <widget class="QDialog" name="NewGameDialog" >
-  <property name="geometry" >
+ <widget class="QWidget" name="NewGameDialog">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>526</width>
-    <height>403</height>
+    <width>532</width>
+    <height>417</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>Ksirk - New game properties</string>
   </property>
-  <property name="sizeGripEnabled" >
+  <property name="sizeGripEnabled" stdset="0">
    <bool>true</bool>
   </property>
-  <layout class="QGridLayout" name="gridLayout" >
-   <item row="0" column="0" colspan="4" >
-    <layout class="QHBoxLayout" name="horizontalLayout" >
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2" >
+      <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QLabel" name="textLabel1" >
-         <property name="text" >
+        <widget class="QLabel" name="textLabel1">
+         <property name="text">
           <string>Total number of players:</string>
          </property>
-         <property name="wordWrap" >
+         <property name="wordWrap">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="KIntSpinBox" name="playersNumberEntry" >
-         <property name="toolTip" >
+        <widget class="KIntSpinBox" name="playersNumberEntry">
+         <property name="toolTip">
           <string>Spin this to choose the number of players.</string>
          </property>
-         <property name="whatsThis" >
+         <property name="whatsThis">
           <string>A spin box to choose the number of players</string>
          </property>
         </widget>
@@ -45,162 +46,192 @@
       </layout>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout" >
+      <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QLabel" name="localPlayersNumberLabel" >
-         <property name="text" >
+        <widget class="QLabel" name="localPlayersNumberLabel">
+         <property name="text">
           <string>Number of local players:</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="KIntSpinBox" name="localPlayersNumberEntry" />
+        <widget class="KIntSpinBox" name="localPlayersNumberEntry"/>
        </item>
       </layout>
      </item>
     </layout>
    </item>
-   <item row="1" column="0" colspan="4" >
-    <widget class="Line" name="line1" >
-     <property name="frameShape" >
+   <item>
+    <widget class="Line" name="line1">
+     <property name="frameShape">
       <enum>QFrame::HLine</enum>
      </property>
-     <property name="frameShadow" >
+     <property name="frameShadow">
       <enum>QFrame::Sunken</enum>
      </property>
-     <property name="orientation" >
+     <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
-   <item row="2" column="0" >
-    <widget class="QLabel" name="textLabel2" >
-     <property name="text" >
-      <string>Skin:</string>
-     </property>
-     <property name="wordWrap" >
-      <bool>false</bool>
-     </property>
-    </widget>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QLabel" name="textLabel2">
+       <property name="text">
+        <string>Skin:</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="skinCombo">
+       <property name="toolTip">
+        <string>Choose the skin (map, nationalities, etc.) to use for this game.</string>
+       </property>
+       <property name="whatsThis">
+        <string>A combo listing all the available skins.</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="KPushButton" name="ghnsbutton">
+       <property name="text">
+        <string>Download New Skins</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
-   <item row="2" column="1" colspan="2" >
-    <widget class="QComboBox" name="skinCombo" >
-     <property name="toolTip" >
-      <string>Choose the skin (map, nationalities, etc.) to use for this game.</string>
+   <item>
+    <widget class="QLabel" name="skinDescLabel">
+     <property name="text">
+      <string>skinDescLabel</string>
      </property>
-     <property name="whatsThis" >
-      <string>A combo listing all the available skins.</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="3" >
-    <widget class="KPushButton" name="ghnsbutton" >
-     <property name="text" >
-      <string>Download New Skins</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0" colspan="4" >
-    <widget class="QLabel" name="skinDescLabel" >
-     <property name="text" >
-      <string>textLabel1</string>
-     </property>
-     <property name="alignment" >
+     <property name="alignment">
       <set>Qt::AlignVCenter</set>
      </property>
-     <property name="wordWrap" >
+     <property name="wordWrap">
       <bool>false</bool>
      </property>
     </widget>
    </item>
-   <item row="4" column="0" colspan="2" >
-    <widget class="QGroupBox" name="goalGroup" >
-     <property name="title" >
-      <string>Goal Type</string>
-     </property>
-     <layout class="QVBoxLayout" >
-      <item>
-       <widget class="QRadioButton" name="radioWorld" >
-        <property name="toolTip" >
-         <string>Choose this for players to have to conquer all the world to win.</string>
-        </property>
-        <property name="whatsThis" >
-         <string>In this mode, a player will have to conquer all the world to win.</string>
-        </property>
-        <property name="text" >
-         <string>Wor&amp;ld conquest</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="radioGoal" >
-        <property name="toolTip" >
-         <string>Choose this to have a goal assigned to each player.</string>
-        </property>
-        <property name="whatsThis" >
-         <string>In this mode, a goal will be assigned to each player, which he will have to reach in order to win.</string>
-        </property>
-        <property name="text" >
-         <string>Reach a goal</string>
-        </property>
-        <property name="shortcut" >
-         <string/>
-        </property>
-        <property name="checked" >
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer>
-        <property name="orientation" >
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0" >
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
-    </widget>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QGroupBox" name="goalGroup">
+       <property name="title">
+        <string>Goal Type</string>
+       </property>
+       <layout class="QVBoxLayout">
+        <item>
+         <widget class="QRadioButton" name="radioWorld">
+          <property name="toolTip">
+           <string>Choose this for players to have to conquer all the world to win.</string>
+          </property>
+          <property name="whatsThis">
+           <string>In this mode, a player will have to conquer all the world to win.</string>
+          </property>
+          <property name="text">
+           <string>Wor&amp;ld conquest</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="radioGoal">
+          <property name="toolTip">
+           <string>Choose this to have a goal assigned to each player.</string>
+          </property>
+          <property name="whatsThis">
+           <string>In this mode, a goal will be assigned to each player, which he will have to reach in order to win.</string>
+          </property>
+          <property name="text">
+           <string>Reach a goal</string>
+          </property>
+          <property name="shortcut">
+           <string/>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer>
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="skinSnapshotPixmap">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap/>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
-   <item row="4" column="2" colspan="2" >
-    <widget class="QLabel" name="skinSnapshotPixmap" >
-     <property name="sizePolicy" >
-      <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="pixmap" >
-      <pixmap/>
-     </property>
-     <property name="scaledContents" >
-      <bool>true</bool>
-     </property>
-     <property name="wordWrap" >
-      <bool>false</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="0" colspan="4" >
-    <widget class="KDialogButtonBox" name="buttonbox" >
-     <property name="standardButtons" >
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Help|QDialogButtonBox::Ok</set>
-     </property>
-    </widget>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="KPushButton" name="cancelButton">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="KPushButton" name="nextButton">
+       <property name="text">
+        <string>Next &gt;&gt;</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>KDialogButtonBox</class>
-   <extends>QDialogButtonBox</extends>
-   <header>kdialogbuttonbox.h</header>
-  </customwidget>
   <customwidget>
    <class>KIntSpinBox</class>
    <extends>QSpinBox</extends>

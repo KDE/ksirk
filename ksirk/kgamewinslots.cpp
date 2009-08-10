@@ -19,6 +19,7 @@
 // application specific includes
 #include "kgamewin.h"
 #include "ksirksettings.h"
+#include "newgamesetup.h"
 #include "Sprites/backgnd.h"
 #include "Sprites/arrowsprite.h"
 
@@ -58,6 +59,7 @@
 #include <kgamepopupitem.h>
 #include <KPasswordDialog>
 #include <KInputDialog>
+#include <kplayersetupdialog.h>
 
 namespace Ksirk
 {
@@ -406,15 +408,7 @@ void KGameWindow::slotJabberGame()
 void KGameWindow::slotNewGame()
 {
   //   kDebug() << "Slot new game: posting event actionNewGame";
-  //   QPoint point;
   actionNewGame(GameAutomaton::None);
-  
-  /// @TODO set the state to init when new game is started
-  /*  if (actionNewGame())
-  {
-    m_automaton->state(GameAutomaton::INIT);
-}*/
-//   m_automaton->gameEvent("actionNewGame", point);
 }
 
 void KGameWindow::slotNewJabberGame()
@@ -844,6 +838,18 @@ void KGameWindow::slotWindowDef2()
   m_defenseDialog->close();
 }
 
+void KGameWindow::slotNewGameNext()
+{
+  kDebug();
+  m_automaton->newGameNext();
+  m_reinitializingGame = false;
+  
+  if (m_automaton->networkGameType()==GameAutomaton::Jabber && m_jabberClient && m_jabberClient->isConnected())
+  {
+    sendGameInfoToJabber();
+  }
+}
+
 void KGameWindow::slotNewGameOK(unsigned int nbPlayers, const QString& skin, unsigned int nbNetworkPlayers, bool useGoals)
 {
   kDebug() << nbPlayers << skin << nbNetworkPlayers << useGoals;
@@ -1111,5 +1117,57 @@ void KGameWindow::slotExit()
   close();
 }
 
+void KGameWindow::slotNewPlayerNext()
+{
+  kDebug();
+  if (m_newGameSetup->players().size() < m_newGameSetup->nbPlayers())
+  {
+    QMap< QString, QString > nations = nationsList();
+    QString nomEntre = "";
+    QString password = "";
+    QString nationName = "";
+    m_newPlayerWidget->init(m_automaton,m_theWorld,m_newGameSetup->players().size()+1,nomEntre,false,password,false,nations,nationName);
+  }
+  else
+  {
+    m_centralWidget->setCurrentIndex(NEWGAMESUMMARY_INDEX);
+  }
+
+}
+
+void KGameWindow::slotStartNewGame()
+{
+  kDebug() << m_newGameSetup->nbPlayers() << m_newGameSetup->players().size();
+  m_automaton->setGameStatus(KGame::End);
+  m_reinitializingGame = true;
+  
+  
+  if (!(m_automaton->playerList()->isEmpty()))
+  {
+    m_automaton->playerList()->clear();
+    m_automaton->currentPlayer(0);
+    kDebug() << "  playerList size = " << m_automaton->playerList()->count();
+  }
+  theWorld()->reset();
+  
+  m_newPlayersNumber = m_newGameSetup->players().size();
+  m_automaton->setUseGoals(m_newGameSetup->useGoals());
+  m_automaton->state(GameLogic::GameAutomaton::INIT);
+  m_automaton->savedState(GameLogic::GameAutomaton::INVALID);
+  m_automaton->setNetworkPlayersNumber(m_newGameSetup->nbNetworkPlayers());
+
+  m_automaton->finishSetupPlayersNumberAndSkin(m_newGameSetup->skin(), m_automaton->networkGameType(),
+                                               m_newGameSetup->players().size());
+  m_reinitializingGame = false;
+
+  unsigned int nbAvailArmies = (unsigned int)(m_theWorld->getNbCountries() * 2.5 / m_newGameSetup->players().size());
+  foreach (const NewPlayerData* player, m_newGameSetup->players())
+  {
+    addPlayer(player->name(), nbAvailArmies, 0, player->nation(), player->computer());
+  }
+  
+  showMap();
+  m_frame->setFocus();
+}
 
 } // closing namespace Ksirk

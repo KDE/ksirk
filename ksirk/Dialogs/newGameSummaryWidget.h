@@ -1,8 +1,8 @@
 /***************************************************************************
-                          newGameDialogImpl.h  -  description
+                          newGameSummary.h  -  description
                              -------------------
-    begin                : Wed Feb 23 2005
-    copyright            : (C) 2005 by Gael de Chalendar
+    begin                : Fri Jul 31 2009
+    copyright            : (C) 2009 by Gaël de Chalendar
     email                : kleag@free.fr
  ***************************************************************************/
 
@@ -21,58 +21,49 @@
 #define KDE_NO_COMPAT
 
 
-#include "ui_newGameDialog.h"
-#include "newgamesetup.h"
+#ifndef NEWGAMESUMMARY_H
+#define NEWGAMESUMMARY_H
 
-#include <qmap.h>
+#include "ui_newGameSummary.h"
 
-#ifndef KSIRK_NEWGAMEDIALOGIMPL_H
-#define KSIRK_NEWGAMEDIALOGIMPL_H
+#include <QWidget>
+#include <QMap>
 
-namespace Ksirk 
+class KPlayer;
+
+namespace Ksirk
 {
+
 namespace GameLogic
 {
-    class ONU;
-    class GameAutomaton;
+  class ONU;
+  class GameAutomaton;
 }
 
 /**
-  * This is the implementation of the new game configuration dialog made with
+  * This is the implementation of the player configuration dialog made with
   * QT Designer
-  * @author Gaël de Chalendar
+  * @author Gael de Chalendar
   */
-class NewGameWidget : public QWidget, public Ui::NewGameDialog
+class NewGameSummaryWidget : public QWidget, public Ui::NewGameSummary
 {
   Q_OBJECT
 public:
-  NewGameWidget(NewGameSetup* newGameSetup, QWidget *parent=0);
-
-  virtual ~NewGameWidget();
-
-  void init(const QString& skin, bool networkGame);
+  NewGameSummaryWidget(QWidget *parent=0);
   
-  public Q_SLOTS:
-    virtual void slotOK();
-    virtual void slotCancel();
-    void slotSkinChanged(int skinNum);
-    void slotGHNS();
+  virtual ~NewGameSummaryWidget();
 
-Q_SIGNALS:
-  void newGameOK();
-  void newGameKO();
+public slots:
+  virtual void slotStart();
+  virtual void slotPrevious();
+  virtual void slotCancel();
+  
+protected:
+  void reject();
 
 private:
-  /**
-  * Fills the skins combo with skins dir names found in the Ksirk app data dir
-  * @todo Use skins names instead of dir names
-  */
-  void fillSkinsCombo();
-  
-  NewGameSetup* m_newGameSetup;
 };
 
-} // closing namespace Ksirk
+}
 
-#endif // KSIRK_NEWGAMEDIALOGIMPL_H
-
+#endif // NEWGAMESUMMARY_H

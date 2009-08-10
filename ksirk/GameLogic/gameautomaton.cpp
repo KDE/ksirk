@@ -29,6 +29,7 @@
 #include "goal.h"
 #include "country.h"
 #include "KMessageParts.h"
+#include "newgamesetup.h"
 #include "Dialogs/newGameDialogImpl.h"
 #include "Dialogs/kplayersetupdialog.h"
 #include "krightdialog.h"
@@ -164,7 +165,8 @@ GameAutomaton::GameAutomaton() :
     m_defenseAuto(false),
     m_port(KSIRK_DEFAULT_PORT),
     m_startingGame(false),
-    m_pixmapCache("GameAutomaton")
+    m_pixmapCache("GameAutomaton"),
+    m_newGameSetup(0)
 {
   m_skin = "skins/default";
   //   kDebug() << endl;
@@ -1193,7 +1195,8 @@ bool GameAutomaton::finishSetupPlayersNumberAndSkin(const QString& skin, Network
     offerConnections(m_port);
     dialog->hide();
   }
-  return m_game->finishSetupPlayers();
+  return true;
+//   return m_game->finishSetupPlayers();
 }
 
 void GameAutomaton::setGoalFor(Player* player)
@@ -1577,8 +1580,8 @@ void GameAutomaton::changePlayerName(Player* player)
       mes = i18n("Player number %1, what's your name?", 1);
       bool network = false;
       QString password;
-      KPlayerSetupDialog(this, m_game->theWorld(), 1, nomEntre, network, password, computer, nations, nationName, m_game).exec();
-//     kDebug() << "After KPlayerSetupDialog. name: " << nomEntre << endl;
+//       KPlayerSetupDialog(this, m_game->theWorld(), 1, nomEntre, network, password, computer, nations, nationName, m_game).exec();
+      //     kDebug() << "After KPlayerSetupDialog. name: " << nomEntre << endl;
       if (nomEntre.isEmpty())
       {
         mes = i18n("Error - Player %1, you have to choose a name.", 1);
@@ -1638,7 +1641,7 @@ void GameAutomaton::changePlayerNation(Player* player)
   KMessageBox::information(m_game, i18n("Please choose another nation"), i18n("KsirK - Nation already used!"));
   bool network = false;
   QString password = false;
-  KPlayerSetupDialog(this, m_game->theWorld(), 1, nomEntre, network, password, computer, nations, nationName, m_game).exec();
+//   KPlayerSetupDialog(this, m_game->theWorld(), 1, nomEntre, network, password, computer, nations, nationName, m_game).exec();
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   stream << player->name() << nationName;
@@ -2706,6 +2709,40 @@ void GameAutomaton::removeAllPlayers()
     delete p;
   }
   playerList()->clear();
+}
+
+void GameAutomaton::newGameNext()
+{
+  kDebug();
+  m_startingGame = true;
+  state(INIT);
+  
+  if (m_game->newGameSetup()->networkGameType() == Socket)
+  {
+    // porting
+    KDialog* dialog = new KDialog( m_game );
+    dialog->setCaption( i18n("Port configuration") );
+    dialog->setButtons( KDialog::Ok );
+    
+    QGroupBox* mRemoteGroup=new QGroupBox(i18n("TCP port on which to offer connections"), dialog);
+    QSpinBox* spinBox = new QSpinBox(0);
+    spinBox->setMinimum(1);
+    spinBox->setMaximum(32731);
+    spinBox->setValue(m_port);
+    QVBoxLayout *vbox = new QVBoxLayout;
+    vbox->addWidget(spinBox);
+    vbox->addStretch(1);
+    mRemoteGroup->setLayout(vbox);
+    
+    dialog->setMainWidget(mRemoteGroup);
+    dialog->exec();
+
+    // @TODO port to the new setup wizard
+//     m_port = spinBox->value();
+//     offerConnections(m_port);
+    dialog->hide();
+  }
+  m_game->finishSetupPlayers();
 }
 
 } // closing namespace GameLogic

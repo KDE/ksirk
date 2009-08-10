@@ -64,7 +64,7 @@ AnimSprite::AnimSprite(const QString &svgid,
     m_timer(this),
     m_skin(backGnd->onu()->skin())
 {
-  kDebug() << svgid << nbFrames;
+//   kDebug() << svgid << nbFrames;
   setNone();
 
   sequenceConstruction();

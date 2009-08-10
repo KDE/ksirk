@@ -38,6 +38,8 @@
 
 #include <iostream>
 
+class NewGameSetup;
+
 namespace Ksirk {
 class KGameWindow;
 namespace GameLogic {
@@ -400,6 +402,8 @@ public:
   bool joinJabberGame(const QString& nick);
 
   void removeAllPlayers();
+
+  void newGameNext();
   
 Q_SIGNALS:
   void newJabberGame(const QString&, int, const QString&);
@@ -588,6 +592,7 @@ private:
 
   NetworkGameType m_netGameType;
 
+  NewGameSetup* m_newGameSetup;
 };
 
 QDataStream& operator>>(QDataStream& s, GameAutomaton::GameState& state);

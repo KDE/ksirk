@@ -55,20 +55,20 @@ RestartOrExitDialogImpl::~RestartOrExitDialogImpl()
 
 void RestartOrExitDialogImpl::slotNewGame()
 {
-  kDebug() << "KPlayerSetupDialog slotNewGame" << endl;
+  kDebug();
   close();
 }
 
 void RestartOrExitDialogImpl::slotExit()
 {
-  kDebug() << "KPlayerSetupDialog slotExit" << endl;
+  kDebug();
   close();
 }
 
 /** @todo implements a help */
 void RestartOrExitDialogImpl::slotDoNothing()
 {
-  kDebug() << "KPlayerSetupDialog slotDoNothing" << endl;
+  kDebug();
   close();
 }
 

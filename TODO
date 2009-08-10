@@ -1,3 +1,5 @@
+  * Use kwallet to store password(s)
+
 Before KDE4.3:
   * Correct Arena bugs
   * Placement of sprites during fight in network games

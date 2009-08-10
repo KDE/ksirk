@@ -26,6 +26,8 @@
 #include "GameLogic/onu.h"
 #include "Sprites/skinSpritesData.h"
 #include "Sprites/flagsprite.h"
+#include "newplayerdata.h"
+#include "newgamesetup.h"
 
 #include <QString>
 #include <QLabel>
@@ -47,84 +49,110 @@
 namespace Ksirk
 {
 
-KPlayerSetupDialog::KPlayerSetupDialog( GameLogic::GameAutomaton* automaton,
-                                        GameLogic::ONU* onu,
-                                        unsigned int playerNumber,
-                                        QString& playerName,
-                                        bool network, QString& password,
-                                        bool &computerPlayer,
-                                        QMap< QString, QString >& nations,
-                                        QString& nationName,
-                                        QWidget *parent) :
-  QDialog(parent), Ui::QPlayerSetupDialog(),
-  m_automaton(automaton), name(playerName),
-    computer(computerPlayer), m_nationName(nationName), 
-  m_nations(nations), m_onu(onu), m_nationsNames(), number(playerNumber), 
-  m_password(password)
+KPlayerSetupWidget::KPlayerSetupWidget(QWidget *parent) :
+  QWidget(parent), Ui::QPlayerSetupWidget()
 {
-  kDebug() << "KPlayerSetupDialog constructor" << endl;
+  kDebug();
   setupUi(this);
-  QString labelString = i18n("Player Number %1, please type in your name and choose your nation:",number);
+
+  connect(nationCombo, SIGNAL(activated(int)), this, SLOT(slotNationChanged()));
+}
+
+KPlayerSetupWidget::~KPlayerSetupWidget()
+{
+  hide();
+}
+
+void KPlayerSetupWidget::init(GameLogic::GameAutomaton* automaton,
+                              GameLogic::ONU* onu,
+                              unsigned int playerNumber,
+                              QString &playerName,
+                              bool network,
+                              QString& password,
+                              bool computerPlayer,
+                              QMap< QString, QString >& nations,
+                              QString & nationName)
+
+{
+  kDebug();
+
+  m_automaton = automaton;
+  m_name = playerName;
+  m_computer = computerPlayer;
+  m_nationName = nationName;
+  m_nations = nations;
+  m_onu = onu;
+  m_number = playerNumber;
+  m_password = password;
+
+  QString labelString = i18n("Player Number %1, please type in your name and choose your nation:",m_number);
   TextLabel1-> setText(labelString);
   fillNationsCombo();
   if (network)
     passwordEdit->setEnabled(true);
-  QObject::connect((const QObject *)PushButton1, SIGNAL(clicked()), this, SLOT(slotOK()) );
-  
-  kDebug() << "KPlayerSetupDialog connecting to playerJoinedGame" << endl;
-  connect(automaton,SIGNAL(signalPlayerJoinedGame(KPlayer*)),
-          this,SLOT(slotPlayerJoinedGame(KPlayer*)));
-  
+
+  kDebug() << "connecting to playerJoinedGame";
+  connect(automaton,SIGNAL(signalPlayerJoinedGame(KPlayer*)), this,SLOT(slotPlayerJoinedGame(KPlayer*)));
+
   LineEdit2->setFocus();
-  
+
   connect(nationCombo, SIGNAL(activated(int)), this, SLOT(slotNationChanged()));
 
-  kDebug() << "KPlayerSetupDialog constructor done" << endl;
+  connect(nextButton, SIGNAL(pressed()),this,SLOT(slotOK()));
+  kDebug() << "constructor done";
 }
 
-KPlayerSetupDialog::~KPlayerSetupDialog(){
-  hide();
-}
 
-void KPlayerSetupDialog::slotOK()
+void KPlayerSetupWidget::slotOK()
 {
-  kDebug() << "KPlayerSetupDialog::slotOk" << endl;
+  kDebug();
 
-  if (!testEmptyUserName(LineEdit2->text().trimmed())) {
+  if (!testEmptyUserName(LineEdit2->text().trimmed()))
+  {
     // Empty name, but required, do not close dialog
     KMessageBox::error(this,
       "<html><center><b>" + i18n("Error") + "</b><br>" +
-      i18n("Player %1, you have to choose a name!",number) +
+      i18n("Player %1, you have to choose a name!",m_number) +
           "</center></html>", i18n("Error"));
   }
-  else if (!testUniqueUserName(LineEdit2->text().trimmed())) {
+  else if (!testUniqueUserName(LineEdit2->text().trimmed()))
+  {
     // Name is not unique
     KMessageBox::error(this,
       "<html><center><b>" + i18n("Error") + "</b><br>" +
-      i18n("Player %1, you have to choose another name!<br/>%2 is not unique.",number,LineEdit2->text()) +
+      i18n("Player %1, you have to choose another name!<br/>%2 is not unique.",m_number,LineEdit2->text()) +
           "</center></html>", i18n("Error"));
   }
-  else {
-    name = LineEdit2-> text();
-//     kDebug() << "Got name " << name << endl;
-    computer = (CheckBox1-> checkState() == Qt::Checked);
-//     kDebug() << "computer? : " << computer << endl;
+  else
+  {
+    m_name = LineEdit2-> text();
+//     kDebug() << "Got name " << name;
+    m_computer = (CheckBox1-> checkState() == Qt::Checked);
+//     kDebug() << "computer? : " << computer;
     m_nationName = m_nationsNames[nationCombo->currentText()];
 // @toport
 //     m_password = QString(crypt(passwordEdit->password(),"T6"));
 
-    accept();
+//     accept();
+    if (m_automaton->game()->newGameSetup()->players().size() < m_automaton->game()->newGameSetup()->nbPlayers())
+    {
+      kDebug() << "Add new player";
+      NewPlayerData* newPlayer = new NewPlayerData(m_name, m_nationName, m_password, m_computer);
+      m_automaton->game()->newGameSetup()->players().push_back(newPlayer);
+      emit next();
+    }
   }
 }
 
-void KPlayerSetupDialog::reject() {
-//   kDebug() << "I not allow to close the dialog!" << endl;
+void KPlayerSetupWidget::reject() {
+//   kDebug() << "I not allow to close the dialog!";
 }
 
-void KPlayerSetupDialog::fillNationsCombo()
+void KPlayerSetupWidget::fillNationsCombo()
 {
-  kDebug() << "Filling nations combo" << endl;
-
+  kDebug();
+  nationCombo->clear();
+  
   QMap< QString, QString >::const_iterator nationsIt, nationsIt_end;
   nationsIt = m_nations.constBegin(); nationsIt_end = m_nations.constEnd();
   
@@ -133,8 +161,12 @@ void KPlayerSetupDialog::fillNationsCombo()
 
   foreach (const QString& k,m_nations.keys())
   {
+    if (!isAvailable(k))
+    {
+      continue;
+    }
     const QString& v =m_nations[k];
-    kDebug() << "Adding nation " << I18N_NOOP(k) << " / " << v << endl;
+    kDebug() << "Adding nation " << I18N_NOOP(k) << " / " << v;
 //     load image
 
     FlagSprite flagsprite(v,
@@ -143,19 +175,7 @@ void KPlayerSetupDialog::fillNationsCombo()
                   Sprites::SkinSpritesData::single().intData("flag-frames"),
                   Sprites::SkinSpritesData::single().intData("flag-versions"),
                   1.0,m_automaton->game()->backGndWorld());
-
     QPixmap flag = flagsprite.image(0);
-    
-//     QSize size(
-//         m_onu->renderer()->boundsOnElement((*nationsIt).second).width()/Sprites::SkinSpritesData::single().intData("flag-frames"),
-//         m_onu->renderer()->boundsOnElement((*nationsIt).second).height());
-//     QImage image(size, QImage::Format_ARGB32_Premultiplied);
-//     image.fill(0);
-//     QPainter p(&image);
-//     m_onu->renderer()->render(&p, (*nationsIt).second);
-//     QPixmap allpm = QPixmap::fromImage(image);
-//     QPixmap flag = allpm.copy(0, 0, size.width(), size.height());
-
 
 //     get name
     QString name = i18n(k.toUtf8().data());
@@ -164,13 +184,13 @@ void KPlayerSetupDialog::fillNationsCombo()
     nationCombo->addItem(QIcon(flag),name);
   }
   
-  kDebug() << "Nations combo filled" << endl;
+  kDebug() << "Nations combo filled";
 }
 
-void KPlayerSetupDialog::slotPlayerJoinedGame(KPlayer* player)
+void KPlayerSetupWidget::slotPlayerJoinedGame(KPlayer* player)
 {
 //   kDebug() << "KPlayerSetupDialog::slotPlayerJoinedGame: " << player->name() 
-//       << " from " << ((GameLogic::Player*)player)->getNation()->name() << endl;
+//       << " from " << ((GameLogic::Player*)player)->getNation()->name();
   for (int i = 0 ; i < nationCombo->count(); i++)
   {
     if (nationCombo->itemText(i) == m_nationsNames[((GameLogic::Player*)player)->getNation()->name()])
@@ -181,11 +201,11 @@ void KPlayerSetupDialog::slotPlayerJoinedGame(KPlayer* player)
   }
 }
 
-inline bool KPlayerSetupDialog::testEmptyUserName(const QString& name) const {
+inline bool KPlayerSetupWidget::testEmptyUserName(const QString& name) const {
   return (name != "");
 }
 
-inline bool KPlayerSetupDialog::testUniqueUserName(const QString& name) const {
+inline bool KPlayerSetupWidget::testUniqueUserName(const QString& name) const {
   GameLogic::PlayersArray::const_iterator it =
     m_automaton->playerList()->constBegin();
   const GameLogic::PlayersArray::const_iterator it_end =
@@ -201,12 +221,24 @@ inline bool KPlayerSetupDialog::testUniqueUserName(const QString& name) const {
   return true;
 }
 
-void KPlayerSetupDialog::slotNationChanged()
+void KPlayerSetupWidget::slotNationChanged()
 {
-//   kDebug() << "KPlayerSetupDialog::slotNationChanged " << nationCombo->currentText() << endl;
+//   kDebug() << "KPlayerSetupDialog::slotNationChanged " << nationCombo->currentText();
   GameLogic::Nationality* nation = m_onu->nationNamed(m_nationsNames[nationCombo->currentText()]);
-//   kDebug() << "nation = " << nation << endl;
+//   kDebug() << "nation = " << nation;
   LineEdit2-> setText(nation->leaderName());
+}
+
+bool KPlayerSetupWidget::isAvailable(QString nationName)
+{
+  foreach (NewPlayerData* player, m_automaton->game()->newGameSetup()->players())
+  {
+    if (player->nation() == nationName)
+    {
+      return false;
+    }
+  }
+  return true;
 }
 
 }

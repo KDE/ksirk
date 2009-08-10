@@ -34,85 +34,76 @@
 #include <qstringlist.h>
 #include <qpushbutton.h>
 
+using namespace Ksirk::GameLogic;
+
 namespace Ksirk
 {
 
-NewGameDialogImpl::NewGameDialogImpl(QWidget *parent) :
-    QDialog(parent),
-    Ui::NewGameDialog()
+NewGameWidget::NewGameWidget(NewGameSetup* newGameSetup, QWidget *parent) :
+    QWidget(parent),
+    Ui::NewGameDialog(),
+    m_newGameSetup(newGameSetup)
 {
-  kDebug() << "Skin got by NewGameDialog";
+  kDebug();
   setupUi(this);
-  QObject::connect(buttonbox->button(QDialogButtonBox::Cancel), SIGNAL(clicked()), this, SLOT(slotCancel()) );
-  QObject::connect(buttonbox->button(QDialogButtonBox::Ok), SIGNAL(clicked()), this, SLOT(slotOK()) );
-  QObject::connect(buttonbox->button(QDialogButtonBox::Help), SIGNAL(clicked()), this, SLOT(slotHelp()) );
+  
+  QObject::connect(nextButton, SIGNAL(clicked()), this, SLOT(slotOK()) );
+  QObject::connect(cancelButton, SIGNAL(clicked()), this, SLOT(slotCancel()) );
   QObject::connect(skinCombo, SIGNAL(activated(int)), this, SLOT(slotSkinChanged(int)) );
   QObject::connect(ghnsbutton, SIGNAL(clicked()), this, SLOT(slotGHNS()) );
 }
 
-void NewGameDialogImpl::init(GameLogic::GameAutomaton* automaton, const QString& skin, bool networkGame)
+void NewGameWidget::init(const QString& skin, bool networkGame)
 {
   kDebug() << "Skin got by NewGameDialog: " << skin << " ; network=" << networkGame;
+  m_newGameSetup->setSkin(skin);
   if (networkGame)
   {
+    m_newGameSetup->setNetworkGameType(GameAutomaton::Socket);
     localPlayersNumberLabel->show();
     localPlayersNumberEntry->show();
   }
   else
   {
+    m_newGameSetup->setNetworkGameType(GameAutomaton::None);
     localPlayersNumberLabel->hide();
     localPlayersNumberEntry->hide();
   }
-  
-  m_automaton = automaton;
-  m_skin = skin;
+
+  m_newGameSetup->setSkin(skin);
 
   fillSkinsCombo();
 }
 
-NewGameDialogImpl::~NewGameDialogImpl()
+NewGameWidget::~NewGameWidget()
 {
-  QMap<QString, GameLogic::ONU*>::iterator it, it_end;
-  it = m_worlds.begin(); it_end = m_worlds.end();
-  for (; it != it_end; it++)
-  {
-//     delete(*it);
-  }
 }
 
-void NewGameDialogImpl::slotOK()
+void NewGameWidget::slotOK()
 {
-  kDebug() << "KPlayerSetupDialog slotOk";
-  kDebug() << "  skin is " << m_worlds[skinCombo->currentText()]->skin();
+  kDebug() << "  skin is " << m_newGameSetup->worlds()[skinCombo->currentText()]->skin();
 //   m_networkGame  = networkGameCheckBox->isChecked();
-  emit newGameOK(
-                 playersNumberEntry->value(),
-                 m_worlds[skinCombo->currentText()]->skin(),
-                 playersNumberEntry->value()-localPlayersNumberEntry->value(),
-                 radioGoal->isChecked());
+  m_newGameSetup->setSkin(m_newGameSetup->worlds()[skinCombo->currentText()]->skin());
+  m_newGameSetup->setNbPlayers(playersNumberEntry->value());
+  m_newGameSetup->setNbNetworkPlayers(playersNumberEntry->value()-localPlayersNumberEntry->value());
+  m_newGameSetup->setUseGoals(radioGoal->isChecked());
+  emit newGameOK();
 //   accept();
 }
 
-void NewGameDialogImpl::slotCancel()
+void NewGameWidget::slotCancel()
 {
-  kDebug() << "KPlayerSetupDialog slotCancel";
+  kDebug();
   emit newGameKO();
 //   reject();
 }
 
-/** @todo implements a help */
-void NewGameDialogImpl::slotHelp()
-{
-  kDebug() << "KPlayerSetupDialog slotHelp not already implemented";
-  KMessageBox::sorry(this, i18n("Help currently unavailable."),i18n("KsirK - No help!"));
-}
-
-void NewGameDialogImpl::fillSkinsCombo()
+void NewGameWidget::fillSkinsCombo()
 {
   kDebug() << "Filling skins combo";
 
   skinCombo->clear();
-  foreach (GameLogic::ONU* onu,  m_worlds)
+  foreach (GameLogic::ONU* onu,  m_newGameSetup->worlds())
   {
     delete onu;
   }
@@ -143,12 +134,12 @@ void NewGameDialogImpl::fillSkinsCombo()
       if (skinDir.exists())
       {
         kDebug() << "Got skin dir: " << skinDir.dirName();
-        GameLogic::ONU* world = new GameLogic::ONU(m_automaton,skinsDirName + skinDir.dirName() + "/Data/world.desktop");
+        GameLogic::ONU* world = new GameLogic::ONU(m_newGameSetup->automaton(),skinsDirName + skinDir.dirName() + "/Data/world.desktop");
         if (!world->skin().isEmpty())
         {
           skinCombo->addItem(i18n(world->name().toUtf8().data()));
-          m_worlds[i18n(world->name().toUtf8().data())] = world;
-          if (QString("skins/")+skinDir.dirName() == m_skin)
+          m_newGameSetup->worlds()[i18n(world->name().toUtf8().data())] = world;
+          if (QString("skins/")+skinDir.dirName() == m_newGameSetup->skin())
           {
             kDebug() << "Setting currentSkinNum to " << skinNum;
             currentSkinNum = skinNum;
@@ -165,22 +156,22 @@ void NewGameDialogImpl::fillSkinsCombo()
   slotSkinChanged(currentSkinNum);
 }
 
-void NewGameDialogImpl::slotSkinChanged(int skinNum)
+void NewGameWidget::slotSkinChanged(int skinNum)
 {
     kDebug() << "NewGameDialogImpl::slotSkinChanged " 
               << skinNum << " ; " << skinCombo->currentText() 
-              << " ; " << m_worlds[skinCombo->currentText()]->name() << " ; " 
-              << m_worlds[skinCombo->currentText()]->description();
-    skinDescLabel->setText(i18n(m_worlds[skinCombo->currentText()]->description().toUtf8().data()));
-    skinSnapshotPixmap->setPixmap(m_worlds[skinCombo->currentText()]->snapshot());
+              << " ; " << m_newGameSetup->worlds()[skinCombo->currentText()]->name() << " ; "
+              << m_newGameSetup->worlds()[skinCombo->currentText()]->description();
+              skinDescLabel->setText(i18n(m_newGameSetup->worlds()[skinCombo->currentText()]->description().toUtf8().data()));
+              skinSnapshotPixmap->setPixmap(m_newGameSetup->worlds()[skinCombo->currentText()]->snapshot());
     
     playersNumberEntry->setMinimum(2);
-    playersNumberEntry->setMaximum(m_worlds[skinCombo->currentText()]->getNationalities().size());
+    playersNumberEntry->setMaximum(m_newGameSetup->worlds()[skinCombo->currentText()]->getNationalities().size());
     localPlayersNumberEntry->setMinimum(1);
-    localPlayersNumberEntry->setMaximum(m_worlds[skinCombo->currentText()]->getNationalities().size()-1);
+    localPlayersNumberEntry->setMaximum(m_newGameSetup->worlds()[skinCombo->currentText()]->getNationalities().size()-1);
 }
 
-void NewGameDialogImpl::slotGHNS()
+void NewGameWidget::slotGHNS()
 {
   if ( KConfigDialog::showDialog("settings") )
   {

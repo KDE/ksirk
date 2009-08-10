@@ -46,49 +46,56 @@ namespace GameLogic
   * QT Designer
   * @author Gael de Chalendar
   */
-class KPlayerSetupDialog : public QDialog, public Ui::QPlayerSetupDialog
+class KPlayerSetupWidget : public QWidget, public Ui::QPlayerSetupWidget
 {
   Q_OBJECT
 public:
-  KPlayerSetupDialog(GameLogic::GameAutomaton* automaton,
-                     GameLogic::ONU* onu, unsigned int playerNumber,
-                     QString &playerName,
-                     bool network, QString& password,
-                     bool &computerPlayer,
-                     QMap< QString, QString >& nations,
-                     QString & nationName,
-                     QWidget *parent=0);
+  KPlayerSetupWidget(QWidget *parent=0);
   
-  virtual ~KPlayerSetupDialog();
+  virtual ~KPlayerSetupWidget();
+
+  void init(GameLogic::GameAutomaton* automaton,
+                      GameLogic::ONU* onu,
+                      unsigned int playerNumber,
+                      QString &playerName,
+                      bool network,
+                      QString& password,
+                      bool computerPlayer,
+                      QMap< QString, QString >& nations,
+                      QString & nationName);
+
+Q_SIGNALS:
+  void next();
+  
+public slots:
+  virtual void slotOK();
+  void slotPlayerJoinedGame(KPlayer* player);
+  void slotNationChanged();
 
 protected:
   void reject();
 
 private:
+  /** Fills the nations combo with nations names and flag images */
+  void fillNationsCombo();
+  
+  bool testEmptyUserName(const QString& name) const;
+  bool testUniqueUserName(const QString& name) const;
+  bool isAvailable(QString nationName);
+
   GameLogic::GameAutomaton* m_automaton;
-  QString &name;
-  bool &computer;
-  QString& m_nationName;
+  QString m_name;
+  bool m_computer;
+  QString m_nationName;
   /** list of nation name , flag file name pairs */
-  QMap< QString, QString >& m_nations;
+  QMap< QString, QString > m_nations;
   GameLogic::ONU* m_onu;
   
   /** list of internationalized nations names. Used to retrive the internal name after choice in UI */
   QMap< QString, QString > m_nationsNames;
-  unsigned int number ;
+  unsigned int m_number;
   
-  QString& m_password;
-  /** Fills the nations combo with nations names and flag images */
-  void fillNationsCombo();
-
-  bool testEmptyUserName(const QString& name) const;
-  bool testUniqueUserName(const QString& name) const;
-    
-public slots:
-    virtual void slotOK();
-  void slotPlayerJoinedGame(KPlayer* player);
-  void slotNationChanged();
-  
+  QString m_password;
 };
 
 }

@@ -30,9 +30,10 @@
 
 namespace Ksirk
 {
+  class KGameWindow;
   namespace GameLogic
   {
-    class GameAutomaton;
+    class ONU;
   }
 }
 
@@ -44,9 +45,11 @@ class mainMenu : public QWidget, public Ui::MainMenu
   Q_OBJECT
 
 public:
-  mainMenu(Ksirk::GameLogic::GameAutomaton* automaton, QWidget* parent = 0);
+  mainMenu(Ksirk::KGameWindow* game, QWidget* parent = 0);
 
   ~mainMenu() {}
+
+  void init(Ksirk::GameLogic::ONU* theWorld);
 };
 
 

@@ -67,6 +67,7 @@ set(ksirk_SRCS
   GameLogic/onu.cpp
   GameLogic/player.cpp
   GameLogic/distributiondata.cpp
+  GameLogic/newplayerdata.cpp
   Dialogs/kplayersetupdialog.cpp
   Dialogs/newGameDialogImpl.cpp
   Dialogs/kwaitedplayersetupdialog.cpp
@@ -74,12 +75,14 @@ set(ksirk_SRCS
   Dialogs/joingame.cpp
   Dialogs/jabbergameui.cpp
   Dialogs/InvasionSlider.cpp
+  Dialogs/newGameSummaryWidget.cpp
   main.cpp 
   decoratedgameframe.cpp 
   ksirkConfigDialog.cpp
   fightArena.cpp
   mainMenu.cpp
   krightdialog.cpp
+  newgamesetup.cpp
 #   Jabber/jabberaccount.cpp
   Jabber/kmessagejabber.cpp
   Jabber/jabberbytestream.cpp
@@ -97,6 +100,7 @@ set(ksirk_UI
   Dialogs/restartOrExitDialog.ui
   Dialogs/joingame.ui
   Dialogs/jabbergameui.ui
+  Dialogs/newGameSummary.ui
   preferences.ui
   mainMenu.ui
   )

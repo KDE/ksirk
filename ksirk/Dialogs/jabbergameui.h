@@ -37,12 +37,13 @@ class KsirkJabberGameWidget : public QWidget, public Ui::KsirkJabberGameWidget
 {
   Q_OBJECT
 public:
-  KsirkJabberGameWidget(Ksirk::GameLogic::GameAutomaton* automaton,
-                         QWidget* parent);
+  KsirkJabberGameWidget(QWidget* parent);
 
   ~KsirkJabberGameWidget() {}
                          
   inline void setPreviousGuiIndex(int previousIndex) {m_previousGuiIndex = previousIndex;}
+
+  void init(Ksirk::GameLogic::GameAutomaton* automaton);
 
 Q_SIGNALS:
   void cancelled(int);

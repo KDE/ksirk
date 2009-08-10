@@ -43,6 +43,7 @@
 #include "Dialogs/kwaitedplayersetupdialog.h"
 #include "Dialogs/restartOrExitDialogImpl.h"
 #include "Dialogs/newGameDialogImpl.h"
+#include "Dialogs/newGameSummaryWidget.h"
 #include "Dialogs/jabbergameui.h"
 #include "im.h"
 #include "xmpp_tasks.h"
@@ -70,8 +71,7 @@
 #include <kactioncollection.h>
 #include <kstandarddirs.h>
 #include <kmenubar.h>
-#include <kdebug.h>
-#include <ktextedit.h>
+#include <KDebug>
 #include <phonon/mediaobject.h>
 #include <KPushButton>
 #include <kchatdialog.h>
@@ -125,6 +125,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_timer(this),
   m_message(0),
   m_mouseLocalisation(0),
+  m_defenseDialog(0),
   m_fileName(),
   m_uparrow(0),
   m_downarrow(0),
@@ -132,13 +133,14 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_rightarrow(0),
   m_reinitializingGame(false),
   m_newGameDialog(0),
+  m_newPlayerWidget(0),
   m_stateBeforeNewGame(GameAutomaton::INVALID),
   m_stackWidgetBeforeNewGame(-1),
   m_jabberClient(new JabberClient()),
   m_advertizedHostName(QHostInfo::localHostName()),
   m_jabberGameWidget(0),
   m_presents(),
-  m_defenseDialog(0)
+  m_newGameSetup(new NewGameSetup(m_automaton))
   {
   kDebug() << "KGameWindow constructor begin";
 
@@ -219,15 +221,34 @@ KGameWindow::KGameWindow(QWidget* parent) :
   kDebug() << "Setting up GUI";
   setupGUI();
 
+  kDebug() << "Creating automaton";
+  m_automaton->init(this);
+
   // create a central widget if it doesent' exists
   m_centralWidget = new QStackedWidget(this);
   setCentralWidget(m_centralWidget);
-
-  kDebug() << "Creating automaton";
-  m_automaton->init(this);
+  m_mainMenu = new mainMenu(this, m_centralWidget);
+  m_mainMenu->init(m_theWorld);
   
-//   kDebug() << "Setting skin";
-//   m_automaton->skin(KGlobal::config()->group("skin").readEntry("skin", "skins/default"));
+  m_newGameDialog = new NewGameWidget(m_newGameSetup, m_centralWidget);
+  connect(m_newGameDialog,SIGNAL(newGameOK()), this, SLOT(slotNewGameNext()));
+  connect(m_newGameDialog,SIGNAL(newGameKO()), this, SLOT(slotNewGameKO()));
+  m_newPlayerWidget = new KPlayerSetupWidget(m_centralWidget);
+  connect(m_newPlayerWidget,SIGNAL(next()),this,SLOT(slotNewPlayerNext()));
+  kDebug() << "create the Jabber widget if it doesn't exist";
+  m_jabberGameWidget = new KsirkJabberGameWidget(m_centralWidget);
+  m_centralWidget->addWidget(m_mainMenu); // MAINMENU_INDEX 0
+  m_centralWidget->addWidget(m_newGameDialog); // NEWGAME_INDEX 1
+  m_centralWidget->addWidget(m_jabberGameWidget); // JABBERGAME_INDEX 2
+  m_centralWidget->addWidget(m_newPlayerWidget);  // NEWPLAYER_INDEX 3
+  NewGameSummaryWidget* newGameSummaryWidget = new NewGameSummaryWidget(m_centralWidget);
+  connect(newGameSummaryWidget->finishButton,SIGNAL(clicked(bool)),this,SLOT(slotStartNewGame()));
+  m_centralWidget->addWidget(newGameSummaryWidget);  // NEWGAMESUMMARY_INDEX 4
+
+  m_centralWidget->setCurrentIndex(MAINMENU_INDEX);
+  m_currentDisplayedWidget = MainMenu;
+  m_bottomDock->hide();
+  
   
 //    kDebug() << "Before initStatusBar";
   initStatusBar();
@@ -320,6 +341,7 @@ KGameWindow::~KGameWindow()
   delete m_audioPlayer;
   delete m_rightDialog;
   delete m_defenseDialog;
+  delete m_newGameSetup;
 }
 
 void KGameWindow::initActions()
@@ -463,22 +485,21 @@ void KGameWindow::loadDices()
   
   m_dices[Blue] = QList<QPixmap>();
   m_dices[Red] = QList<QPixmap>();
-//   QString dicesDir = m_dirs->findResourceDir("appdata", m_automaton->skin() + "/Images/reddice1.png") + m_automaton->skin() + "/Images/";
-  m_dices[Blue].push_back(buildDice(Blue, "bluedice1"));
-  m_dices[Blue].push_back(buildDice(Blue, "bluedice2"));
-  m_dices[Blue].push_back(buildDice(Blue, "bluedice3"));
-  m_dices[Blue].push_back(buildDice(Blue, "bluedice4"));
-  m_dices[Blue].push_back(buildDice(Blue, "bluedice5"));
-  m_dices[Blue].push_back(buildDice(Blue, "bluedice6"));
-  m_dices[Red].push_back(buildDice(Red, "reddice1"));
-  m_dices[Red].push_back(buildDice(Red, "reddice2"));
-  m_dices[Red].push_back(buildDice(Red, "reddice3"));
-  m_dices[Red].push_back(buildDice(Red, "reddice4"));
-  m_dices[Red].push_back(buildDice(Red, "reddice5"));
-  m_dices[Red].push_back(buildDice(Red, "reddice6"));
+  m_dices[Blue].push_back(buildDice("bluedice1"));
+  m_dices[Blue].push_back(buildDice("bluedice2"));
+  m_dices[Blue].push_back(buildDice("bluedice3"));
+  m_dices[Blue].push_back(buildDice("bluedice4"));
+  m_dices[Blue].push_back(buildDice("bluedice5"));
+  m_dices[Blue].push_back(buildDice("bluedice6"));
+  m_dices[Red].push_back(buildDice("reddice1"));
+  m_dices[Red].push_back(buildDice("reddice2"));
+  m_dices[Red].push_back(buildDice("reddice3"));
+  m_dices[Red].push_back(buildDice("reddice4"));
+  m_dices[Red].push_back(buildDice("reddice5"));
+  m_dices[Red].push_back(buildDice("reddice6"));
 }
 
-QPixmap KGameWindow::buildDice(DiceColor color, const QString& id)
+QPixmap KGameWindow::buildDice(const QString& id)
 {
   kDebug();
 
@@ -605,29 +626,13 @@ void KGameWindow::newSkin(const QString& onuFileName)
   bool firstCall = false;
   if (m_mainMenu == 0)
   {
-    m_mainMenu = new mainMenu(m_automaton, this);
     firstCall = true;
   }
-  else
-  {
-    m_centralWidget->removeWidget(m_mainMenu);
-  }
 
-  if (m_newGameDialog == 0)
-  {
-    m_newGameDialog = new NewGameDialogImpl(this);
-    connect(m_newGameDialog,SIGNAL(newGameOK(unsigned int, const QString&, unsigned int, bool)), this, SLOT(slotNewGameOK(unsigned int, const QString&, unsigned int, bool)));
-    connect(m_newGameDialog,SIGNAL(newGameKO()), this, SLOT(slotNewGameKO()));
-  }
-  else
-  {
-    m_centralWidget->removeWidget(m_newGameDialog);
-  }
-    
   kDebug() << "create the world map view";
   if (m_theWorld != 0)
   {
-    m_frame = new DecoratedGameFrame(this,width, height, m_automaton);
+    m_frame = new DecoratedGameFrame(m_centralWidget, width, height, m_automaton);
     m_frame->setMaximumWidth(width);
     m_frame->setMaximumHeight(height);
     m_frame->setCacheMode( QGraphicsView::CacheBackground );
@@ -642,49 +647,22 @@ void KGameWindow::newSkin(const QString& onuFileName)
   }
   if (m_theWorld != 0)
   {
-    m_arena = new FightArena(this, width, height, m_scene_arena, m_theWorld, m_automaton);
+    m_arena = new FightArena(m_centralWidget, width, height, m_scene_arena, m_theWorld, m_automaton);
     m_arena->setMaximumWidth(width);
     m_arena->setMaximumHeight(height);
     m_arena->setCacheMode( QGraphicsView::CacheBackground );
   }
   
-  kDebug() << "create the Jabber widget if it doesn't exist";
-  if (m_jabberGameWidget == 0)
-  {
-    m_jabberGameWidget = new KsirkJabberGameWidget(m_automaton, this);
-  }
-  else
-  {
-    m_centralWidget->removeWidget(m_jabberGameWidget);
-  }
-  
   kDebug() << "put the menu, map and arena in the central widget";
-  m_centralWidget->addWidget(m_mainMenu);
-  m_centralWidget->addWidget(m_newGameDialog);
-  m_centralWidget->addWidget(m_jabberGameWidget);
   if (m_frame != 0)
   {
-    m_centralWidget->addWidget(m_frame);
+    m_centralWidget->addWidget(m_frame); // MAP_INDEX 5
   }
   if (m_arena != 0)
   {
-    m_centralWidget->addWidget(m_arena);
+    m_centralWidget->addWidget(m_arena); // ARENA_INDEX 6
   }
-  //m_centralWidget->addWidget(m_splitter);m_centralWidget
-  if (firstCall || m_theWorld == 0)
-  {
-    kDebug() << "first call or null world: showing menu";
-    m_centralWidget->setCurrentIndex(MAINMENU_INDEX);
-    m_currentDisplayedWidget = MainMenu;
-    m_bottomDock->hide();
-  }
-  else
-  {
-    m_centralWidget->setCurrentIndex(MAP_INDEX);
-    m_currentDisplayedWidget = Map;
-    m_bottomDock->show();
-  }
-
+  
   if (m_theWorld == 0)
   {
     return;
@@ -1392,29 +1370,31 @@ bool KGameWindow::finishSetupPlayers()
   {
     m_automaton->playerList()->clear();
   }
-  kDebug() << "KGameWindow::setupPlayers: before switch; newPlayersNumber = " << m_newPlayersNumber;
+  kDebug() << "newPlayersNumber = " << m_newPlayersNumber;
   unsigned int nbAvailArmies = (unsigned int)(m_theWorld->getNbCountries() * 2.5 / m_newPlayersNumber);
-  kDebug() << "KGameWindow::setupPlayers: nbAvailArmies = " << nbAvailArmies << " ; nb countries = " << m_theWorld->getNbCountries();
+  kDebug() << "nbAvailArmies = " << nbAvailArmies << " ; nb countries = " << m_theWorld->getNbCountries();
+  QString nomEntre = "";
+  QString password = "";
+  QString nationName = "";
+  m_newPlayerWidget->init(m_automaton,m_theWorld,(int)1,nomEntre,false,password,false,nations,nationName);
+  m_centralWidget->setCurrentIndex(NEWPLAYER_INDEX);
   // Players names
   QString mes = "";
-  QString nationName;
   for (unsigned int i = 0; 
   i < m_newPlayersNumber - m_automaton->networkPlayersNumber();
        i++)
   {
-    QString nomEntre = "";
     bool computer;
     bool network = false;
-    QString password;
 
     // After closing KPlayerSetupDialog, it is guaranteed, that nomEntre is a 
     // valid username (not empty, unique)
-    KPlayerSetupDialog(m_automaton, m_theWorld, i+1, nomEntre, network,
-                        password, computer, nations, nationName, this).exec();
-    kDebug() << "Creating player " << nomEntre << "(computer: "
-             << computer << "): " << nationName;
-    addPlayer(nomEntre, nbAvailArmies, 0, nationName, computer);
-    nations.remove(nationName);
+//     KPlayerSetupDialog(m_automaton, m_theWorld, i+1, nomEntre, network,
+//                         password, computer, nations, nationName, this).exec();
+//     kDebug() << "Creating player " << nomEntre << "(computer: "
+//              << computer << "): " << nationName;
+//     addPlayer(nomEntre, nbAvailArmies, 0, nationName, computer);
+//     nations.remove(nationName);
   }
   if (m_networkGame)
   {
@@ -1480,7 +1460,7 @@ bool KGameWindow::setupOnePlayer()
     {
       mes = i18n("Player number %1, what's your name?", 1);
       bool network = true;
-      KPlayerSetupDialog(m_automaton, m_theWorld, 1, nomEntre, network, password, computer, nations, nationName, this).exec();
+//       KPlayerSetupDialog(m_automaton, m_theWorld, 1, nomEntre, network, password, computer, nations, nationName, this).exec();
       kDebug() << "After KPlayerSetupDialog. name: " << nomEntre;
       if (nomEntre.isEmpty())
       {
@@ -3257,7 +3237,7 @@ bool KGameWindow::newGameDialog(const QString& skin, bool networkGame)
   m_automaton->setGameStatus( KGame::Pause );
   m_stateBeforeNewGame = m_automaton->state();
   m_automaton->state(GameAutomaton::STARTING_GAME);
-  m_newGameDialog->init(m_automaton, skin, networkGame);
+  m_newGameDialog->init(skin, networkGame);
   m_stackWidgetBeforeNewGame = m_centralWidget->currentIndex();
   m_centralWidget->setCurrentIndex(NEWGAME_INDEX);
   return false;
