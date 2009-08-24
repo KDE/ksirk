@@ -907,26 +907,24 @@ bool KGameWindow::attackEnd()
 void KGameWindow::winner(const Player* player)
 {
   kDebug() << player->name();
-  QString msg = "%1 won !";
+  QString msg = i18n("%1 won!");
   if (!player->isVirtual())
   {
-    msg = "<big><b>%1</b>, you won !</big>";
+    msg = i18n("<big><b>%1</b>, you won!</big>");
   }
   if (m_automaton->useGoals())
   {
-    msg += QString("<br>Winner's goal was stated like this:<br><i>")
-        += player->goal().message()
-        += QString("</i><br><br>Do you want to play again ?");
+    msg += i18n("<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to play again?").arg(player->goal().message());
   }
   else
   {
     if (!player->isVirtual())
     {
-      msg += "<br>You conquered all the world!";
+      msg += i18n("<br>You conquered all the world!");
     }
     else
     {
-      msg += "<br>He conquered all the world!";
+      msg += i18n("<br>He conquered all the world!");
     }
   }
   RestartOrExitDialogImpl* restartDia = new RestartOrExitDialogImpl(i18n(msg.toUtf8().data(),player->name()));
