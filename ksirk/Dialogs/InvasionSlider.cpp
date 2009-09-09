@@ -40,7 +40,6 @@
 #include "GameLogic/KsirkChatDelegate.h"
 #include "SaveLoad/ksirkgamexmlloader.h"
 #include "Sprites/backgnd.h"
-#include "Dialogs/kplayersetupdialog.h"
 #include "Dialogs/kwaitedplayersetupdialog.h"
 #include "Dialogs/restartOrExitDialogImpl.h"
 #include "Dialogs/newGameDialogImpl.h"

@@ -31,6 +31,7 @@
 #include <QMap>
 
 class KPlayer;
+class NewGameSetup;
 
 namespace Ksirk
 {
@@ -62,7 +63,8 @@ public:
                       QString& password,
                       bool computerPlayer,
                       QMap< QString, QString >& nations,
-                      QString & nationName);
+                      QString & nationName,
+                      NewGameSetup* newGameSetup);
 
 Q_SIGNALS:
   void next();
@@ -71,16 +73,12 @@ public slots:
   virtual void slotOK();
   void slotPlayerJoinedGame(KPlayer* player);
   void slotNationChanged();
-
-protected:
-  void reject();
-
+  void slotNameEdited (const QString& text);
+  
 private:
   /** Fills the nations combo with nations names and flag images */
   void fillNationsCombo();
   
-  bool testEmptyUserName(const QString& name) const;
-  bool testUniqueUserName(const QString& name) const;
   bool isAvailable(QString nationName);
 
   GameLogic::GameAutomaton* m_automaton;
@@ -96,6 +94,7 @@ private:
   unsigned int m_number;
   
   QString m_password;
+  NewGameSetup* m_newGameSetup;
 };
 
 }

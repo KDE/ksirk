@@ -68,7 +68,7 @@ set(ksirk_SRCS
   GameLogic/player.cpp
   GameLogic/distributiondata.cpp
   GameLogic/newplayerdata.cpp
-  Dialogs/kplayersetupdialog.cpp
+  Dialogs/kplayersetupwidget.cpp
   Dialogs/newGameDialogImpl.cpp
   Dialogs/kwaitedplayersetupdialog.cpp
   Dialogs/restartOrExitDialogImpl.cpp

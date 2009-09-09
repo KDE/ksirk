@@ -39,7 +39,7 @@
 #include "GameLogic/KsirkChatDelegate.h"
 #include "SaveLoad/ksirkgamexmlloader.h"
 #include "Sprites/backgnd.h"
-#include "Dialogs/kplayersetupdialog.h"
+#include "Dialogs/kplayersetupwidget.h"
 #include "Dialogs/kwaitedplayersetupdialog.h"
 #include "Dialogs/restartOrExitDialogImpl.h"
 #include "Dialogs/newGameDialogImpl.h"
@@ -1374,7 +1374,7 @@ bool KGameWindow::finishSetupPlayers()
   QString nomEntre = "";
   QString password = "";
   QString nationName = "";
-  m_newPlayerWidget->init(m_automaton,m_theWorld,(int)1,nomEntre,false,password,false,nations,nationName);
+  m_newPlayerWidget->init(m_automaton,m_theWorld,(int)1,nomEntre,false,password,false,nations,nationName, m_newGameSetup);
   m_centralWidget->setCurrentIndex(NEWPLAYER_INDEX);
   // Players names
   QString mes = "";

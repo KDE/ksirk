@@ -19,7 +19,7 @@
  *   02110-1301, USA
  ***************************************************************************/
 #define KDE_NO_COMPAT
-#include "kplayersetupdialog.h"
+#include "kplayersetupwidget.h"
 #include "GameLogic/gameautomaton.h"
 #include "GameLogic/player.h"
 #include "GameLogic/nationality.h"
@@ -56,6 +56,9 @@ KPlayerSetupWidget::KPlayerSetupWidget(QWidget *parent) :
   setupUi(this);
 
   connect(nationCombo, SIGNAL(activated(int)), this, SLOT(slotNationChanged()));
+  connect(nameLineEdit, SIGNAL(textEdited(const QString&)), this, SLOT(slotNameEdited (const QString&)));
+  
+  messageLabel->hide();
 }
 
 KPlayerSetupWidget::~KPlayerSetupWidget()
@@ -71,10 +74,11 @@ void KPlayerSetupWidget::init(GameLogic::GameAutomaton* automaton,
                               QString& password,
                               bool computerPlayer,
                               QMap< QString, QString >& nations,
-                              QString & nationName)
+                              QString & nationName,
+                              NewGameSetup* newGameSetup)
 
 {
-  kDebug();
+  kDebug() << playerName << nationName;
 
   m_automaton = automaton;
   m_name = playerName;
@@ -84,6 +88,7 @@ void KPlayerSetupWidget::init(GameLogic::GameAutomaton* automaton,
   m_onu = onu;
   m_number = playerNumber;
   m_password = password;
+  m_newGameSetup = newGameSetup;
 
   QString labelString = i18n("Player Number %1, please type in your name and choose your nation:",m_number);
   TextLabel1-> setText(labelString);
@@ -94,7 +99,8 @@ void KPlayerSetupWidget::init(GameLogic::GameAutomaton* automaton,
   kDebug() << "connecting to playerJoinedGame";
   connect(automaton,SIGNAL(signalPlayerJoinedGame(KPlayer*)), this,SLOT(slotPlayerJoinedGame(KPlayer*)));
 
-  LineEdit2->setFocus();
+  slotNationChanged();
+  nameLineEdit->setFocus();
 
   connect(nationCombo, SIGNAL(activated(int)), this, SLOT(slotNationChanged()));
 
@@ -107,45 +113,22 @@ void KPlayerSetupWidget::slotOK()
 {
   kDebug();
 
-  if (!testEmptyUserName(LineEdit2->text().trimmed()))
-  {
-    // Empty name, but required, do not close dialog
-    KMessageBox::error(this,
-      "<html><center><b>" + i18n("Error") + "</b><br>" +
-      i18n("Player %1, you have to choose a name!",m_number) +
-          "</center></html>", i18n("Error"));
-  }
-  else if (!testUniqueUserName(LineEdit2->text().trimmed()))
-  {
-    // Name is not unique
-    KMessageBox::error(this,
-      "<html><center><b>" + i18n("Error") + "</b><br>" +
-      i18n("Player %1, you have to choose another name!<br/>%2 is not unique.",m_number,LineEdit2->text()) +
-          "</center></html>", i18n("Error"));
-  }
-  else
-  {
-    m_name = LineEdit2-> text();
+  m_name = nameLineEdit-> text().trimmed();
 //     kDebug() << "Got name " << name;
-    m_computer = (CheckBox1-> checkState() == Qt::Checked);
+  m_computer = (CheckBox1-> checkState() == Qt::Checked);
 //     kDebug() << "computer? : " << computer;
-    m_nationName = m_nationsNames[nationCombo->currentText()];
+  m_nationName = m_nationsNames[nationCombo->currentText()];
 // @toport
 //     m_password = QString(crypt(passwordEdit->password(),"T6"));
 
 //     accept();
-    if (m_automaton->game()->newGameSetup()->players().size() < m_automaton->game()->newGameSetup()->nbPlayers())
-    {
-      kDebug() << "Add new player";
-      NewPlayerData* newPlayer = new NewPlayerData(m_name, m_nationName, m_password, m_computer);
-      m_automaton->game()->newGameSetup()->players().push_back(newPlayer);
-      emit next();
-    }
+  if (m_automaton->game()->newGameSetup()->players().size() < m_automaton->game()->newGameSetup()->nbPlayers())
+  {
+    kDebug() << "Add new player";
+    NewPlayerData* newPlayer = new NewPlayerData(m_name, m_nationName, m_password, m_computer);
+    m_newGameSetup->players().push_back(newPlayer);
+    emit next();
   }
-}
-
-void KPlayerSetupWidget::reject() {
-//   kDebug() << "I not allow to close the dialog!";
 }
 
 void KPlayerSetupWidget::fillNationsCombo()
@@ -157,7 +140,7 @@ void KPlayerSetupWidget::fillNationsCombo()
   nationsIt = m_nations.constBegin(); nationsIt_end = m_nations.constEnd();
   
   GameLogic::Nationality* nation = m_onu->nationNamed(*m_nations.keys().begin());
-  LineEdit2-> setText(nation->leaderName());
+  nameLineEdit-> setText(nation->leaderName());
 
   foreach (const QString& k,m_nations.keys())
   {
@@ -201,37 +184,17 @@ void KPlayerSetupWidget::slotPlayerJoinedGame(KPlayer* player)
   }
 }
 
-inline bool KPlayerSetupWidget::testEmptyUserName(const QString& name) const {
-  return (name != "");
-}
-
-inline bool KPlayerSetupWidget::testUniqueUserName(const QString& name) const {
-  GameLogic::PlayersArray::const_iterator it =
-    m_automaton->playerList()->constBegin();
-  const GameLogic::PlayersArray::const_iterator it_end =
-    m_automaton->playerList()->constEnd();
-
-  for (; it != it_end; it++) {
-    if ((*it)->name() == name) {
-      // Player with "name" already registered
-      return false;
-    }
-  }
-
-  return true;
-}
-
 void KPlayerSetupWidget::slotNationChanged()
 {
 //   kDebug() << "KPlayerSetupDialog::slotNationChanged " << nationCombo->currentText();
   GameLogic::Nationality* nation = m_onu->nationNamed(m_nationsNames[nationCombo->currentText()]);
 //   kDebug() << "nation = " << nation;
-  LineEdit2-> setText(nation->leaderName());
+  nameLineEdit-> setText(nation->leaderName());
 }
 
 bool KPlayerSetupWidget::isAvailable(QString nationName)
 {
-  foreach (NewPlayerData* player, m_automaton->game()->newGameSetup()->players())
+  foreach (NewPlayerData* player, m_newGameSetup->players())
   {
     if (player->nation() == nationName)
     {
@@ -241,6 +204,36 @@ bool KPlayerSetupWidget::isAvailable(QString nationName)
   return true;
 }
 
+void KPlayerSetupWidget::slotNameEdited(const QString& text)
+{
+  kDebug() << text.trimmed();
+  bool found = false;
+  foreach (NewPlayerData* player, m_newGameSetup->players())
+  {
+    if (player->name() == text.trimmed())
+    {
+      found = true;
+      break;
+    }
+  }
+  if (found || text.trimmed().isEmpty())
+  {
+    QString message = i18n("Name already in use. Please choose another one.");
+    if (text.trimmed().isEmpty())
+      message = i18n("Empty name. Please choose another one.");
+    nextButton->setEnabled(false);
+    nameLineEdit->setStyleSheet("background: red");
+    messageLabel->setText(message);
+    messageLabel->show();
+  }
+  else
+  {
+    nextButton->setEnabled(true);
+    nameLineEdit->setStyleSheet("");
+    messageLabel->hide();
+  }
 }
 
-#include "kplayersetupdialog.moc"
+} // namespace Ksirk
+
+#include "kplayersetupwidget.moc"

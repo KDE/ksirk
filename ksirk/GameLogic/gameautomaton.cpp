@@ -30,8 +30,6 @@
 #include "country.h"
 #include "KMessageParts.h"
 #include "newgamesetup.h"
-#include "Dialogs/newGameDialogImpl.h"
-#include "Dialogs/kplayersetupdialog.h"
 #include "krightdialog.h"
 #include "Dialogs/joingame.h"
 #include "Jabber/kmessagejabber.h"

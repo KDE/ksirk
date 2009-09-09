@@ -34,6 +34,7 @@
 #include "SaveLoad/ksirkgamexmlloader.h"
 #include "Sprites/animspritesgroup.h"
 #include "Dialogs/jabbergameui.h"
+#include "Dialogs/kplayersetupwidget.h"
 #include "Jabber/kmessagejabber.h"
 
 #include "kgame/kmessageserver.h"
@@ -59,7 +60,6 @@
 #include <kgamepopupitem.h>
 #include <KPasswordDialog>
 #include <KInputDialog>
-#include <kplayersetupdialog.h>
 
 namespace Ksirk
 {
@@ -1126,7 +1126,7 @@ void KGameWindow::slotNewPlayerNext()
     QString nomEntre = "";
     QString password = "";
     QString nationName = "";
-    m_newPlayerWidget->init(m_automaton,m_theWorld,m_newGameSetup->players().size()+1,nomEntre,false,password,false,nations,nationName);
+    m_newPlayerWidget->init(m_automaton,m_theWorld,m_newGameSetup->players().size()+1,nomEntre,false,password,false,nations,nationName, m_newGameSetup);
   }
   else
   {
