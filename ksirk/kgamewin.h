@@ -793,7 +793,9 @@ public Q_SLOTS:
   void slotJabberGameCanceled(int previousIndex);
 
   void slotNewPlayerNext();
-
+  void slotNewPlayerPrevious();
+  void slotNewPlayerCancel();
+  
   void slotStartNewGame();
   
 private Q_SLOTS:

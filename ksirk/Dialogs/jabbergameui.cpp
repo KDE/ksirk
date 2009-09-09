@@ -200,6 +200,7 @@ void KsirkJabberGameWidget::slotGroupChatJoined(const XMPP::Jid & jid)
 void KsirkJabberGameWidget::slotGroupChatLeft (const XMPP::Jid & jid)
 {
   kDebug();
+  Q_UNUSED(jid);
   chatroomstateled->setState(KLed::Off);
 }
 
@@ -225,7 +226,7 @@ void KsirkJabberGameWidget::slotGroupChatPresence (const XMPP::Jid & jid, const 
 
 void KsirkJabberGameWidget::slotGroupChatError (const XMPP::Jid & jid, int error, const QString & reason)
 {
-  kDebug();
+  kDebug() << jid.full() << error << reason;
 }
 
 void KsirkJabberGameWidget::slotNewJabberGame(const QString& nick,

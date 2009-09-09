@@ -68,9 +68,13 @@ public:
 
 Q_SIGNALS:
   void next();
+  void previous();
+  void cancel();
   
-public slots:
-  virtual void slotOK();
+public Q_SLOTS:
+  void slotNext();
+  void slotPrevious();
+  void slotCancel();
   void slotPlayerJoinedGame(KPlayer* player);
   void slotNationChanged();
   void slotNameEdited (const QString& text);

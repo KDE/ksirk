@@ -1120,19 +1120,23 @@ void KGameWindow::slotExit()
 void KGameWindow::slotNewPlayerNext()
 {
   kDebug();
-  if (m_newGameSetup->players().size() < m_newGameSetup->nbPlayers())
-  {
-    QMap< QString, QString > nations = nationsList();
-    QString nomEntre = "";
-    QString password = "";
-    QString nationName = "";
-    m_newPlayerWidget->init(m_automaton,m_theWorld,m_newGameSetup->players().size()+1,nomEntre,false,password,false,nations,nationName, m_newGameSetup);
-  }
-  else
+  if (m_newGameSetup->players().size() >= m_newGameSetup->nbPlayers())
   {
     m_centralWidget->setCurrentIndex(NEWGAMESUMMARY_INDEX);
   }
+}
 
+void KGameWindow::slotNewPlayerPrevious()
+{
+  kDebug();
+  m_centralWidget->setCurrentIndex(NEWGAME_INDEX);
+}
+
+void KGameWindow::slotNewPlayerCancel()
+{
+  kDebug();
+  /// @TODO other uninits to do
+  m_centralWidget->setCurrentIndex(m_stackWidgetBeforeNewGame);
 }
 
 void KGameWindow::slotStartNewGame()

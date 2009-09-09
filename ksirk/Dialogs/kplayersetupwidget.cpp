@@ -57,6 +57,10 @@ KPlayerSetupWidget::KPlayerSetupWidget(QWidget *parent) :
 
   connect(nationCombo, SIGNAL(activated(int)), this, SLOT(slotNationChanged()));
   connect(nameLineEdit, SIGNAL(textEdited(const QString&)), this, SLOT(slotNameEdited (const QString&)));
+  connect(nationCombo, SIGNAL(activated(int)), this, SLOT(slotNationChanged()));
+  connect(nextButton, SIGNAL(pressed()),this,SLOT(slotNext()));
+  connect(previousButton, SIGNAL(pressed()),this,SLOT(slotPrevious()));
+  connect(cancelButton, SIGNAL(pressed()),this,SLOT(slotCancel()));
   
   messageLabel->hide();
 }
@@ -102,14 +106,11 @@ void KPlayerSetupWidget::init(GameLogic::GameAutomaton* automaton,
   slotNationChanged();
   nameLineEdit->setFocus();
 
-  connect(nationCombo, SIGNAL(activated(int)), this, SLOT(slotNationChanged()));
-
-  connect(nextButton, SIGNAL(pressed()),this,SLOT(slotOK()));
   kDebug() << "constructor done";
 }
 
 
-void KPlayerSetupWidget::slotOK()
+void KPlayerSetupWidget::slotNext()
 {
   kDebug();
 
@@ -122,14 +123,47 @@ void KPlayerSetupWidget::slotOK()
 //     m_password = QString(crypt(passwordEdit->password(),"T6"));
 
 //     accept();
-  if (m_automaton->game()->newGameSetup()->players().size() < m_automaton->game()->newGameSetup()->nbPlayers())
+  if (m_newGameSetup->players().size() < m_newGameSetup->nbPlayers())
   {
     kDebug() << "Add new player";
     NewPlayerData* newPlayer = new NewPlayerData(m_name, m_nationName, m_password, m_computer);
     m_newGameSetup->players().push_back(newPlayer);
+    fillNationsCombo();
+    slotNationChanged();
+//     init(m_automaton,m_onu,m_newGameSetup->players().size()+1,"",false,"",false,m_nations,"", m_newGameSetup);
     emit next();
   }
+  
 }
+
+void KPlayerSetupWidget::slotPrevious()
+{
+  kDebug();
+  if (m_newGameSetup->players().empty())
+  {
+    emit previous();
+  }
+  else
+  {
+    NewPlayerData* player = m_newGameSetup->players().back();
+    m_newGameSetup->players().pop_back();
+    nameLineEdit->setText(player->name());
+    /// @TODO set the correct nation and password and computer state
+    delete player;
+  }
+}
+
+void KPlayerSetupWidget::slotCancel()
+{
+  kDebug();
+  foreach (NewPlayerData* player, m_newGameSetup->players())
+  {
+    delete player;
+  }
+  m_newGameSetup->players().clear();
+  emit cancel();
+}
+
 
 void KPlayerSetupWidget::fillNationsCombo()
 {
@@ -233,6 +267,7 @@ void KPlayerSetupWidget::slotNameEdited(const QString& text)
     messageLabel->hide();
   }
 }
+
 
 } // namespace Ksirk
 

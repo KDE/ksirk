@@ -235,6 +235,8 @@ KGameWindow::KGameWindow(QWidget* parent) :
   connect(m_newGameDialog,SIGNAL(newGameKO()), this, SLOT(slotNewGameKO()));
   m_newPlayerWidget = new KPlayerSetupWidget(m_centralWidget);
   connect(m_newPlayerWidget,SIGNAL(next()),this,SLOT(slotNewPlayerNext()));
+  connect(m_newPlayerWidget,SIGNAL(previous()),this,SLOT(slotNewPlayerPrevious()));
+  connect(m_newPlayerWidget,SIGNAL(cancel()),this,SLOT(slotNewPlayerCancel()));
   kDebug() << "create the Jabber widget if it doesn't exist";
   m_jabberGameWidget = new KsirkJabberGameWidget(m_centralWidget);
   m_centralWidget->addWidget(m_mainMenu); // MAINMENU_INDEX 0
