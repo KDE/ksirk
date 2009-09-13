@@ -22,6 +22,7 @@
 #include "newgamesetup.h"
 #include "Sprites/backgnd.h"
 #include "Sprites/arrowsprite.h"
+#include "Dialogs/newGameSummaryWidget.h"
 
 #include <kaboutapplicationdialog.h>
 #include <ktoolbar.h>
@@ -1122,6 +1123,7 @@ void KGameWindow::slotNewPlayerNext()
   kDebug();
   if (m_newGameSetup->players().size() >= m_newGameSetup->nbPlayers())
   {
+    m_newGameSummaryWidget->show(this);
     m_centralWidget->setCurrentIndex(NEWGAMESUMMARY_INDEX);
   }
 }
@@ -1129,13 +1131,29 @@ void KGameWindow::slotNewPlayerNext()
 void KGameWindow::slotNewPlayerPrevious()
 {
   kDebug();
-  m_centralWidget->setCurrentIndex(NEWGAME_INDEX);
+  if (m_newGameSetup->players().empty())
+  {
+    m_centralWidget->setCurrentIndex(NEWGAME_INDEX);
+  }
+  else
+  {
+    NewPlayerData* player = m_newGameSetup->players().back();
+    m_newGameSetup->players().pop_back();
+    m_newPlayerWidget->init(player);
+    delete player;
+    m_centralWidget->setCurrentIndex(NEWPLAYER_INDEX);
+  }
 }
 
 void KGameWindow::slotNewPlayerCancel()
 {
   kDebug();
   /// @TODO other uninits to do
+  foreach (NewPlayerData* player, m_newGameSetup->players())
+  {
+    delete player;
+  }
+  m_newGameSetup->players().clear();
   m_centralWidget->setCurrentIndex(m_stackWidgetBeforeNewGame);
 }
 

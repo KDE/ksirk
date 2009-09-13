@@ -35,7 +35,7 @@ class NewGameSetup;
 
 namespace Ksirk
 {
-
+  class NewPlayerData;
 namespace GameLogic
 {
   class ONU;
@@ -66,6 +66,8 @@ public:
                       QString & nationName,
                       NewGameSetup* newGameSetup);
 
+  void init(NewPlayerData* player = 0);
+                      
 Q_SIGNALS:
   void next();
   void previous();

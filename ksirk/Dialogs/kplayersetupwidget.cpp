@@ -94,18 +94,9 @@ void KPlayerSetupWidget::init(GameLogic::GameAutomaton* automaton,
   m_password = password;
   m_newGameSetup = newGameSetup;
 
-  QString labelString = i18n("Player Number %1, please type in your name and choose your nation:",m_number);
-  TextLabel1-> setText(labelString);
-  fillNationsCombo();
-  if (network)
-    passwordEdit->setEnabled(true);
-
   kDebug() << "connecting to playerJoinedGame";
   connect(automaton,SIGNAL(signalPlayerJoinedGame(KPlayer*)), this,SLOT(slotPlayerJoinedGame(KPlayer*)));
-
-  slotNationChanged();
-  nameLineEdit->setFocus();
-
+  init();
   kDebug() << "constructor done";
 }
 
@@ -116,7 +107,7 @@ void KPlayerSetupWidget::slotNext()
 
   m_name = nameLineEdit-> text().trimmed();
 //     kDebug() << "Got name " << name;
-  m_computer = (CheckBox1-> checkState() == Qt::Checked);
+  m_computer = (isComputerCheckBox-> checkState() == Qt::Checked);
 //     kDebug() << "computer? : " << computer;
   m_nationName = m_nationsNames[nationCombo->currentText()];
 // @toport
@@ -126,10 +117,11 @@ void KPlayerSetupWidget::slotNext()
   if (m_newGameSetup->players().size() < m_newGameSetup->nbPlayers())
   {
     kDebug() << "Add new player";
-    NewPlayerData* newPlayer = new NewPlayerData(m_name, m_nationName, m_password, m_computer);
+    NewPlayerData* newPlayer = new NewPlayerData(m_name, m_nationName, m_password, m_computer, false);
     m_newGameSetup->players().push_back(newPlayer);
     fillNationsCombo();
     slotNationChanged();
+    isComputerCheckBox->setCheckState(Qt::Unchecked);
 //     init(m_automaton,m_onu,m_newGameSetup->players().size()+1,"",false,"",false,m_nations,"", m_newGameSetup);
     emit next();
   }
@@ -147,8 +139,11 @@ void KPlayerSetupWidget::slotPrevious()
   {
     NewPlayerData* player = m_newGameSetup->players().back();
     m_newGameSetup->players().pop_back();
+    fillNationsCombo();
+    slotNationChanged();
     nameLineEdit->setText(player->name());
-    /// @TODO set the correct nation and password and computer state
+    passwordEdit->setText(player->password());
+    isComputerCheckBox->setCheckState(player->computer()?Qt::Checked:Qt::Unchecked);
     delete player;
   }
 }
@@ -156,11 +151,6 @@ void KPlayerSetupWidget::slotPrevious()
 void KPlayerSetupWidget::slotCancel()
 {
   kDebug();
-  foreach (NewPlayerData* player, m_newGameSetup->players())
-  {
-    delete player;
-  }
-  m_newGameSetup->players().clear();
   emit cancel();
 }
 
@@ -169,9 +159,6 @@ void KPlayerSetupWidget::fillNationsCombo()
 {
   kDebug();
   nationCombo->clear();
-  
-  QMap< QString, QString >::const_iterator nationsIt, nationsIt_end;
-  nationsIt = m_nations.constBegin(); nationsIt_end = m_nations.constEnd();
   
   GameLogic::Nationality* nation = m_onu->nationNamed(*m_nations.keys().begin());
   nameLineEdit-> setText(nation->leaderName());
@@ -268,6 +255,33 @@ void KPlayerSetupWidget::slotNameEdited(const QString& text)
   }
 }
 
+void KPlayerSetupWidget::init(NewPlayerData* player)
+{
+  kDebug() << (void*)player;
+  QString labelString = i18n("Player Number %1, please type in your name and choose your nation:",m_newGameSetup->players().size());
+  TextLabel1-> setText(labelString);
+
+  /// @TODO set the correct nation and password and computer state
+  
+  fillNationsCombo();
+  if (m_newGameSetup->networkGameType() == GameLogic::GameAutomaton::None)
+  {
+    passwordLabel->hide();
+    passwordEdit->hide();
+  }
+  if (player != 0)
+  {
+    kDebug() << player->name();
+    nationCombo->setCurrentIndex(nationCombo->findText(player->nation()));
+    slotNationChanged();
+    nameLineEdit->setText(player->name());
+  }
+  else
+  {
+    slotNationChanged();
+  }
+  nameLineEdit->setFocus();
+}
 
 } // namespace Ksirk
 

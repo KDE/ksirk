@@ -85,7 +85,8 @@ namespace Ksirk
   class KRightDialog;
   class NewGameWidget;
   class KPlayerSetupWidget;
-  
+  class NewGameSummaryWidget;
+
 namespace Sprites
 {
   class ArrowSprite;
@@ -1127,6 +1128,7 @@ private: // Private members
   QSet<QString> m_presents;
 
   NewGameSetup* m_newGameSetup;
+  NewGameSummaryWidget* m_newGameSummaryWidget;
 };
 
 } // closing namespace Ksirk

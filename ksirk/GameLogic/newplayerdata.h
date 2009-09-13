@@ -27,7 +27,8 @@ namespace Ksirk {
 class NewPlayerData
 {
 public:
-  NewPlayerData(const QString& name, const QString& nation, const QString& password, bool computer);
+  NewPlayerData(const QString& name, const QString& nation, const QString& password, bool computer,
+                bool network);
   virtual ~NewPlayerData() {}
   
   inline const QString& name() const {return m_name;}
@@ -42,11 +43,15 @@ public:
   inline bool computer() const {return m_computer;}
   inline void setComputer(bool computer) {m_computer = computer;}
   
+  inline bool network() const {return m_network;}
+  inline void setNetwork(bool network) {m_network = network;}
+  
 private:
   QString m_name;
   QString m_nation;
   QString m_password;
   bool m_computer;
+  bool m_network;
 };
 
 }

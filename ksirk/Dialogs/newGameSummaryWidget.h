@@ -33,7 +33,8 @@ class KPlayer;
 
 namespace Ksirk
 {
-
+  class KGameWindow;
+  
 namespace GameLogic
 {
   class ONU;
@@ -53,15 +54,11 @@ public:
   
   virtual ~NewGameSummaryWidget();
 
-public slots:
-  virtual void slotStart();
-  virtual void slotPrevious();
-  virtual void slotCancel();
-  
-protected:
-  void reject();
-
-private:
+  void show(KGameWindow* game);
+Q_SIGNALS:
+  void start();
+  void previous();
+  void cancel();
 };
 
 }

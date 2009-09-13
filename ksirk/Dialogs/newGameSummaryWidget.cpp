@@ -20,6 +20,9 @@
  ***************************************************************************/
 
 #include "newGameSummaryWidget.h"
+#include "kgamewin.h"
+#include "newgamesetup.h"
+#include "onu.h"
 
 #include <KLocale>
 #include <KDebug>
@@ -33,22 +36,42 @@ NewGameSummaryWidget::NewGameSummaryWidget(QWidget *parent) :
 {
   kDebug();
   setupUi(this);
+  connect(previousButton,SIGNAL(clicked()),this,SIGNAL(previous()));
+  connect(cancelButton,SIGNAL(clicked()),this,SIGNAL(cancel()));
+  playersTable->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
 }
   
 NewGameSummaryWidget::~NewGameSummaryWidget()
 {
 }
 
-void NewGameSummaryWidget::slotStart()
+void NewGameSummaryWidget::show(KGameWindow* game)
 {
-}
-
-void NewGameSummaryWidget::slotPrevious()
-{
-}
-
-void NewGameSummaryWidget::slotCancel()
-{
+  qDebug() << "NewGameSummaryWidget::show" << game->newGameSetup()->worlds().keys();
+  foreach (GameLogic::ONU* world, game->newGameSetup()->worlds())
+  {
+    if (world->skin() == game->newGameSetup()->skin())
+    {
+      skinSnapshotPixmap->setPixmap(world->snapshot());
+      skinNameLabel->setText(i18n(world->name().toUtf8().data()));
+      goalTypeLabel->setText(game->newGameSetup()->useGoals()?i18n("Reach a goal"):i18n("World conquest"));
+    }
+  }
+  qDebug() << "NewGameSummaryWidget::show" << game->newGameSetup()->players().size();
+  playersTable->setRowCount(game->newGameSetup()->players().size());
+  int row = 0;
+  foreach (NewPlayerData* player, game->newGameSetup()->players())
+  {
+    QTableWidgetItem *nameItem = new QTableWidgetItem(player->name());
+    playersTable->setItem(row, 0, nameItem);
+    QTableWidgetItem *nationItem = new QTableWidgetItem(player->nation());
+    playersTable->setItem(row, 1, nationItem);
+    QTableWidgetItem *computerItem = new QTableWidgetItem(player->computer()?i18n("Yes"):i18n("No"));
+    playersTable->setItem(row, 2, computerItem);
+    QTableWidgetItem *netItem = new QTableWidgetItem(player->network()?i18n("Yes"):i18n("No"));
+    playersTable->setItem(row, 3, netItem);
+    row++;
+  }
 }
 
 }

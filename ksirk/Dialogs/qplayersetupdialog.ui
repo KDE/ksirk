@@ -99,7 +99,7 @@ Choose one of them. It will be your nation during the game</string>
     </layout>
    </item>
    <item>
-    <widget class="QCheckBox" name="CheckBox1">
+    <widget class="QCheckBox" name="isComputerCheckBox">
      <property name="text">
       <string>Pla&amp;yer is computer</string>
      </property>
@@ -168,7 +168,7 @@ Choose one of them. It will be your nation during the game</string>
  <tabstops>
   <tabstop>nameLineEdit</tabstop>
   <tabstop>nationCombo</tabstop>
-  <tabstop>CheckBox1</tabstop>
+  <tabstop>isComputerCheckBox</tabstop>
  </tabstops>
  <includes>
   <include location="local">kpassworddialog.h</include>

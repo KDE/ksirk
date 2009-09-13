@@ -21,10 +21,11 @@
 
 using namespace Ksirk;
 
-NewPlayerData::NewPlayerData(const QString& name, const QString& nation, const QString& password, bool computer) :
+NewPlayerData::NewPlayerData(const QString& name, const QString& nation, const QString& password, bool computer, bool network) :
   m_name(name),
   m_nation(nation),
   m_password(password),
-  m_computer(computer)
+  m_computer(computer),
+  m_network(network)
 {
 }

@@ -237,15 +237,19 @@ KGameWindow::KGameWindow(QWidget* parent) :
   connect(m_newPlayerWidget,SIGNAL(next()),this,SLOT(slotNewPlayerNext()));
   connect(m_newPlayerWidget,SIGNAL(previous()),this,SLOT(slotNewPlayerPrevious()));
   connect(m_newPlayerWidget,SIGNAL(cancel()),this,SLOT(slotNewPlayerCancel()));
+  connect(m_newPlayerWidget,SIGNAL(previous()),this,SLOT(slotNewPlayerPrevious()));
+  connect(m_newPlayerWidget,SIGNAL(cancel()),this,SLOT(slotNewPlayerCancel()));
   kDebug() << "create the Jabber widget if it doesn't exist";
   m_jabberGameWidget = new KsirkJabberGameWidget(m_centralWidget);
   m_centralWidget->addWidget(m_mainMenu); // MAINMENU_INDEX 0
   m_centralWidget->addWidget(m_newGameDialog); // NEWGAME_INDEX 1
   m_centralWidget->addWidget(m_jabberGameWidget); // JABBERGAME_INDEX 2
   m_centralWidget->addWidget(m_newPlayerWidget);  // NEWPLAYER_INDEX 3
-  NewGameSummaryWidget* newGameSummaryWidget = new NewGameSummaryWidget(m_centralWidget);
-  connect(newGameSummaryWidget->finishButton,SIGNAL(clicked(bool)),this,SLOT(slotStartNewGame()));
-  m_centralWidget->addWidget(newGameSummaryWidget);  // NEWGAMESUMMARY_INDEX 4
+  m_newGameSummaryWidget = new NewGameSummaryWidget(m_centralWidget);
+  connect(m_newGameSummaryWidget->finishButton,SIGNAL(clicked(bool)),this,SLOT(slotStartNewGame()));
+  connect(m_newGameSummaryWidget,SIGNAL(previous()),this,SLOT(slotNewPlayerPrevious()));
+  connect(m_newGameSummaryWidget,SIGNAL(cancel()),this,SLOT(slotNewPlayerCancel()));
+  m_centralWidget->addWidget(m_newGameSummaryWidget);  // NEWGAMESUMMARY_INDEX 4
 
   m_centralWidget->setCurrentIndex(MAINMENU_INDEX);
   m_currentDisplayedWidget = MainMenu;
