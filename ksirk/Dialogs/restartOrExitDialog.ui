@@ -88,9 +88,6 @@
           <property name="text" >
             <string>%1 won! Do you want to play again?</string>
           </property>
-          <property name="buddy" stdset="0" >
-            <cstring></cstring>
-          </property>
           <property name="wordWrap" >
             <bool>false</bool>
           </property>
