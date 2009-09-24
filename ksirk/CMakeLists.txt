@@ -76,7 +76,8 @@ set(ksirk_SRCS
   Dialogs/jabbergameui.cpp
   Dialogs/InvasionSlider.cpp
   Dialogs/newGameSummaryWidget.cpp
-  main.cpp 
+  Dialogs/tcpconnectwidget.cpp
+  main.cpp
   decoratedgameframe.cpp 
   ksirkConfigDialog.cpp
   fightArena.cpp
@@ -101,6 +102,7 @@ set(ksirk_UI
   Dialogs/joingame.ui
   Dialogs/jabbergameui.ui
   Dialogs/newGameSummary.ui
+  Dialogs/tcpconnectwidget.ui
   preferences.ui
   mainMenu.ui
   )

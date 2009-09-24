@@ -55,7 +55,7 @@ DecoratedGameFrame::DecoratedGameFrame(QWidget* parent,
   updateGeometry(); 
   setMouseTracking(true);
 
-  QuitAction = KStandardGameAction::quit(this->m_parent, SLOT(close()), this);
+  QuitAction = KStandardGameAction::quit(m_automaton->game(), SLOT(close()), this);
   
   initMenu ();
   initAttackMenu();
@@ -86,25 +86,25 @@ void DecoratedGameFrame::initMenu ()
 {
   menu = new QMenu(this);
     
-  QAction* newAction = KStandardGameAction::gameNew(this->m_parent, SLOT(slotNewGame()), this);
+  QAction* newAction = KStandardGameAction::gameNew(m_automaton->game(), SLOT(slotNewGame()), this);
   
-  QAction* openAction = KStandardGameAction::load(this->m_parent, SLOT(slotOpenGame()), this);
+  QAction* openAction = KStandardGameAction::load(m_automaton->game(), SLOT(slotOpenGame()), this);
   
-  QAction* saveAction = KStandardGameAction::save(this->m_parent, SLOT(slotSaveGame()), this);
+  QAction* saveAction = KStandardGameAction::save(m_automaton->game(), SLOT(slotSaveGame()), this);
   
-  QAction* zoomInAction = KStandardAction::zoomIn(this->m_parent, SLOT(slotZoomIn()), this);
+  QAction* zoomInAction = KStandardAction::zoomIn(m_automaton->game(), SLOT(slotZoomIn()), this);
   
-  QAction* zoomOutAction = KStandardAction::zoomOut(this->m_parent, SLOT(slotZoomOut()), this);
+  QAction* zoomOutAction = KStandardAction::zoomOut(m_automaton->game(), SLOT(slotZoomOut()), this);
 
   nextPlayer =   new QAction(i18n("Next Player"), this);
-  connect(nextPlayer, SIGNAL(triggered()), this->m_parent, SLOT(slotNextPlayer()));
+  connect(nextPlayer, SIGNAL(triggered()), m_automaton->game(), SLOT(slotNextPlayer()));
 
   detailsAction = new QAction(i18n("Details"), this);
   connect(detailsAction, SIGNAL(triggered()), this, SLOT(slotDetails()));
 
   goalAction = new QAction(QIcon(), i18n("Goal"), this);
   goalAction->setShortcut(Qt::CTRL+Qt::Key_G);
-  connect(goalAction,SIGNAL(triggered(bool)),this->m_parent,SLOT(slotShowGoal()));
+  connect(goalAction,SIGNAL(triggered(bool)),m_automaton->game(),SLOT(slotShowGoal()));
  
   menu->addAction(newAction);
   menu->addAction(openAction);
@@ -136,16 +136,16 @@ void DecoratedGameFrame::initAttackMenu ()
 
     ArenaAction = new QAction(i18n("Enable Arena"), this);
     connect(ArenaAction, SIGNAL(triggered()), this, SLOT(arenaState()));
-    connect(this, SIGNAL(arenaStateSignal(bool)), this->m_parent, SLOT(slotArena(bool)));
+    connect(this, SIGNAL(arenaStateSignal(bool)), m_automaton->game(), SLOT(slotArena(bool)));
     
     Attack1Action = new QAction(i18n("Attack 1"), this);
-    connect(Attack1Action, SIGNAL(triggered()), this->m_parent, SLOT(slotAttack1()));
+    connect(Attack1Action, SIGNAL(triggered()), m_automaton->game(), SLOT(slotAttack1()));
 
     Attack2Action = new QAction(i18n("Attack 2"), this);
-    connect(Attack2Action, SIGNAL(triggered()), this->m_parent, SLOT(slotAttack2()));
+    connect(Attack2Action, SIGNAL(triggered()), m_automaton->game(), SLOT(slotAttack2()));
 
     Attack3Action = new QAction(i18n("Attack 3"), this);
-    connect(Attack3Action, SIGNAL(triggered()), this->m_parent, SLOT(slotAttack3()));
+    connect(Attack3Action, SIGNAL(triggered()), m_automaton->game(), SLOT(slotAttack3()));
 
     AutoAction = new QAction(i18n("Auto attack"), this);
     connect(AutoAction, SIGNAL(triggered()), this, SLOT(attackAuto()));
@@ -166,13 +166,13 @@ void DecoratedGameFrame::initMoveMenu ()
     moveMenu = new QMenu(this);
 
     Move1Action = new QAction(i18n("Move 1"), this);
-    connect(Move1Action, SIGNAL(triggered()),this->m_parent, SLOT(slotInvade1()));
+    connect(Move1Action, SIGNAL(triggered()),m_automaton->game(), SLOT(slotInvade1()));
 
     Move5Action = new QAction(i18n("Move 5"), this);
-    connect(Move5Action, SIGNAL(triggered()),this->m_parent, SLOT(slotInvade5()));
+    connect(Move5Action, SIGNAL(triggered()),m_automaton->game(), SLOT(slotInvade5()));
 
     Move10Action = new QAction(i18n("Move 10"), this);
-    connect(Move10Action, SIGNAL(triggered()),this->m_parent, SLOT(slotInvade10()));
+    connect(Move10Action, SIGNAL(triggered()),m_automaton->game(), SLOT(slotInvade10()));
   
     moveMenu->addAction(Move1Action);
     moveMenu->addAction(Move5Action);

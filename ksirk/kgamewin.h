@@ -86,7 +86,8 @@ namespace Ksirk
   class NewGameWidget;
   class KPlayerSetupWidget;
   class NewGameSummaryWidget;
-
+  class TcpConnectWidget;
+  
 namespace Sprites
 {
   class ArrowSprite;
@@ -121,8 +122,9 @@ public:
     JABBERGAME_INDEX /*2*/,
     NEWPLAYER_INDEX /*3*/,
     NEWGAMESUMMARY_INDEX /*4*/,
-    MAP_INDEX /*5*/,
-    ARENA_INDEX /*6*/
+    TCPCONNECT_INDEX /*5*/,
+    MAP_INDEX /*6*/,
+    ARENA_INDEX /*7*/
   };
   /**
     * Create the window and initializes its members
@@ -648,7 +650,9 @@ public:
   const QString& groupchatRoom() const {return m_groupchatRoom;}
   const QString& groupchatNick() const {return m_groupchatNick;}
   const QString& groupchatPassword() const {return m_groupchatPassword;}
-  
+
+  void joinNetworkGame();
+
 protected:
 
   /**
@@ -788,7 +792,7 @@ public Q_SLOTS:
   void slotZoomOut();
 
   void slotNewGameNext();
-  void slotNewGameOK(unsigned int nbPlayers, const QString& skin, unsigned int nbNetworkPlayers, bool useGoals);
+//   void slotNewGameOK(unsigned int nbPlayers, const QString& skin, unsigned int nbNetworkPlayers, bool useGoals);
   void slotNewGameKO();
 
   void slotJabberGameCanceled(int previousIndex);
@@ -898,6 +902,8 @@ private Q_SLOTS:
 /* the unregister task finished */
 //   void slotUnregisterFinished();
   void slotExit();
+
+  void slotConnectToServer();
   
 private: // Private methods
   void createDefenseDialog();
@@ -1099,7 +1105,6 @@ private: // Private members
   Sprites::ArrowSprite* m_leftarrow;
   Sprites::ArrowSprite* m_rightarrow;
   
-  bool m_networkGame;
   int m_port;
   uint m_newPlayersNumber;
   bool m_reinitializingGame;
@@ -1129,6 +1134,7 @@ private: // Private members
 
   NewGameSetup* m_newGameSetup;
   NewGameSummaryWidget* m_newGameSummaryWidget;
+  TcpConnectWidget* m_tcpConnectWidget;
 };
 
 } // closing namespace Ksirk

@@ -103,7 +103,7 @@ void Country::reset()
 
 void Country::createArmiesSprites()
 {
-  kDebug() << name() << nbArmies();
+//   kDebug() << name() << nbArmies();
   BackGnd* bg = m_automaton->game()->backGnd();
   
   unsigned int armies = nbArmies();
@@ -111,7 +111,7 @@ void Country::createArmiesSprites()
   int i = 0;
   while (armies >= 10) // Ajout des sprites de canon
   {
-    kDebug() << "  cannon" << i << armies;
+//     kDebug() << "  cannon" << i << armies;
     CannonSprite *sprite = new CannonSprite(bg->onu()->zoom(), bg);
     sprite-> setDestination(NULL);             // Sprite immobile
     if (m_automaton->game()->currentWidgetType() == Ksirk::KGameWindow::Arena)
@@ -135,16 +135,16 @@ void Country::createArmiesSprites()
   i = 0;
   while (armies >= 5) // Adding the cavalryman  sprites
   {
-    kDebug() << "  cavalry" << i << armies;
+//     kDebug() << "  cavalry" << i << armies;
     CavalrySprite *sprite = new CavalrySprite(bg->onu()->zoom(), bg);
     sprite-> setDestination(0);             // Sprite immobile
     if (m_automaton->game()->currentWidgetType() == Ksirk::KGameWindow::Arena)
     {
-      kDebug() << "arena";
+//       kDebug() << "arena";
       sprite-> setPos(
         m_pointCavalry.x()*bg->onu()->zoom(),
         (m_pointCavalry.y()+(1-2*(i%2))*(Sprites::SkinSpritesData::single().intData("cavalry-height")+8)*((i+1)/2))*bg->onu()->zoom());
-      kDebug() << "setPos done";
+//       kDebug() << "setPos done";
       if (this->name() == m_automaton->game()->secondCountry()->name())
       {
         sprite->setLookLeft();
@@ -154,7 +154,7 @@ void Country::createArmiesSprites()
     {
       sprite-> setPos((m_pointCavalry.x()+5*i)*bg->onu()->zoom(),(m_pointCavalry.y()+5*i)*bg->onu()->zoom());
     }
-    kDebug() << "appending";
+//     kDebug() << "appending";
     m_spritesCavalry.append(sprite);
     i++;
     armies -= 5;
@@ -162,7 +162,7 @@ void Country::createArmiesSprites()
   i = 0;
   while (armies > 0) // Ajout des sprites de fantassin
   {
-    kDebug() << "  infantry" << i << armies;
+//     kDebug() << "  infantry" << i << armies;
     InfantrySprite *sprite = new InfantrySprite(bg->onu()->zoom(), bg);
     sprite-> setDestination(0);             // Sprite immobile
     if (m_automaton->game()->currentWidgetType() == Ksirk::KGameWindow::Arena)
@@ -184,14 +184,14 @@ void Country::createArmiesSprites()
     armies--;
   }
 
-  kDebug() << "adding flag" << m_belongsTo ;
+//   kDebug() << "adding flag" << m_belongsTo ;
   if (m_belongsTo)
   {
-    kDebug() << m_belongsTo->flagFileName();
+//     kDebug() << m_belongsTo->flagFileName();
     flag(m_belongsTo->flagFileName(), bg);
   }
 
-  kDebug() << "adding nb armies text";
+//   kDebug() << "adding nb armies text";
   if (m_nbArmiesItem == 0)
   {
     m_nbArmiesItem = new QGraphicsSimpleTextItem(QString::number(m_nbArmies),bg);
@@ -208,7 +208,7 @@ void Country::createArmiesSprites()
   {
     m_nbArmiesItem->show();
   }
-  kDebug() << "Done";
+//   kDebug() << "Done";
 }
 
 void Country::flag(const QString& theFlagFileName, BackGnd *backGnd)
@@ -411,7 +411,7 @@ const QList< Country* >& Country::neighbours() const
  */
 void Country::clearAllSprites()
 {
-  kDebug();
+//   kDebug();
   m_spritesCannons.hideAndRemoveAll();
   m_spritesCavalry.hideAndRemoveAll();
   m_spritesInfantry.hideAndRemoveAll();
@@ -470,7 +470,7 @@ void Country::saveXml(std::ostream& xmlStream)
 
 void Country::send(QDataStream& stream)
 {
-  kDebug() << (m_belongsTo?m_belongsTo->name():"") << quint32(m_nbArmies);
+//   kDebug() << (m_belongsTo?m_belongsTo->name():"") << quint32(m_nbArmies);
   stream << m_name << (m_belongsTo?m_belongsTo->name():"") << quint32(m_nbArmies);
 }
 
@@ -574,7 +574,7 @@ QDataStream& operator>>(QDataStream& stream, Country* country)
   quint32 nbArmies/*, nbAddedArmies*/;
   QString ownerName;
   stream >> ownerName >> nbArmies/* >> nbAddedArmies*/;
-  kDebug() << ownerName << nbArmies/* << nbAddedArmies*/;
+//   kDebug() << ownerName << nbArmies/* << nbAddedArmies*/;
   country->owner(country->automaton()->playerNamed(ownerName));
   country->nbArmies(nbArmies);
 //   country->nbAddedArmies(nbAddedArmies);
@@ -585,7 +585,7 @@ QDataStream& operator>>(QDataStream& stream, Country* country)
 
 void Country::copyForArena(Country* trueCountry)
 {
-  kDebug() << trueCountry->name();
+//   kDebug() << trueCountry->name();
   // remove existing elements
   clearAllSprites();
   if (m_flag)

@@ -385,7 +385,7 @@ public:
     */
   bool isDefenseAuto();
 
-  bool finishSetupPlayersNumberAndSkin(const QString& skin, NetworkGameType networkGame, uint newPlayersNumber);
+  bool finishSetupPlayersNumberAndSkin(const QString& skin, uint newPlayersNumber);
 
   inline int port() const {return m_port;}
 
@@ -405,6 +405,8 @@ public:
 
   void newGameNext();
   
+  bool connectToServ();
+
 Q_SIGNALS:
   void newJabberGame(const QString&, int, const QString&);
     

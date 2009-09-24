@@ -259,19 +259,19 @@ ONU::ONU(GameAutomaton* automaton,
     QPointF cavalryPoint = countryGroup.readEntry("cavalry-point",QPointF())*m_zoom;
     QPointF infantryPoint = countryGroup.readEntry("infantry-point",QPointF())*m_zoom;
 
-    kDebug() << "Creating country " << name;
-    kDebug() << "\tflag point: " << flagPoint;
-    kDebug() << "\tcentral point: " << centralPoint;
-    kDebug() << "\tcannon point: " << cannonPoint;
-    kDebug() << "\tcavalry point: " << cavalryPoint;
-    kDebug() << "\tinfantry point: " << infantryPoint;
+//     kDebug() << "Creating country " << name;
+//     kDebug() << "\tflag point: " << flagPoint;
+//     kDebug() << "\tcentral point: " << centralPoint;
+//     kDebug() << "\tcannon point: " << cannonPoint;
+//     kDebug() << "\tcavalry point: " << cavalryPoint;
+//     kDebug() << "\tinfantry point: " << infantryPoint;
     countries.push_back(new Country(automaton, name, anchorPoint, centralPoint,
         flagPoint, cannonPoint, cavalryPoint, infantryPoint));
   }
   QStringList nationalitiesList = onugroup.readEntry("nationalities", QStringList());
   foreach (const QString &nationality, nationalitiesList)
   {
-    kDebug() << "Creating nationality " << nationality;
+//     kDebug() << "Creating nationality " << nationality;
     KConfigGroup nationalityGroup = config.group(nationality);
     QString leader = nationalityGroup.readEntry("leader","");
     QString flag = nationalityGroup.readEntry("flag","");
@@ -293,7 +293,7 @@ ONU::ONU(GameAutomaton* automaton,
     QList<Country*> continentList;
     foreach(const QString& countryId, countryIdList)
     {
-      kDebug() << "Adding" << countryId << "to" << continent << "list";
+//       kDebug() << "Adding" << countryId << "to" << continent << "list";
       Country *c = countryNamed(countryId);
       if (c)
       {
@@ -307,7 +307,7 @@ ONU::ONU(GameAutomaton* automaton,
   QStringList goalsList = onugroup.readEntry("goals", QStringList());
   foreach (const QString &_goal, goalsList)
   {
-    kDebug() << "init goal " << _goal;
+//     kDebug() << "init goal " << _goal;
     KConfigGroup goalGroup = config.group(_goal);
 
     Goal* goal = new Goal(automaton);
@@ -318,8 +318,8 @@ ONU::ONU(GameAutomaton* automaton,
       goal->type(Goal::Countries);
       goal->nbCountries(goalGroup.readEntry("nbCountries",0));
       goal->nbArmiesByCountry(goalGroup.readEntry("nbArmiesByCountry",0));
-      kDebug() << "  nb countries: **********************************" << goal->nbCountries();
-      kDebug() << "  nbarmies countries: **********************************" << goal->nbArmiesByCountry();
+//       kDebug() << "  nb countries: **********************************" << goal->nbCountries();
+//       kDebug() << "  nbarmies countries: **********************************" << goal->nbArmiesByCountry();
     }
     else if (goalType == "continents" )
     {
@@ -348,7 +348,7 @@ ONU::ONU(GameAutomaton* automaton,
       continue;
     }
 
-    kDebug() << "building neighbours list of " << countryName;
+//     kDebug() << "building neighbours list of " << countryName;
     QList< Country* > theNeighbours;
     KConfigGroup countryGroup = config.group(countryName);
     QList<QString> theNeighboursIds = countryGroup.readEntry("neighbours",QList<QString>());
@@ -482,7 +482,7 @@ Country* ONU::countryNamed(const QString& name)
 {
   if (name.isEmpty())
   {
-    kDebug() << "request for country with empty name";
+//     kDebug() << "request for country with empty name";
     return 0;
   }
 
@@ -492,7 +492,7 @@ Country* ONU::countryNamed(const QString& name)
       return c;
   }
 
-  kDebug() << "request for country" << name << "which doesn't seem to exist.";
+//   kDebug() << "request for country" << name << "which doesn't seem to exist.";
   return 0;
 }
 
@@ -560,7 +560,7 @@ void ONU::sendCountries(QDataStream& stream)
   stream << quint32(countries.size());
   foreach (Country* country, countries)
   {
-    kDebug() << "Sending country " << country->name();
+//     kDebug() << "Sending country " << country->name();
     country->send(stream);
   }
 }
@@ -625,8 +625,8 @@ void ONU::buildMap()
       painter.setPen(m_font.foregroundColor);
       painter.setFont(foregroundFont);
       QRect countryNameRect = painter.fontMetrics().boundingRect(countryName);
-      kDebug() << countryName << "countryNameRect=" << countryNameRect;
-      kDebug() << "draw at" << int( (country->centralPoint().x()*m_zoom) - (countryNameRect.width()/2) ) <<
+//       kDebug() << countryName << "countryNameRect=" << countryNameRect;
+//       kDebug() << "draw at" << int( (country->centralPoint().x()*m_zoom) - (countryNameRect.width()/2) ) <<
       int( (country->centralPoint().y()*m_zoom) /*- (countryNameRect.height()/2)*/ );
       
       painter.drawText(
@@ -644,8 +644,8 @@ void ONU::applyZoomFactor(qreal zoomFactor)
 {
 /** Zoom 1: First method (take a long time to zoom) :
 */
-  kDebug() << "zoomFactor=" << zoomFactor << "old zoom=" << m_zoom;
-  kDebug() << "new zoom=" << m_zoom;
+//   kDebug() << "zoomFactor=" << zoomFactor << "old zoom=" << m_zoom;
+//   kDebug() << "new zoom=" << m_zoom;
 
   m_zoom *= zoomFactor;
 

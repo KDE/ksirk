@@ -1152,49 +1152,23 @@ bool GameAutomaton::setupPlayersNumberAndSkin(NetworkGameType netGameType)
   return false;
 }
 
-bool GameAutomaton::finishSetupPlayersNumberAndSkin(const QString& skin, NetworkGameType networkGame, uint newPlayersNumber)
+bool GameAutomaton::finishSetupPlayersNumberAndSkin(const QString& skin, uint newPlayersNumber)
 {
-  kDebug() << skin << networkGame << newPlayersNumber;
+  kDebug() << skin << newPlayersNumber;
+  
+  setUseGoals(m_game->newGameSetup()->useGoals());
+  state(GameLogic::GameAutomaton::INIT);
+  savedState(GameLogic::GameAutomaton::INVALID);
+  setNetworkPlayersNumber(m_game->newGameSetup()->nbNetworkPlayers());
   m_startingGame = true;
   state(INIT);
   setMinPlayers(newPlayersNumber);
   setMaxPlayers(newPlayersNumber);
   m_nbPlayers = newPlayersNumber;
-//   kDebug() << "min and max players number set to " << newPlayersNumber << endl;
-  
-//   kDebug() << "Got skin name: " << skinName << endl;
-/*  if (skinName != m_skin)
-  {*/
   kDebug() << "Changing skin" << endl;
   m_skin = skin;
-//   }
   
-  if (m_netGameType == Socket)
-  {
-// porting    
-    KDialog* dialog = new KDialog( m_game );
-    dialog->setCaption( i18n("Port configuration") );
-    dialog->setButtons( KDialog::Ok );
-
-    QGroupBox* mRemoteGroup=new QGroupBox(i18n("TCP port on which to offer connections"), dialog);
-    QSpinBox* spinBox = new QSpinBox(0);
-    spinBox->setMinimum(1);
-    spinBox->setMaximum(32731);
-    spinBox->setValue(m_port);
-    QVBoxLayout *vbox = new QVBoxLayout;
-    vbox->addWidget(spinBox);
-    vbox->addStretch(1);
-    mRemoteGroup->setLayout(vbox);
-
-    dialog->setMainWidget(mRemoteGroup);
-    dialog->exec();
-    
-    m_port = spinBox->value();
-    offerConnections(m_port);
-    dialog->hide();
-  }
   return true;
-//   return m_game->finishSetupPlayers();
 }
 
 void GameAutomaton::setGoalFor(Player* player)
@@ -1257,41 +1231,28 @@ bool GameAutomaton::joinNetworkGame()
    if (stateName() == "INIT"
      || (KMessageBox::warningContinueCancel(m_game,i18n("Do you really want to end your current game and join another?"),i18n("New game confirmation"),KStandardGuiItem::yes()) == KMessageBox::Continue))
    {
-      // Set default network parameter
-      QString host = "localhost";
-      int port = KSIRK_DEFAULT_PORT;
-
-      QString nick;
-      // porting
-      JoinGameDialog* dialog = new JoinGameDialog(host, port, m_game);
-      QDialog::DialogCode valid = QDialog::DialogCode(dialog->exec());
-
-      if (valid == QDialog::Rejected)
-      {
-         return false;
-      }
-
-      // stop game
-      setGameStatus(KGame::End);
-      state(INIT);
-      savedState(INVALID);
-
-      host = dialog->hostEdit->text();
-      port = dialog->portEdit->text().toInt();
-
-      if (messageServer() != 0)
-      {
-        QObject::disconnect(messageServer(),SIGNAL(connectionLost(KMessageIO *)),
-                             this,SLOT(slotConnectionToClientBroken(KMessageIO *)));
-      }
-      kDebug() << "Before connectToServer" << endl;
-      bool status = connectToServer(host, port);
-      kDebug() << "After connectToServer" << endl;
-      connect(messageServer(),SIGNAL(connectionLost(KMessageIO *)),
-               this,SLOT(slotConnectionToClientBroken(KMessageIO *)));
-               return status;
+      m_game->joinNetworkGame();
    }
    return false;
+}
+
+bool GameAutomaton::connectToServ()
+{
+  kDebug();
+  if (messageServer() != 0)
+  {
+    QObject::disconnect(messageServer(),SIGNAL(connectionLost(KMessageIO *)),
+                        this,SLOT(slotConnectionToClientBroken(KMessageIO *)));
+  }
+  kDebug() << "Before connectToServer" << endl;
+  QString host = m_game->newGameSetup()->host();
+  int port = m_game->newGameSetup()->tcpPort();
+  bool status = connectToServer(host, port);
+  kDebug() << "After connectToServer";
+  if (messageServer())
+    connect(messageServer(),SIGNAL(connectionLost(KMessageIO *)),
+          this,SLOT(slotConnectionToClientBroken(KMessageIO *)));
+  return status;
 }
 
 bool GameAutomaton::joinJabberGame(const QString& nick)
@@ -1314,7 +1275,7 @@ bool GameAutomaton::joinJabberGame(const QString& nick)
     KMessageJabber* messageIO = new KMessageJabber(m_game->serverJid().full(), m_game->jabberClient(), this);
     bool status = connectToServer(messageIO);
     //       bool status = connectToServer(host, port);
-    kDebug() << "After connectToServer" << status << endl;
+    kDebug() << "After connectToServer" << status;
     if (status)
     {
       QByteArray msg("connect");
@@ -1484,6 +1445,12 @@ void GameAutomaton::slotPlayerJoinedGame(KPlayer* player)
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     kDebug() << "Sending StartGame" << endl;
     sendMessage(buffer,StartGame);
+  }
+  else
+  {
+    m_game->newGameSetup()->setNbPlayers(maxPlayers());
+    NewPlayerData* pd = new NewPlayerData(p->name(),p->getNation()->name(),"",p->isAI(),true);
+    m_game->newGameSetup()->players().push_back(pd);
   }
 }
 
@@ -2717,28 +2684,7 @@ void GameAutomaton::newGameNext()
   
   if (m_game->newGameSetup()->networkGameType() == Socket)
   {
-    // porting
-    KDialog* dialog = new KDialog( m_game );
-    dialog->setCaption( i18n("Port configuration") );
-    dialog->setButtons( KDialog::Ok );
-    
-    QGroupBox* mRemoteGroup=new QGroupBox(i18n("TCP port on which to offer connections"), dialog);
-    QSpinBox* spinBox = new QSpinBox(0);
-    spinBox->setMinimum(1);
-    spinBox->setMaximum(32731);
-    spinBox->setValue(m_port);
-    QVBoxLayout *vbox = new QVBoxLayout;
-    vbox->addWidget(spinBox);
-    vbox->addStretch(1);
-    mRemoteGroup->setLayout(vbox);
-    
-    dialog->setMainWidget(mRemoteGroup);
-    dialog->exec();
-
-    // @TODO port to the new setup wizard
-//     m_port = spinBox->value();
-//     offerConnections(m_port);
-    dialog->hide();
+    offerConnections(m_game->newGameSetup()->tcpPort());
   }
   m_game->finishSetupPlayers();
 }

@@ -16,3 +16,15 @@
 
 #include "newgamesetup.h"
 
+int NewGameSetup::nbLocalPlayers() const
+{
+  int n = 0;
+  foreach (Ksirk::NewPlayerData* player, m_players)
+  {
+    if (!player->network())
+    {
+      n++;
+    }
+  }
+  return n;
+}

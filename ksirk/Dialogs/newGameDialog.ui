@@ -8,7 +8,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>532</width>
+    <width>615</width>
     <height>417</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
   <property name="sizeGripEnabled" stdset="0">
    <bool>true</bool>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_3">
+  <layout class="QVBoxLayout" name="verticalLayout_4">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
@@ -56,6 +56,30 @@
        </item>
        <item>
         <widget class="KIntSpinBox" name="localPlayersNumberEntry"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="tcpPortLabel">
+         <property name="text">
+          <string>TCP port on which to offer connections:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="KIntSpinBox" name="tcpPortEntry">
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="maximum">
+          <number>32767</number>
+         </property>
+         <property name="value">
+          <number>20000</number>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>

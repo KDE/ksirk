@@ -45,6 +45,7 @@
 #include "Dialogs/newGameDialogImpl.h"
 #include "Dialogs/newGameSummaryWidget.h"
 #include "Dialogs/jabbergameui.h"
+#include "Dialogs/tcpconnectwidget.h"
 #include "im.h"
 #include "xmpp_tasks.h"
 
@@ -250,7 +251,9 @@ KGameWindow::KGameWindow(QWidget* parent) :
   connect(m_newGameSummaryWidget,SIGNAL(previous()),this,SLOT(slotNewPlayerPrevious()));
   connect(m_newGameSummaryWidget,SIGNAL(cancel()),this,SLOT(slotNewPlayerCancel()));
   m_centralWidget->addWidget(m_newGameSummaryWidget);  // NEWGAMESUMMARY_INDEX 4
-
+  m_tcpConnectWidget = new TcpConnectWidget(this);
+  m_centralWidget->addWidget(m_tcpConnectWidget);  // TCPCONNECT_INDEX 5
+  connect(m_tcpConnectWidget,SIGNAL(next()),this,SLOT(slotConnectToServer()));
   m_centralWidget->setCurrentIndex(MAINMENU_INDEX);
   m_currentDisplayedWidget = MainMenu;
   m_bottomDock->hide();
@@ -662,11 +665,11 @@ void KGameWindow::newSkin(const QString& onuFileName)
   kDebug() << "put the menu, map and arena in the central widget";
   if (m_frame != 0)
   {
-    m_centralWidget->addWidget(m_frame); // MAP_INDEX 5
+    m_centralWidget->addWidget(m_frame); // MAP_INDEX 6
   }
   if (m_arena != 0)
   {
-    m_centralWidget->addWidget(m_arena); // ARENA_INDEX 6
+    m_centralWidget->addWidget(m_arena); // ARENA_INDEX 7
   }
   
   if (m_theWorld == 0)
@@ -1353,7 +1356,6 @@ bool KGameWindow::setupPlayers(GameAutomaton::NetworkGameType socket)
   kDebug();
   
   // Number of players
-  m_networkGame = false;
   m_newPlayersNumber = 0;
   m_automaton->setupPlayersNumberAndSkin(socket);
   return false;
@@ -1361,6 +1363,7 @@ bool KGameWindow::setupPlayers(GameAutomaton::NetworkGameType socket)
 
 bool KGameWindow::finishSetupPlayers()
 {
+  kDebug();
   if (!(m_automaton->playerList()->isEmpty()))
   {
     m_automaton->playerList()->clear();
@@ -1384,31 +1387,30 @@ bool KGameWindow::finishSetupPlayers()
   m_centralWidget->setCurrentIndex(NEWPLAYER_INDEX);
   // Players names
   QString mes = "";
-  for (unsigned int i = 0; 
-  i < m_newPlayersNumber - m_automaton->networkPlayersNumber();
-       i++)
-  {
-    bool computer;
-    bool network = false;
-
-    // After closing KPlayerSetupDialog, it is guaranteed, that nomEntre is a 
-    // valid username (not empty, unique)
+//   for (unsigned int i = 0; 
+//   i < m_newPlayersNumber - m_automaton->networkPlayersNumber();
+//        i++)
+//   {
+//     bool computer;
+//     bool network = false;
+//   
+//     // After closing KPlayerSetupDialog, it is guaranteed, that nomEntre is a 
+//     // valid username (not empty, unique)
 //     KPlayerSetupDialog(m_automaton, m_theWorld, i+1, nomEntre, network,
 //                         password, computer, nations, nationName, this).exec();
 //     kDebug() << "Creating player " << nomEntre << "(computer: "
 //              << computer << "): " << nationName;
 //     addPlayer(nomEntre, nbAvailArmies, 0, nationName, computer);
 //     nations.remove(nationName);
-  }
-  if (m_networkGame)
+//   }
+  if (m_newGameSetup->networkGameType() != GameAutomaton::None)
   {
     m_frame->setArenaOptionEnabled(false);
     unreduceChat();
     kDebug() << "In setupPlayers: networkGame";
-    m_automaton->offerConnections(m_port);
     KMessageParts messageParts;
     messageParts << I18N_NOOP("Waiting for %1 players to connect")
-      << QString::number(m_automaton->networkPlayersNumber());
+      << QString::number(m_newGameSetup->nbNetworkPlayers());
     broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
   }
   else
@@ -1453,50 +1455,11 @@ bool KGameWindow::setupOnePlayer()
   QString nationName;
     
   QString nomEntre = "";
-  bool computer;
-    
-  bool found = true;
-  while(found)
-  {
-    QString password;
-    bool emptyName = true;
-    while (emptyName)
-    {
-      mes = i18n("Player number %1, what's your name?", 1);
-      bool network = true;
-//       KPlayerSetupDialog(m_automaton, m_theWorld, 1, nomEntre, network, password, computer, nations, nationName, this).exec();
-      kDebug() << "After KPlayerSetupDialog. name: " << nomEntre;
-      if (nomEntre.isEmpty())
-      {
-        mes = i18n("Error - Player %1, you have to choose a name.", 1);
-        KMessageBox::sorry(this, mes, i18n("Error"));
-        nomEntre = i18nc("@info Forged player name", "Player%1", 1);
-      }
-      else 
-      {
-        emptyName = false;
-      }
-    }
-    found = false;
-    PlayersArray::iterator it = m_automaton->playerList()->begin();
-    PlayersArray::iterator it_end = m_automaton->playerList()->end();
-    for (; it != it_end; it++)
-    {
-      if ( (*it)-> name() ==  nomEntre)
-      {
-        found = true;
-        it = it_end;
-      }
-    }
-    if (!found)
-    {
-      kDebug() << "Creating player " << nomEntre 
-        << "(computer: " << computer << "): " << nationName 
-        << " password: " << password;
-      addPlayer(nomEntre, nbAvailArmies, 0, nationName, computer, password);
-      nations.remove(nationName);
-    }
-  }
+  QString password;
+  bool computer=false;
+
+  m_newPlayerWidget->init(m_automaton, m_theWorld, 1, nomEntre, true, password, computer, nations, nationName, m_newGameSetup);
+  m_centralWidget->setCurrentIndex(NEWPLAYER_INDEX);
   return true;
 }
 
@@ -3333,6 +3296,13 @@ void KGameWindow::sendGameInfoToJabber()
     kDebug() << "Sending message: <<" << body << ">> to" << (m_groupchatRoom+'@'+m_groupchatHost);
     m_jabberClient->sendMessage(message);
   }
+}
+
+void KGameWindow::joinNetworkGame()
+{
+  kDebug();
+  /// @TODO show the network connect screen
+  m_centralWidget->setCurrentIndex(TCPCONNECT_INDEX);
 }
 
 } // closing namespace Ksirk

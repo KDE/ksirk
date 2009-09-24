@@ -67,7 +67,7 @@ public:
                       NewGameSetup* newGameSetup);
 
   void init(NewPlayerData* player = 0);
-                      
+  
 Q_SIGNALS:
   void next();
   void previous();

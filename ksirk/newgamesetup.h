@@ -38,12 +38,13 @@ public:
   explicit NewGameSetup(Ksirk::GameLogic::GameAutomaton* automaton) :
   m_automaton(automaton), m_skin(""), m_worlds(), m_players(),
   m_nbPlayers(0),m_nbNetworkPlayers(0),
-  m_useGoals(true), m_networkGameType(Ksirk::GameLogic::GameAutomaton::None) {}
+  m_useGoals(true), m_networkGameType(Ksirk::GameLogic::GameAutomaton::None),
+  m_tcpPort(20000) {}
 
   virtual ~NewGameSetup() {}
   
-  void init(const QString& skin,
-              bool networkGame);
+//   void init(const QString& skin,
+//             bool networkGame);
 
   inline Ksirk::GameLogic::GameAutomaton* automaton() {return m_automaton;}
   inline const QString& skin() const {return m_skin;}
@@ -56,6 +57,8 @@ public:
 
   inline int nbPlayers() const {return m_nbPlayers;}
   inline void setNbPlayers(int nbPlayers) {m_nbPlayers = nbPlayers;}
+
+  int nbLocalPlayers() const;
 
   inline int nbNetworkPlayers() const {return m_nbNetworkPlayers;}
   inline void setNbNetworkPlayers(int nbNetworkPlayers) {m_nbNetworkPlayers = nbNetworkPlayers;}
@@ -72,7 +75,12 @@ public:
     m_networkGameType = networkGameType;
   }
 
-private:
+  inline int tcpPort() const {return m_tcpPort;}
+  inline void setTcpPort(int tcpPort) {m_tcpPort = tcpPort;}
+  inline const QString& host() const {return m_host;}
+  inline void setHost(const QString& host) {m_host = host;}
+
+  private:
   Ksirk::GameLogic::GameAutomaton* m_automaton;
   QString m_skin;
   QMap<QString, Ksirk::GameLogic::ONU*> m_worlds;
@@ -82,6 +90,8 @@ private:
   int m_nbNetworkPlayers;
   bool m_useGoals;
   Ksirk::GameLogic::GameAutomaton::NetworkGameType m_networkGameType;
+  int m_tcpPort;
+  QString m_host;
 };
 
 #endif // NEWGAMESETUP_H

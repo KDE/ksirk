@@ -57,7 +57,9 @@ public:
     virtual void slotCancel();
     void slotSkinChanged(int skinNum);
     void slotGHNS();
-
+    void slotTcpPortEdited(int);
+    void slotNbNetworkPlayersEdited(int);
+    
 Q_SIGNALS:
   void newGameOK();
   void newGameKO();

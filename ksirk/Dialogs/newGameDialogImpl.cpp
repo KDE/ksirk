@@ -51,6 +51,7 @@ NewGameWidget::NewGameWidget(NewGameSetup* newGameSetup, QWidget *parent) :
   QObject::connect(cancelButton, SIGNAL(clicked()), this, SLOT(slotCancel()) );
   QObject::connect(skinCombo, SIGNAL(activated(int)), this, SLOT(slotSkinChanged(int)) );
   QObject::connect(ghnsbutton, SIGNAL(clicked()), this, SLOT(slotGHNS()) );
+  QObject::connect(tcpPortEntry,SIGNAL(valueChanged(int)),this, SLOT(slotTcpPortEdited(int)));
 }
 
 void NewGameWidget::init(const QString& skin, bool networkGame)
@@ -62,12 +63,19 @@ void NewGameWidget::init(const QString& skin, bool networkGame)
     m_newGameSetup->setNetworkGameType(GameAutomaton::Socket);
     localPlayersNumberLabel->show();
     localPlayersNumberEntry->show();
+    tcpPortLabel->show();
+    tcpPortEntry->show();
+    m_newGameSetup->setNbNetworkPlayers(1);
+    localPlayersNumberEntry->setValue(m_newGameSetup->nbNetworkPlayers());
   }
   else
   {
     m_newGameSetup->setNetworkGameType(GameAutomaton::None);
     localPlayersNumberLabel->hide();
     localPlayersNumberEntry->hide();
+    tcpPortLabel->hide();
+    tcpPortEntry->hide();
+    m_newGameSetup->setNbNetworkPlayers(0);
   }
 
   m_newGameSetup->setSkin(skin);
@@ -190,6 +198,14 @@ void NewGameWidget::slotGHNS()
   
 }
 
+void NewGameWidget::slotTcpPortEdited(int port)
+{
+  m_newGameSetup->setTcpPort(port);
+}
+
+void NewGameWidget::slotNbNetworkPlayersEdited(int)
+{
+}
 
 }
 

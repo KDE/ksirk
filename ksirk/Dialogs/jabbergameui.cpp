@@ -83,6 +83,7 @@ void KsirkJabberGameWidget::init(GameAutomaton* automaton)
   QObject::connect(automaton, SIGNAL(newJabberGame(const QString&, int, const QString&)), this, SLOT(slotNewJabberGame(const QString&, int, const QString&) ) );
   QObject::connect(this, SIGNAL(cancelled(int)), m_automaton->game(), SLOT(slotJabberGameCanceled(int)));
 }
+
 void KsirkJabberGameWidget::slotJabberConnectButtonClicked()
 {
   kDebug();
