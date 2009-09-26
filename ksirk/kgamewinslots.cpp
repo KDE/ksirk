@@ -1145,7 +1145,7 @@ void KGameWindow::slotExit()
 
 void KGameWindow::slotNewPlayerNext()
 {
-  kDebug();
+  kDebug() << m_newGameSetup->nbLocalPlayers() << m_newGameSetup->nbPlayers() << m_newGameSetup->nbNetworkPlayers();
   if (m_automaton->isAdmin() && m_newGameSetup->nbLocalPlayers() >= m_newGameSetup->nbPlayers()-m_newGameSetup->nbNetworkPlayers())
   {
     m_newGameSummaryWidget->show(this);

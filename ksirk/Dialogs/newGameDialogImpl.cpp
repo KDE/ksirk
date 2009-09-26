@@ -101,17 +101,15 @@ void NewGameWidget::slotOK()
 //   m_networkGame  = networkGameCheckBox->isChecked();
   m_newGameSetup->setSkin(m_newGameSetup->worlds()[skinCombo->currentText()]->skin());
   m_newGameSetup->setNbPlayers(playersNumberEntry->value());
-  m_newGameSetup->setNbNetworkPlayers(playersNumberEntry->value()-localPlayersNumberEntry->value());
+  m_newGameSetup->setNbNetworkPlayers(m_newGameSetup->automaton()->networkGameType() == GameAutomaton::None?0:playersNumberEntry->value()-localPlayersNumberEntry->value());
   m_newGameSetup->setUseGoals(radioGoal->isChecked());
   emit newGameOK();
-//   accept();
 }
 
 void NewGameWidget::slotCancel()
 {
   kDebug();
   emit newGameKO();
-//   reject();
 }
 
 void NewGameWidget::fillSkinsCombo()
