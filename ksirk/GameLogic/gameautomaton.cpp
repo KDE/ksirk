@@ -1249,7 +1249,7 @@ bool GameAutomaton::connectToServ()
   QString host = m_game->newGameSetup()->host();
   int port = m_game->newGameSetup()->tcpPort();
   bool status = connectToServer(host, port);
-  kDebug() << "After connectToServer";
+  kDebug() << "After connectToServer" << status;
   if (messageServer())
     connect(messageServer(),SIGNAL(connectionLost(KMessageIO *)),
           this,SLOT(slotConnectionToClientBroken(KMessageIO *)));
@@ -1695,31 +1695,30 @@ void GameAutomaton::slotClientJoinedGame(quint32 clientid, KGame* /*me*/)
 
 void GameAutomaton::slotConnectionToServerBroken()
 {
-  kDebug() << endl;
+  kDebug();
 
 //   m_game->haltTimer();
   if (m_state != GAME_OVER)
   {
-    if (KMessageBox::questionYesNoCancel(m_game,
-        i18n("KsirK - Lost connection to server!\nWhat do you want to do?"),
-        i18n("Starting a new game or exit."), 
-        KGuiItem(i18n("New Game")),
-        KGuiItem(i18n("Exit")),
-        KGuiItem(i18n("Do nothing")))
-            == KMessageBox::Yes)
+    int answer = KMessageBox::questionYesNoCancel(m_game,
+                                                  i18n("KsirK - Lost connection to server!\nWhat do you want to do?"),
+                                                  i18n("Starting a new game or exit."),
+                                                  KGuiItem(i18n("New Game")),
+                                                  KGuiItem(i18n("Exit")),
+                                                  KGuiItem(i18n("Do nothing")));
+    if (answer == KMessageBox::Yes)
     {
       if (!m_game->actionNewGame(GameAutomaton::None))
         exit(0);
     }
-    else
+    else if (answer == KMessageBox::No)
     {
       exit(0);
     }
+    else
+    {
+    }
   }
-//   else
-//   {
-//     m_game->haltTimer();
-//   }
 }
   
 void GameAutomaton::slotConnectionToClientBroken(KMessageIO *)
