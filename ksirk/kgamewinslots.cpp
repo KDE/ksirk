@@ -23,6 +23,7 @@
 #include "Sprites/backgnd.h"
 #include "Sprites/arrowsprite.h"
 #include "Dialogs/newGameSummaryWidget.h"
+#include "GameLogic/newplayerdata.h"
 
 #include <kaboutapplicationdialog.h>
 #include <ktoolbar.h>

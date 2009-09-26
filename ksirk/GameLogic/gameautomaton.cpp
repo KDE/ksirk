@@ -33,6 +33,7 @@
 #include "krightdialog.h"
 #include "Dialogs/joingame.h"
 #include "Jabber/kmessagejabber.h"
+#include "newplayerdata.h"
 
 #include <QLayout>
 #include <QSpinBox>
@@ -1448,10 +1449,18 @@ void GameAutomaton::slotPlayerJoinedGame(KPlayer* player)
   }
   else
   {
+    if (!player->isVirtual())
+    {
+      m_game->showNewGameSummary();
+    }
     m_game->newGameSetup()->setNbPlayers(maxPlayers());
-    NewPlayerData* pd = new NewPlayerData(p->name(),p->getNation()->name(),"",p->isAI(),true);
-    m_game->newGameSetup()->players().push_back(pd);
   }
+  NewPlayerData* pd = new NewPlayerData(p->name(),p->getNation()->name(),"",p->isAI(),true);
+  if (!m_game->newGameSetup()->addPlayer(pd))
+  {
+    delete pd;
+  }
+  m_game->updateNewGameSummary();
 }
 
 bool GameAutomaton::startGame()
@@ -1753,6 +1762,7 @@ void GameAutomaton::finalizePlayers()
   {
     sendMessage(buffer,DisplayGoals);
   }
+  m_game->showMap();
   m_startingGame = false;
 }
 

@@ -23,6 +23,7 @@
 #include "kgamewin.h"
 #include "newgamesetup.h"
 #include "onu.h"
+#include "GameLogic/newplayerdata.h"
 
 #include <KLocale>
 #include <KDebug>
@@ -47,7 +48,7 @@ NewGameSummaryWidget::~NewGameSummaryWidget()
 
 void NewGameSummaryWidget::show(KGameWindow* game)
 {
-  qDebug() << "NewGameSummaryWidget::show" << game->newGameSetup()->worlds().keys();
+  kDebug() << game->newGameSetup()->worlds().keys();
   foreach (GameLogic::ONU* world, game->newGameSetup()->worlds())
   {
     if (world->skin() == game->newGameSetup()->skin())
@@ -57,11 +58,12 @@ void NewGameSummaryWidget::show(KGameWindow* game)
       goalTypeLabel->setText(game->newGameSetup()->useGoals()?i18n("Reach a goal"):i18n("World conquest"));
     }
   }
-  qDebug() << "NewGameSummaryWidget::show" << game->newGameSetup()->players().size();
+  kDebug() << game->newGameSetup()->players().size();
   playersTable->setRowCount(game->newGameSetup()->players().size());
   int row = 0;
   foreach (NewPlayerData* player, game->newGameSetup()->players())
   {
+    kDebug() << "player" << player->name();
     QTableWidgetItem *nameItem = new QTableWidgetItem(player->name());
     playersTable->setItem(row, 0, nameItem);
     QTableWidgetItem *nationItem = new QTableWidgetItem(player->nation());

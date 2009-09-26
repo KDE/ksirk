@@ -620,7 +620,7 @@ JabberClient::ErrorCode JabberClient::connect ( const XMPP::Jid &jid, const QStr
 	 */
 	if ( ( forceTLS () || useSSL () || probeSSL () ) && !QCA::isSupported ("tls" ) )
 	{
-		qDebug ("no TLS");
+		kDebug ("no TLS");
 		return NoTLS;
 	}
 

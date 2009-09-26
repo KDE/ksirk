@@ -42,7 +42,6 @@
 #include "Sprites/backgnd.h"
 #include "Dialogs/kwaitedplayersetupdialog.h"
 #include "Dialogs/restartOrExitDialogImpl.h"
-#include "Dialogs/newGameDialogImpl.h"
 #include "Dialogs/jabbergameui.h"
 #include "im.h"
 #include "xmpp_tasks.h"

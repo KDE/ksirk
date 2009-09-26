@@ -50,7 +50,7 @@ public:
 
   virtual ~NewGameWidget();
 
-  void init(const QString& skin, bool networkGame);
+  void init(const QString& skin, GameLogic::GameAutomaton::NetworkGameType netGameType);
   
   public Q_SLOTS:
     virtual void slotOK();

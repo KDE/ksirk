@@ -624,7 +624,7 @@ public:
 
   void updateScrollArrows();
 
-  bool newGameDialog(const QString& skin, bool networkGame);
+  bool newGameDialog(const QString& skin, GameLogic::GameAutomaton::NetworkGameType netGameType);
 
   bool finishSetupPlayers();
 
@@ -653,6 +653,9 @@ public:
 
   void joinNetworkGame();
 
+  void updateNewGameSummary();
+  void showNewGameSummary();
+  
 protected:
 
   /**
@@ -704,8 +707,9 @@ protected:
   void reduceChat();
   void unreduceChat();
 
+
 Q_SIGNALS:
-    void newJabberGame(const QString&, int, const QString&);
+  void newJabberGame(const QString&, int, const QString&);
     
 public Q_SLOTS:
 

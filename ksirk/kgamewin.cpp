@@ -3198,13 +3198,13 @@ void KGameWindow::setupPopupMessage()
   }
 }
 
-bool KGameWindow::newGameDialog(const QString& skin, bool networkGame)
+bool KGameWindow::newGameDialog(const QString& skin, GameAutomaton::NetworkGameType netGameType)
 {
   kDebug() << "state is" << m_automaton->stateName();
   m_automaton->setGameStatus( KGame::Pause );
   m_stateBeforeNewGame = m_automaton->state();
   m_automaton->state(GameAutomaton::STARTING_GAME);
-  m_newGameDialog->init(skin, networkGame);
+  m_newGameDialog->init(skin, netGameType);
   m_stackWidgetBeforeNewGame = m_centralWidget->currentIndex();
   m_centralWidget->setCurrentIndex(NEWGAME_INDEX);
   return false;
@@ -3304,6 +3304,19 @@ void KGameWindow::joinNetworkGame()
   /// @TODO show the network connect screen
   m_centralWidget->setCurrentIndex(TCPCONNECT_INDEX);
 }
+
+void KGameWindow::updateNewGameSummary()
+{
+  kDebug();
+  m_newGameSummaryWidget->show(this);
+}
+
+void KGameWindow::showNewGameSummary()
+{
+  kDebug();
+  m_centralWidget->setCurrentIndex(NEWGAMESUMMARY_INDEX);
+}
+
 
 } // closing namespace Ksirk
 

@@ -15,6 +15,9 @@
 */
 
 #include "newgamesetup.h"
+#include "GameLogic/newplayerdata.h"
+
+using namespace Ksirk;
 
 int NewGameSetup::nbLocalPlayers() const
 {
@@ -27,4 +30,23 @@ int NewGameSetup::nbLocalPlayers() const
     }
   }
   return n;
+}
+
+bool NewGameSetup::addPlayer(NewPlayerData* player)
+{
+  kDebug() << player->name();
+  bool found = false;
+  foreach (Ksirk::NewPlayerData* p, m_players)
+  {
+    if (p->name() == player->name())
+    {
+      found = true;
+      break;
+    }
+  }
+  if (!found)
+  {
+    m_players.push_back(player);
+  }
+  return !found;
 }

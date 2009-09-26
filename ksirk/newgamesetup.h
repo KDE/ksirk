@@ -17,7 +17,6 @@
 #ifndef NEWGAMESETUP_H
 #define NEWGAMESETUP_H
 
-#include "GameLogic/newplayerdata.h"
 #include "GameLogic/gameautomaton.h"
 
 
@@ -26,6 +25,7 @@
 
 namespace Ksirk
 {
+  class NewPlayerData;
   namespace GameLogic
   {
     class ONU;
@@ -80,7 +80,9 @@ public:
   inline const QString& host() const {return m_host;}
   inline void setHost(const QString& host) {m_host = host;}
 
-  private:
+  bool addPlayer(Ksirk::NewPlayerData* player);
+
+private:
   Ksirk::GameLogic::GameAutomaton* m_automaton;
   QString m_skin;
   QMap<QString, Ksirk::GameLogic::ONU*> m_worlds;

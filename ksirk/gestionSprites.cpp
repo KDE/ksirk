@@ -43,7 +43,6 @@
 #include <qpainter.h>
 #include <qsound.h>
 #include <qinputdialog.h>
-#include <qglobal.h> // pour pouvoir utiliser qDebug()
 
 // include files for KDE
 #include <kiconloader.h>

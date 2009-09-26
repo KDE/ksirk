@@ -54,17 +54,25 @@ NewGameWidget::NewGameWidget(NewGameSetup* newGameSetup, QWidget *parent) :
   QObject::connect(tcpPortEntry,SIGNAL(valueChanged(int)),this, SLOT(slotTcpPortEdited(int)));
 }
 
-void NewGameWidget::init(const QString& skin, bool networkGame)
+void NewGameWidget::init(const QString& skin, GameAutomaton::NetworkGameType netGameType)
 {
-  kDebug() << "Skin got by NewGameDialog: " << skin << " ; network=" << networkGame;
+  kDebug() << "Skin got: " << skin << " ; network=" << netGameType;
   m_newGameSetup->setSkin(skin);
-  if (networkGame)
+  if (netGameType != GameAutomaton::None)
   {
-    m_newGameSetup->setNetworkGameType(GameAutomaton::Socket);
+    m_newGameSetup->setNetworkGameType(netGameType);
     localPlayersNumberLabel->show();
     localPlayersNumberEntry->show();
-    tcpPortLabel->show();
-    tcpPortEntry->show();
+    if (netGameType == GameAutomaton::Socket)
+    {
+      tcpPortLabel->show();
+      tcpPortEntry->show();
+    }
+    if (netGameType == GameAutomaton::Jabber)
+    {
+      tcpPortLabel->hide();
+      tcpPortEntry->hide();
+    }
     m_newGameSetup->setNbNetworkPlayers(1);
     localPlayersNumberEntry->setValue(m_newGameSetup->nbNetworkPlayers());
   }
