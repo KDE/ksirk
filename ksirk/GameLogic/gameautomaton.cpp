@@ -1708,8 +1708,7 @@ void GameAutomaton::slotConnectionToServerBroken()
                                                   KGuiItem(i18n("Do nothing")));
     if (answer == KMessageBox::Yes)
     {
-      if (!m_game->actionNewGame(GameAutomaton::None))
-        exit(0);
+      m_game->showMainMenu();
     }
     else if (answer == KMessageBox::No)
     {

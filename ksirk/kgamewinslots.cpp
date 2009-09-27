@@ -648,8 +648,8 @@ void KGameWindow::slotConnectToServer()
   
   m_newPlayersNumber = m_newGameSetup->players().size();
   m_automaton->connectToServ();
-  delete m_newGameSetup;
-  m_newGameSetup = new NewGameSetup(m_automaton);
+//   delete m_newGameSetup;
+//   m_newGameSetup = new NewGameSetup(m_automaton);
 }
 
 void KGameWindow::slotShowGoal()
@@ -1225,5 +1225,16 @@ void KGameWindow::slotStartNewGame()
     m_newGameSummaryWidget->previousButton->setDisabled(true);
   }
 }
+
+void KGameWindow::slotTcpConnectCancel()
+{
+  showMainMenu();
+}
+
+void KGameWindow::slotTcpConnectPrevious()
+{
+  showMainMenu();
+}
+
 
 } // closing namespace Ksirk

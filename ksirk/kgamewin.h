@@ -806,6 +806,8 @@ public Q_SLOTS:
   void slotNewPlayerCancel();
   
   void slotStartNewGame();
+  void slotTcpConnectCancel();
+  void slotTcpConnectPrevious();
   
 private Q_SLOTS:
   void optionsConfigure();

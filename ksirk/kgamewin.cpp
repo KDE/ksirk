@@ -254,6 +254,8 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_tcpConnectWidget = new TcpConnectWidget(this);
   m_centralWidget->addWidget(m_tcpConnectWidget);  // TCPCONNECT_INDEX 5
   connect(m_tcpConnectWidget,SIGNAL(next()),this,SLOT(slotConnectToServer()));
+  connect(m_tcpConnectWidget,SIGNAL(previous()),this,SLOT(slotTcpConnectPrevious()));
+  connect(m_tcpConnectWidget,SIGNAL(cancel()),this,SLOT(slotTcpConnectCancel()));
   m_centralWidget->setCurrentIndex(MAINMENU_INDEX);
   m_currentDisplayedWidget = MainMenu;
   m_bottomDock->hide();
