@@ -74,10 +74,11 @@ void NewGameSummaryWidget::show(KGameWindow* game)
     playersTable->setItem(row, 3, netItem);
     row++;
   }
-//   if (game->newGameSetup()->nbLocalPlayers() < game->newGameSetup()->nbPlayers())
-//   {
-//     finishButton->setEnabled(false);
-//   }
+  if (game->automaton()->networkGameType() != GameLogic::GameAutomaton::None)
+  {
+    finishButton->setEnabled(false);
+    previousButton->setEnabled(false);
+  }
 }
 
 }

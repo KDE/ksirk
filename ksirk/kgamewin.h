@@ -57,6 +57,7 @@
 
 class KsirkJabberGameWidget;
 class mainMenu;
+class NewGameSetup;
 
 class QAction;
 class KGameChat;
@@ -243,11 +244,6 @@ public:
 
 /************** END OF METHODS DEFINED IN gestionSprites.cpp *****************/
 
-  /**
-    * Prepares the players for the game with human interaction. Return true
-    * if successful or false if failure or cancel
-    */
-  bool setupPlayers(GameLogic::GameAutomaton::NetworkGameType socket);
   bool setupOnePlayer();
   bool setupOneWaitedPlayer();
   bool createWaitedPlayer(quint32 waitedPlayerId);

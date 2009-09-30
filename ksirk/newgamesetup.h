@@ -43,9 +43,6 @@ public:
 
   virtual ~NewGameSetup() {}
   
-//   void init(const QString& skin,
-//             bool networkGame);
-
   inline Ksirk::GameLogic::GameAutomaton* automaton() {return m_automaton;}
   inline const QString& skin() const {return m_skin;}
   inline void setSkin(const QString& skin) {m_skin= skin;}
@@ -82,6 +79,8 @@ public:
 
   bool addPlayer(Ksirk::NewPlayerData* player);
 
+  void clear();
+  
 private:
   Ksirk::GameLogic::GameAutomaton* m_automaton;
   QString m_skin;
@@ -95,5 +94,8 @@ private:
   int m_tcpPort;
   QString m_host;
 };
+
+QDataStream& operator<<(QDataStream& stream, const NewGameSetup& ngs);
+QDataStream& operator>>(QDataStream& stream, NewGameSetup& ngs);
 
 #endif // NEWGAMESETUP_H

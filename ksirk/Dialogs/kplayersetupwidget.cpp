@@ -95,7 +95,7 @@ void KPlayerSetupWidget::init(GameLogic::GameAutomaton* automaton,
   m_newGameSetup = newGameSetup;
 
   kDebug() << "connecting to playerJoinedGame";
-  connect(automaton,SIGNAL(signalPlayerJoinedGame(KPlayer*)), this,SLOT(slotPlayerJoinedGame(KPlayer*)));
+  connect(automaton,SIGNAL(signalPlayerJoinedGame(KPlayer*)), this, SLOT(slotPlayerJoinedGame(KPlayer*)));
   init();
   kDebug() << "constructor done";
 }
@@ -103,7 +103,7 @@ void KPlayerSetupWidget::init(GameLogic::GameAutomaton* automaton,
 
 void KPlayerSetupWidget::slotNext()
 {
-  kDebug();
+  kDebug() << m_newGameSetup->players().size() << m_newGameSetup->nbPlayers();
 
   m_name = nameLineEdit-> text().trimmed();
 //     kDebug() << "Got name " << name;
@@ -193,8 +193,8 @@ void KPlayerSetupWidget::fillNationsCombo()
 
 void KPlayerSetupWidget::slotPlayerJoinedGame(KPlayer* player)
 {
-//   kDebug() << "KPlayerSetupDialog::slotPlayerJoinedGame: " << player->name() 
-//       << " from " << ((GameLogic::Player*)player)->getNation()->name();
+  kDebug() << "KPlayerSetupWidget::slotPlayerJoinedGame: " << player->name()
+      << " from " << ((GameLogic::Player*)player)->getNation()->name();
   for (int i = 0 ; i < nationCombo->count(); i++)
   {
     if (nationCombo->itemText(i) == m_nationsNames[((GameLogic::Player*)player)->getNation()->name()])
@@ -203,14 +203,16 @@ void KPlayerSetupWidget::slotPlayerJoinedGame(KPlayer* player)
       break;
     }
   }
+  slotNameEdited(nameLineEdit->text());
 }
 
 void KPlayerSetupWidget::slotNationChanged()
 {
-//   kDebug() << "KPlayerSetupDialog::slotNationChanged " << nationCombo->currentText();
+  kDebug() << "KPlayerSetupWidget::slotNationChanged " << nationCombo->currentText();
   GameLogic::Nationality* nation = m_onu->nationNamed(m_nationsNames[nationCombo->currentText()]);
 //   kDebug() << "nation = " << nation;
   nameLineEdit-> setText(nation->leaderName());
+  slotNameEdited(nameLineEdit->text());
 }
 
 bool KPlayerSetupWidget::isAvailable(QString nationName)

@@ -145,6 +145,7 @@ const char* GameAutomaton::KsirkMessagesIdsNames[] = {
 "AttackAuto", // 313
 "DisplayRecycleDetails", // 314
 "CurrentPlayerPlayed", // 315
+"NewGameSetupMsg", // 316
 };
 
 #define KSIRK_DEFAULT_PORT 20000
@@ -164,8 +165,7 @@ GameAutomaton::GameAutomaton() :
     m_defenseAuto(false),
     m_port(KSIRK_DEFAULT_PORT),
     m_startingGame(false),
-    m_pixmapCache("GameAutomaton"),
-    m_newGameSetup(0)
+    m_pixmapCache("GameAutomaton")
 {
   m_skin = "skins/default";
   //   kDebug() << endl;
@@ -1522,7 +1522,7 @@ bool GameAutomaton::startGame()
 
 void GameAutomaton::changePlayerName(Player* player)
 {
-//   kDebug() << endl;
+//   kDebug();
   
   QMap< QString, QString > nations = m_game->nationsList();
   PlayersArray::iterator it = playerList()->begin();
@@ -1554,8 +1554,6 @@ void GameAutomaton::changePlayerName(Player* player)
       mes = i18n("Player number %1, what's your name?", 1);
       bool network = false;
       QString password;
-//       KPlayerSetupDialog(this, m_game->theWorld(), 1, nomEntre, network, password, computer, nations, nationName, m_game).exec();
-      //     kDebug() << "After KPlayerSetupDialog. name: " << nomEntre << endl;
       if (nomEntre.isEmpty())
       {
         mes = i18n("Error - Player %1, you have to choose a name.", 1);
@@ -1615,7 +1613,6 @@ void GameAutomaton::changePlayerNation(Player* player)
   KMessageBox::information(m_game, i18n("Please choose another nation"), i18n("KsirK - Nation already used!"));
   bool network = false;
   QString password = false;
-//   KPlayerSetupDialog(this, m_game->theWorld(), 1, nomEntre, network, password, computer, nations, nationName, m_game).exec();
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   stream << player->name() << nationName;
@@ -1665,13 +1662,18 @@ void GameAutomaton::slotPropertyChanged(KGamePropertyBase *prop,KGame *)
 
 void GameAutomaton::slotClientJoinedGame(quint32 clientid, KGame* /*me*/)
 {
-  kDebug() << clientid << endl;
+  kDebug() << clientid;
   if (isAdmin() && clientid!=gameId())
   {
     QByteArray buffernbp;
     QDataStream streamnbp(&buffernbp, QIODevice::WriteOnly);
     streamnbp << m_nbPlayers;
     sendMessage(buffernbp,NbPlayers,clientid);
+    
+    QByteArray bufferngs;
+    QDataStream streamngs(&bufferngs, QIODevice::WriteOnly);
+    streamngs << *m_game->newGameSetup();
+    sendMessage(bufferngs,NewGameSetupMsg,clientid);
     
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
@@ -2048,6 +2050,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   quint32 availArmies;
   quint32 elemType;
   quint32 nb;
+  quint32 newGameSetupNbPlayers;
   
   if (currentPlayer() != 0 && currentPlayer()->getFlag() != 0)
   {
@@ -2589,6 +2592,10 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     break;
   case ResetPlayersDistributionData:
     resetPlayersDistributionData();
+    break;
+  case NewGameSetupMsg:
+    kDebug() << "Got message NewGameSetupMsg";
+    stream >> *m_game->newGameSetup();
     break;
   default: ;
   }

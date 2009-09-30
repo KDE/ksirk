@@ -1353,16 +1353,6 @@ void KGameWindow::setBarFlagButton(const Player* player)
   m_frame->setFocus();
 }
 
-bool KGameWindow::setupPlayers(GameAutomaton::NetworkGameType socket)
-{
-  kDebug();
-  
-  // Number of players
-  m_newPlayersNumber = 0;
-  m_automaton->setupPlayersNumberAndSkin(socket);
-  return false;
-}
-
 bool KGameWindow::finishSetupPlayers()
 {
   kDebug();
@@ -1389,22 +1379,6 @@ bool KGameWindow::finishSetupPlayers()
   m_centralWidget->setCurrentIndex(NEWPLAYER_INDEX);
   // Players names
   QString mes = "";
-//   for (unsigned int i = 0; 
-//   i < m_newPlayersNumber - m_automaton->networkPlayersNumber();
-//        i++)
-//   {
-//     bool computer;
-//     bool network = false;
-//   
-//     // After closing KPlayerSetupDialog, it is guaranteed, that nomEntre is a 
-//     // valid username (not empty, unique)
-//     KPlayerSetupDialog(m_automaton, m_theWorld, i+1, nomEntre, network,
-//                         password, computer, nations, nationName, this).exec();
-//     kDebug() << "Creating player " << nomEntre << "(computer: "
-//              << computer << "): " << nationName;
-//     addPlayer(nomEntre, nbAvailArmies, 0, nationName, computer);
-//     nations.remove(nationName);
-//   }
   if (m_newGameSetup->networkGameType() != GameAutomaton::None)
   {
     m_frame->setArenaOptionEnabled(false);
@@ -2722,11 +2696,9 @@ bool KGameWindow::actionNewGame(GameAutomaton::NetworkGameType socket)
         (KMessageBox::warningContinueCancel(this,i18n("Do you really want to end your current game and start a new one?"),i18n("New game confirmation"),KStandardGuiItem::yes()) == KMessageBox::Continue ) )
 
   {
-/*    m_automaton->setGameStatus(KGame::End);
-    m_automaton->state(GameLogic::GameAutomaton::INIT);
-    m_automaton->savedState(GameLogic::GameAutomaton::INVALID);*/
-    setupPlayers(socket);
-//     return (setupPlayers());
+    m_newGameSetup->clear();
+    m_newPlayersNumber = 0;
+    m_automaton->setupPlayersNumberAndSkin(socket);
   }
   return false;
 }

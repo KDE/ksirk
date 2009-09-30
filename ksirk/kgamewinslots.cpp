@@ -648,8 +648,6 @@ void KGameWindow::slotConnectToServer()
   
   m_newPlayersNumber = m_newGameSetup->players().size();
   m_automaton->connectToServ();
-//   delete m_newGameSetup;
-//   m_newGameSetup = new NewGameSetup(m_automaton);
 }
 
 void KGameWindow::slotShowGoal()

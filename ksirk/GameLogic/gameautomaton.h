@@ -38,8 +38,6 @@
 
 #include <iostream>
 
-class NewGameSetup;
-
 namespace Ksirk {
 class KGameWindow;
 namespace GameLogic {
@@ -111,6 +109,7 @@ enum KsirkMessagesIds {
     AttackAuto, // 313
     DisplayRecycleDetails, // 314
     CurrentPlayerPlayed, // 315
+    NewGameSetupMsg, // 316
     UnusedLastMessageId
 };
 
@@ -593,8 +592,6 @@ private:
   QMap<QString, KGameSvgDocument> m_svgDoms;
 
   NetworkGameType m_netGameType;
-
-  NewGameSetup* m_newGameSetup;
 };
 
 QDataStream& operator>>(QDataStream& s, GameAutomaton::GameState& state);
