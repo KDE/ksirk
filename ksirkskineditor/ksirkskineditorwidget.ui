@@ -43,7 +43,7 @@
         </size>
        </property>
        <property name="toolTip" >
-        <string>Sprites placing buttons</string>
+        <string>Sprite placement buttons</string>
        </property>
        <property name="whatsThis" >
         <string>Use the buttons here to do the initial placement of the corresponding sprite for the currently selected country. The buttons are available only if the sprite is not already placed. </string>
@@ -69,9 +69,9 @@
         <string>Map with sprites</string>
        </property>
        <property name="whatsThis" >
-        <string>Shows the map of the skin with all already placed sprites, the countries names and the highlighting anchors.
+        <string>Shows the map of the skin with all already placed sprites, the country names, and the highlighting anchors.
 
-Drag and drop the sprites, the countries names and the highlighting anchors to change their place.</string>
+Drag and drop the sprites, the country names, and the highlighting anchors to change their place.</string>
        </property>
        <property name="widgetResizable" >
         <bool>true</bool>

@@ -332,25 +332,25 @@ This value will be automatically updated if you move the flag by drag and drop.<
     <item>
      <widget class="KPushButton" name="neighboursbutton" >
       <property name="toolTip" >
-       <string>Select this country's neighbours</string>
+       <string>Select this country's neighbors</string>
       </property>
       <property name="whatsThis" >
-       <string>Click here to select this country's neighbours.
+       <string>Click here to select this country's neighbors.
 
 A list of all the world's countries will be shown and you will be able to select the countries using the mouse and the Ctrl and Shift keys.</string>
       </property>
       <property name="text" >
-       <string>Neighbours:</string>
+       <string>Neighbors:</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QListWidget" name="neighbourslist" >
       <property name="toolTip" >
-       <string>This country's neighbours</string>
+       <string>This country's neighbors</string>
       </property>
       <property name="whatsThis" >
-       <string>This is the list of countries currently considered as neighbours of this country.</string>
+       <string>This is the list of countries currently considered as neighbors of this country.</string>
       </property>
      </widget>
     </item>

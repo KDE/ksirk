@@ -76,7 +76,7 @@ ONU::ONU(const QString& configDir):
   {
     KMessageBox::error(0,
                         i18n("Error - Invalid skin definition file format. Expected %1 and got %2",QString(ONU_FILE_FORMAT_VERSION),formatVersion) + "<br>" + m_configFileName,
-                        i18n("Error !"));
+                        i18n("Error"));
 //     exit(1);
   }
 
@@ -109,7 +109,7 @@ ONU::ONU(const QString& configDir):
   {
       KMessageBox::error(0, 
                          i18n("Pool filename not found\nProgram cannot continue"),
-                         i18n("Error !"));
+                         i18n("Error"));
       exit(2);
   }
   m_map = QPixmap();
@@ -128,7 +128,7 @@ ONU::ONU(const QString& configDir):
   {
       KMessageBox::error(0, 
                          i18n("Map mask image not found\nProgram cannot continue"),
-                         i18n("Error !"));
+                         i18n("Error"));
       exit(2);
   }
   kDebug() << "Loading map mask file: " << mapMaskFileName;

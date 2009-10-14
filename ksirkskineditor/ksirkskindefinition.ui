@@ -93,10 +93,10 @@
        <item>
         <widget class="KFontRequester" name="fontrequester" >
          <property name="toolTip" >
-          <string>Font used to draw countries names</string>
+          <string>Font used to draw country names</string>
          </property>
          <property name="whatsThis" >
-          <string>This font will be used to draw the countries names on the map</string>
+          <string>This font will be used to draw the country names on the map</string>
          </property>
         </widget>
        </item>
@@ -112,10 +112,10 @@
          <item>
           <widget class="KColorButton" name="fgcolorbutton" >
            <property name="toolTip" >
-            <string>Foreground color for countries names</string>
+            <string>Foreground color for country names</string>
            </property>
            <property name="whatsThis" >
-            <string>This color will be used to draw the foreground of the countries names on the map</string>
+            <string>This color will be used to draw the foreground of the country names on the map</string>
            </property>
           </widget>
          </item>
@@ -129,10 +129,10 @@
          <item>
           <widget class="KColorButton" name="bgcolorbutton" >
            <property name="toolTip" >
-            <string>Background color for countries names</string>
+            <string>Background color for country names</string>
            </property>
            <property name="whatsThis" >
-            <string>This color will be used to draw the background of the countries names on the map</string>
+            <string>This color will be used to draw the background of the country names on the map</string>
            </property>
           </widget>
          </item>
@@ -180,7 +180,7 @@
         <item>
          <widget class="QLabel" name="label_7" >
           <property name="text" >
-           <string>Edit the sprites definition
+           <string>Edit the sprite definitions
 in the right dock</string>
           </property>
          </widget>
@@ -238,14 +238,14 @@ in the right dock</string>
         <item>
          <widget class="QListWidget" name="nationalitieslist" >
           <property name="toolTip" >
-           <string>Nationalities list</string>
+           <string>Nationality list</string>
           </property>
           <property name="whatsThis" >
            <string>This list shows the nationalities defined.
 
 Each nationality name should be unique. Select a nationality and edit its details in the right dock.
 
-During game, each player must choose a nationality. Then you should add at least as much nationalities than the maximum number of players for this skin.</string>
+During the game, each player must choose a nationality. As such, you should add at least as many nationalities as the maximum number of players for this skin.</string>
           </property>
          </widget>
         </item>
@@ -302,7 +302,7 @@ During game, each player must choose a nationality. Then you should add at least
         <item>
          <widget class="QListWidget" name="countrieslist" >
           <property name="toolTip" >
-           <string>Countries list</string>
+           <string>Country list</string>
           </property>
           <property name="whatsThis" >
 		  <string>This list shows the countries defined.
@@ -364,7 +364,7 @@ Each country name should be unique. Select a country and edit its details in the
         <item>
          <widget class="QListWidget" name="continentslist" >
           <property name="toolTip" >
-           <string>Continents list</string>
+           <string>Continent list</string>
           </property>
           <property name="whatsThis" >
 		  <string>This list shows the continents defined.
@@ -426,7 +426,7 @@ Each continent name should be unique. Select a continent and edit its details in
         <item>
          <widget class="QListWidget" name="goalslist" >
           <property name="toolTip" >
-           <string>Goals list</string>
+           <string>Goal list</string>
           </property>
           <property name="whatsThis" >
 		  <string>This list shows the goals defined.

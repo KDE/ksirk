@@ -133,7 +133,7 @@ MainWindow::MainWindow(QWidget* parent) :
   QString anchorFileName = m_dirs-> findResource("appdata", "cross.png");
   if (anchorFileName.isNull())
   {
-    KMessageBox::error(0, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error !"));
+    KMessageBox::error(0, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error"));
     exit(2);
   }
   QPixmap anchorPix = QPixmap(anchorFileName);
@@ -147,7 +147,7 @@ MainWindow::MainWindow(QWidget* parent) :
   QString centerFileName = m_dirs-> findResource("appdata", "target.png");
   if (centerFileName.isNull())
   {
-    KMessageBox::error(0, i18n("Cannot load center icon<br>Program cannot continue"), i18n("Error !"));
+    KMessageBox::error(0, i18n("Cannot load center icon<br>Program cannot continue"), i18n("Error"));
     exit(2);
   }
   QPixmap centerPix = QPixmap(centerFileName);
@@ -164,7 +164,7 @@ MainWindow::MainWindow(QWidget* parent) :
   QString iconFileName = m_dirs-> findResource("appdata", "ksirkskineditor.png");
 /*  if (iconFileName.isNull())
   {
-      KMessageBox::error(0, i18n("Cannot load icon<br>Program cannot continue"), i18n("Error !"));
+      KMessageBox::error(0, i18n("Cannot load icon<br>Program cannot continue"), i18n("Error"));
       exit(2);
   }*/
   QPixmap icon(iconFileName);
@@ -535,11 +535,11 @@ bool MainWindow::queryClose()
   // TODO : Test si jeu en cours
   if (m_onu && m_onu->dirty())
   {
-    switch (KMessageBox::warningYesNoCancel(this,i18n("There is unsaved changes. What do you want to do ?"),
-      i18n("Exit Anyway ?"),
+    switch (KMessageBox::warningYesNoCancel(this,i18n("There are unsaved changes. What do you want to do?"),
+      i18n("Exit Anyway?"),
                                              KGuiItem(i18n("Quit without saving")),
                                              KGuiItem(i18n("Save then quit")),
-                                             KGuiItem(i18n("Don't quit"))))
+                                             KGuiItem(i18n("Do not quit"))))
     {
       case KMessageBox::Yes:
         return true;
@@ -691,7 +691,7 @@ void MainWindow::slotAnchorButtonClicked()
     QString anchorFileName = m_dirs-> findResource("appdata", "cross.png");
     if (anchorFileName.isNull())
     {
-      KMessageBox::error(0, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error !"));
+      KMessageBox::error(0, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error"));
       exit(2);
     }
     QPixmap anchorPix = QPixmap(anchorFileName);
@@ -720,7 +720,7 @@ void MainWindow::slotCenterButtonClicked()
     QString centerFileName = m_dirs-> findResource("appdata", "target.png");
     if (centerFileName.isNull())
     {
-      KMessageBox::error(0, i18n("Cannot load center icon<br>Program cannot continue"), i18n("Error !"));
+      KMessageBox::error(0, i18n("Cannot load center icon<br>Program cannot continue"), i18n("Error"));
       exit(2);
     }
     QPixmap centerPix = QPixmap(centerFileName);
@@ -819,7 +819,7 @@ void MainWindow::slotPressPosition(const QPointF& clickedPoint)
       fileName = m_dirs-> findResource("appdata", "cross.png");
       if (fileName.isNull())
       {
-        KMessageBox::error(0, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error !"));
+        KMessageBox::error(0, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error"));
         exit(2);
       }
       pix = QPixmap(fileName);
@@ -836,7 +836,7 @@ void MainWindow::slotPressPosition(const QPointF& clickedPoint)
       fileName = m_dirs-> findResource("appdata", "target.png");
       if (fileName.isNull())
       {
-        KMessageBox::error(0, i18n("Cannot load center icon<br>Program cannot continue"), i18n("Error !"));
+        KMessageBox::error(0, i18n("Cannot load center icon<br>Program cannot continue"), i18n("Error"));
         exit(2);
       }
       pix = QPixmap(fileName);
@@ -1206,7 +1206,7 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
       fileName = m_dirs-> findResource("appdata", "cross.png");
       if (fileName.isNull())
       {
-        KMessageBox::error(0, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error !"));
+        KMessageBox::error(0, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error"));
         exit(2);
       }
       pix = QPixmap(fileName);

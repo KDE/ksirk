@@ -87,7 +87,7 @@ p, li { white-space: pre-wrap; }
 &lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Flag individual frame width.&lt;/p>
 &lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">flag&lt;/span> element will be rendered on a pixmap of width : &lt;span style=" font-style:italic;">Width&lt;/span> * &lt;span style=" font-style:italic;">number of frames&lt;/span> and  then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">flag&lt;/span> element will be rendered on a pixmap of width (&lt;span style=" font-style:italic;">Width&lt;/span> * &lt;span style=" font-style:italic;">number of frames&lt;/span>) and then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
             </property>
            </widget>
           </item>
@@ -106,7 +106,7 @@ p, li { white-space: pre-wrap; }
             <property name="whatsThis" >
              <string>Flag individual frame height.
 
-The pool flag element will be rendered on a pixmap of height : Height * number of versions and  then split into individual frames.</string>
+The pool flag element will be rendered on a pixmap of height (Height * number of versions) and then split into individual frames.</string>
             </property>
            </widget>
           </item>
@@ -120,16 +120,16 @@ The pool flag element will be rendered on a pixmap of height : Height * number o
           <item row="2" column="1" >
            <widget class="KIntSpinBox" name="flagf" >
             <property name="toolTip" >
-             <string>Flag number of individual frames</string>
+             <string>Number of individual flag frames</string>
             </property>
             <property name="whatsThis" >
              <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 &lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
 p, li { white-space: pre-wrap; }
 &lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Flag number of individual frames.&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Number of individual flag frames.&lt;/p>
 &lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">flag&lt;/span> element will be rendered on a pixmap of width : &lt;span style=" font-style:italic;">Width&lt;/span> * N&lt;span style=" font-style:italic;">umber of frames&lt;/span> and  then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">flag&lt;/span> element will be rendered on a pixmap of width (&lt;span style=" font-style:italic;">Width&lt;/span> * N&lt;span style=" font-style:italic;">umber of frames&lt;/span>) and then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
             </property>
            </widget>
           </item>
@@ -143,10 +143,10 @@ p, li { white-space: pre-wrap; }
           <item row="3" column="1" >
            <widget class="KIntSpinBox" name="flagv" >
             <property name="toolTip" >
-             <string>Flag number of versions</string>
+             <string>Number of flag versions</string>
             </property>
             <property name="whatsThis" >
-             <string>Flag number of versions.
+             <string>Number of flag versions.
 
 The pool flag element will be rendered on a pixmap of height : Height * Number of versions and  then split into individual frames.
 
