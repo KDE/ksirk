@@ -38,7 +38,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Port :</string>
+        <string>Port:</string>
        </property>
       </widget>
      </item>
