@@ -96,7 +96,7 @@ QString Goal::message(int displayType) const
         }
         else
         {
-          res = res.subs(i18n("Error : no player to destroy"));
+          res = res.subs(i18n("Error: no player to destroy"));
         }
         break;
       case Goal::Countries:
