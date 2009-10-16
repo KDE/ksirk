@@ -148,9 +148,9 @@ p, li { white-space: pre-wrap; }
             <property name="whatsThis" >
              <string>Number of flag versions.
 
-The pool flag element will be rendered on a pixmap of height : Height * Number of versions and  then split into individual frames.
+The pool flag element will be rendered on a pixmap of height (Height * Number of versions) and then split into individual frames.
 
-Each version shows the sprite visible from one direction: the first one is directed towards the right, the second towards the left, the third one from front and the last one from the back. But all sprites don't need all versions.</string>
+Each version shows the sprite visible from one direction: the first one is directed towards the right, the second towards the left, the third one from the front and the last one from the back. However, not all sprites need all versions.</string>
             </property>
            </widget>
           </item>
