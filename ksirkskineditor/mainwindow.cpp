@@ -1271,6 +1271,10 @@ void MainWindow::slotSkinWidthEdited(int v)
   if (m_onu == 0) return;
   m_onu->setWidth(v);
 
+  QRectF rect = m_mapScene->sceneRect();
+  rect.setWidth(v);
+  m_mapScene->setSceneRect(rect);
+
   if (m_mapItem != 0)
   {
     QPixmap mapPixmap(m_onu->pixmapForId("map", m_onu->width(), m_onu->height()));
@@ -1283,6 +1287,10 @@ void MainWindow::slotSkinHeightEdited(int v)
   if (m_onu == 0) return;
   m_onu->setHeight(v);
 
+  QRectF rect = m_mapScene->sceneRect();
+  rect.setHeight(v);
+  m_mapScene->setSceneRect(rect);
+  
   if (m_mapItem != 0)
   {
     QPixmap mapPixmap(m_onu->pixmapForId("map", m_onu->width(), m_onu->height()));
