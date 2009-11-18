@@ -54,11 +54,7 @@
            <string>Eliminate a given player</string>
           </property>
           <property name="whatsThis" >
-           <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Eliminate a given player. If it is eliminated by another one, you will fall back to a &lt;span style=" font-style:italic;">Countries&lt;/span> type of goal.&lt;/p>&lt;/body>&lt;/html></string>
+           <string>&lt;p>Eliminate a given player. If it is eliminated by another one, you will fall back to a &lt;emphasis>Countries&lt;/emphasis> type of goal.&lt;/p></string>
           </property>
           <property name="text" >
            <string>Player</string>
@@ -110,18 +106,7 @@ You can also make the player to have to put a given number of armies on each cou
        <string>Text describing the goal</string>
       </property>
       <property name="whatsThis" >
-       <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Text describing the goal. It should include several placeholders for various data depending on the goal type:&lt;/p>
-&lt;ul>
-&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-style:italic;">World Conquest&lt;/span>: none&lt;/li>
-&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-style:italic;">Player&lt;/span>: one for the player name and one for the number of countries fallback&lt;/li>
-&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-style:italic;">Countries&lt;/span>: one for the number of countries and possibly a second one for the number of armies to put on each country&lt;/li>
-&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-style:italic;">Continents&lt;/span>: one for each continent to conquer&lt;/li>
-&lt;/ul>
-&lt;/body>&lt;/html></string>
+      <string>&lt;p>Text describing the goal. It should include several placeholders for various data depending on the goal type:&lt;/p>&lt;ul>&lt;li>&lt;i>World Conquest&lt;/i>: none&lt;/li>&lt;li>&lt;i>Player&lt;/i>: one for the player name and one for the number of countries fallback&lt;/li>&lt;li>&lt;i>Countries&lt;/i>: one for the number of countries and possibly a second one for the number of armies to put on each country&lt;/li>&lt;li>&lt;i>Continents&lt;/i>: one for each continent to conquer&lt;/li>&lt;/ul></string>
       </property>
      </widget>
     </item>
@@ -154,11 +139,7 @@ p, li { white-space: pre-wrap; }
          <string>Number of countries to conquer</string>
         </property>
         <property name="whatsThis" >
-         <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Number of countries to conquer in a &lt;span style=" font-style:italic;">Countries&lt;/span> goal or as a fallback in a &lt;span style=" font-style:italic;">Player&lt;/span> goal.&lt;/p>&lt;/body>&lt;/html></string>
+         <string>&lt;p>Number of countries to conquer in a &lt;i>Countries&lt;/i> goal or as a fallback in a &lt;i>Player&lt;/i> goal.&lt;/p></string>
         </property>
        </widget>
       </item>
@@ -168,11 +149,7 @@ p, li { white-space: pre-wrap; }
          <string>Number of armies to put on each country</string>
         </property>
         <property name="whatsThis" >
-         <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Number of armies to put on each country in a &lt;span style=" font-style:italic;">Countries&lt;/span> goal.&lt;/p>&lt;/body>&lt;/html></string>
+         <string>&lt;p>Number of armies to put on each country in a &lt;i>Countries&lt;/i> goal.&lt;/p></string>
         </property>
        </widget>
       </item>
@@ -193,13 +170,7 @@ p, li { white-space: pre-wrap; }
          <string>Select the continents to conquer</string>
         </property>
         <property name="whatsThis" >
-         <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Click this button to select the continents to conquer in a &lt;span style=" font-style:italic;">Continents&lt;/span> goal. &lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">You will be prompted with a list of this world's continents. Select those to conquer with the mouse and the Ctrl and Shift keys.&lt;/p>&lt;/body>&lt;/html></string>
+         <string>&lt;p>Click this button to select the continents to conquer in a &lt;i>Continents&lt;/i> goal.&lt;/p>&lt;p>You will be prompted with a list of this world's continents. Select those to conquer with the mouse and the Ctrl and Shift keys.&lt;/p></string>
         </property>
         <property name="text" >
          <string>Select Continents</string>
@@ -227,13 +198,7 @@ p, li { white-space: pre-wrap; }
        <string>List of the continents to conquer</string>
       </property>
       <property name="whatsThis" >
-       <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">List of the continents to conquer in a &lt;span style=" font-style:italic;">Continents&lt;/span> goal.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">You can change this list by clicking on the "Select continents" button above.&lt;/p>&lt;/body>&lt;/html></string>
+       <string>&lt;p>List of the continents to conquer in a &lt;i>Continents&lt;/i> goal.&lt;/p>&lt;p>You can change this list by clicking on the "Select continents" button above.&lt;/p></string>
       </property>
      </widget>
     </item>

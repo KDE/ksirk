@@ -27,13 +27,7 @@
        <string>Nationality name</string>
       </property>
       <property name="whatsThis" >
-       <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Nationality name. The name of the player country. Can be the name of an existing country in case of a &lt;span style=" font-style:italic;">realistic &lt;/span>world. &lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This string should be unique in the skin.&lt;/p>&lt;/body>&lt;/html></string>
+       <string>&lt;p>Nationality name. The name of the player country. Can be the name of an existing country in case of a &lt;i>realistic&lt;/i> world.&lt;/p>&lt;p>This string should be unique in the skin.&lt;/p></string>
       </property>
       <property name="text" >
        <string/>
@@ -56,11 +50,7 @@ p, li { white-space: pre-wrap; }
        <string>Leader name</string>
       </property>
       <property name="whatsThis" >
-       <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Name of this nationality leader. In the case of a &lt;span style=" font-style:italic;">realistic &lt;/span>skin, this could be the name of a well known king, president, etc.&lt;/p>&lt;/body>&lt;/html></string>
+       <string>&lt;p>Name of this nationality leader. In the case of a &lt;i>realistic&lt;/i> skin, this could be the name of a well known king, president, etc.&lt;/p></string>
       </property>
      </widget>
     </item>

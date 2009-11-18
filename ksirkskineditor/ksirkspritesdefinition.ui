@@ -81,13 +81,7 @@ During a battle, firing (end exploding) cannons of each player are placed in bot
              <string>Flag individual frame width</string>
             </property>
             <property name="whatsThis" >
-             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Flag individual frame width.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">flag&lt;/span> element will be rendered on a pixmap of width (&lt;span style=" font-style:italic;">Width&lt;/span> * &lt;span style=" font-style:italic;">number of frames&lt;/span>) and then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+             <string>&lt;p>Flag individual frame width.&lt;/p>&lt;p>The pool &lt;i>flag&lt;/i> element will be rendered on a pixmap of width: &lt;i>Width&lt;/i> * N&lt;i>number of frames&lt;/i> and then split into individual frames.&lt;/p></string>
             </property>
            </widget>
           </item>
@@ -106,7 +100,7 @@ p, li { white-space: pre-wrap; }
             <property name="whatsThis" >
              <string>Flag individual frame height.
 
-The pool flag element will be rendered on a pixmap of height (Height * number of versions) and then split into individual frames.</string>
+The pool flag element will be rendered on a pixmap of height: (Height * Number of versions) and then split into individual frames.</string>
             </property>
            </widget>
           </item>
@@ -123,13 +117,7 @@ The pool flag element will be rendered on a pixmap of height (Height * number of
              <string>Number of individual flag frames</string>
             </property>
             <property name="whatsThis" >
-             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Number of individual flag frames.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">flag&lt;/span> element will be rendered on a pixmap of width (&lt;span style=" font-style:italic;">Width&lt;/span> * N&lt;span style=" font-style:italic;">umber of frames&lt;/span>) and then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+             <string>&lt;p>Number of individual flag frames.&lt;/p>&lt;p>The pool &lt;i>flag&lt;/i> element will be rendered on a pixmap of width: (&lt;i>Width&lt;/i> * N&lt;i>umber of frames&lt;/i>) and then split into individual frames.&lt;/p></string>
             </property>
            </widget>
           </item>
@@ -148,7 +136,7 @@ p, li { white-space: pre-wrap; }
             <property name="whatsThis" >
              <string>Number of flag versions.
 
-The pool flag element will be rendered on a pixmap of height (Height * Number of versions) and then split into individual frames.
+The pool flag element will be rendered on a pixmap of height: (Height * Number of versions) and then split into individual frames.
 
 Each version shows the sprite visible from one direction: the first one is directed towards the right, the second towards the left, the third one from the front and the last one from the back. However, not all sprites need all versions.</string>
             </property>
@@ -192,13 +180,7 @@ Each version shows the sprite visible from one direction: the first one is direc
            <string>Infantry individual frame width</string>
           </property>
           <property name="whatsThis" >
-           <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Infantry individual frame width.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">infantry&lt;/span> element will be rendered on a pixmap of width : &lt;span style=" font-style:italic;">Width&lt;/span> * &lt;span style=" font-style:italic;">number of frames&lt;/span> and  then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+           <string>&lt;p>Infantry individual frame width.&lt;/p>&lt;p>The pool &lt;i>infantry&lt;/i> element will be rendered on a pixmap of width: &lt;i>Width&lt;/i> * &lt;i>number of frames&lt;/i> and then split into individual frames.&lt;/p></string>
           </property>
          </widget>
         </item>
@@ -215,13 +197,7 @@ p, li { white-space: pre-wrap; }
            <string>Infantry individual frame height</string>
           </property>
           <property name="whatsThis" >
-           <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Infantry individual frame height.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">infantry&lt;/span> element will be rendered on a pixmap of height (&lt;span style=" font-style:italic;">Height&lt;/span> * &lt;span style=" font-style:italic;">number of versions&lt;/span>) and then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+           <string>&lt;p>Infantry individual frame height.&lt;/p>&lt;p>The pool &lt;i>infantry&lt;/i> element will be rendered on a pixmap of height: &lt;i>Height&lt;/i> * &lt;i>Number of versions&lt;/i> and then split into individual frames.&lt;/p></string>
           </property>
          </widget>
         </item>
@@ -238,13 +214,7 @@ p, li { white-space: pre-wrap; }
            <string>Number of individual infantry frames</string>
           </property>
           <property name="whatsThis" >
-           <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Number of individual infantry frames.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">infantry&lt;/span> element will be rendered on a pixmap of width (&lt;span style=" font-style:italic;">Width&lt;/span> * N&lt;span style=" font-style:italic;">umber of frames&lt;/span>) and then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+           <string>&lt;p>Infantry number of individual frames.&lt;/p>&lt;p>The pool &lt;i>infantry&lt;/i> element will be rendered on a pixmap of width: (&lt;i>Width&lt;/i> * &lt;i>Number of frames&lt;/i>) and then split into individual frames.&lt;/p></string>
           </property>
          </widget>
         </item>
@@ -261,15 +231,7 @@ p, li { white-space: pre-wrap; }
            <string>Number of infantry versions</string>
           </property>
           <property name="whatsThis" >
-           <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Number of infantry versions.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">infantry&lt;/span> element will be rendered on a pixmap of height (&lt;span style=" font-style:italic;">Height&lt;/span> * &lt;span style=" font-style:italic;">Number of versions&lt;/span>) and then split into individual frames.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Each version shows the sprite visible from one direction: the first one is directed towards the right, the second towards the left, the third one from front and the last one from the back. However, not all sprites need all versions.&lt;/p>&lt;/body>&lt;/html></string>
+           <string>&lt;i>Number of infantry versions.&lt;/p>&lt;p>The pool &lt;i>infantry&lt;/i> element will be rendered on a pixmap of height: (&lt;i>Height&lt;/i> * &lt;i>Number of versions&lt;/i>) and then split into individual frames.&lt;/p>&lt;p>Each version shows the sprite visible from one direction: the first one is directed towards the right, the second towards the left, the third one from front and the last one from the back. But all sprites don't need all versions.&lt;/p></string>
           </property>
          </widget>
         </item>
@@ -309,13 +271,7 @@ p, li { white-space: pre-wrap; }
            <string>Individual cavalry frame width</string>
           </property>
           <property name="whatsThis" >
-           <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Individual cavalry frame width.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">cavalry&lt;/span> element will be rendered on a pixmap of width (&lt;span style=" font-style:italic;">Width&lt;/span> * &lt;span style=" font-style:italic;">number of frames&lt;/span>) and then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+           <string>&lt;p>Individual cavalry frame width.&lt;/p>&lt;p>The pool &lt;i>cavalry&lt;/i> element will be rendered on a pixmap of width (&lt;i>Width&lt;/i> * &lt;i>Number of frames&lt;/i>) and then split into individual frames.&lt;/p></string>
           </property>
          </widget>
         </item>
@@ -332,13 +288,7 @@ p, li { white-space: pre-wrap; }
            <string>Individual cavalry frame height</string>
           </property>
           <property name="whatsThis" >
-           <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Individual cavalry frame height.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">cavalry&lt;/span> element will be rendered on a pixmap of height (&lt;span style=" font-style:italic;">Height&lt;/span> * &lt;span style=" font-style:italic;">number of versions&lt;/span>) and then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+           <string>&lt;i>Individual cavalry frame height.&lt;/p>&lt;p>The pool &lt;i>cavalry&lt;/i> element will be rendered on a pixmap of height (&lt;i>Height&lt;/i> * &lt;i>Number of versions&lt;/i>) and then split into individual frames.&lt;/p></string>
           </property>
          </widget>
         </item>
@@ -355,13 +305,7 @@ p, li { white-space: pre-wrap; }
            <string>Number of individual cavalry frames</string>
           </property>
           <property name="whatsThis" >
-           <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Number of individual cavalry frames.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">cavalry&lt;/span> element will be rendered on a pixmap of width (&lt;span style=" font-style:italic;">Width&lt;/span> * N&lt;span style=" font-style:italic;">umber of frames&lt;/span>) and then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+           <string>&lt;p>Number of individual cavalry frames.&lt;/p>&lt;p>The pool &lt;i>cavalry&lt;/i> element will be rendered on a pixmap of width: (&lt;i>Width&lt;/i> * &lt;i>Number of frames&lt;/i>) and then split into individual frames.&lt;/p></string>
           </property>
          </widget>
         </item>
@@ -378,15 +322,7 @@ p, li { white-space: pre-wrap; }
            <string>Number of cavalry versions</string>
           </property>
           <property name="whatsThis" >
-           <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Number of cavalry versions.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool cavalry element will be rendered on a pixmap of height (&lt;span style=" font-style:italic;">Height&lt;/span> * &lt;span style=" font-style:italic;">Number of versions&lt;/span>) and then split into individual frames.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Each version shows the sprite visible from one direction: the first one is directed towards the right, the second towards the left, the third one from front and the last one from the back. However, not all sprites need all versions.&lt;/p>&lt;/body>&lt;/html></string>
+           <string>&lt;p>Number of cavalry versions.&lt;/p>&lt;p>The pool &lt;i>cavalry&lt;/i> element will be rendered on a pixmap of height (&lt;i>Height&lt;/i> * &lt;i>Number of versions&lt;/i>) and then split into individual frames.&lt;/p>&lt;p>Each version shows the sprite visible from one direction: the first one is directed towards the right, the second towards the left, the third one from front and the last one from the back. However, not all sprites need all versions.&lt;/p></string>
           </property>
          </widget>
         </item>
@@ -428,13 +364,7 @@ p, li { white-space: pre-wrap; }
              <string>Cannon individual frame width</string>
             </property>
             <property name="whatsThis" >
-             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Cannon individual frame width.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">cannon&lt;/span> element will be rendered on a pixmap of width (&lt;span style=" font-style:italic;">Width&lt;/span> * &lt;span style=" font-style:italic;">number of frames&lt;/span>) and then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+             <string>&lt;p>Cannon individual frame width.&lt;/p>&lt;p>The pool &lt;i>cannon&lt;/i> element will be rendered on a pixmap of width (&lt;i>Width&lt;/i> * &lt;i>Number of frames&lt;/i>) and then split into individual frames.&lt;/p></string>
             </property>
            </widget>
           </item>
@@ -451,13 +381,7 @@ p, li { white-space: pre-wrap; }
              <string>Individual cannon frame height</string>
             </property>
             <property name="whatsThis" >
-             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Individual cannon frame height.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">cannon&lt;/span> element will be rendered on a pixmap of height (&lt;span style=" font-style:italic;">Height&lt;/span> * &lt;span style=" font-style:italic;">number of versions&lt;/span>) and then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+             <string>&lt;p>Individual cannon frame height.&lt;/p>&lt;p>The pool &lt;i>cannon&lt;i> element will be rendered on a pixmap of height (&lt;i>Height&lt;/i> * &lt;i>Number of versions&lt;/i>) and then split into individual frames.&lt;/p></string>
             </property>
            </widget>
           </item>
@@ -474,13 +398,7 @@ p, li { white-space: pre-wrap; }
              <string>Number of individual cannon frames</string>
             </property>
             <property name="whatsThis" >
-             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Number of individual cannon frames.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">cannon&lt;/span> element will be rendered on a pixmap of width (&lt;span style=" font-style:italic;">Width&lt;/span> * N&lt;span style=" font-style:italic;">umber of frames&lt;/span>) and then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+             <string>&lt;p>Number of individual cannon frames.&lt;/p>&lt;p>The pool &lt;i>cannon&lt;/i> element will be rendered on a pixmap of width (&lt;i>Width&lt;/i> * &lt;i>Number of frames&lt;/i>) and then split into individual frames.&lt;/p></string>
             </property>
            </widget>
           </item>
@@ -497,15 +415,7 @@ p, li { white-space: pre-wrap; }
              <string>Number of cannon versions</string>
             </property>
             <property name="whatsThis" >
-             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Number of cannon versions.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">cannon&lt;/span> element will be rendered on a pixmap of height (&lt;span style=" font-style:italic;">Height&lt;/span> * &lt;span style=" font-style:italic;">Number of versions&lt;/span>) and then split into individual frames.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Each version shows the sprite visible from one direction: the first one is directed towards the right, the second towards the left, the third one from front and the last one from the back. However, not all sprites need all versions.&lt;/p>&lt;/body>&lt;/html></string>
+             <string>&lt;p>Number of cannon versions.&lt;/p>&lt;p>The pool &lt;i>cannon&lt;/i> element will be rendered on a pixmap of height (&lt;i>Height&lt;/i> * &lt;i>Number of versions&lt;/i>) and then split into individual frames.&lt;/p>&lt;p>Each version shows the sprite visible from one direction: the first one is directed towards the right, the second towards the left, the third one from front and the last one from the back. However, not all sprites need all versions.&lt;/p></string>
             </property>
            </widget>
           </item>
@@ -549,13 +459,7 @@ p, li { white-space: pre-wrap; }
              <string>Firing cannon individual frame width</string>
             </property>
             <property name="whatsThis" >
-             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Firing cannon individual frame width.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">firing cannon&lt;/span> element will be rendered on a pixmap of width (&lt;span style=" font-style:italic;">Width&lt;/span> * &lt;span style=" font-style:italic;">number of frames&lt;/span>) and then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+             <string>&lt;p>Firing cannon individual frame width.&lt;/p>The pool &lt;i>firing cannon&lt;/i> element will be rendered on a pixmap of width (&lt;i>Width&lt;/i> * &lt;i>Number of frames&lt;/i>) and then split into individual frames.&lt;/p></string>
             </property>
            </widget>
           </item>
@@ -572,13 +476,7 @@ p, li { white-space: pre-wrap; }
              <string>Firing cannon individual frame height</string>
             </property>
             <property name="whatsThis" >
-             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Firing cannon individual frame height.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">firing cannon&lt;/span> element will be rendered on a pixmap of height (&lt;span style=" font-style:italic;">Height&lt;/span> * &lt;span style=" font-style:italic;">number of versions&lt;/span>) and then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+             <string>&lt;p>Firing cannon individual frame height.&lt;/p>&lt;p>The pool &lt;i>firing cannon&lt;/i> element will be rendered on a pixmap of height (&lt;i>Height&lt;/i> * &lt;i>Number of versions&lt;/i>) and then split into individual frames.&lt;/p></string>
             </property>
            </widget>
           </item>
@@ -595,13 +493,7 @@ p, li { white-space: pre-wrap; }
              <string>Number of individual firing cannon frames</string>
             </property>
             <property name="whatsThis" >
-             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Number of individual firing cannon frames.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">firing cannon&lt;/span> element will be rendered on a pixmap of width (&lt;span style=" font-style:italic;">Width&lt;/span> * N&lt;span style=" font-style:italic;">umber of frames&lt;/span>) and then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+             <string>&lt;p>Number of individual firing cannon frames.&lt;/p>&lt;p>The pool &lt;i>firing cannon&lt;/i> element will be rendered on a pixmap of width (&lt;i>Width&lt;/i> * &lt;i>Number of frames&lt;/i>) and then split into individual frames.&lt;/p></string>
             </property>
            </widget>
           </item>
@@ -618,15 +510,7 @@ p, li { white-space: pre-wrap; }
              <string>Number of firing cannon versions</string>
             </property>
             <property name="whatsThis" >
-             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Number of firing cannon versions.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">firing cannon&lt;/span> element will be rendered on a pixmap of height (&lt;span style=" font-style:italic;">Height&lt;/span> * &lt;span style=" font-style:italic;">Number of versions&lt;/span>) and then split into individual frames.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Each version shows the sprite visible from one direction: the first one is directed towards the right, the second towards the left, the third one from front and the last one from the back. However, not all sprites need all versions.&lt;/p>&lt;/body>&lt;/html></string>
+             <string>&lt;p>Number of firing cannon versions.&lt;/p>&lt;p>The pool &lt;i>firing cannon&lt;/i> element will be rendered on a pixmap of height (&lt;i>Height&lt;/i> * &lt;i>Number of versions&lt;/i>) and then split into individual frames.&lt;/p>&lt;p>Each version shows the sprite visible from one direction: the first one is directed towards the right, the second towards the left, the third one from front and the last one from the back. However, not all sprites need all versions.&lt;/p></string>
             </property>
            </widget>
           </item>
@@ -670,13 +554,7 @@ p, li { white-space: pre-wrap; }
              <string>Exploding cannon individual frame width</string>
             </property>
             <property name="whatsThis" >
-             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Exploding cannon individual frame width.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">exploding &lt;/span>element will be rendered on a pixmap of width (&lt;span style=" font-style:italic;">Width&lt;/span> * &lt;span style=" font-style:italic;">number of frames&lt;/span>) and then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+             <string>&lt;p>Exploding cannon individual frame width.&lt;/p>&lt;p>The pool &lt;i>exploding&lt;/i> element will be rendered on a pixmap of width (&lt;i>Width&lt;/i> * &lt;i>Number of frames&lt;/i>) and then split into individual frames.&lt;/p></string>
             </property>
            </widget>
           </item>
@@ -693,13 +571,7 @@ p, li { white-space: pre-wrap; }
              <string>Exploding cannon individual frame height</string>
             </property>
             <property name="whatsThis" >
-             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Exploding cannon individual frame height.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">exploding&lt;/span> element will be rendered on a pixmap of height (&lt;span style=" font-style:italic;">Height&lt;/span> * &lt;span style=" font-style:italic;">number of versions&lt;/span>) and then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+             <string>&lt;p>Exploding cannon individual frame height.&lt;/p>&lt;p>The pool &lt;i>exploding&lt;/i> element will be rendered on a pixmap of height (&lt;i>Height&lt;/i> * &lt;i>Number of versions&lt;/i>) and then split into individual frames.&lt;/p></string>
             </property>
            </widget>
           </item>
@@ -716,13 +588,7 @@ p, li { white-space: pre-wrap; }
              <string>Number of individual exploding cannon frames</string>
             </property>
             <property name="whatsThis" >
-             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Number of individual exploding cannon frames.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">exploding &lt;/span>element will be rendered on a pixmap of width (&lt;span style=" font-style:italic;">Width&lt;/span> * N&lt;span style=" font-style:italic;">umber of frames&lt;/span>) and then split into individual frames.&lt;/p>&lt;/body>&lt;/html></string>
+             <string>&lt;p>Number of individual exploding cannon frames.&lt;/p>&lt;p>The pool &lt;i>exploding&lt;/i> element will be rendered on a pixmap of width (&lt;i>Width&lt;/i> * &lt;i>Number of frames&lt;/i>) and then split into individual frames.&lt;/p></string>
             </property>
            </widget>
           </item>
@@ -739,15 +605,7 @@ p, li { white-space: pre-wrap; }
              <string>Number of exploding cannon versions</string>
             </property>
             <property name="whatsThis" >
-             <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Number of exploding cannon versions.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The pool &lt;span style=" font-style:italic;">exploding &lt;/span>element will be rendered on a pixmap of height (&lt;span style=" font-style:italic;">Height&lt;/span> * &lt;span style=" font-style:italic;">Number of versions&lt;/span>) and then split into individual frames.&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Each version shows the sprite visible from one direction: the first one is directed towards the right, the second towards the left, the third one from front and the last one from the back. However, not all sprites need all versions.&lt;/p>&lt;/body>&lt;/html></string>
+             <string>&lt;p>Number of exploding cannon versions.&lt;/p>&lt;p>The pool &lt;i>exploding&lt;/i> element will be rendered on a pixmap of height (&lt;i>Height&lt;/i> * &lt;i>Number of versions&lt;/i>) and then split into individual frames.&lt;/p>&lt;p>Each version shows the sprite visible from one direction: the first one is directed towards the right, the second towards the left, the third one from front and the last one from the back. However, not all sprites need all versions.&lt;/p></string>
             </property>
            </widget>
           </item>
