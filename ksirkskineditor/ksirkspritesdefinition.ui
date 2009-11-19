@@ -231,7 +231,7 @@ Each version shows the sprite visible from one direction: the first one is direc
            <string>Number of infantry versions</string>
           </property>
           <property name="whatsThis" >
-           <string>&lt;p>Number of infantry versions.&lt;/p>&lt;p>The pool &lt;i>infantry&lt;/i> element will be rendered on a pixmap of height: (&lt;i>Height&lt;/i> * &lt;i>Number of versions&lt;/i>) and then split into individual frames.&lt;/p>&lt;p>Each version shows the sprite visible from one direction: the first one is directed towards the right, the second towards the left, the third one from front and the last one from the back. But all sprites don't need all versions.&lt;/p></string>
+           <string>&lt;p>Number of infantry versions.&lt;/p>&lt;p>The pool &lt;i>infantry&lt;/i> element will be rendered on a pixmap of height: (&lt;i>Height&lt;/i> * &lt;i>Number of versions&lt;/i>) and then split into individual frames.&lt;/p>&lt;p>Each version shows the sprite visible from one direction: the first one is directed towards the right, the second towards the left, the third one from front and the last one from the back. However, not all sprites need all versions.&lt;/p></string>
           </property>
          </widget>
         </item>
