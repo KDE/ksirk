@@ -117,7 +117,7 @@ The pool flag element will be rendered on a pixmap of height: (Height * Number o
              <string>Number of individual flag frames</string>
             </property>
             <property name="whatsThis" >
-             <string>&lt;p>Number of individual flag frames.&lt;/p>&lt;p>The pool &lt;i>flag&lt;/i> element will be rendered on a pixmap of width: (&lt;i>Width&lt;/i> * N&lt;i>umber of frames&lt;/i>) and then split into individual frames.&lt;/p></string>
+             <string>&lt;p>Number of individual flag frames.&lt;/p>&lt;p>The pool &lt;i>flag&lt;/i> element will be rendered on a pixmap of width: (&lt;i>Width&lt;/i> * &lt;i>Number of frames&lt;/i>) and then split into individual frames.&lt;/p></string>
             </property>
            </widget>
           </item>
@@ -231,7 +231,7 @@ Each version shows the sprite visible from one direction: the first one is direc
            <string>Number of infantry versions</string>
           </property>
           <property name="whatsThis" >
-           <string>&lt;i>Number of infantry versions.&lt;/p>&lt;p>The pool &lt;i>infantry&lt;/i> element will be rendered on a pixmap of height: (&lt;i>Height&lt;/i> * &lt;i>Number of versions&lt;/i>) and then split into individual frames.&lt;/p>&lt;p>Each version shows the sprite visible from one direction: the first one is directed towards the right, the second towards the left, the third one from front and the last one from the back. But all sprites don't need all versions.&lt;/p></string>
+           <string>&lt;p>Number of infantry versions.&lt;/p>&lt;p>The pool &lt;i>infantry&lt;/i> element will be rendered on a pixmap of height: (&lt;i>Height&lt;/i> * &lt;i>Number of versions&lt;/i>) and then split into individual frames.&lt;/p>&lt;p>Each version shows the sprite visible from one direction: the first one is directed towards the right, the second towards the left, the third one from front and the last one from the back. But all sprites don't need all versions.&lt;/p></string>
           </property>
          </widget>
         </item>
@@ -288,7 +288,7 @@ Each version shows the sprite visible from one direction: the first one is direc
            <string>Individual cavalry frame height</string>
           </property>
           <property name="whatsThis" >
-           <string>&lt;i>Individual cavalry frame height.&lt;/p>&lt;p>The pool &lt;i>cavalry&lt;/i> element will be rendered on a pixmap of height (&lt;i>Height&lt;/i> * &lt;i>Number of versions&lt;/i>) and then split into individual frames.&lt;/p></string>
+           <string>&lt;p>Individual cavalry frame height.&lt;/p>&lt;p>The pool &lt;i>cavalry&lt;/i> element will be rendered on a pixmap of height (&lt;i>Height&lt;/i> * &lt;i>Number of versions&lt;/i>) and then split into individual frames.&lt;/p></string>
           </property>
          </widget>
         </item>
@@ -459,7 +459,7 @@ Each version shows the sprite visible from one direction: the first one is direc
              <string>Firing cannon individual frame width</string>
             </property>
             <property name="whatsThis" >
-             <string>&lt;p>Firing cannon individual frame width.&lt;/p>The pool &lt;i>firing cannon&lt;/i> element will be rendered on a pixmap of width (&lt;i>Width&lt;/i> * &lt;i>Number of frames&lt;/i>) and then split into individual frames.&lt;/p></string>
+             <string>&lt;p>Firing cannon individual frame width.&lt;/p>&lt;p>The pool &lt;i>firing cannon&lt;/i> element will be rendered on a pixmap of width (&lt;i>Width&lt;/i> * &lt;i>Number of frames&lt;/i>) and then split into individual frames.&lt;/p></string>
             </property>
            </widget>
           </item>
