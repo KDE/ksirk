@@ -16,9 +16,63 @@
 
 #include "newgamesetup.h"
 #include "GameLogic/newplayerdata.h"
+#include "GameLogic/onu.h"
+
+#include <KLocale>
+#include <KDebug>
+#include <KStandardDirs>
+#include <KMessageBox>
+
+#include <qdir.h>
 
 using namespace Ksirk;
 
+NewGameSetup::NewGameSetup(Ksirk::GameLogic::GameAutomaton* automaton) :
+m_automaton(automaton), m_skin(""), m_worlds(), m_players(),
+                               m_nbPlayers(0),m_nbNetworkPlayers(0),
+                               m_useGoals(true), m_networkGameType(Ksirk::GameLogic::GameAutomaton::None),
+                               m_tcpPort(20000)
+{
+  KStandardDirs *m_dirs = KGlobal::dirs();
+  QStringList skinsDirs = m_dirs->findDirs("appdata","skins");
+  kDebug() << skinsDirs;
+  uint skinNum = 0;
+  uint currentSkinNum = 0;
+  foreach (const QString &skinsDirName, skinsDirs)
+  {
+    //   QString skinsDirName = m_dirs->findResourceDir("appdata", "skins/skinsdir");
+    if (skinsDirName.isEmpty())
+    {
+      KMessageBox::error(0,
+                         i18n("Skins directory not found - Verify your installation\nProgram cannot continue"),
+                         i18n("Fatal Error!"));
+                         exit(2);
+    }
+    kDebug() << "Got skins dir name: " << skinsDirName;
+    QDir skinsDir(skinsDirName);
+    QStringList skinsDirsNames = skinsDir.entryList(QStringList("[a-zA-Z]*"), QDir::Dirs);
+    
+    foreach (const QString& name, skinsDirsNames)
+    {
+      kDebug() << "Got skin dir name: " << name;
+      QDir skinDir(skinsDirName + name);
+      if (skinDir.exists())
+      {
+        kDebug() << "Got skin dir: " << skinDir.dirName();
+        GameLogic::ONU* world = new GameLogic::ONU(automaton,skinsDirName + skinDir.dirName() + "/Data/world.desktop");
+        if (!world->skin().isEmpty())
+        {
+          m_worlds[i18n(world->name().toUtf8().data())] = world;
+        }
+        else
+        {
+          delete world;
+        }
+      }
+    }
+  }
+}
+                               
 int NewGameSetup::nbLocalPlayers() const
 {
   int n = 0;
@@ -103,8 +157,8 @@ QDataStream& operator>>(QDataStream& stream, NewGameSetup& ngs)
     stream >> computer;
     quint32 network;
     stream >> network;
-    kDebug() << "player" << name << nation << password << computer << network;
-    Ksirk::NewPlayerData* newPlayer = new NewPlayerData(name,nation,password,computer,network);
+    kDebug() << "player" << name << nation << password << computer << !network;
+    Ksirk::NewPlayerData* newPlayer = new NewPlayerData(name,nation,password,computer,!network);
     ngs.players().push_back(newPlayer);
   }
   quint32 nbPlayers;

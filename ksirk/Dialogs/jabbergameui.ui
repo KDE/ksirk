@@ -1,7 +1,8 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>KsirkJabberGameWidget</class>
- <widget class="QWidget" name="KsirkJabberGameWidget" >
-  <property name="geometry" >
+ <widget class="QWidget" name="KsirkJabberGameWidget">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -9,56 +10,56 @@
     <height>547</height>
    </rect>
   </property>
-  <layout class="QGridLayout" name="gridLayout" >
-   <item row="0" column="0" >
-    <widget class="QStackedWidget" name="stackedWidget" >
-     <property name="currentIndex" >
-      <number>0</number>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>1</number>
      </property>
-     <widget class="QWidget" name="jabberconnectpage" >
-      <layout class="QVBoxLayout" name="verticalLayout_3" >
+     <widget class="QWidget" name="jabberconnectpage">
+      <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
-        <widget class="QLabel" name="label_7" >
-         <property name="font" >
+        <widget class="QLabel" name="label_7">
+         <property name="font">
           <font>
            <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
-         <property name="text" >
+         <property name="text">
           <string>Connection to the Jabber Network</string>
          </property>
         </widget>
        </item>
        <item>
-        <layout class="QGridLayout" name="gridLayout_4" >
-         <item row="0" column="0" >
-          <widget class="QLabel" name="label" >
-           <property name="text" >
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="text">
             <string>Jabber ID:</string>
            </property>
           </widget>
          </item>
-         <item rowspan="2" row="0" column="2" >
-          <widget class="KLineEdit" name="jabberid" >
-           <property name="text" >
+         <item row="0" column="2" rowspan="2">
+          <widget class="KLineEdit" name="jabberid">
+           <property name="text">
             <string>kleag@kdetalk.net</string>
            </property>
           </widget>
          </item>
-         <item rowspan="2" row="1" column="2" >
-          <widget class="KLineEdit" name="password" >
-           <property name="text" >
+         <item row="1" column="2" rowspan="2">
+          <widget class="KLineEdit" name="password">
+           <property name="text">
             <string>12345678</string>
            </property>
-           <property name="echoMode" >
+           <property name="echoMode">
             <enum>QLineEdit::Password</enum>
            </property>
           </widget>
          </item>
-         <item row="2" column="0" >
-          <widget class="QLabel" name="label_2" >
-           <property name="text" >
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
             <string>Password:</string>
            </property>
           </widget>
@@ -66,20 +67,20 @@
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_5" >
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
-          <widget class="KPushButton" name="connectbutton" >
-           <property name="text" >
+          <widget class="KPushButton" name="connectbutton">
+           <property name="text">
             <string>Connect</string>
            </property>
           </widget>
          </item>
          <item>
-          <spacer name="horizontalSpacer_2" >
-           <property name="orientation" >
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
-           <property name="sizeHint" stdset="0" >
+           <property name="sizeHint" stdset="0">
             <size>
              <width>40</width>
              <height>20</height>
@@ -88,17 +89,17 @@
           </spacer>
          </item>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_4" >
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
            <item>
-            <widget class="QLabel" name="label_8" >
-             <property name="text" >
+            <widget class="QLabel" name="label_8">
+             <property name="text">
               <string>State:</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="KLed" name="jabberstateled" >
-             <property name="layoutDirection" >
+            <widget class="KLed" name="jabberstateled">
+             <property name="layoutDirection">
               <enum>Qt::LeftToRight</enum>
              </property>
             </widget>
@@ -108,11 +109,11 @@
         </layout>
        </item>
        <item>
-        <spacer name="verticalSpacer_4" >
-         <property name="orientation" >
+        <spacer name="verticalSpacer_4">
+         <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
-         <property name="sizeHint" stdset="0" >
+         <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
            <height>143</height>
@@ -122,110 +123,110 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="chatroomconnectpage" >
-      <layout class="QVBoxLayout" name="verticalLayout_2" >
+     <widget class="QWidget" name="chatroomconnectpage">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QLabel" name="label_9" >
-         <property name="font" >
+        <widget class="QLabel" name="label_9">
+         <property name="font">
           <font>
            <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
-         <property name="text" >
+         <property name="text">
           <string>Joining a KsirK Jabber Chatroom</string>
          </property>
         </widget>
        </item>
        <item>
-        <layout class="QGridLayout" name="gridLayout_2" >
-         <item row="1" column="0" >
-          <widget class="QLabel" name="label_3" >
-           <property name="text" >
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
             <string>Room JID:</string>
            </property>
           </widget>
          </item>
-         <item row="1" column="1" >
-          <widget class="KLineEdit" name="roomjid" />
+         <item row="1" column="1">
+          <widget class="KLineEdit" name="roomjid"/>
          </item>
-         <item row="2" column="0" >
-          <widget class="QLabel" name="label_4" >
-           <property name="text" >
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
             <string>Nickname:</string>
            </property>
           </widget>
          </item>
-         <item row="2" column="1" >
-          <widget class="KLineEdit" name="nickname" />
+         <item row="2" column="1">
+          <widget class="KLineEdit" name="nickname"/>
          </item>
-         <item row="1" column="2" >
-          <widget class="QLabel" name="label_5" >
-           <property name="text" >
+         <item row="1" column="2">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
             <string>Room Password:</string>
            </property>
           </widget>
          </item>
-         <item row="1" column="3" >
-          <widget class="KLineEdit" name="roompassword" >
-           <property name="echoMode" >
+         <item row="1" column="3">
+          <widget class="KLineEdit" name="roompassword">
+           <property name="echoMode">
             <enum>QLineEdit::Password</enum>
            </property>
           </widget>
          </item>
-         <item row="2" column="2" >
-          <widget class="KPushButton" name="joinroombutton" >
-           <property name="text" >
+         <item row="2" column="2">
+          <widget class="KPushButton" name="joinroombutton">
+           <property name="text">
             <string>Join Room</string>
            </property>
           </widget>
          </item>
-         <item row="2" column="3" >
-          <layout class="QHBoxLayout" name="horizontalLayout_3" >
+         <item row="2" column="3">
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>
-            <widget class="QLabel" name="label_10" >
-             <property name="text" >
+            <widget class="QLabel" name="label_10">
+             <property name="text">
               <string>State:</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="KLed" name="chatroomstateled" />
+            <widget class="KLed" name="chatroomstateled"/>
            </item>
           </layout>
          </item>
         </layout>
        </item>
        <item>
-        <widget class="QLabel" name="label_6" >
-         <property name="font" >
+        <widget class="QLabel" name="label_6">
+         <property name="font">
           <font>
            <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
-         <property name="text" >
+         <property name="text">
           <string>Games in the Room</string>
          </property>
         </widget>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout" >
+        <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
-          <widget class="QTableWidget" name="jabberTable" >
-           <property name="alternatingRowColors" >
+          <widget class="QTableWidget" name="jabberTable">
+           <property name="alternatingRowColors">
             <bool>true</bool>
            </property>
-           <property name="selectionMode" >
+           <property name="selectionMode">
             <enum>QAbstractItemView::SingleSelection</enum>
            </property>
-           <property name="selectionBehavior" >
+           <property name="selectionBehavior">
             <enum>QAbstractItemView::SelectRows</enum>
            </property>
-           <property name="sortingEnabled" >
+           <property name="sortingEnabled">
             <bool>true</bool>
            </property>
-           <property name="columnCount" >
+           <property name="columnCount">
             <number>3</number>
            </property>
            <column/>
@@ -234,34 +235,43 @@
           </widget>
          </item>
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout" >
+          <layout class="QVBoxLayout" name="verticalLayout">
            <item>
-            <widget class="KPushButton" name="startnewgamebutton" >
-             <property name="text" >
+            <widget class="KPushButton" name="startnewgamebutton">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
               <string>Start a New Game</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="KPushButton" name="joingamebutton" >
-             <property name="text" >
+            <widget class="KPushButton" name="joingamebutton">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
               <string>Join Selected Game</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="KPushButton" name="loadsavedgamebutton" >
-             <property name="text" >
+            <widget class="KPushButton" name="loadsavedgamebutton">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
               <string>Load a Saved Game</string>
              </property>
             </widget>
            </item>
            <item>
-            <spacer name="verticalSpacer" >
-             <property name="orientation" >
+            <spacer name="verticalSpacer">
+             <property name="orientation">
               <enum>Qt::Vertical</enum>
              </property>
-             <property name="sizeHint" stdset="0" >
+             <property name="sizeHint" stdset="0">
               <size>
                <width>20</width>
                <height>40</height>
@@ -274,32 +284,27 @@
         </layout>
        </item>
       </layout>
-      <zorder>label_9</zorder>
-      <zorder>label_6</zorder>
-      <zorder>jabberTable</zorder>
-      <zorder>label_6</zorder>
-      <zorder>layoutWidget</zorder>
      </widget>
     </widget>
    </item>
-   <item row="1" column="0" >
-    <widget class="QLabel" name="label_11" >
-     <property name="text" >
-      <string>&lt;b>Note:&lt;/b> Playing over the Jabber network is an experimental feature in KsirK.&lt;br/>Particularly, the distribution of armies at game beginning is very slow (expect something like one minute).</string>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_11">
+     <property name="text">
+      <string>&lt;b&gt;Note:&lt;/b&gt; Playing over the Jabber network is an experimental feature in KsirK.&lt;br/&gt;Particularly, the distribution of armies at game beginning is very slow (expect something like one minute).</string>
      </property>
-     <property name="wordWrap" >
+     <property name="wordWrap">
       <bool>true</bool>
      </property>
     </widget>
    </item>
-   <item row="2" column="0" >
-    <layout class="QHBoxLayout" name="horizontalLayout_2" >
+   <item row="2" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <spacer name="horizontalSpacer" >
-       <property name="orientation" >
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeHint" stdset="0" >
+       <property name="sizeHint" stdset="0">
         <size>
          <width>40</width>
          <height>20</height>
@@ -308,8 +313,8 @@
       </spacer>
      </item>
      <item>
-      <widget class="KPushButton" name="cancelbutton" >
-       <property name="text" >
+      <widget class="KPushButton" name="cancelbutton">
+       <property name="text">
         <string>Cancel</string>
        </property>
       </widget>
@@ -325,14 +330,14 @@
    <header>kled.h</header>
   </customwidget>
   <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
-  </customwidget>
-  <customwidget>
    <class>KPushButton</class>
    <extends>QPushButton</extends>
    <header>kpushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

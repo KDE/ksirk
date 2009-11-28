@@ -35,11 +35,7 @@ namespace Ksirk
 class NewGameSetup
 {
 public:
-  explicit NewGameSetup(Ksirk::GameLogic::GameAutomaton* automaton) :
-  m_automaton(automaton), m_skin(""), m_worlds(), m_players(),
-  m_nbPlayers(0),m_nbNetworkPlayers(0),
-  m_useGoals(true), m_networkGameType(Ksirk::GameLogic::GameAutomaton::None),
-  m_tcpPort(20000) {}
+  explicit NewGameSetup(Ksirk::GameLogic::GameAutomaton* automaton);
 
   virtual ~NewGameSetup() {}
   

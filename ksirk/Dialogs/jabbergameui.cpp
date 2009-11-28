@@ -184,6 +184,7 @@ void KsirkJabberGameWidget::slotJoinRoom()
   KsirkSettings::setRoomPassword(groupchatPassword);
   KsirkSettings::self()->writeConfig();
 
+
   if (groupchatPassword.isEmpty())
     m_automaton->game()->jabberClient()->joinGroupChat ( groupchatHost, groupchatRoom, groupchatNick);
   else
@@ -196,6 +197,10 @@ void KsirkJabberGameWidget::slotGroupChatJoined(const XMPP::Jid & jid)
   chatroomstateled->setState(KLed::On);
 
   kDebug () << "Joined groupchat " << jid.full ();
+
+  startnewgamebutton->setEnabled(true);
+  joingamebutton->setEnabled(true);
+  loadsavedgamebutton->setEnabled(true);
 }
 
 void KsirkJabberGameWidget::slotGroupChatLeft (const XMPP::Jid & jid)
@@ -203,6 +208,10 @@ void KsirkJabberGameWidget::slotGroupChatLeft (const XMPP::Jid & jid)
   kDebug();
   Q_UNUSED(jid);
   chatroomstateled->setState(KLed::Off);
+
+  startnewgamebutton->setEnabled(false);
+  joingamebutton->setEnabled(false);
+  loadsavedgamebutton->setEnabled(false);
 }
 
 void KsirkJabberGameWidget::slotGroupChatPresence (const XMPP::Jid & jid, const XMPP::Status & status)
