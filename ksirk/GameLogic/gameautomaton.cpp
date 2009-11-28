@@ -1153,9 +1153,9 @@ bool GameAutomaton::setupPlayersNumberAndSkin(NetworkGameType netGameType)
   return false;
 }
 
-bool GameAutomaton::finishSetupPlayersNumberAndSkin(const QString& skin, uint newPlayersNumber)
+bool GameAutomaton::finishSetupPlayersNumberAndSkin()
 {
-  kDebug() << skin << newPlayersNumber;
+  kDebug();
   
   setUseGoals(m_game->newGameSetup()->useGoals());
   state(GameLogic::GameAutomaton::INIT);
@@ -1163,11 +1163,9 @@ bool GameAutomaton::finishSetupPlayersNumberAndSkin(const QString& skin, uint ne
   setNetworkPlayersNumber(m_game->newGameSetup()->nbNetworkPlayers());
   m_startingGame = true;
   state(INIT);
-  setMinPlayers(newPlayersNumber);
-  setMaxPlayers(newPlayersNumber);
-  m_nbPlayers = newPlayersNumber;
-  kDebug() << "Changing skin" << endl;
-  m_skin = skin;
+  setMinPlayers(m_game->newGameSetup()->nbPlayers());
+  setMaxPlayers(m_game->newGameSetup()->nbPlayers());
+  m_nbPlayers = m_game->newGameSetup()->nbPlayers();
   
   return true;
 }
@@ -1395,7 +1393,7 @@ void GameAutomaton::currentPlayer(Player* player)
 
 void GameAutomaton::slotPlayerJoinedGame(KPlayer* player)
 {
-  kDebug() << "slotPlayerJoinedGame currently " << playerList()->count() << " / " << maxPlayers() << endl;
+  kDebug() << "currently " << playerList()->count() << " / " << maxPlayers() << endl;
   Player* p = dynamic_cast<Player*>(player);
   Q_ASSERT(p);
   
@@ -2063,7 +2061,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   {
   case CountryOwner:
     stream >> countryName >> playerName;
-//     kDebug() << "CountryOwner for " << m_game->theWorld()->countryNamed(countryName) << " " << countryName << " and " << playerName << endl;
+    kDebug() << "CountryOwner for " << (void*)m_game->theWorld()->countryNamed(countryName) << " " << countryName << " and " << (void*)playerNamed(playerName) << playerName << endl;
     m_game->theWorld()->countryNamed(countryName)-> owner(playerNamed(playerName));
     break;
   case PlayerPutsInitialArmy:
@@ -2697,6 +2695,8 @@ void GameAutomaton::newGameNext()
   m_startingGame = true;
   state(INIT);
   
+  kDebug() << "Changing skin" << endl;
+  m_skin = m_game->newGameSetup()->skin();
   if (m_game->newGameSetup()->networkGameType() == Socket)
   {
     offerConnections(m_game->newGameSetup()->tcpPort());

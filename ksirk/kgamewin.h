@@ -1108,7 +1108,6 @@ private: // Private members
   Sprites::ArrowSprite* m_rightarrow;
   
   int m_port;
-  uint m_newPlayersNumber;
   bool m_reinitializingGame;
   
   NewGameWidget* m_newGameDialog;

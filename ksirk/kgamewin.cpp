@@ -1369,8 +1369,8 @@ bool KGameWindow::finishSetupPlayers()
   {
     m_automaton->playerList()->clear();
   }
-  kDebug() << "newPlayersNumber = " << m_newPlayersNumber;
-  unsigned int nbAvailArmies = (unsigned int)(m_theWorld->getNbCountries() * 2.5 / m_newPlayersNumber);
+  kDebug() << "newPlayersNumber = " << m_newGameSetup->players().size();
+  unsigned int nbAvailArmies = (unsigned int)(m_theWorld->getNbCountries() * 2.5 / m_newGameSetup->players().size());
   kDebug() << "nbAvailArmies = " << nbAvailArmies << " ; nb countries = " << m_theWorld->getNbCountries();
   QString nomEntre = "";
   QString password = "";
@@ -2697,7 +2697,6 @@ bool KGameWindow::actionNewGame(GameAutomaton::NetworkGameType socket)
 
   {
     m_newGameSetup->clear();
-    m_newPlayersNumber = 0;
     m_automaton->setupPlayersNumberAndSkin(socket);
   }
   return false;

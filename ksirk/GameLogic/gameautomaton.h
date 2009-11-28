@@ -384,7 +384,7 @@ public:
     */
   bool isDefenseAuto();
 
-  bool finishSetupPlayersNumberAndSkin(const QString& skin, uint newPlayersNumber);
+  bool finishSetupPlayersNumberAndSkin();
 
   inline int port() const {return m_port;}
 

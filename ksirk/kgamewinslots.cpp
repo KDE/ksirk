@@ -646,7 +646,6 @@ void KGameWindow::slotConnectToServer()
   }
   theWorld()->reset();
   
-  m_newPlayersNumber = m_newGameSetup->players().size();
   m_automaton->connectToServ();
 }
 
@@ -1191,25 +1190,28 @@ void KGameWindow::slotStartNewGame()
   m_automaton->setGameStatus(KGame::End);
   m_reinitializingGame = true;
   
-  
-  if (!(m_automaton->playerList()->isEmpty()))
+  // for network games, remote players are already created, should not remove them
+  // TODO the players will not be in the orderd showed in the interface.
+  if (!(m_automaton->playerList()->isEmpty()) && m_automaton->networkGameType() == GameAutomaton::None)
   {
+    kDebug() << "There was " << m_automaton->playerList()->count() << "players";
     m_automaton->playerList()->clear();
     m_automaton->currentPlayer(0);
     kDebug() << "  playerList size = " << m_automaton->playerList()->count();
   }
   theWorld()->reset();
   
-  m_newPlayersNumber = m_newGameSetup->players().size();
-
-  m_automaton->finishSetupPlayersNumberAndSkin(m_newGameSetup->skin(),
-                                               m_newGameSetup->nbPlayers());
+  m_automaton->finishSetupPlayersNumberAndSkin();
   m_reinitializingGame = false;
 
   unsigned int nbAvailArmies = (unsigned int)(m_theWorld->getNbCountries() * 2.5 / m_newGameSetup->players().size());
   foreach (const NewPlayerData* player, m_newGameSetup->players())
   {
-    addPlayer(player->name(), nbAvailArmies, 0, player->nation(), player->computer());
+    if (!player->network())
+    {
+      // this has to be done locally
+      addPlayer(player->name(), nbAvailArmies, 0, player->nation(), player->computer());
+    }
   }
 
   if (m_newGameSetup->players().size() == m_newGameSetup->nbPlayers())
