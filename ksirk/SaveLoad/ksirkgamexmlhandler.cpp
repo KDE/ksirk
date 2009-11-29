@@ -28,6 +28,7 @@
 #include <kdebug.h>
 #include <klocale.h>
 #include <kmessagebox.h>
+#include <KStringHandler>
 
 namespace Ksirk
 {
@@ -95,7 +96,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
     bool isAi = false;
     if (atts.value("ai") == "true") isAi = true;
     
-    QString password = atts.value("password");
+    QString password = KStringHandler::obscure(atts.value("password"));
     
     bool isLocal = true; // local player by default
     if (atts.value("local") == "false") isLocal = false;

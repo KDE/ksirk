@@ -29,6 +29,7 @@
 #include <kdebug.h>
 #include <klocale.h>
 #include <kmessagebox.h>
+#include <KStringHandler>
 
 namespace Ksirk
 {
@@ -256,7 +257,7 @@ void Player::innerSaveXml(std::ostream& xmlStream)
   nationName = nationName.replace("<","&lt;");
   nationName = nationName.replace(">","&gt;");
   xmlStream << " nation=\"" << nationName.toUtf8().data() << "\"";
-  xmlStream << " password=\"" << m_password.value().toUtf8().data() << "\"";
+  xmlStream << " password=\"" << KStringHandler::obscure(m_password.value()).toUtf8().data() << "\"";
   xmlStream << " local=\"" << (isVirtual()?"false":"true") << "\"";
 }
 
