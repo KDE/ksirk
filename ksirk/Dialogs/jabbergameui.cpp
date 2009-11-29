@@ -22,6 +22,8 @@
 #include "ksirksettings.h"
 
 #include <KDebug>
+#include <KStringHandler>
+#include <kwallet.h>
 
 #include <QUuid>
 
@@ -38,9 +40,26 @@ KsirkJabberGameWidget::KsirkJabberGameWidget(QWidget* parent) :
   setupUi(this);
   stackedWidget->setCurrentIndex(0);
   jabberid->setText(Ksirk::KsirkSettings::jabberId());
-  password->setText(Ksirk::KsirkSettings::jabberPassword());
+
+  KWallet::Wallet* wallet = KWallet::Wallet::openWallet("ksirk", 0);
+  if (wallet == 0)
+  {
+    password->setText(KStringHandler::obscure(Ksirk::KsirkSettings::jabberPassword()));
+    roompassword->setText(KStringHandler::obscure(Ksirk::KsirkSettings::jabberPassword()));
+  }
+  else
+  {
+    if (wallet->createFolder("jabber") && wallet->setFolder("jabber"))
+    {
+      QByteArray pw;
+      wallet->readEntry("password", pw);
+      password->setText(QString::fromUtf8(pw.data()));
+      wallet->readEntry("roompassword", pw);
+      roompassword->setText(QString::fromUtf8(pw.data()));
+    }
+    delete wallet;
+  }
   roomjid->setText(Ksirk::KsirkSettings::roomJid());
-  roompassword->setText(Ksirk::KsirkSettings::roomPassword());
   nickname->setText(Ksirk::KsirkSettings::nickname());
 
   jabberstateled->setState(KLed::Off);
@@ -91,8 +110,22 @@ void KsirkJabberGameWidget::slotJabberConnectButtonClicked()
   KsirkSettings::setJabberId(jabberid->text());
   XMPP::Jid jid(jabberid->text()+'/'+jabberid->text());
   QString pass = password->text();
-  KsirkSettings::setJabberPassword(pass);
 
+
+  KWallet::Wallet* wallet = KWallet::Wallet::openWallet("ksirk", 0);
+  if (wallet == 0)
+  {
+    KsirkSettings::setJabberPassword(KStringHandler::obscure(pass));
+  }
+  else
+  {
+    if (wallet->createFolder("jabber") && wallet->setFolder("jabber"))
+    {
+      wallet->writeEntry("password", pass.toUtf8());
+    }
+    delete wallet;
+  }
+  
   KsirkSettings::self()->writeConfig();
 
   m_automaton->game()->jabberClient()->setOverrideHost ( true, jid.domain(), 5222 );
@@ -181,7 +214,19 @@ void KsirkJabberGameWidget::slotJoinRoom()
   m_automaton->game()->setGroupchatPassword(groupchatPassword);
   KsirkSettings::setRoomJid(groupchatRoom+'@'+groupchatHost);
   KsirkSettings::setNickname(groupchatNick);
-  KsirkSettings::setRoomPassword(groupchatPassword);
+  KWallet::Wallet* wallet = KWallet::Wallet::openWallet("ksirk", 0);
+  if (wallet == 0)
+  {
+    KsirkSettings::setRoomPassword(KStringHandler::obscure(groupchatPassword));
+  }
+  else
+  {
+    if (wallet->createFolder("jabber") && wallet->setFolder("jabber"))
+    {
+      wallet->writeEntry("roompassword", groupchatPassword.toUtf8());
+    }
+    delete wallet;
+  }
   KsirkSettings::self()->writeConfig();
 
 
