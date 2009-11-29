@@ -67,7 +67,7 @@ Choose one of them. It will be your nation during the game</string>
       <bool>true</bool>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string comment="KDE::DoNotExtract">TextLabel</string>
      </property>
     </widget>
    </item>
