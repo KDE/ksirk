@@ -701,7 +701,8 @@ static int my_res_init()
 }
 #endif
 
-#ifdef __res_state_ext
+#if defined(JDNS_OS_MAC) || defined(JDNS_OS_FREEBSD) || \
+defined(JDNS_OS_NETBSD) || defined (JDNS_OS_SOLARIS)
 # define USE_EXTEXT
 #endif
 
