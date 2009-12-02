@@ -29,6 +29,8 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <sys/ioctl.h>
+#include <stropts.h>
+#include <unistd.h>
 #include <net/if.h>
 #include <net/route.h>
 #include <netinet/in.h>
