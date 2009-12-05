@@ -914,6 +914,8 @@ private: // Private methods
   void loadDices();
   QPixmap buildDice(const QString& id);
   void setupPopupMessage();
+  QString defenseLabel();
+
     
 private: // Private members
   QDockWidget * m_rightDock;
@@ -1136,6 +1138,8 @@ private: // Private members
   NewGameSetup* m_newGameSetup;
   NewGameSummaryWidget* m_newGameSummaryWidget;
   TcpConnectWidget* m_tcpConnectWidget;
+
+  QLabel* m_labDef;
 };
 
 } // closing namespace Ksirk

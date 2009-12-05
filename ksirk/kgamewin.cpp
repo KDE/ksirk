@@ -1246,6 +1246,19 @@ void KGameWindow::clearHighlighting()
   }
 }
 
+QString KGameWindow::defenseLabel()
+{
+  if (firstCountry() && firstCountry()->owner() && secondCountry())
+    return i18np("<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> with 1 army!<br> How do you want to defend <font color=\"blue\">%4</font>?",
+                        "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> with %1 armies!<br> How do you want to defend <font color=\"blue\">%4</font>?",
+                        QString::number(this->firstCountry()->owner()->getNbAttack()),
+                        this->firstCountry()->owner()->name(),
+                        this->firstCountry()->name(),
+                        this->secondCountry()->name());
+  else
+    return "";
+}
+
 void KGameWindow::createDefenseDialog()
 {
   kDebug();
@@ -1270,13 +1283,8 @@ void KGameWindow::createDefenseDialog()
   QPushButton * def2 = new QPushButton (i18n("Defend 2"));
   QPushButton * defAuto = new QPushButton (i18n("Defend-Auto"));
 
-  QLabel * labDef = new QLabel ();
-  labDef->setText(i18np("<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> with 1 army!<br> How do you want to defend <font color=\"blue\">%4</font>?",
-                        "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> with %1 armies!<br> How do you want to defend <font color=\"blue\">%4</font>?",
-                        QString::number(this->firstCountry()->owner()->getNbAttack()),                        
-                        this->firstCountry()->owner()->name(),
-                        this->firstCountry()->name(),                        
-                        this->secondCountry()->name()));
+  m_labDef = new QLabel ();
+  m_labDef->setText(defenseLabel());
 
   // Add icons on buttons
   QString skin = m_automaton->game()->theWorld()->skin();
@@ -1298,7 +1306,7 @@ void KGameWindow::createDefenseDialog()
   bottomLayout->addWidget(def1,0,0);
   bottomLayout->addWidget(def2,0,1);
   bottomLayout->addWidget(defAuto,0,2);
-  topLayout->addWidget(labDef, 0, 0);
+  topLayout->addWidget(m_labDef, 0, 0);
 
   connect(def1, SIGNAL(clicked()), this, SLOT(slotWindowDef1()));
   connect(def2, SIGNAL(clicked()), this, SLOT(slotWindowDef2()));
@@ -1312,6 +1320,8 @@ void KGameWindow::displayDefenseWindow()
   kDebug();
   if (m_defenseDialog == 0)
     createDefenseDialog();
+  else
+    m_labDef->setText(defenseLabel());
   m_defenseDialog->exec();
 }
 
