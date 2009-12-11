@@ -264,11 +264,11 @@ GameAutomaton::GameState GameAutomaton::run()
     m_events.pop_front();
   }
 
-//   kDebug() << "Handling " << stateName() << " ; " << event << " ; " << point << endl;
-//   if (currentPlayer())
-//   {
-//     kDebug() << "current player=" << currentPlayer()->name() << " is active=" << currentPlayer()->isActive() << endl;
-//   }
+  kDebug() << "Handling " << stateName() << " ; " << event << " ; " << point << endl;
+  if (currentPlayer())
+  {
+    kDebug() << "current player=" << currentPlayer()->name() << " is active=" << currentPlayer()->isActive() << endl;
+  }
   if (event == "requestForAck")
   {
     kDebug() << "requestForAck" << endl;
@@ -805,7 +805,7 @@ GameAutomaton::GameState GameAutomaton::run()
       QDataStream stream(&buffer, QIODevice::WriteOnly);
       stream << quint32(1);
       sendMessage(buffer,Invade);
-      state(WAIT);
+//       state(WAIT);
     }
     else if (event == "actionInvade5")
     {
@@ -815,7 +815,7 @@ GameAutomaton::GameState GameAutomaton::run()
       QDataStream stream(&buffer, QIODevice::WriteOnly);
       stream << quint32(5);
       sendMessage(buffer,Invade);
-      state(WAIT);
+//       state(WAIT);
     }
     else if (event == "actionInvade10")
     {
@@ -825,7 +825,7 @@ GameAutomaton::GameState GameAutomaton::run()
       QDataStream stream(&buffer, QIODevice::WriteOnly);
       stream << quint32(10);
       sendMessage(buffer,Invade);
-      state(WAIT);
+//       state(WAIT);
     }
     else if (event == "actionInvasionFinished")
     {

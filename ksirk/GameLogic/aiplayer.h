@@ -131,7 +131,7 @@ protected:
     * makes what is necessary to finish my turn
     */
   void nextPlayerAction();
-  
+
 protected: // Private attributes
   class MyThread: public QThread
   {
@@ -182,7 +182,7 @@ protected: // Private attributes
     
   bool m_hasVoted;
   bool m_actionWaitingStart;
-
+  
   MyThread m_thread;
 
 private: // Private methods

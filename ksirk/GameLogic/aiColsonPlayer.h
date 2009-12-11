@@ -205,9 +205,7 @@ private:
 
   PlaceData* m_placeData;
 
-  int m_nbArmiesToMove;
-  
-  /** 
+  /**
     * (country,dist)->country : used to find a nearest enemy and to avoid 
     * useless recursions
     */

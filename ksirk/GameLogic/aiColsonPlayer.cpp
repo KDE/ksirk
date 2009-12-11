@@ -57,8 +57,7 @@ AIColsonPlayer::AIColsonPlayer(
   m_initialized(false),
   Attack_SrcCountry(-1),
   Attack_DestCountry(-1),
-  m_placeData(0),
-  m_nbArmiesToMove(-1)
+  m_placeData(0)
 {
   kDebug();
 }
@@ -160,7 +159,7 @@ void AIColsonPlayer::chooseInvasionAction()
     return;
   }
 
-  if (m_nbArmiesToMove < 0)
+  if (m_toMove == std::numeric_limits< unsigned int>::max())
   {
     int nbEnemiesAdjacentToSrc = NbToEqualEnemyAdjacent(m_world->getCountries().at(Attack_SrcCountry));
     int nbEnemiesAdjacentToDest = NbToEqualEnemyAdjacent(m_world->getCountries().at(Attack_DestCountry));
@@ -172,39 +171,37 @@ void AIColsonPlayer::chooseInvasionAction()
   
   
     
-    m_nbArmiesToMove = (diff>RISK_GetNumArmiesOfCountry(Attack_SrcCountry)-1)?RISK_GetNumArmiesOfCountry(Attack_SrcCountry)-1:diff;
-    if (m_nbArmiesToMove < 0)
-      m_nbArmiesToMove = 0; 
-    kDebug() << "    moves " << m_nbArmiesToMove;
+    m_toMove = (diff>RISK_GetNumArmiesOfCountry(Attack_SrcCountry)-1)?RISK_GetNumArmiesOfCountry(Attack_SrcCountry)-1:(diff<0?0:diff);
+    kDebug() << "    moves " << m_toMove;
   }
 
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   QPoint point;
-  kDebug() << "Moves *****************" << m_nbArmiesToMove;
-  if (m_nbArmiesToMove >= 10) 
+  kDebug() << "Moves *****************" << m_toMove;
+  if (m_toMove >= 10)
   {
     kDebug() << "    choosing actionInvade10";
     stop(); 
     stream << QString("actionInvade10") << point;
     aiPlayerIO()->sendInput(stream,true);
-    m_nbArmiesToMove -= 10;
+    m_toMove -= 10;
   }
-  else if (m_nbArmiesToMove >= 5) 
+  else if (m_toMove >= 5)
   { 
     kDebug() << "    choosing actionInvade5";
     stop();
     stream << QString("actionInvade5") << point;
     aiPlayerIO()->sendInput(stream,true);
-    m_nbArmiesToMove -= 5;
+    m_toMove -= 5;
   }
-  else if (m_nbArmiesToMove >= 1) 
+  else if (m_toMove >= 1)
   { 
     kDebug() << "    choosing actionInvade1";
     stop();
     stream << QString("actionInvade1") << point;
     aiPlayerIO()->sendInput(stream,true);
-    m_nbArmiesToMove--;
+    m_toMove--;
   }
   else
   {
@@ -212,7 +209,7 @@ void AIColsonPlayer::chooseInvasionAction()
     stop();
     stream << QString("actionInvasionFinished") << point;
     aiPlayerIO()->sendInput(stream,true);
-    m_nbArmiesToMove = -1;
+    m_toMove = std::numeric_limits< unsigned int>::max();
   }
 }
 
