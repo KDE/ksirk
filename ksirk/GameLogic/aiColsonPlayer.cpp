@@ -156,6 +156,13 @@ void AIColsonPlayer::chooseInvasionAction()
   kDebug() << "    Attack_DestCountry = " << Attack_DestCountry;
   if (Attack_SrcCountry == - 1 || Attack_DestCountry == -1)
   {
+    stop();
+    QByteArray buffer;
+    QDataStream stream(&buffer, QIODevice::WriteOnly);
+    QPointF point;
+    stream << QString("actionInvasionFinished") << point;
+    aiPlayerIO()->sendInput(stream,true);
+    m_toMove = std::numeric_limits< unsigned int>::max();
     return;
   }
 
