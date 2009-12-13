@@ -1,5 +1,9 @@
 add_definitions(-DQT3_SUPPORT -DQT3_SUPPORT_WARNINGS)
 
+include(CheckIncludeFiles)
+check_include_files(sys/stropts.h SYS_STROPTS_H_FOUND)
+configure_file(config-ksirk.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-ksirk.h)
+
 add_subdirectory( skins )
 add_subdirectory( iris )
 
@@ -9,8 +13,7 @@ add_subdirectory( iris )
 
 include_directories( 
   ${CMAKE_BINARY_DIR}/ksirk 
-  ./Dialogs 
-  ${CMAKE_BINARY_DIR}/ksirk/Dialogs 
+  ./Dialogs
   ./GameLogic 
   ./SaveLoad 
   ./skins 

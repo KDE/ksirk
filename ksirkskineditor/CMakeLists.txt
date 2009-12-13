@@ -1,7 +1,6 @@
 # add_subdirectory( skins )
 
 include_directories( 
-  ${CMAKE_BINARY_DIR}/ksirkskineditor 
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${CMAKE_CURRENT_BINARY_DIR}  
 )

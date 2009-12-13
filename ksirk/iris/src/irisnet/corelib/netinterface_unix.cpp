@@ -24,12 +24,15 @@
 
 // gateway detection currently only works on linux
 
+#include <config-ksirk.h>
 #include "irisnetplugin.h"
 
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <sys/ioctl.h>
-#include <stropts.h>
+#if defined(HAVE_SYS_STROPTS_H)
+#include <sys/stropts.h>
+#endif
 #include <unistd.h>
 #include <net/if.h>
 #include <net/route.h>

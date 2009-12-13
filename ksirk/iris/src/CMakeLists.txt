@@ -78,6 +78,7 @@ if(WIN32)
 endif(WIN32)
 
 include_directories(
+	${CMAKE_CURRENT_BINARY_DIR}/../..
 	#irisnet/appledns
 	irisnet/corelib
 	irisnet/noncore
