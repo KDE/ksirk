@@ -90,7 +90,11 @@ AIPlayer::~AIPlayer()
   */
 void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
 {
-  kDebug() << name() << ": (state is " << m_game-> stateName() << ", current player is "<<m_game-> currentPlayer()->name()<<")" << endl;
+  if (m_game && m_game->currentPlayer())
+  {
+    kDebug() << name() << ": (state is " << m_game-> stateName() << ", current player is "
+      << m_game-> currentPlayer()->name()<<")" << endl;
+  }
   if (m_game->m_aicannotrunhack)
   {
     kDebug() << "HACK HACK AIPlayer " << name()   

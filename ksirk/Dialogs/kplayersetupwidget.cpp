@@ -209,6 +209,10 @@ void KPlayerSetupWidget::slotPlayerJoinedGame(KPlayer* player)
 void KPlayerSetupWidget::slotNationChanged()
 {
   kDebug() << "KPlayerSetupWidget::slotNationChanged " << nationCombo->currentText();
+  if (nationCombo->currentText().isEmpty())
+  {
+    return;
+  }
   GameLogic::Nationality* nation = m_onu->nationNamed(m_nationsNames[nationCombo->currentText()]);
 //   kDebug() << "nation = " << nation;
   nameLineEdit-> setText(nation->leaderName());

@@ -2706,6 +2706,17 @@ bool KGameWindow::actionNewGame(GameAutomaton::NetworkGameType socket)
         (KMessageBox::warningContinueCancel(this,i18n("Do you really want to end your current game and start a new one?"),i18n("New game confirmation"),KStandardGuiItem::yes()) == KMessageBox::Continue ) )
 
   {
+    kDebug() << "valid";
+    m_automaton->setGameStatus(KGame::End);
+    m_reinitializingGame = true;
+    m_automaton->removeAllPlayers();
+    m_automaton->state(GameLogic::GameAutomaton::INIT);
+    m_automaton->savedState(GameLogic::GameAutomaton::INVALID);
+    QObject::disconnect((QObject*)m_automaton->messageServer(),SIGNAL(connectionLost(KMessageIO *)),
+                        (QObject*)m_automaton,SLOT(slotConnectionToClientBroken(KMessageIO *)));
+
+    m_automaton->disconnect();
+
     m_newGameSetup->clear();
     m_automaton->setupPlayersNumberAndSkin(socket);
   }
