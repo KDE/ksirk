@@ -128,9 +128,6 @@ InvasionSlider::InvasionSlider(KGameWindow* game, GameLogic::Country * attack, G
   m_invadeSlide->setTickPosition(QSlider::TicksBelow);
   m_currentSlideValue = m_invadeSlide->value();
 
-//   QPushButton * ok = new QPushButton();
-  
-//   ok->setText(i18n("Validate"));
   QGridLayout * wSlideLayout = new QGridLayout(widget);
   QHBoxLayout * center = new QHBoxLayout(widget);
   QVBoxLayout * left = new QVBoxLayout(widget);
@@ -150,7 +147,6 @@ InvasionSlider::InvasionSlider(KGameWindow* game, GameLogic::Country * attack, G
 
   wSlideLayout->addLayout(center,2,0);
   wSlideLayout->addWidget(m_invadeSlide,3,0);
-//   wSlideLayout->addWidget(ok,4,0);
 
   //init. center layout
   center->addLayout(left);
@@ -168,8 +164,8 @@ InvasionSlider::InvasionSlider(KGameWindow* game, GameLogic::Country * attack, G
   //val->setText(QString::number(invadeSlide->value()));
   connect(m_invadeSlide,SIGNAL(valueChanged(int)),this,SLOT(slideMove(int)));
   connect(m_invadeSlide,SIGNAL(sliderReleased()),this,SLOT(slideReleased()));
-  connect(this,SIGNAL(okClicked()),this,SLOT(slideClose()));
-//   connect(ok,SIGNAL(rejected ()),this,SLOT(slideClose()));
+//   connect(this,SIGNAL(okClicked()),this,SLOT(slideClose()));
+  connect(this,SIGNAL(finished(int)),this,SLOT(slideClose()));
 
   setMainWidget(widget);
   
