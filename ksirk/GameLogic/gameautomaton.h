@@ -39,7 +39,9 @@
 #include <iostream>
 
 namespace Ksirk {
-class KGameWindow;
+  
+  class KGameWindow;
+  
 namespace GameLogic {
 
 class Player;

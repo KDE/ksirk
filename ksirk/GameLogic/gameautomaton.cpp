@@ -552,7 +552,7 @@ GameAutomaton::GameState GameAutomaton::run()
     { 
       QByteArray buffer;
       QDataStream stream(&buffer, QIODevice::WriteOnly);
-      stream << quint32(WAIT_RECYCLING);
+      stream << quint32(WAIT);
       sendMessage(buffer,NextPlayerRecycling);
     }
 //     else
@@ -654,29 +654,7 @@ GameAutomaton::GameState GameAutomaton::run()
     }
   break;
   case WAIT_RECYCLING:
-//     kDebug() << "event = '" << event << "'" << endl;
-    /*if  (event == "actionLButtonDown") 
-    {
-      QByteArray buffer;
-      QDataStream stream(&buffer, QIODevice::WriteOnly);
-      stream << point << quint32(true);
-      sendMessage(buffer,PlayerPutsArmy);
-    }
-    else if (event == "actionRButtonDown") 
-    {
-      QByteArray buffer;
-      QDataStream stream(&buffer, QIODevice::WriteOnly);
-      stream << point;
-      sendMessage(buffer,PlayerRemovesArmy);
-    }
-    else if (event == "actionNextPlayer")
-    {
-      QByteArray buffer;
-      QDataStream stream(&buffer, QIODevice::WriteOnly);
-      stream << -1;
-      sendMessage(buffer,NextPlayerRecycling);
-    }
-    else*/ if (event == "actionRecycling") 
+    if (event == "actionRecycling")
     {
       QByteArray buffer;
       sendMessage(buffer,ActionRecycling);
@@ -1540,7 +1518,6 @@ void GameAutomaton::changePlayerName(Player* player)
   QString nationName;
   
   QString nomEntre = player->name();
-  bool computer = player->isAI();
   
   bool found = true;
   KMessageBox::information(m_game, i18n("Please choose another name"), i18n("KsirK - Name already used!"));
@@ -1550,7 +1527,6 @@ void GameAutomaton::changePlayerName(Player* player)
     while (emptyName)
     {
       mes = i18n("Player number %1, what's your name?", 1);
-      bool network = false;
       QString password;
       if (nomEntre.isEmpty())
       {
@@ -1607,9 +1583,7 @@ void GameAutomaton::changePlayerNation(Player* player)
   QString nationName;
   
   QString nomEntre = player->name();
-  bool computer = player->isAI();
   KMessageBox::information(m_game, i18n("Please choose another nation"), i18n("KsirK - Nation already used!"));
-  bool network = false;
   QString password = false;
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
@@ -2048,7 +2022,6 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   quint32 availArmies;
   quint32 elemType;
   quint32 nb;
-  quint32 newGameSetupNbPlayers;
   
   if (currentPlayer() != 0 && currentPlayer()->getFlag() != 0)
   {

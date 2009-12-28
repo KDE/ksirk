@@ -2360,32 +2360,22 @@ bool KGameWindow::nextPlayerRecycling()
   }
   else
   {
-    if (setCurrentPlayerToNext())
+    m_rightDock->hide();
+    if (currentPlayer() && currentPlayer()-> isAI() && (!currentPlayer()->isVirtual()))
     {
-      initRecycling();
-      return true;
+      if (!(static_cast<AIPlayer *>(currentPlayer()))-> isRunning()) (static_cast<AIPlayer *>(currentPlayer()))-> start();
+      m_nextPlayerAction->setEnabled(false);
+    }
+    else if (currentPlayer() && !currentPlayer()->isVirtual())
+    {
+      slotContextualHelp();
+      m_nextPlayerAction->setEnabled(true);
     }
     else
     {
-      //KMessageParts messageParts;
-      QByteArray buffer;
-      m_automaton->sendMessage(buffer,StartLocalCurrentAI);
-
-      QByteArray buffer2;
-      QDataStream stream2(&buffer2, QIODevice::WriteOnly);
-      stream2 << currentPlayer()->name();
-      stream2 << (quint32)currentPlayer()-> getNbAvailArmies();
-      kDebug() << "sending DisplayRecycleDetails "
-        << currentPlayer()->name() << currentPlayer()-> getNbAvailArmies()
-        << " at " << __FILE__ << ", line " << __LINE__;
-      m_automaton->sendMessage(buffer2,DisplayRecycleDetails);
-
-      QPixmap pm = currentPlayer()->getFlag()->image(0);
-      //messageParts <<pm<< I18N_NOOP("%1: %2 armies to place") << currentPlayer()-> name() 
-    //    << QString::number(currentPlayer()-> getNbAvailArmies());
-    //  broadcastChangeItem(messageParts, ID_STATUS_MSG2);
-      return false;
+      m_nextPlayerAction->setEnabled(false);
     }
+    return true;
   }
 }
 
@@ -2395,43 +2385,28 @@ bool KGameWindow::nextPlayerRecycling()
 bool KGameWindow::nextPlayerNormal()
 {
   kDebug() << " (current is" << currentPlayer()->name()<<")";
-  if (setCurrentPlayerToNext())
-  {
-    distributeArmies();
-  
-    QByteArray buffer;
-    m_automaton->sendMessage(buffer,ShowArmiesToPlace);
-    
-    clear();
-    QByteArray buffer2;
-    m_automaton->sendMessage(buffer2,StartLocalCurrentAI);
-    getRightDialog()->close();
+  setCurrentPlayerToNext();
+  distributeArmies();
 
-    QByteArray buffer3;
-    QDataStream stream3(&buffer3, QIODevice::WriteOnly);
-    stream3 << currentPlayer()-> name();
-    stream3 << (quint32)nbNewArmies(currentPlayer());
-    kDebug() << "sending DisplayRecycleDetails "
-        << currentPlayer()->name() << nbNewArmies(currentPlayer())
-        << " at " << __FILE__ << ", line " << __LINE__;
-    m_automaton->sendMessage(buffer3,DisplayRecycleDetails);
-    return true;
-  }
-  else
-  {
-    QPixmap pm = currentPlayer()->getFlag()->image(0);
-    KMessageParts messageParts;
-    messageParts 
-      << pm
-      << I18N_NOOP("%1, it is up to you.") << currentPlayer()->name();
-    broadcastChangeItem(messageParts, ID_STATUS_MSG2);
-    clear();
-    QByteArray buffer;
-    QDataStream stream(&buffer, QIODevice::WriteOnly);
-    m_automaton->sendMessage(buffer,ClearHighlighting);
-    return false;
-  }
+  QByteArray buffer;
+  m_automaton->sendMessage(buffer,ShowArmiesToPlace);
+
+  clear();
+  QByteArray buffer2;
+  m_automaton->sendMessage(buffer2,StartLocalCurrentAI);
+  getRightDialog()->close();
+
+  QByteArray buffer3;
+  QDataStream stream3(&buffer3, QIODevice::WriteOnly);
+  stream3 << currentPlayer()-> name();
+  stream3 << (quint32)nbNewArmies(currentPlayer());
+  kDebug() << "sending DisplayRecycleDetails "
+      << currentPlayer()->name() << nbNewArmies(currentPlayer())
+      << " at " << __FILE__ << ", line " << __LINE__;
+  m_automaton->sendMessage(buffer3,DisplayRecycleDetails);
+  return true;
 }
+
 void KGameWindow::centerOnFight()
 {
   kDebug();
@@ -2860,13 +2835,7 @@ void KGameWindow::actionRecycling()
     << " at " << __FILE__ << ", line " << __LINE__;
   m_automaton->sendMessage(buffer2,DisplayRecycleDetails);
 
-  //KMessageParts messageParts;
   QPixmap pm = currentPlayer()->getFlag()->image(0);
-  /*messageParts 
-    << pm 
-    << I18N_NOOP("%1, please change your distributions.") 
-    << currentPlayer()->name();
-  broadcastChangeItem(messageParts, ID_STATUS_MSG2);*/
 }
 
 void KGameWindow::actionRecyclingFinished()
@@ -2875,22 +2844,25 @@ void KGameWindow::actionRecyclingFinished()
   getRightDialog()->close();
   if (m_automaton->isAdmin())
   {
-    QPixmap pm = currentPlayer()->getFlag()->image(0);
-    KMessageParts messageParts;
-    messageParts 
-      << pm
-      << I18N_NOOP("%1, it is up to you.") << currentPlayer()->name();
-    broadcastChangeItem(messageParts, ID_STATUS_MSG2);
+    setCurrentPlayerToFirst();
+    distributeArmies();
 
     QByteArray buffer;
-    QDataStream stream(&buffer, QIODevice::WriteOnly);
-    m_automaton->sendMessage(buffer,ClearHighlighting);
+    m_automaton->sendMessage(buffer,ShowArmiesToPlace);
 
+    clear();
     QByteArray buffer2;
-    QDataStream stream2(&buffer2, QIODevice::WriteOnly);
-    m_automaton->sendMessage(buffer2,ResetPlayersDistributionData);    
+    m_automaton->sendMessage(buffer2,StartLocalCurrentAI);
 
-    m_automaton->state(GameLogic::GameAutomaton::WAIT);
+    QByteArray buffer3;
+    QDataStream stream3(&buffer3, QIODevice::WriteOnly);
+    stream3 << currentPlayer()-> name();
+    stream3 << (quint32)nbNewArmies(currentPlayer());
+    kDebug() << "sending DisplayRecycleDetails "
+        << currentPlayer()->name() << nbNewArmies(currentPlayer())
+        << " at " << __FILE__ << ", line " << __LINE__;
+    m_automaton->sendMessage(buffer3,DisplayRecycleDetails);
+    m_automaton->state(GameLogic::GameAutomaton::NEWARMIES);
   }
 }
 
