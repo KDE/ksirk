@@ -270,8 +270,6 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_automaton->run();
   setMouseTracking(true);
 
-  resize(800,600);
-
   m_timer.setSingleShot(true);
   connect(&m_timer,SIGNAL(timeout()),this,SLOT(evenementTimer()));
 
