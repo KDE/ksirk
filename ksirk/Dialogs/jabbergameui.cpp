@@ -158,7 +158,8 @@ void KsirkJabberGameWidget::slotJabberConnectButtonClicked()
     case JabberClient::MaxUsersReachedForThisMuc:
       kError() << "You can't join this Multi-User Chat because it is full";
       break;
-    default:;
+    default:
+      kError() << "Unknown error";
   }
   
 }

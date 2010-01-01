@@ -29,12 +29,12 @@
 </MenuBar>
 
 <ToolBar name="mainToolBar" noMerge="1"><text>Main Toolbar</text>
-  <Action name="game_new" />
+  <!--Action name="game_new" />
   <Action name="game_jabber" append="new_merge" />
   <Action name="game_new_socket" append="new_merge" />
   <Action name="game_join_socket" append="new_merge" />
   <Separator/>
-  <Action name="game_load" />
+  <Action name="game_load" /-->
   <Action name="game_save" />
   <Separator/>
   <Action name="view_zoom_in" />

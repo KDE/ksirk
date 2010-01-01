@@ -275,7 +275,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_timer.setSingleShot(true);
   connect(&m_timer,SIGNAL(timeout()),this,SLOT(evenementTimer()));
 
-  struct utsname utsBuf;
+  m_initialPresence = XMPP::Status ( "", "", 5, true );
 
   kDebug() << "Connecting Jabber signals";
   QObject::connect ( m_jabberClient, SIGNAL ( csDisconnected () ), this, SLOT ( slotCSDisconnected () ) );
@@ -304,6 +304,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
 //     m_jabberClient->setUseSSL ( true );
   m_jabberClient->setAllowPlainTextPassword ( true );
 
+  struct utsname utsBuf;
   uname (&utsBuf);
   m_jabberClient->setClientName ("KsirK");
   m_jabberClient->setClientVersion (KGlobal::mainComponent().aboutData()->version ());
@@ -319,8 +320,6 @@ KGameWindow::KGameWindow(QWidget* parent) :
   identity.type = "pc";
   identity.name = "KsirK";
   m_jabberClient->setDiscoIdentity(identity);
-
-  m_initialPresence = XMPP::Status ( "", "", 5, true );
 
   connect (this, SIGNAL(newJabberGame(const QString&, int, const QString&)), m_automaton, SIGNAL(newJabberGame(const QString&, int, const QString&)));
 
