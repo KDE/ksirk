@@ -1,4 +1,6 @@
-  * Use kwallet to store password(s)
+  * Make Jabber error messages user visible
+  * When conquering a country, it should be invaded with at least the number of armies used to attack
+  * [DONE] Use kwallet to store password(s)
 
 Before KDE4.3:
   * Correct Arena bugs
@@ -7,9 +9,9 @@ Before KDE4.3:
   * Use widgets on graphics view for invasion slider ?
   * Correct size of the right panel
   * Refactor the right panel
-  * Don't show Invasion slider when game is won
+  * [DONE] Don't show Invasion slider when game is won
   * Rewrite AI code or at least correct most problems related in bug #170777. Volunteers wanted!
-  * Previous/Next in start new game as described in bug #170774
+  * [DONE] Previous/Next in start new game as described in bug #170774
   * Menu entry to start the skin editor from the game
   * Boost (speed up) playing over Jabber
   * Skin editor: documentation

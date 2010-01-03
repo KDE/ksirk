@@ -237,11 +237,6 @@ public:
     */
   bool haveMovingArmies() const {return !m_animSpritesGroups.empty();}
 
-  void setNbAttack (int nb);
-
-  void setNbDefense (int nb);
-
-
 /************** END OF METHODS DEFINED IN gestionSprites.cpp *****************/
 
   bool setupOnePlayer();

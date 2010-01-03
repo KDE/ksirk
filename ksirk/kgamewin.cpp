@@ -801,8 +801,8 @@ bool KGameWindow::attackEnd()
     }
 
     m_secondCountry-> owner(currentPlayer());
-    m_secondCountry-> nbArmies(1);
-    m_firstCountry-> decrNbArmies();
+    m_secondCountry-> nbArmies(currentPlayer()->getNbAttack());
+    m_firstCountry-> decrNbArmies(currentPlayer()->getNbAttack());
     m_scene_world-> update();
     if (m_firstCountry->nbArmies() > 1)
     {
@@ -998,58 +998,6 @@ void KGameWindow::resolveAttack()
 //   kDebug() << "(" << A1<<", "<<A2<<", "<<A3<<") <-> ("<<D1<<", "<<D2<<")" ;
 //   kDebug() << "Attacker loses " << NKA<<" armies; Defender loses "<<NKD<<" armies." ;
   
-  //KMessageParts messageParts;
-  if (currentPlayer()-> getNbAttack() == 1)
-  {
-   // messageParts <<m_dices[Red][A1-1]<<"  "<<m_dices[Blue][D1-1];
-  }
-  else if (currentPlayer()-> getNbAttack() == 2 && m_secondCountry-> owner()-> getNbDefense() == 1) 
-  {
-   // messageParts <<m_dices[Red][A1-1]<<" "<<m_dices[Red][A2-1]
-           // <<"  "<<m_dices[Blue][D1-1];
-  }
-  else if (currentPlayer()-> getNbAttack() == 2 && m_secondCountry-> owner()-> getNbDefense() == 2) 
-  {
-   // messageParts <<m_dices[Red][A1-1]<<" "<<m_dices[Red][A2-1]
-          //  <<"  "<<m_dices[Blue][D1-1]<<"  "<<m_dices[Blue][D2-1];
-  }
-  else if (currentPlayer()-> getNbAttack() == 3 && m_secondCountry-> owner()-> getNbDefense() == 1)
-  {
-  //  messageParts <<m_dices[Red][A1-1]<<" "<<m_dices[Red][A2-1]<<" "<<m_dices[Red][A3-1]<<"  "<<m_dices[Blue][D1-1];
-  }
-  else if (currentPlayer()-> getNbAttack() == 3 && m_secondCountry-> owner()-> getNbDefense() == 2) 
-  {
-    kDebug() << "3 attacks and 2 defenses: A1 A2 A3 D1 D2 = ["<<A1<<","<<A2<<","<<A3<<","<<D1<<","<<D2<<"]";
-    kDebug() << "m_dices[Red] size= "<< m_dices[Red].size();
-    kDebug() << "m_dices[Blue] size= "<< m_dices[Blue].size();
-  /*  messageParts << m_dices[Red][A1-1] 
-            << " " << m_dices[Red][A2-1] 
-            << " " << m_dices[Red][A3-1]
-            << " " << m_dices[Blue][D1-1] 
-            << " " << m_dices[Blue][D2-1];*/
-  }
-  //broadcastChangeItem(messageParts, ID_NO_STATUS_MSG);
-  if (NKA > 0)
-  {
-   // QPixmap pm = currentPlayer()->getFlag()->image(0);
-   /* KMessageParts messagePartsA;
-    messagePartsA << I18N_NOOP("The attacker <font color=\"red\">%1</font> (")
-                 << m_firstCountry->name() << pm
-                 << I18N_NOOP("%1) <font color=\"red\">loses %2 armies</font>.") 
-                 << currentPlayer()-> name() << QString::number(NKA);
-    broadcastChangeItem(messagePartsA, ID_NO_STATUS_MSG);*/
-  }
-  if (NKD > 0)
-  {
-   // QPixmap pm = m_secondCountry->owner()->getFlag()->image(0);
-    /*KMessageParts messagePartsD;
-    messagePartsD << I18N_NOOP("The defender <font color=\"blue\">%1</font> (") 
-                 << m_secondCountry->name() << pm 
-                 << I18N_NOOP("%1) <font color=\"blue\">loses %2 armies</font>.") 
-                 << m_secondCountry->owner()-> name() << QString::number(NKD);
-    broadcastChangeItem(messagePartsD, ID_NO_STATUS_MSG);*/
-  }
-
   QByteArray buffer3;
   QDataStream stream3(&buffer3, QIODevice::WriteOnly);
   stream3 << (quint32)A1 << (quint32)A2 << (quint32)A3 << (quint32)D1 << (quint32)D2 << (quint32)NKA << (quint32)NKD << (quint32)(secondOldNbArmies-NKD < 1);
