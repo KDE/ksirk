@@ -73,7 +73,7 @@ public:
     * Saves a XML representation of this continent for game saving purpose
     * @param xmlStream The stream to write on
     */
-  void saveXml(std::ostream& xmlStream);
+  void saveXml(QTextStream& xmlStream);
 
   //@{
   /** Accessors to the unique integer identifier of this continent. */

@@ -234,20 +234,20 @@ bool Player::isAI() const
     return false;
 }
 
-void Player::saveXml(std::ostream& xmlStream)
+void Player::saveXml(QTextStream& xmlStream)
 {
   xmlStream << "<player ai=\"false\" ";
   innerSaveXml(xmlStream);
-  xmlStream << " />" << std::endl;
+  xmlStream << " />" << endl;
 }
 
-void Player::innerSaveXml(std::ostream& xmlStream)
+void Player::innerSaveXml(QTextStream& xmlStream)
 {
-  QString theName = name().toUtf8();
+  QString theName = name();
   theName = theName.replace("&","&amp;");
   theName = theName.replace("<","&lt;");
   theName = theName.replace(">","&gt;");
-  xmlStream << " name=\"" << theName.toUtf8().data() << "\"";
+  xmlStream << " name=\"" << theName << "\"";
   xmlStream << " nbCountries=\"" << m_nbCountries << "\"";
   xmlStream << " nbAvailArmies=\"" << m_distributionData.nbToPlace() << "\"";
   xmlStream << " nbAttack=\"" << m_nbAttack << "\"";
@@ -256,12 +256,12 @@ void Player::innerSaveXml(std::ostream& xmlStream)
   nationName = nationName.replace("&","&amp;");
   nationName = nationName.replace("<","&lt;");
   nationName = nationName.replace(">","&gt;");
-  xmlStream << " nation=\"" << nationName.toUtf8().data() << "\"";
-  xmlStream << " password=\"" << KStringHandler::obscure(m_password.value()).toUtf8().data() << "\"";
+  xmlStream << " nation=\"" << nationName << "\"";
+  xmlStream << " password=\"" << KStringHandler::obscure(m_password.value()) << "\"";
   xmlStream << " local=\"" << (isVirtual()?"false":"true") << "\"";
 }
 
-bool   Player::load (QDataStream &stream)
+bool Player::load (QDataStream &stream)
 {
 //   kDebug() << "Player::load" << endl;
   if (!KPlayer::load(stream)) return false;

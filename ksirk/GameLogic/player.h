@@ -130,7 +130,7 @@ public:
     * Saves this player as XML. Used in game saving.
     * @param xmlStream The stream on which to write the XML
     */
-  virtual void saveXml(std::ostream& xmlStream);
+  virtual void saveXml(QTextStream& xmlStream);
   
   //@{
   /** Functions used to write and read data to and from a stream for network 
@@ -195,7 +195,7 @@ protected:
     * Saving of private data 
     * @param xmlStream The stream on which to write the XML
     */
-  void innerSaveXml(std::ostream& xmlStream);
+  void innerSaveXml(QTextStream& xmlStream);
   
   GameAutomaton* m_automaton;
   /**

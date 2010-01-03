@@ -29,7 +29,7 @@
 #include <QTimer>
 
 #include <limits>
-#include <iostream>
+#include <QTextStream>
 
 class QSvgRenderer;
 
@@ -238,7 +238,7 @@ public:
     * Saves a XML representation of the sprite for game saving purpose
     * @param xmlStream The stream to write on
     */
-  virtual void saveXml(std::ostream& xmlStream);
+  virtual void saveXml(QTextStream& xmlStream);
   
   /**
     * Retrieves the numFrame's frame image of this sprite in its current 

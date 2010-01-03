@@ -97,13 +97,13 @@ const Player* Continent::owner() const
   return owner;
 }
 
-void Continent::saveXml(std::ostream& xmlStream)
+void Continent::saveXml(QTextStream& xmlStream)
 {
-  QString name = m_name.toUtf8();
+  QString name = m_name;
   name = name.replace("&","&amp;");
   name = name.replace("<","&lt;");
   name = name.replace(">","&gt;");
-  xmlStream << "<continent name=\""<<name.toUtf8().data()<<"\" bonus=\""<<bonus<<"\" >" << std::endl;
+  xmlStream << "<continent name=\""<<name<<"\" bonus=\""<<bonus<<"\" >" << endl;
   QList< Country* >::const_iterator it, it_end;
   it = m_members.constBegin(); it_end = m_members.constEnd();
   for (; it != it_end; it++)
@@ -111,7 +111,7 @@ void Continent::saveXml(std::ostream& xmlStream)
     (*it)->saveXml(xmlStream);
   }
 
-  xmlStream << "</continent>" << std::endl;
+  xmlStream << "</continent>" << endl;
 }
 
 /** Returns the list of countries owned by @ref player */

@@ -23,7 +23,7 @@
 #define NATIONALITY_H
 
 #include <QString>
-#include <iostream>
+#include <QTextStream>
 
 namespace Ksirk
 {
@@ -66,7 +66,7 @@ public:
     * Saves a XML representation of the nationality for game saving purpose
     * @param xmlStream The stream to write on
     */
-  void saveXml(std::ostream& xmlStream);
+  void saveXml(QTextStream& xmlStream);
 
 private: // Private attributes
 

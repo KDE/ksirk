@@ -502,34 +502,17 @@ unsigned int ONU::getNbCountries() const
     return(countries.size());
 }
 
-void ONU::saveXml(std::ostream& xmlStream)
+void ONU::saveXml(QTextStream& xmlStream)
 {
-  xmlStream << "<ONU file=\"" << m_configFileName.toUtf8().data() << "\" >" << std::endl;
+  xmlStream << "<ONU file=\"" << m_configFileName << "\" >" << endl;
 
-  xmlStream << "<countries>" << std::endl;
+  xmlStream << "<countries>" << endl;
   foreach (Country *c, countries)
   {
       c->saveXml(xmlStream);
   }
-  xmlStream << "</countries>" << std::endl;
-/*
-  xmlStream << "<nationalities>" << std::endl;
-  for (unsigned int i = 0 ; i < nationalities.size(); i++)
-  {
-      Nationality *n = nationalities.at(i);
-      n->saveXml(xmlStream);
-  }
-  xmlStream << "</nationalities>" << std::endl;
-
-  xmlStream << "<continents>" << std::endl;
-  for (unsigned int i = 0 ; i < continents.size(); i++)
-  {
-      Continent *c = continents.at(i);
-      c->saveXml(xmlStream);
-  }
-  xmlStream << "</continents>" << std::endl;
-*/
-  xmlStream << "</ONU>" << std::endl;  
+  xmlStream << "</countries>" << endl;
+  xmlStream << "</ONU>" << endl;  
 }
 
 unsigned int ONU::width() const

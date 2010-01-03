@@ -20,7 +20,7 @@
 #define KSIRK_GAMELOGICGOAL_H
 
 // #include <set>
-#include <iostream>
+#include <QTextStream>
 
 #include <qdatastream.h>
 
@@ -150,7 +150,7 @@ public:
     * Saves a XML representation of the goal for game saving purpose
     * @param xmlStream The stream to write on
     */
-  void saveXml(std::ostream& xmlStream) const;
+  void saveXml(QTextStream& xmlStream) const;
   
   /**
     * Builds this goal's description.

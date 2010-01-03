@@ -79,7 +79,7 @@ public:
     * Saves this AI player as XML. Used in game saving.
     * @param xmlStream The stream on which to write the XML
     */
-  virtual void saveXml(std::ostream& xmlStream);
+  virtual void saveXml(QTextStream& xmlStream);
 
   bool isRunning () const {return m_thread.isRunning();}
 

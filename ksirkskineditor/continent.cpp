@@ -42,21 +42,4 @@ Continent::~Continent()
 {
 }
 
-// void Continent::saveXml(std::ostream& xmlStream)
-// {
-//   QString name = m_name.toUtf8();
-//   name = name.replace("&","&amp;");
-//   name = name.replace("<","&lt;");
-//   name = name.replace(">","&gt;");
-//   xmlStream << "<continent name=\""<<name.toUtf8().data()<<"\" bonus=\""<<m_bonus<<"\" >" << std::endl;
-//   QList< Country* >::const_iterator it, it_end;
-//   it = m_members.begin(); it_end = m_members.end();
-//   for (; it != it_end; it++)
-//   {
-//     (*it)->saveXml(xmlStream);
-//   }
-// 
-//   xmlStream << "</continent>" << std::endl;
-// }
-
 } // closing namespace KsirkSkinEditor

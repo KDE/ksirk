@@ -174,19 +174,6 @@ public:
   const QList< Country* >& neighbours() const;
   //@}
 
-  /**
-    * Saves a XML representation of the country for game saving purpose
-    * @param xmlStream The stream to write on
-    */
-//   void saveXml(std::ostream& xmlStream);
-
-  //@{
-  /** Accessors to this country's unique integer identifier. */
-/*  unsigned int id() const {return m_id;}
-  unsigned int id() {return m_id;}
-  void id(unsigned int id) {m_id = id;}*/
-  //@}
-
   void highlight(QGraphicsScene* scene, ONU* onu, const QColor& color = Qt::white, qreal opacity = 1.0);
 
   void clearHighlighting();

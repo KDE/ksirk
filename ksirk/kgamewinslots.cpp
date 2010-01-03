@@ -475,7 +475,10 @@ void KGameWindow::slotSaveGame()
     }
     if (!m_fileName.isEmpty())
     {
-      std::ofstream ofs(m_fileName.toUtf8().data());
+      QFile file(m_fileName);
+      file.open(QIODevice::WriteOnly);
+      QTextStream ofs(&file);
+      ofs.setCodec("UTF-8");
       saveXml(ofs);
       m_message->setMessageTimeout(3000);
       m_message->showMessage(i18n("Game saved to %1",m_fileName),

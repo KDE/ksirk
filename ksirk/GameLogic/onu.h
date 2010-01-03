@@ -36,10 +36,7 @@
 #include "nationality.h"
 #include "kgamewin.h"
 #include "gameautomaton.h"
-
-
-
-#include <iostream>
+#include <QTextStream>
 
 namespace Ksirk
 {
@@ -166,7 +163,7 @@ public:
     * Saves a XML representation of the world for game saving purpose
     * @param xmlStream The stream to write on
     */
-  void saveXml(std::ostream& xmlStream);
+  void saveXml(QTextStream& xmlStream);
   
   /** 
     * Returns the nation named "name" ; 0 in case there is no such nation 

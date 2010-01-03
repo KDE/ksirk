@@ -638,7 +638,7 @@ void AnimSprite::setState(AnimSprite::State newState)
     myState = newState;
 }
 
-void AnimSprite::saveXml(std::ostream& /*xmlStream*/)
+void AnimSprite::saveXml(QTextStream& /*xmlStream*/)
 {
 }
 

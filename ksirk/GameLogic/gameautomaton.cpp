@@ -937,9 +937,9 @@ QString GameAutomaton::stateName() const
   }
 }
 
-void GameAutomaton::saveXml(::std::ostream& xmlStream)
+void GameAutomaton::saveXml(QTextStream& xmlStream)
 {
-    xmlStream << "<gameautomaton state=\"" << GameStateNames[m_state] << "\" />" << ::std::endl;
+    xmlStream << "<gameautomaton state=\"" << GameStateNames[m_state] << "\" />" << endl;
 }
 
 const QString& GameAutomaton::skin() const

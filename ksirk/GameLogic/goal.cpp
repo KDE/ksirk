@@ -420,36 +420,34 @@ QDataStream& operator>>(QDataStream& stream, Goal& goal)
   return stream;
 }
 
-void Goal::saveXml(std::ostream& xmlStream) const
+void Goal::saveXml(QTextStream& xmlStream) const
 {
   
   xmlStream << "<goal player=\"";
   if (m_player != 0)
   {
-    xmlStream << m_player->name().toUtf8().data();
+    xmlStream << m_player->name();
   }
-  xmlStream << "\" type=\"" << m_type << "\" description=\"" << m_description.toUtf8().data();
-  xmlStream << "\" nbCountries=\"" << m_nbCountries << "\" nbArmiesByCountry=\"" << m_nbArmiesByCountry << "\">\n";
-  xmlStream << "<continents>\n";
+  xmlStream << "\" type=\"" << m_type << "\" description=\"" << m_description;
+  xmlStream << "\" nbCountries=\"" << m_nbCountries << "\" nbArmiesByCountry=\"" << m_nbArmiesByCountry << "\">" << endl;
+  xmlStream << "<continents>" << endl;
   QList<QString>::ConstIterator itc, itc_end;
   itc = continents().constBegin(); itc_end = continents().constEnd();
   for (; itc != itc_end; itc++)
   {
     QString name = (*itc==QString())?"":(*itc);
-    xmlStream << "<continent name=\"" << name.toUtf8().data() << "\"/>\n";
+    xmlStream << "<continent name=\"" << name << "\"/>" << endl;
   }
-  xmlStream << "</continents>\n";
-  xmlStream << "<players>\n";
+  xmlStream << "</continents>" << endl;
+  xmlStream << "<players>" << endl;
   QList<QString>::ConstIterator itp, itp_end;
   itp = m_players.constBegin(); itp_end = m_players.constEnd();
   for (; itp != itp_end; itp++)
   {
-    xmlStream << "<player name=\"" << (*itp).toUtf8().data() << "\"/>\n";
+    xmlStream << "<player name=\"" << (*itp) << "\"/>" << endl;
   }
-  xmlStream << "</players>\n";
-  xmlStream << "</goal>\n";
-  
-    
+  xmlStream << "</players>" << endl;
+  xmlStream << "</goal>" << endl;
 }
 
 }

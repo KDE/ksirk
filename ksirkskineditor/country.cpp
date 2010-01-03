@@ -182,17 +182,6 @@ const QList< Country* >& Country::neighbours() const
   return m_neighbours;
 }
 
-// void Country::saveXml(std::ostream& xmlStream)
-// {
-//   QString name = m_name.toUtf8();
-//   name = name.replace("&","&amp;");
-//   name = name.replace("<","&lt;");
-//   name = name.replace(">","&gt;");
-//   xmlStream << "<country name=\""<<name.toUtf8().data()<<"\" owner=\"";
-//   xmlStream << "none";
-//   xmlStream << "\" />" << std::endl;
-// }
-
 void Country::highlight(QGraphicsScene* scene, ONU* onu, const QColor& color, qreal opacity)
 {
   kDebug() << m_name << color << opacity;

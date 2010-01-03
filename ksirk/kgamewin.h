@@ -905,7 +905,7 @@ private Q_SLOTS:
 private: // Private methods
   void createDefenseDialog();
   void moveArmies(GameLogic::Country& src, GameLogic::Country& dest, unsigned int nb);
-  void saveXml(std::ostream& xmlStream);
+  void saveXml(QTextStream& xmlStream);
   void loadDices();
   QPixmap buildDice(const QString& id);
   void setupPopupMessage();

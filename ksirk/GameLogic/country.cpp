@@ -36,9 +36,7 @@
 #include <QDataStream>
 #include <QBitmap>
 #include <QGraphicsSvgItem>
-
-#include <iostream>
-// #include <stdexcept>
+#include <QTextStream>
 
 namespace Ksirk
 {
@@ -442,29 +440,28 @@ const QPointF& Country::pointFor(const AnimSprite* sprite)
   }
 }
 
-void Country::saveXml(std::ostream& xmlStream)
+void Country::saveXml(QTextStream& xmlStream)
 {
-  QString name = m_name.toUtf8();
+  QString name = m_name;
   name = name.replace("&","&amp;");
   name = name.replace("<","&lt;");
   name = name.replace(">","&gt;");
-  xmlStream << "<country name=\""<<name.toUtf8().data()<<"\" owner=\"";
+  xmlStream << "<country name=\""<<name<<"\" owner=\"";
   if (m_belongsTo == 0)
     xmlStream << "none";
   else
   {
-    QString pname = m_belongsTo->name().toUtf8();
+    QString pname = m_belongsTo->name();
     pname = pname.replace("&","&amp;");
     pname = pname.replace("<","&lt;");
     pname = pname.replace(">","&gt;");
-    xmlStream << pname.toUtf8().data();
+    xmlStream << pname;
   }
   xmlStream << "\" ";
 
   xmlStream << "nbArmies=\""<<nbArmies() << "\" ";
-//   xmlStream << "nbArmiesAdded=\""<<nbAddedArmies() << "\" ";
 
-  xmlStream << " />" << std::endl;
+  xmlStream << " />" << endl;
 
 }
 

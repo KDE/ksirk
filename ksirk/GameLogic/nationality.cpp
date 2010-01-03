@@ -42,13 +42,13 @@ const QString& Nationality::flagFileName() const
     return m_flagFileName;
 }
 
-void Nationality::saveXml(std::ostream& xmlStream)
+void Nationality::saveXml(QTextStream& xmlStream)
 {
-  QString name = m_name.toUtf8();
+  QString name = m_name;
   name = name.replace("&","&amp;");
   name = name.replace("<","&lt;");
   name = name.replace(">","&gt;");
-  xmlStream << "<nationality name=\"" << m_name.toUtf8().data() << "\" flag=\"" << m_flagFileName.toUtf8().data() << "\" />" << std::endl;  
+  xmlStream << "<nationality name=\"" << m_name << "\" flag=\"" << m_flagFileName << "\" />" << endl;  
 }
 
 const QString& Nationality::name() const

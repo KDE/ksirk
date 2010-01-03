@@ -35,8 +35,7 @@
 #include <QString>
 #include <QSvgRenderer>
 #include <QMap>
-
-#include <iostream>
+#include <QTextStream>
 
 namespace Ksirk {
   
@@ -208,7 +207,7 @@ public:
     * Saves all the game parameters with a XML format
     * @param xmlStream the stream on which to write the XML
     */
-  void saveXml(std::ostream& xmlStream);
+  void saveXml(QTextStream& xmlStream);
 
   /** 
     * Retrives the name of the current skin.

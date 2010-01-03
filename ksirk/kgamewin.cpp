@@ -2643,37 +2643,31 @@ bool KGameWindow::actionNewGame(GameAutomaton::NetworkGameType socket)
   return false;
 }
 
-void KGameWindow::saveXml(std::ostream& xmlStream)
+void KGameWindow::saveXml(QTextStream& xmlStream)
 {
-  xmlStream << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" << std::endl;
-  xmlStream << "<ksirkSavedGame formatVersion=\"" << SAVE_GAME_FILE_FORMAT_VERSION << "\" >" << std::endl;
-  xmlStream 
-    << "<game skin=\"" 
-    << m_automaton->skin().toUtf8().data()
-    << "\" state=\"" 
-    << m_automaton->state()
-    << "\" >" 
-    << std::endl;
+  xmlStream << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" << endl;
+  xmlStream << "<ksirkSavedGame formatVersion=\"" << SAVE_GAME_FILE_FORMAT_VERSION << "\" >" << endl;
+  xmlStream << "<game skin=\"" << m_automaton->skin() << "\" state=\"" << m_automaton->state() << "\" >" << endl;
   m_theWorld->saveXml(xmlStream);
-  xmlStream << "<players nb=\""<<m_automaton->playerList()->count()<<"\">" << std::endl;
+  xmlStream << "<players nb=\""<<m_automaton->playerList()->count()<<"\">" << endl;
   PlayersArray::iterator it = m_automaton->playerList()->begin();
   PlayersArray::iterator it_end = m_automaton->playerList()->end();
   for (; it != it_end; it++)
   {
     static_cast<Player*>(*it)->saveXml(xmlStream);
   }
-  xmlStream << "</players>" << std::endl;
+  xmlStream << "</players>" << endl;
   Player* player = m_automaton->currentPlayer();
   if (player)
   {
-    QString name = player->name().toUtf8();
+    QString name = player->name();
     name = name.replace('&',"&amp;");
     name = name.replace('<',"&lt;");
     name = name.replace('>',"&gt;");
-    xmlStream << "<currentPlayer name=\"" << name.toUtf8().data() << "\" />" << std::endl;
+    xmlStream << "<currentPlayer name=\"" << name << "\" />" << endl;
   }
   else
-    xmlStream << "<currentPlayer name=\"\" />" << std::endl;
+    xmlStream << "<currentPlayer name=\"\" />" << endl;
   xmlStream << "<goals>\n";
   it = m_automaton->playerList()->begin();
   it_end = m_automaton->playerList()->end();
@@ -2682,8 +2676,8 @@ void KGameWindow::saveXml(std::ostream& xmlStream)
     static_cast<Player*>(*it)->goal().saveXml(xmlStream);
   }
   xmlStream << "</goals>\n";
-  xmlStream << "</game>" << std::endl;
-  xmlStream << "</ksirkSavedGame>" << std::endl;
+  xmlStream << "</game>" << endl;
+  xmlStream << "</ksirkSavedGame>" << endl;
 }
 
 /**

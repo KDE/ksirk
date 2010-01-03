@@ -645,11 +645,11 @@ void AIPlayer::nextPlayerAction()
   stop();
 }
 
-void AIPlayer::saveXml(std::ostream& xmlStream)
+void AIPlayer::saveXml(QTextStream& xmlStream)
 {
   xmlStream << "<player ai=\"true\" ";
   innerSaveXml(xmlStream);
-  xmlStream << " />" << std::endl;
+  xmlStream << " />" << endl;
 }
 
 /** 

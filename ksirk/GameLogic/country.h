@@ -255,7 +255,7 @@ public:
     * Saves a XML representation of the country for game saving purpose
     * @param xmlStream The stream to write on
     */
-  void saveXml(std::ostream& xmlStream);
+  void saveXml(QTextStream& xmlStream);
 
   /** 
     * Transmit data about this country on the network, through the given 
