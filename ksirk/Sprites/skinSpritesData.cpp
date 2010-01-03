@@ -81,7 +81,7 @@ void SkinSpritesData::skin(const QString& newSkin)
 
 int SkinSpritesData::intData(const QString& name) const
 {
-  std::map<QString, int>::const_iterator it = m_intDatas.find(name);
+  QMap<QString, int>::const_iterator it = m_intDatas.find(name);
   if (it == m_intDatas.end())
   {
     QString msg;
@@ -91,13 +91,13 @@ int SkinSpritesData::intData(const QString& name) const
   }
   else
   {
-    return (*it).second;
+    return *it;
   }
 }
 
 const QString& SkinSpritesData::strData(const QString& name) const
 {
-  std::map<QString, QString>::const_iterator it = m_strDatas.find(name);
+  QMap<QString, QString>::const_iterator it = m_strDatas.find(name);
   if (it == m_strDatas.end())
   {
     QString msg;
@@ -107,7 +107,7 @@ const QString& SkinSpritesData::strData(const QString& name) const
   }
   else
   {
-    return (*it).second;
+    return *it;
   }
 }
     

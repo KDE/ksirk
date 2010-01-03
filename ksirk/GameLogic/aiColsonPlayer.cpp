@@ -71,7 +71,7 @@ AIColsonPlayer::~AIColsonPlayer()
 // Virtual functions reimplemented from AIPlayer
 //////////////////////////////////////////////////////////
 
-std::pair< const Country*, const Country* > AIColsonPlayer::chooseBelligerant()
+QPair< const Country*, const Country* > AIColsonPlayer::chooseBelligerant()
 {
   kDebug();
   Fortify();
@@ -86,7 +86,7 @@ std::pair< const Country*, const Country* > AIColsonPlayer::chooseBelligerant()
   {
     Attack_SrcCountry = -1;
     Attack_DestCountry = -1;
-    return std::make_pair(static_cast<Country*>(0), static_cast<Country*>(0));
+    return qMakePair<const Country*, const Country*>(static_cast<Country*>(0), static_cast<Country*>(0));
   }
 
   if ( (Attack_SrcCountry>=0) && (Attack_SrcCountry<m_world->getCountries().size() ) )
@@ -94,7 +94,7 @@ std::pair< const Country*, const Country* > AIColsonPlayer::chooseBelligerant()
   if ( (Attack_DestCountry>=0) && (Attack_DestCountry<m_world->getCountries().size() ) )
     dest = m_world->getCountries().at(Attack_DestCountry);
 //   kDebug() << "chose belligerants " << src << " and " << dest;
-  return std::make_pair(src,dest);
+  return qMakePair<const Country*, const Country*>(src,dest);
 }
 
 /**

@@ -610,7 +610,7 @@ void ONU::buildMap()
       QRect countryNameRect = painter.fontMetrics().boundingRect(countryName);
 //       kDebug() << countryName << "countryNameRect=" << countryNameRect;
 //       kDebug() << "draw at" << int( (country->centralPoint().x()*m_zoom) - (countryNameRect.width()/2) ) <<
-      int( (country->centralPoint().y()*m_zoom) /*- (countryNameRect.height()/2)*/ );
+//      int( (country->centralPoint().y()*m_zoom) - (countryNameRect.height()/2) );
       
       painter.drawText(
         int( (country->centralPoint().x()*m_zoom) - (countryNameRect.width()/2) ),

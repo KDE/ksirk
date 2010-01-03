@@ -36,8 +36,6 @@ m_automaton(automaton), m_skin(""), m_worlds(), m_players(),
   KStandardDirs *m_dirs = KGlobal::dirs();
   QStringList skinsDirs = m_dirs->findDirs("appdata","skins");
   kDebug() << skinsDirs;
-  uint skinNum = 0;
-  uint currentSkinNum = 0;
   foreach (const QString &skinsDirName, skinsDirs)
   {
     //   QString skinsDirName = m_dirs->findResourceDir("appdata", "skins/skinsdir");
@@ -145,7 +143,7 @@ QDataStream& operator>>(QDataStream& stream, NewGameSetup& ngs)
   quint32 players;
   stream >> players;
   kDebug() << "nb players" << players;
-  for (int i = 0; i < players; i++)
+  for (quint32 i = 0; i < players; i++)
   {
     QString name;
     stream >> name;

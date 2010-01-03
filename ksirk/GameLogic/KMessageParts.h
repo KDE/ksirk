@@ -22,7 +22,7 @@
 #ifndef KSIRK_GAMELOGICKMESSAGEPARTS_H
 #define KSIRK_GAMELOGICKMESSAGEPARTS_H
 
-#include <deque>
+#include <QList>
 #include <QString>
 #include <QPixmap>
 
@@ -81,9 +81,9 @@ public:
     bool curIsStr() { return (*m_order_it == Text);}
     
   private:
-    std::deque<QPixmap>::iterator m_pixmaps_it;
-    std::deque<QString>::iterator m_strings_it;
-    std::deque<ElemType>::iterator m_order_it;
+    QList<QPixmap>::iterator m_pixmaps_it;
+    QList<QString>::iterator m_strings_it;
+    QList<ElemType>::iterator m_order_it;
   };
   friend class iterator;
 
@@ -134,9 +134,9 @@ public:
   //@}
 
 private:
-  std::deque<QPixmap> m_pixmaps;
-  std::deque<QString> m_strings;
-  std::deque<ElemType> m_order;
+  QList<QPixmap> m_pixmaps;
+  QList<QString> m_strings;
+  QList<ElemType> m_order;
 };
 
 } // closing namespace GameLogic

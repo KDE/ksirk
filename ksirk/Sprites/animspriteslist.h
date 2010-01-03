@@ -24,8 +24,7 @@
 #include "animsprite.h"
 #include "armysprite.h"
 
-#include <iostream>
-
+#include <QTextStream>
 #include <QPoint>
 #include <QList>
 #include <QObject>
@@ -87,7 +86,7 @@ public:
     * Saves all elements of this list with a XML format
     * @param xmlStream the stream on which to write the XML
     */
-  void saveXmlAll(std::ostream& xmlStream);
+  void saveXmlAll(QTextStream& xmlStream);
 } ;
 
 template < typename SpriteType >
@@ -194,7 +193,7 @@ void AnimSpritesList< SpriteType >::moveAllToDestinationNow(bool clear)
 }
 
 template < typename SpriteType >
-void AnimSpritesList< SpriteType >::saveXmlAll(std::ostream& xmlStream)
+void AnimSpritesList< SpriteType >::saveXmlAll(QTextStream& xmlStream)
 {
   typename AnimSpritesList< SpriteType >::iterator it, it_end;
   it = QList< SpriteType* >::begin();
@@ -202,7 +201,7 @@ void AnimSpritesList< SpriteType >::saveXmlAll(std::ostream& xmlStream)
   while (it != it_end)
   {
     SpriteType* sp = (*it);
-    sp-> saveXml(xmlStream);
+    sp->saveXml(xmlStream);
     it++;
   }
 }

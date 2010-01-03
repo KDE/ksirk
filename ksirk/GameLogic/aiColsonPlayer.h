@@ -24,15 +24,8 @@
 #define KSIRK_GAMELOGIC_AICOLSONPLAYER_H
 
 #include "aiplayer.h"
-// #include "aiClient.h"
-// #include "client.h"
-// #include "debug.h"
-// #include "types.h"
-// #include "riskgame.h"
-// #include "game.h"
-// #include "utils.h"
 
-#include <map>
+#include <QMap>
 
 #define MAX_CARDS       10
 
@@ -74,7 +67,7 @@ public:
     * Returns a pair of countries where the attacker have enough armies to 
     * attack and the defender is a ennemy neighbour of the attacker.
     */
-  virtual std::pair< const Country*, const Country* > chooseBelligerant();
+  virtual QPair< const Country*, const Country* > chooseBelligerant();
 
   /**
     * Chooses the next action. In the current basic setting, chooses at random

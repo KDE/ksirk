@@ -52,9 +52,6 @@
 #include <kgame/kmessageserver.h>
 #include <kgame/kgamechat.h>
 
-#include <sstream>
-#include <iostream>
-
 #include <errno.h>
 #include <sys/types.h>
 #include <signal.h>
@@ -245,7 +242,7 @@ Player* GameAutomaton::getAnyLocalPlayer()
 
 GameAutomaton::GameState GameAutomaton::run()
 {
-//   kDebug() << "(KGame running=" <<  (gameStatus()==KGame::Run) << ")" << endl;
+//   kDebug() << "(KGame running=" <<  (gameStatus()==KGame::Run) << ")";
   if (m_game == 0 || gameStatus() == KGame::Pause)
   {
     QTimer::singleShot(200, this, SLOT(run()));
@@ -264,10 +261,10 @@ GameAutomaton::GameState GameAutomaton::run()
     m_events.pop_front();
   }
 
-  kDebug() << "Handling " << stateName() << " ; " << event << " ; " << point << endl;
+//   kDebug() << "Handling " << stateName() << " ; " << event << " ; " << point;
   if (currentPlayer())
   {
-    kDebug() << "current player=" << currentPlayer()->name() << " is active=" << currentPlayer()->isActive() << endl;
+    kDebug() << "current player=" << currentPlayer()->name() << " is active=" << currentPlayer()->isActive();
   }
   if (event == "requestForAck")
   {
@@ -338,23 +335,7 @@ GameAutomaton::GameState GameAutomaton::run()
     }
     break;
   case ATTACK:
-    /*if  (event == "actionLButtonDown") 
-    {
-      if  ( m_game->attacker(point) )*/ 
         state(ATTACK2);
-      /*else
-        state(WAIT);
-    }
-    else if (event == "actionCancel")
-    {
-      m_game-> cancelAction();
-      state(WAIT);
-    }
-    else
-    {
-//        if (!event.isEmpty())
-//          kDebug() << "Unhandled event " << event << " during handling of " << stateName() << endl;
-    }*/
     break;
   case ATTACK2:
     kDebug() << "Handling ATTACK2";
@@ -589,7 +570,7 @@ GameAutomaton::GameState GameAutomaton::run()
     else
     {
       //        if (!event.isEmpty())
-//          std::cerr << "Unhandled event " << event << " during handling of " << stateName() << std::endl;
+//          kError() << "Unhandled event " << event << " during handling of " << stateName();
     }
   break;
   case SHIFT2:
@@ -650,7 +631,7 @@ GameAutomaton::GameState GameAutomaton::run()
     }
     else
     {
-      //std::cerr << "Unhandled event " << event << " during handling of " << stateName() << std::endl;
+      //kError() << "Unhandled event " << event << " during handling of " << stateName();
     }
   break;
   case WAIT_RECYCLING:
@@ -750,7 +731,7 @@ GameAutomaton::GameState GameAutomaton::run()
     else
     {
       //        if (!event.isEmpty())
-//          std::cerr << "Unhandled event " << event << " during handling of " << stateName() << std::endl;
+//          kError() << "Unhandled event " << event << " during handling of " << stateName();
     }
     // other case : state doesn't change
     break;
@@ -926,10 +907,11 @@ QString GameAutomaton::stateName() const
 {
   if (m_state >= (int) sizeof(GameStateNames))
   {
-    ::std::ostringstream oss;
+    QString string;
+    QTextStream oss(&string);
     oss << "Invalid stored state id: " << m_state;
-    kError() << oss.str().c_str() << endl;
-    return QString::fromUtf8(oss.str().c_str());
+    kError() << string << endl;
+    return string;
   }
   else
   {

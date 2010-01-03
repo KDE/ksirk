@@ -248,7 +248,7 @@ void AIPlayer::chooseAttackMoveArmiesOrNextPlayer()
   * Returns a pair of countries where the attacker have enough armies to attack
   * and the defender is a ennemy neighbour of the attacker
   */
-std::pair<const Country*, const Country*> AIPlayer::chooseBelligerant()
+QPair<const Country*, const Country*> AIPlayer::chooseBelligerant()
 {
   QMultiMap<const Country*, const Country*> candidates;
 
@@ -289,7 +289,7 @@ std::pair<const Country*, const Country*> AIPlayer::chooseBelligerant()
     if ( candidates.size() == 0 )
     {
 //            kDebug() << name() << " OUT AIPlayer::chooseBelligerant() ; map size = 0 ; it isn't possible to attack." << endl;
-      return (std::make_pair(static_cast< Country*>(0), static_cast< Country*>(0)));
+      return (qMakePair<const Country*, const Country*>(static_cast< Country*>(0), static_cast< Country*>(0)));
     }
     uint which = Dice::roll(candidates.size()) - 1;
 //        kDebug() << "Which = " << which <<endl;
@@ -300,12 +300,12 @@ std::pair<const Country*, const Country*> AIPlayer::chooseBelligerant()
       if (which == i )
       {
 //                kDebug() << "OUT AIPlayer::chooseBelligerant() : " << endl ;
-         return std::make_pair(it.key(), it.value());
+         return qMakePair<const Country*, const Country*>(it.key(),it.value());
       }
     }
   }
 //    kDebug() << "OUT AIPlayer::chooseBelligerant() : do I own no country ???" << endl;
-  return (std::make_pair(static_cast< Country* >(0), static_cast< Country* >(0)));
+  return (qMakePair<const Country*, const Country*>(static_cast< Country*>(0), static_cast< Country*>(0)));
 }
 
 /**
@@ -373,7 +373,7 @@ void AIPlayer::stop()
 bool AIPlayer::attackAction() 
 {
 //   kDebug() << "AIPlayer::attackAction" << endl;
-  std::pair<const Country* , const Country* > srcDest = chooseBelligerant();
+  QPair<const Country* , const Country* > srcDest = chooseBelligerant();
   if ( (srcDest.first == 0) || (srcDest.second == 0) )
   {
 //     kDebug() << "AIPlayer::attackAction: no attack available" << endl;

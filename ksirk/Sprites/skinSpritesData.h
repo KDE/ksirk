@@ -25,7 +25,7 @@
 #include <qpoint.h>
 #include <qstring.h>
 #include <qstringlist.h>
-#include <map>
+#include <QMap>
 
 namespace Ksirk {
 namespace Sprites {
@@ -106,8 +106,8 @@ private:
   
   QString m_skin;
   
-  std::map<QString, int> m_intDatas;
-  std::map<QString, QString> m_strDatas;
+  QMap<QString, int> m_intDatas;
+  QMap<QString, QString> m_strDatas;
 };
 
 } // closing namespace Sprites

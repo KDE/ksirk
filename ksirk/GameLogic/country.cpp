@@ -435,7 +435,7 @@ const QPointF& Country::pointFor(const AnimSprite* sprite)
   }
   else 
   {
-    std::cerr << "Unknown sprite type" << std::endl;
+    kError() << "Unknown sprite type";
     exit(1);
   }
 }

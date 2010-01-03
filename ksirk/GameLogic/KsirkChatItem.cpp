@@ -51,7 +51,7 @@ KsirkChatItem::KsirkChatItem(const KsirkChatItem& item) : KChatBaseMessage(item)
 void KsirkChatItem::paint(QPainter* p, 
                 const QStyleOptionViewItem &option, int row)
 {
-//   std::cerr << "KsirkChatItem::paint" << std::endl;
+//   kError() << "KsirkChatItem::paint";
   Q_UNUSED(row);
 
   QTextDocument fake; // used to allow to compute lines height
