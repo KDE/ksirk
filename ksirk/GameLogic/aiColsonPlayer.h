@@ -25,7 +25,7 @@
 
 #include "aiplayer.h"
 
-#include <QMap>
+#include <map>
 
 #define MAX_CARDS       10
 
