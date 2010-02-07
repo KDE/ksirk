@@ -2,7 +2,7 @@
 [Desktop Entry]
 Type=Application
 Exec=ksirkskineditor -caption "%c" %i
-Icon=ksirkskineditor
+Icon=preferences-desktop-locale
 X-DocPath=ksirkskineditor/index.html
 Terminal=false
 Name=KsirK Skin Editor
