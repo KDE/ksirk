@@ -262,10 +262,10 @@ GameAutomaton::GameState GameAutomaton::run()
   }
 
 //   kDebug() << "Handling " << stateName() << " ; " << event << " ; " << point;
-  if (currentPlayer())
-  {
-    kDebug() << "current player=" << currentPlayer()->name() << " is active=" << currentPlayer()->isActive();
-  }
+//   if (currentPlayer())
+//   {
+//     kDebug() << "current player=" << currentPlayer()->name() << " is active=" << currentPlayer()->isActive();
+//   }
   if (event == "requestForAck")
   {
     kDebug() << "requestForAck" << endl;
