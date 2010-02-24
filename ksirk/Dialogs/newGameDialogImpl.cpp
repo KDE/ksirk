@@ -28,7 +28,7 @@
 #include <KMessageBox>
 #include <KConfigDialog>
 #include <KGameThemeSelector>
-#include <knewstuff2/engine.h>
+#include <knewstuff3/downloaddialog.h>
 
 #include <qdir.h>
 #include <qstringlist.h>
@@ -192,8 +192,9 @@ void NewGameWidget::slotGHNS()
     return;
   }
   kDebug();
-  KNS::Entry::List entries = KNS::Engine::download();
-  qDeleteAll(entries);
+  KNS3::DownloadDialog dialog(this);
+  dialog.exec();
+  
   fillSkinsCombo();
 /*  KConfigDialog *dialog = new KConfigDialog(this, "settings", KsirkSettings::self());
   KGameThemeSelector* kgts = new KGameThemeSelector(dialog, KsirkSettings::self());
