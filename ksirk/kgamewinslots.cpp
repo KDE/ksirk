@@ -1179,10 +1179,7 @@ void KGameWindow::slotNewPlayerCancel()
 {
   kDebug();
   /// @TODO other uninits to do
-  foreach (NewPlayerData* player, m_newGameSetup->players())
-  {
-    delete player;
-  }
+  qDeleteAll(m_newGameSetup->players());
   m_newGameSetup->players().clear();
   m_centralWidget->setCurrentIndex(m_stackWidgetBeforeNewGame);
 }

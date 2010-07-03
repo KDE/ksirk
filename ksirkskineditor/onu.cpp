@@ -384,31 +384,10 @@ ONU::ONU(const QString& configDir):
 
 ONU::~ONU()
 {
-  QList<Country*>::iterator countriesIt, countriesIt_end;
-  countriesIt = m_countries.begin(); countriesIt_end = m_countries.end();
-  for (; countriesIt != countriesIt_end; countriesIt++)
-  {
-    delete *countriesIt;
-  }
-
-  QList<Nationality*>::iterator nationalitiesIt, nationalitiesIt_end;
-  nationalitiesIt = m_nationalities.begin(); nationalitiesIt_end = m_nationalities.end();
-  for (; nationalitiesIt != nationalitiesIt_end; nationalitiesIt++)
-  {
-    delete *nationalitiesIt;
-  }
-  
-  QList<Continent*>::iterator continentsIt, continentsIt_end;
-  continentsIt = m_continents.begin(); continentsIt_end = m_continents.end();
-  for (; continentsIt != continentsIt_end; continentsIt++)
-  {
-    delete *continentsIt;
-  }
-
-  foreach (Goal* goal, m_goals)
-  {
-    delete goal;
-  }
+  qDeleteAll(m_countries);
+  qDeleteAll(m_nationalities);
+  qDeleteAll(m_continents);
+  qDeleteAll(m_goals);
 }
 
 void ONU::saveConfig(const QString& configFileName)

@@ -199,10 +199,7 @@ GameAutomaton::GameAutomaton() :
 GameAutomaton::~GameAutomaton()
 {
   kDebug();
-  foreach (Goal* goal, m_goals)
-  {
-    delete goal;
-  }
+  qDeleteAll(m_goals);
 }
 
 void GameAutomaton::init(KGameWindow* gw)
@@ -2637,10 +2634,7 @@ void GameAutomaton::removeAllPlayers()
 {
   kDebug();
   m_currentPlayer = "";
-  foreach (KPlayer*p, *playerList())
-  {
-    delete p;
-  }
+  qDeleteAll(*playerList());
   playerList()->clear();
 }
 

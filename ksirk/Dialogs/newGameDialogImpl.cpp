@@ -117,10 +117,7 @@ void NewGameWidget::fillSkinsCombo()
   kDebug() << "Filling skins combo";
 
   skinCombo->clear();
-  foreach (GameLogic::ONU* onu,  m_newGameSetup->worlds())
-  {
-    delete onu;
-  }
+  qDeleteAll(m_newGameSetup->worlds());
   
   KStandardDirs *m_dirs = KGlobal::dirs();
   QStringList skinsDirs = m_dirs->findDirs("appdata","skins");
