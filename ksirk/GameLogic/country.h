@@ -31,7 +31,7 @@
 #include <qpoint.h>
 #include <qstring.h>
 
-class KSvgRenderer;
+class QSvgRenderer;
 class QGraphicsSvgItem;
 
 namespace Ksirk
@@ -378,7 +378,7 @@ public:
 
   QGraphicsSvgItem* m_highlighting;
 
-  KSvgRenderer* m_renderer;
+  QSvgRenderer* m_renderer;
 
   bool m_highlighting_locked;
 

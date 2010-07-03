@@ -30,7 +30,7 @@
 
 #include <klocale.h>
 #include <kdebug.h>
-#include <ksvgrenderer.h>
+#include <qsvgrenderer.h>
 #include <QString>
 #include <QApplication>
 #include <QDataStream>
@@ -64,7 +64,7 @@ Country::Country(GameAutomaton* game,
   m_pointCavalry(cavalryPoint),
   m_pointInfantry(infantryPoint),
   m_highlighting(0),
-  m_renderer(new KSvgRenderer()),
+  m_renderer(new QSvgRenderer()),
   m_highlighting_locked(false),
   m_nbArmiesItem(0)
 {

@@ -24,7 +24,7 @@
 
 #include <klocale.h>
 #include <kdebug.h>
-#include <ksvgrenderer.h>
+#include <qsvgrenderer.h>
 #include <QString>
 #include <QApplication>
 #include <QDataStream>
@@ -54,7 +54,7 @@ Country::Country(
   m_pointInfantry(infantryPoint),
 //   m_id(id),
   m_highlighting(0),
-  m_renderer(new KSvgRenderer()),
+  m_renderer(new QSvgRenderer()),
   m_highlighting_locked(false)
 {
 //   kDebug() << m_name << ", " << this << endl;

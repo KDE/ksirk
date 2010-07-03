@@ -27,7 +27,7 @@
 #include <QList>
 #include <QColor>
 
-class KSvgRenderer;
+class QSvgRenderer;
 class QGraphicsSvgItem;
 class QGraphicsScene;
 
@@ -235,7 +235,7 @@ public:
 
   QGraphicsSvgItem* m_highlighting;
 
-  KSvgRenderer* m_renderer;
+  QSvgRenderer* m_renderer;
 
   bool m_highlighting_locked;
 

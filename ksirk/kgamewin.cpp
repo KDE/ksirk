@@ -82,7 +82,7 @@
 #include <KStatusBar>
 #include <KToolBar>
 #include <KAction>
-#include <KSvgRenderer>
+#include <QSvgRenderer>
 #include <KDialog>
 #include <KAboutData>
 
