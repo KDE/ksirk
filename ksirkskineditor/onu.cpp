@@ -72,7 +72,7 @@ ONU::ONU(const QString& configDir):
   kDebug() << "ONU XML format version: " << onugroup.readEntry("format-version");
   QString formatVersion = onugroup.readEntry("format-version");
 
-  if (formatVersion != "" && formatVersion != ONU_FILE_FORMAT_VERSION)
+  if (!formatVersion.isEmpty() && formatVersion != ONU_FILE_FORMAT_VERSION)
   {
     KMessageBox::error(0,
                         i18n("Error - Invalid skin definition file format. Expected %1 and got %2",QString(ONU_FILE_FORMAT_VERSION),formatVersion) + "<br>" + m_configFileName,
@@ -97,7 +97,7 @@ ONU::ONU(const QString& configDir):
 //   m_continents.resize(onugroup.readEntry("nb-continents",0));
 //    root.attribute("map");
   m_poolString = onugroup.readEntry("pool");
-  if (m_poolString == "")
+  if (m_poolString.isEmpty())
   {
     m_poolString = "Images/pool.svg";
   }
@@ -313,12 +313,7 @@ ONU::ONU(const QString& configDir):
       goal->setType(Goal::Continents);
       QList<QString> continentsList = goalGroup.readEntry("continents",QList<QString>());
       foreach(const QString& continentId, continentsList)
-      {
-        if (continentId == "")
-          goal->continents().push_back(QString());
-        else
-          goal->continents().push_back(continentId);
-      }
+        goal->continents().push_back(continentId);
     }
     else if (goalType == "player" )
     {

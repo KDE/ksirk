@@ -1952,7 +1952,7 @@ void MainWindow::slotNationalityFlagEdited(int)
   nationality->setFlagFileName(m_nationalityDefWidget->flag->currentText());
   m_onu->setDirty();
   
-  if (previousFlagFileName == "" && nationality->flagFileName() != "")
+  if (previousFlagFileName.isEmpty() && !nationality->flagFileName().isEmpty())
   {
     updateSprites(Flag);
   }
