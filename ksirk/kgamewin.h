@@ -646,7 +646,7 @@ public:
 
   void updateNewGameSummary();
   void showNewGameSummary();
-  
+
 protected:
 
   /**
@@ -697,7 +697,6 @@ protected:
 
   void reduceChat();
   void unreduceChat();
-
 
 Q_SIGNALS:
   void newJabberGame(const QString&, int, const QString&);
@@ -910,7 +909,7 @@ private: // Private methods
   QPixmap buildDice(const QString& id);
   void setupPopupMessage();
   QString defenseLabel();
-
+  
     
 private: // Private members
   QDockWidget * m_rightDock;

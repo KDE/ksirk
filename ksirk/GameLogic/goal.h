@@ -154,7 +154,7 @@ public:
   
   /**
     * Builds this goal's description.
-    * @param displayType the manner to display this goal: final goal or advance.
+    * @param displayType the manner to display this goal: final goal (default) or advance.
     * @return a string containing this goal's description.
     */
   QString message(int displayType = GoalDesc) const;

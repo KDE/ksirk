@@ -201,8 +201,6 @@ void InvasionSlider::slideClose()
   stream << quint32(m_currentSlideValue);
   m_game->automaton()->sendMessage(buffer,Invade);
   
-  //  m_wSlide->close();
-  
   QByteArray buffer2;
   m_game->automaton()->sendMessage(buffer2,InvasionFinished);
   m_game->automaton()->currentPlayerPlayed(true);

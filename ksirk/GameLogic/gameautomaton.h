@@ -407,6 +407,8 @@ public:
   
   bool connectToServ();
 
+  void checkGoal(Player* player = 0);
+  
 Q_SIGNALS:
   void newJabberGame(const QString&, int, const QString&);
     

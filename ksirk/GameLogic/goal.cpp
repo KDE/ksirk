@@ -79,6 +79,7 @@ Goal::~Goal()
 
 bool Goal::checkFor(const GameLogic::Player* player) const 
 {
+  kDebug() << message(GoalAdvance);
   switch (type())
   {
   case Goal::GoalPlayer :
@@ -98,7 +99,7 @@ bool Goal::checkFor(const GameLogic::Player* player) const
 
 bool Goal::checkCountriesFor(const GameLogic::Player* player) const
 {
-  kDebug() << "Goal::checkCountriesFor " << player->name() << endl;
+  kDebug() << player->name();
   if (player->getNbCountries() >= m_nbCountries)
   {
     uint nbCountriesOk = 0;

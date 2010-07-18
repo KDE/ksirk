@@ -55,6 +55,7 @@
 #include <errno.h>
 #include <sys/types.h>
 #include <signal.h>
+#include <qcache.h>
 
 namespace Ksirk{
 namespace GameLogic {
@@ -1884,6 +1885,7 @@ void GameAutomaton::movingArmyArrived(Country* country, unsigned int number)
   kDebug() << number << endl;
   country->incrNbArmies(number);
   country->createArmiesSprites();
+  checkGoal(country->owner());
 }
 
 void GameAutomaton::firingFinished()
@@ -2624,7 +2626,7 @@ void GameAutomaton::actionNextPlayer()
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     stream << currentPlayer()->name();
     stream << (quint32)NEWARMIES;
-    kDebug() << "sending NextPlayerNormal" << currentPlayer()->name() << NEWARMIES;
+    kDebug() << "(state " << stateName() << ") sending NextPlayerNormal" << currentPlayer()->name() << NEWARMIES;
     sendMessage(buffer,NextPlayerNormal);
     m_game-> cancelAction();
   }
@@ -2644,7 +2646,7 @@ void GameAutomaton::newGameNext()
   m_startingGame = true;
   state(INIT);
   
-  kDebug() << "Changing skin" << endl;
+  kDebug() << "Changing skin";
   m_skin = m_game->newGameSetup()->skin();
   if (m_game->newGameSetup()->networkGameType() == Socket)
   {
@@ -2652,6 +2654,19 @@ void GameAutomaton::newGameNext()
   }
   m_game->finishSetupPlayers();
 }
+
+void GameAutomaton::checkGoal(Player* player) 
+{
+  QByteArray buffer;
+  QDataStream stream(&buffer, QIODevice::WriteOnly);
+  if (player == 0)
+    stream << currentPlayer()->id();
+  else
+    stream << player->id();
+  kDebug() << "sending CheckGoal";
+  sendMessage(buffer,CheckGoal);
+}
+
 
 } // closing namespace GameLogic
 } // closing namespace Ksirk

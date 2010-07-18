@@ -562,6 +562,10 @@ void KGameWindow::newSkin(const QString& onuFileName)
   {
     onuDefinitionFileName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Data/world.desktop");
   }
+  else if (!QFile::exists(onuDefinitionFileName))
+  {
+    onuDefinitionFileName.clear();
+  }
   if (onuDefinitionFileName.isEmpty())
   {
       KMessageBox::error(0,
@@ -841,18 +845,12 @@ bool KGameWindow::attackEnd()
       }
       else if (m_automaton->isAdmin())
       {
-        QByteArray buffer;
-        QDataStream stream(&buffer, QIODevice::WriteOnly);
-        stream << currentPlayer()->id();
-        m_automaton->sendMessage(buffer,CheckGoal);
+        m_automaton->checkGoal();
       }
     }
     else if (m_automaton->isAdmin())
     {
-      QByteArray buffer;
-      QDataStream stream(&buffer, QIODevice::WriteOnly);
-      stream << currentPlayer()->id();
-      m_automaton->sendMessage(buffer,CheckGoal);
+      m_automaton->checkGoal();
     }
   }
   if (backGnd()->bgIsArena())
@@ -2121,11 +2119,7 @@ bool KGameWindow::playerPutsArmy(const QPointF& point, bool removable)
 
       if (m_automaton->isAdmin())
       {
-        QByteArray buffer;
-        QDataStream stream(&buffer, QIODevice::WriteOnly);
-        stream << currentPlayer()->id();
-        m_automaton->sendMessage(buffer,CheckGoal);
-        
+        m_automaton->checkGoal();
       }
     }
   }
@@ -3221,7 +3215,6 @@ void KGameWindow::showNewGameSummary()
   kDebug();
   m_centralWidget->setCurrentIndex(NEWGAMESUMMARY_INDEX);
 }
-
 
 } // closing namespace Ksirk
 
