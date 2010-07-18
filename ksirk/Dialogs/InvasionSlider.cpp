@@ -106,7 +106,7 @@ InvasionSlider::InvasionSlider(KGameWindow* game, GameLogic::Country * attack, G
   m_nbLArmies = new QLabel(QString::number(m_nbLArmy));
   m_nbRArmies = new QLabel(QString::number(m_nbRArmy));
 
-  setButtons( KDialog::Ok );
+  setButtons( KDialog::Ok | KDialog::Cancel );
 
   QWidget* widget = new QWidget(this);
 
@@ -164,8 +164,8 @@ InvasionSlider::InvasionSlider(KGameWindow* game, GameLogic::Country * attack, G
   //val->setText(QString::number(invadeSlide->value()));
   connect(m_invadeSlide,SIGNAL(valueChanged(int)),this,SLOT(slideMove(int)));
   connect(m_invadeSlide,SIGNAL(sliderReleased()),this,SLOT(slideReleased()));
-//   connect(this,SIGNAL(okClicked()),this,SLOT(slideClose()));
-  connect(this,SIGNAL(finished(int)),this,SLOT(slideClose()));
+  connect(this,SIGNAL(okClicked()),this,SLOT(slideClose()));
+//   connect(this,SIGNAL(finished(int)),this,SLOT(slideClose()));
 
   setMainWidget(widget);
   
