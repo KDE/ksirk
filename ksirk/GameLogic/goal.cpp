@@ -200,7 +200,7 @@ QString Goal::message(int displayType) const
           kDebug() << "  this is player='" << m_automaton->playerNamed(*m_players.begin()) << endl;
           if (m_automaton->playerNamed(*m_players.begin())==0)
           {
-            res = res.subs("?");
+            res = res.subs(i18n("%1 (already dead)",*m_players.begin()));
           }
           else
           {
