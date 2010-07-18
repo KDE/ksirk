@@ -36,6 +36,18 @@ class KGameIO;
 namespace Ksirk
 {
 
+class ArenaAction : public QAction
+{
+  Q_OBJECT
+  public:
+    ArenaAction(QObject* parent = 0) : QAction(parent), m_arenaEnabled(false) {}
+    ArenaAction(const QString& text, QObject* parent = 0) : QAction(text, parent), m_arenaEnabled(false) {}
+    inline bool isArenaEnabled() {return m_arenaEnabled;}
+    inline void setArenaEnabled(bool value) {m_arenaEnabled = value;}
+  private:
+    bool m_arenaEnabled;
+};
+
 
 /**
   * The DecoratedGameFrame class is the central widget of the application where
@@ -45,6 +57,7 @@ namespace Ksirk
 class DecoratedGameFrame: public QGraphicsView
 {
     Q_OBJECT
+    
 public:
   /**
     * Creates the frame, its timer and set some parameters
@@ -143,7 +156,7 @@ private:
   QMenu* menu;
   QMenu* attackMenu;
   QMenu* moveMenu;
-  QAction* ArenaAction;
+  ArenaAction* m_arenaAction;
   QAction* AutoAction;
   QAction* detailsAction;
   QAction* goalAction;

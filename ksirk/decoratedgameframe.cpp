@@ -41,7 +41,8 @@ namespace Ksirk
 {
 using namespace GameLogic;
 
-DecoratedGameFrame::DecoratedGameFrame(QWidget* parent, 
+
+DecoratedGameFrame::DecoratedGameFrame(QWidget* parent,
       unsigned int mapW, unsigned int mapH, GameAutomaton* automaton)
   : QGraphicsView(parent), m_mapW(mapW), m_mapH(mapH), m_parent(parent),
   m_automaton(automaton)
@@ -123,7 +124,7 @@ void DecoratedGameFrame::initMenu ()
 void DecoratedGameFrame::setArenaOptionEnabled(bool option)
 {
   kDebug() << option;
-  ArenaAction->setEnabled(option);
+  m_arenaAction->setEnabled(option);
   if (option == false)
   {
     emit(arenaStateSignal(false));
@@ -134,8 +135,8 @@ void DecoratedGameFrame::initAttackMenu ()
 {
     attackMenu = new QMenu(this);
 
-    ArenaAction = new QAction(i18n("Enable Arena"), this);
-    connect(ArenaAction, SIGNAL(triggered()), this, SLOT(arenaState()));
+    m_arenaAction = new ArenaAction(i18n("Enable Arena"), this);
+    connect(m_arenaAction, SIGNAL(triggered()), this, SLOT(arenaState()));
     connect(this, SIGNAL(arenaStateSignal(bool)), m_automaton->game(), SLOT(slotArena(bool)));
     
     Attack1Action = new QAction(i18n("Attack 1"), this);
@@ -156,7 +157,7 @@ void DecoratedGameFrame::initAttackMenu ()
     attackMenu->addAction(Attack2Action);
     attackMenu->addAction(Attack3Action);
     attackMenu->addSeparator();  
-    attackMenu->addAction(ArenaAction);
+    attackMenu->addAction(m_arenaAction);
     //     attackMenu->addSeparator();
 //     attackMenu->addAction(QuitAction);
 }
@@ -262,7 +263,7 @@ void DecoratedGameFrame::setIcon()
 
   //temporary
   imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/moveArmies.png");
-  ArenaAction-> setIcon(QIcon(imageFileName));
+  m_arenaAction-> setIcon(QIcon(imageFileName));
 
   imageFileName = KGlobal::dirs()->findResource("appdata", skin + '/' + CM_NEXTPLAYER);
   nextPlayer-> setIcon(QIcon(imageFileName));
@@ -378,17 +379,19 @@ void DecoratedGameFrame::slotMouseInput(KGameIO *input,QDataStream &stream,QMous
 
 void DecoratedGameFrame::arenaState()
 {
-  kDebug();
-  //if (ArenaAction->isChecked())
-  if (ArenaAction->text().contains(i18n("Enable Arena"), Qt::CaseInsensitive))
+  kDebug() << m_arenaAction->isArenaEnabled();
+  //if (m_arenaAction->isChecked())
+  if (m_arenaAction->isArenaEnabled())
   {
-    ArenaAction->setText(i18n("Disable Arena"));
-    emit(arenaStateSignal(true));
+    m_arenaAction->setText(i18n("Enable Arena"));
+    m_arenaAction->setArenaEnabled(false);
+    emit(arenaStateSignal(false));
   }
   else
   {
-    ArenaAction->setText(i18n("Enable Arena"));
-    emit(arenaStateSignal(false));
+    m_arenaAction->setText(i18n("Disable Arena"));
+    m_arenaAction->setArenaEnabled(true);
+    emit(arenaStateSignal(true));
   }
 
   attackMenu->exec(menuPoint);
