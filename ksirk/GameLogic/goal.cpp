@@ -80,10 +80,26 @@ Goal::~Goal()
 bool Goal::checkFor(const GameLogic::Player* player) const 
 {
   kDebug() << message(GoalAdvance);
+  int diff = 0;
   switch (type())
   {
   case Goal::GoalPlayer :
-    kDebug() << "Goal reached checked elsewhere for Player type" << endl;
+    if (m_automaton->playerNamed(*m_players.begin()) != 0)
+    {
+      return false;
+    }
+    else
+    {
+      diff  = m_nbCountries-m_player->countries().size();
+      if (diff > 0)
+      {
+        return false;
+      }
+      else
+      {
+        return true;
+      }
+    }
     return false;
     break;
   case Goal::Countries:
@@ -235,7 +251,15 @@ QString Goal::message(int displayType) const
       }
       else
       {
-        mes += i18n("<br>You now have to conquer %1",m_nbCountries);
+        diff  = m_nbCountries-m_player->countries().size();
+        if (diff > 0)
+        {
+          mes += i18np("<br>%2, you still have 1 country to conquer...","<br>%2, you still have %1 countries to conquer...",diff,m_player->name());
+        }
+        else
+        {
+          mes += i18n("<br>Your goal is reached: %1 is dead and you possess %2 countries.",*m_players.begin(),m_nbCountries);
+        }
       }
     break;
     case Goal::Countries:

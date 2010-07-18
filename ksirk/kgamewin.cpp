@@ -845,7 +845,10 @@ bool KGameWindow::attackEnd()
       }
       else if (m_automaton->isAdmin())
       {
-        m_automaton->checkGoal();
+        foreach (KPlayer* player, *m_automaton->playerList())
+        {
+          m_automaton->checkGoal((Player*)player);
+        }
       }
     }
     else if (m_automaton->isAdmin())
