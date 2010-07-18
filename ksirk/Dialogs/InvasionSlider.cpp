@@ -1,6 +1,7 @@
 /* This file is part of KsirK.
-   Copyright (C) 2001-2007 Gael de Chalendar <kleag@free.fr>
-
+   Copyright (C) 2001-2010 Gael de Chalendar <kleag@free.fr>
+   Copyright (C) 2010 Cyril Tostivint <cyril@tostivint.com>
+   
    KsirK is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
    License as published by the Free Software Foundation, version 2.
@@ -106,7 +107,14 @@ InvasionSlider::InvasionSlider(KGameWindow* game, GameLogic::Country * attack, G
   m_nbLArmies = new QLabel(QString::number(m_nbLArmy));
   m_nbRArmies = new QLabel(QString::number(m_nbRArmy));
 
-  setButtons( KDialog::Ok | KDialog::Cancel );
+  if (invasionType == Invasion)
+  {
+    setButtons( KDialog::Ok );
+  }
+  else if (invasionType == Moving)
+  {
+    setButtons( KDialog::Cancel | KDialog::Ok );
+  }
 
   QWidget* widget = new QWidget(this);
 
@@ -129,18 +137,20 @@ InvasionSlider::InvasionSlider(KGameWindow* game, GameLogic::Country * attack, G
   m_currentSlideValue = m_invadeSlide->value();
 
   QGridLayout * wSlideLayout = new QGridLayout(widget);
-  QHBoxLayout * center = new QHBoxLayout(widget);
-  QVBoxLayout * left = new QVBoxLayout(widget);
-  QVBoxLayout * right = new QVBoxLayout(widget);
-
+  QHBoxLayout * center = new QHBoxLayout(); // remove parameter to avoid message "which already has a layout"
+  QVBoxLayout * left = new QVBoxLayout();
+  QVBoxLayout * right = new QVBoxLayout();
+  
   //init. main layout
   if (invasionType == Invasion)
   {
+    setWindowTitle(i18n("Invasion"));
     wSlideLayout->addWidget(new QLabel(i18n("You are invading <font color=\"blue\">%1</font> with <font color=\"red\">%2</font>!", defender->i18name(), attack->i18name())),0,0);
     wSlideLayout->addWidget(new QLabel(i18n("<br><i>Choose the number of invading armies.</i>")),1,0);
   }
   else if (invasionType == Moving)
   {
+    setWindowTitle(i18n("Moving"));
     wSlideLayout->addWidget(new QLabel(i18n("You are moving armies from <font color=\"red\">%1</font> to <font color=\"blue\">%2</font>!", attack->i18name(), defender->i18name())),0,0);
     wSlideLayout->addWidget(new QLabel(i18n("<br><i>Choose the number of armies to move.</i>")),1,0);
   }
@@ -165,11 +175,17 @@ InvasionSlider::InvasionSlider(KGameWindow* game, GameLogic::Country * attack, G
   connect(m_invadeSlide,SIGNAL(valueChanged(int)),this,SLOT(slideMove(int)));
   connect(m_invadeSlide,SIGNAL(sliderReleased()),this,SLOT(slideReleased()));
   connect(this,SIGNAL(okClicked()),this,SLOT(slideClose()));
-//   connect(this,SIGNAL(finished(int)),this,SLOT(slideClose()));
+  if (invasionType == Invasion)
+  {
+    connect(this,SIGNAL(finished(int)),this,SLOT(slideClose()));
+  }
+  else if (invasionType == Moving)
+  {
+    connect(this,SIGNAL(cancelClicked()),this,SLOT(slideCancel()));
+  }
 
   setMainWidget(widget);
   
-  setWindowTitle(i18n("Invasion"));
   widget->setLayout(wSlideLayout);
   setWindowModality(Qt::ApplicationModal);
 }
@@ -208,6 +224,10 @@ void InvasionSlider::slideClose()
   m_game->automaton()->gameEvent("actionNextPlayer", point);
 }
 
+void InvasionSlider::slideCancel()
+{
+  kDebug() << "Move cancel";
+}
 
 } // closing namespace Ksirk
 

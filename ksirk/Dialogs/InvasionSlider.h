@@ -55,7 +55,8 @@ public Q_SLOTS:
   void slideMove(int v);
   void slideReleased();
   void slideClose();
-
+  void slideCancel();
+  
 private:
   KGameWindow* m_game;
   
