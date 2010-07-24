@@ -58,7 +58,7 @@ void NewGameSummaryWidget::show(KGameWindow* game)
       goalTypeLabel->setText(game->newGameSetup()->useGoals()?i18n("Reach a goal"):i18n("World conquest"));
     }
   }
-  kDebug() << game->newGameSetup()->players().size() << game->newGameSetup()->nbPlayers() << game->newGameSetup()->nbLocalPlayers() << game->newGameSetup()->nbNetworkPlayers();
+  kDebug() << game->automaton()->networkGameType() << game->newGameSetup()->players().size() << game->newGameSetup()->nbPlayers() << game->newGameSetup()->nbLocalPlayers() << game->newGameSetup()->nbNetworkPlayers();
   playersTable->setRowCount(game->newGameSetup()->players().size());
   int row = 0;
   foreach (NewPlayerData* player, game->newGameSetup()->players())
@@ -74,17 +74,18 @@ void NewGameSummaryWidget::show(KGameWindow* game)
     playersTable->setItem(row, 3, netItem);
     row++;
   }
+  if (game->automaton()->isAdmin()
+    && game->newGameSetup()->players().size() == game->newGameSetup()->nbPlayers())
+  {
+    finishButton->setEnabled(true);
+  }
+  else
+  {
+    finishButton->setEnabled(false);
+  }
   if (game->automaton()->networkGameType() != GameLogic::GameAutomaton::None)
   {
-    if (game->automaton()->isAdmin()
-      && game->newGameSetup()->players().size() == game->newGameSetup()->nbPlayers())
-    {
-      finishButton->setEnabled(true);
-    }
-    else
-    {
-      finishButton->setEnabled(false);
-    }
+    kDebug() << "network game isAdmin ? =>" << game->automaton()->isAdmin() << game->newGameSetup()->players().size() << game->newGameSetup()->nbPlayers();
     previousButton->setEnabled(false);
   }
 }
