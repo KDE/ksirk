@@ -535,6 +535,14 @@ void KGameWindow::newSkin(const QString& onuFileName)
   kDebug() << onuFileName;
   clear();
 
+  m_animFighters->clear();
+  foreach(AnimSpritesGroup* sprites, m_animSpritesGroups)
+  {
+    sprites->clear();
+    delete sprites;
+  }
+  m_animSpritesGroups.clear();
+
   if (m_centralWidget != 0)
   {
     m_centralWidget->setCurrentIndex(-1);

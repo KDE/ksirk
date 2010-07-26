@@ -1,6 +1,8 @@
   * Make Jabber error messages user visible
   * When conquering a country, it should be invaded with at least the number of armies used to attack
   * [DONE] Use kwallet to store password(s)
+  * When last armies is placed, should display 0 instead of 1 armies left
+  * When starting a new game, should reinitialize the save file name
 
 Before KDE4.3:
   * Correct Arena bugs

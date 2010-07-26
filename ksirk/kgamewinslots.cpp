@@ -1189,6 +1189,15 @@ void KGameWindow::slotStartNewGame()
   kDebug() << m_newGameSetup->nbPlayers() << m_newGameSetup->nbPlayers() << m_newGameSetup->players().size();
   m_automaton->setGameStatus(KGame::End);
   m_reinitializingGame = true;
+
+  // delete remainings animations from previous game
+  m_animFighters->clear();
+  foreach(AnimSpritesGroup* sprites, m_animSpritesGroups)
+  {
+    sprites->clear();
+    delete sprites;
+  }
+  m_animSpritesGroups.clear();
   
   // for network games, remote players are already created, should not remove them
   // TODO the players will not be in the orderd showed in the interface.
@@ -1218,6 +1227,7 @@ void KGameWindow::slotStartNewGame()
   {
     showMap();
     m_frame->setFocus();
+    m_newGameSummaryWidget->finishButton->setEnabled(true);
   }
   else
   {

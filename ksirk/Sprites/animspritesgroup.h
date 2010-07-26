@@ -33,7 +33,7 @@ class AnimSpritesGroup : public QObject, public AnimSpritesList<AnimSprite>
 {
   Q_OBJECT
 public:
-  AnimSpritesGroup(QObject* target, const char* slot);
+  AnimSpritesGroup(QObject* target, const char* slot, QObject* parent = 0);
 
   virtual ~AnimSpritesGroup();
 

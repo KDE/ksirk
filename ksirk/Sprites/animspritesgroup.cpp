@@ -25,7 +25,8 @@
 namespace Ksirk
 {
 
-AnimSpritesGroup::AnimSpritesGroup(QObject* target, const char* slot):
+AnimSpritesGroup::AnimSpritesGroup(QObject* target, const char* slot, QObject* parent):
+  QObject(parent), AnimSpritesList<AnimSprite>(),
   m_numberArrived(0), m_target(target), m_slot(slot)
 {
   kDebug();

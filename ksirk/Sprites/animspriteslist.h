@@ -101,16 +101,12 @@ template < typename SpriteType >
 
 template < typename SpriteType >
 void AnimSpritesList< SpriteType >::hideAndRemoveAll()
-{    // cache tous les sprites du tableau, puis les enleve et les
-    // detruit si le tableau n'etait pas en auto delete
-//    kDebug();
+{
+//   kDebug();
 
   while (!QList< SpriteType* >::empty())
   {
-    SpriteType* sprite = QList< SpriteType* >::front();
-    sprite-> hide();
-    QList< SpriteType* >::pop_front();
-    delete sprite;
+    hideAndRemoveFirst();
   }
 }
 
@@ -118,9 +114,9 @@ template < typename SpriteType >
 void AnimSpritesList< SpriteType >::hideAndRemoveFirst()
 {   
     SpriteType* sprite = QList< SpriteType* >::front();
-    sprite-> hide();
     QList< SpriteType* >::pop_front();
-    delete sprite;
+    sprite-> hide();
+    sprite->deleteLater();
 }
 
 template < typename SpriteType >
@@ -150,12 +146,11 @@ void AnimSpritesList< SpriteType >::moveAll()
 
     if (((sp->x()) == (destinationPoint.x())) && ((sp-> y()) == (destinationPoint.y())))
     {
-      typename AnimSpritesList< SpriteType >::iterator itToRemove = it;
-      sp-> getDestination()-> incrNbArmies((*it)-> nbArmies());
       sp-> hide();
-      it++;
-      QList< SpriteType* >::remove(itToRemove);
+      it = QList< SpriteType* >::erase(it);
+      sp-> getDestination()-> incrNbArmies((*it)-> nbArmies());
       sp-> getDestination()-> createArmiesSprites();
+      sp->deleteLater();
     }
     else it++;
   }
@@ -178,11 +173,9 @@ void AnimSpritesList< SpriteType >::moveAllToDestinationNow(bool clear)
 
     if (clear)
     {
-      typename AnimSpritesList< SpriteType >::iterator itToRemove = it;
-      sp-> getDestination()-> incrNbArmies(((ArmySprite*)(*it))-> nbArmies());
       sp-> hide();
-      it++;
-      QList< SpriteType* >::erase(itToRemove);
+      it = QList< SpriteType* >::erase(it);
+      sp-> getDestination()-> incrNbArmies(((ArmySprite*)(*it))-> nbArmies());
       sp-> getDestination()-> createArmiesSprites();
     }
     else
@@ -195,14 +188,9 @@ void AnimSpritesList< SpriteType >::moveAllToDestinationNow(bool clear)
 template < typename SpriteType >
 void AnimSpritesList< SpriteType >::saveXmlAll(QTextStream& xmlStream)
 {
-  typename AnimSpritesList< SpriteType >::iterator it, it_end;
-  it = QList< SpriteType* >::begin();
-  it_end = QList< SpriteType* >::end();
-  while (it != it_end)
+  foreach (SpriteType* sp, *this)
   {
-    SpriteType* sp = (*it);
     sp->saveXml(xmlStream);
-    it++;
   }
 }
 
