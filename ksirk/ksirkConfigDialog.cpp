@@ -68,6 +68,7 @@ KsirkConfigurationDialog::KsirkConfigurationDialog (
 
 KsirkConfigurationDialog::~KsirkConfigurationDialog () 
 {
+  delete m_widget;
 }
 
 void KsirkConfigurationDialog::settingChanged(int)
