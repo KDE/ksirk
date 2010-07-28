@@ -67,6 +67,7 @@ KsirkSkinEditorConfigurationDialog::KsirkSkinEditorConfigurationDialog (
 
 KsirkSkinEditorConfigurationDialog::~KsirkSkinEditorConfigurationDialog ()
 {
+  delete m_widget;
 }
 
 void KsirkSkinEditorConfigurationDialog::settingChanged(int)
