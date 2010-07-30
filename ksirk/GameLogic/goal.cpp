@@ -258,7 +258,9 @@ QString Goal::message(int displayType) const
         }
         else
         {
-          mes += i18n("<br>Your goal is reached: %1 is dead and you possess %2 countries.",*m_players.begin(),m_nbCountries);
+          mes += i18np("<br>Your goal is reached: %2 is dead and you possess %1 country.",
+                       "<br>Your goal is reached: %2 is dead and you posesss %1 countries.",
+                       m_nbCountries, *m_players.begin());
         }
       }
     break;
