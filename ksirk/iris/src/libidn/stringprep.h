@@ -29,7 +29,6 @@ extern "C"
 
 #include <stddef.h>		/* size_t */
 
-#include <qglobal.h>
 #include <unistd.h>		/* ssize_t */
 
 #include <libidn/idn-int.h>		/* my_uint32_t */
