@@ -379,7 +379,7 @@ void JabberBaseContact::serialize (QMap < QString, QString > &serializedData, QM
 	// Contact id and display name are already set for us, only add the rest
 	serializedData["JID"] = mRosterItem.jid().full();
 
-	serializedData["groups"] = mRosterItem.groups ().join (QString::fromLatin1 (","));
+	serializedData["groups"] = mRosterItem.groups ().join ( QLatin1String( QString::fromLatin1 ("," )));
 }
 
 void JabberBaseContact::slotUserInfo( )
@@ -486,8 +486,8 @@ void JabberBaseContact::setPropertiesFromVCard ( const XMPP::VCard &vCard )
 	
 	if( !vCard.org().name.isEmpty() )
 		setProperty( protocol()->propCompanyName, vCard.org().name );
-	if( !vCard.org().unit.join(",").isEmpty() )
-		setProperty( protocol()->propCompanyDepartement, vCard.org().unit.join(",")) ;
+	if( !vCard.org().unit.join( QLatin1String( "," )).isEmpty() )
+		setProperty( protocol()->propCompanyDepartement, vCard.org().unit.join( QLatin1String( "," ))) ;
 	if( !vCard.title().isEmpty() )
 		setProperty( protocol()->propCompanyPosition, vCard.title() );
 	if( !vCard.role().isEmpty() )

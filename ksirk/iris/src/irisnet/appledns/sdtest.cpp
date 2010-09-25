@@ -71,7 +71,7 @@ static QString nameToString(const QByteArray &in)
 		parts += QString::fromUtf8(in.mid(at, len));
 		at += len;
 	}
-	return parts.join(".");
+	return parts.join( QLatin1String( "." ));
 }
 
 static QString recordToDesc(const QDnsSd::Record &rec)

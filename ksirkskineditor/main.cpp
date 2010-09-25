@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
   KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
   KApplication app;
-  KGlobal::locale()->insertCatalog("libkdegames");
+  KGlobal::locale()->insertCatalog( QLatin1String( "libkdegames" ));
   if (app.isSessionRestored())
   {
       RESTORE(KsirkSkinEditor::MainWindow);

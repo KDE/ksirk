@@ -434,7 +434,7 @@ void JabberProtocol::handleURL(const KUrl & kurl) const
 				if (!ok)
 					return;
 			}
-			if(action=="join" && url.hasQueryItem("password"))
+			if(action=="join" && url.hasQueryItem( QLatin1String( "password" )))
 				account->client()->joinGroupChat( jid.host() , jid.user() , nick, url.queryItemValue("password") );
 			else
 				account->client()->joinGroupChat( jid.host() , jid.user() , nick );

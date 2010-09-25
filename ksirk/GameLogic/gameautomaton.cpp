@@ -1186,7 +1186,7 @@ bool GameAutomaton::joinNetworkGame()
 {
   kDebug();
    if (stateName() == "INIT"
-     || (KMessageBox::warningContinueCancel(m_game,i18n("Do you really want to end your current game and join another?"),i18n("New game confirmation"),KStandardGuiItem::yes()) == KMessageBox::Continue))
+     || (KMessageBox::warningContinueCancel(m_game,i18n("Do you really want to end your current game and join another?"),i18n( "New game confirmation" ),KStandardGuiItem::yes()) == KMessageBox::Continue))
    {
       m_game->joinNetworkGame();
    }
@@ -1214,7 +1214,7 @@ bool GameAutomaton::connectToServ()
 
 bool GameAutomaton::joinJabberGame(const QString& nick)
 {
-  if (stateName() == "INIT" || (KMessageBox::warningContinueCancel(m_game,i18n("Do you really want to end your current game and join another?"),i18n("New game confirmation"),KStandardGuiItem::yes()) == KMessageBox::Continue))
+  if (stateName() == "INIT" || (KMessageBox::warningContinueCancel(m_game,i18n("Do you really want to end your current game and join another?"),i18n( "New game confirmation" ),KStandardGuiItem::yes()) == KMessageBox::Continue))
   {
     // stop game
     setGameStatus(KGame::End);

@@ -1073,7 +1073,7 @@ void Client::addExtension(const QString& ext, const Features& features)
 {
 	if (!ext.isEmpty()) {
 		d->extension_features[ext] = features;
-		d->capsExt = extensions().join(" ");
+		d->capsExt = extensions().join( QLatin1String( " " ));
 	}
 }
 
@@ -1081,7 +1081,7 @@ void Client::removeExtension(const QString& ext)
 {
 	if (d->extension_features.contains(ext)) {
 		d->extension_features.remove(ext);
-		d->capsExt = extensions().join(" ");
+		d->capsExt = extensions().join( QLatin1String( " " ));
 	}
 }
 
