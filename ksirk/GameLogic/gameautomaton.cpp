@@ -1564,7 +1564,7 @@ void GameAutomaton::changePlayerNation(Player* player)
   
   QString nomEntre = player->name();
   KMessageBox::information(m_game, i18n("Please choose another nation"), i18n("KsirK - Nation already used!"));
-  QString password = false;
+  QString password;
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   stream << player->name() << nationName;
