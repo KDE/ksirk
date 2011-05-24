@@ -83,7 +83,7 @@ ONU::ONU(const QString& configDir):
   m_name = onugroup.readEntry("name");
   m_skin = onugroup.readEntry("skinpath");
   kDebug() << "skin snapshot file: " << m_configDir + "/Images/snapshot.jpg";
-  m_snapshot = m_configDir + "/Images/snapshot.jpg";
+  m_snapshot = QString(m_configDir + "/Images/snapshot.jpg");
   if (m_snapshot.isNull())
   {
     kError() << "Was not able to load the snapshot image: " 

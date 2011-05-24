@@ -1654,7 +1654,7 @@ bool CoreProtocol::normalStep(const QDomElement &e)
 				r.setAttribute("id", e.attribute("id"));
 				QDomElement bind = doc.createElementNS(NS_BIND, "bind");
 				QDomElement jid = doc.createElement("jid");
-				Jid j = user + '@' + host + '/' + resource;
+				Jid j = QString(user + QLatin1Char('@') + host + QLatin1Char('/') + resource);
 				jid.appendChild(doc.createTextNode(j.full()));
 				bind.appendChild(jid);
 				r.appendChild(bind);

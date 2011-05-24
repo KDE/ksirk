@@ -150,7 +150,7 @@ void NewGameWidget::fillSkinsCombo()
         {
           skinCombo->addItem(i18n(world->name().toUtf8().data()));
           m_newGameSetup->worlds()[i18n(world->name().toUtf8().data())] = world;
-          if (QString("skins/")+skinDir.dirName() == m_newGameSetup->skin())
+          if (QString(QLatin1String("skins/")+skinDir.dirName()) == m_newGameSetup->skin())
           {
             kDebug() << "Setting currentSkinNum to " << skinNum;
             currentSkinNum = skinNum;

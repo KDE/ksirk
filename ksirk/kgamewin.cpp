@@ -3178,7 +3178,7 @@ void KGameWindow::askForJabberGames()
 {
   if (m_jabberClient && m_jabberClient->isConnected())
   {
-    XMPP::Message message(m_groupchatRoom+'@'+m_groupchatHost);
+    XMPP::Message message(QString(m_groupchatRoom+'@'+m_groupchatHost));
     message.setType("groupchat");
     message.setId(QUuid::createUuid().toString().remove('{').remove('}').remove('-'));
     QString body("Who propose online KsirK games here?");
@@ -3196,7 +3196,7 @@ void KGameWindow::sendGameInfoToJabber()
     && m_automaton->startingGame())
   {
     kDebug() << "Sending 'I'm starting a game with ...'";
-    XMPP::Message message(m_groupchatRoom+'@'+m_groupchatHost);
+    XMPP::Message message(QString(m_groupchatRoom+'@'+m_groupchatHost));
     message.setType("groupchat");
     message.setId(QUuid::createUuid().toString().remove('{').remove('}').remove('-'));
     QString body;
