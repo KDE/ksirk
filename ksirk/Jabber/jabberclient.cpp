@@ -136,7 +136,7 @@ JabberClient::JabberClient ()
   cleanUp ();
 
   // initiate penalty timer
-  QTimer::singleShot ( JABBER_PENALTY_TIME * 1000, this, SLOT ( slotUpdatePenaltyTime () ) );
+  QTimer::singleShot ( JABBER_PENALTY_TIME * 1000, this, SLOT (slotUpdatePenaltyTime()) );
 
 }
 
@@ -201,7 +201,7 @@ void JabberClient::slotUpdatePenaltyTime ()
   else
     d->currentPenaltyTime = 0;
 
-  QTimer::singleShot ( JABBER_PENALTY_TIME * 1000, this, SLOT ( slotUpdatePenaltyTime () ) );
+  QTimer::singleShot ( JABBER_PENALTY_TIME * 1000, this, SLOT (slotUpdatePenaltyTime()) );
 
 }
 
@@ -246,7 +246,7 @@ XMPP::S5BServer *JabberClient::s5bServer ()
   if ( !d->s5bServer )
   {
     d->s5bServer = new XMPP::S5BServer ();
-    QObject::connect ( d->s5bServer, SIGNAL ( destroyed () ), this, SLOT ( slotS5BServerGone () ) );
+    QObject::connect ( d->s5bServer, SIGNAL (destroyed()), this, SLOT (slotS5BServerGone()) );
 
     /*
      * Try to start the server at the default port here.
@@ -660,7 +660,7 @@ JabberClient::ErrorCode JabberClient::connect ( const XMPP::Jid &jid, const QStr
       d->jabberTLSHandler = new QCATLSHandler(d->jabberTLS);
     d->jabberTLSHandler->setXMPPCertCheck(true);
 
-    QObject::connect ( d->jabberTLSHandler, SIGNAL ( tlsHandshaken() ), SLOT ( slotTLSHandshaken () ) );
+    QObject::connect ( d->jabberTLSHandler, SIGNAL (tlsHandshaken()), SLOT (slotTLSHandshaken()) );
   }
 
   /*
@@ -673,18 +673,18 @@ JabberClient::ErrorCode JabberClient::connect ( const XMPP::Jid &jid, const QStr
 
   {
     using namespace XMPP;
-    QObject::connect ( d->jabberClientStream, SIGNAL ( needAuthParams(bool, bool, bool) ),
-           this, SLOT ( slotCSNeedAuthParams (bool, bool, bool) ) );
-    QObject::connect ( d->jabberClientStream, SIGNAL ( authenticated () ),
-           this, SLOT ( slotCSAuthenticated () ) );
-    QObject::connect ( d->jabberClientStream, SIGNAL ( connectionClosed () ),
-           this, SLOT ( slotCSDisconnected () ) );
-    QObject::connect ( d->jabberClientStream, SIGNAL ( delayedCloseFinished () ),
-           this, SLOT ( slotCSDisconnected () ) );
-    QObject::connect ( d->jabberClientStream, SIGNAL ( warning (int) ),
-           this, SLOT ( slotCSWarning (int) ) );
-    QObject::connect ( d->jabberClientStream, SIGNAL ( error (int) ),
-           this, SLOT ( slotCSError (int) ) );
+    QObject::connect ( d->jabberClientStream, SIGNAL (needAuthParams(bool,bool,bool)),
+           this, SLOT (slotCSNeedAuthParams(bool,bool,bool)) );
+    QObject::connect ( d->jabberClientStream, SIGNAL (authenticated()),
+           this, SLOT (slotCSAuthenticated()) );
+    QObject::connect ( d->jabberClientStream, SIGNAL (connectionClosed()),
+           this, SLOT (slotCSDisconnected()) );
+    QObject::connect ( d->jabberClientStream, SIGNAL (delayedCloseFinished()),
+           this, SLOT (slotCSDisconnected()) );
+    QObject::connect ( d->jabberClientStream, SIGNAL (warning(int)),
+           this, SLOT (slotCSWarning(int)) );
+    QObject::connect ( d->jabberClientStream, SIGNAL (error(int)),
+           this, SLOT (slotCSError(int)) );
   }
 
   d->jabberClientStream->setOldOnly ( useXMPP09 () );
@@ -723,8 +723,8 @@ JabberClient::ErrorCode JabberClient::connect ( const XMPP::Jid &jid, const QStr
 
     {
       using namespace XMPP;
-      QObject::connect ( d->jabberClient->fileTransferManager(), SIGNAL ( incomingReady() ),
-             this, SLOT ( slotIncomingFileTransfer () ) );
+      QObject::connect ( d->jabberClient->fileTransferManager(), SIGNAL (incomingReady()),
+             this, SLOT (slotIncomingFileTransfer()) );
     }
   }
 
@@ -734,37 +734,37 @@ JabberClient::ErrorCode JabberClient::connect ( const XMPP::Jid &jid, const QStr
   {
     using namespace XMPP;
     kDebug() << "Connecting subscription";
-    QObject::connect ( d->jabberClient, SIGNAL ( subscription (const Jid &, const QString &, const QString &) ),
-    this, SLOT ( slotSubscription (const Jid&, const QString&) ) );
+    QObject::connect ( d->jabberClient, SIGNAL (subscription(Jid,QString,QString)),
+    this, SLOT (slotSubscription(Jid,QString)) );
     kDebug() << "Connecting rosterRequestFinished";
-    QObject::connect ( d->jabberClient, SIGNAL ( rosterRequestFinished ( bool, int, const QString & ) ),
-    this, SLOT ( slotRosterRequestFinished ( bool, int, const QString & ) ) );
-    QObject::connect ( d->jabberClient, SIGNAL ( rosterItemAdded (const RosterItem &) ),
-           this, SLOT ( slotNewContact (const RosterItem &) ) );
-    QObject::connect ( d->jabberClient, SIGNAL ( rosterItemUpdated (const RosterItem &) ),
-           this, SLOT ( slotContactUpdated (const RosterItem &) ) );
-    QObject::connect ( d->jabberClient, SIGNAL ( rosterItemRemoved (const RosterItem &) ),
-           this, SLOT ( slotContactDeleted (const RosterItem &) ) );
-    QObject::connect ( d->jabberClient, SIGNAL ( resourceAvailable (const Jid &, const Resource &) ),
-           this, SLOT ( slotResourceAvailable (const Jid &, const Resource &) ) );
-    QObject::connect ( d->jabberClient, SIGNAL ( resourceUnavailable (const Jid &, const Resource &) ),
-           this, SLOT ( slotResourceUnavailable (const Jid &, const Resource &) ) );
-    QObject::connect ( d->jabberClient, SIGNAL ( messageReceived (const Message &) ),
-           this, SLOT ( slotReceivedMessage (const Message &) ) );
-    QObject::connect ( d->jabberClient, SIGNAL ( groupChatJoined (const Jid &) ),
-           this, SLOT ( slotGroupChatJoined (const Jid &) ) );
-    QObject::connect ( d->jabberClient, SIGNAL ( groupChatLeft (const Jid &) ),
-           this, SLOT ( slotGroupChatLeft (const Jid &) ) );
-    QObject::connect ( d->jabberClient, SIGNAL ( groupChatPresence (const Jid &, const Status &) ),
-           this, SLOT ( slotGroupChatPresence (const Jid &, const Status &) ) );
-    QObject::connect ( d->jabberClient, SIGNAL ( groupChatError (const Jid &, int, const QString &) ),
-           this, SLOT ( slotGroupChatError (const Jid &, int, const QString &) ) );
-    //QObject::connect ( d->jabberClient, SIGNAL (debugText (const QString &) ),
-    //       this, SLOT ( slotPsiDebug (const QString &) ) );
-    QObject::connect ( d->jabberClient, SIGNAL ( xmlIncoming(const QString& ) ),
-           this, SLOT ( slotIncomingXML (const QString &) ) );
-    QObject::connect ( d->jabberClient, SIGNAL ( xmlOutgoing(const QString& ) ),
-           this, SLOT ( slotOutgoingXML (const QString &) ) );
+    QObject::connect ( d->jabberClient, SIGNAL (rosterRequestFinished(bool,int,QString)),
+    this, SLOT (slotRosterRequestFinished(bool,int,QString)) );
+    QObject::connect ( d->jabberClient, SIGNAL (rosterItemAdded(RosterItem)),
+           this, SLOT (slotNewContact(RosterItem)) );
+    QObject::connect ( d->jabberClient, SIGNAL (rosterItemUpdated(RosterItem)),
+           this, SLOT (slotContactUpdated(RosterItem)) );
+    QObject::connect ( d->jabberClient, SIGNAL (rosterItemRemoved(RosterItem)),
+           this, SLOT (slotContactDeleted(RosterItem)) );
+    QObject::connect ( d->jabberClient, SIGNAL (resourceAvailable(Jid,Resource)),
+           this, SLOT (slotResourceAvailable(Jid,Resource)) );
+    QObject::connect ( d->jabberClient, SIGNAL (resourceUnavailable(Jid,Resource)),
+           this, SLOT (slotResourceUnavailable(Jid,Resource)) );
+    QObject::connect ( d->jabberClient, SIGNAL (messageReceived(Message)),
+           this, SLOT (slotReceivedMessage(Message)) );
+    QObject::connect ( d->jabberClient, SIGNAL (groupChatJoined(Jid)),
+           this, SLOT (slotGroupChatJoined(Jid)) );
+    QObject::connect ( d->jabberClient, SIGNAL (groupChatLeft(Jid)),
+           this, SLOT (slotGroupChatLeft(Jid)) );
+    QObject::connect ( d->jabberClient, SIGNAL (groupChatPresence(Jid,Status)),
+           this, SLOT (slotGroupChatPresence(Jid,Status)) );
+    QObject::connect ( d->jabberClient, SIGNAL (groupChatError(Jid,int,QString)),
+           this, SLOT (slotGroupChatError(Jid,int,QString)) );
+    //QObject::connect ( d->jabberClient, SIGNAL (debugText(QString)),
+    //       this, SLOT (slotPsiDebug(QString)) );
+    QObject::connect ( d->jabberClient, SIGNAL (xmlIncoming(QString)),
+           this, SLOT (slotIncomingXML(QString)) );
+    QObject::connect ( d->jabberClient, SIGNAL (xmlOutgoing(QString)),
+           this, SLOT (slotOutgoingXML(QString)) );
   }
 
   d->jabberClient->setClientName ( clientName () );

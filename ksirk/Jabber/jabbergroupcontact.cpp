@@ -60,10 +60,10 @@ JabberGroupContact::JabberGroupContact (const XMPP::RosterItem &rosterItem, Jabb
 	mManager = new JabberGroupChatManager ( protocol (), mSelfContact,
 											Kopete::ContactPtrList (), XMPP::Jid ( rosterItem.jid().userHost () ) );
 
-	connect ( mManager, SIGNAL ( closing ( Kopete::ChatSession* ) ), this, SLOT ( slotChatSessionDeleted () ) );
+	connect ( mManager, SIGNAL (closing(Kopete::ChatSession*)), this, SLOT (slotChatSessionDeleted()) );
 	
-	connect ( account->myself() , SIGNAL(onlineStatusChanged( Kopete::Contact*, const Kopete::OnlineStatus&, const Kopete::OnlineStatus& ) ) ,
-			  this , SLOT(slotStatusChanged()  ) ) ;
+	connect ( account->myself() , SIGNAL(onlineStatusChanged(Kopete::Contact*,Kopete::OnlineStatus,Kopete::OnlineStatus)) ,
+			  this , SLOT(slotStatusChanged()) ) ;
 
 	/**
 	 * FIXME: The first contact in the list of the message manager
@@ -135,7 +135,7 @@ Kopete::ChatSession *JabberGroupContact::manager ( Kopete::Contact::CanCreateFla
 
 		mManager->addContact ( this );
 		
-		connect ( mManager, SIGNAL ( closing ( Kopete::ChatSession* ) ), this, SLOT ( slotChatSessionDeleted () ) );
+		connect ( mManager, SIGNAL (closing(Kopete::ChatSession*)), this, SLOT (slotChatSessionDeleted()) );
 		
 		//if we have to recreate the manager, we probably have to connect again to the chat.
 		slotStatusChanged();

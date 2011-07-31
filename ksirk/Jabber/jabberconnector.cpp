@@ -31,8 +31,8 @@ JabberConnector::JabberConnector ( QObject *parent )
 
 	mByteStream = new JabberByteStream ( this );
 
-	connect ( mByteStream, SIGNAL ( connected () ), this, SLOT ( slotConnected () ) );
-	connect ( mByteStream, SIGNAL ( error ( int ) ), this, SLOT ( slotError ( int ) ) );
+	connect ( mByteStream, SIGNAL (connected()), this, SLOT (slotConnected()) );
+	connect ( mByteStream, SIGNAL (error(int)), this, SLOT (slotError(int)) );
 
 }
 

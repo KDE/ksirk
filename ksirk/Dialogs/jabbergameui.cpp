@@ -89,17 +89,17 @@ void KsirkJabberGameWidget::init(GameAutomaton* automaton)
       ? KLed::On : KLed::Off);
   
   QObject::connect(startnewgamebutton,SIGNAL(clicked()),m_automaton->game(),SLOT(slotNewJabberGame()));
-  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL ( csDisconnected () ), this, SLOT ( slotJabberDisconnected() ) );
-  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL ( csError ( int ) ), this, SLOT ( slotJabberError( int ) ) );
-  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL ( tlsWarning ( QCA::TLS::IdentityResult, QCA::Validity ) ), this, SLOT ( slotHandleTLSWarning ( QCA::TLS::IdentityResult, QCA::Validity ) ) );
-  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL ( connected () ), this, SLOT ( slotJabberConnected() ) );
-  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL ( error ( JabberClient::ErrorCode ) ), this, SLOT ( slotJabberClientError( JabberClient::ErrorCode ) ) );
-  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL ( rosterRequestFinished ( bool ) ), this, SLOT ( slotRosterRequestFinished ( bool ) ) );
-  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (groupChatJoined (const XMPP::Jid&)), this, SLOT(slotGroupChatJoined(const XMPP::Jid&)));
-  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (groupChatLeft(const XMPP::Jid&)), this, SLOT(slotGroupChatLeft(const XMPP::Jid&)));
-  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (groupChatPresence(const XMPP::Jid&, const XMPP::Status&)), this, SLOT(slotGroupChatPresence(const XMPP::Jid&, const XMPP::Status&)));
-  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (groupChatError(const XMPP::Jid&, int, const QString&)), this, SLOT(slotGroupChatError(const XMPP::Jid&, int, const QString&)));
-  QObject::connect(automaton, SIGNAL(newJabberGame(const QString&, int, const QString&)), this, SLOT(slotNewJabberGame(const QString&, int, const QString&) ) );
+  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (csDisconnected()), this, SLOT (slotJabberDisconnected()) );
+  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (csError(int)), this, SLOT (slotJabberError(int)) );
+  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (tlsWarning(QCA::TLS::IdentityResult,QCA::Validity)), this, SLOT (slotHandleTLSWarning(QCA::TLS::IdentityResult,QCA::Validity)) );
+  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (connected()), this, SLOT (slotJabberConnected()) );
+  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (error(JabberClient::ErrorCode)), this, SLOT (slotJabberClientError(JabberClient::ErrorCode)) );
+  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (rosterRequestFinished(bool)), this, SLOT (slotRosterRequestFinished(bool)) );
+  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (groupChatJoined(XMPP::Jid)), this, SLOT(slotGroupChatJoined(XMPP::Jid)));
+  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (groupChatLeft(XMPP::Jid)), this, SLOT(slotGroupChatLeft(XMPP::Jid)));
+  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (groupChatPresence(XMPP::Jid,XMPP::Status)), this, SLOT(slotGroupChatPresence(XMPP::Jid,XMPP::Status)));
+  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (groupChatError(XMPP::Jid,int,QString)), this, SLOT(slotGroupChatError(XMPP::Jid,int,QString)));
+  QObject::connect(automaton, SIGNAL(newJabberGame(QString,int,QString)), this, SLOT(slotNewJabberGame(QString,int,QString)) );
   QObject::connect(this, SIGNAL(cancelled(int)), m_automaton->game(), SLOT(slotJabberGameCanceled(int)));
 }
 

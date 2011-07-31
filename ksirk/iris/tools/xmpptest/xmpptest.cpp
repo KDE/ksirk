@@ -234,7 +234,7 @@ public:
 
 		// setup xmpp
 		conn = new XMPP::AdvancedConnector;
-		connect(conn, SIGNAL(srvLookup(const QString &)), SLOT(conn_srvLookup(const QString &)));
+		connect(conn, SIGNAL(srvLookup(QString)), SLOT(conn_srvLookup(QString)));
 		connect(conn, SIGNAL(srvResult(bool)), SLOT(conn_srvResult(bool)));
 		connect(conn, SIGNAL(httpSyncStarted()), SLOT(conn_httpSyncStarted()));
 		connect(conn, SIGNAL(httpSyncFinished()), SLOT(conn_httpSyncFinished()));
@@ -254,7 +254,7 @@ public:
 		//stream->setOldOnly(true);
 		connect(stream, SIGNAL(connected()), SLOT(cs_connected()));
 		connect(stream, SIGNAL(securityLayerActivated(int)), SLOT(cs_securityLayerActivated(int)));
-		connect(stream, SIGNAL(needAuthParams(bool, bool, bool)), SLOT(cs_needAuthParams(bool, bool, bool)));
+		connect(stream, SIGNAL(needAuthParams(bool,bool,bool)), SLOT(cs_needAuthParams(bool,bool,bool)));
 		connect(stream, SIGNAL(authenticated()), SLOT(cs_authenticated()));
 		connect(stream, SIGNAL(connectionClosed()), SLOT(cs_connectionClosed()));
 		connect(stream, SIGNAL(delayedCloseFinished()), SLOT(cs_delayedCloseFinished()));

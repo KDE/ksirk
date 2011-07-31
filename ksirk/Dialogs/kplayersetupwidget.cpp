@@ -56,7 +56,7 @@ KPlayerSetupWidget::KPlayerSetupWidget(QWidget *parent) :
   setupUi(this);
 
   connect(nationCombo, SIGNAL(activated(int)), this, SLOT(slotNationChanged()));
-  connect(nameLineEdit, SIGNAL(textEdited(const QString&)), this, SLOT(slotNameEdited (const QString&)));
+  connect(nameLineEdit, SIGNAL(textEdited(QString)), this, SLOT(slotNameEdited(QString)));
   connect(nationCombo, SIGNAL(activated(int)), this, SLOT(slotNationChanged()));
   connect(nextButton, SIGNAL(pressed()),this,SLOT(slotNext()));
   connect(previousButton, SIGNAL(pressed()),this,SLOT(slotPrevious()));

@@ -42,11 +42,11 @@ void JabberByteStream::connect ( QString host, int port )
 
 	mSocket = KSocketFactory::connectToHost("xmpp", host, port);
 
-	QObject::connect ( mSocket, SIGNAL ( error ( QAbstractSocket::SocketError ) ), this, SLOT ( slotError ( QAbstractSocket::SocketError ) ) );
-	QObject::connect ( mSocket, SIGNAL ( connected () ), this, SLOT ( slotConnected () ) );
-	QObject::connect ( mSocket, SIGNAL ( disconnected () ), this, SLOT ( slotConnectionClosed () ) );
-	QObject::connect ( mSocket, SIGNAL ( readyRead () ), this, SLOT ( slotReadyRead () ) );
-	QObject::connect ( mSocket, SIGNAL ( bytesWritten ( qint64 ) ), this, SLOT ( slotBytesWritten ( qint64 ) ) );
+	QObject::connect ( mSocket, SIGNAL (error(QAbstractSocket::SocketError)), this, SLOT (slotError(QAbstractSocket::SocketError)) );
+	QObject::connect ( mSocket, SIGNAL (connected()), this, SLOT (slotConnected()) );
+	QObject::connect ( mSocket, SIGNAL (disconnected()), this, SLOT (slotConnectionClosed()) );
+	QObject::connect ( mSocket, SIGNAL (readyRead()), this, SLOT (slotReadyRead()) );
+	QObject::connect ( mSocket, SIGNAL (bytesWritten(qint64)), this, SLOT (slotBytesWritten(qint64)) );
 }
 
 bool JabberByteStream::isOpen () const

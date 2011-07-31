@@ -174,23 +174,23 @@ GameAutomaton::GameAutomaton() :
   
   // Connect the most important slot which tells us which properties are
   // changed
-  connect(this,SIGNAL(signalPropertyChanged(KGamePropertyBase *,KGame *)),
-          this,SLOT(slotPropertyChanged(KGamePropertyBase *,KGame *)));
+  connect(this,SIGNAL(signalPropertyChanged(KGamePropertyBase*,KGame*)),
+          this,SLOT(slotPropertyChanged(KGamePropertyBase*,KGame*)));
   
   connect(this,SIGNAL(signalPlayerJoinedGame(KPlayer*)),
           this,SLOT(slotPlayerJoinedGame(KPlayer*)));
   
-  connect(this,SIGNAL(signalNetworkData(int, const QByteArray&, quint32, quint32)),
-          this,SLOT(slotNetworkData(int, const QByteArray&, quint32, quint32)));
+  connect(this,SIGNAL(signalNetworkData(int,QByteArray,quint32,quint32)),
+          this,SLOT(slotNetworkData(int,QByteArray,quint32,quint32)));
   
-  connect(this,SIGNAL(signalClientJoinedGame(quint32, KGame*)),
-          this,SLOT(slotClientJoinedGame(quint32, KGame*)));
+  connect(this,SIGNAL(signalClientJoinedGame(quint32,KGame*)),
+          this,SLOT(slotClientJoinedGame(quint32,KGame*)));
   
   connect(messageClient(),SIGNAL(connectionBroken()),
           this,SLOT(slotConnectionToServerBroken()));
   
-  connect(messageServer(),SIGNAL(connectionLost(KMessageIO *)),
-          this,SLOT(slotConnectionToClientBroken(KMessageIO *)));
+  connect(messageServer(),SIGNAL(connectionLost(KMessageIO*)),
+          this,SLOT(slotConnectionToClientBroken(KMessageIO*)));
 
   setPolicy(KGame::PolicyDirty,true);
   
@@ -1041,9 +1041,9 @@ void GameAutomaton::createIO(KPlayer *player,KGameIO::IOMode io)
     // Connect mouse input to a function to process the actual input
     connect(
       input,
-      SIGNAL(signalMouseEvent(KGameIO *,QDataStream &,QMouseEvent *,bool *)),
+      SIGNAL(signalMouseEvent(KGameIO*,QDataStream&,QMouseEvent*,bool*)),
       m_game->frame(),
-      SLOT(slotMouseInput(KGameIO *,QDataStream &,QMouseEvent *,bool *)));
+      SLOT(slotMouseInput(KGameIO*,QDataStream&,QMouseEvent*,bool*)));
 
     // Add the device to the player
     player->addGameIO(input);
@@ -1198,8 +1198,8 @@ bool GameAutomaton::connectToServ()
   kDebug();
   if (messageServer() != 0)
   {
-    QObject::disconnect(messageServer(),SIGNAL(connectionLost(KMessageIO *)),
-                        this,SLOT(slotConnectionToClientBroken(KMessageIO *)));
+    QObject::disconnect(messageServer(),SIGNAL(connectionLost(KMessageIO*)),
+                        this,SLOT(slotConnectionToClientBroken(KMessageIO*)));
   }
   kDebug() << "Before connectToServer" << endl;
   QString host = m_game->newGameSetup()->host();
@@ -1207,8 +1207,8 @@ bool GameAutomaton::connectToServ()
   bool status = connectToServer(host, port);
   kDebug() << "After connectToServer" << status;
   if (messageServer())
-    connect(messageServer(),SIGNAL(connectionLost(KMessageIO *)),
-          this,SLOT(slotConnectionToClientBroken(KMessageIO *)));
+    connect(messageServer(),SIGNAL(connectionLost(KMessageIO*)),
+          this,SLOT(slotConnectionToClientBroken(KMessageIO*)));
   return status;
 }
 
@@ -1223,8 +1223,8 @@ bool GameAutomaton::joinJabberGame(const QString& nick)
     
     if (messageServer() != 0)
     {
-      QObject::disconnect(messageServer(),SIGNAL(connectionLost(KMessageIO *)),
-                           this,SLOT(slotConnectionToClientBroken(KMessageIO *)));
+      QObject::disconnect(messageServer(),SIGNAL(connectionLost(KMessageIO*)),
+                           this,SLOT(slotConnectionToClientBroken(KMessageIO*)));
     }
     
     kDebug() << "Before connectToServer" << endl;
@@ -1242,8 +1242,8 @@ bool GameAutomaton::joinJabberGame(const QString& nick)
       message.setBody(msg);
       m_game->jabberClient()->sendMessage(message);
     }
-    //       connect(messageServer(),SIGNAL(connectionLost(KMessageIO *)),
-                                                           //          this,SLOT(slotConnectionToClientBroken(KMessageIO *)));
+    //       connect(messageServer(),SIGNAL(connectionLost(KMessageIO*)),
+                                                           //          this,SLOT(slotConnectionToClientBroken(KMessageIO*)));
                                                            return status;
   }
   return false;
@@ -2480,8 +2480,8 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
       finalizePlayers();
     break;
   case Winner:
-    QObject::disconnect(messageServer(),SIGNAL(connectionLost(KMessageIO *)),
-                        this,SLOT(slotConnectionToClientBroken(KMessageIO *)));
+    QObject::disconnect(messageServer(),SIGNAL(connectionLost(KMessageIO*)),
+                        this,SLOT(slotConnectionToClientBroken(KMessageIO*)));
     stream >> playerId;
     m_game->winner(dynamic_cast<Player*>(findPlayer(playerId)));
     break;

@@ -1514,14 +1514,14 @@ void KGameWindow::initCombatBringBackForArena(Country *attackingCountry, Country
   */
 void KGameWindow::disconnectMouse()
 {
-/*  if ( ! disconnect(m_frame, SIGNAL(signalLeftButtonDown(const QPoint &)),
-                    this, SLOT(slotLeftButtonDown(const QPoint&))))
+/*  if ( ! disconnect(m_frame, SIGNAL(signalLeftButtonDown(QPoint)),
+                    this, SLOT(slotLeftButtonDown(QPoint))))
     kError() << "cannot connect slotLeftButtonDown !";
-  if ( ! disconnect(m_frame, SIGNAL(signalLeftButtonUp(const QPoint &)),
-                    this, SLOT(slotLeftButtonUp(const QPoint &))))
+  if ( ! disconnect(m_frame, SIGNAL(signalLeftButtonUp(QPoint)),
+                    this, SLOT(slotLeftButtonUp(QPoint))))
     kError() << "cannot connect slotLeftButtonUp !";
-  if ( ! disconnect(m_frame, SIGNAL(signalRightButtonDown(const QPoint &)),
-                    this, SLOT(slotRightButtonDown(const QPoint &))))
+  if ( ! disconnect(m_frame, SIGNAL(signalRightButtonDown(QPoint)),
+                    this, SLOT(slotRightButtonDown(QPoint))))
     kError() << "cannot connect slotRightButtonDown !";*/
 }
 
@@ -1531,14 +1531,14 @@ void KGameWindow::disconnectMouse()
   */
 void KGameWindow::reconnectMouse()
 {
-/*  if ( ! connect(m_frame, SIGNAL(signalLeftButtonDown(const QPoint &)),
-                    this, SLOT(slotLeftButtonDown(const QPoint&))))
+/*  if ( ! connect(m_frame, SIGNAL(signalLeftButtonDown(QPoint)),
+                    this, SLOT(slotLeftButtonDown(QPoint))))
   kError() << "cannot connect slotLeftButtonDown !";
-  if ( ! connect(m_frame, SIGNAL(signalLeftButtonUp(const QPoint &)),
-                    this, SLOT(slotLeftButtonUp(const QPoint &))))
+  if ( ! connect(m_frame, SIGNAL(signalLeftButtonUp(QPoint)),
+                    this, SLOT(slotLeftButtonUp(QPoint))))
   kError() << "cannot connect slotLeftButtonUp !";
-  if ( ! connect(m_frame, SIGNAL(signalRightButtonDown(const QPoint &)),
-                    this, SLOT(slotRightButtonDown(const QPoint &))))
+  if ( ! connect(m_frame, SIGNAL(signalRightButtonDown(QPoint)),
+                    this, SLOT(slotRightButtonDown(QPoint))))
   kError() << "cannot connect slotRightButtonDown !";*/
 }
 

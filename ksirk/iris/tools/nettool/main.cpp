@@ -50,8 +50,8 @@ public slots:
 		connect(ProcessQuit::instance(), SIGNAL(quit()), SIGNAL(quit()));
 
 		man = new NetInterfaceManager;
-		connect(man, SIGNAL(interfaceAvailable(const QString &)),
-			SLOT(here(const QString &)));
+		connect(man, SIGNAL(interfaceAvailable(QString)),
+			SLOT(here(QString)));
 		QStringList list = man->interfaces();
 		for(int n = 0; n < list.count(); ++n)
 			here(list[n]);
@@ -189,8 +189,8 @@ public slots:
 	{
 		connect(ProcessQuit::instance(), SIGNAL(quit()), SIGNAL(quit()));
 
-		connect(&dns, SIGNAL(resultsReady(const QList<XMPP::NameRecord> &)),
-			SLOT(dns_resultsReady(const QList<XMPP::NameRecord> &)));
+		connect(&dns, SIGNAL(resultsReady(QList<XMPP::NameRecord>)),
+			SLOT(dns_resultsReady(QList<XMPP::NameRecord>)));
 		connect(&dns, SIGNAL(error(XMPP::NameResolver::Error)),
 			SLOT(dns_error(XMPP::NameResolver::Error)));
 
@@ -251,10 +251,10 @@ public slots:
 	{
 		connect(ProcessQuit::instance(), SIGNAL(quit()), SIGNAL(quit()));
 
-		connect(&browser, SIGNAL(instanceAvailable(const XMPP::ServiceInstance &)),
-			SLOT(browser_instanceAvailable(const XMPP::ServiceInstance &)));
-		connect(&browser, SIGNAL(instanceUnavailable(const XMPP::ServiceInstance &)),
-			SLOT(browser_instanceUnavailable(const XMPP::ServiceInstance &)));
+		connect(&browser, SIGNAL(instanceAvailable(XMPP::ServiceInstance)),
+			SLOT(browser_instanceAvailable(XMPP::ServiceInstance)));
+		connect(&browser, SIGNAL(instanceUnavailable(XMPP::ServiceInstance)),
+			SLOT(browser_instanceUnavailable(XMPP::ServiceInstance)));
 		connect(&browser, SIGNAL(error()), SLOT(browser_error()));
 
 		browser.start(type, domain);
@@ -303,8 +303,8 @@ public slots:
 	{
 		connect(ProcessQuit::instance(), SIGNAL(quit()), SIGNAL(quit()));
 
-		connect(&dns, SIGNAL(resultsReady(const QHostAddress &, int)),
-			SLOT(dns_resultsReady(const QHostAddress &, int)));
+		connect(&dns, SIGNAL(resultsReady(QHostAddress,int)),
+			SLOT(dns_resultsReady(QHostAddress,int)));
 		connect(&dns, SIGNAL(finished()), SLOT(dns_finished()));
 		connect(&dns, SIGNAL(error()), SLOT(dns_error()));
 

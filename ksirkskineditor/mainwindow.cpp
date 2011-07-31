@@ -92,9 +92,9 @@ MainWindow::MainWindow(QWidget* parent) :
   setCentralWidget(mainWidget);
   
   m_mapScene = new Scene(0,0,1024,768,this);
-  connect(m_mapScene,SIGNAL(position(const QPointF&)),this,SLOT(slotPosition(const QPointF&)));
-  connect(m_mapScene,SIGNAL(pressPosition(const QPointF&)),this,SLOT(slotPressPosition(const QPointF&)));
-  connect(m_mapScene,SIGNAL(releasePosition(const QPointF&)),this,SLOT(slotReleasePosition(const QPointF&)));
+  connect(m_mapScene,SIGNAL(position(QPointF)),this,SLOT(slotPosition(QPointF)));
+  connect(m_mapScene,SIGNAL(pressPosition(QPointF)),this,SLOT(slotPressPosition(QPointF)));
+  connect(m_mapScene,SIGNAL(releasePosition(QPointF)),this,SLOT(slotReleasePosition(QPointF)));
   m_mapView = new QGraphicsView(m_mapScene,mainWidget->mapScrollArea);
   m_mapView->setInteractive(true);
 
@@ -175,9 +175,9 @@ MainWindow::MainWindow(QWidget* parent) :
   m_skinDefWidget = new KSirkSkinDefinitionWidget(this);
   addDockWidget ( Qt::LeftDockWidgetArea, m_skinDefWidget);
   
-  connect(m_skinDefWidget->fontrequester, SIGNAL(fontSelected(const QFont &)), this, SLOT(slotFontSelected(const QFont&)));
-  connect(m_skinDefWidget->fgcolorbutton, SIGNAL(changed(const QColor&)), this, SLOT(slotFgSelected(const QColor&)));
-  connect(m_skinDefWidget->bgcolorbutton, SIGNAL(changed(const QColor&)), this, SLOT(slotBgColorSelected(const QColor&)));
+  connect(m_skinDefWidget->fontrequester, SIGNAL(fontSelected(QFont)), this, SLOT(slotFontSelected(QFont)));
+  connect(m_skinDefWidget->fgcolorbutton, SIGNAL(changed(QColor)), this, SLOT(slotFgSelected(QColor)));
+  connect(m_skinDefWidget->bgcolorbutton, SIGNAL(changed(QColor)), this, SLOT(slotBgColorSelected(QColor)));
 
   m_countryDefWidget = new KsirkCountryDefinitionWidget(this);
   m_countryDefWidget->neighbourslist->setSortingEnabled(true);
@@ -244,7 +244,7 @@ MainWindow::MainWindow(QWidget* parent) :
   connect(m_spritesDefWidget->explodingv, SIGNAL(valueChanged(int)), this, SLOT(slotExplodingVersionsChanged(int)));
   
   
-  connect(m_skinDefWidget->ktabwidget, SIGNAL(currentChanged (int)), this, SLOT(slotSkinPartTabChanged(int)));
+  connect(m_skinDefWidget->ktabwidget, SIGNAL(currentChanged(int)), this, SLOT(slotSkinPartTabChanged(int)));
   m_skinDefWidget->ktabwidget-> setCurrentIndex(0);
   
   m_skinDefWidget->countrieslist->setSortingEnabled (true);
@@ -333,7 +333,7 @@ void MainWindow::initActions()
   actionCollection()->addAction(action->objectName(), action);
   action->setToolTip(i18n("Open a saved skin..."));
 
-  m_rfa = KStandardGameAction::loadRecent (this, SLOT(slotURLSelected(const KUrl&)), this);
+  m_rfa = KStandardGameAction::loadRecent (this, SLOT(slotURLSelected(KUrl)), this);
   actionCollection()->addAction(m_rfa->objectName(), m_rfa);
   m_rfa->setText(i18n("Load &Recent"));
   m_rfa->setToolTip(i18n("Open a recently saved skin..."));
@@ -358,7 +358,7 @@ void MainWindow::initActions()
 //   action = KStandardAction::zoomOut(this, SLOT(slotZoomOut()), this);
 //   actionCollection()->addAction(action->objectName(), action);
 
-  KStandardAction::preferences( this, SLOT( optionsConfigure() ), actionCollection() );
+  KStandardAction::preferences( this, SLOT(optionsConfigure()), actionCollection() );
 
 }
 
@@ -776,8 +776,8 @@ void MainWindow::slotPressPosition(const QPointF& clickedPoint)
   }
   PixmapItem* item = new PixmapItem();
   item->setZValue(10);
-  connect(item, SIGNAL(pressed(QGraphicsItem*, const QPointF&)),this, SLOT(slotItemPressed(QGraphicsItem*, const QPointF&)));
-  connect(item, SIGNAL(placed(QGraphicsItem*, const QPointF&)),this, SLOT(slotItemPlaced(QGraphicsItem*, const QPointF&)));
+  connect(item, SIGNAL(pressed(QGraphicsItem*,QPointF)),this, SLOT(slotItemPressed(QGraphicsItem*,QPointF)));
+  connect(item, SIGNAL(placed(QGraphicsItem*,QPointF)),this, SLOT(slotItemPlaced(QGraphicsItem*,QPointF)));
   
   switch (m_selectedSprite)
   {
@@ -1236,13 +1236,13 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
     item->setPos(point);
     if (dynamic_cast<PixmapItem*>(item) != 0)
     {
-      connect(dynamic_cast<PixmapItem*>(item),SIGNAL(pressed(QGraphicsItem*, const QPointF&)),this, SLOT(slotItemPressed(QGraphicsItem*, const QPointF&)));
-      connect(dynamic_cast<PixmapItem*>(item),SIGNAL(placed(QGraphicsItem*, const QPointF&)),this, SLOT(slotItemPlaced(QGraphicsItem*, const QPointF&)));
+      connect(dynamic_cast<PixmapItem*>(item),SIGNAL(pressed(QGraphicsItem*,QPointF)),this, SLOT(slotItemPressed(QGraphicsItem*,QPointF)));
+      connect(dynamic_cast<PixmapItem*>(item),SIGNAL(placed(QGraphicsItem*,QPointF)),this, SLOT(slotItemPlaced(QGraphicsItem*,QPointF)));
     }
     else if (dynamic_cast<TextItem*>(item) != 0)
     {
-      connect(dynamic_cast<TextItem*>(item),SIGNAL(pressed(QGraphicsItem*, const QPointF&)),this, SLOT(slotItemPressed(QGraphicsItem*, const QPointF&)));
-      connect(dynamic_cast<TextItem*>(item), SIGNAL(placed(QGraphicsItem*, const QPointF&)),this, SLOT(slotItemPlaced(QGraphicsItem*, const QPointF&)));
+      connect(dynamic_cast<TextItem*>(item),SIGNAL(pressed(QGraphicsItem*,QPointF)),this, SLOT(slotItemPressed(QGraphicsItem*,QPointF)));
+      connect(dynamic_cast<TextItem*>(item), SIGNAL(placed(QGraphicsItem*,QPointF)),this, SLOT(slotItemPlaced(QGraphicsItem*,QPointF)));
     }
     m_mapScene->addItem(item);
     item->setFlag(QGraphicsItem::ItemIsMovable, true);
