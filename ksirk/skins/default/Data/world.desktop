@@ -122,10 +122,6 @@ id=28
 infantry-point=588,424
 neighbours=Algeria,Niger,Gabon,Arabia
 
-[England]
-flag=uk
-leader=Elisabeth
-
 [Europe]
 bonus=5
 continent-countries=Scandinavia,United Kingdom,Kazakstan,Island,France,Benelux,Prussia
@@ -415,6 +411,10 @@ continent-countries=Mexico,Colombia,Brazil,Chile,Paraguay
 id=2
 
 [United Kingdom]
+flag=uk
+leader=Elisabeth
+
+[United Kingdom]
 anchor-point=486,277
 cannon-point=448,245
 cavalry-point=486,241
@@ -564,7 +564,7 @@ goals=goal1,goal2,goal3,goal4,goal5,goal6,goal7,goal8,goal9
 height=768
 map-mask=Images/map-mask.png
 name=Earth-like
-nationalities=France,England,United States,Belgium,Japan,Italy
+nationalities=France,United Kingdom,United States,Belgium,Japan,Italy
 nb-continents=6
 nb-countries=41
 nb-nationalities=6
