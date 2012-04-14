@@ -27,7 +27,6 @@
 #include <KStandardDirs>
 #include <KMessageBox>
 #include <KConfigDialog>
-#include <KGameThemeSelector>
 #include <knewstuff3/downloaddialog.h>
 
 #include <qdir.h>
