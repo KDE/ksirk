@@ -75,8 +75,6 @@
 #include <KDebug>
 #include <phonon/mediaobject.h>
 #include <KPushButton>
-#include <kchatdialog.h>
-#include <kgame/kgamechat.h>
 #include <kgamepopupitem.h>
 #include <kglobal.h>
 #include <KStatusBar>
@@ -85,6 +83,10 @@
 #include <QSvgRenderer>
 #include <KDialog>
 #include <KAboutData>
+
+#define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
+#include <libkdegamesprivate/kchatdialog.h>
+#include <libkdegamesprivate/kgame/kgamechat.h>
 
 
 #include <sys/utsname.h>

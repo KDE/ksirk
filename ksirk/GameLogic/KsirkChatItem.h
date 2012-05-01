@@ -27,7 +27,9 @@
 #include <qpushbutton.h>
 #include <qcolor.h>
 #include <QPixmap>
-#include <kchatbasemodel.h>
+
+#define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
+#include <libkdegamesprivate/kchatbasemodel.h>
 
 /**
   * This is the class of the items displayed in the chat dialog at the bottom

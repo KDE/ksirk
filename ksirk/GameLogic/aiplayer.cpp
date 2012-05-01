@@ -28,7 +28,8 @@
 #include "kgamewin.h"
 #include "gameautomaton.h"
 
-#include <kgame/kplayer.h>
+#define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
+#include <libkdegamesprivate/kgame/kplayer.h>
 
 
 /* Includes for KDE */

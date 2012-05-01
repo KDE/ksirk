@@ -48,9 +48,11 @@
 #include <klineedit.h>
 #include <kmessagebox.h>
 #include <kvbox.h>
-#include <kgame/kmessageclient.h>
-#include <kgame/kmessageserver.h>
-#include <kgame/kgamechat.h>
+
+#define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
+#include <libkdegamesprivate/kgame/kmessageclient.h>
+#include <libkdegamesprivate/kgame/kmessageserver.h>
+#include <libkdegamesprivate/kgame/kgamechat.h>
 
 #include <errno.h>
 #include <sys/types.h>

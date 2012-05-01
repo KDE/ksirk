@@ -28,7 +28,9 @@
 #include <qcolor.h>
 #include <QPixmap>
 
-#include <kchatbasemodel.h>
+#define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
+#include <libkdegamesprivate/kchatbasemodel.h>
+
 #include "KsirkChatItem.h"
 #include "../kgamewin.h"
 namespace Ksirk

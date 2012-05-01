@@ -34,7 +34,8 @@
 #include <QObject>
 #include <QMap>
 
-#include <kgamesvgdocument.h>
+#define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
+#include <libkdegamesprivate/kgamesvgdocument.h>
 
 class QGraphicsItem;
 

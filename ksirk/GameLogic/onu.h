@@ -23,7 +23,8 @@
 #ifndef ONU_H
 #define ONU_H
 
-#include <kgamesvgdocument.h>
+#define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
+#include <libkdegamesprivate/kgamesvgdocument.h>
 
 #include <qdatastream.h>
 #include <QPixmap>

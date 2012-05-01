@@ -29,9 +29,10 @@
 #include "nationality.h"
 #include "Sprites/animsprite.h"
 
-#include <kgame/kplayer.h>
-#include <kgame/kgame.h>
-#include <kgame/kgameproperty.h>
+#define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
+#include <libkdegamesprivate/kgame/kplayer.h>
+#include <libkdegamesprivate/kgame/kgame.h>
+#include <libkdegamesprivate/kgame/kgameproperty.h>
 
 #include <QString>
 #include <QMutex>

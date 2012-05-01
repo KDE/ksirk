@@ -39,7 +39,8 @@
 #include "Dialogs/kplayersetupwidget.h"
 #include "Jabber/kmessagejabber.h"
 
-#include "kgame/kmessageserver.h"
+#define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
+#include <libkdegamesprivate/kgame/kmessageserver.h>
 
 // STL include files
 #include <fstream>

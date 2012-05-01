@@ -51,7 +51,8 @@
 #include <KStandardDirs>
 #include <KShortcut>
 // include files for kde games
-#include <kgame/kgamechat.h>
+#define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
+#include <libkdegamesprivate/kgame/kgamechat.h>
 
 // #include <kdialogbase.h>
 

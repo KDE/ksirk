@@ -128,6 +128,7 @@ target_link_libraries(ksirk
   ${QCA2_LIBRARIES}
   iris_ksirk
   kdegames
+  kdegamesprivate
   )
 
 install( TARGETS ksirk ${INSTALL_TARGETS_DEFAULT_ARGS})

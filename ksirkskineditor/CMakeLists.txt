@@ -51,6 +51,7 @@ target_link_libraries(ksirkskineditor
   ${KDE4_KIO_LIBS} 
   ${KDE4_PHONON_LIBRARY}
   kdegames
+  kdegamesprivate
   ${CRYPT_LIBS}
  )
 

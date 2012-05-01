@@ -21,13 +21,14 @@
 
 #include "eventslistproperty.h"
 
-#include <kgame/kgame.h>
-#include <kgame/kplayer.h>
-#include <kgame/kgameio.h>
-#include <kgame/kgamepropertyarray.h>
-#include <kgame/kgameproperty.h>
-#include <kgame/kmessageio.h>
-#include <KGameSvgDocument>
+#define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
+#include <libkdegamesprivate/kgame/kgame.h>
+#include <libkdegamesprivate/kgame/kplayer.h>
+#include <libkdegamesprivate/kgame/kgameio.h>
+#include <libkdegamesprivate/kgame/kgamepropertyarray.h>
+#include <libkdegamesprivate/kgame/kgameproperty.h>
+#include <libkdegamesprivate/kgame/kmessageio.h>
+#include <libkdegamesprivate/kgamesvgdocument.h>
 
 #include <KPixmapCache>
 

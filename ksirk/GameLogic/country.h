@@ -26,7 +26,8 @@
 #include "Sprites/cannonsprite.h"
 #include "Sprites/animspriteslist.h"
 
-#include <kgame/kgameproperty.h>
+#define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
+#include <libkdegamesprivate/kgame/kgameproperty.h>
 
 #include <qpoint.h>
 #include <qstring.h>

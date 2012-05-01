@@ -33,9 +33,11 @@
 #include <klocale.h>
 #include <kdebug.h>
 #include <kgamepopupitem.h>
-#include <kgame/kgameio.h>
-#include <kgame/kplayer.h>
 #include <KAction>
+
+#define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
+#include <libkdegamesprivate/kgame/kgameio.h>
+#include <libkdegamesprivate/kgame/kplayer.h>
 
 namespace Ksirk
 {

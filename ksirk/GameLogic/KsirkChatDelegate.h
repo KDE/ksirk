@@ -22,7 +22,8 @@
 #ifndef KSIRKCHATDELEGATE_H
 #define KSIRKCHATDELEGATE_H
 
-#include <kchatbaseitemdelegate.h>
+#define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
+#include <libkdegamesprivate/kchatbaseitemdelegate.h>
 
 class KsirkChatDelegate : public KChatBaseItemDelegate
 {

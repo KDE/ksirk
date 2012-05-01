@@ -21,7 +21,8 @@
 
 #include "aiplayer.h"
 
-#include <kgame/kgameio.h>
+#define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
+#include <libkdegamesprivate/kgame/kgameio.h>
 
 namespace Ksirk {
 
