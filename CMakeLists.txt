@@ -22,4 +22,4 @@ remove_definitions(-DQT_NO_STL)
 
 add_subdirectory(ksirk)
 add_subdirectory(ksirkskineditor)
-
+add_subdirectory(doc)
