@@ -9,7 +9,7 @@ if(NOT COMPILING_KDEGAMES)
 
 	add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 	add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
-	include_directories(${QDBUS_INCLUDE_DIRS} ${KDE4_INCLUDES} ${KDEGAMES_INCLUDE_DIRS})
+	include_directories(${KDEGAMES_INCLUDE_DIRS} ${KDE4_INCLUDES} ${QDBUS_INCLUDE_DIRS})
 
 	macro_log_feature(QCA2_FOUND "QCA2" "Qt Cryptographic Architecture" "http://delta.affinix.com/qca" TRUE "2.0.0" "Needed to build Ksirk Jabber support's GroupWise and Jabberprotocols.")
 	macro_display_feature_log()
