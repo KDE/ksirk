@@ -4,7 +4,7 @@ if(NOT COMPILING_KDEGAMES)
 	find_package(KDE4 REQUIRED)
 	include(KDE4Defaults)
 	include(MacroLibrary)
-	find_package(KDEGames REQUIRED)
+	find_package(KDEGames 4.9.0 REQUIRED)
 	find_package(QCA2 REQUIRED)
 
 	add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
