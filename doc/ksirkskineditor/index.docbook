@@ -8,9 +8,9 @@
   <!ENTITY % English "INCLUDE">
 ]>
 
-<book lang="&language;">
+<book id="ksirkskineditor" lang="&language;">
 
-<bookinfo>
+<book id="ksirkskineditor"info>
 <title>The &kappname; Handbook</title>
 
 <authorgroup>
