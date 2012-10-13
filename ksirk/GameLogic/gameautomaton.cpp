@@ -2638,8 +2638,16 @@ void GameAutomaton::removeAllPlayers()
 {
   kDebug();
   m_currentPlayer = "";
-  qDeleteAll(*playerList());
-  playerList()->clear();
+  
+  /* Bug 304362. KPlayer destructor removes
+   * player from the list and makes iterators invalid.
+   * qDeleteAll crashes in that case. */
+  while (!playerList()->isEmpty()) 
+  {
+    delete playerList()->takeFirst();
+  }
+  // qDeleteAll(*playerList());
+  // playerList()->clear();
 }
 
 void GameAutomaton::newGameNext()
