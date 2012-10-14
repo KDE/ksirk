@@ -176,11 +176,7 @@ InvasionSlider::InvasionSlider(KGameWindow* game, GameLogic::Country * attack, G
   connect(m_invadeSlide,SIGNAL(valueChanged(int)),this,SLOT(slideMove(int)));
   connect(m_invadeSlide,SIGNAL(sliderReleased()),this,SLOT(slideReleased()));
   connect(this,SIGNAL(okClicked()),this,SLOT(slideClose()));
-  if (invasionType == Invasion)
-  {
-    connect(this,SIGNAL(finished(int)),this,SLOT(slideClose()));
-  }
-  else if (invasionType == Moving)
+  if (invasionType == Moving)
   {
     connect(this,SIGNAL(cancelClicked()),this,SLOT(slideCancel()));
   }
