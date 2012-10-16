@@ -291,7 +291,7 @@ QString Goal::message(int displayType) const
       {
         Continent* continent = const_cast<Continent*>(m_automaton->game()->theWorld()->continentNamed(*it));
         int nb = continent->getMembers().size() - continent->countriesOwnedBy(m_player).size();
-        mes += i18np("1 country in %2","%1 countries in %2",nb,continent->name());
+        mes += i18np("1 country in %2","%1 countries in %2",nb,i18n(continent->name().toUtf8().data()));
       }
       it++;
       while (it != it_end)
@@ -311,7 +311,7 @@ QString Goal::message(int displayType) const
         {
           Continent* continent = const_cast<Continent*>(m_automaton->game()->theWorld()->continentNamed(*it));
           int nb = continent->getMembers().size() - continent->countriesOwnedBy(m_player).size();
-          mes += joint + i18nc("@info An element of the enumeration of the number of countries in the given continent", "%1 in %2",nb,continent->name());
+          mes += joint + i18nc("@info An element of the enumeration of the number of countries in the given continent", "%1 in %2",nb,i18n(continent->name().toUtf8().data()));
         }
         it++;
       }
