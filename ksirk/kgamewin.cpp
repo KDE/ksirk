@@ -2995,6 +2995,7 @@ void KGameWindow::showMap()
   kDebug();
   m_centralWidget->setCurrentIndex(MAP_INDEX);
   m_currentDisplayedWidget = Map;
+  statusBar()->show();
 }
 
 void KGameWindow::showMainMenu()
@@ -3116,6 +3117,8 @@ bool KGameWindow::newGameDialog(const QString& skin, GameAutomaton::NetworkGameT
   m_automaton->setGameStatus( KGame::Pause );
   m_stateBeforeNewGame = m_automaton->state();
   m_automaton->state(GameAutomaton::STARTING_GAME);
+  m_rightDock->hide();
+  statusBar()->hide();
   m_newGameDialog->init(skin, netGameType);
   m_stackWidgetBeforeNewGame = m_centralWidget->currentIndex();
   m_centralWidget->setCurrentIndex(NEWGAME_INDEX);
