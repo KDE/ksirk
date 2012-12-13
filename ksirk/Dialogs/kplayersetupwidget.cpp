@@ -39,9 +39,6 @@
 
 #include <klocale.h>
 #include <kdebug.h>
-#include <kstandarddirs.h>
-#include <kpassworddialog.h>
-#include <kmessagebox.h>
 
 #define _XOPEN_SOURCE_
 // #include <unistd.h>
