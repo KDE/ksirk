@@ -25,7 +25,7 @@
 #include <libkdegamesprivate/kgame/kgame.h>
 #include <libkdegamesprivate/kgame/kplayer.h>
 #include <libkdegamesprivate/kgame/kgameio.h>
-#include <libkdegamesprivate/kgame/kgamepropertyarray.h>
+#include <libkdegamesprivate/kgame/kgamemessage.h>
 #include <libkdegamesprivate/kgame/kgameproperty.h>
 #include <libkdegamesprivate/kgame/kmessageio.h>
 #include <libkdegamesprivate/kgamesvgdocument.h>

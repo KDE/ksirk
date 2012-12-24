@@ -33,6 +33,7 @@
 #include <libkdegamesprivate/kgame/kplayer.h>
 #include <libkdegamesprivate/kgame/kgame.h>
 #include <libkdegamesprivate/kgame/kgameproperty.h>
+#include <libkdegamesprivate/kgame/kgamepropertyhandler.h>
 
 #include <QString>
 #include <QMutex>
