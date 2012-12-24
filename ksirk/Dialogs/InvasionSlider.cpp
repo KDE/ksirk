@@ -83,9 +83,6 @@
 #include <KDialog>
 #include <KAboutData>
 
-#define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
-#include <libkdegamesprivate/kgame/kgamechat.h>
-
 #include <sys/utsname.h>
 
 #include <QLabel>

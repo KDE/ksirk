@@ -50,9 +50,6 @@
 #include <KXmlGuiWindow>
 #include <KStandardDirs>
 #include <KShortcut>
-// include files for kde games
-#define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
-#include <libkdegamesprivate/kgame/kgamechat.h>
 
 // #include <kdialogbase.h>
 
