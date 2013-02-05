@@ -212,7 +212,8 @@ void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
 
       // we cannot see detail of country during the AI or virtual player game
       // as the right widget is reserved for combat
-      if(m_automaton->game()->theWorld()->countryAt(detailPoint)!=0)
+      // Bug 309863. Disable country details during auto attack also.
+      if(m_automaton->game()->theWorld()->countryAt(detailPoint)!=0 && !m_automaton->isAttackAuto())
       {
         detailsAction->setVisible(true);
       }
@@ -227,6 +228,13 @@ void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
       // we disabled the nextPlayer action and the goal
       nextPlayer->setVisible(false);
       goalAction->setVisible(false);
+      // Bug 309863. Details of the country and combat are both shown in the right widget.
+      // Some of the resources are used by both which leads to the crash. Disable detaied view
+      // of the country when AI is playing. Some of the previous attempts to resolve this (or similar) issue(s)
+      // disabled this item from context menu, but didn't cover all possible paths. Here, just follow that idea.
+      // It makes no sense to show just for a moment details of the country when AI combat details will override
+      // and reuse right widget (no time for human to inspect country details in such short time).
+      detailsAction->setVisible(false);
     }
 
     menu->exec(menuPoint);
