@@ -183,10 +183,12 @@ void NewGameWidget::slotSkinChanged(int skinNum)
 
 void NewGameWidget::slotGHNS()
 {
-  if ( KConfigDialog::showDialog("settings") )
-  {
-    return;
-  }
+  // Bug 281294. No need to touch ConfigDialog.
+  // Skins are handled by KNS3 dialog.
+  // if ( KConfigDialog::showDialog("settings") )
+  // {
+  //   return;
+  // }
   kDebug();
   KNS3::DownloadDialog dialog(this);
   dialog.exec();
