@@ -10,7 +10,7 @@
 <book id="ksirk" lang="&language;">
 
 <bookinfo>
-<title>The &kappname; Handbook</title>
+<title>The &ksirk; Handbook</title>
 
 <authorgroup>
 <author>
@@ -21,13 +21,25 @@
 <address><email>Kleag@free.fr</email></address>
 </affiliation>
 </author>
+<author>
+<firstname>Nemanja</firstname>
+<othername></othername>
+<surname>Hirsl</surname>
+<affiliation>
+<address><email>nemhirsl@gmail.com</email></address>
+</affiliation>
+</author>
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
 
 <copyright>
-<year>2002-2008</year>
+<year>2002-2012</year>
 <holder>Gael de Chalendar</holder>
+</copyright>
+<copyright>
+<year>2013</year>
+<holder>Nemanja Hirsl</holder>
 </copyright>
 <!-- Translators: put here the copyright notice of the translation -->
 <!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
@@ -41,24 +53,24 @@ Please respect the format of the date (DD/MM/YYYY) and of the version
 (V.MM.LL), it could be used by automation scripts.
 Do NOT change these in the translation. -->
 
-<date>18/09/2008</date>
-<releaseinfo>4.1.2</releaseinfo>
+<date>2013-02-17</date>
+<releaseinfo>4.10.0</releaseinfo>
 
 <!-- Abstract about this handbook -->
 
 <abstract>
 <para>
-&kappname; is a computerized version of a well known strategy game. Commercial
+&ksirk; is a computerized version of a well known strategy game. Commercial
 and other Free Software versions exist but I (Gaël de Chalendar) created this game
 initially as a C++ learning exercise and so, I developed it up to this point (see README for details).
 </para>
 <para>
-In the current version, &kappname; is a multi-player network-enabled game with an AI.
+In the current version, &ksirk; is a multi-player network-enabled game with an AI.
 (see TODO for details)
 </para>
 <para>
 This documentation gives the major information you need to start playing.
-Please read the tooltips and the status bar messages to complete your information. A chapter explains how to create new skins for &kappname;
+Please read the tooltips and the status bar messages to complete your information. A chapter explains how to create new skins for &ksirk;
 </para>
 <para>
 The goal of the game is simply to conquer the World... It is done by attacking your neighbors
@@ -101,13 +113,13 @@ application that explains what it does and where to report
 problems. Basically a long version of the abstract.  Don't include a
 revision history. (see installation appendix comment) -->
 <para>
-&kappname; is a computerized version of a well known strategy game. Commercial
+&ksirk; is a computerized version of a well known strategy game. Commercial
 and other Free Software versions exist but I (Gaël de Chalendar) created this game
 initially as a C++ learning exercise and so, I developed it up to this point (see README for details).
 </para>
 <para>
 <screenshot>
-  <screeninfo>Here's a screenshot of &kappname;</screeninfo>
+  <screeninfo>Here's a screenshot of &ksirk;</screeninfo>
   <mediaobject>
     <imageobject>
       <imagedata fileref="firing-screenshot.png" format="PNG"/>
@@ -119,7 +131,7 @@ initially as a C++ learning exercise and so, I developed it up to this point (se
 </screenshot>
 </para>
 <para>
-In the current version, &kappname; is a multi-player network-enabled game with an AI.
+In the current version, &ksirk; is a multi-player network-enabled game with an AI.
 (see TODO for details)
 </para>
 <para>
@@ -133,7 +145,7 @@ with your armies. Peaceful, isn't it ? :-)
 </chapter>
 
 <chapter id="using-kapp">
-<title>Using &kappname;</title>
+<title>Using &ksirk;</title>
 
 <!-- This chapter should tell the user how to use your app. You should use as
 many sections (Chapter, Sect1, Sect3, etc...) as is necessary to fully document
@@ -142,7 +154,7 @@ your application. -->
 
 
 <sect1 id="playing-ksirk">
-<title>Playing &kappname;</title>
+<title>Playing &ksirk;</title>
 <para>Preliminary note : the map can be scrolled by three methods:</para>
 <itemizedlist><listitem><para>You can put your
 mouse near a border of the window and the map will scroll in that direction</para></listitem>
@@ -152,9 +164,9 @@ key, it will scroll horizontally</para></listitem>
 <sect2 id="mainmenu" >
 <title>Starting a game</title>
 <para>
-When &kappname; starts, you are presented with a main menu.
+When &ksirk; starts, you are presented with a main menu.
 <screenshot>
-  <screeninfo>The main menu of &kappname;</screeninfo>
+  <screeninfo>The main menu of &ksirk;</screeninfo>
   <mediaobject>
     <imageobject>
       <imagedata fileref="introscreen.png" format="PNG"/>
@@ -169,7 +181,7 @@ When &kappname; starts, you are presented with a main menu.
 <varlistentry>
 <term>
   <menuchoice>
-    <guimenu>New Game</guimenu>
+    <guimenu>New Local Game</guimenu>
   </menuchoice>
 </term>
 <listitem>
@@ -179,16 +191,40 @@ When &kappname; starts, you are presented with a main menu.
 </listitem>
 </varlistentry>
 <varlistentry>
-  <term>
-    <menuchoice>
-      <guimenu>Join</guimenu>
-    </menuchoice>
-  </term>
-  <listitem>
-    <para>
-      <action>Allow to join a network game as a client</action>
-    </para>
-  </listitem>
+<term>
+  <menuchoice>
+    <guimenu>Play &ksirk; over Jabber Network</guimenu>
+  </menuchoice>
+</term>
+<listitem>
+  <para>
+    <action>Play &ksirk; over <ulink url="http://en.wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol">Jabber</ulink>. You need to register Jabber account first.</action>
+  </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+  <menuchoice>
+    <guimenu>New Standard TCP/IP Network Game</guimenu>
+  </menuchoice>
+</term>
+<listitem>
+  <para>
+    <action>Start a new game using <ulink url="http://en.wikipedia.org/wiki/Internet_protocol_suite">Internet protocol suite</ulink>.</action>
+  </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+  <menuchoice>
+    <guimenu>Join Standard TCP/IP Network Game</guimenu>
+  </menuchoice>
+</term>
+<listitem>
+  <para>
+    <action>Join to the created by other user game using <ulink url="http://en.wikipedia.org/wiki/Internet_protocol_suite">Internet protocol suite</ulink>.</action>
+  </para>
+</listitem>
 </varlistentry>
 <varlistentry>
   <term>
@@ -210,14 +246,14 @@ When &kappname; starts, you are presented with a main menu.
   </term>
   <listitem>
     <para>
-      <action>Maybe you finally don't want to play ?</action>
+      <action>Maybe you finally don't want to play?</action>
     </para>
   </listitem>
 </varlistentry>
 </variablelist>
 </para>
 <para>
-If you hit <guibutton>New Game</guibutton> you will be presented with the <guilabel>New game properties</guilabel> dialog where you will be able to choose the number of players, the skin (or theme) to use, the game type (conquer the goal or have a specific goal) and finally if this game will be played with online players or if it is purely local.
+  If you hit <guibutton>New Local Game</guibutton> you will be presented with the <guilabel>New game properties</guilabel> dialog where you will be able to choose the number of players, the skin (or theme) to use, the game type (conquer the goal or have a specific goal) and finally if this game will be played with online players or if it is purely local. New skins can be downloaded using <guibutton>Download New Skins</guibutton> button.
 <screenshot>
   <screeninfo>The New Game dialog</screeninfo>
   <mediaobject>
@@ -231,7 +267,7 @@ If you hit <guibutton>New Game</guibutton> you will be presented with the <guila
 </screenshot>
 </para>
 <para>
-To start a network game, check the <guilabel>Network game</guilabel> check box on the right of the number of players spin box. After clicking <guibutton>OK</guibutton>, you will be able to choose the network parameters: number of network players and TCP port on which waiting for connections.
+To start a TCP/IP network game, choose the <guilabel>New Standard TCP/IP Network Game</guilabel> option on introduction screen. After clicking this button you will be able to choose the network parameters: number of local players and TCP port on which waiting for connections.
 <screenshot>
   <screeninfo>Network game parameters dialog</screeninfo>
   <mediaobject>
@@ -245,7 +281,7 @@ To start a network game, check the <guilabel>Network game</guilabel> check box o
 </screenshot>
 </para>
 <para>
-Then, network players will be able to connect by choosing <guilabel>Join</guilabel> on the introduction screen and by indicating the IP or hostname of the host and the port number you just set.
+Then, network players will be able to connect by choosing <guilabel>Join Standard TCP/IP Network Game</guilabel> on the introduction screen and by indicating the IP or hostname of the host and the port number you just set.
 <screenshot>
   <screeninfo>Joining network game dialog</screeninfo>
   <mediaobject>
@@ -259,22 +295,22 @@ Then, network players will be able to connect by choosing <guilabel>Join</guilab
 </screenshot>
 </para>
 <para>
-Each connection is indicated by the message below in the status bar.
+  Each connection is indicated by a new raw in the <guilabel>Players</guilabel> table below the map thumbnail.
 <screenshot>
-  <screeninfo>Connection message</screeninfo>
+  <screeninfo>New player raw</screeninfo>
   <mediaobject>
     <imageobject>
       <imagedata fileref="justjoined.png" format="PNG"/>
     </imageobject>
     <textobject>
-      <phrase>Connection message</phrase>
+      <phrase>New player raw</phrase>
     </textobject>
   </mediaobject>
 </screenshot>
 
 </para>
 <para>
-Let's suppose you keep all the default settings and hit <guibutton>OK</guibutton>. You will then setup two players, one after one. For each one, you'll choose a name, a nationality and, if you want, setup a password such that nobody else than you can reuse this player when reloading this saved game. Lastly, you will here specify if this player is played by the computer or by a human being.
+Let's suppose you keep all the default settings and hit <guibutton>Next</guibutton>. You will then setup two players, one after one. For each one, you'll choose a name, a nationality and, if you want, setup a password such that nobody else than you can reuse this player when reloading this saved game. Lastly, you will here specify if this player is played by the computer or by a human being.
 <screenshot>
   <screeninfo>The Player Setup dialog</screeninfo>
   <mediaobject>
@@ -288,18 +324,7 @@ Let's suppose you keep all the default settings and hit <guibutton>OK</guibutton
 </screenshot>
 </para>
 <para>
-Then, if you choose to play with goal, the goal of each local player is displayed, preceded by a warning such that other players looking at the same computer can discreetly turn away while the goal is being viewed.
-<screenshot>
-  <screeninfo>The Goal Display dialog</screeninfo>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="displaygoalmessage.png" format="PNG"/>
-    </imageobject>
-    <textobject>
-      <phrase>The Goal Display dialog</phrase>
-    </textobject>
-  </mediaobject>
-</screenshot>
+  Then, after clicking <guibutton>Start</guibutton>, if you choose to play with goal, the goal of each local player is displayed, preceded by a warning such that other players looking at the same computer can discreetly turn away while the goal is being viewed.
 <screenshot>
   <screeninfo>The Goal Display warning message</screeninfo>
   <mediaobject>
@@ -308,6 +333,17 @@ Then, if you choose to play with goal, the goal of each local player is displaye
     </imageobject>
     <textobject>
       <phrase>The Goal Display warning message</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<screenshot>
+  <screeninfo>The Goal Display dialog</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="displaygoalmessage.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase>The Goal Display dialog</phrase>
     </textobject>
   </mediaobject>
 </screenshot>
@@ -602,7 +638,7 @@ If you play a local game and want to communicate with the other players, well, l
 <title>Command Reference</title>
 
 <sect1 id="kapp-mainwindow">
-<title>The main &kappname; window</title>
+<title>The main &ksirk; window</title>
 <sect2>
 <title>The buttons</title>
 <para>
@@ -648,7 +684,7 @@ the number of players. After that, each player will be asked its name with anoth
 </chapter>
 
 <chapter id="developers">
-  <title>Developer's Guide to &kappname;</title>
+  <title>Developer's Guide to &ksirk;</title>
   
   <para>
     Please refer to <ulink url="http://api.kde.org/">http://api.kde.org/</ulink> for the documentation of the API. It was quite complete but is currently a little bit outdated. There are no comments in the <filename>.cpp</filename> implementation files.
@@ -664,7 +700,7 @@ the number of players. After that, each player will be asked its name with anoth
 <chapter id="skins">
   <title>Creating new skins</title>
   <para>
-    &kappname; comes with a skin editor, named ksirkskineditor(!), that allows to edit all skin data, as soon as graphics (map, sprites, etc.) are available in a SVG file. Please see the ksirkskineditor manual for further details.
+    &ksirk; comes with a skin editor, named ksirkskineditor(!), that allows to edit all skin data, as soon as graphics (map, sprites, &etc;) are available in a SVG file. Please see the ksirkskineditor manual for further details.
   </para>
 </chapter>
 
@@ -697,10 +733,13 @@ distribution. -->
 <title>Credits and License</title>
 
 <para>
-&kappname;
+&ksirk;
 </para>
 <para>
-Program copyright 2002-2008 Gael de Chalendar <email>kleag@free.fr</email>
+Program copyright 2002-2012 Gael de Chalendar <email>kleag@free.fr</email>
+</para>
+<para>
+Program copyright 2013 Nemanja Hirsl <email>nemhirsl@gmail.com</email>
 </para>
 <para>
 Contributors:
@@ -732,7 +771,7 @@ Documentation copyright 2002-2008 Gael de Chalendar <email>kleag@free.fr</email>
 <title>Installation</title>
 
 <sect1 id="getting-ksirk">
-<title>How to obtain &kappname;</title>
+<title>How to obtain &ksirk;</title>
 &install.intro.documentation;
 </sect1>
 
