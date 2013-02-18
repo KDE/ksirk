@@ -613,6 +613,7 @@ After the redistribution, a turn starts. Each player plays at his turn. He has t
     have placed their armies, they can start a new redistribution cycle or start a new turn...
   </para>
 </sect2>
+<!-- Does not work for current TCP/IP games
 <sect2 id="sending-messages" >
 <title>Sending messages to other players</title>
 <para>
@@ -631,6 +632,7 @@ If you play a local game and want to communicate with the other players, well, l
 
 </para>
 </sect2>
+-->
 </sect1>
 </chapter>
 
