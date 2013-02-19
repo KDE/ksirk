@@ -295,15 +295,15 @@ Then, network players will be able to connect by choosing <guilabel>Join Standar
 </screenshot>
 </para>
 <para>
-  Each connection is indicated by a new raw in the <guilabel>Players</guilabel> table below the map thumbnail.
+  Each connection is indicated by a new row in the <guilabel>Players</guilabel> table below the map thumbnail.
 <screenshot>
-  <screeninfo>New player raw</screeninfo>
+  <screeninfo>New player row</screeninfo>
   <mediaobject>
     <imageobject>
       <imagedata fileref="justjoined.png" format="PNG"/>
     </imageobject>
     <textobject>
-      <phrase>New player raw</phrase>
+      <phrase>New player row</phrase>
     </textobject>
   </mediaobject>
 </screenshot>
