@@ -417,11 +417,21 @@ void KRightDialog::displayFightResult(int A1=0, int A2=0, int A3=0, int D1=0, in
 {
   kDebug();
 
-  QMovie* movie = loadingLabel->movie();
-  delete movie;
-  
-  loadingLabel->clear();
-  infoProcess->clear();
+  // Bug 309863. Should not happen anymore because Country details and Fight results shouldn't be mixed.
+  // If, by any chance, occurs again, do not crash and log the incident. In that case label just won't be refreshed.
+  if (loadingLabel != 0)
+  {
+    QMovie* movie = loadingLabel->movie();
+    delete movie;
+    loadingLabel->clear();
+  }
+  else
+    kDebug() << "Item (loadingLabel) has already been cleared!";
+
+  if (infoProcess != 0)
+    infoProcess->clear();
+  else
+    kDebug() << "Item (infoProcess) has already been cleared!";
 
   milieu = new QWidget(this);
   milieu->setAutoFillBackground(true);
@@ -585,7 +595,9 @@ void KRightDialog::clearLayout()
     loadingLabel->clear();
     delete movie;
     delete loadingLabel;
+    loadingLabel = 0;
     delete infoProcess;
+    infoProcess = 0;
     delete milieu2;
     milieu2 = 0;
   }
