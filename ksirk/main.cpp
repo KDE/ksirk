@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
     ki18n("For help and user manual, please see\nthe KsirK web site."),
     "http://games.kde.org/game.php?game=ksirk");
   aboutData.addAuthor(ki18n("Gael de Chalendar aka Kleag"),KLocalizedString(), "kleag@free.fr");
-  aboutData.addAuthor(ki18n("Current maintainer: Nemanja Hirsl"),KLocalizedString(), "nemhirsl@gmail.com");
+  aboutData.addAuthor(ki18n("Nemanja Hirsl"),ki18n("Current maintainer"), "nemhirsl@gmail.com");
   aboutData.addAuthor(ki18n("Robin Doer"));
   aboutData.addAuthor(ki18n("Albert Astals Cid"));
   aboutData.addAuthor(ki18n("Michal Golunski (Polish translation)"),KLocalizedString(), "michalgolunski@o2.pl");
