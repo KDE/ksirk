@@ -66,7 +66,9 @@ void NewGameSummaryWidget::show(KGameWindow* game)
     kDebug() << "player" << player->name();
     QTableWidgetItem *nameItem = new QTableWidgetItem(player->name());
     playersTable->setItem(row, 0, nameItem);
-    QTableWidgetItem *nationItem = new QTableWidgetItem(player->nation());
+    // Bug 308530 - Untranslatable strings in "New Game Summary".
+    // NewPlayerData's fields are not translated (KPlayerSetupWidget). Do that here when populating table.
+    QTableWidgetItem *nationItem = new QTableWidgetItem(i18n(player->nation().toUtf8().data()));
     playersTable->setItem(row, 1, nationItem);
     QTableWidgetItem *computerItem = new QTableWidgetItem(player->computer()?i18n("Yes"):i18n("No"));
     playersTable->setItem(row, 2, computerItem);
