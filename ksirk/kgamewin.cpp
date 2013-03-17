@@ -581,6 +581,8 @@ void KGameWindow::newSkin(const QString& onuFileName)
           i18n("World definition file not found - Verify your installation<br>Program cannot continue"), i18n("Error!"));
       exit(2);
   }
+  // Bug 308527. Need to remove all goals on new game. Only goals for selected skin will be loaded.
+  m_automaton->removeAllGoals();
   kDebug() << "Got World definition file name: " <<  onuDefinitionFileName;
   m_theWorld = new ONU(m_automaton, onuDefinitionFileName);
   if (m_theWorld->skin().isEmpty())
@@ -2636,6 +2638,8 @@ bool KGameWindow::actionNewGame(GameAutomaton::NetworkGameType socket)
     m_automaton->setGameStatus(KGame::End);
     m_reinitializingGame = true;
     m_automaton->removeAllPlayers();
+    // Bug 308527. Need to remove all goals on new game.
+    m_automaton->removeAllGoals();
     m_automaton->state(GameLogic::GameAutomaton::INIT);
     m_automaton->savedState(GameLogic::GameAutomaton::INVALID);
     QObject::disconnect((QObject*)m_automaton->messageServer(),SIGNAL(connectionLost(KMessageIO*)),

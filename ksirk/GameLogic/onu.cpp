@@ -324,10 +324,16 @@ ONU::ONU(GameAutomaton* automaton,
     else if (goalType == "continents" )
     {
       goal->type(Goal::Continents);
-      QList<QString> continentsList = goalGroup.readEntry("continents",QList<QString>());
-      foreach(const QString& continentId, continentsList)
+      QList<QString> contList = goalGroup.readEntry("continents",QList<QString>());
+      foreach(const QString& continentId, contList)
       {
-        goal->continents().push_back(continentId);
+        // Bug 308527. Use only known continents.
+        if (continentsList.contains(continentId))
+          goal->continents().push_back(continentId);
+        else
+        {
+          kDebug() << "Unknown continent " << continentId << " in skin " << m_skin << endl;
+        }
       }
     }
     else if (goalType == "player" )
