@@ -403,6 +403,8 @@ public:
   bool joinJabberGame(const QString& nick);
 
   void removeAllPlayers();
+  // Bug 308527.
+  void removeAllGoals();
 
   void newGameNext();
   
