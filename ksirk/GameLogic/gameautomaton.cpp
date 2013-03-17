@@ -2650,6 +2650,14 @@ void GameAutomaton::removeAllPlayers()
   // playerList()->clear();
 }
 
+// Bug 308527.
+void GameAutomaton::removeAllGoals()
+{
+    kDebug();
+    while (!goals().isEmpty())
+        delete goals().takeFirst();
+}
+
 void GameAutomaton::newGameNext()
 {
   kDebug();
