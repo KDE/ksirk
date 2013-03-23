@@ -1098,6 +1098,8 @@ private: // Private members
 
   QAction* m_nextPlayerAction;
   KAction* m_saveGameAction;
+  KAction* m_zoomInAction;
+  KAction* m_zoomOutAction;
 
   Sprites::ArrowSprite* m_uparrow;
   Sprites::ArrowSprite* m_downarrow;

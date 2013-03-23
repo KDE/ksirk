@@ -364,15 +364,18 @@ void KGameWindow::initActions()
   action = KStandardGameAction::load(this, SLOT(slotOpenGame()), this);
   actionCollection()->addAction(action->objectName(), action);
   m_saveGameAction = KStandardGameAction::save(this, SLOT(slotSaveGame()), this);
+  m_saveGameAction->setEnabled(false);
   actionCollection()->addAction(m_saveGameAction->objectName(), m_saveGameAction);
   action = KStandardGameAction::quit(this, SLOT(close()), this);
   actionCollection()->addAction(action->objectName(), action);
 
-  action = KStandardAction::zoomIn(this, SLOT(slotZoomIn()), this);
-  actionCollection()->addAction(action->objectName(), action);
+  m_zoomInAction = KStandardAction::zoomIn(this, SLOT(slotZoomIn()), this);
+  m_zoomInAction->setEnabled(false);
+  actionCollection()->addAction(m_zoomInAction->objectName(), m_zoomInAction);
 
-  action = KStandardAction::zoomOut(this, SLOT(slotZoomOut()), this);
-  actionCollection()->addAction(action->objectName(), action);
+  m_zoomOutAction = KStandardAction::zoomOut(this, SLOT(slotZoomOut()), this);
+  m_zoomOutAction->setEnabled(false);
+  actionCollection()->addAction(m_zoomOutAction->objectName(), m_zoomOutAction);
 
   KStandardAction::preferences( this, SLOT(optionsConfigure()), actionCollection() );
 
@@ -433,6 +436,7 @@ void KGameWindow::initActions()
   m_goalAction->setShortcut(Qt::CTRL+Qt::Key_G);
   m_goalAction->setStatusTip(i18n("Display the current player's goal"));
   connect(m_goalAction,SIGNAL(triggered(bool)),this,SLOT(slotShowGoal()));
+  m_goalAction->setVisible(false);
   kDebug() << "Adding action game_goal";
   actionCollection()->addAction("game_goal", m_goalAction);
   
@@ -448,6 +452,7 @@ void KGameWindow::initActions()
         i18n("Next Player"), this);
   connect(m_nextPlayerAction, SIGNAL(triggered(bool)), this, SLOT(slotNextPlayer()));
   contextualHelpAction->setStatusTip(i18n("Lets the next player play"));
+  m_nextPlayerAction->setEnabled(false);
   actionCollection()->addAction("game_nextplayer", m_nextPlayerAction);
 
   KAction* finishMovesAction = new KAction(KIcon(),
@@ -1302,6 +1307,8 @@ void KGameWindow::setBarFlagButton(const Player* player)
     if (currentPlayer() 
         && currentPlayer()-> getFlag())
     {
+      if (!m_goalAction->isVisible())
+        m_goalAction->setVisible(true);
       m_goalAction-> setIcon(KIcon(currentPlayer()->getFlag()-> image(0)));
       m_goalAction-> setIconText(i18n("Goal"));
       m_barFlag-> setPixmap(currentPlayer()->getFlag()-> image(0));
@@ -1312,6 +1319,8 @@ void KGameWindow::setBarFlagButton(const Player* player)
   {
     if (player-> getFlag())
     {
+      if (!m_goalAction->isVisible())
+        m_goalAction->setVisible(true);
       m_goalAction-> setIcon(KIcon(player-> getFlag()-> image(0)));
       m_goalAction-> setIconText(i18n("Goal"));
       m_barFlag-> setPixmap(player->getFlag()-> image(0));
@@ -2466,6 +2475,8 @@ void KGameWindow::defense(unsigned int nb)
 
   if (m_firstCountry-> owner() && m_firstCountry-> owner()-> getFlag())
   {
+    if (!m_goalAction->isVisible())
+      m_goalAction->setVisible(true);
     m_goalAction-> setIcon(KIcon(m_firstCountry-> owner()->getFlag()-> image(0)));
     m_goalAction-> setIconText(i18n("Goal"));
     m_barFlag-> setPixmap(m_firstCountry-> owner()->getFlag()-> image(0));
@@ -3000,6 +3011,8 @@ void KGameWindow::showMap()
   m_centralWidget->setCurrentIndex(MAP_INDEX);
   m_currentDisplayedWidget = Map;
   statusBar()->show();
+  m_zoomInAction->setEnabled(true);
+  m_zoomOutAction->setEnabled(true);
 }
 
 void KGameWindow::showMainMenu()
@@ -3123,6 +3136,10 @@ bool KGameWindow::newGameDialog(const QString& skin, GameAutomaton::NetworkGameT
   m_automaton->state(GameAutomaton::STARTING_GAME);
   m_rightDock->hide();
   statusBar()->hide();
+  m_zoomInAction->setEnabled(false);
+  m_zoomOutAction->setEnabled(false);
+  m_nextPlayerAction->setEnabled(false);
+  m_goalAction->setVisible(false);;
   m_newGameDialog->init(skin, netGameType);
   m_stackWidgetBeforeNewGame = m_centralWidget->currentIndex();
   m_centralWidget->setCurrentIndex(NEWGAME_INDEX);
