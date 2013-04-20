@@ -86,6 +86,7 @@ private:
   void fillNationsCombo();
   
   bool isAvailable(QString nationName);
+  void setLabelText();
 
   GameLogic::GameAutomaton* m_automaton;
   QString m_name;

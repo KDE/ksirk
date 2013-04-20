@@ -120,6 +120,7 @@ void KPlayerSetupWidget::slotNext()
     slotNationChanged();
     isComputerCheckBox->setCheckState(Qt::Unchecked);
 //     init(m_automaton,m_onu,m_newGameSetup->players().size()+1,"",false,"",false,m_nations,"", m_newGameSetup);
+    setLabelText();
     emit next();
   }
   
@@ -141,6 +142,7 @@ void KPlayerSetupWidget::slotPrevious()
     nameLineEdit->setText(player->name());
     passwordEdit->setText(player->password());
     isComputerCheckBox->setCheckState(player->computer()?Qt::Checked:Qt::Unchecked);
+    setLabelText();
     delete player;
   }
 }
@@ -261,8 +263,7 @@ void KPlayerSetupWidget::slotNameEdited(const QString& text)
 void KPlayerSetupWidget::init(NewPlayerData* player)
 {
   kDebug() << (void*)player;
-  QString labelString = i18n("Player Number %1, please type in your name and choose your nation:",m_newGameSetup->players().size());
-  TextLabel1-> setText(labelString);
+  setLabelText();
 
   /// @TODO set the correct nation and password and computer state
   
@@ -284,6 +285,12 @@ void KPlayerSetupWidget::init(NewPlayerData* player)
     slotNationChanged();
   }
   nameLineEdit->setFocus();
+}
+
+void KPlayerSetupWidget::setLabelText()
+{
+    QString labelString = i18n("Player Number %1, please type in your name and choose your nation:", m_newGameSetup->players().size() + 1);
+    TextLabel1->setText(labelString);
 }
 
 } // namespace Ksirk
