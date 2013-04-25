@@ -357,7 +357,7 @@ There is three main steps to create a new skin: creating the folders hierarchy; 
           </mediaobject>
         </para>
         <para>
-          The blue component (in RGB model) of a country's color identifies the country: index 0 is country 0 in the onu.xml file, index 1 is country 1, &etc;. White (0xFFFFFF in RGB) identifies the absence of country (sees or, why not, no man's lands).
+          The blue component (in RGB model) of a country's color identifies the country: index 0 is country 0 in the onu.xml file, index 1 is country 1, &etc; White (0xFFFFFF in RGB) identifies the absence of country (sees or, why not, no man's lands).
         </para>
       </sect3>
       <sect3>
