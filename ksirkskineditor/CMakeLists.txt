@@ -41,7 +41,7 @@ kde4_add_ui_files(ksirkskineditor_SRCS ${ksirkskineditor_UI} )
 
 kde4_add_kcfg_files( ksirkskineditor_SRCS ksirkskineditorsettings.kcfgc )
 
-kde4_add_app_icon(ksirkskineditor_SRCS "hi*-app-ksirkskineditor.png")
+kde4_add_app_icon(ksirkskineditor_SRCS "hi*-app-ksirk.png")
 
 kde4_add_executable(ksirkskineditor ${ksirkskineditor_SRCS})
 
