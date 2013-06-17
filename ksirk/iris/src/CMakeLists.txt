@@ -75,6 +75,9 @@ if(WIN32)
   set(libiris_SRCS ${libiris_SRCS}
 		irisnet/corelib/netinterface_win.cpp
 	)
+    if(MINGW)
+        add_definitions(-DWIN32)
+    endif(MINGW)
 endif(WIN32)
 
 include_directories(
