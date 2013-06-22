@@ -33,7 +33,7 @@ void ZLibCompressor::flush()
 	write(QByteArray(),true);
 	int result = deflateEnd(zlib_stream_);
 	if (result != Z_OK) 
-		qWarning("compressor.c: deflateEnd failed (%s)", result);
+		qWarning("compressor.c: deflateEnd failed (%d)", result);
 	
 	flushed_ = true;
 }
