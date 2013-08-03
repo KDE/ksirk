@@ -800,6 +800,8 @@ bool KGameWindow::attackEnd()
   m_secondCountry->releaseHighlightingLock();
   m_secondCountry->clearHighlighting();
 
+  // Bug 315491.
+  bool playerDeleted = false;
   bool res = false;
   QString mes = "";
   kDebug() << "There is now " << m_secondCountry-> nbArmies() << " armies in " << m_secondCountry->name() << ".";
@@ -838,6 +840,8 @@ bool KGameWindow::attackEnd()
                                i18n("KsirK - Game Over!"));*/
       if (m_automaton->isAdmin())
       {
+        // Bug 315491.
+        playerDeleted = true;
         kDebug() << "Removing player " << oldOwner-> name();
         int i = m_automaton->playerList()->indexOf(oldOwner);
         if (i != -1)
@@ -872,15 +876,19 @@ bool KGameWindow::attackEnd()
       m_automaton->checkGoal();
     }
   }
-  if (backGnd()->bgIsArena())
+  // Bug 315491.
+  if (!playerDeleted)
   {
-    m_arena->countryAttack()->createArmiesSprites();
-    m_arena->countryDefense()->createArmiesSprites();
-  }
-  else
-  {
-    m_firstCountry->createArmiesSprites();
-    m_secondCountry->createArmiesSprites();
+    if (backGnd()->bgIsArena())
+    {
+      m_arena->countryAttack()->createArmiesSprites();
+      m_arena->countryDefense()->createArmiesSprites();
+    }
+    else
+    {
+      m_firstCountry->createArmiesSprites();
+      m_secondCountry->createArmiesSprites();
+    }
   }
   if (m_automaton->isAdmin())
   {
