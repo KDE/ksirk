@@ -41,7 +41,6 @@
 #include <qdir.h>
 #include <qprinter.h>
 #include <qpainter.h>
-#include <qsound.h>
 #include <qinputdialog.h>
 
 // include files for KDE
