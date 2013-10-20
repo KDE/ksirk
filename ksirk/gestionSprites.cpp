@@ -50,6 +50,7 @@
 #include <klocale.h>
 #include <kconfig.h>
 #include <kstandardaction.h>
+#include <phonon/mediaobject.h>
 #include <kstandarddirs.h>
 #include <kdebug.h>
 #include <KToolBar>
