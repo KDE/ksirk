@@ -161,7 +161,7 @@ ONU::ONU(GameAutomaton* automaton,
     m_automaton->pixmapCache().insert(m_skin+"mapmask", countriesMaskPix);
   }
 //   countriesMask = QImage(mapMaskFileName);
-  countriesMask = QImage(countriesMaskPix);
+  countriesMask = countriesMaskPix.toImage();
   
   Sprites::SkinSpritesData::changeable().intData("width-between-flag-and-fighter", onugroup.readEntry("width-between-flag-and-fighter",0));
 

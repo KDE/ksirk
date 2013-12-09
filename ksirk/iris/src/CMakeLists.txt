@@ -129,7 +129,7 @@ xmpp/zlib/zlibdecompressor.h
 
 kde4_add_library(iris_ksirk SHARED ${libiris_SRCS})
 
-set(iris_ksirk_libs ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_QT3SUPPORT_LIBRARY} ${QT_QTNETWORK_LIBRARY} ${QT_QTXML_LIBRARY}
+set(iris_ksirk_libs ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_QTNETWORK_LIBRARY} ${QT_QTXML_LIBRARY}
 ${IDN_LIBRARY} ${QCA2_LIBRARIES} ${ZLIB_LIBRARIES})
 if(WIN32)
   set(iris_ksirk_libs ${iris_ksirk_libs} ws2_32)

@@ -1,5 +1,3 @@
-add_definitions(-DQT3_SUPPORT -DQT3_SUPPORT_WARNINGS)
-
 include(CheckIncludeFiles)
 check_include_files(sys/stropts.h SYS_STROPTS_H_FOUND)
 configure_file(config-ksirk.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-ksirk.h)

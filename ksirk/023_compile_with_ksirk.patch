@@ -2,11 +2,6 @@ Index: CMakeLists.txt
 ===================================================================
 --- CMakeLists.txt	(revision 855877)
 +++ CMakeLists.txt	(working copy)
-@@ -1,3 +1,4 @@
-+add_definitions(-DQT3_SUPPORT -DQT3_SUPPORT_WARNINGS)
- 
- #add_subdirectory( cutestuff ) 
- #add_subdirectory( iris ) 
 @@ -4,6 +5,9 @@
  
  FIND_PACKAGE(ZLIB REQUIRED)
@@ -33,9 +28,9 @@ Index: CMakeLists.txt
 -kde4_add_library(iris_kopete SHARED ${libiris_SRCS})
 +kde4_add_library(iris_ksirk SHARED ${libiris_SRCS})
  
--set(iris_kopete_libs ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_QT3SUPPORT_LIBRARY} ${QT_QTNETWORK_LIBRARY} ${QT_QTXML_LIBRARY}
+-set(iris_kopete_libs ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_QTNETWORK_LIBRARY} ${QT_QTXML_LIBRARY}
 -                     ${IDN_LIBRARY} ${QCA2_LIBRARIES} ${ZLIB_LIBRARIES})
-+set(iris_ksirk_libs ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_QT3SUPPORT_LIBRARY} ${QT_QTNETWORK_LIBRARY} ${QT_QTXML_LIBRARY}
++set(iris_ksirk_libs ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_QTNETWORK_LIBRARY} ${QT_QTXML_LIBRARY}
 +                     ${IDN_LIBRARY} ${QCA2_LIBRARIES} ${ZLIB_LIBRARIES} -lidn)
  if(WIN32)
 -  set(iris_kopete_libs ${iris_kopete_libs} ws2_32)
