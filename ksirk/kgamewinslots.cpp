@@ -815,7 +815,11 @@ void KGameWindow::slotContextualHelp()
   {
     case GameLogic::GameAutomaton::WAIT:
       showMessage(i18n("Attack by drag & drop between countries<br>Move armies the same way (last action of a turn)."), 5);
-    break;
+      break;
+    case GameLogic::GameAutomaton::NEWARMIES:
+    case GameLogic::GameAutomaton::INTERLUDE:
+      showMessage(i18n("Now, place your armies in your countries<br>by clicking in the target countries."));
+      break;
     default:;
   }
 }

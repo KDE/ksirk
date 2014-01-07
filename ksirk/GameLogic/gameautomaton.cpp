@@ -220,6 +220,7 @@ void GameAutomaton::state(GameAutomaton::GameState state)
   kDebug() << "new state (id=" << state << ") is " << GameStateNames[state] << endl;
   m_state = state;
   m_game->setSaveGameActionEnabled(m_state == WAIT);
+  m_game->setContextualHelpActionEnabled(m_state, currentPlayer() && currentPlayer()->isAI());
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   stream << state;
@@ -1839,10 +1840,11 @@ void GameAutomaton::countriesDistribution()
     ((GameLogic::Player*)(*it))->incrNbCountries(distributedCountriesNumberMap[(*it)-> name()]);
   }
 //   kDebug() << "All countries are now distributed." << endl;
-  QString nextPlayerName = (*playerList()->begin())-> name();
+  m_game->setCurrentPlayerToFirst();
+  QString nextPlayerName = currentPlayer()->name();
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
-  stream << (quint32)((GameLogic::Player*)(*playerList()->begin()))->getNbAvailArmies();
+  stream << (quint32)((GameLogic::Player*)(currentPlayer()))->getNbAvailArmies();
 //   kDebug() << "  Setting status " << nextPlayerName << " / " << m_game->availArmies() << endl;
   QPixmap pm = playerNamed(nextPlayerName)->getFlag()->image(0);
   KMessageParts messageParts;
@@ -2258,6 +2260,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
         {
           kDebug() << "at " <<  __FILE__ << ", line " << __LINE__ << ", setting state to " << newState << endl;
           state(GameState(newState));
+          m_game->slotContextualHelp();
         }
       }
     }

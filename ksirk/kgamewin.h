@@ -610,6 +610,7 @@ public:
 
   void setNextPlayerActionEnabled(bool value);
   void setSaveGameActionEnabled(bool value);
+  void setContextualHelpActionEnabled(GameLogic::GameAutomaton::GameState gameState, bool isPlayerAI);
 
   void updateScrollArrows();
 
@@ -738,6 +739,7 @@ public Q_SLOTS:
   void slotDumpGameInformations();
   void slotFinishMoves();
   void slotArena(bool);
+  void slotContextualHelp();
   //@}
 
   /**
@@ -808,8 +810,6 @@ private Q_SLOTS:
   void evenementTimer();
 
   void slotRemoveMessage();
-
-  void slotContextualHelp();
 
   void slotDisableHelp(const QString &);
 
@@ -1097,6 +1097,7 @@ private: // Private members
   KAction* m_saveGameAction;
   KAction* m_zoomInAction;
   KAction* m_zoomOutAction;
+  KAction* m_contextualHelpAction;
 
   Sprites::ArrowSprite* m_uparrow;
   Sprites::ArrowSprite* m_downarrow;
