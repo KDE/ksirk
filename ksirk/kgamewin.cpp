@@ -439,18 +439,19 @@ void KGameWindow::initActions()
   kDebug() << "Adding action game_goal";
   actionCollection()->addAction("game_goal", m_goalAction);
   
-  KAction* contextualHelpAction = new KAction(KIcon(),
+  m_contextualHelpAction = new KAction(KIcon(),
         i18n("Contextual Help"), this);
-  contextualHelpAction->setShortcut(Qt::CTRL+Qt::Key_F1);
-  connect(contextualHelpAction,SIGNAL(triggered(bool)),this,SLOT(slotContextualHelp()));
-  actionCollection()->addAction("help_contextual", contextualHelpAction);
+  m_contextualHelpAction->setEnabled(false);
+  m_contextualHelpAction->setShortcut(Qt::CTRL+Qt::Key_F1);
+  connect(m_contextualHelpAction,SIGNAL(triggered(bool)),this,SLOT(slotContextualHelp()));
+  actionCollection()->addAction("help_contextual", m_contextualHelpAction);
 
 
   QString nextPlayerActionImageFileName = KGlobal::dirs()->findResource("appdata", m_automaton->skin() + '/' + CM_NEXTPLAYER);
   m_nextPlayerAction =  new KAction(KIcon(nextPlayerActionImageFileName),
         i18n("Next Player"), this);
   connect(m_nextPlayerAction, SIGNAL(triggered(bool)), this, SLOT(slotNextPlayer()));
-  contextualHelpAction->setStatusTip(i18n("Lets the next player play"));
+  m_contextualHelpAction->setStatusTip(i18n("Lets the next player play"));
   m_nextPlayerAction->setEnabled(false);
   actionCollection()->addAction("game_nextplayer", m_nextPlayerAction);
 
@@ -2222,7 +2223,9 @@ bool KGameWindow::playerPutsInitialArmy(const QPointF& point)
                 << " at " << __FILE__ << ", line " << __LINE__;
               m_automaton->sendMessage(buffer2,DisplayRecycleDetails);
             }
-            return setCurrentPlayerToNext();
+            int ret = setCurrentPlayerToNext();
+            setContextualHelpActionEnabled(getState(), currentPlayer() && currentPlayer()->isAI());
+            return ret;
           }
           else
           {
@@ -2338,7 +2341,6 @@ bool KGameWindow::nextPlayerRecycling()
     }
     else if (currentPlayer() && !currentPlayer()->isVirtual())
     {
-      slotContextualHelp();
       m_nextPlayerAction->setEnabled(true);
     }
     else
@@ -3118,6 +3120,15 @@ void KGameWindow::setSaveGameActionEnabled(bool value)
 {
   kDebug() << value;
   m_saveGameAction->setEnabled(value);
+}
+
+void KGameWindow::setContextualHelpActionEnabled(GameLogic::GameAutomaton::GameState gameState, bool isPlayerAI)
+{
+  kDebug() << isPlayerAI << gameState;
+  bool enabled = (gameState == GameLogic::GameAutomaton::WAIT || gameState == GameLogic::GameAutomaton::NEWARMIES || gameState == GameLogic::GameAutomaton::INTERLUDE) &&
+                 !isPlayerAI &&
+                 KsirkSettings::helpEnabled();
+  m_contextualHelpAction->setEnabled(enabled);
 }
 
 void KGameWindow::setupPopupMessage()
