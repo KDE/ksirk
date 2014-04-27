@@ -114,8 +114,6 @@ protected:
     * Reimplementation of the inherited function called when a window close event arise
     */
   bool queryClose();
-  bool queryExit();
-    
 
 public Q_SLOTS:
 

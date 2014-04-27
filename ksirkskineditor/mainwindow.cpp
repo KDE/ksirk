@@ -552,6 +552,7 @@ bool MainWindow::queryClose()
         return false;
     }
   }
+  KGlobal::config()->sync();
   return true;
 }
 
@@ -585,13 +586,6 @@ void MainWindow::slotShowAboutApplication()
 {
   KAboutApplicationDialog dialog(KGlobal::mainComponent().aboutData(), this);
   dialog.exec();
-}
-
-bool MainWindow::queryExit()
-{
-//   kDebug() << "Writing skin m_config: " << m_automaton->skin();
-  KGlobal::config()->sync();
-  return true;
 }
 
 void MainWindow::slotFlagButtonClicked()
