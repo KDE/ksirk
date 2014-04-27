@@ -380,15 +380,6 @@ void KGameWindow::slotRightButtonUp(const QPointF& point)
   return;
 }
 
-/** @todo Clean exit with memory freeing */
-bool KGameWindow::queryExit()
-{
-//   kDebug() << "Writing skin m_config: " << m_automaton->skin();
-//   KGlobal::config()->group("skin").writeEntry("skin", m_automaton->skin());
-  KGlobal::config()->sync();
-  return true;
-}
-
 void KGameWindow::slotArena(bool isCheck)
 {
   if (isCheck)

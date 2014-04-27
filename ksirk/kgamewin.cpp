@@ -1096,6 +1096,7 @@ bool KGameWindow::queryClose()
     delete m_automaton->playerList()->takeFirst();
   }
   delete m_automaton; m_automaton = 0;*/
+  KGlobal::config()->sync();
   return true;
 }
 
