@@ -51,7 +51,7 @@ mainMenu::mainMenu(Ksirk::KGameWindow* game, QWidget* parent) : QWidget(parent)
   connect(pbQuit, SIGNAL(clicked()), game, SLOT(close()));
 }
 
-void mainMenu::init(Ksirk::GameLogic::ONU* theWorld)
+void mainMenu::init(Ksirk::GameLogic::ONU* /*theWorld*/)
 {
 }
 

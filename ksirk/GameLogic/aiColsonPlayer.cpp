@@ -779,8 +779,6 @@ const Continent* AIColsonPlayer::getContinentToConquier(int *attack)
 
   const Continent* continent = 0;
   int min = 10000;
-  int max = 0;
-  int bonus = 0;
   contIt = m_world->getContinents().begin();
   contIt_end = m_world->getContinents().end();
   for (; contIt != contIt_end; contIt++)
@@ -799,8 +797,6 @@ const Continent* AIColsonPlayer::getContinentToConquier(int *attack)
       {
         continent = cont;
         min = piOppo[cont];
-        max = piCount[cont];
-        bonus = cont->getBonus();
       }
     }
   }
@@ -811,7 +807,7 @@ const Continent* AIColsonPlayer::getContinentToConquier(int *attack)
 
 int AIColsonPlayer::NbEnemyAdjacent(Country* iCountry)
 {
-  std::map<Player*, int> NumEnemy;
+  std::map<Player*, unsigned int> NumEnemy;
   std::map<Player*, bool> fIsEnemy;
   bool  fIAmStrong;
 

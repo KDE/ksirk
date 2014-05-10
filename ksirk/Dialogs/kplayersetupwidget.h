@@ -59,7 +59,6 @@ public:
                       GameLogic::ONU* onu,
                       unsigned int playerNumber,
                       QString &playerName,
-                      bool network,
                       QString& password,
                       bool computerPlayer,
                       QMap< QString, QString >& nations,

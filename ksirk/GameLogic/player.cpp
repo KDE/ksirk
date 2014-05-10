@@ -147,7 +147,7 @@ void Player::incrNbAvailArmies(unsigned int nb)
 void Player::decrNbAvailArmies(unsigned int nb)
 {
 //   kDebug() << "Player::decrNbAvailArmies " << name() << " " << nb << endl;
-  if (nb > m_distributionData.nbToPlace()/*m_nbAvailArmies*/)
+  if (nb > (unsigned)m_distributionData.nbToPlace()/*m_nbAvailArmies*/)
   {
     kError() << "Removing " << nb << " armies while owning " << m_distributionData.nbToPlace()/*m_nbAvailArmies*/ << endl;
     Q_ASSERT(false);

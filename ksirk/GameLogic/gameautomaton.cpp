@@ -1149,7 +1149,6 @@ void GameAutomaton::setGoalFor(Player* player)
       unsigned int playerNum = Dice::roll(max);
 //       kDebug() << "Choice player num " << playerNum << " on " << max << endl;
       PlayersArray::iterator itp = playerList()->begin();
-      PlayersArray::iterator itp_end = playerList()->end();
       unsigned int j = 1;
       for (; j < playerNum; j++,itp++) {}
       target = dynamic_cast< Player* >(*itp);

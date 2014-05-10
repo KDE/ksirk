@@ -651,13 +651,6 @@ void KGameWindow::newSkin(const QString& onuFileName)
   }
   m_scene_world = new QGraphicsScene(0, 0, width, height,this);
 
-  // create the main menu
-  bool firstCall = false;
-  if (m_mainMenu == 0)
-  {
-    firstCall = true;
-  }
-
   kDebug() << "create the world map view";
   if (m_theWorld != 0)
   {
@@ -1361,7 +1354,7 @@ bool KGameWindow::finishSetupPlayers()
   QString nomEntre = "";
   QString password = "";
   QString nationName = "";
-  m_newPlayerWidget->init(m_automaton,m_theWorld,(int)1,nomEntre,false,password,false,nations,nationName, m_newGameSetup);
+  m_newPlayerWidget->init(m_automaton,m_theWorld,(int)1,nomEntre,password,false,nations,nationName, m_newGameSetup);
   m_centralWidget->setCurrentIndex(NEWPLAYER_INDEX);
   // Players names
   QString mes = "";
@@ -1420,7 +1413,7 @@ bool KGameWindow::setupOnePlayer()
   QString password;
   bool computer=false;
 
-  m_newPlayerWidget->init(m_automaton, m_theWorld, 1, nomEntre, true, password, computer, nations, nationName, m_newGameSetup);
+  m_newPlayerWidget->init(m_automaton, m_theWorld, 1, nomEntre, password, computer, nations, nationName, m_newGameSetup);
   m_centralWidget->setCurrentIndex(NEWPLAYER_INDEX);
   return true;
 }

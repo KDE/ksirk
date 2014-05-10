@@ -87,7 +87,7 @@ void KMessageJabber::slotGroupChatLeft(const XMPP::Message& msg)
 
 void KMessageJabber::slotResourceUnavailable(const Jid& jid, const Resource& resource)
 {
-  kDebug() << jid.full();
+  kDebug() << jid.full() << resource.name();
 }
 
 void KMessageJabber::slotGroupChatPresence(const XMPP::Jid& jid, const XMPP::Status& status)
