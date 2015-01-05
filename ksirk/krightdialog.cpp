@@ -127,8 +127,8 @@ void KRightDialog::displayCountryDetails(const QPointF& countryPoint)
   rightContents.at(4)->setText(i18n("<b>Owner:</b> %1", owner));
   rightContents.at(5)->setText(i18n("<b><u>Country details</u></b>"));
 
-  flag1->setPixmap(0);
-  flag2->setPixmap(0);
+  flag1->setPixmap(QPixmap());
+  flag2->setPixmap(QPixmap());
   flag1->setPixmap(picture);
 
   drap->addWidget(rightContents.at(0));
@@ -529,7 +529,7 @@ void KRightDialog::clearLabel()
   for (int i=0;i<rightContents.size();i++)
   {
     rightContents.at(i)->setText("");
-    rightContents.at(i)->setPixmap(0);
+    rightContents.at(i)->setPixmap(QPixmap());
   }
 }
 

@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 {
   kDebug() << "Hello World!";
   K4AboutData aboutData( "ksirk", 0, ki18n("KsirK"),
-    KDE_VERSION_STRING, ki18n(description), K4AboutData::License_GPL,
+    /*KDE_VERSION_STRING*/"5.0.0", ki18n(description), K4AboutData::License_GPL,
     ki18n("(c) 2002-2013, Gaël de Chalendar\n"),
     ki18n("For help and user manual, please see\nthe KsirK web site."),
     "http://games.kde.org/game.php?game=ksirk");
@@ -55,7 +55,6 @@ int main(int argc, char *argv[])
   KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
   KApplication app;
-  KGlobal::locale()->insertCatalog( QLatin1String( "libkdegames" ));
 
   if (app.isSessionRestored())
   {
@@ -73,6 +72,5 @@ int main(int argc, char *argv[])
   }
   kDebug() << "Executing app";
   int res =  app.exec();
-  KGlobal::locale()->removeCatalog( "libkdegames" );
   return res;
 }  

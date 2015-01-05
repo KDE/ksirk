@@ -82,7 +82,8 @@ set(ksirk_SRCS
   Dialogs/tcpconnectwidget.cpp
   main.cpp
   decoratedgameframe.cpp 
-  ksirkConfigDialog.cpp
+  #READD
+  #ksirkConfigDialog.cpp
   fightArena.cpp
   mainMenu.cpp
   krightdialog.cpp
@@ -128,7 +129,7 @@ target_link_libraries(ksirk
   qca
   iris_ksirk
   KF5KDEGames
-  KF5KDEGamesprivate
+  KF5KDEGamesPrivate
   KF5::KDELibs4Support
   KF5::Wallet
   )

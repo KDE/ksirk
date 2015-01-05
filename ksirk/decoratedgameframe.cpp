@@ -34,7 +34,7 @@
 #include <kdebug.h>
 #include <kgamepopupitem.h>
 #include <KAction>
-
+#include <KIcon>
 #define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
 #include <libkdegamesprivate/kgame/kgameio.h>
 #include <libkdegamesprivate/kgame/kplayer.h>
