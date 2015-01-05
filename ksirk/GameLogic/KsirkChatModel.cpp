@@ -21,7 +21,7 @@
 #include "KsirkChatModel.h"
 #include "player.h"
 
-#include <KLocale>
+#include <KLocalizedString>
 
 #include <QLayout>
 #include <QApplication>

@@ -54,7 +54,7 @@
 
 // include files for KDE
 #include <kfiledialog.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kconfig.h>
 #include <kdebug.h>
 #include <kmessagebox.h>

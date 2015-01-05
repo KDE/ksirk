@@ -34,7 +34,7 @@
 #include <kapplication.h>
 #include <kstandarddirs.h>
 #include <kglobal.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kdebug.h>
 #include <kmessagebox.h>
 #include <kconfig.h>

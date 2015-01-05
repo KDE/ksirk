@@ -25,7 +25,7 @@
 #include "onu.h"
 #include "GameLogic/newplayerdata.h"
 
-#include <KLocale>
+#include <KLocalizedString>
 #include <KDebug>
 
 namespace Ksirk

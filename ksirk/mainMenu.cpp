@@ -24,7 +24,7 @@
 #include "kgamewin.h"
 
 
-#include <KLocale>
+#include <KLocalizedString>
 
 mainMenu::mainMenu(Ksirk::KGameWindow* game, QWidget* parent) : QWidget(parent)
 {

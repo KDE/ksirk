@@ -27,7 +27,7 @@
 #include "kgamewin.h"
 
 #include <kdebug.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kmessagebox.h>
 #include <KStringHandler>
 

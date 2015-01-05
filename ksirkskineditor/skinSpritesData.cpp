@@ -21,7 +21,7 @@
 
 #include <QTextStream>
 
-#include <KLocale>
+#include <KLocalizedString>
 #include <KMessageBox>
 
 namespace KsirkSkinEditor

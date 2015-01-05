@@ -19,7 +19,7 @@
 #include "onu.h"
 
 #include <KDebug>
-#include <KLocale>
+#include <KLocalizedString>
 #include <KMessageBox>
 
 namespace KsirkSkinEditor

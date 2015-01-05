@@ -22,7 +22,7 @@
 #include <kdebug.h>
 #include <kaction.h>
 #include <kselectaction.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kicon.h>
 
 #include "tasks/jt_privatestorage.h"

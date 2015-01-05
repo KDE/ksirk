@@ -23,7 +23,7 @@ This is the standard main function of a KDE application simplified for KsirK
 
 #include <kcmdlineargs.h>
 #include <K4AboutData>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kdebug.h>
 #include <KApplication>
 #include <KToolBar>

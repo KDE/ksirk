@@ -33,7 +33,7 @@
 #include <QSvgRenderer>
 
 #include <kmessagebox.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kstandarddirs.h>
 #include <kdebug.h>
 

@@ -37,7 +37,7 @@
 #include <QPixmap>
 #include <QPainter>
 
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kdebug.h>
 
 #define _XOPEN_SOURCE_

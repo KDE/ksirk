@@ -22,7 +22,7 @@
 
 #include "GameLogic/onu.h"
 
-#include <KLocale>
+#include <KLocalizedString>
 #include <KDebug>
 #include <KStandardDirs>
 #include <KMessageBox>

@@ -47,7 +47,7 @@
 #include <kiconloader.h>
 #include <kmessagebox.h>
 #include <kfiledialog.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kconfig.h>
 #include <kstandardaction.h>
 #include <phonon/mediaobject.h>

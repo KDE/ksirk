@@ -33,7 +33,7 @@
 #include <qcombobox.h>
 #include <QPixmap>
 
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kdebug.h>
 
 #define _XOPEN_SOURCE_

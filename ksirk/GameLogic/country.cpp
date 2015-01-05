@@ -28,7 +28,7 @@
 #include "Sprites/skinSpritesData.h"
 #include "GameLogic/onu.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kdebug.h>
 #include <qsvgrenderer.h>
 #include <QString>

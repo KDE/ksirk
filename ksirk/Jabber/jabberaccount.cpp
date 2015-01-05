@@ -42,7 +42,7 @@
 #include <kconfig.h>
 #include <kdebug.h>
 #include <kmessagebox.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kaboutdata.h>
 #include <k3socketbase.h>
 #include <kpassworddialog.h>

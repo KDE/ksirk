@@ -42,7 +42,7 @@
 #include <QFile>
 #include <QUuid>
 
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kdialog.h>
 #include <kinputdialog.h>
 #include <klineedit.h>

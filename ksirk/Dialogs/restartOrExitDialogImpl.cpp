@@ -18,7 +18,7 @@
 
 #include "restartOrExitDialogImpl.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kdebug.h>
 #include <kstandarddirs.h>
 #include <kmessagebox.h>

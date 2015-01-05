@@ -30,7 +30,7 @@
 #include <kgamewin.h>
 #include <kstandardgameaction.h>
 #include <kstandardaction.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kdebug.h>
 #include <kgamepopupitem.h>
 #include <KAction>

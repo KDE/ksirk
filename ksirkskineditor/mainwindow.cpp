@@ -52,7 +52,7 @@
 #include <kiconloader.h>
 #include <kmessagebox.h>
 #include <kfiledialog.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kconfig.h>
 #include <kstandardgameaction.h>
 #include <kstandardaction.h>

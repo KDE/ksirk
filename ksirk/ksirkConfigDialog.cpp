@@ -33,7 +33,7 @@
 #include <klibloader.h>
 #include <kmessagebox.h>
 #include <kstatusbar.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kconfigdialog.h>
 
 #include <kapplication.h>

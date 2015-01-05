@@ -24,7 +24,7 @@
 #include <QString>
 #include <QLineEdit>
 
-#include <KLocale>
+#include <KLocalizedString>
 #include <KDebug>
 
 namespace Ksirk

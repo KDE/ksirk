@@ -83,4 +83,3 @@ void NameProvider::resolve_localError(int id, XMPP::NameResolver::Error e)
 
 }
 
-#include "irisnetplugin.moc"

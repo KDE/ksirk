@@ -27,7 +27,7 @@ This is the standard main function of a KDE application
 
 #include <KCmdLineArgs>
 #include <K4AboutData>
-#include <KLocale>
+#include <KLocalizedString>
 #include <KDebug>
 #include <KApplication>
 #include <KToolBar>
