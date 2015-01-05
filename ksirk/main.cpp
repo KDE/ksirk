@@ -22,7 +22,7 @@ This is the standard main function of a KDE application simplified for KsirK
 #include "GameLogic/gameautomaton.h"
 
 #include <kcmdlineargs.h>
-#include <kaboutdata.h>
+#include <K4AboutData>
 #include <klocale.h>
 #include <kdebug.h>
 #include <KApplication>
@@ -36,8 +36,8 @@ static const char *description =
 int main(int argc, char *argv[])
 {
   kDebug() << "Hello World!";
-  KAboutData aboutData( "ksirk", 0, ki18n("KsirK"),
-    KDE_VERSION_STRING, ki18n(description), KAboutData::License_GPL,
+  K4AboutData aboutData( "ksirk", 0, ki18n("KsirK"),
+    KDE_VERSION_STRING, ki18n(description), K4AboutData::License_GPL,
     ki18n("(c) 2002-2013, Gaël de Chalendar\n"),
     ki18n("For help and user manual, please see\nthe KsirK web site."),
     "http://games.kde.org/game.php?game=ksirk");

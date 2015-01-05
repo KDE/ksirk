@@ -64,10 +64,13 @@ ONU::ONU(GameAutomaton* automaton,
   QFileInfo qfi(m_configFileName);
   kDebug() << "skin written at :" << qfi.lastModified().toTime_t();
   kDebug() << "cache created at:" << m_automaton->pixmapCache().timestamp();
+#pragma message("port to qt5")
+#if 0
   if (m_automaton->pixmapCache().timestamp() < qfi.lastModified().toTime_t())
   {
     m_automaton->pixmapCache().discard();
   }
+#endif
   m_font.family = "URW Chancery L";
   m_font.size = (uint)(13*m_zoom);
   m_font.weight = QFont::Bold;

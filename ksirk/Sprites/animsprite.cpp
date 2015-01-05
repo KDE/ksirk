@@ -49,7 +49,7 @@ AnimSprite::AnimSprite(const QString &svgid,
                         double zoom,
                         BackGnd* aBackGnd,
                         unsigned int visibility) :
-    QGraphicsPixmapItem(0, aBackGnd-> scene()),
+    QGraphicsPixmapItem(0),
     m_animated(false), m_zoom(zoom), m_svgid(svgid),
     look(right), nbVersions(nbDirs),
     backGnd(aBackGnd), destination(0), destinationPoint(), frames(nbFrames), actFrame(0),
@@ -64,6 +64,7 @@ AnimSprite::AnimSprite(const QString &svgid,
     m_timer(this),
     m_skin(backGnd->onu()->skin())
 {
+   aBackGnd-> scene()->addItem(this);
 //   kDebug() << svgid << nbFrames;
   setNone();
 
