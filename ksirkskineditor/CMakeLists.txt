@@ -37,21 +37,21 @@ set(ksirkskineditor_UI
 )
 
 
-kde4_add_ui_files(ksirkskineditor_SRCS ${ksirkskineditor_UI} )
+ki18n_wrap_ui(ksirkskineditor_SRCS ${ksirkskineditor_UI} )
 
-kde4_add_kcfg_files( ksirkskineditor_SRCS ksirkskineditorsettings.kcfgc )
+kconfig_add_kcfg_files( ksirkskineditor_SRCS ksirkskineditorsettings.kcfgc )
 
 kde4_add_app_icon(ksirkskineditor_SRCS "hi*-app-ksirk.png")
 
-kde4_add_executable(ksirkskineditor ${ksirkskineditor_SRCS})
+add_executable(ksirkskineditor ${ksirkskineditor_SRCS})
 
 target_link_libraries(ksirkskineditor
-  ${QT_QTXML_LIBRARY}
-  ${QT_QTSVG_LIBRARY} 
-  ${KDE4_KIO_LIBS} 
-  ${KDE4_PHONON_LIBRARY}
-  kdegames
-  kdegamesprivate
+  Qt5::Xml
+  Qt5::Svg 
+  KF5::KIOCore 
+  Phonon::phonon4qt5
+  KF5KDEGames
+  KF5KDEGamesPrivate
   ${CRYPT_LIBS}
  )
 
@@ -59,7 +59,7 @@ install( TARGETS ksirkskineditor ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
 
-kde4_install_icons( ${ICON_INSTALL_DIR} )
+ecm_install_icons( ${ICON_INSTALL_DIR} )
 
 install( FILES ksirkskineditorsettings.kcfg DESTINATION ${KCFG_INSTALL_DIR} )
 install( PROGRAMS ksirkskineditor.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} )

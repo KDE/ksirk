@@ -21,7 +21,7 @@
 #define _KSIRKSKINEDITORCONFIGDIALOG_H_
 
 #include <kconfigdialog.h>
-
+#include <KConfigSkeleton>
 namespace Ui
 {
   class KsirkSkinEditorPreferencesWidget;

@@ -43,7 +43,7 @@
 #include <KUrl>
 // include files for kde games
 
-class KAction;
+class QAction;
 class KToolBar;
 class KDialog;
 class KRecentFilesAction;
@@ -260,7 +260,7 @@ private:
   // the current saved game file name
   QString m_fileName;
 
-  KAction* m_saveGameAction;
+  QAction * m_saveGameAction;
 
   QGraphicsView* m_mapView;
   QGraphicsScene* m_mapScene;

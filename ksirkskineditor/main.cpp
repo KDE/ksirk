@@ -26,7 +26,7 @@ This is the standard main function of a KDE application
 #include "mainwindow.h"
 
 #include <KCmdLineArgs>
-#include <KAboutData>
+#include <K4AboutData>
 #include <KLocale>
 #include <KDebug>
 #include <KApplication>
@@ -39,13 +39,13 @@ static const char *description =
 int main(int argc, char *argv[])
 {
   kDebug() << "Hello World!";
-  KAboutData aboutData(
+  K4AboutData aboutData(
     "ksirkskineditor",
     0,
     ki18n("KsirK Skin Editor"),
-    KDE_VERSION_STRING,
+    /*KDE_VERSION_STRING*/"5.0.0",
     ki18n(description),
-    KAboutData::License_GPL,
+    K4AboutData::License_GPL,
     ki18n("(c) 2008, Gaël de Chalendar\n"),
     ki18n("For help and user manual, please see\nThe KsirK Web site"),
     "http://games.kde.org/game.php?game=ksirk");

@@ -66,7 +66,7 @@
 #include <kglobal.h>
 #include <KStatusBar>
 #include <KToolBar>
-#include <KAction>
+#include <QAction>
 #include <QSvgRenderer>
 #include <KDialog>
 #include <KAboutApplicationDialog>
@@ -327,7 +327,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::initActions()
 {
-  KAction *action;
+  QAction *action;
   // standard game actions
   action = KStandardGameAction::load(this, SLOT(slotOpenSkin()), this);
   actionCollection()->addAction(action->objectName(), action);
