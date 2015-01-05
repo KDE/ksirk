@@ -65,4 +65,4 @@ void JoinGameDialog::reject() {
 
 }
 
-#include "joingame.moc"
+

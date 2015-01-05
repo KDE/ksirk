@@ -224,4 +224,4 @@ void InvasionSlider::slideCancel()
 
 } // closing namespace Ksirk
 
-#include "InvasionSlider.moc"
+

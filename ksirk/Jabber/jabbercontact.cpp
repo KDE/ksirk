@@ -1346,4 +1346,4 @@ void JabberContact::slotDiscoFinished( )
 
 
 
-#include "jabbercontact.moc"
+

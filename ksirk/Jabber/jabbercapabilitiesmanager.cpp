@@ -651,4 +651,4 @@ void JabberCapabilitiesManager::saveInformation()
 	capsFile.close();
 }
 
-#include "jabbercapabilitiesmanager.moc"
+

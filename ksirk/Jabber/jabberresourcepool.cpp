@@ -392,4 +392,4 @@ void JabberResourcePool::findResources ( const XMPP::Jid &jid, XMPP::ResourceLis
 	}
 }
 
-#include "jabberresourcepool.moc"
+

@@ -1718,6 +1718,6 @@ void JabberAccount::slotUnregisterFinished( )
 // 		Kopete::AccountManager::self()->removeAccount( this ); //this will delete this
 }
 
-#include "jabberaccount.moc"
+
 
 // vim: set noet ts=4 sts=4 sw=4:

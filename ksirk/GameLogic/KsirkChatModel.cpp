@@ -92,7 +92,7 @@ void KsirkChatModel::addMessage(const QString& fromName, const QString& text)
 }
 
 
-#include "KsirkChatModel.moc"
+
 
 // } // closing namespace GameLogic
 

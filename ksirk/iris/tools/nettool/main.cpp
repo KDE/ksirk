@@ -384,7 +384,7 @@ private slots:
 	}
 };
 
-#include "main.moc"
+
 
 void usage()
 {

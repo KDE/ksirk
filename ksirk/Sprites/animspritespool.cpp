@@ -87,4 +87,4 @@ void AnimSpritePool::update()
 
 } // closing namespace Ksirk
 
-#include "animspritespool.moc"
+

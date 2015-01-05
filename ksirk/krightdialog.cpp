@@ -624,4 +624,4 @@ void KRightDialog::slotStopDefenseAuto()
 
 }
 
-#include "krightdialog.moc"
+

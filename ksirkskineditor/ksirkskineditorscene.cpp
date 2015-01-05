@@ -71,4 +71,4 @@ void Scene::dropEvent ( QGraphicsSceneDragDropEvent * event )
 
 } // closing namespace
 
-#include "ksirkskineditorscene.moc"
+

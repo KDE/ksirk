@@ -98,4 +98,4 @@ void KsirkSkinEditorConfigurationDialog::updateWidgets()
   m_changed = false;
 }
 
-#include "ksirkSkinEditorConfigDialog.moc"
+

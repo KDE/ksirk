@@ -2691,4 +2691,4 @@ void GameAutomaton::checkGoal(Player* player)
 } // closing namespace GameLogic
 } // closing namespace Ksirk
 
-#include "gameautomaton.moc"
+

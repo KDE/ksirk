@@ -88,4 +88,4 @@ void AnimSpritesGroup::oneArrived(AnimSprite* sprite)
 
 }
 
-#include "animspritesgroup.moc"
+

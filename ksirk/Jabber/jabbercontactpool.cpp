@@ -353,4 +353,4 @@ JabberBaseContact *JabberContactPoolItem::contact ()
 	return mContact;
 }
 
-#include "jabbercontactpool.moc"
+

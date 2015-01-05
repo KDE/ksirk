@@ -23,7 +23,7 @@
 
 #include "ui_tcpconnectwidget.h"
 
-#include <QtGui/QWidget>
+#include <QWidget>
 
 #include <QtCore/QMap>
 

@@ -3268,4 +3268,4 @@ void KGameWindow::showNewGameSummary()
 
 } // closing namespace Ksirk
 
-#include "kgamewin.moc"
+

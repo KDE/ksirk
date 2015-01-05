@@ -74,4 +74,4 @@ void RestartOrExitDialogImpl::slotDoNothing()
 
 }
 
-#include "restartOrExitDialogImpl.moc"
+

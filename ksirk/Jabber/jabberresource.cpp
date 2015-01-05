@@ -168,4 +168,4 @@ void JabberResource::slotGotDiscoCapabilities ()
 	}
 }
 
-#include "jabberresource.moc"
+

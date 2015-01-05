@@ -99,4 +99,4 @@ void KMessageJabber::slotGroupChatPresence(const XMPP::Jid& jid, const XMPP::Sta
   }
 }
 
-#include "kmessagejabber.moc"
+
