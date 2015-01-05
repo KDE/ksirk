@@ -63,7 +63,7 @@ ecm_install_icons( ${ICON_INSTALL_DIR} )
 
 install( FILES ksirkskineditorsettings.kcfg DESTINATION ${KCFG_INSTALL_DIR} )
 install( PROGRAMS ksirkskineditor.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} )
-install( FILES ksirkskineditorui.rc  DESTINATION  ${DATA_INSTALL_DIR}/ksirkskineditor )
+install( FILES ksirkskineditorui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/ksirkskineditor )
 
 set (pics_default_DATA
 cross.png

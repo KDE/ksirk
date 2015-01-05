@@ -37,9 +37,8 @@ link_directories( ${CMAKE_CURRENT_BINARY_DIR}/iris/ )
 
 set(ksirk_SRCS 
   GameLogic/gameautomaton.cpp
-  #READD
-  #kgamewin.cpp
-  #kgamewinslots.cpp
+  kgamewin.cpp
+  kgamewinslots.cpp
   gestionSprites.cpp
   Sprites/backgnd.cpp 
   Sprites/animsprite.cpp
@@ -76,14 +75,12 @@ set(ksirk_SRCS
   Dialogs/restartOrExitDialogImpl.cpp
   Dialogs/joingame.cpp
   Dialogs/jabbergameui.cpp
-  #READD
-  #Dialogs/InvasionSlider.cpp
+  Dialogs/InvasionSlider.cpp
   Dialogs/newGameSummaryWidget.cpp
   Dialogs/tcpconnectwidget.cpp
   main.cpp
   decoratedgameframe.cpp 
-  #READD
-  #ksirkConfigDialog.cpp
+  ksirkConfigDialog.cpp
   fightArena.cpp
   mainMenu.cpp
   krightdialog.cpp

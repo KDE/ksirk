@@ -53,6 +53,7 @@
 #include <QInputDialog>
 
 // include files for KDE
+#include <KUrl>
 #include <kfiledialog.h>
 #include <KLocalizedString>
 #include <kconfig.h>

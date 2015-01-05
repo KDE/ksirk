@@ -62,6 +62,7 @@
 #include <QHostInfo>
 
 // include files for KDE
+#include <KUrl>
 #include <K4AboutData>
 #include <kiconloader.h>
 #include <kmessagebox.h>
@@ -534,7 +535,7 @@ QPixmap KGameWindow::buildDice(const QString& id)
 QPixmap KGameWindow::getDice(DiceColor color, int num)
 {
   if(num==0 || num==-1)
-{return NULL;}
+{return QPixmap();}
   else {return m_dices[color][num-1];}
 }
 
