@@ -88,7 +88,7 @@ void KsirkSkinEditorConfigurationDialog::updateSettings()
 {
   kDebug();
   m_changed = false;
-  KsirkSkinEditorSettings::self()->writeConfig();
+  KsirkSkinEditorSettings::self()->save();
 }
 
 void KsirkSkinEditorConfigurationDialog::updateWidgets()

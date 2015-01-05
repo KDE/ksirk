@@ -273,7 +273,7 @@ void JabberBaseContact::updateResourceList ()
 		
 		// resource timestamp
 		resourceListStr += QString ( "<tr><td>%1: %2</td></tr>" ).
-						   arg ( i18n ( "Timestamp" ), KGlobal::locale()->formatDateTime ( (*it)->resource().status().timeStamp(), KLocale::ShortDate, true ) );
+						   arg ( i18n ( "Timestamp" ), KLocale::global()->formatDateTime ( (*it)->resource().status().timeStamp(), KLocale::ShortDate, true ) );
 
 		// message, if any
 		if ( !(*it)->resource().status().status().trimmed().isEmpty () )

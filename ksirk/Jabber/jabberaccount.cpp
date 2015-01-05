@@ -304,7 +304,7 @@ void JabberAccount::connectWithPassword ( const QString &password )
 	m_jabberClient->setAllowPlainTextPassword ( false );
 
 	// enable file transfer (if empty, IP will be set after connection has been established)
-// 	KConfigGroup config = KGlobal::config()->group ( "Jabber" );
+// 	KConfigGroup config = KSharedConfig::openConfig()->group ( "Jabber" );
 // 	m_jabberClient->setFileTransfersEnabled ( true, config.readEntry ( "LocalIP" ) );
 // 	setS5BServerPort ( config.readEntry ( "LocalPort", 8010 ) );
 

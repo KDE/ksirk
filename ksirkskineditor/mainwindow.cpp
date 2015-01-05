@@ -317,11 +317,11 @@ MainWindow::~MainWindow()
 {
   kDebug();
   m_dirs = 0;
-  KSharedConfig::Ptr config = KGlobal::config();
+  KSharedConfig::Ptr config = KSharedConfig::openConfig();
   if (m_rfa != 0)
   {
     kDebug() << "saving recent files";
-    m_rfa->saveEntries(KGlobal::config()->group("ksirkskineditor"));
+    m_rfa->saveEntries(KSharedConfig::openConfig()->group("ksirkskineditor"));
   }
 }
 
@@ -338,9 +338,9 @@ void MainWindow::initActions()
   m_rfa->setText(i18n("Load &Recent"));
   m_rfa->setToolTip(i18n("Open a recently saved skin..."));
 
-  KSharedConfig::Ptr config = KGlobal::config();
+  KSharedConfig::Ptr config = KSharedConfig::openConfig();
   kDebug() << "loading recent files";
-  m_rfa->loadEntries(KGlobal::config()->group("ksirkskineditor"));
+  m_rfa->loadEntries(KSharedConfig::openConfig()->group("ksirkskineditor"));
   
   m_saveGameAction = KStandardGameAction::save(this, SLOT(slotSaveSkin()), this);
   actionCollection()->addAction(m_saveGameAction->objectName(), m_saveGameAction);
@@ -384,7 +384,7 @@ void MainWindow::slotOpenSkin(const QString& dir)
   if (m_rfa != 0)
   {
     kDebug() << "Adding" << skinDir << "to recent files";
-    m_rfa->addUrl(KUrl::fromPath(skinDir));
+    m_rfa->addUrl(QUrl::fromLocalFile(skinDir));
   }
   
   m_mapScene->clear();
@@ -552,7 +552,7 @@ bool MainWindow::queryClose()
         return false;
     }
   }
-  KGlobal::config()->sync();
+  KSharedConfig::openConfig()->sync();
   return true;
 }
 

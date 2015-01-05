@@ -93,7 +93,7 @@ void KsirkConfigurationDialog::updateSettings()
   KsirkSettings::setSoundEnabled(m_widget->soundEnabled->isChecked());
   KsirkSettings::setHelpEnabled(m_widget->helpEnabled->isChecked());
   KsirkSettings::setShowArmiesNumbers(m_widget->armiesNumbers->isChecked());
-  KsirkSettings::self()->writeConfig();
+  KsirkSettings::self()->save();
 }
 
 void KsirkConfigurationDialog::updateWidgets()

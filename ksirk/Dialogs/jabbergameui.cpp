@@ -126,7 +126,7 @@ void KsirkJabberGameWidget::slotJabberConnectButtonClicked()
     delete wallet;
   }
   
-  KsirkSettings::self()->writeConfig();
+  KsirkSettings::self()->save();
 
   m_automaton->game()->jabberClient()->setOverrideHost ( true, jid.domain(), 5222 );
   JabberClient::ErrorCode res = m_automaton->game()->jabberClient()->connect(jid, pass);
@@ -228,7 +228,7 @@ void KsirkJabberGameWidget::slotJoinRoom()
     }
     delete wallet;
   }
-  KsirkSettings::self()->writeConfig();
+  KsirkSettings::self()->save();
 
 
   if (groupchatPassword.isEmpty())

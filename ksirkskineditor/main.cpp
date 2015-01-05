@@ -58,7 +58,8 @@ int main(int argc, char *argv[])
   KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
   KApplication app;
-  KGlobal::locale()->insertCatalog( QLatin1String( "libkdegames" ));
+  //KF5 port: remove this line and define TRANSLATION_DOMAIN in CMakeLists.txt instead
+//KLocale::global()->insertCatalog( QLatin1String( "libkdegames" ));
   if (app.isSessionRestored())
   {
       RESTORE(KsirkSkinEditor::MainWindow);
