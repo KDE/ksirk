@@ -37,7 +37,7 @@
 #include <kfiledialog.h>
 #include <kaction.h>
 #include <kactionmenu.h>
-#include <kicon.h>
+#include <QIcon>
 #include <kstandarddirs.h>
 #include <kio/netaccess.h>
 #include <kinputdialog.h>
@@ -134,36 +134,36 @@ QList<KAction*> *JabberContact::customContextMenuActions ()
 
 	QList<KAction*> *actionCollection = new QList<KAction*>();
 
-	KActionMenu *actionAuthorization = new KActionMenu ( KIcon( QLatin1String( "network-connect"), i18n ("Authorization" )), this);
+	KActionMenu *actionAuthorization = new KActionMenu ( QIcon::fromTheme( QLatin1String( "network-connect"), i18n ("Authorization" )), this);
 
 	KAction *resendAuthAction, *requestAuthAction, *removeAuthAction;
 	
 	resendAuthAction = new KAction( this );
-	resendAuthAction->setIcon( (KIcon( QLatin1String( "mail-forward" )) ) );
+	resendAuthAction->setIcon( (QIcon::fromTheme( QLatin1String( "mail-forward" )) ) );
 	resendAuthAction->setText( i18n ("(Re)send Authorization To") );
 	resendAuthAction->setEnabled( mRosterItem.subscription().type() == XMPP::Subscription::To || mRosterItem.subscription().type() == XMPP::Subscription::None );
 	connect(resendAuthAction, SIGNAL(triggered(bool)), SLOT(slotSendAuth()));
 	actionAuthorization->addAction(resendAuthAction);
 
 	requestAuthAction = new KAction( this );
-	requestAuthAction->setIcon( (KIcon( QLatin1String( "mail-reply-sender" )) ) );
+	requestAuthAction->setIcon( (QIcon::fromTheme( QLatin1String( "mail-reply-sender" )) ) );
 	requestAuthAction->setText( i18n ("(Re)request Authorization From") );
 	requestAuthAction->setEnabled( mRosterItem.subscription().type() == XMPP::Subscription::From || mRosterItem.subscription().type() == XMPP::Subscription::None );
 	connect(requestAuthAction, SIGNAL(triggered(bool)), SLOT(slotRequestAuth()));
 	actionAuthorization->addAction(requestAuthAction);
 	
 	removeAuthAction = new KAction( this );
-	removeAuthAction->setIcon( (KIcon( QLatin1String( "edit-delete" )) ) );
+	removeAuthAction->setIcon( (QIcon::fromTheme( QLatin1String( "edit-delete" )) ) );
 	removeAuthAction->setText( i18n ("Remove Authorization From") );
 	removeAuthAction->setEnabled( mRosterItem.subscription().type() == XMPP::Subscription::Both || mRosterItem.subscription().type() == XMPP::Subscription::From );
 	connect(removeAuthAction, SIGNAL(triggered(bool)), SLOT(slotRemoveAuth()));
 	actionAuthorization->addAction(removeAuthAction);
 
-	KActionMenu *actionSetAvailability = new KActionMenu ( KIcon( QLatin1String( "user-identity", 0, QStringList() << QString() << "user-online"), i18n ("Set Availability" )), this );
+	KActionMenu *actionSetAvailability = new KActionMenu ( QIcon::fromTheme( QLatin1String( "user-identity", 0, QStringList() << QString() << "user-online"), i18n ("Set Availability" )), this );
 
 #define KACTION(status, text, name, slot) \
 	{ KAction *tmp = new KAction(this); \
-	tmp->setIcon( KIcon(QIcon((status).iconFor(this)))); \
+	tmp->setIcon( QIcon::fromTheme(QIcon((status).iconFor(this)))); \
 	tmp->setText( text ); \
 	connect(tmp, SIGNAL(triggered(bool)), (slot));\
 	actionSetAvailability->addAction(tmp); }
@@ -215,7 +215,7 @@ QList<KAction*> *JabberContact::customContextMenuActions ()
 			if( i == activeItem )
 			{
 				KAction *tmp = new KAction( this );
-				tmp->setIcon( KIcon( QLatin1String( "dialog-ok" )) );
+				tmp->setIcon( QIcon::fromTheme( QLatin1String( "dialog-ok" )) );
 				tmp->setText( str);
 				connect(tmp, SIGNAL(triggered(bool)), SLOT(slotSelectResource()));
 				actionSelectResource->addAction(tmp);
@@ -230,7 +230,7 @@ QList<KAction*> *JabberContact::customContextMenuActions ()
 					protocol()->resourceToKOS ( account()->resourcePool()->bestResource ( mRosterItem.jid(), false ) ).iconFor ( account () ) : protocol()->resourceToKOS ( *availableResources.find(str) ).iconFor ( account () ));
 
 				KAction *tmp = new KAction(this);
-				tmp->setIcon( KIcon(iconSet) );
+				tmp->setIcon( QIcon::fromTheme(iconSet) );
 				tmp->setText( str );
 				connect(tmp, SIGNAL(triggered(bool)), SLOT(slotSelectResource()));
 				actionSelectResource->addAction ( tmp );

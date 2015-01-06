@@ -23,7 +23,7 @@
 #include <kaction.h>
 #include <kselectaction.h>
 #include <KLocalizedString>
-#include <kicon.h>
+#include <QIcon>
 
 #include "tasks/jt_privatestorage.h"
 
@@ -131,7 +131,7 @@ void JabberBookmarks::insertGroupChat(const XMPP::Jid &jid)
 KAction * JabberBookmarks::bookmarksAction(QObject * /*parent*/)
 {
 	KSelectAction *groupchatBM = new KSelectAction( this );
-	groupchatBM->setIcon( KIcon( QLatin1String( "jabber_group" )) );
+	groupchatBM->setIcon( QIcon::fromTheme( QLatin1String( "jabber_group" )) );
 	groupchatBM->setText( i18n("Groupchat bookmark") );
 	groupchatBM->setItems(m_conferencesJID);
 	QObject::connect(groupchatBM, SIGNAL(triggered(QString)) , this , SLOT(slotJoinChatBookmark(QString)));
