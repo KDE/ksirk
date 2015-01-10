@@ -5,9 +5,7 @@ configure_file(config-ksirk.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-ksirk.h)
 add_subdirectory( skins )
 add_subdirectory( iris )
 
-# FIND_PACKAGE(QCA2 REQUIRED)
 # FIND_PACKAGE(ZLIB REQUIRED)
-# macro_log_feature(QCA2_FOUND "QCA2" "Qt Cryptographic Architecture" "http://delta.affinix.com/qca" FALSE "2.0.0" "Needed to build Ksirk Jabber support's GroupWise and Jabberprotocols.")
 
 include_directories( 
   ${CMAKE_BINARY_DIR}/ksirk 
