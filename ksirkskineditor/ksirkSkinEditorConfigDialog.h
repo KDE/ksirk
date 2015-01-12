@@ -22,6 +22,7 @@
 
 #include <kconfigdialog.h>
 #include <KConfigSkeleton>
+#include <QDialogButtonBox>
 namespace Ui
 {
   class KsirkSkinEditorPreferencesWidget;
@@ -43,8 +44,8 @@ public:
   KsirkSkinEditorConfigurationDialog (
                 QWidget *parent, const char *name, KConfigSkeleton *config, 
                 FaceType faceType=List, 
-                ButtonCodes dialogButtons=Default|Ok|Apply|Cancel|Help, 
-                ButtonCode defaultButton=Ok, bool modal=false);
+                QDialogButtonBox::StandardButtons dialogButtons=QDialogButtonBox::RestoreDefaults|QDialogButtonBox::Ok|QDialogButtonBox::Apply|QDialogButtonBox::Cancel|QDialogButtonBox::Help, 
+                QDialogButtonBox::StandardButton defaultButton=QDialogButtonBox::Ok, bool modal=false);
 
   /** Destructor */
   virtual ~KsirkSkinEditorConfigurationDialog ();

@@ -107,3 +107,4 @@ GenericName[zh_TW]=征服世界戰略遊戲
 Categories=Qt;KDE;Game;StrategyGame;
 X-KDE-StartupNotify=true
 X-DBUS-StartupType=Multi
+X-DBUS-ServiceName=org.kde.ksirk

@@ -41,7 +41,7 @@ ki18n_wrap_ui(ksirkskineditor_SRCS ${ksirkskineditor_UI} )
 
 kconfig_add_kcfg_files( ksirkskineditor_SRCS ksirkskineditorsettings.kcfgc )
 
-kde4_add_app_icon(ksirkskineditor_SRCS "hi*-app-ksirk.png")
+#kde4_add_app_icon(ksirkskineditor_SRCS "hi*-app-ksirk.png")
 
 add_executable(ksirkskineditor ${ksirkskineditor_SRCS})
 
@@ -62,7 +62,7 @@ install( TARGETS ksirkskineditor ${INSTALL_TARGETS_DEFAULT_ARGS})
 ecm_install_icons( ${ICON_INSTALL_DIR} )
 
 install( FILES ksirkskineditorsettings.kcfg DESTINATION ${KCFG_INSTALL_DIR} )
-install( PROGRAMS ksirkskineditor.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} )
+install( PROGRAMS org.kde.ksirkskineditor.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} )
 install( FILES ksirkskineditorui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/ksirkskineditor )
 
 set (pics_default_DATA

@@ -111,7 +111,7 @@ ki18n_wrap_ui(ksirk_SRCS ${ksirk_UI} )
 
 kconfig_add_kcfg_files( ksirk_SRCS ksirksettings.kcfgc )
 
-kde4_add_app_icon(ksirk_SRCS "hi*-app-ksirk.png")
+#kde4_add_app_icon(ksirk_SRCS "hi*-app-ksirk.png")
 
 add_executable(ksirk ${ksirk_SRCS})
 
@@ -133,10 +133,10 @@ install( TARGETS ksirk ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
 
-ecm_install_icons( ${ICON_INSTALL_DIR} )
+ecm_install_icons( ICONS hi128-apps-ksirk.png  hi16-apps-ksirk.png  hi22-apps-ksirk.png  hi32-apps-ksirk.png  hi48-apps-ksirk.png  hi64-apps-ksirk.png  lo16-apps-ksirk.png  lo32-apps-ksirk.png DESTINATION ${ICON_INSTALL_DIR} )
 
 install( FILES ksirksettings.kcfg DESTINATION ${KCFG_INSTALL_DIR} )
-install( PROGRAMS ksirk.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} )
+install( PROGRAMS org.kde.ksirk.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} )
 install( FILES ksirkui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/ksirk )
 install( FILES jabber.png  DESTINATION  ${DATA_INSTALL_DIR}/ksirk )
 install( FILES ksirk.knsrc  DESTINATION  ${CONFIG_INSTALL_DIR} )

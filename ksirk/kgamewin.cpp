@@ -470,12 +470,12 @@ void KGameWindow::initActions()
 void KGameWindow::initStatusBar()
 {
   statusBar()-> setSizeGripEnabled(true);
-  statusBar()->insertPermanentItem("", ID_STATUS_MSG, 2);
-  statusBar()-> setItemAlignment(ID_STATUS_MSG, Qt::AlignLeft | Qt::AlignVCenter);
+  //QT5 statusBar()->insertPermanentItem("", ID_STATUS_MSG, 2);
+  //QT5 statusBar()-> setItemAlignment(ID_STATUS_MSG, Qt::AlignLeft | Qt::AlignVCenter);
 
-  statusBar()->insertPermanentItem("", ID_STATUS_MSG2, 3);
-  statusBar()-> setItemAlignment(ID_STATUS_MSG2, Qt::AlignLeft | Qt::AlignVCenter);
-  statusBar()->addPermanentWidget(m_barFlag);
+  //QT5 statusBar()->insertPermanentItem("", ID_STATUS_MSG2, 3);
+  //QT5 statusBar()-> setItemAlignment(ID_STATUS_MSG2, Qt::AlignLeft | Qt::AlignVCenter);
+  //QT5 statusBar()->addPermanentWidget(m_barFlag);
 }
 
 Country* KGameWindow::clickIn(const QPointF &pointf)
@@ -1500,7 +1500,7 @@ void KGameWindow::changeItem( const QString& text, int id, bool log )
 {
   if (id != ID_NO_STATUS_MSG)
   {
-      statusBar()-> changeItem(text, id);
+      //QT5 statusBar()-> changeItem(text, id);
   }
   if (log)
   {
@@ -1614,7 +1614,7 @@ void KGameWindow::changeItem( KMessageParts& strings, int id, bool log )
       kError() << "received a (I18N_EMPTY_MESSAGE)";
     }
 //     kDebug() << "  argument: " << argument.toString();
-    statusBar()-> changeItem(argument.toString(), id);
+    //QT5 statusBar()-> changeItem(argument.toString(), id);
   }
 }
 

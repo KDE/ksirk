@@ -111,7 +111,7 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
         status1Text = i18np("%2 belongs to %3. 1 army.","%2 belongs to %3. %1 armies.",mouseLocalisation->nbArmies(),i18n(countryName.toUtf8().data()),player->name());
       }
 
-      statusBar()-> changeItem(status1Text, ID_STATUS_MSG);
+      //QT5 statusBar()-> changeItem(status1Text, ID_STATUS_MSG);
     }
   }
   else
@@ -121,7 +121,7 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
       m_mouseLocalisation->clearHighlighting();
       m_mouseLocalisation = 0;
     }
-    statusBar()-> changeItem("", ID_STATUS_MSG); // Reset
+    //QT5 statusBar()-> changeItem("", ID_STATUS_MSG); // Reset
   }
   int borderScrollSize = 50;
   if ( (!m_timer.isActive())
@@ -615,8 +615,10 @@ void KGameWindow::slotShowAboutApplication()
 
 /*  KAboutApplication kAA;
   kAA.exec();*/
+#if 0 //QT5
   KAboutApplicationDialog dialog(KGlobal::mainComponent().aboutData(), this);
   dialog.exec();
+#endif
 }
 
 void KGameWindow::slotJoinNetworkGame() 
@@ -1003,10 +1005,12 @@ void KGameWindow::slotClientError ( JabberClient::ErrorCode errorCode )
   {
     case JabberClient::NoTLS:
     default:
+#if 0 //QT5
       KMessageBox::queuedMessageBox ( 0, KMessageBox::Error,
                                                                                 i18n ("An encrypted connection with the Jabber server could not be established."),
                                                                                 i18n ("Jabber Connection Error"));
 //                                                                                 disconnect ( 0/*Kopete::Account::Manual*/ );
+#endif
                                                                                 break;
                                             }
 }
@@ -1111,18 +1115,18 @@ void KGameWindow::slotGroupChatError (const XMPP::Jid &jid, int error, const QSt
     break;
     
     case JabberClient::BannedFromThisMUC:
-      KMessageBox::queuedMessageBox ( 0, KMessageBox::Error, i18n ("You cannot join the room %1 because you have been banned", jid.node()), i18n ("Jabber Group Chat") );
+      //QT5 KMessageBox::queuedMessageBox ( 0, KMessageBox::Error, i18n ("You cannot join the room %1 because you have been banned", jid.node()), i18n ("Jabber Group Chat") );
       break;
                                       
     case JabberClient::MaxUsersReachedForThisMuc:
-      KMessageBox::queuedMessageBox ( 0, KMessageBox::Error, i18n ("You cannot join the room %1 because the maximum number of users has been reached", jid.node()), i18n ("Jabber Group Chat") );
+      //QT5 KMessageBox::queuedMessageBox ( 0, KMessageBox::Error, i18n ("You cannot join the room %1 because the maximum number of users has been reached", jid.node()), i18n ("Jabber Group Chat") );
       break;
                                       
     default:
     {
       QString detailedReason = reason.isEmpty () ? i18n ( "No reason given by the server" ) : reason;
       
-      KMessageBox::queuedMessageBox ( 0, KMessageBox::Error, i18n ("There was an error processing your request for groupchat %1. (Reason: %2, Code %3)", jid.full (), detailedReason, error ), i18n ("Jabber Group Chat") );
+      //QT5 KMessageBox::queuedMessageBox ( 0, KMessageBox::Error, i18n ("There was an error processing your request for groupchat %1. (Reason: %2, Code %3)", jid.full (), detailedReason, error ), i18n ("Jabber Group Chat") );
     }
   }
 }

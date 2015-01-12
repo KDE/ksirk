@@ -27,7 +27,7 @@
 #include <ktabwidget.h>
 #include <kedittoolbar.h>
 #include <kdebug.h>
-
+#include <QPushButton>
 #include <kstandardaction.h>
 
 #include <klibloader.h>
@@ -46,15 +46,15 @@ using namespace KsirkSkinEditor;
 
 KsirkSkinEditorConfigurationDialog::KsirkSkinEditorConfigurationDialog (
               QWidget *parent, const char *name, KConfigSkeleton *config, 
-              FaceType dialogType, ButtonCodes dialogButtons, 
-              ButtonCode defaultButton, bool modal) : 
+              FaceType dialogType, QDialogButtonBox::StandardButtons dialogButtons, 
+              QDialogButtonBox::StandardButton defaultButton, bool modal) : 
       KConfigDialog (parent, name, config) , m_changed(false), 
       m_widget(new Ui::KsirkSkinEditorPreferencesWidget())
 
 {
   setFaceType(dialogType);
-  setButtons(dialogButtons);
-  setDefaultButton(defaultButton);
+  setStandardButtons(dialogButtons);
+  button(defaultButton)->setDefault(true);
   setModal(modal);
   QWidget* w = new QWidget();
   m_widget->setupUi(w);

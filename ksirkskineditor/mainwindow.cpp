@@ -584,8 +584,10 @@ void MainWindow::optionsConfigure()
 
 void MainWindow::slotShowAboutApplication()
 {
+#if 0 //QT5
   KAboutApplicationDialog dialog(KGlobal::mainComponent().aboutData(), this);
   dialog.exec();
+#endif
 }
 
 void MainWindow::slotFlagButtonClicked()
