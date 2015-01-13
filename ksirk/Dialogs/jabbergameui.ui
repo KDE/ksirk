@@ -69,7 +69,7 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
-          <widget class="KPushButton" name="connectbutton">
+          <widget class="QPushButton" name="connectbutton">
            <property name="text">
             <string>Connect</string>
            </property>
@@ -175,7 +175,7 @@
           </widget>
          </item>
          <item row="2" column="2">
-          <widget class="KPushButton" name="joinroombutton">
+          <widget class="QPushButton" name="joinroombutton">
            <property name="text">
             <string>Join Room</string>
            </property>
@@ -237,7 +237,7 @@
          <item>
           <layout class="QVBoxLayout" name="verticalLayout">
            <item>
-            <widget class="KPushButton" name="startnewgamebutton">
+            <widget class="QPushButton" name="startnewgamebutton">
              <property name="enabled">
               <bool>false</bool>
              </property>
@@ -247,7 +247,7 @@
             </widget>
            </item>
            <item>
-            <widget class="KPushButton" name="joingamebutton">
+            <widget class="QPushButton" name="joingamebutton">
              <property name="enabled">
               <bool>false</bool>
              </property>
@@ -257,7 +257,7 @@
             </widget>
            </item>
            <item>
-            <widget class="KPushButton" name="loadsavedgamebutton">
+            <widget class="QPushButton" name="loadsavedgamebutton">
              <property name="enabled">
               <bool>false</bool>
              </property>
@@ -313,7 +313,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="KPushButton" name="cancelbutton">
+      <widget class="QPushButton" name="cancelbutton">
        <property name="text">
         <string>Cancel</string>
        </property>
@@ -328,11 +328,6 @@
    <class>KLed</class>
    <extends>QWidget</extends>
    <header>kled.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KPushButton</class>
-   <extends>QPushButton</extends>
-   <header>kpushbutton.h</header>
   </customwidget>
   <customwidget>
    <class>KLineEdit</class>

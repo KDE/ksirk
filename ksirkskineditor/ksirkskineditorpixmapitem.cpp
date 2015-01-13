@@ -21,7 +21,7 @@
 
 #include<QGraphicsSceneMouseEvent>
 
-#include<KDebug>
+#include "ksirkskineditor_debug.h"
 
 namespace KsirkSkinEditor
 {
@@ -29,24 +29,24 @@ namespace KsirkSkinEditor
 PixmapItem::PixmapItem(QGraphicsItem* parent) :
       QGraphicsPixmapItem(parent)
 {
-  kDebug();
+  qCDebug(KSIRKSKINEDITOR_LOG);
 }
 
 PixmapItem::~PixmapItem()
 {
-  kDebug();
+  qCDebug(KSIRKSKINEDITOR_LOG);
 }
 
 void PixmapItem::mousePressEvent(QGraphicsSceneMouseEvent* event)
 {
-  kDebug() << event->scenePos();
+  qCDebug(KSIRKSKINEDITOR_LOG) << event->scenePos();
   QGraphicsItem::mousePressEvent(event);
   emit pressed(this,event->scenePos());
 }
 
 void PixmapItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 {
-  kDebug() << event->scenePos();
+  qCDebug(KSIRKSKINEDITOR_LOG) << event->scenePos();
   QGraphicsItem::mouseReleaseEvent(event);
   emit placed(this, event->scenePos());
 }

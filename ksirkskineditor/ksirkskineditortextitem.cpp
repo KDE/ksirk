@@ -21,25 +21,25 @@
 
 #include<QGraphicsSceneMouseEvent>
 
-#include<KDebug>
-
+#include "ksirkskineditor_debug.h"
+ 
 namespace KsirkSkinEditor
 {
 
 TextItem::TextItem(QGraphicsItem* parent) :
       QGraphicsTextItem(parent)
 {
-  kDebug();
+  qCDebug(KSIRKSKINEDITOR_LOG);
 }
 
 TextItem::~TextItem()
 {
-  kDebug();
+  qCDebug(KSIRKSKINEDITOR_LOG);
 }
 
 void TextItem::mousePressEvent(QGraphicsSceneMouseEvent* event)
 {
-  kDebug();
+  qCDebug(KSIRKSKINEDITOR_LOG);
 //   setPosition(event->scenePos().x()-width()/2,event->scenePos().y()-height()/2)
   emit pressed(this, event->scenePos());
   QGraphicsItem::mousePressEvent(event);
@@ -47,7 +47,7 @@ void TextItem::mousePressEvent(QGraphicsSceneMouseEvent* event)
 
 void TextItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 {
-  kDebug() << event->scenePos();
+  qCDebug(KSIRKSKINEDITOR_LOG) << event->scenePos();
   emit placed(this, event->scenePos());
   QGraphicsItem::mouseReleaseEvent(event);
 }

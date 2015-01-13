@@ -35,7 +35,7 @@
 #include <kstandarddirs.h>
 #include <kglobal.h>
 #include <KLocalizedString>
-#include <kdebug.h>
+#include "ksirkskineditor_debug.h"
 #include <kmessagebox.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>
@@ -54,7 +54,7 @@ ONU::ONU(const QString& configDir):
   m_dirty(false)
 {
 
-  kDebug() << "ONU constructor: " << m_configFileName;
+  qCDebug(KSIRKSKINEDITOR_LOG) << "ONU constructor: " << m_configFileName;
   m_font.family = "URW Chancery L";
   m_font.size = (uint)(13);
   m_font.weight = QFont::Bold;
@@ -69,7 +69,7 @@ ONU::ONU(const QString& configDir):
 
   KConfigGroup onugroup = config.group("onu");
 
-  kDebug() << "ONU XML format version: " << onugroup.readEntry("format-version");
+  qCDebug(KSIRKSKINEDITOR_LOG) << "ONU XML format version: " << onugroup.readEntry("format-version");
   QString formatVersion = onugroup.readEntry("format-version");
 
   if (!formatVersion.isEmpty() && formatVersion != ONU_FILE_FORMAT_VERSION)
@@ -82,11 +82,11 @@ ONU::ONU(const QString& configDir):
 
   m_name = onugroup.readEntry("name");
   m_skin = onugroup.readEntry("skinpath");
-  kDebug() << "skin snapshot file: " << m_configDir + "/Images/snapshot.jpg";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "skin snapshot file: " << m_configDir + "/Images/snapshot.jpg";
   m_snapshot = QString(m_configDir + "/Images/snapshot.jpg");
   if (m_snapshot.isNull())
   {
-    kError() << "Was not able to load the snapshot image: " 
+    qCCritical(KSIRKSKINEDITOR_LOG) << "Was not able to load the snapshot image: " 
     << m_configDir + "/Images/snapshot.jpg";
   }
   m_width  = onugroup.readEntry("width",1024);
@@ -101,10 +101,10 @@ ONU::ONU(const QString& configDir):
   {
     m_poolString = "Images/pool.svg";
   }
-  kDebug() << "Pool path: " << m_poolString;
-  kDebug() << "Searching resource: " << (m_configDir + '/' + m_poolString);
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Pool path: " << m_poolString;
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Searching resource: " << (m_configDir + '/' + m_poolString);
   QString poolFileName = m_configDir + '/' + m_poolString;
-  kDebug() << "Pool file name: " << poolFileName;
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Pool file name: " << poolFileName;
   if (poolFileName.isEmpty())
   {
       KMessageBox::error(0, 
@@ -118,12 +118,12 @@ ONU::ONU(const QString& configDir):
   loadPoolIds(poolFileName);
   
   QString mapMaskFileName = m_configDir + '/' + onugroup.readEntry("map-mask");
-  kDebug() << "Map mask file name init: " << mapMaskFileName;
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Map mask file name init: " << mapMaskFileName;
   if (mapMaskFileName == (m_configDir + '/'))
   {
     mapMaskFileName = m_configDir + '/' + "Images/map-mask.png";
   }
-  kDebug() << "Map mask file name: " << mapMaskFileName;
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Map mask file name: " << mapMaskFileName;
   if (mapMaskFileName.isNull())
   {
       KMessageBox::error(0, 
@@ -131,19 +131,19 @@ ONU::ONU(const QString& configDir):
                          i18n("Error"));
       exit(2);
   }
-  kDebug() << "Loading map mask file: " << mapMaskFileName;
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Loading map mask file: " << mapMaskFileName;
   m_countriesMask = QImage(mapMaskFileName);
 
   SkinSpritesData::changeable().intData("width-between-flag-and-fighter", onugroup.readEntry("width-between-flag-and-fighter",0));
 
 
-  kDebug() << "Loading flag data";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Loading flag data";
   SkinSpritesData::changeable().intData("flag-width", config.group("flag").readEntry("width",20));
   SkinSpritesData::changeable().intData("flag-height", config.group("flag").readEntry("height",20));
   SkinSpritesData::changeable().intData("flag-frames", config.group("flag").readEntry("frames",4));
   SkinSpritesData::changeable().intData("flag-versions", config.group("flag").readEntry("versions",1));
 
-  kDebug() << "Loading infantry data";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Loading infantry data";
 //   SkinSpritesData::changeable().strData("infantry-id", config.group("infantry").readEntry("id"));
   SkinSpritesData::changeable().intData("infantry-width", config.group("infantry").readEntry("width",23));
   SkinSpritesData::changeable().intData("infantry-height", config.group("infantry").readEntry("height",32));
@@ -168,35 +168,35 @@ ONU::ONU(const QString& configDir):
   SkinSpritesData::changeable().intData("infantry3-frames", config.group("infantry3").readEntry("frames",0));
   SkinSpritesData::changeable().intData("infantry3-versions", config.group("infantry3").readEntry("versions",0));
 
-  kDebug() << "Loading cavalry data";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Loading cavalry data";
 //   SkinSpritesData::changeable().strData("cavalry-id", config.group("cavalry").readEntry("id"));
   SkinSpritesData::changeable().intData("cavalry-width", config.group("cavalry").readEntry("width",32));
   SkinSpritesData::changeable().intData("cavalry-height", config.group("cavalry").readEntry("height",32));
   SkinSpritesData::changeable().intData("cavalry-frames", config.group("cavalry").readEntry("frames",1));
   SkinSpritesData::changeable().intData("cavalry-versions", config.group("cavalry").readEntry("versions",3));
 
-  kDebug() << "Loading cannon data";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Loading cannon data";
 //   SkinSpritesData::changeable().strData("cannon-id", config.group("cannon").readEntry("id"));
   SkinSpritesData::changeable().intData("cannon-width", config.group("cannon").readEntry("width",32));
   SkinSpritesData::changeable().intData("cannon-height", config.group("cannon").readEntry("height",32));
   SkinSpritesData::changeable().intData("cannon-frames", config.group("cannon").readEntry("frames",2));
   SkinSpritesData::changeable().intData("cannon-versions", config.group("cannon").readEntry("versions",3));
 
-  kDebug() << "Loading firing data";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Loading firing data";
 //   SkinSpritesData::changeable().strData("firing-id", config.group("firing").readEntry("id"));
   SkinSpritesData::changeable().intData("firing-width", config.group("firing").readEntry("width",64));
   SkinSpritesData::changeable().intData("firing-height", config.group("firing").readEntry("height",32));
   SkinSpritesData::changeable().intData("firing-frames", config.group("firing").readEntry("frames",4));
   SkinSpritesData::changeable().intData("firing-versions", config.group("firing").readEntry("versions",3));
 
-  kDebug() << "Loading exploding data";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Loading exploding data";
 //   SkinSpritesData::changeable().strData("exploding-id", config.group("exploding").readEntry("id"));
   SkinSpritesData::changeable().intData("exploding-width", config.group("exploding").readEntry("width",32));
   SkinSpritesData::changeable().intData("exploding-height", config.group("cannon").readEntry("height",32));
   SkinSpritesData::changeable().intData("exploding-frames", config.group("exploding").readEntry("frames",4));
   SkinSpritesData::changeable().intData("exploding-versions", config.group("exploding").readEntry("versions",3));
 
-  kDebug() << "Loading font data";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Loading font data";
   KConfigGroup fontgroup = config.group("font");
   m_font.family = fontgroup.readEntry("family","URW Chancery L");
   m_font.size = fontgroup.readEntry("size",(uint)(13));
@@ -225,7 +225,7 @@ ONU::ONU(const QString& configDir):
   m_font.foregroundColor = fontgroup.readEntry("foreground-color", "black");
   m_font.backgroundColor = fontgroup.readEntry("background-color", "white");
 
-  kDebug() << "Loading countries data";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Loading countries data";
   QStringList countriesList = onugroup.readEntry("countries", QStringList());
 /*  while (m_countries.size() < countriesList.size())
   {
@@ -233,7 +233,7 @@ ONU::ONU(const QString& configDir):
   }*/
   foreach (const QString &country, countriesList)
   { 
-    kDebug() << "Loading"<<country<<"data";
+    qCDebug(KSIRKSKINEDITOR_LOG) << "Loading"<<country<<"data";
     KConfigGroup countryGroup = config.group(country);
 //     unsigned int id = countryGroup.readEntry("id",0);
     QString name = country;
@@ -248,7 +248,7 @@ ONU::ONU(const QString& configDir):
         flagPoint, cannonPoint, cavalryPoint, infantryPoint));
   }
   
-  kDebug() << "Loading nationalities data";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Loading nationalities data";
   QStringList nationalitiesList = onugroup.readEntry("nationalities", QStringList());
 /*  while (m_nationalities.size() < nationalitiesList.size())
   {
@@ -256,17 +256,17 @@ ONU::ONU(const QString& configDir):
   }*/
   foreach (const QString &nationality, nationalitiesList)
   {
-    kDebug() << "Creating nationality " << nationality;
+    qCDebug(KSIRKSKINEDITOR_LOG) << "Creating nationality " << nationality;
     KConfigGroup nationalityGroup = config.group(nationality);
     QString leader = nationalityGroup.readEntry("leader","");
     QString flag = nationalityGroup.readEntry("flag","");
-//         kDebug() << "Creating nationality " << name << " ; flag: " << flag;
+//         qCDebug(KSIRKSKINEDITOR_LOG) << "Creating nationality " << name << " ; flag: " << flag;
     m_nationalities.push_back(new Nationality(nationality, flag, leader));
 //     nationalityId++;
   }
 
 
-  kDebug() << "Loading continents data";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Loading continents data";
   QStringList continentsList = onugroup.readEntry("continents", QStringList());
 /*  while (m_continents.size() < continentsList.size())
   {
@@ -274,7 +274,7 @@ ONU::ONU(const QString& configDir):
   }*/
   foreach (const QString &continent, continentsList)
   {
-    kDebug() << "Loading"<<continent<<"data";
+    qCDebug(KSIRKSKINEDITOR_LOG) << "Loading"<<continent<<"data";
     KConfigGroup continentGroup = config.group(continent);
 
 //     unsigned int id = continentGroup.readEntry("id",0);
@@ -286,15 +286,15 @@ ONU::ONU(const QString& configDir):
     {
       continentList.push_back(countryNamed(countryId));
     }
-//       kDebug() << "Creating continent " << name;
+//       qCDebug(KSIRKSKINEDITOR_LOG) << "Creating continent " << name;
     m_continents.push_back(new Continent(continent, continentList, bonus));
   }
 
-  kDebug() << "Loading goals data";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Loading goals data";
   QStringList goalsList = onugroup.readEntry("goals", QStringList());
   foreach (const QString &_goal, goalsList)
   {
-    kDebug() << "init goal " << _goal;
+    qCDebug(KSIRKSKINEDITOR_LOG) << "init goal " << _goal;
     KConfigGroup goalGroup = config.group(_goal);
 
     Goal* goal = new Goal();
@@ -305,8 +305,8 @@ ONU::ONU(const QString& configDir):
       goal->setType(Goal::Countries);
       goal->setNbCountries(goalGroup.readEntry("nbCountries",0));
       goal->setNbArmiesByCountry(goalGroup.readEntry("nbArmiesByCountry",0));
-      kDebug() << "  nb countries: **********************************" << goal->nbCountries();
-      kDebug() << "  nbarmies countries: **********************************" << goal->nbArmiesByCountry();
+      qCDebug(KSIRKSKINEDITOR_LOG) << "  nb countries: **********************************" << goal->nbCountries();
+      qCDebug(KSIRKSKINEDITOR_LOG) << "  nbarmies countries: **********************************" << goal->nbArmiesByCountry();
     }
     else if (goalType == "continents" )
     {
@@ -326,7 +326,7 @@ ONU::ONU(const QString& configDir):
 
   foreach (const QString &country, countriesList)
   {
-    kDebug() << "building neighbours list of " << country;
+    qCDebug(KSIRKSKINEDITOR_LOG) << "building neighbours list of " << country;
     QList< Country* > theNeighbours;
     KConfigGroup countryGroup = config.group(country);
     QList<QString> theNeighboursIds = countryGroup.readEntry("neighbours",QList<QString>());
@@ -338,11 +338,11 @@ ONU::ONU(const QString& configDir):
     }
     countryNamed(country)-> neighbours(theNeighbours);
   }
-  kDebug() << "Building map";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Building map";
   buildMap();
-  kDebug() << "Map built";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Map built";
   
-  kDebug() << "Building flag icon";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Building flag icon";
   int flagWidth = SkinSpritesData::changeable().intData("flag-width");
   int flagHeight = SkinSpritesData::changeable().intData("flag-height");
   int flagFrames = SkinSpritesData::changeable().intData("flag-frames");
@@ -355,7 +355,7 @@ ONU::ONU(const QString& configDir):
   {
     m_flagIcon = QPixmap(pixmapForId(m_nationalities[0]->name().toLower(),flagWidth*flagFrames,flagHeight*flagVersions).copy(0,0,flagWidth,flagHeight));
   }
-  kDebug() << "Building infantry icon";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Building infantry icon";
   int infantryWidth = SkinSpritesData::changeable().intData("infantry-width");
   int infantryHeight = SkinSpritesData::changeable().intData("infantry-height");
   int infantryFrames = SkinSpritesData::changeable().intData("infantry-frames");
@@ -363,7 +363,7 @@ ONU::ONU(const QString& configDir):
   m_infantryIcon = QPixmap(
   pixmapForId("infantry",infantryWidth*infantryFrames,infantryHeight*infantryVersions).copy(0,0,infantryWidth,infantryHeight));
 
-  kDebug() << "Building cavalry icon";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Building cavalry icon";
   int cavalryWidth = SkinSpritesData::changeable().intData("cavalry-width");
   int cavalryHeight = SkinSpritesData::changeable().intData("cavalry-height");
   int cavalryFrames = SkinSpritesData::changeable().intData("cavalry-frames");
@@ -371,7 +371,7 @@ ONU::ONU(const QString& configDir):
   m_cavalryIcon = QPixmap(
   pixmapForId("cavalry",cavalryWidth*cavalryFrames,cavalryHeight*cavalryVersions).copy(0,0,cavalryWidth,cavalryHeight));
   
-  kDebug() << "Building cannon icon";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Building cannon icon";
   int cannonWidth = SkinSpritesData::changeable().intData("cannon-width");
   int cannonHeight = SkinSpritesData::changeable().intData("cannon-height");
   int cannonFrames = SkinSpritesData::changeable().intData("cannon-frames");
@@ -379,7 +379,7 @@ ONU::ONU(const QString& configDir):
   m_cannonIcon = QPixmap(
   pixmapForId("cannon",cannonWidth*cannonFrames,cannonHeight*cannonVersions).copy(0,0,cannonWidth,cannonHeight));
 
-  kDebug() << "OUT";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "OUT";
 }
 
 ONU::~ONU()
@@ -396,13 +396,13 @@ void ONU::saveConfig(const QString& configFileName)
   {
     m_configFileName = configFileName;
   }
-  kDebug() << m_configFileName;
+  qCDebug(KSIRKSKINEDITOR_LOG) << m_configFileName;
 
   KConfig config(m_configFileName);
 
   KConfigGroup onugroup = config.group("onu");
 
-  kDebug() << "ONU XML format version: ";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "ONU XML format version: ";
   onugroup.writeEntry("format-version",ONU_FILE_FORMAT_VERSION);
 
   onugroup.writeEntry("name",m_name);
@@ -415,48 +415,48 @@ void ONU::saveConfig(const QString& configFileName)
   onugroup.writeEntry("width-between-flag-and-fighter",SkinSpritesData::changeable().intData("width-between-flag-and-fighter"));
 
 
-  kDebug() << "Saving flag data";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Saving flag data";
   config.group("flag").writeEntry("width",SkinSpritesData::changeable().intData("flag-width"));
   config.group("flag").writeEntry("height",SkinSpritesData::changeable().intData("flag-height"));
   config.group("flag").writeEntry("frames",SkinSpritesData::changeable().intData("flag-frames"));
   config.group("flag").writeEntry("versions",SkinSpritesData::changeable().intData("flag-versions"));
 
-  kDebug() << "Saving infantry data";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Saving infantry data";
 //   config.group("infantry").writeEntry("id",SkinSpritesData::changeable().strData("infantry-id"));
   config.group("infantry").writeEntry("width",SkinSpritesData::changeable().intData("infantry-width"));
   config.group("infantry").writeEntry("height",SkinSpritesData::changeable().intData("infantry-height"));
   config.group("infantry").writeEntry("frames",SkinSpritesData::changeable().intData("infantry-frames"));
   config.group("infantry").writeEntry("versions",SkinSpritesData::changeable().intData("infantry-versions"));
 
-  kDebug() << "Saving cavalry data";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Saving cavalry data";
 //   config.group("cavalry").writeEntry("id",SkinSpritesData::changeable().strData("cavalry-id"));
   config.group("cavalry").writeEntry("width",SkinSpritesData::changeable().intData("cavalry-width"));
   config.group("cavalry").writeEntry("height",SkinSpritesData::changeable().intData("cavalry-height"));
   config.group("cavalry").writeEntry("frames",SkinSpritesData::changeable().intData("cavalry-frames"));
   config.group("cavalry").writeEntry("versions",SkinSpritesData::changeable().intData("cavalry-versions"));
 
-  kDebug() << "Saving cannon data";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Saving cannon data";
 //   config.group("cannon").writeEntry("id",SkinSpritesData::changeable().strData("cannon-id"));
   config.group("cannon").writeEntry("width",SkinSpritesData::changeable().intData("cannon-width"));
   config.group("cannon").writeEntry("height",SkinSpritesData::changeable().intData("cannon-height"));
   config.group("cannon").writeEntry("frames",SkinSpritesData::changeable().intData("cannon-frames"));
   config.group("cannon").writeEntry("versions",SkinSpritesData::changeable().intData("cannon-versions"));
 
-  kDebug() << "Saving firing data";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Saving firing data";
 //   config.group("firing").writeEntry("id",SkinSpritesData::changeable().strData("firing-id"));
   config.group("firing").writeEntry("width",SkinSpritesData::changeable().intData("firing-width"));
   config.group("firing").writeEntry("height",SkinSpritesData::changeable().intData("firing-height"));
   config.group("firing").writeEntry("frames",SkinSpritesData::changeable().intData("firing-frames"));
   config.group("firing").writeEntry("versions",SkinSpritesData::changeable().intData("firing-versions"));
 
-  kDebug() << "Saving exploding data";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Saving exploding data";
 //   config.group("exploding").writeEntry("id",SkinSpritesData::changeable().strData("exploding-id"));
   config.group("exploding").writeEntry("width",SkinSpritesData::changeable().intData("exploding-width"));
   config.group("cannon").writeEntry("height",SkinSpritesData::changeable().intData("exploding-height"));
   config.group("exploding").writeEntry("frames",SkinSpritesData::changeable().intData("exploding-frames"));
   config.group("exploding").writeEntry("versions",SkinSpritesData::changeable().intData("exploding-versions"));
 
-  kDebug() << "Saving font data";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Saving font data";
   KConfigGroup fontgroup = config.group("font");
   fontgroup.writeEntry("family",m_font.family);
   fontgroup.writeEntry("size",m_font.size);
@@ -484,7 +484,7 @@ void ONU::saveConfig(const QString& configFileName)
   fontgroup.writeEntry("foreground-color", m_font.foregroundColor);
   fontgroup.writeEntry("background-color", m_font.backgroundColor);
 
-  kDebug() << "Saving countries data";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Saving countries data";
   QStringList countriesList;
   foreach (Country* country, m_countries)
   {
@@ -494,7 +494,7 @@ void ONU::saveConfig(const QString& configFileName)
   unsigned int countryNum = 0;
   foreach (Country* country, m_countries)
   {
-    kDebug() << "Saving"<<country->name()<<"data" << countryNum;
+    qCDebug(KSIRKSKINEDITOR_LOG) << "Saving"<<country->name()<<"data" << countryNum;
     KConfigGroup countryGroup = config.group(country->name());
 //     countryGroup.writeEntry("id",countryNum);
     countryNum++;
@@ -506,7 +506,7 @@ void ONU::saveConfig(const QString& configFileName)
     countryGroup.writeEntry("infantry-point",country->pointInfantry());
   }
 
-  kDebug() << "Saving nationalities data";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Saving nationalities data";
   QStringList nationalitiesList;
   foreach (Nationality* nationality, m_nationalities)
   {
@@ -515,14 +515,14 @@ void ONU::saveConfig(const QString& configFileName)
   onugroup.writeEntry("nationalities", nationalitiesList);
   foreach (Nationality* nationality, m_nationalities)
   {
-    kDebug() << "Saving nationality " << nationality->name();
+    qCDebug(KSIRKSKINEDITOR_LOG) << "Saving nationality " << nationality->name();
     KConfigGroup nationalityGroup = config.group(nationality->name());
     nationalityGroup.writeEntry("leader",nationality->leaderName());
     nationalityGroup.writeEntry("flag",nationality->flagFileName());
   }
 
 
-  kDebug() << "Saving continents data";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Saving continents data";
   QStringList continentsList;
   foreach (Continent* continent, m_continents)
   {
@@ -532,7 +532,7 @@ void ONU::saveConfig(const QString& configFileName)
 //   unsigned int continentNum = 0;
   foreach (Continent* continent, m_continents)
   {
-    kDebug() << "Saving"<<continent->name()<<"data";
+    qCDebug(KSIRKSKINEDITOR_LOG) << "Saving"<<continent->name()<<"data";
     KConfigGroup continentGroup = config.group(continent->name());
 
 //     continentGroup.writeEntry("id",++continentNum);
@@ -546,7 +546,7 @@ void ONU::saveConfig(const QString& configFileName)
     continentGroup.writeEntry("continent-countries",countryIdList);
   }
 
-  kDebug() << "Saving goals data";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Saving goals data";
   QStringList goalsList;
   int goalNum = 0;
   foreach (Goal* goal, m_goals)
@@ -594,7 +594,7 @@ void ONU::saveConfig(const QString& configFileName)
   }
 
   m_dirty = false;
-  kDebug() << "OUT";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "OUT";
 }
 
 
@@ -602,21 +602,21 @@ void ONU::saveConfig(const QString& configFileName)
 If there is no country at (x,y), the functions returns 0. */
 Country* ONU::countryAt(const QPointF& point)
 {
-//    kDebug() << "ONU::countryAt x y " << x << " " << y;
+//    qCDebug(KSIRKSKINEDITOR_LOG) << "ONU::countryAt x y " << x << " " << y;
     QPointF norm = point;
     if ( norm.x() < 0 || norm.x() >= m_countriesMask.width()
       || norm.y() < 0 || norm.y() >= m_countriesMask.height() )
       return 0;
 
     int index = qBlue(m_countriesMask.pixel(norm.toPoint()));
-//    kDebug() << "OUT ONU::countryAt: " << index;
+//    qCDebug(KSIRKSKINEDITOR_LOG) << "OUT ONU::countryAt: " << index;
     if (index >= m_countries.size()) return 0;
     return m_countries.at(index);
 }
 
 void ONU::reset()
 {
-  kDebug();
+  qCDebug(KSIRKSKINEDITOR_LOG);
   foreach (Country* country, m_countries)
   {
     country->reset();
@@ -683,7 +683,7 @@ Continent* ONU::continentNamed(const QString& name)
 
 void ONU::buildMap()
 {
-  kDebug();
+  qCDebug(KSIRKSKINEDITOR_LOG);
   //QSize size((int)(m_renderer.defaultSize().width()),(int)(m_renderer.defaultSize().height()));
   QSize size((int)(m_width),(int)(m_height));
   QImage image(size, QImage::Format_ARGB32_Premultiplied);
@@ -727,7 +727,7 @@ void ONU::buildMap()
 
 QPixmap ONU::pixmapForId(const QString& id, int width, int height)
 {
-  kDebug() << id << width << height;
+  qCDebug(KSIRKSKINEDITOR_LOG) << id << width << height;
   //QSize size((int)(m_renderer.defaultSize().width()),(int)(m_renderer.defaultSize().height()));
   QSize size(width,height);
   QImage image(size, QImage::Format_ARGB32_Premultiplied);
@@ -755,11 +755,11 @@ QGraphicsItem* ONU::itemFor(const Country* country, SpriteType spriteType)
   {
     if (m_itemsMap[item].first == country && m_itemsMap[item].second == spriteType)
     {
-//       kDebug() << item << (void*)country << spriteType;
+//       qCDebug(KSIRKSKINEDITOR_LOG) << item << (void*)country << spriteType;
       return item;
     }
   }
-  kDebug() << 0;
+  qCDebug(KSIRKSKINEDITOR_LOG) << 0;
   return 0;
 }
 
@@ -808,7 +808,7 @@ void ONU::setFontBgColor(const QColor& color)
 
 void ONU::createCountry(const QString& newCountryName)
 {
-  kDebug();
+  qCDebug(KSIRKSKINEDITOR_LOG);
   Country* newCountry = new Country(newCountryName, QPointF(), QPointF(), QPointF(), QPointF(), QPointF(), QPointF()/*, m_countries.size()*/);
   m_countries.push_back(newCountry);
   m_dirty = true;
@@ -816,7 +816,7 @@ void ONU::createCountry(const QString& newCountryName)
 
 void ONU::deleteCountry(Country* country)
 {
-  kDebug() << country->name();
+  qCDebug(KSIRKSKINEDITOR_LOG) << country->name();
   QList<QGraphicsItem*> itemsToRemove;
   foreach (QGraphicsItem* item, m_itemsMap.keys())
   {
@@ -827,13 +827,13 @@ void ONU::deleteCountry(Country* country)
   }
   foreach (QGraphicsItem* item, itemsToRemove)
   {
-    kDebug() << "remove an item";
+    qCDebug(KSIRKSKINEDITOR_LOG) << "remove an item";
     item->hide();
     item->scene()->removeItem(item);
     m_itemsMap.remove(item);
     delete item;
   }
-  kDebug() << "remove and delete the country";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "remove and delete the country";
   KConfig config(m_configFileName);
   config.deleteGroup(country->name());
 
@@ -844,7 +844,7 @@ void ONU::deleteCountry(Country* country)
 
 void ONU::createContinent(const QString& newContinentName)
 {
-  kDebug();
+  qCDebug(KSIRKSKINEDITOR_LOG);
   Continent* newContinent = new Continent(newContinentName, QList<Country*>(), 0);
   m_continents.push_back(newContinent);
   m_dirty = true;
@@ -852,8 +852,8 @@ void ONU::createContinent(const QString& newContinentName)
 
 void ONU::deleteContinent(Continent* continent)
 {
-  kDebug() << continent->name();
-  kDebug() << "remove and delete the continent";
+  qCDebug(KSIRKSKINEDITOR_LOG) << continent->name();
+  qCDebug(KSIRKSKINEDITOR_LOG) << "remove and delete the continent";
   KConfig config(m_configFileName);
   config.deleteGroup(continent->name());
   
@@ -864,7 +864,7 @@ void ONU::deleteContinent(Continent* continent)
 
 void ONU::updateIcon(SpriteType type)
 {
-  kDebug() << type;
+  qCDebug(KSIRKSKINEDITOR_LOG) << type;
   int flagWidth;
   int flagHeight;
   int flagFrames;
@@ -935,11 +935,11 @@ void ONU::createGoal()
 
 void ONU::deleteGoal(int g)
 {
-  kDebug() << m_goals.size() << g;
+  qCDebug(KSIRKSKINEDITOR_LOG) << m_goals.size() << g;
 
   KConfig config(m_configFileName);
   QString groupName = QString("goal")+QString::number(g+1);
-  kDebug() << "delete group" << groupName;
+  qCDebug(KSIRKSKINEDITOR_LOG) << "delete group" << groupName;
   config.deleteGroup(groupName);
   
   Goal* goal = m_goals.takeAt(g);
@@ -969,7 +969,7 @@ void ONU::createNationality(const QString& newNationalityName)
 
 void ONU::deleteNationality(Nationality* nationality)
 {
-  kDebug();
+  qCDebug(KSIRKSKINEDITOR_LOG);
   
   KConfig config(m_configFileName);
   config.deleteGroup(nationality->name());
@@ -981,7 +981,7 @@ void ONU::deleteNationality(Nationality* nationality)
 
 void ONU::loadPoolIds(const QString& fileName)
 {
-  kDebug() << fileName;
+  qCDebug(KSIRKSKINEDITOR_LOG) << fileName;
   QFile file(fileName);
   if (!file.open(QFile::ReadOnly | QFile::Text))
   {
@@ -998,7 +998,7 @@ void ONU::loadPoolIds(const QString& fileName)
     QXmlStreamReader::TokenType type = xml.readNext();
     if (type == QXmlStreamReader::StartElement)
     {
-      kDebug() << xml.text().toString();
+      qCDebug(KSIRKSKINEDITOR_LOG) << xml.text().toString();
       QXmlStreamAttributes attributes = xml.attributes ();
       QStringRef id = attributes.value("", "id" );
       if (!id.isEmpty() && !reg.exactMatch(id.toString()))
@@ -1009,7 +1009,7 @@ void ONU::loadPoolIds(const QString& fileName)
   }
   if (xml.hasError())
   {
-    kError() << "Error: " << xml.errorString();
+    qCCritical(KSIRKSKINEDITOR_LOG) << "Error: " << xml.errorString();
     // do error handling
   }
   m_poolIds.sort();

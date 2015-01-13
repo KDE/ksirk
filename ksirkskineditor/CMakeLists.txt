@@ -8,6 +8,7 @@ include_directories(
 ########### next target ###############
 
 set(ksirkskineditor_SRCS
+  ksirkskineditor_debug.cpp
   main.cpp
   mainwindow.cpp
   ksirkSkinEditorConfigDialog.cpp

@@ -26,7 +26,7 @@
 #include <kurl.h>
 #include <ktabwidget.h>
 #include <kedittoolbar.h>
-#include <kdebug.h>
+#include "ksirkskineditor_debug.h"
 #include <QPushButton>
 #include <kstandardaction.h>
 
@@ -72,7 +72,7 @@ KsirkSkinEditorConfigurationDialog::~KsirkSkinEditorConfigurationDialog ()
 
 void KsirkSkinEditorConfigurationDialog::settingChanged(int)
 {
-  kDebug();
+  qCDebug(KSIRKSKINEDITOR_LOG);
   m_changed = true;
   //settingsChangedSlot();
   //updateButtons ();
@@ -80,20 +80,20 @@ void KsirkSkinEditorConfigurationDialog::settingChanged(int)
 
 bool KsirkSkinEditorConfigurationDialog::hasChanged()
 {
-  kDebug();
+  qCDebug(KSIRKSKINEDITOR_LOG);
   return m_changed;
 }
 
 void KsirkSkinEditorConfigurationDialog::updateSettings()
 {
-  kDebug();
+  qCDebug(KSIRKSKINEDITOR_LOG);
   m_changed = false;
   KsirkSkinEditorSettings::self()->save();
 }
 
 void KsirkSkinEditorConfigurationDialog::updateWidgets()
 {
-  kDebug();
+  qCDebug(KSIRKSKINEDITOR_LOG);
 
   m_changed = false;
 }

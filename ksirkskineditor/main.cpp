@@ -28,7 +28,7 @@ This is the standard main function of a KDE application
 #include <KCmdLineArgs>
 #include <K4AboutData>
 #include <KLocalizedString>
-#include <KDebug>
+#include "ksirkskineditor_debug.h"
 #include <KApplication>
 #include <KToolBar>
 
@@ -38,7 +38,7 @@ static const char *description =
 
 int main(int argc, char *argv[])
 {
-  kDebug() << "Hello World!";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Hello World!";
   K4AboutData aboutData(
     "ksirkskineditor",
     0,
@@ -66,12 +66,12 @@ int main(int argc, char *argv[])
   }
   else
   {
-    kDebug() << "Creating main window";
+    qCDebug(KSIRKSKINEDITOR_LOG) << "Creating main window";
     KsirkSkinEditor::MainWindow *ksirkskineditor = new KsirkSkinEditor::MainWindow();
     ksirkskineditor->show();
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
     args->clear();
   }
-  kDebug() << "Executing app";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Executing app";
   return app.exec();
 }  
