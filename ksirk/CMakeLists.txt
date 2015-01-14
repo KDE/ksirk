@@ -26,7 +26,6 @@ include_directories(
 #   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/cutestuff/network/
 #   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/cutestuff/
 #   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/
-  ${QCA2_INCLUDE_DIR}
   )
 
 link_directories( ${CMAKE_CURRENT_BINARY_DIR}/iris/ )
@@ -121,7 +120,7 @@ target_link_libraries(ksirk
   KF5::KIOCore 
   Phonon::phonon4qt5
   KF5::NewStuff
-  qca
+  qca-qt5
   iris_ksirk
   KF5KDEGames
   KF5KDEGamesPrivate

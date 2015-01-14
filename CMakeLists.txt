@@ -38,9 +38,9 @@ include(KDECMakeSettings)
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 add_definitions(-DTRANSLATION_DOMAIN="kbounce")
 find_package(Phonon4Qt5 CONFIG REQUIRED)
-find_package(Qca 2.1.0)
-set_package_properties(Qca PROPERTIES DESCRIPTION "Support for encryption"
-                       URL "http://delta.affinix.com/qca"
+find_package(Qca-qt5 2.1.0)
+set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION "Support for encryption"
+                       URL "http://download.kde.org/stable/qca-qt5"
                        TYPE REQUIRED)
 
 kde_enable_exceptions()
