@@ -134,7 +134,7 @@ endif()
 
 add_library(iris_ksirk SHARED ${libiris_SRCS})
 
-set(iris_ksirk_libs Qt5::Core Qt5::Gui Qt5::Network Qt5::Xml ${IDN_LIBRARY} qca-qt5 ${ZLIB_LIBRARIES} Qt5::Widgets)
+set(iris_ksirk_libs Qt5::Core Qt5::Gui Qt5::Network Qt5::Xml ${IDN_LIBRARY} qca ${ZLIB_LIBRARIES} Qt5::Widgets)
 if(WIN32)
   set(iris_ksirk_libs ${iris_ksirk_libs} ws2_32)
 endif(WIN32)
