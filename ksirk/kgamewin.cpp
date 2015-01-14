@@ -76,7 +76,7 @@
 #include <kmenubar.h>
 #include <KDebug>
 #include <phonon/mediaobject.h>
-#include <KPushButton>
+#include <QPushButton>
 #include <kgamepopupitem.h>
 #include <kglobal.h>
 #include <KStatusBar>

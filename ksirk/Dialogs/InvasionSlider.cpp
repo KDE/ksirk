@@ -73,7 +73,7 @@
 #include <kdebug.h>
 #include <ktextedit.h>
 #include <phonon/mediaobject.h>
-#include <KPushButton>
+#include <QPushButton>
 #include <kgamepopupitem.h>
 #include <kglobal.h>
 #include <KStatusBar>

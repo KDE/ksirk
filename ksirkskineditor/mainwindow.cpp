@@ -62,9 +62,9 @@
 #include "ksirkskineditor_debug.h"
 #include <ktextedit.h>
 #include <phonon/mediaobject.h>
-#include <KPushButton>
+#include <QPushButton>
 #include <kglobal.h>
-#include <KStatusBar>
+#include <QStatusBar>
 #include <KToolBar>
 #include <QAction>
 #include <QSvgRenderer>

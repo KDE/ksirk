@@ -92,35 +92,35 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout" >
        <item>
-        <widget class="KPushButton" name="pbNewGame" >
+        <widget class="QPushButton" name="pbNewGame" >
          <property name="text" >
           <string>New Local Game</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="KPushButton" name="pbJabberGame" >
+        <widget class="QPushButton" name="pbJabberGame" >
          <property name="text" >
           <string>Play KsirK over Jabber Network</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="KPushButton" name="pbNewSocketGame" >
+        <widget class="QPushButton" name="pbNewSocketGame" >
          <property name="text" >
           <string>New Standard TCP/IP Network Game</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="KPushButton" name="pbJoin" >
+        <widget class="QPushButton" name="pbJoin" >
          <property name="text" >
           <string>Join Standard TCP/IP Network Game</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="KPushButton" name="pbLoad" >
+        <widget class="QPushButton" name="pbLoad" >
          <property name="text" >
           <string>Load</string>
          </property>
@@ -140,7 +140,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="KPushButton" name="pbQuit" >
+        <widget class="QPushButton" name="pbQuit" >
          <property name="text" >
           <string>Quit</string>
          </property>
@@ -179,11 +179,6 @@
   </layout>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>KPushButton</class>
-   <extends>QPushButton</extends>
-   <header>kpushbutton.h</header>
-  </customwidget>
  </customwidgets>
  <resources/>
  <connections/>
