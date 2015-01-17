@@ -51,6 +51,8 @@ target_link_libraries(ksirkskineditor
   Qt5::Svg 
   KF5::KIOCore 
   Phonon::phonon4qt5
+  KF5::XmlGui
+  KF5::KDELibs4Support
   KF5KDEGames
   KF5KDEGamesPrivate
   ${CRYPT_LIBS}
