@@ -14,7 +14,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" >
    <item>
-    <widget class="KListWidget" name="countriesList" >
+    <widget class="QListWidget" name="countriesList" >
      <property name="toolTip" >
       <string>Country list</string>
      </property>
@@ -35,13 +35,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KListWidget</class>
-   <extends>QListWidget</extends>
-   <header>klistwidget.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections>
   <connection>
