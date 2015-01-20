@@ -33,7 +33,6 @@
 #include <QXmlStreamReader>
 
 #include <kstandarddirs.h>
-#include <kglobal.h>
 #include <KLocalizedString>
 #include "ksirkskineditor_debug.h"
 #include <kmessagebox.h>

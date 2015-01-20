@@ -22,7 +22,7 @@
 #include <KLocalizedString>
 #include <kfiledialog.h>
 #include <kinputdialog.h>
-#include <kaction.h>
+#include <QAction>
 
 #include "jabberprotocol.h"
 #include "jabberaccount.h"
@@ -111,11 +111,11 @@ JabberGroupContact::~JabberGroupContact ()
 	}
 }
 
-QList<KAction*> *JabberGroupContact::customContextMenuActions ()
+QList<QAction *> *JabberGroupContact::customContextMenuActions ()
 {
-	QList<KAction*> *actionCollection = new QList<KAction*>();
+	QList<QAction *> *actionCollection = new QList<QAction*>();
 
-	KAction *actionSetNick = new KAction(this);
+	QAction *actionSetNick = new QAction(this);
 	actionSetNick->setText( i18n ("Change nickname") );
 	actionSetNick->setIcon( KIcon( QLatin1String( "jabber_changenick" )) );
 	connect(actionSetNick, SIGNAL(triggered(bool)), this, SLOT(slotChangeNick()));

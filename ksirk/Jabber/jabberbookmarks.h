@@ -25,7 +25,7 @@
 namespace XMPP { class Jid; }
 class JabberAccount;
 
-class KAction;
+class QAction;
 
 /**
  * This is a class that hanlde the bookmark collection  (JEP-0048)
@@ -51,7 +51,7 @@ class JabberBookmarks : public QObject
 		/**
 		 * return an action that will be added in the jabber popup menu
 		 */
-		KAction *bookmarksAction(QObject * parent);
+		QAction *bookmarksAction(QObject * parent);
 	private slots:
 		void accountConnected();
 		void slotReceivedBookmarks();

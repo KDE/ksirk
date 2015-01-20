@@ -35,7 +35,7 @@
 #include <KLocalizedString>
 #include <kmessagebox.h>
 #include <kfiledialog.h>
-#include <kaction.h>
+#include <QAction>
 #include <kactionmenu.h>
 #include <QIcon>
 #include <kstandarddirs.h>
@@ -129,30 +129,30 @@ JabberContact::~JabberContact()
 	kDebug(JABBER_DEBUG_GLOBAL) << contactId() << "  is destroyed  - " << this;
 }
 
-QList<KAction*> *JabberContact::customContextMenuActions ()
+QList<QAction *> *JabberContact::customContextMenuActions ()
 {
 
-	QList<KAction*> *actionCollection = new QList<KAction*>();
+	QList<QAction *> *actionCollection = new QList<QAction*>();
 
 	KActionMenu *actionAuthorization = new KActionMenu ( QIcon::fromTheme( QLatin1String( "network-connect"), i18n ("Authorization" )), this);
 
-	KAction *resendAuthAction, *requestAuthAction, *removeAuthAction;
+	QAction *resendAuthAction, *requestAuthAction, *removeAuthAction;
 	
-	resendAuthAction = new KAction( this );
+	resendAuthAction = new QAction( this );
 	resendAuthAction->setIcon( (QIcon::fromTheme( QLatin1String( "mail-forward" )) ) );
 	resendAuthAction->setText( i18n ("(Re)send Authorization To") );
 	resendAuthAction->setEnabled( mRosterItem.subscription().type() == XMPP::Subscription::To || mRosterItem.subscription().type() == XMPP::Subscription::None );
 	connect(resendAuthAction, SIGNAL(triggered(bool)), SLOT(slotSendAuth()));
 	actionAuthorization->addAction(resendAuthAction);
 
-	requestAuthAction = new KAction( this );
+	requestAuthAction = new QAction( this );
 	requestAuthAction->setIcon( (QIcon::fromTheme( QLatin1String( "mail-reply-sender" )) ) );
 	requestAuthAction->setText( i18n ("(Re)request Authorization From") );
 	requestAuthAction->setEnabled( mRosterItem.subscription().type() == XMPP::Subscription::From || mRosterItem.subscription().type() == XMPP::Subscription::None );
 	connect(requestAuthAction, SIGNAL(triggered(bool)), SLOT(slotRequestAuth()));
 	actionAuthorization->addAction(requestAuthAction);
 	
-	removeAuthAction = new KAction( this );
+	removeAuthAction = new QAction( this );
 	removeAuthAction->setIcon( (QIcon::fromTheme( QLatin1String( "edit-delete" )) ) );
 	removeAuthAction->setText( i18n ("Remove Authorization From") );
 	removeAuthAction->setEnabled( mRosterItem.subscription().type() == XMPP::Subscription::Both || mRosterItem.subscription().type() == XMPP::Subscription::From );
@@ -162,7 +162,7 @@ QList<KAction*> *JabberContact::customContextMenuActions ()
 	KActionMenu *actionSetAvailability = new KActionMenu ( QIcon::fromTheme( QLatin1String( "user-identity", 0, QStringList() << QString() << "user-online"), i18n ("Set Availability" )), this );
 
 #define KACTION(status, text, name, slot) \
-	{ KAction *tmp = new KAction(this); \
+	{ QAction *tmp = new QAction(this); \
 	tmp->setIcon( QIcon::fromTheme(QIcon((status).iconFor(this)))); \
 	tmp->setText( text ); \
 	connect(tmp, SIGNAL(triggered(bool)), (slot));\
@@ -214,7 +214,7 @@ QList<KAction*> *JabberContact::customContextMenuActions ()
 		{
 			if( i == activeItem )
 			{
-				KAction *tmp = new KAction( this );
+				QAction *tmp = new QAction( this );
 				tmp->setIcon( QIcon::fromTheme( QLatin1String( "dialog-ok" )) );
 				tmp->setText( str);
 				connect(tmp, SIGNAL(triggered(bool)), SLOT(slotSelectResource()));
@@ -229,7 +229,7 @@ QList<KAction*> *JabberContact::customContextMenuActions ()
 				QIcon iconSet ( !i ?
 					protocol()->resourceToKOS ( account()->resourcePool()->bestResource ( mRosterItem.jid(), false ) ).iconFor ( account () ) : protocol()->resourceToKOS ( *availableResources.find(str) ).iconFor ( account () ));
 
-				KAction *tmp = new KAction(this);
+				QAction *tmp = new QAction(this);
 				tmp->setIcon( QIcon::fromTheme(iconSet) );
 				tmp->setText( str );
 				connect(tmp, SIGNAL(triggered(bool)), SLOT(slotSelectResource()));
@@ -247,7 +247,7 @@ QList<KAction*> *JabberContact::customContextMenuActions ()
 	
 	
 #ifdef SUPPORT_JINGLE
-	KAction *actionVoiceCall = new KAction( (i18n ("Voice call"), "voicecall", 0, this, SLOT (voiceCall()), 0, "jabber_voicecall");
+	QAction *actionVoiceCall = new QAction( (i18n ("Voice call"), "voicecall", 0, this, SLOT (voiceCall()), 0, "jabber_voicecall");
 	actionVoiceCall->setEnabled( false );
 
 	actionCollection->append( actionVoiceCall );
@@ -1096,7 +1096,7 @@ void JabberContact::sendSubscription ( const QString& subType )
 
 void JabberContact::slotSelectResource ()
 {
-	int currentItem = QString ( static_cast<const KAction *>( sender() )->objectName () ).toUInt ();
+	int currentItem = QString ( static_cast<const QAction *>( sender() )->objectName () ).toUInt ();
 
 	/*
 	 * Warn the user if there is already an active chat window.
@@ -1122,7 +1122,7 @@ void JabberContact::slotSelectResource ()
 	}
 	else
 	{
-		QString selectedResource = static_cast<const KAction *>(sender())->text();
+		QString selectedResource = static_cast<const QAction *>(sender())->text();
 
 		kDebug (JABBER_DEBUG_GLOBAL) << "Moving to resource " << selectedResource;
 

@@ -56,7 +56,7 @@ JabberGroupMemberContact::~JabberGroupMemberContact ()
 	}
 }
 
-QList<KAction*> *JabberGroupMemberContact::customContextMenuActions ()
+QList<QAction *> *JabberGroupMemberContact::customContextMenuActions ()
 {
 
 	return 0;

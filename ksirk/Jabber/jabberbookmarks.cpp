@@ -20,7 +20,7 @@
 
 
 #include <kdebug.h>
-#include <kaction.h>
+#include <QAction>
 #include <kselectaction.h>
 #include <KLocalizedString>
 #include <QIcon>
@@ -128,7 +128,7 @@ void JabberBookmarks::insertGroupChat(const XMPP::Jid &jid)
 	m_conferencesJID += jid.full();
 }
 
-KAction * JabberBookmarks::bookmarksAction(QObject * /*parent*/)
+QAction * JabberBookmarks::bookmarksAction(QObject * /*parent*/)
 {
 	KSelectAction *groupchatBM = new KSelectAction( this );
 	groupchatBM->setIcon( QIcon::fromTheme( QLatin1String( "jabber_group" )) );
