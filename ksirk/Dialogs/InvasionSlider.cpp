@@ -78,7 +78,7 @@
 #include <kglobal.h>
 #include <KStatusBar>
 #include <KToolBar>
-#include <KAction>
+#include <QAction>
 #include <QSvgRenderer>
 #include <KDialog>
 #include <KAboutData>

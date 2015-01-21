@@ -134,7 +134,7 @@ You can also make the player to have to put a given number of armies on each cou
        </widget>
       </item>
       <item row="0" column="1" >
-       <widget class="KIntSpinBox" name="nbcountries" >
+       <widget class="QSpinBox" name="nbcountries" >
         <property name="toolTip" >
          <string>Number of countries to conquer</string>
         </property>
@@ -144,7 +144,7 @@ You can also make the player to have to put a given number of armies on each cou
        </widget>
       </item>
       <item row="1" column="1" >
-       <widget class="KIntSpinBox" name="armiesbycountry" >
+       <widget class="QSpinBox" name="armiesbycountry" >
         <property name="toolTip" >
          <string>Number of armies to put on each country</string>
         </property>
@@ -205,13 +205,6 @@ You can also make the player to have to put a given number of armies on each cou
    </layout>
   </widget>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KIntSpinBox</class>
-   <extends>QSpinBox</extends>
-   <header>knuminput.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>
