@@ -32,7 +32,6 @@
 #include <QGraphicsScene>
 #include <QXmlStreamReader>
 
-#include <kstandarddirs.h>
 #include <KLocalizedString>
 #include "ksirkskineditor_debug.h"
 #include <kmessagebox.h>
