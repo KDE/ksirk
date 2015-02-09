@@ -85,7 +85,7 @@
 #include <QSvgRenderer>
 #include <KDialog>
 #include <KAboutData>
-#include <KIcon>
+#include <QIcon>
 #define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
 #include <libkdegamesprivate/kgame/kgamechat.h>
 
@@ -405,7 +405,7 @@ void KGameWindow::initActions()
     KMessageBox::error(0, i18n("Cannot load button image %1<br>Program cannot continue",QString(CM_NEWNETGAME)), i18n("Error!"));
     exit(2);
   }
-  QAction * newSocketAction = new QAction(KIcon(QPixmap(imageFileName)), i18n("New Standard TCP/IP Network Game"), this);
+  QAction * newSocketAction = new QAction(QIcon(QPixmap(imageFileName)), i18n("New Standard TCP/IP Network Game"), this);
   newSocketAction->setIconText(i18n("New TCP/IP"));
   newSocketAction->setShortcut(Qt::CTRL+Qt::Key_T);
   newSocketAction->setStatusTip(i18n("Create a new standard TCP/IP network game"));
@@ -422,7 +422,7 @@ void KGameWindow::initActions()
     KMessageBox::error(0, i18n("Cannot load button image %1<br>Program cannot continue",QString(CM_NEWNETGAME)), i18n("Error!"));
     exit(2);
   }
-  QAction * joinAction = new QAction(KIcon(QPixmap(imageFileName)),
+  QAction * joinAction = new QAction(QIcon(QPixmap(imageFileName)),
         i18n("Join a Standard TCP/IP Network Game"), this);
   joinAction->setIconText(i18n("Join TCP/IP"));
   joinAction->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_J);
@@ -431,7 +431,7 @@ void KGameWindow::initActions()
    kDebug() << "Adding action game_join_socket";
   actionCollection()->addAction("game_join_socket", joinAction);
 
-  m_goalAction = new QAction(KIcon(), i18n("Goal"), this);
+  m_goalAction = new QAction(i18n("Goal"), this);
   m_goalAction-> setText(i18n("Display the Current Player's Goal"));
   m_goalAction-> setIconText("  ");
   m_goalAction->setShortcut(Qt::CTRL+Qt::Key_G);
@@ -441,7 +441,7 @@ void KGameWindow::initActions()
   kDebug() << "Adding action game_goal";
   actionCollection()->addAction("game_goal", m_goalAction);
   
-  m_contextualHelpAction = new QAction(KIcon(),
+  m_contextualHelpAction = new QAction(
         i18n("Contextual Help"), this);
   m_contextualHelpAction->setEnabled(false);
   m_contextualHelpAction->setShortcut(Qt::CTRL+Qt::Key_F1);
@@ -450,14 +450,14 @@ void KGameWindow::initActions()
 
 
   QString nextPlayerActionImageFileName = KGlobal::dirs()->findResource("appdata", m_automaton->skin() + '/' + CM_NEXTPLAYER);
-  m_nextPlayerAction =  new QAction(KIcon(nextPlayerActionImageFileName),
+  m_nextPlayerAction =  new QAction(QIcon(nextPlayerActionImageFileName),
         i18n("Next Player"), this);
   connect(m_nextPlayerAction, SIGNAL(triggered(bool)), this, SLOT(slotNextPlayer()));
   m_contextualHelpAction->setStatusTip(i18n("Lets the next player play"));
   m_nextPlayerAction->setEnabled(false);
   actionCollection()->addAction("game_nextplayer", m_nextPlayerAction);
 
-  QAction * finishMovesAction = new QAction(KIcon(),
+  QAction * finishMovesAction = new QAction(
         i18n("Finish moves"), this);
   finishMovesAction->setShortcut(Qt::Key_Space);
   finishMovesAction->setStatusTip(i18n("Finish moving the current sprites"));
@@ -1313,7 +1313,7 @@ void KGameWindow::setBarFlagButton(const Player* player)
     {
       if (!m_goalAction->isVisible())
         m_goalAction->setVisible(true);
-      m_goalAction-> setIcon(KIcon(currentPlayer()->getFlag()-> image(0)));
+      m_goalAction-> setIcon(QIcon(currentPlayer()->getFlag()-> image(0)));
       m_goalAction-> setIconText(i18n("Goal"));
       m_barFlag-> setPixmap(currentPlayer()->getFlag()-> image(0));
       m_barFlag->show();
@@ -1325,7 +1325,7 @@ void KGameWindow::setBarFlagButton(const Player* player)
     {
       if (!m_goalAction->isVisible())
         m_goalAction->setVisible(true);
-      m_goalAction-> setIcon(KIcon(player-> getFlag()-> image(0)));
+      m_goalAction-> setIcon(QIcon(player-> getFlag()-> image(0)));
       m_goalAction-> setIconText(i18n("Goal"));
       m_barFlag-> setPixmap(player->getFlag()-> image(0));
       m_barFlag->show();
@@ -2482,7 +2482,7 @@ void KGameWindow::defense(unsigned int nb)
   {
     if (!m_goalAction->isVisible())
       m_goalAction->setVisible(true);
-    m_goalAction-> setIcon(KIcon(m_firstCountry-> owner()->getFlag()-> image(0)));
+    m_goalAction-> setIcon(QIcon(m_firstCountry-> owner()->getFlag()-> image(0)));
     m_goalAction-> setIconText(i18n("Goal"));
     m_barFlag-> setPixmap(m_firstCountry-> owner()->getFlag()-> image(0));
   }
