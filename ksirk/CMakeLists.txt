@@ -128,14 +128,14 @@ target_link_libraries(ksirk
   KF5::Wallet
   )
 
-install( TARGETS ksirk ${INSTALL_TARGETS_DEFAULT_ARGS})
+install( TARGETS ksirk ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
 
-ecm_install_icons( ICONS hi128-apps-ksirk.png  hi16-apps-ksirk.png  hi22-apps-ksirk.png  hi32-apps-ksirk.png  hi48-apps-ksirk.png  hi64-apps-ksirk.png  lo16-apps-ksirk.png  lo32-apps-ksirk.png DESTINATION ${ICON_INSTALL_DIR} )
+ecm_install_icons( ICONS hi128-apps-ksirk.png  hi16-apps-ksirk.png  hi22-apps-ksirk.png  hi32-apps-ksirk.png  hi48-apps-ksirk.png  hi64-apps-ksirk.png  lo16-apps-ksirk.png  lo32-apps-ksirk.png DESTINATION ${KDE_INSTALL_ICONDIR} )
 
-install( FILES ksirksettings.kcfg DESTINATION ${KCFG_INSTALL_DIR} )
-install( PROGRAMS org.kde.ksirk.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} )
-install( FILES ksirkui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/ksirk )
-install( FILES jabber.png  DESTINATION  ${DATA_INSTALL_DIR}/ksirk )
-install( FILES ksirk.knsrc  DESTINATION  ${CONFIG_INSTALL_DIR} )
+install( FILES ksirksettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR} )
+install( PROGRAMS org.kde.ksirk.desktop DESTINATION ${KDE_INSTALL_APPDIR} )
+install( FILES ksirkui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/ksirk )
+install( FILES jabber.png  DESTINATION  ${KDE_INSTALL_DATADIR}/ksirk )
+install( FILES ksirk.knsrc  DESTINATION  ${KDE_INSTALL_CONFDIR} )

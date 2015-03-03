@@ -14,5 +14,5 @@ japan.svg
 uk.svg 
 us.svg)
 
-install( FILES ${sprites_default_DATA} DESTINATION ${DATA_INSTALL_DIR}/ksirk/skins/default/Images/sprites )
+install( FILES ${sprites_default_DATA} DESTINATION ${KDE_INSTALL_DATADIR}/ksirk/skins/default/Images/sprites )
 

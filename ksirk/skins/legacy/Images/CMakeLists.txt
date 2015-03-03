@@ -32,4 +32,4 @@ soldierKneeling.png
 stopAttackAuto.png
 upArrow.png
 )
-install( FILES ${pics_default_DATA} DESTINATION ${DATA_INSTALL_DIR}/ksirk/skins/default/Images/ )
+install( FILES ${pics_default_DATA} DESTINATION ${KDE_INSTALL_DATADIR}/ksirk/skins/default/Images/ )

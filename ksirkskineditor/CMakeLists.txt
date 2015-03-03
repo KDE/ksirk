@@ -58,18 +58,18 @@ target_link_libraries(ksirkskineditor
   ${CRYPT_LIBS}
  )
 
-install( TARGETS ksirkskineditor ${INSTALL_TARGETS_DEFAULT_ARGS})
+install( TARGETS ksirkskineditor ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
 
-ecm_install_icons( ${ICON_INSTALL_DIR} )
+ecm_install_icons( ${KDE_INSTALL_ICONDIR} )
 
-install( FILES ksirkskineditorsettings.kcfg DESTINATION ${KCFG_INSTALL_DIR} )
-install( PROGRAMS org.kde.ksirkskineditor.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} )
-install( FILES ksirkskineditorui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/ksirkskineditor )
+install( FILES ksirkskineditorsettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR} )
+install( PROGRAMS org.kde.ksirkskineditor.desktop DESTINATION ${KDE_INSTALL_APPDIR} )
+install( FILES ksirkskineditorui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/ksirkskineditor )
 
 set (pics_default_DATA
 cross.png
 target.png
 )
-install( FILES ${pics_default_DATA} DESTINATION ${DATA_INSTALL_DIR}/ksirkskineditor/ )
+install( FILES ${pics_default_DATA} DESTINATION ${KDE_INSTALL_DATADIR}/ksirkskineditor/ )

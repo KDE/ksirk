@@ -151,6 +151,6 @@ set_target_properties(iris_ksirk PROPERTIES
                       SOVERSION 2
                       COMPILE_FLAGS -DIRISNET_STATIC
                       )
-install(TARGETS iris_ksirk ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS iris_ksirk ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
     
     
