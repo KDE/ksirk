@@ -1,7 +1,7 @@
 # KDE Config File
 [Desktop Entry]
 Type=Application
-Exec=ksirkskineditor -caption %c %i
+Exec=ksirkskineditor -qwindowtitle %c %i
 Icon=preferences-desktop-locale
 X-DocPath=ksirkskineditor/index.html
 Terminal=false
