@@ -60,7 +60,7 @@ class NewGameSetup;
 class QAction;
 class KGameChat;
 class KGamePopupItem;
-class KDialog;
+class QDialog;
 class QAction;
 
 class QEvent;
@@ -1077,7 +1077,7 @@ private: // Private members
 
   GameLogic::Country* m_mouseLocalisation;
 
-  KDialog * m_defenseDialog;
+  QDialog * m_defenseDialog;
 
   // components that will be re-used of the chat
   QPixmap m_upChatFloatPix;

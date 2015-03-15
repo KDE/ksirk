@@ -83,7 +83,8 @@
 #include <KToolBar>
 #include <QAction>
 #include <QSvgRenderer>
-#include <KDialog>
+#include <QDialog>
+#include <QVBoxLayout>
 #include <KAboutData>
 #include <QIcon>
 #define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
@@ -1230,12 +1231,11 @@ void KGameWindow::createDefenseDialog()
 {
   kDebug();
   // Create Window Dialog
-  m_defenseDialog = new KDialog ();
-  m_defenseDialog->setButtons( KDialog::None );
+  m_defenseDialog = new QDialog ();
 
   QWidget* widget = new QWidget(m_defenseDialog);
   QGridLayout * mainLayout = new QGridLayout(widget);
-  
+
   // Create the differents layout for buttons and label
   QGridLayout * bottomLayout = new QGridLayout();
   QGridLayout * topLayout = new QGridLayout();
@@ -1279,7 +1279,8 @@ void KGameWindow::createDefenseDialog()
   connect(def2, SIGNAL(clicked()), this, SLOT(slotWindowDef2()));
   connect(defAuto, SIGNAL(clicked()), this, SLOT(slotDefAuto()));
 
-  m_defenseDialog->setMainWidget(widget);
+  QVBoxLayout *dialogLayout = new QVBoxLayout(m_defenseDialog);
+  dialogLayout->addWidget(widget);
 }
 
 void KGameWindow::displayDefenseWindow()

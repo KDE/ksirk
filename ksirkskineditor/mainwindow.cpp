@@ -68,7 +68,6 @@
 #include <KToolBar>
 #include <QAction>
 #include <QSvgRenderer>
-#include <KDialog>
 #include <KAboutApplicationDialog>
 #include <KRecentFilesAction>
 

@@ -80,7 +80,7 @@
 #include <KToolBar>
 #include <QAction>
 #include <QSvgRenderer>
-#include <KDialog>
+#include <QDialog>
 #include <KAboutData>
 
 #include <sys/utsname.h>
@@ -104,13 +104,16 @@ InvasionSlider::InvasionSlider(KGameWindow* game, GameLogic::Country * attack, G
   m_nbLArmies = new QLabel(QString::number(m_nbLArmy));
   m_nbRArmies = new QLabel(QString::number(m_nbRArmy));
 
+  QVBoxLayout* dialogLayout = new QVBoxLayout(this);
+  QDialogButtonBox* buttonBox = NULL;
+
   if (invasionType == Invasion)
   {
-    setButtons( KDialog::Ok );
+    buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok);
   }
   else if (invasionType == Moving)
   {
-    setButtons( KDialog::Cancel | KDialog::Ok );
+    buttonBox = new QDialogButtonBox(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
   }
 
   QWidget* widget = new QWidget(this);
@@ -171,15 +174,17 @@ InvasionSlider::InvasionSlider(KGameWindow* game, GameLogic::Country * attack, G
   //val->setText(QString::number(invadeSlide->value()));
   connect(m_invadeSlide,SIGNAL(valueChanged(int)),this,SLOT(slideMove(int)));
   connect(m_invadeSlide,SIGNAL(sliderReleased()),this,SLOT(slideReleased()));
-  connect(this,SIGNAL(okClicked()),this,SLOT(slideClose()));
+  connect(buttonBox,SIGNAL(accepted()),this,SLOT(slideClose()));
   if (invasionType == Moving)
   {
-    connect(this,SIGNAL(cancelClicked()),this,SLOT(slideCancel()));
+    connect(buttonBox,SIGNAL(rejected()),this,SLOT(slideCancel()));
   }
 
-  setMainWidget(widget);
-  
   widget->setLayout(wSlideLayout);
+
+  dialogLayout->addWidget(widget);
+  if (buttonBox)
+      dialogLayout->addWidget(buttonBox);
   setWindowModality(Qt::ApplicationModal);
 }
 
@@ -215,11 +220,13 @@ void InvasionSlider::slideClose()
   m_game->automaton()->currentPlayerPlayed(true);
   QPointF point;
   m_game->automaton()->gameEvent("actionNextPlayer", point);
+  accept();
 }
 
 void InvasionSlider::slideCancel()
 {
   kDebug() << "Move cancel";
+  reject();
 }
 
 } // closing namespace Ksirk

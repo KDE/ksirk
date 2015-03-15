@@ -45,7 +45,6 @@
 
 class QAction;
 class KToolBar;
-class KDialog;
 class KRecentFilesAction;
 
 class QEvent;
