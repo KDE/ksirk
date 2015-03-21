@@ -20,41 +20,45 @@ This is the standard main function of a KDE application simplified for KsirK
 
 #include "kgamewin.h"
 #include "GameLogic/gameautomaton.h"
-
-#include <kcmdlineargs.h>
-#include <K4AboutData>
-#include <KLocalizedString>
-#include <kdebug.h>
-#include <KApplication>
-#include <KToolBar>
-
-static const char *description =
-    I18N_NOOP("KsirK");
-// INSERT A DESCRIPTION FOR YOUR APPLICATION HERE
-    
+#include <KAboutData>
+#include <QDebug>
+#include <QApplication>
+#include <QCommandLineParser>
 
 int main(int argc, char *argv[])
 {
-  kDebug() << "Hello World!";
-  K4AboutData aboutData( "ksirk", 0, ki18n("KsirK"),
-    /*KDE_VERSION_STRING*/"5.0.0", ki18n(description), K4AboutData::License_GPL,
-    ki18n("(c) 2002-2013, Gaël de Chalendar\n"),
-    ki18n("For help and user manual, please see\nthe KsirK web site."),
-    "http://games.kde.org/game.php?game=ksirk");
-  aboutData.addAuthor(ki18n("Gael de Chalendar aka Kleag"),KLocalizedString(), "kleag@free.fr");
-  aboutData.addAuthor(ki18n("Nemanja Hirsl"),ki18n("Current maintainer"), "nemhirsl@gmail.com");
-  aboutData.addAuthor(ki18n("Robin Doer"));
-  aboutData.addAuthor(ki18n("Albert Astals Cid"));
-  aboutData.addAuthor(ki18n("Michal Golunski (Polish translation)"),KLocalizedString(), "michalgolunski@o2.pl");
-  aboutData.addAuthor(ki18n("French students of the 'IUP ISI 2007-2008':"));
-  aboutData.addAuthor(ki18n("&nbsp;&nbsp;Anthony Rey<br/>&nbsp;&nbsp;Benjamin Lucas<br/>&nbsp;&nbsp;Benjamin Moreau<br/>&nbsp;&nbsp;Gaël Clouet<br/>&nbsp;&nbsp;Guillaume Pelouas<br/>&nbsp;&nbsp;Joël Marco<br/>&nbsp;&nbsp;Laurent Dang<br/>&nbsp;&nbsp;Nicolas Linard<br/>&nbsp;&nbsp;Vincent Sac"));
-  KCmdLineArgs::init( argc, argv, &aboutData );
+  qDebug() << "Hello KsirK";
 
-  KCmdLineOptions options;
-  options.add("+[File]", ki18n("file to open"));
-  KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
+  KAboutData aboutData(QStringLiteral("ksirk"),
+                       i18n("KsirK"),
+                       QStringLiteral("5.0.0"),
+                       i18n("KsirK - World Domination Strategy Game"),
+                       KAboutLicense::GPL,
+                       i18n("(c) 2002-2015, Gaël de Chalendar\n"),
+                       i18n("For help and user manual, please see\nthe KsirK web site."),
+                       QStringLiteral("http://games.kde.org/game.php?game=ksirk"));
 
-  KApplication app;
+  aboutData.addAuthor(i18n("Gael de Chalendar aka Kleag"),QStringLiteral(), QStringLiteral("kleag@free.fr"));
+  aboutData.addAuthor(i18n("Nemanja Hirsl"),i18n("Current maintainer"), QStringLiteral("nemhirsl@gmail.com"));
+  aboutData.addAuthor(i18n("Robin Doer"));
+  aboutData.addAuthor(i18n("Albert Astals Cid"));
+  aboutData.addAuthor(i18n("Michal Golunski (Polish translation)"),QStringLiteral(), QStringLiteral("michalgolunski@o2.pl"));
+  aboutData.addAuthor(i18n("French students of the 'IUP ISI 2007-2008':"));
+  aboutData.addAuthor(i18n("&nbsp;&nbsp;Anthony Rey<br/>&nbsp;&nbsp;Benjamin Lucas<br/>&nbsp;&nbsp;Benjamin Moreau<br/>&nbsp;&nbsp;Gaël Clouet<br/>&nbsp;&nbsp;Guillaume Pelouas<br/>&nbsp;&nbsp;Joël Marco<br/>&nbsp;&nbsp;Laurent Dang<br/>&nbsp;&nbsp;Nicolas Linard<br/>&nbsp;&nbsp;Vincent Sac"));
+
+  aboutData.setOrganizationDomain(QByteArray("kde.org"));
+  aboutData.setProductName(QByteArray("ksirk"));
+
+  QApplication app(argc, argv);
+  app.setWindowIcon(QIcon::fromTheme(QStringLiteral("ksirk")));
+  KAboutData::setApplicationData(aboutData);
+
+  QCommandLineParser parser;
+  parser.addVersionOption();
+  parser.addHelpOption();
+  aboutData.setupCommandLine(&parser);
+  parser.process(app);
+  aboutData.processCommandLine(&parser);
 
   if (app.isSessionRestored())
   {
@@ -62,15 +66,11 @@ int main(int argc, char *argv[])
   }
   else
   {
-    kDebug() << "Creating main window";
+    qDebug() << "Creating main window";
     Ksirk::KGameWindow *ksirk = new Ksirk::KGameWindow();
-//       connect(app,SIGNAL(lastWindowClosed()),app,SLOT(quit()));
-//         app.setMainWidget(ksirk);
-      ksirk->show();
-      KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-      args->clear();
+    ksirk->show();
   }
-  kDebug() << "Executing app";
-  int res =  app.exec();
-  return res;
-}  
+
+  qDebug() << "Executing app";
+  return app.exec();
+}
