@@ -10,7 +10,6 @@ find_package(KF5 REQUIRED COMPONENTS
     CoreAddons
     Config
     WidgetsAddons
-    Config
     DBusAddons
     Declarative
     I18n
@@ -18,6 +17,7 @@ find_package(KF5 REQUIRED COMPONENTS
     ConfigWidgets
     ItemViews
     IconThemes
+    DocTools
     Completion
     TextWidgets
     XmlGui
