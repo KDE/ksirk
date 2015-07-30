@@ -22,6 +22,7 @@ find_package(KF5 REQUIRED COMPONENTS
     TextWidgets
     XmlGui
     KIO
+    KDELibs4Support
     Wallet
     NotifyConfig
     NewStuff)

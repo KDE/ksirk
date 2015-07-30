@@ -4,6 +4,7 @@ configure_file(config-ksirk.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-ksirk.h)
 
 add_subdirectory( skins )
 add_subdirectory( iris )
+add_subdirectory( icons )
 
 # FIND_PACKAGE(ZLIB REQUIRED)
 
@@ -110,8 +111,6 @@ ki18n_wrap_ui(ksirk_SRCS ${ksirk_UI} )
 
 kconfig_add_kcfg_files( ksirk_SRCS ksirksettings.kcfgc )
 
-#kde4_add_app_icon(ksirk_SRCS "hi*-app-ksirk.png")
-
 add_executable(ksirk ${ksirk_SRCS})
 
 target_link_libraries(ksirk
@@ -131,8 +130,6 @@ target_link_libraries(ksirk
 install( TARGETS ksirk ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
-
-ecm_install_icons( ICONS hi128-apps-ksirk.png  hi16-apps-ksirk.png  hi22-apps-ksirk.png  hi32-apps-ksirk.png  hi48-apps-ksirk.png  hi64-apps-ksirk.png  lo16-apps-ksirk.png  lo32-apps-ksirk.png DESTINATION ${KDE_INSTALL_ICONDIR} )
 
 install( FILES ksirksettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR} )
 install( PROGRAMS org.kde.ksirk.desktop DESTINATION ${KDE_INSTALL_APPDIR} )
