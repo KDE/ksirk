@@ -39,8 +39,7 @@ int main(int argc, char *argv[])
   KAboutData aboutData( "ksirk", 0, ki18n("KsirK"),
     KDE_VERSION_STRING, ki18n(description), KAboutData::License_GPL,
     ki18n("(c) 2002-2013, Gaël de Chalendar\n"),
-    ki18n("For help and user manual, please see\nthe KsirK web site."),
-    "http://games.kde.org/game.php?game=ksirk");
+    ki18n("For help and user manual, please see\nthe KsirK web site."));,
   aboutData.addAuthor(ki18n("Gael de Chalendar aka Kleag"),KLocalizedString(), "kleag@free.fr");
   aboutData.addAuthor(ki18n("Nemanja Hirsl"),ki18n("Current maintainer"), "nemhirsl@gmail.com");
   aboutData.addAuthor(ki18n("Robin Doer"));
@@ -48,6 +47,7 @@ int main(int argc, char *argv[])
   aboutData.addAuthor(ki18n("Michal Golunski (Polish translation)"),KLocalizedString(), "michalgolunski@o2.pl");
   aboutData.addAuthor(ki18n("French students of the 'IUP ISI 2007-2008':"));
   aboutData.addAuthor(ki18n("&nbsp;&nbsp;Anthony Rey<br/>&nbsp;&nbsp;Benjamin Lucas<br/>&nbsp;&nbsp;Benjamin Moreau<br/>&nbsp;&nbsp;Gaël Clouet<br/>&nbsp;&nbsp;Guillaume Pelouas<br/>&nbsp;&nbsp;Joël Marco<br/>&nbsp;&nbsp;Laurent Dang<br/>&nbsp;&nbsp;Nicolas Linard<br/>&nbsp;&nbsp;Vincent Sac"));
+  aboutData.setHomepage("http://games.kde.org/ksirk/");
   KCmdLineArgs::init( argc, argv, &aboutData );
 
   KCmdLineOptions options;

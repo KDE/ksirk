@@ -47,9 +47,9 @@ int main(int argc, char *argv[])
     ki18n(description),
     KAboutData::License_GPL,
     ki18n("(c) 2008, Gaël de Chalendar\n"),
-    ki18n("For help and user manual, please see\nThe KsirK Web site"),
-    "http://games.kde.org/game.php?game=ksirk");
+    ki18n("For help and user manual, please see\nThe KsirK Web site"));
   aboutData.addAuthor(ki18n("Gael de Chalendar aka Kleag"),KLocalizedString(), "kleag@free.fr");
+  aboutData.setHomepage("http://games.kde.org/ksirk/");
 
   KCmdLineArgs::init( argc, argv, &aboutData );
 
