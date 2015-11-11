@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
   KAboutData aboutData( "ksirk", 0, ki18n("KsirK"),
     KDE_VERSION_STRING, ki18n(description), KAboutData::License_GPL,
     ki18n("(c) 2002-2013, Gaël de Chalendar\n"),
-    ki18n("For help and user manual, please see\nthe KsirK web site."));,
+    ki18n("For help and user manual, please see\nthe KsirK web site."));
   aboutData.addAuthor(ki18n("Gael de Chalendar aka Kleag"),KLocalizedString(), "kleag@free.fr");
   aboutData.addAuthor(ki18n("Nemanja Hirsl"),ki18n("Current maintainer"), "nemhirsl@gmail.com");
   aboutData.addAuthor(ki18n("Robin Doer"));
