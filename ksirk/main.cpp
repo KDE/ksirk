@@ -50,6 +50,9 @@ int main(int argc, char *argv[])
   aboutData.setProductName(QByteArray("ksirk"));
 
   QApplication app(argc, argv);
+
+  KLocalizedString::setApplicationDomain("ksirk");
+
   app.setWindowIcon(QIcon::fromTheme(QStringLiteral("ksirk")));
   KAboutData::setApplicationData(aboutData);
 
