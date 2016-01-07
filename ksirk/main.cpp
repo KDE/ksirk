@@ -74,6 +74,8 @@ int main(int argc, char *argv[])
     ksirk->show();
   }
 
+  app.setWindowIcon(QIcon::fromTheme(QStringLiteral("ksirk")));
+
   qDebug() << "Executing app";
   return app.exec();
 }
