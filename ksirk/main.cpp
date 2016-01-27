@@ -21,6 +21,7 @@ This is the standard main function of a KDE application simplified for KsirK
 #include "kgamewin.h"
 #include "GameLogic/gameautomaton.h"
 #include <KAboutData>
+#include <KCrash>
 #include <QDebug>
 #include <QApplication>
 #include <QCommandLineParser>
@@ -55,7 +56,7 @@ int main(int argc, char *argv[])
 
   app.setWindowIcon(QIcon::fromTheme(QStringLiteral("ksirk")));
   KAboutData::setApplicationData(aboutData);
-
+  KCrash::initialize();
   QCommandLineParser parser;
   parser.addVersionOption();
   parser.addHelpOption();

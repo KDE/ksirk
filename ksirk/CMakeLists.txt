@@ -2,9 +2,9 @@ include(CheckIncludeFiles)
 check_include_files(sys/stropts.h SYS_STROPTS_H_FOUND)
 configure_file(config-ksirk.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-ksirk.h)
 
-add_subdirectory( skins )
-add_subdirectory( iris )
-add_subdirectory( icons )
+add_subdirectory(skins)
+add_subdirectory(iris)
+add_subdirectory(icons)
 
 # FIND_PACKAGE(ZLIB REQUIRED)
 
@@ -29,7 +29,7 @@ include_directories(
 #   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/
   )
 
-link_directories( ${CMAKE_CURRENT_BINARY_DIR}/iris/ )
+link_directories(${CMAKE_CURRENT_BINARY_DIR}/iris/)
 
 ########### next target ###############
 
@@ -114,25 +114,26 @@ kconfig_add_kcfg_files( ksirk_SRCS ksirksettings.kcfgc )
 add_executable(ksirk ${ksirk_SRCS})
 
 target_link_libraries(ksirk
-  Qt5::Xml
-  Qt5::Svg 
-  KF5::KIOCore 
-  Phonon::phonon4qt5
-  KF5::NewStuff
-  qca-qt5
-  iris_ksirk
-  KF5KDEGames
-  KF5KDEGamesPrivate
-  KF5::KDELibs4Support
-  KF5::Wallet
-  )
+    Qt5::Xml
+    Qt5::Svg
+    qca-qt5
+    iris_ksirk
+    KF5::Crash
+    KF5::KDELibs4Support
+    KF5::KIOCore
+    KF5::NewStuff
+    KF5::Wallet
+    Phonon::phonon4qt5
+    KF5KDEGames
+    KF5KDEGamesPrivate
+)
 
 install( TARGETS ksirk ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
 
-install( FILES ksirksettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR} )
-install( PROGRAMS org.kde.ksirk.desktop DESTINATION ${KDE_INSTALL_APPDIR} )
-install( FILES ksirkui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/ksirk )
-install( FILES jabber.png  DESTINATION  ${KDE_INSTALL_DATADIR}/ksirk )
-install( FILES ksirk.knsrc  DESTINATION  ${KDE_INSTALL_CONFDIR} )
+install(FILES ksirksettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
+install(PROGRAMS org.kde.ksirk.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+install(FILES ksirkui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/ksirk)
+install(FILES jabber.png  DESTINATION  ${KDE_INSTALL_DATADIR}/ksirk)
+install(FILES ksirk.knsrc  DESTINATION  ${KDE_INSTALL_CONFDIR})
