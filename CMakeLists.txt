@@ -41,6 +41,8 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
 
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
+add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
+
 find_package(Phonon4Qt5 CONFIG REQUIRED)
 find_package(Qca-qt5 2.1.0)
 set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION "Support for encryption"

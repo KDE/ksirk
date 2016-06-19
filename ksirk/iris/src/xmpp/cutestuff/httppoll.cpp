@@ -142,7 +142,7 @@ void HttpPoll::connectToHost(const QString &proxyHost, int proxyPort, const QStr
 		d->use_proxy = true;
 	}
 	else {
-		QUrl u = url;
+		QUrl u(url);
 		d->host = u.host();
 		if(u.port() != -1)
 			d->port = u.port();
@@ -189,7 +189,7 @@ QByteArray HttpPoll::makePacket(const QString &ident, const QString &key, const 
 	int len = cs.length();
 
 	QByteArray a;
-  a.resize(len + block.size());
+	a.resize(len + block.size());
 	memcpy(a.data(), cs.data(), len);
 	memcpy(a.data() + len, block.data(), block.size());
 	return a;
@@ -530,7 +530,7 @@ void HttpProxyPost::sock_connected()
 	d->inHeader = true;
 	d->headerLines.clear();
 
-	QUrl u = d->url;
+	QUrl u(d->url);
 
 	// connected, now send the request
 	QString s;
@@ -785,7 +785,7 @@ void HttpProxyGetStream::sock_connected()
 	d->inHeader = true;
 	d->headerLines.clear();
 
-	QUrl u = d->url;
+	QUrl u(d->url);
 
 	// connected, now send the request
 	QString s;
