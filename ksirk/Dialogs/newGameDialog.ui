@@ -159,7 +159,7 @@
            <string>In this mode, a player will have to conquer all the world to win.</string>
           </property>
           <property name="text">
-           <string>Wor&amp;ld conquest</string>
+           <string>World con&amp;quest</string>
           </property>
          </widget>
         </item>
@@ -172,7 +172,7 @@
            <string>In this mode, a goal will be assigned to each player, which he will have to reach in order to win.</string>
           </property>
           <property name="text">
-           <string>Reach a goal</string>
+           <string>Reach a goa&amp;l</string>
           </property>
           <property name="shortcut">
            <string/>
@@ -201,8 +201,8 @@
      <item>
       <widget class="QLabel" name="skinSnapshotPixmap">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-         <horstretch>0</horstretch>
+        <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+         <horstretch>1</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
@@ -254,14 +254,14 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KIntSpinBox</class>
-   <extends>QSpinBox</extends>
-   <header>knuminput.h</header>
-  </customwidget>
-  <customwidget>
    <class>KPushButton</class>
    <extends>QPushButton</extends>
    <header>kpushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KIntSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>knuminput.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>
