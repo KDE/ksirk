@@ -29,6 +29,9 @@ This is the standard main function of a KDE application simplified for KsirK
 int main(int argc, char *argv[])
 {
   qDebug() << "Hello KsirK";
+  QApplication app(argc, argv);
+
+  KLocalizedString::setApplicationDomain("ksirk");
 
   KAboutData aboutData(QStringLiteral("ksirk"),
                        i18n("KsirK"),
@@ -49,10 +52,6 @@ int main(int argc, char *argv[])
 
   aboutData.setOrganizationDomain(QByteArray("kde.org"));
   aboutData.setProductName(QByteArray("ksirk"));
-
-  QApplication app(argc, argv);
-
-  KLocalizedString::setApplicationDomain("ksirk");
 
   app.setWindowIcon(QIcon::fromTheme(QStringLiteral("ksirk")));
   KAboutData::setApplicationData(aboutData);

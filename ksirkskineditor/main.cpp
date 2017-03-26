@@ -42,6 +42,8 @@ static const char *description =
 int main(int argc, char *argv[])
 {
   qCDebug(KSIRKSKINEDITOR_LOG) << "Hello World!";
+  QApplication app(argc, argv);
+  KLocalizedString::setApplicationDomain("ksirkskineditor");
   KAboutData aboutData(
     "ksirkskineditor",
     i18n("KsirK Skin Editor"),
@@ -53,7 +55,6 @@ int main(int argc, char *argv[])
     "http://games.kde.org/game.php?game=ksirk");
   aboutData.addAuthor(i18n("Gael de Chalendar aka Kleag"),QString(), "kleag@free.fr");
 
-    QApplication app(argc, argv);
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
