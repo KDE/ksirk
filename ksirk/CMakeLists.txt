@@ -111,6 +111,9 @@ ki18n_wrap_ui(ksirk_SRCS ${ksirk_UI} )
 
 kconfig_add_kcfg_files( ksirk_SRCS ksirksettings.kcfgc )
 
+file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/icons/hicolor/*-apps-ksirk.png")
+ecm_add_app_icon(ksirk_SRCS ICONS ${ICONS_SRCS})
+
 add_executable(ksirk ${ksirk_SRCS})
 
 target_link_libraries(ksirk

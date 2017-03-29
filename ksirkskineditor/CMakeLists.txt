@@ -42,8 +42,6 @@ ki18n_wrap_ui(ksirkskineditor_SRCS ${ksirkskineditor_UI} )
 
 kconfig_add_kcfg_files( ksirkskineditor_SRCS ksirkskineditorsettings.kcfgc )
 
-#kde4_add_app_icon(ksirkskineditor_SRCS "hi*-app-ksirk.png")
-
 add_executable(ksirkskineditor ${ksirkskineditor_SRCS})
 
 target_link_libraries(ksirkskineditor
