@@ -6,6 +6,7 @@
   <name>KSirk</name>
   <name xml:lang="ca">KSirk</name>
   <name xml:lang="ca-valencia">KSirk</name>
+  <name xml:lang="cs">KSirk</name>
   <name xml:lang="es">KSirk</name>
   <name xml:lang="nl">KSirk</name>
   <name xml:lang="pt">KSirk</name>
@@ -16,6 +17,7 @@
   <summary>World Domination Strategy Game</summary>
   <summary xml:lang="ca">Joc d'estratègia de dominació mundial</summary>
   <summary xml:lang="ca-valencia">Joc d'estratègia de dominació mundial</summary>
+  <summary xml:lang="cs">Strategická hra o světovou nadvládu</summary>
   <summary xml:lang="es">Juego de estrategia de dominación del mundo</summary>
   <summary xml:lang="nl">Werelddominatie-strategiespel</summary>
   <summary xml:lang="pt">Jogo Estratégico de Conquista do Mundo</summary>
@@ -39,6 +41,7 @@
     <p>Features:</p>
     <p xml:lang="ca">Característiques:</p>
     <p xml:lang="ca-valencia">Característiques:</p>
+    <p xml:lang="cs">Vlastnosti:</p>
     <p xml:lang="es">Funciones:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
     <p xml:lang="pt">Funcionalidades:</p>
