@@ -17,8 +17,8 @@
   */
 
 #include "jabbergroupcontact.h"
+#include "jabber_protocol_debug.h"
 
-#include <kdebug.h>
 #include <KLocalizedString>
 #include <kfiledialog.h>
 #include <kinputdialog.h>
@@ -89,7 +89,7 @@ JabberGroupContact::JabberGroupContact (const XMPP::RosterItem &rosterItem, Jabb
 JabberGroupContact::~JabberGroupContact ()
 {
 
-	kDebug ( JABBER_DEBUG_GLOBAL ) ;
+	qCDebug(JABBER_PROTOCOL_LOG) ;
 
 	if(mManager) 
 	{
@@ -100,13 +100,13 @@ JabberGroupContact::~JabberGroupContact ()
 	{
 		/*if(mManager)
 		mManager->removeContact( contact );*/
-		kDebug ( JABBER_DEBUG_GLOBAL ) << "Deleting KC " << contact->contactId ();
+		qCDebug(JABBER_PROTOCOL_LOG) << "Deleting KC " << contact->contactId ();
 		contact->deleteLater();
 	}
 
 	foreach ( Kopete::MetaContact *metaContact, mMetaContactList )
 	{
-		kDebug ( JABBER_DEBUG_GLOBAL ) << "Deleting KMC " << metaContact->metaContactId ();
+		qCDebug(JABBER_PROTOCOL_LOG) << "Deleting KMC " << metaContact->metaContactId ();
 		metaContact->deleteLater();
 	}
 }
@@ -129,7 +129,7 @@ Kopete::ChatSession *JabberGroupContact::manager ( Kopete::Contact::CanCreateFla
 {
 	if(!mManager && canCreate == Kopete::Contact::CanCreate)
 	{
-		kWarning (JABBER_DEBUG_GLOBAL) << "somehow, the chat manager was removed, and the contact is still there";
+		qCWarning(JABBER_PROTOCOL_LOG) << "somehow, the chat manager was removed, and the contact is still there";
 		mManager = new JabberGroupChatManager ( protocol (), mSelfContact,
 				Kopete::ContactPtrList (), XMPP::Jid ( rosterItem().jid().userHost() ) );
 
@@ -150,7 +150,7 @@ void JabberGroupContact::handleIncomingMessage (const XMPP::Message & message)
 	QString viewType = "kopete_chatwindow";
 	Kopete::Message *newMessage = 0L;
 	
-	kDebug (JABBER_DEBUG_GLOBAL) << "Received a message";
+	qCDebug(JABBER_PROTOCOL_LOG) << "Received a message";
 
 	/**
 	 * Don't display empty messages, these were most likely just carrying
@@ -189,7 +189,7 @@ void JabberGroupContact::handleIncomingMessage (const XMPP::Message & message)
 
 		if ( !subContact )
 		{
-			kWarning (JABBER_DEBUG_GLOBAL) << "the contact is not in the list   : " <<  message.from().full();
+			qCWarning(JABBER_PROTOCOL_LOG) << "the contact is not in the list   : " <<  message.from().full();
 			return;
 			/**
 			 * We couldn't find the contact for this message. That most likely means
@@ -217,14 +217,14 @@ void JabberGroupContact::handleIncomingMessage (const XMPP::Message & message)
 
 JabberBaseContact *JabberGroupContact::addSubContact ( const XMPP::RosterItem &rosterItem, bool addToManager )
 {
-	kDebug ( JABBER_DEBUG_GLOBAL ) << "Adding new subcontact " << rosterItem.jid().full () << " to room " << mRosterItem.jid().full ();
+	qCDebug(JABBER_PROTOCOL_LOG) << "Adding new subcontact " << rosterItem.jid().full () << " to room " << mRosterItem.jid().full ();
 
 	// see if this contact already exists, skip creation otherwise
 	JabberBaseContact *subContact = dynamic_cast<JabberGroupMemberContact *>( account()->contactPool()->findExactMatch ( rosterItem.jid () ) );
 
 	if ( subContact )
 	{
-		kDebug ( JABBER_DEBUG_GLOBAL ) << "Contact already exists, not adding again.";
+		qCDebug(JABBER_PROTOCOL_LOG) << "Contact already exists, not adding again.";
 		return subContact;
 	}
 	
@@ -256,12 +256,12 @@ JabberBaseContact *JabberGroupContact::addSubContact ( const XMPP::RosterItem &r
 
 void JabberGroupContact::removeSubContact ( const XMPP::RosterItem &rosterItem )
 {
-	kDebug ( JABBER_DEBUG_GLOBAL ) << "Removing subcontact " << rosterItem.jid().full () << " from room " << mRosterItem.jid().full ();
+	qCDebug(JABBER_PROTOCOL_LOG) << "Removing subcontact " << rosterItem.jid().full () << " from room " << mRosterItem.jid().full ();
 
 	// make sure that subcontacts are only removed from the room contact, which has no resource
 	if ( !mRosterItem.jid().resource().isEmpty () )
 	{
-		kDebug ( JABBER_DEBUG_GLOBAL ) << "WARNING: Trying to remove subcontact from subcontact!";
+		qCDebug(JABBER_PROTOCOL_LOG) << "WARNING: Trying to remove subcontact from subcontact!";
 		return;
 	}
 
@@ -270,7 +270,7 @@ void JabberGroupContact::removeSubContact ( const XMPP::RosterItem &rosterItem )
 
 	if ( !subContact )
 	{
-		kDebug ( JABBER_DEBUG_GLOBAL ) << "WARNING: Subcontact couldn't be located!";
+		qCDebug(JABBER_PROTOCOL_LOG) << "WARNING: Subcontact couldn't be located!";
 		return;
 	}
 	
@@ -378,7 +378,7 @@ void JabberGroupContact::slotChangeNick( )
 
 void JabberGroupContact::slotSubContactDestroyed( Kopete::Contact * deadContact )
 {
-	kDebug ( JABBER_DEBUG_GLOBAL ) << "cleaning dead subcontact " << deadContact->contactId() << " from room " << mRosterItem.jid().full ();
+	qCDebug(JABBER_PROTOCOL_LOG) << "cleaning dead subcontact " << deadContact->contactId() << " from room " << mRosterItem.jid().full ();
 
 	mMetaContactList.removeAll ( deadContact->metaContact () );
 	mContactList.removeAll ( deadContact );

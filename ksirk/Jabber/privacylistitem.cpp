@@ -25,7 +25,7 @@
 #include "xmpp_xmlcommon.h"
 #include "xmpp_jid.h"
 
-#include <kdebug.h>
+#include "jabber_protocol_debug.h"
 // #include "jabberprotocol.h"
 
 PrivacyListItem::PrivacyListItem() : message_(true), presenceIn_(true), presenceOut_(true), iq_(true)
@@ -121,9 +121,9 @@ QDomElement PrivacyListItem::toXml(QDomDocument& doc) const
 
 void PrivacyListItem::fromXml(const QDomElement& el)
 {
-	//kDebug () << "Parsing privacy list item";
+	//qCDebug(JABBER_PROTOCOL_LOG) << "Parsing privacy list item";
 	if (el.isNull() || el.tagName() != "item") {
-		kWarning () << "Invalid root tag for privacy list item.";
+		qCWarning(JABBER_PROTOCOL_LOG) << "Invalid root tag for privacy list item.";
 		return;
 	}
 
@@ -140,13 +140,13 @@ void PrivacyListItem::fromXml(const QDomElement& el)
 	QString value = el.attribute("value");
 	value_ = value;
 	if (type_ == JidType && XMPP::Jid(value_).isEmpty()) 
-		kWarning () << "Invalid value for item of type 'jid'.";
+		qCWarning(JABBER_PROTOCOL_LOG) << "Invalid value for item of type 'jid'.";
 	else if (type_ == GroupType && value_.isEmpty()) 
-		kWarning () << "Empty value for item of type 'group'.";
+		qCWarning(JABBER_PROTOCOL_LOG) << "Empty value for item of type 'group'.";
 	else if (type_ == SubscriptionType && value_ != "from" && value != "to" && value_ != "both" && value_ != "none")
-		kWarning () << "Invalid value for item of type 'subscription'.";
+		qCWarning(JABBER_PROTOCOL_LOG) << "Invalid value for item of type 'subscription'.";
 	else if (type_ == FallthroughType && !value_.isEmpty()) 
-		kWarning () << "Value given for item of fallthrough type.";
+		qCWarning(JABBER_PROTOCOL_LOG) << "Value given for item of fallthrough type.";
 		
 	QString action = el.attribute("action");
 	if (action == "allow") 
@@ -154,12 +154,12 @@ void PrivacyListItem::fromXml(const QDomElement& el)
 	else if (action == "deny")
 		action_ = Deny;
 	else
-		kWarning () << "Invalid action given for item.";
+		qCWarning(JABBER_PROTOCOL_LOG) << "Invalid action given for item.";
 
 	bool ok;
 	order_ = el.attribute("order").toUInt(&ok);
 	if (!ok)
-		kWarning () << "Invalid order value for item.";
+		qCWarning(JABBER_PROTOCOL_LOG) << "Invalid order value for item.";
 
 	if (el.hasChildNodes()) {
 		findSubTag(el, "message", &message_);

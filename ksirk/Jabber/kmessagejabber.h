@@ -28,7 +28,7 @@
 #include <QtCore/QProcess>
 #include <QtCore/QString>
 #include <QtNetwork/QHostAddress>
-#include <kdebug.h>
+#include "jabber_protocol_debug.h"
 
 #define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
 #include <libkdegamesprivate/kgame/kmessageio.h>

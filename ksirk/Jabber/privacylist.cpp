@@ -23,7 +23,7 @@
 #include <QStringList>
 #include <QList>
 
-#include <kdebug.h>
+#include "jabber_protocol_debug.h"
 // #include "jabberprotocol.h"
 
 #include "privacylist.h"
@@ -134,9 +134,9 @@ QDomElement PrivacyList::toXml(QDomDocument& doc) const
 
 void PrivacyList::fromXml(const QDomElement& el)
 {
-	//kDebug () << "Parsing privacy list";
+	//qCDebug(JABBER_PROTOCOL_LOG) << "Parsing privacy list";
 	if (el.isNull() || el.tagName() != "list") {
-		kWarning () << "Invalid root tag for privacy list.";
+		qCWarning(JABBER_PROTOCOL_LOG) << "Invalid root tag for privacy list.";
 		return;
 	}
 

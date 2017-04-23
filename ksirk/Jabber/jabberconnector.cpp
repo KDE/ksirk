@@ -17,7 +17,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <kdebug.h>
+#include "jabber_protocol_debug.h"
 #include "jabberconnector.h"
 #include "jabberbytestream.h"
 // #include "jabberprotocol.h"
@@ -25,7 +25,7 @@
 JabberConnector::JabberConnector ( QObject *parent )
  : XMPP::Connector ( parent )
 {
-	kDebug() << "New Jabber connector.";
+	qCDebug(JABBER_PROTOCOL_LOG) << "New Jabber connector.";
 
 	mErrorCode = 0;
 
@@ -45,7 +45,7 @@ JabberConnector::~JabberConnector ()
 
 void JabberConnector::connectToServer ( const QString &server )
 {
-	kDebug() << "Initiating connection to " << server;
+	qCDebug(JABBER_PROTOCOL_LOG) << "Initiating connection to " << server;
 
 	/*
 	 * FIXME: we should use a SRV lookup to determine the
@@ -56,14 +56,14 @@ void JabberConnector::connectToServer ( const QString &server )
 
 	mErrorCode = 0;
 
-  kDebug() << mHost << mPort;
+  qCDebug(JABBER_PROTOCOL_LOG) << mHost << mPort;
   mByteStream->connect ( mHost, mPort );
 
 }
 
 void JabberConnector::slotConnected ()
 {
-	kDebug() << "We are connected.";
+	qCDebug(JABBER_PROTOCOL_LOG) << "We are connected.";
 
 	// FIXME: setPeerAddress() is something different, find out correct usage later
 	//KInetSocketAddress inetAddress = mStreamSocket->address().asInet().makeIPv6 ();
@@ -75,7 +75,7 @@ void JabberConnector::slotConnected ()
 
 void JabberConnector::slotError ( int code )
 {
-	kDebug() << "Error detected: " << code;
+	qCDebug(JABBER_PROTOCOL_LOG) << "Error detected: " << code;
 
 	mErrorCode = code;
 	emit error ();
@@ -105,7 +105,7 @@ void JabberConnector::done ()
 
 void JabberConnector::setOptHostPort ( const QString &host, quint16 port )
 {
-	kDebug() << "Manually specifying host " << host << " and port " << port;
+	qCDebug(JABBER_PROTOCOL_LOG) << "Manually specifying host " << host << " and port " << port;
 
 	mHost = host;
 	mPort = port;
@@ -114,7 +114,7 @@ void JabberConnector::setOptHostPort ( const QString &host, quint16 port )
 
 void JabberConnector::setOptSSL ( bool ssl )
 {
-	kDebug() << "Setting SSL to " << ssl;
+	qCDebug(JABBER_PROTOCOL_LOG) << "Setting SSL to " << ssl;
 
 	setUseSSL ( ssl );
 

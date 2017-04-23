@@ -98,6 +98,11 @@ ecm_qt_declare_logging_category(ksirk_SRCS
                                 IDENTIFIER KSIRK_LOG
                                 CATEGORY_NAME org.kde.ksirk)
 
+ecm_qt_declare_logging_category(ksirk_SRCS
+                                HEADER jabber_protocol_debug.h
+                                IDENTIFIER JABBER_PROTOCOL_LOG
+                                CATEGORY_NAME org.kde.ksirk.jabber)
+
 set(ksirk_UI
   Dialogs/qplayersetupdialog.ui
   Dialogs/newGameDialog.ui

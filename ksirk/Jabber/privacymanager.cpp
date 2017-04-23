@@ -21,7 +21,7 @@
 #include "xmpp_jid.h"
 #include "privacymanager.h"
 
-#include <kdebug.h>
+#include "jabber_protocol_debug.h"
 // #include "jabberprotocol.h"
 
 #define PRIVACY_NS "jabber:iq:privacy"
@@ -68,7 +68,7 @@ bool GetPrivacyListsTask::take ( const QDomElement &x ) {
 	if ( !iqVerify ( x, "", id() ) )
 		return false;
 
-	//kDebug() << "Got reply for privacy lists.";
+	//qCDebug(JABBER_PROTOCOL_LOG) << "Got reply for privacy lists.";
 	if ( x.attribute ( "type" ) == "result" ) {
 		QDomElement tag, q = queryTag ( x );
 
@@ -81,7 +81,7 @@ bool GetPrivacyListsTask::take ( const QDomElement &x ) {
 			else if ( e.tagName() == "list" )
 				lists_.append ( e.attribute ( "name" ) );
 			else
-				kWarning () << "Unknown tag in privacy lists.";
+				qCWarning(JABBER_PROTOCOL_LOG) << "Unknown tag in privacy lists.";
 
 		}
 		setSuccess();
@@ -118,23 +118,23 @@ void SetPrivacyListsTask::onGo() {
 
 	QDomElement e;
 	if ( changeDefault_ ) {
-		//kDebug() << "Changing default privacy list.";
+		//qCDebug(JABBER_PROTOCOL_LOG) << "Changing default privacy list.";
 		e = doc()->createElement ( "default" );
 		if ( !value_.isEmpty() )
 			e.setAttribute ( "name",value_ );
 	}
 	else if ( changeActive_ ) {
-		//kDebug() << "Changing active privacy list.";
+		//qCDebug(JABBER_PROTOCOL_LOG) << "Changing active privacy list.";
 		e = doc()->createElement ( "active" );
 		if ( !value_.isEmpty() )
 			e.setAttribute ( "name",value_ );
 	}
 	else if ( changeList_ ) {
-		//kDebug() << "Changing privacy list.";
+		//qCDebug(JABBER_PROTOCOL_LOG) << "Changing privacy list.";
 		e = list_.toXml ( *doc() );
 	}
 	else {
-		kWarning () << "Empty active/default list change request.";
+		qCWarning(JABBER_PROTOCOL_LOG) << "Empty active/default list change request.";
 		return;
 	}
 
@@ -157,7 +157,7 @@ void SetPrivacyListsTask::setDefault ( const QString& d ) {
 }
 
 void SetPrivacyListsTask::setList ( const PrivacyList& list ) {
-	//kDebug() << "setList: " << list.toString();
+	//qCDebug(JABBER_PROTOCOL_LOG) << "setList: " << list.toString();
 	list_ = list;
 	changeDefault_ = false;
 	changeActive_ = false;
@@ -169,11 +169,11 @@ bool SetPrivacyListsTask::take ( const QDomElement &x ) {
 		return false;
 
 	if ( x.attribute ( "type" ) == "result" ) {
-		//kDebug() << "Got successful reply for list change.";
+		//qCDebug(JABBER_PROTOCOL_LOG) << "Got successful reply for list change.";
 		setSuccess();
 	}
 	else {
-		kWarning () << "Got error reply for list change.";
+		qCWarning(JABBER_PROTOCOL_LOG) << "Got error reply for list change.";
 		setError ( x );
 	}
 	return true;
@@ -193,7 +193,7 @@ GetPrivacyListTask::GetPrivacyListTask ( Task* parent, const QString& name ) : T
 }
 
 void GetPrivacyListTask::onGo() {
-	//kDebug() << "privacy.cpp: Requesting privacy list %1." << name_;
+	//qCDebug(JABBER_PROTOCOL_LOG) << "privacy.cpp: Requesting privacy list %1." << name_;
 	send ( iq_ );
 }
 
@@ -201,7 +201,7 @@ bool GetPrivacyListTask::take ( const QDomElement &x ) {
 	if ( !iqVerify ( x, "", id() ) )
 		return false;
 
-	//kDebug() << qPrintable (QString("Got privacy list %1 reply.").arg(name_));
+	//qCDebug(JABBER_PROTOCOL_LOG) << qPrintable (QString("Got privacy list %1 reply.").arg(name_));
 	if ( x.attribute ( "type" ) == "result" ) {
 		QDomElement q = queryTag ( x );
 		bool found;
@@ -210,7 +210,7 @@ bool GetPrivacyListTask::take ( const QDomElement &x ) {
 			list_ = PrivacyList ( listTag );
 		}
 		else {
-			kWarning () << "No valid list found.";
+			qCWarning(JABBER_PROTOCOL_LOG) << "No valid list found.";
 		}
 		setSuccess();
 	}
@@ -339,7 +339,7 @@ void PrivacyManager::changeDefaultList_finished()
 {
 	SetPrivacyListsTask *t = ( SetPrivacyListsTask* ) sender();
 	if ( !t ) {
-		kWarning () << "Unexpected sender.";
+		qCWarning(JABBER_PROTOCOL_LOG) << "Unexpected sender.";
 		return;
 	}
 
@@ -363,7 +363,7 @@ void PrivacyManager::changeActiveList_finished()
 {
 	SetPrivacyListsTask *t = ( SetPrivacyListsTask* ) sender();
 	if ( !t ) {
-		kWarning () << "Unexpected sender.";
+		qCWarning(JABBER_PROTOCOL_LOG) << "Unexpected sender.";
 		return;
 	}
 
@@ -387,7 +387,7 @@ void PrivacyManager::changeList_finished()
 {
 	SetPrivacyListsTask *t = ( SetPrivacyListsTask* ) sender();
 	if ( !t ) {
-		kWarning () << "Unexpected sender.";
+		qCWarning(JABBER_PROTOCOL_LOG) << "Unexpected sender.";
 		return;
 	}
 
@@ -403,7 +403,7 @@ void PrivacyManager::receiveLists()
 {
 	GetPrivacyListsTask *t = ( GetPrivacyListsTask* ) sender();
 	if ( !t ) {
-		kWarning () << "Unexpected sender.";
+		qCWarning(JABBER_PROTOCOL_LOG) << "Unexpected sender.";
 		return;
 	}
 
@@ -411,7 +411,7 @@ void PrivacyManager::receiveLists()
 		emit listsReceived ( t->defaultList(),t->activeList(),t->lists() );
 	}
 	else {
-		kDebug() << "Error in lists receiving.";
+		qCDebug(JABBER_PROTOCOL_LOG) << "Error in lists receiving.";
 		emit listsError();
 	}
 }
@@ -420,7 +420,7 @@ void PrivacyManager::receiveList()
 {
 	GetPrivacyListTask *t = ( GetPrivacyListTask* ) sender();
 	if ( !t ) {
-		kDebug() << "Unexpected sender.";
+		qCDebug(JABBER_PROTOCOL_LOG) << "Unexpected sender.";
 		return;
 	}
 
@@ -428,7 +428,7 @@ void PrivacyManager::receiveList()
 		emit listReceived ( t->list() );
 	}
 	else {
-		kDebug() << "Error in list receiving.";
+		qCDebug(JABBER_PROTOCOL_LOG) << "Error in list receiving.";
 		emit listError();
 	}
 }

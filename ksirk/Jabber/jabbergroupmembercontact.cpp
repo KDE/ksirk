@@ -16,8 +16,8 @@
   */
 
 #include "jabbergroupmembercontact.h"
+#include "jabber_protocol_debug.h"
 
-#include <kdebug.h>
 #include <KLocalizedString>
 #include <kfiledialog.h>
 #include "jabberprotocol.h"
@@ -99,7 +99,7 @@ void JabberGroupMemberContact::handleIncomingMessage ( const XMPP::Message &mess
 	QString viewType = "kopete_chatwindow";
 	Kopete::Message *newMessage = 0L;
 
-	kDebug (JABBER_DEBUG_GLOBAL) << "Received Message Type:" << message.type ();
+	qCDebug(JABBER_PROTOCOL_LOG) << "Received Message Type:" << message.type ();
 
 	/**
 	 * Don't display empty messages, these were most likely just carrying

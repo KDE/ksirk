@@ -19,7 +19,6 @@
 #include <kopetecontact.h>
 
 
-#include <kdebug.h>
 #include <QAction>
 #include <kselectaction.h>
 #include <KLocalizedString>
