@@ -27,7 +27,7 @@
 #include <kurl.h>
 #include <ktabwidget.h>
 #include <kedittoolbar.h>
-#include <kdebug.h>
+#include "ksirk_debug.h"
 
 #include <kstandardaction.h>
 
@@ -74,7 +74,7 @@ KsirkConfigurationDialog::~KsirkConfigurationDialog ()
 
 void KsirkConfigurationDialog::settingChanged(int)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   m_changed = true;
   //settingsChangedSlot();
   //updateButtons ();
@@ -82,13 +82,13 @@ void KsirkConfigurationDialog::settingChanged(int)
 
 bool KsirkConfigurationDialog::hasChanged()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   return m_changed;
 }
 
 void KsirkConfigurationDialog::updateSettings()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   m_changed = false;
   KsirkSettings::setSpritesSpeed(m_widget->spritesSpeed->value());
   KsirkSettings::setSoundEnabled(m_widget->soundEnabled->isChecked());
@@ -99,7 +99,7 @@ void KsirkConfigurationDialog::updateSettings()
 
 void KsirkConfigurationDialog::updateWidgets()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
 
   m_changed = false;
   m_widget->spritesSpeed->setValue(KsirkSettings::spritesSpeed());

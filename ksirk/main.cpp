@@ -22,13 +22,13 @@ This is the standard main function of a KDE application simplified for KsirK
 #include "GameLogic/gameautomaton.h"
 #include <KAboutData>
 #include <KCrash>
-#include <QDebug>
+#include "ksirk_debug.h"
 #include <QApplication>
 #include <QCommandLineParser>
 
 int main(int argc, char *argv[])
 {
-  qDebug() << "Hello KsirK";
+  qCDebug(KSIRK_LOG) << "Hello KsirK";
   QApplication app(argc, argv);
 
   KLocalizedString::setApplicationDomain("ksirk");
@@ -69,13 +69,13 @@ int main(int argc, char *argv[])
   }
   else
   {
-    qDebug() << "Creating main window";
+    qCDebug(KSIRK_LOG) << "Creating main window";
     Ksirk::KGameWindow *ksirk = new Ksirk::KGameWindow();
     ksirk->show();
   }
 
   app.setWindowIcon(QIcon::fromTheme(QStringLiteral("ksirk")));
 
-  qDebug() << "Executing app";
+  qCDebug(KSIRK_LOG) << "Executing app";
   return app.exec();
 }

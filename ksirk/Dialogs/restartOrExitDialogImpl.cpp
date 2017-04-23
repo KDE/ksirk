@@ -19,7 +19,7 @@
 #include "restartOrExitDialogImpl.h"
 
 #include <KLocalizedString>
-#include <kdebug.h>
+#include "ksirk_debug.h"
 #include <kstandarddirs.h>
 #include <kmessagebox.h>
 
@@ -55,20 +55,20 @@ RestartOrExitDialogImpl::~RestartOrExitDialogImpl()
 
 void RestartOrExitDialogImpl::slotNewGame()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   close();
 }
 
 void RestartOrExitDialogImpl::slotExit()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   close();
 }
 
 /** @todo implements a help */
 void RestartOrExitDialogImpl::slotDoNothing()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   close();
 }
 

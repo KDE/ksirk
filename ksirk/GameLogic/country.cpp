@@ -29,7 +29,7 @@
 #include "GameLogic/onu.h"
 
 #include <KLocalizedString>
-#include <kdebug.h>
+#include "ksirk_debug.h"
 #include <qsvgrenderer.h>
 #include <QString>
 #include <QApplication>
@@ -68,12 +68,12 @@ Country::Country(GameAutomaton* game,
   m_highlighting_locked(false),
   m_nbArmiesItem(0)
 {
-//   kDebug() << m_name << ", " << this << endl;
+//   qCDebug(KSIRK_LOG) << m_name << ", " << this << endl;
 }
 
 Country::~Country()
 {
-//   kDebug() << "Deleting country " << m_name << ", " << this << endl;
+//   qCDebug(KSIRK_LOG) << "Deleting country " << m_name << ", " << this << endl;
   if (m_flag)
   {
     m_flag->hide();
@@ -85,7 +85,7 @@ Country::~Country()
 
 void Country::reset()
 {
-//   kDebug() << "Country::reset " << m_name << endl;
+//   qCDebug(KSIRK_LOG) << "Country::reset " << m_name << endl;
   clearAllSprites();
   m_belongsTo = 0;
   nbArmies(1);
@@ -101,7 +101,7 @@ void Country::reset()
 
 void Country::createArmiesSprites()
 {
-//   kDebug() << name() << nbArmies();
+//   qCDebug(KSIRK_LOG) << name() << nbArmies();
   BackGnd* bg = m_automaton->game()->backGnd();
   
   unsigned int armies = nbArmies();
@@ -109,7 +109,7 @@ void Country::createArmiesSprites()
   int i = 0;
   while (armies >= 10) // Ajout des sprites de canon
   {
-//     kDebug() << "  cannon" << i << armies;
+//     qCDebug(KSIRK_LOG) << "  cannon" << i << armies;
     CannonSprite *sprite = new CannonSprite(bg->onu()->zoom(), bg);
     sprite-> setDestination(NULL);             // Sprite immobile
     if (m_automaton->game()->currentWidgetType() == Ksirk::KGameWindow::Arena)
@@ -133,16 +133,16 @@ void Country::createArmiesSprites()
   i = 0;
   while (armies >= 5) // Adding the cavalryman  sprites
   {
-//     kDebug() << "  cavalry" << i << armies;
+//     qCDebug(KSIRK_LOG) << "  cavalry" << i << armies;
     CavalrySprite *sprite = new CavalrySprite(bg->onu()->zoom(), bg);
     sprite-> setDestination(0);             // Sprite immobile
     if (m_automaton->game()->currentWidgetType() == Ksirk::KGameWindow::Arena)
     {
-//       kDebug() << "arena";
+//       qCDebug(KSIRK_LOG) << "arena";
       sprite-> setPos(
         m_pointCavalry.x()*bg->onu()->zoom(),
         (m_pointCavalry.y()+(1-2*(i%2))*(Sprites::SkinSpritesData::single().intData("cavalry-height")+8)*((i+1)/2))*bg->onu()->zoom());
-//       kDebug() << "setPos done";
+//       qCDebug(KSIRK_LOG) << "setPos done";
       if (this->name() == m_automaton->game()->secondCountry()->name())
       {
         sprite->setLookLeft();
@@ -152,7 +152,7 @@ void Country::createArmiesSprites()
     {
       sprite-> setPos((m_pointCavalry.x()+5*i)*bg->onu()->zoom(),(m_pointCavalry.y()+5*i)*bg->onu()->zoom());
     }
-//     kDebug() << "appending";
+//     qCDebug(KSIRK_LOG) << "appending";
     m_spritesCavalry.append(sprite);
     i++;
     armies -= 5;
@@ -160,7 +160,7 @@ void Country::createArmiesSprites()
   i = 0;
   while (armies > 0) // Ajout des sprites de fantassin
   {
-//     kDebug() << "  infantry" << i << armies;
+//     qCDebug(KSIRK_LOG) << "  infantry" << i << armies;
     InfantrySprite *sprite = new InfantrySprite(bg->onu()->zoom(), bg);
     sprite-> setDestination(0);             // Sprite immobile
     if (m_automaton->game()->currentWidgetType() == Ksirk::KGameWindow::Arena)
@@ -182,14 +182,14 @@ void Country::createArmiesSprites()
     armies--;
   }
 
-//   kDebug() << "adding flag" << m_belongsTo ;
+//   qCDebug(KSIRK_LOG) << "adding flag" << m_belongsTo ;
   if (m_belongsTo)
   {
-//     kDebug() << m_belongsTo->flagFileName();
+//     qCDebug(KSIRK_LOG) << m_belongsTo->flagFileName();
     flag(m_belongsTo->flagFileName(), bg);
   }
 
-//   kDebug() << "adding nb armies text";
+//   qCDebug(KSIRK_LOG) << "adding nb armies text";
   if (m_nbArmiesItem == 0)
   {
     m_nbArmiesItem = new QGraphicsSimpleTextItem(QString::number(m_nbArmies),bg);
@@ -206,12 +206,12 @@ void Country::createArmiesSprites()
   {
     m_nbArmiesItem->show();
   }
-//   kDebug() << "Done";
+//   qCDebug(KSIRK_LOG) << "Done";
 }
 
 void Country::flag(const QString& theFlagFileName, BackGnd *backGnd)
 {
-//   kDebug() << "Country("<<m_name<<", "<<this<<")::flag flagFileName " << theFlagFileName << endl;
+//   qCDebug(KSIRK_LOG) << "Country("<<m_name<<", "<<this<<")::flag flagFileName " << theFlagFileName << endl;
 
   if (m_flag)
   {
@@ -232,24 +232,24 @@ bool Country::communicateWith(const Country* otherCountry) const
 {
   if (!otherCountry)
   {
-    kDebug() << "OUT otherCountry null Country::communicateWith" << endl;
+    qCDebug(KSIRK_LOG) << "OUT otherCountry null Country::communicateWith" << endl;
     return false;
   }
 
   // a country is considered to communicate with itself
   if (otherCountry == this) {return true;}
 
-//    kDebug() << "Country::communicateWith (" << name() << ", " << otherCountry-> name() << ")" << endl << flush;
+//    qCDebug(KSIRK_LOG) << "Country::communicateWith (" << name() << ", " << otherCountry-> name() << ")" << endl << flush;
 //   unsigned int nbNeighbours = neighbours().size();
   foreach (Country* neighbour, neighbours())
   {
     if (neighbour == otherCountry)
     {
-//            kDebug() << "OUT true Country::communicateWith" << endl << flush;
+//            qCDebug(KSIRK_LOG) << "OUT true Country::communicateWith" << endl << flush;
       return true;
     }
   }
-//    kDebug() << "OUT false Country::communicateWith" << endl << flush;
+//    qCDebug(KSIRK_LOG) << "OUT false Country::communicateWith" << endl << flush;
   return false;
 }
 
@@ -393,14 +393,14 @@ void Country::neighbours(const QList<Country*>& neighboursVect)
 /** No descriptions */
 QList< Country* >& Country::neighbours()
 {
-//    kDebug() << "Country::neighbours" << endl << flush;
+//    qCDebug(KSIRK_LOG) << "Country::neighbours" << endl << flush;
   return m_neighbours;
 }
 
 /** No descriptions */
 const QList< Country* >& Country::neighbours() const
 {
-//    kDebug() << "Country::neighbours const" << endl << flush;
+//    qCDebug(KSIRK_LOG) << "Country::neighbours const" << endl << flush;
   return m_neighbours;
 }
 
@@ -409,7 +409,7 @@ const QList< Country* >& Country::neighbours() const
  */
 void Country::clearAllSprites()
 {
-//   kDebug();
+//   qCDebug(KSIRK_LOG);
   m_spritesCannons.hideAndRemoveAll();
   m_spritesCavalry.hideAndRemoveAll();
   m_spritesInfantry.hideAndRemoveAll();
@@ -435,7 +435,7 @@ const QPointF& Country::pointFor(const AnimSprite* sprite)
   }
   else 
   {
-    kError() << "Unknown sprite type";
+    qCCritical(KSIRK_LOG) << "Unknown sprite type";
     exit(1);
   }
 }
@@ -467,7 +467,7 @@ void Country::saveXml(QTextStream& xmlStream)
 
 void Country::send(QDataStream& stream)
 {
-//   kDebug() << (m_belongsTo?m_belongsTo->name():"") << quint32(m_nbArmies);
+//   qCDebug(KSIRK_LOG) << (m_belongsTo?m_belongsTo->name():"") << quint32(m_nbArmies);
   stream << m_name << (m_belongsTo?m_belongsTo->name():"") << quint32(m_nbArmies);
 }
 
@@ -485,7 +485,7 @@ bool Country::hasAdjacentEnemy()
 
 void Country::highlight(const QColor& color, qreal opacity)
 {
-//   kDebug() << color;
+//   qCDebug(KSIRK_LOG) << color;
   if (m_highlighting_locked)
   {
     return;
@@ -495,26 +495,26 @@ void Country::highlight(const QColor& color, qreal opacity)
   ONU* onu = m_automaton->game()->theWorld();
   if (onu == 0)
   {
-    kWarning() << "onu is null" << endl;
+    qCWarning(KSIRK_LOG) << "onu is null" << endl;
     return;
   }
   QDomNode countryElement = onu->svgDom()->elementById(m_name);
   if (countryElement.isNull())
   {
-    kWarning() << "Got a null element" << endl;
+    qCWarning(KSIRK_LOG) << "Got a null element" << endl;
     return;
   }
-//   kDebug() <<"got country"<< endl;
+//   qCDebug(KSIRK_LOG) <<"got country"<< endl;
 
   onu->svgDom()->setCurrentNode(countryElement);
   onu->svgDom()->setStyleProperty("fill", color.name());
   onu->svgDom()->setStyleProperty("fill-opacity", QString::number(opacity));
 
-//   kDebug() <<"loading"<< endl;
+//   qCDebug(KSIRK_LOG) <<"loading"<< endl;
   QByteArray svg = onu->svgDom()->nodeToByteArray();
   m_renderer->load(svg);
 
-//   kDebug() <<"loaded"<< endl;
+//   qCDebug(KSIRK_LOG) <<"loaded"<< endl;
   m_highlighting = new QGraphicsSvgItem(m_automaton->game()->backGndWorld());
   m_highlighting->setSharedRenderer(m_renderer);
   m_highlighting->setElementId(m_name);
@@ -523,44 +523,44 @@ void Country::highlight(const QColor& color, qreal opacity)
       (m_anchorPoint.y()-m_highlighting->boundingRect().height()/2)*onu->zoom());
 
   m_highlighting->scale(onu->zoom(), onu->zoom());
-//   kDebug() << "done" << endl;
+//   qCDebug(KSIRK_LOG) << "done" << endl;
 }
 
 void Country::highlightAsAttacker()
 {
-//   kDebug();
+//   qCDebug(KSIRK_LOG);
   highlight(Qt::red, 0.6);
   m_highlighting_locked = true;
 }
 
 void Country::highlightAsDefender()
 {
-//   kDebug();
+//   qCDebug(KSIRK_LOG);
   highlight(Qt::yellow,0.6);
   m_highlighting_locked = true;
 }
 
 void Country::clearHighlighting()
 {
-//   kDebug() << m_highlighting_locked << (void*)m_highlighting;
+//   qCDebug(KSIRK_LOG) << m_highlighting_locked << (void*)m_highlighting;
   if (!m_highlighting_locked && m_highlighting!=0)
   {
     m_highlighting->hide();
     delete m_highlighting;
     m_highlighting = 0;
   }
-//   kDebug() << "done" << endl;
+//   qCDebug(KSIRK_LOG) << "done" << endl;
 }
 
 bool Country::isHighlightingLocked()
 {
-//   kDebug();
+//   qCDebug(KSIRK_LOG);
   return m_highlighting_locked;
 }
 
 void Country::releaseHighlightingLock()
 {
-//   kDebug();
+//   qCDebug(KSIRK_LOG);
   m_highlighting_locked=false;
 }
 
@@ -571,7 +571,7 @@ QDataStream& operator>>(QDataStream& stream, Country* country)
   quint32 nbArmies/*, nbAddedArmies*/;
   QString ownerName;
   stream >> ownerName >> nbArmies/* >> nbAddedArmies*/;
-//   kDebug() << ownerName << nbArmies/* << nbAddedArmies*/;
+//   qCDebug(KSIRK_LOG) << ownerName << nbArmies/* << nbAddedArmies*/;
   country->owner(country->automaton()->playerNamed(ownerName));
   country->nbArmies(nbArmies);
 //   country->nbAddedArmies(nbAddedArmies);
@@ -582,7 +582,7 @@ QDataStream& operator>>(QDataStream& stream, Country* country)
 
 void Country::copyForArena(Country* trueCountry)
 {
-//   kDebug() << trueCountry->name();
+//   qCDebug(KSIRK_LOG) << trueCountry->name();
   // remove existing elements
   clearAllSprites();
   if (m_flag)

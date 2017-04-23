@@ -28,7 +28,7 @@
 
 mainMenu::mainMenu(Ksirk::KGameWindow* game, QWidget* parent) : QWidget(parent)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   setupUi(this);
 
   // Load image

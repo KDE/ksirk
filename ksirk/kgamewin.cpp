@@ -74,7 +74,7 @@
 #include <kactioncollection.h>
 #include <kstandarddirs.h>
 #include <kmenubar.h>
-#include <KDebug>
+#include "ksirk_debug.h"
 #include <phonon/mediaobject.h>
 #include <QPushButton>
 #include <kgamepopupitem.h>
@@ -147,7 +147,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_presents(),
   m_newGameSetup(new NewGameSetup(m_automaton))
   {
-  kDebug() << "KGameWindow constructor begin";
+  qCDebug(KSIRK_LOG) << "KGameWindow constructor begin";
 
   statusBar()->addWidget(m_barFlag);
 
@@ -220,13 +220,13 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_bottomDock->setTitleBarWidget(titleChatWidget);
   addDockWidget(Qt::BottomDockWidgetArea, m_bottomDock); // master dockwidget
 
-//    kDebug() << "Before initActions";
+//    qCDebug(KSIRK_LOG) << "Before initActions";
   initActions();
 
-  kDebug() << "Setting up GUI";
+  qCDebug(KSIRK_LOG) << "Setting up GUI";
   setupGUI();
 
-  kDebug() << "Creating automaton";
+  qCDebug(KSIRK_LOG) << "Creating automaton";
   m_automaton->init(this);
 
   // create a central widget if it doesent' exists
@@ -244,7 +244,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   connect(m_newPlayerWidget,SIGNAL(cancel()),this,SLOT(slotNewPlayerCancel()));
   connect(m_newPlayerWidget,SIGNAL(previous()),this,SLOT(slotNewPlayerPrevious()));
   connect(m_newPlayerWidget,SIGNAL(cancel()),this,SLOT(slotNewPlayerCancel()));
-  kDebug() << "create the Jabber widget if it doesn't exist";
+  qCDebug(KSIRK_LOG) << "create the Jabber widget if it doesn't exist";
   m_jabberGameWidget = new KsirkJabberGameWidget(m_centralWidget);
   m_centralWidget->addWidget(m_mainMenu); // MAINMENU_INDEX 0
   m_centralWidget->addWidget(m_newGameDialog); // NEWGAME_INDEX 1
@@ -265,7 +265,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_bottomDock->hide();
   
   
-//    kDebug() << "Before initStatusBar";
+//    qCDebug(KSIRK_LOG) << "Before initStatusBar";
   initStatusBar();
   
   menuBar()-> show();
@@ -279,7 +279,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
 
   m_initialPresence = XMPP::Status ( "", "", 5, true );
 
-  kDebug() << "Connecting Jabber signals";
+  qCDebug(KSIRK_LOG) << "Connecting Jabber signals";
   QObject::connect ( m_jabberClient, SIGNAL (csDisconnected()), this, SLOT (slotCSDisconnected()) );
   QObject::connect ( m_jabberClient, SIGNAL (csError(int)), this, SLOT (slotCSError(int)) );
   QObject::connect ( m_jabberClient, SIGNAL (tlsWarning(QCA::TLS::IdentityResult,QCA::Validity)), this, SLOT (slotHandleTLSWarning(QCA::TLS::IdentityResult,QCA::Validity)) );
@@ -330,7 +330,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
 
 KGameWindow::~KGameWindow()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   m_dirs = 0;
   if (m_jabberClient != 0)
   {
@@ -383,7 +383,7 @@ void KGameWindow::initActions()
 
   // specific ksirk action
   QString imageFileName = m_dirs-> findResource("appdata", "jabber.png");
-  //   kDebug() << "Trying to load button image file: " << imageFileName;
+  //   qCDebug(KSIRK_LOG) << "Trying to load button image file: " << imageFileName;
   if (imageFileName.isNull())
   {
     KMessageBox::error(0, i18n("Cannot load button image %1<br>Program cannot continue",QString("jabber.png")), i18n("Error!"));
@@ -395,12 +395,12 @@ void KGameWindow::initActions()
   m_jabberAction->setShortcut(Qt::CTRL+Qt::Key_J);
   m_jabberAction->setStatusTip(i18n("Allow to connect to a KsirK Jabber Multi User Gaming Room to create new games or to join present games"));
   connect(m_jabberAction,SIGNAL(triggered(bool)),this,SLOT(slotJabberGame()));
-  kDebug() << "Adding action game_jabber";
+  qCDebug(KSIRK_LOG) << "Adding action game_jabber";
   actionCollection()->addAction("game_jabber", m_jabberAction);
   
   // specific ksirk action
   imageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_NEWNETGAME);
-  //   kDebug() << "Trying to load button image file: " << imageFileName;
+  //   qCDebug(KSIRK_LOG) << "Trying to load button image file: " << imageFileName;
   if (imageFileName.isNull())
   {
     KMessageBox::error(0, i18n("Cannot load button image %1<br>Program cannot continue",QString(CM_NEWNETGAME)), i18n("Error!"));
@@ -411,13 +411,13 @@ void KGameWindow::initActions()
   newSocketAction->setShortcut(Qt::CTRL+Qt::Key_T);
   newSocketAction->setStatusTip(i18n("Create a new standard TCP/IP network game"));
   connect(newSocketAction,SIGNAL(triggered(bool)),this,SLOT(slotNewSocketGame()));
-  kDebug() << "Adding action game_new_socket";
+  qCDebug(KSIRK_LOG) << "Adding action game_new_socket";
   actionCollection()->addAction("game_new_socket", newSocketAction);
   
                                      
   // specific ksirk action
   imageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_NEWNETGAME);
-  //   kDebug() << "Trying to load button image file: " << imageFileName;
+  //   qCDebug(KSIRK_LOG) << "Trying to load button image file: " << imageFileName;
   if (imageFileName.isNull())
   {
     KMessageBox::error(0, i18n("Cannot load button image %1<br>Program cannot continue",QString(CM_NEWNETGAME)), i18n("Error!"));
@@ -429,7 +429,7 @@ void KGameWindow::initActions()
   joinAction->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_J);
   joinAction->setStatusTip(i18n("Join a standard TCP/IP network game"));
   connect(joinAction,SIGNAL(triggered(bool)),this,SLOT(slotJoinNetworkGame()));
-   kDebug() << "Adding action game_join_socket";
+   qCDebug(KSIRK_LOG) << "Adding action game_join_socket";
   actionCollection()->addAction("game_join_socket", joinAction);
 
   m_goalAction = new QAction(i18n("Goal"), this);
@@ -439,7 +439,7 @@ void KGameWindow::initActions()
   m_goalAction->setStatusTip(i18n("Display the current player's goal"));
   connect(m_goalAction,SIGNAL(triggered(bool)),this,SLOT(slotShowGoal()));
   m_goalAction->setVisible(false);
-  kDebug() << "Adding action game_goal";
+  qCDebug(KSIRK_LOG) << "Adding action game_goal";
   actionCollection()->addAction("game_goal", m_goalAction);
   
   m_contextualHelpAction = new QAction(
@@ -481,7 +481,7 @@ void KGameWindow::initStatusBar()
 
 Country* KGameWindow::clickIn(const QPointF &pointf)
 {
-//   kDebug() << "KGameWindow::clickIn " << pointf;
+//   qCDebug(KSIRK_LOG) << "KGameWindow::clickIn " << pointf;
  /* if(isMyState(GameLogic::GameAutomaton::INIT) || m_theWorld-> countryAt( pointf )==0)
   {
     m_rightDock->hide();
@@ -491,7 +491,7 @@ Country* KGameWindow::clickIn(const QPointF &pointf)
 
 Player* KGameWindow::currentPlayer()
 {
-//   kDebug() << "KGameWindow::currentPlayer";
+//   qCDebug(KSIRK_LOG) << "KGameWindow::currentPlayer";
   Player* current = m_automaton->currentPlayer();
 
   return current;
@@ -499,7 +499,7 @@ Player* KGameWindow::currentPlayer()
 
 void KGameWindow::loadDices()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   
   m_dices[Blue] = QList<QPixmap>();
   m_dices[Red] = QList<QPixmap>();
@@ -519,7 +519,7 @@ void KGameWindow::loadDices()
 
 QPixmap KGameWindow::buildDice(const QString& id)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
 
   QSize size(32,32);
   QImage image(size, QImage::Format_ARGB32_Premultiplied);
@@ -542,7 +542,7 @@ QPixmap KGameWindow::getDice(DiceColor color, int num)
 
 void KGameWindow::newSkin(const QString& onuFileName)
 {
-  kDebug() << onuFileName;
+  qCDebug(KSIRK_LOG) << onuFileName;
   clear();
 
   m_animFighters->clear();
@@ -592,7 +592,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
   }
   // Bug 308527. Need to remove all goals on new game. Only goals for selected skin will be loaded.
   m_automaton->removeAllGoals();
-  kDebug() << "Got World definition file name: " <<  onuDefinitionFileName;
+  qCDebug(KSIRK_LOG) << "Got World definition file name: " <<  onuDefinitionFileName;
   m_theWorld = new ONU(m_automaton, onuDefinitionFileName);
   if (m_theWorld->skin().isEmpty())
   {
@@ -618,20 +618,20 @@ void KGameWindow::newSkin(const QString& onuFileName)
   //Creation of the arena background
   if (m_backGnd_arena != 0)
   {
-    kDebug() << "Before m_backGnd_arena delete";
+    qCDebug(KSIRK_LOG) << "Before m_backGnd_arena delete";
     delete m_backGnd_arena;
   }
   //Creation of the background
   if (m_backGnd_world != 0)
   {
-    kDebug() << "Before m_backGnd_world delete";
+    qCDebug(KSIRK_LOG) << "Before m_backGnd_world delete";
     delete m_backGnd_world;
   }
 
   // create the arena view
   if (m_scene_arena != 0)
   {
-    kDebug() << "Before m_scene_arena delete";
+    qCDebug(KSIRK_LOG) << "Before m_scene_arena delete";
     delete m_scene_arena;
   }
   m_scene_arena = new QGraphicsScene(0, 0, width, height,this);
@@ -649,12 +649,12 @@ void KGameWindow::newSkin(const QString& onuFileName)
   }
   if (m_scene_world != 0)
   {
-    kDebug() << "Before m_scene_world delete";
+    qCDebug(KSIRK_LOG) << "Before m_scene_world delete";
     delete m_scene_world;
   }
   m_scene_world = new QGraphicsScene(0, 0, width, height,this);
 
-  kDebug() << "create the world map view";
+  qCDebug(KSIRK_LOG) << "create the world map view";
   if (m_theWorld != 0)
   {
     m_frame = new DecoratedGameFrame(m_centralWidget, width, height, m_automaton);
@@ -678,7 +678,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
     m_arena->setCacheMode( QGraphicsView::CacheBackground );
   }
   
-  kDebug() << "put the menu, map and arena in the central widget";
+  qCDebug(KSIRK_LOG) << "put the menu, map and arena in the central widget";
   if (m_frame != 0)
   {
     m_centralWidget->addWidget(m_frame); // MAP_INDEX 6
@@ -696,9 +696,9 @@ void KGameWindow::newSkin(const QString& onuFileName)
   m_backGnd_world = new BackGnd(m_scene_world, m_theWorld);
 
 //   m_scene_world->setDoubleBuffering(true);
-  kDebug() << "Before initView";
+  qCDebug(KSIRK_LOG) << "Before initView";
   initView();
-  kDebug() <<"After m_backGnd new="<< m_backGnd_world;
+  qCDebug(KSIRK_LOG) <<"After m_backGnd new="<< m_backGnd_world;
   m_frame->setFocus();
 
   m_uparrow = new Sprites::ArrowSprite(Qt::UpArrow, m_backGnd_world);
@@ -729,7 +729,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
   m_rightarrow->setPos(pos);
   m_rightarrow->setActive(false);
   
-  kDebug() <<"End new skin";
+  qCDebug(KSIRK_LOG) <<"End new skin";
 }
 
 KRightDialog * KGameWindow::getRightDialog()
@@ -739,7 +739,7 @@ KRightDialog * KGameWindow::getRightDialog()
 
 void KGameWindow::initView()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   QString iconFileName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Images/soldierKneeling.png");
   if (iconFileName.isNull())
   {
@@ -778,7 +778,7 @@ void KGameWindow::initView()
 
   m_rightDialog = new KRightDialog(m_rightDock,theWorld(),this);
   m_rightDock->setWidget(m_rightDialog);
-  kDebug() << "hiding right dock";
+  qCDebug(KSIRK_LOG) << "hiding right dock";
   m_rightDock->hide();
   addDockWidget(Qt::RightDockWidgetArea, m_rightDock);
   m_frame->setFocus();
@@ -786,7 +786,7 @@ void KGameWindow::initView()
 
 bool KGameWindow::attackEnd()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   if (m_firstCountry==0 || m_secondCountry == 0)
   {
     return false;
@@ -801,7 +801,7 @@ bool KGameWindow::attackEnd()
   bool playerDeleted = false;
   bool res = false;
   QString mes = "";
-  kDebug() << "There is now " << m_secondCountry-> nbArmies() << " armies in " << m_secondCountry->name() << ".";
+  qCDebug(KSIRK_LOG) << "There is now " << m_secondCountry-> nbArmies() << " armies in " << m_secondCountry->name() << ".";
   if (m_secondCountry-> nbArmies() < 1)
   {
     QPixmap pm = currentPlayer()->getFlag()->image(0);
@@ -827,7 +827,7 @@ bool KGameWindow::attackEnd()
     {
       res = true;
     }
-    kDebug() << oldOwner-> name() << " now owns " << newOldOwnerNbCountries << " countries.";
+    qCDebug(KSIRK_LOG) << oldOwner-> name() << " now owns " << newOldOwnerNbCountries << " countries.";
     if (newOldOwnerNbCountries == 0)
     {
       QString oldOwnerId = oldOwner->name();
@@ -839,11 +839,11 @@ bool KGameWindow::attackEnd()
       {
         // Bug 315491.
         playerDeleted = true;
-        kDebug() << "Removing player " << oldOwner-> name();
+        qCDebug(KSIRK_LOG) << "Removing player " << oldOwner-> name();
         int i = m_automaton->playerList()->indexOf(oldOwner);
         if (i != -1)
           delete m_automaton->playerList()->takeAt(i);
-        kDebug() << "There is now " << m_automaton->playerList()->count() << " players";
+        qCDebug(KSIRK_LOG) << "There is now " << m_automaton->playerList()->count() << " players";
         m_automaton->setMinPlayers(m_automaton->playerList()->count());
         m_automaton->setGameStatus(KGame::Run);
       }
@@ -914,7 +914,7 @@ bool KGameWindow::attackEnd()
 
 void KGameWindow::winner(const Player* player)
 {
-  kDebug() << player->name();
+  qCDebug(KSIRK_LOG) << player->name();
   QString msg = i18n("%1 won!");
   if (!player->isVirtual())
   {
@@ -953,7 +953,7 @@ void KGameWindow::winner(const Player* player)
 void KGameWindow::resolveAttack()
 {
 
-//    kDebug() << "KGameWindow::resolveAttack";
+//    qCDebug(KSIRK_LOG) << "KGameWindow::resolveAttack";
 
   int A1 = -1; int A2 = -1; int A3 = -1; int AE = -1;
   int D1 = -1; int D2 = -1; int DE = -1;
@@ -1017,13 +1017,13 @@ void KGameWindow::resolveAttack()
       NKA++;
     }
   }
-//   kDebug() << "(" << A1<<", "<<A2<<", "<<A3<<") <-> ("<<D1<<", "<<D2<<")" ;
-//   kDebug() << "Attacker loses " << NKA<<" armies; Defender loses "<<NKD<<" armies." ;
+//   qCDebug(KSIRK_LOG) << "(" << A1<<", "<<A2<<", "<<A3<<") <-> ("<<D1<<", "<<D2<<")" ;
+//   qCDebug(KSIRK_LOG) << "Attacker loses " << NKA<<" armies; Defender loses "<<NKD<<" armies." ;
   
   QByteArray buffer3;
   QDataStream stream3(&buffer3, QIODevice::WriteOnly);
   stream3 << (quint32)A1 << (quint32)A2 << (quint32)A3 << (quint32)D1 << (quint32)D2 << (quint32)NKA << (quint32)NKD << (quint32)(secondOldNbArmies-NKD < 1);
-  kDebug() << "sending DisplayFightResult";
+  qCDebug(KSIRK_LOG) << "sending DisplayFightResult";
   m_automaton->sendMessage(buffer3,DisplayFightResult);
 
   QByteArray buffer2;
@@ -1034,8 +1034,8 @@ void KGameWindow::resolveAttack()
   else if (NKD != 0) stream2 << quint32(1);
   m_automaton->sendMessage(buffer2,AnimExplosion);
 
-  //kDebug()<< "A1:"<< A1<<", A2: " <<A2 <<"A3:" << A3;
-  //kDebug()<< "D1:"<< D1<<", D2: " <<D2;
+  //qCDebug(KSIRK_LOG)<< "A1:"<< A1<<", A2: " <<A2 <<"A3:" << A3;
+  //qCDebug(KSIRK_LOG)<< "D1:"<< D1<<", D2: " <<D2;
   // if arena is displayed, update the arena countries too
   if (currentWidgetType() == Arena) {
     arena()->countryAttack()->decrNbArmies(NKA);
@@ -1051,7 +1051,7 @@ void KGameWindow::resolveAttack()
   */
 bool KGameWindow::queryClose()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
 
   if ((m_automaton->state() == GameAutomaton::INIT) || (m_automaton->state() ==  GameAutomaton::INTERLUDE))
   {
@@ -1098,7 +1098,7 @@ bool KGameWindow::queryClose()
 
 bool KGameWindow::actionOpenGame()
 {
-  kDebug() << "KGameWindow::actionOpenGame";
+  qCDebug(KSIRK_LOG) << "KGameWindow::actionOpenGame";
 
   QString fileName = KFileDialog::getOpenFileName(KUrl(), "*.xml", this, i18n("KsirK - Load Game"));
   if (!fileName.isEmpty())
@@ -1106,13 +1106,13 @@ bool KGameWindow::actionOpenGame()
     m_fileName = fileName;
     m_automaton->setGameStatus(KGame::End);
     m_waitedPlayers.clear();
-    kDebug() << "KGameWindow::actionOpenGame loader";
+    qCDebug(KSIRK_LOG) << "KGameWindow::actionOpenGame loader";
     Ksirk::SaveLoad::GameXmlLoader loader(fileName, *this, m_waitedPlayers);
-    kDebug() << "KGameWindow::actionOpenGame loading done";
+    qCDebug(KSIRK_LOG) << "KGameWindow::actionOpenGame loading done";
     for (unsigned int i = 0; i < m_theWorld->getNbCountries(); i++)
     {
       Country* country = m_theWorld-> getCountries().at(i);
-      kDebug() << "Adding sprites to " << country->name();
+      qCDebug(KSIRK_LOG) << "Adding sprites to " << country->name();
       country-> createArmiesSprites();
       Player *player = country-> owner();
       if (player)
@@ -1129,7 +1129,7 @@ bool KGameWindow::actionOpenGame()
       m_automaton->sendMessage(buffer,StartGame);
       m_automaton->sendMessage(buffer,ClearHighlighting);
       m_frame->setFocus();
-      kDebug() << "KGameWindow::actionOpenGame false1";
+      qCDebug(KSIRK_LOG) << "KGameWindow::actionOpenGame false1";
       m_frame->setArenaOptionEnabled(true);
       reduceChat();
 
@@ -1140,27 +1140,27 @@ bool KGameWindow::actionOpenGame()
       KMessageParts messageParts;
       messageParts << I18N_NOOP("Waiting for the connection of %1 network players.") << QString::number(m_waitedPlayers.size());
       broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
-      kDebug() << "KGameWindow::actionOpenGame true";
+      qCDebug(KSIRK_LOG) << "KGameWindow::actionOpenGame true";
       unreduceChat();
       m_frame->setArenaOptionEnabled(false);
       return true;
     }
   }
-  kDebug() << "KGameWindow::actionOpenGame false2";
+  qCDebug(KSIRK_LOG) << "KGameWindow::actionOpenGame false2";
   return false;
 }
 
 void KGameWindow::displayRecyclingButtons()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   if (m_automaton->allLocalPlayersComputer())
   {
-//     kDebug() << "There is only computer local players";
+//     qCDebug(KSIRK_LOG) << "There is only computer local players";
     PlayersArray::iterator it = m_automaton->playerList()->begin();
     PlayersArray::iterator it_end = m_automaton->playerList()->end();
     for (; it != it_end; it++)
     {
-//       kDebug() << "Looking at player " << (*it)->name() 
+//       qCDebug(KSIRK_LOG) << "Looking at player " << (*it)->name() 
 //               << ". is AI  : " << ((Player*)(*it))->isAI() 
 //               << ". isRunning: " << ((static_cast<AIPlayer *>(*it))-> isRunning())
 //               << ". virtual: " << (*it)->isVirtual() 
@@ -1169,7 +1169,7 @@ void KGameWindow::displayRecyclingButtons()
            && (!(static_cast<AIPlayer *>(*it))-> isRunning())
         && (!(*it)->isVirtual()) ) 
       {
-//         kDebug() << "Starting computer player " << (*it)->name();
+//         qCDebug(KSIRK_LOG) << "Starting computer player " << (*it)->name();
         (static_cast<AIPlayer *>(*it))-> start();
         break;
       }
@@ -1184,7 +1184,7 @@ void KGameWindow::displayRecyclingButtons()
 
 void KGameWindow::clearHighlighting()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   if (m_firstCountry != 0)
   {
     m_firstCountry->releaseHighlightingLock();
@@ -1229,7 +1229,7 @@ QString KGameWindow::defenseLabel()
 
 void KGameWindow::createDefenseDialog()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   // Create Window Dialog
   m_defenseDialog = new QDialog ();
 
@@ -1285,7 +1285,7 @@ void KGameWindow::createDefenseDialog()
 
 void KGameWindow::displayDefenseWindow()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   if (m_defenseDialog == 0)
     createDefenseDialog();
   else
@@ -1295,7 +1295,7 @@ void KGameWindow::displayDefenseWindow()
 
 void KGameWindow::startLocalCurrentAI()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   if (currentPlayer() && currentPlayer()-> isAI()  && (!currentPlayer()->isVirtual()))
   {
     if (!(static_cast<AIPlayer *>(currentPlayer()))-> isRunning())
@@ -1305,7 +1305,7 @@ void KGameWindow::startLocalCurrentAI()
 
 void KGameWindow::setBarFlagButton(const Player* player)
 {
-//   kDebug() << "KGameWindow::setBarFlagButton";
+//   qCDebug(KSIRK_LOG) << "KGameWindow::setBarFlagButton";
 
   if (player == 0)
   {
@@ -1337,12 +1337,12 @@ void KGameWindow::setBarFlagButton(const Player* player)
 
 bool KGameWindow::finishSetupPlayers()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   if (!(m_automaton->playerList()->isEmpty()))
   {
     m_automaton->playerList()->clear();
     m_automaton->currentPlayer(0);
-    kDebug() << "  playerList size = " << m_automaton->playerList()->count();
+    qCDebug(KSIRK_LOG) << "  playerList size = " << m_automaton->playerList()->count();
   }
   theWorld()->reset();
   
@@ -1351,9 +1351,9 @@ bool KGameWindow::finishSetupPlayers()
   {
     m_automaton->playerList()->clear();
   }
-  kDebug() << "newPlayersNumber = " << m_newGameSetup->players().size();
+  qCDebug(KSIRK_LOG) << "newPlayersNumber = " << m_newGameSetup->players().size();
   unsigned int nbAvailArmies = (unsigned int)(m_theWorld->getNbCountries() * 2.5 / m_newGameSetup->players().size());
-  kDebug() << "nbAvailArmies = " << nbAvailArmies << " ; nb countries = " << m_theWorld->getNbCountries();
+  qCDebug(KSIRK_LOG) << "nbAvailArmies = " << nbAvailArmies << " ; nb countries = " << m_theWorld->getNbCountries();
   QString nomEntre = "";
   QString password = "";
   QString nationName = "";
@@ -1365,7 +1365,7 @@ bool KGameWindow::finishSetupPlayers()
   {
     m_frame->setArenaOptionEnabled(false);
     unreduceChat();
-    kDebug() << "In setupPlayers: networkGame";
+    qCDebug(KSIRK_LOG) << "In setupPlayers: networkGame";
     KMessageParts messageParts;
     messageParts << I18N_NOOP("Waiting for %1 players to connect")
       << QString::number(m_newGameSetup->nbNetworkPlayers());
@@ -1382,21 +1382,21 @@ bool KGameWindow::finishSetupPlayers()
 
 bool KGameWindow::setupOnePlayer()
 {
-  kDebug() << "KGameWindow::setupOnePlayer";
+  qCDebug(KSIRK_LOG) << "KGameWindow::setupOnePlayer";
   
-  kDebug() << "  building the list of available nations";
+  qCDebug(KSIRK_LOG) << "  building the list of available nations";
   QMap< QString, QString > nations = nationsList();
   PlayersArray::iterator it = m_automaton->playerList()->begin();
   PlayersArray::iterator it_end = m_automaton->playerList()->end();
   for (; it != it_end; it++)
   {
     Player* player = (Player*)(*it);
-    kDebug() << "    removing nation of player " << player-> name();
+    qCDebug(KSIRK_LOG) << "    removing nation of player " << player-> name();
     /// Don't understand why if using Player::getNation below, the method is
     /// not executed (get 0) but if using the same named myNation, it works...
     /// Ideas anybody ????
     Nationality* nation = player-> getNation();
-    kDebug() << "    got player nation " << nation;
+    qCDebug(KSIRK_LOG) << "    got player nation " << nation;
     QString nationName = nation->name();
     QMap<QString,QString>::iterator nationsIt;
     nationsIt = nations.find(nationName);
@@ -1405,9 +1405,9 @@ bool KGameWindow::setupOnePlayer()
       nations.erase(nationsIt);
     }
   }
-  kDebug() << "  number of available nations: " << nations.size();
+  qCDebug(KSIRK_LOG) << "  number of available nations: " << nations.size();
   unsigned int nbAvailArmies = (unsigned int)(m_theWorld->getNbCountries() * 2.5 / (m_automaton->nbPlayers()));
-  kDebug() << "KGameWindow::setupOnePlayer: nbAvailArmies = " << nbAvailArmies << " ; nb countries = " << m_theWorld->getNbCountries();
+  qCDebug(KSIRK_LOG) << "KGameWindow::setupOnePlayer: nbAvailArmies = " << nbAvailArmies << " ; nb countries = " << m_theWorld->getNbCountries();
   // Players names
   QString mes = "";
   QString nationName;
@@ -1423,12 +1423,12 @@ bool KGameWindow::setupOnePlayer()
 
 bool KGameWindow::setupOneWaitedPlayer()
 {
-  kDebug() << "KGameWindow::setupOneWaitedPlayer";
+  qCDebug(KSIRK_LOG) << "KGameWindow::setupOneWaitedPlayer";
   
   QString password;
   int result;
   KWaitedPlayerSetupDialog(m_automaton, password, result, this).exec();
-  kDebug() << "After KWaitedPlayerSetupDialog. number: " << result << ", password: " << password;
+  qCDebug(KSIRK_LOG) << "After KWaitedPlayerSetupDialog. number: " << result << ", password: " << password;
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   stream << (quint32)result << password;
@@ -1438,7 +1438,7 @@ bool KGameWindow::setupOneWaitedPlayer()
 
 bool KGameWindow::createWaitedPlayer(quint32 waitedPlayerId)
 {
-  kDebug() << "KGameWindow::createWaitedPlayer";
+  qCDebug(KSIRK_LOG) << "KGameWindow::createWaitedPlayer";
   
   PlayerMatrix& pm = m_waitedPlayers[waitedPlayerId];
   Player* player = addPlayer(pm.name, pm.nbAvailArmies,
@@ -1461,20 +1461,20 @@ bool KGameWindow::createWaitedPlayer(quint32 waitedPlayerId)
 
 void KGameWindow::distributeArmies()
 {
-  kDebug() << "KGameWindow::distributeArmies";
+  qCDebug(KSIRK_LOG) << "KGameWindow::distributeArmies";
   PlayersArray::iterator it = m_automaton->playerList()->begin();
   PlayersArray::iterator it_end = m_automaton->playerList()->end();
   for (; it != it_end; it++)
   {
     unsigned int nb = nbNewArmies(dynamic_cast<Player*>(*it));
-//     kDebug() << "    Giving " << nb << " armies to " << static_cast<Player*>(*it)->name();
+//     qCDebug(KSIRK_LOG) << "    Giving " << nb << " armies to " << static_cast<Player*>(*it)->name();
     dynamic_cast<Player*>(*it)-> setNbAvailArmies(nb, true);
   }
 }
 
 int KGameWindow::nbNewArmies(Player *player)
 {
-//    kDebug() << "KGameWindow::nbNewArmies for "  << player-> name();
+//    qCDebug(KSIRK_LOG) << "KGameWindow::nbNewArmies for "  << player-> name();
 
   unsigned int res = 0;
 
@@ -1489,7 +1489,7 @@ int KGameWindow::nbNewArmies(Player *player)
     Continent* currCont = *it;
     if (currCont-> owner() == player)
     {
-//            kDebug() << ">>>>>>>>>>> Adding bonus for "  << currCont-> name();
+//            qCDebug(KSIRK_LOG) << ">>>>>>>>>>> Adding bonus for "  << currCont-> name();
       res += currCont-> getBonus();
     }
   }
@@ -1515,10 +1515,10 @@ void KGameWindow::changeItem( const QString& text, int id, bool log )
 
 void KGameWindow::changeItem( KMessageParts& strings, int id, bool log )
 {
-//  kDebug() << "KGameWindow::changeItem(KMessageParts,int, log)" << strings.size() << id << log;
+//  qCDebug(KSIRK_LOG) << "KGameWindow::changeItem(KMessageParts,int, log)" << strings.size() << id << log;
   if (strings.begin() == strings.end())
   {
-//     kDebug() << "  nothing " << strings.size();
+//     qCDebug(KSIRK_LOG) << "  nothing " << strings.size();
     return;
   }
   bool arguing = false;
@@ -1530,45 +1530,45 @@ void KGameWindow::changeItem( KMessageParts& strings, int id, bool log )
   {
     if (!it.curStr().isEmpty())
     {
-//       kDebug() << "setting argument to: '" << it.curStr() << "'";
+//       qCDebug(KSIRK_LOG) << "setting argument to: '" << it.curStr() << "'";
       argument = ki18n(it.curStr().toUtf8().data());
     }
     else
     {
-//       kDebug() << "setting argument to empty";
+//       qCDebug(KSIRK_LOG) << "setting argument to empty";
       argument = KLocalizedString();
     }
     arguing = true;
   }
   else if (it.curIsPix())
   {
-//     kDebug() << "first item is pixmap";
+//     qCDebug(KSIRK_LOG) << "first item is pixmap";
     item << it.curPix();
   }
   
   it++;
   for (; it != it_end; it++)
   {
-//     kDebug() << "next item";
+//     qCDebug(KSIRK_LOG) << "next item";
     if (it.curIsStr())
     {
-//       kDebug() << "item is: '" << it.curStr() << "'";
+//       qCDebug(KSIRK_LOG) << "item is: '" << it.curStr() << "'";
       if (arguing)
       {
-//         kDebug() << "  substituting";
+//         qCDebug(KSIRK_LOG) << "  substituting";
         argument=argument.subs(it.curStr());
       }
       else
       {
-//         kDebug() << "  assigning new argument";
+//         qCDebug(KSIRK_LOG) << "  assigning new argument";
         if (!it.curStr().isEmpty())
         {
-//           kDebug() << "setting argument to: '" << it.curStr() << "'";
+//           qCDebug(KSIRK_LOG) << "setting argument to: '" << it.curStr() << "'";
           argument = ki18n(it.curStr().toUtf8().data());
         }
         else
         {
-//           kDebug() << "setting argument to empty";
+//           qCDebug(KSIRK_LOG) << "setting argument to empty";
           argument = KLocalizedString();
         }
         arguing = true;
@@ -1578,7 +1578,7 @@ void KGameWindow::changeItem( KMessageParts& strings, int id, bool log )
     {
       if (arguing)
       {
-//         kDebug() << "  storing";
+//         qCDebug(KSIRK_LOG) << "  storing";
         if (argument.isEmpty())
         {
           item << QString("");
@@ -1592,7 +1592,7 @@ void KGameWindow::changeItem( KMessageParts& strings, int id, bool log )
       arguing = false;
     }
   }
-//   kDebug() << "no more items";
+//   qCDebug(KSIRK_LOG) << "no more items";
   if (arguing)
   {
     if (argument.isEmpty())
@@ -1612,9 +1612,9 @@ void KGameWindow::changeItem( KMessageParts& strings, int id, bool log )
   {
     if (argument.toString() == "(I18N_EMPTY_MESSAGE)")
     {
-      kError() << "received a (I18N_EMPTY_MESSAGE)";
+      qCCritical(KSIRK_LOG) << "received a (I18N_EMPTY_MESSAGE)";
     }
-//     kDebug() << "  argument: " << argument.toString();
+//     qCDebug(KSIRK_LOG) << "  argument: " << argument.toString();
     //QT5 statusBar()-> changeItem(argument.toString(), id);
   }
 }
@@ -1627,7 +1627,7 @@ void KGameWindow::broadcastChangeItem(KMessageParts& strings, int id, bool log)
   }
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
-//   kDebug() << "Broadcasting change item, size=" << strings.size();
+//   qCDebug(KSIRK_LOG) << "Broadcasting change item, size=" << strings.size();
   stream << (quint32)id << (quint32)log << (quint32)strings.size();
   
   KMessageParts::iterator it, it_end;
@@ -1637,34 +1637,34 @@ void KGameWindow::broadcastChangeItem(KMessageParts& strings, int id, bool log)
 /*    // if first element is string, convert it to id 
     if (it.curIsStr())
     {
-      kDebug() << "Pushing first element: id "<<m_automaton->idForMsg(it.curStr())<<" for '" << it.curStr() << "'";
+      qCDebug(KSIRK_LOG) << "Pushing first element: id "<<m_automaton->idForMsg(it.curStr())<<" for '" << it.curStr() << "'";
       stream << (quint32)KMessageParts::StringId << m_automaton->idForMsg(it.curStr());
     }
     else if (it.curIsPix())
     {
-      kDebug() << "Pushing first element pix";
+      qCDebug(KSIRK_LOG) << "Pushing first element pix";
       stream << (quint32)KMessageParts::Pixmap << it.curPix();
     }
     else
     {
-      kError() << "Unsupported KMessageParts elem type ";
+      qCCritical(KSIRK_LOG) << "Unsupported KMessageParts elem type ";
     }
     it++;*/
     for (; it != it_end; it++)
     {
       if (it.curIsStr())
       {
-//         kDebug() << "Pushing string '" << it.curStr() << "'";
+//         qCDebug(KSIRK_LOG) << "Pushing string '" << it.curStr() << "'";
         stream << (quint32)KMessageParts::Text << it.curStr();
       }
       else if (it.curIsPix())
       {
-//         kDebug() << "Pushing pix";
+//         qCDebug(KSIRK_LOG) << "Pushing pix";
         stream << (quint32)KMessageParts::Pixmap << it.curPix();
       }
       else
       {
-        kError() << "Unsupported KMessageParts elem type ";
+        qCCritical(KSIRK_LOG) << "Unsupported KMessageParts elem type ";
       }
     }
   }
@@ -1674,7 +1674,7 @@ void KGameWindow::broadcastChangeItem(KMessageParts& strings, int id, bool log)
 
 void KGameWindow::enterEvent(QEvent* /*ev*/)
 {
-//   kDebug() << "KGameWindow::enterEvent()";
+//   qCDebug(KSIRK_LOG) << "KGameWindow::enterEvent()";
   // Restart the AIs threads
   if ( currentPlayer() )
     if ( (currentPlayer()-> isAI()) && (!currentPlayer()->isVirtual()) && ( !((static_cast<AIPlayer*>(currentPlayer()))-> isRunning())) )
@@ -1684,7 +1684,7 @@ void KGameWindow::enterEvent(QEvent* /*ev*/)
 
 void KGameWindow::leaveEvent(QEvent* /*ev*/)
 {
-//    kDebug() << "KGameWindow::leaveEvent()";
+//    qCDebug(KSIRK_LOG) << "KGameWindow::leaveEvent()";
     // Stops the AIs threads
   PlayersArray::iterator it = m_automaton->playerList()->begin();
   PlayersArray::iterator it_end = m_automaton->playerList()->end();
@@ -1714,7 +1714,7 @@ GameLogic::GameAutomaton::GameState KGameWindow::getState() const
 
 void KGameWindow::moveArmies(Country& src, Country& dest, unsigned int nb)
 {
-//    kDebug() << "KGameWindow::moveArmies()";
+//    qCDebug(KSIRK_LOG) << "KGameWindow::moveArmies()";
   if ((src.owner() == currentPlayer())
       && (dest.owner() == currentPlayer())
       && (src.communicateWith(&dest))
@@ -1747,7 +1747,7 @@ void KGameWindow::moveArmies(Country& src, Country& dest, unsigned int nb)
       slotInvade1();
     }
   }
-//    kDebug() << "OUT KGameWindow::moveArmies()";
+//    qCDebug(KSIRK_LOG) << "OUT KGameWindow::moveArmies()";
 }
 
 bool KGameWindow::isMoveValid(const QPointF& point)
@@ -1796,28 +1796,28 @@ bool KGameWindow::isFightValid(const QPointF& point)
   Country* secondCountry = clickIn(point); 
   if  ( ( m_firstCountry == 0 ) || ( secondCountry == 0 ) )
   {
-    kDebug() << "There is no country here!";
+    qCDebug(KSIRK_LOG) << "There is no country here!";
     messageParts << I18N_NOOP("There is no country here!");
   }
   else if  ( m_firstCountry->owner() != currentPlayer() )
   {
-    kDebug() << "You are not the owner of the first country: "<< m_firstCountry->name();
+    qCDebug(KSIRK_LOG) << "You are not the owner of the first country: "<< m_firstCountry->name();
     messageParts << I18N_NOOP("You are not the owner of the first country: %1!")
             << m_firstCountry->name();
   }
   else if ( secondCountry->owner() == currentPlayer() )
   {
-    kDebug() << "You are the owner of the second country: " << secondCountry->name();
+    qCDebug(KSIRK_LOG) << "You are the owner of the second country: " << secondCountry->name();
     messageParts << I18N_NOOP("You are the owner of the second country: %1!") << secondCountry->name();
   }
   else if (m_firstCountry == secondCountry)
   {
-    kDebug() <<"You are trying to move armies from "<<m_firstCountry->name()<<" to itself ";
+    qCDebug(KSIRK_LOG) <<"You are trying to move armies from "<<m_firstCountry->name()<<" to itself ";
     messageParts << I18N_NOOP("You are trying to move armies from %1 to itself!") << m_firstCountry->name();
   }
   else if (!m_firstCountry->communicateWith(secondCountry))
   {
-    kDebug() << secondCountry-> name() << "is not a neighbour of " << secondCountry-> name();
+    qCDebug(KSIRK_LOG) << secondCountry-> name() << "is not a neighbour of " << secondCountry-> name();
     messageParts 
       << I18N_NOOP("%1 is not a neighbour of %2!") 
       << secondCountry-> name() 
@@ -1825,7 +1825,7 @@ bool KGameWindow::isFightValid(const QPointF& point)
   }
   else 
   {
-    kDebug() << "Ready to fight !";
+    qCDebug(KSIRK_LOG) << "Ready to fight !";
     messageParts << I18N_NOOP("Ready to fight!");
     res = true;
   }
@@ -1846,7 +1846,7 @@ int KGameWindow::setCurrentPlayerToFirst()
       && !(static_cast<AIPlayer *>(currentPlayer())->isRunning()))
   {
           static_cast<AIPlayer *>(currentPlayer())->start();
-          kDebug() <<"setCurrentPlayerToFirst : step 3";
+          qCDebug(KSIRK_LOG) <<"setCurrentPlayerToFirst : step 3";
   }*/
   m_frame->setFocus();
   return 0;
@@ -1854,10 +1854,10 @@ int KGameWindow::setCurrentPlayerToFirst()
 
 int KGameWindow::setCurrentPlayerToNext(bool restartRunningAIs)
 {
-  kDebug() << restartRunningAIs;
+  qCDebug(KSIRK_LOG) << restartRunningAIs;
   m_rightDock->hide();
   int looped(0);
-//   kDebug() << "KGameWindow::setCurrentPlayerToNext()";
+//   qCDebug(KSIRK_LOG) << "KGameWindow::setCurrentPlayerToNext()";
   if ( currentPlayer() && ( currentPlayer()-> isAI())  && ( static_cast<AIPlayer *>(currentPlayer())-> isRunning() ) )
       static_cast<AIPlayer *>(currentPlayer())-> stop();
   
@@ -1898,7 +1898,7 @@ int KGameWindow::setCurrentPlayerToNext(bool restartRunningAIs)
     m_nextPlayerAction->setEnabled(true);
   }
   
-  kDebug() << "New current player is " << currentPlayer()->name() << " ; return value is " << looped;
+  qCDebug(KSIRK_LOG) << "New current player is " << currentPlayer()->name() << " ; return value is " << looped;
   return looped;
 }
 
@@ -1915,7 +1915,7 @@ bool KGameWindow::terminateAttackSequence()
 
 bool KGameWindow::attacker(const QPointF& point)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   Country* clickedCountry = clickIn(point);
   KMessageParts messageParts;
   if (clickedCountry == 0)
@@ -1967,7 +1967,7 @@ bool KGameWindow::attacker(const QPointF& point)
 
 unsigned int KGameWindow::attacked(const QPointF& point)
 {
-  kDebug() << point << (void*)m_firstCountry << (void*)m_secondCountry;
+  qCDebug(KSIRK_LOG) << point << (void*)m_firstCountry << (void*)m_secondCountry;
   //if (currentPlayer()-> isAI()) return 3;
   // executed on the admin side only
   if (!m_automaton->isAdmin()) return 3;
@@ -1977,18 +1977,18 @@ unsigned int KGameWindow::attacked(const QPointF& point)
   //m_secondCountry = secondCountry;
   KMessageParts messageParts;
 
-//   kDebug() << "2nd country is now set";
+//   qCDebug(KSIRK_LOG) << "2nd country is now set";
   if ( (m_firstCountry == NULL) || (m_secondCountry == NULL)
           || (m_firstCountry-> owner() != currentPlayer()) )
   {
-    kDebug() << ("Nothing to attack !");
+    qCDebug(KSIRK_LOG) << ("Nothing to attack !");
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     m_automaton->sendMessage(buffer,ClearHighlighting);
   }
   else if (!m_secondCountry-> owner())
   {
-    kDebug() << ("Invalid attacked country.");
+    qCDebug(KSIRK_LOG) << ("Invalid attacked country.");
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     m_automaton->sendMessage(buffer,ClearHighlighting);
@@ -2000,21 +2000,21 @@ unsigned int KGameWindow::attacked(const QPointF& point)
   }*/
   else if (m_firstCountry == m_secondCountry)
   {
-   kDebug() << ("You are trying to attack %1 from itself !") << m_firstCountry-> name();
+   qCDebug(KSIRK_LOG) << ("You are trying to attack %1 from itself !") << m_firstCountry-> name();
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     m_automaton->sendMessage(buffer,ClearHighlighting);
   }
   else if (!m_firstCountry-> communicateWith(m_secondCountry))
   {
-    kDebug() << ("%1 is not a neighbour of %2 !") << m_secondCountry-> name() << m_firstCountry-> name();
+    qCDebug(KSIRK_LOG) << ("%1 is not a neighbour of %2 !") << m_secondCountry-> name() << m_firstCountry-> name();
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     m_automaton->sendMessage(buffer,ClearHighlighting);
   }
   else if (m_firstCountry-> owner() == m_secondCountry-> owner())
   {
-    kDebug() << ("%1! You cannot attack %2! It is yours!") << currentPlayer()-> name()
+    qCDebug(KSIRK_LOG) << ("%1! You cannot attack %2! It is yours!") << currentPlayer()-> name()
            << m_secondCountry-> name();
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
@@ -2022,14 +2022,14 @@ unsigned int KGameWindow::attacked(const QPointF& point)
   }
   else if (m_firstCountry-> owner() != currentPlayer()) 
   {
-    kDebug() << ("%1 ! You are not the owner of %2!") << currentPlayer()-> name() << m_firstCountry-> name();
+    qCDebug(KSIRK_LOG) << ("%1 ! You are not the owner of %2!") << currentPlayer()-> name() << m_firstCountry-> name();
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     m_automaton->sendMessage(buffer,ClearHighlighting);
   }
   else if (m_firstCountry->nbArmies() - currentPlayer()->getNbAttack() < 1)
   {
-   kDebug()
+   qCDebug(KSIRK_LOG)
       << ("%1, you have to keep one army to defend %2.")
       << m_firstCountry->owner()-> name()
       << m_firstCountry-> name();
@@ -2051,7 +2051,7 @@ unsigned int KGameWindow::attacked(const QPointF& point)
     }
     m_automaton->sendMessage(buffer,SecondCountry);
 
-    kDebug()
+    qCDebug(KSIRK_LOG)
         << ("%1, with how many armies do you defend %2 ?")
         << m_secondCountry->owner()-> name()
         << m_secondCountry-> name();
@@ -2080,9 +2080,9 @@ unsigned int KGameWindow::attacked(const QPointF& point)
       << m_secondCountry-> name();
     res = 2;
   }
-  kDebug() << "will change item";
+  qCDebug(KSIRK_LOG) << "will change item";
   broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
-  kDebug() << "change item broadcasted; returning " << res;
+  qCDebug(KSIRK_LOG) << "change item broadcasted; returning " << res;
   return res;
 }
 
@@ -2118,20 +2118,20 @@ bool KGameWindow::secondCountryAt(const QPointF& point)
 
 bool KGameWindow::playerPutsArmy(const QPointF& point, bool removable)
 {
-  kDebug() << removable;
+  qCDebug(KSIRK_LOG) << removable;
   Country* clickedCountry = clickIn(point);
 
   if (clickedCountry)
   {
-    kDebug() << "clickedCountry name=" << clickedCountry->name() ;
-    kDebug() << "clickedCountry owner=" << clickedCountry-> owner()->name();
-    kDebug() << "currentPlayer=" << currentPlayer()->name();
+    qCDebug(KSIRK_LOG) << "clickedCountry name=" << clickedCountry->name() ;
+    qCDebug(KSIRK_LOG) << "clickedCountry owner=" << clickedCountry-> owner()->name();
+    qCDebug(KSIRK_LOG) << "currentPlayer=" << currentPlayer()->name();
     unsigned int nbAvailArmies = currentPlayer()->getNbAvailArmies();
-    kDebug() << "nbAvailArmies=" << nbAvailArmies;
+    qCDebug(KSIRK_LOG) << "nbAvailArmies=" << nbAvailArmies;
     if (clickedCountry->owner() == currentPlayer() &&  nbAvailArmies > 0)
     {
       nbAvailArmies--;
-      kDebug() << "owner new available armies=" << nbAvailArmies;
+      qCDebug(KSIRK_LOG) << "owner new available armies=" << nbAvailArmies;
       currentPlayer()->putArmiesInto(1, theWorld()->indexOfCountry(clickedCountry));
       clickedCountry-> incrNbArmies();
       clickedCountry-> createArmiesSprites();
@@ -2158,16 +2158,16 @@ bool KGameWindow::playerPutsArmy(const QPointF& point, bool removable)
 bool KGameWindow::playerPutsInitialArmy(const QPointF& point)
 {
   {
-    kDebug() << point;
+    qCDebug(KSIRK_LOG) << point;
     Country* clickedCountry = clickIn(point);
     
     if ( (clickedCountry) )
     {
-      kDebug() << "clickedCountry name=" << clickedCountry->name() ;
-      kDebug() << "clickedCountry owner=" << clickedCountry-> owner()->name();
-      kDebug() << "clickedCountry had armies=" << clickedCountry-> nbArmies();
-      kDebug() << "currentPlayer=" << currentPlayer()->name();
-      kDebug() << "nbAvailArmies=" << currentPlayer()->getNbAvailArmies();
+      qCDebug(KSIRK_LOG) << "clickedCountry name=" << clickedCountry->name() ;
+      qCDebug(KSIRK_LOG) << "clickedCountry owner=" << clickedCountry-> owner()->name();
+      qCDebug(KSIRK_LOG) << "clickedCountry had armies=" << clickedCountry-> nbArmies();
+      qCDebug(KSIRK_LOG) << "currentPlayer=" << currentPlayer()->name();
+      qCDebug(KSIRK_LOG) << "nbAvailArmies=" << currentPlayer()->getNbAvailArmies();
       
       if (
            (clickedCountry-> owner() == currentPlayer()) &&
@@ -2176,7 +2176,7 @@ bool KGameWindow::playerPutsInitialArmy(const QPointF& point)
         unsigned int currentAvailArmiesNumber = ((GameLogic::Player*)currentPlayer())-> getNbAvailArmies() - 1;
         bool last = (currentAvailArmiesNumber == 0);
         currentPlayer()->putArmiesInto(1, theWorld()->indexOfCountry(clickedCountry));
-        kDebug() << "owner new available armies=" << currentAvailArmiesNumber;
+        qCDebug(KSIRK_LOG) << "owner new available armies=" << currentAvailArmiesNumber;
         clickedCountry-> incrNbArmies();
         clickedCountry-> createArmiesSprites();
 
@@ -2215,7 +2215,7 @@ bool KGameWindow::playerPutsInitialArmy(const QPointF& point)
               QDataStream stream2(&buffer2, QIODevice::WriteOnly);
               stream2 << ((GameLogic::Player*)(*it))->name();
               stream2 << (quint32) ((GameLogic::Player*)(*it))->getNbAvailArmies();
-              kDebug() << "sending DisplayRecycleDetails "
+              qCDebug(KSIRK_LOG) << "sending DisplayRecycleDetails "
                 << ((Player*)(*it))->name() << (quint32) ((GameLogic::Player*)(*it))->getNbAvailArmies()
                 << " at " << __FILE__ << ", line " << __LINE__;
               m_automaton->sendMessage(buffer2,DisplayRecycleDetails);
@@ -2247,17 +2247,17 @@ bool KGameWindow::playerPutsInitialArmy(const QPointF& point)
 
 bool KGameWindow::playerRemovesArmy(const QPointF& point)
 {
-  kDebug() << point;
+  qCDebug(KSIRK_LOG) << point;
   
   Country *clickedCountry = clickIn(point);
-  kDebug() << "  currentPlayer=" << currentPlayer()->name();
+  qCDebug(KSIRK_LOG) << "  currentPlayer=" << currentPlayer()->name();
   if (clickedCountry == 0)
   {
     return false;
   }
-  kDebug() << "  owner=" << clickedCountry-> owner()->name();
-  kDebug() << "  nbArmies=" << clickedCountry->nbArmies();
-  kDebug() << "  canRemoveArmiesFrom=" << clickedCountry-> owner()->canRemoveArmiesFrom(1, theWorld()->indexOfCountry(clickedCountry) );
+  qCDebug(KSIRK_LOG) << "  owner=" << clickedCountry-> owner()->name();
+  qCDebug(KSIRK_LOG) << "  nbArmies=" << clickedCountry->nbArmies();
+  qCDebug(KSIRK_LOG) << "  canRemoveArmiesFrom=" << clickedCountry-> owner()->canRemoveArmiesFrom(1, theWorld()->indexOfCountry(clickedCountry) );
   if ( clickedCountry
       && ( clickedCountry-> owner() == currentPlayer() )
       && ( clickedCountry-> nbArmies() > 1)
@@ -2289,7 +2289,7 @@ bool KGameWindow::playerRemovesArmy(const QPointF& point)
   */
 void KGameWindow::initRecycling()
 {
-  kDebug() << "Initiating recycling";
+  qCDebug(KSIRK_LOG) << "Initiating recycling";
   m_nextPlayerAction->setEnabled(false);
 
   setCurrentPlayerToFirst();
@@ -2317,11 +2317,11 @@ void KGameWindow::clear()
 
 bool KGameWindow::nextPlayerRecycling()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   m_nextPlayerAction->setEnabled(false);
   if ( currentPlayer() && currentPlayer()-> getNbAvailArmies() > 0)
   {
-    kDebug() << "You must distribute all your armies";
+    qCDebug(KSIRK_LOG) << "You must distribute all your armies";
     if (!currentPlayer()->isVirtual() && !currentPlayer()->isAI())
     {
       KMessageBox::sorry(0, i18n("You must distribute\nall your armies"), i18n("KsirK"));
@@ -2353,7 +2353,7 @@ bool KGameWindow::nextPlayerRecycling()
   */
 bool KGameWindow::nextPlayerNormal()
 {
-  kDebug() << " (current is" << currentPlayer()->name()<<")";
+  qCDebug(KSIRK_LOG) << " (current is" << currentPlayer()->name()<<")";
   setCurrentPlayerToNext();
   distributeArmies();
 
@@ -2369,7 +2369,7 @@ bool KGameWindow::nextPlayerNormal()
   QDataStream stream3(&buffer3, QIODevice::WriteOnly);
   stream3 << currentPlayer()-> name();
   stream3 << (quint32)nbNewArmies(currentPlayer());
-  kDebug() << "sending DisplayRecycleDetails "
+  qCDebug(KSIRK_LOG) << "sending DisplayRecycleDetails "
       << currentPlayer()->name() << nbNewArmies(currentPlayer())
       << " at " << __FILE__ << ", line " << __LINE__;
   m_automaton->sendMessage(buffer3,DisplayRecycleDetails);
@@ -2378,7 +2378,7 @@ bool KGameWindow::nextPlayerNormal()
 
 void KGameWindow::centerOnFight()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
 
   qreal aj=m_rightDialog->width();    //get the width of the right widget
   qreal ay=m_chatDlg->height();      //get the height of the bottom widget
@@ -2386,7 +2386,7 @@ void KGameWindow::centerOnFight()
 //Larg
   if (m_firstCountry==0 || m_secondCountry==0)
   {
-    kError() << "countries should not be null ("<<(void*)m_firstCountry<<","<<(void*)m_secondCountry<<") at "<<__FILE__<<", line "<<__LINE__;
+    qCCritical(KSIRK_LOG) << "countries should not be null ("<<(void*)m_firstCountry<<","<<(void*)m_secondCountry<<") at "<<__FILE__<<", line "<<__LINE__;
     return;
   }
   qreal larg=((m_secondCountry->centralPoint().x())-(m_firstCountry->centralPoint().x()));
@@ -2453,7 +2453,7 @@ void KGameWindow::attack(unsigned int nb)
 
 void KGameWindow::defense(unsigned int nb)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
 
   if (!m_firstCountry) // anything left to do?
      return;
@@ -2515,18 +2515,18 @@ bool KGameWindow::invade(unsigned int nb )
 {
   if (m_firstCountry==0 || m_secondCountry==0)
   {
-    kDebug() << "invade("<<nb<<") returns " << false;
+    qCDebug(KSIRK_LOG) << "invade("<<nb<<") returns " << false;
     return false;
   }
   bool res = initArmiesMovement(nb, m_firstCountry, m_secondCountry);
-  kDebug() << "invade("<<nb<<") returns " << res;
+  qCDebug(KSIRK_LOG) << "invade("<<nb<<") returns " << res;
   QPoint point;
   return res;
 }
 
 AnimSprite* KGameWindow::simultaneousAttack(int nb, FightType state)
 {
-  kDebug() << nb << state << relativePosInArenaAttack << relativePosInArenaDefense;
+  qCDebug(KSIRK_LOG) << nb << state << relativePosInArenaAttack << relativePosInArenaDefense;
   AnimSprite* res;
 
   if (state == Attack)
@@ -2535,9 +2535,9 @@ AnimSprite* KGameWindow::simultaneousAttack(int nb, FightType state)
     QPointF pointDefenseur(0,0);
     determinePointArriveeForArena(relativePosInArenaAttack, pointAttaquant,pointDefenseur);
 
-    kDebug() << "****point att****" << pointAttaquant;
+    qCDebug(KSIRK_LOG) << "****point att****" << pointAttaquant;
 
-    kDebug() << "****SIMULTANEOUS ATTACK****" << pointAttaquant;
+    qCDebug(KSIRK_LOG) << "****SIMULTANEOUS ATTACK****" << pointAttaquant;
     res = initArmiesMultipleCombat(nb, firstCountry(), secondCountry(), pointAttaquant);
 
     relativePosInArenaAttack++;
@@ -2549,14 +2549,14 @@ AnimSprite* KGameWindow::simultaneousAttack(int nb, FightType state)
     determinePointArriveeForArena(/*secondCountry(), firstCountry(),*/
       relativePosInArenaDefense, pointDefenseur, pointAttaquant);
 
-    kDebug() << "****point def****" << pointAttaquant;
+    qCDebug(KSIRK_LOG) << "****point def****" << pointAttaquant;
 
-    kDebug() << "****SIMULTANEOUS DEFENSE****" << pointDefenseur;
+    qCDebug(KSIRK_LOG) << "****SIMULTANEOUS DEFENSE****" << pointDefenseur;
     res = initArmiesMultipleCombat(nb, secondCountry(), secondCountry(), pointDefenseur);
 
     relativePosInArenaDefense++;
   }
-  kDebug() << (void*)res;
+  qCDebug(KSIRK_LOG) << (void*)res;
   return res;
 }
 
@@ -2572,13 +2572,13 @@ bool KGameWindow::retreat(unsigned int nb)
   {
     res = false;
   }
-  kDebug() << "retreat("<<nb<<") returns " << res;
+  qCDebug(KSIRK_LOG) << "retreat("<<nb<<") returns " << res;
   return res;
 }
 
 void KGameWindow::invasionFinished()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   clearHighlighting();
  //KMessageParts messageParts;
 
@@ -2604,7 +2604,7 @@ void KGameWindow::shiftFinished()
 
 void KGameWindow::cancelAction()
 {
-  kDebug() << "KGameWindow::cancelAction";
+  qCDebug(KSIRK_LOG) << "KGameWindow::cancelAction";
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   stream << "";
@@ -2646,13 +2646,13 @@ void KGameWindow::cancelShiftSource()
 
 bool KGameWindow::actionNewGame(GameAutomaton::NetworkGameType socket)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   if  ( ( m_automaton->playerList()->count() == 0 ) ||
   ( isMyState(GameLogic::GameAutomaton::GAME_OVER)  ) ||
         (KMessageBox::warningContinueCancel(this,i18n("Do you really want to end your current game and start a new one?"),i18n("New game confirmation"),KStandardGuiItem::yes()) == KMessageBox::Continue ) )
 
   {
-    kDebug() << "valid";
+    qCDebug(KSIRK_LOG) << "valid";
     m_automaton->setGameStatus(KGame::End);
     m_reinitializingGame = true;
     m_automaton->removeAllPlayers();
@@ -2729,7 +2729,7 @@ Player* KGameWindow::addPlayer(const QString& playerName,
       unsigned int nbAttack,
       unsigned int nbDefense)
 {
-  kDebug() << "Adding player (AI: " << isAI << ")";
+  qCDebug(KSIRK_LOG) << "Adding player (AI: " << isAI << ")";
   Player* p = dynamic_cast<Player*>(m_automaton->createPlayer(isAI?2:1,0,false)); 
   if (p)
   {
@@ -2746,7 +2746,7 @@ Player* KGameWindow::addPlayer(const QString& playerName,
     p->setPassword(password);
     if (!m_automaton->addPlayer(p))
     {
-      kDebug() << p->name() << "NOT added!";
+      qCDebug(KSIRK_LOG) << p->name() << "NOT added!";
       p = 0; // freed - weired API
     }
   }
@@ -2761,12 +2761,12 @@ QMap< QString, QString > KGameWindow::nationsList()
     return res;
   }
   QList<Nationality*>& nationsList = m_theWorld->getNationalities();
-  kDebug() << "There is " << nationsList.size() << " nations";
+  qCDebug(KSIRK_LOG) << "There is " << nationsList.size() << " nations";
   QList<Nationality*>::iterator nationsIt = nationsList.begin();
   for (; nationsIt != nationsList.end(); nationsIt++ ) 
   {
     Nationality* nation = *nationsIt;
-    kDebug() << "Nation '" << nation->name() << "' = " << nation;
+    qCDebug(KSIRK_LOG) << "Nation '" << nation->name() << "' = " << nation;
     res.insert(nation->name(),nation->flagFileName());
   } 
   return res;
@@ -2777,7 +2777,7 @@ bool KGameWindow::isLastPlayer(const Player& player)
 {
   if (m_automaton->playerList()->begin() == m_automaton->playerList()->end())
   {
-    kError() << "No player ; should not be able to call isLastPlayer !";
+    qCCritical(KSIRK_LOG) << "No player ; should not be able to call isLastPlayer !";
     exit(1);
   }
   PlayersArray::iterator it = m_automaton->playerList()->end();
@@ -2788,7 +2788,7 @@ bool KGameWindow::isLastPlayer(const Player& player)
 
 void KGameWindow::actionRecycling()
 {
-  kDebug() << "KGameWindow::actionRecycling";
+  qCDebug(KSIRK_LOG) << "KGameWindow::actionRecycling";
   setCurrentPlayerToFirst();
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
@@ -2797,7 +2797,7 @@ void KGameWindow::actionRecycling()
   QDataStream stream2(&buffer2, QIODevice::WriteOnly);
   stream2 << currentPlayer()->name();
   stream2 << (quint32)0;
-  kDebug() << "sending DisplayRecycleDetails "
+  qCDebug(KSIRK_LOG) << "sending DisplayRecycleDetails "
     << currentPlayer()->name() << 0
     << " at " << __FILE__ << ", line " << __LINE__;
   m_automaton->sendMessage(buffer2,DisplayRecycleDetails);
@@ -2807,7 +2807,7 @@ void KGameWindow::actionRecycling()
 
 void KGameWindow::actionRecyclingFinished()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   getRightDialog()->close();
   if (m_automaton->isAdmin())
   {
@@ -2825,7 +2825,7 @@ void KGameWindow::actionRecyclingFinished()
     QDataStream stream3(&buffer3, QIODevice::WriteOnly);
     stream3 << currentPlayer()-> name();
     stream3 << (quint32)nbNewArmies(currentPlayer());
-    kDebug() << "sending DisplayRecycleDetails "
+    qCDebug(KSIRK_LOG) << "sending DisplayRecycleDetails "
         << currentPlayer()->name() << nbNewArmies(currentPlayer())
         << " at " << __FILE__ << ", line " << __LINE__;
     m_automaton->sendMessage(buffer3,DisplayRecycleDetails);
@@ -2835,7 +2835,7 @@ void KGameWindow::actionRecyclingFinished()
 
 void KGameWindow::finishMoves()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   m_animFighters->moveAllToDestinationNow();
 }
 
@@ -2923,13 +2923,13 @@ void KGameWindow::explain()
 
 void KGameWindow::showMessage(const QString& message, quint32 delay, MessageShowingType forcing)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   QString lmessage = message + "<br><a href=\"dontshowagain\">"+i18n("Don't show messages anymore") + "</a>";
   if(KsirkSettings::helpEnabled() || forcing == ForceShowing)
   {
     if (m_message == 0)
     {
-      kDebug() << "Creating KGamePopupItem";
+      qCDebug(KSIRK_LOG) << "Creating KGamePopupItem";
       m_message  = new KGamePopupItem();
       connect(m_message,SIGNAL(linkActivated(QString)),this,SLOT(slotDisableHelp(QString)));
       m_scene_world->addItem(m_message);
@@ -2948,7 +2948,7 @@ void KGameWindow::showMessage(const QString& message, quint32 delay, MessageShow
 
 void KGameWindow::firstCountry(GameLogic::Country* country)
 {
-  kDebug() << (void*)country;
+  qCDebug(KSIRK_LOG) << (void*)country;
   if (m_firstCountry != 0)
   {
     m_firstCountry->releaseHighlightingLock();
@@ -2959,7 +2959,7 @@ void KGameWindow::firstCountry(GameLogic::Country* country)
   {
     return;
   }
-  kDebug() << country->name();
+  qCDebug(KSIRK_LOG) << country->name();
   country->highlightAsAttacker();
 }
 
@@ -2974,7 +2974,7 @@ void KGameWindow::secondCountry(GameLogic::Country* country)
   {
     return;
   }
-  kDebug() << country->name();
+  qCDebug(KSIRK_LOG) << country->name();
   country->highlightAsDefender();
 }
 
@@ -2999,21 +2999,21 @@ GameLogic::Country* KGameWindow::secondCountry()
 
 void KGameWindow::showArena()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   if (m_currentDisplayedWidget != Arena)
   {
     // synchronize the arena countries
     m_currentDisplayedWidget = Arena;
     m_arena->initFightArena(m_firstCountry,m_secondCountry,m_backGnd_arena);
   }
-  kDebug() << "before setCurrentIndex";
+  qCDebug(KSIRK_LOG) << "before setCurrentIndex";
   m_centralWidget->setCurrentIndex(ARENA_INDEX);
 }
 
 
 void KGameWindow::showMap()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   m_centralWidget->setCurrentIndex(MAP_INDEX);
   m_currentDisplayedWidget = Map;
   statusBar()->show();
@@ -3023,7 +3023,7 @@ void KGameWindow::showMap()
 
 void KGameWindow::showMainMenu()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   m_centralWidget->setCurrentIndex(MAINMENU_INDEX);
   m_currentDisplayedWidget = MainMenu;
 }
@@ -3081,7 +3081,7 @@ bool KGameWindow::isArena()
 
 void KGameWindow::reduceChat()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   m_chatIsReduced = true;
 
   m_lastWidthChat = m_bottomDock->width();
@@ -3095,7 +3095,7 @@ void KGameWindow::reduceChat()
 
 void KGameWindow::unreduceChat()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   m_chatIsReduced = false;
 
   // restore the chat
@@ -3109,19 +3109,19 @@ void KGameWindow::unreduceChat()
 
 void KGameWindow::setNextPlayerActionEnabled(bool value)
 {
-  kDebug() << value;
+  qCDebug(KSIRK_LOG) << value;
   m_nextPlayerAction->setEnabled(value);
 }
 
 void KGameWindow::setSaveGameActionEnabled(bool value)
 {
-  kDebug() << value;
+  qCDebug(KSIRK_LOG) << value;
   m_saveGameAction->setEnabled(value);
 }
 
 void KGameWindow::setContextualHelpActionEnabled(GameLogic::GameAutomaton::GameState gameState, bool isPlayerAI)
 {
-  kDebug() << isPlayerAI << gameState;
+  qCDebug(KSIRK_LOG) << isPlayerAI << gameState;
   bool enabled = (gameState == GameLogic::GameAutomaton::WAIT || gameState == GameLogic::GameAutomaton::NEWARMIES || gameState == GameLogic::GameAutomaton::INTERLUDE) &&
                  !isPlayerAI &&
                  KsirkSettings::helpEnabled();
@@ -3132,7 +3132,7 @@ void KGameWindow::setupPopupMessage()
 {
   if (m_message == 0)
   {
-    kDebug();
+    qCDebug(KSIRK_LOG);
     m_message  = new KGamePopupItem();
     connect(m_message,SIGNAL(linkActivated(QString)),this,SLOT(slotDisableHelp(QString)));
     m_scene_world->addItem(m_message);
@@ -3145,7 +3145,7 @@ void KGameWindow::setupPopupMessage()
 
 bool KGameWindow::newGameDialog(const QString& skin, GameAutomaton::NetworkGameType netGameType)
 {
-  kDebug() << "state is" << m_automaton->stateName();
+  qCDebug(KSIRK_LOG) << "state is" << m_automaton->stateName();
   m_automaton->setGameStatus( KGame::Pause );
   m_stateBeforeNewGame = m_automaton->state();
   m_automaton->state(GameAutomaton::STARTING_GAME);
@@ -3164,7 +3164,7 @@ bool KGameWindow::newGameDialog(const QString& skin, GameAutomaton::NetworkGameT
 /* Set presence (usually called by dialog widget). */
 void KGameWindow::setPresence ( const XMPP::Status &status )
 {
-  kDebug() << "Status: " << status.show () << ", Reason: " << status.status ();
+  qCDebug(KSIRK_LOG) << "Status: " << status.show () << ", Reason: " << status.status ();
   
   // fetch input status
   XMPP::Status newStatus = status;
@@ -3200,7 +3200,7 @@ void KGameWindow::setPresence ( const XMPP::Status &status )
     */
     if (true/*isConnected()*/)
     {
-      kDebug() << "Sending new presence to the server.";
+      qCDebug(KSIRK_LOG) << "Sending new presence to the server.";
       
       XMPP::JT_Presence * task = new XMPP::JT_Presence ( m_jabberClient->rootTask ());
       
@@ -3209,7 +3209,7 @@ void KGameWindow::setPresence ( const XMPP::Status &status )
     }
     else
     {
-      kDebug() << "We were not connected, presence update aborted.";
+      qCDebug(KSIRK_LOG) << "We were not connected, presence update aborted.";
     }
   }
   
@@ -3224,19 +3224,19 @@ void KGameWindow::askForJabberGames()
     message.setId(QUuid::createUuid().toString().remove('{').remove('}').remove('-'));
     QString body("Who propose online KsirK games here?");
     message.setBody(body);
-    kDebug() << "Sending message: <<" << body << ">> to" << (m_groupchatRoom+'@'+m_groupchatHost);
+    qCDebug(KSIRK_LOG) << "Sending message: <<" << body << ">> to" << (m_groupchatRoom+'@'+m_groupchatHost);
     m_jabberClient->sendMessage(message);
   }
 }
 
 void KGameWindow::sendGameInfoToJabber()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   if (m_jabberClient
     && m_jabberClient->isConnected()
     && m_automaton->startingGame())
   {
-    kDebug() << "Sending 'I'm starting a game with ...'";
+    qCDebug(KSIRK_LOG) << "Sending 'I'm starting a game with ...'";
     XMPP::Message message(QString(m_groupchatRoom+'@'+m_groupchatHost));
     message.setType("groupchat");
     message.setId(QUuid::createUuid().toString().remove('{').remove('}').remove('-'));
@@ -3244,27 +3244,27 @@ void KGameWindow::sendGameInfoToJabber()
     QTextStream qts(&body);
     qts <<"I'm starting a game with skin '" << m_automaton->skin() << "' and '" << m_automaton->nbPlayers() << "' players";
     message.setBody(body);
-    kDebug() << "Sending message: <<" << body << ">> to" << (m_groupchatRoom+'@'+m_groupchatHost);
+    qCDebug(KSIRK_LOG) << "Sending message: <<" << body << ">> to" << (m_groupchatRoom+'@'+m_groupchatHost);
     m_jabberClient->sendMessage(message);
   }
 }
 
 void KGameWindow::joinNetworkGame()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   /// @TODO show the network connect screen
   m_centralWidget->setCurrentIndex(TCPCONNECT_INDEX);
 }
 
 void KGameWindow::updateNewGameSummary()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   m_newGameSummaryWidget->show(this);
 }
 
 void KGameWindow::showNewGameSummary()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   m_centralWidget->setCurrentIndex(NEWGAMESUMMARY_INDEX);
 }
 

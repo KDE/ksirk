@@ -35,7 +35,7 @@
 #include <kstandarddirs.h>
 #include <kglobal.h>
 #include <KLocalizedString>
-#include <kdebug.h>
+#include "ksirk_debug.h"
 #include <kmessagebox.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>
@@ -60,10 +60,10 @@ ONU::ONU(GameAutomaton* automaton,
   m_nbZooms(0),
   m_zoomFactorFinal(1)
 {
-  kDebug() << "ONU constructor: " << m_configFileName;
+  qCDebug(KSIRK_LOG) << "ONU constructor: " << m_configFileName;
   QFileInfo qfi(m_configFileName);
-  kDebug() << "skin written at :" << qfi.lastModified().toTime_t();
-  kDebug() << "cache created at:" << m_automaton->pixmapCache().timestamp();
+  qCDebug(KSIRK_LOG) << "skin written at :" << qfi.lastModified().toTime_t();
+  qCDebug(KSIRK_LOG) << "cache created at:" << m_automaton->pixmapCache().timestamp();
 #pragma message("port to qt5")
 #if 0
   if (m_automaton->pixmapCache().timestamp() < qfi.lastModified().toTime_t())
@@ -88,12 +88,12 @@ ONU::ONU(GameAutomaton* automaton,
 
   KConfigGroup onugroup = config.group("onu");
 
-  kDebug() << "ONU XML format version: " << onugroup.readEntry("format-version");
+  qCDebug(KSIRK_LOG) << "ONU XML format version: " << onugroup.readEntry("format-version");
   QString formatVersion = onugroup.readEntry("format-version");
 
   if (formatVersion != ONU_FILE_FORMAT_VERSION)
   {
-    kError() << "Error - Invalid skin definition file format. Expected "<<QString(ONU_FILE_FORMAT_VERSION)<<" and got " << formatVersion << "in" << m_configFileName << ". You should remove this skin folder";
+    qCCritical(KSIRK_LOG) << "Error - Invalid skin definition file format. Expected "<<QString(ONU_FILE_FORMAT_VERSION)<<" and got " << formatVersion << "in" << m_configFileName << ". You should remove this skin folder";
 //     KMessageBox::error(0,
 //                         i18n("Error - Invalid skin definition file format. Expected %1 and got %2",QString(ONU_FILE_FORMAT_VERSION),formatVersion) + "<br>" + m_configFileName,
 //                         i18n("Fatal Error"));
@@ -102,14 +102,14 @@ ONU::ONU(GameAutomaton* automaton,
 
   m_name = onugroup.readEntry("name");
   m_skin = onugroup.readEntry("skinpath");
-  kDebug() << "skin snapshot file: " << KGlobal::dirs()-> findResource("appdata", m_skin + "/Images/snapshot.jpg");
+  qCDebug(KSIRK_LOG) << "skin snapshot file: " << KGlobal::dirs()-> findResource("appdata", m_skin + "/Images/snapshot.jpg");
   if (!m_automaton->pixmapCache().find(m_skin+"snapshot", m_snapshot))
   {
     // Pixmap isn't in the cache, create it and insert to cache
     m_snapshot = QPixmap(KGlobal::dirs()-> findResource("appdata", m_skin + "/Images/snapshot.jpg"));
     if (m_snapshot.isNull())
     {
-      kError() << "Was not able to load the snapshot image: "
+      qCCritical(KSIRK_LOG) << "Was not able to load the snapshot image: "
       << KGlobal::dirs()-> findResource("appdata", m_skin + "/Images/snapshot.jpg")
       << endl;
     }
@@ -123,10 +123,10 @@ ONU::ONU(GameAutomaton* automaton,
 //   m_continents.resize(onugroup.readEntry("nb-continents",0));
 //    root.attribute("map");
   QString poolString = onugroup.readEntry("pool");
-  kDebug() << "Pool path: " << poolString;
-  kDebug() << "Searching resource: " << (m_skin + '/' + poolString);
+  qCDebug(KSIRK_LOG) << "Pool path: " << poolString;
+  qCDebug(KSIRK_LOG) << "Searching resource: " << (m_skin + '/' + poolString);
   QString poolFileName = KGlobal::dirs()-> findResource("appdata", m_skin + '/' + poolString);
-  kDebug() << "Pool file name: " << poolFileName;
+  qCDebug(KSIRK_LOG) << "Pool file name: " << poolFileName;
   if (poolFileName.isEmpty())
   {
       KMessageBox::error(0, 
@@ -135,15 +135,15 @@ ONU::ONU(GameAutomaton* automaton,
       exit(2);
   }
   m_map = QPixmap();
-  kDebug() << m_skin << "before pool loading";
+  qCDebug(KSIRK_LOG) << m_skin << "before pool loading";
   if (!m_automaton->rendererFor(m_skin).isValid())
     m_automaton->rendererFor(m_skin).load(poolFileName);
   if (m_automaton->svgDomFor(m_skin).svgFilename().isNull())
     m_automaton->svgDomFor(m_skin).load(poolFileName);
-  kDebug() << m_skin << "after pool loading";
+  qCDebug(KSIRK_LOG) << m_skin << "after pool loading";
   
   QString mapMaskFileName = KGlobal::dirs()-> findResource("appdata", m_skin + '/' + onugroup.readEntry("map-mask"));
-  kDebug() << "Map mask file name: " << mapMaskFileName;
+  qCDebug(KSIRK_LOG) << "Map mask file name: " << mapMaskFileName;
   if (mapMaskFileName.isNull())
   {
       KMessageBox::error(0, 
@@ -151,7 +151,7 @@ ONU::ONU(GameAutomaton* automaton,
                          i18n("Error!"));
       exit(2);
   }
-  kDebug() << "Loading map mask file: " << mapMaskFileName;
+  qCDebug(KSIRK_LOG) << "Loading map mask file: " << mapMaskFileName;
   QPixmap countriesMaskPix;
   if (!m_automaton->pixmapCache().find(m_skin+"mapmask", countriesMaskPix))
   {
@@ -159,7 +159,7 @@ ONU::ONU(GameAutomaton* automaton,
     countriesMaskPix = QPixmap(mapMaskFileName);
     if (countriesMaskPix.isNull())
     {
-      kError() << "Was not able to load the map mask image: " << mapMaskFileName << endl;
+      qCCritical(KSIRK_LOG) << "Was not able to load the map mask image: " << mapMaskFileName << endl;
     }
     m_automaton->pixmapCache().insert(m_skin+"mapmask", countriesMaskPix);
   }
@@ -262,23 +262,23 @@ ONU::ONU(GameAutomaton* automaton,
     QPointF cavalryPoint = countryGroup.readEntry("cavalry-point",QPointF())*m_zoom;
     QPointF infantryPoint = countryGroup.readEntry("infantry-point",QPointF())*m_zoom;
 
-//     kDebug() << "Creating country " << name;
-//     kDebug() << "\tflag point: " << flagPoint;
-//     kDebug() << "\tcentral point: " << centralPoint;
-//     kDebug() << "\tcannon point: " << cannonPoint;
-//     kDebug() << "\tcavalry point: " << cavalryPoint;
-//     kDebug() << "\tinfantry point: " << infantryPoint;
+//     qCDebug(KSIRK_LOG) << "Creating country " << name;
+//     qCDebug(KSIRK_LOG) << "\tflag point: " << flagPoint;
+//     qCDebug(KSIRK_LOG) << "\tcentral point: " << centralPoint;
+//     qCDebug(KSIRK_LOG) << "\tcannon point: " << cannonPoint;
+//     qCDebug(KSIRK_LOG) << "\tcavalry point: " << cavalryPoint;
+//     qCDebug(KSIRK_LOG) << "\tinfantry point: " << infantryPoint;
     countries.push_back(new Country(automaton, name, anchorPoint, centralPoint,
         flagPoint, cannonPoint, cavalryPoint, infantryPoint));
   }
   QStringList nationalitiesList = onugroup.readEntry("nationalities", QStringList());
   foreach (const QString &nationality, nationalitiesList)
   {
-//     kDebug() << "Creating nationality " << nationality;
+//     qCDebug(KSIRK_LOG) << "Creating nationality " << nationality;
     KConfigGroup nationalityGroup = config.group(nationality);
     QString leader = nationalityGroup.readEntry("leader","");
     QString flag = nationalityGroup.readEntry("flag","");
-//         kDebug() << "Creating nationality " << name << " ; flag: " << flag;
+//         qCDebug(KSIRK_LOG) << "Creating nationality " << name << " ; flag: " << flag;
     nationalities.push_back(new Nationality(nationality, flag, leader));
 //     nationalityId++;
   }
@@ -296,21 +296,21 @@ ONU::ONU(GameAutomaton* automaton,
     QList<Country*> continentList;
     foreach(const QString& countryId, countryIdList)
     {
-//       kDebug() << "Adding" << countryId << "to" << continent << "list";
+//       qCDebug(KSIRK_LOG) << "Adding" << countryId << "to" << continent << "list";
       Country *c = countryNamed(countryId);
       if (c)
       {
         continentList.push_back(c);
       }
     }
-//       kDebug() << "Creating continent " << name;
+//       qCDebug(KSIRK_LOG) << "Creating continent " << name;
     m_continents.push_back(new Continent(continent, continentList, bonus));
   }
 
   QStringList goalsList = onugroup.readEntry("goals", QStringList());
   foreach (const QString &_goal, goalsList)
   {
-//     kDebug() << "init goal " << _goal;
+//     qCDebug(KSIRK_LOG) << "init goal " << _goal;
     KConfigGroup goalGroup = config.group(_goal);
 
     Goal* goal = new Goal(automaton);
@@ -321,8 +321,8 @@ ONU::ONU(GameAutomaton* automaton,
       goal->type(Goal::Countries);
       goal->nbCountries(goalGroup.readEntry("nbCountries",0));
       goal->nbArmiesByCountry(goalGroup.readEntry("nbArmiesByCountry",0));
-//       kDebug() << "  nb countries: **********************************" << goal->nbCountries();
-//       kDebug() << "  nbarmies countries: **********************************" << goal->nbArmiesByCountry();
+//       qCDebug(KSIRK_LOG) << "  nb countries: **********************************" << goal->nbCountries();
+//       qCDebug(KSIRK_LOG) << "  nbarmies countries: **********************************" << goal->nbArmiesByCountry();
     }
     else if (goalType == "continents" )
     {
@@ -335,7 +335,7 @@ ONU::ONU(GameAutomaton* automaton,
           goal->continents().push_back(continentId);
         else
         {
-          kDebug() << "Unknown continent " << continentId << " in skin " << m_skin << endl;
+          qCDebug(KSIRK_LOG) << "Unknown continent " << continentId << " in skin " << m_skin << endl;
         }
       }
     }
@@ -357,7 +357,7 @@ ONU::ONU(GameAutomaton* automaton,
       continue;
     }
 
-//     kDebug() << "building neighbours list of " << countryName;
+//     qCDebug(KSIRK_LOG) << "building neighbours list of " << countryName;
     QList< Country* > theNeighbours;
     KConfigGroup countryGroup = config.group(countryName);
     QList<QString> theNeighboursIds = countryGroup.readEntry("neighbours",QList<QString>());
@@ -375,7 +375,7 @@ ONU::ONU(GameAutomaton* automaton,
   }
   buildMap();
 
-  kDebug() << "OUT";
+  qCDebug(KSIRK_LOG) << "OUT";
 }
 
 ONU::~ONU()
@@ -410,7 +410,7 @@ ONU::~ONU()
 If there is no country at (x,y), the functions returns 0. */
 Country* ONU::countryAt(const QPointF& point)
 {
-//    kDebug() << "ONU::countryAt x y " << x << " " << y;
+//    qCDebug(KSIRK_LOG) << "ONU::countryAt x y " << x << " " << y;
     QPointF norm = point;
     norm /= m_zoom;
     if ( norm.x() < 0 || norm.x() >= countriesMask.width()
@@ -418,14 +418,14 @@ Country* ONU::countryAt(const QPointF& point)
       return 0;
 
     int index = qBlue(countriesMask.pixel(norm.toPoint()));
-//    kDebug() << "OUT ONU::countryAt: " << index;
+//    qCDebug(KSIRK_LOG) << "OUT ONU::countryAt: " << index;
     if (index >= countries.size()) return 0;
     return countries.at(index);
 }
 
 void ONU::reset()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   foreach (Country* country, countries)
   {
     country-> reset();
@@ -491,7 +491,7 @@ Country* ONU::countryNamed(const QString& name)
 {
   if (name.isEmpty())
   {
-//     kDebug() << "request for country with empty name";
+//     qCDebug(KSIRK_LOG) << "request for country with empty name";
     return 0;
   }
 
@@ -501,7 +501,7 @@ Country* ONU::countryNamed(const QString& name)
       return c;
   }
 
-//   kDebug() << "request for country" << name << "which doesn't seem to exist.";
+//   qCDebug(KSIRK_LOG) << "request for country" << name << "which doesn't seem to exist.";
   return 0;
 }
 
@@ -552,7 +552,7 @@ void ONU::sendCountries(QDataStream& stream)
   stream << quint32(countries.size());
   foreach (Country* country, countries)
   {
-//     kDebug() << "Sending country " << country->name();
+//     qCDebug(KSIRK_LOG) << "Sending country " << country->name();
     country->send(stream);
   }
 }
@@ -581,7 +581,7 @@ Continent* ONU::continentNamed(const QString& name)
 
 void ONU::buildMap()
 {
-  kDebug() << "with zoom="<< m_zoom;
+  qCDebug(KSIRK_LOG) << "with zoom="<< m_zoom;
   //QSize size((int)(m_automaton->rendererFor(m_skin).defaultSize().width()*m_zoom),(int)(m_automaton->rendererFor(m_skin).defaultSize().height()*m_zoom));
   if (!m_automaton->pixmapCache().find(m_skin+"map"+QString::number(m_width)+QString::number(m_height), m_map))
   {
@@ -617,8 +617,8 @@ void ONU::buildMap()
       painter.setPen(m_font.foregroundColor);
       painter.setFont(foregroundFont);
       QRect countryNameRect = painter.fontMetrics().boundingRect(countryName);
-//       kDebug() << countryName << "countryNameRect=" << countryNameRect;
-//       kDebug() << "draw at" << int( (country->centralPoint().x()*m_zoom) - (countryNameRect.width()/2) ) <<
+//       qCDebug(KSIRK_LOG) << countryName << "countryNameRect=" << countryNameRect;
+//       qCDebug(KSIRK_LOG) << "draw at" << int( (country->centralPoint().x()*m_zoom) - (countryNameRect.width()/2) ) <<
 //      int( (country->centralPoint().y()*m_zoom) - (countryNameRect.height()/2) );
       
       painter.drawText(
@@ -636,8 +636,8 @@ void ONU::applyZoomFactor(qreal zoomFactor)
 {
 /** Zoom 1: First method (take a long time to zoom) :
 */
-//   kDebug() << "zoomFactor=" << zoomFactor << "old zoom=" << m_zoom;
-//   kDebug() << "new zoom=" << m_zoom;
+//   qCDebug(KSIRK_LOG) << "zoomFactor=" << zoomFactor << "old zoom=" << m_zoom;
+//   qCDebug(KSIRK_LOG) << "new zoom=" << m_zoom;
 
   m_zoom *= zoomFactor;
 
@@ -660,7 +660,7 @@ void ONU::applyZoomFactorFast(qreal zoomFactor)		//benj
 /** Zoom 2 : Second method , Very performent.  Carefull ! Can cause the game to lag. 
  To try this, comment all the first method and uncomment these lines
 */
-  kDebug() << "zoomFactor FASTTTTTTT"<<endl;
+  qCDebug(KSIRK_LOG) << "zoomFactor FASTTTTTTT"<<endl;
   int nbLimitZooms = 6;
 
   //Application of zoom

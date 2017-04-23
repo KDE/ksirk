@@ -17,7 +17,6 @@
  ***************************************************************************/
 
 #include "skinSpritesData.h"
-#include "kdebug.h"
 
 #include <QTextStream>
 

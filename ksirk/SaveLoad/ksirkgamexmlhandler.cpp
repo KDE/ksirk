@@ -25,7 +25,7 @@
 #include "GameLogic/goal.h"
 #include "GameLogic/KMessageParts.h"
 
-#include <kdebug.h>
+#include "ksirk_debug.h"
 #include <KLocalizedString>
 #include <kmessagebox.h>
 #include <KStringHandler>
@@ -39,7 +39,7 @@ namespace SaveLoad
 
 bool GameXmlHandler::startDocument()
 { 
-  kDebug() << "startDocument" << endl;
+  qCDebug(KSIRK_LOG) << "startDocument" << endl;
   return true;
 }
 
@@ -47,7 +47,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
 {
   Q_UNUSED(namespaceURI);
   Q_UNUSED(qName);
-  kDebug() << "startElement " << localName << " / " << qName << endl;
+  qCDebug(KSIRK_LOG) << "startElement " << localName << " / " << qName << endl;
   if (localName == "ksirkSavedGame")
   {
     QString fv =atts.value("formatVersion");
@@ -63,7 +63,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
   }
   else if (localName == "game")
   {
-    kDebug() << "GameXmlHandler stored game state is: " << atts.value("state") << endl;
+    qCDebug(KSIRK_LOG) << "GameXmlHandler stored game state is: " << atts.value("state") << endl;
     
     m_game.automaton()->skin(atts.value("skin"));
     
@@ -73,13 +73,13 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
   else if (localName == "players" && !m_inGoal)
   {
     int nb = atts.value("nb").toInt();
-    kDebug() << "Setting min-max players to " << nb << endl;
+    qCDebug(KSIRK_LOG) << "Setting min-max players to " << nb << endl;
     m_game.automaton()->setMinPlayers(nb);
     m_game.automaton()->setMaxPlayers(nb);
   }
   else if (localName == "player" && !m_inGoal)
   {
-    kDebug() << "Reading a player" << endl;
+    qCDebug(KSIRK_LOG) << "Reading a player" << endl;
     m_playersNumber++;
     unsigned int nbAvailArmies = atts.value("nbAvailArmies").toInt();
     
@@ -103,13 +103,13 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
 
     if (isLocal)
     {
-      kDebug() << "Adding the read player " << name << endl;
+      qCDebug(KSIRK_LOG) << "Adding the read player " << name << endl;
       m_game.addPlayer(name, nbAvailArmies, nbCountries, nationName,
                         isAi, password, nbAttack, nbDefense);
     }
     else
     {
-      kDebug() << "Player" << name << "stored in matrix";
+      qCDebug(KSIRK_LOG) << "Player" << name << "stored in matrix";
       PlayerMatrix pm(m_game.automaton());
       pm.name = name;
       pm.nbAttack = nbAttack;
@@ -134,7 +134,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
     Player* currentPlayer = m_game.automaton()->playerNamed(atts.value("name"));
     if (currentPlayer)
     {
-//       kDebug() << "Setting current player to " << atts.value("name") << " / " << currentPlayer << endl;
+//       qCDebug(KSIRK_LOG) << "Setting current player to " << atts.value("name") << " / " << currentPlayer << endl;
       m_game.automaton()->currentPlayer(currentPlayer);
       KMessageParts messageParts;
       messageParts << I18N_NOOP("Current player is: %1") << currentPlayer->name();
@@ -148,32 +148,32 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
   }
   else if (localName == "ONU")
   {
-    kDebug() << "GameXmlHandler starts new game with ONU file: " << atts.value("file") << endl;
+    qCDebug(KSIRK_LOG) << "GameXmlHandler starts new game with ONU file: " << atts.value("file") << endl;
     if (!(m_game.automaton()->playerList()->isEmpty()))
     {
       m_game.automaton()->playerList()->clear();
       m_game.automaton()->currentPlayer(0);
-      kDebug() << "  playerList size = " << m_game.automaton()->playerList()->count() << endl;
+      qCDebug(KSIRK_LOG) << "  playerList size = " << m_game.automaton()->playerList()->count() << endl;
     }
     m_game.automaton()->game()->newSkin(atts.value("file"));
   }
   else if (localName == "country")
   {
-//   kDebug() << "GameXmlHandler loads country: " << atts.value("name") << endl;
+//   qCDebug(KSIRK_LOG) << "GameXmlHandler loads country: " << atts.value("name") << endl;
     Country* country = m_game.theWorld()->countryNamed(atts.value("name"));
     unsigned int gotNbArmies = atts.value("nbArmies").toInt();
     country->nbArmies(gotNbArmies);
     
-    kDebug() << "Storing" << atts.value("owner") << "as owner of" << atts.value("name");
+    qCDebug(KSIRK_LOG) << "Storing" << atts.value("owner") << "as owner of" << atts.value("name");
     m_ownersMap.insert(atts.value("name"), atts.value("owner"));
   }
   else if (localName == "goal")
   {
-    kDebug() << "loads goal for: " << atts.value("player") << endl;
+    qCDebug(KSIRK_LOG) << "loads goal for: " << atts.value("player") << endl;
     m_goal = new GameLogic::Goal(m_game.automaton());
     m_goalPlayerName = atts.value("player");
     Player* player = m_game.automaton()->playerNamed(atts.value("player").toUtf8().data());
-//     kDebug() << "Got player pointer " << player << endl;
+//     qCDebug(KSIRK_LOG) << "Got player pointer " << player << endl;
     m_goal->player(player);
     unsigned int type = atts.value("type").toInt();
     m_goal->type(GameLogic::Goal::GoalType(type));
@@ -191,7 +191,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
   }
   else if (localName == "continent" && m_inGoal)
   {
-//     kDebug() << "Getting id of continent named " << atts.value("name") << endl;
+//     qCDebug(KSIRK_LOG) << "Getting id of continent named " << atts.value("name") << endl;
     QString id;
     if (!atts.value("name").isEmpty())
         id = atts.value("name");
@@ -204,22 +204,22 @@ bool GameXmlHandler::endElement(const QString& namespaceURI, const QString& loca
 {
   Q_UNUSED(namespaceURI);
   Q_UNUSED(qName);
-//   kDebug() << "endElement " << localName << " / " << qName << endl;
+//   qCDebug(KSIRK_LOG) << "endElement " << localName << " / " << qName << endl;
   if (localName == "game")
   {
     foreach (const QString& k, m_ownersMap.keys())
     {
-//       kDebug() << "Setting owner of " << k << " to " << m_ownersMap[k] << endl;
+//       qCDebug(KSIRK_LOG) << "Setting owner of " << k << " to " << m_ownersMap[k] << endl;
       Country* country = m_game.theWorld()->countryNamed(k);
       Player* owner = m_game.automaton()->playerNamed(m_ownersMap[k]);
       if (owner)
       {
-//         kDebug() << "Setting owner of " << country->name() << " to " << owner->name() << endl;
+//         qCDebug(KSIRK_LOG) << "Setting owner of " << country->name() << " to " << owner->name() << endl;
         country-> owner(owner);
       }
       else
       {
-//         kDebug() << "Player" << m_ownersMap[k] << "not found";
+//         qCDebug(KSIRK_LOG) << "Player" << m_ownersMap[k] << "not found";
         QList<GameLogic::PlayerMatrix>::iterator itw,itw_end;
         itw = m_waitedPlayers.begin(); itw_end = m_waitedPlayers.end();
         for (; itw != itw_end; itw++)
@@ -234,12 +234,12 @@ bool GameXmlHandler::endElement(const QString& namespaceURI, const QString& loca
     }
     if (!m_waitedPlayers.empty())
     {
-//       kDebug() << "There is waited players: does not change state nor run game..." << endl;
+//       qCDebug(KSIRK_LOG) << "There is waited players: does not change state nor run game..." << endl;
       m_waitedPlayers[0].state = m_savedState;
     }
     else
     {
-//       kDebug() << "GameXmlHandler set game state to: " << m_savedState << endl;
+//       qCDebug(KSIRK_LOG) << "GameXmlHandler set game state to: " << m_savedState << endl;
       m_game.automaton()->state(m_savedState);
     }
   }

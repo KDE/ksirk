@@ -31,7 +31,7 @@
 #include <kstandardgameaction.h>
 #include <kstandardaction.h>
 #include <KLocalizedString>
-#include <kdebug.h>
+#include "ksirk_debug.h"
 #include <kgamepopupitem.h>
 #include <KAction>
 #include <KIcon>
@@ -49,7 +49,7 @@ DecoratedGameFrame::DecoratedGameFrame(QWidget* parent,
   : QGraphicsView(parent), m_mapW(mapW), m_mapH(mapH), m_parent(parent),
   m_automaton(automaton)
 {
-  kDebug() << "("<<mapW<<"x"<<mapH<<")";
+  qCDebug(KSIRK_LOG) << "("<<mapW<<"x"<<mapH<<")";
   setVerticalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
   setHorizontalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
   setCacheMode(QGraphicsView::CacheBackground);
@@ -74,14 +74,14 @@ DecoratedGameFrame::~DecoratedGameFrame()
 
 void DecoratedGameFrame::mouseMoveEvent ( QMouseEvent * event )
 {
-//   kDebug();
+//   qCDebug(KSIRK_LOG);
   emit (mouseMoveEventReceived(event));
 //   event->ignore();
 }
 
 QSize DecoratedGameFrame::sizeHint() const
 {
-//   kDebug() << " " << m_mapW << "/" << m_mapH;
+//   qCDebug(KSIRK_LOG) << " " << m_mapW << "/" << m_mapH;
   return QSize(m_mapW, m_mapH);
 }
 
@@ -125,7 +125,7 @@ void DecoratedGameFrame::initMenu ()
 
 void DecoratedGameFrame::setArenaOptionEnabled(bool option)
 {
-  kDebug() << option;
+  qCDebug(KSIRK_LOG) << option;
   m_arenaAction->setEnabled(option);
   if (option == false)
   {
@@ -187,7 +187,7 @@ void DecoratedGameFrame::initMoveMenu ()
 void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
 {
   menuPoint = QCursor::pos();
-  kDebug() << "************state decoratedgameframe" << m_automaton->stateName();
+  qCDebug(KSIRK_LOG) << "************state decoratedgameframe" << m_automaton->stateName();
   if (m_automaton->state() != GameAutomaton::INIT
     && m_automaton->state() != GameAutomaton::INTERLUDE
     && m_automaton->state() != GameAutomaton::NEWARMIES
@@ -294,7 +294,7 @@ void DecoratedGameFrame::setIcon()
  */
 void DecoratedGameFrame::slotMouseInput(KGameIO *input,QDataStream &stream,QMouseEvent *e,bool *eatevent)
 {
-  kDebug() << e;
+  qCDebug(KSIRK_LOG) << e;
   
   QGraphicsItem* item = itemAt(mapFromScene(((QGraphicsSceneMouseEvent*)e)->scenePos()));
   if (item == 0)
@@ -319,23 +319,23 @@ void DecoratedGameFrame::slotMouseInput(KGameIO *input,QDataStream &stream,QMous
   KPlayer *player=input->player();
   if (!player->myTurn())
   {
-    kDebug() << "Player " << dynamic_cast<Player*>(player)->name() << ": not my turn!";
+    qCDebug(KSIRK_LOG) << "Player " << dynamic_cast<Player*>(player)->name() << ": not my turn!";
     *eatevent=false;
     e->setAccepted(false);
     return;
   }
-  kDebug() << "Player " << dynamic_cast<Player*>(player)->name() << " " << e->type();
+  qCDebug(KSIRK_LOG) << "Player " << dynamic_cast<Player*>(player)->name() << " " << e->type();
   if (e->type() == QEvent::GraphicsSceneMousePress)
   {
-    kDebug() << "\tQEvent::MouseButtonPress";
+    qCDebug(KSIRK_LOG) << "\tQEvent::MouseButtonPress";
     if (((QGraphicsSceneMouseEvent*)e)->button() == Qt::LeftButton)
     {
-      kDebug() << "\tLeft";
+      qCDebug(KSIRK_LOG) << "\tLeft";
       stream << QString("actionLButtonDown");
     }
     else if (((QGraphicsSceneMouseEvent*)e)->button() == Qt::RightButton)
     {
-      kDebug() << "\tRight";
+      qCDebug(KSIRK_LOG) << "\tRight";
       stream << QString("actionRButtonDown");
     }
     else
@@ -347,20 +347,20 @@ void DecoratedGameFrame::slotMouseInput(KGameIO *input,QDataStream &stream,QMous
   }
   else if (e->type() == QEvent::GraphicsSceneMouseRelease)
   {
-    kDebug() << "\tQEvent::MouseButtonRelease";
+    qCDebug(KSIRK_LOG) << "\tQEvent::MouseButtonRelease";
     if (((QGraphicsSceneMouseEvent*)e)->button() == Qt::LeftButton)
     {
-      kDebug() << "\tLeft";
+      qCDebug(KSIRK_LOG) << "\tLeft";
       stream << QString("actionLButtonUp");
     }
     else if (((QGraphicsSceneMouseEvent*)e)->button() == Qt::RightButton)
     {
-      kDebug() << "\tRight";
+      qCDebug(KSIRK_LOG) << "\tRight";
       stream << QString("actionRButtonUp");
     }
     else
     {
-      kDebug() << "\tOther:" << e->button();
+      qCDebug(KSIRK_LOG) << "\tOther:" << e->button();
       *eatevent=false;
       e->setAccepted(false);
       return;
@@ -368,7 +368,7 @@ void DecoratedGameFrame::slotMouseInput(KGameIO *input,QDataStream &stream,QMous
   }
   else if (e->type() == QWheelEvent::GraphicsSceneWheel)
   {
-    kDebug() << "Using mouse scroll";
+    qCDebug(KSIRK_LOG) << "Using mouse scroll";
   }
   else
   {
@@ -377,19 +377,19 @@ void DecoratedGameFrame::slotMouseInput(KGameIO *input,QDataStream &stream,QMous
     return;
   }
   QPointF newPoint = ((QGraphicsSceneMouseEvent*)e)->scenePos();
-  kDebug() << "\tPosition: " << newPoint;
+  qCDebug(KSIRK_LOG) << "\tPosition: " << newPoint;
 
   detailPoint.setX((int)newPoint.x());
   detailPoint.setY((int)newPoint.y());
 
   stream << newPoint;
   *eatevent=true;
-  kDebug() << "Mouse input done... eatevent=true";
+  qCDebug(KSIRK_LOG) << "Mouse input done... eatevent=true";
 }
 
 void DecoratedGameFrame::arenaState()
 {
-  kDebug() << m_arenaAction->isArenaEnabled();
+  qCDebug(KSIRK_LOG) << m_arenaAction->isArenaEnabled();
   //if (m_arenaAction->isChecked())
   if (m_arenaAction->isArenaEnabled())
   {
@@ -409,7 +409,7 @@ void DecoratedGameFrame::arenaState()
 
 void DecoratedGameFrame::attackAuto()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   unsigned int firstCountryNbArmies = ( m_automaton!=0 && m_automaton->game()!=0 && m_automaton->game()->firstCountry()!=0 )
       ? m_automaton->game()->firstCountry()->nbArmies() : 0 ;
   m_automaton->setAttackAuto(firstCountryNbArmies>0);
@@ -429,7 +429,7 @@ void DecoratedGameFrame::attackAuto()
 
 void DecoratedGameFrame::slotDetails()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   m_automaton->game()->getRightDialog()->displayCountryDetails(detailPoint);
   m_automaton->game()->getRightDialog()->open();
 }
@@ -447,7 +447,7 @@ QMenu * DecoratedGameFrame::getAttackContextMenu()
 
 QMenu * DecoratedGameFrame::getMoveContextMenu()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   return this->moveMenu;
 }
 
@@ -491,7 +491,7 @@ bool DecoratedGameFrame::viewportEvent(QEvent* event)
   bool res = QGraphicsView::viewportEvent(event);
   if (event->type() == QEvent::Resize)
   {
-    kDebug();
+    qCDebug(KSIRK_LOG);
     m_automaton->game()->updateScrollArrows();
   }
   return res;

@@ -25,7 +25,7 @@
 
 #include <QPixmap>
 
-#include <kdebug.h>
+#include "ksirk_debug.h"
 
 namespace Ksirk
 {
@@ -36,7 +36,7 @@ BackGnd::BackGnd(QGraphicsScene *scene, const GameLogic::ONU* theWorld, bool are
     QGraphicsPixmapItem(0), m_theWorld(theWorld), m_bgIsArena(arena)
 {
   scene->addItem(this);
-  kDebug() << "BackGnd constructor" << endl;
+  qCDebug(KSIRK_LOG) << "BackGnd constructor" << endl;
 
   QPixmap pix;
   if (arena == false) {

@@ -21,7 +21,7 @@
 #include "GameLogic/gameautomaton.h"
 #include "ksirksettings.h"
 
-#include <KDebug>
+#include "ksirk_debug.h"
 #include <KStringHandler>
 #include <kwallet.h>
 
@@ -35,7 +35,7 @@ KsirkJabberGameWidget::KsirkJabberGameWidget(QWidget* parent) :
     m_automaton(0),
     m_previousGuiIndex(-1)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   
   setupUi(this);
   stackedWidget->setCurrentIndex(0);
@@ -82,7 +82,7 @@ KsirkJabberGameWidget::KsirkJabberGameWidget(QWidget* parent) :
 
 void KsirkJabberGameWidget::init(GameAutomaton* automaton)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   m_automaton = automaton;
   jabberstateled->setState(
       (m_automaton->game()->jabberClient()->isConnected())
@@ -105,7 +105,7 @@ void KsirkJabberGameWidget::init(GameAutomaton* automaton)
 
 void KsirkJabberGameWidget::slotJabberConnectButtonClicked()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   
   KsirkSettings::setJabberId(jabberid->text());
   XMPP::Jid jid(jabberid->text()+'/'+jabberid->text());
@@ -134,67 +134,67 @@ void KsirkJabberGameWidget::slotJabberConnectButtonClicked()
   switch (res)
   {
     case JabberClient::Ok:
-      kDebug() << "Succesfull connexion";
+      qCDebug(KSIRK_LOG) << "Succesfull connexion";
       m_automaton->game()->jabberClient()->requestRoster ();
       break;
     case JabberClient::InvalidPassword:
-      kError() << "Password used to connect to the server was incorrect.";
+      qCCritical(KSIRK_LOG) << "Password used to connect to the server was incorrect.";
       break;
     case JabberClient::AlreadyConnected:
-      kError() << "A new connection was attempted while the previous one hasn't been closed.";
+      qCCritical(KSIRK_LOG) << "A new connection was attempted while the previous one hasn't been closed.";
       break;
     case JabberClient::NoTLS:
-      kError() << "Use of TLS has been forced (see @ref forceTLS) but TLS is not available, either server- or client-side.";
+      qCCritical(KSIRK_LOG) << "Use of TLS has been forced (see @ref forceTLS) but TLS is not available, either server- or client-side.";
       break;
     case JabberClient::InvalidPasswordForMUC:
-      kError() << "A password is require to enter on this Multi-User Chat";
+      qCCritical(KSIRK_LOG) << "A password is require to enter on this Multi-User Chat";
       break;
     case JabberClient::NicknameConflict:
-      kError() << "There is already someone with that nick connected to the Multi-User Chat";
+      qCCritical(KSIRK_LOG) << "There is already someone with that nick connected to the Multi-User Chat";
       break;
     case JabberClient::BannedFromThisMUC:
-      kError() << "You can't join this Multi-User Chat because you were bannished";
+      qCCritical(KSIRK_LOG) << "You can't join this Multi-User Chat because you were bannished";
       break;
     case JabberClient::MaxUsersReachedForThisMuc:
-      kError() << "You can't join this Multi-User Chat because it is full";
+      qCCritical(KSIRK_LOG) << "You can't join this Multi-User Chat because it is full";
       break;
     default:
-      kError() << "Unknown error";
+      qCCritical(KSIRK_LOG) << "Unknown error";
   }
   
 }
 
 void KsirkJabberGameWidget::slotJabberDisconnected()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   stackedWidget->setCurrentIndex(0);
   jabberstateled->setState(KLed::Off);
 }
 
 void KsirkJabberGameWidget::slotJabberError(int error)
 {
-  kDebug() << error;
+  qCDebug(KSIRK_LOG) << error;
 }
 
 void KsirkJabberGameWidget::slotHandleTLSWarning(QCA::TLS::IdentityResult result, QCA::Validity validity)
 {
-  kDebug() << result << validity;
+  qCDebug(KSIRK_LOG) << result << validity;
 }
 
 void KsirkJabberGameWidget::slotJabberConnected()
 {
-  kDebug () << "Connected to Jabber server.";
+  qCDebug(KSIRK_LOG) << "Connected to Jabber server.";
   jabberstateled->setState(KLed::On);
 }
 
 void KsirkJabberGameWidget::slotJabberClientError(JabberClient::ErrorCode error)
 {
-  kDebug() << error;
+  qCDebug(KSIRK_LOG) << error;
 }
 
 void KsirkJabberGameWidget::slotRosterRequestFinished ( bool success )
 {
-  kDebug() << success;
+  qCDebug(KSIRK_LOG) << success;
   if ( success )
   {
     stackedWidget->setCurrentIndex(1);
@@ -203,7 +203,7 @@ void KsirkJabberGameWidget::slotRosterRequestFinished ( bool success )
 
 void KsirkJabberGameWidget::slotJoinRoom()
 {
-  kDebug () << "Joining group chat...";
+  qCDebug(KSIRK_LOG) << "Joining group chat...";
   XMPP::Jid roomJid(roomjid->text());
   QString groupchatHost = roomJid.domain();
   m_automaton->game()->setGroupchatHost(groupchatHost);
@@ -239,10 +239,10 @@ void KsirkJabberGameWidget::slotJoinRoom()
 
 void KsirkJabberGameWidget::slotGroupChatJoined(const XMPP::Jid & jid)
 {
-  kDebug() << jid.full();
+  qCDebug(KSIRK_LOG) << jid.full();
   chatroomstateled->setState(KLed::On);
 
-  kDebug () << "Joined groupchat " << jid.full ();
+  qCDebug(KSIRK_LOG) << "Joined groupchat " << jid.full ();
 
   startnewgamebutton->setEnabled(true);
   joingamebutton->setEnabled(true);
@@ -251,7 +251,7 @@ void KsirkJabberGameWidget::slotGroupChatJoined(const XMPP::Jid & jid)
 
 void KsirkJabberGameWidget::slotGroupChatLeft (const XMPP::Jid & jid)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   Q_UNUSED(jid);
   chatroomstateled->setState(KLed::Off);
 
@@ -262,7 +262,7 @@ void KsirkJabberGameWidget::slotGroupChatLeft (const XMPP::Jid & jid)
 
 void KsirkJabberGameWidget::slotGroupChatPresence (const XMPP::Jid & jid, const XMPP::Status & status)
 {
-  kDebug() << jid.full() << status.isAvailable();
+  qCDebug(KSIRK_LOG) << jid.full() << status.isAvailable();
   if (!status.isAvailable())
   {
     int i = 0;
@@ -282,7 +282,7 @@ void KsirkJabberGameWidget::slotGroupChatPresence (const XMPP::Jid & jid, const 
 
 void KsirkJabberGameWidget::slotGroupChatError (const XMPP::Jid & jid, int error, const QString & reason)
 {
-  kDebug() << jid.full() << error << reason;
+  qCDebug(KSIRK_LOG) << jid.full() << error << reason;
 }
 
 void KsirkJabberGameWidget::slotNewJabberGame(const QString& nick,
@@ -290,12 +290,12 @@ void KsirkJabberGameWidget::slotNewJabberGame(const QString& nick,
                                         const QString& skin
                                         )
 {
-  kDebug() << nick << nbPlayers << skin;
+  qCDebug(KSIRK_LOG) << nick << nbPlayers << skin;
   for (int i = 0; i < jabberTable->rowCount(); i++)
   {
     if (jabberTable->itemAt(0,i)->text() == nick)
     {
-      kDebug() << "This game is already listed";
+      qCDebug(KSIRK_LOG) << "This game is already listed";
       return;
     }
   }
@@ -315,21 +315,21 @@ void KsirkJabberGameWidget::slotNewJabberGame(const QString& nick,
 void KsirkJabberGameWidget::slotCellClicked(int row, int column)
 {
   Q_UNUSED(column);
-  kDebug() << row;
+  qCDebug(KSIRK_LOG) << row;
   m_nick = jabberTable->item(row,0)->text();
   m_nbPlayers = jabberTable->item(row,2)->text().toInt();
-  kDebug() << m_nick << m_nbPlayers;
+  qCDebug(KSIRK_LOG) << m_nick << m_nbPlayers;
 }
 
 void KsirkJabberGameWidget::slotJoinJabberGame()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   m_automaton->joinJabberGame(m_nick);
 }
 
 void KsirkJabberGameWidget::slotCancel()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   emit cancelled(m_previousGuiIndex);
 }
                                         

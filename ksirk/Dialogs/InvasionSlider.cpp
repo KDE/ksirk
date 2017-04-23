@@ -70,7 +70,7 @@
 #include <kactioncollection.h>
 #include <kstandarddirs.h>
 #include <kmenubar.h>
-#include <kdebug.h>
+#include "ksirk_debug.h"
 #include <ktextedit.h>
 #include <phonon/mediaobject.h>
 #include <QPushButton>
@@ -190,7 +190,7 @@ InvasionSlider::InvasionSlider(KGameWindow* game, GameLogic::Country * attack, G
 
 void InvasionSlider::slideMove(int v)
 {
-  kDebug() << v;
+  qCDebug(KSIRK_LOG) << v;
   m_nbLArmy = m_nbLArmy-(v-m_currentSlideValue);
   m_nbRArmy = m_nbRArmy+(v-m_currentSlideValue);
   m_nbLArmies->setText(QString::number(m_nbLArmy));
@@ -203,12 +203,12 @@ void InvasionSlider::slideMove(int v)
 
 void InvasionSlider::slideReleased()
 {
-  kDebug() << "do nothing";
+  qCDebug(KSIRK_LOG) << "do nothing";
 }
 
 void InvasionSlider::slideClose()
 {
-  kDebug() << m_currentSlideValue;
+  qCDebug(KSIRK_LOG) << m_currentSlideValue;
   
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
@@ -225,7 +225,7 @@ void InvasionSlider::slideClose()
 
 void InvasionSlider::slideCancel()
 {
-  kDebug() << "Move cancel";
+  qCDebug(KSIRK_LOG) << "Move cancel";
   reject();
 }
 

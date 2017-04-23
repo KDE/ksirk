@@ -19,7 +19,7 @@
 #include "GameLogic/onu.h"
 
 #include <KLocalizedString>
-#include <KDebug>
+#include "ksirk_debug.h"
 #include <KStandardDirs>
 #include <KMessageBox>
 
@@ -35,7 +35,7 @@ m_automaton(automaton), m_skin(""), m_worlds(), m_players(),
 {
   KStandardDirs *m_dirs = KGlobal::dirs();
   QStringList skinsDirs = m_dirs->findDirs("appdata","skins");
-  kDebug() << skinsDirs;
+  qCDebug(KSIRK_LOG) << skinsDirs;
   foreach (const QString &skinsDirName, skinsDirs)
   {
     //   QString skinsDirName = m_dirs->findResourceDir("appdata", "skins/skinsdir");
@@ -46,17 +46,17 @@ m_automaton(automaton), m_skin(""), m_worlds(), m_players(),
                          i18n("Fatal Error!"));
                          exit(2);
     }
-    kDebug() << "Got skins dir name: " << skinsDirName;
+    qCDebug(KSIRK_LOG) << "Got skins dir name: " << skinsDirName;
     QDir skinsDir(skinsDirName);
     QStringList skinsDirsNames = skinsDir.entryList(QStringList("[a-zA-Z]*"), QDir::Dirs);
     
     foreach (const QString& name, skinsDirsNames)
     {
-      kDebug() << "Got skin dir name: " << name;
+      qCDebug(KSIRK_LOG) << "Got skin dir name: " << name;
       QDir skinDir(skinsDirName + name);
       if (skinDir.exists())
       {
-        kDebug() << "Got skin dir: " << skinDir.dirName();
+        qCDebug(KSIRK_LOG) << "Got skin dir: " << skinDir.dirName();
         GameLogic::ONU* world = new GameLogic::ONU(automaton,skinsDirName + skinDir.dirName() + "/Data/world.desktop");
         if (!world->skin().isEmpty())
         {
@@ -86,7 +86,7 @@ int NewGameSetup::nbLocalPlayers() const
 
 bool NewGameSetup::addPlayer(NewPlayerData* player)
 {
-  kDebug() << player->name();
+  qCDebug(KSIRK_LOG) << player->name();
   bool found = false;
   foreach (Ksirk::NewPlayerData* p, m_players)
   {
@@ -105,13 +105,13 @@ bool NewGameSetup::addPlayer(NewPlayerData* player)
 
 void NewGameSetup::clear()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   m_players.clear();
 }
 
 QDataStream& operator<<(QDataStream& stream, const NewGameSetup& ngs)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   stream << ngs.skin();
 
   stream << (quint32)ngs.players().size();
@@ -136,13 +136,13 @@ QDataStream& operator<<(QDataStream& stream, const NewGameSetup& ngs)
 
 QDataStream& operator>>(QDataStream& stream, NewGameSetup& ngs)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   QString skin;
   stream >> skin;
   ngs.setSkin(skin);
   quint32 players;
   stream >> players;
-  kDebug() << "nb players" << players;
+  qCDebug(KSIRK_LOG) << "nb players" << players;
   for (quint32 i = 0; i < players; i++)
   {
     QString name;
@@ -155,7 +155,7 @@ QDataStream& operator>>(QDataStream& stream, NewGameSetup& ngs)
     stream >> computer;
     quint32 network;
     stream >> network;
-    kDebug() << "player" << name << nation << password << computer << !network;
+    qCDebug(KSIRK_LOG) << "player" << name << nation << password << computer << !network;
     Ksirk::NewPlayerData* newPlayer = new NewPlayerData(name,nation,password,computer,!network);
     ngs.players().push_back(newPlayer);
   }

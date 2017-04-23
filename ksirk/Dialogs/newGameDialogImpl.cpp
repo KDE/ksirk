@@ -23,7 +23,7 @@
 #include "GameLogic/onu.h"
 
 #include <KLocalizedString>
-#include <KDebug>
+#include "ksirk_debug.h"
 #include <KStandardDirs>
 #include <KMessageBox>
 #include <KConfigDialog>
@@ -43,7 +43,7 @@ NewGameWidget::NewGameWidget(NewGameSetup* newGameSetup, QWidget *parent) :
     Ui::NewGameDialog(),
     m_newGameSetup(newGameSetup)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   setupUi(this);
   
   QObject::connect(nextButton, SIGNAL(clicked()), this, SLOT(slotOK()) );
@@ -55,7 +55,7 @@ NewGameWidget::NewGameWidget(NewGameSetup* newGameSetup, QWidget *parent) :
 
 void NewGameWidget::init(const QString& skin, GameAutomaton::NetworkGameType netGameType)
 {
-  kDebug() << "Skin got: " << skin << " ; network=" << netGameType;
+  qCDebug(KSIRK_LOG) << "Skin got: " << skin << " ; network=" << netGameType;
   m_newGameSetup->setSkin(skin);
   if (netGameType != GameAutomaton::None)
   {
@@ -96,7 +96,7 @@ NewGameWidget::~NewGameWidget()
 
 void NewGameWidget::slotOK()
 {
-  kDebug() << "  skin is " << m_newGameSetup->worlds()[skinCombo->currentText()]->skin();
+  qCDebug(KSIRK_LOG) << "  skin is " << m_newGameSetup->worlds()[skinCombo->currentText()]->skin();
 //   m_networkGame  = networkGameCheckBox->isChecked();
   m_newGameSetup->setSkin(m_newGameSetup->worlds()[skinCombo->currentText()]->skin());
   m_newGameSetup->setNbPlayers(playersNumberEntry->value());
@@ -107,20 +107,20 @@ void NewGameWidget::slotOK()
 
 void NewGameWidget::slotCancel()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   emit newGameKO();
 }
 
 void NewGameWidget::fillSkinsCombo()
 {
-  kDebug() << "Filling skins combo";
+  qCDebug(KSIRK_LOG) << "Filling skins combo";
 
   skinCombo->clear();
   qDeleteAll(m_newGameSetup->worlds());
   
   KStandardDirs *m_dirs = KGlobal::dirs();
   QStringList skinsDirs = m_dirs->findDirs("appdata","skins");
-  kDebug() << skinsDirs;
+  qCDebug(KSIRK_LOG) << skinsDirs;
   uint skinNum = 0;
   uint currentSkinNum = 0;
   foreach (const QString &skinsDirName, skinsDirs)
@@ -133,17 +133,17 @@ void NewGameWidget::fillSkinsCombo()
                         i18n("Fatal Error!"));
       exit(2);
     }
-    kDebug() << "Got skins dir name: " << skinsDirName;
+    qCDebug(KSIRK_LOG) << "Got skins dir name: " << skinsDirName;
     QDir skinsDir(skinsDirName);
     QStringList skinsDirsNames = skinsDir.entryList(QStringList("[a-zA-Z]*"), QDir::Dirs);
 
     foreach (const QString& name, skinsDirsNames)
     {
-      kDebug() << "Got skin dir name: " << name;
+      qCDebug(KSIRK_LOG) << "Got skin dir name: " << name;
       QDir skinDir(skinsDirName + name);
       if (skinDir.exists())
       {
-        kDebug() << "Got skin dir: " << skinDir.dirName();
+        qCDebug(KSIRK_LOG) << "Got skin dir: " << skinDir.dirName();
         GameLogic::ONU* world = new GameLogic::ONU(m_newGameSetup->automaton(),skinsDirName + skinDir.dirName() + "/Data/world.desktop");
         if (!world->skin().isEmpty())
         {
@@ -151,7 +151,7 @@ void NewGameWidget::fillSkinsCombo()
           m_newGameSetup->worlds()[i18n(world->name().toUtf8().data())] = world;
           if (QString(QLatin1String("skins/")+skinDir.dirName()) == m_newGameSetup->skin())
           {
-            kDebug() << "Setting currentSkinNum to " << skinNum;
+            qCDebug(KSIRK_LOG) << "Setting currentSkinNum to " << skinNum;
             currentSkinNum = skinNum;
           }
         }
@@ -168,7 +168,7 @@ void NewGameWidget::fillSkinsCombo()
 
 void NewGameWidget::slotSkinChanged(int skinNum)
 {
-    kDebug() << "NewGameDialogImpl::slotSkinChanged " 
+    qCDebug(KSIRK_LOG) << "NewGameDialogImpl::slotSkinChanged " 
               << skinNum << " ; " << skinCombo->currentText() 
               << " ; " << m_newGameSetup->worlds()[skinCombo->currentText()]->name() << " ; "
               << m_newGameSetup->worlds()[skinCombo->currentText()]->description();
@@ -189,7 +189,7 @@ void NewGameWidget::slotGHNS()
   // {
   //   return;
   // }
-  kDebug();
+  qCDebug(KSIRK_LOG);
   KNS3::DownloadDialog dialog(this);
   dialog.exec();
   

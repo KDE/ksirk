@@ -96,7 +96,7 @@ KRightDialog::~KRightDialog()
 
 void KRightDialog::displayCountryDetails(const QPointF& countryPoint)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   Country* country = world->countryAt(countryPoint);
   if (country == 0)
   {
@@ -151,7 +151,7 @@ void KRightDialog::displayCountryDetails(const QPointF& countryPoint)
 
 void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int nb_A, int nb_D)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
 
   clearLayout();
   initListLabel(10);
@@ -287,7 +287,7 @@ void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int
 
  void KRightDialog::displayRecycleDetails(GameLogic::Player * player, int nbAvailArmies)
  {
-    kDebug() << player->name() << nbAvailArmies;
+    qCDebug(KSIRK_LOG) << player->name() << nbAvailArmies;
     this->show();
 
     clearLayout();
@@ -364,7 +364,7 @@ void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int
 
 void KRightDialog::updateRecycleDetails(GameLogic::Country* country, bool recyclePhase, int nbAvailArmies)
 {
-  kDebug() << (void*)country << recyclePhase << nbAvailArmies;
+  qCDebug(KSIRK_LOG) << (void*)country << recyclePhase << nbAvailArmies;
   this->show();
   if (btValidWidget == 0)
   {
@@ -407,7 +407,7 @@ void KRightDialog::updateRecycleDetails(GameLogic::Country* country, bool recycl
       }
     }
   }
-  kDebug() << "before update and repaint";
+  qCDebug(KSIRK_LOG) << "before update and repaint";
   mainLayout->update();
   repaint();
 
@@ -415,7 +415,7 @@ void KRightDialog::updateRecycleDetails(GameLogic::Country* country, bool recycl
 
 void KRightDialog::displayFightResult(int A1=0, int A2=0, int A3=0, int D1=0, int D2=0,int nbA=0,int nbD=0, bool win=false)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
 
   // Bug 309863. Should not happen anymore because Country details and Fight results shouldn't be mixed.
   // If, by any chance, occurs again, do not crash and log the incident. In that case label just won't be refreshed.
@@ -426,12 +426,12 @@ void KRightDialog::displayFightResult(int A1=0, int A2=0, int A3=0, int D1=0, in
     loadingLabel->clear();
   }
   else
-    kDebug() << "Item (loadingLabel) has already been cleared!";
+    qCDebug(KSIRK_LOG) << "Item (loadingLabel) has already been cleared!";
 
   if (infoProcess != 0)
     infoProcess->clear();
   else
-    kDebug() << "Item (infoProcess) has already been cleared!";
+    qCDebug(KSIRK_LOG) << "Item (infoProcess) has already been cleared!";
 
   milieu = new QWidget(this);
   milieu->setAutoFillBackground(true);
@@ -500,7 +500,7 @@ void KRightDialog::displayFightResult(int A1=0, int A2=0, int A3=0, int D1=0, in
 
 void KRightDialog::initListLabel(int nb)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
 
   removeListLabel();
   for (int i=0;i<nb;i++)
@@ -514,7 +514,7 @@ void KRightDialog::initListLabel(int nb)
 
 void KRightDialog::removeListLabel()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   while (rightContents.size() > 0)
   {
     QLabel* label = rightContents.first();
@@ -525,7 +525,7 @@ void KRightDialog::removeListLabel()
 
 void KRightDialog::clearLabel()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   for (int i=0;i<rightContents.size();i++)
   {
     rightContents.at(i)->setText("");
@@ -535,7 +535,7 @@ void KRightDialog::clearLabel()
 
 void KRightDialog::clearLayout()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   while (rightContents.size() > 0)
   {
     QLabel* obj = rightContents.first();
@@ -610,14 +610,14 @@ void KRightDialog::clearLayout()
 
 void KRightDialog::slotStopAttackAuto()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   this->game->automaton()->setAttackAuto(false);
   this->buttonStopAttack->setEnabled(false);
 }
 
 void KRightDialog::slotStopDefenseAuto()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   this->game->automaton()->setDefenseAuto(false);
   this->buttonStopDefense->setEnabled(false);
 }

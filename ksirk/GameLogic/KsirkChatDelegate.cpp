@@ -22,24 +22,24 @@
 #include "KsirkChatDelegate.h"
 #include "KsirkChatItem.h"
 
-#include <kdebug.h>
+#include "ksirk_debug.h"
 #include <QPainter>
 
 KsirkChatDelegate::KsirkChatDelegate(QObject *parent) : 
     KChatBaseItemDelegate(parent)
 {
-//   kDebug() << "KsirkChatDelegate::KsirkChatDelegate" << endl;
+//   qCDebug(KSIRK_LOG) << "KsirkChatDelegate::KsirkChatDelegate" << endl;
 }
 
 void KsirkChatDelegate::paint(QPainter *painter, 
                 const QStyleOptionViewItem &option,
                 const QModelIndex &index) const
 {
-//   kDebug() << "KsirkChatDelegate::paint" << endl;
+//   qCDebug(KSIRK_LOG) << "KsirkChatDelegate::paint" << endl;
   KsirkChatItem m  = index.model()->data(index, Qt::DisplayRole).value<KsirkChatItem>();
   if (!m.first.isEmpty())
   {
-//     kDebug() << "  " <<m.first << " / " << m.second << endl;
+//     qCDebug(KSIRK_LOG) << "  " <<m.first << " / " << m.second << endl;
     KChatBaseItemDelegate::paint(painter, option, index, m.first, m.second);
   }
   else
@@ -51,14 +51,14 @@ void KsirkChatDelegate::paint(QPainter *painter,
 QSize KsirkChatDelegate::sizeHint(const QStyleOptionViewItem &  option ,
         const QModelIndex &  index ) const
 {
-//   kDebug() << "KsirkChatDelegate::sizeHint" << endl;
+//   qCDebug(KSIRK_LOG) << "KsirkChatDelegate::sizeHint" << endl;
   KsirkChatItem m  = index.model()->data(index, Qt::DisplayRole).value<KsirkChatItem>();
   if (!m.first.isEmpty())
   {
     return KChatBaseItemDelegate::sizeHint(option, index, m.first, m.second);
   }
   QSize result = m.sizeHint(option);
-//   kDebug() << "KsirkChatDelegate::sizeHint: " << result << endl;
+//   qCDebug(KSIRK_LOG) << "KsirkChatDelegate::sizeHint: " << result << endl;
   return result;
 }
 

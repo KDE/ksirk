@@ -93,6 +93,11 @@ set(ksirk_SRCS
   Jabber/privacymanager.cpp
 )
 
+ecm_qt_declare_logging_category(ksirk_SRCS
+                                HEADER ksirk_debug.h
+                                IDENTIFIER KSIRK_LOG
+                                CATEGORY_NAME org.kde.ksirk)
+
 set(ksirk_UI
   Dialogs/qplayersetupdialog.ui
   Dialogs/newGameDialog.ui
