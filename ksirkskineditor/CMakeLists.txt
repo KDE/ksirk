@@ -8,7 +8,6 @@ include_directories(
 ########### next target ###############
 
 set(ksirkskineditor_SRCS
-  ksirkskineditor_debug.cpp
   main.cpp
   mainwindow.cpp
   ksirkSkinEditorConfigDialog.cpp
@@ -23,6 +22,11 @@ set(ksirkskineditor_SRCS
   skinSpritesData.cpp
   goal.cpp
 )
+
+ecm_qt_declare_logging_category(ksirkskineditor_SRCS
+                                HEADER ksirkskineditor_debug.h
+                                IDENTIFIER KSIRKSKINEDITOR_LOG
+                                CATEGORY_NAME org.kde.ksirk.skineditor)
 
 set(ksirkskineditor_UI
 #   ksirkskineditor.ui
