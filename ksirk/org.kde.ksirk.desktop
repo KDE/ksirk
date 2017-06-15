@@ -1,7 +1,7 @@
 # KDE Config File
 [Desktop Entry]
 Type=Application
-Exec=ksirk -qwindowtitle %c %i
+Exec=ksirk -qwindowtitle %c -qwindowicon ksirk
 Icon=ksirk
 X-DocPath=ksirk/index.html
 Terminal=false
