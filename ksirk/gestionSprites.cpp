@@ -51,7 +51,6 @@
 #include <kconfig.h>
 #include <kstandardaction.h>
 #include <phonon/mediaobject.h>
-#include <kstandarddirs.h>
 #include "ksirk_debug.h"
 #include <KToolBar>
 
@@ -689,7 +688,7 @@ void KGameWindow::initCombatMovement()
       qCDebug(KSIRK_LOG) << "add a sprite 2";
       m_animFighters->addSprite(attackingSprite);
       //(pointDepartAttaquantX <= pointArriveeAttaquantX) ? attackingSprite-> setLookRight() : attackingSprite-> setLookLeft();
-      sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roll.wav");
+      sndRoulePath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/roll.wav");
       if (sndRoulePath.isNull())
       {
         KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error!"));
@@ -804,7 +803,7 @@ void KGameWindow::initCombatMovement()
       //(pointDepartDefenseurX <= pointArriveeDefenseurX) ? defenderSprite-> setLookRight() : defenderSprite-> setLookLeft();
       qCDebug(KSIRK_LOG) << "add a sprite 3";
       m_animFighters->addSprite(defenderSprite);
-      sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roll.wav");
+      sndRoulePath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/roll.wav");
       if (sndRoulePath.isNull())
       {
         KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error!"));
@@ -848,7 +847,7 @@ void KGameWindow::animCombat()
     }
     sprite->setAnimated(1);
 
-    QString sndCanonPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/cannon.wav");
+    QString sndCanonPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/cannon.wav");
     if (sndCanonPath.isNull())
     {
       KMessageBox::error(0,
@@ -924,7 +923,7 @@ void KGameWindow::animExplosion(int who)
 
         sprite->setAnimated(NKA);
 
-        QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
+        QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
         if (sndCrashPath.isNull())
         {
           KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
@@ -944,7 +943,7 @@ void KGameWindow::animExplosion(int who)
 
         sprite->setAnimated(NKD);
 
-        QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
+        QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
         if (sndCrashPath.isNull())
         {
           KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
@@ -1045,7 +1044,7 @@ void KGameWindow::animExplosionForArena()
 
           sprite->setAnimated(NKA);
 
-          QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
+          QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
             KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
@@ -1082,7 +1081,7 @@ void KGameWindow::animExplosionForArena()
 
           sprite->setAnimated(NKA);
 
-          QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
+          QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
             KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
@@ -1117,7 +1116,7 @@ void KGameWindow::animExplosionForArena()
 
           sprite->setAnimated(1);
 
-          QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
+          QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
             KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
@@ -1171,7 +1170,7 @@ void KGameWindow::animExplosionForArena()
 
           sprite->setAnimated(NKD);
 
-          QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
+          QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
             KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
@@ -1208,7 +1207,7 @@ void KGameWindow::animExplosionForArena()
 
           sprite->setAnimated(NKD);
 
-          QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
+          QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
             KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
@@ -1242,7 +1241,7 @@ void KGameWindow::animExplosionForArena()
 
           sprite->setAnimated(1);
 
-          QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
+          QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
             KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
@@ -1405,7 +1404,7 @@ void KGameWindow::initCombatBringBackForArena(Country *attackingCountry, Country
     qCDebug(KSIRK_LOG) << "add a sprite 4";
     m_animFighters->addSprite(newSprite);
 
-    QString sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roll.wav");
+    QString sndRoulePath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/roll.wav");
     if (sndRoulePath.isNull())
     {
         KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error!"));
@@ -1482,7 +1481,7 @@ void KGameWindow::initCombatBringBackForArena(Country *attackingCountry, Country
       qCDebug(KSIRK_LOG) << "add a sprite 5";
       m_animFighters->addSprite(newSprite);
 
-      QString sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roll.wav");
+      QString sndRoulePath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/roll.wav");
       if (sndRoulePath.isNull())
       {
           KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error!"));

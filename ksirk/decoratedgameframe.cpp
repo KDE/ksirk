@@ -250,36 +250,36 @@ void DecoratedGameFrame::setIcon()
   
   QString imageFileName;
 
-  imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/attackOne.png");
+  imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, skin + "/Images/attackOne.png");
   Attack1Action-> setIcon(QIcon(imageFileName));
 
-  imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/attackTwo.png");
+  imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, skin + "/Images/attackTwo.png");
   Attack2Action-> setIcon(QIcon(imageFileName));
 
-  imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/attackThree.png");
+  imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, skin + "/Images/attackThree.png");
   Attack3Action-> setIcon(QIcon(imageFileName));
 
-  imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/attackAuto.png");
+  imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, skin + "/Images/attackAuto.png");
   AutoAction-> setIcon(QIcon(imageFileName));
 
-  imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/moveOne.png");
+  imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, skin + "/Images/moveOne.png");
   Move1Action-> setIcon(QIcon(imageFileName));
 
-  imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/moveFive.png");
+  imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, skin + "/Images/moveFive.png");
   Move5Action-> setIcon(QIcon(imageFileName));
 
-  imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/moveTen.png");
+  imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, skin + "/Images/moveTen.png");
   Move10Action-> setIcon(QIcon(imageFileName));
 
   //temporary
-  imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/moveArmies.png");
+  imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, skin + "/Images/moveArmies.png");
   m_arenaAction-> setIcon(QIcon(imageFileName));
 
-  imageFileName = KGlobal::dirs()->findResource("appdata", skin + '/' + CM_NEXTPLAYER);
+  imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, skin + '/' + CM_NEXTPLAYER);
   nextPlayer-> setIcon(QIcon(imageFileName));
 
   // temporary
-  imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/newNetGame.png");
+  imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, skin + "/Images/newNetGame.png");
   detailsAction-> setIcon(QIcon(imageFileName));
 
 }

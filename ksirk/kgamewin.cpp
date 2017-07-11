@@ -72,7 +72,6 @@
 #include <kstandardgameaction.h>
 #include <kstandardaction.h>
 #include <kactioncollection.h>
-#include <kstandarddirs.h>
 #include <kmenubar.h>
 #include "ksirk_debug.h"
 #include <phonon/mediaobject.h>
@@ -89,10 +88,8 @@
 #include <QIcon>
 #define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
 #include <libkdegamesprivate/kgame/kgamechat.h>
-
-
 #include <sys/utsname.h>
-
+#include <QStandardPaths>
 
 namespace Ksirk
 {
@@ -151,10 +148,9 @@ KGameWindow::KGameWindow(QWidget* parent) :
 
   statusBar()->addWidget(m_barFlag);
 
-  m_dirs = KGlobal::dirs();
 //   m_accels.setEnabled(true);
   
-  QString iconFileName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Images/soldierKneeling.png");
+  QString iconFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Images/soldierKneeling.png");
   if (iconFileName.isNull())
   {
       KMessageBox::error(0, i18n("Cannot load icon<br>Program cannot continue"), i18n("Error!"));
@@ -186,12 +182,12 @@ KGameWindow::KGameWindow(QWidget* parent) :
           SLOT(slotChatMessage()));
 
 
-  m_upChatFloatPix.load(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/2UpArrow.png"));
-  m_downChatFloatPix.load(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/2DownArrow.png"));
+  m_upChatFloatPix.load(QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Images/2UpArrow.png"));
+  m_downChatFloatPix.load(QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Images/2DownArrow.png"));
   m_chatIsReduced = false;
 
   m_titleChatMsg = new QLabel(i18n("No message..."));
-  QPixmap downChatReducePix(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/downArrow.png"));
+  QPixmap downChatReducePix(QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Images/downArrow.png"));
   m_reduceChatButton = new QPushButton(downChatReducePix,"");
   m_floatChatButton = new QPushButton(m_upChatFloatPix,"");
   m_reduceChatButton->setFixedSize(30,30);
@@ -331,7 +327,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
 KGameWindow::~KGameWindow()
 {
   qCDebug(KSIRK_LOG);
-  m_dirs = 0;
+
   if (m_jabberClient != 0)
   {
     delete m_jabberClient;
@@ -382,7 +378,7 @@ void KGameWindow::initActions()
   KStandardAction::preferences( this, SLOT(optionsConfigure()), actionCollection() );
 
   // specific ksirk action
-  QString imageFileName = m_dirs-> findResource("appdata", "jabber.png");
+  QString imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, "jabber.png");
   //   qCDebug(KSIRK_LOG) << "Trying to load button image file: " << imageFileName;
   if (imageFileName.isNull())
   {
@@ -399,7 +395,7 @@ void KGameWindow::initActions()
   actionCollection()->addAction("game_jabber", m_jabberAction);
   
   // specific ksirk action
-  imageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_NEWNETGAME);
+  imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + '/' + CM_NEWNETGAME);
   //   qCDebug(KSIRK_LOG) << "Trying to load button image file: " << imageFileName;
   if (imageFileName.isNull())
   {
@@ -416,7 +412,7 @@ void KGameWindow::initActions()
   
                                      
   // specific ksirk action
-  imageFileName = m_dirs-> findResource("appdata", m_automaton->skin() + '/' + CM_NEWNETGAME);
+  imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + '/' + CM_NEWNETGAME);
   //   qCDebug(KSIRK_LOG) << "Trying to load button image file: " << imageFileName;
   if (imageFileName.isNull())
   {
@@ -450,7 +446,7 @@ void KGameWindow::initActions()
   actionCollection()->addAction("help_contextual", m_contextualHelpAction);
 
 
-  QString nextPlayerActionImageFileName = KGlobal::dirs()->findResource("appdata", m_automaton->skin() + '/' + CM_NEXTPLAYER);
+  QString nextPlayerActionImageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + '/' + CM_NEXTPLAYER);
   m_nextPlayerAction =  new QAction(QIcon(nextPlayerActionImageFileName),
         i18n("Next Player"), this);
   connect(m_nextPlayerAction, SIGNAL(triggered(bool)), this, SLOT(slotNextPlayer()));
@@ -578,7 +574,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
   QString onuDefinitionFileName = onuFileName;
   if (onuDefinitionFileName.isEmpty())
   {
-    onuDefinitionFileName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Data/world.desktop");
+    onuDefinitionFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Data/world.desktop");
   }
   else if (!QFile::exists(onuDefinitionFileName))
   {
@@ -740,7 +736,7 @@ KRightDialog * KGameWindow::getRightDialog()
 void KGameWindow::initView()
 {
   qCDebug(KSIRK_LOG);
-  QString iconFileName = m_dirs-> findResource("appdata", m_automaton->skin() + "/Images/soldierKneeling.png");
+  QString iconFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Images/soldierKneeling.png");
   if (iconFileName.isNull())
   {
       KMessageBox::error(0, i18n("Cannot load icon<br>Program cannot continue"), i18n("Error!"));
@@ -1257,11 +1253,11 @@ void KGameWindow::createDefenseDialog()
   QString skin = m_automaton->game()->theWorld()->skin();
   QString imageFileName;
 
-  imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/defendOne.png");
+  imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, skin + "/Images/defendOne.png");
   def1->setIcon(QIcon(imageFileName));
-  imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/defendTwo.png");
+  imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, skin + "/Images/defendTwo.png");
   def2->setIcon(QIcon(imageFileName));
-  imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/attackAuto.png");
+  imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, skin + "/Images/attackAuto.png");
   defAuto->setIcon(QIcon(imageFileName));
 
 
@@ -3087,7 +3083,7 @@ void KGameWindow::reduceChat()
   m_lastWidthChat = m_bottomDock->width();
 
   // reduce the chat
-  QPixmap upChatReducePix(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/upArrow.png"));
+  QPixmap upChatReducePix(QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Images/upArrow.png"));
   m_reduceChatButton->setIcon(upChatReducePix);
   m_chatDlg->hide();
   m_titleChatMsg->show();
@@ -3099,7 +3095,7 @@ void KGameWindow::unreduceChat()
   m_chatIsReduced = false;
 
   // restore the chat
-  QPixmap downChatReducePix(m_dirs->findResource("appdata", m_automaton->skin() + "/Images/downArrow.png"));
+  QPixmap downChatReducePix(QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Images/downArrow.png"));
   m_reduceChatButton->setIcon(downChatReducePix);
   m_chatDlg->show();
   m_titleChatMsg->hide();

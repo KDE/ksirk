@@ -57,7 +57,6 @@
 #include <kstandardgameaction.h>
 #include <kstandardaction.h>
 #include <kactioncollection.h>
-#include <kstandarddirs.h>
 #include <kmenubar.h>
 #include "ksirkskineditor_debug.h"
 #include <ktextedit.h>
@@ -127,9 +126,7 @@ MainWindow::MainWindow(QWidget* parent) :
   m_cannonButton->setEnabled(false);
   connect(m_cannonButton,SIGNAL(clicked()),this,SLOT(slotCannonButtonClicked()));
 
-  m_dirs = KGlobal::dirs();
-
-  QString anchorFileName = m_dirs-> findResource("appdata", "cross.png");
+  QString anchorFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, "cross.png");
   if (anchorFileName.isNull())
   {
     KMessageBox::error(0, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error"));
@@ -143,7 +140,7 @@ MainWindow::MainWindow(QWidget* parent) :
   m_anchorButton->setEnabled(false);
   connect(m_anchorButton,SIGNAL(clicked()),this,SLOT(slotAnchorButtonClicked()));
   
-  QString centerFileName = m_dirs-> findResource("appdata", "target.png");
+  QString centerFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, "target.png");
   if (centerFileName.isNull())
   {
     KMessageBox::error(0, i18n("Cannot load center icon<br>Program cannot continue"), i18n("Error"));
@@ -160,7 +157,7 @@ MainWindow::MainWindow(QWidget* parent) :
   
   //   m_accels.setEnabled(true);
   
-  QString iconFileName = m_dirs-> findResource("appdata", "ksirkskineditor.png");
+  QString iconFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, "ksirkskineditor.png");
 /*  if (iconFileName.isNull())
   {
       KMessageBox::error(0, i18n("Cannot load icon<br>Program cannot continue"), i18n("Error"));
@@ -315,7 +312,6 @@ MainWindow::MainWindow(QWidget* parent) :
 MainWindow::~MainWindow()
 {
   qCDebug(KSIRKSKINEDITOR_LOG);
-  m_dirs = 0;
   KSharedConfig::Ptr config = KSharedConfig::openConfig();
   if (m_rfa != 0)
   {
@@ -683,7 +679,7 @@ void MainWindow::slotAnchorButtonClicked()
   }
   else if (m_skinDefWidget->countrieslist->currentItem()!=0)
   {
-    QString anchorFileName = m_dirs-> findResource("appdata", "cross.png");
+    QString anchorFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, "cross.png");
     if (anchorFileName.isNull())
     {
       KMessageBox::error(0, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error"));
@@ -712,7 +708,7 @@ void MainWindow::slotCenterButtonClicked()
   }
   else if (m_skinDefWidget->countrieslist->currentItem()!=0)
   {
-    QString centerFileName = m_dirs-> findResource("appdata", "target.png");
+    QString centerFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, "target.png");
     if (centerFileName.isNull())
     {
       KMessageBox::error(0, i18n("Cannot load center icon<br>Program cannot continue"), i18n("Error"));
@@ -811,7 +807,7 @@ void MainWindow::slotPressPosition(const QPointF& clickedPoint)
       break;
     case Anchor:
       qCDebug(KSIRKSKINEDITOR_LOG) << "Adding anchor";
-      fileName = m_dirs-> findResource("appdata", "cross.png");
+      fileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, "cross.png");
       if (fileName.isNull())
       {
         KMessageBox::error(0, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error"));
@@ -828,7 +824,7 @@ void MainWindow::slotPressPosition(const QPointF& clickedPoint)
       break;
     case Center:
       qCDebug(KSIRKSKINEDITOR_LOG) << "Adding center";
-      fileName = m_dirs-> findResource("appdata", "target.png");
+      fileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, "target.png");
       if (fileName.isNull())
       {
         KMessageBox::error(0, i18n("Cannot load center icon<br>Program cannot continue"), i18n("Error"));
@@ -1198,7 +1194,7 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
       item = new PixmapItem();
       item->setZValue(3);
       qCDebug(KSIRKSKINEDITOR_LOG) << "Adding anchor";
-      fileName = m_dirs-> findResource("appdata", "cross.png");
+      fileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, "cross.png");
       if (fileName.isNull())
       {
         KMessageBox::error(0, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error"));

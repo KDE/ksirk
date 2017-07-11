@@ -35,9 +35,9 @@ mainMenu::mainMenu(Ksirk::KGameWindow* game, QWidget* parent) : QWidget(parent)
   QString imageFileName;
   QPixmap imag1, imag2;
   
-  imageFileName = KGlobal::dirs()->findResource("appdata", "skins/default/Images/logoRight.png");
+  imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, "skins/default/Images/logoRight.png");
   imag1.load(imageFileName);
-  imageFileName = KGlobal::dirs()->findResource("appdata", "skins/default/Images/logoLeft.png");
+  imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, "skins/default/Images/logoLeft.png");
   imag2.load(imageFileName);
   
   lImage1->setPixmap(imag1.scaled(100,100,Qt::KeepAspectRatioByExpanding));

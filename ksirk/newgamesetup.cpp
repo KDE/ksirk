@@ -20,7 +20,7 @@
 
 #include <KLocalizedString>
 #include "ksirk_debug.h"
-#include <KStandardDirs>
+#include <QStandardPaths>
 #include <KMessageBox>
 
 #include <qdir.h>
@@ -33,12 +33,10 @@ m_automaton(automaton), m_skin(""), m_worlds(), m_players(),
                                m_useGoals(true), m_networkGameType(Ksirk::GameLogic::GameAutomaton::None),
                                m_tcpPort(20000)
 {
-  KStandardDirs *m_dirs = KGlobal::dirs();
-  QStringList skinsDirs = m_dirs->findDirs("appdata","skins");
+  QStringList skinsDirs = QStandardPaths::locateAll(QStandardPaths::AppDataLocation, "skins", QStandardPaths::LocateDirectory);
   qCDebug(KSIRK_LOG) << skinsDirs;
   foreach (const QString &skinsDirName, skinsDirs)
   {
-    //   QString skinsDirName = m_dirs->findResourceDir("appdata", "skins/skinsdir");
     if (skinsDirName.isEmpty())
     {
       KMessageBox::error(0,
@@ -53,11 +51,11 @@ m_automaton(automaton), m_skin(""), m_worlds(), m_players(),
     foreach (const QString& name, skinsDirsNames)
     {
       qCDebug(KSIRK_LOG) << "Got skin dir name: " << name;
-      QDir skinDir(skinsDirName + name);
+      QDir skinDir(skinsDirName + '/' + name);
       if (skinDir.exists())
       {
         qCDebug(KSIRK_LOG) << "Got skin dir: " << skinDir.dirName();
-        GameLogic::ONU* world = new GameLogic::ONU(automaton,skinsDirName + skinDir.dirName() + "/Data/world.desktop");
+        GameLogic::ONU* world = new GameLogic::ONU(automaton,skinsDirName + '/' + skinDir.dirName() + "/Data/world.desktop");
         if (!world->skin().isEmpty())
         {
           m_worlds[i18n(world->name().toUtf8().data())] = world;

@@ -48,7 +48,7 @@
 // include files for KDE
 #include <ksharedconfig.h>
 #include <KXmlGuiWindow>
-#include <KStandardDirs>
+#include <QStandardPaths>
 #include <KShortcut>
 
 // #include <kdialogbase.h>
@@ -1012,11 +1012,6 @@ private: // Private members
     * The menu frame of the game, its visual component ; the main widget
     */
   mainMenu* m_mainMenu;
-
-  /**
-    * a shortcut to the standard dirs object.
-    */
-  KStandardDirs* m_dirs;
 
   /**
     * This button is used to display the flag of the currently active player

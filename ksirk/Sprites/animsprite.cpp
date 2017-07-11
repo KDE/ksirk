@@ -34,7 +34,6 @@
 
 #include <kmessagebox.h>
 #include <KLocalizedString>
-#include <kstandarddirs.h>
 #include "ksirk_debug.h"
 
 namespace Ksirk

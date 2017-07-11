@@ -68,7 +68,6 @@
 #include <kstandardgameaction.h>
 #include <kstandardaction.h>
 #include <kactioncollection.h>
-#include <kstandarddirs.h>
 #include <kmenubar.h>
 #include "ksirk_debug.h"
 #include <ktextedit.h>

@@ -38,7 +38,6 @@
 // include files for KDE
 #include <ksharedconfig.h>
 #include <KXmlGuiWindow>
-#include <KStandardDirs>
 #include <KShortcut>
 #include <KUrl>
 // include files for kde games
@@ -245,11 +244,6 @@ private:
   
   Country* currentCountry();
   void createPixmapFor(Country* country, SpriteType type);
-  
-  /**
-    * a shortcut to the standard dirs object.
-    */
-  KStandardDirs* m_dirs;
 
   /**
     * Audio player object: play all the sounds of the game.

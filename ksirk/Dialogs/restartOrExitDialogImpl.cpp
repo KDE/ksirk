@@ -20,7 +20,7 @@
 
 #include <KLocalizedString>
 #include "ksirk_debug.h"
-#include <kstandarddirs.h>
+#include <QStandardPaths>
 #include <kmessagebox.h>
 
 #include <qspinbox.h>

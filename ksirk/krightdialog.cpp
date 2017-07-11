@@ -71,19 +71,19 @@ KRightDialog::KRightDialog(QDockWidget * parent, ONU * world,KGameWindow* m_game
     delete sprite;
     
     // load the stopAttackAuto image
-    QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/stopAttackAuto.png");
+    QString imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, skin + "/Images/stopAttackAuto.png");
     stopAttackAuto.load(imageFileName);
 
     // load the recycle image
-    imageFileName = KGlobal::dirs()->findResource("appdata", skin + '/' +CM_RECYCLING);
+    imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, skin + '/' +CM_RECYCLING);
     recycleContinue.load(imageFileName);
 
     // load the finish recycle image
-    imageFileName = KGlobal::dirs()->findResource("appdata", skin + '/' + CM_RECYCLINGFINISHED);
+    imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, skin + '/' + CM_RECYCLINGFINISHED);
     recycleDone.load(imageFileName);
 
     // load the next player image
-    imageFileName = KGlobal::dirs()->findResource("appdata", skin + '/' + CM_NEXTPLAYER);
+    imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, skin + '/' + CM_NEXTPLAYER);
     recycleNextPlayer.load(imageFileName);
 
     show();
@@ -180,7 +180,7 @@ void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int
   KConfig config(world->getConfigFileName());
   KConfigGroup onugroup = config.group("onu");
   QString skin = onugroup.readEntry("skinpath");
-  QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/loader.gif");
+  QString imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, skin + "/Images/loader.gif");
 
   QMovie * loading = new QMovie(imageFileName);
   loadingLabel->setMovie(loading);

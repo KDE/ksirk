@@ -32,7 +32,6 @@
 #include <QFileInfo>
 
 #include <kapplication.h>
-#include <kstandarddirs.h>
 #include <kglobal.h>
 #include <KLocalizedString>
 #include "ksirk_debug.h"
@@ -102,16 +101,15 @@ ONU::ONU(GameAutomaton* automaton,
 
   m_name = onugroup.readEntry("name");
   m_skin = onugroup.readEntry("skinpath");
-  qCDebug(KSIRK_LOG) << "skin snapshot file: " << KGlobal::dirs()-> findResource("appdata", m_skin + "/Images/snapshot.jpg");
+
+  qCDebug(KSIRK_LOG) << "skin snapshot file: " << QStandardPaths::locate(QStandardPaths::AppDataLocation, m_skin + "/Images/snapshot.jpg");
   if (!m_automaton->pixmapCache().find(m_skin+"snapshot", m_snapshot))
   {
     // Pixmap isn't in the cache, create it and insert to cache
-    m_snapshot = QPixmap(KGlobal::dirs()-> findResource("appdata", m_skin + "/Images/snapshot.jpg"));
+    m_snapshot = QPixmap(QStandardPaths::locate(QStandardPaths::AppDataLocation, m_skin + "/Images/snapshot.jpg"));
     if (m_snapshot.isNull())
     {
-      qCCritical(KSIRK_LOG) << "Was not able to load the snapshot image: "
-      << KGlobal::dirs()-> findResource("appdata", m_skin + "/Images/snapshot.jpg")
-      << endl;
+      qCCritical(KSIRK_LOG) << "Was not able to load the snapshot image: " << QStandardPaths::locate(QStandardPaths::AppDataLocation, m_skin + "/Images/snapshot.jpg") << endl;
     }
     m_automaton->pixmapCache().insert(m_skin+"snapshot", m_snapshot);
   }
@@ -125,7 +123,8 @@ ONU::ONU(GameAutomaton* automaton,
   QString poolString = onugroup.readEntry("pool");
   qCDebug(KSIRK_LOG) << "Pool path: " << poolString;
   qCDebug(KSIRK_LOG) << "Searching resource: " << (m_skin + '/' + poolString);
-  QString poolFileName = KGlobal::dirs()-> findResource("appdata", m_skin + '/' + poolString);
+
+  QString poolFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_skin + '/' + poolString);
   qCDebug(KSIRK_LOG) << "Pool file name: " << poolFileName;
   if (poolFileName.isEmpty())
   {
@@ -142,7 +141,7 @@ ONU::ONU(GameAutomaton* automaton,
     m_automaton->svgDomFor(m_skin).load(poolFileName);
   qCDebug(KSIRK_LOG) << m_skin << "after pool loading";
   
-  QString mapMaskFileName = KGlobal::dirs()-> findResource("appdata", m_skin + '/' + onugroup.readEntry("map-mask"));
+  QString mapMaskFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_skin + '/' + onugroup.readEntry("map-mask"));
   qCDebug(KSIRK_LOG) << "Map mask file name: " << mapMaskFileName;
   if (mapMaskFileName.isNull())
   {

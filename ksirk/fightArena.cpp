@@ -73,7 +73,7 @@ namespace Ksirk
       KConfig config(onuObject->getConfigFileName());
       KConfigGroup onugroup = config.group("onu");
       QString skin = onugroup.readEntry("skinpath");
-      QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/arena.svg");
+      QString imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, skin + "/Images/arena.svg");
       // create the background image
       m_bgImage = new QPixmap(imageFileName);
    }
