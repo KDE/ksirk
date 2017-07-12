@@ -35,11 +35,10 @@
 #include <QSlider>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
+#include <QUrl>
 // include files for KDE
 #include <ksharedconfig.h>
 #include <KXmlGuiWindow>
-#include <KShortcut>
-#include <KUrl>
 // include files for kde games
 
 class QAction;
@@ -145,7 +144,7 @@ private Q_SLOTS:
   void slotOpenSkin(const QString& dir = QString());
   void slotSaveSkin();
 
-  void slotURLSelected(const KUrl&);
+  void slotURLSelected(const QUrl&);
 
   void slotSkinNameEdited();
   void slotSkinWidthEdited(int);

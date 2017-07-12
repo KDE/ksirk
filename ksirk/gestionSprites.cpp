@@ -696,7 +696,7 @@ void KGameWindow::initCombatMovement()
       }
       if (KsirkSettings::soundEnabled())
       {
-        m_audioPlayer->setCurrentSource(sndRoulePath);
+        m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndRoulePath));
         m_audioPlayer->play();
       }
     }
@@ -811,7 +811,7 @@ void KGameWindow::initCombatMovement()
       }
       if (KsirkSettings::soundEnabled())
       {
-        m_audioPlayer->setCurrentSource(sndRoulePath);
+        m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndRoulePath));
         m_audioPlayer->play();
       }
     }
@@ -856,7 +856,7 @@ void KGameWindow::animCombat()
     }
     if (KsirkSettings::soundEnabled())
     {
-      m_audioPlayer->setCurrentSource(sndCanonPath);
+      m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndCanonPath));
       m_audioPlayer->play();
     }
   }
@@ -931,7 +931,7 @@ void KGameWindow::animExplosion(int who)
         }
         if (KsirkSettings::soundEnabled())
         {
-          m_audioPlayer->setCurrentSource(sndCrashPath);
+          m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndCrashPath));
           m_audioPlayer->play();
         }
       }
@@ -951,7 +951,7 @@ void KGameWindow::animExplosion(int who)
         }
         if (KsirkSettings::soundEnabled())
         {
-          m_audioPlayer->setCurrentSource(sndCrashPath);
+          m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndCrashPath));
           m_audioPlayer->play();
         }
       }
@@ -1052,7 +1052,7 @@ void KGameWindow::animExplosionForArena()
           }
           if (KsirkSettings::soundEnabled())
           {
-            m_audioPlayer->setCurrentSource(sndCrashPath);
+            m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndCrashPath));
             m_audioPlayer->play();
           }
         }
@@ -1089,7 +1089,7 @@ void KGameWindow::animExplosionForArena()
           }
           if (KsirkSettings::soundEnabled())
           {
-            m_audioPlayer->setCurrentSource(sndCrashPath);
+            m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndCrashPath));
             m_audioPlayer->play();
           }
         }
@@ -1124,7 +1124,7 @@ void KGameWindow::animExplosionForArena()
           }
           if (KsirkSettings::soundEnabled())
           {
-            m_audioPlayer->setCurrentSource(sndCrashPath);
+            m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndCrashPath));
             m_audioPlayer->play();
           }
         }
@@ -1178,7 +1178,7 @@ void KGameWindow::animExplosionForArena()
           }
           if (KsirkSettings::soundEnabled())
           {
-            m_audioPlayer->setCurrentSource(sndCrashPath);
+            m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndCrashPath));
             m_audioPlayer->play();
           }
         }
@@ -1215,7 +1215,7 @@ void KGameWindow::animExplosionForArena()
           }
           if (KsirkSettings::soundEnabled())
           {
-            m_audioPlayer->setCurrentSource(sndCrashPath);
+            m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndCrashPath));
             m_audioPlayer->play();
           }
         }
@@ -1249,7 +1249,7 @@ void KGameWindow::animExplosionForArena()
           }
           if (KsirkSettings::soundEnabled())
           {
-            m_audioPlayer->setCurrentSource(sndCrashPath);
+            m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndCrashPath));
             m_audioPlayer->play();
           }
         }
@@ -1412,7 +1412,7 @@ void KGameWindow::initCombatBringBackForArena(Country *attackingCountry, Country
     }
     if (KsirkSettings::soundEnabled())
     {
-            m_audioPlayer->setCurrentSource(sndRoulePath);
+            m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndRoulePath));
             m_audioPlayer->play();
     }
   }
@@ -1489,7 +1489,7 @@ void KGameWindow::initCombatBringBackForArena(Country *attackingCountry, Country
       }
       if (KsirkSettings::soundEnabled())
       {
-              m_audioPlayer->setCurrentSource(sndRoulePath);
+              m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndRoulePath));
               m_audioPlayer->play();
       }
   }

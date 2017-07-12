@@ -40,10 +40,9 @@
 #include <QMouseEvent>
 #include <QFile>
 #include <QUuid>
-
+#include <QInputDialog>
 #include <KLocalizedString>
 #include <kdialog.h>
-#include <kinputdialog.h>
 #include <klineedit.h>
 #include <kmessagebox.h>
 #include <kvbox.h>
@@ -298,10 +297,10 @@ GameAutomaton::GameState GameAutomaton::run()
     {
       qCDebug(KSIRK_LOG) << "opened" << endl;
       bool ok;
-      m_port = KInputDialog::getInteger(
+      m_port = QInputDialog::getInt(m_game,
               i18n("KsirK - Network configuration"), 
               i18n("Please type in the port number on which to offer connections:"), 
-              m_port, 0, 32000, 1, 10, &ok, m_game);
+              m_port, 0, 32000, 1, &ok);
       offerConnections(m_port);
       state(WAIT_PLAYERS);
       QTimer::singleShot(200, this, SLOT(run()));

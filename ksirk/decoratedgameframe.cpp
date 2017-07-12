@@ -206,7 +206,7 @@ void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
       }
 
       // set the goal icon to the proper flag
-      goalAction-> setIcon(KIcon(m_automaton-> currentPlayer()->getFlag()-> image(0)));
+      goalAction-> setIcon(QIcon(m_automaton-> currentPlayer()->getFlag()-> image(0)));
 
       goalAction->setVisible(true);
 

@@ -51,7 +51,7 @@
 // include files for KDE
 #include <kiconloader.h>
 #include <kmessagebox.h>
-#include <kfiledialog.h>
+#include <QFileDialog>
 #include <KLocalizedString>
 #include <kconfig.h>
 #include <kstandardgameaction.h>
@@ -368,8 +368,7 @@ void MainWindow::slotOpenSkin(const QString& dir)
   QString skinDir = dir;
   if (dir.isNull())
   {
-    skinDir = KFileDialog::getExistingDirectory(
-    KUrl(), this, i18n("Choose the root folder of the skin to open"));
+    skinDir = QFileDialog::getExistingDirectory(this, i18n("Choose the root folder of the skin to open"), QString());
   }
   if (skinDir.isEmpty())
   {
@@ -1241,7 +1240,7 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
   }
 }
 
-void MainWindow::slotURLSelected(const KUrl& url)
+void MainWindow::slotURLSelected(const QUrl &url)
 {
   qCDebug(KSIRKSKINEDITOR_LOG);
   if ( url.isLocalFile() )

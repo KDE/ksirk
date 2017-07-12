@@ -51,10 +51,10 @@
 #include <QUuid>
 #include <QTextStream>
 #include <QInputDialog>
+#include <QFileDialog>
+#include <QUrl>
 
 // include files for KDE
-#include <KUrl>
-#include <kfiledialog.h>
 #include <KLocalizedString>
 #include <kconfig.h>
 #include "ksirk_debug.h"
@@ -453,7 +453,7 @@ void KGameWindow::slotSaveGame()
     }
     if (m_fileName.isEmpty())
     {
-      QString fileName = KFileDialog::getSaveFileName (KUrl(), "*.xml", this, i18n("KsirK - Save Game"));
+      QString fileName = QFileDialog::getSaveFileName (this, i18n("KsirK - Save Game"), QString(), "*.xml");
       if ( QFile::exists(fileName)
           && (KMessageBox::questionYesNo (this,
                 i18n("%1 exists.\nDo you really want to overwrite it?",fileName),
@@ -1106,7 +1106,7 @@ void KGameWindow::slotGroupChatError (const XMPP::Jid &jid, int error, const QSt
     case JabberClient::NicknameConflict:
     {
       bool ok;
-      QString nickname = KInputDialog::getText(i18n("Error trying to join %1: nickname %2 is already in use", jid.node(), jid.resource()), i18n("Provide your nickname"), QString(), &ok);
+      QString nickname = QInputDialog::getText(this, i18n("Error trying to join %1: nickname %2 is already in use", jid.node(), jid.resource()), i18n("Provide your nickname"), QLineEdit::Normal, QString(), &ok);
       if (ok)
       {
         m_jabberClient->joinGroupChat(jid.domain(), jid.node(), nickname);
