@@ -75,7 +75,7 @@
        </widget>
       </item>
       <item row="3" column="1" >
-       <widget class="KIntNumInput" name="infantryx" >
+       <widget class="QSpinBox" name="infantryx" >
         <property name="toolTip" >
          <string>Infantry's sprite top left point x-coordinate</string>
         </property>
@@ -102,7 +102,7 @@ This value will be automatically updated if you move the infantry.</string>
        </widget>
       </item>
       <item row="3" column="3" >
-       <widget class="KIntNumInput" name="infantryy" >
+       <widget class="QSpinBox" name="infantryy" >
         <property name="toolTip" >
          <string>Infantry's sprite top left point y-coordinate</string>
         </property>
@@ -126,7 +126,7 @@ This value will be automatically updated if you move the infantry by drag and dr
        </widget>
       </item>
       <item row="4" column="1" >
-       <widget class="KIntNumInput" name="cavalryx" >
+       <widget class="QSpinBox" name="cavalryx" >
         <property name="toolTip" >
          <string>Cavalry's sprite top left point x-coordinate</string>
         </property>
@@ -153,7 +153,7 @@ This value will be automatically updated if you move the cavalry.</string>
        </widget>
       </item>
       <item row="4" column="3" >
-       <widget class="KIntNumInput" name="cavalryy" >
+       <widget class="QSpinBox" name="cavalryy" >
         <property name="toolTip" >
          <string>Cavalry's sprite top left point y-coordinate</string>
         </property>
@@ -187,7 +187,7 @@ This value will be automatically updated if you move the cavalry by drag and dro
        </widget>
       </item>
       <item row="5" column="3" >
-       <widget class="KIntNumInput" name="cannony" >
+       <widget class="QSpinBox" name="cannony" >
         <property name="toolTip" >
          <string>Cannon's sprite top left point y-coordinate</string>
         </property>
@@ -204,7 +204,7 @@ This value will be automatically updated if you move the cannon by drag and drop
        </widget>
       </item>
       <item row="5" column="1" >
-       <widget class="KIntNumInput" name="cannonx" >
+       <widget class="QSpinBox" name="cannonx" >
         <property name="toolTip" >
          <string>Cannon's sprite top left point x-coordinate</string>
         </property>
@@ -221,7 +221,7 @@ This value will be automatically updated if you move the cannon.</string>
        </widget>
       </item>
       <item row="2" column="3" >
-       <widget class="KIntNumInput" name="centery" >
+       <widget class="QSpinBox" name="centery" >
         <property name="toolTip" >
          <string>Point around which the country name is drawn y-coordinate</string>
         </property>
@@ -241,7 +241,7 @@ This value will be automatically updated if you move the country name by draggin
        </widget>
       </item>
       <item row="2" column="1" >
-       <widget class="KIntNumInput" name="centerx" >
+       <widget class="QSpinBox" name="centerx" >
         <property name="toolTip" >
          <string>Point around which the country name is drawn x-coordinate</string>
         </property>
@@ -260,7 +260,7 @@ This value will be automatically updated if you move the country name by draggin
        </widget>
       </item>
       <item row="1" column="3" >
-       <widget class="KIntNumInput" name="anchory" >
+       <widget class="QSpinBox" name="anchory" >
         <property name="toolTip" >
          <string>Center of the highlighting y-coordinate</string>
         </property>
@@ -277,7 +277,7 @@ This value will be automatically updated if you move the highlighting by draggin
        </widget>
       </item>
       <item row="1" column="1" >
-       <widget class="KIntNumInput" name="anchorx" >
+       <widget class="QSpinBox" name="anchorx" >
         <property name="toolTip" >
          <string>Center of the highlighting x-coordinate</string>
         </property>
@@ -294,7 +294,7 @@ This value will be automatically updated if you move the highlighting by draggin
        </widget>
       </item>
       <item row="0" column="3" >
-       <widget class="KIntNumInput" name="flagy" >
+       <widget class="QSpinBox" name="flagy" >
         <property name="toolTip" >
          <string>Flag's sprite top left point y-coordinate</string>
         </property>
@@ -311,7 +311,7 @@ This value will be automatically updated if you move the flag by drag and drop.<
        </widget>
       </item>
       <item row="0" column="1" >
-       <widget class="KIntNumInput" name="flagx" >
+       <widget class="QSpinBox" name="flagx" >
         <property name="toolTip" >
          <string>Flag's sprite top left point x-coordinate</string>
         </property>
@@ -357,13 +357,6 @@ A list of all the world's countries will be shown and you will be able to select
    </layout>
   </widget>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KIntNumInput</class>
-   <extends>QWidget</extends>
-   <header>knuminput.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

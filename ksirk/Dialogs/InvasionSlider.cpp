@@ -62,13 +62,11 @@
 // include files for KDE
 #include <kiconloader.h>
 #include <kmessagebox.h>
-#include <kfiledialog.h>
 #include <KLocalizedString>
 #include <kconfig.h>
 #include <kstandardgameaction.h>
 #include <kstandardaction.h>
 #include <kactioncollection.h>
-#include <kmenubar.h>
 #include "ksirk_debug.h"
 #include <ktextedit.h>
 #include <phonon/mediaobject.h>

@@ -24,7 +24,7 @@
        </widget>
       </item>
       <item>
-       <widget class="KIntNumInput" name="bonus" >
+       <widget class="QSpinBox" name="bonus" >
         <property name="toolTip" >
          <string>Number of bonus points when owning the full continent</string>
         </property>
@@ -70,13 +70,6 @@ A list of all the world's countries will be shown and you will be able to select
    </layout>
   </widget>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KIntNumInput</class>
-   <extends>QWidget</extends>
-   <header>knuminput.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

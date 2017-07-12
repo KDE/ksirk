@@ -29,8 +29,9 @@
 #include <qdom.h>
 #include <QPainter>
 #include <QPixmap>
+#include <QPixmapCache>
 #include <QFileInfo>
-
+#include <QMenuBar>
 #include <kapplication.h>
 #include <kglobal.h>
 #include <KLocalizedString>
@@ -62,7 +63,7 @@ ONU::ONU(GameAutomaton* automaton,
   qCDebug(KSIRK_LOG) << "ONU constructor: " << m_configFileName;
   QFileInfo qfi(m_configFileName);
   qCDebug(KSIRK_LOG) << "skin written at :" << qfi.lastModified().toTime_t();
-  qCDebug(KSIRK_LOG) << "cache created at:" << m_automaton->pixmapCache().timestamp();
+  //qCDebug(KSIRK_LOG) << "cache created at:" << m_automaton->pixmapCache().timestamp();
 #pragma message("port to qt5")
 #if 0
   if (m_automaton->pixmapCache().timestamp() < qfi.lastModified().toTime_t())
@@ -103,7 +104,7 @@ ONU::ONU(GameAutomaton* automaton,
   m_skin = onugroup.readEntry("skinpath");
 
   qCDebug(KSIRK_LOG) << "skin snapshot file: " << QStandardPaths::locate(QStandardPaths::AppDataLocation, m_skin + "/Images/snapshot.jpg");
-  if (!m_automaton->pixmapCache().find(m_skin+"snapshot", m_snapshot))
+  if (!QPixmapCache::find(m_skin+"snapshot", m_snapshot))
   {
     // Pixmap isn't in the cache, create it and insert to cache
     m_snapshot = QPixmap(QStandardPaths::locate(QStandardPaths::AppDataLocation, m_skin + "/Images/snapshot.jpg"));
@@ -111,7 +112,7 @@ ONU::ONU(GameAutomaton* automaton,
     {
       qCCritical(KSIRK_LOG) << "Was not able to load the snapshot image: " << QStandardPaths::locate(QStandardPaths::AppDataLocation, m_skin + "/Images/snapshot.jpg") << endl;
     }
-    m_automaton->pixmapCache().insert(m_skin+"snapshot", m_snapshot);
+    QPixmapCache::insert(m_skin+"snapshot", m_snapshot);
   }
   m_width  = onugroup.readEntry("width",0);
   m_height  = onugroup.readEntry("height",0);
@@ -152,7 +153,7 @@ ONU::ONU(GameAutomaton* automaton,
   }
   qCDebug(KSIRK_LOG) << "Loading map mask file: " << mapMaskFileName;
   QPixmap countriesMaskPix;
-  if (!m_automaton->pixmapCache().find(m_skin+"mapmask", countriesMaskPix))
+  if (!QPixmapCache::find(m_skin+"mapmask", countriesMaskPix))
   {
     // Pixmap isn't in the cache, create it and insert to cache
     countriesMaskPix = QPixmap(mapMaskFileName);
@@ -160,7 +161,7 @@ ONU::ONU(GameAutomaton* automaton,
     {
       qCCritical(KSIRK_LOG) << "Was not able to load the map mask image: " << mapMaskFileName << endl;
     }
-    m_automaton->pixmapCache().insert(m_skin+"mapmask", countriesMaskPix);
+    QPixmapCache::insert(m_skin+"mapmask", countriesMaskPix);
   }
 //   countriesMask = QImage(mapMaskFileName);
   countriesMask = countriesMaskPix.toImage();
@@ -582,7 +583,7 @@ void ONU::buildMap()
 {
   qCDebug(KSIRK_LOG) << "with zoom="<< m_zoom;
   //QSize size((int)(m_automaton->rendererFor(m_skin).defaultSize().width()*m_zoom),(int)(m_automaton->rendererFor(m_skin).defaultSize().height()*m_zoom));
-  if (!m_automaton->pixmapCache().find(m_skin+"map"+QString::number(m_width)+QString::number(m_height), m_map))
+  if (!QPixmapCache::find(m_skin+"map"+QString::number(m_width)+QString::number(m_height), m_map))
   {
     // Pixmap isn't in the cache, create it and insert to cache
     QSize size((int)(m_width),(int)(m_height));
@@ -627,7 +628,7 @@ void ONU::buildMap()
         countryName);
     }
 
-    m_automaton->pixmapCache().insert(m_skin+"map"+QString::number(m_width)+QString::number(m_height), m_map);
+    QPixmapCache::insert(m_skin+"map"+QString::number(m_width)+QString::number(m_height), m_map);
   }
 }
 

@@ -47,6 +47,7 @@
 #include <QGraphicsSvgItem>
 #include <QBitmap>
 #include <QInputDialog>
+#include <QMenuBar>
 
 // include files for KDE
 #include <kiconloader.h>
@@ -57,7 +58,6 @@
 #include <kstandardgameaction.h>
 #include <kstandardaction.h>
 #include <kactioncollection.h>
-#include <kmenubar.h>
 #include "ksirkskineditor_debug.h"
 #include <ktextedit.h>
 #include <phonon/mediaobject.h>
@@ -240,8 +240,8 @@ MainWindow::MainWindow(QWidget* parent) :
   connect(m_spritesDefWidget->explodingv, SIGNAL(valueChanged(int)), this, SLOT(slotExplodingVersionsChanged(int)));
   
   
-  connect(m_skinDefWidget->ktabwidget, SIGNAL(currentChanged(int)), this, SLOT(slotSkinPartTabChanged(int)));
-  m_skinDefWidget->ktabwidget-> setCurrentIndex(0);
+  connect(m_skinDefWidget->qtabwidget, SIGNAL(currentChanged(int)), this, SLOT(slotSkinPartTabChanged(int)));
+  m_skinDefWidget->qtabwidget-> setCurrentIndex(0);
   
   m_skinDefWidget->countrieslist->setSortingEnabled (true);
   connect(m_skinDefWidget->countrieslist, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(slotCountrySelected(QListWidgetItem*)));

@@ -162,8 +162,7 @@ GameAutomaton::GameAutomaton() :
     m_attackAuto(false),
     m_defenseAuto(false),
     m_port(KSIRK_DEFAULT_PORT),
-    m_startingGame(false),
-    m_pixmapCache("GameAutomaton")
+    m_startingGame(false)
 {
   m_skin = "skins/default";
   //   qCDebug(KSIRK_LOG) << endl;

@@ -48,7 +48,7 @@ During a battle, firing (end exploding) cannons of each player are placed in bot
      </layout>
     </item>
     <item>
-     <widget class="KTabWidget" name="ktabwidget" >
+     <widget class="QTabWidget" name="ktabwidget" >
       <property name="toolTip" >
        <string>Data about all sprites</string>
       </property>
@@ -76,7 +76,7 @@ During a battle, firing (end exploding) cannons of each player are placed in bot
            </widget>
           </item>
           <item row="0" column="1" >
-           <widget class="KIntSpinBox" name="flagw" >
+           <widget class="QSpinBox" name="flagw" >
             <property name="toolTip" >
              <string>Flag individual frame width</string>
             </property>
@@ -93,7 +93,7 @@ During a battle, firing (end exploding) cannons of each player are placed in bot
            </widget>
           </item>
           <item row="1" column="1" >
-           <widget class="KIntSpinBox" name="flagh" >
+           <widget class="QSpinBox" name="flagh" >
             <property name="toolTip" >
              <string>Flag individual frame height</string>
             </property>
@@ -112,7 +112,7 @@ The pool flag element will be rendered on a pixmap of height: (Height * Number o
            </widget>
           </item>
           <item row="2" column="1" >
-           <widget class="KIntSpinBox" name="flagf" >
+           <widget class="QSpinBox" name="flagf" >
             <property name="toolTip" >
              <string>Number of individual flag frames</string>
             </property>
@@ -129,7 +129,7 @@ The pool flag element will be rendered on a pixmap of height: (Height * Number o
            </widget>
           </item>
           <item row="3" column="1" >
-           <widget class="KIntSpinBox" name="flagv" >
+           <widget class="QSpinBox" name="flagv" >
             <property name="toolTip" >
              <string>Number of flag versions</string>
             </property>
@@ -175,7 +175,7 @@ Each version shows the sprite visible from one direction: the first one is direc
          </widget>
         </item>
         <item row="0" column="1" >
-         <widget class="KIntSpinBox" name="infantryw" >
+         <widget class="QSpinBox" name="infantryw" >
           <property name="toolTip" >
            <string>Infantry individual frame width</string>
           </property>
@@ -192,7 +192,7 @@ Each version shows the sprite visible from one direction: the first one is direc
          </widget>
         </item>
         <item row="1" column="1" >
-         <widget class="KIntSpinBox" name="infantryh" >
+         <widget class="QSpinBox" name="infantryh" >
           <property name="toolTip" >
            <string>Infantry individual frame height</string>
           </property>
@@ -209,7 +209,7 @@ Each version shows the sprite visible from one direction: the first one is direc
          </widget>
         </item>
         <item row="2" column="1" >
-         <widget class="KIntSpinBox" name="infantryf" >
+         <widget class="QSpinBox" name="infantryf" >
           <property name="toolTip" >
            <string>Number of individual infantry frames</string>
           </property>
@@ -226,7 +226,7 @@ Each version shows the sprite visible from one direction: the first one is direc
          </widget>
         </item>
         <item row="3" column="1" >
-         <widget class="KIntSpinBox" name="infantryv" >
+         <widget class="QSpinBox" name="infantryv" >
           <property name="toolTip" >
            <string>Number of infantry versions</string>
           </property>
@@ -266,7 +266,7 @@ Each version shows the sprite visible from one direction: the first one is direc
          </widget>
         </item>
         <item row="0" column="1" >
-         <widget class="KIntSpinBox" name="cavalryw" >
+         <widget class="QSpinBox" name="cavalryw" >
           <property name="toolTip" >
            <string>Individual cavalry frame width</string>
           </property>
@@ -283,7 +283,7 @@ Each version shows the sprite visible from one direction: the first one is direc
          </widget>
         </item>
         <item row="1" column="1" >
-         <widget class="KIntSpinBox" name="cavalryh" >
+         <widget class="QSpinBox" name="cavalryh" >
           <property name="toolTip" >
            <string>Individual cavalry frame height</string>
           </property>
@@ -300,7 +300,7 @@ Each version shows the sprite visible from one direction: the first one is direc
          </widget>
         </item>
         <item row="2" column="1" >
-         <widget class="KIntSpinBox" name="cavalryf" >
+         <widget class="QSpinBox" name="cavalryf" >
           <property name="toolTip" >
            <string>Number of individual cavalry frames</string>
           </property>
@@ -317,7 +317,7 @@ Each version shows the sprite visible from one direction: the first one is direc
          </widget>
         </item>
         <item row="3" column="1" >
-         <widget class="KIntSpinBox" name="cavalryv" >
+         <widget class="QSpinBox" name="cavalryv" >
           <property name="toolTip" >
            <string>Number of cavalry versions</string>
           </property>
@@ -359,7 +359,7 @@ Each version shows the sprite visible from one direction: the first one is direc
            </widget>
           </item>
           <item row="0" column="1" >
-           <widget class="KIntSpinBox" name="cannonw" >
+           <widget class="QSpinBox" name="cannonw" >
             <property name="toolTip" >
              <string>Cannon individual frame width</string>
             </property>
@@ -376,7 +376,7 @@ Each version shows the sprite visible from one direction: the first one is direc
            </widget>
           </item>
           <item row="1" column="1" >
-           <widget class="KIntSpinBox" name="cannonh" >
+           <widget class="QSpinBox" name="cannonh" >
             <property name="toolTip" >
              <string>Individual cannon frame height</string>
             </property>
@@ -393,7 +393,7 @@ Each version shows the sprite visible from one direction: the first one is direc
            </widget>
           </item>
           <item row="2" column="1" >
-           <widget class="KIntSpinBox" name="cannonf" >
+           <widget class="QSpinBox" name="cannonf" >
             <property name="toolTip" >
              <string>Number of individual cannon frames</string>
             </property>
@@ -410,7 +410,7 @@ Each version shows the sprite visible from one direction: the first one is direc
            </widget>
           </item>
           <item row="3" column="1" >
-           <widget class="KIntSpinBox" name="cannonv" >
+           <widget class="QSpinBox" name="cannonv" >
             <property name="toolTip" >
              <string>Number of cannon versions</string>
             </property>
@@ -454,7 +454,7 @@ Each version shows the sprite visible from one direction: the first one is direc
            </widget>
           </item>
           <item row="0" column="1" >
-           <widget class="KIntSpinBox" name="firingw" >
+           <widget class="QSpinBox" name="firingw" >
             <property name="toolTip" >
              <string>Firing cannon individual frame width</string>
             </property>
@@ -471,7 +471,7 @@ Each version shows the sprite visible from one direction: the first one is direc
            </widget>
           </item>
           <item row="1" column="1" >
-           <widget class="KIntSpinBox" name="firingh" >
+           <widget class="QSpinBox" name="firingh" >
             <property name="toolTip" >
              <string>Firing cannon individual frame height</string>
             </property>
@@ -488,7 +488,7 @@ Each version shows the sprite visible from one direction: the first one is direc
            </widget>
           </item>
           <item row="2" column="1" >
-           <widget class="KIntSpinBox" name="firingf" >
+           <widget class="QSpinBox" name="firingf" >
             <property name="toolTip" >
              <string>Number of individual firing cannon frames</string>
             </property>
@@ -505,7 +505,7 @@ Each version shows the sprite visible from one direction: the first one is direc
            </widget>
           </item>
           <item row="3" column="1" >
-           <widget class="KIntSpinBox" name="firingv" >
+           <widget class="QSpinBox" name="firingv" >
             <property name="toolTip" >
              <string>Number of firing cannon versions</string>
             </property>
@@ -549,7 +549,7 @@ Each version shows the sprite visible from one direction: the first one is direc
            </widget>
           </item>
           <item row="0" column="1" >
-           <widget class="KIntSpinBox" name="explodingw" >
+           <widget class="QSpinBox" name="explodingw" >
             <property name="toolTip" >
              <string>Exploding cannon individual frame width</string>
             </property>
@@ -566,7 +566,7 @@ Each version shows the sprite visible from one direction: the first one is direc
            </widget>
           </item>
           <item row="1" column="1" >
-           <widget class="KIntSpinBox" name="explodingh" >
+           <widget class="QSpinBox" name="explodingh" >
             <property name="toolTip" >
              <string>Exploding cannon individual frame height</string>
             </property>
@@ -583,7 +583,7 @@ Each version shows the sprite visible from one direction: the first one is direc
            </widget>
           </item>
           <item row="2" column="1" >
-           <widget class="KIntSpinBox" name="explodingf" >
+           <widget class="QSpinBox" name="explodingf" >
             <property name="toolTip" >
              <string>Number of individual exploding cannon frames</string>
             </property>
@@ -600,7 +600,7 @@ Each version shows the sprite visible from one direction: the first one is direc
            </widget>
           </item>
           <item row="3" column="1" >
-           <widget class="KIntSpinBox" name="explodingv" >
+           <widget class="QSpinBox" name="explodingv" >
             <property name="toolTip" >
              <string>Number of exploding cannon versions</string>
             </property>
@@ -631,19 +631,6 @@ Each version shows the sprite visible from one direction: the first one is direc
    </layout>
   </widget>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KIntSpinBox</class>
-   <extends>QSpinBox</extends>
-   <header>knuminput.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KTabWidget</class>
-   <extends>QTabWidget</extends>
-   <header>ktabwidget.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

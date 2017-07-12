@@ -46,7 +46,6 @@
 // include files for KDE
 #include <kiconloader.h>
 #include <kmessagebox.h>
-#include <kfiledialog.h>
 #include <KLocalizedString>
 #include <kconfig.h>
 #include <kstandardaction.h>

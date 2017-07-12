@@ -48,7 +48,7 @@
        </widget>
       </item>
       <item>
-       <widget class="KIntNumInput" name="widthLineEdit" >
+       <widget class="QSpinBox" name="widthLineEdit" >
         <property name="toolTip" >
          <string>Map's width</string>
         </property>
@@ -66,7 +66,7 @@
        </widget>
       </item>
       <item>
-       <widget class="KIntNumInput" name="heightLineEdit" >
+       <widget class="QSpinBox" name="heightLineEdit" >
         <property name="toolTip" >
          <string>Map's height</string>
         </property>
@@ -165,7 +165,7 @@
      </widget>
     </item>
     <item>
-     <widget class="KTabWidget" name="ktabwidget" >
+     <widget class="QTabWidget" name="qtabwidget" >
       <property name="whatsThis" >
        <string/>
       </property>
@@ -452,17 +452,6 @@ Each goal name should be unique. Select a goal and edit its details in the right
    <class>KFontRequester</class>
    <extends>QWidget</extends>
    <header>kfontrequester.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KIntNumInput</class>
-   <extends>QWidget</extends>
-   <header>knuminput.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KTabWidget</class>
-   <extends>QTabWidget</extends>
-   <header>ktabwidget.h</header>
-   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>

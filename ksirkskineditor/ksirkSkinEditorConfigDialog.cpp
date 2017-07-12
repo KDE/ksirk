@@ -21,10 +21,8 @@
 #include "ksirkskineditorsettings.h"
 #include "ui_preferences.h"
 
-#include <kfiledialog.h>
 #include <kconfig.h>
 #include <kurl.h>
-#include <ktabwidget.h>
 #include <kedittoolbar.h>
 #include "ksirkskineditor_debug.h"
 #include <QPushButton>

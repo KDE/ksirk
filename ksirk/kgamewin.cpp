@@ -60,19 +60,19 @@
 #include <QMovie>
 #include <QUuid>
 #include <QHostInfo>
+#include <QFileDialog>
+#include <QMenuBar>
 
 // include files for KDE
 #include <KUrl>
 #include <K4AboutData>
 #include <kiconloader.h>
 #include <kmessagebox.h>
-#include <kfiledialog.h>
 #include <KLocalizedString>
 #include <kconfig.h>
 #include <kstandardgameaction.h>
 #include <kstandardaction.h>
 #include <kactioncollection.h>
-#include <kmenubar.h>
 #include "ksirk_debug.h"
 #include <phonon/mediaobject.h>
 #include <QPushButton>
@@ -305,12 +305,12 @@ KGameWindow::KGameWindow(QWidget* parent) :
   struct utsname utsBuf;
   uname (&utsBuf);
   m_jabberClient->setClientName ("KsirK");
-  m_jabberClient->setClientVersion (KGlobal::mainComponent().aboutData()->version ());
+  m_jabberClient->setClientVersion (KAboutData::applicationData().version());
   m_jabberClient->setOSName (QString ("%1 %2").arg (utsBuf.sysname, 1).arg (utsBuf.release, 2));
   
   // Set caps node information
   m_jabberClient->setCapsNode("http://ksirk.kde.org/jabber/caps");
-  m_jabberClient->setCapsVersion(KGlobal::mainComponent().aboutData()->version());
+  m_jabberClient->setCapsVersion(KAboutData::applicationData().version());
   
   // Set Disco Identity information
   DiscoItem::Identity identity;
@@ -1096,7 +1096,7 @@ bool KGameWindow::actionOpenGame()
 {
   qCDebug(KSIRK_LOG) << "KGameWindow::actionOpenGame";
 
-  QString fileName = KFileDialog::getOpenFileName(KUrl(), "*.xml", this, i18n("KsirK - Load Game"));
+  QString fileName = QFileDialog::getOpenFileName(this, i18n("KsirK - Load Game"), QString(), "*.xml");
   if (!fileName.isEmpty())
   {
     m_fileName = fileName;
