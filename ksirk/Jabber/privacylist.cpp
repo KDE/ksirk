@@ -17,6 +17,8 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  */
+
+#include <algorithm>
  
 #include <QDomElement>
 #include <QString>
@@ -32,7 +34,7 @@
 
 PrivacyList::PrivacyList(const QString& name, const QList<PrivacyListItem>& items) : name_(name), items_(items) 
 { 
-	qSort(items_);
+	std::sort(items_.begin(), items_.end());
 }
 
 PrivacyList::PrivacyList(const QDomElement& e)
@@ -147,7 +149,7 @@ void PrivacyList::fromXml(const QDomElement& el)
 			items_.append(PrivacyListItem(e));
 	}
 
-	qSort(items_);
+	std::sort(items_.begin(), items_.end());
 }
 
 QString PrivacyList::toString() const

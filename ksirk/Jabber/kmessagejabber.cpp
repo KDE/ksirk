@@ -70,7 +70,7 @@ void KMessageJabber::slotMessageReceived(const XMPP::Message &message)
 {
   if (message.from().full() == mPeerJid)
   {
-    QByteArray msg = QByteArray::fromBase64(message.body().toAscii());
+    QByteArray msg = QByteArray::fromBase64(message.body().toLatin1());
     qCDebug(JABBER_PROTOCOL_LOG) << mPeerJid << msg;
     emit received (msg);
   }
