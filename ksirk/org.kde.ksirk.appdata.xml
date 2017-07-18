@@ -49,6 +49,7 @@
     <p xml:lang="it">KsirK è una versione per il computer del famoso gioco strategico da tavola Risk. L'obiettivo del gioco è semplicemente la conquista del mondo attaccando i vicini con le proprie armate.</p>
     <p xml:lang="nl">KsirK is een gecomputeriseerde versie van het welbekende strategische bordspel Risk. Het doel van het spel is eenvoudig de wereld veroveren door uw buren aan te vallen met uw legers.</p>
     <p xml:lang="pt">O KsirK é uma versão em computador do conhecido jogo de estratégia do Risco. O objectivo do jogo é simplesmente conquistar o mundo, atacando os seus vizinhos com os seus exércitos.</p>
+    <p xml:lang="sk">KsirK je počítačová verzia známej strategickej doskovej hry Risk. Cieľom hry je jednoducho dobyť svet pomocou útoku na vašich susedov vašou armádou.</p>
     <p xml:lang="sr">К‑сирк је рачунарска верзија добро познате стратешке игре на табли ризико. Циљ партије је просто освојити цео свет, нападајући суседе својим војскама.</p>
     <p xml:lang="sr-Latn">KSirk je računarska verzija dobro poznate strateške igre na tabli riziko. Cilj partije je prosto osvojiti ceo svet, napadajući susede svojim vojskama.</p>
     <p xml:lang="sr-ijekavian">К‑сирк је рачунарска верзија добро познате стратешке игре на табли ризико. Циљ партије је просто освојити цео свет, нападајући суседе својим војскама.</p>
@@ -82,6 +83,7 @@
       <li xml:lang="it">Supporto da 1 a 6 giocatori umani o computer (IA)</li>
       <li xml:lang="nl">Ondersteuning voor 1-6 menselijke of computer(AI)spelers</li>
       <li xml:lang="pt">Suporte para 1-6 jogadores humanos ou por computador (IA)</li>
+      <li xml:lang="sk">Podpora pre 1-6 ľudí alebo počítačových (AI) hráčov</li>
       <li xml:lang="sr">Подршка за 1–6 људских и рачунарских играча</li>
       <li xml:lang="sr-Latn">Podrška za 1–6 ljudskih i računarskih igrača</li>
       <li xml:lang="sr-ijekavian">Подршка за 1–6 људских и рачунарских играча</li>
@@ -97,6 +99,7 @@
       <li xml:lang="it">Gioco multi-giocatore tramite la rete</li>
       <li xml:lang="nl">Met meerdere speler spelen over een netwerk</li>
       <li xml:lang="pt">Jogos multi-jogador pela rede</li>
+      <li xml:lang="sk">Hra pre viac hráčov cez sieť</li>
       <li xml:lang="sr">Играње у више играча преко мреже.</li>
       <li xml:lang="sr-Latn">Igranje u više igrača preko mreže.</li>
       <li xml:lang="sr-ijekavian">Играње у више играча преко мреже.</li>
@@ -112,6 +115,7 @@
       <li xml:lang="it">Puoi creare facilmente nuovi temi con immagini SVG e l'editore di temi</li>
       <li xml:lang="nl">U kunt gemakkelijk nieuwe skins with maken met SVG graphics en de skin-editor</li>
       <li xml:lang="pt">Poderá criar facilmente novos visuais com gráficos em SVG e com o editor de visuais</li>
+      <li xml:lang="sk">Ľahko môžete vytvoriť nové skiny pomocou SVG grafiky a editora skinov</li>
       <li xml:lang="sr">Једноствано стварање нових масака кроз СВГ графику и уређивач масака.</li>
       <li xml:lang="sr-Latn">Jednostvano stvaranje novih masaka kroz SVG grafiku i uređivač masaka.</li>
       <li xml:lang="sr-ijekavian">Једноствано стварање нових масака кроз СВГ графику и уређивач масака.</li>
@@ -127,6 +131,7 @@
       <li xml:lang="it">Supporto per le Novità. Puoi scaricare e installare facilmente nuovi temi</li>
       <li xml:lang="nl">Ondersteuning door Vers-van-de-pers. U kunt gemakkelijk nieuwe skins downloaden en installeren</li>
       <li xml:lang="pt">Suporte para Obter Coisas Novas. Poderá transferir e instalar facilmente novos visuais</li>
+      <li xml:lang="sk">Podpora horúcich noviniek. Ľahko si môžete stiahnuť a nainštalovať nové skiny</li>
       <li xml:lang="sr">Подршка за вруће новотарије, ради једноставног преузимања и инсталирања нових масака.</li>
       <li xml:lang="sr-Latn">Podrška za vruće novotarije, radi jednostavnog preuzimanja i instaliranja novih masaka.</li>
       <li xml:lang="sr-ijekavian">Подршка за вруће новотарије, ради једноставног преузимања и инсталирања нових масака.</li>
