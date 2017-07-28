@@ -12,6 +12,7 @@
   <name xml:lang="it">KSirk</name>
   <name xml:lang="nl">KSirk</name>
   <name xml:lang="pt">KSirk</name>
+  <name xml:lang="pt-BR">KSirk</name>
   <name xml:lang="sk">KSirk</name>
   <name xml:lang="sr">К‑сирк</name>
   <name xml:lang="sr-Latn">KSirk</name>
@@ -29,6 +30,7 @@
   <summary xml:lang="it">Gioco di strategia per la dominazione del mondo</summary>
   <summary xml:lang="nl">Werelddominatie-strategiespel</summary>
   <summary xml:lang="pt">Jogo Estratégico de Conquista do Mundo</summary>
+  <summary xml:lang="pt-BR">Jogo de estratégias de dominação do mundial</summary>
   <summary xml:lang="sk">Strategická hra s ovládnutím sveta</summary>
   <summary xml:lang="sr">Стратешка игра светске доминације</summary>
   <summary xml:lang="sr-Latn">Strateška igra svetske dominacije</summary>
@@ -66,6 +68,7 @@
     <p xml:lang="it">Caratteristiche:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
     <p xml:lang="pt">Funcionalidades:</p>
+    <p xml:lang="pt-BR">Recursos:</p>
     <p xml:lang="sk">Funkcie:</p>
     <p xml:lang="sr">Могућности:</p>
     <p xml:lang="sr-Latn">Mogućnosti:</p>
@@ -83,6 +86,7 @@
       <li xml:lang="it">Supporto da 1 a 6 giocatori umani o computer (IA)</li>
       <li xml:lang="nl">Ondersteuning voor 1-6 menselijke of computer(AI)spelers</li>
       <li xml:lang="pt">Suporte para 1-6 jogadores humanos ou por computador (IA)</li>
+      <li xml:lang="pt-BR">Suporte de 1 a 6 jogadores humanos ou IA</li>
       <li xml:lang="sk">Podpora pre 1-6 ľudí alebo počítačových (AI) hráčov</li>
       <li xml:lang="sr">Подршка за 1–6 људских и рачунарских играча</li>
       <li xml:lang="sr-Latn">Podrška za 1–6 ljudskih i računarskih igrača</li>
@@ -99,6 +103,7 @@
       <li xml:lang="it">Gioco multi-giocatore tramite la rete</li>
       <li xml:lang="nl">Met meerdere speler spelen over een netwerk</li>
       <li xml:lang="pt">Jogos multi-jogador pela rede</li>
+      <li xml:lang="pt-BR">Jogo multijogador via rede</li>
       <li xml:lang="sk">Hra pre viac hráčov cez sieť</li>
       <li xml:lang="sr">Играње у више играча преко мреже.</li>
       <li xml:lang="sr-Latn">Igranje u više igrača preko mreže.</li>
