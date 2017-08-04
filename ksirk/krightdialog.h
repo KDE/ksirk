@@ -34,7 +34,6 @@
 #include <QDockWidget>
 #include <QList>
 #include <QLabel>
-#include <kglobal.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>
 #include <QPushButton>

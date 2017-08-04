@@ -39,7 +39,6 @@
 // include files for QT
 #include <qmetaobject.h>
 #include <qdir.h>
-#include <qprinter.h>
 #include <qpainter.h>
 #include <qinputdialog.h>
 

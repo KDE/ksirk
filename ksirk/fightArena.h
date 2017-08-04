@@ -33,7 +33,6 @@
 #include <QMouseEvent>
 #include <QGraphicsView>
 #include <QPixmap>
-#include <kglobal.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>
 

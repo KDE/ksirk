@@ -42,10 +42,8 @@
 #include <QUuid>
 #include <QInputDialog>
 #include <KLocalizedString>
-#include <kdialog.h>
 #include <klineedit.h>
 #include <kmessagebox.h>
-#include <kvbox.h>
 
 #define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
 #include <libkdegamesprivate/kgame/kmessageclient.h>

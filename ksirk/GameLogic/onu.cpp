@@ -32,8 +32,6 @@
 #include <QPixmapCache>
 #include <QFileInfo>
 #include <QMenuBar>
-#include <kapplication.h>
-#include <kglobal.h>
 #include <KLocalizedString>
 #include "ksirk_debug.h"
 #include <kmessagebox.h>

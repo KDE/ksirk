@@ -48,7 +48,6 @@
 #include <kinputdialog.h>
 #include <kicon.h>
 #include <kactionmenu.h>
-#include <kglobal.h>
 #include <KComponentData>
 
 #include "jabberconnector.h"

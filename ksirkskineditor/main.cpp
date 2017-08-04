@@ -54,13 +54,14 @@ int main(int argc, char *argv[])
     i18n("For help and user manual, please see\nThe KsirK Web site"),
     QStringLiteral("http://games.kde.org/game.php?game=ksirk"));
   aboutData.addAuthor(i18n("Gael de Chalendar aka Kleag"),QString(), "kleag@free.fr");
+  QApplication::setWindowIcon(QIcon::fromTheme("preferences-desktop-locale"));
 
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
     parser.addHelpOption();
     //PORTING SCRIPT: adapt aboutdata variable if necessary
-  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("+[File]"), i18n("file to open")));
+    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("+[File]"), i18n("file to open")));
 
     aboutData.setupCommandLine(&parser);
     parser.process(app);

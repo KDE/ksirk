@@ -18,7 +18,6 @@
  ***************************************************************************/
 
 #include <qobject.h>
-#include <ksocketfactory.h>
 #include "jabber_protocol_debug.h"
 #include "jabberbytestream.h"
 // #include "jabberprotocol.h"
@@ -31,7 +30,7 @@ JabberByteStream::JabberByteStream ( QObject *parent )
 	// reset close tracking flag
 	mClosing = false;
 
-	mSocket = NULL;
+	mSocket = nullptr;
 }
 
 void JabberByteStream::connect ( QString host, int port )
@@ -40,13 +39,14 @@ void JabberByteStream::connect ( QString host, int port )
 
 	mClosing = false;
 
-	mSocket = KSocketFactory::connectToHost("xmpp", host, port);
+	mSocket = std::make_shared<QTcpSocket>(new QTcpSocket());
+  mSocket->connectToHost(host, port);
 
-	QObject::connect ( mSocket, SIGNAL (error(QAbstractSocket::SocketError)), this, SLOT (slotError(QAbstractSocket::SocketError)) );
-	QObject::connect ( mSocket, SIGNAL (connected()), this, SLOT (slotConnected()) );
-	QObject::connect ( mSocket, SIGNAL (disconnected()), this, SLOT (slotConnectionClosed()) );
-	QObject::connect ( mSocket, SIGNAL (readyRead()), this, SLOT (slotReadyRead()) );
-	QObject::connect ( mSocket, SIGNAL (bytesWritten(qint64)), this, SLOT (slotBytesWritten(qint64)) );
+	QObject::connect ( mSocket.get(), SIGNAL (error(QAbstractSocket::SocketError)), this, SLOT (slotError(QAbstractSocket::SocketError)) );
+	QObject::connect ( mSocket.get(), SIGNAL (connected()), this, SLOT (slotConnected()) );
+	QObject::connect ( mSocket.get(), SIGNAL (disconnected()), this, SLOT (slotConnectionClosed()) );
+	QObject::connect ( mSocket.get(), SIGNAL (readyRead()), this, SLOT (slotReadyRead()) );
+	QObject::connect ( mSocket.get(), SIGNAL (bytesWritten(qint64)), this, SLOT (slotBytesWritten(qint64)) );
 }
 
 bool JabberByteStream::isOpen () const
@@ -67,8 +67,7 @@ void JabberByteStream::close ()
              qCDebug(JABBER_PROTOCOL_LOG) << Q_FUNC_INFO << "socket is not null" << endl;
 	     mSocket->close();
              qCDebug(JABBER_PROTOCOL_LOG) << Q_FUNC_INFO << "socket closed" << endl;
-             delete mSocket;
-             mSocket=NULL;
+             mSocket=nullptr;
         }
 }
 
@@ -86,14 +85,12 @@ int JabberByteStream::tryWrite ()
 QTcpSocket *JabberByteStream::socket () const
 {
 
-	return mSocket;
+	return mSocket.get();
 
 }
 
 JabberByteStream::~JabberByteStream ()
 {
-
-	delete mSocket;
 
 }
 

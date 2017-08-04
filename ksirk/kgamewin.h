@@ -49,7 +49,6 @@
 #include <ksharedconfig.h>
 #include <KXmlGuiWindow>
 #include <QStandardPaths>
-#include <KShortcut>
 
 // #include <kdialogbase.h>
 

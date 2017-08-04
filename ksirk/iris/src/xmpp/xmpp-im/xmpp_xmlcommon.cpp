@@ -97,7 +97,7 @@ QDateTime stamp2TS(const QString &ts)
 	int sec   = ts.mid(15,2).toInt();
 
 	QDate xd;
-	xd.setYMD(year, month, day);
+	xd.setDate(year, month, day);
 	if(!xd.isValid())
 		return QDateTime();
 

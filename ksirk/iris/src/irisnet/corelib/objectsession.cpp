@@ -113,7 +113,7 @@ public:
 					return false;
 				}
 
-				arg.data = QMetaType::construct(arg.type, arg_data[n]);
+				arg.data = QMetaType::construct(arg.type, arg_data[n], 0);
 				args += arg;
 			}
 

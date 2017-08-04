@@ -19,8 +19,6 @@
 #ifndef DICE_H
 #define DICE_H
 
-#include <kapplication.h>
-
 namespace Ksirk
 {
 

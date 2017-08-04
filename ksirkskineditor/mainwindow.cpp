@@ -59,10 +59,8 @@
 #include <kstandardaction.h>
 #include <kactioncollection.h>
 #include "ksirkskineditor_debug.h"
-#include <ktextedit.h>
 #include <phonon/mediaobject.h>
 #include <QPushButton>
-#include <kglobal.h>
 #include <QStatusBar>
 #include <KToolBar>
 #include <QAction>

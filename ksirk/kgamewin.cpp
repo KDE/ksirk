@@ -64,8 +64,6 @@
 #include <QMenuBar>
 
 // include files for KDE
-#include <KUrl>
-#include <K4AboutData>
 #include <kiconloader.h>
 #include <kmessagebox.h>
 #include <KLocalizedString>
@@ -77,8 +75,7 @@
 #include <phonon/mediaobject.h>
 #include <QPushButton>
 #include <kgamepopupitem.h>
-#include <kglobal.h>
-#include <KStatusBar>
+#include <QStatusBar>
 #include <KToolBar>
 #include <QAction>
 #include <QSvgRenderer>
@@ -230,6 +227,10 @@ KGameWindow::KGameWindow(QWidget* parent) :
   setCentralWidget(m_centralWidget);
   m_mainMenu = new mainMenu(this, m_centralWidget);
   m_mainMenu->init(m_theWorld);
+  
+  /// @FIXME Hides the "Play KsirK over Jabber Network" button while Jabber
+  /// connection does not work
+  m_mainMenu->pbJabberGame->hide();
   
   m_newGameDialog = new NewGameWidget(m_newGameSetup, m_centralWidget);
   connect(m_newGameDialog,SIGNAL(newGameOK()), this, SLOT(slotNewGameNext()));

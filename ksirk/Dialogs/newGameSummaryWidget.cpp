@@ -39,7 +39,7 @@ NewGameSummaryWidget::NewGameSummaryWidget(QWidget *parent) :
   setupUi(this);
   connect(previousButton,SIGNAL(clicked()),this,SIGNAL(previous()));
   connect(cancelButton,SIGNAL(clicked()),this,SIGNAL(cancel()));
-  playersTable->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
+  playersTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }
   
 NewGameSummaryWidget::~NewGameSummaryWidget()

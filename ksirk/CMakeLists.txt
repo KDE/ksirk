@@ -132,7 +132,7 @@ target_link_libraries(ksirk
     qca-qt5
     iris_ksirk
     KF5::Crash
-    KF5::KDELibs4Support
+    KF5::IconThemes
     KF5::KIOCore
     KF5::NewStuff
     KF5::Wallet

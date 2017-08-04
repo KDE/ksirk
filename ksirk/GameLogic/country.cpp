@@ -522,7 +522,7 @@ void Country::highlight(const QColor& color, qreal opacity)
       (m_anchorPoint.x()-m_highlighting->boundingRect().width()/2)*onu->zoom(),
       (m_anchorPoint.y()-m_highlighting->boundingRect().height()/2)*onu->zoom());
 
-  m_highlighting->scale(onu->zoom(), onu->zoom());
+  m_highlighting->setScale(onu->zoom());
 //   qCDebug(KSIRK_LOG) << "done" << endl;
 }
 

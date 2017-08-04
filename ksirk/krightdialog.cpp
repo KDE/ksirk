@@ -31,7 +31,6 @@
 #include <QPixmap>
 #include <QString>
 #include <QGridLayout>
-#include <kcmdlineargs.h>
 #include <QScrollBar>
 #include <QScrollArea>
 #include <QPalette>

@@ -27,7 +27,7 @@
 #include <QStandardPaths>
 #include <KMessageBox>
 #include <KConfigDialog>
-#include <knewstuff3/downloaddialog.h>
+#include <downloaddialog.h>
 
 #include <qdir.h>
 #include <qstringlist.h>

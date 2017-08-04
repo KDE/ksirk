@@ -22,7 +22,7 @@
 
 #include <bytestream.h>
 #include <QTcpSocket>
-
+#include <memory>
 
 /**
 @author Kopete Developers
@@ -57,7 +57,7 @@ private slots:
   void slotError ( QAbstractSocket::SocketError );
 
 private:
-	QTcpSocket *mSocket;
+	std::shared_ptr<QTcpSocket> mSocket;
 	bool mClosing;
 
 };

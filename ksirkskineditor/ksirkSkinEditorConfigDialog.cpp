@@ -22,19 +22,14 @@
 #include "ui_preferences.h"
 
 #include <kconfig.h>
-#include <kurl.h>
 #include <kedittoolbar.h>
 #include "ksirkskineditor_debug.h"
 #include <QPushButton>
 #include <kstandardaction.h>
 
-#include <klibloader.h>
 #include <kmessagebox.h>
-#include <kstatusbar.h>
 #include <KLocalizedString>
 #include <kconfigdialog.h>
-
-#include <kapplication.h>
 
 #include <qslider.h>
 #include <qcheckbox.h>

@@ -68,12 +68,9 @@
 #include <kstandardaction.h>
 #include <kactioncollection.h>
 #include "ksirk_debug.h"
-#include <ktextedit.h>
 #include <phonon/mediaobject.h>
 #include <QPushButton>
 #include <kgamepopupitem.h>
-#include <kglobal.h>
-#include <KStatusBar>
 #include <KToolBar>
 #include <QAction>
 #include <QSvgRenderer>
