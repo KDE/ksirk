@@ -389,7 +389,7 @@ void KGameWindow::initActions()
   m_jabberAction = new QAction(QIcon(QPixmap(imageFileName)), i18n("Play over Jabber"), this);
   m_jabberAction-> setText(i18n("Play KsirK over the Jabber Network"));
   m_jabberAction-> setIconText(i18n("Jabber"));
-  m_jabberAction->setShortcut(Qt::CTRL+Qt::Key_J);
+  actionCollection()->setDefaultShortcut(m_jabberAction, Qt::CTRL+Qt::Key_J);
   m_jabberAction->setStatusTip(i18n("Allow to connect to a KsirK Jabber Multi User Gaming Room to create new games or to join present games"));
   connect(m_jabberAction,SIGNAL(triggered(bool)),this,SLOT(slotJabberGame()));
   qCDebug(KSIRK_LOG) << "Adding action game_jabber";
@@ -405,7 +405,7 @@ void KGameWindow::initActions()
   }
   QAction * newSocketAction = new QAction(QIcon(QPixmap(imageFileName)), i18n("New Standard TCP/IP Network Game"), this);
   newSocketAction->setIconText(i18n("New TCP/IP"));
-  newSocketAction->setShortcut(Qt::CTRL+Qt::Key_T);
+  actionCollection()->setDefaultShortcut(newSocketAction, Qt::CTRL+Qt::Key_T);
   newSocketAction->setStatusTip(i18n("Create a new standard TCP/IP network game"));
   connect(newSocketAction,SIGNAL(triggered(bool)),this,SLOT(slotNewSocketGame()));
   qCDebug(KSIRK_LOG) << "Adding action game_new_socket";
@@ -423,7 +423,7 @@ void KGameWindow::initActions()
   QAction * joinAction = new QAction(QIcon(QPixmap(imageFileName)),
         i18n("Join a Standard TCP/IP Network Game"), this);
   joinAction->setIconText(i18n("Join TCP/IP"));
-  joinAction->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_J);
+  actionCollection()->setDefaultShortcut(joinAction, Qt::CTRL+Qt::SHIFT+Qt::Key_J);
   joinAction->setStatusTip(i18n("Join a standard TCP/IP network game"));
   connect(joinAction,SIGNAL(triggered(bool)),this,SLOT(slotJoinNetworkGame()));
    qCDebug(KSIRK_LOG) << "Adding action game_join_socket";
@@ -432,7 +432,7 @@ void KGameWindow::initActions()
   m_goalAction = new QAction(i18n("Goal"), this);
   m_goalAction-> setText(i18n("Display the Current Player's Goal"));
   m_goalAction-> setIconText("  ");
-  m_goalAction->setShortcut(Qt::CTRL+Qt::Key_G);
+  actionCollection()->setDefaultShortcut(m_goalAction, Qt::CTRL+Qt::Key_G);
   m_goalAction->setStatusTip(i18n("Display the current player's goal"));
   connect(m_goalAction,SIGNAL(triggered(bool)),this,SLOT(slotShowGoal()));
   m_goalAction->setVisible(false);
@@ -442,7 +442,7 @@ void KGameWindow::initActions()
   m_contextualHelpAction = new QAction(
         i18n("Contextual Help"), this);
   m_contextualHelpAction->setEnabled(false);
-  m_contextualHelpAction->setShortcut(Qt::CTRL+Qt::Key_F1);
+  actionCollection()->setDefaultShortcut(m_contextualHelpAction, Qt::CTRL+Qt::Key_F1);
   connect(m_contextualHelpAction,SIGNAL(triggered(bool)),this,SLOT(slotContextualHelp()));
   actionCollection()->addAction("help_contextual", m_contextualHelpAction);
 
@@ -457,7 +457,7 @@ void KGameWindow::initActions()
 
   QAction * finishMovesAction = new QAction(
         i18n("Finish moves"), this);
-  finishMovesAction->setShortcut(Qt::Key_Space);
+  actionCollection()->setDefaultShortcut(finishMovesAction, Qt::Key_Space);
   finishMovesAction->setStatusTip(i18n("Finish moving the current sprites"));
   connect(finishMovesAction,SIGNAL(triggered(bool)),this,SLOT(slotFinishMoves()));
   actionCollection()->addAction("game_finish_moves", finishMovesAction);
