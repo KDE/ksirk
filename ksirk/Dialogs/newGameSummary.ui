@@ -201,7 +201,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
-      <widget class="KPushButton" name="cancelButton">
+      <widget class="QPushButton" name="cancelButton">
        <property name="text">
         <string>Cancel</string>
        </property>
@@ -221,14 +221,14 @@
       </spacer>
      </item>
      <item>
-      <widget class="KPushButton" name="previousButton">
+      <widget class="QPushButton" name="previousButton">
        <property name="text">
         <string>&lt;&lt; Previous</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="KPushButton" name="finishButton">
+      <widget class="QPushButton" name="finishButton">
        <property name="text">
         <string>Start</string>
        </property>
@@ -238,13 +238,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KPushButton</class>
-   <extends>QPushButton</extends>
-   <header>kpushbutton.h</header>
-  </customwidget>
- </customwidgets>
  <tabstops>
   <tabstop>finishButton</tabstop>
   <tabstop>previousButton</tabstop>

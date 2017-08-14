@@ -95,7 +95,7 @@ downArrow.png
 upArrow.png
 2UpArrow.png
 )
-install( FILES ${pics_default_DATA} DESTINATION ${DATA_INSTALL_DIR}/ksirk/skins/realpol/Images/ )
+install( FILES ${pics_default_DATA} DESTINATION ${KDE_INSTALL_DATADIR}/ksirk/skins/realpol/Images/ )
 
 # Images/countries/vietnam.png
 # Images/countries/japan.png

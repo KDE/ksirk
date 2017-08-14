@@ -20,7 +20,7 @@
 
 #include "arrowsprite.h"
 
-#include <kdebug.h>
+#include "ksirk_debug.h"
 
 #include <QBrush>
 
@@ -62,11 +62,11 @@ ArrowSprite::~ArrowSprite()
 void ArrowSprite::setActive(bool value)
 {
   int alpha = (value?128:64);
-//   kDebug() << value << alpha;
+//   qCDebug(KSIRK_LOG) << value << alpha;
   QBrush b = brush();
   QColor color = b.color();
   color.setAlpha(alpha);
-//   kDebug() << color.alpha();
+//   qCDebug(KSIRK_LOG) << color.alpha();
   b.setColor(color);
   setBrush(b);
 }

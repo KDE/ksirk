@@ -16,9 +16,9 @@
   */
 
 #include "jabbergroupmembercontact.h"
+#include "jabber_protocol_debug.h"
 
-#include <kdebug.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kfiledialog.h>
 #include "jabberprotocol.h"
 #include "jabberaccount.h"
@@ -56,7 +56,7 @@ JabberGroupMemberContact::~JabberGroupMemberContact ()
 	}
 }
 
-QList<KAction*> *JabberGroupMemberContact::customContextMenuActions ()
+QList<QAction *> *JabberGroupMemberContact::customContextMenuActions ()
 {
 
 	return 0;
@@ -99,7 +99,7 @@ void JabberGroupMemberContact::handleIncomingMessage ( const XMPP::Message &mess
 	QString viewType = "kopete_chatwindow";
 	Kopete::Message *newMessage = 0L;
 
-	kDebug (JABBER_DEBUG_GLOBAL) << "Received Message Type:" << message.type ();
+	qCDebug(JABBER_PROTOCOL_LOG) << "Received Message Type:" << message.type ();
 
 	/**
 	 * Don't display empty messages, these were most likely just carrying
@@ -170,4 +170,4 @@ void JabberGroupMemberContact::sendFile ( const KUrl &sourceURL, const QString &
 }
 
 
-#include "jabbergroupmembercontact.moc"
+

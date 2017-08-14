@@ -19,7 +19,7 @@
 #ifndef INVASIONSLIDER_H
 #define INVASIONSLIDER_H
 
-#include <KDialog>
+#include <QDialog>
 
 class QLabel;
 class QSlider;
@@ -37,7 +37,7 @@ namespace GameLogic
   * @author Gael de Chalendar (aka Kleag)
   * @version $Id: kgamewin.h 243 2007-02-24 00:22:58Z kleag $
   */
-class InvasionSlider: public KDialog
+class InvasionSlider: public QDialog
 {
   Q_OBJECT
 

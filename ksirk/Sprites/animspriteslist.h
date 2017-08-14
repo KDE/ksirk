@@ -29,7 +29,7 @@
 #include <QList>
 #include <QObject>
 
-#include <kdebug.h>
+#include "ksirk_debug.h"
 
 namespace Ksirk
 {
@@ -102,7 +102,7 @@ template < typename SpriteType >
 template < typename SpriteType >
 void AnimSpritesList< SpriteType >::hideAndRemoveAll()
 {
-//   kDebug();
+//   qCDebug(KSIRK_LOG);
 
   while (!QList< SpriteType* >::empty())
   {
@@ -159,7 +159,7 @@ void AnimSpritesList< SpriteType >::moveAll()
 template < typename SpriteType >
 void AnimSpritesList< SpriteType >::moveAllToDestinationNow(bool clear)
 {
-  kDebug() << clear;
+  qCDebug(KSIRK_LOG) << clear;
   typename AnimSpritesList< SpriteType >::iterator it, it_end;
   it = QList< SpriteType* >::begin();
   it_end = QList< SpriteType* >::end();

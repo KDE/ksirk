@@ -41,7 +41,7 @@ public:
 	 * Create custom context menu items for the contact
 	 * FIXME: implement manager version here?
 	 */
-// 	QList<KAction*> *customContextMenuActions ();
+// 	QList<QAction *> *customContextMenuActions ();
 
 	/**
 	 * Deal with an incoming message for this contact.

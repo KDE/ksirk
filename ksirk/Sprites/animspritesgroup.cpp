@@ -20,7 +20,7 @@
 
 #include "animspritesgroup.h"
 
-#include <kdebug.h>
+#include "ksirk_debug.h"
 
 namespace Ksirk
 {
@@ -29,7 +29,7 @@ AnimSpritesGroup::AnimSpritesGroup(QObject* target, const char* slot, QObject* p
   QObject(parent), AnimSpritesList<AnimSprite>(),
   m_numberArrived(0), m_target(target), m_slot(slot)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   connect (this,SIGNAL(arrived(AnimSpritesGroup*)),target,slot);
 }
 
@@ -39,7 +39,7 @@ AnimSpritesGroup::~AnimSpritesGroup()
 
 void AnimSpritesGroup::changeTarget(QObject* target, const char* slot)
 {
-  kDebug() << (void*)target << slot;
+  qCDebug(KSIRK_LOG) << (void*)target << slot;
   if (m_target != 0)
   {
     disconnect(this,SIGNAL(arrived(AnimSpritesGroup*)),m_target,m_slot);
@@ -51,7 +51,7 @@ void AnimSpritesGroup::changeTarget(QObject* target, const char* slot)
 
 void AnimSpritesGroup::clear()
 {
-  kDebug() << size();
+  qCDebug(KSIRK_LOG) << size();
   disconnect(this,SIGNAL(arrived(AnimSpritesGroup*)),m_target,m_slot);
   m_target = 0; 
   m_slot = 0;
@@ -64,7 +64,7 @@ void AnimSpritesGroup::clear()
 void AnimSpritesGroup::addSprite(AnimSprite* sprite)
 {
   push_back(sprite);
-  kDebug() << "now" << size();
+  qCDebug(KSIRK_LOG) << "now" << size();
   connect(sprite, SIGNAL(atDestination(AnimSprite*)),this,SLOT(oneArrived(AnimSprite*)));
   connect(sprite, SIGNAL(animationFinished(AnimSprite*)),this,SLOT(oneArrived(AnimSprite*)));
 }
@@ -72,7 +72,7 @@ void AnimSpritesGroup::addSprite(AnimSprite* sprite)
 void AnimSpritesGroup::oneArrived(AnimSprite* sprite)
 {
   m_numberArrived++;
-  kDebug() << (void*)sprite << ":" << m_numberArrived << " on " << AnimSpritesList<AnimSprite>::size();
+  qCDebug(KSIRK_LOG) << (void*)sprite << ":" << m_numberArrived << " on " << AnimSpritesList<AnimSprite>::size();
   // if 0 is given, then one is count as arrived whithout action. Useful for 
   // non-animated sprites of the group, but ugly solution...
   if (sprite != 0)
@@ -88,4 +88,4 @@ void AnimSpritesGroup::oneArrived(AnimSprite* sprite)
 
 }
 
-#include "animspritesgroup.moc"
+

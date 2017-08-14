@@ -19,11 +19,10 @@
 #include <kopetecontact.h>
 
 
-#include <kdebug.h>
-#include <kaction.h>
+#include <QAction>
 #include <kselectaction.h>
-#include <klocale.h>
-#include <kicon.h>
+#include <KLocalizedString>
+#include <QIcon>
 
 #include "tasks/jt_privatestorage.h"
 
@@ -128,10 +127,10 @@ void JabberBookmarks::insertGroupChat(const XMPP::Jid &jid)
 	m_conferencesJID += jid.full();
 }
 
-KAction * JabberBookmarks::bookmarksAction(QObject * /*parent*/)
+QAction * JabberBookmarks::bookmarksAction(QObject * /*parent*/)
 {
 	KSelectAction *groupchatBM = new KSelectAction( this );
-	groupchatBM->setIcon( KIcon( QLatin1String( "jabber_group" )) );
+	groupchatBM->setIcon( QIcon::fromTheme( QLatin1String( "jabber_group" )) );
 	groupchatBM->setText( i18n("Groupchat bookmark") );
 	groupchatBM->setItems(m_conferencesJID);
 	QObject::connect(groupchatBM, SIGNAL(triggered(QString)) , this , SLOT(slotJoinChatBookmark(QString)));
@@ -146,4 +145,4 @@ void JabberBookmarks::slotJoinChatBookmark( const QString & _jid )
 	m_account->client()->joinGroupChat( jid.host() , jid.user() , jid.resource() );
 }
 
-#include "jabberbookmarks.moc"
+

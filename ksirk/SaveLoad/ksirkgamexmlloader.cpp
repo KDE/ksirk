@@ -24,7 +24,7 @@
 
 #include <qxml.h>
 #include <KMessageBox>
-#include <KLocale>
+#include <KLocalizedString>
 
 namespace Ksirk
 {

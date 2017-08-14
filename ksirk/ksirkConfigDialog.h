@@ -20,8 +20,8 @@
 #ifndef _KSIRKCONFIGDIALOG_H_
 #define _KSIRKCONFIGDIALOG_H_
 
-#include <kconfigdialog.h>
-
+#include <KConfigDialog>
+#include <KConfigSkeleton>
 namespace Ui
 {
   class KsirkPreferencesWidget;
@@ -40,11 +40,7 @@ public:
   /**
     * Constructor
     */
-  KsirkConfigurationDialog (
-                QWidget *parent, const char *name, KConfigSkeleton *config, 
-                FaceType faceType=List, 
-                ButtonCodes dialogButtons=Default|Ok|Apply|Cancel|Help, 
-                ButtonCode defaultButton=Ok, bool modal=false);
+  KsirkConfigurationDialog (QWidget *parent, const char *name, KConfigSkeleton *config);
 
   /** Destructor */
   virtual ~KsirkConfigurationDialog ();
@@ -55,13 +51,8 @@ Q_SIGNALS:
 protected Q_SLOTS:
   virtual void updateSettings();
   virtual void updateWidgets();
-  void settingChanged(int);
-//   void slotArmiesNumberChanged(int);
-  
-protected:
-  virtual bool hasChanged();
 
-  bool m_changed;
+protected:
   Ui::KsirkPreferencesWidget*  m_widget;
 };
 

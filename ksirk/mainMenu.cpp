@@ -24,20 +24,20 @@
 #include "kgamewin.h"
 
 
-#include <KLocale>
+#include <KLocalizedString>
 
 mainMenu::mainMenu(Ksirk::KGameWindow* game, QWidget* parent) : QWidget(parent)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   setupUi(this);
 
   // Load image
   QString imageFileName;
   QPixmap imag1, imag2;
   
-  imageFileName = KGlobal::dirs()->findResource("appdata", "skins/default/Images/logoRight.png");
+  imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, "skins/default/Images/logoRight.png");
   imag1.load(imageFileName);
-  imageFileName = KGlobal::dirs()->findResource("appdata", "skins/default/Images/logoLeft.png");
+  imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, "skins/default/Images/logoLeft.png");
   imag2.load(imageFileName);
   
   lImage1->setPixmap(imag1.scaled(100,100,Qt::KeepAspectRatioByExpanding));
@@ -55,4 +55,4 @@ void mainMenu::init(Ksirk::GameLogic::ONU* /*theWorld*/)
 {
 }
 
-#include "mainMenu.moc"
+

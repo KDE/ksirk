@@ -21,12 +21,11 @@
  ***************************************************************************/
 
 #include "jabberclient.h"
+#include "jabber_protocol_debug.h"
 
 #include <QTimer>
 #include <QRegExp>
 #include <QtCrypto>
-
-#include <KDebug>
 
 #include <bsocket.h>
 #include <filetransfer.h>
@@ -620,7 +619,7 @@ JabberClient::ErrorCode JabberClient::connect ( const XMPP::Jid &jid, const QStr
    */
   if ( ( forceTLS () || useSSL () || probeSSL () ) && !QCA::isSupported ("tls" ) )
   {
-    kDebug() << "no TLS";
+    qCDebug(JABBER_PROTOCOL_LOG) << "no TLS";
     return NoTLS;
   }
 
@@ -652,7 +651,7 @@ JabberClient::ErrorCode JabberClient::connect ( const XMPP::Jid &jid, const QStr
    */
   if ( QCA::isSupported ("tls") )
   {
-    kDebug() << "QCA tls";
+    qCDebug(JABBER_PROTOCOL_LOG) << "QCA tls";
     if (d->jabberTLS == 0)
       d->jabberTLS = new QCA::TLS;
     d->jabberTLS->setTrustedCertificates(QCA::systemStore());
@@ -702,7 +701,7 @@ JabberClient::ErrorCode JabberClient::connect ( const XMPP::Jid &jid, const QStr
   /*
    * Setup client layer.
    */
-    kDebug() << "Setup client layer";
+    qCDebug(JABBER_PROTOCOL_LOG) << "Setup client layer";
     if (d->jabberClient != 0)
       delete d->jabberClient;
     d->jabberClient = new XMPP::Client ( this );
@@ -733,10 +732,10 @@ JabberClient::ErrorCode JabberClient::connect ( const XMPP::Jid &jid, const QStr
    */
   {
     using namespace XMPP;
-    kDebug() << "Connecting subscription";
+    qCDebug(JABBER_PROTOCOL_LOG) << "Connecting subscription";
     QObject::connect ( d->jabberClient, SIGNAL (subscription(Jid,QString,QString)),
     this, SLOT (slotSubscription(Jid,QString)) );
-    kDebug() << "Connecting rosterRequestFinished";
+    qCDebug(JABBER_PROTOCOL_LOG) << "Connecting rosterRequestFinished";
     QObject::connect ( d->jabberClient, SIGNAL (rosterRequestFinished(bool,int,QString)),
     this, SLOT (slotRosterRequestFinished(bool,int,QString)) );
     QObject::connect ( d->jabberClient, SIGNAL (rosterItemAdded(RosterItem)),
@@ -780,7 +779,7 @@ JabberClient::ErrorCode JabberClient::connect ( const XMPP::Jid &jid, const QStr
 
   d->jabberClient->setTimeZone ( timeZoneName (), timeZoneOffset () );
 
-  kDebug() << "connect to server" << jid.domain() << jid.node() << jid.resource() << jid.bare() << jid.full() << auth;
+  qCDebug(JABBER_PROTOCOL_LOG) << "connect to server" << jid.domain() << jid.node() << jid.resource() << jid.bare() << jid.full() << auth;
   d->jabberClient->connectToServer ( d->jabberClientStream, jid, auth );
 
   return Ok;
@@ -986,7 +985,7 @@ void JabberClient::slotCSNeedAuthParams ( bool user, bool pass, bool realm )
 
 void JabberClient::slotCSAuthenticated ()
 {
-  kDebug();
+  qCDebug(JABBER_PROTOCOL_LOG);
   emit debugMessage ( "Connected to Jabber server." );
 
   /*
@@ -1166,4 +1165,4 @@ void JabberClient::slotSubscription(const XMPP::Jid& jid, const QString& type)
 
 }
 
-#include "jabberclient.moc"
+

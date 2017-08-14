@@ -23,6 +23,11 @@ set(ksirkskineditor_SRCS
   goal.cpp
 )
 
+ecm_qt_declare_logging_category(ksirkskineditor_SRCS
+                                HEADER ksirkskineditor_debug.h
+                                IDENTIFIER KSIRKSKINEDITOR_LOG
+                                CATEGORY_NAME org.kde.ksirk.skineditor)
+
 set(ksirkskineditor_UI
 #   ksirkskineditor.ui
   preferences.ui
@@ -37,36 +42,36 @@ set(ksirkskineditor_UI
 )
 
 
-kde4_add_ui_files(ksirkskineditor_SRCS ${ksirkskineditor_UI} )
+ki18n_wrap_ui(ksirkskineditor_SRCS ${ksirkskineditor_UI} )
 
-kde4_add_kcfg_files( ksirkskineditor_SRCS ksirkskineditorsettings.kcfgc )
+kconfig_add_kcfg_files( ksirkskineditor_SRCS ksirkskineditorsettings.kcfgc )
 
-kde4_add_app_icon(ksirkskineditor_SRCS "hi*-app-ksirk.png")
-
-kde4_add_executable(ksirkskineditor ${ksirkskineditor_SRCS})
+add_executable(ksirkskineditor ${ksirkskineditor_SRCS})
 
 target_link_libraries(ksirkskineditor
-  ${QT_QTXML_LIBRARY}
-  ${QT_QTSVG_LIBRARY} 
-  ${KDE4_KIO_LIBS} 
-  ${KDE4_PHONON_LIBRARY}
-  kdegames
-  kdegamesprivate
+  Qt5::Xml
+  Qt5::Svg 
+  KF5::IconThemes
+  KF5::KIOCore 
+  Phonon::phonon4qt5
+  KF5::XmlGui
+  KF5KDEGames
+  KF5KDEGamesPrivate
   ${CRYPT_LIBS}
  )
 
-install( TARGETS ksirkskineditor ${INSTALL_TARGETS_DEFAULT_ARGS})
+install( TARGETS ksirkskineditor ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
 
-kde4_install_icons( ${ICON_INSTALL_DIR} )
+ecm_install_icons( ${KDE_INSTALL_ICONDIR} )
 
-install( FILES ksirkskineditorsettings.kcfg DESTINATION ${KCFG_INSTALL_DIR} )
-install( PROGRAMS org.kde.ksirkskineditor.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} )
-install( FILES ksirkskineditorui.rc  DESTINATION  ${DATA_INSTALL_DIR}/ksirkskineditor )
+install( FILES ksirkskineditorsettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR} )
+install( PROGRAMS org.kde.ksirkskineditor.desktop DESTINATION ${KDE_INSTALL_APPDIR} )
+install( FILES ksirkskineditorui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/ksirkskineditor )
 
 set (pics_default_DATA
 cross.png
 target.png
 )
-install( FILES ${pics_default_DATA} DESTINATION ${DATA_INSTALL_DIR}/ksirkskineditor/ )
+install( FILES ${pics_default_DATA} DESTINATION ${KDE_INSTALL_DATADIR}/ksirkskineditor/ )

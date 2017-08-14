@@ -51,18 +51,16 @@
 #include <QUuid>
 #include <QTextStream>
 #include <QInputDialog>
+#include <QFileDialog>
+#include <QUrl>
 
 // include files for KDE
-#include <kfiledialog.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kconfig.h>
-#include <kdebug.h>
+#include "ksirk_debug.h"
 #include <kmessagebox.h>
-#include <KStatusBar>
-#include <kcomponentdata.h>
 #include <kgamepopupitem.h>
 #include <KPasswordDialog>
-#include <KInputDialog>
 #include <tcpconnectwidget.h>
 
 namespace Ksirk
@@ -72,7 +70,7 @@ using namespace GameLogic;
 // void KGameWindow::slotTimerEvent()
 void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
 {
-//   kDebug();
+//   qCDebug(KSIRK_LOG);
   QString countryName;
   QPoint mousePos;
   QPoint mousePosGlobal;
@@ -110,7 +108,7 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
         status1Text = i18np("%2 belongs to %3. 1 army.","%2 belongs to %3. %1 armies.",mouseLocalisation->nbArmies(),i18n(countryName.toUtf8().data()),player->name());
       }
 
-      statusBar()-> changeItem(status1Text, ID_STATUS_MSG);
+      //QT5 statusBar()-> changeItem(status1Text, ID_STATUS_MSG);
     }
   }
   else
@@ -120,7 +118,7 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
       m_mouseLocalisation->clearHighlighting();
       m_mouseLocalisation = 0;
     }
-    statusBar()-> changeItem("", ID_STATUS_MSG); // Reset
+    //QT5 statusBar()-> changeItem("", ID_STATUS_MSG); // Reset
   }
   int borderScrollSize = 50;
   if ( (!m_timer.isActive())
@@ -211,11 +209,11 @@ void KGameWindow::evenementTimer()
   QPoint mousePos;
   QPointF mousePosition;
 
-//   kDebug() << "KGameWindow::evenementTimer";
+//   qCDebug(KSIRK_LOG) << "KGameWindow::evenementTimer";
   mousePos = QCursor::pos();
   mousePosition =  m_frame-> mapFromGlobal(mousePos);
-//   kDebug() << "mousePosition = ( " << mousePosition.x() << " , " << mousePosition.y() << " )";
-//   kDebug() << "m_frame = ( " << m_frame-> viewport()->width() << " , " << m_frame-> viewport()->height() << " )";
+//   qCDebug(KSIRK_LOG) << "mousePosition = ( " << mousePosition.x() << " , " << mousePosition.y() << " )";
+//   qCDebug(KSIRK_LOG) << "m_frame = ( " << m_frame-> viewport()->width() << " , " << m_frame-> viewport()->height() << " )";
 
   bool restart = false;
   int borderScrollSize = 50;
@@ -223,7 +221,7 @@ void KGameWindow::evenementTimer()
   if ((mousePosition.x() < borderScrollSize) && (mousePosition.x() >= 0)
       && (mousePosition.y() >= 0) && (mousePosition.y() <= m_frame-> viewport()->height()))
   {
-//     kDebug() << "scrollRight";
+//     qCDebug(KSIRK_LOG) << "scrollRight";
     m_frame->horizontalScrollBar()->setValue(m_frame->horizontalScrollBar()->value() - borderScrollSpeed);
     if (m_frame->horizontalScrollBar()->value() == m_frame->horizontalScrollBar()->minimum())
     {
@@ -248,7 +246,7 @@ void KGameWindow::evenementTimer()
       (mousePosition.x() <= m_frame-> viewport()->width())
       && (mousePosition.y() >= 0) && (mousePosition.y() <= m_frame-> viewport()->height()))
   {
-//     kDebug() << "scrollLeft";
+//     qCDebug(KSIRK_LOG) << "scrollLeft";
     m_frame-> horizontalScrollBar()->setValue ( m_frame-> horizontalScrollBar()->value() + borderScrollSpeed);
     m_rightarrow->setActive(true);
     m_rightarrow->update();
@@ -265,7 +263,7 @@ void KGameWindow::evenementTimer()
   if ((mousePosition.y() < borderScrollSize) && (mousePosition.y() >= 0)
       && (mousePosition.x() >= 0) && (mousePosition.x() <= m_frame-> viewport()->width()))
   {
-//     kDebug() << "scrollDown";
+//     qCDebug(KSIRK_LOG) << "scrollDown";
     m_frame-> verticalScrollBar()->setValue ( m_frame-> verticalScrollBar()->value() - borderScrollSpeed);
     m_uparrow->setActive(true);
     restart = true;
@@ -282,7 +280,7 @@ void KGameWindow::evenementTimer()
       (mousePosition.y() <=  m_frame-> viewport()->height())
       && (mousePosition.x() >= 0) && (mousePosition.x() <= m_frame-> viewport()->width()))
   {
-//     kDebug() << "scrollUp " << m_frame-> verticalScrollBar()->value()
+//     qCDebug(KSIRK_LOG) << "scrollUp " << m_frame-> verticalScrollBar()->value()
 //       << "("<< m_frame-> verticalScrollBar()->minimum()
 //       << ", " << m_frame-> verticalScrollBar()->maximum() << ")";
     m_frame-> verticalScrollBar()->setValue ( m_frame-> verticalScrollBar()->value() + borderScrollSpeed);
@@ -300,7 +298,7 @@ void KGameWindow::evenementTimer()
   if ( m_animFighters->isEmpty() )
   {
     if ( m_secondCountry && !( m_secondCountry-> owner() ) )
-      kError() << m_secondCountry-> name() << " does not belong to anybody !";
+      qCCritical(KSIRK_LOG) << m_secondCountry-> name() << " does not belong to anybody !";
     // handling of the AI player actions
     /*if ( !( ( ( currentPlayer() && currentPlayer()-> isAI() )
             || ( ( isMyState(GameLogic::GameAutomaton::WAITDEFENSE)  ) && ( m_secondCountry ) && (m_secondCountry->owner())
@@ -342,31 +340,31 @@ void KGameWindow::evenementTimer()
     m_uparrow->show();
   }
   
-  //    kDebug() << "OUT KGameWindow::evenementTimer";
+  //    qCDebug(KSIRK_LOG) << "OUT KGameWindow::evenementTimer";
   if (restart)
   {
-//     kDebug() << "restarting timer";
+//     qCDebug(KSIRK_LOG) << "restarting timer";
     m_timer.start(200);
   }
 }
 
 void KGameWindow::slotLeftButtonDown(const QPointF& point)
 {
-//   kDebug() << "slotLeftButtonDown";
+//   qCDebug(KSIRK_LOG) << "slotLeftButtonDown";
 //   if (currentPlayer() && !(currentPlayer()-> isAI()) )
     m_automaton->gameEvent("actionLButtonDown", point);
 }
 
 void KGameWindow::slotLeftButtonUp(const QPointF& point)
 {
-//     kDebug() << "slotLeftButtonUp";
+//     qCDebug(KSIRK_LOG) << "slotLeftButtonUp";
 //     if (currentPlayer() && ! (currentPlayer()-> isAI()) )
     m_automaton->gameEvent("actionLButtonUp", point);
 }
 
 void KGameWindow::slotRightButtonDown(const QPointF& point)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
 //   if (currentPlayer() && ! (currentPlayer()-> isAI()) )
     m_automaton->gameEvent("actionRButtonDown", point);
   return;
@@ -374,7 +372,7 @@ void KGameWindow::slotRightButtonDown(const QPointF& point)
 
 void KGameWindow::slotRightButtonUp(const QPointF& point)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
 //   if (currentPlayer() && ! (currentPlayer()-> isAI()) )
     m_automaton->gameEvent("actionRButtonUp", point);
   return;
@@ -385,12 +383,12 @@ void KGameWindow::slotArena(bool isCheck)
   if (isCheck)
   {
     m_useArena = true;
-    kDebug() << "*******Arena On******" << m_useArena;
+    qCDebug(KSIRK_LOG) << "*******Arena On******" << m_useArena;
   }
   else
   {
     m_useArena = false;
-    kDebug() << "*******Arena Off******" << m_useArena;
+    qCDebug(KSIRK_LOG) << "*******Arena Off******" << m_useArena;
   }
 }
 
@@ -403,7 +401,7 @@ void KGameWindow::slotJabberGame()
 
 void KGameWindow::slotNewGame()
 {
-  //   kDebug() << "Slot new game: posting event actionNewGame";
+  //   qCDebug(KSIRK_LOG) << "Slot new game: posting event actionNewGame";
   actionNewGame(GameAutomaton::None);
 }
 
@@ -414,7 +412,7 @@ void KGameWindow::slotNewJabberGame()
 
 void KGameWindow::slotNewSocketGame()
 {
-  //   kDebug() << "Slot new game: posting event actionNewGame";
+  //   qCDebug(KSIRK_LOG) << "Slot new game: posting event actionNewGame";
   //   QPoint point;
   actionNewGame(GameAutomaton::Socket);
   
@@ -428,7 +426,7 @@ void KGameWindow::slotNewSocketGame()
 
 void KGameWindow::slotOpenGame()
 {
-  kDebug() << "Slot open game: posting event actionOpenGame";
+  qCDebug(KSIRK_LOG) << "Slot open game: posting event actionOpenGame";
   QPoint point;
   m_automaton->gameEvent("actionOpenGame", point);
 //   actionOpenGame();
@@ -452,7 +450,7 @@ void KGameWindow::slotSaveGame()
     }
     if (m_fileName.isEmpty())
     {
-      QString fileName = KFileDialog::getSaveFileName (KUrl(), "*.xml", this, i18n("KsirK - Save Game"));
+      QString fileName = QFileDialog::getSaveFileName (this, i18n("KsirK - Save Game"), QString(), "*.xml");
       if ( QFile::exists(fileName)
           && (KMessageBox::questionYesNo (this,
                 i18n("%1 exists.\nDo you really want to overwrite it?",fileName),
@@ -488,14 +486,14 @@ void KGameWindow::slotSaveGame()
 
 void KGameWindow::slotRecycling()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   QPoint point;
   m_automaton->gameEvent("actionRecycling", point);
 }
 
 void KGameWindow::slotRecyclingFinished()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   QPoint point;
   m_rightDock->hide();
   m_automaton->gameEvent("actionRecyclingFinished", point);
@@ -503,7 +501,7 @@ void KGameWindow::slotRecyclingFinished()
 
 void KGameWindow::slotNextPlayer()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   QPoint point;
   m_automaton->gameEvent("actionNextPlayer", point);
 }
@@ -594,15 +592,15 @@ void KGameWindow::slotCancel()
 
 void KGameWindow::slotDumpGameInformations()
 {
-//   kDebug() << "Game information : ";
-//    kDebug() << "  state : " << GameStateNames[getState()];
-//   kDebug() << "  current player : " 
+//   qCDebug(KSIRK_LOG) << "Game information : ";
+//    qCDebug(KSIRK_LOG) << "  state : " << GameStateNames[getState()];
+//   qCDebug(KSIRK_LOG) << "  current player : " 
 //       << ((currentPlayer()) ? currentPlayer()-> name() : "nobody");
 }
 
 void KGameWindow::slotFinishMoves()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   m_automaton->sendMessage(buffer,FinishMoves);
@@ -610,24 +608,26 @@ void KGameWindow::slotFinishMoves()
 
 void KGameWindow::slotShowAboutApplication()
 {
-    //kDebug() << "Dans mon About !";
+    //qCDebug(KSIRK_LOG) << "Dans mon About !";
 
 /*  KAboutApplication kAA;
   kAA.exec();*/
+#if 0 //QT5
   KAboutApplicationDialog dialog(KGlobal::mainComponent().aboutData(), this);
   dialog.exec();
+#endif
 }
 
 void KGameWindow::slotJoinNetworkGame() 
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   QPoint point;
   m_automaton->gameEvent("actionJoinNetworkGame", point);
 }
 
 void KGameWindow::slotConnectToServer()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   m_newGameSetup->setHost(m_tcpConnectWidget->hostEdit->text());
   m_newGameSetup->setTcpPort(m_tcpConnectWidget->portEdit->value());
   m_automaton->setGameStatus(KGame::End);
@@ -637,7 +637,7 @@ void KGameWindow::slotConnectToServer()
   {
     m_automaton->playerList()->clear();
     m_automaton->currentPlayer(0);
-    kDebug() << "  playerList size = " << m_automaton->playerList()->count();
+    qCDebug(KSIRK_LOG) << "  playerList size = " << m_automaton->playerList()->count();
   }
   theWorld()->reset();
   
@@ -646,7 +646,7 @@ void KGameWindow::slotConnectToServer()
 
 void KGameWindow::slotShowGoal()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   if (currentPlayer() && !currentPlayer()->isVirtual()
     && !currentPlayer()->isAI())
   {
@@ -680,7 +680,7 @@ void KGameWindow::slotChatFloatChanged(bool /*value*/)
 
 void KGameWindow::slotChatReduceButton()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
 
   // change the reduce button image, hide or show the chat and the short last message
   if (!m_chatIsReduced)
@@ -696,13 +696,13 @@ void KGameWindow::slotChatReduceButton()
 void KGameWindow::slotMovingFightersArrived(AnimSpritesGroup* sprites)
 {
 Q_UNUSED(sprites)
-  kDebug();
+  qCDebug(KSIRK_LOG);
   m_automaton->movingFigthersArrived();
 }
 
 void KGameWindow::slotMovingArmiesArrived(AnimSpritesGroup* sprites)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   AnimSpritesGroup::iterator it, it_end;
   it = sprites->begin(); it_end = sprites->end();
   for (; it != it_end; it++)
@@ -728,7 +728,7 @@ void KGameWindow::slotBring(AnimSprite* /*sprite*/)
 
 void KGameWindow::slotMovingArmyArrived(AnimSprite* sprite)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   sprite->setStatic();
   sprite->hide();
   m_automaton->movingArmyArrived(sprite->getDestination(),
@@ -738,13 +738,13 @@ void KGameWindow::slotMovingArmyArrived(AnimSprite* sprite)
 void KGameWindow::slotFiringFinished(AnimSpritesGroup* sprites)
 {
 Q_UNUSED(sprites)
-  kDebug();
+  qCDebug(KSIRK_LOG);
   m_automaton->firingFinished();
 }
 
 void KGameWindow::slotExplosionFinished(AnimSpritesGroup* sprites)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   while (!sprites->empty())
   {
     AnimSprite* sprite = sprites->front();
@@ -759,12 +759,12 @@ void KGameWindow::slotExplosionFinished(AnimSpritesGroup* sprites)
   }
 
   m_automaton->explosionFinished();
-  kDebug()<<"DONE";
+  qCDebug(KSIRK_LOG)<<"DONE";
 }
 
 void KGameWindow::slotZoomIn()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   m_theWorld->applyZoomFactorFast(1.1);					//Call to the fast method (benj)
   m_frame->setMaximumSize(m_theWorld->width(),m_theWorld->height());
   m_scene_world->setSceneRect ( QRectF() );
@@ -775,7 +775,7 @@ void KGameWindow::slotZoomIn()
 
 void KGameWindow::slotZoomOut()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   m_theWorld->applyZoomFactorFast(1.0/1.1);				//call to the fast method
   m_frame->setMaximumSize(m_theWorld->width(),m_theWorld->height());
   m_scene_world->setSceneRect ( QRectF() );
@@ -785,10 +785,10 @@ void KGameWindow::slotZoomOut()
 
 void KGameWindow::slotRemoveMessage()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   if (m_message != 0)
   {
-    kDebug() << "hiding and deleting";
+    qCDebug(KSIRK_LOG) << "hiding and deleting";
     m_message->hide();
     delete m_message;
     m_message = 0;
@@ -797,7 +797,7 @@ void KGameWindow::slotRemoveMessage()
 
 void KGameWindow::slotContextualHelp()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   if (currentPlayer() == 0 || currentPlayer()->isAI())
   {
     return;
@@ -817,13 +817,13 @@ void KGameWindow::slotContextualHelp()
 
 void KGameWindow::slotDisableHelp(const QString & link)
 {
-  kDebug() << link;
+  qCDebug(KSIRK_LOG) << link;
   KsirkSettings::setHelpEnabled(false);
 }
 
 void KGameWindow::slotArmiesNumberChanged(int checked)
 {
-  kDebug() << checked;
+  qCDebug(KSIRK_LOG) << checked;
   KsirkSettings::setShowArmiesNumbers(checked);
 
   foreach (Country* country, m_theWorld->getCountries())
@@ -835,7 +835,7 @@ void KGameWindow::slotArmiesNumberChanged(int checked)
 void KGameWindow::slotDefAuto()
 {
   QPoint point;
-  kDebug()<<"Recept signal defense auto";
+  qCDebug(KSIRK_LOG)<<"Recept signal defense auto";
   m_automaton->setDefenseAuto(true);
   if (this->firstCountry()->owner()->getNbAttack() == 1)
     m_automaton->gameEvent("actionDefense1", point);
@@ -847,7 +847,7 @@ void KGameWindow::slotDefAuto()
 void KGameWindow::slotWindowDef1()
 {
   QPoint point;
-  kDebug()<<"Recept signal defense with one army";
+  qCDebug(KSIRK_LOG)<<"Recept signal defense with one army";
   m_automaton->gameEvent("actionDefense1", point);
   m_defenseDialog->close();
 }
@@ -855,14 +855,14 @@ void KGameWindow::slotWindowDef1()
 void KGameWindow::slotWindowDef2()
 {
   QPoint point;
-  kDebug()<<"Recept signal defense with two army";
+  qCDebug(KSIRK_LOG)<<"Recept signal defense with two army";
   m_automaton->gameEvent("actionDefense2", point);
   m_defenseDialog->close();
 }
 
 void KGameWindow::slotNewGameNext()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   m_automaton->newGameNext();
   m_reinitializingGame = false;
   
@@ -874,7 +874,7 @@ void KGameWindow::slotNewGameNext()
 
 // void KGameWindow::slotNewGameOK(unsigned int nbPlayers, const QString& skin, unsigned int nbNetworkPlayers, bool useGoals)
 // {
-//   kDebug() << nbPlayers << skin << nbNetworkPlayers << useGoals;
+//   qCDebug(KSIRK_LOG) << nbPlayers << skin << nbNetworkPlayers << useGoals;
 //   m_automaton->setGameStatus(KGame::End);
 //   m_reinitializingGame = true;
 //   m_automaton->removeAllPlayers();
@@ -896,7 +896,7 @@ void KGameWindow::slotNewGameNext()
 
 void KGameWindow::slotNewGameKO()
 {
-  kDebug() << m_stateBeforeNewGame << m_stackWidgetBeforeNewGame;
+  qCDebug(KSIRK_LOG) << m_stateBeforeNewGame << m_stackWidgetBeforeNewGame;
   m_automaton->state(m_stateBeforeNewGame);
   m_centralWidget->setCurrentIndex(m_stackWidgetBeforeNewGame);
   m_automaton->setGameStatus(KGame::Run);
@@ -904,28 +904,28 @@ void KGameWindow::slotNewGameKO()
 
 void KGameWindow::slotConnected()
 {
-  kDebug () << "Connected to Jabber server.";
+  qCDebug(KSIRK_LOG) << "Connected to Jabber server.";
   
-  kDebug () << "Requesting roster...";
+  qCDebug(KSIRK_LOG) << "Requesting roster...";
   m_jabberClient->requestRoster ();
 }
 
 void KGameWindow::slotRosterRequestFinished ( bool success )
 {
-  kDebug() << success;
+  qCDebug(KSIRK_LOG) << success;
   
   /* Since we are online now, set initial presence. Don't do this
   * before the roster request or we will receive presence
   * information before we have updated our roster with actual
   * contacts from the server! (Iris won't forward presence
   * information in that case either). */
-  kDebug () << "Setting initial presence...";
+  qCDebug(KSIRK_LOG) << "Setting initial presence...";
   setPresence ( m_initialPresence );
 }
 
 void KGameWindow::slotCSDisconnected ()
 {
-  kDebug () << "Disconnected from Jabber server.";
+  qCDebug(KSIRK_LOG) << "Disconnected from Jabber server.";
   
   /*
   * We should delete the JabberClient instance here,
@@ -941,30 +941,30 @@ void KGameWindow::slotCSDisconnected ()
 
 void KGameWindow::slotReceivedMessage (const XMPP::Message & message)
 {
-  kDebug () << "New " << message.type() << " message from " << message.from().full () << ": " << message.body();
+  qCDebug(KSIRK_LOG) << "New " << message.type() << " message from " << message.from().full () << ": " << message.body();
 
   QString body = message.body();
   QString nick = message.from().full();
 
   if ( message.type() == "groupchat" )
   {
-    kDebug() << "my jid:" << m_groupchatRoom+'@'+m_groupchatHost+'/'+m_groupchatNick;
+    qCDebug(KSIRK_LOG) << "my jid:" << m_groupchatRoom+'@'+m_groupchatHost+'/'+m_groupchatNick;
     XMPP::Jid jid ( message.from().domain() );
     if (body.startsWith("I'm starting a game with skin")
       && m_presents.contains(message.from().full ())
       && message.from().full() != m_groupchatRoom+'@'+m_groupchatHost+'/'+m_groupchatNick)
     {
-      kDebug() << "start game message";
+      qCDebug(KSIRK_LOG) << "start game message";
       QRegExp rxlen("I'm starting a game with skin '([^']*)' and '(\\d+)' players");
 //       int pos = rxlen.indexIn(body);
       QString skin = rxlen.cap(1); // "189"
       int nbPlayers = rxlen.cap(2).toInt();  // "cm"
-      kDebug() << "emiting newJabberGame" << nick << nbPlayers << skin;
+      qCDebug(KSIRK_LOG) << "emiting newJabberGame" << nick << nbPlayers << skin;
       emit newJabberGame(nick, nbPlayers, skin);
     }
     else if (body.startsWith("Who propose online KsirK games here?"))
     {
-      kDebug() << "online games question" << m_automaton->stateName();
+      qCDebug(KSIRK_LOG) << "online games question" << m_automaton->stateName();
       if (m_automaton->startingGame())
       {
         sendGameInfoToJabber();
@@ -976,7 +976,7 @@ void KGameWindow::slotReceivedMessage (const XMPP::Message & message)
     XMPP::Jid jid ( message.from() );
     if (body == "connect")
     {
-      kDebug() << "received connect from" << jid.full();
+      qCDebug(KSIRK_LOG) << "received connect from" << jid.full();
       KMessageJabber* messageIO = new KMessageJabber(jid.full(), m_jabberClient, this);
       if (m_automaton->messageServer())
       {
@@ -985,46 +985,48 @@ void KGameWindow::slotReceivedMessage (const XMPP::Message & message)
     }
     else
     {
-      kDebug() << "non connect ksirkgame message";
+      qCDebug(KSIRK_LOG) << "non connect ksirkgame message";
     }
   }
 }
 void KGameWindow::slotHandleTLSWarning (QCA::TLS::IdentityResult identityResult, QCA::Validity validityResult )
 {
-  kDebug (  ) << "Handling TLS warning..." << identityResult << validityResult;
+  qCDebug(KSIRK_LOG) << "Handling TLS warning..." << identityResult << validityResult;
 }
 
 void KGameWindow::slotClientError ( JabberClient::ErrorCode errorCode )
 {
-  kDebug (  ) << "Handling client error...";
+  qCDebug(KSIRK_LOG) << "Handling client error...";
 
   switch ( errorCode )
   {
     case JabberClient::NoTLS:
     default:
+#if 0 //QT5
       KMessageBox::queuedMessageBox ( 0, KMessageBox::Error,
                                                                                 i18n ("An encrypted connection with the Jabber server could not be established."),
                                                                                 i18n ("Jabber Connection Error"));
 //                                                                                 disconnect ( 0/*Kopete::Account::Manual*/ );
+#endif
                                                                                 break;
                                             }
 }
 
 void KGameWindow::slotCSError ( int error )
 {
-  kDebug() << "Error in stream signalled.";
+  qCDebug(KSIRK_LOG) << "Error in stream signalled.";
   
   if ( ( error == XMPP::ClientStream::ErrAuth )
     && ( m_jabberClient->clientStream()->errorCondition () == XMPP::ClientStream::NotAuthorized ) )
   {
-    kDebug (  ) << "Incorrect password, retrying.";
+    qCDebug(KSIRK_LOG) << "Incorrect password, retrying.";
 //     disconnect(/*Kopete::Account::BadPassword*/0);
   }
   else
   {
 //     int errorClass =  0;
     
-    kDebug (  ) << "Disconnecting.";
+    qCDebug(KSIRK_LOG) << "Disconnecting.";
     
     // display message to user
 //     if(!m_removing) //when removing the account, connection errors are normal.
@@ -1040,12 +1042,12 @@ void KGameWindow::slotCSError ( int error )
 
 void KGameWindow::slotClientDebugMessage ( const QString &msg )
 {
-  kDebug () << msg;
+  qCDebug(KSIRK_LOG) << msg;
 }
 
 void KGameWindow::slotGroupChatJoined (const XMPP::Jid & jid)
 {
-  kDebug () << "Joined groupchat " << jid.full ();
+  qCDebug(KSIRK_LOG) << "Joined groupchat " << jid.full ();
   
   /*    <message type="chat" to="kleag@localhost" id="aabca" >
   <body>hello</body>
@@ -1061,12 +1063,12 @@ void KGameWindow::slotGroupChatJoined (const XMPP::Jid & jid)
 
 void KGameWindow::slotGroupChatLeft (const XMPP::Jid & jid)
 {
-  kDebug () << "Left groupchat " << jid.full ();
+  qCDebug(KSIRK_LOG) << "Left groupchat " << jid.full ();
 }
 
 void KGameWindow::slotGroupChatPresence (const XMPP::Jid & jid, const XMPP::Status & status)
 {
-  kDebug () << "Received groupchat presence for room " << jid.full() << status.isAvailable();
+  qCDebug(KSIRK_LOG) << "Received groupchat presence for room " << jid.full() << status.isAvailable();
   
   if (status.isAvailable())
   {
@@ -1085,7 +1087,7 @@ void KGameWindow::slotGroupChatPresence (const XMPP::Jid & jid, const XMPP::Stat
 
 void KGameWindow::slotGroupChatError (const XMPP::Jid &jid, int error, const QString &reason)
 {
-  kDebug () << "Group chat error - room " << jid.full () << " had error " << error << " (" << reason << ")";
+  qCDebug(KSIRK_LOG) << "Group chat error - room " << jid.full () << " had error " << error << " (" << reason << ")";
   
   switch (error)
   {
@@ -1101,7 +1103,7 @@ void KGameWindow::slotGroupChatError (const XMPP::Jid &jid, int error, const QSt
     case JabberClient::NicknameConflict:
     {
       bool ok;
-      QString nickname = KInputDialog::getText(i18n("Error trying to join %1: nickname %2 is already in use", jid.node(), jid.resource()), i18n("Provide your nickname"), QString(), &ok);
+      QString nickname = QInputDialog::getText(this, i18n("Error trying to join %1: nickname %2 is already in use", jid.node(), jid.resource()), i18n("Provide your nickname"), QLineEdit::Normal, QString(), &ok);
       if (ok)
       {
         m_jabberClient->joinGroupChat(jid.domain(), jid.node(), nickname);
@@ -1110,25 +1112,25 @@ void KGameWindow::slotGroupChatError (const XMPP::Jid &jid, int error, const QSt
     break;
     
     case JabberClient::BannedFromThisMUC:
-      KMessageBox::queuedMessageBox ( 0, KMessageBox::Error, i18n ("You cannot join the room %1 because you have been banned", jid.node()), i18n ("Jabber Group Chat") );
+      //QT5 KMessageBox::queuedMessageBox ( 0, KMessageBox::Error, i18n ("You cannot join the room %1 because you have been banned", jid.node()), i18n ("Jabber Group Chat") );
       break;
                                       
     case JabberClient::MaxUsersReachedForThisMuc:
-      KMessageBox::queuedMessageBox ( 0, KMessageBox::Error, i18n ("You cannot join the room %1 because the maximum number of users has been reached", jid.node()), i18n ("Jabber Group Chat") );
+      //QT5 KMessageBox::queuedMessageBox ( 0, KMessageBox::Error, i18n ("You cannot join the room %1 because the maximum number of users has been reached", jid.node()), i18n ("Jabber Group Chat") );
       break;
                                       
     default:
     {
       QString detailedReason = reason.isEmpty () ? i18n ( "No reason given by the server" ) : reason;
       
-      KMessageBox::queuedMessageBox ( 0, KMessageBox::Error, i18n ("There was an error processing your request for groupchat %1. (Reason: %2, Code %3)", jid.full (), detailedReason, error ), i18n ("Jabber Group Chat") );
+      //QT5 KMessageBox::queuedMessageBox ( 0, KMessageBox::Error, i18n ("There was an error processing your request for groupchat %1. (Reason: %2, Code %3)", jid.full (), detailedReason, error ), i18n ("Jabber Group Chat") );
     }
   }
 }
 
 void KGameWindow::slotJabberGameCanceled(int previousIndex)
 {
-  kDebug() << previousIndex;
+  qCDebug(KSIRK_LOG) << previousIndex;
   m_centralWidget->setCurrentIndex(previousIndex);
 }
 
@@ -1141,7 +1143,7 @@ void KGameWindow::slotExit()
 
 void KGameWindow::slotNewPlayerNext()
 {
-  kDebug() << m_newGameSetup->nbLocalPlayers() << m_newGameSetup->nbPlayers() << m_newGameSetup->nbNetworkPlayers();
+  qCDebug(KSIRK_LOG) << m_newGameSetup->nbLocalPlayers() << m_newGameSetup->nbPlayers() << m_newGameSetup->nbNetworkPlayers();
   if (m_automaton->isAdmin() && m_newGameSetup->nbLocalPlayers() >= m_newGameSetup->nbPlayers()-m_newGameSetup->nbNetworkPlayers())
   {
     m_newGameSummaryWidget->show(this);
@@ -1156,7 +1158,7 @@ void KGameWindow::slotNewPlayerNext()
 
 void KGameWindow::slotNewPlayerPrevious()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   if (m_newGameSetup->players().empty())
   {
     m_centralWidget->setCurrentIndex(NEWGAME_INDEX);
@@ -1173,7 +1175,7 @@ void KGameWindow::slotNewPlayerPrevious()
 
 void KGameWindow::slotNewPlayerCancel()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   /// @TODO other uninits to do
   qDeleteAll(m_newGameSetup->players());
   m_newGameSetup->players().clear();
@@ -1182,7 +1184,7 @@ void KGameWindow::slotNewPlayerCancel()
 
 void KGameWindow::slotStartNewGame()
 {
-  kDebug() << m_newGameSetup->nbPlayers() << m_newGameSetup->nbPlayers() << m_newGameSetup->players().size();
+  qCDebug(KSIRK_LOG) << m_newGameSetup->nbPlayers() << m_newGameSetup->nbPlayers() << m_newGameSetup->players().size();
   m_automaton->setGameStatus(KGame::End);
   m_reinitializingGame = true;
 
@@ -1199,10 +1201,10 @@ void KGameWindow::slotStartNewGame()
   // TODO the players will not be in the orderd showed in the interface.
   if (!(m_automaton->playerList()->isEmpty()) && m_automaton->networkGameType() == GameAutomaton::None)
   {
-    kDebug() << "There was " << m_automaton->playerList()->count() << "players";
+    qCDebug(KSIRK_LOG) << "There was " << m_automaton->playerList()->count() << "players";
     m_automaton->playerList()->clear();
     m_automaton->currentPlayer(0);
-    kDebug() << "  playerList size = " << m_automaton->playerList()->count();
+    qCDebug(KSIRK_LOG) << "  playerList size = " << m_automaton->playerList()->count();
   }
   theWorld()->reset();
   

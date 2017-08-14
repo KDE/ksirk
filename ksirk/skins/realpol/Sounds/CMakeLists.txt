@@ -4,6 +4,6 @@ canon.wav
 crash.wav 
 roule.wav)
 
-install(FILES ${sounds_default_DATA} DESTINATION ${DATA_INSTALL_DIR}/ksirk/skins/realpol/Sounds)
+install(FILES ${sounds_default_DATA} DESTINATION ${KDE_INSTALL_DATADIR}/ksirk/skins/realpol/Sounds)
 
 

@@ -24,8 +24,8 @@
 #include <QString>
 #include <QLineEdit>
 
-#include <KLocale>
-#include <KDebug>
+#include <KLocalizedString>
+#include "ksirk_debug.h"
 
 namespace Ksirk
 {
@@ -36,7 +36,7 @@ namespace Ksirk
     m_host(host),
     m_port(port)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   setupUi(this);
   hostEdit-> setText(m_host);
   portEdit-> setText(QString::number(m_port));
@@ -50,7 +50,7 @@ JoinGameDialog::~JoinGameDialog(){
 
 void JoinGameDialog::accept()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
 
   m_host = hostEdit->text();
   m_port = hostEdit->text().toInt();
@@ -58,11 +58,11 @@ void JoinGameDialog::accept()
 }
 
 void JoinGameDialog::reject() {
-//   kDebug() << "I not allow to close the dialog!" << endl;
+//   qCDebug(KSIRK_LOG) << "I not allow to close the dialog!" << endl;
   QDialog::reject();
 }
 
 
 }
 
-#include "joingame.moc"
+

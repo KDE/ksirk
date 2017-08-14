@@ -34,7 +34,7 @@
         </widget>
        </item>
        <item>
-        <widget class="KIntSpinBox" name="playersNumberEntry">
+        <widget class="QSpinBox" name="playersNumberEntry">
          <property name="toolTip">
           <string>Spin this to choose the number of players.</string>
          </property>
@@ -55,7 +55,7 @@
         </widget>
        </item>
        <item>
-        <widget class="KIntSpinBox" name="localPlayersNumberEntry"/>
+        <widget class="QSpinBox" name="localPlayersNumberEntry"/>
        </item>
       </layout>
      </item>
@@ -69,7 +69,7 @@
         </widget>
        </item>
        <item>
-        <widget class="KIntSpinBox" name="tcpPortEntry">
+        <widget class="QSpinBox" name="tcpPortEntry">
          <property name="minimum">
           <number>1</number>
          </property>
@@ -121,7 +121,7 @@
       </widget>
      </item>
      <item>
-      <widget class="KPushButton" name="ghnsbutton">
+      <widget class="QPushButton" name="ghnsbutton">
        <property name="text">
         <string>Download New Skins</string>
        </property>
@@ -222,7 +222,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="KPushButton" name="cancelButton">
+      <widget class="QPushButton" name="cancelButton">
        <property name="text">
         <string>Cancel</string>
        </property>
@@ -242,7 +242,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="KPushButton" name="nextButton">
+      <widget class="QPushButton" name="nextButton">
        <property name="text">
         <string>Next &gt;&gt;</string>
        </property>
@@ -252,18 +252,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KPushButton</class>
-   <extends>QPushButton</extends>
-   <header>kpushbutton.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KIntSpinBox</class>
-   <extends>QSpinBox</extends>
-   <header>knuminput.h</header>
-  </customwidget>
- </customwidgets>
  <tabstops>
   <tabstop>skinCombo</tabstop>
   <tabstop>playersNumberEntry</tabstop>

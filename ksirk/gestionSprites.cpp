@@ -39,20 +39,17 @@
 // include files for QT
 #include <qmetaobject.h>
 #include <qdir.h>
-#include <qprinter.h>
 #include <qpainter.h>
 #include <qinputdialog.h>
 
 // include files for KDE
 #include <kiconloader.h>
 #include <kmessagebox.h>
-#include <kfiledialog.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kconfig.h>
 #include <kstandardaction.h>
 #include <phonon/mediaobject.h>
-#include <kstandarddirs.h>
-#include <kdebug.h>
+#include "ksirk_debug.h"
 #include <KToolBar>
 
 #include <assert.h>
@@ -67,7 +64,7 @@ using namespace GameLogic;
  */
 bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *firstCountry, Country *secondCountry)
 {
-  kDebug() << "-> " << nbABouger ;
+  qCDebug(KSIRK_LOG) << "-> " << nbABouger ;
   KMessageParts messageParts;
 
   if (firstCountry-> nbArmies() <= nbABouger)
@@ -118,7 +115,7 @@ bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *firstCount
   newGroup->addSprite(sprite);
   firstCountry-> createArmiesSprites();
   sprite->setAnimated();
-//   kDebug() << "initArmiesMovement returns true";
+//   qCDebug(KSIRK_LOG) << "initArmiesMovement returns true";
   return true;
 }
 
@@ -127,7 +124,7 @@ AnimSprite* KGameWindow::initArmiesMultipleCombat(unsigned int nbA,
     Country *firstCountry,
     Country *secondCountry, QPointF dest)
 {
-  kDebug() << "-> " << nbA ;
+  qCDebug(KSIRK_LOG) << "-> " << nbA ;
   KMessageParts messageParts;
 
   //AnimSpritesGroup* newGroup = new AnimSpritesGroup(this,SLOT(slotMovingArmiesArrived(AnimSpritesGroup*)));
@@ -135,21 +132,21 @@ AnimSprite* KGameWindow::initArmiesMultipleCombat(unsigned int nbA,
   AnimSprite* sprite = 0;
   if ((!firstCountry->spritesCannons().isEmpty()) && (nbA == 10))
   {
-      kDebug() << "cannon";
+      qCDebug(KSIRK_LOG) << "cannon";
       sprite = new CannonSprite(m_theWorld->zoom(), backGnd(), 200);
 
     firstCountry->spritesCannons().hideAndRemoveFirst();
   }
   else if ((!firstCountry->spritesCavalry().isEmpty()) && (nbA == 5))
   {
-      kDebug() << "cavalry";
+      qCDebug(KSIRK_LOG) << "cavalry";
       sprite = new CavalrySprite(m_theWorld->zoom(), backGnd(), 200);
 
       firstCountry->spritesCavalry().hideAndRemoveFirst();
   }
   else if ((!firstCountry->spritesInfantry().isEmpty()) && (nbA == 1))
   {
-    kDebug() << "infantry";
+    qCDebug(KSIRK_LOG) << "infantry";
     sprite = new InfantrySprite(m_theWorld->zoom(), backGnd(), 200);
 
     firstCountry->spritesInfantry().hideAndRemoveFirst();
@@ -183,29 +180,29 @@ AnimSprite* KGameWindow::initArmiesMultipleCombat(unsigned int nbA,
       //relativePosInArenaAttack++;
     }
 
-    kDebug() << "****Test relativePos**** " << relativePosInArena;
+    qCDebug(KSIRK_LOG) << "****Test relativePos**** " << relativePosInArena;
     QPointF dep = determinePointDepartArena(firstCountry,relativePosInArena);
 
     sprite-> setPos(dep);
 
-    kDebug() << "****dep  point**** " << dep;
-    kDebug() << "****dest point**** " << dest;
+    qCDebug(KSIRK_LOG) << "****dep  point**** " << dep;
+    qCDebug(KSIRK_LOG) << "****dest point**** " << dest;
     sprite->setupTravel(firstCountry, secondCountry,dep,dest);
   }
   else
   {
-    kDebug() << "***************Setup travel normal ************** ";
+    qCDebug(KSIRK_LOG) << "***************Setup travel normal ************** ";
     sprite->setupTravel(firstCountry, secondCountry,&dest);
   }
 
-  kDebug() << "-> "<< firstCountry->name() << secondCountry->name();
+  qCDebug(KSIRK_LOG) << "-> "<< firstCountry->name() << secondCountry->name();
   //sprite->setupTravel(firstCountry, secondCountry,&dest);
   //newGroup->addSprite(sprite);
-//   kDebug() << "add a sprite 1";
+//   qCDebug(KSIRK_LOG) << "add a sprite 1";
 //   m_animFighters->addSprite(sprite);
   //firstCountry-> createArmiesSprites();
   //sprite->setAnimated();
-//   kDebug() << "initArmiesMovement returns true";
+//   qCDebug(KSIRK_LOG) << "initArmiesMovement returns true";
   return sprite;
 }
 
@@ -224,7 +221,7 @@ void KGameWindow::determinePointArrivee(
   Country *defendingCountry = secondCountry();
   if (attackingCountry == 0 || m_secondCountry == 0)
   {
-    kError() << "attackingCountry=" << (void*)attackingCountry << "defendingCountry=" << (void*)defendingCountry;
+    qCCritical(KSIRK_LOG) << "attackingCountry=" << (void*)attackingCountry << "defendingCountry=" << (void*)defendingCountry;
     return;
   }
   
@@ -292,10 +289,10 @@ void KGameWindow::determinePointArrivee(
   int diff = Sprites::SkinSpritesData::single().intData("flag-height") - Sprites::SkinSpritesData::single().intData("cannon-height");
   pointArriveeY = (((defendingCountry-> pointFlag().y() + diff))* m_theWorld->zoom()) ;
   
-  kDebug() << "2 " << defendingCountry-> pointFlag().y() << pointArriveeY;
+  qCDebug(KSIRK_LOG) << "2 " << defendingCountry-> pointFlag().y() << pointArriveeY;
   if (!attackingCountry->communicateWith(defendingCountry))
   {
-    kError() << "Error in KGameWindow::determinePointDepartArena: " << attackingCountry-> name() << "  and "
+    qCCritical(KSIRK_LOG) << "Error in KGameWindow::determinePointDepartArena: " << attackingCountry-> name() << "  and "
             << defendingCountry-> name() << " do not communicate!";
     exit(2);
   }
@@ -354,7 +351,7 @@ void KGameWindow::determinePointArrivee(
   pointArriveeAttaquant.setY(pointArriveeY);
   pointArriveeDefenseur.setX(pointArriveeDefenseurX);
   pointArriveeDefenseur.setY(pointArriveeY);
-  kDebug() << "3: " << pointArriveeAttaquant << " ; " << pointArriveeDefenseur;
+  qCDebug(KSIRK_LOG) << "3: " << pointArriveeAttaquant << " ; " << pointArriveeDefenseur;
 }
 
 
@@ -367,9 +364,9 @@ void KGameWindow::determinePointArriveeForArena(
   Country *attackingCountry = firstCountry();
   Country *defendingCountry = secondCountry();
   
-  kDebug() << m_firstCountry->name() << "("<<(void*)m_firstCountry<<")"
+  qCDebug(KSIRK_LOG) << m_firstCountry->name() << "("<<(void*)m_firstCountry<<")"
       << m_secondCountry->name() << "("<<(void*)m_secondCountry<<")";
-  kDebug() << attackingCountry->name() << "("<<(void*)attackingCountry<<")"
+  qCDebug(KSIRK_LOG) << attackingCountry->name() << "("<<(void*)attackingCountry<<")"
       << defendingCountry->name() << "("<<(void*)defendingCountry<<")"
       << relative << pointArriveeAttaquant << pointArriveeDefenseur;
   //  - attacker's flag point
@@ -389,7 +386,7 @@ void KGameWindow::determinePointArriveeForArena(
   qreal pointDepartDefenseurY;
   qreal leftRelativePos;
 
-  kDebug() << "1" << attackingCountry->spritesInfantry().isEmpty()
+  qCDebug(KSIRK_LOG) << "1" << attackingCountry->spritesInfantry().isEmpty()
   << attackingCountry->name()
   << attackingCountry->nbArmies()
   << attackingCountry->owner()->name()
@@ -400,17 +397,17 @@ void KGameWindow::determinePointArriveeForArena(
 //   if (!attackingCountry->spritesInfantry().isEmpty()
 //       && ((attackingCountry->nbArmies() % 5) >= ((attackingCountry==m_firstCountry)?attackingCountry->owner()->getNbAttack():attackingCountry->owner()->getNbDefense())))
       {
-    kDebug() << "infantry" << attackingCountry->name() << relative;
+    qCDebug(KSIRK_LOG) << "infantry" << attackingCountry->name() << relative;
     // We must know
     //  - attacker's departure point (pointInfantry)
     QPointF dep = determinePointDepartArena(attackingCountry, relative);
-    kDebug() << "dep=" << dep;
+    qCDebug(KSIRK_LOG) << "dep=" << dep;
     pointDepartAttaquantX = dep.x();
     pointDepartAttaquantY = dep.y();
   }
   else if (!attackingCountry->spritesCavalry().isEmpty())
   {
-    kDebug() << "cavalry" << attackingCountry->pointCavalry();
+    qCDebug(KSIRK_LOG) << "cavalry" << attackingCountry->pointCavalry();
     // We must know
     //  - attacker's departure point (pointCavalry)
     pointDepartAttaquantX = attackingCountry-> pointCavalry().x()*m_theWorld->zoom();
@@ -418,7 +415,7 @@ void KGameWindow::determinePointArriveeForArena(
   }
   else
   {
-    kDebug() << "cannon" << attackingCountry->pointCannon();
+    qCDebug(KSIRK_LOG) << "cannon" << attackingCountry->pointCannon();
     // We must know
     //  - attacker's departure point (pointCannon)
       pointDepartAttaquantX = attackingCountry-> pointCannon().x()*m_theWorld->zoom();
@@ -439,7 +436,7 @@ void KGameWindow::determinePointArriveeForArena(
   {
     num = defendingCountry->owner()->getNbDefense();
   }
-  kDebug() << "2"
+  qCDebug(KSIRK_LOG) << "2"
     << defendingCountry->spritesInfantry().isEmpty()
     << defendingCountry->name()
     << defendingCountry->nbArmies()
@@ -451,23 +448,23 @@ void KGameWindow::determinePointArriveeForArena(
 //   if (!defendingCountry->spritesInfantry().isEmpty()
 //       && ((defendingCountry->nbArmies() % 5) >= defendingCountry->owner()->getNbDefense()))
   {
-    kDebug() << "infantry" << defendingCountry->name() << relative;
+    qCDebug(KSIRK_LOG) << "infantry" << defendingCountry->name() << relative;
     //  - defender's departure point (pointInfantry)
     QPointF dep = determinePointDepartArena(defendingCountry, relative);
     pointDepartDefenseurX = dep.x();
     pointDepartDefenseurY = dep.y();
-    kDebug() << "dep=" << dep;
+    qCDebug(KSIRK_LOG) << "dep=" << dep;
   }
   else if (!defendingCountry->spritesCavalry().isEmpty())
   {
-    kDebug() << "cavalry" << defendingCountry->pointCavalry();
+    qCDebug(KSIRK_LOG) << "cavalry" << defendingCountry->pointCavalry();
     //  - defender's departure point (pointCavalry)
     pointDepartDefenseurX = defendingCountry-> pointCavalry().x()*m_theWorld->zoom();
     pointDepartDefenseurY = defendingCountry-> pointCavalry().y()*m_theWorld->zoom();
   }
   else
   {
-    kDebug() << "cannon" << defendingCountry->pointCannon();
+    qCDebug(KSIRK_LOG) << "cannon" << defendingCountry->pointCannon();
     //  - defender's departure point (pointCannon)
     pointDepartDefenseurX = defendingCountry-> pointCannon().x()*m_theWorld->zoom();
     pointDepartDefenseurY = defendingCountry-> pointCannon().y()*m_theWorld->zoom();
@@ -476,12 +473,12 @@ void KGameWindow::determinePointArriveeForArena(
 
   // vertical meet point
   // in case of arena, the vertical meet will be as soon as it's possible
-  kDebug() << "Argh " << pointDepartAttaquantY << pointDepartDefenseurY;
+  qCDebug(KSIRK_LOG) << "Argh " << pointDepartAttaquantY << pointDepartDefenseurY;
   pointArriveeY = (pointDepartAttaquantY+pointDepartDefenseurY)/2;
   
   if (!attackingCountry->communicateWith(defendingCountry))
   {
-    kError() << "Error in KGameWindow::determinePointArriveeForArena: " << attackingCountry-> name() << "  and "
+    qCCritical(KSIRK_LOG) << "Error in KGameWindow::determinePointArriveeForArena: " << attackingCountry-> name() << "  and "
             << defendingCountry-> name() << " do not communicate!";
     exit(2);
   }
@@ -527,19 +524,19 @@ void KGameWindow::determinePointArriveeForArena(
   pointArriveeAttaquant.setY(pointArriveeY);
   pointArriveeDefenseur.setX(pointArriveeDefenseurX);
   pointArriveeDefenseur.setY(pointArriveeY);
-  kDebug() << "Done: " << pointArriveeAttaquant << " ; " << pointArriveeDefenseur;
+  qCDebug(KSIRK_LOG) << "Done: " << pointArriveeAttaquant << " ; " << pointArriveeDefenseur;
 }
 
 
 void KGameWindow::initCombatMovement()
 {
-  kDebug() << "1";
+  qCDebug(KSIRK_LOG) << "1";
 
   Country *attackingCountry = firstCountry();
   Country *defendingCountry = secondCountry();
   if (attackingCountry == 0 || defendingCountry == 0)
   {
-    kError() << "attackingCountry=" << (void*)attackingCountry << "defendingCountry=" << (void*)defendingCountry;
+    qCCritical(KSIRK_LOG) << "attackingCountry=" << (void*)attackingCountry << "defendingCountry=" << (void*)defendingCountry;
     return;
   }
   
@@ -555,7 +552,7 @@ void KGameWindow::initCombatMovement()
       && ! m_automaton->currentPlayer()->isAI()
       && !m_automaton->currentPlayer()->isVirtual())
   {
-    kDebug() << "Attack with arena" << endl;
+    qCDebug(KSIRK_LOG) << "Attack with arena" << endl;
     // init and display the arena view
     showArena();
   }
@@ -584,14 +581,14 @@ void KGameWindow::initCombatMovement()
       && ((attackingCountry->nbArmies() % 5) >= attackingCountry->owner()->getNbAttack())
       && backGnd()->bgIsArena())
   {
-    kDebug() << "**NB-ATTACK**" << attackingCountry->owner()->getNbAttack();
+    qCDebug(KSIRK_LOG) << "**NB-ATTACK**" << attackingCountry->owner()->getNbAttack();
 
     for (unsigned int i=0; i < attackingCountry->owner()->getNbAttack() ; i++)
     {
       attackingSprite = simultaneousAttack(1,KGameWindow::Attack);
       if (attackingSprite != 0)
       {
-        kDebug() << "add a sprite";
+        qCDebug(KSIRK_LOG) << "add a sprite";
         m_animFighters->addSprite(attackingSprite);
       }
     }
@@ -599,7 +596,7 @@ void KGameWindow::initCombatMovement()
   }
   else
   {
-    kDebug() << "creating attackingSprite"
+    qCDebug(KSIRK_LOG) << "creating attackingSprite"
               << attackingCountry->name()
               << attackingCountry->nbArmies()
               << attackingCountry->spritesInfantry().size()
@@ -615,7 +612,7 @@ void KGameWindow::initCombatMovement()
     }
     if (!attackingCountry->spritesCavalry().isEmpty())
     {
-      kDebug() << "cavalry" << backGnd()->bgIsArena();
+      qCDebug(KSIRK_LOG) << "cavalry" << backGnd()->bgIsArena();
       if (backGnd()->bgIsArena())
       {
         attackingSprite = simultaneousAttack(5,KGameWindow::Attack);
@@ -629,7 +626,7 @@ void KGameWindow::initCombatMovement()
     }
     else if (!attackingCountry->spritesCannons().isEmpty())
     {
-      kDebug() << "cannon" << backGnd()->bgIsArena();
+      qCDebug(KSIRK_LOG) << "cannon" << backGnd()->bgIsArena();
       if (backGnd()->bgIsArena())
       {
         attackingSprite = simultaneousAttack(10,KGameWindow::Attack);
@@ -643,7 +640,7 @@ void KGameWindow::initCombatMovement()
     }
     else if (!attackingCountry->spritesInfantry().isEmpty())
     {
-      kDebug() << "infantry" << backGnd()->bgIsArena();
+      qCDebug(KSIRK_LOG) << "infantry" << backGnd()->bgIsArena();
       if (backGnd()->bgIsArena())
       {
         attackingSprite = simultaneousAttack(1,KGameWindow::Attack);
@@ -657,18 +654,18 @@ void KGameWindow::initCombatMovement()
     }
     else 
     {
-      kDebug() << "No sprite on attacking country!";
+      qCDebug(KSIRK_LOG) << "No sprite on attacking country!";
       assert(false);
     }
 
     if (attackingSprite == 0)
     {
-      kError() << "ERROR: null attackingSprite at " << __FILE__ << ", line " << __LINE__;
+      qCCritical(KSIRK_LOG) << "ERROR: null attackingSprite at " << __FILE__ << ", line " << __LINE__;
 //       return;
     }
     else
     {
-      kDebug() << "attackingSprite created";
+      qCDebug(KSIRK_LOG) << "attackingSprite created";
 
       // Adding the number of attackers decoration
       if (attackingCountry->owner()->getNbAttack() == 1)
@@ -686,10 +683,10 @@ void KGameWindow::initCombatMovement()
 
       attackingSprite-> setAttacker();
       attackingSprite->setupTravel(attackingCountry, defendingCountry, &pointArriveeAttaquant);
-      kDebug() << "add a sprite 2";
+      qCDebug(KSIRK_LOG) << "add a sprite 2";
       m_animFighters->addSprite(attackingSprite);
       //(pointDepartAttaquantX <= pointArriveeAttaquantX) ? attackingSprite-> setLookRight() : attackingSprite-> setLookLeft();
-      sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roll.wav");
+      sndRoulePath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/roll.wav");
       if (sndRoulePath.isNull())
       {
         KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error!"));
@@ -697,7 +694,7 @@ void KGameWindow::initCombatMovement()
       }
       if (KsirkSettings::soundEnabled())
       {
-        m_audioPlayer->setCurrentSource(sndRoulePath);
+        m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndRoulePath));
         m_audioPlayer->play();
       }
     }
@@ -707,14 +704,14 @@ void KGameWindow::initCombatMovement()
     && ((defendingCountry->nbArmies() % 5) >= defendingCountry->owner()->getNbDefense())
     && backGnd()->bgIsArena())
   {
-    kDebug() << "**NB-DEFENSE**" << defendingCountry->owner()->getNbDefense();
+    qCDebug(KSIRK_LOG) << "**NB-DEFENSE**" << defendingCountry->owner()->getNbDefense();
 
     for (unsigned int i=0;i< defendingCountry->owner()->getNbDefense();i++)
     {
       defenderSprite = simultaneousAttack(1,KGameWindow::Defense);
       if (defenderSprite != 0)
       {
-        kDebug() << "add a sprite";
+        qCDebug(KSIRK_LOG) << "add a sprite";
         m_animFighters->addSprite(defenderSprite);
       }
     }
@@ -722,7 +719,7 @@ void KGameWindow::initCombatMovement()
   }
   else
   {
-    kDebug() << "creating defenderSprite" << defendingCountry->name()
+    qCDebug(KSIRK_LOG) << "creating defenderSprite" << defendingCountry->name()
               << defendingCountry->nbArmies()
               << defendingCountry->spritesInfantry().size()
               << defendingCountry->spritesCavalry().size()
@@ -737,7 +734,7 @@ void KGameWindow::initCombatMovement()
     }
     if (!defendingCountry->spritesCavalry().isEmpty())
     {
-      kDebug() << "cavalry" << backGnd()->bgIsArena();
+      qCDebug(KSIRK_LOG) << "cavalry" << backGnd()->bgIsArena();
       if (backGnd()->bgIsArena())
       {
         defenderSprite = simultaneousAttack(5,KGameWindow::Defense);
@@ -751,7 +748,7 @@ void KGameWindow::initCombatMovement()
     }
     else if (!defendingCountry->spritesCannons().isEmpty())
     {
-      kDebug() << "cannon" << backGnd()->bgIsArena();
+      qCDebug(KSIRK_LOG) << "cannon" << backGnd()->bgIsArena();
       if (backGnd()->bgIsArena())
       {
         defenderSprite = simultaneousAttack(10,KGameWindow::Defense);
@@ -765,7 +762,7 @@ void KGameWindow::initCombatMovement()
     }
     else if (!defendingCountry->spritesInfantry().isEmpty())
     {
-      kDebug() << "infantry" << backGnd()->bgIsArena();
+      qCDebug(KSIRK_LOG) << "infantry" << backGnd()->bgIsArena();
       if (backGnd()->bgIsArena())
       {
         defenderSprite = simultaneousAttack(1,KGameWindow::Defense);
@@ -779,13 +776,13 @@ void KGameWindow::initCombatMovement()
     }
     else
     {
-      kError() << "No sprite on defending country" << defendingCountry->name();
+      qCCritical(KSIRK_LOG) << "No sprite on defending country" << defendingCountry->name();
       return;
     }
 
     if (defenderSprite==0)
     {
-      kError() << "ERROR: null defenderSprite at " << __FILE__ << ", line " << __LINE__;
+      qCCritical(KSIRK_LOG) << "ERROR: null defenderSprite at " << __FILE__ << ", line " << __LINE__;
       return;
     }
     else
@@ -802,9 +799,9 @@ void KGameWindow::initCombatMovement()
       defenderSprite-> setDefendant();
       defenderSprite-> setupTravel(defendingCountry, defendingCountry, &pointArriveeDefenseur);
       //(pointDepartDefenseurX <= pointArriveeDefenseurX) ? defenderSprite-> setLookRight() : defenderSprite-> setLookLeft();
-      kDebug() << "add a sprite 3";
+      qCDebug(KSIRK_LOG) << "add a sprite 3";
       m_animFighters->addSprite(defenderSprite);
-      sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roll.wav");
+      sndRoulePath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/roll.wav");
       if (sndRoulePath.isNull())
       {
         KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error!"));
@@ -812,24 +809,24 @@ void KGameWindow::initCombatMovement()
       }
       if (KsirkSettings::soundEnabled())
       {
-        m_audioPlayer->setCurrentSource(sndRoulePath);
+        m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndRoulePath));
         m_audioPlayer->play();
       }
     }
   }
-  kDebug() << "Done";
+  qCDebug(KSIRK_LOG) << "Done";
 }
 
 void KGameWindow::animCombat()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   m_animFighters->changeTarget(this, SLOT(slotFiringFinished(AnimSpritesGroup*)));
 
   AnimSpritesGroup::iterator it, it_end;
   it = m_animFighters->begin(); it_end = m_animFighters->end();
   for (; it != it_end; it++)
   {
-    kDebug() << "a sprite position: " << (*it)->pos();
+    qCDebug(KSIRK_LOG) << "a sprite position: " << (*it)->pos();
     CannonSprite* sprite = (CannonSprite*)(*it);
     sprite-> changeSequence("firing");
 
@@ -848,7 +845,7 @@ void KGameWindow::animCombat()
     }
     sprite->setAnimated(1);
 
-    QString sndCanonPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/cannon.wav");
+    QString sndCanonPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/cannon.wav");
     if (sndCanonPath.isNull())
     {
       KMessageBox::error(0,
@@ -857,7 +854,7 @@ void KGameWindow::animCombat()
     }
     if (KsirkSettings::soundEnabled())
     {
-      m_audioPlayer->setCurrentSource(sndCanonPath);
+      m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndCanonPath));
       m_audioPlayer->play();
     }
   }
@@ -867,7 +864,7 @@ void KGameWindow::animCombat()
 void KGameWindow::stopCombat()
 {
 /*
-//   kDebug();
+//   qCDebug(KSIRK_LOG);
   AnimSpritesGroup::iterator it = m_animFighters->begin();
   while (it != m_animFighters->end())
   {
@@ -891,12 +888,12 @@ void KGameWindow::stopCombat()
 
 void KGameWindow::animExplosion(int who)
 {
-  kDebug() << who;
+  qCDebug(KSIRK_LOG) << who;
   Country *attackingCountry = firstCountry();
   
   m_animFighters->changeTarget(this, SLOT(slotExplosionFinished(AnimSpritesGroup*)));
 
-  kDebug() << m_animFighters->size() << " fighters";
+  qCDebug(KSIRK_LOG) << m_animFighters->size() << " fighters";
   unsigned int toArrive = 0;
   AnimSpritesGroup::iterator it = m_animFighters->begin();
   for (;it != m_animFighters->end();it++)
@@ -918,13 +915,13 @@ void KGameWindow::animExplosion(int who)
 
       if (sprite->isAttacker())
       {
-        kDebug() << "  removing a sprite";
-        //kDebug() << "i attack" << i;
-        kDebug() << "NKA" << NKA;
+        qCDebug(KSIRK_LOG) << "  removing a sprite";
+        //qCDebug(KSIRK_LOG) << "i attack" << i;
+        qCDebug(KSIRK_LOG) << "NKA" << NKA;
 
         sprite->setAnimated(NKA);
 
-        QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
+        QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
         if (sndCrashPath.isNull())
         {
           KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
@@ -932,19 +929,19 @@ void KGameWindow::animExplosion(int who)
         }
         if (KsirkSettings::soundEnabled())
         {
-          m_audioPlayer->setCurrentSource(sndCrashPath);
+          m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndCrashPath));
           m_audioPlayer->play();
         }
       }
 
       if (sprite->isDefendant())
       {
-        kDebug() << "  removing a sprite";
-        kDebug() << "NKD" << NKD;
+        qCDebug(KSIRK_LOG) << "  removing a sprite";
+        qCDebug(KSIRK_LOG) << "NKD" << NKD;
 
         sprite->setAnimated(NKD);
 
-        QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
+        QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
         if (sndCrashPath.isNull())
         {
           KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
@@ -952,14 +949,14 @@ void KGameWindow::animExplosion(int who)
         }
         if (KsirkSettings::soundEnabled())
         {
-          m_audioPlayer->setCurrentSource(sndCrashPath);
+          m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndCrashPath));
           m_audioPlayer->play();
         }
       }
     }
     else  // the sprite is not the one (or one the several) killed
     {
-      kDebug() << "  keeping a sprite";
+      qCDebug(KSIRK_LOG) << "  keeping a sprite";
       
       if ((attackingCountry->nbArmies() % 10) == 0)
       {
@@ -982,7 +979,7 @@ void KGameWindow::animExplosion(int who)
   {
     m_animFighters->oneArrived(0);
   }
-  kDebug() << "loop done";
+  qCDebug(KSIRK_LOG) << "loop done";
 
   /*QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
   if (sndCrashPath.isNull())
@@ -995,31 +992,31 @@ void KGameWindow::animExplosion(int who)
     m_audioPlayer->setCurrentSource(sndCrashPath);
     m_audioPlayer->play();
   }*/
-  kDebug() << "finished";
+  qCDebug(KSIRK_LOG) << "finished";
 //   m_frame-> initTimer();
-//    kDebug()<<"OUT";
+//    qCDebug(KSIRK_LOG)<<"OUT";
 }
 
 
 void KGameWindow::animExplosionForArena()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
 
   Country *attackingCountry = firstCountry();
   Country *defendingCountry = secondCountry();
 
   m_animFighters->changeTarget(this, SLOT(slotExplosionFinished(AnimSpritesGroup*)));
 
-  kDebug() << "hidden; " << m_animFighters->size() << " fighters";
+  qCDebug(KSIRK_LOG) << "hidden; " << m_animFighters->size() << " fighters";
   AnimSpritesGroup::iterator it = m_animFighters->begin();
   
   int nbAttackerSurvivor=attackingCountry->owner()->getNbAttack()-NKA;
   int nbDefenderSurvivor=defendingCountry->owner()->getNbDefense()-NKD;
 
-  kDebug() << "nbAttackerSurvivor" << nbAttackerSurvivor;
-  kDebug() << "nbDefenderSurvivor" << nbDefenderSurvivor;
-  kDebug() << "nbSpriteAttacking" << nbSpriteAttacking;
-  kDebug() << "nbSpriteDefending" << nbSpriteDefending;
+  qCDebug(KSIRK_LOG) << "nbAttackerSurvivor" << nbAttackerSurvivor;
+  qCDebug(KSIRK_LOG) << "nbDefenderSurvivor" << nbDefenderSurvivor;
+  qCDebug(KSIRK_LOG) << "nbSpriteAttacking" << nbSpriteAttacking;
+  qCDebug(KSIRK_LOG) << "nbSpriteDefending" << nbSpriteDefending;
 
   for (int nbSpriteTreated=0;
       (nbSpriteTreated < nbSpriteAttacking)&&(it!=m_animFighters->end());
@@ -1027,11 +1024,11 @@ void KGameWindow::animExplosionForArena()
   {
     AnimSprite* sprite = (AnimSprite*)(*it);
 
-    kDebug() << "nbSpriteTreated" << nbSpriteTreated;
+    qCDebug(KSIRK_LOG) << "nbSpriteTreated" << nbSpriteTreated;
 
     if(dynamic_cast<CannonSprite*>(sprite) != 0)
     {
-      kDebug() << "*******CANNON*******";
+      qCDebug(KSIRK_LOG) << "*******CANNON*******";
 
       if (NKA>0)
       {
@@ -1039,13 +1036,13 @@ void KGameWindow::animExplosionForArena()
 
         if (sprite->isAttacker())
         {
-          kDebug() << "  removing a sprite";
-          //kDebug() << "i attack" << i;
-          kDebug() << "NKA" << NKA;
+          qCDebug(KSIRK_LOG) << "  removing a sprite";
+          //qCDebug(KSIRK_LOG) << "i attack" << i;
+          qCDebug(KSIRK_LOG) << "NKA" << NKA;
 
           sprite->setAnimated(NKA);
 
-          QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
+          QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
             KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
@@ -1053,7 +1050,7 @@ void KGameWindow::animExplosionForArena()
           }
           if (KsirkSettings::soundEnabled())
           {
-            m_audioPlayer->setCurrentSource(sndCrashPath);
+            m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndCrashPath));
             m_audioPlayer->play();
           }
         }
@@ -1068,7 +1065,7 @@ void KGameWindow::animExplosionForArena()
     }
     else if(dynamic_cast<CavalrySprite*>(sprite) != NULL)
     {
-      kDebug() << "*******CAVALIER*******";
+      qCDebug(KSIRK_LOG) << "*******CAVALIER*******";
 
       if (NKA>0)
       {
@@ -1076,13 +1073,13 @@ void KGameWindow::animExplosionForArena()
 
         if (sprite->isAttacker())
         {
-          kDebug() << "  removing a sprite";
-          //kDebug() << "i attack" << i;
-          kDebug() << "NKA" << NKA;
+          qCDebug(KSIRK_LOG) << "  removing a sprite";
+          //qCDebug(KSIRK_LOG) << "i attack" << i;
+          qCDebug(KSIRK_LOG) << "NKA" << NKA;
 
           sprite->setAnimated(NKA);
 
-          QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
+          QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
             KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
@@ -1090,7 +1087,7 @@ void KGameWindow::animExplosionForArena()
           }
           if (KsirkSettings::soundEnabled())
           {
-            m_audioPlayer->setCurrentSource(sndCrashPath);
+            m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndCrashPath));
             m_audioPlayer->play();
           }
         }
@@ -1111,13 +1108,13 @@ void KGameWindow::animExplosionForArena()
 
         if (sprite->isAttacker())
         {
-          kDebug() << "  removing a sprite";
-          //kDebug() << "i attack" << i;
-          kDebug() << "NKA" << NKA;
+          qCDebug(KSIRK_LOG) << "  removing a sprite";
+          //qCDebug(KSIRK_LOG) << "i attack" << i;
+          qCDebug(KSIRK_LOG) << "NKA" << NKA;
 
           sprite->setAnimated(1);
 
-          QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
+          QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
             KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
@@ -1125,14 +1122,14 @@ void KGameWindow::animExplosionForArena()
           }
           if (KsirkSettings::soundEnabled())
           {
-            m_audioPlayer->setCurrentSource(sndCrashPath);
+            m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndCrashPath));
             m_audioPlayer->play();
           }
         }
       }
       else
       {
-        kDebug() << "  keeping a sprite";
+        qCDebug(KSIRK_LOG) << "  keeping a sprite";
         if (sprite->isAttacker())
         {
           sprite-> changeSequence("infantry");
@@ -1145,19 +1142,19 @@ void KGameWindow::animExplosionForArena()
     }
   }
 
-  kDebug() << "  loop done attack";
+  qCDebug(KSIRK_LOG) << "  loop done attack";
 
   for (int nbSpriteTreated=0;
       (nbSpriteTreated < nbSpriteDefending)&&(it!=m_animFighters->end());
       it++,nbSpriteTreated++)
   {
-    kDebug() << "nbSpriteTreated" << nbSpriteTreated;
+    qCDebug(KSIRK_LOG) << "nbSpriteTreated" << nbSpriteTreated;
 
     AnimSprite* sprite = (AnimSprite*)(*it);
 
     if(dynamic_cast<CannonSprite*>(sprite) != NULL)
     {
-      kDebug() << "*******CANNON*******";
+      qCDebug(KSIRK_LOG) << "*******CANNON*******";
 
       if (NKD>0)
       {
@@ -1165,13 +1162,13 @@ void KGameWindow::animExplosionForArena()
 
         if (sprite->isDefendant())
         {
-          kDebug() << "  removing a sprite";
-          //kDebug() << "i attack" << i;
-          kDebug() << "NKD" << NKD;
+          qCDebug(KSIRK_LOG) << "  removing a sprite";
+          //qCDebug(KSIRK_LOG) << "i attack" << i;
+          qCDebug(KSIRK_LOG) << "NKD" << NKD;
 
           sprite->setAnimated(NKD);
 
-          QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
+          QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
             KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
@@ -1179,7 +1176,7 @@ void KGameWindow::animExplosionForArena()
           }
           if (KsirkSettings::soundEnabled())
           {
-            m_audioPlayer->setCurrentSource(sndCrashPath);
+            m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndCrashPath));
             m_audioPlayer->play();
           }
         }
@@ -1194,7 +1191,7 @@ void KGameWindow::animExplosionForArena()
     }
     else if(dynamic_cast<CavalrySprite*>(sprite) != NULL)
     {
-      kDebug() << "*******CAVALIER*******";
+      qCDebug(KSIRK_LOG) << "*******CAVALIER*******";
 
       if (NKD>0)
       {
@@ -1202,13 +1199,13 @@ void KGameWindow::animExplosionForArena()
 
         if (sprite->isDefendant())
         {
-          kDebug() << "  removing a sprite";
-          //kDebug() << "i attack" << i;
-          kDebug() << "NKD" << NKD;
+          qCDebug(KSIRK_LOG) << "  removing a sprite";
+          //qCDebug(KSIRK_LOG) << "i attack" << i;
+          qCDebug(KSIRK_LOG) << "NKD" << NKD;
 
           sprite->setAnimated(NKD);
 
-          QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
+          QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
             KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
@@ -1216,7 +1213,7 @@ void KGameWindow::animExplosionForArena()
           }
           if (KsirkSettings::soundEnabled())
           {
-            m_audioPlayer->setCurrentSource(sndCrashPath);
+            m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndCrashPath));
             m_audioPlayer->play();
           }
         }
@@ -1237,12 +1234,12 @@ void KGameWindow::animExplosionForArena()
 
         if (sprite->isDefendant())
         {
-          kDebug() << "  removing a sprite";
-          kDebug() << "NKD" << NKD;
+          qCDebug(KSIRK_LOG) << "  removing a sprite";
+          qCDebug(KSIRK_LOG) << "NKD" << NKD;
 
           sprite->setAnimated(1);
 
-          QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
+          QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
             KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
@@ -1250,14 +1247,14 @@ void KGameWindow::animExplosionForArena()
           }
           if (KsirkSettings::soundEnabled())
           {
-            m_audioPlayer->setCurrentSource(sndCrashPath);
+            m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndCrashPath));
             m_audioPlayer->play();
           }
         }
       }
       else  // the sprite is not the one (or one the several) killed
       {
-        kDebug() << "  keeping a sprite";
+        qCDebug(KSIRK_LOG) << "  keeping a sprite";
 
         if (sprite->isDefendant())
         {
@@ -1271,20 +1268,20 @@ void KGameWindow::animExplosionForArena()
     }
   }
 
-  kDebug() << "  loop done defense";
+  qCDebug(KSIRK_LOG) << "  loop done defense";
 
-  kDebug() << "finished";
+  qCDebug(KSIRK_LOG) << "finished";
 }
 
 void KGameWindow::stopExplosion()
 {
-    kDebug();
+    qCDebug(KSIRK_LOG);
     m_animFighters->hideAndRemoveAll();
 }
 
 void KGameWindow::initCombatBringBackForArena(Country *attackingCountry, Country *defendingCountry)
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   int who = 0;
   if ((NKD != 0)&&(NKA != 0)) who = 2;
   else if (NKA != 0) who = 0;
@@ -1402,10 +1399,10 @@ void KGameWindow::initCombatBringBackForArena(Country *attackingCountry, Country
     ((AnimSprite*)newSprite)-> setupTravel(attackingCountry, defendingCountry, newSprite-> pos(), dest);
 
     newSprite-> turnTowardDestination();
-    kDebug() << "add a sprite 4";
+    qCDebug(KSIRK_LOG) << "add a sprite 4";
     m_animFighters->addSprite(newSprite);
 
-    QString sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roll.wav");
+    QString sndRoulePath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/roll.wav");
     if (sndRoulePath.isNull())
     {
         KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error!"));
@@ -1413,7 +1410,7 @@ void KGameWindow::initCombatBringBackForArena(Country *attackingCountry, Country
     }
     if (KsirkSettings::soundEnabled())
     {
-            m_audioPlayer->setCurrentSource(sndRoulePath);
+            m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndRoulePath));
             m_audioPlayer->play();
     }
   }
@@ -1479,10 +1476,10 @@ void KGameWindow::initCombatBringBackForArena(Country *attackingCountry, Country
       ((AnimSprite*)newSprite)-> setupTravel(defendingCountry, attackingCountry, newSprite-> pos(), dest);
 
       newSprite-> turnTowardDestination();
-      kDebug() << "add a sprite 5";
+      qCDebug(KSIRK_LOG) << "add a sprite 5";
       m_animFighters->addSprite(newSprite);
 
-      QString sndRoulePath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/roll.wav");
+      QString sndRoulePath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/roll.wav");
       if (sndRoulePath.isNull())
       {
           KMessageBox::error(0, i18n("Sound roule not found - Verify your installation<br>Program cannot continue"), i18n("Error!"));
@@ -1490,7 +1487,7 @@ void KGameWindow::initCombatBringBackForArena(Country *attackingCountry, Country
       }
       if (KsirkSettings::soundEnabled())
       {
-              m_audioPlayer->setCurrentSource(sndRoulePath);
+              m_audioPlayer->setCurrentSource(QUrl::fromLocalFile(sndRoulePath));
               m_audioPlayer->play();
       }
   }
@@ -1499,7 +1496,7 @@ void KGameWindow::initCombatBringBackForArena(Country *attackingCountry, Country
   } //Attaquant ET Defenseur detruits
   else  // error
   {
-    kError() << k_funcinfo << __FILE__ << __LINE__ << i18n("Bug: who should be 0, 1 or 2.");
+    qCCritical(KSIRK_LOG) << Q_FUNC_INFO << __FILE__ << __LINE__ << i18n("Bug: who should be 0, 1 or 2.");
     exit(1);
   }
 
@@ -1515,13 +1512,13 @@ void KGameWindow::disconnectMouse()
 {
 /*  if ( ! disconnect(m_frame, SIGNAL(signalLeftButtonDown(QPoint)),
                     this, SLOT(slotLeftButtonDown(QPoint))))
-    kError() << "cannot connect slotLeftButtonDown !";
+    qCCritical(KSIRK_LOG) << "cannot connect slotLeftButtonDown !";
   if ( ! disconnect(m_frame, SIGNAL(signalLeftButtonUp(QPoint)),
                     this, SLOT(slotLeftButtonUp(QPoint))))
-    kError() << "cannot connect slotLeftButtonUp !";
+    qCCritical(KSIRK_LOG) << "cannot connect slotLeftButtonUp !";
   if ( ! disconnect(m_frame, SIGNAL(signalRightButtonDown(QPoint)),
                     this, SLOT(slotRightButtonDown(QPoint))))
-    kError() << "cannot connect slotRightButtonDown !";*/
+    qCCritical(KSIRK_LOG) << "cannot connect slotRightButtonDown !";*/
 }
 
 /**
@@ -1532,13 +1529,13 @@ void KGameWindow::reconnectMouse()
 {
 /*  if ( ! connect(m_frame, SIGNAL(signalLeftButtonDown(QPoint)),
                     this, SLOT(slotLeftButtonDown(QPoint))))
-  kError() << "cannot connect slotLeftButtonDown !";
+  qCCritical(KSIRK_LOG) << "cannot connect slotLeftButtonDown !";
   if ( ! connect(m_frame, SIGNAL(signalLeftButtonUp(QPoint)),
                     this, SLOT(slotLeftButtonUp(QPoint))))
-  kError() << "cannot connect slotLeftButtonUp !";
+  qCCritical(KSIRK_LOG) << "cannot connect slotLeftButtonUp !";
   if ( ! connect(m_frame, SIGNAL(signalRightButtonDown(QPoint)),
                     this, SLOT(slotRightButtonDown(QPoint))))
-  kError() << "cannot connect slotRightButtonDown !";*/
+  qCCritical(KSIRK_LOG) << "cannot connect slotRightButtonDown !";*/
 }
 
 bool KGameWindow::haveAnimFighters() const
@@ -1548,7 +1545,7 @@ bool KGameWindow::haveAnimFighters() const
 
 void KGameWindow::updateScrollArrows()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   if (m_uparrow != 0)
   {
     QPointF pos = m_frame->mapToScene(QPoint(m_frame->viewport()->width()/2,0));

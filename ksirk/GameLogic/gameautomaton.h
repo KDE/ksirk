@@ -30,8 +30,6 @@
 #include <libkdegamesprivate/kgame/kmessageio.h>
 #include <libkdegamesprivate/kgamesvgdocument.h>
 
-#include <KPixmapCache>
-
 #include <QPointF>
 #include <QString>
 #include <QSvgRenderer>
@@ -394,7 +392,6 @@ public:
 
   bool startingGame() const;
 
-  KPixmapCache& pixmapCache() {return m_pixmapCache;}
   QSvgRenderer& rendererFor(const QString& skinName);
   KGameSvgDocument& svgDomFor(const QString& skinName);
 
@@ -494,7 +491,7 @@ protected:
   void setGoalFor(Player* player);
   
 private:
-  GameAutomaton(const GameAutomaton& /*ga*/) : KGame(), m_pixmapCache("GameAutomaton") {};
+  GameAutomaton(const GameAutomaton& /*ga*/) : KGame() {};
 
   void countriesDistribution();
 
@@ -593,7 +590,6 @@ private:
   
   bool m_startingGame;
 
-  KPixmapCache m_pixmapCache;
   QMap<QString, QSvgRenderer*> m_renderers;
   QMap<QString, KGameSvgDocument> m_svgDoms;
 

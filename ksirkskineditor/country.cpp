@@ -22,8 +22,8 @@
 #include "country.h"
 #include "onu.h"
 
-#include <klocale.h>
-#include <kdebug.h>
+#include <KLocalizedString>
+#include "ksirkskineditor_debug.h"
 #include <qsvgrenderer.h>
 #include <QString>
 #include <QApplication>
@@ -57,42 +57,42 @@ Country::Country(
   m_renderer(new QSvgRenderer()),
   m_highlighting_locked(false)
 {
-//   kDebug() << m_name << ", " << this << endl;
+//   qCDebug(KSIRKSKINEDITOR_LOG) << m_name << ", " << this << endl;
 }
 
 Country::~Country()
 {
-//   kDebug() << "Deleting country " << m_name << ", " << this << endl;
+//   qCDebug(KSIRKSKINEDITOR_LOG) << "Deleting country " << m_name << ", " << this << endl;
   delete m_renderer;
 }
 
 void Country::reset()
 {
-//   kDebug() << "Country::reset " << m_name << endl;
+//   qCDebug(KSIRKSKINEDITOR_LOG) << "Country::reset " << m_name << endl;
 }
 
 bool Country::communicateWith(const Country* otherCountry) const
 {
   if (!otherCountry)
   {
-    kDebug() << "OUT otherCountry null Country::communicateWith" << endl;
+    qCDebug(KSIRKSKINEDITOR_LOG) << "OUT otherCountry null Country::communicateWith" << endl;
     return false;
   }
 
   // a country is considered to communicate with itself
   if (otherCountry == this) {return true;}
 
-//    kDebug() << "Country::communicateWith (" << name() << ", " << otherCountry-> name() << ")" << endl << flush;
+//    qCDebug(KSIRKSKINEDITOR_LOG) << "Country::communicateWith (" << name() << ", " << otherCountry-> name() << ")" << endl << flush;
   unsigned int nbNeighbours = neighbours().size();
   for (unsigned int i = 0; i < nbNeighbours; i++)
   {
     if (neighbours().at(i) == otherCountry)
     {
-//            kDebug() << "OUT true Country::communicateWith" << endl << flush;
+//            qCDebug(KSIRKSKINEDITOR_LOG) << "OUT true Country::communicateWith" << endl << flush;
       return true;
     }
   }
-//    kDebug() << "OUT false Country::communicateWith" << endl << flush;
+//    qCDebug(KSIRKSKINEDITOR_LOG) << "OUT false Country::communicateWith" << endl << flush;
   return false;
 }
 
@@ -133,7 +133,7 @@ const QPointF& Country::pointInfantry() const
 
 void Country::anchorPoint(const QPointF pt)
 {
-  kDebug() << pt;
+  qCDebug(KSIRKSKINEDITOR_LOG) << pt;
   m_anchorPoint = pt;
 }
 
@@ -171,20 +171,20 @@ void Country::neighbours(const QList<Country*>& neighboursVect)
 /** No descriptions */
 QList< Country* >& Country::neighbours()
 {
-//    kDebug() << "Country::neighbours" << endl << flush;
+//    qCDebug(KSIRKSKINEDITOR_LOG) << "Country::neighbours" << endl << flush;
   return m_neighbours;
 }
 
 /** No descriptions */
 const QList< Country* >& Country::neighbours() const
 {
-//    kDebug() << "Country::neighbours const" << endl << flush;
+//    qCDebug(KSIRKSKINEDITOR_LOG) << "Country::neighbours const" << endl << flush;
   return m_neighbours;
 }
 
 void Country::highlight(QGraphicsScene* scene, ONU* onu, const QColor& color, qreal opacity)
 {
-  kDebug() << m_name << color << opacity;
+  qCDebug(KSIRKSKINEDITOR_LOG) << m_name << color << opacity;
   if (m_highlighting_locked)
   {
     return;
@@ -194,25 +194,25 @@ void Country::highlight(QGraphicsScene* scene, ONU* onu, const QColor& color, qr
   QDomNode countryElement = onu->svgDom()->elementById(m_name);
   if (countryElement.isNull())
   {
-    kWarning() << "Got a null element" << endl;
+    qCWarning(KSIRKSKINEDITOR_LOG) << "Got a null element" << endl;
     return;
   }
-//   kDebug() <<"got country"<< endl;
+//   qCDebug(KSIRKSKINEDITOR_LOG) <<"got country"<< endl;
 
   onu->svgDom()->setCurrentNode(countryElement);
   onu->svgDom()->setStyleProperty("fill", color.name());
   onu->svgDom()->setStyleProperty("fill-opacity", QString::number(opacity));
 
-//   kDebug() <<"loading"<< endl;
+//   qCDebug(KSIRKSKINEDITOR_LOG) <<"loading"<< endl;
   QByteArray svg = onu->svgDom()->nodeToByteArray();
   m_renderer->load(svg);
 
-//   kDebug() <<"loaded"<< endl;
+//   qCDebug(KSIRKSKINEDITOR_LOG) <<"loaded"<< endl;
   m_highlighting = new QGraphicsSvgItem();
   m_highlighting->setSharedRenderer(m_renderer);
   m_highlighting->setElementId(m_name);
-  kDebug() << "anchor point=" << m_anchorPoint;
-  kDebug() << "set highlighting pos to " << (m_anchorPoint.x()-m_highlighting->boundingRect().width()/2)
+  qCDebug(KSIRKSKINEDITOR_LOG) << "anchor point=" << m_anchorPoint;
+  qCDebug(KSIRKSKINEDITOR_LOG) << "set highlighting pos to " << (m_anchorPoint.x()-m_highlighting->boundingRect().width()/2)
   << (m_anchorPoint.y()-m_highlighting->boundingRect().height()/2) ;
   m_highlighting->setPos(
       (m_anchorPoint.x()-m_highlighting->boundingRect().width()/2),
@@ -220,30 +220,30 @@ void Country::highlight(QGraphicsScene* scene, ONU* onu, const QColor& color, qr
   m_highlighting->setZValue(5);
   scene->addItem(m_highlighting);
 //   m_highlighting->scale(onu->zoom(), onu->zoom());
-//   kDebug() << "done" << endl;
+//   qCDebug(KSIRKSKINEDITOR_LOG) << "done" << endl;
 }
 
 void Country::clearHighlighting()
 {
-//   kDebug() << m_highlighting_locked << (void*)m_highlighting;
+//   qCDebug(KSIRKSKINEDITOR_LOG) << m_highlighting_locked << (void*)m_highlighting;
   if (!m_highlighting_locked && m_highlighting!=0)
   {
     m_highlighting->hide();
     delete m_highlighting;
     m_highlighting = 0;
   }
-//   kDebug() << "done" << endl;
+//   qCDebug(KSIRKSKINEDITOR_LOG) << "done" << endl;
 }
 
 bool Country::isHighlightingLocked()
 {
-//   kDebug();
+//   qCDebug(KSIRKSKINEDITOR_LOG);
   return m_highlighting_locked;
 }
 
 void Country::releaseHighlightingLock()
 {
-//   kDebug();
+//   qCDebug(KSIRKSKINEDITOR_LOG);
   m_highlighting_locked=false;
 }
 
@@ -254,7 +254,7 @@ QDataStream& operator>>(QDataStream& stream, Country* country)
   quint32 nbArmies, nbAddedArmies;
   QString ownerName;
   stream >> ownerName >> nbArmies >> nbAddedArmies;
-  kDebug() << ownerName << nbArmies << nbAddedArmies;
+  qCDebug(KSIRKSKINEDITOR_LOG) << ownerName << nbArmies << nbAddedArmies;
 //   country->owner(country->automaton()->playerNamed(ownerName));
   return stream;
 }
@@ -262,4 +262,4 @@ QDataStream& operator>>(QDataStream& stream, Country* country)
 
 }
 
-#include "country.moc"
+

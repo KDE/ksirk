@@ -17,13 +17,15 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  */
+
+#include <algorithm>
  
 #include <QDomElement>
 #include <QString>
 #include <QStringList>
 #include <QList>
 
-#include <kdebug.h>
+#include "jabber_protocol_debug.h"
 // #include "jabberprotocol.h"
 
 #include "privacylist.h"
@@ -32,7 +34,7 @@
 
 PrivacyList::PrivacyList(const QString& name, const QList<PrivacyListItem>& items) : name_(name), items_(items) 
 { 
-	qSort(items_);
+	std::sort(items_.begin(), items_.end());
 }
 
 PrivacyList::PrivacyList(const QDomElement& e)
@@ -134,9 +136,9 @@ QDomElement PrivacyList::toXml(QDomDocument& doc) const
 
 void PrivacyList::fromXml(const QDomElement& el)
 {
-	//kDebug () << "Parsing privacy list";
+	//qCDebug(JABBER_PROTOCOL_LOG) << "Parsing privacy list";
 	if (el.isNull() || el.tagName() != "list") {
-		kWarning () << "Invalid root tag for privacy list.";
+		qCWarning(JABBER_PROTOCOL_LOG) << "Invalid root tag for privacy list.";
 		return;
 	}
 
@@ -147,7 +149,7 @@ void PrivacyList::fromXml(const QDomElement& el)
 			items_.append(PrivacyListItem(e));
 	}
 
-	qSort(items_);
+	std::sort(items_.begin(), items_.end());
 }
 
 QString PrivacyList::toString() const

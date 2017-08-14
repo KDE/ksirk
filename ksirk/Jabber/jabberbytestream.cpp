@@ -18,35 +18,35 @@
  ***************************************************************************/
 
 #include <qobject.h>
-#include <kdebug.h>
-#include <ksocketfactory.h>
+#include "jabber_protocol_debug.h"
 #include "jabberbytestream.h"
 // #include "jabberprotocol.h"
 
 JabberByteStream::JabberByteStream ( QObject *parent )
  : ByteStream ( parent )
 {
-	kDebug (  ) << "Instantiating new Jabber byte stream.";
+	qCDebug(JABBER_PROTOCOL_LOG) << "Instantiating new Jabber byte stream.";
 
 	// reset close tracking flag
 	mClosing = false;
 
-	mSocket = NULL;
+	mSocket = nullptr;
 }
 
 void JabberByteStream::connect ( QString host, int port )
 {
-	kDebug (  ) << k_funcinfo << "Connecting to " << host << ", port " << port << endl;
+	qCDebug(JABBER_PROTOCOL_LOG) << Q_FUNC_INFO << "Connecting to " << host << ", port " << port << endl;
 
 	mClosing = false;
 
-	mSocket = KSocketFactory::connectToHost("xmpp", host, port);
+	mSocket = std::make_shared<QTcpSocket>(new QTcpSocket());
+  mSocket->connectToHost(host, port);
 
-	QObject::connect ( mSocket, SIGNAL (error(QAbstractSocket::SocketError)), this, SLOT (slotError(QAbstractSocket::SocketError)) );
-	QObject::connect ( mSocket, SIGNAL (connected()), this, SLOT (slotConnected()) );
-	QObject::connect ( mSocket, SIGNAL (disconnected()), this, SLOT (slotConnectionClosed()) );
-	QObject::connect ( mSocket, SIGNAL (readyRead()), this, SLOT (slotReadyRead()) );
-	QObject::connect ( mSocket, SIGNAL (bytesWritten(qint64)), this, SLOT (slotBytesWritten(qint64)) );
+	QObject::connect ( mSocket.get(), SIGNAL (error(QAbstractSocket::SocketError)), this, SLOT (slotError(QAbstractSocket::SocketError)) );
+	QObject::connect ( mSocket.get(), SIGNAL (connected()), this, SLOT (slotConnected()) );
+	QObject::connect ( mSocket.get(), SIGNAL (disconnected()), this, SLOT (slotConnectionClosed()) );
+	QObject::connect ( mSocket.get(), SIGNAL (readyRead()), this, SLOT (slotReadyRead()) );
+	QObject::connect ( mSocket.get(), SIGNAL (bytesWritten(qint64)), this, SLOT (slotBytesWritten(qint64)) );
 }
 
 bool JabberByteStream::isOpen () const
@@ -59,16 +59,15 @@ bool JabberByteStream::isOpen () const
 
 void JabberByteStream::close ()
 {
-	kDebug (  ) << "Closing stream.";
+	qCDebug(JABBER_PROTOCOL_LOG) << "Closing stream.";
 
 	// close the socket and set flag that we are closing it ourselves
 	mClosing = true;
         if (mSocket) {
-             kDebug (  ) << k_funcinfo << "socket is not null" << endl;
+             qCDebug(JABBER_PROTOCOL_LOG) << Q_FUNC_INFO << "socket is not null" << endl;
 	     mSocket->close();
-             kDebug (  ) << k_funcinfo << "socket closed" << endl;
-             delete mSocket;
-             mSocket=NULL;
+             qCDebug(JABBER_PROTOCOL_LOG) << Q_FUNC_INFO << "socket closed" << endl;
+             mSocket=nullptr;
         }
 }
 
@@ -86,14 +85,12 @@ int JabberByteStream::tryWrite ()
 QTcpSocket *JabberByteStream::socket () const
 {
 
-	return mSocket;
+	return mSocket.get();
 
 }
 
 JabberByteStream::~JabberByteStream ()
 {
-
-	delete mSocket;
 
 }
 
@@ -106,7 +103,7 @@ void JabberByteStream::slotConnected ()
 
 void JabberByteStream::slotConnectionClosed ()
 {
-	kDebug (  ) << "Socket has been closed.";
+	qCDebug(JABBER_PROTOCOL_LOG) << "Socket has been closed.";
 
 	// depending on who closed the socket, emit different signals
 	if ( !mClosing )
@@ -124,7 +121,7 @@ void JabberByteStream::slotConnectionClosed ()
 
 void JabberByteStream::slotReadyRead ()
 {
-	kDebug (  ) << "called:  available: " << socket()->bytesAvailable ();
+	qCDebug(JABBER_PROTOCOL_LOG) << "called:  available: " << socket()->bytesAvailable ();
 	appendRead ( socket()->readAll() );
 
 	emit readyRead ();
@@ -140,8 +137,8 @@ void JabberByteStream::slotBytesWritten ( qint64 bytes )
 
 void JabberByteStream::slotError ( QAbstractSocket::SocketError code )
 {
-	kDebug (  ) << "Socket error '" <<  mSocket->errorString() <<  "' - Code : " << code;
+	qCDebug(JABBER_PROTOCOL_LOG) << "Socket error '" <<  mSocket->errorString() <<  "' - Code : " << code;
 	emit error ( code );
 }
 
-#include "jabberbytestream.moc"
+

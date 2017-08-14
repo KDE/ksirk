@@ -22,8 +22,6 @@
 #include "continent.h"
 
 
-#include "kdebug.h"
-
 namespace KsirkSkinEditor
 {
 

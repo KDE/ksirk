@@ -25,12 +25,15 @@ This is the standard main function of a KDE application
 
 #include "mainwindow.h"
 
-#include <KCmdLineArgs>
+
 #include <KAboutData>
-#include <KLocale>
-#include <KDebug>
-#include <KApplication>
+#include <KLocalizedString>
+#include "ksirkskineditor_debug.h"
+
 #include <KToolBar>
+#include <QApplication>
+#include <QCommandLineParser>
+#include <QCommandLineOption>
 
 static const char *description =
     I18N_NOOP("KsirK Skin Editor");
@@ -38,39 +41,42 @@ static const char *description =
 
 int main(int argc, char *argv[])
 {
-  kDebug() << "Hello World!";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Hello World!";
+  QApplication app(argc, argv);
+  KLocalizedString::setApplicationDomain("ksirkskineditor");
   KAboutData aboutData(
     "ksirkskineditor",
-    0,
-    ki18n("KsirK Skin Editor"),
-    KDE_VERSION_STRING,
-    ki18n(description),
-    KAboutData::License_GPL,
-    ki18n("(c) 2008, Gaël de Chalendar\n"),
-    ki18n("For help and user manual, please see\nThe KsirK Web site"));
-  aboutData.addAuthor(ki18n("Gael de Chalendar aka Kleag"),KLocalizedString(), "kleag@free.fr");
-  aboutData.setHomepage("http://games.kde.org/ksirk/");
+    i18n("KsirK Skin Editor"),
+    /*KDE_VERSION_STRING*/"5.0.0",
+    i18n(description),
+    KAboutLicense::GPL,
+    i18n("(c) 2008, Gaël de Chalendar\n"),
+    i18n("For help and user manual, please see\nThe KsirK Web site"),
+    QStringLiteral("http://games.kde.org/game.php?game=ksirk"));
+  aboutData.addAuthor(i18n("Gael de Chalendar aka Kleag"),QString(), "kleag@free.fr");
+  QApplication::setWindowIcon(QIcon::fromTheme("preferences-desktop-locale"));
 
-  KCmdLineArgs::init( argc, argv, &aboutData );
+    QCommandLineParser parser;
+    KAboutData::setApplicationData(aboutData);
+    parser.addVersionOption();
+    parser.addHelpOption();
+    //PORTING SCRIPT: adapt aboutdata variable if necessary
+    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("+[File]"), i18n("file to open")));
 
-  KCmdLineOptions options;
-  options.add("+[File]", ki18n("file to open"));
-  KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
+    aboutData.setupCommandLine(&parser);
+    parser.process(app);
+    aboutData.processCommandLine(&parser);
 
-  KApplication app;
-  KGlobal::locale()->insertCatalog( QLatin1String( "libkdegames" ));
   if (app.isSessionRestored())
   {
       RESTORE(KsirkSkinEditor::MainWindow);
   }
   else
   {
-    kDebug() << "Creating main window";
+    qCDebug(KSIRKSKINEDITOR_LOG) << "Creating main window";
     KsirkSkinEditor::MainWindow *ksirkskineditor = new KsirkSkinEditor::MainWindow();
     ksirkskineditor->show();
-    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-    args->clear();
   }
-  kDebug() << "Executing app";
+  qCDebug(KSIRKSKINEDITOR_LOG) << "Executing app";
   return app.exec();
 }  

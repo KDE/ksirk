@@ -94,8 +94,14 @@ include_directories(
 	xmpp/xmpp-im
   ${QCA2_INCLUDE_DIR}
   )
-
-kde4_moc_headers(iris_ksirk
+qt5_wrap_cpp(libiris_SRCS
+xmpp/xmpp-im/xmpp_client.h
+xmpp/xmpp-core/xmpp_clientstream.h
+xmpp/xmpp-core/xmpp_stream.h
+xmpp/xmpp-core/xmpp.h
+)
+if(0)
+qt5_wrap_cpp(libiris_SRCS
 irisnet/corelib/jdnsshared.h
 irisnet/corelib/netavailability.h
 irisnet/corelib/netinterface.h
@@ -108,7 +114,6 @@ xmpp/base64/base64.h
 xmpp/cutestuff/bsocket.h
 xmpp/cutestuff/bytestream.h
 xmpp/cutestuff/httpconnect.h
-xmpp/cutestuff/socks.h
 xmpp/cutestuff/httppoll.h
 xmpp/sasl/digestmd5proplist.cpp
 xmpp/sasl/digestmd5response.cpp
@@ -125,12 +130,11 @@ xmpp/zlib/common.h
 xmpp/zlib/zlibcompressor.h
 xmpp/zlib/zlibdecompressor.h
 )
+endif()
 
+add_library(iris_ksirk SHARED ${libiris_SRCS})
 
-kde4_add_library(iris_ksirk SHARED ${libiris_SRCS})
-
-set(iris_ksirk_libs ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_QTNETWORK_LIBRARY} ${QT_QTXML_LIBRARY}
-${IDN_LIBRARY} ${QCA2_LIBRARIES} ${ZLIB_LIBRARIES})
+set(iris_ksirk_libs Qt5::Core Qt5::Gui Qt5::Network Qt5::Xml ${IDN_LIBRARY} qca-qt5 ${ZLIB_LIBRARIES} Qt5::Widgets)
 if(WIN32)
   set(iris_ksirk_libs ${iris_ksirk_libs} ws2_32)
 endif(WIN32)
@@ -147,7 +151,6 @@ set_target_properties(iris_ksirk PROPERTIES
                       SOVERSION 2
                       COMPILE_FLAGS -DIRISNET_STATIC
                       )
-install(TARGETS iris_ksirk ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS iris_ksirk ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
     
-    ########### install files ###############
     

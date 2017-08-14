@@ -25,8 +25,8 @@
 #include "onu.h"
 #include "GameLogic/newplayerdata.h"
 
-#include <KLocale>
-#include <KDebug>
+#include <KLocalizedString>
+#include "ksirk_debug.h"
 
 namespace Ksirk
 {
@@ -35,11 +35,11 @@ NewGameSummaryWidget::NewGameSummaryWidget(QWidget *parent) :
   QWidget(parent),
   Ui::NewGameSummary()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   setupUi(this);
   connect(previousButton,SIGNAL(clicked()),this,SIGNAL(previous()));
   connect(cancelButton,SIGNAL(clicked()),this,SIGNAL(cancel()));
-  playersTable->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
+  playersTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }
   
 NewGameSummaryWidget::~NewGameSummaryWidget()
@@ -48,7 +48,7 @@ NewGameSummaryWidget::~NewGameSummaryWidget()
 
 void NewGameSummaryWidget::show(KGameWindow* game)
 {
-  kDebug() << game->newGameSetup()->worlds().keys();
+  qCDebug(KSIRK_LOG) << game->newGameSetup()->worlds().keys();
   foreach (GameLogic::ONU* world, game->newGameSetup()->worlds())
   {
     if (world->skin() == game->newGameSetup()->skin())
@@ -58,12 +58,12 @@ void NewGameSummaryWidget::show(KGameWindow* game)
       goalTypeLabel->setText(game->newGameSetup()->useGoals()?i18n("Reach a goal"):i18n("World conquest"));
     }
   }
-  kDebug() << game->automaton()->networkGameType() << game->newGameSetup()->players().size() << game->newGameSetup()->nbPlayers() << game->newGameSetup()->nbLocalPlayers() << game->newGameSetup()->nbNetworkPlayers();
+  qCDebug(KSIRK_LOG) << game->automaton()->networkGameType() << game->newGameSetup()->players().size() << game->newGameSetup()->nbPlayers() << game->newGameSetup()->nbLocalPlayers() << game->newGameSetup()->nbNetworkPlayers();
   playersTable->setRowCount(game->newGameSetup()->players().size());
   int row = 0;
   foreach (NewPlayerData* player, game->newGameSetup()->players())
   {
-    kDebug() << "player" << player->name();
+    qCDebug(KSIRK_LOG) << "player" << player->name();
     QTableWidgetItem *nameItem = new QTableWidgetItem(player->name());
     playersTable->setItem(row, 0, nameItem);
     // Bug 308530 - Untranslatable strings in "New Game Summary".
@@ -87,7 +87,7 @@ void NewGameSummaryWidget::show(KGameWindow* game)
   }
   if (game->automaton()->networkGameType() != GameLogic::GameAutomaton::None)
   {
-    kDebug() << "network game isAdmin ? =>" << game->automaton()->isAdmin() << game->newGameSetup()->players().size() << game->newGameSetup()->nbPlayers();
+    qCDebug(KSIRK_LOG) << "network game isAdmin ? =>" << game->automaton()->isAdmin() << game->newGameSetup()->players().size() << game->newGameSetup()->nbPlayers();
     previousButton->setEnabled(false);
   }
 }

@@ -21,7 +21,7 @@
 #include "animspritespool.h"
 #include "animsprite.h"
 
-#include <kdebug.h>
+#include "ksirk_debug.h"
 
 namespace Ksirk
 {
@@ -74,7 +74,7 @@ void AnimSpritePool::removeSprite(AnimSprite* sprite)
 
 void AnimSpritePool::update() 
 {
-  kDebug() << "AnimSpritePool::update" << endl;
+  qCDebug(KSIRK_LOG) << "AnimSpritePool::update" << endl;
   QList<AnimSprite*>::iterator it, it_end;
   it = m_sprites.begin(); it_end = m_sprites.end();
   for (; it != it_end; it++)
@@ -87,4 +87,4 @@ void AnimSpritePool::update()
 
 } // closing namespace Ksirk
 
-#include "animspritespool.moc"
+

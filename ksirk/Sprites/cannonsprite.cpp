@@ -57,7 +57,7 @@ void CannonSprite::setupTravel(
   GameLogic::Country* dest, 
   const QPointF* dpi)
 {
-  kDebug() << src->name() << dest->name() << (void*)dpi << (dpi==0?QPointF():*dpi);
+  qCDebug(KSIRK_LOG) << src->name() << dest->name() << (void*)dpi << (dpi==0?QPointF():*dpi);
   if (dpi == 0) 
   {
     AnimSprite::setupTravel(src, dest, 

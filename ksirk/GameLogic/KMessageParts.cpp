@@ -17,7 +17,6 @@
  */
 
 #include "KMessageParts.h"
-#include "kdebug.h"
 
 #include <stdexcept>
 #include <QPixmap>

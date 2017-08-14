@@ -35,17 +35,14 @@
 #include <QSlider>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
+#include <QUrl>
 // include files for KDE
 #include <ksharedconfig.h>
 #include <KXmlGuiWindow>
-#include <KStandardDirs>
-#include <KShortcut>
-#include <KUrl>
 // include files for kde games
 
-class KAction;
+class QAction;
 class KToolBar;
-class KDialog;
 class KRecentFilesAction;
 
 class QEvent;
@@ -147,7 +144,7 @@ private Q_SLOTS:
   void slotOpenSkin(const QString& dir = QString());
   void slotSaveSkin();
 
-  void slotURLSelected(const KUrl&);
+  void slotURLSelected(const QUrl&);
 
   void slotSkinNameEdited();
   void slotSkinWidthEdited(int);
@@ -246,11 +243,6 @@ private:
   
   Country* currentCountry();
   void createPixmapFor(Country* country, SpriteType type);
-  
-  /**
-    * a shortcut to the standard dirs object.
-    */
-  KStandardDirs* m_dirs;
 
   /**
     * Audio player object: play all the sounds of the game.
@@ -260,7 +252,7 @@ private:
   // the current saved game file name
   QString m_fileName;
 
-  KAction* m_saveGameAction;
+  QAction * m_saveGameAction;
 
   QGraphicsView* m_mapView;
   QGraphicsScene* m_mapScene;

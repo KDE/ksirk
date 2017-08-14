@@ -48,7 +48,7 @@
        </widget>
       </item>
       <item>
-       <widget class="KIntNumInput" name="widthLineEdit" >
+       <widget class="QSpinBox" name="widthLineEdit" >
         <property name="toolTip" >
          <string>Map's width</string>
         </property>
@@ -66,7 +66,7 @@
        </widget>
       </item>
       <item>
-       <widget class="KIntNumInput" name="heightLineEdit" >
+       <widget class="QSpinBox" name="heightLineEdit" >
         <property name="toolTip" >
          <string>Map's height</string>
         </property>
@@ -165,7 +165,7 @@
      </widget>
     </item>
     <item>
-     <widget class="KTabWidget" name="ktabwidget" >
+     <widget class="QTabWidget" name="qtabwidget" >
       <property name="whatsThis" >
        <string/>
       </property>
@@ -195,7 +195,7 @@ in the right dock</string>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_8" >
           <item>
-           <widget class="KPushButton" name="newNationalityButton" >
+           <widget class="QPushButton" name="newNationalityButton" >
             <property name="toolTip" >
              <string>Creates a new Nationality</string>
             </property>
@@ -221,7 +221,7 @@ in the right dock</string>
            </spacer>
           </item>
           <item>
-           <widget class="KPushButton" name="deleteNationalityButton" >
+           <widget class="QPushButton" name="deleteNationalityButton" >
             <property name="toolTip" >
              <string>Removes the currently selected nationality</string>
             </property>
@@ -259,7 +259,7 @@ During the game, each player must choose a nationality. As such, you should add 
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_5" >
           <item>
-           <widget class="KPushButton" name="newCountryButton" >
+           <widget class="QPushButton" name="newCountryButton" >
             <property name="toolTip" >
              <string>Creates a new country</string>
             </property>
@@ -285,7 +285,7 @@ During the game, each player must choose a nationality. As such, you should add 
            </spacer>
           </item>
           <item>
-           <widget class="KPushButton" name="deleteCountryButton" >
+           <widget class="QPushButton" name="deleteCountryButton" >
             <property name="toolTip" >
              <string>Removes the currently selected country</string>
             </property>
@@ -321,7 +321,7 @@ Each country name should be unique. Select a country and edit its details in the
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_6" >
           <item>
-           <widget class="KPushButton" name="newContinentButton" >
+           <widget class="QPushButton" name="newContinentButton" >
             <property name="toolTip" >
              <string>Creates a new continent</string>
             </property>
@@ -347,7 +347,7 @@ Each country name should be unique. Select a country and edit its details in the
            </spacer>
           </item>
           <item>
-           <widget class="KPushButton" name="deleteContinentButton" >
+           <widget class="QPushButton" name="deleteContinentButton" >
             <property name="toolTip" >
              <string>Removes the currently selected continent</string>
             </property>
@@ -383,7 +383,7 @@ Each continent name should be unique. Select a continent and edit its details in
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_7" >
           <item>
-           <widget class="KPushButton" name="newGoalButton" >
+           <widget class="QPushButton" name="newGoalButton" >
             <property name="toolTip" >
              <string>Creates a new goal</string>
             </property>
@@ -409,7 +409,7 @@ Each continent name should be unique. Select a continent and edit its details in
            </spacer>
           </item>
           <item>
-           <widget class="KPushButton" name="deleteGoalButton" >
+           <widget class="QPushButton" name="deleteGoalButton" >
             <property name="toolTip" >
              <string>Removes the currently selected goal</string>
             </property>
@@ -452,22 +452,6 @@ Each goal name should be unique. Select a goal and edit its details in the right
    <class>KFontRequester</class>
    <extends>QWidget</extends>
    <header>kfontrequester.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KIntNumInput</class>
-   <extends>QWidget</extends>
-   <header>knuminput.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KPushButton</class>
-   <extends>QPushButton</extends>
-   <header>kpushbutton.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KTabWidget</class>
-   <extends>QTabWidget</extends>
-   <header>ktabwidget.h</header>
-   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>

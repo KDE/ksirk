@@ -33,7 +33,7 @@ namespace Ksirk
    m_onu(onuObject),
    m_automaton(automaton)
    {
-      kDebug();
+      qCDebug(KSIRK_LOG);
       
       setVerticalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
       setHorizontalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
@@ -73,14 +73,14 @@ namespace Ksirk
       KConfig config(onuObject->getConfigFileName());
       KConfigGroup onugroup = config.group("onu");
       QString skin = onugroup.readEntry("skinpath");
-      QString imageFileName = KGlobal::dirs()->findResource("appdata", skin + "/Images/arena.svg");
+      QString imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, skin + "/Images/arena.svg");
       // create the background image
       m_bgImage = new QPixmap(imageFileName);
    }
    
   FightArena::~FightArena()
   {
-    kDebug();
+    qCDebug(KSIRK_LOG);
      delete m_countryAttack; m_countryAttack = 0;
      delete m_countryDefense; m_countryDefense= 0;
      delete m_bgImage; m_bgImage = 0;
@@ -98,7 +98,7 @@ namespace Ksirk
      */
    void FightArena::initFightArena (Country* countryA, Country* countryD, BackGnd* bg)
    {
-     kDebug();
+     qCDebug(KSIRK_LOG);
      // new size
      int width = m_automaton->game()->centralWidget()->width();
      int height = m_automaton->game()->centralWidget()->height();
@@ -117,7 +117,7 @@ namespace Ksirk
      double newZ = height/280;
      m_onu->setZoomArena(newZ);
 
-     kDebug() << "Hi";
+     qCDebug(KSIRK_LOG) << "Hi";
      // re-place the anchor point of the two countries
      m_countryAttack->anchorPoint(QPointF((width/4)/newZ,(height/2)/newZ));
      m_countryAttack->centralPoint(QPointF((width/4)/newZ,(height/2)/newZ));
@@ -133,14 +133,14 @@ namespace Ksirk
      m_countryDefense->pointCavalry(QPointF((14*width/18)/newZ,(3*height/5)/newZ));
      m_countryDefense->pointInfantry(QPointF((12*width/18)/newZ,(2*height/5)/newZ));
 
-     kDebug() << "Ho";
+     qCDebug(KSIRK_LOG) << "Ho";
      // create the arena countries with the originals
      m_countryAttack->copyForArena(countryA);
      m_countryDefense->copyForArena(countryD);
      
-     kDebug() << "Done";
+     qCDebug(KSIRK_LOG) << "Done";
    }
 
 }
 
-#include "fightArena.moc"
+

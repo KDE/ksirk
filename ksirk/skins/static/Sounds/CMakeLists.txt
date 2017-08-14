@@ -4,6 +4,6 @@ cannon.wav
 crash.wav 
 roll.wav)
 
-install(FILES ${sounds_default_DATA} DESTINATION ${DATA_INSTALL_DIR}/ksirk/skins/static/Sounds)
+install(FILES ${sounds_default_DATA} DESTINATION ${KDE_INSTALL_DATADIR}/ksirk/skins/static/Sounds)
 
 

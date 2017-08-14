@@ -26,7 +26,6 @@
 #include "decoratedgameframe.h"
 #include <QGraphicsItem>
 #include <QGraphicsScene>
-#include <kglobal.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>
 

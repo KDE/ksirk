@@ -37,8 +37,8 @@
 #include <QPixmap>
 #include <QPainter>
 
-#include <klocale.h>
-#include <kdebug.h>
+#include <KLocalizedString>
+#include "ksirk_debug.h"
 
 #define _XOPEN_SOURCE_
 // #include <unistd.h>
@@ -49,7 +49,7 @@ namespace Ksirk
 KPlayerSetupWidget::KPlayerSetupWidget(QWidget *parent) :
   QWidget(parent), Ui::QPlayerSetupWidget()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   setupUi(this);
 
   connect(nationCombo, SIGNAL(activated(int)), this, SLOT(slotNationChanged()));
@@ -78,7 +78,7 @@ void KPlayerSetupWidget::init(GameLogic::GameAutomaton* automaton,
                               NewGameSetup* newGameSetup)
 
 {
-  kDebug() << playerName << nationName;
+  qCDebug(KSIRK_LOG) << playerName << nationName;
 
   m_automaton = automaton;
   m_name = playerName;
@@ -90,21 +90,21 @@ void KPlayerSetupWidget::init(GameLogic::GameAutomaton* automaton,
   m_password = password;
   m_newGameSetup = newGameSetup;
 
-  kDebug() << "connecting to playerJoinedGame";
+  qCDebug(KSIRK_LOG) << "connecting to playerJoinedGame";
   connect(automaton,SIGNAL(signalPlayerJoinedGame(KPlayer*)), this, SLOT(slotPlayerJoinedGame(KPlayer*)));
   init();
-  kDebug() << "constructor done";
+  qCDebug(KSIRK_LOG) << "constructor done";
 }
 
 
 void KPlayerSetupWidget::slotNext()
 {
-  kDebug() << m_newGameSetup->players().size() << m_newGameSetup->nbPlayers();
+  qCDebug(KSIRK_LOG) << m_newGameSetup->players().size() << m_newGameSetup->nbPlayers();
 
   m_name = nameLineEdit-> text().trimmed();
-//     kDebug() << "Got name " << name;
+//     qCDebug(KSIRK_LOG) << "Got name " << name;
   m_computer = (isComputerCheckBox-> checkState() == Qt::Checked);
-//     kDebug() << "computer? : " << computer;
+//     qCDebug(KSIRK_LOG) << "computer? : " << computer;
   m_nationName = m_nationsNames[nationCombo->currentText()];
 // @toport
 //     m_password = QString(crypt(passwordEdit->password(),"T6"));
@@ -112,7 +112,7 @@ void KPlayerSetupWidget::slotNext()
 //     accept();
   if (m_newGameSetup->players().size() < m_newGameSetup->nbPlayers())
   {
-    kDebug() << "Add new player";
+    qCDebug(KSIRK_LOG) << "Add new player";
     NewPlayerData* newPlayer = new NewPlayerData(m_name, m_nationName, m_password, m_computer, false);
     m_newGameSetup->players().push_back(newPlayer);
     fillNationsCombo();
@@ -127,7 +127,7 @@ void KPlayerSetupWidget::slotNext()
 
 void KPlayerSetupWidget::slotPrevious()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   if (m_newGameSetup->players().empty())
   {
     emit previous();
@@ -148,14 +148,14 @@ void KPlayerSetupWidget::slotPrevious()
 
 void KPlayerSetupWidget::slotCancel()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   emit cancel();
 }
 
 
 void KPlayerSetupWidget::fillNationsCombo()
 {
-  kDebug();
+  qCDebug(KSIRK_LOG);
   nationCombo->clear();
   
   GameLogic::Nationality* nation = m_onu->nationNamed(*m_nations.keys().begin());
@@ -168,7 +168,7 @@ void KPlayerSetupWidget::fillNationsCombo()
       continue;
     }
     const QString& v =m_nations[k];
-    kDebug() << "Adding nation " << I18N_NOOP(k) << " / " << v;
+    qCDebug(KSIRK_LOG) << "Adding nation " << I18N_NOOP(k) << " / " << v;
 //     load image
 
     FlagSprite flagsprite(v,
@@ -186,12 +186,12 @@ void KPlayerSetupWidget::fillNationsCombo()
     nationCombo->addItem(QIcon(flag),name);
   }
   
-  kDebug() << "Nations combo filled";
+  qCDebug(KSIRK_LOG) << "Nations combo filled";
 }
 
 void KPlayerSetupWidget::slotPlayerJoinedGame(KPlayer* player)
 {
-  kDebug() << "KPlayerSetupWidget::slotPlayerJoinedGame: " << player->name()
+  qCDebug(KSIRK_LOG) << "KPlayerSetupWidget::slotPlayerJoinedGame: " << player->name()
       << " from " << ((GameLogic::Player*)player)->getNation()->name();
   for (int i = 0 ; i < nationCombo->count(); i++)
   {
@@ -206,13 +206,13 @@ void KPlayerSetupWidget::slotPlayerJoinedGame(KPlayer* player)
 
 void KPlayerSetupWidget::slotNationChanged()
 {
-  kDebug() << "KPlayerSetupWidget::slotNationChanged " << nationCombo->currentText();
+  qCDebug(KSIRK_LOG) << "KPlayerSetupWidget::slotNationChanged " << nationCombo->currentText();
   if (nationCombo->currentText().isEmpty())
   {
     return;
   }
   GameLogic::Nationality* nation = m_onu->nationNamed(m_nationsNames[nationCombo->currentText()]);
-//   kDebug() << "nation = " << nation;
+//   qCDebug(KSIRK_LOG) << "nation = " << nation;
   nameLineEdit-> setText(nation->leaderName());
   slotNameEdited(nameLineEdit->text());
 }
@@ -231,7 +231,7 @@ bool KPlayerSetupWidget::isAvailable(QString nationName)
 
 void KPlayerSetupWidget::slotNameEdited(const QString& text)
 {
-  kDebug() << text.trimmed();
+  qCDebug(KSIRK_LOG) << text.trimmed();
   bool found = false;
   foreach (NewPlayerData* player, m_newGameSetup->players())
   {
@@ -261,7 +261,7 @@ void KPlayerSetupWidget::slotNameEdited(const QString& text)
 
 void KPlayerSetupWidget::init(NewPlayerData* player)
 {
-  kDebug() << (void*)player;
+  qCDebug(KSIRK_LOG) << (void*)player;
   setLabelText();
 
   /// @TODO set the correct nation and password and computer state
@@ -274,7 +274,7 @@ void KPlayerSetupWidget::init(NewPlayerData* player)
   }
   if (player != 0)
   {
-    kDebug() << player->name();
+    qCDebug(KSIRK_LOG) << player->name();
     nationCombo->setCurrentIndex(nationCombo->findText(player->nation()));
     slotNationChanged();
     nameLineEdit->setText(player->name());
@@ -294,4 +294,4 @@ void KPlayerSetupWidget::setLabelText()
 
 } // namespace Ksirk
 
-#include "kplayersetupwidget.moc"
+

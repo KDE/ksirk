@@ -56,7 +56,7 @@
       </spacer>
      </item>
      <item row="1" column="1">
-      <widget class="KIntSpinBox" name="portEdit">
+      <widget class="QSpinBox" name="portEdit">
        <property name="minimum">
         <number>1</number>
        </property>
@@ -93,7 +93,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
-      <widget class="KPushButton" name="cancelButton">
+      <widget class="QPushButton" name="cancelButton">
        <property name="text">
         <string>Cancel</string>
        </property>
@@ -113,14 +113,14 @@
       </spacer>
      </item>
      <item>
-      <widget class="KPushButton" name="previousButton">
+      <widget class="QPushButton" name="previousButton">
        <property name="text">
         <string>&lt;&lt; Previous</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="KPushButton" name="nextButton">
+      <widget class="QPushButton" name="nextButton">
        <property name="text">
         <string>Next &gt;&gt;</string>
        </property>
@@ -130,18 +130,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KIntSpinBox</class>
-   <extends>QSpinBox</extends>
-   <header>knuminput.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KPushButton</class>
-   <extends>QPushButton</extends>
-   <header>kpushbutton.h</header>
-  </customwidget>
- </customwidgets>
  <includes>
   <include location="local">kpassworddialog.h</include>
  </includes>

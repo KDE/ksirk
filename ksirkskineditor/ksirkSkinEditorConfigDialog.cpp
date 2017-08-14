@@ -21,22 +21,15 @@
 #include "ksirkskineditorsettings.h"
 #include "ui_preferences.h"
 
-#include <kfiledialog.h>
 #include <kconfig.h>
-#include <kurl.h>
-#include <ktabwidget.h>
 #include <kedittoolbar.h>
-#include <kdebug.h>
-
+#include "ksirkskineditor_debug.h"
+#include <QPushButton>
 #include <kstandardaction.h>
 
-#include <klibloader.h>
 #include <kmessagebox.h>
-#include <kstatusbar.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kconfigdialog.h>
-
-#include <kapplication.h>
 
 #include <qslider.h>
 #include <qcheckbox.h>
@@ -46,15 +39,15 @@ using namespace KsirkSkinEditor;
 
 KsirkSkinEditorConfigurationDialog::KsirkSkinEditorConfigurationDialog (
               QWidget *parent, const char *name, KConfigSkeleton *config, 
-              FaceType dialogType, ButtonCodes dialogButtons, 
-              ButtonCode defaultButton, bool modal) : 
+              FaceType dialogType, QDialogButtonBox::StandardButtons dialogButtons, 
+              QDialogButtonBox::StandardButton defaultButton, bool modal) : 
       KConfigDialog (parent, name, config) , m_changed(false), 
       m_widget(new Ui::KsirkSkinEditorPreferencesWidget())
 
 {
   setFaceType(dialogType);
-  setButtons(dialogButtons);
-  setDefaultButton(defaultButton);
+  setStandardButtons(dialogButtons);
+  button(defaultButton)->setDefault(true);
   setModal(modal);
   QWidget* w = new QWidget();
   m_widget->setupUi(w);
@@ -72,7 +65,7 @@ KsirkSkinEditorConfigurationDialog::~KsirkSkinEditorConfigurationDialog ()
 
 void KsirkSkinEditorConfigurationDialog::settingChanged(int)
 {
-  kDebug();
+  qCDebug(KSIRKSKINEDITOR_LOG);
   m_changed = true;
   //settingsChangedSlot();
   //updateButtons ();
@@ -80,22 +73,22 @@ void KsirkSkinEditorConfigurationDialog::settingChanged(int)
 
 bool KsirkSkinEditorConfigurationDialog::hasChanged()
 {
-  kDebug();
+  qCDebug(KSIRKSKINEDITOR_LOG);
   return m_changed;
 }
 
 void KsirkSkinEditorConfigurationDialog::updateSettings()
 {
-  kDebug();
+  qCDebug(KSIRKSKINEDITOR_LOG);
   m_changed = false;
-  KsirkSkinEditorSettings::self()->writeConfig();
+  KsirkSkinEditorSettings::self()->save();
 }
 
 void KsirkSkinEditorConfigurationDialog::updateWidgets()
 {
-  kDebug();
+  qCDebug(KSIRKSKINEDITOR_LOG);
 
   m_changed = false;
 }
 
-#include "ksirkSkinEditorConfigDialog.moc"
+

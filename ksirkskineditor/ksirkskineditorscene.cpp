@@ -21,7 +21,7 @@
 
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
-#include <KDebug>
+#include "ksirkskineditor_debug.h"
 
 namespace KsirkSkinEditor
 {
@@ -29,7 +29,7 @@ namespace KsirkSkinEditor
 Scene::Scene(QObject* parent) :
   QGraphicsScene(parent)
 {
-  kDebug();
+  qCDebug(KSIRKSKINEDITOR_LOG);
 }
 
 Scene::Scene(qreal x, qreal y, qreal width, qreal height, QObject* parent) :
@@ -39,36 +39,36 @@ Scene::Scene(qreal x, qreal y, qreal width, qreal height, QObject* parent) :
 
 Scene::~Scene()
 {
-  kDebug();
+  qCDebug(KSIRKSKINEDITOR_LOG);
 }
 
 void Scene::mouseMoveEvent(QGraphicsSceneMouseEvent* mouseEvent)
 {
-//   kDebug() << mouseEvent->scenePos();
+//   qCDebug(KSIRKSKINEDITOR_LOG) << mouseEvent->scenePos();
   emit position(mouseEvent->scenePos());
   QGraphicsScene::mouseMoveEvent( mouseEvent );
 }
 
 void Scene::mousePressEvent(QGraphicsSceneMouseEvent* mouseEvent)
 {
-//   kDebug() << mouseEvent->scenePos();
+//   qCDebug(KSIRKSKINEDITOR_LOG) << mouseEvent->scenePos();
   emit pressPosition(mouseEvent->scenePos());
   QGraphicsScene::mousePressEvent( mouseEvent );
 }
 
 void Scene::mouseReleaseEvent(QGraphicsSceneMouseEvent* mouseEvent)
 {
-//   kDebug() << mouseEvent->scenePos();
+//   qCDebug(KSIRKSKINEDITOR_LOG) << mouseEvent->scenePos();
   emit releasePosition(mouseEvent->scenePos());
   QGraphicsScene::mouseReleaseEvent( mouseEvent );
 }
 
 void Scene::dropEvent ( QGraphicsSceneDragDropEvent * event )
 {
-  kDebug() << event->scenePos();
+  qCDebug(KSIRKSKINEDITOR_LOG) << event->scenePos();
   QGraphicsScene::dropEvent(event);
 }
 
 } // closing namespace
 
-#include "ksirkskineditorscene.moc"
+

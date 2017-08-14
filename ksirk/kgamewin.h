@@ -48,8 +48,7 @@
 // include files for KDE
 #include <ksharedconfig.h>
 #include <KXmlGuiWindow>
-#include <KStandardDirs>
-#include <KShortcut>
+#include <QStandardPaths>
 
 // #include <kdialogbase.h>
 
@@ -60,8 +59,8 @@ class NewGameSetup;
 class QAction;
 class KGameChat;
 class KGamePopupItem;
-class KDialog;
-class KAction;
+class QDialog;
+class QAction;
 
 class QEvent;
 class QDockWidget;
@@ -1014,15 +1013,10 @@ private: // Private members
   mainMenu* m_mainMenu;
 
   /**
-    * a shortcut to the standard dirs object.
-    */
-  KStandardDirs* m_dirs;
-
-  /**
     * This button is used to display the flag of the currently active player
     * in the status bar.
     */
-  KAction* m_goalAction;
+  QAction * m_goalAction;
   QAction* m_jabberAction;
   QLabel* m_barFlag;
     
@@ -1077,7 +1071,7 @@ private: // Private members
 
   GameLogic::Country* m_mouseLocalisation;
 
-  KDialog * m_defenseDialog;
+  QDialog * m_defenseDialog;
 
   // components that will be re-used of the chat
   QPixmap m_upChatFloatPix;
@@ -1093,10 +1087,10 @@ private: // Private members
   QString m_fileName;
 
   QAction* m_nextPlayerAction;
-  KAction* m_saveGameAction;
-  KAction* m_zoomInAction;
-  KAction* m_zoomOutAction;
-  KAction* m_contextualHelpAction;
+  QAction * m_saveGameAction;
+  QAction * m_zoomInAction;
+  QAction * m_zoomOutAction;
+  QAction * m_contextualHelpAction;
 
   Sprites::ArrowSprite* m_uparrow;
   Sprites::ArrowSprite* m_downarrow;

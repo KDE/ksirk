@@ -923,7 +923,7 @@ void TestDebug::incomingXml(const QDomElement &e)
 		td_glob->appendXmlIn(out);
 }
 
-#include "xmpptest.moc"
+
 
 int main(int argc, char **argv)
 {

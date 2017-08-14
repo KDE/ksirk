@@ -21,6 +21,7 @@
   subclass KMessageJabber of KMessageIO
 */
 
+#include "jabber_protocol_debug.h"
 #include "kmessagejabber.h"
 #include <QDataStream>
 #include <QUuid>
@@ -32,7 +33,7 @@ KMessageJabber::KMessageJabber (const QString& peerJid, JabberClient* jabberClie
   mClient(jabberClient),
   mPeerJid(peerJid)
 {
-  kDebug() << peerJid;
+  qCDebug(JABBER_PROTOCOL_LOG) << peerJid;
 //   initSocket ();
   connect(jabberClient, SIGNAL(messageReceived(XMPP::Message)), this, SLOT(slotMessageReceived(XMPP::Message)));
          
@@ -69,8 +70,8 @@ void KMessageJabber::slotMessageReceived(const XMPP::Message &message)
 {
   if (message.from().full() == mPeerJid)
   {
-    QByteArray msg = QByteArray::fromBase64(message.body().toAscii());
-    kDebug() << mPeerJid << msg;
+    QByteArray msg = QByteArray::fromBase64(message.body().toLatin1());
+    qCDebug(JABBER_PROTOCOL_LOG) << mPeerJid << msg;
     emit received (msg);
   }
 }
@@ -82,21 +83,21 @@ QString KMessageJabber::peerName () const
 
 void KMessageJabber::slotGroupChatLeft(const XMPP::Message& msg)
 {
-  kDebug() << msg.from().full() << msg.to().full() << msg.body();
+  qCDebug(JABBER_PROTOCOL_LOG) << msg.from().full() << msg.to().full() << msg.body();
 }
 
 void KMessageJabber::slotResourceUnavailable(const Jid& jid, const Resource& resource)
 {
-  kDebug() << jid.full() << resource.name();
+  qCDebug(JABBER_PROTOCOL_LOG) << jid.full() << resource.name();
 }
 
 void KMessageJabber::slotGroupChatPresence(const XMPP::Jid& jid, const XMPP::Status& status)
 {
-  kDebug() << jid.full() << status.status();
+  qCDebug(JABBER_PROTOCOL_LOG) << jid.full() << status.status();
   if (jid.full() == mPeerJid && !status.isAvailable())
   {
     emit connectionBroken();
   }
 }
 
-#include "kmessagejabber.moc"
+

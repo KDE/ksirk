@@ -16,95 +16,50 @@
    02110-1301, USA
 */
 
-
 #include "ksirkConfigDialog.h"
 #include "ksirksettings.h"
 #include "ui_preferences.h"
-
-#include <kfiledialog.h>
-#include <kconfig.h>
-#include <kurl.h>
-#include <ktabwidget.h>
-#include <kedittoolbar.h>
-#include <kdebug.h>
-
-#include <kstandardaction.h>
-
-#include <klibloader.h>
-#include <kmessagebox.h>
-#include <kstatusbar.h>
-#include <klocale.h>
-#include <kconfigdialog.h>
-
-#include <kapplication.h>
-
-#include <qslider.h>
-#include <qcheckbox.h>
-#include <iostream>
+#include "ksirk_debug.h"
 
 using namespace Ksirk;
 
 KsirkConfigurationDialog::KsirkConfigurationDialog (
-              QWidget *parent, const char *name, KConfigSkeleton *config, 
-              FaceType dialogType, ButtonCodes dialogButtons, 
-              ButtonCode defaultButton, bool modal) : 
-      KConfigDialog (parent, name, config) , m_changed(false), 
+              QWidget *parent, const char *name, KConfigSkeleton *config) :
+      KConfigDialog (parent, name, config),
       m_widget(new Ui::KsirkPreferencesWidget())
 
 {
-  setFaceType(dialogType);
-  setButtons(dialogButtons);
-  setDefaultButton(defaultButton);
-  setModal(modal);
+  setModal(true);
   QWidget* w = new QWidget();
   m_widget->setupUi(w);
 
- 
   addPage( w, i18n("Preferences"), "games-config-options"/*, i18n("Preferences"), false*/);
-  // below, connection to activate the apply button
-//   connect(m_widget->reloadOnChangeMode, SIGNAL(clicked(int)), this, SLOT(settingChanged(int)));
-  connect(m_widget->armiesNumbers, SIGNAL(stateChanged(int)), this, SIGNAL(armiesNumberShowingChanged(int)));
+  connect(m_widget->kcfg_showArmiesNumbers, SIGNAL(stateChanged(int)), this, SIGNAL(armiesNumberShowingChanged(int)));
+  connect(this, SIGNAL(settingsChanged()), this, SLOT(updateSettings()) );
 }
 
-KsirkConfigurationDialog::~KsirkConfigurationDialog () 
+KsirkConfigurationDialog::~KsirkConfigurationDialog ()
 {
   delete m_widget;
 }
 
-void KsirkConfigurationDialog::settingChanged(int)
-{
-  kDebug();
-  m_changed = true;
-  //settingsChangedSlot();
-  //updateButtons ();
-}
-
-bool KsirkConfigurationDialog::hasChanged()
-{
-  kDebug();
-  return m_changed;
-}
-
 void KsirkConfigurationDialog::updateSettings()
 {
-  kDebug();
-  m_changed = false;
-  KsirkSettings::setSpritesSpeed(m_widget->spritesSpeed->value());
-  KsirkSettings::setSoundEnabled(m_widget->soundEnabled->isChecked());
-  KsirkSettings::setHelpEnabled(m_widget->helpEnabled->isChecked());
-  KsirkSettings::setShowArmiesNumbers(m_widget->armiesNumbers->isChecked());
-  KsirkSettings::self()->writeConfig();
+  qCDebug(KSIRK_LOG);
+  KsirkSettings::setSpritesSpeed(m_widget->kcfg_spritesSpeed->value());
+  KsirkSettings::setSoundEnabled(m_widget->kcfg_soundEnabled->isChecked());
+  KsirkSettings::setHelpEnabled(m_widget->kcfg_helpEnabled->isChecked());
+  KsirkSettings::setShowArmiesNumbers(m_widget->kcfg_showArmiesNumbers->isChecked());
+  KsirkSettings::self()->save();
 }
 
 void KsirkConfigurationDialog::updateWidgets()
 {
-  kDebug();
-
-  m_changed = false;
-  m_widget->spritesSpeed->setValue(KsirkSettings::spritesSpeed());
-  m_widget->soundEnabled->setChecked(KsirkSettings::soundEnabled());
-  m_widget->helpEnabled->setChecked(KsirkSettings::helpEnabled());
-  m_widget->armiesNumbers->setChecked(KsirkSettings::showArmiesNumbers());
+  qCDebug(KSIRK_LOG);
+  m_widget->kcfg_spritesSpeed->setValue(KsirkSettings::spritesSpeed());
+  m_widget->kcfg_soundEnabled->setChecked(KsirkSettings::soundEnabled());
+  m_widget->kcfg_helpEnabled->setChecked(KsirkSettings::helpEnabled());
+  m_widget->kcfg_showArmiesNumbers->setChecked(KsirkSettings::showArmiesNumbers());
 }
 
-#include "ksirkConfigDialog.moc"
+

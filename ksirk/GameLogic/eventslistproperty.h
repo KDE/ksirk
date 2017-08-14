@@ -22,7 +22,7 @@
 #include<qstring.h>
 #include<qpoint.h>
 #include<qpair.h>
-
+#include <QList>
 namespace Ksirk {
 
 namespace GameLogic {

@@ -21,14 +21,14 @@
 
 #include "tcpconnectwidget.h"
 
-#include <KDebug>
+#include "ksirk_debug.h"
 
 namespace Ksirk
 {
 
 TcpConnectWidget::TcpConnectWidget(QWidget *parent) : QWidget(parent), Ui::TcpConnectWidget()
 {
-  kDebug() << "";
+  qCDebug(KSIRK_LOG) << "";
   setupUi(this);
   QRegExp rx(".+");
   QRegExpValidator *v = new QRegExpValidator(rx, 0);

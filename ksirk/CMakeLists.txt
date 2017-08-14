@@ -2,12 +2,11 @@ include(CheckIncludeFiles)
 check_include_files(sys/stropts.h SYS_STROPTS_H_FOUND)
 configure_file(config-ksirk.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-ksirk.h)
 
-add_subdirectory( skins )
-add_subdirectory( iris )
+add_subdirectory(skins)
+add_subdirectory(iris)
+add_subdirectory(icons)
 
-# FIND_PACKAGE(QCA2 REQUIRED)
 # FIND_PACKAGE(ZLIB REQUIRED)
-# macro_log_feature(QCA2_FOUND "QCA2" "Qt Cryptographic Architecture" "http://delta.affinix.com/qca" FALSE "2.0.0" "Needed to build Ksirk Jabber support's GroupWise and Jabberprotocols.")
 
 include_directories( 
   ${CMAKE_BINARY_DIR}/ksirk 
@@ -28,10 +27,9 @@ include_directories(
 #   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/cutestuff/network/
 #   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/cutestuff/
 #   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/
-  ${QCA2_INCLUDE_DIR}
   )
 
-link_directories( ${CMAKE_CURRENT_BINARY_DIR}/iris/ )
+link_directories(${CMAKE_CURRENT_BINARY_DIR}/iris/)
 
 ########### next target ###############
 
@@ -95,6 +93,16 @@ set(ksirk_SRCS
   Jabber/privacymanager.cpp
 )
 
+ecm_qt_declare_logging_category(ksirk_SRCS
+                                HEADER ksirk_debug.h
+                                IDENTIFIER KSIRK_LOG
+                                CATEGORY_NAME org.kde.ksirk)
+
+ecm_qt_declare_logging_category(ksirk_SRCS
+                                HEADER jabber_protocol_debug.h
+                                IDENTIFIER JABBER_PROTOCOL_LOG
+                                CATEGORY_NAME org.kde.ksirk.jabber)
+
 set(ksirk_UI
   Dialogs/qplayersetupdialog.ui
   Dialogs/newGameDialog.ui
@@ -109,35 +117,37 @@ set(ksirk_UI
   )
 
 
-kde4_add_ui_files(ksirk_SRCS ${ksirk_UI} )
+ki18n_wrap_ui(ksirk_SRCS ${ksirk_UI} )
 
-kde4_add_kcfg_files( ksirk_SRCS ksirksettings.kcfgc )
+kconfig_add_kcfg_files( ksirk_SRCS ksirksettings.kcfgc )
 
-kde4_add_app_icon(ksirk_SRCS "hi*-app-ksirk.png")
+file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/icons/hicolor/*-apps-ksirk.png")
+ecm_add_app_icon(ksirk_SRCS ICONS ${ICONS_SRCS})
 
-kde4_add_executable(ksirk ${ksirk_SRCS})
+add_executable(ksirk ${ksirk_SRCS})
 
 target_link_libraries(ksirk
-  ${QT_QTXML_LIBRARY}
-  ${QT_QTSVG_LIBRARY} 
-  ${KDE4_KIO_LIBS} 
-  ${KDE4_PHONON_LIBRARY}
-  ${KDE4_KNEWSTUFF3_LIBRARY}
-  ${QCA2_LIBRARIES}
-  iris_ksirk
-  kdegames
-  kdegamesprivate
-  )
+    Qt5::Xml
+    Qt5::Svg
+    qca-qt5
+    iris_ksirk
+    KF5::Crash
+    KF5::IconThemes
+    KF5::KIOCore
+    KF5::NewStuff
+    KF5::Wallet
+    Phonon::phonon4qt5
+    KF5KDEGames
+    KF5KDEGamesPrivate
+)
 
-install( TARGETS ksirk ${INSTALL_TARGETS_DEFAULT_ARGS})
+install( TARGETS ksirk ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
 
-kde4_install_icons( ${ICON_INSTALL_DIR} )
-
-install( FILES ksirksettings.kcfg DESTINATION ${KCFG_INSTALL_DIR} )
-install( PROGRAMS org.kde.ksirk.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} )
-install( FILES ksirkui.rc  DESTINATION  ${DATA_INSTALL_DIR}/ksirk )
-install( FILES jabber.png  DESTINATION  ${DATA_INSTALL_DIR}/ksirk )
-install( FILES ksirk.knsrc  DESTINATION  ${CONFIG_INSTALL_DIR} )
-install(FILES org.kde.ksirk.appdata.xml DESTINATION ${SHARE_INSTALL_PREFIX}/metainfo/ )
+install(FILES ksirksettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
+install(PROGRAMS org.kde.ksirk.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+install(FILES ksirkui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/ksirk)
+install(FILES jabber.png  DESTINATION  ${KDE_INSTALL_DATADIR}/ksirk)
+install(FILES ksirk.knsrc  DESTINATION  ${KDE_INSTALL_CONFDIR})
+install(FILES org.kde.ksirk.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})

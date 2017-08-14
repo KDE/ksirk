@@ -64,12 +64,12 @@ EventsListProperty::~EventsListProperty()
     **/
 // void EventsListProperty::command(QDataStream &stream, int msgid, bool isSender)
 // {
-//   kDebug() << "EventsListProperty::command " << endl;
+//   qCDebug(KSIRK_LOG) << "EventsListProperty::command " << endl;
 //   
 //   QString commandName;
 //   stream >> commandName;
 //   
-//   kDebug() << "    command name is " << commandName << endl;
+//   qCDebug(KSIRK_LOG) << "    command name is " << commandName << endl;
 //   if (commandName == "pop_front")
 //   {
 //     QValueList< QPair< QString, QPoint> > list = value();
@@ -88,7 +88,7 @@ EventsListProperty::~EventsListProperty()
 
 void EventsListProperty::pop_front()
 {
-//   kDebug() << "EventsListProperty::pop_front " << endl;
+//   qCDebug(KSIRK_LOG) << "EventsListProperty::pop_front " << endl;
 QList< QPair< QString, QPointF > >::pop_front();
 /*  if (!isEmpty())
   {
@@ -103,18 +103,18 @@ QList< QPair< QString, QPointF > >::pop_front();
 
 void EventsListProperty::push_back(const QPair<QString, QPointF>& pair)
 {
-//   kDebug() << "EventsListProperty::push_back " << pair.first << " / " << pair.second << endl;
+//   qCDebug(KSIRK_LOG) << "EventsListProperty::push_back " << pair.first << " / " << pair.second << endl;
 QList< QPair< QString, QPointF > >::push_back(pair);
 //   append(pair);
 //   QByteArray buffer;
 /*  QDataStream stream(buffer, QIODevice::ReadWrite);
-  kDebug() << "1" << endl;
+  qCDebug(KSIRK_LOG) << "1" << endl;
   stream << QString("push_back");
-  kDebug() << "2" << endl;
+  qCDebug(KSIRK_LOG) << "2" << endl;
   stream << pair.first;
-  kDebug() << "3" << endl;
+  qCDebug(KSIRK_LOG) << "3" << endl;
   stream << pair.second;
-  kDebug() << "4" << endl;
+  qCDebug(KSIRK_LOG) << "4" << endl;
   command(stream, 2, true);*/
 }
 

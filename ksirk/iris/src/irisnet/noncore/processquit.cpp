@@ -92,7 +92,9 @@ static ProcessQuit *g_pq = 0;
 inline bool is_gui_app()
 {
 #ifdef QT_GUI_LIB
-	return (QApplication::type() != QApplication::Tty);
+        #pragma message("Port to Qt5")
+	//QT5 return (QApplication::type() != QApplication::Tty);
+        return false;
 #else
 	return false;
 #endif
