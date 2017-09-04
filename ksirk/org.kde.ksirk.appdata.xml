@@ -12,6 +12,7 @@
   <name xml:lang="fr">KSirk</name>
   <name xml:lang="it">KSirk</name>
   <name xml:lang="nl">KSirk</name>
+  <name xml:lang="pl">KSirk</name>
   <name xml:lang="pt">KSirk</name>
   <name xml:lang="pt-BR">KSirk</name>
   <name xml:lang="sk">KSirk</name>
@@ -31,6 +32,7 @@
   <summary xml:lang="fr">Jeu de stratégie pour la conquête du monde</summary>
   <summary xml:lang="it">Gioco di strategia per la dominazione del mondo</summary>
   <summary xml:lang="nl">Werelddominatie-strategiespel</summary>
+  <summary xml:lang="pl">Gra strategiczna o dominacji świata</summary>
   <summary xml:lang="pt">Jogo Estratégico de Conquista do Mundo</summary>
   <summary xml:lang="pt-BR">Jogo de estratégias de dominação do mundial</summary>
   <summary xml:lang="sk">Strategická hra s ovládnutím sveta</summary>
@@ -52,6 +54,7 @@
     <p xml:lang="fr">KsirK est une version informatisée du célèbre jeu de stratégie Risk. L'objectif du jeu est de conquérir le monde en attaquant vos voisins avec vos armées.</p>
     <p xml:lang="it">KsirK è una versione per il computer del famoso gioco strategico da tavola Risk. L'obiettivo del gioco è semplicemente la conquista del mondo attaccando i vicini con le proprie armate.</p>
     <p xml:lang="nl">KsirK is een gecomputeriseerde versie van het welbekende strategische bordspel Risk. Het doel van het spel is eenvoudig de wereld veroveren door uw buren aan te vallen met uw legers.</p>
+    <p xml:lang="pl">KsirK jest skomputeryzowaną wersją dobrze znanej strategicznej gry planszowej Risk. Celem gry jest po prostu podbicie świata poprzez atakowanie swoich sąsiadów swoją armią.</p>
     <p xml:lang="pt">O KsirK é uma versão em computador do conhecido jogo de estratégia do Risco. O objectivo do jogo é simplesmente conquistar o mundo, atacando os seus vizinhos com os seus exércitos.</p>
     <p xml:lang="sk">KsirK je počítačová verzia známej strategickej doskovej hry Risk. Cieľom hry je jednoducho dobyť svet pomocou útoku na vašich susedov vašou armádou.</p>
     <p xml:lang="sr">К‑сирк је рачунарска верзија добро познате стратешке игре на табли ризико. Циљ партије је просто освојити цео свет, нападајући суседе својим војскама.</p>
@@ -70,6 +73,7 @@
     <p xml:lang="fr">Fonctionnalités :</p>
     <p xml:lang="it">Caratteristiche:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
+    <p xml:lang="pl">Możliwości:</p>
     <p xml:lang="pt">Funcionalidades:</p>
     <p xml:lang="pt-BR">Recursos:</p>
     <p xml:lang="sk">Funkcie:</p>
@@ -89,6 +93,7 @@
       <li xml:lang="fr">De 1 à 6 joueurs humains ou intelligences artificielles</li>
       <li xml:lang="it">Supporto da 1 a 6 giocatori umani o computer (IA)</li>
       <li xml:lang="nl">Ondersteuning voor 1-6 menselijke of computer(AI)spelers</li>
+      <li xml:lang="pl">Obsługa dla 1-6 graczy ludzkich lub komputerowych (AI)</li>
       <li xml:lang="pt">Suporte para 1-6 jogadores humanos ou por computador (IA)</li>
       <li xml:lang="pt-BR">Suporte de 1 a 6 jogadores humanos ou IA</li>
       <li xml:lang="sk">Podpora pre 1-6 ľudí alebo počítačových (AI) hráčov</li>
@@ -106,6 +111,7 @@
       <li xml:lang="fr">Jeu multi-joueurs en réseau</li>
       <li xml:lang="it">Gioco multi-giocatore tramite la rete</li>
       <li xml:lang="nl">Met meerdere speler spelen over een netwerk</li>
+      <li xml:lang="pl">Gra wieloosobowa przez sieć</li>
       <li xml:lang="pt">Jogos multi-jogador pela rede</li>
       <li xml:lang="pt-BR">Jogo multijogador via rede</li>
       <li xml:lang="sk">Hra pre viac hráčov cez sieť</li>
@@ -123,6 +129,7 @@
       <li xml:lang="fr">Vous pouvez créer facilement de nouveaux thèmes en utilisant des graphiques SVG et l'éditeur de thèmes</li>
       <li xml:lang="it">Puoi creare facilmente nuovi temi con immagini SVG e l'editore di temi</li>
       <li xml:lang="nl">U kunt gemakkelijk nieuwe skins with maken met SVG graphics en de skin-editor</li>
+      <li xml:lang="pl">Można łatwo tworzyć nowe wyglądy przy użyciu grafik SVG i edytora</li>
       <li xml:lang="pt">Poderá criar facilmente novos visuais com gráficos em SVG e com o editor de visuais</li>
       <li xml:lang="sk">Ľahko môžete vytvoriť nové skiny pomocou SVG grafiky a editora skinov</li>
       <li xml:lang="sr">Једноствано стварање нових масака кроз СВГ графику и уређивач масака.</li>
@@ -139,6 +146,7 @@
       <li xml:lang="fr">Obtenir les dernières nouveautés. Vous pouvez facilement télécharger et installer de nouveaux thèmes.</li>
       <li xml:lang="it">Supporto per le Novità. Puoi scaricare e installare facilmente nuovi temi</li>
       <li xml:lang="nl">Ondersteuning door Vers-van-de-pers. U kunt gemakkelijk nieuwe skins downloaden en installeren</li>
+      <li xml:lang="pl">Obsługa Hot New Stuff. Możesz łatwo pobierać i wgrywać nowe wyglądy</li>
       <li xml:lang="pt">Suporte para Obter Coisas Novas. Poderá transferir e instalar facilmente novos visuais</li>
       <li xml:lang="sk">Podpora horúcich noviniek. Ľahko si môžete stiahnuť a nainštalovať nové skiny</li>
       <li xml:lang="sr">Подршка за вруће новотарије, ради једноставног преузимања и инсталирања нових масака.</li>
