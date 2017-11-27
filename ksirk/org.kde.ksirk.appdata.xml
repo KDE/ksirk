@@ -9,6 +9,7 @@
   <name xml:lang="ca-valencia">KSirk</name>
   <name xml:lang="cs">KSirk</name>
   <name xml:lang="de">KSirk</name>
+  <name xml:lang="en-GB">KSirk</name>
   <name xml:lang="es">KSirk</name>
   <name xml:lang="fr">KSirk</name>
   <name xml:lang="it">KSirk</name>
@@ -30,6 +31,7 @@
   <summary xml:lang="ca-valencia">Joc d'estratègia de dominació mundial</summary>
   <summary xml:lang="cs">Strategická hra o světovou nadvládu</summary>
   <summary xml:lang="de">Welteroberungsspiel</summary>
+  <summary xml:lang="en-GB">World Domination Strategy Game</summary>
   <summary xml:lang="es">Juego de estrategia de dominación del mundo</summary>
   <summary xml:lang="fr">Jeu de stratégie pour la conquête du monde</summary>
   <summary xml:lang="it">Gioco di strategia per la dominazione del mondo</summary>
@@ -53,6 +55,7 @@
     <p xml:lang="ca">El KsirK és una versió per ordinador del famós joc d'estratègia de tauler Risk. L'objectiu del joc és senzillament conquerir el món atacant els veïns amb els exèrcits.</p>
     <p xml:lang="ca-valencia">El KsirK és una versió per ordinador del famós joc d'estratègia de tauler Risk. L'objectiu del joc és senzillament conquerir el món atacant els veïns amb els exèrcits.</p>
     <p xml:lang="de">KsirK ist eine computergestützte Version des bekannten Strategiespiels Risiko. Das Spielziel ist es, die Weltherrschaft zu erlangen. Dies geschieht durch das Angreifen der Gegner in den Nachbarländern mit den eigenen Armeen.</p>
+    <p xml:lang="en-GB">KsirK is a computerised version of the well known strategic board game Risk. The goal of the game is simply to conquer the world by attacking your neighbours with your armies.</p>
     <p xml:lang="es">KsirK es una versión informatizada del conocido juego de estrategia Risk. El objetivo del juego es conquistar el mundo usando ejércitos para atacar a los vecinos.</p>
     <p xml:lang="fr">KsirK est une version informatisée du célèbre jeu de stratégie Risk. L'objectif du jeu est de conquérir le monde en attaquant vos voisins avec vos armées.</p>
     <p xml:lang="it">KsirK è una versione per il computer del famoso gioco strategico da tavola Risk. L'obiettivo del gioco è semplicemente la conquista del mondo attaccando i vicini con le proprie armate.</p>
@@ -72,6 +75,7 @@
     <p xml:lang="ca-valencia">Característiques:</p>
     <p xml:lang="cs">Vlastnosti:</p>
     <p xml:lang="de">Funktionen:</p>
+    <p xml:lang="en-GB">Features:</p>
     <p xml:lang="es">Funciones:</p>
     <p xml:lang="fr">Fonctionnalités :</p>
     <p xml:lang="it">Caratteristiche:</p>
@@ -94,6 +98,7 @@
       <li xml:lang="ca">Permet entre 1 i 6 jugadors humans o ordinadors (IA)</li>
       <li xml:lang="ca-valencia">Permet entre 1 i 6 jugadors humans o ordinadors (IA)</li>
       <li xml:lang="de">Unterstützung für 1-6 menschliche oder Rechnerspieler (KI)</li>
+      <li xml:lang="en-GB">Support for 1-6 human or computer (AI) players</li>
       <li xml:lang="es">Permite de 1 a 6 jugadores humanos o de la computadora (IA)</li>
       <li xml:lang="fr">De 1 à 6 joueurs humains ou intelligences artificielles</li>
       <li xml:lang="it">Supporto da 1 a 6 giocatori umani o computer (IA)</li>
@@ -113,6 +118,7 @@
       <li xml:lang="ca">Jocs multi-jugador per xarxa</li>
       <li xml:lang="ca-valencia">Jocs multi-jugador per xarxa</li>
       <li xml:lang="de">Spiele mit mehreren Teilnehmern im Netzwerk</li>
+      <li xml:lang="en-GB">Multi-player gaming over a network</li>
       <li xml:lang="es">Juego multijugador a través de una red</li>
       <li xml:lang="fr">Jeu multi-joueurs en réseau</li>
       <li xml:lang="it">Gioco multi-giocatore tramite la rete</li>
@@ -132,6 +138,7 @@
       <li xml:lang="ca">Es poden crear fàcilment aparences noves amb gràfics SVG i l'editor d'aparences</li>
       <li xml:lang="ca-valencia">Es poden crear fàcilment aparences noves amb gràfics SVG i l'editor d'aparences</li>
       <li xml:lang="de">Sie können neue Designs mit SVG-Grafik und dem Designeditor erstellen</li>
+      <li xml:lang="en-GB">You can easily create new skins with SVG graphics and the skin editor</li>
       <li xml:lang="es">Se pueden crear nuevas pieles fácilmente con gráficos SVG y el editor de pieles</li>
       <li xml:lang="fr">Vous pouvez créer facilement de nouveaux thèmes en utilisant des graphiques SVG et l'éditeur de thèmes</li>
       <li xml:lang="it">Puoi creare facilmente nuovi temi con immagini SVG e l'editore di temi</li>
@@ -150,6 +157,7 @@
       <li xml:lang="ca">Permet obtenir novetats candents. Es poden descarregar i instal·lar fàcilment aparences noves</li>
       <li xml:lang="ca-valencia">Permet obtindre novetats candents. Es poden descarregar i instal·lar fàcilment aparences noves</li>
       <li xml:lang="de">Sie können neue Designs herunterladen und installieren</li>
+      <li xml:lang="en-GB">Hot New Stuff support. You can easily download and install new skins</li>
       <li xml:lang="es">Se pueden descargar e instalar nuevas pieles con facilidad</li>
       <li xml:lang="fr">Obtenir les dernières nouveautés. Vous pouvez facilement télécharger et installer de nouveaux thèmes.</li>
       <li xml:lang="it">Supporto per le Novità. Puoi scaricare e installare facilmente nuovi temi</li>
