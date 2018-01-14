@@ -20,6 +20,7 @@
   <name xml:lang="pt-BR">KSirk</name>
   <name xml:lang="ru">KSirk</name>
   <name xml:lang="sk">KSirk</name>
+  <name xml:lang="sl">KSirk</name>
   <name xml:lang="sr">К‑сирк</name>
   <name xml:lang="sr-Latn">KSirk</name>
   <name xml:lang="sr-ijekavian">К‑сирк</name>
@@ -42,6 +43,7 @@
   <summary xml:lang="pt">Jogo Estratégico de Conquista do Mundo</summary>
   <summary xml:lang="pt-BR">Jogo de estratégias de dominação do mundial</summary>
   <summary xml:lang="sk">Strategická hra s ovládnutím sveta</summary>
+  <summary xml:lang="sl">Strateška igra svetovne nadvlade</summary>
   <summary xml:lang="sr">Стратешка игра светске доминације</summary>
   <summary xml:lang="sr-Latn">Strateška igra svetske dominacije</summary>
   <summary xml:lang="sr-ijekavian">Стратешка игра светске доминације</summary>
@@ -66,6 +68,7 @@
     <p xml:lang="pl">KsirK jest skomputeryzowaną wersją dobrze znanej strategicznej gry planszowej Risk. Celem gry jest po prostu podbicie świata poprzez atakowanie swoich sąsiadów swoją armią.</p>
     <p xml:lang="pt">O KsirK é uma versão em computador do conhecido jogo de estratégia do Risco. O objectivo do jogo é simplesmente conquistar o mundo, atacando os seus vizinhos com os seus exércitos.</p>
     <p xml:lang="sk">KsirK je počítačová verzia známej strategickej doskovej hry Risk. Cieľom hry je jednoducho dobyť svet pomocou útoku na vašich susedov vašou armádou.</p>
+    <p xml:lang="sl">KsirK je računalniška različica znane strateške namizne igre imenovane Risk. Cilj igre je z napadanjem sosedov zajeti svet.</p>
     <p xml:lang="sr">К‑сирк је рачунарска верзија добро познате стратешке игре на табли ризико. Циљ партије је просто освојити цео свет, нападајући суседе својим војскама.</p>
     <p xml:lang="sr-Latn">KSirk je računarska verzija dobro poznate strateške igre na tabli riziko. Cilj partije je prosto osvojiti ceo svet, napadajući susede svojim vojskama.</p>
     <p xml:lang="sr-ijekavian">К‑сирк је рачунарска верзија добро познате стратешке игре на табли ризико. Циљ партије је просто освојити цео свет, нападајући суседе својим војскама.</p>
@@ -89,6 +92,7 @@
     <p xml:lang="pt-BR">Recursos:</p>
     <p xml:lang="ru">Возможности:</p>
     <p xml:lang="sk">Funkcie:</p>
+    <p xml:lang="sl">Zmožnosti:</p>
     <p xml:lang="sr">Могућности:</p>
     <p xml:lang="sr-Latn">Mogućnosti:</p>
     <p xml:lang="sr-ijekavian">Могућности:</p>
@@ -112,6 +116,7 @@
       <li xml:lang="pt">Suporte para 1-6 jogadores humanos ou por computador (IA)</li>
       <li xml:lang="pt-BR">Suporte de 1 a 6 jogadores humanos ou IA</li>
       <li xml:lang="sk">Podpora pre 1-6 ľudí alebo počítačových (AI) hráčov</li>
+      <li xml:lang="sl">Podpora za 1-6 človeških ali računalniških igralcev</li>
       <li xml:lang="sr">Подршка за 1–6 људских и рачунарских играча</li>
       <li xml:lang="sr-Latn">Podrška za 1–6 ljudskih i računarskih igrača</li>
       <li xml:lang="sr-ijekavian">Подршка за 1–6 људских и рачунарских играча</li>
@@ -133,6 +138,7 @@
       <li xml:lang="pt">Jogos multi-jogador pela rede</li>
       <li xml:lang="pt-BR">Jogo multijogador via rede</li>
       <li xml:lang="sk">Hra pre viac hráčov cez sieť</li>
+      <li xml:lang="sl">Večigralstvo preko omrežja</li>
       <li xml:lang="sr">Играње у више играча преко мреже.</li>
       <li xml:lang="sr-Latn">Igranje u više igrača preko mreže.</li>
       <li xml:lang="sr-ijekavian">Играње у више играча преко мреже.</li>
@@ -153,6 +159,7 @@
       <li xml:lang="pl">Można łatwo tworzyć nowe wyglądy przy użyciu grafik SVG i edytora</li>
       <li xml:lang="pt">Poderá criar facilmente novos visuais com gráficos em SVG e com o editor de visuais</li>
       <li xml:lang="sk">Ľahko môžete vytvoriť nové skiny pomocou SVG grafiky a editora skinov</li>
+      <li xml:lang="sl">Z urejevalnikom preoblek in datotekami SVG lahko enostavno ustvarite nove preobleke</li>
       <li xml:lang="sr">Једноствано стварање нових масака кроз СВГ графику и уређивач масака.</li>
       <li xml:lang="sr-Latn">Jednostvano stvaranje novih masaka kroz SVG grafiku i uređivač masaka.</li>
       <li xml:lang="sr-ijekavian">Једноствано стварање нових масака кроз СВГ графику и уређивач масака.</li>
@@ -173,6 +180,7 @@
       <li xml:lang="pl">Obsługa Hot New Stuff. Możesz łatwo pobierać i wgrywać nowe wyglądy</li>
       <li xml:lang="pt">Suporte para Obter Coisas Novas. Poderá transferir e instalar facilmente novos visuais</li>
       <li xml:lang="sk">Podpora horúcich noviniek. Ľahko si môžete stiahnuť a nainštalovať nové skiny</li>
+      <li xml:lang="sl">Podpora za vroče novosti. Nove preobleke lahko enostavno prejmete in namestite</li>
       <li xml:lang="sr">Подршка за вруће новотарије, ради једноставног преузимања и инсталирања нових масака.</li>
       <li xml:lang="sr-Latn">Podrška za vruće novotarije, radi jednostavnog preuzimanja i instaliranja novih masaka.</li>
       <li xml:lang="sr-ijekavian">Подршка за вруће новотарије, ради једноставног преузимања и инсталирања нових масака.</li>
