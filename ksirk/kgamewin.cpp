@@ -920,7 +920,7 @@ void KGameWindow::winner(const Player* player)
   }
   if (m_automaton->useGoals())
   {
-    msg += i18n("<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to play again?").arg(player->goal().message());
+    msg += i18n("<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to play again?", player->goal().message());
   }
   else
   {
