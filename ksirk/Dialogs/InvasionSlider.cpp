@@ -50,15 +50,18 @@
 
 
 //include files for QT
+#include <QAction>
+#include <QDialog>
 #include <QDockWidget>
-#include <QTreeView>
-#include <QPushButton>
 #include <QGridLayout>
-#include <QString>
-#include <QVBoxLayout>
-#include <QMovie>
-#include <QUuid>
 #include <QHostInfo>
+#include <QMovie>
+#include <QPushButton>
+#include <QString>
+#include <QSvgRenderer>
+#include <QTreeView>
+#include <QUuid>
+#include <QVBoxLayout>
 
 // include files for KDE
 #include <kiconloader.h>
@@ -70,12 +73,8 @@
 #include <kactioncollection.h>
 #include "ksirk_debug.h"
 #include <phonon/mediaobject.h>
-#include <QPushButton>
 #include <kgamepopupitem.h>
 #include <KToolBar>
-#include <QAction>
-#include <QSvgRenderer>
-#include <QDialog>
 #include <KAboutData>
 
 #include <sys/utsname.h>

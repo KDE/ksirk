@@ -25,8 +25,7 @@
 #include "ui_tcpconnectwidget.h"
 
 #include <QWidget>
-
-#include <QtCore/QMap>
+#include <QMap>
 
 namespace Ksirk
 {

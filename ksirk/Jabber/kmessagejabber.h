@@ -25,10 +25,10 @@
 #ifndef KMESSAGEJABBER_H
 #define KMESSAGEJABBER_H
 
-#include <QtCore/QObject>
-#include <QtCore/QProcess>
-#include <QtCore/QString>
-#include <QtNetwork/QHostAddress>
+#include <QObject>
+#include <QProcess>
+#include <QString>
+#include <QHostAddress>
 #include "jabber_protocol_debug.h"
 
 #define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API

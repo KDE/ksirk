@@ -32,7 +32,7 @@ namespace Ksirk {
 namespace GameLogic {
 
 /**
-  * This class holds a serie of strings and pixmaps that have to be transfered
+  * This class holds a serie of strings and pixmaps that have to be transferred
   * on the network and displayed in a specified order.
   * 
   * It stores one collection of strings and one collection of pixmaps, each of 

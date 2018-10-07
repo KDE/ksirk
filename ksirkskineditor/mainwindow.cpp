@@ -35,7 +35,9 @@
 #include "goal.h"
 
 //include files for QT
+#include <QAction>
 #include <QDockWidget>
+#include <QFileDialog>
 #include <QTreeView>
 #include <QPushButton>
 #include <QGridLayout>
@@ -49,11 +51,12 @@
 #include <QBitmap>
 #include <QInputDialog>
 #include <QMenuBar>
+#include <QStatusBar>
+#include <QSvgRenderer>
 
 // include files for KDE
 #include <kiconloader.h>
 #include <kmessagebox.h>
-#include <QFileDialog>
 #include <KLocalizedString>
 #include <kconfig.h>
 #include <kstandardgameaction.h>
@@ -61,11 +64,7 @@
 #include <kactioncollection.h>
 #include "ksirkskineditor_debug.h"
 #include <phonon/mediaobject.h>
-#include <QPushButton>
-#include <QStatusBar>
 #include <KToolBar>
-#include <QAction>
-#include <QSvgRenderer>
 #include <KAboutApplicationDialog>
 #include <KRecentFilesAction>
 
