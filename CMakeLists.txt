@@ -1,7 +1,7 @@
 project(ksirk)
 cmake_minimum_required (VERSION 2.8.12 FATAL_ERROR)
-set (QT_MIN_VERSION "5.2.0")
-set (KF5_MIN_VERSION "5.15.0")
+set (QT_MIN_VERSION "5.7.0")
+set (KF5_MIN_VERSION "5.30.0")
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED CONFIG)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
@@ -50,5 +50,7 @@ remove_definitions(-DQT_NO_STL)
 add_subdirectory(ksirk)
 add_subdirectory(ksirkskineditor)
 add_subdirectory(doc)
+
+install( FILES ksirk.categories DESTINATION ${KDE_INSTALL_CONFDIR} )
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
