@@ -4,7 +4,7 @@
  */
 
 #include <QObject>
-#include <QtTest/QtTest>
+#include <QtTest>
 
 #include "qttestutil/qttestutil.h"
 

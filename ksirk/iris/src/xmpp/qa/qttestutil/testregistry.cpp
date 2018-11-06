@@ -5,7 +5,7 @@
 
 #include "qttestutil/testregistry.h"
 
-#include <QtTest/QtTest>
+#include <QtTest>
 
 namespace QtTestUtil {
 
