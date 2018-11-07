@@ -210,6 +210,7 @@
   </description>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=ksirk</url>
   <url type="help">https://docs.kde.org/?application=ksirk</url>
+  <url type="donation">https://www.kde.org/community/donations/?app=ksirk&amp;source=appdata</url>
   <screenshots>
     <screenshot type="default">
       <image>https://kde.org/images/screenshots/ksirk.png</image>
