@@ -1168,7 +1168,7 @@ ResourceList::ConstIterator LiveRosterItem::priority() const
 
 bool LiveRosterItem::isAvailable() const
 {
-	if(v_resourceList.count() > 0)
+        if(!v_resourceList.isEmpty())
 		return true;
 	return false;
 }

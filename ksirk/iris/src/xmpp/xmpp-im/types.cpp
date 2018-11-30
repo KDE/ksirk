@@ -1648,7 +1648,7 @@ bool Message::fromStanza(const Stanza &s, int timeZoneOffset)
 
 	// xhtml-im
 	nl = childElementsByTagNameNS(root, "http://jabber.org/protocol/xhtml-im", "html");
-	if (nl.count()) {
+        if (!nl.isEmpty()) {
 		nl = nl.item(0).childNodes();
 		for(n = 0; n < nl.count(); ++n) {
 			QDomElement e = nl.item(n).toElement();
@@ -1685,7 +1685,7 @@ bool Message::fromStanza(const Stanza &s, int timeZoneOffset)
     // events
 	d->eventList.clear();
 	nl = childElementsByTagNameNS(root, "jabber:x:event", "x");
-	if (nl.count()) {
+        if (!nl.isEmpty()) {
 		nl = nl.item(0).childNodes();
 		for(n = 0; n < nl.count(); ++n) {
 			QString evtag = nl.item(n).toElement().tagName();
@@ -1740,7 +1740,7 @@ bool Message::fromStanza(const Stanza &s, int timeZoneOffset)
 	// addresses
 	d->addressList.clear();
 	nl = childElementsByTagNameNS(root, "http://jabber.org/protocol/address", "addresses");
-	if (nl.count()) {
+        if (!nl.isEmpty()) {
 		QDomElement t = nl.item(0).toElement();
 		nl = t.elementsByTagName("address");
 		for(n = 0; n < nl.count(); ++n) {
@@ -1751,7 +1751,7 @@ bool Message::fromStanza(const Stanza &s, int timeZoneOffset)
 	// roster item exchange
 	d->rosterExchangeItems.clear();
 	nl = childElementsByTagNameNS(root, "http://jabber.org/protocol/rosterx", "x");
-	if (nl.count()) {
+        if (!nl.isEmpty()) {
 		QDomElement t = nl.item(0).toElement();
 		nl = t.elementsByTagName("item");
 		for(n = 0; n < nl.count(); ++n) {
