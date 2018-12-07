@@ -384,11 +384,8 @@ void MainWindow::slotOpenSkin(const QString& dir)
   m_skinDefWidget->continentslist->clear();
   m_skinDefWidget->goalslist->clear();
   
-  if (m_onu != 0)
-  {
-    delete m_onu;
-  }
-  m_onu = new ONU(skinDir);
+  delete m_onu;
+  m_onu = new ONU(skinDir, this);
 
   m_skinDefWidget->fontrequester->setFont(m_onu->foregroundFont());
   m_skinDefWidget->fgcolorbutton->setColor(m_onu->foregroundColor());

@@ -42,7 +42,8 @@
 namespace KsirkSkinEditor
 {
 
-ONU::ONU(const QString& configDir):
+ONU::ONU(const QString& configDir, QObject *parent)
+    : QObject(parent),
   m_configDir(configDir),
   m_configFileName(configDir + "/Data/world.desktop"),
   m_countries(),

@@ -62,7 +62,7 @@ public:
     * @param configFileName The name of the XML file defining this world. Built
     * from the current skin dir and a default file name.
     */
-  ONU(const QString& configFileName);
+  explicit ONU(const QString& configFileName, QObject *parent);
 
   /** Default destructor */
   virtual ~ONU();
