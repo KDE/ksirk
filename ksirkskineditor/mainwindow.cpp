@@ -326,7 +326,7 @@ void MainWindow::initActions()
   actionCollection()->addAction(action->objectName(), action);
   action->setToolTip(i18n("Open a saved skin..."));
 
-  m_rfa = KStandardGameAction::loadRecent (this, SLOT(slotURLSelected(KUrl)), this);
+  m_rfa = KStandardGameAction::loadRecent (this, SLOT(slotURLSelected(QUrl)), this);
   actionCollection()->addAction(m_rfa->objectName(), m_rfa);
   m_rfa->setText(i18n("Load &Recent"));
   m_rfa->setToolTip(i18n("Open a recently saved skin..."));
