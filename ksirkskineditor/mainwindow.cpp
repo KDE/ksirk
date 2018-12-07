@@ -1311,6 +1311,7 @@ void MainWindow::slotNewCountry()
 void MainWindow::slotDeleteCountry()
 {
   if (m_onu == 0) return;
+  if (!m_skinDefWidget->countrieslist->currentItem()) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
   int answer = KMessageBox::warningContinueCancel(this, i18n("Do you really want to delete country '%1'?", m_skinDefWidget->countrieslist->currentItem()->text()), i18n("Really delete country?"));
   if (answer == KMessageBox::Cancel)
@@ -1339,6 +1340,7 @@ void MainWindow::slotNewContinent()
 void MainWindow::slotDeleteContinent()
 {
   if (m_onu == 0) return;
+  if (!m_skinDefWidget->continentslist->currentItem()) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
   int answer = KMessageBox::warningContinueCancel(this, i18n("Do you really want to delete continent '%1'?", m_skinDefWidget->continentslist->currentItem()->text()), i18n("Really delete continent?"));
   if (answer == KMessageBox::Cancel)
@@ -1887,6 +1889,7 @@ void MainWindow::slotNewGoal()
 void MainWindow::slotDeleteGoal()
 {
   if (m_onu == 0) return;
+  if (!m_skinDefWidget->goalslist->currentItem()) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
   int answer = KMessageBox::warningContinueCancel(this, i18n("Do you really want to delete goal '%1'?", m_skinDefWidget->goalslist->currentItem()->text()), i18n("Really delete goal?"));
   if (answer == KMessageBox::Cancel)
@@ -1955,6 +1958,7 @@ void MainWindow::slotNewNationality()
 void MainWindow::slotDeleteNationality()
 {
   if (m_onu == 0) return;
+  if (!m_skinDefWidget->nationalitieslist->currentItem()) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
   int answer = KMessageBox::warningContinueCancel(this, i18n("Do you really want to delete nationality '%1'?", m_skinDefWidget->nationalitieslist->currentItem()->text()), i18n("Really delete nationality?"));
   if (answer == KMessageBox::Cancel)
@@ -2112,7 +2116,6 @@ void MainWindow::slotCavalryxValueChanged(int v)
     m_onu->setDirty();
   }
 }
-
 void MainWindow::slotCavalryyValueChanged(int v)
 {
   qCDebug(KSIRKSKINEDITOR_LOG);
