@@ -35,9 +35,9 @@ TcpConnectWidget::TcpConnectWidget(QWidget *parent) : QWidget(parent), Ui::TcpCo
   QRegExpValidator *v = new QRegExpValidator(rx, this);
   hostEdit->setValidator(v);
 
-  connect(nextButton,SIGNAL(clicked(bool)),this,SIGNAL(next()));
-  connect(previousButton,SIGNAL(clicked(bool)),this,SIGNAL(previous()));
-  connect(cancelButton,SIGNAL(clicked(bool)),this,SIGNAL(cancel()));
+  connect(nextButton,&QAbstractButton::clicked,this,&TcpConnectWidget::next);
+  connect(previousButton,&QAbstractButton::clicked,this,&TcpConnectWidget::previous);
+  connect(cancelButton,&QAbstractButton::clicked,this,&TcpConnectWidget::cancel);
 }
 
 TcpConnectWidget::~TcpConnectWidget()

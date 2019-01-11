@@ -34,9 +34,9 @@ Nationality::Nationality(const QString &myName, const QString &myFlag,
 void Nationality::saveXml(QTextStream& xmlStream)
 {
   QString name = m_name;
-  name = name.replace("&","&amp;");
-  name = name.replace("<","&lt;");
-  name = name.replace(">","&gt;");
+  name = name.replace(QLatin1String("&"),QLatin1String("&amp;"));
+  name = name.replace(QLatin1String("<"),QLatin1String("&lt;"));
+  name = name.replace(QLatin1String(">"),QLatin1String("&gt;"));
   xmlStream << "<nationality name=\"" << name << "\" flag=\"" << m_flagFileName << "\" />";
 }
 

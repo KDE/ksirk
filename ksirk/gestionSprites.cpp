@@ -111,7 +111,7 @@ bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *firstCount
     broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
     return false;
   }
-  connect(sprite,SIGNAL(atDestination(AnimSprite*)),this,SLOT(slotMovingArmyArrived(AnimSprite*)));
+  connect(sprite,&AnimSprite::atDestination,this,&KGameWindow::slotMovingArmyArrived);
   sprite->setupTravel(firstCountry, secondCountry);
   newGroup->addSprite(sprite);
   firstCountry-> createArmiesSprites();
@@ -1370,7 +1370,7 @@ void KGameWindow::initCombatBringBackForArena(Country *attackingCountry, Country
         newSprite-> setPos((start)+QPointF(leftRelativePos, flagYDiff));
     }
 
-    connect(newSprite,SIGNAL(atDestination(AnimSprite*)),this,SLOT(slotBring(AnimSprite*)));
+    connect(newSprite,&AnimSprite::atDestination,this,&KGameWindow::slotBring);
 
     QPointF dest;
     //int nbPos;
@@ -1448,7 +1448,7 @@ void KGameWindow::initCombatBringBackForArena(Country *attackingCountry, Country
           newSprite-> setPos((start)+QPointF(rightRelativePos,flagYDiff));
       }
 
-      connect(newSprite,SIGNAL(atDestination(AnimSprite*)),this,SLOT(slotBring(AnimSprite*)));
+      connect(newSprite,&AnimSprite::atDestination,this,&KGameWindow::slotBring);
 
     QPointF dest;
     //int nbPos;

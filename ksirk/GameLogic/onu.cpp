@@ -78,7 +78,7 @@ ONU::ONU(GameAutomaton* automaton,
   m_font.backgroundColor = "white";
   
   m_timerFast=new QTimer(this);		//instanciation of the timer
-  QObject::connect(m_timerFast,SIGNAL(timeout()), this, SLOT(changingZoom()));	//connect the timer to the good slot
+  QObject::connect(m_timerFast,&QTimer::timeout, this, &ONU::changingZoom);	//connect the timer to the good slot
   
   Sprites::SkinSpritesData::changeable().init();
 //   unsigned int nationalityId = 0;

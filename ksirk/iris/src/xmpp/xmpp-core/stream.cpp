@@ -228,11 +228,11 @@ ClientStream::ClientStream(Connector *conn, TLSHandler *tlsHandler, QObject *par
 	d = new Private;
 	d->mode = Client;
 	d->conn = conn;
-	connect(d->conn, SIGNAL(connected()), SLOT(cr_connected()));
-	connect(d->conn, SIGNAL(error()), SLOT(cr_error()));
+	connect(d->conn, &Connector::connected, this, &ClientStream::cr_connected);
+	connect(d->conn, &Connector::error, this, &ClientStream::cr_error);
 
 	d->noop_time = 0;
-	connect(&d->noopTimer, SIGNAL(timeout()), SLOT(doNoop()));
+	connect(&d->noopTimer, &QTimer::timeout, this, &ClientStream::doNoop);
 
 	d->tlsHandler = tlsHandler;
 }
@@ -243,18 +243,18 @@ ClientStream::ClientStream(const QString &host, const QString &defRealm, ByteStr
 	d = new Private;
 	d->mode = Server;
 	d->bs = bs;
-	connect(d->bs, SIGNAL(connectionClosed()), SLOT(bs_connectionClosed()));
-	connect(d->bs, SIGNAL(delayedCloseFinished()), SLOT(bs_delayedCloseFinished()));
-	connect(d->bs, SIGNAL(error(int)), SLOT(bs_error(int)));
+	connect(d->bs, &ByteStream::connectionClosed, this, &ClientStream::bs_connectionClosed);
+	connect(d->bs, &ByteStream::delayedCloseFinished, this, &ClientStream::bs_delayedCloseFinished);
+	connect(d->bs, &ByteStream::error, this, &ClientStream::bs_error);
 
 	QByteArray spare = d->bs->read();
 
 	d->ss = new SecureStream(d->bs);
-	connect(d->ss, SIGNAL(readyRead()), SLOT(ss_readyRead()));
-	connect(d->ss, SIGNAL(bytesWritten(int)), SLOT(ss_bytesWritten(int)));
-	connect(d->ss, SIGNAL(tlsHandshaken()), SLOT(ss_tlsHandshaken()));
-	connect(d->ss, SIGNAL(tlsClosed()), SLOT(ss_tlsClosed()));
-	connect(d->ss, SIGNAL(error(int)), SLOT(ss_error(int)));
+	connect(d->ss, &ByteStream::readyRead, this, &ClientStream::ss_readyRead);
+	connect(d->ss, &ByteStream::bytesWritten, this, &ClientStream::ss_bytesWritten);
+	connect(d->ss, &SecureStream::tlsHandshaken, this, &ClientStream::ss_tlsHandshaken);
+	connect(d->ss, &SecureStream::tlsClosed, this, &ClientStream::ss_tlsClosed);
+	connect(d->ss, &ByteStream::error, this, &ClientStream::ss_error);
 
 	d->server = host;
 	d->defRealm = defRealm;
@@ -561,17 +561,17 @@ void ClientStream::cr_connected()
 {
 	d->connectHost = d->conn->host();
 	d->bs = d->conn->stream();
-	connect(d->bs, SIGNAL(connectionClosed()), SLOT(bs_connectionClosed()));
-	connect(d->bs, SIGNAL(delayedCloseFinished()), SLOT(bs_delayedCloseFinished()));
+	connect(d->bs, &ByteStream::connectionClosed, this, &ClientStream::bs_connectionClosed);
+	connect(d->bs, &ByteStream::delayedCloseFinished, this, &ClientStream::bs_delayedCloseFinished);
 
 	QByteArray spare = d->bs->read();
 
 	d->ss = new SecureStream(d->bs);
-	connect(d->ss, SIGNAL(readyRead()), SLOT(ss_readyRead()));
-	connect(d->ss, SIGNAL(bytesWritten(int)), SLOT(ss_bytesWritten(int)));
-	connect(d->ss, SIGNAL(tlsHandshaken()), SLOT(ss_tlsHandshaken()));
-	connect(d->ss, SIGNAL(tlsClosed()), SLOT(ss_tlsClosed()));
-	connect(d->ss, SIGNAL(error(int)), SLOT(ss_error(int)));
+	connect(d->ss, &ByteStream::readyRead, this, &ClientStream::ss_readyRead);
+	connect(d->ss, &ByteStream::bytesWritten, this, &ClientStream::ss_bytesWritten);
+	connect(d->ss, &SecureStream::tlsHandshaken, this, &ClientStream::ss_tlsHandshaken);
+	connect(d->ss, &SecureStream::tlsClosed, this, &ClientStream::ss_tlsClosed);
+	connect(d->ss, &ByteStream::error, this, &ClientStream::ss_error);
 
 	//d->client.startDialbackOut("andbit.net", "im.pyxa.org");
 	//d->client.startServerOut(d->server);
@@ -785,10 +785,10 @@ void ClientStream::srvProcessNext()
 			else if(need == CoreProtocol::NSASLMechs) {
 				if(!d->sasl) {
 					d->sasl = new QCA::SASL;
-					connect(d->sasl, SIGNAL(authCheck(QString,QString)), SLOT(sasl_authCheck(QString,QString)));
-					connect(d->sasl, SIGNAL(nextStep(QByteArray)), SLOT(sasl_nextStep(QByteArray)));
-					connect(d->sasl, SIGNAL(authenticated()), SLOT(sasl_authenticated()));
-					connect(d->sasl, SIGNAL(error()), SLOT(sasl_error()));
+					connect(d->sasl, &QCA::SASL::authCheck, this, &ClientStream::sasl_authCheck);
+					connect(d->sasl, &QCA::SASL::nextStep, this, &ClientStream::sasl_nextStep);
+					connect(d->sasl, &QCA::SASL::authenticated, this, &ClientStream::sasl_authenticated);
+					connect(d->sasl, &QCA::SecureLayer::error, this, &ClientStream::sasl_error);
 
 					//d->sasl->setAllowAnonymous(false);
 					//d->sasl->setRequirePassCredentials(true);
@@ -870,7 +870,7 @@ void ClientStream::srvProcessNext()
 			}
 			case CoreProtocol::ESASLSuccess: {
 				printf("Break SASL Success\n");
-				disconnect(d->sasl, SIGNAL(error()), this, SLOT(sasl_error()));
+				disconnect(d->sasl, &QCA::SecureLayer::error, this, &ClientStream::sasl_error);
 				QByteArray a = d->srv.spare;
 				d->ss->setLayerSASL(d->sasl, a);
 				break;
@@ -936,7 +936,7 @@ void ClientStream::processNext()
 			//if(!d->in_rrsig && !d->in.isEmpty()) {
 			if(!d->in.isEmpty()) {
 				//d->in_rrsig = true;
-				QTimer::singleShot(0, this, SLOT(doReadyRead()));
+				QTimer::singleShot(0, this, &ClientStream::doReadyRead);
 			}
 
 			if(cont)
@@ -1104,11 +1104,11 @@ bool ClientStream::handleNeed()
 			}
 
 			d->sasl = new QCA::SASL();
-			connect(d->sasl, SIGNAL(clientStarted(bool,QByteArray)), SLOT(sasl_clientFirstStep(bool,QByteArray)));
-			connect(d->sasl, SIGNAL(nextStep(QByteArray)), SLOT(sasl_nextStep(QByteArray)));
-			connect(d->sasl, SIGNAL(needParams(QCA::SASL::Params)), SLOT(sasl_needParams(QCA::SASL::Params)));
-			connect(d->sasl, SIGNAL(authenticated()), SLOT(sasl_authenticated()));
-			connect(d->sasl, SIGNAL(error()), SLOT(sasl_error()));
+			connect(d->sasl, &QCA::SASL::clientStarted, this, &ClientStream::sasl_clientFirstStep);
+			connect(d->sasl, &QCA::SASL::nextStep, this, &ClientStream::sasl_nextStep);
+			connect(d->sasl, &QCA::SASL::needParams, this, &ClientStream::sasl_needParams);
+			connect(d->sasl, &QCA::SASL::authenticated, this, &ClientStream::sasl_authenticated);
+			connect(d->sasl, &QCA::SecureLayer::error, this, &ClientStream::sasl_error);
 
 			if(d->haveLocalAddr)
 				d->sasl->setLocalAddress(d->localAddr.toString(), d->localPort);
@@ -1151,7 +1151,7 @@ bool ClientStream::handleNeed()
 		}
 		case CoreProtocol::NSASLLayer: {
 			// SecureStream will handle the errors from this point
-			disconnect(d->sasl, SIGNAL(error()), this, SLOT(sasl_error()));
+			disconnect(d->sasl, &QCA::SecureLayer::error, this, &ClientStream::sasl_error);
 			d->ss->setLayerSASL(d->sasl, d->client.spare);
 			if(d->sasl_ssf > 0) {
 				QPointer<QObject> self = this;

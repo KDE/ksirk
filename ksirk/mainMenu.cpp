@@ -44,12 +44,12 @@ mainMenu::mainMenu(Ksirk::KGameWindow* game, QWidget* parent) : QWidget(parent)
   lImage1->setPixmap(imag1.scaled(100,100,Qt::KeepAspectRatioByExpanding));
   lImage2->setPixmap(imag2.scaled(100,100,Qt::KeepAspectRatioByExpanding));
 
-  connect(pbNewGame, SIGNAL(clicked()), game, SLOT(slotNewGame()));
-  connect(pbJabberGame, SIGNAL(clicked()), game, SLOT(slotJabberGame()));
-  connect(pbNewSocketGame, SIGNAL(clicked()), game, SLOT(slotNewSocketGame()));
-  connect(pbJoin, SIGNAL(clicked()), game, SLOT(slotJoinNetworkGame()));
-  connect(pbLoad, SIGNAL(clicked()), game, SLOT(slotOpenGame()));
-  connect(pbQuit, SIGNAL(clicked()), game, SLOT(close()));
+  connect(pbNewGame, &QAbstractButton::clicked, game, &Ksirk::KGameWindow::slotNewGame);
+  connect(pbJabberGame, &QAbstractButton::clicked, game, &Ksirk::KGameWindow::slotJabberGame);
+  connect(pbNewSocketGame, &QAbstractButton::clicked, game, &Ksirk::KGameWindow::slotNewSocketGame);
+  connect(pbJoin, &QAbstractButton::clicked, game, &Ksirk::KGameWindow::slotJoinNetworkGame);
+  connect(pbLoad, &QAbstractButton::clicked, game, &Ksirk::KGameWindow::slotOpenGame);
+  connect(pbQuit, &QAbstractButton::clicked, game, &QWidget::close);
 }
 
 void mainMenu::init(Ksirk::GameLogic::ONU* /*theWorld*/)

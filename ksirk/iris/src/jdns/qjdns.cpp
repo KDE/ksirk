@@ -49,7 +49,7 @@ public:
 		QObject(parent)
 	{
 		t = new QTimer(this);
-		connect(t, SIGNAL(timeout()), SIGNAL(timeout()));
+		connect(t, &QTimer::timeout, this, &SafeTimer::timeout);
 	}
 
 	~SafeTimer()
@@ -343,13 +343,13 @@ public:
 		new_debug_strings = false;
 		pending = 0;
 
-		connect(&stepTrigger, SIGNAL(timeout()), SLOT(doNextStepSlot()));
+		connect(&stepTrigger, &SafeTimer::timeout, this, &Private::doNextStepSlot);
 		stepTrigger.setSingleShot(true);
 
-		connect(&debugTrigger, SIGNAL(timeout()), SLOT(doDebug()));
+		connect(&debugTrigger, &SafeTimer::timeout, this, &Private::doDebug);
 		debugTrigger.setSingleShot(true);
 
-		connect(&stepTimeout, SIGNAL(timeout()), SLOT(st_timeout()));
+		connect(&stepTimeout, &SafeTimer::timeout, this, &Private::st_timeout);
 		stepTimeout.setSingleShot(true);
 
 		my_srand();
@@ -731,11 +731,11 @@ private:
 		QHostAddress host = addr2qt(addr);
 
 		QUdpSocket *sock = new QUdpSocket(self);
-		self->connect(sock, SIGNAL(readyRead()), SLOT(udp_readyRead()));
+		self->connect(sock, &QIODevice::readyRead, self, &Private::udp_readyRead);
 
 		// use queued for bytesWritten, since qt is evil and emits before writeDatagram returns
 		qRegisterMetaType<qint64>("qint64");
-		self->connect(sock, SIGNAL(bytesWritten(qint64)), SLOT(udp_bytesWritten(qint64)), Qt::QueuedConnection);
+		self->connect(sock, &QIODevice::bytesWritten, self, &Private::udp_bytesWritten, Qt::QueuedConnection);
 
 		QUdpSocket::BindMode mode;
 		mode |= QUdpSocket::ShareAddress;
@@ -760,7 +760,7 @@ private:
 			{
 				delete sock;
 
-				self->debug_strings += QString("failed to setup multicast on the socket (errorCode=%1)").arg(errorCode);
+				self->debug_strings += QStringLiteral("failed to setup multicast on the socket (errorCode=%1)").arg(errorCode);
 				self->processDebug();
 				return 0;
 			}

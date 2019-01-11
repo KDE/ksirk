@@ -47,10 +47,10 @@ NewGameWidget::NewGameWidget(NewGameSetup* newGameSetup, QWidget *parent) :
   qCDebug(KSIRK_LOG);
   setupUi(this);
   
-  QObject::connect(nextButton, SIGNAL(clicked()), this, SLOT(slotOK()) );
-  QObject::connect(cancelButton, SIGNAL(clicked()), this, SLOT(slotCancel()) );
+  QObject::connect(nextButton, &QAbstractButton::clicked, this, &NewGameWidget::slotOK );
+  QObject::connect(cancelButton, &QAbstractButton::clicked, this, &NewGameWidget::slotCancel );
   QObject::connect(skinCombo, SIGNAL(activated(int)), this, SLOT(slotSkinChanged(int)) );
-  QObject::connect(ghnsbutton, SIGNAL(clicked()), this, SLOT(slotGHNS()) );
+  QObject::connect(ghnsbutton, &QAbstractButton::clicked, this, &NewGameWidget::slotGHNS );
   QObject::connect(tcpPortEntry,SIGNAL(valueChanged(int)),this, SLOT(slotTcpPortEdited(int)));
 }
 

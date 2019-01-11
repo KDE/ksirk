@@ -58,7 +58,7 @@ public:
 		QObject(parent)
 	{
 		sn = new QSocketNotifier(socket, type, this);
-		connect(sn, SIGNAL(activated(int)), SIGNAL(activated(int)));
+		connect(sn, &QSocketNotifier::activated, this, &SafeSocketNotifier::activated);
 	}
 
 	~SafeSocketNotifier()
@@ -127,7 +127,7 @@ public:
 #ifdef Q_OS_UNIX
 		pipe(sig_pipe);
 		sig_notifier = new SafeSocketNotifier(sig_pipe[0], QSocketNotifier::Read, this);
-		connect(sig_notifier, SIGNAL(activated(int)), SLOT(sig_activated(int)));
+		connect(sig_notifier, &SafeSocketNotifier::activated, this, &Private::sig_activated);
 		unixWatchAdd(SIGINT);
 		unixWatchAdd(SIGHUP);
 		unixWatchAdd(SIGTERM);

@@ -330,7 +330,7 @@ void JT_UnRegister::onGo()
 
 	d->jt_reg = new JT_Register(this);
 	d->jt_reg->getForm(d->j);
-	connect(d->jt_reg, SIGNAL(finished()), SLOT(getFormFinished()));
+	connect(d->jt_reg, &Task::finished, this, &JT_UnRegister::getFormFinished);
 	d->jt_reg->go(false);
 }
 
@@ -339,7 +339,7 @@ void JT_UnRegister::getFormFinished()
 	disconnect(d->jt_reg, 0, this, 0);
 
 	d->jt_reg->unreg(d->j);
-	connect(d->jt_reg, SIGNAL(finished()), SLOT(unregFinished()));
+	connect(d->jt_reg, &Task::finished, this, &JT_UnRegister::unregFinished);
 	d->jt_reg->go(false);
 }
 

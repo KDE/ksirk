@@ -14,7 +14,7 @@ ZLibCompressor::ZLibCompressor(QIODevice* device, int compression) : device_(dev
 	int result = deflateInit(zlib_stream_, compression);
 	Q_ASSERT(result == Z_OK);
 	Q_UNUSED(result);
-	connect(device, SIGNAL(aboutToClose()), this, SLOT(flush()));
+	connect(device, &QIODevice::aboutToClose, this, &ZLibCompressor::flush);
 	flushed_ = false;
 }
 

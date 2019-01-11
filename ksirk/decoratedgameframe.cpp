@@ -99,14 +99,14 @@ void DecoratedGameFrame::initMenu ()
   QAction* zoomOutAction = KStandardAction::zoomOut(m_automaton->game(), SLOT(slotZoomOut()), this);
 
   nextPlayer =   new QAction(i18n("Next Player"), this);
-  connect(nextPlayer, SIGNAL(triggered()), m_automaton->game(), SLOT(slotNextPlayer()));
+  connect(nextPlayer, &QAction::triggered, m_automaton->game(), &KGameWindow::slotNextPlayer);
 
   detailsAction = new QAction(i18n("Details"), this);
-  connect(detailsAction, SIGNAL(triggered()), this, SLOT(slotDetails()));
+  connect(detailsAction, &QAction::triggered, this, &DecoratedGameFrame::slotDetails);
 
   goalAction = new QAction(QIcon(), i18n("Goal"), this);
   goalAction->setShortcut(Qt::CTRL+Qt::Key_G);
-  connect(goalAction,SIGNAL(triggered(bool)),m_automaton->game(),SLOT(slotShowGoal()));
+  connect(goalAction,&QAction::triggered,m_automaton->game(),&KGameWindow::slotShowGoal);
  
   menu->addAction(newAction);
   menu->addAction(openAction);
@@ -137,20 +137,20 @@ void DecoratedGameFrame::initAttackMenu ()
     attackMenu = new QMenu(this);
 
     m_arenaAction = new ArenaAction(i18n("Enable Arena"), this);
-    connect(m_arenaAction, SIGNAL(triggered()), this, SLOT(arenaState()));
-    connect(this, SIGNAL(arenaStateSignal(bool)), m_automaton->game(), SLOT(slotArena(bool)));
+    connect(m_arenaAction, &QAction::triggered, this, &DecoratedGameFrame::arenaState);
+    connect(this, &DecoratedGameFrame::arenaStateSignal, m_automaton->game(), &KGameWindow::slotArena);
     
     Attack1Action = new QAction(i18n("Attack 1"), this);
-    connect(Attack1Action, SIGNAL(triggered()), m_automaton->game(), SLOT(slotAttack1()));
+    connect(Attack1Action, &QAction::triggered, m_automaton->game(), &KGameWindow::slotAttack1);
 
     Attack2Action = new QAction(i18n("Attack 2"), this);
-    connect(Attack2Action, SIGNAL(triggered()), m_automaton->game(), SLOT(slotAttack2()));
+    connect(Attack2Action, &QAction::triggered, m_automaton->game(), &KGameWindow::slotAttack2);
 
     Attack3Action = new QAction(i18n("Attack 3"), this);
-    connect(Attack3Action, SIGNAL(triggered()), m_automaton->game(), SLOT(slotAttack3()));
+    connect(Attack3Action, &QAction::triggered, m_automaton->game(), &KGameWindow::slotAttack3);
 
     AutoAction = new QAction(i18n("Auto attack"), this);
-    connect(AutoAction, SIGNAL(triggered()), this, SLOT(attackAuto()));
+    connect(AutoAction, &QAction::triggered, this, &DecoratedGameFrame::attackAuto);
 
     attackMenu->addAction(AutoAction);
     attackMenu->addSeparator();  
@@ -168,13 +168,13 @@ void DecoratedGameFrame::initMoveMenu ()
     moveMenu = new QMenu(this);
 
     Move1Action = new QAction(i18n("Move 1"), this);
-    connect(Move1Action, SIGNAL(triggered()),m_automaton->game(), SLOT(slotInvade1()));
+    connect(Move1Action, &QAction::triggered,m_automaton->game(), &KGameWindow::slotInvade1);
 
     Move5Action = new QAction(i18n("Move 5"), this);
-    connect(Move5Action, SIGNAL(triggered()),m_automaton->game(), SLOT(slotInvade5()));
+    connect(Move5Action, &QAction::triggered,m_automaton->game(), &KGameWindow::slotInvade5);
 
     Move10Action = new QAction(i18n("Move 10"), this);
-    connect(Move10Action, SIGNAL(triggered()),m_automaton->game(), SLOT(slotInvade10()));
+    connect(Move10Action, &QAction::triggered,m_automaton->game(), &KGameWindow::slotInvade10);
   
     moveMenu->addAction(Move1Action);
     moveMenu->addAction(Move5Action);

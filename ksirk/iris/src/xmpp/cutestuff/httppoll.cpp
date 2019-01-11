@@ -92,10 +92,10 @@ HttpPoll::HttpPoll(QObject *parent)
 	d->polltime = 30;
 	d->t = new QTimer;
   d->t->setSingleShot(true);
-	connect(d->t, SIGNAL(timeout()), SLOT(do_sync()));
+	connect(d->t, &QTimer::timeout, this, &HttpPoll::do_sync);
 
-	connect(&d->http, SIGNAL(result()), SLOT(http_result()));
-	connect(&d->http, SIGNAL(error(int)), SLOT(http_error(int)));
+	connect(&d->http, &HttpProxyPost::result, this, &HttpPoll::http_result);
+	connect(&d->http, &HttpProxyPost::error, this, &HttpPoll::http_error);
 
 	reset(true);
 }
@@ -421,7 +421,7 @@ static bool extractMainHeader(const QString &line, QString *proto, int *code, QS
 	if(n2 == -1)
 		return false;
 	if(code)
-		*code = line.mid(n, n2-n).toInt();
+		*code = line.midRef(n, n2-n).toInt();
 	n = n2+1;
 	if(msg)
 		*msg = line.mid(n);
@@ -447,10 +447,10 @@ HttpProxyPost::HttpProxyPost(QObject *parent)
 :QObject(parent)
 {
 	d = new Private;
-	connect(&d->sock, SIGNAL(connected()), SLOT(sock_connected()));
-	connect(&d->sock, SIGNAL(connectionClosed()), SLOT(sock_connectionClosed()));
-	connect(&d->sock, SIGNAL(readyRead()), SLOT(sock_readyRead()));
-	connect(&d->sock, SIGNAL(error(int)), SLOT(sock_error(int)));
+	connect(&d->sock, &BSocket::connected, this, &HttpProxyPost::sock_connected);
+	connect(&d->sock, &ByteStream::connectionClosed, this, &HttpProxyPost::sock_connectionClosed);
+	connect(&d->sock, &ByteStream::readyRead, this, &HttpProxyPost::sock_readyRead);
+	connect(&d->sock, &ByteStream::error, this, &HttpProxyPost::sock_error);
 	reset(true);
 }
 
@@ -689,10 +689,10 @@ HttpProxyGetStream::HttpProxyGetStream(QObject *parent)
 {
 	d = new Private;
 	d->tls = 0;
-	connect(&d->sock, SIGNAL(connected()), SLOT(sock_connected()));
-	connect(&d->sock, SIGNAL(connectionClosed()), SLOT(sock_connectionClosed()));
-	connect(&d->sock, SIGNAL(readyRead()), SLOT(sock_readyRead()));
-	connect(&d->sock, SIGNAL(error(int)), SLOT(sock_error(int)));
+	connect(&d->sock, &BSocket::connected, this, &HttpProxyGetStream::sock_connected);
+	connect(&d->sock, &ByteStream::connectionClosed, this, &HttpProxyGetStream::sock_connectionClosed);
+	connect(&d->sock, &ByteStream::readyRead, this, &HttpProxyGetStream::sock_readyRead);
+	connect(&d->sock, &ByteStream::error, this, &HttpProxyGetStream::sock_error);
 	reset(true);
 }
 
@@ -777,9 +777,9 @@ void HttpProxyGetStream::sock_connected()
 #endif
 	if(d->use_ssl) {
 		d->tls = new QCA::TLS;
-		connect(d->tls, SIGNAL(readyRead()), SLOT(tls_readyRead()));
-		connect(d->tls, SIGNAL(readyReadOutgoing()), SLOT(tls_readyReadOutgoing()));
-		connect(d->tls, SIGNAL(error()), SLOT(tls_error()));
+		connect(d->tls, &QCA::SecureLayer::readyRead, this, &HttpProxyGetStream::tls_readyRead);
+		connect(d->tls, &QCA::SecureLayer::readyReadOutgoing, this, &HttpProxyGetStream::tls_readyReadOutgoing);
+		connect(d->tls, &QCA::SecureLayer::error, this, &HttpProxyGetStream::tls_error);
 		d->tls->startClient();
 	}
 

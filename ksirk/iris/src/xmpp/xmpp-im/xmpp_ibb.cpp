@@ -111,7 +111,7 @@ void IBBConnection::connectToJid(const Jid &peer, const QDomElement &comment)
 	d->m->client()->debug(dstr);
 
 	d->j = new JT_IBB(d->m->client()->rootTask());
-	connect(d->j, SIGNAL(finished()), SLOT(ibb_finished()));
+	connect(d->j, &Task::finished, this, &IBBConnection::ibb_finished);
 	d->j->request(d->peer, comment);
 	d->j->go(true);
 }
@@ -271,7 +271,7 @@ void IBBConnection::ibb_finished()
 			}
 
 			if(!d->sendbuf.isEmpty() || d->closePending)
-				QTimer::singleShot(IBB_PACKET_DELAY, this, SLOT(trySend()));
+				QTimer::singleShot(IBB_PACKET_DELAY, this, &IBBConnection::trySend);
 		}
 	}
 	else {
@@ -327,7 +327,7 @@ void IBBConnection::trySend()
 
 	d->blockSize = a.size();
 	d->j = new JT_IBB(d->m->client()->rootTask());
-	connect(d->j, SIGNAL(finished()), SLOT(ibb_finished()));
+	connect(d->j, &Task::finished, this, &IBBConnection::ibb_finished);
 	d->j->sendData(d->peer, d->sid, a, doClose);
 	d->j->go(true);
 }
@@ -354,8 +354,8 @@ IBBManager::IBBManager(Client *parent)
 	d->client = parent;
 	
 	d->ibb = new JT_IBB(d->client->rootTask(), true);
-	connect(d->ibb, SIGNAL(incomingRequest(Jid,QString,QDomElement)), SLOT(ibb_incomingRequest(Jid,QString,QDomElement)));
-	connect(d->ibb, SIGNAL(incomingData(Jid,QString,QString,QByteArray,bool)), SLOT(ibb_incomingData(Jid,QString,QString,QByteArray,bool)));
+	connect(d->ibb, &JT_IBB::incomingRequest, this, &IBBManager::ibb_incomingRequest);
+	connect(d->ibb, &JT_IBB::incomingData, this, &IBBManager::ibb_incomingData);
 }
 
 IBBManager::~IBBManager()

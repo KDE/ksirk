@@ -27,9 +27,9 @@ void CompressionHandler::writeIncoming(const QByteArray& a)
 	//qDebug() << (QString("Incoming %1 bytes").arg(a.size()).toLatin1());
 	errorCode_ = decompressor_->write(a);
 	if (!errorCode_) 
-		QTimer::singleShot(0, this, SIGNAL(readyRead()));
+		QTimer::singleShot(0, this, &CompressionHandler::readyRead);
 	else
-		QTimer::singleShot(0, this, SIGNAL(error()));
+		QTimer::singleShot(0, this, &CompressionHandler::error);
 }
 
 void CompressionHandler::write(const QByteArray& a)
@@ -37,9 +37,9 @@ void CompressionHandler::write(const QByteArray& a)
 	//qDebug() << (QString("CompressionHandler::write(%1)").arg(a.size()).toLatin1());
 	errorCode_ = compressor_->write(a);
 	if (!errorCode_)
-		QTimer::singleShot(0, this, SIGNAL(readyReadOutgoing()));
+		QTimer::singleShot(0, this, &CompressionHandler::readyReadOutgoing);
 	else
-		QTimer::singleShot(0, this, SIGNAL(error()));
+		QTimer::singleShot(0, this, &CompressionHandler::error);
 }
 
 QByteArray CompressionHandler::read()

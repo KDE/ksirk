@@ -258,10 +258,10 @@ public:
 		qRegisterMetaType<ServiceResolver::Error>();
 		qRegisterMetaType<ServiceLocalPublisher::Error>();
 
-		connect(&db, SIGNAL(readyRead()), SLOT(jdns_debugReady()));
+		connect(&db, &JDnsSharedDebug::readyRead, this, &JDnsGlobal::jdns_debugReady);
 
 		updateTimer = new QTimer(this);
-		connect(updateTimer, SIGNAL(timeout()), SLOT(doUpdateMulticastInterfaces()));
+		connect(updateTimer, &QTimer::timeout, this, &JDnsGlobal::doUpdateMulticastInterfaces);
 		updateTimer->setSingleShot(true);
 	}
 
@@ -293,7 +293,7 @@ public:
 		if(!uni_net)
 		{
 			uni_net = new JDnsShared(JDnsShared::UnicastInternet, this);
-			uni_net->setDebug(&db, "U");
+			uni_net->setDebug(&db, QStringLiteral("U"));
 			bool ok4 = uni_net->addInterface(QHostAddress::Any);
 			bool ok6 = uni_net->addInterface(QHostAddress::AnyIPv6);
 			if(!ok4 && !ok6)
@@ -310,7 +310,7 @@ public:
 		if(!uni_local)
 		{
 			uni_local = new JDnsShared(JDnsShared::UnicastLocal, this);
-			uni_local->setDebug(&db, "L");
+			uni_local->setDebug(&db, QStringLiteral("L"));
 			bool ok4 = uni_local->addInterface(QHostAddress::Any);
 			bool ok6 = uni_local->addInterface(QHostAddress::AnyIPv6);
 			if(!ok4 && !ok6)
@@ -327,9 +327,9 @@ public:
 		if(!mul)
 		{
 			mul = new JDnsShared(JDnsShared::Multicast, this);
-			mul->setDebug(&db, "M");
+			mul->setDebug(&db, QStringLiteral("M"));
 
-			connect(&netman, SIGNAL(interfaceAvailable(QString)), SLOT(iface_available(QString)));
+			connect(&netman, &NetInterfaceManager::interfaceAvailable, this, &JDnsGlobal::iface_available);
 
 			// get the current network interfaces.  this initial
 			//   fetching should not trigger any calls to
@@ -338,7 +338,7 @@ public:
 			foreach(const QString &id, netman.interfaces())
 			{
 				NetInterface *iface = new NetInterface(id, &netman);
-				connect(iface, SIGNAL(unavailable()), SLOT(iface_unavailable()));
+				connect(iface, &NetInterface::unavailable, this, &JDnsGlobal::iface_unavailable);
 				ifaces += iface;
 			}
 
@@ -375,7 +375,7 @@ private slots:
 	void iface_available(const QString &id)
 	{
 		NetInterface *iface = new NetInterface(id, &netman);
-		connect(iface, SIGNAL(unavailable()), SLOT(iface_unavailable()));
+		connect(iface, &NetInterface::unavailable, this, &JDnsGlobal::iface_unavailable);
 		ifaces += iface;
 
 		updateTimer->start(100);
@@ -582,7 +582,7 @@ public:
 			Item *i = new Item(this);
 			i->id = idman.reserveId();
 			i->req = new JDnsSharedRequest(global->uni_net);
-			connect(i->req, SIGNAL(resultsReady()), SLOT(req_resultsReady()));
+			connect(i->req, &JDnsSharedRequest::resultsReady, this, &JDnsNameProvider::req_resultsReady);
 			i->type = qType;
 			i->longLived = false;
 			items += i;
@@ -612,7 +612,7 @@ public:
 				i->req = new JDnsSharedRequest(global->uni_local);
 				i->longLived = false;
 			}
-			connect(i->req, SIGNAL(resultsReady()), SLOT(req_resultsReady()));
+			connect(i->req, &JDnsSharedRequest::resultsReady, this, &JDnsNameProvider::req_resultsReady);
 			items += i;
 			i->req->query(name, qType);
 			return i->id;
@@ -766,7 +766,7 @@ public:
 		QObject(parent),
 		req(_jdns, this)
 	{
-		connect(&req, SIGNAL(resultsReady()), SLOT(jdns_resultsReady()));
+		connect(&req, &JDnsSharedRequest::resultsReady, this, &JDnsBrowse::jdns_resultsReady);
 	}
 
 	void start(const QByteArray &_type)
@@ -867,12 +867,12 @@ public:
 		req(_jdns, this),
 		req6(_jdns, this)
 	{
-		connect(&reqtxt, SIGNAL(resultsReady()), SLOT(reqtxt_ready()));
-		connect(&req, SIGNAL(resultsReady()), SLOT(req_ready()));
-		connect(&req6, SIGNAL(resultsReady()), SLOT(req6_ready()));
+		connect(&reqtxt, &JDnsSharedRequest::resultsReady, this, &JDnsServiceResolve::reqtxt_ready);
+		connect(&req, &JDnsSharedRequest::resultsReady, this, &JDnsServiceResolve::req_ready);
+		connect(&req6, &JDnsSharedRequest::resultsReady, this, &JDnsServiceResolve::req6_ready);
 
 		opTimer = new QTimer(this);
-		connect(opTimer, SIGNAL(timeout()), SLOT(op_timeout()));
+		connect(opTimer, &QTimer::timeout, this, &JDnsServiceResolve::op_timeout);
 		opTimer->setSingleShot(true);
 	}
 
@@ -1088,8 +1088,8 @@ public:
 		pub_addr(_jdns, this),
 		pub_ptr(_jdns, this)
 	{
-		connect(&pub_addr, SIGNAL(resultsReady()), SLOT(pub_addr_ready()));
-		connect(&pub_ptr, SIGNAL(resultsReady()), SLOT(pub_ptr_ready()));
+		connect(&pub_addr, &JDnsSharedRequest::resultsReady, this, &JDnsPublishAddress::pub_addr_ready);
+		connect(&pub_ptr, &JDnsSharedRequest::resultsReady, this, &JDnsPublishAddress::pub_ptr_ready);
 	}
 
 	void start(Type _type, const QByteArray &_host)
@@ -1199,8 +1199,8 @@ public:
 		pub4(_jdns, this),
 		sess(this)
 	{
-		connect(&pub6, SIGNAL(resultsReady()), SLOT(pub6_ready()));
-		connect(&pub4, SIGNAL(resultsReady()), SLOT(pub4_ready()));
+		connect(&pub6, &JDnsPublishAddress::resultsReady, this, &JDnsPublishAddresses::pub6_ready);
+		connect(&pub4, &JDnsPublishAddress::resultsReady, this, &JDnsPublishAddresses::pub4_ready);
 	}
 
 	void start()
@@ -1298,7 +1298,7 @@ private:
 	{
 		QString me = QHostInfo::localHostName();
 		if(counter > 1)
-			me += QString("-%1").arg(counter);
+			me += QStringLiteral("-%1").arg(counter);
 
 		host = escapeDomainPart(me.toUtf8()) + ".local.";
 
@@ -1472,9 +1472,9 @@ public:
 		pub_txt(_jdns, this),
 		pub_ptr(_jdns, this)
 	{
-		connect(&pub_srv, SIGNAL(resultsReady()), SLOT(pub_srv_ready()));
-		connect(&pub_txt, SIGNAL(resultsReady()), SLOT(pub_txt_ready()));
-		connect(&pub_ptr, SIGNAL(resultsReady()), SLOT(pub_ptr_ready()));
+		connect(&pub_srv, &JDnsSharedRequest::resultsReady, this, &JDnsPublish::pub_srv_ready);
+		connect(&pub_txt, &JDnsSharedRequest::resultsReady, this, &JDnsPublish::pub_txt_ready);
+		connect(&pub_ptr, &JDnsSharedRequest::resultsReady, this, &JDnsPublish::pub_ptr_ready);
 	}
 
 	~JDnsPublish()
@@ -1656,7 +1656,7 @@ private:
 	{
 		Q_ASSERT(!extraList.contains(extra));
 
-		connect(&extra->pub, SIGNAL(resultsReady()), SLOT(pub_extra_ready()));
+		connect(&extra->pub, &JDnsSharedRequest::resultsReady, this, &JDnsPublish::pub_extra_ready);
 		extraList += extra;
 
 		// defer publishing until SRV is ready
@@ -2140,7 +2140,7 @@ public:
 		pub_addresses(0)
 	{
 		global = _global;
-		connect(global, SIGNAL(interfacesChanged()), SLOT(interfacesChanged()));
+		connect(global, &JDnsGlobal::interfacesChanged, this, &JDnsServiceProvider::interfacesChanged);
 	}
 
 	~JDnsServiceProvider()
@@ -2152,8 +2152,8 @@ public:
 	virtual int browse_start(const QString &_type, const QString &_domain)
 	{
 		QString domain;
-		if(_domain.isEmpty() || _domain == ".")
-			domain = "local.";
+		if(_domain.isEmpty() || _domain == QLatin1String("."))
+			domain = QLatin1String("local.");
 		else
 			domain = _domain;
 
@@ -2165,7 +2165,7 @@ public:
 		int id = browseItemList.reserveId();
 
 		// no support for non-local domains
-		if(domain != "local.")
+		if(domain != QLatin1String("local."))
 		{
 			BrowseItem *i = new BrowseItem(id, 0);
 			i->sess = new ObjectSession(this);
@@ -2197,8 +2197,8 @@ public:
 		}
 
 		BrowseItem *i = new BrowseItem(id, new JDnsBrowse(global->mul, this));
-		connect(i->browse, SIGNAL(available(QByteArray)), SLOT(jb_available(QByteArray)));
-		connect(i->browse, SIGNAL(unavailable(QByteArray)), SLOT(jb_unavailable(QByteArray)));
+		connect(i->browse, &JDnsBrowse::available, this, &JDnsServiceProvider::jb_available);
+		connect(i->browse, &JDnsBrowse::unavailable, this, &JDnsServiceProvider::jb_unavailable);
 		browseItemList.insert(i);
 		i->browse->start(type);
 		return i->id;
@@ -2227,8 +2227,8 @@ public:
 		}
 
 		ResolveItem *i = new ResolveItem(id, new JDnsServiceResolve(global->mul, this));
-		connect(i->resolve, SIGNAL(finished()), SLOT(jr_finished()));
-		connect(i->resolve, SIGNAL(error(JDnsSharedRequest::Error)), SLOT(jr_error(JDnsSharedRequest::Error)));
+		connect(i->resolve, &JDnsServiceResolve::finished, this, &JDnsServiceProvider::jr_finished);
+		connect(i->resolve, &JDnsServiceResolve::error, this, &JDnsServiceProvider::jr_error);
 		resolveItemList.insert(i);
 		i->resolve->start(name);
 		return i->id;
@@ -2271,7 +2271,7 @@ public:
 		if(!pub_addresses)
 		{
 			pub_addresses = new JDnsPublishAddresses(global->mul, this);
-			connect(pub_addresses, SIGNAL(hostName(QByteArray)), SLOT(pub_addresses_hostName(QByteArray)));
+			connect(pub_addresses, &JDnsPublishAddresses::hostName, this, &JDnsServiceProvider::pub_addresses_hostName);
 			pub_addresses->setUseIPv6(global->haveMulticast6());
 			pub_addresses->setUseIPv4(global->haveMulticast4());
 			pub_addresses->start();
@@ -2281,8 +2281,8 @@ public:
 		//   hasn't succeeded yet.  JDnsPublish is smart enough to
 		//   defer the operation until a host is acquired.
 		PublishItem *i = new PublishItem(id, new JDnsPublish(global->mul, this));
-		connect(i->publish, SIGNAL(published()), SLOT(jp_published()));
-		connect(i->publish, SIGNAL(error(JDnsSharedRequest::Error)), SLOT(jp_error(JDnsSharedRequest::Error)));
+		connect(i->publish, &JDnsPublish::published, this, &JDnsServiceProvider::jp_published);
+		connect(i->publish, &JDnsPublish::error, this, &JDnsServiceProvider::jp_error);
 		publishItemList.insert(i);
 		i->publish->start(instance, type, localHost, port, attributes);
 		return i->id;
@@ -2336,8 +2336,8 @@ public:
 			rec.ttl = 4500;
 
 		PublishExtraItem *i = new PublishExtraItem(id, new JDnsPublishExtra(pi->publish));
-		connect(i->publish, SIGNAL(published()), SLOT(jpe_published()));
-		connect(i->publish, SIGNAL(error(JDnsSharedRequest::Error)), SLOT(jpe_error(JDnsSharedRequest::Error)));
+		connect(i->publish, &JDnsPublishExtra::published, this, &JDnsServiceProvider::jpe_published);
+		connect(i->publish, &JDnsPublishExtra::error, this, &JDnsServiceProvider::jpe_error);
 		publishExtraItemList.insert(i);
 		i->publish->start(rec);
 		return i->id;
@@ -2413,7 +2413,7 @@ private slots:
 		Q_ASSERT(i);
 
 		QByteArray name = instance + '.' + jb->typeAndDomain;
-		ServiceInstance si(QString::fromLatin1(instance), QString::fromLatin1(jb->type), "local.", QMap<QString,QByteArray>());
+		ServiceInstance si(QString::fromLatin1(instance), QString::fromLatin1(jb->type), QStringLiteral("local."), QMap<QString,QByteArray>());
 		items.insert(name, si);
 
 		emit browse_instanceAvailable(i->id, si);

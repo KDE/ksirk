@@ -38,8 +38,8 @@ NewGameSummaryWidget::NewGameSummaryWidget(QWidget *parent) :
 {
   qCDebug(KSIRK_LOG);
   setupUi(this);
-  connect(previousButton,SIGNAL(clicked()),this,SIGNAL(previous()));
-  connect(cancelButton,SIGNAL(clicked()),this,SIGNAL(cancel()));
+  connect(previousButton,&QAbstractButton::clicked,this,&NewGameSummaryWidget::previous);
+  connect(cancelButton,&QAbstractButton::clicked,this,&NewGameSummaryWidget::cancel);
   playersTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }
   

@@ -65,7 +65,7 @@ static bool extractMainHeader(const QString &line, QString *proto, int *code, QS
 	if(n2 == -1)
 		return false;
 	if(code)
-		*code = line.mid(n, n2-n).toInt();
+		*code = line.midRef(n, n2-n).toInt();
 	n = n2+1;
 	if(msg)
 		*msg = line.mid(n);
@@ -97,12 +97,12 @@ HttpConnect::HttpConnect(QObject *parent)
 :ByteStream(parent)
 {
 	d = new Private;
-	connect(&d->sock, SIGNAL(connected()), SLOT(sock_connected()));
-	connect(&d->sock, SIGNAL(connectionClosed()), SLOT(sock_connectionClosed()));
-	connect(&d->sock, SIGNAL(delayedCloseFinished()), SLOT(sock_delayedCloseFinished()));
-	connect(&d->sock, SIGNAL(readyRead()), SLOT(sock_readyRead()));
-	connect(&d->sock, SIGNAL(bytesWritten(int)), SLOT(sock_bytesWritten(int)));
-	connect(&d->sock, SIGNAL(error(int)), SLOT(sock_error(int)));
+	connect(&d->sock, &BSocket::connected, this, &HttpConnect::sock_connected);
+	connect(&d->sock, &ByteStream::connectionClosed, this, &HttpConnect::sock_connectionClosed);
+	connect(&d->sock, &ByteStream::delayedCloseFinished, this, &HttpConnect::sock_delayedCloseFinished);
+	connect(&d->sock, &ByteStream::readyRead, this, &HttpConnect::sock_readyRead);
+	connect(&d->sock, &ByteStream::bytesWritten, this, &HttpConnect::sock_bytesWritten);
+	connect(&d->sock, &ByteStream::error, this, &HttpConnect::sock_error);
 
 	reset(true);
 }

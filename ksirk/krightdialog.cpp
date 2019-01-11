@@ -269,7 +269,7 @@ void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int
   {
       buttonStopAttack = new QPushButton(stopAttackAuto,i18n("Stop Auto-Attack"));
       mainLayout->addWidget(buttonStopAttack,3,0);
-      connect(buttonStopAttack, SIGNAL(clicked()), this, SLOT(slotStopAttackAuto()));
+      connect(buttonStopAttack, &QAbstractButton::clicked, this, &KRightDialog::slotStopAttackAuto);
   }
   if (game->automaton()->isDefenseAuto()
     && !game->automaton()->currentPlayer()->isAI()
@@ -277,7 +277,7 @@ void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int
   {
     buttonStopDefense = new QPushButton(stopAttackAuto,i18n("Stop Auto-Defense"));
     mainLayout->addWidget(buttonStopDefense,4,0);
-    connect(buttonStopDefense, SIGNAL(clicked()), this, SLOT(slotStopDefenseAuto()));
+    connect(buttonStopDefense, &QAbstractButton::clicked, this, &KRightDialog::slotStopDefenseAuto);
   }
 
   mainLayout->update();
@@ -304,9 +304,9 @@ void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int
     QPushButton* buttonRecycle = new QPushButton(recycleContinue, i18n("Recycle"), this);
     QPushButton* buttonRecycleDone = new QPushButton(recycleDone, i18n("Done"), this);
 
-    connect(buttonValid, SIGNAL(clicked()), game, SLOT(slotNextPlayer()));
-    connect(buttonRecycle, SIGNAL(clicked()), game, SLOT(slotRecycling()));
-    connect(buttonRecycleDone, SIGNAL(clicked()), game, SLOT(slotRecyclingFinished()));
+    connect(buttonValid, &QAbstractButton::clicked, game, &KGameWindow::slotNextPlayer);
+    connect(buttonRecycle, &QAbstractButton::clicked, game, &KGameWindow::slotRecycling);
+    connect(buttonRecycleDone, &QAbstractButton::clicked, game, &KGameWindow::slotRecyclingFinished);
 
     QHBoxLayout* title = new QHBoxLayout();
 

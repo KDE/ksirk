@@ -201,8 +201,8 @@ void Country::highlight(QGraphicsScene* scene, ONU* onu, const QColor& color, qr
 //   qCDebug(KSIRKSKINEDITOR_LOG) <<"got country"<< endl;
 
   onu->svgDom()->setCurrentNode(countryElement);
-  onu->svgDom()->setStyleProperty("fill", color.name());
-  onu->svgDom()->setStyleProperty("fill-opacity", QString::number(opacity));
+  onu->svgDom()->setStyleProperty(QStringLiteral("fill"), color.name());
+  onu->svgDom()->setStyleProperty(QStringLiteral("fill-opacity"), QString::number(opacity));
 
 //   qCDebug(KSIRKSKINEDITOR_LOG) <<"loading"<< endl;
   QByteArray svg = onu->svgDom()->nodeToByteArray();

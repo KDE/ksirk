@@ -66,8 +66,8 @@ void AnimSpritesGroup::addSprite(AnimSprite* sprite)
 {
   push_back(sprite);
   qCDebug(KSIRK_LOG) << "now" << size();
-  connect(sprite, SIGNAL(atDestination(AnimSprite*)),this,SLOT(oneArrived(AnimSprite*)));
-  connect(sprite, SIGNAL(animationFinished(AnimSprite*)),this,SLOT(oneArrived(AnimSprite*)));
+  connect(sprite, &AnimSprite::atDestination,this,&AnimSpritesGroup::oneArrived);
+  connect(sprite, &AnimSprite::animationFinished,this,&AnimSpritesGroup::oneArrived);
 }
 
 void AnimSpritesGroup::oneArrived(AnimSprite* sprite)

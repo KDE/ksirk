@@ -75,7 +75,7 @@ AnimSprite::AnimSprite(const QString &svgid,
 
   /// @note uncomment here if you want to try sprites animation by connection to a timer
 //   connect(GameAutomaton::changeable().game()->frame()->timer(),SIGNAL(timeout()),this,SLOT(animate()));
-  connect(&m_timer,SIGNAL(timeout()),this,SLOT(animate()));
+  connect(&m_timer,&QTimer::timeout,this,&AnimSprite::animate);
 //   m_timer.setSingleShot(true);
   if (frames > 1)
   {
@@ -87,7 +87,7 @@ AnimSprite::~AnimSprite()
 {
 //   qCDebug(KSIRK_LOG) << (void*)this << endl;
   m_timer.stop();
-  disconnect(&m_timer,SIGNAL(timeout()),this,SLOT(animate()));
+  disconnect(&m_timer,&QTimer::timeout,this,&AnimSprite::animate);
   setStatic();
 }
 

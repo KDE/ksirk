@@ -52,7 +52,7 @@ public:
 				break;
 		}
 		Q_ASSERT(c); // we have built-in support, so this should never fail
-		connect(c, SIGNAL(updated()), SLOT(c_updated()));
+		connect(c, &NetInterfaceProvider::updated, this, &NetTracker::c_updated);
 	}
 
 	~NetTracker()
@@ -439,7 +439,7 @@ NetInterfaceManager::NetInterfaceManager(QObject *parent)
 
 	d = new NetInterfaceManagerPrivate(this);
 	g_nim->addRef();
-	d->connect(NetTracker::instance(), SIGNAL(updated()), SLOT(tracker_updated()), Qt::DirectConnection);
+	d->connect(NetTracker::instance(), &NetTracker::updated, d, &NetInterfaceManagerPrivate::tracker_updated, Qt::DirectConnection);
 }
 
 NetInterfaceManager::~NetInterfaceManager()

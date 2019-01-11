@@ -46,23 +46,23 @@ int main(int argc, char *argv[])
   QApplication app(argc, argv);
   KLocalizedString::setApplicationDomain("ksirkskineditor");
   KAboutData aboutData(
-    "ksirkskineditor",
+    QStringLiteral("ksirkskineditor"),
     i18n("KsirK Skin Editor"),
-    /*KDE_VERSION_STRING*/"5.0.0",
+    /*KDE_VERSION_STRING*/QStringLiteral("5.0.0"),
     i18n(description),
     KAboutLicense::GPL,
     i18n("(c) 2008, Gaël de Chalendar\n"),
     i18n("For help and user manual, please see\nThe KsirK Web site"),
     QStringLiteral("http://games.kde.org/game.php?game=ksirk"));
-  aboutData.addAuthor(i18n("Gael de Chalendar aka Kleag"),QString(), "kleag@free.fr");
-  QApplication::setWindowIcon(QIcon::fromTheme("preferences-desktop-locale"));
+  aboutData.addAuthor(i18n("Gael de Chalendar aka Kleag"),QString(), QStringLiteral("kleag@free.fr"));
+  QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-locale")));
 
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
     parser.addHelpOption();
     //PORTING SCRIPT: adapt aboutdata variable if necessary
-    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("+[File]"), i18n("file to open")));
+    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[File]"), i18n("file to open")));
 
     aboutData.setupCommandLine(&parser);
     parser.process(app);

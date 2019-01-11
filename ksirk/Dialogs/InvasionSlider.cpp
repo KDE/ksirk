@@ -166,12 +166,12 @@ InvasionSlider::InvasionSlider(KGameWindow* game, GameLogic::Country * attack, G
   right->addWidget(m_nbRArmies,Qt::AlignCenter);
 
   //val->setText(QString::number(invadeSlide->value()));
-  connect(m_invadeSlide,SIGNAL(valueChanged(int)),this,SLOT(slideMove(int)));
-  connect(m_invadeSlide,SIGNAL(sliderReleased()),this,SLOT(slideReleased()));
-  connect(buttonBox,SIGNAL(accepted()),this,SLOT(slideClose()));
+  connect(m_invadeSlide,&QAbstractSlider::valueChanged,this,&InvasionSlider::slideMove);
+  connect(m_invadeSlide,&QAbstractSlider::sliderReleased,this,&InvasionSlider::slideReleased);
+  connect(buttonBox,&QDialogButtonBox::accepted,this,&InvasionSlider::slideClose);
   if (invasionType == Moving)
   {
-    connect(buttonBox,SIGNAL(rejected()),this,SLOT(slideCancel()));
+    connect(buttonBox,&QDialogButtonBox::rejected,this,&InvasionSlider::slideCancel);
   }
 
   widget->setLayout(wSlideLayout);

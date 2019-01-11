@@ -28,7 +28,7 @@ namespace KsirkSkinEditor
 
 Goal::Goal() :
   m_type(NoGoal),
-  m_description(""),
+  m_description(QLatin1String("")),
   m_nbCountries(0),
   m_nbArmiesByCountry(0),
   m_continents(),
@@ -68,7 +68,7 @@ QString Goal::message(int displayType) const
   
   if(type()==NoGoal)
   {
-    QString mes = (QString)"You must conquer the World !";
+    QString mes = (QString)QStringLiteral("You must conquer the World !");
     return mes;
   }
   else

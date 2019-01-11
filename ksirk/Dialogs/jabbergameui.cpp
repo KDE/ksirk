@@ -66,11 +66,11 @@ KsirkJabberGameWidget::KsirkJabberGameWidget(QWidget* parent) :
   jabberstateled->setState(KLed::Off);
   chatroomstateled->setState(KLed::Off);
       
-  connect(connectbutton,SIGNAL(clicked()),this,SLOT(slotJabberConnectButtonClicked()));
-  connect(joingamebutton,SIGNAL(clicked()),this,SLOT(slotJoinJabberGame()));
-  QObject::connect ( joinroombutton, SIGNAL (clicked()), this, SLOT(slotJoinRoom()));
+  connect(connectbutton,&QAbstractButton::clicked,this,&KsirkJabberGameWidget::slotJabberConnectButtonClicked);
+  connect(joingamebutton,&QAbstractButton::clicked,this,&KsirkJabberGameWidget::slotJoinJabberGame);
+  QObject::connect ( joinroombutton, &QAbstractButton::clicked, this, &KsirkJabberGameWidget::slotJoinRoom);
   
-  QObject::connect(jabberTable, SIGNAL(cellClicked(int,int)), this, SLOT(slotCellClicked(int,int)));
+  QObject::connect(jabberTable, &QTableWidget::cellClicked, this, &KsirkJabberGameWidget::slotCellClicked);
   
   QStringList headers;
   headers.push_back(i18n("Nickname"));
@@ -78,7 +78,7 @@ KsirkJabberGameWidget::KsirkJabberGameWidget(QWidget* parent) :
   headers.push_back(i18n("Nb players"));
   jabberTable->setHorizontalHeaderLabels(headers);
 
-  QObject::connect(cancelbutton, SIGNAL(clicked()),this,SLOT(slotCancel()));
+  QObject::connect(cancelbutton, &QAbstractButton::clicked,this,&KsirkJabberGameWidget::slotCancel);
 }
 
 void KsirkJabberGameWidget::init(GameAutomaton* automaton)
@@ -89,19 +89,19 @@ void KsirkJabberGameWidget::init(GameAutomaton* automaton)
       (m_automaton->game()->jabberClient()->isConnected())
       ? KLed::On : KLed::Off);
   
-  QObject::connect(startnewgamebutton,SIGNAL(clicked()),m_automaton->game(),SLOT(slotNewJabberGame()));
-  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (csDisconnected()), this, SLOT (slotJabberDisconnected()) );
-  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (csError(int)), this, SLOT (slotJabberError(int)) );
-  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (tlsWarning(QCA::TLS::IdentityResult,QCA::Validity)), this, SLOT (slotHandleTLSWarning(QCA::TLS::IdentityResult,QCA::Validity)) );
-  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (connected()), this, SLOT (slotJabberConnected()) );
-  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (error(JabberClient::ErrorCode)), this, SLOT (slotJabberClientError(JabberClient::ErrorCode)) );
-  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (rosterRequestFinished(bool)), this, SLOT (slotRosterRequestFinished(bool)) );
-  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (groupChatJoined(XMPP::Jid)), this, SLOT(slotGroupChatJoined(XMPP::Jid)));
-  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (groupChatLeft(XMPP::Jid)), this, SLOT(slotGroupChatLeft(XMPP::Jid)));
-  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (groupChatPresence(XMPP::Jid,XMPP::Status)), this, SLOT(slotGroupChatPresence(XMPP::Jid,XMPP::Status)));
-  QObject::connect ( m_automaton->game()->jabberClient(), SIGNAL (groupChatError(XMPP::Jid,int,QString)), this, SLOT(slotGroupChatError(XMPP::Jid,int,QString)));
-  QObject::connect(automaton, SIGNAL(newJabberGame(QString,int,QString)), this, SLOT(slotNewJabberGame(QString,int,QString)) );
-  QObject::connect(this, SIGNAL(cancelled(int)), m_automaton->game(), SLOT(slotJabberGameCanceled(int)));
+  QObject::connect(startnewgamebutton,&QAbstractButton::clicked,m_automaton->game(),&KGameWindow::slotNewJabberGame);
+  QObject::connect ( m_automaton->game()->jabberClient(), &JabberClient::csDisconnected, this, &KsirkJabberGameWidget::slotJabberDisconnected );
+  QObject::connect ( m_automaton->game()->jabberClient(), &JabberClient::csError, this, &KsirkJabberGameWidget::slotJabberError );
+  QObject::connect ( m_automaton->game()->jabberClient(), &JabberClient::tlsWarning, this, &KsirkJabberGameWidget::slotHandleTLSWarning );
+  QObject::connect ( m_automaton->game()->jabberClient(), &JabberClient::connected, this, &KsirkJabberGameWidget::slotJabberConnected );
+  QObject::connect ( m_automaton->game()->jabberClient(), &JabberClient::error, this, &KsirkJabberGameWidget::slotJabberClientError );
+  QObject::connect ( m_automaton->game()->jabberClient(), &JabberClient::rosterRequestFinished, this, &KsirkJabberGameWidget::slotRosterRequestFinished );
+  QObject::connect ( m_automaton->game()->jabberClient(), &JabberClient::groupChatJoined, this, &KsirkJabberGameWidget::slotGroupChatJoined);
+  QObject::connect ( m_automaton->game()->jabberClient(), &JabberClient::groupChatLeft, this, &KsirkJabberGameWidget::slotGroupChatLeft);
+  QObject::connect ( m_automaton->game()->jabberClient(), &JabberClient::groupChatPresence, this, &KsirkJabberGameWidget::slotGroupChatPresence);
+  QObject::connect ( m_automaton->game()->jabberClient(), &JabberClient::groupChatError, this, &KsirkJabberGameWidget::slotGroupChatError);
+  QObject::connect(automaton, &GameAutomaton::newJabberGame, this, &KsirkJabberGameWidget::slotNewJabberGame );
+  QObject::connect(this, &KsirkJabberGameWidget::cancelled, m_automaton->game(), &KGameWindow::slotJabberGameCanceled);
 }
 
 void KsirkJabberGameWidget::slotJabberConnectButtonClicked()

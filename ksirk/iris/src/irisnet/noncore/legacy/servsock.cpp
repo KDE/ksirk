@@ -62,7 +62,7 @@ bool ServSock::listen(quint16 port)
 		d->serv = 0;
 		return false;
 	}
-	connect(d->serv, SIGNAL(connectionReady(int)), SLOT(sss_connectionReady(int)));
+	connect(d->serv, &ServSockSignal::connectionReady, this, &ServSock::sss_connectionReady);
 
 	return true;
 }

@@ -134,10 +134,10 @@ public:
 		type = TLS;
 		p.tls = t;
 		init();
-		connect(p.tls, SIGNAL(handshaken()), SLOT(tls_handshaken()));
-		connect(p.tls, SIGNAL(readyRead()), SLOT(tls_readyRead()));
+		connect(p.tls, &QCA::TLS::handshaken, this, &SecureLayer::tls_handshaken);
+		connect(p.tls, &QCA::SecureLayer::readyRead, this, &SecureLayer::tls_readyRead);
 		connect(p.tls, SIGNAL(readyReadOutgoing(int)), SLOT(tls_readyReadOutgoing(int)));
-		connect(p.tls, SIGNAL(closed()), SLOT(tls_closed()));
+		connect(p.tls, &QCA::SecureLayer::closed, this, &SecureLayer::tls_closed);
 		connect(p.tls, SIGNAL(error(int)), SLOT(tls_error(int)));
 	}
 
@@ -146,9 +146,9 @@ public:
 		type = SASL;
 		p.sasl = s;
 		init();
-		connect(p.sasl, SIGNAL(readyRead()), SLOT(sasl_readyRead()));
-		connect(p.sasl, SIGNAL(readyReadOutgoing()), SLOT(sasl_readyReadOutgoing()));
-		connect(p.sasl, SIGNAL(error()), SLOT(sasl_error()));
+		connect(p.sasl, &QCA::SecureLayer::readyRead, this, &SecureLayer::sasl_readyRead);
+		connect(p.sasl, &QCA::SecureLayer::readyReadOutgoing, this, &SecureLayer::sasl_readyReadOutgoing);
+		connect(p.sasl, &QCA::SecureLayer::error, this, &SecureLayer::sasl_error);
 	}
 	
 	SecureLayer(CompressionHandler *t)
@@ -157,9 +157,9 @@ public:
 		type = Compression;
 		p.compressionHandler = t;
 		init();
-		connect(p.compressionHandler, SIGNAL(readyRead()), SLOT(compressionHandler_readyRead()));
-		connect(p.compressionHandler, SIGNAL(readyReadOutgoing()), SLOT(compressionHandler_readyReadOutgoing()));
-		connect(p.compressionHandler, SIGNAL(error()), SLOT(compressionHandler_error()));
+		connect(p.compressionHandler, &CompressionHandler::readyRead, this, &SecureLayer::compressionHandler_readyRead);
+		connect(p.compressionHandler, &CompressionHandler::readyReadOutgoing, this, &SecureLayer::compressionHandler_readyReadOutgoing);
+		connect(p.compressionHandler, &CompressionHandler::error, this, &SecureLayer::compressionHandler_error);
 	}
 
 #ifdef USE_TLSHANDLER
@@ -168,11 +168,11 @@ public:
 		type = TLSH;
 		p.tlsHandler = t;
 		init();
-		connect(p.tlsHandler, SIGNAL(success()), SLOT(tlsHandler_success()));
-		connect(p.tlsHandler, SIGNAL(fail()), SLOT(tlsHandler_fail()));
-		connect(p.tlsHandler, SIGNAL(closed()), SLOT(tlsHandler_closed()));
-		connect(p.tlsHandler, SIGNAL(readyRead(QByteArray)), SLOT(tlsHandler_readyRead(QByteArray)));
-		connect(p.tlsHandler, SIGNAL(readyReadOutgoing(QByteArray,int)), SLOT(tlsHandler_readyReadOutgoing(QByteArray,int)));
+		connect(p.tlsHandler, &XMPP::TLSHandler::success, this, &SecureLayer::tlsHandler_success);
+		connect(p.tlsHandler, &XMPP::TLSHandler::fail, this, &SecureLayer::tlsHandler_fail);
+		connect(p.tlsHandler, &XMPP::TLSHandler::closed, this, &SecureLayer::tlsHandler_closed);
+		connect(p.tlsHandler, &XMPP::TLSHandler::readyRead, this, &SecureLayer::tlsHandler_readyRead);
+		connect(p.tlsHandler, &XMPP::TLSHandler::readyReadOutgoing, this, &SecureLayer::tlsHandler_readyReadOutgoing);
 	}
 #endif
 
@@ -391,8 +391,8 @@ SecureStream::SecureStream(ByteStream *s)
 	d = new Private;
 
 	d->bs = s;
-	connect(d->bs, SIGNAL(readyRead()), SLOT(bs_readyRead()));
-	connect(d->bs, SIGNAL(bytesWritten(int)), SLOT(bs_bytesWritten(int)));
+	connect(d->bs, &ByteStream::readyRead, this, &SecureStream::bs_readyRead);
+	connect(d->bs, &ByteStream::bytesWritten, this, &SecureStream::bs_bytesWritten);
 
 	d->pending = 0;
 	d->active = true;

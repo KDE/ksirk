@@ -54,11 +54,11 @@ KPlayerSetupWidget::KPlayerSetupWidget(QWidget *parent) :
   setupUi(this);
 
   connect(nationCombo, SIGNAL(activated(int)), this, SLOT(slotNationChanged()));
-  connect(nameLineEdit, SIGNAL(textEdited(QString)), this, SLOT(slotNameEdited(QString)));
+  connect(nameLineEdit, &QLineEdit::textEdited, this, &KPlayerSetupWidget::slotNameEdited);
   connect(nationCombo, SIGNAL(activated(int)), this, SLOT(slotNationChanged()));
-  connect(nextButton, SIGNAL(pressed()),this,SLOT(slotNext()));
-  connect(previousButton, SIGNAL(pressed()),this,SLOT(slotPrevious()));
-  connect(cancelButton, SIGNAL(pressed()),this,SLOT(slotCancel()));
+  connect(nextButton, &QAbstractButton::pressed,this,&KPlayerSetupWidget::slotNext);
+  connect(previousButton, &QAbstractButton::pressed,this,&KPlayerSetupWidget::slotPrevious);
+  connect(cancelButton, &QAbstractButton::pressed,this,&KPlayerSetupWidget::slotCancel);
   
   messageLabel->hide();
 }
@@ -92,7 +92,7 @@ void KPlayerSetupWidget::init(GameLogic::GameAutomaton* automaton,
   m_newGameSetup = newGameSetup;
 
   qCDebug(KSIRK_LOG) << "connecting to playerJoinedGame";
-  connect(automaton,SIGNAL(signalPlayerJoinedGame(KPlayer*)), this, SLOT(slotPlayerJoinedGame(KPlayer*)));
+  connect(automaton,&KGame::signalPlayerJoinedGame, this, &KPlayerSetupWidget::slotPlayerJoinedGame);
   init();
   qCDebug(KSIRK_LOG) << "constructor done";
 }

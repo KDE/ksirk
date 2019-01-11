@@ -173,7 +173,7 @@ static QHostAddress linux_ipv6_to_qaddr(const QString &in)
 	for(int n = 0; n < 16; ++n)
 	{
 		bool ok;
-		int x = in.mid(n * 2, 2).toInt(&ok, 16);
+		int x = in.midRef(n * 2, 2).toInt(&ok, 16);
 		if(!ok)
 			return out;
 		raw[n] = (quint8)x;
@@ -192,7 +192,7 @@ static QHostAddress linux_ipv4_to_qaddr(const QString &in)
 	for(int n = 0; n < 4; ++n)
 	{
 		bool ok;
-		int x = in.mid(n * 2, 2).toInt(&ok, 16);
+		int x = in.midRef(n * 2, 2).toInt(&ok, 16);
 		if(!ok)
 			return out;
 		rawp[n] = (unsigned char )x;
@@ -332,7 +332,7 @@ public:
 
 	UnixNet() : t(this)
 	{
-		connect(&t, SIGNAL(timeout()), SLOT(check()));
+		connect(&t, &QTimer::timeout, this, &UnixNet::check);
 	}
 
 	void start()

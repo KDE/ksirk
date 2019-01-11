@@ -55,7 +55,7 @@ public:
 		QObject(parent)
 	{
 		t = new QTimer(this);
-		connect(t, SIGNAL(timeout()), SIGNAL(timeout()));
+		connect(t, &QTimer::timeout, this, &SafeTimer::timeout);
 	}
 
 	~SafeTimer()
@@ -293,7 +293,7 @@ protected:
 	{
 		m.lock();
 		agent = new JDnsShutdownAgent;
-		connect(agent, SIGNAL(started()), SLOT(agent_started()), Qt::DirectConnection);
+		connect(agent, &JDnsShutdownAgent::started, this, &JDnsShutdown::agent_started, Qt::DirectConnection);
 		agent->start();
 		exec();
 		delete agent;
@@ -311,7 +311,7 @@ private slots:
 		{
 			foreach(JDnsShared *i, list)
 			{
-				connect(i, SIGNAL(shutdownFinished()), SLOT(jdns_shutdownFinished()), Qt::DirectConnection);
+				connect(i, &JDnsShared::shutdownFinished, this, &JDnsShutdown::jdns_shutdownFinished, Qt::DirectConnection);
 				i->shutdown();
 			}
 		}
@@ -444,11 +444,11 @@ public:
 
 	void jdns_link(QJDns *jdns)
 	{
-		connect(jdns, SIGNAL(resultsReady(int,QJDns::Response)), SLOT(jdns_resultsReady(int,QJDns::Response)));
-		connect(jdns, SIGNAL(published(int)), SLOT(jdns_published(int)));
-		connect(jdns, SIGNAL(error(int,QJDns::Error)), SLOT(jdns_error(int,QJDns::Error)));
-		connect(jdns, SIGNAL(shutdownFinished()), SLOT(jdns_shutdownFinished()));
-		connect(jdns, SIGNAL(debugLinesReady()), SLOT(jdns_debugLinesReady()));
+		connect(jdns, &QJDns::resultsReady, this, &JDnsSharedPrivate::jdns_resultsReady);
+		connect(jdns, &QJDns::published, this, &JDnsSharedPrivate::jdns_published);
+		connect(jdns, &QJDns::error, this, &JDnsSharedPrivate::jdns_error);
+		connect(jdns, &QJDns::shutdownFinished, this, &JDnsSharedPrivate::jdns_shutdownFinished);
+		connect(jdns, &QJDns::debugLinesReady, this, &JDnsSharedPrivate::jdns_debugLinesReady);
 	}
 
 	int getNewIndex() const
@@ -650,7 +650,7 @@ public:
 
 	JDnsSharedRequestPrivate(JDnsSharedRequest *_q) : QObject(_q), q(_q), lateTimer(this)
 	{
-		connect(&lateTimer, SIGNAL(timeout()), SLOT(lateTimer_timeout()));
+		connect(&lateTimer, &SafeTimer::timeout, this, &JDnsSharedRequestPrivate::lateTimer_timeout);
 	}
 
 	void resetSession()
@@ -808,7 +808,7 @@ bool JDnsSharedPrivate::addInterface(const QHostAddress &addr)
 	}
 
 	int index = getNewIndex();
-	addDebug(index, QString("attempting to use interface %1").arg(addr.toString()));
+	addDebug(index, QStringLiteral("attempting to use interface %1").arg(addr.toString()));
 
 	QJDns *jdns;
 
@@ -827,9 +827,9 @@ bool JDnsSharedPrivate::addInterface(const QHostAddress &addr)
 		{
 			QJDns::NameServer host;
 			if(addr.protocol() == QAbstractSocket::IPv6Protocol)
-				host.address = QHostAddress("FF02::FB");
+				host.address = QHostAddress(QStringLiteral("FF02::FB"));
 			else
-				host.address = QHostAddress("224.0.0.251");
+				host.address = QHostAddress(QStringLiteral("224.0.0.251"));
 			host.port = 5353;
 			jdns->setNameServers(QList<QJDns::NameServer>() << host);
 		}
@@ -853,13 +853,13 @@ bool JDnsSharedPrivate::addInterface(const QHostAddress &addr)
 
 		if(is_v6 && have_v6)
 		{
-			addDebug(index, "already have an ipv6 interface");
+			addDebug(index, QStringLiteral("already have an ipv6 interface"));
 			return false;
 		}
 
 		if(!is_v6 && have_v4)
 		{
-			addDebug(index, "already have an ipv4 interface");
+			addDebug(index, QStringLiteral("already have an ipv4 interface"));
 			return false;
 		}
 
@@ -886,7 +886,7 @@ bool JDnsSharedPrivate::addInterface(const QHostAddress &addr)
 	instances += i;
 	instanceForQJDns.insert(i->jdns, i);
 
-	addDebug(index, "interface ready");
+	addDebug(index, QStringLiteral("interface ready"));
 
 	if(mode == JDnsShared::Multicast)
 	{
@@ -999,7 +999,7 @@ void JDnsSharedPrivate::removeInterface(const QHostAddress &addr)
 		}
 	}
 
-	addDebug(index, QString("removing from %1").arg(addr.toString()));
+	addDebug(index, QStringLiteral("removing from %1").arg(addr.toString()));
 }
 
 void JDnsSharedPrivate::queryStart(JDnsSharedRequest *obj, const QByteArray &name, int qType)
@@ -1373,7 +1373,7 @@ void JDnsSharedPrivate::jdns_shutdownFinished()
 {
 	QJDns *jdns = (QJDns *)sender();
 
-	addDebug(instanceForQJDns.value(jdns)->index, "jdns_shutdownFinished, removing interface");
+	addDebug(instanceForQJDns.value(jdns)->index, QStringLiteral("jdns_shutdownFinished, removing interface"));
 
 	Instance *instance = instanceForQJDns.value(jdns);
 	delete instance->jdns;

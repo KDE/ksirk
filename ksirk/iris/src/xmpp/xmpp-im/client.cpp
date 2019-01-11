@@ -165,10 +165,10 @@ Client::Client(QObject *par)
 	d->stream = 0;
 
 	d->s5bman = new S5BManager(this);
-	connect(d->s5bman, SIGNAL(incomingReady()), SLOT(s5b_incomingReady()));
+	connect(d->s5bman, &S5BManager::incomingReady, this, &Client::s5b_incomingReady);
 
 	d->ibbman = new IBBManager(this);
-	connect(d->ibbman, SIGNAL(incomingReady()), SLOT(ibb_incomingReady()));
+	connect(d->ibbman, &IBBManager::incomingReady, this, &Client::ibb_incomingReady);
 
 	d->ftman = 0;
 }
@@ -190,12 +190,12 @@ void Client::connectToServer(ClientStream *s, const Jid &j, bool auth)
 	d->stream = s;
 	//connect(d->stream, SIGNAL(connected()), SLOT(streamConnected()));
 	//connect(d->stream, SIGNAL(handshaken()), SLOT(streamHandshaken()));
-	connect(d->stream, SIGNAL(error(int)), SLOT(streamError(int)));
+	connect(d->stream, &Stream::error, this, &Client::streamError);
 	//connect(d->stream, SIGNAL(sslCertificateReady(QSSLCert)), SLOT(streamSSLCertificateReady(QSSLCert)));
-	connect(d->stream, SIGNAL(readyRead()), SLOT(streamReadyRead()));
+	connect(d->stream, &Stream::readyRead, this, &Client::streamReadyRead);
 	//connect(d->stream, SIGNAL(closeFinished()), SLOT(streamCloseFinished()));
-	connect(d->stream, SIGNAL(incomingXml(QString)), SLOT(streamIncomingXml(QString)));
-	connect(d->stream, SIGNAL(outgoingXml(QString)), SLOT(streamOutgoingXml(QString)));
+	connect(d->stream, &ClientStream::incomingXml, this, &Client::streamIncomingXml);
+	connect(d->stream, &ClientStream::outgoingXml, this, &Client::streamOutgoingXml);
 
 	d->stream->connectToServer(j, auth);
 }
@@ -214,14 +214,14 @@ void Client::start(const QString &host, const QString &user, const QString &pass
 	d->resourceList += Resource(resource(), stat);
 
 	JT_PushPresence *pp = new JT_PushPresence(rootTask());
-	connect(pp, SIGNAL(subscription(Jid,QString,QString)), SLOT(ppSubscription(Jid,QString,QString)));
-	connect(pp, SIGNAL(presence(Jid,Status)), SLOT(ppPresence(Jid,Status)));
+	connect(pp, &JT_PushPresence::subscription, this, &Client::ppSubscription);
+	connect(pp, &JT_PushPresence::presence, this, &Client::ppPresence);
 
 	JT_PushMessage *pm = new JT_PushMessage(rootTask());
-	connect(pm, SIGNAL(message(Message)), SLOT(pmMessage(Message)));
+	connect(pm, &JT_PushMessage::message, this, &Client::pmMessage);
 
 	JT_PushRoster *pr = new JT_PushRoster(rootTask());
-	connect(pr, SIGNAL(roster(Roster)), SLOT(prRoster(Roster)));
+	connect(pr, &JT_PushRoster::roster, this, &Client::prRoster);
 
 	new JT_ServInfo(rootTask());
 
@@ -856,7 +856,7 @@ void Client::rosterRequest()
 		return;
 
 	JT_Roster *r = new JT_Roster(rootTask());
-	connect(r, SIGNAL(finished()), SLOT(slotRosterRequestFinished()));
+	connect(r, &Task::finished, this, &Client::slotRosterRequestFinished);
 	r->get();
 	d->roster.flagAllForDelete(); // mod_groups patch
 	r->go(true);

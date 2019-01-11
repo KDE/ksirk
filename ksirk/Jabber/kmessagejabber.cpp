@@ -36,13 +36,13 @@ KMessageJabber::KMessageJabber (const QString& peerJid, JabberClient* jabberClie
 {
   qCDebug(JABBER_PROTOCOL_LOG) << peerJid;
 //   initSocket ();
-  connect(jabberClient, SIGNAL(messageReceived(XMPP::Message)), this, SLOT(slotMessageReceived(XMPP::Message)));
+  connect(jabberClient, &JabberClient::messageReceived, this, &KMessageJabber::slotMessageReceived);
          
-  connect(jabberClient, SIGNAL(resourceUnavailable(Jid,Resource)), this, SLOT(slotResourceUnavailable(Jid,Resource)));
+  connect(jabberClient, &JabberClient::resourceUnavailable, this, &KMessageJabber::slotResourceUnavailable);
                   
   connect(jabberClient, SIGNAL(groupChatLeft(XMPP::Jid)), this, SLOT(slotGroupChatLeft(XMPP::Message)));
 
-  connect(jabberClient, SIGNAL(groupChatPresence(XMPP::Jid,XMPP::Status)), this, SLOT(slotGroupChatPresence(XMPP::Jid,XMPP::Status)));
+  connect(jabberClient, &JabberClient::groupChatPresence, this, &KMessageJabber::slotGroupChatPresence);
 
   
   

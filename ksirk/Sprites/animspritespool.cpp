@@ -32,7 +32,7 @@ AnimSpritePool* AnimSpritePool::m_pool = 0;
 
 AnimSpritePool::AnimSpritePool() 
 {
-  connect(&m_timer,SIGNAL(timeout()),this,SLOT(update()));
+  connect(&m_timer,&QTimer::timeout,this,&AnimSpritePool::update);
   m_timer.setSingleShot(true);
   m_timer.start(200);
 }

@@ -233,9 +233,9 @@ AdvancedConnector::AdvancedConnector(QObject *parent)
 {
 	d = new Private;
 	d->bs = 0;
-	connect(&d->dns, SIGNAL(resultsReady()), SLOT(dns_done()));
-	connect(&d->srv, SIGNAL(resultsReady()), SLOT(srv_done()));
-	connect(&d->connectTimeout, SIGNAL(timeout()), SLOT(t_timeout()));
+	connect(&d->dns, &NDns::resultsReady, this, &AdvancedConnector::dns_done);
+	connect(&d->srv, &SrvResolver::resultsReady, this, &AdvancedConnector::srv_done);
+	connect(&d->connectTimeout, &QTimer::timeout, this, &AdvancedConnector::t_timeout);
 	d->connectTimeout.setSingleShot(true);
 	d->opt_probe = false;
 	d->opt_ssl = false;
@@ -340,10 +340,10 @@ void AdvancedConnector::connectToServer(const QString &server)
 
 		HttpPoll *s = new HttpPoll;
 		d->bs = s;
-		connect(s, SIGNAL(connected()), SLOT(bs_connected()));
-		connect(s, SIGNAL(syncStarted()), SLOT(http_syncStarted()));
-		connect(s, SIGNAL(syncFinished()), SLOT(http_syncFinished()));
-		connect(s, SIGNAL(error(int)), SLOT(bs_error(int)));
+		connect(s, &HttpPoll::connected, this, &AdvancedConnector::bs_connected);
+		connect(s, &HttpPoll::syncStarted, this, &AdvancedConnector::http_syncStarted);
+		connect(s, &HttpPoll::syncFinished, this, &AdvancedConnector::http_syncFinished);
+		connect(s, &ByteStream::error, this, &AdvancedConnector::bs_error);
 		if(!d->proxy.user().isEmpty())
 			s->setAuth(d->proxy.user(), d->proxy.pass());
 		s->setPollInterval(d->proxy.pollInterval());
@@ -499,8 +499,8 @@ void AdvancedConnector::do_connect()
 #endif
 		BSocket *s = new BSocket;
 		d->bs = s;
-		connect(s, SIGNAL(connected()), SLOT(bs_connected()));
-		connect(s, SIGNAL(error(int)), SLOT(bs_error(int)));
+		connect(s, &BSocket::connected, this, &AdvancedConnector::bs_connected);
+		connect(s, &ByteStream::error, this, &AdvancedConnector::bs_error);
 		s->connectToHost(d->host, d->port);
 	}
 	else if(t == Proxy::HttpConnect) {
@@ -509,8 +509,8 @@ void AdvancedConnector::do_connect()
 #endif
 		HttpConnect *s = new HttpConnect;
 		d->bs = s;
-		connect(s, SIGNAL(connected()), SLOT(bs_connected()));
-		connect(s, SIGNAL(error(int)), SLOT(bs_error(int)));
+		connect(s, &HttpConnect::connected, this, &AdvancedConnector::bs_connected);
+		connect(s, &ByteStream::error, this, &AdvancedConnector::bs_error);
 		if(!d->proxy.user().isEmpty())
 			s->setAuth(d->proxy.user(), d->proxy.pass());
 		s->connectToHost(d->proxy.host(), d->proxy.port(), d->host, d->port);
@@ -521,8 +521,8 @@ void AdvancedConnector::do_connect()
 #endif
 		SocksClient *s = new SocksClient;
 		d->bs = s;
-		connect(s, SIGNAL(connected()), SLOT(bs_connected()));
-		connect(s, SIGNAL(error(int)), SLOT(bs_error(int)));
+		connect(s, &SocksClient::connected, this, &AdvancedConnector::bs_connected);
+		connect(s, &ByteStream::error, this, &AdvancedConnector::bs_error);
 		if(!d->proxy.user().isEmpty())
 			s->setAuth(d->proxy.user(), d->proxy.pass());
 		s->connectToHost(d->proxy.host(), d->proxy.port(), d->host, d->port);

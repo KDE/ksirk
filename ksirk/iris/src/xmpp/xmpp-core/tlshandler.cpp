@@ -332,11 +332,11 @@ QCATLSHandler::QCATLSHandler(QCA::TLS *parent)
 {
 	d = new Private;
 	d->tls = parent;
-	connect(d->tls, SIGNAL(handshaken()), SLOT(tls_handshaken()));
-	connect(d->tls, SIGNAL(readyRead()), SLOT(tls_readyRead()));
-	connect(d->tls, SIGNAL(readyReadOutgoing()), SLOT(tls_readyReadOutgoing()));
-	connect(d->tls, SIGNAL(closed()), SLOT(tls_closed()));
-	connect(d->tls, SIGNAL(error()), SLOT(tls_error()));
+	connect(d->tls, &TLS::handshaken, this, &QCATLSHandler::tls_handshaken);
+	connect(d->tls, &SecureLayer::readyRead, this, &QCATLSHandler::tls_readyRead);
+	connect(d->tls, &SecureLayer::readyReadOutgoing, this, &QCATLSHandler::tls_readyReadOutgoing);
+	connect(d->tls, &SecureLayer::closed, this, &QCATLSHandler::tls_closed);
+	connect(d->tls, &SecureLayer::error, this, &QCATLSHandler::tls_error);
 	d->state = 0;
 	d->err = -1;
 	d->internalHostMatch = false;

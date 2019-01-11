@@ -445,8 +445,8 @@ void BasicProtocol::handleDocOpen(const Parser::Event &pe)
 		if(!verstr.isEmpty()) {
 			int n = verstr.indexOf('.');
 			if(n != -1) {
-				major = verstr.mid(0, n).toInt();
-				minor = verstr.mid(n+1).toInt();
+				major = verstr.midRef(0, n).toInt();
+				minor = verstr.midRef(n+1).toInt();
 			}
 			else {
 				major = verstr.toInt();

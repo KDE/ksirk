@@ -47,11 +47,11 @@ public:
 	:QObject(parent)
 	{
 		qRegisterMetaType<QAbstractSocket::SocketError>("QAbstractSocket::SocketError");
-		connect(sock, SIGNAL(hostFound()), SLOT(sock_hostFound()), Qt::QueuedConnection);
-		connect(sock, SIGNAL(connected()), SLOT(sock_connected()), Qt::QueuedConnection);
-		connect(sock, SIGNAL(disconnected()), SLOT(sock_disconnected()), Qt::QueuedConnection);
-		connect(sock, SIGNAL(readyRead()), SLOT(sock_readyRead()), Qt::QueuedConnection);
-		connect(sock, SIGNAL(bytesWritten(qint64)), SLOT(sock_bytesWritten(qint64)), Qt::QueuedConnection);
+		connect(sock, &QAbstractSocket::hostFound, this, &QTcpSocketSignalRelay::sock_hostFound, Qt::QueuedConnection);
+		connect(sock, &QAbstractSocket::connected, this, &QTcpSocketSignalRelay::sock_connected, Qt::QueuedConnection);
+		connect(sock, &QAbstractSocket::disconnected, this, &QTcpSocketSignalRelay::sock_disconnected, Qt::QueuedConnection);
+		connect(sock, &QIODevice::readyRead, this, &QTcpSocketSignalRelay::sock_readyRead, Qt::QueuedConnection);
+		connect(sock, &QIODevice::bytesWritten, this, &QTcpSocketSignalRelay::sock_bytesWritten, Qt::QueuedConnection);
 		connect(sock, SIGNAL(error(QAbstractSocket::SocketError)), SLOT(sock_error(QAbstractSocket::SocketError)), Qt::QueuedConnection);
 	}
 
@@ -119,8 +119,8 @@ BSocket::BSocket(QObject *parent)
 :ByteStream(parent)
 {
 	d = new Private;
-	connect(&d->ndns, SIGNAL(resultsReady()), SLOT(ndns_done()));
-	connect(&d->srv, SIGNAL(resultsReady()), SLOT(srv_done()));
+	connect(&d->ndns, &NDns::resultsReady, this, &BSocket::ndns_done);
+	connect(&d->srv, &SrvResolver::resultsReady, this, &BSocket::srv_done);
 
 	reset();
 }
@@ -170,12 +170,12 @@ void BSocket::ensureSocket()
 		d->qsock->setReadBufferSize(READBUFSIZE);
 #endif
 		d->qsock_relay = new QTcpSocketSignalRelay(d->qsock);
-		connect(d->qsock_relay, SIGNAL(hostFound()), SLOT(qs_hostFound()));
-		connect(d->qsock_relay, SIGNAL(connected()), SLOT(qs_connected()));
-		connect(d->qsock_relay, SIGNAL(disconnected()), SLOT(qs_closed()));
-		connect(d->qsock_relay, SIGNAL(readyRead()), SLOT(qs_readyRead()));
-		connect(d->qsock_relay, SIGNAL(bytesWritten(qint64)), SLOT(qs_bytesWritten(qint64)));
-		connect(d->qsock_relay, SIGNAL(error(QAbstractSocket::SocketError)), SLOT(qs_error(QAbstractSocket::SocketError)));
+		connect(d->qsock_relay, &QTcpSocketSignalRelay::hostFound, this, &BSocket::qs_hostFound);
+		connect(d->qsock_relay, &QTcpSocketSignalRelay::connected, this, &BSocket::qs_connected);
+		connect(d->qsock_relay, &QTcpSocketSignalRelay::disconnected, this, &BSocket::qs_closed);
+		connect(d->qsock_relay, &QTcpSocketSignalRelay::readyRead, this, &BSocket::qs_readyRead);
+		connect(d->qsock_relay, &QTcpSocketSignalRelay::bytesWritten, this, &BSocket::qs_bytesWritten);
+		connect(d->qsock_relay, &QTcpSocketSignalRelay::error, this, &BSocket::qs_error);
 	}
 }
 

@@ -48,7 +48,7 @@ Task::Task(Task *parent)
 
 	d->client = parent->client();
 	d->id = client()->genUniqueId();
-	connect(d->client, SIGNAL(disconnected()), SLOT(clientDisconnected()));
+	connect(d->client, &Client::disconnected, this, &Task::clientDisconnected);
 }
 
 Task::Task(Client *parent, bool)
@@ -57,7 +57,7 @@ Task::Task(Client *parent, bool)
 	init();
 
 	d->client = parent;
-	connect(d->client, SIGNAL(disconnected()), SLOT(clientDisconnected()));
+	connect(d->client, &Client::disconnected, this, &Task::clientDisconnected);
 }
 
 Task::~Task()
@@ -166,7 +166,7 @@ void Task::onDisconnect()
 		d->statusString = tr("Disconnected");
 
 		// delay this so that tasks that react don't block the shutdown
-		QTimer::singleShot(0, this, SLOT(done()));
+		QTimer::singleShot(0, this, &Task::done);
 	}
 }
 

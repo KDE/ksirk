@@ -133,7 +133,7 @@ public:
 		paused(false)
 	{
 		callTrigger = new QTimer(this);
-		connect(callTrigger, SIGNAL(timeout()), SLOT(doCall()));
+		connect(callTrigger, &QTimer::timeout, this, &ObjectSessionPrivate::doCall);
 		callTrigger->setSingleShot(true);
 	}
 

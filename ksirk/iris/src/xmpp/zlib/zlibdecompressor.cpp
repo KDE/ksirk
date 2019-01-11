@@ -14,7 +14,7 @@ ZLibDecompressor::ZLibDecompressor(QIODevice* device) : device_(device)
 	int result = inflateInit(zlib_stream_);
 	Q_ASSERT(result == Z_OK);
 	Q_UNUSED(result);
-	connect(device, SIGNAL(aboutToClose()), this, SLOT(flush()));
+	connect(device, &QIODevice::aboutToClose, this, &ZLibDecompressor::flush);
 	flushed_ = false;
 }
 
@@ -33,7 +33,7 @@ void ZLibDecompressor::flush()
 	write(QByteArray(),true);
 	int result = inflateEnd(zlib_stream_);
 	if (result != Z_OK) 
-		qWarning("compressor.c: inflateEnd failed (%s)", result);
+		qWarning("compressor.c: inflateEnd failed (%d)", result);
 	
 	flushed_ = true;
 }

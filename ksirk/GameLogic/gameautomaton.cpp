@@ -172,23 +172,23 @@ GameAutomaton::GameAutomaton() :
   
   // Connect the most important slot which tells us which properties are
   // changed
-  connect(this,SIGNAL(signalPropertyChanged(KGamePropertyBase*,KGame*)),
-          this,SLOT(slotPropertyChanged(KGamePropertyBase*,KGame*)));
+  connect(this,&KGame::signalPropertyChanged,
+          this,&GameAutomaton::slotPropertyChanged);
   
-  connect(this,SIGNAL(signalPlayerJoinedGame(KPlayer*)),
-          this,SLOT(slotPlayerJoinedGame(KPlayer*)));
+  connect(this,&KGame::signalPlayerJoinedGame,
+          this,&GameAutomaton::slotPlayerJoinedGame);
   
-  connect(this,SIGNAL(signalNetworkData(int,QByteArray,quint32,quint32)),
-          this,SLOT(slotNetworkData(int,QByteArray,quint32,quint32)));
+  connect(this,&KGame::signalNetworkData,
+          this,&GameAutomaton::slotNetworkData);
   
-  connect(this,SIGNAL(signalClientJoinedGame(quint32,KGame*)),
-          this,SLOT(slotClientJoinedGame(quint32,KGame*)));
+  connect(this,&KGame::signalClientJoinedGame,
+          this,&GameAutomaton::slotClientJoinedGame);
   
-  connect(messageClient(),SIGNAL(connectionBroken()),
-          this,SLOT(slotConnectionToServerBroken()));
+  connect(messageClient(),&KMessageClient::connectionBroken,
+          this,&GameAutomaton::slotConnectionToServerBroken);
   
-  connect(messageServer(),SIGNAL(connectionLost(KMessageIO*)),
-          this,SLOT(slotConnectionToClientBroken(KMessageIO*)));
+  connect(messageServer(),&KMessageServer::connectionLost,
+          this,&GameAutomaton::slotConnectionToClientBroken);
 
   setPolicy(KGame::PolicyDirty,true);
   
@@ -242,7 +242,7 @@ GameAutomaton::GameState GameAutomaton::run()
 //   qCDebug(KSIRK_LOG) << "(KGame running=" <<  (gameStatus()==KGame::Run) << ")";
   if (m_game == 0 || gameStatus() == KGame::Pause)
   {
-    QTimer::singleShot(200, this, SLOT(run()));
+    QTimer::singleShot(200, this, &GameAutomaton::run);
     return m_state;
   }
       
@@ -280,12 +280,12 @@ GameAutomaton::GameState GameAutomaton::run()
     if (m_game->actionNewGame(GameAutomaton::None))
     {
       state(INIT);
-      QTimer::singleShot(200, this, SLOT(run()));
+      QTimer::singleShot(200, this, &GameAutomaton::run);
       return INIT;
     }
     else
     {
-      QTimer::singleShot(200, this, SLOT(run()));
+      QTimer::singleShot(200, this, &GameAutomaton::run);
       return m_state;
     }
   }
@@ -301,20 +301,20 @@ GameAutomaton::GameState GameAutomaton::run()
               m_port, 0, 32000, 1, &ok);
       offerConnections(m_port);
       state(WAIT_PLAYERS);
-      QTimer::singleShot(200, this, SLOT(run()));
+      QTimer::singleShot(200, this, &GameAutomaton::run);
       return WAIT_PLAYERS;
     }
     else
     {
       qCDebug(KSIRK_LOG) << "opened" << endl;
-      QTimer::singleShot(200, this, SLOT(run()));
+      QTimer::singleShot(200, this, &GameAutomaton::run);
       return m_state;
     }
   }
   if (event == "actionJoinNetworkGame")
   {
     joinNetworkGame();
-    QTimer::singleShot(200, this, SLOT(run()));
+    QTimer::singleShot(200, this, &GameAutomaton::run);
     return m_state;
   }
 
@@ -864,7 +864,7 @@ GameAutomaton::GameState GameAutomaton::run()
     exit(1); // @todo handle this error
   }
 
-  QTimer::singleShot(200, this, SLOT(run()));
+  QTimer::singleShot(200, this, &GameAutomaton::run);
 
 //   m_game->initTimer();
   return m_state;
@@ -1040,9 +1040,9 @@ void GameAutomaton::createIO(KPlayer *player,KGameIO::IOMode io)
     // Connect mouse input to a function to process the actual input
     connect(
       input,
-      SIGNAL(signalMouseEvent(KGameIO*,QDataStream&,QMouseEvent*,bool*)),
+      &KGameMouseIO::signalMouseEvent,
       m_game->frame(),
-      SLOT(slotMouseInput(KGameIO*,QDataStream&,QMouseEvent*,bool*)));
+      &DecoratedGameFrame::slotMouseInput);
 
     // Add the device to the player
     player->addGameIO(input);
@@ -1196,8 +1196,8 @@ bool GameAutomaton::connectToServ()
   qCDebug(KSIRK_LOG);
   if (messageServer() != 0)
   {
-    QObject::disconnect(messageServer(),SIGNAL(connectionLost(KMessageIO*)),
-                        this,SLOT(slotConnectionToClientBroken(KMessageIO*)));
+    QObject::disconnect(messageServer(),&KMessageServer::connectionLost,
+                        this,&GameAutomaton::slotConnectionToClientBroken);
   }
   qCDebug(KSIRK_LOG) << "Before connectToServer" << endl;
   QString host = m_game->newGameSetup()->host();
@@ -1205,8 +1205,8 @@ bool GameAutomaton::connectToServ()
   bool status = connectToServer(host, port);
   qCDebug(KSIRK_LOG) << "After connectToServer" << status;
   if (messageServer())
-    connect(messageServer(),SIGNAL(connectionLost(KMessageIO*)),
-          this,SLOT(slotConnectionToClientBroken(KMessageIO*)));
+    connect(messageServer(),&KMessageServer::connectionLost,
+          this,&GameAutomaton::slotConnectionToClientBroken);
   return status;
 }
 
@@ -1221,8 +1221,8 @@ bool GameAutomaton::joinJabberGame(const QString& nick)
     
     if (messageServer() != 0)
     {
-      QObject::disconnect(messageServer(),SIGNAL(connectionLost(KMessageIO*)),
-                           this,SLOT(slotConnectionToClientBroken(KMessageIO*)));
+      QObject::disconnect(messageServer(),&KMessageServer::connectionLost,
+                           this,&GameAutomaton::slotConnectionToClientBroken);
     }
     
     qCDebug(KSIRK_LOG) << "Before connectToServer" << endl;
@@ -2480,8 +2480,8 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
       finalizePlayers();
     break;
   case Winner:
-    QObject::disconnect(messageServer(),SIGNAL(connectionLost(KMessageIO*)),
-                        this,SLOT(slotConnectionToClientBroken(KMessageIO*)));
+    QObject::disconnect(messageServer(),&KMessageServer::connectionLost,
+                        this,&GameAutomaton::slotConnectionToClientBroken);
     stream >> playerId;
     m_game->winner(dynamic_cast<Player*>(findPlayer(playerId)));
     break;
@@ -2499,7 +2499,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     break;
   case DisplayGoals:
       qCDebug(KSIRK_LOG) << "Got message DisplayGoals" << endl;
-      QTimer::singleShot(0,this,SLOT(displayGoals()));
+      QTimer::singleShot(0,this,&GameAutomaton::displayGoals);
     break;
   case DisplayFightResult:
       qCDebug(KSIRK_LOG) << "Got message DisplayFightResult" << endl;

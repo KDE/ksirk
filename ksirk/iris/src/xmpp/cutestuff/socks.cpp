@@ -457,12 +457,12 @@ SocksClient::SocksClient(int s, QObject *parent)
 void SocksClient::init()
 {
 	d = new Private;
-	connect(&d->sock, SIGNAL(connected()), SLOT(sock_connected()));
-	connect(&d->sock, SIGNAL(connectionClosed()), SLOT(sock_connectionClosed()));
-	connect(&d->sock, SIGNAL(delayedCloseFinished()), SLOT(sock_delayedCloseFinished()));
-	connect(&d->sock, SIGNAL(readyRead()), SLOT(sock_readyRead()));
-	connect(&d->sock, SIGNAL(bytesWritten(int)), SLOT(sock_bytesWritten(int)));
-	connect(&d->sock, SIGNAL(error(int)), SLOT(sock_error(int)));
+	connect(&d->sock, &BSocket::connected, this, &SocksClient::sock_connected);
+	connect(&d->sock, &ByteStream::connectionClosed, this, &SocksClient::sock_connectionClosed);
+	connect(&d->sock, &ByteStream::delayedCloseFinished, this, &SocksClient::sock_delayedCloseFinished);
+	connect(&d->sock, &ByteStream::readyRead, this, &SocksClient::sock_readyRead);
+	connect(&d->sock, &ByteStream::bytesWritten, this, &SocksClient::sock_bytesWritten);
+	connect(&d->sock, &ByteStream::error, this, &SocksClient::sock_error);
 
 	reset(true);
 }
@@ -1015,7 +1015,7 @@ SocksServer::SocksServer(QObject *parent)
 {
 	d = new Private;
 	d->sd = 0;
-	connect(&d->serv, SIGNAL(connectionReady(int)), SLOT(connectionReady(int)));
+	connect(&d->serv, &ServSock::connectionReady, this, &SocksServer::connectionReady);
 }
 
 SocksServer::~SocksServer()
@@ -1045,7 +1045,7 @@ bool SocksServer::listen(quint16 port, bool udp)
 			d->serv.stop();
 			return false;
 		}
-		connect(d->sd, SIGNAL(readyRead()), SLOT(sd_activated()));
+		connect(d->sd, &QIODevice::readyRead, this, &SocksServer::sd_activated);
 	}
 	return true;
 }
@@ -1075,7 +1075,7 @@ SocksClient *SocksServer::takeIncoming()
 	SocksClient *c = d->incomingConns.takeFirst();
 
 	// we don't care about errors anymore
-	disconnect(c, SIGNAL(error(int)), this, SLOT(connectionError()));
+	disconnect(c, &ByteStream::error, this, &SocksServer::connectionError);
 
 	// don't serve the connection until the event loop, to give the caller a chance to map signals
 	QTimer::singleShot(0, c, SLOT(serve()));
@@ -1093,7 +1093,7 @@ void SocksServer::writeUDP(const QHostAddress &addr, int port, const QByteArray 
 void SocksServer::connectionReady(int s)
 {
 	SocksClient *c = new SocksClient(s, this);
-	connect(c, SIGNAL(error(int)), this, SLOT(connectionError()));
+	connect(c, &ByteStream::error, this, &SocksServer::connectionError);
 	d->incomingConns.append(c);
 	incomingReady();
 }

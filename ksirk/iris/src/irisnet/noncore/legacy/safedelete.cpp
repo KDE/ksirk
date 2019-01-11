@@ -93,7 +93,7 @@ SafeDeleteLater *SafeDeleteLater::ensureExists()
 SafeDeleteLater::SafeDeleteLater()
 {
 	self = this;
-	QTimer::singleShot(0, this, SLOT(explode()));
+	QTimer::singleShot(0, this, &SafeDeleteLater::explode);
 }
 
 SafeDeleteLater::~SafeDeleteLater()

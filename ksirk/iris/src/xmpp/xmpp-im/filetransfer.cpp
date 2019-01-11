@@ -135,7 +135,7 @@ void FileTransfer::sendFile(const Jid &to, const QString &fname, qlonglong size,
 	d->id = d->m->link(this);
 
 	d->ft = new JT_FT(d->m->client()->rootTask());
-	connect(d->ft, SIGNAL(finished()), SLOT(ft_finished()));
+	connect(d->ft, &Task::finished, this, &FileTransfer::ft_finished);
 	QStringList list;
 	list += "http://jabber.org/protocol/bytestreams";
 	d->ft->request(to, d->id, fname, size, desc, list);
@@ -248,10 +248,10 @@ void FileTransfer::ft_finished()
 			d->length = d->size - d->rangeOffset;
 		d->streamType = ft->streamType();
 		d->c = d->m->client()->s5bManager()->createConnection();
-		connect(d->c, SIGNAL(connected()), SLOT(s5b_connected()));
-		connect(d->c, SIGNAL(connectionClosed()), SLOT(s5b_connectionClosed()));
-		connect(d->c, SIGNAL(bytesWritten(int)), SLOT(s5b_bytesWritten(int)));
-		connect(d->c, SIGNAL(error(int)), SLOT(s5b_error(int)));
+		connect(d->c, &S5BConnection::connected, this, &FileTransfer::s5b_connected);
+		connect(d->c, &ByteStream::connectionClosed, this, &FileTransfer::s5b_connectionClosed);
+		connect(d->c, &ByteStream::bytesWritten, this, &FileTransfer::s5b_bytesWritten);
+		connect(d->c, &ByteStream::error, this, &FileTransfer::s5b_error);
 
 		if(d->proxy.isValid())
 			d->c->setProxy(d->proxy);
@@ -272,14 +272,14 @@ void FileTransfer::ft_finished()
 void FileTransfer::takeConnection(S5BConnection *c)
 {
 	d->c = c;
-	connect(d->c, SIGNAL(connected()), SLOT(s5b_connected()));
-	connect(d->c, SIGNAL(connectionClosed()), SLOT(s5b_connectionClosed()));
-	connect(d->c, SIGNAL(readyRead()), SLOT(s5b_readyRead()));
-	connect(d->c, SIGNAL(error(int)), SLOT(s5b_error(int)));
+	connect(d->c, &S5BConnection::connected, this, &FileTransfer::s5b_connected);
+	connect(d->c, &ByteStream::connectionClosed, this, &FileTransfer::s5b_connectionClosed);
+	connect(d->c, &ByteStream::readyRead, this, &FileTransfer::s5b_readyRead);
+	connect(d->c, &ByteStream::error, this, &FileTransfer::s5b_error);
 	if(d->proxy.isValid())
 		d->c->setProxy(d->proxy);
 	accepted();
-	QTimer::singleShot(0, this, SLOT(doAccept()));
+	QTimer::singleShot(0, this, &FileTransfer::doAccept);
 }
 
 void FileTransfer::s5b_connected()
@@ -360,7 +360,7 @@ FileTransferManager::FileTransferManager(Client *client)
 	d->client = client;
 
 	d->pft = new JT_PushFT(d->client->rootTask());
-	connect(d->pft, SIGNAL(incoming(FTRequest)), SLOT(pft_incoming(FTRequest)));
+	connect(d->pft, &JT_PushFT::incoming, this, &FileTransferManager::pft_incoming);
 }
 
 FileTransferManager::~FileTransferManager()

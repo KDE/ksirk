@@ -391,15 +391,15 @@ void S5BConnection::man_waitForAccept(const S5BRequest &r)
 void S5BConnection::man_clientReady(SocksClient *sc, SocksUDP *sc_udp)
 {
 	d->sc = sc;
-	connect(d->sc, SIGNAL(connectionClosed()), SLOT(sc_connectionClosed()));
-	connect(d->sc, SIGNAL(delayedCloseFinished()), SLOT(sc_delayedCloseFinished()));
-	connect(d->sc, SIGNAL(readyRead()), SLOT(sc_readyRead()));
-	connect(d->sc, SIGNAL(bytesWritten(int)), SLOT(sc_bytesWritten(int)));
-	connect(d->sc, SIGNAL(error(int)), SLOT(sc_error(int)));
+	connect(d->sc, &ByteStream::connectionClosed, this, &S5BConnection::sc_connectionClosed);
+	connect(d->sc, &ByteStream::delayedCloseFinished, this, &S5BConnection::sc_delayedCloseFinished);
+	connect(d->sc, &ByteStream::readyRead, this, &S5BConnection::sc_readyRead);
+	connect(d->sc, &ByteStream::bytesWritten, this, &S5BConnection::sc_bytesWritten);
+	connect(d->sc, &ByteStream::error, this, &S5BConnection::sc_error);
 
 	if(sc_udp) {
 		d->su = sc_udp;
-		connect(d->su, SIGNAL(packetReady(QByteArray)), SLOT(su_packetReady(QByteArray)));
+		connect(d->su, &SocksUDP::packetReady, this, &S5BConnection::su_packetReady);
 	}
 
 	d->state = Active;
@@ -422,7 +422,7 @@ void S5BConnection::man_clientReady(SocksClient *sc, SocksUDP *sc_udp)
 		d->notifyClose = true;
 	}
 	if(d->notifyRead || d->notifyClose)
-		QTimer::singleShot(0, this, SLOT(doPending()));
+		QTimer::singleShot(0, this, &S5BConnection::doPending);
 	connected();
 }
 
@@ -430,7 +430,7 @@ void S5BConnection::doPending()
 {
 	if(d->notifyRead) {
 		if(d->notifyClose)
-			QTimer::singleShot(0, this, SLOT(doPending()));
+			QTimer::singleShot(0, this, &S5BConnection::doPending);
 		sc_readyRead();
 	}
 	else if(d->notifyClose)
@@ -585,9 +585,9 @@ S5BManager::S5BManager(Client *parent)
 	d->serv = 0;
 
 	d->ps = new JT_PushS5B(d->client->rootTask());
-	connect(d->ps, SIGNAL(incoming(S5BRequest)), SLOT(ps_incoming(S5BRequest)));
-	connect(d->ps, SIGNAL(incomingUDPSuccess(Jid,QString)), SLOT(ps_incomingUDPSuccess(Jid,QString)));
-	connect(d->ps, SIGNAL(incomingActivate(Jid,QString,Jid)), SLOT(ps_incomingActivate(Jid,QString,Jid)));
+	connect(d->ps, &JT_PushS5B::incoming, this, &S5BManager::ps_incoming);
+	connect(d->ps, &JT_PushS5B::incomingUDPSuccess, this, &S5BManager::ps_incomingUDPSuccess);
+	connect(d->ps, &JT_PushS5B::incomingActivate, this, &S5BManager::ps_incomingActivate);
 }
 
 S5BManager::~S5BManager()
@@ -1000,12 +1000,12 @@ void S5BManager::entryContinue(Entry *e)
 	e->i = new Item(this);
 	e->i->proxy = e->proxyInfo;
 
-	connect(e->i, SIGNAL(accepted()), SLOT(item_accepted()));
-	connect(e->i, SIGNAL(tryingHosts(StreamHostList)), SLOT(item_tryingHosts(StreamHostList)));
-	connect(e->i, SIGNAL(proxyConnect()), SLOT(item_proxyConnect()));
-	connect(e->i, SIGNAL(waitingForActivation()), SLOT(item_waitingForActivation()));
-	connect(e->i, SIGNAL(connected()), SLOT(item_connected()));
-	connect(e->i, SIGNAL(error(int)), SLOT(item_error(int)));
+	connect(e->i, &Item::accepted, this, &S5BManager::item_accepted);
+	connect(e->i, &Item::tryingHosts, this, &S5BManager::item_tryingHosts);
+	connect(e->i, &Item::proxyConnect, this, &S5BManager::item_proxyConnect);
+	connect(e->i, &Item::waitingForActivation, this, &S5BManager::item_waitingForActivation);
+	connect(e->i, &Item::connected, this, &S5BManager::item_connected);
+	connect(e->i, &Item::error, this, &S5BManager::item_error);
 
 	if(e->c->isRemote()) {
 		const S5BRequest &req = e->c->d->req;
@@ -1028,7 +1028,7 @@ void S5BManager::queryProxy(Entry *e)
 	printf("querying proxy: [%s]\n", e->c->d->proxy.full().toLatin1());
 #endif
 	e->query = new JT_S5B(d->client->rootTask());
-	connect(e->query, SIGNAL(finished()), SLOT(query_finished()));
+	connect(e->query, &Task::finished, this, &S5BManager::query_finished);
 	e->query->requestProxyInfo(e->c->d->proxy);
 	e->query->go(true);
 }
@@ -1238,7 +1238,7 @@ void S5BManager::Item::doOutgoing()
 	allowIncoming = true;
 
 	task = new JT_S5B(m->client()->rootTask());
-	connect(task, SIGNAL(finished()), SLOT(jt_finished()));
+	connect(task, &Task::finished, this, &Item::jt_finished);
 	task->request(peer, sid, hosts, state == Initiator ? wantFast : false, udp);
 	out_id = task->id();
 	task->go(true);
@@ -1284,7 +1284,7 @@ void S5BManager::Item::doIncoming()
 	}
 
 	conn = new S5BConnector;
-	connect(conn, SIGNAL(result(bool)), SLOT(conn_result(bool)));
+	connect(conn, &S5BConnector::result, this, &Item::conn_result);
 
 	QPointer<QObject> self = this;
 	tryingHosts(list);
@@ -1300,9 +1300,9 @@ void S5BManager::Item::setIncomingClient(SocksClient *sc)
 	printf("S5BManager::Item: %s [%s] successful incoming connection\n", peer.full().toLatin1(), sid.toLatin1());
 #endif
 
-	connect(sc, SIGNAL(readyRead()), SLOT(sc_readyRead()));
-	connect(sc, SIGNAL(bytesWritten(int)), SLOT(sc_bytesWritten(int)));
-	connect(sc, SIGNAL(error(int)), SLOT(sc_error(int)));
+	connect(sc, &ByteStream::readyRead, this, &Item::sc_readyRead);
+	connect(sc, &ByteStream::bytesWritten, this, &Item::sc_bytesWritten);
+	connect(sc, &ByteStream::error, this, &Item::sc_error);
 
 	client = sc;
 	allowIncoming = false;
@@ -1380,7 +1380,7 @@ void S5BManager::Item::jt_finished()
 #endif
 			// connect to the proxy
 			proxy_conn = new S5BConnector;
-			connect(proxy_conn, SIGNAL(result(bool)), SLOT(proxy_result(bool)));
+			connect(proxy_conn, &S5BConnector::result, this, &Item::proxy_result);
 			StreamHostList list;
 			list += proxy;
 
@@ -1434,9 +1434,9 @@ void S5BManager::Item::conn_result(bool b)
 		printf("S5BManager::Item: %s [%s] successful outgoing connection\n", peer.full().toLatin1(), sid.toLatin1());
 #endif
 
-		connect(sc, SIGNAL(readyRead()), SLOT(sc_readyRead()));
-		connect(sc, SIGNAL(bytesWritten(int)), SLOT(sc_bytesWritten(int)));
-		connect(sc, SIGNAL(error(int)), SLOT(sc_error(int)));
+		connect(sc, &ByteStream::readyRead, this, &Item::sc_readyRead);
+		connect(sc, &ByteStream::bytesWritten, this, &Item::sc_bytesWritten);
+		connect(sc, &ByteStream::error, this, &Item::sc_error);
 
 		m->doSuccess(peer, in_id, h.jid());
 
@@ -1485,9 +1485,9 @@ void S5BManager::Item::proxy_result(bool b)
 		delete proxy_conn;
 		proxy_conn = 0;
 
-		connect(sc, SIGNAL(readyRead()), SLOT(sc_readyRead()));
-		connect(sc, SIGNAL(bytesWritten(int)), SLOT(sc_bytesWritten(int)));
-		connect(sc, SIGNAL(error(int)), SLOT(sc_error(int)));
+		connect(sc, &ByteStream::readyRead, this, &Item::sc_readyRead);
+		connect(sc, &ByteStream::bytesWritten, this, &Item::sc_bytesWritten);
+		connect(sc, &ByteStream::error, this, &Item::sc_error);
 
 		client = sc;
 		client_udp = sc_udp;
@@ -1497,7 +1497,7 @@ void S5BManager::Item::proxy_result(bool b)
 		printf("activating proxy stream\n");
 #endif
 		proxy_task = new JT_S5B(m->client()->rootTask());
-		connect(proxy_task, SIGNAL(finished()), SLOT(proxy_finished()));
+		connect(proxy_task, &Task::finished, this, &Item::proxy_finished);
 		proxy_task->requestActivation(proxy.jid(), sid, peer);
 		proxy_task->go(true);
 	}
@@ -1761,9 +1761,9 @@ public:
 		udp = _udp;
 		client = new SocksClient;
 		client_udp = 0;
-		connect(client, SIGNAL(connected()), SLOT(sc_connected()));
-		connect(client, SIGNAL(error(int)), SLOT(sc_error(int)));
-		connect(&t, SIGNAL(timeout()), SLOT(trySendUDP()));
+		connect(client, &SocksClient::connected, this, &Item::sc_connected);
+		connect(client, &ByteStream::error, this, &Item::sc_error);
+		connect(&t, &QTimer::timeout, this, &Item::trySendUDP);
 	}
 
 	~Item()
@@ -1862,7 +1862,7 @@ S5BConnector::S5BConnector(QObject *parent)
 	d = new Private;
 	d->active = 0;
 	d->active_udp = 0;
-	connect(&d->t, SIGNAL(timeout()), SLOT(t_timeout()));
+	connect(&d->t, &QTimer::timeout, this, &S5BConnector::t_timeout);
 }
 
 S5BConnector::~S5BConnector()
@@ -1892,7 +1892,7 @@ void S5BConnector::start(const Jid &self, const StreamHostList &hosts, const QSt
 #endif
 	for(StreamHostList::ConstIterator it = hosts.constBegin(); it != hosts.constEnd(); ++it) {
 		Item *i = new Item(self, *it, key, udp);
-		connect(i, SIGNAL(result(bool)), SLOT(item_result(bool)));
+		connect(i, &Item::result, this, &S5BConnector::item_result);
 		d->itemList.append(i);
 		i->start();
 	}
@@ -1983,11 +1983,11 @@ public:
 	Item(SocksClient *c) : QObject(0)
 	{
 		client = c;
-		connect(client, SIGNAL(incomingMethods(int)), SLOT(sc_incomingMethods(int)));
-		connect(client, SIGNAL(incomingConnectRequest(QString,int)), SLOT(sc_incomingConnectRequest(QString,int)));
-		connect(client, SIGNAL(error(int)), SLOT(sc_error(int)));
+		connect(client, &SocksClient::incomingMethods, this, &Item::sc_incomingMethods);
+		connect(client, &SocksClient::incomingConnectRequest, this, &Item::sc_incomingConnectRequest);
+		connect(client, &ByteStream::error, this, &Item::sc_error);
 
-		connect(&expire, SIGNAL(timeout()), SLOT(doError()));
+		connect(&expire, &QTimer::timeout, this, &Item::doError);
 		resetExpiration();
 	}
 
@@ -2051,8 +2051,8 @@ S5BServer::S5BServer(QObject *parent)
 :QObject(parent)
 {
 	d = new Private;
-	connect(&d->serv, SIGNAL(incomingReady()), SLOT(ss_incomingReady()));
-	connect(&d->serv, SIGNAL(incomingUDP(QString,int,QHostAddress,int,QByteArray)), SLOT(ss_incomingUDP(QString,int,QHostAddress,int,QByteArray)));
+	connect(&d->serv, &SocksServer::incomingReady, this, &S5BServer::ss_incomingReady);
+	connect(&d->serv, &SocksServer::incomingUDP, this, &S5BServer::ss_incomingUDP);
 }
 
 S5BServer::~S5BServer()
@@ -2098,7 +2098,7 @@ void S5BServer::ss_incomingReady()
 #ifdef S5B_DEBUG
 	printf("S5BServer: incoming connection from %s:%d\n", i->client->peerAddress().toString().toLatin1(), i->client->peerPort());
 #endif
-	connect(i, SIGNAL(result(bool)), SLOT(item_result(bool)));
+	connect(i, &Item::result, this, &S5BServer::item_result);
 	d->itemList.append(i);
 }
 
@@ -2192,7 +2192,7 @@ JT_S5B::JT_S5B(Task *parent)
 {
 	d = new Private;
 	d->mode = -1;
-	connect(&d->t, SIGNAL(timeout()), SLOT(t_timeout()));
+	connect(&d->t, &QTimer::timeout, this, &JT_S5B::t_timeout);
 }
 
 JT_S5B::~JT_S5B()

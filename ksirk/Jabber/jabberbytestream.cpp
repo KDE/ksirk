@@ -44,10 +44,10 @@ void JabberByteStream::connect ( QString host, int port )
   mSocket->connectToHost(host, port);
 
 	QObject::connect ( mSocket.get(), SIGNAL (error(QAbstractSocket::SocketError)), this, SLOT (slotError(QAbstractSocket::SocketError)) );
-	QObject::connect ( mSocket.get(), SIGNAL (connected()), this, SLOT (slotConnected()) );
-	QObject::connect ( mSocket.get(), SIGNAL (disconnected()), this, SLOT (slotConnectionClosed()) );
-	QObject::connect ( mSocket.get(), SIGNAL (readyRead()), this, SLOT (slotReadyRead()) );
-	QObject::connect ( mSocket.get(), SIGNAL (bytesWritten(qint64)), this, SLOT (slotBytesWritten(qint64)) );
+	QObject::connect ( mSocket.get(), &QAbstractSocket::connected, this, &JabberByteStream::slotConnected );
+	QObject::connect ( mSocket.get(), &QAbstractSocket::disconnected, this, &JabberByteStream::slotConnectionClosed );
+	QObject::connect ( mSocket.get(), &QIODevice::readyRead, this, &JabberByteStream::slotReadyRead );
+	QObject::connect ( mSocket.get(), &QIODevice::bytesWritten, this, &JabberByteStream::slotBytesWritten );
 }
 
 bool JabberByteStream::isOpen () const
