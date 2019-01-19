@@ -13,6 +13,7 @@
   <name xml:lang="fi">KSirk</name>
   <name xml:lang="fr">KSirk</name>
   <name xml:lang="gl">KSirk</name>
+  <name xml:lang="id">KSirk</name>
   <name xml:lang="it">KSirk</name>
   <name xml:lang="nl">KSirk</name>
   <name xml:lang="nn">KSirk</name>
@@ -39,6 +40,7 @@
   <summary xml:lang="fi">Strateginen maailmanvalloituspeli</summary>
   <summary xml:lang="fr">Jeu de stratégie pour la conquête du monde</summary>
   <summary xml:lang="gl">Xogo de estratexia e dominación mundial</summary>
+  <summary xml:lang="id">Permainan Strategi Menguasai Dunia</summary>
   <summary xml:lang="it">Gioco di strategia per la dominazione del mondo</summary>
   <summary xml:lang="nl">Werelddominatie-strategiespel</summary>
   <summary xml:lang="nn">Kamp om verdsherredøme</summary>
@@ -68,6 +70,7 @@
     <p xml:lang="fi">KSirK on tietokoneistettu versio tunnetusta Risk-strategialautapelistä. Tavoitteena on yksinkertaisesti vallata maailma hyökkäämällä armeijoinesi naapurien kimppuun.</p>
     <p xml:lang="fr">KsirK est une version informatisée du célèbre jeu de stratégie Risk. L'objectif du jeu est de conquérir le monde en attaquant vos voisins avec vos armées.</p>
     <p xml:lang="gl">KsirK é unha versión de computador do ben coñecido xogo estratéxico de taboleiro Risk. o obxectivo do xogo O obxectivo do xogo é simplemente conquistar o mundo atacando aos veciños cos teus exércitos.</p>
+    <p xml:lang="id">KsirK adalah versi terkomputerisasi dari permainan papan strategis Risk yang terkenal. Tujuan permainan ini hanyalah untuk menaklukkan dunia dengan menyerang tetanggamu dengan pasukanmu.</p>
     <p xml:lang="it">KsirK è una versione per il computer del famoso gioco strategico da tavola Risk. L'obiettivo del gioco è semplicemente la conquista del mondo attaccando i vicini con le proprie armate.</p>
     <p xml:lang="nl">KsirK is een gecomputeriseerde versie van het welbekende strategische bordspel Risk. Het doel van het spel is eenvoudig de wereld veroveren door uw buren aan te vallen met uw legers.</p>
     <p xml:lang="nn">KsirK er ein elektronisk variant av det kjende brettspelet Risk. Målet er å få verdsherredøme ved å angripa nabolanda dine med soldatar.</p>
@@ -93,6 +96,7 @@
     <p xml:lang="fi">Ominaisuudet:</p>
     <p xml:lang="fr">Fonctionnalités :</p>
     <p xml:lang="gl">Funcionalidades:</p>
+    <p xml:lang="id">Fitur:</p>
     <p xml:lang="it">Caratteristiche:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
     <p xml:lang="nn">Funksjonar:</p>
@@ -120,6 +124,7 @@
       <li xml:lang="fi">1–6 ihmis- tai tietokonepelaajaa</li>
       <li xml:lang="fr">De 1 à 6 joueurs humains ou intelligences artificielles</li>
       <li xml:lang="gl">Permite entre 1 e 6 xogadores, humanos ou do computador (intelixencia artificial).</li>
+      <li xml:lang="id">Dukungan untuk 1-6 pemain manusia atau komputer (AI)</li>
       <li xml:lang="it">Supporto da 1 a 6 giocatori umani o computer (IA)</li>
       <li xml:lang="nl">Ondersteuning voor 1-6 menselijke of computer(AI)spelers</li>
       <li xml:lang="nn">Frå 1 til 6 spelarar (menneske/datamotstandarar)</li>
@@ -144,6 +149,7 @@
       <li xml:lang="fi">Monen pelaajan verkkopelit</li>
       <li xml:lang="fr">Jeu multi-joueurs en réseau</li>
       <li xml:lang="gl">Permite a varias persoas xogar xuntas a través dunha rede.</li>
+      <li xml:lang="id">Multi-pemain memainkan lintas jaringan</li>
       <li xml:lang="it">Gioco multi-giocatore tramite la rete</li>
       <li xml:lang="nl">Met meerdere speler spelen over een netwerk</li>
       <li xml:lang="nn">Fleire kan spela mot kvarandre via nettverk</li>
@@ -168,6 +174,7 @@
       <li xml:lang="fi">Voit helposti luoda uusia teemoja SVG-grafiikalla ja teemamuokkaimella</li>
       <li xml:lang="fr">Vous pouvez créer facilement de nouveaux thèmes en utilisant des graphiques SVG et l'éditeur de thèmes</li>
       <li xml:lang="gl">Podes crear facilmente novos temas con gráficos SVG e o editor de temas.</li>
+      <li xml:lang="id">Kamu bisa secara mudah menciptakan skin baru dengan grafik SVG dan pengedit skin</li>
       <li xml:lang="it">Puoi creare facilmente nuovi temi con immagini SVG e l'editore di temi</li>
       <li xml:lang="nl">U kunt gemakkelijk nieuwe skins with maken met SVG graphics en de skin-editor</li>
       <li xml:lang="nn">Kan enkelt laga eigne grafikktema med SVG-bilete og innebygd temaredigeringsfunksjon</li>
@@ -192,6 +199,7 @@
       <li xml:lang="fi">Teemojen verkkopäivitystuki. Voit helposti ladata ja asentaa uusia teemoja</li>
       <li xml:lang="fr">Obtenir les dernières nouveautés. Vous pouvez facilement télécharger et installer de nouveaux thèmes.</li>
       <li xml:lang="gl">Compatibilidade con Hot New Stuff. Podes descargar e instalar novos temas facilmente.</li>
+      <li xml:lang="id">Dukungan Hot New Stuff. Kamu bisa secara mudah mendownload dan menginstal skin-skin baru</li>
       <li xml:lang="it">Supporto per le Novità. Puoi scaricare e installare facilmente nuovi temi</li>
       <li xml:lang="nl">Ondersteuning door Vers-van-de-pers. U kunt gemakkelijk nieuwe skins downloaden en installeren</li>
       <li xml:lang="nn">Støtte for nedlasting av tema andre har laga</li>
