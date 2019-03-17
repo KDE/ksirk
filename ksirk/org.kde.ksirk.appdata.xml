@@ -30,6 +30,7 @@
   <name xml:lang="sv">Ksirk</name>
   <name xml:lang="uk">KsirK</name>
   <name xml:lang="x-test">xxKSirkxx</name>
+  <name xml:lang="zh-TW">KSirk</name>
   <summary>World Domination Strategy Game</summary>
   <summary xml:lang="ca">Joc d'estratègia de dominació mundial</summary>
   <summary xml:lang="ca-valencia">Joc d'estratègia de dominació mundial</summary>
@@ -114,6 +115,7 @@
     <p xml:lang="uk">Можливості:</p>
     <p xml:lang="x-test">xxFeatures:xx</p>
     <p xml:lang="zh-CN">功能：</p>
+    <p xml:lang="zh-TW">功能：</p>
     <ul>
       <li>Support for 1-6 human or computer (AI) players</li>
       <li xml:lang="ca">Permet entre 1 i 6 jugadors humans o ordinadors (IA)</li>
@@ -140,6 +142,7 @@
       <li xml:lang="sv">Stöd för 1 - 6 personer eller datorspelare (artificiella intelligenser)</li>
       <li xml:lang="uk">Підтримка від одного до шести гравців (людей або комп’ютерних гравців)</li>
       <li xml:lang="x-test">xxSupport for 1-6 human or computer (AI) playersxx</li>
+      <li xml:lang="zh-TW">支援 1-6 個人或電腦 (AI) 玩家</li>
       <li>Multi-player gaming over a network</li>
       <li xml:lang="ca">Jocs multijugador per xarxa</li>
       <li xml:lang="ca-valencia">Jocs multijugador per xarxa</li>
