@@ -61,10 +61,10 @@ public:
   }
 
   /** Default destructor */
-  virtual ~GameXmlHandler() {}
+  ~GameXmlHandler() override {}
 
   /** Called when initializing reading of a document */
-  bool startDocument();
+  bool startDocument() override;
 
   /** 
     * Called whenever a XML open tag is read
@@ -75,7 +75,7 @@ public:
     * @param atts The attributes of this tag.
     */
   bool startElement( const QString & namespaceURI, const QString & localName, 
-                     const QString & qName, const QXmlAttributes & atts );
+                     const QString & qName, const QXmlAttributes & atts ) override;
 
   /**
     * Called whenever a XML close tag is read.
@@ -85,7 +85,7 @@ public:
     * for details)
     */
   bool endElement(const QString& namespaceURI, const QString& localName, 
-                  const QString& qName );
+                  const QString& qName ) override;
 
 private:
   KGameWindow& m_game;

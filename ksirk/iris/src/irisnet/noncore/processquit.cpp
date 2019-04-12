@@ -61,7 +61,7 @@ public:
 		connect(sn, &QSocketNotifier::activated, this, &SafeSocketNotifier::activated);
 	}
 
-	~SafeSocketNotifier()
+	~SafeSocketNotifier() override
 	{
 		sn->setEnabled(false);
 		releaseAndDeleteLater(this, sn);
@@ -134,7 +134,7 @@ public:
 #endif
 	}
 
-	~Private()
+	~Private() override
 	{
 #ifdef Q_OS_WIN
 		if(use_handler)

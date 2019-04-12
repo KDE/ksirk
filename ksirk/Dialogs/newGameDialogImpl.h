@@ -49,7 +49,7 @@ class NewGameWidget : public QWidget, public Ui::NewGameDialog
 public:
   NewGameWidget(NewGameSetup* newGameSetup, QWidget *parent=0);
 
-  virtual ~NewGameWidget();
+  ~NewGameWidget() override;
 
   void init(const QString& skin, GameLogic::GameAutomaton::NetworkGameType netGameType);
   

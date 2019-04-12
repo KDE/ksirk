@@ -46,11 +46,11 @@ public:
                  int& port,
                  QWidget *parent=0);
   
-  virtual ~JoinGameDialog();
+  ~JoinGameDialog() override;
 
 protected:
-  void accept();
-  void reject();
+  void accept() override;
+  void reject() override;
   
 private:
   QString &m_host;

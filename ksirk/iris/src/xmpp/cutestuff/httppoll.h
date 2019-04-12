@@ -32,7 +32,7 @@ class HttpPoll : public ByteStream
 public:
 	enum Error { ErrConnectionRefused = ErrCustom, ErrHostNotFound, ErrProxyConnect, ErrProxyNeg, ErrProxyAuth };
 	HttpPoll(QObject *parent=0);
-	~HttpPoll();
+	~HttpPoll() override;
 
 	void setAuth(const QString &user, const QString &pass="");
 	void connectToUrl(const QString &url);
@@ -42,8 +42,8 @@ public:
 	void setPollInterval(int seconds);
 
 	// from ByteStream
-	bool isOpen() const;
-	void close();
+	bool isOpen() const override;
+	void close() override;
 
 signals:
 	void connected();
@@ -51,7 +51,7 @@ signals:
 	void syncFinished();
 
 protected:
-	int tryWrite();
+	int tryWrite() override;
 
 private slots:
 	void http_result();
@@ -74,7 +74,7 @@ class HttpProxyPost : public QObject
 public:
 	enum Error { ErrConnectionRefused, ErrHostNotFound, ErrSocket, ErrProxyConnect, ErrProxyNeg, ErrProxyAuth };
 	HttpProxyPost(QObject *parent=0);
-	~HttpProxyPost();
+	~HttpProxyPost() override;
 
 	void setAuth(const QString &user, const QString &pass="");
 	bool isActive() const;
@@ -106,7 +106,7 @@ class HttpProxyGetStream : public QObject
 public:
 	enum Error { ErrConnectionRefused, ErrHostNotFound, ErrSocket, ErrProxyConnect, ErrProxyNeg, ErrProxyAuth };
 	HttpProxyGetStream(QObject *parent=0);
-	~HttpProxyGetStream();
+	~HttpProxyGetStream() override;
 
 	void setAuth(const QString &user, const QString &pass="");
 	bool isActive() const;

@@ -57,7 +57,7 @@ public:
   /** 
     * Default destructor
     */
-  virtual ~KsirkChatItem() {}
+  ~KsirkChatItem() override {}
 
   KsirkChatItem(const KsirkChatItem& item);
 

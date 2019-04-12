@@ -34,7 +34,7 @@ class ObjectSession : public QObject
 
 public:
 	ObjectSession(QObject *parent = 0);
-	~ObjectSession();
+	~ObjectSession() override;
 
 	// clear all deferred requests, invalidate watchers
 	void reset();

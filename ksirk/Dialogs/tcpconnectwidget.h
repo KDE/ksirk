@@ -36,7 +36,7 @@ class TcpConnectWidget : public QWidget, public Ui::TcpConnectWidget
 public:
   TcpConnectWidget(QWidget *parent=0);
   
-  virtual ~TcpConnectWidget();
+  ~TcpConnectWidget() override;
   
 Q_SIGNALS:
   void next();

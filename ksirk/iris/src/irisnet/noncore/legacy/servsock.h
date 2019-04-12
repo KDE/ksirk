@@ -32,7 +32,7 @@ class ServSock : public QObject
 	Q_OBJECT
 public:
 	ServSock(QObject *parent=0);
-	~ServSock();
+	~ServSock() override;
 
 	bool isActive() const;
 	bool listen(quint16 port);

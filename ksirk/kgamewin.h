@@ -133,7 +133,7 @@ public:
   /**
     * Deletes the background and the pool
     */
-  ~KGameWindow();
+  ~KGameWindow() override;
     
   /** Returns the game graphics view */
   DecoratedGameFrame* frame() {return m_frame;}
@@ -676,19 +676,19 @@ protected:
   /**
     * Reimplementation of the inherited function : starts the timer.
     */
-  void enterEvent(QEvent* ev);
+  void enterEvent(QEvent* ev) override;
 
   /**
     * Reimplementation of the inherited function : stops the timer.
     */
-  void leaveEvent(QEvent* ev);
+  void leaveEvent(QEvent* ev) override;
 
   void clear();
   
   /**
     * Reimplementation of the inherited function called when a window close event arise
     */
-  bool queryClose();
+  bool queryClose() override;
     
   /** Shows some explanations on how to start playing */
   void explain();
@@ -701,7 +701,7 @@ Q_SIGNALS:
     
 public Q_SLOTS:
 
-  virtual void mouseMoveEvent ( QMouseEvent * event );
+  void mouseMoveEvent ( QMouseEvent * event ) override;
 
   //@{
   /**

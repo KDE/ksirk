@@ -65,7 +65,7 @@ public:
   explicit ONU(const QString& configFileName, QObject *parent);
 
   /** Default destructor */
-  virtual ~ONU();
+  ~ONU() override;
 
   //{@
   /**

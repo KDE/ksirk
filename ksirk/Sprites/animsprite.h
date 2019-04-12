@@ -89,7 +89,7 @@ public:
               unsigned int visibility = 100);
 
   /** The default destructor */
-  virtual ~AnimSprite();
+  ~AnimSprite() override;
 
   /**
     * Moves the sprite by one step towards its destinationPoint.
@@ -274,7 +274,7 @@ signals:
   void animationFinished(AnimSprite* sprite);
 
 protected:
-  virtual bool sceneEvent ( QEvent *  ) {return false;}
+  bool sceneEvent ( QEvent *  ) override {return false;}
 
   /**
     * Set this sprite to display its numFrame's frame. If numFrame is greater

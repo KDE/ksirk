@@ -35,7 +35,7 @@ class IRIS_EXPORT ByteStream : public QObject
 public:
 	enum Error { ErrRead, ErrWrite, ErrCustom = 10 };
 	ByteStream(QObject *parent=0);
-	virtual ~ByteStream()=0;
+	~ByteStream() override =0;
 
 	virtual bool isOpen() const;
 	virtual void close();

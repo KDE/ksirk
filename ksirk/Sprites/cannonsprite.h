@@ -77,13 +77,13 @@ public:
                 unsigned int visibility = 200);
 
   /** The default destructor */
-  virtual ~CannonSprite() {}
+  ~CannonSprite() override {}
 
   /**
     * Gets the number of armies represented by a cannon: 10
     * @return the number of armies represented by a cannon: 10
     */
-  inline virtual unsigned int nbArmies() const {return m_nbArmies;}
+  inline unsigned int nbArmies() const override {return m_nbArmies;}
 
   /**
     * Overloads the AnimSprite method. This virtual function chooses the 
@@ -98,7 +98,7 @@ public:
     * default (cannon point)
     */
   void setupTravel(GameLogic::Country* src, GameLogic::Country* dest, 
-    const QPointF* dpi=0);
+    const QPointF* dpi=0) override;
 
 private:
   static const unsigned int m_nbArmies = 10;

@@ -54,7 +54,7 @@ class KPlayerSetupWidget : public QWidget, public Ui::QPlayerSetupWidget
 public:
   KPlayerSetupWidget(QWidget *parent=0);
   
-  virtual ~KPlayerSetupWidget();
+  ~KPlayerSetupWidget() override;
 
   void init(GameLogic::GameAutomaton* automaton,
                       GameLogic::ONU* onu,

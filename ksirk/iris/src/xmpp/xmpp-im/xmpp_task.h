@@ -41,7 +41,7 @@ namespace XMPP {
 		enum { ErrDisc };
 		Task(Task *parent);
 		Task(Client *, bool isRoot);
-		virtual ~Task();
+		~Task() override;
 
 		Task *parent() const;
 		Client *client() const;

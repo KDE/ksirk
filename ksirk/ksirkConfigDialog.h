@@ -44,14 +44,14 @@ public:
   KsirkConfigurationDialog (QWidget *parent, const char *name, KConfigSkeleton *config);
 
   /** Destructor */
-  virtual ~KsirkConfigurationDialog ();
+  ~KsirkConfigurationDialog () override;
 
 Q_SIGNALS:
   void armiesNumberShowingChanged(int);
 
 protected Q_SLOTS:
-  virtual void updateSettings();
-  virtual void updateWidgets();
+  void updateSettings() override;
+  void updateWidgets() override;
 
 protected:
   Ui::KsirkPreferencesWidget*  m_widget;

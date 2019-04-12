@@ -37,11 +37,11 @@ Q_OBJECT
 public:
 	JabberConnector ( QObject *parent = 0 );
 
-	~JabberConnector ();
+	~JabberConnector () override;
 
-	void connectToServer ( const QString &server );
-	ByteStream *stream () const;
-	void done ();
+	void connectToServer ( const QString &server ) override;
+	ByteStream *stream () const override;
+	void done () override;
 
 	void setOptHostPort ( const QString &host, quint16 port );
 	void setOptSSL ( bool );

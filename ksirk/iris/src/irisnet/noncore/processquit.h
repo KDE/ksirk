@@ -100,7 +100,7 @@ private:
 	Private *d;
 
 	ProcessQuit(QObject *parent = 0);
-	~ProcessQuit();
+	~ProcessQuit() override;
 };
 
 #ifndef NO_IRISNET

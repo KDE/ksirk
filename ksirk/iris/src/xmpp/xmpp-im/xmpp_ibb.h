@@ -42,22 +42,22 @@ namespace XMPP
 		enum { ErrRequest, ErrData };
 		enum { Idle, Requesting, WaitingForAccept, Active };
 		IBBConnection(IBBManager *);
-		~IBBConnection();
+		~IBBConnection() override;
 
 		void connectToJid(const Jid &peer, const QDomElement &comment);
 		void accept();
-		void close();
+		void close() override;
 
 		int state() const;
 		Jid peer() const;
 		QString streamid() const;
 		QDomElement comment() const;
 
-		bool isOpen() const;
-		void write(const QByteArray &);
-		QByteArray read(int bytes=0);
-		int bytesAvailable() const;
-		int bytesToWrite() const;
+		bool isOpen() const override;
+		void write(const QByteArray &) override;
+		QByteArray read(int bytes=0) override;
+		int bytesAvailable() const override;
+		int bytesToWrite() const override;
 
 	signals:
 		void connected();
@@ -83,7 +83,7 @@ namespace XMPP
 		Q_OBJECT
 	public:
 		IBBManager(Client *);
-		~IBBManager();
+		~IBBManager() override;
 
 		Client *client() const;
 
@@ -117,7 +117,7 @@ namespace XMPP
 	public:
 		enum { ModeRequest, ModeSendData };
 		JT_IBB(Task *, bool serve=false);
-		~JT_IBB();
+		~JT_IBB() override;
 
 		void request(const Jid &, const QDomElement &comment);
 		void sendData(const Jid &, const QString &streamid, const QByteArray &data, bool close);
@@ -125,8 +125,8 @@ namespace XMPP
 		void respondError(const Jid &, const QString &id, int code, const QString &str);
 		void respondAck(const Jid &to, const QString &id);
 
-		void onGo();
-		bool take(const QDomElement &);
+		void onGo() override;
+		bool take(const QDomElement &) override;
 
 		QString streamid() const;
 		Jid jid() const;

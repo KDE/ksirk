@@ -36,11 +36,11 @@ Q_OBJECT
 public:
 	JabberByteStream ( QObject *parent = 0 );
 
-	virtual ~JabberByteStream ();
+	~JabberByteStream () override;
 
 	void connect ( QString host, int port );
-	virtual bool isOpen () const;
-	virtual void close ();
+	bool isOpen () const override;
+	void close () override;
 
 	QTcpSocket *socket () const;
 
@@ -48,7 +48,7 @@ signals:
 	void connected ();
 
 protected:
-	virtual int tryWrite ();
+	int tryWrite () override;
 
 private slots:
 	void slotConnected ();

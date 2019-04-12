@@ -47,7 +47,7 @@ namespace XMPP
 	public:
 		enum { ErrReject, ErrNeg, ErrConnect, ErrProxy, ErrStream, Err400 };
 		enum { Idle, Requesting, Connecting, WaitingForAccept, Active };
-		~FileTransfer();
+		~FileTransfer() override;
 
 		FileTransfer *copy() const;
 
@@ -106,7 +106,7 @@ namespace XMPP
 		Q_OBJECT
 	public:
 		FileTransferManager(Client *);
-		~FileTransferManager();
+		~FileTransferManager() override;
 
 		bool isActive(const FileTransfer *ft) const;
 
@@ -139,15 +139,15 @@ namespace XMPP
 		Q_OBJECT
 	public:
 		JT_FT(Task *parent);
-		~JT_FT();
+		~JT_FT() override;
 
 		void request(const Jid &to, const QString &id, const QString &fname, qlonglong size, const QString &desc, const QStringList &streamTypes);
 		qlonglong rangeOffset() const;
 		qlonglong rangeLength() const;
 		QString streamType() const;
 
-		void onGo();
-		bool take(const QDomElement &);
+		void onGo() override;
+		bool take(const QDomElement &) override;
 
 	private:
 		class Private;
@@ -169,12 +169,12 @@ namespace XMPP
 		Q_OBJECT
 	public:
 		JT_PushFT(Task *parent);
-		~JT_PushFT();
+		~JT_PushFT() override;
 
 		void respondSuccess(const Jid &to, const QString &id, qlonglong rangeOffset, qlonglong rangeLength, const QString &streamType);
 		void respondError(const Jid &to, const QString &id, int code, const QString &str);
 
-		bool take(const QDomElement &);
+		bool take(const QDomElement &) override;
 
 	signals:
 		void incoming(const FTRequest &req);

@@ -123,7 +123,7 @@ public:
 	};
 
 	QJDns(QObject *parent = 0);
-	~QJDns();
+	~QJDns() override;
 
 	bool init(Mode mode, const QHostAddress &address);
 	void shutdown();

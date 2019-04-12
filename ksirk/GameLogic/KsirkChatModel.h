@@ -51,12 +51,12 @@ class KsirkChatModel : public KChatBaseModel
   public:
     KsirkChatModel(QObject *parent, Ksirk::KGameWindow* game);
 
-    int rowCount(const QModelIndex &parent = QModelIndex()) const;
-    QVariant data(const QModelIndex &index, int role) const;
+    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+    QVariant data(const QModelIndex &index, int role) const override;
     //      QVariant headerData(int section, Qt::Orientation orientation,
                                  //                          int role = Qt::DisplayRole) const;
     void addMessage(const KsirkChatItem& message);
-    void addMessage(const QString& fromName, const QString& text);
+    void addMessage(const QString& fromName, const QString& text) override;
 
   private:
     QList< KsirkChatItem > m_messages;

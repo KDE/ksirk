@@ -487,7 +487,7 @@ public:
 		p_serv = 0;
 	}
 
-	~NameManager()
+	~NameManager() override
 	{
 		delete p_net;
 		delete p_local;

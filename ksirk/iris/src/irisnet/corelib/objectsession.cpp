@@ -137,7 +137,7 @@ public:
 		callTrigger->setSingleShot(true);
 	}
 
-	~ObjectSessionPrivate()
+	~ObjectSessionPrivate() override
 	{
 		invalidateWatchers();
 

@@ -32,7 +32,7 @@ namespace XMPP
 	public:
 		LiveRosterItem(const Jid &j="");
 		LiveRosterItem(const RosterItem &);
-		~LiveRosterItem();
+		~LiveRosterItem() override;
 
 		void setRosterItem(const RosterItem &);
 

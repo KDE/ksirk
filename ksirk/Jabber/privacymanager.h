@@ -40,7 +40,7 @@ class PrivacyListListener : public Task
 	public:
 		PrivacyListListener ( Task* parent );
 
-		bool take ( const QDomElement &e );
+		bool take ( const QDomElement &e ) override;
 };
 
 class GetPrivacyListsTask : public Task
@@ -55,8 +55,8 @@ class GetPrivacyListsTask : public Task
 	public:
 		GetPrivacyListsTask ( Task* parent );
 
-		void onGo();
-		bool take ( const QDomElement &x );
+		void onGo() override;
+		bool take ( const QDomElement &x ) override;
 		const QStringList& lists();
 		const QString& defaultList();
 		const QString& activeList();
@@ -74,11 +74,11 @@ class SetPrivacyListsTask : public Task
 	public:
 		SetPrivacyListsTask ( Task* parent );
 
-		void onGo();
+		void onGo() override;
 		void setActive ( const QString& active );
 		void setDefault ( const QString& d );
 		void setList ( const PrivacyList& list );
-		bool take ( const QDomElement &x );
+		bool take ( const QDomElement &x ) override;
 };
 
 class GetPrivacyListTask : public Task
@@ -93,8 +93,8 @@ class GetPrivacyListTask : public Task
 	public:
 		GetPrivacyListTask ( Task* parent, const QString& name );
 
-		void onGo();
-		bool take ( const QDomElement &x );
+		void onGo() override;
+		bool take ( const QDomElement &x ) override;
 		const PrivacyList& list();
 
 };
@@ -105,7 +105,7 @@ class PrivacyManager : public QObject
 
 	public:
 		PrivacyManager ( XMPP::Task* rootTask );
-		virtual ~PrivacyManager();
+		~PrivacyManager() override;
 
 		void requestListNames();
 

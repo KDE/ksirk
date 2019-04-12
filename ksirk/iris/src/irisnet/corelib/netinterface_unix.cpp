@@ -335,13 +335,13 @@ public:
 		connect(&t, &QTimer::timeout, this, &UnixNet::check);
 	}
 
-	void start()
+	void start() override
 	{
 		t.start(5000);
 		poll();
 	}
 
-	QList<Info> interfaces() const
+	QList<Info> interfaces() const override
 	{
 		return info;
 	}
@@ -415,7 +415,7 @@ class UnixNetProvider : public IrisNetProvider
 	Q_OBJECT
 	Q_INTERFACES(XMPP::IrisNetProvider)
 public:
-	virtual NetInterfaceProvider *createNetInterfaceProvider()
+	NetInterfaceProvider *createNetInterfaceProvider() override
 	{
 		return new UnixNet;
 	}

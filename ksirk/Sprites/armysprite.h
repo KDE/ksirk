@@ -62,7 +62,7 @@ public:
   }
 
   /** The default destructor */
-  virtual ~ArmySprite() {};
+  ~ArmySprite() override {};
 
   /**
     * Gets the number of armies represented by this sprite. Concrete subclasses

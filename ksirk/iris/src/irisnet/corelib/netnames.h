@@ -408,7 +408,7 @@ public:
 
 	   The lookup is, of course, stopped.
 	*/
-	~NameResolver();
+	~NameResolver() override;
 
 	/**
 	   \brief Starts a lookup
@@ -465,7 +465,7 @@ public:
 	};
 
 	ServiceBrowser(QObject *parent = 0);
-	~ServiceBrowser();
+	~ServiceBrowser() override;
 
         void start(const QString &type, const QString &domain = QStringLiteral("local"));
 	void stop();
@@ -495,7 +495,7 @@ public:
 	};
 
 	ServiceResolver(QObject *parent = 0);
-	~ServiceResolver();
+	~ServiceResolver() override;
 
 	void startFromInstance(const QByteArray &name);
 	void startFromDomain(const QString &domain, const QString &type);
@@ -528,7 +528,7 @@ public:
 	};
 
 	ServiceLocalPublisher(QObject *parent = 0);
-	~ServiceLocalPublisher();
+	~ServiceLocalPublisher() override;
 
 	void publish(const QString &instance, const QString &type, int port, const QMap<QString,QByteArray> &attributes);
 	void updateAttributes(const QMap<QString,QByteArray> &attributes);

@@ -64,27 +64,27 @@ public:
   /**
     Destructor, closes the Jabber connexion.
   */
-  ~KMessageJabber ();
+  ~KMessageJabber () override;
 
   /**
   * The runtime idendifcation
   */
-  virtual int rtti() const {return 3;}
+  int rtti() const override {return 3;}
 
   /**
     @return The jid this object is connected to. See QSocket::peerName.
   */
-  virtual QString peerName () const;
+  QString peerName () const override;
 
   /**
     @return TRUE as this is a network IO.
   */
-  bool isNetwork() const { return true; }
+  bool isNetwork() const override { return true; }
 
   /**
     Returns true if the socket is in state /e connected.
   */
-  bool isConnected () const;
+  bool isConnected () const override;
 
   /**
     Overwritten slot method from KMessageIO.
@@ -92,7 +92,7 @@ public:
     Note: It is not declared as a slot method, since the slot is already
     defined in KMessageIO as a virtual method.
   */
-  void send (const QByteArray &msg);
+  void send (const QByteArray &msg) override;
 
 protected Q_SLOTS:
   virtual void slotMessageReceived ( const XMPP::Message &message );

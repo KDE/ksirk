@@ -40,7 +40,7 @@ class KsirkJabberGameWidget : public QWidget, public Ui::KsirkJabberGameWidget
 public:
   KsirkJabberGameWidget(QWidget* parent);
 
-  ~KsirkJabberGameWidget() {}
+  ~KsirkJabberGameWidget() override {}
                          
   inline void setPreviousGuiIndex(int previousIndex) {m_previousGuiIndex = previousIndex;}
 

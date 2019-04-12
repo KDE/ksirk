@@ -89,7 +89,7 @@ public:
 	Jid activatedStream;
 
 	Item(S5BManager *manager);
-	~Item();
+	~Item() override;
 
 	void reset();
 	void startInitiator(const QString &_sid, const Jid &_self, const Jid &_peer, bool fast, bool udp);
@@ -1766,7 +1766,7 @@ public:
 		connect(&t, &QTimer::timeout, this, &Item::trySendUDP);
 	}
 
-	~Item()
+	~Item() override
 	{
 		cleanup();
 	}
@@ -1991,7 +1991,7 @@ public:
 		resetExpiration();
 	}
 
-	~Item()
+	~Item() override
 	{
 		delete client;
 	}

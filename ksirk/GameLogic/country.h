@@ -79,7 +79,7 @@ public:
       const QPointF& infantryPoint);
 
   /** Default destructor */
-  virtual ~Country();
+  ~Country() override;
 
   GameAutomaton* automaton() {return m_automaton;}
 

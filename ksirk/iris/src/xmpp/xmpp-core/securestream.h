@@ -42,7 +42,7 @@ class SecureStream : public ByteStream
 public:
 	enum Error { ErrTLS = ErrCustom, ErrSASL };
 	SecureStream(ByteStream *s);
-	~SecureStream();
+	~SecureStream() override;
 
 	void startTLSClient(QCA::TLS *t, const QByteArray &spare=QByteArray());
 	void startTLSServer(QCA::TLS *t, const QByteArray &spare=QByteArray());
@@ -56,9 +56,9 @@ public:
 	int errorCode() const;
 
 	// reimplemented
-	bool isOpen() const;
-	void write(const QByteArray &);
-	int bytesToWrite() const;
+	bool isOpen() const override;
+	void write(const QByteArray &) override;
+	int bytesToWrite() const override;
 
 signals:
 	void tlsHandshaken();

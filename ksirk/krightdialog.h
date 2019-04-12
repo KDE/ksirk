@@ -65,7 +65,7 @@ namespace GameLogic
       /**
       * Destroy the widget
       */
-      virtual ~KRightDialog();
+      ~KRightDialog() override;
 
       /**
       * Display the country information after a right click mouse

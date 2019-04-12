@@ -168,7 +168,7 @@ private:
 	{
 	}
 
-	~StringPrepCache()
+	~StringPrepCache() override
 	{
 		foreach(Result* r, nameprep_table) {
 			delete r;

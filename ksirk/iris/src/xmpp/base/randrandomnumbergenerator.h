@@ -14,11 +14,11 @@ namespace XMPP {
 		public:
 			RandRandomNumberGenerator() {}
 
-			virtual double generateNumber() const {
+			double generateNumber() const override {
 				return rand();
 			}
 
-			virtual double getMaximumGeneratedNumber() const {
+			double getMaximumGeneratedNumber() const override {
 				return RAND_MAX;
 			}
 	};

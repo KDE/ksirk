@@ -59,16 +59,16 @@ public:
           GameAutomaton* game );
 
   /** Default destructor. */
-  virtual ~AIColsonPlayer();
+  ~AIColsonPlayer() override;
 
 
-  virtual QString author() {return "Jean-Claude COLSON";}
+  QString author() override {return "Jean-Claude COLSON";}
 
   /** 
     * Returns a pair of countries where the attacker have enough armies to 
     * attack and the defender is a ennemy neighbour of the attacker.
     */
-  virtual QPair< const Country*, const Country* > chooseBelligerant();
+  QPair< const Country*, const Country* > chooseBelligerant() override;
 
   /**
     * Chooses the next action. In the current basic setting, chooses at random
@@ -76,17 +76,17 @@ public:
     * parameters.If the randomly chosen parameters end by an impossible
     * action, continue with next player.
     */
-  virtual void chooseAttackMoveArmiesOrNextPlayer();
+  void chooseAttackMoveArmiesOrNextPlayer() override;
 
   /**
     * Chooses a country to receive a new army in dotation
     */
-  virtual Country* chooseReceivingCountry();
+  Country* chooseReceivingCountry() override;
   
   /**
     * makes all what is necessary to prepare and start the moving of armies
     */
-  virtual bool moveArmiesAction();
+  bool moveArmiesAction() override;
   
   /**
     * computes the next continent to try to conquer or defend
@@ -98,12 +98,12 @@ public:
     * game can start. Allows to initialize AIs with public data about other
     * players.
     */
-  virtual void finalize();
+  void finalize() override;
 
   /**
     * chooses to continue invasion with a certain amount of armies or to stop it
     */
-  virtual void chooseInvasionAction();
+  void chooseInvasionAction() override;
   
 private:
 

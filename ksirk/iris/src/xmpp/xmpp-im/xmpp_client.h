@@ -58,7 +58,7 @@ namespace XMPP
 
 	public:
 		Client(QObject *parent=0);
-		~Client();
+		~Client() override;
 
 		bool isActive() const;
 		void connectToServer(ClientStream *s, const Jid &j, bool auth=true);

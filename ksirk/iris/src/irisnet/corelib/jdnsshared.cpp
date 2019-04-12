@@ -58,7 +58,7 @@ public:
 		connect(t, &QTimer::timeout, this, &SafeTimer::timeout);
 	}
 
-	~SafeTimer()
+	~SafeTimer() override
 	{
 		releaseAndDeleteLater(this, t);
 	}
@@ -289,7 +289,7 @@ public:
 	}
 
 protected:
-	virtual void run()
+	void run() override
 	{
 		m.lock();
 		agent = new JDnsShutdownAgent;

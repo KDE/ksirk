@@ -32,18 +32,18 @@ class HttpConnect : public ByteStream
 public:
 	enum Error { ErrConnectionRefused = ErrCustom, ErrHostNotFound, ErrProxyConnect, ErrProxyNeg, ErrProxyAuth };
 	HttpConnect(QObject *parent=0);
-	~HttpConnect();
+	~HttpConnect() override;
 
 	void setAuth(const QString &user, const QString &pass="");
 	void connectToHost(const QString &proxyHost, int proxyPort, const QString &host, int port);
 
 	// from ByteStream
-	bool isOpen() const;
-	void close();
-	void write(const QByteArray &);
-	QByteArray read(int bytes=0);
-	int bytesAvailable() const;
-	int bytesToWrite() const;
+	bool isOpen() const override;
+	void close() override;
+	void write(const QByteArray &) override;
+	QByteArray read(int bytes=0) override;
+	int bytesAvailable() const override;
+	int bytesToWrite() const override;
 
 signals:
 	void connected();

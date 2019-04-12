@@ -74,7 +74,7 @@ public:
 	/**
 	   \brief Destroys the object
 	*/
-	virtual ~JDnsSharedDebug();
+	~JDnsSharedDebug() override;
 
 	/**
 	   \brief Read the available debug information
@@ -230,7 +230,7 @@ public:
 
 	   If there is an active operation, it is cancelled.
 	*/
-	~JDnsSharedRequest();
+	~JDnsSharedRequest() override;
 
 	/**
 	   \brief The type of operation being performed
@@ -437,7 +437,7 @@ public:
 	/**
 	   \brief Destroys the object
 	*/
-	~JDnsShared();
+	~JDnsShared() override;
 
 	/**
 	   \brief Sets the debug object to report to
