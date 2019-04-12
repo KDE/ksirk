@@ -49,17 +49,17 @@ public:
                 QDialogButtonBox::StandardButton defaultButton=QDialogButtonBox::Ok, bool modal=false);
 
   /** Destructor */
-  virtual ~KsirkSkinEditorConfigurationDialog ();
+  ~KsirkSkinEditorConfigurationDialog () override;
 
 Q_SIGNALS:
 
 protected Q_SLOTS:
-  virtual void updateSettings();
-  virtual void updateWidgets();
+  void updateSettings() override;
+  void updateWidgets() override;
   void settingChanged(int);
   
 protected:
-  virtual bool hasChanged();
+  bool hasChanged() override;
 
   bool m_changed;
   Ui::KsirkSkinEditorPreferencesWidget*  m_widget;

@@ -49,7 +49,7 @@ class SrvResolver : public QObject
 	Q_OBJECT
 public:
 	SrvResolver(QObject *parent=0);
-	~SrvResolver();
+	~SrvResolver() override;
 
 	void resolve(const QString &server, const QString &type, const QString &proto);
 	void resolveSrvOnly(const QString &server, const QString &type, const QString &proto);

@@ -71,13 +71,13 @@ namespace GameLogic
       /**
       * Destroy the frame : stops and deletes the timer
       */
-      virtual ~FightArena();
+      ~FightArena() override;
       
       /**
       * Returns the size given to the constructor.
       * @return The size given to the constructor.
       */
-      virtual QSize sizeHint() const;
+      QSize sizeHint() const override;
 
       /**
       * Initializes the fight arena with the two country which fight each other

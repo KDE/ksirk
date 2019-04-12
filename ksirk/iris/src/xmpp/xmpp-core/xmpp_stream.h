@@ -50,7 +50,7 @@ namespace XMPP
 		};
 
 		Stream(QObject *parent=0);
-		virtual ~Stream();
+		~Stream() override;
 
 		virtual QDomDocument & doc() const=0;
 		virtual QString baseNS() const=0;

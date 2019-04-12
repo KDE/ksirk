@@ -83,7 +83,7 @@ public:
   }
 
   /** The default destructor */
-  virtual ~FlagSprite() {}
+  ~FlagSprite() override {}
 };
 
 }

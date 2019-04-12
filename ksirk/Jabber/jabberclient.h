@@ -83,7 +83,7 @@ public:
 	};
 
 	JabberClient();
-	~JabberClient();
+	~JabberClient() override;
 
 	/**
 	 * Connect to a Jabber server.

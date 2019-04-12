@@ -138,9 +138,9 @@ namespace XMPP
 		};
 
 		BasicProtocol();
-		~BasicProtocol();
+		~BasicProtocol() override;
 
-		void reset();
+		void reset() override;
 
 		// for outgoing xml
 		QDomDocument doc;
@@ -195,12 +195,12 @@ namespace XMPP
 		void delayError(int code);
 
 		// reimplemented
-		QDomElement docElement();
-		void handleDocOpen(const Parser::Event &pe);
-		bool handleError();
-		bool handleCloseFinished();
-		bool doStep(const QDomElement &e);
-		void itemWritten(int id, int size);
+		QDomElement docElement() override;
+		void handleDocOpen(const Parser::Event &pe) override;
+		bool handleError() override;
+		bool handleCloseFinished() override;
+		bool doStep(const QDomElement &e) override;
+		void itemWritten(int id, int size) override;
 
 		virtual QString defaultNamespace();
 		virtual QStringList extraNamespaces(); // stringlist: prefix,uri,prefix,uri, [...]
@@ -256,9 +256,9 @@ namespace XMPP
 		};
 
 		CoreProtocol();
-		~CoreProtocol();
+		~CoreProtocol() override;
 
-		void reset();
+		void reset() override;
 
 		void startClientOut(const Jid &jid, bool oldOnly, bool tlsActive, bool doAuth, bool doCompression);
 		void startServerOut(const QString &to);
@@ -349,16 +349,16 @@ namespace XMPP
 		bool dialbackStep(const QDomElement &e);
 
 		// reimplemented
-		bool stepAdvancesParser() const;
-		bool stepRequiresElement() const;
-		void stringSend(const QString &s);
-		void stringRecv(const QString &s);
-		QString defaultNamespace();
-		QStringList extraNamespaces();
-		void handleStreamOpen(const Parser::Event &pe);
-		bool doStep2(const QDomElement &e);
-		void elementSend(const QDomElement &e);
-		void elementRecv(const QDomElement &e);
+		bool stepAdvancesParser() const override;
+		bool stepRequiresElement() const override;
+		void stringSend(const QString &s) override;
+		void stringRecv(const QString &s) override;
+		QString defaultNamespace() override;
+		QStringList extraNamespaces() override;
+		void handleStreamOpen(const Parser::Event &pe) override;
+		bool doStep2(const QDomElement &e) override;
+		void elementSend(const QDomElement &e) override;
+		void elementRecv(const QDomElement &e) override;
 	};
 }
 

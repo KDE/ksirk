@@ -69,7 +69,7 @@ public:
       const QPointF& infantryPoint/*, unsigned int id*/);
 
   /** Default destructor */
-  virtual ~Country();
+  ~Country() override;
 
   /**
     * Removes the sprites (flag and soldiers), the owner, etc.

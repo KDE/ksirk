@@ -49,7 +49,7 @@ private slots:
 
 private:
 	SafeDeleteLater();
-	~SafeDeleteLater();
+	~SafeDeleteLater() override;
 
 	QObjectList list;
 	friend class SafeDelete;

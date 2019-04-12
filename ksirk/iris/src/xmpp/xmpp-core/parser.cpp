@@ -70,12 +70,12 @@ public:
 		reset();
 	}
 
-	~StreamInput()
+	~StreamInput() override
 	{
 		delete dec;
 	}
 
-	void reset()
+	void reset() override
 	{
 		delete dec;
 		dec = 0;
@@ -113,7 +113,7 @@ public:
 		return last;
 	}
 
-	QChar next()
+	QChar next() override
 	{
 		if(paused)
 			return EndOfData;
@@ -365,25 +365,25 @@ namespace XMPP
 			needMore = false;
 		}
 
-		~ParserHandler()
+		~ParserHandler() override
 		{
 			while (!eventList.isEmpty()) {
 				delete eventList.takeFirst();
 			}
 		}
 
-		bool startDocument()
+		bool startDocument() override
 		{
 			depth = 0;
 			return true;
 		}
 
-		bool endDocument()
+		bool endDocument() override
 		{
 			return true;
 		}
 
-		bool startPrefixMapping(const QString &prefix, const QString &uri)
+		bool startPrefixMapping(const QString &prefix, const QString &uri) override
 		{
 			if(depth == 0) {
 				nsnames += prefix;
@@ -392,7 +392,7 @@ namespace XMPP
 			return true;
 		}
 
-		bool startElement(const QString &namespaceURI, const QString &localName, const QString &qName, const QXmlAttributes &atts)
+		bool startElement(const QString &namespaceURI, const QString &localName, const QString &qName, const QXmlAttributes &atts) override
 		{
 			if(depth == 0) {
 				Parser::Event *e = new Parser::Event;
@@ -442,7 +442,7 @@ namespace XMPP
 			return true;
 		}
 
-		bool endElement(const QString &namespaceURI, const QString &localName, const QString &qName)
+		bool endElement(const QString &namespaceURI, const QString &localName, const QString &qName) override
 		{
 			--depth;
 			if(depth == 0) {
@@ -476,7 +476,7 @@ namespace XMPP
 			return true;
 		}
 
-		bool characters(const QString &str)
+		bool characters(const QString &str) override
 		{
 			if(depth >= 1) {
 				QString content = str;

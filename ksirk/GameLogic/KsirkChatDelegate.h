@@ -32,17 +32,17 @@ class KsirkChatDelegate : public KChatBaseItemDelegate
 
 public:
     explicit KsirkChatDelegate(QObject *parent = 0);
-    virtual ~KsirkChatDelegate() {}
+    ~KsirkChatDelegate() override {}
 
     void paint(QPainter *painter, const QStyleOptionViewItem &option,
-                const QModelIndex &index) const;
+                const QModelIndex &index) const override;
 
     QSize sizeHint(const QStyleOptionViewItem &option,
-                    const QModelIndex &index ) const;
+                    const QModelIndex &index ) const override;
 
     QSize sizeHint(const QStyleOptionViewItem &option,
                     const QModelIndex &index, const QString& sender,
-                            const QString& message) const;
+                            const QString& message) const override;
 };
 
 #endif // KSIRKCHATDELEGATE_H

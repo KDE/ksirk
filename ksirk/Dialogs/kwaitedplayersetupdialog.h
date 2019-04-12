@@ -51,7 +51,7 @@ public:
                               int& result,
                              QWidget *parent=0);
   
-  virtual ~KWaitedPlayerSetupDialog();
+  ~KWaitedPlayerSetupDialog() override;
 
   inline int result() {return m_result;}
 

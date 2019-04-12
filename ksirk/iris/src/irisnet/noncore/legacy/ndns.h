@@ -33,7 +33,7 @@ class NDns : public QObject
 	Q_OBJECT
 public:
 	NDns(QObject *parent=0);
-	~NDns();
+	~NDns() override;
 
 	void resolve(const QString &);
 	void stop();

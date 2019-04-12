@@ -56,7 +56,7 @@ namespace XMPP
 		};
 
 		XmlProtocol();
-		virtual ~XmlProtocol();
+		~XmlProtocol() override;
 
 		virtual void reset();
 

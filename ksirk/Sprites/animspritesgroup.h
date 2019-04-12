@@ -36,7 +36,7 @@ class AnimSpritesGroup : public QObject, public AnimSpritesList<AnimSprite>
 public:
   AnimSpritesGroup(QObject* target, const char* slot, QObject* parent = 0);
 
-  virtual ~AnimSpritesGroup();
+  ~AnimSpritesGroup() override;
 
   void addSprite(AnimSprite* sprite);
 

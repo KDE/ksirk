@@ -13,7 +13,7 @@ class CompressionHandler : public QObject
 
 public:
 	CompressionHandler();
-	~CompressionHandler();
+	~CompressionHandler() override;
 	void writeIncoming(const QByteArray& a);
 	void write(const QByteArray& a);
 	QByteArray read();

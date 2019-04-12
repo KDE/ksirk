@@ -95,7 +95,7 @@ namespace XMPP
 
 		ClientStream(Connector *conn, TLSHandler *tlsHandler=0, QObject *parent=0);
 		ClientStream(const QString &host, const QString &defRealm, ByteStream *bs, QCA::TLS *tls=0, QObject *parent=0); // server
-		~ClientStream();
+		~ClientStream() override;
 
 		Jid jid() const;
 		void connectToServer(const Jid &jid, bool auth=true);
@@ -132,18 +132,18 @@ namespace XMPP
 		void setCompress(bool);
 
 		// reimplemented
-		QDomDocument & doc() const;
-		QString baseNS() const;
-		bool old() const;
+		QDomDocument & doc() const override;
+		QString baseNS() const override;
+		bool old() const override;
 
-		void close();
-		bool stanzaAvailable() const;
-		Stanza read();
-		void write(const Stanza &s);
+		void close() override;
+		bool stanzaAvailable() const override;
+		Stanza read() override;
+		void write(const Stanza &s) override;
 
-		int errorCondition() const;
-		QString errorText() const;
-		QDomElement errorAppSpec() const;
+		int errorCondition() const override;
+		QString errorText() const override;
+		QDomElement errorAppSpec() const override;
 
 		// extra
 		void writeDirect(const QString &s);

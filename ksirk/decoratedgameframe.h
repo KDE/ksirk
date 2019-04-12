@@ -71,13 +71,13 @@ public:
   /**
     * Destroy the frame : stops and deletes the timer
     */
-  virtual ~DecoratedGameFrame();
+  ~DecoratedGameFrame() override;
 
   /**
     * Returns the size given to the constructor.
     * @return The size given to the constructor.
     */
-  virtual QSize sizeHint() const;
+  QSize sizeHint() const override;
 
   /**
     * initialisation of the contextual menu
@@ -89,7 +89,7 @@ public:
   /**
     * Redefinition of the contextMenuEvent function
     */
-  void contextMenuEvent( QContextMenuEvent * );
+  void contextMenuEvent( QContextMenuEvent * ) override;
 
   /**
     * Getter to the context menu
@@ -146,8 +146,8 @@ signals:
 
 protected:
 
-  void mouseMoveEvent (QMouseEvent* event);
-  bool viewportEvent (QEvent* event);
+  void mouseMoveEvent (QMouseEvent* event) override;
+  bool viewportEvent (QEvent* event) override;
   
 private:
   unsigned int m_mapW;

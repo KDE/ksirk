@@ -46,15 +46,15 @@ public:
   /**
     * Deletes the background and the pool
     */
-  ~PixmapItem();
+  ~PixmapItem() override;
 
 Q_SIGNALS:
   void pressed(QGraphicsItem*, const QPointF&);
   void placed(QGraphicsItem*, const QPointF&);
   
 protected:
-  virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
-  virtual void mouseReleaseEvent (QGraphicsSceneMouseEvent* event);
+  void mousePressEvent(QGraphicsSceneMouseEvent* event) override;
+  void mouseReleaseEvent (QGraphicsSceneMouseEvent* event) override;
   
 };
 

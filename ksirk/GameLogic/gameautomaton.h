@@ -181,7 +181,7 @@ public:
   
   GameAutomaton();
   
-  virtual ~GameAutomaton();
+  ~GameAutomaton() override;
   
   /** Creates the singleton member if necessary and associate it to the given
     * KGameWindow */
@@ -234,7 +234,7 @@ public:
     * @param unused
     * @return the player whose turn it will be
     */
-  KPlayer* nextPlayer(KPlayer *last,bool /*exclusive*/);
+  KPlayer* nextPlayer(KPlayer *last,bool /*exclusive*/) override;
   
   /** 
     * Retrives the number of player playing from the network.
@@ -257,7 +257,7 @@ public:
     * @param isvirtual Will create a local or a (distant) virtual player 
     * depending on this value.
     */
-  virtual KPlayer* createPlayer(int rtti, int /**io*/, bool isvirtual);
+  KPlayer* createPlayer(int rtti, int /**io*/, bool isvirtual) override;
   
   /**
    * @return A pointer to the given named player ; 0 if there is no such player
@@ -479,7 +479,7 @@ protected:
     * @param msg - the datastream message containing the information
     * @param player - the player who did the input
     */
-  bool playerInput(QDataStream &msg,KPlayer *player);
+  bool playerInput(QDataStream &msg,KPlayer *player) override;
 
     
   /**

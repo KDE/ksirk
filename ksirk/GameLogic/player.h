@@ -62,7 +62,7 @@ public:
     */
   Player(GameAutomaton* automaton, const QString &nomPlayer, unsigned int nbArmies, Nationality* myNation);
 
-  virtual ~Player() {}
+  ~Player() override {}
 
   /**
     * The idendification of the player. Overwrite this in
@@ -70,7 +70,7 @@ public:
     *
     * @return 0 for default KPlayer.
   */
-  virtual int rtti() const {return 1;}
+  int rtti() const override {return 1;}
   
   /**
     * comparison on the players' names
@@ -138,8 +138,8 @@ public:
   //@{
   /** Functions used to write and read data to and from a stream for network 
     * transmission */
-  virtual bool   load (QDataStream &stream);
-  virtual bool   save (QDataStream &stream);
+  bool   load (QDataStream &stream) override;
+  bool   save (QDataStream &stream) override;
   //@}
 
   //@{

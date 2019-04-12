@@ -55,7 +55,7 @@ public:
 		connect(c, &NetInterfaceProvider::updated, this, &NetTracker::c_updated);
 	}
 
-	~NetTracker()
+	~NetTracker() override
 	{
 		delete c;
 		self = 0;
@@ -119,7 +119,7 @@ public:
 		loop = 0;
 	}
 
-	~SyncThread()
+	~SyncThread() override
 	{
 		stop();
 	}
@@ -142,7 +142,7 @@ public:
 		wait();
 	}
 
-	virtual void run()
+	void run() override
 	{
 		control_mutex.lock();
 		loop = new QEventLoop;
@@ -175,18 +175,18 @@ public:
 	{
 	}
 
-	~NetThread()
+	~NetThread() override
 	{
 		stop();
 	}
 
-	virtual void begin()
+	void begin() override
 	{
 		tracker = new NetTracker;
 		tracker->start();
 	}
 
-	virtual void end()
+	void end() override
 	{
 		delete tracker;
 	}

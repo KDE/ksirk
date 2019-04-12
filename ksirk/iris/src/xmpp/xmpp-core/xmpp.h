@@ -74,7 +74,7 @@ namespace XMPP
 		Q_OBJECT
 	public:
 		Connector(QObject *parent=0);
-		virtual ~Connector();
+		~Connector() override;
 
 		virtual void connectToServer(const QString &server)=0;
 		virtual ByteStream *stream() const=0;
@@ -109,7 +109,7 @@ namespace XMPP
 	public:
 		enum Error { ErrConnectionRefused, ErrHostNotFound, ErrProxyConnect, ErrProxyNeg, ErrProxyAuth, ErrStream };
 		AdvancedConnector(QObject *parent=0);
-		virtual ~AdvancedConnector();
+		~AdvancedConnector() override;
 
 		class Proxy
 		{
@@ -148,13 +148,13 @@ namespace XMPP
 
 		void changePollInterval(int secs);
 
-		void connectToServer(const QString &server);
-		ByteStream *stream() const;
-		void done();
+		void connectToServer(const QString &server) override;
+		ByteStream *stream() const override;
+		void done() override;
 
 		int errorCode() const;
 
-		virtual QString host() const;
+		QString host() const override;
 
 	signals:
 		void srvLookup(const QString &server);
@@ -186,7 +186,7 @@ namespace XMPP
 		Q_OBJECT
 	public:
 		TLSHandler(QObject *parent=0);
-		virtual ~TLSHandler();
+		~TLSHandler() override;
 
 		virtual void reset()=0;
 		virtual void startClient(const QString &host)=0;
@@ -206,7 +206,7 @@ namespace XMPP
 		Q_OBJECT
 	public:
 		QCATLSHandler(QCA::TLS *parent);
-		~QCATLSHandler();
+		~QCATLSHandler() override;
 
 		QCA::TLS *tls() const;
 		int tlsError() const;
@@ -215,10 +215,10 @@ namespace XMPP
 		bool XMPPCertCheck();
 		bool certMatchesHostname();
 
-		void reset();
-		void startClient(const QString &host);
-		void write(const QByteArray &a);
-		void writeIncoming(const QByteArray &a);
+		void reset() override;
+		void startClient(const QString &host) override;
+		void write(const QByteArray &a) override;
+		void writeIncoming(const QByteArray &a) override;
 
 	signals:
 		void tlsHandshaken();

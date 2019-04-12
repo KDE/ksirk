@@ -48,7 +48,7 @@ class mainMenu : public QWidget, public Ui::MainMenu
 public:
   mainMenu(Ksirk::KGameWindow* game, QWidget* parent = 0);
 
-  ~mainMenu() {}
+  ~mainMenu() override {}
 
   void init(Ksirk::GameLogic::ONU* theWorld);
 };

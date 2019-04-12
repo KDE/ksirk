@@ -34,7 +34,7 @@ class SocksUDP : public QObject
 {
 	Q_OBJECT
 public:
-	~SocksUDP();
+	~SocksUDP() override;
 
 	void change(const QString &host, int port);
 	void write(const QByteArray &data);
@@ -62,7 +62,7 @@ public:
 	enum Request { ReqConnect, ReqUDPAssociate };
 	SocksClient(QObject *parent=0);
 	SocksClient(int, QObject *parent=0);
-	~SocksClient();
+	~SocksClient() override;
 
 	bool isIncoming() const;
 
@@ -78,12 +78,12 @@ public:
 	void grantUDPAssociate(const QString &relayHost, int relayPort);
 
 	// from ByteStream
-	bool isOpen() const;
-	void close();
-	void write(const QByteArray &);
-	QByteArray read(int bytes=0);
-	int bytesAvailable() const;
-	int bytesToWrite() const;
+	bool isOpen() const override;
+	void close() override;
+	void write(const QByteArray &) override;
+	QByteArray read(int bytes=0) override;
+	int bytesAvailable() const override;
+	int bytesToWrite() const override;
 
 	// remote address
 	QHostAddress peerAddress() const;
@@ -131,7 +131,7 @@ class SocksServer : public QObject
 	Q_OBJECT
 public:
 	SocksServer(QObject *parent=0);
-	~SocksServer();
+	~SocksServer() override;
 
 	bool isActive() const;
 	bool listen(quint16 port, bool udp=false);

@@ -86,12 +86,12 @@ public:
 		reset();
 	}
 
-	~SimpleSASLContext()
+	~SimpleSASLContext() override
 	{
 		reset();
 	}
 
-	void reset()
+	void reset() override
 	{
 		resetState();
 
@@ -118,7 +118,7 @@ public:
 		authCondition_ = QCA::SASL::AuthFail;
 	}
 
-	virtual void setConstraints(QCA::SASL::AuthFlags flags, int ssfMin, int) {
+	void setConstraints(QCA::SASL::AuthFlags flags, int ssfMin, int) override {
 		if(flags & (QCA::SASL::RequireForwardSecrecy | QCA::SASL::RequirePassCredentials | QCA::SASL::RequireMutualAuth) || ssfMin > 0)
 			capable = false;
 		else
@@ -126,12 +126,12 @@ public:
 		allow_plain = flags & QCA::SASL::AllowPlain;
 	}
 	
-	virtual void setup(const QString& _service, const QString& _host, const QCA::SASLContext::HostPort*, const QCA::SASLContext::HostPort*, const QString&, int) {
+	void setup(const QString& _service, const QString& _host, const QCA::SASLContext::HostPort*, const QCA::SASLContext::HostPort*, const QString&, int) override {
 		service = _service;
 		host = _host;
 	}
 	
-	virtual void startClient(const QStringList &mechlist, bool allowClientSendFirst) {
+	void startClient(const QStringList &mechlist, bool allowClientSendFirst) override {
 		Q_UNUSED(allowClientSendFirst);
 
 		mechanism_ = QString();
@@ -161,12 +161,12 @@ public:
 		tryAgain();
 	}
 
-	virtual void nextStep(const QByteArray &from_net) {
+	void nextStep(const QByteArray &from_net) override {
 		in_buf = from_net;
 		tryAgain();
 	}
 
-	virtual void tryAgain() {
+	void tryAgain() override {
 		// All exits of the method must emit the ready signal
 		// so all exits go through a goto ready; 
 		if(step == 0) {
@@ -242,7 +242,7 @@ ready:
 		QMetaObject::invokeMethod(this, "resultsReady", Qt::QueuedConnection);
 	}
 
-	virtual void update(const QByteArray &from_net, const QByteArray &from_app) {
+	void update(const QByteArray &from_net, const QByteArray &from_app) override {
 		result_to_app_ = from_net;
 		result_to_net_ = from_app;
 		encoded_ = from_app.size();
@@ -250,58 +250,58 @@ ready:
 		QMetaObject::invokeMethod(this, "resultsReady", Qt::QueuedConnection);
 	}
 
-	virtual bool waitForResultsReady(int msecs) {
+	bool waitForResultsReady(int msecs) override {
 
 		// TODO: for now, all operations block anyway
 		Q_UNUSED(msecs);
 		return true;
 	}
 
-	virtual Result result() const {
+	Result result() const override {
 		return result_;
 	}
 
-	virtual QStringList mechlist() const {
+	QStringList mechlist() const override {
 		return QStringList();
 	}
 	
-	virtual QString mech() const {
+	QString mech() const override {
 		return out_mech;
 	}
 	
-	virtual bool haveClientInit() const {
+	bool haveClientInit() const override {
 		return out_mech == "PLAIN";
 	}
 	
-	virtual QByteArray stepData() const {
+	QByteArray stepData() const override {
 		return out_buf;
 	}
 	
-	virtual QByteArray to_net() {
+	QByteArray to_net() override {
 		return result_to_net_;
 	}
 	
-	virtual int encoded() const {
+	int encoded() const override {
 		return encoded_;
 	}
 	
-	virtual QByteArray to_app() {
+	QByteArray to_app() override {
 		return result_to_app_;
 	}
 
-	virtual int ssf() const {
+	int ssf() const override {
 		return 0;
 	}
 
-	virtual QCA::SASL::AuthCondition authCondition() const {
+	QCA::SASL::AuthCondition authCondition() const override {
 		return authCondition_;
 	}
 
-	virtual QCA::SASL::Params clientParams() const {
+	QCA::SASL::Params clientParams() const override {
 		return QCA::SASL::Params(need.user, need.authzid, need.pass, need.realm);
 	}
 	
-	virtual void setClientParams(const QString *_user, const QString *_authzid, const QCA::SecureArray *_pass, const QString *_realm) {
+	void setClientParams(const QString *_user, const QString *_authzid, const QCA::SecureArray *_pass, const QString *_realm) override {
 		if(_user) {
 			user = *_user;
 			need.user = false;
@@ -324,31 +324,31 @@ ready:
 		}
 	}
 
-	virtual QStringList realmlist() const
+	QStringList realmlist() const override
 	{
 		// TODO
 		return QStringList();
 	}
 
-	virtual QString username() const {
+	QString username() const override {
 		return QString();
 	}
 
-	virtual QString authzid() const {
+	QString authzid() const override {
 		return QString();
 	}
 
-	virtual QCA::Provider::Context* clone() const {
+	QCA::Provider::Context* clone() const override {
 		SimpleSASLContext* s = new SimpleSASLContext(provider());
 		// TODO: Copy all the members
 		return s;
 	}
 	
-	virtual void startServer(const QString &, bool) {
+	void startServer(const QString &, bool) override {
 		result_ =  QCA::SASLContext::Error;
 		QMetaObject::invokeMethod(this, "resultsReady", Qt::QueuedConnection);
 	}
-	virtual void serverFirstStep(const QString &, const QByteArray *) {
+	void serverFirstStep(const QString &, const QByteArray *) override {
 		result_ =  QCA::SASLContext::Error;
 		QMetaObject::invokeMethod(this, "resultsReady", Qt::QueuedConnection);
 	}
@@ -359,27 +359,27 @@ class QCASimpleSASL : public QCA::Provider
 {
 public:
 	QCASimpleSASL() {}
-	~QCASimpleSASL() {}
+	~QCASimpleSASL() override {}
 
-	void init()
+	void init() override
 	{
 	}
 
-	QString name() const {
+	QString name() const override {
 		return "simplesasl";
 	}
 
-	QStringList features() const {
+	QStringList features() const override {
 		return QStringList("sasl");
 	}
 
-	QCA::Provider::Context* createContext(const QString& cap)
+	QCA::Provider::Context* createContext(const QString& cap) override
 	{
 		if(cap == "sasl")
 			return new SimpleSASLContext(this);
 		return 0;
 	}
-	int qcaVersion() const
+	int qcaVersion() const override
 	{
 		return QCA_VERSION;
 	}

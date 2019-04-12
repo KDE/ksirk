@@ -44,7 +44,7 @@ public:
   explicit ArrowSprite(Qt::ArrowType type, QGraphicsItem * parent = 0);
 
   /** The default destructor */
-  virtual ~ArrowSprite();
+  ~ArrowSprite() override;
 
   void setActive(bool value);
 };

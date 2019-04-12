@@ -55,7 +55,7 @@ public:
           GameAutomaton* game );
 
   /** Default destructor. */
-  virtual ~AIPlayer();
+  ~AIPlayer() override;
 
   /**
     * The idendification of the player. Overwrite this in
@@ -63,12 +63,12 @@ public:
     *
     * @return 2 for this class.
   */
-  virtual int rtti() const {return 2;}
+  int rtti() const override {return 2;}
   
   /**
     * Returns true (an AIPlayer is an AI)
     */
-  virtual bool isAI() const;
+  bool isAI() const override;
 
     /** set stopMe to true in order for the run method to return */
   void stop();
@@ -77,7 +77,7 @@ public:
     * Saves this AI player as XML. Used in game saving.
     * @param xmlStream The stream on which to write the XML
     */
-  virtual void saveXml(QTextStream& xmlStream);
+  void saveXml(QTextStream& xmlStream) override;
 
   bool isRunning () const {return m_thread.isRunning();}
 
@@ -90,7 +90,7 @@ protected:
     * (attack, defense, etc.). It has the responsibility to choose the correct
     * action depending on the state of the game.
     */
-  virtual void actionChoice(GameLogic::GameAutomaton::GameState state);
+  void actionChoice(GameLogic::GameAutomaton::GameState state) override;
 
   /** Returns a pair of countries where the attacker have enough armies to 
     * attack and the defender is a ennemy neighbour of the attacker */
@@ -134,7 +134,7 @@ protected: // Private attributes
   class MyThread: public QThread
   {
   protected:
-    virtual void run ();
+    void run () override;
     
   public:
     MyThread(AIPlayer& p) : me(p) {}

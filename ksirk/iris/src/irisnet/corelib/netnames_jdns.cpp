@@ -265,7 +265,7 @@ public:
 		updateTimer->setSingleShot(true);
 	}
 
-	~JDnsGlobal()
+	~JDnsGlobal() override
 	{
 		updateTimer->disconnect(this);
 		updateTimer->setParent(0);
@@ -498,7 +498,7 @@ public:
 		mode = _mode;
 	}
 
-	~JDnsNameProvider()
+	~JDnsNameProvider() override
 	{
 		qDeleteAll(items);
 	}
@@ -532,12 +532,12 @@ public:
 		delete i;
 	}
 
-	virtual bool supportsSingle() const
+	bool supportsSingle() const override
 	{
 		return true;
 	}
 
-	virtual bool supportsLongLived() const
+	bool supportsLongLived() const override
 	{
 		if(mode == Local)
 			return true;  // we support long-lived local queries
@@ -545,14 +545,14 @@ public:
 			return false; // we do NOT support long-lived internet queries
 	}
 
-	virtual bool supportsRecordType(int type) const
+	bool supportsRecordType(int type) const override
 	{
 		// all record types supported
 		Q_UNUSED(type);
 		return true;
 	}
 
-	virtual int resolve_start(const QByteArray &name, int qType, bool longLived)
+	int resolve_start(const QByteArray &name, int qType, bool longLived) override
 	{
 		if(mode == Internet)
 		{
@@ -619,7 +619,7 @@ public:
 		}
 	}
 
-	virtual void resolve_stop(int id)
+	void resolve_stop(int id) override
 	{
 		Item *i = getItemById(id);
 		Q_ASSERT(i);
@@ -629,7 +629,7 @@ public:
 		releaseItem(i);
 	}
 
-	virtual void resolve_localResultsReady(int id, const QList<XMPP::NameRecord> &results)
+	void resolve_localResultsReady(int id, const QList<XMPP::NameRecord> &results) override
 	{
 		Item *i = getItemById(id);
 		Q_ASSERT(i);
@@ -640,7 +640,7 @@ public:
 			Q_ARG(QList<XMPP::NameRecord>, results));
 	}
 
-	virtual void resolve_localError(int id, XMPP::NameResolver::Error e)
+	void resolve_localError(int id, XMPP::NameResolver::Error e) override
 	{
 		Item *i = getItemById(id);
 		Q_ASSERT(i);
@@ -876,7 +876,7 @@ public:
 		opTimer->setSingleShot(true);
 	}
 
-	~JDnsServiceResolve()
+	~JDnsServiceResolve() override
 	{
 		opTimer->disconnect(this);
 		opTimer->setParent(0);
@@ -1410,7 +1410,7 @@ class JDnsPublishExtra : public QObject
 
 public:
 	JDnsPublishExtra(JDnsPublish *_jdnsPub);
-	~JDnsPublishExtra();
+	~JDnsPublishExtra() override;
 
 	void start(const QJDns::Record &_rec);
 	void update(const QJDns::Record &_rec);
@@ -1477,7 +1477,7 @@ public:
 		connect(&pub_ptr, &JDnsSharedRequest::resultsReady, this, &JDnsPublish::pub_ptr_ready);
 	}
 
-	~JDnsPublish()
+	~JDnsPublish() override
 	{
 		qDeleteAll(extraList);
 	}
@@ -2143,13 +2143,13 @@ public:
 		connect(global, &JDnsGlobal::interfacesChanged, this, &JDnsServiceProvider::interfacesChanged);
 	}
 
-	~JDnsServiceProvider()
+	~JDnsServiceProvider() override
 	{
 		// make sure extra items are deleted before normal ones
 		publishExtraItemList.clear();
 	}
 
-	virtual int browse_start(const QString &_type, const QString &_domain)
+	int browse_start(const QString &_type, const QString &_domain) override
 	{
 		QString domain;
 		if(_domain.isEmpty() || _domain == QLatin1String("."))
@@ -2204,7 +2204,7 @@ public:
 		return i->id;
 	}
 
-	virtual void browse_stop(int id)
+	void browse_stop(int id) override
 	{
 		BrowseItem *i = browseItemList.itemById(id);
 		Q_ASSERT(i);
@@ -2212,7 +2212,7 @@ public:
 		browseItemList.remove(i);
 	}
 
-	virtual int resolve_start(const QByteArray &name)
+	int resolve_start(const QByteArray &name) override
 	{
 		int id = resolveItemList.reserveId();
 
@@ -2234,7 +2234,7 @@ public:
 		return i->id;
 	}
 
-	virtual void resolve_stop(int id)
+	void resolve_stop(int id) override
 	{
 		ResolveItem *i = resolveItemList.itemById(id);
 		Q_ASSERT(i);
@@ -2242,7 +2242,7 @@ public:
 		resolveItemList.remove(i);
 	}
 
-	virtual int publish_start(const QString &instance, const QString &_type, int port, const QMap<QString,QByteArray> &attributes)
+	int publish_start(const QString &instance, const QString &_type, int port, const QMap<QString,QByteArray> &attributes) override
 	{
 		int id = publishItemList.reserveId();
 
@@ -2288,7 +2288,7 @@ public:
 		return i->id;
 	}
 
-	virtual void publish_update(int id, const QMap<QString,QByteArray> &attributes)
+	void publish_update(int id, const QMap<QString,QByteArray> &attributes) override
 	{
 		PublishItem *i = publishItemList.itemById(id);
 		Q_ASSERT(i);
@@ -2300,7 +2300,7 @@ public:
 		i->publish->update(attributes);
 	}
 
-	virtual void publish_stop(int id)
+	void publish_stop(int id) override
 	{
 		PublishItem *i = publishItemList.itemById(id);
 		Q_ASSERT(i);
@@ -2309,7 +2309,7 @@ public:
 		publishItemList.remove(i);
 	}
 
-	virtual int publish_extra_start(int pub_id, const NameRecord &name)
+	int publish_extra_start(int pub_id, const NameRecord &name) override
 	{
 		PublishItem *pi = publishItemList.itemById(pub_id);
 		Q_ASSERT(pi);
@@ -2343,7 +2343,7 @@ public:
 		return i->id;
 	}
 
-	virtual void publish_extra_update(int id, const NameRecord &name)
+	void publish_extra_update(int id, const NameRecord &name) override
 	{
 		PublishExtraItem *i = publishExtraItemList.itemById(id);
 		Q_ASSERT(i);
@@ -2372,7 +2372,7 @@ public:
 		i->publish->update(rec);
 	}
 
-	virtual void publish_extra_stop(int id)
+	void publish_extra_stop(int id) override
 	{
 		PublishExtraItem *i = publishExtraItemList.itemById(id);
 		Q_ASSERT(i);
@@ -2620,7 +2620,7 @@ public:
 		global = 0;
 	}
 
-	~JDnsProvider()
+	~JDnsProvider() override
 	{
 		delete global;
 	}
@@ -2631,19 +2631,19 @@ public:
 			global = new JDnsGlobal;
 	}
 
-	virtual NameProvider *createNameProviderInternet()
+	NameProvider *createNameProviderInternet() override
 	{
 		ensure_global();
 		return JDnsNameProvider::create(global, JDnsNameProvider::Internet);
 	}
 
-	virtual NameProvider *createNameProviderLocal()
+	NameProvider *createNameProviderLocal() override
 	{
 		ensure_global();
 		return JDnsNameProvider::create(global, JDnsNameProvider::Local);
 	}
 
-	virtual ServiceProvider *createServiceProvider()
+	ServiceProvider *createServiceProvider() override
 	{
 		ensure_global();
 		return JDnsServiceProvider::create(global);

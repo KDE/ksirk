@@ -90,7 +90,7 @@ public:
   /**
     * Deletes the background and the pool
     */
-  ~MainWindow();
+  ~MainWindow() override;
     
 protected:
   /**
@@ -111,7 +111,7 @@ protected:
   /**
     * Reimplementation of the inherited function called when a window close event arise
     */
-  bool queryClose();
+  bool queryClose() override;
 
 public Q_SLOTS:
 

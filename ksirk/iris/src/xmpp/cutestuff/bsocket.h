@@ -40,7 +40,7 @@ public:
 	enum Error { ErrConnectionRefused = ErrCustom, ErrHostNotFound };
 	enum State { Idle, HostLookup, Connecting, Connected, Closing };
 	BSocket(QObject *parent=0);
-	~BSocket();
+	~BSocket() override;
 
 	void connectToHost(const QString &host, quint16 port);
 	void connectToServer(const QString &srv, const QString &type);
@@ -49,12 +49,12 @@ public:
 	int state() const;
 
 	// from ByteStream
-	bool isOpen() const;
-	void close();
-	void write(const QByteArray &);
-	QByteArray read(int bytes=0);
-	int bytesAvailable() const;
-	int bytesToWrite() const;
+	bool isOpen() const override;
+	void close() override;
+	void write(const QByteArray &) override;
+	QByteArray read(int bytes=0) override;
+	int bytesAvailable() const override;
+	int bytesToWrite() const override;
 
 	// local
 	QHostAddress address() const;

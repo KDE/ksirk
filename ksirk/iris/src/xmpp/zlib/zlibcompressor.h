@@ -13,7 +13,7 @@ class ZLibCompressor : public QObject
 
 public:
 	ZLibCompressor(QIODevice* device, int compression = Z_DEFAULT_COMPRESSION);
-	~ZLibCompressor();
+	~ZLibCompressor() override;
 
 	int write(const QByteArray&);
 

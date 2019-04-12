@@ -53,7 +53,7 @@ class NewGameSummaryWidget : public QWidget, public Ui::NewGameSummary
 public:
   NewGameSummaryWidget(QWidget *parent=0);
   
-  virtual ~NewGameSummaryWidget();
+  ~NewGameSummaryWidget() override;
 
   void show(KGameWindow* game);
 Q_SIGNALS:

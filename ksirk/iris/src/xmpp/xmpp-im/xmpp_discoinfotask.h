@@ -37,7 +37,7 @@ namespace XMPP
 		Q_OBJECT
 	public:
 		DiscoInfoTask(Task *);
-		~DiscoInfoTask();
+		~DiscoInfoTask() override;
 	
 		void get(const Jid &, const QString &node = QString::null, const DiscoItem::Identity = DiscoItem::Identity());
 		void get(const DiscoItem &);
@@ -46,8 +46,8 @@ namespace XMPP
 		const Jid& jid() const;
 		const QString& node() const;
 	
-		void onGo();
-		bool take(const QDomElement &);
+		void onGo() override;
+		bool take(const QDomElement &) override;
 	
 	private:
 		class Private;

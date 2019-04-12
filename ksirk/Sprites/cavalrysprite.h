@@ -77,7 +77,7 @@ public:
                  unsigned int visibility=200);
 
   /** The default destructor */
-    virtual ~CavalrySprite() {}
+    ~CavalrySprite() override {}
 
 /**
   * This function chooses the approach mode of a cavalry sprite towards its
@@ -87,13 +87,13 @@ public:
   * then the sprite should choose an approach by left or right, through the
   * edge of the map.
   */
-  virtual void setupTravel(GameLogic::Country* src, GameLogic::Country* dest, const QPointF* dpcav=0);
+  void setupTravel(GameLogic::Country* src, GameLogic::Country* dest, const QPointF* dpcav=0) override;
 
   /**
     * Gets the number of armies represented by a cavalry: 5
     * @return the number of armies represented by a cavalry: 5
     */
-  inline virtual unsigned int nbArmies() const {return m_nbArmies;}
+  inline unsigned int nbArmies() const override {return m_nbArmies;}
 
 private:
     static const unsigned int m_nbArmies = 5;

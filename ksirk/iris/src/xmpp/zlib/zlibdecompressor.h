@@ -13,7 +13,7 @@ class ZLibDecompressor : public QObject
 
 public:
 	ZLibDecompressor(QIODevice* device);
-	~ZLibDecompressor();
+	~ZLibDecompressor() override;
 
 	int write(const QByteArray&);
 

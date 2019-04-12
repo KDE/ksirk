@@ -76,7 +76,7 @@ public:
                   unsigned int visibility=200);
 
   /** The default destructor */
-  virtual ~InfantrySprite() {}
+  ~InfantrySprite() override {}
 
   /**
     * This function chooses the approach mode of an infantry sprite towards its
@@ -87,13 +87,13 @@ public:
     * edge of the map.
     */
   void setupTravel(GameLogic::Country* src, GameLogic::Country* dest, 
-    const QPointF* dpi=0);
+    const QPointF* dpi=0) override;
 
   /**
     * Gets the number of armies represented by an infantry: 1
     * @return the number of armies represented by an infantry: 1
     */
-  inline virtual unsigned int nbArmies() const {return m_nbArmies;}
+  inline unsigned int nbArmies() const override {return m_nbArmies;}
 
 private:
   static const unsigned int m_nbArmies = 1;

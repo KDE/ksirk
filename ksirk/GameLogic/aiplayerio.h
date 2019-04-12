@@ -42,13 +42,13 @@ public:
   AIPlayerIO(AIPlayer* aiplayer);
 
   /** Default destructor. */
-  ~AIPlayerIO();
+  ~AIPlayerIO() override;
 
   /** 
     * The KGame IO devices must have a rtti function returning a value 
     * different for each different IO class. 
     */
-  virtual int rtti () const {return AIPLAYERIO;}
+  int rtti () const override {return AIPLAYERIO;}
 };
 
 }

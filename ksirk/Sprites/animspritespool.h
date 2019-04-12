@@ -50,7 +50,7 @@ private slots:
 
 private:
   AnimSpritePool();
-  virtual ~AnimSpritePool() {}
+  ~AnimSpritePool() override {}
 
   static AnimSpritePool* m_pool;
   /** All sprites are regularly updated */

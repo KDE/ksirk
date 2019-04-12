@@ -32,7 +32,7 @@ class NetAvailability : public QObject
 
 public:
 	NetAvailability(QObject *parent = 0);
-	~NetAvailability();
+	~NetAvailability() override;
 
 	bool isAvailable() const;
 

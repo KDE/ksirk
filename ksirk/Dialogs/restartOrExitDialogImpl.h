@@ -42,7 +42,7 @@ public:
   RestartOrExitDialogImpl(
       const QString& label,
       QWidget *parent=0);
-  virtual ~RestartOrExitDialogImpl();
+  ~RestartOrExitDialogImpl() override;
 
 private:
     

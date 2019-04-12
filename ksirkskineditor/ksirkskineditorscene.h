@@ -46,13 +46,13 @@ public:
   /**
     *
     */
-  ~Scene();
+  ~Scene() override;
     
 protected:
-  virtual void mouseMoveEvent ( QGraphicsSceneMouseEvent * mouseEvent );
-  virtual void mousePressEvent ( QGraphicsSceneMouseEvent * mouseEvent );
-  virtual void mouseReleaseEvent ( QGraphicsSceneMouseEvent * mouseEvent );
-  virtual void dropEvent ( QGraphicsSceneDragDropEvent * event );
+  void mouseMoveEvent ( QGraphicsSceneMouseEvent * mouseEvent ) override;
+  void mousePressEvent ( QGraphicsSceneMouseEvent * mouseEvent ) override;
+  void mouseReleaseEvent ( QGraphicsSceneMouseEvent * mouseEvent ) override;
+  void dropEvent ( QGraphicsSceneDragDropEvent * event ) override;
   
 Q_SIGNALS:
   void position(const QPointF&);

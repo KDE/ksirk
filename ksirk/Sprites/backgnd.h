@@ -53,7 +53,7 @@ public:
   /**
     * Default destructor
     */
-  ~BackGnd();
+  ~BackGnd() override;
 
   inline const GameLogic::ONU* onu() const {return m_theWorld;}
 
@@ -66,7 +66,7 @@ protected:
     * @param unused
     * @return false: the event is not handled here.
     */
-  virtual bool sceneEvent ( QEvent * ) {return false;}
+  bool sceneEvent ( QEvent * ) override {return false;}
 
 private:
   const GameLogic::ONU* m_theWorld;

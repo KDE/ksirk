@@ -52,7 +52,7 @@ public:
 		connect(t, &QTimer::timeout, this, &SafeTimer::timeout);
 	}
 
-	~SafeTimer()
+	~SafeTimer() override
 	{
 		releaseAndDeleteLater(this, t);
 	}
@@ -357,7 +357,7 @@ public:
 		clock.start();
 	}
 
-	~Private()
+	~Private() override
 	{
 		cleanup();
 	}

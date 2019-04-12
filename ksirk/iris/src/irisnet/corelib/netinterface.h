@@ -68,7 +68,7 @@ public:
 	/**
 	   \brief Destroys the interface object
 	*/
-	~NetInterface();
+	~NetInterface() override;
 
 	/**
 	   \brief Returns true if the interface is valid, otherwise returns false
@@ -163,7 +163,7 @@ public:
 	/**
 	   \brief Destroys the manager object
 	*/
-	~NetInterfaceManager();
+	~NetInterfaceManager() override;
 
 	/**
 	   \brief Returns the list of available interface ids
