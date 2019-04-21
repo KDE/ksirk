@@ -112,7 +112,6 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
     qCDebug(KSIRK_LOG) << Player::name() << " waiting to receive ack " << m_waitedAck;
     return;
   }
-  QPointF point;
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   QByteArray buffer2;

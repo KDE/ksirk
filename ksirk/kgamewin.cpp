@@ -2516,7 +2516,6 @@ bool KGameWindow::invade(unsigned int nb )
   }
   bool res = initArmiesMovement(nb, m_firstCountry, m_secondCountry);
   qCDebug(KSIRK_LOG) << "invade("<<nb<<") returns " << res;
-  QPoint point;
   return res;
 }
 

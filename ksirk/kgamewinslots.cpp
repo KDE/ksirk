@@ -717,7 +717,7 @@ void KGameWindow::slotMovingArmiesArrived(AnimSpritesGroup* sprites)
   {
     m_animSpritesGroups.removeAt(index);
   }
-  delete sprites;
+  sprites->deleteLater();
   KMessageParts messageParts;
   broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
 }

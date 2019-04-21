@@ -828,7 +828,7 @@ void KGameWindow::animCombat()
   for (; it != it_end; it++)
   {
     qCDebug(KSIRK_LOG) << "a sprite position: " << (*it)->pos();
-    CannonSprite* sprite = (CannonSprite*)(*it);
+    AnimSprite* sprite = (*it);
     sprite-> changeSequence("firing");
 
     qreal firingRelativePos = (Sprites::SkinSpritesData::single().intData("cannon-width") - Sprites::SkinSpritesData::single().intData("firing-width"))*m_theWorld->zoom();
