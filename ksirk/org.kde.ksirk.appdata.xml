@@ -15,6 +15,7 @@
   <name xml:lang="gl">KSirk</name>
   <name xml:lang="id">KSirk</name>
   <name xml:lang="it">KSirk</name>
+  <name xml:lang="ko">KsirK</name>
   <name xml:lang="nl">KSirk</name>
   <name xml:lang="nn">KSirk</name>
   <name xml:lang="pl">KSirk</name>
@@ -43,6 +44,7 @@
   <summary xml:lang="gl">Xogo de estratexia e dominación mundial</summary>
   <summary xml:lang="id">Permainan Strategi Menguasai Dunia</summary>
   <summary xml:lang="it">Gioco di strategia per la dominazione del mondo</summary>
+  <summary xml:lang="ko">우주 정복 전략 게임</summary>
   <summary xml:lang="nl">Werelddominatie-strategiespel</summary>
   <summary xml:lang="nn">Kamp om verdsherredøme</summary>
   <summary xml:lang="pl">Gra strategiczna o dominacji świata</summary>
@@ -73,6 +75,7 @@
     <p xml:lang="gl">KsirK é unha versión de computador do ben coñecido xogo estratéxico de taboleiro Risk. o obxectivo do xogo O obxectivo do xogo é simplemente conquistar o mundo atacando aos veciños cos teus exércitos.</p>
     <p xml:lang="id">KsirK adalah versi terkomputerisasi dari permainan papan strategis Risk yang terkenal. Tujuan permainan ini hanyalah untuk menaklukkan dunia dengan menyerang tetanggamu dengan pasukanmu.</p>
     <p xml:lang="it">KsirK è una versione per il computer del famoso gioco strategico da tavola Risk. L'obiettivo del gioco è semplicemente la conquista del mondo attaccando i vicini con le proprie armate.</p>
+    <p xml:lang="ko">KsirK는 전략 보드 게임 Risk의 컴퓨터 버전입니다. 게임의 목표는 군사를 동원하여 상대방을 공격해서 세계를 정복하는 것입니다.</p>
     <p xml:lang="nl">KsirK is een gecomputeriseerde versie van het welbekende strategische bordspel Risk. Het doel van het spel is eenvoudig de wereld veroveren door uw buren aan te vallen met uw legers.</p>
     <p xml:lang="nn">KsirK er ein elektronisk variant av det kjende brettspelet Risk. Målet er å få verdsherredøme ved å angripa nabolanda dine med soldatar.</p>
     <p xml:lang="pl">KsirK jest skomputeryzowaną wersją dobrze znanej strategicznej gry planszowej Risk. Celem gry jest po prostu podbicie świata poprzez atakowanie swoich sąsiadów swoją armią.</p>
@@ -99,6 +102,7 @@
     <p xml:lang="gl">Funcionalidades:</p>
     <p xml:lang="id">Fitur:</p>
     <p xml:lang="it">Caratteristiche:</p>
+    <p xml:lang="ko">기능:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
     <p xml:lang="nn">Funksjonar:</p>
     <p xml:lang="pl">Możliwości:</p>
@@ -128,6 +132,7 @@
       <li xml:lang="gl">Permite entre 1 e 6 xogadores, humanos ou do computador (intelixencia artificial).</li>
       <li xml:lang="id">Dukungan untuk 1-6 pemain manusia atau komputer (AI)</li>
       <li xml:lang="it">Supporto da 1 a 6 giocatori umani o computer (IA)</li>
+      <li xml:lang="ko">컴퓨터 및 사람으로 1-6인 플레이 지원</li>
       <li xml:lang="nl">Ondersteuning voor 1-6 menselijke of computer(AI)spelers</li>
       <li xml:lang="nn">Frå 1 til 6 spelarar (menneske/datamotstandarar)</li>
       <li xml:lang="pl">Obsługa dla 1-6 graczy ludzkich lub komputerowych (AI)</li>
@@ -154,6 +159,7 @@
       <li xml:lang="gl">Permite a varias persoas xogar xuntas a través dunha rede.</li>
       <li xml:lang="id">Multi-pemain memainkan lintas jaringan</li>
       <li xml:lang="it">Gioco multi-giocatore tramite la rete</li>
+      <li xml:lang="ko">네트워크 기반 멀티플레이어</li>
       <li xml:lang="nl">Met meerdere speler spelen over een netwerk</li>
       <li xml:lang="nn">Fleire kan spela mot kvarandre via nettverk</li>
       <li xml:lang="pl">Gra wieloosobowa przez sieć</li>
@@ -179,6 +185,7 @@
       <li xml:lang="gl">Podes crear facilmente novos temas con gráficos SVG e o editor de temas.</li>
       <li xml:lang="id">Kamu bisa secara mudah menciptakan skin baru dengan grafik SVG dan pengedit skin</li>
       <li xml:lang="it">Puoi creare facilmente nuovi temi con immagini SVG e l'editore di temi</li>
+      <li xml:lang="ko">SVG 그래픽과 스킨 편집기로 새로운 스킨 만들기</li>
       <li xml:lang="nl">U kunt gemakkelijk nieuwe skins with maken met SVG graphics en de skin-editor</li>
       <li xml:lang="nn">Kan enkelt laga eigne grafikktema med SVG-bilete og innebygd temaredigeringsfunksjon</li>
       <li xml:lang="pl">Można łatwo tworzyć nowe wyglądy przy użyciu grafik SVG i edytora</li>
@@ -204,6 +211,7 @@
       <li xml:lang="gl">Compatibilidade con Hot New Stuff. Podes descargar e instalar novos temas facilmente.</li>
       <li xml:lang="id">Dukungan Hot New Stuff. Kamu bisa secara mudah mendownload dan menginstal skin-skin baru</li>
       <li xml:lang="it">Supporto per le Novità. Puoi scaricare e installare facilmente nuovi temi</li>
+      <li xml:lang="ko">새로운 내용 얻기 지원. 새로운 스킨을 쉽게 다운로드하고 설치할 수 있습니다</li>
       <li xml:lang="nl">Ondersteuning door Vers-van-de-pers. U kunt gemakkelijk nieuwe skins downloaden en installeren</li>
       <li xml:lang="nn">Støtte for nedlasting av tema andre har laga</li>
       <li xml:lang="pl">Obsługa Hot New Stuff. Możesz łatwo pobierać i wgrywać nowe wyglądy</li>
