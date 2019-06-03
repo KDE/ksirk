@@ -30,7 +30,6 @@
 #include <QWidget>
 #include <QMap>
 
-class KPlayer;
 
 namespace Ksirk
 {
@@ -38,8 +37,6 @@ namespace Ksirk
   
 namespace GameLogic
 {
-  class ONU;
-  class GameAutomaton;
 }
 
 /**

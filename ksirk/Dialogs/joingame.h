@@ -28,7 +28,6 @@
 
 #include <QDialog>
 
-class KPlayer;
 
 namespace Ksirk
 {

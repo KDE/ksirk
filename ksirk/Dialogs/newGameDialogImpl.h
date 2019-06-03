@@ -34,7 +34,6 @@ namespace Ksirk
 {
 namespace GameLogic
 {
-    class ONU;
     class GameAutomaton;
 }
 

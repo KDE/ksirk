@@ -43,11 +43,8 @@
 // include files for kde games
 
 class QAction;
-class KToolBar;
 class KRecentFilesAction;
 
-class QEvent;
-class QDockWidget;
 class QGraphicsScene;
 class QGraphicsView;
 class QListWidgetItem;

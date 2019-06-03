@@ -36,7 +36,6 @@
 #include <QtCrypto>
 
 class QString;
-class KActionMenu;
 class JabberResourcePool;
 class JabberContact;
 class JabberContactPool;
