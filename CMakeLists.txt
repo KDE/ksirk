@@ -51,6 +51,10 @@ add_subdirectory(ksirk)
 add_subdirectory(ksirkskineditor)
 add_subdirectory(doc)
 
-install( FILES ksirk.categories DESTINATION ${KDE_INSTALL_CONFDIR} )
+if (${ECM_VERSION} STRGREATER "5.58.0")
+    install(FILES ksirk.categories  DESTINATION  ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
+else()
+    install(FILES ksirk.categories  DESTINATION ${KDE_INSTALL_CONFDIR})
+endif()
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
