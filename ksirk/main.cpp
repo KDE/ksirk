@@ -27,6 +27,8 @@ This is the standard main function of a KDE application simplified for KsirK
 #include <QApplication>
 #include <QCommandLineParser>
 
+#include "../ksirk_version.h"
+
 int main(int argc, char *argv[])
 {
   qCDebug(KSIRK_LOG) << "Hello KsirK";
@@ -36,7 +38,7 @@ int main(int argc, char *argv[])
 
   KAboutData aboutData(QStringLiteral("ksirk"),
                        i18n("KsirK"),
-                       QStringLiteral("5.0.0"),
+                       QStringLiteral(KSIRK_VERSION_STRING),
                        i18n("KsirK - World Domination Strategy Game"),
                        KAboutLicense::GPL,
                        i18n("(c) 2002-2015, Gaël de Chalendar\n"),

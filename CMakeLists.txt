@@ -1,5 +1,13 @@
-project(ksirk)
 cmake_minimum_required (VERSION 3.5 FATAL_ERROR)
+
+# KDE Application Version, managed by release script
+set(KDE_APPLICATIONS_VERSION_MAJOR "19")
+set(KDE_APPLICATIONS_VERSION_MINOR "07")
+set(KDE_APPLICATIONS_VERSION_MICRO "70")
+set(KDE_APPLICATIONS_VERSION "${KDE_APPLICATIONS_VERSION_MAJOR}.${KDE_APPLICATIONS_VERSION_MINOR}.${KDE_APPLICATIONS_VERSION_MICRO}")
+
+project(ksirk VERSION ${KDE_APPLICATIONS_VERSION})
+
 set (QT_MIN_VERSION "5.7.0")
 set (KF5_MIN_VERSION "5.30.0")
 
@@ -29,6 +37,7 @@ find_package(Phonon4Qt5 REQUIRED)
 include(FeatureSummary)
 include(ECMAddAppIcon)
 include(ECMInstallIcons)
+include(ECMSetupVersion)
 include(KDEInstallDirs)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
@@ -46,6 +55,8 @@ set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION "Support for encryption"
 kde_enable_exceptions()
 
 remove_definitions(-DQT_NO_STL) 
+
+ecm_setup_version(${KDE_APPLICATIONS_VERSION} VARIABLE_PREFIX KSIRK VERSION_HEADER ksirk_version.h)
 
 add_subdirectory(ksirk)
 add_subdirectory(ksirkskineditor)

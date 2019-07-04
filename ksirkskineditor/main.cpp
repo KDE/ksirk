@@ -31,6 +31,8 @@ This is the standard main function of a KDE application
 #include <KLocalizedString>
 #include "ksirkskineditor_debug.h"
 
+#include "../ksirk_version.h"
+
 #include <KToolBar>
 #include <QApplication>
 #include <QCommandLineParser>
@@ -48,7 +50,7 @@ int main(int argc, char *argv[])
   KAboutData aboutData(
     QStringLiteral("ksirkskineditor"),
     i18n("KsirK Skin Editor"),
-    /*KDE_VERSION_STRING*/QStringLiteral("5.0.0"),
+    QStringLiteral(KSIRK_VERSION_STRING),
     i18n(description),
     KAboutLicense::GPL,
     i18n("(c) 2008, Gaël de Chalendar\n"),
