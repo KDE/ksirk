@@ -39,7 +39,7 @@ namespace XMPP
 		DiscoInfoTask(Task *);
 		~DiscoInfoTask() override;
 	
-		void get(const Jid &, const QString &node = QString::null, const DiscoItem::Identity = DiscoItem::Identity());
+		void get(const Jid &, const QString &node = QString(), const DiscoItem::Identity = DiscoItem::Identity());
 		void get(const DiscoItem &);
 	
 		const DiscoItem &item() const;

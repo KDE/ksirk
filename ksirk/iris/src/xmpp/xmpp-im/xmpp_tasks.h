@@ -389,7 +389,7 @@ namespace XMPP
 		JT_DiscoItems(Task *);
 		~JT_DiscoItems() override;
 	
-		void get(const Jid &, const QString &node = QString::null);
+		void get(const Jid &, const QString &node = QString());
 		void get(const DiscoItem &);
 	
 		const DiscoList &items() const;

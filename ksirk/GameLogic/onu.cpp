@@ -61,11 +61,11 @@ ONU::ONU(GameAutomaton* automaton,
 {
   qCDebug(KSIRK_LOG) << "ONU constructor: " << m_configFileName;
   QFileInfo qfi(m_configFileName);
-  qCDebug(KSIRK_LOG) << "skin written at :" << qfi.lastModified().toTime_t();
+  qCDebug(KSIRK_LOG) << "skin written at :" << qfi.lastModified().toSecsSinceEpoch();
   //qCDebug(KSIRK_LOG) << "cache created at:" << m_automaton->pixmapCache().timestamp();
 #pragma message("port to qt5")
 #if 0
-  if (m_automaton->pixmapCache().timestamp() < qfi.lastModified().toTime_t())
+  if (m_automaton->pixmapCache().timestamp() < qfi.lastModified().toSecsSinceEpoch())
   {
     m_automaton->pixmapCache().discard();
   }
