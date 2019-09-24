@@ -119,7 +119,7 @@ void AnimSprite::sequenceConstruction()
 
   QPixmap allpm;
   QString allpmCacheId = m_skin+m_svgid+QString::number(m_width*frames)+"x"+QString::number(m_height*nbVersions);
-  if (!QPixmapCache::find(allpmCacheId, allpm))
+  if (!QPixmapCache::find(allpmCacheId, &allpm))
   {
     // Pixmap isn't in the cache, create it and insert to cache
     QSize size((int)(m_width*frames), (int)(m_height*nbVersions));
@@ -139,7 +139,7 @@ void AnimSprite::sequenceConstruction()
 //       qCDebug(KSIRK_LOG)<< "constr s : "<<m_width<<" "<<m_height<<" "<<look-1<<endl;
       QPixmap pm;
       QString pmCacheId = m_skin+m_svgid+QString::number(m_width*frames)+"x"+QString::number(m_height*nbVersions)+"-"+QString::number(i)+":"+QString::number(l);
-      if (!QPixmapCache::find(pmCacheId, pm))
+      if (!QPixmapCache::find(pmCacheId, &pm))
       {
         // Pixmap isn't in the cache, create it and insert to cache
         pm = allpm.copy((int)(m_width*i), (int)(m_height*l),

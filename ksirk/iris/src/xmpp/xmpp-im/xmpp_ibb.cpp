@@ -68,7 +68,7 @@ IBBConnection::IBBConnection(IBBManager *m)
 
 	++num_conn;
 	d->id = id_conn++;
-	QString dstr; dstr.sprintf("IBBConnection[%d]: constructing, count=%d\n", d->id, num_conn);
+    QString dstr = QString::asprintf("IBBConnection[%d]: constructing, count=%d\n", d->id, num_conn);
 	d->m->client()->debug(dstr);
 }
 
@@ -92,7 +92,7 @@ IBBConnection::~IBBConnection()
 	reset(true);
 
 	--num_conn;
-	QString dstr; dstr.sprintf("IBBConnection[%d]: destructing, count=%d\n", d->id, num_conn);
+    QString dstr = QString::asprintf("IBBConnection[%d]: destructing, count=%d\n", d->id, num_conn);
 	d->m->client()->debug(dstr);
 
 	delete d;
@@ -107,7 +107,7 @@ void IBBConnection::connectToJid(const Jid &peer, const QDomElement &comment)
 	d->peer = peer;
 	d->comment = comment;
 
-	QString dstr; dstr.sprintf("IBBConnection[%d]: initiating request to %s\n", d->id, peer.full().toLatin1().data());
+    QString dstr = QString::asprintf("IBBConnection[%d]: initiating request to %s\n", d->id, peer.full().toLatin1().data());
 	d->m->client()->debug(dstr);
 
 	d->j = new JT_IBB(d->m->client()->rootTask());
@@ -121,7 +121,7 @@ void IBBConnection::accept()
 	if(d->state != WaitingForAccept)
 		return;
 
-	QString dstr; dstr.sprintf("IBBConnection[%d]: accepting %s [%s]\n", d->id, d->peer.full().toLatin1().data(), d->sid.toLatin1().data());
+    QString dstr = QString::asprintf("IBBConnection[%d]: accepting %s [%s]\n", d->id, d->peer.full().toLatin1().data(), d->sid.toLatin1().data());
 	d->m->client()->debug(dstr);
 
 	d->m->doAccept(this, d->iq_id);
@@ -140,7 +140,7 @@ void IBBConnection::close()
 		return;
 	}
 
-	QString dstr; dstr.sprintf("IBBConnection[%d]: closing\n", d->id);
+    QString dstr = QString::asprintf("IBBConnection[%d]: closing\n", d->id);
 	d->m->client()->debug(dstr);
 
 	if(d->state == Active) {
