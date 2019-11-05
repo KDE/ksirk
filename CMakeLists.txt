@@ -57,11 +57,13 @@ kde_enable_exceptions()
 remove_definitions(-DQT_NO_STL) 
 
 ecm_setup_version(${KDE_APPLICATIONS_VERSION} VARIABLE_PREFIX KSIRK VERSION_HEADER ksirk_version.h)
-
+if (EXISTS "${CMAKE_SOURCE_DIR}/.git")
+   add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
+   add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x060000)
+endif()
 add_subdirectory(ksirk)
 add_subdirectory(ksirkskineditor)
 add_subdirectory(doc)
-
 if (${ECM_VERSION} STRGREATER "5.58.0")
     install(FILES ksirk.categories  DESTINATION  ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
 else()

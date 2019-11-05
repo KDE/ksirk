@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
 
   if (app.isSessionRestored())
   {
-      RESTORE(KsirkSkinEditor::MainWindow);
+      kRestoreMainWindows<KsirkSkinEditor::MainWindow>();
   }
   else
   {

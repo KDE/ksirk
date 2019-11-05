@@ -77,7 +77,7 @@ bool PrivacyList::moveItemUp(int index)
 		}
 		items_[index].setOrder(items_[index-1].order());
 		items_[index-1].setOrder(order);
-		items_.swap(index,index-1);
+		items_.swapItemsAt(index,index-1);
 		return true;
 	}
 	else {
@@ -95,7 +95,7 @@ bool PrivacyList::moveItemDown(int index)
 		}
 		items_[index].setOrder(items_[index+1].order());
 		items_[index+1].setOrder(order);
-		items_.swap(index,index+1);
+		items_.swapItemsAt(index,index+1);
 		return true;
 	}
 	else {

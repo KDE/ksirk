@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
 
   if (app.isSessionRestored())
   {
-      RESTORE(Ksirk::KGameWindow);
+      kRestoreMainWindows<Ksirk::KGameWindow>();
   }
   else
   {
