@@ -56,7 +56,7 @@ ONU::ONU(const QString& configDir, QObject *parent)
 
   qCDebug(KSIRKSKINEDITOR_LOG) << "ONU constructor: " << m_configFileName;
   m_font.family = QStringLiteral("URW Chancery L");
-  m_font.size = (uint)(13);
+  m_font.size = 13;
   m_font.weight = QFont::Bold;
   m_font.italic = true;
   m_font.foregroundColor = QStringLiteral("black");
@@ -199,7 +199,7 @@ ONU::ONU(const QString& configDir, QObject *parent)
   qCDebug(KSIRKSKINEDITOR_LOG) << "Loading font data";
   KConfigGroup fontgroup = config.group("font");
   m_font.family = fontgroup.readEntry("family","URW Chancery L");
-  m_font.size = fontgroup.readEntry("size",(uint)(13));
+  m_font.size = fontgroup.readEntry("size", 13);
   QString w = fontgroup.readEntry("weight", "bold");;
   if (w == QLatin1String("normal"))
   {

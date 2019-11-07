@@ -68,7 +68,7 @@ public:
   
   /** Default destructor */
   ~Goal();
-
+  
   //@{
   /** Accessors for the goal type */
   inline GoalType type() const {return m_type;}

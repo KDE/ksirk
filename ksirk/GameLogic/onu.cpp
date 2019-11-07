@@ -71,7 +71,7 @@ ONU::ONU(GameAutomaton* automaton,
   }
 #endif
   m_font.family = "URW Chancery L";
-  m_font.size = (uint)(13*m_zoom);
+  m_font.size = (int)(13*m_zoom);
   m_font.weight = QFont::Bold;
   m_font.italic = true;
   m_font.foregroundColor = "black";
@@ -222,7 +222,7 @@ ONU::ONU(GameAutomaton* automaton,
 
   KConfigGroup fontgroup = config.group("font");
   m_font.family = fontgroup.readEntry("family","URW Chancery L");
-  m_font.size = fontgroup.readEntry("size",(uint)(13*m_zoom));
+  m_font.size = fontgroup.readEntry("size",(int)(13*m_zoom));
   QString w = fontgroup.readEntry("weight", "bold");;
   if (w == "normal")
   {
@@ -640,7 +640,7 @@ void ONU::applyZoomFactor(qreal zoomFactor)
 
   m_zoom *= zoomFactor;
 
-  //m_font.size = (unsigned int)(m_font.size*m_zoom);
+  //m_font.size = (int)(m_font.size*m_zoom);
   //m_width = (unsigned int)(m_width *m_zoom);
   //m_height = (unsigned int)(m_height *m_zoom);
 
@@ -665,7 +665,7 @@ void ONU::applyZoomFactorFast(qreal zoomFactor)		//benj
   //Application of zoom
   if (zoomFactor > 1 && m_nbZooms < nbLimitZooms)
   {
-    m_font.size = (unsigned int)(m_font.size*zoomFactor);
+    m_font.size = (int)(m_font.size*zoomFactor);
     m_width = (unsigned int)(m_width *zoomFactor);
     m_height = (unsigned int)(m_height *zoomFactor);
 
@@ -684,7 +684,7 @@ void ONU::applyZoomFactorFast(qreal zoomFactor)		//benj
   }
   else if (zoomFactor < 1 && m_nbZooms > -nbLimitZooms)
   {
-    m_font.size = (unsigned int)(m_font.size*zoomFactor);
+    m_font.size = (int)(m_font.size*zoomFactor);
     m_width = (unsigned int)(m_width *zoomFactor);
     m_height = (unsigned int)(m_height *zoomFactor);
 

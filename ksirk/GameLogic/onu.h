@@ -207,7 +207,7 @@ private:
   struct FontDesc
   {
     QString family;
-    uint size;
+    int size;
     QFont::Weight weight;
     bool italic;
     QString foregroundColor;

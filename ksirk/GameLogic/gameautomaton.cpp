@@ -2198,6 +2198,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   case DecrNbArmies:
     stream >> countryName >> nbArmies;
     m_game->theWorld()->countryNamed(countryName)->decrNbArmies(nbArmies);
+    Q_FALLTHROUGH();
   case StartLocalCurrentAI:
     m_game->startLocalCurrentAI();
     break;
