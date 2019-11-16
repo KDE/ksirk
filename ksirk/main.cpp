@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
                        KAboutLicense::GPL,
                        i18n("(c) 2002-2015, Gaël de Chalendar\n"),
                        i18n("For help and user manual, please see\nthe KsirK web site."),
-                       QStringLiteral("http://games.kde.org/game.php?game=ksirk"));
+                       QStringLiteral("https://kde.org/applications/games/org.kde.ksirk"));
 
   aboutData.addAuthor(i18n("Gael de Chalendar aka Kleag"),QStringLiteral(), QStringLiteral("kleag@free.fr"));
   aboutData.addAuthor(i18n("Nemanja Hirsl"),i18n("Current maintainer"), QStringLiteral("nemhirsl@gmail.com"));

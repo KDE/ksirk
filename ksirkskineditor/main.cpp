@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
     KAboutLicense::GPL,
     i18n("(c) 2008, Gaël de Chalendar\n"),
     i18n("For help and user manual, please see\nThe KsirK Web site"),
-    QStringLiteral("http://games.kde.org/game.php?game=ksirk"));
+    QStringLiteral("https://kde.org/applications/games/org.kde.ksirk"));
   aboutData.addAuthor(i18n("Gael de Chalendar aka Kleag"),QString(), QStringLiteral("kleag@free.fr"));
   QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-locale")));
 
