@@ -737,8 +737,7 @@ QString S5BManager::genUniqueSID(const Jid &peer) const
 		for(int i = 0; i < 4; ++i) {
 			int word = rand() & 0xffff;
 			for(int n = 0; n < 4; ++n) {
-				QString s;
-				s.sprintf("%x", (word >> (n * 4)) & 0xf);
+				const QString s = QString::asprintf("%x", (word >> (n * 4)) & 0xf);
 				sid.append(s);
 			}
 		}

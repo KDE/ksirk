@@ -255,7 +255,7 @@ void IBBConnection::ibb_finished()
 		if(j->mode() == JT_IBB::ModeRequest) {
 			d->sid = j->streamid();
 
-			QString dstr; dstr.sprintf("IBBConnection[%d]: %s [%s] accepted.\n", d->id, d->peer.full().toLatin1().data(), d->sid.toLatin1().data());
+			const QString dstr = QString::asprintf("IBBConnection[%d]: %s [%s] accepted.\n", d->id, d->peer.full().toLatin1().data(), d->sid.toLatin1().data());
 			d->m->client()->debug(dstr);
 
 			d->state = Active;
@@ -276,7 +276,7 @@ void IBBConnection::ibb_finished()
 	}
 	else {
 		if(j->mode() == JT_IBB::ModeRequest) {
-			QString dstr; dstr.sprintf("IBBConnection[%d]: %s refused.\n", d->id, d->peer.full().toLatin1().data());
+			const QString dstr = QString::asprintf("IBBConnection[%d]: %s refused.\n", d->id, d->peer.full().toLatin1().data());
 			d->m->client()->debug(dstr);
 
 			reset(true);
@@ -411,8 +411,7 @@ QString IBBManager::genKey() const
 	for(int i = 0; i < 4; ++i) {
 		int word = rand() & 0xffff;
 		for(int n = 0; n < 4; ++n) {
-			QString s;
-			s.sprintf("%x", (word >> (n * 4)) & 0xf);
+			const QString s = QString::asprintf("%x", (word >> (n * 4)) & 0xf);
 			key.append(s);
 		}
 	}

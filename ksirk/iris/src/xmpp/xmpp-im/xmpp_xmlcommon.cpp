@@ -123,9 +123,7 @@ bool stamp2TS(const QString &ts, QDateTime *d)
 
 QString TS2stamp(const QDateTime &d)
 {
-	QString str;
-
-	str.sprintf("%04d%02d%02dT%02d:%02d:%02d",
+	const QString str = QString::asprintf("%04d%02d%02dT%02d:%02d:%02d",
 		d.date().year(),
 		d.date().month(),
 		d.date().day(),
@@ -397,8 +395,7 @@ QDomElement textTag(QDomDocument &doc, const QString &name, bool content)
 
 QDomElement textTag(QDomDocument &doc, const QString &name, QSize &s)
 {
-	QString str;
-	str.sprintf("%d,%d", s.width(), s.height());
+	const QString str = QString::asprintf("%d,%d", s.width(), s.height());
 
 	QDomElement tag = doc.createElement(name);
 	QDomText text = doc.createTextNode(str);
@@ -409,8 +406,7 @@ QDomElement textTag(QDomDocument &doc, const QString &name, QSize &s)
 
 QDomElement textTag(QDomDocument &doc, const QString &name, QRect &r)
 {
-	QString str;
-	str.sprintf("%d,%d,%d,%d", r.x(), r.y(), r.width(), r.height());
+	const QString str = QString::asprintf("%d,%d,%d,%d", r.x(), r.y(), r.width(), r.height());
 
 	QDomElement tag = doc.createElement(name);
 	QDomText text = doc.createTextNode(str);

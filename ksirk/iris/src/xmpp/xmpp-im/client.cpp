@@ -529,8 +529,7 @@ void Client::debug(const QString &str)
 
 QString Client::genUniqueId()
 {
-	QString s;
-	s.sprintf("a%x", d->id_seed);
+	const QString s = QString::asprintf("a%x", d->id_seed);
 	d->id_seed += 0x10;
 	return s;
 }
@@ -915,8 +914,8 @@ void Client::importRosterItem(const RosterItem &item)
 			substr = "----";  break;
 	}
 
-	QString dstr, str;
-	str.sprintf("  %s %-32s", substr.toLatin1().data(), item.jid().full().toLatin1().data());
+	QString dstr;
+	QString str = QString::asprintf("  %s %-32s", substr.toLatin1().data(), item.jid().full().toLatin1().data());
 	if(!item.name().isEmpty())
 		str += QString(" [") + item.name() + "]";
 	str += '\n';
