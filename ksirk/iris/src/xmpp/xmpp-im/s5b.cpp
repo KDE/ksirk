@@ -737,8 +737,7 @@ QString S5BManager::genUniqueSID(const Jid &peer) const
 		for(int i = 0; i < 4; ++i) {
 			int word = rand() & 0xffff;
 			for(int n = 0; n < 4; ++n) {
-				QString s;
-				s.sprintf("%x", (word >> (n * 4)) & 0xf);
+				const QString s = QString::asprintf("%x", (word >> (n * 4)) & 0xf);
 				sid.append(s);
 			}
 		}
@@ -845,7 +844,7 @@ void S5BManager::srv_incomingReady(SocksClient *sc, const QString &key)
 void S5BManager::srv_incomingUDP(bool init, const QHostAddress &addr, int port, const QString &key, const QByteArray &data)
 {
 	Entry *e = findEntryByHash(key);
-	if(!e->c->d->mode != S5BConnection::Datagram)
+	if(e->c->d->mode != S5BConnection::Datagram)
 		return; // this key isn't in udp mode?  drop!
 
 	if(init) {
@@ -2104,7 +2103,7 @@ void S5BServer::ss_incomingReady()
 
 void S5BServer::ss_incomingUDP(const QString &host, int port, const QHostAddress &addr, int sourcePort, const QByteArray &data)
 {
-	if(port != 0 || port != 1)
+	if(port != 0 && port != 1)
 		return;
 
 	foreach(S5BManager* m, d->manList) {

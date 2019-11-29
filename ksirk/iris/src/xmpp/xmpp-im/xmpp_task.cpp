@@ -230,8 +230,7 @@ void Task::debug(const char *fmt, ...)
 {
 	va_list ap;
 	va_start(ap, fmt);
-	QString str;
-	str.vsprintf(fmt, ap);
+	const QString str = QString::vasprintf(fmt, ap);
 	va_end(ap);
 	debug(str);
 }
