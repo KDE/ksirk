@@ -845,7 +845,7 @@ void S5BManager::srv_incomingReady(SocksClient *sc, const QString &key)
 void S5BManager::srv_incomingUDP(bool init, const QHostAddress &addr, int port, const QString &key, const QByteArray &data)
 {
 	Entry *e = findEntryByHash(key);
-	if(!e->c->d->mode != S5BConnection::Datagram)
+	if(e->c->d->mode != S5BConnection::Datagram)
 		return; // this key isn't in udp mode?  drop!
 
 	if(init) {
@@ -2104,7 +2104,7 @@ void S5BServer::ss_incomingReady()
 
 void S5BServer::ss_incomingUDP(const QString &host, int port, const QHostAddress &addr, int sourcePort, const QByteArray &data)
 {
-	if(port != 0 || port != 1)
+	if(port != 0 && port != 1)
 		return;
 
 	foreach(S5BManager* m, d->manList) {
