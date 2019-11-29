@@ -443,31 +443,31 @@ void KRightDialog::displayFightResult(int A1=0, int A2=0, int A3=0, int D1=0, in
   QHBoxLayout * deAtt = new QHBoxLayout();
   QHBoxLayout * deDef = new QHBoxLayout();
 
-  if(A1!=0 || A1!=-1)
+  if(A1!=0 && A1!=-1)
   {
     QLabel * de1 = new QLabel();
     de1->setPixmap(game->getDice(KGameWindow::Red,A1));
     rightContents.insert(0,de1);deAtt->addWidget(de1);
   }
-  if(A2!=0 || A2!=-1)
+  if(A2!=0 && A2!=-1)
   {
     QLabel * de2= new QLabel();
     de2->setPixmap(game->getDice(KGameWindow::Red,A2));
     rightContents.insert(0,de2);deAtt->addWidget(de2);
   }
-  if(A3!=0 || A3!=-1)
+  if(A3!=0 && A3!=-1)
   {
     QLabel * de3= new QLabel();
     de3->setPixmap(game->getDice(KGameWindow::Red,A3));
     rightContents.insert(0,de3);deAtt->addWidget(de3);
   }
-  if(D1!=0 || D1!=-1)
+  if(D1!=0 && D1!=-1)
   {
     QLabel * de4= new QLabel();
     de4->setPixmap(game->getDice(KGameWindow::Blue,D1));
     rightContents.insert(0,de4);deDef->addWidget(de4);
   }
-  if(D2!=0 || D2!=-1)
+  if(D2!=0 && D2!=-1)
   {
     QLabel * de5= new QLabel();
     de5->setPixmap(game->getDice(KGameWindow::Blue,D2));
