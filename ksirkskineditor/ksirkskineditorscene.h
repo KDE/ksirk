@@ -41,7 +41,7 @@ public:
   /**
     * 
     */
-  Scene(QObject* parent=0);
+  explicit Scene(QObject* parent=0);
   Scene (qreal x, qreal y, qreal width, qreal height, QObject* parent=0);
   /**
     *

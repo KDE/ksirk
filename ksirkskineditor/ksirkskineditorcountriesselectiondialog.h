@@ -34,7 +34,7 @@
 class KsirkSkinEditorCountriesSelectionDialog :public QDialog, public Ui::CountriesSelectionDialog
 {
   public:
-    KsirkSkinEditorCountriesSelectionDialog(QWidget* parent) : QDialog(parent)
+    explicit KsirkSkinEditorCountriesSelectionDialog(QWidget* parent) : QDialog(parent)
     {
       setupUi(this);
     }

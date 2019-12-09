@@ -27,7 +27,7 @@
 class KsirkSpritesDefinitionWidget : public QDockWidget, public Ui::KsirkSpritesDefinition
 {
 public:
-  KsirkSpritesDefinitionWidget(QWidget* parent) : QDockWidget(parent)
+  explicit KsirkSpritesDefinitionWidget(QWidget* parent) : QDockWidget(parent)
   {
     setupUi(this);
   }

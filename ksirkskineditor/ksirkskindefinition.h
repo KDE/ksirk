@@ -27,7 +27,7 @@
 class KSirkSkinDefinitionWidget : public QDockWidget, public Ui::skindefinition
 {
 public:
-  KSirkSkinDefinitionWidget(QWidget* parent) : QDockWidget(parent)
+  explicit KSirkSkinDefinitionWidget(QWidget* parent) : QDockWidget(parent)
   {
     setupUi(this);
   }

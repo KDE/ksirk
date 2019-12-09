@@ -42,7 +42,7 @@ class ArenaAction : public QAction
   Q_OBJECT
   public:
     ArenaAction(QObject* parent = 0) : QAction(parent), m_arenaEnabled(false) {}
-    ArenaAction(const QString& text, QObject* parent = 0) : QAction(text, parent), m_arenaEnabled(false) {}
+    explicit ArenaAction(const QString& text, QObject* parent = 0) : QAction(text, parent), m_arenaEnabled(false) {}
     inline bool isArenaEnabled() {return m_arenaEnabled;}
     inline void setArenaEnabled(bool value) {m_arenaEnabled = value;}
   private:

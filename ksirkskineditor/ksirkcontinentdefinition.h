@@ -27,7 +27,7 @@
 class KsirkContinentDefinitionWidget : public QDockWidget, public Ui::KsirkContinentDefinition
 {
 public:
-  KsirkContinentDefinitionWidget(QWidget* parent) : QDockWidget(parent)
+  explicit KsirkContinentDefinitionWidget(QWidget* parent) : QDockWidget(parent)
   {
     setupUi(this);
   }

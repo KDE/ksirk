@@ -39,7 +39,7 @@ class AIPlayerIO : public KGameIO
 {
 public:
   /** Constructor of the IO device for the given AI player. */
-  AIPlayerIO(AIPlayer* aiplayer);
+  explicit AIPlayerIO(AIPlayer* aiplayer);
 
   /** Default destructor. */
   ~AIPlayerIO() override;

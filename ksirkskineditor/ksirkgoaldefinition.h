@@ -27,7 +27,7 @@
 class KsirkGoalDefinitionWidget : public QDockWidget, public Ui::KsirkGoalDefinition
 {
 public:
-  KsirkGoalDefinitionWidget(QWidget* parent) : QDockWidget(parent)
+  explicit KsirkGoalDefinitionWidget(QWidget* parent) : QDockWidget(parent)
   {
     setupUi(this);
   }

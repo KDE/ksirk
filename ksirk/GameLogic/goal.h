@@ -61,7 +61,7 @@ public:
     GoalAdvance = 2 /**< The advance step. */
   };
   
-  Goal(GameAutomaton* automaton);
+  explicit Goal(GameAutomaton* automaton);
   
   /** Copy constructor */
   Goal(const Goal& goal);

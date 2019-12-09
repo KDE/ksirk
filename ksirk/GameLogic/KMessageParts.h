@@ -59,13 +59,13 @@ public:
       m_order_it++;
       return *this;
     }
-    bool operator==(const iterator& it)
+    bool operator==(const iterator& it) const
     {
       return ( (m_pixmaps_it == it.m_pixmaps_it)
               && (m_strings_it == it.m_strings_it)
               && (m_order_it == it.m_order_it) );
     }
-    bool operator!=(const iterator& it)
+    bool operator!=(const iterator& it) const
     {
       return !((*this)==it);
     }

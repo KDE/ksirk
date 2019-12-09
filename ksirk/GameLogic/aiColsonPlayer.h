@@ -53,7 +53,7 @@ public:
   /** 
     * Constructor with simple initializations
     */
-  AIColsonPlayer(
+  explicit AIColsonPlayer(
           const QString & nomPlayer, unsigned int nbArmies,
           Nationality * myNation,  PlayersArray& players, ONU* world,
           GameAutomaton* game );

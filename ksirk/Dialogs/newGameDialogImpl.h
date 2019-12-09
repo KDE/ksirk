@@ -46,7 +46,7 @@ class NewGameWidget : public QWidget, public Ui::NewGameDialog
 {
   Q_OBJECT
 public:
-  NewGameWidget(NewGameSetup* newGameSetup, QWidget *parent=0);
+  explicit NewGameWidget(NewGameSetup* newGameSetup, QWidget *parent=0);
 
   ~NewGameWidget() override;
 

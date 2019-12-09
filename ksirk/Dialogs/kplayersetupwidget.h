@@ -22,8 +22,8 @@
 #define KDE_NO_COMPAT
 
 
-#ifndef KPLAYERSETUPDIALOG_H
-#define KPLAYERSETUPDIALOG_H
+#ifndef KPLAYERSETUPWIDGET_H
+#define KPLAYERSETUPWIDGET_H
 
 #include "ui_qplayersetupdialog.h"
 
@@ -52,7 +52,7 @@ class KPlayerSetupWidget : public QWidget, public Ui::QPlayerSetupWidget
 {
   Q_OBJECT
 public:
-  KPlayerSetupWidget(QWidget *parent=0);
+  explicit KPlayerSetupWidget(QWidget *parent=0);
   
   ~KPlayerSetupWidget() override;
 
@@ -106,4 +106,4 @@ private:
 
 }
 
-#endif // KPLAYERSETUPDIALOG_H
+#endif // KPLAYERSETUPWIDGET_H

@@ -17,8 +17,8 @@
    02110-1301, USA
 */
 
-#ifndef JABBERGAMEWIDGET_H
-#define JABBERGAMEWIDGET_H
+#ifndef JABBERGAMEUI_H
+#define JABBERGAMEUI_H
 
 #include "ui_jabbergameui.h"
 #include "Jabber/jabberclient.h"
@@ -38,7 +38,7 @@ class KsirkJabberGameWidget : public QWidget, public Ui::KsirkJabberGameWidget
 {
   Q_OBJECT
 public:
-  KsirkJabberGameWidget(QWidget* parent);
+  explicit KsirkJabberGameWidget(QWidget* parent);
 
   ~KsirkJabberGameWidget() override {}
                          

@@ -387,7 +387,7 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
     int max = 0;
     int bonus = 0;
     for (continentsIt = m_world->getContinents().begin();
-          continentsIt!=continentsIt_end; continentsIt++)
+          continentsIt!=continentsIt_end; ++continentsIt)
     {
       const Continent* continent = *continentsIt;
       if (piCount[*it][continent] > 0)
@@ -1195,7 +1195,7 @@ bool AIColsonPlayer::Place()
   /* Try to conquier an entire continent */
   for (int   iCountry = 0;
        iCountry < m_world->getCountries().size();
-       iCountry++)
+       ++iCountry)
   {
     if ((RISK_GetOwnerOfCountry(iCountry) == this) &&
         (RISK_GetContinentOfCountry(iCountry) == continent) &&

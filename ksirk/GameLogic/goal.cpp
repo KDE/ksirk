@@ -227,7 +227,7 @@ QString Goal::message(int displayType) const
       case Goal::Continents:
         foreach (const QString& continent, m_continents)
         {
-          if (continent != QString())
+          if (!continent.isEmpty())
           {
             qCDebug(KSIRK_LOG) << "  arg = '" << continent << "'" << endl;
             res=res.subs(i18n(continent.toUtf8().data()));
@@ -463,7 +463,7 @@ void Goal::saveXml(QTextStream& xmlStream) const
   itc = continents().constBegin(); itc_end = continents().constEnd();
   for (; itc != itc_end; itc++)
   {
-    QString name = (*itc==QString())?"":(*itc);
+    QString name = ((*itc).isEmpty())?"":(*itc);
     xmlStream << "<continent name=\"" << name << "\"/>" << endl;
   }
   xmlStream << "</continents>" << endl;

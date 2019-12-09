@@ -46,7 +46,7 @@ class mainMenu : public QWidget, public Ui::MainMenu
   Q_OBJECT
 
 public:
-  mainMenu(Ksirk::KGameWindow* game, QWidget* parent = 0);
+  explicit mainMenu(Ksirk::KGameWindow* game, QWidget* parent = 0);
 
   ~mainMenu() override {}
 

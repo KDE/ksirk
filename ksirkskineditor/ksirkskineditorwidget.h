@@ -27,7 +27,7 @@
 class KSirkSkinEditorWidget : public QFrame, public Ui::skinEditor
 {
 public:
-  KSirkSkinEditorWidget(QWidget* parent) : QFrame(parent)
+  explicit KSirkSkinEditorWidget(QWidget* parent) : QFrame(parent)
   {
     setupUi(this);
   }

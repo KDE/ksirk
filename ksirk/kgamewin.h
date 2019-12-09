@@ -128,7 +128,7 @@ public:
   /**
     * Create the window and initializes its members
     */
-  KGameWindow(QWidget* parent=0);
+  explicit KGameWindow(QWidget* parent=0);
   
   /**
     * Deletes the background and the pool

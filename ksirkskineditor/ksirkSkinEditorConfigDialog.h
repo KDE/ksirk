@@ -42,7 +42,7 @@ public:
   /**
     * Constructor
     */
-  KsirkSkinEditorConfigurationDialog (
+  explicit KsirkSkinEditorConfigurationDialog (
                 QWidget *parent, const char *name, KConfigSkeleton *config, 
                 FaceType faceType=List, 
                 QDialogButtonBox::StandardButtons dialogButtons=QDialogButtonBox::RestoreDefaults|QDialogButtonBox::Ok|QDialogButtonBox::Apply|QDialogButtonBox::Cancel|QDialogButtonBox::Help, 

@@ -82,7 +82,7 @@ public:
   /**
     * Create the window and initializes its members
     */
-  MainWindow(QWidget* parent=0);
+  explicit MainWindow(QWidget* parent=0);
   
   /**
     * Deletes the background and the pool

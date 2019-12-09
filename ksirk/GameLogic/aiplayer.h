@@ -49,7 +49,7 @@ public:
   /** 
     * Constructor with simple initializations
     */
-  AIPlayer(
+  explicit AIPlayer(
           const QString & nomPlayer, unsigned int nbArmies,
           Nationality * myNation,  PlayersArray& players, ONU* world,
           GameAutomaton* game );
@@ -137,7 +137,7 @@ protected: // Private attributes
     void run () override;
     
   public:
-    MyThread(AIPlayer& p) : me(p) {}
+    explicit MyThread(AIPlayer& p) : me(p) {}
     void setStopMe ( bool value ) { stopMe = value; }
   private:
     /** indicates to the thread if the run method should return */

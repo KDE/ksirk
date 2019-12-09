@@ -32,7 +32,7 @@ namespace KsirkSkinEditor
 class KsirkCountryDefinitionWidget : public QDockWidget, public Ui::KsirkCountryDefinition
 {
 public:
-  KsirkCountryDefinitionWidget(QWidget* parent);
+  explicit KsirkCountryDefinitionWidget(QWidget* parent);
 
   void initWith(const KsirkSkinEditor::Country* country);
 };

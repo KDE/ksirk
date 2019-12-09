@@ -441,7 +441,7 @@ GameAutomaton::GameState GameAutomaton::run()
       qCDebug(KSIRK_LOG) << "Nb Local:" << nbLocal;
       stream << nbLocal;
 
-      for (it = playerList()->begin(); it != it_end; it++)
+      for (it = playerList()->begin(); it != it_end; ++it)
       {
         if ( !((Player*)(*it))->isVirtual() )
         {
@@ -2068,7 +2068,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     if (sender == gameId()) break;
     stream >> statusBarId >> logStatus >> messagePartsNb;
     qCDebug(KSIRK_LOG) << "Got ChangeItem on " << statusBarId << " ; nb= " << messagePartsNb << endl;
-    for (messagePartsCounter = 0; messagePartsCounter < messagePartsNb; messagePartsCounter++)
+    for (messagePartsCounter = 0; messagePartsCounter < messagePartsNb; ++messagePartsCounter)
     {
       stream >> elemType;
       if (elemType == KMessageParts::Text)

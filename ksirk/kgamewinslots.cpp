@@ -951,7 +951,7 @@ void KGameWindow::slotReceivedMessage (const XMPP::Message & message)
   {
     qCDebug(KSIRK_LOG) << "my jid:" << m_groupchatRoom+'@'+m_groupchatHost+'/'+m_groupchatNick;
     XMPP::Jid jid ( message.from().domain() );
-    if (body.startsWith("I'm starting a game with skin")
+    if (body.startsWith(QLatin1String("I'm starting a game with skin"))
       && m_presents.contains(message.from().full ())
       && message.from().full() != m_groupchatRoom+'@'+m_groupchatHost+'/'+m_groupchatNick)
     {
@@ -963,7 +963,7 @@ void KGameWindow::slotReceivedMessage (const XMPP::Message & message)
       qCDebug(KSIRK_LOG) << "emiting newJabberGame" << nick << nbPlayers << skin;
       emit newJabberGame(nick, nbPlayers, skin);
     }
-    else if (body.startsWith("Who propose online KsirK games here?"))
+    else if (body.startsWith(QLatin1String("Who propose online KsirK games here?")))
     {
       qCDebug(KSIRK_LOG) << "online games question" << m_automaton->stateName();
       if (m_automaton->startingGame())

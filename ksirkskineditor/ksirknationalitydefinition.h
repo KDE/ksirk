@@ -27,7 +27,7 @@
 class KsirkNationalityDefinitionWidget : public QDockWidget, public Ui::KsirkNationalityDefinition
 {
 public:
-  KsirkNationalityDefinitionWidget(QWidget* parent) : QDockWidget(parent)
+  explicit KsirkNationalityDefinitionWidget(QWidget* parent) : QDockWidget(parent)
   {
     setupUi(this);
   }
