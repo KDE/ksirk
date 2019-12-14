@@ -5,7 +5,7 @@
 
 // FIXME: Complete this
 
-#include <QtTest>
+#include <QTest>
 #include <QObject>
 
 #include "qttestutil/qttestutil.h"

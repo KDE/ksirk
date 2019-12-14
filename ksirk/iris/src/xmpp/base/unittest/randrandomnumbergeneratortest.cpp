@@ -4,7 +4,7 @@
  */
 
 #include <QObject>
-#include <QtTest>
+#include <QTest>
 
 #include "qttestutil/qttestutil.h"
 #include "xmpp/base/randrandomnumbergenerator.h"

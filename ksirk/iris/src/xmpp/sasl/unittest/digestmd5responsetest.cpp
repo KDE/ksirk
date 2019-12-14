@@ -4,7 +4,7 @@
  */
 
 #include <QObject>
-#include <QtTest>
+#include <QTest>
 #include <QtCrypto>
 
 #include "qttestutil/qttestutil.h"
