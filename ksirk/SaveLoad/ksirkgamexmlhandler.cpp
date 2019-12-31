@@ -40,7 +40,7 @@ namespace SaveLoad
 
 bool GameXmlHandler::startDocument()
 { 
-  qCDebug(KSIRK_LOG) << "startDocument" << endl;
+  qCDebug(KSIRK_LOG) << "startDocument";
   return true;
 }
 
@@ -48,7 +48,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
 {
   Q_UNUSED(namespaceURI);
   Q_UNUSED(qName);
-  qCDebug(KSIRK_LOG) << "startElement " << localName << " / " << qName << endl;
+  qCDebug(KSIRK_LOG) << "startElement " << localName << " / " << qName ;
   if (localName == "ksirkSavedGame")
   {
     QString fv =atts.value("formatVersion");
@@ -64,7 +64,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
   }
   else if (localName == "game")
   {
-    qCDebug(KSIRK_LOG) << "GameXmlHandler stored game state is: " << atts.value("state") << endl;
+    qCDebug(KSIRK_LOG) << "GameXmlHandler stored game state is: " << atts.value("state");
     
     m_game.automaton()->skin(atts.value("skin"));
     
@@ -74,13 +74,13 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
   else if (localName == "players" && !m_inGoal)
   {
     int nb = atts.value("nb").toInt();
-    qCDebug(KSIRK_LOG) << "Setting min-max players to " << nb << endl;
+    qCDebug(KSIRK_LOG) << "Setting min-max players to " << nb ;
     m_game.automaton()->setMinPlayers(nb);
     m_game.automaton()->setMaxPlayers(nb);
   }
   else if (localName == "player" && !m_inGoal)
   {
-    qCDebug(KSIRK_LOG) << "Reading a player" << endl;
+    qCDebug(KSIRK_LOG) << "Reading a player";
     m_playersNumber++;
     unsigned int nbAvailArmies = atts.value("nbAvailArmies").toInt();
     
@@ -104,7 +104,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
 
     if (isLocal)
     {
-      qCDebug(KSIRK_LOG) << "Adding the read player " << name << endl;
+      qCDebug(KSIRK_LOG) << "Adding the read player " << name ;
       m_game.addPlayer(name, nbAvailArmies, nbCountries, nationName,
                         isAi, password, nbAttack, nbDefense);
     }
@@ -135,7 +135,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
     Player* currentPlayer = m_game.automaton()->playerNamed(atts.value("name"));
     if (currentPlayer)
     {
-//       qCDebug(KSIRK_LOG) << "Setting current player to " << atts.value("name") << " / " << currentPlayer << endl;
+//       qCDebug(KSIRK_LOG) << "Setting current player to " << atts.value("name") << " / " << currentPlayer ;
       m_game.automaton()->currentPlayer(currentPlayer);
       KMessageParts messageParts;
       messageParts << I18N_NOOP("Current player is: %1") << currentPlayer->name();
@@ -149,18 +149,18 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
   }
   else if (localName == "ONU")
   {
-    qCDebug(KSIRK_LOG) << "GameXmlHandler starts new game with ONU file: " << atts.value("file") << endl;
+    qCDebug(KSIRK_LOG) << "GameXmlHandler starts new game with ONU file: " << atts.value("file");
     if (!(m_game.automaton()->playerList()->isEmpty()))
     {
       m_game.automaton()->playerList()->clear();
       m_game.automaton()->currentPlayer(0);
-      qCDebug(KSIRK_LOG) << "  playerList size = " << m_game.automaton()->playerList()->count() << endl;
+      qCDebug(KSIRK_LOG) << "  playerList size = " << m_game.automaton()->playerList()->count();
     }
     m_game.automaton()->game()->newSkin(atts.value("file"));
   }
   else if (localName == "country")
   {
-//   qCDebug(KSIRK_LOG) << "GameXmlHandler loads country: " << atts.value("name") << endl;
+//   qCDebug(KSIRK_LOG) << "GameXmlHandler loads country: " << atts.value("name");
     Country* country = m_game.theWorld()->countryNamed(atts.value("name"));
     unsigned int gotNbArmies = atts.value("nbArmies").toInt();
     country->nbArmies(gotNbArmies);
@@ -170,11 +170,11 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
   }
   else if (localName == "goal")
   {
-    qCDebug(KSIRK_LOG) << "loads goal for: " << atts.value("player") << endl;
+    qCDebug(KSIRK_LOG) << "loads goal for: " << atts.value("player");
     m_goal = new GameLogic::Goal(m_game.automaton());
     m_goalPlayerName = atts.value("player");
     Player* player = m_game.automaton()->playerNamed(atts.value("player").toUtf8().data());
-//     qCDebug(KSIRK_LOG) << "Got player pointer " << player << endl;
+//     qCDebug(KSIRK_LOG) << "Got player pointer " << player ;
     m_goal->player(player);
     unsigned int type = atts.value("type").toInt();
     m_goal->type(GameLogic::Goal::GoalType(type));
@@ -192,7 +192,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
   }
   else if (localName == "continent" && m_inGoal)
   {
-//     qCDebug(KSIRK_LOG) << "Getting id of continent named " << atts.value("name") << endl;
+//     qCDebug(KSIRK_LOG) << "Getting id of continent named " << atts.value("name");
     QString id;
     if (!atts.value("name").isEmpty())
         id = atts.value("name");
@@ -205,17 +205,17 @@ bool GameXmlHandler::endElement(const QString& namespaceURI, const QString& loca
 {
   Q_UNUSED(namespaceURI);
   Q_UNUSED(qName);
-//   qCDebug(KSIRK_LOG) << "endElement " << localName << " / " << qName << endl;
+//   qCDebug(KSIRK_LOG) << "endElement " << localName << " / " << qName ;
   if (localName == "game")
   {
     foreach (const QString& k, m_ownersMap.keys())
     {
-//       qCDebug(KSIRK_LOG) << "Setting owner of " << k << " to " << m_ownersMap[k] << endl;
+//       qCDebug(KSIRK_LOG) << "Setting owner of " << k << " to " << m_ownersMap[k];
       Country* country = m_game.theWorld()->countryNamed(k);
       Player* owner = m_game.automaton()->playerNamed(m_ownersMap[k]);
       if (owner)
       {
-//         qCDebug(KSIRK_LOG) << "Setting owner of " << country->name() << " to " << owner->name() << endl;
+//         qCDebug(KSIRK_LOG) << "Setting owner of " << country->name() << " to " << owner->name();
         country-> owner(owner);
       }
       else
@@ -235,12 +235,12 @@ bool GameXmlHandler::endElement(const QString& namespaceURI, const QString& loca
     }
     if (!m_waitedPlayers.empty())
     {
-//       qCDebug(KSIRK_LOG) << "There is waited players: does not change state nor run game..." << endl;
+//       qCDebug(KSIRK_LOG) << "There is waited players: does not change state nor run game...";
       m_waitedPlayers[0].state = m_savedState;
     }
     else
     {
-//       qCDebug(KSIRK_LOG) << "GameXmlHandler set game state to: " << m_savedState << endl;
+//       qCDebug(KSIRK_LOG) << "GameXmlHandler set game state to: " << m_savedState ;
       m_game.automaton()->state(m_savedState);
     }
   }

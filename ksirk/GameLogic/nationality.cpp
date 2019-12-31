@@ -49,7 +49,7 @@ void Nationality::saveXml(QTextStream& xmlStream)
   name = name.replace("&","&amp;");
   name = name.replace("<","&lt;");
   name = name.replace(">","&gt;");
-  xmlStream << "<nationality name=\"" << m_name << "\" flag=\"" << m_flagFileName << "\" />" << endl;  
+  xmlStream << "<nationality name=\"" << m_name << "\" flag=\"" << m_flagFileName << "\" />";  
 }
 
 const QString& Nationality::name() const

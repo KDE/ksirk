@@ -69,12 +69,12 @@ Country::Country(GameAutomaton* game,
   m_highlighting_locked(false),
   m_nbArmiesItem(0)
 {
-//   qCDebug(KSIRK_LOG) << m_name << ", " << this << endl;
+//   qCDebug(KSIRK_LOG) << m_name << ", " << this ;
 }
 
 Country::~Country()
 {
-//   qCDebug(KSIRK_LOG) << "Deleting country " << m_name << ", " << this << endl;
+//   qCDebug(KSIRK_LOG) << "Deleting country " << m_name << ", " << this ;
   if (m_flag)
   {
     m_flag->hide();
@@ -86,7 +86,7 @@ Country::~Country()
 
 void Country::reset()
 {
-//   qCDebug(KSIRK_LOG) << "Country::reset " << m_name << endl;
+//   qCDebug(KSIRK_LOG) << "Country::reset " << m_name ;
   clearAllSprites();
   m_belongsTo = 0;
   nbArmies(1);
@@ -212,7 +212,7 @@ void Country::createArmiesSprites()
 
 void Country::flag(const QString& theFlagFileName, BackGnd *backGnd)
 {
-//   qCDebug(KSIRK_LOG) << "Country("<<m_name<<", "<<this<<")::flag flagFileName " << theFlagFileName << endl;
+//   qCDebug(KSIRK_LOG) << "Country("<<m_name<<", "<<this<<")::flag flagFileName " << theFlagFileName ;
 
   if (m_flag)
   {
@@ -233,7 +233,7 @@ bool Country::communicateWith(const Country* otherCountry) const
 {
   if (!otherCountry)
   {
-    qCDebug(KSIRK_LOG) << "OUT otherCountry null Country::communicateWith" << endl;
+    qCDebug(KSIRK_LOG) << "OUT otherCountry null Country::communicateWith";
     return false;
   }
 
@@ -462,7 +462,7 @@ void Country::saveXml(QTextStream& xmlStream)
 
   xmlStream << "nbArmies=\""<<nbArmies() << "\" ";
 
-  xmlStream << " />" << endl;
+  xmlStream << " />";
 
 }
 
@@ -496,26 +496,26 @@ void Country::highlight(const QColor& color, qreal opacity)
   ONU* onu = m_automaton->game()->theWorld();
   if (onu == 0)
   {
-    qCWarning(KSIRK_LOG) << "onu is null" << endl;
+    qCWarning(KSIRK_LOG) << "onu is null";
     return;
   }
   QDomNode countryElement = onu->svgDom()->elementById(m_name);
   if (countryElement.isNull())
   {
-    qCWarning(KSIRK_LOG) << "Got a null element" << endl;
+    qCWarning(KSIRK_LOG) << "Got a null element";
     return;
   }
-//   qCDebug(KSIRK_LOG) <<"got country"<< endl;
+//   qCDebug(KSIRK_LOG) <<"got country";
 
   onu->svgDom()->setCurrentNode(countryElement);
   onu->svgDom()->setStyleProperty("fill", color.name());
   onu->svgDom()->setStyleProperty("fill-opacity", QString::number(opacity));
 
-//   qCDebug(KSIRK_LOG) <<"loading"<< endl;
+//   qCDebug(KSIRK_LOG) <<"loading";
   QByteArray svg = onu->svgDom()->nodeToByteArray();
   m_renderer->load(svg);
 
-//   qCDebug(KSIRK_LOG) <<"loaded"<< endl;
+//   qCDebug(KSIRK_LOG) <<"loaded";
   m_highlighting = new QGraphicsSvgItem(m_automaton->game()->backGndWorld());
   m_highlighting->setSharedRenderer(m_renderer);
   m_highlighting->setElementId(m_name);
@@ -524,7 +524,7 @@ void Country::highlight(const QColor& color, qreal opacity)
       (m_anchorPoint.y()-m_highlighting->boundingRect().height()/2)*onu->zoom());
 
   m_highlighting->setScale(onu->zoom());
-//   qCDebug(KSIRK_LOG) << "done" << endl;
+//   qCDebug(KSIRK_LOG) << "done";
 }
 
 void Country::highlightAsAttacker()
@@ -550,7 +550,7 @@ void Country::clearHighlighting()
     delete m_highlighting;
     m_highlighting = 0;
   }
-//   qCDebug(KSIRK_LOG) << "done" << endl;
+//   qCDebug(KSIRK_LOG) << "done";
 }
 
 bool Country::isHighlightingLocked()

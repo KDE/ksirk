@@ -50,7 +50,7 @@ Continent::~Continent()
 /** Read property of QList<Country> m_members. */
 const QList<Country*>& Continent::getMembers() const
 {
-//   qCDebug(KSIRK_LOG) << "There is " << m_members.size() << " countries in " << name() << endl;
+//   qCDebug(KSIRK_LOG) << "There is " << m_members.size() << " countries in " << name();
   return m_members;
 }
 
@@ -87,7 +87,7 @@ const Player* Continent::owner() const
       */
     if ((*it)-> owner() != owner)
     {
-      qCDebug(KSIRK_LOG) << "Nobody owns " << m_name << endl;
+      qCDebug(KSIRK_LOG) << "Nobody owns " << m_name ;
       return 0;
     }
   }
@@ -102,7 +102,7 @@ void Continent::saveXml(QTextStream& xmlStream)
   name = name.replace("&","&amp;");
   name = name.replace("<","&lt;");
   name = name.replace(">","&gt;");
-  xmlStream << "<continent name=\""<<name<<"\" bonus=\""<<bonus<<"\" >" << endl;
+  xmlStream << "<continent name=\""<<name<<"\" bonus=\""<<bonus<<"\" >";
   QList< Country* >::const_iterator it, it_end;
   it = m_members.constBegin(); it_end = m_members.constEnd();
   for (; it != it_end; it++)
@@ -110,7 +110,7 @@ void Continent::saveXml(QTextStream& xmlStream)
     (*it)->saveXml(xmlStream);
   }
 
-  xmlStream << "</continent>" << endl;
+  xmlStream << "</continent>";
 }
 
 /** Returns the list of countries owned by @ref player */
@@ -124,7 +124,7 @@ QList<Country*> Continent::countriesOwnedBy(const Player* player)
       res.push_back(c);
     }
   }
-  qCDebug(KSIRK_LOG) << player->name() << " owns " << res.size() << " in " << name() << endl;
+  qCDebug(KSIRK_LOG) << player->name() << " owns " << res.size() << " in " << name();
   return res;
 }
 

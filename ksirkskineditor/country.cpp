@@ -58,25 +58,25 @@ Country::Country(
   m_renderer(new QSvgRenderer()),
   m_highlighting_locked(false)
 {
-//   qCDebug(KSIRKSKINEDITOR_LOG) << m_name << ", " << this << endl;
+//   qCDebug(KSIRKSKINEDITOR_LOG) << m_name << ", " << this ;
 }
 
 Country::~Country()
 {
-//   qCDebug(KSIRKSKINEDITOR_LOG) << "Deleting country " << m_name << ", " << this << endl;
+//   qCDebug(KSIRKSKINEDITOR_LOG) << "Deleting country " << m_name << ", " << this ;
   delete m_renderer;
 }
 
 void Country::reset()
 {
-//   qCDebug(KSIRKSKINEDITOR_LOG) << "Country::reset " << m_name << endl;
+//   qCDebug(KSIRKSKINEDITOR_LOG) << "Country::reset " << m_name ;
 }
 
 bool Country::communicateWith(const Country* otherCountry) const
 {
   if (!otherCountry)
   {
-    qCDebug(KSIRKSKINEDITOR_LOG) << "OUT otherCountry null Country::communicateWith" << endl;
+    qCDebug(KSIRKSKINEDITOR_LOG) << "OUT otherCountry null Country::communicateWith";
     return false;
   }
 
@@ -195,20 +195,20 @@ void Country::highlight(QGraphicsScene* scene, ONU* onu, const QColor& color, qr
   QDomNode countryElement = onu->svgDom()->elementById(m_name);
   if (countryElement.isNull())
   {
-    qCWarning(KSIRKSKINEDITOR_LOG) << "Got a null element" << endl;
+    qCWarning(KSIRKSKINEDITOR_LOG) << "Got a null element";
     return;
   }
-//   qCDebug(KSIRKSKINEDITOR_LOG) <<"got country"<< endl;
+//   qCDebug(KSIRKSKINEDITOR_LOG) <<"got country";
 
   onu->svgDom()->setCurrentNode(countryElement);
   onu->svgDom()->setStyleProperty(QStringLiteral("fill"), color.name());
   onu->svgDom()->setStyleProperty(QStringLiteral("fill-opacity"), QString::number(opacity));
 
-//   qCDebug(KSIRKSKINEDITOR_LOG) <<"loading"<< endl;
+//   qCDebug(KSIRKSKINEDITOR_LOG) <<"loading";
   QByteArray svg = onu->svgDom()->nodeToByteArray();
   m_renderer->load(svg);
 
-//   qCDebug(KSIRKSKINEDITOR_LOG) <<"loaded"<< endl;
+//   qCDebug(KSIRKSKINEDITOR_LOG) <<"loaded";
   m_highlighting = new QGraphicsSvgItem();
   m_highlighting->setSharedRenderer(m_renderer);
   m_highlighting->setElementId(m_name);
@@ -221,7 +221,7 @@ void Country::highlight(QGraphicsScene* scene, ONU* onu, const QColor& color, qr
   m_highlighting->setZValue(5);
   scene->addItem(m_highlighting);
 //   m_highlighting->scale(onu->zoom(), onu->zoom());
-//   qCDebug(KSIRKSKINEDITOR_LOG) << "done" << endl;
+//   qCDebug(KSIRKSKINEDITOR_LOG) << "done";
 }
 
 void Country::clearHighlighting()
@@ -233,7 +233,7 @@ void Country::clearHighlighting()
     delete m_highlighting;
     m_highlighting = 0;
   }
-//   qCDebug(KSIRKSKINEDITOR_LOG) << "done" << endl;
+//   qCDebug(KSIRKSKINEDITOR_LOG) << "done";
 }
 
 bool Country::isHighlightingLocked()

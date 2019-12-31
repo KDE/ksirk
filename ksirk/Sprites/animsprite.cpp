@@ -85,7 +85,7 @@ AnimSprite::AnimSprite(const QString &svgid,
 
 AnimSprite::~AnimSprite()
 {
-//   qCDebug(KSIRK_LOG) << (void*)this << endl;
+//   qCDebug(KSIRK_LOG) << (void*)this ;
   m_timer.stop();
   disconnect(&m_timer,&QTimer::timeout,this,&AnimSprite::animate);
   setStatic();
@@ -101,7 +101,7 @@ void AnimSprite::setLook(TDir newLook)
 //   qCDebug(KSIRK_LOG);
   if (newLook != look)
   {
-//        qCDebug(KSIRK_LOG)<<"setLook : " << newLook << ")" << endl;
+//        qCDebug(KSIRK_LOG)<<"setLook : " << newLook << ")";
     look=newLook;
     setFrame(0);
     update();
@@ -136,7 +136,7 @@ void AnimSprite::sequenceConstruction()
   {
     for (unsigned int i = 0; i<frames;i++)
     {
-//       qCDebug(KSIRK_LOG)<< "constr s : "<<m_width<<" "<<m_height<<" "<<look-1<<endl;
+//       qCDebug(KSIRK_LOG)<< "constr s : "<<m_width<<" "<<m_height<<" "<<look-1;
       QPixmap pm;
       QString pmCacheId = m_skin+m_svgid+QString::number(m_width*frames)+"x"+QString::number(m_height*nbVersions)+"-"+QString::number(i)+":"+QString::number(l);
       if (!QPixmapCache::find(pmCacheId, &pm))
@@ -158,7 +158,7 @@ void AnimSprite::sequenceConstruction()
 
 void AnimSprite::changeSequence(const QString &id)
 {
-  qCDebug(KSIRK_LOG) << (void*)this << id <<endl;
+  qCDebug(KSIRK_LOG) << (void*)this << id;
   changeSequence(
           id,
           Sprites::SkinSpritesData::single().intData(id+"-width"),
@@ -172,7 +172,7 @@ void AnimSprite::changeSequence(const QString &svgid,
                                  unsigned int newNbFrames,
                                  unsigned int nbDirs)
 {
-  qCDebug(KSIRK_LOG) << (void*)this << svgid <<endl;
+  qCDebug(KSIRK_LOG) << (void*)this << svgid;
   m_svgid = svgid;
   m_width = width*m_zoom;
   m_height = height*m_zoom;
@@ -182,7 +182,7 @@ void AnimSprite::changeSequence(const QString &svgid,
 
   sequenceConstruction();
   update();
-  //    qCDebug(KSIRK_LOG)<<"OUT"<<endl;
+  //    qCDebug(KSIRK_LOG)<<"OUT";
 }
 
 void AnimSprite::nextFrame()
@@ -200,13 +200,13 @@ void AnimSprite::nextFrame()
     {
       setStatic();
       m_numberOfShots = std::numeric_limits<unsigned int>::max();
-      qCDebug(KSIRK_LOG) << "Emiting animationFinished" << endl;
+      qCDebug(KSIRK_LOG) << "Emiting animationFinished";
       emit animationFinished(this);
     }
     else if (m_numberOfShots != std::numeric_limits<unsigned int>::max())
     {
       m_numberOfShots--;
-      qCDebug(KSIRK_LOG) << "numberOfShots is now " << m_numberOfShots << endl;
+      qCDebug(KSIRK_LOG) << "numberOfShots is now " << m_numberOfShots ;
     }
   }
   setFrame(actFrame);
@@ -225,7 +225,7 @@ void AnimSprite::setFrame(unsigned int numFrame)
 void AnimSprite::moveIt()
 {
 //   qCDebug(KSIRK_LOG) << "Position of " << (void*)this << " is: "
-//     << pos() << " (destination point is: " << destinationPoint << ")" << endl;
+//     << pos() << " (destination point is: " << destinationPoint << ")";
   qreal delta = 5*m_zoom;
   switch (KsirkSettings::spritesSpeed())
   {
@@ -249,7 +249,7 @@ void AnimSprite::moveIt()
   }
   delta=delta<1.0?1.0:delta;
   
-//   qCDebug(KSIRK_LOG) << "delta="<<delta<<endl;
+//   qCDebug(KSIRK_LOG) << "delta="<<delta;
   if (getApproachDestByLeft())
   {
     setLook(right);
@@ -297,7 +297,7 @@ void AnimSprite::moveIt()
       else /*if (x() - destinationPoint.x() <= delta)*/ setPos(pos()+QPointF(-1,0));
     }
   }
-//   qCDebug(KSIRK_LOG) << "After x, position is: " << pos() << endl;
+//   qCDebug(KSIRK_LOG) << "After x, position is: " << pos();
   if (getApproachDestByTop())
   {
     if (y() < destinationPoint.y())
@@ -341,7 +341,7 @@ void AnimSprite::moveIt()
       else /*if (y() - destinationPoint.y() <= delta)*/ setPos(pos()+QPointF(0,-1));
     }
   }
-//   qCDebug(KSIRK_LOG) << "New position of " << (void*)this << " is: " << pos() << endl;
+//   qCDebug(KSIRK_LOG) << "New position of " << (void*)this << " is: " << pos();
   nextFrame();
   if (pos() == destinationPoint)
   {
@@ -353,7 +353,7 @@ void AnimSprite::moveIt()
 
 bool AnimSprite::isLastFrame() const
 {
-//    qCDebug(KSIRK_LOG)<<"AnimSprite::isLastFrame actFrame = "<<actFrame<<" frames = "<<frames-1<<endl;
+//    qCDebug(KSIRK_LOG)<<"AnimSprite::isLastFrame actFrame = "<<actFrame<<" frames = "<<frames-1;
     return (actFrame == (frames - 1));
 }
 
@@ -453,7 +453,7 @@ bool AnimSprite::getApproachDestByRight() const
 /** Write property of bool approachDestByRight. */
 void AnimSprite::setApproachDestByRight( const bool& _newVal)
 {
-  //    qCDebug(KSIRK_LOG)<<endl;
+  //    qCDebug(KSIRK_LOG);
     approachDestByRight = _newVal;
     if (_newVal) setApproachDestByLeft(false);
 }
@@ -467,7 +467,7 @@ bool AnimSprite::getApproachDestByLeft () const
 /** Write property of bool approachDestByLeft . */
 void AnimSprite::setApproachDestByLeft ( const bool& _newVal)
 {
-  //    qCDebug(KSIRK_LOG)<<endl;
+  //    qCDebug(KSIRK_LOG);
     approachDestByLeft  = _newVal;
     if (_newVal) setApproachDestByRight(false);
 }
@@ -551,7 +551,7 @@ void AnimSprite::setupTravel(
         const QPointF& srcPoint, 
         const QPointF& destPoint)
 {
-   qCDebug(KSIRK_LOG) << src->name() << srcPoint << ", " << dest->name() << destPoint << endl;
+   qCDebug(KSIRK_LOG) << src->name() << srcPoint << ", " << dest->name() << destPoint ;
 
   setDestination(dest);
   setDestinationPoint(destPoint);
@@ -604,7 +604,7 @@ void AnimSprite::setupTravel(
 
 void AnimSprite::arrival()
 {
-  qCDebug(KSIRK_LOG)<< "at " << destinationPoint << endl;
+  qCDebug(KSIRK_LOG)<< "at " << destinationPoint ;
   if (!backGnd->bgIsArena())
   {
     qCDebug(KSIRK_LOG)<< "x=" << x() << "pf=" << getDestination()->pointFlag().x();
@@ -627,14 +627,14 @@ bool AnimSprite::isMyState(State state) const
   */
 AnimSprite::State AnimSprite::getState() const
 {
-//    qCDebug(KSIRK_LOG) << "I'm a sprite; my state is : " << myState << endl;
+//    qCDebug(KSIRK_LOG) << "I'm a sprite; my state is : " << myState ;
     return myState;
 }
 
 /** sets the new state of the game */
 void AnimSprite::setState(AnimSprite::State newState)
 {
-//    qCDebug(KSIRK_LOG) << "Setting sprite's state to : " << newState << " (was : " << myState << ")" << endl;
+//    qCDebug(KSIRK_LOG) << "Setting sprite's state to : " << newState << " (was : " << myState << ")";
     myState = newState;
 }
 
@@ -644,7 +644,7 @@ void AnimSprite::saveXml(QTextStream& /*xmlStream*/)
 
 QPixmap AnimSprite::image(unsigned int numFrame) const
 {
-//   qCDebug(KSIRK_LOG) << "image(" << numFrame << ") / " << m_frames.size() << endl;
+//   qCDebug(KSIRK_LOG) << "image(" << numFrame << ") / " << m_frames.size();
   if (numFrame >= (unsigned int)m_frames.size())
   {
     return QPixmap();
@@ -657,7 +657,7 @@ QPixmap AnimSprite::image(unsigned int numFrame) const
 
 void AnimSprite::animate()
 {
-  //   qCDebug(KSIRK_LOG) << (void*)this << endl;
+  //   qCDebug(KSIRK_LOG) << (void*)this ;
   if (!destinationPoint.isNull() && pos() != destinationPoint)
   {
     moveIt();
@@ -666,7 +666,7 @@ void AnimSprite::animate()
   {
     nextFrame();
   }
-  //   qCDebug(KSIRK_LOG) <<"finished for " << (void*)this << endl;
+  //   qCDebug(KSIRK_LOG) <<"finished for " << (void*)this ;
 }
 
 void AnimSprite::setAnimated(unsigned int numberOfShots)
@@ -689,7 +689,7 @@ void AnimSprite::setStatic()
 
 void AnimSprite::applyZoomFactor(qreal zoomFactor)
 {
-  qCDebug(KSIRK_LOG) << "old zoom=" << m_zoom << endl;
+  qCDebug(KSIRK_LOG) << "old zoom=" << m_zoom ;
   m_zoom *= zoomFactor;
   m_width *= m_zoom;
   m_height *= m_zoom;

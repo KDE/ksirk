@@ -54,7 +54,7 @@ KWaitedPlayerSetupDialog::KWaitedPlayerSetupDialog(
   m_password(password), m_result(result)
 {
   setupUi(this);
-  qCDebug(KSIRK_LOG) << "KWaitedPlayerSetupDialog constructor" << endl;
+  qCDebug(KSIRK_LOG) << "KWaitedPlayerSetupDialog constructor";
   fillWaitedPlayersCombo();
   
   QObject::connect((const QObject *)PushButton1, SIGNAL(clicked()), this, SLOT(slotOK()) );
@@ -66,7 +66,7 @@ KWaitedPlayerSetupDialog::~KWaitedPlayerSetupDialog(){
 
 void KWaitedPlayerSetupDialog::slotOK()
 {
-  qCDebug(KSIRK_LOG) << "slotOk" << endl;
+  qCDebug(KSIRK_LOG) << "slotOk";
   // toport
 //   m_password = QString(crypt(passwordEdit->password(),"T6"));
   m_result = waitedPlayersCombo->currentIndex();
@@ -75,14 +75,14 @@ void KWaitedPlayerSetupDialog::slotOK()
 
 void KWaitedPlayerSetupDialog::fillWaitedPlayersCombo()
 {
-  qCDebug(KSIRK_LOG) << "Filling nations combo" << endl;
+  qCDebug(KSIRK_LOG) << "Filling nations combo";
 
   QList<PlayerMatrix>::iterator it, it_end;
   it = m_automaton->game()->waitedPlayers().begin();
   it_end = m_automaton->game()->waitedPlayers().end();
   for (; it != it_end; it++)
   {
-    qCDebug(KSIRK_LOG) << "Adding waited player " << (*it).name << endl;
+    qCDebug(KSIRK_LOG) << "Adding waited player " << (*it).name ;
     QString imgName = m_automaton->game()->theWorld()->nationNamed((*it).nation)->flagFileName();
 //     load image
     QPixmap flag;

@@ -2668,18 +2668,18 @@ bool KGameWindow::actionNewGame(GameAutomaton::NetworkGameType socket)
 
 void KGameWindow::saveXml(QTextStream& xmlStream)
 {
-  xmlStream << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" << endl;
-  xmlStream << "<ksirkSavedGame formatVersion=\"" << SAVE_GAME_FILE_FORMAT_VERSION << "\" >" << endl;
-  xmlStream << "<game skin=\"" << m_automaton->skin() << "\" state=\"" << m_automaton->state() << "\" >" << endl;
+  xmlStream << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+  xmlStream << "<ksirkSavedGame formatVersion=\"" << SAVE_GAME_FILE_FORMAT_VERSION << "\" >";
+  xmlStream << "<game skin=\"" << m_automaton->skin() << "\" state=\"" << m_automaton->state() << "\" >";
   m_theWorld->saveXml(xmlStream);
-  xmlStream << "<players nb=\""<<m_automaton->playerList()->count()<<"\">" << endl;
+  xmlStream << "<players nb=\""<<m_automaton->playerList()->count()<<"\">";
   PlayersArray::iterator it = m_automaton->playerList()->begin();
   PlayersArray::iterator it_end = m_automaton->playerList()->end();
   for (; it != it_end; it++)
   {
     static_cast<Player*>(*it)->saveXml(xmlStream);
   }
-  xmlStream << "</players>" << endl;
+  xmlStream << "</players>";
   Player* player = m_automaton->currentPlayer();
   if (player)
   {
@@ -2687,10 +2687,10 @@ void KGameWindow::saveXml(QTextStream& xmlStream)
     name = name.replace('&',"&amp;");
     name = name.replace('<',"&lt;");
     name = name.replace('>',"&gt;");
-    xmlStream << "<currentPlayer name=\"" << name << "\" />" << endl;
+    xmlStream << "<currentPlayer name=\"" << name << "\" />";
   }
   else
-    xmlStream << "<currentPlayer name=\"\" />" << endl;
+    xmlStream << "<currentPlayer name=\"\" />";
   xmlStream << "<goals>\n";
   it = m_automaton->playerList()->begin();
   it_end = m_automaton->playerList()->end();
@@ -2699,8 +2699,8 @@ void KGameWindow::saveXml(QTextStream& xmlStream)
     static_cast<Player*>(*it)->goal().saveXml(xmlStream);
   }
   xmlStream << "</goals>\n";
-  xmlStream << "</game>" << endl;
-  xmlStream << "</ksirkSavedGame>" << endl;
+  xmlStream << "</game>";
+  xmlStream << "</ksirkSavedGame>";
 }
 
 /**

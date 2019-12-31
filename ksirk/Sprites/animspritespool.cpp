@@ -75,7 +75,7 @@ void AnimSpritePool::removeSprite(AnimSprite* sprite)
 
 void AnimSpritePool::update() 
 {
-  qCDebug(KSIRK_LOG) << "AnimSpritePool::update" << endl;
+  qCDebug(KSIRK_LOG) << "AnimSpritePool::update";
   QList<AnimSprite*>::iterator it, it_end;
   it = m_sprites.begin(); it_end = m_sprites.end();
   for (; it != it_end; it++)

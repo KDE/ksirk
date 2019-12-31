@@ -1314,7 +1314,7 @@ void JabberAccount::slotContactUpdated (const XMPP::RosterItem & item)
 		if(metaContact->isTemporary())
 			return;
 		qCDebug(JABBER_PROTOCOL_LOG) << c->contactId() << 
-				" is on the contact list while it shouldn't.  we are removing it.  - " << c << endl;
+				" is on the contact list while it shouldn't.  we are removing it.  - " << c ;
 		delete c;
 		if(metaContact->contacts().isEmpty())
 			Kopete::ContactList::self()->removeMetaContact( metaContact );*/

@@ -109,7 +109,7 @@ ONU::ONU(GameAutomaton* automaton,
     m_snapshot = QPixmap(QStandardPaths::locate(QStandardPaths::AppDataLocation, m_skin + "/Images/snapshot.jpg"));
     if (m_snapshot.isNull())
     {
-      qCCritical(KSIRK_LOG) << "Was not able to load the snapshot image: " << QStandardPaths::locate(QStandardPaths::AppDataLocation, m_skin + "/Images/snapshot.jpg") << endl;
+      qCCritical(KSIRK_LOG) << "Was not able to load the snapshot image: " << QStandardPaths::locate(QStandardPaths::AppDataLocation, m_skin + "/Images/snapshot.jpg");
     }
     QPixmapCache::insert(m_skin+"snapshot", m_snapshot);
   }
@@ -158,7 +158,7 @@ ONU::ONU(GameAutomaton* automaton,
     countriesMaskPix = QPixmap(mapMaskFileName);
     if (countriesMaskPix.isNull())
     {
-      qCCritical(KSIRK_LOG) << "Was not able to load the map mask image: " << mapMaskFileName << endl;
+      qCCritical(KSIRK_LOG) << "Was not able to load the map mask image: " << mapMaskFileName ;
     }
     QPixmapCache::insert(m_skin+"mapmask", countriesMaskPix);
   }
@@ -334,7 +334,7 @@ ONU::ONU(GameAutomaton* automaton,
           goal->continents().push_back(continentId);
         else
         {
-          qCDebug(KSIRK_LOG) << "Unknown continent " << continentId << " in skin " << m_skin << endl;
+          qCDebug(KSIRK_LOG) << "Unknown continent " << continentId << " in skin " << m_skin ;
         }
       }
     }
@@ -512,15 +512,15 @@ unsigned int ONU::getNbCountries() const
 
 void ONU::saveXml(QTextStream& xmlStream)
 {
-  xmlStream << "<ONU file=\"" << m_configFileName << "\" >" << endl;
+  xmlStream << "<ONU file=\"" << m_configFileName << "\" >";
 
-  xmlStream << "<countries>" << endl;
+  xmlStream << "<countries>";
   foreach (Country *c, countries)
   {
       c->saveXml(xmlStream);
   }
-  xmlStream << "</countries>" << endl;
-  xmlStream << "</ONU>" << endl;  
+  xmlStream << "</countries>";
+  xmlStream << "</ONU>";  
 }
 
 unsigned int ONU::width() const
@@ -659,7 +659,7 @@ void ONU::applyZoomFactorFast(qreal zoomFactor)		//benj
 /** Zoom 2 : Second method , Very performent.  Carefull ! Can cause the game to lag. 
  To try this, comment all the first method and uncomment these lines
 */
-  qCDebug(KSIRK_LOG) << "zoomFactor FASTTTTTTT"<<endl;
+  qCDebug(KSIRK_LOG) << "zoomFactor FASTTTTTTT";
   int nbLimitZooms = 6;
 
   //Application of zoom

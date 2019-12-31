@@ -553,7 +553,7 @@ void KGameWindow::initCombatMovement()
       && ! m_automaton->currentPlayer()->isAI()
       && !m_automaton->currentPlayer()->isVirtual())
   {
-    qCDebug(KSIRK_LOG) << "Attack with arena" << endl;
+    qCDebug(KSIRK_LOG) << "Attack with arena";
     // init and display the arena view
     showArena();
   }

@@ -51,7 +51,7 @@ Player::Player(
   m_waitedAck(""),
   m_flag(0)
 {
-  qCDebug(KSIRK_LOG) << "Player constructor" << endl;
+  qCDebug(KSIRK_LOG) << "Player constructor";
   setAsyncInput(true);
   dataHandler()->setPolicy(KGamePropertyBase::PolicyClean,false);
   m_nbAttack.registerData(dataHandler(),KGamePropertyBase::PolicyClean,QString("m_nbAttack"));
@@ -69,7 +69,7 @@ Player::Player(
   
   setName(playerName);
   setFlag();
-  qCDebug(KSIRK_LOG) << "Done creating player" << endl;
+  qCDebug(KSIRK_LOG) << "Done creating player";
 }
 
 bool Player::operator==(const Player& player) const
@@ -93,7 +93,7 @@ unsigned int Player::getNbAvailArmies()
 /**  */
 void Player::setNbAvailArmies(unsigned int nb, bool transmit)
 {
-  qCDebug(KSIRK_LOG) << name() << " setNbAvailArmies: " << nb << " transmit=" << transmit << endl;
+  qCDebug(KSIRK_LOG) << name() << " setNbAvailArmies: " << nb << " transmit=" << transmit ;
   m_distributionData.setNbToPlace(nb);
   if (transmit)
   {
@@ -147,10 +147,10 @@ void Player::incrNbAvailArmies(unsigned int nb)
 /** remove nb armies to the number of available armies */
 void Player::decrNbAvailArmies(unsigned int nb)
 {
-//   qCDebug(KSIRK_LOG) << "Player::decrNbAvailArmies " << name() << " " << nb << endl;
+//   qCDebug(KSIRK_LOG) << "Player::decrNbAvailArmies " << name() << " " << nb ;
   if (nb > (unsigned)m_distributionData.nbToPlace()/*m_nbAvailArmies*/)
   {
-    qCCritical(KSIRK_LOG) << "Removing " << nb << " armies while owning " << m_distributionData.nbToPlace()/*m_nbAvailArmies*/ << endl;
+    qCCritical(KSIRK_LOG) << "Removing " << nb << " armies while owning " << m_distributionData.nbToPlace()/*m_nbAvailArmies*/;
     Q_ASSERT(false);
   }
   m_distributionData.setNbToPlace(m_distributionData.nbToPlace() - nb);
@@ -161,7 +161,7 @@ void Player::putArmiesInto(int nb, int country)
   qCDebug(KSIRK_LOG) << nb << country << m_distributionData[country];
   if (nb > m_distributionData.nbToPlace()/*m_nbAvailArmies*/)
   {
-    qCCritical(KSIRK_LOG) << "Removing " << nb << " armies while owning " << m_distributionData.nbToPlace()/*m_nbAvailArmies*/ << endl;
+    qCCritical(KSIRK_LOG) << "Removing " << nb << " armies while owning " << m_distributionData.nbToPlace()/*m_nbAvailArmies*/;
     exit(1);
   }
   m_distributionData.setNbToPlace(m_distributionData.nbToPlace() - nb);
@@ -173,7 +173,7 @@ void Player::removeArmiesFrom(int nb, int country)
   qCDebug(KSIRK_LOG) << nb << m_distributionData[country];
   if (nb > m_distributionData[country])
   {
-    qCCritical(KSIRK_LOG) << "Trying to remove " << nb << " armies while x were added: x=" << m_distributionData[country] << endl;
+    qCCritical(KSIRK_LOG) << "Trying to remove " << nb << " armies while x were added: x=" << m_distributionData[country];
     exit(1);
   }
   m_distributionData.setNbToPlace(m_distributionData.nbToPlace() + nb);
@@ -204,7 +204,7 @@ void Player::decrNbCountries(unsigned int nb)
 {
     if (nb > m_nbCountries)
     {
-      qCCritical(KSIRK_LOG) << "Removing " << nb << " countries to " << name() << " while owning " << m_nbCountries << endl;
+      qCCritical(KSIRK_LOG) << "Removing " << nb << " countries to " << name() << " while owning " << m_nbCountries ;
       exit(1);
     }
   setNbCountries(m_nbCountries - nb);
@@ -215,7 +215,7 @@ void Player::decrNbCountries(unsigned int nb)
   */
 const AnimSprite* Player::getFlag() const
 {
-//   qCDebug(KSIRK_LOG) << "Player::getFlag" << endl;
+//   qCDebug(KSIRK_LOG) << "Player::getFlag";
   return m_flag;
 }
 
@@ -239,7 +239,7 @@ void Player::saveXml(QTextStream& xmlStream)
 {
   xmlStream << "<player ai=\"false\" ";
   innerSaveXml(xmlStream);
-  xmlStream << " />" << endl;
+  xmlStream << " />";
 }
 
 void Player::innerSaveXml(QTextStream& xmlStream)
@@ -264,11 +264,11 @@ void Player::innerSaveXml(QTextStream& xmlStream)
 
 bool Player::load (QDataStream &stream)
 {
-//   qCDebug(KSIRK_LOG) << "Player::load" << endl;
+//   qCDebug(KSIRK_LOG) << "Player::load";
   if (!KPlayer::load(stream)) return false;
   QString nationName;
   stream >> nationName;
-//   qCDebug(KSIRK_LOG) << "Player::load nationName=" << nationName << endl;
+//   qCDebug(KSIRK_LOG) << "Player::load nationName=" << nationName ;
   setNation(nationName);
   stream >> m_goal;
   int nbToPlace;
@@ -287,7 +287,7 @@ bool Player::load (QDataStream &stream)
 
 bool Player::save (QDataStream &stream)
 {
-//   qCDebug(KSIRK_LOG) << "Player::save" << endl;
+//   qCDebug(KSIRK_LOG) << "Player::save";
   if (!KPlayer::save(stream)) return false;
   stream << m_nation->name();
   stream << m_goal;
@@ -302,10 +302,10 @@ bool Player::save (QDataStream &stream)
 
 Nationality* Player::getNation() 
 {
-  qCDebug(KSIRK_LOG) << "Player::getNation for " << name() << endl;
+  qCDebug(KSIRK_LOG) << "Player::getNation for " << name();
   if (m_nation == 0 && !m_delayedInitNationName.isEmpty())
   {
-    qCCritical(KSIRK_LOG) << "  retrieving delayed nation " << m_delayedInitNationName << endl;
+    qCCritical(KSIRK_LOG) << "  retrieving delayed nation " << m_delayedInitNationName ;
     setNation(m_delayedInitNationName);
   }
   return m_nation;
@@ -316,7 +316,7 @@ void Player::setNation(const QString& nationName)
   m_nation = m_automaton->game()->theWorld()-> nationNamed(nationName);
   if (m_nation == 0)
   {
-//     qCDebug(KSIRK_LOG) << "Delaying nation initialization ("<<nationName<<") for " << name() << endl;
+//     qCDebug(KSIRK_LOG) << "Delaying nation initialization ("<<nationName<<") for " << name();
     m_delayedInitNationName = nationName;
   }
   setFlag();
@@ -343,7 +343,7 @@ void Player::setFlag()
 
 void Player::goal(const Goal& goal)
 {
-  qCDebug(KSIRK_LOG) << "Player::goal (setter) " << name() << endl;
+  qCDebug(KSIRK_LOG) << "Player::goal (setter) " << name();
 /*  if (m_goal)
   {
     delete m_goal;
@@ -370,18 +370,18 @@ bool Player::checkGoal()
   */
 QList<Country*> Player::countries() const
 {
-//   qCDebug(KSIRK_LOG) << name() << ": Player::countries()" << endl;
+//   qCDebug(KSIRK_LOG) << name() << ": Player::countries()";
   QList<Country*> list;
   foreach (Country* c, m_automaton->game()->theWorld()->getCountries())
   {
     if (c-> owner() == static_cast< const Player * >(this))
     {
-//            qCDebug(KSIRK_LOG) << "\t" << c-> name() << endl;
+//            qCDebug(KSIRK_LOG) << "\t" << c-> name();
       
       list.push_back(c);
     }
   }
-//    qCDebug(KSIRK_LOG) << name() << ": OUT AIPlayer::countries()" << endl;
+//    qCDebug(KSIRK_LOG) << name() << ": OUT AIPlayer::countries()";
   return list;
 }
 

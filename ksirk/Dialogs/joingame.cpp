@@ -59,7 +59,7 @@ void JoinGameDialog::accept()
 }
 
 void JoinGameDialog::reject() {
-//   qCDebug(KSIRK_LOG) << "I not allow to close the dialog!" << endl;
+//   qCDebug(KSIRK_LOG) << "I not allow to close the dialog!";
   QDialog::reject();
 }
 

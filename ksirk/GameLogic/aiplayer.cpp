@@ -75,7 +75,7 @@ AIPlayer :: AIPlayer(
   m_thread(*this)
 {
   m_thread.setStopMe(true);
-//   qCDebug(KSIRK_LOG) << "AIPlayer constructor" << endl;
+//   qCDebug(KSIRK_LOG) << "AIPlayer constructor";
 }
 
 AIPlayer::~AIPlayer()
@@ -95,12 +95,12 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
   if (m_game && m_game->currentPlayer())
   {
     qCDebug(KSIRK_LOG) << name() << ": (state is " << m_game-> stateName() << ", current player is "
-      << m_game-> currentPlayer()->name()<<")" << endl;
+      << m_game-> currentPlayer()->name()<<")";
   }
   if (m_game->m_aicannotrunhack)
   {
     qCDebug(KSIRK_LOG) << "HACK HACK AIPlayer " << name()   
-        << ": game says AIs cannot run..." << endl;
+        << ": game says AIs cannot run...";
     return;
   }
   if (m_game->game()->haveAnimFighters() )
@@ -133,7 +133,7 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
         chooseInvasionAction();
         break;
       case GameLogic::GameAutomaton::WAIT :
-//         qCDebug(KSIRK_LOG) << "WAIT " << name() << endl;
+//         qCDebug(KSIRK_LOG) << "WAIT " << name();
         if (!m_actionWaitingStart)
           chooseAttackMoveArmiesOrNextPlayer();
   //if (m_src != 0 && m_dest != 0)
@@ -160,7 +160,7 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
   
     /*stream << QString("actionAttack2") << point;
     
-      qCCritical(KSIRK_LOG) << "The attacker tries to attack with a number of armies different of 1, 2 or 3: that's impossible!" << endl;
+      qCCritical(KSIRK_LOG) << "The attacker tries to attack with a number of armies different of 1, 2 or 3: that's impossible!";
       //exit();*/
   
         break;
@@ -199,13 +199,13 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
         stop();
         break;
       default :;
-//         qCDebug(KSIRK_LOG) << "OTHER STATE:" << state << " "  << name() << endl;
+//         qCDebug(KSIRK_LOG) << "OTHER STATE:" << state << " "  << name();
     }
     requestAck();
     if (m_game-> currentPlayer() != this)
       m_actionWaitingStart = false;
   }
-//    qCDebug(KSIRK_LOG) << "OUT" << endl;
+//    qCDebug(KSIRK_LOG) << "OUT";
 }
 
 /**
@@ -216,14 +216,14 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
   */
 void AIPlayer::chooseAttackMoveArmiesOrNextPlayer()
 {
-//     qCDebug(KSIRK_LOG) << "AIPlayer::chooseAttackMoveArmiesOrNextPlayer() " << endl;
+//     qCDebug(KSIRK_LOG) << "AIPlayer::chooseAttackMoveArmiesOrNextPlayer() ";
   m_actionWaitingStart = true;
   if ( m_game->game()->haveMovingArmies())
   {
     return;
   }
   unsigned int dice = Dice::roll(12);
-//     qCDebug(KSIRK_LOG) << "AIPlayer Dice rolled on " << dice << endl;
+//     qCDebug(KSIRK_LOG) << "AIPlayer Dice rolled on " << dice ;
   switch ( dice )
   {
     case 1: ; case 2:; case 3:; case 4:;case 5: ; case 6:;case 7:;case 8:;case 9: ;case 10: ; case 11: // attack
@@ -242,7 +242,7 @@ void AIPlayer::chooseAttackMoveArmiesOrNextPlayer()
       moveArmiesAction();
     break;
   }
-//    qCDebug(KSIRK_LOG) <<"OUT AIPlayer::chooseAttackMoveArmiesOrNextPlayer()" << endl;
+//    qCDebug(KSIRK_LOG) <<"OUT AIPlayer::chooseAttackMoveArmiesOrNextPlayer()";
 }
 
 /**
@@ -253,26 +253,26 @@ QPair<const Country*, const Country*> AIPlayer::chooseBelligerant()
 {
   QMultiMap<const Country*, const Country*> candidates;
 
-//     qCDebug(KSIRK_LOG) << name() << " : AIPlayer::chooseBelligerant()" << endl;
+//     qCDebug(KSIRK_LOG) << name() << " : AIPlayer::chooseBelligerant()";
     // Builds the list of countries of the player that have enough armies and a good neighbour
   QList<Country*> list = countries();
   if ( ! list.empty() )
   {
     QList<Country*>::iterator outer = list.begin();
     const Country* candidateSource;
-//        qCDebug(KSIRK_LOG) << name() << "  choosing belligerants, candidate sources " << endl;
+//        qCDebug(KSIRK_LOG) << name() << "  choosing belligerants, candidate sources ";
     while ( ( outer != list.end()) && ( (candidateSource = *outer) != 0 ) )
     {
-//            qCDebug(KSIRK_LOG) << name() << "  choosing belligerants, looking at candidate source : " << candidateSource-> name() << endl;
+//            qCDebug(KSIRK_LOG) << name() << "  choosing belligerants, looking at candidate source : " << candidateSource-> name();
             // Enough armies
       if ( candidateSource-> nbArmies() > 1 )
       {
-//                qCDebug(KSIRK_LOG) << name() << "  choosing belligerants, candidate source has enough armies." << endl;
-//                qCDebug(KSIRK_LOG) << name() << "  choosing belligerants, candidate targets " << endl;
+//                qCDebug(KSIRK_LOG) << name() << "  choosing belligerants, candidate source has enough armies.";
+//                qCDebug(KSIRK_LOG) << name() << "  choosing belligerants, candidate targets ";
         for ( int inner = 0; inner < m_world-> getCountries().size(); inner++)
         {
           const Country* candidateTarget = m_world-> getCountries().at(inner);
-//                    qCDebug(KSIRK_LOG) << name() << "  choosing belligerants, looking at candidate target : " << candidateTarget-> name() << endl;
+//                    qCDebug(KSIRK_LOG) << name() << "  choosing belligerants, looking at candidate target : " << candidateTarget-> name();
                     // Enemy neigbour
           if (            ( candidateTarget != candidateSource ) 
                   &&     (candidateSource-> owner() != candidateTarget-> owner())
@@ -280,7 +280,7 @@ QPair<const Country*, const Country*> AIPlayer::chooseBelligerant()
                   &&     !(candidateTarget->name().contains("NULL") ) )
           {
 //                        qCDebug(KSIRK_LOG) << name() << "  choosing belligerants, adding target / source : "
-//                                << candidateSource-> name() << " / " << candidateTarget-> name() << endl;
+//                                << candidateSource-> name() << " / " << candidateTarget-> name();
               candidates.insert(candidateSource, candidateTarget);
           }
         }
@@ -289,11 +289,11 @@ QPair<const Country*, const Country*> AIPlayer::chooseBelligerant()
     }
     if ( candidates.size() == 0 )
     {
-//            qCDebug(KSIRK_LOG) << name() << " OUT AIPlayer::chooseBelligerant() ; map size = 0 ; it isn't possible to attack." << endl;
+//            qCDebug(KSIRK_LOG) << name() << " OUT AIPlayer::chooseBelligerant() ; map size = 0 ; it isn't possible to attack.";
       return (qMakePair<const Country*, const Country*>(static_cast< Country*>(0), static_cast< Country*>(0)));
     }
     uint which = Dice::roll(candidates.size()) - 1;
-//        qCDebug(KSIRK_LOG) << "Which = " << which <<endl;
+//        qCDebug(KSIRK_LOG) << "Which = " << which;
     QMultiMap<const Country*, const Country*>::const_iterator it;
     unsigned int i = 0;
     for ( it = candidates.constBegin(); it != candidates.constEnd() ; it++, i++ )
@@ -305,7 +305,7 @@ QPair<const Country*, const Country*> AIPlayer::chooseBelligerant()
       }
     }
   }
-//    qCDebug(KSIRK_LOG) << "OUT AIPlayer::chooseBelligerant() : do I own no country ???" << endl;
+//    qCDebug(KSIRK_LOG) << "OUT AIPlayer::chooseBelligerant() : do I own no country ???";
   return (qMakePair<const Country*, const Country*>(static_cast< Country*>(0), static_cast< Country*>(0)));
 }
 
@@ -316,11 +316,11 @@ QPair<const Country*, const Country*> AIPlayer::chooseBelligerant()
   */
 Country* AIPlayer::chooseReceivingCountry()
 {
-//     qCDebug(KSIRK_LOG) << "AIPlayer::chooseReceivingCountry()" << endl;
+//     qCDebug(KSIRK_LOG) << "AIPlayer::chooseReceivingCountry()";
   QList<Country*> myCountries = countries();
   if (myCountries.size() == 0)
   {
-    qCCritical(KSIRK_LOG) << "AIPlayer::chooseReceivingCountry() EMPTY LIST" << endl;
+    qCCritical(KSIRK_LOG) << "AIPlayer::chooseReceivingCountry() EMPTY LIST";
     return 0;
   }
   QList<Country*> withNeighbours;
@@ -334,12 +334,12 @@ Country* AIPlayer::chooseReceivingCountry()
   int which = Dice::roll(withNeighbours.size()) - 1;
   if (which == -1)
   {
-    qCDebug(KSIRK_LOG) << Player::name() << " has no enemy neighbour... should not happen." << endl;
+    qCDebug(KSIRK_LOG) << Player::name() << " has no enemy neighbour... should not happen.";
   }
-//    qCDebug(KSIRK_LOG) << "\tChoosed: " << list.at(which)-> name() << endl;
+//    qCDebug(KSIRK_LOG) << "\tChoosed: " << list.at(which)-> name();
     
   return withNeighbours.at(which);
-//    qCDebug(KSIRK_LOG) << "OUT AIPlayer::chooseReceivingCountry()" << endl;
+//    qCDebug(KSIRK_LOG) << "OUT AIPlayer::chooseReceivingCountry()";
 }
 
 /** 
@@ -373,11 +373,11 @@ void AIPlayer::stop()
   */
 bool AIPlayer::attackAction() 
 {
-//   qCDebug(KSIRK_LOG) << "AIPlayer::attackAction" << endl;
+//   qCDebug(KSIRK_LOG) << "AIPlayer::attackAction";
   QPair<const Country* , const Country* > srcDest = chooseBelligerant();
   if ( (srcDest.first == 0) || (srcDest.second == 0) )
   {
-//     qCDebug(KSIRK_LOG) << "AIPlayer::attackAction: no attack available" << endl;
+//     qCDebug(KSIRK_LOG) << "AIPlayer::attackAction: no attack available";
 //       nextPlayerAction(); 
       return false;
   }
@@ -395,22 +395,22 @@ bool AIPlayer::attackAction()
   aiPlayerIO()->sendInput(stream2,true);
 
   uint srcNbArmies = m_src->nbArmies();
-  qCDebug(KSIRK_LOG) << Player::name()  << " : ATTACK" << endl;
+  qCDebug(KSIRK_LOG) << Player::name()  << " : ATTACK";
   qCDebug(KSIRK_LOG) << "    " << Player::name()  << " : attacks from "  << m_src-> name() 
-                  << " (" << srcNbArmies << " armies)" << endl;
-  qCDebug(KSIRK_LOG) << "    " << Player::name()  << " : attacks " << m_dest-> name() << endl;
+                  << " (" << srcNbArmies << " armies)";
+  qCDebug(KSIRK_LOG) << "    " << Player::name()  << " : attacks " << m_dest-> name();
       
   uint nbAttack = 0;
   if (srcNbArmies == 1)
   {
-    qCCritical(KSIRK_LOG) << "AI player " << Player::name() << " country " << m_src->nbArmies() << "have only one army. Should not be chosen to attack." << endl;
+    qCCritical(KSIRK_LOG) << "AI player " << Player::name() << " country " << m_src->nbArmies() << "have only one army. Should not be chosen to attack.";
     m_thread.exit();
   }
   if (srcNbArmies >= 2) {nbAttack = 1;}
   if (srcNbArmies >= 3) {nbAttack = 2;}
   if (srcNbArmies >= 4) {nbAttack = 3;}
   m_nbAttack = nbAttack;
-  qCDebug(KSIRK_LOG) << "    " << Player::name()  << " : attacks with " << nbAttack << " armies." << endl;
+  qCDebug(KSIRK_LOG) << "    " << Player::name()  << " : attacks with " << nbAttack << " armies.";
 
   QPointF point;
   QByteArray buffer3;
@@ -427,14 +427,14 @@ bool AIPlayer::attackAction()
     stream3 << QString("actionAttack3") << point;
     break;
     default:
-      qCCritical(KSIRK_LOG) << "The attacker tries to attack with a number of armies different of 1, 2 or 3: that's impossible!" << endl;
+      qCCritical(KSIRK_LOG) << "The attacker tries to attack with a number of armies different of 1, 2 or 3: that's impossible!";
       m_thread.exit();
   }
   aiPlayerIO()->sendInput(stream3,true);
 //   requestAck();
 
   qCDebug(KSIRK_LOG) << "AIPlayer " << Player::name()  << " : attackAction : "  << m_src-> name() << " " << m_dest-> name()
-    << " " << nbAttack << endl;
+    << " " << nbAttack ;
   stop();
   return true;
 }
@@ -444,7 +444,7 @@ bool AIPlayer::attackAction()
   */
 bool AIPlayer::moveArmiesAction()
 {
-  qCDebug(KSIRK_LOG) << "AIPlayer::moveArmiesAction" << endl;
+  qCDebug(KSIRK_LOG) << "AIPlayer::moveArmiesAction";
   QList<Country*> srcList = countries() ;
   if (srcList.size() == 0) 
   {
@@ -453,22 +453,22 @@ bool AIPlayer::moveArmiesAction()
   }
   uint which = Dice::roll(srcList.size()) - 1;
   Country* osrc =  srcList.at(which);
-//    qCDebug(KSIRK_LOG) << "AIPlayer::moveArmiesAction() MOVEARMIES 1" << endl;
+//    qCDebug(KSIRK_LOG) << "AIPlayer::moveArmiesAction() MOVEARMIES 1";
   if (osrc-> nbArmies() <= 1) 
   {
     nextPlayerAction();
     return false;
   }
-//    qCDebug(KSIRK_LOG) << "AIPlayer::moveArmiesAction() MOVEARMIES 2" << endl;
+//    qCDebug(KSIRK_LOG) << "AIPlayer::moveArmiesAction() MOVEARMIES 2";
   QList<Country*> destList( m_world-> neighboursBelongingTo(*osrc, this) );
-//    qCDebug(KSIRK_LOG) << "AIPlayer::moveArmiesAction() MOVEARMIES 3" << endl;
+//    qCDebug(KSIRK_LOG) << "AIPlayer::moveArmiesAction() MOVEARMIES 3";
   if (destList.size() == 0) 
   {
     nextPlayerAction();
     return false;
   }
   which = Dice::roll(destList.size()) - 1 ;
-//    qCDebug(KSIRK_LOG) << "AIPlayer::moveArmiesAction() MOVEARMIES 4" << endl;
+//    qCDebug(KSIRK_LOG) << "AIPlayer::moveArmiesAction() MOVEARMIES 4";
   Country* odest =  destList.at(which);
   m_src = osrc;
   m_dest = odest;
@@ -484,7 +484,7 @@ bool AIPlayer::moveArmiesAction()
   aiPlayerIO()->sendInput(stream2,true);
 //   requestAck();
   
-  qCDebug(KSIRK_LOG) << "AIPlayer ****************" << Player::name()  << " : moveAction : "  << osrc-> name() << " " << odest-> name() << endl;
+  qCDebug(KSIRK_LOG) << "AIPlayer ****************" << Player::name()  << " : moveAction : "  << osrc-> name() << " " << odest-> name();
 
   return true;
 }
@@ -494,7 +494,7 @@ bool AIPlayer::moveArmiesAction()
  */
 void AIPlayer::placeArmiesAction() 
 {
-  qCDebug(KSIRK_LOG) << "AIPlayer::placeArmiesAction " << Player::name() << " ; nb to place: " << getNbAvailArmies() << endl;
+  qCDebug(KSIRK_LOG) << "AIPlayer::placeArmiesAction " << Player::name() << " ; nb to place: " << getNbAvailArmies();
   if (getNbAvailArmies() > 0)
   {
     m_hasVoted = false;
@@ -508,7 +508,7 @@ void AIPlayer::placeArmiesAction()
       m_thread.wait();
     }
     qCDebug(KSIRK_LOG) << "Placing an army in " << receiver->name() 
-        << " ; point=" << receiver->centralPoint() << endl;
+        << " ; point=" << receiver->centralPoint();
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
     stream << QString("actionLButtonDown") << receiver->centralPoint();
@@ -518,7 +518,7 @@ void AIPlayer::placeArmiesAction()
   }
   else if (m_game->state() != GameAutomaton::INTERLUDE)
   {
-    qCDebug(KSIRK_LOG) << "No more armies to place: next player" << endl;
+    qCDebug(KSIRK_LOG) << "No more armies to place: next player";
     stop();
     QPointF point;
     m_game->gameEvent("actionNextPlayer", point);
@@ -540,19 +540,19 @@ void AIPlayer::chooseWetherToRecycle()
   {
     if (!m_hasVoted)
     {
-      qCDebug(KSIRK_LOG) << "Voting for end of recycling" << endl;
+      qCDebug(KSIRK_LOG) << "Voting for end of recycling";
       QPointF p;
       m_game->gameEvent( "actionRecyclingFinished", p );
       m_hasVoted = true;
     }
     else
     {
-      qCDebug(KSIRK_LOG) << "Has already voted" << endl;
+      qCDebug(KSIRK_LOG) << "Has already voted";
     }
   }
   else
   {
-    qCDebug(KSIRK_LOG) << "There is local non computer players; let them vote." << endl;
+    qCDebug(KSIRK_LOG) << "There is local non computer players; let them vote.";
   }
   stop();
 }
@@ -564,7 +564,7 @@ void AIPlayer::chooseInvasionAction()
 {
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
-  qCDebug(KSIRK_LOG) << QString("AIPlayer::chooseInvasionAction") << endl;
+  qCDebug(KSIRK_LOG) << QString("AIPlayer::chooseInvasionAction");
   int nbArmiesToMove = Dice::roll(m_game->game()-> firstCountry()-> nbArmies()) - 1;
   QPointF point;
   while (nbArmiesToMove >= 10) 
@@ -601,12 +601,12 @@ void AIPlayer::chooseDefenseAction()
   QPointF point;
   if ((m_game-> currentPlayer() == this) && ((!m_game->isDefenseAuto()) || (m_game->game()->secondCountry() != m_game->getDefCountry())))
   {
-    qCDebug(KSIRK_LOG) << "AIPlayer::chooseDefenseAction waiting defense of another one; nothing to do." << endl;
+    qCDebug(KSIRK_LOG) << "AIPlayer::chooseDefenseAction waiting defense of another one; nothing to do.";
     m_game->setDefenseAuto(false);
   }
   else
   {
-    qCDebug(KSIRK_LOG) << "AIPlayer::chooseDefenseAction " << Player::name() << endl;
+    qCDebug(KSIRK_LOG) << "AIPlayer::chooseDefenseAction " << Player::name();
     switch (m_game-> currentPlayer()-> getNbAttack())
     {
       case 1:
@@ -622,7 +622,7 @@ void AIPlayer::chooseDefenseAction()
 //       m_game->slotDefense1();
       break;
       default:
-        qCCritical(KSIRK_LOG) << "The attacker attacks with a number of armies different of 1, 2 or 3: that's impossible!" << endl;
+        qCCritical(KSIRK_LOG) << "The attacker attacks with a number of armies different of 1, 2 or 3: that's impossible!";
         m_thread.exit();
     }
     stop();
@@ -636,7 +636,7 @@ void AIPlayer::chooseDefenseAction()
  */
 void AIPlayer::nextPlayerAction()
 {
-  qCDebug(KSIRK_LOG) << "AIPlayer::nextPlayerAction" << endl;
+  qCDebug(KSIRK_LOG) << "AIPlayer::nextPlayerAction";
   QPointF point;
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
@@ -650,7 +650,7 @@ void AIPlayer::saveXml(QTextStream& xmlStream)
 {
   xmlStream << "<player ai=\"true\" ";
   innerSaveXml(xmlStream);
-  xmlStream << " />" << endl;
+  xmlStream << " />";
 }
 
 /** 
@@ -714,7 +714,7 @@ void AIPlayer::requestAck()
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
   QPointF p;
-  qCDebug(KSIRK_LOG) << name() << " sending a request for ack " << m_waitedAck << endl;
+  qCDebug(KSIRK_LOG) << name() << " sending a request for ack " << m_waitedAck ;
   stream << QString("requestForAck") << p << m_waitedAck;
   aiPlayerIO()->sendInput(stream,true);
 }

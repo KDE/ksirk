@@ -77,14 +77,14 @@ void KsirkChatItem::paint(QPainter* p,
     switch (m_order[i])
     {
     case Text:
-//       qCDebug(KSIRK_LOG) << "  paint string '" << m_strings[i] << "' at " << x << ", " << row*h << endl;
+//       qCDebug(KSIRK_LOG) << "  paint string '" << m_strings[i] << "' at " << x << ", " << row*h ;
       p->drawPixmap(option.rect.x()+x,option.rect.y(),px);
       x += px.width();
     break;
     case Pixmap:
       if (! m_pixmaps[i].isNull())
       {
-//         qCDebug(KSIRK_LOG) << "  paint pixmap at " << x << ", " << row*h << endl;
+//         qCDebug(KSIRK_LOG) << "  paint pixmap at " << x << ", " << row*h ;
         QPixmap scaled = m_pixmaps[i].scaledToHeight((int)h);
         p->drawPixmap(option.rect.x()+x,option.rect.y(),scaled);
         x+= scaled.width();
@@ -127,7 +127,7 @@ QSize KsirkChatItem::sizeHint(const QStyleOptionViewItem &option)
     default: ;
     }
   }
-//   qCDebug(KSIRK_LOG) << "KsirkChatItem::sizeHint: " << QSize(w,h) << endl;
+//   qCDebug(KSIRK_LOG) << "KsirkChatItem::sizeHint: " << QSize(w,h);
   return QSize(w,(int)h);
 }
 

@@ -36,7 +36,7 @@ JabberByteStream::JabberByteStream ( QObject *parent )
 
 void JabberByteStream::connect ( QString host, int port )
 {
-	qCDebug(JABBER_PROTOCOL_LOG) << Q_FUNC_INFO << "Connecting to " << host << ", port " << port << endl;
+	qCDebug(JABBER_PROTOCOL_LOG) << Q_FUNC_INFO << "Connecting to " << host << ", port " << port ;
 
 	mClosing = false;
 
@@ -65,9 +65,9 @@ void JabberByteStream::close ()
 	// close the socket and set flag that we are closing it ourselves
 	mClosing = true;
         if (mSocket) {
-             qCDebug(JABBER_PROTOCOL_LOG) << Q_FUNC_INFO << "socket is not null" << endl;
+             qCDebug(JABBER_PROTOCOL_LOG) << Q_FUNC_INFO << "socket is not null";
 	     mSocket->close();
-             qCDebug(JABBER_PROTOCOL_LOG) << Q_FUNC_INFO << "socket closed" << endl;
+             qCDebug(JABBER_PROTOCOL_LOG) << Q_FUNC_INFO << "socket closed";
              mSocket=nullptr;
         }
 }

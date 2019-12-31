@@ -46,7 +46,7 @@ KsirkChatModel::KsirkChatModel(QObject* parent, Ksirk::KGameWindow* game)
 
 int KsirkChatModel::rowCount(const QModelIndex &parent) const
 {
-//   qCDebug(KSIRK_LOG) << "KsirkChatModel::rowCount" << endl;
+//   qCDebug(KSIRK_LOG) << "KsirkChatModel::rowCount";
   if (parent.isValid())
     return 0;
   else

@@ -57,21 +57,21 @@ m_player(0)
 Goal::Goal(const Goal& goal)
 {
   m_automaton = goal.m_automaton;
-  qCDebug(KSIRK_LOG) << "Goal copy constructor :" << endl;
+  qCDebug(KSIRK_LOG) << "Goal copy constructor :";
   m_type = goal.m_type;
-  qCDebug(KSIRK_LOG) << "  type="<< m_type << endl;
+  qCDebug(KSIRK_LOG) << "  type="<< m_type ;
   m_description = goal.m_description;
-  qCDebug(KSIRK_LOG) << "  description="<< m_description << endl;
+  qCDebug(KSIRK_LOG) << "  description="<< m_description ;
   m_nbCountries = goal.m_nbCountries;
-  qCDebug(KSIRK_LOG) << "  nbCountries="<< m_nbCountries << endl;
+  qCDebug(KSIRK_LOG) << "  nbCountries="<< m_nbCountries ;
   m_nbArmiesByCountry = goal.m_nbArmiesByCountry;
-  qCDebug(KSIRK_LOG) << "  nbArmiesByCountry="<< m_nbArmiesByCountry << endl;
+  qCDebug(KSIRK_LOG) << "  nbArmiesByCountry="<< m_nbArmiesByCountry ;
   m_continents = goal.m_continents;
-  qCDebug(KSIRK_LOG) << "  continents: "<< m_continents.size() << endl;
+  qCDebug(KSIRK_LOG) << "  continents: "<< m_continents.size();
   m_players = goal.m_players;
-  qCDebug(KSIRK_LOG) << "  players: "<< m_players.size() << endl;
+  qCDebug(KSIRK_LOG) << "  players: "<< m_players.size();
   m_player = goal.m_player;
-  qCDebug(KSIRK_LOG) << "  player: "<< m_player << endl;
+  qCDebug(KSIRK_LOG) << "  player: "<< m_player ;
 }
 
 Goal::~Goal()
@@ -137,10 +137,10 @@ bool Goal::checkCountriesFor(const GameLogic::Player* player) const
 
 bool Goal::checkContinentsFor(const GameLogic::Player* player) const
 {
-  qCDebug(KSIRK_LOG) << "Goal::checkContinentsFor " << player->name() << endl;
+  qCDebug(KSIRK_LOG) << "Goal::checkContinentsFor " << player->name();
   foreach (const QString& continent, m_continents)
   {
-    qCDebug(KSIRK_LOG) << "Should be owned continent id: " << continent<< endl;
+    qCDebug(KSIRK_LOG) << "Should be owned continent id: " << continent;
     if ( m_automaton->game()->theWorld()->continentNamed(continent) == 0
        || m_automaton->game()->theWorld()->continentNamed(continent)->owner() != player)
     {
@@ -189,7 +189,7 @@ QString Goal::message(int displayType) const
       {
         res = res.subs(m_player->name());
       }
-      qCDebug(KSIRK_LOG) << "Goal type='" << m_type << "' mes = '" << res.toString() << "'" << endl;
+      qCDebug(KSIRK_LOG) << "Goal type='" << m_type << "' mes = '" << res.toString() << "'";
     
       QList<unsigned int>::const_iterator it, it_end;
       switch (m_type)
@@ -197,15 +197,15 @@ QString Goal::message(int displayType) const
       case Goal::GoalPlayer :
         if (!m_players.empty())
         {
-          qCDebug(KSIRK_LOG) << "  player name='" << *m_players.begin() << endl;
-          qCDebug(KSIRK_LOG) << "  this is player='" << m_automaton->playerNamed(*m_players.begin()) << endl;
+          qCDebug(KSIRK_LOG) << "  player name='" << *m_players.begin();
+          qCDebug(KSIRK_LOG) << "  this is player='" << m_automaton->playerNamed(*m_players.begin());
           if (m_automaton->playerNamed(*m_players.begin())==0)
           {
             res = res.subs(i18n("%1 (already dead)",*m_players.begin()));
           }
           else
           {
-            qCDebug(KSIRK_LOG) << "  its name is='" << *m_players.begin() << endl;
+            qCDebug(KSIRK_LOG) << "  its name is='" << *m_players.begin();
             res = res.subs(*m_players.begin());
           }
           res = res.subs(m_nbCountries);
@@ -216,11 +216,11 @@ QString Goal::message(int displayType) const
         }
         break;
       case Goal::Countries:
-        qCDebug(KSIRK_LOG) << "  arg1 = '" << m_nbCountries << "'" << endl;
+        qCDebug(KSIRK_LOG) << "  arg1 = '" << m_nbCountries << "'";
         res=res.subs(m_nbCountries);
         if (m_nbArmiesByCountry > 0)
         {
-          qCDebug(KSIRK_LOG) << "  arg2 = '" << m_nbArmiesByCountry << "'" << endl;
+          qCDebug(KSIRK_LOG) << "  arg2 = '" << m_nbArmiesByCountry << "'";
           res=res.subs(m_nbArmiesByCountry);
         }
         break;
@@ -229,7 +229,7 @@ QString Goal::message(int displayType) const
         {
           if (!continent.isEmpty())
           {
-            qCDebug(KSIRK_LOG) << "  arg = '" << continent << "'" << endl;
+            qCDebug(KSIRK_LOG) << "  arg = '" << continent << "'";
             res=res.subs(i18n(continent.toUtf8().data()));
           }
         }
@@ -339,49 +339,49 @@ void Goal::show(int displayType)
 
 QDataStream& operator<<(QDataStream& stream, const Goal& goal)
 {
-  qCDebug(KSIRK_LOG) << "Goal operator<< : type" << goal.type()<< endl;
+  qCDebug(KSIRK_LOG) << "Goal operator<< : type" << goal.type();
   stream << quint32(goal.type());
   if (goal.player() != 0)
   {
-    qCDebug(KSIRK_LOG) << "Goal operator<< : player " << goal.player()->id() << endl;
+    qCDebug(KSIRK_LOG) << "Goal operator<< : player " << goal.player()->id();
     stream << quint32(goal.player()->id());
   }
   else
   {
-    qCDebug(KSIRK_LOG) << "Goal operator<< : player " << 0 << endl;
+    qCDebug(KSIRK_LOG) << "Goal operator<< : player " << 0 ;
     stream << quint32(0);
   }
-  qCDebug(KSIRK_LOG) << "Goal operator<< : description " << goal.description() << endl;
+  qCDebug(KSIRK_LOG) << "Goal operator<< : description " << goal.description();
   stream << goal.description();
   QList<QString>::ConstIterator it, it_end;
   QList<QString>::ConstIterator itc, itc_end;
   switch (goal.type())
   {
   case Goal::GoalPlayer :
-    qCDebug(KSIRK_LOG) << "Goal operator<< : players " << goal.players().size() << endl;
+    qCDebug(KSIRK_LOG) << "Goal operator<< : players " << goal.players().size();
     stream << quint32(goal.players().size());
     it = goal.players().constBegin(); it_end = goal.players().constEnd();
     for (; it != it_end; it++)
     {
-      qCDebug(KSIRK_LOG) << "Goal operator<< : player " << (*it) << endl;
+      qCDebug(KSIRK_LOG) << "Goal operator<< : player " << (*it);
       stream << *it;
     }
-    qCDebug(KSIRK_LOG) << "Goal operator<< : nbCountries " << goal.nbCountries() << endl;
+    qCDebug(KSIRK_LOG) << "Goal operator<< : nbCountries " << goal.nbCountries();
     stream << quint32(goal.nbCountries());
     break;
   case Goal::Countries:
-    qCDebug(KSIRK_LOG) << "Goal operator<< : nbCountries " << goal.nbCountries() << endl;
+    qCDebug(KSIRK_LOG) << "Goal operator<< : nbCountries " << goal.nbCountries();
     stream << quint32(goal.nbCountries());
-    qCDebug(KSIRK_LOG) << "Goal operator<< : nbArmiesByCountry " << goal.nbArmiesByCountry() << endl;
+    qCDebug(KSIRK_LOG) << "Goal operator<< : nbArmiesByCountry " << goal.nbArmiesByCountry();
     stream << quint32(goal.nbArmiesByCountry());
     break;
   case Goal::Continents:
-    qCDebug(KSIRK_LOG) << "Goal operator<< : continents " << goal.continents().size() << endl;
+    qCDebug(KSIRK_LOG) << "Goal operator<< : continents " << goal.continents().size();
     stream << quint32(goal.continents().size());
     itc = goal.continents().constBegin(); itc_end = goal.continents().constEnd();
     for (; itc != itc_end; itc++)
     {
-      qCDebug(KSIRK_LOG) << "Goal operator<< : continent " << (*itc) << endl;
+      qCDebug(KSIRK_LOG) << "Goal operator<< : continent " << (*itc);
       stream << (*itc);
     }
     break;
@@ -392,7 +392,7 @@ QDataStream& operator<<(QDataStream& stream, const Goal& goal)
 
 QDataStream& operator>>(QDataStream& stream, Goal& goal)
 {
-  qCDebug(KSIRK_LOG) << "Goal operator>>" << endl;
+  qCDebug(KSIRK_LOG) << "Goal operator>>";
   quint32 type;
   QString description;
   QString playerName;
@@ -400,46 +400,46 @@ QDataStream& operator>>(QDataStream& stream, Goal& goal)
   QString id;
   quint32 ownerId;
   stream >> type;
-  qCDebug(KSIRK_LOG) << "Goal operator>> type: " << type << endl;
+  qCDebug(KSIRK_LOG) << "Goal operator>> type: " << type ;
   stream >> ownerId;
-  qCDebug(KSIRK_LOG) << "Goal operator>> ownerId: " << ownerId << endl;
+  qCDebug(KSIRK_LOG) << "Goal operator>> ownerId: " << ownerId ;
   goal.player(static_cast<Player*>(goal.m_automaton->findPlayer(ownerId)));
   goal.type(Goal::GoalType(type));
   stream >> description;
-  qCDebug(KSIRK_LOG) << "Goal operator>> description: " << description << endl;
+  qCDebug(KSIRK_LOG) << "Goal operator>> description: " << description ;
   goal.description(description);
   switch (type)
   {
   case Goal::GoalPlayer :
     goal.players().clear();
     stream >> nbp;
-    qCDebug(KSIRK_LOG) << "Goal operator>> nbp: " << nbp << endl;
+    qCDebug(KSIRK_LOG) << "Goal operator>> nbp: " << nbp ;
     for (quint32 i = 0; i < nbp; i++)
     {
       stream >> playerName;
-      qCDebug(KSIRK_LOG) << "Goal operator>> player name: " << playerName << endl;
+      qCDebug(KSIRK_LOG) << "Goal operator>> player name: " << playerName ;
       goal.players().push_back(playerName);
     }
     stream >> nb;
-    qCDebug(KSIRK_LOG) << "Goal operator>> nbCountries: " << nb << endl;
+    qCDebug(KSIRK_LOG) << "Goal operator>> nbCountries: " << nb ;
     goal.nbCountries(nb);
     break;
   case Goal::Countries:
     stream >> nb;
-    qCDebug(KSIRK_LOG) << "Goal operator>> nbCountries: " << nb << endl;
+    qCDebug(KSIRK_LOG) << "Goal operator>> nbCountries: " << nb ;
     goal.nbCountries(nb);
     stream >> nb;
     goal.nbArmiesByCountry(nb);
-    qCDebug(KSIRK_LOG) << "Goal operator>> nbArmiesByCountry: " << nb << endl;
+    qCDebug(KSIRK_LOG) << "Goal operator>> nbArmiesByCountry: " << nb ;
     break;
   case Goal::Continents:
     stream >> nb;
-    qCDebug(KSIRK_LOG) << "Goal operator>> nbContinents: " << nb << endl;
+    qCDebug(KSIRK_LOG) << "Goal operator>> nbContinents: " << nb ;
     goal.continents().clear();
     for (quint32 i = 0; i < nb; i++)
     {
       stream >> id;
-      qCDebug(KSIRK_LOG) << "Goal operator>> continent: " << id << endl;
+      qCDebug(KSIRK_LOG) << "Goal operator>> continent: " << id ;
       goal.continents().push_back(id);
     }
     break;
@@ -457,25 +457,25 @@ void Goal::saveXml(QTextStream& xmlStream) const
     xmlStream << m_player->name();
   }
   xmlStream << "\" type=\"" << m_type << "\" description=\"" << m_description;
-  xmlStream << "\" nbCountries=\"" << m_nbCountries << "\" nbArmiesByCountry=\"" << m_nbArmiesByCountry << "\">" << endl;
-  xmlStream << "<continents>" << endl;
+  xmlStream << "\" nbCountries=\"" << m_nbCountries << "\" nbArmiesByCountry=\"" << m_nbArmiesByCountry << "\">";
+  xmlStream << "<continents>";
   QList<QString>::ConstIterator itc, itc_end;
   itc = continents().constBegin(); itc_end = continents().constEnd();
   for (; itc != itc_end; itc++)
   {
     QString name = ((*itc).isEmpty())?"":(*itc);
-    xmlStream << "<continent name=\"" << name << "\"/>" << endl;
+    xmlStream << "<continent name=\"" << name << "\"/>";
   }
-  xmlStream << "</continents>" << endl;
-  xmlStream << "<players>" << endl;
+  xmlStream << "</continents>";
+  xmlStream << "<players>";
   QList<QString>::ConstIterator itp, itp_end;
   itp = m_players.constBegin(); itp_end = m_players.constEnd();
   for (; itp != itp_end; itp++)
   {
-    xmlStream << "<player name=\"" << (*itp) << "\"/>" << endl;
+    xmlStream << "<player name=\"" << (*itp) << "\"/>";
   }
-  xmlStream << "</players>" << endl;
-  xmlStream << "</goal>" << endl;
+  xmlStream << "</players>";
+  xmlStream << "</goal>";
 }
 
 }
