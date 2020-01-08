@@ -61,9 +61,6 @@ int main(int argc, char *argv[])
 
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
-    parser.addVersionOption();
-    parser.addHelpOption();
-    //PORTING SCRIPT: adapt aboutdata variable if necessary
     parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[File]"), i18n("file to open")));
 
     aboutData.setupCommandLine(&parser);
