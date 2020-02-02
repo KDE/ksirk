@@ -69,13 +69,9 @@ public:
     {
       return !((*this)==it);
     }
-    iterator& operator=(const iterator& it)
-    {
-      m_pixmaps_it = it.m_pixmaps_it;
-      m_strings_it = it.m_strings_it;
-      m_order_it = it.m_order_it;
-      return *this;
-    }
+    iterator() = default;
+    iterator(const iterator& it) = default;
+    iterator& operator=(const iterator& it) = default;
     QPixmap& curPix() {return *m_pixmaps_it;}
     QString& curStr() {return *m_strings_it;}
     bool curIsPix() { return (*m_order_it == Pixmap);}
