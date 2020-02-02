@@ -54,26 +54,6 @@ m_player(0)
 {
 }
 
-Goal::Goal(const Goal& goal)
-{
-  m_automaton = goal.m_automaton;
-  qCDebug(KSIRK_LOG) << "Goal copy constructor :" << endl;
-  m_type = goal.m_type;
-  qCDebug(KSIRK_LOG) << "  type="<< m_type << endl;
-  m_description = goal.m_description;
-  qCDebug(KSIRK_LOG) << "  description="<< m_description << endl;
-  m_nbCountries = goal.m_nbCountries;
-  qCDebug(KSIRK_LOG) << "  nbCountries="<< m_nbCountries << endl;
-  m_nbArmiesByCountry = goal.m_nbArmiesByCountry;
-  qCDebug(KSIRK_LOG) << "  nbArmiesByCountry="<< m_nbArmiesByCountry << endl;
-  m_continents = goal.m_continents;
-  qCDebug(KSIRK_LOG) << "  continents: "<< m_continents.size() << endl;
-  m_players = goal.m_players;
-  qCDebug(KSIRK_LOG) << "  players: "<< m_players.size() << endl;
-  m_player = goal.m_player;
-  qCDebug(KSIRK_LOG) << "  player: "<< m_player << endl;
-}
-
 Goal::~Goal()
 {
 }

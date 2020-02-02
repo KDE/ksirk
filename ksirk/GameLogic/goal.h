@@ -64,7 +64,8 @@ public:
   Goal(GameAutomaton* automaton);
   
   /** Copy constructor */
-  Goal(const Goal& goal);
+  Goal(const Goal& goal) = default;
+  Goal &operator=(const Goal& goal) = default;
   
   /** Default destructor */
   ~Goal();
