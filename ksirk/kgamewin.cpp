@@ -2929,8 +2929,6 @@ void KGameWindow::showMessage(const QString& message, quint32 delay, MessageShow
       connect(m_message,SIGNAL(linkActivated(QString)),this,SLOT(slotDisableHelp(QString)));
       m_scene_world->addItem(m_message);
       m_message->setSharpness(KGamePopupItem::Soft);
-      QColor color = QColor(102,102,255);
-      m_message->setBackgroundBrush(color);
       m_message->setZValue(1000);
     }
     m_message->setMessageTimeout(delay*1000);
