@@ -160,7 +160,11 @@ static QStringList read_proc_as_lines(const char *procfile)
 	fclose(f);
 
 	QString str = QString::fromLocal8Bit(buf);
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
 	out = str.split('\n', QString::SkipEmptyParts);
+#else
+	out = str.split('\n', Qt::SkipEmptyParts);
+#endif
 	return out;
 }
 
@@ -209,7 +213,11 @@ static QList<UnixIface> get_linux_ipv6_ifaces()
 	for(int n = 0; n < lines.count(); ++n)
 	{
 		const QString &line = lines[n];
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
 		QStringList parts = line.simplified().split(' ', QString::SkipEmptyParts);
+#else
+		QStringList parts = line.simplified().split(' ', Qt::SkipEmptyParts);
+#endif
 		if(parts.count() < 6)
 			continue;
 
@@ -251,7 +259,11 @@ static QList<UnixGateway> get_linux_gateways()
 	for(int n = 1; n < lines.count(); ++n)
 	{
 		const QString &line = lines[n];
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
 		QStringList parts = line.simplified().split(' ', QString::SkipEmptyParts);
+#else
+		QStringList parts = line.simplified().split(' ', Qt::SkipEmptyParts);
+#endif
 		if(parts.count() < 10) // net-tools does 10, but why not 11?
 			continue;
 
@@ -276,7 +288,11 @@ static QList<UnixGateway> get_linux_gateways()
 	for(int n = 0; n < lines.count(); ++n)
 	{
 		const QString &line = lines[n];
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
 		QStringList parts = line.simplified().split(' ', QString::SkipEmptyParts);
+#else
+		QStringList parts = line.simplified().split(' ', Qt::SkipEmptyParts);
+#endif
 		if(parts.count() < 10)
 			continue;
 

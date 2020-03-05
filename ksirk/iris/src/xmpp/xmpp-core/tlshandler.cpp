@@ -37,7 +37,11 @@ static QByteArray ipaddr_str2bin(const QString &str)
 	// ipv6
 	if(str.contains(':'))
 	{
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
 		QStringList parts = str.split(':', QString::KeepEmptyParts);
+#else
+		QStringList parts = str.split(':', Qt::KeepEmptyParts);
+#endif
 		if(parts.count() < 3 || parts.count() > 8)
 			return QByteArray();
 
@@ -109,7 +113,11 @@ static QByteArray ipaddr_str2bin(const QString &str)
 	}
 	else if(str.contains('.'))
 	{
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
 		QStringList parts = str.split('.', QString::KeepEmptyParts);
+#else
+		QStringList parts = str.split('.', Qt::KeepEmptyParts);
+#endif
 		if(parts.count() != 4)
 			return QByteArray();
 
@@ -153,7 +161,11 @@ static bool cert_match_domain(const QString &certname, const QString &acedomain)
 		return false;
 
 	// hack into parts, and require at least 1 part
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
 	QStringList parts_name = name.split('.', QString::KeepEmptyParts);
+#else
+	QStringList parts_name = name.split('.', Qt::KeepEmptyParts);
+#endif
 	if(parts_name.isEmpty())
 		return false;
 
@@ -165,7 +177,11 @@ static bool cert_match_domain(const QString &certname, const QString &acedomain)
 	if(parts_name.count() >= 2 && parts_name[parts_name.count()-2].contains('*'))
 		return false;
 
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
 	QStringList parts_compare = acedomain.split('.', QString::KeepEmptyParts);
+#else
+	QStringList parts_compare = acedomain.split('.', Qt::KeepEmptyParts);
+#endif
 	if(parts_compare.isEmpty())
 		return false;
 
