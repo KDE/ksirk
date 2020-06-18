@@ -31,6 +31,7 @@
   <name xml:lang="sr-ijekavianlatin">KSirk</name>
   <name xml:lang="sv">Ksirk</name>
   <name xml:lang="uk">KsirK</name>
+  <name xml:lang="x-test">xxKSirkxx</name>
   <name xml:lang="zh-TW">KSirk</name>
   <summary>World Domination Strategy Game</summary>
   <summary xml:lang="ca">Joc d'estratègia de dominació mundial</summary>
@@ -59,6 +60,7 @@
   <summary xml:lang="sr-ijekavianlatin">Strateška igra svetske dominacije</summary>
   <summary xml:lang="sv">Strategispel för världsdominans</summary>
   <summary xml:lang="uk">Стратегічна гра у світове панування</summary>
+  <summary xml:lang="x-test">xxWorld Domination Strategy Gamexx</summary>
   <summary xml:lang="zh-CN">世界支配战略游戏</summary>
   <description>
     <p>
@@ -90,6 +92,7 @@
     <p xml:lang="sr-ijekavianlatin">KSirk je računarska verzija dobro poznate strateške igre na tabli riziko. Cilj partije je prosto osvojiti ceo svet, napadajući susede svojim vojskama.</p>
     <p xml:lang="sv">Ksirk är en datoriserad version av det välkända strategiska brädspelet Risk. Spelets mål är helt enkelt att erövra världen genom att anfalla grannländer med dina arméer.</p>
     <p xml:lang="uk">KsirK — комп’ютеризована версія добре відомої стратегічної гри Risk. Метою гри є звичайне завоювання світу. Ця мета досягається нападом на ваших сусідів за допомогою ваших армій.</p>
+    <p xml:lang="x-test">xxKsirK is a computerized version of the well known strategic board game Risk. The goal of the game is simply to conquer the world by attacking your neighbors with your armies.xx</p>
     <p>Features:</p>
     <p xml:lang="ca">Característiques:</p>
     <p xml:lang="ca-valencia">Característiques:</p>
@@ -118,6 +121,7 @@
     <p xml:lang="sr-ijekavianlatin">Mogućnosti:</p>
     <p xml:lang="sv">Funktioner:</p>
     <p xml:lang="uk">Можливості:</p>
+    <p xml:lang="x-test">xxFeatures:xx</p>
     <p xml:lang="zh-CN">功能：</p>
     <p xml:lang="zh-TW">功能：</p>
     <ul>
@@ -147,6 +151,7 @@
       <li xml:lang="sr-ijekavianlatin">Podrška za 1–6 ljudskih i računarskih igrača</li>
       <li xml:lang="sv">Stöd för 1 - 6 personer eller datorspelare (artificiella intelligenser)</li>
       <li xml:lang="uk">Підтримка від одного до шести гравців (людей або комп’ютерних гравців)</li>
+      <li xml:lang="x-test">xxSupport for 1-6 human or computer (AI) playersxx</li>
       <li xml:lang="zh-TW">支援 1-6 個人或電腦 (AI) 玩家</li>
       <li>Multi-player gaming over a network</li>
       <li xml:lang="ca">Jocs multijugador per xarxa</li>
@@ -174,6 +179,7 @@
       <li xml:lang="sr-ijekavianlatin">Igranje u više igrača preko mreže.</li>
       <li xml:lang="sv">Flera spelare kan spela via ett nätverk</li>
       <li xml:lang="uk">Гра з декількома учасниками мережею</li>
+      <li xml:lang="x-test">xxMulti-player gaming over a networkxx</li>
       <li>You can easily create new skins with SVG graphics and the skin editor</li>
       <li xml:lang="ca">Es poden crear fàcilment aparences noves amb gràfics SVG i l'editor d'aparences</li>
       <li xml:lang="ca-valencia">Es poden crear fàcilment aparences noves amb gràfics SVG i l'editor d'aparences</li>
@@ -200,6 +206,7 @@
       <li xml:lang="sr-ijekavianlatin">Jednostvano stvaranje novih masaka kroz SVG grafiku i uređivač masaka.</li>
       <li xml:lang="sv">Det går lätt att skapa nya skal med SVG-grafik och skaleditorn</li>
       <li xml:lang="uk">Можливість простого створення нових обгорток із графікою SVG та редактор обгорток</li>
+      <li xml:lang="x-test">xxYou can easily create new skins with SVG graphics and the skin editorxx</li>
       <li>Hot New Stuff support. You can easily download and install new skins</li>
       <li xml:lang="ca">Permet obtenir novetats candents. Es poden descarregar i instal·lar fàcilment aparences noves</li>
       <li xml:lang="ca-valencia">Permet obtindre novetats candents. Es poden descarregar i instal·lar fàcilment aparences noves</li>
@@ -226,6 +233,7 @@
       <li xml:lang="sr-ijekavianlatin">Podrška za vruće novotarije, radi jednostavnog preuzimanja i instaliranja novih masaka.</li>
       <li xml:lang="sv">Stöd för heta nyheter. Det går lätt att ladda ner och installera nya skal.</li>
       <li xml:lang="uk">Підтримка отримання нових карт зі сховища у мережі. Отримати нові обгортки і встановити їх дуже просто.</li>
+      <li xml:lang="x-test">xxHot New Stuff support. You can easily download and install new skinsxx</li>
     </ul>
   </description>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=ksirk</url>
