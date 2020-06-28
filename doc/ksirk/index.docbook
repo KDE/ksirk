@@ -772,16 +772,6 @@ Documentation copyright 2002-2008 Gael de Chalendar <email>kleag@free.fr</email>
 <appendix id="installation">
 <title>Installation</title>
 
-<sect1 id="getting-ksirk">
-<title>How to obtain &ksirk;</title>
-&install.intro.documentation;
-</sect1>
-
-<sect1 id="compilation">
-<title>Compilation and Installation</title>
-&install.compile.documentation;
-</sect1>
-
 <sect1 id="configuration">
 <title>Configuration</title>
 
