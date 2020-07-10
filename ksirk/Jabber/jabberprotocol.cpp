@@ -20,13 +20,13 @@
 
 #include "jabber_protocol_debug.h"
 
-#include <kgenericfactory.h>
-#include <kconfig.h>
+#include <KGenericFactory>
+#include <KConfig>
 
-#include <qmap.h>
-#include <qtimer.h>
-#include <qpixmap.h>
-#include <qstringlist.h>
+#include <QMap>
+#include <QTimer>
+#include <QPixmap>
+#include <QStringList>
 #include <QList>
 
 #include "im.h"
@@ -294,11 +294,11 @@ XMPP::Status JabberProtocol::kosToStatus( const Kopete::OnlineStatus & status , 
 
 #include <accountselector.h>
 #include <kopeteuiglobal.h>
-#include <kvbox.h>
+#include <KVBox>
 #include "jabbercontactpool.h"
 #include <kopeteview.h>
-#include <kmessagebox.h>
-#include <kinputdialog.h>
+#include <KMessageBox>
+#include <KInputDialog>
 
 void JabberProtocol::handleURL(const KUrl & kurl) const
 {

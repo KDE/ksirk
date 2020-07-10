@@ -28,7 +28,7 @@
 //#include "xmpp_types.h"
 #include "xmpp_vcard.h"
 
-#include <qregexp.h>
+#include <QRegExp>
 #include <QList>
 
 using namespace XMPP;

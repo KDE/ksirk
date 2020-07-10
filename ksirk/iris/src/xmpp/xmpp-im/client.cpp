@@ -71,10 +71,10 @@
 //!  \endcode
 
 #include <stdarg.h>
-#include <qobject.h>
+#include <QObject>
 #include <QMap>
-#include <qtimer.h>
-#include <qpointer.h>
+#include <QTimer>
+#include <QPointer>
 //Added by qt3to4:
 #include <QList>
 #include "xmpp_tasks.h"
@@ -85,10 +85,10 @@
 
 /*#include <stdio.h>
 #include <stdarg.h>
-#include <qstring.h>
+#include <QString>
 #include <qdom.h>
-#include <qobjectlist.h>
-#include <qtimer.h>
+#include <QObjectList>
+#include <QTimer>
 #include "xmpp_stream.h"
 #include "xmpp_tasks.h"
 #include "xmpp_xmlcommon.h"

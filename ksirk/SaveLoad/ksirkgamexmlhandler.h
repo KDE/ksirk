@@ -28,7 +28,7 @@
 #include "GameLogic/player.h"
 #include "GameLogic/goal.h"
 
-#include <qstring.h>
+#include <QString>
 #include <qxml.h>
 
 namespace Ksirk

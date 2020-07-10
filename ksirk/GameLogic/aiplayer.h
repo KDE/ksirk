@@ -24,7 +24,7 @@
 #include "GameLogic/player.h"
 #include "GameLogic/country.h"
 
-#include <qthread.h>
+#include <QThread>
 
 namespace Ksirk
 {

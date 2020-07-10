@@ -43,8 +43,8 @@
 #include <QUuid>
 #include <QInputDialog>
 #include <KLocalizedString>
-#include <klineedit.h>
-#include <kmessagebox.h>
+#include <KLineEdit>
+#include <KMessageBox>
 
 #define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
 #include <libkdegamesprivate/kgame/kmessageclient.h>
@@ -54,7 +54,7 @@
 #include <errno.h>
 #include <sys/types.h>
 #include <signal.h>
-#include <qcache.h>
+#include <QCache>
 
 namespace Ksirk{
 namespace GameLogic {

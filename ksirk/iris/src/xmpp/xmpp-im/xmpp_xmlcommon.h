@@ -23,7 +23,7 @@
 #define JABBER_XMLCOMMON_H
 
 #include <qdom.h>
-#include <qlist.h>
+#include <QList>
 
 #include "iris_export.h"
 

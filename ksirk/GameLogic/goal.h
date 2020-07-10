@@ -23,7 +23,7 @@
 // #include <set>
 #include <QTextStream>
 
-#include <qdatastream.h>
+#include <QDataStream>
 
 namespace Ksirk {
 

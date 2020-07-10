@@ -36,7 +36,7 @@
 /* Includes for KDE */
 #include "ksirk_debug.h"
 #include <KLocalizedString>
-#include <kmessagebox.h>
+#include <KMessageBox>
 #include <QUuid>
 #include <QMutexLocker>
 #include <QMap>

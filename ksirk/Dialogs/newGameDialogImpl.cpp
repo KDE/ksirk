@@ -30,9 +30,9 @@
 #include <KConfigDialog>
 #include <downloaddialog.h>
 
-#include <qdir.h>
-#include <qstringlist.h>
-#include <qpushbutton.h>
+#include <QDir>
+#include <QStringList>
+#include <QPushButton>
 
 using namespace Ksirk::GameLogic;
 

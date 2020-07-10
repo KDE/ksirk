@@ -24,7 +24,7 @@
 #include <QStandardPaths>
 #include <KMessageBox>
 
-#include <qdir.h>
+#include <QDir>
 
 using namespace Ksirk;
 

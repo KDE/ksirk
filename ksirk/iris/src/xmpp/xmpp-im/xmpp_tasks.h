@@ -22,7 +22,7 @@
 #ifndef JABBER_TASKS_H
 #define JABBER_TASKS_H
 
-#include <qstring.h>
+#include <QString>
 #include <qdom.h>
 //Added by qt3to4:
 #include <QList>

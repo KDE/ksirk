@@ -22,18 +22,18 @@
 #include "ksirkskineditorsettings.h"
 #include "ui_preferences.h"
 
-#include <kconfig.h>
-#include <kedittoolbar.h>
+#include <KConfig>
+#include <KEditToolBar>
 #include "ksirkskineditor_debug.h"
 #include <QPushButton>
-#include <kstandardaction.h>
+#include <KStandardAction>
 
-#include <kmessagebox.h>
+#include <KMessageBox>
 #include <KLocalizedString>
-#include <kconfigdialog.h>
+#include <KConfigDialog>
 
-#include <qslider.h>
-#include <qcheckbox.h>
+#include <QSlider>
+#include <QCheckBox>
 #include <iostream>
 
 using namespace KsirkSkinEditor;

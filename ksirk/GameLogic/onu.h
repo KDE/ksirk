@@ -27,7 +27,7 @@
 #define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
 #include <libkdegamesprivate/kgamesvgdocument.h>
 
-#include <qdatastream.h>
+#include <QDataStream>
 #include <QPixmap>
 #include <QFont>
 #include <QSvgRenderer>

@@ -20,7 +20,7 @@
 #ifndef JABBERRESOURCEPOOL_H
 #define JABBERRESOURCEPOOL_H
 
-#include <qobject.h>
+#include <QObject>
 #include <QList>
 #include <im.h>
 

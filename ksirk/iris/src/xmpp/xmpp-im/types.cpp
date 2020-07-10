@@ -23,8 +23,8 @@
 #include "protocol.h"
 #include "xmpp_features.h"
 
-#include <qmap.h>
-#include <qapplication.h>
+#include <QMap>
+#include <QApplication>
 //Added by qt3to4:
 #include <QList>
 

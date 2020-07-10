@@ -34,7 +34,7 @@
 #include <QPixmapCache>
 #include <QSvgRenderer>
 
-#include <kmessagebox.h>
+#include <KMessageBox>
 #include <KLocalizedString>
 #include "ksirk_debug.h"
 

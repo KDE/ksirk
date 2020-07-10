@@ -47,7 +47,7 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 // include files for KDE
-#include <ksharedconfig.h>
+#include <KSharedConfig>
 #include <KXmlGuiWindow>
 #include <QStandardPaths>
 

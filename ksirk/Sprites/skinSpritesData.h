@@ -23,9 +23,9 @@
 #ifndef KSIRK_SPRITES_SKINSPRITESDATA_H
 #define KSIRK_SPRITES_SKINSPRITESDATA_H
 
-#include <qpoint.h>
-#include <qstring.h>
-#include <qstringlist.h>
+#include <QPoint>
+#include <QString>
+#include <QStringList>
 #include <QMap>
 
 namespace Ksirk {

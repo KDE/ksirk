@@ -21,8 +21,8 @@
 #include "jabber_protocol_debug.h"
 
 #include <KLocalizedString>
-#include <kfiledialog.h>
-#include <kinputdialog.h>
+#include <KFileDialog>
+#include <KInputDialog>
 #include <QAction>
 
 #include "jabberprotocol.h"

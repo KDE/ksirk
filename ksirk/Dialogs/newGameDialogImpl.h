@@ -25,7 +25,7 @@
 #include "ui_newGameDialog.h"
 #include "newgamesetup.h"
 
-#include <qmap.h>
+#include <QMap>
 
 #ifndef KSIRK_NEWGAMEDIALOGIMPL_H
 #define KSIRK_NEWGAMEDIALOGIMPL_H

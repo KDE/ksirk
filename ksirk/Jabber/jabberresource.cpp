@@ -20,7 +20,7 @@
 #include "jabberresource.h"
 
 // Qt includes
-#include <qtimer.h>
+#include <QTimer>
 
 // KDE includes
 #include "jabber_protocol_debug.h"

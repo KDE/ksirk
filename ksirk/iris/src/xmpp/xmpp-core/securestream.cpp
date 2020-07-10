@@ -29,9 +29,9 @@
 
 #include "securestream.h"
 
-#include <qpointer.h>
+#include <QPointer>
 #include <QList>
-#include <qtimer.h>
+#include <QTimer>
 
 #ifdef USE_TLSHANDLER
 #include "xmpp.h"

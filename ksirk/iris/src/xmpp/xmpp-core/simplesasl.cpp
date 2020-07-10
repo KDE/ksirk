@@ -21,8 +21,8 @@
 
 #include "simplesasl.h"
 
-#include <qhostaddress.h>
-#include <qstringlist.h>
+#include <QHostAddress>
+#include <QStringList>
 #include <QList>
 #include <qca.h>
 #include <QByteArray>

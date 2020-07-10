@@ -30,12 +30,12 @@
 #include "Sprites/backgnd.h"
 
 #include <stdlib.h>
-#include <qtimer.h>
+#include <QTimer>
 #include <QMouseEvent>
 #include <QGraphicsView>
 #include <QPixmap>
-#include <kconfig.h>
-#include <kconfiggroup.h>
+#include <KConfig>
+#include <KConfigGroup>
 
 namespace Ksirk
 {

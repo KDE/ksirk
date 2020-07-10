@@ -18,7 +18,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <qobject.h>
+#include <QObject>
 #include "jabber_protocol_debug.h"
 #include "jabberbytestream.h"
 // #include "jabberprotocol.h"

@@ -30,8 +30,8 @@
 #define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
 #include <libkdegamesprivate/kgame/kgameproperty.h>
 
-#include <qpoint.h>
-#include <qstring.h>
+#include <QPoint>
+#include <QString>
 
 class QSvgRenderer;
 class QGraphicsSvgItem;

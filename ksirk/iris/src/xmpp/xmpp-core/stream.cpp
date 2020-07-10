@@ -45,9 +45,9 @@
 
 #include "xmpp.h"
 
-#include <qtextstream.h>
-#include <qpointer.h>
-#include <qtimer.h>
+#include <QTextStream>
+#include <QPointer>
+#include <QTimer>
 #include <QList>
 #include <QByteArray>
 #include <stdlib.h>

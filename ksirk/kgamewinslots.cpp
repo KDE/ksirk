@@ -26,8 +26,8 @@
 #include "Dialogs/newGameSummaryWidget.h"
 #include "GameLogic/newplayerdata.h"
 
-#include <kaboutapplicationdialog.h>
-#include <ktoolbar.h>
+#include <KAboutApplicationDialog>
+#include <KToolBar>
 
 #include "GameLogic/KMessageParts.h"
 #include "GameLogic/gameautomaton.h"
@@ -57,10 +57,10 @@
 
 // include files for KDE
 #include <KLocalizedString>
-#include <kconfig.h>
+#include <KConfig>
 #include "ksirk_debug.h"
-#include <kmessagebox.h>
-#include <kgamepopupitem.h>
+#include <KMessageBox>
+#include <KGamePopupItem>
 #include <KPasswordDialog>
 #include <tcpconnectwidget.h>
 

@@ -21,7 +21,7 @@
 
 #include "httpconnect.h"
 
-#include <qstringlist.h>
+#include <QStringList>
 #include <QByteArray>
 #include "bsocket.h"
 #include <QtCrypto>

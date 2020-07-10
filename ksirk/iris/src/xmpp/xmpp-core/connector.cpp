@@ -32,7 +32,7 @@
 
 #include "xmpp.h"
 
-#include <qpointer.h>
+#include <QPointer>
 #include <qca.h>
 #include <QList>
 #include <QUrl>

@@ -21,8 +21,8 @@
 #include "GameLogic/gameautomaton.h"
 
 
-#include <qlist.h>
-#include <qmap.h>
+#include <QList>
+#include <QMap>
 
 namespace Ksirk
 {

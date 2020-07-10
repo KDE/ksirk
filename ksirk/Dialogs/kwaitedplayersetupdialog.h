@@ -27,7 +27,7 @@
 
 #include "ui_qwaitedplayersetupdialog.h"
 
-#include <qwidget.h>
+#include <QWidget>
 
 #include <map>
 

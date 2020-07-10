@@ -27,7 +27,7 @@
 #include "GameLogic/gameautomaton.h"
 
 #include <stdlib.h>
-#include <qtimer.h>
+#include <QTimer>
 #include <QMouseEvent>
 #include <QGraphicsView>
 #include <QMenu>

@@ -21,7 +21,7 @@
 #ifndef _KSIRKSKINEDITORCONFIGDIALOG_H_
 #define _KSIRKSKINEDITORCONFIGDIALOG_H_
 
-#include <kconfigdialog.h>
+#include <KConfigDialog>
 #include <KConfigSkeleton>
 #include <QDialogButtonBox>
 namespace Ui

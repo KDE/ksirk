@@ -21,7 +21,7 @@
 
 #include "xmpp_ibb.h"
 
-#include <qtimer.h>
+#include <QTimer>
 #include "xmpp_xmlcommon.h"
 #include <QtCrypto>
 

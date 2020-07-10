@@ -35,20 +35,20 @@
 
 #include <time.h>
 
-#include <qstring.h>
-#include <qregexp.h>
-#include <qtimer.h>
+#include <QString>
+#include <QRegExp>
+#include <QTimer>
 
-#include <kcomponentdata.h>
-#include <kconfig.h>
-#include <kmessagebox.h>
+#include <KComponentData>
+#include <KConfig>
+#include <KMessageBox>
 #include <KLocalizedString>
-#include <kaboutdata.h>
+#include <KAboutData>
 #include <k3socketbase.h>
-#include <kpassworddialog.h>
-#include <kinputdialog.h>
-#include <kicon.h>
-#include <kactionmenu.h>
+#include <KPasswordDialog>
+#include <KInputDialog>
+#include <KIcon>
+#include <KActionMenu>
 #include <KComponentData>
 
 #include "jabberconnector.h"

@@ -19,9 +19,9 @@
 #ifndef JABBERBOOKMARKS_H
 #define JABBERBOOKMARKS_H
 
-#include <qobject.h>
+#include <QObject>
 #include <qdom.h>
-#include <qstringlist.h>
+#include <QStringList>
 
 namespace XMPP { class Jid; }
 class JabberAccount;

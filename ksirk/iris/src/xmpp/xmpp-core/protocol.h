@@ -22,7 +22,7 @@
 #ifndef PROTOCOL_H
 #define PROTOCOL_H
 
-#include <qpair.h>
+#include <QPair>
 //Added by qt3to4:
 #include <QList>
 #include "xmlprotocol.h"

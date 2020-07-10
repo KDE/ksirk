@@ -24,7 +24,7 @@
 
 #include "ksirk_debug.h"
 #include <KLocalizedString>
-#include <kmessagebox.h>
+#include <KMessageBox>
 
 namespace Ksirk {
 

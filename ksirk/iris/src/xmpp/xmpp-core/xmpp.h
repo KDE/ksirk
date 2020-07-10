@@ -23,10 +23,10 @@
 #define XMPP_H
 
 #include <QPair>
-#include <qobject.h>
-#include <qstring.h>
-#include <qhostaddress.h>
-#include <qstring.h>
+#include <QObject>
+#include <QString>
+#include <QHostAddress>
+#include <QString>
 #include <qxml.h>
 #include <qdom.h>
 

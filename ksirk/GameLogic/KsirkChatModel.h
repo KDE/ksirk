@@ -23,10 +23,10 @@
 #ifndef KSIRKCHATMODEL_H
 #define KSIRKCHATMODEL_H
 
-#include <qwidget.h>
+#include <QWidget>
 #include <QListWidgetItem>
-#include <qpushbutton.h>
-#include <qcolor.h>
+#include <QPushButton>
+#include <QColor>
 #include <QPixmap>
 
 #define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API

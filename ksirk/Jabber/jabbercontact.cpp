@@ -25,23 +25,23 @@
 #include "im.h"
 #include "tasks/jt_getlastactivity.h"
 
-#include <qtimer.h>
-#include <qdatetime.h>
+#include <QTimer>
+#include <QDateTime>
 #include <QTextDocument>
-#include <qimage.h>
-#include <qregexp.h>
-#include <qbuffer.h>
+#include <QImage>
+#include <QRegExp>
+#include <QBuffer>
 #include <QList>
 
 #include <KLocalizedString>
-#include <kmessagebox.h>
-#include <kfiledialog.h>
+#include <KMessageBox>
+#include <KFileDialog>
 #include <QAction>
-#include <kactionmenu.h>
+#include <KActionMenu>
 #include <QIcon>
-#include <kstandarddirs.h>
+#include <KStandardDirs>
 #include <kio/netaccess.h>
-#include <kinputdialog.h>
+#include <KInputDialog>
 #include <kopeteview.h>
 
 #include "kopetecontactlist.h"

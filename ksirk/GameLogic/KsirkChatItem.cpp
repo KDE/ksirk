@@ -23,12 +23,12 @@
 #include "KsirkChatItem.h"
 #include "player.h"
 
-#include <qlayout.h>
-#include <qapplication.h>
-#include <qpainter.h>
-#include <qcolordialog.h>
-#include <qinputdialog.h>
-#include <qmessagebox.h>
+#include <QLayout>
+#include <QApplication>
+#include <QPainter>
+#include <QColorDialog>
+#include <QInputDialog>
+#include <QMessageBox>
 #include <QPixmap>
 #include <QTextDocument>
 #include <iostream>

@@ -27,7 +27,7 @@
 
 #include "ui_qplayersetupdialog.h"
 
-#include <qwidget.h>
+#include <QWidget>
 
 #include <QMap>
 

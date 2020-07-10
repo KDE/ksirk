@@ -31,7 +31,7 @@
 
 #include <KLocalizedString>
 #include "ksirk_debug.h"
-#include <qsvgrenderer.h>
+#include <QSvgRenderer>
 #include <QString>
 #include <QApplication>
 #include <QDataStream>

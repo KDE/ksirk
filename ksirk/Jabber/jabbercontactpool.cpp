@@ -20,7 +20,7 @@
 #include "jabbercontactpool.h"
 #include "jabber_protocol_debug.h"
 
-#include <kmessagebox.h>
+#include <KMessageBox>
 #include <kopeteaccountmanager.h>
 #include <kopetecontactlist.h>
 #include "kopeteuiglobal.h"

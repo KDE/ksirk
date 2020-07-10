@@ -21,8 +21,8 @@
 
 #include "s5b.h"
 
-#include <qtimer.h>
-#include <qpointer.h>
+#include <QTimer>
+#include <QPointer>
 #include <QByteArray>
 #include <stdlib.h>
 #include <qca.h>

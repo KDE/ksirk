@@ -22,14 +22,14 @@
 #include "jabbercapabilitiesmanager.h"
 #include "jabber_protocol_debug.h"
 
-#include <qstring.h>
-#include <qstringlist.h>
-#include <qtimer.h>
-#include <qpair.h>
+#include <QString>
+#include <QStringList>
+#include <QTimer>
+#include <QPair>
 #include <qdom.h>
-#include <qtextstream.h>
+#include <QTextStream>
 
-#include <kstandarddirs.h>
+#include <KStandardDirs>
 
 #include <xmpp_tasks.h>
 

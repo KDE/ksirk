@@ -19,7 +19,7 @@
 #ifndef JABBERCONTACTPOOL_H
 #define JABBERCONTACTPOOL_H
 
-#include <qobject.h>
+#include <QObject>
 #include <QList>
 #include <im.h>
 

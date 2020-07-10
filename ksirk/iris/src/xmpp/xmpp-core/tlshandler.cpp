@@ -21,14 +21,14 @@
 
 #include "xmpp.h"
 
-#include <qtimer.h>
+#include <QTimer>
 #include "qca.h"
 
 using namespace XMPP;
 
 // FIXME: remove this code once qca cert host checking works ...
 using namespace QCA;
-#include <qurl.h>
+#include <QUrl>
 
 // ip address string to binary (msb), adapted from jdns (adapted from qt)
 // return: size 4 = ipv4, size 16 = ipv6, size 0 = error

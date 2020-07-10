@@ -27,8 +27,8 @@
 #include "decoratedgameframe.h"
 #include <QGraphicsItem>
 #include <QGraphicsScene>
-#include <kconfig.h>
-#include <kconfiggroup.h>
+#include <KConfig>
+#include <KConfigGroup>
 
 namespace Ksirk
 {

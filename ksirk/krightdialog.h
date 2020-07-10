@@ -35,8 +35,8 @@
 #include <QDockWidget>
 #include <QList>
 #include <QLabel>
-#include <kconfig.h>
-#include <kconfiggroup.h>
+#include <KConfig>
+#include <KConfigGroup>
 #include <QPushButton>
 
 #include "kgamewin.h"

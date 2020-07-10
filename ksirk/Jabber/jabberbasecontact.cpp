@@ -18,12 +18,12 @@
   */
 
 #include <KLocalizedString>
-#include <kiconloader.h>
-#include <kstandarddirs.h>
-#include <qtimer.h>
-#include <qimage.h>
-#include <qregexp.h>
-#include <kmessagebox.h>
+#include <KIconLoader>
+#include <KStandardDirs>
+#include <QTimer>
+#include <QImage>
+#include <QRegExp>
+#include <KMessageBox>
 #include <kio/netaccess.h>
 
 

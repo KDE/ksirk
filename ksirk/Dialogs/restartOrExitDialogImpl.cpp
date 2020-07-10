@@ -22,15 +22,15 @@
 #include <KLocalizedString>
 #include "ksirk_debug.h"
 #include <QStandardPaths>
-#include <kmessagebox.h>
+#include <KMessageBox>
 
-#include <qspinbox.h>
-#include <qcheckbox.h>
-#include <qcombobox.h>
-#include <qdir.h>
-#include <qstringlist.h>
-#include <qradiobutton.h>
-#include <qlabel.h>
+#include <QSpinBox>
+#include <QCheckBox>
+#include <QComboBox>
+#include <QDir>
+#include <QStringList>
+#include <QRadioButton>
+#include <QLabel>
 
 namespace Ksirk
 {

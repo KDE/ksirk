@@ -27,11 +27,11 @@
 #include "GameLogic/onu.h"
 #include "Sprites/skinSpritesData.h"
 
-#include <qstring.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-#include <qcheckbox.h>
-#include <qcombobox.h>
+#include <QString>
+#include <QLabel>
+#include <QLineEdit>
+#include <QCheckBox>
+#include <QComboBox>
 #include <QPixmap>
 
 #include <KLocalizedString>

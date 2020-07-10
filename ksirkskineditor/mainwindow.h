@@ -38,7 +38,7 @@
 #include <QVBoxLayout>
 #include <QUrl>
 // include files for KDE
-#include <ksharedconfig.h>
+#include <KSharedConfig>
 #include <KXmlGuiWindow>
 // include files for kde games
 

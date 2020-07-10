@@ -23,9 +23,9 @@
 #define JABBER_IBB_H
 
 #include <QList>
-#include <qobject.h>
+#include <QObject>
 #include <qdom.h>
-#include <qstring.h>
+#include <QString>
 #include "bytestream.h"
 #include "im.h"
 

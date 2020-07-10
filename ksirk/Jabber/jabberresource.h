@@ -24,7 +24,7 @@
  * Container class for a contact's resource
  */
 
-#include <qobject.h>
+#include <QObject>
 
 class JabberAccount;
 

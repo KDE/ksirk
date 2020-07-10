@@ -29,11 +29,11 @@
 #include <QScrollBar>
 
 #include <kgamewin.h>
-#include <kstandardgameaction.h>
-#include <kstandardaction.h>
+#include <KStandardGameAction>
+#include <KStandardAction>
 #include <KLocalizedString>
 #include "ksirk_debug.h"
-#include <kgamepopupitem.h>
+#include <KGamePopupItem>
 #define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
 #include <libkdegamesprivate/kgame/kgameio.h>
 #include <libkdegamesprivate/kgame/kplayer.h>

@@ -22,9 +22,9 @@
 #include "httppoll.h"
 
 #include <QUrl>
-#include <qstringlist.h>
-#include <qtimer.h>
-#include <qpointer.h>
+#include <QStringList>
+#include <QTimer>
+#include <QPointer>
 #include <QtCrypto>
 #include <QByteArray>
 #include <stdlib.h>

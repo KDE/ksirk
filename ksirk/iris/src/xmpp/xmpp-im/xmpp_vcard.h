@@ -22,8 +22,8 @@
 #ifndef JABBER_VCARD_H
 #define JABBER_VCARD_H
 
-#include <qstring.h>
-#include <qstringlist.h>
+#include <QString>
+#include <QStringList>
 
 #include <QList>
 #include <qdom.h>

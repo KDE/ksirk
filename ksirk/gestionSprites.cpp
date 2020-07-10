@@ -38,17 +38,17 @@
 #include "fightArena.h"
 
 // include files for QT
-#include <qmetaobject.h>
-#include <qdir.h>
-#include <qpainter.h>
-#include <qinputdialog.h>
+#include <QMetaObject>
+#include <QDir>
+#include <QPainter>
+#include <QInputDialog>
 
 // include files for KDE
-#include <kiconloader.h>
-#include <kmessagebox.h>
+#include <KIconLoader>
+#include <KMessageBox>
 #include <KLocalizedString>
-#include <kconfig.h>
-#include <kstandardaction.h>
+#include <KConfig>
+#include <KStandardAction>
 #include <phonon/mediaobject.h>
 #include "ksirk_debug.h"
 #include <KToolBar>

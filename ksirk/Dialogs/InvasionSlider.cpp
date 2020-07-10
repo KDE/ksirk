@@ -64,16 +64,16 @@
 #include <QVBoxLayout>
 
 // include files for KDE
-#include <kiconloader.h>
-#include <kmessagebox.h>
+#include <KIconLoader>
+#include <KMessageBox>
 #include <KLocalizedString>
-#include <kconfig.h>
-#include <kstandardgameaction.h>
-#include <kstandardaction.h>
-#include <kactioncollection.h>
+#include <KConfig>
+#include <KStandardGameAction>
+#include <KStandardAction>
+#include <KActionCollection>
 #include "ksirk_debug.h"
 #include <phonon/mediaobject.h>
-#include <kgamepopupitem.h>
+#include <KGamePopupItem>
 #include <KToolBar>
 #include <KAboutData>
 

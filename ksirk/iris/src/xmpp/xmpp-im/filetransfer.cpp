@@ -22,9 +22,9 @@
 #include "filetransfer.h"
 
 #include <QList>
-#include <qtimer.h>
-#include <qpointer.h>
-#include <qfileinfo.h>
+#include <QTimer>
+#include <QPointer>
+#include <QFileInfo>
 #include "xmpp_xmlcommon.h"
 #include "s5b.h"
 

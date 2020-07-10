@@ -21,7 +21,7 @@
 
 
 #include <QAction>
-#include <kselectaction.h>
+#include <KSelectAction>
 #include <KLocalizedString>
 #include <QIcon>
 

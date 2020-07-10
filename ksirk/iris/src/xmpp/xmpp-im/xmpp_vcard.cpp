@@ -22,10 +22,10 @@
 #include "xmpp_vcard.h"
 
 #include <qdom.h>
-#include <qdatetime.h>
+#include <QDateTime>
 
-#include <qimage.h> // needed for image format recognition
-#include <qbuffer.h>
+#include <QImage> // needed for image format recognition
+#include <QBuffer>
 #include <QImageReader>
 #include <QImageWriter>
 #include <QtCrypto>

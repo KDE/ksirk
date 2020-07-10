@@ -21,7 +21,7 @@
 
 #include "dice.h"
 
-#include <krandom.h>
+#include <KRandom>
 
 namespace Ksirk
 {
