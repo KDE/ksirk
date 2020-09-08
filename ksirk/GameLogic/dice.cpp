@@ -21,7 +21,7 @@
 
 #include "dice.h"
 
-#include <KRandom>
+#include <QRandomGenerator>
 
 namespace Ksirk
 {
@@ -36,7 +36,7 @@ Dice::~Dice(){
 
 unsigned int Dice::roll(unsigned int max)
 {
-  return ( (KRandom::random() % max) + 1 ) ;
+  return 1 + QRandomGenerator::global()->bounded(max);;
 }
 
 }
