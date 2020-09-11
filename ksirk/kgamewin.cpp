@@ -70,7 +70,6 @@
 #include <QVBoxLayout>
 
 // include files for KDE
-#include <KIconLoader>
 #include <KMessageBox>
 #include <KLocalizedString>
 #include <KConfig>

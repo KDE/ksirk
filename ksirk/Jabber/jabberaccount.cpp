@@ -47,7 +47,6 @@
 #include <k3socketbase.h>
 #include <KPasswordDialog>
 #include <KInputDialog>
-#include <KIcon>
 #include <KActionMenu>
 #include <KComponentData>
 

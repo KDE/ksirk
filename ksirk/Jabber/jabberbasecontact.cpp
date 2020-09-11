@@ -18,7 +18,6 @@
   */
 
 #include <KLocalizedString>
-#include <KIconLoader>
 #include <KStandardDirs>
 #include <QTimer>
 #include <QImage>
