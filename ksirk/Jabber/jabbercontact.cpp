@@ -31,7 +31,6 @@
 #include <QImage>
 #include <QRegExp>
 #include <QBuffer>
-#include <QList>
 
 #include <KLocalizedString>
 #include <KMessageBox>

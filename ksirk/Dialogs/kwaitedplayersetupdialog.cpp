@@ -22,7 +22,6 @@
 #define KDE_NO_COMPAT
 #include "kwaitedplayersetupdialog.h"
 #include "GameLogic/gameautomaton.h"
-#include "GameLogic/player.h"
 #include "kgamewin.h"
 #include "GameLogic/onu.h"
 #include "Sprites/skinSpritesData.h"

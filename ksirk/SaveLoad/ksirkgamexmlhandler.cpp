@@ -20,10 +20,8 @@
 /*    begin                : Mon Feb 07 2005 */
 
 #include "ksirkgamexmlhandler.h"
-#include "KsirkGlobalDefinitions.h"
 #include "GameLogic/country.h"
 #include "GameLogic/onu.h"
-#include "GameLogic/goal.h"
 #include "GameLogic/KMessageParts.h"
 
 #include "ksirk_debug.h"

@@ -20,7 +20,6 @@
 // application specific includes
 #include "ksirkskineditorscene.h"
 
-#include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
 #include "ksirkskineditor_debug.h"
 

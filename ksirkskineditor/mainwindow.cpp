@@ -39,10 +39,8 @@
 #include <QDockWidget>
 #include <QFileDialog>
 #include <QTreeView>
-#include <QPushButton>
 #include <QGridLayout>
 #include <QString>
-#include <QVBoxLayout>
 #include <QMovie>
 #include <QGraphicsScene>
 #include <QGraphicsView>

@@ -51,8 +51,6 @@
 #include <KComponentData>
 
 #include "jabberconnector.h"
-#include "jabberclient.h"
-#include "jabberprotocol.h"
 #include "jabberresourcepool.h"
 #include "jabbercontactpool.h"
 // #include "jabberfiletransfer.h"

@@ -32,7 +32,6 @@
 #include <KLocalizedString>
 #include "ksirk_debug.h"
 #include <QSvgRenderer>
-#include <QString>
 #include <QApplication>
 #include <QDataStream>
 #include <QBitmap>

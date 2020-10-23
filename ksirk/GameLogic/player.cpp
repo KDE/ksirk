@@ -23,7 +23,6 @@
 #include "player.h"
 #include "Sprites/backgnd.h"
 #include "Sprites/skinSpritesData.h"
-#include "GameLogic/gameautomaton.h"
 #include "GameLogic/onu.h"
 #include "kgamewin.h"
 

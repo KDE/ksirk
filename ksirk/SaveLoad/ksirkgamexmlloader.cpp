@@ -21,9 +21,7 @@
  
 #include "ksirkgamexmlloader.h"
 #include "ksirkgamexmlhandler.h"
-#include "KsirkGlobalDefinitions.h"
 
-#include <qxml.h>
 #include <KMessageBox>
 #include <KLocalizedString>
 

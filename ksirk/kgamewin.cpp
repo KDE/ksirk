@@ -21,7 +21,6 @@
 
 // application specific includes
 #include "kgamewin.h"
-#include "mainMenu.h"
 #include "ksirkConfigDialog.h"
 #include "ksirksettings.h"
 #include "Sprites/animspritesgroup.h"
@@ -29,12 +28,9 @@
 #include "GameLogic/aiplayer.h"
 #include "GameLogic/aiColsonPlayer.h"
 #include "GameLogic/aiplayerio.h"
-#include "GameLogic/country.h"
-#include "GameLogic/onu.h"
 #include "GameLogic/dice.h"
 #include "GameLogic/KMessageParts.h"
 #include "GameLogic/goal.h"
-#include "GameLogic/gameautomaton.h"
 #include "GameLogic/KsirkChatItem.h"
 #include "GameLogic/KsirkChatModel.h"
 #include "GameLogic/KsirkChatDelegate.h"
@@ -61,13 +57,11 @@
 #include <QIcon>
 #include <QMenuBar>
 #include <QMovie>
-#include <QPushButton>
 #include <QStatusBar>
 #include <QString>
 #include <QSvgRenderer>
 #include <QTreeView>
 #include <QUuid>
-#include <QVBoxLayout>
 
 // include files for KDE
 #include <KMessageBox>
@@ -84,7 +78,6 @@
 #define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
 #include <libkdegamesprivate/kgame/kgamechat.h>
 #include <sys/utsname.h>
-#include <QStandardPaths>
 
 namespace Ksirk
 {

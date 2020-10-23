@@ -21,7 +21,6 @@
 
 #include "xmpp_vcard.h"
 
-#include <qdom.h>
 #include <QDateTime>
 
 #include <QImage> // needed for image format recognition

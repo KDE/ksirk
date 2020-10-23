@@ -29,7 +29,6 @@
 #include <QPainter>
 #include <QColorDialog>
 #include <QInputDialog>
-#include <QPixmap>
 namespace Ksirk
 {
    class KGameWindow;

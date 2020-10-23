@@ -28,7 +28,6 @@
 #include <QFile>
 // #include <QDom>
 #include <QPainter>
-#include <QPixmap>
 #include <QGraphicsItem>
 #include <QGraphicsScene>
 #include <QXmlStreamReader>

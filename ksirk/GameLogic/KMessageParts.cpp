@@ -20,7 +20,6 @@
 #include "KMessageParts.h"
 
 #include <stdexcept>
-#include <QPixmap>
 
 namespace Ksirk {
 

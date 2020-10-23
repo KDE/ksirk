@@ -26,7 +26,6 @@
 #include <KLocalizedString>
 #include "ksirkskineditor_debug.h"
 #include <QSvgRenderer>
-#include <QString>
 #include <QApplication>
 #include <QDataStream>
 #include <QBitmap>

@@ -20,7 +20,6 @@
  */
 
 #include "bytestream.h"
-#include <QByteArray>
 
 // CS_NAMESPACE_BEGIN
 

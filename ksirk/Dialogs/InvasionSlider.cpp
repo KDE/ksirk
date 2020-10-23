@@ -51,7 +51,6 @@
 
 //include files for QT
 #include <QAction>
-#include <QDialog>
 #include <QDockWidget>
 #include <QGridLayout>
 #include <QHostInfo>

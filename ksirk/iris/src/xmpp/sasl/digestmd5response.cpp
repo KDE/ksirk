@@ -5,7 +5,6 @@
 
 #include "xmpp/sasl/digestmd5response.h"
 
-#include <QByteArray>
 #include <QtCrypto>
 #include <QtDebug>
 

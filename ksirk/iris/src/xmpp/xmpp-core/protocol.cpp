@@ -27,7 +27,6 @@
 #include "protocol.h"
 
 #include <qca.h>
-#include <QList>
 #include <QByteArray>
 #include <QtCrypto>
 

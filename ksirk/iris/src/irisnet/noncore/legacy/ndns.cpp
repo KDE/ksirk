@@ -51,7 +51,6 @@
 
 #include "ndns.h"
 
-#include "netnames.h"
 
 // CS_NAMESPACE_BEGIN
 

@@ -23,7 +23,6 @@
 #include "xmpp_stanza.h"
 
 #include <QString>
-#include <qdom.h>
 #include <QDateTime>
 #include <QSize>
 #include <QRect>

@@ -24,7 +24,6 @@
 
 #include <QSize>
 #include <QEvent>
-#include <QMouseEvent>
 #include <QGraphicsSceneMouseEvent>
 #include <QScrollBar>
 

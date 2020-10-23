@@ -23,9 +23,7 @@
 #include "jabber_protocol_debug.h"
 
 #include <QString>
-#include <QStringList>
 #include <QTimer>
-#include <QPair>
 #include <qdom.h>
 #include <QTextStream>
 

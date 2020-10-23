@@ -22,7 +22,6 @@
 #include <QCoreApplication>
 #include <QString>
 #include <QMap>
-#include <QStringList>
 
 #include "xmpp_features.h"
 

@@ -20,7 +20,6 @@
 
 #include "jabber_protocol_debug.h"
 #include "jabberconnector.h"
-#include "jabberbytestream.h"
 // #include "jabberprotocol.h"
 
 JabberConnector::JabberConnector ( QObject *parent )

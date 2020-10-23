@@ -1,7 +1,6 @@
 #include "xmpp/zlib/zlibcompressor.h"
 
 #include <QtDebug>
-#include <QObject>
 #include <QIODevice>
 #include <zlib.h>
 

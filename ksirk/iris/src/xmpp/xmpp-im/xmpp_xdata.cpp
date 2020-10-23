@@ -22,8 +22,6 @@
 #include "xmpp_xmlcommon.h"
 #include "xmpp/jid/jid.h"
 
-#include <QList>
-#include <QSharedDataPointer>
 
 using namespace XMPP;
 using namespace XMLHelper;

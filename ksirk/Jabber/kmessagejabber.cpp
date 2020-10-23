@@ -22,7 +22,6 @@
   subclass KMessageJabber of KMessageIO
 */
 
-#include "jabber_protocol_debug.h"
 #include "kmessagejabber.h"
 #include <QDataStream>
 #include <QUuid>

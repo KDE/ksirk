@@ -22,14 +22,11 @@
 #include "onu.h"
 #include "Sprites/skinSpritesData.h"
 #include "goal.h"
-#include "gameautomaton.h"
-#include "kgamewin.h"
 
 #define KDE_NO_COMPAT
 #include <QFile>
 #include <qdom.h>
 #include <QPainter>
-#include <QPixmap>
 #include <QPixmapCache>
 #include <QFileInfo>
 #include <QMenuBar>

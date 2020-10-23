@@ -29,7 +29,6 @@
 #include <QColorDialog>
 #include <QInputDialog>
 #include <QMessageBox>
-#include <QPixmap>
 #include <QTextDocument>
 #include <iostream>
 

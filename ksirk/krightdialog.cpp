@@ -20,18 +20,13 @@
 /* begin                : Thu JAN 22 2008 */
 
 #include "krightdialog.h"
-#include "GameLogic/country.h"
-#include "GameLogic/player.h"
 #include "Sprites/animsprite.h"
 #include <qdrawutil.h>
-#include <QGroupBox>
-#include <QLabel>
 #include <QColor>
 #include <QBrush>
 #include <QBitmap>
 #include <QPixmap>
 #include <QString>
-#include <QGridLayout>
 #include <QScrollBar>
 #include <QScrollArea>
 #include <QPalette>

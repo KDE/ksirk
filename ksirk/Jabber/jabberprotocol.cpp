@@ -23,7 +23,6 @@
 #include <KGenericFactory>
 #include <KConfig>
 
-#include <QMap>
 #include <QTimer>
 #include <QPixmap>
 #include <QStringList>

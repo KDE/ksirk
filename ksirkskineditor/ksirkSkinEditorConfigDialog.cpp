@@ -30,7 +30,6 @@
 
 #include <KMessageBox>
 #include <KLocalizedString>
-#include <KConfigDialog>
 
 #include <QSlider>
 #include <QCheckBox>

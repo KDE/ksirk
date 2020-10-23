@@ -22,9 +22,7 @@
 #include <algorithm>
  
 #include <QDomElement>
-#include <QString>
 #include <QStringList>
-#include <QList>
 
 #include "jabber_protocol_debug.h"
 // #include "jabberprotocol.h"
