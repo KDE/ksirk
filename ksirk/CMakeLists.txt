@@ -96,12 +96,14 @@ set(ksirk_SRCS
 ecm_qt_declare_logging_category(ksirk_SRCS
                                 HEADER ksirk_debug.h
                                 IDENTIFIER KSIRK_LOG
-                                CATEGORY_NAME org.kde.ksirk)
+                                CATEGORY_NAME org.kde.ksirk
+                                DESCRIPTION "kdegames(ksirk)" EXPORT KSIRK)
 
 ecm_qt_declare_logging_category(ksirk_SRCS
                                 HEADER jabber_protocol_debug.h
                                 IDENTIFIER JABBER_PROTOCOL_LOG
-                                CATEGORY_NAME org.kde.ksirk.jabber)
+                                CATEGORY_NAME org.kde.ksirk.jabber
+                                DESCRIPTION "kdegames (ksirk jabber)" EXPORT KSIRK)
 
 set(ksirk_UI
   Dialogs/qplayersetupdialog.ui

@@ -26,7 +26,9 @@ set(ksirkskineditor_SRCS
 ecm_qt_declare_logging_category(ksirkskineditor_SRCS
                                 HEADER ksirkskineditor_debug.h
                                 IDENTIFIER KSIRKSKINEDITOR_LOG
-                                CATEGORY_NAME org.kde.ksirk.skineditor)
+                                CATEGORY_NAME org.kde.ksirk.skineditor
+                                DESCRIPTION "kdegames (ksirk skineditor)" EXPORT KSIRK
+                                )
 
 set(ksirkskineditor_UI
 #   ksirkskineditor.ui
