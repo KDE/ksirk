@@ -48,7 +48,6 @@ class KRecentFilesAction;
 class QGraphicsScene;
 class QGraphicsView;
 class QListWidgetItem;
-class QPushButton;
 class QGraphicsPixmapItem;
 
 class KSirkSkinDefinitionWidget;
