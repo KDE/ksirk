@@ -1,8 +1,5 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
-  <!ENTITY ksirk '<application>KsirK</application>'>
-  <!ENTITY kappname "&ksirk;"><!-- replace ksirk here -->
-  <!ENTITY package "kdegames">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % English "INCLUDE">
 ]>
@@ -13,35 +10,26 @@
 <title>The &ksirk; Handbook</title>
 
 <authorgroup>
-<author>
-<firstname>Gael</firstname>
-<othername>Kleag</othername>
-<surname>de Chalendar</surname>
-<affiliation>
-<address><email>Kleag@free.fr</email></address>
-</affiliation>
-</author>
-<author>
-<firstname>Nemanja</firstname>
-<othername></othername>
-<surname>Hirsl</surname>
-<affiliation>
-<address><email>nemhirsl@gmail.com</email></address>
-</affiliation>
-</author>
-<!-- TRANS:ROLES_OF_TRANSLATORS -->
+  <author>
+    <firstname>Ga&euml;l</firstname> <othername>Kleag</othername> <surname>de Chalendar</surname>
+    <affiliation><address><email>kleag@free.fr</email></address></affiliation>
+  </author>
+  <author>
+    <firstname>Nemanja</firstname> <othername></othername> <surname>Hirsl</surname>
+    <affiliation><address><email>nemhirsl@gmail.com</email></address></affiliation>
+  </author>
+  <!-- Translators: put here the copyright notice of the translation -->
+  <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-
 <copyright>
-<year>2002-2012</year>
-<holder>Gael de Chalendar</holder>
+  <year>2002-2012</year>
+  <holder>Ga&euml;l de Chalendar</holder>
 </copyright>
 <copyright>
-<year>2013</year>
-<holder>Nemanja Hirsl</holder>
+  <year>2013</year>
+  <holder>Nemanja Hirsl</holder>
 </copyright>
-<!-- Translators: put here the copyright notice of the translation -->
 <!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
      and in the FDL itself on how to use it. -->
 <legalnotice>&FDLNotice;</legalnotice>
@@ -52,48 +40,28 @@ need them for translation coordination !
 Please respect the format of the date (DD/MM/YYYY) and of the version
 (V.MM.LL), it could be used by automation scripts.
 Do NOT change these in the translation. -->
-
-<date>2013-02-17</date>
-<releaseinfo>4.10.0</releaseinfo>
+<date>2021-10-14</date>
+<releaseinfo>KDE Gear 21.08</releaseinfo>
 
 <!-- Abstract about this handbook -->
-
 <abstract>
-<para>
-&ksirk; is a computerized version of a well known strategy game. Commercial
-and other Free Software versions exist but I (Gaël de Chalendar) created this game
-initially as a C++ learning exercise and so, I developed it up to this point (see README for details).
-</para>
-<para>
-In the current version, &ksirk; is a multi-player network-enabled game with an AI.
-(see TODO for details)
-</para>
-<para>
-This documentation gives the major information you need to start playing.
-Please read the tooltips and the status bar messages to complete your information. A chapter explains how to create new skins for &ksirk;
-</para>
-<para>
-The goal of the game is simply to conquer the World... It is done by attacking your neighbors
-with your armies. Peaceful, isn't it :-)
-</para>
+  <para>&ksirk; is a computerized version of a well known strategy game.</para>
 </abstract>
 
 <!-- This is a set of Keywords for indexing by search engines.
 Please at least include KDE, the KDE package it is in, the name
  of your application, and a few relevant keywords. -->
-
 <keywordset>
-<keyword>KDE</keyword>
-<keyword>kdegames</keyword>
-<keyword>game</keyword>
-<keyword>strategy</keyword>
-<keyword>Risk</keyword>
-<keyword>free</keyword>
-<keyword>GPL</keyword>
-<keyword>Network</keyword>
-<keyword>AI</keyword>
+  <keyword>KDE</keyword>
+  <keyword>AI</keyword>
+  <keyword>free</keyword>
+  <keyword>game</keyword>
+  <keyword>GPL</keyword>
+  <keyword>KsirK</keyword>
+  <keyword>network</keyword>
+  <keyword>risk</keyword>
+  <keyword>strategy</keyword>
 </keywordset>
-
 </bookinfo>
 
 <!-- The contents of the documentation begin here.  Label
@@ -112,507 +80,340 @@ consistent documentation style across all KDE apps. -->
 application that explains what it does and where to report
 problems. Basically a long version of the abstract.  Don't include a
 revision history. (see installation appendix comment) -->
-<para>
-&ksirk; is a computerized version of a well known strategy game. Commercial
+<para>&ksirk; is a computerized version of a well known strategy game. Commercial
 and other Free Software versions exist but I (Gaël de Chalendar) created this game
-initially as a C++ learning exercise and so, I developed it up to this point (see README for details).
-</para>
-<para>
+initially as a C++ learning exercise and so, I developed it up to this point (see <filename>README</filename> for details).</para>
+
 <screenshot>
   <screeninfo>Here's a screenshot of &ksirk;</screeninfo>
   <mediaobject>
-    <imageobject>
-      <imagedata fileref="firing-screenshot.png" format="PNG"/>
-    </imageobject>
-    <textobject>
-      <phrase>Screenshot</phrase>
-    </textobject>
+    <imageobject><imagedata fileref="firing-screenshot.png" format="PNG"/></imageobject>
+    <textobject><phrase>Screenshot</phrase></textobject>
   </mediaobject>
 </screenshot>
-</para>
-<para>
-In the current version, &ksirk; is a multi-player network-enabled game with an AI.
-(see TODO for details)
-</para>
-<para>
-This documentation gives only the major information you need to start playing.
-Please read the tooltips and the status bar messages to complete your information.
-</para>
-<para>
-The goal of the game is simply to conquer the World... It is done by attacking your neighbors
-with your armies. Peaceful, isn't it ? :-)
-</para>
+
+<para>In the current version, &ksirk; is a multi-player network-enabled game with an AI. (see <filename>TODO</filename> for details)</para>
+
+<para>This documentation gives only the major information you need to start playing. Please read the tooltips and the status bar messages to complete your information.</para>
+
+<para>The goal of the game is simply to conquer the World... It is done by attacking your neighbors with your armies. Peaceful, isn't it ? :-)</para>
 </chapter>
 
 <chapter id="using-kapp">
 <title>Using &ksirk;</title>
 
 <!-- This chapter should tell the user how to use your app. You should use as
-many sections (Chapter, Sect1, Sect3, etc...) as is necessary to fully document
+many sections (Chapter, Sect1, Sect3, &etc;) as is necessary to fully document
 your application. -->
-
-
 
 <sect1 id="playing-ksirk">
 <title>Playing &ksirk;</title>
-<para>Preliminary note : the map can be scrolled by three methods:</para>
-<itemizedlist><listitem><para>You can put your
-mouse near a border of the window and the map will scroll in that direction</para></listitem>
-<listitem><para>You can use your mouse wheel: with no modifier, it will scroll vertically; when pressing the &Alt;
-key, it will scroll horizontally</para></listitem>
-<listitem><para>You can use the keyboard arrows</para></listitem></itemizedlist>
-<sect2 id="mainmenu" >
-<title>Starting a game</title>
-<para>
-When &ksirk; starts, you are presented with a main menu.
-<screenshot>
-  <screeninfo>The main menu of &ksirk;</screeninfo>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="introscreen.png" format="PNG"/>
-    </imageobject>
-    <textobject>
-      <phrase>Main menu</phrase>
-    </textobject>
-  </mediaobject>
-</screenshot>
 
-<variablelist>
-<varlistentry>
-<term>
-  <menuchoice>
-    <guimenu>New Local Game</guimenu>
-  </menuchoice>
-</term>
-<listitem>
-  <para>
-  <action>Starts a new game</action>
-  </para>
-</listitem>
-</varlistentry>
-<varlistentry>
-<term>
-  <menuchoice>
-    <guimenu>Play &ksirk; over Jabber Network</guimenu>
-  </menuchoice>
-</term>
-<listitem>
-  <para>
-    <action>Play &ksirk; over <ulink url="http://en.wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol">Jabber</ulink>. You need to register Jabber account first.</action>
-  </para>
-</listitem>
-</varlistentry>
-<varlistentry>
-<term>
-  <menuchoice>
-    <guimenu>New Standard TCP/IP Network Game</guimenu>
-  </menuchoice>
-</term>
-<listitem>
-  <para>
-    <action>Start a new game using <ulink url="http://en.wikipedia.org/wiki/Internet_protocol_suite">Internet protocol suite</ulink>.</action>
-  </para>
-</listitem>
-</varlistentry>
-<varlistentry>
-<term>
-  <menuchoice>
-    <guimenu>Join Standard TCP/IP Network Game</guimenu>
-  </menuchoice>
-</term>
-<listitem>
-  <para>
-    <action>Join to the created by other user game using <ulink url="http://en.wikipedia.org/wiki/Internet_protocol_suite">Internet protocol suite</ulink>.</action>
-  </para>
-</listitem>
-</varlistentry>
-<varlistentry>
-  <term>
-    <menuchoice>
-      <guimenu>Load</guimenu>
-    </menuchoice>
-  </term>
-  <listitem>
-    <para>
-      <action>Use this to load a previously saved game</action>
-    </para>
-  </listitem>
-</varlistentry>
-<varlistentry>
-  <term>
-    <menuchoice>
-      <guimenu>Quit</guimenu>
-    </menuchoice>
-  </term>
-  <listitem>
-    <para>
-      <action>Maybe you finally don't want to play?</action>
-    </para>
-  </listitem>
-</varlistentry>
-</variablelist>
-</para>
-<para>
-  If you hit <guibutton>New Local Game</guibutton> you will be presented with the <guilabel>New game properties</guilabel> dialog where you will be able to choose the number of players, the skin (or theme) to use, the game type (conquer the goal or have a specific goal) and finally if this game will be played with online players or if it is purely local. New skins can be downloaded using <guibutton>Download New Skins</guibutton> button.
-<screenshot>
-  <screeninfo>The New Game dialog</screeninfo>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="newgamedialog.png" format="PNG"/>
-    </imageobject>
-    <textobject>
-      <phrase>The New Game dialog</phrase>
-    </textobject>
-  </mediaobject>
-</screenshot>
-</para>
-<para>
-To start a TCP/IP network game, choose the <guilabel>New Standard TCP/IP Network Game</guilabel> option on introduction screen. After clicking this button you will be able to choose the network parameters: number of local players and TCP port on which waiting for connections.
-<screenshot>
-  <screeninfo>Network game parameters dialog</screeninfo>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="numnetplayersdialog.png" format="PNG"/>
-    </imageobject>
-    <textobject>
-      <phrase>Network game parameters dialog</phrase>
-    </textobject>
-  </mediaobject>
-</screenshot>
-</para>
-<para>
-Then, network players will be able to connect by choosing <guilabel>Join Standard TCP/IP Network Game</guilabel> on the introduction screen and by indicating the IP or hostname of the host and the port number you just set.
-<screenshot>
-  <screeninfo>Joining network game dialog</screeninfo>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="joinnetgame.png" format="PNG"/>
-    </imageobject>
-    <textobject>
-      <phrase>Joining network game dialog</phrase>
-    </textobject>
-  </mediaobject>
-</screenshot>
-</para>
-<para>
-  Each connection is indicated by a new row in the <guilabel>Players</guilabel> table below the map thumbnail.
-<screenshot>
-  <screeninfo>New player row</screeninfo>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="justjoined.png" format="PNG"/>
-    </imageobject>
-    <textobject>
-      <phrase>New player row</phrase>
-    </textobject>
-  </mediaobject>
-</screenshot>
+<para>Preliminary note: the map can be scrolled by three methods:</para>
 
-</para>
-<para>
-Let's suppose you keep all the default settings and hit <guibutton>Next</guibutton>. You will then setup two players, one after one. For each one, you'll choose a name, a nationality and, if you want, setup a password such that nobody else than you can reuse this player when reloading this saved game. Lastly, you will here specify if this player is played by the computer or by a human being.
-<screenshot>
-  <screeninfo>The Player Setup dialog</screeninfo>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="playersetupdialog.png" format="PNG"/>
-    </imageobject>
-    <textobject>
-      <phrase>The Player Setup dialog</phrase>
-    </textobject>
-  </mediaobject>
-</screenshot>
-</para>
-<para>
-  Then, after clicking <guibutton>Start</guibutton>, if you choose to play with goal, the goal of each local player is displayed, preceded by a warning such that other players looking at the same computer can discreetly turn away while the goal is being viewed.
-<screenshot>
-  <screeninfo>The Goal Display warning message</screeninfo>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="displaygoalwarningmessage.png" format="PNG"/>
-    </imageobject>
-    <textobject>
-      <phrase>The Goal Display warning message</phrase>
-    </textobject>
-  </mediaobject>
-</screenshot>
-<screenshot>
-  <screeninfo>The Goal Display dialog</screeninfo>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="displaygoalmessage.png" format="PNG"/>
-    </imageobject>
-    <textobject>
-      <phrase>The Goal Display dialog</phrase>
-    </textobject>
-  </mediaobject>
-</screenshot>
-</para>
-</sect2>
+  <itemizedlist>
+    <listitem><para>You can put your mouse near a border of the window and the map will scroll in that direction</para></listitem>
+    <listitem><para>You can use your mouse wheel: with no modifier, it will scroll vertically; when pressing the &Alt; key, it will scroll horizontally</para></listitem>
+    <listitem><para>You can use the keyboard arrows</para></listitem>
+  </itemizedlist>
 
-<sect2 id="distribution" >
-<title>Distribution</title>
-<para>
-At the beginning of the game, countries are distributed to all the players. Each country contains
-one army (represented by an infantryman) at the start. Each player has some armies to
-distribute to his countries at their turn (indicated by the presence of their name and their flag in
-the status bar). Note that five armies are represented by a cavalryman and 10 by
-a cannon.
-</para>
-<para>
-To put an army on one of your countries, click on it with the left mouse button. To remove an
-army, click with the right button. Note, as a general rule, that you will never be able to remove
-more armies than the number you placed.
-<screenshot>
-  <screeninfo>Placing armies</screeninfo>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="placingarmies.png" format="PNG"/>
-    </imageobject>
-    <textobject>
-      <phrase>Placing armies</phrase>
-    </textobject>
-  </mediaobject>
-</screenshot>
+  <sect2 id="mainmenu" >
+  <title>Starting a game</title>
 
-</para>
-<para>
-When a player has distributed all there armies, the next player is automatically selected to do the
-same task. When all players have finished to distributing their armies, there is two possibilities
-that can be selected by two buttons showed in the right panel:
-<variablelist>
-<varlistentry>
-<term>
-      <inlinemediaobject>
-        <imageobject>
-          <imagedata fileref="recycling.png" format="PNG"/>
-        </imageobject>
-        <textobject>
-          <phrase>Redistribution</phrase>
-        </textobject>
-      </inlinemediaobject>
-    <guibutton>Recycle</guibutton>
-</term>
-<listitem>
-  <para>
-  <action>
-  One player wants to change some of his choices. The first player can then remove an army he
-  just put in a country with the right mouse button and put it in another one with the left mouse
-  button. When he finishes, he gives control to next player with the <guibutton>Valid</guibutton> button. When all
-  players have finished their redistribution, the two buttons are displayed again.
-  </action>
-  </para>
-</listitem>
-</varlistentry>
-<varlistentry>
-<term>
-      <inlinemediaobject>
-        <imageobject>
-          <imagedata fileref="recyclingFinished.png" format="PNG"/>
-        </imageobject>
-        <textobject>
-          <phrase>End of redistribution</phrase>
-        </textobject>
-      </inlinemediaobject>
-    <guibutton>Done</guibutton>
-</term>
-<listitem><para><action>The redistribution is finished and the game can continue.
-</action></para></listitem>
-</varlistentry>
-</variablelist>
+  <para>When &ksirk; starts, you are presented with a main menu.</para>
 
-</para>
-</sect2>
+  <screenshot>
+    <screeninfo>The main menu of &ksirk;</screeninfo>
+    <mediaobject>
+      <imageobject><imagedata fileref="introscreen.png" format="PNG"/></imageobject>
+      <textobject><phrase>Main menu</phrase></textobject>
+    </mediaobject>
+  </screenshot>
 
-<sect2 id="fight" >
-<title>Fight</title>
-<para>
-After the redistribution, a turn starts. Each player plays at his turn. He has the choice to:
-<variablelist>
-  <varlistentry>
-    <term>
-          <inlinemediaobject>
-            <imageobject>
-              <imagedata fileref="joueurSuivant.png" format="PNG"/>
-            </imageobject>
-            <textobject>
-              <phrase>Next player</phrase>
-            </textobject>
-          </inlinemediaobject>
+  <variablelist>
+    <varlistentry>
+      <term><guibutton>New Local Game</guibutton></term>
+      <listitem><para><action>Starts a new game.</action></para></listitem>
+    </varlistentry>
+<!--
+    <varlistentry>
+      <term><guibutton>Play &ksirk; over Jabber Network</guibutton></term>
+      <listitem><para><action>Play &ksirk; over <ulink url="https://en.wikipedia.org/wiki/XMPP">Jabber</ulink>. You need to register Jabber account first.</action></para></listitem>
+    </varlistentry>
+-->
+    <varlistentry>
+      <term><guibutton>New Standard TCP/IP Network Game</guibutton></term>
+      <listitem><para><action>Start a new game using <ulink url="https://en.wikipedia.org/wiki/Internet_protocol_suite">Internet protocol suite</ulink>.</action></para></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term><guibutton>Join Standard TCP/IP Network Game</guibutton></term>
+      <listitem><para><action>Join to the created by other user game using <ulink url="https://en.wikipedia.org/wiki/Internet_protocol_suite">Internet protocol suite</ulink>.</action></para></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term><guibutton>Load...</guibutton></term>
+      <listitem><para><action>Use this to load a previously saved game.</action></para></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term><guibutton>Quit</guibutton></term>
+      <listitem><para><action>Maybe you finally don't want to play?</action></para></listitem>
+    </varlistentry>
+  </variablelist>
+
+  <para>If you hit <guibutton>New Local Game</guibutton> you will be presented with the <guilabel>New game properties</guilabel> dialog where you will be able to choose the number of players, the skin (or theme) to use, the game type (conquer the goal or have a specific goal) and finally if this game will be played with online players or if it is purely local. New skins can be downloaded using <guibutton>Download New Skins</guibutton> button.</para>
+
+  <screenshot>
+    <screeninfo>The New Game dialog</screeninfo>
+    <mediaobject>
+      <imageobject><imagedata fileref="newgamedialog.png" format="PNG"/></imageobject>
+      <textobject><phrase>The New Game dialog</phrase></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para>To start a TCP/IP network game, choose the <guilabel>New Standard TCP/IP Network Game</guilabel> option on introduction screen. After pess this button you will be able to choose the network parameters: number of local players and TCP port on which waiting for connections.</para>
+
+  <screenshot>
+    <screeninfo>Network game parameters dialog</screeninfo>
+    <mediaobject>
+      <imageobject><imagedata fileref="numnetplayersdialog.png" format="PNG"/></imageobject>
+      <textobject><phrase>Network game parameters dialog</phrase></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para>Then, network players will be able to connect by choosing <guilabel>Join Standard TCP/IP Network Game</guilabel> on the introduction screen and by indicating the IP or hostname of the host and the port number you just set.</para>
+
+  <screenshot>
+    <screeninfo>Joining network game dialog</screeninfo>
+    <mediaobject>
+      <imageobject><imagedata fileref="joinnetgame.png" format="PNG"/></imageobject>
+      <textobject><phrase>Joining network game dialog</phrase></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para>Each connection is indicated by a new row in the <guilabel>Players</guilabel> table below the map thumbnail.</para>
+
+  <screenshot>
+    <screeninfo>New player row</screeninfo>
+    <mediaobject>
+      <imageobject><imagedata fileref="justjoined.png" format="PNG"/></imageobject>
+      <textobject><phrase>New player row</phrase></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para>Let's suppose you keep all the default settings and hit <guibutton>Next</guibutton>. You will then setup two players, one after one. For each one, you'll choose a name, a nationality and, if you want, setup a password such that nobody else than you can reuse this player when reloading this saved game. Lastly, you will here specify if this player is played by the computer or by a human being.</para>
+
+  <screenshot>
+    <screeninfo>The Player Setup dialog</screeninfo>
+    <mediaobject>
+      <imageobject><imagedata fileref="playersetupdialog.png" format="PNG"/></imageobject>
+      <textobject><phrase>The Player Setup dialog</phrase></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para>Then, after press <guibutton>Start</guibutton>, if you choose to play with goal, the goal of each local player is displayed, preceded by a warning such that other players looking at the same computer can discreetly turn away while the goal is being viewed.</para>
+
+  <screenshot>
+    <screeninfo>The Goal Display warning message</screeninfo>
+    <mediaobject>
+      <imageobject><imagedata fileref="displaygoalwarningmessage.png" format="PNG"/></imageobject>
+      <textobject><phrase>The Goal Display warning message</phrase></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <screenshot>
+    <screeninfo>The Goal Display dialog</screeninfo>
+    <mediaobject>
+      <imageobject><imagedata fileref="displaygoalmessage.png" format="PNG"/></imageobject>
+      <textobject><phrase>The Goal Display dialog</phrase></textobject>
+    </mediaobject>
+  </screenshot>
+  </sect2>
+
+  <sect2 id="distribution" >
+  <title>Distribution</title>
+
+  <para>At the beginning of the game, countries are distributed to all the players. Each country contains one army (represented by an infantryman) at the start. Each player has some armies to distribute to his countries at their turn (indicated by the presence of their name and their flag in the status bar). Note that five armies are represented by a cavalryman and 10 by a cannon.</para>
+
+  <para>To put an army on one of your countries, click on it with the &LMB;. To remove an army, click with the &RMB;. Note, as a general rule, that you will never be able to remove more armies than the number you placed.</para>
+
+  <screenshot>
+    <screeninfo>Placing armies</screeninfo>
+    <mediaobject>
+      <imageobject><imagedata fileref="placingarmies.png" format="PNG"/></imageobject>
+      <textobject><phrase>Placing armies</phrase></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para>When a player has distributed all there armies, the next player is automatically selected to do the same task. When all players have finished to distributing their armies, there is two possibilities that can be selected by two buttons showed in the right panel:</para>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject><imagedata fileref="recycling.png" format="PNG"/></imageobject>
+          <textobject><phrase>Redistribution</phrase></textobject>
+        </inlinemediaobject>
+        <guibutton>Recycle</guibutton>
+      </term>
+      <listitem><para><action>One player wants to change some of his choices. The first player can then remove an army he just put in a country with the &RMB; and put it in another one with the &LMB;. When he finishes, he gives control to next player with the <guibutton>Valid</guibutton> button. When all players have finished their redistribution, the two buttons are displayed again.</action></para></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject><imagedata fileref="recyclingFinished.png" format="PNG"/></imageobject>
+          <textobject><phrase>End of redistribution</phrase></textobject>
+        </inlinemediaobject>
+        <guibutton>Done</guibutton>
+      </term>
+      <listitem><para><action>The redistribution is finished and the game can continue.</action></para></listitem>
+    </varlistentry>
+  </variablelist>
+  </sect2>
+
+  <sect2 id="fight" >
+  <title>Fight</title>
+
+  <para>After the redistribution, a turn starts. Each player plays at his turn. He has the choice to:</para>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject><imagedata fileref="joueurSuivant.png" format="PNG"/></imageobject>
+          <textobject><phrase>Next player</phrase></textobject>
+        </inlinemediaobject>
         <guibutton>Next Player</guibutton>
-    </term>
-    <listitem>
-      <para>
-        <action>
-          The turn of the current player finishes and it's the turn of the next one.
-        </action>
-      </para>
-    </listitem>
-  </varlistentry>
-  <varlistentry>
-    <term>
-          <inlinemediaobject>
-            <imageobject>
-              <imagedata fileref="attackOne.png" format="PNG"/>
-            </imageobject>
-            <textobject>
-              <phrase>Attack 1</phrase>
-            </textobject>
-          </inlinemediaobject>
-          &nbsp;<inlinemediaobject>
-            <imageobject>
-              <imagedata fileref="attackTwo.png" format="PNG"/>
-            </imageobject>
-            <textobject>
-              <phrase>Attack 2</phrase>
-            </textobject>
-          </inlinemediaobject>
-          &nbsp;<inlinemediaobject>
-            <imageobject>
-              <imagedata fileref="attackThree.png" format="PNG"/>
-            </imageobject>
-            <textobject>
-              <phrase>Attack 3</phrase>
-            </textobject>
-          </inlinemediaobject><guibutton>Attack with one, two or three armies</guibutton>
-          &nbsp;<inlinemediaobject>
-            <imageobject>
-              <imagedata fileref="autoattack.png" format="PNG"/>
-            </imageobject>
-            <textobject>
-              <phrase>Auto attack</phrase>
-            </textobject>
-          </inlinemediaobject>
-          <guibutton>Auto attack</guibutton>
-    </term>
-    <listitem>
-      <para>
-          To attack, drag with the mouse from the attacking country and drop to the attacked one. You will then be presented with a contextual menu showing the above entries.
-          <screenshot>
-            <screeninfo>Attack menu</screeninfo>
-            <mediaobject>
-              <imageobject>
-                <imagedata fileref="attackmenu.png" format="PNG"/>
-              </imageobject>
-              <textobject>
-                <phrase>Attack menu</phrase>
-              </textobject>
-            </mediaobject>
-          </screenshot>
-          For a country X to attack a country Y with x armies, 2 conditions must be fulfilled:</para>
-          <itemizedlist><listitem><para> the two countries must be neighbors;</para></listitem>
-          <listitem><para>country X must have at least x+1 armies before the attack.</para></listitem></itemizedlist>
-        <para>
-          If the attack is valid, a dialog is displayed if necessary for the defender to choose if he wants to defend with one or two armies or let the computer decide.
-      </para>
-      <para>
-        When the defenders choice is done, the fight will occur and be completed. This will described below.
-          <screenshot>
-            <screeninfo>Defense dialog</screeninfo>
-            <mediaobject>
-              <imageobject>
-                <imagedata fileref="defensedialog.png" format="PNG"/>
-              </imageobject>
-              <textobject>
-                <phrase>Defense dialog</phrase>
-              </textobject>
-            </mediaobject>
-          </screenshot>
-      </para>
-    </listitem>
-  </varlistentry>
-  <varlistentry>
-    <term>
-          <inlinemediaobject>
-            <imageobject>
-              <imagedata fileref="moveArmies.png" format="PNG"/>
-            </imageobject>
-            <textobject>
-              <phrase>Move armies</phrase>
-            </textobject>
-          </inlinemediaobject>
-          <guibutton>Move Armies from one country to another</guibutton>
-    </term>
-    <listitem>
-      <para>
-        <action>
-          This is the last action of a player's turn. It gives the possibility to move some armies
-          from one of his country to another, neighboring the first one. To choose the two
-          countries, please drag and drop like you use during an attack. When both countries are selected,
-          a slider is displayed on which you can choose how many armies there will be on each country afterwards.
-        </action>
-      </para>
-    </listitem>
-  </varlistentry>
-</variablelist>
-</para>
-</sect2>
-<sect2  id="fight-solution" >
+      </term>
+      <listitem><para><action>The turn of the current player finishes and it's the turn of the next one.</action></para></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject><imagedata fileref="attackOne.png" format="PNG"/></imageobject>
+          <textobject><phrase>Attack 1</phrase></textobject>
+        </inlinemediaobject>&nbsp;
+
+        <inlinemediaobject>
+          <imageobject><imagedata fileref="attackTwo.png" format="PNG"/></imageobject>
+          <textobject><phrase>Attack 2</phrase></textobject>
+        </inlinemediaobject>&nbsp;
+
+        <inlinemediaobject>
+          <imageobject><imagedata fileref="attackThree.png" format="PNG"/></imageobject>
+          <textobject><phrase>Attack 3</phrase></textobject>
+        </inlinemediaobject>
+        <guibutton>Attack with one, two or three armies</guibutton>&nbsp;
+
+        <inlinemediaobject>
+          <imageobject><imagedata fileref="autoattack.png" format="PNG"/></imageobject>
+          <textobject><phrase>Auto attack</phrase></textobject>
+        </inlinemediaobject>
+        <guibutton>Auto attack</guibutton>
+      </term>
+
+      <listitem><para>To attack, drag with the mouse from the attacking country and drop to the attacked one. You will then be presented with a contextual menu showing the above entries.</para>
+
+        <screenshot>
+          <screeninfo>Attack menu</screeninfo>
+          <mediaobject>
+            <imageobject><imagedata fileref="attackmenu.png" format="PNG"/></imageobject>
+            <textobject><phrase>Attack menu</phrase></textobject>
+          </mediaobject>
+        </screenshot>
+
+        <para>For a country X to attack a country Y with x armies, 2 conditions must be fulfilled:</para>
+
+        <itemizedlist>
+          <listitem><para>the two countries must be neighbors;</para></listitem>
+          <listitem><para>country X must have at least x+1 armies before the attack.</para></listitem>
+        </itemizedlist>
+
+        <para>If the attack is valid, a dialog is displayed if necessary for the defender to choose if he wants to defend with one or two armies or let the computer decide.</para>
+
+        <para>When the defenders choice is done, the fight will occur and be completed. This will described below.</para>
+
+        <screenshot>
+          <screeninfo>Defense dialog</screeninfo>
+          <mediaobject>
+            <imageobject><imagedata fileref="defensedialog.png" format="PNG"/></imageobject>
+            <textobject><phrase>Defense dialog</phrase></textobject>
+          </mediaobject>
+        </screenshot>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject><imagedata fileref="moveArmies.png" format="PNG"/></imageobject>
+          <textobject><phrase>Move armies</phrase></textobject>
+        </inlinemediaobject>
+        <guibutton>Move Armies from one country to another</guibutton>
+      </term>
+
+      <listitem><para><action>This is the last action of a player's turn. It gives the possibility to move some armies from one of his country to another, neighboring the first one. To choose the two countries, please drag and drop like you use during an attack. When both countries are selected, a slider is displayed on which you can choose how many armies there will be on each country afterwards.</action></para></listitem>
+    </varlistentry>
+  </variablelist>
+  </sect2>
+
+  <sect2  id="fight-solution" >
   <title>Solution of the fight</title>
-  <para>
-    For each army in the fight there is a corresponding die cast. The player who rolls a higher number on the dice, whether being from the attacker or defender, wins and the one to roll a smaller number on the dice loses armies according to the number of dice thrown.
-          <screenshot>
-            <screeninfo>Attack result displayed</screeninfo>
-            <mediaobject>
-              <imageobject>
-                <imagedata fileref="shownumberofarmies.png" format="PNG"/>
-              </imageobject>
-              <textobject>
-                <phrase>Attack result displayed</phrase>
-              </textobject>
-            </mediaobject>
-          </screenshot>
-  </para>
-  <para>
-    If the number of armies in the defender country reaches 0, the ownership of this country
-    changes to the attacker: his flag is set up and one of his attacking armies is installed in his
-    new country. The "Move armies" slider is displayed as for the moves of the end of the turn.
-          <screenshot>
-            <screeninfo>Invasion slider</screeninfo>
-            <mediaobject>
-              <imageobject>
-                <imagedata fileref="invasionslider.png" format="PNG"/>
-              </imageobject>
-              <textobject>
-                <phrase>Invasion slider</phrase>
-              </textobject>
-            </mediaobject>
-          </screenshot>
-  </para>
-</sect2>
-<sect2  id="end_of_turn" >
+
+  <para>For each army in the fight there is a corresponding die cast. The player who rolls a higher number on the dice, whether being from the attacker or defender, wins and the one to roll a smaller number on the dice loses armies according to the number of dice thrown.</para>
+
+  <screenshot>
+    <screeninfo>Attack result displayed</screeninfo>
+    <mediaobject>
+      <imageobject><imagedata fileref="shownumberofarmies.png" format="PNG"/></imageobject>
+      <textobject><phrase>Attack result displayed</phrase></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para>If the number of armies in the defender country reaches 0, the ownership of this country changes to the attacker: his flag is set up and one of his attacking armies is installed in his new country. The "Move armies" slider is displayed as for the moves of the end of the turn.</para>
+
+  <screenshot>
+    <screeninfo>Invasion slider</screeninfo>
+    <mediaobject>
+      <imageobject><imagedata fileref="invasionslider.png" format="PNG"/></imageobject>
+      <textobject><phrase>Invasion slider</phrase></textobject>
+    </mediaobject>
+  </screenshot>
+  </sect2>
+
+  <sect2  id="end_of_turn" >
   <title>End of the turn</title>
-  <para>
-    To finish your current turn, if you don't want to move armies, you can hit the <guibutton>Next Player</guibutton> button in the toolbar.
-  </para>
-  <para>
-    When everybody has played, the turn is finished. Some armies are distributed to the
-    players, in function of the countries they own: 1 for each group of three countries, with a
-    minimum of 3. There is also a bonus for players that own a complete continent, different for
-    each one. The values of the bonuses for the default skin are:
-    <table>
-      <title>Bonus due to the continents</title>
-      <tgroup cols="2">
-        <thead>
-          <row><entry>Continent</entry><entry>Bonus</entry></row>
-        </thead>
-        <tbody>
-          <row><entry>North America</entry><entry>5</entry></row>
-          <row><entry>South America</entry><entry>2</entry></row>
-          <row><entry>Europe</entry><entry>5</entry></row>
-          <row><entry>Africa</entry><entry>3</entry></row>
-          <row><entry>Asia</entry><entry>7</entry></row>
-          <row><entry>Pacific Area</entry><entry>2</entry></row>
-        </tbody>
-      </tgroup>
-    </table>
-  </para>
-  <para>
-    When a player has finished distributing his armies, he clicks the <guibutton>Valid</guibutton> button to
-    allow the next player to distribute his bonus armies. As for the initial distribution, when all player
-    have placed their armies, they can start a new redistribution cycle or start a new turn...
-  </para>
-</sect2>
+
+  <para>To finish your current turn, if you don't want to move armies, you can hit the <guibutton>Next Player</guibutton> button in the toolbar.</para>
+
+  <para>When everybody has played, the turn is finished. Some armies are distributed to the players, in function of the countries they own: 1 for each group of three countries, with a minimum of 3. There is also a bonus for players that own a complete continent, different for each one. The values of the bonuses for the default skin are:</para>
+
+  <table>
+    <title>Bonus due to the continents</title>
+    <tgroup cols="2">
+      <thead>
+        <row>
+          <entry>Continent</entry>
+          <entry>Bonus</entry>
+        </row>
+      </thead>
+      <tbody>
+        <row><entry>North America</entry><entry>5</entry></row>
+        <row><entry>South America</entry><entry>2</entry></row>
+        <row><entry>Europe</entry><entry>5</entry></row>
+        <row><entry>Africa</entry><entry>3</entry></row>
+        <row><entry>Asia</entry><entry>7</entry></row>
+        <row><entry>Pacific Area</entry><entry>2</entry></row>
+      </tbody>
+    </tgroup>
+  </table>
+
+  <para>When a player has finished distributing his armies, he clicks the <guibutton>Valid</guibutton> button to allow the next player to distribute his bonus armies. As for the initial distribution, when all player have placed their armies, they can start a new redistribution cycle or start a new turn...</para>
+  </sect2>
+
 <!-- Does not work for current TCP/IP games
 <sect2 id="sending-messages" >
 <title>Sending messages to other players</title>
@@ -641,69 +442,52 @@ If you play a local game and want to communicate with the other players, well, l
 
 <sect1 id="kapp-mainwindow">
 <title>The main &ksirk; window</title>
-<sect2>
-<title>The buttons</title>
-<para>
-<variablelist>
-<varlistentry>
-<term>
-      <inlinemediaobject>
-        <imageobject>
-          <imagedata fileref="quit.png" format="PNG"/>
-        </imageobject>
-        <textobject>
-          <phrase>Quit Game</phrase>
-        </textobject>
-      </inlinemediaobject>
-    <guibutton>Quit</guibutton>
-</term>
-<listitem><para><action>
-Causes the program to quit.
-</action></para></listitem>
-</varlistentry>
-<varlistentry>
-<term>
-      <inlinemediaobject>
-        <imageobject>
-          <imagedata fileref="newGame.png" format="PNG"/>
-        </imageobject>
-        <textobject>
-          <phrase>New Game</phrase>
-        </textobject>
-      </inlinemediaobject>
-    <guibutton>New Game</guibutton>
-</term>
-<listitem><para><action>Starts a new game. It will cause the displaying of a dialog asking
-the number of players. After that, each player will be asked its name with another dialog.
-</action></para></listitem>
-</varlistentry>
-</variablelist>
-</para>
 
+  <sect2>
+  <title>The buttons</title>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject><imagedata fileref="application-exit.png" format="PNG"/></imageobject>
+          <textobject><phrase>Quit Game</phrase></textobject>
+        </inlinemediaobject>
+        <guibutton>Quit</guibutton>
+      </term>
+      <listitem><para><action>Causes the program to quit.</action></para></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject><imagedata fileref="document-new.png" format="PNG"/></imageobject>
+          <textobject><phrase>New Game</phrase></textobject>
+        </inlinemediaobject>
+        <guibutton>New Game</guibutton>
+      </term>
+      <listitem><para><action>Starts a new game. It will cause the displaying of a dialog asking the number of players. After that, each player will be asked its name with another dialog.</action></para></listitem>
+    </varlistentry>
+  </variablelist>
 </sect2>
 
 </sect1>
 </chapter>
 
 <chapter id="developers">
-  <title>Developer's Guide to &ksirk;</title>
-  
-  <para>
-    Please refer to <ulink url="http://api.kde.org/">http://api.kde.org/</ulink> for the documentation of the API. It was quite complete but is currently a little bit outdated. There are no comments in the <filename>.cpp</filename> implementation files.
-  </para>
-  <para>
-    Note that I originally developed this game under &Windows; with Borland C++ and WinG. I ported
-    it to &Java; before converting back to C++ and &kde;. At the beginning I used French or a mix of
-    French and English to name the identifiers (classnames, methods, members, &etc;). I also used French for the comments. When I decided to distribute this game, I decided to convert all to english... but I am clearly not a native English speaker: please suggest or make and submit corrections, to the code comments or to this documentation
-  </para>
-  
+<title>Developer's Guide to &ksirk;</title>
+
+<para>Please refer to <ulink url="https://api.kde.org/">https://api.kde.org/</ulink> for the documentation of the API. It was quite complete but is currently a little bit outdated. There are no comments in the <literal role="extension">.cpp</literal> implementation files.</para>
+
+<para>Note that I originally developed this game under &Windows; with Borland C++ and WinG. I ported it to &Java; before converting back to C++ and &kde;. At the beginning I used French or a mix of French and English to name the identifiers (classnames, methods, members, &etc;). I also used French for the comments. When I decided to distribute this game, I decided to convert all to english... but I am clearly not a native English speaker: please suggest or make and submit corrections, to the code comments or to this documentation.</para>
+
 </chapter>
 
 <chapter id="skins">
-  <title>Creating new skins</title>
-  <para>
-    &ksirk; comes with a skin editor, named ksirkskineditor(!), that allows to edit all skin data, as soon as graphics (map, sprites, &etc;) are available in a SVG file. Please see the ksirkskineditor manual for further details.
-  </para>
+<title>Creating new skins</title>
+
+<para>&ksirk; comes with a skin editor, named ksirkskineditor(!), that allows to edit all skin data, as soon as graphics (map, sprites, &etc;) are available in a &SVG; file. Please see the ksirkskineditor manual for further details.</para>
+
 </chapter>
 
 <chapter id="faq">
@@ -716,7 +500,7 @@ the number of players. After that, each player will be asked its name with anoth
 <qandaset id="faqlist">
 <qandaentry>
 <question>
-<para>What will be the first question concerning &kappname;?</para>
+<para>What will be the first question concerning &ksirk;?</para>
 </question>
 <answer>
 </answer>
@@ -734,25 +518,19 @@ distribution. -->
 
 <title>Credits and License</title>
 
-<para>
-&ksirk;
-</para>
-<para>
-Program copyright 2002-2012 Gael de Chalendar <email>kleag@free.fr</email>
-</para>
-<para>
-Program copyright 2013 Nemanja Hirsl <email>nemhirsl@gmail.com</email>
-</para>
-<para>
-Contributors:
+<para>&ksirk;</para>
+
+<para>Program copyright 2002-2012 Ga&euml;l de Chalendar <email>kleag@free.fr</email></para>
+
+<para>Program copyright 2013 Nemanja Hirsl <email>nemhirsl@gmail.com</email></para>
+
+<para>Contributors:
 Robin Doer,
-Albert Astals Cid,
+&Albert.Astals.Cid;,
 Michal Golunski (Polish translation).
 </para>
 
-<para>
-Documentation copyright 2002-2008 Gael de Chalendar <email>kleag@free.fr</email>
-</para>
+<para>Documentation copyright 2002-2008 Ga&euml;l de Chalendar <email>kleag@free.fr</email></para>
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
 
@@ -775,55 +553,31 @@ Documentation copyright 2002-2008 Gael de Chalendar <email>kleag@free.fr</email>
 <sect1 id="configuration">
 <title>Configuration</title>
 
-<para>
-  The settings menu entry opens a dialog that allows you to&nbsp;:
-          <screenshot>
-            <screeninfo>Preferences dialog</screeninfo>
-            <mediaobject>
-              <imageobject>
-                <imagedata fileref="preferences.png" format="PNG"/>
-              </imageobject>
-              <textobject>
-                <phrase>Preferences dialog</phrase>
-              </textobject>
-            </mediaobject>
-          </screenshot>
-</para>
-      <itemizedlist>
-        <listitem>
-          <para>
-      enable or disable the sounds&nbsp;;
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-      set the speed of the sprites (from slow to immediate)&nbsp;;
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-      enable or disable the contextual helps displayed in popups&nbsp;;
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-            show or hide the number of armies on each country. The following  snapshot shows the map when the number of armies are displayed.
-            <screenshot>
-              <screeninfo>Display of the number of armies</screeninfo>
-              <mediaobject>
-                <imageobject>
-                  <imagedata fileref="shownumberofarmies.png" format="PNG"/>
-                </imageobject>
-                <textobject>
-                  <phrase>Display of the number of armies</phrase>
-                </textobject>
-              </mediaobject>
-            </screenshot>
+<para>The <menuchoice><guimenu>Settings</guimenu> <guimenuitem>Configure &ksirk;...</guimenuitem></menuchoice> menu item opens a dialog that allows you to:</para>
 
-          </para>
-        </listitem>
-      </itemizedlist>
+<screenshot>
+  <screeninfo>Preferences dialog</screeninfo>
+  <mediaobject>
+    <imageobject><imagedata fileref="preferences.png" format="PNG"/></imageobject>
+    <textobject><phrase>Preferences dialog</phrase></textobject>
+  </mediaobject>
+</screenshot>
 
+<itemizedlist>
+  <listitem><para>enable or disable the sounds&nbsp;;</para></listitem>
+  <listitem><para>set the speed of the sprites (from slow to immediate)&nbsp;;</para></listitem>
+  <listitem><para>enable or disable the contextual helps displayed in popups&nbsp;;</para></listitem>
+  <listitem><para>show or hide the number of armies on each country. The following  snapshot shows the map when the number of armies are displayed.</para>
+
+    <screenshot>
+      <screeninfo>Display of the number of armies</screeninfo>
+      <mediaobject>
+        <imageobject><imagedata fileref="shownumberofarmies.png" format="PNG"/></imageobject>
+        <textobject><phrase>Display of the number of armies</phrase></textobject>
+        </mediaobject>
+    </screenshot>
+  </listitem>
+</itemizedlist>
 </sect1>
 
 </appendix>
@@ -839,16 +593,3 @@ sgml-indent-step:0
 sgml-indent-data:nil
 End:
 -->
-
-
-
-
-
-
-
-
-
-
-
-
-
