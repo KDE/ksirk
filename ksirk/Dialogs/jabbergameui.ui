@@ -262,7 +262,7 @@
               <bool>false</bool>
              </property>
              <property name="text">
-              <string>Load a Saved Game</string>
+              <string>Load a Saved Game...</string>
              </property>
             </widget>
            </item>

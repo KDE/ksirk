@@ -368,7 +368,7 @@ void KGameWindow::initActions()
   actionCollection()->addAction(m_zoomOutAction->objectName(), m_zoomOutAction);
 
   KStandardAction::preferences( this, SLOT(optionsConfigure()), actionCollection() );
-
+/*
   // specific ksirk action
   QString imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, "jabber.png");
   //   qCDebug(KSIRK_LOG) << "Trying to load button image file: " << imageFileName;
@@ -385,7 +385,7 @@ void KGameWindow::initActions()
   connect(m_jabberAction,SIGNAL(triggered(bool)),this,SLOT(slotJabberGame()));
   qCDebug(KSIRK_LOG) << "Adding action game_jabber";
   actionCollection()->addAction("game_jabber", m_jabberAction);
-  
+*/
   // specific ksirk action
   imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + '/' + CM_NEWNETGAME);
   //   qCDebug(KSIRK_LOG) << "Trying to load button image file: " << imageFileName;
@@ -1088,7 +1088,7 @@ bool KGameWindow::actionOpenGame()
 {
   qCDebug(KSIRK_LOG) << "KGameWindow::actionOpenGame";
 
-  QString fileName = QFileDialog::getOpenFileName(this, i18n("KsirK - Load Game"), QString(), "*.xml");
+  QString fileName = QFileDialog::getOpenFileName(this, i18nc("@title:window", "KsirK - Load Game"), QString(), "*.xml");
   if (!fileName.isEmpty())
   {
     m_fileName = fileName;

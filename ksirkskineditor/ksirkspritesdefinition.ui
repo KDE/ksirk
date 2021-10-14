@@ -107,7 +107,7 @@ The pool flag element will be rendered on a pixmap of height: (Height * Number o
           <item row="2" column="0" >
            <widget class="QLabel" name="label_3" >
             <property name="text" >
-             <string>Nb Frames:</string>
+             <string>Nb frames:</string>
             </property>
            </widget>
           </item>
@@ -124,7 +124,7 @@ The pool flag element will be rendered on a pixmap of height: (Height * Number o
           <item row="3" column="0" >
            <widget class="QLabel" name="label_4" >
             <property name="text" >
-             <string>Nb Versions:</string>
+             <string>Nb versions:</string>
             </property>
            </widget>
           </item>
@@ -204,7 +204,7 @@ Each version shows the sprite visible from one direction: the first one is direc
         <item row="2" column="0" >
          <widget class="QLabel" name="label_8" >
           <property name="text" >
-           <string>Nb Frames:</string>
+           <string>Nb frames:</string>
           </property>
          </widget>
         </item>
@@ -221,7 +221,7 @@ Each version shows the sprite visible from one direction: the first one is direc
         <item row="3" column="0" >
          <widget class="QLabel" name="label_7" >
           <property name="text" >
-           <string>Nb Versions:</string>
+           <string>Nb versions:</string>
           </property>
          </widget>
         </item>
@@ -295,7 +295,7 @@ Each version shows the sprite visible from one direction: the first one is direc
         <item row="2" column="0" >
          <widget class="QLabel" name="label_11" >
           <property name="text" >
-           <string>Nb Frames:</string>
+           <string>Nb frames:</string>
           </property>
          </widget>
         </item>
@@ -312,7 +312,7 @@ Each version shows the sprite visible from one direction: the first one is direc
         <item row="3" column="0" >
          <widget class="QLabel" name="label_12" >
           <property name="text" >
-           <string>Nb Versions:</string>
+           <string>Nb versions:</string>
           </property>
          </widget>
         </item>
@@ -388,7 +388,7 @@ Each version shows the sprite visible from one direction: the first one is direc
           <item row="2" column="0" >
            <widget class="QLabel" name="label_15" >
             <property name="text" >
-             <string>Nb Frames:</string>
+             <string>Nb frames:</string>
             </property>
            </widget>
           </item>
@@ -405,7 +405,7 @@ Each version shows the sprite visible from one direction: the first one is direc
           <item row="3" column="0" >
            <widget class="QLabel" name="label_16" >
             <property name="text" >
-             <string>Nb Versions:</string>
+             <string>Nb versions:</string>
             </property>
            </widget>
           </item>
@@ -483,7 +483,7 @@ Each version shows the sprite visible from one direction: the first one is direc
           <item row="2" column="0" >
            <widget class="QLabel" name="label_19" >
             <property name="text" >
-             <string>Nb Frames:</string>
+             <string>Nb frames:</string>
             </property>
            </widget>
           </item>
@@ -500,7 +500,7 @@ Each version shows the sprite visible from one direction: the first one is direc
           <item row="3" column="0" >
            <widget class="QLabel" name="label_20" >
             <property name="text" >
-             <string>Nb Versions:</string>
+             <string>Nb versions:</string>
             </property>
            </widget>
           </item>
@@ -578,7 +578,7 @@ Each version shows the sprite visible from one direction: the first one is direc
           <item row="2" column="0" >
            <widget class="QLabel" name="label_23" >
             <property name="text" >
-             <string>Nb Frames:</string>
+             <string>Nb frames:</string>
             </property>
            </widget>
           </item>
@@ -595,7 +595,7 @@ Each version shows the sprite visible from one direction: the first one is direc
           <item row="3" column="0" >
            <widget class="QLabel" name="label_24" >
             <property name="text" >
-             <string>Nb Versions:</string>
+             <string>Nb versions:</string>
             </property>
            </widget>
           </item>

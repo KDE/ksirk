@@ -122,7 +122,7 @@
        <item>
         <widget class="QPushButton" name="pbLoad" >
          <property name="text" >
-          <string>Load</string>
+          <string>Load...</string>
          </property>
         </widget>
        </item>

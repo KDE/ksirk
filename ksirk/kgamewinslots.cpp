@@ -451,7 +451,7 @@ void KGameWindow::slotSaveGame()
     }
     if (m_fileName.isEmpty())
     {
-      QString fileName = QFileDialog::getSaveFileName (this, i18n("KsirK - Save Game"), QString(), "*.xml");
+      QString fileName = QFileDialog::getSaveFileName (this, i18nc("@title:window", "KsirK - Save Game"), QString(), "*.xml");
       if ( QFile::exists(fileName)
           && (KMessageBox::questionYesNo (this,
                 i18n("%1 exists.\nDo you really want to overwrite it?",fileName),

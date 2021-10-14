@@ -48,7 +48,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>Sprites speed (slow, normal, rapid, immediate)</string>
+      <string>Sprites speed (slow, normal, rapid, immediate):</string>
      </property>
      <property name="wordWrap">
       <bool>false</bool>

@@ -136,13 +136,13 @@ InvasionSlider::InvasionSlider(KGameWindow* game, GameLogic::Country * attack, G
   //init. main layout
   if (invasionType == Invasion)
   {
-    setWindowTitle(i18n("Invasion"));
+    setWindowTitle(i18nc("@title:window", "Invasion"));
     wSlideLayout->addWidget(new QLabel(i18n("You are invading <font color=\"blue\">%1</font> with <font color=\"red\">%2</font>!", defender->i18name(), attack->i18name())),0,0);
     wSlideLayout->addWidget(new QLabel(i18n("<br><i>Choose the number of invading armies.</i>")),1,0);
   }
   else if (invasionType == Moving)
   {
-    setWindowTitle(i18n("Moving"));
+    setWindowTitle(i18nc("@title:window", "Moving"));
     wSlideLayout->addWidget(new QLabel(i18n("You are moving armies from <font color=\"red\">%1</font> to <font color=\"blue\">%2</font>!", attack->i18name(), defender->i18name())),0,0);
     wSlideLayout->addWidget(new QLabel(i18n("<br><i>Choose the number of armies to move.</i>")),1,0);
   }

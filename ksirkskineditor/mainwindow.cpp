@@ -363,7 +363,7 @@ void MainWindow::slotOpenSkin(const QString& dir)
   QString skinDir = dir;
   if (dir.isNull())
   {
-    skinDir = QFileDialog::getExistingDirectory(this, i18n("Choose the root folder of the skin to open"), QString());
+    skinDir = QFileDialog::getExistingDirectory(this, i18nc("@title:window", "Choose the root folder of the skin to open"), QString());
   }
   if (skinDir.isEmpty())
   {

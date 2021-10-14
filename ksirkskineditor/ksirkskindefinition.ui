@@ -43,7 +43,7 @@
       <item>
        <widget class="QLabel" name="label" >
         <property name="text" >
-         <string>Width x Height</string>
+         <string>Width x height:</string>
         </property>
        </widget>
       </item>
@@ -181,7 +181,7 @@
          <widget class="QLabel" name="label_7" >
           <property name="text" >
            <string>Edit the sprite definitions
-in the right dock</string>
+in the right dock.</string>
           </property>
          </widget>
         </item>
