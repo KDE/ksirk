@@ -172,7 +172,7 @@ your application. -->
     </mediaobject>
   </screenshot>
 
-  <para>To start a TCP/IP network game, choose the <guilabel>New Standard TCP/IP Network Game</guilabel> option on introduction screen. After pess this button you will be able to choose the network parameters: number of local players and TCP port on which waiting for connections.</para>
+  <para>To start a TCP/IP network game, choose the <guilabel>New Standard TCP/IP Network Game</guilabel> option on introduction screen. After pressing this button you will be able to choose the network parameters: number of local players and TCP port on which waiting for connections.</para>
 
   <screenshot>
     <screeninfo>Network game parameters dialog</screeninfo>
