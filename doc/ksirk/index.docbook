@@ -1,5 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY i18n-ksirkskineditor '<application>KsirK Skin Editor</application>'>
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % English "INCLUDE">
 ]>
@@ -162,7 +163,7 @@ your application. -->
     </varlistentry>
   </variablelist>
 
-  <para>If you hit <guibutton>New Local Game</guibutton> you will be presented with the <guilabel>New game properties</guilabel> dialog where you will be able to choose the number of players, the skin (or theme) to use, the game type (conquer the goal or have a specific goal) and finally if this game will be played with online players or if it is purely local. New skins can be downloaded using <guibutton>Download New Skins</guibutton> button.</para>
+  <para>If you hit <guibutton>New Local Game</guibutton> you will be presented with the <guilabel>New game properties</guilabel> dialog where you will be able to choose the number of players, the skin (or theme) to use, the game type (conquer the goal or have a specific goal) and finally if this game will be played with online players or if it is purely local. New skins can be downloaded using <guibutton>Download New Skins...</guibutton> button.</para>
 
   <screenshot>
     <screeninfo>The New Game dialog</screeninfo>
@@ -360,8 +361,8 @@ your application. -->
   </variablelist>
   </sect2>
 
-  <sect2  id="fight-solution" >
-  <title>Solution of the fight</title>
+  <sect2  id="fight-outcome" >
+  <title>Outcome of the fight</title>
 
   <para>For each army in the fight there is a corresponding die cast. The player who rolls a higher number on the dice, whether being from the attacker or defender, wins and the one to roll a smaller number on the dice loses armies according to the number of dice thrown.</para>
 
@@ -479,14 +480,14 @@ If you play a local game and want to communicate with the other players, well, l
 
 <para>Please refer to <ulink url="https://api.kde.org/">https://api.kde.org/</ulink> for the documentation of the API. It was quite complete but is currently a little bit outdated. There are no comments in the <literal role="extension">.cpp</literal> implementation files.</para>
 
-<para>Note that I originally developed this game under &Windows; with Borland C++ and WinG. I ported it to &Java; before converting back to C++ and &kde;. At the beginning I used French or a mix of French and English to name the identifiers (classnames, methods, members, &etc;). I also used French for the comments. When I decided to distribute this game, I decided to convert all to english... but I am clearly not a native English speaker: please suggest or make and submit corrections, to the code comments or to this documentation.</para>
+<para>Note that I originally developed this game under &Windows; with <application>Borland C++</application> and <application>WinG</application>. I ported it to &Java; before converting back to C++ and &kde;. At the beginning I used French or a mix of French and English to name the identifiers (classnames, methods, members, &etc;). I also used French for the comments. When I decided to distribute this game, I decided to convert all to english... but I am clearly not a native English speaker: please suggest or make and submit corrections, to the code comments or to this documentation.</para>
 
 </chapter>
 
 <chapter id="skins">
 <title>Creating new skins</title>
 
-<para>&ksirk; comes with a skin editor, named ksirkskineditor(!), that allows to edit all skin data, as soon as graphics (map, sprites, &etc;) are available in a &SVG; file. Please see the ksirkskineditor manual for further details.</para>
+<para>&ksirk; comes with a skin editor, named <command>ksirkskineditor</command>, that allows to edit all skin data, as soon as graphics (map, sprites, &etc;) are available in a &SVG; file. Please see the &i18n-ksirkskineditor; manual for further details.</para>
 
 </chapter>
 

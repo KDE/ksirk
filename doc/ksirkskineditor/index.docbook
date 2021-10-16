@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
   <!ENTITY ksirkskineditor '<application>KsirK Skin Editor</application>'>
+  <!ENTITY i18n-ksirkskineditor '<application>KsirK Skin Editor</application>'>
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % English "INCLUDE">
 ]>
@@ -8,7 +9,7 @@
 <book id="ksirkskineditor" lang="&language;">
 
 <bookinfo>
-<title>The &ksirkskineditor; Handbook</title>
+<title>The &i18n-ksirkskineditor; Handbook</title>
 
 <authorgroup>
   <author>
@@ -50,7 +51,7 @@ $applicationname xx.yy for applications with independent release schedule (extra
 <!-- Abstract about this handbook -->
 
 <abstract>
-  <para>&ksirk; is a computerized version of a well known strategy game. It is fully skinable. This manual explains how to create new skins from scratch, using a file browser, a &SVG; image editor and &ksirkskineditor;.</para>
+  <para>&ksirk; is a computerized version of a well known strategy game. It is fully skinable. This manual explains how to create new skins from scratch, using a file browser, a &SVG; image editor and &i18n-ksirkskineditor;.</para>
 </abstract>
 
 <!-- This is a set of Keywords for indexing by search engines.
@@ -86,23 +87,23 @@ consistent documentation style across all KDE apps. -->
 application that explains what it does and where to report
 problems. Basically a long version of the abstract.  Don't include a
 revision history. (see installation appendix comment) -->
-<para>&ksirk; is a computerized version of a well known strategy game. It is fully skinable. This manual explains how to create new skins from scratch, using a file browser, a &SVG; image editor and &ksirkskineditor;.</para>
+<para>&ksirk; is a computerized version of a well known strategy game. It is fully skinable. This manual explains how to create new skins from scratch, using a file browser, a &SVG; image editor and &i18n-ksirkskineditor;.</para>
 
 <screenshot>
-  <screeninfo>Here's a screenshot of &ksirkskineditor;</screeninfo>
+  <screeninfo>Here's a screenshot of &i18n-ksirkskineditor;</screeninfo>
   <mediaobject>
     <imageobject><imagedata fileref="main-snapshot.png" format="PNG"/></imageobject>
     <textobject><phrase>Screenshot</phrase></textobject>
   </mediaobject>
 </screenshot>
 
-<para>There is three main steps to create a new skin: creating the folders hierarchy; creating the graphics, all pooled inside a &SVG; file; and then placing sprites and naming things using &ksirkskineditor;.</para>
+<para>There is three main steps to create a new skin: creating the folders hierarchy; creating the graphics, all pooled inside a &SVG; file; and then placing sprites and naming things using &i18n-ksirkskineditor;.</para>
 </chapter>
 
 <chapter id="using-kapp">
 <title>Creating a &ksirk; skin</title>
 
-<para>&ksirk; is fully skinable. For who have graphic capabilities, creating a new skin is as simple as copying an existing one, editing or changing the graphics and updating the data in a <literal role="extension">.desktop</literal> configuration file, which is done using the &ksirkskineditor;. A last step is to edit the file describing what to install.</para>
+<para>&ksirk; is fully skinable. For who have graphic capabilities, creating a new skin is as simple as copying an existing one, editing or changing the graphics and updating the data in a <literal role="extension">.desktop</literal> configuration file, which is done using the &i18n-ksirkskineditor;. A last step is to edit the file describing what to install.</para>
 
 <para>All examples (text and images) are taken from the default skin of &ksirk;.</para>
 
@@ -133,7 +134,7 @@ revision history. (see installation appendix comment) -->
   <sect2 id="tdd">
   <title>The Data folder</title>
 
-  <para>This folder contains only one file, <filename>world.desktop</filename>. This file is a description of the content of the skin. It is used to describe the organization of the world and how to display it. You don't have to fill it manualy as it will be handled by the &ksirkskineditor;. But, for the sake of completeness, we will now describe its structure.</para>
+  <para>This folder contains only one file, <filename>world.desktop</filename>. This file is a description of the content of the skin. It is used to describe the organization of the world and how to display it. You don't have to fill it manualy as it will be handled by the &i18n-ksirkskineditor;. But, for the sake of completeness, we will now describe its structure.</para>
 
   <para>An <literal>onu</literal> group contains a number of country entries, a number of nationality entries and lastly a number of continent entries. Then various groups contain the description of the different sprites, the description of the different countries, continents, nationalities and goals.</para>
 
@@ -212,7 +213,7 @@ revision history. (see installation appendix comment) -->
     <sect3>
     <title>The sprites description groups</title>
 
-    <para>Each type of sprite (flag, infantry, cavalry, cannon, firing cannon and exploding cannon) is defined by a group. Only some sprites have a width entry. This entry is used for relative positioning during animations: the cannons, firing or exploding should not "move" around the country's flag during fight.</para>
+    <para>Each type of sprite (flag, infantry, cavalry, cannon, firing cannon and exploding cannon) is defined by a group. Only some sprites have a width entry. This entry is used for relative positioning during animations: the cannons, firing or exploding should not <quote>move</quote> around the country's flag during fight.</para>
 
     <table>
       <title>Sprite description group entries</title>
@@ -492,7 +493,7 @@ revision history. (see installation appendix comment) -->
           <row>
             <entry><literal>mark1</literal></entry>
             <entry><mediaobject><imageobject><imagedata fileref="mark1.png" format="PNG"/></imageobject></mediaobject></entry>
-            <entry>This mark is added to fighting sprites to show the number of armies they represent, here 1. There is also a mark2 and a mark3 elements.</entry>
+            <entry>This mark is added to fighting sprites to show the number of armies they represent, here 1. There is also a <literal>mark2</literal> and a <literal>mark3</literal> elements.</entry>
           </row>
         </tbody>
       </tgroup>
@@ -598,12 +599,12 @@ revision history. (see installation appendix comment) -->
 </sect1>
 
 <sect1 id="using-kse">
-<title>Using the &ksirkskineditor;</title>
+<title>Using the &i18n-ksirkskineditor;</title>
 
-<para>After creating the graphics in the right folder and &SVG; file, you just have to create countries, players, &etc; and associate them with the right &SVG; element in the pool. This can be done with the &ksirkskineditor;. Note that each part of this application is auto-described by tooltips and contextual help usually reachable through the <keycombo action="simul">&Ctrl;<keycap>F1</keycap></keycombo> shortcut.</para>
+<para>After creating the graphics in the right folder and &SVG; file, you just have to create countries, players, &etc; and associate them with the right &SVG; element in the pool. This can be done with the &i18n-ksirkskineditor;. Note that each part of this application is auto-described by tooltips and contextual help usually reachable through the <keycombo action="simul">&Ctrl;<keycap>F1</keycap></keycombo> shortcut.</para>
 
 <screenshot>
-  <screeninfo>Here's a screenshot of &ksirkskineditor;</screeninfo>
+  <screeninfo>Here's a screenshot of &i18n-ksirkskineditor;</screeninfo>
   <mediaobject>
     <imageobject><imagedata fileref="main-snapshot.png" format="PNG"/></imageobject>
     <textobject><phrase>Screenshot</phrase></textobject>
@@ -616,7 +617,7 @@ revision history. (see installation appendix comment) -->
 <title>Command Reference</title>
 
 <sect1 id="kapp-mainwindow">
-<title>The main &ksirkskineditor; window</title>
+<title>The main &i18n-ksirkskineditor; window</title>
 
   <sect2>
   <title>The buttons</title>
@@ -641,7 +642,7 @@ revision history. (see installation appendix comment) -->
         </inlinemediaobject>
         <guibutton>Save</guibutton>
       </term>
-      <listitem><para><action>Saves the currently edited skin</action></para></listitem>
+      <listitem><para><action>Saves the currently edited skin.</action></para></listitem>
     </varlistentry>
   </variablelist>
   </sect2>
@@ -649,7 +650,7 @@ revision history. (see installation appendix comment) -->
 </chapter>
 
 <chapter id="developers">
-<title>Developer's Guide to &ksirkskineditor;</title>
+<title>Developer's Guide to &i18n-ksirkskineditor;</title>
 
 <para>Please refer to <ulink url="https://api.kde.org/">https://api.kde.org/</ulink> for the documentation of the API.</para>
 </chapter>
