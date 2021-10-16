@@ -28,7 +28,7 @@
      <item>
       <widget class="QLabel" name="lImage1" >
        <property name="text" >
-        <string>LeftImg</string>
+        <string notr="true">LeftImg</string>
        </property>
       </widget>
      </item>
@@ -42,7 +42,7 @@
      <item>
       <widget class="QLabel" name="lImage2" >
        <property name="text" >
-        <string>RightImg</string>
+        <string notr="true">RightImg</string>
        </property>
       </widget>
      </item>

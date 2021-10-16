@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
                        i18n("For help and user manual, please see\nthe KsirK web site."),
                        QStringLiteral("https://kde.org/applications/games/org.kde.ksirk"));
 
-  aboutData.addAuthor(i18n("Gael de Chalendar aka Kleag"),QStringLiteral(), QStringLiteral("kleag@free.fr"));
+  aboutData.addAuthor(i18n("Gaël de Chalendar aka Kleag"),QStringLiteral(), QStringLiteral("kleag@free.fr"));
   aboutData.addAuthor(i18n("Nemanja Hirsl"),i18n("Current maintainer"), QStringLiteral("nemhirsl@gmail.com"));
   aboutData.addAuthor(i18n("Robin Doer"));
   aboutData.addAuthor(i18n("Albert Astals Cid"));

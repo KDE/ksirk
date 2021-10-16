@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
     i18n("(c) 2008, Gaël de Chalendar\n"),
     i18n("For help and user manual, please see\nThe KsirK Web site"),
     QStringLiteral("https://kde.org/applications/games/org.kde.ksirk"));
-  aboutData.addAuthor(i18n("Gael de Chalendar aka Kleag"),QString(), QStringLiteral("kleag@free.fr"));
+  aboutData.addAuthor(i18n("Gaël de Chalendar aka Kleag"),QString(), QStringLiteral("kleag@free.fr"));
   QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-locale")));
 
     QCommandLineParser parser;

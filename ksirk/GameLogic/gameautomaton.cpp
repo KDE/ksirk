@@ -2365,7 +2365,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     {
       if (explosing != 0 && explosing != 1 && explosing != 2)
       {
-        KMessageBox::information(m_game, i18n("Problem : no one destroyed"), i18n("Ksirk - Error!"));
+        KMessageBox::information(m_game, i18n("Problem : no one destroyed"), i18n("KsirK - Error!"));
       }
       else
       {

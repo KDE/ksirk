@@ -13,7 +13,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Ksirk - New game properties</string>
+   <string>KsirK - New game properties</string>
   </property>
   <property name="sizeGripEnabled" stdset="0">
    <bool>true</bool>
@@ -123,7 +123,7 @@
      <item>
       <widget class="QPushButton" name="ghnsbutton">
        <property name="text">
-        <string>Download New Skins</string>
+        <string>Download New Skins...</string>
        </property>
       </widget>
      </item>
@@ -132,7 +132,7 @@
    <item>
     <widget class="QLabel" name="skinDescLabel">
      <property name="text">
-      <string>skinDescLabel</string>
+      <string notr="true">skinDescLabel</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignVCenter</set>
