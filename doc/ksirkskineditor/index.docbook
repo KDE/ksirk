@@ -600,7 +600,7 @@ revision history. (see installation appendix comment) -->
 <sect1 id="using-kse">
 <title>Using the &ksirkskineditor;</title>
 
-<para>After creating the graphics in the right folder and &SVG; file, you just have to create countries, players, &etc; and associate them with the right &SVG; element in the pool. This can be done with the &ksirkskineditor;. Note that each part of this application is auto-described by tooltips and contextual help usualy reachable through the <keycombo action="simul">&Ctrl;<keycap>F1</keycap></keycombo> shortcut.</para>
+<para>After creating the graphics in the right folder and &SVG; file, you just have to create countries, players, &etc; and associate them with the right &SVG; element in the pool. This can be done with the &ksirkskineditor;. Note that each part of this application is auto-described by tooltips and contextual help usually reachable through the <keycombo action="simul">&Ctrl;<keycap>F1</keycap></keycombo> shortcut.</para>
 
 <screenshot>
   <screeninfo>Here's a screenshot of &ksirkskineditor;</screeninfo>
