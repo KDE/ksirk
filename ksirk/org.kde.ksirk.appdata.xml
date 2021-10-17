@@ -4,36 +4,6 @@
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>KsirK</name>
-  <name xml:lang="ca">KSirk</name>
-  <name xml:lang="ca-valencia">KSirk</name>
-  <name xml:lang="cs">KSirk</name>
-  <name xml:lang="da">KSirk</name>
-  <name xml:lang="de">KSirk</name>
-  <name xml:lang="en-GB">KSirk</name>
-  <name xml:lang="es">KSirk</name>
-  <name xml:lang="et">KSirk</name>
-  <name xml:lang="fi">KSirk</name>
-  <name xml:lang="fr">KSirk</name>
-  <name xml:lang="gl">KSirk</name>
-  <name xml:lang="id">KSirk</name>
-  <name xml:lang="it">KSirk</name>
-  <name xml:lang="ko">KsirK</name>
-  <name xml:lang="nl">KSirk</name>
-  <name xml:lang="nn">KSirk</name>
-  <name xml:lang="pl">KSirk</name>
-  <name xml:lang="pt">KSirk</name>
-  <name xml:lang="pt-BR">KSirk</name>
-  <name xml:lang="ru">KSirk</name>
-  <name xml:lang="sk">KSirk</name>
-  <name xml:lang="sl">KSirk</name>
-  <name xml:lang="sr">К‑сирк</name>
-  <name xml:lang="sr-Latn">KSirk</name>
-  <name xml:lang="sr-ijekavian">К‑сирк</name>
-  <name xml:lang="sr-ijekavianlatin">KSirk</name>
-  <name xml:lang="sv">Ksirk</name>
-  <name xml:lang="uk">KsirK</name>
-  <name xml:lang="x-test">xxKSirkxx</name>
-  <name xml:lang="zh-TW">KSirk</name>
   <summary>World Domination Strategy Game</summary>
   <summary xml:lang="ca">Joc d'estratègia de dominació mundial</summary>
   <summary xml:lang="ca-valencia">Joc d'estratègia de dominació mundial</summary>
@@ -68,7 +38,7 @@
       KsirK is a computerized version of the well known strategic board game Risk.
       The goal of the game is simply to conquer the world by attacking your neighbors with your armies.
     </p>
-    <p xml:lang="ca">El KsirK és una versió per a ordinador del famós joc d'estratègia de tauler Risk. L'objectiu del joc és senzillament conquerir el món atacant els veïns amb els exèrcits.</p>
+    <p xml:lang="ca">El KsirK és una versió per a ordinador del famós joc d'estratègia de tauler Risk. L'objectiu del joc és senzillament conquerir el món atacant els veïns amb els batallons.</p>
     <p xml:lang="ca-valencia">El KsirK és una versió per a ordinador del famós joc d'estratègia de tauler Risk. L'objectiu del joc és senzillament conquerir el món atacant els veïns amb els exèrcits.</p>
     <p xml:lang="de">KsirK ist eine computergestützte Version des bekannten Strategiespiels Risiko. Das Spielziel ist es, die Weltherrschaft zu erlangen. Dies geschieht durch das Angreifen der Gegner in den Nachbarländern mit den eigenen Armeen.</p>
     <p xml:lang="en-GB">KsirK is a computerised version of the well known strategic board game Risk. The goal of the game is simply to conquer the world by attacking your neighbours with your armies.</p>
@@ -155,7 +125,7 @@
       <li xml:lang="x-test">xxSupport for 1-6 human or computer (AI) playersxx</li>
       <li xml:lang="zh-TW">支援 1-6 個人或電腦 (AI) 玩家</li>
       <li>Multi-player gaming over a network</li>
-      <li xml:lang="ca">Jocs multijugador per la xarxa</li>
+      <li xml:lang="ca">Partides multijugador en xarxa</li>
       <li xml:lang="ca-valencia">Jocs multijugador per la xarxa</li>
       <li xml:lang="de">Spiele mit mehreren Teilnehmern im Netzwerk</li>
       <li xml:lang="en-GB">Multi-player gaming over a network</li>
@@ -182,7 +152,7 @@
       <li xml:lang="uk">Гра з декількома учасниками мережею</li>
       <li xml:lang="x-test">xxMulti-player gaming over a networkxx</li>
       <li>You can easily create new skins with SVG graphics and the skin editor</li>
-      <li xml:lang="ca">Es poden crear fàcilment aparences noves amb gràfics SVG i l'editor d'aparences</li>
+      <li xml:lang="ca">Es poden crear amb facilitat aparences noves amb gràfics SVG i l'editor d'aparences</li>
       <li xml:lang="ca-valencia">Es poden crear fàcilment aparences noves amb gràfics SVG i l'editor d'aparences</li>
       <li xml:lang="de">Sie können neue Designs mit SVG-Grafik und dem Designeditor erstellen</li>
       <li xml:lang="en-GB">You can easily create new skins with SVG graphics and the skin editor</li>
@@ -209,7 +179,7 @@
       <li xml:lang="uk">Можливість простого створення нових обгорток із графікою SVG та редактор обгорток</li>
       <li xml:lang="x-test">xxYou can easily create new skins with SVG graphics and the skin editorxx</li>
       <li>Hot New Stuff support. You can easily download and install new skins</li>
-      <li xml:lang="ca">Permet obtenir novetats candents. Es poden descarregar i instal·lar fàcilment aparences noves</li>
+      <li xml:lang="ca">Permet obtenir novetats candents. Es poden descarregar i instal·lar amb facilitat aparences noves</li>
       <li xml:lang="ca-valencia">Permet obtindre novetats candents. Es poden descarregar i instal·lar fàcilment aparences noves</li>
       <li xml:lang="de">Sie können neue Designs herunterladen und installieren</li>
       <li xml:lang="en-GB">Hot New Stuff support. You can easily download and install new skins</li>
