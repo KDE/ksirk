@@ -4,6 +4,13 @@
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>KsirK</name>
+  <name xml:lang="ca">KsirK</name>
+  <name xml:lang="en-GB">KsirK</name>
+  <name xml:lang="es">KsirK</name>
+  <name xml:lang="nl">KsirK</name>
+  <name xml:lang="sv">Ksirk</name>
+  <name xml:lang="uk">KsirK</name>
+  <name xml:lang="x-test">xxKsirKxx</name>
   <summary>World Domination Strategy Game</summary>
   <summary xml:lang="ca">Joc d'estratègia de dominació mundial</summary>
   <summary xml:lang="ca-valencia">Joc d'estratègia de dominació mundial</summary>
