@@ -19,3 +19,4 @@ Dependencies:
     'frameworks/kwallet': '@stable'
     'frameworks/kwidgetsaddons': '@stable'
     'frameworks/kxmlgui': '@stable'
+    'libraries/phonon': '@stable'
