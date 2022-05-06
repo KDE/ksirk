@@ -20,3 +20,5 @@ Dependencies:
     'frameworks/kwidgetsaddons': '@stable'
     'frameworks/kxmlgui': '@stable'
     'libraries/phonon': '@stable'
+Options:
+  require-passing-tests-on: [ 'Linux', 'FreeBSD']
