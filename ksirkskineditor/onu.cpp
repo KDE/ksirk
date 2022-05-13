@@ -999,7 +999,8 @@ void ONU::loadPoolIds(const QString& fileName)
     {
       qCDebug(KSIRKSKINEDITOR_LOG) << xml.text().toString();
       QXmlStreamAttributes attributes = xml.attributes ();
-      QStringRef id = attributes.value(QLatin1String(""), QStringLiteral("id") );
+      auto id = attributes.value(QLatin1String(""), QStringLiteral("id") );
+
       if (!id.isEmpty() && !reg.exactMatch(id.toString()))
       {
         m_poolIds.push_back(id.toString());

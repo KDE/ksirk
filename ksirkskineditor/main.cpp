@@ -38,10 +38,6 @@ This is the standard main function of a KDE application
 #include <QCommandLineParser>
 #include <QCommandLineOption>
 
-static const char *description =
-    I18N_NOOP("KsirK Skin Editor");
-// INSERT A DESCRIPTION FOR YOUR APPLICATION HERE
-
 int main(int argc, char *argv[])
 {
   qCDebug(KSIRKSKINEDITOR_LOG) << "Hello World!";
@@ -53,7 +49,7 @@ int main(int argc, char *argv[])
     QStringLiteral("ksirkskineditor"),
     i18n("KsirK Skin Editor"),
     QStringLiteral(KSIRK_VERSION_STRING),
-    i18n(description),
+    i18n("KsirK Skin Editor"),
     KAboutLicense::GPL,
     i18n("(c) 2008, Gaël de Chalendar\n"),
     i18n("For help and user manual, please see\nThe KsirK Web site"),

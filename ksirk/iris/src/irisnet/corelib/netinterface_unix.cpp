@@ -177,7 +177,11 @@ static QHostAddress linux_ipv6_to_qaddr(const QString &in)
 	for(int n = 0; n < 16; ++n)
 	{
 		bool ok;
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 		int x = in.midRef(n * 2, 2).toInt(&ok, 16);
+#else
+        int x = QStringView(in).mid(n * 2, 2).toInt(&ok, 16);
+#endif
 		if(!ok)
 			return out;
 		raw[n] = (quint8)x;
@@ -196,7 +200,11 @@ static QHostAddress linux_ipv4_to_qaddr(const QString &in)
 	for(int n = 0; n < 4; ++n)
 	{
 		bool ok;
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 		int x = in.midRef(n * 2, 2).toInt(&ok, 16);
+#else
+        int x = QStringView(in).mid(n * 2, 2).toInt(&ok, 16);
+#endif
 		if(!ok)
 			return out;
 		rawp[n] = (unsigned char )x;

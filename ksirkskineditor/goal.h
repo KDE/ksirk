@@ -22,6 +22,7 @@
 
 #include <QDataStream>
 #include <iostream>
+#include <QList>
 
 namespace KsirkSkinEditor
 {

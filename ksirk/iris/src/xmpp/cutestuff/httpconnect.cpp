@@ -65,7 +65,11 @@ static bool extractMainHeader(const QString &line, QString *proto, int *code, QS
 	if(n2 == -1)
 		return false;
 	if(code)
-		*code = line.midRef(n, n2-n).toInt();
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+        *code = line.midRef(n, n2-n).toInt();
+#else
+        *code = QStringView(line).mid(n, n2-n).toInt();
+#endif
 	n = n2+1;
 	if(msg)
 		*msg = line.mid(n);

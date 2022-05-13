@@ -24,6 +24,7 @@
 
 #include <qdom.h>
 #include <QList>
+#include <QStringList>
 
 #include "iris_export.h"
 
@@ -31,7 +32,6 @@ class QDateTime;
 class QRect;
 class QSize;
 class QColor;
-class QStringList;
 
 class IRIS_EXPORT XDomNodeList
 {
