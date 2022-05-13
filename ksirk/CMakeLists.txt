@@ -129,15 +129,15 @@ ecm_add_app_icon(ksirk_SRCS ICONS ${ICONS_SRCS})
 add_executable(ksirk ${ksirk_SRCS})
 
 target_link_libraries(ksirk
-    Qt5::Xml
-    Qt5::Svg
-    qca-qt5
+    Qt::Xml
+    Qt::Svg
+    qca-qt${QT_MAJOR_VERSION}
     iris_ksirk
     KF5::Crash
     KF5::KIOCore
     KF5::NewStuff
     KF5::Wallet
-    Phonon::phonon4qt5
+    Phonon::phonon4qt${QT_MAJOR_VERSION}
     KF5KDEGames
     KF5KDEGamesPrivate
 )

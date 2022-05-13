@@ -51,15 +51,20 @@ kconfig_add_kcfg_files( ksirkskineditor_SRCS ksirkskineditorsettings.kcfgc )
 add_executable(ksirkskineditor ${ksirkskineditor_SRCS})
 
 target_link_libraries(ksirkskineditor
-  Qt5::Xml
-  Qt5::Svg 
+  Qt::Xml
+  Qt::Svg
   KF5::KIOCore 
-  Phonon::phonon4qt5
+  Phonon::phonon4qt${QT_MAJOR_VERSION}
   KF5::XmlGui
   KF5KDEGames
   KF5KDEGamesPrivate
   ${CRYPT_LIBS}
  )
+if (QT_MAJOR_VERSION STREQUAL "6")
+    target_link_libraries(ksirkskineditor
+        Qt6::SvgWidgets)
+endif()
+
 
 install( TARGETS ksirkskineditor ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
