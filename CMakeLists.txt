@@ -66,6 +66,10 @@ ecm_setup_version(${RELEASE_SERVICE_VERSION} VARIABLE_PREFIX KSIRK VERSION_HEADE
 add_subdirectory(ksirk)
 add_subdirectory(ksirkskineditor)
 add_subdirectory(doc)
+
+ki18n_install(po)
+kdoctools_install(po)
+
 ecm_qt_install_logging_categories(
         EXPORT KSIRK
         FILE ksirk.categories
