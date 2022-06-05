@@ -28,7 +28,13 @@
 #include <QStandardPaths>
 #include <KMessageBox>
 #include <KConfigDialog>
+
+#include <knewstuff_version.h>
+#if KNEWSTUFF_VERSION >= QT_VERSION_CHECK(5, 95, 0)
 #include <KNS3/DownloadDialog>
+#else
+#include <downloaddialog.h>
+#endif
 
 #include <QDir>
 #include <QStringList>
