@@ -26,7 +26,6 @@
 #include <QDateTime>
 #include <QSize>
 #include <QRect>
-#include <QStringList>
 #include <QColor>
 
 //----------------------------------------------------------------------------
