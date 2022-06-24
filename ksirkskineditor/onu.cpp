@@ -37,6 +37,7 @@
 #include <KMessageBox>
 #include <KConfig>
 #include <KConfigGroup>
+#include <QRegExp>
 
 namespace KsirkSkinEditor
 {
