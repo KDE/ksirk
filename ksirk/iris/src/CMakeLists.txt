@@ -1,5 +1,4 @@
-# FIND_PACKAGE(QCA2 REQUIRED)
-FIND_PACKAGE(ZLIB REQUIRED)
+find_package(ZLIB REQUIRED)
 
 set(libiris_SRCS
 	#irisnet/appledns/appledns.cpp
@@ -92,7 +91,6 @@ include_directories(
 	xmpp/jid
 	xmpp/xmpp-core
 	xmpp/xmpp-im
-  ${QCA2_INCLUDE_DIR}
   )
 qt_wrap_cpp(libiris_SRCS
 xmpp/xmpp-im/xmpp_client.h
@@ -134,7 +132,7 @@ endif()
 
 add_library(iris_ksirk SHARED ${libiris_SRCS})
 
-set(iris_ksirk_libs Qt::Core Qt::Gui Qt::Network Qt::Xml ${IDN_LIBRARY} qca-qt${QT_MAJOR_VERSION} ${ZLIB_LIBRARIES} Qt::Widgets)
+set(iris_ksirk_libs Qt::Core Qt::Gui Qt::Network Qt::Xml ${IDN_LIBRARY} qca-qt${QT_MAJOR_VERSION} ZLIB::ZLIB Qt::Widgets)
 if(WIN32)
   set(iris_ksirk_libs ${iris_ksirk_libs} ws2_32)
 endif(WIN32)
