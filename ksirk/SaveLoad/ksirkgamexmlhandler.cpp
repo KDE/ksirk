@@ -53,7 +53,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
     QString wfv =SAVE_GAME_FILE_FORMAT_VERSION;
     if (fv!=wfv)
     {
-      KMessageBox::sorry(0, 
+      KMessageBox::error(0,
           i18n("Wrong save game format. Waited %1 and got %2!",QString(SAVE_GAME_FILE_FORMAT_VERSION),atts.value("formatVersion")),
           i18n("KsirK - Cannot load!"));
 

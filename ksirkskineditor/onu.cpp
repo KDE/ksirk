@@ -985,7 +985,7 @@ void ONU::loadPoolIds(const QString& fileName)
   QFile file(fileName);
   if (!file.open(QFile::ReadOnly | QFile::Text))
   {
-    KMessageBox::sorry(0,
+    KMessageBox::error(0,
                         i18n("Cannot read file %1:\n%2.",fileName,file.errorString()),
                         i18n("PoolLoader"));
                         return;

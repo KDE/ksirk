@@ -1509,7 +1509,7 @@ void GameAutomaton::changePlayerName(Player* player)
       if (nomEntre.isEmpty())
       {
         mes = i18n("Error - Player %1, you have to choose a name.", 1);
-        KMessageBox::sorry(m_game, mes, i18n("Error"));
+        KMessageBox::error(m_game, mes);
         nomEntre = i18nc("@info Forged player name", "Player%1", 1);
       }
       else 

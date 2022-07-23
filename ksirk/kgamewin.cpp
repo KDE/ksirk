@@ -2312,7 +2312,7 @@ bool KGameWindow::nextPlayerRecycling()
     qCDebug(KSIRK_LOG) << "You must distribute all your armies";
     if (!currentPlayer()->isVirtual() && !currentPlayer()->isAI())
     {
-      KMessageBox::sorry(0, i18n("You must distribute\nall your armies"), i18n("KsirK"));
+      KMessageBox::error(0, i18n("You must distribute\nall your armies"), i18n("KsirK"));
     }
     return false;
   }
