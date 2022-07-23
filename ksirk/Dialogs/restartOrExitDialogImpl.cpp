@@ -22,7 +22,6 @@
 #include <KLocalizedString>
 #include "ksirk_debug.h"
 #include <QStandardPaths>
-#include <KMessageBox>
 
 #include <QSpinBox>
 #include <QCheckBox>

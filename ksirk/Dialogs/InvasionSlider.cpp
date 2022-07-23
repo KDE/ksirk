@@ -63,7 +63,6 @@
 #include <QVBoxLayout>
 
 // include files for KDE
-#include <KMessageBox>
 #include <KLocalizedString>
 #include <KConfig>
 #include <KStandardGameAction>

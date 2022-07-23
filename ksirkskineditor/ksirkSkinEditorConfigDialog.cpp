@@ -28,7 +28,6 @@
 #include <QPushButton>
 #include <KStandardAction>
 
-#include <KMessageBox>
 #include <KLocalizedString>
 
 #include <QSlider>
