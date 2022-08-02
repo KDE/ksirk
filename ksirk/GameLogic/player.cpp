@@ -48,7 +48,7 @@ Player::Player(
   m_goal(automaton),
   m_delayedInitNationName(""),
   m_waitedAck(""),
-  m_flag(0)
+  m_flag(nullptr)
 {
   qCDebug(KSIRK_LOG) << "Player constructor";
   setAsyncInput(true);
@@ -302,7 +302,7 @@ bool Player::save (QDataStream &stream)
 Nationality* Player::getNation() 
 {
   qCDebug(KSIRK_LOG) << "Player::getNation for " << name();
-  if (m_nation == 0 && !m_delayedInitNationName.isEmpty())
+  if (m_nation == nullptr && !m_delayedInitNationName.isEmpty())
   {
     qCCritical(KSIRK_LOG) << "  retrieving delayed nation " << m_delayedInitNationName ;
     setNation(m_delayedInitNationName);
@@ -313,7 +313,7 @@ Nationality* Player::getNation()
 void Player::setNation(const QString& nationName)
 {
   m_nation = m_automaton->game()->theWorld()-> nationNamed(nationName);
-  if (m_nation == 0)
+  if (m_nation == nullptr)
   {
 //     qCDebug(KSIRK_LOG) << "Delaying nation initialization ("<<nationName<<") for " << name();
     m_delayedInitNationName = nationName;
@@ -325,8 +325,8 @@ void Player::setFlag()
 {
 /*  if (m_flag != 0)
     delete m_flag;*/
-  m_flag = 0;
-  if (m_nation != 0)
+  m_flag = nullptr;
+  if (m_nation != nullptr)
   {
     m_flag = new AnimSprite(
                             m_nation->flagFileName(), 

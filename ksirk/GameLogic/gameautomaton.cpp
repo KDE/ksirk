@@ -151,7 +151,7 @@ GameAutomaton::GameAutomaton() :
     KGame(),
     m_aicannotrunhack(true),
     m_state(INIT),
-    m_game(0),
+    m_game(nullptr),
     m_networkPlayersNumber(0),
     m_currentPlayer(""),
     m_currentPlayerPlayed(false),
@@ -234,13 +234,13 @@ Player* GameAutomaton::getAnyLocalPlayer()
       return (Player*)(*it);
     }
   }
-  return 0;
+  return nullptr;
 }
 
 GameAutomaton::GameState GameAutomaton::run()
 {
 //   qCDebug(KSIRK_LOG) << "(KGame running=" <<  (gameStatus()==KGame::Run) << ")";
-  if (m_game == 0 || gameStatus() == KGame::Pause)
+  if (m_game == nullptr || gameStatus() == KGame::Pause)
   {
     QTimer::singleShot(200, this, &GameAutomaton::run);
     return m_state;
@@ -321,7 +321,7 @@ GameAutomaton::GameState GameAutomaton::run()
   switch (m_state)
   {
   case INIT:
-    if (currentPlayer() != 0 && isAdmin())
+    if (currentPlayer() != nullptr && isAdmin())
     {
       if  ( (event == "actionLButtonDown") && (m_game->playerPutsInitialArmy(point)) )
       {
@@ -672,7 +672,7 @@ GameAutomaton::GameState GameAutomaton::run()
       {
       if (allLocalPlayersComputer())
         {
-          m_game->getRightDialog()->updateRecycleDetails(NULL,true,0);
+          m_game->getRightDialog()->updateRecycleDetails(nullptr,true,0);
           m_game->displayRecyclingButtons();
         }
       }
@@ -693,7 +693,7 @@ GameAutomaton::GameState GameAutomaton::run()
       stream << quint32(2);
       sendMessage(buffer,ActionDefense);
     }
-    else if ( m_game->secondCountry() != 0
+    else if ( m_game->secondCountry() != nullptr
           && !m_game->secondCountry()->owner()->isVirtual()
           && isDefenseAuto()
           && (m_game->secondCountry()->owner()->getNbDefense() == 0) )
@@ -1049,7 +1049,7 @@ void GameAutomaton::createIO(KPlayer *player,KGameIO::IOMode io)
   }
   else if (io&AIPLAYERIO)
   {
-    if (dynamic_cast<AIPlayer*>(player) != 0)
+    if (dynamic_cast<AIPlayer*>(player) != nullptr)
     {
       /*AIPlayerIO* input =*/ new AIPlayerIO(dynamic_cast<AIPlayer*>(player));
     }
@@ -1138,8 +1138,8 @@ void GameAutomaton::setGoalFor(Player* player)
   qCDebug(KSIRK_LOG) << "Goal for " << player->name() << " is of type " << goal->type();
   if (goal->type() == Goal::GoalPlayer)
   {
-    Player* target = 0;
-    while (target==0 || target->id() == player->id())
+    Player* target = nullptr;
+    while (target==nullptr || target->id() == player->id())
     {
       unsigned int max = playerList()->count();
       unsigned int playerNum = Dice::roll(max);
@@ -1149,7 +1149,7 @@ void GameAutomaton::setGoalFor(Player* player)
       for (; j < playerNum; j++,itp++) {}
       target = dynamic_cast< Player* >(*itp);
     }
-    if (target != 0)
+    if (target != nullptr)
     {
 //       qCDebug(KSIRK_LOG) << "Target choice for " << player->name() << ": " << target->name();
       goal->players().push_back(target->name());
@@ -1194,7 +1194,7 @@ bool GameAutomaton::joinNetworkGame()
 bool GameAutomaton::connectToServ()
 {
   qCDebug(KSIRK_LOG);
-  if (messageServer() != 0)
+  if (messageServer() != nullptr)
   {
     QObject::disconnect(messageServer(),&KMessageServer::connectionLost,
                         this,&GameAutomaton::slotConnectionToClientBroken);
@@ -1219,7 +1219,7 @@ bool GameAutomaton::joinJabberGame(const QString& nick)
     state(INIT);
     savedState(INVALID);
     
-    if (messageServer() != 0)
+    if (messageServer() != nullptr)
     {
       QObject::disconnect(messageServer(),&KMessageServer::connectionLost,
                            this,&GameAutomaton::slotConnectionToClientBroken);
@@ -1254,7 +1254,7 @@ KPlayer * GameAutomaton::createPlayer(int rtti,
   qCDebug(KSIRK_LOG) << "(" << rtti << ", " << isVirtual << ")";
   if (rtti == 1)
   {
-    Player* p = new Player(this, "", 0, 0);
+    Player* p = new Player(this, "", 0, nullptr);
     p->setVirtual(isVirtual);
     if (!isVirtual)
     {
@@ -1265,7 +1265,7 @@ KPlayer * GameAutomaton::createPlayer(int rtti,
   }
   else if (rtti == 2)
   {
-    AIPlayer* aip = new AIColsonPlayer("", 0, 0,  *playerList(), m_game->theWorld(),
+    AIPlayer* aip = new AIColsonPlayer("", 0, nullptr,  *playerList(), m_game->theWorld(),
                                    this);
     aip->stop();
     aip->setVirtual(isVirtual);
@@ -1279,7 +1279,7 @@ KPlayer * GameAutomaton::createPlayer(int rtti,
   else 
   {
     qCCritical(KSIRK_LOG) << "No rtti given... creating a Player";
-    Player* p = new Player(this, "", 0, 0);
+    Player* p = new Player(this, "", 0, nullptr);
     p->setVirtual(isVirtual);
     if (!isVirtual)
     {
@@ -1306,7 +1306,7 @@ Player* GameAutomaton::playerNamed(const QString& playerName)
   }
   qCCritical(KSIRK_LOG) << "GameAutomaton::playerNamed: there is no player named " 
       << playerName ;
-  return 0;
+  return nullptr;
 }
 
 Player* GameAutomaton::currentPlayer() 
@@ -1315,7 +1315,7 @@ Player* GameAutomaton::currentPlayer()
   {
     return playerNamed(m_currentPlayer);
   }
-  else return 0;
+  else return nullptr;
 }
 
 void GameAutomaton::currentPlayer(Player* player) 
@@ -1602,7 +1602,7 @@ void GameAutomaton::slotPropertyChanged(KGamePropertyBase *prop,KGame *)
   {
     qCDebug(KSIRK_LOG) << "skin changed to: " << m_skin ;
     m_game->newSkin();
-    if (m_game->theWorld()!=0)
+    if (m_game->theWorld()!=nullptr)
     {
       m_game->theWorld()->reset();
     }
@@ -1921,7 +1921,7 @@ void GameAutomaton::displayGoals()
   PlayersArray::iterator it_end = playerList()->end();
   for (; it != it_end; it++)
   {
-    if ( (dynamic_cast<Player*>(*it) != 0)
+    if ( (dynamic_cast<Player*>(*it) != nullptr)
         && ( ! dynamic_cast<Player*>(*it)-> isVirtual() )
         && ( ! dynamic_cast<Player*>(*it)-> isAI() ) )
     {
@@ -1959,7 +1959,7 @@ void GameAutomaton::setAttackAuto(bool activated)
 void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32 receiver, quint32 sender)
 {
   qCDebug(KSIRK_LOG) << "msg " << msgid << " ; rec="<<receiver << " snd=" << sender ;
-  if (m_game == 0)
+  if (m_game == nullptr)
   {
     exit(0);
   }
@@ -2003,7 +2003,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   quint32 elemType;
   quint32 nb;
   
-  if (currentPlayer() != 0 && currentPlayer()->getFlag() != 0)
+  if (currentPlayer() != nullptr && currentPlayer()->getFlag() != nullptr)
   {
     pm = currentPlayer()->getFlag()->image(0);
   }
@@ -2056,7 +2056,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   case PlayerAvailArmies:
     if (sender == gameId()) break;
     stream >> playerName >> nbArmies;
-    if (playerNamed(playerName) != 0)
+    if (playerNamed(playerName) != nullptr)
       playerNamed(playerName)->setNbAvailArmies((unsigned int)nbArmies, false);
     break;
 /*  case KGameWinAvailArmies:
@@ -2092,7 +2092,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     m_game->changeItem(messageParts,statusBarId, logStatus);
     break;
   case DisplayRecyclingButtons:
-    m_game->getRightDialog()->updateRecycleDetails(0,true,0);
+    m_game->getRightDialog()->updateRecycleDetails(nullptr,true,0);
     m_game->displayRecyclingButtons();
     break;
   case ClearHighlighting:
@@ -2471,7 +2471,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     qCDebug(KSIRK_LOG) << "  player id: " << playerId ;
     stream >> goal;
     player = dynamic_cast<Player*>(findPlayer(playerId));
-    if (player != 0)
+    if (player != nullptr)
     {
       player->goal(goal);
     }
@@ -2598,8 +2598,8 @@ void GameAutomaton::setDefenseAuto(bool activated)
   }
   else
   {
-    m_defenseAuto.firstCountry = 0;
-    m_defenseAuto.secondCountry= 0;
+    m_defenseAuto.firstCountry = nullptr;
+    m_defenseAuto.secondCountry= nullptr;
   }
 }
 
@@ -2676,7 +2676,7 @@ void GameAutomaton::checkGoal(Player* player)
 {
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
-  if (player == 0)
+  if (player == nullptr)
     stream << currentPlayer()->id();
   else
     stream << player->id();

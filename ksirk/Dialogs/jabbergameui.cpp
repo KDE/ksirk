@@ -33,7 +33,7 @@ using namespace Ksirk::GameLogic;
 
 KsirkJabberGameWidget::KsirkJabberGameWidget(QWidget* parent) :
     QWidget(parent),
-    m_automaton(0),
+    m_automaton(nullptr),
     m_previousGuiIndex(-1)
 {
   qCDebug(KSIRK_LOG);
@@ -43,7 +43,7 @@ KsirkJabberGameWidget::KsirkJabberGameWidget(QWidget* parent) :
   jabberid->setText(Ksirk::KsirkSettings::jabberId());
 
   KWallet::Wallet* wallet = KWallet::Wallet::openWallet("ksirk", 0);
-  if (wallet == 0)
+  if (wallet == nullptr)
   {
     password->setText(KStringHandler::obscure(Ksirk::KsirkSettings::jabberPassword()));
     roompassword->setText(KStringHandler::obscure(Ksirk::KsirkSettings::jabberPassword()));
@@ -114,7 +114,7 @@ void KsirkJabberGameWidget::slotJabberConnectButtonClicked()
 
 
   KWallet::Wallet* wallet = KWallet::Wallet::openWallet("ksirk", 0);
-  if (wallet == 0)
+  if (wallet == nullptr)
   {
     KsirkSettings::setJabberPassword(KStringHandler::obscure(pass));
   }
@@ -217,7 +217,7 @@ void KsirkJabberGameWidget::slotJoinRoom()
   KsirkSettings::setRoomJid(groupchatRoom+'@'+groupchatHost);
   KsirkSettings::setNickname(groupchatNick);
   KWallet::Wallet* wallet = KWallet::Wallet::openWallet("ksirk", 0);
-  if (wallet == 0)
+  if (wallet == nullptr)
   {
     KsirkSettings::setRoomPassword(KStringHandler::obscure(groupchatPassword));
   }

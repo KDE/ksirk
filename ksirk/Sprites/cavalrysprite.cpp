@@ -64,7 +64,7 @@ void CavalrySprite::setupTravel(
     GameLogic::Country* dest, 
     const QPointF *dpcav)
 {
-  if (dpcav==0) 
+  if (dpcav==nullptr) 
   {
     AnimSprite::setupTravel(src, dest, src->pointCavalry()*m_zoom, dest-> pointCavalry()*m_zoom);
   }

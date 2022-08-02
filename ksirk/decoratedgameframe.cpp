@@ -211,7 +211,7 @@ void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
       // we cannot see detail of country during the AI or virtual player game
       // as the right widget is reserved for combat
       // Bug 309863. Disable country details during auto attack also.
-      if(m_automaton->game()->theWorld()->countryAt(detailPoint)!=0 && !m_automaton->isAttackAuto())
+      if(m_automaton->game()->theWorld()->countryAt(detailPoint)!=nullptr && !m_automaton->isAttackAuto())
       {
         detailsAction->setVisible(true);
       }
@@ -295,19 +295,19 @@ void DecoratedGameFrame::slotMouseInput(KGameIO *input,QDataStream &stream,QMous
   qCDebug(KSIRK_LOG) << e;
   
   QGraphicsItem* item = itemAt(mapFromScene(((QGraphicsSceneMouseEvent*)e)->scenePos()));
-  if (item == 0)
+  if (item == nullptr)
   {
     *eatevent=false;
     e->setAccepted(false);
     return;
   }
 
-  while (item->parentItem()!=0 && dynamic_cast<KGamePopupItem*>(item)==0)
+  while (item->parentItem()!=nullptr && dynamic_cast<KGamePopupItem*>(item)==nullptr)
   {
     item = item->parentItem();
   }
 
-  if (dynamic_cast<KGamePopupItem*>(item)!=0)
+  if (dynamic_cast<KGamePopupItem*>(item)!=nullptr)
   {
     *eatevent=false;
     e->setAccepted(false);
@@ -408,7 +408,7 @@ void DecoratedGameFrame::arenaState()
 void DecoratedGameFrame::attackAuto()
 {
   qCDebug(KSIRK_LOG);
-  unsigned int firstCountryNbArmies = ( m_automaton!=0 && m_automaton->game()!=0 && m_automaton->game()->firstCountry()!=0 )
+  unsigned int firstCountryNbArmies = ( m_automaton!=nullptr && m_automaton->game()!=nullptr && m_automaton->game()->firstCountry()!=nullptr )
       ? m_automaton->game()->firstCountry()->nbArmies() : 0 ;
   m_automaton->setAttackAuto(firstCountryNbArmies>0);
   if (firstCountryNbArmies > 3)

@@ -96,7 +96,7 @@ InvasionSlider::InvasionSlider(KGameWindow* game, GameLogic::Country * attack, G
   m_nbRArmies = new QLabel(QString::number(m_nbRArmy));
 
   QVBoxLayout* dialogLayout = new QVBoxLayout(this);
-  QDialogButtonBox* buttonBox = NULL;
+  QDialogButtonBox* buttonBox = nullptr;
 
   if (invasionType == Invasion)
   {
@@ -111,7 +111,7 @@ InvasionSlider::InvasionSlider(KGameWindow* game, GameLogic::Country * attack, G
 
   //Infantery picture
   InfantrySprite *sprite = new InfantrySprite(1.0, game->backGnd());
-  sprite-> setDestination(0);             // Sprite immobile
+  sprite-> setDestination(nullptr);             // Sprite immobile
   QPixmap soldat = sprite->image(0).scaled(24,24,Qt::KeepAspectRatioByExpanding);
   delete sprite;
   

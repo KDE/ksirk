@@ -74,7 +74,7 @@ ONU::ONU(const QString& configDir, QObject *parent)
 
   if (!formatVersion.isEmpty() && formatVersion != ONU_FILE_FORMAT_VERSION)
   {
-    KMessageBox::error(0,
+    KMessageBox::error(nullptr,
                         i18n("Error - Invalid skin definition file format. Expected %1 and got %2",QStringLiteral(ONU_FILE_FORMAT_VERSION),formatVersion) + "<br>" + m_configFileName,
                         i18n("Error"));
 //     exit(1);
@@ -107,7 +107,7 @@ ONU::ONU(const QString& configDir, QObject *parent)
   qCDebug(KSIRKSKINEDITOR_LOG) << "Pool file name: " << poolFileName;
   if (poolFileName.isEmpty())
   {
-      KMessageBox::error(0, 
+      KMessageBox::error(nullptr, 
                          i18n("Pool filename not found\nProgram cannot continue"),
                          i18n("Error"));
       exit(2);
@@ -126,7 +126,7 @@ ONU::ONU(const QString& configDir, QObject *parent)
   qCDebug(KSIRKSKINEDITOR_LOG) << "Map mask file name: " << mapMaskFileName;
   if (mapMaskFileName.isNull())
   {
-      KMessageBox::error(0, 
+      KMessageBox::error(nullptr, 
                          i18n("Map mask image not found\nProgram cannot continue"),
                          i18n("Error"));
       exit(2);
@@ -606,11 +606,11 @@ Country* ONU::countryAt(const QPointF& point)
     QPointF norm = point;
     if ( norm.x() < 0 || norm.x() >= m_countriesMask.width()
       || norm.y() < 0 || norm.y() >= m_countriesMask.height() )
-      return 0;
+      return nullptr;
 
     int index = qBlue(m_countriesMask.pixel(norm.toPoint()));
 //    qCDebug(KSIRKSKINEDITOR_LOG) << "OUT ONU::countryAt: " << index;
-    if (index >= m_countries.size()) return 0;
+    if (index >= m_countries.size()) return nullptr;
     return m_countries.at(index);
 }
 
@@ -630,14 +630,14 @@ Country* ONU::countryNamed(const QString& name)
 {
   if (name.isEmpty())
   {
-    return 0;
+    return nullptr;
   }
   foreach (Country *c, m_countries)
   {
     if (c-> name() == name)
       return c;
   }
-  return 0;
+  return nullptr;
 }
 
 /** @return the number of countries in the world */
@@ -656,7 +656,7 @@ Nationality* ONU::nationNamed(const QString& name)
       return n;
     }
   }
-  return 0;
+  return nullptr;
 }
 
 // const Continent* ONU::continentWithId(const unsigned int id) const
@@ -678,7 +678,7 @@ Continent* ONU::continentNamed(const QString& name)
     if (c-> name() == name)
       return c;
   }
-  return 0;
+  return nullptr;
 }
 
 void ONU::buildMap()
@@ -750,7 +750,7 @@ KGameSvgDocument* ONU::svgDom()
 
 QGraphicsItem* ONU::itemFor(const Country* country, SpriteType spriteType)
 {
-  if (country==0 || spriteType == None) return 0;
+  if (country==nullptr || spriteType == None) return nullptr;
   foreach (QGraphicsItem* item, m_itemsMap.keys())
   {
     if (m_itemsMap[item].first == country && m_itemsMap[item].second == spriteType)
@@ -760,7 +760,7 @@ QGraphicsItem* ONU::itemFor(const Country* country, SpriteType spriteType)
     }
   }
   qCDebug(KSIRKSKINEDITOR_LOG) << 0;
-  return 0;
+  return nullptr;
 }
 
 QFont ONU::foregroundFont()
@@ -956,7 +956,7 @@ Nationality* ONU::nationalityNamed(const QString& name)
       return nationality;
     }
   }
-  return 0;
+  return nullptr;
 }
 
 void ONU::createNationality(const QString& newNationalityName)
@@ -985,7 +985,7 @@ void ONU::loadPoolIds(const QString& fileName)
   QFile file(fileName);
   if (!file.open(QFile::ReadOnly | QFile::Text))
   {
-    KMessageBox::error(0,
+    KMessageBox::error(nullptr,
                         i18n("Cannot read file %1:\n%2.",fileName,file.errorString()),
                         i18n("PoolLoader"));
                         return;

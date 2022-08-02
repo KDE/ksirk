@@ -53,7 +53,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
     QString wfv =SAVE_GAME_FILE_FORMAT_VERSION;
     if (fv!=wfv)
     {
-      KMessageBox::error(0,
+      KMessageBox::error(nullptr,
           i18n("Wrong save game format. Waited %1 and got %2!",QString(SAVE_GAME_FILE_FORMAT_VERSION),atts.value("formatVersion")),
           i18n("KsirK - Cannot load!"));
 
@@ -151,7 +151,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
     if (!(m_game.automaton()->playerList()->isEmpty()))
     {
       m_game.automaton()->playerList()->clear();
-      m_game.automaton()->currentPlayer(0);
+      m_game.automaton()->currentPlayer(nullptr);
       qCDebug(KSIRK_LOG) << "  playerList size = " << m_game.automaton()->playerList()->count();
     }
     m_game.automaton()->game()->newSkin(atts.value("file"));
@@ -266,7 +266,7 @@ bool GameXmlHandler::endElement(const QString& namespaceURI, const QString& loca
       }
       delete m_goal;
     }
-    m_goal = 0;
+    m_goal = nullptr;
   }
   return true;
 }

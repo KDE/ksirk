@@ -125,7 +125,7 @@ ONU::ONU(GameAutomaton* automaton,
   qCDebug(KSIRK_LOG) << "Pool file name: " << poolFileName;
   if (poolFileName.isEmpty())
   {
-      KMessageBox::error(0, 
+      KMessageBox::error(nullptr, 
                          i18n("Pool filename not found\nProgram cannot continue"),
                          i18n("Error!"));
       exit(2);
@@ -142,7 +142,7 @@ ONU::ONU(GameAutomaton* automaton,
   qCDebug(KSIRK_LOG) << "Map mask file name: " << mapMaskFileName;
   if (mapMaskFileName.isNull())
   {
-      KMessageBox::error(0, 
+      KMessageBox::error(nullptr, 
                          i18n("Map mask image not found\nProgram cannot continue"),
                          i18n("Error!"));
       exit(2);
@@ -411,11 +411,11 @@ Country* ONU::countryAt(const QPointF& point)
     norm /= m_zoom;
     if ( norm.x() < 0 || norm.x() >= countriesMask.width()
       || norm.y() < 0 || norm.y() >= countriesMask.height() )
-      return 0;
+      return nullptr;
 
     int index = qBlue(countriesMask.pixel(norm.toPoint()));
 //    qCDebug(KSIRK_LOG) << "OUT ONU::countryAt: " << index;
-    if (index >= countries.size()) return 0;
+    if (index >= countries.size()) return nullptr;
     return countries.at(index);
 }
 
@@ -488,7 +488,7 @@ Country* ONU::countryNamed(const QString& name)
   if (name.isEmpty())
   {
 //     qCDebug(KSIRK_LOG) << "request for country with empty name";
-    return 0;
+    return nullptr;
   }
 
   foreach (Country *c, countries)
@@ -498,7 +498,7 @@ Country* ONU::countryNamed(const QString& name)
   }
 
 //   qCDebug(KSIRK_LOG) << "request for country" << name << "which doesn't seem to exist.";
-  return 0;
+  return nullptr;
 }
 
 /** @return the number of countries in the world */
@@ -540,7 +540,7 @@ Nationality* ONU::nationNamed(const QString& name)
       return n;
     }
   }
-  return 0;
+  return nullptr;
 }
 
 void ONU::sendCountries(QDataStream& stream)
@@ -572,7 +572,7 @@ Continent* ONU::continentNamed(const QString& name)
     if (c-> name() == name)
       return c;
   }
-  return 0;
+  return nullptr;
 }
 
 void ONU::buildMap()

@@ -42,8 +42,8 @@ class JabberClient::Private
 {
 public:
   Private()
-  : jabberClient(0L), jabberClientStream(0L), jabberClientConnector(0L), jabberTLS(0L),
-           jabberTLSHandler(0L), privacyManager(0L)
+  : jabberClient(nullptr), jabberClientStream(nullptr), jabberClientConnector(nullptr), jabberTLS(nullptr),
+           jabberTLSHandler(nullptr), privacyManager(nullptr)
   {}
   ~Private()
   {
@@ -124,7 +124,7 @@ public:
   DiscoItem::Identity discoIdentity;
 };
 
-XMPP::S5BServer *JabberClient::Private::s5bServer = 0L;
+XMPP::S5BServer *JabberClient::Private::s5bServer = nullptr;
 QStringList JabberClient::Private::s5bAddressList;
 int JabberClient::Private::s5bServerPort = 8010;
 
@@ -158,12 +158,12 @@ void JabberClient::cleanUp ()
   delete d->jabberTLS;
   // privacyManager will be deleted with jabberClient, its parent's parent
 
-  d->jabberClient = 0L;
-  d->jabberClientStream = 0L;
-  d->jabberClientConnector = 0L;
-  d->jabberTLSHandler = 0L;
-  d->jabberTLS = 0L;
-  d->privacyManager = 0L;
+  d->jabberClient = nullptr;
+  d->jabberClientStream = nullptr;
+  d->jabberClientConnector = nullptr;
+  d->jabberTLSHandler = nullptr;
+  d->jabberTLS = nullptr;
+  d->privacyManager = nullptr;
 
   d->currentPenaltyTime = 0;
 
@@ -267,10 +267,10 @@ XMPP::S5BServer *JabberClient::s5bServer ()
 void JabberClient::slotS5BServerGone ()
 {
 
-  d->s5bServer = 0L;
+  d->s5bServer = nullptr;
 
   if ( d->jabberClient )
-    d->jabberClient->s5bManager()->setServer( 0L );
+    d->jabberClient->s5bManager()->setServer( nullptr );
 
 }
 
@@ -303,7 +303,7 @@ void JabberClient::removeS5BServerAddress ( const QString &address )
   if ( d->s5bAddressList.isEmpty () )
   {
     delete d->s5bServer;
-    d->s5bServer = 0L;
+    d->s5bServer = nullptr;
   }
   else
   {
@@ -571,7 +571,7 @@ XMPP::Task *JabberClient::rootTask () const
   }
   else
   {
-    return 0l;
+    return nullptr;
   }
 
 }
@@ -585,7 +585,7 @@ XMPP::FileTransferManager *JabberClient::fileTransferManager () const
   }
   else
   {
-    return 0L;
+    return nullptr;
   }
 
 }
@@ -628,7 +628,7 @@ JabberClient::ErrorCode JabberClient::connect ( const XMPP::Jid &jid, const QStr
    * This class uses KDE's socket code, which in turn makes use of
    * the global proxy settings.
    */
-  if ( d->jabberClientConnector == 0)
+  if ( d->jabberClientConnector == nullptr)
   {
     d->jabberClientConnector = new JabberConnector;
   }
@@ -652,10 +652,10 @@ JabberClient::ErrorCode JabberClient::connect ( const XMPP::Jid &jid, const QStr
   if ( QCA::isSupported ("tls") )
   {
     qCDebug(JABBER_PROTOCOL_LOG) << "QCA tls";
-    if (d->jabberTLS == 0)
+    if (d->jabberTLS == nullptr)
       d->jabberTLS = new QCA::TLS;
     d->jabberTLS->setTrustedCertificates(QCA::systemStore());
-    if (d->jabberTLSHandler == 0)
+    if (d->jabberTLSHandler == nullptr)
       d->jabberTLSHandler = new QCATLSHandler(d->jabberTLS);
     d->jabberTLSHandler->setXMPPCertCheck(true);
 
@@ -666,7 +666,7 @@ JabberClient::ErrorCode JabberClient::connect ( const XMPP::Jid &jid, const QStr
    * Instantiate client stream which handles the network communication by referring
    * to a connector (proxying etc.) and a TLS handler (security layer)
    */
-  if (d->jabberClientStream != 0)
+  if (d->jabberClientStream != nullptr)
     delete d->jabberClientStream;
   d->jabberClientStream = new XMPP::ClientStream ( d->jabberClientConnector, d->jabberTLSHandler );
 
@@ -702,14 +702,14 @@ JabberClient::ErrorCode JabberClient::connect ( const XMPP::Jid &jid, const QStr
    * Setup client layer.
    */
     qCDebug(JABBER_PROTOCOL_LOG) << "Setup client layer";
-    if (d->jabberClient != 0)
+    if (d->jabberClient != nullptr)
       delete d->jabberClient;
     d->jabberClient = new XMPP::Client ( this );
   
   /*
    * Setup privacy manager
    */
-  if (d->privacyManager == 0)
+  if (d->privacyManager == nullptr)
     d->privacyManager = new PrivacyManager ( rootTask() );
 
   /*

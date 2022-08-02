@@ -127,7 +127,7 @@ void NewGameWidget::fillSkinsCombo()
   {
     if (skinsDirName.isEmpty())
     {
-      KMessageBox::error(0,
+      KMessageBox::error(nullptr,
                         i18n("Skins directory not found - Verify your installation\nProgram cannot continue"),
                         i18n("Fatal Error!"));
       exit(2);

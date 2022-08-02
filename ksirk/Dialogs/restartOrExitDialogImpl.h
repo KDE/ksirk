@@ -41,7 +41,7 @@ class RestartOrExitDialogImpl : public QDialog, public Ui::RestartOrExitDialog
 public:
   explicit RestartOrExitDialogImpl(
       const QString& label,
-      QWidget *parent=0);
+      QWidget *parent=nullptr);
   ~RestartOrExitDialogImpl() override;
 
 private:

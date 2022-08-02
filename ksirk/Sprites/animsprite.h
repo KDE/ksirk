@@ -233,7 +233,7 @@ public:
     * edge of the map.
     */
   virtual void setupTravel(GameLogic::Country* src, GameLogic::Country* dest, 
-    const QPointF* dpi=0);
+    const QPointF* dpi=nullptr);
 
   /**
     * Saves a XML representation of the sprite for game saving purpose

@@ -41,7 +41,7 @@ AnimSpritesGroup::~AnimSpritesGroup()
 void AnimSpritesGroup::changeTarget(QObject* target, const char* slot)
 {
   qCDebug(KSIRK_LOG) << (void*)target << slot;
-  if (m_target != 0)
+  if (m_target != nullptr)
   {
     disconnect(this,SIGNAL(arrived(AnimSpritesGroup*)),m_target,m_slot);
   }
@@ -54,8 +54,8 @@ void AnimSpritesGroup::clear()
 {
   qCDebug(KSIRK_LOG) << size();
   disconnect(this,SIGNAL(arrived(AnimSpritesGroup*)),m_target,m_slot);
-  m_target = 0; 
-  m_slot = 0;
+  m_target = nullptr; 
+  m_slot = nullptr;
   m_numberArrived = 0;
   hideAndRemoveAll();
   AnimSpritesList<AnimSprite>::clear();
@@ -76,7 +76,7 @@ void AnimSpritesGroup::oneArrived(AnimSprite* sprite)
   qCDebug(KSIRK_LOG) << (void*)sprite << ":" << m_numberArrived << " on " << AnimSpritesList<AnimSprite>::size();
   // if 0 is given, then one is count as arrived whithout action. Useful for 
   // non-animated sprites of the group, but ugly solution...
-  if (sprite != 0)
+  if (sprite != nullptr)
   {
     sprite->arrival();
   }

@@ -28,7 +28,7 @@ namespace Ksirk
 {
 
 
-AnimSpritePool* AnimSpritePool::m_pool = 0;
+AnimSpritePool* AnimSpritePool::m_pool = nullptr;
 
 AnimSpritePool::AnimSpritePool() 
 {
@@ -39,7 +39,7 @@ AnimSpritePool::AnimSpritePool()
 
 const AnimSpritePool& AnimSpritePool::single()
 {
-  if (m_pool == 0)
+  if (m_pool == nullptr)
   {
     m_pool = new AnimSpritePool();
   }
@@ -48,7 +48,7 @@ const AnimSpritePool& AnimSpritePool::single()
 
 AnimSpritePool& AnimSpritePool::changeable() 
 {
-  if (m_pool == 0)
+  if (m_pool == nullptr)
   {
     m_pool = new AnimSpritePool();
   }

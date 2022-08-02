@@ -52,7 +52,7 @@ class KPlayerSetupWidget : public QWidget, public Ui::QPlayerSetupWidget
 {
   Q_OBJECT
 public:
-  explicit KPlayerSetupWidget(QWidget *parent=0);
+  explicit KPlayerSetupWidget(QWidget *parent=nullptr);
   
   ~KPlayerSetupWidget() override;
 
@@ -66,7 +66,7 @@ public:
                       QString & nationName,
                       NewGameSetup* newGameSetup);
 
-  void init(NewPlayerData* player = 0);
+  void init(NewPlayerData* player = nullptr);
   
 Q_SIGNALS:
   void next();

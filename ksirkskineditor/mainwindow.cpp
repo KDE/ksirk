@@ -75,9 +75,9 @@ namespace KsirkSkinEditor
 MainWindow::MainWindow(QWidget* parent) :
   KXmlGuiWindow(parent),
   m_selectedSprite(None),
-  m_onu(0),
-  m_rfa(0),
-  m_mapItem(0),
+  m_onu(nullptr),
+  m_rfa(nullptr),
+  m_mapItem(nullptr),
   m_updateHighlightPosition(false)
 {
   qCDebug(KSIRKSKINEDITOR_LOG) << "MainWindow constructor begin";
@@ -124,7 +124,7 @@ MainWindow::MainWindow(QWidget* parent) :
   QString anchorFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("cross.png"));
   if (anchorFileName.isNull())
   {
-    KMessageBox::error(0, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error"));
+    KMessageBox::error(nullptr, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error"));
     exit(2);
   }
   QPixmap anchorPix = QPixmap(anchorFileName);
@@ -138,7 +138,7 @@ MainWindow::MainWindow(QWidget* parent) :
   QString centerFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("target.png"));
   if (centerFileName.isNull())
   {
-    KMessageBox::error(0, i18n("Cannot load center icon<br>Program cannot continue"), i18n("Error"));
+    KMessageBox::error(nullptr, i18n("Cannot load center icon<br>Program cannot continue"), i18n("Error"));
     exit(2);
   }
   QPixmap centerPix = QPixmap(centerFileName);
@@ -308,7 +308,7 @@ MainWindow::~MainWindow()
 {
   qCDebug(KSIRKSKINEDITOR_LOG);
   KSharedConfig::Ptr config = KSharedConfig::openConfig();
-  if (m_rfa != 0)
+  if (m_rfa != nullptr)
   {
     qCDebug(KSIRKSKINEDITOR_LOG) << "saving recent files";
     m_rfa->saveEntries(KSharedConfig::openConfig()->group("ksirkskineditor"));
@@ -370,7 +370,7 @@ void MainWindow::slotOpenSkin(const QString& dir)
     return;
   }
 
-  if (m_rfa != 0)
+  if (m_rfa != nullptr)
   {
     qCDebug(KSIRKSKINEDITOR_LOG) << "Adding" << skinDir << "to recent files";
     m_rfa->addUrl(QUrl::fromLocalFile(skinDir));
@@ -588,7 +588,7 @@ void MainWindow::slotFlagButtonClicked()
     m_flagButton->setChecked(false);
     m_mapView->unsetCursor();
   }
-  else if (m_skinDefWidget->countrieslist->currentItem()!=0)
+  else if (m_skinDefWidget->countrieslist->currentItem()!=nullptr)
   {
     m_mapView->setCursor(QCursor(m_onu->flagIcon(),0,0));
     m_selectedSprite = Flag;
@@ -608,7 +608,7 @@ void MainWindow::slotInfantryButtonClicked()
     m_infantryButton->setChecked(false);
     m_mapView->unsetCursor();
   }
-  else if (m_skinDefWidget->countrieslist->currentItem()!=0)
+  else if (m_skinDefWidget->countrieslist->currentItem()!=nullptr)
   {
     m_mapView->setCursor(QCursor(m_onu->infantryIcon(),0,0));
     m_selectedSprite = Infantry;
@@ -628,7 +628,7 @@ void MainWindow::slotCavalryButtonClicked()
     m_cavalryButton->setChecked(false);
     m_mapView->unsetCursor();
   }
-  else if (m_skinDefWidget->countrieslist->currentItem()!=0)
+  else if (m_skinDefWidget->countrieslist->currentItem()!=nullptr)
   {
     m_mapView->setCursor(QCursor(m_onu->cavalryIcon(),0,0));
     m_selectedSprite = Cavalry;
@@ -648,7 +648,7 @@ void MainWindow::slotCannonButtonClicked()
     m_cannonButton->setChecked(false);
     m_mapView->unsetCursor();
   }
-  else if (m_skinDefWidget->countrieslist->currentItem()!=0)
+  else if (m_skinDefWidget->countrieslist->currentItem()!=nullptr)
   {
     m_mapView->setCursor(QCursor(m_onu->cannonIcon(),0,0));
     m_selectedSprite = Cannon;
@@ -668,12 +668,12 @@ void MainWindow::slotAnchorButtonClicked()
     m_anchorButton->setChecked(false);
     m_mapView->unsetCursor();
   }
-  else if (m_skinDefWidget->countrieslist->currentItem()!=0)
+  else if (m_skinDefWidget->countrieslist->currentItem()!=nullptr)
   {
     QString anchorFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("cross.png"));
     if (anchorFileName.isNull())
     {
-      KMessageBox::error(0, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error"));
+      KMessageBox::error(nullptr, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error"));
       exit(2);
     }
     QPixmap anchorPix = QPixmap(anchorFileName);
@@ -697,12 +697,12 @@ void MainWindow::slotCenterButtonClicked()
     m_centerButton->setChecked(false);
     m_mapView->unsetCursor();
   }
-  else if (m_skinDefWidget->countrieslist->currentItem()!=0)
+  else if (m_skinDefWidget->countrieslist->currentItem()!=nullptr)
   {
     QString centerFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("target.png"));
     if (centerFileName.isNull())
     {
-      KMessageBox::error(0, i18n("Cannot load center icon<br>Program cannot continue"), i18n("Error"));
+      KMessageBox::error(nullptr, i18n("Cannot load center icon<br>Program cannot continue"), i18n("Error"));
       exit(2);
     }
     QPixmap centerPix = QPixmap(centerFileName);
@@ -720,9 +720,9 @@ void MainWindow::slotPosition(const QPointF& point)
   ts << point.x() << " x " << point.y();
   statusBar()->showMessage(message);
 //   qCDebug(KSIRKSKINEDITOR_LOG) << "selected sprite:" << m_selectedSprite;
-  if (currentCountry() != 0 && m_selectedSprite == Anchor
-    && m_onu->itemFor(currentCountry(), m_selectedSprite) != 0 && m_updateHighlightPosition
-    && currentCountry()->highlighting() != 0)
+  if (currentCountry() != nullptr && m_selectedSprite == Anchor
+    && m_onu->itemFor(currentCountry(), m_selectedSprite) != nullptr && m_updateHighlightPosition
+    && currentCountry()->highlighting() != nullptr)
   {
     qCDebug(KSIRKSKINEDITOR_LOG) << point << (void*)currentCountry() << (void*)m_onu->itemFor(currentCountry(), m_selectedSprite);
     QGraphicsItem* anchorItem = m_onu->itemFor(currentCountry(), Anchor);
@@ -746,11 +746,11 @@ void MainWindow::slotPressPosition(const QPointF& clickedPoint)
   QString fileName;
   QPointF point = clickedPoint;
   m_updateHighlightPosition = true;
-  if (currentCountry() == 0
-    || m_onu->itemFor(currentCountry(), m_selectedSprite) != 0)
+  if (currentCountry() == nullptr
+    || m_onu->itemFor(currentCountry(), m_selectedSprite) != nullptr)
   {
     qCDebug(KSIRKSKINEDITOR_LOG) << (void*)currentCountry() << (void*)m_onu->itemFor(currentCountry(), m_selectedSprite);
-    if (currentCountry() != 0)
+    if (currentCountry() != nullptr)
     {
       currentCountry()->clearHighlighting();
     }
@@ -801,7 +801,7 @@ void MainWindow::slotPressPosition(const QPointF& clickedPoint)
       fileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("cross.png"));
       if (fileName.isNull())
       {
-        KMessageBox::error(0, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error"));
+        KMessageBox::error(nullptr, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error"));
         exit(2);
       }
       pix = QPixmap(fileName);
@@ -818,7 +818,7 @@ void MainWindow::slotPressPosition(const QPointF& clickedPoint)
       fileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("target.png"));
       if (fileName.isNull())
       {
-        KMessageBox::error(0, i18n("Cannot load center icon<br>Program cannot continue"), i18n("Error"));
+        KMessageBox::error(nullptr, i18n("Cannot load center icon<br>Program cannot continue"), i18n("Error"));
         exit(2);
       }
       pix = QPixmap(fileName);
@@ -831,7 +831,7 @@ void MainWindow::slotPressPosition(const QPointF& clickedPoint)
       break;
     default: ;
   }
-  if (item != 0)
+  if (item != nullptr)
   {
     item->setPixmap(pix);
     m_mapScene->addItem(item);
@@ -847,9 +847,9 @@ void MainWindow::slotReleasePosition(const QPointF& point)
   m_updateHighlightPosition = false;
 
   qCDebug(KSIRKSKINEDITOR_LOG) << "selected sprite:" << m_selectedSprite;
-  if (currentCountry() != 0 && m_selectedSprite == Anchor
-    && m_onu->itemFor(currentCountry(), m_selectedSprite) != 0 && m_updateHighlightPosition
-    && currentCountry()->highlighting() != 0)
+  if (currentCountry() != nullptr && m_selectedSprite == Anchor
+    && m_onu->itemFor(currentCountry(), m_selectedSprite) != nullptr && m_updateHighlightPosition
+    && currentCountry()->highlighting() != nullptr)
   {
     qCDebug(KSIRKSKINEDITOR_LOG) << (void*)currentCountry() << (void*)m_onu->itemFor(currentCountry(), m_selectedSprite);
     currentCountry()->anchorPoint(point);
@@ -863,7 +863,7 @@ void MainWindow::slotNationalitySelected(QListWidgetItem* item)
 {
   qCDebug(KSIRKSKINEDITOR_LOG);
   Nationality* nationality = m_onu->nationalityNamed(item->text());
-  if (nationality != 0)
+  if (nationality != nullptr)
   {
     initNationalityWidgetWith(nationality);
   }
@@ -885,7 +885,7 @@ void MainWindow::slotCountrySelected(QListWidgetItem* item)
 {
   qCDebug(KSIRKSKINEDITOR_LOG);
   Country* country = m_onu->countryNamed(item->text());
-  if (country != 0)
+  if (country != nullptr)
   {
     m_countryDefWidget->initWith(country);
     initSpritesButtonsWith(country);
@@ -896,7 +896,7 @@ void MainWindow::slotContinentSelected(QListWidgetItem* item)
 {
   qCDebug(KSIRKSKINEDITOR_LOG);
   Continent* continent = m_onu->continentNamed(item->text());
-  if (continent != 0)
+  if (continent != nullptr)
   {
     initContinentWidgetWith(continent);
   }
@@ -919,7 +919,7 @@ void MainWindow::slotGoalSelected(QListWidgetItem* item)
   qCDebug(KSIRKSKINEDITOR_LOG);
   int row = m_skinDefWidget->goalslist->row(item);
   Goal* goal = m_onu->goals()[row];
-  if (goal != 0)
+  if (goal != nullptr)
   {
     initGoalWidgetWith(goal);
   }
@@ -980,8 +980,8 @@ void MainWindow::initGoalWidgetWith(Goal* goal)
 
 Country* MainWindow::currentCountry()
 {
-  if (m_skinDefWidget->countrieslist->currentItem() == 0)
-    return 0;
+  if (m_skinDefWidget->countrieslist->currentItem() == nullptr)
+    return nullptr;
 //   qCDebug(KSIRKSKINEDITOR_LOG) << m_skinDefWidget->countrieslist->currentItem()->text();
   return m_onu->countryNamed(m_skinDefWidget->countrieslist->currentItem()->text());
 }
@@ -1097,7 +1097,7 @@ void MainWindow::slotItemPressed(QGraphicsItem* item, const QPointF& point)
       case Anchor:
         m_selectedSprite = Anchor;
         item = m_onu->itemFor(country, Anchor);
-        if (item == 0)
+        if (item == nullptr)
         {
           qCCritical(KSIRKSKINEDITOR_LOG) << "item " << Anchor << "not found for" << country->name();
           break;
@@ -1126,13 +1126,13 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
   QPixmap alphacopy;
   QPointF point;
   QString fileName;
-  if (country == 0
-    || m_onu->itemFor(country, type) != 0)
+  if (country == nullptr
+    || m_onu->itemFor(country, type) != nullptr)
   {
     qCDebug(KSIRKSKINEDITOR_LOG) << (void*)country << (void*)m_onu->itemFor(country, type);
     return;
   }
-  QGraphicsItem* item = 0;
+  QGraphicsItem* item = nullptr;
                     
   switch (type)
   {
@@ -1188,7 +1188,7 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
       fileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("cross.png"));
       if (fileName.isNull())
       {
-        KMessageBox::error(0, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error"));
+        KMessageBox::error(nullptr, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error"));
         exit(2);
       }
       pix = QPixmap(fileName);
@@ -1213,15 +1213,15 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
       break;
     default: ;
   }
-  if (item != 0 && !point.isNull())
+  if (item != nullptr && !point.isNull())
   {
     item->setPos(point);
-    if (dynamic_cast<PixmapItem*>(item) != 0)
+    if (dynamic_cast<PixmapItem*>(item) != nullptr)
     {
       connect(dynamic_cast<PixmapItem*>(item),&PixmapItem::pressed,this, &MainWindow::slotItemPressed);
       connect(dynamic_cast<PixmapItem*>(item),&PixmapItem::placed,this, &MainWindow::slotItemPlaced);
     }
-    else if (dynamic_cast<TextItem*>(item) != 0)
+    else if (dynamic_cast<TextItem*>(item) != nullptr)
     {
       connect(dynamic_cast<TextItem*>(item),&TextItem::pressed,this, &MainWindow::slotItemPressed);
       connect(dynamic_cast<TextItem*>(item), &TextItem::placed,this, &MainWindow::slotItemPlaced);
@@ -1244,20 +1244,20 @@ void MainWindow::slotURLSelected(const QUrl &url)
 
 void MainWindow::slotSkinNameEdited()
 {
-  if (m_onu == 0) return;
+  if (m_onu == nullptr) return;
   m_onu->setName(m_skinDefWidget->skinNameLineEdit->text());
 }
 
 void MainWindow::slotSkinWidthEdited(int v)
 {
-  if (m_onu == 0) return;
+  if (m_onu == nullptr) return;
   m_onu->setWidth(v);
 
   QRectF rect = m_mapScene->sceneRect();
   rect.setWidth(v);
   m_mapScene->setSceneRect(rect);
 
-  if (m_mapItem != 0)
+  if (m_mapItem != nullptr)
   {
     QPixmap mapPixmap(m_onu->pixmapForId(QStringLiteral("map"), m_onu->width(), m_onu->height()));
     m_mapItem->setPixmap(mapPixmap);
@@ -1266,14 +1266,14 @@ void MainWindow::slotSkinWidthEdited(int v)
 
 void MainWindow::slotSkinHeightEdited(int v)
 {
-  if (m_onu == 0) return;
+  if (m_onu == nullptr) return;
   m_onu->setHeight(v);
 
   QRectF rect = m_mapScene->sceneRect();
   rect.setHeight(v);
   m_mapScene->setSceneRect(rect);
   
-  if (m_mapItem != 0)
+  if (m_mapItem != nullptr)
   {
     QPixmap mapPixmap(m_onu->pixmapForId(QStringLiteral("map"), m_onu->width(), m_onu->height()));
     m_mapItem->setPixmap(mapPixmap);
@@ -1282,14 +1282,14 @@ void MainWindow::slotSkinHeightEdited(int v)
 
 void MainWindow::slotSkinDescriptionEdited()
 {
-  if (m_onu == 0) return;
+  if (m_onu == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG) << m_skinDefWidget->descriptionTextEdit->toPlainText();
   m_onu->setDescription(m_skinDefWidget->descriptionTextEdit->toPlainText());
 }
 
 void MainWindow::slotSkinWidthDiffEdited()
 {
-  if (m_onu == 0) return;
+  if (m_onu == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
   bool ok = false;
   int wd = m_spritesDefWidget->widthDiffLineEdit->text().toInt(&ok);
@@ -1298,7 +1298,7 @@ void MainWindow::slotSkinWidthDiffEdited()
 
 void MainWindow::slotNewCountry()
 {
-  if (m_onu == 0) return;
+  if (m_onu == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
   QString newCountryName = QInputDialog::getText(this, i18n("New country name"), i18n("Enter the name of the new country"));
   m_onu->createCountry(newCountryName);
@@ -1307,7 +1307,7 @@ void MainWindow::slotNewCountry()
 
 void MainWindow::slotDeleteCountry()
 {
-  if (m_onu == 0) return;
+  if (m_onu == nullptr) return;
   if (!m_skinDefWidget->countrieslist->currentItem()) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
   int answer = KMessageBox::warningContinueCancel(this, i18n("Do you really want to delete country '%1'?", m_skinDefWidget->countrieslist->currentItem()->text()), i18n("Really delete country?"));
@@ -1327,7 +1327,7 @@ void MainWindow::slotDeleteCountry()
 
 void MainWindow::slotNewContinent()
 {
-  if (m_onu == 0) return;
+  if (m_onu == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
   QString newContinentName = QInputDialog::getText(this, i18n("New continent name"), i18n("Enter the name of the new continent"));
   m_onu->createContinent(newContinentName);
@@ -1336,7 +1336,7 @@ void MainWindow::slotNewContinent()
 
 void MainWindow::slotDeleteContinent()
 {
-  if (m_onu == 0) return;
+  if (m_onu == nullptr) return;
   if (!m_skinDefWidget->continentslist->currentItem()) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
   int answer = KMessageBox::warningContinueCancel(this, i18n("Do you really want to delete continent '%1'?", m_skinDefWidget->continentslist->currentItem()->text()), i18n("Really delete continent?"));
@@ -1356,9 +1356,9 @@ void MainWindow::slotDeleteContinent()
 
 void MainWindow::slotNeighbours()
 {
-  if (m_onu == 0) return;
+  if (m_onu == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
-  if (m_skinDefWidget->countrieslist->currentItem() == 0)
+  if (m_skinDefWidget->countrieslist->currentItem() == nullptr)
   {
     return;
   }
@@ -1450,9 +1450,9 @@ void MainWindow::slotSkinPartTabChanged(int index)
 
 void MainWindow::slotContinentCountries()
 {
-  if (m_onu == 0) return;
+  if (m_onu == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
-  if (m_skinDefWidget->continentslist->currentItem() == 0)
+  if (m_skinDefWidget->continentslist->currentItem() == nullptr)
   {
     return;
   }
@@ -1498,7 +1498,7 @@ void MainWindow::slotContinentCountries()
 void MainWindow::slotContinentBonusEdited(int v)
 {
   qCDebug(KSIRKSKINEDITOR_LOG);
-  if (m_onu == 0 || m_skinDefWidget->continentslist->currentItem() == 0) return;
+  if (m_onu == nullptr || m_skinDefWidget->continentslist->currentItem() == nullptr) return;
   Continent* continent =  m_onu->continentNamed(m_skinDefWidget->continentslist->currentItem()->text());
   continent->setBonus(v);
   m_onu->setDirty();
@@ -1695,7 +1695,7 @@ void MainWindow::updateSprites(SpriteType type)
   foreach (Country* country, m_onu->countries())
   {
     QGraphicsItem* item = m_onu->itemFor(country, type);
-    if (item == 0)
+    if (item == nullptr)
     {
       qCCritical(KSIRKSKINEDITOR_LOG) << "item " << type << "not found for" << country->name();
       continue;
@@ -1728,9 +1728,9 @@ void MainWindow::updateSprites(SpriteType type)
 
 void MainWindow::slotGoalTypeWorldClicked()
 {
-  if (m_onu == 0) return;
+  if (m_onu == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
-  if (m_skinDefWidget->goalslist->currentItem() == 0)
+  if (m_skinDefWidget->goalslist->currentItem() == nullptr)
   {
     return;
   }
@@ -1741,9 +1741,9 @@ void MainWindow::slotGoalTypeWorldClicked()
 
 void MainWindow::slotGoalTypePlayerClicked()
 {
-  if (m_onu == 0) return;
+  if (m_onu == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
-  if (m_skinDefWidget->goalslist->currentItem() == 0)
+  if (m_skinDefWidget->goalslist->currentItem() == nullptr)
   {
     return;
   }
@@ -1754,9 +1754,9 @@ void MainWindow::slotGoalTypePlayerClicked()
 
 void MainWindow::slotGoalTypeCountriesClicked()
 {
-  if (m_onu == 0) return;
+  if (m_onu == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
-  if (m_skinDefWidget->goalslist->currentItem() == 0)
+  if (m_skinDefWidget->goalslist->currentItem() == nullptr)
   {
     return;
   }
@@ -1767,9 +1767,9 @@ void MainWindow::slotGoalTypeCountriesClicked()
 
 void MainWindow::slotGoalTypeContinentsClicked()
 {
-  if (m_onu == 0) return;
+  if (m_onu == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
-  if (m_skinDefWidget->goalslist->currentItem() == 0)
+  if (m_skinDefWidget->goalslist->currentItem() == nullptr)
   {
     return;
   }
@@ -1780,7 +1780,7 @@ void MainWindow::slotGoalTypeContinentsClicked()
 
 void MainWindow::slotGoalDescriptionEdited()
 {
-  if (m_onu == 0 || m_skinDefWidget->goalslist->currentItem() == 0) return;
+  if (m_onu == nullptr || m_skinDefWidget->goalslist->currentItem() == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
   int row = m_skinDefWidget->goalslist->row(m_skinDefWidget->goalslist->currentItem());
   Goal* goal = m_onu->goals()[row];
@@ -1789,7 +1789,7 @@ void MainWindow::slotGoalDescriptionEdited()
 
 void MainWindow::slotGoalNbCountriesChanged(int)
 {
-  if (m_onu == 0 || m_skinDefWidget->goalslist->currentItem() == 0) return;
+  if (m_onu == nullptr || m_skinDefWidget->goalslist->currentItem() == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
   int row = m_skinDefWidget->goalslist->row(m_skinDefWidget->goalslist->currentItem());
   Goal* goal = m_onu->goals()[row];
@@ -1798,7 +1798,7 @@ void MainWindow::slotGoalNbCountriesChanged(int)
 
 void MainWindow::slotGoalNbArmiesByCountryChanged(int)
 {
-  if (m_onu == 0 || m_skinDefWidget->goalslist->currentItem() == 0) return;
+  if (m_onu == nullptr || m_skinDefWidget->goalslist->currentItem() == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
   int row = m_skinDefWidget->goalslist->row(m_skinDefWidget->goalslist->currentItem());
   Goal* goal = m_onu->goals()[row];
@@ -1807,7 +1807,7 @@ void MainWindow::slotGoalNbArmiesByCountryChanged(int)
 
 void MainWindow::slotGoalAnyContinentChanged(int state)
 {
-  if (m_onu == 0 || m_skinDefWidget->goalslist->currentItem() == 0) return;
+  if (m_onu == nullptr || m_skinDefWidget->goalslist->currentItem() == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
   int row = m_skinDefWidget->goalslist->row(m_skinDefWidget->goalslist->currentItem());
   Goal* goal = m_onu->goals()[row];
@@ -1829,9 +1829,9 @@ void MainWindow::slotGoalAnyContinentChanged(int state)
 
 void MainWindow::slotGoalContinents()
 {
-  if (m_onu == 0) return;
+  if (m_onu == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
-  if (m_skinDefWidget->goalslist->currentItem() == 0)
+  if (m_skinDefWidget->goalslist->currentItem() == nullptr)
   {
     return;
   }
@@ -1876,7 +1876,7 @@ void MainWindow::slotGoalContinents()
 
 void MainWindow::slotNewGoal()
 {
-  if (m_onu == 0) return;
+  if (m_onu == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
   QString newGoalName = QStringLiteral("goal") + QString::number(m_skinDefWidget->goalslist->count()+1);
   m_onu->createGoal();
@@ -1885,7 +1885,7 @@ void MainWindow::slotNewGoal()
 
 void MainWindow::slotDeleteGoal()
 {
-  if (m_onu == 0) return;
+  if (m_onu == nullptr) return;
   if (!m_skinDefWidget->goalslist->currentItem()) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
   int answer = KMessageBox::warningContinueCancel(this, i18n("Do you really want to delete goal '%1'?", m_skinDefWidget->goalslist->currentItem()->text()), i18n("Really delete goal?"));
@@ -1907,7 +1907,7 @@ void MainWindow::slotDeleteGoal()
 
 void MainWindow::slotNationalityNameEdited()
 {
-  if (m_onu == 0 || m_skinDefWidget->nationalitieslist->currentItem() ==0) return;
+  if (m_onu == nullptr || m_skinDefWidget->nationalitieslist->currentItem() ==nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG) << m_skinDefWidget->nationalitieslist->currentItem()->text();
   Nationality* nationality =  m_onu->nationalityNamed(m_skinDefWidget->nationalitieslist->currentItem()->text());
   nationality->setName(m_nationalityDefWidget->name->text());
@@ -1916,7 +1916,7 @@ void MainWindow::slotNationalityNameEdited()
 
 void MainWindow::slotNationalityLeaderNameEdited()
 {
-  if (m_onu == 0 || m_skinDefWidget->nationalitieslist->currentItem() ==0) return;
+  if (m_onu == nullptr || m_skinDefWidget->nationalitieslist->currentItem() ==nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG) << m_skinDefWidget->nationalitieslist->currentItem()->text();
   qCDebug(KSIRKSKINEDITOR_LOG) << m_nationalityDefWidget->leader->text();
   Nationality* nationality =  m_onu->nationalityNamed(m_skinDefWidget->nationalitieslist->currentItem()->text());
@@ -1926,7 +1926,7 @@ void MainWindow::slotNationalityLeaderNameEdited()
 
 void MainWindow::slotNationalityFlagEdited(int)
 {
-  if (m_onu == 0 || m_skinDefWidget->nationalitieslist->currentItem() ==0) return;
+  if (m_onu == nullptr || m_skinDefWidget->nationalitieslist->currentItem() ==nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG) << m_skinDefWidget->nationalitieslist->currentItem()->text();
   Nationality* nationality =  m_onu->nationalityNamed(m_skinDefWidget->nationalitieslist->currentItem()->text());
   QString previousFlagFileName = nationality->flagFileName();
@@ -1945,7 +1945,7 @@ void MainWindow::slotNationalityFlagEdited(int)
 
 void MainWindow::slotNewNationality()
 {
-  if (m_onu == 0) return;
+  if (m_onu == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
   QString newNationalityName = QInputDialog::getText(this, i18n("New nationality name"), i18n("Enter the name of the new nationality"));
   m_onu->createNationality(newNationalityName);
@@ -1954,7 +1954,7 @@ void MainWindow::slotNewNationality()
 
 void MainWindow::slotDeleteNationality()
 {
-  if (m_onu == 0) return;
+  if (m_onu == nullptr) return;
   if (!m_skinDefWidget->nationalitieslist->currentItem()) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
   int answer = KMessageBox::warningContinueCancel(this, i18n("Do you really want to delete nationality '%1'?", m_skinDefWidget->nationalitieslist->currentItem()->text()), i18n("Really delete nationality?"));
@@ -1974,7 +1974,7 @@ void MainWindow::slotDeleteNationality()
 
 void MainWindow::slotFontSelected(const QFont &font)
 {
-  if (m_onu == 0) return;
+  if (m_onu == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
   m_onu->setFont(font);
   updateSprites(Anchor);
@@ -1982,7 +1982,7 @@ void MainWindow::slotFontSelected(const QFont &font)
 
 void MainWindow::slotFgSelected(const QColor& color)
 {
-  if (m_onu == 0) return;
+  if (m_onu == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
   m_onu->setFontFgColor(color);
   updateSprites(Anchor);
@@ -1990,7 +1990,7 @@ void MainWindow::slotFgSelected(const QColor& color)
 
 void MainWindow::slotBgColorSelected(const QColor& color)
 {
-  if (m_onu == 0) return;
+  if (m_onu == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
   m_onu->setFontBgColor(color);
   updateSprites(Anchor);
@@ -1998,21 +1998,21 @@ void MainWindow::slotBgColorSelected(const QColor& color)
 
 void MainWindow::initSpritesButtonsWith(const Country* country)
 {
-  m_flagButton->setEnabled(m_onu->itemFor(country, Flag) == 0);
-  m_infantryButton->setEnabled(m_onu->itemFor(country, Infantry) == 0);
-  m_cavalryButton->setEnabled(m_onu->itemFor(country, Cavalry) == 0);
-  m_cannonButton->setEnabled(m_onu->itemFor(country, Cannon) == 0);
-  m_anchorButton->setEnabled(m_onu->itemFor(country, Anchor) == 0);
-  m_centerButton->setEnabled(m_onu->itemFor(country, Center) == 0);
+  m_flagButton->setEnabled(m_onu->itemFor(country, Flag) == nullptr);
+  m_infantryButton->setEnabled(m_onu->itemFor(country, Infantry) == nullptr);
+  m_cavalryButton->setEnabled(m_onu->itemFor(country, Cavalry) == nullptr);
+  m_cannonButton->setEnabled(m_onu->itemFor(country, Cannon) == nullptr);
+  m_anchorButton->setEnabled(m_onu->itemFor(country, Anchor) == nullptr);
+  m_centerButton->setEnabled(m_onu->itemFor(country, Center) == nullptr);
 }
 
 void MainWindow::slotFLagxValueChanged(int v)
 {
   qCDebug(KSIRKSKINEDITOR_LOG);
-  if (currentCountry() != 0)
+  if (currentCountry() != nullptr)
   {
     currentCountry()->pointFlag(QPointF(v,currentCountry()->pointFlag().y()));
-    if (m_onu->itemFor(currentCountry(), Flag) != 0)
+    if (m_onu->itemFor(currentCountry(), Flag) != nullptr)
       m_onu->itemFor(currentCountry(), Flag)->setPos(currentCountry()->pointFlag());
     m_onu->setDirty();
   }
@@ -2021,10 +2021,10 @@ void MainWindow::slotFLagxValueChanged(int v)
 void MainWindow::slotFLagyValueChanged(int v)
 {
   qCDebug(KSIRKSKINEDITOR_LOG);
-  if (currentCountry() != 0)
+  if (currentCountry() != nullptr)
   {
     currentCountry()->pointFlag(QPointF(currentCountry()->pointFlag().x(),v));
-    if (m_onu->itemFor(currentCountry(), Flag) != 0)
+    if (m_onu->itemFor(currentCountry(), Flag) != nullptr)
       m_onu->itemFor(currentCountry(), Flag)->setPos(currentCountry()->pointFlag());
     m_onu->setDirty();
   }
@@ -2033,10 +2033,10 @@ void MainWindow::slotFLagyValueChanged(int v)
 void MainWindow::slotCenterxValueChanged(int v)
 {
   qCDebug(KSIRKSKINEDITOR_LOG);
-  if (currentCountry() != 0)
+  if (currentCountry() != nullptr)
   {
     currentCountry()->centralPoint(QPointF(v,currentCountry()->centralPoint().y()));
-    if (m_onu->itemFor(currentCountry(), Center) != 0)
+    if (m_onu->itemFor(currentCountry(), Center) != nullptr)
       m_onu->itemFor(currentCountry(), Center)->setPos(currentCountry()->centralPoint());
     m_onu->setDirty();
   }
@@ -2045,10 +2045,10 @@ void MainWindow::slotCenterxValueChanged(int v)
 void MainWindow::slotCenteryValueChanged(int v)
 {
   qCDebug(KSIRKSKINEDITOR_LOG);
-  if (currentCountry() != 0)
+  if (currentCountry() != nullptr)
   {
     currentCountry()->centralPoint(QPointF(currentCountry()->centralPoint().x(),v));
-    if (m_onu->itemFor(currentCountry(), Center) != 0)
+    if (m_onu->itemFor(currentCountry(), Center) != nullptr)
       m_onu->itemFor(currentCountry(), Center)->setPos(currentCountry()->centralPoint());
     m_onu->setDirty();
   }
@@ -2057,10 +2057,10 @@ void MainWindow::slotCenteryValueChanged(int v)
 void MainWindow::slotAnchorxValueChanged(int v)
 {
   qCDebug(KSIRKSKINEDITOR_LOG);
-  if (currentCountry() != 0)
+  if (currentCountry() != nullptr)
   {
     currentCountry()->anchorPoint(QPointF(v,currentCountry()->anchorPoint().y()));
-    if (m_onu->itemFor(currentCountry(), Anchor) != 0)
+    if (m_onu->itemFor(currentCountry(), Anchor) != nullptr)
       m_onu->itemFor(currentCountry(), Anchor)->setPos(currentCountry()->anchorPoint());
     m_onu->setDirty();
   }
@@ -2069,10 +2069,10 @@ void MainWindow::slotAnchorxValueChanged(int v)
 void MainWindow::slotAnchoryValueChanged(int v)
 {
   qCDebug(KSIRKSKINEDITOR_LOG);
-  if (currentCountry() != 0)
+  if (currentCountry() != nullptr)
   {
     currentCountry()->anchorPoint(QPointF(currentCountry()->anchorPoint().x(),v));
-    if (m_onu->itemFor(currentCountry(), Anchor) != 0)
+    if (m_onu->itemFor(currentCountry(), Anchor) != nullptr)
       m_onu->itemFor(currentCountry(), Anchor)->setPos(currentCountry()->anchorPoint());
     m_onu->setDirty();
   }
@@ -2081,10 +2081,10 @@ void MainWindow::slotAnchoryValueChanged(int v)
 void MainWindow::slotInfantryxValueChanged(int v)
 {
   qCDebug(KSIRKSKINEDITOR_LOG);
-  if (currentCountry() != 0)
+  if (currentCountry() != nullptr)
   {
     currentCountry()->pointInfantry(QPointF(v,currentCountry()->pointInfantry().y()));
-    if (m_onu->itemFor(currentCountry(), Infantry) != 0)
+    if (m_onu->itemFor(currentCountry(), Infantry) != nullptr)
       m_onu->itemFor(currentCountry(), Infantry)->setPos(currentCountry()->pointInfantry());
     m_onu->setDirty();
   }
@@ -2093,10 +2093,10 @@ void MainWindow::slotInfantryxValueChanged(int v)
 void MainWindow::slotInfantryyValueChanged(int v)
 {
   qCDebug(KSIRKSKINEDITOR_LOG);
-  if (currentCountry() != 0)
+  if (currentCountry() != nullptr)
   {
     currentCountry()->pointInfantry(QPointF(currentCountry()->pointInfantry().x(),v));
-    if (m_onu->itemFor(currentCountry(), Infantry) != 0)
+    if (m_onu->itemFor(currentCountry(), Infantry) != nullptr)
       m_onu->itemFor(currentCountry(), Infantry)->setPos(currentCountry()->pointInfantry());
     m_onu->setDirty();
   }
@@ -2105,10 +2105,10 @@ void MainWindow::slotInfantryyValueChanged(int v)
 void MainWindow::slotCavalryxValueChanged(int v)
 {
   qCDebug(KSIRKSKINEDITOR_LOG);
-  if (currentCountry() != 0)
+  if (currentCountry() != nullptr)
   {
     currentCountry()->pointCavalry(QPointF(v,currentCountry()->pointCavalry().y()));
-    if (m_onu->itemFor(currentCountry(), Cavalry) != 0)
+    if (m_onu->itemFor(currentCountry(), Cavalry) != nullptr)
       m_onu->itemFor(currentCountry(), Cavalry)->setPos(currentCountry()->pointCavalry());
     m_onu->setDirty();
   }
@@ -2116,10 +2116,10 @@ void MainWindow::slotCavalryxValueChanged(int v)
 void MainWindow::slotCavalryyValueChanged(int v)
 {
   qCDebug(KSIRKSKINEDITOR_LOG);
-  if (currentCountry() != 0)
+  if (currentCountry() != nullptr)
   {
     currentCountry()->pointCavalry(QPointF(currentCountry()->pointCavalry().x(),v));
-    if (m_onu->itemFor(currentCountry(), Cavalry) != 0)
+    if (m_onu->itemFor(currentCountry(), Cavalry) != nullptr)
       m_onu->itemFor(currentCountry(), Cavalry)->setPos(currentCountry()->pointCavalry());
     m_onu->setDirty();
   }
@@ -2128,10 +2128,10 @@ void MainWindow::slotCavalryyValueChanged(int v)
 void MainWindow::slotCannonxValueChanged(int v)
 {
   qCDebug(KSIRKSKINEDITOR_LOG);
-  if (currentCountry() != 0)
+  if (currentCountry() != nullptr)
   {
     currentCountry()->pointCannon(QPointF(v,currentCountry()->pointCannon().y()));
-    if (m_onu->itemFor(currentCountry(), Cannon) != 0)
+    if (m_onu->itemFor(currentCountry(), Cannon) != nullptr)
       m_onu->itemFor(currentCountry(), Cannon)->setPos(currentCountry()->pointCannon());
     m_onu->setDirty();
   }
@@ -2140,10 +2140,10 @@ void MainWindow::slotCannonxValueChanged(int v)
 void MainWindow::slotCannonyValueChanged(int v)
 {
   qCDebug(KSIRKSKINEDITOR_LOG);
-  if (currentCountry() != 0)
+  if (currentCountry() != nullptr)
   {
     currentCountry()->pointCannon(QPointF(currentCountry()->pointCannon().x(),v));
-    if (m_onu->itemFor(currentCountry(), Cannon) != 0)
+    if (m_onu->itemFor(currentCountry(), Cannon) != nullptr)
       m_onu->itemFor(currentCountry(), Cannon)->setPos(currentCountry()->pointCannon());
     m_onu->setDirty();
   }

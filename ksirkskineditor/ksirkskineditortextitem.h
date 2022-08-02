@@ -41,7 +41,7 @@ public:
   /**
     * Create the window and initializes its members
     */
-  explicit TextItem(QGraphicsItem* parent=0);
+  explicit TextItem(QGraphicsItem* parent=nullptr);
   
   /**
     * Deletes the background and the pool

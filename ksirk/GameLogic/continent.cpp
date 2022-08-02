@@ -88,7 +88,7 @@ const Player* Continent::owner() const
     if ((*it)-> owner() != owner)
     {
       qCDebug(KSIRK_LOG) << "Nobody owns " << m_name ;
-      return 0;
+      return nullptr;
     }
   }
   /** There is only one owner for all the countries ; lets return it */

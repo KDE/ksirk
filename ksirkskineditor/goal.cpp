@@ -208,7 +208,7 @@ void Goal::show(int displayType)
   qCDebug(KSIRKSKINEDITOR_LOG) << message(displayType);
 //   m_automaton->game()->showMessage(message(displayType),5, KGameWindow::ForceShowing);
   KMessageBox::information(
-                            0,
+                            nullptr,
                             message(displayType), 
                             i18n("KsirK - Goal Display"));
 }

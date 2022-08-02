@@ -82,9 +82,9 @@ namespace Ksirk
   FightArena::~FightArena()
   {
     qCDebug(KSIRK_LOG);
-     delete m_countryAttack; m_countryAttack = 0;
-     delete m_countryDefense; m_countryDefense= 0;
-     delete m_bgImage; m_bgImage = 0;
+     delete m_countryAttack; m_countryAttack = nullptr;
+     delete m_countryDefense; m_countryDefense= nullptr;
+     delete m_bgImage; m_bgImage = nullptr;
   }
    
   QSize FightArena::sizeHint() const

@@ -59,7 +59,7 @@ public:
     If the connection could not be established (e.g. unknown host or no server
     socket at this port), the signal /e connectionBroken is emitted.
   */
-  explicit KMessageJabber (const QString& peerJid, JabberClient* jabberClient, QObject *parent = 0 );
+  explicit KMessageJabber (const QString& peerJid, JabberClient* jabberClient, QObject *parent = nullptr );
 
   /**
     Destructor, closes the Jabber connexion.

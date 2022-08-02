@@ -42,15 +42,15 @@ KRightDialog::KRightDialog(QDockWidget * parent, ONU * world,KGameWindow* m_game
   m_parentWidget(parent),
   world(world),
   rightContents(),
-  flag1(0),
-  flag2(0),
-  milieu(0),
-  milieu2(0),
-  btRecycleWidget(0),
-  btValidWidget(0),
+  flag1(nullptr),
+  flag2(nullptr),
+  milieu(nullptr),
+  milieu2(nullptr),
+  btRecycleWidget(nullptr),
+  btValidWidget(nullptr),
   game(m_game),
-  buttonStopAttack(0),
-  buttonStopDefense(0)
+  buttonStopAttack(nullptr),
+  buttonStopDefense(nullptr)
 {
     setLayout(mainLayout);
 //      setBaseSize(220,360);
@@ -61,7 +61,7 @@ KRightDialog::KRightDialog(QDockWidget * parent, ONU * world,KGameWindow* m_game
     QString skin = onugroup.readEntry("skinpath");
 
     InfantrySprite *sprite = new InfantrySprite(1.0, m_game->backGnd());
-    sprite-> setDestination(0);             // Sprite immobile
+    sprite-> setDestination(nullptr);             // Sprite immobile
     soldat = sprite->image(0).scaled(24,24,Qt::KeepAspectRatioByExpanding);
     delete sprite;
     
@@ -93,7 +93,7 @@ void KRightDialog::displayCountryDetails(const QPointF& countryPoint)
 {
   qCDebug(KSIRK_LOG);
   Country* country = world->countryAt(countryPoint);
-  if (country == 0)
+  if (country == nullptr)
   {
     return;
   }
@@ -361,9 +361,9 @@ void KRightDialog::updateRecycleDetails(GameLogic::Country* country, bool recycl
 {
   qCDebug(KSIRK_LOG) << (void*)country << recyclePhase << nbAvailArmies;
   this->show();
-  if (btValidWidget == 0)
+  if (btValidWidget == nullptr)
   {
-    if (country == 0)
+    if (country == nullptr)
     {
       return;
     }
@@ -414,7 +414,7 @@ void KRightDialog::displayFightResult(int A1=0, int A2=0, int A3=0, int D1=0, in
 
   // Bug 309863. Should not happen anymore because Country details and Fight results shouldn't be mixed.
   // If, by any chance, occurs again, do not crash and log the incident. In that case label just won't be refreshed.
-  if (loadingLabel != 0)
+  if (loadingLabel != nullptr)
   {
     QMovie* movie = loadingLabel->movie();
     delete movie;
@@ -423,7 +423,7 @@ void KRightDialog::displayFightResult(int A1=0, int A2=0, int A3=0, int D1=0, in
   else
     qCDebug(KSIRK_LOG) << "Item (loadingLabel) has already been cleared!";
 
-  if (infoProcess != 0)
+  if (infoProcess != nullptr)
     infoProcess->clear();
   else
     qCDebug(KSIRK_LOG) << "Item (infoProcess) has already been cleared!";
@@ -486,7 +486,7 @@ void KRightDialog::displayFightResult(int A1=0, int A2=0, int A3=0, int D1=0, in
   milieu->setLayout(milieuGrid);
   mainLayout->addWidget(milieu,1,0);
 
-  if (buttonStopAttack != 0 && win)
+  if (buttonStopAttack != nullptr && win)
   {
       buttonStopAttack->setEnabled(false);
   }
@@ -538,63 +538,63 @@ void KRightDialog::clearLayout()
     mainLayout->removeWidget(obj);
     delete obj;
   }
-  if (flag1 != 0)
+  if (flag1 != nullptr)
   {
     mainLayout->removeWidget(flag1);
     delete flag1;
-    flag1 = 0;
+    flag1 = nullptr;
   }
-  if (flag2 != 0)
+  if (flag2 != nullptr)
   {
     mainLayout->removeWidget(flag2);
     delete flag2;
-    flag2 = 0;
+    flag2 = nullptr;
   }
-  if (btRecycleWidget != 0)
+  if (btRecycleWidget != nullptr)
   {
     delete btRecycleWidget;
-    btRecycleWidget = 0;
+    btRecycleWidget = nullptr;
   }
-  if (btValidWidget != 0)
+  if (btValidWidget != nullptr)
   {
     delete btValidWidget;
-    btValidWidget = 0;
+    btValidWidget = nullptr;
   }
-  if (buttonStopAttack != 0)
+  if (buttonStopAttack != nullptr)
   {
     mainLayout->removeWidget(buttonStopAttack);
     delete buttonStopAttack;
-    buttonStopAttack = 0;
+    buttonStopAttack = nullptr;
   }
-  if (buttonStopDefense != 0)
+  if (buttonStopDefense != nullptr)
   {
     mainLayout->removeWidget(buttonStopDefense);
     delete buttonStopDefense;
-    buttonStopDefense = 0;
+    buttonStopDefense = nullptr;
   }
-  if(bas != 0 && mainLayout->indexOf(bas)!=-1)
+  if(bas != nullptr && mainLayout->indexOf(bas)!=-1)
   {
     mainLayout->removeWidget(bas);
     delete bas;
   }
-  if(milieu != 0)
+  if(milieu != nullptr)
   {
     mainLayout->removeWidget(milieu);
     delete milieu;
-    milieu = 0;
+    milieu = nullptr;
   }
-  if (milieu2 != 0)
+  if (milieu2 != nullptr)
   {
     mainLayout->removeWidget(milieu2);
     QMovie* movie = loadingLabel->movie();
     loadingLabel->clear();
     delete movie;
     delete loadingLabel;
-    loadingLabel = 0;
+    loadingLabel = nullptr;
     delete infoProcess;
-    infoProcess = 0;
+    infoProcess = nullptr;
     delete milieu2;
-    milieu2 = 0;
+    milieu2 = nullptr;
   }
   if(mainLayout->indexOf(haut)!=-1)
   {

@@ -87,7 +87,7 @@ public:
   * then the sprite should choose an approach by left or right, through the
   * edge of the map.
   */
-  void setupTravel(GameLogic::Country* src, GameLogic::Country* dest, const QPointF* dpcav=0) override;
+  void setupTravel(GameLogic::Country* src, GameLogic::Country* dest, const QPointF* dpcav=nullptr) override;
 
   /**
     * Gets the number of armies represented by a cavalry: 5

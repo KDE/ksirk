@@ -128,7 +128,7 @@ public:
   /**
     * Create the window and initializes its members
     */
-  explicit KGameWindow(QWidget* parent=0);
+  explicit KGameWindow(QWidget* parent=nullptr);
   
   /**
     * Deletes the background and the pool
@@ -281,7 +281,7 @@ public:
   /**
     * Updates the flag in the statusbar with the one of the current player
     */
-  void setBarFlagButton(const GameLogic::Player* player = 0);
+  void setBarFlagButton(const GameLogic::Player* player = nullptr);
 
   /**
     * @brief Shortcut for "statusBar()-> changeItem(text, id)"

@@ -58,7 +58,7 @@ AIColsonPlayer::AIColsonPlayer(
   m_initialized(false),
   Attack_SrcCountry(-1),
   Attack_DestCountry(-1),
-  m_placeData(0)
+  m_placeData(nullptr)
 {
   qCDebug(KSIRK_LOG);
 }
@@ -76,8 +76,8 @@ QPair< const Country*, const Country* > AIColsonPlayer::chooseBelligerant()
 {
   qCDebug(KSIRK_LOG);
   Fortify();
-  Country* src = 0;
-  Country* dest = 0;
+  Country* src = nullptr;
+  Country* dest = nullptr;
   
 //   Attack_SrcCountry = -1;
 //   Attack_DestCountry = -1;
@@ -87,7 +87,7 @@ QPair< const Country*, const Country* > AIColsonPlayer::chooseBelligerant()
   {
     Attack_SrcCountry = -1;
     Attack_DestCountry = -1;
-    return qMakePair<const Country*, const Country*>(static_cast<Country*>(0), static_cast<Country*>(0));
+    return qMakePair<const Country*, const Country*>(static_cast<Country*>(nullptr), static_cast<Country*>(nullptr));
   }
 
   if ( (Attack_SrcCountry>=0) && (Attack_SrcCountry<m_world->getCountries().size() ) )
@@ -130,11 +130,11 @@ void AIColsonPlayer::chooseAttackMoveArmiesOrNextPlayer()
 Country* AIColsonPlayer::chooseReceivingCountry()
 {
   qCDebug(KSIRK_LOG);
-  if (m_placeData == 0)
+  if (m_placeData == nullptr)
   {
     if (!Place())
     {
-      return 0;
+      return nullptr;
     }
   }
   Country* res = m_placeData->dest;
@@ -142,7 +142,7 @@ Country* AIColsonPlayer::chooseReceivingCountry()
   if (m_placeData->nb == 0)
   {
     delete m_placeData;
-    m_placeData = 0;
+    m_placeData = nullptr;
   }
   return res;
 }
@@ -321,7 +321,7 @@ bool AIColsonPlayer::isSmallerPlayer(const Player* player)
 
 bool AIColsonPlayer::isContinentOfPlayer(const Continent* continent, const Player* player)
 {
-  if (continent == 0)
+  if (continent == nullptr)
   {
     return false;
   } 
@@ -350,7 +350,7 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
     {
       Continent *continent = *continentsIt;
 //       qCDebug(KSIRK_LOG) << "    " << continent;
-      if (continent == 0) continue;
+      if (continent == nullptr) continue;
 //       qCDebug(KSIRK_LOG) << "    " << continent->name();
       piCount[((Player*)(*it))][continent] = 0;
       maxContinent[((Player*)(*it))][continent] = false;
@@ -367,7 +367,7 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
     Country* country = m_world->getCountries().at(i);
 //     qCDebug(KSIRK_LOG) << "country " << country << ;
 //     qCDebug(KSIRK_LOG) << "country " << country->name().toUtf8().data();
-    if ( country->owner() != 0 && country->continent() != 0)
+    if ( country->owner() != nullptr && country->continent() != nullptr)
     {
       piCount[country->owner()][country->continent()]++;
 //       qCDebug(KSIRK_LOG) << "piCount[" << country->owner()->name().toUtf8().data() << "][" << country->continent()->name().toUtf8().data() << "] ";
@@ -453,10 +453,10 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
   }
 
   /* Search a continent with no conflict */
-  const Continent* continent = 0;
+  const Continent* continent = nullptr;
   QList<Continent*>::iterator contIt(m_world->getContinents().begin());
   QList<Continent*>::iterator contIt_end(m_world->getContinents().end());
-  for (;(contIt!=contIt_end) && (continent==0);contIt++)
+  for (;(contIt!=contIt_end) && (continent==nullptr);contIt++)
   {
     const Continent* cont = *contIt;
     
@@ -475,20 +475,20 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
               continent = *(m_world->getContinents().begin());
           else if (    (maxContinent[i][cont])
                     && (piCount[i][cont] > piCount[this][cont]))
-            continent = 0;
+            continent = nullptr;
         }
       }
     }
   }
 
-  if (isFriendPlayer(this) && (continent!=0))
+  if (isFriendPlayer(this) && (continent!=nullptr))
   {
     QList<Continent*>::iterator contIt(m_world->getContinents().begin());
     QList<Continent*>::iterator contIt_end(m_world->getContinents().end());
 #ifdef __GNUC__
 #warning continent can not be 0 in this code path - everything in this for loop is dead code
 #endif
-    for (;(contIt!=contIt_end) && (continent==0);contIt++)
+    for (;(contIt!=contIt_end) && (continent==nullptr);contIt++)
     {
       const Continent* cont = *contIt;
       if (cont != continent)
@@ -508,10 +508,10 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
   }
 
   /* Search a continent with no computer conflict */
-  continent = 0;
+  continent = nullptr;
   contIt = m_world->getContinents().begin();
   contIt_end = m_world->getContinents().end();
-  for (;(contIt!=contIt_end) && (continent==0);contIt++)
+  for (;(contIt!=contIt_end) && (continent==nullptr);contIt++)
   {
     const Continent* cont = *contIt;
     if (maxContinent[this][cont])
@@ -525,16 +525,16 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
         if (isFriendPlayer(i) && (i != this)) 
         {
           if ( m_piContinent[i] == cont)
-              continent = 0;
+              continent = nullptr;
           else if (    (maxContinent[i][cont])
                     && (piCount[i][cont] > piCount[this][cont]))
-              continent = 0;
+              continent = nullptr;
         }
       }
     }
   }
 
-  if (continent!=0)
+  if (continent!=nullptr)
   {
     QList<Continent*>::iterator contIt(m_world->getContinents().begin());
     QList<Continent*>::iterator contIt_end(m_world->getContinents().end());
@@ -561,10 +561,10 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
 
 
   /* Search a possible continent with no conflict */
-  continent = 0;
+  continent = nullptr;
   contIt = m_world->getContinents().begin();
   contIt_end = m_world->getContinents().end();
-  for (;(contIt!=contIt_end) && (continent==0);contIt++)
+  for (;(contIt!=contIt_end) && (continent==nullptr);contIt++)
   {
     const Continent* cont = *contIt;
     if (posContinent[this][cont])
@@ -578,16 +578,16 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
         if (isFriendPlayer(pi) && (pi != this)) 
         {
           if ( m_piContinent[pi] == cont)
-              continent = 0;
+              continent = nullptr;
           else if (    (maxContinent[pi][cont])
                     && (piCount[pi][cont] > piCount[this][cont]))
-              continent = 0;
+              continent = nullptr;
         }
       }
     }
   }
 
-  if (continent!=0)
+  if (continent!=nullptr)
   {
     QList<Continent*>::iterator contIt(m_world->getContinents().begin());
     QList<Continent*>::iterator contIt_end(m_world->getContinents().end());
@@ -613,10 +613,10 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
   }
 
   /* Search a possible continent with no computer conflict */
-  continent = 0;
+  continent = nullptr;
   contIt = m_world->getContinents().begin();
   contIt_end = m_world->getContinents().end();
-  for (;(contIt!=contIt_end) && (continent==0);contIt++)
+  for (;(contIt!=contIt_end) && (continent==nullptr);contIt++)
   {
     const Continent* cont = *contIt;
     if (posContinent[this][cont])
@@ -630,16 +630,16 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
         if (isFriendPlayer(pi) && (pi != this)) 
         {
           if ( m_piContinent[pi] == cont)
-              continent = 0;
+              continent = nullptr;
           else if (    (maxContinent[pi][cont])
                     && (piCount[pi][cont] > piCount[this][cont]))
-              continent = 0;
+              continent = nullptr;
         }
       }
     }
   }
 
-  if (continent!=0)
+  if (continent!=nullptr)
   {
     QList<Continent*>::iterator contIt(m_world->getContinents().begin());
     QList<Continent*>::iterator contIt_end(m_world->getContinents().end());
@@ -655,12 +655,12 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
     return continent;
   }
 
-  continent = 0;
+  continent = nullptr;
 
   /* Search a continent */
   contIt = m_world->getContinents().begin();
   contIt_end = m_world->getContinents().end();
-  for (;(contIt!=contIt_end) && (continent==0);contIt++)
+  for (;(contIt!=contIt_end) && (continent==nullptr);contIt++)
   {
     const Continent* cont = *contIt;
     if (piCount[this][cont]>0)
@@ -672,12 +672,12 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
       {
         Player* pi = static_cast<Player*>(*iit);
         if (isFriendPlayer(pi) && (pi != this))
-          continent = 0;
+          continent = nullptr;
       }
     }
   }
 
-  if (continent!=0)
+  if (continent!=nullptr)
   {
     QList<Continent*>::iterator contIt(m_world->getContinents().begin());
     QList<Continent*>::iterator contIt_end(m_world->getContinents().end());
@@ -693,12 +693,12 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
     return continent;
   }
 
-  continent = 0;
+  continent = nullptr;
 
   /* Search a continent */
   contIt = m_world->getContinents().begin();
   contIt_end = m_world->getContinents().end();
-  for (;(contIt!=contIt_end) && (continent==0);contIt++)
+  for (;(contIt!=contIt_end) && (continent==nullptr);contIt++)
   {
     const Continent* cont = *contIt;
     if (maxContinent[this][cont])
@@ -778,7 +778,7 @@ const Continent* AIColsonPlayer::getContinentToConquier(int *attack)
     }
   }
 
-  const Continent* continent = 0;
+  const Continent* continent = nullptr;
   int min = 10000;
   contIt = m_world->getContinents().begin();
   contIt_end = m_world->getContinents().end();
@@ -786,7 +786,7 @@ const Continent* AIColsonPlayer::getContinentToConquier(int *attack)
   {
     const Continent* cont = *contIt;
     qCDebug(KSIRK_LOG) << "    " << cont;
-    if (cont != 0)
+    if (cont != nullptr)
       qCDebug(KSIRK_LOG) << "    " << cont->name();
     if (isContinentOfMission(this, cont))
     {
@@ -820,7 +820,7 @@ int AIColsonPlayer::NbEnemyAdjacent(Country* iCountry)
   {
     fIsEnemy[(Player*)(*pit)] = false;
   }
-  Player* iEnemy = 0;
+  Player* iEnemy = nullptr;
   Country* destCountry;
   QList<Country*>::const_iterator it, it_end;
   it = iCountry->neighbours().constBegin();
@@ -2038,7 +2038,7 @@ void AIColsonPlayer::finalize()
   {
     Player* player = (Player*)*it;
     m_numTurn[player] = 0;
-    if (dynamic_cast<AIColsonPlayer*>(player)!=0)
+    if (dynamic_cast<AIColsonPlayer*>(player)!=nullptr)
         m_isEnemyPlayer[player] = 1;
     else if (player->author() == AUTHOR)
         m_isEnemyPlayer[player] = 2;
@@ -2057,7 +2057,7 @@ int AIColsonPlayer::AI_Place(int iCountry, int iNumArmies)
 {
   qCDebug(KSIRK_LOG) << iNumArmies 
             << " on country number " << iCountry;
-  if (m_placeData != 0)
+  if (m_placeData != nullptr)
   {
     delete m_placeData;
   }

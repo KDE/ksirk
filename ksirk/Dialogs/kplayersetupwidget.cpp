@@ -273,7 +273,7 @@ void KPlayerSetupWidget::init(NewPlayerData* player)
     passwordLabel->hide();
     passwordEdit->hide();
   }
-  if (player != 0)
+  if (player != nullptr)
   {
     qCDebug(KSIRK_LOG) << player->name();
     nationCombo->setCurrentIndex(nationCombo->findText(player->nation()));

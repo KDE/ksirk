@@ -43,7 +43,7 @@ class JoinGameDialog : public QDialog, public Ui::JoinGameDialog
 public:
   JoinGameDialog(QString& host,
                  int& port,
-                 QWidget *parent=0);
+                 QWidget *parent=nullptr);
   
   ~JoinGameDialog() override;
 

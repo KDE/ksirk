@@ -50,10 +50,10 @@ AnimSprite::AnimSprite(const QString &svgid,
                         double zoom,
                         BackGnd* aBackGnd,
                         unsigned int visibility) :
-    QGraphicsPixmapItem(0),
+    QGraphicsPixmapItem(nullptr),
     m_animated(false), m_zoom(zoom), m_svgid(svgid),
     look(right), nbVersions(nbDirs),
-    backGnd(aBackGnd), destination(0), destinationPoint(), frames(nbFrames), actFrame(0),
+    backGnd(aBackGnd), destination(nullptr), destinationPoint(), frames(nbFrames), actFrame(0),
     myState(NONE),
     m_height(zoom*height),
     m_width(zoom*width),
@@ -508,7 +508,7 @@ qreal AnimSprite::getMaxX() const
         return backGnd-> pixmap().width();
     else
     {
-        KMessageBox::error(0, i18n("Cannot find Max X for sprite: no background!"), i18n("Error!"));
+        KMessageBox::error(nullptr, i18n("Cannot find Max X for sprite: no background!"), i18n("Error!"));
         exit(2);
     }
 }
@@ -523,15 +523,15 @@ qreal AnimSprite::getMaxY() const
         return backGnd-> pixmap().height();
     else
     {
-        KMessageBox::error(0, i18n("Cannot find Max Y for sprite: no background!"), i18n("Error!"));
+        KMessageBox::error(nullptr, i18n("Cannot find Max Y for sprite: no background!"), i18n("Error!"));
         exit(2);
     }
 }
 
 void AnimSprite::setupTravel(Country* src, Country* dest, const QPointF* dpi)
 {
-  qCDebug(KSIRK_LOG) << src->name() << dest->name() << *dpi << (dpi==0?QPointF():*dpi);
-  if (dpi ==0) AnimSprite::setupTravel(src, dest, src->centralPoint(), dest-> centralPoint());
+  qCDebug(KSIRK_LOG) << src->name() << dest->name() << *dpi << (dpi==nullptr?QPointF():*dpi);
+  if (dpi ==nullptr) AnimSprite::setupTravel(src, dest, src->centralPoint(), dest-> centralPoint());
   else AnimSprite::setupTravel(src, dest, src->centralPoint(), *dpi);
 }
 

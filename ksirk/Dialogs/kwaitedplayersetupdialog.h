@@ -49,7 +49,7 @@ public:
     KWaitedPlayerSetupDialog(GameLogic::GameAutomaton* automaton,
                              QString& password,
                               int& result,
-                             QWidget *parent=0);
+                             QWidget *parent=nullptr);
   
   ~KWaitedPlayerSetupDialog() override;
 

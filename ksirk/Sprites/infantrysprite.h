@@ -87,7 +87,7 @@ public:
     * edge of the map.
     */
   void setupTravel(GameLogic::Country* src, GameLogic::Country* dest, 
-    const QPointF* dpi=0) override;
+    const QPointF* dpi=nullptr) override;
 
   /**
     * Gets the number of armies represented by an infantry: 1

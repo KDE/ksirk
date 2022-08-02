@@ -78,7 +78,7 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
   QPointF mousePosition;
   Country *mouseLocalisation;
 
-  if (m_frame == 0 || m_reinitializingGame)
+  if (m_frame == nullptr || m_reinitializingGame)
   {
     return;
   }
@@ -95,7 +95,7 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
       m_mouseLocalisation = mouseLocalisation;
       mouseLocalisation->highlight(Qt::white, 0.5);
     }
-    else if (m_mouseLocalisation == 0)
+    else if (m_mouseLocalisation == nullptr)
     {
       m_mouseLocalisation = mouseLocalisation;
       mouseLocalisation->highlight(Qt::white, 0.5);
@@ -114,10 +114,10 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
   }
   else
   {
-    if (m_mouseLocalisation!=0)
+    if (m_mouseLocalisation!=nullptr)
     {
       m_mouseLocalisation->clearHighlighting();
-      m_mouseLocalisation = 0;
+      m_mouseLocalisation = nullptr;
     }
     //QT5 statusBar()-> changeItem("", ID_STATUS_MSG); // Reset
   }
@@ -136,11 +136,11 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
     )
   )
   // safety check for NULL arrow pointers, can happen with Qt 4.5
-  if (m_uparrow == 0 || m_downarrow == 0 || m_leftarrow == 0 || m_rightarrow == 0)
+  if (m_uparrow == nullptr || m_downarrow == nullptr || m_leftarrow == nullptr || m_rightarrow == nullptr)
   {
     return;
   }
-  if (currentWidget() != 0)
+  if (currentWidget() != nullptr)
   {
     m_timer.start(200);
     if ((mousePos.y() < borderScrollSize) && (mousePos.y() >= 0)
@@ -435,7 +435,7 @@ void KGameWindow::slotOpenGame()
 
 void KGameWindow::slotSaveGame()
 {
-  if (m_message == 0)
+  if (m_message == nullptr)
   {
     setupPopupMessage();
   }
@@ -637,7 +637,7 @@ void KGameWindow::slotConnectToServer()
   if (!(m_automaton->playerList()->isEmpty()))
   {
     m_automaton->playerList()->clear();
-    m_automaton->currentPlayer(0);
+    m_automaton->currentPlayer(nullptr);
     qCDebug(KSIRK_LOG) << "  playerList size = " << m_automaton->playerList()->count();
   }
   theWorld()->reset();
@@ -787,19 +787,19 @@ void KGameWindow::slotZoomOut()
 void KGameWindow::slotRemoveMessage()
 {
   qCDebug(KSIRK_LOG);
-  if (m_message != 0)
+  if (m_message != nullptr)
   {
     qCDebug(KSIRK_LOG) << "hiding and deleting";
     m_message->hide();
     delete m_message;
-    m_message = 0;
+    m_message = nullptr;
   }
 }
 
 void KGameWindow::slotContextualHelp()
 {
   qCDebug(KSIRK_LOG);
-  if (currentPlayer() == 0 || currentPlayer()->isAI())
+  if (currentPlayer() == nullptr || currentPlayer()->isAI())
   {
     return;
   }
@@ -1094,7 +1094,7 @@ void KGameWindow::slotGroupChatError (const XMPP::Jid &jid, int error, const QSt
   {
     case JabberClient::InvalidPasswordForMUC:
     {
-      KPasswordDialog dlg(0);
+      KPasswordDialog dlg(nullptr);
       dlg.setPrompt(i18n("A password is required to join the room %1.", jid.node()));
       if (dlg.exec() == KPasswordDialog::Accepted)
         m_jabberClient->joinGroupChat(jid.domain(), jid.node(), jid.resource(), dlg.password());
@@ -1204,7 +1204,7 @@ void KGameWindow::slotStartNewGame()
   {
     qCDebug(KSIRK_LOG) << "There was " << m_automaton->playerList()->count() << "players";
     m_automaton->playerList()->clear();
-    m_automaton->currentPlayer(0);
+    m_automaton->currentPlayer(nullptr);
     qCDebug(KSIRK_LOG) << "  playerList size = " << m_automaton->playerList()->count();
   }
   theWorld()->reset();

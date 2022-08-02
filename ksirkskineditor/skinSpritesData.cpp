@@ -26,7 +26,7 @@
 
 namespace KsirkSkinEditor
 {
-SkinSpritesData* SkinSpritesData::m_singleton = 0;
+SkinSpritesData* SkinSpritesData::m_singleton = nullptr;
 
 SkinSpritesData::SkinSpritesData()
 {
@@ -35,12 +35,12 @@ SkinSpritesData::SkinSpritesData()
 SkinSpritesData::~SkinSpritesData()
 {
   delete m_singleton;
-  m_singleton = 0;
+  m_singleton = nullptr;
 }
 
 const SkinSpritesData& SkinSpritesData::single()
 {
-  if (m_singleton == 0)
+  if (m_singleton == nullptr)
   {
     m_singleton = new SkinSpritesData();
     m_singleton->init();
@@ -50,7 +50,7 @@ const SkinSpritesData& SkinSpritesData::single()
 
 SkinSpritesData& SkinSpritesData::changeable()
 {
-  if (m_singleton == 0)
+  if (m_singleton == nullptr)
   {
     m_singleton = new SkinSpritesData();
     m_singleton->init();
@@ -83,7 +83,7 @@ int SkinSpritesData::intData(const QString& name) const
   {
     QString msg;
     QTextStream(&msg) << i18n("Error - Unknown skin int data: ") << name;
-    KMessageBox::error(0, msg, i18n("Fatal Error"));
+    KMessageBox::error(nullptr, msg, i18n("Fatal Error"));
     exit(1);    
   }
   else
@@ -99,7 +99,7 @@ const QString& SkinSpritesData::strData(const QString& name) const
   {
     QString msg;
     QTextStream(&msg) << i18n("Error - Unknown skin string data: ") << name;
-    KMessageBox::error(0, msg, i18n("Fatal Error"));
+    KMessageBox::error(nullptr, msg, i18n("Fatal Error"));
     exit(1);    
   }
   else

@@ -34,7 +34,7 @@ class JabberByteStream : public ByteStream
 Q_OBJECT
 
 public:
-	JabberByteStream ( QObject *parent = 0 );
+	JabberByteStream ( QObject *parent = nullptr );
 
 	~JabberByteStream () override;
 

@@ -31,14 +31,14 @@ namespace Ksirk {
 namespace GameLogic {
 
 Goal::Goal() :
-  m_automaton(0),
+  m_automaton(nullptr),
   m_type(NoGoal),
   m_description(""),
   m_nbCountries(0),
   m_nbArmiesByCountry(0),
   m_continents(),
   m_players(),
-  m_player(0)
+  m_player(nullptr)
 {
 }
 
@@ -50,7 +50,7 @@ m_nbCountries(0),
 m_nbArmiesByCountry(0),
 m_continents(),
 m_players(),
-m_player(0)
+m_player(nullptr)
 {
 }
 
@@ -65,7 +65,7 @@ bool Goal::checkFor(const GameLogic::Player* player) const
   switch (type())
   {
   case Goal::GoalPlayer :
-    if (m_automaton->playerNamed(*m_players.begin()) != 0)
+    if (m_automaton->playerNamed(*m_players.begin()) != nullptr)
     {
       return false;
     }
@@ -121,7 +121,7 @@ bool Goal::checkContinentsFor(const GameLogic::Player* player) const
   foreach (const QString& continent, m_continents)
   {
     qCDebug(KSIRK_LOG) << "Should be owned continent id: " << continent;
-    if ( m_automaton->game()->theWorld()->continentNamed(continent) == 0
+    if ( m_automaton->game()->theWorld()->continentNamed(continent) == nullptr
        || m_automaton->game()->theWorld()->continentNamed(continent)->owner() != player)
     {
       return false;
@@ -161,7 +161,7 @@ QString Goal::message(int displayType) const
     if (displayType & GoalDesc)
     {
       res = ki18n(m_description.toUtf8().data());
-      if (m_player == 0)
+      if (m_player == nullptr)
       {
         res = res.subs("");
       }
@@ -179,7 +179,7 @@ QString Goal::message(int displayType) const
         {
           qCDebug(KSIRK_LOG) << "  player name='" << *m_players.begin();
           qCDebug(KSIRK_LOG) << "  this is player='" << m_automaton->playerNamed(*m_players.begin());
-          if (m_automaton->playerNamed(*m_players.begin())==0)
+          if (m_automaton->playerNamed(*m_players.begin())==nullptr)
           {
             res = res.subs(i18n("%1 (already dead)",*m_players.begin()));
           }
@@ -226,7 +226,7 @@ QString Goal::message(int displayType) const
     switch (m_type)
     {
     case Goal::GoalPlayer :
-      if (m_automaton->playerNamed(*m_players.begin()) != 0)
+      if (m_automaton->playerNamed(*m_players.begin()) != nullptr)
       {
         mes += i18n("<br>%1 is still alive...",*m_players.begin());
       }
@@ -268,7 +268,7 @@ QString Goal::message(int displayType) const
     case Goal::Continents:
       mes += i18n("<br>%1, you still have to conquer ",m_player->name());
       it = m_continents.begin(); it_end = m_continents.end();
-      if (*it != 0)
+      if (*it != nullptr)
       {
         Continent* continent = const_cast<Continent*>(m_automaton->game()->theWorld()->continentNamed(*it));
         int nb = continent->getMembers().size() - continent->countriesOwnedBy(m_player).size();
@@ -288,7 +288,7 @@ QString Goal::message(int displayType) const
         {
           joint = i18n(", ");
         }
-        if (*it != 0)
+        if (*it != nullptr)
         {
           Continent* continent = const_cast<Continent*>(m_automaton->game()->theWorld()->continentNamed(*it));
           int nb = continent->getMembers().size() - continent->countriesOwnedBy(m_player).size();
@@ -321,7 +321,7 @@ QDataStream& operator<<(QDataStream& stream, const Goal& goal)
 {
   qCDebug(KSIRK_LOG) << "Goal operator<< : type" << goal.type();
   stream << quint32(goal.type());
-  if (goal.player() != 0)
+  if (goal.player() != nullptr)
   {
     qCDebug(KSIRK_LOG) << "Goal operator<< : player " << goal.player()->id();
     stream << quint32(goal.player()->id());
@@ -432,7 +432,7 @@ void Goal::saveXml(QTextStream& xmlStream) const
 {
   
   xmlStream << "<goal player=\"";
-  if (m_player != 0)
+  if (m_player != nullptr)
   {
     xmlStream << m_player->name();
   }

@@ -48,7 +48,7 @@ class NewGameSummaryWidget : public QWidget, public Ui::NewGameSummary
 {
   Q_OBJECT
 public:
-  explicit NewGameSummaryWidget(QWidget *parent=0);
+  explicit NewGameSummaryWidget(QWidget *parent=nullptr);
   
   ~NewGameSummaryWidget() override;
 

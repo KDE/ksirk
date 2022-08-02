@@ -31,7 +31,7 @@ class KsirkChatDelegate : public KChatBaseItemDelegate
     Q_OBJECT
 
 public:
-    explicit KsirkChatDelegate(QObject *parent = 0);
+    explicit KsirkChatDelegate(QObject *parent = nullptr);
     ~KsirkChatDelegate() override {}
 
     void paint(QPainter *painter, const QStyleOptionViewItem &option,

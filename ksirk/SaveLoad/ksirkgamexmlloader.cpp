@@ -43,7 +43,7 @@ GameXmlLoader::GameXmlLoader(const QString& fileName, KGameWindow& game,
   
   if (!reader.parse( source ))
   {
-    KMessageBox::error(0, i18n("Skin file parsing error"), 
+    KMessageBox::error(nullptr, i18n("Skin file parsing error"), 
       i18n("KsirK - Error"));
     exit(0);
   }

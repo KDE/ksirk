@@ -408,7 +408,7 @@ public:
   
   bool connectToServ();
 
-  void checkGoal(Player* player = 0);
+  void checkGoal(Player* player = nullptr);
   
 Q_SIGNALS:
   void newJabberGame(const QString&, int, const QString&);
@@ -566,14 +566,14 @@ private:
   // tell us if the automatic defense is enabled
   struct AutoDefenseStruct
   {
-    AutoDefenseStruct() : value(false), firstCountry(0), secondCountry(0) {}
-    AutoDefenseStruct(bool v) : value(v), firstCountry(0), secondCountry(0) {}
+    AutoDefenseStruct() : value(false), firstCountry(nullptr), secondCountry(nullptr) {}
+    AutoDefenseStruct(bool v) : value(v), firstCountry(nullptr), secondCountry(nullptr) {}
     bool isDefenseAuto(Country* first, Country* second)
     {
       if (firstCountry!=first || secondCountry!=second)
       {
-        firstCountry = 0;
-        secondCountry = 0;
+        firstCountry = nullptr;
+        secondCountry = nullptr;
         value = false;
       }
       return value;

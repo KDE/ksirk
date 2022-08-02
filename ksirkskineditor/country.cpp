@@ -53,7 +53,7 @@ Country::Country(
   m_pointCavalry(cavalryPoint),
   m_pointInfantry(infantryPoint),
 //   m_id(id),
-  m_highlighting(0),
+  m_highlighting(nullptr),
   m_renderer(new QSvgRenderer()),
   m_highlighting_locked(false)
 {
@@ -226,11 +226,11 @@ void Country::highlight(QGraphicsScene* scene, ONU* onu, const QColor& color, qr
 void Country::clearHighlighting()
 {
 //   qCDebug(KSIRKSKINEDITOR_LOG) << m_highlighting_locked << (void*)m_highlighting;
-  if (!m_highlighting_locked && m_highlighting!=0)
+  if (!m_highlighting_locked && m_highlighting!=nullptr)
   {
     m_highlighting->hide();
     delete m_highlighting;
-    m_highlighting = 0;
+    m_highlighting = nullptr;
   }
 //   qCDebug(KSIRKSKINEDITOR_LOG) << "done";
 }

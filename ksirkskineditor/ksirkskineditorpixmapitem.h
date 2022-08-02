@@ -41,7 +41,7 @@ public:
   /**
     * Create the window and initializes its members
     */
-  explicit PixmapItem(QGraphicsItem* parent=0);
+  explicit PixmapItem(QGraphicsItem* parent=nullptr);
   
   /**
     * Deletes the background and the pool

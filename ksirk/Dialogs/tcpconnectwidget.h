@@ -34,7 +34,7 @@ class TcpConnectWidget : public QWidget, public Ui::TcpConnectWidget
 {
   Q_OBJECT
 public:
-  explicit TcpConnectWidget(QWidget *parent=0);
+  explicit TcpConnectWidget(QWidget *parent=nullptr);
   
   ~TcpConnectWidget() override;
   

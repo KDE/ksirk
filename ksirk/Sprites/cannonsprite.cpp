@@ -58,8 +58,8 @@ void CannonSprite::setupTravel(
   GameLogic::Country* dest, 
   const QPointF* dpi)
 {
-  qCDebug(KSIRK_LOG) << src->name() << dest->name() << (void*)dpi << (dpi==0?QPointF():*dpi);
-  if (dpi == 0) 
+  qCDebug(KSIRK_LOG) << src->name() << dest->name() << (void*)dpi << (dpi==nullptr?QPointF():*dpi);
+  if (dpi == nullptr) 
   {
     AnimSprite::setupTravel(src, dest, 
                              src->pointCannon()*m_zoom, dest-> pointCannon()*m_zoom);

@@ -68,7 +68,7 @@ AIPlayer :: AIPlayer(
   allPlayers(players),
   m_world(world),
   m_game(game),
-  m_src(0), m_dest(0),
+  m_src(nullptr), m_dest(nullptr),
   m_toMove(std::numeric_limits< unsigned int>::max()),
   m_hasVoted(false),
   m_actionWaitingStart(false),
@@ -147,12 +147,12 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
         m_actionWaitingStart = false;
 
         chooseInvasionAction();
-        if (m_src != 0 && m_dest != 0
+        if (m_src != nullptr && m_dest != nullptr
             && m_src->owner() == m_dest->owner())
         {
           stream << QString("actionLButtonUp") << m_dest->centralPoint();
-          m_src = 0;
-          m_dest = 0;
+          m_src = nullptr;
+          m_dest = nullptr;
           aiPlayerIO()->sendInput(stream,true);
           //m_game->state(GameAutomaton::ATTACK2);
         }
@@ -180,7 +180,7 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
         }*/
         break;
       case GameLogic::GameAutomaton::SHIFT1 :
-        if (m_src != 0 && m_dest != 0)
+        if (m_src != nullptr && m_dest != nullptr)
         {
           /*stream << QString("actionLButtonDown") << m_src->centralPoint();
           aiPlayerIO()->sendInput(stream,true);
@@ -190,7 +190,7 @@ void AIPlayer::actionChoice(GameLogic::GameAutomaton::GameState state)
         }
         break;
       case GameLogic::GameAutomaton::SHIFT2 :
-        if (m_dest != 0)
+        if (m_dest != nullptr)
         {
           chooseNbToMoveOrStop();
         }
@@ -261,7 +261,7 @@ QPair<const Country*, const Country*> AIPlayer::chooseBelligerant()
     QList<Country*>::iterator outer = list.begin();
     const Country* candidateSource;
 //        qCDebug(KSIRK_LOG) << name() << "  choosing belligerants, candidate sources ";
-    while ( ( outer != list.end()) && ( (candidateSource = *outer) != 0 ) )
+    while ( ( outer != list.end()) && ( (candidateSource = *outer) != nullptr ) )
     {
 //            qCDebug(KSIRK_LOG) << name() << "  choosing belligerants, looking at candidate source : " << candidateSource-> name();
             // Enough armies
@@ -290,7 +290,7 @@ QPair<const Country*, const Country*> AIPlayer::chooseBelligerant()
     if ( candidates.size() == 0 )
     {
 //            qCDebug(KSIRK_LOG) << name() << " OUT AIPlayer::chooseBelligerant() ; map size = 0 ; it isn't possible to attack.";
-      return (qMakePair<const Country*, const Country*>(static_cast< Country*>(0), static_cast< Country*>(0)));
+      return (qMakePair<const Country*, const Country*>(static_cast< Country*>(nullptr), static_cast< Country*>(nullptr)));
     }
     uint which = Dice::roll(candidates.size()) - 1;
 //        qCDebug(KSIRK_LOG) << "Which = " << which;
@@ -306,7 +306,7 @@ QPair<const Country*, const Country*> AIPlayer::chooseBelligerant()
     }
   }
 //    qCDebug(KSIRK_LOG) << "OUT AIPlayer::chooseBelligerant() : do I own no country ???";
-  return (qMakePair<const Country*, const Country*>(static_cast< Country*>(0), static_cast< Country*>(0)));
+  return (qMakePair<const Country*, const Country*>(static_cast< Country*>(nullptr), static_cast< Country*>(nullptr)));
 }
 
 /**
@@ -321,7 +321,7 @@ Country* AIPlayer::chooseReceivingCountry()
   if (myCountries.size() == 0)
   {
     qCCritical(KSIRK_LOG) << "AIPlayer::chooseReceivingCountry() EMPTY LIST";
-    return 0;
+    return nullptr;
   }
   QList<Country*> withNeighbours;
   
@@ -375,7 +375,7 @@ bool AIPlayer::attackAction()
 {
 //   qCDebug(KSIRK_LOG) << "AIPlayer::attackAction";
   QPair<const Country* , const Country* > srcDest = chooseBelligerant();
-  if ( (srcDest.first == 0) || (srcDest.second == 0) )
+  if ( (srcDest.first == nullptr) || (srcDest.second == nullptr) )
   {
 //     qCDebug(KSIRK_LOG) << "AIPlayer::attackAction: no attack available";
 //       nextPlayerAction(); 
@@ -499,11 +499,11 @@ void AIPlayer::placeArmiesAction()
   {
     m_hasVoted = false;
     const Country* receiver = chooseReceivingCountry();
-    if (receiver == 0)
+    if (receiver == nullptr)
     {
       QString msg = i18np("Error - No receiving country selected while computer player %2 had still 1 army to place. This is bug probably #2232 at www.gna.org.", "Error - No receiving country selected while computer player %2 had still %1 armies to place. This is bug probably #2232 at www.gna.org.", getNbAvailArmies(), Player::name());
       qCCritical(KSIRK_LOG) << msg;
-      KMessageBox::error(0, msg, i18n("Fatal Error"));
+      KMessageBox::error(nullptr, msg, i18n("Fatal Error"));
       m_thread.exit();
       m_thread.wait();
     }
@@ -664,7 +664,7 @@ void AIPlayer::chooseNbToMoveOrStop()
   QPointF point;
   if (m_toMove == std::numeric_limits< unsigned int>::max())
   {
-    if (m_src == 0)
+    if (m_src == nullptr)
     {
       m_toMove = 0;
     }
@@ -704,7 +704,7 @@ AIPlayerIO* AIPlayer::aiPlayerIO()
     if ( iolist->at(i) && iolist->at(i)->rtti() == AIPLAYERIO )
       return dynamic_cast<AIPlayerIO*>(iolist->at(i));
   
-  return 0;
+  return nullptr;
 }
 
 void AIPlayer::requestAck()

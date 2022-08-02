@@ -35,7 +35,7 @@ class JabberConnector : public XMPP::Connector
 Q_OBJECT
 
 public:
-	JabberConnector ( QObject *parent = 0 );
+	JabberConnector ( QObject *parent = nullptr );
 
 	~JabberConnector () override;
 

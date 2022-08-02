@@ -55,7 +55,7 @@ public:
     m_waitedPlayers(waitedPlayers),
     m_playersNumber(0),
     m_inGoal(false),
-    m_goal(0)
+    m_goal(nullptr)
   {
     m_waitedPlayers.clear();
   }

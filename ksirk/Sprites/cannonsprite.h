@@ -98,7 +98,7 @@ public:
     * default (cannon point)
     */
   void setupTravel(GameLogic::Country* src, GameLogic::Country* dest, 
-    const QPointF* dpi=0) override;
+    const QPointF* dpi=nullptr) override;
 
 private:
   static const unsigned int m_nbArmies = 10;

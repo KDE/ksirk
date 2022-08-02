@@ -88,10 +88,10 @@ using namespace GameLogic;
 
 KGameWindow::KGameWindow(QWidget* parent) :
   KXmlGuiWindow(parent),
-  m_rightDock(0),
-  m_rightDialog(0),
+  m_rightDock(nullptr),
+  m_rightDialog(nullptr),
   m_automaton(new GameAutomaton()),
-  m_wSlide(0),
+  m_wSlide(nullptr),
   m_currentDisplayedWidget(MainMenu),
   NKD(0), NKA(0),
   m_useArena(false),
@@ -99,36 +99,36 @@ KGameWindow::KGameWindow(QWidget* parent) :
   nbSpriteDefending(0),
   relativePosInArenaAttack(0),
   relativePosInArenaDefense(0),
-  m_theWorld(0),
-  m_scene_world(0), m_scene_arena(0),
-  m_backGnd_world(0), m_backGnd_arena(0),
+  m_theWorld(nullptr),
+  m_scene_world(nullptr), m_scene_arena(nullptr),
+  m_backGnd_world(nullptr), m_backGnd_arena(nullptr),
   m_animFighters(new AnimSpritesGroup(this,SLOT(slotMovingFightersArrived(AnimSpritesGroup*)))),
   m_nbMovedArmies(0),
-  m_firstCountry(0), m_secondCountry(0),
-  m_frame(0),
-  m_arena(0),
-  m_mainMenu(0),
-  m_goalAction(0),
+  m_firstCountry(nullptr), m_secondCountry(nullptr),
+  m_frame(nullptr),
+  m_arena(nullptr),
+  m_mainMenu(nullptr),
+  m_goalAction(nullptr),
   m_barFlag(new QLabel(this)),
-  m_chatDlg(0),
+  m_chatDlg(nullptr),
   m_audioPlayer(Phonon::createPlayer( Phonon::NotificationCategory )),
   m_timer(this),
-  m_message(0),
-  m_mouseLocalisation(0),
-  m_defenseDialog(0),
+  m_message(nullptr),
+  m_mouseLocalisation(nullptr),
+  m_defenseDialog(nullptr),
   m_fileName(),
-  m_uparrow(0),
-  m_downarrow(0),
-  m_leftarrow(0),
-  m_rightarrow(0),
+  m_uparrow(nullptr),
+  m_downarrow(nullptr),
+  m_leftarrow(nullptr),
+  m_rightarrow(nullptr),
   m_reinitializingGame(false),
-  m_newGameDialog(0),
-  m_newPlayerWidget(0),
+  m_newGameDialog(nullptr),
+  m_newPlayerWidget(nullptr),
   m_stateBeforeNewGame(GameAutomaton::INVALID),
   m_stackWidgetBeforeNewGame(-1),
   m_jabberClient(new JabberClient()),
   m_advertizedHostName(QHostInfo::localHostName()),
-  m_jabberGameWidget(0),
+  m_jabberGameWidget(nullptr),
   m_presents(),
   m_newGameSetup(new NewGameSetup(m_automaton))
   {
@@ -141,7 +141,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   QString iconFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Images/soldierKneeling.png");
   if (iconFileName.isNull())
   {
-      KMessageBox::error(0, i18n("Cannot load icon<br>Program cannot continue"), i18n("Error!"));
+      KMessageBox::error(nullptr, i18n("Cannot load icon<br>Program cannot continue"), i18n("Error!"));
       exit(2);
   }
   QPixmap icon(iconFileName);
@@ -320,24 +320,24 @@ KGameWindow::~KGameWindow()
 {
   qCDebug(KSIRK_LOG);
 
-  if (m_jabberClient != 0)
+  if (m_jabberClient != nullptr)
   {
     delete m_jabberClient;
-    m_jabberClient = 0;
+    m_jabberClient = nullptr;
   }
-  if (m_automaton != 0)
+  if (m_automaton != nullptr)
   {
     m_automaton->setGameStatus( KGame::End );
-    delete m_automaton; m_automaton = 0;
+    delete m_automaton; m_automaton = nullptr;
   }
-  delete m_backGnd_world; m_backGnd_world = 0;
-  delete m_scene_world; m_scene_world = 0;
+  delete m_backGnd_world; m_backGnd_world = nullptr;
+  delete m_scene_world; m_scene_world = nullptr;
 //   if (m_barFlagButton) {delete m_barFlagButton; m_barFlagButton = 0;}
-  delete m_frame; m_frame = 0;
-  delete m_backGnd_arena; m_backGnd_arena = 0;
-  delete m_arena; m_arena = 0;
-  delete m_scene_arena; m_scene_arena = 0;
-  delete m_mainMenu; m_mainMenu = 0;
+  delete m_frame; m_frame = nullptr;
+  delete m_backGnd_arena; m_backGnd_arena = nullptr;
+  delete m_arena; m_arena = nullptr;
+  delete m_scene_arena; m_scene_arena = nullptr;
+  delete m_mainMenu; m_mainMenu = nullptr;
   delete m_audioPlayer;
   delete m_rightDialog;
   delete m_defenseDialog;
@@ -374,7 +374,7 @@ void KGameWindow::initActions()
   //   qCDebug(KSIRK_LOG) << "Trying to load button image file: " << imageFileName;
   if (imageFileName.isNull())
   {
-    KMessageBox::error(0, i18n("Cannot load button image %1<br>Program cannot continue",QString("jabber.png")), i18n("Error!"));
+    KMessageBox::error(nullptr, i18n("Cannot load button image %1<br>Program cannot continue",QString("jabber.png")), i18n("Error!"));
     exit(2);
   }
   m_jabberAction = new QAction(QIcon(QPixmap(imageFileName)), i18n("Play over Jabber"), this);
@@ -391,7 +391,7 @@ void KGameWindow::initActions()
   //   qCDebug(KSIRK_LOG) << "Trying to load button image file: " << imageFileName;
   if (imageFileName.isNull())
   {
-    KMessageBox::error(0, i18n("Cannot load button image %1<br>Program cannot continue",QString(CM_NEWNETGAME)), i18n("Error!"));
+    KMessageBox::error(nullptr, i18n("Cannot load button image %1<br>Program cannot continue",QString(CM_NEWNETGAME)), i18n("Error!"));
     exit(2);
   }
   QAction * newSocketAction = new QAction(QIcon(QPixmap(imageFileName)), i18n("New Standard TCP/IP Network Game"), this);
@@ -408,7 +408,7 @@ void KGameWindow::initActions()
   //   qCDebug(KSIRK_LOG) << "Trying to load button image file: " << imageFileName;
   if (imageFileName.isNull())
   {
-    KMessageBox::error(0, i18n("Cannot load button image %1<br>Program cannot continue",QString(CM_NEWNETGAME)), i18n("Error!"));
+    KMessageBox::error(nullptr, i18n("Cannot load button image %1<br>Program cannot continue",QString(CM_NEWNETGAME)), i18n("Error!"));
     exit(2);
   }
   QAction * joinAction = new QAction(QIcon(QPixmap(imageFileName)),
@@ -513,7 +513,7 @@ QPixmap KGameWindow::buildDice(const QString& id)
   QImage image(size, QImage::Format_ARGB32_Premultiplied);
   image.fill(0);
   QPainter p(&image);
-  if (m_theWorld != 0)
+  if (m_theWorld != nullptr)
   {
     m_theWorld->renderer()->render(&p, id);
   }
@@ -541,7 +541,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
   }
   m_animSpritesGroups.clear();
 
-  if (m_centralWidget != 0)
+  if (m_centralWidget != nullptr)
   {
     m_centralWidget->setCurrentIndex(-1);
   }
@@ -555,12 +555,12 @@ void KGameWindow::newSkin(const QString& onuFileName)
 //   m_automaton = new GameAutomaton();
 //   m_automaton->init(this);
 
-  m_mouseLocalisation = 0;
-  if (m_theWorld != 0)
+  m_mouseLocalisation = nullptr;
+  if (m_theWorld != nullptr)
   {
 //     m_theWorld-> reset();
     delete m_theWorld;
-    m_theWorld = 0;
+    m_theWorld = nullptr;
   }
 
   QString onuDefinitionFileName = onuFileName;
@@ -574,7 +574,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
   }
   if (onuDefinitionFileName.isEmpty())
   {
-      KMessageBox::error(0,
+      KMessageBox::error(nullptr,
           i18n("World definition file not found - Verify your installation<br>Program cannot continue"), i18n("Error!"));
       exit(2);
   }
@@ -585,14 +585,14 @@ void KGameWindow::newSkin(const QString& onuFileName)
   if (m_theWorld->skin().isEmpty())
   {
     delete m_theWorld;
-    m_theWorld = 0;
+    m_theWorld = nullptr;
   }
   loadDices();
 
   // put the size to the window size if it's the main menu
   int width;
   int height;
-  if (m_scene_arena == 0 || m_theWorld == 0)
+  if (m_scene_arena == nullptr || m_theWorld == nullptr)
   {
      width = 2000;
      height = 2000;
@@ -604,38 +604,38 @@ void KGameWindow::newSkin(const QString& onuFileName)
   }
 
   //Creation of the arena background
-  if (m_backGnd_arena != 0)
+  if (m_backGnd_arena != nullptr)
   {
     qCDebug(KSIRK_LOG) << "Before m_backGnd_arena delete";
     delete m_backGnd_arena;
   }
   //Creation of the background
-  if (m_backGnd_world != 0)
+  if (m_backGnd_world != nullptr)
   {
     qCDebug(KSIRK_LOG) << "Before m_backGnd_world delete";
     delete m_backGnd_world;
   }
 
   // create the arena view
-  if (m_scene_arena != 0)
+  if (m_scene_arena != nullptr)
   {
     qCDebug(KSIRK_LOG) << "Before m_scene_arena delete";
     delete m_scene_arena;
   }
   m_scene_arena = new QGraphicsScene(0, 0, width, height,this);
 
-  if (m_frame != 0)
+  if (m_frame != nullptr)
   {
     m_frame->setUpdatesEnabled(false);
-    m_uparrow = 0;
-    m_downarrow = 0;
-    m_leftarrow = 0;
-    m_rightarrow = 0;
+    m_uparrow = nullptr;
+    m_downarrow = nullptr;
+    m_leftarrow = nullptr;
+    m_rightarrow = nullptr;
     m_centralWidget->removeWidget(m_frame);
     delete m_frame;
-    m_frame = 0;
+    m_frame = nullptr;
   }
-  if (m_scene_world != 0)
+  if (m_scene_world != nullptr)
   {
     qCDebug(KSIRK_LOG) << "Before m_scene_world delete";
     delete m_scene_world;
@@ -643,7 +643,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
   m_scene_world = new QGraphicsScene(0, 0, width, height,this);
 
   qCDebug(KSIRK_LOG) << "create the world map view";
-  if (m_theWorld != 0)
+  if (m_theWorld != nullptr)
   {
     m_frame = new DecoratedGameFrame(m_centralWidget, width, height, m_automaton);
     m_frame->setMaximumWidth(width);
@@ -652,13 +652,13 @@ void KGameWindow::newSkin(const QString& onuFileName)
     m_frame->setIcon();
   }
   
-  if (m_arena != 0)
+  if (m_arena != nullptr)
   {
     m_centralWidget->removeWidget(m_arena);
     delete m_arena;
-    m_arena = 0;
+    m_arena = nullptr;
   }
-  if (m_theWorld != 0)
+  if (m_theWorld != nullptr)
   {
     m_arena = new FightArena(m_centralWidget, width, height, m_scene_arena, m_theWorld, m_automaton);
     m_arena->setMaximumWidth(width);
@@ -667,16 +667,16 @@ void KGameWindow::newSkin(const QString& onuFileName)
   }
   
   qCDebug(KSIRK_LOG) << "put the menu, map and arena in the central widget";
-  if (m_frame != 0)
+  if (m_frame != nullptr)
   {
     m_centralWidget->addWidget(m_frame); // MAP_INDEX 6
   }
-  if (m_arena != 0)
+  if (m_arena != nullptr)
   {
     m_centralWidget->addWidget(m_arena); // ARENA_INDEX 7
   }
   
-  if (m_theWorld == 0)
+  if (m_theWorld == nullptr)
   {
     return;
   }
@@ -731,7 +731,7 @@ void KGameWindow::initView()
   QString iconFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Images/soldierKneeling.png");
   if (iconFileName.isNull())
   {
-      KMessageBox::error(0, i18n("Cannot load icon<br>Program cannot continue"), i18n("Error!"));
+      KMessageBox::error(nullptr, i18n("Cannot load icon<br>Program cannot continue"), i18n("Error!"));
       exit(2);
   }
 // to port : still necessary ?
@@ -748,13 +748,13 @@ void KGameWindow::initView()
 
   //ADD a dock widget on the right
 
-  if (m_rightDialog != 0)
+  if (m_rightDialog != nullptr)
   {
     m_rightDialog->hide();
     delete m_rightDialog;
   }
 
-  if (m_rightDock != 0)
+  if (m_rightDock != nullptr)
   {
     m_rightDock->hide();
     delete m_rightDock;
@@ -775,7 +775,7 @@ void KGameWindow::initView()
 bool KGameWindow::attackEnd()
 {
   qCDebug(KSIRK_LOG);
-  if (m_firstCountry==0 || m_secondCountry == 0)
+  if (m_firstCountry==nullptr || m_secondCountry == nullptr)
   {
     return false;
   }
@@ -947,7 +947,7 @@ void KGameWindow::resolveAttack()
   int D1 = -1; int D2 = -1; int DE = -1;
 
   NKD = NKA = 0;
-  if (currentPlayer() == 0 || m_secondCountry == 0 || m_secondCountry->owner() == 0 || m_firstCountry == 0)
+  if (currentPlayer() == nullptr || m_secondCountry == nullptr || m_secondCountry->owner() == nullptr || m_firstCountry == nullptr)
     return;
 
   int secondOldNbArmies = m_secondCountry->nbArmies();
@@ -1067,7 +1067,7 @@ bool KGameWindow::queryClose()
 //   hide();
   disconnect(&m_timer,SIGNAL(timeout()),this,SLOT(evenementTimer()));
   disconnectMouse();
-  m_mouseLocalisation = 0;
+  m_mouseLocalisation = nullptr;
   m_automaton->setGameStatus(KGame::End);
   
 /*  if (m_theWorld != 0)
@@ -1173,17 +1173,17 @@ void KGameWindow::displayRecyclingButtons()
 void KGameWindow::clearHighlighting()
 {
   qCDebug(KSIRK_LOG);
-  if (m_firstCountry != 0)
+  if (m_firstCountry != nullptr)
   {
     m_firstCountry->releaseHighlightingLock();
     m_firstCountry->clearHighlighting();
-    m_firstCountry = 0;
+    m_firstCountry = nullptr;
   }
-  if (m_secondCountry != 0)
+  if (m_secondCountry != nullptr)
   {
     m_secondCountry->releaseHighlightingLock();
     m_secondCountry->clearHighlighting();
-    m_secondCountry = 0;
+    m_secondCountry = nullptr;
   }
 
   if (currentPlayer() && currentPlayer()-> isAI() && (!currentPlayer()->isVirtual()))
@@ -1274,7 +1274,7 @@ void KGameWindow::createDefenseDialog()
 void KGameWindow::displayDefenseWindow()
 {
   qCDebug(KSIRK_LOG);
-  if (m_defenseDialog == 0)
+  if (m_defenseDialog == nullptr)
     createDefenseDialog();
   else
     m_labDef->setText(defenseLabel());
@@ -1295,7 +1295,7 @@ void KGameWindow::setBarFlagButton(const Player* player)
 {
 //   qCDebug(KSIRK_LOG) << "KGameWindow::setBarFlagButton";
 
-  if (player == 0)
+  if (player == nullptr)
   {
     if (currentPlayer() 
         && currentPlayer()-> getFlag())
@@ -1329,7 +1329,7 @@ bool KGameWindow::finishSetupPlayers()
   if (!(m_automaton->playerList()->isEmpty()))
   {
     m_automaton->playerList()->clear();
-    m_automaton->currentPlayer(0);
+    m_automaton->currentPlayer(nullptr);
     qCDebug(KSIRK_LOG) << "  playerList size = " << m_automaton->playerList()->count();
   }
   theWorld()->reset();
@@ -1743,7 +1743,7 @@ bool KGameWindow::isMoveValid(const QPointF& point)
   bool res = false;
   KMessageParts messageParts;
   Country* secondCountry = clickIn(point); 
-  if  ( ( m_firstCountry == 0 ) || ( secondCountry == 0 ) )
+  if  ( ( m_firstCountry == nullptr ) || ( secondCountry == nullptr ) )
   {
     messageParts << I18N_NOOP("There is no country here!");
   }
@@ -1782,7 +1782,7 @@ bool KGameWindow::isFightValid(const QPointF& point)
   bool res = false;
   KMessageParts messageParts;
   Country* secondCountry = clickIn(point); 
-  if  ( ( m_firstCountry == 0 ) || ( secondCountry == 0 ) )
+  if  ( ( m_firstCountry == nullptr ) || ( secondCountry == nullptr ) )
   {
     qCDebug(KSIRK_LOG) << "There is no country here!";
     messageParts << I18N_NOOP("There is no country here!");
@@ -1892,11 +1892,11 @@ int KGameWindow::setCurrentPlayerToNext(bool restartRunningAIs)
 
 bool KGameWindow::terminateAttackSequence()
 {
-  if (m_firstCountry != 0)
+  if (m_firstCountry != nullptr)
     m_firstCountry->clearHighlighting();
-  if (m_secondCountry != 0)
+  if (m_secondCountry != nullptr)
     m_secondCountry->clearHighlighting();
-  if (m_animFighters != 0)
+  if (m_animFighters != nullptr)
     m_animFighters->hideAndRemoveAll();
   return attackEnd();
 }
@@ -1906,7 +1906,7 @@ bool KGameWindow::attacker(const QPointF& point)
   qCDebug(KSIRK_LOG);
   Country* clickedCountry = clickIn(point);
   KMessageParts messageParts;
-  if (clickedCountry == 0)
+  if (clickedCountry == nullptr)
   {
     messageParts << I18N_NOOP("<font color=\"orange\">No country here!</font>");
     broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
@@ -1966,7 +1966,7 @@ unsigned int KGameWindow::attacked(const QPointF& point)
   KMessageParts messageParts;
 
 //   qCDebug(KSIRK_LOG) << "2nd country is now set";
-  if ( (m_firstCountry == NULL) || (m_secondCountry == NULL)
+  if ( (m_firstCountry == nullptr) || (m_secondCountry == nullptr)
           || (m_firstCountry-> owner() != currentPlayer()) )
   {
     qCDebug(KSIRK_LOG) << ("Nothing to attack !");
@@ -2029,7 +2029,7 @@ unsigned int KGameWindow::attacked(const QPointF& point)
   {
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
-    if (m_secondCountry != 0)
+    if (m_secondCountry != nullptr)
     {
       stream << m_secondCountry->name();
     }
@@ -2053,7 +2053,7 @@ unsigned int KGameWindow::attacked(const QPointF& point)
   {
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);
-    if (m_secondCountry != 0)
+    if (m_secondCountry != nullptr)
     {
       stream << m_secondCountry->name();
     }
@@ -2239,7 +2239,7 @@ bool KGameWindow::playerRemovesArmy(const QPointF& point)
   
   Country *clickedCountry = clickIn(point);
   qCDebug(KSIRK_LOG) << "  currentPlayer=" << currentPlayer()->name();
-  if (clickedCountry == 0)
+  if (clickedCountry == nullptr)
   {
     return false;
   }
@@ -2294,13 +2294,13 @@ void KGameWindow::initRecycling()
 void KGameWindow::clear()
 {
   m_nbMovedArmies = 0;
-  m_firstCountry = m_secondCountry = 0;
+  m_firstCountry = m_secondCountry = nullptr;
   NKD = NKA = 0;
-  if (m_message !=0)
+  if (m_message !=nullptr)
   {
     delete m_message;
   }
-  m_message = 0;
+  m_message = nullptr;
 }
 
 bool KGameWindow::nextPlayerRecycling()
@@ -2312,7 +2312,7 @@ bool KGameWindow::nextPlayerRecycling()
     qCDebug(KSIRK_LOG) << "You must distribute all your armies";
     if (!currentPlayer()->isVirtual() && !currentPlayer()->isAI())
     {
-      KMessageBox::error(0, i18n("You must distribute\nall your armies"), i18n("KsirK"));
+      KMessageBox::error(nullptr, i18n("You must distribute\nall your armies"), i18n("KsirK"));
     }
     return false;
   }
@@ -2372,7 +2372,7 @@ void KGameWindow::centerOnFight()
   qreal ay=m_chatDlg->height();      //get the height of the bottom widget
 
 //Larg
-  if (m_firstCountry==0 || m_secondCountry==0)
+  if (m_firstCountry==nullptr || m_secondCountry==nullptr)
   {
     qCCritical(KSIRK_LOG) << "countries should not be null ("<<(void*)m_firstCountry<<","<<(void*)m_secondCountry<<") at "<<__FILE__<<", line "<<__LINE__;
     return;
@@ -2501,7 +2501,7 @@ void KGameWindow::decrNbMovedArmies(unsigned int nb)
 
 bool KGameWindow::invade(unsigned int nb )
 {
-  if (m_firstCountry==0 || m_secondCountry==0)
+  if (m_firstCountry==nullptr || m_secondCountry==nullptr)
   {
     qCDebug(KSIRK_LOG) << "invade("<<nb<<") returns " << false;
     return false;
@@ -2734,7 +2734,7 @@ Player* KGameWindow::addPlayer(const QString& playerName,
     if (!m_automaton->addPlayer(p))
     {
       qCDebug(KSIRK_LOG) << p->name() << "NOT added!";
-      p = 0; // freed - weired API
+      p = nullptr; // freed - weired API
     }
   }
   return p;
@@ -2743,7 +2743,7 @@ Player* KGameWindow::addPlayer(const QString& playerName,
 QMap< QString, QString > KGameWindow::nationsList()
 {
   QMap< QString, QString >  res;
-  if (m_theWorld == 0)
+  if (m_theWorld == nullptr)
   {
     return res;
   }
@@ -2914,7 +2914,7 @@ void KGameWindow::showMessage(const QString& message, quint32 delay, MessageShow
   QString lmessage = message + "<br><a href=\"dontshowagain\">"+i18n("Don't show messages anymore") + "</a>";
   if(KsirkSettings::helpEnabled() || forcing == ForceShowing)
   {
-    if (m_message == 0)
+    if (m_message == nullptr)
     {
       qCDebug(KSIRK_LOG) << "Creating KGamePopupItem";
       m_message  = new KGamePopupItem();
@@ -2934,13 +2934,13 @@ void KGameWindow::showMessage(const QString& message, quint32 delay, MessageShow
 void KGameWindow::firstCountry(GameLogic::Country* country)
 {
   qCDebug(KSIRK_LOG) << (void*)country;
-  if (m_firstCountry != 0)
+  if (m_firstCountry != nullptr)
   {
     m_firstCountry->releaseHighlightingLock();
     m_firstCountry->clearHighlighting();
   }
   m_firstCountry = country;
-  if (country == 0)
+  if (country == nullptr)
   {
     return;
   }
@@ -2950,12 +2950,12 @@ void KGameWindow::firstCountry(GameLogic::Country* country)
 
 void KGameWindow::secondCountry(GameLogic::Country* country)
 {
-  if (m_secondCountry != 0)
+  if (m_secondCountry != nullptr)
   {
     m_secondCountry->clearHighlighting();
   }
   m_secondCountry = country;
-  if (country == 0)
+  if (country == nullptr)
   {
     return;
   }
@@ -3028,15 +3028,15 @@ QGraphicsView* KGameWindow::currentWidget()
       return dynamic_cast <QGraphicsView*>(arena());
       break;
     case MainMenu:
-      return 0;
+      return nullptr;
       break;
     case Map:
       return dynamic_cast <QGraphicsView*>(frame());
       break;
     default:
-      return 0;
+      return nullptr;
   }
-  return 0;
+  return nullptr;
 }
 
 
@@ -3050,7 +3050,7 @@ BackGnd* KGameWindow::backGnd() {
 
 void KGameWindow::slideInvade(GameLogic::Country * attack, GameLogic::Country * defender, InvasionSlider::InvasionType invasionType)
 {
-  if (m_wSlide != 0)
+  if (m_wSlide != nullptr)
   {
     m_wSlide->hide();
     delete m_wSlide;
@@ -3115,7 +3115,7 @@ void KGameWindow::setContextualHelpActionEnabled(GameLogic::GameAutomaton::GameS
 
 void KGameWindow::setupPopupMessage()
 {
-  if (m_message == 0)
+  if (m_message == nullptr)
   {
     qCDebug(KSIRK_LOG);
     m_message  = new KGamePopupItem();

@@ -41,7 +41,7 @@ namespace Sprites
 class ArrowSprite : public QGraphicsPolygonItem
 {
 public:
-  explicit ArrowSprite(Qt::ArrowType type, QGraphicsItem * parent = 0);
+  explicit ArrowSprite(Qt::ArrowType type, QGraphicsItem * parent = nullptr);
 
   /** The default destructor */
   ~ArrowSprite() override;
