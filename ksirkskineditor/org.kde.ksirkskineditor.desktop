@@ -4,7 +4,6 @@ Type=Application
 Exec=ksirkskineditor -qwindowtitle %c -qwindowicon preferences-desktop-locale
 Icon=preferences-desktop-locale
 X-DocPath=ksirkskineditor/index.html
-Terminal=false
 Name=KsirK Skin Editor
 Name[bg]=Редактор на облик на KsirK
 Name[bs]=Uređivač maski za KSirk
