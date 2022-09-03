@@ -55,9 +55,6 @@ int main(int argc, char *argv[])
   aboutData.addAuthor(i18n("French students of the 'IUP ISI 2007-2008':"));
   aboutData.addAuthor(i18n("&nbsp;&nbsp;Anthony Rey<br/>&nbsp;&nbsp;Benjamin Lucas<br/>&nbsp;&nbsp;Benjamin Moreau<br/>&nbsp;&nbsp;Gaël Clouet<br/>&nbsp;&nbsp;Guillaume Pelouas<br/>&nbsp;&nbsp;Joël Marco<br/>&nbsp;&nbsp;Laurent Dang<br/>&nbsp;&nbsp;Nicolas Linard<br/>&nbsp;&nbsp;Vincent Sac"));
 
-  aboutData.setOrganizationDomain(QByteArray("kde.org"));
-  aboutData.setProductName(QByteArray("ksirk"));
-
   app.setWindowIcon(QIcon::fromTheme(QStringLiteral("ksirk")));
   KAboutData::setApplicationData(aboutData);
   KCrash::initialize();
