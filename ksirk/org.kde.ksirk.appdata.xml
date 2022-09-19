@@ -245,7 +245,7 @@
   <content_rating type="oars-1.1">
     <content_attribute id="violence-fantasy">moderate</content_attribute>
   </content_rating>
-  <url type="homepage">https://apps.kde.org/ksirk/</url>
+  <url type="homepage">https://apps.kde.org/ksirk</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=ksirk</url>
   <url type="help">https://docs.kde.org/?application=ksirk</url>
   <url type="donation">https://www.kde.org/community/donations/?app=ksirk&amp;source=appdata</url>
