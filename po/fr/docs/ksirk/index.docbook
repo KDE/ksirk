@@ -1,0 +1,908 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY ksirk '<application
+>KsirK</application
+>'>
+  <!ENTITY kappname "&ksirk;"
+><!-- replace ksirk here -->
+  <!ENTITY package "kdegames">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % French "INCLUDE">
+]>
+
+<book id="ksirk" lang="&language;">
+
+<bookinfo>
+<title
+>Manuel de &kappname;</title>
+
+<authorgroup>
+<author
+><firstname
+>Gael</firstname
+> <othername
+>Kleag</othername
+> <surname
+>de Chalendar</surname
+> <affiliation
+> <address
+><email
+>Kleag@free.fr</email
+></address>
+</affiliation>
+</author>
+&traducteurStanislasZeller; 
+</authorgroup>
+
+
+<copyright>
+<year
+>2002-2008</year>
+<holder
+>Gael de Chalendar</holder>
+</copyright>
+<!-- Translators: put here the copyright notice of the translation -->
+<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
+     and in the FDL itself on how to use it. -->
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<!-- Date and version information of the documentation
+Don't forget to include this last date and this last revision number, we
+need them for translation coordination !
+Please respect the format of the date (DD/MM/YYYY) and of the version
+(V.MM.LL), it could be used by automation scripts.
+Do NOT change these in the translation. -->
+
+<date
+>18/09/2008</date>
+<releaseinfo
+>4.1.2</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+<para
+>&kappname; est la version informatique d'un jeu de stratégie bien connu. Une version commerciale et d'autres versions libres existent mais moi (Gaël de Chalendar) a créé initialement ce jeu comme un exercice d'apprentissage de C++ et, donc, développé à ce point (se référer au README pour plus de détails). </para>
+<para
+>Dans cette version, &kappname; est un jeu en réseau multi-joueurs avec une IA (se référer au fichier TODO pour plus de détails). </para>
+<para
+>Cette documentation donne les informations nécessaires dont vous avez besoin pour démarrer une partie. Veuillez lire les astuces et les messages de la barre d'état pour compléter ces informations. Un chapitre explique comment créer de nouveaux thèmes pour &kappname;. </para>
+<para
+>Le but de ce jeu est simplement de conquérir le monde... En attaquant ses voisins avec vos armées. Paisible, n'est-ce pas :-) </para>
+</abstract>
+
+<!-- This is a set of Keywords for indexing by search engines.
+Please at least include KDE, the KDE package it is in, the name
+ of your application, and a few relevant keywords. -->
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>jeu kde</keyword>
+<keyword
+>jeu</keyword>
+<keyword
+>stratégie</keyword>
+<keyword
+>Risk</keyword>
+<keyword
+>libre</keyword>
+<keyword
+>GPL</keyword>
+<keyword
+>Réseau</keyword>
+<keyword
+>Ordinateur</keyword>
+</keywordset>
+
+</bookinfo>
+
+<!-- The contents of the documentation begin here.  Label
+each chapter so with the id attribute. This is necessary for two reasons: it
+allows you to easily reference the chapter from other chapters of your
+document, and if there is no ID, the name of the generated HTML files will vary
+from time to time making it hard to manage for maintainers and for the CVS
+system. Any chapter labeled (OPTIONAL) may be left out at the author's
+discretion. Other chapters should not be left out in order to maintain a
+consistent documentation style across all KDE apps. -->
+
+<chapter id="introduction">
+<title
+>Introduction</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+<para
+>&kappname; est la version informatique d'un jeu de stratégie bien connu. Une version commerciale et d'autres versions libres existent mais moi (Gaël de Chalendar) a créé initialement ce jeu comme un exercice d'apprentissage de C++ et, donc, développé à ce point (se référer au README pour plus de détails). </para>
+<para>
+<screenshot>
+  <screeninfo
+>Voici une capture d'écran de &kappname;</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="firing-screenshot.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Capture d'écran</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para
+>Dans cette version, &kappname; est un jeu en réseau multi-joueurs avec une IA (se référer au fichier TODO pour plus de détails). </para>
+<para
+>Cette documentation donne les informations nécessaires dont vous avez besoin pour démarrer une partie. Veuillez lire les astuces et les messages de la barre d'état pour compléter ces informations. </para>
+<para
+>Le but de ce jeu est simplement de conquérir le monde... En attaquant ses voisins avec vos armées. Paisible, n'est-ce pas :-) </para>
+</chapter>
+
+<chapter id="using-kapp">
+<title
+>Utilisation de &kappname;</title>
+
+<!-- This chapter should tell the user how to use your app. You should use as
+many sections (Chapter, Sect1, Sect3, etc...) as is necessary to fully document
+your application. -->
+
+
+
+<sect1 id="playing-ksirk">
+<title
+>Jouer à &kappname;</title>
+<para
+>Remarque préliminaire; la carte peut être parcourue avec trois méthodes : </para>
+<itemizedlist
+><listitem
+><para
+>Vous pouvez mettre le pointeur de souris près du bord de la fenêtre et la carte va bouger dans cette direction.</para
+></listitem>
+<listitem
+><para
+>Vous pouvez utiliser la molette de la souris : sans modifications, la carte va bouger verticalement, la touche &Alt; va bouger la carte horizontalement.</para
+></listitem>
+<listitem
+><para
+>Vous pouvez utiliser les flèches du clavier.</para
+></listitem
+></itemizedlist>
+<sect2 id="mainmenu">
+<title
+>Démarrer une partie</title>
+<para
+>Quand &kappname; démarre, un menu principal s'affiche. <screenshot>
+  <screeninfo
+>Le menu principal de &kappname;</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="introscreen.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Menu principal</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<variablelist>
+<varlistentry>
+<term>
+  <menuchoice>
+    <guimenu
+>Nouveau jeu</guimenu>
+  </menuchoice>
+</term>
+<listitem>
+  <para>
+  <action
+>Démarre une nouvelle partie</action>
+  </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+  <term>
+    <menuchoice>
+      <guimenu
+>Rejoindre</guimenu>
+    </menuchoice>
+  </term>
+  <listitem>
+    <para>
+      <action
+>Permet de rejoindre un jeu en réseau comme client</action>
+    </para>
+  </listitem>
+</varlistentry>
+<varlistentry>
+  <term>
+    <menuchoice>
+      <guimenu
+>Charger</guimenu>
+    </menuchoice>
+  </term>
+  <listitem>
+    <para>
+      <action
+>Utilise une partie précédemment enregistrée</action>
+    </para>
+  </listitem>
+</varlistentry>
+<varlistentry>
+  <term>
+    <menuchoice>
+      <guimenu
+>Quitter</guimenu>
+    </menuchoice>
+  </term>
+  <listitem>
+    <para>
+      <action
+>Peut-être que finalement vous ne voulez plus jouer ?</action>
+    </para>
+  </listitem>
+</varlistentry>
+</variablelist>
+</para>
+<para
+>Le bouton <guibutton
+>Nouveau jeu</guibutton
+> va afficher une boîte de dialogue <guilabel
+>Propriétés du nouveau jeu</guilabel
+> où vous pourrez choisir le nombre de joueurs, le thème à utiliser, le type de jeu (conquérir l'objectif ou avoir un objectif spécial) et finalement si la partie doit être jouée en réseau ou en local. <screenshot>
+  <screeninfo
+>La boîte de dialogue de nouveau jeu</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="newgamedialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>La boîte de dialogue de nouveau jeu</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para
+>Pour démarrer une partie en réseau, cochez <guilabel
+>Jeu en réseau</guilabel
+> sur la droite sur la boîte fléchée du nombre de joueurs. Après avoir cliqué sur <guibutton
+>Ok</guibutton
+>, vous pourrez choisir la configuration réseau : le nombre de joueurs en réseau et le port TCP où les connexions seront attendues. <screenshot>
+  <screeninfo
+>Boîte de dialogue de la configuration du jeu en réseau</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="numnetplayersdialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Boîte de dialogue de la configuration du jeu en réseau</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para
+>Ensuite, les joueurs en réseau peuvent se connecter en choisissant <guilabel
+>Rejoindre</guilabel
+> sur l'écran d'introduction et en indiquant leur IP ou le nom d'hôte de leur hôte et le numéro de port qu'ils viennent de configurer. <screenshot>
+  <screeninfo
+>Boîte de dialogue de configuration pour rejoindre un jeu en réseau</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="joinnetgame.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Boîte de dialogue de configuration pour rejoindre un jeu en réseau</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para
+>Chaque connexion est indiquée par un message en dessous dans la barre d'état. <screenshot>
+  <screeninfo
+>Message de connexion</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="justjoined.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Message de connexion</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+</para>
+<para
+>Supposons que vous laissez tous les paramètres par défaut et cliquez sur <guibutton
+>Ok</guibutton
+>. Vous devrez ensuite configurer deux joueurs, l'un après l'autre. Pour chacun d'eux, vous allez choisir un nom, une nationalité, et si vous le voulez, un mot de passe que personne ne pourra réutiliser pour ce joueur quand la partie enregistrée sera chargée. Enfin, vous allez spécifié si le joueur est dirigé par l'ordinateur ou par un joueur humain. <screenshot>
+  <screeninfo
+>La boîte de dialogue de configuration du joueur</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="playersetupdialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>La boîte de dialogue de configuration du joueur</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para
+>Ensuite, si vous choisissez de jouer avec un objectif, l'objectif de chaque joueur local est affiché, précédé par un avertissement que les autres joueurs regardant le même ordinateur peuvent discrètement fermer après que l'objectif a été lu. <screenshot>
+  <screeninfo
+>La boîte de dialogue d'affichage du type d'objectif</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="displaygoalmessage.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>La boîte de dialogue d'affichage du type d'objectif</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<screenshot>
+  <screeninfo
+>Le message d'avertissement de l'affichage de l'objectif</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="displaygoalwarningmessage.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Le message d'avertissement de l'affichage de l'objectif</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+</sect2>
+
+<sect2 id="distribution">
+<title
+>Distribution</title>
+<para
+>Au démarrage de la partie, les pays sont distribués à tous les joueurs. Chaque pays contient au départ une armée (représentée par une unité d'infanterie). Chaque joueur a des armées à redistribuer à ces pays quand vient leur tour (indiqué par la présence de leur nom et leur drapeau dans la barre d'état). Remarquez que cinq armées sont représentées par un régiment de cavalerie et dix par un canon. </para>
+<para
+>Pour placer une armée sur un de vos pays, cliquez dessus avec le bouton gauche de la souris. Pour supprimer une armée, cliquez avec le bouton droit. Remarquez, qu'en règle générale, vous ne pouvez pas supprimer plus d'armées que le nombre à placer. <screenshot>
+  <screeninfo
+>Armées à placer</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="placingarmies.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Armées à placer</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+</para>
+<para
+>Quand un joueur a distribué toutes ses armées, le joueur suivant est automatiquement sélectionné et réalise la même tâche. Quand tous les joueurs ont terminé la distribution de leurs armées, il y a deux possibilités qui peuvent être sélectionnées avec deux boutons affichés sur le panneau de droite :  <variablelist>
+<varlistentry>
+<term>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="recycling.png" format="PNG"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>Redistribution</phrase>
+        </textobject>
+      </inlinemediaobject>
+    <guibutton
+>Modifier</guibutton>
+</term>
+<listitem>
+  <para>
+  <action
+>Un joueur veut modifier quelque uns de ses choix. Le premier joueur peut ensuite supprimer une armée qu'il vient juste de placer sur un pays avec le bouton droit de la souris, et la placer dans un autre pays avec le bouton gauche. Quand il a terminé, il donne le contrôle au joueur suivant avec le bouton <guibutton
+>Ok</guibutton
+>. Quand tous les joueurs ont terminé leur redistribution, les deux boutons sont encore une fois affichés. </action>
+  </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="recyclingFinished.png" format="PNG"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>Fin de la redistribution</phrase>
+        </textobject>
+      </inlinemediaobject>
+    <guibutton
+>Ok</guibutton>
+</term>
+<listitem
+><para
+><action
+>La redistribution est terminée et la partie peut continuer. </action
+></para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para>
+</sect2>
+
+<sect2 id="fight">
+<title
+>Combat</title>
+<para
+>Après la redistribution, un tour démarre. Chaque joueur joue à tour de rôle. Le joueur a le choix de :  <variablelist>
+  <varlistentry>
+    <term>
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="joueurSuivant.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Joueur suivant</phrase>
+            </textobject>
+          </inlinemediaobject>
+        <guibutton
+>Joueur suivant</guibutton>
+    </term>
+    <listitem>
+      <para>
+        <action
+>Le tour du joueur courant se termine et c'est au tour du joueur suivant. </action>
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term>
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="attackOne.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Attaque 1</phrase>
+            </textobject>
+          </inlinemediaobject>
+&nbsp;<inlinemediaobject
+> <imageobject
+> <imagedata fileref="attackTwo.png" format="PNG"/> </imageobject
+> <textobject
+> <phrase
+>Attaque 2</phrase
+> </textobject
+> </inlinemediaobject
+> &nbsp;<inlinemediaobject
+> <imageobject
+> <imagedata fileref="attackThree.png" format="PNG"/> </imageobject
+> <textobject
+> <phrase
+>Attaque 3</phrase
+> </textobject
+> </inlinemediaobject
+><guibutton
+>Attaque avec une, deux ou trois armées</guibutton
+> &nbsp;<inlinemediaobject
+> <imageobject
+> <imagedata fileref="autoattack.png" format="PNG"/> </imageobject
+> <textobject
+> <phrase
+>Attaque auto</phrase
+> </textobject
+> </inlinemediaobject
+> <guibutton
+>Attaque auto</guibutton
+> </term>
+    <listitem>
+      <para
+>Pour attaquer, cliquez avec la souris sur le pays attaquant et glissez le sur le pays que vous attaquez. Un menu contextuel va vous être présenté affichant les entrées ci dessous.<screenshot
+> <screeninfo
+>Menu attaque</screeninfo
+> <mediaobject
+> <imageobject
+> <imagedata fileref="attackmenu.png" format="PNG"/> </imageobject
+> <textobject
+> <phrase
+>Menu attaque</phrase
+> </textobject
+> </mediaobject
+> </screenshot
+>Pour qu'un pays X attaque un pays Y avec x armées, deux conditions doivent être remplies : </para>
+          <itemizedlist
+><listitem
+><para
+>Les deux pays doivent être voisin ; </para
+></listitem>
+          <listitem
+><para
+>Le pays X doit avoir au moins X+1 armées avant d'attaquer.</para
+></listitem
+></itemizedlist>
+        <para
+>Si l'attaque est valable, une boîte de dialogue est affichée si nécessaire pour que le défenseur puisse choisir si il veut défendre avec une ou deux armées ou s'il laisse l'ordinateur décider. </para>
+      <para
+>Quand le choix de défense est effectué, la bataille commence et se termine. Le processus est décrit ci dessous. <screenshot>
+            <screeninfo
+>Boîte de dialogue de défense</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="defensedialog.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Boîte de dialogue de défense</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term>
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="moveArmies.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Déplacer les armées</phrase>
+            </textobject>
+          </inlinemediaobject>
+          <guibutton
+>Déplacer les armées d'un pays à un autre</guibutton>
+    </term>
+    <listitem>
+      <para>
+        <action
+>Ceci est la dernière action du tour d'un joueur. Cela lui donne la possibilité de déplacer des armées d'un de ces pays vers un pays voisin. Pour choisir deux pays, veuillez sélectionner et déplacer de la même manière qu'une attaque. Quand les deux pays sont sélectionnés, un curseur est affiché avec laquelle vous pouvez choisir combien d'armées seront envoyées sur chaque pays. </action>
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</para>
+</sect2>
+<sect2  id="fight-solution">
+  <title
+>Conséquence de la bataille</title>
+  <para
+>Pour chaque armée dans la bataille correspond un quota de pertes. Le joueur qui a le chiffre le plus élevé sur le dé, qu'il soit attaquant ou défenseur, remporte le tour et celui qui a le chiffre le plus faible sur le dé perd des armées selon le chiffre affiché. <screenshot>
+            <screeninfo
+>Résultat affiché de l'attaque</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="shownumberofarmies.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Résultat affiché de l'attaque</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+  </para>
+  <para
+>Si le nombre d'armées dans le pays attaqué atteint 0, le propriétaire de ce pays change pour le pays attaquant : son drapeau est ajouté et une de ses armées d'attaque est installé sur son nouveau pays. Le curseur « Déplacer les armées » est affiché comme pour les déplacements à la fin du tour. <screenshot>
+            <screeninfo
+>Curseur d'invasion</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="invasionslider.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Curseur d'invasion</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+  </para>
+</sect2>
+<sect2  id="end_of_turn">
+  <title
+>Fin du tour</title>
+  <para
+>Pour terminer le tour courant, si vous ne voulez pas déplacer des armées, vous pouvez cliquer sur le bouton <guibutton
+>Joueur suivant</guibutton
+> sur la barre d'outils. </para>
+  <para
+>Quand tous le monde a joué, le tour prend fin. Des armées sont distribuées aux joueurs, en fonction des pays leur appartenant : 1 armée pour chaque groupe de trois pays, avec un minimum de 3. Il y a aussi un bonus pour les joueurs qui détiennent un continent complet, différent pour chaque continent. Les valeurs de ces bonus pour le thème par défaut sont :  <table>
+      <title
+>Bonus gagnés par continents</title>
+      <tgroup cols="2">
+        <thead>
+          <row
+><entry
+>Continent</entry
+><entry
+>Bonus</entry
+></row>
+        </thead>
+        <tbody>
+          <row
+><entry
+>Amérique du Nord</entry
+><entry
+>5</entry
+></row>
+          <row
+><entry
+>Amérique du Sud</entry
+><entry
+>2</entry
+></row>
+          <row
+><entry
+>Europe</entry
+><entry
+>5</entry
+></row>
+          <row
+><entry
+>Afrique</entry
+><entry
+>3</entry
+></row>
+          <row
+><entry
+>Asie</entry
+><entry
+>7</entry
+></row>
+          <row
+><entry
+>Zone Pacifique</entry
+><entry
+>2</entry
+></row>
+        </tbody>
+      </tgroup>
+    </table>
+  </para>
+  <para
+>Quand un joueur a fini de distribuer ses armées, il clique sur le bouton <guibutton
+>Ok</guibutton
+> pour permettre au joueur suivant de distribuer à son tour ses armées. Comme pour la distribution initiale, quand tous les joueurs ont placé leurs armées, ils peuvent démarrer une nouveau cycle de distribution ou démarrer un nouveau tour. </para>
+</sect2>
+<sect2 id="sending-messages">
+<title
+>Envoi de messages aux autres joueurs</title>
+<para
+>Si vous jouez en mode local et voulez communiquer avec les autres joueurs, et bien, parlez (en supposant que vous n'avez pas de problèmes d'accessibilité)... Mais si vous jouez en mode réseau, vous pouvez utiliser la boîte de dialogue de discussion en bas de la fenêtre (elle peut être cachée ou affichée en utilisant les flèches). Saisissez simplement votre message et utilisez la touche &Enter;. <screenshot>
+            <screeninfo
+>Envoi de messages</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="messagesent.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Envoi de messages</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+
+</para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Référence de commande</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>La fenêtre principale de &kappname;</title>
+<sect2>
+<title
+>Les boutons</title>
+<para>
+<variablelist>
+<varlistentry>
+<term>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="quit.png" format="PNG"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>Quitter la partie</phrase>
+        </textobject>
+      </inlinemediaobject>
+    <guibutton
+>Quitter</guibutton>
+</term>
+<listitem
+><para
+><action
+>Permet de sortir du programme </action
+></para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="newGame.png" format="PNG"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>Nouveau jeu</phrase>
+        </textobject>
+      </inlinemediaobject>
+    <guibutton
+>Nouveau jeu</guibutton>
+</term>
+<listitem
+><para
+><action
+>Démarre une nouvelle partie. Une boîte de dialogue apparaît vous demandant le nombre de joueurs. À l'étape suivante, chaque joueur doit saisir un nom. </action
+></para
+></listitem>
+</varlistentry>
+</variablelist>
+</para>
+
+</sect2>
+
+</sect1>
+</chapter>
+
+<chapter id="developers">
+  <title
+>Guide des développeurs de &kappname;</title>
+  
+  <para
+>Veuillez consulter <ulink url="http://api.kde.org/"
+>http://api.kde.org/</ulink
+> pour la documentation de l'API. Elle est assez complète mais n'est actuellement pas très à jour. Les commentaires sont inexistants dans les fichiers d'implantations <filename
+>.cpp</filename
+>. </para>
+  <para
+>Remarquez que j'ai à l'origine développé ce jeu sous &Windows; avec Borland C++ et WinG. Je l'ai porté sous &Java; avant de le convertir en C++ pour &kde;. Au commencement, j'ai utilisé le français et un mixte de français et d'anglais pour nommer mes identifiants (noms de classe, méthodes, membres, &etc;). J'ai aussi utilisé le français pour les commentaires. Quand j'ai décidé de distribuer ce jeu, j'ai tout converti en anglais... Mais je ne suis clairement pas un orateur natif anglais. Veuillez suggérer ou corriger et soumettre vos corrections aux commentaires de ce code ou à cette documentation. </para>
+  
+</chapter>
+
+<chapter id="skins">
+  <title
+>Création de nouveaux thèmes</title>
+  <para
+>&kappname; est fourni avec un éditeur de thèmes, appelé ksirkskineditor, qui vous permet de modifier toutes les données du thème, aussitôt que les fichiers graphiques (cartes, spirites, etc.) sont disponibles dans le fichier SVG. Veuillez lire le manuel de ksirkskineditor pour plus d'informations. </para>
+</chapter>
+
+<chapter id="faq">
+<title
+>Foire aux questions</title>
+&reporting.bugs; &updating.documentation; </chapter>
+
+<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+<title
+>Remerciements et licence</title>
+
+<para
+>&kappname; </para>
+<para
+>Copyright du programme 2002-2008 Gael de Chalendar <email
+>kleag@free.fr</email
+> </para>
+<para
+>Contributeurs Robin Doer, Albert Astals Cid, Michal Golunski (traduction polonaise) </para>
+
+<para
+>Copyright de la documentation 2002-2008 Gael de Chalendar <email
+>kleag@free.fr</email
+> </para>
+
+<para
+>Traduction française par &StanislasZeller;.</para
+> 
+&underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Installation</title>
+
+<sect1 id="getting-ksirk">
+<title
+>Comment obtenir &kappname;</title>
+&install.intro.documentation; </sect1>
+
+<sect1 id="compilation">
+<title
+>Compilation et Installation</title>
+&install.compile.documentation; </sect1>
+
+<sect1 id="configuration">
+<title
+>Configuration</title>
+
+<para
+>L'entrée du menu de configuration ouvre une boîte de dialogue qui vous permet de :  <screenshot>
+            <screeninfo
+>Boîte de dialogue des préférences</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="preferences.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Boîte de dialogue des préférences</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+</para>
+      <itemizedlist>
+        <listitem>
+          <para
+>Active ou désactive les sons :  </para>
+        </listitem>
+        <listitem>
+          <para
+>configure la vitesse des images animées (de lent à immédiat) :  </para>
+        </listitem>
+        <listitem>
+          <para
+>Active ou désactive les aides contextuelles affichées :  </para>
+        </listitem>
+        <listitem>
+          <para
+>Affiche ou cache le nombre d'armées de chaque pays. La capture d'écran suivante affiche un plan quand le nombre d'armées sont affichées. <screenshot>
+              <screeninfo
+>Affiche le nombre d'armées</screeninfo>
+              <mediaobject>
+                <imageobject>
+                  <imagedata fileref="shownumberofarmies.png" format="PNG"/>
+                </imageobject>
+                <textobject>
+                  <phrase
+>Affiche le nombre d'armées</phrase>
+                </textobject>
+              </mediaobject>
+            </screenshot>
+
+          </para>
+        </listitem>
+      </itemizedlist>
+
+</sect1>
+
+</appendix>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+

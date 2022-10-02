@@ -1,0 +1,1310 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY ksirkskineditor '<application
+>KsirK Skin Editor</application
+>'>
+  <!ENTITY i18n-ksirkskineditor '<application
+>Ksirk skaleditor</application
+>'>
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Swedish "INCLUDE">
+]>
+
+<book id="ksirkskineditor" lang="&language;">
+
+<bookinfo>
+<title
+>Handbok &i18n-ksirkskineditor;</title>
+
+<authorgroup>
+  <author
+><firstname
+>Ga&euml;l</firstname
+> <othername
+>Kleag</othername
+> <surname
+>de Chalendar</surname
+> <affiliation
+><address
+><email
+>Kleag@free.fr</email
+></address
+></affiliation>
+  </author>
+  <!-- Translators: put here the copyright notice of the translation -->
+  <othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+  <year
+>2009</year>
+  <holder
+>Ga&euml;l de Chalendar</holder>
+</copyright>
+<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
+     and in the FDL itself on how to use it. -->
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<!-- Date of the documentation
+Change date/releaseinfo only if
+   docbook is updated and verified to be valid for the current app version
+   or
+   docbook is proofread and verified to be valid for the current app version
+Don't forget to include this last date.
+Please respect the format of the date (YYYY-MM-DD),it is used by scripts.
+-->
+<date
+>2021-10-14</date>
+
+<!--version information of Frameworks/Plasma/Applications this documentation is valid for.
+Example:
+Frameworks xx.yy for docbooks in frameworks
+Plasma xx.yy for docbooks in plasma workspace
+Applications xx.yy for docbooks released as Applications
+xx.yy (Applications xx.yy) for docbooks with own version released as Applications
+$applicationname xx.yy for applications with independent release schedule (extragear/playground)
+-->
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+  <para
+>&ksirk; är en datorversion av ett välkänt strategispel. Det är fullständigt anpassningsbart med olika skal. Den här handboken förklarar hur man skapar nya skal från början, med användning av en filhanterare, en &SVG;-bildeditor och &i18n-ksirkskineditor;.</para>
+</abstract>
+
+<!-- This is a set of Keywords for indexing by search engines.
+Please at least include KDE, the KDE package it is in, the name
+ of your application, and a few relevant keywords. -->
+
+<keywordset>
+  <keyword
+>KDE</keyword>
+  <keyword
+>editor</keyword>
+  <keyword
+>fri</keyword>
+  <keyword
+>spel</keyword>
+  <keyword
+>GPL</keyword>
+  <keyword
+>risk</keyword>
+  <keyword
+>skal</keyword>
+  <keyword
+>strategi</keyword>
+</keywordset>
+
+</bookinfo>
+
+<!-- The contents of the documentation begin here.  Label
+each chapter so with the id attribute. This is necessary for two reasons: it
+allows you to easily reference the chapter from other chapters of your
+document, and if there is no ID, the name of the generated HTML files will vary
+from time to time making it hard to manage for maintainers and for the CVS
+system. Any chapter labeled (OPTIONAL) may be left out at the author's
+discretion. Other chapters should not be left out in order to maintain a
+consistent documentation style across all KDE apps. -->
+
+<chapter id="introduction">
+<title
+>Inledning</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+<para
+>&ksirk; är en datorversion av ett välkänt strategispel. Det är fullständigt anpassningsbart med olika skal. Den här handboken förklarar hur man skapar nya skal från början, med användning av en filhanterare, en &SVG;-bildeditor och &i18n-ksirkskineditor;.</para>
+
+<screenshot>
+  <screeninfo
+>Här är en skärmbild av &i18n-ksirkskineditor;</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="main-snapshot.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Skärmbild</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>Det finns tre huvudsteg när ett nytt skal ska läggas till: skapa kataloghierarkin, skapa grafiken, helt samlad inne i en &SVG;-fil, och därefter placera figurerna och namnge allt med användning av &i18n-ksirkskineditor;.</para>
+</chapter>
+
+<chapter id="using-kapp">
+<title
+>Skapa ett &ksirk;-skal</title>
+
+<para
+>&ksirk; är fullständigt anpassningsbart med olika skal. För de som kan handskas med grafik, är det enkelt att skapa ett nytt skal, genom att kopiera ett befintligt skal, redigera eller ändra grafiken och uppdatera data i en <literal role="extension"
+>.desktop</literal
+>-inställningsfil, vilket görs med användning av &i18n-ksirkskineditor;. Det sista steget är att redigera filen som beskriver vad som ska installeras.</para>
+
+<para
+>Alla exempel (text och bilder) kommer från &ksirk;s standardskal.</para>
+
+<sect1 id="sdf">
+<title
+>Katalog- och filstruktur</title>
+
+<itemizedlist>
+  <listitem
+><para
+><filename class="directory"
+>Data/</filename
+>: data använt av programmet för att hantera skalets bilder.</para>
+    <itemizedlist>
+      <listitem
+><para
+><filename
+>CMakeLists.txt/</filename
+>: beskriver vad som ska installeras.</para
+></listitem>
+      <listitem
+><para
+><filename
+>onu.desktop</filename
+>: huvudfil för beskrivning av skalet. Se beskrivningen nedan.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+><filename class="directory"
+>Images/</filename
+>: skalets bilder (karta, figurer, etc.)</para>
+    <itemizedlist>
+      <listitem
+><para
+><filename
+>CMakeLists.txt/</filename
+>: beskriver vad som ska installeras.</para
+></listitem>
+      <listitem
+><para
+><filename
+>pool.svg</filename
+>: kartan och alla figurer som används av skalet.</para
+></listitem>
+      <listitem
+><para
+><filename
+>map-mask.png</filename
+>: bilden som gör det möjligt för programmet att ta reda på vilket land musen finns över under spelet (se nedan).</para
+></listitem>
+      <listitem
+><para
+><literal role="extension"
+>*.png</literal
+>: övriga bilder här är knapparnas ikoner.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+><filename
+>CMakeLists.txt/</filename
+>: beskriver vad som ska installeras.</para
+></listitem>
+  <listitem
+><para
+><filename class="directory"
+>Sounds/</filename
+>: ljudfiler för skalet.</para
+></listitem>
+</itemizedlist>
+
+  <sect2 id="tdd">
+  <title
+>Katalogen Data</title>
+
+  <para
+>Den här katalogen innehåller bara en fil, <filename
+>world.desktop</filename
+>. Filen är en beskrivning av skalets innehåll. Den används för att beskriva hur världen är organiserad och hur den ska visas. Man behöver inte fylla i den för hand, eftersom det hanteras av &i18n-ksirkskineditor;. Men för fullständighetens skull, beskrivs dess struktur här.</para>
+
+  <para
+>En <literal
+>onu</literal
+>-grupp innehåller ett antal landsposter, ett antal nationalitetsposter och till sist ett antal kontinentposter. Därefter innehåller diverse grupper beskrivningen av de olika figurerna, beskrivningen av de olika länderna, kontinenterna, nationaliteterna och målen.</para>
+
+  <para
+>Följande avsnitt beskriver innehållet i varje grupp.</para>
+
+    <sect3>
+    <title
+>Gruppen <literal
+>onu</literal
+></title>
+
+    <table>
+      <title
+>Posterna i <literal
+>onu</literal
+>-gruppen</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Postnamn</entry>
+            <entry
+>Betydelse</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>width</literal
+></entry>
+            <entry
+>Bredden på skalets karta.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>height</literal
+></entry>
+            <entry
+>Höjden på skalets karta.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>skinpath</literal
+></entry>
+            <entry
+>Sökvägen till skalet i förhållande till programmets datasökväg (t.ex. det förvalda skins/).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nb-countries</literal
+></entry>
+            <entry
+>Antal länder (42 i standardskalet). Det ska finnas lika många landsgrupper nedan.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nb-nationalities</literal
+></entry>
+            <entry
+>Antal nationaliteter (6 i standardskalet). Det ska finnas lika många nationalitetsgrupper nedan.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nb-continents</literal
+></entry>
+            <entry
+>Antal kontinenter (6 i standardskalet). Det ska finnas lika många kontinentgrupper nedan.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>pool</literal
+></entry>
+            <entry
+>Sökväg och namn på pool-filen i förhållande till skalets sökväg (t.ex. <filename
+>Images/pool.svg</filename
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>map-mask</literal
+></entry>
+            <entry
+>Sökväg och namn på kartmaskfilen i förhållande till skalets sökväg (t.ex. <filename
+>Images/map-mask.png</filename
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>format-version</literal
+></entry>
+            <entry
+>Skalfilformatets version (2.0).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>name</literal
+></entry>
+            <entry
+>Namnet på skalet som visas.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>desc</literal
+></entry>
+            <entry
+>Den långa beskrivningen av skalet.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>fighters-flag-y-diff</literal
+></entry>
+            <entry
+>Höjdskillnaden mellan flaggor och kanonfigurer.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>width-between-flag-and-fighter</literal
+></entry>
+            <entry
+>Antal bildpunkter mellan flaggans vänstra bildpunkt och den vanliga kanonens högra bildpunkt (när den inte skjuter eller exploderar).</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Beskrivningsgrupperna för figurer</title>
+
+    <para
+>Varje typ av figur (flagga, infanterist, kavalleri, kanon, skjutande kanon och exploderande kanon) definieras av en grupp. Bara vissa figurer har breddinformation. Den används för relativ placering vid animering: när kanonerna skjuter eller exploderar ska de inte <quote
+>flyttas</quote
+> runt landets flagga under en strid.</para>
+
+    <table>
+      <title
+>Grupposter för figurbeskrivning</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Postnamn</entry>
+            <entry
+>Betydelse</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>width</literal
+></entry>
+            <entry
+>Referensbredden på flaggfigurernas ramar.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>height</literal
+></entry>
+            <entry
+>Referenshöjden på flaggfigurernas ramar.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>frames</literal
+></entry>
+            <entry
+>Antal ramar i flaggfiguren.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>versions</literal
+></entry>
+            <entry
+>Antal versioner av flaggfigurerna.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Beskrivningsgrupper för länder</title>
+
+    <para
+>Varje land som listas i <literal
+>onu</literal
+>-gruppens landspost har sin egen grupp, vars beteckning är landets namn. Tabellen nedan listar posterna i dessa grupper.</para>
+
+    <table>
+      <title
+>Landsposter</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Postnamn</entry>
+            <entry
+>Betydelse</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>id</literal
+></entry>
+            <entry
+>Heltalet med landets unika identifikationsnummer, måste börja från noll (0).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>name</literal
+></entry>
+            <entry
+>Landets visade namn.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>&lt;sprite&gt;-point</literal
+></entry>
+            <entry
+>Varje sorts figur (flagga, infanterist, etc.) i landet visas på en viss plats definierat av den här posten skapad av två heltal åtskilda av ett kommatecken.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>neighbours</literal
+></entry>
+            <entry
+>Listan av identifierare för grannarna till det aktuella landet.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Beskrivningsgrupper för nationaliteter</title>
+
+    <para
+>Varje nationalitet som listas i <literal
+>onu</literal
+>-gruppens nationalitetspost har sin egen grupp, vars beteckning är nationalitetens namn. Tabellen nedan listar posterna i dessa grupper.</para>
+
+    <table>
+      <title
+>Nationalitetsposter</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Postnamn</entry>
+            <entry
+>Betydelse</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>name</literal
+></entry>
+            <entry
+>Nationalitetens namn (t.ex. <literal
+>Japan</literal
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>leader</literal
+></entry>
+            <entry
+>Namnet som föreslås för spelaren som väljer nationaliteten.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>flag</literal
+></entry>
+            <entry
+>Namnet på landets flaggfigurelement i <literal
+>onu</literal
+> &SVG;-filen.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Beskrivningsgrupper för kontinenter</title>
+
+    <para
+>Varje kontinent som listas i <literal
+>onu</literal
+>-gruppens kontinentpost har sin egen grupp, vars beteckning är kontinentens namn. Tabellen nedan listar posterna i dessa grupper.</para>
+
+    <table>
+      <title
+>Kontinentposter</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Postnamn</entry>
+            <entry
+>Betydelse</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>name</literal
+></entry>
+            <entry
+>Kontinentens namn (t.ex. <literal
+>Afrika</literal
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>id</literal
+></entry>
+            <entry
+>Kontinentens unika heltals-identifikationsnummer.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>bonus</literal
+></entry>
+            <entry
+>Antal arméer som erhålls i slutet på omgången av spelaren som äger kontinentens alla länder.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>continent-countries</literal
+></entry>
+            <entry
+>Listan över identifierare för länderna på den aktuella kontinenten.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Beskrivningsgrupper för mål</title>
+
+    <para
+>Varje mål som listas i <literal
+>onu</literal
+>-gruppens målpost har sin egen grupp, vars beteckning är målets namn. Tabellen nedan listar posterna i dessa grupper.</para>
+
+    <table>
+      <title
+>Målposter</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Postnamn</entry>
+            <entry
+>Betydelse</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>type</literal
+></entry>
+            <entry
+>Målets typ. Kan vara kontinenter, länder eller spelare.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nbArmiesByCountry</literal
+></entry>
+            <entry
+>Ställer in minimalt antal arméer spelaren måste placera på varje land.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nbCountries</literal
+></entry>
+            <entry
+>Ställer in antal länder som spelaren måste äga.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nbCountriesFallback</literal
+></entry>
+            <entry
+>För måltypen spelare, om målets spelare dödas av någon annan, ställer det här in antal länder som spelaren måste erövra istället.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>desc</literal
+></entry>
+            <entry
+>En fullständig textbeskrivning av målet med lämpliga platsmarkörer (ytterligare dokumentation behövs här).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>continents</literal
+></entry>
+            <entry
+>Listan med kontinent-identifierare som spelaren måste erövra.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+  </sect2>
+
+  <sect2 id="tid">
+  <title
+>Katalogen Images</title>
+
+  <para
+>Katalogen innehåller knappar specifika för &ksirk;, och &SVG;-filen pool som innehåller kartan och alla figurer.</para>
+
+    <sect3>
+    <title
+>Filen <filename
+>pool.svg</filename
+></title>
+
+    <para
+>&SVG;-filen innehåller kartan och alla spelets figurer. Varje element namnges så att spelet kan välja och återge var och en av dem separat.</para>
+
+    <para
+>Med standardskalet är figurerna flaggor, infanterister, kavalleri och kanoner. En infanterist representerar en armé, kavalleri är fem och kanoner är tio. Kanoner används också för att visa stridande arméer. Därför finns det tre olika sorters kanonfigurer: normala stillastående eller förflyttade, skjutande och exploderande kanoner.</para>
+
+    <para
+>Varje figurbild är sammanslagningen av objektets diverse olika vyer, och för varje vy, dess ramar. Vyerna organiseras vertikalt, och ramarna horisontellt. Var bilden ska delas i enskilda ramar beräknas genom att dela bildens höjd med antal vyer och dess bredd med antal ramar. Denna information hittas i filen <filename
+>onu.desktop</filename
+>.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="cannon.png" format="PNG"/></imageobject>
+      <caption
+><para
+>Ett exempel på en figurbild: <filename
+>cannon.png</filename
+></para
+></caption>
+    </mediaobject>
+
+    <para
+>För arméfigurer finns det tre olika versioner, uppifrån och ner:</para>
+
+    <itemizedlist>
+      <listitem
+><para
+>vända åt höger</para
+></listitem>
+      <listitem
+><para
+>vända åt vänster</para
+></listitem>
+      <listitem
+><para
+>vända framåt</para
+></listitem>
+    </itemizedlist>
+
+    <para
+>För flaggor finns bara en version. Alla figurernas bakgrunder ska vara genomskinliga.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="italy.png" format="PNG"/></imageobject>
+      <caption
+><para
+>Ett exempel på en flaggfigurbild: <filename
+>italy.png</filename
+></para
+></caption>
+    </mediaobject>
+
+    <table>
+      <title
+>Elementen i pool</title>
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry
+>Elementnamn</entry>
+            <entry
+>Exempelbild</entry>
+            <entry
+>Betydelse</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>map</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="map.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Karta över skalets värld. Länder kan ha godtyckliga former, men bör grupperas i kontinenter som kan kännas igen med blotta ögat, enligt plats eller färg.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>italy</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="italy.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Flaggan för nationen italy. Det finns en sådan post för varje nation.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>infantry</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="infantry.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Ikon som representerar en armé.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>cavalry</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="cavalry.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Ikon som representerar fem arméer.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>cannon</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="cannon.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Ikon som representerar tio arméer.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>firing</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="firing.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Ikon som representerar arméer under en strid.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>exploding</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="exploding.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Ikon som representerar arméer när en strid förloras.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>alaska</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="alaska.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Formen av staten Alaska. Den används för att markera staten. Det finns en sådan form för varje stat. Dess färg används inte. Av den anledningen är färgen valfri.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>reddices</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="reddices.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>De röda tärningarna används för att visa stridsresultat.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>bluedices</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="bluedices.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>De blåa tärningarna används för att visa stridsresultat.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>mark1</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="mark1.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Markeringen läggs till för stridande figurer för att visa antal arméer de representerar, här 1. Elementen <literal
+>mark2</literal
+> och <literal
+>mark3</literal
+> finns också.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Filen <filename
+>map-mask.png</filename
+></title>
+
+    <para
+>Detta är en png-fil som också representerar skalets världskarta, men med kodade färger som gör det möjligt att unikt identifiera varje land. Länder måste åtminstone ha samma form som motsvarande länder i filen <filename
+>map.png</filename
+>, så att användare kan klicka var som helst i ett synligt land och markera det på ett bra sätt. Länder som består av små öar, som Indonesien på standardkartan, kan vara större än motsvarigheten i filen <filename
+>map.png</filename
+> för att förenkla markering av landet.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="map-mask.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Ett exempel på en kartmask</phrase
+></textobject>
+    </mediaobject>
+
+    <para
+>Ett lands blåa komponent (med RGB-modellen) identifierar landet: index 0 är land 0 i filen <filename
+>onu.xml</filename
+>, index 1 är land 1, etc. Vitt (0xFFFFFF med RGB) identifierar frånvaro av ett land (hav eller, varför inte, ingenmansland).</para>
+    </sect3>
+
+    <sect3>
+    <title
+>Knappbilderna</title>
+
+    <para
+>Filnamnen är hårdkodade i källkoden, så de får inte ändras. Tabellen nedan visar alla knappar som måste tillhandahållas.</para>
+
+    <table>
+      <title
+>Knapparna i det grafiska gränssnittet</title>
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry
+>Bild</entry>
+            <entry
+>Filnamn</entry>
+            <entry
+>Betydelse</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="newNetGame.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>newNetGame.png</filename
+></entry>
+            <entry
+>Försöker gå med i ett nätverksspel.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="recycling.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>recycling.png</filename
+></entry>
+            <entry
+>När alla spelare har placerat ut sina arméer är det möjligt att ändra fördelningen (betecknat omfördela). Knappen begär att utföra en sådan omfördelning.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="recyclingFinished.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>recyclingFinished.png</filename
+></entry>
+            <entry
+>Väljer att inte omfördela. För att omfördelningen verkligen ska avslutas måste knappen klickas i alla klientfönster.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="nextPlayer.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>nextPlayer.png</filename
+></entry>
+            <entry
+>Avslutar den nuvarande spelarens tur och byter till nästa, eller går till nästa omgång om den nuvarande spelaren var sist.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackOne.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackOne.png</filename
+></entry>
+            <entry
+>Väljer att börja ett anfall med en armé.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackTwo.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackTwo.png</filename
+></entry>
+            <entry
+>Väljer att börja ett anfall med två arméer.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackThree.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackThree.png</filename
+></entry>
+            <entry
+>Väljer att börja ett anfall med tre arméer.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="defendOne.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>defendOne.png</filename
+></entry>
+            <entry
+>Väljer att försvara ett anfallet land med en armé.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="defendTwo.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>defendTwo.png</filename
+></entry>
+            <entry
+>Väljer att försvara ett anfallet land med två arméer.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="moveArmies.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>moveArmies.png</filename
+></entry>
+            <entry
+>Väljer att börja flytta arméer mellan två länder (sista åtgärden i turen).</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+  </sect2>
+
+  <sect2 id="tsd">
+  <title
+>Katalogen Sounds</title>
+
+  <para
+>Katalogen innehåller tre ljudfiler:</para>
+
+  <itemizedlist>
+    <listitem
+><para
+><filename
+>roll.wav</filename
+> som spelas när arméer förflyttas </para
+></listitem>
+    <listitem
+><para
+><filename
+>cannon.wav</filename
+> som spelas vid eldgivning och </para
+></listitem>
+    <listitem
+><para
+><filename
+>crash.wav</filename
+> som spelas när en kanon exploderar</para
+></listitem>
+  </itemizedlist>
+  </sect2>
+</sect1>
+
+<sect1 id="using-kse">
+<title
+>Använda &i18n-ksirkskineditor;</title>
+
+<para
+>Efter att ha skapat grafiken i rätt katalog och &SVG;-fil, måste du bara skapa länder, spelare, etc., och koppla ihop dem med rätt SVG-element i filen pool. Det kan göras med &i18n-ksirkskineditor;. Observera att varje del av programmet automatiskt beskrivs med verktygstips och sammanhangsberoende hjälp, som oftast kan nås med snabbtangenten <keycombo action="simul"
+>&Ctrl;<keycap
+>F1</keycap
+></keycombo
+>.</para>
+
+<screenshot>
+  <screeninfo
+>Här är en skärmbild av &i18n-ksirkskineditor;</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="main-snapshot.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Skärmbild</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Kommandoreferens</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>Huvudfönstret i &i18n-ksirkskineditor;</title>
+
+  <sect2>
+  <title
+>Knapparna</title>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="document-open.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Läs in</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Läs in...</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Gör att programmet laddar ett befintligt skal.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="document-save.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Spara</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Spara</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Sparar det nuvarande skalet som redigerats.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+  </sect2>
+</sect1>
+</chapter>
+
+<chapter id="developers">
+<title
+>Utvecklingsguide för &i18n-ksirkskineditor;</title>
+
+<para
+>Se <ulink url="https://api.kde.org/"
+>https://api.kde.org/</ulink
+> för dokumentation av programmeringsgränssnittet.</para>
+</chapter>
+
+<chapter id="faq">
+<title
+>Vanliga frågor</title
+>&updating.documentation; </chapter>
+
+<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+<title
+>Tack till och licens</title>
+
+<para
+>&ksirkskineditor;</para>
+
+<para
+>Program copyright 2009 Ga&euml;l de Chalendar <email
+>kleag@free.fr</email
+></para>
+
+<para
+>Dokumentation copyright 2009 Ga&euml;l de Chalendar <email
+>kleag@free.fr</email
+></para>
+
+<para
+>Översättning Stefan Asserhäll <email
+>stefan.asserhall@bredband.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

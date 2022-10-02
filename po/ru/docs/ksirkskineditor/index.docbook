@@ -1,0 +1,1312 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY ksirkskineditor '<application
+>KsirK Skin Editor</application
+>'>
+  <!ENTITY i18n-ksirkskineditor '<application
+>KsirK Skin Editor</application
+>'>
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Russian "INCLUDE">
+]>
+
+<book id="ksirkskineditor" lang="&language;">
+
+<bookinfo>
+<title
+>Руководство пользователя &i18n-ksirkskineditor;</title>
+
+<authorgroup>
+  <author
+><firstname
+>Ga&euml;l</firstname
+> <othername
+>Kleag</othername
+> <surname
+>de Chalendar</surname
+> <affiliation
+><address
+><email
+>Kleag@free.fr</email
+></address
+></affiliation>
+  </author>
+  <!-- Translators: put here the copyright notice of the translation -->
+  <othercredit role="translator"
+><firstname
+>Мария</firstname
+><surname
+>Шикунова</surname
+><affiliation
+><address
+><email
+>translation-team@basealt.ru</email
+></address
+></affiliation
+><contrib
+>Перевод на русский язык</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+  <year
+>2009</year>
+  <holder
+>Ga&euml;l de Chalendar</holder>
+</copyright>
+<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
+     and in the FDL itself on how to use it. -->
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<!-- Date of the documentation
+Change date/releaseinfo only if
+   docbook is updated and verified to be valid for the current app version
+   or
+   docbook is proofread and verified to be valid for the current app version
+Don't forget to include this last date.
+Please respect the format of the date (YYYY-MM-DD),it is used by scripts.
+-->
+<date
+>14 октября 2021 г.</date>
+
+<!--version information of Frameworks/Plasma/Applications this documentation is valid for.
+Example:
+Frameworks xx.yy for docbooks in frameworks
+Plasma xx.yy for docbooks in plasma workspace
+Applications xx.yy for docbooks released as Applications
+xx.yy (Applications xx.yy) for docbooks with own version released as Applications
+$applicationname xx.yy for applications with independent release schedule (extragear/playground)
+-->
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+  <para
+>&ksirk; — это компьютерная версия широко известной стратегии. В неё возможно добавлять своё игровое поле. В этом руководстве содержится инструкция, как создать собственное игровое поле с нуля с помощью диспетчера файлов, редактора &SVG;-изображений и &i18n-ksirkskineditor;.</para>
+</abstract>
+
+<!-- This is a set of Keywords for indexing by search engines.
+Please at least include KDE, the KDE package it is in, the name
+ of your application, and a few relevant keywords. -->
+
+<keywordset>
+  <keyword
+>KDE</keyword>
+  <keyword
+>редактор</keyword>
+  <keyword
+>бесплатно</keyword>
+  <keyword
+>игра</keyword>
+  <keyword
+>GPL</keyword>
+  <keyword
+>риск</keyword>
+  <keyword
+>игровое поле</keyword>
+  <keyword
+>стратегия</keyword>
+</keywordset>
+
+</bookinfo>
+
+<!-- The contents of the documentation begin here.  Label
+each chapter so with the id attribute. This is necessary for two reasons: it
+allows you to easily reference the chapter from other chapters of your
+document, and if there is no ID, the name of the generated HTML files will vary
+from time to time making it hard to manage for maintainers and for the CVS
+system. Any chapter labeled (OPTIONAL) may be left out at the author's
+discretion. Other chapters should not be left out in order to maintain a
+consistent documentation style across all KDE apps. -->
+
+<chapter id="introduction">
+<title
+>Введение</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+<para
+>&ksirk; — это компьютерная версия широко известной стратегии. В неё возможно добавлять своё игровое поле. В этом руководстве содержится инструкция, как создать собственное игровое поле с нуля с помощью диспетчера файлов, редактора &SVG;-изображений и &i18n-ksirkskineditor;.</para>
+
+<screenshot>
+  <screeninfo
+>Ниже представлен снимок экрана  &i18n-ksirkskineditor;</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="main-snapshot.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Снимок экрана</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>Чтобы создать новое игровое поле, необходимо пройти через три этапа: создание графики, встраивание её в  &SVG;-файл и размещение спрайтов, присваивая им названия с помощью &i18n-ksirkskineditor;.</para>
+</chapter>
+
+<chapter id="using-kapp">
+<title
+>Создание игрового поля &ksirk;</title>
+
+<para
+>&ksirk; позволяет добавлять собственные игровые поля. Для тех, кто может работать с графикой, создание новых игровых полей — это так же просто, как копирование существующего игрового поля и изменение его данных в конфигурационном файле <literal role="extension"
+>.desktop</literal
+> через &i18n-ksirkskineditor;. Последний шаг — это редактирование файла, описывающего, что требуется установить.</para>
+
+<para
+>Все примеры (текст и изображения) взяты из стандартного игрового поля &ksirk;.</para>
+
+<sect1 id="sdf">
+<title
+>Структура папок и файлов</title>
+
+<itemizedlist>
+  <listitem
+><para
+><filename class="directory"
+>Data/</filename
+> : данные, используемые программой для обработки изображений игрового поля.</para>
+    <itemizedlist>
+      <listitem
+><para
+><filename
+>CMakeLists.txt</filename
+> : описывает, что нужно установить.</para
+></listitem>
+      <listitem
+><para
+><filename
+>onu.desktop</filename
+> : основной файл для описания игрового поля. Ознакомьтесь с его описанием ниже.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+><filename class="directory"
+>Images/</filename
+> : изображения для игрового поля (карта, спрайты и так далее).</para>
+    <itemizedlist>
+      <listitem
+><para
+><filename
+>CMakeLists.txt</filename
+> : описывает, что нужно установить.</para
+></listitem>
+      <listitem
+><para
+><filename
+>pool.svg</filename
+> : карта и все спрайты, используемые в этом игровом поле.</para
+></listitem>
+      <listitem
+><para
+><filename
+>map-mask.png</filename
+> : изображение, позволяющее программе определять, на какой стране находится курсор мыши во время игры.</para
+></listitem>
+      <listitem
+><para
+><literal role="extension"
+>*.png</literal
+> : остальные изображения — это изображения кнопок.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+><filename
+>CMakeLists.txt</filename
+> : описывает, что нужно установить.</para
+></listitem>
+  <listitem
+><para
+><filename class="directory"
+>Sounds/</filename
+> : звуковые файлы для игрового поля.</para
+></listitem>
+</itemizedlist>
+
+  <sect2 id="tdd">
+  <title
+>Папка с данными</title>
+
+  <para
+>Эта папка содержит только один файл, <filename
+>world.desktop</filename
+>. Этот файл — это описание содержимого игрового поля. Он используется для описания организации мира и объяснения, как его отображать. Его не нужно заполнять вручную, это автоматически сделает &i18n-ksirkskineditor;. Но в справочных целях ниже будет рассмотрена его структура.</para>
+
+  <para
+>Группа <literal
+>onu</literal
+> содержит количество стран, количество наций и количество континентов. Различные группы содержат описание различных спрайтов, описание разных стран, континентов, наций и целей.</para>
+
+  <para
+>Следующие разделы описывают содержимое каждой группы.</para>
+
+    <sect3>
+    <title
+>Группа <literal
+>onu</literal
+></title>
+
+    <table>
+      <title
+>Записи группы <literal
+>onu</literal
+></title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Имя записи</entry>
+            <entry
+>Значение</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>width</literal
+></entry>
+            <entry
+>Ширина карты игрового поля.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>height</literal
+></entry>
+            <entry
+>Высота карты игрового поля.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>skinpath</literal
+></entry>
+            <entry
+>Путь игрового поля относительно пути к данным приложения (например, <filename
+>skins/default</filename
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nb-countries</literal
+></entry>
+            <entry
+>Количество стран (42 в стандартном игровом поле). Ниже должно быть указано такое же количество групп стран.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nb-nationalities</literal
+></entry>
+            <entry
+>Количество наций (6 в стандартном игровом поле). Ниже должно быть указано такое же количество групп наций.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nb-continents</literal
+></entry>
+            <entry
+>Количество континентов (6 в стандартном игровом поле). Ниже должно быть указано такое же количество групп континентов.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>pool</literal
+></entry>
+            <entry
+>Путь и имя пула файлов относительно пути к игровому полю (&eg; <filename
+>Images/pool.svg</filename
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>map-mask</literal
+></entry>
+            <entry
+>Путь и имя файла маски карты относительно пути игрового поля (например, <filename
+>Images/map-mask.png</filename
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>format-version</literal
+></entry>
+            <entry
+>Версия формата файла игрового поля (2.0).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>name</literal
+></entry>
+            <entry
+>Отображаемое имя игрового поля.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>desc</literal
+></entry>
+            <entry
+>Длинное описание игрового поля.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>fighters-flag-y-diff</literal
+></entry>
+            <entry
+>Разница высоты между спрайтами флагов и пушек.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>width-between-flag-and-fighter</literal
+></entry>
+            <entry
+>Количество пикселов между самым левым пикселом флага и самым правым пикселом простой пушки (когда она не стреляет и не взрывается).</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Группы описания спрайтов</title>
+
+    <para
+>Каждый тип спрайта (флаг, пехота, кавалерия, пушка, стреляющая пушка и взрывающаяся пушка) определён группой. Запись ширины имеют только некоторые спрайты. Эта запись используется для относительного позиционирования во время анимации: стреляющие или взрывающиеся пушки не должны <quote
+>двигаться</quote
+> вокруг флага страны во время боя.</para>
+
+    <table>
+      <title
+>Записи группы описания спрайтов</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Имя записи</entry>
+            <entry
+>Значение</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>width</literal
+></entry>
+            <entry
+>Эталонная ширина фреймов спрайта флага.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>height</literal
+></entry>
+            <entry
+>Эталонная высота фреймов спрайта флага.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>frames</literal
+></entry>
+            <entry
+>Количество фреймов в спрайте.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>versions</literal
+></entry>
+            <entry
+>Количество версий спрайтов флагов.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Группы описания стран</title>
+
+    <para
+>Каждая страна, указанная в группе <literal
+>onu</literal
+>, имеет свою собственную группу, ярлыком которой является название страны. В таблице ниже перечислены записи этих групп.</para>
+
+    <table>
+      <title
+>Записи стран</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Имя записи</entry>
+            <entry
+>Значение</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>id</literal
+></entry>
+            <entry
+>Целочисленный уникальный идентификатор, должен начинаться с нуля (0).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>name</literal
+></entry>
+            <entry
+>Отображаемое название страны.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>&lt;sprite&gt;-point</literal
+></entry>
+            <entry
+>Каждый тип спрайта (флаг, пехота и им подобные) отображается на определённой позиции, указанной в этой записи с помощью двух целых чисел, разделённых запятой.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>neighbours</literal
+></entry>
+            <entry
+>Список идентификаторов соседних стран.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Группы описания наций</title>
+
+    <para
+>Каждая нация, указанная в группе <literal
+>onu</literal
+>, имеет свою собственную группу, ярлыком которой является название нации. В таблице ниже перечислены записи этих групп.</para>
+
+    <table>
+      <title
+>Записи наций</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Имя записи</entry>
+            <entry
+>Значение</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>name</literal
+></entry>
+            <entry
+>Название нации (например, <literal
+>Япония</literal
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>leader</literal
+></entry>
+            <entry
+>Имя, которое будет предложено игроку при выборе нации.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>flag</literal
+></entry>
+            <entry
+>Название элемента спрайта флага страны в &SVG;-файле <literal
+>onu</literal
+>.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Группы описания континентов</title>
+
+    <para
+>Каждый континент, указанный в группе <literal
+>onu</literal
+>, имеет свою собственную группу, ярлыком которой является название континента. В таблице ниже перечислены записи этих групп.</para>
+
+    <table>
+      <title
+>Записи континентов</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Имя записи</entry>
+            <entry
+>Значение</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>name</literal
+></entry>
+            <entry
+>Название континентов (например, <literal
+>Африка</literal
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>id</literal
+></entry>
+            <entry
+>Целочисленный уникальный идентификационный номер континента.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>bonus</literal
+></entry>
+            <entry
+>Количество армий, полученных в конце хода игроком, владеющим всеми странами континента.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>continent-countries</literal
+></entry>
+            <entry
+>Список идентификаторов стран внутри текущего континента.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Группы описания целей</title>
+
+    <para
+>Каждая цель, указанная в группе <literal
+>onu</literal
+>, имеет свою собственную группу, ярлыком которой является название цели. В таблице ниже перечислены записи этих групп.</para>
+
+    <table>
+      <title
+>Записи целей</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Имя записи</entry>
+            <entry
+>Значение</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>type</literal
+></entry>
+            <entry
+>Тип цели. Целью могут быть быть континенты, страны или игрок.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nbArmiesByCountry</literal
+></entry>
+            <entry
+>Установка минимального количества армий, которые необходимо разместить в каждой стране.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nbCountries</literal
+></entry>
+            <entry
+>Установка количества стран, которыми игрок должен владеть.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nbCountriesFallback</literal
+></entry>
+            <entry
+>Если при типе цели «игрок» целевой игрок убит другим пользователем, этот параметр устанавливает количество стран, которые игрок должен будет завоевать вместо этого.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>desc</literal
+></entry>
+            <entry
+>Полное текстовое описание цели с соответствующими заменителями (здесь необходимо больше документации).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>continents</literal
+></entry>
+            <entry
+>Список идентификаторов континентов, которые нужно будет захватить.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+  </sect2>
+
+  <sect2 id="tid">
+  <title
+>Папка с изображениями</title>
+
+  <para
+>Эта папка содержит кнопки, относящиеся к &ksirk;, и пул &SVG;-файлов, содержащий карту и все спрайты.</para>
+
+    <sect3>
+    <title
+>Файл <filename
+>pool.svg</filename
+></title>
+
+    <para
+>Этот &SVG;-файл содержит карту и все спрайты игры. Каждый элемент назван так, что игра может выделять определённый элемент и обрабатывать их отдельно друг от друга.</para>
+
+    <para
+>В стандартном игровом поле спрайтами являются флаги, пехота, кавалерия и пушки. Пехота представляет одну армию, кавалерия — пять, а пушки — десять. Пушки также используются для отображения сражающихся армий. Именно поэтому есть три типа спрайтов пушек: обычные статичные или движущиеся пушки, стреляющие и взрывающиеся.</para>
+
+    <para
+>Каждое изображение спрайта представляет собой взаимосвязь различных видов объектов, а для каждого вида — его фреймы. Режимы просмотра организованы вертикально, а фреймы — горизонтально. Чтобы понять, где следует обрезать изображение, необходимо разделить высоту изображения на количество режимов просмотра и ширину на количество фреймов. Эти данные находятся в файле <filename
+>onu.desktop</filename
+>.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="cannon.png" format="PNG"/></imageobject>
+      <caption
+><para
+>Пример изображения спрайта: <filename
+>cannon.png</filename
+></para
+></caption>
+    </mediaobject>
+
+    <para
+>Для спрайтов армии предусмотрено три режима просмотра, сверху вниз:</para>
+
+    <itemizedlist>
+      <listitem
+><para
+>направленная вправо</para
+></listitem>
+      <listitem
+><para
+>направленная влево и</para
+></listitem>
+      <listitem
+><para
+>направленная прямо</para
+></listitem>
+    </itemizedlist>
+
+    <para
+>Для флагов есть только один режим просмотра. Все фоны спрайтов должны быть прозрачными.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="italy.png" format="PNG"/></imageobject>
+      <caption
+><para
+>Пример спрайта изображения флага: <filename
+>italy.png</filename
+></para
+></caption>
+    </mediaobject>
+
+    <table>
+      <title
+>Элементы пула</title>
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry
+>Название элемента</entry>
+            <entry
+>Пример</entry>
+            <entry
+>Значение</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>map</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="map.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Карта мира игрового поля. Страны могут иметь произвольную форму, но они должны быть сгруппированы в узнаваемые континенты по местоположению или по цвету.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>italy</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="italy.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Флаг итальянской нации. Каждой нации должен быть присвоен только один флаг.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>infantry</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="infantry.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Значок, представляющий одну армию.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>cavalry</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="cavalry.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Значок, представляющий пять армий.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>cannon</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="cannon.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Значок. представляющий десять армий.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>firing</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="firing.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Значок, представляющий армии во время сражения.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>exploding</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="exploding.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Значок, представляющий армии во время проигрыша сражения.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>alaska</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="alaska.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Форма страны Аляски. Эта функция используется для выделения страны. Для каждой страны есть одна такая форма. Его цвет не используется. Таким образом, цвет свободен.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>reddices</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="reddices.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Красные кубики используются для отображения результатов сражений.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>bluedices</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="bluedices.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Синие кубики используются для отображения результатов сражений.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>mark1</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="mark1.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Эта метка добавлена к сражающимся спрайтам для отображения количества армий, которые они представляют, в данном примере, 1. Также присутствуют элементы <literal
+>mark2</literal
+> и <literal
+>mark3</literal
+>.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Файл <filename
+>map-mask.png</filename
+></title>
+
+    <para
+>Это PNG-файл, представляющий также карту мира игровых полей с закодированными цветами, что позволяет однозначно идентифицировать каждую страну. Формы этих стран должны совпадать с формами стран, указанных в файле <filename
+>map.png</filename
+>, чтобы пользователи могли щёлкнуть левой кнопкой мыши в любом месте в просматриваемой стране и выбрать самую подходящую. Маленькие острова наподобие Индонезии могут быть больше в стандартной карте, чем в файле <filename
+>map.png</filename
+>, это позволит облегчить выбор страны.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="map-mask.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Образец маски карты</phrase
+></textobject>
+    </mediaobject>
+
+    <para
+>Синий компонент (в модели RGB) в цвете страны определяет страну. Индекс 0 — это страна 0 в файле <filename
+>onu.xml</filename
+>, индекс 1 — страна 1, и так далее. Белый (0xFFFFFF в RGB) определяет отсутствие страны.</para>
+    </sect3>
+
+    <sect3>
+    <title
+>Изображения кнопок</title>
+
+    <para
+>Имена файлов строго прописаны в коде, поэтому их нельзя изменять. В таблице ниже представлены все кнопки, которые следует учесть.</para>
+
+    <table>
+      <title
+>Кнопки графического интерфейса</title>
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry
+>Изображение</entry>
+            <entry
+>Имя файла</entry>
+            <entry
+>Значение</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="newNetGame.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>newNetGame.png</filename
+></entry>
+            <entry
+>Пытается присоединиться к сетевой игре.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="recycling.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>recycling.png</filename
+></entry>
+            <entry
+>После того, как игроки расставят свои армии, их возможно перераспределить. Эта кнопка предлагает сделать это перераспределение.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="recyclingFinished.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>recyclingFinished.png</filename
+></entry>
+            <entry
+>Вариант «не перераспределять». Для фактического завершения распределения эту кнопку должны нажать все игроки.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="nextPlayer.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>nextPlayer.png</filename
+></entry>
+            <entry
+>Завершает текущий ход игрока и переключается на следующего, либо на следующий ход, если игрок остался один.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackOne.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackOne.png</filename
+></entry>
+            <entry
+>Начинает атаку с одной армией.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackTwo.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackTwo.png</filename
+></entry>
+            <entry
+>Начинает атаку двумя армиями.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackThree.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackThree.png</filename
+></entry>
+            <entry
+>Начинает атаку тремя армиями.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="defendOne.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>defendOne.png</filename
+></entry>
+            <entry
+>Защищает атакованную страну одной армией.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="defendTwo.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>defendTwo.png</filename
+></entry>
+            <entry
+>Защищает атакованную страну двумя армиями.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="moveArmies.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>moveArmies.png</filename
+></entry>
+            <entry
+>Начинает перемещение армий между двумя странами (последнее действие в ходу).</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+  </sect2>
+
+  <sect2 id="tsd">
+  <title
+>Папка со звуковыми файлами</title>
+
+  <para
+>Эта папка содержит три звуковых файла:</para>
+
+  <itemizedlist>
+    <listitem
+><para
+><filename
+>roll.wav</filename
+> проигрывается при перемещении армий </para
+></listitem>
+    <listitem
+><para
+><filename
+>cannon.wav</filename
+> проигрывается при выстреле и </para
+></listitem>
+    <listitem
+><para
+><filename
+>crash.wav</filename
+> проигрывается при взрыве пушки</para
+></listitem>
+  </itemizedlist>
+  </sect2>
+</sect1>
+
+<sect1 id="using-kse">
+<title
+>Использование &i18n-ksirkskineditor;</title>
+
+<para
+>После создания графики в правильной папке и файле &SVG; необходимо создать страны, игроков и так далее и связать их с соответствующим элементом &SVG; в пуле. Это возможно сделать с помощью &i18n-ksirkskineditor;. Обратите внимание, что каждая часть этого приложения автоматически описывается во всплывающих подсказках, а контекстная справка доступна с помощью комбинации клавиш <keycombo action="simul"
+>&Ctrl;<keycap
+>F1</keycap
+></keycombo
+>.</para>
+
+<screenshot>
+  <screeninfo
+>Ниже представлен снимок экрана  &i18n-ksirkskineditor;</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="main-snapshot.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Снимок экрана</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Список команд</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>Главное окно &i18n-ksirkskineditor;</title>
+
+  <sect2>
+  <title
+>Кнопки</title>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="document-open.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Загрузить</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Загрузить...</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Программа загружает существующее игровое поле.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="document-save.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Сохранить</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Сохранить</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Сохраняет текущее изменённое игровое поле.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+  </sect2>
+</sect1>
+</chapter>
+
+<chapter id="developers">
+<title
+>Руководство разработчика &i18n-ksirkskineditor;</title>
+
+<para
+>Для получения документации об API обратитесь к <ulink url="https://api.kde.org/"
+>https://api.kde.org/</ulink
+>.</para>
+</chapter>
+
+<chapter id="faq">
+<title
+>Вопросы и ответы</title
+>&updating.documentation; </chapter>
+
+<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+<title
+>Авторские права и лицензия</title>
+
+<para
+>&ksirkskineditor;</para>
+
+<para
+>Авторские права на программу: Ga&euml;l de Chalendar <email
+>kleag@free.fr</email
+>, 2009 г.</para>
+
+<para
+>Авторские права на документацию: Ga&euml;l de Chalendar <email
+>kleag@free.fr</email
+>, 2009 г.</para>
+
+<para
+>Перевод на русский язык: Мария Шикунова<email
+>translation-team@basealt.ru</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

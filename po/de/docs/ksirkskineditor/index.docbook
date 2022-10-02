@@ -1,0 +1,1215 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY ksirk '<application
+>KsirK</application
+>'>
+  <!ENTITY ksirkskineditor '<application
+>KsirK Skin Editor</application
+>'>
+  <!ENTITY kappname "&ksirkskineditor;">
+  <!ENTITY package "kdegames">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % German "INCLUDE">
+]>
+
+<book id="ksirkskineditor" lang="&language;">
+
+<bookinfo>
+<title
+>Das Handbuch zu <application
+>KsirK-Design-Editor</application
+></title>
+
+<authorgroup>
+<author
+><firstname
+>Gael</firstname
+> <othername
+>Kleag</othername
+> <surname
+>de Chalendar</surname
+> <affiliation
+> <address
+><email
+>Kleag@free.fr</email
+></address>
+</affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Johannes</firstname
+><surname
+>Obermayr</surname
+><affiliation
+><address
+><email
+>johannesobermayr@gmx.de</email
+></address
+></affiliation
+><contrib
+>Übersetzung</contrib
+></othercredit
+> 
+</authorgroup>
+
+
+<copyright>
+<year
+>2009</year>
+<holder
+>Gael de Chalendar</holder>
+</copyright>
+<!-- Translators: put here the copyright notice of the translation -->
+<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
+     and in the FDL itself on how to use it. -->
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<!-- Date of the documentation
+Change date/releaseinfo only if
+   docbook is updated and verified to be valid for the current app version
+   or
+   docbook is proofread and verified to be valid for the current app version
+Don't forget to include this last date.
+Please respect the format of the date (YYYY-MM-DD),it is used by scripts.
+-->
+<date
+>2009-05-22</date>
+
+<!--version information of Frameworks/Plasma/Applications this documentation is valid for.
+Example:
+Frameworks xx.yy for docbooks in frameworks
+Plasma xx.yy for docbooks in plasma workspace
+Applications xx.yy for docbooks released as Applications
+xx.yy (Applications xx.yy) for docbooks with own version released as Applications
+$applicationname xx.yy for applications with independent release schedule (extragear/playground)
+-->
+<releaseinfo
+>4.3</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+<para
+>&ksirk; ist eine computergestützte Version eines sehr bekannten Strategiespiels und kann vollständig neue Designs erhalten. Dieses Handbuch beschreibt die Erstellung neuer Designs von Grund auf (unter Verwendung einer Dateiverwaltung, <filename
+>.svg</filename
+>-Bearbeitungsprogramms und <application
+>KsirK-Design-Editor</application
+>). </para>
+</abstract>
+
+<!-- This is a set of Keywords for indexing by search engines.
+Please at least include KDE, the KDE package it is in, the name
+ of your application, and a few relevant keywords. -->
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KDE-Spiele</keyword>
+<keyword
+>Spiel</keyword>
+<keyword
+>Strategie</keyword>
+<keyword
+>Risiko</keyword>
+<keyword
+>Frei</keyword>
+<keyword
+>GPL</keyword>
+<keyword
+>Design</keyword>
+<keyword
+>Editor</keyword>
+</keywordset>
+
+</bookinfo>
+
+<!-- The contents of the documentation begin here.  Label
+each chapter so with the id attribute. This is necessary for two reasons: it
+allows you to easily reference the chapter from other chapters of your
+document, and if there is no ID, the name of the generated HTML files will vary
+from time to time making it hard to manage for maintainers and for the CVS
+system. Any chapter labeled (OPTIONAL) may be left out at the author's
+discretion. Other chapters should not be left out in order to maintain a
+consistent documentation style across all KDE apps. -->
+
+<chapter id="introduction">
+<title
+>Einführung</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+<para
+>&ksirk; ist eine computergestützte Version eines sehr bekannten Strategiespiels und kann vollständig neue Designs erhalten. Dieses Handbuch beschreibt die Erstellung neuer Designs von Grund auf (unter Verwendung einer Dateiverwaltung, <filename
+>.svg</filename
+>-Bearbeitungsprogramms und <application
+>KsirK-Design-Editor</application
+>). </para>
+<para>
+<screenshot>
+  <screeninfo
+>Bildschirmfoto von <application
+>KsirK-Design-Editor</application
+></screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="main-snapshot.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Bildschirmfoto</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para
+>Es sind drei Schritte für die Erstellung eines neuen Designs notwendig: Erstellen der Ordnerstruktur, Erstellung der Grafiken (zusammengefasst in einer <filename
+>.svg</filename
+>-Datei) und schließlich das Platzieren der Animationen und Benennen der Elemente mit <application
+>KsirK-Design-Editor</application
+>. </para>
+</chapter>
+
+<chapter id="using-kapp">
+<title
+>Neues &ksirk;-Design erstellen</title>
+  <para
+>Für &ksirk; können komplett neue Designs erstellt werden. Für künstlerisch Veranlagte ist das Erstellen neuer Designs so einfach wie das Kopieren, Bearbeiten oder Austauschen bestehender Grafiken und das Aktualisieren der Daten in der <filename
+>.desktop</filename
+>-Einrichtungsdatei, wozu <application
+>KsirK-Design-Editor</application
+> dient. Ein letzter Schritt ist das Bearbeiten der Installationsdatei. </para>
+  <para
+>Alle Beispiele (Text und Bilder) sind vom Standard-Design von &ksirk;.</para>
+  
+  <sect1 id="sdf">
+    <title
+>Struktur der Ordner und Dateien</title>
+    <para>
+      <itemizedlist>
+        <listitem>
+          <para
+>Data/: Daten zur Einbindung der Bilder des Designs. <itemizedlist>
+              <listitem
+><para
+><filename
+>CMakeLists.txt</filename
+>: Beschreibung der Installationsabläufe.</para
+></listitem>
+              <listitem
+><para
+><filename
+>world.desktop</filename
+>: Die Beschreibung des Designs. Der Aufbau wird später geschildert.</para
+></listitem>
+            </itemizedlist>
+          </para>
+        </listitem>
+        <listitem>
+          <para
+>Images/: Die Bilder des Designs (Karte, Animationen, ...) <itemizedlist>
+              <listitem
+><para
+><filename
+>CMakeLists.txt</filename
+>: Beschreibung der Installationsabläufe.</para
+></listitem>
+              <listitem
+><para
+><filename
+>pool.svg</filename
+>: Die Karte und Animationen des Designs.</para
+></listitem>
+              <listitem
+><para
+><filename
+>map-mask.png</filename
+>: Dieses Bild ermöglicht es dem Programm während es Spiels das richtige Land zu finden, wenn sich der Mauszeiger darüber befindet (Erklärung erfolgt später).</para
+></listitem>
+              <listitem
+><para
+><filename
+>*.png</filename
+>: Diese Bilder sind für die Knöpfe.</para
+></listitem>
+            </itemizedlist>
+          </para>
+        </listitem>
+        <listitem
+><para
+><filename
+>CMakeLists.txt/</filename
+>: Beschreibung der Installationsabläufe.</para
+></listitem>
+        <listitem
+><para
+>Sounds/: Die Klänge des Designs.</para
+></listitem>
+      </itemizedlist>
+    </para>
+    <sect2 id="tdd">
+      <title
+>Data/</title>
+        <para
+>Dieser Ordner enthält nur eine Datei (<filename
+>world.desktop</filename
+>). Sie ist eine Beschreibung für den Inhalt des Designs und wird zur Beschreibung des Aufbaus und der Anzeige der Welt verwendet. Sie muss nicht eigenhändisch aufgebaut werden, sondern wird von <application
+>KsirK-Design-Editor</application
+> automatisch erstellt. Für die Vollständigkeit wird der folgende Strukturaufbau vorgestellt: </para>
+        <para
+>Unter [onu] sind die grundsätzlichen Einträge für die Länder, Nationen und Kontinente definiert. Die verschiedenen anderen Gruppen enthalten die Beschreibung der Animationen, Länder, Kontinente, Nationen und Spielziele. </para>
+        <para
+>Die folgenden Abschnitte beschreiben den Inhalt jeder Gruppe. </para>
+        <sect3>
+          <title
+>[onu]</title>
+          <para>
+            <table>
+              <title
+>Aufbau von [onu]</title>
+              <tgroup cols="2">
+                <thead
+><row
+><entry
+>Eintrag</entry
+><entry
+>Bedeutung</entry
+></row
+></thead>
+                <tbody>
+                  <row
+><entry
+>width</entry
+><entry
+>Die Breite der Karte (in px).</entry
+></row>
+                  <row
+><entry
+>height</entry
+><entry
+>Die Höhe der Karte (in px).</entry
+></row>
+                  <row
+><entry
+>skinpath</entry
+><entry
+>Der Pfad zum Design - relativ zum Programm - (z. B. skins/default).</entry
+></row>
+                  <row
+><entry
+>nb-countries</entry
+><entry
+>Die Anzahl der Länder (42 im standardmäßigen Design). Es müssen alle Länder definiert werden.</entry
+></row>
+                  <row
+><entry
+>nb-nationalities</entry
+><entry
+>Die Anzahl der Nationen (6 im standardmäßigen Design). Es müssen alle Nationen definiert werden.</entry
+></row>
+                  <row
+><entry
+>nb-continents</entry
+><entry
+>Die Anzahl der Kontinente (6 im standardmäßigen Design). Es müssen gleich viele continent-Gruppen erstellt werden.</entry
+></row>
+                  <row
+><entry
+>pool</entry
+><entry
+>Der Pfad und Name der zusammengefassten Datei - relativ zum Design  (z. B. Images/pool.svg).</entry
+></row>
+                  <row
+><entry
+>map-mask</entry
+><entry
+>Der Pfad und Name der Datei map-mask - relativ zum Design (z B. Images/map-mask.png).</entry
+></row>
+                  <row
+><entry
+>format-version</entry
+><entry
+>Die Version der Design-Datei (2.0)</entry
+></row>
+                  <row
+><entry
+>name</entry
+><entry
+>Der angezeigte Name für das Design.</entry
+></row>
+                  <row
+><entry
+>desc</entry
+><entry
+>Die ausführliche Beschreibung des Designs.</entry
+></row>
+                  <row
+><entry
+>fighters-flag-y-diff</entry
+><entry
+>Der Höhenunterschied zwischen den Animationen der Flaggen und Kanonen.</entry
+></row>
+                  <row
+><entry
+>width-between-flag-and-fighter</entry
+><entry
+>Die Anzahl der Pixel zwischen den letzten linken Pixel der Flagge und den letzten rechten Pixel der einfachen Kanone (weder schießend noch explodierend).</entry
+></row>
+                </tbody>
+              </tgroup>
+            </table>
+          </para>
+        </sect3>
+        <sect3>
+          <title
+>Animationen</title>
+          <para
+>Jede Animation (Flagge, Infanterist, Kallavarist, Kanone, Schuss und Explosion) wird durch eine eigene Gruppe ([flag], [infantry], [cavalry], [cannon], [firing] und [exploding]) definiert. Die Option „width“ wird zur relativen Positionierung während der Animation genutzt. D. h., dass sich die Kanonen, Schüsse und Explosionen während des Kampfes nicht um die Flagge des Landes „bewegen“. <table>
+              <title
+>Aufbau der Animationsbeschreibungen</title>
+              <tgroup cols="2">
+                <thead
+><row
+><entry
+>Eintrag</entry
+><entry
+>Bedeutung</entry
+></row
+></thead>
+                <tbody>
+                  <row
+><entry
+>width</entry
+><entry
+>Die Bezugsbreite für die Bilder der Flaggenanimation.</entry
+></row>
+                  <row
+><entry
+>height</entry
+><entry
+>Die Bezugshöhe der Bilder für die Flaggenanimation.</entry
+></row>
+                  <row
+><entry
+>frames</entry
+><entry
+>Die Anzahl der Bilder für die Animation.</entry
+></row>
+                  <row
+><entry
+>versions</entry
+><entry
+>Die Anzahl der Darstellungen für die Flaggenanimation.</entry
+></row>
+                </tbody>
+              </tgroup>
+            </table>
+          </para>
+        </sect3>
+        <sect3>
+          <title
+>Länder</title>
+          <para
+>Jedes in [onu] aufgeführte Land ist eigens definiert ([Land]). Die Tabelle zeigt die entsprechenden Einträge.  </para>
+          <para>
+            <table>
+              <title
+>Definition der Länder</title>
+              <tgroup cols="2">
+                <thead
+><row
+><entry
+>Eintrag</entry
+><entry
+>Bedeutung</entry
+></row
+></thead>
+                <tbody>
+                  <row
+><entry
+>id</entry
+><entry
+>Die einzigartige Identifikationsnummer (Ganzzahl) für das Land (beginnend mit 0)</entry
+></row>
+                  <row
+><entry
+>name</entry
+><entry
+>Der angezeigte Ländername.</entry
+></row>
+                  <row
+><entry
+>&lt;sprite&gt;-point</entry
+><entry
+>Jede Animation (Flagge, Infanterist, usw.) wird an einer bestimmten Stelle des Landes angezeigt. Diese wird durch zwei Ganzzahlen definiert (getrennt durch Komma).</entry
+></row>
+                  <row
+><entry
+>neighbours</entry
+><entry
+>Die benachbarten Länder (Identifikationsnummern oder [Land] mit Komma getrennt).</entry
+></row>
+                </tbody>
+              </tgroup>
+            </table>
+          </para>
+        </sect3>
+        <sect3>
+          <title
+>Nationen</title>
+          <para
+>Jede in [onu] aufgeführte Nation ist eigens definiert ([Nation]). Die Tabelle zeigt die entsprechenden Einträge.  </para>
+          <para>
+            <table>
+              <title
+>Definition der Nationen</title>
+              <tgroup cols="2">
+                <thead
+><row
+><entry
+>Eintrag</entry
+><entry
+>Bedeutung</entry
+></row
+></thead>
+                <tbody>
+                  <row
+><entry
+>name</entry
+><entry
+>Der Name der Nation (z. B. Japan)</entry
+></row>
+                  <row
+><entry
+>leader</entry
+><entry
+>Der voreingestellte Name des Staatschefs.</entry
+></row>
+                  <row
+><entry
+>flag</entry
+><entry
+>Der Name der Flaggenanimation für das jeweilige Land in der Datei <filename
+>pool.svg</filename
+>.</entry
+></row>
+                </tbody>
+              </tgroup>
+            </table>
+          </para>
+        </sect3>
+        <sect3>
+          <title
+>Kontinente</title>
+          <para
+>Jeder in [onu] aufgeführter Kontinent ist eigens definiert ([Kontinent]). Die Tabelle zeigt die entsprechenden Einträge.  </para>
+          <para>
+            <table>
+              <title
+>Definition der Kontinente</title>
+              <tgroup cols="2">
+                <thead
+><row
+><entry
+>Eintrag</entry
+><entry
+>Bedeutung</entry
+></row
+></thead>
+                <tbody>
+                  <row
+><entry
+>name</entry
+><entry
+>Der Name des Kontinents (z. B. Afrika)</entry
+></row>
+                  <row
+><entry
+>id</entry
+><entry
+>Die einzigartige Identifikationsnummer (Ganzzahl) für den Kontinent (beginnend mit 1)</entry
+></row>
+                  <row
+><entry
+>bonus</entry
+><entry
+>Die Anzahl der Zusatzeinheiten am Rundenende für das Eigentum an allen Ländern des Kontinents.</entry
+></row>
+                  <row
+><entry
+>continents-countries</entry
+><entry
+>Die Länder des Kontinents (Identifikationsnummern oder [Land] mit Komma getrennt).</entry
+></row>
+                </tbody>
+              </tgroup>
+            </table>
+          </para>
+        </sect3>
+        <sect3>
+          <title
+>Spielziele</title>
+          <para
+>Jedes in [onu] aufgeführte Spielziel ist eigens definiert ([Ziel]). Die Tabelle zeigt die entsprechenden Einträge. </para>
+          <para>
+            <table>
+              <title
+>Definition der Spielziele</title>
+              <tgroup cols="2">
+                <thead
+><row
+><entry
+>Eintrag</entry
+><entry
+>Bedeutung</entry
+></row
+></thead>
+                <tbody>
+                  <row
+><entry
+>type</entry
+><entry
+>Die Art des Spielziels. Es kann sich hierbei um Kontinente, Länder oder Spieler handeln (continents, countries oder player).</entry
+></row>
+                  <row
+><entry
+>nbArmiesByCountry</entry
+><entry
+>Die minimale Anzahl an Einheiten, die sich auf jedem Land befinden muss.</entry
+></row>
+                  <row
+><entry
+>nbCountries</entry
+><entry
+>Die Anzahl der Länder, die erobert werden müssen.</entry
+></row>
+                  <row
+><entry
+>nbCountriesFallback</entry
+><entry
+>Für Spieler-Ziele: Sollte der genannte Spieler von einem anderen vernichtet werden, muss der Spieler mit diesem Spielziel stattdessen so viele Länder erobern.</entry
+></row>
+                  <row
+><entry
+>desc</entry
+><entry
+>Die Beschreibung des Spielziels mit Platzhaltern in einem ganzen Satz (weitere Ausführungen folgen).</entry
+></row>
+                  <row
+><entry
+>continents</entry
+><entry
+>Für Kontinent-Ziele: Die zu erobernden Kontinente ([Identifikationsnummer] oder [Land] mit Komma getrennt).</entry
+></row>
+                </tbody>
+              </tgroup>
+            </table>
+          </para>
+      </sect3>
+    </sect2>
+    <sect2 id="tid">
+      <title
+>Images/</title>
+      <para
+>Dieser Ordner enthält die spezifischen Knöpfe für &ksirk; und die zusammengefasste <filename
+>.svg</filename
+>-Datei mit der Karte und den Animationen. </para>
+      <sect3>
+        <title
+><filename
+>pool.svg</filename
+></title>
+        <para
+>Diese <filename
+>.svg</filename
+>-Datei enthält die Karte und alle Animationen des Spiels. Jedes Element ist eigens bezeichnet, damit die Animationen richtig ausgewählt und wiedergegeben werden können. </para>
+        <para
+>Im Standard-Design bilden die Flaggen, Infanteristen, Kavallerie und Kanone die Animationen. Der Infanterist repräsentiert eine Einheit (Kavallerie fünf und Kanonen zehn Einheiten). Die Kanonen werden ebenfalls zur Anzeige der kämpfenden Einheiten verwendet. Das ist der Grund, dass für die Kanonen drei Animationen existieren (stehende oder bewegende, schießende und explodierende).  </para>
+        <para
+>Jedes Animationsbild ist die Zusammenfassung der unterschiedlichen Ansichten des Objekts und für jede Ansicht die der Einzelbilder. Die Ansichten sind vertikal und die Einzelbider horizontal angeordnet. An welchen Stellen das Gesamtbild die individuellen Einzelbilder enthält, wird durch Division der Bildhöhe durch die Anzahl der Ansichten und die Bildbreite durch die Anzahl der Einzelbilder ermittelt. Diese Daten werden in der <filename
+>world.desktop</filename
+>-Datei festgelegt. <mediaobject
+><imageobject
+><imagedata fileref="cannon.png" format="PNG"/></imageobject
+><caption
+><para
+>Beispiel für ein Animationsbild: <filename
+>cannon.png</filename
+></para
+></caption
+></mediaobject>
+        </para>
+        <para
+>Für die Animation der Einheiten gibt es drei verschiedene Ansichten (von oben nach unten):</para>
+          <itemizedlist
+><listitem
+><para
+>nach rechts</para
+></listitem>
+          <listitem
+><para
+>nach links</para
+></listitem
+><listitem>
+          <para
+>zum Betrachter</para
+></listitem
+></itemizedlist>
+           <para
+>Für die Flaggen gibt es nur eine Ansicht. Der Hintergrund für die Animationen muss transparent sein. <mediaobject
+><imageobject
+><imagedata fileref="italy.png" format="PNG"/></imageobject
+><caption
+><para
+>Beispiel für ein Animationsbild einer Flagge: <filename
+>italy.png</filename
+></para
+></caption
+></mediaobject>
+        </para>
+        <para>
+        <table>
+        <title
+>Die Elemente der Zusammenfassung</title>
+        <tgroup cols="3">
+        <thead
+><row
+><entry
+>Name des Elements</entry
+><entry
+>Beispielbild</entry
+><entry
+>Bedeutung</entry
+></row
+></thead>
+        <tbody>
+          <row>
+            <entry
+>map</entry
+><entry
+><mediaobject
+><imageobject
+><imagedata fileref="map.png" format="PNG"/></imageobject
+></mediaobject
+></entry
+><entry
+>Die Karte für das Design. Die Länder können beliebige Formen aufweisen, sollten aber durch den Standort oder die Farbe für das Auge erkennbare Kontinente ergeben.</entry>
+          </row>
+          <row>
+            <entry
+>italy</entry
+><entry
+><mediaobject
+><imageobject
+><imagedata fileref="italy.png" format="PNG"/></imageobject
+></mediaobject
+></entry
+><entry
+>Die Flagge der italienischen Nation. Für jede Nation gibt es ein solches Bild.</entry>
+          </row>
+          <row>
+            <entry
+>infantry</entry
+><entry
+><mediaobject
+><imageobject
+><imagedata fileref="infantry.png" format="PNG"/></imageobject
+></mediaobject
+></entry
+><entry
+>Das Bild für eine Einheit.</entry>
+          </row>
+          <row>
+            <entry
+>cavalry</entry
+><entry
+><mediaobject
+><imageobject
+><imagedata fileref="cavalry.png" format="PNG"/></imageobject
+></mediaobject
+></entry
+><entry
+>Das Bild für fünf Einheiten.</entry>
+          </row>
+          <row>
+            <entry
+>cannon</entry
+><entry
+><mediaobject
+><imageobject
+><imagedata fileref="cannon.png" format="PNG"/></imageobject
+></mediaobject
+></entry
+><entry
+>Das Bild für zehn Einheiten.</entry>
+          </row>
+          <row>
+            <entry
+>firing</entry
+><entry
+><mediaobject
+><imageobject
+><imagedata fileref="firing.png" format="PNG"/></imageobject
+></mediaobject
+></entry
+><entry
+>Das Bild für kämpfende Einheiten.</entry>
+          </row>
+          <row>
+            <entry
+>exploding</entry
+><entry
+><mediaobject
+><imageobject
+><imagedata fileref="exploding.png" format="PNG"/></imageobject
+></mediaobject
+></entry
+><entry
+>Das Bild für verlorene Einheiten.</entry>
+          </row>
+          <row>
+            <entry
+>Alaska</entry
+><entry
+><mediaobject
+><imageobject
+><imagedata fileref="alaska.png" format="PNG"/></imageobject
+></mediaobject
+></entry
+><entry
+>Dies ist die Form von Alaska. Sie wird zum Hervorheben des Landes verwendet. Für jedes Land gibt es eine solche Form, bei der keine Farben verwendet werden (damit ist die Farbauswahl egal).</entry>
+          </row>
+          <row>
+            <entry
+>reddices</entry
+><entry
+><mediaobject
+><imageobject
+><imagedata fileref="reddices.png" format="PNG"/></imageobject
+></mediaobject
+></entry
+><entry
+>Der rote Würfel für die Anzeige des Würfelergebnisses.</entry>
+          </row>
+          <row>
+            <entry
+>bluedices</entry
+><entry
+><mediaobject
+><imageobject
+><imagedata fileref="bluedices.png" format="PNG"/></imageobject
+></mediaobject
+></entry
+><entry
+>Der blaue Würfel für die Anzeige des Würfelergebnisses.</entry>
+          </row>
+          <row>
+            <entry
+>mark1</entry
+><entry
+><mediaobject
+><imageobject
+><imagedata fileref="mark1.png" format="PNG"/></imageobject
+></mediaobject
+></entry
+><entry
+>Dieses Bild wird zur Anzeige der Anzahl der kämpfenden Einheiten verwendet (hier: 1). Es werden auch die Elemente „mark2“ und „mark3“ benötigt.  </entry>
+          </row>
+        </tbody>
+        </tgroup>
+        </table>
+        </para>
+      </sect3>
+      <sect3>
+        <title
+><filename
+>map-mask.png</filename
+></title>
+        <para
+>Es handelt sich hierbei um eine <filename
+>.png</filename
+>-Datei, die ebenfalls die Karte des Designs darstellt. Jedoch wird hierbei die Identifizierung des einzelnen Landes mit festgelegten Farben ermöglicht. Die Länder müssen mindestens die Größe der selbigen in der Datei <filename
+>map.png</filename
+> vorweisen, damit die Auswahl des Landes durch einen Klick irgendwo innerhalb des Landes erfolgen kann. Um die Auswahl von kleineren Ländern zu vereinfachen, kann es größer sein als in der Datei <filename
+>map.png</filename
+> (z. B. Indonesien im standardmäßigen Design). <mediaobject>
+            <imageobject
+><imagedata fileref="map-mask.png" format="PNG"/></imageobject>
+            <textobject
+><phrase
+>Beispiel einer <filename
+>map-mask.png</filename
+></phrase
+></textobject>
+          </mediaobject>
+        </para>
+        <para
+>Der Blauanteil (im RGB-Farbspektrum) gibt das jeweilige Land an (0x000000 = Land[0], 0x000001 = Land[1] &etc; in der Datei <filename
+>world.desktop</filename
+>). Mit Weiß (0xFFFFFF) werden die übrigen Flächen definiert.  </para>
+      </sect3>
+      <sect3>
+        <title
+>Die Knopfbilder</title>
+        <para
+>Die Dateinamen sind fest im Quellkode verankert und sollten daher nicht verändert werden. Die folgende Tabelle zeigt alle verwendeten Knöpfe.</para>
+        <table>
+        <title
+>Die Knöpfe der &GUI;</title>
+        <tgroup cols="3">
+        <thead
+><row
+><entry
+>Symbol</entry
+><entry
+>Dateiname</entry
+><entry
+>Bedeutung</entry
+></row
+></thead>
+        <tbody>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="newNetGame.png" format="PNG"/></imageobject
+></mediaobject
+></entry
+><entry
+><filename
+>newNetGame.png</filename
+></entry
+><entry
+>Teilnahme an einem Netzwerkspiel.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="recycling.png" format="PNG"/></imageobject
+></mediaobject
+></entry
+><entry
+><filename
+>recycling.png</filename
+></entry
+><entry
+>Nachdem alle Spieler ihre Einheiten verteilt haben, kann die Verteilung nochmals verändert werden (Umverteilung). Dieser Knopf ist für die entsprechende Abfrage.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="recyclingFinished.png" format="PNG"/></imageobject
+></mediaobject
+></entry
+><entry
+><filename
+>recyclingFinished.png</filename
+></entry
+><entry
+>Die Umverteilung wird nicht gewählt. Der Knopf muss von allen Spielern gedrückt worden sein, damit die Verteilung abgeschlossen ist.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="nextPlayer.png" format="PNG"/></imageobject
+></mediaobject
+></entry
+><entry
+>nextPlayer.png</entry
+><entry
+>Der Zug des aktuellen Spielers endet und der nächste Spieler ist am Zug oder die nächste Runde beginnt, wenn der aktuelle Spieler der letzte ist.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackOne.png" format="PNG"/></imageobject
+></mediaobject
+></entry
+><entry
+><filename
+>attackOne.png</filename
+></entry
+><entry
+>Das Land wird mit einer Einheit angegriffen.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackTwo.png" format="PNG"/></imageobject
+></mediaobject
+></entry
+><entry
+><filename
+>attackTwo.png</filename
+></entry
+><entry
+>Das Land wird mit zwei Einheiten angegriffen.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackThree.png" format="PNG"/></imageobject
+></mediaobject
+></entry
+><entry
+><filename
+>attackThree.png</filename
+></entry
+><entry
+>Das Land wird mit drei Einheiten angegriffen.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="defendOne.png" format="PNG"/></imageobject
+></mediaobject
+></entry
+><entry
+><filename
+>defendOne.png</filename
+></entry
+><entry
+>Das angegriffene Land wird mit einer Einheit verteidigt.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="defendTwo.png" format="PNG"/></imageobject
+></mediaobject
+></entry
+><entry
+><filename
+>defendTwo.png</filename
+></entry
+><entry
+>Das angegriffene Land wird mit zwei Einheiten verteidigt.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="moveArmies.png" format="PNG"/></imageobject
+></mediaobject
+></entry
+><entry
+><filename
+>moveArmies.png</filename
+></entry
+><entry
+>Einheiten werden in ein benachbartes Land verlegt (letzte Aktion eines Spielzugs).</entry>
+          </row>
+        </tbody>
+        </tgroup>
+        </table>
+      </sect3>
+    </sect2>
+    <sect2 id="tsd">
+      <title
+>Sounds/</title>
+      <para
+>Dieser Ordner enthält drei Audio-Dateien:</para>
+      <itemizedlist
+><listitem
+><para
+><filename
+>roll.wav</filename
+> wird bei Bewegung der Einheiten, </para
+></listitem>
+      <listitem
+><para
+><filename
+>cannon.wav</filename
+> wird beim Schusswechsel und </para
+></listitem
+><listitem>
+      <para
+><filename
+>crash.wav</filename
+> wird beim Schuss einer Kanone abgespielt</para
+></listitem
+></itemizedlist>
+    </sect2>
+  </sect1>
+  <sect1 id="using-kse">
+    <title
+><application
+>KsirK-Design-Editor</application
+> verwenden</title>
+    <para
+>Nachdem die Grafiken und die <filename
+>.svg</filename
+>-Datei im richtigen Ordner erstellt wurden, müssen die Länder, Spieler, usw. erstellt und mit dem richtigen Element in der <filename
+>.svg</filename
+>-Datei verknüpft werden. Dies kann mit <application
+>KsirK-Design-Editor</application
+> geschehen. Zu Beachten ist, dass alle Teile dieses Programms durch Kurzinfos und Kontexthilfe automatisch beschrieben werden (Tastenkürzel: <keycap
+>Strg + F1</keycap
+>).</para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Bildschirmfoto von <application
+>KsirK-Design-Editor</application
+></screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="main-snapshot.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Bildschirmfoto</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+  </sect1>
+</chapter>
+
+
+
+<chapter id="commands">
+<title
+>Befehle</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>Der Hauptbildschirm von <application
+>KsirK-Design-Editor</application
+></title>
+<sect2>
+<title
+>Die Knöpfe</title>
+<para>
+<variablelist>
+  <varlistentry>
+    <term>
+        <inlinemediaobject>
+          <imageobject>
+            <imagedata fileref="load.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Laden</phrase>
+          </textobject>
+        </inlinemediaobject>
+      <guibutton
+>Laden</guibutton>
+    </term>
+    <listitem
+><para
+><action
+>Das Programm lädt ein bestehendes Design.</action
+></para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term>
+        <inlinemediaobject>
+          <imageobject>
+            <imagedata fileref="save.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Speichern</phrase>
+          </textobject>
+        </inlinemediaobject>
+      <guibutton
+>Speichern</guibutton>
+    </term>
+    <listitem>
+      <para
+><action
+>Speichert das in Bearbeitung befindliche Design.</action
+></para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</para>
+
+</sect2>
+
+</sect1>
+</chapter>
+
+<chapter id="developers">
+  <title
+>Entwicklerhandbuch zu <application
+>KsirK-Design-Editor</application
+></title>
+  
+  <para
+>Die Dokumentation für die API (Programmierschnittstelle) ist auf <ulink url="http://api.kde.org/"
+>http://api.kde.org/</ulink
+> verfügbar. </para>
+</chapter>
+
+<chapter id="faq">
+<title
+>Fragen und Antworten</title
+>&updating.documentation; </chapter>
+
+<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+<title
+>Danksagungen und Lizenz</title>
+
+<para
+><application
+>KsirK-Design-Editor</application
+> </para>
+<para
+>Programm © 2009 Gael de Chalendar <email
+>kleag@free.fr</email
+> </para>
+
+<para
+>Dokumentation © 2009 Gael de Chalendar <email
+>kleag@free.fr</email
+> </para>
+
+<para
+>Übersetzung: Johannes Obermayr <email
+>johannesobermayr@gmx.de</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+

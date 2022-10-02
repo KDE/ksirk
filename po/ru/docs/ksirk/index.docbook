@@ -1,0 +1,991 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY i18n-ksirkskineditor '<application
+>KsirK Skin Editor</application
+>'>
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Russian "INCLUDE">
+]>
+
+<book id="ksirk" lang="&language;">
+
+<bookinfo>
+<title
+>Руководство пользователя &ksirk;</title>
+
+<authorgroup>
+  <author
+><firstname
+>Ga&euml;l</firstname
+> <othername
+>Kleag</othername
+> <surname
+>de Chalendar</surname
+> <affiliation
+><address
+><email
+>kleag@free.fr</email
+></address
+></affiliation>
+  </author>
+  <author
+><firstname
+>Nemanja</firstname
+> <othername
+></othername
+> <surname
+>Hirsl</surname
+> <affiliation
+><address
+><email
+>nemhirsl@gmail.com</email
+></address
+></affiliation>
+  </author>
+  <!-- Translators: put here the copyright notice of the translation -->
+  <othercredit role="translator"
+><firstname
+>Мария</firstname
+><surname
+>Шикунова</surname
+><affiliation
+><address
+><email
+>translation-team@basealt.ru</email
+></address
+></affiliation
+><contrib
+>Перевод на русский язык</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+  <year
+>2002-2012</year>
+  <holder
+>Ga&euml;l de Chalendar</holder>
+</copyright>
+<copyright>
+  <year
+>2013</year>
+  <holder
+>Nemanja Hirsl</holder>
+</copyright>
+<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
+     and in the FDL itself on how to use it. -->
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<!-- Date and version information of the documentation
+Don't forget to include this last date and this last revision number, we
+need them for translation coordination !
+Please respect the format of the date (DD/MM/YYYY) and of the version
+(V.MM.LL), it could be used by automation scripts.
+Do NOT change these in the translation. -->
+<date
+>14 октября 2021 г.</date>
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<!-- Abstract about this handbook -->
+<abstract>
+  <para
+>&ksirk; — это компьютерная версия известной стратегии.</para>
+</abstract>
+
+<!-- This is a set of Keywords for indexing by search engines.
+Please at least include KDE, the KDE package it is in, the name
+ of your application, and a few relevant keywords. -->
+<keywordset>
+  <keyword
+>KDE</keyword>
+  <keyword
+>ИИ</keyword>
+  <keyword
+>бесплатно</keyword>
+  <keyword
+>игра</keyword>
+  <keyword
+>GPL</keyword>
+  <keyword
+>KsirK</keyword>
+  <keyword
+>сеть</keyword>
+  <keyword
+>риск</keyword>
+  <keyword
+>стратегия</keyword>
+</keywordset>
+</bookinfo>
+
+<!-- The contents of the documentation begin here.  Label
+each chapter so with the id attribute. This is necessary for two reasons: it
+allows you to easily reference the chapter from other chapters of your
+document, and if there is no ID, the name of the generated HTML files will vary
+from time to time making it hard to manage for maintainers and for the CVS
+system. Any chapter labeled (OPTIONAL) may be left out at the author's
+discretion. Other chapters should not be left out in order to maintain a
+consistent documentation style across all KDE apps. -->
+
+<chapter id="introduction">
+<title
+>Введение</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+<para
+>&ksirk; — это компьютерная версия известной стратегии. Существуют также коммерческая и свободно распространяемые версии, но Gaël de Chalendar создал эту игру изначально в качестве упражнения для изучения C++, и её разработка дошла до текущей версии (более подробная информация содержится в файле <filename
+>README</filename
+>).</para>
+
+<screenshot>
+  <screeninfo
+>Это снимок экрана &ksirk;</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="firing-screenshot.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Снимок экрана</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>В текущей версии &ksirk; имеет возможности мультиплеера с ИИ (подробнее: <filename
+>TODO</filename
+> ).</para>
+
+<para
+>Документация предоставляет только общую информацию, позволяющую начать играть. Более подробная информация содержится во всплывающих подсказках и сообщениях на панели состояния.</para>
+
+<para
+>Цель игры проста: покорить мир, атакуя своих соседей с помощью армии.</para>
+</chapter>
+
+<chapter id="using-kapp">
+<title
+>Использование &ksirk;</title>
+
+<!-- This chapter should tell the user how to use your app. You should use as
+many sections (Chapter, Sect1, Sect3, &etc;) as is necessary to fully document
+your application. -->
+
+<sect1 id="playing-ksirk">
+<title
+>Игра в &ksirk;</title>
+
+<para
+>Предварительное примечание: карту возможно прокручивать тремя способами:</para>
+
+  <itemizedlist>
+    <listitem
+><para
+>Поместить курсор около границы окна, и карта прокрутится сама в этом направлении;</para
+></listitem>
+    <listitem
+><para
+>Использовать колесо мыши: без каких-либо модификаторов оно позволит прокрутить карту вертикально, а при зажатой клавише &Alt; — горизонтально;</para
+></listitem>
+    <listitem
+><para
+>Использовать клавиши со стрелками.</para
+></listitem>
+  </itemizedlist>
+
+  <sect2 id="mainmenu">
+  <title
+>Начало игры</title>
+
+  <para
+>При запуске &ksirk; отобразится главное меню.</para>
+
+  <screenshot>
+    <screeninfo
+>Главное меню &ksirk;</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="introscreen.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Главное меню</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <variablelist>
+    <varlistentry>
+      <term
+><guibutton
+>Новая локальная игра</guibutton
+></term>
+      <listitem
+><para
+><action
+>Начинает новую игру.</action
+></para
+></listitem>
+    </varlistentry>
+<!--
+    <varlistentry>
+      <term
+><guibutton
+>Play &ksirk; over Jabber Network</guibutton
+></term>
+      <listitem
+><para
+><action
+>Play &ksirk; over <ulink url="https://en.wikipedia.org/wiki/XMPP"
+>Jabber</ulink
+>. You need to register Jabber account first.</action
+></para
+></listitem>
+    </varlistentry>
+-->
+    <varlistentry>
+      <term
+><guibutton
+>Новая стандартная игра через сеть TCP/IP</guibutton
+></term>
+      <listitem
+><para
+><action
+>Начинает новую игру с помощью протокола <ulink url="https://ru.wikipedia.org/wiki/TCP/IP"
+>TCP/IP</ulink
+>.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term
+><guibutton
+>Присоединиться к стандартной игре через сеть TCP/IP</guibutton
+></term>
+      <listitem
+><para
+><action
+>Позволяет присоединиться к уже созданной игре с помощью протокола <ulink url="https://ru.wikipedia.org/wiki/TCP/IP"
+>TCP/IP</ulink
+>.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term
+><guibutton
+>Загрузить...</guibutton
+></term>
+      <listitem
+><para
+><action
+>Позволяет загрузить ранее сохранённую игру</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term
+><guibutton
+>Выйти</guibutton
+></term>
+      <listitem
+><para
+><action
+>Позволяет выйти из игры</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+
+  <para
+>При нажатии кнопки <guibutton
+>Новая локальная игра</guibutton
+> отобразится диалог <guilabel
+>Свойства новой игры</guilabel
+>, позволяющий выбрать количество игроков, используемое игровое поле, тип игры (с целью захватить другие страны или с другой целью) и режим игры — онлайн или по локальной сети. Кнопка <guibutton
+>Загрузить новые игровые поля...</guibutton
+> позволит загрузить новые игровые поля.</para>
+
+  <screenshot>
+    <screeninfo
+>Диалог новой игры</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="newgamedialog.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Диалог новой игры</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Чтобы начать игру через сеть TCP/IP, воспользуйтесь пунктом меню  <guilabel
+>Новая стандартная игра через сеть TCP/IP</guilabel
+> на изначальном экране. После нажатия на эту кнопку появится возможность выбирать параметры сети: количество локальных игроков и TCP-порт, на котором будет производиться ожидание соединения.</para>
+
+  <screenshot>
+    <screeninfo
+>Диалог параметров сетевой игры</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="numnetplayersdialog.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Диалог параметров сетевой игры</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Игроки по сети смогут подключиться с помощью кнопки <guilabel
+>Присоединиться к стандартной игре через сеть TCP/IP</guilabel
+> на экране приветствия и указав IP-адрес или имя хоста и номер порта, который пользователь только что установил.</para>
+
+  <screenshot>
+    <screeninfo
+>Диалог подключения к сетевой игре</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="joinnetgame.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Диалог подключения к сетевой игре</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Каждое подключение обозначается новой строкой в таблице <guilabel
+>Игроки</guilabel
+> под миниатюрой карты.</para>
+
+  <screenshot>
+    <screeninfo
+>Строка нового игрока</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="justjoined.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Строка нового игрока</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Предположим, что были оставлены параметры по умолчанию и нажата кнопка <guibutton
+>Далее</guibutton
+>. Затем будет произведена настройка для двух игроков, одного за другим. Каждому следует выбрать имя, нацию и, при желании, пароль, чтобы никто кроме этого пользователя не смог использовать этого игрока при перезагрузке этой сохранённой игры. Здесь также возможно указать, является ли этот игрок ИИ или человеком.</para>
+
+  <screenshot>
+    <screeninfo
+>Диалог параметров игрока</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="playersetupdialog.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Диалог параметров игрока</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>После нажатия кнопки <guibutton
+>Запустить</guibutton
+> в режиме игры с целью будет отображаться цель каждого локального игрока. Перед отображением цели будет появляться предупреждение, чтобы другие игроки, смотрящие в тот же самый монитор, могли отвернуться, чтобы не узнать о цели противника.</para>
+
+  <screenshot>
+    <screeninfo
+>Предупреждение об отображении цели</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="displaygoalwarningmessage.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Предупреждение об отображении цели</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <screenshot>
+    <screeninfo
+>Диалог с отображением цели</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="displaygoalmessage.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Диалог с отображением цели</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+  </sect2>
+
+  <sect2 id="distribution">
+  <title
+>Распределение</title>
+
+  <para
+>В начале игры страны распределены между всеми игроками. Сначала каждая страна имеет одну армию (представлена пехотинцами). У каждого игрока есть несколько армий, которые он может распределить между своими странами в свой ход (обозначается наличием их имени и их флага в строке состояния). Обратите внимание, что пять армий представлены кавалеристом, а 10 — пушкой.</para>
+
+  <para
+>Чтобы поместить армию на одну из своих стран, щёлкните по стране левой кнопкой мыши. Чтобы удалить армию, щёлкните по ней правой кнопкой мыши. Обратите внимание: нельзя удалить больше армий, чем было размещено.</para>
+
+  <screenshot>
+    <screeninfo
+>Размещение армий</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="placingarmies.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Размещение армий</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>После того, как один игрок распределит все армии, автоматически будет выбран следующий игрок для выполнения тех же действий. Когда все игроки закончат распределять свои армии, будут предоставлены два варианта, один из которых можно будет выбрать с помощью кнопок, отображающихся на правой панели:</para>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="recycling.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Перераспределение</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Переставить</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Один игрок хочет изменить свой выбор. Первый игрок может удалить армию, которую он только что разместил в стране, щелчком левой кнопкой мыши, а затем поместить её в другую страну щелчком правой кнопкой мыши. После завершения перемещений управление передаётся следующему игроку с помощью кнопки <guibutton
+>Подтвердить</guibutton
+>. После того, как игроки закончат все перераспределения, две кнопки снова будут отображаться.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="recyclingFinished.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Конец перераспределения</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Готово</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Перераспределение закончено, и возможно продолжить игру.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+  </sect2>
+
+  <sect2 id="fight">
+  <title
+>Бой</title>
+
+  <para
+>После перераспределения начинается ход. Каждый игрок осуществляет действия в свой ход. Он может:</para>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="joueurSuivant.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Следующий игрок</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Следующий игрок</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Закончить ход. Начнётся ход следующего игрока.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="attackOne.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Атака 1</phrase
+></textobject>
+        </inlinemediaobject
+>&nbsp; <inlinemediaobject
+> <imageobject
+><imagedata fileref="attackTwo.png" format="PNG"/></imageobject
+> <textobject
+><phrase
+>Атака 2</phrase
+></textobject
+> </inlinemediaobject
+>&nbsp; <inlinemediaobject
+> <imageobject
+><imagedata fileref="attackThree.png" format="PNG"/></imageobject
+> <textobject
+><phrase
+>Атака 3</phrase
+></textobject
+> </inlinemediaobject
+> <guibutton
+>Атака одной, двумя или тремя армиями</guibutton
+>&nbsp; <inlinemediaobject
+> <imageobject
+><imagedata fileref="autoattack.png" format="PNG"/></imageobject
+> <textobject
+><phrase
+>Автоматическая атака</phrase
+></textobject
+> </inlinemediaobject
+> <guibutton
+>Автоматическая атака</guibutton
+> </term>
+
+      <listitem
+><para
+>Атаковать. Чтобы атаковать, необходимо зажать левую кнопку мыши над атакующей страной и переместить указатель на атакуемую страну, а затем отпустите кнопку. Появится контекстное меню с перечисленными выше записями.</para>
+
+        <screenshot>
+          <screeninfo
+>Меню атаки</screeninfo>
+          <mediaobject>
+            <imageobject
+><imagedata fileref="attackmenu.png" format="PNG"/></imageobject>
+            <textobject
+><phrase
+>Меню атаки</phrase
+></textobject>
+          </mediaobject>
+        </screenshot>
+
+        <para
+>Чтобы страна X напала на страну Y с помощью x армий, должны быть выполнены 2 условия:</para>
+
+        <itemizedlist>
+          <listitem
+><para
+>две страны должны быть соседями;</para
+></listitem>
+          <listitem
+><para
+>страна X должна иметь не менее x+1 армий перед атакой.</para
+></listitem>
+        </itemizedlist>
+
+        <para
+>Если атаку возможно осуществить, при необходимости отображается диалоговое окно, в котором защищающийся игрок может выбрать, хочет ли он защищаться одной или двумя армиями или пусть решает компьютер.</para>
+
+        <para
+>После того, как защищающийся игрок сделает свой выбор, произойдёт сражение и будут просчитаны его итоги.</para>
+
+        <screenshot>
+          <screeninfo
+>Диалог защиты</screeninfo>
+          <mediaobject>
+            <imageobject
+><imagedata fileref="defensedialog.png" format="PNG"/></imageobject>
+            <textobject
+><phrase
+>Диалог защиты</phrase
+></textobject>
+          </mediaobject>
+        </screenshot>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="moveArmies.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Перемещение армий</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Переставить армии из одной страны в другую</guibutton>
+      </term>
+
+      <listitem
+><para
+><action
+>Это последнее действие на ходу игрока. Оно предоставляет возможность переместить некоторые армии из одной его страны в соседнюю страну. Чтобы сделать это, воспользуйтесь той же механикой перетаскивания, что и при атаке. Когда будут выбраны обе страны, отобразится ползунок, на котором можно будет выбрать, сколько армий будет находиться в каждой стране.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+  </sect2>
+
+  <sect2  id="fight-outcome">
+  <title
+>Результат боя</title>
+
+  <para
+>Для каждой армии в бою есть соответствующий бросок кубиков. Игрок, выбросивший большее число, будь то ход атаки или защиты, выигрывает. Игрок, выбросивший меньшее число, проигрывает количество армий, соответствующее количеству брошенных кубиков.</para>
+
+  <screenshot>
+    <screeninfo
+>Отображение результатов атаки</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="shownumberofarmies.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Отображение результатов атаки</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Если количество армий защищающегося государства достигнет 0, владение этой страной перейдёт к атакующему: будет установлен флаг победившего, и одна из армий будет перемещена в новую страну. Ползунок перемещения армий отображается для передвижений в конце хода.</para>
+
+  <screenshot>
+    <screeninfo
+>Ползунок вторжения</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="invasionslider.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Ползунок вторжения</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+  </sect2>
+
+  <sect2  id="end_of_turn">
+  <title
+>Конец хода</title>
+
+  <para
+>Чтобы закончить текущий ход без перемещения армий, нажмите кнопку <guibutton
+>Следующий игрок</guibutton
+> на панели инструментов.</para>
+
+  <para
+>После того, как все сделают свой выбор, ход закончится. Некоторые армии распределяются между игроками в зависимости от стран, которыми они владеют: по 1 на каждую группу из трёх стран, минимум 3. Также есть разные бонусы для игроков, владеющих целыми континентами. Значения бонусов для стандартного игрового поля:</para>
+
+  <table>
+    <title
+>Бонус за счёт континентов</title>
+    <tgroup cols="2">
+      <thead>
+        <row>
+          <entry
+>Континент</entry>
+          <entry
+>Приз</entry>
+        </row>
+      </thead>
+      <tbody>
+        <row
+><entry
+>Северная Америка</entry
+><entry
+>5</entry
+></row>
+        <row
+><entry
+>Южная Америка</entry
+><entry
+>2</entry
+></row>
+        <row
+><entry
+>Европа</entry
+><entry
+>5</entry
+></row>
+        <row
+><entry
+>Африка</entry
+><entry
+>3</entry
+></row>
+        <row
+><entry
+>Азия</entry
+><entry
+>7</entry
+></row>
+        <row
+><entry
+>Область Тихого океана</entry
+><entry
+>2</entry
+></row>
+      </tbody>
+    </tgroup>
+  </table>
+
+  <para
+>После того, как игрок завершит распределение своих армий, он должен нажать кнопку <guibutton
+>Подтвердить</guibutton
+>, чтобы позволить другому игроку распределить свои дополнительные армии. После того, как все игроки первоначально распределят свои армии, они могут либо начать новый цикл перераспределения, либо начать новый ход.</para>
+  </sect2>
+
+<!-- Does not work for current TCP/IP games
+<sect2 id="sending-messages">
+<title
+>Sending messages to other players</title>
+<para>
+If you play a local game and want to communicate with the other players, well, let's speak (supposing you have no accessibility problems)... But if you are playing a network game, you can use the chat frame at the bottom of the window (it can be hidden or showed using the arrows). Just type in your message and hit &Enter;.
+          <screenshot>
+            <screeninfo
+>Sending messages</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="messagesent.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Sending messages</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+
+</para>
+</sect2>
+-->
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Список команд</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>Главное окно &ksirk;</title>
+
+  <sect2>
+  <title
+>Кнопки</title>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="application-exit.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Выйти из игры</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Выйти</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Закрывает программу.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="document-new.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Новая игра</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Новая игра</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Начинает новую игру. Появится диалог с запросом количества игроков. После этого у каждого игрока будет запрошено его имя с помощью другого диалога.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+</sect2>
+
+</sect1>
+</chapter>
+
+<chapter id="developers">
+<title
+>Руководство разработчика &ksirk;</title>
+
+<para
+>Для получения документации об API обратитесь к <ulink url="https://api.kde.org/"
+>https://api.kde.org/</ulink
+>. Она была полной, но в настоящее время немного устарела. В файлах реализации <literal role="extension"
+>.cpp</literal
+> нет комментариев.</para>
+
+<para
+>Обратите внимание, что изначально эта игра была разработана для &Windows; с помощью <application
+>Borland C++</application
+> и <application
+>WinG</application
+>. Игра затем была перенесена на &Java; перед преобразованием на C++ и &kde;. Сначала был использован французский язык и смесь французского и английского для названий идентификаторов (имён классов, методов и так далее). Также французский язык использовался в комментариях. После того, как было принято решение распространять эту игру, разработчик решил перевести всё на английский язык, несмотря на то, что он не является носителем языка. Если у вас есть какие-то предложения по исправлению англоязычных комментариев в коде или в этой документации, свяжитесь с автором.</para>
+
+</chapter>
+
+<chapter id="skins">
+<title
+>Создание новых игровых полей</title>
+
+<para
+>&ksirk; поставляется вместе с редактором игровых полей <command
+>ksirkskineditor</command
+>, позволяющим редактировать все данные игрового поля, пока графика (карта, спрайты и так далее) доступны в файле &SVG;. Более подробная информация содержится в руководстве &i18n-ksirkskineditor;.</para>
+
+</chapter>
+
+<chapter id="faq">
+<title
+>Вопросы и ответы</title
+>&reporting.bugs; &updating.documentation; </chapter>
+
+<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+<title
+>Авторские права и лицензия</title>
+
+<para
+>&ksirk;</para>
+
+<para
+>Авторские права на программу: Ga&euml;l de Chalendar <email
+>kleag@free.fr</email
+>, 2002-2012  гг.</para>
+
+<para
+>Авторские права на программу: Nemanja Hirsl <email
+>nemhirsl@gmail.com</email
+>,  2013 г.</para>
+
+<para
+>Участники: Robin Doer, &Albert.Astals.Cid;, Michal Golunski (перевод на польский). </para>
+
+<para
+>Авторские права на документацию: Ga&euml;l de Chalendar <email
+>kleag@free.fr</email
+>, 2002-2008 гг.</para>
+
+<para
+>Перевод на русский язык: Мария Шикунова<email
+>translation-team@basealt.ru</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Установка</title>
+
+<sect1 id="configuration">
+<title
+>Настройка</title>
+
+<para
+>Пункт меню <menuchoice
+><guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Настроить &ksirk;...</guimenuitem
+></menuchoice
+> открывает диалог, позволяющий:</para>
+
+<screenshot>
+  <screeninfo
+>Настройка параметров</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="preferences.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Настройка параметров</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+
+<itemizedlist>
+  <listitem
+><para
+>включать или выключать звуки&nbsp;;</para
+></listitem>
+  <listitem
+><para
+>установить скорость спрайтов (от медленной до средней)&nbsp;;</para
+></listitem>
+  <listitem
+><para
+>включить или отключить контекстную справку, отображаемую во всплывающих окнах&nbsp;;</para
+></listitem>
+  <listitem
+><para
+>показать или скрыть количество армий в каждой стране. На следующем снимке показана карта, когда отображается количество армий.</para>
+
+    <screenshot>
+      <screeninfo
+>Отображение количества армий</screeninfo>
+      <mediaobject>
+        <imageobject
+><imagedata fileref="shownumberofarmies.png" format="PNG"/></imageobject>
+        <textobject
+><phrase
+>Отображение количества армий</phrase
+></textobject>
+        </mediaobject>
+    </screenshot>
+  </listitem>
+</itemizedlist>
+</sect1>
+
+</appendix>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

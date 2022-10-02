@@ -1,0 +1,973 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY i18n-ksirkskineditor '<application
+>KsirK skinbewerker</application
+>'>
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Dutch "INCLUDE">
+]>
+
+<book id="ksirk" lang="&language;">
+
+<bookinfo>
+<title
+>Het handboek van &ksirk;</title>
+
+<authorgroup>
+  <author
+><firstname
+>Gaël</firstname
+> <othername
+>Kleag</othername
+> <surname
+>de Chalendar</surname
+> <affiliation
+><address
+><email
+>kleag@free.fr</email
+></address
+></affiliation>
+  </author>
+  <author
+><firstname
+>Nemanja</firstname
+> <othername
+></othername
+> <surname
+>Hirsl</surname
+> <affiliation
+><address
+><email
+>nemhirsl@gmail.com</email
+></address
+></affiliation>
+  </author>
+  <!-- Translators: put here the copyright notice of the translation -->
+  &Freek.de.Kruijf;&Ronald.Stroethoff; 
+</authorgroup>
+
+<copyright>
+  <year
+>2002-2012</year>
+  <holder
+>Gaël de Chalendar</holder>
+</copyright>
+<copyright>
+  <year
+>2013</year>
+  <holder
+>Nemanja Hirsl</holder>
+</copyright>
+<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
+     and in the FDL itself on how to use it. -->
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<!-- Date and version information of the documentation
+Don't forget to include this last date and this last revision number, we
+need them for translation coordination !
+Please respect the format of the date (DD/MM/YYYY) and of the version
+(V.MM.LL), it could be used by automation scripts.
+Do NOT change these in the translation. -->
+<date
+>2021-10-14</date>
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<!-- Abstract about this handbook -->
+<abstract>
+  <para
+>&ksirk; is een gecomputeriseerde versie van een bekend strategie spel.</para>
+</abstract>
+
+<!-- This is a set of Keywords for indexing by search engines.
+Please at least include KDE, the KDE package it is in, the name
+ of your application, and a few relevant keywords. -->
+<keywordset>
+  <keyword
+>KDE</keyword>
+  <keyword
+>AI</keyword>
+  <keyword
+>vrij</keyword>
+  <keyword
+>spel</keyword>
+  <keyword
+>GPL</keyword>
+  <keyword
+>KsirK</keyword>
+  <keyword
+>netwerk</keyword>
+  <keyword
+>risk</keyword>
+  <keyword
+>strategie</keyword>
+</keywordset>
+</bookinfo>
+
+<!-- The contents of the documentation begin here.  Label
+each chapter so with the id attribute. This is necessary for two reasons: it
+allows you to easily reference the chapter from other chapters of your
+document, and if there is no ID, the name of the generated HTML files will vary
+from time to time making it hard to manage for maintainers and for the CVS
+system. Any chapter labeled (OPTIONAL) may be left out at the author's
+discretion. Other chapters should not be left out in order to maintain a
+consistent documentation style across all KDE apps. -->
+
+<chapter id="introduction">
+<title
+>Inleiding</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+<para
+>&ksirk; is een gecomputeriseerde versie van een bekend strategiespel. Er bestaan commerciële en andere Free Software versies maar ik (Gaël de Chalendar) creëerde aanvankelijk dit spel als een C++ oefening en daarom heb ik het tot hier ontwikkeld (zie de <filename
+>README</filename
+> voor meer details).</para>
+
+<screenshot>
+  <screeninfo
+>Hier is een schermafdruk van &ksirk;</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="firing-screenshot.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Schermafdruk</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>In de huidige versie kunt u met &ksirk; over een netwerk spelen en heeft het kunstmatige intelligentie. (zie de <filename
+>TODO</filename
+> voor meer details)</para>
+
+<para
+>Deze handleiding geeft alleen de belangrijkste informatie die u nodig heeft om te kunnen starten met het spel. Lees de hulpballonnen en de berichten in de statusbalk voor extra informatie.</para>
+
+<para
+>Het doel van het spel is eenvoudig de wereld veroveren... Dit wordt gedaan door uw buren aan te vallen met uw legers. Vredig, vindt u niet ? :-)</para>
+</chapter>
+
+<chapter id="using-kapp">
+<title
+>&ksirk; gebruiken</title>
+
+<!-- This chapter should tell the user how to use your app. You should use as
+many sections (Chapter, Sect1, Sect3, &etc;) as is necessary to fully document
+your application. -->
+
+<sect1 id="playing-ksirk">
+<title
+>&ksirk; spelen</title>
+
+<para
+>Opmerking vooraf: u kunt de kaart op drie manieren verschuiven:</para>
+
+  <itemizedlist>
+    <listitem
+><para
+>U kunt uw muis vlakbij de rand van het venster plaatsen en het uitzicht zal zich vervolgens over de kaart in die richting verplaatsen</para
+></listitem>
+    <listitem
+><para
+>U kunt uw muiswiel gebruiken: zonder sneltoetsen, zal verticaal verschuiven; met de &Alt;-toets ingedrukt, zal het horizontaal verschuiven</para
+></listitem>
+    <listitem
+><para
+>U kunt de pijltjestoetsen van het toetsenbord gebruiken</para
+></listitem>
+  </itemizedlist>
+
+  <sect2 id="mainmenu">
+  <title
+>Een spel starten</title>
+
+  <para
+>Wanneer &ksirk; start krijgt u een hoofdmenu.</para>
+
+  <screenshot>
+    <screeninfo
+>Het hoofdmenu van &ksirk;</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="introscreen.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Hoofdmenu</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <variablelist>
+    <varlistentry>
+      <term
+><guibutton
+>Nieuw lokaal spel</guibutton
+></term>
+      <listitem
+><para
+><action
+>Start een nieuw spel.</action
+></para
+></listitem>
+    </varlistentry>
+<!--
+    <varlistentry>
+      <term
+><guibutton
+>Play &ksirk; over Jabber Network</guibutton
+></term>
+      <listitem
+><para
+><action
+>Play &ksirk; over <ulink url="https://en.wikipedia.org/wiki/XMPP"
+>Jabber</ulink
+>. You need to register Jabber account first.</action
+></para
+></listitem>
+    </varlistentry>
+-->
+    <varlistentry>
+      <term
+><guibutton
+>Nieuw standaard TCP/IP netwerkspel</guibutton
+></term>
+      <listitem
+><para
+><action
+>Begin een nieuw spel met de <ulink url="https://en.wikipedia.org/wiki/Internet_protocol_suite"
+>Internet protocol suite</ulink
+>.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term
+><guibutton
+>Deelnemen aan een standaard TCP/IP netwerkspel</guibutton
+></term>
+      <listitem
+><para
+><action
+>Deelnemen aan een spel die door een andere speler is opgestart door gebruik van het <ulink url="https://en.wikipedia.org/wiki/Internet_protocol_suite"
+>Internet protocol suite</ulink
+>.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term
+><guibutton
+>Laden...</guibutton
+></term>
+      <listitem
+><para
+><action
+>Gebruik dit om een eerder opgeslagen spel te laden.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term
+><guibutton
+>Afsluiten</guibutton
+></term>
+      <listitem
+><para
+><action
+>Misschien wilt u eindelijk stoppen met spelen?</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+
+  <para
+>Als u op <guibutton
+>Nieuw lokaal spel</guibutton
+> drukt dan krijgt u het dialoog <guilabel
+>Nieuw spel eigenschappen</guilabel
+> te zien waar u het aantal spelers, het te gebruiken skin (of thema), het speltype (het doel veroveren of een speciaal doel bereiken ) kunt instellen en tenslotte of u het spel met online spelers of puur lokaal wilt spelen. Via de knop <guibutton
+>Nieuwe skins downloaden...</guibutton
+> kunt u nieuwe skins downloaden.</para>
+
+  <screenshot>
+    <screeninfo
+>Nieuw speldialoog</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="newgamedialog.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Nieuw speldialoog</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Voor het starten van een TCP/IP netwerkspel, kiest u de optie <guilabel
+>Nieuw Standaard TCP/IP Netwerkspel</guilabel
+> in het introductie scherm. Na drukken op deze knop, kunt u de netwerk parameters instellen: aantal lokale spelers en de TCP poort waarop u wacht op verbindingen.</para>
+
+  <screenshot>
+    <screeninfo
+>Dialoog met instellingen voor spel over netwerk</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="numnetplayersdialog.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Dialoog met instellingen voor spel over netwerk</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Vervolgens kunnen netwerspelers een verbinding maken door <guilabel
+>Deelnemen aan een standaard TCP/IP Netwerkspel</guilabel
+> op het introductie scherm te kiezen waarna ze de IP of hostnaam en het poortnummer dat u net heeft ingesteld moeten opgeven.</para>
+
+  <screenshot>
+    <screeninfo
+>Dialoog voor het deelnemen aan een netwerkspel</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="joinnetgame.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Dialoog voor het deelnemen aan een netwerkspel</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Voor elke verbinding krijgt u een nieuwe rij te zien in de tabel met <guilabel
+>Spelers</guilabel
+> onder de kaart-voorbeeld.</para>
+
+  <screenshot>
+    <screeninfo
+>Rij met nieuwe speler</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="justjoined.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Rij met nieuwe speler</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Laten we aannemen dat u de standaard-instellingen gebruikt en op de knop <guibutton
+>Volgende</guibutton
+> heeft gedrukt. U zal dan twee spelers instellen, de een na de ander. Voor elke kiest u een naam, een nationaliteit en, als u dat wilt, een paswoord zodat bij het opnieuw laden van een opgeslagen spel niemand anders deze speler kan gebruiken. Tenslotte moet u opgeven of het een computer dan wel een menselijke speler is.</para>
+
+  <screenshot>
+    <screeninfo
+>Dialoog voor spelers-instellingen</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="playersetupdialog.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Dialoog voor spelers-instellingen</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Vervolgens zal na het drukken op <guibutton
+>Start</guibutton
+>, als u heeft gekozen om met een doel te spelen, het doel van elke speler worden getoond, voorafgegaan door een waarschuwing zodat andere spelers die op dezelfde computer meekijken tijdens het tonen van het doel discreet de andere kant uit kunnen kijken.</para>
+
+  <screenshot>
+    <screeninfo
+>Het doel waarschuwing</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="displaygoalwarningmessage.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Het doel waarschuwing</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <screenshot>
+    <screeninfo
+>Het dialoog met het doel</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="displaygoalmessage.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Het dialoog met het doel</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+  </sect2>
+
+  <sect2 id="distribution">
+  <title
+>Distributie</title>
+
+  <para
+>Bij het begin van het spel worden de landen verdeelt over alle spelers. Bij de start heeft elk land een leger (voorgesteld door een infanterist). Elke speler heeft daarnaast nog enkele legers die hij (als hij aan de beurt is) kan verdelen over zijn landen (aangegeven door hun naam en bijbehorende vlag in de statusbalk). Merk op dat een cavalerist vijf legers voorstelt en een kanon 10 legers.</para>
+
+  <para
+>Om een leger in een van uw landen te plaatsen, klikt u erop met de &LMB;. Om een leger te verwijderen, klikt u erop met de &RMB;, Als algemene regel geldt dat u nooit meer legers kunt verwijderen dan dat u heeft geplaatst.</para>
+
+  <screenshot>
+    <screeninfo
+>Legers plaatsen</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="placingarmies.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Legers plaatsen</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Als een speler al zijn legers heeft verdeelt, dan is de volgende speler automatisch geselecteerd om dezelfde taak uit te voeren. Als alle spelers klaar zijn met het verdelen van hun legers, zijn er twee mogelijkheden die u kunt selecteren via twee knoppen op het rechter paneel:</para>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="recycling.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Opnieuw distribueren</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Recycleren</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Een speler wilt enkele van zijn keuzes wijzigen. De eerste speler kan dan een leger dat hij juist in een land heeft geplaatst weer met de &RMB; verwijderen en het in een ander land met de &LMB; weer plaatsen. Als hij klaar is, dan geeft hij de controle aan de volgende speler met de knop <guibutton
+>Geldig</guibutton
+>. Als alle spelers klaar zijn met hun herverdeling, dan komen de twee knoppen weer zichtbaar.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="recyclingFinished.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Einde opnieuw distribueren</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Gereed</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Het opnieuw verdelen is gereed en het spel kan verdergaan.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+  </sect2>
+
+  <sect2 id="fight">
+  <title
+>Vechten</title>
+
+  <para
+>Na het herverdelen, start het spel. Elke speler mag spelen als hij aan de beurt is. Hij heeft de keuze uit:</para>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="joueurSuivant.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Volgende speler</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Volgende speler</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>De beurt van de huidige speler eindigt en de volgende komt aan de beurt.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="attackOne.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Aanval 1</phrase
+></textobject>
+        </inlinemediaobject
+>&nbsp; <inlinemediaobject
+> <imageobject
+><imagedata fileref="attackTwo.png" format="PNG"/></imageobject
+> <textobject
+><phrase
+>Aanval 2</phrase
+></textobject
+> </inlinemediaobject
+>&nbsp; <inlinemediaobject
+> <imageobject
+><imagedata fileref="attackThree.png" format="PNG"/> </imageobject
+> <textobject
+><phrase
+>Aanval 3</phrase
+></textobject
+> </inlinemediaobject
+> <guibutton
+>Aanval met een, twee of drie legers</guibutton
+>&nbsp; <inlinemediaobject
+> <imageobject
+><imagedata fileref="autoattack.png" format="PNG"/></imageobject
+> <textobject
+><phrase
+>Auto-aanval</phrase
+></textobject
+> </inlinemediaobject
+> <guibutton
+>Auto-aanval</guibutton
+> </term>
+
+      <listitem
+><para
+>Om aan te vallen, sleept u met de muis van het aanvallende land en laat het los op het aangevallen land. U krijgt dan een contextmenu met de bovengenoemde items.</para>
+
+        <screenshot>
+          <screeninfo
+>Aanval-menu</screeninfo>
+          <mediaobject>
+            <imageobject
+><imagedata fileref="attackmenu.png" format="PNG"/></imageobject>
+            <textobject
+><phrase
+>Aanval-menu</phrase
+></textobject>
+          </mediaobject>
+        </screenshot>
+
+        <para
+>Om een land X het land Y te laten aanvallen met x legers, moeten aan 2 condities voldaan zijn:</para>
+
+        <itemizedlist>
+          <listitem
+><para
+>de twee landen moeten buren zijn;</para
+></listitem>
+          <listitem
+><para
+>land X moet voor de aanval tenminste x+1 legers hebben.</para
+></listitem>
+        </itemizedlist>
+
+        <para
+>Als de aanval geldig is, dan krijgt de verdediger indien nodig een dialoog te zien waarin hij kan kiezen of hij met een of twee legers wilt verdedigen dan wel dat hij de computer laat beslissen.</para>
+
+        <para
+>Als de keuze voor de verdediging is gemaakt, dan zal gevecht losbarsten en weer tot een einde komen. Zoals hieronder beschreven.</para>
+
+        <screenshot>
+          <screeninfo
+>Verdedigingsdialoog</screeninfo>
+          <mediaobject>
+            <imageobject
+><imagedata fileref="defensedialog.png" format="PNG"/></imageobject>
+            <textobject
+><phrase
+>Verdedigingsdialoog</phrase
+></textobject>
+          </mediaobject>
+        </screenshot>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="moveArmies.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Legers verplaatsen</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Verplaatst legers van een land naar een andere land</guibutton>
+      </term>
+
+      <listitem
+><para
+><action
+>Dit is het laatste wat een speler in een beurt kan doen. Het geeft de mogelijkheid om enkele legers van het ene land naar een andere land te verplaatsen, dat naast het eerste land moet liggen. Voor het kiezen van de twee landen, gebruikt u het verslepen en loslaten op dezelfde manier als u dat met een aanval doet. Nadat u beide landen heeft geselecteerd, krijgt u een schuifknop te zien waarmee u een keuze kan maken hoeveel legers daarna in elk land zijn.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+  </sect2>
+
+  <sect2  id="fight-outcome">
+  <title
+>Uitkomst van het gevecht</title>
+
+  <para
+>Voor elk vechtend leger is een bijbehorende sterfte kans. De speler die een hoger getal op de dobbelsteen trekt, onafhankelijk of het de aanvaller of de verdediger is, wint en diegene die een kleiner getal trekt verliest legers overeenkomstig het getrokken getal op de dobbelsteen.</para>
+
+  <screenshot>
+    <screeninfo
+>Getoonde resultaat van aanval</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="shownumberofarmies.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Getoonde resultaat van aanval</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Als het aantal legers van het verdedigend land 0 wordt, dan gaat het land over naar de aanvaller: zijn vlag wordt daar gehesen en een van de aanvallende legers zal in zijn nieuwe land worden geïnstalleerd. De schuifknop voor "Leger verplaatsen" is weer te zien voor de verplaatsingen aan het eind van de beurt.</para>
+
+  <screenshot>
+    <screeninfo
+>Invasie schuifknop</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="invasionslider.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Invasie schuifknop</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+  </sect2>
+
+  <sect2  id="end_of_turn">
+  <title
+>Einde van de beurt</title>
+
+  <para
+>Om een eind te maken aan uw beurt, als u geen legers meer wilt verplaatsen, dan kan u op de knop <guibutton
+>Volgende Speler</guibutton
+> in de werkbalk drukken.</para>
+
+  <para
+>Als iedereen aan de beurt is geweest en de speelronde is voltooid, worden enkele legers verdeelt over de spelers, afhankelijk van de landen die ze bezitten: 1 voor elke groep van drie landen, met een minimum van 3. Spelers die een compleet continent bezitten krijgen een bonus, die voor elk continent verschillend is. De bonuspunten voor de standaard skin zijn:</para>
+
+  <table>
+    <title
+>Bonuspunten voor continenten</title>
+    <tgroup cols="2">
+      <thead>
+        <row>
+          <entry
+>Continent</entry>
+          <entry
+>Bonus</entry>
+        </row>
+      </thead>
+      <tbody>
+        <row
+><entry
+>Noord Amerika</entry
+><entry
+>5</entry
+></row>
+        <row
+><entry
+>Zuid-Amerika</entry
+><entry
+>2</entry
+></row>
+        <row
+><entry
+>Europa</entry
+><entry
+>5</entry
+></row>
+        <row
+><entry
+>Afrika</entry
+><entry
+>3</entry
+></row>
+        <row
+><entry
+>Azië</entry
+><entry
+>7</entry
+></row>
+        <row
+><entry
+>Pacific Gebied</entry
+><entry
+>2</entry
+></row>
+      </tbody>
+    </tgroup>
+  </table>
+
+  <para
+>Als een speler klaar is met het verdelen van zijn legers, dan klikt hij op de knop <guibutton
+>Geldig</guibutton
+> zodat de volgende speler zijn bonus-legers kan verdelen. Na de eerste distributie, als alle spelers hun legers hebben geplaatst, kunnen ze een nieuwe herverdeling-ronde of een nieuwe speelronde starten...</para>
+  </sect2>
+
+<!-- Does not work for current TCP/IP games
+<sect2 id="sending-messages">
+<title
+>Sending messages to other players</title>
+<para>
+If you play a local game and want to communicate with the other players, well, let's speak (supposing you have no accessibility problems)... But if you are playing a network game, you can use the chat frame at the bottom of the window (it can be hidden or showed using the arrows). Just type in your message and hit &Enter;.
+          <screenshot>
+            <screeninfo
+>Sending messages</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="messagesent.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Sending messages</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+
+</para>
+</sect2>
+-->
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Overzicht van de opdrachten</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>Het hoofdvenster van &ksirk;</title>
+
+  <sect2>
+  <title
+>De knoppen</title>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="application-exit.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Spel afsluiten</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Afsluiten</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Zal het programma afsluiten.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="document-new.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Nieuw spel</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Nieuw spel</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Start een nieuw spel. Het opent een dialoog waarin u het aantal spelers kan instellen. In een volgend dialoog kunnen alle spelers hun naam invoeren.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+</sect2>
+
+</sect1>
+</chapter>
+
+<chapter id="developers">
+<title
+>Gids voor ontwikkelaars van &ksirk;</title>
+
+<para
+>Ga naar <ulink url="https://api.kde.org/"
+>https://api.kde.org/</ulink
+> voor de documentatie van de API. Het was vrij compleet maar het kan op dit moment een beetje verouderd zijn. Er is geen commentaar aanwezig in de <literal role="extension"
+>.cpp</literal
+> bronbestanden.</para>
+
+<para
+>Vergeet niet dat ik dit spel eerst onder &Windows; met <application
+>Borland C++</application
+> en <application
+>WinG</application
+> heb ontwikkelt. Ik zette het vervolgens over naar &Java; voordat ik het weer terug zette naar C++ en &kde;. In het begin gebruikte ik een mix van Frans of een mix van Frans en Engels voor de namen van identifiers (classnames, methods, members, &etc;). Ik gebruikte ook Frans voor de comments. Toen ik besloot om dit spel te verspreiden, besloot ik om alles om te zetten naar het Engels ... maar ik ben duidelijk geen geboren spreker van Engels: geef a.u.b. suggesties of maak en en geef correcties, voor het commentaar in de code of voor deze documentatie.</para>
+
+</chapter>
+
+<chapter id="skins">
+<title
+>Nieuwe skins aanmaken</title>
+
+<para
+>&ksirk; komt met een skin-editor, genaamd <command
+>ksirkskineditor</command
+> waarmee u alle skin data kan bewerken, zodra illustraties (kaart, figuurtjes, &etc;) beschikbaar zijn in een &SVG;-bestand. Lees de handleiding van de &i18n-ksirkskineditor; voor meer informatie.</para>
+
+</chapter>
+
+<chapter id="faq">
+<title
+>Vragen en antwoorden</title
+>&reporting.bugs; &updating.documentation; </chapter>
+
+<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+<title
+>Dankbetuiging en licentie</title>
+
+<para
+>&ksirk;</para>
+
+<para
+>Programma copyright 2002-2012 Gaël de Chalendar <email
+>kleag@free.fr</email
+></para>
+
+<para
+>Auteursrecht programma 2013 Nemanja Hirsl <email
+>nemhirsl@gmail.com</email
+></para>
+
+<para
+>Medewerkers: Robin Doer, &Albert.Astals.Cid;, Michal Golunski (Poolse vertaling). </para>
+
+<para
+>Documentatie copyright 2002-2008 Gaël de Chalendar <email
+>kleag@free.fr</email
+></para>
+
+&meld.fouten;&vertaling.freek;&vertaling.ronald; &underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Installatie</title>
+
+<sect1 id="configuration">
+<title
+>Configuratie</title>
+
+<para
+>Het menu-item <menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>&ksirk; configureren...</guimenuitem
+></menuchoice
+> opent een dialoog die u biedt:</para>
+
+<screenshot>
+  <screeninfo
+>Dialoog Voorkeuren</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="preferences.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Dialoog Voorkeuren</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+
+<itemizedlist>
+  <listitem
+><para
+>het geluid in-/uitschakelen&nbsp;;</para
+></listitem>
+  <listitem
+><para
+>de snelheid van de sprites instellen (van langzaam tot onmiddellijk)&nbsp;;</para
+></listitem>
+  <listitem
+><para
+>de in popups getoonde contexthelp in-/uitschakelen&nbsp;;</para
+></listitem>
+  <listitem
+><para
+>indien ingeschakeld wordt het aantal legers voor elk land getoond. De volgende schermafdruk toont de kaart met daarin zichtbaar het aantal legers.</para>
+
+    <screenshot>
+      <screeninfo
+>Het aantal legers tonen</screeninfo>
+      <mediaobject>
+        <imageobject
+><imagedata fileref="shownumberofarmies.png" format="PNG"/></imageobject>
+        <textobject
+><phrase
+>Het aantal legers tonen</phrase
+></textobject>
+        </mediaobject>
+    </screenshot>
+  </listitem>
+</itemizedlist>
+</sect1>
+
+</appendix>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

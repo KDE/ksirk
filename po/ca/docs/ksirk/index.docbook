@@ -1,0 +1,977 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY i18n-ksirkskineditor "<application
+>Editor d'aparences per al KsirK</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Catalan  "INCLUDE">
+]>
+
+<book id="ksirk" lang="&language;">
+
+<bookinfo>
+<title
+>El manual del &ksirk;</title>
+
+<authorgroup>
+  <author
+><firstname
+>Ga&euml;l</firstname
+> <othername
+>Kleag</othername
+> <surname
+>de Chalendar</surname
+> <affiliation
+><address
+><email
+>kleag@free.fr</email
+></address
+></affiliation>
+  </author>
+  <author
+><firstname
+>Nemanja</firstname
+> <othername
+></othername
+> <surname
+>Hirsl</surname
+> <affiliation
+><address
+><email
+>nemhirsl@gmail.com</email
+></address
+></affiliation>
+  </author>
+  <!-- Translators: put here the copyright notice of the translation -->
+  &traductor.Antoni.Bella; 
+</authorgroup>
+
+<copyright>
+  <year
+>2002-2012</year>
+  <holder
+>Ga&euml;l de Chalendar</holder>
+</copyright>
+<copyright>
+  <year
+>2013</year>
+  <holder
+>Nemanja Hirsl</holder>
+</copyright>
+<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
+     and in the FDL itself on how to use it. -->
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<!-- Date and version information of the documentation
+Don't forget to include this last date and this last revision number, we
+need them for translation coordination !
+Please respect the format of the date (DD/MM/YYYY) and of the version
+(V.MM.LL), it could be used by automation scripts.
+Do NOT change these in the translation. -->
+<date
+>14 d'octubre de 2021</date>
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<!-- Abstract about this handbook -->
+<abstract>
+  <para
+>El &ksirk; és una versió d'ordinador d'un joc d'estratègia ben conegut.</para>
+</abstract>
+
+<!-- This is a set of Keywords for indexing by search engines.
+Please at least include KDE, the KDE package it is in, the name
+ of your application, and a few relevant keywords. -->
+<keywordset>
+  <keyword
+>KDE</keyword>
+  <keyword
+>IA</keyword>
+  <keyword
+>lliure</keyword>
+  <keyword
+>joc</keyword>
+  <keyword
+>GPL</keyword>
+  <keyword
+>KsirK</keyword>
+  <keyword
+>xarxa</keyword>
+  <keyword
+>risc</keyword>
+  <keyword
+>estratègia</keyword>
+</keywordset>
+</bookinfo>
+
+<!-- The contents of the documentation begin here.  Label
+each chapter so with the id attribute. This is necessary for two reasons: it
+allows you to easily reference the chapter from other chapters of your
+document, and if there is no ID, the name of the generated HTML files will vary
+from time to time making it hard to manage for maintainers and for the CVS
+system. Any chapter labeled (OPTIONAL) may be left out at the author's
+discretion. Other chapters should not be left out in order to maintain a
+consistent documentation style across all KDE apps. -->
+
+<chapter id="introduction">
+<title
+>Introducció</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+<para
+>El &ksirk; és una versió per a ordinador d'un joc d'estratègia ben conegut. Hi ha versions comercials i de programari lliure, però (en Gaël de Chalendar) va crear aquest joc inicialment com un exercici d'aprenentatge de C++, per al qual, el va desenvolupar fins a aquest punt (per a més detalls, vegeu el fitxer <filename
+>README</filename
+>).</para>
+
+<screenshot>
+  <screeninfo
+>Aquesta és una captura de pantalla del &ksirk;</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="firing-screenshot.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Captura de pantalla</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>En la versió actual, el &ksirk; és un joc multijugador amb una IA que es pot jugar en xarxa. (per a més detalls, vegeu el fitxer <filename
+>TODO</filename
+>).</para>
+
+<para
+>Aquesta documentació només proporciona la informació principal que necessitareu per començar a jugar. Llegiu els consells d'eina i els missatges de la barra d'estat per a completar la informació.</para>
+
+<para
+>L'objectiu del joc és senzillament conquerir el món atacant els veïns amb els batallons. Pacífic? No. No ho és :-)</para>
+</chapter>
+
+<chapter id="using-kapp">
+<title
+>Usar el &ksirk;</title>
+
+<!-- This chapter should tell the user how to use your app. You should use as
+many sections (Chapter, Sect1, Sect3, &etc;) as is necessary to fully document
+your application. -->
+
+<sect1 id="playing-ksirk">
+<title
+>Jugar al &ksirk;</title>
+
+<para
+>Nota preliminar: el mapa es pot desplaçar amb tres mètodes:</para>
+
+  <itemizedlist>
+    <listitem
+><para
+>Podeu posar el ratolí a prop d'una vora de la finestra i el mapa es desplaçarà en aquesta direcció</para
+></listitem>
+    <listitem
+><para
+>Podeu utilitzar la roda del ratolí: sense modificador, es desplaçarà verticalment. En prémer la tecla &Alt;, es desplaçarà horitzontalment</para
+></listitem>
+    <listitem
+><para
+>Podeu utilitzar les fletxes del teclat</para
+></listitem>
+  </itemizedlist>
+
+  <sect2 id="mainmenu">
+  <title
+>Començar una partida</title>
+
+  <para
+>Quan inicieu el &ksirk;, se us presentarà amb un menú principal.</para>
+
+  <screenshot>
+    <screeninfo
+>El menú principal del &ksirk;</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="introscreen.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Menú principal</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <variablelist>
+    <varlistentry>
+      <term
+><guibutton
+>Partida local nova</guibutton
+></term>
+      <listitem
+><para
+><action
+>Comença una partida nova.</action
+></para
+></listitem>
+    </varlistentry>
+<!--
+    <varlistentry>
+      <term
+><guibutton
+>Play &ksirk; over Jabber Network</guibutton
+></term>
+      <listitem
+><para
+><action
+>Play &ksirk; over <ulink url="https://en.wikipedia.org/wiki/XMPP"
+>Jabber</ulink
+>. You need to register Jabber account first.</action
+></para
+></listitem>
+    </varlistentry>
+-->
+    <varlistentry>
+      <term
+><guibutton
+>Partida nova en xarxa TCP/IP estàndard</guibutton
+></term>
+      <listitem
+><para
+><action
+>Comença una partida nova emprant la <ulink url="https://en.wikipedia.org/wiki/Internet_protocol_suite"
+>suite del protocol d'Internet</ulink
+>.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term
+><guibutton
+>Uneix-te a una partida en xarxa TCP/IP estàndard</guibutton
+></term>
+      <listitem
+><para
+><action
+>Permet que us uniu a la partida creada per un altre usuari emprant la <ulink url="https://en.wikipedia.org/wiki/Internet_protocol_suite"
+>suite del protocol d'Internet</ulink
+>.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term
+><guibutton
+>Carrega...</guibutton
+></term>
+      <listitem
+><para
+><action
+>Carrega una partida desada anteriorment.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term
+><guibutton
+>Surt</guibutton
+></term>
+      <listitem
+><para
+><action
+>Potser, finalment no voleu jugar?</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+
+  <para
+>Si premeu <guibutton
+>Partida local nova</guibutton
+>, apareixerà el diàleg <guilabel
+>Propietats de la partida nova</guilabel
+>, on podreu triar el nombre de jugadors, l'aparença (o el tema) a utilitzar, el tipus de partida (conquerir un objectiu o tenir un objectiu específic) i, finalment, si es jugarà amb jugadors en línia o si serà purament local. Es poden descarregar aparences noves emprant el botó <guibutton
+>Descarrega aparences noves...</guibutton
+>.</para>
+
+  <screenshot>
+    <screeninfo
+>El diàleg «Partida nova»</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="newgamedialog.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>El diàleg «Partida nova»</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Per a iniciar una partida en xarxa TCP/IP, trieu l'opció <guilabel
+>Partida nova en xarxa TCP/IP estàndard</guilabel
+> a la pantalla d'introducció. Després de prémer aquest botó, podreu escollir els paràmetres de xarxa: nombre de jugadors locals i el port TCP on s'esperen les connexions.</para>
+
+  <screenshot>
+    <screeninfo
+>El diàleg de paràmetres del joc en xarxa</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="numnetplayersdialog.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>El diàleg de paràmetres del joc en xarxa</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Després, els jugadors en xarxa podran connectar-se seleccionant <guilabel
+>Uneix-te a una partida en xarxa TCP/IP estàndard</guilabel
+> a la pantalla d'introducció i indicant el nom IP o amfitrió i el número de port que acabeu d'establir.</para>
+
+  <screenshot>
+    <screeninfo
+>El diàleg entra a una partida en xarxa</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="joinnetgame.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>El diàleg entra a una partida en xarxa</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Cada connexió s'indica mitjançant una fila nova a la taula <guilabel
+>Jugadors</guilabel
+> a sota de la miniatura del mapa.</para>
+
+  <screenshot>
+    <screeninfo
+>Fila «Jugador nou»</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="justjoined.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Fila «Jugador nou»</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Suposem que manteniu totes les opcions de configuració predeterminades i premeu <guibutton
+>Següent</guibutton
+>. Després configureu dos jugadors, un després de l'altre. Per a cadascun, trieu un nom, una nacionalitat i, si voleu, establiu una contrasenya de manera que ningú més pugui reutilitzar aquest jugador quan es torni a carregar aquesta partida desada. Finalment, especifiqueu si aquest jugador és jugat per l'ordinador o per un ésser humà.</para>
+
+  <screenshot>
+    <screeninfo
+>El diàleg «Configuració del jugador»</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="playersetupdialog.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>El diàleg «Configuració del jugador»</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Després, premeu el botó <guibutton
+>Inicia</guibutton
+>, si trieu jugar amb un objectiu, es mostrarà l'objectiu de cada jugador local, precedit per un avís, de manera que els altres jugadors que mirin el mateix ordinador puguin apartar-se discretament mentre el veuen.</para>
+
+  <screenshot>
+    <screeninfo
+>El missatge d'avís «Mostra l'objectiu»</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="displaygoalwarningmessage.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>El missatge d'avís «Mostra l'objectiu»</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <screenshot>
+    <screeninfo
+>El diàleg «Mostra l'objectiu»</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="displaygoalmessage.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>El diàleg «Mostra l'objectiu»</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+  </sect2>
+
+  <sect2 id="distribution">
+  <title
+>Distribució</title>
+
+  <para
+>Al començament de la partida, els països es distribueixen a tots els jugadors. Cada país contindrà un batalló (representat per un individu d'infanteria). En el seu torn cada jugador disposarà d'alguns batallons per a distribuir-los als seus països (indicats per la presència del seu nom i la bandera a la barra d'estat). Recordeu que cinc batallons estan representats per un individu de cavalleria i deu per un canó.</para>
+
+  <para
+>Per a col·locar un batalló en un dels vostres països, feu-hi clic amb el &BER;. Per a eliminar un batalló, feu clic amb el &BDR;. Cal tenir present, com a regla general, que mai podreu eliminar més batallons que el nombre que heu col·locat.</para>
+
+  <screenshot>
+    <screeninfo
+>Col·locant el batalló</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="placingarmies.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Col·locant el batalló</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Quan un jugador hagi distribuït tots els batallons, se seleccionarà automàticament el jugador següent perquè faci la mateixa tasca. Una vegada tots els jugadors hagin acabat de distribuir els seus batallons, hi haurà dues possibilitats que poden seleccionar-se amb dos botons que es mostren en el plafó dret:</para>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="recycling.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Redistribució</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Reposiciona</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Un jugador vol canviar algunes de les seves decisions. El primer jugador podrà eliminar un batalló que acaba de col·locar en un país amb el &BDR; i col·locar-lo en un altre amb el &BER;. Quan acabi, deixarà el control al jugador següent amb el botó <guibutton
+>Valida</guibutton
+>. Quan tots els jugadors hagin acabat la seva redistribució, es mostraran de nou els dos botons.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="recyclingFinished.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Final de la redistribució</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Fet</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>La redistribució ha acabat i la partida pot continuar.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+  </sect2>
+
+  <sect2 id="fight">
+  <title
+>Lluitar</title>
+
+  <para
+>Després de la redistribució, començarà un torn. Cada jugador jugarà al seu torn i tindrà l'opció de:</para>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="joueurSuivant.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Jugador següent</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Jugador següent</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Finalitza el torn del jugador actual i serà el torn del següent.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="attackOne.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Ataca amb 1</phrase
+></textobject>
+        </inlinemediaobject
+>&nbsp; <inlinemediaobject
+> <imageobject
+><imagedata fileref="attackTwo.png" format="PNG"/></imageobject
+> <textobject
+><phrase
+>Ataca amb 2</phrase
+></textobject
+> </inlinemediaobject
+>&nbsp; <inlinemediaobject
+> <imageobject
+><imagedata fileref="attackThree.png" format="PNG"/></imageobject
+> <textobject
+><phrase
+>Ataca amb </phrase
+></textobject
+> </inlinemediaobject
+> <guibutton
+>Ataca amb un, dos o tres batallons</guibutton
+>&nbsp; <inlinemediaobject
+> <imageobject
+><imagedata fileref="autoattack.png" format="PNG"/></imageobject
+> <textobject
+><phrase
+>Ataca automàticament</phrase
+></textobject
+> </inlinemediaobject
+> <guibutton
+>Ataca automàticament</guibutton
+> </term>
+
+      <listitem
+><para
+>Per a atacar, arrossegueu amb el ratolí des del país atacant i deixeu anar al de destinació. Després se us presentarà un menú contextual que mostrarà les entrades anteriors.</para>
+
+        <screenshot>
+          <screeninfo
+>El menú «Atac»</screeninfo>
+          <mediaobject>
+            <imageobject
+><imagedata fileref="attackmenu.png" format="PNG"/></imageobject>
+            <textobject
+><phrase
+>El menú «Atac»</phrase
+></textobject>
+          </mediaobject>
+        </screenshot>
+
+        <para
+>Per a un país «X» que ataca un país «Y» amb «X» batallons, s'han de complir 2 condicions:</para>
+
+        <itemizedlist>
+          <listitem
+><para
+>els dos països han de ser veïns;</para
+></listitem>
+          <listitem
+><para
+>el país «X» haurà de tenir almenys «X+1» batallons abans de l'atac.</para
+></listitem>
+        </itemizedlist>
+
+        <para
+>Si l'atac és vàlid, es mostrarà un diàleg si és necessari per al defensor triar si vol defensar amb un o dos batallons, o deixar que decideixi l'ordinador.</para>
+
+        <para
+>Quan es realitza l'elecció dels defensors, es produirà i completarà la lluita. Això es descriurà a continuació.</para>
+
+        <screenshot>
+          <screeninfo
+>El diàleg «Defensa»</screeninfo>
+          <mediaobject>
+            <imageobject
+><imagedata fileref="defensedialog.png" format="PNG"/></imageobject>
+            <textobject
+><phrase
+>El diàleg «Defensa»</phrase
+></textobject>
+          </mediaobject>
+        </screenshot>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="moveArmies.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Moure els batallons</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Moure els batallons d'un país a l'altre</guibutton>
+      </term>
+
+      <listitem
+><para
+><action
+>Aquesta és l'última acció en el torn d'un jugador. Dona la possibilitat de moure alguns batallons des d'un dels seus països a un altre veí. Per a triar els dos països, arrossegueu i deixeu anar, com es fa durant un atac. Quan se seleccionen els dos països, es mostrarà un control lliscant en la qual es pot triar el nombre de batallons que hi haurà després a cada país.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+  </sect2>
+
+  <sect2  id="fight-outcome">
+  <title
+>Resultat de la lluita</title>
+
+  <para
+>Per a cada batalló en la lluita hi ha un repartiment corresponent. El jugador que llenci un número més alt en els daus, sigui l'atacant o defensor, guanyarà i el que obtingui un número menor perdrà els batallons d'acord amb el número en els daus.</para>
+
+  <screenshot>
+    <screeninfo
+>Es mostra el resultat de l'atac</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="shownumberofarmies.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Es mostra el resultat de l'atac</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Si el nombre de batallons en el país defensor arriba a 0, la propietat d'aquest país canviarà a l'atacant: la seva bandera configurada i un dels seus batallons atacants s'instal·larà al país nou. Es mostrarà el control lliscant <guilabel
+>Mou els batallons</guilabel
+> per als moviments al final del torn.</para>
+
+  <screenshot>
+    <screeninfo
+>Control lliscant de la invasió</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="invasionslider.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Control lliscant de la invasió</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+  </sect2>
+
+  <sect2  id="end_of_turn">
+  <title
+>Final del torn</title>
+
+  <para
+>Per a acabar el torn actual, si no es vol moure cap batalló, podeu prémer el botó <guibutton
+>Jugador següent</guibutton
+> a la barra d'eines.</para>
+
+  <para
+>Una vegada ha jugat tothom, el torn haurà acabat. Alguns batallons es distribuiran als jugadors, en funció dels països que posseeixin: 1 per a cada grup de tres països, amb un mínim de 3. També hi haurà una bonificació per als jugadors que posseeixin tot un continent, diferent per cadascun. Els valors de les bonificacions per a l'aparença predeterminada són:</para>
+
+  <table>
+    <title
+>Bonificació pels continents</title>
+    <tgroup cols="2">
+      <thead>
+        <row>
+          <entry
+>Continent</entry>
+          <entry
+>Bonificació</entry>
+        </row>
+      </thead>
+      <tbody>
+        <row
+><entry
+>Amèrica del Nord</entry
+><entry
+>5</entry
+></row>
+        <row
+><entry
+>Amèrica del Sud</entry
+><entry
+>2</entry
+></row>
+        <row
+><entry
+>Europa</entry
+><entry
+>5</entry
+></row>
+        <row
+><entry
+>Àfrica</entry
+><entry
+>3</entry
+></row>
+        <row
+><entry
+>Àsia</entry
+><entry
+>7</entry
+></row>
+        <row
+><entry
+>Àrea del pacífic</entry
+><entry
+>2</entry
+></row>
+      </tbody>
+    </tgroup>
+  </table>
+
+  <para
+>Quan un jugador hagi acabat de distribuir els seus batallons, premerà el botó <guibutton
+>Valida</guibutton
+> per a permetre que el jugador següent distribueixi els seus batallons de bonificació. Pel que fa a la distribució inicial, quan tots els jugadors hagin col·locat els seus batallons, podran començar un cicle nou de redistribució o començar un torn nou...</para>
+  </sect2>
+
+<!-- Does not work for current TCP/IP games
+<sect2 id="sending-messages">
+<title
+>Sending messages to other players</title>
+<para>
+If you play a local game and want to communicate with the other players, well, let's speak (supposing you have no accessibility problems)... But if you are playing a network game, you can use the chat frame at the bottom of the window (it can be hidden or showed using the arrows). Just type in your message and hit &Enter;.
+          <screenshot>
+            <screeninfo
+>Sending messages</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="messagesent.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Sending messages</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+
+</para>
+</sect2>
+-->
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Referència d'ordres</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>La finestra principal del &ksirk;</title>
+
+  <sect2>
+  <title
+>Els botons</title>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="application-exit.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Surt de la partida</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Surt</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Fa que se surti del programa.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="document-new.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Partida nova</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Partida nova</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Comença una partida nova. Mostrarà un diàleg demanant pel nombre de jugadors. Després d'això, se li demanarà a cada jugador pel seu nom amb un altre diàleg.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+</sect2>
+
+</sect1>
+</chapter>
+
+<chapter id="developers">
+<title
+>Guia del &ksirk; per a desenvolupadors</title>
+
+<para
+>Si us plau, consulteu <ulink url="https://api.kde.org/"
+>https://api.kde.org/</ulink
+> per a la documentació de l'API. És força completa, però actualment està una mica antiquada. No hi ha cap comentari en els fitxers d'implementació <literal role="extension"
+>.cpp</literal
+>.</para>
+
+<para
+>Cal tenir present que originalment vaig desenvolupar aquest joc sota &Windows; amb <application
+>Borland C++</application
+> i <application
+>WinG</application
+>. El vaig adaptar a &Java; abans de convertir-lo de nou a C++ i al &kde;. Al començament, vaig fer servir el francès o una barreja de francès i anglès per a anomenar els identificadors (noms de classe, mètodes, membres, &etc;). També vaig fer servir el francès per als comentaris. Quan vaig decidir distribuir-lo, ho vaig convertir tot a l'anglès... però clarament no soc un parlant natiu d'anglès: podeu fer consells, crear i enviar correccions, als comentaris en el codi o a aquesta documentació.</para>
+
+</chapter>
+
+<chapter id="skins">
+<title
+>Crear aparences noves</title>
+
+<para
+>El &ksirk; ve amb un editor d'aparences, anomenat <command
+>ksirkskineditor</command
+>, el qual permet editar totes les dades de l'aparença, tan aviat com els gràfics (mapa, sprites, &etc;) estiguin disponibles en un fitxer &SVG;. Per a més detalls, vegeu el manual de l'&i18n-ksirkskineditor;.</para>
+
+</chapter>
+
+<chapter id="faq">
+<title
+>Preguntes i respostes</title
+>&reporting.bugs; &updating.documentation; </chapter>
+
+<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+<title
+>Crèdits i llicència</title>
+
+<para
+>&ksirk;</para>
+
+<para
+>Copyright del programa 2002-2012 Ga&euml;l de Chalendar <email
+>kleag@free.fr</email
+></para>
+
+<para
+>Copyright del programa 2013 Nemanja Hirsl <email
+>nemhirsl@gmail.com</email
+></para>
+
+<para
+>Col·laboradors: Robin Doer, &Albert.Astals.Cid;, Michal Golunski (traducció al polonès). </para>
+
+<para
+>Copyright del programa 2002-2012 Ga&euml;l de Chalendar <email
+>kleag@free.fr</email
+></para>
+
+<para
+>Traductor de la documentació: &credits.Antoni.Bella;</para
+> &underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Instal·lació</title>
+
+<sect1 id="configuration">
+<title
+>Configuració</title>
+
+<para
+>L'element de menú <menuchoice
+><guimenu
+>Arranjament</guimenu
+> <guimenuitem
+>Configura el &ksirk;...</guimenuitem
+></menuchoice
+> obrirà un diàleg que us permetrà:</para>
+
+<screenshot>
+  <screeninfo
+>Diàleg de preferències</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="preferences.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Diàleg de preferències</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+
+<itemizedlist>
+  <listitem
+><para
+>Activar o desactivar els sons&nbsp;;</para
+></listitem>
+  <listitem
+><para
+>Establir la velocitat dels sprites (de lenta a immediata)&nbsp;</para
+></listitem>
+  <listitem
+><para
+>Activar o desactivar l'ajuda contextual mostrada en finestres emergents&nbsp;</para
+></listitem>
+  <listitem
+><para
+>Mostrar o ocultar el nombre de batallons a cada país. La captura de pantalla següent mostra el mapa quan es mostra el nombre de batallons.</para>
+
+    <screenshot>
+      <screeninfo
+>Mostrant el nombre de batallons</screeninfo>
+      <mediaobject>
+        <imageobject
+><imagedata fileref="shownumberofarmies.png" format="PNG"/></imageobject>
+        <textobject
+><phrase
+>Mostrant el nombre de batallons</phrase
+></textobject>
+        </mediaobject>
+    </screenshot>
+  </listitem>
+</itemizedlist>
+</sect1>
+
+</appendix>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

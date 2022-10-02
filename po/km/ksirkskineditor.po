@@ -1,0 +1,2135 @@
+# translation of ksirkskineditor.po to Khmer
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2009, 2010.
+# Morn Met, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: ksirkskineditor\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-24 00:42+0000\n"
+"PO-Revision-Date: 2010-06-08 15:55+0700\n"
+"Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
+"Language-Team: Khmer <support@khmeros.info>\n"
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
+"X-Language: km_KH\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ខឹម សុខែម, ម៉ន ម៉េត, សេង សុត្ថា"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "khoemsokhem@khmeros.info,​​mornmet@khmeros.info,sutha@khmeros.info"
+
+#: goal.cpp:100
+#, kde-format
+msgid "Error: no player to destroy"
+msgstr "កំហុស​ ៖ គ្មាន​អ្នក​លេង​ណា​ម្នាក់​ត្រូវ​បាន​កម្ទេច​ទេ​"
+
+#: goal.cpp:213
+#, kde-format
+msgid "KsirK - Goal Display"
+msgstr "KsirK - ការ​បង្ហាញ​គោល​ដៅ"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
+#: ksirkcontinentdefinition.ui:13
+#, kde-format
+msgid "Continent"
+msgstr "ទ្វីប​"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ksirkcontinentdefinition.ui:22
+#, kde-format
+msgid "Bonus:"
+msgstr "ពិន្ទុ​បន្ថែម​ ៖"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, bonus)
+#: ksirkcontinentdefinition.ui:29
+#, kde-format
+msgid "Number of bonus points when owning the full continent"
+msgstr "ចំនួន​ពិន្ទុ​បន្ថែម​ នៅ​ពេល​ក្លាយ​ជា​ម្ចាស់​ទ្វីប​ទាំង​មូល​"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, bonus)
+#: ksirkcontinentdefinition.ui:36
+#, kde-format
+msgid ""
+"Number of bonus points when owning the full continent.\n"
+"\n"
+"At the end of each turn a number of armies is distributed to each player. If "
+"one player owns all the countries of this continent, he/she gains this "
+"bonus.\n"
+"\n"
+"The bonus should be proportional to the continent's size and to the "
+"difficulty to conquer it or to keep it."
+msgstr ""
+"ចំនួន​ពិន្ទុ​បន្ថែម​ នៅ​ពេល​ក្លាយ​ជា​ម្ចាស់​ទ្វីប​ទាំង​មូល​ ។\n"
+"\n"
+"កង​ទ័ព​មួយ​ចំនួន​នឹង​ត្រូវ​ចែក​ចាយ​ទៅ​ឲ្យ​អ្នក​លេង​ម្នាក់​ៗ​នៅ​ពេល​បញ្ចប់​វេន​នីមួយ​ ៗ ។ បើ​ អ្នក​លេង​​ម្នាក់​ក្លាយ​ជា​"
+"ម្ចាស់​ប្រទេស​ទាំង​អស់​នៅ​ក្នុង​ទ្វីប​នេះ​ គេ​នឹង​ទទួល​បាន​ ពិន្ទុ​បន្ថែម​នេះ​ ។\n"
+"\n"
+"ពិន្ទុ​បន្ថែម​នេះ​គួរ​តែ​សមាមាត្រ​​ទៅ​នឹង​ទំហំ​របស់​ទ្វីប​ និង​ទៅ​នឹង​ ភាព​ពិបាក​ក្នុង​ការ​ច្បាំង​យក​វា​ ឬ​ក្នុង​ការ​ការ​ពារ​"
+"វា​ ។"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, selectcountriesbutton)
+#: ksirkcontinentdefinition.ui:48
+#, kde-format
+msgid "Select the countries contained in this continent"
+msgstr "ជ្រើស​ប្រទេស​ដែល​មាន​នៅ​ក្នុង​ទ្វីប​នេះ​"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, selectcountriesbutton)
+#: ksirkcontinentdefinition.ui:53
+#, kde-format
+msgid ""
+"Click here to select the countries contained in this continent.\n"
+"\n"
+"A list of all the world's countries will be shown and you will be able to "
+"select the countries using the mouse and the Ctrl and Shift keys."
+msgstr ""
+"ចុច​នៅ​ទី​នេះ​ ដើម្បី​ជ្រើស​ប្រទេស​ដែល​មាន​នៅ​ក្នុង​ទ្វីប​នេះ​ ។\n"
+"\n"
+"បញ្ជី​ឈ្មោះ​របស់​ប្រទេស​ក្នុង​ពិភព​លោក​នឹង​ត្រូវ​បង្ហាញ ហើយ​អ្នក​​នឹង​អាច​ ជ្រើស​ប្រទេស​នានា​ដោយ​ប្រើ​កណ្ដុរ​ និង​គ្រាប់​"
+"ចុច​ បញ្ជា និង​ប្ដូរ​ ។"
+
+#. i18n: ectx: property (text), widget (QPushButton, selectcountriesbutton)
+#: ksirkcontinentdefinition.ui:56
+#, kde-format
+msgid "Countries:"
+msgstr "ប្រទេស​ ៖"
+
+#. i18n: ectx: property (toolTip), widget (QListWidget, countrieslist)
+#: ksirkcontinentdefinition.ui:63
+#, kde-format
+msgid "Continent's countries"
+msgstr "ប្រទេស​នៅ​ក្នុង​ទ្វីប​"
+
+#. i18n: ectx: property (whatsThis), widget (QListWidget, countrieslist)
+#: ksirkcontinentdefinition.ui:66
+#, kde-format
+msgid "This is the list of countries currently forming this continent."
+msgstr "នេះ​គឺ​ជា​បញ្ជី​ឈ្មោះ​ប្រទេស​ដែល​បច្ចុប្បន្ន​កំពុង​តែ​បង្កើត​ទ្វីប​នេះ​ ។"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkCountryDefinition)
+#: ksirkcountrydefinition.ui:13
+#, kde-format
+msgid "Country"
+msgstr "ប្រទេស"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ksirkcountrydefinition.ui:22
+#, kde-format
+msgid "Flag:"
+msgstr "ទង់ជាតិ​ ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: ksirkcountrydefinition.ui:29 ksirkcountrydefinition.ui:46
+#: ksirkcountrydefinition.ui:63 ksirkcountrydefinition.ui:97
+#: ksirkcountrydefinition.ui:148 ksirkcountrydefinition.ui:182
+#: ksirkskindefinition.ui:64
+#, kde-format
+msgid "x"
+msgstr "x"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ksirkcountrydefinition.ui:39
+#, kde-format
+msgid "Anchor:"
+msgstr "យុថ្កា​ ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: ksirkcountrydefinition.ui:56
+#, kde-format
+msgid "Center:"
+msgstr "ចំណុច​កណ្ដាល​​ ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: ksirkcountrydefinition.ui:73
+#, kde-format
+msgid "Infantry:"
+msgstr "ទ័ព​ថ្មើរ​ជើង​ ៖"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, infantryx)
+#: ksirkcountrydefinition.ui:80
+#, kde-format
+msgid "Infantry's sprite top left point x-coordinate"
+msgstr "កូអរ​ដោនេ​ x​ ចំណុច​ខាង​ឆ្វេង​ផ្នែក​ខាង​លើ​ sprite  របស់​​​ទ័ព​ថ្មើរ​ជើង"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryx)
+#: ksirkcountrydefinition.ui:87
+#, kde-format
+msgid ""
+"Infantry's sprite top left point x-coordinate.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the infantry."
+msgstr ""
+"កូអរដោនេ​ x ចំណុច​ខាង​ឆ្វេង​ផ្នែក​ខាង​លើ​ sprite របស់​​ទ័ព​ថ្មើរ​ជើង​ ។\n"
+"\n"
+"វា​ត្រូវ​បាន​​ផ្ដល់​ទំនាក់​ទំនង​ជាមួយ​ផែន​ទី​នៅ​ខាង​ឆ្វេង​ផ្នែក​ខាង​លើ​ ដែល​ត្រូវ​បាន​ដាក់​ទំហំ​ដូច​ដែល​បាន​កំណត់​នៅ​ក្នុង​ "
+"ធាតុ​ក្រាហ្វិក​និយម​ន័យ​ស្បែក​មេ​ ។\n"
+"\n"
+"តម្លៃ​នេះ​នឹង​ត្រូវ​ធ្វើ​បច្ចុប្បន្នភាព​​ដោយ​ស្វ័យ​ប្រវត្តិ​ បើ​អ្នក​ផ្លាស់​ទី​​​ទ័ព​ថ្មើរ​ជើង​ ។"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, infantryy)
+#: ksirkcountrydefinition.ui:107
+#, kde-format
+msgid "Infantry's sprite top left point y-coordinate"
+msgstr "កូអរដោនេ y ចំណុច​ឆ្វេង​ផ្នែក​ខាង​លើ​ sprite របស់​​​ទ័ព​ថ្មើរ​ជើង"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryy)
+#: ksirkcountrydefinition.ui:114
+#, kde-format
+msgid ""
+"Infantry's sprite top left point y-coordinate.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the infantry by drag "
+"and drop."
+msgstr ""
+"កូអរ​ដោនេ y ចំណុច​ខាង​​ឆ្វេង​ផ្នែក​ខាង​លើ​  sprite របស់​​​ទ័ព​ថ្មើរ​ជើង​ ។\n"
+"\n"
+"វា​ត្រូវ​បាន​​ផ្ដល់​ទំនាក់​ទំនង​ជាមួយ​ផែន​ទី​នៅ​ខាង​ឆ្វេង​ផ្នែក​ខាង​លើ​ ដែល​ត្រូវ​បាន​ដាក់​ទំហំ​ដូច​ដែល​បាន​កំណត់​នៅ​ក្នុង​ "
+"ធាតុ​ក្រាហ្វិក​និយម​ន័យ​ស្បែក​មេ​ ។\n"
+"\n"
+"តម្លៃ​នេះ​នឹង​ត្រូវ​ធ្វើ​បច្ចុប្បន្នភាព​​ដោយ​ស្វ័យ​ប្រវត្តិ​ បើ​អ្នក​ផ្លាស់​ទី​​ទ័ព​ថ្មើរ​​ជើង​ដោយ​ អូស​ និង​ទម្លាក់​ ។"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: ksirkcountrydefinition.ui:124
+#, kde-format
+msgid "Cavalry:"
+msgstr "ទ័ព​សេះ​ ៖"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryx)
+#: ksirkcountrydefinition.ui:131
+#, kde-format
+msgid "Cavalry's sprite top left point x-coordinate"
+msgstr "កូអរ​ដោនេ x ចំណុច​ខាង​ឆ្វេង​ផ្នែក​ខាង​លើ​ sprite របស់​ទ័ព​សេះ "
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryx)
+#: ksirkcountrydefinition.ui:138
+#, kde-format
+msgid ""
+"Cavalry's sprite top left point x-coordinate.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the cavalry."
+msgstr ""
+"កូអរ​ដោនេ​ x ចំណុច​ខាង​ឆ្វេង​ផ្នែក​ខាង​លើ​ sprite របស់​ទ័ព​សេះ​ ។\n"
+"\n"
+"វា​ត្រូវ​បាន​​ផ្ដល់​ទំនាក់​ទំនង​ជាមួយ​ផែន​ទី​នៅ​ខាង​ឆ្វេង​ផ្នែក​ខាង​លើ​ ដែល​ត្រូវ​បាន​ដាក់​ទំហំ​ដូច​ដែល​បាន​កំណត់​នៅ​ក្នុង​ "
+"ធាតុ​ក្រាហ្វិកនិយម​ន័យ​ស្បែក​មេ​ ។\n"
+"\n"
+"តម្លៃ​នេះ​នឹង​ត្រូវ​ធ្វើ​បច្ចុប្បន្នភាព​​ដោយ​ស្វ័យ​ប្រវត្តិ​ បើ​អ្នក​ផ្លាស់​ទី​ទ័ព​សេះ ។"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryy)
+#: ksirkcountrydefinition.ui:158
+#, kde-format
+msgid "Cavalry's sprite top left point y-coordinate"
+msgstr "កូអរដោនេ​ y ចំណុច​ខាង​ឆ្វេង​ផ្នែក​ខាង​លើ​ sprite របស់​ទ័ព​សេះ"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryy)
+#: ksirkcountrydefinition.ui:165
+#, kde-format
+msgid ""
+"Cavalry's sprite top left point y-coordinate.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the cavalry by drag and "
+"drop."
+msgstr ""
+"កូអរដោនេ​ y ចំណុច​ខាង​ឆ្វេង​ផ្នែក​ខាង​លើ​ sprite របស់​ទ័ព​សេះ ។\n"
+"\n"
+"វា​ត្រូវ​បាន​​ផ្ដល់​ទំនាក់​ទំនង​ជាមួយ​ផែន​ទី​នៅ​ខាង​ឆ្វេង​ផ្នែក​ខាង​លើ​ ដែល​ត្រូវ​បាន​ដាក់​ទំហំ​ដូច​ដែល​បាន​កំណត់​នៅ​ក្នុង​ "
+"ធាតុ​ក្រាហ្វិកនិយម​ន័យ​​​ស្បែក​មេ​ ។\n"
+"\n"
+"តម្លៃ​នេះ​នឹង​ត្រូវ​ធ្វើ​បច្ចុប្បន្នភាព​​ដោយ​ស្វ័យ​ប្រវត្តិ​ បើ​អ្នក​ផ្លាស់​ទី​ទ័ព​សេះ​ដោយ​អូស​ និង​​ទម្លាក់​ ។"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: ksirkcountrydefinition.ui:175
+#, kde-format
+msgid "Cannon:"
+msgstr "កាំ​ភ្លើង​ធំ​ ៖"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cannony)
+#: ksirkcountrydefinition.ui:192
+#, kde-format
+msgid "Cannon's sprite top left point y-coordinate"
+msgstr "កូអរ​ដោនេ​ y ចំណុច​ខាង​ឆ្វេង​​ផ្នែក​ខាង​លើ​ sprite របស់​កាំ​ភ្លើង​ធំ"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cannony)
+#: ksirkcountrydefinition.ui:199
+#, kde-format
+msgid ""
+"Cannon's sprite top left point y-coordinate.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the cannon by drag and "
+"drop."
+msgstr ""
+"កូអរដោនេ  y ចំណុច​ខាង​ឆ្វេង​​ផ្នែក​ខាង​លើ​ sprite របស់​កាំ​ភ្លើង​ធំ​ ។\n"
+"\n"
+"វា​ត្រូវ​បាន​​ផ្ដល់​ទំនាក់​ទំនង​ជាមួយ​ផែន​ទី​នៅ​ខាង​ឆ្វេង​ផ្នែក​ខាង​លើ​ ដែល​ត្រូវ​បាន​ដាក់​ទំហំ​ដូច​ដែល​បាន​កំណត់​នៅ​ក្នុង​ "
+"ធាតុ​ក្រាហ្វិក​និយម​ន័យ​​​ស្បែក​មេ​ ។\n"
+"\n"
+"តម្លៃ​នេះ​នឹង​ត្រូវ​ធ្វើ​បច្ចុប្បន្នភាព​​ដោយ​ស្វ័យ​ប្រវត្តិ​ បើ​អ្នក​ផ្លាស់​ទី​កាំភ្លើង​ធំ​ដោយ​អូស​ និង​ ទម្លាក់​ ។"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cannonx)
+#: ksirkcountrydefinition.ui:209
+#, kde-format
+msgid "Cannon's sprite top left point x-coordinate"
+msgstr "កូអរដោនេ x ចំណុច​ខាង​ឆ្វេង​ផ្នែក​ខាង​លើ​ sprite របស់​កាំ​ភ្លើង​ធំ​ "
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonx)
+#: ksirkcountrydefinition.ui:216
+#, kde-format
+msgid ""
+"Cannon's sprite top left point x-coordinate.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the cannon."
+msgstr ""
+"កូអរដោនេ​ x ចំណុច​ខាង​ឆ្វេង​ផ្នែក​ខាងលើ​  sprite របស់​កាំ​ភ្លើង​ធំ​ ។\n"
+"\n"
+"វា​ត្រូវ​បាន​​ផ្ដល់​ទំនាក់​ទំនង​ជាមួយ​ផែន​ទី​នៅ​ខាង​ឆ្វេង​ផ្នែក​ខាង​លើ​ ដែល​ត្រូវ​បាន​ដាក់​ទំហំ​ដូច​ដែល​បាន​កំណត់​នៅ​ក្នុង​ "
+"ធាតុ​ក្រាហ្វិក​និយម​ន័យ​​ស្បែក​មេ​ ។\n"
+"\n"
+"តម្លៃ​នេះ​នឹង​ត្រូវ​ធ្វើ​បច្ចុប្បន្នភាព​​ដោយ​ស្វ័យ​ប្រវត្តិ​ បើ​អ្នក​ផ្លាស់​ទី​កាំ​ភ្លើង​ធំ ។"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, centery)
+#: ksirkcountrydefinition.ui:226
+#, kde-format
+msgid "Point around which the country name is drawn y-coordinate"
+msgstr "ចំណុច​ជុំ​វិញ​ដែល​​ឈ្មោះ​ប្រទេស​ត្រូវ​បាន​គូស​កូអរដោនេ​ y"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, centery)
+#: ksirkcountrydefinition.ui:236
+#, kde-format
+msgid ""
+"Point around which the country name is drawn y-coordinate.\n"
+"\n"
+"Note that this point should be located inside the limits of the country on "
+"the map mask.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the country name by "
+"dragging and dropping its target icon.\n"
+msgstr ""
+"ចំណុច​ជុំ​វិញ​ដែល​ឈ្មោះ​ប្រទេស​ត្រូវ​គូស​កូអរដោនេ  y ។\n"
+"\n"
+"ចំណាំ​ថា​ គួរ​តែ​ដាក់​ទីតាំង​ចំណុច​នេះ​នៅ​ខាង​ក្នុង​ដែន​កំណត់​របស់​ប្រទេស​លើ​ របាំង​ផែន​ទី​ ។\n"
+"\n"
+"វា​ត្រូវ​បាន​​ផ្ដល់​ទំនាក់​ទំនង​ជាមួយ​ផែន​ទី​នៅ​ខាង​ឆ្វេង​ផ្នែក​ខាង​លើ​ ដែល​ត្រូវ​បាន​ដាក់​ទំហំ​ដូច​ដែល​បាន​កំណត់​នៅ​ក្នុង​ "
+"ធាតុ​ក្រាហ្វិក​និយម​ន័យ​​​ស្បែក​មេ​ ។\n"
+"\n"
+"តម្លៃ​នេះ​នឹង​ត្រូវ​ធ្វើ​បច្ចុប្បន្នភាព​​ដោយ​ស្វ័យ​ប្រវត្តិ​ បើ​អ្នក​ផ្លាស់​ទី​ឈ្មោះ​ប្រទេស​ដោយ​ ការ​អូស​ និង​ទម្លាក់​រូប​"
+"តំណាង​គោល​ដៅ​របស់​វា​ ។\n"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, centerx)
+#: ksirkcountrydefinition.ui:246
+#, kde-format
+msgid "Point around which the country name is drawn x-coordinate"
+msgstr "ចំណុច​ជុំ​វិញ​ដែល​ឈ្មោះ​ប្រទេស​ត្រូវ​គូស​កូអរដោនេ​ x"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, centerx)
+#: ksirkcountrydefinition.ui:255
+#, kde-format
+msgid ""
+"Point around which the country name is drawn x-coordinate.\n"
+"\n"
+"Note that this point should be located inside the limits of the country on "
+"the map mask.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the country name by "
+"dragging and dropping its target icon."
+msgstr ""
+"ចំណុច​ជុំ​វិញ​ដែល​ឈ្មោះ​ប្រទេស​ត្រូវ​គូស​កូអរដោនេ​ x ។\n"
+"\n"
+"ចំណាំ​ថា​ ចំណុច​នេះ​គួរ​តែ​ត្រូវ​ដាក់​ឲ្យ​ស្ថិត​នៅ​ខាង​ក្នុង​ដែន​កំណត់​របស់​ប្រទេស​លើ​ របាំង​ផែន​ទី​ ។\n"
+"\n"
+"វា​ត្រូវ​បាន​​ផ្ដល់​ទំនាក់​ទំនង​ជាមួយ​ផែន​ទី​នៅ​ខាង​ឆ្វេង​ផ្នែក​ខាង​លើ​ ដែល​ត្រូវ​បាន​ដាក់​ទំហំ​ដូច​ដែល​បាន​កំណត់​នៅ​ក្នុង​ "
+"ធាតុ​ក្រាហ្វិក​និយម​ន័យ​ស្បែក​មេ​ ។\n"
+"\n"
+"តម្លៃ​នេះ​នឹង​ត្រូវ​ធ្វើ​​បច្ចុប្បន្នភាព​​ដោយ​ស្វ័យ​ប្រវត្តិ​ បើ​អ្នក​ផ្លាស់​ទី​ឈ្មោះ​ប្រទេស​ ដោយ​ ការ​អូស​ និង​ទម្លាក់​រូប​"
+"តំណាង​គោល​ដៅ​របស់​វា​ ។"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, anchory)
+#: ksirkcountrydefinition.ui:265
+#, kde-format
+msgid "Center of the highlighting y-coordinate"
+msgstr "ចំណុច​កណ្ដាល​របស់​កូអរដោនេ​ y ដែល​បាន​បន្លិច​"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, anchory)
+#: ksirkcountrydefinition.ui:272
+#, kde-format
+msgid ""
+"Center of the highlighting y-coordinate.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the highlighting by "
+"dragging and dropping its cross icon."
+msgstr ""
+"ចំណុច​កណ្ដាល​របស់​កូអរដោនេ​ y  ដែល​បាន​បន្លិច​ ។\n"
+"\n"
+"វា​ត្រូវ​បាន​​ផ្ដល់​ទំនាក់​ទំនង​ជាមួយ​ផែន​ទី​នៅ​ខាង​ឆ្វេង​ផ្នែក​ខាង​លើ​ ដែល​ត្រូវ​បាន​ដាក់​ទំហំ​ដូច​ដែល​បាន​កំណត់​នៅ​ក្នុង​ "
+"ធាតុ​ក្រាហ្វិក​និយម​ន័យ​ស្បែក​មេ​ ។\n"
+"\n"
+"តម្លៃ​នេះ​នឹង​ត្រូវ​ធ្វើ​បច្ចុប្បន្នភាព​​ដោយ​ស្វ័យ​ប្រវត្តិ​ បើ​អ្នក​ផ្លាស់​ទី​បន្លិច​ដោយ​ ការ​អូស និង​ទម្លាក់​រូប​តំណាង​យោង​"
+"របស់​វា​ ។"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, anchorx)
+#: ksirkcountrydefinition.ui:282
+#, kde-format
+msgid "Center of the highlighting x-coordinate"
+msgstr "ចំណុច​កណ្ដាល​របស់​កូអរដោនេ​ x  ដែល​បាន​បន្លិច"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, anchorx)
+#: ksirkcountrydefinition.ui:289
+#, kde-format
+msgid ""
+"Center of the highlighting x-coordinate.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the highlighting by "
+"dragging and dropping its cross icon."
+msgstr ""
+"ចំណុច​កណ្ដាល​របស់​កូអរដោនេ​ x ដែល​បាន​បន្លិច​ ។\n"
+"\n"
+"វា​ត្រូវ​បាន​​ផ្ដល់​ទំនាក់​ទំនង​ជាមួយ​ផែន​ទី​នៅ​ខាង​ឆ្វេង​ផ្នែក​ខាង​លើ​ ដែល​ត្រូវ​បាន​ដាក់​ទំហំ​ដូច​ដែល​បាន​កំណត់​នៅ​ក្នុង​ "
+"ធាតុ​ក្រាហ្វិក​និយម​ន័យ​ស្បែក​មេ​ ។\n"
+"\n"
+"តម្លៃ​នេះ​នឹង​ត្រូវ​ធ្វើ​បច្ចុប្បន្នភាព​​ដោយ​ស្វ័យ​ប្រវត្តិ​ បើ​អ្នក​ផ្លាស់​ទី​បន្លិច​ដោយ​ អូស​ និង​ទម្លាក់​រូប​តំណាង​យោង​របស់​"
+"វា​ ។"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, flagy)
+#: ksirkcountrydefinition.ui:299
+#, kde-format
+msgid "Flag's sprite top left point y-coordinate"
+msgstr "កូអរដោនេ​ y ចំណុច​ខាង​ឆ្វេង​ផ្នែក​ខាង​លើ​ sprite របស់​ទង់​​ជាតិ​ ។"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, flagy)
+#: ksirkcountrydefinition.ui:306
+#, kde-format
+msgid ""
+"Flag's sprite top left point y-coordinate.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the flag by drag and "
+"drop."
+msgstr ""
+"កូអរដោនេ​ y ចំណុច​ខាង​ឆ្វេង​ផ្នែក​ខាង​លើ​ sprite របស់​ទង់ជាតិ​​​​ ។\n"
+"\n"
+"វា​ត្រូវ​បាន​​ផ្ដល់​ទំនាក់​ទំនង​ជាមួយ​ផែន​ទី​នៅ​ខាង​ឆ្វេង​ផ្នែក​ខាង​លើ​ ដែល​ត្រូវ​បាន​ដាក់​ទំហំ​ដូច​ដែល​បាន​កំណត់​នៅ​ក្នុង​ "
+"ធាតុ​ក្រាហ្វិក​និយម​ន័យ​ស្បែក​មេ​ ។\n"
+"\n"
+"តម្លៃ​នេះ​នឹង​ត្រូវ​ធ្វើ​បច្ចុប្បន្នភាព​​​​ដោយ​ស្វ័យ​ប្រវត្តិ បើ​អ្នក​ផ្លាស់​ទី​ទង់ជាតិ​​​ ដោយ​អូស​ និង​​ទម្លាក់​ ។"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, flagx)
+#: ksirkcountrydefinition.ui:316
+#, kde-format
+msgid "Flag's sprite top left point x-coordinate"
+msgstr "កូអរដោនេ​ x ចំណុច​ខាង​ឆ្វេង​ផ្នែក​ខាង​លើ​ sprite របស់​ទង់​ជាតិ"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, flagx)
+#: ksirkcountrydefinition.ui:323
+#, kde-format
+msgid ""
+"Flag's sprite top left point x-coordinate.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the flag by drag and "
+"drop."
+msgstr ""
+"កូអរដោនេ​ x ចំណុច​ខាង​​ឆ្វេង​ផ្នែក​ខាង​លើ​ sprite របស់​ទង់ជាតិ ។\n"
+"\n"
+"វា​ត្រូវ​បាន​​ផ្ដល់​ទំនាក់​ទំនង​ជាមួយ​ផែន​ទី​នៅ​ខាង​ឆ្វេង​ផ្នែក​ខាង​លើ​ ដែល​ត្រូវ​បាន​ដាក់​ទំហំ​ដូច​ដែល​បាន​កំណត់​នៅ​ក្នុង​ "
+"ធាតុ​ក្រាហ្វិក​និយម​ន័យ​ស្បែក​មេ​ ។\n"
+"\n"
+"តម្លៃ​នេះ​នឹង​ត្រូវ​ធ្វើ​បច្ចុប្បន្នភាព​​ដោយ​ស្វ័យ​ប្រវត្តិ​ បើ​អ្នក​ផ្លាស់​ទី​ទង់​​​ជាតិ​ដោយ​អូស​ និង​ ទម្លាក់​ ។"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, neighboursbutton)
+#: ksirkcountrydefinition.ui:335
+#, kde-format
+msgid "Select this country's neighbors"
+msgstr "ជ្រើស​ប្រទេស​ជិត​ខាង​របស់​ប្រទេស​នេះ​"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, neighboursbutton)
+#: ksirkcountrydefinition.ui:340
+#, kde-format
+msgid ""
+"Click here to select this country's neighbors.\n"
+"\n"
+"A list of all the world's countries will be shown and you will be able to "
+"select the countries using the mouse and the Ctrl and Shift keys."
+msgstr ""
+"ចុច​ទី​នេះ​ ដើម្បី​ជ្រើស​ប្រទេស​ជិត​ខាង​របស់​ប្រទេស​នេះ​ ។\n"
+"\n"
+"បញ្ជី​ឈ្មោះ​របស់​ប្រទេស​ក្នុង​ពិភព​លោក​នឹង​ត្រូវ​បង្ហាញ ហើយ​អ្នក​នឹង​អាច​ ជ្រើស​ប្រទេស​ ដោយ​ប្រើ​កណ្ដុរ​ និង​គ្រាប់​ចុច​​ "
+"បញ្ជា និង​ ប្ដូរ​ បាន​ ។"
+
+#. i18n: ectx: property (text), widget (QPushButton, neighboursbutton)
+#: ksirkcountrydefinition.ui:343
+#, kde-format
+msgid "Neighbors:"
+msgstr "ប្រទេស​ជិត​ខាង ៖"
+
+#. i18n: ectx: property (toolTip), widget (QListWidget, neighbourslist)
+#: ksirkcountrydefinition.ui:350
+#, kde-format
+msgid "This country's neighbors"
+msgstr "ប្រទេស​ជិត​ខាង​របស់​ប្រទេស​នេះ​"
+
+#. i18n: ectx: property (whatsThis), widget (QListWidget, neighbourslist)
+#: ksirkcountrydefinition.ui:353
+#, kde-format
+msgid ""
+"This is the list of countries currently considered as neighbors of this "
+"country."
+msgstr ""
+"នេះ​គឺ​ជា​បញ្ជី​ឈ្មោះ​របស់​ប្រទេស​នានា​ដែល​បច្ចុប្បន្ន​ត្រូវ​បាន​ចាត់​ទុក​ថា​ជា​ប្រទេស​ជិត​ខាង​របស់​ប្រទេសនេះ​ ។"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkGoalDefinition)
+#: ksirkgoaldefinition.ui:13
+#, kde-format
+msgid "Goal"
+msgstr "គោល​ដៅ"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: ksirkgoaldefinition.ui:26
+#, kde-format
+msgid "Goal Type"
+msgstr "ប្រភេទ​គោល​ដៅ​"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, worldtype)
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, worldtype)
+#: ksirkgoaldefinition.ui:41 ksirkgoaldefinition.ui:44
+#, kde-format
+msgid "Conquer all the world"
+msgstr "ច្បាំង​យក​ពិភព​លោក​ទាំង​មូល​"
+
+#. i18n: ectx: property (text), widget (QRadioButton, worldtype)
+#: ksirkgoaldefinition.ui:47
+#, kde-format
+msgid "World conquest"
+msgstr "ការ​ច្បាំង​យក​ពិភព​លោក​"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, playertype)
+#: ksirkgoaldefinition.ui:54
+#, kde-format
+msgid "Eliminate a given player"
+msgstr "លុប​ចោល​អ្នក​លេង​ដែល​បាន​ផ្ដល់​ឲ្យ"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, playertype)
+#: ksirkgoaldefinition.ui:57
+#, kde-format
+msgid ""
+"<p>Eliminate a given player. If it is eliminated by another one, you will "
+"fall back to a <emphasis>Countries</emphasis> type of goal.</p>"
+msgstr ""
+"<p>លុប​ចោល​អ្នក​លេង​ដែល​បាន​ផ្ដល់​ឲ្យ​ ។ បើ​វា​ត្រូវ​បាន​លុប​​ចោល​ដោយ​អ្នក​ផ្សេង​ទៀត​  អ្នក​នឹង​ ធ្លាក់​ត្រឡប់​ទៅ​"
+"កាន់​ <emphasis>ប្រទេស​</emphasis> ប្រភេទ​គោល​ដៅ​ ។</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, playertype)
+#: ksirkgoaldefinition.ui:60
+#, kde-format
+msgid "Player"
+msgstr "អ្នក​លេង"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, countriestype)
+#: ksirkgoaldefinition.ui:67
+#, kde-format
+msgid "Conquer a given number of countries"
+msgstr "ច្បាំង​​យក​​ប្រទេស​​មួយ​ចំនួន​ដែល​បាន​ផ្ដល់​ឲ្យ​"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, countriestype)
+#: ksirkgoaldefinition.ui:72
+#, kde-format
+msgid ""
+"Conquer a given number of countries.\n"
+"\n"
+"You can also make the player to have to put a given number of armies on each "
+"country."
+msgstr ""
+"ច្បាំង​យក​​ប្រទេស​មួយ​ចំនួន​​ដែល​បាន​ផ្ដល់​ឲ្យ​ ។\n"
+"\n"
+"អ្នក​ក៏​អាច​ធ្វើ​ឲ្យ​អ្នក​លេង ​ដាក់​​ទ័ព​មួយ​ចំនួន​ដែល​បាន​ផ្ដល់​ឲ្យ​​​នៅ​ក្នុង​​ ប្រទេស​មួយ​ចំនួន​ផង​ដែរ​ ។"
+
+#. i18n: ectx: property (text), widget (QRadioButton, countriestype)
+#. i18n: ectx: attribute (title), widget (QWidget, tabCountries)
+#: ksirkgoaldefinition.ui:75 ksirkskindefinition.ui:256
+#, kde-format
+msgid "Countries"
+msgstr "ប្រទេស"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, continentstype)
+#: ksirkgoaldefinition.ui:82
+#, kde-format
+msgid "Conquer a given list of continents"
+msgstr "ច្បាំង​យក​បញ្ជី​ឈ្មោះ​ទ្វីប​ដែល​បាន​ផ្ដល់​ឲ្យ"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, continentstype)
+#: ksirkgoaldefinition.ui:85
+#, kde-format
+msgid ""
+"Conquer a given list of continents. You can also let the player choose one "
+"of their target continents."
+msgstr ""
+"ច្បាំង​យក​បញ្ជី​ឈ្មោះ​ទ្វីប​ដែល​បាន​ផ្ដល់​ឲ្យ​ ។ អ្នក​ក៏​អាច​អនុញ្ញាត​ឲ្យ​អ្នក​លេង​ជ្រើស​ទ្វីប​ មួយ​ដែល​ជា​គោល​ដៅ​របស់​ពួក​"
+"គេ​ផង​ដែរ​ ។"
+
+#. i18n: ectx: property (text), widget (QRadioButton, continentstype)
+#. i18n: ectx: attribute (title), widget (QWidget, tabContinents)
+#: ksirkgoaldefinition.ui:88 ksirkskindefinition.ui:318
+#, kde-format
+msgid "Continents"
+msgstr "ទ្វីប"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: ksirkgoaldefinition.ui:99 ksirkskindefinition.ui:147
+#, kde-format
+msgid "Description:"
+msgstr "សេចក្ដី​ពិពណ៌នា ៖"
+
+#. i18n: ectx: property (toolTip), widget (QTextEdit, description)
+#: ksirkgoaldefinition.ui:106
+#, kde-format
+msgid "Text describing the goal"
+msgstr "អត្ថបទ​ដែល​ពិពណ៌នា​ពី​គោលដៅ"
+
+#. i18n: ectx: property (whatsThis), widget (QTextEdit, description)
+#: ksirkgoaldefinition.ui:109
+#, kde-format
+msgid ""
+"<p>Text describing the goal. It should include several placeholders for "
+"various data depending on the goal type:</p><ul><li><i>World Conquest</i>: "
+"none</li><li><i>Player</i>: one for the player name and one for the number "
+"of countries fallback</li><li><i>Countries</i>: one for the number of "
+"countries and possibly a second one for the number of armies to put on each "
+"country</li><li><i>Continents</i>: one for each continent to conquer</li></"
+"ul>"
+msgstr ""
+"<p>អត្ថបទ​ដែល​ពិពណ៌នា​អំពី​គោល​ដៅ ។ វា​គួរ​​តែ​រួម​បញ្ចូល​កន្លែង​ដាក់​បី​បួន​សម្រាប់​ ទិន្នន័យ​​ផ្សេង​ៗ​ដែល​ពឹង​ផ្អែក​ទៅ​"
+"លើ​ប្រភេទ​គោល​ដៅ​ ៖</p><ul><li><i>ការ​ច្បាំង​យក​ពិភព​លោក​</i>  ៖ គ្មាន​</li><li><i>អ្នក​លេង​</"
+"i> ៖ កន្លែង​ដាក់​មួយ​សម្រាប់​ឈ្មោះ​អ្នក​លេង​ និង​មួយ​ទៀត​សម្រាប់​ចំនួន​​​​ប្រទេស​ដែល​ដក​ថយ​​</li><li><i>ប្រទេស​</"
+"i> ៖ កន្លែង​ដាក់​​មួយ​សម្រាប់​ចំនួន​ប្រទេស​ ហើយ​កន្លែង​ដាក់​ទី​ពីរ​អាច​សម្រាប់​ចំនួន​ទ័ព​ដែល​ត្រូវ​ដាក់​ក្នុង​ប្រទេស​"
+"នីមួយៗ​ </li><li><i>ទ្វីប​</i> ៖ ទ័ព​ម្នាក់​​សម្រាប់​ទ្វីប​នីមួយ​ៗ​ដែល​ត្រូវ​ច្បាំង​យក​</li></ul>"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ksirkgoaldefinition.ui:125
+#, kde-format
+msgid "Countries nb:"
+msgstr "ចំនួន​ប្រទេស​ ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ksirkgoaldefinition.ui:132
+#, kde-format
+msgid "Armies by country:"
+msgstr "កង​ទ័ព​តាម​ប្រទេស​ ៖"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, nbcountries)
+#: ksirkgoaldefinition.ui:139
+#, kde-format
+msgid "Number of countries to conquer"
+msgstr "ចំនួន​ប្រទេស​ដែល​ត្រូវ​ច្បាំង​យក​"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, nbcountries)
+#: ksirkgoaldefinition.ui:142
+#, kde-format
+msgid ""
+"<p>Number of countries to conquer in a <i>Countries</i> goal or as a "
+"fallback in a <i>Player</i> goal.</p>"
+msgstr ""
+"<p>ចំនួន​ប្រទេស​ដែល​ត្រូវ​ច្បាំង​យក​នៅ​​ក្នុង​គោល​ដៅ​ <i>ប្រទេស​</i> ឬ​ជា​ការ​ត្រឡប់​ទៅ​​​ក្នុង​គោល​ដៅ​ <i>អ្នក​លេង​"
+"</i> ។</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, armiesbycountry)
+#: ksirkgoaldefinition.ui:149
+#, kde-format
+msgid "Number of armies to put on each country"
+msgstr "ចំនួន​កង​ទ័ព​ត្រូវ​ដាក់​ក្នុង​ប្រទេស​នីមួយ​ៗ"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, armiesbycountry)
+#: ksirkgoaldefinition.ui:152
+#, kde-format
+msgid ""
+"<p>Number of armies to put on each country in a <i>Countries</i> goal.</p>"
+msgstr "<p>ចំនួន​កង​ទ័ព​ត្រូវ​ដាក់​ក្នុង​ប្រទេស​នីមួយៗ​នៅ​ក្នុង​គោល​ដៅ​ <i>ប្រទេស​</i> ។</p>"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, selectcontinentsbutton)
+#: ksirkgoaldefinition.ui:170
+#, kde-format
+msgid "Select the continents to conquer"
+msgstr "ជ្រើស​ទ្វីប​ត្រូវ​ច្បាំង​យក"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, selectcontinentsbutton)
+#: ksirkgoaldefinition.ui:173
+#, kde-format
+msgid ""
+"<p>Click this button to select the continents to conquer in a <i>Continents</"
+"i> goal.</p><p>You will be prompted with a list of this world's continents. "
+"Select those to conquer with the mouse and the Ctrl and Shift keys.</p>"
+msgstr ""
+"<p>ចុច​ប៊ូតុង​នេះ​ ដើម្បី​ជ្រើស​ទ្វីប​ត្រូវ​ច្បាំង​យក​នៅ​ក្នុង​គោល​ដៅ​ <i>ទ្វីប​</i> ។</p><p>បញ្ជី​ឈ្មោះ​របស់​ទ្វីប​"
+"ក្នុង​ពិភព​លោក​នឹង​បង្ហាញ​ឲ្យ​អ្នក​ឃើញ​ ។ ជ្រើស​ទ្វីប​ដែល​ត្រូវ​ច្បាំង​យក​ដោយ​ប្រើ​ កណ្ដុរ និង​គ្រាប់​ចុច​បញ្ជា​ និង​ប្ដូរ​ "
+"។</p>"
+
+#. i18n: ectx: property (text), widget (QPushButton, selectcontinentsbutton)
+#: ksirkgoaldefinition.ui:176
+#, kde-format
+msgid "Select Continents"
+msgstr "ជ្រើស​ទ្វីប"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, anycontinent)
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, anycontinent)
+#: ksirkgoaldefinition.ui:183 ksirkgoaldefinition.ui:186
+#, kde-format
+msgid "Check to let the player choose one of the continents to conquer"
+msgstr "គូស​ធីក ​ដើម្បី​អនុញ្ញាត​ឲ្យ​អ្នក​លេង​ជ្រើស​ទ្វីប​ណា​មួយ​ដែល​ត្រូវ​ច្បាំង​យក​"
+
+#. i18n: ectx: property (text), widget (QCheckBox, anycontinent)
+#: ksirkgoaldefinition.ui:189
+#, kde-format
+msgid "Any"
+msgstr "ណា​មួយ"
+
+#. i18n: ectx: property (toolTip), widget (QListWidget, continentslist)
+#: ksirkgoaldefinition.ui:198
+#, kde-format
+msgid "List of the continents to conquer"
+msgstr "បញ្ជី​ឈ្មោះ​របស់​ទ្វីប​ដែល​ត្រូវ​ច្បាំង​យក​"
+
+#. i18n: ectx: property (whatsThis), widget (QListWidget, continentslist)
+#: ksirkgoaldefinition.ui:201
+#, kde-format
+msgid ""
+"<p>List of the continents to conquer in a <i>Continents</i> goal.</p><p>You "
+"can change this list by clicking on the \"Select continents\" button above.</"
+"p>"
+msgstr ""
+"<p>បញ្ជី​ឈ្មោះ​របស់​ទ្វីប​ដែល​ត្រូវ​ច្បាំង​យក​នៅ​ក្នុង​គោល​ដៅ​ <i>ទ្វីប​</i> ។</p><p>អ្នក​ អាច​ផ្លាស់​ប្ដូរ​បញ្ជី​"
+"នេះ​ដោយ​ចុច​លើ​ប៊ូតុង​  \"ជ្រើស​ទ្វីប​\" នៅ​ខាង​លើ​ ។</p>"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkNationalityDefinition)
+#: ksirknationalitydefinition.ui:13
+#, kde-format
+msgid "Nationality"
+msgstr "សញ្ជាតិ"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ksirknationalitydefinition.ui:20
+#, kde-format
+msgid "Name:"
+msgstr "ឈ្មោះ​ ៖"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, name)
+#: ksirknationalitydefinition.ui:27
+#, kde-format
+msgid "Nationality name"
+msgstr "ឈ្មោះ​សញ្ជាតិ"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, name)
+#: ksirknationalitydefinition.ui:30
+#, kde-format
+msgid ""
+"<p>Nationality name. The name of the player country. Can be the name of an "
+"existing country in case of a <i>realistic</i> world.</p><p>This string "
+"should be unique in the skin.</p>"
+msgstr ""
+"<p>ឈ្មោះ​សញ្ជាតិ ។ ឈ្មោះ​ប្រទេស​របស់​អ្នក​លេង​ ។ អាច​ជា​ឈ្មោះ​របស់​ ប្រទេស​ដែល​មាន​ស្រាប់​ក្នុង​ករណី​ដែល​ពិភព​"
+"លោក​ <i>មាន​លក្ខណៈ​ពិត​</i> ។</p><p>ខ្សែ​អក្សរ​នេះ​គួរ​តែ​ជា​ខ្សែ​អក្សរ​តែ​មួយ​នៅ​​ក្នុង​ស្បែក ។</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ksirknationalitydefinition.ui:43
+#, kde-format
+msgid "Leader name:"
+msgstr "ឈ្មោះ​មេ​ដឹក​នាំ​ ៖"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, leader)
+#: ksirknationalitydefinition.ui:50
+#, kde-format
+msgid "Leader name"
+msgstr "ឈ្មោះ​មេ​ដឹក​នាំ​"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, leader)
+#: ksirknationalitydefinition.ui:53
+#, kde-format
+msgid ""
+"<p>Name of this nationality leader. In the case of a <i>realistic</i> skin, "
+"this could be the name of a well known king, president, etc.</p>"
+msgstr ""
+"<p>ឈ្មោះ​របស់​មេ​ដឹក​នាំ​សញ្ជាតិ ។ ក្នុង​ករណី​ស្បែក​ <i>មាន​លក្ខណៈ​ពិត</i>  វា​អាច​ជា​ឈ្មោះ​របស់​ស្ដេច​ ឬ​"
+"ប្រធានាធិបតី​​ដែល​ល្បី​ ។ល។</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ksirknationalitydefinition.ui:60
+#, kde-format
+msgid "Flag ID in pool:"
+msgstr "លេង​សម្គាល់​ទង់​ជាតិ​ក្នុង​អាង ៖"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, flag)
+#: ksirknationalitydefinition.ui:67
+#, kde-format
+msgid "Flag sprite id in the pool SVG"
+msgstr "លេខ​សម្គាល់​ sprite ​របស់​ទង់​ជាតិ​នៅ​ក្នុង​អាង​ SVG"
+
+#. i18n: ectx: property (whatsThis), widget (KComboBox, flag)
+#: ksirknationalitydefinition.ui:70
+#, kde-format
+msgid "Flag sprite id in the pool SVG (pool.svg)."
+msgstr "លេខ​សម្គាល់​ sprite របស់​ទង់​ជាតិ​នៅ​ក្នុង​អាង​ SVG (pool.svg) ។"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, skindefinition)
+#: ksirkskindefinition.ui:13
+#, kde-format
+msgid "Skin Definition"
+msgstr "និយម​ន័យ​របស់​​ស្បែក"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ksirkskindefinition.ui:22
+#, kde-format
+msgid "Skin name:"
+msgstr "ឈ្មោះ​របស់​​ស្បែក​ ៖"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, skinNameLineEdit)
+#: ksirkskindefinition.ui:29
+#, kde-format
+msgid "The skin's short name"
+msgstr "ឈ្មោះ​កាត់​របស់​ស្បែក"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, skinNameLineEdit)
+#: ksirkskindefinition.ui:35
+#, kde-format
+msgid ""
+"Type here the skin's short name. This should be an identifier-like string"
+msgstr "វាយ​បញ្ចូល​ឈ្មោះ​កាត់​របស់​ស្បែក​នៅ​ទី​នេះ ។ វា​គួរ​តែ​ជា​ខ្សែ​អក្សរ​ដូច​​គ្រឿង​សម្គាល់​"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ksirkskindefinition.ui:46
+#, fuzzy, kde-format
+#| msgid "Width x Height"
+msgid "Width x height:"
+msgstr "ទទឹង​ x កម្ពស់​"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, widthLineEdit)
+#: ksirkskindefinition.ui:53
+#, kde-format
+msgid "Map's width"
+msgstr "ទទឹង​របស់​ផែន​ទី"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, widthLineEdit)
+#: ksirkskindefinition.ui:57
+#, kde-format
+msgid ""
+"This is the map's width. The map SVG element will be by default drawn on an "
+"image of this width. All positions on the map are expressed relatively to "
+"this dimension.\n"
+msgstr ""
+"នេះ​គឺ​ជា​ទទឹង​​របស់​ផែន​ទី​ ។ ធាតុ SVG របស់​ផែន​ទី​នឹង​ត្រូវ​គូរ​តាម​លំនាំ​ដើម​នៅ​លើ​ រូប​ភាព​នៃ​ទទឹង​នេះ​ ។ គ្រប់​ទី​"
+"តាំង​ទាំង​អស់​នៅ​លើ​ផែន​ទី​ត្រូវ​បង្ហាញ​ថា​មាន​ទំនាក់​ទំនង​នឹង​វិមាត្រ​នេះ​ ។\n"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, heightLineEdit)
+#: ksirkskindefinition.ui:71
+#, kde-format
+msgid "Map's height"
+msgstr "កម្ពស់​របស់​ផែន​ទី"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, heightLineEdit)
+#: ksirkskindefinition.ui:75
+#, kde-format
+msgid ""
+"This is the map's height. The map SVG element will be by default drawn on an "
+"image of this height All positions on the map are expressed relatively to "
+"this dimension.\n"
+msgstr ""
+"នេះ​គឺ​ជា​កម្ពស់​របស់​ផែន​ទី​ ។ ធាតុ​ SVG របស់​ផែន​ទី​នឹង​ត្រូវ​គូរ​តាម​លំនាំ​ដើម​លើ​ រូប​ភាព​នៃ​កម្ពស់​នេះ​ ។ គ្រប់​ទី​"
+"តាំង​ទាំង​អស់​នៅ​លើ​ផែន​ទី​ត្រូវ​​​បង្ហាញ​ថា​មាន​ទំនាក់​ទំនង​នឹង​​វិមាត្រ​នេះ​ ។\n"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: ksirkskindefinition.ui:90
+#, kde-format
+msgid "Map Font"
+msgstr "ពុម្ពអក្សរ​​​ផែន​ទី"
+
+#. i18n: ectx: property (toolTip), widget (KFontRequester, fontrequester)
+#: ksirkskindefinition.ui:96
+#, kde-format
+msgid "Font used to draw country names"
+msgstr "ពុម្ព​អក្សរ​ដែល​ត្រូវ​បាន​ប្រើ​សម្រាប់​សរសេរ​ឈ្មោះ​ប្រទេស"
+
+#. i18n: ectx: property (whatsThis), widget (KFontRequester, fontrequester)
+#: ksirkskindefinition.ui:99
+#, kde-format
+msgid "This font will be used to draw the country names on the map"
+msgstr "ពុម្ព​អក្សរ​នេះ​នឹង​ត្រូវ​ប្រើ​សម្រាប់​សរសេរ​ឈ្មោះ​ប្រទេស​នៅ​លើ​ផែន​ទី​ "
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: ksirkskindefinition.ui:108
+#, kde-format
+msgid "Fg:"
+msgstr "ផ្ទៃ​ខាង​មុខ​ ៖"
+
+#. i18n: ectx: property (toolTip), widget (KColorButton, fgcolorbutton)
+#: ksirkskindefinition.ui:115
+#, kde-format
+msgid "Foreground color for country names"
+msgstr "ពណ៌​ផ្ទៃ​ខាង​មុខ​សម្រាប់​ឈ្មោះ​ប្រទេស"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, fgcolorbutton)
+#: ksirkskindefinition.ui:118
+#, kde-format
+msgid ""
+"This color will be used to draw the foreground of the country names on the "
+"map"
+msgstr "ពណ៌​នេះ​នឹង​ត្រូវ​ប្រើ​សម្រាប់​គូស​ផ្ទៃ​ខាង​មុខ​នៃ​ឈ្មោះ​ប្រទេស​នៅ​លើ​​ផែន​ទី"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: ksirkskindefinition.ui:125
+#, kde-format
+msgid "Bg:"
+msgstr "ផ្ទៃ​ខាង​ក្រោយ​ ៖"
+
+#. i18n: ectx: property (toolTip), widget (KColorButton, bgcolorbutton)
+#: ksirkskindefinition.ui:132
+#, kde-format
+msgid "Background color for country names"
+msgstr "ពណ៌​ផ្ទៃ​ខាង​ក្រោយ​សម្រាប់​ឈ្មោះ​ប្រទេស"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, bgcolorbutton)
+#: ksirkskindefinition.ui:135
+#, kde-format
+msgid ""
+"This color will be used to draw the background of the country names on the "
+"map"
+msgstr "ពណ៌​នេះ​នឹង​ត្រូវ​ប្រើ​សម្រាប់​គូរ​ផ្ទៃ​ខាង​ក្រោយ​នៃ​ឈ្មោះ​ប្រទេស​នៅ​លើ​​ផែន​ទី​"
+
+#. i18n: ectx: property (toolTip), widget (QTextEdit, descriptionTextEdit)
+#: ksirkskindefinition.ui:160
+#, kde-format
+msgid "Human readable description of the skin"
+msgstr "ការ​ពិពណ៌នា​អំពី​ស្បែក​ដែល​មនុស្ស​អាច​អាន​បាន​"
+
+#. i18n: ectx: property (whatsThis), widget (QTextEdit, descriptionTextEdit)
+#: ksirkskindefinition.ui:163
+#, kde-format
+msgid ""
+"Describe here the skin, its style, its story, the intent of its author(s), "
+"etc."
+msgstr "ពិពណ៌នា​​​អំពី​ស្បែក រចនាប័ទ្ម រឿង​ បំណង​របស់​អ្នក​និពន្ធ​ ។ល។ នៅ​ទីនេះ​"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabSprites)
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkSpritesDefinition)
+#: ksirkskindefinition.ui:177 ksirkspritesdefinition.ui:13
+#, kde-format
+msgid "Sprites"
+msgstr "Sprites"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: ksirkskindefinition.ui:184
+#, fuzzy, kde-format
+#| msgid ""
+#| "Edit the sprite definitions\n"
+#| "in the right dock"
+msgid ""
+"Edit the sprite definitions\n"
+"in the right dock."
+msgstr ""
+"កែ​​សម្រួល​និយម​​ន័យ​របស់​ sprite \n"
+"នៅ​ក្នុង​​ផែ​ដ៏​ត្រឹម​ត្រូវ​"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabNationalities)
+#: ksirkskindefinition.ui:192
+#, kde-format
+msgid "Nationalities"
+msgstr "សញ្ជាតិ"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, newNationalityButton)
+#: ksirkskindefinition.ui:200
+#, kde-format
+msgid "Creates a new Nationality"
+msgstr "បង្កើត​សញ្ជាតិ​ថ្មី"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, newNationalityButton)
+#: ksirkskindefinition.ui:203
+#, kde-format
+msgid "Click here to add a new nationality. You will be prompted for its name."
+msgstr "ចុច​ទី​នេះ​ដើម្បី​បន្ថែម​សញ្ជាតិ​ថ្មី​ ។ វា​នឹង​បង្ហាញ​ឈ្មោះ​ឲ្យ​អ្នក​ឃើញ។"
+
+#. i18n: ectx: property (text), widget (QPushButton, newNationalityButton)
+#: ksirkskindefinition.ui:206
+#, kde-format
+msgid "New Nationality"
+msgstr "សញ្ជាតិ​ថ្មី"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, deleteNationalityButton)
+#: ksirkskindefinition.ui:226
+#, kde-format
+msgid "Removes the currently selected nationality"
+msgstr "យក​សញ្ជាតិ​ដែល​បាន​ជ្រើស​បច្ចុប្បន្ន​ចេញ"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, deleteNationalityButton)
+#: ksirkskindefinition.ui:229
+#, kde-format
+msgid ""
+"Click here to remove the currently selected nationality. You will be asked "
+"for confirmation."
+msgstr "ចុច​ទី​នេះ​ដើម្បី​យក​សញ្ជាតិ​ដែល​បាន​ជ្រើស​បច្ចុប្បន្ន​ចេញ ។ អ្នក​នឹង​ត្រូវ​គេ​សុំ​ការ​អះ​អាង ។"
+
+#. i18n: ectx: property (text), widget (QPushButton, deleteNationalityButton)
+#. i18n: ectx: property (text), widget (QPushButton, deleteCountryButton)
+#. i18n: ectx: property (text), widget (QPushButton, deleteContinentButton)
+#. i18n: ectx: property (text), widget (QPushButton, deleteGoalButton)
+#: ksirkskindefinition.ui:232 ksirkskindefinition.ui:296
+#: ksirkskindefinition.ui:358 ksirkskindefinition.ui:420
+#, kde-format
+msgid "X"
+msgstr "X"
+
+#. i18n: ectx: property (toolTip), widget (QListWidget, nationalitieslist)
+#: ksirkskindefinition.ui:241
+#, kde-format
+msgid "Nationality list"
+msgstr "បញ្ជី​ឈ្មោះ​សញ្ជាតិ"
+
+#. i18n: ectx: property (whatsThis), widget (QListWidget, nationalitieslist)
+#: ksirkskindefinition.ui:248
+#, kde-format
+msgid ""
+"This list shows the nationalities defined.\n"
+"\n"
+"Each nationality name should be unique. Select a nationality and edit its "
+"details in the right dock.\n"
+"\n"
+"During the game, each player must choose a nationality. As such, you should "
+"add at least as many nationalities as the maximum number of players for this "
+"skin."
+msgstr ""
+"បញ្ជី​នេះ​នឹង​បង្ហាញ​សញ្ជាតិ​ដែល​បាន​កំណត់ ។\n"
+"\n"
+"ឈ្មោះ​សញ្ជាតិ​នីមួយៗ​ត្រូវ​តែ​មាន​តែ​មួយ ។ ជ្រើស​សញ្ជាតិ​ និង​កែ​សម្រួល​សេចក្ដី​លម្អិត​របស់​វា​ នៅ​ក្នុង​ផែ​ដ៏​ត្រឹម​ត្រូវ​ "
+"។\n"
+"\n"
+"អំឡុង​ពេល​លេង​ល្បែង​ អ្នក​​លេង​ម្នាក់​ៗ​ត្រូវ​តែ​ជ្រើស​សញ្ជាតិ​ ។  ដូច្នេះ​ អ្នក​គួរ​តែ​ បន្ថែម​សញ្ជាតិ​យ៉ាង​ហោច​ណាស់​"
+"ឲ្យ​បាន​ច្រើន​តាម​ចំនួន​អ្នក​លេង​អតិបរមា​សម្រាប់​ ស្បែក​នេះ​ ។"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, newCountryButton)
+#: ksirkskindefinition.ui:264
+#, kde-format
+msgid "Creates a new country"
+msgstr "បង្កើត​​ប្រទេស​ថ្មី"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, newCountryButton)
+#: ksirkskindefinition.ui:267
+#, kde-format
+msgid "Click here to add a new country. You will be prompted for its name."
+msgstr "ចុច​ទី​នេះ ដើម្បី​បន្ថែម​ប្រទេស​ថ្មី​ ។ វា​នឹង​បង្ហាញ​ឈ្មោះ​ឲ្យ​អ្នក​ឃើញ​​ ។"
+
+#. i18n: ectx: property (text), widget (QPushButton, newCountryButton)
+#: ksirkskindefinition.ui:270
+#, kde-format
+msgid "New Country"
+msgstr "ប្រទេស​ថ្មី"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, deleteCountryButton)
+#: ksirkskindefinition.ui:290
+#, kde-format
+msgid "Removes the currently selected country"
+msgstr "យក​ប្រទេស​ដែល​បា​ន​ជ្រើស​បច្ចុប្បន្ន​ចេញ"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, deleteCountryButton)
+#: ksirkskindefinition.ui:293
+#, kde-format
+msgid ""
+"Click here to remove the currently selected country. You will be asked for "
+"confirmation."
+msgstr "ចុច​ទី​នេះ​ដើម្បី​យក​ប្រទេស​ដែល​បាន​ជ្រើស​បច្ចុប្បន្ន​ចេញ​ ។ អ្នក​នឹង​ត្រូវ​គេ​សុំ​ការ​អះអាង​ ។"
+
+#. i18n: ectx: property (toolTip), widget (QListWidget, countrieslist)
+#. i18n: ectx: property (toolTip), widget (QListWidget, countriesList)
+#: ksirkskindefinition.ui:305 ksirkskineditorcountriesselectiondialog.ui:19
+#, kde-format
+msgid "Country list"
+msgstr "បញ្ជី​ឈ្មោះ​ប្រទេស"
+
+#. i18n: ectx: property (whatsThis), widget (QListWidget, countrieslist)
+#: ksirkskindefinition.ui:310
+#, kde-format
+msgid ""
+"This list shows the countries defined.\n"
+"\n"
+"Each country name should be unique. Select a country and edit its details in "
+"the right dock."
+msgstr ""
+"បញ្ជី​នេះ​នឹង​បង្ហាញ​ប្រទេស​ដែល​បាន​កំណត់​ ។\n"
+"\n"
+"ឈ្មោះ​ប្រទេស​នីមួយៗ​គួរ​តែ​មាន​តែ​មួយ​ ។ ជ្រើស​ប្រទេស​ និង​កែ​សម្រួល​សេចក្ដី​លម្អិត​របស់​វា​នៅ​ក្នុង​ ផែ​ត្រឹម​ត្រូវ​ ។"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, newContinentButton)
+#: ksirkskindefinition.ui:326
+#, kde-format
+msgid "Creates a new continent"
+msgstr "បង្កើត​ទ្វីប​ថ្មី"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, newContinentButton)
+#: ksirkskindefinition.ui:329
+#, kde-format
+msgid "Click here to add a new continent. You will be prompted for its name."
+msgstr "ចុច​ទី​នេះ​ដើម្បី​បន្ថែម​ទ្វីប​ថ្មី​ ។ វា​នឹង​បង្ហាញ​ឈ្មោះ​ឲ្យ​អ្នក​ឃើញ​ ។"
+
+#. i18n: ectx: property (text), widget (QPushButton, newContinentButton)
+#: ksirkskindefinition.ui:332
+#, kde-format
+msgid "New Continent"
+msgstr "ទ្វីប​ថ្មី"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, deleteContinentButton)
+#: ksirkskindefinition.ui:352
+#, kde-format
+msgid "Removes the currently selected continent"
+msgstr "យក​ទ្វីប​ដែល​បាន​ជ្រើស​បច្ចុប្បន្ន​ចេញ​"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, deleteContinentButton)
+#: ksirkskindefinition.ui:355
+#, kde-format
+msgid ""
+"Click here to remove the currently selected continent. You will be asked for "
+"confirmation."
+msgstr "ចុច​ទី​នេះ​ដើម្បី​យក​ទ្វីប​ដែល​បាន​ជ្រើស​បច្ចុប្បន្ន​ចេញ ។ អ្នក​នឹង​ត្រូវ​គេ​សុំ​ការ​អះ​អាង​ ។"
+
+#. i18n: ectx: property (toolTip), widget (QListWidget, continentslist)
+#: ksirkskindefinition.ui:367
+#, kde-format
+msgid "Continent list"
+msgstr "បញ្ជី​ឈ្មោះ​ទ្វីប"
+
+#. i18n: ectx: property (whatsThis), widget (QListWidget, continentslist)
+#: ksirkskindefinition.ui:372
+#, kde-format
+msgid ""
+"This list shows the continents defined.\n"
+"\n"
+"Each continent name should be unique. Select a continent and edit its "
+"details in the right dock."
+msgstr ""
+"បញ្ជី​នេះ​នឹង​បង្ហាញ​ទ្វីប​ដែល​បាន​កំណត់​  ។\n"
+"\n"
+"ឈ្មោះ​ទ្វីប​នីមួយ​ៗ​គួរ​តែ​មាន​តែ​មួយ ។ ជ្រើស​ទ្វីប​ និង​កែ​សម្រួល​សេចក្ដី​លម្អិត​របស់​វា​ នៅ​ក្នុង​ផែ​ដ៏​ត្រឹម​ត្រូវ​ ។"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabGoals)
+#: ksirkskindefinition.ui:380
+#, kde-format
+msgid "Goals"
+msgstr "គោល​ដៅ"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, newGoalButton)
+#: ksirkskindefinition.ui:388
+#, kde-format
+msgid "Creates a new goal"
+msgstr "បង្កើត​គោល​ដៅ​ថ្មី​"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, newGoalButton)
+#: ksirkskindefinition.ui:391
+#, kde-format
+msgid "Click here to add a new goal. It will be named automatically."
+msgstr "ចុច​ទី​នេះ​ដើម្បី​បន្ថែម​គោល​ដៅ​ថ្មី​ ។ វា​នឹង​ត្រូវ​បាន​ដាក់​ឈ្មោះ​ដោយ​ស្វ័យ​ប្រវត្តិ ។"
+
+#. i18n: ectx: property (text), widget (QPushButton, newGoalButton)
+#: ksirkskindefinition.ui:394
+#, kde-format
+msgid "New Goal"
+msgstr "គោល​ដៅ​ថ្មី"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, deleteGoalButton)
+#: ksirkskindefinition.ui:414
+#, kde-format
+msgid "Removes the currently selected goal"
+msgstr "យក​គោល​ដៅ​ដែល​បាន​ជ្រើស​បច្ចុប្បន្ន​ចេញ"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, deleteGoalButton)
+#: ksirkskindefinition.ui:417
+#, kde-format
+msgid ""
+"Click here to remove the currently selected goal. You will be asked for "
+"confirmation."
+msgstr "ចុច​ទី​នេះ​ ដើម្បី​យក​គោល​ដៅ​ដែល​បាន​ជ្រើស​បច្ចុប្បន្ន​ចេញ​ ។ អ្នក​នឹង​ត្រូវ​គេ​សុំ​ការ​អះអាង​ ។"
+
+#. i18n: ectx: property (toolTip), widget (QListWidget, goalslist)
+#: ksirkskindefinition.ui:429
+#, kde-format
+msgid "Goal list"
+msgstr "បញ្ជី​គោល​ដៅ"
+
+#. i18n: ectx: property (whatsThis), widget (QListWidget, goalslist)
+#: ksirkskindefinition.ui:434
+#, kde-format
+msgid ""
+"This list shows the goals defined.\n"
+"\n"
+"Each goal name should be unique. Select a goal and edit its details in the "
+"right dock."
+msgstr ""
+"បញ្ជី​នេះ​នឹង​បង្ហាញ​គោល​ដៅ​ដែល​បាន​កំណត់​ ។\n"
+"\n"
+"ឈ្មោះ​គោល​ដៅ​នីមួយៗ​គួរ​តែ​មាន​តែ​មួយ​ ។ ជ្រើស​គោល​ដៅ​ និង​កែ​សម្រួល​សេចក្ដី​លម្អិត​របស់​វា​នៅ​ក្នុង​ ផែ​ត្រឹម​ត្រូវ​ ។"
+
+#: ksirkSkinEditorConfigDialog.cpp:55
+#, kde-format
+msgid "Preferences"
+msgstr "ចំណូល​ចិត្ត"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, CountriesSelectionDialog)
+#: ksirkskineditorcountriesselectiondialog.ui:13
+#, kde-format
+msgid "Country Selection Dialog"
+msgstr "ប្រអប់​ជ្រើស​ប្រទេស"
+
+#. i18n: ectx: property (whatsThis), widget (QListWidget, countriesList)
+#: ksirkskineditorcountriesselectiondialog.ui:22
+#, kde-format
+msgid ""
+"List of all the countries defined in the world. Currently selected countries "
+"are highlighted. You can modify the selection using the mouse and Ctrl and "
+"Shift keys."
+msgstr ""
+"បញ្ជី​ឈ្មោះ​ប្រទេស​ទាំង​អស់​ដែល​បាន​កំណត់​នៅ​ក្នុង​ពិភព​លោក​ ។ ប្រទេស​ដែល​បាន​ជ្រើស​បច្ចុប្បន្ន​ នឹង​ត្រូវ​បន្លិច​ពណ៌​ ។ "
+"អ្នក​អាច​កែ​ប្រែ​ការ​ជ្រើស​នេះ​ ដោយ​ប្រើ​កណ្ដុរ​ និង​គ្រាប់​ចុច​ បញ្ជា និង​ប្ដូរ​ ។"
+
+#. i18n: ectx: Menu (game)
+#: ksirkskineditorui.rc:10
+#, kde-format
+msgid "&Game"
+msgstr "ល្បែង​"
+
+#. i18n: ectx: Menu (settings)
+#: ksirkskineditorui.rc:18
+#, kde-format
+msgid "&Settings"
+msgstr "ការ​កំណត់"
+
+#. i18n: ectx: Menu (help)
+#: ksirkskineditorui.rc:20
+#, kde-format
+msgid "&Help"
+msgstr "ជំនួយ"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: ksirkskineditorui.rc:24
+#, kde-format
+msgid "Main Toolbar"
+msgstr "របារ​ឧបករណ៍​មេ"
+
+#. i18n: ectx: property (windowTitle), widget (QFrame, skinEditor)
+#: ksirkskineditorwidget.ui:20 main.cpp:52 main.cpp:54
+#, kde-format
+msgid "KsirK Skin Editor"
+msgstr "កម្ម​វិធី​កែ​សម្រួល​ស្បែក​​ KsirK "
+
+#. i18n: ectx: property (toolTip), widget (QScrollArea, buttonsScrollArea)
+#: ksirkskineditorwidget.ui:46
+#, kde-format
+msgid "Sprite placement buttons"
+msgstr "ប៊ូតុង​ដាក់​ Sprite "
+
+#. i18n: ectx: property (whatsThis), widget (QScrollArea, buttonsScrollArea)
+#: ksirkskineditorwidget.ui:49
+#, kde-format
+msgid ""
+"Use the buttons here to do the initial placement of the corresponding sprite "
+"for the currently selected country. The buttons are available only if the "
+"sprite is not already placed. "
+msgstr ""
+"ប្រើ​ប៊ូតុង​នៅ​ទី​នេះ​ ដើម្បី​​ដាក់​ sprite  ដែល​​ត្រូវ​គ្នា​ដំបូង​ សម្រាប់​ប្រទេស​ដែល​បាន​ជ្រើស​បច្ចុប្បន្ន​ ។ ប៊ូតុង​"
+"អាច​ប្រើ​បាន​ លុះ​ត្រា​តែ​ sprite មិន​ទាន់​ត្រូវ​បាន​ដាក់​រួច​ហើយ​ ។"
+
+#. i18n: ectx: property (toolTip), widget (QScrollArea, mapScrollArea)
+#: ksirkskineditorwidget.ui:69
+#, kde-format
+msgid "Map with sprites"
+msgstr "ផែន​ទី​ដែល​មាន​ sprites"
+
+#. i18n: ectx: property (whatsThis), widget (QScrollArea, mapScrollArea)
+#: ksirkskineditorwidget.ui:74
+#, kde-format
+msgid ""
+"Shows the map of the skin with all already placed sprites, the country "
+"names, and the highlighting anchors.\n"
+"\n"
+"Drag and drop the sprites, the country names, and the highlighting anchors "
+"to change their place."
+msgstr ""
+"បង្ហាញ​ផែន​ទី​របស់​ស្បែក​ដែល​មាន​ sprites  ឈ្មោះ​ប្រទេស​  និង​យុថ្កា​បន្លិច​ ដែល​បាន​ដាក់​ទីតាំង​រួច​ហើយ​ ។\n"
+"\n"
+"អូស​ និង​ទម្លាក់​ sprites  ឈ្មោះ​ប្រទេស​ និង​យុថ្កា​បន្លិច​ ដើម្បី ផ្លាស់​ប្ដូរ​ទី​កន្លែង​របស់​ពួក​វា​ ។"
+
+#. i18n: ectx: property (text), widget (QLabel, label_26)
+#: ksirkspritesdefinition.ui:29
+#, kde-format
+msgid ""
+"Width between fighter\n"
+"and flag:"
+msgstr ""
+"ទំហំ​ទំនេរ​​នៅ​ចន្លោះ​អ្នក​ប្រយុទ្ធ\n"
+"និង​ទង់ជាតិ​​ ៖"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, widthDiffLineEdit)
+#: ksirkspritesdefinition.ui:39
+#, kde-format
+msgid "Empty space size between fighting cannon and flag"
+msgstr "ទំហំ​កន្លែង​ទំនេរ​នៅ​ចន្លោះ​កាំ​ភ្លើង​ធំ​សម្រាប់​ប្រយុទ្ធ​ និង​ទង់​ជាតិ​"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, widthDiffLineEdit)
+#: ksirkspritesdefinition.ui:44
+#, kde-format
+msgid ""
+"Empty space size between fighting cannon and flag.\n"
+"\n"
+"During a battle, firing (end exploding) cannons of each player are placed in "
+"both sides of the defender country flag. This parameter is the number of "
+"pixels between the flag and each cannon, measured relatively to the map base "
+"size as set in the main skin definition panel."
+msgstr ""
+"ទំហំ​កន្លែង​ទំនេរ​នៅ​ចន្លោះ​កាំ​ភ្លើង​ធំ​សម្រាប់​ប្រយុទ្ធ​ និង​ទង់ជាតិ​​ ។\n"
+"\n"
+"អំឡុង​ពេល​ធ្វើ​សង្គ្រាម​ បាញ់​ (បញ្ចប់​ការ​ផ្ទុះ​​) កាំ​ភ្លើង​ធំ​របស់​អ្នក​​លេង​ម្នាក់​ៗ​ដែល​ត្រូវ​បាន​ដាក់​ទី​តាំង​នៅ​ ផ្នែក​"
+"ទាំង​សង​ខាង​នៃ​ទង់​ជាតិ​ប្រទេស​របស់​អ្នក​ការពារ​ ។ ប៉ារ៉ាម៉ែត្រ​គឺ​ជា​ចំនួន​ ភីកសែល​នៅ​ចន្លោះ​ទង់ជាតិ​​ និង​កាំ​ភ្លើង​ធំ​"
+"នីមួយៗ​ ដែល​ត្រូវ​បាន​វាស់​ទំហំ​មូលដ្ឋាន​​ផែន​ទី​ ដូច​ដែល​បាន​កំណត់​នៅ​ក្នុង​បន្ទះ​និយម​ន័យ​ស្បែក​មេ​ ។"
+
+#. i18n: ectx: property (toolTip), widget (QTabWidget, ktabwidget)
+#: ksirkspritesdefinition.ui:53
+#, kde-format
+msgid "Data about all sprites"
+msgstr "ទិន្នន័យ​​​អំពី​ sprites ទាំង​អស់​"
+
+#. i18n: ectx: property (toolTip), widget (QWidget, flagTab)
+#: ksirkspritesdefinition.ui:63
+#, kde-format
+msgid "Data about the flag sprite"
+msgstr "ទិន្នន័យ​អំពី​ sprite  របស់​ទង់ជាតិ​​"
+
+#. i18n: ectx: attribute (title), widget (QWidget, flagTab)
+#: ksirkspritesdefinition.ui:66
+#, kde-format
+msgid "Flag"
+msgstr "ទង់ជាតិ"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#. i18n: ectx: property (text), widget (QLabel, label_18)
+#. i18n: ectx: property (text), widget (QLabel, label_22)
+#: ksirkspritesdefinition.ui:74 ksirkspritesdefinition.ui:173
+#: ksirkspritesdefinition.ui:264 ksirkspritesdefinition.ui:357
+#: ksirkspritesdefinition.ui:452 ksirkspritesdefinition.ui:547
+#, kde-format
+msgid "Width:"
+msgstr "ទទឹង​ ៖"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, flagw)
+#: ksirkspritesdefinition.ui:81
+#, kde-format
+msgid "Flag individual frame width"
+msgstr "​ទទឹង​ស៊ុម​​ផ្សេង​​ៗ​ របស់​ទង់ជាតិ"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, flagw)
+#: ksirkspritesdefinition.ui:84
+#, kde-format
+msgid ""
+"<p>Flag individual frame width.</p><p>The pool <i>flag</i> element will be "
+"rendered on a pixmap of width: <i>Width</i> * N<i>number of frames</i> and "
+"then split into individual frames.</p>"
+msgstr ""
+"<p>​ទទឹង​ស៊ុម​​ផ្សេង​ៗ​របស់​ទង់ជាតិ​​​ ។</p><p>ធាតុ​​ <i>ទង់ជាតិ​​</i> អាង​នឹង​ត្រូវ​ បង្ហាញ​នៅ​លើ​ទទឹង​​ផែន​ទី​ចំណុច​​"
+"នៃ​​ ៖ <i>ទទឹង​</i> *  N​<i>ចំនួន​ស៊ុម​</i> បន្ទាប់​មក​ ពុះ​ទៅ​ជា​ស៊ុម​ផ្សេង​ៗ​​ ។</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_13)
+#. i18n: ectx: property (text), widget (QLabel, label_17)
+#. i18n: ectx: property (text), widget (QLabel, label_21)
+#: ksirkspritesdefinition.ui:91 ksirkspritesdefinition.ui:190
+#: ksirkspritesdefinition.ui:281 ksirkspritesdefinition.ui:374
+#: ksirkspritesdefinition.ui:469 ksirkspritesdefinition.ui:564
+#, kde-format
+msgid "Height:"
+msgstr "កម្ពស់​ ៖"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, flagh)
+#: ksirkspritesdefinition.ui:98
+#, kde-format
+msgid "Flag individual frame height"
+msgstr "​កម្ពស់​ស៊ុម​ផ្សេង​ៗ​​របស់​ទង់ជាតិ"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, flagh)
+#: ksirkspritesdefinition.ui:103
+#, kde-format
+msgid ""
+"Flag individual frame height.\n"
+"\n"
+"The pool flag element will be rendered on a pixmap of height: (Height * "
+"Number of versions) and then split into individual frames."
+msgstr ""
+"​កម្ពស់​ស៊ុម​ផ្សេង​ៗ​របស់​ទង់ជាតិ​​ ។\n"
+"\n"
+"ធាតុ​ទង់ជាតិ​​របស់​អាង​នឹង​ត្រូវ​បង្ហាញ​នៅ​លើ​កម្ពស់​ផែន​ទី​ចំណុច​​​ ៖ (កម្ពស់​ * ចំនួន​កំណែ) បន្ទាប់​មក​ពុះ​ទៅ​ជា​ស៊ុម​ផ្សេង​"
+"ៗ​​ ។"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#. i18n: ectx: property (text), widget (QLabel, label_15)
+#. i18n: ectx: property (text), widget (QLabel, label_19)
+#. i18n: ectx: property (text), widget (QLabel, label_23)
+#: ksirkspritesdefinition.ui:110 ksirkspritesdefinition.ui:207
+#: ksirkspritesdefinition.ui:298 ksirkspritesdefinition.ui:391
+#: ksirkspritesdefinition.ui:486 ksirkspritesdefinition.ui:581
+#, fuzzy, kde-format
+#| msgid "Nb Frames:"
+msgid "Nb frames:"
+msgstr "ចំនួន​ស៊ុម ៖"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, flagf)
+#: ksirkspritesdefinition.ui:117
+#, kde-format
+msgid "Number of individual flag frames"
+msgstr "ចំនួន​ស៊ុម​ផ្សេង​ៗ​របស់​ទង់​ជាតិ"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, flagf)
+#: ksirkspritesdefinition.ui:120
+#, kde-format
+msgid ""
+"<p>Number of individual flag frames.</p><p>The pool <i>flag</i> element will "
+"be rendered on a pixmap of width: (<i>Width</i> * <i>Number of frames</i>) "
+"and then split into individual frames.</p>"
+msgstr ""
+"<p>ចំនួន​ស៊ុម​ផ្សេង​ៗ​របស់​ទង់ជាតិ​​​ ។</p><p>ធាតុ​ <i>ទង់​ជាតិ​</i> អាង​នឹង​ ត្រូវ​បង្ហាញ​នៅ​លើ​ទទឹង​ផែន​ទី​ចំណុច​ "
+"៖ (<i>ទទឹង​</i> *​ <i>ចំនួន​ស៊ុម​</i>) បន្ទាប់​មក​ពុះ​ទៅ​ជា​ស៊ុម​​ផ្សេង​ៗ​​​ ។</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#. i18n: ectx: property (text), widget (QLabel, label_16)
+#. i18n: ectx: property (text), widget (QLabel, label_20)
+#. i18n: ectx: property (text), widget (QLabel, label_24)
+#: ksirkspritesdefinition.ui:127 ksirkspritesdefinition.ui:224
+#: ksirkspritesdefinition.ui:315 ksirkspritesdefinition.ui:408
+#: ksirkspritesdefinition.ui:503 ksirkspritesdefinition.ui:598
+#, fuzzy, kde-format
+#| msgid "Nb Versions:"
+msgid "Nb versions:"
+msgstr "ចំនួន​កំណែ ៖"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, flagv)
+#: ksirkspritesdefinition.ui:134
+#, kde-format
+msgid "Number of flag versions"
+msgstr "ចំនួន​កំណែ​របស់​ទង់​ជាតិ"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, flagv)
+#: ksirkspritesdefinition.ui:141
+#, kde-format
+msgid ""
+"Number of flag versions.\n"
+"\n"
+"The pool flag element will be rendered on a pixmap of height: (Height * "
+"Number of versions) and then split into individual frames.\n"
+"\n"
+"Each version shows the sprite visible from one direction: the first one is "
+"directed towards the right, the second towards the left, the third one from "
+"the front and the last one from the back. However, not all sprites need all "
+"versions."
+msgstr ""
+"ចំនួន​កំណែ​របស់​ទង់ជាតិ​​ ។\n"
+"\n"
+"ធាតុ​ទង់​ជាតិ​របស់​អាង​នឹង​ត្រូវ​បង្ហាញ​នៅ​លើ​កម្ពស់​ផែន​ទី​ចំណុច​​ ៖ (កម្ពស់ * ចំនួន​កំណែ) បន្ទាប់​មក​ពុះ​ទៅ​ជា​ស៊ុម​ផ្សេង​"
+"ៗ​​ ។\n"
+"\n"
+"កំណែ​នីមួយៗ​នឹង​បង្ហាញ​នូវ​ sprite ដែល​អាច​មើល​ឃើញ​ពី​ទិស​តែ​មួយ​ ៖ ​ទី​មួយ​ត្រូវ​បាន​ដាក់​ទិស​ ទៅ​ខាង​ស្ដាំ​ ទីពីរ​ទៅ​"
+"ខាង​ឆ្វេង​  ​ទី​បី​ពី​ខាង​មុខ​ និង​ចុង​ក្រោយ​ពី​ខាង​ក្រោយ​ ។ ទោះ​បី​យ៉ាង​​ណា​ មិន​មែន​គ្រប់​ sprites  ត្រូវ​ការ​កំណែ​តែ​"
+"ទាំង​អស់​នោះ​ទេ​ ។"
+
+#. i18n: ectx: property (toolTip), widget (QWidget, infantryTab)
+#: ksirkspritesdefinition.ui:164
+#, kde-format
+msgid "Data about the infantry sprite"
+msgstr "ទិន្នន័យ​​អំពី​ sprite  របស់​​ទ័ព​ថ្មើរ​ជើង​"
+
+#. i18n: ectx: attribute (title), widget (QWidget, infantryTab)
+#: ksirkspritesdefinition.ui:167
+#, kde-format
+msgid "Infantry"
+msgstr "ទ័ព​ថ្មើរ​ជើង"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, infantryw)
+#: ksirkspritesdefinition.ui:180
+#, kde-format
+msgid "Infantry individual frame width"
+msgstr "ទទឹង​ស៊ុម​ផ្សេង​ៗ​​របស់​ទ័ព​ថ្មើរ​ជើង"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryw)
+#: ksirkspritesdefinition.ui:183
+#, kde-format
+msgid ""
+"<p>Infantry individual frame width.</p><p>The pool <i>infantry</i> element "
+"will be rendered on a pixmap of width: <i>Width</i> * <i>number of frames</"
+"i> and then split into individual frames.</p>"
+msgstr ""
+"<p>ទទឹង​ស៊ុម​ផ្សេង​ៗ​របស់​ទ័ព​ថ្មើរ​ជើង​ ។</p><p>ធាតុ <i>ទ័ព​ថ្មើរ​ជើង​</i> អាង​ នឹង​ត្រូវ​បង្ហាញ​នៅ​លើ​ទទឹង​"
+"ផែន​ទី​ចំណុច​​ ៖ <i>ទទឹង​</i>* <i>ចំនួន​ស៊ុម​</i> បន្ទាប់​មក​ពុះ​ទៅ​ជា​ស៊ុម​ផ្សេង​ៗ​​ ។</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, infantryh)
+#: ksirkspritesdefinition.ui:197
+#, kde-format
+msgid "Infantry individual frame height"
+msgstr "កម្ពស់​ស៊ុម​ផ្សេង​ៗ​​របស់​ទ័ព​ថ្មើរ​ជើង"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryh)
+#: ksirkspritesdefinition.ui:200
+#, kde-format
+msgid ""
+"<p>Infantry individual frame height.</p><p>The pool <i>infantry</i> element "
+"will be rendered on a pixmap of height: <i>Height</i> * <i>Number of "
+"versions</i> and then split into individual frames.</p>"
+msgstr ""
+"<p>កម្ពស់​ស៊ុម​ផ្សេង​ៗ​​របស់​ទ័ព​ថ្មើរ​ជើង​ ។</p><p>ធាតុ​ <i>ទ័ព​ថ្មើរ​រ​ជើង​</i> អាង នឹង​ត្រូវ​បង្ហាញ​នៅ​លើ​"
+"កម្ពស់​​ផែន​ទី​ចំណុច​​ ៖ <i>កម្ពស់​</i>*​ <i>ចំនួន​កំណែ </i> បន្ទាប់​មក​ពុះ​ទៅ​ជា​ស៊ុម​ផ្សេង​ៗ​។</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, infantryf)
+#: ksirkspritesdefinition.ui:214
+#, kde-format
+msgid "Number of individual infantry frames"
+msgstr "ចំនួន​ស៊ុម​ផ្សេង​ៗ​របស់​ទ័ព​ថ្មើរ​ជើង​​"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryf)
+#: ksirkspritesdefinition.ui:217
+#, kde-format
+msgid ""
+"<p>Infantry number of individual frames.</p><p>The pool <i>infantry</i> "
+"element will be rendered on a pixmap of width: (<i>Width</i> * <i>Number of "
+"frames</i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>ចំនួន​ស៊ុម​ផ្សេង​ៗ​​របស់​ទ័ព​ថ្មើរ​ជើង​ ។</p><p>ធាតុ​ <i>ទ័ព​ថ្មើរ​ជើង​</i> អាង​នឹង​ត្រូវ​បង្ហាញ​នៅ​លើ​ទទឹង​​"
+"ផែន​ទី​ចំណុច​​ ៖ (<i>ទទឹង</i>* ​<i>ចំនួន​ស៊ុម​ </i>) បន្ទាប់​មក​ពុះ​ទៅ​ជា​ស៊ុម​ផ្សេង​ៗ​​ ។</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, infantryv)
+#: ksirkspritesdefinition.ui:231
+#, kde-format
+msgid "Number of infantry versions"
+msgstr "ចំនួន​កំណែ​របស់​ទ័ព​ថ្មើរ​ជើង"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryv)
+#: ksirkspritesdefinition.ui:234
+#, kde-format
+msgid ""
+"<p>Number of infantry versions.</p><p>The pool <i>infantry</i> element will "
+"be rendered on a pixmap of height: (<i>Height</i> * <i>Number of versions</"
+"i>) and then split into individual frames.</p><p>Each version shows the "
+"sprite visible from one direction: the first one is directed towards the "
+"right, the second towards the left, the third one from front and the last "
+"one from the back. However, not all sprites need all versions.</p>"
+msgstr ""
+"<p>ចំនួន​កំណែ​របស់​ទ័ព​ថ្មើរ​ជើង​ ។</p><p>ធាតុ​ <i>ទ័ព​ថ្មើរ​ជើង​</i> អាង​នឹង​ ត្រូវ​បង្ហាញ​នៅ​លើ​កម្ពស់​ផែន​ទី​"
+"ចំណុច​៖ (<i>កម្ពស់​</i> *​ <i>ចំនួន​កំណែ</i>) បន្ទាប់​មក​ពុះ​ទៅ​ជា​ស៊ុម​ផ្សេង​ៗ​​ ។</p><p>កំណែ​នីមួយ​ៗ​នឹង​"
+"បង្ហាញ​នូវ​ sprite ដែល​អាច​មើល​ឃើញ​ពី​ទិស​តែ​​មួយ​ ៖ ​ទី​មួយ​ត្រូវ​បាន​ដាក់​ទិស​ទៅ​​​ខាង​ស្ដាំ​ ទីពីរ​​ទៅ​ខាង​ឆ្វេង​ និង​ទីបី​"
+"ពី​ខាង​មុខ​ និង​មួយ​ចុង​ក្រោយ​ពី​ខាង​ក្រោយ​ ។ ទោះ​បី​យ៉ាង​ណា​ មិន​មែន​គ្រប់​ sprites ទាំង​អស់​សុទ្ធ​តែ​ត្រូវ​ការ​កំណែ​ទាំង​"
+"អស់​​ទេ ។</p>"
+
+#. i18n: ectx: property (toolTip), widget (QWidget, cavalryTab)
+#: ksirkspritesdefinition.ui:255
+#, kde-format
+msgid "Data about the cavalry sprite"
+msgstr "ទិន្នន័យ​អំពី​ sprite របស់​ទ័ព​សេះ"
+
+#. i18n: ectx: attribute (title), widget (QWidget, cavalryTab)
+#: ksirkspritesdefinition.ui:258
+#, kde-format
+msgid "Cavalry"
+msgstr "ទ័ព​សេះ"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryw)
+#: ksirkspritesdefinition.ui:271
+#, kde-format
+msgid "Individual cavalry frame width"
+msgstr "ទទឹង​ស៊ុម​ផ្សេង​ៗ​​របស់​ទ័ព​សេះ"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryw)
+#: ksirkspritesdefinition.ui:274
+#, kde-format
+msgid ""
+"<p>Individual cavalry frame width.</p><p>The pool <i>cavalry</i> element "
+"will be rendered on a pixmap of width (<i>Width</i> * <i>Number of frames</"
+"i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>ទទឹង​ស៊ុម​​ផ្សេង​ៗ​របស់​​ទ័ព​សេះ​​ ។</p><p>ធាតុ <i>ទ័ព​សេះ​</i> អាង​ នឹង​ត្រូវ​បង្ហាញ​នៅ​លើ​ទទឹង​ផែន​ទី​ចំណុច​​​ "
+"(<i> ទទឹង​</i>* <i>ចំនួន​ស៊ុម</i>) បន្ទាប់​មក​ពុះ​ទៅ​ជា​ស៊ុម​ផ្សេង​ៗ​​ ។</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryh)
+#: ksirkspritesdefinition.ui:288
+#, kde-format
+msgid "Individual cavalry frame height"
+msgstr "កម្ពស់​ស៊ុម​ផ្សេង​ៗ​របស់​ទ័ព​សេះ​"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryh)
+#: ksirkspritesdefinition.ui:291
+#, kde-format
+msgid ""
+"<p>Individual cavalry frame height.</p><p>The pool <i>cavalry</i> element "
+"will be rendered on a pixmap of height (<i>Height</i> * <i>Number of "
+"versions</i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>កម្ពស់​ស៊ុម​​​​ផ្សេង​ៗ​របស់​ទ័ព​សេះ​​ ។</p><p>ធាតុ​ <i>ទ័ព​សេះ​</i> អាង​ នឹង​ត្រូវ​បង្ហាញ​នៅ​លើ​កម្ពស់​​ផែន​ទី​"
+"ចំណុច​ (<i>កម្ពស់​</i> * <i>ចំនួន​ កំណែ​</i>) បន្ទាប់​មក​ពុះ​ទៅ​ជា​ស៊ុម​ផ្សេង​ៗ​ ។</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryf)
+#: ksirkspritesdefinition.ui:305
+#, kde-format
+msgid "Number of individual cavalry frames"
+msgstr "ចំនួន​ស៊ុម​ផ្សេង​ៗ​របស់​ទ័ព​សេះ"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryf)
+#: ksirkspritesdefinition.ui:308
+#, kde-format
+msgid ""
+"<p>Number of individual cavalry frames.</p><p>The pool <i>cavalry</i> "
+"element will be rendered on a pixmap of width: (<i>Width</i> * <i>Number of "
+"frames</i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>ចំនួន​ស៊ុម​ផ្សេង​ៗ​​របស់​ទ័ព​សេះ ។</p><p>ធាតុ​ <i>ទ័ព​សេះ​</i> អាង​នឹង​ត្រូវ​បង្ហាញ​នៅ​លើ​ទទឹង​​ផែន​ទី​ចំណុច​​ ៖ "
+"(<i>ទទឹង​</i> *​<i>ចំនួន​ ស៊ុម​</i>) បន្ទាប់​មក​ពុះ​ទៅ​ជា​ស៊ុម​ផ្សេង​​ៗ​ ។</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryv)
+#: ksirkspritesdefinition.ui:322
+#, kde-format
+msgid "Number of cavalry versions"
+msgstr "ចំនួន​កំណែ​របស់​ទ័ព​សេះ "
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryv)
+#: ksirkspritesdefinition.ui:325
+#, kde-format
+msgid ""
+"<p>Number of cavalry versions.</p><p>The pool <i>cavalry</i> element will be "
+"rendered on a pixmap of height (<i>Height</i> * <i>Number of versions</i>) "
+"and then split into individual frames.</p><p>Each version shows the sprite "
+"visible from one direction: the first one is directed towards the right, the "
+"second towards the left, the third one from front and the last one from the "
+"back. However, not all sprites need all versions.</p>"
+msgstr ""
+"<p>ចំនួន​កំណែ​របស់​ទ័ព​សេះ​ ។</p><p>ធាតុ​ <i>ទ័ព​សេះ​</i> អាង​នឹង​ត្រូវ​ បង្ហាញ​នៅ​លើ​កម្ពស់​ផែន​ទី​ចំណុច​​​ "
+"(<i>កម្ពស់​</i> *​ <i>ចំនួន​កំណែ</i>) បន្ទាប់​មក​ពុះ​ទៅ​ជា​ស៊ុម​ផ្សេង​ៗ ។</p><p>កំណែ​នីមួយ​ៗ​នឹង​បង្ហាញ​នូវ​ "
+"sprite ដែល​អាច​មើល​ឃើញ​ពី​ទិស​តែ​មួយ ៖ ​​ទី​មួយ​ត្រូវ​បាន​ដាក់​ទិស​ទៅ​ខាង​ស្ដាំ​ ទី​ពីរ​ទៅ​ខាង​ឆ្វេង​ ទីបី​ពី​ខាង​មុខ និង​"
+"ចុង​ក្រោយ​ពី​ខាង​ក្រោយ​ ។ ទោះ​បី​យ៉ាង​ណា​ មិន​មែន​គ្រប់​ sprites ត្រូវ​ការ​កំណែ​តែ​ទាំង​អស់​នោះ​ទេ​ ។</p>"
+
+#. i18n: ectx: property (toolTip), widget (QWidget, cannonTab)
+#: ksirkspritesdefinition.ui:346
+#, kde-format
+msgid "Data about the cannon sprite"
+msgstr "ទិន្នន័យ​អំពី​ sprite របស់​កាំ​ភ្លើង​ធំ​"
+
+#. i18n: ectx: attribute (title), widget (QWidget, cannonTab)
+#: ksirkspritesdefinition.ui:349
+#, kde-format
+msgid "Cannon"
+msgstr "កាំ​ភ្លើង​ធំ"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cannonw)
+#: ksirkspritesdefinition.ui:364
+#, kde-format
+msgid "Cannon individual frame width"
+msgstr "ទទឹង​ស៊ុម​ផ្សេង​ៗ​របស់​កាំ​ភ្លើង​ធំ"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonw)
+#: ksirkspritesdefinition.ui:367
+#, kde-format
+msgid ""
+"<p>Cannon individual frame width.</p><p>The pool <i>cannon</i> element will "
+"be rendered on a pixmap of width (<i>Width</i> * <i>Number of frames</i>) "
+"and then split into individual frames.</p>"
+msgstr ""
+"<p>ទទឹង​ស៊ុម​ផ្សេង​ៗ​របស់​កាំ​ភ្លើង​ធំ​ ។</p><p>ធាតុ <i>កាំ​ភ្លើង​ធំ</i> អាង​នឹង​ ត្រូវ​បង្ហាញ​នៅ​លើ​ទទឹង​ផែន​ទី​"
+"ចំណុច​​ (<i>ទទឹង</i> * <i>ចំនួន​ស៊ុម​</i>) បន្ទាប់​មក​ពុះ​ទៅ​ជា​ស៊ុម​​ផ្សេង​ៗ​​ ។</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cannonh)
+#: ksirkspritesdefinition.ui:381
+#, kde-format
+msgid "Individual cannon frame height"
+msgstr "កម្ពស់​ស៊ុម​ផ្សេង​​ៗ​របស់​កាំ​ភ្លើង​ធំ"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonh)
+#: ksirkspritesdefinition.ui:384
+#, kde-format
+msgid ""
+"<p>Individual cannon frame height.</p><p>The pool <i>cannon<i> element will "
+"be rendered on a pixmap of height (<i>Height</i> * <i>Number of versions</"
+"i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>កម្ពស់​ស៊ុម​ផ្សេង​ៗ​​របស់​កាំ​ភ្លើង​ធំ ។</p><p>ធាតុ​ <i>កាំ​ភ្លើង​ធំ<i> អាង​នឹង​ត្រូវ​ បង្ហាញ​នៅ​លើ​កម្ពស់​ផែន​ទី​"
+"ចំណុច​​​ ។ (<i>កម្ពស់</i> * <i>ចំនួន​កំណែ​</i>) បន្ទាប់​មក​ពុះ​ទៅ​ជា​ស៊ុម​ផ្សេង​ៗ​ ។</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cannonf)
+#: ksirkspritesdefinition.ui:398
+#, kde-format
+msgid "Number of individual cannon frames"
+msgstr "ចំនួន​ស៊ុម​ផ្សេង​ៗ​របស់​កាំ​ភ្លើង​ធំ"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonf)
+#: ksirkspritesdefinition.ui:401
+#, kde-format
+msgid ""
+"<p>Number of individual cannon frames.</p><p>The pool <i>cannon</i> element "
+"will be rendered on a pixmap of width (<i>Width</i> * <i>Number of frames</"
+"i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>ចំនួន​ស៊ុម​ផ្សេង​ៗ​​​របស់​កាំ​ភ្លើង​ធំ​ ។</p><p>ធាតុ​ <i>កាំ​ភ្លើង​ធំ</i> អាង​ នឹង​ត្រូវ​បង្ហាញ​នៅ​លើ​ទទឹង​​ផែន​ទី​"
+"ចំណុច​​ (<i>ទទឹង​</i> * <i>ចំនួន​ស៊ុម​</i>) បន្ទាប់​មក​ពុះ​ទៅ​ជា​ស៊ុម​ផ្សេង​ៗ​ ។</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cannonv)
+#: ksirkspritesdefinition.ui:415
+#, kde-format
+msgid "Number of cannon versions"
+msgstr "ចំនួន​កំណែ​របស់​កាំ​ភ្លើង​ធំ"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonv)
+#: ksirkspritesdefinition.ui:418
+#, kde-format
+msgid ""
+"<p>Number of cannon versions.</p><p>The pool <i>cannon</i> element will be "
+"rendered on a pixmap of height (<i>Height</i> * <i>Number of versions</i>) "
+"and then split into individual frames.</p><p>Each version shows the sprite "
+"visible from one direction: the first one is directed towards the right, the "
+"second towards the left, the third one from front and the last one from the "
+"back. However, not all sprites need all versions.</p>"
+msgstr ""
+"<p>ចំនួន​កំណែ​របស់​កាំ​ភ្លើង​ធំ ។</p><p>ធាតុ​ <i>កាំ​ភ្លើង​ធំ</i> អាង​នឹង​ត្រូវ​ បង្ហាញ​នៅ​លើ​កម្ពស់​ផែន​ទី​"
+"ចំណុច​​  (<i>កម្ពស់​</i> * <i>ចំនួន​កំណែ</i>) បន្ទាប់​មក​ពុះ​ទៅ​ជា​ស៊ុម​ផ្សេង​​ៗ​ ។</p><p>កំណែ​នីមួយៗ​នឹង​"
+"បង្ហាញ​នូវ​ sprite ដែល​អាច​មើល​ឃើញ​ពី​ទិស​តែ​មួយ ៖ ​ទី​មួយ​ត្រូវ​បាន​ដាក់​ទិស​ទៅ​ខាង​ស្ដាំ​ ទី​ពីរ​ទៅ​ខាង​ឆ្វេង​  ទីបី​ពី​"
+"ខាង​មុខ និង​ចុងក្រោយ​ពី​ខាង​ក្រោយ​ ។ ទោះ​បី​យ៉ាង​ណា​ មិន​មែន​គ្រប់​ sprites ត្រូវ​ការ​​​កំណែ​តែ​ទាំង​អស់​ទេ​ ។</p>"
+
+#. i18n: ectx: property (toolTip), widget (QWidget, firingTab)
+#: ksirkspritesdefinition.ui:441
+#, kde-format
+msgid "Data about the firing sprite"
+msgstr "ទិន្នន័យ​អំពី​ការ​បាញ់​ sprite"
+
+#. i18n: ectx: attribute (title), widget (QWidget, firingTab)
+#: ksirkspritesdefinition.ui:444
+#, kde-format
+msgid "Firing"
+msgstr "បាញ់"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, firingw)
+#: ksirkspritesdefinition.ui:459
+#, kde-format
+msgid "Firing cannon individual frame width"
+msgstr "ទទឹង​ស៊ុម​ផ្សេង​ៗ​នៃ​ការ​បាញ់​កាំ​ភ្លើង​ធំ​"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, firingw)
+#: ksirkspritesdefinition.ui:462
+#, kde-format
+msgid ""
+"<p>Firing cannon individual frame width.</p><p>The pool <i>firing cannon</i> "
+"element will be rendered on a pixmap of width (<i>Width</i> * <i>Number of "
+"frames</i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>ទទឹង​ស៊ុម​ផ្សេង​ៗ​នៃ​ការ​បាញ់​កាំ​ភ្លើង​ធំ​ ។</p><p>ធាតុ​ <i>ការ​បាញ់​កាំ​ភ្លើង​ធំ​</i> អាង​នឹង​ត្រូវ​បង្ហាញ​នៅ​"
+"លើ​ទទឹង​ផែន​ទី​ចំណុច​ (<i>ទទឹង​</i> * <i>ចំនួន​ ស៊ុម​</i>) បន្ទាប់​ពុះ​ទៅ​ជា​ស៊ុម​ផ្សេង​ៗ​ ។</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, firingh)
+#: ksirkspritesdefinition.ui:476
+#, kde-format
+msgid "Firing cannon individual frame height"
+msgstr "កម្ពស់​ស៊ុម​ផ្សេង​ៗ​នៃ​ការ​បាញ់​កាំ​ភ្លើង​ធំ"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, firingh)
+#: ksirkspritesdefinition.ui:479
+#, kde-format
+msgid ""
+"<p>Firing cannon individual frame height.</p><p>The pool <i>firing cannon</"
+"i> element will be rendered on a pixmap of height (<i>Height</i> * <i>Number "
+"of versions</i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>កម្ពស់​ស៊ុម​ផ្សេង​ៗ​នៃ​ការ​បាញ់​​កាំ​ភ្លើង​ធំ​ ។</p><p>ធាតុ <i>ការ​បាញ់​កាំ​ភ្លើង​ធំ</i> អាង​នឹង​ត្រូវ​បង្ហាញ​"
+"នៅ​លើ​កម្ពស់​ផែន​ទី​ចំណុច​ (<i>កម្ពស់​</i> * <i>ចំនួន​ កំណែ</i>) បន្ទាប់​មក​ពុះ​ទៅ​ជា​ស៊ុម​ផ្សេង​ៗ​ ។</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, firingf)
+#: ksirkspritesdefinition.ui:493
+#, kde-format
+msgid "Number of individual firing cannon frames"
+msgstr "ចំនួន​ស៊ុម​ផ្សេង​ៗ​នៃ​​ការ​បាញ់​កាំ​ភ្លើង​ធំ"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, firingf)
+#: ksirkspritesdefinition.ui:496
+#, kde-format
+msgid ""
+"<p>Number of individual firing cannon frames.</p><p>The pool <i>firing "
+"cannon</i> element will be rendered on a pixmap of width (<i>Width</i> * "
+"<i>Number of frames</i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>ចំនួន​ស៊ុម​ផ្សេង​ៗ​នៃ​ការ​បាញ់​​កាំ​ភ្លើង​ធំ ។</p><p>ធាតុ​ <i>ការ​បាញ់​កាំ​ភ្លើង​ ធំ</i> ធាតុ​នឹង​ត្រូវ​បង្ហាញ​"
+"នៅ​លើ​ទទឹង​ផែន​ទី​ចំណុច​ (<i>ទទឹង​</i> * <i>ចំនួន​ស៊ុម</i>) បន្ទាប់​មក​ពុះ​ទៅ​ជា​ស៊ុម​ផ្សេង​ៗ​ ។</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, firingv)
+#: ksirkspritesdefinition.ui:510
+#, kde-format
+msgid "Number of firing cannon versions"
+msgstr "ចំនួន​កំណែ​នៃ​ការ​បាញ់​កាំ​ភ្លើង​ធំ"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, firingv)
+#: ksirkspritesdefinition.ui:513
+#, kde-format
+msgid ""
+"<p>Number of firing cannon versions.</p><p>The pool <i>firing cannon</i> "
+"element will be rendered on a pixmap of height (<i>Height</i> * <i>Number of "
+"versions</i>) and then split into individual frames.</p><p>Each version "
+"shows the sprite visible from one direction: the first one is directed "
+"towards the right, the second towards the left, the third one from front and "
+"the last one from the back. However, not all sprites need all versions.</p>"
+msgstr ""
+"<p>ចំនួន​កំណែ​នៃ​ការ​បាញ់​កាំ​ភ្លើង​ធំ ។</p><p>ធាតុ <i>ការ​បាញ់​កាំ​ភ្លើង​ធំ</i> អាង​នឹង​ត្រូវ​បង្ហាញ​នៅ​លើ​"
+"កម្ពស់​ផែន​ទី​ចំណុច​ (<i>កម្ពស់​</i> * <i>ចំនួន កំណែ</i>) បន្ទាប់​មក​ពុះ​ទៅ​ជា​ស៊ុម​ផ្សេង​ៗ​ ។</p><p>កំណែ​"
+"នីមួយ​ៗ​ នឹង​បង្ហាញ​នូវ​ sprite ដែល​អាច​មើល​ឃើញ​ពី​ទិស​តែ​មួយ​ ៖ ទី​មួយ​ត្រូវ​បាន​ដាក់​ទិស​ ទៅ​ខាង​ស្ដាំ​  ទី​ពីរ​ទៅ​ខាង​"
+"ឆ្វេង​ ទីបី​ពី​ខាង​មុខ​ និង​ ចុង​ក្រោយ​ពី​ខាង​ក្រោយ​ ។ ទោះ​បី​យ៉ាង​ណា​ មិន​មែន​គ្រប់​ sprites ត្រូវ​ការ​កំណែ​តែ​ទាំង​អស់​"
+"ទេ​ ។</p>"
+
+#. i18n: ectx: property (toolTip), widget (QWidget, explodingTab)
+#: ksirkspritesdefinition.ui:536
+#, kde-format
+msgid "Data about the exploding sprite"
+msgstr "ទិន្នន័យ​អំពី​ការ​បំផ្ទុះ​ sprite"
+
+#. i18n: ectx: attribute (title), widget (QWidget, explodingTab)
+#: ksirkspritesdefinition.ui:539
+#, kde-format
+msgid "Exploding"
+msgstr "បំផ្ទុះ"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, explodingw)
+#: ksirkspritesdefinition.ui:554
+#, kde-format
+msgid "Exploding cannon individual frame width"
+msgstr "ទទឹង​ស៊ុម​ផ្សេង​ៗ​​នៃ​ការ​បំផ្ទុះ​កាំ​ភ្លើង​ធំ"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingw)
+#: ksirkspritesdefinition.ui:557
+#, kde-format
+msgid ""
+"<p>Exploding cannon individual frame width.</p><p>The pool <i>exploding</i> "
+"element will be rendered on a pixmap of width (<i>Width</i> * <i>Number of "
+"frames</i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>ទទឹង​ស៊ុម​ផ្សេង​ៗ​នៃ​ការ​បំផ្ទុះ​កាំ​ភ្លើង​ធំ ។</p><p>ធាតុ​ <i>បំផ្ទុះ</i> អាង​នឹង​ត្រូវ​បង្ហាញ​នៅ​លើ​ទទឹង​ផែន​"
+"ទី​ចំណុច​ (<i>ទទឹង</i> * <i>ចំនួន ស៊ុម​</i>) បន្ទាប់​មក​ពុះ​ទៅ​ជា​ស៊ុម​ផ្សេង​ៗ​ ។</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, explodingh)
+#: ksirkspritesdefinition.ui:571
+#, kde-format
+msgid "Exploding cannon individual frame height"
+msgstr "កម្ពស់​ស៊ុម​ផ្សេងៗ​នៃ​ការ​បំផ្ទុះ​កាំ​ភ្លើង​ធំ"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingh)
+#: ksirkspritesdefinition.ui:574
+#, kde-format
+msgid ""
+"<p>Exploding cannon individual frame height.</p><p>The pool <i>exploding</i> "
+"element will be rendered on a pixmap of height (<i>Height</i> * <i>Number of "
+"versions</i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>កម្ពស់​ស៊ុម​ផ្សេង​ៗ​នៃ​ការ​បំផ្ទុះ​កាំ​ភ្លើង​ធំ ។</p><p>ធាតុ​ <i>ការ​បំផ្ទុះ</i> អាង​នឹង​ត្រូវ​បង្ហាញ​នៅ​លើ​"
+"កម្ពស់​ផែន​ទី​ចំណុច​ (<i>កម្ពស់​</i> * <i>ចំនួន កំណែ</i>) បន្ទាប់​មក​ពុះ​ទៅ​ជា​ស៊ុម​ផ្សេង​ៗ​ ។</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, explodingf)
+#: ksirkspritesdefinition.ui:588
+#, kde-format
+msgid "Number of individual exploding cannon frames"
+msgstr "ចំនួន​ស៊ុម​ផ្សេង​ៗ​នៃ​ការ​បំផ្ទុះ​កាំ​ភ្លើង​ធំ"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingf)
+#: ksirkspritesdefinition.ui:591
+#, kde-format
+msgid ""
+"<p>Number of individual exploding cannon frames.</p><p>The pool "
+"<i>exploding</i> element will be rendered on a pixmap of width (<i>Width</i> "
+"* <i>Number of frames</i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>ចំនួន​ស៊ុម​ផ្សេង​ៗ​នៃ​ការ​បំផ្ទុះ​កាំ​ភ្លើង​ធំ ។</p><p>ធាតុ <i>ការ​បំផ្ទុះ​</i> អាង​នឹង​ត្រូវ​បង្ហាញ​នៅ​លើ​ទទឹង​"
+"ផែន​ទី​ចំណុច​ (<i>ទទឹង</i> * <i>ចំនួន​ស៊ុម​</i>) បន្ទាប់​មក​ពុះ​ទៅ​ជា​ស៊ុម​ផ្សេង​ៗ​ ។</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, explodingv)
+#: ksirkspritesdefinition.ui:605
+#, kde-format
+msgid "Number of exploding cannon versions"
+msgstr "ចំនួន​កំណែ​នៃ​ការ​បំផ្ទុះ​កាំ​ភ្លើង​ធំ"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingv)
+#: ksirkspritesdefinition.ui:608
+#, kde-format
+msgid ""
+"<p>Number of exploding cannon versions.</p><p>The pool <i>exploding</i> "
+"element will be rendered on a pixmap of height (<i>Height</i> * <i>Number of "
+"versions</i>) and then split into individual frames.</p><p>Each version "
+"shows the sprite visible from one direction: the first one is directed "
+"towards the right, the second towards the left, the third one from front and "
+"the last one from the back. However, not all sprites need all versions.</p>"
+msgstr ""
+"<p>ចំនួន​កំណែ​នៃ​ការ​បំផ្ទុះ​កាំ​ភ្លើង​ធំ ។</p><p>ធាតុ​ <i>ការ​បំផ្ទុះ​</i> អាង​នឹង​ត្រូវ​បង្ហាញ​នៅ​លើ​កម្ពស់​ផែន​"
+"ទី​ចំណុច​ (<i>កម្ពស់​</i> * <i>ចំនួន​ កំណែ</i>) បន្ទាប់​មក​ពុះ​ទៅ​ជា​ស៊ុម​ផ្សេង​ៗ​ ។</p><p>កំណែ​នីមួយ​ៗ​ នឹង​"
+"បង្ហាញ​ sprite ដែល​អាច​មើល​ឃើញ​ពី​ទិស​តែ​មួយ​ ៖ ទី​មួយ​ត្រូវ​បាន​ដាក់​ទិស​ទៅ​ ខាង​ស្ដាំ​ ទី​ពីរ​ទៅ​ខាង​ឆ្វេង​ ទីបី​ពី​"
+"ខាង​មុខ​ និង​ ចុង​ក្រោយ​ពី​ខាង​ក្រោយ​  ។ ទោះ​បី​យ៉ាង​ណា​ មិន​មែន​គ្រប់​ sprites ត្រូវ​ការ​កំណែ​ទាំង​អស់​ទេ​ ។</p>"
+
+#: main.cpp:56
+#, kde-format
+msgid "(c) 2008, Gaël de Chalendar\n"
+msgstr "រក្សា​សិទ្ធិ​ឆ្នាំ​ ២​០​០​៨ ដោយ​ Gaël de Chalendar\n"
+
+#: main.cpp:57
+#, kde-format
+msgid ""
+"For help and user manual, please see\n"
+"The KsirK Web site"
+msgstr ""
+"ចំពោះ​​ជំនួយ​ និង​សៀវភៅ​ដៃ​អ្នក​ប្រើ​ សូម​មើល​\n"
+"តំបន់​បណ្ដាញ​របស់​ KsirK "
+
+#: main.cpp:59
+#, fuzzy, kde-format
+#| msgid "Gael de Chalendar aka Kleag"
+msgid "Gaël de Chalendar aka Kleag"
+msgstr "Gael de Chalendar aka Kleag"
+
+#: main.cpp:64
+#, kde-format
+msgid "file to open"
+msgstr "ឯក​សារ​ត្រូវ​បើក"
+
+#: mainwindow.cpp:127 mainwindow.cpp:676 mainwindow.cpp:804 mainwindow.cpp:1191
+#, kde-format
+msgid "Cannot load anchor icon<br>Program cannot continue"
+msgstr "មិន​អាច​ផ្ទុក​រូប​តំណាង​យុថ្កា​បាន​ទេ​<br>កម្ម​វិធី​មិន​អាច​បន្ត​បាន​ទេ"
+
+#: mainwindow.cpp:127 mainwindow.cpp:141 mainwindow.cpp:676 mainwindow.cpp:705
+#: mainwindow.cpp:804 mainwindow.cpp:821 mainwindow.cpp:1191 onu.cpp:79
+#: onu.cpp:112 onu.cpp:131
+#, kde-format
+msgid "Error"
+msgstr "កំហុស"
+
+#: mainwindow.cpp:141 mainwindow.cpp:705 mainwindow.cpp:821
+#, kde-format
+msgid "Cannot load center icon<br>Program cannot continue"
+msgstr "មិន​អាច​ផ្ទុក​រូប​តំណាង​មជ្ឈ​មណ្ឌល​បាន​ទេ​<br>កម្ម​វិធី​មិន​អាច​បន្ត​បាន​ទេ​"
+
+#: mainwindow.cpp:324
+#, kde-format
+msgid "Open a saved skin..."
+msgstr "បើក​ស្បែក​ដែល​បាន​រក្សា​ទុក​..."
+
+#: mainwindow.cpp:328
+#, kde-format
+msgid "Load &Recent"
+msgstr "ផ្ទុក​ស្បែក​បច្ចុប្បន្ន​"
+
+#: mainwindow.cpp:329
+#, kde-format
+msgid "Open a recently saved skin..."
+msgstr "បើក​ស្បែក​ដែល​បាន​រក្សា​ទុក​បច្ចុប្បន្ន​..."
+
+#: mainwindow.cpp:337
+#, kde-format
+msgid "Save the current skin"
+msgstr "រក្សា​ទុក​ស្បែក​បច្ចុប្បន្ន​"
+
+#: mainwindow.cpp:366
+#, fuzzy, kde-format
+#| msgid "Choose the root folder of the skin to open"
+msgctxt "@title:window"
+msgid "Choose the Root Folder of the Skin to Open"
+msgstr "ជ្រើស​ថត​ root របស់​ស្បែក​ដែល​ត្រូវ​បើក​"
+
+#: mainwindow.cpp:524
+#, kde-format
+msgid "There are unsaved changes. What do you want to do?"
+msgstr "មាន​ការ​ផ្លាស់​ប្ដូរ​ដែល​មិន​បាន​រក្សា​ទុក​ ។ តើ​អ្នក​ចង់​ធ្វើ​អ្វី ?"
+
+#: mainwindow.cpp:525
+#, kde-format
+msgid "Exit Anyway?"
+msgstr "យ៉ាង​ណា​ក៏​ដោយ​ ចាក​ចេញ​ឬ​ ?"
+
+#: mainwindow.cpp:526
+#, kde-format
+msgid "Quit without saving"
+msgstr "ចាក​ចេញ​ដោយ​មិន​​រក្សា​ទុក​"
+
+#: mainwindow.cpp:527
+#, kde-format
+msgid "Save then quit"
+msgstr "រក្សា​ទុក​ រួច​ចាក​ចេញ"
+
+#: mainwindow.cpp:528
+#, kde-format
+msgid "Do not quit"
+msgstr "កុំ​ចាក​ចេញ"
+
+#: mainwindow.cpp:1303
+#, kde-format
+msgid "New country name"
+msgstr "ឈ្មោះ​ប្រទេស​ថ្មី"
+
+#: mainwindow.cpp:1303
+#, kde-format
+msgid "Enter the name of the new country"
+msgstr "វាយ​បញ្ចូល​ឈ្មោះ​​​ប្រទេស​ថ្មី"
+
+#: mainwindow.cpp:1313
+#, kde-format
+msgid "Do you really want to delete country '%1'?"
+msgstr "តើ​អ្នក​ពិត​ជា​ចង់​លុប​ប្រទេស​ '%1' ឬ​ ?"
+
+#: mainwindow.cpp:1313
+#, kde-format
+msgid "Really delete country?"
+msgstr "ពិត​ជា​ចង់​លុប​ប្រទេស​ឬ​ ?"
+
+#: mainwindow.cpp:1332
+#, kde-format
+msgid "New continent name"
+msgstr "ឈ្មោះ​ទ្វីប​ថ្មី"
+
+#: mainwindow.cpp:1332
+#, kde-format
+msgid "Enter the name of the new continent"
+msgstr "វាយ​បញ្ចូល​ឈ្មោះ​របស់​ទ្វីប​ថ្មី"
+
+#: mainwindow.cpp:1342
+#, kde-format
+msgid "Do you really want to delete continent '%1'?"
+msgstr "តើ​​អ្នក​ពិត​ជា​ចង់​លុប​ទ្វីប​ '%1' ឬ​ ?"
+
+#: mainwindow.cpp:1342
+#, kde-format
+msgid "Really delete continent?"
+msgstr "ពិត​ជា​ចង់​លុប​ទ្វីប​ឬ​ ?"
+
+#: mainwindow.cpp:1891
+#, kde-format
+msgid "Do you really want to delete goal '%1'?"
+msgstr "តើ​អ្នក​ពិត​ជា​ចង់​លុប​គោល​ដៅ​ '%1' ឬ ?"
+
+#: mainwindow.cpp:1891
+#, kde-format
+msgid "Really delete goal?"
+msgstr "ពិត​ជា​ចង់​លុប​គោល​ដៅ​ឬ​ ?"
+
+#: mainwindow.cpp:1950
+#, kde-format
+msgid "New nationality name"
+msgstr "ឈ្មោះ​សញ្ជាតិ​ថ្មី​"
+
+#: mainwindow.cpp:1950
+#, kde-format
+msgid "Enter the name of the new nationality"
+msgstr "បញ្ចូល​ឈ្មោះ​របស់​សញ្ជាតិ​ថ្មី​ "
+
+#: mainwindow.cpp:1960
+#, kde-format
+msgid "Do you really want to delete nationality '%1'?"
+msgstr "តើ​អ្នក​ពិត​ជា​ចង់​លុប​សញ្ជាតិ​ '%1' ឬ​ ?"
+
+#: mainwindow.cpp:1960
+#, kde-format
+msgid "Really delete nationality?"
+msgstr "ពិត​ជា​ចង់​លុប​សញ្ជាតិ​ឬ​ ?"
+
+#: onu.cpp:78
+#, kde-format
+msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+msgstr "កំហុស​ - ទ្រង់​ទ្រាយ​ឯក​សារ​កំណត់​​ស្បែក​មិន​ត្រឹម​ត្រូវ​ ។ រំពឹង​ %1 និង​ទទួល​បាន​ %2"
+
+#: onu.cpp:111
+#, kde-format
+msgid ""
+"Pool filename not found\n"
+"Program cannot continue"
+msgstr ""
+"រក​មិន​ឃើញ​ឈ្មោះ​ឯកសារ​អាង​ទេ​\n"
+"កម្មវិធី​មិន​អាច​បន្ត​បាន​ទេ"
+
+#: onu.cpp:130
+#, kde-format
+msgid ""
+"Map mask image not found\n"
+"Program cannot continue"
+msgstr ""
+"រក​មិន​ឃើញ​រូប​ភាព​របាំង​ផែន​ទី​ទេ​\n"
+"កម្មវិធី​មិន​អាច​បន្ត​បាន​ទេ"
+
+#: onu.cpp:989
+#, kde-format
+msgid ""
+"Cannot read file %1:\n"
+"%2."
+msgstr ""
+"មិន​អាច​អាន​ឯកសារ​ %1 ទេ​ ៖\n"
+"%2 ។"
+
+#: onu.cpp:990
+#, kde-format
+msgid "PoolLoader"
+msgstr "កម្មវិធី​ទាញ​យក​អាង"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, KsirkSkinEditorPreferencesWidget)
+#: preferences.ui:25
+#, kde-format
+msgid "KsirK Skin Editor Preferences"
+msgstr "​ចំណូល​ចិត្ត​ចំពោះ​កម្ម​វិធី​កែ​សម្រួល​ស្បែក​ របស់​ KsirK "
+
+#: skinSpritesData.cpp:85
+#, kde-format
+msgid "Error - Unknown skin int data: "
+msgstr "កំហុស​ - មិន​ស្គាល់​ទិន្នន័យ​​ខាង​ក្នុង​ស្បែក​ ៖ "
+
+#: skinSpritesData.cpp:86 skinSpritesData.cpp:102
+#, kde-format
+msgid "Fatal Error"
+msgstr "កំហុស​ធ្ងន់ធ្ងរ"
+
+#: skinSpritesData.cpp:101
+#, kde-format
+msgid "Error - Unknown skin string data: "
+msgstr "កំហុស​ - មិន​ស្គាល់​ទិន្នន័យ​​ខ្សែ​អក្សរ​ស្បែក​ ៖"

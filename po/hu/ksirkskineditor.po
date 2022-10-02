@@ -1,0 +1,3504 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Tamas Szanto <taszanto@gmail.com>, 2009.
+# Laszlo Papp <djszapi@archlinux.us>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 4.3\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-24 00:42+0000\n"
+"PO-Revision-Date: 2010-04-01 07:49+0200\n"
+"Last-Translator: Laszlo Papp <djszapi@archlinux.us>\n"
+"Language-Team: Hungarian <kde-i18n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Szántó Tamás"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "taszanto@gmail.com"
+
+#: goal.cpp:100
+#, kde-format
+msgid "Error: no player to destroy"
+msgstr "Hiba: nincs megsemmisíthető ellenfél"
+
+#: goal.cpp:213
+#, kde-format
+msgid "KsirK - Goal Display"
+msgstr "KsirK - Céljelző"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
+#: ksirkcontinentdefinition.ui:13
+#, kde-format
+msgid "Continent"
+msgstr "Földrész"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ksirkcontinentdefinition.ui:22
+#, kde-format
+msgid "Bonus:"
+msgstr "Jutalompont:"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, bonus)
+#: ksirkcontinentdefinition.ui:29
+#, kde-format
+msgid "Number of bonus points when owning the full continent"
+msgstr "Jutalompont a teljes földrész meghódításáért"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, bonus)
+#: ksirkcontinentdefinition.ui:36
+#, kde-format
+msgid ""
+"Number of bonus points when owning the full continent.\n"
+"\n"
+"At the end of each turn a number of armies is distributed to each player. If "
+"one player owns all the countries of this continent, he/she gains this "
+"bonus.\n"
+"\n"
+"The bonus should be proportional to the continent's size and to the "
+"difficulty to conquer it or to keep it."
+msgstr ""
+"Egy teljes földrész meghódításáért járó jutalompontszám.\n"
+"\n"
+"Minden kör végén hadseregeket oszt szét a gép a játékosok között. Ha egy "
+"játékos a földrész összes országát birtokolja, akkor megkapja ezt a "
+"jutalompontszámot.\n"
+"\n"
+"A jutalom lehetőleg arányos legyen a földrész méretével és a meghódításához "
+"vagy megtartásához szükséges erőfeszítéssel."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, selectcountriesbutton)
+#: ksirkcontinentdefinition.ui:48
+#, kde-format
+msgid "Select the countries contained in this continent"
+msgstr "Válassza ki a földrészhez tartozó országokat"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, selectcountriesbutton)
+#: ksirkcontinentdefinition.ui:53
+#, kde-format
+msgid ""
+"Click here to select the countries contained in this continent.\n"
+"\n"
+"A list of all the world's countries will be shown and you will be able to "
+"select the countries using the mouse and the Ctrl and Shift keys."
+msgstr ""
+"Kattintson ide a földrészhez tartozó országok kijelöléséhez.\n"
+"\n"
+"Egy listában megjelenik az összes ország, melyben elvégezhető a kijelölés az "
+"egér és a Ctrl ill. Shift billentyűk segítségével."
+
+#. i18n: ectx: property (text), widget (QPushButton, selectcountriesbutton)
+#: ksirkcontinentdefinition.ui:56
+#, kde-format
+msgid "Countries:"
+msgstr "Országok:"
+
+#. i18n: ectx: property (toolTip), widget (QListWidget, countrieslist)
+#: ksirkcontinentdefinition.ui:63
+#, kde-format
+msgid "Continent's countries"
+msgstr "A földrész országai"
+
+#. i18n: ectx: property (whatsThis), widget (QListWidget, countrieslist)
+#: ksirkcontinentdefinition.ui:66
+#, kde-format
+msgid "This is the list of countries currently forming this continent."
+msgstr "Ezek az országok találhatók a földrészen."
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkCountryDefinition)
+#: ksirkcountrydefinition.ui:13
+#, kde-format
+msgid "Country"
+msgstr "Ország"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ksirkcountrydefinition.ui:22
+#, kde-format
+msgid "Flag:"
+msgstr "Zászló:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: ksirkcountrydefinition.ui:29 ksirkcountrydefinition.ui:46
+#: ksirkcountrydefinition.ui:63 ksirkcountrydefinition.ui:97
+#: ksirkcountrydefinition.ui:148 ksirkcountrydefinition.ui:182
+#: ksirkskindefinition.ui:64
+#, kde-format
+msgid "x"
+msgstr "x"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ksirkcountrydefinition.ui:39
+#, kde-format
+msgid "Anchor:"
+msgstr "Horgony:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: ksirkcountrydefinition.ui:56
+#, kde-format
+msgid "Center:"
+msgstr "Középpont:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: ksirkcountrydefinition.ui:73
+#, kde-format
+msgid "Infantry:"
+msgstr "Gyalogság:"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, infantryx)
+#: ksirkcountrydefinition.ui:80
+#, kde-format
+msgid "Infantry's sprite top left point x-coordinate"
+msgstr "A gyalogság sprite-jának bal felső X koordinátája"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryx)
+#: ksirkcountrydefinition.ui:87
+#, kde-format
+msgid ""
+"Infantry's sprite top left point x-coordinate.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the infantry."
+msgstr ""
+"A gyalogság sprite-jának bal felső X koordinátája.\n"
+"\n"
+"Ez relatív a térkép bal felső sarkához, a méret a fő témaleíró elemben "
+"található.\n"
+"\n"
+"A gyalogság elmozgatása esetén az érték automatikusan frissül."
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, infantryy)
+#: ksirkcountrydefinition.ui:107
+#, kde-format
+msgid "Infantry's sprite top left point y-coordinate"
+msgstr "A gyalogság sprite-jának bal felső Y koordinátája"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryy)
+#: ksirkcountrydefinition.ui:114
+#, kde-format
+msgid ""
+"Infantry's sprite top left point y-coordinate.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the infantry by drag "
+"and drop."
+msgstr ""
+"A gyalogság sprite-jának bal felső Y koordinátája.\n"
+"\n"
+"Ez relatív a térkép bal felső sarkához, a méret a fő témaleíró elemben "
+"található.\n"
+"\n"
+"A gyalogság elmozgatása esetén az érték automatikusan frissül."
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: ksirkcountrydefinition.ui:124
+#, kde-format
+msgid "Cavalry:"
+msgstr "Lovasság:"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryx)
+#: ksirkcountrydefinition.ui:131
+#, kde-format
+msgid "Cavalry's sprite top left point x-coordinate"
+msgstr "A lovassági sprite bal felső sarkának X koordinátája"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryx)
+#: ksirkcountrydefinition.ui:138
+#, kde-format
+msgid ""
+"Cavalry's sprite top left point x-coordinate.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the cavalry."
+msgstr ""
+"A lovasság sprite-jának bal felső X koordinátája.\n"
+"\n"
+"Ez relatív a térkép bal felső sarkához, a méret a fő témaleíró elemben "
+"található.\n"
+"\n"
+"A lovasság elmozgatása esetén az érték automatikusan frissül."
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryy)
+#: ksirkcountrydefinition.ui:158
+#, kde-format
+msgid "Cavalry's sprite top left point y-coordinate"
+msgstr "A lovassági sprite bal felső sarkának Y koordinátája"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryy)
+#: ksirkcountrydefinition.ui:165
+#, kde-format
+msgid ""
+"Cavalry's sprite top left point y-coordinate.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the cavalry by drag and "
+"drop."
+msgstr ""
+"A lovasság sprite-jának bal felső Y koordinátája.\n"
+"\n"
+"Ez relatív a térkép bal felső sarkához, a méret a fő témaleíró elemben "
+"található.\n"
+"\n"
+"A lovasság elmozgatása esetén az érték automatikusan frissül."
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: ksirkcountrydefinition.ui:175
+#, kde-format
+msgid "Cannon:"
+msgstr "Ágyú:"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cannony)
+#: ksirkcountrydefinition.ui:192
+#, kde-format
+msgid "Cannon's sprite top left point y-coordinate"
+msgstr "Az ágyú sprite bal felső sarkának Y koordinátája"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cannony)
+#: ksirkcountrydefinition.ui:199
+#, kde-format
+msgid ""
+"Cannon's sprite top left point y-coordinate.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the cannon by drag and "
+"drop."
+msgstr ""
+"Az ágyú sprite-jának bal felső Y koordinátája.\n"
+"\n"
+"Ez relatív a térkép bal felső sarkához, a méret a fő témaleíró elemben "
+"található.\n"
+"\n"
+"Az ágyú elmozgatása esetén az érték automatikusan frissül."
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cannonx)
+#: ksirkcountrydefinition.ui:209
+#, kde-format
+msgid "Cannon's sprite top left point x-coordinate"
+msgstr "Az ágyú sprite bal felső sarkának X koordinátája"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonx)
+#: ksirkcountrydefinition.ui:216
+#, kde-format
+msgid ""
+"Cannon's sprite top left point x-coordinate.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the cannon."
+msgstr ""
+"Az ágyú sprite-jának bal felső X koordinátája.\n"
+"\n"
+"Ez relatív a térkép bal felső sarkához, a méret a fő témaleíró elemben "
+"található.\n"
+"\n"
+"Az ágyú elmozgatása esetén az érték automatikusan frissül."
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, centery)
+#: ksirkcountrydefinition.ui:226
+#, kde-format
+msgid "Point around which the country name is drawn y-coordinate"
+msgstr "Az országnév Y koordinátája"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, centery)
+#: ksirkcountrydefinition.ui:236
+#, kde-format
+msgid ""
+"Point around which the country name is drawn y-coordinate.\n"
+"\n"
+"Note that this point should be located inside the limits of the country on "
+"the map mask.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the country name by "
+"dragging and dropping its target icon.\n"
+msgstr ""
+"E pont körül lesz kiírva az országnév (Y koordináta).\n"
+"\n"
+"A térképmaszkon ennek a pontnak az országon belül kell lennie.\n"
+"\n"
+"A pozíció a térkép bal felső sarkához relatív, méretezése a témaleíró fő "
+"eleme alapján történik.\n"
+"\n"
+"Az érték automatikusan frissül, ha az országnevet elmozgatja az ikonja "
+"segítségével.\n"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, centerx)
+#: ksirkcountrydefinition.ui:246
+#, kde-format
+msgid "Point around which the country name is drawn x-coordinate"
+msgstr "Az országnév X koordinátája"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, centerx)
+#: ksirkcountrydefinition.ui:255
+#, kde-format
+msgid ""
+"Point around which the country name is drawn x-coordinate.\n"
+"\n"
+"Note that this point should be located inside the limits of the country on "
+"the map mask.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the country name by "
+"dragging and dropping its target icon."
+msgstr ""
+"E pont körül lesz kiírva az országnév (X koordináta).\n"
+"\n"
+"A térképmaszkon ennek a pontnak az országon belül kell lennie.\n"
+"\n"
+"A pozíció a térkép bal felső sarkához relatív, méretezése a témaleíró fő "
+"eleme alapján történik.\n"
+"\n"
+"Az érték automatikusan frissül, ha az országnevet elmozgatja az ikonja "
+"segítségével."
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, anchory)
+#: ksirkcountrydefinition.ui:265
+#, kde-format
+msgid "Center of the highlighting y-coordinate"
+msgstr "A kiemelés középpontjának Y koordinátája"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, anchory)
+#: ksirkcountrydefinition.ui:272
+#, kde-format
+msgid ""
+"Center of the highlighting y-coordinate.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the highlighting by "
+"dragging and dropping its cross icon."
+msgstr ""
+"A kiemelés középpontjának Y koordinátája.\n"
+"\n"
+"A térképmaszkon ennek a pontnak az országon belül kell lennie.\n"
+"\n"
+"A pozíció a térkép bal felső sarkához relatív, méretezése a témaleíró fő "
+"eleme alapján történik.\n"
+"\n"
+"Az érték automatikusan frissül, ha a kijelölést elmozgatja a célkereszt ikon "
+"segítségével."
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, anchorx)
+#: ksirkcountrydefinition.ui:282
+#, kde-format
+msgid "Center of the highlighting x-coordinate"
+msgstr "A kiemelés középpontjának X koordinátája"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, anchorx)
+#: ksirkcountrydefinition.ui:289
+#, kde-format
+msgid ""
+"Center of the highlighting x-coordinate.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the highlighting by "
+"dragging and dropping its cross icon."
+msgstr ""
+"A kiemelés középpontjának X koordinátája.\n"
+"\n"
+"A térképmaszkon ennek a pontnak az országon belül kell lennie.\n"
+"\n"
+"A pozíció a térkép bal felső sarkához relatív, méretezése a témaleíró fő "
+"eleme alapján történik.\n"
+"\n"
+"Az érték automatikusan frissül, ha a kijelölést elmozgatja a célkereszt ikon "
+"segítségével."
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, flagy)
+#: ksirkcountrydefinition.ui:299
+#, kde-format
+msgid "Flag's sprite top left point y-coordinate"
+msgstr "A zászló sprite bal felső sarkának Y koordinátája"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, flagy)
+#: ksirkcountrydefinition.ui:306
+#, kde-format
+msgid ""
+"Flag's sprite top left point y-coordinate.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the flag by drag and "
+"drop."
+msgstr ""
+"A zászló sprite bal felső pontjának Y koordinátája.\n"
+"\n"
+"A térképmaszkon ennek a pontnak az országon belül kell lennie.\n"
+"\n"
+"A pozíció a térkép bal felső sarkához relatív, méretezése a témaleíró fő "
+"eleme alapján történik.\n"
+"\n"
+"Az érték automatikusan frissül, ha a zászlót elmozgatja."
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, flagx)
+#: ksirkcountrydefinition.ui:316
+#, kde-format
+msgid "Flag's sprite top left point x-coordinate"
+msgstr "A zászló sprite bal felső sarkának X koordinátája"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, flagx)
+#: ksirkcountrydefinition.ui:323
+#, kde-format
+msgid ""
+"Flag's sprite top left point x-coordinate.\n"
+"\n"
+"This is given relatively to the top left of the map, sized as defined in the "
+"main skin definition widget.\n"
+"\n"
+"This value will be automatically updated if you move the flag by drag and "
+"drop."
+msgstr ""
+"A zászló sprite bal felső pontjának X koordinátája.\n"
+"\n"
+"A térképmaszkon ennek a pontnak az országon belül kell lennie.\n"
+"\n"
+"A pozíció a térkép bal felső sarkához relatív, méretezése a témaleíró fő "
+"eleme alapján történik.\n"
+"\n"
+"Az érték automatikusan frissül, ha a zászlót elmozgatja."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, neighboursbutton)
+#: ksirkcountrydefinition.ui:335
+#, kde-format
+msgid "Select this country's neighbors"
+msgstr "Válassza ki az ország szomszédait"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, neighboursbutton)
+#: ksirkcountrydefinition.ui:340
+#, kde-format
+msgid ""
+"Click here to select this country's neighbors.\n"
+"\n"
+"A list of all the world's countries will be shown and you will be able to "
+"select the countries using the mouse and the Ctrl and Shift keys."
+msgstr ""
+"Kattintson ide az ország szomszédainak kiválasztásához.\n"
+"\n"
+"Egy listában megjelenik az összes ország, ebből lehet válogatni az egér és a "
+"Ctrl ill. Shift billentyűkkel."
+
+#. i18n: ectx: property (text), widget (QPushButton, neighboursbutton)
+#: ksirkcountrydefinition.ui:343
+#, kde-format
+msgid "Neighbors:"
+msgstr "Szomszédok:"
+
+#. i18n: ectx: property (toolTip), widget (QListWidget, neighbourslist)
+#: ksirkcountrydefinition.ui:350
+#, kde-format
+msgid "This country's neighbors"
+msgstr "Az ország szomszédai"
+
+#. i18n: ectx: property (whatsThis), widget (QListWidget, neighbourslist)
+#: ksirkcountrydefinition.ui:353
+#, kde-format
+msgid ""
+"This is the list of countries currently considered as neighbors of this "
+"country."
+msgstr "Ezek az országok szomszédosak jelenleg a kiválasztott országgal."
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkGoalDefinition)
+#: ksirkgoaldefinition.ui:13
+#, kde-format
+msgid "Goal"
+msgstr "Cél"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: ksirkgoaldefinition.ui:26
+#, kde-format
+msgid "Goal Type"
+msgstr "Céltípus"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, worldtype)
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, worldtype)
+#: ksirkgoaldefinition.ui:41 ksirkgoaldefinition.ui:44
+#, kde-format
+msgid "Conquer all the world"
+msgstr "Az egész világ legyőzése"
+
+#. i18n: ectx: property (text), widget (QRadioButton, worldtype)
+#: ksirkgoaldefinition.ui:47
+#, kde-format
+msgid "World conquest"
+msgstr "Az egész világ meghódítása"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, playertype)
+#: ksirkgoaldefinition.ui:54
+#, kde-format
+msgid "Eliminate a given player"
+msgstr "Egy adott játékos legyőzése"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, playertype)
+#: ksirkgoaldefinition.ui:57
+#, kde-format
+msgid ""
+"<p>Eliminate a given player. If it is eliminated by another one, you will "
+"fall back to a <emphasis>Countries</emphasis> type of goal.</p>"
+msgstr ""
+"<p>Le kell győzni egy adott játékost. Ha más játékos győzi le, akkor a "
+"másodlagos cél egy <emphasis>Országok</emphasis> típusú cél lesz.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, playertype)
+#: ksirkgoaldefinition.ui:60
+#, kde-format
+msgid "Player"
+msgstr "Játékos"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, countriestype)
+#: ksirkgoaldefinition.ui:67
+#, kde-format
+msgid "Conquer a given number of countries"
+msgstr "Adott számú ország meghódítása"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, countriestype)
+#: ksirkgoaldefinition.ui:72
+#, kde-format
+msgid ""
+"Conquer a given number of countries.\n"
+"\n"
+"You can also make the player to have to put a given number of armies on each "
+"country."
+msgstr ""
+"Adott számú ország legyőzése.\n"
+"\n"
+"Előírható, hogy a játékosnak adott számú hadsereget kelljen minden országban "
+"elhelyeznie."
+
+#. i18n: ectx: property (text), widget (QRadioButton, countriestype)
+#. i18n: ectx: attribute (title), widget (QWidget, tabCountries)
+#: ksirkgoaldefinition.ui:75 ksirkskindefinition.ui:256
+#, kde-format
+msgid "Countries"
+msgstr "Országok"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, continentstype)
+#: ksirkgoaldefinition.ui:82
+#, kde-format
+msgid "Conquer a given list of continents"
+msgstr "Adott földrészek meghódítása"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, continentstype)
+#: ksirkgoaldefinition.ui:85
+#, kde-format
+msgid ""
+"Conquer a given list of continents. You can also let the player choose one "
+"of their target continents."
+msgstr ""
+"A megadott földrészeket kell meghódítani. Azt is meg lehet engedni a "
+"játékosnak, hogy kiválasszon egy célföldrészt."
+
+#. i18n: ectx: property (text), widget (QRadioButton, continentstype)
+#. i18n: ectx: attribute (title), widget (QWidget, tabContinents)
+#: ksirkgoaldefinition.ui:88 ksirkskindefinition.ui:318
+#, kde-format
+msgid "Continents"
+msgstr "Földrészek"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: ksirkgoaldefinition.ui:99 ksirkskindefinition.ui:147
+#, kde-format
+msgid "Description:"
+msgstr "Leírás:"
+
+#. i18n: ectx: property (toolTip), widget (QTextEdit, description)
+#: ksirkgoaldefinition.ui:106
+#, kde-format
+msgid "Text describing the goal"
+msgstr "A célt leíró szöveg"
+
+#. i18n: ectx: property (whatsThis), widget (QTextEdit, description)
+#: ksirkgoaldefinition.ui:109
+#, kde-format
+msgid ""
+"<p>Text describing the goal. It should include several placeholders for "
+"various data depending on the goal type:</p><ul><li><i>World Conquest</i>: "
+"none</li><li><i>Player</i>: one for the player name and one for the number "
+"of countries fallback</li><li><i>Countries</i>: one for the number of "
+"countries and possibly a second one for the number of armies to put on each "
+"country</li><li><i>Continents</i>: one for each continent to conquer</li></"
+"ul>"
+msgstr ""
+"<p>A cél leírása. A cél típusától függően különféle szimbólumokat "
+"tartalmazhat:</p><ul><li><i>A világ meghódítása</i>: nincs</"
+"li><li><i>Játékos</i>: egy játékos neve és másodlagos célként egy "
+"országszám</li><li><i>Országok</i>: az országok száma és esetleg másodlagos "
+"célként a hadseregek száma országonként</li><li><i>Földrészek</i>: a "
+"meghódítandó földrészek nevei</li></ul>"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ksirkgoaldefinition.ui:125
+#, kde-format
+msgid "Countries nb:"
+msgstr "Országszám:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ksirkgoaldefinition.ui:132
+#, kde-format
+msgid "Armies by country:"
+msgstr "Hadseregek országonként:"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, nbcountries)
+#: ksirkgoaldefinition.ui:139
+#, kde-format
+msgid "Number of countries to conquer"
+msgstr "A legyőzendő országok száma"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, nbcountries)
+#: ksirkgoaldefinition.ui:142
+#, kde-format
+msgid ""
+"<p>Number of countries to conquer in a <i>Countries</i> goal or as a "
+"fallback in a <i>Player</i> goal.</p>"
+msgstr ""
+"<p>A meghódítandó országok száma <i>Országok</i> típusú célnál vagy "
+"másodlagos célként egy <i>Játékos</i> típusú cél.</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, armiesbycountry)
+#: ksirkgoaldefinition.ui:149
+#, kde-format
+msgid "Number of armies to put on each country"
+msgstr "A hadseregek száma országonként"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, armiesbycountry)
+#: ksirkgoaldefinition.ui:152
+#, kde-format
+msgid ""
+"<p>Number of armies to put on each country in a <i>Countries</i> goal.</p>"
+msgstr "<p>A hadseregek száma országonként <i>Országok</i> cél esetén.</p>"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, selectcontinentsbutton)
+#: ksirkgoaldefinition.ui:170
+#, kde-format
+msgid "Select the continents to conquer"
+msgstr "A meghódítandó földrészek kiválasztása"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, selectcontinentsbutton)
+#: ksirkgoaldefinition.ui:173
+#, kde-format
+msgid ""
+"<p>Click this button to select the continents to conquer in a <i>Continents</"
+"i> goal.</p><p>You will be prompted with a list of this world's continents. "
+"Select those to conquer with the mouse and the Ctrl and Shift keys.</p>"
+msgstr ""
+"<p>Kattintson ide a meghódítandó földrészek kijelöléséhez <i>Földrészek</i> "
+"cél esetén.</p><p>Megjelenik egy lista, mely az söszes földrészt "
+"tartalmazza. A meghódítandó földrészeket az egér és a Ctrl ill. Shift "
+"billentyűk segítségével lehet kijelölni.</p>"
+
+#. i18n: ectx: property (text), widget (QPushButton, selectcontinentsbutton)
+#: ksirkgoaldefinition.ui:176
+#, kde-format
+msgid "Select Continents"
+msgstr "Földrészválasztó"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, anycontinent)
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, anycontinent)
+#: ksirkgoaldefinition.ui:183 ksirkgoaldefinition.ui:186
+#, kde-format
+msgid "Check to let the player choose one of the continents to conquer"
+msgstr ""
+"Jelölje be, ha azt szeretné, hogy a játékos kiválaszthassa a meghódítandó "
+"földrészt"
+
+#. i18n: ectx: property (text), widget (QCheckBox, anycontinent)
+#: ksirkgoaldefinition.ui:189
+#, kde-format
+msgid "Any"
+msgstr "Bármely"
+
+#. i18n: ectx: property (toolTip), widget (QListWidget, continentslist)
+#: ksirkgoaldefinition.ui:198
+#, kde-format
+msgid "List of the continents to conquer"
+msgstr "A meghódítandó földrészek listája"
+
+#. i18n: ectx: property (whatsThis), widget (QListWidget, continentslist)
+#: ksirkgoaldefinition.ui:201
+#, kde-format
+msgid ""
+"<p>List of the continents to conquer in a <i>Continents</i> goal.</p><p>You "
+"can change this list by clicking on the \"Select continents\" button above.</"
+"p>"
+msgstr ""
+"<p>A meghódítandó földrészek listája <i>Földrészek</i> típusú célnál.</"
+"p><p>A lista módosításához kattintson a \"Földrészek\" gombra.</p>"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkNationalityDefinition)
+#: ksirknationalitydefinition.ui:13
+#, kde-format
+msgid "Nationality"
+msgstr "Népcsoport"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ksirknationalitydefinition.ui:20
+#, kde-format
+msgid "Name:"
+msgstr "Név:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, name)
+#: ksirknationalitydefinition.ui:27
+#, kde-format
+msgid "Nationality name"
+msgstr "Népcsoportnév"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, name)
+#: ksirknationalitydefinition.ui:30
+#, kde-format
+msgid ""
+"<p>Nationality name. The name of the player country. Can be the name of an "
+"existing country in case of a <i>realistic</i> world.</p><p>This string "
+"should be unique in the skin.</p>"
+msgstr ""
+"<p>Népcsoportnév. A játékos országának neve. <i>Realisztikus</i> cél esetén "
+"egy létező ország neve.</p><p>A felületen belül egyedinek kell lennie a "
+"névnek.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ksirknationalitydefinition.ui:43
+#, kde-format
+msgid "Leader name:"
+msgstr "A vezető neve:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, leader)
+#: ksirknationalitydefinition.ui:50
+#, kde-format
+msgid "Leader name"
+msgstr "A vezető neve"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, leader)
+#: ksirknationalitydefinition.ui:53
+#, kde-format
+msgid ""
+"<p>Name of this nationality leader. In the case of a <i>realistic</i> skin, "
+"this could be the name of a well known king, president, etc.</p>"
+msgstr ""
+"<p>A népcsoport vezérének neve. <i>Realisztikus</i> felület esetén lehet "
+"például egy ismert király vagy elnök neve.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ksirknationalitydefinition.ui:60
+#, kde-format
+msgid "Flag ID in pool:"
+msgstr "Zászlóazonosító:"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, flag)
+#: ksirknationalitydefinition.ui:67
+#, kde-format
+msgid "Flag sprite id in the pool SVG"
+msgstr "Sprite-azonosító az SVG-adatfájlban"
+
+#. i18n: ectx: property (whatsThis), widget (KComboBox, flag)
+#: ksirknationalitydefinition.ui:70
+#, kde-format
+msgid "Flag sprite id in the pool SVG (pool.svg)."
+msgstr "A zászló sprite azonosítója az SVG-adatfájlban (pool.svg)."
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, skindefinition)
+#: ksirkskindefinition.ui:13
+#, kde-format
+msgid "Skin Definition"
+msgstr "Felületjellemzők"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ksirkskindefinition.ui:22
+#, kde-format
+msgid "Skin name:"
+msgstr "Felületnév:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, skinNameLineEdit)
+#: ksirkskindefinition.ui:29
+#, kde-format
+msgid "The skin's short name"
+msgstr "A felület rövid neve"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, skinNameLineEdit)
+#: ksirkskindefinition.ui:35
+#, kde-format
+msgid ""
+"Type here the skin's short name. This should be an identifier-like string"
+msgstr ""
+"Itt lehet megadni a felület rövid nevét (egy azonosítószerű rövid sztring "
+"legyen)."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ksirkskindefinition.ui:46
+#, fuzzy, kde-format
+#| msgid "Width x Height"
+msgid "Width x height:"
+msgstr "Szélesség x magasság"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, widthLineEdit)
+#: ksirkskindefinition.ui:53
+#, kde-format
+msgid "Map's width"
+msgstr "Térképszélesség"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, widthLineEdit)
+#: ksirkskindefinition.ui:57
+#, kde-format
+msgid ""
+"This is the map's width. The map SVG element will be by default drawn on an "
+"image of this width. All positions on the map are expressed relatively to "
+"this dimension.\n"
+msgstr ""
+"A térkép szélessége. A térkép SVG-eleme ilyen szélességű képre fog kerülni. "
+"A térképre kerülő objektumok pozíciói relatívak lesznek ehhez a mérethez.\n"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, heightLineEdit)
+#: ksirkskindefinition.ui:71
+#, kde-format
+msgid "Map's height"
+msgstr "Térképmagasság"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, heightLineEdit)
+#: ksirkskindefinition.ui:75
+#, kde-format
+msgid ""
+"This is the map's height. The map SVG element will be by default drawn on an "
+"image of this height All positions on the map are expressed relatively to "
+"this dimension.\n"
+msgstr ""
+"A térkép magassága. A térkép SVG-eleme ilyen magasságú képre fog kerülni. A "
+"térképre kerülő objektumok pozíciói relatívak lesznek ehhez a mérethez.\n"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: ksirkskindefinition.ui:90
+#, kde-format
+msgid "Map Font"
+msgstr "A térkép betűtípusa"
+
+#. i18n: ectx: property (toolTip), widget (KFontRequester, fontrequester)
+#: ksirkskindefinition.ui:96
+#, kde-format
+msgid "Font used to draw country names"
+msgstr "Az országnevek betűtípusa"
+
+#. i18n: ectx: property (whatsThis), widget (KFontRequester, fontrequester)
+#: ksirkskindefinition.ui:99
+#, kde-format
+msgid "This font will be used to draw the country names on the map"
+msgstr "Ezzel a betűtípussal jelennek meg az országnevek a térképen"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: ksirkskindefinition.ui:108
+#, kde-format
+msgid "Fg:"
+msgstr "E:"
+
+#. i18n: ectx: property (toolTip), widget (KColorButton, fgcolorbutton)
+#: ksirkskindefinition.ui:115
+#, kde-format
+msgid "Foreground color for country names"
+msgstr "Az országnevek előtérszíne"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, fgcolorbutton)
+#: ksirkskindefinition.ui:118
+#, kde-format
+msgid ""
+"This color will be used to draw the foreground of the country names on the "
+"map"
+msgstr "Ilyen színűek lesznek az országnevek a térképen"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: ksirkskindefinition.ui:125
+#, kde-format
+msgid "Bg:"
+msgstr "H:"
+
+#. i18n: ectx: property (toolTip), widget (KColorButton, bgcolorbutton)
+#: ksirkskindefinition.ui:132
+#, kde-format
+msgid "Background color for country names"
+msgstr "Az országnevek háttérszíne"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, bgcolorbutton)
+#: ksirkskindefinition.ui:135
+#, kde-format
+msgid ""
+"This color will be used to draw the background of the country names on the "
+"map"
+msgstr "Ilyen színű lesz az országnevek háttere a térképen"
+
+#. i18n: ectx: property (toolTip), widget (QTextEdit, descriptionTextEdit)
+#: ksirkskindefinition.ui:160
+#, kde-format
+msgid "Human readable description of the skin"
+msgstr "A felület leírása"
+
+#. i18n: ectx: property (whatsThis), widget (QTextEdit, descriptionTextEdit)
+#: ksirkskindefinition.ui:163
+#, kde-format
+msgid ""
+"Describe here the skin, its style, its story, the intent of its author(s), "
+"etc."
+msgstr ""
+"Itt lehet leírni a felületet, a stílust, az előzményeket, a szerző céljait "
+"stb."
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabSprites)
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkSpritesDefinition)
+#: ksirkskindefinition.ui:177 ksirkspritesdefinition.ui:13
+#, kde-format
+msgid "Sprites"
+msgstr "Sprite-ok"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: ksirkskindefinition.ui:184
+#, fuzzy, kde-format
+#| msgid ""
+#| "Edit the sprite definitions\n"
+#| "in the right dock"
+msgid ""
+"Edit the sprite definitions\n"
+"in the right dock."
+msgstr ""
+"A jobb oldali dokkolóban látható\n"
+"sprite-ok szerkesztése"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabNationalities)
+#: ksirkskindefinition.ui:192
+#, kde-format
+msgid "Nationalities"
+msgstr "Népcsoportok"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, newNationalityButton)
+#: ksirkskindefinition.ui:200
+#, kde-format
+msgid "Creates a new Nationality"
+msgstr "Létrehoz egy új népcsopopotot"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, newNationalityButton)
+#: ksirkskindefinition.ui:203
+#, kde-format
+msgid "Click here to add a new nationality. You will be prompted for its name."
+msgstr ""
+"Kattintson ide új népcsoport létrehozásához. A program bekéri a népcsoport "
+"nevét."
+
+#. i18n: ectx: property (text), widget (QPushButton, newNationalityButton)
+#: ksirkskindefinition.ui:206
+#, kde-format
+msgid "New Nationality"
+msgstr "Új népcsoport"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, deleteNationalityButton)
+#: ksirkskindefinition.ui:226
+#, kde-format
+msgid "Removes the currently selected nationality"
+msgstr "Törli a kijelölt népcsoportot"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, deleteNationalityButton)
+#: ksirkskindefinition.ui:229
+#, kde-format
+msgid ""
+"Click here to remove the currently selected nationality. You will be asked "
+"for confirmation."
+msgstr ""
+"Kattintson ide a kijelölt népcsoport eltávolításához. A törlést meg kell "
+"erősíteni."
+
+#. i18n: ectx: property (text), widget (QPushButton, deleteNationalityButton)
+#. i18n: ectx: property (text), widget (QPushButton, deleteCountryButton)
+#. i18n: ectx: property (text), widget (QPushButton, deleteContinentButton)
+#. i18n: ectx: property (text), widget (QPushButton, deleteGoalButton)
+#: ksirkskindefinition.ui:232 ksirkskindefinition.ui:296
+#: ksirkskindefinition.ui:358 ksirkskindefinition.ui:420
+#, kde-format
+msgid "X"
+msgstr "X"
+
+#. i18n: ectx: property (toolTip), widget (QListWidget, nationalitieslist)
+#: ksirkskindefinition.ui:241
+#, kde-format
+msgid "Nationality list"
+msgstr "Népcsoportlista"
+
+#. i18n: ectx: property (whatsThis), widget (QListWidget, nationalitieslist)
+#: ksirkskindefinition.ui:248
+#, kde-format
+msgid ""
+"This list shows the nationalities defined.\n"
+"\n"
+"Each nationality name should be unique. Select a nationality and edit its "
+"details in the right dock.\n"
+"\n"
+"During the game, each player must choose a nationality. As such, you should "
+"add at least as many nationalities as the maximum number of players for this "
+"skin."
+msgstr ""
+"Ebben a listában vannak felsorolva a népcsoportok.\n"
+"\n"
+"Minden népcsoport nevének egyedinek kell lennie. Ha ki van jelölve egy "
+"népcsoport, akkor a jobb oldali panelen módosíthatók a jellemzői.\n"
+"\n"
+"Minden játékosnak választania kell egy népcsoportot játék előtt, ezért "
+"legalább annyi népcsoportot kell felsorolni, mint a felszínnél engedélyezett "
+"maximális játékosszám."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, newCountryButton)
+#: ksirkskindefinition.ui:264
+#, kde-format
+msgid "Creates a new country"
+msgstr "Létrehoz egy új országot"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, newCountryButton)
+#: ksirkskindefinition.ui:267
+#, kde-format
+msgid "Click here to add a new country. You will be prompted for its name."
+msgstr ""
+"Kattintson ide új ország létrehozásához. A program bekéri az ország nevét."
+
+#. i18n: ectx: property (text), widget (QPushButton, newCountryButton)
+#: ksirkskindefinition.ui:270
+#, kde-format
+msgid "New Country"
+msgstr "Új ország"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, deleteCountryButton)
+#: ksirkskindefinition.ui:290
+#, kde-format
+msgid "Removes the currently selected country"
+msgstr "Törli a kijelölt országot"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, deleteCountryButton)
+#: ksirkskindefinition.ui:293
+#, kde-format
+msgid ""
+"Click here to remove the currently selected country. You will be asked for "
+"confirmation."
+msgstr ""
+"Kattintson ide a kijelölt ország törléséhez. A törlést meg kell erősíteni."
+
+#. i18n: ectx: property (toolTip), widget (QListWidget, countrieslist)
+#. i18n: ectx: property (toolTip), widget (QListWidget, countriesList)
+#: ksirkskindefinition.ui:305 ksirkskineditorcountriesselectiondialog.ui:19
+#, kde-format
+msgid "Country list"
+msgstr "Országlista"
+
+#. i18n: ectx: property (whatsThis), widget (QListWidget, countrieslist)
+#: ksirkskindefinition.ui:310
+#, kde-format
+msgid ""
+"This list shows the countries defined.\n"
+"\n"
+"Each country name should be unique. Select a country and edit its details in "
+"the right dock."
+msgstr ""
+"Itt láthatók felsorolva az országok.\n"
+"\n"
+"Az országneveknek egyedinek kell lenniük. Ha kijelöl egy országot, a jobb "
+"oldali panelen módosíthatja a jellemzőit."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, newContinentButton)
+#: ksirkskindefinition.ui:326
+#, kde-format
+msgid "Creates a new continent"
+msgstr "Létrehoz egy új földrészt"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, newContinentButton)
+#: ksirkskindefinition.ui:329
+#, kde-format
+msgid "Click here to add a new continent. You will be prompted for its name."
+msgstr ""
+"Kattintson ide új földrész felvételéhez. A program bekéri a földrész nevét."
+
+#. i18n: ectx: property (text), widget (QPushButton, newContinentButton)
+#: ksirkskindefinition.ui:332
+#, kde-format
+msgid "New Continent"
+msgstr "Új földrész"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, deleteContinentButton)
+#: ksirkskindefinition.ui:352
+#, kde-format
+msgid "Removes the currently selected continent"
+msgstr "Eltávolítja a kijelölt földrészt"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, deleteContinentButton)
+#: ksirkskindefinition.ui:355
+#, kde-format
+msgid ""
+"Click here to remove the currently selected continent. You will be asked for "
+"confirmation."
+msgstr ""
+"Kattintson ide a kijelölt földrész eltávolításához. A program megerősítést "
+"kér a törléshez."
+
+#. i18n: ectx: property (toolTip), widget (QListWidget, continentslist)
+#: ksirkskindefinition.ui:367
+#, kde-format
+msgid "Continent list"
+msgstr "Földrészlista"
+
+#. i18n: ectx: property (whatsThis), widget (QListWidget, continentslist)
+#: ksirkskindefinition.ui:372
+#, kde-format
+msgid ""
+"This list shows the continents defined.\n"
+"\n"
+"Each continent name should be unique. Select a continent and edit its "
+"details in the right dock."
+msgstr ""
+"Itt láthatók felsorolva a földrészek.\n"
+"\n"
+"A földrészek neveinek egyedinek kell lenniük. Ha ki van jelölve egy "
+"földrész, akkor a jobb oldali panelen módosíthatók a jellemzői."
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabGoals)
+#: ksirkskindefinition.ui:380
+#, kde-format
+msgid "Goals"
+msgstr "Célok"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, newGoalButton)
+#: ksirkskindefinition.ui:388
+#, kde-format
+msgid "Creates a new goal"
+msgstr "Létrehoz egy új célt"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, newGoalButton)
+#: ksirkskindefinition.ui:391
+#, kde-format
+msgid "Click here to add a new goal. It will be named automatically."
+msgstr "Kattintson ide új cél felvételéhez. A cél automatikusan nevet kap."
+
+#. i18n: ectx: property (text), widget (QPushButton, newGoalButton)
+#: ksirkskindefinition.ui:394
+#, kde-format
+msgid "New Goal"
+msgstr "Új cél"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, deleteGoalButton)
+#: ksirkskindefinition.ui:414
+#, kde-format
+msgid "Removes the currently selected goal"
+msgstr "Törli a kijelölt célt"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, deleteGoalButton)
+#: ksirkskindefinition.ui:417
+#, kde-format
+msgid ""
+"Click here to remove the currently selected goal. You will be asked for "
+"confirmation."
+msgstr ""
+"Kattintson ide a kijelölt cél törléséhez. A program megerősítést fog kérni a "
+"törléshez."
+
+#. i18n: ectx: property (toolTip), widget (QListWidget, goalslist)
+#: ksirkskindefinition.ui:429
+#, kde-format
+msgid "Goal list"
+msgstr "Célok"
+
+#. i18n: ectx: property (whatsThis), widget (QListWidget, goalslist)
+#: ksirkskindefinition.ui:434
+#, kde-format
+msgid ""
+"This list shows the goals defined.\n"
+"\n"
+"Each goal name should be unique. Select a goal and edit its details in the "
+"right dock."
+msgstr ""
+"Ebben a listában vannak felsorolva a létrehozott célok.\n"
+"\n"
+"A célok neveinek egyedinek kell lenniük. Ha ki van jelölve egy cél, akkor a "
+"jobb oldali panelen módosíthatók a jellemzői."
+
+#: ksirkSkinEditorConfigDialog.cpp:55
+#, kde-format
+msgid "Preferences"
+msgstr "Beállítások"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, CountriesSelectionDialog)
+#: ksirkskineditorcountriesselectiondialog.ui:13
+#, kde-format
+msgid "Country Selection Dialog"
+msgstr "Országválasztó ablak"
+
+#. i18n: ectx: property (whatsThis), widget (QListWidget, countriesList)
+#: ksirkskineditorcountriesselectiondialog.ui:22
+#, kde-format
+msgid ""
+"List of all the countries defined in the world. Currently selected countries "
+"are highlighted. You can modify the selection using the mouse and Ctrl and "
+"Shift keys."
+msgstr ""
+"Itt láthatók felsorolva az országok. A kiválasztott országok nevei ki vannak "
+"emelve. A kijelölés módosítása az egérrel és a Ctrl ill. Shift billentyűkkel "
+"végezhető el."
+
+#. i18n: ectx: Menu (game)
+#: ksirkskineditorui.rc:10
+#, kde-format
+msgid "&Game"
+msgstr "&Játék"
+
+#. i18n: ectx: Menu (settings)
+#: ksirkskineditorui.rc:18
+#, kde-format
+msgid "&Settings"
+msgstr "&Beállítások"
+
+#. i18n: ectx: Menu (help)
+#: ksirkskineditorui.rc:20
+#, kde-format
+msgid "&Help"
+msgstr "&Súgó"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: ksirkskineditorui.rc:24
+#, kde-format
+msgid "Main Toolbar"
+msgstr "Alap eszköztár"
+
+#. i18n: ectx: property (windowTitle), widget (QFrame, skinEditor)
+#: ksirkskineditorwidget.ui:20 main.cpp:52 main.cpp:54
+#, kde-format
+msgid "KsirK Skin Editor"
+msgstr "KsirK felületszerkesztő"
+
+#. i18n: ectx: property (toolTip), widget (QScrollArea, buttonsScrollArea)
+#: ksirkskineditorwidget.ui:46
+#, kde-format
+msgid "Sprite placement buttons"
+msgstr "Sprite-elhelyező gombok"
+
+#. i18n: ectx: property (whatsThis), widget (QScrollArea, buttonsScrollArea)
+#: ksirkskineditorwidget.ui:49
+#, kde-format
+msgid ""
+"Use the buttons here to do the initial placement of the corresponding sprite "
+"for the currently selected country. The buttons are available only if the "
+"sprite is not already placed. "
+msgstr ""
+"Ezekkel a gombokkal lehet az kijelölt ország sprite-jának kezdeti helyét "
+"beállítani. A gombok csak akkor elérhetők, ha a sprite még nem lett "
+"elhelyezve. "
+
+#. i18n: ectx: property (toolTip), widget (QScrollArea, mapScrollArea)
+#: ksirkskineditorwidget.ui:69
+#, kde-format
+msgid "Map with sprites"
+msgstr "Térkép sprite-okkal"
+
+#. i18n: ectx: property (whatsThis), widget (QScrollArea, mapScrollArea)
+#: ksirkskineditorwidget.ui:74
+#, kde-format
+msgid ""
+"Shows the map of the skin with all already placed sprites, the country "
+"names, and the highlighting anchors.\n"
+"\n"
+"Drag and drop the sprites, the country names, and the highlighting anchors "
+"to change their place."
+msgstr ""
+"Megmutatja a térképet a már elhelyezett sprite-okkal, országnevekkel és "
+"kiemelési jelzőkkel.\n"
+"\n"
+"A sprite-ok, az országnevek és a kiemelési jelzők mind áthelyezhetők "
+"húzással és ejtéssel."
+
+#. i18n: ectx: property (text), widget (QLabel, label_26)
+#: ksirkspritesdefinition.ui:29
+#, kde-format
+msgid ""
+"Width between fighter\n"
+"and flag:"
+msgstr ""
+"Távolság a katona\n"
+"és a zászló között:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, widthDiffLineEdit)
+#: ksirkspritesdefinition.ui:39
+#, kde-format
+msgid "Empty space size between fighting cannon and flag"
+msgstr "Üres hely a tüzelő ágyúk és a zászló között"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, widthDiffLineEdit)
+#: ksirkspritesdefinition.ui:44
+#, kde-format
+msgid ""
+"Empty space size between fighting cannon and flag.\n"
+"\n"
+"During a battle, firing (end exploding) cannons of each player are placed in "
+"both sides of the defender country flag. This parameter is the number of "
+"pixels between the flag and each cannon, measured relatively to the map base "
+"size as set in the main skin definition panel."
+msgstr ""
+"Üres hely a tüzelő ágyúk és a zászló között.\n"
+"\n"
+"Harc közben a tüzelő (és felrobbanó) ágyúk lehetnek a védekező ország "
+"zászlója előtt és mögött is. Ez a paraméter a zászló és az ágyúk köztti "
+"távolságot adja meg képpontban. A távolság relatív a térkép alapméretéhez "
+"képest (amely a felületdefiníciós panelen állítható be)."
+
+#. i18n: ectx: property (toolTip), widget (QTabWidget, ktabwidget)
+#: ksirkspritesdefinition.ui:53
+#, kde-format
+msgid "Data about all sprites"
+msgstr "A sprite-ok adatai"
+
+#. i18n: ectx: property (toolTip), widget (QWidget, flagTab)
+#: ksirkspritesdefinition.ui:63
+#, kde-format
+msgid "Data about the flag sprite"
+msgstr "A zászló sprite adatai"
+
+#. i18n: ectx: attribute (title), widget (QWidget, flagTab)
+#: ksirkspritesdefinition.ui:66
+#, kde-format
+msgid "Flag"
+msgstr "Zászló"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#. i18n: ectx: property (text), widget (QLabel, label_18)
+#. i18n: ectx: property (text), widget (QLabel, label_22)
+#: ksirkspritesdefinition.ui:74 ksirkspritesdefinition.ui:173
+#: ksirkspritesdefinition.ui:264 ksirkspritesdefinition.ui:357
+#: ksirkspritesdefinition.ui:452 ksirkspritesdefinition.ui:547
+#, kde-format
+msgid "Width:"
+msgstr "Szélesség:"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, flagw)
+#: ksirkspritesdefinition.ui:81
+#, kde-format
+msgid "Flag individual frame width"
+msgstr "Zászló képkockaszélesség"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, flagw)
+#: ksirkspritesdefinition.ui:84
+#, kde-format
+msgid ""
+"<p>Flag individual frame width.</p><p>The pool <i>flag</i> element will be "
+"rendered on a pixmap of width: <i>Width</i> * N<i>number of frames</i> and "
+"then split into individual frames.</p>"
+msgstr ""
+"<p>A zászló képkockájának magassága.</p><p>A <i>zászló</i> elem egy ilyen "
+"széles képre lesz levetítve : <i>Szélesség</i> * <i>a változatok száma</i>, "
+"majd képkockákra bomlik.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_13)
+#. i18n: ectx: property (text), widget (QLabel, label_17)
+#. i18n: ectx: property (text), widget (QLabel, label_21)
+#: ksirkspritesdefinition.ui:91 ksirkspritesdefinition.ui:190
+#: ksirkspritesdefinition.ui:281 ksirkspritesdefinition.ui:374
+#: ksirkspritesdefinition.ui:469 ksirkspritesdefinition.ui:564
+#, kde-format
+msgid "Height:"
+msgstr "Magasság:"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, flagh)
+#: ksirkspritesdefinition.ui:98
+#, kde-format
+msgid "Flag individual frame height"
+msgstr "Zászló képkockamagasság"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, flagh)
+#: ksirkspritesdefinition.ui:103
+#, kde-format
+msgid ""
+"Flag individual frame height.\n"
+"\n"
+"The pool flag element will be rendered on a pixmap of height: (Height * "
+"Number of versions) and then split into individual frames."
+msgstr ""
+"A zászló képkockájának magassága.\n"
+"\n"
+"A zászló elem egy ilyen széles képre lesz levetítve : Magasság * a "
+"változatok száma, majd képkockákra bomlik."
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#. i18n: ectx: property (text), widget (QLabel, label_15)
+#. i18n: ectx: property (text), widget (QLabel, label_19)
+#. i18n: ectx: property (text), widget (QLabel, label_23)
+#: ksirkspritesdefinition.ui:110 ksirkspritesdefinition.ui:207
+#: ksirkspritesdefinition.ui:298 ksirkspritesdefinition.ui:391
+#: ksirkspritesdefinition.ui:486 ksirkspritesdefinition.ui:581
+#, fuzzy, kde-format
+#| msgid "Nb Frames:"
+msgid "Nb frames:"
+msgstr "Képkockaszám:"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, flagf)
+#: ksirkspritesdefinition.ui:117
+#, kde-format
+msgid "Number of individual flag frames"
+msgstr "Zászló - képkockaszám"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, flagf)
+#: ksirkspritesdefinition.ui:120
+#, kde-format
+msgid ""
+"<p>Number of individual flag frames.</p><p>The pool <i>flag</i> element will "
+"be rendered on a pixmap of width: (<i>Width</i> * <i>Number of frames</i>) "
+"and then split into individual frames.</p>"
+msgstr ""
+"<p>A zászló képkockáinak száma.</p><p>A <i>zászló</i> elem egy ilyen széles "
+"képre lesz levetítve : <i>Magasság</i> * <i>a változatok száma</i>, majd "
+"képkockákra bomlik.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#. i18n: ectx: property (text), widget (QLabel, label_16)
+#. i18n: ectx: property (text), widget (QLabel, label_20)
+#. i18n: ectx: property (text), widget (QLabel, label_24)
+#: ksirkspritesdefinition.ui:127 ksirkspritesdefinition.ui:224
+#: ksirkspritesdefinition.ui:315 ksirkspritesdefinition.ui:408
+#: ksirkspritesdefinition.ui:503 ksirkspritesdefinition.ui:598
+#, fuzzy, kde-format
+#| msgid "Nb Versions:"
+msgid "Nb versions:"
+msgstr "Változatszám:"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, flagv)
+#: ksirkspritesdefinition.ui:134
+#, kde-format
+msgid "Number of flag versions"
+msgstr "Zászló - változatszám"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, flagv)
+#: ksirkspritesdefinition.ui:141
+#, kde-format
+msgid ""
+"Number of flag versions.\n"
+"\n"
+"The pool flag element will be rendered on a pixmap of height: (Height * "
+"Number of versions) and then split into individual frames.\n"
+"\n"
+"Each version shows the sprite visible from one direction: the first one is "
+"directed towards the right, the second towards the left, the third one from "
+"the front and the last one from the back. However, not all sprites need all "
+"versions."
+msgstr ""
+"A zászlóváltozatok száma.\n"
+"\n"
+"A zászló elem egy ilyen magas képre lesz levetítve : Magasság * A változatok "
+"száma, majd képkockákra bomlik.\n"
+"\n"
+"Mindegyik változat egy-egy irányba mutatva ábrázolja a sprite-ot: az elsőn "
+"jobbra, a másodikon balra néz, a harmadikon elölről, a negyediken hátulról "
+"látszik. De nem kötelező, hogy minden sprite-nál létezzen mindegyik nézet."
+
+#. i18n: ectx: property (toolTip), widget (QWidget, infantryTab)
+#: ksirkspritesdefinition.ui:164
+#, kde-format
+msgid "Data about the infantry sprite"
+msgstr "A gyalogsági sprite adatai"
+
+#. i18n: ectx: attribute (title), widget (QWidget, infantryTab)
+#: ksirkspritesdefinition.ui:167
+#, kde-format
+msgid "Infantry"
+msgstr "Gyalogság"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, infantryw)
+#: ksirkspritesdefinition.ui:180
+#, kde-format
+msgid "Infantry individual frame width"
+msgstr "Gyalogság - képkockaszélesség"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryw)
+#: ksirkspritesdefinition.ui:183
+#, kde-format
+msgid ""
+"<p>Infantry individual frame width.</p><p>The pool <i>infantry</i> element "
+"will be rendered on a pixmap of width: <i>Width</i> * <i>number of frames</"
+"i> and then split into individual frames.</p>"
+msgstr ""
+"<p>A gyalogság képkockájának szélessége.</p><p>A <i>gyalogság</i> elem egy "
+"ilyen széles képre lesz levetítve: <i>Szélesség</i> * <i>A változatok száma</"
+"i>, majd képkockákra bomlik.</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, infantryh)
+#: ksirkspritesdefinition.ui:197
+#, kde-format
+msgid "Infantry individual frame height"
+msgstr "Gyalogság - képkockamagasság"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryh)
+#: ksirkspritesdefinition.ui:200
+#, kde-format
+msgid ""
+"<p>Infantry individual frame height.</p><p>The pool <i>infantry</i> element "
+"will be rendered on a pixmap of height: <i>Height</i> * <i>Number of "
+"versions</i> and then split into individual frames.</p>"
+msgstr ""
+"<p>A gyalogság képkockájának magassága.</p><p>A <i>gyalogság</i> elem egy "
+"ilyen magas képre lesz levetítve: <i>Magasság</i> * <i>A változatok száma</"
+"i>, majd képkockákra bomlik.</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, infantryf)
+#: ksirkspritesdefinition.ui:214
+#, kde-format
+msgid "Number of individual infantry frames"
+msgstr "Gyalogság - képkockaszám"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryf)
+#: ksirkspritesdefinition.ui:217
+#, kde-format
+msgid ""
+"<p>Infantry number of individual frames.</p><p>The pool <i>infantry</i> "
+"element will be rendered on a pixmap of width: (<i>Width</i> * <i>Number of "
+"frames</i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>A gyalogság képkockaszáma.</p><p>A <i>gyalogság</i> elem egy ilyen széles "
+"képre lesz levetítve : <i>Szélesség</i> * <i>A változatok száma</i>, majd "
+"képkockákra bomlik.</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, infantryv)
+#: ksirkspritesdefinition.ui:231
+#, kde-format
+msgid "Number of infantry versions"
+msgstr "Gyalogság - változatszám"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryv)
+#: ksirkspritesdefinition.ui:234
+#, kde-format
+msgid ""
+"<p>Number of infantry versions.</p><p>The pool <i>infantry</i> element will "
+"be rendered on a pixmap of height: (<i>Height</i> * <i>Number of versions</"
+"i>) and then split into individual frames.</p><p>Each version shows the "
+"sprite visible from one direction: the first one is directed towards the "
+"right, the second towards the left, the third one from front and the last "
+"one from the back. However, not all sprites need all versions.</p>"
+msgstr ""
+"<p>A gyalogság elem változatainak száma.</p><p>A <i>gyalogság</i> elem egy "
+"ilyen magas képre lesz levetítve : <i>Magasság</i> * <i>A változatok száma</"
+"i>, majd képkockákra bomlik.</p><p>Mindegyik változat egy-egy irányba "
+"mutatva ábrázolja a sprite-ot: az elsőn jobbra, a másodikon balra néz, a "
+"harmadikon elölről, a negyediken hátulról látszik. De nem kötelező, hogy "
+"minden sprite-nál létezzen mindegyik nézet.</p>"
+
+#. i18n: ectx: property (toolTip), widget (QWidget, cavalryTab)
+#: ksirkspritesdefinition.ui:255
+#, kde-format
+msgid "Data about the cavalry sprite"
+msgstr "A lovassági sprite adatai"
+
+#. i18n: ectx: attribute (title), widget (QWidget, cavalryTab)
+#: ksirkspritesdefinition.ui:258
+#, kde-format
+msgid "Cavalry"
+msgstr "Lovasság"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryw)
+#: ksirkspritesdefinition.ui:271
+#, kde-format
+msgid "Individual cavalry frame width"
+msgstr "Lovasság képkockaszélesség"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryw)
+#: ksirkspritesdefinition.ui:274
+#, kde-format
+msgid ""
+"<p>Individual cavalry frame width.</p><p>The pool <i>cavalry</i> element "
+"will be rendered on a pixmap of width (<i>Width</i> * <i>Number of frames</"
+"i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>A lovasság képkockájának szélessége.</p><p>A <i>lovasság</i> elem egy "
+"ilyen széles képre lesz levetítve : <i>Szélesség</i> * <i>A változatok "
+"száma</i>, majd képkockákra bomlik.</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryh)
+#: ksirkspritesdefinition.ui:288
+#, kde-format
+msgid "Individual cavalry frame height"
+msgstr "Lovasság képkockamagasság"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryh)
+#: ksirkspritesdefinition.ui:291
+#, kde-format
+msgid ""
+"<p>Individual cavalry frame height.</p><p>The pool <i>cavalry</i> element "
+"will be rendered on a pixmap of height (<i>Height</i> * <i>Number of "
+"versions</i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>A lovasság képkockájának magassága.</p><p>A <i>lovasság</i> elem egy "
+"ilyen magas képre lesz levetítve : <i>Magasság</i> * <i>A változatok száma</"
+"i>, majd képkockákra bomlik.</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryf)
+#: ksirkspritesdefinition.ui:305
+#, kde-format
+msgid "Number of individual cavalry frames"
+msgstr "Lovasság - képkockaszám"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryf)
+#: ksirkspritesdefinition.ui:308
+#, kde-format
+msgid ""
+"<p>Number of individual cavalry frames.</p><p>The pool <i>cavalry</i> "
+"element will be rendered on a pixmap of width: (<i>Width</i> * <i>Number of "
+"frames</i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>A lovasság képkockaszáma.</p><p>A <i>lovasság</i> elem egy ilyen széles "
+"képre lesz levetítve : <i>Szélesség</i> * <i>A változatok száma</i>, majd "
+"képkockákra bomlik.</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryv)
+#: ksirkspritesdefinition.ui:322
+#, kde-format
+msgid "Number of cavalry versions"
+msgstr "Lovasság - változatszám"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryv)
+#: ksirkspritesdefinition.ui:325
+#, kde-format
+msgid ""
+"<p>Number of cavalry versions.</p><p>The pool <i>cavalry</i> element will be "
+"rendered on a pixmap of height (<i>Height</i> * <i>Number of versions</i>) "
+"and then split into individual frames.</p><p>Each version shows the sprite "
+"visible from one direction: the first one is directed towards the right, the "
+"second towards the left, the third one from front and the last one from the "
+"back. However, not all sprites need all versions.</p>"
+msgstr ""
+"<p>A lovassági elem változatainak száma.</p><p>A <i>lovasság</i> elem egy "
+"ilyen magas képre lesz levetítve : <i>Magasság</i> * <i>A változatok száma</"
+"i>, majd képkockákra bomlik.</p><p>Mindegyik változat egy-egy irányba "
+"mutatva ábrázolja a sprite-ot: az elsőn jobbra, a másodikon balra néz, a "
+"harmadikon elölről, a negyediken hátulról látszik. De nem kötelező, hogy "
+"minden sprite-nál létezzen mindegyik nézet.</p>"
+
+#. i18n: ectx: property (toolTip), widget (QWidget, cannonTab)
+#: ksirkspritesdefinition.ui:346
+#, kde-format
+msgid "Data about the cannon sprite"
+msgstr "Az ágyú sprite adatai"
+
+#. i18n: ectx: attribute (title), widget (QWidget, cannonTab)
+#: ksirkspritesdefinition.ui:349
+#, kde-format
+msgid "Cannon"
+msgstr "Ágyú"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cannonw)
+#: ksirkspritesdefinition.ui:364
+#, kde-format
+msgid "Cannon individual frame width"
+msgstr "Ágyú - képkockaszélesség"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonw)
+#: ksirkspritesdefinition.ui:367
+#, kde-format
+msgid ""
+"<p>Cannon individual frame width.</p><p>The pool <i>cannon</i> element will "
+"be rendered on a pixmap of width (<i>Width</i> * <i>Number of frames</i>) "
+"and then split into individual frames.</p>"
+msgstr ""
+"<p>Az ágyú képkockájának szélessége.</p><p>Az <i>ágyú</i> elem egy ilyen "
+"széles képre lesz levetítve : <i>Szélesség</i> * <i>A változatok száma</i>, "
+"majd képkockákra bomlik.</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cannonh)
+#: ksirkspritesdefinition.ui:381
+#, kde-format
+msgid "Individual cannon frame height"
+msgstr "Ágyú képkockamagasság"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonh)
+#: ksirkspritesdefinition.ui:384
+#, kde-format
+msgid ""
+"<p>Individual cannon frame height.</p><p>The pool <i>cannon<i> element will "
+"be rendered on a pixmap of height (<i>Height</i> * <i>Number of versions</"
+"i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>Az ágyú képkockájának magassága.</p><p>Az <i>ágyú</i> elem egy ilyen "
+"magas képre lesz levetítve : <i>Magasság</i> * <i>A változatok száma</i>, "
+"majd képkockákra bomlik.</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cannonf)
+#: ksirkspritesdefinition.ui:398
+#, kde-format
+msgid "Number of individual cannon frames"
+msgstr "Ágyú - képkockaszám"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonf)
+#: ksirkspritesdefinition.ui:401
+#, kde-format
+msgid ""
+"<p>Number of individual cannon frames.</p><p>The pool <i>cannon</i> element "
+"will be rendered on a pixmap of width (<i>Width</i> * <i>Number of frames</"
+"i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>Az ágyú elem képkockaszáma.</p><p>Az <i>ágyú</i> elem egy ilyen széles "
+"képre lesz levetítve : <i>Szélesség</i> * <i>A változatok száma</i>, majd "
+"képkockákra bomlik.</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cannonv)
+#: ksirkspritesdefinition.ui:415
+#, kde-format
+msgid "Number of cannon versions"
+msgstr "Ágyú - változatszám"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonv)
+#: ksirkspritesdefinition.ui:418
+#, kde-format
+msgid ""
+"<p>Number of cannon versions.</p><p>The pool <i>cannon</i> element will be "
+"rendered on a pixmap of height (<i>Height</i> * <i>Number of versions</i>) "
+"and then split into individual frames.</p><p>Each version shows the sprite "
+"visible from one direction: the first one is directed towards the right, the "
+"second towards the left, the third one from front and the last one from the "
+"back. However, not all sprites need all versions.</p>"
+msgstr ""
+"<p>Az ágyú változatainak száma.</p><p>Az <i>ágyú</i> elem egy ilyen magas "
+"képre lesz levetítve : <i>Magasság</i> * <i>A változatok száma</i>, majd "
+"képkockákra bomlik.</p><p>Mindegyik változat egy-egy irányba mutatva "
+"ábrázolja a sprite-ot: az elsőn jobbra, a másodikon balra néz, a harmadikon "
+"elölről, a negyediken hátulról látszik. De nem kötelező, hogy minden sprite-"
+"nál létezzen mindegyik nézet.</p>"
+
+#. i18n: ectx: property (toolTip), widget (QWidget, firingTab)
+#: ksirkspritesdefinition.ui:441
+#, kde-format
+msgid "Data about the firing sprite"
+msgstr "A tüzelő sprite adatai"
+
+#. i18n: ectx: attribute (title), widget (QWidget, firingTab)
+#: ksirkspritesdefinition.ui:444
+#, kde-format
+msgid "Firing"
+msgstr "Tüzelő"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, firingw)
+#: ksirkspritesdefinition.ui:459
+#, kde-format
+msgid "Firing cannon individual frame width"
+msgstr "Tüzelő ágyú - képkockaszélesség"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, firingw)
+#: ksirkspritesdefinition.ui:462
+#, kde-format
+msgid ""
+"<p>Firing cannon individual frame width.</p><p>The pool <i>firing cannon</i> "
+"element will be rendered on a pixmap of width (<i>Width</i> * <i>Number of "
+"frames</i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>A tüzelő ágyú képkockájának szélessége.</p><p>A <i>tüzelő ágyú</i> elem "
+"egy ilyen széles képre lesz levetítve : <i>Szélesség</i> * <i>A képkockák "
+"száma</i>, majd képkockákra bomlik.</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, firingh)
+#: ksirkspritesdefinition.ui:476
+#, kde-format
+msgid "Firing cannon individual frame height"
+msgstr "Tüzelő ágyú - képkockamagasság"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, firingh)
+#: ksirkspritesdefinition.ui:479
+#, kde-format
+msgid ""
+"<p>Firing cannon individual frame height.</p><p>The pool <i>firing cannon</"
+"i> element will be rendered on a pixmap of height (<i>Height</i> * <i>Number "
+"of versions</i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>A tüzelő ágyú képkockájának magassága.</p><p>A <i>tüzelő ágyú</i> elem "
+"egy ilyen magas képre lesz levetítve : <i>Magasság</i> * <i>A változatok "
+"száma</i>, majd képkockákra bomlik.</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, firingf)
+#: ksirkspritesdefinition.ui:493
+#, kde-format
+msgid "Number of individual firing cannon frames"
+msgstr "Tüzelő ágyú - képkockaszám"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, firingf)
+#: ksirkspritesdefinition.ui:496
+#, kde-format
+msgid ""
+"<p>Number of individual firing cannon frames.</p><p>The pool <i>firing "
+"cannon</i> element will be rendered on a pixmap of width (<i>Width</i> * "
+"<i>Number of frames</i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>A tüzelő ágyú változatainak száma.</p><p>A <i>tüzelő ágyú</i> elem egy "
+"ilyen széles képre lesz levetítve : <i>Szélesség</i> * <i>A képkockák száma</"
+"i>, majd képkockákra bomlik.</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, firingv)
+#: ksirkspritesdefinition.ui:510
+#, kde-format
+msgid "Number of firing cannon versions"
+msgstr "Tüzelő ágyú - változatszám"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, firingv)
+#: ksirkspritesdefinition.ui:513
+#, kde-format
+msgid ""
+"<p>Number of firing cannon versions.</p><p>The pool <i>firing cannon</i> "
+"element will be rendered on a pixmap of height (<i>Height</i> * <i>Number of "
+"versions</i>) and then split into individual frames.</p><p>Each version "
+"shows the sprite visible from one direction: the first one is directed "
+"towards the right, the second towards the left, the third one from front and "
+"the last one from the back. However, not all sprites need all versions.</p>"
+msgstr ""
+"<p>A tüzelő ágyú változatainak száma.</p><p>A <i>tüzelő ágyú</i> elem egy "
+"ilyen magas képre lesz levetítve : <i>Magasság</i> * <i>A változatok száma</"
+"i>, majd képkockákra bomlik.</p><p>Mindegyik változat egy-egy irányba "
+"mutatva ábrázolja a sprite-ot: az elsőn jobbra, a másodikon balra néz, a "
+"harmadikon elölről, a negyediken hátulról látszik. De nem kötelező, hogy "
+"minden sprite-nál létezzen mindegyik nézet.</p>"
+
+#. i18n: ectx: property (toolTip), widget (QWidget, explodingTab)
+#: ksirkspritesdefinition.ui:536
+#, kde-format
+msgid "Data about the exploding sprite"
+msgstr "A felrobbanó sprite adatai"
+
+#. i18n: ectx: attribute (title), widget (QWidget, explodingTab)
+#: ksirkspritesdefinition.ui:539
+#, kde-format
+msgid "Exploding"
+msgstr "Felrobbanó"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, explodingw)
+#: ksirkspritesdefinition.ui:554
+#, kde-format
+msgid "Exploding cannon individual frame width"
+msgstr "Felrobbanó ágyú - képkockaszélesség"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingw)
+#: ksirkspritesdefinition.ui:557
+#, kde-format
+msgid ""
+"<p>Exploding cannon individual frame width.</p><p>The pool <i>exploding</i> "
+"element will be rendered on a pixmap of width (<i>Width</i> * <i>Number of "
+"frames</i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>A felrobbanó ágyú képkockájának szélessége.</p><p>A <i>felrobbanó ágyú</"
+"i> elem egy ilyen széles képre lesz levetítve : <i>Szélesség</i> * <i>A "
+"képkockák száma</i>, majd képkockákra bomlik.</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, explodingh)
+#: ksirkspritesdefinition.ui:571
+#, kde-format
+msgid "Exploding cannon individual frame height"
+msgstr "Felrobbanó ágyú - képkockamagasság"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingh)
+#: ksirkspritesdefinition.ui:574
+#, kde-format
+msgid ""
+"<p>Exploding cannon individual frame height.</p><p>The pool <i>exploding</i> "
+"element will be rendered on a pixmap of height (<i>Height</i> * <i>Number of "
+"versions</i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>A felrobbanó ágyú képkockájának magassága.</p><p>A <i>felrobbanó ágyú</i> "
+"elem egy ilyen magas képre lesz levetítve : <i>Magasság</i> * <i>A "
+"változatok száma</i>, majd képkockákra bomlik.</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, explodingf)
+#: ksirkspritesdefinition.ui:588
+#, kde-format
+msgid "Number of individual exploding cannon frames"
+msgstr "Felrobbanó ágyú - képkockaszám"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingf)
+#: ksirkspritesdefinition.ui:591
+#, kde-format
+msgid ""
+"<p>Number of individual exploding cannon frames.</p><p>The pool "
+"<i>exploding</i> element will be rendered on a pixmap of width (<i>Width</i> "
+"* <i>Number of frames</i>) and then split into individual frames.</p>"
+msgstr ""
+"<p>A felrobbanó ágyú képkockaszáma.</p><p>A <i>felrobbanó ágyú</i> elem egy "
+"ilyen széles képre lesz levetítve : <i>Szélesség</i> * <i>A képkockák száma</"
+"i>, majd képkockákra bomlik.</p>"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, explodingv)
+#: ksirkspritesdefinition.ui:605
+#, kde-format
+msgid "Number of exploding cannon versions"
+msgstr "Felrobbanó ágyú - változatszám"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingv)
+#: ksirkspritesdefinition.ui:608
+#, kde-format
+msgid ""
+"<p>Number of exploding cannon versions.</p><p>The pool <i>exploding</i> "
+"element will be rendered on a pixmap of height (<i>Height</i> * <i>Number of "
+"versions</i>) and then split into individual frames.</p><p>Each version "
+"shows the sprite visible from one direction: the first one is directed "
+"towards the right, the second towards the left, the third one from front and "
+"the last one from the back. However, not all sprites need all versions.</p>"
+msgstr ""
+"<p>A felrobbanó ágyú változatainak száma.</p><p>A <i>felrobbanó ágyú</i> "
+"elem egy ilyen magas képre lesz levetítve : <i>Magasság</i> * <i>A "
+"változatok száma</i>, majd képkockákra bomlik.</p><p>Mindegyik változat egy-"
+"egy irányba mutatva ábrázolja a sprite-ot: az elsőn jobbra, a másodikon "
+"balra néz, a harmadikon elölről, a negyediken hátulról látszik. De nem "
+"kötelező, hogy minden sprite-nál létezzen mindegyik nézet.</p>"
+
+#: main.cpp:56
+#, kde-format
+msgid "(c) 2008, Gaël de Chalendar\n"
+msgstr "(c) Gaël de Chalendar, 2008.\n"
+
+#: main.cpp:57
+#, kde-format
+msgid ""
+"For help and user manual, please see\n"
+"The KsirK Web site"
+msgstr ""
+"Ha dokumentációra vagy segítségre van szüksége,\n"
+"látogasson el a KsirK honlapra!"
+
+#: main.cpp:59
+#, fuzzy, kde-format
+#| msgid "Gael de Chalendar aka Kleag"
+msgid "Gaël de Chalendar aka Kleag"
+msgstr "Gael de Chalendar aka Kleag"
+
+#: main.cpp:64
+#, kde-format
+msgid "file to open"
+msgstr "a megnyitandó fájl"
+
+#: mainwindow.cpp:127 mainwindow.cpp:676 mainwindow.cpp:804 mainwindow.cpp:1191
+#, kde-format
+msgid "Cannot load anchor icon<br>Program cannot continue"
+msgstr ""
+"Nem sikerült betölteni a horgonyikont.<br>A program nem tud tovább futni"
+
+#: mainwindow.cpp:127 mainwindow.cpp:141 mainwindow.cpp:676 mainwindow.cpp:705
+#: mainwindow.cpp:804 mainwindow.cpp:821 mainwindow.cpp:1191 onu.cpp:79
+#: onu.cpp:112 onu.cpp:131
+#, kde-format
+msgid "Error"
+msgstr "Hiba"
+
+#: mainwindow.cpp:141 mainwindow.cpp:705 mainwindow.cpp:821
+#, kde-format
+msgid "Cannot load center icon<br>Program cannot continue"
+msgstr ""
+"Nem sikerült betölteni a középső ikont<br>A program nem tud tovább futni"
+
+#: mainwindow.cpp:324
+#, kde-format
+msgid "Open a saved skin..."
+msgstr "Felület betöltése..."
+
+#: mainwindow.cpp:328
+#, kde-format
+msgid "Load &Recent"
+msgstr "Nemrég &használt felület"
+
+#: mainwindow.cpp:329
+#, kde-format
+msgid "Open a recently saved skin..."
+msgstr "Nemrég mentett felület megnyitása..."
+
+#: mainwindow.cpp:337
+#, kde-format
+msgid "Save the current skin"
+msgstr "A jelenlegi felület elmentése"
+
+#: mainwindow.cpp:366
+#, fuzzy, kde-format
+#| msgid "Choose the root folder of the skin to open"
+msgctxt "@title:window"
+msgid "Choose the Root Folder of the Skin to Open"
+msgstr "Válassza ki a megnyitandó felület alapmappáját"
+
+#: mainwindow.cpp:524
+#, kde-format
+msgid "There are unsaved changes. What do you want to do?"
+msgstr "Néhány változás nincs elmentve. Mit szeretne tenni?"
+
+#: mainwindow.cpp:525
+#, kde-format
+msgid "Exit Anyway?"
+msgstr "Biztosan kilép?"
+
+#: mainwindow.cpp:526
+#, kde-format
+msgid "Quit without saving"
+msgstr "Kilépés mentés nélkül"
+
+#: mainwindow.cpp:527
+#, kde-format
+msgid "Save then quit"
+msgstr "Mentés kilépés előtt"
+
+#: mainwindow.cpp:528
+#, kde-format
+msgid "Do not quit"
+msgstr "Ne lépjen ki"
+
+#: mainwindow.cpp:1303
+#, kde-format
+msgid "New country name"
+msgstr "Új országnév"
+
+#: mainwindow.cpp:1303
+#, kde-format
+msgid "Enter the name of the new country"
+msgstr "Írja be az új ország nevét"
+
+#: mainwindow.cpp:1313
+#, kde-format
+msgid "Do you really want to delete country '%1'?"
+msgstr "Biztosan törölni szeretné ezt az országot: \"%1\"?"
+
+#: mainwindow.cpp:1313
+#, kde-format
+msgid "Really delete country?"
+msgstr "Biztosan törli?"
+
+#: mainwindow.cpp:1332
+#, kde-format
+msgid "New continent name"
+msgstr "Új földrész"
+
+#: mainwindow.cpp:1332
+#, kde-format
+msgid "Enter the name of the new continent"
+msgstr "Adja meg az új földrész nevét"
+
+#: mainwindow.cpp:1342
+#, kde-format
+msgid "Do you really want to delete continent '%1'?"
+msgstr "Biztosan törölni szeretné ezt a földrészt: \"%1\"?"
+
+#: mainwindow.cpp:1342
+#, kde-format
+msgid "Really delete continent?"
+msgstr "Biztosan törölni szeretné ezt a földrészt?"
+
+#: mainwindow.cpp:1891
+#, kde-format
+msgid "Do you really want to delete goal '%1'?"
+msgstr "Biztosan törölni szeretné ezt a célt: \"%1\"?"
+
+#: mainwindow.cpp:1891
+#, kde-format
+msgid "Really delete goal?"
+msgstr "Biztosan törölni szeretné ezt a célt?"
+
+#: mainwindow.cpp:1950
+#, kde-format
+msgid "New nationality name"
+msgstr "Új népcsoportnév"
+
+#: mainwindow.cpp:1950
+#, kde-format
+msgid "Enter the name of the new nationality"
+msgstr "Adja meg az új népcsoport nevét"
+
+#: mainwindow.cpp:1960
+#, kde-format
+msgid "Do you really want to delete nationality '%1'?"
+msgstr "Biztosan törölni szeretné ezt a népcsoportot: \"%1\"?"
+
+#: mainwindow.cpp:1960
+#, kde-format
+msgid "Really delete nationality?"
+msgstr "Biztosan törölni szeretné ezt a népcsoportot?"
+
+#: onu.cpp:78
+#, kde-format
+msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+msgstr ""
+"Hiba történt, érvénytelen formátumú a témaleíró. A várt érték: %1, a kapott: "
+"%2."
+
+#: onu.cpp:111
+#, kde-format
+msgid ""
+"Pool filename not found\n"
+"Program cannot continue"
+msgstr ""
+"Nem található az adatfájl neve,\n"
+"ezért a program nem tud tovább futni."
+
+#: onu.cpp:130
+#, kde-format
+msgid ""
+"Map mask image not found\n"
+"Program cannot continue"
+msgstr ""
+"A térképmaszk nem található,\n"
+"ezért a program befejeződik."
+
+#: onu.cpp:989
+#, kde-format
+msgid ""
+"Cannot read file %1:\n"
+"%2."
+msgstr ""
+"Nem sikerült olvasni ebből ebből a fájlból: %1.\n"
+"%2."
+
+#: onu.cpp:990
+#, kde-format
+msgid "PoolLoader"
+msgstr "Betöltő"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, KsirkSkinEditorPreferencesWidget)
+#: preferences.ui:25
+#, kde-format
+msgid "KsirK Skin Editor Preferences"
+msgstr "A KsirK felületszerkesztő beállításai"
+
+#: skinSpritesData.cpp:85
+#, kde-format
+msgid "Error - Unknown skin int data: "
+msgstr "Hiba - ismeretlen egész adat a felületben: "
+
+#: skinSpritesData.cpp:86 skinSpritesData.cpp:102
+#, kde-format
+msgid "Fatal Error"
+msgstr "Végzetes hiba"
+
+#: skinSpritesData.cpp:101
+#, kde-format
+msgid "Error - Unknown skin string data: "
+msgstr "Hiba - Ismeretlen sztring adat a felületben: "
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Eliminate a given "
+#~ "player. If it is eliminated by another one, you will fall back to a <span "
+#~ "style=\" font-style:italic;\">Countries</span> type of goal.</p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Egy adott játékos "
+#~ "legyőzése. Ha az illetőt egy másik játékos győzi le, akkor cél <span "
+#~ "style=\" font-style:italic;\">Ország</span> típusúvá változik.</p></"
+#~ "body></html>"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A text describing the "
+#~ "goal. It should include several placeholders for various data depending "
+#~ "on the goal type:</p>\n"
+#~ "<ul>\n"
+#~ "<li style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "style:italic;\">World Conquest</span>: none</li>\n"
+#~ "<li style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "style:italic;\">Player</span>: one for the player name and one for the "
+#~ "number of countries fallback</li>\n"
+#~ "<li style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "style:italic;\">Countries</span>: one for the number of countries and "
+#~ "possibly a second one for the number of armies to put on each country</"
+#~ "li>\n"
+#~ "<li style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "style:italic;\">Continents</span>: one for each continent to conquer</"
+#~ "li>\n"
+#~ "</ul>\n"
+#~ "</body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A játékcél leírása. A "
+#~ "cél típusától függően különféle paramétereket tartalmazhat:</p>\n"
+#~ "<ul>\n"
+#~ "<li style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "style:italic;\">Az egész világ meghódítása</span>: nincs</li>\n"
+#~ "<li style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "style:italic;\">Játékos</span>: egy paraméter a játékosnévnek és egy a "
+#~ "másodlagos cél országainak</li>\n"
+#~ "<li style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "style:italic;\">Országok</span>: a meghódítandó országok száma és "
+#~ "opcionálisan a hadseregek kezdeti száma országonként</li>\n"
+#~ "<li style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "style:italic;\">Földrészek</span>: minden meghódítandó földrésznek egy "
+#~ "paraméter</li>\n"
+#~ "</ul>\n"
+#~ "</body></html>"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Number of countries to "
+#~ "conquer in a <span style=\" font-style:italic;\">Countries</span> goal or "
+#~ "as a fallback in a <span style=\" font-style:italic;\">Player</span> goal."
+#~ "</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A legyőzendő országok "
+#~ "száma <span style=\" font-style:italic;\">Országok</span> típusú célnál "
+#~ "vagy egy másodlagos <span style=\" font-style:italic;\">Játékos</span> "
+#~ "típusú cél.</p></body></html>"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Number of armies to put "
+#~ "on each country in a <span style=\" font-style:italic;\">Countries</span> "
+#~ "goal.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A hadseregek kezdeti "
+#~ "száma országonként <span style=\" font-style:italic;\">Országok</span> "
+#~ "típusú célnál.</p></body></html>"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Click this button to "
+#~ "select the continents to conquer in a <span style=\" font-style:italic;"
+#~ "\">Continents</span> goal. </p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">You will be prompted "
+#~ "with a list of this world's continents. Select those to conquer with the "
+#~ "mouse and the Ctrl and Shift keys.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Kattintson erre a "
+#~ "gombra a kívánt földrészek kiválasztásához <span style=\" font-style:"
+#~ "italic;\">Földrészek</span> típusú célnál. </p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Megjelenik egy listában "
+#~ "az összes földrész, melyből ki kell választani a meghódítandókat az egér "
+#~ "és a Ctrl ill. Shift billentyűk segítségével.</p></body></html>"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">List of the continents "
+#~ "to conquer in a <span style=\" font-style:italic;\">Continents</span> "
+#~ "goal.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">You can change this "
+#~ "list by clicking on the \"Select continents\" button above.</p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A meghódítandó "
+#~ "földrészek <span style=\" font-style:italic;\">Földrészek</span> típusú "
+#~ "célnál.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A lista módosításához "
+#~ "kattintson a fenti \"Földrészválasztó\" gombra.</p></body></html>"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Nationality name. The "
+#~ "name of the player country. Can be the name of an existing country in "
+#~ "case of a <span style=\" font-style:italic;\">realistic </span>world. </"
+#~ "p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">This string should be "
+#~ "unique in the skin.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A népcsoport neve. A "
+#~ "játékos országának neve. Bármely ország lehet <span style=\" font-style:"
+#~ "italic;\">valósághű</span> felületű világ esetén. </p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A sztringnek egyedinek "
+#~ "kell lennie a témában.</p></body></html>"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Name of this "
+#~ "nationality leader. In the case of a <span style=\" font-style:italic;"
+#~ "\">realistic </span>skin, this could be the name of a well known king, "
+#~ "president, etc.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A népcsoport "
+#~ "vezetőjének neve. <span style=\" font-style:italic;\">Valósághű</span> "
+#~ "felület esetén lehet például egy ismert király vagy uralkodó neve.</p></"
+#~ "body></html>"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Flag individual frame "
+#~ "width.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The pool <span style=\" "
+#~ "font-style:italic;\">flag</span> element will be rendered on a pixmap of "
+#~ "width : <span style=\" font-style:italic;\">Width</span> * <span style=\" "
+#~ "font-style:italic;\">number of frames</span> and  then split into "
+#~ "individual frames.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Zászlókeret-szélesség.</"
+#~ "p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A <span style=\" font-"
+#~ "style:italic;\">zászló</span> elem egy ilyen széles képre lesz "
+#~ "levetítve : <span style=\" font-style:italic;\">Szélesség</span> * <span "
+#~ "style=\" font-style:italic;\">képkockaszám</span>, majd képkockákra "
+#~ "bomlik.</p></body></html>"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Flag number of "
+#~ "individual frames.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The pool <span style=\" "
+#~ "font-style:italic;\">flag</span> element will be rendered on a pixmap of "
+#~ "width : <span style=\" font-style:italic;\">Width</span> * N<span style="
+#~ "\" font-style:italic;\">umber of frames</span> and  then split into "
+#~ "individual frames.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A zászló képkockaszáma."
+#~ "</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A <span style=\" font-"
+#~ "style:italic;\">zászló</span> elem egy ilyen széles képre lesz levetítve: "
+#~ "<span style=\" font-style:italic;\">Szélesség</span> * <span style=\" "
+#~ "font-style:italic;\">képkockaszám</span>, majd képkockákra bomlik.</p></"
+#~ "body></html>"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Infantry individual "
+#~ "frame width.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The pool <span style=\" "
+#~ "font-style:italic;\">infantry</span> element will be rendered on a pixmap "
+#~ "of width : <span style=\" font-style:italic;\">Width</span> * <span style="
+#~ "\" font-style:italic;\">number of frames</span> and  then split into "
+#~ "individual frames.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A gyalogság "
+#~ "képkockaszélessége.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A <span style=\" font-"
+#~ "style:italic;\">gyalogság</span> elem egy ilyen széles képre lesz "
+#~ "levetítve : <span style=\" font-style:italic;\">Szélesség</span> * <span "
+#~ "style=\" font-style:italic;\">Képkockaszám</span>, majd képkockákra "
+#~ "bomlik.</p></body></html>"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Infantry individual "
+#~ "frame height.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The pool <span style=\" "
+#~ "font-style:italic;\">infantry</span> element will be rendered on a pixmap "
+#~ "of height : <span style=\" font-style:italic;\">Height</span> * <span "
+#~ "style=\" font-style:italic;\">number of versions</span> and  then split "
+#~ "into individual frames.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A gyalogsági sprite "
+#~ "képkockamagassága.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A <span style=\" font-"
+#~ "style:italic;\">gyalogság</span> sprite-ja ilyen magas képre lesz "
+#~ "levetítve: <span style=\" font-style:italic;\">Magasság</span> * <span "
+#~ "style=\" font-style:italic;\">A változatok száma</span>, majd képkockákra "
+#~ "bomlik.</p></body></html>"
+
+#~ msgid "Infantry number of individual frames"
+#~ msgstr "Gyalogság - képkockaszám"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Infantry number of "
+#~ "individual frames.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The pool <span style=\" "
+#~ "font-style:italic;\">infantry</span> element will be rendered on a pixmap "
+#~ "of width : <span style=\" font-style:italic;\">Width</span> * N<span "
+#~ "style=\" font-style:italic;\">umber of frames</span> and  then split into "
+#~ "individual frames.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A gyalogsági sprite "
+#~ "képkockáinak száma.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A <span style=\" font-"
+#~ "style:italic;\">gyalogság</span> elem a következő szélességű képre lesz "
+#~ "levetítve: <span style=\" font-style:italic;\">Szélesség</span> * <span "
+#~ "style=\" font-style:italic;\">Képkockaszám</span>, majd képkockákra "
+#~ "bomlik.</p></body></html>"
+
+#~ msgid "Infantry number of versions"
+#~ msgstr "Gyalogság - változatszám"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Infantry number of "
+#~ "versions.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The pool <span style=\" "
+#~ "font-style:italic;\">infantry</span> element will be rendered on a pixmap "
+#~ "of height : <span style=\" font-style:italic;\">Height</span> * <span "
+#~ "style=\" font-style:italic;\">Number of versions</span> and  then split "
+#~ "into individual frames.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Each version shows the "
+#~ "sprite visible from one direction: the first one is directed towards the "
+#~ "right, the second towards the left, the third one from front and the last "
+#~ "one from the back. But all sprites don't need all versions.</p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A gyalogsági sprite "
+#~ "képkockaszáma.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A <span style=\" font-"
+#~ "style:italic;\">gyalogság</span> elem egy következő magasságú képre lesz "
+#~ "rávetítve: <span style=\" font-style:italic;\">Magasság</span> * <span "
+#~ "style=\" font-style:italic;\">Képkockaszám</span>, majd képkockákra "
+#~ "bomlik.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Minden képkockán a "
+#~ "sprite más-más irányba mutató nézete látszik: az elsőn jobbra, a "
+#~ "másodikon balra néz, a harmadikon az elölnézet, a negyediken a hátulnézet "
+#~ "látható. De nem kötelező minden sprite-nak minden nézetet tartalmaznia.</"
+#~ "p></body></html>"
+
+#~ msgid "Cavalry individual frame width"
+#~ msgstr "Lovasság - képkockaszélesség"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Cavalry individual "
+#~ "frame width.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The pool <span style=\" "
+#~ "font-style:italic;\">cavalry</span> element will be rendered on a pixmap "
+#~ "of width : <span style=\" font-style:italic;\">Width</span> * <span style="
+#~ "\" font-style:italic;\">number of frames</span> and  then split into "
+#~ "individual frames.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A lovassági sprite "
+#~ "képkockaszélessége.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A <span style=\" font-"
+#~ "style:italic;\">lovasság</span> sprite egy ilyen széles képre lesz "
+#~ "levetítve: <span style=\" font-style:italic;\">Szélesség</span> * <span "
+#~ "style=\" font-style:italic;\">Képkockaszám</span>, majd képkockákra "
+#~ "bomlik.</p></body></html>"
+
+#~ msgid "Cavalry individual frame height"
+#~ msgstr "Lovasság - képkockamagasság"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Cavalry individual "
+#~ "frame height.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The pool <span style=\" "
+#~ "font-style:italic;\">cavalry</span> element will be rendered on a pixmap "
+#~ "of height : <span style=\" font-style:italic;\">Height</span> * <span "
+#~ "style=\" font-style:italic;\">number of versions</span> and  then split "
+#~ "into individual frames.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A lovassági sprite "
+#~ "képkockamagassága.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A <span style=\" font-"
+#~ "style:italic;\">lovassági</span> sprite a következő magasságú képre lesz "
+#~ "rávetítve: <span style=\" font-style:italic;\">Magasság</span> * <span "
+#~ "style=\" font-style:italic;\">Képkockaszám</span>, majd képkockákra "
+#~ "bomlik.</p></body></html>"
+
+#~ msgid "Cavalry number of individual frames"
+#~ msgstr "Lovasság - képkockaszám"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Cavalry number of "
+#~ "individual frames.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The pool <span style=\" "
+#~ "font-style:italic;\">cavalry</span> element will be rendered on a pixmap "
+#~ "of width : <span style=\" font-style:italic;\">Width</span> * N<span "
+#~ "style=\" font-style:italic;\">umber of frames</span> and  then split into "
+#~ "individual frames.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A lovassági sprite "
+#~ "képkockaszáma.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A <span style=\" font-"
+#~ "style:italic;\">lovasság</span> sprite-ja a következő szélességű képre "
+#~ "lesz levetítve: <span style=\" font-style:italic;\">Szélesség</span> * "
+#~ "<span style=\" font-style:italic;\">Képkockaszám</span>, majd képkockákra "
+#~ "bomlik.</p></body></html>"
+
+#~ msgid "Cavalry number of versions"
+#~ msgstr "Lovasság - változatszám"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Cavalry number of "
+#~ "versions.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The pool caval<span "
+#~ "style=\" font-style:italic;\">ry</span> element will be rendered on a "
+#~ "pixmap of height : <span style=\" font-style:italic;\">Height</span> * "
+#~ "<span style=\" font-style:italic;\">Number of versions</span> and  then "
+#~ "split into individual frames.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Each version shows the "
+#~ "sprite visible from one direction: the first one is directed towards the "
+#~ "right, the second towards the left, the third one from front and the last "
+#~ "one from the back. But all sprites don't need all versions.</p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A lovassági sprite "
+#~ "változatainak száma.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A <span style=\" font-"
+#~ "style:italic;\">lovasság</span> sprite egy ilyen magas képre lesz "
+#~ "levetítve: <span style=\" font-style:italic;\">Magasság</span> * <span "
+#~ "style=\" font-style:italic;\">A változatok száma</span>, majd képkockákra "
+#~ "bomlik.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Minden változat más-más "
+#~ "nézetet ábrázol: az első jobbra, a második balra néz, a harmadik az "
+#~ "elölnézet, a negyedik a hátulnézet. De nem kötelező egy sprite-nak minden "
+#~ "nézetet tartalmaznia.</p></body></html>"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Cannon individual frame "
+#~ "width.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The pool <span style=\" "
+#~ "font-style:italic;\">cannon</span> element will be rendered on a pixmap "
+#~ "of width : <span style=\" font-style:italic;\">Width</span> * <span style="
+#~ "\" font-style:italic;\">number of frames</span> and  then split into "
+#~ "individual frames.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Ágyú - "
+#~ "képkockaszélesség.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Az <span style=\" font-"
+#~ "style:italic;\">ágyú</span> elem a következő szélességű képre lesz "
+#~ "levetítve: <span style=\" font-style:italic;\">Szélesség</span> * <span "
+#~ "style=\" font-style:italic;\">Képkockaszám</span>, mielőtt képkockákra "
+#~ "darabolódik.</p></body></html>"
+
+#~ msgid "Cannon individual frame height"
+#~ msgstr "Ágyú - képkockamagasság"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Cannon individual frame "
+#~ "height.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The pool <span style=\" "
+#~ "font-style:italic;\">cannon</span> element will be rendered on a pixmap "
+#~ "of height : <span style=\" font-style:italic;\">Height</span> * <span "
+#~ "style=\" font-style:italic;\">number of versions</span> and  then split "
+#~ "into individual frames.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Ágyú - képkockamagasság."
+#~ "</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Az <span style=\" font-"
+#~ "style:italic;\">ágyú</span> elem a következő magasságú képre lesz "
+#~ "levetítve: <span style=\" font-style:italic;\">Magasság</span> * <span "
+#~ "style=\" font-style:italic;\">Változatszám</span>, mielőtt képkockákra "
+#~ "darabolódik.</p></body></html>"
+
+#~ msgid "Cannon number of individual frames"
+#~ msgstr "Ágyú - képkockaszám"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Cannon number of "
+#~ "individual frames.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The pool <span style=\" "
+#~ "font-style:italic;\">cannon</span> element will be rendered on a pixmap "
+#~ "of width : <span style=\" font-style:italic;\">Width</span> * N<span "
+#~ "style=\" font-style:italic;\">umber of frames</span> and  then split into "
+#~ "individual frames.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Ágyú - képkockaszám.</"
+#~ "p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Az <span style=\" font-"
+#~ "style:italic;\">ágyú</span> elem a következő szélességű képre lesz "
+#~ "levetítve: <span style=\" font-style:italic;\">Szélesség</span> * <span "
+#~ "style=\" font-style:italic;\">Képkockaszám</span>, mielőtt képkockákra "
+#~ "darabolódik.</p></body></html>"
+
+#~ msgid "Cannon number of versions"
+#~ msgstr "Ágyú - változatszám"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Cannon number of "
+#~ "versions.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The pool <span style=\" "
+#~ "font-style:italic;\">cannon</span> element will be rendered on a pixmap "
+#~ "of height : <span style=\" font-style:italic;\">Height</span> * <span "
+#~ "style=\" font-style:italic;\">Number of versions</span> and  then split "
+#~ "into individual frames.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Each version shows the "
+#~ "sprite visible from one direction: the first one is directed towards the "
+#~ "right, the second towards the left, the third one from front and the last "
+#~ "one from the back. But all sprites don't need all versions.</p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Ágyú - változatszám.</"
+#~ "p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Az <span style=\" font-"
+#~ "style:italic;\">ágyú</span> elem a következő magasságú képre lesz "
+#~ "levetítve: <span style=\" font-style:italic;\">Magasság</span> * <span "
+#~ "style=\" font-style:italic;\">Változatszám</span>, mielőtt képkockákra "
+#~ "darabolódik.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Mindegyik változat más-"
+#~ "más irányból mutatja a sprite-ot: az elsőn jobbra, a másodikon balra néz, "
+#~ "a harmadik az elölnézet, a negyedik a hátulnézet. De nem kötelező, hogy "
+#~ "egy sprite minden nézetet tartalmazzon.</p></body></html>"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Firing cannon "
+#~ "individual frame width.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The pool <span style=\" "
+#~ "font-style:italic;\">firing cannon</span> element will be rendered on a "
+#~ "pixmap of width : <span style=\" font-style:italic;\">Width</span> * "
+#~ "<span style=\" font-style:italic;\">number of frames</span> and  then "
+#~ "split into individual frames.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Tüzelő ágyú - "
+#~ "képkockaszélesség.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A <span style=\" font-"
+#~ "style:italic;\">tüzelő ágyú</span> elem a következő szélességű képre lesz "
+#~ "levetítve: <span style=\" font-style:italic;\">Szélesség</span> * <span "
+#~ "style=\" font-style:italic;\">Képkockaszám</span>, mielőtt képkockákra "
+#~ "darabolódik.</p></body></html>"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Firing cannon "
+#~ "individual frame height.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The pool <span style=\" "
+#~ "font-style:italic;\">firing cannon</span> element will be rendered on a "
+#~ "pixmap of height : <span style=\" font-style:italic;\">Height</span> * "
+#~ "<span style=\" font-style:italic;\">number of versions</span> and  then "
+#~ "split into individual frames.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Tüzelő ágyú - "
+#~ "képkockamagasság.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A <span style=\" font-"
+#~ "style:italic;\">tüzelő ágyú</span> elem a következő magasságú képre lesz "
+#~ "levetítve: <span style=\" font-style:italic;\">Magasság</span> * <span "
+#~ "style=\" font-style:italic;\">Változatszám</span>, mielőtt képkockákra "
+#~ "darabolódik.</p></body></html>"
+
+#~ msgid "Firing cannon number of individual frames"
+#~ msgstr "Tüzelő ágyú - képkockaszám"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Firing cannon number of "
+#~ "individual frames.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The pool <span style=\" "
+#~ "font-style:italic;\">firing cannon</span> element will be rendered on a "
+#~ "pixmap of width : <span style=\" font-style:italic;\">Width</span> * "
+#~ "N<span style=\" font-style:italic;\">umber of frames</span> and  then "
+#~ "split into individual frames.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Tüzelő ágyú - "
+#~ "képkockaszám.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A <span style=\" font-"
+#~ "style:italic;\">tüzelő ágyú</span> elem a következő szélességű képre lesz "
+#~ "levetítve: <span style=\" font-style:italic;\">Szélesség</span> * <span "
+#~ "style=\" font-style:italic;\">Képkockaszám</span>, mielőtt képkockákra "
+#~ "darabolódna.</p></body></html>"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Firing cannon number of "
+#~ "versions.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The pool <span style=\" "
+#~ "font-style:italic;\">firing cannon</span> element will be rendered on a "
+#~ "pixmap of height : <span style=\" font-style:italic;\">Height</span> * "
+#~ "<span style=\" font-style:italic;\">Number of versions</span> and  then "
+#~ "split into individual frames.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Each version shows the "
+#~ "sprite visible from one direction: the first one is directed towards the "
+#~ "right, the second towards the left, the third one from front and the last "
+#~ "one from the back. But all sprites don't need all versions.</p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Tüzelő ágyú - "
+#~ "változatszám.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A <span style=\" font-"
+#~ "style:italic;\">tüzelő ágyú</span> elem a következő magasságú képre lesz "
+#~ "levetítve: <span style=\" font-style:italic;\">Magasság</span> * <span "
+#~ "style=\" font-style:italic;\">Változatszám</span>, mielőtt képkockákra "
+#~ "darabolódna.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Mindegyik változat más-"
+#~ "más irányból ábrázolja a sprite-ot: az elsőn jobbra, a másodikon balra "
+#~ "néz, a harmadik az elölnézet, a negyedik a hátulnézet. De nem kötelező, "
+#~ "hogy egy sprite minden nézetet tartalmazzon.</p></body></html>"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Exploding cannon "
+#~ "individual frame width.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The pool <span style=\" "
+#~ "font-style:italic;\">exploding </span>element will be rendered on a "
+#~ "pixmap of width : <span style=\" font-style:italic;\">Width</span> * "
+#~ "<span style=\" font-style:italic;\">number of frames</span> and  then "
+#~ "split into individual frames.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Felrobbanó ágyú - "
+#~ "képkockaszélesség.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A <span style=\" font-"
+#~ "style:italic;\">felrobbanó ágyú </span>elem a következő szélességű képre "
+#~ "lesz levetítve: <span style=\" font-style:italic;\">Szélesség</span> * "
+#~ "<span style=\" font-style:italic;\">Képkockaszám</span>, mielőtt "
+#~ "képkockákra darabolódna.</p></body></html>"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Exploding cannon "
+#~ "individual frame height.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The pool <span style=\" "
+#~ "font-style:italic;\">exploding</span> element will be rendered on a "
+#~ "pixmap of height : <span style=\" font-style:italic;\">Height</span> * "
+#~ "<span style=\" font-style:italic;\">number of versions</span> and  then "
+#~ "split into individual frames.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Felrobbanó ágyú - "
+#~ "képkockamagasság.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A <span style=\" font-"
+#~ "style:italic;\">felrobbanó ágyú</span> elem a következő magasságú képre "
+#~ "lesz levetítve: <span style=\" font-style:italic;\">Magasság</span> * "
+#~ "<span style=\" font-style:italic;\">Változatszám</span>, mielőtt "
+#~ "képkockákra darabolódna.</p></body></html>"
+
+#~ msgid "Exploding cannon number of individual frames"
+#~ msgstr "Felrobbanó ágyú - képkockaszám"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Exploding cannon number "
+#~ "of individual frames.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The pool <span style=\" "
+#~ "font-style:italic;\">exploding </span>element will be rendered on a "
+#~ "pixmap of width : <span style=\" font-style:italic;\">Width</span> * "
+#~ "N<span style=\" font-style:italic;\">umber of frames</span> and  then "
+#~ "split into individual frames.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Felrobbanó ágyú - "
+#~ "képkockaszám.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A <span style=\" font-"
+#~ "style:italic;\">felrobbanó ágyú </span>elem a következő szélességű képre "
+#~ "lesz levetítve: <span style=\" font-style:italic;\">Szélesség</span> * "
+#~ "<span style=\" font-style:italic;\">Képkockaszám</span>, mielőtt "
+#~ "képkockákra darabolódna.</p></body></html>"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Exploding cannon number "
+#~ "of versions.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The pool <span style=\" "
+#~ "font-style:italic;\">exploding </span>element will be rendered on a "
+#~ "pixmap of height : <span style=\" font-style:italic;\">Height</span> * "
+#~ "<span style=\" font-style:italic;\">Number of versions</span> and  then "
+#~ "split into individual frames.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Each version shows the "
+#~ "sprite visible from one direction: the first one is directed towards the "
+#~ "right, the second towards the left, the third one from front and the last "
+#~ "one from the back. But all sprites don't need all versions.</p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Felrobbanó ágyú - "
+#~ "változatszám.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">A <span style=\" font-"
+#~ "style:italic;\">felrobbanó ágyú </span>elem ilyen magas képre lesz "
+#~ "levetítve: <span style=\" font-style:italic;\">Magasság</span> * <span "
+#~ "style=\" font-style:italic;\">Változatszám</span>, mielőtt képkockákra "
+#~ "darabolódna.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Minden képkocka a "
+#~ "sprite egy-egy nézetét tartalmazza: az elsőn jobbra, a másodikon balra "
+#~ "néz, a harmadik az elölnézet, a negyedik a hátulnézet. De nem kötelező, "
+#~ "hogy egy sprite tartalmazza az összes nézetet.</p></body></html>"

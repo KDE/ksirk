@@ -1,0 +1,1296 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY ksirkskineditor '<application
+>KsirK Skin Editor</application
+>'>
+  <!ENTITY i18n-ksirkskineditor "<application
+>Editor d'aparences per al KsirK</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Catalan  "INCLUDE">
+]>
+
+<book id="ksirkskineditor" lang="&language;">
+
+<bookinfo>
+<title
+>El manual de l'&i18n-ksirkskineditor;</title>
+
+<authorgroup>
+  <author
+><firstname
+>Ga&euml;l</firstname
+> <othername
+>Kleag</othername
+> <surname
+>de Chalendar</surname
+> <affiliation
+><address
+><email
+>kleag@free.fr</email
+></address
+></affiliation>
+  </author>
+  <!-- Translators: put here the copyright notice of the translation -->
+  &traductor.Antoni.Bella; 
+</authorgroup>
+
+<copyright>
+  <year
+>2009</year>
+  <holder
+>Ga&euml;l de Chalendar</holder>
+</copyright>
+<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
+     and in the FDL itself on how to use it. -->
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<!-- Date of the documentation
+Change date/releaseinfo only if
+   docbook is updated and verified to be valid for the current app version
+   or
+   docbook is proofread and verified to be valid for the current app version
+Don't forget to include this last date.
+Please respect the format of the date (YYYY-MM-DD),it is used by scripts.
+-->
+<date
+>14 d'octubre de 2021</date>
+
+<!--version information of Frameworks/Plasma/Applications this documentation is valid for.
+Example:
+Frameworks xx.yy for docbooks in frameworks
+Plasma xx.yy for docbooks in plasma workspace
+Applications xx.yy for docbooks released as Applications
+xx.yy (Applications xx.yy) for docbooks with own version released as Applications
+$applicationname xx.yy for applications with independent release schedule (extragear/playground)
+-->
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+  <para
+>El &ksirk; és una versió per a ordinador d'un joc d'estratègia ben conegut. Es poden crear aparences que canviaran totalment el seu aspecte. Aquest manual explica com crear-les des de zero, utilitzant un navegador de fitxers, un editor d'imatges &SVG; i l'&i18n-ksirkskineditor;.</para>
+</abstract>
+
+<!-- This is a set of Keywords for indexing by search engines.
+Please at least include KDE, the KDE package it is in, the name
+ of your application, and a few relevant keywords. -->
+
+<keywordset>
+  <keyword
+>KDE</keyword>
+  <keyword
+>editor</keyword>
+  <keyword
+>lliure</keyword>
+  <keyword
+>joc</keyword>
+  <keyword
+>GPL</keyword>
+  <keyword
+>risc</keyword>
+  <keyword
+>aparença</keyword>
+  <keyword
+>estratègia</keyword>
+</keywordset>
+
+</bookinfo>
+
+<!-- The contents of the documentation begin here.  Label
+each chapter so with the id attribute. This is necessary for two reasons: it
+allows you to easily reference the chapter from other chapters of your
+document, and if there is no ID, the name of the generated HTML files will vary
+from time to time making it hard to manage for maintainers and for the CVS
+system. Any chapter labeled (OPTIONAL) may be left out at the author's
+discretion. Other chapters should not be left out in order to maintain a
+consistent documentation style across all KDE apps. -->
+
+<chapter id="introduction">
+<title
+>Introducció</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+<para
+>El &ksirk; és una versió per a ordinador d'un joc d'estratègia ben conegut. Es poden crear aparences que canviaran totalment el seu aspecte. Aquest manual explica com crear-les des de zero, utilitzant un navegador de fitxers, un editor d'imatges &SVG; i l'&i18n-ksirkskineditor;.</para>
+
+<screenshot>
+  <screeninfo
+>Aquesta és una captura de pantalla de l'&i18n-ksirkskineditor;</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="main-snapshot.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Captura de pantalla</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>Hi ha tres passos principals per a crear una aparença nova: crear la jerarquia de carpetes, crear els gràfics, tots els agrupats dins d'un fitxer &SVG; i després col·locar els sprites i anomenar-ho tot utilitzant l'&i18n-ksirkskineditor;.</para>
+</chapter>
+
+<chapter id="using-kapp">
+<title
+>Crear una aparença del &ksirk;</title>
+
+<para
+>Es poden crear aparences del &ksirk; que canviaran totalment el seu aspecte. Per als que tenen capacitats gràfiques, la creació d'una aparença nova és tan senzilla com copiar una existent, editar-la o canviar els gràfics i actualitzar les dades en un fitxer de configuració <literal role="extension"
+>.desktop</literal
+>, el qual es realitza utilitzant l'&i18n-ksirkskineditor;. Un últim pas és editar el fitxer que descriu què instal·lar.</para>
+
+<para
+>Tots els exemples (text i imatges) es prenen de l'aparença predeterminada del &ksirk;.</para>
+
+<sect1 id="sdf">
+<title
+>Estructura de les carpetes i fitxers</title>
+
+<itemizedlist>
+  <listitem
+><para
+><filename class="directory"
+>Data/</filename
+>: les dades utilitzades pel programa per a manejar les imatges de l'aparença.</para>
+    <itemizedlist>
+      <listitem
+><para
+><filename
+>CMakeLists.txt</filename
+>: descriu què instal·lar.</para
+></listitem>
+      <listitem
+><para
+><filename
+>onu.desktop</filename
+>: fitxer principal per a la descripció de l'aparença. Vegeu la seva descripció a continuació.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+><filename class="directory"
+>Images/</filename
+>: les imatges de l'aparença (mapa, sprites, &etc;)</para>
+    <itemizedlist>
+      <listitem
+><para
+><filename
+>CMakeLists.txt</filename
+>: descriu què instal·lar.</para
+></listitem>
+      <listitem
+><para
+><filename
+>pool.svg</filename
+>: el mapa i tots els sprites utilitzats en aquesta aparença.</para
+></listitem>
+      <listitem
+><para
+><filename
+>map-mask.png</filename
+>: la imatge que permet que el programa trobi en quin país es troba el ratolí durant el joc (vegeu més avall).</para
+></listitem>
+      <listitem
+><para
+><literal role="extension"
+>*.png</literal
+>: aquestes imatges són les dels botons.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+><filename
+>CMakeLists.txt</filename
+>: descriu què instal·lar.</para
+></listitem>
+  <listitem
+><para
+><filename class="directory"
+>Sounds/</filename
+>: els fitxers de so per a l'aparença.</para
+></listitem>
+</itemizedlist>
+
+  <sect2 id="tdd">
+  <title
+>La carpeta de dades</title>
+
+  <para
+>Aquesta carpeta conté només un fitxer, <filename
+>world.desktop</filename
+>. Aquest fitxer és una descripció del contingut de l'aparença. S'utilitza per a descriure l'organització del món i com mostrar-la. No heu d'omplir-lo manualment, ja que serà manejat per l'&i18n-ksirkskineditor;. Però, pel bé de la integritat, ara descriurem la seva estructura.</para>
+
+  <para
+>Un grup <literal
+>onu</literal
+> conté una sèrie d'entrades de països, una sèrie d'entrades de nacionalitat i, finalment, diverses entrades de continents. Després, diversos grups que contenen la descripció dels diferents sprites, la descripció dels diferents països, continents, nacionalitats i objectius.</para>
+
+  <para
+>Les seccions següents descriuen el contingut de cada grup.</para>
+
+    <sect3>
+    <title
+>El grup <literal
+>onu</literal
+></title>
+
+    <table>
+      <title
+>Les entrades del grup <literal
+>onu</literal
+></title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Nom de l'entrada</entry>
+            <entry
+>Significat</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>width</literal
+></entry>
+            <entry
+>L'amplada del mapa de l'aparença.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>height</literal
+></entry>
+            <entry
+>L'alçada del mapa de l'aparença.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>skinpath</literal
+></entry>
+            <entry
+>El camí de l'aparença en relació amb el camí de les dades de l'aplicació (&pex;, <filename
+>skins/default</filename
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nb-countries</literal
+></entry>
+            <entry
+>El nombre de països (42 a l'aparença predeterminada). A continuació, hi haurà d'haver el mateix nombre de grups de països.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nb-nationalities</literal
+></entry>
+            <entry
+>El nombre de nacionalitats (6 a l'aparença predeterminada). A continuació, hi haurà d'haver el mateix nombre de grups de nacionalitats.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nb-continents</literal
+></entry>
+            <entry
+>El nombre de continents (6 a l'aparença predeterminada). A continuació, hi haurà d'haver el mateix nombre de grups de continents.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>pool</literal
+></entry>
+            <entry
+>El camí i el nom del fitxer de lloc relatiu al camí de l'aparença (&pex;, <filename
+>Images/pool.svg</filename
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>map-mask</literal
+></entry>
+            <entry
+>El camí i el nom del fitxer de màscara de mapa relatiu al camí de l'aparença (&pex;, <filename
+>Images/map-mask.png</filename
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>format-version</literal
+></entry>
+            <entry
+>La versió del format de fitxer de l'aparença (2.0).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>name</literal
+></entry>
+            <entry
+>El nom a mostrar de l'aparença.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>desc</literal
+></entry>
+            <entry
+>La descripció llarga de l'aparença.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>fighters-flag-y-diff</literal
+></entry>
+            <entry
+>La diferència d'alçada entre els sprites de banderes i canons.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>width-between-flag-and-fighter</literal
+></entry>
+            <entry
+>El nombre de píxels entre el píxel més a l'esquerra de la bandera i el píxel més a la dreta del canó senzill (quan no dispara ni hi ha una explosió).</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>La descripció dels grups de sprites</title>
+
+    <para
+>Cada tipus de sprite (bandera, infanteria, cavalleria, canó, canons que disparen i canons que exploten) es defineix per un grup. Només alguns sprites tenen una entrada d'amplada. Aquesta entrada s'utilitza per al posicionament relatiu durant les animacions: els canons, en disparar o explotar no s'han de <quote
+>moure</quote
+> al voltant de la bandera del país durant la lluita.</para>
+
+    <table>
+      <title
+>Entrades de descripció dels grups de sprites</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Nom de l'entrada</entry>
+            <entry
+>Significat</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>width</literal
+></entry>
+            <entry
+>L'amplada de referència dels fotogrames de l'sprite de bandera.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>height</literal
+></entry>
+            <entry
+>L'alçada de referència dels fotogrames de l'sprite de bandera.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>frames</literal
+></entry>
+            <entry
+>El nombre de fotogrames de l'sprite.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>versions</literal
+></entry>
+            <entry
+>El nombre de versions dels sprites de bandera.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Els grups i descripcions dels països</title>
+
+    <para
+>Cada país llistat en el grup <literal
+>onu</literal
+>, l'entrada de països té el seu propi grup, l'etiqueta del qual és el nom del país. La taula següent llista les entrades d'aquests grups.</para>
+
+    <table>
+      <title
+>Entrades del país</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Nom de l'entrada</entry>
+            <entry
+>Significat</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>id</literal
+></entry>
+            <entry
+>El nombre enter d'identificació única de país, ha de començar per zero (0).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>name</literal
+></entry>
+            <entry
+>El nom a mostrar del país.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>&lt;sprite&gt;-point</literal
+></entry>
+            <entry
+>Cada tipus de sprite (bandera, infanteria, &etc;) en el país es mostrarà en una posició definida per aquesta entrada feta de dos nombres enters separats per una coma.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>neighbours</literal
+></entry>
+            <entry
+>La llista dels ID dels veïns del país actual.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Els grups i descripcions de les nacionalitats</title>
+
+    <para
+>Cada nacionalitat llistada en el grup <literal
+>onu</literal
+>, l'entrada de nacionalitats té el seu propi grup, l'etiqueta del qual és el nom de la nacionalitat. La taula següent llista les entrades d'aquests grups.</para>
+
+    <table>
+      <title
+>Entrades de la nacionalitat</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Nom de l'entrada</entry>
+            <entry
+>Significat</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>name</literal
+></entry>
+            <entry
+>El nom de la nacionalitat (&pex;, <literal
+>Japan</literal
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>leader</literal
+></entry>
+            <entry
+>El nom que es proposarà al jugador que triï aquesta nacionalitat.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>flag</literal
+></entry>
+            <entry
+>El nom de l'element sprite de bandera del país en el fitxer &SVG; <literal
+>onu</literal
+>.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Els grups i descripcions dels continents</title>
+
+    <para
+>Cada continent llistat en el grup <literal
+>onu</literal
+>, l'entrada de continents té el seu propi grup, l'etiqueta del qual és el nom del continent. La taula següent llista les entrades d'aquests grups.</para>
+
+    <table>
+      <title
+>Entrades dels continents</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Nom de l'entrada</entry>
+            <entry
+>Significat</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>name</literal
+></entry>
+            <entry
+>El nom del continent (&pex;, <literal
+>Àfrica</literal
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>id</literal
+></entry>
+            <entry
+>El nombre enter d'identificació única del continent.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>bonus</literal
+></entry>
+            <entry
+>El nombre de batallons obtinguts al final del torn pel jugador que posseeixi tots els països del continent.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>continent-countries</literal
+></entry>
+            <entry
+>La llista dels ID dels països dins del continent actual.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Els grups i descripcions dels objectius</title>
+
+    <para
+>Cada objectiu llistat en el grup <literal
+>onu</literal
+>, l'entrada d'objectius té el seu propi grup, l'etiqueta del qual és el nom de l'objectiu. La taula següent llista les entrades d'aquests grups.</para>
+
+    <table>
+      <title
+>Entrades de l'objectiu</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Nom de l'entrada</entry>
+            <entry
+>Significat</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>type</literal
+></entry>
+            <entry
+>El tipus d'objectiu. Pot ser continents, països o jugador.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nbArmiesByCountry</literal
+></entry>
+            <entry
+>Estableix el nombre mínim de batallons que el jugador haurà de posar a cada país.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nbCountries</literal
+></entry>
+            <entry
+>Estableix el nombre de països que ha de posseir el jugador.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nbCountriesFallback</literal
+></entry>
+            <entry
+>Per a un tipus d'objectiu del jugador, si el jugador objectiu és assassinat per un altre, això establirà el nombre de països que el jugador haurà de conquerir.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>desc</literal
+></entry>
+            <entry
+>Una descripció completa de text de l'objectiu amb marcadors de posició adequats (aquí cal més documentació).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>continents</literal
+></entry>
+            <entry
+>La llista dels ID dels continents que el jugador haurà de conquerir.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+  </sect2>
+
+  <sect2 id="tid">
+  <title
+>La carpeta de les imatges</title>
+
+  <para
+>Aquesta carpeta conté els botons específics del &ksirk; i el fitxer &SVG; de lloc que conté el mapa i tots els sprites.</para>
+
+    <sect3>
+    <title
+>El fitxer <filename
+>pool.svg</filename
+></title>
+
+    <para
+>Aquest fitxer &SVG; conté el mapa i tots els sprites del joc. Cada element s'anomena de tal manera que el joc pot seleccionar i representar per separat cadascun d'ells.</para>
+
+    <para
+>A l'aparença predeterminada, els sprites són banderes, infanteria, cavalleria i canó. La infanteria representa un batalló, cinc la cavalleria i deu els canons. Els canons també s'utilitzen per a mostrar els exèrcits en lluita. És per això que hi ha tres tipus de sprites de canó: estàtic o movent-se normal, disparant i explotant.</para>
+
+    <para
+>Cada imatge de sprite és la concatenació de les diferents vistes de l'objecte i per a cada vista, els seus fotogrames. Les vistes s'organitzen verticalment i els fotogrames horitzontalment. On retallar la imatge en fotogrames individuals es troba dividint l'alçada de la imatge pel nombre de vistes i l'amplada pel nombre de fotogrames. Aquestes dades es troben en el fitxer <filename
+>onu.desktop</filename
+>.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="cannon.png" format="PNG"/></imageobject>
+      <caption
+><para
+>Un exemple d'una imatge sprite: <filename
+>cannon.png</filename
+></para
+></caption>
+    </mediaobject>
+
+    <para
+>Per als sprites dels batallons, hi ha tres vistes diferents, de dalt a baix:</para>
+
+    <itemizedlist>
+      <listitem
+><para
+>mirant a la dreta</para
+></listitem>
+      <listitem
+><para
+>mirant a l'esquerra i</para
+></listitem>
+      <listitem
+><para
+>de cara</para
+></listitem>
+    </itemizedlist>
+
+    <para
+>Per a les banderes, només hi ha una vista. Tots els fons dels sprites s'han d'establir a transparent.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="italy.png" format="PNG"/></imageobject>
+      <caption
+><para
+>Un exemple d'una imatge sprite de bandera: <filename
+>italy.png</filename
+></para
+></caption>
+    </mediaobject>
+
+    <table>
+      <title
+>Els elements del lloc</title>
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry
+>Nom de l'element</entry>
+            <entry
+>Imatge de mostra</entry>
+            <entry
+>Significat</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>map</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="map.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Mapa del món de les aparences. Els països poden tenir formes arbitràries, però s'han d'agrupar en continents reconeixibles a simple vista, només per la ubicació o pel color.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>italy</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="italy.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>La bandera de la nació italiana. Hi ha una entrada d'aquest tipus per a cada nació.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>infantry</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="infantry.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Icona que representa un batalló.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>cavalry</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="cavalry.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Icona que representa cinc batallons.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>cannon</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="cannon.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Icona que representa deu batallons.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>firing</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="firing.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Icona que representa els batallons durant una lluita.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>exploding</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="exploding.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Icona que representa els batallons en perdre una lluita.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>alaska</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="alaska.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>La forma del país Alaska. Això s'utilitza per a ressaltar el país. N'hi ha una per a cada país. El seu color no s'utilitza. Com a tal, el color és lliure.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>reddices</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="reddices.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Els daus vermells mostren el resultat de les batalles.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>bluedices</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="bluedices.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Els daus blaus mostren el resultat de les batalles.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>mark1</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="mark1.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Aquesta marca s'afegeix en els sprites de lluita per a mostrar la quantitat de batallons que representen, aquí 1. També hi ha els elements <literal
+>mark2</literal
+> i <literal
+>mark3</literal
+>.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>El fitxer <filename
+>map-mask.png</filename
+></title>
+
+    <para
+>Aquest fitxer PNG també representa el mapa del món en l'aparença, però amb colors codificats que permeten identificar de manera única cada país. Els països hauran de tenir almenys la mateixa forma que els països corresponents en el fitxer <filename
+>map.png</filename
+>, de manera que els usuaris puguin fer clic a qualsevol lloc d'un país visible i seleccionar-lo bé. Els països, com les illes petites, Indonèsia en el mapa predeterminat pot ser més gran que el seu equivalent en el fitxer <filename
+>map.png</filename
+> per a facilitar la selecció del país.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="map-mask.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Mostra d'una màscara de mapa</phrase
+></textobject>
+    </mediaobject>
+
+    <para
+>El component blau (en el model RGB) del color d'un país, l'identifica: l'índex 0 és el país 0 en el fitxer <filename
+>onu.xml</filename
+>, l'índex 1 és el país 1, &etc;. El blanc (0xFFFFFF en RGB) identifica l'absència del país (es veu o, per què no, la terra de ningú).</para>
+    </sect3>
+
+    <sect3>
+    <title
+>Les imatges dels botons</title>
+
+    <para
+>Els noms de fitxer estan codificats en el codi, i per això no s'haurien de modificar. La taula següent mostra tots els botons que s'han de proporcionar.</para>
+
+    <table>
+      <title
+>Els botons de la &IGU;</title>
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry
+>Imatge</entry>
+            <entry
+>Nom del fitxer</entry>
+            <entry
+>Significat</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="newNetGame.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>newNetGame.png</filename
+></entry>
+            <entry
+>Intenta unir-se a una partida en xarxa.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="recycling.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>recycling.png</filename
+></entry>
+            <entry
+>Una vegada tots els jugadors hagin col·locat els seus batallons, és possible modificar les distribucions (anomenat reciclatge). Aquest botó demana realitzar aquesta redistribució.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="recyclingFinished.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>recyclingFinished.png</filename
+></entry>
+            <entry
+>Tria no redistribuir. Totes les finestres clients han de fer clic en aquest botó per a acabar realment la distribució.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="nextPlayer.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>nextPlayer.png</filename
+></entry>
+            <entry
+>Finalitza el torn actual i canvia al jugador següent o al torn següent si el jugador actual era l'últim.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackOne.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackOne.png</filename
+></entry>
+            <entry
+>Tria iniciar un atac amb un batalló.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackTwo.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackTwo.png</filename
+></entry>
+            <entry
+>Tria iniciar un atac amb dos batallons.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackThree.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackThree.png</filename
+></entry>
+            <entry
+>Tria iniciar un atac amb tres batallons.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="defendOne.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>defendOne.png</filename
+></entry>
+            <entry
+>Tria defensar un país atacat amb un batalló.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="defendTwo.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>defendTwo.png</filename
+></entry>
+            <entry
+>Tria defensar un país atacat amb dos batallons.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="moveArmies.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>moveArmies.png</filename
+></entry>
+            <entry
+>Tria iniciar el moviment dels batallons entre dos països (última acció en el torn).</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+  </sect2>
+
+  <sect2 id="tsd">
+  <title
+>La carpeta de sons</title>
+
+  <para
+>Aquesta carpeta conté tres fitxers de so:</para>
+
+  <itemizedlist>
+    <listitem
+><para
+><filename
+>roll.wav</filename
+> es reprodueix quan es mouen els batallons </para
+></listitem>
+    <listitem
+><para
+><filename
+>cannon.wav</filename
+> es reprodueix quan es dispara i </para
+></listitem>
+    <listitem
+><para
+><filename
+>crash.wav</filename
+> es reprodueix quan explota un canó</para
+></listitem>
+  </itemizedlist>
+  </sect2>
+</sect1>
+
+<sect1 id="using-kse">
+<title
+>Usar l'&i18n-ksirkskineditor;</title>
+
+<para
+>Una vegada s'han creat els gràfics a la carpeta correcta i el fitxer &SVG;, només haureu de crear els països, jugadors, &etc; i associar-los amb l'element &SVG; correcte en el lloc. Això es pot fer amb l'&i18n-ksirkskineditor;. Cal tenir present que cada part d'aquesta aplicació es descriu automàticament amb els consells d'eina i l'ajuda contextual que es pot obtenir amb la drecera <keycombo action="simul"
+>&Ctrl;<keycap
+>F1</keycap
+></keycombo
+>.</para>
+
+<screenshot>
+  <screeninfo
+>Aquesta és una captura de pantalla de l'&i18n-ksirkskineditor;</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="main-snapshot.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Captura de pantalla</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Referència d'ordres</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>La finestra principal de l'&i18n-ksirkskineditor;</title>
+
+  <sect2>
+  <title
+>Els botons</title>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="document-open.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Carrega</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Carrega...</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Fa que el programa carregui una aparença existent.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="document-save.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Desa</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Desa</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Desa l'aparença editada actualment.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+  </sect2>
+</sect1>
+</chapter>
+
+<chapter id="developers">
+<title
+>Guia de l'&i18n-ksirkskineditor; per a desenvolupadors</title>
+
+<para
+>Si us plau, consulteu <ulink url="https://api.kde.org/"
+>https://api.kde.org/</ulink
+> per a la documentació de l'API.</para>
+</chapter>
+
+<chapter id="faq">
+<title
+>Preguntes i respostes</title
+>&updating.documentation; </chapter>
+
+<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+<title
+>Crèdits i llicència</title>
+
+<para
+>&ksirkskineditor;</para>
+
+<para
+>Copyright del programa 2009 Ga&euml;l de Chalendar <email
+>kleag@free.fr</email
+></para>
+
+<para
+>Copyright de la documentació 2009 Ga&euml;l de Chalendar <email
+>kleag@free.fr</email
+></para>
+
+<para
+>Traductor de la documentació: &credits.Antoni.Bella;</para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

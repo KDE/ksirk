@@ -1,0 +1,990 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY ksirk '<application
+>KsirK</application
+>'>
+  <!ENTITY kappname "&ksirk;"
+><!-- replace ksirk here -->
+  <!ENTITY package "kdegames">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % German "INCLUDE">
+]>
+
+<book id="ksirk" lang="&language;">
+
+<bookinfo>
+<title
+>Das Handbuch zu &ksirk;</title>
+
+<authorgroup>
+<author
+><firstname
+>Gael</firstname
+> <othername
+>Kleag</othername
+> <surname
+>de Chalendar</surname
+> <affiliation
+> <address
+><email
+>Kleag@free.fr</email
+></address>
+</affiliation>
+</author>
+<author
+><firstname
+>Nemanja</firstname
+> <othername
+></othername
+> <surname
+>Hirsl</surname
+> <affiliation
+> <address
+><email
+>nemhirsl@gmail.com</email
+></address>
+</affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Johannes</firstname
+><surname
+>Obermayr</surname
+><affiliation
+><address
+><email
+>johannesobermayr@gmx.de</email
+></address
+></affiliation
+><contrib
+>Übersetzung</contrib
+></othercredit
+> 
+</authorgroup>
+
+
+<copyright>
+<year
+>2002-2012</year>
+<holder
+>Gael de Chalendar</holder>
+</copyright>
+<copyright>
+<year
+>2013</year>
+<holder
+>Nemanja Hirsl</holder>
+</copyright>
+<!-- Translators: put here the copyright notice of the translation -->
+<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
+     and in the FDL itself on how to use it. -->
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<!-- Date and version information of the documentation
+Don't forget to include this last date and this last revision number, we
+need them for translation coordination !
+Please respect the format of the date (DD/MM/YYYY) and of the version
+(V.MM.LL), it could be used by automation scripts.
+Do NOT change these in the translation. -->
+
+<date
+>2013-02-17</date>
+<releaseinfo
+>4.10.0</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+<para
+>&ksirk; ist eine computergestützte Version des sehr bekannten Strategiespiels Risiko. Es sind zwar andere kostenpflichtige sowie freie Software-Versionen verfügbar, jedoch startete Gaël de Chalendar mit der Programmierung als eine Lernübung für C++ und entwickelt es bis heute. Weitere Informationen hierzu können der <filename
+>README</filename
+>-Datei entnommen werden. </para>
+<para
+>In der aktuellen Version ist &ksirk; ein Spiel für mehrere Spieler mit Netzwerkunterstützung und einer grafischen Benutzeroberfläche. Die weitere Planung kann der <filename
+>TODO</filename
+>-Datei entnommen werden. </para>
+<para
+>Diese Dokumentation zeigt die grundlegenden Informationen für den Spielstart. Die Kurzinfos und die Meldungen in der Statusleiste geben Ihnen weitere Informationen. Ein Abschnitt erklärt, wie neue Designs für &ksirk; erstellt werden können. </para>
+<para
+>Das Spielziel ist - einfach gesagt - die Weltherrschaft zu erlangen ... Dies geschieht durch das Angreifen der Gegner in den Nachbarländern mit den eigenen Einheiten. Friedlich ist es keineswegs :-) </para>
+</abstract>
+
+<!-- This is a set of Keywords for indexing by search engines.
+Please at least include KDE, the KDE package it is in, the name
+ of your application, and a few relevant keywords. -->
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KDE-Spiele</keyword>
+<keyword
+>Spiel</keyword>
+<keyword
+>Strategie</keyword>
+<keyword
+>Risiko</keyword>
+<keyword
+>Frei</keyword>
+<keyword
+>GPL</keyword>
+<keyword
+>Netzwerk</keyword>
+<keyword
+>KI</keyword>
+</keywordset>
+
+</bookinfo>
+
+<!-- The contents of the documentation begin here.  Label
+each chapter so with the id attribute. This is necessary for two reasons: it
+allows you to easily reference the chapter from other chapters of your
+document, and if there is no ID, the name of the generated HTML files will vary
+from time to time making it hard to manage for maintainers and for the CVS
+system. Any chapter labeled (OPTIONAL) may be left out at the author's
+discretion. Other chapters should not be left out in order to maintain a
+consistent documentation style across all KDE apps. -->
+
+<chapter id="introduction">
+<title
+>Einführung</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+<para
+>&ksirk; ist eine computergestützte Version des sehr bekannten Strategiespiels Risiko. Es sind zwar andere kostenpflichtige sowie freie Software-Versionen verfügbar, jedoch startete Gaël de Chalendar mit der Programmierung als eine Lernübung für C++ und entwickelt es bis heute. Weitere Informationen hierzu können der <filename
+>README</filename
+>-Datei entnommen werden. </para>
+<para>
+<screenshot>
+  <screeninfo
+>Bildschirmfoto von &ksirk;</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="firing-screenshot.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Bildschirmfoto</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para
+>In der aktuellen Version ist &ksirk; ein Spiel für mehrere Spieler mit Netzwerkunterstützung und einer grafischen Benutzeroberfläche. Die weitere Planung kann der <filename
+>TODO</filename
+>-Datei entnommen werden. </para>
+<para
+>Diese Dokumentation zeigt nur die grundlegenden Informationen für den Spielstart. Die Kurzinfos und die Meldungen in der Statusleiste geben Ihnen weitere Informationen. </para>
+<para
+>Das Spielziel ist - einfach gesagt - die Weltherrschaft zu erlangen ... Dies wird erreicht, indem die Gegner in den Nachbarländern mit den Einheiten angegriffen werden. Friedlich - oder etwa nicht? :-=) </para>
+</chapter>
+
+<chapter id="using-kapp">
+<title
+>&ksirk; verwenden</title>
+
+<!-- This chapter should tell the user how to use your app. You should use as
+many sections (Chapter, Sect1, Sect3, etc...) as is necessary to fully document
+your application. -->
+
+
+
+<sect1 id="playing-ksirk">
+<title
+>&ksirk; spielen</title>
+<para
+>Grundsätzlicher Hinweis: Die Karte kann auf drei Arten verschoben werden:</para>
+<itemizedlist
+><listitem
+><para
+>mit Bewegung der Maus zu den Seiten des Fenstern in dieser Richtung,</para
+></listitem>
+<listitem
+><para
+>mit dem Mausrad vertikal, mit dem Mausrad und gedrückter &Alt;-Taste horizontal oder</para
+></listitem>
+<listitem
+><para
+>mit den Pfeiltasten.</para
+></listitem
+></itemizedlist>
+<sect2 id="mainmenu">
+<title
+>Ein Spiel starten</title>
+<para
+>Beim Start von &ksirk; wird das Hauptmenü angezeigt. <screenshot>
+  <screeninfo
+>Das Hauptmenü von &ksirk;</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="introscreen.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Hauptmenü</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<variablelist>
+<varlistentry>
+<term>
+  <menuchoice>
+    <guimenu
+>Neues lokales Spiel</guimenu>
+  </menuchoice>
+</term>
+<listitem>
+  <para>
+  <action
+>Startet ein neues Spiel.</action>
+  </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+  <menuchoice>
+    <guimenu
+>Netzwerkspiel (Jabber)</guimenu>
+  </menuchoice>
+</term>
+<listitem>
+  <para>
+    <action
+>Ein &ksirk;-Spiel über das<ulink url="http://de.wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol"
+>Jabber</ulink
+>-Protokoll. Zuerst müssen Sie ein Jabber-Konto einrichten.</action>
+  </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+  <menuchoice>
+    <guimenu
+>Netzwerkspiel erstellen (TCP/IP)</guimenu>
+  </menuchoice>
+</term>
+<listitem>
+  <para>
+    <action
+>Beginnt ein neues Spiel und benutzt dazu das <ulink url="http://de.wikipedia.org/wiki/Internet_Protocol"
+>Internet-Protokoll</ulink
+>.</action>
+  </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+  <menuchoice>
+    <guimenu
+>Netzwerkspiel beitreten (TCP/IP)</guimenu>
+  </menuchoice>
+</term>
+<listitem>
+  <para>
+    <action
+>Mitspielen bei einem von anderen Benutzern erstellten Spiel, dass das <ulink url="http://de.wikipedia.org/wiki/Internet_Protocol"
+>Internet-Protokoll</ulink
+>verwendet.</action>
+  </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+  <term>
+    <menuchoice>
+      <guimenu
+>Laden</guimenu>
+    </menuchoice>
+  </term>
+  <listitem>
+    <para>
+      <action
+>Hiermit kann ein gespeichertes Spiel geladen werden.</action>
+    </para>
+  </listitem>
+</varlistentry>
+<varlistentry>
+  <term>
+    <menuchoice>
+      <guimenu
+>Beenden</guimenu>
+    </menuchoice>
+  </term>
+  <listitem>
+    <para>
+      <action
+>Beendet &ksirk;.</action>
+    </para>
+  </listitem>
+</varlistentry>
+</variablelist>
+</para>
+<para
+>Bei der Auswahl von <guibutton
+>Neues lokales Spiel</guibutton
+> werden die Einstellungen für das neue Spiel zur Eingabe der Anzahl der Spieler, des Designs, der Art des Spielziels (Weltherrschaft oder individuelle Ziele) und ob ein Netzwerkspiel gestartet werden soll, abgefragt. <screenshot>
+  <screeninfo
+>Neues Spiel</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="newgamedialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Neues Spiel</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para
+>Um ein Netzwerkspiel über TCP/IP zu starten, wählen Sie <guilabel
+>Netzwerkspiel erstellen (TCP/IP)l</guilabel
+> im Hauptbildschirm aus. Nach dem Drücken diese Knopfes können die Netzwerkeinstellungen für die Anzahl der lokalen Netzwerkspieler und den TCP-Port vorgenommen werden. <screenshot>
+  <screeninfo
+>Netzwerkeinstellungen</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="numnetplayersdialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Netzwerkeinstellungen</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para
+>Netzwerkspieler können dann dem Spiel beitreten, indem Sie <guilabel
+>Netzwerkspiel beitreten (TCP/IP)</guilabel
+> im Hauptbildschirm wählen und im folgenden Dialog die IP-Adresse oder Hostnamen und die Portnummer angegeben haben. <screenshot>
+  <screeninfo
+>Netzwerkspiel beitreten</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="joinnetgame.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Netzwerkspiel beitreten</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para
+>Jede Verbindung wird durch eine neue Zeile in der in der <guilabel
+>Spieler</guilabel
+>tabelle unter der Kartenvorschau angezeigt. <screenshot>
+  <screeninfo
+>Neue Spielerzeile</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="justjoined.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Neue Spielerzeile</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+</para>
+<para
+>Sollten die standardmäßigen Einstellungen beibehalten und <guibutton
+>Weiter</guibutton
+> gedrückt werden, müssen die Einstellungen für zwei Spieler vorgenommen werden (einer nach dem anderen). Für jeden Spieler muss ein Name und eine Staatsangehörigkeit (Nation) angegeben werden und - wenn gewünscht - ein Passwort, damit niemand anderes das Spiel fortführen kann (soweit es gespeichert wurde). Zuletzt kann entschieden werden, ob es sich um einen Computerspieler oder menschlichen Spieler handelt.  <screenshot>
+  <screeninfo
+>Spieler-Einstellungen</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="playersetupdialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Spieler-Einstellungen</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para
+>Drücken Sie dann den Knopf <guibutton
+>Start</guibutton
+>,. Bei Auswahl der individuellen Spielziele werden diese nun für jeden Spieler einzeln angezeigt. Vor Anzeige des Spielziels für den betroffenen Spieler erscheint ein Hinweis, sich zu vergewissern, dass kein anderer Spieler sein Spielziel sehen kann. <screenshot>
+  <screeninfo
+>Vorwarnung zur Anzeige des Spielziels</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="displaygoalwarningmessage.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Warnung für Spielziel-Anzeige</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<screenshot>
+  <screeninfo
+>Anzeige des Spielziels</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="displaygoalmessage.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Spielziel-Anzeige</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+</sect2>
+
+<sect2 id="distribution">
+<title
+>Verteilen</title>
+<para
+>Am Anfang des Spiels werden die Länder auf alle Spieler verteilt und auf jedem Land befindet sich eine Einheit (Infanterist). Vor Beginn der ersten Runde hat jeder Spieler ein paar Einheiten auf seine Ländern zu verteilen. Hierbei ist zu beachten, dass fünf Einheiten durch eine Kavallerie und zehn durch eine Kanone dargestellt werden. </para>
+<para
+>Um eine Einheit einem eigenen Land zuzuteilen, ist ein Klick mit der linken Maustaste auf das betreffende Land erforderlich. Ein Klick mit der rechten Maustaste entfernt eine Einheit. Es können jedoch nicht mehr Einheiten entfernt werden als aktuell zugeteilt wurden. <screenshot>
+  <screeninfo
+>Einheiten verteilen</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="placingarmies.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Einheiten stationieren</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+</para>
+<para
+>Wenn ein Spieler seine Einheiten verteilt hat, ist automatisch der nächste Spieler mit dem Verteilen an der Reihe. Wenn alle Spieler ihre Einheiten verteilt haben, kann zwischen zwei Möglichkeiten (Knöpfe in der rechten Leiste) entschieden werden: <variablelist>
+<varlistentry>
+<term>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="recycling.png" format="PNG"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>Umverteilung</phrase>
+        </textobject>
+      </inlinemediaobject>
+    <guibutton
+>Umverteilen</guibutton>
+</term>
+<listitem>
+  <para>
+  <action
+>Ein Spieler hat sich dazu entschieden, die Verteilung seiner Einheiten zu verändern. Der erste Spieler kann jetzt eine Einheit, die er bereits einem anderen Land zugeteilt hat, mit der rechten Maustaste wieder abziehen und sie einem neuen Land mit der linken Maustaste zuteilen. Wenn er fertig ist, gibt er die Möglichkeit der Umverteilung mit Betätigung von <guibutton
+>Fertig</guibutton
+> an den nächsten Spieler ab. Wenn alle Spieler die Umverteilung abgeschlossen haben, werden die beiden Knöpfe erneut angezeigt. </action>
+  </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="recyclingFinished.png" format="PNG"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>Umverteilung beenden</phrase>
+        </textobject>
+      </inlinemediaobject>
+    <guibutton
+>Fertig</guibutton>
+</term>
+<listitem
+><para
+><action
+>Die Umverteilung ist abgeschlossen und das Spiel kann fortgesetzt werden. </action
+></para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para>
+</sect2>
+
+<sect2 id="fight">
+<title
+>Kampf</title>
+<para
+>Nach dem Umverteilen beginnt eine Runde. Dabei spielt jeder Spieler, wenn er an der Reihe ist und hat dabei folgende Möglichkeiten: <variablelist>
+  <varlistentry>
+    <term>
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="joueurSuivant.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Zug beenden</phrase>
+            </textobject>
+          </inlinemediaobject>
+        <guibutton
+>Zug beenden</guibutton>
+    </term>
+    <listitem>
+      <para>
+        <action
+>Der Zug des aktuellen Spielers ist beendet und der nächste Spieler ist am Zug. </action>
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term>
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="attackOne.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Angriff mit einer Einheit</phrase>
+            </textobject>
+          </inlinemediaobject
+>&nbsp;<inlinemediaobject
+> <imageobject
+> <imagedata fileref="attackTwo.png" format="PNG"/> </imageobject
+> <textobject
+> <phrase
+>Angriff mit zwei Einheiten</phrase
+> </textobject
+> </inlinemediaobject
+> &nbsp;<inlinemediaobject
+> <imageobject
+> <imagedata fileref="attackThree.png" format="PNG"/> </imageobject
+> <textobject
+> <phrase
+>Angriff mit drei Einheiten</phrase
+> </textobject
+> </inlinemediaobject
+><guibutton
+>Angriff mit einer, zwei oder drei Einheit(en)</guibutton
+> &nbsp;<inlinemediaobject
+> <imageobject
+> <imagedata fileref="autoattack.png" format="PNG"/> </imageobject
+> <textobject
+> <phrase
+>Automatischer Angriff</phrase
+> </textobject
+> </inlinemediaobject
+> <guibutton
+>Automatischer Angriff</guibutton
+> </term>
+    <listitem>
+      <para
+>Um anzugreifen, wird mit der Maus das angreifende auf das anzugreifende Land gezogen. Es wird ein Kontextmenü mit folgenden Einträgen angezeigt:<screenshot
+><screeninfo
+>Angriffsmenü</screeninfo
+><mediaobject
+><imageobject
+><imagedata fileref="attackmenu.png" format="PNG"/></imageobject
+><textobject
+><phrase
+>Angriffsmenü</phrase
+></textobject
+></mediaobject
+></screenshot
+>Zum Angriff des Landes X vom Land Y mit Z Einheiten müssen zwei Bedingungen erfüllt sein:</para>
+          <itemizedlist
+><listitem
+><para
+>Die beiden Länder müssen benachbart und</para
+></listitem>
+          <listitem
+><para
+>auf dem angreifenden Land müssen mehr als Z + 1 Einheiten stationiert sein.</para
+></listitem
+></itemizedlist>
+        <para
+>Bei einem gültigen Angriff erscheint beim Verteidigenden ein Dialog bei dem zwischen der Verteidigung mit einer oder zwei Einheiten bzw. der Entscheidung dafür durch den Computer gewählt werden kann. </para>
+      <para
+>Nachdem die Wahl der Verteidung getroffen ist, wird der Kampf vollzogen. Dies wird nachstehend beschrieben. <screenshot>
+            <screeninfo
+>Verteidigung</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="defensedialog.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Verteidigung</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term>
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="moveArmies.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Einheiten verlegen</phrase>
+            </textobject>
+          </inlinemediaobject>
+          <guibutton
+>Einheiten verlegen</guibutton>
+    </term>
+    <listitem>
+      <para>
+        <action
+>Es handelt sich hierbei um die letzte Aktion in einem Spielzug. Hierdurch wird ermöglicht, Einheiten in ein benachbartes Land zu verlegen. Hierzu muss - wie bei einem Angriff - das abgebende auf das empfangende Land gezogen werden. Wenn beide Länder gewählt sind, erscheint ein Dialog, in dem ausgewählt werden kann, wie viele Einheiten in den beiden Ländern nach dem Verlegen noch stationiert sind. </action>
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</para>
+</sect2>
+<sect2  id="fight-solution">
+  <title
+>Kampfergebnis</title>
+  <para
+>Für jede am Kampf beteiligte Einheit gibt es ein entsprechendes Kampfergebnis. Hierzu werden die Würfel - vom höchsten Ergebnis aus - nacheinander verglichen: Der Spieler mit der höheren Zahl - egal ob Angreifer oder Verteidigender - gewinnt und der Spieler mit der niedrigeren Zahl verliert Einheiten. Sollte Gleichstand herrschen, ist der Angriff der entsprechenden Einheit abgewehrt und der Angreifer verliert seine Einheit. <screenshot>
+            <screeninfo
+>Kampfergebnis</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="shownumberofarmies.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Anzeige des Angriffsergebnisses</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+  </para>
+  <para
+>Wenn die Anzahl der Einheiten im verteidigenden Land auf Null zurück geht, wechselt das Eigentum am Land zum Angreifer über. Nun wird seine Flagge angezeigt und eine seiner angreifenden Einheiten marschiert in das eroberte Land ein. Der Dialog für das Einmarschieren wird angezeigt - wie für das Verlegen am Ende einer Runde. <screenshot>
+            <screeninfo
+>Einmarschieren</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="invasionslider.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Einmarschieren</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+  </para>
+</sect2>
+<sect2  id="end_of_turn">
+  <title
+>Ende der Spielrunde</title>
+  <para
+>Mit dem Drücken auf <guibutton
+>Zug beenden</guibutton
+> in der Werkzeugleiste wird der aktuelle Zug ohne Verlegen von Einheiten abgeschlossen. </para>
+  <para
+>Nachdem jeder Spieler seinen Zug abgeschlossen hat, ist die Runde beendet. Jeder Spieler erhält nun neue Einheiten, die er stationieren muss. Die Anzahl dieser Einheiten richtet sich nach den Ländern, die der jeweilige Spieler besitzt. Eine Einheit erhält man für je drei Länder, mindestens jedoch drei Einheiten. Eine unterschiedliche Anzahl von Zusatzeinheiten erhält man für das Eigentum an einem Kontinent. Im Standarddesign sieht die Verteilung wie folgt aus: <table>
+      <title
+>Zusatzeinheiten für das Eigentum an kompletten Kontinenten</title>
+      <tgroup cols="2">
+        <thead>
+          <row
+><entry
+>Kontinent</entry
+><entry
+>Zusatzeinheiten</entry
+></row>
+        </thead>
+        <tbody>
+          <row
+><entry
+>Nordamerika</entry
+><entry
+>5</entry
+></row>
+          <row
+><entry
+>Südamerika</entry
+><entry
+>2</entry
+></row>
+          <row
+><entry
+>Europa</entry
+><entry
+>5</entry
+></row>
+          <row
+><entry
+>Afrika</entry
+><entry
+>3</entry
+></row>
+          <row
+><entry
+>Asien</entry
+><entry
+>7</entry
+></row>
+          <row
+><entry
+>Pazifik</entry
+><entry
+>2</entry
+></row>
+        </tbody>
+      </tgroup>
+    </table>
+  </para>
+  <para
+>Nachdem ein Spieler seine Einheiten verteilt hat, drückt er auf <guibutton
+>Fertig</guibutton
+>, damit der nächste Spieler seine Zusatzeinheiten verteilen kann. Genauso wie beim eigentlichen Verteilen, kann wieder eine Umverteilung stattfinden oder die neue Runde beginnen ... </para>
+</sect2>
+<!-- Does not work for current TCP/IP games
+<sect2 id="sending-messages">
+<title
+>Sending messages to other players</title>
+<para>
+If you play a local game and want to communicate with the other players, well, let's speak (supposing you have no accessibility problems)... But if you are playing a network game, you can use the chat frame at the bottom of the window (it can be hidden or showed using the arrows). Just type in your message and hit &Enter;.
+          <screenshot>
+            <screeninfo
+>Sending messages</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="messagesent.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Sending messages</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+
+</para>
+</sect2>
+-->
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Befehle</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>Der Hauptbildschirm von &ksirk;</title>
+<sect2>
+<title
+>Die Knöpfe</title>
+<para>
+<variablelist>
+<varlistentry>
+<term>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="quit.png" format="PNG"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>Beenden</phrase>
+        </textobject>
+      </inlinemediaobject>
+    <guibutton
+>Beenden</guibutton>
+</term>
+<listitem
+><para
+><action
+>Das Programm wird beendet. </action
+></para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="newGame.png" format="PNG"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>Neues Spiel</phrase>
+        </textobject>
+      </inlinemediaobject>
+    <guibutton
+>Neues Spiel</guibutton>
+</term>
+<listitem
+><para
+><action
+>Ein neues Spiel wird gestartet. Es werden die Anzahl und danach die Namen der Spieler abgefragt. </action
+></para
+></listitem>
+</varlistentry>
+</variablelist>
+</para>
+
+</sect2>
+
+</sect1>
+</chapter>
+
+<chapter id="developers">
+  <title
+>Entwicklerhandbuch zu &ksirk;</title>
+  
+  <para
+>Die Dokumentation für die API (Programmierschnittstelle) finden Sie auf <ulink url="http://api.kde.org/"
+>http://api.kde.org/</ulink
+>. Sie war einst durchaus vollständig, ist jedoch ein bisschen vernachlässigt worden. In den <filename
+>.cpp</filename
+>-Implementierungsdateien sind keine Kommentare enthalten. </para>
+  <para
+>Es ist zu beachten, dass das Spiel ursprünglich mit Borland C++ und WinG unter &Windows; entwickelt wurde. Später wurde der Quellkode zu &Java; und schließlich für &kde; wieder zurück zu C++ konvertiert. Zu Beginn wurden französische und französisch-englische Bezeichnungen für die Klassen, Methoden, usw. verwendet. Die Kommentare waren ebenfalls in französisch verfasst. Später wurde alles ins Englische übersetzt. Der Programmierer ist kein Muttersprachler im Englischen und es wird daher darum gebeten, Sprachfehler in der grafischen Oberfläche und Dokumentation an ihn zu melden (in den englischen Versionen). </para>
+  
+</chapter>
+
+<chapter id="skins">
+  <title
+>Neue Designs erstellen</title>
+  <para
+>&ksirk; enthält einen Design-Editor (ksirkskineditor) zur Bearbeitung aller Daten des Designs und der Grafiken (Karte, Animationen, &etc;), die in einer <filename
+>.svg</filename
+>-Datei vorliegen. Weitere Informationen hierzu können dem Handbuch zu &ksirk;-Design-Editor entnommen werden. </para>
+</chapter>
+
+<chapter id="faq">
+<title
+>Fragen und Antworten</title
+>&reporting.bugs; &updating.documentation; </chapter>
+
+<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+<title
+>Danksagungen und Lizenz</title>
+
+<para
+>&ksirk; </para>
+<para
+>Programm © 2002-2012 Gael de Chalendar <email
+>kleag@free.fr</email
+> </para>
+<para
+>Program © 2013 Nemanja Hirsl <email
+>nemhirsl@gmail.com</email
+> </para>
+<para
+>Beitragende: Robin Doer, Albert Astals Cid, Michal Golunski (polnische Übersetzung). </para>
+
+<para
+>Dokumentation © 2002-2008 Gael de Chalendar <email
+>kleag@free.fr</email
+> </para>
+
+<para
+>Übersetzung: Johannes Obermayr <email
+>johannesobermayr@gmx.de</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Installation</title>
+
+<sect1 id="configuration">
+<title
+>Einrichten</title>
+
+<para
+>Der Menüeintrag <menuchoice
+><guimenu
+>Einstellungen</guimenu
+><guimenuitem
+>&ksirk; einrichten ...</guimenuitem
+></menuchoice
+> öffnet ein Fenster für <screenshot>
+            <screeninfo
+>Einstellungen</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="preferences.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Einstellungen</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+</para>
+      <itemizedlist>
+        <listitem>
+          <para
+>das Aktivieren bzw. Deaktivieren der Klänge, </para>
+        </listitem>
+        <listitem>
+          <para
+>das Einstellen der Geschwindigkeit für die Animationen (langsam bis augenblicklich), </para>
+        </listitem>
+        <listitem>
+          <para
+>das Aktivieren bzw. Deaktivieren der Kontexthilfe und </para>
+        </listitem>
+        <listitem>
+          <para
+>die Anzeige bzw. das Ausblenden der Anzahl der Einheiten in den Ländern. Das folgende Bildschirmfoto zeigt die Karte mit angezeigter Anzahl der Einheiten. <screenshot>
+              <screeninfo
+>Anzahl der Einheiten</screeninfo>
+              <mediaobject>
+                <imageobject>
+                  <imagedata fileref="shownumberofarmies.png" format="PNG"/>
+                </imageobject>
+                <textobject>
+                  <phrase
+>Anzahl der Einheiten anzeigen</phrase>
+                </textobject>
+              </mediaobject>
+            </screenshot>
+
+          </para>
+        </listitem>
+      </itemizedlist>
+
+</sect1>
+
+</appendix>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,991 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY i18n-ksirkskineditor '<application
+>Ksirk skaleditor</application
+>'>
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Swedish "INCLUDE">
+]>
+
+<book id="ksirk" lang="&language;">
+
+<bookinfo>
+<title
+>Handbok &ksirk;</title>
+
+<authorgroup>
+  <author
+><firstname
+>Ga&euml;l</firstname
+> <othername
+>Kleag</othername
+> <surname
+>de Chalendar</surname
+> <affiliation
+><address
+><email
+>kleag@free.fr</email
+></address
+></affiliation>
+  </author>
+  <author
+><firstname
+>Nemanja</firstname
+> <othername
+></othername
+> <surname
+>Hirsl</surname
+> <affiliation
+><address
+><email
+>nemhirsl@gmail.com</email
+></address
+></affiliation>
+  </author>
+  <!-- Translators: put here the copyright notice of the translation -->
+  <othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+  <year
+>2002-2012</year>
+  <holder
+>Ga&euml;l de Chalendar</holder>
+</copyright>
+<copyright>
+  <year
+>2013</year>
+  <holder
+>Nemanja Hirsl</holder>
+</copyright>
+<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
+     and in the FDL itself on how to use it. -->
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<!-- Date and version information of the documentation
+Don't forget to include this last date and this last revision number, we
+need them for translation coordination !
+Please respect the format of the date (DD/MM/YYYY) and of the version
+(V.MM.LL), it could be used by automation scripts.
+Do NOT change these in the translation. -->
+<date
+>2021-10-14</date>
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<!-- Abstract about this handbook -->
+<abstract>
+  <para
+>&ksirk; är en datorversion av ett välkänt strategispel.</para>
+</abstract>
+
+<!-- This is a set of Keywords for indexing by search engines.
+Please at least include KDE, the KDE package it is in, the name
+ of your application, and a few relevant keywords. -->
+<keywordset>
+  <keyword
+>KDE</keyword>
+  <keyword
+>AI</keyword>
+  <keyword
+>fri</keyword>
+  <keyword
+>spel</keyword>
+  <keyword
+>GPL</keyword>
+  <keyword
+>Ksirk</keyword>
+  <keyword
+>nätverk</keyword>
+  <keyword
+>risk</keyword>
+  <keyword
+>strategi</keyword>
+</keywordset>
+</bookinfo>
+
+<!-- The contents of the documentation begin here.  Label
+each chapter so with the id attribute. This is necessary for two reasons: it
+allows you to easily reference the chapter from other chapters of your
+document, and if there is no ID, the name of the generated HTML files will vary
+from time to time making it hard to manage for maintainers and for the CVS
+system. Any chapter labeled (OPTIONAL) may be left out at the author's
+discretion. Other chapters should not be left out in order to maintain a
+consistent documentation style across all KDE apps. -->
+
+<chapter id="introduction">
+<title
+>Inledning</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+<para
+>&ksirk; är en datorversion av ett välkänt strategispel. Det finns kommersiella och andra versioner med fri programvara, men jag (Gaël de Chalendar) skapade ursprungligen spelet som en övning för att lära mig C++, och utvecklade det till nuvarande status (se <filename
+>README</filename
+> för detaljinformation).</para>
+
+<screenshot>
+  <screeninfo
+>Här är en skärmbild av &ksirk;</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="firing-screenshot.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Skärmbild</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>I sin nuvarande version är &ksirk; ett nätverksspel för flera spelare med en Artificiell Intelligens. (Se <filename
+>TODO</filename
+> för detaljinformation).</para>
+
+<para
+>Dokumentationen ger bara den huvudsakliga informationen du behöver för att börja spela. Läs verktygstipsen och statusradens meddelanden för att komplettera informationen här.</para>
+
+<para
+>Spelets mål är helt enkelt att erövra världen ... Det görs genom att anfalla grannländer med arméer. Fredligt, inte sant?</para>
+</chapter>
+
+<chapter id="using-kapp">
+<title
+>Använda &ksirk;</title>
+
+<!-- This chapter should tell the user how to use your app. You should use as
+many sections (Chapter, Sect1, Sect3, &etc;) as is necessary to fully document
+your application. -->
+
+<sect1 id="playing-ksirk">
+<title
+>Spela &ksirk;</title>
+
+<para
+>Preliminär anmärkning: kartan kan panoreras med tre metoder:</para>
+
+  <itemizedlist>
+    <listitem
+><para
+>Du kan placera muspekaren nära kanten av ett fönster så panoreras kartan i den riktningen</para
+></listitem>
+    <listitem
+><para
+>Du kan använda mushjulet: utan väljartangent panorerar det vertikalt, när &Alt;-tangenten hålls nere panorerar det horisontellt</para
+></listitem>
+    <listitem
+><para
+>Du kan använda tangentbordets piltangenter</para
+></listitem>
+  </itemizedlist>
+
+  <sect2 id="mainmenu">
+  <title
+>Att starta ett spel</title>
+
+  <para
+>När &ksirk; startas, presenteras en huvudmeny.</para>
+
+  <screenshot>
+    <screeninfo
+>Huvudmenyn i &ksirk;</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="introscreen.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Huvudmeny</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <variablelist>
+    <varlistentry>
+      <term
+><guibutton
+>Nytt lokalt spel</guibutton
+></term>
+      <listitem
+><para
+><action
+>Startar ett nytt spel.</action
+></para
+></listitem>
+    </varlistentry>
+<!--
+    <varlistentry>
+      <term
+><guibutton
+>Play &ksirk; over Jabber Network</guibutton
+></term>
+      <listitem
+><para
+><action
+>Play &ksirk; over <ulink url="https://en.wikipedia.org/wiki/XMPP"
+>Jabber</ulink
+>. You need to register Jabber account first.</action
+></para
+></listitem>
+    </varlistentry>
+-->
+    <varlistentry>
+      <term
+><guibutton
+>Nytt vanligt TCP/IP nätverksspel</guibutton
+></term>
+      <listitem
+><para
+><action
+>Starta ett nytt spel genom att använda <ulink url="https://sv.wikipedia.org/wiki/TCP/IP"
+>TCP/IP</ulink
+>.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term
+><guibutton
+>Gå med i vanligt TCP/IP nätverksspel</guibutton
+></term>
+      <listitem
+><para
+><action
+>Gå till spelet skapat av en annan användare genom att använda <ulink url="https://sv.wikipedia.org/wiki/TCP/IP"
+>TCP/IP</ulink
+>.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term
+><guibutton
+>Läs in...</guibutton
+></term>
+      <listitem
+><para
+><action
+>Använd det här för att läsa in ett tidigare sparat spel.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term
+><guibutton
+>Avsluta</guibutton
+></term>
+      <listitem
+><para
+><action
+>Kanske du till sist inte vill spela mer?</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+
+  <para
+>Om du klickar på <guibutton
+>Nytt lokalt spel</guibutton
+>, visas dialogrutan <guilabel
+>Nytt spel</guilabel
+> där du kan välja antal spelare, skalet (eller temat) att använda, speltypen (erövra målet eller ha ett specifikt mål), och slutligen om spelet kommer att spelas med nätspelare eller om det är helt lokalt. Nya skal kan laddas ner med knappen <guibutton
+>Ladda ner nya skal...</guibutton
+>.</para>
+
+  <screenshot>
+    <screeninfo
+>Dialogrutan Nytt spel</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="newgamedialog.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Dialogrutan Nytt spel</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Markera kryssrutan <guilabel
+>Nytt vanligt TCP/IP nätverksspel</guilabel
+> på inledningsskärmen. Efter att ha klickat på knappen, kommer du att kunna välja nätverksparametrar: antal lokala spelare och TCP-port att använda för att vänta på anslutningar.</para>
+
+  <screenshot>
+    <screeninfo
+>Dialogrutan med parametrar för nätverksspel</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="numnetplayersdialog.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Dialogrutan med parametrar för nätverksspel</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Därefter kommer nätverksspelare att kunna ansluta genom att välja <guilabel
+>Nytt vanligt TCP/IP nätverksspel</guilabel
+> på inledningsskärmen och ange värddatorns IP-adress eller värddatornamn och portnummer du just ställde in.</para>
+
+  <screenshot>
+    <screeninfo
+>Dialogrutan för att deltaga i nätverksspel</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="joinnetgame.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Dialogrutan för att deltaga i nätverksspel</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Varje anslutning indikeras av en ny rad i tabellen <guilabel
+>Spelare</guilabel
+> under miniatyrbilden av kartan.</para>
+
+  <screenshot>
+    <screeninfo
+>Ny spelarrad</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="justjoined.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Ny spelarrad</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Låt oss anta att du behåller förvalda inställningar, och klickar på <guibutton
+>Nästa</guibutton
+>. Då ställer du in två spelare, en i taget. För var och en väljer du namn, nationalitet, och om du vill kan du ställa in ett lösenord så att ingen annan än du kan återanvända spelaren när det sparade spelet laddas igen. Till sist anger du här om spelaren är datorn eller en människa.</para>
+
+  <screenshot>
+    <screeninfo
+>Dialogrutan Spelarinställning</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="playersetupdialog.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Dialogrutan Spelarinställning</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Efter att ha klickat på <guibutton
+>Starta</guibutton
+>, och därefter väljer att spela med ett mål, visas målet för varje lokal spelare, föregånget av en varning så att andra spelare som tittar på samma dator kan diskret titta bort medan målet visas.</para>
+
+  <screenshot>
+    <screeninfo
+>Varningsmeddelandet Visa mål</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="displaygoalwarningmessage.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Varningsmeddelandet Visa mål</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <screenshot>
+    <screeninfo
+>Dialogrutan Visa mål</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="displaygoalmessage.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Dialogrutan Visa mål</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+  </sect2>
+
+  <sect2 id="distribution">
+  <title
+>Fördelning</title>
+
+  <para
+>När spelet börjar fördelas länder till alla spelare. Varje land innehåller från början en armé (representerad av en infanterist). Varje spelare har ett antal arméer att fördela mellan sina länder när det är deras tur (vilket anges av att deras namn och flagga visas i statusraden). Observera att fem arméer representeras av en kavallerist och tio av en kanon.</para>
+
+  <para
+>Klicka på ett av dina länder med vänster musknapp för att placera en armé i det. Klicka med höger musknapp för att ta bort en armé. Observera, som en allmän regel, kommer du aldrig att kunna ta bort fler arméer än du redan har placerat ut.</para>
+
+  <screenshot>
+    <screeninfo
+>Placera arméer</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="placingarmies.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Placera arméer</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>När en spelare har fördelat alla sina arméer, får nästa spelare automatiskt fortsätta att göra samma sak. När alla spelare är klara med att fördela sina arméer, finns två möjligheter som kan väljas med två knappar som visas i rutan till höger:</para>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="recycling.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Omfördelning</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Återanvänd</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>En spelare vill ändra några av sina val. Den första spelaren kan då ta bort en armé som just placerades i ett land med höger musknapp, och placera den i ett annat med vänster musknapp. När spelaren är klar, överlämnar han kontrollen till nästa spelare med knappen <guibutton
+>Validera</guibutton
+>. När alla spelare är klara med sin omfördelning, visas de två knapparna igen.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="recyclingFinished.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Slut på omfördelning</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Klar</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Omfördelningen är slut och spelet kan fortsätta.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+  </sect2>
+
+  <sect2 id="fight">
+  <title
+>Strid</title>
+
+  <para
+>Efter omfördelningen startar en omgång. Varje spelare spelar när det är hans tur. Han har då möjlighet att välja:</para>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="joueurSuivant.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Nästa spelare</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Nästa spelare</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Den nuvarande spelarens tur avslutas, och det är nästa spelares tur.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="attackOne.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Anfall 1</phrase
+></textobject>
+        </inlinemediaobject
+>&nbsp;<inlinemediaobject
+> <imageobject
+> <imagedata fileref="attackTwo.png" format="PNG"/> </imageobject
+> <textobject
+><phrase
+>Attack 2</phrase
+></textobject
+> </inlinemediaobject
+> &nbsp;<inlinemediaobject
+> <imageobject
+> <imagedata fileref="attackThree.png" format="PNG"/> </imageobject
+> <textobject
+> <phrase
+>Anfall 3</phrase
+> </textobject
+> </inlinemediaobject
+><guibutton
+>Anfall med en, två eller tre arméer</guibutton
+> &nbsp;<inlinemediaobject
+> <imageobject
+> <imagedata fileref="autoattack.png" format="PNG"/> </imageobject
+> <textobject
+> <phrase
+>Automatiskt anfall</phrase
+> </textobject
+> </inlinemediaobject
+> <guibutton
+>Automatiskt anfall</guibutton
+> </term>
+
+      <listitem
+><para
+>Dra med musen från det anfallande landet och släpp på det anfallna, för att göra ett anfall. Då visas en sammanhangsberoende meny med ovanstående alternativ.</para>
+
+        <screenshot>
+          <screeninfo
+>Menyn Anfall</screeninfo>
+          <mediaobject>
+            <imageobject
+><imagedata fileref="attackmenu.png" format="PNG"/></imageobject>
+            <textobject
+><phrase
+>Menyn Anfall</phrase
+></textobject>
+          </mediaobject>
+        </screenshot>
+
+        <para
+>För att landet X ska kunna anfalla landet Y med x arméer, måste två villkor vara uppfyllda:</para>
+
+        <itemizedlist>
+          <listitem
+><para
+>de två länderna måste vara grannar,</para
+></listitem>
+          <listitem
+><para
+>land X måste ha minst x+1 arméer innan anfallet.</para
+></listitem>
+        </itemizedlist>
+
+        <para
+>Om anfallet är riktigt, visas en dialogruta om det är nödvändigt för försvararen att välja om han vill försvara med en eller två arméer, eller vill låta datorn bestämma.</para>
+
+        <para
+>När försvararens val är gjort, sker striden till den är genomförd. Det beskrivs nedan.</para>
+
+        <screenshot>
+          <screeninfo
+>Försvarsdialogruta</screeninfo>
+          <mediaobject>
+            <imageobject
+><imagedata fileref="defensedialog.png" format="PNG"/></imageobject>
+            <textobject
+><phrase
+>Försvarsdialogruta</phrase
+></textobject>
+          </mediaobject>
+        </screenshot>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="moveArmies.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Flytta arméer</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Flytta arméer från ett land till ett annat</guibutton>
+      </term>
+
+      <listitem
+><para
+><action
+>Detta är den sista åtgärden under en spelares tur. Den ger möjlighet att flytta vissa arméer från ett land till ett annat, som är grannland till det första. För att välja länderna, drag och släpp precis som vid ett anfall. När båda länder har valts, visas ett skjutreglage där man kan välja hur många arméer ska finnas i varje land efteråt.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+  </sect2>
+
+  <sect2  id="fight-outcome">
+  <title
+>Stridens upplösning</title>
+
+  <para
+>För varje armé inblandad i striden kastas en motsvarande tärning. Spelaren som slår högst nummer på tärningen, vare sig han anfaller eller försvarar, vinner och den som slår ett lägre nummer på tärningen förlorar arméer enligt antal kastade tärningar.</para>
+
+  <screenshot>
+    <screeninfo
+>Visade anfallsresultat</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="shownumberofarmies.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Visade anfallsresultat</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Om antalet arméer i försvararens land når 0, byter landet ägare till angriparen: Hans flagga hissas, och en av hans anfallande arméer installeras i det nya landet. Skjutreglaget för att flytta arméer visas liksom vid förflyttningarna i slutet på omgången.</para>
+
+  <screenshot>
+    <screeninfo
+>Invasionsreglage</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="invasionslider.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Invasionsreglage</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+  </sect2>
+
+  <sect2  id="end_of_turn">
+  <title
+>Turens slut</title>
+
+  <para
+>För att avsluta din nuvarande tur, om du inte vill flytta arméer, kan du klicka på knappen <guibutton
+>Nästa spelare</guibutton
+> i verktygsraden.</para>
+
+  <para
+>När alla har spelat, är omgången slut. Vissa arméer fördelas till spelarna, i förhållande till antal länder de äger; 1 för varje grupp med tre länder, med minimalt tre. En bonus lämnas också för spelare som äger en hel kontinent, olika för var och en. För standardskalet är denna bonus:</para>
+
+  <table>
+    <title
+>Bonus på grund av kontinenter</title>
+    <tgroup cols="2">
+      <thead>
+        <row>
+          <entry
+>Kontinent</entry>
+          <entry
+>Bonus</entry>
+        </row>
+      </thead>
+      <tbody>
+        <row
+><entry
+>Nordamerika</entry
+><entry
+>5</entry
+></row>
+        <row
+><entry
+>Sydamerika</entry
+><entry
+>2</entry
+></row>
+        <row
+><entry
+>Europa</entry
+><entry
+>5</entry
+></row>
+        <row
+><entry
+>Afrika</entry
+><entry
+>3</entry
+></row>
+        <row
+><entry
+>Asien</entry
+><entry
+>7</entry
+></row>
+        <row
+><entry
+>Stilla havsområdet</entry
+><entry
+>2</entry
+></row>
+      </tbody>
+    </tgroup>
+  </table>
+
+  <para
+>När en spelare är klar med att fördela sina arméer, klickar han på knappen <guibutton
+>Validera</guibutton
+> för att låta nästa spelare fördela sina bonusarméer. Liksom vid den ursprungliga fördelningen, när alla spelare har placerat sina arméer kan de påbörja en ny omfördelningscykel eller börja en ny omgång ...</para>
+  </sect2>
+
+<!-- Does not work for current TCP/IP games
+<sect2 id="sending-messages">
+<title
+>Sending messages to other players</title>
+<para>
+If you play a local game and want to communicate with the other players, well, let's speak (supposing you have no accessibility problems)... But if you are playing a network game, you can use the chat frame at the bottom of the window (it can be hidden or showed using the arrows). Just type in your message and hit &Enter;.
+          <screenshot>
+            <screeninfo
+>Sending messages</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="messagesent.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Sending messages</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+
+</para>
+</sect2>
+-->
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Kommandoreferens</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>Huvudfönstret i &ksirk;</title>
+
+  <sect2>
+  <title
+>Knapparna</title>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="application-exit.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Avsluta spelet</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Avsluta</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Gör att programmet avslutas.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="document-new.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Nytt spel</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Nytt spel</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Startar ett nytt spel. Det gör att en dialogruta som frågar efter antal spelare visas. Därefter blir varje spelare tillfrågad om sitt namn med en annan dialogruta.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+</sect2>
+
+</sect1>
+</chapter>
+
+<chapter id="developers">
+<title
+>Utvecklingsguide för &ksirk;</title>
+
+<para
+>Titta på <ulink url="https://api.kde.org/"
+>https://api.kde.org/</ulink
+> för att se programmeringsgränssnittets dokumentation. Den var ganska fullständig, men är för närvarande lite föråldrad. Det finns inga kommentarer i <literal role="extension"
+>.cpp</literal
+>-implementeringsfilerna.</para>
+
+<para
+>Observera att spelet utvecklades ursprungligen under &Windows; med <application
+>Borland C++</application
+> och <application
+>WinG</application
+>. Jag överförde det till &Java; innan det konverterades tillbaka till C++ och &kde;. Från början använde jag franska eller en blandning av franska och engelska för att namnge identifierare (klassnamn, metoder, medlemmar, etc.). Jag använde också franska för kommentarerna. När jag bestämde mig för att distribuera spelet, bestämde jag mig också för att översätta allt till engelska ... men det är uppenbart att engelska inte är mitt modersmål: föreslå eller utför gärna in förbättringar av kommentarerna i koden eller av den här dokumentationen.</para>
+
+</chapter>
+
+<chapter id="skins">
+<title
+>Skapa nya skal</title>
+
+<para
+>&ksirk; levereras med en skaleditor, kallad <command
+>ksirkskineditor</command
+>, som gör det möjligt att redigera all skaldata, så fort grafiken (karta, figurer, etc.) är tillgängliga i en &SVG;-fil. Se handboken för &i18n-ksirkskineditor; för ytterligare detaljinformation.</para>
+
+</chapter>
+
+<chapter id="faq">
+<title
+>Vanliga frågor</title
+>&reporting.bugs; &updating.documentation; </chapter>
+
+<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+<title
+>Tack till och licens</title>
+
+<para
+>&ksirk;</para>
+
+<para
+>Program copyright 2002-2012 Ga&euml;l de Chalendar <email
+>kleag@free.fr</email
+></para>
+
+<para
+>Program copyright 2013 Nemanja Hirsl <email
+>nemhirsl@gmail.com</email
+></para>
+
+<para
+>Bidragsgivare: Robin Doer, &Albert.Astals.Cid;, Michal Golunski (översättning till Polska). </para>
+
+<para
+>Dokumentation copyright 2002-2008 Ga&euml;l de Chalendar <email
+>kleag@free.fr</email
+></para>
+
+<para
+>Översättning Stefan Asserhäll <email
+>stefan.asserhall@bredband.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Installation</title>
+
+<sect1 id="configuration">
+<title
+>Inställning</title>
+
+<para
+>Menyalternativet <menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Anpassa &ksirk;...</guimenuitem
+></menuchoice
+> visar en dialogruta som låter dig:</para>
+
+<screenshot>
+  <screeninfo
+>Inställningsdialogruta</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="preferences.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Inställningsdialogruta</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+
+<itemizedlist>
+  <listitem
+><para
+>aktivera eller inaktivera ljud,</para
+></listitem>
+  <listitem
+><para
+>ställa in figurernas hastighet (från långsamt till omedelbart),</para
+></listitem>
+  <listitem
+><para
+>aktivera eller inaktivera sammanhangsberoende hjälp som visas i meddelanderutor,</para
+></listitem>
+  <listitem
+><para
+>visa eller dölja antal arméer i varje land. Följande skärmbild visar kartan när antal arméer visas.</para>
+
+    <screenshot>
+      <screeninfo
+>Visning av antalet arméer</screeninfo>
+      <mediaobject>
+        <imageobject
+><imagedata fileref="shownumberofarmies.png" format="PNG"/></imageobject>
+        <textobject
+><phrase
+>Visning av antalet arméer</phrase
+></textobject>
+        </mediaobject>
+    </screenshot>
+  </listitem>
+</itemizedlist>
+</sect1>
+
+</appendix>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

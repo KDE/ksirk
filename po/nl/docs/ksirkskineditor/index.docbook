@@ -1,0 +1,1294 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY ksirkskineditor '<application
+>KsirK Skin Editor</application
+>'>
+  <!ENTITY i18n-ksirkskineditor '<application
+>KsirK skinbewerker</application
+>'>
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Dutch "INCLUDE">
+]>
+
+<book id="ksirkskineditor" lang="&language;">
+
+<bookinfo>
+<title
+>Het handboek van &i18n-ksirkskineditor;</title>
+
+<authorgroup>
+  <author
+><firstname
+>Gaël</firstname
+> <othername
+>Kleag</othername
+> <surname
+>de Chalendar</surname
+> <affiliation
+><address
+><email
+>Kleag@free.fr</email
+></address
+></affiliation>
+  </author>
+  <!-- Translators: put here the copyright notice of the translation -->
+  &Freek.de.Kruijf;&Ronald.Stroethoff; 
+</authorgroup>
+
+<copyright>
+  <year
+>2009</year>
+  <holder
+>Gaël de Chalendar</holder>
+</copyright>
+<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
+     and in the FDL itself on how to use it. -->
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<!-- Date of the documentation
+Change date/releaseinfo only if
+   docbook is updated and verified to be valid for the current app version
+   or
+   docbook is proofread and verified to be valid for the current app version
+Don't forget to include this last date.
+Please respect the format of the date (YYYY-MM-DD),it is used by scripts.
+-->
+<date
+>2021-10-14</date>
+
+<!--version information of Frameworks/Plasma/Applications this documentation is valid for.
+Example:
+Frameworks xx.yy for docbooks in frameworks
+Plasma xx.yy for docbooks in plasma workspace
+Applications xx.yy for docbooks released as Applications
+xx.yy (Applications xx.yy) for docbooks with own version released as Applications
+$applicationname xx.yy for applications with independent release schedule (extragear/playground)
+-->
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+  <para
+>&ksirk; is een gecomputeriseerde versie van een bekend strategie spel. Het uiterlijk (skin) is volledig aan te passen. Deze handleiding legt hoe u vanaf nul nieuwe skins kunt aanmaken, met behulp van een bestandsbeheerder, een &SVG; afbeeldingsbewerker en &i18n-ksirkskineditor;.</para>
+</abstract>
+
+<!-- This is a set of Keywords for indexing by search engines.
+Please at least include KDE, the KDE package it is in, the name
+ of your application, and a few relevant keywords. -->
+
+<keywordset>
+  <keyword
+>KDE</keyword>
+  <keyword
+>editor</keyword>
+  <keyword
+>vrij</keyword>
+  <keyword
+>spel</keyword>
+  <keyword
+>GPL</keyword>
+  <keyword
+>risk</keyword>
+  <keyword
+>skin</keyword>
+  <keyword
+>strategie</keyword>
+</keywordset>
+
+</bookinfo>
+
+<!-- The contents of the documentation begin here.  Label
+each chapter so with the id attribute. This is necessary for two reasons: it
+allows you to easily reference the chapter from other chapters of your
+document, and if there is no ID, the name of the generated HTML files will vary
+from time to time making it hard to manage for maintainers and for the CVS
+system. Any chapter labeled (OPTIONAL) may be left out at the author's
+discretion. Other chapters should not be left out in order to maintain a
+consistent documentation style across all KDE apps. -->
+
+<chapter id="introduction">
+<title
+>Inleiding</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+<para
+>&ksirk; is een gecomputeriseerde versie van een bekend strategie spel. Het uiterlijk (skin) is volledig aan te passen. Deze handleiding legt hoe u vanaf nul nieuwe skins kunt aanmaken, met behulp van een bestandsbeheerder, een &SVG; afbeeldingsbewerker en &i18n-ksirkskineditor;.</para>
+
+<screenshot>
+  <screeninfo
+>Hier is een schermafdruk van &i18n-ksirkskineditor;</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="main-snapshot.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Schermafdruk</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>Er zijn drie belangrijke stappen om een nieuwe skin te creëren: de aanmaak van een mappenstructuur; de aanmaak van de graphics, alles samenvoegen in een &SVG;-bestand; en tenslotte de plaatsing van de "figuurtjes en naamgeving met behulp van &i18n-ksirkskineditor;.</para>
+</chapter>
+
+<chapter id="using-kapp">
+<title
+>De creatie van een &ksirk; skin</title>
+
+<para
+>De skin van &ksirk; is volledig aanpasbaar. Voor diegene met grafische capaciteiten is het creëren van een nieuwe skin net zo eenvoudig als het kopiëren van een bestaand, bewerken of wijzigen van de grafische elementen en het bijwerken van de data in een <literal role="extension"
+>.desktop</literal
+> configuratiebestand, wat u allemaal kunt doen met &i18n-ksirkskineditor;. Een laatste stap is het bestand met de beschrijving, hoe te installeren, te bewerken.</para>
+
+<para
+>Alle voorbeelden (tekst en afbeeldingen) komen uit de standaard skin van &ksirk;.</para>
+
+<sect1 id="sdf">
+<title
+>Structuur van mappen en bestanden</title>
+
+<itemizedlist>
+  <listitem
+><para
+><filename class="directory"
+>Data/</filename
+> : Data gebruikt door het programma voor het hanteren van skin-afbeeldingen.</para>
+    <itemizedlist>
+      <listitem
+><para
+><filename
+>CMakeLists.txt</filename
+> : beschrijft wat te installeren.</para
+></listitem>
+      <listitem
+><para
+><filename
+>onu.desktop</filename
+> : hoofdbestand voor de beschrijving van de skin. Zie zijn beschrijving hieronder.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+><filename class="directory"
+>Images/</filename
+> : De afbeeldingen van de skin (plattegrond, figuurtjes, &etc;)</para>
+    <itemizedlist>
+      <listitem
+><para
+><filename
+>CMakeLists.txt</filename
+> : beschrijft wat te installeren.</para
+></listitem>
+      <listitem
+><para
+><filename
+>pool.svg</filename
+> : de plattegrond en alle in de skin gebruikte figuurtjes.</para
+></listitem>
+      <listitem
+><para
+><filename
+>map-mask.png</filename
+> : de afbeelding waarmee het programma kan bepalen boven welk land de muis is tijdens het spel (zie hieronder).</para
+></listitem>
+      <listitem
+><para
+><literal role="extension"
+>*.png</literal
+> : de andere afbeeldingen hier zijn pictogrammen voor de knoppen.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+><filename
+>CMakeLists.txt</filename
+> : beschrijft wat te installeren.</para
+></listitem>
+  <listitem
+><para
+><filename class="directory"
+>Sounds/</filename
+> : geluidsbestanden voor de skin.</para
+></listitem>
+</itemizedlist>
+
+  <sect2 id="tdd">
+  <title
+>De map Data</title>
+
+  <para
+>Deze map heeft maar één bestand, <filename
+>world.desktop</filename
+>. Dit bestand geeft een beschrijving van de inhoud van de skin. Het wordt gebruikt voor een beschrijving van de organisatie van de wereld en hoe deze te tonen. U hoeft het niet handmatig in te vullen omdat dat door &i18n-ksirkskineditor; wordt gedaan. Maar voor de compleetheid, beschrijven we hier toch zijn structuur.</para>
+
+  <para
+>In een <literal
+>onu</literal
+>-groep zitten een aantal landen, een aantal nationaliteiten en tenslotte een aantal continenten. In de verschillende groepen zitten de beschrijvingen van de figuurtjes, de beschrijvingen van de landen, continenten, nationaliteiten en doelen.</para>
+
+  <para
+>De volgende secties beschrijven de inhoud van elke groep.</para>
+
+    <sect3>
+    <title
+>De <literal
+>onu</literal
+>-groep</title>
+
+    <table>
+      <title
+>De onderdelen van de <literal
+>onu</literal
+>-groep </title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Items</entry>
+            <entry
+>Beschrijving</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>breedte</literal
+></entry>
+            <entry
+>De breedte van de skin.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>hoogte</literal
+></entry>
+            <entry
+>De hoogte van de skin.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>skinpad</literal
+></entry>
+            <entry
+>Het pad van de skin relatief ten opzichte van programma-data (&eg; <filename
+>skins/default</filename
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nb-countries</literal
+></entry>
+            <entry
+>Het aantal landen (42 in de standaard skin). Het zou hetzelfde aantal landen moeten zijn als het aantal country-groepen hieronder.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nb-nationalities</literal
+></entry>
+            <entry
+>Het aantal nationaliteiten (6 in de standaard skin). Het zou hetzelfde aantal nationaliteiten moeten zijn als het aantal nationality-groepen hieronder.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nb-continents</literal
+></entry>
+            <entry
+>Het aantal continenten (6 in de standaard skin). Het zou hetzelfde aantal continenten moeten zijn als het aantal continent-groepen hieronder.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>pool</literal
+></entry>
+            <entry
+>Het pad en naam van het pool-bestand relatief ten opzichte van skin-pad (&eg; <filename
+>Images/pool.svg</filename
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>map-mask</literal
+></entry>
+            <entry
+>Het pad en naam van het map mask-bestand relatief ten opzichte van skin-pad (&eg; <filename
+>Images/map-mask.png</filename
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>formaatversie</literal
+></entry>
+            <entry
+>De versie van het bestandsformaat van de skin (2.0).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>naam</literal
+></entry>
+            <entry
+>De getoonde naam van de skin.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>beschr</literal
+></entry>
+            <entry
+>De uitgebreide beschrijving van de skin.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>fighters-flag-y-diff</literal
+></entry>
+            <entry
+>Het verschil in hoogte tussen de figuurtjes van vlaggen en kanonnen.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>width-between-flag-and-fighter</literal
+></entry>
+            <entry
+>Het aantal pixels tussen het meest linkse pixel van de vlag en het meest rechtse pixel van een eenvoudig kanon (niet schietend of exploderend).</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>De beschrijvende groepen van figuurtjes</title>
+
+    <para
+>Elke type sprite (vlag, infanterie, cavalerie, kanon, schietend kanon en exploderend kanon) is gedefinieerd door een groep. Alleen voor enkele sprites moet u een breedte opgeven. Deze opgave wordt gebruikt voor relatieve plaatsing tijdens animaties: De kanonnen, schietend of exploderend zullen niet <quote
+>bewegen</quote
+> rond de vlag van het land tijdens het gevecht.</para>
+
+    <table>
+      <title
+>De onderdelen van een figuurtjes-groep </title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Items</entry>
+            <entry
+>Beschrijving</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>breedte</literal
+></entry>
+            <entry
+>De standaardbreedte van de figuurtjesframes van de vlag.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>hoogte</literal
+></entry>
+            <entry
+>De standaardhoogte van de figuurtjesframes van de vlag.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>frames</literal
+></entry>
+            <entry
+>Het aantal frames van het figuurtje.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>versies</literal
+></entry>
+            <entry
+>Het aantal versies van de vlagfiguurtjes.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>De landen beschrijvende groepen</title>
+
+    <para
+>Elk land dat in de <literal
+>onu</literal
+>-groep voor komt, elk land heeft zijn eigen groep waarvan het label de naam van het land is. De tabel hieronder geeft een lijst met items van deze groepen.</para>
+
+    <table>
+      <title
+>De onderdelen van een land-groep </title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Items</entry>
+            <entry
+>Beschrijving</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>id</literal
+></entry>
+            <entry
+>De unieke identificatie van het land (dat een geheel getal moet zijn), moet bij nul (0) beginnen.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>naam</literal
+></entry>
+            <entry
+>De getoonde naam van het land.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>&lt;figuurtje&gt;-punt</literal
+></entry>
+            <entry
+>Elke soort figuurtje (vlag, infanterist, &etc;) in het land wordt op een bepaalde positie getoond die is gedefinieerd door deze regel met twee door een komma gescheiden integers.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>neighbours</literal
+></entry>
+            <entry
+>De lijst met ID´s van de buren van het geselecteerde land.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>De nationaliteit beschrijvende groepen</title>
+
+    <para
+>Elke nationaliteit die in de <literal
+>onu</literal
+>-groep voor komt, elke nationaliteit heeft zijn eigen groep waarvan het label de naam van de nationaliteit is. De tabel hieronder geeft een lijst met items van deze groepen.</para>
+
+    <table>
+      <title
+>De onderdelen van de nationaliteit-groep</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Items</entry>
+            <entry
+>Beschrijving</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>naam</literal
+></entry>
+            <entry
+>De naam van de nationaliteit (&eg; <literal
+>Japan</literal
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>leider</literal
+></entry>
+            <entry
+>De naam die aan de speler zal worden voorgesteld die deze nationaliteit kiest.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>vlag</literal
+></entry>
+            <entry
+>De landsvlag-figuurtje-naam in het <literal
+>onu</literal
+>-&SVG;-bestand.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>De continent beschrijvende groepen</title>
+
+    <para
+>Elk continent dat in de <literal
+>onu</literal
+>-groep voor komt, elk continent heeft zijn eigen groep waarvan het label de naam van het continent is. De tabel hieronder geeft een lijst met items van deze groepen.</para>
+
+    <table>
+      <title
+>De onderdelen van de continent-groep</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Items</entry>
+            <entry
+>Beschrijving</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>naam</literal
+></entry>
+            <entry
+>De naam van het continent (&eg; <literal
+>Afrika</literal
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>id</literal
+></entry>
+            <entry
+>Het unieke identificatie van het continent (dat een geheel getal moet zijn).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>bonus</literal
+></entry>
+            <entry
+>Het aantal door de speler verkregen legers, die aan het eind van een beurt alle landen in een continent bezit.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>continent-countries</literal
+></entry>
+            <entry
+>De lijst met ID´s van de landen op dat continent.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>De groepen met beschrijvingen van de doelen</title>
+
+    <para
+>Elk doel dat in de <literal
+>onu</literal
+>-groep voor komt, elk doel heeft zijn eigen groep waarvan het label de naam van het doel is. De tabel hieronder geeft een lijst met items van deze groepen.</para>
+
+    <table>
+      <title
+>Doelen</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Items</entry>
+            <entry
+>Beschrijving</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>type</literal
+></entry>
+            <entry
+>Het soort doel. Dat kunnen continenten, landen of een speler zijn.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nbArmiesByCountry</literal
+></entry>
+            <entry
+>Het minimum aantal legers instellen dat de speler in elk land moet plaatsen.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nbCountries</literal
+></entry>
+            <entry
+>Het aantal landen instellen dat de speler moet bezitten.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nbCountriesFallback</literal
+></entry>
+            <entry
+>Voor het type spelersdoel, als de doelspeler is gedood door iemand anders, dan is dit het aantal landen dat de speler in plaats daarvan moet gaan veroveren.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>beschr</literal
+></entry>
+            <entry
+>Een volledige tekstbeschrijving van het doel met toepasselijke plaatshouders (meer documentatie is hier nodig),</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>continenten</literal
+></entry>
+            <entry
+>De lijst met continent-ID´s die de speler moet gaan veroveren.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+  </sect2>
+
+  <sect2 id="tid">
+  <title
+>De map Images</title>
+
+  <para
+>In deze map vindt u de knoppen die speciaal voor &ksirk; zijn en het pool-&SVG;-bestand met de kaart en alle figuurtjes.</para>
+
+    <sect3>
+    <title
+>Het bestand <filename
+>pool.svg</filename
+></title>
+
+    <para
+>U vindt in dit &SVG;-bestand de kaart en alle figuurtjes van het spel. Elk element is zodanig genaamd dat het spel elk apart kan selecteren en weergeven.</para>
+
+    <para
+>In de standaard skin, vindt u vlaggen, infanterie, cavalerie en kanonnen als figuurtjes. Infanterie stelt één leger voor, cavalerie vijf en kanonnen tien. Kanonnen zijn ook gebruikt om vechtende legers voor te stellen. Daarom zijn er drie verschillende kanonnen-figuurtjes: normaal statische of bewegend kanon, een vurende en een exploderende.</para>
+
+    <para
+>Elk figuurtje-afbeelding is een verzameling van verschillende weergaven van het object en elke weergave is een apart frame. Weergaven zijn verticaal georganiseerd en de frames horizontaal. De verdeling van de afbeelding in aparte frames kunt u vinden door de hoogte van de afbeelding te delen door het aantal weergaven en de breedte door het aantal frames. Deze gegevens zijn te vinden in het bestand <filename
+>onu.desktop</filename
+>.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="cannon.png" format="PNG"/></imageobject>
+      <caption
+><para
+>Een voorbeeld van een figuurtje-afbeelding: <filename
+>cannon.png</filename
+></para
+></caption>
+    </mediaobject>
+
+    <para
+>Voor leger-figuurtjes, zijn er drie verschillende weergaven, van boven naar onder:</para>
+
+    <itemizedlist>
+      <listitem
+><para
+>rechts kijkend</para
+></listitem>
+      <listitem
+><para
+>links kijkend en</para
+></listitem>
+      <listitem
+><para
+>vooraanzicht</para
+></listitem>
+    </itemizedlist>
+
+    <para
+>Voor vlaggen is er maar een weergave. Alle achtergronden van figuurtjes moeten op transparant gezet zijn.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="italy.png" format="PNG"/></imageobject>
+      <caption
+><para
+>Een voorbeeld van een figuurtje-afbeelding voor vlag: <filename
+>italy.png</filename
+></para
+></caption>
+    </mediaobject>
+
+    <table>
+      <title
+>De elementen van de pool</title>
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry
+>Elementnaam</entry>
+            <entry
+>Voorbeeldafbeelding</entry>
+            <entry
+>Beschrijving</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>kaart</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="map.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Kaart van de wereld van de figuurtjes. Landen kunnen willekeurige vormen hebben, maar moeten wel in op het oog herkenbare continenten gegroepeerd zijn, alleen door de locatie of ook door kleur.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>italië</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="italy.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>De vlag van het land Italië. Een dergelijk item is er voor elke nationaliteit.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>infanterie</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="infantry.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Pictogram dat een leger voorstelt.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>cavalerie</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="cavalry.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Pictogram dat vijf legers voorstelt.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>geschut</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="cannon.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Pictogram dat tien legers voorstelt.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>vuren</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="firing.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Pictogram dat legers voorstelt tijdens een gevecht.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>exploderen</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="exploding.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Pictogram dat een leger voorstelt dat een gevecht verliest.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>alaska</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="alaska.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>De vorm van het land Alaska. Dit wordt gebruikt om het land te markeren. Voor elk land is er een dergelijke vorm. De kleur ervan is niet gebruikt. Daarom is kleurkeuze vrij.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>reddices</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="reddices.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>De rode dobbelstenen zijn gebruikt om het resultaat van het gevecht te tonen.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>bluedices</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="bluedices.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>De blauwe dobbelstenen zijn gebruikt om het resultaat van het gevecht te tonen.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>mark1</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="mark1.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Deze markering wordt toegevoegd aan figuurtjes in gevecht om het aantal legers dat ze voorstellen weer te geven, hier 1. Er is ook een <literal
+>mark2</literal
+> en een <literal
+>mark3</literal
+> markering.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Het bestand <filename
+>map-mask.png</filename
+></title>
+
+    <para
+>Dit is een png-bestand dat ook de kaart van skin´s wereld voorstelt, maar met gecodeerde kleuren zodat iemand elk land apart kan identificeren. Landen moeten tenminste dezelfde vorm hebben als de bijbehorende landen op het kaartbestand <filename
+>map.png</filename
+>. Het png-bestand is zodanig dat gebruikers overal in een zichtbaar land kunnen klikken en de juiste selecteren. Landen met kleine eilanden, zoals Indonesië, in de standaard kaart kunnen groter zijn dan het equivalent in het bestand <filename
+>map.png</filename
+> om de selectie van het land mogelijk te maken.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="map-mask.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Een voorbeeld map-mask</phrase
+></textobject>
+    </mediaobject>
+
+    <para
+>De blauwe component (in het RGB model) van een landenkleur identificeert het land: index 0 is land 0 in het bestand <filename
+>onu.xml</filename
+>, index 1 is land 1, &etc; Wit (0xFFFFFF in RGB) identificeert de afwezigheid van een land (zeeën of, waarom ook niet, niemandsland).</para>
+    </sect3>
+
+    <sect3>
+    <title
+>De knop-afbeeldingen</title>
+
+    <para
+>De bestandsnamen zijn in de code vast ingesteld, u moet ze daarom niet wijzigen. De tabel hieronder toont alle knoppen die aanwezig moeten zijn.</para>
+
+    <table>
+      <title
+>De knoppen van de &GUI;</title>
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry
+>Afbeelding</entry>
+            <entry
+>Bestandsnaam</entry>
+            <entry
+>Beschrijving</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="newNetGame.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>newNetGame.png</filename
+></entry>
+            <entry
+>Probeert aan een netwerkspel deel te nemen.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="recycling.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>recycling.png</filename
+></entry>
+            <entry
+>Nadat alle spelers hun legers hebben geplaatst, is het mogelijk om de verdeling te wijzigen (recycling genaamd). Deze knop vraagt om een dergelijke herverdeling te doen.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="recyclingFinished.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>recyclingFinished.png</filename
+></entry>
+            <entry
+>Gekozen om niet te herverdelen. In alle gebruikersvensters moet op deze knop geklikt zijn om echt de distributie te beëindigen.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="nextPlayer.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>nextPlayer.png</filename
+></entry>
+            <entry
+>Beëindigt de beurt van de huidige speler en schakelt naar de volgende of naar de volgende ronde als de huidige speler de laatste was.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackOne.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackOne.png</filename
+></entry>
+            <entry
+>Kiest voor het starten van een aanval met een leger.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackTwo.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackTwo.png</filename
+></entry>
+            <entry
+>Kiest voor het starten van een aanval met twee legers.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackThree.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackThree.png</filename
+></entry>
+            <entry
+>Kiest voor het starten van een aanval met drie legers.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="defendOne.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>defendOne.png</filename
+></entry>
+            <entry
+>Kiest voor het verdedigen van een aangevallen land met één leger.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="defendTwo.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>defendTwo.png</filename
+></entry>
+            <entry
+>Kiest voor het verdedigen van een aangevallen land met twee legers.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="moveArmies.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>moveArmies.png</filename
+></entry>
+            <entry
+>Kiest om legers tussen twee landen te verplaatsen (laatste actie in de beurt).</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+  </sect2>
+
+  <sect2 id="tsd">
+  <title
+>De map Sounds</title>
+
+  <para
+>In deze map zijn drie geluidsbestanden aanwezig:</para>
+
+  <itemizedlist>
+    <listitem
+><para
+><filename
+>roll.wav</filename
+> afgespeeld bij het verplaatsen van legers </para
+></listitem>
+    <listitem
+><para
+><filename
+>cannon.wav</filename
+> afgespeeld bij het schieten en </para
+></listitem>
+    <listitem
+><para
+><filename
+>crash.wav</filename
+> afgespeeld bij het exploderen van een kanon</para
+></listitem>
+  </itemizedlist>
+  </sect2>
+</sect1>
+
+<sect1 id="using-kse">
+<title
+>Het gebruik van &i18n-ksirkskineditor;</title>
+
+<para
+>Na het creëren van de graphics in de juiste map en het &SVG; bestand, moet u landen, spelers &etc; creëren en ze associëren met het juiste &SVG;-element in de pool. Dit kunt u doen met &i18n-ksirkskineditor;. Merk op dat elk gedeelte van dit programma door tekstballonnen en contextuele hulp zelf beschrijvend is en meestal via de sneltoets <keycombo action="simul"
+>&Ctrl;<keycap
+>F1</keycap
+></keycombo
+> is op te zoeken.</para>
+
+<screenshot>
+  <screeninfo
+>Hier is een schermafdruk van &i18n-ksirkskineditor;</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="main-snapshot.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Schermafdruk</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Overzicht van de opdrachten</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>Het hoofdvenster van &i18n-ksirkskineditor;</title>
+
+  <sect2>
+  <title
+>De knoppen</title>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="document-open.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Laden</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Laden...</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Zal het programma een bestaande skin laten laden.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="document-save.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Opslaan</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Opslaan</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Zal de huidige bewerkte skin opslaan.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+  </sect2>
+</sect1>
+</chapter>
+
+<chapter id="developers">
+<title
+>Handleiding voor ontwikkelaars van &i18n-ksirkskineditor;</title>
+
+<para
+>Ga naar <ulink url="https://api.kde.org/"
+>https://api.kde.org/</ulink
+> voor de documentatie van de API.</para>
+</chapter>
+
+<chapter id="faq">
+<title
+>Vragen en antwoorden</title
+>&updating.documentation; </chapter>
+
+<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+<title
+>Dankbetuiging en licentie</title>
+
+<para
+>&ksirkskineditor;</para>
+
+<para
+>Programma copyright 2009 Gaël de Chalendar <email
+>kleag@free.fr</email
+></para>
+
+<para
+>Documentatie copyright 2009 Gaël de Chalendar <email
+>kleag@free.fr</email
+></para>
+
+&meld.fouten;&vertaling.freek;&vertaling.ronald;&nagelezen.freek; &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

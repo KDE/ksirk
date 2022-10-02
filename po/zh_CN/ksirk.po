@@ -1,0 +1,3516 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kdeorg\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-24 00:42+0000\n"
+"PO-Revision-Date: 2022-09-20 01:56\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: kdeorg\n"
+"X-Crowdin-Project-ID: 269464\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /kf5-trunk/messages/ksirk/ksirk.pot\n"
+"X-Crowdin-File-ID: 6374\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "KDE 中国"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-china@kde.org"
+
+#. i18n: file skins/default/Data/world.desktop line 1
+#. i18n: file skins/default/Data/world.desktop line 516
+#. i18n: file skins/default/Data/world.desktop line 531
+#. i18n: file skins/default/Data/world.desktop line 536
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 1
+#. i18n: file skins/static/Data/world.desktop line 529
+#. i18n: file skins/static/Data/world.desktop line 544
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 1
+#. i18n: file skins/legacy/Data/world.desktop line 529
+#. i18n: file skins/legacy/Data/world.desktop line 544
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#. i18n: file skins/default/Data/world.desktop line 1
+#. i18n: file skins/default/Data/world.desktop line 516
+#. i18n: file skins/default/Data/world.desktop line 531
+#. i18n: file skins/default/Data/world.desktop line 536
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 1
+#. i18n: file skins/static/Data/world.desktop line 529
+#. i18n: file skins/static/Data/world.desktop line 544
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 1
+#. i18n: file skins/legacy/Data/world.desktop line 529
+#. i18n: file skins/legacy/Data/world.desktop line 544
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#, no-c-format, kde-format
+msgid "Africa"
+msgstr "非洲"
+
+#. i18n: file skins/default/Data/world.desktop line 6
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 6
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 6
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 6
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 6
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 6
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Alaska"
+msgstr "阿拉斯加"
+
+#. i18n: file skins/default/Data/world.desktop line 16
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 16
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 16
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 16
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 16
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 16
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Alberta"
+msgstr "艾伯塔"
+
+#. i18n: file skins/default/Data/world.desktop line 26
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 26
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 26
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 26
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 26
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 26
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Algeria"
+msgstr "阿尔及尔"
+
+#. i18n: file skins/default/Data/world.desktop line 36
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 36
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 36
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 36
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 36
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 36
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Arabia"
+msgstr "阿拉伯半岛"
+
+#. i18n: file skins/default/Data/world.desktop line 46
+#. i18n: file skins/default/Data/world.desktop line 521
+#. i18n: file skins/default/Data/world.desktop line 526
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 46
+#. i18n: file skins/static/Data/world.desktop line 544
+#. i18n: file skins/static/Data/world.desktop line 549
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 46
+#. i18n: file skins/legacy/Data/world.desktop line 544
+#. i18n: file skins/legacy/Data/world.desktop line 549
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#. i18n: file skins/default/Data/world.desktop line 46
+#. i18n: file skins/default/Data/world.desktop line 521
+#. i18n: file skins/default/Data/world.desktop line 526
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 46
+#. i18n: file skins/static/Data/world.desktop line 544
+#. i18n: file skins/static/Data/world.desktop line 549
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 46
+#. i18n: file skins/legacy/Data/world.desktop line 544
+#. i18n: file skins/legacy/Data/world.desktop line 549
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#, no-c-format, kde-format
+msgid "Asia"
+msgstr "亚洲"
+
+#. i18n: file skins/default/Data/world.desktop line 51
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 51
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 51
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#. i18n: file skins/default/Data/world.desktop line 51
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 51
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 51
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#, no-c-format, kde-format
+msgid "Belgium"
+msgstr "比利时"
+
+#. i18n: file skins/default/Data/world.desktop line 55
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 55
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 55
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 55
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 55
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 55
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Benelux"
+msgstr "比荷卢联盟"
+
+#. i18n: file skins/default/Data/world.desktop line 65
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 65
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 65
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 65
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 65
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 65
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Brazil"
+msgstr "巴西"
+
+#. i18n: file skins/default/Data/world.desktop line 75
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 75
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 75
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 75
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 75
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 75
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Chile"
+msgstr "智利"
+
+#. i18n: file skins/default/Data/world.desktop line 85
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 85
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 85
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 85
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 85
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 85
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "China"
+msgstr "中国"
+
+#. i18n: file skins/default/Data/world.desktop line 95
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 95
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 95
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 95
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 95
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 95
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Colombia"
+msgstr "哥伦比亚"
+
+#. i18n: file skins/default/Data/world.desktop line 105
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 105
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 105
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 105
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 105
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 105
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Eastern US"
+msgstr "美国东部"
+
+#. i18n: file skins/default/Data/world.desktop line 115
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 115
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 115
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 115
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 115
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 115
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Egypt"
+msgstr "埃及"
+
+#. i18n: file skins/default/Data/world.desktop line 125
+#. i18n: file skins/default/Data/world.desktop line 531
+#. i18n: file skins/default/Data/world.desktop line 541
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 129
+#. i18n: file skins/static/Data/world.desktop line 524
+#. i18n: file skins/static/Data/world.desktop line 534
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 129
+#. i18n: file skins/legacy/Data/world.desktop line 524
+#. i18n: file skins/legacy/Data/world.desktop line 534
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#. i18n: file skins/default/Data/world.desktop line 125
+#. i18n: file skins/default/Data/world.desktop line 531
+#. i18n: file skins/default/Data/world.desktop line 541
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 129
+#. i18n: file skins/static/Data/world.desktop line 524
+#. i18n: file skins/static/Data/world.desktop line 534
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 129
+#. i18n: file skins/legacy/Data/world.desktop line 524
+#. i18n: file skins/legacy/Data/world.desktop line 534
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#, no-c-format, kde-format
+msgid "Europe"
+msgstr "欧洲"
+
+#. i18n: file skins/default/Data/world.desktop line 130
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 134
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 134
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#. i18n: file skins/default/Data/world.desktop line 130
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 134
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 134
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#, no-c-format, kde-format
+msgid "France"
+msgstr "法国"
+
+#. i18n: file skins/default/Data/world.desktop line 142
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 145
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 145
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 142
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 145
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 145
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Gabon"
+msgstr "加蓬"
+
+#. i18n: file skins/default/Data/world.desktop line 152
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 155
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 155
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 152
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 155
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 155
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Groenland"
+msgstr "格陵兰"
+
+#. i18n: file skins/default/Data/world.desktop line 162
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 165
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 165
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 162
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 165
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 165
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "India"
+msgstr "印度"
+
+#. i18n: file skins/default/Data/world.desktop line 172
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 175
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 175
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 172
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 175
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 175
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Indonesia"
+msgstr "印度尼西亚"
+
+#. i18n: file skins/default/Data/world.desktop line 182
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 185
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 185
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 182
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 185
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 185
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Iran"
+msgstr "伊朗"
+
+#. i18n: file skins/default/Data/world.desktop line 192
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 195
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 195
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 192
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 195
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 195
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Island"
+msgstr "岛"
+
+#. i18n: file skins/default/Data/world.desktop line 202
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 205
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 205
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#. i18n: file skins/default/Data/world.desktop line 202
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 205
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 205
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#, no-c-format, kde-format
+msgid "Italy"
+msgstr "意大利"
+
+#. i18n: file skins/default/Data/world.desktop line 206
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 209
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 209
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#. i18n: file skins/default/Data/world.desktop line 206
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 209
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 209
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#, no-c-format, kde-format
+msgid "Japan"
+msgstr "日本"
+
+#. i18n: file skins/default/Data/world.desktop line 218
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 220
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 220
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 218
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 220
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 220
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Kazakstan"
+msgstr "哈萨克斯坦"
+
+#. i18n: file skins/default/Data/world.desktop line 228
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 230
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 230
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 228
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 230
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 230
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Madagascar"
+msgstr "马达加斯加"
+
+#. i18n: file skins/default/Data/world.desktop line 238
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 240
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 240
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 238
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 240
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 240
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Mexico"
+msgstr "墨西哥"
+
+#. i18n: file skins/default/Data/world.desktop line 248
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 260
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 260
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 248
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 260
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 260
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Mongolia"
+msgstr "蒙古"
+
+#. i18n: file skins/default/Data/world.desktop line 258
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 270
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 270
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 258
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 270
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 270
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "New South Wales"
+msgstr "新南威尔士"
+
+#. i18n: file skins/default/Data/world.desktop line 268
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 280
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 280
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 268
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 280
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 280
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "New Zealand"
+msgstr "新西兰"
+
+#. i18n: file skins/default/Data/world.desktop line 278
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 290
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 290
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 278
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 290
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 290
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Niger"
+msgstr "尼日尔"
+
+#. i18n: file skins/default/Data/world.desktop line 288
+#. i18n: file skins/default/Data/world.desktop line 516
+#. i18n: file skins/default/Data/world.desktop line 521
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 300
+#. i18n: file skins/static/Data/world.desktop line 529
+#. i18n: file skins/static/Data/world.desktop line 539
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 300
+#. i18n: file skins/legacy/Data/world.desktop line 529
+#. i18n: file skins/legacy/Data/world.desktop line 539
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#. i18n: file skins/default/Data/world.desktop line 288
+#. i18n: file skins/default/Data/world.desktop line 516
+#. i18n: file skins/default/Data/world.desktop line 521
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 300
+#. i18n: file skins/static/Data/world.desktop line 529
+#. i18n: file skins/static/Data/world.desktop line 539
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 300
+#. i18n: file skins/legacy/Data/world.desktop line 529
+#. i18n: file skins/legacy/Data/world.desktop line 539
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#, no-c-format, kde-format
+msgid "North America"
+msgstr "北美"
+
+#. i18n: file skins/default/Data/world.desktop line 293
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 305
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 305
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 293
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 305
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 305
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Occidental Australia"
+msgstr "西澳洲"
+
+#. i18n: file skins/default/Data/world.desktop line 303
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 315
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 315
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 303
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 315
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 315
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Ontario"
+msgstr "安大略省"
+
+#. i18n: file skins/default/Data/world.desktop line 313
+#. i18n: file skins/default/Data/world.desktop line 536
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 325
+#. i18n: file skins/static/Data/world.desktop line 524
+#. i18n: file skins/static/Data/world.desktop line 539
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 325
+#. i18n: file skins/legacy/Data/world.desktop line 524
+#. i18n: file skins/legacy/Data/world.desktop line 539
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#. i18n: file skins/default/Data/world.desktop line 313
+#. i18n: file skins/default/Data/world.desktop line 536
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 325
+#. i18n: file skins/static/Data/world.desktop line 524
+#. i18n: file skins/static/Data/world.desktop line 539
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 325
+#. i18n: file skins/legacy/Data/world.desktop line 524
+#. i18n: file skins/legacy/Data/world.desktop line 539
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#, no-c-format, kde-format
+msgid "Pacific"
+msgstr "太平洋"
+
+#. i18n: file skins/default/Data/world.desktop line 318
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 330
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 330
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 318
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 330
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 330
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Pakistan"
+msgstr "巴基斯坦"
+
+#. i18n: file skins/default/Data/world.desktop line 328
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 340
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 340
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 328
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 340
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 340
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Papouasie"
+msgstr "巴布亚"
+
+#. i18n: file skins/default/Data/world.desktop line 338
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 350
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 350
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 338
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 350
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 350
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Paraguay"
+msgstr "巴拉圭"
+
+#. i18n: file skins/default/Data/world.desktop line 348
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 360
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 360
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 348
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 360
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 360
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Prussia"
+msgstr "普鲁士"
+
+#. i18n: file skins/default/Data/world.desktop line 358
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 370
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 370
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 358
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 370
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 370
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Quebec"
+msgstr "魁北克"
+
+#. i18n: file skins/default/Data/world.desktop line 368
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 380
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 380
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 368
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 380
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 380
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Russia"
+msgstr "俄罗斯"
+
+#. i18n: file skins/default/Data/world.desktop line 378
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 390
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 390
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 378
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 390
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 390
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Scandinavia"
+msgstr "斯堪的纳维亚半岛"
+
+#. i18n: file skins/default/Data/world.desktop line 388
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 400
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 400
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 388
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 400
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 400
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Siberia"
+msgstr "西伯利亚"
+
+#. i18n: file skins/default/Data/world.desktop line 398
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 410
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 410
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 398
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 410
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 410
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "South Africa"
+msgstr "南非"
+
+#. i18n: file skins/default/Data/world.desktop line 408
+#. i18n: file skins/default/Data/world.desktop line 526
+#. i18n: file skins/default/Data/world.desktop line 541
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 420
+#. i18n: file skins/static/Data/world.desktop line 534
+#. i18n: file skins/static/Data/world.desktop line 549
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 420
+#. i18n: file skins/legacy/Data/world.desktop line 534
+#. i18n: file skins/legacy/Data/world.desktop line 549
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#. i18n: file skins/default/Data/world.desktop line 408
+#. i18n: file skins/default/Data/world.desktop line 526
+#. i18n: file skins/default/Data/world.desktop line 541
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 420
+#. i18n: file skins/static/Data/world.desktop line 534
+#. i18n: file skins/static/Data/world.desktop line 549
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 420
+#. i18n: file skins/legacy/Data/world.desktop line 534
+#. i18n: file skins/legacy/Data/world.desktop line 549
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#, no-c-format, kde-format
+msgid "South America"
+msgstr "南美"
+
+#. i18n: file skins/default/Data/world.desktop line 413
+#. i18n: file skins/default/Data/world.desktop line 417
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 425
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 425
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 413
+#. i18n: file skins/default/Data/world.desktop line 417
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 425
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 425
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "United Kingdom"
+msgstr "英国"
+
+#. i18n: file skins/default/Data/world.desktop line 427
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 435
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 435
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#. i18n: file skins/default/Data/world.desktop line 427
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 435
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 435
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#, no-c-format, kde-format
+msgid "United States"
+msgstr "美国"
+
+#. i18n: file skins/default/Data/world.desktop line 431
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 439
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 439
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 431
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 439
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 439
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Vietnam"
+msgstr "越南"
+
+#. i18n: file skins/default/Data/world.desktop line 441
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 449
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 449
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 441
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 449
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 449
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Western US"
+msgstr "美国西部"
+
+#. i18n: file skins/default/Data/world.desktop line 451
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 459
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 459
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 451
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 459
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 459
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Zair"
+msgstr "扎伊尔"
+
+#. i18n: file skins/default/Data/world.desktop line 504
+#. i18n: file skins/static/Data/world.desktop line 512
+#. i18n: file skins/legacy/Data/world.desktop line 512
+#. i18n: file skins/default/Data/world.desktop line 504
+#. i18n: file skins/static/Data/world.desktop line 512
+#. i18n: file skins/legacy/Data/world.desktop line 512
+#, no-c-format, kde-format
+msgid ""
+"%1, you'll have to conquer %2 countries and place %3 armies in each one."
+msgstr "%1，您必须征服 %2 个国家，并在各国派驻 %3 支军队。"
+
+#. i18n: file skins/default/Data/world.desktop line 510
+#. i18n: file skins/static/Data/world.desktop line 518
+#. i18n: file skins/legacy/Data/world.desktop line 518
+#. i18n: file skins/default/Data/world.desktop line 510
+#. i18n: file skins/static/Data/world.desktop line 518
+#. i18n: file skins/legacy/Data/world.desktop line 518
+#, no-c-format, kde-format
+msgid "%1, you'll have to conquer %2 countries."
+msgstr "%1，您必须征服 %2 个国家。"
+
+#. i18n: file skins/default/Data/world.desktop line 517
+#. i18n: file skins/static/Data/world.desktop line 525
+#. i18n: file skins/legacy/Data/world.desktop line 525
+#. i18n: file skins/default/Data/world.desktop line 517
+#. i18n: file skins/static/Data/world.desktop line 525
+#. i18n: file skins/legacy/Data/world.desktop line 525
+#, no-c-format, kde-format
+msgid "%1, you'll have to conquer %2, %3 and another continent at your choice."
+msgstr "%1，您必须征服 %2、%3，以及任选的一个州。"
+
+#. i18n: file skins/default/Data/world.desktop line 522
+#. i18n: file skins/default/Data/world.desktop line 527
+#. i18n: file skins/default/Data/world.desktop line 532
+#. i18n: file skins/default/Data/world.desktop line 537
+#. i18n: file skins/default/Data/world.desktop line 542
+#. i18n: file skins/static/Data/world.desktop line 530
+#. i18n: file skins/static/Data/world.desktop line 535
+#. i18n: file skins/static/Data/world.desktop line 540
+#. i18n: file skins/static/Data/world.desktop line 545
+#. i18n: file skins/static/Data/world.desktop line 550
+#. i18n: file skins/legacy/Data/world.desktop line 530
+#. i18n: file skins/legacy/Data/world.desktop line 535
+#. i18n: file skins/legacy/Data/world.desktop line 540
+#. i18n: file skins/legacy/Data/world.desktop line 545
+#. i18n: file skins/legacy/Data/world.desktop line 550
+#. i18n: file skins/default/Data/world.desktop line 522
+#. i18n: file skins/default/Data/world.desktop line 527
+#. i18n: file skins/default/Data/world.desktop line 532
+#. i18n: file skins/default/Data/world.desktop line 537
+#. i18n: file skins/default/Data/world.desktop line 542
+#. i18n: file skins/static/Data/world.desktop line 530
+#. i18n: file skins/static/Data/world.desktop line 535
+#. i18n: file skins/static/Data/world.desktop line 540
+#. i18n: file skins/static/Data/world.desktop line 545
+#. i18n: file skins/static/Data/world.desktop line 550
+#. i18n: file skins/legacy/Data/world.desktop line 530
+#. i18n: file skins/legacy/Data/world.desktop line 535
+#. i18n: file skins/legacy/Data/world.desktop line 540
+#. i18n: file skins/legacy/Data/world.desktop line 545
+#. i18n: file skins/legacy/Data/world.desktop line 550
+#, no-c-format, kde-format
+msgid "%1, you'll have to conquer %2 and %3."
+msgstr "%1，您必须征服 %2 和 %3。"
+
+#. i18n: file skins/default/Data/world.desktop line 546
+#. i18n: file skins/static/Data/world.desktop line 554
+#. i18n: file skins/legacy/Data/world.desktop line 554
+#. i18n: file skins/default/Data/world.desktop line 546
+#. i18n: file skins/static/Data/world.desktop line 554
+#. i18n: file skins/legacy/Data/world.desktop line 554
+#, no-c-format, kde-format
+msgid ""
+"%1, you'll have to eliminate %2. If it is eliminated by another player, "
+"you'll have to conquer %3 countries."
+msgstr "%1，您必须消灭 %2，如果它被其他玩家消灭，则必须征服 %3 个国家。"
+
+#. i18n: file skins/default/Data/world.desktop line 560
+#, no-c-format, kde-format
+msgid ""
+"This skin shows a world that looks like the real one with some "
+"nationalities\n"
+"randomly chosen and proposes various interesting goals"
+msgstr ""
+"此外观类似真实世界\n"
+"包含几个随机的国家及若干有趣的目标。"
+
+#. i18n: file skins/default/Data/world.desktop line 566
+#, no-c-format, kde-format
+msgid "Earth-like"
+msgstr "近似地球"
+
+#. i18n: file skins/static/Data/world.desktop line 125
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 125
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#. i18n: file skins/static/Data/world.desktop line 125
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 125
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#, no-c-format, kde-format
+msgid "England"
+msgstr "英格兰"
+
+#. i18n: file skins/static/Data/world.desktop line 250
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 250
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 250
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 250
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Middle East"
+msgstr "中东"
+
+#. i18n: file skins/static/Data/world.desktop line 568
+#, no-c-format, kde-format
+msgid ""
+"This skin shows a world that looks like the real one with some "
+"nationalities\n"
+"randomly chosen and proposes various interesting goals.\n"
+"It features non-animated sprites"
+msgstr ""
+"此外观类似真实世界\n"
+"包含几个随机的国家及若干有趣的目标。\n"
+"不过部队行动没有动画"
+
+#. i18n: file skins/static/Data/world.desktop line 574
+#, no-c-format, kde-format
+msgid "Less animated Earth-like"
+msgstr "近似地球，较少动画"
+
+#. i18n: file skins/legacy/Data/world.desktop line 568
+#, no-c-format, kde-format
+msgid ""
+"This skin shows a world that looks like the real one with some nationalities "
+"randomly chosen and proposes various interesting goals.\n"
+"It looks like KsirK before vector graphics."
+msgstr ""
+"此外观类似真实世界，包含几个随机的国家及若干有趣的目标。\n"
+"其视觉效果近似矢量图。"
+
+#. i18n: file skins/legacy/Data/world.desktop line 574
+#, no-c-format, kde-format
+msgid "Legacy"
+msgstr "继承"
+
+#: decoratedgameframe.cpp:100 kgamewin.cpp:443
+#, kde-format
+msgid "Next Player"
+msgstr "下一个玩家"
+
+#: decoratedgameframe.cpp:103
+#, kde-format
+msgid "Details"
+msgstr "详细信息"
+
+#: decoratedgameframe.cpp:106 kgamewin.cpp:423 kgamewin.cpp:1306
+#: kgamewin.cpp:1318 kgamewin.cpp:2475
+#, kde-format
+msgid "Goal"
+msgstr "目的"
+
+#: decoratedgameframe.cpp:138 decoratedgameframe.cpp:394
+#, kde-format
+msgid "Enable Arena"
+msgstr "开启战斗画面"
+
+#: decoratedgameframe.cpp:142
+#, kde-format
+msgid "Attack 1"
+msgstr "攻击 1"
+
+#: decoratedgameframe.cpp:145
+#, kde-format
+msgid "Attack 2"
+msgstr "攻击 2"
+
+#: decoratedgameframe.cpp:148
+#, kde-format
+msgid "Attack 3"
+msgstr "攻击 3"
+
+#: decoratedgameframe.cpp:151
+#, kde-format
+msgid "Auto attack"
+msgstr "自动攻击"
+
+#: decoratedgameframe.cpp:169
+#, kde-format
+msgid "Move 1"
+msgstr "移动 1"
+
+#: decoratedgameframe.cpp:172
+#, kde-format
+msgid "Move 5"
+msgstr "移动 5"
+
+#: decoratedgameframe.cpp:175
+#, kde-format
+msgid "Move 10"
+msgstr "移动 10"
+
+#: decoratedgameframe.cpp:400
+#, kde-format
+msgid "Disable Arena"
+msgstr "关闭战斗画面"
+
+#: Dialogs/InvasionSlider.cpp:138
+#, kde-format
+msgctxt "@title:window"
+msgid "Invasion"
+msgstr "占领"
+
+#: Dialogs/InvasionSlider.cpp:139
+#, kde-format
+msgid ""
+"You are invading <font color=\"blue\">%1</font> with <font color=\"red\">%2</"
+"font>!"
+msgstr ""
+"您以 <font color=\"red\">%2</font> 占领了 <font color=\"blue\">%1</font>！"
+
+#: Dialogs/InvasionSlider.cpp:140
+#, kde-format
+msgid "<br><i>Choose the number of invading armies.</i>"
+msgstr "<br><i>选择占领军队的数量。</i>"
+
+#: Dialogs/InvasionSlider.cpp:144
+#, kde-format
+msgctxt "@title:window"
+msgid "Moving"
+msgstr "移动中"
+
+#: Dialogs/InvasionSlider.cpp:145
+#, kde-format
+msgid ""
+"You are moving armies from <font color=\"red\">%1</font> to <font color="
+"\"blue\">%2</font>!"
+msgstr ""
+"您正将军队从 <font color=\"red\">%1</font> 调动到 <font color=\"blue\">%2</"
+"font>！"
+
+#: Dialogs/InvasionSlider.cpp:146
+#, kde-format
+msgid "<br><i>Choose the number of armies to move.</i>"
+msgstr "<br><i>选择要调动军队的数量。</i>"
+
+#: Dialogs/jabbergameui.cpp:76
+#, kde-format
+msgid "Nickname"
+msgstr "昵称"
+
+#: Dialogs/jabbergameui.cpp:77
+#, kde-format
+msgid "Skin"
+msgstr "皮肤"
+
+#: Dialogs/jabbergameui.cpp:78
+#, kde-format
+msgid "Nb players"
+msgstr "玩家数量"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: Dialogs/jabbergameui.ui:30
+#, kde-format
+msgid "Connection to the Jabber Network"
+msgstr "连接到 Jabber 网络"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: Dialogs/jabbergameui.ui:39
+#, kde-format
+msgid "Jabber ID:"
+msgstr "Jabber ID："
+
+#. i18n: ectx: property (text), widget (KLineEdit, jabberid)
+#: Dialogs/jabbergameui.ui:46
+#, kde-format
+msgid "kleag@kdetalk.net"
+msgstr "kleag@kdetalk.net"
+
+#. i18n: ectx: property (text), widget (KLineEdit, password)
+#: Dialogs/jabbergameui.ui:53
+#, kde-format
+msgid "12345678"
+msgstr "12345678"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: Dialogs/jabbergameui.ui:63
+#, kde-format
+msgid "Password:"
+msgstr "密码："
+
+#. i18n: ectx: property (text), widget (QPushButton, connectbutton)
+#: Dialogs/jabbergameui.ui:74
+#, kde-format
+msgid "Connect"
+msgstr "连接"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: Dialogs/jabbergameui.ui:96 Dialogs/jabbergameui.ui:189
+#, kde-format
+msgid "State:"
+msgstr "州："
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: Dialogs/jabbergameui.ui:137
+#, kde-format
+msgid "Joining a KsirK Jabber Chatroom"
+msgstr "正在进入 KsirK Jabber 组聊天室"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: Dialogs/jabbergameui.ui:146
+#, kde-format
+msgid "Room JID:"
+msgstr "房间 JID："
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: Dialogs/jabbergameui.ui:156
+#, kde-format
+msgid "Nickname:"
+msgstr "昵称："
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: Dialogs/jabbergameui.ui:166
+#, kde-format
+msgid "Room Password:"
+msgstr "房间密码："
+
+#. i18n: ectx: property (text), widget (QPushButton, joinroombutton)
+#: Dialogs/jabbergameui.ui:180
+#, kde-format
+msgid "Join Room"
+msgstr "进入房间"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: Dialogs/jabbergameui.ui:209
+#, kde-format
+msgid "Games in the Room"
+msgstr "房间内的游戏"
+
+#. i18n: ectx: property (text), widget (QPushButton, startnewgamebutton)
+#: Dialogs/jabbergameui.ui:245
+#, kde-format
+msgid "Start a New Game"
+msgstr "开始新游戏"
+
+#. i18n: ectx: property (text), widget (QPushButton, joingamebutton)
+#: Dialogs/jabbergameui.ui:255
+#, kde-format
+msgid "Join Selected Game"
+msgstr "加入所选的游戏"
+
+#. i18n: ectx: property (text), widget (QPushButton, loadsavedgamebutton)
+#: Dialogs/jabbergameui.ui:265
+#, kde-format
+msgid "Load a Saved Game..."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: Dialogs/jabbergameui.ui:293
+#, kde-format
+msgid ""
+"<b>Note:</b> Playing over the Jabber network is an experimental feature in "
+"KsirK.<br/>Particularly, the distribution of armies at game beginning is "
+"very slow (expect something like one minute)."
+msgstr ""
+"<b>注意：</b>在 Jabber 网络上玩 KsirK 游戏是一个试验性质的特性。<br/>且特别要"
+"说明的是，游戏一开始军队的分布过程会很慢(预计一分钟左右)。"
+
+#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
+#. i18n: ectx: property (text), widget (QPushButton, cancelbutton)
+#: Dialogs/jabbergameui.ui:318 Dialogs/newGameDialog.ui:227
+#: Dialogs/newGameSummary.ui:206 Dialogs/qplayersetupdialog.ui:126
+#: Dialogs/tcpconnectwidget.ui:98
+#, kde-format
+msgid "Cancel"
+msgstr "取消"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, JoinGameDialog)
+#: Dialogs/joingame.ui:13
+#, kde-format
+msgid "Join Network Game Configuration"
+msgstr "加入网络游戏配置"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: Dialogs/joingame.ui:19
+#, kde-format
+msgid "Network Configuration"
+msgstr "网络配置"
+
+#. i18n: ectx: property (text), widget (QLabel, hostLabel)
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: Dialogs/joingame.ui:25 Dialogs/tcpconnectwidget.ui:28
+#, kde-format
+msgid "Host:"
+msgstr "主机："
+
+#. i18n: ectx: property (text), widget (QLabel, portLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: Dialogs/joingame.ui:35 Dialogs/tcpconnectwidget.ui:41
+#, kde-format
+msgid "Port:"
+msgstr "端口："
+
+#: Dialogs/kplayersetupwidget.cpp:247
+#, kde-format
+msgid "Name already in use. Please choose another one."
+msgstr "此名称已被使用，请另选一个名称。"
+
+#: Dialogs/kplayersetupwidget.cpp:249
+#, kde-format
+msgid "Empty name. Please choose another one."
+msgstr "名称为空，请另选一个名称。"
+
+#: Dialogs/kplayersetupwidget.cpp:292
+#, kde-format
+msgid "Player Number %1, please type in your name and choose your nation:"
+msgstr "玩家 %1，请输入您的称呼，并选定一个国家："
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, NewGameDialog)
+#: Dialogs/newGameDialog.ui:16
+#, kde-format
+msgid "KsirK - New game properties"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: Dialogs/newGameDialog.ui:29
+#, kde-format
+msgid "Total number of players:"
+msgstr "玩家总数："
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, playersNumberEntry)
+#: Dialogs/newGameDialog.ui:39
+#, kde-format
+msgid "Spin this to choose the number of players."
+msgstr "在此选择玩家数量。"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, playersNumberEntry)
+#: Dialogs/newGameDialog.ui:42
+#, kde-format
+msgid "A spin box to choose the number of players"
+msgstr "用于决定玩家数量的选框"
+
+#. i18n: ectx: property (text), widget (QLabel, localPlayersNumberLabel)
+#: Dialogs/newGameDialog.ui:53
+#, kde-format
+msgid "Number of local players:"
+msgstr "本地玩家总数："
+
+#. i18n: ectx: property (text), widget (QLabel, tcpPortLabel)
+#: Dialogs/newGameDialog.ui:67
+#, kde-format
+msgid "TCP port on which to offer connections:"
+msgstr "用于提供连接的 TCP 端口号："
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: Dialogs/newGameDialog.ui:106 Dialogs/newGameSummary.ui:44
+#, kde-format
+msgid "Skin:"
+msgstr "皮肤:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, skinCombo)
+#: Dialogs/newGameDialog.ui:116
+#, kde-format
+msgid "Choose the skin (map, nationalities, etc.) to use for this game."
+msgstr "选择一个游戏皮肤(用于地图、国家等图形元素的绘制)。"
+
+#. i18n: ectx: property (whatsThis), widget (QComboBox, skinCombo)
+#: Dialogs/newGameDialog.ui:119
+#, kde-format
+msgid "A combo listing all the available skins."
+msgstr "显示所有可用外观的组合框。"
+
+#. i18n: ectx: property (text), widget (QPushButton, ghnsbutton)
+#: Dialogs/newGameDialog.ui:126
+#, kde-format
+msgid "Download New Skins..."
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, goalGroup)
+#: Dialogs/newGameDialog.ui:150
+#, kde-format
+msgid "Goal Type"
+msgstr "目标类型"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, radioWorld)
+#: Dialogs/newGameDialog.ui:156
+#, kde-format
+msgid "Choose this for players to have to conquer all the world to win."
+msgstr "选择此项后，玩家必须以征服整个世界作为胜利目标。"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, radioWorld)
+#: Dialogs/newGameDialog.ui:159
+#, kde-format
+msgid "In this mode, a player will have to conquer all the world to win."
+msgstr "在此模式下，玩家必须征服整个世界才能赢得游戏。"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioWorld)
+#: Dialogs/newGameDialog.ui:162
+#, kde-format
+msgid "World con&quest"
+msgstr "征服世界(&Q)"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, radioGoal)
+#: Dialogs/newGameDialog.ui:169
+#, kde-format
+msgid "Choose this to have a goal assigned to each player."
+msgstr "选中此项后，每位玩家会被各自指派一个目标。"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, radioGoal)
+#: Dialogs/newGameDialog.ui:172
+#, kde-format
+msgid ""
+"In this mode, a goal will be assigned to each player, which he will have to "
+"reach in order to win."
+msgstr "在此模式下，每位玩家都会被指派一个目标，只要达成就可以赢得胜利。"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioGoal)
+#: Dialogs/newGameDialog.ui:175
+#, kde-format
+msgid "Reach a goa&l"
+msgstr "达成目标(&L)"
+
+#. i18n: ectx: property (text), widget (QPushButton, nextButton)
+#: Dialogs/newGameDialog.ui:247 Dialogs/qplayersetupdialog.ui:153
+#: Dialogs/tcpconnectwidget.ui:125
+#, kde-format
+msgid "Next >>"
+msgstr "下一步 >>"
+
+#: Dialogs/newGameDialogImpl.cpp:131 newgamesetup.cpp:44
+#, kde-format
+msgid ""
+"Skins directory not found - Verify your installation\n"
+"Program cannot continue"
+msgstr ""
+"找不到皮肤目录 - 请检查您的安装\n"
+"程序无法继续执行"
+
+#: Dialogs/newGameDialogImpl.cpp:132 newgamesetup.cpp:45
+#, kde-format
+msgid "Fatal Error!"
+msgstr "严重错误!"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, NewGameSummary)
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: Dialogs/newGameSummary.ui:14 Dialogs/newGameSummary.ui:27
+#, kde-format
+msgid "New Game Summary"
+msgstr "新建游戏摘要"
+
+#. i18n: ectx: property (text), widget (QLabel, skinNameLabel)
+#: Dialogs/newGameSummary.ui:51
+#, kde-format
+msgid "skin name"
+msgstr "皮肤名称"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: Dialogs/newGameSummary.ui:102
+#, kde-format
+msgid "Players"
+msgstr "玩家"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: Dialogs/newGameSummary.ui:128
+#, kde-format
+msgid "Goal type:"
+msgstr "目标类型："
+
+#. i18n: ectx: property (text), widget (QLabel, goalTypeLabel)
+#: Dialogs/newGameSummary.ui:135
+#, kde-format
+msgid "goal type"
+msgstr "目标类型"
+
+#. i18n: ectx: property (text), widget (QTableWidget, playersTable)
+#: Dialogs/newGameSummary.ui:157
+#, kde-format
+msgid "Name"
+msgstr "名称"
+
+#. i18n: ectx: property (text), widget (QTableWidget, playersTable)
+#: Dialogs/newGameSummary.ui:168
+#, kde-format
+msgid "Nationality"
+msgstr "祖国"
+
+#. i18n: ectx: property (text), widget (QTableWidget, playersTable)
+#: Dialogs/newGameSummary.ui:179
+#, kde-format
+msgid "Computer"
+msgstr "电脑"
+
+#. i18n: ectx: property (text), widget (QTableWidget, playersTable)
+#: Dialogs/newGameSummary.ui:190
+#, kde-format
+msgid "Network"
+msgstr "网络"
+
+#. i18n: ectx: property (text), widget (QPushButton, previousButton)
+#: Dialogs/newGameSummary.ui:226 Dialogs/qplayersetupdialog.ui:146
+#: Dialogs/tcpconnectwidget.ui:118
+#, kde-format
+msgid "<< Previous"
+msgstr "<< 上一首"
+
+#. i18n: ectx: property (text), widget (QPushButton, finishButton)
+#: Dialogs/newGameSummary.ui:233
+#, kde-format
+msgid "Start"
+msgstr "起始位置"
+
+#: Dialogs/newGameSummaryWidget.cpp:59
+#, kde-format
+msgid "Reach a goal"
+msgstr "达成目标"
+
+#: Dialogs/newGameSummaryWidget.cpp:59
+#, kde-format
+msgid "World conquest"
+msgstr "征服世界"
+
+#: Dialogs/newGameSummaryWidget.cpp:74 Dialogs/newGameSummaryWidget.cpp:76
+#, kde-format
+msgid "Yes"
+msgstr "是"
+
+#: Dialogs/newGameSummaryWidget.cpp:74 Dialogs/newGameSummaryWidget.cpp:76
+#, kde-format
+msgid "No"
+msgstr "否"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, QPlayerSetupWidget)
+#. i18n: ectx: property (windowTitle), widget (QWidget, TcpConnectWidget)
+#: Dialogs/qplayersetupdialog.ui:14 Dialogs/tcpconnectwidget.ui:14
+#, kde-format
+msgid "Player Setup"
+msgstr "玩家设置"
+
+#. i18n: ectx: property (text), widget (QLabel, TextLabel1)
+#: Dialogs/qplayersetupdialog.ui:23
+#, no-c-format, kde-format
+msgid "Player number %1, please enter your name and choose your nation:"
+msgstr "玩家 %1，请输入您的名字，并选择一个国家："
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, nationCombo)
+#. i18n: ectx: property (toolTip), widget (QComboBox, waitedPlayersCombo)
+#: Dialogs/qplayersetupdialog.ui:51 Dialogs/qwaitedplayersetupdialog.ui:33
+#, kde-format
+msgid "Choose your nation"
+msgstr "选择您的国家"
+
+#. i18n: ectx: property (whatsThis), widget (QComboBox, nationCombo)
+#. i18n: ectx: property (whatsThis), widget (QComboBox, waitedPlayersCombo)
+#: Dialogs/qplayersetupdialog.ui:55 Dialogs/qwaitedplayersetupdialog.ui:37
+#, kde-format
+msgid ""
+"A combo box that lists currently available nations.\n"
+"Choose one of them. It will be your nation during the game"
+msgstr ""
+"列出当前可用国家的组合框。\n"
+"选择其中一个，在游戏中作为您的祖国。"
+
+#. i18n: ectx: property (text), widget (QLabel, passwordLabel)
+#: Dialogs/qplayersetupdialog.ui:79 Dialogs/qwaitedplayersetupdialog.ui:47
+#, kde-format
+msgid "Enter your password:"
+msgstr "输入您的密码："
+
+#. i18n: ectx: property (text), widget (QCheckBox, isComputerCheckBox)
+#: Dialogs/qplayersetupdialog.ui:104
+#, kde-format
+msgid "Pla&yer is computer"
+msgstr "电脑玩家(&Y)"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, QWaitedPlayerSetupDialog)
+#: Dialogs/qwaitedplayersetupdialog.ui:14
+#, kde-format
+msgid "Saved Player Selection"
+msgstr "已保存的玩家选择"
+
+#. i18n: ectx: property (text), widget (QLabel, TextLabel1)
+#: Dialogs/qwaitedplayersetupdialog.ui:23
+#, kde-format
+msgid "Please select your saved player:"
+msgstr "请选择您已经保存的玩家："
+
+#. i18n: ectx: property (text), widget (QPushButton, PushButton1)
+#: Dialogs/qwaitedplayersetupdialog.ui:67
+#, kde-format
+msgid "OK"
+msgstr "确定"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, RestartOrExitDialog)
+#: Dialogs/restartOrExitDialog.ui:13
+#, kde-format
+msgid "New Game or Exit"
+msgstr "新建游戏或退出"
+
+#. i18n: ectx: property (text), widget (QPushButton, newGameButton)
+#: Dialogs/restartOrExitDialog.ui:27 GameLogic/gameautomaton.cpp:1658
+#, kde-format
+msgid "New Game"
+msgstr "新游戏"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, newGameButton)
+#: Dialogs/restartOrExitDialog.ui:33
+#, kde-format
+msgid "Starts a new game"
+msgstr "开始新游戏"
+
+#. i18n: ectx: property (text), widget (QPushButton, doNothingButton)
+#: Dialogs/restartOrExitDialog.ui:40
+#, kde-format
+msgid "Do Nothing"
+msgstr "不做任何事"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, doNothingButton)
+#: Dialogs/restartOrExitDialog.ui:43
+#, kde-format
+msgid "Do nothing. Game buttons will be available"
+msgstr "什么也不用做。游戏按钮即将显示"
+
+#. i18n: ectx: property (text), widget (QPushButton, exitButton)
+#: Dialogs/restartOrExitDialog.ui:50 GameLogic/gameautomaton.cpp:1659
+#, kde-format
+msgid "Exit"
+msgstr "退出"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, exitButton)
+#: Dialogs/restartOrExitDialog.ui:53
+#, kde-format
+msgid "Quit KsirK"
+msgstr "退出 KsirK"
+
+#. i18n: ectx: property (text), widget (QLabel, messageLabel)
+#: Dialogs/restartOrExitDialog.ui:89
+#, no-c-format, kde-format
+msgid "%1 won! Do you want to play again?"
+msgstr "%1 赢了！您想要再玩一次吗？"
+
+#. i18n: ectx: property (text), widget (QLineEdit, hostEdit)
+#: Dialogs/tcpconnectwidget.ui:74
+#, kde-format
+msgid "localhost"
+msgstr "本地主机"
+
+#: GameLogic/aiplayer.cpp:504
+#, kde-format
+msgid ""
+"Error - No receiving country selected while computer player %2 had still 1 "
+"army to place. This is bug probably #2232 at www.gna.org."
+msgid_plural ""
+"Error - No receiving country selected while computer player %2 had still %1 "
+"armies to place. This is bug probably #2232 at www.gna.org."
+msgstr[0] ""
+"错误 - 当电脑玩家%2仍有%1个军队待放置时，未选择接收的国家。 这可能是www.gna."
+"org上的＃2232错误。"
+
+#: GameLogic/aiplayer.cpp:506 Sprites/skinSpritesData.cpp:89
+#: Sprites/skinSpritesData.cpp:105
+#, kde-format
+msgid "Fatal Error"
+msgstr "严重错误"
+
+#: GameLogic/gameautomaton.cpp:299
+#, kde-format
+msgid "KsirK - Network configuration"
+msgstr "KsirK - 网络配置"
+
+#: GameLogic/gameautomaton.cpp:300
+#, kde-format
+msgid "Please type in the port number on which to offer connections:"
+msgstr "请输入用于提供连线的端口号："
+
+#: GameLogic/gameautomaton.cpp:1187 GameLogic/gameautomaton.cpp:1215
+#, kde-format
+msgid "Do you really want to end your current game and join another?"
+msgstr "您真的想要结束当前游戏并加入另一个游戏吗？"
+
+#: GameLogic/gameautomaton.cpp:1187 GameLogic/gameautomaton.cpp:1215
+#: kgamewin.cpp:2639
+#, kde-format
+msgid "New game confirmation"
+msgstr "新游戏确认"
+
+#: GameLogic/gameautomaton.cpp:1395
+#, kde-format
+msgid "%1 (%2) joined game ; waiting for %3 players to connect"
+msgstr "%1(%2) 加入了游戏，正在等待其他 %3 名玩家"
+
+#: GameLogic/gameautomaton.cpp:1501
+#, kde-format
+msgid "Please choose another name"
+msgstr "请选用其他称呼"
+
+#: GameLogic/gameautomaton.cpp:1501
+#, kde-format
+msgid "KsirK - Name already used!"
+msgstr "KsirK - 名字已被使用！"
+
+#: GameLogic/gameautomaton.cpp:1507
+#, kde-format
+msgid "Player number %1, what's your name?"
+msgstr "玩家 %1，请问您怎么称呼？"
+
+#: GameLogic/gameautomaton.cpp:1511
+#, kde-format
+msgid "Error - Player %1, you have to choose a name."
+msgstr "错误 - 玩家 %1，请选用其他名字。"
+
+#: GameLogic/gameautomaton.cpp:1513
+#, kde-format
+msgctxt "@info Forged player name"
+msgid "Player%1"
+msgstr "玩家%1"
+
+#: GameLogic/gameautomaton.cpp:1564
+#, kde-format
+msgid "Please choose another nation"
+msgstr "请选用其他国家"
+
+#: GameLogic/gameautomaton.cpp:1564
+#, kde-format
+msgid "KsirK - Nation already used!"
+msgstr "KsirK - 国家已被选用！"
+
+#: GameLogic/gameautomaton.cpp:1656
+#, kde-format
+msgid ""
+"KsirK - Lost connection to server!\n"
+"What do you want to do?"
+msgstr ""
+"KsirK - 已和服务器失去连接！\n"
+"您想要做什么？"
+
+#: GameLogic/gameautomaton.cpp:1657
+#, kde-format
+msgid "Starting a new game or exit."
+msgstr "开始新游戏或退出。"
+
+#: GameLogic/gameautomaton.cpp:1660
+#, kde-format
+msgid "Do nothing"
+msgstr "什么也不做"
+
+#: GameLogic/gameautomaton.cpp:1682
+#, kde-format
+msgid ""
+"Lost connection to a client.\n"
+"For the moment, you can only save the game and start a new one or quit.\n"
+"This will be improved in a future version."
+msgstr ""
+"已和一台客户端失去连接。\n"
+"目前您只能选择保存此游戏并新建一个游戏，或是退出。\n"
+"这将在未来的版本中得到改进。"
+
+#: GameLogic/gameautomaton.cpp:1683
+#, kde-format
+msgid "KsirK - Lost connection to client!"
+msgstr "KsirK - 和客户端失去连接！"
+
+#: GameLogic/gameautomaton.cpp:1684
+#, kde-format
+msgid "Do want to save your game?"
+msgstr "您想要保存游戏吗？"
+
+#: GameLogic/gameautomaton.cpp:1848 GameLogic/gameautomaton.cpp:2265
+#: kgamewin.cpp:2130 kgamewin.cpp:2225 kgamewin.cpp:2262
+#, kde-format
+msgid "%1: %2 armies to place"
+msgstr "%1：%2 支待命军队"
+
+#: GameLogic/gameautomaton.cpp:1853 GameLogic/gameautomaton.cpp:2268
+#: kgamewinslots.cpp:813
+#, kde-format
+msgid ""
+"Now, place your armies in your countries<br>by clicking in the target "
+"countries."
+msgstr "现在您可以通过点击目标国家<br>将军队部署到其领土内。"
+
+#: GameLogic/gameautomaton.cpp:1930
+#, kde-format
+msgid ""
+"%1, your goal will be displayed. Please<br>make sure that no other player "
+"can see it!"
+msgstr "%1，现在将显示您的游戏目标。<br>请不要让别的玩家知道它！"
+
+#: GameLogic/gameautomaton.cpp:1932
+#, kde-format
+msgid "KsirK - Displaying Goal"
+msgstr "KsirK - 显示目标"
+
+#: GameLogic/gameautomaton.cpp:2118
+#, kde-format
+msgid "%1 chooses its defense"
+msgstr "%1 选择其防守"
+
+#: GameLogic/gameautomaton.cpp:2278
+#, kde-format
+msgid "%1 choose to end recycling; there are now %2 players who want so"
+msgstr "%1 选择结束循环，现在有 %2 位玩家要这么做"
+
+#: GameLogic/gameautomaton.cpp:2368
+#, kde-format
+msgid "Problem : no one destroyed"
+msgstr "出现问题：没有目标被摧毁"
+
+#: GameLogic/gameautomaton.cpp:2368 gestionSprites.cpp:927
+#: gestionSprites.cpp:947 gestionSprites.cpp:1048 gestionSprites.cpp:1085
+#: gestionSprites.cpp:1120 gestionSprites.cpp:1174 gestionSprites.cpp:1211
+#: gestionSprites.cpp:1245
+#, kde-format
+msgid "KsirK - Error!"
+msgstr "KsirK - 错误！"
+
+#: GameLogic/gameautomaton.cpp:2417
+#, kde-format
+msgid ""
+"You entered an invalid password.\n"
+"Please try again."
+msgstr ""
+"您输入的密码无效。\n"
+"请重试。"
+
+#: GameLogic/gameautomaton.cpp:2417
+#, kde-format
+msgid "KsirK - Invalid password!"
+msgstr "KsirK - 密码无效！"
+
+#: GameLogic/gameautomaton.cpp:2623
+#, kde-format
+msgid ""
+"%1, you have not played anything this turn.\n"
+"Do you really want to lose your turn?"
+msgstr ""
+"%1，您在本回合中没有下达任何命令。\n"
+"您真的想要放弃此回合吗？"
+
+#: GameLogic/gameautomaton.cpp:2624
+#, kde-format
+msgid "Really Next Player?"
+msgstr "确定转到下一个玩家吗？"
+
+#: GameLogic/goal.cpp:156
+#, kde-format
+msgid "You must conquer the World!"
+msgstr "你要做的就是征服世界！"
+
+#: GameLogic/goal.cpp:184
+#, kde-format
+msgid "%1 (already dead)"
+msgstr "%1 (已消灭)"
+
+#: GameLogic/goal.cpp:195
+#, kde-format
+msgid "Error: no player to destroy"
+msgstr "错误: 没有玩家可被消灭"
+
+#: GameLogic/goal.cpp:231
+#, kde-format
+msgid "<br>%1 is still alive..."
+msgstr "<br>%1 依然生存..."
+
+#: GameLogic/goal.cpp:238 GameLogic/goal.cpp:252
+#, kde-format
+msgid "<br>%2, you still have 1 country to conquer..."
+msgid_plural "<br>%2, you still have %1 countries to conquer..."
+msgstr[0] "<br>%2，您还有 %1 个国家需要征服…"
+
+#: GameLogic/goal.cpp:242
+#, kde-format
+msgid "<br>Your goal is reached: %2 is dead and you possess %1 country."
+msgid_plural ""
+"<br>Your goal is reached: %2 is dead and you possess %1 countries."
+msgstr[0] "<br>您的目标已达成：%2 已被击败并且您已占领 %1 个国家。"
+
+#: GameLogic/goal.cpp:264
+#, kde-format
+msgid ""
+"<br>%2, you have enough countries but you still have to put more than 1 army "
+"on %3 of them..."
+msgid_plural ""
+"<br>%2, you have enough countries but you still have to put more than %1 "
+"armies on %3 of them..."
+msgstr[0] ""
+"<br>%2，你有足够多的国家，但你仍然需要在其中%3个国家上放置%1个以上的军"
+"队......"
+
+#: GameLogic/goal.cpp:269
+#, kde-format
+msgid "<br>%1, you still have to conquer "
+msgstr "<br>%1，您还需要去征服 "
+
+#: GameLogic/goal.cpp:275
+#, kde-format
+msgid "1 country in %2"
+msgid_plural "%1 countries in %2"
+msgstr[0] "%2中的%1个国家"
+
+#: GameLogic/goal.cpp:285
+#, kde-format
+msgid " and "
+msgstr "和"
+
+#: GameLogic/goal.cpp:289
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: GameLogic/goal.cpp:295
+#, kde-format
+msgctxt ""
+"@info An element of the enumeration of the number of countries in the given "
+"continent"
+msgid "%1 in %2"
+msgstr "%2 中的 %1"
+
+#: GameLogic/goal.cpp:317
+#, kde-format
+msgid "KsirK - Goal Display"
+msgstr "KsirK - 目标显示"
+
+#: GameLogic/KsirkChatModel.cpp:72 kgamewin.cpp:177
+#, kde-format
+msgid "No message..."
+msgstr "无消息..."
+
+#: GameLogic/KsirkChatModel.cpp:74
+#, kde-format
+msgid "<b>%1:</b> %2"
+msgstr "<b>%1:</b> %2"
+
+#: GameLogic/onu.cpp:129
+#, kde-format
+msgid ""
+"Pool filename not found\n"
+"Program cannot continue"
+msgstr ""
+"找不到 Pool 文件名\n"
+"程序无法继续执行"
+
+#: GameLogic/onu.cpp:130 GameLogic/onu.cpp:147 gestionSprites.cpp:692
+#: gestionSprites.cpp:807 gestionSprites.cpp:852 gestionSprites.cpp:1408
+#: gestionSprites.cpp:1485 kgamewin.cpp:144 kgamewin.cpp:377 kgamewin.cpp:394
+#: kgamewin.cpp:411 kgamewin.cpp:578 kgamewin.cpp:734
+#: Sprites/animsprite.cpp:511 Sprites/animsprite.cpp:526
+#, kde-format
+msgid "Error!"
+msgstr "错误！"
+
+#: GameLogic/onu.cpp:146
+#, kde-format
+msgid ""
+"Map mask image not found\n"
+"Program cannot continue"
+msgstr ""
+"找不到地图遮盖图像\n"
+"程序无法继续执行"
+
+#: gestionSprites.cpp:72 gestionSprites.cpp:106 gestionSprites.cpp:157
+#, kde-format
+msgid "Cannot move %1 armies from %2 to %3"
+msgstr "无法将 %1 支军队从 %2 调动到 %3"
+
+#: gestionSprites.cpp:79
+#, kde-format
+msgid "Moving %1 armies from %2 to %3"
+msgstr "将 %1 支军队从 %2 调动到 %3"
+
+#: gestionSprites.cpp:692 gestionSprites.cpp:807 gestionSprites.cpp:1408
+#: gestionSprites.cpp:1485
+#, kde-format
+msgid ""
+"Sound roule not found - Verify your installation<br>Program cannot continue"
+msgstr "找不到 roule 声音文件 - 请检验您的安装<br>程序无法继续执行"
+
+#: gestionSprites.cpp:852
+#, kde-format
+msgid ""
+"Sound cannon not found - Verify your installation<br>Program cannot continue"
+msgstr "找不到 cannon 声音文件 - 请检验您的安装<br>程序无法继续执行"
+
+#: gestionSprites.cpp:927 gestionSprites.cpp:947 gestionSprites.cpp:1048
+#: gestionSprites.cpp:1085 gestionSprites.cpp:1120 gestionSprites.cpp:1174
+#: gestionSprites.cpp:1211 gestionSprites.cpp:1245
+#, kde-format
+msgid ""
+"Sound crash not found - Verify your installation\n"
+"Program cannot continue"
+msgstr ""
+"找不到 crash 声音文件 - 请检验您的安装\n"
+"程序无法继续执行"
+
+#: gestionSprites.cpp:1289
+#, kde-format
+msgid "Problem: no one destroyed"
+msgstr "出现问题：没有目标被摧毁"
+
+#: gestionSprites.cpp:1499
+#, kde-format
+msgid "Bug: who should be 0, 1 or 2."
+msgstr "错误：这应该是 0、1 或者 2。"
+
+#: Jabber/jabberaccount.cpp:211
+#, kde-format
+msgid "Please connect first."
+msgstr "请先连接。"
+
+#: Jabber/jabberaccount.cpp:211
+#, kde-format
+msgid "Jabber Error"
+msgstr "Jabber 错误"
+
+#: Jabber/jabberaccount.cpp:374
+#, kde-format
+msgid ""
+"SSL support could not be initialized for account %1. This is most likely "
+"because the QCA TLS plugin is not installed on your system."
+msgstr ""
+"无法为账户 %1 初始化 SSL 支持。很可能是因为您的系统中没有安装 QCA TLS 插件。"
+
+#: Jabber/jabberaccount.cpp:376
+#, kde-format
+msgid "Jabber SSL Error"
+msgstr "Jabber SSL 错误"
+
+#: Jabber/jabberaccount.cpp:409
+#, kde-format
+msgid "The host name does not match the one in the certificate."
+msgstr "主机名和证书中的不匹配。"
+
+#: Jabber/jabberaccount.cpp:413
+#, kde-format
+msgid "The certificate is invalid."
+msgstr "证书无效。"
+
+#: Jabber/jabberaccount.cpp:417
+#, kde-format
+msgid "No certificate was presented."
+msgstr "没有证书。"
+
+#: Jabber/jabberaccount.cpp:427
+#, kde-format
+msgid "The Certificate Authority rejected the certificate."
+msgstr "证书认证中心拒绝了此证书。"
+
+#: Jabber/jabberaccount.cpp:431
+#, kde-format
+msgid "The certificate is not trusted."
+msgstr "此证书不受信任。"
+
+#: Jabber/jabberaccount.cpp:435
+#, kde-format
+msgid "The signature is invalid."
+msgstr "此签名无效。"
+
+#: Jabber/jabberaccount.cpp:439
+#, kde-format
+msgid "The Certificate Authority is invalid."
+msgstr "证书认证中心无效。"
+
+#: Jabber/jabberaccount.cpp:443
+#, kde-format
+msgid "Invalid certificate purpose."
+msgstr "无效的证书用途。"
+
+#: Jabber/jabberaccount.cpp:447
+#, kde-format
+msgid "The certificate is self-signed."
+msgstr "此证书是自签名的。"
+
+#: Jabber/jabberaccount.cpp:451
+#, kde-format
+msgid "The certificate has been revoked."
+msgstr "证书已被吊销。"
+
+#: Jabber/jabberaccount.cpp:455
+#, kde-format
+msgid "Maximum certificate chain length was exceeded."
+msgstr "证书链的长度超过上限。"
+
+#: Jabber/jabberaccount.cpp:459
+#, kde-format
+msgid "The certificate has expired."
+msgstr "此证书已过期."
+
+#: Jabber/jabberaccount.cpp:463
+#, kde-format
+msgid "The Certificate Authority has expired."
+msgstr "证书认证中心已经过期。"
+
+#: Jabber/jabberaccount.cpp:467
+#, kde-format
+msgid "Validity is unknown."
+msgstr "有效性未知。"
+
+#: Jabber/jabberaccount.cpp:478
+#, kde-format
+msgid ""
+"<qt><p>The identity and the certificate of server %1 could not be validated "
+"for account %2:</p><p>%3</p><p>%4</p><p>Do you want to continue?</p></qt>"
+msgstr ""
+"<qt><p>无法为账户 %2 验证其身份和服务器证书 %1：</p><p>%3</p><p>%4</p><p>您想"
+"要继续吗？</p></qt>"
+
+#: Jabber/jabberaccount.cpp:484 Jabber/jabberaccount.cpp:489
+#, kde-format
+msgid ""
+"<qt><p>The certificate of server %1 could not be validated for account %2: "
+"%3</p><p>Do you want to continue?</p></qt>"
+msgstr ""
+"<qt><p>无法为账户 %2 验证其服务器证书 %1：%3</p><p>您想要继续吗？</p></qt>"
+
+#: Jabber/jabberaccount.cpp:496
+#, kde-format
+msgid "Jabber Connection Certificate Problem"
+msgstr "Jabber 连接证书时发生问题"
+
+#: Jabber/jabberaccount.cpp:530 kgamewinslots.cpp:1008
+#, kde-format
+msgid ""
+"An encrypted connection with the Jabber server could not be established."
+msgstr "无法和 Jabber 服务器建立加密连接。"
+
+#: Jabber/jabberaccount.cpp:531 kgamewinslots.cpp:1009
+#, kde-format
+msgid "Jabber Connection Error"
+msgstr "Jabber 连接错误"
+
+#: Jabber/jabberaccount.cpp:734
+#, kde-format
+msgid "Malformed packet received."
+msgstr "收到畸形的数据包。"
+
+#: Jabber/jabberaccount.cpp:739
+#, kde-format
+msgid "There was an unrecoverable error in the protocol."
+msgstr "协议中出现不可恢复的错误。"
+
+#: Jabber/jabberaccount.cpp:746
+#, kde-format
+msgid "Generic stream error."
+msgstr "常规数据流错误。"
+
+#: Jabber/jabberaccount.cpp:750
+#, kde-format
+msgid "There was a conflict in the information received."
+msgstr "收到的信息中存在冲突。"
+
+#: Jabber/jabberaccount.cpp:753
+#, kde-format
+msgid "The stream timed out."
+msgstr "数据流超时。"
+
+#: Jabber/jabberaccount.cpp:756
+#, kde-format
+msgid "Internal server error."
+msgstr "服务器内部错误。"
+
+#: Jabber/jabberaccount.cpp:759
+#, kde-format
+msgid "Stream packet received from an invalid address."
+msgstr "从无效的地址收到数据流。"
+
+#: Jabber/jabberaccount.cpp:762
+#, kde-format
+msgid "Malformed stream packet received."
+msgstr "收到畸形的数据流。"
+
+#: Jabber/jabberaccount.cpp:766
+#, kde-format
+msgid "Policy violation in the protocol stream."
+msgstr "协议数据流违反了策略。"
+
+#: Jabber/jabberaccount.cpp:770
+#, kde-format
+msgid "Resource constraint."
+msgstr "来源受限制。"
+
+#: Jabber/jabberaccount.cpp:774
+#, kde-format
+msgid "System shutdown."
+msgstr "系统已关闭。"
+
+#: Jabber/jabberaccount.cpp:777
+#, kde-format
+msgid "Unknown reason."
+msgstr "未知原因。"
+
+#: Jabber/jabberaccount.cpp:781
+#, kde-format
+msgid "There was an error in the protocol stream: %1"
+msgstr "协议流中有错误：%1"
+
+#: Jabber/jabberaccount.cpp:789
+#, kde-format
+msgid "Host not found."
+msgstr "主机未找到."
+
+#: Jabber/jabberaccount.cpp:792
+#, kde-format
+msgid "Address is already in use."
+msgstr "地址已经被使用."
+
+#: Jabber/jabberaccount.cpp:795
+#, kde-format
+msgid "Cannot recreate the socket."
+msgstr "无法重新创建套接字。"
+
+#: Jabber/jabberaccount.cpp:798
+#, kde-format
+msgid "Cannot bind the socket again."
+msgstr "无法重新绑定到套接字。"
+
+#: Jabber/jabberaccount.cpp:801
+#, kde-format
+msgid "Socket is already connected."
+msgstr "已经连接到套接字。"
+
+#: Jabber/jabberaccount.cpp:804
+#, kde-format
+msgid "Socket is not connected."
+msgstr "未连接到套接字。"
+
+#: Jabber/jabberaccount.cpp:807
+#, kde-format
+msgid "Socket is not bound."
+msgstr "套接字没有被绑定."
+
+#: Jabber/jabberaccount.cpp:810
+#, kde-format
+msgid "Socket has not been created."
+msgstr "套接字没有被创建."
+
+#: Jabber/jabberaccount.cpp:813
+#, kde-format
+msgid ""
+"The socket operation would block. You should not see this error: please use "
+"\"Report Bug\" from the Help menu."
+msgstr ""
+"套接字操作已被阻塞。您本不该看到此错误：请使用帮助菜单下的“报告错误”功能向我"
+"们报告此问题。"
+
+#: Jabber/jabberaccount.cpp:816
+#, kde-format
+msgid "Connection refused."
+msgstr "连接被拒绝."
+
+#: Jabber/jabberaccount.cpp:819
+#, kde-format
+msgid "Connection timed out."
+msgstr "连接超时。"
+
+#: Jabber/jabberaccount.cpp:822
+#, kde-format
+msgid "Connection attempt already in progress."
+msgstr "正在进行连接尝试。"
+
+#: Jabber/jabberaccount.cpp:825
+#, kde-format
+msgid "Network failure."
+msgstr "网络故障。"
+
+#: Jabber/jabberaccount.cpp:828
+#, kde-format
+msgid "Operation is not supported."
+msgstr "操作不被支持."
+
+#: Jabber/jabberaccount.cpp:831
+#, kde-format
+msgid "Socket timed out."
+msgstr "套接字超时。"
+
+#: Jabber/jabberaccount.cpp:839
+#, kde-format
+msgid "There was a connection error: %1"
+msgstr "出现连接错误：%1"
+
+#: Jabber/jabberaccount.cpp:847
+#, kde-format
+msgid "Unknown host."
+msgstr "未知主机."
+
+#: Jabber/jabberaccount.cpp:851
+#, kde-format
+msgid "Could not connect to a required remote resource."
+msgstr "无法连接到所需的远程资源。"
+
+#: Jabber/jabberaccount.cpp:854
+#, kde-format
+msgid ""
+"It appears we have been redirected to another server; I do not know how to "
+"handle this."
+msgstr "连接似乎被重定向到另一台服务器；程序尚无法处理此状况。"
+
+#: Jabber/jabberaccount.cpp:857
+#, kde-format
+msgid "Unsupported protocol version."
+msgstr "不支持的协议版本。"
+
+#: Jabber/jabberaccount.cpp:860 Jabber/jabberaccount.cpp:877
+#: Jabber/jabberaccount.cpp:921 Jabber/jabberaccount.cpp:938
+#: Jabber/jabberaccount.cpp:955 Jabber/jabberaccount.cpp:963
+#, kde-format
+msgid "Unknown error."
+msgstr "未知错误。"
+
+#: Jabber/jabberaccount.cpp:864
+#, kde-format
+msgid "There was a negotiation error: %1"
+msgstr "出现协商错误：%1"
+
+#: Jabber/jabberaccount.cpp:871
+#, kde-format
+msgid "Server rejected our request to start the TLS handshake."
+msgstr "服务器拒绝开始 TLS 握手请求。"
+
+#: Jabber/jabberaccount.cpp:874
+#, kde-format
+msgid "Failed to establish a secure connection."
+msgstr "建立安全连接失败。"
+
+#: Jabber/jabberaccount.cpp:881
+#, kde-format
+msgid "There was a Transport Layer Security (TLS) error: %1"
+msgstr "出现安全传输层(TLS) 错误：%1"
+
+#: Jabber/jabberaccount.cpp:888
+#, kde-format
+msgid "Login failed with unknown reason."
+msgstr "登录失败，原因未知。"
+
+#: Jabber/jabberaccount.cpp:891
+#, kde-format
+msgid "No appropriate authentication mechanism available."
+msgstr "没有可用的验证算法。"
+
+#: Jabber/jabberaccount.cpp:894
+#, kde-format
+msgid "Bad SASL authentication protocol."
+msgstr "损坏的 SASL 验证协议。"
+
+#: Jabber/jabberaccount.cpp:897
+#, kde-format
+msgid "Server failed mutual authentication."
+msgstr "服务器进行双向验证失败。"
+
+#: Jabber/jabberaccount.cpp:900
+#, kde-format
+msgid "Encryption is required but not present."
+msgstr "需要加密支持，但功能不可用。"
+
+#: Jabber/jabberaccount.cpp:903
+#, kde-format
+msgid "Invalid user ID."
+msgstr "无效的用户 ID。"
+
+#: Jabber/jabberaccount.cpp:906
+#, kde-format
+msgid "Invalid mechanism."
+msgstr "无效的算法。"
+
+#: Jabber/jabberaccount.cpp:909
+#, kde-format
+msgid "Invalid realm."
+msgstr "无效的域。"
+
+#: Jabber/jabberaccount.cpp:912
+#, kde-format
+msgid "Mechanism too weak."
+msgstr "算法强度太弱。"
+
+#: Jabber/jabberaccount.cpp:915
+#, kde-format
+msgid "Wrong credentials supplied. (check your user ID and password)"
+msgstr "提供的证书错误。(请检查您的用户 ID 和密码)"
+
+#: Jabber/jabberaccount.cpp:918
+#, kde-format
+msgid "Temporary failure, please try again later."
+msgstr "临时失败，请稍后重试。"
+
+#: Jabber/jabberaccount.cpp:925
+#, kde-format
+msgid "There was an error authenticating with the server: %1"
+msgstr "在服务器上验证时出现错误：%1"
+
+#: Jabber/jabberaccount.cpp:932
+#, kde-format
+msgid "Transport Layer Security (TLS) problem."
+msgstr "安全传输层(TLS) 出现问题。"
+
+#: Jabber/jabberaccount.cpp:935
+#, kde-format
+msgid "Simple Authentication and Security Layer (SASL) problem."
+msgstr "简单验证和安全层(SASL) 出现问题。"
+
+#: Jabber/jabberaccount.cpp:942
+#, kde-format
+msgid "There was an error in the security layer: %1"
+msgstr "安全层出现错误：%1"
+
+#: Jabber/jabberaccount.cpp:949
+#, kde-format
+msgid "No permission to bind the resource."
+msgstr "没有绑定到资源的权限。"
+
+#: Jabber/jabberaccount.cpp:952
+#, kde-format
+msgid "The resource is already in use."
+msgstr "资源已经被使用。"
+
+#: Jabber/jabberaccount.cpp:959
+#, kde-format
+msgid "Could not bind a resource: %1"
+msgstr "无法绑定到资源：%1"
+
+#: Jabber/jabberaccount.cpp:977 Jabber/jabberaccount.cpp:981
+#, kde-format
+msgid "Connection problem with Jabber server %1"
+msgstr "连接到 Jabber 服务器时出现问题 %1"
+
+#: Jabber/jabberaccount.cpp:1127
+#, kde-format
+msgid ""
+"The Jabber user %1 removed %2's subscription to him/her. This account will "
+"no longer be able to view his/her online/offline status. Do you want to "
+"delete the contact?"
+msgstr ""
+"Jabber 用户 %1 已经删除了 %2 对他/她自己的订阅。此账户将无法再查看对方的在线"
+"状态。您想要删除此联系人吗？"
+
+#: Jabber/jabberaccount.cpp:1130 Jabber/jabbercontact.cpp:939
+#, kde-format
+msgid "Notification"
+msgstr "通知"
+
+#: Jabber/jabberaccount.cpp:1130 Jabber/jabbercontact.cpp:940
+#, kde-format
+msgid "Keep"
+msgstr "不压缩"
+
+#: Jabber/jabberaccount.cpp:1514 kgamewinslots.cpp:1098
+#, kde-format
+msgid "A password is required to join the room %1."
+msgstr "需要密码才能进入房间 %1。"
+
+#: Jabber/jabberaccount.cpp:1523 kgamewinslots.cpp:1107
+#, kde-format
+msgid "Error trying to join %1: nickname %2 is already in use"
+msgstr "尝试加入 %1 时出错：昵称 %2 已在使用中"
+
+#: Jabber/jabberaccount.cpp:1524 Jabber/jabberprotocol.cpp:432
+#: kgamewinslots.cpp:1107
+#, kde-format
+msgid "Provide your nickname"
+msgstr "选择您的昵称"
+
+#: Jabber/jabberaccount.cpp:1537
+#, kde-format
+msgid "You cannot join the room %1 because you have been banned"
+msgstr "您无法进入房间 %1，因为您已被封禁"
+
+#: Jabber/jabberaccount.cpp:1538 Jabber/jabberaccount.cpp:1545
+#: Jabber/jabberaccount.cpp:1555
+#, kde-format
+msgid "Jabber Group Chat"
+msgstr "Jabber 聊天组"
+
+#: Jabber/jabberaccount.cpp:1544
+#, kde-format
+msgid ""
+"You cannot join the room %1 because the maximum number of users has been "
+"reached"
+msgstr "您无法进入房间 %1，因为此房间已达到人数上限"
+
+#: Jabber/jabberaccount.cpp:1550 kgamewinslots.cpp:1125
+#, kde-format
+msgid "No reason given by the server"
+msgstr "服务器未返回原因"
+
+#: Jabber/jabberaccount.cpp:1554
+#, kde-format
+msgid ""
+"There was an error processing your request for groupchat %1. (Reason: %2, "
+"Code %3)"
+msgstr "处理您对聊天组 %1 的请求时出错。(原因：%2，代码 %3)"
+
+#: Jabber/jabberaccount.cpp:1708
+#, kde-format
+msgid ""
+"An error occurred while trying to remove the account:\n"
+"%1"
+msgstr ""
+"尝试删除此账户时发生错误：\n"
+"%1"
+
+#: Jabber/jabberaccount.cpp:1709
+#, kde-format
+msgid "Jabber Account Unregistration"
+msgstr "Jabber 账户解除注册"
+
+#: Jabber/jabberbasecontact.cpp:128
+#, kde-format
+msgid "You cannot see each others' status."
+msgstr "您无法看到其他人的状态。"
+
+#: Jabber/jabberbasecontact.cpp:132
+#, kde-format
+msgid "You can see this contact's status, but he/she cannot see your status."
+msgstr "您可以看到这名联系人的状态，但对方无法看到您的状态。"
+
+#: Jabber/jabberbasecontact.cpp:136
+#, kde-format
+msgid "This contact can see your status, but you cannot see his/her status."
+msgstr "这名联系人可以看到您的状态，但您无法看到对方的状态。"
+
+#: Jabber/jabberbasecontact.cpp:140
+#, kde-format
+msgid "You can see each others' status."
+msgstr "您可以看到其他人的状态。"
+
+#: Jabber/jabberbasecontact.cpp:250
+#, kde-format
+msgid "Client"
+msgstr "客户端"
+
+#: Jabber/jabberbasecontact.cpp:275
+#, kde-format
+msgid "Timestamp"
+msgstr "时间戳"
+
+#: Jabber/jabberbasecontact.cpp:282
+#, kde-format
+msgid "Message"
+msgstr "信件"
+
+#: Jabber/jabberbasecontact.cpp:641
+#, kde-format
+msgid "Downloading of Jabber contact photo failed."
+msgstr "下载 Jabber 联系人的照片失败。"
+
+#: Jabber/jabberbookmarks.cpp:135
+#, kde-format
+msgid "Groupchat bookmark"
+msgstr "群聊书签"
+
+#: Jabber/jabbercontact.cpp:137
+#, kde-format
+msgid "Authorization"
+msgstr "认证"
+
+#: Jabber/jabbercontact.cpp:143
+#, kde-format
+msgid "(Re)send Authorization To"
+msgstr "(重新)发送验证到"
+
+#: Jabber/jabbercontact.cpp:150
+#, kde-format
+msgid "(Re)request Authorization From"
+msgstr "(重新)请求验证于"
+
+#: Jabber/jabbercontact.cpp:157
+#, kde-format
+msgid "Remove Authorization From"
+msgstr "移除验证于"
+
+#: Jabber/jabbercontact.cpp:162
+#, kde-format
+msgid "Set Availability"
+msgstr "设定状态"
+
+#: Jabber/jabbercontact.cpp:171
+#, kde-format
+msgid "Online"
+msgstr "在线"
+
+#: Jabber/jabbercontact.cpp:172
+#, kde-format
+msgid "Free to Chat"
+msgstr "欢迎聊天"
+
+#: Jabber/jabbercontact.cpp:173
+#, kde-format
+msgid "Away"
+msgstr "离开"
+
+#: Jabber/jabbercontact.cpp:174
+#, kde-format
+msgid "Extended Away"
+msgstr "外出"
+
+#: Jabber/jabbercontact.cpp:175
+#, kde-format
+msgid "Do Not Disturb"
+msgstr "请勿打扰"
+
+#: Jabber/jabbercontact.cpp:176
+#, kde-format
+msgid "Invisible"
+msgstr "隐身"
+
+#: Jabber/jabbercontact.cpp:180
+#, kde-format
+msgid "Select Resource"
+msgstr "选择资源"
+
+#: Jabber/jabbercontact.cpp:197
+#, kde-format
+msgid "Automatic (best/default resource)"
+msgstr "自动(默认最佳来源)"
+
+#: Jabber/jabbercontact.cpp:250
+#, kde-format
+msgid "Voice call"
+msgstr "音频呼叫"
+
+#: Jabber/jabbercontact.cpp:283
+#, kde-format
+msgid "The original message is: <i>\" %1 \"</i><br />"
+msgstr "原始信息：<i>“%1”</i><br />"
+
+#: Jabber/jabbercontact.cpp:284
+#, kde-format
+msgid ""
+"<qt><i>%1</i> has invited you to join the conference <b>%2</b><br />%3<br /"
+">If you want to accept and join, just <b>enter your nickname</b> and press "
+"ok<br />If you want to decline, press cancel</qt>"
+msgstr ""
+"<qt><i>%1</i>邀请您加入战局 <b>%2</b><br />%3<br />如果您想要接受邀请，只需"
+"<b>输入您的昵名</b>并单击确认<br />如果您要拒绝邀请，请单击取消</qt>"
+
+#: Jabber/jabbercontact.cpp:290
+#, kde-format
+msgid "Invited to a conference - Jabber Plugin"
+msgstr "邀请加入战局 - Jabber 插件"
+
+#: Jabber/jabbercontact.cpp:307
+#, kde-format
+msgid "Message has been displayed"
+msgstr "消息已经显示"
+
+#: Jabber/jabbercontact.cpp:309
+#, kde-format
+msgid "Message has been delivered"
+msgstr "消息已经发送"
+
+#: Jabber/jabbercontact.cpp:312
+#, kde-format
+msgid "Message stored on the server, contact offline"
+msgstr "联系人已离线，消息已保存在服务器上"
+
+#: Jabber/jabbercontact.cpp:319
+#, kde-format
+msgid "%1 has ended his/her participation in the chat session."
+msgstr "%1 已经结束聊天会话。"
+
+#: Jabber/jabbercontact.cpp:357 Jabber/jabbergroupcontact.cpp:171
+#: Jabber/jabbergroupmembercontact.cpp:122
+#, kde-format
+msgid "Your message could not be delivered: \"%1\", Reason: \"%2\""
+msgstr "您的消息无法发送：“%1”，原因：“%2”"
+
+#: Jabber/jabbercontact.cpp:938
+#, kde-format
+msgid "Do you also want to remove user %1's authorization to see your status?"
+msgstr "您想要删除用户 %1 的验证，防止对方查看您的状态吗？"
+
+#: Jabber/jabbercontact.cpp:1039 Jabber/jabbergroupcontact.cpp:310
+#: Jabber/jabbergroupmembercontact.cpp:159
+#, kde-format
+msgid "Kopete File Transfer"
+msgstr "Kopete 文件传输"
+
+#: Jabber/jabbercontact.cpp:1110
+#, kde-format
+msgid ""
+"You have preselected a resource for contact %1, but you still have open chat "
+"windows for this contact. The preselected resource will only apply to newly "
+"opened chat windows."
+msgstr ""
+"您已经预先选取了针对联系人 %1 的来源，但您和对方之间还有开启中的聊天窗口。预"
+"选的来源只会应用于新打开的聊天窗口。"
+
+#: Jabber/jabbercontact.cpp:1114
+#, kde-format
+msgid "Jabber Resource Selector"
+msgstr "Jabber 来源选择器"
+
+#: Jabber/jabbergroupcontact.cpp:120
+#, kde-format
+msgid "Change nickname"
+msgstr "更改昵称"
+
+#: Jabber/jabbergroupcontact.cpp:367
+#, kde-format
+msgid "Change nickname - Jabber Plugin"
+msgstr "更改昵名 - Jabber 插件"
+
+#: Jabber/jabbergroupcontact.cpp:368
+#, kde-format
+msgid "Please enter the new nickname you want to have in the room <i>%1</i>"
+msgstr "请输入您要在房间 <i>%1</i> 内使用的新昵名"
+
+#: Jabber/jabberprotocol.cpp:336
+#, kde-format
+msgid "Choose Account"
+msgstr "选择账户"
+
+#: Jabber/jabberprotocol.cpp:342
+#, kde-format
+msgid "Choose an account to handle the URL %1"
+msgstr "选项用于处理 URL %1 的账户"
+
+#: Jabber/jabberprotocol.cpp:391
+#, kde-format
+msgid "Do you want to add '%1' to your contact list?"
+msgstr "您想要将“%1”添加到您的联系人列表吗？"
+
+#: Jabber/jabberprotocol.cpp:392
+#, kde-format
+msgid "Add"
+msgstr "添加"
+
+#: Jabber/jabberprotocol.cpp:392
+#, kde-format
+msgid "Do Not Add"
+msgstr "不添加"
+
+#: Jabber/jabberprotocol.cpp:408
+#, kde-format
+msgid "Do you want to remove '%1' from your contact list?"
+msgstr "您想要将“%1”从您的联系人列表中删除吗？"
+
+#: Jabber/jabberprotocol.cpp:409
+#, kde-format
+msgid "Remove"
+msgstr "删除"
+
+#: Jabber/jabberprotocol.cpp:409
+#, kde-format
+msgid "Do Not Remove"
+msgstr "不删除"
+
+#: Jabber/jabberprotocol.cpp:431
+#, kde-format
+msgid "Please enter your nickname for the room %1"
+msgstr "请输入您在房间 %1 中的昵称"
+
+#: Jabber/jabberprotocol.cpp:454
+#, kde-format
+msgid "You have been invited to %1"
+msgstr "您已经被邀请到 %1"
+
+#: kgamewin.cpp:144 kgamewin.cpp:734
+#, kde-format
+msgid "Cannot load icon<br>Program cannot continue"
+msgstr "无法加载图标<br>程序无法继续执行"
+
+#: kgamewin.cpp:377 kgamewin.cpp:394 kgamewin.cpp:411
+#, kde-format
+msgid "Cannot load button image %1<br>Program cannot continue"
+msgstr "无法加载按钮图像 %1<br>程序无法继续执行"
+
+#: kgamewin.cpp:380
+#, kde-format
+msgid "Play over Jabber"
+msgstr "在 Jabber 上玩游戏"
+
+#: kgamewin.cpp:381
+#, kde-format
+msgid "Play KsirK over the Jabber Network"
+msgstr "在 Jabber 网络上玩 KsirK"
+
+#: kgamewin.cpp:382
+#, kde-format
+msgid "Jabber"
+msgstr "Jabber"
+
+#: kgamewin.cpp:384
+#, kde-format
+msgid ""
+"Allow to connect to a KsirK Jabber Multi User Gaming Room to create new "
+"games or to join present games"
+msgstr ""
+"允许玩家连接到 KsirK Jabber 网络上的多人游戏室，并新建游戏或加入到已有的游戏"
+"中"
+
+#. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
+#: kgamewin.cpp:397 mainMenu.ui:111
+#, kde-format
+msgid "New Standard TCP/IP Network Game"
+msgstr "新建标准 TCP/IP 网络游戏"
+
+#: kgamewin.cpp:398
+#, kde-format
+msgid "New TCP/IP"
+msgstr "新建 TCP/IP"
+
+#: kgamewin.cpp:400
+#, kde-format
+msgid "Create a new standard TCP/IP network game"
+msgstr "新建标准 TCP/IP 网络游戏"
+
+#: kgamewin.cpp:415
+#, kde-format
+msgid "Join a Standard TCP/IP Network Game"
+msgstr "加入标准 TCP/IP 协议的网络游戏"
+
+#: kgamewin.cpp:416
+#, kde-format
+msgid "Join TCP/IP"
+msgstr "加入 TCP/IP"
+
+#: kgamewin.cpp:418
+#, kde-format
+msgid "Join a standard TCP/IP network game"
+msgstr "加入标准 TCP/IP 协议的网络游戏"
+
+#: kgamewin.cpp:424
+#, kde-format
+msgid "Display the Current Player's Goal"
+msgstr "显示当前玩家目标"
+
+#: kgamewin.cpp:427
+#, kde-format
+msgid "Display the current player's goal"
+msgstr "显示当前玩家目标"
+
+#: kgamewin.cpp:434
+#, kde-format
+msgid "Contextual Help"
+msgstr "上下文帮助"
+
+#: kgamewin.cpp:445
+#, kde-format
+msgid "Lets the next player play"
+msgstr "前进到下一个玩家"
+
+#: kgamewin.cpp:450
+#, kde-format
+msgid "Finish moves"
+msgstr "完成移动"
+
+#: kgamewin.cpp:452
+#, kde-format
+msgid "Finish moving the current sprites"
+msgstr "完成当前的所有行军"
+
+#: kgamewin.cpp:578
+#, kde-format
+msgid ""
+"World definition file not found - Verify your installation<br>Program cannot "
+"continue"
+msgstr "世界定义文件找不到 - 请检验您的安装<br>程序无法继续执行"
+
+#: kgamewin.cpp:798
+#, kde-format
+msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
+msgstr "<font color=\"red\">来自 %3 的 %1 征服了 %2</font>"
+
+#: kgamewin.cpp:822
+#, kde-format
+msgid "%1, you are defeated! Bye, bye..."
+msgstr "%1，您被打败了！再见..."
+
+#: kgamewin.cpp:894
+#, kde-format
+msgid "%1: it is up to you again"
+msgstr "%1：又轮到您了"
+
+#: kgamewin.cpp:906
+#, kde-format
+msgid "%1 won!"
+msgstr "%1 韩元!"
+
+#: kgamewin.cpp:909
+#, kde-format
+msgid "<big><b>%1</b>, you won!</big>"
+msgstr "<big><b>%1</b>，你赢了！</big>"
+
+#: kgamewin.cpp:913
+#, kde-format
+msgid ""
+"<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
+"play again?"
+msgstr "<br>胜者的目标是：<br><i>%1</i><br><br>您想要再玩一次吗？"
+
+#: kgamewin.cpp:919
+#, kde-format
+msgid "<br>You conquered all the world!"
+msgstr "<br>你已经征服了世界！"
+
+#: kgamewin.cpp:923
+#, kde-format
+msgid "<br>He conquered all the world!"
+msgstr "<br>他已经征服了世界！"
+
+#: kgamewin.cpp:1046
+#, kde-format
+msgid "Do you want to quit the game?"
+msgstr "您想要退出游戏吗？"
+
+#: kgamewin.cpp:1056
+#, kde-format
+msgid "Before you quit, do you want to save your game?"
+msgstr "您想在退出前保存游戏吗？"
+
+#: kgamewin.cpp:1091
+#, kde-format
+msgctxt "@title:window"
+msgid "KsirK - Load Game"
+msgstr "KsirK - 加载游戏"
+
+#: kgamewin.cpp:1129
+#, kde-format
+msgid "Waiting for the connection of %1 network players."
+msgstr "正在等待 %1 位网络玩家连入。"
+
+#: kgamewin.cpp:1208
+#, kde-format
+msgid ""
+"<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
+"with 1 army!<br> How do you want to defend <font color=\"blue\">%4</font>?"
+msgid_plural ""
+"<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
+"with %1 armies!<br> How do you want to defend <font color=\"blue\">%4</font>?"
+msgstr[0] ""
+"<font color=\"red\">%2</font>使用%1支军队从<font color=\"red\">%3</font>攻击"
+"你！<br>你希望如何防御<font color=\"blue\">%4</font>？"
+
+#: kgamewin.cpp:1237
+#, kde-format
+msgid "Defend 1"
+msgstr "防御 1"
+
+#: kgamewin.cpp:1238
+#, kde-format
+msgid "Defend 2"
+msgstr "防御 2"
+
+#: kgamewin.cpp:1239
+#, kde-format
+msgid "Defend-Auto"
+msgstr "自动防御"
+
+#: kgamewin.cpp:1358
+#, kde-format
+msgid "Waiting for %1 players to connect"
+msgstr "正在等待 %1 名玩家连入"
+
+#: kgamewin.cpp:1748 kgamewin.cpp:1788
+#, kde-format
+msgid "There is no country here!"
+msgstr "这里没有国家！"
+
+#: kgamewin.cpp:1752 kgamewin.cpp:1793
+#, kde-format
+msgid "You are not the owner of the first country: %1!"
+msgstr "您不是第一个国家的所有者: %1!"
+
+#: kgamewin.cpp:1756
+#, kde-format
+msgid "You are not the owner of the second country: %1!"
+msgstr "您不是第二个国家 %1 的所有者！"
+
+#: kgamewin.cpp:1760 kgamewin.cpp:1804
+#, kde-format
+msgid "You are trying to move armies from %1 to itself!"
+msgstr "您正试图将军队从 %1 调回原据点！"
+
+#: kgamewin.cpp:1765 kgamewin.cpp:1810
+#, kde-format
+msgid "%1 is not a neighbour of %2!"
+msgstr "%1 和 %2 不相邻！"
+
+#: kgamewin.cpp:1771
+#, kde-format
+msgid "Moving armies from %1 to %2."
+msgstr "将军队从 %1 调派到 %2。"
+
+#: kgamewin.cpp:1799
+#, kde-format
+msgid "You are the owner of the second country: %1!"
+msgstr "您不是第二个国家 %1 的所有者！"
+
+#: kgamewin.cpp:1817
+#, kde-format
+msgid "Ready to fight!"
+msgstr "准备开战！"
+
+#: kgamewin.cpp:1911
+#, kde-format
+msgid "<font color=\"orange\">No country here!</font>"
+msgstr "<font color=\"orange\">这里没有国家！</font>"
+
+#: kgamewin.cpp:1919
+#, kde-format
+msgid "<font color=\"orange\">You are not the owner of %1!</font>"
+msgstr "<font color=\"orange\">您不是 %1 的所有者！</font>"
+
+#: kgamewin.cpp:1926
+#, kde-format
+msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
+msgstr "<font color=\"orange\">在 %2 只有 %1 支军队！</font>"
+
+#: kgamewin.cpp:2066
+#, kde-format
+msgid "%1, you defend with the only army you have in %2."
+msgstr "%1，您只能在 %2 以孤军防御。"
+
+#: kgamewin.cpp:2290
+#, kde-format
+msgid "Exchange armies again or continue?"
+msgstr "要再次交换军队，还是继续？"
+
+#: kgamewin.cpp:2315
+#, kde-format
+msgid ""
+"You must distribute\n"
+"all your armies"
+msgstr ""
+"您必须将自己的\n"
+"所有军队派驻好"
+
+#: kgamewin.cpp:2315 main.cpp:42
+#, kde-format
+msgid "KsirK"
+msgstr "KsirK"
+
+#: kgamewin.cpp:2455
+#, kde-format
+msgid "Battle ongoing."
+msgstr "战斗中。"
+
+#: kgamewin.cpp:2576 kgamewin.cpp:2587 kgamewin.cpp:2610
+#, kde-format
+msgid "%1, it is up to you."
+msgstr "%1，轮到您了。"
+
+#: kgamewin.cpp:2639
+#, kde-format
+msgid "Do you really want to end your current game and start a new one?"
+msgstr "您真的想要结束当前游戏并开始新游戏吗？"
+
+#: kgamewin.cpp:2895
+#, kde-format
+msgid "<b>KsirK quick Introduction</b>"
+msgstr "<b>KsirK 简介</b>"
+
+#: kgamewin.cpp:2899
+#, kde-format
+msgid ""
+"Attacks and moves are issued through drag & drop between neighbour countries."
+msgstr "您可以在相邻国家间以拖放操作执行攻击和调动命令。"
+
+#: kgamewin.cpp:2903
+#, kde-format
+msgid "Start a new game or join a network game with the menu or the toolbar..."
+msgstr "使用菜单或工具栏开始新游戏，或加入一个网络游戏..."
+
+#: kgamewin.cpp:2907
+#, kde-format
+msgid ""
+"and then let the system guide you through messages and tooltips appearing on "
+"buttons when hovering above them. You can disable bubble help in the options "
+"window."
+msgstr ""
+"接下来让系统通过消息或按钮上的工具提示指导您下一步的操作。您可以在选项窗口中"
+"禁用这些弹出帮助。"
+
+#: kgamewin.cpp:2914
+#, kde-format
+msgid "Don't show messages anymore"
+msgstr "不再显示信息"
+
+#: kgamewinslots.cpp:109
+#, kde-format
+msgid "%2 belongs to %3. 1 army."
+msgid_plural "%2 belongs to %3. %1 armies."
+msgstr[0] "%2属于%3。%1支军队。"
+
+#: kgamewinslots.cpp:447
+#, kde-format
+msgid "Cannot save when waiting for a defense."
+msgstr "等待防御期间无法保存。"
+
+#: kgamewinslots.cpp:454
+#, kde-format
+msgctxt "@title:window"
+msgid "KsirK - Save Game"
+msgstr "KsirK - 保存游戏"
+
+#: kgamewinslots.cpp:457
+#, kde-format
+msgid ""
+"%1 exists.\n"
+"Do you really want to overwrite it?"
+msgstr ""
+"%1 已存在。\n"
+"您真的想要覆盖它吗？"
+
+#: kgamewinslots.cpp:458
+#, kde-format
+msgid "Overwrite file?"
+msgstr "覆盖文件?"
+
+#: kgamewinslots.cpp:461
+#, kde-format
+msgid "Saving canceled"
+msgstr "已取消保存"
+
+#: kgamewinslots.cpp:475
+#, kde-format
+msgid "Game saved to %1"
+msgstr "游戏已保存到 %1"
+
+#: kgamewinslots.cpp:483
+#, kde-format
+msgid "Only game master can save the game in network playing."
+msgstr "只有游戏主机一方才能在网络游戏中保存。"
+
+#: kgamewinslots.cpp:809
+#, kde-format
+msgid ""
+"Attack by drag & drop between countries<br>Move armies the same way (last "
+"action of a turn)."
+msgstr ""
+"在地区间进行拖放即可展开攻击<br>军队调动也是一样 (每个回合最后的操作)。"
+
+#: krightdialog.cpp:116
+#, kde-format
+msgid "<b>Nationality:</b>"
+msgstr "<b>祖国：</b>"
+
+#: krightdialog.cpp:117
+#, kde-format
+msgid "<b>Continent:</b> %1"
+msgstr "<b>大陆：</b>%1"
+
+#: krightdialog.cpp:118
+#, kde-format
+msgid "<b>Country:</b> %1"
+msgstr "<b>国家：</b>%1"
+
+#: krightdialog.cpp:122
+#, kde-format
+msgid "<b>Owner:</b> %1"
+msgstr "<b>所有者：</b> %1"
+
+#: krightdialog.cpp:123
+#, kde-format
+msgid "<b><u>Country details</u></b>"
+msgstr "<b><u>国家细节</u></b>"
+
+#: krightdialog.cpp:170
+#, kde-format
+msgid "<i>Fighting in progress...</i>"
+msgstr "<i>战斗中...</i>"
+
+#: krightdialog.cpp:222
+#, kde-format
+msgid "<font color=\"red\">Attack</font> with 1 army.<br>"
+msgid_plural "<font color=\"red\">Attack</font> with %1 armies.<br>"
+msgstr[0] "使用%1支军队<font color=\"red\">攻击</font>。<br>"
+
+#: krightdialog.cpp:233
+#, kde-format
+msgid "<font color=\"blue\">Defend</font> with 1 army.<br>"
+msgid_plural "<font color=\"blue\">Defend</font> with %1 armies.<br>"
+msgstr[0] "使用%1支军队<font color=\"blue\">防御</font>。<br>"
+
+#: krightdialog.cpp:265
+#, kde-format
+msgid "Stop Auto-Attack"
+msgstr "停止自动攻击"
+
+#: krightdialog.cpp:273
+#, kde-format
+msgid "Stop Auto-Defense"
+msgstr "停止自动防御"
+
+#: krightdialog.cpp:298
+#, kde-format
+msgid "Valid"
+msgstr "有效"
+
+#: krightdialog.cpp:299
+#, kde-format
+msgid "Recycle"
+msgstr "重置"
+
+#: krightdialog.cpp:300
+#, kde-format
+msgid "Done"
+msgstr "完成"
+
+#: krightdialog.cpp:327
+#, kde-format
+msgid "%1 army to place"
+msgid_plural "%1 armies to place"
+msgstr[0] "%1支待命军队"
+
+#: krightdialog.cpp:375
+#, kde-format
+msgid "<u><b>Change some<br>placements?</b></u> "
+msgstr "<u><b>变更<br>部署位置吗？</b></u> "
+
+#: krightdialog.cpp:390
+#, kde-format
+msgid "1 army to place"
+msgid_plural "%1 armies to place"
+msgstr[0] "%1支待命军队"
+
+#: krightdialog.cpp:392
+#, kde-format
+msgid "<b>Armies:</b> %1"
+msgstr "<b>军队数：</b>%1"
+
+#: krightdialog.cpp:471
+#, kde-format
+msgid "<font color=\"red\">lost armies: %1</font>"
+msgstr "<font color=\"red\">损失军队数：%1</font>"
+
+#: krightdialog.cpp:476
+#, kde-format
+msgid "<font color=\"blue\">lost armies: %1</font>"
+msgstr "<font color=\"blue\">损失军队数：%1</font>"
+
+#: ksirkConfigDialog.cpp:37
+#, kde-format
+msgid "Preferences"
+msgstr "首选项"
+
+#. i18n: ectx: label, entry (spritesSpeed), group (General)
+#: ksirksettings.kcfg:9
+#, kde-format
+msgid "The sprites speed: slow, normal, quick, immediate"
+msgstr "部队移动速度：慢、普通、快、即时"
+
+#. i18n: ectx: label, entry (soundEnabled), group (General)
+#: ksirksettings.kcfg:13
+#, kde-format
+msgid "If true, sounds are played; they are not otherwise."
+msgstr "如果选中此项，将会播放游戏音效，否则为无声。"
+
+#. i18n: ectx: label, entry (helpEnabled), group (General)
+#: ksirksettings.kcfg:17
+#, kde-format
+msgid "If true, help is displayed; they are not otherwise."
+msgstr "如果选中此项，将会显示游戏帮助，否则无帮助。"
+
+#. i18n: ectx: label, entry (showArmiesNumbers), group (General)
+#: ksirksettings.kcfg:21
+#, kde-format
+msgid "If true, the number of armies is displayed on each country."
+msgstr "如果选中此项，会显示每个国家的军队数量。"
+
+#. i18n: ectx: label, entry (Theme), group (General)
+#: ksirksettings.kcfg:25
+#, kde-format
+msgid "The graphical theme to be used."
+msgstr "要使用的图像主题。"
+
+#. i18n: ectx: label, entry (jabberId), group (General)
+#: ksirksettings.kcfg:28
+#, kde-format
+msgid "The last used Jabber Id."
+msgstr "最后使用的 Jabber ID。"
+
+#. i18n: ectx: label, entry (jabberPassword), group (General)
+#: ksirksettings.kcfg:31
+#, kde-format
+msgid "The password of the last used Jabber Id."
+msgstr "最后使用的 Jabber ID 的密码。"
+
+#. i18n: ectx: label, entry (roomJid), group (General)
+#: ksirksettings.kcfg:34
+#, kde-format
+msgid "The last used Jabber groupchat room."
+msgstr "最后进入的 Jabber 群聊聊天室。"
+
+#. i18n: ectx: label, entry (roomPassword), group (General)
+#: ksirksettings.kcfg:37
+#, kde-format
+msgid "The password for last used Jabber groupchat room."
+msgstr "最后进入的 Jabber 群聊聊天室的密码。"
+
+#. i18n: ectx: label, entry (nickname), group (General)
+#: ksirksettings.kcfg:40
+#, kde-format
+msgid "The nickname used in the last used Jabber groupchat room."
+msgstr "在最后进入的 Jabber 群聊聊天室内使用的昵名。"
+
+#. i18n: ectx: Menu (game)
+#: ksirkui.rc:10
+#, kde-format
+msgid "&Game"
+msgstr "游戏(&G)"
+
+#. i18n: ectx: Menu (settings)
+#: ksirkui.rc:24
+#, kde-format
+msgid "&Settings"
+msgstr "设置(&S)"
+
+#. i18n: ectx: Menu (help)
+#: ksirkui.rc:26
+#, kde-format
+msgid "&Help"
+msgstr "帮助(&H)"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: ksirkui.rc:31
+#, kde-format
+msgid "Main Toolbar"
+msgstr "主工具栏"
+
+#: main.cpp:44
+#, kde-format
+msgid "KsirK - World Domination Strategy Game"
+msgstr "KsirK - 世界支配战略游戏"
+
+#: main.cpp:46
+#, kde-format
+msgid "(c) 2002-2015, Gaël de Chalendar\n"
+msgstr "(c) 2002-2015, Gaël de Chalendar\n"
+
+#: main.cpp:47
+#, kde-format
+msgid ""
+"For help and user manual, please see\n"
+"the KsirK web site."
+msgstr ""
+"要获得帮助和用户手册，请参看\n"
+"KsirK 网站。"
+
+#: main.cpp:50
+#, kde-format
+msgid "Gaël de Chalendar aka Kleag"
+msgstr ""
+
+#: main.cpp:51
+#, kde-format
+msgid "Nemanja Hirsl"
+msgstr "Nemanja Hirsl"
+
+#: main.cpp:51
+#, kde-format
+msgid "Current maintainer"
+msgstr "当前维护者"
+
+#: main.cpp:52
+#, kde-format
+msgid "Robin Doer"
+msgstr "Robin Doer"
+
+#: main.cpp:53
+#, kde-format
+msgid "Albert Astals Cid"
+msgstr "Albert Astals Cid"
+
+#: main.cpp:54
+#, kde-format
+msgid "Michal Golunski (Polish translation)"
+msgstr "Michal Golunski(波兰语翻译)"
+
+#: main.cpp:55
+#, kde-format
+msgid "French students of the 'IUP ISI 2007-2008':"
+msgstr "法国学生，来自“IUP ISI 2007-2008”："
+
+#: main.cpp:56
+#, kde-format
+msgid ""
+"&nbsp;&nbsp;Anthony Rey<br/>&nbsp;&nbsp;Benjamin Lucas<br/>&nbsp;&nbsp;"
+"Benjamin Moreau<br/>&nbsp;&nbsp;Gaël Clouet<br/>&nbsp;&nbsp;Guillaume "
+"Pelouas<br/>&nbsp;&nbsp;Joël Marco<br/>&nbsp;&nbsp;Laurent Dang<br/>&nbsp;"
+"&nbsp;Nicolas Linard<br/>&nbsp;&nbsp;Vincent Sac"
+msgstr ""
+"&nbsp;&nbsp;Anthony Rey<br/>&nbsp;&nbsp;Benjamin Lucas<br/>&nbsp;&nbsp;"
+"Benjamin Moreau<br/>&nbsp;&nbsp;Gaël Clouet<br/>&nbsp;&nbsp;Guillaume "
+"Pelouas<br/>&nbsp;&nbsp;Joël Marco<br/>&nbsp;&nbsp;Laurent Dang<br/>&nbsp;"
+"&nbsp;Nicolas Linard<br/>&nbsp;&nbsp;Vincent Sac"
+
+#. i18n: ectx: property (text), widget (QLabel, lTitle)
+#: mainMenu.ui:38
+#, kde-format
+msgid "<h1>KsirK</h1>"
+msgstr "<h1>KsirK</h1>"
+
+#. i18n: ectx: property (text), widget (QPushButton, pbNewGame)
+#: mainMenu.ui:97
+#, kde-format
+msgid "New Local Game"
+msgstr "新建本地游戏"
+
+#. i18n: ectx: property (text), widget (QPushButton, pbJabberGame)
+#: mainMenu.ui:104
+#, kde-format
+msgid "Play KsirK over Jabber Network"
+msgstr "在 Jabber 网络上玩 KsirK"
+
+#. i18n: ectx: property (text), widget (QPushButton, pbJoin)
+#: mainMenu.ui:118
+#, kde-format
+msgid "Join Standard TCP/IP Network Game"
+msgstr "加入标准 TCP/IP 协议的网络游戏"
+
+#. i18n: ectx: property (text), widget (QPushButton, pbLoad)
+#: mainMenu.ui:125
+#, kde-format
+msgid "Load..."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, pbQuit)
+#: mainMenu.ui:145
+#, kde-format
+msgid "Quit"
+msgstr "退出"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, KsirkPreferencesWidget)
+#: preferences.ui:26
+#, kde-format
+msgid "KsirK Preferences"
+msgstr "KsirK 首选项"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_soundEnabled)
+#: preferences.ui:38
+#, kde-format
+msgid "Sound enabled"
+msgstr "已启用声音"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: preferences.ui:51
+#, kde-format
+msgid "Sprites speed (slow, normal, rapid, immediate):"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_helpEnabled)
+#: preferences.ui:95
+#, kde-format
+msgid "Show help"
+msgstr "显示帮助"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_showArmiesNumbers)
+#: preferences.ui:102
+#, kde-format
+msgid "Show number of armies on countries"
+msgstr "显示各国军队数量"
+
+#: SaveLoad/ksirkgamexmlhandler.cpp:57
+#, kde-format
+msgid "Wrong save game format. Waited %1 and got %2!"
+msgstr "错误的保存游戏格式。应为 %1，但读取到 %2！"
+
+#: SaveLoad/ksirkgamexmlhandler.cpp:58
+#, kde-format
+msgid "KsirK - Cannot load!"
+msgstr "KsirK - 无法加载！"
+
+#: SaveLoad/ksirkgamexmlhandler.cpp:139
+#, kde-format
+msgid "Current player is: %1"
+msgstr "当前玩家：%1"
+
+#: SaveLoad/ksirkgamexmlloader.cpp:46
+#, kde-format
+msgid "Skin file parsing error"
+msgstr "皮肤文件解析出错"
+
+#: SaveLoad/ksirkgamexmlloader.cpp:47
+#, kde-format
+msgid "KsirK - Error"
+msgstr "KsirK - 错误"
+
+#: Sprites/animsprite.cpp:511
+#, kde-format
+msgid "Cannot find Max X for sprite: no background!"
+msgstr "找不到最大的行军 X 值：没有背景！"
+
+#: Sprites/animsprite.cpp:526
+#, kde-format
+msgid "Cannot find Max Y for sprite: no background!"
+msgstr "找不到最大的行军 Y 值：没有背景！"
+
+#: Sprites/skinSpritesData.cpp:88
+#, kde-format
+msgid "Error - Unknown skin int data: "
+msgstr "错误 - 未知的皮肤整数数据： "
+
+#: Sprites/skinSpritesData.cpp:104
+#, kde-format
+msgid "Error - Unknown skin string data: "
+msgstr "错误 - 未知的皮肤字符串数据： "

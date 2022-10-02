@@ -1,0 +1,989 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY ksirk '<application
+>KsirK</application
+>'>
+  <!ENTITY kappname "&ksirk;"
+><!-- replace ksirk here -->
+  <!ENTITY package "kdegames">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Estonian  "INCLUDE">
+]>
+
+<book id="ksirk" lang="&language;">
+
+<bookinfo>
+<title
+>&ksirk;i käsiraamat</title>
+
+<authorgroup>
+<author
+><firstname
+>Gael</firstname
+> <othername
+>Kleag</othername
+> <surname
+>de Chalendar</surname
+> <affiliation
+> <address
+><email
+>Kleag@free.fr</email
+></address>
+</affiliation>
+</author>
+<author
+><firstname
+>Nemanja</firstname
+> <othername
+></othername
+> <surname
+>Hirsl</surname
+> <affiliation
+> <address
+><email
+>nemhirsl@gmail.com</email
+></address>
+</affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+> <surname
+>Laane</surname
+> <affiliation
+><address
+><email
+>bald@smail.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+</authorgroup>
+
+
+<copyright>
+<year
+>2002-2012</year>
+<holder
+>Gael de Chalendar</holder>
+</copyright>
+<copyright>
+<year
+>2013</year>
+<holder
+>Nemanja Hirsl</holder>
+</copyright>
+<!-- Translators: put here the copyright notice of the translation -->
+<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
+     and in the FDL itself on how to use it. -->
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<!-- Date and version information of the documentation
+Don't forget to include this last date and this last revision number, we
+need them for translation coordination !
+Please respect the format of the date (DD/MM/YYYY) and of the version
+(V.MM.LL), it could be used by automation scripts.
+Do NOT change these in the translation. -->
+
+<date
+>2013-02-17</date>
+<releaseinfo
+>4.10.0</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+<para
+>&ksirk; on tuntud strateegiamängu arvutiversioon. Sellest on olemas nii kommerts- kui ka teisi vaba tarkvara versioone, kuid mina (Gael de Chalendar) lõin selle mängu esialgu C++ programmeerimiskeele õppimiseks ning olen sealtpeale seda aina arendanud (täpsemalt kõneleb sellest fail README). </para>
+<para
+>Praeguses versioonis on &ksirk; mitme mängijaga võrguvalmidusega mäng, milles kasutatakse tehisaju (täpsemalt kõneleb sellest TODO) </para>
+<para
+>Käesolev käsiraamat toob ära põhiasjad, mida tasuks mängimisel teada. Täpsemat teavet annavad mängule lisatud kohtspikrid ja teated mänguakna olekuribal. Omaette peatükk selgitab, kuidas luua &ksirk;i nahku. </para>
+<para
+>Mängu eesmärk on õige lihtne - vallutada tuleb maailm... Selleks tuleb oma armeedega rünnata naabreid. Kas pole lihtne ja rahumeelne,ah? </para>
+</abstract>
+
+<!-- This is a set of Keywords for indexing by search engines.
+Please at least include KDE, the KDE package it is in, the name
+ of your application, and a few relevant keywords. -->
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdegames</keyword>
+<keyword
+>mäng</keyword>
+<keyword
+>strateegia</keyword>
+<keyword
+>Risk</keyword>
+<keyword
+>vaba</keyword>
+<keyword
+>GPL</keyword>
+<keyword
+>Võrk</keyword>
+<keyword
+>AI</keyword>
+</keywordset>
+
+</bookinfo>
+
+<!-- The contents of the documentation begin here.  Label
+each chapter so with the id attribute. This is necessary for two reasons: it
+allows you to easily reference the chapter from other chapters of your
+document, and if there is no ID, the name of the generated HTML files will vary
+from time to time making it hard to manage for maintainers and for the CVS
+system. Any chapter labeled (OPTIONAL) may be left out at the author's
+discretion. Other chapters should not be left out in order to maintain a
+consistent documentation style across all KDE apps. -->
+
+<chapter id="introduction">
+<title
+>Sissejuhatus</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+<para
+>&ksirk; on tuntud strateegiamängu arvutiversioon. Sellest on olemas nii kommerts- kui ka teisi vaba tarkvara versioone, kuid mina (Gael de Chalendar) lõin selle mängu esialgu C++ programmeerimiskeele õppimiseks ning olen sealtpeale seda aina arendanud (täpsemalt kõneleb sellest fail README). </para>
+<para>
+<screenshot>
+  <screeninfo
+>&ksirk;i pilt</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="firing-screenshot.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Pilt</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para
+>Praeguses versioonis on &ksirk; mitme mängijaga võrguvalmidusega mäng, milles kasutatakse tehisaju (täpsemalt kõneleb sellest TODO) </para>
+<para
+>Käesolev käsiraamat toob ära põhiasjad, mida tasuks mängimisel teada. Täpsemat teavet annavad mängule lisatud kohtspikrid ja teated mänguakna olekuribal. </para>
+<para
+>Mängu eesmärk on õige lihtne - vallutada tuleb maailm... Selleks tuleb oma armeedega rünnata naabreid. Kas pole lihtne ja rahumeelne,ah? </para>
+</chapter>
+
+<chapter id="using-kapp">
+<title
+>&ksirk;i kasutamine</title>
+
+<!-- This chapter should tell the user how to use your app. You should use as
+many sections (Chapter, Sect1, Sect3, etc...) as is necessary to fully document
+your application. -->
+
+
+
+<sect1 id="playing-ksirk">
+<title
+>&ksirk;i mängimine</title>
+<para
+>Eelmärkus: kaarti saab kerida kolmel viisil:</para>
+<itemizedlist
+><listitem
+><para
+>Võib asetada hiire aknapiirde lähedale ning kaart kerib ise selles suunas</para
+></listitem>
+<listitem
+><para
+>Kasutada võib hiireratast: kui seda teha niisama, keritakse püstsuunas, kui vajutada samal ajal alla klahv &Alt;, siis rõhtsuunas</para
+></listitem>
+<listitem
+><para
+>Kasutada võib nooleklahve</para
+></listitem
+></itemizedlist>
+<sect2 id="mainmenu">
+<title
+>Mängu käivitamine</title>
+<para
+>&ksirk;i käivitudes ilmub nähtavale peamenüü. <screenshot>
+  <screeninfo
+>&ksirk;i peamenüü</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="introscreen.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Peamenüü</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<variablelist>
+<varlistentry>
+<term>
+  <menuchoice>
+    <guimenu
+>Uus kohalik mäng</guimenu>
+  </menuchoice>
+</term>
+<listitem>
+  <para>
+  <action
+>Käivitab uue mängu</action>
+  </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+  <menuchoice>
+    <guimenu
+>&ksirk;i mängimine Jabberi võrgus</guimenu>
+  </menuchoice>
+</term>
+<listitem>
+  <para>
+    <action
+>&ksirk;i mängimine üle <ulink url="http://en.wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol"
+>Jabberi</ulink
+>. Selleks on vaja eelnevalt registreerida Jabberi konto.</action>
+  </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+  <menuchoice>
+    <guimenu
+>Uus standardne TCP/IP võrgumäng</guimenu>
+  </menuchoice>
+</term>
+<listitem>
+  <para>
+    <action
+>Käivitab uue mängu <ulink url="http://en.wikipedia.org/wiki/Internet_protocol_suite"
+>tavalise internetiprotokolli</ulink
+> vahendusel.</action>
+  </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+  <menuchoice>
+    <guimenu
+>Ühine standardse TCP/IP võrgumänguga</guimenu>
+  </menuchoice>
+</term>
+<listitem>
+  <para>
+    <action
+>Võimaldab ühineda teise kasutaja mänguga <ulink url="http://en.wikipedia.org/wiki/Internet_protocol_suite"
+>tavalise internetiprotokolli</ulink
+> vahendusel.</action>
+  </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+  <term>
+    <menuchoice>
+      <guimenu
+>Laadi</guimenu>
+    </menuchoice>
+  </term>
+  <listitem>
+    <para>
+      <action
+>Võimaldab laadida varem salvestatud mängu</action>
+    </para>
+  </listitem>
+</varlistentry>
+<varlistentry>
+  <term>
+    <menuchoice>
+      <guimenu
+>Välju</guimenu>
+    </menuchoice>
+  </term>
+  <listitem>
+    <para>
+      <action
+>Nojah, kui sa tegelikult ikkagi ei taha mängida...</action>
+    </para>
+  </listitem>
+</varlistentry>
+</variablelist>
+</para>
+<para
+>Kui valida <guibutton
+>Uus kohalik mäng</guibutton
+>, ilmub dialoog <guilabel
+>Uue mängu omadused</guilabel
+>, kus saab valida mängijate arvu, kasutatava naha (ehk teema), mängu tüübi (kas mõne eesmärgi täitmine või lihtsalt vallutamine) ning ka selle, kas mäng on puhtalt kohalik või võrgus mängitav. Uusi nahku saab alla laadida nupule <guibutton
+>Laadi alla uusi nahku</guibutton
+> klõpsates. <screenshot>
+  <screeninfo
+>Uue mängu dialoog</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="newgamedialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Uue mängu dialoog</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para
+>TCP/IP võrgumängu alustamiseks vali avaekraanil <guilabel
+>Uus standardne TCP/IP võrgumäng</guilabel
+>. Seejärel saad määrata võrgu parameetrid: kohalike mängijate arvu ning TCP pordi, kus oodata ühendusi. <screenshot>
+  <screeninfo
+>Võrgumängu parameetrite dialoog</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="numnetplayersdialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Võrgumängu parameetrite dialoog</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para
+>Seejärel saavad võrgumängijad liituda, valides avaekraanil <guilabel
+>Ühine standardse TCP/IP võrgumänguga</guilabel
+> ning määrates IP või masinanime ning pordi numbri, mille äsja määrasid. <screenshot>
+  <screeninfo
+>Võrgumänguga ühinemise dialoog</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="joinnetgame.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Võrgumänguga ühinemise dialoog</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para
+>Kõiki ühendusi näidatakse uuel real kaardi pisipildi all tabelis <guilabel
+>Mängijad</guilabel
+>. <screenshot>
+  <screeninfo
+>Uue mängija rida</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="justjoined.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Uue mängija rida</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+</para>
+<para
+>Oletame, et jätsid kehtima kõik vaikeseadistused ja klõpsasid <guibutton
+>Edasi</guibutton
+>. Seejärel tuleb seadistada kaks mängijat. Mõlema puhul tuleb valida nimi, riik ja vajaduse korral ka parool, et keegi ei saaks ka salvestatud mängu laadides seda mängijat parooli teadmata kasutada. Lõpuks tuleb määrata, kas mängija on arvuti või inimene. <screenshot>
+  <screeninfo
+>Mängija seadistamise dialoog</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="playersetupdialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Mängija seadistamise dialoog</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para
+>Kui otsustasid mängida eesmärgiga, siis näidatakse pärast klõpsu nupule <guibutton
+>Alusta</guibutton
+> kõigi kohalike mängijate eesmärke koos hoiatusega, et teised mängijad, kes samal ajal ekraani vaatavad, võiksid pilgu viisakalt kõrvale pöörata. <screenshot>
+  <screeninfo
+>Eesmärgi kuvamisel näidatav hoiatus</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="displaygoalwarningmessage.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Eesmärgi kuvamisel näidatav hoiatus</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<screenshot>
+  <screeninfo
+>Mängu eesmärgi dialoog</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="displaygoalmessage.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Mängu eesmärgi dialoog</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+</sect2>
+
+<sect2 id="distribution">
+<title
+>Paigutamine</title>
+<para
+>Mängu algul jagatakse kõigile mängijatele maad. Iga maa sisaldab algul vähemalt üht armeed (seda kujutab jalaväelane). Igal mängijal on mõned armeed, mida ta saab oma käigu ajal oma maade vahel ära jaotada (neid näitab nimi ja lipp olekuribal). Pane tähele, et ratsaväelane tähistab viit ja suurtükk kümmet armeed. </para>
+<para
+>Armee paigutamiseks mõnele oma maale klõpsa sellel hiire vasaku nupuga. Armee eemaldamiseks klõpsa hiire parema nupuga. Pane tähele, et üldjuhul ei saa eemaldada rohkem armeesid, kui sa oled paigutanud. <screenshot>
+  <screeninfo
+>Armeede paigutamine</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="placingarmies.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Armeede paigutamine</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+</para>
+<para
+>Kui mängija on oma armeed paigutanud, hakkab seda automaatselt tegema järgmine mängija. Kui kõik mängijad on oma armeed paigutanud, tekib kaks võimalust, mille vahel saab valida kahe parempoolsel paneelil paikneva nupuga: <variablelist>
+<varlistentry>
+<term>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="recycling.png" format="PNG"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>Vaata uuesti üle</phrase>
+        </textobject>
+      </inlinemediaobject>
+    <guibutton
+>Vaata uuesti üle</guibutton>
+</term>
+<listitem>
+  <para>
+  <action
+>Üks mängija soovib mõningaid valikuid muuta. Esimene mängija võib nüüd eemaldada mõnele maale paigutatud armee, klõpsates parema nupuga, ning paigutada selle mõnele teisele maale, klõpsates sellel hiire vasaku nupuga. Kui ta on lõpetanud, annab ta klõpsuga nupule <guibutton
+>Valmis</guibutton
+> järje üle teisele mängijale. Kui kõik mängijad on vajaduse korral oma jõude ümber paigutanud, on taas näha kaks nuppu. </action>
+  </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="recyclingFinished.png" format="PNG"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>Paigutamise lõpetamine</phrase>
+        </textobject>
+      </inlinemediaobject>
+    <guibutton
+>Valmis</guibutton>
+</term>
+<listitem
+><para
+><action
+>Ümberpaigutamine on tehtud ja mäng võib jätkuda. </action
+></para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para>
+</sect2>
+
+<sect2 id="fight">
+<title
+>Võitlus</title>
+<para
+>Pärast paigutamist ja võimalikku ümberpaigutamist algab käik ise. Selle juures on järgmised valikud: <variablelist>
+  <varlistentry>
+    <term>
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="joueurSuivant.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Järgmine mängija</phrase>
+            </textobject>
+          </inlinemediaobject>
+        <guibutton
+>Järgmine mängija</guibutton>
+    </term>
+    <listitem>
+      <para>
+        <action
+>Aktiivne mängija on käigu lõpetanud ja annab järje järgmisele mängijale. </action>
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term>
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="attackOne.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Ründa ühega</phrase>
+            </textobject>
+          </inlinemediaobject>
+&nbsp;<inlinemediaobject
+> <imageobject
+> <imagedata fileref="attackTwo.png" format="PNG"/> </imageobject
+> <textobject
+> <phrase
+>Ründa kahega</phrase
+> </textobject
+> </inlinemediaobject
+> &nbsp;<inlinemediaobject
+> <imageobject
+> <imagedata fileref="attackThree.png" format="PNG"/> </imageobject
+> <textobject
+> <phrase
+>Ründa kolmega</phrase
+> </textobject
+> </inlinemediaobject
+><guibutton
+>Rünnak ühe, kahe või kolme armeega</guibutton
+> &nbsp;<inlinemediaobject
+> <imageobject
+> <imagedata fileref="autoattack.png" format="PNG"/> </imageobject
+> <textobject
+> <phrase
+>Automaatnerünnak</phrase
+> </textobject
+> </inlinemediaobject
+> <guibutton
+>Automaatne rünnak</guibutton
+> </term>
+    <listitem>
+      <para
+>Ründamiseks lohista hiirega ründavalt maalt rünnatavale maale. Seejärel ilmub kontekstimenüü, mis näitab äsjamainitud kirjeid. <screenshot
+> <screeninfo
+>Rünnakumenüü</screeninfo
+> <mediaobject
+> <imageobject
+> <imagedata fileref="attackmenu.png" format="PNG"/> </imageobject
+> <textobject
+> <phrase
+>Rünnakumenüü</phrase
+> </textobject
+> </mediaobject
+> </screenshot
+> Et maa X saaks rünnata maad Y x armeega, peab olema täidetud kaks tingimust:</para>
+          <itemizedlist
+><listitem
+><para
+>kaks maad peavad olema naabrid;</para
+></listitem>
+          <listitem
+><para
+>maal X peab enne rünnakut olema vähemalt x+1 armeed.</para
+></listitem
+></itemizedlist>
+        <para
+>Kui rünnak on mainitud tingimuste täitmise tõttu võimalik, ilmub vajaduse korral kaitsja ette dialoog, mis pärib, kas kaitsta ühe või kahe armeega või lasta selle üle otsustada arvutil. </para>
+      <para
+>Kui kaitsja on valiku teinud, algab võitlus, mida kirjeldatakse lähemalt allpool. <screenshot>
+            <screeninfo
+>Kaitsedialoog</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="defensedialog.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Kaitsedialoog</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term>
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="moveArmies.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Armeede liigutamine</phrase>
+            </textobject>
+          </inlinemediaobject>
+          <guibutton
+>Armeede liigutamine ühelt maalt teisele</guibutton>
+    </term>
+    <listitem>
+      <para>
+        <action
+>See on mängija käigu viimane toiming. See annab võimaluse liigutada armeesid mõnelt maalt selle naabermaale. Riikide valimiseks lohista samamoodi hiirega nagu ründamisel. Kui riigid on valitud, ilmub liugur, mis võimaldab valida, mitu armeed mõlemasse riiki jääb. </action>
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</para>
+</sect2>
+<sect2  id="fight-solution">
+  <title
+>Võitluse lahendamine</title>
+  <para
+>Iga võitluses osaleva armee puhul heidetakse täringut. Mängija, kes veeretab suurema numbri, olgu tegemist siis ründaja või kaitsjaga, võidab ning väiksema arvu veeretanud mängija kaotab armeesid vastavalt veeretatud arvule. <screenshot>
+            <screeninfo
+>Rünnaku tulemus</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="shownumberofarmies.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Rünnaku tulemus</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+  </para>
+  <para
+>Kui kaitsva maa armeede arv jõuab nulli, läheb maa üle ründajale: selle lipp asendub ründaja lipuga ning üks ründaja armee paigutatakse uuele maale. Käigu lõpus näidatakse "armeede liigutamise" liugurit. <screenshot>
+            <screeninfo
+>Sissetungiliugur</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="invasionslider.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Sissetungiliugur</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+  </para>
+</sect2>
+<sect2  id="end_of_turn">
+  <title
+>Käigu lõpetamine</title>
+  <para
+>Käigu lõpetamiseks, kui sa ei soovi enam armeesid liigutada, võib klõpsata tööriistaribal nupule <guibutton
+>Järgmine mängija</guibutton
+>. </para>
+  <para
+>Kui kõik on oma käigud teinud, on voor läbi. Vastavalt omatavatele maadele jagatakse mängijatele armeesid: 1 iga kolmest riigist koosneva rühma kohta, minimaalselt 3. Samuti saavad mängijad boonust terve mandri omandamise eest, mis erineb mandriti. Vaikenaha puhul on boonuste väärtused järgmised: <table>
+      <title
+>Boonused mandriti</title>
+      <tgroup cols="2">
+        <thead>
+          <row
+><entry
+>Manner</entry
+><entry
+>Boonus</entry
+></row>
+        </thead>
+        <tbody>
+          <row
+><entry
+>Põhja-Ameerika</entry
+><entry
+>5</entry
+></row>
+          <row
+><entry
+>Lõuna-Ameerika</entry
+><entry
+>2</entry
+></row>
+          <row
+><entry
+>Euroopa</entry
+><entry
+>5</entry
+></row>
+          <row
+><entry
+>Aafrika</entry
+><entry
+>3</entry
+></row>
+          <row
+><entry
+>Aasia</entry
+><entry
+>7</entry
+></row>
+          <row
+><entry
+>Vaikse ookeani piirkond</entry
+><entry
+>2</entry
+></row>
+        </tbody>
+      </tgroup>
+    </table>
+  </para>
+  <para
+>Kui mängija on lõpetanud armeede paigutamise, tuleb klõpsata nupule <guibutton
+>Valmis</guibutton
+>, et järgmine mängija võiks asuda oma boonusarmeesid paigutama. Nagu algse paigutamise puhul, võivad kõik mängijad pärast paigutamist neid ümber paigutada või alustada uut vooru. </para>
+</sect2>
+<!-- Does not work for current TCP/IP games
+<sect2 id="sending-messages">
+<title
+>Sending messages to other players</title>
+<para>
+If you play a local game and want to communicate with the other players, well, let's speak (supposing you have no accessibility problems)... But if you are playing a network game, you can use the chat frame at the bottom of the window (it can be hidden or showed using the arrows). Just type in your message and hit &Enter;.
+          <screenshot>
+            <screeninfo
+>Sending messages</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="messagesent.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Sending messages</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+
+</para>
+</sect2>
+-->
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Käskude seletused</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>&ksirk;i peaaken</title>
+<sect2>
+<title
+>Nupud</title>
+<para>
+<variablelist>
+<varlistentry>
+<term>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="quit.png" format="PNG"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>Välju</phrase>
+        </textobject>
+      </inlinemediaobject>
+    <guibutton
+>Välju</guibutton>
+</term>
+<listitem
+><para
+><action
+>Lõpetab rakenduse töö </action
+></para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="newGame.png" format="PNG"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>Uus mäng</phrase>
+        </textobject>
+      </inlinemediaobject>
+    <guibutton
+>Uus mäng</guibutton>
+</term>
+<listitem
+><para
+><action
+>Alustab uut mängu. Ilmub dialoog, kus küsitakse mängijate arvu. Seejärel küsitakse igalt mängijalt uues dialoogis nime. </action
+></para
+></listitem>
+</varlistentry>
+</variablelist>
+</para>
+
+</sect2>
+
+</sect1>
+</chapter>
+
+<chapter id="developers">
+  <title
+>&ksirk;ist arendajatele</title>
+  
+  <para
+>API dokumentatsiooni leiab aadressilt <ulink url="http://api.kde.org/"
+>http://api.kde.org/</ulink
+>. See on üsna täielik, aga hetkel veidi aegunud. <filename
+>.cpp</filename
+> teostusfailides kommentaarid puuduvad. </para>
+  <para
+>Tasub tähele panna, et esialgu arendasin ma mängu &Windows; keskkonnas, kasutades Borland C++ ja WinG-d. Ma portisin selle &Java; peale, seejärel aga teisendasin uuesti C++ ja &kde; peale. Algul kasutasin identifikaatorites (klassinimed, meetodid, liikmed &etc;) prantsuse keelt või prantuse ja inglise keele segu. Samuti kasutasin prantsuse keelt kommentaarides. Kui ma otsustasin mängu levitada, pidasin paremaks teisendada kõik inglise keelde, aga arvestage, et inglise keel pole mu emakeel, nii et tehke julgelt ettepanekuid nii koodi kommentaaride kui ka igasuguse dokumentatsiooni parandamise osas. </para>
+  
+</chapter>
+
+<chapter id="skins">
+  <title
+>Uute nahkade loomine</title>
+  <para
+>&ksirk; sisaldab naharedaktorit, mis kannab nimetust ksirkskineditor (!) ning võimaldab muuta kõiki naha andmeid, peaasi et graafika (kaart, spraidid jne.) oleks kättesaadavad SVG-failis. Täpsemalt kõneleb sellest aga juba KsirKi naharedaktori käsiraamat. </para>
+</chapter>
+
+<chapter id="faq">
+<title
+>Küsimused ja vastused</title>
+&reporting.bugs; &updating.documentation; </chapter>
+
+<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+<title
+>Autorid ja litsents</title>
+
+<para
+>&ksirk; </para>
+<para
+>Rakenduse autoriõigus 2002-2012: Gael de Chalendar <email
+>kleag@free.fr</email
+> </para>
+<para
+>Rakenduse autoriõigus 2013: Nemanja Hirsl <email
+>nemhirsl@gmail.com</email
+> </para>
+<para
+>Kaasautorid: Robin Doer, Albert Astals Cid, Michal Golunski (tõlge poola keelde). </para>
+
+<para
+>Dokumentatsiooni autoriõigus 2002-2008: Gael de Chalendar <email
+>kleag@free.fr</email
+> </para>
+
+<para
+>Tõlge eesti keelde: Marek Laane <email
+>bald@smail.ee</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Paigaldamine</title>
+
+<sect1 id="getting-ksirk">
+<title
+>&ksirk;i hankimine</title>
+&install.intro.documentation; </sect1>
+
+<sect1 id="compilation">
+<title
+>Kompileerimine ja paigaldamine</title>
+&install.compile.documentation; </sect1>
+
+<sect1 id="configuration">
+<title
+>Seadistamine</title>
+
+<para
+>Seadistuste menüüst saab avada dialoogi, mis võimaldab: <screenshot>
+            <screeninfo
+>Seadistustedialoog</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="preferences.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Seadistustedialoog</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+</para>
+      <itemizedlist>
+        <listitem>
+          <para
+>helisid sisse või välja lülitada; </para>
+        </listitem>
+        <listitem>
+          <para
+>määrata spraitide kiiruse (aeglane kuni kohene); </para>
+        </listitem>
+        <listitem>
+          <para
+>hüpikdialoogides näidatava kontekstiabi sisse või välja lülitada; </para>
+        </listitem>
+        <listitem>
+          <para
+>näidata või peita iga maa armeede arvu. Järgneval pildil on näha kaart, millel näidatakse armeede arvu. <screenshot>
+              <screeninfo
+>Armeede arvu näitamine</screeninfo>
+              <mediaobject>
+                <imageobject>
+                  <imagedata fileref="shownumberofarmies.png" format="PNG"/>
+                </imageobject>
+                <textobject>
+                  <phrase
+>Armeede arvu näitamine</phrase>
+                </textobject>
+              </mediaobject>
+            </screenshot>
+
+          </para>
+        </listitem>
+      </itemizedlist>
+
+</sect1>
+
+</appendix>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+

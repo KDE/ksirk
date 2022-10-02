@@ -1,0 +1,1020 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY ksirk '<application
+>KsirK</application
+>'>
+  <!ENTITY kappname "&ksirk;"
+><!-- replace ksirk here -->
+  <!ENTITY package "kdegames">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Spanish "INCLUDE">
+]>
+
+<book id="ksirk" lang="&language;">
+
+<bookinfo>
+<title
+>Manual de &ksirk;</title>
+
+<authorgroup>
+<author
+><firstname
+>Gael</firstname
+> <othername
+>Kleag</othername
+> <surname
+>de Chalendar</surname
+> <affiliation
+> <address
+><email
+>Kleag@free.fr</email
+></address>
+</affiliation>
+</author>
+<author
+><firstname
+>Nemanja</firstname
+> <othername
+></othername
+> <surname
+>Hirsl</surname
+> <affiliation
+> <address
+><email
+>nemhirsl@gmail.com</email
+></address>
+</affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Rocío</firstname
+><surname
+>Gallego</surname
+><affiliation
+><address
+><email
+>traducciones@rociogallego.com</email
+></address
+></affiliation
+><contrib
+>Traductor</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Santiago</firstname
+><surname
+>Fernández Sancho</surname
+><affiliation
+><address
+><email
+>santi@kde-es.org</email
+></address
+></affiliation
+><contrib
+>Traductor</contrib
+></othercredit
+> <othercredit role="translator"
+><firstname
+>Kira</firstname
+><surname
+>J. Fernández</surname
+><affiliation
+><address
+><email
+>kirajfdez@gmail.com</email
+></address
+></affiliation
+><contrib
+>Traductora</contrib
+></othercredit
+> 
+</authorgroup>
+
+
+<copyright>
+<year
+>2002-2012</year>
+<holder
+>Gael de Chalendar</holder>
+</copyright>
+<copyright>
+<year
+>2013</year>
+<holder
+>Nemanja Hirsl</holder>
+</copyright>
+<!-- Translators: put here the copyright notice of the translation -->
+<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
+     and in the FDL itself on how to use it. -->
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<!-- Date and version information of the documentation
+Don't forget to include this last date and this last revision number, we
+need them for translation coordination !
+Please respect the format of the date (DD/MM/YYYY) and of the version
+(V.MM.LL), it could be used by automation scripts.
+Do NOT change these in the translation. -->
+
+<date
+>2013-02-17</date>
+<releaseinfo
+>4.10.0</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+<para
+>&ksirk; es una versión electrónica del conocido juego de estrategia. Existen versiones comerciales y varios clones GPL pero yo (Gaël de Chalendar) creé este juego como un ejercicio de aprendizaje de C++ y por eso lo he desarrollado hasta este punto (consulte el archivo README para obtener más detalles). </para>
+<para
+>En la versión actual, &ksirk; es un juego para varios jugadores al que se puede jugar en red y que cuenta con IA (consulte el archivo TODO para obtener más detalles) </para>
+<para
+>Esta documentación proporciona la información más importante para comenzar a jugar. Lea los consejos emergentes y los mensajes de la barra de estado para obtener más información. Un capítulo explica como crear nuevos temas para &ksirk; </para>
+<para
+>El objetivo de este juego es tan simple como conquistar el mundo... Esto se consigue atacando a sus enemigos con sus ejércitos. No es muy pacífico, ¿no? :-) </para>
+</abstract>
+
+<!-- This is a set of Keywords for indexing by search engines.
+Please at least include KDE, the KDE package it is in, the name
+ of your application, and a few relevant keywords. -->
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdegames</keyword>
+<keyword
+>juego</keyword>
+<keyword
+>estrategia</keyword>
+<keyword
+>Risk</keyword>
+<keyword
+>libre</keyword>
+<keyword
+>GPL</keyword>
+<keyword
+>Red</keyword>
+<keyword
+>IA</keyword>
+</keywordset>
+
+</bookinfo>
+
+<!-- The contents of the documentation begin here.  Label
+each chapter so with the id attribute. This is necessary for two reasons: it
+allows you to easily reference the chapter from other chapters of your
+document, and if there is no ID, the name of the generated HTML files will vary
+from time to time making it hard to manage for maintainers and for the CVS
+system. Any chapter labeled (OPTIONAL) may be left out at the author's
+discretion. Other chapters should not be left out in order to maintain a
+consistent documentation style across all KDE apps. -->
+
+<chapter id="introduction">
+<title
+>Introducción</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+<para
+>&ksirk; es una versión electrónica del conocido juego de estrategia. Existen versiones comerciales y varios clones GPL pero yo (Gaël de Chalendar) creé este juego como un ejercicio de aprendizaje de C++ y por eso lo he desarrollado hasta este punto (consulte el archivo README para obtener más detalles). </para>
+<para>
+<screenshot>
+  <screeninfo
+>Veamos una captura de pantalla de &ksirk;</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="firing-screenshot.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Captura de pantalla</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para
+>En la versión actual, &ksirk; es un juego para varios jugadores al que se puede jugar en red y que cuenta con IA (consulte el archivo TODO para obtener más detalles) </para>
+<para
+>Esta documentación proporciona la información más importante para comenzar a jugar. Por favor, lea los consejos emergentes y los mensajes de la barra de estado para completar su información. </para>
+<para
+>El objetivo de este juego es tan simple como conquistar el mundo... Esto se consigue atacando a sus enemigos con sus ejércitos. No es muy pacífico, ¿no? :-) </para>
+</chapter>
+
+<chapter id="using-kapp">
+<title
+>Uso de &ksirk;</title>
+
+<!-- This chapter should tell the user how to use your app. You should use as
+many sections (Chapter, Sect1, Sect3, etc...) as is necessary to fully document
+your application. -->
+
+
+
+<sect1 id="playing-ksirk">
+<title
+>Jugar a &ksirk;</title>
+<para
+>Nota preliminar: el mapa puede desplazarse mediante tres métodos:</para>
+<itemizedlist
+><listitem
+><para
+>Puede colocar el ratón cerca del borde de la ventana y el mapa se desplazará en esa dirección.</para
+></listitem>
+<listitem
+><para
+>Puede usar la rueda del ratón: sin modificador, el mapa se desplazará verticalmente; presionando la tecla &Alt;, lo hará horizontalmente.</para
+></listitem>
+<listitem
+><para
+>Puede usar las flechas del teclado.</para
+></listitem
+></itemizedlist>
+<sect2 id="mainmenu">
+<title
+>Iniciar una partida</title>
+<para
+>Cuando se inicia &ksirk;, se mostrará un menú principal. <screenshot>
+  <screeninfo
+>El menú principal de &ksirk;</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="introscreen.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Menú principal</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<variablelist>
+<varlistentry>
+<term>
+  <menuchoice>
+    <guimenu
+>Nueva partida local</guimenu>
+  </menuchoice>
+</term>
+<listitem>
+  <para>
+  <action
+>Inicia una partida nueva</action>
+  </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+  <menuchoice>
+    <guimenu
+>Jugar a &ksirk; a través de la red Jabber</guimenu>
+  </menuchoice>
+</term>
+<listitem>
+  <para>
+    <action
+>Jugar a &ksirk; a través de <ulink url="http://en.wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol"
+>Jabber</ulink
+>. Primero, necesitará registrar una cuenta Jabber.</action>
+  </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+  <menuchoice>
+    <guimenu
+>Nueva partida de red TCP/IP estándar</guimenu>
+  </menuchoice>
+</term>
+<listitem>
+  <para>
+    <action
+>Empezar una nueva partida utilizando el <ulink url="http://en.wikipedia.org/wiki/Internet_protocol_suite"
+>Conjunto de protocolos de Internet</ulink
+>.</action>
+  </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+  <menuchoice>
+    <guimenu
+>Unirse a una partida de red TCP/IP estándar</guimenu>
+  </menuchoice>
+</term>
+<listitem>
+  <para>
+    <action
+>Unirse a una partida creada por otro usuario utilizando el <ulink url="http://en.wikipedia.org/wiki/Internet_protocol_suite"
+>Conjunto de protocolos de Internet</ulink
+>.</action>
+  </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+  <term>
+    <menuchoice>
+      <guimenu
+>Cargar</guimenu>
+    </menuchoice>
+  </term>
+  <listitem>
+    <para>
+      <action
+>Carga una partida guardada con anterioridad</action>
+    </para>
+  </listitem>
+</varlistentry>
+<varlistentry>
+  <term>
+    <menuchoice>
+      <guimenu
+>Salir</guimenu>
+    </menuchoice>
+  </term>
+  <listitem>
+    <para>
+      <action
+>¿Finalmente, no desea jugar?</action>
+    </para>
+  </listitem>
+</varlistentry>
+</variablelist>
+</para>
+<para
+>Si pulsa <guibutton
+> Nueva partida local</guibutton
+>, se mostrará el diálogo <guilabel
+>Propiedades de la nueva partida</guilabel
+>, en el que podrá elegir el número de jugadores, la piel (o tema), el tipo de juego (conquistar el objetivo u objetivo específico) y, finalmente, si esta partida se jugará con jugadores en línea o si será local. Se pueden descargar nuevos temas mediante el botón <guibutton
+>Descargar nuevos temas</guibutton
+>. <screenshot>
+  <screeninfo
+>El diálogo Nueva partida</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="newgamedialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>El diálogo Nueva partida</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para
+>Para comenzar una nueva partida en red TCP/IP, seleccione la opción <guilabel
+>Nueva partida en re TCP/IP estándar</guilabel
+> en la pantalla de introducción. Después de pulsar dicho botón, podrá elegir los parámetros de red: número de jugadores locales y puerto TCP en el que se esperarán las conexiones. <screenshot>
+  <screeninfo
+>Diálogo de parámetros para partida en red</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="numnetplayersdialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Diálogo de parámetros para partida en red</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para
+>A continuación, los jugadores en red podrán conectarse eligiendo <guilabel
+> Unirse a la partida en red TCP/IP estándar</guilabel
+> en la pantalla de introducción e indicando la IP o el nombre del servidor y el número de puerto que acaba de establecer. <screenshot>
+  <screeninfo
+>Diálogo unirse a una partida en red</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="joinnetgame.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Diálogo unirse a una partida en red</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para
+>Cada conexión se indica mediante una nueva fila en la tabla <guilabel
+>Jugadores</guilabel
+> situada bajo el mapa en miniatura. <screenshot>
+  <screeninfo
+>Nueva fila de jugador</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="justjoined.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Nueva fila del jugador</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+</para>
+<para
+>Supongamos que mantiene todas las preferencias predeterminadas y pulsa <guibutton
+>Siguiente</guibutton
+>. Entonces configurará dos jugadores, uno tras otro. Para cada uno, elegirá un nombre, una nacionalidad y, si lo desea, configurará una contraseña de forma que nadie más pueda utilizar este jugador cuando vuelva a cargar esta partida si la guarda. Por último, especificará si este jugador lo utilizará la máquina o una persona. <screenshot>
+  <screeninfo
+>El diálogo de configuración del jugador</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="playersetupdialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>El diálogo de configuración del jugador</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para
+>A continuación, tras pulsar <guibutton
+>Iniciar</guibutton
+>, si elige jugar con objetivo, se mostrará el objetivo para cada jugador local, precedido de un aviso que indica a los demás jugadores que estén utilizando la misma máquina que aparten la vista discretamente mientras se muestra el objetivo. <screenshot>
+  <screeninfo
+>El mensaje de aviso en Mostrar objetivo</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="displaygoalwarningmessage.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>El mensaje de aviso en Mostrar objetivo</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<screenshot>
+  <screeninfo
+>Diálogo mostrar objetivo</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="displaygoalmessage.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Diálogo mostrar objetivo</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+</sect2>
+
+<sect2 id="distribution">
+<title
+>Distribución</title>
+<para
+>Al principio de la partida, se distribuyen los países para todos los jugadores. Cada país contiene un ejército (representado por un soldado) al principio. Cada jugador posee varios ejércitos para distribuir por sus países y su turno (indicado por la presencia de su nombre y su bandera en la barra de estado). Tenga en cuenta que cinco ejércitos se representan por un hombre a caballo y 10 por un cañón. </para>
+<para
+>Para situar un ejército en uno de sus países, pulse sobre él con el botón izquierdo del ratón. Para eliminar un ejército, pulse con el botón derecho. Tenga en cuenta que, por regla general, no podrá eliminar más ejércitos que los que tenga situados. <screenshot>
+  <screeninfo
+>Situar ejércitos</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="placingarmies.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Situar ejércitos</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+</para>
+<para
+>Cuando un jugador haya distribuido todos sus ejércitos, se seleccionará automáticamente el siguiente jugador para que haga lo mismo. Cuando todos los jugadores hayan terminado de distribuido sus ejércitos, habrá dos posibilidades, que se podrán seleccionar con dos botones: <variablelist>
+<varlistentry>
+<term>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="recycling.png" format="PNG"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>Redistribución</phrase>
+        </textobject>
+      </inlinemediaobject>
+    <guibutton
+>Reciclar</guibutton>
+</term>
+<listitem>
+  <para>
+  <action
+>Un jugador desea cambiar alguna de sus elecciones. El primer jugador puede eliminar uno de los ejércitos que acaba de colocar con el botón derecho del ratón y situar otro con el botón izquierdo del ratón. Cuando haya terminado, cederá el control al siguiente jugador con el botón <guibutton
+>Validar</guibutton
+>. Cuando todos los jugadores hayan terminado sus distribuciones, volverán a mostrarse los dos botones. </action>
+  </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="recyclingFinished.png" format="PNG"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>Fin de la redistribución</phrase>
+        </textobject>
+      </inlinemediaobject>
+    <guibutton
+>Hecho</guibutton>
+</term>
+<listitem
+><para
+><action
+>Finaliza la redistribución y puede continuar la partida. </action
+></para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para>
+</sect2>
+
+<sect2 id="fight">
+<title
+>Luchar</title>
+<para
+>Después de la redistribución, comienza un turno de juego. Cada jugador juega en su turno. Puede elegir entre: <variablelist>
+  <varlistentry>
+    <term>
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="joueurSuivant.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Siguiente jugador</phrase>
+            </textobject>
+          </inlinemediaobject>
+        <guibutton
+>Siguiente jugador</guibutton>
+    </term>
+    <listitem>
+      <para>
+        <action
+>El turno del jugador finaliza e iniciándose el turno del siguiente. </action>
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term>
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="attackOne.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Atacar 1</phrase>
+            </textobject>
+          </inlinemediaobject
+>&nbsp;<inlinemediaobject
+> <imageobject
+> <imagedata fileref="attackTwo.png" format="PNG"/> </imageobject
+> <textobject
+> <phrase
+>Ataque 2</phrase
+> </textobject
+> </inlinemediaobject
+> &nbsp;<inlinemediaobject
+> <imageobject
+> <imagedata fileref="attackThree.png" format="PNG"/> </imageobject
+> <textobject
+> <phrase
+>Ataque 3</phrase
+> </textobject
+> </inlinemediaobject
+><guibutton
+>Ataque con uno, dos o tres ejércitos</guibutton
+> &nbsp;<inlinemediaobject
+> <imageobject
+> <imagedata fileref="autoattack.png" format="PNG"/> </imageobject
+> <textobject
+> <phrase
+> Ataque automático</phrase
+> </textobject
+> </inlinemediaobject
+> <guibutton
+>Ataque automático</guibutton
+> </term>
+    <listitem>
+      <para
+>Para atacar, arrastre con el ratón desde el país atacante y suéltelo en el atacado. Se mostrará entonces un menú contextual mostrando las entradas anteriores. <screenshot
+> <screeninfo
+>Menú atacar</screeninfo
+> <mediaobject
+> <imageobject
+> <imagedata fileref="attackmenu.png" format="PNG"/> </imageobject
+> <textobject
+> <phrase
+>Menú atacar</phrase
+> </textobject
+> </mediaobject
+> </screenshot
+> Para que un país X ataque a un país Y con x ejércitos, se deben satisfacer 2 condiciones: </para>
+          <itemizedlist
+><listitem
+><para
+>los dos países deben ser vecinos;</para
+></listitem>
+          <listitem
+><para
+>el país X debe tener al menos x+1 ejércitos antes del ataque.</para
+></listitem
+></itemizedlist>
+        <para
+>Si el ataque es válido, se muestra un diálogo si es necesario que el atacado elija si quiere defenderse con uno o dos ejércitos, o dejar decidir a la máquina. </para>
+      <para
+>Cuando finaliza la elección del defensor, se producirá la lucha. Este punto se describe a continuación. <screenshot>
+            <screeninfo
+>Diálogo defensa</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="defensedialog.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Diálogo defensa</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term>
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="moveArmies.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Mover ejércitos</phrase>
+            </textobject>
+          </inlinemediaobject>
+          <guibutton
+>Mover ejércitos de un país a otro</guibutton>
+    </term>
+    <listitem>
+      <para>
+        <action
+>Esta es la última acción del turno de un jugador. Proporciona la posibilidad de mover algunos ejércitos de uno de sus países a otro, vecino del primero. Para elegir los dos países, arrastre y suelte de la misma forma que para atacar. Cuando se hayan elegido ambos países, aparecerá el grupo de botones «Mover ejércitos» (continúe leyendo para obtener una descripción de su uso). Tenga en cuenta que antes de que el usuario termine su movimiento, siempre puede cancelar pulsando el botón Cancelar. </action>
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</para>
+</sect2>
+<sect2  id="fight-solution">
+  <title
+>Resolver la contienda</title>
+  <para
+>Para cada ejército en la contienda hay una tasa de muerte. El jugador que consiga el número más alto en el dado, ya sea el atacante o el defensor, gana y el que consiga el número más pequeño en los dados pierde ejércitos de acuerdo con el número obtenido en el dado. <screenshot>
+            <screeninfo
+>Mostrando el resultado del ataque</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="shownumberofarmies.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Mostrando el resultado del ataque</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+  </para>
+  <para
+>Si el número de ejércitos del defensor llega a ser 0, el propietario de este país cambiará para pasar al atacante: su seleccionará su bandera y uno de sus ejércitos atacantes se instalará en este nuevo país. El deslizador «Mover ejércitos» se mostrará de la misma forma que los movimientos hasta el final del turno. <screenshot>
+            <screeninfo
+>El deslizador Invasión</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="invasionslider.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>El deslizador Invasión</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+  </para>
+</sect2>
+<sect2  id="end_of_turn">
+  <title
+>Fin del turno</title>
+  <para
+>Para finalizar su turno, si no desea mover ejércitos, puede pulsar el botón <guibutton
+>Siguiente jugador</guibutton
+> en la barra de herramientas. </para>
+  <para
+>Cuando han jugado todos, el turno finaliza. Se distribuyen algunos ejércitos entre los jugadores, en función de los países que posea: 1 por cada grupo de tres países, con un mínimo de 3. También existen bonificaciones para los jugadores que poseen un continente completo, diferente para cada uno de ellos. El valor de los bonos para el tema predeterminado es de: <table>
+      <title
+>Bonificaciones debidas a los continentes</title>
+      <tgroup cols="2">
+        <thead>
+          <row
+><entry
+>Continente</entry
+><entry
+>Bonificaciones</entry
+></row>
+        </thead>
+        <tbody>
+          <row
+><entry
+>Norteamérica</entry
+><entry
+>5</entry
+></row>
+          <row
+><entry
+>Sudamérica</entry
+><entry
+>2</entry
+></row>
+          <row
+><entry
+>Europa</entry
+><entry
+>5</entry
+></row>
+          <row
+><entry
+>África</entry
+><entry
+>3</entry
+></row>
+          <row
+><entry
+>Asia</entry
+><entry
+>7</entry
+></row>
+          <row
+><entry
+>Área pacífica</entry
+><entry
+>2</entry
+></row>
+        </tbody>
+      </tgroup>
+    </table>
+  </para>
+  <para
+>Cuando un jugador haya terminado de distribuir sus ejércitos, pulsará el botón <guibutton
+>Validar</guibutton
+> para que el siguiente jugador pueda distribuir sus bonificaciones. Como en el caso de la distribución inicial, cuando todos los jugadores hayan situado sus ejércitos, pueden volver a distribuirlos de forma cíclica o iniciar un turno nuevo... </para>
+</sect2>
+<!-- Does not work for current TCP/IP games
+<sect2 id="sending-messages">
+<title
+>Sending messages to other players</title>
+<para>
+If you play a local game and want to communicate with the other players, well, let's speak (supposing you have no accessibility problems)... But if you are playing a network game, you can use the chat frame at the bottom of the window (it can be hidden or showed using the arrows). Just type in your message and hit &Enter;.
+          <screenshot>
+            <screeninfo
+>Sending messages</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="messagesent.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Sending messages</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+
+</para>
+</sect2>
+-->
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Referencia de órdenes</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>Ventana principal de &ksirk;</title>
+<sect2>
+<title
+>Los botones</title>
+<para>
+<variablelist>
+<varlistentry>
+<term>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="quit.png" format="PNG"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>Salir del juego</phrase>
+        </textobject>
+      </inlinemediaobject>
+    <guibutton
+>Salir</guibutton>
+</term>
+<listitem
+><para
+><action
+>Permite salir del programa. </action
+></para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="newGame.png" format="PNG"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>Nueva partida</phrase>
+        </textobject>
+      </inlinemediaobject>
+    <guibutton
+>Nueva partida</guibutton>
+</term>
+<listitem
+><para
+><action
+>Inicia una nueva partida. Mostrará un diálogo que pregunta el número de jugadores. Después, se preguntará su nombre a cada jugador a través de otro diálogo. </action
+></para
+></listitem>
+</varlistentry>
+</variablelist>
+</para>
+
+</sect2>
+
+</sect1>
+</chapter>
+
+<chapter id="developers">
+  <title
+>Guía del desarrollador para &ksirk;</title>
+  
+  <para
+>Por favor, consulte la documentación de <ulink url="http://api.kde.org/"
+> http://api.kde.org/</ulink
+> para ver la documentación del API. Era muy completa, pero actualmente está un poco anticuada. No hay comentarios en los archivos de implementación <filename
+>.cpp</filename
+>. </para>
+  <para
+>Tenga en cuenta que originalmente desarrollé este juego bajo Windows con Borland C++ y WinG. Lo porté a &Java; antes de volver a convertirlo a C++ y &kde;. Al principio utilicé el francés o una mezcla de francés e inglés para dar nombre a los identificadores (nombres de clases, métodos, miembros, &etc;). También utilicé el francés para los comentarios. Cuando decidí distribuir este juego, lo traduje todo al inglés pero, como se puede ver, no soy angloparlante nativo: haga las sugerencias o correcciones que estime oportunas en lo que respecta tanto a los comentarios del código como a esta documentación. </para>
+  
+</chapter>
+
+<chapter id="skins">
+  <title
+>Crear pieles nuevas</title>
+  <para
+>&ksirk; viene con un editor de temas, llamado ksirkskineditor (!), que le permite editar todos los datos del tema tan pronto como los gráficos (mapas, imágenes, &etc;.) estén disponibles en el archivo SVG. Consulte el manual de ksirkskineditor para obtener más información. </para>
+</chapter>
+
+<chapter id="faq">
+<title
+>Preguntas y respuestas</title
+>&reporting.bugs; &updating.documentation; </chapter>
+
+<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+<title
+>Créditos y licencia</title>
+
+<para
+>&ksirk; </para>
+<para
+>Derechos de autos del programa. 2002-2012 Gael de Chalendar <email
+>kleag@free.fr</email
+>. </para>
+<para
+>Derechos de autos del programa. 2013 Nemanja Hirsl <email
+>nemhirsl@gmail.com</email
+> </para>
+<para
+>Colaboradores: Robin Doer, Albert Astals Cid, Michal Golunski (traducción al polaco). </para>
+
+<para
+>Derechos de autor de la documentación. 2002-2008 Gael de Chalendar <email
+>kleag@free.fr</email
+>. </para>
+
+<para
+>Traducido por Rocío Gallego <email
+>traducciones@rociogallego.com</email
+>, Santiago Fernández Sancho <email
+>santi@kde-es.org</email
+> y Kira J. Fernández <email
+>kirajfdez@gmail.com</email
+>.</para
+> &underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Instalación</title>
+
+<sect1 id="getting-ksirk">
+<title
+>Cómo obtener &ksirk;</title
+>&install.intro.documentation; </sect1>
+
+<sect1 id="compilation">
+<title
+>Compilación e instalación</title
+>&install.compile.documentation; </sect1>
+
+<sect1 id="configuration">
+<title
+>Configuración</title>
+
+<para
+>La entrada del menú de preferencias abre un diálogo que le permite:&nbsp; <screenshot>
+            <screeninfo
+>Diálogo de preferencias</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="preferences.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Diálogo de preferencias</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+</para>
+      <itemizedlist>
+        <listitem>
+          <para
+>activar o desactivar los sonidos,&nbsp; </para>
+        </listitem>
+        <listitem>
+          <para
+>establecer la velocidad de la animación (desde lenta hasta inmediata),&nbsp; </para>
+        </listitem>
+        <listitem>
+          <para
+>activar o desactivar la ayuda contextual que se muestra en los menús emergentes,&nbsp; </para>
+        </listitem>
+        <listitem>
+          <para
+>Mostrar u ocultar el número de ejércitos de cada país. La siguiente captura de pantalla muestra el mapa en el se muestra el número de ejércitos. <screenshot>
+              <screeninfo
+>Muestra el número de ejércitos</screeninfo>
+              <mediaobject>
+                <imageobject>
+                  <imagedata fileref="shownumberofarmies.png" format="PNG"/>
+                </imageobject>
+                <textobject>
+                  <phrase
+>Muestra el número de ejércitos</phrase>
+                </textobject>
+              </mediaobject>
+            </screenshot>
+
+          </para>
+        </listitem>
+      </itemizedlist>
+
+</sect1>
+
+</appendix>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+

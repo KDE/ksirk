@@ -1,0 +1,1312 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY ksirkskineditor '<application
+>KsirK Skin Editor</application
+>'>
+  <!ENTITY i18n-ksirkskineditor '<application
+>Editor dei temi di KsirK</application
+>'>
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE">
+]>
+
+<book id="ksirkskineditor" lang="&language;">
+
+<bookinfo>
+<title
+>Manuale di &i18n-ksirkskineditor;</title>
+
+<authorgroup>
+  <author
+><firstname
+>Ga&euml;l</firstname
+> <othername
+>Kleag</othername
+> <surname
+>de Chalendar</surname
+> <affiliation
+><address
+><email
+>Kleag@free.fr</email
+></address
+></affiliation>
+  </author>
+  <!-- Translators: put here the copyright notice of the translation -->
+  <othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Traduzione in italiano</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+  <year
+>2009</year>
+  <holder
+>Ga&euml;l de Chalendar</holder>
+</copyright>
+<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
+     and in the FDL itself on how to use it. -->
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<!-- Date of the documentation
+Change date/releaseinfo only if
+   docbook is updated and verified to be valid for the current app version
+   or
+   docbook is proofread and verified to be valid for the current app version
+Don't forget to include this last date.
+Please respect the format of the date (YYYY-MM-DD),it is used by scripts.
+-->
+<date
+>14/10/2021</date>
+
+<!--version information of Frameworks/Plasma/Applications this documentation is valid for.
+Example:
+Frameworks xx.yy for docbooks in frameworks
+Plasma xx.yy for docbooks in plasma workspace
+Applications xx.yy for docbooks released as Applications
+xx.yy (Applications xx.yy) for docbooks with own version released as Applications
+$applicationname xx.yy for applications with independent release schedule (extragear/playground)
+-->
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+  <para
+>&ksirk; è la versione per computer di un gioco di strategia molto noto. I suoi temi sono completamente configurabili. Questo manuale spiega come creare nuovi temi partendo da zero, usando un browser di file, un editor per immagini &SVG;, e &i18n-ksirkskineditor;.</para>
+</abstract>
+
+<!-- This is a set of Keywords for indexing by search engines.
+Please at least include KDE, the KDE package it is in, the name
+ of your application, and a few relevant keywords. -->
+
+<keywordset>
+  <keyword
+>KDE</keyword>
+  <keyword
+>editor</keyword>
+  <keyword
+>libero</keyword>
+  <keyword
+>gioco</keyword>
+  <keyword
+>GPL</keyword>
+  <keyword
+>risiko</keyword>
+  <keyword
+>tema</keyword>
+  <keyword
+>strategia</keyword>
+</keywordset>
+
+</bookinfo>
+
+<!-- The contents of the documentation begin here.  Label
+each chapter so with the id attribute. This is necessary for two reasons: it
+allows you to easily reference the chapter from other chapters of your
+document, and if there is no ID, the name of the generated HTML files will vary
+from time to time making it hard to manage for maintainers and for the CVS
+system. Any chapter labeled (OPTIONAL) may be left out at the author's
+discretion. Other chapters should not be left out in order to maintain a
+consistent documentation style across all KDE apps. -->
+
+<chapter id="introduction">
+<title
+>Introduzione</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+<para
+>&ksirk; è la versione per computer di un gioco di strategia molto noto. I suoi temi sono completamente configurabili. Questo manuale spiega come creare nuovi temi partendo da zero, usando un browser di file, un editor per immagini &SVG;, e &i18n-ksirkskineditor;.</para>
+
+<screenshot>
+  <screeninfo
+>Ecco una schermata di &i18n-ksirkskineditor;</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="main-snapshot.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Schermata</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>Per creare un nuovo tema ci sono tre passi principali: creare la gerarchia delle cartelle; creare la grafica, raccolta in un singolo file &SVG;; e infine inserire gli sprite e assegnare i nomi usando &i18n-ksirkskineditor;.</para>
+</chapter>
+
+<chapter id="using-kapp">
+<title
+>Creare un tema di &ksirk;</title>
+
+<para
+>&ksirk; è completamente configurabile. Per chi ha capacità grafiche, creare un nuovo tema è facile come copiarne uno esistente, modificarne la grafica e aggiornarne i dati in un file di configurazione <literal role="extension"
+>.desktop</literal
+>, generato con &i18n-ksirkskineditor;. L'ultimo passo è modificare il file che descrive cosa installare.</para>
+
+<para
+>Tutti gli esempi (testo e immagini) sono presi dal tema predefinito di &ksirk;.</para>
+
+<sect1 id="sdf">
+<title
+>Struttura delle cartelle e dei file</title>
+
+<itemizedlist>
+  <listitem
+><para
+><filename class="directory"
+>Data/</filename
+>: dati usati dal programma per gestire le immagini del tema.</para>
+    <itemizedlist>
+      <listitem
+><para
+><filename
+>CMakeLists.txt</filename
+>: descrive cosa installare.</para
+></listitem>
+      <listitem
+><para
+><filename
+>onu.desktop</filename
+>: file principale della descrizione del tema. Vedi sotto la sua descrizione.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+><filename class="directory"
+>Images/</filename
+>: le immagini del tema (mappa, sprite, &etc;)</para>
+    <itemizedlist>
+      <listitem
+><para
+><filename
+>CMakeLists.txt</filename
+>: descrive cosa installare.</para
+></listitem>
+      <listitem
+><para
+><filename
+>pool.svg</filename
+>: la mappa e tutti gli sprite usati in questo tema.</para
+></listitem>
+      <listitem
+><para
+><filename
+>map-mask.png</filename
+>: l'immagine che permette al programma di sapere su quale stato si trova il mouse durante il gioco (vedi sotto).</para
+></listitem>
+      <listitem
+><para
+><literal role="extension"
+>*.png</literal
+>: le rimanenti sono immagini dei pulsanti.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+><filename
+>CMakeLists.txt</filename
+>: descrive cosa installare.</para
+></listitem>
+  <listitem
+><para
+><filename class="directory"
+>Sounds/</filename
+>: file sonori del tema.</para
+></listitem>
+</itemizedlist>
+
+  <sect2 id="tdd">
+  <title
+>La cartella Data</title>
+
+  <para
+>Questa cartella contiene un solo file, <filename
+>world.desktop</filename
+>. Questo file è una descrizione del contenuto del tema. Viene utilizzato per descrivere l'organizzazione del mondo e come visualizzarlo. Non devi scriverlo a mano perché sarà gestito da &i18n-ksirkskineditor;. Per completezza, però, ne descriveremo la struttura.</para>
+
+  <para
+>Un gruppo <literal
+>onu</literal
+> contiene un certo numero di voci di stati, di nazionalità e di continenti. Altri gruppi contengono le descrizioni dei vari sprite, stati, continenti, nazionalità e obiettivi.</para>
+
+  <para
+>Le sezioni seguenti descrivono il contenuto di ogni gruppo.</para>
+
+    <sect3>
+    <title
+>Il gruppo <literal
+>onu</literal
+></title>
+
+    <table>
+      <title
+>Le voci del gruppo <literal
+>onu</literal
+></title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Nome della voce</entry>
+            <entry
+>Significato</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>width</literal
+></entry>
+            <entry
+>La larghezza della mappa del tema.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>height</literal
+></entry>
+            <entry
+>L'altezza della mappa del tema.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>skinpath</literal
+></entry>
+            <entry
+>Il percorso del tema relativo al percorso dei dati dell'applicazione (&eg; <filename
+>skins/default</filename
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nb-countries</literal
+></entry>
+            <entry
+>Il numero di stati (42 nel tema predefinito). Ci dovrebbe essere lo stesso numero di gruppi di stati sotto.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nb-nationalities</literal
+></entry>
+            <entry
+>Il numero di nazionalità (6 nel tema predefinito). Ci dovrebbe essere lo stesso numero di gruppi di nazionalità sotto.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nb-continents</literal
+></entry>
+            <entry
+>Il numero di continenti (6 nel tema predefinito). Ci dovrebbe essere lo stesso numero di gruppi di continenti sotto.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>pool</literal
+></entry>
+            <entry
+>Il percorso e il nome del file magazzino relativamente al percorso del tema (&eg; <filename
+>Images/pool.svg</filename
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>map-mask</literal
+></entry>
+            <entry
+>Il percorso e il nome del file di maschera della mappa relativamente al percorso del tema (&eg; <filename
+>Images/map-mask.png</filename
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>format-version</literal
+></entry>
+            <entry
+>La versione del formato di file del tema (2.0).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>name</literal
+></entry>
+            <entry
+>Il nome del tema da visualizzare.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>desc</literal
+></entry>
+            <entry
+>Una descrizione lunga del tema.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>fighters-flag-y-diff</literal
+></entry>
+            <entry
+>La differenza d'altezza tra sprite di bandiere e cannoni.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>width-between-flag-and-fighter</literal
+></entry>
+            <entry
+>Il numero di pixel tra il pixel all'estrema sinistra della bandiera e il pixel all'estrema destra del cannone semplice (mentre non fa fuoco né esplode).</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>I gruppi delle descrizioni degli sprite</title>
+
+    <para
+>Ogni tipo di sprite (bandiera, fanteria, cavalleria, cannone, cannone che fa fuoco e cannone che esplode) è definito da un gruppo. Solo alcuni sprite hanno una voce per la larghezza. Questa voce viene usata per il posizionamento relativo durante le animazioni: i cannoni, che facciano fuoco o che esplodano, non dovrebbero <quote
+>spostarsi</quote
+> attorno alla bandiera dello stato durante il combattimento.</para>
+
+    <table>
+      <title
+>Voci dei gruppi delle descrizioni degli sprite</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Nome della voce</entry>
+            <entry
+>Significato</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>width</literal
+></entry>
+            <entry
+>La larghezza di riferimento dei fotogrammi dello sprite della bandiera.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>height</literal
+></entry>
+            <entry
+>L'altezza di riferimento dei fotogrammi dello sprite della bandiera.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>frames</literal
+></entry>
+            <entry
+>Il numero di fotogrammi dello sprite.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>versions</literal
+></entry>
+            <entry
+>Il numero di versioni degli sprite delle bandiere.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>I gruppi di descrizione degli stati</title>
+
+    <para
+>Per ogni stato elencato nel gruppo <literal
+>onu</literal
+>, la voce countries ha il suo gruppo, la cui etichetta è il nome dello stato. La tabella sotto elenca le voci di questi gruppi.</para>
+
+    <table>
+      <title
+>Voci degli stati</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Nome della voce</entry>
+            <entry
+>Significato</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>id</literal
+></entry>
+            <entry
+>Il numero identificativo, intero ed univoco, dello stato; parte da zero (0).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>name</literal
+></entry>
+            <entry
+>Il nome dello stato da visualizzare.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>&lt;sprite&gt;-point</literal
+></entry>
+            <entry
+>Ogni tipo di sprite (bandiera, fanteria, &etc;.) nello stato viene visualizzato in una certa posizione definita da questa voce, che è costituita da due numeri interi separati da una virgola.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>neighbours</literal
+></entry>
+            <entry
+>L'elenco degli identificativi dei vicini dello stato attuale.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>I gruppi delle descrizioni delle nazionalità</title>
+
+    <para
+>Per ogni nazionalità elencata nel gruppo <literal
+>onu</literal
+>, la voce nationalities ha il suo gruppo, la cui etichetta è il nome della nazionalità. La tabella sotto elenca le voci di questi gruppi.</para>
+
+    <table>
+      <title
+>Voci delle nazionalità</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Nome della voce</entry>
+            <entry
+>Significato</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>name</literal
+></entry>
+            <entry
+>Il nome della nazionalità (&eg; <literal
+>Giappone</literal
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>leader</literal
+></entry>
+            <entry
+>Il nome che sarà proposto al giocatore che sceglie questa nazionalità.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>flag</literal
+></entry>
+            <entry
+>Il nome dell'elemento dello sprite della bandiera dello stato nel file &SVG; <literal
+>onu</literal
+>.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>I gruppi delle descrizioni dei continenti</title>
+
+    <para
+>Per ogni continente elencato nel gruppo <literal
+>onu</literal
+>, la voce continents ha il suo gruppo, la cui etichetta è il nome del continente. La tabella sotto elenca le voci di questi gruppi.</para>
+
+    <table>
+      <title
+>Voci dei continenti</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Nome della voce</entry>
+            <entry
+>Significato</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>name</literal
+></entry>
+            <entry
+>Il nome del continente (&eg; <literal
+>Africa</literal
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>id</literal
+></entry>
+            <entry
+>Il numero identificativo, intero ed univoco, del continente.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>bonus</literal
+></entry>
+            <entry
+>Il numero di armate ottenute alla fine del turno dal giocatore che domina tutti gli stati del continente.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>continent-countries</literal
+></entry>
+            <entry
+>L'elenco degli identificativi degli stati all'interno nel continente attuale.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>I gruppi delle descrizioni degli obiettivi</title>
+
+    <para
+>Per ogni obiettivo elencato nel gruppo <literal
+>onu</literal
+>, la voce goals ha il suo gruppo, la cui etichetta è il nome dell'obiettivo. La tabella sotto elenca le voci di questi gruppi.</para>
+
+    <table>
+      <title
+>Voci degli obiettivi</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Nome della voce</entry>
+            <entry
+>Significato</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>type</literal
+></entry>
+            <entry
+>Il tipo di obiettivo. Può essere continents (continenti), countries (stati) o player (giocatore).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nbArmiesByCountry</literal
+></entry>
+            <entry
+>Imposta il numero minimo di armate che il giocatore deve mettere su ogni stato.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nbCountries</literal
+></entry>
+            <entry
+>Imposta il numero di stati che il giocatore deve possedere.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nbCountriesFallback</literal
+></entry>
+            <entry
+>Per un tipo di obiettivo player, se il giocatore preso di mira viene ucciso da un altro, questo imposta il numero di stati che il giocatore deve conquistare come obiettivo alternativo.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>desc</literal
+></entry>
+            <entry
+>Una descrizione testuale completa dell'obiettivo con segnaposti appropriati (qui serve maggiore documentazione).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>continents</literal
+></entry>
+            <entry
+>L'elenco degli identificativi dei continenti che il giocatore dovrà conquistare.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+  </sect2>
+
+  <sect2 id="tid">
+  <title
+>La cartella Images</title>
+
+  <para
+>Questa cartella contiene i pulsanti specifici di &ksirk; e il file magazzino &SVG; contenente la mappa e tutti gli sprite.</para>
+
+    <sect3>
+    <title
+>Il file <filename
+>pool.svg</filename
+></title>
+
+    <para
+>Questo file &SVG; contiene la mappa e tutti gli sprite del gioco. Ogni elemento ha un nome, in modo che il programma possa selezionare e rendere separatamente ciascuno di essi.</para>
+
+    <para
+>Nel tema predefinito, gli sprite sono bandiere, fanteria, cavalleria e cannone. La fanteria rappresenta un'armata, la cavalleria cinque e il cannone dieci. I cannoni sono usati anche per visualizzare le armate in combattimento: è per questo che ci sono tre tipi di sprite per i cannoni: cannone normale fermo o in movimento, cannone che fa fuoco e cannone che esplode.</para>
+
+    <para
+>Ogni immagine degli sprite è la concatenazione di varie viste dell'oggetto, e per ogni vista i suoi fotogrammi. Le viste sono organizzate verticalmente e i fotogrammi orizzontalmente. Dividendo l'altezza dell'immagine per il numero di viste e la larghezza per il numero di fotogrammi si calcola dove tagliare l'immagine in fotogrammi individuali. Questi dati si trovano nel file <filename
+>onu.desktop</filename
+>.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="cannon.png" format="PNG"/></imageobject>
+      <caption
+><para
+>Un esempio di immagine sprite: <filename
+>cannon.png</filename
+></para
+></caption>
+    </mediaobject>
+
+    <para
+>Per gli sprite delle armate, ci sono tre viste diverse, dall'alto in basso:</para>
+
+    <itemizedlist>
+      <listitem
+><para
+>verso destra,</para
+></listitem>
+      <listitem
+><para
+>verso sinistra, e</para
+></listitem>
+      <listitem
+><para
+>di fronte.</para
+></listitem>
+    </itemizedlist>
+
+    <para
+>Per le bandiere, c'è solo una vista. Tutti gli sfondi degli sprite dovrebbero essere trasparenti.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="italy.png" format="PNG"/></imageobject>
+      <caption
+><para
+>Un esempio di un'immagine sprite di una bandiera: <filename
+>italy.png</filename
+>.</para
+></caption>
+    </mediaobject>
+
+    <table>
+      <title
+>Gli elementi del magazzino</title>
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry
+>Nome dell'elemento</entry>
+            <entry
+>Immagine campione</entry>
+            <entry
+>Significato</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>map</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="map.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Mappa del mondo del tema. Gli stati possono avere forme arbitrarie, ma dovrebbero essere raggruppati in continenti riconoscibili a occhio, per posizione o per colore.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>italy</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="italy.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>La bandiera della nazione italiana. C'è una voce simile per ogni nazione.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>infantry</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="infantry.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Icona che rappresenta un'armata.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>cavalry</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="cavalry.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Icona che rappresenta cinque armate.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>cannon</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="cannon.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Icona che rappresenta dieci armate.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>firing</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="firing.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Icona che rappresenta dieci armate durante un combattimento.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>exploding</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="exploding.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Icona che rappresenta le armate sconfitte.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>alaska</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="alaska.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>La forma dello stato dell'Alaska; si usa per evidenziarlo. C'è una forma simile per ogni stato. Il suo colore non viene usato, quindi, si è liberi di sceglierne uno qualsiasi.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>reddices</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="reddices.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>I dadi rossi usati per mostrare i risultati delle battaglie.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>bluedices</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="bluedices.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>I dadi blu usati per mostrare i risultati delle battaglie.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>mark1</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="mark1.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Questo marcatore viene aggiunto agli sprite in combattimento per indicare il numero di armate che rappresentano, in questo caso 1. Ci sono anche degli elementi <literal
+>mark2</literal
+> e <literal
+>mark3</literal
+>.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Il file <filename
+>map-mask.png</filename
+></title>
+
+    <para
+>Anche questo è un file png che rappresenta il mondo del tema, ma con colori in codice che permettono di identificare ogni stato. Gli stati devono avere almeno le stesse forme degli stati corrispondenti in <filename
+>map.png</filename
+>, in modo che gli utenti possano fare clic ovunque in uno stato visibile e selezionare quello giusto. Stati come le isolette dell'Indonesia nella mappa predefinita possono essere più grandi dell'equivalente nel file <filename
+>map.png</filename
+> per facilitarne la selezione.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="map-mask.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Una map-mask campione</phrase
+></textobject>
+    </mediaobject>
+
+    <para
+>Il componente blu (nel modello RGB) di uno stato lo identifica: l'indice 0 è lo stato 0 nel file <filename
+>onu.xml</filename
+>, l'indice 1 è lo stato 1, &etc;. Il bianco (0xFFFFFF in RGB) indica l'assenza di uno stato, come per i mari o le terre di nessuno.</para>
+    </sect3>
+
+    <sect3>
+    <title
+>Le immagini dei pulsanti</title>
+
+    <para
+>I nomi dei file sono fissati nel codice, quindi non vanno modificati. La tabella sotto indica tutti i pulsanti che si dovrebbero fornire.</para>
+
+    <table>
+      <title
+>I pulsanti dell'interfaccia</title>
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry
+>Immagine</entry>
+            <entry
+>Nome del file</entry>
+            <entry
+>Significato</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="newNetGame.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>newNetGame.png</filename
+></entry>
+            <entry
+>Cerca di entrare in una partita in rete.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="recycling.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>recycling.png</filename
+></entry>
+            <entry
+>Dopo che tutti i giocatori hanno disposto le loro armate, è possibile modificarne la distribuzione (cosiddetto riciclo). Questo pulsante chiede di eseguire questa redistribuzione.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="recyclingFinished.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>recyclingFinished.png</filename
+></entry>
+            <entry
+>Sceglie di non ridistribuire. Tutte le finestre dei client devono avere questo pulsante premuto per concludere la redistribuzione.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="nextPlayer.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>nextPlayer.png</filename
+></entry>
+            <entry
+>Conclude il turno del giocatore attuale e passa al prossimo giocatore, o al prossimo turno se il giocatore attuale era l'ultimo.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackOne.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackOne.png</filename
+></entry>
+            <entry
+>Sceglie di cominciare un attacco con un'armata.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackTwo.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackTwo.png</filename
+></entry>
+            <entry
+>Sceglie di cominciare un attacco con due armate.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackThree.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackThree.png</filename
+></entry>
+            <entry
+>Sceglie di cominciare un attacco con tre armate.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="defendOne.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>defendOne.png</filename
+></entry>
+            <entry
+>Sceglie di difendere uno stato attaccato con un'armata.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="defendTwo.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>defendTwo.png</filename
+></entry>
+            <entry
+>Sceglie di difendere uno stato attaccato con due armate.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="moveArmies.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>moveArmies.png</filename
+></entry>
+            <entry
+>Sceglie di cominciare lo spostamento di armate tra stati (ultima azione del turno).</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+  </sect2>
+
+  <sect2 id="tsd">
+  <title
+>La cartella Sounds</title>
+
+  <para
+>Questa cartella contiene tre file sonori:</para>
+
+  <itemizedlist>
+    <listitem
+><para
+><filename
+>roll.wav</filename
+>, riprodotto quando le armate sono in movimento </para
+></listitem>
+    <listitem
+><para
+><filename
+>cannon.wav</filename
+>, riprodotto quando si fa fuoco e </para
+></listitem>
+    <listitem
+><para
+><filename
+>crash.wav</filename
+>, riprodotto quando un cannone esplode</para
+></listitem>
+  </itemizedlist>
+  </sect2>
+</sect1>
+
+<sect1 id="using-kse">
+<title
+>Utilizzare l'&i18n-ksirkskineditor;</title>
+
+<para
+>Dopo aver messo la grafica nella cartella e nel file &SVG; giusti, devi creare gli stati, i giocatori, &etc;, e associarli con l'elemento &SVG; giusto nel magazzino. Ciò può essere fatto con &i18n-ksirkskineditor;. Nota che ogni parte di questa applicazione è auto-descritta da suggerimenti e aiuti contestuali, normalmente disponibili con la scorciatoia <keycombo action="simul"
+>&Ctrl;<keycap
+>F1</keycap
+></keycombo
+>.</para>
+
+<screenshot>
+  <screeninfo
+>Ecco una schermata di &i18n-ksirkskineditor;</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="main-snapshot.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Schermata</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Guida ai comandi</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>La finestra principale di &i18n-ksirkskineditor;</title>
+
+  <sect2>
+  <title
+>I pulsanti</title>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="document-open.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Carica</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Carica...</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Fa caricare al programma un tema esistente.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="document-save.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Salva</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Salva</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Salva il tema attualmente modificato.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+  </sect2>
+</sect1>
+</chapter>
+
+<chapter id="developers">
+<title
+>Guida dello sviluppatore a &i18n-ksirkskineditor;</title>
+
+<para
+>Fai riferimento a <ulink url="https://api.kde.org/"
+>ihttps://api.kde.org/</ulink
+> per la documentazione dell'API.</para>
+</chapter>
+
+<chapter id="faq">
+<title
+>Domande e risposte</title
+>&updating.documentation; </chapter>
+
+<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+<title
+>Riconoscimenti e licenza</title>
+
+<para
+>&ksirkskineditor;</para>
+
+<para
+>Copyright del programma 2009 di Ga&euml;l de Chalendar <email
+>kleag@free.fr</email
+></para>
+
+<para
+>Copyright della documentazione 2009 di Ga&euml;l de Chalendar <email
+>kleag@free.fr</email
+></para>
+
+<para
+>Traduzione di Federico Zenith<email
+>federico.zenith@member.fsf.org</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->
