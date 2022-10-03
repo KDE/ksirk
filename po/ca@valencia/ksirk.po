@@ -2782,7 +2782,7 @@ msgstr "Canvi de sobrenom - Connector Jabber"
 #: Jabber/jabbergroupcontact.cpp:368
 #, kde-format
 msgid "Please enter the new nickname you want to have in the room <i>%1</i>"
-msgstr "Introduïu el sobrenom nou que voleu tindre a la sala <i>%1</i>"
+msgstr "Introduïu el sobrenom nou que voleu tindre en la sala <i>%1</i>"
 
 #: Jabber/jabberprotocol.cpp:336
 #, kde-format
