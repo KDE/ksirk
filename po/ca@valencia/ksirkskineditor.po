@@ -1292,7 +1292,7 @@ msgstr "&Joc"
 #: ksirkskineditorui.rc:18
 #, kde-format
 msgid "&Settings"
-msgstr "&Configuració"
+msgstr "Con&figuració"
 
 #. i18n: ectx: Menu (help)
 #: ksirkskineditorui.rc:20
