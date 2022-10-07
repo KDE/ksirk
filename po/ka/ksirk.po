@@ -1,29 +1,32 @@
-# Fumiaki Okushi <okushi@kde.gr.jp>, 2011.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the ksirk package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-07-24 00:42+0000\n"
-"PO-Revision-Date: 2011-04-06 18:29-0700\n"
-"Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
-"Language-Team: Japanese <kde-jp@kde.org>\n"
-"Language: ja\n"
+"PO-Revision-Date: 2022-10-06 10:27+0200\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
+"Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Accelerator-Marker: &\n"
-"X-Text-Markup: kde4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Temuri Doghonadze"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "Temuri.doghonadze@gmail.com"
 
 #. i18n: file skins/default/Data/world.desktop line 1
 #. i18n: file skins/default/Data/world.desktop line 516
@@ -53,7 +56,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 566
 #, no-c-format, kde-format
 msgid "Africa"
-msgstr "アフリカ"
+msgstr "აფრიკა"
 
 #. i18n: file skins/default/Data/world.desktop line 6
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -69,7 +72,7 @@ msgstr "アフリカ"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Alaska"
-msgstr "アラスカ"
+msgstr "ალიასკა"
 
 #. i18n: file skins/default/Data/world.desktop line 16
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -85,7 +88,7 @@ msgstr "アラスカ"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Alberta"
-msgstr "アルバータ"
+msgstr "ალბერტა"
 
 #. i18n: file skins/default/Data/world.desktop line 26
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -101,7 +104,7 @@ msgstr "アルバータ"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Algeria"
-msgstr "アルジェリア"
+msgstr "ალჟირი"
 
 #. i18n: file skins/default/Data/world.desktop line 36
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -117,7 +120,7 @@ msgstr "アルジェリア"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Arabia"
-msgstr "アラビア"
+msgstr "არაბეთი"
 
 #. i18n: file skins/default/Data/world.desktop line 46
 #. i18n: file skins/default/Data/world.desktop line 521
@@ -145,7 +148,7 @@ msgstr "アラビア"
 #. i18n: file skins/legacy/Data/world.desktop line 566
 #, no-c-format, kde-format
 msgid "Asia"
-msgstr "アジア"
+msgstr "აზია"
 
 #. i18n: file skins/default/Data/world.desktop line 51
 #. i18n: file skins/default/Data/world.desktop line 567
@@ -161,7 +164,7 @@ msgstr "アジア"
 #. i18n: file skins/legacy/Data/world.desktop line 575
 #, no-c-format, kde-format
 msgid "Belgium"
-msgstr "ベルギー"
+msgstr "ბელგია"
 
 #. i18n: file skins/default/Data/world.desktop line 55
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -177,7 +180,7 @@ msgstr "ベルギー"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Benelux"
-msgstr ""
+msgstr "ბენელუქსი"
 
 #. i18n: file skins/default/Data/world.desktop line 65
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -193,7 +196,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Brazil"
-msgstr "ブラジル"
+msgstr "ბრაზილია"
 
 #. i18n: file skins/default/Data/world.desktop line 75
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -209,7 +212,7 @@ msgstr "ブラジル"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Chile"
-msgstr "チリ"
+msgstr "ჩილე"
 
 #. i18n: file skins/default/Data/world.desktop line 85
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -225,7 +228,7 @@ msgstr "チリ"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "China"
-msgstr "中国"
+msgstr "ჩინეთი"
 
 #. i18n: file skins/default/Data/world.desktop line 95
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -241,7 +244,7 @@ msgstr "中国"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Colombia"
-msgstr "コロンビア"
+msgstr "კოლუმბია"
 
 #. i18n: file skins/default/Data/world.desktop line 105
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -257,7 +260,7 @@ msgstr "コロンビア"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Eastern US"
-msgstr "アメリカ東部"
+msgstr "აღმოსავლეთი აშშ"
 
 #. i18n: file skins/default/Data/world.desktop line 115
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -273,7 +276,7 @@ msgstr "アメリカ東部"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Egypt"
-msgstr "エジプト"
+msgstr "ეგვიპტე"
 
 #. i18n: file skins/default/Data/world.desktop line 125
 #. i18n: file skins/default/Data/world.desktop line 531
@@ -301,7 +304,7 @@ msgstr "エジプト"
 #. i18n: file skins/legacy/Data/world.desktop line 566
 #, no-c-format, kde-format
 msgid "Europe"
-msgstr "ヨーロッパ"
+msgstr "ევროპა"
 
 #. i18n: file skins/default/Data/world.desktop line 130
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -323,7 +326,7 @@ msgstr "ヨーロッパ"
 #. i18n: file skins/legacy/Data/world.desktop line 575
 #, no-c-format, kde-format
 msgid "France"
-msgstr "フランス"
+msgstr "საფრანგეთი"
 
 #. i18n: file skins/default/Data/world.desktop line 142
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -339,7 +342,7 @@ msgstr "フランス"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Gabon"
-msgstr "ガボン"
+msgstr "გაბონი"
 
 #. i18n: file skins/default/Data/world.desktop line 152
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -355,7 +358,7 @@ msgstr "ガボン"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Groenland"
-msgstr ""
+msgstr "გრინლანდია"
 
 #. i18n: file skins/default/Data/world.desktop line 162
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -371,7 +374,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "India"
-msgstr "インド"
+msgstr "ინდოეთი"
 
 #. i18n: file skins/default/Data/world.desktop line 172
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -387,7 +390,7 @@ msgstr "インド"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Indonesia"
-msgstr "インドネシア"
+msgstr "ინდონეზია"
 
 #. i18n: file skins/default/Data/world.desktop line 182
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -403,7 +406,7 @@ msgstr "インドネシア"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Iran"
-msgstr "イラン"
+msgstr "ირანი"
 
 #. i18n: file skins/default/Data/world.desktop line 192
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -419,7 +422,7 @@ msgstr "イラン"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Island"
-msgstr ""
+msgstr "ისლანდია"
 
 #. i18n: file skins/default/Data/world.desktop line 202
 #. i18n: file skins/default/Data/world.desktop line 567
@@ -435,7 +438,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 575
 #, no-c-format, kde-format
 msgid "Italy"
-msgstr "イタリア"
+msgstr "იტალია"
 
 #. i18n: file skins/default/Data/world.desktop line 206
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -457,7 +460,7 @@ msgstr "イタリア"
 #. i18n: file skins/legacy/Data/world.desktop line 575
 #, no-c-format, kde-format
 msgid "Japan"
-msgstr "日本"
+msgstr "იაპონია"
 
 #. i18n: file skins/default/Data/world.desktop line 218
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -473,7 +476,7 @@ msgstr "日本"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Kazakstan"
-msgstr "カザフスタン"
+msgstr "ყაზახეთი"
 
 #. i18n: file skins/default/Data/world.desktop line 228
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -489,7 +492,7 @@ msgstr "カザフスタン"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Madagascar"
-msgstr "マダガスカル"
+msgstr "მადაგასკარი"
 
 #. i18n: file skins/default/Data/world.desktop line 238
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -505,7 +508,7 @@ msgstr "マダガスカル"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Mexico"
-msgstr "メキシコ"
+msgstr "მექსიკა"
 
 #. i18n: file skins/default/Data/world.desktop line 248
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -521,7 +524,7 @@ msgstr "メキシコ"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Mongolia"
-msgstr "モンゴル"
+msgstr "მონღოლეთი"
 
 #. i18n: file skins/default/Data/world.desktop line 258
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -537,7 +540,7 @@ msgstr "モンゴル"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "New South Wales"
-msgstr ""
+msgstr "ახალი სამხრეთი უელსი"
 
 #. i18n: file skins/default/Data/world.desktop line 268
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -553,7 +556,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "New Zealand"
-msgstr "ニュージーランド"
+msgstr "ახალი ზელანდია"
 
 #. i18n: file skins/default/Data/world.desktop line 278
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -569,7 +572,7 @@ msgstr "ニュージーランド"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Niger"
-msgstr "ニジェール"
+msgstr "ნიგერი"
 
 #. i18n: file skins/default/Data/world.desktop line 288
 #. i18n: file skins/default/Data/world.desktop line 516
@@ -597,7 +600,7 @@ msgstr "ニジェール"
 #. i18n: file skins/legacy/Data/world.desktop line 566
 #, no-c-format, kde-format
 msgid "North America"
-msgstr "北アメリカ"
+msgstr "ჩრდილოეთ ამერიკა"
 
 #. i18n: file skins/default/Data/world.desktop line 293
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -613,7 +616,7 @@ msgstr "北アメリカ"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Occidental Australia"
-msgstr "オーストラリア西部"
+msgstr ""
 
 #. i18n: file skins/default/Data/world.desktop line 303
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -629,7 +632,7 @@ msgstr "オーストラリア西部"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Ontario"
-msgstr "オンタリオ"
+msgstr "ონტარიო"
 
 #. i18n: file skins/default/Data/world.desktop line 313
 #. i18n: file skins/default/Data/world.desktop line 536
@@ -655,7 +658,7 @@ msgstr "オンタリオ"
 #. i18n: file skins/legacy/Data/world.desktop line 566
 #, no-c-format, kde-format
 msgid "Pacific"
-msgstr "太平洋"
+msgstr "წყნარი ოკეანე"
 
 #. i18n: file skins/default/Data/world.desktop line 318
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -671,7 +674,7 @@ msgstr "太平洋"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Pakistan"
-msgstr "パキスタン"
+msgstr "პაკისტანი"
 
 #. i18n: file skins/default/Data/world.desktop line 328
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -687,7 +690,7 @@ msgstr "パキスタン"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Papouasie"
-msgstr ""
+msgstr "პაპუაზია"
 
 #. i18n: file skins/default/Data/world.desktop line 338
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -703,7 +706,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Paraguay"
-msgstr "パラグアイ"
+msgstr "პარაგვაი"
 
 #. i18n: file skins/default/Data/world.desktop line 348
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -719,7 +722,7 @@ msgstr "パラグアイ"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Prussia"
-msgstr ""
+msgstr "პრუსია"
 
 #. i18n: file skins/default/Data/world.desktop line 358
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -735,7 +738,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Quebec"
-msgstr "ケベック"
+msgstr "კვებეკი"
 
 #. i18n: file skins/default/Data/world.desktop line 368
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -751,7 +754,7 @@ msgstr "ケベック"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Russia"
-msgstr "ロシア"
+msgstr "რუსეთი"
 
 #. i18n: file skins/default/Data/world.desktop line 378
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -767,7 +770,7 @@ msgstr "ロシア"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Scandinavia"
-msgstr "スカンジナビア"
+msgstr "სკანდინავია"
 
 #. i18n: file skins/default/Data/world.desktop line 388
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -783,7 +786,7 @@ msgstr "スカンジナビア"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Siberia"
-msgstr "シベリア"
+msgstr "ციმბირი"
 
 #. i18n: file skins/default/Data/world.desktop line 398
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -799,7 +802,7 @@ msgstr "シベリア"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "South Africa"
-msgstr "南アフリカ"
+msgstr "სამხრეთ აფრიკა"
 
 #. i18n: file skins/default/Data/world.desktop line 408
 #. i18n: file skins/default/Data/world.desktop line 526
@@ -827,7 +830,7 @@ msgstr "南アフリカ"
 #. i18n: file skins/legacy/Data/world.desktop line 566
 #, no-c-format, kde-format
 msgid "South America"
-msgstr "南アメリカ"
+msgstr "სამხრეთ ამერიკა"
 
 #. i18n: file skins/default/Data/world.desktop line 413
 #. i18n: file skins/default/Data/world.desktop line 417
@@ -847,7 +850,7 @@ msgstr "南アメリカ"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "United Kingdom"
-msgstr "英国"
+msgstr "დიდი ბრიტანეთი"
 
 #. i18n: file skins/default/Data/world.desktop line 427
 #. i18n: file skins/default/Data/world.desktop line 567
@@ -863,7 +866,7 @@ msgstr "英国"
 #. i18n: file skins/legacy/Data/world.desktop line 575
 #, no-c-format, kde-format
 msgid "United States"
-msgstr "アメリカ合衆国"
+msgstr "ამერიკის შეერთებული შტატები"
 
 #. i18n: file skins/default/Data/world.desktop line 431
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -879,7 +882,7 @@ msgstr "アメリカ合衆国"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Vietnam"
-msgstr "ベトナム"
+msgstr "ვიეტნამი"
 
 #. i18n: file skins/default/Data/world.desktop line 441
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -895,7 +898,7 @@ msgstr "ベトナム"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Western US"
-msgstr "アメリカ西部"
+msgstr "დასავლეთ აშშ"
 
 #. i18n: file skins/default/Data/world.desktop line 451
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -911,7 +914,7 @@ msgstr "アメリカ西部"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Zair"
-msgstr ""
+msgstr "ზაირი"
 
 #. i18n: file skins/default/Data/world.desktop line 504
 #. i18n: file skins/static/Data/world.desktop line 512
@@ -1013,7 +1016,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 575
 #, no-c-format, kde-format
 msgid "England"
-msgstr "イングランド"
+msgstr "ინგლისი"
 
 #. i18n: file skins/static/Data/world.desktop line 250
 #. i18n: file skins/static/Data/world.desktop line 567
@@ -1025,7 +1028,7 @@ msgstr "イングランド"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Middle East"
-msgstr "中東"
+msgstr "ახლოს აღმოსავლეთი"
 
 #. i18n: file skins/static/Data/world.desktop line 568
 #, no-c-format, kde-format
@@ -1052,23 +1055,23 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 574
 #, no-c-format, kde-format
 msgid "Legacy"
-msgstr ""
+msgstr "ძველი"
 
 #: decoratedgameframe.cpp:100 kgamewin.cpp:443
 #, kde-format
 msgid "Next Player"
-msgstr "次のプレイヤー"
+msgstr ""
 
 #: decoratedgameframe.cpp:103
 #, kde-format
 msgid "Details"
-msgstr "詳細"
+msgstr ""
 
 #: decoratedgameframe.cpp:106 kgamewin.cpp:423 kgamewin.cpp:1306
 #: kgamewin.cpp:1318 kgamewin.cpp:2475
 #, kde-format
 msgid "Goal"
-msgstr "ゴール"
+msgstr "მიზანი"
 
 #: decoratedgameframe.cpp:138 decoratedgameframe.cpp:394
 #, kde-format
@@ -1098,7 +1101,7 @@ msgstr ""
 #: decoratedgameframe.cpp:169
 #, kde-format
 msgid "Move 1"
-msgstr ""
+msgstr "სვლა 1"
 
 #: decoratedgameframe.cpp:172
 #, kde-format
@@ -1137,7 +1140,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Moving"
-msgstr ""
+msgstr "გადატანა"
 
 #: Dialogs/InvasionSlider.cpp:145
 #, kde-format
@@ -1154,12 +1157,12 @@ msgstr ""
 #: Dialogs/jabbergameui.cpp:76
 #, kde-format
 msgid "Nickname"
-msgstr ""
+msgstr "მეტსახელი"
 
 #: Dialogs/jabbergameui.cpp:77
 #, kde-format
 msgid "Skin"
-msgstr "スキン"
+msgstr "გარეგნობა"
 
 #: Dialogs/jabbergameui.cpp:78
 #, kde-format
@@ -1188,26 +1191,26 @@ msgstr "kleag@kdetalk.net"
 #: Dialogs/jabbergameui.ui:53
 #, kde-format
 msgid "12345678"
-msgstr "12345678"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: Dialogs/jabbergameui.ui:63
 #, kde-format
 msgid "Password:"
-msgstr "パスワード:"
+msgstr "პაროლი:"
 
 #. i18n: ectx: property (text), widget (QPushButton, connectbutton)
 #: Dialogs/jabbergameui.ui:74
 #, kde-format
 msgid "Connect"
-msgstr "接続"
+msgstr "დაკავშირება"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #. i18n: ectx: property (text), widget (QLabel, label_10)
 #: Dialogs/jabbergameui.ui:96 Dialogs/jabbergameui.ui:189
 #, kde-format
 msgid "State:"
-msgstr "状態:"
+msgstr "მდგომარეობა:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: Dialogs/jabbergameui.ui:137
@@ -1219,25 +1222,25 @@ msgstr ""
 #: Dialogs/jabbergameui.ui:146
 #, kde-format
 msgid "Room JID:"
-msgstr "ルーム JID:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: Dialogs/jabbergameui.ui:156
 #, kde-format
 msgid "Nickname:"
-msgstr ""
+msgstr "მეტსახელი:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: Dialogs/jabbergameui.ui:166
 #, kde-format
 msgid "Room Password:"
-msgstr "ルームのパスワード:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, joinroombutton)
 #: Dialogs/jabbergameui.ui:180
 #, kde-format
 msgid "Join Room"
-msgstr "ルームに入る"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: Dialogs/jabbergameui.ui:209
@@ -1249,20 +1252,19 @@ msgstr ""
 #: Dialogs/jabbergameui.ui:245
 #, kde-format
 msgid "Start a New Game"
-msgstr "新しいゲームを始める"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, joingamebutton)
 #: Dialogs/jabbergameui.ui:255
 #, kde-format
 msgid "Join Selected Game"
-msgstr "選択したゲームに参加する"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, loadsavedgamebutton)
 #: Dialogs/jabbergameui.ui:265
-#, fuzzy, kde-format
-#| msgid "Load a Saved Game"
+#, kde-format
 msgid "Load a Saved Game..."
-msgstr "保存したゲームをロードする"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: Dialogs/jabbergameui.ui:293
@@ -1280,34 +1282,33 @@ msgstr ""
 #: Dialogs/tcpconnectwidget.ui:98
 #, kde-format
 msgid "Cancel"
-msgstr "キャンセル"
+msgstr "გაუქმება"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, JoinGameDialog)
 #: Dialogs/joingame.ui:13
-#, fuzzy, kde-format
-#| msgid "Network Configuration"
+#, kde-format
 msgid "Join Network Game Configuration"
-msgstr "ネットワークの設定"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: Dialogs/joingame.ui:19
 #, kde-format
 msgid "Network Configuration"
-msgstr "ネットワークの設定"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, hostLabel)
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: Dialogs/joingame.ui:25 Dialogs/tcpconnectwidget.ui:28
 #, kde-format
 msgid "Host:"
-msgstr "ホスト:"
+msgstr "ჰოსტი:"
 
 #. i18n: ectx: property (text), widget (QLabel, portLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: Dialogs/joingame.ui:35 Dialogs/tcpconnectwidget.ui:41
 #, kde-format
 msgid "Port:"
-msgstr "ポート:"
+msgstr "პორტი:"
 
 #: Dialogs/kplayersetupwidget.cpp:247
 #, kde-format
@@ -1334,28 +1335,25 @@ msgstr ""
 #: Dialogs/newGameDialog.ui:29
 #, kde-format
 msgid "Total number of players:"
-msgstr "プレイヤーの数:"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, playersNumberEntry)
 #: Dialogs/newGameDialog.ui:39
-#, fuzzy, kde-format
-#| msgid "Total number of players:"
+#, kde-format
 msgid "Spin this to choose the number of players."
-msgstr "プレイヤーの数:"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, playersNumberEntry)
 #: Dialogs/newGameDialog.ui:42
-#, fuzzy, kde-format
-#| msgid "Total number of players:"
+#, kde-format
 msgid "A spin box to choose the number of players"
-msgstr "プレイヤーの数:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, localPlayersNumberLabel)
 #: Dialogs/newGameDialog.ui:53
-#, fuzzy, kde-format
-#| msgid "Total number of players:"
+#, kde-format
 msgid "Number of local players:"
-msgstr "プレイヤーの数:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, tcpPortLabel)
 #: Dialogs/newGameDialog.ui:67
@@ -1368,7 +1366,7 @@ msgstr ""
 #: Dialogs/newGameDialog.ui:106 Dialogs/newGameSummary.ui:44
 #, kde-format
 msgid "Skin:"
-msgstr "スキン:"
+msgstr "გარეგნობა:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, skinCombo)
 #: Dialogs/newGameDialog.ui:116
@@ -1384,16 +1382,15 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, ghnsbutton)
 #: Dialogs/newGameDialog.ui:126
-#, fuzzy, kde-format
-#| msgid "Download New Skins"
+#, kde-format
 msgid "Download New Skins..."
-msgstr "新しいスキンをダウンロードする"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, goalGroup)
 #: Dialogs/newGameDialog.ui:150
 #, kde-format
 msgid "Goal Type"
-msgstr "ゴールタイプ"
+msgstr "მიზნის ტიპი"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, radioWorld)
 #: Dialogs/newGameDialog.ui:156
@@ -1455,73 +1452,70 @@ msgstr ""
 #. i18n: ectx: property (windowTitle), widget (QWidget, NewGameSummary)
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: Dialogs/newGameSummary.ui:14 Dialogs/newGameSummary.ui:27
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgid "New Game Summary"
-msgstr "新しいゲーム"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, skinNameLabel)
 #: Dialogs/newGameSummary.ui:51
 #, kde-format
 msgid "skin name"
-msgstr "スキン名"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: Dialogs/newGameSummary.ui:102
-#, fuzzy, kde-format
-#| msgid "Next Player"
+#, kde-format
 msgid "Players"
-msgstr "次のプレイヤー"
+msgstr "მოთამაშეები"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: Dialogs/newGameSummary.ui:128
 #, kde-format
 msgid "Goal type:"
-msgstr "ゴールタイプ:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, goalTypeLabel)
 #: Dialogs/newGameSummary.ui:135
-#, fuzzy, kde-format
-#| msgid "Goal type:"
+#, kde-format
 msgid "goal type"
-msgstr "ゴールタイプ:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTableWidget, playersTable)
 #: Dialogs/newGameSummary.ui:157
 #, kde-format
 msgid "Name"
-msgstr "名前"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTableWidget, playersTable)
 #: Dialogs/newGameSummary.ui:168
 #, kde-format
 msgid "Nationality"
-msgstr "国籍"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTableWidget, playersTable)
 #: Dialogs/newGameSummary.ui:179
 #, kde-format
 msgid "Computer"
-msgstr "コンピュータ"
+msgstr "კომპიუტერი"
 
 #. i18n: ectx: property (text), widget (QTableWidget, playersTable)
 #: Dialogs/newGameSummary.ui:190
 #, kde-format
 msgid "Network"
-msgstr "ネットワーク"
+msgstr "ქსელი"
 
 #. i18n: ectx: property (text), widget (QPushButton, previousButton)
 #: Dialogs/newGameSummary.ui:226 Dialogs/qplayersetupdialog.ui:146
 #: Dialogs/tcpconnectwidget.ui:118
 #, kde-format
 msgid "<< Previous"
-msgstr ""
+msgstr "<< წინა"
 
 #. i18n: ectx: property (text), widget (QPushButton, finishButton)
 #: Dialogs/newGameSummary.ui:233
 #, kde-format
 msgid "Start"
-msgstr "スタート"
+msgstr "გაშვება"
 
 #: Dialogs/newGameSummaryWidget.cpp:59
 #, kde-format
@@ -1531,17 +1525,17 @@ msgstr ""
 #: Dialogs/newGameSummaryWidget.cpp:59
 #, kde-format
 msgid "World conquest"
-msgstr ""
+msgstr "მსოფლიოს დაპყრობა"
 
 #: Dialogs/newGameSummaryWidget.cpp:74 Dialogs/newGameSummaryWidget.cpp:76
 #, kde-format
 msgid "Yes"
-msgstr "はい"
+msgstr "კი"
 
 #: Dialogs/newGameSummaryWidget.cpp:74 Dialogs/newGameSummaryWidget.cpp:76
 #, kde-format
 msgid "No"
-msgstr "いいえ"
+msgstr "არა"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, QPlayerSetupWidget)
 #. i18n: ectx: property (windowTitle), widget (QWidget, TcpConnectWidget)
@@ -1600,33 +1594,31 @@ msgstr ""
 #: Dialogs/qwaitedplayersetupdialog.ui:67
 #, kde-format
 msgid "OK"
-msgstr ""
+msgstr "დიახ"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, RestartOrExitDialog)
 #: Dialogs/restartOrExitDialog.ui:13
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgid "New Game or Exit"
-msgstr "新しいゲーム"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, newGameButton)
 #: Dialogs/restartOrExitDialog.ui:27 GameLogic/gameautomaton.cpp:1658
 #, kde-format
 msgid "New Game"
-msgstr "新しいゲーム"
+msgstr "დაიწყეთ ახალი თამაში"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newGameButton)
 #: Dialogs/restartOrExitDialog.ui:33
-#, fuzzy, kde-format
-#| msgid "Start a New Game"
+#, kde-format
 msgid "Starts a new game"
-msgstr "新しいゲームを始める"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, doNothingButton)
 #: Dialogs/restartOrExitDialog.ui:40
 #, kde-format
 msgid "Do Nothing"
-msgstr "何もしない"
+msgstr "არაფერი"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, doNothingButton)
 #: Dialogs/restartOrExitDialog.ui:43
@@ -1638,13 +1630,13 @@ msgstr ""
 #: Dialogs/restartOrExitDialog.ui:50 GameLogic/gameautomaton.cpp:1659
 #, kde-format
 msgid "Exit"
-msgstr "終了"
+msgstr "გასვლა"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, exitButton)
 #: Dialogs/restartOrExitDialog.ui:53
 #, kde-format
 msgid "Quit KsirK"
-msgstr "KsirK を終了する"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
 #: Dialogs/restartOrExitDialog.ui:89
@@ -1673,12 +1665,12 @@ msgstr[1] ""
 #: Sprites/skinSpritesData.cpp:105
 #, kde-format
 msgid "Fatal Error"
-msgstr ""
+msgstr "ფატალური შეცდომა"
 
 #: GameLogic/gameautomaton.cpp:299
 #, kde-format
 msgid "KsirK - Network configuration"
-msgstr "KsirK - ネットワークの設定"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:300
 #, kde-format
@@ -1694,7 +1686,7 @@ msgstr ""
 #: kgamewin.cpp:2639
 #, kde-format
 msgid "New game confirmation"
-msgstr "新しいゲームの設定"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1395
 #, kde-format
@@ -1752,7 +1744,7 @@ msgstr ""
 #: GameLogic/gameautomaton.cpp:1660
 #, kde-format
 msgid "Do nothing"
-msgstr ""
+msgstr "არაფრის გაკეთება"
 
 #: GameLogic/gameautomaton.cpp:1682
 #, kde-format
@@ -1819,7 +1811,7 @@ msgstr ""
 #: gestionSprites.cpp:1245
 #, kde-format
 msgid "KsirK - Error!"
-msgstr "KsirK - エラー!"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:2417
 #, kde-format
@@ -1831,7 +1823,7 @@ msgstr ""
 #: GameLogic/gameautomaton.cpp:2417
 #, kde-format
 msgid "KsirK - Invalid password!"
-msgstr "KsirK - 不正なパスワード!"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:2623
 #, kde-format
@@ -1858,7 +1850,7 @@ msgstr ""
 #: GameLogic/goal.cpp:195
 #, kde-format
 msgid "Error: no player to destroy"
-msgstr ""
+msgstr "გასანადგურებელი მოწყინააღმდეგის გარეშე"
 
 #: GameLogic/goal.cpp:231
 #, kde-format
@@ -1906,12 +1898,12 @@ msgstr[1] ""
 #: GameLogic/goal.cpp:285
 #, kde-format
 msgid " and "
-msgstr ""
+msgstr " და "
 
 #: GameLogic/goal.cpp:289
 #, kde-format
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: GameLogic/goal.cpp:295
 #, kde-format
@@ -1924,7 +1916,7 @@ msgstr ""
 #: GameLogic/goal.cpp:317
 #, kde-format
 msgid "KsirK - Goal Display"
-msgstr ""
+msgstr "KsirK - სამიზნის ჩვენება"
 
 #: GameLogic/KsirkChatModel.cpp:72 kgamewin.cpp:177
 #, kde-format
@@ -1934,7 +1926,7 @@ msgstr ""
 #: GameLogic/KsirkChatModel.cpp:74
 #, kde-format
 msgid "<b>%1:</b> %2"
-msgstr ""
+msgstr "<b>%1:</b> %2"
 
 #: GameLogic/onu.cpp:129
 #, kde-format
@@ -1950,7 +1942,7 @@ msgstr ""
 #: Sprites/animsprite.cpp:511 Sprites/animsprite.cpp:526
 #, kde-format
 msgid "Error!"
-msgstr "エラー!"
+msgstr "შეცდომა!"
 
 #: GameLogic/onu.cpp:146
 #, kde-format
@@ -2009,7 +2001,7 @@ msgstr ""
 #: Jabber/jabberaccount.cpp:211
 #, kde-format
 msgid "Jabber Error"
-msgstr "Jabber エラー"
+msgstr ""
 
 #: Jabber/jabberaccount.cpp:374
 #, kde-format
@@ -2021,7 +2013,7 @@ msgstr ""
 #: Jabber/jabberaccount.cpp:376
 #, kde-format
 msgid "Jabber SSL Error"
-msgstr "Jabber SSL エラー"
+msgstr ""
 
 #: Jabber/jabberaccount.cpp:409
 #, kde-format
@@ -2031,7 +2023,7 @@ msgstr ""
 #: Jabber/jabberaccount.cpp:413
 #, kde-format
 msgid "The certificate is invalid."
-msgstr "不正な証明書です。"
+msgstr ""
 
 #: Jabber/jabberaccount.cpp:417
 #, kde-format
@@ -2051,7 +2043,7 @@ msgstr ""
 #: Jabber/jabberaccount.cpp:435
 #, kde-format
 msgid "The signature is invalid."
-msgstr "不正な署名です。"
+msgstr ""
 
 #: Jabber/jabberaccount.cpp:439
 #, kde-format
@@ -2071,7 +2063,7 @@ msgstr ""
 #: Jabber/jabberaccount.cpp:451
 #, kde-format
 msgid "The certificate has been revoked."
-msgstr ""
+msgstr "სერტიფიკატი გაუქმებულია."
 
 #: Jabber/jabberaccount.cpp:455
 #, kde-format
@@ -2081,7 +2073,7 @@ msgstr ""
 #: Jabber/jabberaccount.cpp:459
 #, kde-format
 msgid "The certificate has expired."
-msgstr ""
+msgstr "სერტიფიკატი ვადაგასულია."
 
 #: Jabber/jabberaccount.cpp:463
 #, kde-format
@@ -2146,7 +2138,7 @@ msgstr ""
 #: Jabber/jabberaccount.cpp:753
 #, kde-format
 msgid "The stream timed out."
-msgstr "ストリームがタイムアウトしました。"
+msgstr ""
 
 #: Jabber/jabberaccount.cpp:756
 #, kde-format
@@ -2191,7 +2183,7 @@ msgstr ""
 #: Jabber/jabberaccount.cpp:789
 #, kde-format
 msgid "Host not found."
-msgstr "ホストが見つかりません。"
+msgstr "ჰოსტი ნაპოვნი არაა."
 
 #: Jabber/jabberaccount.cpp:792
 #, kde-format
@@ -2243,7 +2235,7 @@ msgstr ""
 #: Jabber/jabberaccount.cpp:819
 #, kde-format
 msgid "Connection timed out."
-msgstr ""
+msgstr "კავშირის ვადა გავიდა."
 
 #: Jabber/jabberaccount.cpp:822
 #, kde-format
@@ -2297,7 +2289,7 @@ msgstr ""
 #: Jabber/jabberaccount.cpp:955 Jabber/jabberaccount.cpp:963
 #, kde-format
 msgid "Unknown error."
-msgstr ""
+msgstr "უცნობი შეცდომა."
 
 #: Jabber/jabberaccount.cpp:864
 #, kde-format
@@ -2425,12 +2417,12 @@ msgstr ""
 #: Jabber/jabberaccount.cpp:1130 Jabber/jabbercontact.cpp:939
 #, kde-format
 msgid "Notification"
-msgstr ""
+msgstr "შეტყობინება"
 
 #: Jabber/jabberaccount.cpp:1130 Jabber/jabbercontact.cpp:940
 #, kde-format
 msgid "Keep"
-msgstr ""
+msgstr "დატოვება"
 
 #: Jabber/jabberaccount.cpp:1514 kgamewinslots.cpp:1098
 #, kde-format
@@ -2513,17 +2505,17 @@ msgstr ""
 #: Jabber/jabberbasecontact.cpp:250
 #, kde-format
 msgid "Client"
-msgstr ""
+msgstr "კლიენტი"
 
 #: Jabber/jabberbasecontact.cpp:275
 #, kde-format
 msgid "Timestamp"
-msgstr ""
+msgstr "დროის შტამპი"
 
 #: Jabber/jabberbasecontact.cpp:282
 #, kde-format
 msgid "Message"
-msgstr ""
+msgstr "შეტყობინება"
 
 #: Jabber/jabberbasecontact.cpp:641
 #, kde-format
@@ -2563,7 +2555,7 @@ msgstr ""
 #: Jabber/jabbercontact.cpp:171
 #, kde-format
 msgid "Online"
-msgstr ""
+msgstr "ონლაინ"
 
 #: Jabber/jabbercontact.cpp:172
 #, kde-format
@@ -2573,7 +2565,7 @@ msgstr ""
 #: Jabber/jabbercontact.cpp:173
 #, kde-format
 msgid "Away"
-msgstr ""
+msgstr "გასული"
 
 #: Jabber/jabbercontact.cpp:174
 #, kde-format
@@ -2583,12 +2575,12 @@ msgstr ""
 #: Jabber/jabbercontact.cpp:175
 #, kde-format
 msgid "Do Not Disturb"
-msgstr ""
+msgstr "არ შემაწუხო"
 
 #: Jabber/jabbercontact.cpp:176
 #, kde-format
 msgid "Invisible"
-msgstr ""
+msgstr "უხილავია"
 
 #: Jabber/jabbercontact.cpp:180
 #, kde-format
@@ -2676,7 +2668,7 @@ msgstr ""
 #: Jabber/jabbergroupcontact.cpp:120
 #, kde-format
 msgid "Change nickname"
-msgstr ""
+msgstr "მეტსახელის შეცვლა"
 
 #: Jabber/jabbergroupcontact.cpp:367
 #, kde-format
@@ -2706,12 +2698,12 @@ msgstr ""
 #: Jabber/jabberprotocol.cpp:392
 #, kde-format
 msgid "Add"
-msgstr ""
+msgstr "დამატება"
 
 #: Jabber/jabberprotocol.cpp:392
 #, kde-format
 msgid "Do Not Add"
-msgstr ""
+msgstr "არ დაამატოთ"
 
 #: Jabber/jabberprotocol.cpp:408
 #, kde-format
@@ -2721,7 +2713,7 @@ msgstr ""
 #: Jabber/jabberprotocol.cpp:409
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "წაშლა"
 
 #: Jabber/jabberprotocol.cpp:409
 #, kde-format
@@ -2761,7 +2753,7 @@ msgstr ""
 #: kgamewin.cpp:382
 #, kde-format
 msgid "Jabber"
-msgstr ""
+msgstr "Jabber"
 
 #: kgamewin.cpp:384
 #, kde-format
@@ -3007,7 +2999,7 @@ msgstr ""
 #: kgamewin.cpp:2315 main.cpp:42
 #, kde-format
 msgid "KsirK"
-msgstr ""
+msgstr "KsirK"
 
 #: kgamewin.cpp:2455
 #, kde-format
@@ -3066,11 +3058,10 @@ msgid "Cannot save when waiting for a defense."
 msgstr ""
 
 #: kgamewinslots.cpp:454
-#, fuzzy, kde-format
-#| msgid "Load a Saved Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "KsirK - Save Game"
-msgstr "保存したゲームをロードする"
+msgstr ""
 
 #: kgamewinslots.cpp:457
 #, kde-format
@@ -3082,12 +3073,12 @@ msgstr ""
 #: kgamewinslots.cpp:458
 #, kde-format
 msgid "Overwrite file?"
-msgstr ""
+msgstr "ჩავანაცვლო ფაილი?"
 
 #: kgamewinslots.cpp:461
 #, kde-format
 msgid "Saving canceled"
-msgstr ""
+msgstr "შენახვა  გაუქმებულია"
 
 #: kgamewinslots.cpp:475
 #, kde-format
@@ -3124,7 +3115,7 @@ msgstr ""
 #: krightdialog.cpp:122
 #, kde-format
 msgid "<b>Owner:</b> %1"
-msgstr ""
+msgstr "<b>Owner:</b> %1"
 
 #: krightdialog.cpp:123
 #, kde-format
@@ -3163,7 +3154,7 @@ msgstr ""
 #: krightdialog.cpp:298
 #, kde-format
 msgid "Valid"
-msgstr ""
+msgstr "სწორი"
 
 #: krightdialog.cpp:299
 #, kde-format
@@ -3242,7 +3233,7 @@ msgstr ""
 #: ksirksettings.kcfg:25
 #, kde-format
 msgid "The graphical theme to be used."
-msgstr ""
+msgstr "გრაფიკული თემა."
 
 #. i18n: ectx: label, entry (jabberId), group (General)
 #: ksirksettings.kcfg:28
@@ -3276,16 +3267,15 @@ msgstr ""
 
 #. i18n: ectx: Menu (game)
 #: ksirkui.rc:10
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgid "&Game"
-msgstr "新しいゲーム"
+msgstr "&თამაში"
 
 #. i18n: ectx: Menu (settings)
 #: ksirkui.rc:24
 #, kde-format
 msgid "&Settings"
-msgstr ""
+msgstr "გამართვა"
 
 #. i18n: ectx: Menu (help)
 #: ksirkui.rc:26
@@ -3297,7 +3287,7 @@ msgstr ""
 #: ksirkui.rc:31
 #, kde-format
 msgid "Main Toolbar"
-msgstr ""
+msgstr "ხელსაწყოთა მთავარი ზოლი"
 
 #: main.cpp:44
 #, kde-format
@@ -3329,7 +3319,7 @@ msgstr ""
 #: main.cpp:51
 #, kde-format
 msgid "Current maintainer"
-msgstr ""
+msgstr "პროექტის მიმდინარე ხელმძღვანელი"
 
 #: main.cpp:52
 #, kde-format
@@ -3339,7 +3329,7 @@ msgstr ""
 #: main.cpp:53
 #, kde-format
 msgid "Albert Astals Cid"
-msgstr ""
+msgstr "Albert Astals Cid"
 
 #: main.cpp:54
 #, kde-format
@@ -3368,10 +3358,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, pbNewGame)
 #: mainMenu.ui:97
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgid "New Local Game"
-msgstr "新しいゲーム"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, pbJabberGame)
 #: mainMenu.ui:104
@@ -3389,13 +3378,13 @@ msgstr ""
 #: mainMenu.ui:125
 #, kde-format
 msgid "Load..."
-msgstr ""
+msgstr "ჩატვირთვა..."
 
 #. i18n: ectx: property (text), widget (QPushButton, pbQuit)
 #: mainMenu.ui:145
 #, kde-format
 msgid "Quit"
-msgstr ""
+msgstr "დატოვება"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, KsirkPreferencesWidget)
 #: preferences.ui:26
@@ -3419,7 +3408,7 @@ msgstr ""
 #: preferences.ui:95
 #, kde-format
 msgid "Show help"
-msgstr ""
+msgstr "დახმარების ჩვენება"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_showArmiesNumbers)
 #: preferences.ui:102
