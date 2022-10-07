@@ -13,6 +13,7 @@
   <name xml:lang="fi">KsirK</name>
   <name xml:lang="fr">KsirK</name>
   <name xml:lang="it">KsirK</name>
+  <name xml:lang="ka">KsirK</name>
   <name xml:lang="ko">KsirK</name>
   <name xml:lang="nl">KsirK</name>
   <name xml:lang="nn">KsirK</name>
@@ -39,6 +40,7 @@
   <summary xml:lang="gl">Xogo de estratexia e dominación mundial</summary>
   <summary xml:lang="id">Permainan Strategi Menguasai Dunia</summary>
   <summary xml:lang="it">Gioco di strategia per la dominazione del mondo</summary>
+  <summary xml:lang="ka">სტრატეგიული თამაში სამყაროს დომინაციისთვის</summary>
   <summary xml:lang="ko">우주 정복 전략 게임</summary>
   <summary xml:lang="nl">Werelddominatie-strategiespel</summary>
   <summary xml:lang="nn">Kamp om verdsherredøme</summary>
@@ -103,6 +105,7 @@
     <p xml:lang="gl">Funcionalidades:</p>
     <p xml:lang="id">Fitur:</p>
     <p xml:lang="it">Caratteristiche:</p>
+    <p xml:lang="ka">თვისებები:</p>
     <p xml:lang="ko">기능:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
     <p xml:lang="nn">Funksjonar:</p>
