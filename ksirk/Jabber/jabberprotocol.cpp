@@ -296,6 +296,8 @@ XMPP::Status JabberProtocol::kosToStatus( const Kopete::OnlineStatus & status , 
 #include <KVBox>
 #include "jabbercontactpool.h"
 #include <kopeteview.h>
+
+#include <kwidgetsaddons_version.h>
 #include <KMessageBox>
 #include <KInputDialog>
 
@@ -387,10 +389,18 @@ void JabberProtocol::handleURL(const KUrl & kurl) const
 	}
 	else if(action == "roster" || action == "subscribe")
 	{
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+		if (KMessageBox::questionTwoActions(Kopete::UI::Global::mainWidget(),
+#else
 		if (KMessageBox::questionYesNo(Kopete::UI::Global::mainWidget(),
+#endif
 			i18n("Do you want to add '%1' to your contact list?", jid.full()),
 			QString(), KGuiItem( i18n("Add") ), KGuiItem( i18n("Do Not Add") ))
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+				  != KMessageBox::PrimaryAction)
+#else
 				  != KMessageBox::Yes)
+#endif
 		{
 			return;
 		}
@@ -404,10 +414,18 @@ void JabberProtocol::handleURL(const KUrl & kurl) const
 		if(!contact)
 			return;
 	
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+		if (KMessageBox::questionTwoActions(Kopete::UI::Global::mainWidget(),
+#else
 		if (KMessageBox::questionYesNo(Kopete::UI::Global::mainWidget(),
+#endif
 			i18n("Do you want to remove '%1' from your contact list?", jid.full()),
 			QString(), KGuiItem( i18n("Remove") ), KGuiItem( i18n("Do Not Remove") ))
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+						!= KMessageBox::PrimaryAction)
+#else
 						!= KMessageBox::Yes)
+#endif
 		{
 			return;
 		}

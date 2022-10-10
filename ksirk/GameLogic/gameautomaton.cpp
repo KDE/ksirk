@@ -42,6 +42,8 @@
 #include <QFile>
 #include <QUuid>
 #include <QInputDialog>
+
+#include <kwidgetsaddons_version.h>
 #include <KLocalizedString>
 #include <KLineEdit>
 #include <KMessageBox>
@@ -1652,17 +1654,29 @@ void GameAutomaton::slotConnectionToServerBroken()
 //   m_game->haltTimer();
   if (m_state != GAME_OVER)
   {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+    int answer = KMessageBox::questionTwoActionsCancel(m_game,
+#else
     int answer = KMessageBox::questionYesNoCancel(m_game,
+#endif
                                                   i18n("KsirK - Lost connection to server!\nWhat do you want to do?"),
                                                   i18n("Starting a new game or exit."),
                                                   KGuiItem(i18n("New Game")),
                                                   KGuiItem(i18n("Exit")),
                                                   KGuiItem(i18n("Do nothing")));
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+    if (answer == KMessageBox::PrimaryAction)
+#else
     if (answer == KMessageBox::Yes)
+#endif
     {
       m_game->showMainMenu();
     }
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+    else if (answer == KMessageBox::SecondaryAction)
+#else
     else if (answer == KMessageBox::No)
+#endif
     {
       exit(0);
     }
@@ -1681,12 +1695,27 @@ void GameAutomaton::slotConnectionToClientBroken(KMessageIO *)
     KMessageBox::information(m_game, 
                             i18n("Lost connection to a client.\nFor the moment, you can only save the game and start a new one or quit.\nThis will be improved in a future version."), 
                             i18n("KsirK - Lost connection to client!"));
-    switch ( KMessageBox::warningYesNo( m_game, i18n("Do want to save your game?")) ) 
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+    switch ( KMessageBox::warningTwoActions( m_game,
+#else
+    switch ( KMessageBox::warningYesNo( m_game,
+#endif
+                                        i18n("Do want to save your game?"),
+                                        QString(),
+                                        KStandardGuiItem::save(), KStandardGuiItem::discard()) )
     {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+    case KMessageBox::PrimaryAction :
+#else
     case KMessageBox::Yes :
+#endif
       m_game->slotSaveGame();
       break;
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+    case KMessageBox::SecondaryAction :;
+#else
     case KMessageBox::No :;
+#endif
     default: ;
     }
     if (!m_game->actionNewGame(GameAutomaton::None))
@@ -2619,9 +2648,20 @@ void GameAutomaton::actionNextPlayer()
   if ( currentPlayer()->isVirtual()
     || currentPlayer()->isAI()
     || m_currentPlayerPlayed
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+    || (KMessageBox::questionTwoActions (m_game,
+#else
     || (KMessageBox::questionYesNo (m_game,
-                                     i18n("%1, you have not played anything this turn.\nDo you really want to lose your turn?",m_currentPlayer),
-                                     i18n("Really Next Player?")) == KMessageBox::Yes) )
+#endif
+                                    i18n("%1, you have not played anything this turn.\nDo you really want to lose your turn?",m_currentPlayer),
+                                    i18n("Really Next Player?"),
+                                    KGuiItem(i18nc("@action:button", "Next Player")),
+                                    KStandardGuiItem::cancel())
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+       == KMessageBox::PrimaryAction) )
+#else
+       == KMessageBox::Yes) )
+#endif
   {
     QByteArray buffer;
     QDataStream stream(&buffer, QIODevice::WriteOnly);

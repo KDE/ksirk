@@ -53,6 +53,7 @@
 #include <QSvgRenderer>
 
 // include files for KDE
+#include <kwidgetsaddons_version.h>
 #include <KMessageBox>
 #include <KLocalizedString>
 #include <KConfig>
@@ -521,16 +522,29 @@ bool MainWindow::queryClose()
   // TODO : Test si jeu en cours
   if (m_onu && m_onu->dirty())
   {
-    switch (KMessageBox::warningYesNoCancel(this,i18n("There are unsaved changes. What do you want to do?"),
-      i18n("Exit Anyway?"),
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+    switch (KMessageBox::warningTwoActionsCancel(this,
+#else
+    switch (KMessageBox::warningYesNoCancel(this,
+#endif
+                                             i18n("There are unsaved changes. What do you want to do?"),
+                                             i18n("Exit Anyway?"),
                                              KGuiItem(i18n("Quit without saving")),
                                              KGuiItem(i18n("Save then quit")),
                                              KGuiItem(i18n("Do not quit"))))
     {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+      case KMessageBox::PrimaryAction:
+#else
       case KMessageBox::Yes:
+#endif
         return true;
         break;
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+      case KMessageBox::SecondaryAction:
+#else
       case KMessageBox::No:
+#endif
         m_onu->saveConfig();
         return true;
         break;

@@ -39,6 +39,7 @@
 #include <QRegExp>
 #include <QTimer>
 
+#include <kwidgetsaddons_version.h>
 #include <KComponentData>
 #include <KConfig>
 #include <KMessageBox>
@@ -1122,7 +1123,11 @@ void JabberAccount::slotSubscription (const XMPP::Jid & jid, const QString & typ
 
 		XMPP::JT_Roster *task;
 
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+		switch (KMessageBox::warningTwoActions (0,
+#else
 		switch (KMessageBox::warningYesNo (0,
+#endif
 								  i18n
 								  ("The Jabber user %1 removed %2's subscription to him/her. "
 								   "This account will no longer be able to view his/her online/offline status. "
@@ -1130,7 +1135,11 @@ void JabberAccount::slotSubscription (const XMPP::Jid & jid, const QString & typ
 								    jid.full(), accountId()), i18n ("Notification"), KStandardGuiItem::del(), KGuiItem( i18n("Keep") )))
 		{
 
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+			case KMessageBox::PrimaryAction:
+#else
 			case KMessageBox::Yes:
+#endif
 				/*
 				 * Delete this contact from our roster.
 				 */
