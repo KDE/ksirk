@@ -990,8 +990,8 @@ msgid ""
 "Describe here the skin, its style, its story, the intent of its author(s), "
 "etc."
 msgstr ""
-"Descriviu ací l'aparença, el seu estil, la seua història, la intenció del "
-"seu autor(s), etc."
+"Descriviu ací l'aparença, el seu estil, la seua història, la intenció dels "
+"seus autors, etc."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabSprites)
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkSpritesDefinition)
@@ -2037,7 +2037,7 @@ msgstr "Gaël de Chalendar conegut com Kleag"
 #: main.cpp:64
 #, kde-format
 msgid "file to open"
-msgstr "fitxer que s'obrirà"
+msgstr "fitxer que s'ha d'obrir"
 
 #: mainwindow.cpp:127 mainwindow.cpp:676 mainwindow.cpp:804 mainwindow.cpp:1191
 #, kde-format

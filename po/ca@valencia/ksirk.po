@@ -1173,7 +1173,7 @@ msgstr ""
 #: Dialogs/InvasionSlider.cpp:146
 #, kde-format
 msgid "<br><i>Choose the number of armies to move.</i>"
-msgstr "<br><i>Trieu el nombre de batallons a moure.</i>"
+msgstr "<br><i>Trieu el nombre de batallons que es mouran.</i>"
 
 #: Dialogs/jabbergameui.cpp:76
 #, kde-format
