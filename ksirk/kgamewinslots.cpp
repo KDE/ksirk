@@ -59,7 +59,7 @@
 #include <KLocalizedString>
 #include <KConfig>
 #include "ksirk_debug.h"
-#include <KMessageBox>
+
 #include <KGamePopupItem>
 #include <KPasswordDialog>
 #include <tcpconnectwidget.h>
@@ -452,10 +452,7 @@ void KGameWindow::slotSaveGame()
     if (m_fileName.isEmpty())
     {
       QString fileName = QFileDialog::getSaveFileName (this, i18nc("@title:window", "KsirK - Save Game"), QString(), "*.xml");
-      if ( QFile::exists(fileName)
-          && (KMessageBox::questionYesNo (this,
-                i18n("%1 exists.\nDo you really want to overwrite it?",fileName),
-                i18n("Overwrite file?")) == KMessageBox::No) )
+      if ( fileName.isEmpty())
       {
         m_message->setMessageTimeout(3000);
         m_message->showMessage(i18n("Saving canceled"), KGamePopupItem::TopLeft,
@@ -464,17 +461,14 @@ void KGameWindow::slotSaveGame()
       }
       m_fileName = fileName;
     }
-    if (!m_fileName.isEmpty())
-    {
-      QFile file(m_fileName);
-      file.open(QIODevice::WriteOnly);
-      QTextStream ofs(&file);
-      ofs.setCodec("UTF-8");
-      saveXml(ofs);
-      m_message->setMessageTimeout(3000);
-      m_message->showMessage(i18n("Game saved to %1",m_fileName),
-          KGamePopupItem::TopLeft, KGamePopupItem::ReplacePrevious);
-    }
+    QFile file(m_fileName);
+    file.open(QIODevice::WriteOnly);
+    QTextStream ofs(&file);
+    ofs.setCodec("UTF-8");
+    saveXml(ofs);
+    m_message->setMessageTimeout(3000);
+    m_message->showMessage(i18n("Game saved to %1",m_fileName),
+        KGamePopupItem::TopLeft, KGamePopupItem::ReplacePrevious);
   }
   else
   {
