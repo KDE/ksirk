@@ -2636,7 +2636,7 @@ bool KGameWindow::actionNewGame(GameAutomaton::NetworkGameType socket)
   qCDebug(KSIRK_LOG);
   if  ( ( m_automaton->playerList()->count() == 0 ) ||
   ( isMyState(GameLogic::GameAutomaton::GAME_OVER)  ) ||
-        (KMessageBox::warningContinueCancel(this,i18n("Do you really want to end your current game and start a new one?"),i18n("New game confirmation"),KStandardGuiItem::yes()) == KMessageBox::Continue ) )
+        (KMessageBox::warningContinueCancel(this,i18n("Do you really want to end your current game and start a new one?"),i18n("New game confirmation"),KGuiItem(i18nc("@action:button", "Start New Game"))) == KMessageBox::Continue ) )
 
   {
     qCDebug(KSIRK_LOG) << "valid";
