@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-24 00:42+0000\n"
+"POT-Creation-Date: 2022-10-21 00:44+0000\n"
 "PO-Revision-Date: 2010-06-08 15:55+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -1937,141 +1937,141 @@ msgstr "Gael de Chalendar aka Kleag"
 msgid "file to open"
 msgstr "ឯក​សារ​ត្រូវ​បើក"
 
-#: mainwindow.cpp:127 mainwindow.cpp:676 mainwindow.cpp:804 mainwindow.cpp:1191
+#: mainwindow.cpp:128 mainwindow.cpp:690 mainwindow.cpp:818 mainwindow.cpp:1205
 #, kde-format
 msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr "មិន​អាច​ផ្ទុក​រូប​តំណាង​យុថ្កា​បាន​ទេ​<br>កម្ម​វិធី​មិន​អាច​បន្ត​បាន​ទេ"
 
-#: mainwindow.cpp:127 mainwindow.cpp:141 mainwindow.cpp:676 mainwindow.cpp:705
-#: mainwindow.cpp:804 mainwindow.cpp:821 mainwindow.cpp:1191 onu.cpp:79
+#: mainwindow.cpp:128 mainwindow.cpp:142 mainwindow.cpp:690 mainwindow.cpp:719
+#: mainwindow.cpp:818 mainwindow.cpp:835 mainwindow.cpp:1205 onu.cpp:79
 #: onu.cpp:112 onu.cpp:131
 #, kde-format
 msgid "Error"
 msgstr "កំហុស"
 
-#: mainwindow.cpp:141 mainwindow.cpp:705 mainwindow.cpp:821
+#: mainwindow.cpp:142 mainwindow.cpp:719 mainwindow.cpp:835
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
 msgstr "មិន​អាច​ផ្ទុក​រូប​តំណាង​មជ្ឈ​មណ្ឌល​បាន​ទេ​<br>កម្ម​វិធី​មិន​អាច​បន្ត​បាន​ទេ​"
 
-#: mainwindow.cpp:324
+#: mainwindow.cpp:325
 #, kde-format
 msgid "Open a saved skin..."
 msgstr "បើក​ស្បែក​ដែល​បាន​រក្សា​ទុក​..."
 
-#: mainwindow.cpp:328
+#: mainwindow.cpp:329
 #, kde-format
 msgid "Load &Recent"
 msgstr "ផ្ទុក​ស្បែក​បច្ចុប្បន្ន​"
 
-#: mainwindow.cpp:329
+#: mainwindow.cpp:330
 #, kde-format
 msgid "Open a recently saved skin..."
 msgstr "បើក​ស្បែក​ដែល​បាន​រក្សា​ទុក​បច្ចុប្បន្ន​..."
 
-#: mainwindow.cpp:337
+#: mainwindow.cpp:338
 #, kde-format
 msgid "Save the current skin"
 msgstr "រក្សា​ទុក​ស្បែក​បច្ចុប្បន្ន​"
 
-#: mainwindow.cpp:366
+#: mainwindow.cpp:367
 #, fuzzy, kde-format
 #| msgid "Choose the root folder of the skin to open"
 msgctxt "@title:window"
 msgid "Choose the Root Folder of the Skin to Open"
 msgstr "ជ្រើស​ថត​ root របស់​ស្បែក​ដែល​ត្រូវ​បើក​"
 
-#: mainwindow.cpp:524
+#: mainwindow.cpp:530
 #, kde-format
 msgid "There are unsaved changes. What do you want to do?"
 msgstr "មាន​ការ​ផ្លាស់​ប្ដូរ​ដែល​មិន​បាន​រក្សា​ទុក​ ។ តើ​អ្នក​ចង់​ធ្វើ​អ្វី ?"
 
-#: mainwindow.cpp:525
+#: mainwindow.cpp:531
 #, kde-format
 msgid "Exit Anyway?"
 msgstr "យ៉ាង​ណា​ក៏​ដោយ​ ចាក​ចេញ​ឬ​ ?"
 
-#: mainwindow.cpp:526
+#: mainwindow.cpp:532
 #, kde-format
 msgid "Quit without saving"
 msgstr "ចាក​ចេញ​ដោយ​មិន​​រក្សា​ទុក​"
 
-#: mainwindow.cpp:527
+#: mainwindow.cpp:533
 #, kde-format
 msgid "Save then quit"
 msgstr "រក្សា​ទុក​ រួច​ចាក​ចេញ"
 
-#: mainwindow.cpp:528
+#: mainwindow.cpp:534
 #, kde-format
 msgid "Do not quit"
 msgstr "កុំ​ចាក​ចេញ"
 
-#: mainwindow.cpp:1303
+#: mainwindow.cpp:1317
 #, kde-format
 msgid "New country name"
 msgstr "ឈ្មោះ​ប្រទេស​ថ្មី"
 
-#: mainwindow.cpp:1303
+#: mainwindow.cpp:1317
 #, kde-format
 msgid "Enter the name of the new country"
 msgstr "វាយ​បញ្ចូល​ឈ្មោះ​​​ប្រទេស​ថ្មី"
 
-#: mainwindow.cpp:1313
+#: mainwindow.cpp:1327
 #, kde-format
 msgid "Do you really want to delete country '%1'?"
 msgstr "តើ​អ្នក​ពិត​ជា​ចង់​លុប​ប្រទេស​ '%1' ឬ​ ?"
 
-#: mainwindow.cpp:1313
+#: mainwindow.cpp:1327
 #, kde-format
 msgid "Really delete country?"
 msgstr "ពិត​ជា​ចង់​លុប​ប្រទេស​ឬ​ ?"
 
-#: mainwindow.cpp:1332
+#: mainwindow.cpp:1346
 #, kde-format
 msgid "New continent name"
 msgstr "ឈ្មោះ​ទ្វីប​ថ្មី"
 
-#: mainwindow.cpp:1332
+#: mainwindow.cpp:1346
 #, kde-format
 msgid "Enter the name of the new continent"
 msgstr "វាយ​បញ្ចូល​ឈ្មោះ​របស់​ទ្វីប​ថ្មី"
 
-#: mainwindow.cpp:1342
+#: mainwindow.cpp:1356
 #, kde-format
 msgid "Do you really want to delete continent '%1'?"
 msgstr "តើ​​អ្នក​ពិត​ជា​ចង់​លុប​ទ្វីប​ '%1' ឬ​ ?"
 
-#: mainwindow.cpp:1342
+#: mainwindow.cpp:1356
 #, kde-format
 msgid "Really delete continent?"
 msgstr "ពិត​ជា​ចង់​លុប​ទ្វីប​ឬ​ ?"
 
-#: mainwindow.cpp:1891
+#: mainwindow.cpp:1905
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "តើ​អ្នក​ពិត​ជា​ចង់​លុប​គោល​ដៅ​ '%1' ឬ ?"
 
-#: mainwindow.cpp:1891
+#: mainwindow.cpp:1905
 #, kde-format
 msgid "Really delete goal?"
 msgstr "ពិត​ជា​ចង់​លុប​គោល​ដៅ​ឬ​ ?"
 
-#: mainwindow.cpp:1950
+#: mainwindow.cpp:1964
 #, kde-format
 msgid "New nationality name"
 msgstr "ឈ្មោះ​សញ្ជាតិ​ថ្មី​"
 
-#: mainwindow.cpp:1950
+#: mainwindow.cpp:1964
 #, kde-format
 msgid "Enter the name of the new nationality"
 msgstr "បញ្ចូល​ឈ្មោះ​របស់​សញ្ជាតិ​ថ្មី​ "
 
-#: mainwindow.cpp:1960
+#: mainwindow.cpp:1974
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "តើ​អ្នក​ពិត​ជា​ចង់​លុប​សញ្ជាតិ​ '%1' ឬ​ ?"
 
-#: mainwindow.cpp:1960
+#: mainwindow.cpp:1974
 #, kde-format
 msgid "Really delete nationality?"
 msgstr "ពិត​ជា​ចង់​លុប​សញ្ជាតិ​ឬ​ ?"

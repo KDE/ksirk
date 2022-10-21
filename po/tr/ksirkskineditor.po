@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-24 00:42+0000\n"
-"PO-Revision-Date: 2022-06-26 11:07+0300\n"
+"POT-Creation-Date: 2022-10-21 00:44+0000\n"
+"PO-Revision-Date: 2022-10-20 12:49+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.04.2\n"
+"X-Generator: Lokalize 22.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1270,7 +1270,7 @@ msgstr "Ana Araç Çubuğu"
 #: ksirkskineditorwidget.ui:20 main.cpp:52 main.cpp:54
 #, kde-format
 msgid "KsirK Skin Editor"
-msgstr "KsirK Tema Düzenleyicisi"
+msgstr "KsirK Deri Düzenleyicisi"
 
 #. i18n: ectx: property (toolTip), widget (QScrollArea, buttonsScrollArea)
 #: ksirkskineditorwidget.ui:46
@@ -1977,140 +1977,140 @@ msgstr "Gaël de Chalendar, bir diğer adıyla Kleag"
 msgid "file to open"
 msgstr "açılacak dosya"
 
-#: mainwindow.cpp:127 mainwindow.cpp:676 mainwindow.cpp:804 mainwindow.cpp:1191
+#: mainwindow.cpp:128 mainwindow.cpp:690 mainwindow.cpp:818 mainwindow.cpp:1205
 #, kde-format
 msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr "Merkez simgesi yüklenemedi<br>Program sürdürülemiyor"
 
-#: mainwindow.cpp:127 mainwindow.cpp:141 mainwindow.cpp:676 mainwindow.cpp:705
-#: mainwindow.cpp:804 mainwindow.cpp:821 mainwindow.cpp:1191 onu.cpp:79
+#: mainwindow.cpp:128 mainwindow.cpp:142 mainwindow.cpp:690 mainwindow.cpp:719
+#: mainwindow.cpp:818 mainwindow.cpp:835 mainwindow.cpp:1205 onu.cpp:79
 #: onu.cpp:112 onu.cpp:131
 #, kde-format
 msgid "Error"
 msgstr "Hata"
 
-#: mainwindow.cpp:141 mainwindow.cpp:705 mainwindow.cpp:821
+#: mainwindow.cpp:142 mainwindow.cpp:719 mainwindow.cpp:835
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
 msgstr "Merkez simgesi yüklenemedi<br>Program sürdürülemiyon"
 
-#: mainwindow.cpp:324
+#: mainwindow.cpp:325
 #, kde-format
 msgid "Open a saved skin..."
 msgstr "Kaydedilmiş bir tema aç..."
 
-#: mainwindow.cpp:328
+#: mainwindow.cpp:329
 #, kde-format
 msgid "Load &Recent"
 msgstr "&Son Kullanılanlardan Yükle"
 
-#: mainwindow.cpp:329
+#: mainwindow.cpp:330
 #, kde-format
 msgid "Open a recently saved skin..."
 msgstr "Son kaydedilen temalardan birini aç..."
 
-#: mainwindow.cpp:337
+#: mainwindow.cpp:338
 #, kde-format
 msgid "Save the current skin"
 msgstr "Geçerli temayı kaydet"
 
-#: mainwindow.cpp:366
+#: mainwindow.cpp:367
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Root Folder of the Skin to Open"
 msgstr "Açmak için Temanın Kök Klasörünü Seçin"
 
-#: mainwindow.cpp:524
+#: mainwindow.cpp:530
 #, kde-format
 msgid "There are unsaved changes. What do you want to do?"
 msgstr "Kaydedilmemiş değişiklikler var. Ne yapmak istersiniz?"
 
-#: mainwindow.cpp:525
+#: mainwindow.cpp:531
 #, kde-format
 msgid "Exit Anyway?"
 msgstr "Yine de çıkılsın mı?"
 
-#: mainwindow.cpp:526
+#: mainwindow.cpp:532
 #, kde-format
 msgid "Quit without saving"
 msgstr "Kaydetmeden çık"
 
-#: mainwindow.cpp:527
+#: mainwindow.cpp:533
 #, kde-format
 msgid "Save then quit"
 msgstr "Kaydet ve çık"
 
-#: mainwindow.cpp:528
+#: mainwindow.cpp:534
 #, kde-format
 msgid "Do not quit"
 msgstr "Çıkma"
 
-#: mainwindow.cpp:1303
+#: mainwindow.cpp:1317
 #, kde-format
 msgid "New country name"
 msgstr "Yeni ülke adı"
 
-#: mainwindow.cpp:1303
+#: mainwindow.cpp:1317
 #, kde-format
 msgid "Enter the name of the new country"
 msgstr "Yeni ülkenin adını girin"
 
-#: mainwindow.cpp:1313
+#: mainwindow.cpp:1327
 #, kde-format
 msgid "Do you really want to delete country '%1'?"
 msgstr "'%1' ülkesini gerçekten silmek istiyor musunuz?"
 
-#: mainwindow.cpp:1313
+#: mainwindow.cpp:1327
 #, kde-format
 msgid "Really delete country?"
 msgstr "Ülkeyi gerçekten silmek istiyor musunuz?"
 
-#: mainwindow.cpp:1332
+#: mainwindow.cpp:1346
 #, kde-format
 msgid "New continent name"
 msgstr "Yeni kıta adı"
 
-#: mainwindow.cpp:1332
+#: mainwindow.cpp:1346
 #, kde-format
 msgid "Enter the name of the new continent"
 msgstr "Yeni kıtanın adını girin"
 
-#: mainwindow.cpp:1342
+#: mainwindow.cpp:1356
 #, kde-format
 msgid "Do you really want to delete continent '%1'?"
 msgstr "'%1' kıtasını gerçekten silmek istiyor musunuz?"
 
-#: mainwindow.cpp:1342
+#: mainwindow.cpp:1356
 #, kde-format
 msgid "Really delete continent?"
 msgstr "Kıtayı gerçekten silmek istiyor musunuz?"
 
-#: mainwindow.cpp:1891
+#: mainwindow.cpp:1905
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "'%1' hedefini gerçekten silmek istiyor musunuz?"
 
-#: mainwindow.cpp:1891
+#: mainwindow.cpp:1905
 #, kde-format
 msgid "Really delete goal?"
 msgstr "Hedefi gerçekten silmek istiyor musunuz?"
 
-#: mainwindow.cpp:1950
+#: mainwindow.cpp:1964
 #, kde-format
 msgid "New nationality name"
 msgstr "Yeni ulus adı"
 
-#: mainwindow.cpp:1950
+#: mainwindow.cpp:1964
 #, kde-format
 msgid "Enter the name of the new nationality"
 msgstr "Yeni ulusun adını girin"
 
-#: mainwindow.cpp:1960
+#: mainwindow.cpp:1974
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "'%1' ulusunu gerçekten silmek istiyor musunuz?"
 
-#: mainwindow.cpp:1960
+#: mainwindow.cpp:1974
 #, kde-format
 msgid "Really delete nationality?"
 msgstr "Bu ulusu gerçekten silmek istiyor musunuz?"
@@ -2156,7 +2156,7 @@ msgstr "HavuzYükleyici"
 #: preferences.ui:25
 #, kde-format
 msgid "KsirK Skin Editor Preferences"
-msgstr "KsirK Tema Düzenleyici Özellikleri"
+msgstr "KsirK Deri Düzenleyici Özellikleri"
 
 #: skinSpritesData.cpp:85
 #, kde-format
