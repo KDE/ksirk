@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2022-10-19 13:22\n"
+"PO-Revision-Date: 2022-10-22 05:28\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -1705,11 +1705,10 @@ msgid "New game confirmation"
 msgstr "新游戏确认"
 
 #: GameLogic/gameautomaton.cpp:1189 GameLogic/gameautomaton.cpp:1217
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Join New Game"
-msgstr "新游戏"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1397
 #, kde-format
@@ -1870,11 +1869,10 @@ msgid "Really Next Player?"
 msgstr "确定转到下一个玩家吗？"
 
 #: GameLogic/gameautomaton.cpp:2658
-#, fuzzy, kde-format
-#| msgid "Next Player"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Player"
-msgstr "下一个玩家"
+msgstr ""
 
 #: GameLogic/goal.cpp:156
 #, kde-format
@@ -2937,11 +2935,10 @@ msgid "Do you want to quit the game?"
 msgstr "您想要退出游戏吗？"
 
 #: kgamewin.cpp:1054
-#, fuzzy, kde-format
-#| msgid "Quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
-msgstr "退出"
+msgstr ""
 
 #: kgamewin.cpp:1074
 #, kde-format
@@ -3086,11 +3083,10 @@ msgid "Do you really want to end your current game and start a new one?"
 msgstr "您真的想要结束当前游戏并开始新游戏吗？"
 
 #: kgamewin.cpp:2668
-#, fuzzy, kde-format
-#| msgid "Start a New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
-msgstr "开始新游戏"
+msgstr ""
 
 #: kgamewin.cpp:2924
 #, kde-format
@@ -3528,13 +3524,3 @@ msgstr "错误 - 未知的皮肤整数数据： "
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "错误 - 未知的皮肤字符串数据： "
-
-#~ msgid ""
-#~ "%1 exists.\n"
-#~ "Do you really want to overwrite it?"
-#~ msgstr ""
-#~ "%1 已存在。\n"
-#~ "您真的想要覆盖它吗？"
-
-#~ msgid "Overwrite file?"
-#~ msgstr "覆盖文件?"
