@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2021-10-28 18:24+0100\n"
+"PO-Revision-Date: 2022-10-21 23:36+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -1727,11 +1727,10 @@ msgid "New game confirmation"
 msgstr "Confirmação de novo jogo"
 
 #: GameLogic/gameautomaton.cpp:1189 GameLogic/gameautomaton.cpp:1217
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Join New Game"
-msgstr "Novo Jogo"
+msgstr "Juntar-se a um Novo Jogo"
 
 #: GameLogic/gameautomaton.cpp:1397
 #, kde-format
@@ -1897,8 +1896,7 @@ msgid "Really Next Player?"
 msgstr "Realmente o Jogador Seguinte?"
 
 #: GameLogic/gameautomaton.cpp:2658
-#, fuzzy, kde-format
-#| msgid "Next Player"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Player"
 msgstr "Jogador Seguinte"
@@ -2995,11 +2993,10 @@ msgid "Do you want to quit the game?"
 msgstr "Deseja sair do jogo?"
 
 #: kgamewin.cpp:1054
-#, fuzzy, kde-format
-#| msgid "Quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
-msgstr "Sair"
+msgstr "Sair do Jogo"
 
 #: kgamewin.cpp:1074
 #, kde-format
@@ -3149,8 +3146,7 @@ msgid "Do you really want to end your current game and start a new one?"
 msgstr "Deseja mesmo terminar o seu jogo actual e começar um novo?"
 
 #: kgamewin.cpp:2668
-#, fuzzy, kde-format
-#| msgid "Start a New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Iniciar um Jogo Novo"
@@ -3604,16 +3600,3 @@ msgstr "Erro - Dados do visual desconhecidos: "
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Erro - Dados de texto do visual desconhecidos: "
-
-#~ msgid ""
-#~ "%1 exists.\n"
-#~ "Do you really want to overwrite it?"
-#~ msgstr ""
-#~ "O %1 existe.\n"
-#~ "Deseja mesmo sobrepo-lo?"
-
-#~ msgid "Overwrite file?"
-#~ msgstr "Deseja sobrepor o ficheiro?"
-
-#~ msgid "Error"
-#~ msgstr "Erro"

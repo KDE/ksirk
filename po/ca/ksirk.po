@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2022-09-09 16:24+0200\n"
+"PO-Revision-Date: 2022-10-21 13:24+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1730,11 +1730,10 @@ msgid "New game confirmation"
 msgstr "Confirmació de la partida nova"
 
 #: GameLogic/gameautomaton.cpp:1189 GameLogic/gameautomaton.cpp:1217
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Join New Game"
-msgstr "Partida nova"
+msgstr "Unir-se a una partida nova"
 
 #: GameLogic/gameautomaton.cpp:1397
 #, kde-format
@@ -1902,8 +1901,7 @@ msgid "Really Next Player?"
 msgstr "Segur el jugador següent?"
 
 #: GameLogic/gameautomaton.cpp:2658
-#, fuzzy, kde-format
-#| msgid "Next Player"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Player"
 msgstr "Jugador següent"
@@ -3005,11 +3003,10 @@ msgid "Do you want to quit the game?"
 msgstr "Vols sortir de la partida?"
 
 #: kgamewin.cpp:1054
-#, fuzzy, kde-format
-#| msgid "Quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
-msgstr "Surt"
+msgstr "Surt de la partida"
 
 #: kgamewin.cpp:1074
 #, kde-format
@@ -3157,11 +3154,10 @@ msgid "Do you really want to end your current game and start a new one?"
 msgstr "Segur que vols acabar la partida actual i començar-ne una de nova?"
 
 #: kgamewin.cpp:2668
-#, fuzzy, kde-format
-#| msgid "Start a New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
-msgstr "Inicia una partida nova"
+msgstr "Comença una partida nova"
 
 #: kgamewin.cpp:2924
 #, kde-format
@@ -3613,37 +3609,3 @@ msgstr "Error - Dades de tipus sencer de l'aparença desconegudes: "
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Error - Dades de tipus cadena de l'aparença desconegudes: "
-
-#~ msgid ""
-#~ "%1 exists.\n"
-#~ "Do you really want to overwrite it?"
-#~ msgstr ""
-#~ "%1 ja existeix.\n"
-#~ "Esteu segur que voleu sobreescriure-ho?"
-
-#~ msgid "Overwrite file?"
-#~ msgstr "Sobreescric el fitxer?"
-
-#~ msgid "Error"
-#~ msgstr "Error"
-
-#~ msgid "skinDescLabel"
-#~ msgstr "etiqDescAparença"
-
-#~ msgid "Ksirk - Error!"
-#~ msgstr "Ksirk - Error!"
-
-#~ msgid "LeftImg"
-#~ msgstr "ImtgEsquerra"
-
-#~ msgid "RightImg"
-#~ msgstr "ImtgDreta"
-
-#~ msgid "file to open"
-#~ msgstr "fitxer a obrir"
-
-#~ msgid "Wor&ld conquest"
-#~ msgstr "Conquesta mundia&l"
-
-#~ msgid "0"
-#~ msgstr "0"

@@ -3,14 +3,14 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2008, 2009, 2010, 2013, 2015, 2017, 2020, 2021.
+# Yuri Chornoivan <yurchor@ukr.net>, 2008, 2009, 2010, 2013, 2015, 2017, 2020, 2021, 2022.
 # Ivan Petrouchtchak <fr.ivan@ukrainian-orthodox.org>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2021-10-17 08:35+0300\n"
+"PO-Revision-Date: 2022-10-21 09:55+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -1733,11 +1733,10 @@ msgid "New game confirmation"
 msgstr "Підтвердження початку нової гри"
 
 #: GameLogic/gameautomaton.cpp:1189 GameLogic/gameautomaton.cpp:1217
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Join New Game"
-msgstr "Нова гра"
+msgstr "Приєднатися до нової гри"
 
 #: GameLogic/gameautomaton.cpp:1397
 #, kde-format
@@ -1902,8 +1901,7 @@ msgid "Really Next Player?"
 msgstr "Точно хочете перейти до наступного гравця?"
 
 #: GameLogic/gameautomaton.cpp:2658
-#, fuzzy, kde-format
-#| msgid "Next Player"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Player"
 msgstr "Наступний гравець"
@@ -3019,11 +3017,10 @@ msgid "Do you want to quit the game?"
 msgstr "Ви бажаєте вийти з гри?"
 
 #: kgamewin.cpp:1054
-#, fuzzy, kde-format
-#| msgid "Quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
-msgstr "Вийти"
+msgstr "Вийти з гри"
 
 #: kgamewin.cpp:1074
 #, kde-format
@@ -3181,8 +3178,7 @@ msgid "Do you really want to end your current game and start a new one?"
 msgstr "Ви справді бажаєте завершити вашу поточну гру і розпочати нову?"
 
 #: kgamewin.cpp:2668
-#, fuzzy, kde-format
-#| msgid "Start a New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Почати нову гру"

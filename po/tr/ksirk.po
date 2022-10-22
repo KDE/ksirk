@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2022-06-24 05:49+0300\n"
+"PO-Revision-Date: 2022-10-21 10:59+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.04.2\n"
+"X-Generator: Lokalize 22.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1721,11 +1721,10 @@ msgid "New game confirmation"
 msgstr "Yeni oyun teyidi"
 
 #: GameLogic/gameautomaton.cpp:1189 GameLogic/gameautomaton.cpp:1217
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Join New Game"
-msgstr "Yeni Oyun"
+msgstr "Yeni Oyuna Katıl"
 
 #: GameLogic/gameautomaton.cpp:1397
 #, kde-format
@@ -1891,8 +1890,7 @@ msgid "Really Next Player?"
 msgstr "Gerçekten Sonraki Oyuncu mu?"
 
 #: GameLogic/gameautomaton.cpp:2658
-#, fuzzy, kde-format
-#| msgid "Next Player"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Player"
 msgstr "Sonraki Oyuncu"
@@ -2982,11 +2980,10 @@ msgid "Do you want to quit the game?"
 msgstr "Oyundan çıkmak istiyor musunuz?"
 
 #: kgamewin.cpp:1054
-#, fuzzy, kde-format
-#| msgid "Quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
-msgstr "Çık"
+msgstr "Oyundan Çık"
 
 #: kgamewin.cpp:1074
 #, kde-format
@@ -3137,8 +3134,7 @@ msgstr ""
 "Gerçekten şimdiki oyunu bitirip yeni bir oyun başlatmak istiyor musunuz?"
 
 #: kgamewin.cpp:2668
-#, fuzzy, kde-format
-#| msgid "Start a New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Yeni bir Oyun Başlat"
