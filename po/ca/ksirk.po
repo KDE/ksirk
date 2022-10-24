@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2022-10-21 13:24+0200\n"
+"PO-Revision-Date: 2022-10-23 20:24+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -3603,7 +3603,7 @@ msgstr "No es pot trobar la «Y» màxima per a l'sprite: no hi ha fons!"
 #: Sprites/skinSpritesData.cpp:88
 #, kde-format
 msgid "Error - Unknown skin int data: "
-msgstr "Error - Dades de tipus sencer de l'aparença desconegudes: "
+msgstr "Error - Dades desconegudes de tipus enter de l'aparença: "
 
 #: Sprites/skinSpritesData.cpp:104
 #, kde-format
