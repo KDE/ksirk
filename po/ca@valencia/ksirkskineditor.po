@@ -4,14 +4,14 @@
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Manuel Tortosa <manutortosa@gmail.com>, 2009.
-# Josep M. Ferrer <txemaq@gmail.com>, 2009, 2010, 2014, 2015, 2017, 2020, 2021.
+# Josep M. Ferrer <txemaq@gmail.com>, 2009, 2010, 2014, 2015, 2017, 2020, 2021, 2022.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2021-10-17 18:41+0200\n"
+"PO-Revision-Date: 2022-10-23 21:00+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -35,7 +35,7 @@ msgstr "manutortosa@gmail.com"
 #: goal.cpp:100
 #, kde-format
 msgid "Error: no player to destroy"
-msgstr "S'ha produït un error: no hi ha cap jugador a destruir"
+msgstr "S'ha produït un error: no hi ha cap jugador que s'haja de destruir"
 
 #: goal.cpp:213
 #, kde-format
@@ -672,8 +672,8 @@ msgstr ""
 "p><ul><li><i>Conquesta mundial</i>:cap</li><li><i>Jugador</i>:un per al nom "
 "del jugador i un per al nombre de països caiguts</li><li><i>Països</i>: un "
 "per al nombre de països i possiblement un segon per al nombre de batallons a "
-"posar en cada país</li><li><i>Continents</i>: un per a cada continent a "
-"conquerir</li></ul>"
+"posar en cada país</li><li><i>Continents</i>: un per a cada continent que es "
+"conquerirà</li></ul>"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkgoaldefinition.ui:125
@@ -691,7 +691,7 @@ msgstr "Batallons per país:"
 #: ksirkgoaldefinition.ui:139
 #, kde-format
 msgid "Number of countries to conquer"
-msgstr "Nombre de països a conquerir"
+msgstr "Nombre de països que s'han de conquerir"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, nbcountries)
 #: ksirkgoaldefinition.ui:142
@@ -700,7 +700,7 @@ msgid ""
 "<p>Number of countries to conquer in a <i>Countries</i> goal or as a "
 "fallback in a <i>Player</i> goal.</p>"
 msgstr ""
-"<p>Nombre de països a conquerir en un objectiu <i>Països</i> o com a "
+"<p>Nombre de països que es conqueriran en un objectiu <i>Països</i> o com a "
 "alternativa d'un objectiu <i>Jugador</i>.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, armiesbycountry)
@@ -721,7 +721,7 @@ msgstr ""
 #: ksirkgoaldefinition.ui:170
 #, kde-format
 msgid "Select the continents to conquer"
-msgstr "Seleccioneu els continents a conquerir"
+msgstr "Seleccioneu els continents que s'han de conquerir"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, selectcontinentsbutton)
 #: ksirkgoaldefinition.ui:173
@@ -748,7 +748,8 @@ msgstr "Seleccioneu els continents"
 #, kde-format
 msgid "Check to let the player choose one of the continents to conquer"
 msgstr ""
-"Marqueu-lo per a deixar que el jugador trie un dels continents a conquerir"
+"Marqueu-lo per a deixar que el jugador trie un dels continents que s'ha de "
+"conquerir"
 
 #. i18n: ectx: property (text), widget (QCheckBox, anycontinent)
 #: ksirkgoaldefinition.ui:189
@@ -760,7 +761,7 @@ msgstr "Qualsevol"
 #: ksirkgoaldefinition.ui:198
 #, kde-format
 msgid "List of the continents to conquer"
-msgstr "Llista dels continents a conquerir"
+msgstr "Llista dels continents que s'han de conquerir"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, continentslist)
 #: ksirkgoaldefinition.ui:201
@@ -770,9 +771,9 @@ msgid ""
 "can change this list by clicking on the \"Select continents\" button above.</"
 "p>"
 msgstr ""
-"<p>Llista dels continents a conquerir en un objectiu <i>Continents</i>.</"
-"p><p>Podeu canviar esta llista clicant el botó «Seleccioneu els continents» "
-"de dalt.</p>"
+"<p>Llista dels continents que es conqueriran en un objectiu <i>Continents</"
+"i>.</p><p>Podeu canviar esta llista clicant en el botó «Seleccioneu els "
+"continents» de dalt.</p>"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkNationalityDefinition)
 #: ksirknationalitydefinition.ui:13
@@ -2226,7 +2227,7 @@ msgstr "Preferències de l'editor d'aparences de KsirK"
 #: skinSpritesData.cpp:85
 #, kde-format
 msgid "Error - Unknown skin int data: "
-msgstr "Error - Dades de tipus sencer de l'aparença desconegudes: "
+msgstr "Error - Dades desconegudes de tipus enter de l'aparença: "
 
 #: skinSpritesData.cpp:86 skinSpritesData.cpp:102
 #, kde-format

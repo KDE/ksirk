@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2022-09-09 16:24+0200\n"
+"PO-Revision-Date: 2022-10-23 20:24+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -929,7 +929,7 @@ msgstr "Zaire"
 #, no-c-format, kde-format
 msgid ""
 "%1, you'll have to conquer %2 countries and place %3 armies in each one."
-msgstr "%1, haureu de conquerir %2 països i situar %3 batallons a cadascun."
+msgstr "%1, haureu de conquerir %2 països i situar %3 batallons en cadascun."
 
 #. i18n: file skins/default/Data/world.desktop line 510
 #. i18n: file skins/static/Data/world.desktop line 518
@@ -1692,12 +1692,12 @@ msgid_plural ""
 "armies to place. This is bug probably #2232 at www.gna.org."
 msgstr[0] ""
 "S'ha produït un error: No hi ha cap país de destinació seleccionat i el "
-"jugador d'ordinador %2 encara tenia 1 batalló a situar. Probablement este "
-"siga l'error núm. 2232 a www.gna.org."
+"jugador d'ordinador %2 encara tenia 1 batalló per a situar. Probablement "
+"este siga l'error núm. 2232 a www.gna.org."
 msgstr[1] ""
 "S'ha produït un error: No hi ha cap país de destinació seleccionat i el "
-"jugador d'ordinador %2 encara tenia %1 batallons a situar. Probablement este "
-"siga l'error núm. 2232 a www.gna.org."
+"jugador d'ordinador %2 encara tenia %1 batallons per a situar. Probablement "
+"este siga l'error núm. 2232 a www.gna.org."
 
 #: GameLogic/aiplayer.cpp:506 Sprites/skinSpritesData.cpp:89
 #: Sprites/skinSpritesData.cpp:105
@@ -1727,11 +1727,10 @@ msgid "New game confirmation"
 msgstr "Confirmació de la partida nova"
 
 #: GameLogic/gameautomaton.cpp:1189 GameLogic/gameautomaton.cpp:1217
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Join New Game"
-msgstr "Partida nova"
+msgstr "Unir-se a una partida nova"
 
 #: GameLogic/gameautomaton.cpp:1397
 #, kde-format
@@ -1819,7 +1818,7 @@ msgstr "Voleu guardar la partida?"
 #: kgamewin.cpp:2159 kgamewin.cpp:2254 kgamewin.cpp:2291
 #, kde-format
 msgid "%1: %2 armies to place"
-msgstr "%1:%2 batallons a situar"
+msgstr "%1:%2 batallons que se situaran"
 
 #: GameLogic/gameautomaton.cpp:1882 GameLogic/gameautomaton.cpp:2297
 #: kgamewinslots.cpp:807
@@ -1899,8 +1898,7 @@ msgid "Really Next Player?"
 msgstr "Segur el jugador següent?"
 
 #: GameLogic/gameautomaton.cpp:2658
-#, fuzzy, kde-format
-#| msgid "Next Player"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Player"
 msgstr "Jugador següent"
@@ -1918,7 +1916,7 @@ msgstr "%1 (ja està mort)"
 #: GameLogic/goal.cpp:195
 #, kde-format
 msgid "Error: no player to destroy"
-msgstr "S'ha produït un error: no hi ha cap jugador a destruir"
+msgstr "S'ha produït un error: no hi ha cap jugador que s'haja de destruir"
 
 #: GameLogic/goal.cpp:231
 #, kde-format
@@ -3003,11 +3001,10 @@ msgid "Do you want to quit the game?"
 msgstr "Vols eixir de la partida?"
 
 #: kgamewin.cpp:1054
-#, fuzzy, kde-format
-#| msgid "Quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
-msgstr "Ix"
+msgstr "Ix de la partida"
 
 #: kgamewin.cpp:1074
 #, kde-format
@@ -3155,11 +3152,10 @@ msgid "Do you really want to end your current game and start a new one?"
 msgstr "Segur que vols acabar la partida actual i començar-ne una de nova?"
 
 #: kgamewin.cpp:2668
-#, fuzzy, kde-format
-#| msgid "Start a New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
-msgstr "Inicia una partida nova"
+msgstr "Comença una partida nova"
 
 #: kgamewin.cpp:2924
 #, kde-format
@@ -3313,8 +3309,8 @@ msgstr "Fet"
 #, kde-format
 msgid "%1 army to place"
 msgid_plural "%1 armies to place"
-msgstr[0] "%1 batalló a situar"
-msgstr[1] "%1 batallons a situar"
+msgstr[0] "%1 batalló que s'ha de situar"
+msgstr[1] "%1 batallons que s'han de situar"
 
 #: krightdialog.cpp:375
 #, kde-format
@@ -3325,8 +3321,8 @@ msgstr "<u><b>Voleu canviar algunes<br>posicions?</b></u> "
 #, kde-format
 msgid "1 army to place"
 msgid_plural "%1 armies to place"
-msgstr[0] "1 batalló a situar"
-msgstr[1] "%1 batallons a situar"
+msgstr[0] "1 batalló que s'ha de situar"
+msgstr[1] "%1 batallons que s'han de situar"
 
 #: krightdialog.cpp:392
 #, kde-format
@@ -3605,19 +3601,9 @@ msgstr "No es pot trobar la «Y» màxima per a l'sprite: no hi ha fons!"
 #: Sprites/skinSpritesData.cpp:88
 #, kde-format
 msgid "Error - Unknown skin int data: "
-msgstr "Error - Dades de tipus sencer de l'aparença desconegudes: "
+msgstr "Error - Dades desconegudes de tipus enter de l'aparença: "
 
 #: Sprites/skinSpritesData.cpp:104
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Error - Dades de tipus cadena de l'aparença desconegudes: "
-
-#~ msgid ""
-#~ "%1 exists.\n"
-#~ "Do you really want to overwrite it?"
-#~ msgstr ""
-#~ "%1 ja existix.\n"
-#~ "Segur que voleu sobreescriure-ho?"
-
-#~ msgid "Overwrite file?"
-#~ msgstr "Voleu sobreescriure el fitxer?"
