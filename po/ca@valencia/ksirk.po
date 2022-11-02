@@ -1295,9 +1295,9 @@ msgid ""
 "KsirK.<br/>Particularly, the distribution of armies at game beginning is "
 "very slow (expect something like one minute)."
 msgstr ""
-"<b>Nota:</b> Jugar a través de la xarxa Jabber és una funció experimental de "
-"KsirK.<br/>En concret, la distribució dels batallons al començament de la "
-"partida és molt lenta (podeu esperar prop d'un minut)."
+"<b>Nota:</b> Jugar a través de la xarxa Jabber és una característica "
+"experimental de KsirK.<br/>En concret, la distribució dels batallons al "
+"començament de la partida és molt lenta (podeu esperar prop d'un minut)."
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
 #. i18n: ectx: property (text), widget (QPushButton, cancelbutton)
