@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Andrew Coles <andrew_coles@yahoo.co.uk>, 2009, 2010.
-# Steve Allewell <steve.allewell@gmail.com>, 2014, 2017, 2021.
+# Steve Allewell <steve.allewell@gmail.com>, 2014, 2017, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2021-10-17 11:23+0100\n"
+"PO-Revision-Date: 2022-11-26 15:15+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
 "Language: en_GB\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.08.1\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1720,11 +1720,10 @@ msgid "New game confirmation"
 msgstr "New game confirmation"
 
 #: GameLogic/gameautomaton.cpp:1189 GameLogic/gameautomaton.cpp:1217
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Join New Game"
-msgstr "New Game"
+msgstr "Join New Game"
 
 #: GameLogic/gameautomaton.cpp:1397
 #, kde-format
@@ -1889,8 +1888,7 @@ msgid "Really Next Player?"
 msgstr "Really Next Player?"
 
 #: GameLogic/gameautomaton.cpp:2658
-#, fuzzy, kde-format
-#| msgid "Next Player"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Player"
 msgstr "Next Player"
@@ -2980,11 +2978,10 @@ msgid "Do you want to quit the game?"
 msgstr "Do you want to quit the game?"
 
 #: kgamewin.cpp:1054
-#, fuzzy, kde-format
-#| msgid "Quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
-msgstr "Quit"
+msgstr "Quit Game"
 
 #: kgamewin.cpp:1074
 #, kde-format
@@ -3132,11 +3129,10 @@ msgid "Do you really want to end your current game and start a new one?"
 msgstr "Do you really want to end your current game and start a new one?"
 
 #: kgamewin.cpp:2668
-#, fuzzy, kde-format
-#| msgid "Start a New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
-msgstr "Start a New Game"
+msgstr "Start New Game"
 
 #: kgamewin.cpp:2924
 #, kde-format
