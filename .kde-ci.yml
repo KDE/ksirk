@@ -6,7 +6,7 @@ Dependencies:
   'require':
     'frameworks/extra-cmake-modules': '@stable'
     'games/libkdegames': '@same'
-    'kdesupport/qca': '@latest'
+    'libraries/qca': '@latest'
     'frameworks/kcompletion': '@stable'
     'frameworks/kconfig': '@stable'
     'frameworks/kconfigwidgets': '@stable'
