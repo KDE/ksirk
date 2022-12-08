@@ -892,9 +892,9 @@ msgid ""
 "image of this width. All positions on the map are expressed relatively to "
 "this dimension.\n"
 msgstr ""
-"Esta és l'amplària del mapa. L'element SVG del mapa serà dibuixat per "
-"defecte basat en una imatge d'esta amplària. Totes les posicions al mapa "
-"s'expressen en relació amb esta dimensió.\n"
+"Esta és l'amplària del mapa. L'element SVG del mapa serà dibuixat de manera "
+"predeterminada basat en una imatge d'esta amplària. Totes les posicions al "
+"mapa s'expressen en relació amb esta dimensió.\n"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, heightLineEdit)
 #: ksirkskindefinition.ui:71
@@ -910,9 +910,9 @@ msgid ""
 "image of this height All positions on the map are expressed relatively to "
 "this dimension.\n"
 msgstr ""
-"Esta és l'alçària del mapa. L'element SVG del mapa serà dibuixat per defecte "
-"basat en una imatge d'esta alçària. Totes les posicions al mapa s'expressen "
-"en relació amb esta dimensió.\n"
+"Esta és l'alçària del mapa. L'element SVG del mapa serà dibuixat de manera "
+"predeterminada basat en una imatge d'esta alçària. Totes les posicions al "
+"mapa s'expressen en relació amb esta dimensió.\n"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: ksirkskindefinition.ui:90
