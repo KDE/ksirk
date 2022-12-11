@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2022-11-21 22:33+0300\n"
+"PO-Revision-Date: 2022-12-10 18:08+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1392,8 +1392,8 @@ msgid ""
 "then split into individual frames.</p>"
 msgstr ""
 "<p>Bireysel bayrak çerçeve genişliği.</p><p><i>Bayrak</i> havuz ögesi, şu "
-"genişlikte bir piksel haritasında oluşturulacaktır: <i>Genişlik</i> * "
-"<i>Çerçeve sayısı</i> ve daha sonra bireysel çerçevelere ayrılır.</p>"
+"genişlikte bir piksel haritasında sunulacaktır: <i>Genişlik</i> * <i>Çerçeve "
+"sayısı</i> ve daha sonra bireysel çerçevelere ayrılır.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_6)
@@ -1425,7 +1425,7 @@ msgid ""
 msgstr ""
 "Bayrak bireysel çerçeve yüksekliği.\n"
 "\n"
-"Havuz bayrak ögesi, şu yükseklikte bir piksel haritasında oluşturulacaktır: "
+"Havuz bayrak ögesi, şu yükseklikte bir piksel haritasında sunulacaktır: "
 "(Yükseklik * Sürüm sayısı) ve daha sonra bireysel çerçevelere ayrılır."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
@@ -1456,7 +1456,7 @@ msgid ""
 "and then split into individual frames.</p>"
 msgstr ""
 "<p>Bireysel bayrak çerçeveleri sayısı.</p><p><i>Bayrak</i> havuz ögesi, şu "
-"genişlikte bir piksel haritasında oluşturulacaktır: (<i>Genişlik</i> * "
+"genişlikte bir piksel haritasında sunulacaktır: (<i>Genişlik</i> * "
 "<i>Çerçeve sayısı</i>) ve daha sonra bireysel çerçevelere ayrılır.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
@@ -1494,7 +1494,7 @@ msgid ""
 msgstr ""
 "Bayrak sürümleri sayısı.\n"
 "\n"
-"Havuz bayrak ögesi, şu yükseklikte bir piksel haritasında oluşturulacaktır: "
+"Havuz bayrak ögesi, şu yükseklikte bir piksel haritasında sunulacaktır: "
 "(Yükseklik * Sürüm sayısı) ve daha sonra bireysel çerçevelere ayrılır.\n"
 "\n"
 "Her sürüm, görseli bir yönden görünür biçimde gösterir: İlki sağa doğru, "
@@ -1528,8 +1528,8 @@ msgid ""
 "i> and then split into individual frames.</p>"
 msgstr ""
 "<p>Piyade bireysel çerçeve genişliği.</p><p><i>Piyade</i> havuz ögesi, şu "
-"genişlikte bir piksel haritasında oluşturulacaktır: <i>Genişlik</i> * "
-"<i>çerçeve sayısı</i> ve daha sonra bireysel çerçevelere ayrılır.</p>"
+"genişlikte bir piksel haritasında sunulacaktır: <i>Genişlik</i> * <i>çerçeve "
+"sayısı</i> ve daha sonra bireysel çerçevelere ayrılır.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryh)
 #: ksirkspritesdefinition.ui:197
@@ -1546,7 +1546,7 @@ msgid ""
 "versions</i> and then split into individual frames.</p>"
 msgstr ""
 "<p>Piyade bireysel çerçeve yüksekliği.</p><p><i>Piyade</i> havuz ögesi, şu "
-"genişlikte bir piksel haritasında oluşturulacaktır: <i>Yükseklik</i> * "
+"genişlikte bir piksel haritasında sunulacaktır: <i>Yükseklik</i> * "
 "<i>çerçeve sayısı</i> ve daha sonra bireysel çerçevelere ayrılır.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryf)
@@ -1564,7 +1564,7 @@ msgid ""
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
 "<p>Bireysel piyade çerçeveleri sayısı.</p><p><i>Piyade</i> havuz ögesi, şu "
-"genişlikte bir piksel haritasında oluşturulacaktır: (<i>Genişlik</i> * "
+"genişlikte bir piksel haritasında sunulacaktır: (<i>Genişlik</i> * "
 "<i>Çerçeve sayısı</i>) ve daha sonra bireysel çerçevelere ayrılır.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryv)
@@ -1585,11 +1585,11 @@ msgid ""
 "one from the back. However, not all sprites need all versions.</p>"
 msgstr ""
 "<p>Piyade sürümleri sayısı.</p><p><i>Piyade</i> havuz ögesi, şu genişlikte "
-"bir piksel haritasında oluşturulacaktır: (<i>Yükseklik</i> * <i>Sürüm "
-"sayısı</i>) ve daha sonra bireysel çerçevelere ayrılır.</p><p>Her sürüm, "
-"görseli bir yönden görünür biçimde gösterir: İlki sağa doğru, ikincisi sola "
-"doğru, üçüncüsü önden ve sonuncusu da arkadan. Ancak, her görselin her "
-"yönden sürümüne gerek olmayabilir.</p>"
+"bir piksel haritasında sunulacaktır: (<i>Yükseklik</i> * <i>Sürüm sayısı</"
+"i>) ve daha sonra bireysel çerçevelere ayrılır.</p><p>Her sürüm, görseli bir "
+"yönden görünür biçimde gösterir: İlki sağa doğru, ikincisi sola doğru, "
+"üçüncüsü önden ve sonuncusu da arkadan. Ancak, her görselin her yönden "
+"sürümüne gerek olmayabilir.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, cavalryTab)
 #: ksirkspritesdefinition.ui:255
@@ -1618,8 +1618,8 @@ msgid ""
 "i>) and then split into individual frames.</p>"
 msgstr ""
 "<p>Bireysel süvari çerçeve genişliği.</p><p><i>Süvari</i> havuz ögesi, şu "
-"genişlikte bir piksel haritasında oluşturulacaktır: <i>Genişlik</i> * "
-"<i>Çerçeve sayısı</i> ve daha sonra bireysel çerçevelere ayrılır.</p>"
+"genişlikte bir piksel haritasında sunulacaktır: <i>Genişlik</i> * <i>Çerçeve "
+"sayısı</i> ve daha sonra bireysel çerçevelere ayrılır.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryh)
 #: ksirkspritesdefinition.ui:288
@@ -1636,8 +1636,8 @@ msgid ""
 "versions</i>) and then split into individual frames.</p>"
 msgstr ""
 "<p>Bireysel süvari çerçeve yüksekliği.</p><p><i>Süvari</i> havuz ögesi, şu "
-"genişlikte bir piksel haritasında oluşturulacaktır: <i>Yükseklik</i> * "
-"<i>Sürüm sayısı</i> ve daha sonra bireysel çerçevelere ayrılır.</p>"
+"genişlikte bir piksel haritasında sunulacaktır: <i>Yükseklik</i> * <i>Sürüm "
+"sayısı</i> ve daha sonra bireysel çerçevelere ayrılır.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryf)
 #: ksirkspritesdefinition.ui:305
@@ -1654,7 +1654,7 @@ msgid ""
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
 "<p>Bireysel süvari çerçeveleri sayısı.</p><p><i>Süvari</i> havuz ögesi, şu "
-"genişlikte bir piksel haritasında oluşturulacaktır: (<i>Genişlik</i> * "
+"genişlikte bir piksel haritasında sunulacaktır: (<i>Genişlik</i> * "
 "<i>Çerçeve sayısı</i>) ve daha sonra bireysel çerçevelere ayrılır.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryv)
@@ -1675,11 +1675,11 @@ msgid ""
 "back. However, not all sprites need all versions.</p>"
 msgstr ""
 "<p>Süvari sürümleri sayısı.</p><p><i>Süvari</i> havuz ögesi, şu genişlikte "
-"bir piksel haritasında oluşturulacaktır: (<i>Yükseklik</i> * <i>Sürüm "
-"sayısı</i>) ve daha sonra bireysel çerçevelere ayrılır.</p><p>Her sürüm, "
-"görseli bir yönden görünür biçimde gösterir: İlki sağa doğru, ikincisi sola "
-"doğru, üçüncüsü önden ve sonuncusu da arkadan. Ancak, her görselin her "
-"yönden sürümüne gerek olmayabilir.</p>"
+"bir piksel haritasında sunulacaktır: (<i>Yükseklik</i> * <i>Sürüm sayısı</"
+"i>) ve daha sonra bireysel çerçevelere ayrılır.</p><p>Her sürüm, görseli bir "
+"yönden görünür biçimde gösterir: İlki sağa doğru, ikincisi sola doğru, "
+"üçüncüsü önden ve sonuncusu da arkadan. Ancak, her görselin her yönden "
+"sürümüne gerek olmayabilir.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, cannonTab)
 #: ksirkspritesdefinition.ui:346
@@ -1708,8 +1708,8 @@ msgid ""
 "and then split into individual frames.</p>"
 msgstr ""
 "<p>Top süvari çerçeve genişliği.</p><p><i>Top</i> havuz ögesi, şu genişlikte "
-"bir piksel haritasında oluşturulacaktır: <i>Genişlik</i> * <i>Çerçeve "
-"sayısı</i> ve daha sonra bireysel çerçevelere ayrılır.</p>"
+"bir piksel haritasında sunulacaktır: <i>Genişlik</i> * <i>Çerçeve sayısı</i> "
+"ve daha sonra bireysel çerçevelere ayrılır.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonh)
 #: ksirkspritesdefinition.ui:381
@@ -1726,8 +1726,8 @@ msgid ""
 "i>) and then split into individual frames.</p>"
 msgstr ""
 "<p>Bireysel top çerçeve yüksekliği.</p><p><i>Süvari</i> havuz ögesi, şu "
-"genişlikte bir piksel haritasında oluşturulacaktır: <i>Yükseklik</i> * "
-"<i>Sürüm sayısı</i> ve daha sonra bireysel çerçevelere ayrılır.</p>"
+"genişlikte bir piksel haritasında sunulacaktır: <i>Yükseklik</i> * <i>Sürüm "
+"sayısı</i> ve daha sonra bireysel çerçevelere ayrılır.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonf)
 #: ksirkspritesdefinition.ui:398
@@ -1744,7 +1744,7 @@ msgid ""
 "i>) and then split into individual frames.</p>"
 msgstr ""
 "<p>Bireysel top çerçeveleri sayısı.</p><p><i>Top</i> havuz ögesi, şu "
-"genişlikte bir piksel haritasında oluşturulacaktır: (<i>Genişlik</i> * "
+"genişlikte bir piksel haritasında sunulacaktır: (<i>Genişlik</i> * "
 "<i>Çerçeve sayısı</i>) ve daha sonra bireysel çerçevelere ayrılır.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonv)
@@ -1765,11 +1765,11 @@ msgid ""
 "back. However, not all sprites need all versions.</p>"
 msgstr ""
 "<p>Top sürümleri sayısı.</p><p><i>Top</i> havuz ögesi, şu genişlikte bir "
-"piksel haritasında oluşturulacaktır: (<i>Yükseklik</i> * <i>Sürüm sayısı</"
-"i>) ve daha sonra bireysel çerçevelere ayrılır.</p><p>Her sürüm, görseli bir "
-"yönden görünür biçimde gösterir: İlki sağa doğru, ikincisi sola doğru, "
-"üçüncüsü önden ve sonuncusu da arkadan. Ancak, her görselin her yönden "
-"sürümüne gerek olmayabilir.</p>"
+"piksel haritasında sunulacaktır: (<i>Yükseklik</i> * <i>Sürüm sayısı</i>) ve "
+"daha sonra bireysel çerçevelere ayrılır.</p><p>Her sürüm, görseli bir yönden "
+"görünür biçimde gösterir: İlki sağa doğru, ikincisi sola doğru, üçüncüsü "
+"önden ve sonuncusu da arkadan. Ancak, her görselin her yönden sürümüne gerek "
+"olmayabilir.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, firingTab)
 #: ksirkspritesdefinition.ui:441
@@ -1798,8 +1798,8 @@ msgid ""
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
 "<p>Ateşlenen top süvari çerçeve genişliği.</p><p><i>Ateşlenen top</i> havuz "
-"ögesi, şu genişlikte bir piksel haritasında oluşturulacaktır: <i>Genişlik</"
-"i> * <i>Çerçeve sayısı</i> ve daha sonra bireysel çerçevelere ayrılır.</p>"
+"ögesi, şu genişlikte bir piksel haritasında sunulacaktır: <i>Genişlik</i> * "
+"<i>Çerçeve sayısı</i> ve daha sonra bireysel çerçevelere ayrılır.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingh)
 #: ksirkspritesdefinition.ui:476
@@ -1816,7 +1816,7 @@ msgid ""
 "of versions</i>) and then split into individual frames.</p>"
 msgstr ""
 "<p>Bireysel ateşlenen top çerçeve yüksekliği.</p><p><i>Ateşlenen top</i> "
-"havuz ögesi, şu genişlikte bir piksel haritasında oluşturulacaktır: "
+"havuz ögesi, şu genişlikte bir piksel haritasında sunulacaktır: "
 "<i>Yükseklik</i> * <i>Sürüm sayısı</i> ve daha sonra bireysel çerçevelere "
 "ayrılır.</p>"
 
@@ -1835,7 +1835,7 @@ msgid ""
 "<i>Number of frames</i>) and then split into individual frames.</p>"
 msgstr ""
 "<p>Bireysel ateşlenen top çerçeveleri sayısı.</p><p><i>Ateşlenen top</i> "
-"havuz ögesi, şu genişlikte bir piksel haritasında oluşturulacaktır: "
+"havuz ögesi, şu genişlikte bir piksel haritasında sunulacaktır: "
 "(<i>Genişlik</i> * <i>Çerçeve sayısı</i>) ve daha sonra bireysel çerçevelere "
 "ayrılır.</p>"
 
@@ -1857,7 +1857,7 @@ msgid ""
 "the last one from the back. However, not all sprites need all versions.</p>"
 msgstr ""
 "<p>Ateşlenen top sürümleri sayısı.</p><p><i>Ateşlenen top</i> havuz ögesi, "
-"şu genişlikte bir piksel haritasında oluşturulacaktır: (<i>Yükseklik</i> * "
+"şu genişlikte bir piksel haritasında sunulacaktır: (<i>Yükseklik</i> * "
 "<i>Sürüm sayısı</i>) ve daha sonra bireysel çerçevelere ayrılır.</p><p>Her "
 "sürüm, görseli bir yönden görünür biçimde gösterir: İlki sağa doğru, "
 "ikincisi sola doğru, üçüncüsü önden ve sonuncusu da arkadan. Ancak, her "
@@ -1890,8 +1890,8 @@ msgid ""
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
 "<p>Patlayan top süvari çerçeve genişliği.</p><p><i>Ateşlenen top</i> havuz "
-"ögesi, şu genişlikte bir piksel haritasında oluşturulacaktır: <i>Genişlik</"
-"i> * <i>Çerçeve sayısı</i> ve daha sonra bireysel çerçevelere ayrılır.</p>"
+"ögesi, şu genişlikte bir piksel haritasında sunulacaktır: <i>Genişlik</i> * "
+"<i>Çerçeve sayısı</i> ve daha sonra bireysel çerçevelere ayrılır.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingh)
 #: ksirkspritesdefinition.ui:571
@@ -1908,8 +1908,8 @@ msgid ""
 "versions</i>) and then split into individual frames.</p>"
 msgstr ""
 "<p>Bireysel patlayan top çerçeve yüksekliği.</p><p><i>Süvari</i> havuz "
-"ögesi, şu genişlikte bir piksel haritasında oluşturulacaktır: <i>Yükseklik</"
-"i> * <i>Sürüm sayısı</i> ve daha sonra bireysel çerçevelere ayrılır.</p>"
+"ögesi, şu genişlikte bir piksel haritasında sunulacaktır: <i>Yükseklik</i> * "
+"<i>Sürüm sayısı</i> ve daha sonra bireysel çerçevelere ayrılır.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingf)
 #: ksirkspritesdefinition.ui:588
@@ -1926,8 +1926,8 @@ msgid ""
 "* <i>Number of frames</i>) and then split into individual frames.</p>"
 msgstr ""
 "<p>Bireysel patlayan top çerçeveleri sayısı.</p><p><i>Patlayan top</i> havuz "
-"ögesi, şu genişlikte bir piksel haritasında oluşturulacaktır: (<i>Genişlik</"
-"i> * <i>Çerçeve sayısı</i>) ve daha sonra bireysel çerçevelere ayrılır.</p>"
+"ögesi, şu genişlikte bir piksel haritasında sunulacaktır: (<i>Genişlik</i> * "
+"<i>Çerçeve sayısı</i>) ve daha sonra bireysel çerçevelere ayrılır.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingv)
 #: ksirkspritesdefinition.ui:605
@@ -1947,11 +1947,11 @@ msgid ""
 "the last one from the back. However, not all sprites need all versions.</p>"
 msgstr ""
 "<p>Patlayan top sürümleri sayısı.</p><p><i>Patlayan top</i> havuz ögesi, şu "
-"genişlikte bir piksel haritasında oluşturulacaktır: (<i>Yükseklik</i> * "
-"<i>Sürüm sayısı</i>) ve daha sonra bireysel çerçevelere ayrılır.</p><p>Her "
-"sürüm, görseli bir yönden görünür biçimde gösterir: İlki sağa doğru, "
-"ikincisi sola doğru, üçüncüsü önden ve sonuncusu da arkadan. Ancak, her "
-"görselin her yönden sürümüne gerek olmayabilir.</p>"
+"genişlikte bir piksel haritasında sunulacaktır: (<i>Yükseklik</i> * <i>Sürüm "
+"sayısı</i>) ve daha sonra bireysel çerçevelere ayrılır.</p><p>Her sürüm, "
+"görseli bir yönden görünür biçimde gösterir: İlki sağa doğru, ikincisi sola "
+"doğru, üçüncüsü önden ve sonuncusu da arkadan. Ancak, her görselin her "
+"yönden sürümüne gerek olmayabilir.</p>"
 
 #: main.cpp:56
 #, kde-format
