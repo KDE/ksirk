@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2022-11-21 22:33+0300\n"
+"PO-Revision-Date: 2022-12-11 20:09+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.08.3\n"
+"X-Generator: Lokalize 22.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1333,12 +1333,12 @@ msgstr "Port:"
 #: Dialogs/kplayersetupwidget.cpp:247
 #, kde-format
 msgid "Name already in use. Please choose another one."
-msgstr "İsim zaten kullanılıyor. Lütfen başka bir isim seçin."
+msgstr "Ad halihazırda kullanımda. Lütfen başka bir ad seçin."
 
 #: Dialogs/kplayersetupwidget.cpp:249
 #, kde-format
 msgid "Empty name. Please choose another one."
-msgstr "Boş isim. Lütfen başka bir isim seçin."
+msgstr "Boş ad. Lütfen başka bir ad seçin."
 
 #: Dialogs/kplayersetupwidget.cpp:292
 #, kde-format
@@ -1467,7 +1467,7 @@ msgid ""
 "Program cannot continue"
 msgstr ""
 "Tema dizini bulunamadı - Kurulumunuzu doğrulayın\n"
-"Program devam edemiyor"
+"Program sürdürülemiyor"
 
 #: Dialogs/newGameDialogImpl.cpp:132 newgamesetup.cpp:45
 #, kde-format
@@ -1509,7 +1509,7 @@ msgstr "hedef türü"
 #: Dialogs/newGameSummary.ui:157
 #, kde-format
 msgid "Name"
-msgstr "İsim"
+msgstr "Ad"
 
 #. i18n: ectx: property (text), widget (QTableWidget, playersTable)
 #: Dialogs/newGameSummary.ui:168
@@ -1734,12 +1734,12 @@ msgstr "%1 (%2) oyuna katıldı; bağlanmak için %3 oyuncu bekleniyor"
 #: GameLogic/gameautomaton.cpp:1503
 #, kde-format
 msgid "Please choose another name"
-msgstr "Lütfen başka bir isim seçin"
+msgstr "Lütfen başka bir ad seçin"
 
 #: GameLogic/gameautomaton.cpp:1503
 #, kde-format
 msgid "KsirK - Name already used!"
-msgstr "KsirK - İsim zaten kullanımda!"
+msgstr "KsirK - Ad halihazırda kullanımda!"
 
 #: GameLogic/gameautomaton.cpp:1509
 #, kde-format
@@ -1749,7 +1749,7 @@ msgstr "Oyuncu numarası %1, adınız nedir?"
 #: GameLogic/gameautomaton.cpp:1513
 #, kde-format
 msgid "Error - Player %1, you have to choose a name."
-msgstr "Hata, Oyuncu %1, bir isim seçmelisiniz."
+msgstr "Hata, Oyuncu %1, bir ad seçmelisiniz."
 
 #: GameLogic/gameautomaton.cpp:1515
 #, kde-format
@@ -1996,8 +1996,8 @@ msgid ""
 "Pool filename not found\n"
 "Program cannot continue"
 msgstr ""
-"Havuz dosya ismi bulunamadı\n"
-"Program devam edemiyor"
+"Havuz dosya adı bulunamadı\n"
+"Program sürdürülemiyor"
 
 #: GameLogic/onu.cpp:130 GameLogic/onu.cpp:147 gestionSprites.cpp:692
 #: gestionSprites.cpp:807 gestionSprites.cpp:852 gestionSprites.cpp:1408
@@ -2014,8 +2014,8 @@ msgid ""
 "Map mask image not found\n"
 "Program cannot continue"
 msgstr ""
-"Harita maske resmi bulunamadı\n"
-"Program devam edemiyor"
+"Harita maske görseli bulunamadı\n"
+"Program sürdürülemiyor"
 
 #: gestionSprites.cpp:72 gestionSprites.cpp:106 gestionSprites.cpp:157
 #, kde-format
@@ -2033,14 +2033,14 @@ msgstr "%2 ögesinden %3 ögesine %1 ordu taşınıyor"
 msgid ""
 "Sound roule not found - Verify your installation<br>Program cannot continue"
 msgstr ""
-"Roule sesi bulunamadı - Kurulumunuzu doğrulayın<br> Program devam edemiyor"
+"Roule sesi bulunamadı - Kurulumunuzu doğrulayın<br> Program sürdürülemiyor"
 
 #: gestionSprites.cpp:852
 #, kde-format
 msgid ""
 "Sound cannon not found - Verify your installation<br>Program cannot continue"
 msgstr ""
-"Cannon sesi bulunamadı - Kurulumunuzu doğrulayın<br> Program devam edemiyor"
+"Cannon sesi bulunamadı - Kurulumunuzu doğrulayın<br> Program sürdürülemiyor"
 
 #: gestionSprites.cpp:927 gestionSprites.cpp:947 gestionSprites.cpp:1048
 #: gestionSprites.cpp:1085 gestionSprites.cpp:1120 gestionSprites.cpp:1174
@@ -2051,7 +2051,7 @@ msgid ""
 "Program cannot continue"
 msgstr ""
 "Crash sesi bulunamadı - Kurulumunuzu doğrulayın\n"
-"Program devam edemiyor"
+"Program sürdürülemiyor"
 
 #: gestionSprites.cpp:1289
 #, kde-format
@@ -2090,7 +2090,7 @@ msgstr "Jabber SSL Hatası"
 #: Jabber/jabberaccount.cpp:410
 #, kde-format
 msgid "The host name does not match the one in the certificate."
-msgstr "Makine ismi ile sertifika uyuşmuyor."
+msgstr "Makine adı ile sertifika uyuşmuyor."
 
 #: Jabber/jabberaccount.cpp:414
 #, kde-format
@@ -2164,7 +2164,7 @@ msgid ""
 "for account %2:</p><p>%3</p><p>%4</p><p>Do you want to continue?</p></qt>"
 msgstr ""
 "<qt><p>%1 sunucusunun sertifikasının ve kimliğinin geçerliliği %2 hesabı "
-"için onaylanamadı:</p><p>%3</p><p>%4</p><p>Devam etmek istiyor musunuz?</p></"
+"için onaylanamadı:</p><p>%3</p><p>%4</p><p>Sürdürmek istiyor musunuz?</p></"
 "qt>"
 
 #: Jabber/jabberaccount.cpp:485 Jabber/jabberaccount.cpp:490
@@ -2173,8 +2173,8 @@ msgid ""
 "<qt><p>The certificate of server %1 could not be validated for account %2: "
 "%3</p><p>Do you want to continue?</p></qt>"
 msgstr ""
-"<qt><p>%1 sunucusunun sertifikası hesap %2 için onaylanamadı: %3</p><p>Devam "
-"etmek istiyor musunuz?</p></qt>"
+"<qt><p>%1 sunucusunun sertifikası hesap %2 için onaylanamadı: %3</"
+"p><p>Sürdürmek istiyor musunuz?</p></qt>"
 
 #: Jabber/jabberaccount.cpp:497
 #, kde-format
@@ -2829,12 +2829,12 @@ msgstr "%1 konumuna davet edildiniz"
 #: kgamewin.cpp:145 kgamewin.cpp:735
 #, kde-format
 msgid "Cannot load icon<br>Program cannot continue"
-msgstr "Simge yüklenemedi<br>Program devam edemiyor"
+msgstr "Simge yüklenemedi<br>Program sürdürülemiyor"
 
 #: kgamewin.cpp:378 kgamewin.cpp:395 kgamewin.cpp:412
 #, kde-format
 msgid "Cannot load button image %1<br>Program cannot continue"
-msgstr "Düğme şekli %1 yüklenemedi<br> Program devam edemiyor"
+msgstr "Düğme görseli %1 yüklenemedi<br> Program sürdürülemiyor"
 
 #: kgamewin.cpp:381
 #, kde-format
@@ -2928,7 +2928,7 @@ msgid ""
 "continue"
 msgstr ""
 "Dünya tanımlama dosyası bulunamadı - Kurulumunuzu doğrulayın<br> Program "
-"devam edemiyor"
+"sürdürülemiyor"
 
 #: kgamewin.cpp:799
 #, kde-format
@@ -3101,7 +3101,7 @@ msgstr "%1, %2 ögesindeki tek ordunuzla savunma yapıyorsunuz."
 #: kgamewin.cpp:2319
 #, kde-format
 msgid "Exchange armies again or continue?"
-msgstr "Orduları takas et ya da devam et?"
+msgstr "Orduları takas et veya sürdür?"
 
 #: kgamewin.cpp:2344
 #, kde-format
@@ -3120,7 +3120,7 @@ msgstr "KsirK"
 #: kgamewin.cpp:2484
 #, kde-format
 msgid "Battle ongoing."
-msgstr "Savaş devam ediyor."
+msgstr "Savaş sürüyor."
 
 #: kgamewin.cpp:2605 kgamewin.cpp:2616 kgamewin.cpp:2639
 #, kde-format
@@ -3245,7 +3245,7 @@ msgstr "<b><u>Ülke ayrıntıları</u></b>"
 #: krightdialog.cpp:170
 #, kde-format
 msgid "<i>Fighting in progress...</i>"
-msgstr "<i>Savaş devam ediyor...</i>"
+msgstr "<i>Savaş sürüyor...</i>"
 
 #: krightdialog.cpp:222
 #, kde-format
