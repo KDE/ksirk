@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2022-07-24 14:59+0200\n"
+"PO-Revision-Date: 2022-12-19 10:42+0100\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.07.70\n"
+"X-Generator: Lokalize 22.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1727,11 +1727,10 @@ msgid "New game confirmation"
 msgstr "Nachfrage für neues Spiel"
 
 #: GameLogic/gameautomaton.cpp:1189 GameLogic/gameautomaton.cpp:1217
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Join New Game"
-msgstr "Neues Spiel"
+msgstr "Neuem Spiel beitreten"
 
 #: GameLogic/gameautomaton.cpp:1397
 #, kde-format
@@ -1900,8 +1899,7 @@ msgid "Really Next Player?"
 msgstr "Soll der Spielzug wirklich beendet werden?"
 
 #: GameLogic/gameautomaton.cpp:2658
-#, fuzzy, kde-format
-#| msgid "Next Player"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Player"
 msgstr "Zug beenden"
@@ -3022,11 +3020,10 @@ msgid "Do you want to quit the game?"
 msgstr "Möchten Sie das Spiel beenden?"
 
 #: kgamewin.cpp:1054
-#, fuzzy, kde-format
-#| msgid "Quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
-msgstr "Beenden"
+msgstr "Spiel beenden"
 
 #: kgamewin.cpp:1074
 #, kde-format
@@ -3177,11 +3174,10 @@ msgid "Do you really want to end your current game and start a new one?"
 msgstr "Möchten Sie dieses Spiel beenden, um danach ein neues zu starten?"
 
 #: kgamewin.cpp:2668
-#, fuzzy, kde-format
-#| msgid "Start a New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
-msgstr "Neues Spiel erstellen"
+msgstr "Neues Spiel starten"
 
 #: kgamewin.cpp:2924
 #, kde-format
