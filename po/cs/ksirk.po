@@ -1690,11 +1690,10 @@ msgid "New game confirmation"
 msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1189 GameLogic/gameautomaton.cpp:1217
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Join New Game"
-msgstr "Nová hra"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1397
 #, kde-format
@@ -1846,11 +1845,10 @@ msgid "Really Next Player?"
 msgstr "Opravdu následující hráč?"
 
 #: GameLogic/gameautomaton.cpp:2658
-#, fuzzy, kde-format
-#| msgid "Next Player"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Player"
-msgstr "Následující hráč"
+msgstr ""
 
 #: GameLogic/goal.cpp:156
 #, kde-format
@@ -2924,11 +2922,10 @@ msgid "Do you want to quit the game?"
 msgstr ""
 
 #: kgamewin.cpp:1054
-#, fuzzy, kde-format
-#| msgid "Quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
-msgstr "Ukončit"
+msgstr ""
 
 #: kgamewin.cpp:1074
 #, kde-format
@@ -3071,11 +3068,10 @@ msgid "Do you really want to end your current game and start a new one?"
 msgstr ""
 
 #: kgamewin.cpp:2668
-#, fuzzy, kde-format
-#| msgid "Start a New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
-msgstr "Začít novou hru"
+msgstr ""
 
 #: kgamewin.cpp:2924
 #, kde-format
@@ -3518,13 +3514,3 @@ msgstr ""
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr ""
-
-#~ msgid ""
-#~ "%1 exists.\n"
-#~ "Do you really want to overwrite it?"
-#~ msgstr ""
-#~ "%1 existuje.\n"
-#~ "Opravdu si si jej přejete přepsat?"
-
-#~ msgid "Overwrite file?"
-#~ msgstr "Přepsat soubor?"
