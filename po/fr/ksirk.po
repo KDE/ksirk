@@ -12,14 +12,15 @@
 # xavier <xavier.besnard@neuf.fr>, 2012, 2021, 2022.
 # Simon Depiets <sdepiets@gmail.com>, 2017, 2018.
 #
+# Xavier BESNARD <xavier.besnard]neuf.fr>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2022-10-22 11:29+0200\n"
-"Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"PO-Revision-Date: 2023-01-12 18:22+0100\n"
+"Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
+"Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +29,7 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2145,9 +2146,9 @@ msgid ""
 "SSL support could not be initialized for account %1. This is most likely "
 "because the QCA TLS plugin is not installed on your system."
 msgstr ""
-"La prise en charge de SSL n'a pu être initialisé pour le compte %1. Ceci est "
-"habituellement dû au fait que le module QCA TLS n'est pas installé sur votre "
-"système."
+"La prise en charge de « SSL » n'a pu être initialisé pour le compte %1. Ceci "
+"est habituellement dû au fait que le module « QCA TLS » n'est pas installé "
+"sur votre système."
 
 #: Jabber/jabberaccount.cpp:377
 #, kde-format
@@ -2266,7 +2267,7 @@ msgstr "Paquet malformé reçu."
 #: Jabber/jabberaccount.cpp:740
 #, kde-format
 msgid "There was an unrecoverable error in the protocol."
-msgstr "Erreur irrécupérable dans le protocol."
+msgstr "Erreur irrécupérable dans le protocole."
 
 #: Jabber/jabberaccount.cpp:747
 #, kde-format
@@ -2301,7 +2302,7 @@ msgstr "Flux de données malformé reçu."
 #: Jabber/jabberaccount.cpp:767
 #, kde-format
 msgid "Policy violation in the protocol stream."
-msgstr "Violation de la police dans le flux du protocol"
+msgstr "Violation de la police dans le flux du protocole"
 
 #: Jabber/jabberaccount.cpp:771
 #, kde-format
@@ -2321,7 +2322,7 @@ msgstr "Raison inconnue."
 #: Jabber/jabberaccount.cpp:782
 #, kde-format
 msgid "There was an error in the protocol stream: %1"
-msgstr "Il y a eu une erreur dans le protocol : %1"
+msgstr "Il y a eu une erreur dans le protocole : %1"
 
 #: Jabber/jabberaccount.cpp:790
 #, kde-format
@@ -2429,7 +2430,7 @@ msgstr ""
 #: Jabber/jabberaccount.cpp:858
 #, kde-format
 msgid "Unsupported protocol version."
-msgstr "Version du protocol non prise en charge."
+msgstr "Version du protocole non prise en charge."
 
 #: Jabber/jabberaccount.cpp:861 Jabber/jabberaccount.cpp:878
 #: Jabber/jabberaccount.cpp:922 Jabber/jabberaccount.cpp:939
@@ -3543,7 +3544,7 @@ msgstr ""
 #: main.cpp:50
 #, kde-format
 msgid "Gaël de Chalendar aka Kleag"
-msgstr "Gaël de Chalendar aka Kleag"
+msgstr "Gaël de Chalendar ou Kleag"
 
 #: main.cpp:51
 #, kde-format
@@ -3574,7 +3575,7 @@ msgstr "Michal Golunski (Traduction polonaise)"
 #: main.cpp:55
 #, kde-format
 msgid "French students of the 'IUP ISI 2007-2008':"
-msgstr "Étudiants français de l'IUP ISI 2007-2008 :"
+msgstr "Étudiants français IUP ISI 2007-2008 :"
 
 #: main.cpp:56
 #, kde-format
