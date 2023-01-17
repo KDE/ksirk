@@ -1572,7 +1572,7 @@ msgstr "No"
 #: Dialogs/qplayersetupdialog.ui:14 Dialogs/tcpconnectwidget.ui:14
 #, kde-format
 msgid "Player Setup"
-msgstr "Configuració del jugador"
+msgstr "Configureu el jugador"
 
 #. i18n: ectx: property (text), widget (QLabel, TextLabel1)
 #: Dialogs/qplayersetupdialog.ui:23
