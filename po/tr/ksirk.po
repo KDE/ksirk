@@ -5,13 +5,13 @@
 # Serdar Dalgıç <serdar@pardus.org.tr>, 2010.
 # obsoleteman <tulliana@gmail.com>, 2008-2009.
 # Volkan Gezer <volkangezer@gmail.com>, 2013-2014.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2022-12-11 20:09+0300\n"
+"PO-Revision-Date: 2023-01-18 22:31+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1794,8 +1794,8 @@ msgid ""
 "This will be improved in a future version."
 msgstr ""
 "İstemci ile bağlantı kesildi.\n"
-"An itibariyle, sadece oyunu kaydedebilir ve yeni bir oyun başlatabilir ya da "
-"çıkabilirsiniz\n"
+"An itibariyle, yalnızca oyunu kaydedebilir ve yeni bir oyun başlatabilir ya "
+"da çıkabilirsiniz\n"
 "Gelecekteki sürümlerde bu durum düzeltilecektir."
 
 #: GameLogic/gameautomaton.cpp:1697
@@ -2699,7 +2699,7 @@ msgid ""
 "ok<br />If you want to decline, press cancel</qt>"
 msgstr ""
 "<qt><i>%1</i> sizi konferansa davet ediyor <b>%2</b><br />%3<br />Kabul edip "
-"katılmak istiyorsanız, sadece <b>takma adınızı girin</b> ve Tamam'a basın."
+"katılmak istiyorsanız, yalnızca <b>takma adınızı girin</b> ve Tamam'a basın."
 "<br />Kabul etmek istemiyorsanız, İptal'e basın</qt>"
 
 #: Jabber/jabbercontact.cpp:291
@@ -2753,7 +2753,7 @@ msgid ""
 "opened chat windows."
 msgstr ""
 "Daha önce bağlantı %1 için bir kaynak seçtiniz, ama bu bağlantı için hâlâ "
-"açık sohbet pencereleriniz var. Önceden seçilmiş kaynak sadece yeni açılan "
+"açık sohbet pencereleriniz var. Önceden seçilmiş kaynak yalnızca yeni açılan "
 "sohbet pencerelerine uygulanacaktır."
 
 #: Jabber/jabbercontact.cpp:1123
@@ -3091,7 +3091,7 @@ msgstr "<font color=\"orange\">%1 ögesinin sahibi değilsiniz!</font>"
 #: kgamewin.cpp:1955
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
-msgstr "<font color=\"orange\">%2 içerisinde sadece %1 ordu var!</font>"
+msgstr "<font color=\"orange\">%2 içerisinde yalnızca %1 ordu var!</font>"
 
 #: kgamewin.cpp:2095
 #, kde-format
@@ -3206,7 +3206,7 @@ msgstr "Oyun %1 konumuna kaydedildi"
 #: kgamewinslots.cpp:477
 #, kde-format
 msgid "Only game master can save the game in network playing."
-msgstr "Sadece oyun sahibi ağ oyunlarında oyunu kaydedebilir."
+msgstr "Yalnızca oyun sahibi ağ oyunlarında oyunu kaydedebilir."
 
 #: kgamewinslots.cpp:803
 #, kde-format
