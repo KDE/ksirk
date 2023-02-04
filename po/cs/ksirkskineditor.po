@@ -1,13 +1,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Vít Pelčák <vit@pelcak.org>, 2011, 2014, 2017, 2019.
+# Vít Pelčák <vit@pelcak.org>, 2011, 2014, 2017, 2019, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2019-10-04 12:39+0200\n"
+"PO-Revision-Date: 2023-02-03 14:06+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 19.08.1\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -723,7 +723,7 @@ msgstr ""
 #: ksirkskindefinition.ui:46
 #, kde-format
 msgid "Width x height:"
-msgstr ""
+msgstr "Šířka a výška"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, widthLineEdit)
 #: ksirkskindefinition.ui:53
@@ -1696,7 +1696,7 @@ msgstr ""
 #: main.cpp:59
 #, kde-format
 msgid "Gaël de Chalendar aka Kleag"
-msgstr ""
+msgstr "Gaël de Chalendar aka Kleag"
 
 #: main.cpp:64
 #, kde-format
@@ -1738,13 +1738,13 @@ msgstr ""
 #: mainwindow.cpp:338
 #, kde-format
 msgid "Save the current skin"
-msgstr ""
+msgstr "Uložit současnou složku"
 
 #: mainwindow.cpp:367
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Root Folder of the Skin to Open"
-msgstr ""
+msgstr "Vyberte kořenovou složku motivu pro otevření"
 
 #: mainwindow.cpp:530
 #, kde-format
@@ -1764,7 +1764,7 @@ msgstr "Ukončit bez uložení"
 #: mainwindow.cpp:533
 #, kde-format
 msgid "Save then quit"
-msgstr ""
+msgstr "Uložit a ukončit"
 
 #: mainwindow.cpp:534
 #, kde-format
