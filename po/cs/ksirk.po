@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Vít Pelčák <vit@pelcak.org>, 2010, 2011, 2013, 2014, 2015, 2016, 2017, 2019.
+# Vít Pelčák <vit@pelcak.org>, 2010, 2011, 2013, 2014, 2015, 2016, 2017, 2019, 2023.
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012, 2013.
 #
 msgid ""
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2019-11-07 10:11+0100\n"
+"PO-Revision-Date: 2023-02-03 14:05+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 19.08.2\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1122,7 +1122,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Invasion"
-msgstr ""
+msgstr "Invaze"
 
 #: Dialogs/InvasionSlider.cpp:139
 #, kde-format
@@ -1140,7 +1140,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Moving"
-msgstr ""
+msgstr "Přesouvání"
 
 #: Dialogs/InvasionSlider.cpp:145
 #, kde-format
@@ -1264,7 +1264,7 @@ msgstr ""
 #: Dialogs/jabbergameui.ui:265
 #, kde-format
 msgid "Load a Saved Game..."
-msgstr ""
+msgstr "Načíst uloženou hru..."
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: Dialogs/jabbergameui.ui:293
@@ -1329,7 +1329,7 @@ msgstr ""
 #: Dialogs/newGameDialog.ui:16
 #, kde-format
 msgid "KsirK - New game properties"
-msgstr ""
+msgstr "KsirK - Vlastnosti nové vrstvy"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: Dialogs/newGameDialog.ui:29
@@ -1384,7 +1384,7 @@ msgstr ""
 #: Dialogs/newGameDialog.ui:126
 #, kde-format
 msgid "Download New Skins..."
-msgstr ""
+msgstr "Stáhnout nové motivy..."
 
 #. i18n: ectx: property (title), widget (QGroupBox, goalGroup)
 #: Dialogs/newGameDialog.ui:150
@@ -1693,7 +1693,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Join New Game"
-msgstr ""
+msgstr "Připojit se k nové hře"
 
 #: GameLogic/gameautomaton.cpp:1397
 #, kde-format
@@ -1848,7 +1848,7 @@ msgstr "Opravdu následující hráč?"
 #, kde-format
 msgctxt "@action:button"
 msgid "Next Player"
-msgstr ""
+msgstr "Následující hráč"
 
 #: GameLogic/goal.cpp:156
 #, kde-format
@@ -2925,7 +2925,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
-msgstr ""
+msgstr "Ukončit hru"
 
 #: kgamewin.cpp:1074
 #, kde-format
@@ -2936,7 +2936,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "KsirK - Load Game"
-msgstr ""
+msgstr "KsirK - Načíst hru"
 
 #: kgamewin.cpp:1158
 #, kde-format
@@ -3071,7 +3071,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
-msgstr ""
+msgstr "Spustit novou hru"
 
 #: kgamewin.cpp:2924
 #, kde-format
@@ -3119,7 +3119,7 @@ msgstr "Nelze uložit při čekání na obranu."
 #, kde-format
 msgctxt "@title:window"
 msgid "KsirK - Save Game"
-msgstr ""
+msgstr "KsirK - Uložit htu"
 
 #: kgamewinslots.cpp:458
 #, kde-format
@@ -3359,7 +3359,7 @@ msgstr ""
 #: main.cpp:50
 #, kde-format
 msgid "Gaël de Chalendar aka Kleag"
-msgstr ""
+msgstr "Gaël de Chalendar aka Kleag"
 
 #: main.cpp:51
 #, kde-format
