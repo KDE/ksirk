@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2023-02-12 09:23+0100\n"
+"PO-Revision-Date: 2023-02-13 06:30+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -616,7 +616,7 @@ msgstr "ჩრდილოეთ ამერიკა"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Occidental Australia"
-msgstr ""
+msgstr "დასავლეთ ავსტრალია"
 
 #. i18n: file skins/default/Data/world.desktop line 303
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -1042,7 +1042,7 @@ msgstr ""
 #. i18n: file skins/static/Data/world.desktop line 574
 #, no-c-format, kde-format
 msgid "Less animated Earth-like"
-msgstr ""
+msgstr "დედამიწის მსგავსი (ნაკლები ანიმაცია)"
 
 #. i18n: file skins/legacy/Data/world.desktop line 568
 #, no-c-format, kde-format
@@ -1841,7 +1841,7 @@ msgstr ""
 #: GameLogic/gameautomaton.cpp:2657
 #, kde-format
 msgid "Really Next Player?"
-msgstr ""
+msgstr "მართლა შემდეგი მოთამაშე?"
 
 #: GameLogic/gameautomaton.cpp:2658
 #, kde-format
@@ -1998,12 +1998,12 @@ msgstr ""
 #: gestionSprites.cpp:1289
 #, kde-format
 msgid "Problem: no one destroyed"
-msgstr ""
+msgstr "პრობლემა: არავინ განადგურებულა"
 
 #: gestionSprites.cpp:1499
 #, kde-format
 msgid "Bug: who should be 0, 1 or 2."
-msgstr ""
+msgstr "შეცდომა: ვინ უნდა იყოს 0, 1 და 2."
 
 #: Jabber/jabberaccount.cpp:212
 #, kde-format
@@ -2080,7 +2080,7 @@ msgstr "სერტიფიკატი გაუქმებულია."
 #: Jabber/jabberaccount.cpp:456
 #, kde-format
 msgid "Maximum certificate chain length was exceeded."
-msgstr ""
+msgstr "გადაჭარბებულია სერტიფიკატის ჯაჭვის მაქსიმალური სიგრძე."
 
 #: Jabber/jabberaccount.cpp:460
 #, kde-format
@@ -2114,7 +2114,7 @@ msgstr ""
 #: Jabber/jabberaccount.cpp:497
 #, kde-format
 msgid "Jabber Connection Certificate Problem"
-msgstr ""
+msgstr "სერტიფიკატის შეცდომა Jabber-თან მიერთებისას"
 
 #: Jabber/jabberaccount.cpp:531 kgamewinslots.cpp:1002
 #, kde-format
@@ -2125,7 +2125,7 @@ msgstr ""
 #: Jabber/jabberaccount.cpp:532 kgamewinslots.cpp:1003
 #, kde-format
 msgid "Jabber Connection Error"
-msgstr ""
+msgstr "Jabber-თან მიერთების პრობლემა"
 
 #: Jabber/jabberaccount.cpp:735
 #, kde-format
@@ -2140,7 +2140,7 @@ msgstr ""
 #: Jabber/jabberaccount.cpp:747
 #, kde-format
 msgid "Generic stream error."
-msgstr ""
+msgstr "ნაკადის ზოგადი შეცდომა."
 
 #: Jabber/jabberaccount.cpp:751
 #, kde-format
@@ -2150,7 +2150,7 @@ msgstr ""
 #: Jabber/jabberaccount.cpp:754
 #, kde-format
 msgid "The stream timed out."
-msgstr ""
+msgstr "ნაკადის მოლოდინის ვადა ამოიწურა."
 
 #: Jabber/jabberaccount.cpp:757
 #, kde-format
@@ -2200,12 +2200,12 @@ msgstr "ჰოსტი ნაპოვნი არაა."
 #: Jabber/jabberaccount.cpp:793
 #, kde-format
 msgid "Address is already in use."
-msgstr ""
+msgstr "მისამართი უკვე გამოიყენება."
 
 #: Jabber/jabberaccount.cpp:796
 #, kde-format
 msgid "Cannot recreate the socket."
-msgstr ""
+msgstr "სოკეტის თავიდან შექმნა შეუძლებელია."
 
 #: Jabber/jabberaccount.cpp:799
 #, kde-format
@@ -2215,12 +2215,12 @@ msgstr ""
 #: Jabber/jabberaccount.cpp:802
 #, kde-format
 msgid "Socket is already connected."
-msgstr ""
+msgstr "სოკეტი უკვე მიერთებულია."
 
 #: Jabber/jabberaccount.cpp:805
 #, kde-format
 msgid "Socket is not connected."
-msgstr ""
+msgstr "სოკეტი დაკავშირებული არაა."
 
 #: Jabber/jabberaccount.cpp:808
 #, kde-format
@@ -2242,7 +2242,7 @@ msgstr ""
 #: Jabber/jabberaccount.cpp:817
 #, kde-format
 msgid "Connection refused."
-msgstr ""
+msgstr "დაკავშირება უარყოფილია."
 
 #: Jabber/jabberaccount.cpp:820
 #, kde-format
