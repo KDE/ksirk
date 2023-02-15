@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2023-02-13 06:30+0100\n"
+"PO-Revision-Date: 2023-02-14 05:47+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1173,7 +1173,7 @@ msgstr "მოთამაშეების რაოდენობა"
 #: Dialogs/jabbergameui.ui:30
 #, kde-format
 msgid "Connection to the Jabber Network"
-msgstr ""
+msgstr "Jabber-ის ქსელთან მიერთება"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: Dialogs/jabbergameui.ui:39
@@ -1318,7 +1318,7 @@ msgstr ""
 #: Dialogs/kplayersetupwidget.cpp:249
 #, kde-format
 msgid "Empty name. Please choose another one."
-msgstr ""
+msgstr "ცარიელი სახელი. შეიყვანეთ სხვა სახელი."
 
 #: Dialogs/kplayersetupwidget.cpp:292
 #, kde-format
