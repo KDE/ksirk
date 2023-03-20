@@ -750,8 +750,9 @@ msgid ""
 "can change this list by clicking on the \"Select continents\" button above.</"
 "p>"
 msgstr ""
-"<p><i>Ülkeler</i> hedefinde fethedilecek kıtaların listesi.<p><p>Bu listeyi, "
-"yukarıdaki \"Kıtaları Seç\" düğmesine basarak değiştirebilirsiniz.</p>"
+"<p><i>Kıtalar</i> hedefinde fethedilecek kıtaların listesi.</p><p>Bu "
+"listeyi, yukarıdaki \"Kıtaları Seç\" düğmesine basarak değiştirebilirsiniz.</"
+"p>"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkNationalityDefinition)
 #: ksirknationalitydefinition.ui:13
@@ -779,9 +780,9 @@ msgid ""
 "existing country in case of a <i>realistic</i> world.</p><p>This string "
 "should be unique in the skin.</p>"
 msgstr ""
-"<p>Ulus adı. Oyuncunun ülkesinin adı. <i>Gerçekçi</i> bir dünya "
-"seçildiğinde, var olan bir ülkenin adı olabilir.<p><p>Temada, dizi benzersiz "
-"olmalıdır.</p>"
+"<p>Ulus adı. Oyuncunun ülkesinin adı. <i>Gerçekçi</i> bir dünya seçildiğinde "
+"var olan bir ülkenin adı olabilir.</p><p>Temada, dizi benzersiz olmalıdır.</"
+"p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: ksirknationalitydefinition.ui:43
