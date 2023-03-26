@@ -6,8 +6,8 @@ msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2009-11-15 12:06+0100\n"
-"Last-Translator: Axel Rousseau <axel@esperanto-jeunes.org>\n"
+"PO-Revision-Date: 2023-03-25 16:19+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -86,10 +86,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:56
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgid "Countries:"
-msgstr "Lando"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, countrieslist)
 #: ksirkcontinentdefinition.ui:63
@@ -490,10 +489,9 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QRadioButton, countriestype)
 #. i18n: ectx: attribute (title), widget (QWidget, tabCountries)
 #: ksirkgoaldefinition.ui:75 ksirkskindefinition.ui:256
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgid "Countries"
-msgstr "Lando"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, continentstype)
 #: ksirkgoaldefinition.ui:82
@@ -544,10 +542,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkgoaldefinition.ui:125
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgid "Countries nb:"
-msgstr "Lando"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: ksirkgoaldefinition.ui:132
@@ -777,10 +774,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: ksirkskindefinition.ui:108
-#, fuzzy, kde-format
-#| msgid "Flag:"
+#, kde-format
 msgid "Fg:"
-msgstr "Flago:"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, fgcolorbutton)
 #: ksirkskindefinition.ui:115
@@ -927,10 +923,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, newCountryButton)
 #: ksirkskindefinition.ui:270
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgid "New Country"
-msgstr "Lando"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, deleteCountryButton)
 #: ksirkskindefinition.ui:290
@@ -949,10 +944,9 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (QListWidget, countrieslist)
 #. i18n: ectx: property (toolTip), widget (QListWidget, countriesList)
 #: ksirkskindefinition.ui:305 ksirkskineditorcountriesselectiondialog.ui:19
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgid "Country list"
-msgstr "Lando"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, countrieslist)
 #: ksirkskindefinition.ui:310
