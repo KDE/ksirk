@@ -1,16 +1,16 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # Xosé <xosecalvo@gmail.com>, 2012.
 # Marce Villarino <mvillarino@kde-espana.org>, 2013, 2014.
 # Adrian Chaves <adriyetichaves@gmail.com>, 2017.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2023.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2019-11-17 09:23+0100\n"
+"PO-Revision-Date: 2023-05-01 10:14+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.03.70\n"
+"X-Generator: Lokalize 23.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -180,8 +180,8 @@ msgid ""
 msgstr ""
 "Coordenada x do punto superior esquerdo da imaxe da infantaría.\n"
 "\n"
-"Dase en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal de definición da pel.\n"
+"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
+"trebello principal de definición da aparencia.\n"
 "\n"
 "Este valor actualízase automaticamente cando se move a infantaría."
 
@@ -205,8 +205,8 @@ msgid ""
 msgstr ""
 "Coordenada y do punto superior esquerdo da imaxe da infantaría.\n"
 "\n"
-"Dase en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal de definición da pel.\n"
+"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
+"trebello principal de definición da aparencia.\n"
 "\n"
 "Este valor actualízase automaticamente cando se move a infantaría "
 "arrastrando e soltando."
@@ -236,8 +236,8 @@ msgid ""
 msgstr ""
 "Coordenada x do punto superior esquerdo da imaxe da cabalaría.\n"
 "\n"
-"Dase en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal de definición da pel.\n"
+"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
+"trebello principal de definición da aparencia.\n"
 "\n"
 "Este valor actualízase automaticamente cando se move a cabalaría."
 
@@ -261,8 +261,8 @@ msgid ""
 msgstr ""
 "Coordenada y do punto superior esquerdo da imaxe da cabalaría.\n"
 "\n"
-"Dase en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal de definición da pel.\n"
+"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
+"trebello principal de definición da aparencia.\n"
 "\n"
 "Este valor actualízase automaticamente cando se move a cabalaría."
 
@@ -292,8 +292,8 @@ msgid ""
 msgstr ""
 "Coordenada y do punto superior esquerdo da imaxe dun canón.\n"
 "\n"
-"Dase en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal de definición da pel.\n"
+"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
+"trebello principal de definición da aparencia.\n"
 "\n"
 "Este valor actualízase automaticamente cando se move un canón."
 
@@ -316,8 +316,8 @@ msgid ""
 msgstr ""
 "Coordenada x do punto superior esquerdo da imaxe dun canón.\n"
 "\n"
-"Dase en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal de definición da pel.\n"
+"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
+"trebello principal de definición da aparencia.\n"
 "\n"
 "Este valor actualízase automaticamente cando se move un canón."
 
@@ -347,8 +347,8 @@ msgstr ""
 "Lembra que este punto ten que estar situado dentro dos límites do país na "
 "máscara do mapa.\n"
 "\n"
-"Dase en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal da definición da pel.\n"
+"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
+"trebello principal da definición da aparencia.\n"
 "\n"
 "Este valor actualízase automaticamente ao mover o nome do país arrastrando e "
 "soltando a súa icona de destino.\n"
@@ -379,8 +379,8 @@ msgstr ""
 "Lembra que este punto ten que estar situado dentro dos límites do país na "
 "máscara do mapa.\n"
 "\n"
-"Dase en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal da definición da pel.\n"
+"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
+"trebello principal da definición da aparencia.\n"
 "\n"
 "Este valor actualízase automaticamente ao mover o nome do país arrastrando e "
 "soltando a súa icona de destino."
@@ -405,8 +405,8 @@ msgid ""
 msgstr ""
 "Coordenada y do centro do realzado.\n"
 "\n"
-"Dase en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal da definición da pel.\n"
+"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
+"trebello principal da definición da aparencia.\n"
 "\n"
 "Este valor actualízase automaticamente ao mover o realce arrastrando e "
 "soltando a icona da cruz."
@@ -431,8 +431,8 @@ msgid ""
 msgstr ""
 "Coordenada x do centro do realzado.\n"
 "\n"
-"Dase en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal da definición da pel.\n"
+"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
+"trebello principal da definición da aparencia.\n"
 "\n"
 "Este valor actualízase automaticamente ao mover o realce arrastrando e "
 "soltando a icona da cruz."
@@ -457,8 +457,8 @@ msgid ""
 msgstr ""
 "Coordenada y do punto superior esquerdo da imaxe dunha bandeira.\n"
 "\n"
-"Dase en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal de definición da pel.\n"
+"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
+"trebello principal de definición da aparencia.\n"
 "\n"
 "Este valor actualízase automaticamente cando se move unha bandeira "
 "arrastrando e soltando."
@@ -483,8 +483,8 @@ msgid ""
 msgstr ""
 "Coordenada x do punto superior esquerdo da imaxe dunha bandeira.\n"
 "\n"
-"Dase en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal de definición da pel.\n"
+"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
+"trebello principal de definición da aparencia.\n"
 "\n"
 "Este valor actualízase automaticamente cando se move unha bandeira "
 "arrastrando e soltando."
@@ -788,7 +788,7 @@ msgid ""
 msgstr ""
 "<p>Nome da nacionalidade. O nome do país xogador. Pode ser o caso dun país "
 "existente no caso dun mundo <i>realista</i>.</p><p>A cadea ten que ser única "
-"na pel.</p>"
+"na aparencia.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: ksirknationalitydefinition.ui:43
@@ -809,7 +809,7 @@ msgid ""
 "<p>Name of this nationality leader. In the case of a <i>realistic</i> skin, "
 "this could be the name of a well known king, president, etc.</p>"
 msgstr ""
-"<p>Nome do líder da nacionalidade. No caso dunha pel <i>realista</i>, "
+"<p>Nome do líder da nacionalidade. No caso dunha aparencia <i>realista</i>, "
 "podería ser o nome dun rei, presidente, etc. coñecidos.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
@@ -834,19 +834,19 @@ msgstr "Identificador da imaxe da bandeira no depósito de SVG (pool.svg)."
 #: ksirkskindefinition.ui:13
 #, kde-format
 msgid "Skin Definition"
-msgstr "Definición da pel"
+msgstr "Definición da aparencia"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: ksirkskindefinition.ui:22
 #, kde-format
 msgid "Skin name:"
-msgstr "Nome da pel:"
+msgstr "Nome da aparencia:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, skinNameLineEdit)
 #: ksirkskindefinition.ui:29
 #, kde-format
 msgid "The skin's short name"
-msgstr "O nome abreviado da pel"
+msgstr "O nome abreviado da aparencia"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, skinNameLineEdit)
 #: ksirkskindefinition.ui:35
@@ -854,15 +854,14 @@ msgstr "O nome abreviado da pel"
 msgid ""
 "Type here the skin's short name. This should be an identifier-like string"
 msgstr ""
-"Escribe aquí o nome abreviado da pel. Ten que ser unha cadea tipo "
+"Escribe aquí o nome abreviado da aparencia. Ten que ser unha cadea tipo "
 "identificador"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkskindefinition.ui:46
-#, fuzzy, kde-format
-#| msgid "Width x Height"
+#, kde-format
 msgid "Width x height:"
-msgstr "Anchura x Altura"
+msgstr "Anchura × altura:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, widthLineEdit)
 #: ksirkskindefinition.ui:53
@@ -964,7 +963,7 @@ msgstr ""
 #: ksirkskindefinition.ui:160
 #, kde-format
 msgid "Human readable description of the skin"
-msgstr "Descrición da pel intelixíbel por humanos"
+msgstr "Descrición da aparencia intelixíbel por humanos"
 
 #. i18n: ectx: property (whatsThis), widget (QTextEdit, descriptionTextEdit)
 #: ksirkskindefinition.ui:163
@@ -973,8 +972,8 @@ msgid ""
 "Describe here the skin, its style, its story, the intent of its author(s), "
 "etc."
 msgstr ""
-"Describe aquí a pel, o seu estilo, a súa historia, a intención do(s) autores/"
-"as, etc."
+"Describe aquí a aparencia, o seu estilo, a súa historia, a intención do(s) "
+"autores/as, etc."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabSprites)
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkSpritesDefinition)
@@ -985,16 +984,13 @@ msgstr "Imaxes"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: ksirkskindefinition.ui:184
-#, fuzzy, kde-format
-#| msgid ""
-#| "Edit the sprite definitions\n"
-#| "in the right dock"
+#, kde-format
 msgid ""
 "Edit the sprite definitions\n"
 "in the right dock."
 msgstr ""
 "Edita as definicións das imaxes\n"
-"na doca da dereita"
+"na doca da dereita."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabNationalities)
 #: ksirkskindefinition.ui:192
@@ -1071,9 +1067,9 @@ msgstr ""
 "Cada nome de nacionalidade ten que ser único. Escolle unha nacionalidade e "
 "edita os seus detalles na doca da dereita.\n"
 "\n"
-"Durante o xogo, cada xugador ten que escoller unha nacionalidade. Hai que "
+"Durante o xogo, cada xogador ten que escoller unha nacionalidade. Hai que "
 "engadir cando menos tantas nacionalidades como o número máximo de xogadores "
-"desta pel."
+"desta aparencia."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newCountryButton)
 #: ksirkskindefinition.ui:264
@@ -1139,13 +1135,13 @@ msgstr "Crea un continente novo"
 #: ksirkskindefinition.ui:329
 #, kde-format
 msgid "Click here to add a new continent. You will be prompted for its name."
-msgstr "Preme aquí para engadires un contintente novo. Pediráseche un nome."
+msgstr "Preme aquí para engadires un continente novo. Pediráseche un nome."
 
 #. i18n: ectx: property (text), widget (QPushButton, newContinentButton)
 #: ksirkskindefinition.ui:332
 #, kde-format
 msgid "New Continent"
-msgstr "Novo contintente"
+msgstr "Novo continente"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, deleteContinentButton)
 #: ksirkskindefinition.ui:352
@@ -1295,7 +1291,7 @@ msgstr "Barra de ferramentas principal"
 #: ksirkskineditorwidget.ui:20 main.cpp:52 main.cpp:54
 #, kde-format
 msgid "KsirK Skin Editor"
-msgstr "Editor de peles do Ksirk"
+msgstr "Editor de aparencias de Ksirk"
 
 #. i18n: ectx: property (toolTip), widget (QScrollArea, buttonsScrollArea)
 #: ksirkskineditorwidget.ui:46
@@ -1331,8 +1327,8 @@ msgid ""
 "Drag and drop the sprites, the country names, and the highlighting anchors "
 "to change their place."
 msgstr ""
-"Mostra o mapa da pel con todas as imaxes xa colocadas, os nomes dos países e "
-"as áncoras para realzar.\n"
+"Mostra o mapa da aparencia con todas as imaxes xa colocadas, os nomes dos "
+"países e as áncoras para realzar.\n"
 "\n"
 "Arrastra e solta as imaxes, os nomes dos países e as áncoras para realzar "
 "para cambialos de lugar."
@@ -1370,7 +1366,7 @@ msgstr ""
 "están colocados a ambos os dous lados da bandeira do país atacado. Este "
 "parámetro é o número de píxeles que hai entre a bandeira e cada canón, "
 "medidos con relación ao tamaño base do mapa e configurados no panel de "
-"definición principal da pel."
+"definición principal da aparencia."
 
 #. i18n: ectx: property (toolTip), widget (QTabWidget, ktabwidget)
 #: ksirkspritesdefinition.ui:53
@@ -1463,8 +1459,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:110 ksirkspritesdefinition.ui:207
 #: ksirkspritesdefinition.ui:298 ksirkspritesdefinition.ui:391
 #: ksirkspritesdefinition.ui:486 ksirkspritesdefinition.ui:581
-#, fuzzy, kde-format
-#| msgid "Nb Frames:"
+#, kde-format
 msgid "Nb frames:"
 msgstr "Número de imaxes:"
 
@@ -1495,8 +1490,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:127 ksirkspritesdefinition.ui:224
 #: ksirkspritesdefinition.ui:315 ksirkspritesdefinition.ui:408
 #: ksirkspritesdefinition.ui:503 ksirkspritesdefinition.ui:598
-#, fuzzy, kde-format
-#| msgid "Nb Versions:"
+#, kde-format
 msgid "Nb versions:"
 msgstr "Número de versións:"
 
@@ -2007,10 +2001,9 @@ msgstr ""
 "O sitio web de KsirK"
 
 #: main.cpp:59
-#, fuzzy, kde-format
-#| msgid "Gael de Chalendar aka Kleag"
+#, kde-format
 msgid "Gaël de Chalendar aka Kleag"
-msgstr "Gael de Chalendar, coñecido como Kleag"
+msgstr "Gaël de Chalendar, coñecido como Kleag"
 
 #: main.cpp:64
 #, kde-format
@@ -2037,7 +2030,7 @@ msgstr "Non se pode abrir a icona do centro<br>O programa non pode continuar"
 #: mainwindow.cpp:325
 #, kde-format
 msgid "Open a saved skin..."
-msgstr "Abrir unha pel gardada…"
+msgstr "Abrir unha aparencia gardada…"
 
 #: mainwindow.cpp:329
 #, kde-format
@@ -2047,19 +2040,18 @@ msgstr "Cargar &recente"
 #: mainwindow.cpp:330
 #, kde-format
 msgid "Open a recently saved skin..."
-msgstr "Abrir unha pel gardada recentemente…"
+msgstr "Abrir unha aparencia gardada recentemente…"
 
 #: mainwindow.cpp:338
 #, kde-format
 msgid "Save the current skin"
-msgstr "Gardar esta pel"
+msgstr "Gardar esta aparencia"
 
 #: mainwindow.cpp:367
-#, fuzzy, kde-format
-#| msgid "Choose the root folder of the skin to open"
+#, kde-format
 msgctxt "@title:window"
 msgid "Choose the Root Folder of the Skin to Open"
-msgstr "Escolle o cartafol raiz da pel que queres abrir"
+msgstr "Escolle o cartafol raíz da aparencia que queres abrir"
 
 #: mainwindow.cpp:530
 #, kde-format
@@ -2160,8 +2152,8 @@ msgstr "Eliminar realmente esta nacionalidade?"
 #, kde-format
 msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
 msgstr ""
-"Erro - O formato de ficheiro de definición de pel é incorrecto. Agardábase "
-"%1 e obtívose %2"
+"Erro - O formato de ficheiro de definición de aparencia é incorrecto. "
+"Agardábase %1 e obtívose %2"
 
 #: onu.cpp:111
 #, kde-format
@@ -2190,21 +2182,22 @@ msgstr ""
 "Non se pode ler o ficheiro %1:\n"
 "%2."
 
+# well-spelled: CargadorDeFondo
 #: onu.cpp:990
 #, kde-format
 msgid "PoolLoader"
-msgstr "CargadordePool"
+msgstr "CargadorDeFondo"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, KsirkSkinEditorPreferencesWidget)
 #: preferences.ui:25
 #, kde-format
 msgid "KsirK Skin Editor Preferences"
-msgstr "Preferencias do editor de peles de KsirK"
+msgstr "Preferencias do editor de aparencias de KsirK"
 
 #: skinSpritesData.cpp:85
 #, kde-format
 msgid "Error - Unknown skin int data: "
-msgstr "Erro - Descoñécese o dato dun enteiro da pel: "
+msgstr "Erro - Descoñécese o dato dun enteiro da aparencia: "
 
 #: skinSpritesData.cpp:86 skinSpritesData.cpp:102
 #, kde-format
@@ -2214,4 +2207,4 @@ msgstr "Erro fatal"
 #: skinSpritesData.cpp:101
 #, kde-format
 msgid "Error - Unknown skin string data: "
-msgstr "Erro - Descoñécese o dato dunha cadea da pel: "
+msgstr "Erro - Descoñécese o dato dunha cadea da aparencia: "

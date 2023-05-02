@@ -1,18 +1,18 @@
 # translation of ksirk.po to galician
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # mvillarino <mvillarino@users.sourceforge.net>, 2007, 2008, 2009.
 # Marce Villarino <mvillarino@kde-espana.es>, 2009, 2013, 2014.
 # Adrián Chaves Fernández <adriyetichaves@gmail.com>, 2009, 2017.
 # Xosé <xosecalvo@gmail.com>, 2012.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2023.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2019-11-03 13:30+0100\n"
+"PO-Revision-Date: 2023-05-01 09:53+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.11.70\n"
+"X-Generator: Lokalize 23.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -952,7 +952,7 @@ msgstr "%1, terás que conquistar %2 territorios."
 #. i18n: file skins/legacy/Data/world.desktop line 525
 #, no-c-format, kde-format
 msgid "%1, you'll have to conquer %2, %3 and another continent at your choice."
-msgstr "%1, terás que conquistar %2, %3 e un tercer continente."
+msgstr "%1, terás que conquistar %2, %3 e un terceiro continente."
 
 #. i18n: file skins/default/Data/world.desktop line 522
 #. i18n: file skins/default/Data/world.desktop line 527
@@ -1136,8 +1136,7 @@ msgid "Disable Arena"
 msgstr "Desactivar o campo"
 
 #: Dialogs/InvasionSlider.cpp:138
-#, fuzzy, kde-format
-#| msgid "Invasion"
+#, kde-format
 msgctxt "@title:window"
 msgid "Invasion"
 msgstr "Invasión"
@@ -1157,11 +1156,10 @@ msgid "<br><i>Choose the number of invading armies.</i>"
 msgstr "<br><i>Escolle o número de exércitos invasores.</i>"
 
 #: Dialogs/InvasionSlider.cpp:144
-#, fuzzy, kde-format
-#| msgid "Moving"
+#, kde-format
 msgctxt "@title:window"
 msgid "Moving"
-msgstr "Está a mover"
+msgstr "Movendo"
 
 #: Dialogs/InvasionSlider.cpp:145
 #, kde-format
@@ -1285,10 +1283,9 @@ msgstr "Unirse á partida escollida"
 
 #. i18n: ectx: property (text), widget (QPushButton, loadsavedgamebutton)
 #: Dialogs/jabbergameui.ui:265
-#, fuzzy, kde-format
-#| msgid "Load a Saved Game"
+#, kde-format
 msgid "Load a Saved Game..."
-msgstr "Cargar unha partida gardada"
+msgstr "Cargar unha partida gardada…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: Dialogs/jabbergameui.ui:293
@@ -1354,8 +1351,7 @@ msgstr "Xogador número %1, escribe o teu nome e escolle un país:"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, NewGameDialog)
 #: Dialogs/newGameDialog.ui:16
-#, fuzzy, kde-format
-#| msgid "Ksirk - New game properties"
+#, kde-format
 msgid "KsirK - New game properties"
 msgstr "KsirK - Propiedades da nova partida"
 
@@ -1410,10 +1406,9 @@ msgstr "Unha lista despregábel con todos os temas dispoñíbeis."
 
 #. i18n: ectx: property (text), widget (QPushButton, ghnsbutton)
 #: Dialogs/newGameDialog.ui:126
-#, fuzzy, kde-format
-#| msgid "Download New Skins"
+#, kde-format
 msgid "Download New Skins..."
-msgstr "Descargar novos temas"
+msgstr "Descargar novas aparencias…"
 
 #. i18n: ectx: property (title), widget (QGroupBox, goalGroup)
 #: Dialogs/newGameDialog.ui:150
@@ -1732,11 +1727,10 @@ msgid "New game confirmation"
 msgstr "Confirmación de nova partida"
 
 #: GameLogic/gameautomaton.cpp:1189 GameLogic/gameautomaton.cpp:1217
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Join New Game"
-msgstr "Nova partida"
+msgstr "Unirse a unha nova partida"
 
 #: GameLogic/gameautomaton.cpp:1397
 #, kde-format
@@ -1901,11 +1895,10 @@ msgid "Really Next Player?"
 msgstr "Rematar a rolda?"
 
 #: GameLogic/gameautomaton.cpp:2658
-#, fuzzy, kde-format
-#| msgid "Next Player"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Player"
-msgstr "Seguinte xogador"
+msgstr "Seguinte persoa"
 
 #: GameLogic/goal.cpp:156
 #, kde-format
@@ -2402,7 +2395,7 @@ msgstr "Non se puido estabelecer unha conexión segura."
 #: Jabber/jabberaccount.cpp:882
 #, kde-format
 msgid "There was a Transport Layer Security (TLS) error: %1"
-msgstr "Produciuse un erro na TSL: %1"
+msgstr "Produciuse un erro na TLS: %1"
 
 #: Jabber/jabberaccount.cpp:889
 #, kde-format
@@ -2469,7 +2462,7 @@ msgstr "Produciuse un erro ao autenticarse no servidor: %1"
 #: Jabber/jabberaccount.cpp:933
 #, kde-format
 msgid "Transport Layer Security (TLS) problem."
-msgstr "Houbo un problema coa TSL."
+msgstr "Houbo un problema coa TLS."
 
 #: Jabber/jabberaccount.cpp:936
 #, kde-format
@@ -2994,11 +2987,10 @@ msgid "Do you want to quit the game?"
 msgstr "Queres saír do xogo?"
 
 #: kgamewin.cpp:1054
-#, fuzzy, kde-format
-#| msgid "Quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
-msgstr "Saír"
+msgstr "Saír do xogo"
 
 #: kgamewin.cpp:1074
 #, kde-format
@@ -3006,8 +2998,7 @@ msgid "Before you quit, do you want to save your game?"
 msgstr "Queres gardar a partida antes de saír?"
 
 #: kgamewin.cpp:1120
-#, fuzzy, kde-format
-#| msgid "KsirK - Load Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "KsirK - Load Game"
 msgstr "KsirK - Cargar unha partida"
@@ -3147,11 +3138,10 @@ msgid "Do you really want to end your current game and start a new one?"
 msgstr "Seguro que queres rematar a túa partida actual e comezar unha nova?"
 
 #: kgamewin.cpp:2668
-#, fuzzy, kde-format
-#| msgid "Start a New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
-msgstr "Comeza unha partida nova"
+msgstr "Comezar unha partida nova"
 
 #: kgamewin.cpp:2924
 #, kde-format
@@ -3202,8 +3192,7 @@ msgid "Cannot save when waiting for a defense."
 msgstr "Non se pode gardar cando se espera unha defensa."
 
 #: kgamewinslots.cpp:454
-#, fuzzy, kde-format
-#| msgid "KsirK - Save Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "KsirK - Save Game"
 msgstr "KsirK - Gardar a partida"
@@ -3445,10 +3434,9 @@ msgstr ""
 "consulta o sitio web de KsirK."
 
 #: main.cpp:50
-#, fuzzy, kde-format
-#| msgid "Gael de Chalendar aka Kleag"
+#, kde-format
 msgid "Gaël de Chalendar aka Kleag"
-msgstr "Gael de Chalendar aka Kleag"
+msgstr "Gaël de Chalendar, coñecido como Kleag"
 
 #: main.cpp:51
 #, kde-format
@@ -3519,10 +3507,9 @@ msgstr "Unirse a unha partida a través da rede TCP/IP estándar"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbLoad)
 #: mainMenu.ui:125
-#, fuzzy, kde-format
-#| msgid "Load"
+#, kde-format
 msgid "Load..."
-msgstr "Cargar"
+msgstr "Cargar…"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbQuit)
 #: mainMenu.ui:145
@@ -3544,10 +3531,9 @@ msgstr "Son activado"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: preferences.ui:51
-#, fuzzy, kde-format
-#| msgid "Sprites speed (slow, normal, rapid, immediate)"
+#, kde-format
 msgid "Sprites speed (slow, normal, rapid, immediate):"
-msgstr "Velocidade das figuras (lenta, normal, rápida, inmediata)"
+msgstr "Velocidade das figuras (lenta, normal, rápida, inmediata):"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_helpEnabled)
 #: preferences.ui:95
