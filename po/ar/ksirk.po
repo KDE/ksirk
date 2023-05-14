@@ -1102,17 +1102,17 @@ msgstr "لا شيء إلى!"
 #: decoratedgameframe.cpp:169
 #, kde-format
 msgid "Move 1"
-msgstr "حرك ١"
+msgstr "حرك 1"
 
 #: decoratedgameframe.cpp:172
 #, kde-format
 msgid "Move 5"
-msgstr "حرك ٥"
+msgstr "حرك 5"
 
 #: decoratedgameframe.cpp:175
 #, kde-format
 msgid "Move 10"
-msgstr "حرك ١٠"
+msgstr "حرك 10"
 
 #: decoratedgameframe.cpp:400
 #, kde-format
