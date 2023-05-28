@@ -1143,8 +1143,8 @@ msgid ""
 "You are invading <font color=\"blue\">%1</font> with <font color=\"red\">%2</"
 "font>!"
 msgstr ""
-"Du går til angrep på <font color=\"blue\">%1</font> med <font color=\"red\">"
-"%2</font>."
+"Du går til angrep på <font color=\"blue\">%1</font> med <font "
+"color=\"red\">%2</font>."
 
 #: Dialogs/InvasionSlider.cpp:140
 #, kde-format
@@ -1160,11 +1160,11 @@ msgstr "Flyttar"
 #: Dialogs/InvasionSlider.cpp:145
 #, kde-format
 msgid ""
-"You are moving armies from <font color=\"red\">%1</font> to <font color="
-"\"blue\">%2</font>!"
+"You are moving armies from <font color=\"red\">%1</font> to <font "
+"color=\"blue\">%2</font>!"
 msgstr ""
-"Du flyttar styrkar frå <font color=\"red\">%1</font> til <font color=\"blue"
-"\">%2</font>."
+"Du flyttar styrkar frå <font color=\"red\">%1</font> til <font "
+"color=\"blue\">%2</font>."
 
 #: Dialogs/InvasionSlider.cpp:146
 #, kde-format
@@ -2697,8 +2697,8 @@ msgid ""
 ">If you want to accept and join, just <b>enter your nickname</b> and press "
 "ok<br />If you want to decline, press cancel</qt>"
 msgstr ""
-"<qt><i>%1</i> har invitert deg til å vera med i konferansen <b>%2</b><br />"
-"%3<br />Viss du vil godta invitasjonen, skriv du berre inn <b>kallenamnet "
+"<qt><i>%1</i> har invitert deg til å vera med i konferansen <b>%2</b><br /"
+">%3<br />Viss du vil godta invitasjonen, skriv du berre inn <b>kallenamnet "
 "ditt</b> og trykkjer «OK».<br />Viss du vil avslå han, trykkjer du «Avbryt»."
 "</qt>"
 
@@ -3009,13 +3009,13 @@ msgid_plural ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
 "with %1 armies!<br> How do you want to defend <font color=\"blue\">%4</font>?"
 msgstr[0] ""
-"<font color=\"red\">%2</font> går til angrep på deg frå <font color=\"red\">"
-"%3</font> med 1 styrke.<br/> Korleis vil du forsvara <font color=\"blue\">"
-"%4</font>?"
+"<font color=\"red\">%2</font> går til angrep på deg frå <font "
+"color=\"red\">%3</font> med 1 styrke.<br/> Korleis vil du forsvara <font "
+"color=\"blue\">%4</font>?"
 msgstr[1] ""
-"<font color=\"red\">%2</font> går til angrep på deg frå <font color=\"red\">"
-"%3</font> med %1 styrkar.<br/> Korleis vil du forsvara <font color=\"blue\">"
-"%4</font>?"
+"<font color=\"red\">%2</font> går til angrep på deg frå <font "
+"color=\"red\">%3</font> med %1 styrkar.<br/> Korleis vil du forsvara <font "
+"color=\"blue\">%4</font>?"
 
 #: kgamewin.cpp:1266
 #, kde-format

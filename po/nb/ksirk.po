@@ -1143,8 +1143,8 @@ msgid ""
 "You are invading <font color=\"blue\">%1</font> with <font color=\"red\">%2</"
 "font>!"
 msgstr ""
-"Du går til angrep på <font color=\"blue\">%1</font> med <font color=\"red\">"
-"%2</font>."
+"Du går til angrep på <font color=\"blue\">%1</font> med <font "
+"color=\"red\">%2</font>."
 
 #: Dialogs/InvasionSlider.cpp:140
 #, kde-format
@@ -1160,11 +1160,11 @@ msgstr ""
 #: Dialogs/InvasionSlider.cpp:145
 #, kde-format
 msgid ""
-"You are moving armies from <font color=\"red\">%1</font> to <font color="
-"\"blue\">%2</font>!"
+"You are moving armies from <font color=\"red\">%1</font> to <font "
+"color=\"blue\">%2</font>!"
 msgstr ""
-"Du flytter styrker fra <font color=\"red\">%1</font> til <font color=\"blue"
-"\">%2</font>."
+"Du flytter styrker fra <font color=\"red\">%1</font> til <font "
+"color=\"blue\">%2</font>."
 
 #: Dialogs/InvasionSlider.cpp:146
 #, kde-format
@@ -3000,13 +3000,13 @@ msgid_plural ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
 "with %1 armies!<br> How do you want to defend <font color=\"blue\">%4</font>?"
 msgstr[0] ""
-"<font color=\"red\">%2</font> går til angrep på deg fra <font color=\"red\">"
-"%3</font> med 1 styrke.<br> Hvordan vil du forsvare <font color=\"blue\">%4</"
-"font>?"
+"<font color=\"red\">%2</font> går til angrep på deg fra <font "
+"color=\"red\">%3</font> med 1 styrke.<br> Hvordan vil du forsvare <font "
+"color=\"blue\">%4</font>?"
 msgstr[1] ""
-"<font color=\"red\">%2</font> går til angrep på deg fra <font color=\"red\">"
-"%3</font> med %1 styrker.<br> Hvordan vil du forsvare <font color=\"blue\">"
-"%4</font>?"
+"<font color=\"red\">%2</font> går til angrep på deg fra <font "
+"color=\"red\">%3</font> med %1 styrker.<br> Hvordan vil du forsvare <font "
+"color=\"blue\">%4</font>?"
 
 #: kgamewin.cpp:1266
 #, kde-format
