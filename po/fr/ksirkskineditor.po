@@ -2,8 +2,8 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Jean-Jacques Finazzi <mrjay01@users.sourceforge.net>, 2009, 2010.
 # xavier <xavier.besnard@neuf.fr>, 2012, 2013, 2021.
+# Xavier BESNARD <xavier.besnard@neuf.fr>, 2023.
 #
-# Xavier BESNARD <xavier.besnard]neuf.fr>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
