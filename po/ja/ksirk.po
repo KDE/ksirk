@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
@@ -1667,7 +1667,6 @@ msgid_plural ""
 "Error - No receiving country selected while computer player %2 had still %1 "
 "armies to place. This is bug probably #2232 at www.gna.org."
 msgstr[0] ""
-msgstr[1] ""
 
 #: GameLogic/aiplayer.cpp:506 Sprites/skinSpritesData.cpp:89
 #: Sprites/skinSpritesData.cpp:105
@@ -1884,7 +1883,6 @@ msgstr ""
 msgid "<br>%2, you still have 1 country to conquer..."
 msgid_plural "<br>%2, you still have %1 countries to conquer..."
 msgstr[0] ""
-msgstr[1] ""
 
 #: GameLogic/goal.cpp:242
 #, kde-format
@@ -1892,7 +1890,6 @@ msgid "<br>Your goal is reached: %2 is dead and you possess %1 country."
 msgid_plural ""
 "<br>Your goal is reached: %2 is dead and you possess %1 countries."
 msgstr[0] ""
-msgstr[1] ""
 
 #: GameLogic/goal.cpp:264
 #, kde-format
@@ -1903,7 +1900,6 @@ msgid_plural ""
 "<br>%2, you have enough countries but you still have to put more than %1 "
 "armies on %3 of them..."
 msgstr[0] ""
-msgstr[1] ""
 
 #: GameLogic/goal.cpp:269
 #, kde-format
@@ -1915,7 +1911,6 @@ msgstr ""
 msgid "1 country in %2"
 msgid_plural "%1 countries in %2"
 msgstr[0] ""
-msgstr[1] ""
 
 #: GameLogic/goal.cpp:285
 #, kde-format
@@ -2930,7 +2925,6 @@ msgid_plural ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
 "with %1 armies!<br> How do you want to defend <font color=\"blue\">%4</font>?"
 msgstr[0] ""
-msgstr[1] ""
 
 #: kgamewin.cpp:1266
 #, kde-format
@@ -3085,7 +3079,6 @@ msgstr ""
 msgid "%2 belongs to %3. 1 army."
 msgid_plural "%2 belongs to %3. %1 armies."
 msgstr[0] ""
-msgstr[1] ""
 
 #: kgamewinslots.cpp:447
 #, kde-format
@@ -3156,14 +3149,12 @@ msgstr ""
 msgid "<font color=\"red\">Attack</font> with 1 army.<br>"
 msgid_plural "<font color=\"red\">Attack</font> with %1 armies.<br>"
 msgstr[0] ""
-msgstr[1] ""
 
 #: krightdialog.cpp:233
 #, kde-format
 msgid "<font color=\"blue\">Defend</font> with 1 army.<br>"
 msgid_plural "<font color=\"blue\">Defend</font> with %1 armies.<br>"
 msgstr[0] ""
-msgstr[1] ""
 
 #: krightdialog.cpp:265
 #, kde-format
@@ -3195,7 +3186,6 @@ msgstr ""
 msgid "%1 army to place"
 msgid_plural "%1 armies to place"
 msgstr[0] ""
-msgstr[1] ""
 
 #: krightdialog.cpp:375
 #, kde-format
@@ -3207,7 +3197,6 @@ msgstr ""
 msgid "1 army to place"
 msgid_plural "%1 armies to place"
 msgstr[0] ""
-msgstr[1] ""
 
 #: krightdialog.cpp:392
 #, kde-format
