@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2023-01-18 22:31+0300\n"
+"PO-Revision-Date: 2023-06-04 01:59+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 23.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -99,7 +99,8 @@ msgstr ""
 "Bu kıtanın içindeki ülkeleri seçmek için buraya tıklayın.\n"
 "\n"
 "Dünyadaki tüm ülkelerin bir listesi gösterilecek, seçmek istediğiniz "
-"ülkelerifareyi kullanarak ve Ctrl, Shift tuşlarına basarak seçebilirsiniz."
+"ülkeleri fareyi kullanarak ve Kontrol, Üst Karakter düğmelerine basarak "
+"seçebilirsiniz."
 
 #. i18n: ectx: property (text), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:56
@@ -504,8 +505,9 @@ msgid ""
 msgstr ""
 "Bu ülkenin komşularını seçmek için buraya tıklayın.\n"
 "\n"
-"Dünyadaki tüm ülkelerin bir listesi gösterilecek, seçmek istediğiniz "
-"ülkeleri fareyi kullanarak ve Ctrl, Shift tuşlarına basarak seçebilirsiniz."
+"Dünyadaki tüm ülkelerin bir listesi gösterilecek; seçmek istediğiniz "
+"ülkeleri fareyi kullanarak ve Kontrol, Üst Karakter düğmelerine basarak "
+"seçebilirsiniz."
 
 #. i18n: ectx: property (text), widget (QPushButton, neighboursbutton)
 #: ksirkcountrydefinition.ui:343
@@ -714,7 +716,7 @@ msgid ""
 msgstr ""
 "<p><i>Ülkeler</i> hedefinde fethedilecek kıtaları seçmek için bu düğmeye "
 "tıklayın.</p><p>Dünya kıtalarının bir listesi açılacak. İstediğiniz kıtaları "
-"fare, Ctrl ve Shift düğmeleri ile seçin.</p>"
+"fare, Kontrol ve Üst Karakter düğmeleri ile seçin.</p>"
 
 #. i18n: ectx: property (text), widget (QPushButton, selectcontinentsbutton)
 #: ksirkgoaldefinition.ui:176
@@ -1240,8 +1242,8 @@ msgid ""
 "Shift keys."
 msgstr ""
 "Dünya üzerinde tanımlanan tüm ülkelerin listesi. Şu an seçili ülkeler "
-"vurgulanmıştır. Seçimi fareyi, Ctrl ve Shift tuşlarını kullanarak "
-"değiştirebilirsiniz."
+"vurgulanmıştır. Seçimi, fareyi ve Kontrol ve Üst Karakter düğmelerine "
+"kullanarak değiştirebilirsiniz."
 
 #. i18n: ectx: Menu (game)
 #: ksirkskineditorui.rc:10
