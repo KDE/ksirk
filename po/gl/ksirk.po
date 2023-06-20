@@ -1834,13 +1834,13 @@ msgid ""
 "%1, your goal will be displayed. Please<br>make sure that no other player "
 "can see it!"
 msgstr ""
-"%1, móstrase o teu obxectivo.<br>Asegúrate de que ningún outro xogador poida "
+"%1, amósase o teu obxectivo.<br>Asegúrate de que ningún outro xogador poida "
 "velo!"
 
 #: GameLogic/gameautomaton.cpp:1961
 #, kde-format
 msgid "KsirK - Displaying Goal"
-msgstr "KsirK - Mostrando o obxectivo"
+msgstr "KsirK - Amosando o obxectivo"
 
 #: GameLogic/gameautomaton.cpp:2147
 #, kde-format
@@ -1983,7 +1983,7 @@ msgstr "%1 en %2"
 #: GameLogic/goal.cpp:317
 #, kde-format
 msgid "KsirK - Goal Display"
-msgstr "KsirK - Mostrar o obxectivo"
+msgstr "KsirK - Amosar o obxectivo"
 
 #: GameLogic/KsirkChatModel.cpp:72 kgamewin.cpp:178
 #, kde-format
@@ -2272,7 +2272,7 @@ msgstr "Non se atopou o servidor."
 #: Jabber/jabberaccount.cpp:793
 #, kde-format
 msgid "Address is already in use."
-msgstr "Xa se está a empregar o enderezo."
+msgstr "Xa se está a usar o enderezo."
 
 #: Jabber/jabberaccount.cpp:796
 #, kde-format
@@ -2901,7 +2901,7 @@ msgstr "Unirse a unha partida en rede TCP/IP estándar"
 #: kgamewin.cpp:425
 #, kde-format
 msgid "Display the Current Player's Goal"
-msgstr "Mostrar o obxectivo do xogador actual"
+msgstr "Amosar o obxectivo do xogador actual"
 
 #: kgamewin.cpp:428
 #, kde-format
@@ -3177,7 +3177,7 @@ msgstr ""
 #: kgamewin.cpp:2943
 #, kde-format
 msgid "Don't show messages anymore"
-msgstr "Non volver mostrar mensaxes"
+msgstr "Non volver amosar mensaxes"
 
 #: kgamewinslots.cpp:109
 #, kde-format
@@ -3345,20 +3345,20 @@ msgstr "Se verdadeiro, reproduciranse sons; en caso contrario non."
 #: ksirksettings.kcfg:17
 #, kde-format
 msgid "If true, help is displayed; they are not otherwise."
-msgstr "Se verdadeiro, móstranse axudas; en caso contrario non."
+msgstr "Se verdadeiro, amósanse axudas; en caso contrario non."
 
 #. i18n: ectx: label, entry (showArmiesNumbers), group (General)
 #: ksirksettings.kcfg:21
 #, kde-format
 msgid "If true, the number of armies is displayed on each country."
 msgstr ""
-"Se verdadeiro, en cada territorio móstrase o número de exércitos presentes."
+"Se verdadeiro, en cada territorio amósase o número de exércitos presentes."
 
 #. i18n: ectx: label, entry (Theme), group (General)
 #: ksirksettings.kcfg:25
 #, kde-format
 msgid "The graphical theme to be used."
-msgstr "O tema gráfico que se empregará."
+msgstr "O tema gráfico que se usará."
 
 #. i18n: ectx: label, entry (jabberId), group (General)
 #: ksirksettings.kcfg:28
@@ -3539,13 +3539,13 @@ msgstr "Velocidade das figuras (lenta, normal, rápida, inmediata):"
 #: preferences.ui:95
 #, kde-format
 msgid "Show help"
-msgstr "Mostrar axuda"
+msgstr "Amosar axuda"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_showArmiesNumbers)
 #: preferences.ui:102
 #, kde-format
 msgid "Show number of armies on countries"
-msgstr "Mostrar o número de exércitos en cada territorio"
+msgstr "Amosar o número de exércitos en cada territorio"
 
 #: SaveLoad/ksirkgamexmlhandler.cpp:57
 #, kde-format
