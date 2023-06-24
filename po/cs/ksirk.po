@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2023-06-22 15:59+0200\n"
+"PO-Revision-Date: 2023-06-23 11:48+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -2595,7 +2595,7 @@ msgstr "Připojen."
 #: Jabber/jabbercontact.cpp:173
 #, kde-format
 msgid "Free to Chat"
-msgstr "Volný k pokecu"
+msgstr "Volný k rozhovoru"
 
 #: Jabber/jabbercontact.cpp:174
 #, kde-format
@@ -2699,8 +2699,8 @@ msgid ""
 "opened chat windows."
 msgstr ""
 "Přednastavili jste zdroj pro kontakt %1, ale máte s tímto kontaktem stále "
-"otevřená okna pokecu. Přednastavený zdroj se použije pouze pro nově otevřená "
-"okna."
+"otevřená okna rozhovoru. Přednastavený zdroj se použije pouze pro nově "
+"otevřená okna."
 
 #: Jabber/jabbercontact.cpp:1123
 #, kde-format
