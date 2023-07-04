@@ -497,4 +497,4 @@ bool DecoratedGameFrame::viewportEvent(QEvent* event)
 
 }
 
-
+#include "moc_decoratedgameframe.cpp"

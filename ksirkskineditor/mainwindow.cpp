@@ -2166,4 +2166,4 @@ void MainWindow::slotCannonyValueChanged(int v)
 
 } // closing namespace
 
-
+#include "moc_mainwindow.cpp"

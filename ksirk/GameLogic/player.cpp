@@ -452,4 +452,4 @@ QDataStream& operator>>(QDataStream& stream, PlayerMatrix& p)
 
 } // closing namespace Ksirk
 
-
+#include "moc_player.cpp"

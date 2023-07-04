@@ -1353,6 +1353,4 @@ void JabberContact::slotDiscoFinished( )
 	}
 }
 
-
-
-
+#include "moc_jabbercontact.cpp"

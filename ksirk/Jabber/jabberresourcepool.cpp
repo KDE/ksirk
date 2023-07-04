@@ -393,4 +393,4 @@ void JabberResourcePool::findResources ( const XMPP::Jid &jid, XMPP::ResourceLis
 	}
 }
 
-
+#include "moc_jabberresourcepool.cpp"

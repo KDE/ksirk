@@ -142,4 +142,4 @@ void JabberByteStream::slotError ( QAbstractSocket::SocketError code )
 	emit error ( code );
 }
 
-
+#include "moc_jabberbytestream.cpp"

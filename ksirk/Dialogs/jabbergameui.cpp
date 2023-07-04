@@ -333,5 +333,5 @@ void KsirkJabberGameWidget::slotCancel()
   qCDebug(KSIRK_LOG);
   emit cancelled(m_previousGuiIndex);
 }
-                                        
 
+#include "moc_jabbergameui.cpp"

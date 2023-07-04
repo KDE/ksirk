@@ -45,3 +45,5 @@ TcpConnectWidget::~TcpConnectWidget()
 }
 
 }
+
+#include "moc_tcpconnectwidget.cpp"

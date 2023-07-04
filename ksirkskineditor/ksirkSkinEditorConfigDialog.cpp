@@ -90,4 +90,4 @@ void KsirkSkinEditorConfigurationDialog::updateWidgets()
   m_changed = false;
 }
 
-
+#include "moc_ksirkSkinEditorConfigDialog.cpp"

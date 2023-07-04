@@ -1017,3 +1017,5 @@ void ONU::loadPoolIds(const QString& fileName)
 }
 
 }
+
+#include "moc_onu.cpp"

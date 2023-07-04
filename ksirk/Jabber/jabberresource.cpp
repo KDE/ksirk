@@ -169,4 +169,4 @@ void JabberResource::slotGotDiscoCapabilities ()
 	}
 }
 
-
+#include "moc_jabberresource.cpp"

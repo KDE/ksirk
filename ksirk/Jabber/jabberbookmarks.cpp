@@ -146,4 +146,4 @@ void JabberBookmarks::slotJoinChatBookmark( const QString & _jid )
 	m_account->client()->joinGroupChat( jid.host() , jid.user() , jid.resource() );
 }
 
-
+#include "moc_jabberbookmarks.cpp"

@@ -1165,4 +1165,4 @@ void JabberClient::slotSubscription(const XMPP::Jid& jid, const QString& type)
 
 }
 
-
+#include "moc_jabberclient.cpp"

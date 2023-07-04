@@ -493,4 +493,4 @@ void JabberProtocol::handleURL(const KUrl & kurl) const
 
 }
 
-
+#include "moc_jabberprotocol.cpp"

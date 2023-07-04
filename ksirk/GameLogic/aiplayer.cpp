@@ -722,4 +722,4 @@ void AIPlayer::requestAck()
 } // closing namespace GameLogic
 } // closing namespace Ksirk
 
-
+#include "moc_aiplayer.cpp"

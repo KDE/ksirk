@@ -98,3 +98,4 @@ void KsirkChatModel::addMessage(const QString& fromName, const QString& text)
 
 // } // closing namespace Ksirk
 
+#include "moc_KsirkChatModel.cpp"

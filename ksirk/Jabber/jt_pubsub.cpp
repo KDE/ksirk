@@ -58,3 +58,5 @@ bool JT_PubSubPublish::take(const QDomElement &x)
 		setError(x);
 	return true;
 }
+
+#include "moc_jt_pubsub.cpp"

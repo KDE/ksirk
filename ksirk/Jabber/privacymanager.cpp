@@ -434,3 +434,4 @@ void PrivacyManager::receiveList()
 	}
 }
 
+#include "moc_privacymanager.cpp"

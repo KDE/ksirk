@@ -262,4 +262,4 @@ QDataStream& operator>>(QDataStream& stream, Country* country)
 
 }
 
-
+#include "moc_country.cpp"

@@ -125,4 +125,4 @@ void JabberConnector::setOptProbe ( bool )
 	// FIXME: Implement this.
 }
 
-
+#include "moc_jabberconnector.cpp"

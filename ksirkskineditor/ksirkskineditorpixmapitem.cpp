@@ -54,4 +54,4 @@ void PixmapItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 
 } // closing namespace
 
-
+#include "moc_ksirkskineditorpixmapitem.cpp"

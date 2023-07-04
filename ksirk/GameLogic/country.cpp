@@ -607,4 +607,4 @@ void Country::copyForArena(Country* trueCountry)
 
 } // closing namespace Ksirk
 
-
+#include "moc_country.cpp"

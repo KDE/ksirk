@@ -3284,4 +3284,4 @@ void KGameWindow::showNewGameSummary()
 
 } // closing namespace Ksirk
 
-
+#include "moc_kgamewin.cpp"

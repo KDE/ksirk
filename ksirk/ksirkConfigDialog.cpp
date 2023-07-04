@@ -64,4 +64,4 @@ void KsirkConfigurationDialog::updateWidgets()
   m_widget->kcfg_showArmiesNumbers->setChecked(KsirkSettings::showArmiesNumbers());
 }
 
-
+#include "moc_ksirkConfigDialog.cpp"

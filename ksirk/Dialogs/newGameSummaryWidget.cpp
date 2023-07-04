@@ -95,3 +95,4 @@ void NewGameSummaryWidget::show(KGameWindow* game)
 
 }
 
+#include "moc_newGameSummaryWidget.cpp"

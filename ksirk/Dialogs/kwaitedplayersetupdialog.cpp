@@ -108,4 +108,4 @@ void KWaitedPlayerSetupDialog::fillWaitedPlayersCombo()
 
 }
 
-
+#include "moc_kwaitedplayersetupdialog.cpp"

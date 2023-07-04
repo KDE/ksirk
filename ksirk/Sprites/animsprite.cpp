@@ -713,4 +713,4 @@ void AnimSprite::addDecoration(const QString& svgid, const QRectF& geometry)
 
 } // closing namespace Ksirk
 
-
+#include "moc_animsprite.cpp"

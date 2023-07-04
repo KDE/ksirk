@@ -66,4 +66,4 @@ void JoinGameDialog::reject() {
 
 }
 
-
+#include "moc_joingame.cpp"

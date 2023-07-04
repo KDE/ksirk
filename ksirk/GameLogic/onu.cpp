@@ -745,4 +745,4 @@ void ONU::changingZoom()
 } // closing namespace GameLogic
 } // closing namespace Ksirk
 
-
+#include "moc_onu.cpp"

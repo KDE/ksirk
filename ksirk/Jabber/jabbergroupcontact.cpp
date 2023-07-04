@@ -386,4 +386,4 @@ void JabberGroupContact::slotSubContactDestroyed( Kopete::Contact * deadContact 
 
 }
 
-
+#include "moc_jabbergroupcontact.cpp"

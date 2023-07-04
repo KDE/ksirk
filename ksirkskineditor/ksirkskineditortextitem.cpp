@@ -55,4 +55,4 @@ void TextItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 
 } // closing namespace
 
-
+#include "moc_ksirkskineditortextitem.cpp"

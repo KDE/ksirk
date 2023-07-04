@@ -144,4 +144,4 @@ namespace Ksirk
 
 }
 
-
+#include "moc_fightArena.cpp"

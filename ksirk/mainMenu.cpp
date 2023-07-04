@@ -56,4 +56,4 @@ void mainMenu::init(Ksirk::GameLogic::ONU* /*theWorld*/)
 {
 }
 
-
+#include "moc_mainMenu.cpp"

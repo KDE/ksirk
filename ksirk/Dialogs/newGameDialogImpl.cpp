@@ -213,4 +213,4 @@ void NewGameWidget::slotNbNetworkPlayersEdited(int)
 
 }
 
-
+#include "moc_newGameDialogImpl.cpp"

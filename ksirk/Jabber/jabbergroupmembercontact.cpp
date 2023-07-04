@@ -170,5 +170,4 @@ void JabberGroupMemberContact::sendFile ( const KUrl &sourceURL, const QString &
 
 }
 
-
-
+#include "moc_jabbergroupmembercontact.cpp"

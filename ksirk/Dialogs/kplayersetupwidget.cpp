@@ -295,4 +295,4 @@ void KPlayerSetupWidget::setLabelText()
 
 } // namespace Ksirk
 
-
+#include "moc_kplayersetupwidget.cpp"
