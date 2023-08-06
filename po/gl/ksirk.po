@@ -2541,7 +2541,7 @@ msgstr "Non pode entrar na sala %1 porque se lle prohibiu a entrada"
 #: Jabber/jabberaccount.cpp:1564
 #, kde-format
 msgid "Jabber Group Chat"
-msgstr "Conversa de grupo de Jabber"
+msgstr "Charla de grupo de Jabber"
 
 #: Jabber/jabberaccount.cpp:1553
 #, kde-format
@@ -2732,7 +2732,7 @@ msgstr "A mensaxe gardouse no servidor, o contacto está desconectado"
 #: Jabber/jabbercontact.cpp:320
 #, kde-format
 msgid "%1 has ended his/her participation in the chat session."
-msgstr "%1 deixou a conversa."
+msgstr "%1 deixou a charla."
 
 #: Jabber/jabbercontact.cpp:358 Jabber/jabbergroupcontact.cpp:171
 #: Jabber/jabbergroupmembercontact.cpp:122
@@ -2759,8 +2759,8 @@ msgid ""
 "opened chat windows."
 msgstr ""
 "Preseleccionaches un recurso para o contacto %1 pero aínda tes aberta unha "
-"xanela de conversa con el. A acción escollida só se aplicará ás novas "
-"xanelas de conversa."
+"xanela de charla con el. A acción escollida só se aplicará ás novas xanelas "
+"de charla."
 
 #: Jabber/jabbercontact.cpp:1123
 #, kde-format

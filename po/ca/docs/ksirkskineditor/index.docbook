@@ -955,7 +955,7 @@ revision history. (see installation appendix comment) -->
     <para
 >El component blau (en el model RGB) del color d'un país, l'identifica: l'índex 0 és el país 0 en el fitxer <filename
 >onu.xml</filename
->, l'índex 1 és el país 1, &etc;. El blanc (0xFFFFFF en RGB) identifica l'absència del país (es veu o, per què no, la terra de ningú).</para>
+>, l'índex 1 és el país 1, &etc; El blanc (0xFFFFFF en RGB) identifica l'absència del país (es veu o, per què no, la terra de ningú).</para>
     </sect3>
 
     <sect3>
