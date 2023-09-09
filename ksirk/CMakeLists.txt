@@ -6,17 +6,15 @@ add_subdirectory(skins)
 add_subdirectory(iris)
 add_subdirectory(icons)
 
-# FIND_PACKAGE(ZLIB REQUIRED)
-
 include_directories( 
-  ${CMAKE_BINARY_DIR}/ksirk 
-  ./Dialogs
-  ./GameLogic 
-  ./SaveLoad 
-  ./skins 
-  ./Sprites 
-  ${CMAKE_CURRENT_SOURCE_DIR}/iris/include/iris
-  ${CMAKE_CURRENT_SOURCE_DIR}/iris/src
+    ${CMAKE_BINARY_DIR}/ksirk
+    ./Dialogs
+    ./GameLogic
+    ./SaveLoad
+    ./skins
+    ./Sprites
+    ${CMAKE_CURRENT_SOURCE_DIR}/iris/include/iris
+    ${CMAKE_CURRENT_SOURCE_DIR}/iris/src
 #   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/include/
 #   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/jabber/
 #   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/xmpp-core/
@@ -32,91 +30,95 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/iris/)
 add_executable(ksirk)
 
 target_sources(ksirk PRIVATE
-  GameLogic/gameautomaton.cpp
-  kgamewin.cpp
-  kgamewinslots.cpp
-  gestionSprites.cpp
-  Sprites/backgnd.cpp 
-  Sprites/animsprite.cpp
-  Sprites/cavalrysprite.cpp
-  Sprites/animspriteslist.cpp
-  Sprites/animspritespool.cpp
-  Sprites/animspritesgroup.cpp
-  Sprites/infantrysprite.cpp
-  Sprites/cannonsprite.cpp
-  Sprites/skinSpritesData.cpp
-  Sprites/arrowsprite.cpp
-  SaveLoad/ksirkgamexmlhandler.cpp
-  SaveLoad/ksirkgamexmlloader.cpp
-  GameLogic/aiColsonPlayer.cpp
-  GameLogic/aiplayer.cpp
-  GameLogic/aiplayerio.cpp
-  GameLogic/continent.cpp
-  GameLogic/country.cpp
-  GameLogic/dice.cpp
-  GameLogic/eventslistproperty.cpp
-  GameLogic/goal.cpp
-  GameLogic/KsirkChatItem.cpp
-  GameLogic/KsirkChatModel.cpp
-  GameLogic/KsirkChatDelegate.cpp
-  GameLogic/KMessageParts.cpp
-  GameLogic/nationality.cpp
-  GameLogic/onu.cpp
-  GameLogic/player.cpp
-  GameLogic/distributiondata.cpp
-  GameLogic/newplayerdata.cpp
-  Dialogs/kplayersetupwidget.cpp
-  Dialogs/newGameDialogImpl.cpp
-  Dialogs/kwaitedplayersetupdialog.cpp
-  Dialogs/restartOrExitDialogImpl.cpp
-  Dialogs/joingame.cpp
-  Dialogs/jabbergameui.cpp
-  Dialogs/InvasionSlider.cpp
-  Dialogs/newGameSummaryWidget.cpp
-  Dialogs/tcpconnectwidget.cpp
-  main.cpp
-  decoratedgameframe.cpp 
-  ksirkConfigDialog.cpp
-  fightArena.cpp
-  mainMenu.cpp
-  krightdialog.cpp
-  newgamesetup.cpp
-#   Jabber/jabberaccount.cpp
-  Jabber/kmessagejabber.cpp
-  Jabber/jabberbytestream.cpp
-  Jabber/jabberclient.cpp
-  Jabber/jabberconnector.cpp
-  Jabber/privacylist.cpp
-  Jabber/privacylistitem.cpp
-  Jabber/privacymanager.cpp
+    GameLogic/gameautomaton.cpp
+    kgamewin.cpp
+    kgamewinslots.cpp
+    gestionSprites.cpp
+    Sprites/backgnd.cpp
+    Sprites/animsprite.cpp
+    Sprites/cavalrysprite.cpp
+    Sprites/animspriteslist.cpp
+    Sprites/animspritespool.cpp
+    Sprites/animspritesgroup.cpp
+    Sprites/infantrysprite.cpp
+    Sprites/cannonsprite.cpp
+    Sprites/skinSpritesData.cpp
+    Sprites/arrowsprite.cpp
+    SaveLoad/ksirkgamexmlhandler.cpp
+    SaveLoad/ksirkgamexmlloader.cpp
+    GameLogic/aiColsonPlayer.cpp
+    GameLogic/aiplayer.cpp
+    GameLogic/aiplayerio.cpp
+    GameLogic/continent.cpp
+    GameLogic/country.cpp
+    GameLogic/dice.cpp
+    GameLogic/eventslistproperty.cpp
+    GameLogic/goal.cpp
+    GameLogic/KsirkChatItem.cpp
+    GameLogic/KsirkChatModel.cpp
+    GameLogic/KsirkChatDelegate.cpp
+    GameLogic/KMessageParts.cpp
+    GameLogic/nationality.cpp
+    GameLogic/onu.cpp
+    GameLogic/player.cpp
+    GameLogic/distributiondata.cpp
+    GameLogic/newplayerdata.cpp
+    Dialogs/kplayersetupwidget.cpp
+    Dialogs/newGameDialogImpl.cpp
+    Dialogs/kwaitedplayersetupdialog.cpp
+    Dialogs/restartOrExitDialogImpl.cpp
+    Dialogs/joingame.cpp
+    Dialogs/jabbergameui.cpp
+    Dialogs/InvasionSlider.cpp
+    Dialogs/newGameSummaryWidget.cpp
+    Dialogs/tcpconnectwidget.cpp
+    main.cpp
+    decoratedgameframe.cpp
+    ksirkConfigDialog.cpp
+    fightArena.cpp
+    mainMenu.cpp
+    krightdialog.cpp
+    newgamesetup.cpp
+  #   Jabber/jabberaccount.cpp
+    Jabber/kmessagejabber.cpp
+    Jabber/jabberbytestream.cpp
+    Jabber/jabberclient.cpp
+    Jabber/jabberconnector.cpp
+    Jabber/privacylist.cpp
+    Jabber/privacylistitem.cpp
+    Jabber/privacymanager.cpp
 
-  ksirk.qrc
+    ksirk.qrc
 )
 
 ecm_qt_declare_logging_category(ksirk
-                                HEADER ksirk_debug.h
-                                IDENTIFIER KSIRK_LOG
-                                CATEGORY_NAME org.kde.ksirk
-                                DESCRIPTION "kdegames(ksirk)" EXPORT KSIRK)
+    HEADER ksirk_debug.h
+    IDENTIFIER KSIRK_LOG
+    CATEGORY_NAME org.kde.ksirk
+    DESCRIPTION "kdegames(ksirk)"
+    EXPORT KSIRK
+)
 
 ecm_qt_declare_logging_category(ksirk
-                                HEADER jabber_protocol_debug.h
-                                IDENTIFIER JABBER_PROTOCOL_LOG
-                                CATEGORY_NAME org.kde.ksirk.jabber
-                                DESCRIPTION "kdegames (ksirk jabber)" EXPORT KSIRK)
+    HEADER jabber_protocol_debug.h
+    IDENTIFIER JABBER_PROTOCOL_LOG
+    CATEGORY_NAME org.kde.ksirk.jabber
+    DESCRIPTION "kdegames (ksirk jabber)"
+    EXPORT KSIRK
+)
 
 ki18n_wrap_ui(ksirk
-  Dialogs/qplayersetupdialog.ui
-  Dialogs/newGameDialog.ui
-  Dialogs/qwaitedplayersetupdialog.ui 
-  Dialogs/restartOrExitDialog.ui
-  Dialogs/joingame.ui
-  Dialogs/jabbergameui.ui
-  Dialogs/newGameSummary.ui
-  Dialogs/tcpconnectwidget.ui
-  preferences.ui
-  mainMenu.ui
-  )
+    Dialogs/qplayersetupdialog.ui
+    Dialogs/newGameDialog.ui
+    Dialogs/qwaitedplayersetupdialog.ui
+    Dialogs/restartOrExitDialog.ui
+    Dialogs/joingame.ui
+    Dialogs/jabbergameui.ui
+    Dialogs/newGameSummary.ui
+    Dialogs/tcpconnectwidget.ui
+    preferences.ui
+    mainMenu.ui
+)
 
 kconfig_add_kcfg_files( ksirk ksirksettings.kcfgc )
 
@@ -124,8 +126,8 @@ file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/icons/hicolor/*-apps-ksirk.png
 ecm_add_app_icon(ksirk ICONS ${ICONS_SRCS})
 
 target_link_libraries(ksirk
-    Qt::Xml
-    Qt::Svg
+    Qt5::Xml
+    Qt5::Svg
     qca-qt${QT_MAJOR_VERSION}
     iris_ksirk
     KF5::Crash
