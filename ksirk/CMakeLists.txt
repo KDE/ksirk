@@ -91,6 +91,8 @@ set(ksirk_SRCS
   Jabber/privacylist.cpp
   Jabber/privacylistitem.cpp
   Jabber/privacymanager.cpp
+
+  ksirk.qrc
 )
 
 ecm_qt_declare_logging_category(ksirk_SRCS
@@ -148,7 +150,6 @@ install( TARGETS ksirk ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES ksirksettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
 install(PROGRAMS org.kde.ksirk.desktop DESTINATION ${KDE_INSTALL_APPDIR})
-install(FILES ksirkui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUIDIR}/ksirk)
 install(FILES jabber.png  DESTINATION  ${KDE_INSTALL_DATADIR}/ksirk)
 install(FILES ksirk.knsrc  DESTINATION  ${KDE_INSTALL_KNSRCDIR})
 install(FILES org.kde.ksirk.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})

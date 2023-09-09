@@ -21,6 +21,8 @@ set(ksirkskineditor_SRCS
   nationality.cpp
   skinSpritesData.cpp
   goal.cpp
+
+  ksirkskineditor.qrc
 )
 
 ecm_qt_declare_logging_category(ksirkskineditor_SRCS
@@ -72,7 +74,6 @@ install( TARGETS ksirkskineditor ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install( FILES ksirkskineditorsettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR} )
 install( PROGRAMS org.kde.ksirkskineditor.desktop DESTINATION ${KDE_INSTALL_APPDIR} )
-install( FILES ksirkskineditorui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUIDIR}/ksirkskineditor )
 
 set (pics_default_DATA
 cross.png
