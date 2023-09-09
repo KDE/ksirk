@@ -9,7 +9,7 @@ set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_
 project(ksirk VERSION ${RELEASE_SERVICE_VERSION})
 
 set(QT_MIN_VERSION "5.15.2")
-set(KF_MIN_VERSION "5.90.0")
+set(KF_MIN_VERSION "5.91.0")
 set(KDE_COMPILERSETTINGS_LEVEL "5.82")
 
 find_package(ECM ${KF_MIN_VERSION} REQUIRED CONFIG)
@@ -23,6 +23,7 @@ include(ECMAddAppIcon)
 include(ECMInstallIcons)
 include(ECMSetupVersion)
 include(ECMQtDeclareLoggingCategory)
+include(ECMDeprecationSettings)
 include(FeatureSummary)
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS
@@ -65,6 +66,12 @@ kde_enable_exceptions()
 add_definitions(
     -DQT_USE_FAST_OPERATOR_PLUS
     -DQT_NO_URL_CAST_FROM_STRING
+)
+
+ecm_set_disabled_deprecation_versions(
+    QT 5.14
+    KF 5.79
+    KDEGAMES 7.3
 )
 
 ecm_setup_version(PROJECT
