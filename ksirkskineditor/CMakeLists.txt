@@ -5,9 +5,9 @@ include_directories(
   ${CMAKE_CURRENT_BINARY_DIR}  
 )
 
-########### next target ###############
+add_executable(ksirkskineditor)
 
-set(ksirkskineditor_SRCS
+target_sources(ksirkskineditor PRIVATE
   main.cpp
   mainwindow.cpp
   ksirkSkinEditorConfigDialog.cpp
@@ -25,14 +25,14 @@ set(ksirkskineditor_SRCS
   ksirkskineditor.qrc
 )
 
-ecm_qt_declare_logging_category(ksirkskineditor_SRCS
+ecm_qt_declare_logging_category(ksirkskineditor
                                 HEADER ksirkskineditor_debug.h
                                 IDENTIFIER KSIRKSKINEDITOR_LOG
                                 CATEGORY_NAME org.kde.ksirk.skineditor
                                 DESCRIPTION "kdegames (ksirk skineditor)" EXPORT KSIRK
                                 )
 
-set(ksirkskineditor_UI
+ki18n_wrap_ui(ksirkskineditor
 #   ksirkskineditor.ui
   preferences.ui
   ksirkskineditorwidget.ui
@@ -45,12 +45,7 @@ set(ksirkskineditor_UI
   ksirkskineditorcountriesselectiondialog.ui
 )
 
-
-ki18n_wrap_ui(ksirkskineditor_SRCS ${ksirkskineditor_UI} )
-
-kconfig_add_kcfg_files( ksirkskineditor_SRCS ksirkskineditorsettings.kcfgc )
-
-add_executable(ksirkskineditor ${ksirkskineditor_SRCS})
+kconfig_add_kcfg_files( ksirkskineditor ksirkskineditorsettings.kcfgc )
 
 target_link_libraries(ksirkskineditor
   Qt::Xml
@@ -67,16 +62,14 @@ if (QT_MAJOR_VERSION STREQUAL "6")
         Qt6::SvgWidgets)
 endif()
 
-
 install( TARGETS ksirkskineditor ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
-
-########### install files ###############
 
 install( FILES ksirkskineditorsettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR} )
 install( PROGRAMS org.kde.ksirkskineditor.desktop DESTINATION ${KDE_INSTALL_APPDIR} )
 
-set (pics_default_DATA
-cross.png
-target.png
+install( FILES
+    cross.png
+    target.png
+
+    DESTINATION ${KDE_INSTALL_DATADIR}/ksirkskineditor
 )
-install( FILES ${pics_default_DATA} DESTINATION ${KDE_INSTALL_DATADIR}/ksirkskineditor/ )

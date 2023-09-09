@@ -31,9 +31,9 @@ include_directories(
 
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/iris/)
 
-########### next target ###############
+add_executable(ksirk)
 
-set(ksirk_SRCS 
+target_sources(ksirk PRIVATE
   GameLogic/gameautomaton.cpp
   kgamewin.cpp
   kgamewinslots.cpp
@@ -95,19 +95,19 @@ set(ksirk_SRCS
   ksirk.qrc
 )
 
-ecm_qt_declare_logging_category(ksirk_SRCS
+ecm_qt_declare_logging_category(ksirk
                                 HEADER ksirk_debug.h
                                 IDENTIFIER KSIRK_LOG
                                 CATEGORY_NAME org.kde.ksirk
                                 DESCRIPTION "kdegames(ksirk)" EXPORT KSIRK)
 
-ecm_qt_declare_logging_category(ksirk_SRCS
+ecm_qt_declare_logging_category(ksirk
                                 HEADER jabber_protocol_debug.h
                                 IDENTIFIER JABBER_PROTOCOL_LOG
                                 CATEGORY_NAME org.kde.ksirk.jabber
                                 DESCRIPTION "kdegames (ksirk jabber)" EXPORT KSIRK)
 
-set(ksirk_UI
+ki18n_wrap_ui(ksirk
   Dialogs/qplayersetupdialog.ui
   Dialogs/newGameDialog.ui
   Dialogs/qwaitedplayersetupdialog.ui 
@@ -120,15 +120,10 @@ set(ksirk_UI
   mainMenu.ui
   )
 
-
-ki18n_wrap_ui(ksirk_SRCS ${ksirk_UI} )
-
-kconfig_add_kcfg_files( ksirk_SRCS ksirksettings.kcfgc )
+kconfig_add_kcfg_files( ksirk ksirksettings.kcfgc )
 
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/icons/hicolor/*-apps-ksirk.png")
-ecm_add_app_icon(ksirk_SRCS ICONS ${ICONS_SRCS})
-
-add_executable(ksirk ${ksirk_SRCS})
+ecm_add_app_icon(ksirk ICONS ${ICONS_SRCS})
 
 target_link_libraries(ksirk
     Qt::Xml
@@ -145,8 +140,6 @@ target_link_libraries(ksirk
 )
 
 install( TARGETS ksirk ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
-
-########### install files ###############
 
 install(FILES ksirksettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
 install(PROGRAMS org.kde.ksirk.desktop DESTINATION ${KDE_INSTALL_APPDIR})

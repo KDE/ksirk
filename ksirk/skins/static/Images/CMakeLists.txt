@@ -1,35 +1,36 @@
-set (pics_default_DATA
-2DownArrow.png
-2UpArrow.png
-arena.svg
-attackAuto.png
-attackOne.png
-attackThree.png
-attackTwo.png
-cancel.png
-defendOne.png
-defendTwo.png
-downArrow.png
-loader.gif
-logoLeft.png
-logoRight.png
-map-mask.png
-moveArmies.png
-moveBackFive.png
-moveBackOne.png
-moveBackTen.png
-moveFinish.png
-moveFive.png
-moveOne.png
-moveTen.png
-newNetGame.png
-nextPlayer.png
-pool.svg
-recyclingFinished.png
-recycling.png
-snapshot.jpg
-soldierKneeling.png
-stopAttackAuto.png
-upArrow.png
+install( FILES
+    2DownArrow.png
+    2UpArrow.png
+    arena.svg
+    attackAuto.png
+    attackOne.png
+    attackThree.png
+    attackTwo.png
+    cancel.png
+    defendOne.png
+    defendTwo.png
+    downArrow.png
+    loader.gif
+    logoLeft.png
+    logoRight.png
+    map-mask.png
+    moveArmies.png
+    moveBackFive.png
+    moveBackOne.png
+    moveBackTen.png
+    moveFinish.png
+    moveFive.png
+    moveOne.png
+    moveTen.png
+    newNetGame.png
+    nextPlayer.png
+    pool.svg
+    recyclingFinished.png
+    recycling.png
+    snapshot.jpg
+    soldierKneeling.png
+    stopAttackAuto.png
+    upArrow.png
+
+    DESTINATION ${KDE_INSTALL_DATADIR}/ksirk/skins/static/Images
 )
-install( FILES ${pics_default_DATA} DESTINATION ${KDE_INSTALL_DATADIR}/ksirk/skins/static/Images/ )
