@@ -14,7 +14,6 @@ set(KDE_COMPILERSETTINGS_LEVEL "5.82")
 find_package(ECM ${KF_MIN_VERSION} REQUIRED CONFIG)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} )
 
-
 include(FeatureSummary)
 include(ECMAddAppIcon)
 include(ECMInstallIcons)
@@ -48,10 +47,9 @@ find_package(KF5 ${KF_MIN_VERSION} REQUIRED COMPONENTS
 )
 
 find_package(KF5KDEGames 7.3.0 REQUIRED)
+
 find_package(Phonon4Qt${QT_MAJOR_VERSION} REQUIRED)
 
-
-find_package(Phonon4Qt${QT_MAJOR_VERSION} CONFIG REQUIRED)
 find_package(Qca-qt${QT_MAJOR_VERSION} 2.1.0)
 set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION "Support for encryption"
                        URL "https://download.kde.org/stable/qca-qt5"
