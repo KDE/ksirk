@@ -25,6 +25,7 @@
 #include "GameLogic/KMessageParts.h"
 
 #include "ksirk_debug.h"
+#include <KLazyLocalizedString>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KStringHandler>
@@ -136,7 +137,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
 //       qCDebug(KSIRK_LOG) << "Setting current player to " << atts.value("name") << " / " << currentPlayer ;
       m_game.automaton()->currentPlayer(currentPlayer);
       KMessageParts messageParts;
-      messageParts << I18N_NOOP("Current player is: %1") << currentPlayer->name();
+      messageParts << kli18n("Current player is: %1").untranslatedText() << currentPlayer->name();
       m_game.broadcastChangeItem(messageParts, ID_STATUS_MSG2);
       QByteArray buffer;
       QDataStream stream(&buffer, QIODevice::WriteOnly);

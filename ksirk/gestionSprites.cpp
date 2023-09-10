@@ -45,6 +45,7 @@
 
 // include files for KDE
 #include <KMessageBox>
+#include <KLazyLocalizedString>
 #include <KLocalizedString>
 #include <KConfig>
 #include <KStandardAction>
@@ -69,14 +70,14 @@ bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *firstCount
 
   if (firstCountry-> nbArmies() <= nbABouger)
   {
-    messageParts << I18N_NOOP("Cannot move %1 armies from %2 to %3") << QString::number(nbABouger)
+    messageParts << kli18n("Cannot move %1 armies from %2 to %3").untranslatedText() << QString::number(nbABouger)
       << firstCountry->name() << secondCountry->name();
     broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
     return false;
   }
   else
   {
-    messageParts << I18N_NOOP("Moving %1 armies from %2 to %3") << QString::number(nbABouger) << firstCountry->name() << secondCountry->name();
+    messageParts << kli18n("Moving %1 armies from %2 to %3").untranslatedText() << QString::number(nbABouger) << firstCountry->name() << secondCountry->name();
     broadcastChangeItem(messageParts, ID_STATUS_MSG2);
   }
 
@@ -103,7 +104,7 @@ bool KGameWindow::initArmiesMovement(unsigned int nbABouger, Country *firstCount
   }
   else 
   {
-    messageParts << I18N_NOOP("Cannot move %1 armies from %2 to %3") 
+    messageParts << kli18n("Cannot move %1 armies from %2 to %3") .untranslatedText()
       << QString::number(nbABouger) 
       << firstCountry->name() 
       << secondCountry->name();
@@ -154,7 +155,7 @@ AnimSprite* KGameWindow::initArmiesMultipleCombat(unsigned int nbA,
   // cannot comment out this comment below otherwise will use sprite uninitialized
   else
   {
-    messageParts << I18N_NOOP("Cannot move %1 armies from %2 to %3") 
+    messageParts << kli18n("Cannot move %1 armies from %2 to %3") .untranslatedText()
       << QString::number(nbA) 
       << firstCountry->name() 
       << secondCountry->name();

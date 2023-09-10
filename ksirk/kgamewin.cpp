@@ -66,6 +66,7 @@
 // include files for KDE
 #include <kwidgetsaddons_version.h>
 #include <KMessageBox>
+#include <KLazyLocalizedString>
 #include <KLocalizedString>
 #include <KConfig>
 #include <KStandardGameAction>
@@ -796,7 +797,7 @@ bool KGameWindow::attackEnd()
     QPixmap pm = currentPlayer()->getFlag()->image(0);
 
     KMessageParts messageParts;
-    messageParts << pm << I18N_NOOP("<font color=\"red\">%1 conquered %2 from %3</font>") << currentPlayer()->name() << m_secondCountry-> name() << m_firstCountry-> name();
+    messageParts << pm << kli18n("<font color=\"red\">%1 conquered %2 from %3</font>").untranslatedText() << currentPlayer()->name() << m_secondCountry-> name() << m_firstCountry-> name();
     broadcastChangeItem(messageParts, ID_NO_STATUS_MSG);
     
     Player* oldOwner = m_secondCountry-> owner();
@@ -892,7 +893,7 @@ bool KGameWindow::attackEnd()
         QDataStream stream(&buffer, QIODevice::WriteOnly);
         m_automaton->sendMessage(buffer,ClearHighlighting);
         KMessageParts messageParts;
-        messageParts << I18N_NOOP("%1: it is up to you again") << currentPlayer()-> name();
+        messageParts << kli18n("%1: it is up to you again").untranslatedText() << currentPlayer()-> name();
         broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
       }
     }
@@ -1155,7 +1156,7 @@ bool KGameWindow::actionOpenGame()
     else
     {
       KMessageParts messageParts;
-      messageParts << I18N_NOOP("Waiting for the connection of %1 network players.") << QString::number(m_waitedPlayers.size());
+      messageParts << kli18n("Waiting for the connection of %1 network players.").untranslatedText() << QString::number(m_waitedPlayers.size());
       broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
       qCDebug(KSIRK_LOG) << "KGameWindow::actionOpenGame true";
       unreduceChat();
@@ -1384,7 +1385,7 @@ bool KGameWindow::finishSetupPlayers()
     unreduceChat();
     qCDebug(KSIRK_LOG) << "In setupPlayers: networkGame";
     KMessageParts messageParts;
-    messageParts << I18N_NOOP("Waiting for %1 players to connect")
+    messageParts << kli18n("Waiting for %1 players to connect").untranslatedText()
       << QString::number(m_newGameSetup->nbNetworkPlayers());
     broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
   }
@@ -1774,30 +1775,30 @@ bool KGameWindow::isMoveValid(const QPointF& point)
   Country* secondCountry = clickIn(point); 
   if  ( ( m_firstCountry == nullptr ) || ( secondCountry == nullptr ) )
   {
-    messageParts << I18N_NOOP("There is no country here!");
+    messageParts << kli18n("There is no country here!").untranslatedText();
   }
   else if  ( m_firstCountry->owner() != currentPlayer() )
   {
-    messageParts << I18N_NOOP("You are not the owner of the first country: %1!") << m_firstCountry->name();
+    messageParts << kli18n("You are not the owner of the first country: %1!").untranslatedText() << m_firstCountry->name();
   }
   else if ( secondCountry->owner() != currentPlayer() )
   {
-    messageParts << I18N_NOOP("You are not the owner of the second country: %1!") << secondCountry->name();
+    messageParts << kli18n("You are not the owner of the second country: %1!").untranslatedText() << secondCountry->name();
   }
   else if (m_firstCountry == secondCountry)
   {
-    messageParts << I18N_NOOP("You are trying to move armies from %1 to itself!") << m_firstCountry->name();
+    messageParts << kli18n("You are trying to move armies from %1 to itself!").untranslatedText() << m_firstCountry->name();
   }
   else if (!m_firstCountry->communicateWith(secondCountry))
   {
     messageParts
-      << I18N_NOOP("%1 is not a neighbour of %2!") 
+      << kli18n("%1 is not a neighbour of %2!").untranslatedText()
       << secondCountry-> name() 
       << m_firstCountry-> name();
   }
   else 
   {
-    messageParts << I18N_NOOP("Moving armies from %1 to %2.") 
+    messageParts << kli18n("Moving armies from %1 to %2.").untranslatedText()
             << m_firstCountry->name() 
             << secondCountry->name();
     res = true;
@@ -1814,36 +1815,36 @@ bool KGameWindow::isFightValid(const QPointF& point)
   if  ( ( m_firstCountry == nullptr ) || ( secondCountry == nullptr ) )
   {
     qCDebug(KSIRK_LOG) << "There is no country here!";
-    messageParts << I18N_NOOP("There is no country here!");
+    messageParts << kli18n("There is no country here!").untranslatedText();
   }
   else if  ( m_firstCountry->owner() != currentPlayer() )
   {
     qCDebug(KSIRK_LOG) << "You are not the owner of the first country: "<< m_firstCountry->name();
-    messageParts << I18N_NOOP("You are not the owner of the first country: %1!")
+    messageParts << kli18n("You are not the owner of the first country: %1!").untranslatedText()
             << m_firstCountry->name();
   }
   else if ( secondCountry->owner() == currentPlayer() )
   {
     qCDebug(KSIRK_LOG) << "You are the owner of the second country: " << secondCountry->name();
-    messageParts << I18N_NOOP("You are the owner of the second country: %1!") << secondCountry->name();
+    messageParts << kli18n("You are the owner of the second country: %1!").untranslatedText() << secondCountry->name();
   }
   else if (m_firstCountry == secondCountry)
   {
     qCDebug(KSIRK_LOG) <<"You are trying to move armies from "<<m_firstCountry->name()<<" to itself ";
-    messageParts << I18N_NOOP("You are trying to move armies from %1 to itself!") << m_firstCountry->name();
+    messageParts << kli18n("You are trying to move armies from %1 to itself!").untranslatedText() << m_firstCountry->name();
   }
   else if (!m_firstCountry->communicateWith(secondCountry))
   {
     qCDebug(KSIRK_LOG) << secondCountry-> name() << "is not a neighbour of " << secondCountry-> name();
     messageParts 
-      << I18N_NOOP("%1 is not a neighbour of %2!") 
+      << kli18n("%1 is not a neighbour of %2!").untranslatedText()
       << secondCountry-> name() 
       << m_firstCountry-> name();
   }
   else 
   {
     qCDebug(KSIRK_LOG) << "Ready to fight !";
-    messageParts << I18N_NOOP("Ready to fight!");
+    messageParts << kli18n("Ready to fight!").untranslatedText();
     res = true;
   }
   broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
@@ -1937,7 +1938,7 @@ bool KGameWindow::attacker(const QPointF& point)
   KMessageParts messageParts;
   if (clickedCountry == nullptr)
   {
-    messageParts << I18N_NOOP("<font color=\"orange\">No country here!</font>");
+    messageParts << kli18n("<font color=\"orange\">No country here!</font>").untranslatedText();
     broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
     clearHighlighting();
     return false;
@@ -1945,14 +1946,14 @@ bool KGameWindow::attacker(const QPointF& point)
 
   if (clickedCountry-> owner() != currentPlayer())
   {
-    messageParts << I18N_NOOP("<font color=\"orange\">You are not the owner of %1!</font>")  << clickedCountry-> name();
+    messageParts << kli18n("<font color=\"orange\">You are not the owner of %1!</font>").untranslatedText()  << clickedCountry-> name();
     clearHighlighting();
     broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
     return false;
   }
   else if (clickedCountry-> nbArmies() <= currentPlayer()-> getNbAttack())
   {
-    messageParts << I18N_NOOP("<font color=\"orange\">There is only %1 armies in %2!</font>") 
+    messageParts << kli18n("<font color=\"orange\">There is only %1 armies in %2!</font>").untranslatedText()
       << QString::number(clickedCountry-> nbArmies())
       << clickedCountry-> name();
     clearHighlighting();
@@ -1973,7 +1974,7 @@ bool KGameWindow::attacker(const QPointF& point)
     QPixmap pm = currentPlayer()->getFlag()->image(0);
     /*messageParts
       << pm
-      << I18N_NOOP("%1 attacks from %2 with <font color=\"red\">%3 armies</font>") 
+      << kli18n("%1 attacks from %2 with <font color=\"red\">%3 armies</font>").untranslatedText()
       << currentPlayer()-> name()
       << clickedCountry-> name()
       << QString::number(currentPlayer()-> getNbAttack());
@@ -2012,7 +2013,7 @@ unsigned int KGameWindow::attacked(const QPointF& point)
   }
 /*  else if (!m_secondCountry-> owner()->isVirtual())
   {
-    // messageParts << I18N_NOOP("Invalid attacked country.");
+    // messageParts << kli18n("Invalid attacked country.").untranslatedText();
     return 3;
   }*/
   else if (m_firstCountry == m_secondCountry)
@@ -2092,7 +2093,7 @@ unsigned int KGameWindow::attacked(const QPointF& point)
     }
     m_automaton->sendMessage(buffer,SecondCountry);
     messageParts
-      << I18N_NOOP("%1, you defend with the only army you have in %2.") 
+      << kli18n("%1, you defend with the only army you have in %2.").untranslatedText()
       << m_secondCountry->owner()-> name()
       << m_secondCountry-> name();
     res = 2;
@@ -2156,7 +2157,7 @@ bool KGameWindow::playerPutsArmy(const QPointF& point, bool removable)
       KMessageParts messageParts;
       messageParts 
         << pm 
-        << I18N_NOOP("%1: %2 armies to place") 
+        << kli18n("%1: %2 armies to place").untranslatedText()
         << currentPlayer()-> name()
         << QString::number(nbAvailArmies);
       broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
@@ -2218,7 +2219,7 @@ bool KGameWindow::playerPutsInitialArmy(const QPointF& point)
              /* KMessageParts messageParts;
               messageParts
                 << pm
-                << I18N_NOOP("%1: %2 armies to place") << ((Player*)(*it))-> name()
+                << kli18n("%1: %2 armies to place").untranslatedText() << ((Player*)(*it))-> name()
                 << QString::number(((Player*)(*it))-> getNbAvailArmies());
               broadcastChangeItem(messageParts, ID_STATUS_MSG2);*/
 /*            m_nbAvailArmies = ((Player*)(*it))-> getNbAvailArmies();
@@ -2251,7 +2252,7 @@ bool KGameWindow::playerPutsInitialArmy(const QPointF& point)
           getRightDialog()->updateRecycleDetails(clickedCountry,false,(quint32) ((GameLogic::Player*)(currentPlayer()))->getNbAvailArmies());
           QPixmap pm = currentPlayer()->getFlag()->image(0);
           KMessageParts messageParts;
-          messageParts << pm << I18N_NOOP("%1: %2 armies to place") 
+          messageParts << pm << kli18n("%1: %2 armies to place").untranslatedText()
             << currentPlayer()-> name()
             << QString::number((quint32) ((GameLogic::Player*)(currentPlayer()))->getNbAvailArmies());
           changeItem(messageParts, ID_STATUS_MSG2, false);
@@ -2288,7 +2289,7 @@ bool KGameWindow::playerRemovesArmy(const QPointF& point)
     {
       QPixmap pm = currentPlayer()->getFlag()->image(0);
       KMessageParts messageParts;
-      messageParts <<pm<< I18N_NOOP("%1: %2 armies to place") << currentPlayer()-> name() 
+      messageParts <<pm<< kli18n("%1: %2 armies to place").untranslatedText() << currentPlayer()-> name()
         << QString::number(newNbAvailArmies);
       broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
     }
@@ -2316,7 +2317,7 @@ void KGameWindow::initRecycling()
   m_automaton->sendMessage(buffer,DisplayRecyclingButtons);
   
   KMessageParts messageParts;
-  messageParts << I18N_NOOP("Exchange armies again or continue?");
+  messageParts << kli18n("Exchange armies again or continue?").untranslatedText();
   broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);
 }
 
@@ -2460,7 +2461,7 @@ void KGameWindow::attack(unsigned int nb)
   
   currentPlayer()-> setNbAttack(nb);
   /*KMessageParts messageParts;
-  messageParts << I18N_NOOP("Attack with %1 armies: designate the belligerants") 
+  messageParts << kli18n("Attack with %1 armies: designate the belligerants").untranslatedText()
     << QString::number(nb);
   broadcastChangeItem(messageParts, ID_STATUS_MSG2, false);*/
   /*
@@ -2481,16 +2482,16 @@ void KGameWindow::defense(unsigned int nb)
   QPixmap pmD = m_secondCountry-> owner()->getFlag()->image(0);
 
   KMessageParts messageParts;
-  messageParts << I18N_NOOP("Battle ongoing.");
-//     << I18N_NOOP("Battle between <font color=\"red\">%1</font> (")
+  messageParts << kli18n("Battle ongoing.").untranslatedText();
+//     << kli18n("Battle between <font color=\"red\">%1</font> (").untranslatedText()
 //     << m_firstCountry-> name()
 //     << pmA
-//     << I18N_NOOP("%1) <font color=\"red\">with %2 armies</font> and <font color=\"blue\">%3</font> (")
+//     << kli18n("%1).untranslatedText() <font color=\"red\">with %2 armies</font> and <font color=\"blue\">%3</font> (")
 //     << m_firstCountry->owner()->name()
 //     << QString::number(currentPlayer()-> getNbAttack())
 //     << m_secondCountry-> name()
 //     << pmD
-//     << I18N_NOOP("%1) <font color=\"blue\">with %2 armies</font>.") 
+//     << kli18n("%1).untranslatedText() <font color=\"blue\">with %2 armies</font>.")
 //     << m_secondCountry->owner()->name()
 //     << QString::number(nb);
 
@@ -2602,7 +2603,7 @@ void KGameWindow::invasionFinished()
   KMessageParts messageParts;
   messageParts
     << pm 
-    << I18N_NOOP("%1, it is up to you.") << currentPlayer()->name();
+    << kli18n("%1, it is up to you.").untranslatedText() << currentPlayer()->name();
   broadcastChangeItem(messageParts, ID_STATUS_MSG2);
 }
         
@@ -2613,7 +2614,7 @@ void KGameWindow::shiftFinished()
   KMessageParts messageParts;
   messageParts 
     << pm 
-    << I18N_NOOP("%1, it is up to you.") << currentPlayer()->name();
+    << kli18n("%1, it is up to you.").untranslatedText() << currentPlayer()->name();
   broadcastChangeItem(messageParts, ID_STATUS_MSG2);
   slotNextPlayer();
 }
@@ -2636,7 +2637,7 @@ void KGameWindow::cancelAction()
   QPixmap pm = currentPlayer()->getFlag()->image(0);
   messageParts
     << pm 
-    << I18N_NOOP("%1, it is up to you.") << currentPlayer()->name();
+    << kli18n("%1, it is up to you.").untranslatedText() << currentPlayer()->name();
   broadcastChangeItem(messageParts, ID_STATUS_MSG2);
 }
 
@@ -2921,19 +2922,19 @@ void KGameWindow::optionsConfigure()
 void KGameWindow::explain()
 {
   KMessageParts message0Parts;
-  message0Parts << I18N_NOOP("<b>KsirK quick Introduction</b>");
+  message0Parts << kli18n("<b>KsirK quick Introduction</b>").untranslatedText();
   broadcastChangeItem(message0Parts, ID_NO_STATUS_MSG);
 
   KMessageParts message1Parts;
-  message1Parts << I18N_NOOP("Attacks and moves are issued through drag & drop between neighbour countries.");
+  message1Parts << kli18n("Attacks and moves are issued through drag & drop between neighbour countries.").untranslatedText();
   broadcastChangeItem(message1Parts, ID_NO_STATUS_MSG);
 
   KMessageParts message2Parts;
-  message2Parts << I18N_NOOP("Start a new game or join a network game with the menu or the toolbar...");
+  message2Parts << kli18n("Start a new game or join a network game with the menu or the toolbar...").untranslatedText();
   broadcastChangeItem(message2Parts, ID_NO_STATUS_MSG);
 
   KMessageParts message5Parts;
-  message5Parts << I18N_NOOP("and then let the system guide you through messages and tooltips appearing on buttons when hovering above them. You can disable bubble help in the options window.");
+  message5Parts << kli18n("and then let the system guide you through messages and tooltips appearing on buttons when hovering above them. You can disable bubble help in the options window.").untranslatedText();
   broadcastChangeItem(message5Parts, ID_NO_STATUS_MSG);
 }
 

@@ -169,7 +169,7 @@ void KPlayerSetupWidget::fillNationsCombo()
       continue;
     }
     const QString& v =m_nations[k];
-    qCDebug(KSIRK_LOG) << "Adding nation " << I18N_NOOP(k) << " / " << v;
+    qCDebug(KSIRK_LOG) << "Adding nation " << k << " / " << v;
 //     load image
 
     FlagSprite flagsprite(v,

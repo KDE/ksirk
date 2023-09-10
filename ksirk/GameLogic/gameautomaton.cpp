@@ -44,6 +44,7 @@
 #include <QInputDialog>
 
 #include <kwidgetsaddons_version.h>
+#include <KLazyLocalizedString>
 #include <KLocalizedString>
 #include <KLineEdit>
 #include <KMessageBox>
@@ -1394,7 +1395,7 @@ void GameAutomaton::slotPlayerJoinedGame(KPlayer* player)
     }
     KMessageParts messageParts;
     messageParts 
-      << I18N_NOOP("%1 (%2) joined game ; waiting for %3 players to connect")
+      << kli18n("%1 (%2) joined game ; waiting for %3 players to connect").untranslatedText()
       << p-> name() << p->getNation()->name() 
       << QString::number(maxPlayers() - int(playerList()->count()));
     m_game->broadcastChangeItem(messageParts, ID_STATUS_MSG2);
@@ -1874,7 +1875,7 @@ void GameAutomaton::countriesDistribution()
   KMessageParts messageParts;
   messageParts
     << pm
-    << I18N_NOOP("%1: %2 armies to place")
+    << kli18n("%1: %2 armies to place").untranslatedText()
     << nextPlayerName
     <<  QString::number( initialNbArmies - distributedCountriesNumberMap[nextPlayerName]);
   qCDebug(KSIRK_LOG) << "Message parts size= " << messageParts.size();
@@ -2144,7 +2145,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
       defCountry = this->game()->secondCountry();
       m_game->displayDefenseWindow();
     }
-    messageParts << I18N_NOOP("%1 chooses its defense") << playerName;
+    messageParts << kli18n("%1 chooses its defense").untranslatedText() << playerName;
     m_game->broadcastChangeItem(messageParts, ID_STATUS_MSG2);
     break;
   case ActionDefense:
@@ -2291,7 +2292,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     }
     break;
   case ShowArmiesToPlace:
-    messageParts << pm << I18N_NOOP("%1: %2 armies to place") << (currentPlayer()-> name()) 
+    messageParts << pm << kli18n("%1: %2 armies to place").untranslatedText() << (currentPlayer()-> name())
       << QString::number(currentPlayer()-> getNbAvailArmies());
     m_game->broadcastChangeItem(messageParts, ID_STATUS_MSG2);
     m_game->showMessage(i18n("Now, place your armies in your countries<br>by clicking in the target countries."));
@@ -2304,7 +2305,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
     if (isAdmin())
     {
 //       stream >> playerName;
-      messageParts << I18N_NOOP("%1 choose to end recycling; there are now %2 players who want so");
+      messageParts << kli18n("%1 choose to end recycling; there are now %2 players who want so").untranslatedText();
       stream >> nbVotes;
       stream >> playerId;
       playersNames = ((Player*)(findPlayer(playerId)))->name();
