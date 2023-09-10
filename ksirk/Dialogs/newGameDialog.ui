@@ -121,9 +121,12 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="ghnsbutton">
+      <widget class="KNSWidgets::Button" name="ghnsbutton">
        <property name="text">
         <string>Download New Skins...</string>
+       </property>
+       <property name="configFile">
+        <string>ksirk.knsrc</string>
        </property>
       </widget>
      </item>
@@ -258,6 +261,13 @@
   <tabstop>radioWorld</tabstop>
   <tabstop>radioGoal</tabstop>
  </tabstops>
+ <customwidgets>
+  <customwidget>
+   <class>KNSWidgets::Button</class>
+   <extends>QPushButton</extends>
+   <header>KNSWidgets/Button</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

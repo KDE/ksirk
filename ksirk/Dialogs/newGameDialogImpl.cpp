@@ -28,7 +28,6 @@
 #include <QStandardPaths>
 #include <KMessageBox>
 #include <KConfigDialog>
-#include <KNS3/DownloadDialog>
 
 #include <QDir>
 #include <QStringList>
@@ -50,7 +49,7 @@ NewGameWidget::NewGameWidget(NewGameSetup* newGameSetup, QWidget *parent) :
   QObject::connect(nextButton, &QAbstractButton::clicked, this, &NewGameWidget::slotOK );
   QObject::connect(cancelButton, &QAbstractButton::clicked, this, &NewGameWidget::slotCancel );
   QObject::connect(skinCombo, SIGNAL(activated(int)), this, SLOT(slotSkinChanged(int)) );
-  QObject::connect(ghnsbutton, &QAbstractButton::clicked, this, &NewGameWidget::slotGHNS );
+  QObject::connect(ghnsbutton, &KNSWidgets::Button::dialogFinished, this, &NewGameWidget::slotGHNS );
   QObject::connect(tcpPortEntry,SIGNAL(valueChanged(int)),this, SLOT(slotTcpPortEdited(int)));
 }
 
@@ -188,9 +187,6 @@ void NewGameWidget::slotGHNS()
   // {
   //   return;
   // }
-  qCDebug(KSIRK_LOG);
-  KNS3::DownloadDialog dialog(this);
-  dialog.exec();
   
   fillSkinsCombo();
 /*  KConfigDialog *dialog = new KConfigDialog(this, "settings", KsirkSettings::self());

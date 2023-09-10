@@ -132,7 +132,7 @@ target_link_libraries(ksirk
     iris_ksirk
     KF5::Crash
     KF5::KIOCore
-    KF5::NewStuff
+    KF5::NewStuffWidgets
     KF5::Wallet
     Phonon::phonon4qt${QT_MAJOR_VERSION}
     KF5KDEGames

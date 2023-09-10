@@ -70,7 +70,7 @@ add_definitions(
 
 ecm_set_disabled_deprecation_versions(
     QT 5.14
-    KF 5.79
+    KF 5.88
     KDEGAMES 7.3
 )
 
