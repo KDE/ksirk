@@ -104,7 +104,7 @@ void DecoratedGameFrame::initMenu ()
   connect(detailsAction, &QAction::triggered, this, &DecoratedGameFrame::slotDetails);
 
   goalAction = new QAction(QIcon(), i18n("Goal"), this);
-  goalAction->setShortcut(Qt::CTRL+Qt::Key_G);
+  goalAction->setShortcut(Qt::CTRL | Qt::Key_G);
   connect(goalAction,&QAction::triggered,m_automaton->game(),&KGameWindow::slotShowGoal);
  
   menu->addAction(newAction);
