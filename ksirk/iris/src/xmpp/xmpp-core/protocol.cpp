@@ -51,7 +51,7 @@ static QString printArray(const QByteArray &a)
 			s += str;
 		}
 		else
-			s += c;
+			s += QChar(c);
 	}
 	return s;
 }
