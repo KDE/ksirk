@@ -24,7 +24,6 @@
 
 #include <QPoint>
 #include <QString>
-#include <QObject>
 #include <QList>
 #include <QColor>
 
@@ -46,10 +45,8 @@ class ONU;
  * Also, it stores pointers to the objects that represent  its owner and the
  * sprites of its flag and its armies.
  */
-class Country : QObject
+class Country
 {
-  Q_OBJECT 
-
 public:
   /**
     * Constructor
@@ -69,7 +66,7 @@ public:
       const QPointF& infantryPoint/*, unsigned int id*/);
 
   /** Default destructor */
-  ~Country() override;
+  ~Country();
 
   /**
     * Removes the sprites (flag and soldiers), the owner, etc.

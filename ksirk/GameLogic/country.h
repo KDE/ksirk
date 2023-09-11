@@ -54,10 +54,8 @@ class GameAutomaton;
  * Also, it stores pointers to the objects that represent  its owner and the
  * sprites of its flag and its armies.
  */
-class Country : QObject
+class Country
 {
-  Q_OBJECT 
-
 public:
   /**
     * Constructor
@@ -79,7 +77,7 @@ public:
       const QPointF& infantryPoint);
 
   /** Default destructor */
-  ~Country() override;
+  ~Country();
 
   GameAutomaton* automaton() {return m_automaton;}
 
