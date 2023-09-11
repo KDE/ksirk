@@ -44,18 +44,26 @@ ki18n_wrap_ui(ksirkskineditor
 kconfig_add_kcfg_files( ksirkskineditor ksirkskineditorsettings.kcfgc )
 
 target_link_libraries(ksirkskineditor
-    Qt5::Xml
-    Qt5::Svg
-    KF5::KIOCore
+    Qt${QT_MAJOR_VERSION}::Xml
+    Qt${QT_MAJOR_VERSION}::Svg
     Phonon::phonon4qt${QT_MAJOR_VERSION}
-    KF5::XmlGui
-    KF5KDEGames
-    KF5KDEGamesPrivate
+    KF${KF_MAJOR_VERSION}::I18n 
+    KF${KF_MAJOR_VERSION}::Completion
+    KF${KF_MAJOR_VERSION}::KIOCore 
+    KF${KF_MAJOR_VERSION}::XmlGui
     ${CRYPT_LIBS}
  )
 if (QT_MAJOR_VERSION STREQUAL "6")
     target_link_libraries(ksirkskineditor
+        KDEGames6
+        KDEGames6Private
+        Qt6::Core5Compat
         Qt6::SvgWidgets
+    )
+else()
+    target_link_libraries(ksirkskineditor
+        KF5KDEGames
+        KF5KDEGamesPrivate
     )
 endif()
 

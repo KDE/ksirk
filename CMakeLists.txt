@@ -26,7 +26,20 @@ include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
 include(FeatureSummary)
 
+if (QT_MAJOR_VERSION STREQUAL "6")
+    set(QT_MIN_VERSION "6.5.0")
+    set(KF_MIN_VERSION "5.240.0")
+    set(KF_MAJOR_VERSION "6")
+else()
+    set(KF_MAJOR_VERSION "5")
+endif()
+
+if (QT_MAJOR_VERSION STREQUAL "6")
+# TODO: port libiris
+option(WITH_JABBER_SUPPORT "Build with support for network gaming using Jabber" OFF)
+else()
 option(WITH_JABBER_SUPPORT "Build with support for network gaming using Jabber" ON)
+endif()
 add_feature_info(JABBER ${WITH_JABBER_SUPPORT} "Network gaming using Jabber")
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS
@@ -35,10 +48,13 @@ find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONEN
     Test
 )
 if (QT_MAJOR_VERSION STREQUAL "6")
-    find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS SvgWidgets)
+    find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS
+        Core5Compat
+        SvgWidgets
+    )
 endif()
 
-find_package(KF5 ${KF_MIN_VERSION} REQUIRED COMPONENTS
+find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS
     Completion
     Config
     ConfigWidgets
@@ -53,7 +69,11 @@ find_package(KF5 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     XmlGui
 )
 
-find_package(KF5KDEGames 7.3.0 REQUIRED)
+if (QT_MAJOR_VERSION STREQUAL "6")
+    find_package(KDEGames6 7.5.0 REQUIRED)
+else()
+    find_package(KF5KDEGames 7.3.0 REQUIRED)
+endif()
 
 find_package(Phonon4Qt${QT_MAJOR_VERSION} REQUIRED)
 
@@ -73,11 +93,19 @@ add_definitions(
     -DQT_NO_URL_CAST_FROM_STRING
 )
 
-ecm_set_disabled_deprecation_versions(
-    QT 5.14
-    KF 5.110
-    KDEGAMES 7.3
-)
+if (QT_MAJOR_VERSION STREQUAL "6")
+    ecm_set_disabled_deprecation_versions(
+        QT 5.14
+        KF 5.239
+        KDEGAMES 7.5
+    )
+else()
+    ecm_set_disabled_deprecation_versions(
+        QT 5.14
+        KF 5.110
+        KDEGAMES 7.3
+    )
+endif()
 
 ecm_setup_version(PROJECT
     VARIABLE_PREFIX KSIRK

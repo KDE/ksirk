@@ -128,19 +128,31 @@ target_include_directories(ksirk
 )
 
 target_link_libraries(ksirk
-    Qt5::Xml
-    Qt5::Svg
-    KF5::Crash
-    KF5::KIOCore
-    KF5::NewStuffWidgets
-    KF5::Wallet
+    Qt${QT_MAJOR_VERSION}::Xml
+    Qt${QT_MAJOR_VERSION}::Svg
+    KF${KF_MAJOR_VERSION}::Crash
+    KF${KF_MAJOR_VERSION}::KIOCore
+    KF${KF_MAJOR_VERSION}::XmlGui
+    KF${KF_MAJOR_VERSION}::NewStuffWidgets
+    KF${KF_MAJOR_VERSION}::Wallet
     Phonon::phonon4qt${QT_MAJOR_VERSION}
-    KF5KDEGames
-    KF5KDEGamesPrivate
 )
 if(WITH_JABBER_SUPPORT)
     target_link_libraries(ksirk
         iris_ksirk
+    )
+endif()
+if (QT_MAJOR_VERSION STREQUAL "6")
+    target_link_libraries(ksirk
+        KDEGames6
+        KDEGames6Private
+        Qt6::SvgWidgets
+        Qt6::Core5Compat
+    )
+else()
+    target_link_libraries(ksirk
+        KF5KDEGames
+        KF5KDEGamesPrivate
     )
 endif()
 

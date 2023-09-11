@@ -142,13 +142,19 @@ set(iris_ksirk_libs Qt::Core Qt::Gui Qt::Network Qt::Xml ${IDN_LIBRARY} qca-qt${
 if(WIN32)
   set(iris_ksirk_libs ${iris_ksirk_libs} ws2_32)
 endif(WIN32)
-  
+
 if(HAVE_NSL_LIBRARY)
     # This is probably Solaris, and libiris needs to link
     # to libnsl for gethostbyname
   set(iris_ksirk_libs ${iris_ksirk_libs} nsl)
 endif(HAVE_NSL_LIBRARY)
 target_link_libraries(iris_ksirk ${iris_ksirk_libs})
+if (QT_MAJOR_VERSION STREQUAL "6")
+    target_link_libraries(iris_ksirk
+        Qt6::Core5Compat
+    )
+endif()
+
 target_include_directories(iris_ksirk
     INTERFACE
     ${CMAKE_CURRENT_SOURCE_DIR}/../include/iris
