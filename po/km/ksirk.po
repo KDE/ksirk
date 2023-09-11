@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-21 00:44+0000\n"
+"POT-Creation-Date: 2023-09-11 00:43+0000\n"
 "PO-Revision-Date: 2012-07-09 10:40+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -1070,7 +1070,7 @@ msgstr ""
 msgid "Legacy"
 msgstr "ចាស់​ៗ"
 
-#: decoratedgameframe.cpp:100 kgamewin.cpp:444
+#: decoratedgameframe.cpp:100 kgamewin.cpp:445
 #, kde-format
 msgid "Next Player"
 msgstr "អ្នក​លេង​បន្ទាប់"
@@ -1080,8 +1080,8 @@ msgstr "អ្នក​លេង​បន្ទាប់"
 msgid "Details"
 msgstr "លម្អិត"
 
-#: decoratedgameframe.cpp:106 kgamewin.cpp:424 kgamewin.cpp:1335
-#: kgamewin.cpp:1347 kgamewin.cpp:2504
+#: decoratedgameframe.cpp:106 kgamewin.cpp:425 kgamewin.cpp:1336
+#: kgamewin.cpp:1348 kgamewin.cpp:2505
 #, kde-format
 msgid "Goal"
 msgstr "គោល​ដៅ​"
@@ -1300,7 +1300,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
 #. i18n: ectx: property (text), widget (QPushButton, cancelbutton)
-#: Dialogs/jabbergameui.ui:318 Dialogs/newGameDialog.ui:227
+#: Dialogs/jabbergameui.ui:318 Dialogs/newGameDialog.ui:230
 #: Dialogs/newGameSummary.ui:206 Dialogs/qplayersetupdialog.ui:126
 #: Dialogs/tcpconnectwidget.ui:98
 #, kde-format
@@ -1404,46 +1404,52 @@ msgstr "ជ្រើស​ស្បែក (ផែនទី សញ្ជាតិ
 msgid "A combo listing all the available skins."
 msgstr "ប្រអប់​បន្សំ​រាយ​​ស្បែក​ដែល​មាន​ទាំងអស់ ។"
 
-#. i18n: ectx: property (text), widget (QPushButton, ghnsbutton)
+#. i18n: ectx: property (text), widget (KNSWidgets::Button, ghnsbutton)
 #: Dialogs/newGameDialog.ui:126
 #, fuzzy, kde-format
 #| msgid "Download New Skins"
 msgid "Download New Skins..."
 msgstr "ទាញ​យក​ស្បែក​ថ្មី​"
 
+#. i18n: ectx: property (configFile), widget (KNSWidgets::Button, ghnsbutton)
+#: Dialogs/newGameDialog.ui:129
+#, kde-format
+msgid "ksirk.knsrc"
+msgstr ""
+
 #. i18n: ectx: property (title), widget (QGroupBox, goalGroup)
-#: Dialogs/newGameDialog.ui:150
+#: Dialogs/newGameDialog.ui:153
 #, kde-format
 msgid "Goal Type"
 msgstr "ប្រភេទ​គោលដៅ"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, radioWorld)
-#: Dialogs/newGameDialog.ui:156
+#: Dialogs/newGameDialog.ui:159
 #, kde-format
 msgid "Choose this for players to have to conquer all the world to win."
 msgstr "ជ្រើស​ជម្រើស​នេះ សម្រាប់​អ្នក​លេង​ដែល​ត្រូវ​​​ច្បាំង​យក​ឈ្នះ​ពិភព​លោក​ទាំង​មូល​ ។"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioWorld)
-#: Dialogs/newGameDialog.ui:159
+#: Dialogs/newGameDialog.ui:162
 #, kde-format
 msgid "In this mode, a player will have to conquer all the world to win."
 msgstr "ក្នុង​របៀប​នេះ អ្នក​លេង​នឹង​ត្រូវ​ច្បាំង​យក​ឈ្នះ​ពិភព​លោក​ទាំង​មូល​ ។"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioWorld)
-#: Dialogs/newGameDialog.ui:162
+#: Dialogs/newGameDialog.ui:165
 #, fuzzy, kde-format
 #| msgid "World conquest"
 msgid "World con&quest"
 msgstr "ច្បាំង​វាទ​ទី​ពិភព​លោក"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, radioGoal)
-#: Dialogs/newGameDialog.ui:169
+#: Dialogs/newGameDialog.ui:172
 #, kde-format
 msgid "Choose this to have a goal assigned to each player."
 msgstr "ជ្រើស​ជម្រើស​នេះ​​ដើម្បី​ផ្ដល់​​គោល​ដៅ​ដល់​អ្នក​លេង​ម្នាក់​ៗ ។"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioGoal)
-#: Dialogs/newGameDialog.ui:172
+#: Dialogs/newGameDialog.ui:175
 #, kde-format
 msgid ""
 "In this mode, a goal will be assigned to each player, which he will have to "
@@ -1451,20 +1457,20 @@ msgid ""
 msgstr "ក្នុង​របៀប​នេះ គោលដៅ​នឹង​ត្រូវ​បាន​ផ្ដល់​ទៅ​អ្នក​លេង​នីមួយៗ ដែល​គាត់​នឹង​ត្រូវ​ទៅ​ដល់​ដើម្បី​ឈ្នះ ។"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioGoal)
-#: Dialogs/newGameDialog.ui:175
+#: Dialogs/newGameDialog.ui:178
 #, fuzzy, kde-format
 #| msgid "Reach a goal"
 msgid "Reach a goa&l"
 msgstr "សម្រេច​គោល​"
 
 #. i18n: ectx: property (text), widget (QPushButton, nextButton)
-#: Dialogs/newGameDialog.ui:247 Dialogs/qplayersetupdialog.ui:153
+#: Dialogs/newGameDialog.ui:250 Dialogs/qplayersetupdialog.ui:153
 #: Dialogs/tcpconnectwidget.ui:125
 #, kde-format
 msgid "Next >>"
 msgstr "បន្ទាប់​ >>"
 
-#: Dialogs/newGameDialogImpl.cpp:131 newgamesetup.cpp:44
+#: Dialogs/newGameDialogImpl.cpp:130 newgamesetup.cpp:44
 #, kde-format
 msgid ""
 "Skins directory not found - Verify your installation\n"
@@ -1473,7 +1479,7 @@ msgstr ""
 "រក​មិន​ឃើញ​ថត​ស្បែក​ទេ​ - សូម​ផ្ទៀង​ផ្ទាត់​ការ​ដំឡើង​របស់​អ្នក\n"
 "កម្ម​វិធី​មិន​អាច​បន្ត​បានទេ"
 
-#: Dialogs/newGameDialogImpl.cpp:132 newgamesetup.cpp:45
+#: Dialogs/newGameDialogImpl.cpp:131 newgamesetup.cpp:45
 #, kde-format
 msgid "Fatal Error!"
 msgstr "កំហុស​ធ្ងន់ធ្ងរ !"
@@ -1634,7 +1640,7 @@ msgid "New Game or Exit"
 msgstr "ល្បែង​ថ្មី​ ឬ​ចាក​ចេញ"
 
 #. i18n: ectx: property (text), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:27 GameLogic/gameautomaton.cpp:1664
+#: Dialogs/restartOrExitDialog.ui:27 GameLogic/gameautomaton.cpp:1665
 #, kde-format
 msgid "New Game"
 msgstr "ល្បែង​ថ្មី"
@@ -1658,7 +1664,7 @@ msgid "Do nothing. Game buttons will be available"
 msgstr "មិន​ធ្វើ​អ្វី​ទាំង​អស់​ ។ ប៊ូតុង​ល្បែង​នឹង​មិន​អាច​ប្រើ​បាន​ទេ​ "
 
 #. i18n: ectx: property (text), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:50 GameLogic/gameautomaton.cpp:1665
+#: Dialogs/restartOrExitDialog.ui:50 GameLogic/gameautomaton.cpp:1666
 #, kde-format
 msgid "Exit"
 msgstr "ចេញ"
@@ -1699,76 +1705,76 @@ msgstr[0] ""
 msgid "Fatal Error"
 msgstr "កំហុស​ធ្ងន់​ធ្ងរ"
 
-#: GameLogic/gameautomaton.cpp:301
+#: GameLogic/gameautomaton.cpp:302
 #, kde-format
 msgid "KsirK - Network configuration"
 msgstr "KsirK - ការ​កំណត់​រចនាសម្ព័ន្ធ​បណ្ដាញ"
 
-#: GameLogic/gameautomaton.cpp:302
+#: GameLogic/gameautomaton.cpp:303
 #, kde-format
 msgid "Please type in the port number on which to offer connections:"
 msgstr "សូម​វាយ​បញ្ចូល​លេខ​ច្រក លើ​អ្វី​ដែល​​ផ្ដល់​នូវ​​ការ​តភ្ជាប់ ៖"
 
-#: GameLogic/gameautomaton.cpp:1189 GameLogic/gameautomaton.cpp:1217
+#: GameLogic/gameautomaton.cpp:1190 GameLogic/gameautomaton.cpp:1218
 #, kde-format
 msgid "Do you really want to end your current game and join another?"
 msgstr "តើ​អ្នក​ពិត​ជា​ចង់​បញ្ចប់​ល្បែង​បច្ចុប្បន្ន​របស់​អ្នក ហើយ​ចូលលេង​​ល្បែង​ថ្មី​​ឬ ?"
 
-#: GameLogic/gameautomaton.cpp:1189 GameLogic/gameautomaton.cpp:1217
-#: kgamewin.cpp:2668
+#: GameLogic/gameautomaton.cpp:1190 GameLogic/gameautomaton.cpp:1218
+#: kgamewin.cpp:2669
 #, kde-format
 msgid "New game confirmation"
 msgstr "បញ្ជាក់​ល្បែង​ថ្មី"
 
-#: GameLogic/gameautomaton.cpp:1189 GameLogic/gameautomaton.cpp:1217
+#: GameLogic/gameautomaton.cpp:1190 GameLogic/gameautomaton.cpp:1218
 #, fuzzy, kde-format
 #| msgid "New Game"
 msgctxt "@action:button"
 msgid "Join New Game"
 msgstr "ល្បែង​ថ្មី"
 
-#: GameLogic/gameautomaton.cpp:1397
+#: GameLogic/gameautomaton.cpp:1398
 #, kde-format
 msgid "%1 (%2) joined game ; waiting for %3 players to connect"
 msgstr "%1 (%2) ចូលរួម​ល្បែង រង់ចាំ​អ្នក​លេង %3 ដើម្បី​តភ្ជាប់"
 
-#: GameLogic/gameautomaton.cpp:1503
+#: GameLogic/gameautomaton.cpp:1504
 #, kde-format
 msgid "Please choose another name"
 msgstr "សូម​ជ្រើស​ឈ្មោះ​មួយ​ផ្សេង​ទៀត"
 
-#: GameLogic/gameautomaton.cpp:1503
+#: GameLogic/gameautomaton.cpp:1504
 #, kde-format
 msgid "KsirK - Name already used!"
 msgstr "KsirK - ឈ្មោះ​ត្រូវ​បាន​ប្រើ​រួច​ហើយ !"
 
-#: GameLogic/gameautomaton.cpp:1509
+#: GameLogic/gameautomaton.cpp:1510
 #, kde-format
 msgid "Player number %1, what's your name?"
 msgstr "លេខ​អ្នក​លេង​ %1  តើ​អ្នក​ឈ្មោះ​អ្វី​ ?"
 
-#: GameLogic/gameautomaton.cpp:1513
+#: GameLogic/gameautomaton.cpp:1514
 #, kde-format
 msgid "Error - Player %1, you have to choose a name."
 msgstr "កំហុស - អ្នក​លេង %1 អ្នក​ត្រូវ​តែ​ជ្រើស​ឈ្មោះ ។"
 
-#: GameLogic/gameautomaton.cpp:1515
+#: GameLogic/gameautomaton.cpp:1516
 #, kde-format
 msgctxt "@info Forged player name"
 msgid "Player%1"
 msgstr "អ្នក​លេង %1"
 
-#: GameLogic/gameautomaton.cpp:1566
+#: GameLogic/gameautomaton.cpp:1567
 #, kde-format
 msgid "Please choose another nation"
 msgstr "សូម​ជ្រើស​ប្រទេស​មួយ​ផ្សេង​ទៀត"
 
-#: GameLogic/gameautomaton.cpp:1566
+#: GameLogic/gameautomaton.cpp:1567
 #, kde-format
 msgid "KsirK - Nation already used!"
 msgstr "KsirK - ប្រទេស​នោះ​​ប្រើ​រួច​ហើយ !"
 
-#: GameLogic/gameautomaton.cpp:1662
+#: GameLogic/gameautomaton.cpp:1663
 #, kde-format
 msgid ""
 "KsirK - Lost connection to server!\n"
@@ -1777,17 +1783,17 @@ msgstr ""
 "KsirK - បាត់បង់​ការ​តភ្ជាប់​ទៅ​ម៉ាស៊ីន​បម្រើ !\n"
 "តើ​អ្នក​ចង់​ធ្វើ​អ្វី ?"
 
-#: GameLogic/gameautomaton.cpp:1663
+#: GameLogic/gameautomaton.cpp:1664
 #, kde-format
 msgid "Starting a new game or exit."
 msgstr "ចាប់ផ្ដើម​ល្បែង​ថ្មី ឬ​ចេញ ។"
 
-#: GameLogic/gameautomaton.cpp:1666
+#: GameLogic/gameautomaton.cpp:1667
 #, kde-format
 msgid "Do nothing"
 msgstr "មិន​ធ្វើ​អ្វី​ទាំង​អស់"
 
-#: GameLogic/gameautomaton.cpp:1696
+#: GameLogic/gameautomaton.cpp:1697
 #, kde-format
 msgid ""
 "Lost connection to a client.\n"
@@ -1798,23 +1804,23 @@ msgstr ""
 "​ពេល​​នេះ អ្នក​អាច​​​រក្សា​ទុក​បាន​តែ​​ល្បែង និង​ចាប់​ផ្ដើម​ល្បែង​​ថ្មី ឬ​ចេញ ។\n"
 "វា​​នឹង​ត្រូវ​បាន​ធ្វើ​ឲ្យ​ប្រសើរ​នៅ​កំណែ​ក្រោយ ។"
 
-#: GameLogic/gameautomaton.cpp:1697
+#: GameLogic/gameautomaton.cpp:1698
 #, kde-format
 msgid "KsirK - Lost connection to client!"
 msgstr "KsirK - បាត់បង់​ការ​តភ្ជាប់​ទៅ​ម៉ាស៊ីន​ភ្ញៀវ !"
 
-#: GameLogic/gameautomaton.cpp:1703
+#: GameLogic/gameautomaton.cpp:1704
 #, kde-format
 msgid "Do want to save your game?"
 msgstr "តើ​អ្នក​ចង់​រក្សា​ទុក​ល្បែង​របស់​អ្នក​ឬ?"
 
-#: GameLogic/gameautomaton.cpp:1877 GameLogic/gameautomaton.cpp:2294
-#: kgamewin.cpp:2159 kgamewin.cpp:2254 kgamewin.cpp:2291
+#: GameLogic/gameautomaton.cpp:1878 GameLogic/gameautomaton.cpp:2295
+#: kgamewin.cpp:2160 kgamewin.cpp:2255 kgamewin.cpp:2292
 #, kde-format
 msgid "%1: %2 armies to place"
 msgstr "%1 ៖ %2 ទ័ព​​​ត្រូវ​ដាក់"
 
-#: GameLogic/gameautomaton.cpp:1882 GameLogic/gameautomaton.cpp:2297
+#: GameLogic/gameautomaton.cpp:1883 GameLogic/gameautomaton.cpp:2298
 #: kgamewinslots.cpp:807
 #, kde-format
 msgid ""
@@ -1822,42 +1828,42 @@ msgid ""
 "countries."
 msgstr "ឥឡូវ​នេះ ដាក់​ទ័ព​របស់​អ្នក​ក្នុង​ប្រទេស​របស់​អ្នក<br/>ដោយ​ចុច​លើ​​ប្រទេស​គោល​ដៅ​ ។"
 
-#: GameLogic/gameautomaton.cpp:1959
+#: GameLogic/gameautomaton.cpp:1960
 #, kde-format
 msgid ""
 "%1, your goal will be displayed. Please<br>make sure that no other player "
 "can see it!"
 msgstr "%1 គោល​ដៅ​របស់​អ្នក​​នឹង​ត្រូវ​បង្ហាញ​ ។ សូម​​<br>ប្រាកដ​ថា​អ្នក​លេង​ផ្សេងទៀត​​ មិន​អាច​មើល​ឃើញ​វា​ទេ​​!"
 
-#: GameLogic/gameautomaton.cpp:1961
+#: GameLogic/gameautomaton.cpp:1962
 #, kde-format
 msgid "KsirK - Displaying Goal"
 msgstr "KsirK - បង្ហាញ​គោលដៅ"
 
-#: GameLogic/gameautomaton.cpp:2147
+#: GameLogic/gameautomaton.cpp:2148
 #, kde-format
 msgid "%1 chooses its defense"
 msgstr "%1 ជ្រើស​ការ​ការ​ពារ​របស់​វា"
 
-#: GameLogic/gameautomaton.cpp:2307
+#: GameLogic/gameautomaton.cpp:2308
 #, kde-format
 msgid "%1 choose to end recycling; there are now %2 players who want so"
 msgstr "%1 ជ្រើស​ដើម្បី​បញ្ចប់​ការ​វិល​ចុះ​ឡើង  ឥឡូវ​នេះ​មាន​អ្នក​លេង %2 ដែល​ចង់​ធ្វើ​ដូច​នោះុ"
 
-#: GameLogic/gameautomaton.cpp:2397
+#: GameLogic/gameautomaton.cpp:2398
 #, kde-format
 msgid "Problem : no one destroyed"
 msgstr "បញ្ហា​ ៖ គ្មាន​អ្នក​លេង​ណា​ត្រូវ​បាន​កម្ទេច​"
 
-#: GameLogic/gameautomaton.cpp:2397 gestionSprites.cpp:927
-#: gestionSprites.cpp:947 gestionSprites.cpp:1048 gestionSprites.cpp:1085
-#: gestionSprites.cpp:1120 gestionSprites.cpp:1174 gestionSprites.cpp:1211
-#: gestionSprites.cpp:1245
+#: GameLogic/gameautomaton.cpp:2398 gestionSprites.cpp:928
+#: gestionSprites.cpp:948 gestionSprites.cpp:1049 gestionSprites.cpp:1086
+#: gestionSprites.cpp:1121 gestionSprites.cpp:1175 gestionSprites.cpp:1212
+#: gestionSprites.cpp:1246
 #, kde-format
 msgid "KsirK - Error!"
 msgstr "KsirK - កំហុស !"
 
-#: GameLogic/gameautomaton.cpp:2446
+#: GameLogic/gameautomaton.cpp:2447
 #, kde-format
 msgid ""
 "You entered an invalid password.\n"
@@ -1866,12 +1872,12 @@ msgstr ""
 "អ្នក​បាន​បញ្ចូល​ពាក្យ​សម្ងាត់​មិន​ត្រឹមត្រូវ ។\n"
 "សូម​ព្យាយាម​ម្ដង​ទៀត ។"
 
-#: GameLogic/gameautomaton.cpp:2446
+#: GameLogic/gameautomaton.cpp:2447
 #, kde-format
 msgid "KsirK - Invalid password!"
 msgstr "KsirK - ពាក្យ​សម្ងាត់​មិន​ត្រឹមត្រូវ !"
 
-#: GameLogic/gameautomaton.cpp:2656
+#: GameLogic/gameautomaton.cpp:2657
 #, kde-format
 msgid ""
 "%1, you have not played anything this turn.\n"
@@ -1880,12 +1886,12 @@ msgstr ""
 "%1 អ្នក​មិន​បាន​លេង​អ្វី​ទាំងអស់​ក្នុង​វេន​នេះ ។\n"
 "តើ​អ្នក​ពិត​ជា​ចង់​បាត់បង់​វេន​របស់​អ្នក​ឬ ?"
 
-#: GameLogic/gameautomaton.cpp:2657
+#: GameLogic/gameautomaton.cpp:2658
 #, kde-format
 msgid "Really Next Player?"
 msgstr "ពិត​ជា​ចង់​បាន​អ្នក​លេង​បន្ទាប់​ឬ​ ?"
 
-#: GameLogic/gameautomaton.cpp:2658
+#: GameLogic/gameautomaton.cpp:2659
 #, fuzzy, kde-format
 #| msgid "Next Player"
 msgctxt "@action:button"
@@ -1971,7 +1977,7 @@ msgstr "%1 ក្នុង %2"
 msgid "KsirK - Goal Display"
 msgstr "KsirK - បង្ហាញ​គោលដៅ"
 
-#: GameLogic/KsirkChatModel.cpp:72 kgamewin.cpp:178
+#: GameLogic/KsirkChatModel.cpp:72 kgamewin.cpp:179
 #, kde-format
 msgid "No message..."
 msgstr "គ្មាន​សារ..."
@@ -1990,10 +1996,10 @@ msgstr ""
 "រក​មិន​ឃើញ​ឈ្មោះ​ឯកសារ​អាង​ទេ\n"
 "កម្មវិធី​មិន​អាច​បន្ត​បាន​ទេ"
 
-#: GameLogic/onu.cpp:130 GameLogic/onu.cpp:147 gestionSprites.cpp:692
-#: gestionSprites.cpp:807 gestionSprites.cpp:852 gestionSprites.cpp:1408
-#: gestionSprites.cpp:1485 kgamewin.cpp:145 kgamewin.cpp:378 kgamewin.cpp:395
-#: kgamewin.cpp:412 kgamewin.cpp:579 kgamewin.cpp:735
+#: GameLogic/onu.cpp:130 GameLogic/onu.cpp:147 gestionSprites.cpp:693
+#: gestionSprites.cpp:808 gestionSprites.cpp:853 gestionSprites.cpp:1409
+#: gestionSprites.cpp:1486 kgamewin.cpp:146 kgamewin.cpp:379 kgamewin.cpp:396
+#: kgamewin.cpp:413 kgamewin.cpp:580 kgamewin.cpp:736
 #: Sprites/animsprite.cpp:511 Sprites/animsprite.cpp:526
 #, kde-format
 msgid "Error!"
@@ -2008,32 +2014,32 @@ msgstr ""
 "រក​មិន​ឃើញ​រូបភាព​របាំង​ផែន​ទី​ទេ​\n"
 "កម្មវិធី​មិន​អាច​បន្ត​បាន​ទេ​"
 
-#: gestionSprites.cpp:72 gestionSprites.cpp:106 gestionSprites.cpp:157
+#: gestionSprites.cpp:73 gestionSprites.cpp:107 gestionSprites.cpp:158
 #, kde-format
 msgid "Cannot move %1 armies from %2 to %3"
 msgstr "មិន​អាច​ផ្លាស់ទី​ទ័ព %1 ពី %2 ទៅ %3 បានទេ​"
 
-#: gestionSprites.cpp:79
+#: gestionSprites.cpp:80
 #, kde-format
 msgid "Moving %1 armies from %2 to %3"
 msgstr "ផ្លាស់ទី​ទ័ព %1 ពី %2 ទៅ %3"
 
-#: gestionSprites.cpp:692 gestionSprites.cpp:807 gestionSprites.cpp:1408
-#: gestionSprites.cpp:1485
+#: gestionSprites.cpp:693 gestionSprites.cpp:808 gestionSprites.cpp:1409
+#: gestionSprites.cpp:1486
 #, kde-format
 msgid ""
 "Sound roule not found - Verify your installation<br>Program cannot continue"
 msgstr "រក​មិន​ឃើញ​សំឡេង​ roule ទេ - ផ្ទៀង​ផ្ទាត់​ការ​ដំឡើង​របស់​អ្នក​<br>កម្មវិធី​មិន​អាច​បន្ត​បាន​ទេ​"
 
-#: gestionSprites.cpp:852
+#: gestionSprites.cpp:853
 #, kde-format
 msgid ""
 "Sound cannon not found - Verify your installation<br>Program cannot continue"
 msgstr "រក​មិន​​ឃើញ​សំឡេង​ទេ -ផ្ទៀង​ផ្ទាត់​ការដំឡើង​របស់​អ្នក​<br>កម្មវិធី​មិន​អាច​បន្ត​បាន​ទេ​"
 
-#: gestionSprites.cpp:927 gestionSprites.cpp:947 gestionSprites.cpp:1048
-#: gestionSprites.cpp:1085 gestionSprites.cpp:1120 gestionSprites.cpp:1174
-#: gestionSprites.cpp:1211 gestionSprites.cpp:1245
+#: gestionSprites.cpp:928 gestionSprites.cpp:948 gestionSprites.cpp:1049
+#: gestionSprites.cpp:1086 gestionSprites.cpp:1121 gestionSprites.cpp:1175
+#: gestionSprites.cpp:1212 gestionSprites.cpp:1246
 #, kde-format
 msgid ""
 "Sound crash not found - Verify your installation\n"
@@ -2042,12 +2048,12 @@ msgstr ""
 "រក​មិន​ឃើញ​សំឡេង​កកិត​ទេ​ - ផ្ទៀង​ផ្ទាត់​ការដំឡើង​របស់​អ្នក​\n"
 "កម្មវិធី​មិន​អាច​បន្ត​បាន​ទេ"
 
-#: gestionSprites.cpp:1289
+#: gestionSprites.cpp:1290
 #, kde-format
 msgid "Problem: no one destroyed"
 msgstr "បញ្ហា​ ៖​ គ្មាន​នរណា​ម្នាក់​ត្រូវ​​បាន​កម្ទេច​ទេ"
 
-#: gestionSprites.cpp:1499
+#: gestionSprites.cpp:1500
 #, kde-format
 msgid "Bug: who should be 0, 1 or 2."
 msgstr "កំហុស ៖ នរណា​គួរ​ជា ០ ១ ឬ ២"
@@ -2809,32 +2815,32 @@ msgstr "សូម​បញ្ចូល​សម្មតិនាម​របស
 msgid "You have been invited to %1"
 msgstr "អ្នក​ត្រូវ​បាន​អញ្ជើញ​ឲ្យ​ទៅ​កាន់​ %1"
 
-#: kgamewin.cpp:145 kgamewin.cpp:735
+#: kgamewin.cpp:146 kgamewin.cpp:736
 #, kde-format
 msgid "Cannot load icon<br>Program cannot continue"
 msgstr "មិន​អាច​ផ្ទុក​រូប​តំណាង​បាន​​<br/>កម្មវិធី​មិន​អាច​បន្ត​បាន​ទេ​"
 
-#: kgamewin.cpp:378 kgamewin.cpp:395 kgamewin.cpp:412
+#: kgamewin.cpp:379 kgamewin.cpp:396 kgamewin.cpp:413
 #, kde-format
 msgid "Cannot load button image %1<br>Program cannot continue"
 msgstr "មិន​អាច​ផ្ទុក​រូបភាព​ប៊ូតុង​បាន %1​<br/>កម្មវិធី​មិន​អាច​បន្ត​បាន​ទេ​"
 
-#: kgamewin.cpp:381
+#: kgamewin.cpp:382
 #, kde-format
 msgid "Play over Jabber"
 msgstr "លេង​តាម Jabber"
 
-#: kgamewin.cpp:382
+#: kgamewin.cpp:383
 #, kde-format
 msgid "Play KsirK over the Jabber Network"
 msgstr "លេង​ KsirK ពី​លើ​បណ្ដាញ​របស់​ Jabber "
 
-#: kgamewin.cpp:383
+#: kgamewin.cpp:384
 #, kde-format
 msgid "Jabber"
 msgstr "Jabber"
 
-#: kgamewin.cpp:385
+#: kgamewin.cpp:386
 #, kde-format
 msgid ""
 "Allow to connect to a KsirK Jabber Multi User Gaming Room to create new "
@@ -2844,99 +2850,99 @@ msgstr ""
 "ដើម្បី​ចូល​រួម​លេង​ល្បែង​បច្ចុប្បន្ន​"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
-#: kgamewin.cpp:398 mainMenu.ui:111
+#: kgamewin.cpp:399 mainMenu.ui:111
 #, kde-format
 msgid "New Standard TCP/IP Network Game"
 msgstr "ល្បែង​បណ្ដាញ​ TCP/IP ស្តង់ដារ​ថ្មី"
 
-#: kgamewin.cpp:399
+#: kgamewin.cpp:400
 #, kde-format
 msgid "New TCP/IP"
 msgstr "TCP/IP  ថ្មី"
 
-#: kgamewin.cpp:401
+#: kgamewin.cpp:402
 #, kde-format
 msgid "Create a new standard TCP/IP network game"
 msgstr "បង្កើត​ល្បែង​បណ្ដាញ​ TCP/IP ស្តង់ដារ​ថ្មី"
 
-#: kgamewin.cpp:416
+#: kgamewin.cpp:417
 #, kde-format
 msgid "Join a Standard TCP/IP Network Game"
 msgstr "ចូល​រួម​លេង​ល្បែង​បណ្ដាញ​ TCP/IP ស្តង់ដារ​ថ្មី"
 
-#: kgamewin.cpp:417
+#: kgamewin.cpp:418
 #, kde-format
 msgid "Join TCP/IP"
 msgstr "ចូល​រួម​ TCP/IP"
 
-#: kgamewin.cpp:419
+#: kgamewin.cpp:420
 #, kde-format
 msgid "Join a standard TCP/IP network game"
 msgstr "ចូល​រួម​លេង​ល្បែង​បណ្ដាញ​ TCP/IP ស្តង់ដារ"
 
-#: kgamewin.cpp:425
+#: kgamewin.cpp:426
 #, kde-format
 msgid "Display the Current Player's Goal"
 msgstr "បង្ហាញ​នូវ​គោល​ដៅ​របស់​អ្នក​លេង​បច្ចុប្បន្ន"
 
-#: kgamewin.cpp:428
+#: kgamewin.cpp:429
 #, kde-format
 msgid "Display the current player's goal"
 msgstr "បង្ហាញ​នូវ​គោល​ដៅ​របស់​អ្នក​លេង​បច្ចុប្បន្ន"
 
-#: kgamewin.cpp:435
+#: kgamewin.cpp:436
 #, kde-format
 msgid "Contextual Help"
 msgstr "ជំនួយ​ជា​អត្ថបទ"
 
-#: kgamewin.cpp:446
+#: kgamewin.cpp:447
 #, kde-format
 msgid "Lets the next player play"
 msgstr "អនុញ្ញាត​ឲ្យ​អ្នក​លេង​បន្ទាប់​លេង"
 
-#: kgamewin.cpp:451
+#: kgamewin.cpp:452
 #, kde-format
 msgid "Finish moves"
 msgstr "បញ្ចប់​ការ​ផ្លាស់ទី"
 
-#: kgamewin.cpp:453
+#: kgamewin.cpp:454
 #, kde-format
 msgid "Finish moving the current sprites"
 msgstr "បញ្ចប់​ការ​ផ្លាស់​ទី​ sprites  បច្ចុប្បន្ន"
 
-#: kgamewin.cpp:579
+#: kgamewin.cpp:580
 #, kde-format
 msgid ""
 "World definition file not found - Verify your installation<br>Program cannot "
 "continue"
 msgstr "រក​មិន​ឃើញ​ឯក​សារ​កំណត់​ពិភព​លោក​ទេ​  - ផ្ទៀង​ផ្ទាត់​ការ​ដំឡើង​របស់​អ្នក​<br>កម្ម​វិធី​មិន​អាច​បន្ត​បាន​ទេ"
 
-#: kgamewin.cpp:799
+#: kgamewin.cpp:800
 #, kde-format
 msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
 msgstr "<font color=\"red\">%1 បាន​ច្បាំង​យក​ %2 ពី %3</font>"
 
-#: kgamewin.cpp:823
+#: kgamewin.cpp:824
 #, kde-format
 msgid "%1, you are defeated! Bye, bye..."
 msgstr "%1 អ្នក​ត្រូវ​បាន​បង្ក្រាប! លា​ហើយ..."
 
-#: kgamewin.cpp:895
+#: kgamewin.cpp:896
 #, kde-format
 msgid "%1: it is up to you again"
 msgstr "%1 ៖ ម្ដង​នេះ​ស្រេច​តែ​លើ​អ្នក​ទៀត​ហើយ​"
 
-#: kgamewin.cpp:907
+#: kgamewin.cpp:908
 #, kde-format
 msgid "%1 won!"
 msgstr "%1 ឈ្នះ​ហើយ​ !"
 
-#: kgamewin.cpp:910
+#: kgamewin.cpp:911
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
 msgstr "<big><b>%1</b> អ្នក​ឈ្នះ​ហើយ​ !</big>"
 
-#: kgamewin.cpp:914
+#: kgamewin.cpp:915
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
@@ -2944,46 +2950,46 @@ msgid ""
 msgstr ""
 "<br>គោល​បំណង​របស់​អ្នក​ឈ្នះ​គឺ​ត្រូវ​បាន​ចែង​ដូច្នេះ​ ៖<br><i>%1</i><br><br>តើ​អ្នក​ចង់​ លេង​សារ​ថ្មី​ទេ​ ?"
 
-#: kgamewin.cpp:920
+#: kgamewin.cpp:921
 #, kde-format
 msgid "<br>You conquered all the world!"
 msgstr "<br>អ្នក​​​ច្បាំង​​យក​បាន​ពិភពលោក​ទាំង​មូល​ហើយ​ !"
 
-#: kgamewin.cpp:924
+#: kgamewin.cpp:925
 #, kde-format
 msgid "<br>He conquered all the world!"
 msgstr "<br>គេ​​ច្បាំង​យក​បាន​ពិភព​លោក​ទាំង​មូល​ហើយ​ !"
 
-#: kgamewin.cpp:1052
+#: kgamewin.cpp:1053
 #, kde-format
 msgid "Do you want to quit the game?"
 msgstr "តើ​អ្នក​ចង់​ចេញ​ពី​ល្បែង​ឬ ?"
 
-#: kgamewin.cpp:1054
+#: kgamewin.cpp:1055
 #, fuzzy, kde-format
 #| msgid "Quit"
 msgctxt "@action:button"
 msgid "Quit Game"
 msgstr "បោះ​បង់"
 
-#: kgamewin.cpp:1074
+#: kgamewin.cpp:1075
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
 msgstr "មុន​ពេល​អ្នក​ចេញ តើ​អ្នក​ចង់​រក្សា​ទុក​ល្បែង​របស់​អ្នក​ឬទេ?"
 
-#: kgamewin.cpp:1120
+#: kgamewin.cpp:1121
 #, fuzzy, kde-format
 #| msgid "KsirK - Load Game"
 msgctxt "@title:window"
 msgid "KsirK - Load Game"
 msgstr "KsirK - ផ្ទុក​ល្បែង"
 
-#: kgamewin.cpp:1158
+#: kgamewin.cpp:1159
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
 msgstr "រង់ចាំ​ការ​ភ្ជាប់​នៃ​អ្នក​លេង​លើ​បណ្ដាញ %1 ។"
 
-#: kgamewin.cpp:1237
+#: kgamewin.cpp:1238
 #, kde-format
 msgid ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
@@ -2995,92 +3001,88 @@ msgstr[0] ""
 "<font color=\"red\">%2</font> វាយ​ប្រហារ​អ្នក​ពី <font color=\"red\">%3</font> ដោយ​ "
 "%1 សត្រូវ​!<br> តើ​អ្នក​ចង់​ការ​ពារ​ខ្លួន​ដោយ​របៀប​ណា​ <font color=\"blue\">%4</font> ?"
 
-#: kgamewin.cpp:1266
+#: kgamewin.cpp:1267
 #, kde-format
 msgid "Defend 1"
 msgstr "ការ​ពារ​ ១"
 
-#: kgamewin.cpp:1267
+#: kgamewin.cpp:1268
 #, kde-format
 msgid "Defend 2"
 msgstr "ការពារ​ ២"
 
-#: kgamewin.cpp:1268
+#: kgamewin.cpp:1269
 #, kde-format
 msgid "Defend-Auto"
 msgstr "ការ​ពារ​ដោយ​ស្វ័យ​ប្រវត្តិ"
 
-#: kgamewin.cpp:1387
+#: kgamewin.cpp:1388
 #, kde-format
 msgid "Waiting for %1 players to connect"
 msgstr "រង់ចាំ​អ្នក​លេង %1 ដើម្បី​តភ្ជាប់"
 
-#: kgamewin.cpp:1777 kgamewin.cpp:1817
-#, kde-format
+#: kgamewin.cpp:1778 kgamewin.cpp:1818
 msgid "There is no country here!"
 msgstr "គ្មាន​ប្រទេស​នៅ​ទីនេះទេ!"
 
-#: kgamewin.cpp:1781 kgamewin.cpp:1822
+#: kgamewin.cpp:1782 kgamewin.cpp:1823
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
 msgstr "អ្នក​មិន​មែន​ជា​ម្ចាស់​នៃ​ប្រទេស​ទី​មួយ​ទេ ៖ %1 !"
 
-#: kgamewin.cpp:1785
+#: kgamewin.cpp:1786
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
 msgstr "អ្នក​មិន​មែន​ជា​ម្ចាស់​នៃ​ប្រទេស​ទីពីរ​ទេ​ ៖ %1 !"
 
-#: kgamewin.cpp:1789 kgamewin.cpp:1833
+#: kgamewin.cpp:1790 kgamewin.cpp:1834
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr "អ្នក​កំពុង​ព្យាយាម​ផ្លាស់​ទី​សត្រូវ​ពី​ %1 ទៅ​កាន់​​​ខ្លួន​វា​ !"
 
-#: kgamewin.cpp:1794 kgamewin.cpp:1839
+#: kgamewin.cpp:1795 kgamewin.cpp:1840
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
 msgstr "%1 មិន​មែន​ជា​ប្រទេស​ជិត​ខាង​នៃ %2 ទេ!"
 
-#: kgamewin.cpp:1800
+#: kgamewin.cpp:1801
 #, kde-format
 msgid "Moving armies from %1 to %2."
 msgstr "ផ្លាស់ទី​ទ័ព​ពី %1 ទៅ %2 ។"
 
-#: kgamewin.cpp:1828
+#: kgamewin.cpp:1829
 #, kde-format
 msgid "You are the owner of the second country: %1!"
 msgstr "អ្នក​មិន​មែន​ជា​ម្ចាស់​នៃ​ប្រទេស​ទី​ពីរ​ទេ​ ៖ %1 !"
 
-#: kgamewin.cpp:1846
-#, kde-format
+#: kgamewin.cpp:1847
 msgid "Ready to fight!"
 msgstr "ត្រៀម​ប្រយុទ្ឋ !"
 
-#: kgamewin.cpp:1940
-#, kde-format
+#: kgamewin.cpp:1941
 msgid "<font color=\"orange\">No country here!</font>"
 msgstr "<font color=\"orange\">គ្មាន​ប្រទេស​នៅ​ទីនេះ​ទេ !</font>"
 
-#: kgamewin.cpp:1948
+#: kgamewin.cpp:1949
 #, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr "<font color=\"orange\">អ្នក​មិនមែន​ជា​ម្ចាស់​នៃ %1 ទេ!</font>"
 
-#: kgamewin.cpp:1955
+#: kgamewin.cpp:1956
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr "<font color=\"orange\">មាន​តែ %1 ទ័ព​ក្នុង %2 !</font>"
 
-#: kgamewin.cpp:2095
+#: kgamewin.cpp:2096
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
 msgstr "%1 អ្នក​ការពារ​ជាមួយ​តែ​ទ័ព ដែល​អ្នក​មាន​ក្នុង %2 ប៉ុណ្ណោះ។"
 
-#: kgamewin.cpp:2319
-#, kde-format
+#: kgamewin.cpp:2320
 msgid "Exchange armies again or continue?"
 msgstr "ផ្លាស់ប្ដូរ​ទ័ព​ម្ដង​ទៀត ឬ​បន្ត ?"
 
-#: kgamewin.cpp:2344
+#: kgamewin.cpp:2345
 #, kde-format
 msgid ""
 "You must distribute\n"
@@ -3089,52 +3091,47 @@ msgstr ""
 "អ្នក​ត្រូវ​តែ​ចែកចាយ\n"
 "ទ័ព​ទាំង​អស់​របស់​អ្នក​"
 
-#: kgamewin.cpp:2344 main.cpp:42
+#: kgamewin.cpp:2345 main.cpp:42
 #, kde-format
 msgid "KsirK"
 msgstr "KsirK"
 
-#: kgamewin.cpp:2484
-#, kde-format
+#: kgamewin.cpp:2485
 msgid "Battle ongoing."
 msgstr "សង្គ្រាម​កំពុង​បន្ត​ ។"
 
-#: kgamewin.cpp:2605 kgamewin.cpp:2616 kgamewin.cpp:2639
+#: kgamewin.cpp:2606 kgamewin.cpp:2617 kgamewin.cpp:2640
 #, kde-format
 msgid "%1, it is up to you."
 msgstr "%1 វា​ស្រេច​តែ​លើ​អ្នក​ ។"
 
-#: kgamewin.cpp:2668
+#: kgamewin.cpp:2669
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
 msgstr "តើ​អ្នក​ពិត​ជា​ចង់​បញ្ចប់​ល្បែង​បច្ចុប្បន្ន​របស់​អ្នក​ ហើយ​ចាប់​ផ្ដើម​​ល្បែង​ថ្មី​ឬ​ ?"
 
-#: kgamewin.cpp:2668
+#: kgamewin.cpp:2669
 #, fuzzy, kde-format
 #| msgid "Start a New Game"
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "ចាប់ផ្ដើម​ល្បែង​ថ្មី"
 
-#: kgamewin.cpp:2924
-#, kde-format
+#: kgamewin.cpp:2925
 msgid "<b>KsirK quick Introduction</b>"
 msgstr "<b>ការ​ណែ​នាំ​ត្រួស​ៗ​អំពី​​ KsirK </b>"
 
-#: kgamewin.cpp:2928
-#, kde-format
+#: kgamewin.cpp:2929
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr ""
 "ការ​វាយ​ប្រហារ​ និង​ការ​ផ្លាស់​ទី​ត្រូវ​បាន​ធ្វើ​ឡើង​តាម​រយៈ​ការ​អូស​ និង​ទម្លាក់​នៅ​ចន្លោះ​ប្រទេស​ជិត​ខាង​ ។"
 
-#: kgamewin.cpp:2932
-#, kde-format
+#: kgamewin.cpp:2933
 msgid "Start a new game or join a network game with the menu or the toolbar..."
 msgstr "ចាប់ផ្ដើម​ល្បែង​ថ្មី ឬ​ចូលរួម​លេង​​ល្បែង​លើ​បណ្ដាញ​ជាមួយ​ម៉ឺនុយ ឬ​របារ​ឧបករណ៍..."
 
-#: kgamewin.cpp:2936
-#, kde-format
+#: kgamewin.cpp:2937
 msgid ""
 "and then let the system guide you through messages and tooltips appearing on "
 "buttons when hovering above them. You can disable bubble help in the options "
@@ -3143,7 +3140,7 @@ msgstr ""
 "ហើយ​បន្ទាប់ ​មក​អនុញ្ញាត​ឲ្យ​ប្រព័ន្ធ​នាំ​ផ្លូវ​អ្នក​តាម​រយៈ​សារ និង​ព័ត៌មាន​ជំនួយ ដែល​បង្ហាញ​​​លើ​ប៊ូតុង ពេល​សំកាំង​លើ​"
 "ពួក​វា ។ អ្នក​អាច​បិទ​ជំនួយ​ពពុះ​ក្នុង​បង្អួច​ជម្រើស​បាន​ ។"
 
-#: kgamewin.cpp:2943
+#: kgamewin.cpp:2944
 #, kde-format
 msgid "Don't show messages anymore"
 msgstr "កុំ​បង្ហាញ​សារ​ទៀត"
@@ -3515,17 +3512,17 @@ msgstr "បង្ហាញ​ជំនួយ"
 msgid "Show number of armies on countries"
 msgstr "បង្ហាញ​ចំនួន​ទ័ព​លើ​ប្រទេស​នានា"
 
-#: SaveLoad/ksirkgamexmlhandler.cpp:57
+#: SaveLoad/ksirkgamexmlhandler.cpp:58
 #, kde-format
 msgid "Wrong save game format. Waited %1 and got %2!"
 msgstr "រក្សា​ទុក​ទ្រង់ទ្រាយ​ល្បែង​ដែល​មិន​​ត្រឹម​ត្រូវ​ ។ រង់ចាំ %1 និង​យក %2 !"
 
-#: SaveLoad/ksirkgamexmlhandler.cpp:58
+#: SaveLoad/ksirkgamexmlhandler.cpp:59
 #, kde-format
 msgid "KsirK - Cannot load!"
 msgstr "KsirK - មិន​អាច​ផ្ទុក​បាន​ទេ​ !"
 
-#: SaveLoad/ksirkgamexmlhandler.cpp:139
+#: SaveLoad/ksirkgamexmlhandler.cpp:140
 #, kde-format
 msgid "Current player is: %1"
 msgstr "អ្នក​លេង​បច្ចុប្បន្ន​គឺ ៖ %1"

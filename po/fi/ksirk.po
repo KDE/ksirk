@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-21 00:44+0000\n"
+"POT-Creation-Date: 2023-09-11 00:43+0000\n"
 "PO-Revision-Date: 2023-03-29 23:24+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1331,7 +1331,7 @@ msgstr ""
 msgid "Legacy"
 msgstr "Perinteinen"
 
-#: decoratedgameframe.cpp:100 kgamewin.cpp:444
+#: decoratedgameframe.cpp:100 kgamewin.cpp:445
 #, kde-format
 msgid "Next Player"
 msgstr "Seuraava pelaaja"
@@ -1341,8 +1341,8 @@ msgstr "Seuraava pelaaja"
 msgid "Details"
 msgstr "Yksityiskohdat"
 
-#: decoratedgameframe.cpp:106 kgamewin.cpp:424 kgamewin.cpp:1335
-#: kgamewin.cpp:1347 kgamewin.cpp:2504
+#: decoratedgameframe.cpp:106 kgamewin.cpp:425 kgamewin.cpp:1336
+#: kgamewin.cpp:1348 kgamewin.cpp:2505
 #, kde-format
 msgid "Goal"
 msgstr "Tavoite"
@@ -1572,7 +1572,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
 #. i18n: ectx: property (text), widget (QPushButton, cancelbutton)
-#: Dialogs/jabbergameui.ui:318 Dialogs/newGameDialog.ui:227
+#: Dialogs/jabbergameui.ui:318 Dialogs/newGameDialog.ui:230
 #: Dialogs/newGameSummary.ui:206 Dialogs/qplayersetupdialog.ui:126
 #: Dialogs/tcpconnectwidget.ui:98
 #, kde-format
@@ -1675,44 +1675,50 @@ msgstr "Valitse pelissä käytettävä teema (kartta, kansat jne.)."
 msgid "A combo listing all the available skins."
 msgstr "Kaikki käytettävissä olevat teemat luetteleva valitsin."
 
-#. i18n: ectx: property (text), widget (QPushButton, ghnsbutton)
+#. i18n: ectx: property (text), widget (KNSWidgets::Button, ghnsbutton)
 #: Dialogs/newGameDialog.ui:126
 #, kde-format
 msgid "Download New Skins..."
 msgstr "Lataa uusia teemoja…"
 
+#. i18n: ectx: property (configFile), widget (KNSWidgets::Button, ghnsbutton)
+#: Dialogs/newGameDialog.ui:129
+#, kde-format
+msgid "ksirk.knsrc"
+msgstr ""
+
 #. i18n: ectx: property (title), widget (QGroupBox, goalGroup)
-#: Dialogs/newGameDialog.ui:150
+#: Dialogs/newGameDialog.ui:153
 #, kde-format
 msgid "Goal Type"
 msgstr "Tavoitteen tyyppi"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, radioWorld)
-#: Dialogs/newGameDialog.ui:156
+#: Dialogs/newGameDialog.ui:159
 #, kde-format
 msgid "Choose this for players to have to conquer all the world to win."
 msgstr "Valitse tämä, niin pelaajien täytyy valloittaa maailma voittaakseen."
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioWorld)
-#: Dialogs/newGameDialog.ui:159
+#: Dialogs/newGameDialog.ui:162
 #, kde-format
 msgid "In this mode, a player will have to conquer all the world to win."
 msgstr "Tässä tilassa pelaajan täytyy valloittaa koko maailma voittaakseen."
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioWorld)
-#: Dialogs/newGameDialog.ui:162
+#: Dialogs/newGameDialog.ui:165
 #, kde-format
 msgid "World con&quest"
 msgstr "Maailman&valloitus"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, radioGoal)
-#: Dialogs/newGameDialog.ui:169
+#: Dialogs/newGameDialog.ui:172
 #, kde-format
 msgid "Choose this to have a goal assigned to each player."
 msgstr "Valitse tämä asettaaksesi kullekin pelaajalle tavoitteen."
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioGoal)
-#: Dialogs/newGameDialog.ui:172
+#: Dialogs/newGameDialog.ui:175
 #, kde-format
 msgid ""
 "In this mode, a goal will be assigned to each player, which he will have to "
@@ -1722,19 +1728,19 @@ msgstr ""
 "saavuttaa voittaakseen."
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioGoal)
-#: Dialogs/newGameDialog.ui:175
+#: Dialogs/newGameDialog.ui:178
 #, kde-format
 msgid "Reach a goa&l"
 msgstr "&Saavuta tavoitteesi"
 
 #. i18n: ectx: property (text), widget (QPushButton, nextButton)
-#: Dialogs/newGameDialog.ui:247 Dialogs/qplayersetupdialog.ui:153
+#: Dialogs/newGameDialog.ui:250 Dialogs/qplayersetupdialog.ui:153
 #: Dialogs/tcpconnectwidget.ui:125
 #, kde-format
 msgid "Next >>"
 msgstr "Seuraava &gt;&gt;"
 
-#: Dialogs/newGameDialogImpl.cpp:131 newgamesetup.cpp:44
+#: Dialogs/newGameDialogImpl.cpp:130 newgamesetup.cpp:44
 #, kde-format
 msgid ""
 "Skins directory not found - Verify your installation\n"
@@ -1743,7 +1749,7 @@ msgstr ""
 "Teemakansiota ei löytynyt – tarkista asennuksesi\n"
 "Ohjelma ei voi jatkaa"
 
-#: Dialogs/newGameDialogImpl.cpp:132 newgamesetup.cpp:45
+#: Dialogs/newGameDialogImpl.cpp:131 newgamesetup.cpp:45
 #, kde-format
 msgid "Fatal Error!"
 msgstr "Vakava virhe!"
@@ -1905,7 +1911,7 @@ msgid "New Game or Exit"
 msgstr "Uusi peli tai lopetus"
 
 #. i18n: ectx: property (text), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:27 GameLogic/gameautomaton.cpp:1664
+#: Dialogs/restartOrExitDialog.ui:27 GameLogic/gameautomaton.cpp:1665
 #, kde-format
 msgid "New Game"
 msgstr "Uusi peli"
@@ -1929,7 +1935,7 @@ msgid "Do nothing. Game buttons will be available"
 msgstr "Älä tee mitään. Pelipainikkeet ovat käytettävissä"
 
 #. i18n: ectx: property (text), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:50 GameLogic/gameautomaton.cpp:1665
+#: Dialogs/restartOrExitDialog.ui:50 GameLogic/gameautomaton.cpp:1666
 #, kde-format
 msgid "Exit"
 msgstr "Lopeta"
@@ -1973,75 +1979,75 @@ msgstr[1] ""
 msgid "Fatal Error"
 msgstr "Vakava virhe"
 
-#: GameLogic/gameautomaton.cpp:301
+#: GameLogic/gameautomaton.cpp:302
 #, kde-format
 msgid "KsirK - Network configuration"
 msgstr "KsirK – Verkon asetukset"
 
-#: GameLogic/gameautomaton.cpp:302
+#: GameLogic/gameautomaton.cpp:303
 #, kde-format
 msgid "Please type in the port number on which to offer connections:"
 msgstr "Anna sen portin numero, josta yhteyttä tarjotaan:"
 
-#: GameLogic/gameautomaton.cpp:1189 GameLogic/gameautomaton.cpp:1217
+#: GameLogic/gameautomaton.cpp:1190 GameLogic/gameautomaton.cpp:1218
 #, kde-format
 msgid "Do you really want to end your current game and join another?"
 msgstr "Haluatko varmasti lopettaa nykyisen pelisi ja liittyä toiseen?"
 
-#: GameLogic/gameautomaton.cpp:1189 GameLogic/gameautomaton.cpp:1217
-#: kgamewin.cpp:2668
+#: GameLogic/gameautomaton.cpp:1190 GameLogic/gameautomaton.cpp:1218
+#: kgamewin.cpp:2669
 #, kde-format
 msgid "New game confirmation"
 msgstr "Vahvistus uudesta pelistä"
 
-#: GameLogic/gameautomaton.cpp:1189 GameLogic/gameautomaton.cpp:1217
+#: GameLogic/gameautomaton.cpp:1190 GameLogic/gameautomaton.cpp:1218
 #, kde-format
 msgctxt "@action:button"
 msgid "Join New Game"
 msgstr "Liity uuteen peliin"
 
-#: GameLogic/gameautomaton.cpp:1397
+#: GameLogic/gameautomaton.cpp:1398
 #, kde-format
 msgid "%1 (%2) joined game ; waiting for %3 players to connect"
 msgstr "%1 (%2) liittyi peliin; odotetaan %3 pelaajan yhdistävän"
 
-#: GameLogic/gameautomaton.cpp:1503
+#: GameLogic/gameautomaton.cpp:1504
 #, kde-format
 msgid "Please choose another name"
 msgstr "Valitse toinen nimi"
 
-#: GameLogic/gameautomaton.cpp:1503
+#: GameLogic/gameautomaton.cpp:1504
 #, kde-format
 msgid "KsirK - Name already used!"
 msgstr "KsirK – Nimi on jo käytössä!"
 
-#: GameLogic/gameautomaton.cpp:1509
+#: GameLogic/gameautomaton.cpp:1510
 #, kde-format
 msgid "Player number %1, what's your name?"
 msgstr "Pelaaja numero %1, mikä on nimesi?"
 
-#: GameLogic/gameautomaton.cpp:1513
+#: GameLogic/gameautomaton.cpp:1514
 #, kde-format
 msgid "Error - Player %1, you have to choose a name."
 msgstr "Virhe – Pelaaja %1, sinun on valittava nimi."
 
-#: GameLogic/gameautomaton.cpp:1515
+#: GameLogic/gameautomaton.cpp:1516
 #, kde-format
 msgctxt "@info Forged player name"
 msgid "Player%1"
 msgstr "Pelaaja%1"
 
-#: GameLogic/gameautomaton.cpp:1566
+#: GameLogic/gameautomaton.cpp:1567
 #, kde-format
 msgid "Please choose another nation"
 msgstr "Valitse toinen maa"
 
-#: GameLogic/gameautomaton.cpp:1566
+#: GameLogic/gameautomaton.cpp:1567
 #, kde-format
 msgid "KsirK - Nation already used!"
 msgstr "KsirK – Maa on jo käytössä!"
 
-#: GameLogic/gameautomaton.cpp:1662
+#: GameLogic/gameautomaton.cpp:1663
 #, kde-format
 msgid ""
 "KsirK - Lost connection to server!\n"
@@ -2050,17 +2056,17 @@ msgstr ""
 "KsirK – Yhteys palvelimeen katkesi!\n"
 "Mitä haluat tehdä?"
 
-#: GameLogic/gameautomaton.cpp:1663
+#: GameLogic/gameautomaton.cpp:1664
 #, kde-format
 msgid "Starting a new game or exit."
 msgstr "Uuden pelin aloitus tai lopetus."
 
-#: GameLogic/gameautomaton.cpp:1666
+#: GameLogic/gameautomaton.cpp:1667
 #, kde-format
 msgid "Do nothing"
 msgstr "Älä tee mitään"
 
-#: GameLogic/gameautomaton.cpp:1696
+#: GameLogic/gameautomaton.cpp:1697
 #, kde-format
 msgid ""
 "Lost connection to a client.\n"
@@ -2071,23 +2077,23 @@ msgstr ""
 "Toistaiseksi voit vain tallentaa pelin ja aloittaa uuden tai lopettaa.\n"
 "Tätä kehitetään tulevissa versoissa."
 
-#: GameLogic/gameautomaton.cpp:1697
+#: GameLogic/gameautomaton.cpp:1698
 #, kde-format
 msgid "KsirK - Lost connection to client!"
 msgstr "KsirK – Yhteys asiakkaaseen katkesi!"
 
-#: GameLogic/gameautomaton.cpp:1703
+#: GameLogic/gameautomaton.cpp:1704
 #, kde-format
 msgid "Do want to save your game?"
 msgstr "Haluatko tallentaa pelisi?"
 
-#: GameLogic/gameautomaton.cpp:1877 GameLogic/gameautomaton.cpp:2294
-#: kgamewin.cpp:2159 kgamewin.cpp:2254 kgamewin.cpp:2291
+#: GameLogic/gameautomaton.cpp:1878 GameLogic/gameautomaton.cpp:2295
+#: kgamewin.cpp:2160 kgamewin.cpp:2255 kgamewin.cpp:2292
 #, kde-format
 msgid "%1: %2 armies to place"
 msgstr "%1: vielä %2 sijoitettavaa armeijaa"
 
-#: GameLogic/gameautomaton.cpp:1882 GameLogic/gameautomaton.cpp:2297
+#: GameLogic/gameautomaton.cpp:1883 GameLogic/gameautomaton.cpp:2298
 #: kgamewinslots.cpp:807
 #, kde-format
 msgid ""
@@ -2095,7 +2101,7 @@ msgid ""
 "countries."
 msgstr "Sijoita nyt armeijat maihisi<br>napsauttamalla kohdemaita."
 
-#: GameLogic/gameautomaton.cpp:1959
+#: GameLogic/gameautomaton.cpp:1960
 #, kde-format
 msgid ""
 "%1, your goal will be displayed. Please<br>make sure that no other player "
@@ -2104,35 +2110,35 @@ msgstr ""
 "%1, tavoitteesi näytetään nyt.<br>Varmista, ettei yksikään toinen pelaaja "
 "näe sitä!"
 
-#: GameLogic/gameautomaton.cpp:1961
+#: GameLogic/gameautomaton.cpp:1962
 #, kde-format
 msgid "KsirK - Displaying Goal"
 msgstr "KsirK – Näytetään tavoite"
 
-#: GameLogic/gameautomaton.cpp:2147
+#: GameLogic/gameautomaton.cpp:2148
 #, kde-format
 msgid "%1 chooses its defense"
 msgstr "%1 valitsee sen puolustuksen"
 
-#: GameLogic/gameautomaton.cpp:2307
+#: GameLogic/gameautomaton.cpp:2308
 #, kde-format
 msgid "%1 choose to end recycling; there are now %2 players who want so"
 msgstr "%1 valitsee kierrätyksen päättämisen: %2 pelaajaa haluaa tehdä niin"
 
-#: GameLogic/gameautomaton.cpp:2397
+#: GameLogic/gameautomaton.cpp:2398
 #, kde-format
 msgid "Problem : no one destroyed"
 msgstr "Ongelma: ketään ei tuhottu"
 
-#: GameLogic/gameautomaton.cpp:2397 gestionSprites.cpp:927
-#: gestionSprites.cpp:947 gestionSprites.cpp:1048 gestionSprites.cpp:1085
-#: gestionSprites.cpp:1120 gestionSprites.cpp:1174 gestionSprites.cpp:1211
-#: gestionSprites.cpp:1245
+#: GameLogic/gameautomaton.cpp:2398 gestionSprites.cpp:928
+#: gestionSprites.cpp:948 gestionSprites.cpp:1049 gestionSprites.cpp:1086
+#: gestionSprites.cpp:1121 gestionSprites.cpp:1175 gestionSprites.cpp:1212
+#: gestionSprites.cpp:1246
 #, kde-format
 msgid "KsirK - Error!"
 msgstr "KsirK – Virhe!"
 
-#: GameLogic/gameautomaton.cpp:2446
+#: GameLogic/gameautomaton.cpp:2447
 #, kde-format
 msgid ""
 "You entered an invalid password.\n"
@@ -2141,12 +2147,12 @@ msgstr ""
 "Annoit väärän salasanan.\n"
 "Yritä uudelleen."
 
-#: GameLogic/gameautomaton.cpp:2446
+#: GameLogic/gameautomaton.cpp:2447
 #, kde-format
 msgid "KsirK - Invalid password!"
 msgstr "KsirK – Väärä salasana!"
 
-#: GameLogic/gameautomaton.cpp:2656
+#: GameLogic/gameautomaton.cpp:2657
 #, kde-format
 msgid ""
 "%1, you have not played anything this turn.\n"
@@ -2155,12 +2161,12 @@ msgstr ""
 "%1, et ole pelannut mitään tällä kierroksella.\n"
 "Haluatko varmasti ohittaa kierroksen?"
 
-#: GameLogic/gameautomaton.cpp:2657
+#: GameLogic/gameautomaton.cpp:2658
 #, kde-format
 msgid "Really Next Player?"
 msgstr "Todella seuraava pelaaja?"
 
-#: GameLogic/gameautomaton.cpp:2658
+#: GameLogic/gameautomaton.cpp:2659
 #, kde-format
 msgctxt "@action:button"
 msgid "Next Player"
@@ -2253,7 +2259,7 @@ msgstr "%1 mantereella: %2|/|%1 $[iness %2]"
 msgid "KsirK - Goal Display"
 msgstr "KsirK – Tavoitenäkymä"
 
-#: GameLogic/KsirkChatModel.cpp:72 kgamewin.cpp:178
+#: GameLogic/KsirkChatModel.cpp:72 kgamewin.cpp:179
 #, kde-format
 msgid "No message..."
 msgstr "Ei viestiä…"
@@ -2272,10 +2278,10 @@ msgstr ""
 "Nipputiedostoa (pool.svg) ei löydy\n"
 "Ohjelma ei voi jatkaa"
 
-#: GameLogic/onu.cpp:130 GameLogic/onu.cpp:147 gestionSprites.cpp:692
-#: gestionSprites.cpp:807 gestionSprites.cpp:852 gestionSprites.cpp:1408
-#: gestionSprites.cpp:1485 kgamewin.cpp:145 kgamewin.cpp:378 kgamewin.cpp:395
-#: kgamewin.cpp:412 kgamewin.cpp:579 kgamewin.cpp:735
+#: GameLogic/onu.cpp:130 GameLogic/onu.cpp:147 gestionSprites.cpp:693
+#: gestionSprites.cpp:808 gestionSprites.cpp:853 gestionSprites.cpp:1409
+#: gestionSprites.cpp:1486 kgamewin.cpp:146 kgamewin.cpp:379 kgamewin.cpp:396
+#: kgamewin.cpp:413 kgamewin.cpp:580 kgamewin.cpp:736
 #: Sprites/animsprite.cpp:511 Sprites/animsprite.cpp:526
 #, kde-format
 msgid "Error!"
@@ -2290,38 +2296,38 @@ msgstr ""
 "Karttamaskikuvaa ei löytynyt\n"
 "Ohjelmaa ei voi jatkaa"
 
-#: gestionSprites.cpp:72 gestionSprites.cpp:106 gestionSprites.cpp:157
+#: gestionSprites.cpp:73 gestionSprites.cpp:107 gestionSprites.cpp:158
 #, kde-format
 msgid "Cannot move %1 armies from %2 to %3"
 msgstr ""
 "%1 armeijaa ei voi siirtää maasta %2 maahan %3|/|%1 armeijaa ei voi siirtää "
 "$[elat %2] $[illat %3]"
 
-#: gestionSprites.cpp:79
+#: gestionSprites.cpp:80
 #, kde-format
 msgid "Moving %1 armies from %2 to %3"
 msgstr ""
 "Siirretään %1 armeijaa maasta %2 maahan %3.|/|Siirretään %1 armeijaa $[elat "
 "%2] $[illat %3]."
 
-#: gestionSprites.cpp:692 gestionSprites.cpp:807 gestionSprites.cpp:1408
-#: gestionSprites.cpp:1485
+#: gestionSprites.cpp:693 gestionSprites.cpp:808 gestionSprites.cpp:1409
+#: gestionSprites.cpp:1486
 #, kde-format
 msgid ""
 "Sound roule not found - Verify your installation<br>Program cannot continue"
 msgstr ""
 "Liikkumisääntä ei löytynyt – tarkista asennuksesi<br>Ohjelmaa ei voi jatkaa"
 
-#: gestionSprites.cpp:852
+#: gestionSprites.cpp:853
 #, kde-format
 msgid ""
 "Sound cannon not found - Verify your installation<br>Program cannot continue"
 msgstr ""
 "Tykin ääntä ei löytynyt – tarkista asennuksesi<br>Ohjelmaa ei voi jatkaa"
 
-#: gestionSprites.cpp:927 gestionSprites.cpp:947 gestionSprites.cpp:1048
-#: gestionSprites.cpp:1085 gestionSprites.cpp:1120 gestionSprites.cpp:1174
-#: gestionSprites.cpp:1211 gestionSprites.cpp:1245
+#: gestionSprites.cpp:928 gestionSprites.cpp:948 gestionSprites.cpp:1049
+#: gestionSprites.cpp:1086 gestionSprites.cpp:1121 gestionSprites.cpp:1175
+#: gestionSprites.cpp:1212 gestionSprites.cpp:1246
 #, kde-format
 msgid ""
 "Sound crash not found - Verify your installation\n"
@@ -2331,12 +2337,12 @@ msgstr ""
 "Ohjelmaa ei voi jatkaa"
 
 # *** TARKISTA: vai ”kukaan ei tuhonnut”?
-#: gestionSprites.cpp:1289
+#: gestionSprites.cpp:1290
 #, kde-format
 msgid "Problem: no one destroyed"
 msgstr "Ongelma: ketään ei tuhottu"
 
-#: gestionSprites.cpp:1499
+#: gestionSprites.cpp:1500
 #, kde-format
 msgid "Bug: who should be 0, 1 or 2."
 msgstr "Ohjelmavirhe: kenen tulisi olla 0, 1 tai 2."
@@ -3102,32 +3108,32 @@ msgstr "Anna näyttönimesi keskusteluun %1"
 msgid "You have been invited to %1"
 msgstr "Sinut on kutsuttu ryhmäkeskusteluun %1"
 
-#: kgamewin.cpp:145 kgamewin.cpp:735
+#: kgamewin.cpp:146 kgamewin.cpp:736
 #, kde-format
 msgid "Cannot load icon<br>Program cannot continue"
 msgstr "Kuvaketta ei voi ladata<br>Ohjelmaa ei voi jatkaa"
 
-#: kgamewin.cpp:378 kgamewin.cpp:395 kgamewin.cpp:412
+#: kgamewin.cpp:379 kgamewin.cpp:396 kgamewin.cpp:413
 #, kde-format
 msgid "Cannot load button image %1<br>Program cannot continue"
 msgstr "Painikekuvaa %1 ei voi ladata<br>Ohjelmaa ei voi jatkaa"
 
-#: kgamewin.cpp:381
+#: kgamewin.cpp:382
 #, kde-format
 msgid "Play over Jabber"
 msgstr "Pelaa Jabberissä"
 
-#: kgamewin.cpp:382
+#: kgamewin.cpp:383
 #, kde-format
 msgid "Play KsirK over the Jabber Network"
 msgstr "Pelaa KsirKiä Jabber-verkossa"
 
-#: kgamewin.cpp:383
+#: kgamewin.cpp:384
 #, kde-format
 msgid "Jabber"
 msgstr "Jabber"
 
-#: kgamewin.cpp:385
+#: kgamewin.cpp:386
 #, kde-format
 msgid ""
 "Allow to connect to a KsirK Jabber Multi User Gaming Room to create new "
@@ -3137,67 +3143,67 @@ msgstr ""
 "uusia pelejä tai liittyäksesi olemassa oleviin peleihin"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
-#: kgamewin.cpp:398 mainMenu.ui:111
+#: kgamewin.cpp:399 mainMenu.ui:111
 #, kde-format
 msgid "New Standard TCP/IP Network Game"
 msgstr "Uusi tavallinen TCP/IP-verkkopeli"
 
-#: kgamewin.cpp:399
+#: kgamewin.cpp:400
 #, kde-format
 msgid "New TCP/IP"
 msgstr "Uusi TCP/IP"
 
-#: kgamewin.cpp:401
+#: kgamewin.cpp:402
 #, kde-format
 msgid "Create a new standard TCP/IP network game"
 msgstr "Luo uusi tavallinen TCP/IP-verkkopeli"
 
-#: kgamewin.cpp:416
+#: kgamewin.cpp:417
 #, kde-format
 msgid "Join a Standard TCP/IP Network Game"
 msgstr "Liity tavalliseen TCP/IP-verkkopeliin"
 
-#: kgamewin.cpp:417
+#: kgamewin.cpp:418
 #, kde-format
 msgid "Join TCP/IP"
 msgstr "Liity TCP/IP:hen"
 
-#: kgamewin.cpp:419
+#: kgamewin.cpp:420
 #, kde-format
 msgid "Join a standard TCP/IP network game"
 msgstr "Liity tavalliseen TCP/IP-verkkopeliin"
 
-#: kgamewin.cpp:425
+#: kgamewin.cpp:426
 #, kde-format
 msgid "Display the Current Player's Goal"
 msgstr "Näytä nykyisen pelaajan tavoite"
 
-#: kgamewin.cpp:428
+#: kgamewin.cpp:429
 #, kde-format
 msgid "Display the current player's goal"
 msgstr "Näytä nykyisen pelaajan tavoite"
 
-#: kgamewin.cpp:435
+#: kgamewin.cpp:436
 #, kde-format
 msgid "Contextual Help"
 msgstr "Kontekstiohje"
 
-#: kgamewin.cpp:446
+#: kgamewin.cpp:447
 #, kde-format
 msgid "Lets the next player play"
 msgstr "Antaa pelivuoron seuraavalle pelaajalle"
 
-#: kgamewin.cpp:451
+#: kgamewin.cpp:452
 #, kde-format
 msgid "Finish moves"
 msgstr "Lopeta siirrot"
 
-#: kgamewin.cpp:453
+#: kgamewin.cpp:454
 #, kde-format
 msgid "Finish moving the current sprites"
 msgstr "Lopeta nykyisten pelihahmojen siirtely"
 
-#: kgamewin.cpp:579
+#: kgamewin.cpp:580
 #, kde-format
 msgid ""
 "World definition file not found - Verify your installation<br>Program cannot "
@@ -3206,34 +3212,34 @@ msgstr ""
 "Maailman määritystiedostoa ei löytynyt – tarkista asennuksesi<br>Ohjelma ei "
 "voi jatkaa"
 
-#: kgamewin.cpp:799
+#: kgamewin.cpp:800
 #, kde-format
 msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
 msgstr ""
 "<font color=\"red\">%1 valloitti maan %2 pelaajalta %3</font>|/|<font color="
 "\"red\">%1 valloitti $[gen %2] pelaajalta %3</font>"
 
-#: kgamewin.cpp:823
+#: kgamewin.cpp:824
 #, kde-format
 msgid "%1, you are defeated! Bye, bye..."
 msgstr "%1, sinut on kukistettu! Tervemenoa."
 
-#: kgamewin.cpp:895
+#: kgamewin.cpp:896
 #, kde-format
 msgid "%1: it is up to you again"
 msgstr "%1: valinta on taas sinun"
 
-#: kgamewin.cpp:907
+#: kgamewin.cpp:908
 #, kde-format
 msgid "%1 won!"
 msgstr "%1 voitti!"
 
-#: kgamewin.cpp:910
+#: kgamewin.cpp:911
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
 msgstr "<big><b>%1</b>, sinä voitit!</big>"
 
-#: kgamewin.cpp:914
+#: kgamewin.cpp:915
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
@@ -3242,45 +3248,45 @@ msgstr ""
 "<br>Pelaajan tavoite muotoiltiin näin:<br><i>%1</i><br><br>Haluatko pelata "
 "uudestaan?"
 
-#: kgamewin.cpp:920
+#: kgamewin.cpp:921
 #, kde-format
 msgid "<br>You conquered all the world!"
 msgstr "<br>Valloitit koko maailman!"
 
-#: kgamewin.cpp:924
+#: kgamewin.cpp:925
 #, kde-format
 msgid "<br>He conquered all the world!"
 msgstr "<br>Hän valloitti koko maailman!"
 
-#: kgamewin.cpp:1052
+#: kgamewin.cpp:1053
 #, kde-format
 msgid "Do you want to quit the game?"
 msgstr "Haluatko lopettaa pelin?"
 
-#: kgamewin.cpp:1054
+#: kgamewin.cpp:1055
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
 msgstr "Lopeta peli"
 
-#: kgamewin.cpp:1074
+#: kgamewin.cpp:1075
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
 msgstr "Haluatko tallentaa pelisi ennen kuin lopetat?"
 
-#: kgamewin.cpp:1120
+#: kgamewin.cpp:1121
 #, kde-format
 msgctxt "@title:window"
 msgid "KsirK - Load Game"
 msgstr "KsirK – Lataa peli"
 
-#: kgamewin.cpp:1158
+#: kgamewin.cpp:1159
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
 msgstr "Odotetaan %1 verkkopelaajan yhdistävän."
 
 # KONTEKSTI: %1 = number of armies, %2 = name of attacking player, %3 = name of attacking country, %4 = name of country to defend
-#: kgamewin.cpp:1237
+#: kgamewin.cpp:1238
 #, kde-format
 msgid ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
@@ -3302,78 +3308,75 @@ msgstr[1] ""
 "$[part %4]</font>?"
 
 # KONTEKSTI: Defend with 1 army
-#: kgamewin.cpp:1266
+#: kgamewin.cpp:1267
 #, kde-format
 msgid "Defend 1"
 msgstr "Puolusta yhdellä"
 
 # KONTEKSTI: Defend with 2 armies
-#: kgamewin.cpp:1267
+#: kgamewin.cpp:1268
 #, kde-format
 msgid "Defend 2"
 msgstr "Puolusta kahdella"
 
 # Samassa muodossa kuin viestien ”Defend 1” ja ”Defend 2” suomennokset
-#: kgamewin.cpp:1268
+#: kgamewin.cpp:1269
 #, kde-format
 msgid "Defend-Auto"
 msgstr "Puolusta automaattisesti"
 
-#: kgamewin.cpp:1387
+#: kgamewin.cpp:1388
 #, kde-format
 msgid "Waiting for %1 players to connect"
 msgstr "Odotetaan %1 pelaajan yhdistävän"
 
-#: kgamewin.cpp:1777 kgamewin.cpp:1817
-#, kde-format
+#: kgamewin.cpp:1778 kgamewin.cpp:1818
 msgid "There is no country here!"
 msgstr "Siellä ei ole maata!"
 
-#: kgamewin.cpp:1781 kgamewin.cpp:1822
+#: kgamewin.cpp:1782 kgamewin.cpp:1823
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
 msgstr "Et ole ensimmäisen maan omistaja: %1!"
 
-#: kgamewin.cpp:1785
+#: kgamewin.cpp:1786
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
 msgstr "Et ole toisen maan omistaja: %1!"
 
-#: kgamewin.cpp:1789 kgamewin.cpp:1833
+#: kgamewin.cpp:1790 kgamewin.cpp:1834
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr ""
 "Yrität siirtää armeijoita maasta %1 itseensä!|/|Yrität siirtää armeijoita "
 "$[elat %1] itseensä!"
 
-#: kgamewin.cpp:1794 kgamewin.cpp:1839
+#: kgamewin.cpp:1795 kgamewin.cpp:1840
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
 msgstr "%1 ja %2 eivät ole naapureita!"
 
-#: kgamewin.cpp:1800
+#: kgamewin.cpp:1801
 #, kde-format
 msgid "Moving armies from %1 to %2."
 msgstr ""
 "Siirretään armeijoita maasta %1 maahan %2.|/|Siirretään armeijoita $[elat "
 "%1] $[illat %2]."
 
-#: kgamewin.cpp:1828
+#: kgamewin.cpp:1829
 #, kde-format
 msgid "You are the owner of the second country: %1!"
 msgstr "Et ole toisen maista (%1) omistaja!"
 
-#: kgamewin.cpp:1846
-#, kde-format
+#: kgamewin.cpp:1847
 msgid "Ready to fight!"
 msgstr "Valmiina taisteluun!"
 
-#: kgamewin.cpp:1940
-#, kde-format
+#: kgamewin.cpp:1941
 msgid "<font color=\"orange\">No country here!</font>"
 msgstr "<font color=\"orange\">Täällä ei ole maata!</font>"
 
-#: kgamewin.cpp:1948
+#: kgamewin.cpp:1949
 #, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr ""
@@ -3381,7 +3384,7 @@ msgstr ""
 "\">Et ole $[gen %1] omistaja!</font>"
 
 # %2 on maa.
-#: kgamewin.cpp:1955
+#: kgamewin.cpp:1956
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr ""
@@ -3389,19 +3392,18 @@ msgstr ""
 "\"orange\">Vain %1 armeijaa $[iness %2]!</font>"
 
 # %2 on maa.
-#: kgamewin.cpp:2095
+#: kgamewin.cpp:2096
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
 msgstr ""
 "%1, puolustat ainoalla armeijallasi maassa %2.|/|%1, puolustat ainoalla "
 "armeijallasi $[iness %2]."
 
-#: kgamewin.cpp:2319
-#, kde-format
+#: kgamewin.cpp:2320
 msgid "Exchange armies again or continue?"
 msgstr "Vaihdetaanko armeijoita vielä vai jatketaanko?"
 
-#: kgamewin.cpp:2344
+#: kgamewin.cpp:2345
 #, kde-format
 msgid ""
 "You must distribute\n"
@@ -3412,52 +3414,47 @@ msgstr ""
 
 # pmap: =:gen=KsirKin:
 # pmap: =:elat=KsirKistä:
-#: kgamewin.cpp:2344 main.cpp:42
+#: kgamewin.cpp:2345 main.cpp:42
 #, kde-format
 msgid "KsirK"
 msgstr "KsirK"
 
-#: kgamewin.cpp:2484
-#, kde-format
+#: kgamewin.cpp:2485
 msgid "Battle ongoing."
 msgstr "Taistelu käynnissä."
 
-#: kgamewin.cpp:2605 kgamewin.cpp:2616 kgamewin.cpp:2639
+#: kgamewin.cpp:2606 kgamewin.cpp:2617 kgamewin.cpp:2640
 #, kde-format
 msgid "%1, it is up to you."
 msgstr "%1, valinta on sinun."
 
-#: kgamewin.cpp:2668
+#: kgamewin.cpp:2669
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
 msgstr "Haluatko varmasti lopettaa nykyisen pelisi ja aloittaa toisen?"
 
-#: kgamewin.cpp:2668
+#: kgamewin.cpp:2669
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Aloita uusi peli"
 
-#: kgamewin.cpp:2924
-#, kde-format
+#: kgamewin.cpp:2925
 msgid "<b>KsirK quick Introduction</b>"
 msgstr "<b>KsirKin pikaesittely</b>"
 
-#: kgamewin.cpp:2928
-#, kde-format
+#: kgamewin.cpp:2929
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr ""
 "Hyökkäykset ja siirrot tehdään vetämällä ja pudottamalla maasta armeijoita "
 "sen naapuriin."
 
-#: kgamewin.cpp:2932
-#, kde-format
+#: kgamewin.cpp:2933
 msgid "Start a new game or join a network game with the menu or the toolbar..."
 msgstr "Aloita uusi peli tai liity verkkopeliin valikosta tai työkaluriviltä…"
 
-#: kgamewin.cpp:2936
-#, kde-format
+#: kgamewin.cpp:2937
 msgid ""
 "and then let the system guide you through messages and tooltips appearing on "
 "buttons when hovering above them. You can disable bubble help in the options "
@@ -3467,7 +3464,7 @@ msgstr ""
 "ilmestyvät painikkeisiin pitäessäsi hiirtä niiden yllä). Puhekuplaohjeet "
 "voit poistaa käytöstä asetuksista."
 
-#: kgamewin.cpp:2943
+#: kgamewin.cpp:2944
 #, kde-format
 msgid "Don't show messages anymore"
 msgstr "Älä näytä enää viestejä"
@@ -3841,17 +3838,17 @@ msgstr "Näytä ohje"
 msgid "Show number of armies on countries"
 msgstr "Näytä maissa olevien armeijoiden määrä"
 
-#: SaveLoad/ksirkgamexmlhandler.cpp:57
+#: SaveLoad/ksirkgamexmlhandler.cpp:58
 #, kde-format
 msgid "Wrong save game format. Waited %1 and got %2!"
 msgstr "Väärä pelin tallennusmuoto. Odotettiin muotoa %1 ja saatiin %2!"
 
-#: SaveLoad/ksirkgamexmlhandler.cpp:58
+#: SaveLoad/ksirkgamexmlhandler.cpp:59
 #, kde-format
 msgid "KsirK - Cannot load!"
 msgstr "KsirK – Ei voida ladata!"
 
-#: SaveLoad/ksirkgamexmlhandler.cpp:139
+#: SaveLoad/ksirkgamexmlhandler.cpp:140
 #, kde-format
 msgid "Current player is: %1"
 msgstr "Nykyinen pelaaja on: %1"
