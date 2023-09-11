@@ -465,7 +465,9 @@ void KGameWindow::slotSaveGame()
     QFile file(m_fileName);
     file.open(QIODevice::WriteOnly);
     QTextStream ofs(&file);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     ofs.setCodec("UTF-8");
+#endif
     saveXml(ofs);
     m_message->setMessageTimeout(3000);
     m_message->showMessage(i18n("Game saved to %1",m_fileName),
