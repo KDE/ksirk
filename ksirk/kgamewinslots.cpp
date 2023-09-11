@@ -47,6 +47,7 @@
 #include <fstream>
 
 // include files for QT
+#include <QRegExp>
 #include <QCursor>
 #include <QScrollBar>
 #include <QUuid>

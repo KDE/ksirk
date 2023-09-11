@@ -24,6 +24,9 @@
 
 #include "ksirk_debug.h"
 
+#include <QRegExp>
+#include <QRegExpValidator>
+
 namespace Ksirk
 {
 

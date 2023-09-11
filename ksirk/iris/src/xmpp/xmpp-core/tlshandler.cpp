@@ -22,6 +22,7 @@
 #include "xmpp.h"
 
 #include <QTimer>
+#include <QRegExp>
 #include "qca.h"
 
 using namespace XMPP;

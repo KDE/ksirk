@@ -22,6 +22,8 @@
 
 // #include <set>
 #include <QTextStream>
+#include <QString>
+#include <QList>
 
 #include <QDataStream>
 
