@@ -1690,7 +1690,11 @@ void KGameWindow::broadcastChangeItem(KMessageParts& strings, int id, bool log)
   changeItem(strings, id, log );
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+void KGameWindow::enterEvent(QEnterEvent* /*ev*/)
+#else
 void KGameWindow::enterEvent(QEvent* /*ev*/)
+#endif
 {
 //   qCDebug(KSIRK_LOG) << "KGameWindow::enterEvent()";
   // Restart the AIs threads

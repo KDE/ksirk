@@ -676,7 +676,11 @@ protected:
   /**
     * Reimplementation of the inherited function : starts the timer.
     */
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+  void enterEvent(QEnterEvent* ev) override;
+#else
   void enterEvent(QEvent* ev) override;
+#endif
 
   /**
     * Reimplementation of the inherited function : stops the timer.
