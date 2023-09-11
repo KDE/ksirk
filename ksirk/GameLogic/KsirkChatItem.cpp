@@ -145,5 +145,3 @@ KsirkChatItem& KsirkChatItem::operator<<(const QPixmap& pixmap)
   m_order.push_back(Pixmap);
   return *this;
 }
-
-#include "moc_KsirkChatItem.cpp"
