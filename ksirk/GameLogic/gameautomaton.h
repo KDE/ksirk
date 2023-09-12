@@ -135,6 +135,8 @@ class GameAutomaton : public KGame
 {
 Q_OBJECT
     
+    friend class GameSequence;
+
 public:
   /**
     * This hackish member is here to allow AIs to run only when goals have been
@@ -234,7 +236,7 @@ public:
     * @param unused
     * @return the player whose turn it will be
     */
-  KPlayer* nextPlayer(KPlayer *last,bool /*exclusive*/) override;
+  KPlayer* doNextPlayer(KPlayer *last,bool /*exclusive*/);
   
   /** 
     * Retrives the number of player playing from the network.

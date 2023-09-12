@@ -34,6 +34,7 @@
 #include "Dialogs/joingame.h"
 #include "Jabber/kmessagejabber.h"
 #include "newplayerdata.h"
+#include "gamesequence.h"
 
 #include <QLayout>
 #include <QSpinBox>
@@ -172,7 +173,9 @@ GameAutomaton::GameAutomaton() :
   m_skinId = m_skin.registerData(dataHandler(),KGamePropertyBase::PolicyDirty,QString("m_skin"));
 //   m_currentPlayerId = m_currentPlayer.registerData(dataHandler(),KGamePropertyBase::PolicyDirty,QString("m_currentPlayer"));
 //   m_events.registerData(dataHandler(),KGamePropertyBase::PolicyDirty,QString("m_events"));
-  
+
+    setGameSequence(new GameSequence(this));
+
   // Connect the most important slot which tells us which properties are
   // changed
   connect(this,&KGame::signalPropertyChanged,
@@ -1072,7 +1075,7 @@ void GameAutomaton::createIO(KPlayer *player,KGameIO::IOMode io)
 // Note: The default behaviour as we have it here is done automatically
 //        by the lib, too. So if all players player one after the other
 //        this functions is NOT needed at all.
-KPlayer * GameAutomaton::nextPlayer(KPlayer */*last*/,bool /*exclusive*/)
+KPlayer * GameAutomaton::doNextPlayer(KPlayer */*last*/,bool /*exclusive*/)
 {
 //   qCDebug(KSIRK_LOG) << last->name();
 //   m_game->setCurrentPlayerToNext();

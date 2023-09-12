@@ -31,6 +31,7 @@ add_executable(ksirk)
 
 target_sources(ksirk PRIVATE
     GameLogic/gameautomaton.cpp
+    GameLogic/gamesequence.cpp
     kgamewin.cpp
     kgamewinslots.cpp
     gestionSprites.cpp
