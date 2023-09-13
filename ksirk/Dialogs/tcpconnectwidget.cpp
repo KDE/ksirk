@@ -24,8 +24,8 @@
 
 #include "ksirk_debug.h"
 
-#include <QRegExp>
-#include <QRegExpValidator>
+#include <QRegularExpression>
+#include <QRegularExpressionValidator>
 
 namespace Ksirk
 {
@@ -34,8 +34,8 @@ TcpConnectWidget::TcpConnectWidget(QWidget *parent) : QWidget(parent), Ui::TcpCo
 {
   qCDebug(KSIRK_LOG) << "";
   setupUi(this);
-  QRegExp rx(".+");
-  QRegExpValidator *v = new QRegExpValidator(rx, this);
+  QRegularExpression rx(QStringLiteral("^.+$"));
+  auto *v = new QRegularExpressionValidator(rx, this);
   hostEdit->setValidator(v);
 
   connect(nextButton,&QAbstractButton::clicked,this,&TcpConnectWidget::next);
