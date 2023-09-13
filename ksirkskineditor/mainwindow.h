@@ -45,7 +45,6 @@
 class QAction;
 class KRecentFilesAction;
 
-class QGraphicsScene;
 class QGraphicsView;
 class QListWidgetItem;
 class QGraphicsPixmapItem;
@@ -66,6 +65,7 @@ namespace KsirkSkinEditor
 {
   class PixmapItem;
   class Goal;
+  class Scene;
   
 /**
   * This is the main window.
@@ -252,7 +252,7 @@ private:
   QAction * m_saveGameAction;
 
   QGraphicsView* m_mapView;
-  QGraphicsScene* m_mapScene;
+  Scene* m_mapScene;
   
   SpriteType m_selectedSprite;
 

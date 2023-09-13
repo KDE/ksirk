@@ -36,7 +36,7 @@ KsirkConfigurationDialog::KsirkConfigurationDialog (
 
   addPage( w, i18n("Preferences"), "games-config-options"/*, i18n("Preferences"), false*/);
   connect(m_widget->kcfg_showArmiesNumbers, &QCheckBox::stateChanged, this, &KsirkConfigurationDialog::armiesNumberShowingChanged);
-  connect(this, SIGNAL(settingsChanged()), this, SLOT(updateSettings()) );
+  connect(this, &KConfigDialog::settingsChanged, this, &KsirkConfigurationDialog::updateSettings);
   setHelp(QStringLiteral("configuration"), QStringLiteral("ksirk"));
 }
 

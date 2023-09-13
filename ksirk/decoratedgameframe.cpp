@@ -63,7 +63,7 @@ DecoratedGameFrame::DecoratedGameFrame(QWidget* parent,
   initMoveMenu();
 
   // redirect the mouse move event to the main windows
-  connect(this, SIGNAL(mouseMoveEventReceived(QMouseEvent*)), automaton->game(), SLOT(mouseMoveEvent(QMouseEvent*)));
+  connect(this, &DecoratedGameFrame::mouseMoveEventReceived, automaton->game(), &KGameWindow::mouseMoveEvent);
 }
 
 DecoratedGameFrame::~DecoratedGameFrame()

@@ -79,6 +79,7 @@
 #include <KAboutData>
 #define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
 #include <libkdegamesprivate/kgame/kgamechat.h>
+#include <libkdegamesprivate/kgame/kmessageserver.h>
 #include <sys/utsname.h>
 
 namespace Ksirk
@@ -166,10 +167,8 @@ KGameWindow::KGameWindow(QWidget* parent) :
   KsirkChatDelegate* chatDelegate = new KsirkChatDelegate(m_bottomDock);
   // m_bottomDock is the KGameChat parent widget
   m_chatDlg = new KGameChat(m_automaton, 10000, m_bottomDock,chatModel,chatDelegate);
-  connect(m_chatDlg,
-          SIGNAL(signalReturnPressed(QString)),
-          this,
-          SLOT(slotChatMessage()));
+  // TODO: signal does not exist in libkdegames 7.5, research if it ever existed, perhaps emitted from KGameChat::returnPressed
+  // connect(m_chatDlg, SIGNAL(signalReturnPressed(QString)), this, SLOT(slotChatMessage()));
 
 
   m_upChatFloatPix.load(QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Images/2UpArrow.png"));
@@ -182,18 +181,9 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_floatChatButton = new QPushButton(m_upChatFloatPix,"");
   m_reduceChatButton->setFixedSize(30,30);
   m_floatChatButton->setFixedSize(30,30);
-  connect(m_floatChatButton,
-          SIGNAL(clicked()),
-          this,
-          SLOT(slotChatFloatButtonPressed()));
-  connect(m_bottomDock,
-          SIGNAL(topLevelChanged(bool)),
-          this,
-          SLOT(slotChatFloatChanged(bool)));
-  connect(m_reduceChatButton,
-          SIGNAL(clicked()),
-          this,
-          SLOT(slotChatReduceButton()));
+  connect(m_floatChatButton, &QAbstractButton::clicked, this, &KGameWindow::slotChatFloatButtonPressed);
+  connect(m_bottomDock, &QDockWidget::topLevelChanged, this, &KGameWindow::slotChatFloatChanged);
+  connect(m_reduceChatButton, &QAbstractButton::clicked, this, &KGameWindow::slotChatReduceButton);
 
   newMessageChatLayout->addWidget(m_titleChatMsg);
   m_titleChatMsg->hide();
@@ -226,14 +216,14 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_mainMenu->pbJabberGame->hide();
   
   m_newGameDialog = new NewGameWidget(m_newGameSetup, m_centralWidget);
-  connect(m_newGameDialog,SIGNAL(newGameOK()), this, SLOT(slotNewGameNext()));
-  connect(m_newGameDialog,SIGNAL(newGameKO()), this, SLOT(slotNewGameKO()));
+  connect(m_newGameDialog, &NewGameWidget::newGameOK, this, &KGameWindow::slotNewGameNext);
+  connect(m_newGameDialog, &NewGameWidget::newGameKO, this, &KGameWindow::slotNewGameKO);
   m_newPlayerWidget = new KPlayerSetupWidget(m_centralWidget);
-  connect(m_newPlayerWidget,SIGNAL(next()),this,SLOT(slotNewPlayerNext()));
-  connect(m_newPlayerWidget,SIGNAL(previous()),this,SLOT(slotNewPlayerPrevious()));
-  connect(m_newPlayerWidget,SIGNAL(cancel()),this,SLOT(slotNewPlayerCancel()));
-  connect(m_newPlayerWidget,SIGNAL(previous()),this,SLOT(slotNewPlayerPrevious()));
-  connect(m_newPlayerWidget,SIGNAL(cancel()),this,SLOT(slotNewPlayerCancel()));
+  connect(m_newPlayerWidget, &KPlayerSetupWidget::next, this, &KGameWindow::slotNewPlayerNext);
+  connect(m_newPlayerWidget, &KPlayerSetupWidget::previous, this, &KGameWindow::slotNewPlayerPrevious);
+  connect(m_newPlayerWidget, &KPlayerSetupWidget::cancel, this, &KGameWindow::slotNewPlayerCancel);
+  connect(m_newPlayerWidget, &KPlayerSetupWidget::previous, this, &KGameWindow::slotNewPlayerPrevious);
+  connect(m_newPlayerWidget, &KPlayerSetupWidget::cancel, this, &KGameWindow::slotNewPlayerCancel);
   qCDebug(KSIRK_LOG) << "create the Jabber widget if it doesn't exist";
   m_jabberGameWidget = new KsirkJabberGameWidget(m_centralWidget);
   m_centralWidget->addWidget(m_mainMenu); // MAINMENU_INDEX 0
@@ -241,15 +231,15 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_centralWidget->addWidget(m_jabberGameWidget); // JABBERGAME_INDEX 2
   m_centralWidget->addWidget(m_newPlayerWidget);  // NEWPLAYER_INDEX 3
   m_newGameSummaryWidget = new NewGameSummaryWidget(m_centralWidget);
-  connect(m_newGameSummaryWidget->finishButton,SIGNAL(clicked(bool)),this,SLOT(slotStartNewGame()));
-  connect(m_newGameSummaryWidget,SIGNAL(previous()),this,SLOT(slotNewPlayerPrevious()));
-  connect(m_newGameSummaryWidget,SIGNAL(cancel()),this,SLOT(slotNewPlayerCancel()));
+  connect(m_newGameSummaryWidget->finishButton, &QAbstractButton::clicked, this, &KGameWindow::slotStartNewGame);
+  connect(m_newGameSummaryWidget, &NewGameSummaryWidget::previous, this, &KGameWindow::slotNewPlayerPrevious);
+  connect(m_newGameSummaryWidget, &NewGameSummaryWidget::cancel, this, &KGameWindow::slotNewPlayerCancel);
   m_centralWidget->addWidget(m_newGameSummaryWidget);  // NEWGAMESUMMARY_INDEX 4
   m_tcpConnectWidget = new TcpConnectWidget(this);
   m_centralWidget->addWidget(m_tcpConnectWidget);  // TCPCONNECT_INDEX 5
-  connect(m_tcpConnectWidget,SIGNAL(next()),this,SLOT(slotConnectToServer()));
-  connect(m_tcpConnectWidget,SIGNAL(previous()),this,SLOT(slotTcpConnectPrevious()));
-  connect(m_tcpConnectWidget,SIGNAL(cancel()),this,SLOT(slotTcpConnectCancel()));
+  connect(m_tcpConnectWidget, &TcpConnectWidget::next, this, &KGameWindow::slotConnectToServer);
+  connect(m_tcpConnectWidget, &TcpConnectWidget::previous, this, &KGameWindow::slotTcpConnectPrevious);
+  connect(m_tcpConnectWidget, &TcpConnectWidget::cancel, this, &KGameWindow::slotTcpConnectCancel);
   m_centralWidget->setCurrentIndex(MAINMENU_INDEX);
   m_currentDisplayedWidget = MainMenu;
   m_bottomDock->hide();
@@ -265,32 +255,32 @@ KGameWindow::KGameWindow(QWidget* parent) :
   setMouseTracking(true);
 
   m_timer.setSingleShot(true);
-  connect(&m_timer,SIGNAL(timeout()),this,SLOT(evenementTimer()));
+  connect(&m_timer, &QTimer::timeout, this, &KGameWindow::evenementTimer);
 
   m_initialPresence = XMPP::Status ( "", "", 5, true );
 
   qCDebug(KSIRK_LOG) << "Connecting Jabber signals";
-  QObject::connect ( m_jabberClient, SIGNAL (csDisconnected()), this, SLOT (slotCSDisconnected()) );
-  QObject::connect ( m_jabberClient, SIGNAL (csError(int)), this, SLOT (slotCSError(int)) );
-  QObject::connect ( m_jabberClient, SIGNAL (tlsWarning(QCA::TLS::IdentityResult,QCA::Validity)), this, SLOT (slotHandleTLSWarning(QCA::TLS::IdentityResult,QCA::Validity)) );
-  QObject::connect ( m_jabberClient, SIGNAL (connected()), this, SLOT (slotConnected()) );
-  QObject::connect ( m_jabberClient, SIGNAL (error(JabberClient::ErrorCode)), this, SLOT (slotClientError(JabberClient::ErrorCode)) );
+  connect(m_jabberClient, &JabberClient::csDisconnected, this, &KGameWindow::slotCSDisconnected);
+  connect(m_jabberClient, &JabberClient::csError, this, &KGameWindow::slotCSError);
+  connect(m_jabberClient, &JabberClient::tlsWarning, this, &KGameWindow::slotHandleTLSWarning);
+  connect(m_jabberClient, &JabberClient::connected, this, &KGameWindow::slotConnected);
+  connect(m_jabberClient, &JabberClient::error, this, &KGameWindow::slotClientError);
   
-//   QObject::connect ( m_jabberClient, SIGNAL (subscription(XMPP::Jid,QString)), this, SLOT (slotSubscription(XMPP::Jid,QString)) );
-  QObject::connect ( m_jabberClient, SIGNAL (rosterRequestFinished(bool)), this, SLOT (slotRosterRequestFinished(bool)) );
-//   QObject::connect ( m_jabberClient, SIGNAL (newContact(XMPP::RosterItem)), this, SLOT (slotContactUpdated(XMPP::RosterItem)) );
-//   QObject::connect ( m_jabberClient, SIGNAL (contactUpdated(XMPP::RosterItem)), this, SLOT (slotContactUpdated(XMPP::RosterItem)) );
-//   QObject::connect ( m_jabberClient, SIGNAL (contactDeleted(XMPP::RosterItem)), this, SLOT (slotContactDeleted(XMPP::RosterItem)) );
-//   QObject::connect ( m_jabberClient, SIGNAL (resourceAvailable(XMPP::Jid,XMPP::Resource)), this, SLOT (slotResourceAvailable(XMPP::Jid,XMPP::Resource)) );
-//   QObject::connect ( m_jabberClient, SIGNAL (resourceUnavailable(XMPP::Jid,XMPP::Resource)), this, SLOT (slotResourceUnavailable(XMPP::Jid,XMPP::Resource)) );
-  QObject::connect ( m_jabberClient, SIGNAL (messageReceived(XMPP::Message)), this, SLOT (slotReceivedMessage(XMPP::Message)) );
-//   QObject::connect ( m_jabberClient, SIGNAL (incomingFileTransfer()), this, SLOT (slotIncomingFileTransfer()) );
-  QObject::connect ( m_jabberClient, SIGNAL (groupChatJoined(XMPP::Jid)), this, SLOT (slotGroupChatJoined(XMPP::Jid)) );
-  QObject::connect ( m_jabberClient, SIGNAL (groupChatLeft(XMPP::Jid)), this, SLOT (slotGroupChatLeft(XMPP::Jid)) );
-  QObject::connect ( m_jabberClient, SIGNAL (groupChatPresence(XMPP::Jid,XMPP::Status)), this, SLOT (slotGroupChatPresence(XMPP::Jid,XMPP::Status)) );
+//   connect(m_jabberClient, &JabberClient::subscription, this, &KGameWindow::slotSubscription);
+  connect(m_jabberClient, &JabberClient::rosterRequestFinished, this, &KGameWindow::slotRosterRequestFinished);
+//   connect(m_jabberClient, &JabberClient::newContact(XMPP::RosterItem)), this, SLOT (slotContactUpdated(XMPP::RosterItem)) );
+//   connect(m_jabberClient, &JabberClient::contactUpdated, this, &KGameWindow::slotContactUpdated);
+//   connect(m_jabberClient, &JabberClient::contactDeleted, this, &KGameWindow::slotContactDeleted);
+//   connect(m_jabberClient, &JabberClient::resourceAvailable, this, &KGameWindow::slotResourceAvailable);
+//   connect(m_jabberClient, &JabberClient::resourceUnavailable, this, &KGameWindow::slotResourceUnavailable);
+  connect(m_jabberClient, &JabberClient::messageReceived, this, &KGameWindow::slotReceivedMessage);
+//   connect(m_jabberClient, &JabberClient::incomingFileTransfer, this, &KGameWindow::slotIncomingFileTransfer);
+  connect(m_jabberClient, &JabberClient::groupChatJoined, this, &KGameWindow::slotGroupChatJoined);
+  connect(m_jabberClient, &JabberClient::groupChatLeft, this, &KGameWindow::slotGroupChatLeft);
+  connect(m_jabberClient, &JabberClient::groupChatPresence, this, &KGameWindow::slotGroupChatPresence);
   
-  QObject::connect ( m_jabberClient, SIGNAL (groupChatError(XMPP::Jid,int,QString)), this, SLOT (slotGroupChatError(XMPP::Jid,int,QString)) );
-  QObject::connect ( m_jabberClient, SIGNAL (debugMessage(QString)), this, SLOT (slotClientDebugMessage(QString)) );
+  connect(m_jabberClient, &JabberClient::groupChatError, this, &KGameWindow::slotGroupChatError);
+  connect(m_jabberClient, &JabberClient::debugMessage, this, &KGameWindow::slotClientDebugMessage);
   
   m_jabberClient->setUseXMPP09 ( true );
 //     m_jabberClient->setUseSSL ( true );
@@ -313,7 +303,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   identity.name = "KsirK";
   m_jabberClient->setDiscoIdentity(identity);
 
-  connect (this, SIGNAL(newJabberGame(QString,int,QString)), m_automaton, SIGNAL(newJabberGame(QString,int,QString)));
+  connect (this, &KGameWindow::newJabberGame, m_automaton, &GameAutomaton::newJabberGame);
 
   m_automaton->skin("skins/default");
 }
@@ -384,7 +374,7 @@ void KGameWindow::initActions()
   m_jabberAction-> setIconText(i18n("Jabber"));
   actionCollection()->setDefaultShortcut(m_jabberAction, Qt::CTRL | Qt::Key_J);
   m_jabberAction->setStatusTip(i18n("Allow to connect to a KsirK Jabber Multi User Gaming Room to create new games or to join present games"));
-  connect(m_jabberAction,SIGNAL(triggered(bool)),this,SLOT(slotJabberGame()));
+  connect(m_jabberAction, &QAction::triggered, this, &KGameWindow::slotJabberGame);
   qCDebug(KSIRK_LOG) << "Adding action game_jabber";
   actionCollection()->addAction("game_jabber", m_jabberAction);
 
@@ -400,7 +390,7 @@ void KGameWindow::initActions()
   newSocketAction->setIconText(i18n("New TCP/IP"));
   actionCollection()->setDefaultShortcut(newSocketAction, Qt::CTRL | Qt::Key_T);
   newSocketAction->setStatusTip(i18n("Create a new standard TCP/IP network game"));
-  connect(newSocketAction,SIGNAL(triggered(bool)),this,SLOT(slotNewSocketGame()));
+  connect(newSocketAction, &QAction::triggered, this, &KGameWindow::slotNewSocketGame);
   qCDebug(KSIRK_LOG) << "Adding action game_new_socket";
   actionCollection()->addAction("game_new_socket", newSocketAction);
   
@@ -418,7 +408,7 @@ void KGameWindow::initActions()
   joinAction->setIconText(i18n("Join TCP/IP"));
   actionCollection()->setDefaultShortcut(joinAction, Qt::CTRL | Qt::SHIFT | Qt::Key_J);
   joinAction->setStatusTip(i18n("Join a standard TCP/IP network game"));
-  connect(joinAction,SIGNAL(triggered(bool)),this,SLOT(slotJoinNetworkGame()));
+  connect(joinAction, &QAction::triggered, this, &KGameWindow::slotJoinNetworkGame);
    qCDebug(KSIRK_LOG) << "Adding action game_join_socket";
   actionCollection()->addAction("game_join_socket", joinAction);
 
@@ -427,7 +417,7 @@ void KGameWindow::initActions()
   m_goalAction-> setIconText("  ");
   actionCollection()->setDefaultShortcut(m_goalAction, Qt::CTRL | Qt::Key_G);
   m_goalAction->setStatusTip(i18n("Display the current player's goal"));
-  connect(m_goalAction,SIGNAL(triggered(bool)),this,SLOT(slotShowGoal()));
+  connect(m_goalAction, &QAction::triggered, this, &KGameWindow::slotShowGoal);
   m_goalAction->setVisible(false);
   qCDebug(KSIRK_LOG) << "Adding action game_goal";
   actionCollection()->addAction("game_goal", m_goalAction);
@@ -436,14 +426,14 @@ void KGameWindow::initActions()
         i18n("Contextual Help"), this);
   m_contextualHelpAction->setEnabled(false);
   actionCollection()->setDefaultShortcut(m_contextualHelpAction, Qt::CTRL | Qt::Key_F1);
-  connect(m_contextualHelpAction,SIGNAL(triggered(bool)),this,SLOT(slotContextualHelp()));
+  connect(m_contextualHelpAction, &QAction::triggered, this, &KGameWindow::slotContextualHelp);
   actionCollection()->addAction("help_contextual", m_contextualHelpAction);
 
 
   QString nextPlayerActionImageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + '/' + CM_NEXTPLAYER);
   m_nextPlayerAction =  new QAction(QIcon(nextPlayerActionImageFileName),
         i18n("Next Player"), this);
-  connect(m_nextPlayerAction, SIGNAL(triggered(bool)), this, SLOT(slotNextPlayer()));
+  connect(m_nextPlayerAction, &QAction::triggered, this, &KGameWindow::slotNextPlayer);
   m_contextualHelpAction->setStatusTip(i18n("Lets the next player play"));
   m_nextPlayerAction->setEnabled(false);
   actionCollection()->addAction("game_nextplayer", m_nextPlayerAction);
@@ -452,7 +442,7 @@ void KGameWindow::initActions()
         i18n("Finish moves"), this);
   actionCollection()->setDefaultShortcut(finishMovesAction, Qt::Key_Space);
   finishMovesAction->setStatusTip(i18n("Finish moving the current sprites"));
-  connect(finishMovesAction,SIGNAL(triggered(bool)),this,SLOT(slotFinishMoves()));
+  connect(finishMovesAction, &QAction::triggered, this, &KGameWindow::slotFinishMoves);
   actionCollection()->addAction("game_finish_moves", finishMovesAction);
 
 
@@ -927,15 +917,8 @@ void KGameWindow::winner(const Player* player)
   }
   RestartOrExitDialogImpl* restartDia = new RestartOrExitDialogImpl(i18n(msg.toUtf8().data(),player->name()));
               
-  connect((QObject*)restartDia->newGameButton,
-              SIGNAL(clicked()),
-              this,
-              SLOT(slotNewGame()));
-
-  connect((QObject*)restartDia->exitButton,
-              SIGNAL(clicked()),
-              this,
-              SLOT(slotExit()));
+  connect(restartDia->newGameButton, &QAbstractButton::clicked, this, &KGameWindow::slotNewGame);
+  connect(restartDia->exitButton, &QAbstractButton::clicked, this, &KGameWindow::slotExit);
 
   restartDia->show();
 }
@@ -1095,7 +1078,7 @@ bool KGameWindow::queryClose()
     }
   }
 //   hide();
-  disconnect(&m_timer,SIGNAL(timeout()),this,SLOT(evenementTimer()));
+  disconnect(&m_timer, &QTimer::timeout, this, &KGameWindow::evenementTimer);
   disconnectMouse();
   m_mouseLocalisation = nullptr;
   m_automaton->setGameStatus(KGame::End);
@@ -1293,9 +1276,9 @@ void KGameWindow::createDefenseDialog()
   bottomLayout->addWidget(defAuto,0,2);
   topLayout->addWidget(m_labDef, 0, 0);
 
-  connect(def1, SIGNAL(clicked()), this, SLOT(slotWindowDef1()));
-  connect(def2, SIGNAL(clicked()), this, SLOT(slotWindowDef2()));
-  connect(defAuto, SIGNAL(clicked()), this, SLOT(slotDefAuto()));
+  connect(def1, &QAbstractButton::clicked, this, &KGameWindow::slotWindowDef1);
+  connect(def2, &QAbstractButton::clicked, this, &KGameWindow::slotWindowDef2);
+  connect(defAuto, &QAbstractButton::clicked, this, &KGameWindow::slotDefAuto);
 
   QVBoxLayout *dialogLayout = new QVBoxLayout(m_defenseDialog);
   dialogLayout->addWidget(widget);
@@ -2681,8 +2664,8 @@ bool KGameWindow::actionNewGame(GameAutomaton::NetworkGameType socket)
     m_automaton->removeAllGoals();
     m_automaton->state(GameLogic::GameAutomaton::INIT);
     m_automaton->savedState(GameLogic::GameAutomaton::INVALID);
-    QObject::disconnect((QObject*)m_automaton->messageServer(),SIGNAL(connectionLost(KMessageIO*)),
-                        (QObject*)m_automaton,SLOT(slotConnectionToClientBroken(KMessageIO*)));
+    disconnect(m_automaton->messageServer(), &KMessageServer::connectionLost,
+               m_automaton, &GameAutomaton::slotConnectionToClientBroken);
 
     m_automaton->disconnect();
 
@@ -2917,8 +2900,8 @@ void KGameWindow::optionsConfigure()
   KsirkConfigurationDialog* dialog = new KsirkConfigurationDialog( this, "settings", 
                                              KsirkSettings::self() ); 
 
-  connect(dialog,SIGNAL(armiesNumberShowingChanged(int)),
-      this,SLOT(slotArmiesNumberChanged(int)));
+  connect(dialog, &KsirkConfigurationDialog::armiesNumberShowingChanged,
+          this, &KGameWindow::slotArmiesNumberChanged);
 
   dialog->show();
 }
@@ -2952,7 +2935,7 @@ void KGameWindow::showMessage(const QString& message, quint32 delay, MessageShow
     {
       qCDebug(KSIRK_LOG) << "Creating KGamePopupItem";
       m_message  = new KGamePopupItem();
-      connect(m_message,SIGNAL(linkActivated(QString)),this,SLOT(slotDisableHelp(QString)));
+      connect(m_message, &KGamePopupItem::linkActivated, this, &KGameWindow::slotDisableHelp);
       m_scene_world->addItem(m_message);
       m_message->setSharpness(KGamePopupItem::Soft);
       m_message->setZValue(1000);
@@ -3153,7 +3136,7 @@ void KGameWindow::setupPopupMessage()
   {
     qCDebug(KSIRK_LOG);
     m_message  = new KGamePopupItem();
-    connect(m_message,SIGNAL(linkActivated(QString)),this,SLOT(slotDisableHelp(QString)));
+    connect(m_message, &KGamePopupItem::linkActivated, this, &KGameWindow::slotDisableHelp);
     m_scene_world->addItem(m_message);
     m_message->setSharpness(KGamePopupItem::Soft);
     QColor color = QColor(102,102,255);

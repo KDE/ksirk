@@ -39,7 +39,7 @@ KMessageJabber::KMessageJabber (const QString& peerJid, JabberClient* jabberClie
          
   connect(jabberClient, &JabberClient::resourceUnavailable, this, &KMessageJabber::slotResourceUnavailable);
                   
-  connect(jabberClient, SIGNAL(groupChatLeft(XMPP::Jid)), this, SLOT(slotGroupChatLeft(XMPP::Message)));
+  connect(jabberClient, &JabberClient::groupChatLeft, this, &KMessageJabber::slotGroupChatLeft);
 
   connect(jabberClient, &JabberClient::groupChatPresence, this, &KMessageJabber::slotGroupChatPresence);
 

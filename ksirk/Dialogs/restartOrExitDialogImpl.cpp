@@ -43,9 +43,9 @@ RestartOrExitDialogImpl::RestartOrExitDialogImpl(
   setupUi(this);
   messageLabel->setText(label);
   messageLabel->adjustSize();
-  QObject::connect((const QObject *)doNothingButton, SIGNAL(clicked()), this, SLOT(slotDoNothing()) );
-  QObject::connect((const QObject *)exitButton, SIGNAL(clicked()), this, SLOT(slotExit()) );
-  QObject::connect((const QObject *)newGameButton, SIGNAL(clicked()), this, SLOT(slotNewGame()) );
+  connect(doNothingButton, &QAbstractButton::clicked, this, &RestartOrExitDialogImpl::slotDoNothing);
+  connect(exitButton, &QAbstractButton::clicked, this, &RestartOrExitDialogImpl::slotExit);
+  connect(newGameButton, &QAbstractButton::clicked, this, &RestartOrExitDialogImpl::slotNewGame);
   adjustSize();
 }
 

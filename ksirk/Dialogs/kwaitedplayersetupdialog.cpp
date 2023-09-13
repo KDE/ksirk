@@ -56,8 +56,7 @@ KWaitedPlayerSetupDialog::KWaitedPlayerSetupDialog(
   qCDebug(KSIRK_LOG) << "KWaitedPlayerSetupDialog constructor";
   fillWaitedPlayersCombo();
   
-  QObject::connect((const QObject *)PushButton1, SIGNAL(clicked()), this, SLOT(slotOK()) );
-  
+  connect(PushButton1, &QAbstractButton::clicked, this, &KWaitedPlayerSetupDialog::slotOK);
 }
 
 KWaitedPlayerSetupDialog::~KWaitedPlayerSetupDialog(){

@@ -266,8 +266,8 @@ void PrivacyManager::block ( const QString& target )
 void PrivacyManager::block_getDefaultList_success ( const PrivacyList& l_ )
 {
 	PrivacyList l = l_;
-	disconnect ( this,SIGNAL (defaultListAvailable(PrivacyList)),this,SLOT (block_getDefault_success(PrivacyList)) );
-	disconnect ( this,SIGNAL (defaultListError()),this,SLOT (block_getDefault_error()) );
+	disconnect(this, &PrivacyManager::defaultListAvailable, this, &PrivacyManager::block_getDefaultList_success);
+	disconnect(this, &PrivacyManager::defaultListError, this, &PrivacyManager::block_getDefaultList_error);
 	block_waiting_ = false;
 	while ( !block_targets_.isEmpty() )
 		l.insertItem ( 0,PrivacyListItem::blockItem ( block_targets_.takeFirst() ) );
@@ -276,8 +276,8 @@ void PrivacyManager::block_getDefaultList_success ( const PrivacyList& l_ )
 
 void PrivacyManager::block_getDefaultList_error()
 {
-	disconnect ( this,SIGNAL (defaultListAvailable(PrivacyList)),this,SLOT (block_getDefault_success(PrivacyList)) );
-	disconnect ( this,SIGNAL (defaultListError()),this,SLOT (block_getDefault_error()) );
+	disconnect(this, &PrivacyManager::defaultListAvailable,this, &PrivacyManager::block_getDefaultList_success);
+	disconnect(this, &PrivacyManager::defaultListError, this, &PrivacyManager::block_getDefaultList_error);
 	block_waiting_ = false;
 	block_targets_.clear();
 }
