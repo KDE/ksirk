@@ -95,7 +95,7 @@ QPair< const Country*, const Country* > AIColsonPlayer::chooseBelligerant()
   if ( (Attack_DestCountry>=0) && (Attack_DestCountry<m_world->getCountries().size() ) )
     dest = m_world->getCountries().at(Attack_DestCountry);
 //   qCDebug(KSIRK_LOG) << "chose belligerants " << src << " and " << dest;
-  return qMakePair<const Country*, const Country*>(src,dest);
+  return qMakePair(src,dest);
 }
 
 /**

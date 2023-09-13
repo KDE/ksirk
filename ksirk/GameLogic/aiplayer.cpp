@@ -301,7 +301,7 @@ QPair<const Country*, const Country*> AIPlayer::chooseBelligerant()
       if (which == i )
       {
 //                qCDebug(KSIRK_LOG) << "OUT AIPlayer::chooseBelligerant() : " << endl ;
-         return qMakePair<const Country*, const Country*>(it.key(),it.value());
+         return qMakePair(it.key(),it.value());
       }
     }
   }
