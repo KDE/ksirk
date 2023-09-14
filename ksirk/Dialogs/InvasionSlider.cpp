@@ -22,62 +22,21 @@
 
 // application specific includes
 #include "InvasionSlider.h"
-#include "kgamewin.h"
-#include "mainMenu.h"
-#include "ksirkConfigDialog.h"
-#include "ksirksettings.h"
-#include "Sprites/animspritesgroup.h"
-#include "Sprites/arrowsprite.h"
-#include "GameLogic/aiplayer.h"
-#include "GameLogic/aiColsonPlayer.h"
-#include "GameLogic/aiplayerio.h"
-#include "GameLogic/country.h"
-#include "GameLogic/onu.h"
-#include "GameLogic/dice.h"
-#include "GameLogic/KMessageParts.h"
-#include "GameLogic/goal.h"
-#include "GameLogic/gameautomaton.h"
-#include "GameLogic/KsirkChatItem.h"
-#include "GameLogic/KsirkChatModel.h"
-#include "GameLogic/KsirkChatDelegate.h"
-#include "SaveLoad/ksirkgamexmlloader.h"
-#include "Sprites/backgnd.h"
-#include "Dialogs/kwaitedplayersetupdialog.h"
-#include "Dialogs/restartOrExitDialogImpl.h"
-#include "Dialogs/jabbergameui.h"
-#include "im.h"
-#include "xmpp_tasks.h"
 
+#include "kgamewin.h"
+#include "GameLogic/country.h"
+#include "ksirk_debug.h"
 
 //include files for QT
-#include <QAction>
-#include <QDockWidget>
 #include <QGridLayout>
-#include <QHostInfo>
-#include <QMovie>
-#include <QPushButton>
-#include <QString>
-#include <QSvgRenderer>
-#include <QTreeView>
-#include <QUuid>
+#include <QHBoxLayout>
 #include <QVBoxLayout>
+#include <QSlider>
+#include <QLabel>
+#include <QDialogButtonBox>
 
 // include files for KDE
 #include <KLocalizedString>
-#include <KConfig>
-#include <KStandardGameAction>
-#include <KStandardAction>
-#include <KActionCollection>
-#include "ksirk_debug.h"
-#include <phonon/mediaobject.h>
-#include <KGamePopupItem>
-#include <KToolBar>
-#include <KAboutData>
-
-#include <sys/utsname.h>
-
-#include <QLabel>
-#include <QSlider>
 
 
 namespace Ksirk
