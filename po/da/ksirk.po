@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-11 00:43+0000\n"
+"POT-Creation-Date: 2023-09-14 00:42+0000\n"
 "PO-Revision-Date: 2017-11-11 04:08+0200\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish\n"
@@ -1069,7 +1069,7 @@ msgstr ""
 msgid "Legacy"
 msgstr "Legacy"
 
-#: decoratedgameframe.cpp:100 kgamewin.cpp:445
+#: decoratedgameframe.cpp:100 kgamewin.cpp:435
 #, kde-format
 msgid "Next Player"
 msgstr "Næste spiller"
@@ -1079,8 +1079,8 @@ msgstr "Næste spiller"
 msgid "Details"
 msgstr "Detaljer"
 
-#: decoratedgameframe.cpp:106 kgamewin.cpp:425 kgamewin.cpp:1336
-#: kgamewin.cpp:1348 kgamewin.cpp:2505
+#: decoratedgameframe.cpp:106 kgamewin.cpp:415 kgamewin.cpp:1319
+#: kgamewin.cpp:1331 kgamewin.cpp:2492
 #, kde-format
 msgid "Goal"
 msgstr "Mission"
@@ -1639,7 +1639,7 @@ msgid "New Game or Exit"
 msgstr "Nyt spil eller afslut"
 
 #. i18n: ectx: property (text), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:27 GameLogic/gameautomaton.cpp:1665
+#: Dialogs/restartOrExitDialog.ui:27 GameLogic/gameautomaton.cpp:1668
 #, kde-format
 msgid "New Game"
 msgstr "Nyt spil"
@@ -1663,7 +1663,7 @@ msgid "Do nothing. Game buttons will be available"
 msgstr "Gør intet. Spillets knapper bliver tilgængelige"
 
 #. i18n: ectx: property (text), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:50 GameLogic/gameautomaton.cpp:1666
+#: Dialogs/restartOrExitDialog.ui:50 GameLogic/gameautomaton.cpp:1669
 #, kde-format
 msgid "Exit"
 msgstr "Afslut"
@@ -1707,76 +1707,76 @@ msgstr[1] ""
 msgid "Fatal Error"
 msgstr "Fatal fejl"
 
-#: GameLogic/gameautomaton.cpp:302
+#: GameLogic/gameautomaton.cpp:305
 #, kde-format
 msgid "KsirK - Network configuration"
 msgstr "KsirK - netværkskonfiguration"
 
-#: GameLogic/gameautomaton.cpp:303
+#: GameLogic/gameautomaton.cpp:306
 #, kde-format
 msgid "Please type in the port number on which to offer connections:"
 msgstr "Angiv det portnummer på hvilket forbindelse skal tilbydes:"
 
-#: GameLogic/gameautomaton.cpp:1190 GameLogic/gameautomaton.cpp:1218
+#: GameLogic/gameautomaton.cpp:1193 GameLogic/gameautomaton.cpp:1221
 #, kde-format
 msgid "Do you really want to end your current game and join another?"
 msgstr "Vil du virkelig afslutte dette spil og deltage i et andet?"
 
-#: GameLogic/gameautomaton.cpp:1190 GameLogic/gameautomaton.cpp:1218
-#: kgamewin.cpp:2669
+#: GameLogic/gameautomaton.cpp:1193 GameLogic/gameautomaton.cpp:1221
+#: kgamewin.cpp:2656
 #, kde-format
 msgid "New game confirmation"
 msgstr "Bekræftelse af nyt spil"
 
-#: GameLogic/gameautomaton.cpp:1190 GameLogic/gameautomaton.cpp:1218
+#: GameLogic/gameautomaton.cpp:1193 GameLogic/gameautomaton.cpp:1221
 #, fuzzy, kde-format
 #| msgid "New Game"
 msgctxt "@action:button"
 msgid "Join New Game"
 msgstr "Nyt spil"
 
-#: GameLogic/gameautomaton.cpp:1398
+#: GameLogic/gameautomaton.cpp:1401
 #, kde-format
 msgid "%1 (%2) joined game ; waiting for %3 players to connect"
 msgstr "%1 (%2) deltager i spillet - venter på at %3 spillere tilslutter"
 
-#: GameLogic/gameautomaton.cpp:1504
+#: GameLogic/gameautomaton.cpp:1507
 #, kde-format
 msgid "Please choose another name"
 msgstr "Vælg et andet navn"
 
-#: GameLogic/gameautomaton.cpp:1504
+#: GameLogic/gameautomaton.cpp:1507
 #, kde-format
 msgid "KsirK - Name already used!"
 msgstr "KsirK - navnet er allerede i brug!"
 
-#: GameLogic/gameautomaton.cpp:1510
+#: GameLogic/gameautomaton.cpp:1513
 #, kde-format
 msgid "Player number %1, what's your name?"
 msgstr "Spiller nr. %1, hvad er dit navn?"
 
-#: GameLogic/gameautomaton.cpp:1514
+#: GameLogic/gameautomaton.cpp:1517
 #, kde-format
 msgid "Error - Player %1, you have to choose a name."
 msgstr "Fejl: Spiller %1, du skal vælge et navn."
 
-#: GameLogic/gameautomaton.cpp:1516
+#: GameLogic/gameautomaton.cpp:1519
 #, kde-format
 msgctxt "@info Forged player name"
 msgid "Player%1"
 msgstr "Spiller %1"
 
-#: GameLogic/gameautomaton.cpp:1567
+#: GameLogic/gameautomaton.cpp:1570
 #, kde-format
 msgid "Please choose another nation"
 msgstr "Vælg en anden nation"
 
-#: GameLogic/gameautomaton.cpp:1567
+#: GameLogic/gameautomaton.cpp:1570
 #, kde-format
 msgid "KsirK - Nation already used!"
 msgstr "KsirK - nationen er allerede i brug!"
 
-#: GameLogic/gameautomaton.cpp:1663
+#: GameLogic/gameautomaton.cpp:1666
 #, kde-format
 msgid ""
 "KsirK - Lost connection to server!\n"
@@ -1785,17 +1785,17 @@ msgstr ""
 "KsirK - mistede forbindelse til server!\n"
 "Hvad vil du gøre?"
 
-#: GameLogic/gameautomaton.cpp:1664
+#: GameLogic/gameautomaton.cpp:1667
 #, kde-format
 msgid "Starting a new game or exit."
 msgstr "Starte et nyt spil eller afslutte."
 
-#: GameLogic/gameautomaton.cpp:1667
+#: GameLogic/gameautomaton.cpp:1670
 #, kde-format
 msgid "Do nothing"
 msgstr "Gør intet"
 
-#: GameLogic/gameautomaton.cpp:1697
+#: GameLogic/gameautomaton.cpp:1700
 #, kde-format
 msgid ""
 "Lost connection to a client.\n"
@@ -1806,31 +1806,31 @@ msgstr ""
 "I øjeblikket kan du kun gemme spillet, starte et nyt eller afslutte.\n"
 "Dette vil blive forbedret i en fremtidig version."
 
-#: GameLogic/gameautomaton.cpp:1698
+#: GameLogic/gameautomaton.cpp:1701
 #, kde-format
 msgid "KsirK - Lost connection to client!"
 msgstr "KsirK - mistede forbindelse til klient!"
 
-#: GameLogic/gameautomaton.cpp:1704
+#: GameLogic/gameautomaton.cpp:1707
 #, kde-format
 msgid "Do want to save your game?"
 msgstr "Vil du gemme dit spil?"
 
-#: GameLogic/gameautomaton.cpp:1878 GameLogic/gameautomaton.cpp:2295
-#: kgamewin.cpp:2160 kgamewin.cpp:2255 kgamewin.cpp:2292
+#: GameLogic/gameautomaton.cpp:1881 GameLogic/gameautomaton.cpp:2298
+#: kgamewin.cpp:2147 kgamewin.cpp:2242 kgamewin.cpp:2279
 #, kde-format
 msgid "%1: %2 armies to place"
 msgstr "%1: %2 hære at placere"
 
-#: GameLogic/gameautomaton.cpp:1883 GameLogic/gameautomaton.cpp:2298
-#: kgamewinslots.cpp:807
+#: GameLogic/gameautomaton.cpp:1886 GameLogic/gameautomaton.cpp:2301
+#: kgamewinslots.cpp:810
 #, kde-format
 msgid ""
 "Now, place your armies in your countries<br>by clicking in the target "
 "countries."
 msgstr "Placér nu dine hære i dine lande<br>ved at klikke i mållandene."
 
-#: GameLogic/gameautomaton.cpp:1960
+#: GameLogic/gameautomaton.cpp:1963
 #, kde-format
 msgid ""
 "%1, your goal will be displayed. Please<br>make sure that no other player "
@@ -1838,27 +1838,27 @@ msgid ""
 msgstr ""
 "%1, din mission bliver vist. Tilse at<br>ingen anden spiller kan se det!"
 
-#: GameLogic/gameautomaton.cpp:1962
+#: GameLogic/gameautomaton.cpp:1965
 #, kde-format
 msgid "KsirK - Displaying Goal"
 msgstr "KsirK - viser mission"
 
-#: GameLogic/gameautomaton.cpp:2148
+#: GameLogic/gameautomaton.cpp:2151
 #, kde-format
 msgid "%1 chooses its defense"
 msgstr "%1 vælger sit forsvar"
 
-#: GameLogic/gameautomaton.cpp:2308
+#: GameLogic/gameautomaton.cpp:2311
 #, kde-format
 msgid "%1 choose to end recycling; there are now %2 players who want so"
 msgstr "%1 vælger at afslutte genbrug - der er nu %2 spillere, der vil det"
 
-#: GameLogic/gameautomaton.cpp:2398
+#: GameLogic/gameautomaton.cpp:2401
 #, kde-format
 msgid "Problem : no one destroyed"
 msgstr "Problem: Ingen udryddet"
 
-#: GameLogic/gameautomaton.cpp:2398 gestionSprites.cpp:928
+#: GameLogic/gameautomaton.cpp:2401 gestionSprites.cpp:928
 #: gestionSprites.cpp:948 gestionSprites.cpp:1049 gestionSprites.cpp:1086
 #: gestionSprites.cpp:1121 gestionSprites.cpp:1175 gestionSprites.cpp:1212
 #: gestionSprites.cpp:1246
@@ -1866,7 +1866,7 @@ msgstr "Problem: Ingen udryddet"
 msgid "KsirK - Error!"
 msgstr "KsirK - Fejl!"
 
-#: GameLogic/gameautomaton.cpp:2447
+#: GameLogic/gameautomaton.cpp:2450
 #, kde-format
 msgid ""
 "You entered an invalid password.\n"
@@ -1875,12 +1875,12 @@ msgstr ""
 "Du indtastede en ugyldig adgangskode.\n"
 "Prøv igen."
 
-#: GameLogic/gameautomaton.cpp:2447
+#: GameLogic/gameautomaton.cpp:2450
 #, kde-format
 msgid "KsirK - Invalid password!"
 msgstr "KsirK - ugyldig adgangskode!"
 
-#: GameLogic/gameautomaton.cpp:2657
+#: GameLogic/gameautomaton.cpp:2660
 #, kde-format
 msgid ""
 "%1, you have not played anything this turn.\n"
@@ -1889,12 +1889,12 @@ msgstr ""
 "%1, du har ikke spillet noget i dette tur.\n"
 "Vil du virkelig miste din tur?"
 
-#: GameLogic/gameautomaton.cpp:2658
+#: GameLogic/gameautomaton.cpp:2661
 #, kde-format
 msgid "Really Next Player?"
 msgstr "Gå til næste spiller?"
 
-#: GameLogic/gameautomaton.cpp:2659
+#: GameLogic/gameautomaton.cpp:2662
 #, fuzzy, kde-format
 #| msgid "Next Player"
 msgctxt "@action:button"
@@ -1986,7 +1986,7 @@ msgstr "%1 i %2"
 msgid "KsirK - Goal Display"
 msgstr "KsirK - visning af mission"
 
-#: GameLogic/KsirkChatModel.cpp:72 kgamewin.cpp:179
+#: GameLogic/KsirkChatModel.cpp:72 kgamewin.cpp:178
 #, kde-format
 msgid "No message..."
 msgstr "Ingen besked..."
@@ -2007,8 +2007,8 @@ msgstr ""
 
 #: GameLogic/onu.cpp:130 GameLogic/onu.cpp:147 gestionSprites.cpp:693
 #: gestionSprites.cpp:808 gestionSprites.cpp:853 gestionSprites.cpp:1409
-#: gestionSprites.cpp:1486 kgamewin.cpp:146 kgamewin.cpp:379 kgamewin.cpp:396
-#: kgamewin.cpp:413 kgamewin.cpp:580 kgamewin.cpp:736
+#: gestionSprites.cpp:1486 kgamewin.cpp:147 kgamewin.cpp:369 kgamewin.cpp:386
+#: kgamewin.cpp:403 kgamewin.cpp:570 kgamewin.cpp:726
 #: Sprites/animsprite.cpp:511 Sprites/animsprite.cpp:526
 #, kde-format
 msgid "Error!"
@@ -2187,13 +2187,13 @@ msgstr ""
 msgid "Jabber Connection Certificate Problem"
 msgstr "Certifikat-problem under Jabber-tilslutning"
 
-#: Jabber/jabberaccount.cpp:531 kgamewinslots.cpp:1002
+#: Jabber/jabberaccount.cpp:531 kgamewinslots.cpp:1005
 #, kde-format
 msgid ""
 "An encrypted connection with the Jabber server could not be established."
 msgstr "En krypteret forbindelse med Jabber-serveren kunne ikke etableres."
 
-#: Jabber/jabberaccount.cpp:532 kgamewinslots.cpp:1003
+#: Jabber/jabberaccount.cpp:532 kgamewinslots.cpp:1006
 #, kde-format
 msgid "Jabber Connection Error"
 msgstr "Fejl i Jabber-tilslutning"
@@ -2514,19 +2514,19 @@ msgstr "Bekendtgørelse"
 msgid "Keep"
 msgstr "Behold"
 
-#: Jabber/jabberaccount.cpp:1523 kgamewinslots.cpp:1092
+#: Jabber/jabberaccount.cpp:1523 kgamewinslots.cpp:1095
 #, kde-format
 msgid "A password is required to join the room %1."
 msgstr "En adgangskode kræves for at deltage i rum %1."
 
-#: Jabber/jabberaccount.cpp:1532 kgamewinslots.cpp:1101
+#: Jabber/jabberaccount.cpp:1532 kgamewinslots.cpp:1104
 #, kde-format
 msgid "Error trying to join %1: nickname %2 is already in use"
 msgstr ""
 "Fejl under forsøg på at deltage i %1: Kaldenavnet %2 er allerede i brug"
 
 #: Jabber/jabberaccount.cpp:1533 Jabber/jabberprotocol.cpp:450
-#: kgamewinslots.cpp:1101
+#: kgamewinslots.cpp:1104
 #, kde-format
 msgid "Provide your nickname"
 msgstr "Angiv dit kaldenavn"
@@ -2549,7 +2549,7 @@ msgid ""
 "reached"
 msgstr "Du kan ikke deltage i rummet %1 da maks. antal brugere er nået"
 
-#: Jabber/jabberaccount.cpp:1559 kgamewinslots.cpp:1119
+#: Jabber/jabberaccount.cpp:1559 kgamewinslots.cpp:1122
 #, kde-format
 msgid "No reason given by the server"
 msgstr "Ingen årsag oplyst af serveren"
@@ -2831,32 +2831,32 @@ msgstr "Angiv dit kaldenavn for rum %1"
 msgid "You have been invited to %1"
 msgstr "Du er blevet inviteret til %1"
 
-#: kgamewin.cpp:146 kgamewin.cpp:736
+#: kgamewin.cpp:147 kgamewin.cpp:726
 #, kde-format
 msgid "Cannot load icon<br>Program cannot continue"
 msgstr "Kan ikke indlæse ikon<br>Programmet kan ikke fortsætte"
 
-#: kgamewin.cpp:379 kgamewin.cpp:396 kgamewin.cpp:413
+#: kgamewin.cpp:369 kgamewin.cpp:386 kgamewin.cpp:403
 #, kde-format
 msgid "Cannot load button image %1<br>Program cannot continue"
 msgstr "Kan ikke indlæse knappens billede %1<br>Programmet kan ikke fortsætte"
 
-#: kgamewin.cpp:382
+#: kgamewin.cpp:372
 #, kde-format
 msgid "Play over Jabber"
 msgstr "Spil via Jabber"
 
-#: kgamewin.cpp:383
+#: kgamewin.cpp:373
 #, kde-format
 msgid "Play KsirK over the Jabber Network"
 msgstr "Spil KsirK over Jabber-netværket"
 
-#: kgamewin.cpp:384
+#: kgamewin.cpp:374
 #, kde-format
 msgid "Jabber"
 msgstr "Jabber"
 
-#: kgamewin.cpp:386
+#: kgamewin.cpp:376
 #, kde-format
 msgid ""
 "Allow to connect to a KsirK Jabber Multi User Gaming Room to create new "
@@ -2866,67 +2866,67 @@ msgstr ""
 "eller deltage i eksisterende spil"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
-#: kgamewin.cpp:399 mainMenu.ui:111
+#: kgamewin.cpp:389 mainMenu.ui:111
 #, kde-format
 msgid "New Standard TCP/IP Network Game"
 msgstr "Nyt standard TCP/IP-netværksspil"
 
-#: kgamewin.cpp:400
+#: kgamewin.cpp:390
 #, kde-format
 msgid "New TCP/IP"
 msgstr "Ny TCP/IP"
 
-#: kgamewin.cpp:402
+#: kgamewin.cpp:392
 #, kde-format
 msgid "Create a new standard TCP/IP network game"
 msgstr "Opret et nyt standard TCP/IP-netværksspil"
 
-#: kgamewin.cpp:417
+#: kgamewin.cpp:407
 #, kde-format
 msgid "Join a Standard TCP/IP Network Game"
 msgstr "Deltag i et standard TCP/IP-netværksspil"
 
-#: kgamewin.cpp:418
+#: kgamewin.cpp:408
 #, kde-format
 msgid "Join TCP/IP"
 msgstr "Deltag i TCP/IP"
 
-#: kgamewin.cpp:420
+#: kgamewin.cpp:410
 #, kde-format
 msgid "Join a standard TCP/IP network game"
 msgstr "Deltag i et standard TCP/IP-netværksspil"
 
-#: kgamewin.cpp:426
+#: kgamewin.cpp:416
 #, kde-format
 msgid "Display the Current Player's Goal"
 msgstr "Vis den aktuelle spillers mission"
 
-#: kgamewin.cpp:429
+#: kgamewin.cpp:419
 #, kde-format
 msgid "Display the current player's goal"
 msgstr "Vis den aktuelle spillers mission"
 
-#: kgamewin.cpp:436
+#: kgamewin.cpp:426
 #, kde-format
 msgid "Contextual Help"
 msgstr "Kontekst-hjælp"
 
-#: kgamewin.cpp:447
+#: kgamewin.cpp:437
 #, kde-format
 msgid "Lets the next player play"
 msgstr "Lader den næste spiller spille"
 
-#: kgamewin.cpp:452
+#: kgamewin.cpp:442
 #, kde-format
 msgid "Finish moves"
 msgstr "Færdiggør træk"
 
-#: kgamewin.cpp:454
+#: kgamewin.cpp:444
 #, kde-format
 msgid "Finish moving the current sprites"
 msgstr "Færdiggør flytning af disse figurer"
 
-#: kgamewin.cpp:580
+#: kgamewin.cpp:570
 #, kde-format
 msgid ""
 "World definition file not found - Verify your installation<br>Program cannot "
@@ -2935,32 +2935,32 @@ msgstr ""
 "Filen for definition af verden ikke fundet - tjek din "
 "installation<br>Programmet kan ikke fortsætte"
 
-#: kgamewin.cpp:800
+#: kgamewin.cpp:790
 #, kde-format
 msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
 msgstr "<font color=\"red\">%1 erobrede %2 fra %3</font>"
 
-#: kgamewin.cpp:824
+#: kgamewin.cpp:814
 #, kde-format
 msgid "%1, you are defeated! Bye, bye..."
 msgstr "%1, du blev slået! På gensyn..."
 
-#: kgamewin.cpp:896
+#: kgamewin.cpp:886
 #, kde-format
 msgid "%1: it is up to you again"
 msgstr "%1, det er op til dig igen"
 
-#: kgamewin.cpp:908
+#: kgamewin.cpp:898
 #, kde-format
 msgid "%1 won!"
 msgstr "%1 vandt!"
 
-#: kgamewin.cpp:911
+#: kgamewin.cpp:901
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
 msgstr "<big><b>%1</b>, du vandt!</big>"
 
-#: kgamewin.cpp:915
+#: kgamewin.cpp:905
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
@@ -2969,46 +2969,46 @@ msgstr ""
 "<br>Vinderens mission var fremsat således:<br><i>%1</i><br><br>Vil du spille "
 "igen?"
 
-#: kgamewin.cpp:921
+#: kgamewin.cpp:911
 #, kde-format
 msgid "<br>You conquered all the world!"
 msgstr "<br>Du erobrede hele verden!"
 
-#: kgamewin.cpp:925
+#: kgamewin.cpp:915
 #, kde-format
 msgid "<br>He conquered all the world!"
 msgstr "<br>Han erobrede hele verden!"
 
-#: kgamewin.cpp:1053
+#: kgamewin.cpp:1036
 #, kde-format
 msgid "Do you want to quit the game?"
 msgstr "Vil du afslutte spillet?"
 
-#: kgamewin.cpp:1055
+#: kgamewin.cpp:1038
 #, fuzzy, kde-format
 #| msgid "Quit"
 msgctxt "@action:button"
 msgid "Quit Game"
 msgstr "Afslut"
 
-#: kgamewin.cpp:1075
+#: kgamewin.cpp:1058
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
 msgstr "Vil du gemme dit spil, før du afslutter?"
 
-#: kgamewin.cpp:1121
+#: kgamewin.cpp:1104
 #, fuzzy, kde-format
 #| msgid "KsirK - Load Game"
 msgctxt "@title:window"
 msgid "KsirK - Load Game"
 msgstr "KsirK - indlæs spil"
 
-#: kgamewin.cpp:1159
+#: kgamewin.cpp:1142
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
 msgstr "Venter på tilslutning af %1 netværksspillere."
 
-#: kgamewin.cpp:1238
+#: kgamewin.cpp:1221
 #, kde-format
 msgid ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
@@ -3023,88 +3023,88 @@ msgstr[1] ""
 "<font color=\"red\">%2</font> angriber dig fra <font color=\"red\">%3</font> "
 "med %1 hære!<br> Hvordan vil du forsvare <font color=\"blue\">%4</font>?"
 
-#: kgamewin.cpp:1267
+#: kgamewin.cpp:1250
 #, kde-format
 msgid "Defend 1"
 msgstr "Forsvar 1"
 
-#: kgamewin.cpp:1268
+#: kgamewin.cpp:1251
 #, kde-format
 msgid "Defend 2"
 msgstr "Forsvar 2"
 
-#: kgamewin.cpp:1269
+#: kgamewin.cpp:1252
 #, kde-format
 msgid "Defend-Auto"
 msgstr "Auto-forsvar"
 
-#: kgamewin.cpp:1388
+#: kgamewin.cpp:1371
 #, kde-format
 msgid "Waiting for %1 players to connect"
 msgstr "Venter på at %1 spillere tilslutter"
 
-#: kgamewin.cpp:1778 kgamewin.cpp:1818
+#: kgamewin.cpp:1765 kgamewin.cpp:1805
 msgid "There is no country here!"
 msgstr "Der er intet land her!"
 
-#: kgamewin.cpp:1782 kgamewin.cpp:1823
+#: kgamewin.cpp:1769 kgamewin.cpp:1810
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
 msgstr "Du er ikke ejer af det første land: %1!"
 
-#: kgamewin.cpp:1786
+#: kgamewin.cpp:1773
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
 msgstr "Du er ikke ejer af det andet land: %1!"
 
-#: kgamewin.cpp:1790 kgamewin.cpp:1834
+#: kgamewin.cpp:1777 kgamewin.cpp:1821
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr "Du forsøger at flytte hære fra %1 til sig selv!"
 
-#: kgamewin.cpp:1795 kgamewin.cpp:1840
+#: kgamewin.cpp:1782 kgamewin.cpp:1827
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
 msgstr "%1 er ikke nabo til %2!"
 
-#: kgamewin.cpp:1801
+#: kgamewin.cpp:1788
 #, kde-format
 msgid "Moving armies from %1 to %2."
 msgstr "Flytter hære fra %1 til %2."
 
-#: kgamewin.cpp:1829
+#: kgamewin.cpp:1816
 #, kde-format
 msgid "You are the owner of the second country: %1!"
 msgstr "Du er ejer af det andet land: %1!"
 
-#: kgamewin.cpp:1847
+#: kgamewin.cpp:1834
 msgid "Ready to fight!"
 msgstr "Klar til kamp!"
 
-#: kgamewin.cpp:1941
+#: kgamewin.cpp:1928
 msgid "<font color=\"orange\">No country here!</font>"
 msgstr "<font color=\"orange\">Intet land her!</font>"
 
-#: kgamewin.cpp:1949
+#: kgamewin.cpp:1936
 #, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr "<font color=\"orange\">Du er ikke ejer af %1!</font>"
 
-#: kgamewin.cpp:1956
+#: kgamewin.cpp:1943
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr "<font color=\"orange\">Der er kun %1 hære i %2!</font>"
 
-#: kgamewin.cpp:2096
+#: kgamewin.cpp:2083
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
 msgstr "%1, du forsvarer med den eneste hær du har i %2."
 
-#: kgamewin.cpp:2320
+#: kgamewin.cpp:2307
 msgid "Exchange armies again or continue?"
 msgstr "Byt hære igen eller fortsæt?"
 
-#: kgamewin.cpp:2345
+#: kgamewin.cpp:2332
 #, kde-format
 msgid ""
 "You must distribute\n"
@@ -3113,49 +3113,49 @@ msgstr ""
 "Du skal distribuere\n"
 "alle dine hære"
 
-#: kgamewin.cpp:2345 main.cpp:42
+#: kgamewin.cpp:2332 main.cpp:42
 #, kde-format
 msgid "KsirK"
 msgstr "KsirK"
 
-#: kgamewin.cpp:2485
+#: kgamewin.cpp:2472
 msgid "Battle ongoing."
 msgstr "Slaget er i gang."
 
-#: kgamewin.cpp:2606 kgamewin.cpp:2617 kgamewin.cpp:2640
+#: kgamewin.cpp:2593 kgamewin.cpp:2604 kgamewin.cpp:2627
 #, kde-format
 msgid "%1, it is up to you."
 msgstr "%1, det er op til dig."
 
-#: kgamewin.cpp:2669
+#: kgamewin.cpp:2656
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
 msgstr "Vil du virkelig afslutte dit nuværende spil og starte et nyt?"
 
-#: kgamewin.cpp:2669
+#: kgamewin.cpp:2656
 #, fuzzy, kde-format
 #| msgid "Start a New Game"
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Start et nyt spil"
 
-#: kgamewin.cpp:2925
+#: kgamewin.cpp:2912
 msgid "<b>KsirK quick Introduction</b>"
 msgstr "<b>KsirK hurtig introduktion</b>"
 
-#: kgamewin.cpp:2929
+#: kgamewin.cpp:2916
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr ""
 "Angreb og bevægelser foretages med \"træk og slip\" mellem to nabolande."
 
-#: kgamewin.cpp:2933
+#: kgamewin.cpp:2920
 msgid "Start a new game or join a network game with the menu or the toolbar..."
 msgstr ""
 "Start et nyt spil eller deltag i et netværksspil via menuen eller "
 "værktøjslinjen..."
 
-#: kgamewin.cpp:2937
+#: kgamewin.cpp:2924
 msgid ""
 "and then let the system guide you through messages and tooltips appearing on "
 "buttons when hovering above them. You can disable bubble help in the options "
@@ -3165,46 +3165,46 @@ msgstr ""
 "når du bevæger dig hen over dem. Du kan deaktivere boblehjælpen i "
 "indstillingsvinduet."
 
-#: kgamewin.cpp:2944
+#: kgamewin.cpp:2931
 #, kde-format
 msgid "Don't show messages anymore"
 msgstr "Vis ikke beskeder mere"
 
-#: kgamewinslots.cpp:109
+#: kgamewinslots.cpp:110
 #, kde-format
 msgid "%2 belongs to %3. 1 army."
 msgid_plural "%2 belongs to %3. %1 armies."
 msgstr[0] "%2 tilhører %3. 1 hær."
 msgstr[1] "%2 tilhører %3. %1 hære."
 
-#: kgamewinslots.cpp:447
+#: kgamewinslots.cpp:448
 #, kde-format
 msgid "Cannot save when waiting for a defense."
 msgstr "Kan ikke gemme mens der ventes på et forsvar."
 
-#: kgamewinslots.cpp:454
+#: kgamewinslots.cpp:455
 #, fuzzy, kde-format
 #| msgid "KsirK - Save Game"
 msgctxt "@title:window"
 msgid "KsirK - Save Game"
 msgstr "KsirK - gem spil"
 
-#: kgamewinslots.cpp:458
+#: kgamewinslots.cpp:459
 #, kde-format
 msgid "Saving canceled"
 msgstr "Gemning annulleret"
 
-#: kgamewinslots.cpp:470
+#: kgamewinslots.cpp:473
 #, kde-format
 msgid "Game saved to %1"
 msgstr "Spil er gemt til %1"
 
-#: kgamewinslots.cpp:477
+#: kgamewinslots.cpp:480
 #, kde-format
 msgid "Only game master can save the game in network playing."
 msgstr "Kun spilmesteren kan gemme spil i netværksspil."
 
-#: kgamewinslots.cpp:803
+#: kgamewinslots.cpp:806
 #, kde-format
 msgid ""
 "Attack by drag & drop between countries<br>Move armies the same way (last "
