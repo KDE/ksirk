@@ -36,9 +36,11 @@
 #include "GameLogic/goal.h"
 #include "SaveLoad/ksirkgamexmlloader.h"
 #include "Sprites/animspritesgroup.h"
-#include "Dialogs/jabbergameui.h"
 #include "Dialogs/kplayersetupwidget.h"
+#if HAVE_JABBER_SUPPORT
+#include "Dialogs/jabbergameui.h"
 #include "Jabber/kmessagejabber.h"
+#endif
 
 #define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
 #include <libkdegamesprivate/kgame/kmessageserver.h>
@@ -394,12 +396,14 @@ void KGameWindow::slotArena(bool isCheck)
   }
 }
 
+#if HAVE_JABBER_SUPPORT
 void KGameWindow::slotJabberGame()
 {
   m_jabberGameWidget->init(m_automaton);
   m_jabberGameWidget->setPreviousGuiIndex(m_centralWidget->currentIndex());
   m_centralWidget->setCurrentIndex(JABBERGAME_INDEX);
 }
+#endif
 
 void KGameWindow::slotNewGame()
 {
@@ -407,10 +411,12 @@ void KGameWindow::slotNewGame()
   actionNewGame(GameAutomaton::None);
 }
 
+#if HAVE_JABBER_SUPPORT
 void KGameWindow::slotNewJabberGame()
 {
   actionNewGame(GameAutomaton::Jabber);
 }
+#endif
 
 void KGameWindow::slotNewSocketGame()
 {
@@ -864,10 +870,12 @@ void KGameWindow::slotNewGameNext()
   m_automaton->newGameNext();
   m_reinitializingGame = false;
   
+#if HAVE_JABBER_SUPPORT
   if (m_automaton->networkGameType()==GameAutomaton::Jabber && m_jabberClient && m_jabberClient->isConnected())
   {
     sendGameInfoToJabber();
   }
+#endif
 }
 
 // void KGameWindow::slotNewGameOK(unsigned int nbPlayers, const QString& skin, unsigned int nbNetworkPlayers, bool useGoals)
@@ -900,6 +908,7 @@ void KGameWindow::slotNewGameKO()
   m_automaton->setGameStatus(KGame::Run);
 }
 
+#if HAVE_JABBER_SUPPORT
 void KGameWindow::slotConnected()
 {
   qCDebug(KSIRK_LOG) << "Connected to Jabber server.";
@@ -1131,6 +1140,7 @@ void KGameWindow::slotJabberGameCanceled(int previousIndex)
   qCDebug(KSIRK_LOG) << previousIndex;
   m_centralWidget->setCurrentIndex(previousIndex);
 }
+#endif
 
 void KGameWindow::slotExit()
 {

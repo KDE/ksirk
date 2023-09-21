@@ -67,11 +67,13 @@ void NewGameWidget::init(const QString& skin, GameAutomaton::NetworkGameType net
       tcpPortLabel->show();
       tcpPortEntry->show();
     }
+#if HAVE_JABBER_SUPPORT
     if (netGameType == GameAutomaton::Jabber)
     {
       tcpPortLabel->hide();
       tcpPortEntry->hide();
     }
+#endif
     m_newGameSetup->setNbNetworkPlayers(1);
     localPlayersNumberEntry->setValue(m_newGameSetup->nbNetworkPlayers());
   }

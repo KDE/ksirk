@@ -99,13 +99,6 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pbJabberGame" >
-         <property name="text" >
-          <string>Play KsirK over Jabber Network</string>
-         </property>
-        </widget>
-       </item>
-       <item>
         <widget class="QPushButton" name="pbNewSocketGame" >
          <property name="text" >
           <string>New Standard TCP/IP Network Game</string>

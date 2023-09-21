@@ -41,11 +41,12 @@
 #include "Dialogs/restartOrExitDialogImpl.h"
 #include "Dialogs/newGameDialogImpl.h"
 #include "Dialogs/newGameSummaryWidget.h"
-#include "Dialogs/jabbergameui.h"
 #include "Dialogs/tcpconnectwidget.h"
+#if HAVE_JABBER_SUPPORT
+#include "Dialogs/jabbergameui.h"
 #include "im.h"
 #include "xmpp_tasks.h"
-
+#endif
 
 //include files for QT
 #include <QAction>
@@ -129,10 +130,12 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_newPlayerWidget(nullptr),
   m_stateBeforeNewGame(GameAutomaton::INVALID),
   m_stackWidgetBeforeNewGame(-1),
+#if HAVE_JABBER_SUPPORT
   m_jabberClient(new JabberClient()),
   m_advertizedHostName(QHostInfo::localHostName()),
   m_jabberGameWidget(nullptr),
   m_presents(),
+#endif
   m_newGameSetup(new NewGameSetup(m_automaton))
   {
   qCDebug(KSIRK_LOG) << "KGameWindow constructor begin";
@@ -211,9 +214,11 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_mainMenu = new mainMenu(this, m_centralWidget);
   m_mainMenu->init(m_theWorld);
   
+#if HAVE_JABBER_SUPPORT
   /// @FIXME Hides the "Play KsirK over Jabber Network" button while Jabber
   /// connection does not work
   m_mainMenu->pbJabberGame->hide();
+#endif
   
   m_newGameDialog = new NewGameWidget(m_newGameSetup, m_centralWidget);
   connect(m_newGameDialog, &NewGameWidget::newGameOK, this, &KGameWindow::slotNewGameNext);
@@ -224,11 +229,15 @@ KGameWindow::KGameWindow(QWidget* parent) :
   connect(m_newPlayerWidget, &KPlayerSetupWidget::cancel, this, &KGameWindow::slotNewPlayerCancel);
   connect(m_newPlayerWidget, &KPlayerSetupWidget::previous, this, &KGameWindow::slotNewPlayerPrevious);
   connect(m_newPlayerWidget, &KPlayerSetupWidget::cancel, this, &KGameWindow::slotNewPlayerCancel);
+#if HAVE_JABBER_SUPPORT
   qCDebug(KSIRK_LOG) << "create the Jabber widget if it doesn't exist";
   m_jabberGameWidget = new KsirkJabberGameWidget(m_centralWidget);
+#endif
   m_centralWidget->addWidget(m_mainMenu); // MAINMENU_INDEX 0
   m_centralWidget->addWidget(m_newGameDialog); // NEWGAME_INDEX 1
+#if HAVE_JABBER_SUPPORT
   m_centralWidget->addWidget(m_jabberGameWidget); // JABBERGAME_INDEX 2
+#endif
   m_centralWidget->addWidget(m_newPlayerWidget);  // NEWPLAYER_INDEX 3
   m_newGameSummaryWidget = new NewGameSummaryWidget(m_centralWidget);
   connect(m_newGameSummaryWidget->finishButton, &QAbstractButton::clicked, this, &KGameWindow::slotStartNewGame);
@@ -257,6 +266,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_timer.setSingleShot(true);
   connect(&m_timer, &QTimer::timeout, this, &KGameWindow::evenementTimer);
 
+#if HAVE_JABBER_SUPPORT
   m_initialPresence = XMPP::Status ( "", "", 5, true );
 
   qCDebug(KSIRK_LOG) << "Connecting Jabber signals";
@@ -304,6 +314,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_jabberClient->setDiscoIdentity(identity);
 
   connect (this, &KGameWindow::newJabberGame, m_automaton, &GameAutomaton::newJabberGame);
+#endif
 
   m_automaton->skin("skins/default");
 }
@@ -312,11 +323,13 @@ KGameWindow::~KGameWindow()
 {
   qCDebug(KSIRK_LOG);
 
+#if HAVE_JABBER_SUPPORT
   if (m_jabberClient != nullptr)
   {
     delete m_jabberClient;
     m_jabberClient = nullptr;
   }
+#endif
   if (m_automaton != nullptr)
   {
     m_automaton->setGameStatus( KGame::End );
@@ -361,8 +374,10 @@ void KGameWindow::initActions()
 
   KStandardAction::preferences( this, SLOT(optionsConfigure()), actionCollection() );
 
+  QString imageFileName;
+#if HAVE_JABBER_SUPPORT
   // specific ksirk action
-  QString imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, "jabber.png");
+  imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, "jabber.png");
   //   qCDebug(KSIRK_LOG) << "Trying to load button image file: " << imageFileName;
   if (imageFileName.isNull())
   {
@@ -377,7 +392,7 @@ void KGameWindow::initActions()
   connect(m_jabberAction, &QAction::triggered, this, &KGameWindow::slotJabberGame);
   qCDebug(KSIRK_LOG) << "Adding action game_jabber";
   actionCollection()->addAction("game_jabber", m_jabberAction);
-
+#endif
   // specific ksirk action
   imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + '/' + CM_NEWNETGAME);
   //   qCDebug(KSIRK_LOG) << "Trying to load button image file: " << imageFileName;
@@ -3163,6 +3178,7 @@ bool KGameWindow::newGameDialog(const QString& skin, GameAutomaton::NetworkGameT
   return false;
 }
 
+#if HAVE_JABBER_SUPPORT
 /* Set presence (usually called by dialog widget). */
 void KGameWindow::setPresence ( const XMPP::Status &status )
 {
@@ -3250,6 +3266,7 @@ void KGameWindow::sendGameInfoToJabber()
     m_jabberClient->sendMessage(message);
   }
 }
+#endif
 
 void KGameWindow::joinNetworkGame()
 {

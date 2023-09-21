@@ -31,6 +31,13 @@ mainMenu::mainMenu(Ksirk::KGameWindow* game, QWidget* parent) : QWidget(parent)
 {
   qCDebug(KSIRK_LOG);
   setupUi(this);
+#if HAVE_JABBER_SUPPORT
+    pbJabberGame = new QPushButton(this);
+    pbJabberGame->setObjectName(QString::fromUtf8("pbJabberGame"));
+    pbJabberGame->setText(i18n("Play KsirK over Jabber Network"));
+
+    verticalLayout->insertWidget(verticalLayout->indexOf(pbNewSocketGame), pbJabberGame);
+#endif
 
   // Load image
   QString imageFileName;
@@ -45,7 +52,9 @@ mainMenu::mainMenu(Ksirk::KGameWindow* game, QWidget* parent) : QWidget(parent)
   lImage2->setPixmap(imag2.scaled(100,100,Qt::KeepAspectRatioByExpanding));
 
   connect(pbNewGame, &QAbstractButton::clicked, game, &Ksirk::KGameWindow::slotNewGame);
+#if HAVE_JABBER_SUPPORT
   connect(pbJabberGame, &QAbstractButton::clicked, game, &Ksirk::KGameWindow::slotJabberGame);
+#endif
   connect(pbNewSocketGame, &QAbstractButton::clicked, game, &Ksirk::KGameWindow::slotNewSocketGame);
   connect(pbJoin, &QAbstractButton::clicked, game, &Ksirk::KGameWindow::slotJoinNetworkGame);
   connect(pbLoad, &QAbstractButton::clicked, game, &Ksirk::KGameWindow::slotOpenGame);

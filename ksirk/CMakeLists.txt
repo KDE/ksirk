@@ -1,5 +1,11 @@
+set(HAVE_JABBER_SUPPORT ${WITH_JABBER_SUPPORT})
+configure_file(config-ksirk.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-ksirk.h)
+
+if(WITH_JABBER_SUPPORT)
+    add_subdirectory(iris)
+endif()
+
 add_subdirectory(skins)
-add_subdirectory(iris)
 add_subdirectory(icons)
 
 add_executable(ksirk)
@@ -44,7 +50,6 @@ target_sources(ksirk PRIVATE
     Dialogs/kwaitedplayersetupdialog.cpp
     Dialogs/restartOrExitDialogImpl.cpp
     Dialogs/joingame.cpp
-    Dialogs/jabbergameui.cpp
     Dialogs/InvasionSlider.cpp
     Dialogs/newGameSummaryWidget.cpp
     Dialogs/tcpconnectwidget.cpp
@@ -55,17 +60,23 @@ target_sources(ksirk PRIVATE
     mainMenu.cpp
     krightdialog.cpp
     newgamesetup.cpp
-  #   Jabber/jabberaccount.cpp
-    Jabber/kmessagejabber.cpp
-    Jabber/jabberbytestream.cpp
-    Jabber/jabberclient.cpp
-    Jabber/jabberconnector.cpp
-    Jabber/privacylist.cpp
-    Jabber/privacylistitem.cpp
-    Jabber/privacymanager.cpp
 
     ksirk.qrc
 )
+
+if(WITH_JABBER_SUPPORT)
+    target_sources(ksirk PRIVATE
+        Dialogs/jabbergameui.cpp
+    #   Jabber/jabberaccount.cpp
+        Jabber/kmessagejabber.cpp
+        Jabber/jabberbytestream.cpp
+        Jabber/jabberclient.cpp
+        Jabber/jabberconnector.cpp
+        Jabber/privacylist.cpp
+        Jabber/privacylistitem.cpp
+        Jabber/privacymanager.cpp
+    )
+endif()
 
 ecm_qt_declare_logging_category(ksirk
     HEADER ksirk_debug.h
@@ -75,13 +86,15 @@ ecm_qt_declare_logging_category(ksirk
     EXPORT KSIRK
 )
 
-ecm_qt_declare_logging_category(ksirk
-    HEADER jabber_protocol_debug.h
-    IDENTIFIER JABBER_PROTOCOL_LOG
-    CATEGORY_NAME org.kde.ksirk.jabber
-    DESCRIPTION "kdegames (ksirk jabber)"
-    EXPORT KSIRK
-)
+if(WITH_JABBER_SUPPORT)
+    ecm_qt_declare_logging_category(ksirk
+        HEADER jabber_protocol_debug.h
+        IDENTIFIER JABBER_PROTOCOL_LOG
+        CATEGORY_NAME org.kde.ksirk.jabber
+        DESCRIPTION "kdegames (ksirk jabber)"
+        EXPORT KSIRK
+    )
+endif()
 
 ki18n_wrap_ui(ksirk
     Dialogs/qplayersetupdialog.ui
@@ -89,12 +102,16 @@ ki18n_wrap_ui(ksirk
     Dialogs/qwaitedplayersetupdialog.ui
     Dialogs/restartOrExitDialog.ui
     Dialogs/joingame.ui
-    Dialogs/jabbergameui.ui
     Dialogs/newGameSummary.ui
     Dialogs/tcpconnectwidget.ui
     preferences.ui
     mainMenu.ui
 )
+if(WITH_JABBER_SUPPORT)
+    ki18n_wrap_ui(ksirk
+        Dialogs/jabbergameui.ui
+    )
+endif()
 
 kconfig_add_kcfg_files( ksirk ksirksettings.kcfgc )
 
@@ -113,8 +130,6 @@ target_include_directories(ksirk
 target_link_libraries(ksirk
     Qt5::Xml
     Qt5::Svg
-    qca-qt${QT_MAJOR_VERSION}
-    iris_ksirk
     KF5::Crash
     KF5::KIOCore
     KF5::NewStuffWidgets
@@ -123,11 +138,18 @@ target_link_libraries(ksirk
     KF5KDEGames
     KF5KDEGamesPrivate
 )
+if(WITH_JABBER_SUPPORT)
+    target_link_libraries(ksirk
+        iris_ksirk
+    )
+endif()
 
 install( TARGETS ksirk ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES ksirksettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
 install(PROGRAMS org.kde.ksirk.desktop DESTINATION ${KDE_INSTALL_APPDIR})
-install(FILES jabber.png  DESTINATION  ${KDE_INSTALL_DATADIR}/ksirk)
 install(FILES ksirk.knsrc  DESTINATION  ${KDE_INSTALL_KNSRCDIR})
 install(FILES org.kde.ksirk.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
+if(WITH_JABBER_SUPPORT)
+    install(FILES jabber.png  DESTINATION  ${KDE_INSTALL_DATADIR}/ksirk)
+endif()

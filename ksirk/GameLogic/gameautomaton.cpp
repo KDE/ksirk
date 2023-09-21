@@ -32,7 +32,9 @@
 #include "newgamesetup.h"
 #include "krightdialog.h"
 #include "Dialogs/joingame.h"
+#if HAVE_JABBER_SUPPORT
 #include "Jabber/kmessagejabber.h"
+#endif
 #include "newplayerdata.h"
 #include "gamesequence.h"
 
@@ -1216,6 +1218,7 @@ bool GameAutomaton::connectToServ()
   return status;
 }
 
+#if HAVE_JABBER_SUPPORT
 bool GameAutomaton::joinJabberGame(const QString& nick)
 {
   if (stateName() == "INIT" || (KMessageBox::warningContinueCancel(m_game,i18n("Do you really want to end your current game and join another?"),i18n( "New game confirmation" ),KGuiItem(i18nc("@action:button", "Join New Game"))) == KMessageBox::Continue))
@@ -1252,6 +1255,7 @@ bool GameAutomaton::joinJabberGame(const QString& nick)
   }
   return false;
 }
+#endif
 
 KPlayer * GameAutomaton::createPlayer(int rtti, 
                                     int /*io*/, 
@@ -2587,10 +2591,12 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   }
 }
 
+#if HAVE_JABBER_SUPPORT
 void GameAutomaton::askForJabberGames()
 {
   m_game->askForJabberGames();
 }
+#endif
 
 QSvgRenderer& GameAutomaton::rendererFor(const QString& skinName)
 {

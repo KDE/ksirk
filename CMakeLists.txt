@@ -26,6 +26,9 @@ include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
 include(FeatureSummary)
 
+option(WITH_JABBER_SUPPORT "Build with support for network gaming using Jabber" ON)
+add_feature_info(JABBER ${WITH_JABBER_SUPPORT} "Network gaming using Jabber")
+
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS
     Widgets
     Svg
@@ -54,12 +57,14 @@ find_package(KF5KDEGames 7.3.0 REQUIRED)
 
 find_package(Phonon4Qt${QT_MAJOR_VERSION} REQUIRED)
 
-find_package(Qca-qt${QT_MAJOR_VERSION} 2.1.0)
-set_package_properties(Qca-qt5 PROPERTIES
-    DESCRIPTION "Support for encryption"
-    URL "https://download.kde.org/stable/qca-qt5"
-    TYPE REQUIRED
-)
+if(WITH_JABBER_SUPPORT)
+    find_package(Qca-qt${QT_MAJOR_VERSION} 2.1.0)
+    set_package_properties(Qca-qt5 PROPERTIES
+        DESCRIPTION "Support for encryption with Jabber"
+        URL "https://download.kde.org/stable/qca-qt5"
+        TYPE REQUIRED
+    )
+endif()
 
 kde_enable_exceptions()
 

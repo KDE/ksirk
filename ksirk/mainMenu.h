@@ -22,6 +22,7 @@
 #ifndef MAINMENU_H
 #define MAINMENU_H
 
+#include "config-ksirk.h"
 #include "ui_mainMenu.h"
 
 #include "KsirkGlobalDefinitions.h"
@@ -51,6 +52,11 @@ public:
   ~mainMenu() override {}
 
   void init(Ksirk::GameLogic::ONU* theWorld);
+
+#if HAVE_JABBER_SUPPORT
+public:
+    QPushButton *pbJabberGame;
+#endif
 };
 
 

@@ -20,6 +20,7 @@
 #ifndef KGAMEWIN_H
 #define KGAMEWIN_H
 
+#include "config-ksirk.h"
 #include "krightdialog.h"
 #include "KsirkGlobalDefinitions.h"
 #include "decoratedgameframe.h"
@@ -31,9 +32,11 @@
 #include "GameLogic/country.h"
 #include "Dialogs/InvasionSlider.h"
 #include "Sprites/animspriteslist.h"
+#if HAVE_JABBER_SUPPORT
 #include "Jabber/jabberclient.h"
-
 #include "qca.h"
+#endif
+
 
 // include files for Qt
 #include <QPointF>
@@ -66,8 +69,6 @@ class QAction;
 class QEvent;
 class QDockWidget;
 class QGraphicsScene;
-
-// class JabberClient;
 
 namespace Phonon
 {
@@ -118,7 +119,9 @@ public:
   {
     MAINMENU_INDEX /*0*/,
     NEWGAME_INDEX /*1*/,
+#if HAVE_JABBER_SUPPORT
     JABBERGAME_INDEX /*2*/,
+#endif
     NEWPLAYER_INDEX /*3*/,
     NEWGAMESUMMARY_INDEX /*4*/,
     TCPCONNECT_INDEX /*5*/,
@@ -618,6 +621,7 @@ public:
 
   bool finishSetupPlayers();
 
+#if HAVE_JABBER_SUPPORT
   inline JabberClient* jabberClient() {return m_jabberClient;}
   void askForJabberGames();
   void sendGameInfoToJabber();
@@ -640,6 +644,7 @@ public:
   const QString& groupchatRoom() const {return m_groupchatRoom;}
   const QString& groupchatNick() const {return m_groupchatNick;}
   const QString& groupchatPassword() const {return m_groupchatPassword;}
+#endif
 
   void joinNetworkGame();
 
@@ -700,9 +705,11 @@ protected:
   void reduceChat();
   void unreduceChat();
 
+#if HAVE_JABBER_SUPPORT
 Q_SIGNALS:
   void newJabberGame(const QString&, int, const QString&);
-    
+#endif
+
 public Q_SLOTS:
 
   void mouseMoveEvent ( QMouseEvent * event ) override;
@@ -711,9 +718,11 @@ public Q_SLOTS:
   /**
     * The slots associated to the buttons
     */
+#if HAVE_JABBER_SUPPORT
   void slotJabberGame();
-  void slotNewGame();
   void slotNewJabberGame();
+#endif
+  void slotNewGame();
   void slotNewSocketGame();
   void slotJoinNetworkGame();
   void slotOpenGame();
@@ -792,7 +801,9 @@ public Q_SLOTS:
 //   void slotNewGameOK(unsigned int nbPlayers, const QString& skin, unsigned int nbNetworkPlayers, bool useGoals);
   void slotNewGameKO();
 
+#if HAVE_JABBER_SUPPORT
   void slotJabberGameCanceled(int previousIndex);
+#endif
 
   void slotNewPlayerNext();
   void slotNewPlayerPrevious();
@@ -824,6 +835,7 @@ private Q_SLOTS:
   /* Disconnects from the server. */
 //   void slotDisconnect ();
   
+#if HAVE_JABBER_SUPPORT
   // handle a TLS warning
   void slotHandleTLSWarning ( QCA::TLS::IdentityResult identityResult, QCA::Validity validityResult );
   
@@ -898,6 +910,7 @@ private Q_SLOTS:
 
 /* the unregister task finished */
 //   void slotUnregisterFinished();
+#endif
   void slotExit();
 
   void slotConnectToServer();
@@ -1022,7 +1035,9 @@ private: // Private members
     * in the status bar.
     */
   QAction * m_goalAction;
+#if HAVE_JABBER_SUPPORT
   QAction* m_jabberAction;
+#endif
   QLabel* m_barFlag;
     
 //   KAccel m_accels;
@@ -1110,7 +1125,8 @@ private: // Private members
   
   GameLogic::GameAutomaton::GameState m_stateBeforeNewGame;
   int m_stackWidgetBeforeNewGame;
-  
+
+#if HAVE_JABBER_SUPPORT
   JabberClient* m_jabberClient;
   XMPP::Jid m_serverJid;
   
@@ -1127,6 +1143,7 @@ private: // Private members
   KsirkJabberGameWidget* m_jabberGameWidget;
   
   QSet<QString> m_presents;
+#endif
 
   NewGameSetup* m_newGameSetup;
   NewGameSummaryWidget* m_newGameSummaryWidget;
