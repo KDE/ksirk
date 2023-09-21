@@ -1,3 +1,7 @@
+include(CheckIncludeFiles)
+check_include_files(sys/stropts.h SYS_STROPTS_H_FOUND)
+configure_file(config-libiris.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-libiris.h)
+
 # FIND_PACKAGE(QCA2 REQUIRED)
 FIND_PACKAGE(ZLIB REQUIRED)
 
@@ -145,7 +149,11 @@ if(HAVE_NSL_LIBRARY)
   set(iris_ksirk_libs ${iris_ksirk_libs} nsl)
 endif(HAVE_NSL_LIBRARY)
 target_link_libraries(iris_ksirk ${iris_ksirk_libs})
-    
+target_include_directories(iris_ksirk
+    INTERFACE
+    ${CMAKE_CURRENT_SOURCE_DIR}/../include/iris
+)
+
 set_target_properties(iris_ksirk PROPERTIES
                       VERSION 2.0.0
                       SOVERSION 2

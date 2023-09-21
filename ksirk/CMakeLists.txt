@@ -1,31 +1,6 @@
-include(CheckIncludeFiles)
-check_include_files(sys/stropts.h SYS_STROPTS_H_FOUND)
-configure_file(config-ksirk.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-ksirk.h)
-
 add_subdirectory(skins)
 add_subdirectory(iris)
 add_subdirectory(icons)
-
-include_directories( 
-    ${CMAKE_BINARY_DIR}/ksirk
-    ./Dialogs
-    ./GameLogic
-    ./SaveLoad
-    ./skins
-    ./Sprites
-    ${CMAKE_CURRENT_SOURCE_DIR}/iris/include/iris
-    ${CMAKE_CURRENT_SOURCE_DIR}/iris/src
-#   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/include/
-#   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/jabber/
-#   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/xmpp-core/
-#   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/xmpp-im/
-#   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/cutestuff/util/
-#   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/cutestuff/network/
-#   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/cutestuff/
-#   ${CMAKE_CURRENT_SOURCE_DIR}/libiris/iris/
-  )
-
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/iris/)
 
 add_executable(ksirk)
 
@@ -125,6 +100,15 @@ kconfig_add_kcfg_files( ksirk ksirksettings.kcfgc )
 
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/icons/hicolor/*-apps-ksirk.png")
 ecm_add_app_icon(ksirk ICONS ${ICONS_SRCS})
+
+target_include_directories(ksirk
+    PRIVATE
+        ./Dialogs
+        ./GameLogic
+        ./SaveLoad
+        ./skins
+        ./Sprites
+)
 
 target_link_libraries(ksirk
     Qt5::Xml
