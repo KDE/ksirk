@@ -25,7 +25,7 @@
 
 // gateway detection currently only works on linux
 
-#include <config-ksirk.h>
+#include <config-libiris.h>
 #include "irisnetplugin.h"
 
 #include <sys/types.h>
