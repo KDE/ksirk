@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-14 00:42+0000\n"
+"POT-Creation-Date: 2023-09-23 00:41+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -1130,14 +1130,14 @@ msgstr "चाल१०"
 msgid "Disable Arena"
 msgstr "अरीना सक्षम करें"
 
-#: Dialogs/InvasionSlider.cpp:138
+#: Dialogs/InvasionSlider.cpp:97
 #, fuzzy, kde-format
 #| msgid "End Invasion"
 msgctxt "@title:window"
 msgid "Invasion"
 msgstr "कब्जे का अंत"
 
-#: Dialogs/InvasionSlider.cpp:139
+#: Dialogs/InvasionSlider.cpp:98
 #, fuzzy, kde-format
 #| msgid ""
 #| "You conquered <font color=\"blue\">%1</font> with <font color=\"red\">%2</"
@@ -1148,19 +1148,19 @@ msgid ""
 msgstr ""
 "आप जीत गए <font color=\"blue\">%1</font> इससे- <font color=\"red\">%2</font>!"
 
-#: Dialogs/InvasionSlider.cpp:140
+#: Dialogs/InvasionSlider.cpp:99
 #, fuzzy, kde-format
 #| msgid "<br><i>Choose the number of invade armies.</i>"
 msgid "<br><i>Choose the number of invading armies.</i>"
 msgstr "<br><i>हमला करने वाली सेना की संख्या चुनें.</i>"
 
-#: Dialogs/InvasionSlider.cpp:144
+#: Dialogs/InvasionSlider.cpp:103
 #, kde-format
 msgctxt "@title:window"
 msgid "Moving"
 msgstr ""
 
-#: Dialogs/InvasionSlider.cpp:145
+#: Dialogs/InvasionSlider.cpp:104
 #, fuzzy, kde-format
 #| msgid ""
 #| "You conquered <font color=\"blue\">%1</font> with <font color=\"red\">%2</"
@@ -1171,7 +1171,7 @@ msgid ""
 msgstr ""
 "आप जीत गए <font color=\"blue\">%1</font> इससे- <font color=\"red\">%2</font>!"
 
-#: Dialogs/InvasionSlider.cpp:146
+#: Dialogs/InvasionSlider.cpp:105
 #, fuzzy, kde-format
 #| msgid "<br><i>Choose the number of invade armies.</i>"
 msgid "<br><i>Choose the number of armies to move.</i>"

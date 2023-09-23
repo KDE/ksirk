@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-14 00:42+0000\n"
+"POT-Creation-Date: 2023-09-23 00:41+0000\n"
 "PO-Revision-Date: 2023-03-29 23:24+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1399,7 +1399,7 @@ msgstr "Siirrä kymmentä"
 msgid "Disable Arena"
 msgstr "Poista areena käytöstä"
 
-#: Dialogs/InvasionSlider.cpp:138
+#: Dialogs/InvasionSlider.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Invasion"
@@ -1407,7 +1407,7 @@ msgstr "Hyökkäys"
 
 # %1 ja %2 ovat maiden nimiä.
 # *** TARKISTA onko ”hyökätä” sopiva suomennos tässä?
-#: Dialogs/InvasionSlider.cpp:139
+#: Dialogs/InvasionSlider.cpp:98
 #, kde-format
 msgid ""
 "You are invading <font color=\"blue\">%1</font> with <font color=\"red\">%2</"
@@ -1418,19 +1418,19 @@ msgstr ""
 "$[illat %1]</font> <font color=\"red\">$[gen %2]</font> armeijoilla!"
 
 # *** TARKISTA onko ”hyökätä” sopiva suomennos tässä?
-#: Dialogs/InvasionSlider.cpp:140
+#: Dialogs/InvasionSlider.cpp:99
 #, kde-format
 msgid "<br><i>Choose the number of invading armies.</i>"
 msgstr "<br><i>Valitse hyökkäävien armeijoiden määrä.</i>"
 
 # KONTEKSTI: @title:window
-#: Dialogs/InvasionSlider.cpp:144
+#: Dialogs/InvasionSlider.cpp:103
 #, kde-format
 msgctxt "@title:window"
 msgid "Moving"
 msgstr "Siirto"
 
-#: Dialogs/InvasionSlider.cpp:145
+#: Dialogs/InvasionSlider.cpp:104
 #, kde-format
 msgid ""
 "You are moving armies from <font color=\"red\">%1</font> to <font color="
@@ -1440,7 +1440,7 @@ msgstr ""
 "<font color=\"blue\">%2</font>!|/|Olet siirtämässä armeijoita <font color="
 "\"red\">$[elat %1]</font> <font color=\"blue\">$[illat %2]</font>!"
 
-#: Dialogs/InvasionSlider.cpp:146
+#: Dialogs/InvasionSlider.cpp:105
 #, kde-format
 msgid "<br><i>Choose the number of armies to move.</i>"
 msgstr "<br><i>Valitse siirrettävien armeijoiden määrä.</i>"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-14 00:42+0000\n"
+"POT-Creation-Date: 2023-09-23 00:41+0000\n"
 "PO-Revision-Date: 2023-09-11 09:57+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1135,13 +1135,13 @@ msgstr "Moviment 10"
 msgid "Disable Arena"
 msgstr "Desactiva el camp de batalla"
 
-#: Dialogs/InvasionSlider.cpp:138
+#: Dialogs/InvasionSlider.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Invasion"
 msgstr "Invasió"
 
-#: Dialogs/InvasionSlider.cpp:139
+#: Dialogs/InvasionSlider.cpp:98
 #, kde-format
 msgid ""
 "You are invading <font color=\"blue\">%1</font> with <font color=\"red\">%2</"
@@ -1150,18 +1150,18 @@ msgstr ""
 "Estàs envaint <font color=\"blue\">%1</font> amb <font color=\"red\">%2</"
 "font>!"
 
-#: Dialogs/InvasionSlider.cpp:140
+#: Dialogs/InvasionSlider.cpp:99
 #, kde-format
 msgid "<br><i>Choose the number of invading armies.</i>"
 msgstr "<br><i>Trieu el nombre de batallons invasors.</i>"
 
-#: Dialogs/InvasionSlider.cpp:144
+#: Dialogs/InvasionSlider.cpp:103
 #, kde-format
 msgctxt "@title:window"
 msgid "Moving"
 msgstr "Moviment"
 
-#: Dialogs/InvasionSlider.cpp:145
+#: Dialogs/InvasionSlider.cpp:104
 #, kde-format
 msgid ""
 "You are moving armies from <font color=\"red\">%1</font> to <font color="
@@ -1170,7 +1170,7 @@ msgstr ""
 "Estàs movent batallons des de <font color=\"red\">%1</font> a <font color="
 "\"blue\">%2</font>!"
 
-#: Dialogs/InvasionSlider.cpp:146
+#: Dialogs/InvasionSlider.cpp:105
 #, kde-format
 msgid "<br><i>Choose the number of armies to move.</i>"
 msgstr "<br><i>Trieu el nombre de batallons que es mouran.</i>"

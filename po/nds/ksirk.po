@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-14 00:42+0000\n"
+"POT-Creation-Date: 2023-09-23 00:41+0000\n"
 "PO-Revision-Date: 2014-05-13 19:16+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -1130,14 +1130,14 @@ msgstr "Teihn bewegen"
 msgid "Disable Arena"
 msgstr "Fechtsteed utmaken"
 
-#: Dialogs/InvasionSlider.cpp:138
+#: Dialogs/InvasionSlider.cpp:97
 #, fuzzy, kde-format
 #| msgid "Invasion"
 msgctxt "@title:window"
 msgid "Invasion"
 msgstr "Angreep"
 
-#: Dialogs/InvasionSlider.cpp:139
+#: Dialogs/InvasionSlider.cpp:98
 #, kde-format
 msgid ""
 "You are invading <font color=\"blue\">%1</font> with <font color=\"red\">%2</"
@@ -1146,19 +1146,19 @@ msgstr ""
 "Du griepst <font color=\"blue\">%1</font>mit <font color=\"red\">%2</font> "
 "an!"
 
-#: Dialogs/InvasionSlider.cpp:140
+#: Dialogs/InvasionSlider.cpp:99
 #, kde-format
 msgid "<br><i>Choose the number of invading armies.</i>"
 msgstr "<br><i>De Tall vun Angreeparmeen utsöken.</i>"
 
-#: Dialogs/InvasionSlider.cpp:144
+#: Dialogs/InvasionSlider.cpp:103
 #, fuzzy, kde-format
 #| msgid "Moving"
 msgctxt "@title:window"
 msgid "Moving"
 msgstr "Verschuven"
 
-#: Dialogs/InvasionSlider.cpp:145
+#: Dialogs/InvasionSlider.cpp:104
 #, kde-format
 msgid ""
 "You are moving armies from <font color=\"red\">%1</font> to <font color="
@@ -1167,7 +1167,7 @@ msgstr ""
 "Du beweegst opstunns Armeen vun <font color=\"red\">%1</font> na <font color="
 "\"blue\">%2</font>!"
 
-#: Dialogs/InvasionSlider.cpp:146
+#: Dialogs/InvasionSlider.cpp:105
 #, kde-format
 msgid "<br><i>Choose the number of armies to move.</i>"
 msgstr "<br><i>De Tall vun Armeen utsöken, de Du bewegen wullt.</i>"
