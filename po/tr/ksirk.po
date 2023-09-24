@@ -3583,16 +3583,3 @@ msgstr "Hata - Bilinmeyen tema tamsayı verisi: "
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Hata - Bilinmeyen tema dizi verisi: "
-
-#~ msgid ""
-#~ "%1 exists.\n"
-#~ "Do you really want to overwrite it?"
-#~ msgstr ""
-#~ "%1 var.\n"
-#~ "Gerçekten üzerine yazmak istiyor musunuz?"
-
-#~ msgid "Overwrite file?"
-#~ msgstr "Dosyanın üzerine yazılsın mı ?"
-
-#~ msgid "Error"
-#~ msgstr "Hata"
