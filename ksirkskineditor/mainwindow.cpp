@@ -61,7 +61,6 @@
 #include <KStandardAction>
 #include <KActionCollection>
 #include "ksirkskineditor_debug.h"
-#include <phonon/mediaobject.h>
 #include <KToolBar>
 #include <KAboutApplicationDialog>
 #include <KRecentFilesAction>

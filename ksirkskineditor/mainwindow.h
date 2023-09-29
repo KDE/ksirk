@@ -56,11 +56,6 @@ class KsirkGoalDefinitionWidget;
 class KsirkSpritesDefinitionWidget;
 class KsirkNationalityDefinitionWidget;
 
-namespace Phonon
-{
-  class MediaObject;
-}
-
 namespace KsirkSkinEditor
 {
   class PixmapItem;
@@ -240,11 +235,6 @@ private:
   
   Country* currentCountry();
   void createPixmapFor(Country* country, SpriteType type);
-
-  /**
-    * Audio player object: play all the sounds of the game.
-    */
-  Phonon::MediaObject* m_audioPlayer;
 
   // the current saved game file name
   QString m_fileName;

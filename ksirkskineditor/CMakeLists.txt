@@ -46,7 +46,6 @@ kconfig_add_kcfg_files( ksirkskineditor ksirkskineditorsettings.kcfgc )
 target_link_libraries(ksirkskineditor
     Qt${QT_MAJOR_VERSION}::Xml
     Qt${QT_MAJOR_VERSION}::Svg
-    Phonon::phonon4qt${QT_MAJOR_VERSION}
     KF${KF_MAJOR_VERSION}::I18n 
     KF${KF_MAJOR_VERSION}::Completion
     KF${KF_MAJOR_VERSION}::KIOCore 
