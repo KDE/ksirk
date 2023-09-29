@@ -32,7 +32,6 @@
 #include <QRegExp>
 #include <QBuffer>
 
-#include <kwidgetsaddons_version.h>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KFileDialog>
@@ -935,19 +934,11 @@ void JabberContact::deleteContact ()
 	
 	if( mRosterItem.subscription().type() == XMPP::Subscription::Both || mRosterItem.subscription().type() == XMPP::Subscription::From )
 	{
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
 		int result = KMessageBox::questionTwoActionsCancel (Kopete::UI::Global::mainWidget(),
-#else
-		int result = KMessageBox::questionYesNoCancel (Kopete::UI::Global::mainWidget(),
-#endif
 		 				i18n ( "Do you also want to remove user %1's authorization to see your status?" , 
 						  mRosterItem.jid().bare () ), i18n ("Notification"),
 						KStandardGuiItem::del (), KGuiItem( i18n("Keep") ),KStandardGuiItem::cancel(), "JabberRemoveAuthorizationOnDelete" );
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
 		if(result == KMessageBox::PrimaryAction )
-#else
-		if(result == KMessageBox::Yes )
-#endif
 			remove_from_roster = true;
 		else if( result == KMessageBox::Cancel)
 			return;

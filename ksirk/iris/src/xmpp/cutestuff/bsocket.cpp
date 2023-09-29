@@ -166,9 +166,7 @@ void BSocket::ensureSocket()
 {
 	if(!d->qsock) {
 		d->qsock = new QTcpSocket;
-#if QT_VERSION >= 0x030200
 		d->qsock->setReadBufferSize(READBUFSIZE);
-#endif
 		d->qsock_relay = new QTcpSocketSignalRelay(d->qsock);
 		connect(d->qsock_relay, &QTcpSocketSignalRelay::hostFound, this, &BSocket::qs_hostFound);
 		connect(d->qsock_relay, &QTcpSocketSignalRelay::connected, this, &BSocket::qs_connected);

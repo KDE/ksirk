@@ -443,13 +443,8 @@ void BasicProtocol::handleDocOpen(const Parser::Event &pe)
 		if(!verstr.isEmpty()) {
 			int n = verstr.indexOf('.');
 			if(n != -1) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-                major = verstr.midRef(0, n).toInt();
-                minor = verstr.midRef(n+1).toInt();
-#else
-                major = QStringView(verstr).mid(0, n).toInt();
-                minor = QStringView(verstr).mid(n+1).toInt();
-#endif
+				major = QStringView(verstr).mid(0, n).toInt();
+				minor = QStringView(verstr).mid(n+1).toInt();
 			}
 			else {
 				major = verstr.toInt();

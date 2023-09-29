@@ -12,9 +12,6 @@ public:
 	bool exec()
 	{
 		conf->debug(QString("QT_VERSION = 0x%1").arg(QString::number(QT_VERSION, 16)));
-		if(QT_VERSION >= 0x040200)
 			return true;
-		else
-			return false;
 	}
 };

@@ -65,7 +65,6 @@
 #include <QUuid>
 
 // include files for KDE
-#include <kwidgetsaddons_version.h>
 #include <KMessageBox>
 #include <KLazyLocalizedString>
 #include <KLocalizedString>
@@ -1043,21 +1042,13 @@ bool KGameWindow::queryClose()
 
   if ((m_automaton->state() == GameAutomaton::INIT) || (m_automaton->state() ==  GameAutomaton::INTERLUDE))
   {
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     switch ( KMessageBox::warningTwoActions( this,
-#else
-    switch ( KMessageBox::warningYesNo( this,
-#endif
                                         i18n("Do you want to quit the game?"),
                                         QString(),
                                         KGuiItem(i18nc("@action:button", "Quit Game")),
                                         KStandardGuiItem::cancel()) )
     {
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     case KMessageBox::PrimaryAction :
-#else
-    case KMessageBox::Yes :
-#endif
         break;
     default:
         return false;
@@ -1065,28 +1056,16 @@ bool KGameWindow::queryClose()
   }
   else
   {
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     switch ( KMessageBox::warningTwoActionsCancel( this,
-#else
-    switch ( KMessageBox::warningYesNoCancel( this,
-#endif
                                               i18n("Before you quit, do you want to save your game?"),
                                               QString(),
                                               KStandardGuiItem::save(),
                                               KStandardGuiItem::discard()) )
     {
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     case KMessageBox::PrimaryAction :
-#else
-    case KMessageBox::Yes :
-#endif
         slotSaveGame();
         break;
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     case KMessageBox::SecondaryAction :
-#else
-    case KMessageBox::No :
-#endif
         break;
     default: // cancel
         return false;
@@ -1688,11 +1667,7 @@ void KGameWindow::broadcastChangeItem(KMessageParts& strings, int id, bool log)
   changeItem(strings, id, log );
 }
 
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 void KGameWindow::enterEvent(QEnterEvent* /*ev*/)
-#else
-void KGameWindow::enterEvent(QEvent* /*ev*/)
-#endif
 {
 //   qCDebug(KSIRK_LOG) << "KGameWindow::enterEvent()";
   // Restart the AIs threads

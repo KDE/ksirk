@@ -19,23 +19,6 @@ Dependencies:
     'frameworks/kwidgetsaddons': '@latest-kf6'
     'frameworks/kxmlgui': '@latest-kf6'
     'libraries/phonon': '@latest-kf6'
-- 'on': ['Linux/Qt5', 'FreeBSD/Qt5']
-  'require':
-    'frameworks/extra-cmake-modules': '@stable'
-    'games/libkdegames': '@same'
-    'libraries/qca': '@latest'
-    'frameworks/kcompletion': '@stable'
-    'frameworks/kconfig': '@stable'
-    'frameworks/kconfigwidgets': '@stable'
-    'frameworks/kcoreaddons': '@stable'
-    'frameworks/kcrash': '@stable'
-    'frameworks/kdoctools': '@stable'
-    'frameworks/ki18n': '@stable'
-    'frameworks/kio': '@stable'
-    'frameworks/knewstuff': '@stable'
-    'frameworks/kwallet': '@stable'
-    'frameworks/kwidgetsaddons': '@stable'
-    'frameworks/kxmlgui': '@stable'
-    'libraries/phonon': '@stable'
+
 Options:
   require-passing-tests-on: [ 'Linux', 'FreeBSD']

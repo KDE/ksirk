@@ -32,10 +32,7 @@ This is the standard main function of a KDE application simplified for KsirK
 int main(int argc, char *argv[])
 {
   qCDebug(KSIRK_LOG) << "Hello KsirK";
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-  // Fixes blurry icons with fractional scaling
-  QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
-#endif
+
   QApplication app(argc, argv);
 
   KLocalizedString::setApplicationDomain("ksirk");

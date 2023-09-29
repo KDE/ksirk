@@ -75,11 +75,7 @@ bool PrivacyList::moveItemUp(int index)
 		}
 		items_[index].setOrder(items_[index-1].order());
 		items_[index-1].setOrder(order);
-#if QT_VERSION >= 0x050D00
 		items_.swapItemsAt(index,index-1);
-#else
-		items_.swap(index,index-1);
-#endif
 		return true;
 	}
 	else {
@@ -97,11 +93,7 @@ bool PrivacyList::moveItemDown(int index)
 		}
 		items_[index].setOrder(items_[index+1].order());
 		items_[index+1].setOrder(order);
-#if QT_VERSION >= 0x050D00
 		items_.swapItemsAt(index,index+1);
-#else
-		items_.swap(index,index+1);
-#endif
 		return true;
 	}
 	else {

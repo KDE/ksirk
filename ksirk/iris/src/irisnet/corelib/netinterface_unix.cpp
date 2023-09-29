@@ -160,11 +160,7 @@ static QStringList read_proc_as_lines(const char *procfile)
 	fclose(f);
 
 	QString str = QString::fromLocal8Bit(buf);
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-	out = str.split('\n', QString::SkipEmptyParts);
-#else
 	out = str.split('\n', Qt::SkipEmptyParts);
-#endif
 	return out;
 }
 
@@ -177,11 +173,7 @@ static QHostAddress linux_ipv6_to_qaddr(const QString &in)
 	for(int n = 0; n < 16; ++n)
 	{
 		bool ok;
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-		int x = in.midRef(n * 2, 2).toInt(&ok, 16);
-#else
-        int x = QStringView(in).mid(n * 2, 2).toInt(&ok, 16);
-#endif
+		int x = QStringView(in).mid(n * 2, 2).toInt(&ok, 16);
 		if(!ok)
 			return out;
 		raw[n] = (quint8)x;
@@ -200,11 +192,7 @@ static QHostAddress linux_ipv4_to_qaddr(const QString &in)
 	for(int n = 0; n < 4; ++n)
 	{
 		bool ok;
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-		int x = in.midRef(n * 2, 2).toInt(&ok, 16);
-#else
-        int x = QStringView(in).mid(n * 2, 2).toInt(&ok, 16);
-#endif
+		int x = QStringView(in).mid(n * 2, 2).toInt(&ok, 16);
 		if(!ok)
 			return out;
 		rawp[n] = (unsigned char )x;
@@ -221,11 +209,7 @@ static QList<UnixIface> get_linux_ipv6_ifaces()
 	for(int n = 0; n < lines.count(); ++n)
 	{
 		const QString &line = lines[n];
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-		QStringList parts = line.simplified().split(' ', QString::SkipEmptyParts);
-#else
 		QStringList parts = line.simplified().split(' ', Qt::SkipEmptyParts);
-#endif
 		if(parts.count() < 6)
 			continue;
 
@@ -267,11 +251,7 @@ static QList<UnixGateway> get_linux_gateways()
 	for(int n = 1; n < lines.count(); ++n)
 	{
 		const QString &line = lines[n];
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-		QStringList parts = line.simplified().split(' ', QString::SkipEmptyParts);
-#else
 		QStringList parts = line.simplified().split(' ', Qt::SkipEmptyParts);
-#endif
 		if(parts.count() < 10) // net-tools does 10, but why not 11?
 			continue;
 
@@ -296,11 +276,7 @@ static QList<UnixGateway> get_linux_gateways()
 	for(int n = 0; n < lines.count(); ++n)
 	{
 		const QString &line = lines[n];
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-		QStringList parts = line.simplified().split(' ', QString::SkipEmptyParts);
-#else
 		QStringList parts = line.simplified().split(' ', Qt::SkipEmptyParts);
-#endif
 		if(parts.count() < 10)
 			continue;
 
