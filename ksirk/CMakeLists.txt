@@ -135,7 +135,7 @@ target_link_libraries(ksirk
     KF6::XmlGui
     KF6::NewStuffWidgets
     KF6::Wallet
-    Phonon::phonon4qt6
+    Qt6::Multimedia
     Qt6::Xml
     Qt6::Svg
     Qt6::SvgWidgets

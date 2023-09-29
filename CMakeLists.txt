@@ -32,6 +32,7 @@ add_feature_info(JABBER ${WITH_JABBER_SUPPORT} "Network gaming using Jabber")
 
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Core5Compat
+    Multimedia
     Svg
     SvgWidgets
     Widgets
@@ -53,8 +54,6 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
 )
 
 find_package(KDEGames6 7.5.0 REQUIRED)
-
-find_package(Phonon4Qt6 REQUIRED)
 
 if(WITH_JABBER_SUPPORT)
     find_package(Qca-qt6 2.1.0)

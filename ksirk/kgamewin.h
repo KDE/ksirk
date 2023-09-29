@@ -70,10 +70,7 @@ class QEvent;
 class QDockWidget;
 class QGraphicsScene;
 
-namespace Phonon
-{
-  class MediaObject;
-}
+class QMediaPlayer;
 
 namespace Ksirk
 {
@@ -1073,7 +1070,7 @@ private: // Private members
   /**
     * Audio player object: play all the sounds of the game.
     */
-  Phonon::MediaObject* m_audioPlayer;
+  QMediaPlayer* m_audioPlayer;
 
   /** 
     * This timer is used to scroll the window if the mouse stay unmoving near 

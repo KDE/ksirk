@@ -56,6 +56,7 @@
 #include <QGridLayout>
 #include <QHostInfo>
 #include <QIcon>
+#include <QMediaPlayer>
 #include <QMenuBar>
 #include <QMovie>
 #include <QStatusBar>
@@ -73,7 +74,6 @@
 #include <KStandardAction>
 #include <KActionCollection>
 #include "ksirk_debug.h"
-#include <phonon/mediaobject.h>
 #include <KGamePopupItem>
 #include <KToolBar>
 #include <KAboutData>
@@ -114,7 +114,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_goalAction(nullptr),
   m_barFlag(new QLabel(this)),
   m_chatDlg(nullptr),
-  m_audioPlayer(Phonon::createPlayer( Phonon::NotificationCategory )),
+  m_audioPlayer(new QMediaPlayer(this)),
   m_timer(this),
   m_message(nullptr),
   m_mouseLocalisation(nullptr),
