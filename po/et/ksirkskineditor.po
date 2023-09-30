@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-21 00:44+0000\n"
+"POT-Creation-Date: 2023-09-30 01:41+0000\n"
 "PO-Revision-Date: 2010-01-28 05:01+0200\n"
 "Last-Translator: Marek Laane <bald@smail.ee>\n"
 "Language-Team: Estonian <kde-et@linux.ee>\n"
@@ -1269,7 +1269,7 @@ msgid "Main Toolbar"
 msgstr "Peamine tööriistariba"
 
 #. i18n: ectx: property (windowTitle), widget (QFrame, skinEditor)
-#: ksirkskineditorwidget.ui:20 main.cpp:52 main.cpp:54
+#: ksirkskineditorwidget.ui:20 main.cpp:49 main.cpp:51
 #, kde-format
 msgid "KsirK Skin Editor"
 msgstr "KsirKi naharedaktor"
@@ -1948,12 +1948,12 @@ msgstr ""
 "ühest suunast: esimene paremalt, teine vasakult, kolmas eest ja neljas "
 "tagant. Kuid kõik spraidid ei vaja kõiki versioone.</p>"
 
-#: main.cpp:56
+#: main.cpp:53
 #, kde-format
 msgid "(c) 2008, Gaël de Chalendar\n"
 msgstr "(c) 2008: Gaël de Chalendar\n"
 
-#: main.cpp:57
+#: main.cpp:54
 #, kde-format
 msgid ""
 "For help and user manual, please see\n"
@@ -1962,152 +1962,152 @@ msgstr ""
 "Abi ja kasutaja käsiraamatu leiab\n"
 "KsirKi veebileheküljelt"
 
-#: main.cpp:59
+#: main.cpp:56
 #, fuzzy, kde-format
 #| msgid "Gael de Chalendar aka Kleag"
 msgid "Gaël de Chalendar aka Kleag"
 msgstr "Gael de Chalendar aka Kleag"
 
-#: main.cpp:64
+#: main.cpp:61
 #, kde-format
 msgid "file to open"
 msgstr "avatav fail"
 
-#: mainwindow.cpp:128 mainwindow.cpp:690 mainwindow.cpp:818 mainwindow.cpp:1205
+#: mainwindow.cpp:126 mainwindow.cpp:676 mainwindow.cpp:804 mainwindow.cpp:1191
 #, kde-format
 msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr "Ankru ikooni laadimine nurjus<br>Programm lõpetab töö"
 
-#: mainwindow.cpp:128 mainwindow.cpp:142 mainwindow.cpp:690 mainwindow.cpp:719
-#: mainwindow.cpp:818 mainwindow.cpp:835 mainwindow.cpp:1205 onu.cpp:79
+#: mainwindow.cpp:126 mainwindow.cpp:140 mainwindow.cpp:676 mainwindow.cpp:705
+#: mainwindow.cpp:804 mainwindow.cpp:821 mainwindow.cpp:1191 onu.cpp:79
 #: onu.cpp:112 onu.cpp:131
 #, kde-format
 msgid "Error"
 msgstr "Viga"
 
-#: mainwindow.cpp:142 mainwindow.cpp:719 mainwindow.cpp:835
+#: mainwindow.cpp:140 mainwindow.cpp:705 mainwindow.cpp:821
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
 msgstr "Tsentri ikooni laadimine nurjus<br>Programm lõpetab töö"
 
-#: mainwindow.cpp:325
+#: mainwindow.cpp:323
 #, kde-format
 msgid "Open a saved skin..."
 msgstr "Salvestatud naha avamine..."
 
-#: mainwindow.cpp:329
+#: mainwindow.cpp:327
 #, kde-format
 msgid "Load &Recent"
 msgstr "Laadi &viimati kasutatud"
 
-#: mainwindow.cpp:330
+#: mainwindow.cpp:328
 #, kde-format
 msgid "Open a recently saved skin..."
 msgstr "Viimati salvestatud naha avamine..."
 
-#: mainwindow.cpp:338
+#: mainwindow.cpp:336
 #, kde-format
 msgid "Save the current skin"
 msgstr "Aktiivse naha salvestamine"
 
-#: mainwindow.cpp:367
+#: mainwindow.cpp:365
 #, fuzzy, kde-format
 #| msgid "Choose the root folder of the skin to open"
 msgctxt "@title:window"
 msgid "Choose the Root Folder of the Skin to Open"
 msgstr "Avatava naha juurkataloogi valimine"
 
-#: mainwindow.cpp:530
+#: mainwindow.cpp:524
 #, kde-format
 msgid "There are unsaved changes. What do you want to do?"
 msgstr "Muudatused on salvestamata. Mida ette võtta?"
 
-#: mainwindow.cpp:531
+#: mainwindow.cpp:525
 #, kde-format
 msgid "Exit Anyway?"
 msgstr "Kas igal juhul väljuda?"
 
-#: mainwindow.cpp:532
+#: mainwindow.cpp:526
 #, kde-format
 msgid "Quit without saving"
 msgstr "Välju salvestamata"
 
-#: mainwindow.cpp:533
+#: mainwindow.cpp:527
 #, kde-format
 msgid "Save then quit"
 msgstr "Salvesta ja välju"
 
-#: mainwindow.cpp:534
+#: mainwindow.cpp:528
 #, kde-format
 msgid "Do not quit"
 msgstr "Ära välju"
 
-#: mainwindow.cpp:1317
+#: mainwindow.cpp:1303
 #, kde-format
 msgid "New country name"
 msgstr "Uue riigi nimi"
 
-#: mainwindow.cpp:1317
+#: mainwindow.cpp:1303
 #, kde-format
 msgid "Enter the name of the new country"
 msgstr "Sisesta uue riigi nimi"
 
-#: mainwindow.cpp:1327
+#: mainwindow.cpp:1313
 #, kde-format
 msgid "Do you really want to delete country '%1'?"
 msgstr "Kas tõesti kustutada riik '%1'?"
 
-#: mainwindow.cpp:1327
+#: mainwindow.cpp:1313
 #, kde-format
 msgid "Really delete country?"
 msgstr "Kas tõesti kustutada riik?"
 
-#: mainwindow.cpp:1346
+#: mainwindow.cpp:1332
 #, kde-format
 msgid "New continent name"
 msgstr "Uue mandri nimi"
 
-#: mainwindow.cpp:1346
+#: mainwindow.cpp:1332
 #, kde-format
 msgid "Enter the name of the new continent"
 msgstr "Sisesta uue mandri nimi"
 
-#: mainwindow.cpp:1356
+#: mainwindow.cpp:1342
 #, kde-format
 msgid "Do you really want to delete continent '%1'?"
 msgstr "Kas tõesti kustutada manner '%1'?"
 
-#: mainwindow.cpp:1356
+#: mainwindow.cpp:1342
 #, kde-format
 msgid "Really delete continent?"
 msgstr "Kas tõesti kustutada manner?"
 
-#: mainwindow.cpp:1905
+#: mainwindow.cpp:1891
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "Kas tõesti kustutada eesmärk '%1'?"
 
-#: mainwindow.cpp:1905
+#: mainwindow.cpp:1891
 #, kde-format
 msgid "Really delete goal?"
 msgstr "Kas tõesti kustutada eesmärk?"
 
-#: mainwindow.cpp:1964
+#: mainwindow.cpp:1950
 #, kde-format
 msgid "New nationality name"
 msgstr "Uue rahvuse nimi"
 
-#: mainwindow.cpp:1964
+#: mainwindow.cpp:1950
 #, kde-format
 msgid "Enter the name of the new nationality"
 msgstr "Sisesta uue rahvuse nimi"
 
-#: mainwindow.cpp:1974
+#: mainwindow.cpp:1960
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "Kas tõesti kustutada rahvus '%1'?"
 
-#: mainwindow.cpp:1974
+#: mainwindow.cpp:1960
 #, kde-format
 msgid "Really delete nationality?"
 msgstr "Kas tõesti kustutada rahvus?"

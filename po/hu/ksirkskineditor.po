@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-21 00:44+0000\n"
+"POT-Creation-Date: 2023-09-30 01:41+0000\n"
 "PO-Revision-Date: 2010-04-01 07:49+0200\n"
 "Last-Translator: Laszlo Papp <djszapi@archlinux.us>\n"
 "Language-Team: Hungarian <kde-i18n-hu@kde.org>\n"
@@ -1288,7 +1288,7 @@ msgid "Main Toolbar"
 msgstr "Alap eszköztár"
 
 #. i18n: ectx: property (windowTitle), widget (QFrame, skinEditor)
-#: ksirkskineditorwidget.ui:20 main.cpp:52 main.cpp:54
+#: ksirkskineditorwidget.ui:20 main.cpp:49 main.cpp:51
 #, kde-format
 msgid "KsirK Skin Editor"
 msgstr "KsirK felületszerkesztő"
@@ -1974,12 +1974,12 @@ msgstr ""
 "balra néz, a harmadikon elölről, a negyediken hátulról látszik. De nem "
 "kötelező, hogy minden sprite-nál létezzen mindegyik nézet.</p>"
 
-#: main.cpp:56
+#: main.cpp:53
 #, kde-format
 msgid "(c) 2008, Gaël de Chalendar\n"
 msgstr "(c) Gaël de Chalendar, 2008.\n"
 
-#: main.cpp:57
+#: main.cpp:54
 #, kde-format
 msgid ""
 "For help and user manual, please see\n"
@@ -1988,154 +1988,154 @@ msgstr ""
 "Ha dokumentációra vagy segítségre van szüksége,\n"
 "látogasson el a KsirK honlapra!"
 
-#: main.cpp:59
+#: main.cpp:56
 #, fuzzy, kde-format
 #| msgid "Gael de Chalendar aka Kleag"
 msgid "Gaël de Chalendar aka Kleag"
 msgstr "Gael de Chalendar aka Kleag"
 
-#: main.cpp:64
+#: main.cpp:61
 #, kde-format
 msgid "file to open"
 msgstr "a megnyitandó fájl"
 
-#: mainwindow.cpp:128 mainwindow.cpp:690 mainwindow.cpp:818 mainwindow.cpp:1205
+#: mainwindow.cpp:126 mainwindow.cpp:676 mainwindow.cpp:804 mainwindow.cpp:1191
 #, kde-format
 msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr ""
 "Nem sikerült betölteni a horgonyikont.<br>A program nem tud tovább futni"
 
-#: mainwindow.cpp:128 mainwindow.cpp:142 mainwindow.cpp:690 mainwindow.cpp:719
-#: mainwindow.cpp:818 mainwindow.cpp:835 mainwindow.cpp:1205 onu.cpp:79
+#: mainwindow.cpp:126 mainwindow.cpp:140 mainwindow.cpp:676 mainwindow.cpp:705
+#: mainwindow.cpp:804 mainwindow.cpp:821 mainwindow.cpp:1191 onu.cpp:79
 #: onu.cpp:112 onu.cpp:131
 #, kde-format
 msgid "Error"
 msgstr "Hiba"
 
-#: mainwindow.cpp:142 mainwindow.cpp:719 mainwindow.cpp:835
+#: mainwindow.cpp:140 mainwindow.cpp:705 mainwindow.cpp:821
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
 msgstr ""
 "Nem sikerült betölteni a középső ikont<br>A program nem tud tovább futni"
 
-#: mainwindow.cpp:325
+#: mainwindow.cpp:323
 #, kde-format
 msgid "Open a saved skin..."
 msgstr "Felület betöltése..."
 
-#: mainwindow.cpp:329
+#: mainwindow.cpp:327
 #, kde-format
 msgid "Load &Recent"
 msgstr "Nemrég &használt felület"
 
-#: mainwindow.cpp:330
+#: mainwindow.cpp:328
 #, kde-format
 msgid "Open a recently saved skin..."
 msgstr "Nemrég mentett felület megnyitása..."
 
-#: mainwindow.cpp:338
+#: mainwindow.cpp:336
 #, kde-format
 msgid "Save the current skin"
 msgstr "A jelenlegi felület elmentése"
 
-#: mainwindow.cpp:367
+#: mainwindow.cpp:365
 #, fuzzy, kde-format
 #| msgid "Choose the root folder of the skin to open"
 msgctxt "@title:window"
 msgid "Choose the Root Folder of the Skin to Open"
 msgstr "Válassza ki a megnyitandó felület alapmappáját"
 
-#: mainwindow.cpp:530
+#: mainwindow.cpp:524
 #, kde-format
 msgid "There are unsaved changes. What do you want to do?"
 msgstr "Néhány változás nincs elmentve. Mit szeretne tenni?"
 
-#: mainwindow.cpp:531
+#: mainwindow.cpp:525
 #, kde-format
 msgid "Exit Anyway?"
 msgstr "Biztosan kilép?"
 
-#: mainwindow.cpp:532
+#: mainwindow.cpp:526
 #, kde-format
 msgid "Quit without saving"
 msgstr "Kilépés mentés nélkül"
 
-#: mainwindow.cpp:533
+#: mainwindow.cpp:527
 #, kde-format
 msgid "Save then quit"
 msgstr "Mentés kilépés előtt"
 
-#: mainwindow.cpp:534
+#: mainwindow.cpp:528
 #, kde-format
 msgid "Do not quit"
 msgstr "Ne lépjen ki"
 
-#: mainwindow.cpp:1317
+#: mainwindow.cpp:1303
 #, kde-format
 msgid "New country name"
 msgstr "Új országnév"
 
-#: mainwindow.cpp:1317
+#: mainwindow.cpp:1303
 #, kde-format
 msgid "Enter the name of the new country"
 msgstr "Írja be az új ország nevét"
 
-#: mainwindow.cpp:1327
+#: mainwindow.cpp:1313
 #, kde-format
 msgid "Do you really want to delete country '%1'?"
 msgstr "Biztosan törölni szeretné ezt az országot: \"%1\"?"
 
-#: mainwindow.cpp:1327
+#: mainwindow.cpp:1313
 #, kde-format
 msgid "Really delete country?"
 msgstr "Biztosan törli?"
 
-#: mainwindow.cpp:1346
+#: mainwindow.cpp:1332
 #, kde-format
 msgid "New continent name"
 msgstr "Új földrész"
 
-#: mainwindow.cpp:1346
+#: mainwindow.cpp:1332
 #, kde-format
 msgid "Enter the name of the new continent"
 msgstr "Adja meg az új földrész nevét"
 
-#: mainwindow.cpp:1356
+#: mainwindow.cpp:1342
 #, kde-format
 msgid "Do you really want to delete continent '%1'?"
 msgstr "Biztosan törölni szeretné ezt a földrészt: \"%1\"?"
 
-#: mainwindow.cpp:1356
+#: mainwindow.cpp:1342
 #, kde-format
 msgid "Really delete continent?"
 msgstr "Biztosan törölni szeretné ezt a földrészt?"
 
-#: mainwindow.cpp:1905
+#: mainwindow.cpp:1891
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "Biztosan törölni szeretné ezt a célt: \"%1\"?"
 
-#: mainwindow.cpp:1905
+#: mainwindow.cpp:1891
 #, kde-format
 msgid "Really delete goal?"
 msgstr "Biztosan törölni szeretné ezt a célt?"
 
-#: mainwindow.cpp:1964
+#: mainwindow.cpp:1950
 #, kde-format
 msgid "New nationality name"
 msgstr "Új népcsoportnév"
 
-#: mainwindow.cpp:1964
+#: mainwindow.cpp:1950
 #, kde-format
 msgid "Enter the name of the new nationality"
 msgstr "Adja meg az új népcsoport nevét"
 
-#: mainwindow.cpp:1974
+#: mainwindow.cpp:1960
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "Biztosan törölni szeretné ezt a népcsoportot: \"%1\"?"
 
-#: mainwindow.cpp:1974
+#: mainwindow.cpp:1960
 #, kde-format
 msgid "Really delete nationality?"
 msgstr "Biztosan törölni szeretné ezt a népcsoportot?"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-21 00:44+0000\n"
+"POT-Creation-Date: 2023-09-30 01:41+0000\n"
 "PO-Revision-Date: 2021-11-23 23:21+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -1305,7 +1305,7 @@ msgid "Main Toolbar"
 msgstr "Barra degli strumenti principale"
 
 #. i18n: ectx: property (windowTitle), widget (QFrame, skinEditor)
-#: ksirkskineditorwidget.ui:20 main.cpp:52 main.cpp:54
+#: ksirkskineditorwidget.ui:20 main.cpp:49 main.cpp:51
 #, kde-format
 msgid "KsirK Skin Editor"
 msgstr "Editor dei temi di KsirK"
@@ -2009,12 +2009,12 @@ msgstr ""
 "l'ultimo di dietro. Tuttavia, non tutti gli sprite devono avere tutte le "
 "versioni.</p>"
 
-#: main.cpp:56
+#: main.cpp:53
 #, kde-format
 msgid "(c) 2008, Gaël de Chalendar\n"
 msgstr "© 2008, Gaël de Chalendar\n"
 
-#: main.cpp:57
+#: main.cpp:54
 #, kde-format
 msgid ""
 "For help and user manual, please see\n"
@@ -2023,152 +2023,152 @@ msgstr ""
 "Per aiuto e manuale utente, vedi\n"
 "il sito Web di KsirK"
 
-#: main.cpp:59
+#: main.cpp:56
 #, kde-format
 msgid "Gaël de Chalendar aka Kleag"
 msgstr "Gaël de Chalendar, detto Kleag"
 
-#: main.cpp:64
+#: main.cpp:61
 #, kde-format
 msgid "file to open"
 msgstr "file da aprire"
 
-#: mainwindow.cpp:128 mainwindow.cpp:690 mainwindow.cpp:818 mainwindow.cpp:1205
+#: mainwindow.cpp:126 mainwindow.cpp:676 mainwindow.cpp:804 mainwindow.cpp:1191
 #, kde-format
 msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr ""
 "Impossibile caricare icona di ancora<br>Il programma non può continuare"
 
-#: mainwindow.cpp:128 mainwindow.cpp:142 mainwindow.cpp:690 mainwindow.cpp:719
-#: mainwindow.cpp:818 mainwindow.cpp:835 mainwindow.cpp:1205 onu.cpp:79
+#: mainwindow.cpp:126 mainwindow.cpp:140 mainwindow.cpp:676 mainwindow.cpp:705
+#: mainwindow.cpp:804 mainwindow.cpp:821 mainwindow.cpp:1191 onu.cpp:79
 #: onu.cpp:112 onu.cpp:131
 #, kde-format
 msgid "Error"
 msgstr "Errore"
 
-#: mainwindow.cpp:142 mainwindow.cpp:719 mainwindow.cpp:835
+#: mainwindow.cpp:140 mainwindow.cpp:705 mainwindow.cpp:821
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
 msgstr ""
 "Impossibile caricare icona di centro<br>Il programma non può continuare"
 
-#: mainwindow.cpp:325
+#: mainwindow.cpp:323
 #, kde-format
 msgid "Open a saved skin..."
 msgstr "Apri un tema salvato..."
 
-#: mainwindow.cpp:329
+#: mainwindow.cpp:327
 #, kde-format
 msgid "Load &Recent"
 msgstr "Carica &recente"
 
-#: mainwindow.cpp:330
+#: mainwindow.cpp:328
 #, kde-format
 msgid "Open a recently saved skin..."
 msgstr "Apri un tema salvato di recente..."
 
-#: mainwindow.cpp:338
+#: mainwindow.cpp:336
 #, kde-format
 msgid "Save the current skin"
 msgstr "Salva il tema attuale"
 
-#: mainwindow.cpp:367
+#: mainwindow.cpp:365
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Root Folder of the Skin to Open"
 msgstr "Scegli la cartella radice del tema da aprire"
 
-#: mainwindow.cpp:530
+#: mainwindow.cpp:524
 #, kde-format
 msgid "There are unsaved changes. What do you want to do?"
 msgstr "Ci sono modifiche non salvate. Cosa vuoi fare?"
 
-#: mainwindow.cpp:531
+#: mainwindow.cpp:525
 #, kde-format
 msgid "Exit Anyway?"
 msgstr "Esci lo stesso?"
 
-#: mainwindow.cpp:532
+#: mainwindow.cpp:526
 #, kde-format
 msgid "Quit without saving"
 msgstr "Esci senza salvare"
 
-#: mainwindow.cpp:533
+#: mainwindow.cpp:527
 #, kde-format
 msgid "Save then quit"
 msgstr "Salva ed esci"
 
-#: mainwindow.cpp:534
+#: mainwindow.cpp:528
 #, kde-format
 msgid "Do not quit"
 msgstr "Non uscire"
 
-#: mainwindow.cpp:1317
+#: mainwindow.cpp:1303
 #, kde-format
 msgid "New country name"
 msgstr "Nuovo nome di stato"
 
-#: mainwindow.cpp:1317
+#: mainwindow.cpp:1303
 #, kde-format
 msgid "Enter the name of the new country"
 msgstr "Inserisci il nome del nuovo stato"
 
-#: mainwindow.cpp:1327
+#: mainwindow.cpp:1313
 #, kde-format
 msgid "Do you really want to delete country '%1'?"
 msgstr "Vuoi veramente eliminare lo stato «%1»?"
 
-#: mainwindow.cpp:1327
+#: mainwindow.cpp:1313
 #, kde-format
 msgid "Really delete country?"
 msgstr "Davvero eliminare lo stato?"
 
-#: mainwindow.cpp:1346
+#: mainwindow.cpp:1332
 #, kde-format
 msgid "New continent name"
 msgstr "Nuovo nome di continente"
 
-#: mainwindow.cpp:1346
+#: mainwindow.cpp:1332
 #, kde-format
 msgid "Enter the name of the new continent"
 msgstr "Inserisci il nome del nuovo continente"
 
-#: mainwindow.cpp:1356
+#: mainwindow.cpp:1342
 #, kde-format
 msgid "Do you really want to delete continent '%1'?"
 msgstr "Vuoi veramente eliminare il continente «%1»?"
 
-#: mainwindow.cpp:1356
+#: mainwindow.cpp:1342
 #, kde-format
 msgid "Really delete continent?"
 msgstr "Davvero eliminare il continente?"
 
-#: mainwindow.cpp:1905
+#: mainwindow.cpp:1891
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "Vuoi veramente eliminare l'obiettivo «%1»?"
 
-#: mainwindow.cpp:1905
+#: mainwindow.cpp:1891
 #, kde-format
 msgid "Really delete goal?"
 msgstr "Davvero eliminare l'obiettivo?"
 
-#: mainwindow.cpp:1964
+#: mainwindow.cpp:1950
 #, kde-format
 msgid "New nationality name"
 msgstr "Nuovo nome di nazionalità"
 
-#: mainwindow.cpp:1964
+#: mainwindow.cpp:1950
 #, kde-format
 msgid "Enter the name of the new nationality"
 msgstr "Inserisci il nome della nuova nazionalità"
 
-#: mainwindow.cpp:1974
+#: mainwindow.cpp:1960
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "Vuoi veramente eliminare la nazionalità «%1»?"
 
-#: mainwindow.cpp:1974
+#: mainwindow.cpp:1960
 #, kde-format
 msgid "Really delete nationality?"
 msgstr "Davvero eliminare la nazionalità?"

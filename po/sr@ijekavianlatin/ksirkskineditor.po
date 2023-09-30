@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-05-12 03:24+0200\n"
+"POT-Creation-Date: 2023-09-30 01:41+0000\n"
 "PO-Revision-Date: 2017-09-28 17:59+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -853,8 +853,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkskindefinition.ui:46
-#, kde-format
-msgid "Width x Height"
+#, fuzzy, kde-format
+#| msgid "Width x Height"
+msgid "Width x height:"
 msgstr "Širina × visina"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, widthLineEdit)
@@ -972,10 +973,13 @@ msgstr "Sprajtovi"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: ksirkskindefinition.ui:184
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Edit the sprite definitions\n"
+#| "in the right dock"
 msgid ""
 "Edit the sprite definitions\n"
-"in the right dock"
+"in the right dock."
 msgstr ""
 "Uredite definicije\n"
 "sprajtova u polju desno."
@@ -1226,7 +1230,7 @@ msgstr ""
 "Ime svakog cilja treba da je jedinstveno. Izaberite cilj i uredite njegove "
 "detalje u polju desno."
 
-#: ksirkSkinEditorConfigDialog.cpp:57
+#: ksirkSkinEditorConfigDialog.cpp:55
 #, kde-format
 msgid "Preferences"
 msgstr "Postavke"
@@ -1273,7 +1277,7 @@ msgid "Main Toolbar"
 msgstr "Glavna traka"
 
 #. i18n: ectx: property (windowTitle), widget (QFrame, skinEditor)
-#: ksirkskineditorwidget.ui:20 main.cpp:42 main.cpp:54
+#: ksirkskineditorwidget.ui:20 main.cpp:49 main.cpp:51
 #, kde-format
 msgid "KsirK Skin Editor"
 msgstr "Uređivač maski za KSirk"
@@ -1442,8 +1446,9 @@ msgstr ""
 #: ksirkspritesdefinition.ui:110 ksirkspritesdefinition.ui:207
 #: ksirkspritesdefinition.ui:298 ksirkspritesdefinition.ui:391
 #: ksirkspritesdefinition.ui:486 ksirkspritesdefinition.ui:581
-#, kde-format
-msgid "Nb Frames:"
+#, fuzzy, kde-format
+#| msgid "Nb Frames:"
+msgid "Nb frames:"
 msgstr "Broj kadrova:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagf)
@@ -1473,8 +1478,9 @@ msgstr ""
 #: ksirkspritesdefinition.ui:127 ksirkspritesdefinition.ui:224
 #: ksirkspritesdefinition.ui:315 ksirkspritesdefinition.ui:408
 #: ksirkspritesdefinition.ui:503 ksirkspritesdefinition.ui:598
-#, kde-format
-msgid "Nb Versions:"
+#, fuzzy, kde-format
+#| msgid "Nb Versions:"
+msgid "Nb versions:"
 msgstr "Broj verzija:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagv)
@@ -1956,12 +1962,12 @@ msgstr ""
 "gleda slijeva, treći je gledano sprijeda, a četvrti otpozadi. Međutim, nisu "
 "svim sprajtovima potrebne sve verzije.</p>"
 
-#: main.cpp:58
+#: main.cpp:53
 #, kde-format
 msgid "(c) 2008, Gaël de Chalendar\n"
 msgstr "© 2008, Gael de Šalendar\n"
 
-#: main.cpp:59
+#: main.cpp:54
 #, kde-format
 msgid ""
 "For help and user manual, please see\n"
@@ -1970,31 +1976,32 @@ msgstr ""
 "Pomoć i korisničko uputstvo pogledajte\n"
 "na veb sajtu KSirka."
 
-#: main.cpp:61
-#, kde-format
-msgid "Gael de Chalendar aka Kleag"
+#: main.cpp:56
+#, fuzzy, kde-format
+#| msgid "Gael de Chalendar aka Kleag"
+msgid "Gaël de Chalendar aka Kleag"
 msgstr "Gael de Šalendar (Kleag)"
 
-#: main.cpp:66
+#: main.cpp:61
 #, kde-format
 msgid "file to open"
 msgstr "Fajl za otvaranje"
 
-#: mainwindow.cpp:130 mainwindow.cpp:679 mainwindow.cpp:807 mainwindow.cpp:1194
+#: mainwindow.cpp:126 mainwindow.cpp:676 mainwindow.cpp:804 mainwindow.cpp:1191
 #, kde-format
 msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr ""
 "<html>Ne mogu da učitam ikonicu sidra.<br />Program ne može da nastavi.</"
 "html>"
 
-#: mainwindow.cpp:130 mainwindow.cpp:144 mainwindow.cpp:679 mainwindow.cpp:708
-#: mainwindow.cpp:807 mainwindow.cpp:824 mainwindow.cpp:1194 onu.cpp:79
+#: mainwindow.cpp:126 mainwindow.cpp:140 mainwindow.cpp:676 mainwindow.cpp:705
+#: mainwindow.cpp:804 mainwindow.cpp:821 mainwindow.cpp:1191 onu.cpp:79
 #: onu.cpp:112 onu.cpp:131
 #, kde-format
 msgid "Error"
 msgstr "Greška"
 
-#: mainwindow.cpp:144 mainwindow.cpp:708 mainwindow.cpp:824
+#: mainwindow.cpp:140 mainwindow.cpp:705 mainwindow.cpp:821
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
 msgstr ""
@@ -2002,124 +2009,126 @@ msgstr ""
 "html>"
 
 # >> @info:tooltip
-#: mainwindow.cpp:327
+#: mainwindow.cpp:323
 #, kde-format
 msgid "Open a saved skin..."
 msgstr "Otvori sačuvanu masku"
 
-#: mainwindow.cpp:331
+#: mainwindow.cpp:327
 #, kde-format
 msgid "Load &Recent"
 msgstr "Učitaj &nedavnu"
 
 # >> @info:tooltip
-#: mainwindow.cpp:332
+#: mainwindow.cpp:328
 #, kde-format
 msgid "Open a recently saved skin..."
 msgstr "Otvori nedavno sačuvanu masku"
 
-#: mainwindow.cpp:340
+#: mainwindow.cpp:336
 #, kde-format
 msgid "Save the current skin"
 msgstr "Sačuvaj tekuću masku"
 
 # >> @title:window
-#: mainwindow.cpp:369
-#, kde-format
-msgid "Choose the root folder of the skin to open"
+#: mainwindow.cpp:365
+#, fuzzy, kde-format
+#| msgid "Choose the root folder of the skin to open"
+msgctxt "@title:window"
+msgid "Choose the Root Folder of the Skin to Open"
 msgstr "Izbor korene fascikla maske za otvaranje"
 
-#: mainwindow.cpp:527
+#: mainwindow.cpp:524
 #, kde-format
 msgid "There are unsaved changes. What do you want to do?"
 msgstr "Ima nesačuvanih izmena. Šta želite da uradite?"
 
-#: mainwindow.cpp:528
+#: mainwindow.cpp:525
 #, kde-format
 msgid "Exit Anyway?"
 msgstr "Svejedno napustiti?"
 
-#: mainwindow.cpp:529
+#: mainwindow.cpp:526
 #, kde-format
 msgid "Quit without saving"
 msgstr "Napusti bez upisivanja"
 
-#: mainwindow.cpp:530
+#: mainwindow.cpp:527
 #, kde-format
 msgid "Save then quit"
 msgstr "Sačuvaj pa napusti"
 
-#: mainwindow.cpp:531
+#: mainwindow.cpp:528
 #, kde-format
 msgid "Do not quit"
 msgstr "Ne napuštaj"
 
-#: mainwindow.cpp:1306
+#: mainwindow.cpp:1303
 #, kde-format
 msgid "New country name"
 msgstr "Ime nove zemlje"
 
-#: mainwindow.cpp:1306
+#: mainwindow.cpp:1303
 #, kde-format
 msgid "Enter the name of the new country"
 msgstr "Unesite ime nove zemlje"
 
-#: mainwindow.cpp:1316
+#: mainwindow.cpp:1313
 #, kde-format
 msgid "Do you really want to delete country '%1'?"
 msgstr "Želite li zaista da obrišete zemlju „%1“?"
 
-#: mainwindow.cpp:1316
+#: mainwindow.cpp:1313
 #, kde-format
 msgid "Really delete country?"
 msgstr "Zaista obrisati zemlju?"
 
-#: mainwindow.cpp:1335
+#: mainwindow.cpp:1332
 #, kde-format
 msgid "New continent name"
 msgstr "Ime novog kontinenta"
 
-#: mainwindow.cpp:1335
+#: mainwindow.cpp:1332
 #, kde-format
 msgid "Enter the name of the new continent"
 msgstr "Unesite ime novog kontinenta"
 
-#: mainwindow.cpp:1345
+#: mainwindow.cpp:1342
 #, kde-format
 msgid "Do you really want to delete continent '%1'?"
 msgstr "Želite li zaista da obrišete kontinent „%1“?"
 
-#: mainwindow.cpp:1345
+#: mainwindow.cpp:1342
 #, kde-format
 msgid "Really delete continent?"
 msgstr "Zaista obrisati kontinent?"
 
-#: mainwindow.cpp:1894
+#: mainwindow.cpp:1891
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "Želite li zaista da obrišete cilj „%1“?"
 
-#: mainwindow.cpp:1894
+#: mainwindow.cpp:1891
 #, kde-format
 msgid "Really delete goal?"
 msgstr "Zaista obrisati cilj?"
 
-#: mainwindow.cpp:1953
+#: mainwindow.cpp:1950
 #, kde-format
 msgid "New nationality name"
 msgstr "Ime nove nacije"
 
-#: mainwindow.cpp:1953
+#: mainwindow.cpp:1950
 #, kde-format
 msgid "Enter the name of the new nationality"
 msgstr "Unesite ime nove nacije"
 
-#: mainwindow.cpp:1963
+#: mainwindow.cpp:1960
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "Želite li zaista da uklonite naciju „%1“?"
 
-#: mainwindow.cpp:1963
+#: mainwindow.cpp:1960
 #, kde-format
 msgid "Really delete nationality?"
 msgstr "Zaista obrisati naciju?"
