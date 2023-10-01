@@ -1781,7 +1781,7 @@ msgid ""
 "What do you want to do?"
 msgstr ""
 "KsirK - S'ha perdut la connexió amb el servidor!\n"
-"Que voleu fer?"
+"Què voleu fer?"
 
 #: GameLogic/gameautomaton.cpp:1663
 #, kde-format

@@ -1,62 +1,62 @@
-# Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-# Xosé <xosecalvo@gmail.com>, 2012.
-# Marce Villarino <mvillarino@kde-espana.org>, 2013, 2014.
-# Adrian Chaves <adriyetichaves@gmail.com>, 2017.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2023.
+# Translation for ksirkskineditor.po to Euskara/Basque (eu).
+# Copyright (C) 2023 This file is copyright:
+# This file is distributed under the same license as the ksirk package.
+# SPDX-FileCopyrightText: 2023 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
+# Translators:
+# SPDX-FileCopyrightText: 2023 Iñigo Salvador Azurmendi <xalba@ni.eus>
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2023-06-05 15:04+0200\n"
-"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
-"Language-Team: Galician <proxecto@trasno.gal>\n"
-"Language: gl\n"
+"PO-Revision-Date: 2023-09-30 16:28+0200\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
+"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Xosé Calvo"
+msgstr "Iñigo Salvador Azurmendi"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "xosecalvo@gmail.com"
+msgstr "xalba@euskalnet.net"
 
 #: goal.cpp:100
 #, kde-format
 msgid "Error: no player to destroy"
-msgstr "Erro: non hai ningún xogador que destruír"
+msgstr "Errorea: ez dago suntsitzeko jokalaririk"
 
 #: goal.cpp:213
 #, kde-format
 msgid "KsirK - Goal Display"
-msgstr "KsirK - Amosar obxectivos"
+msgstr "KsirK - Helburua azaldu"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
 #: ksirkcontinentdefinition.ui:13
 #, kde-format
 msgid "Continent"
-msgstr "Continente"
+msgstr "Kontinentea"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkcontinentdefinition.ui:22
 #, kde-format
 msgid "Bonus:"
-msgstr "Premio:"
+msgstr "Saria:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, bonus)
 #: ksirkcontinentdefinition.ui:29
 #, kde-format
 msgid "Number of bonus points when owning the full continent"
-msgstr "Número de puntos de premio ao posuír o continente completo"
+msgstr "Kontinente osoaz jabetzean sari-puntu kopurua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, bonus)
 #: ksirkcontinentdefinition.ui:36
@@ -71,19 +71,12 @@ msgid ""
 "The bonus should be proportional to the continent's size and to the "
 "difficulty to conquer it or to keep it."
 msgstr ""
-"Número de puntos de premio cando se posúe o continente completo.\n"
-"\n"
-"Cando remata cada quenda distribúenselles exércitos a cada xogador. Se un "
-"xogador posúe todos os países deste continente, gaña este premio.\n"
-"\n"
-"O premio debería ser proporcional ao tamaño do continente e á dificultade de "
-"conquistalo ou retelo."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:48
 #, kde-format
 msgid "Select the countries contained in this continent"
-msgstr "Escolle os países contidos neste continente"
+msgstr "Aukeratu kontinente horretan dauden herrialdeak"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:53
@@ -94,40 +87,36 @@ msgid ""
 "A list of all the world's countries will be shown and you will be able to "
 "select the countries using the mouse and the Ctrl and Shift keys."
 msgstr ""
-"Preme aquí para escoller os países contidos neste continente.\n"
-"\n"
-"Aparecerá unha lista de todos os países na que se poden seleccionar os "
-"países co rato e as teclas Control e Maiúsculas."
 
 #. i18n: ectx: property (text), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:56
 #, kde-format
 msgid "Countries:"
-msgstr "Países:"
+msgstr "Herrialdeak:"
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, countrieslist)
 #: ksirkcontinentdefinition.ui:63
 #, kde-format
 msgid "Continent's countries"
-msgstr "Países do continente"
+msgstr "Kontinenteko herrialdeak"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, countrieslist)
 #: ksirkcontinentdefinition.ui:66
 #, kde-format
 msgid "This is the list of countries currently forming this continent."
-msgstr "Esta é a lista dos países que constitúen este continente."
+msgstr "Hori da, egun, kontinentea osatzen duten herrialdeak."
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkCountryDefinition)
 #: ksirkcountrydefinition.ui:13
 #, kde-format
 msgid "Country"
-msgstr "País"
+msgstr "Herrialdea"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkcountrydefinition.ui:22
 #, kde-format
 msgid "Flag:"
-msgstr "Bandeira:"
+msgstr "Bandera:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
@@ -147,25 +136,25 @@ msgstr "x"
 #: ksirkcountrydefinition.ui:39
 #, kde-format
 msgid "Anchor:"
-msgstr "Áncora:"
+msgstr "Aingura:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: ksirkcountrydefinition.ui:56
 #, kde-format
 msgid "Center:"
-msgstr "Centro:"
+msgstr "Erdigunea:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: ksirkcountrydefinition.ui:73
 #, kde-format
 msgid "Infantry:"
-msgstr "Infantaría:"
+msgstr "Infanteria:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryx)
 #: ksirkcountrydefinition.ui:80
 #, kde-format
 msgid "Infantry's sprite top left point x-coordinate"
-msgstr "Coordenada x do punto superior esquerdo da imaxe da infantaría"
+msgstr "Infanteriako iratxoaren goi-ezker puntuaren x koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryx)
 #: ksirkcountrydefinition.ui:87
@@ -178,18 +167,12 @@ msgid ""
 "\n"
 "This value will be automatically updated if you move the infantry."
 msgstr ""
-"Coordenada x do punto superior esquerdo da imaxe da infantaría.\n"
-"\n"
-"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal de definición da aparencia.\n"
-"\n"
-"Este valor actualízase automaticamente cando se move a infantaría."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryy)
 #: ksirkcountrydefinition.ui:107
 #, kde-format
 msgid "Infantry's sprite top left point y-coordinate"
-msgstr "Coordenada y do punto superior esquerdo da imaxe da infantaría"
+msgstr "Infanteriako iratxoaren goi-ezker puntuaren y koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryy)
 #: ksirkcountrydefinition.ui:114
@@ -203,25 +186,18 @@ msgid ""
 "This value will be automatically updated if you move the infantry by drag "
 "and drop."
 msgstr ""
-"Coordenada y do punto superior esquerdo da imaxe da infantaría.\n"
-"\n"
-"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal de definición da aparencia.\n"
-"\n"
-"Este valor actualízase automaticamente cando se move a infantaría "
-"arrastrando e soltando."
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: ksirkcountrydefinition.ui:124
 #, kde-format
 msgid "Cavalry:"
-msgstr "Cabalaría:"
+msgstr "Zalditeria:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryx)
 #: ksirkcountrydefinition.ui:131
 #, kde-format
 msgid "Cavalry's sprite top left point x-coordinate"
-msgstr "Coordenada x do punto superior esquerdo da imaxe da cabalaría"
+msgstr "Zalditeriako iratxoaren goi-ezker puntuaren x koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryx)
 #: ksirkcountrydefinition.ui:138
@@ -234,18 +210,12 @@ msgid ""
 "\n"
 "This value will be automatically updated if you move the cavalry."
 msgstr ""
-"Coordenada x do punto superior esquerdo da imaxe da cabalaría.\n"
-"\n"
-"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal de definición da aparencia.\n"
-"\n"
-"Este valor actualízase automaticamente cando se move a cabalaría."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryy)
 #: ksirkcountrydefinition.ui:158
 #, kde-format
 msgid "Cavalry's sprite top left point y-coordinate"
-msgstr "Coordenada y do punto superior esquerdo da imaxe da cabalaría"
+msgstr "Zalditeriako iratxoaren goi-ezker puntuaren y koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryy)
 #: ksirkcountrydefinition.ui:165
@@ -259,24 +229,18 @@ msgid ""
 "This value will be automatically updated if you move the cavalry by drag and "
 "drop."
 msgstr ""
-"Coordenada y do punto superior esquerdo da imaxe da cabalaría.\n"
-"\n"
-"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal de definición da aparencia.\n"
-"\n"
-"Este valor actualízase automaticamente cando se move a cabalaría."
 
 #. i18n: ectx: property (text), widget (QLabel, label_12)
 #: ksirkcountrydefinition.ui:175
 #, kde-format
 msgid "Cannon:"
-msgstr "Canón:"
+msgstr "Kanoia:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannony)
 #: ksirkcountrydefinition.ui:192
 #, kde-format
 msgid "Cannon's sprite top left point y-coordinate"
-msgstr "Coordenada y do punto superior esquerdo da imaxe dun canón"
+msgstr "Kanoiaren iratxoaren goi-ezker puntuaren y koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannony)
 #: ksirkcountrydefinition.ui:199
@@ -290,18 +254,12 @@ msgid ""
 "This value will be automatically updated if you move the cannon by drag and "
 "drop."
 msgstr ""
-"Coordenada y do punto superior esquerdo da imaxe dun canón.\n"
-"\n"
-"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal de definición da aparencia.\n"
-"\n"
-"Este valor actualízase automaticamente cando se move un canón."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonx)
 #: ksirkcountrydefinition.ui:209
 #, kde-format
 msgid "Cannon's sprite top left point x-coordinate"
-msgstr "Coordenada x do punto superior esquerdo da imaxe dun canón"
+msgstr "Kanoiaren iratxoaren goi-ezker puntuaren x koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonx)
 #: ksirkcountrydefinition.ui:216
@@ -314,18 +272,12 @@ msgid ""
 "\n"
 "This value will be automatically updated if you move the cannon."
 msgstr ""
-"Coordenada x do punto superior esquerdo da imaxe dun canón.\n"
-"\n"
-"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal de definición da aparencia.\n"
-"\n"
-"Este valor actualízase automaticamente cando se move un canón."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, centery)
 #: ksirkcountrydefinition.ui:226
 #, kde-format
 msgid "Point around which the country name is drawn y-coordinate"
-msgstr "Coordenada y do punto arredor do que se debuxa o nome do país"
+msgstr "Herrialdearen izena inguruan marrazten den puntuaren y koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, centery)
 #: ksirkcountrydefinition.ui:236
@@ -342,22 +294,12 @@ msgid ""
 "This value will be automatically updated if you move the country name by "
 "dragging and dropping its target icon.\n"
 msgstr ""
-"Coordenada y do punto arredor do que se debuxa o nome do país.\n"
-"\n"
-"Lembra que este punto ten que estar situado dentro dos límites do país na "
-"máscara do mapa.\n"
-"\n"
-"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal da definición da aparencia.\n"
-"\n"
-"Este valor actualízase automaticamente ao mover o nome do país arrastrando e "
-"soltando a súa icona de destino.\n"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, centerx)
 #: ksirkcountrydefinition.ui:246
 #, kde-format
 msgid "Point around which the country name is drawn x-coordinate"
-msgstr "Coordenada x do punto arredor do que se debuxa o nome do país"
+msgstr "Herrialdearen izena inguruan marrazten den puntuaren x koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, centerx)
 #: ksirkcountrydefinition.ui:255
@@ -374,22 +316,12 @@ msgid ""
 "This value will be automatically updated if you move the country name by "
 "dragging and dropping its target icon."
 msgstr ""
-"Coordenada x do punto arredor do que se debuxa o nome do país.\n"
-"\n"
-"Lembra que este punto ten que estar situado dentro dos límites do país na "
-"máscara do mapa.\n"
-"\n"
-"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal da definición da aparencia.\n"
-"\n"
-"Este valor actualízase automaticamente ao mover o nome do país arrastrando e "
-"soltando a súa icona de destino."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, anchory)
 #: ksirkcountrydefinition.ui:265
 #, kde-format
 msgid "Center of the highlighting y-coordinate"
-msgstr "Coordenada y do centro do realzado"
+msgstr "Nabarmentzearen erdiguneko y koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, anchory)
 #: ksirkcountrydefinition.ui:272
@@ -403,19 +335,12 @@ msgid ""
 "This value will be automatically updated if you move the highlighting by "
 "dragging and dropping its cross icon."
 msgstr ""
-"Coordenada y do centro do realzado.\n"
-"\n"
-"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal da definición da aparencia.\n"
-"\n"
-"Este valor actualízase automaticamente ao mover o realce arrastrando e "
-"soltando a icona da cruz."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, anchorx)
 #: ksirkcountrydefinition.ui:282
 #, kde-format
 msgid "Center of the highlighting x-coordinate"
-msgstr "Coordenada x do centro do realzado"
+msgstr "Nabarmentzearen erdiguneko x koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, anchorx)
 #: ksirkcountrydefinition.ui:289
@@ -429,19 +354,12 @@ msgid ""
 "This value will be automatically updated if you move the highlighting by "
 "dragging and dropping its cross icon."
 msgstr ""
-"Coordenada x do centro do realzado.\n"
-"\n"
-"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal da definición da aparencia.\n"
-"\n"
-"Este valor actualízase automaticamente ao mover o realce arrastrando e "
-"soltando a icona da cruz."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagy)
 #: ksirkcountrydefinition.ui:299
 #, kde-format
 msgid "Flag's sprite top left point y-coordinate"
-msgstr "Coordenada y do punto superior esquerdo da imaxe dunha bandeira"
+msgstr "Banderaren iratxoaren goi-ezker puntuaren y koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagy)
 #: ksirkcountrydefinition.ui:306
@@ -455,19 +373,12 @@ msgid ""
 "This value will be automatically updated if you move the flag by drag and "
 "drop."
 msgstr ""
-"Coordenada y do punto superior esquerdo da imaxe dunha bandeira.\n"
-"\n"
-"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal de definición da aparencia.\n"
-"\n"
-"Este valor actualízase automaticamente cando se move unha bandeira "
-"arrastrando e soltando."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagx)
 #: ksirkcountrydefinition.ui:316
 #, kde-format
 msgid "Flag's sprite top left point x-coordinate"
-msgstr "Coordenada x do punto superior esquerdo da imaxe dunha bandeira"
+msgstr "Banderaren iratxoaren goi-ezker puntuaren y koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagx)
 #: ksirkcountrydefinition.ui:323
@@ -481,19 +392,12 @@ msgid ""
 "This value will be automatically updated if you move the flag by drag and "
 "drop."
 msgstr ""
-"Coordenada x do punto superior esquerdo da imaxe dunha bandeira.\n"
-"\n"
-"Dáse en relación á parte superior esquerda do mapa, cun tamaño definido no "
-"trebello principal de definición da aparencia.\n"
-"\n"
-"Este valor actualízase automaticamente cando se move unha bandeira "
-"arrastrando e soltando."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, neighboursbutton)
 #: ksirkcountrydefinition.ui:335
 #, kde-format
 msgid "Select this country's neighbors"
-msgstr "Selecciona os veciños deste país"
+msgstr "Aukeratu herrialde horren mugakideak"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, neighboursbutton)
 #: ksirkcountrydefinition.ui:340
@@ -504,22 +408,22 @@ msgid ""
 "A list of all the world's countries will be shown and you will be able to "
 "select the countries using the mouse and the Ctrl and Shift keys."
 msgstr ""
-"Preme aquí para seleccionar os veciños deste país.\n"
+"Egin klik hemen herrialde horren mugakideak aukeratzeko.\n"
 "\n"
-"Aparecerá unha lista de todos os países na que se poden seleccionar os "
-"países co rato e as teclas Control e Maiúsculas."
+"Munduko herrialdeen zerrenda bat erakutsiko da eta herrialdeak sagua eta "
+"Ktrl eta Maius. teklak erabiliz aukeratu ahal izango dituzu."
 
 #. i18n: ectx: property (text), widget (QPushButton, neighboursbutton)
 #: ksirkcountrydefinition.ui:343
 #, kde-format
 msgid "Neighbors:"
-msgstr "Veciños:"
+msgstr "Mugakideak:"
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, neighbourslist)
 #: ksirkcountrydefinition.ui:350
 #, kde-format
 msgid "This country's neighbors"
-msgstr "Os veciños deste país"
+msgstr "Herrialde horren mugakideak"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, neighbourslist)
 #: ksirkcountrydefinition.ui:353
@@ -527,38 +431,38 @@ msgstr "Os veciños deste país"
 msgid ""
 "This is the list of countries currently considered as neighbors of this "
 "country."
-msgstr "Esta é a lista dos país que se consideran como veciños deste."
+msgstr "Hori da herrialde horren mugakide gisa harturiko herrialdeen zerrenda."
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkGoalDefinition)
 #: ksirkgoaldefinition.ui:13
 #, kde-format
 msgid "Goal"
-msgstr "Obxectivo"
+msgstr "Helburua"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: ksirkgoaldefinition.ui:26
 #, kde-format
 msgid "Goal Type"
-msgstr "Tipo de obxectivo"
+msgstr "Helburu mota"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, worldtype)
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, worldtype)
 #: ksirkgoaldefinition.ui:41 ksirkgoaldefinition.ui:44
 #, kde-format
 msgid "Conquer all the world"
-msgstr "Conquistar todo o mundo"
+msgstr "Mundu osoa konkistatzea"
 
 #. i18n: ectx: property (text), widget (QRadioButton, worldtype)
 #: ksirkgoaldefinition.ui:47
 #, kde-format
 msgid "World conquest"
-msgstr "Conquista do mundo"
+msgstr "Mundua konkistatzea"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, playertype)
 #: ksirkgoaldefinition.ui:54
 #, kde-format
 msgid "Eliminate a given player"
-msgstr "Eliminar un xogador determinado"
+msgstr "Jokalari jakin bat kanporatzea"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, playertype)
 #: ksirkgoaldefinition.ui:57
@@ -567,20 +471,21 @@ msgid ""
 "<p>Eliminate a given player. If it is eliminated by another one, you will "
 "fall back to a <emphasis>Countries</emphasis> type of goal.</p>"
 msgstr ""
-"<p>Eliminar un xogador determinado. Se outro xogador o elimina, terás que ir "
-"ao tipo de obxectivo <emphasis>Países</emphasis>.</p>"
+"<p>Jokalari jakin bat kanporatzea. Beste jokalari batek kanporatzen badu, "
+"<emphasis>Herrialdeak</emphasis> motako erreserbako helburura itzuliko da.</"
+"p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, playertype)
 #: ksirkgoaldefinition.ui:60
 #, kde-format
 msgid "Player"
-msgstr "Xogador"
+msgstr "Jokalaria"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, countriestype)
 #: ksirkgoaldefinition.ui:67
 #, kde-format
 msgid "Conquer a given number of countries"
-msgstr "Conquistar un número determinado de países"
+msgstr "Konkistatu herrialde kopuru jakin bat"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, countriestype)
 #: ksirkgoaldefinition.ui:72
@@ -591,23 +496,23 @@ msgid ""
 "You can also make the player to have to put a given number of armies on each "
 "country."
 msgstr ""
-"Conquistar un número determinado de países.\n"
+"Konkistatu herrialde kopuru jakin bat.\n"
 "\n"
-"Tamén podes facer que o xogador teña que colocar un número determinado de "
-"exércitos en cada país."
+"Jokalariak herrialde bakoitzean armada kopuru jakin bat jarri behar izatea "
+"ere egin dezakezu."
 
 #. i18n: ectx: property (text), widget (QRadioButton, countriestype)
 #. i18n: ectx: attribute (title), widget (QWidget, tabCountries)
 #: ksirkgoaldefinition.ui:75 ksirkskindefinition.ui:256
 #, kde-format
 msgid "Countries"
-msgstr "Países"
+msgstr "Herrialdeak"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, continentstype)
 #: ksirkgoaldefinition.ui:82
 #, kde-format
 msgid "Conquer a given list of continents"
-msgstr "Conquistar unha lista determinada de continentes"
+msgstr "Konkistatu kontinente zerrenda jakin bat"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, continentstype)
 #: ksirkgoaldefinition.ui:85
@@ -616,28 +521,28 @@ msgid ""
 "Conquer a given list of continents. You can also let the player choose one "
 "of their target continents."
 msgstr ""
-"Conquistar unha lista determinada de continentes. Tamén podes facer que o "
-"xogador escolla un dos continentes do seu obxectivo."
+"Konkistatu kontinente zerrenda jakin bat. Jokalariari helburu "
+"kontinenteetako bat aukeratzen ere utz diezaiokezu."
 
 #. i18n: ectx: property (text), widget (QRadioButton, continentstype)
 #. i18n: ectx: attribute (title), widget (QWidget, tabContinents)
 #: ksirkgoaldefinition.ui:88 ksirkskindefinition.ui:318
 #, kde-format
 msgid "Continents"
-msgstr "Continentes"
+msgstr "Kontinenteak"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: ksirkgoaldefinition.ui:99 ksirkskindefinition.ui:147
 #, kde-format
 msgid "Description:"
-msgstr "Descrición:"
+msgstr "Deskribapena:"
 
 #. i18n: ectx: property (toolTip), widget (QTextEdit, description)
 #: ksirkgoaldefinition.ui:106
 #, kde-format
 msgid "Text describing the goal"
-msgstr "Texto que describe o obxectivo"
+msgstr "Helburua deskribatzen duen testua"
 
 #. i18n: ectx: property (whatsThis), widget (QTextEdit, description)
 #: ksirkgoaldefinition.ui:109
@@ -651,31 +556,24 @@ msgid ""
 "country</li><li><i>Continents</i>: one for each continent to conquer</li></"
 "ul>"
 msgstr ""
-"<p>Texto que describe o obxectivo. Debería incluír varias marcas de posición "
-"para varios datos dependendo do tipo de obxectivo:</p><ul><li><i>Conquista "
-"do mundo</i>: ningún</li><li><i>Xogador</i>: un para o nome do xogador e un "
-"para o número de países normal</li><li><i>Países</i>: un para o número de "
-"países e posibelmente un segundo para o número de exércitos que colocar en "
-"cada país</li><li><i>Continentes</i>: un para cada continente que "
-"conquistar</li></ul>"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkgoaldefinition.ui:125
 #, kde-format
 msgid "Countries nb:"
-msgstr "Número de países:"
+msgstr "Herrialde kop.:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: ksirkgoaldefinition.ui:132
 #, kde-format
 msgid "Armies by country:"
-msgstr "Exércitos por país:"
+msgstr "Armadak herrialdeko:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, nbcountries)
 #: ksirkgoaldefinition.ui:139
 #, kde-format
 msgid "Number of countries to conquer"
-msgstr "Número de países que conquistar"
+msgstr "Konkistatu beharreko herrialde kopurua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, nbcountries)
 #: ksirkgoaldefinition.ui:142
@@ -684,14 +582,14 @@ msgid ""
 "<p>Number of countries to conquer in a <i>Countries</i> goal or as a "
 "fallback in a <i>Player</i> goal.</p>"
 msgstr ""
-"<p>Número de países que conquistar nun obxectivo de <i>Países</i> ou como "
-"normal nun obxectivo de <i>Xogador</i>.</p>"
+"<p><i>Herrialdeak</i> helburu batean konkistatu beharreko herrialde kopurua "
+"edo <i>Jokalari</i> helburu bateko erreserbako helburu.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, armiesbycountry)
 #: ksirkgoaldefinition.ui:149
 #, kde-format
 msgid "Number of armies to put on each country"
-msgstr "Número de exércitos que colocar en cada país"
+msgstr "Herrialde bakoitzean ipini beharreko armada kopurua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, armiesbycountry)
 #: ksirkgoaldefinition.ui:152
@@ -699,14 +597,14 @@ msgstr "Número de exércitos que colocar en cada país"
 msgid ""
 "<p>Number of armies to put on each country in a <i>Countries</i> goal.</p>"
 msgstr ""
-"<p>Número de exércitos que colocar en cada país nun obxectivo de <i>Países</"
-"i>.</p>"
+"<p><i>Herrialdeak</i> helburu batean, herrialde bakoitzean ipini beharreko "
+"armada kopurua.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, selectcontinentsbutton)
 #: ksirkgoaldefinition.ui:170
 #, kde-format
 msgid "Select the continents to conquer"
-msgstr "Selecciona os continentes que conquistar"
+msgstr "Aukeratu konkistatu beharreko kontinenteak"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, selectcontinentsbutton)
 #: ksirkgoaldefinition.ui:173
@@ -716,16 +614,12 @@ msgid ""
 "i> goal.</p><p>You will be prompted with a list of this world's continents. "
 "Select those to conquer with the mouse and the Ctrl and Shift keys.</p>"
 msgstr ""
-"<p>Preme este botón para escoller os continentes que conquistar nun "
-"obxectivo de <i>Continentes</i>.</p><p>Aparecerá unha lista dos continentes "
-"do mundo. Escolle os que conquistar co rato e as teclas Control e Maiúsculas."
-"</p>"
 
 #. i18n: ectx: property (text), widget (QPushButton, selectcontinentsbutton)
 #: ksirkgoaldefinition.ui:176
 #, kde-format
 msgid "Select Continents"
-msgstr "Escoller continentes"
+msgstr "Aukeratu kontinenteak"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, anycontinent)
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, anycontinent)
@@ -733,20 +627,18 @@ msgstr "Escoller continentes"
 #, kde-format
 msgid "Check to let the player choose one of the continents to conquer"
 msgstr ""
-"Marque isto para que o xogador escolla un dos continentes que teña que "
-"conquistar"
 
 #. i18n: ectx: property (text), widget (QCheckBox, anycontinent)
 #: ksirkgoaldefinition.ui:189
 #, kde-format
 msgid "Any"
-msgstr "Calquera"
+msgstr "Edozein"
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, continentslist)
 #: ksirkgoaldefinition.ui:198
 #, kde-format
 msgid "List of the continents to conquer"
-msgstr "Lista dos continentes que conquistar"
+msgstr "Konkistatzeko herrialdeen zerrenda"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, continentslist)
 #: ksirkgoaldefinition.ui:201
@@ -756,27 +648,24 @@ msgid ""
 "can change this list by clicking on the \"Select continents\" button above.</"
 "p>"
 msgstr ""
-"<p>Lista dos continentes que conquistar nun obxectivo de <i>Continentes</i>."
-"</p><p>Pódese cambiar esta lista premendo o botón «Seleccionar continentes» "
-"que hai enriba.</p>"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkNationalityDefinition)
 #: ksirknationalitydefinition.ui:13
 #, kde-format
 msgid "Nationality"
-msgstr "Nacionalidade"
+msgstr "Nazionalitatea"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirknationalitydefinition.ui:20
 #, kde-format
 msgid "Name:"
-msgstr "Nome:"
+msgstr "Izena:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, name)
 #: ksirknationalitydefinition.ui:27
 #, kde-format
 msgid "Nationality name"
-msgstr "Nome da nacionalidade"
+msgstr "Nazionalitatearen izena"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, name)
 #: ksirknationalitydefinition.ui:30
@@ -786,21 +675,18 @@ msgid ""
 "existing country in case of a <i>realistic</i> world.</p><p>This string "
 "should be unique in the skin.</p>"
 msgstr ""
-"<p>Nome da nacionalidade. O nome do país xogador. Pode ser o caso dun país "
-"existente no caso dun mundo <i>realista</i>.</p><p>A cadea ten que ser única "
-"na aparencia.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: ksirknationalitydefinition.ui:43
 #, kde-format
 msgid "Leader name:"
-msgstr "Nome do líder:"
+msgstr "Buruzagiaren izena:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leader)
 #: ksirknationalitydefinition.ui:50
 #, kde-format
 msgid "Leader name"
-msgstr "Nome do líder"
+msgstr "Buruzagiaren izena"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, leader)
 #: ksirknationalitydefinition.ui:53
@@ -809,44 +695,42 @@ msgid ""
 "<p>Name of this nationality leader. In the case of a <i>realistic</i> skin, "
 "this could be the name of a well known king, president, etc.</p>"
 msgstr ""
-"<p>Nome do líder da nacionalidade. No caso dunha aparencia <i>realista</i>, "
-"podería ser o nome dun rei, presidente, etc. coñecidos.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: ksirknationalitydefinition.ui:60
 #, kde-format
 msgid "Flag ID in pool:"
-msgstr "Identificador da bandeira no depósito:"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, flag)
 #: ksirknationalitydefinition.ui:67
 #, kde-format
 msgid "Flag sprite id in the pool SVG"
-msgstr "Identificador da imaxe da bandeira no depósito de SVG"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (KComboBox, flag)
 #: ksirknationalitydefinition.ui:70
 #, kde-format
 msgid "Flag sprite id in the pool SVG (pool.svg)."
-msgstr "Identificador da imaxe da bandeira no depósito de SVG (pool.svg)."
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, skindefinition)
 #: ksirkskindefinition.ui:13
 #, kde-format
 msgid "Skin Definition"
-msgstr "Definición da aparencia"
+msgstr "Azal definizioa"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: ksirkskindefinition.ui:22
 #, kde-format
 msgid "Skin name:"
-msgstr "Nome da aparencia:"
+msgstr "Azalaren izena:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, skinNameLineEdit)
 #: ksirkskindefinition.ui:29
 #, kde-format
 msgid "The skin's short name"
-msgstr "O nome abreviado da aparencia"
+msgstr "Azalaren izen laburra"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, skinNameLineEdit)
 #: ksirkskindefinition.ui:35
@@ -854,20 +738,20 @@ msgstr "O nome abreviado da aparencia"
 msgid ""
 "Type here the skin's short name. This should be an identifier-like string"
 msgstr ""
-"Escribe aquí o nome abreviado da aparencia. Ten que ser unha cadea tipo "
-"identificador"
+"Tekleatu hemen azalaren izen laburra. Horrek identifikatzaile antzeko kate "
+"bat izan beharko luke."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkskindefinition.ui:46
 #, kde-format
 msgid "Width x height:"
-msgstr "Anchura × altura:"
+msgstr "Zabalera x altuera:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, widthLineEdit)
 #: ksirkskindefinition.ui:53
 #, kde-format
 msgid "Map's width"
-msgstr "Anchura do mapa"
+msgstr "Maparen zabalera"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, widthLineEdit)
 #: ksirkskindefinition.ui:57
@@ -877,15 +761,12 @@ msgid ""
 "image of this width. All positions on the map are expressed relatively to "
 "this dimension.\n"
 msgstr ""
-"Esta é a anchura do mapa. O elemento SVG do mapa debúxase de maneira "
-"predeterminada nunha imaxe desta anchura. Todas as posicións do mapa se "
-"expresan en relación a esta dimensión.\n"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, heightLineEdit)
 #: ksirkskindefinition.ui:71
 #, kde-format
 msgid "Map's height"
-msgstr "Altura do mapa"
+msgstr "Maparen altuera"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, heightLineEdit)
 #: ksirkskindefinition.ui:75
@@ -895,39 +776,36 @@ msgid ""
 "image of this height All positions on the map are expressed relatively to "
 "this dimension.\n"
 msgstr ""
-"Esta é a altura do mapa O elemento SVG do mapa debúxase de maneira "
-"predeterminada nunha imaxe desta altura. Todas as posicións do mapa se "
-"expresan en relación a esta dimensión.\n"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: ksirkskindefinition.ui:90
 #, kde-format
 msgid "Map Font"
-msgstr "Fonte do mapa"
+msgstr "Maparen letra-tipoa"
 
 #. i18n: ectx: property (toolTip), widget (KFontRequester, fontrequester)
 #: ksirkskindefinition.ui:96
 #, kde-format
 msgid "Font used to draw country names"
-msgstr "Fonte usada para debuxar os nomes dos países"
+msgstr "Herrialdeen izenak marrazteko erabilitako letra-tipoa"
 
 #. i18n: ectx: property (whatsThis), widget (KFontRequester, fontrequester)
 #: ksirkskindefinition.ui:99
 #, kde-format
 msgid "This font will be used to draw the country names on the map"
-msgstr "Esta fonte usarase para debuxar os nomes de país no mapa"
+msgstr "Letra-tipo hori erabiliko da mapan herrialdeen izenak marrazteko"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: ksirkskindefinition.ui:108
 #, kde-format
 msgid "Fg:"
-msgstr "PP:"
+msgstr "Ap:"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, fgcolorbutton)
 #: ksirkskindefinition.ui:115
 #, kde-format
 msgid "Foreground color for country names"
-msgstr "Cor de primeiro plano dos nomes dos países"
+msgstr "Herrialdeen izenetarako aurreko planoko kolorea"
 
 #. i18n: ectx: property (whatsThis), widget (KColorButton, fgcolorbutton)
 #: ksirkskindefinition.ui:118
@@ -936,19 +814,19 @@ msgid ""
 "This color will be used to draw the foreground of the country names on the "
 "map"
 msgstr ""
-"Esta cor usarase para debuxar o primeiro plano dos nomes de país no mapa"
+"Kolore hori erabiliko da mapan herrialdeen izenen aurreko planoa marrazteko"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: ksirkskindefinition.ui:125
 #, kde-format
 msgid "Bg:"
-msgstr "Fondo:"
+msgstr "Hp:"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, bgcolorbutton)
 #: ksirkskindefinition.ui:132
 #, kde-format
 msgid "Background color for country names"
-msgstr "Cor de fondo dos nomes dos países"
+msgstr "Herrialdeen izenetako hondoko planoko kolorea"
 
 #. i18n: ectx: property (whatsThis), widget (KColorButton, bgcolorbutton)
 #: ksirkskindefinition.ui:135
@@ -956,13 +834,14 @@ msgstr "Cor de fondo dos nomes dos países"
 msgid ""
 "This color will be used to draw the background of the country names on the "
 "map"
-msgstr "Esta cor úsase para debuxar o fondo dos nomes dos países sobre o mapa"
+msgstr ""
+"Kolore hori erabiliko da mapan herrialdeen izenen hondoko planoa marrazteko"
 
 #. i18n: ectx: property (toolTip), widget (QTextEdit, descriptionTextEdit)
 #: ksirkskindefinition.ui:160
 #, kde-format
 msgid "Human readable description of the skin"
-msgstr "Descrición da aparencia intelixíbel por humanos"
+msgstr "Gizakientzat irakurgarria den azalaren deskribapena"
 
 #. i18n: ectx: property (whatsThis), widget (QTextEdit, descriptionTextEdit)
 #: ksirkskindefinition.ui:163
@@ -971,15 +850,15 @@ msgid ""
 "Describe here the skin, its style, its story, the intent of its author(s), "
 "etc."
 msgstr ""
-"Describe aquí a aparencia, o seu estilo, a súa historia, a intención do(s) "
-"autores/as, etc."
+"Deskribatu hemen azala, bere estiloa, bere istorioa, bere egile(ar)en asmoa, "
+"etab."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabSprites)
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkSpritesDefinition)
 #: ksirkskindefinition.ui:177 ksirkspritesdefinition.ui:13
 #, kde-format
 msgid "Sprites"
-msgstr "Imaxes"
+msgstr "Iratxoak"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: ksirkskindefinition.ui:184
@@ -988,39 +867,39 @@ msgid ""
 "Edit the sprite definitions\n"
 "in the right dock."
 msgstr ""
-"Edita as definicións das imaxes\n"
-"na doca da dereita."
+"Editatu iratxoen definizioak\n"
+"kai zuzenean."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabNationalities)
 #: ksirkskindefinition.ui:192
 #, kde-format
 msgid "Nationalities"
-msgstr "Nacionalidades"
+msgstr "Nazionalitateak"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newNationalityButton)
 #: ksirkskindefinition.ui:200
 #, kde-format
 msgid "Creates a new Nationality"
-msgstr "Crea unha nacionalidade nova"
+msgstr "Nazionalitate berri bat sortzen du"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, newNationalityButton)
 #: ksirkskindefinition.ui:203
 #, kde-format
 msgid "Click here to add a new nationality. You will be prompted for its name."
 msgstr ""
-"Preme aquí para engadires unha nacionalidade nova. Pediráseche un nome."
+"Egin klik hemen nazionalitate berri bat sortzeko. Bere izena eskatuko zaizu."
 
 #. i18n: ectx: property (text), widget (QPushButton, newNationalityButton)
 #: ksirkskindefinition.ui:206
 #, kde-format
 msgid "New Nationality"
-msgstr "Nova nacionalidade"
+msgstr "Nazionalitate berria"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, deleteNationalityButton)
 #: ksirkskindefinition.ui:226
 #, kde-format
 msgid "Removes the currently selected nationality"
-msgstr "Retira a nacionalidade que estea seleccionada"
+msgstr "Unean hautatutako nazionalitatea kentzen du"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, deleteNationalityButton)
 #: ksirkskindefinition.ui:229
@@ -1029,8 +908,8 @@ msgid ""
 "Click here to remove the currently selected nationality. You will be asked "
 "for confirmation."
 msgstr ""
-"Preme aquí para retirares a nacionalidade seleccionada. Pediráseche "
-"confirmación."
+"Egin klik hemen unean hautatutako nazionalitatea kentzeko. Berrestea "
+"eskatuko zaizu."
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteNationalityButton)
 #. i18n: ectx: property (text), widget (QPushButton, deleteCountryButton)
@@ -1046,7 +925,7 @@ msgstr "X"
 #: ksirkskindefinition.ui:241
 #, kde-format
 msgid "Nationality list"
-msgstr "Lista de nacionalidades"
+msgstr "Nazionalitate zerrenda"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, nationalitieslist)
 #: ksirkskindefinition.ui:248
@@ -1061,38 +940,31 @@ msgid ""
 "add at least as many nationalities as the maximum number of players for this "
 "skin."
 msgstr ""
-"Esta lista mostra as nacionalidades definidas.\n"
-"\n"
-"Cada nome de nacionalidade ten que ser único. Escolle unha nacionalidade e "
-"edita os seus detalles na doca da dereita.\n"
-"\n"
-"Durante o xogo, cada xogador ten que escoller unha nacionalidade. Hai que "
-"engadir cando menos tantas nacionalidades como o número máximo de xogadores "
-"desta aparencia."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newCountryButton)
 #: ksirkskindefinition.ui:264
 #, kde-format
 msgid "Creates a new country"
-msgstr "Crea un país novo"
+msgstr "Herrialde berri bat sortzen du"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, newCountryButton)
 #: ksirkskindefinition.ui:267
 #, kde-format
 msgid "Click here to add a new country. You will be prompted for its name."
-msgstr "Preme aquí para engadires un país novo. Pediráseche un nome."
+msgstr ""
+"Egin klik hemen herrialde berri bat gehitzeko. Bere izena eskatuko zaizu."
 
 #. i18n: ectx: property (text), widget (QPushButton, newCountryButton)
 #: ksirkskindefinition.ui:270
 #, kde-format
 msgid "New Country"
-msgstr "Novo país"
+msgstr "Herrialde berria"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, deleteCountryButton)
 #: ksirkskindefinition.ui:290
 #, kde-format
 msgid "Removes the currently selected country"
-msgstr "Retira o país que estea seleccionado"
+msgstr "Unean hautatutako herrialdea kentzen du"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, deleteCountryButton)
 #: ksirkskindefinition.ui:293
@@ -1101,14 +973,15 @@ msgid ""
 "Click here to remove the currently selected country. You will be asked for "
 "confirmation."
 msgstr ""
-"Preme aquí para retirares o país seleccionado. Pediráseche confirmación."
+"Egin klik hemen unean hautatutako herrialdea kentzeko. Berrestea eskatuko "
+"zaizu."
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, countrieslist)
 #. i18n: ectx: property (toolTip), widget (QListWidget, countriesList)
 #: ksirkskindefinition.ui:305 ksirkskineditorcountriesselectiondialog.ui:19
 #, kde-format
 msgid "Country list"
-msgstr "Lista de países"
+msgstr "Herrialdeen zerrenda"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, countrieslist)
 #: ksirkskindefinition.ui:310
@@ -1119,34 +992,35 @@ msgid ""
 "Each country name should be unique. Select a country and edit its details in "
 "the right dock."
 msgstr ""
-"Esta lista mostra os países definidos.\n"
+"Zerrenda horrek definitutako herrialdeak erakusten ditu.\n"
 "\n"
-"O nome de cada país ten que ser único. Escolle un país e edita os seus "
-"detalles na doca da dereita."
+"Herrialde-izen guztiak bakarrak izan beharko lirateke. Aukeratu herrialde "
+"bat eta editatu bere xehetasunak kai zuzenean."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newContinentButton)
 #: ksirkskindefinition.ui:326
 #, kde-format
 msgid "Creates a new continent"
-msgstr "Crea un continente novo"
+msgstr "Kontinente berri bat sortzen du"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, newContinentButton)
 #: ksirkskindefinition.ui:329
 #, kde-format
 msgid "Click here to add a new continent. You will be prompted for its name."
-msgstr "Preme aquí para engadires un continente novo. Pediráseche un nome."
+msgstr ""
+"Egin klik hemen kontinente berri bat gehitzeko. Bere izena eskatuko zaizu."
 
 #. i18n: ectx: property (text), widget (QPushButton, newContinentButton)
 #: ksirkskindefinition.ui:332
 #, kde-format
 msgid "New Continent"
-msgstr "Novo continente"
+msgstr "Kontinente berria"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, deleteContinentButton)
 #: ksirkskindefinition.ui:352
 #, kde-format
 msgid "Removes the currently selected continent"
-msgstr "Retira o continente que estea seleccionado"
+msgstr "Unean hautatutako kontinentea kentzen du"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, deleteContinentButton)
 #: ksirkskindefinition.ui:355
@@ -1155,14 +1029,14 @@ msgid ""
 "Click here to remove the currently selected continent. You will be asked for "
 "confirmation."
 msgstr ""
-"Preme aquí para retirares o continente seleccionado. Pediráseche "
-"confirmación."
+"Egin klik hemen unean hautatutako kontinentea kentzeko. Berrestea eskatuko "
+"zaizu."
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, continentslist)
 #: ksirkskindefinition.ui:367
 #, kde-format
 msgid "Continent list"
-msgstr "Lista de continentes"
+msgstr "Kontinenteen zerrenda"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, continentslist)
 #: ksirkskindefinition.ui:372
@@ -1173,42 +1047,41 @@ msgid ""
 "Each continent name should be unique. Select a continent and edit its "
 "details in the right dock."
 msgstr ""
-"Esta lista mostra os continentes definidos.\n"
+"Zerrenda horrek definitutako kontinenteak erakusten ditu.\n"
 "\n"
-"O nome de cada continente ten que ser único. Escolle un continente e edita "
-"os seus detalles na doca da dereita."
+"Kontinente-izen guztiak bakarrak izan beharko lirateke. Aukeratu kontinente "
+"bat eta editatu bere xehetasunak kai zuzenean."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabGoals)
 #: ksirkskindefinition.ui:380
 #, kde-format
 msgid "Goals"
-msgstr "Obxectivos"
+msgstr "Helburuak"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newGoalButton)
 #: ksirkskindefinition.ui:388
 #, kde-format
 msgid "Creates a new goal"
-msgstr "Crea un obxectivo novo"
+msgstr "Helburu berri bat sortzen du"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, newGoalButton)
 #: ksirkskindefinition.ui:391
 #, kde-format
 msgid "Click here to add a new goal. It will be named automatically."
 msgstr ""
-"Preme aquí para engadires un obxectivo novo. Recibirá un nome "
-"automaticamente."
+"Egin klik hemen helburu berri bat gehitzeko. Automatikoki izendatuko da."
 
 #. i18n: ectx: property (text), widget (QPushButton, newGoalButton)
 #: ksirkskindefinition.ui:394
 #, kde-format
 msgid "New Goal"
-msgstr "Novo obxectivo"
+msgstr "Helburu berria"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, deleteGoalButton)
 #: ksirkskindefinition.ui:414
 #, kde-format
 msgid "Removes the currently selected goal"
-msgstr "Retira o obxectivo que estea seleccionado"
+msgstr "Unean hautatutako helburua kentzen du"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, deleteGoalButton)
 #: ksirkskindefinition.ui:417
@@ -1217,13 +1090,14 @@ msgid ""
 "Click here to remove the currently selected goal. You will be asked for "
 "confirmation."
 msgstr ""
-"Preme aquí para retirares o obxectivo seleccionado. Pediráseche confirmación."
+"Egin klik hemen unean hautatutako helburua kentzeko. Berrestea eskatuko "
+"zaizu."
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, goalslist)
 #: ksirkskindefinition.ui:429
 #, kde-format
 msgid "Goal list"
-msgstr "Lista de obxectivos"
+msgstr "Helburuen zerrenda"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, goalslist)
 #: ksirkskindefinition.ui:434
@@ -1234,21 +1108,21 @@ msgid ""
 "Each goal name should be unique. Select a goal and edit its details in the "
 "right dock."
 msgstr ""
-"Esta lista mostra os obxectivos definidos.\n"
+"Zerrenda horrek definitutako helburuak erakusten ditu.\n"
 "\n"
-"O nome de cada obxectivo ten que ser único. Escolle un obxectivo e edita os "
-"seus detalles na doca da dereita."
+"Helburu-izen guztiak bakarrak izan beharko lirateke. Aukeratu helburu bat "
+"eta editatu bere xehetasunak kai zuzenean."
 
 #: ksirkSkinEditorConfigDialog.cpp:55
 #, kde-format
 msgid "Preferences"
-msgstr "Preferencias"
+msgstr "Hobespenak"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CountriesSelectionDialog)
 #: ksirkskineditorcountriesselectiondialog.ui:13
 #, kde-format
 msgid "Country Selection Dialog"
-msgstr "Diálogo de selección de países"
+msgstr "Herrialdea hautatzeko elkarrizketa-koadroa"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, countriesList)
 #: ksirkskineditorcountriesselectiondialog.ui:22
@@ -1258,45 +1132,42 @@ msgid ""
 "are highlighted. You can modify the selection using the mouse and Ctrl and "
 "Shift keys."
 msgstr ""
-"Lista con todos os países definidos no mundo. Os países seleccionados están "
-"realzados. Pódese modificar a selección usando o rato e as teclas Control e "
-"Maiúsculas."
 
 #. i18n: ectx: Menu (game)
 #: ksirkskineditorui.rc:10
 #, kde-format
 msgid "&Game"
-msgstr "&Partida"
+msgstr "&Jokoa"
 
 #. i18n: ectx: Menu (settings)
 #: ksirkskineditorui.rc:18
 #, kde-format
 msgid "&Settings"
-msgstr "&Configuración"
+msgstr "E&zarpenak"
 
 #. i18n: ectx: Menu (help)
 #: ksirkskineditorui.rc:20
 #, kde-format
 msgid "&Help"
-msgstr "&Axuda"
+msgstr "&Laguntza"
 
 #. i18n: ectx: ToolBar (mainToolBar)
 #: ksirkskineditorui.rc:24
 #, kde-format
 msgid "Main Toolbar"
-msgstr "Barra de ferramentas principal"
+msgstr "Tresna-barra nagusia"
 
 #. i18n: ectx: property (windowTitle), widget (QFrame, skinEditor)
 #: ksirkskineditorwidget.ui:20 main.cpp:52 main.cpp:54
 #, kde-format
 msgid "KsirK Skin Editor"
-msgstr "Editor de aparencias de Ksirk"
+msgstr "KsirK azal editorea"
 
 #. i18n: ectx: property (toolTip), widget (QScrollArea, buttonsScrollArea)
 #: ksirkskineditorwidget.ui:46
 #, kde-format
 msgid "Sprite placement buttons"
-msgstr "Botóns de colocación das imaxes"
+msgstr "Iratxoa kokatzeko botoiak"
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, buttonsScrollArea)
 #: ksirkskineditorwidget.ui:49
@@ -1306,15 +1177,12 @@ msgid ""
 "for the currently selected country. The buttons are available only if the "
 "sprite is not already placed. "
 msgstr ""
-"Usa os botóns de aquí para realizar a colocación inicial da imaxe "
-"correspondente ao país seleccionado. Os botóns só están dispoñíbeis se a "
-"imaxe non está xa colocada."
 
 #. i18n: ectx: property (toolTip), widget (QScrollArea, mapScrollArea)
 #: ksirkskineditorwidget.ui:69
 #, kde-format
 msgid "Map with sprites"
-msgstr "Mapa con imaxes"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, mapScrollArea)
 #: ksirkskineditorwidget.ui:74
@@ -1326,11 +1194,6 @@ msgid ""
 "Drag and drop the sprites, the country names, and the highlighting anchors "
 "to change their place."
 msgstr ""
-"Amosa o mapa da aparencia con todas as imaxes xa colocadas, os nomes dos "
-"países e as áncoras para realzar.\n"
-"\n"
-"Arrastra e solta as imaxes, os nomes dos países e as áncoras para realzar "
-"para cambialos de lugar."
 
 #. i18n: ectx: property (text), widget (QLabel, label_26)
 #: ksirkspritesdefinition.ui:29
@@ -1339,14 +1202,12 @@ msgid ""
 "Width between fighter\n"
 "and flag:"
 msgstr ""
-"Anchura entre loitador\n"
-"e bandeira:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, widthDiffLineEdit)
 #: ksirkspritesdefinition.ui:39
 #, kde-format
 msgid "Empty space size between fighting cannon and flag"
-msgstr "Tamaño do espazo baleiro entre o canón e a bandeira"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, widthDiffLineEdit)
 #: ksirkspritesdefinition.ui:44
@@ -1359,31 +1220,24 @@ msgid ""
 "pixels between the flag and each cannon, measured relatively to the map base "
 "size as set in the main skin definition panel."
 msgstr ""
-"Tamaño do espazo baleiro entre o canón e a bandeira.\n"
-"\n"
-"Durante unha batalla, os canóns de cada xogador que disparan (e estouran) "
-"están colocados a ambos os dous lados da bandeira do país atacado. Este "
-"parámetro é o número de píxeles que hai entre a bandeira e cada canón, "
-"medidos con relación ao tamaño base do mapa e configurados no panel de "
-"definición principal da aparencia."
 
 #. i18n: ectx: property (toolTip), widget (QTabWidget, ktabwidget)
 #: ksirkspritesdefinition.ui:53
 #, kde-format
 msgid "Data about all sprites"
-msgstr "Datos sobre todas as imaxes"
+msgstr "Iratxo guztiei buruzko datuak"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, flagTab)
 #: ksirkspritesdefinition.ui:63
 #, kde-format
 msgid "Data about the flag sprite"
-msgstr "Datos sobre a imaxe da bandeira"
+msgstr "Banderaren iratxoari buruzko datuak"
 
 #. i18n: ectx: attribute (title), widget (QWidget, flagTab)
 #: ksirkspritesdefinition.ui:66
 #, kde-format
 msgid "Flag"
-msgstr "Bandeira"
+msgstr "Bandera"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_5)
@@ -1396,13 +1250,13 @@ msgstr "Bandeira"
 #: ksirkspritesdefinition.ui:452 ksirkspritesdefinition.ui:547
 #, kde-format
 msgid "Width:"
-msgstr "Anchura:"
+msgstr "Zabalera:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagw)
 #: ksirkspritesdefinition.ui:81
 #, kde-format
 msgid "Flag individual frame width"
-msgstr "Anchura da imaxe individual da bandeira"
+msgstr "Banderaren banakako fotogramaren zabalera"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagw)
 #: ksirkspritesdefinition.ui:84
@@ -1412,9 +1266,6 @@ msgid ""
 "rendered on a pixmap of width: <i>Width</i> * N<i>number of frames</i> and "
 "then split into individual frames.</p>"
 msgstr ""
-"<p>Anchura da imaxe individual da bandeira.</p><p>O elemento <i>bandeira</i> "
-"do depósito debúxase sobre un mapa de píxeles de anchura: <i>Anchura</i> * "
-"N<i>número de imaxes</i> e despois divídese en imaxes individuais.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_6)
@@ -1427,13 +1278,13 @@ msgstr ""
 #: ksirkspritesdefinition.ui:469 ksirkspritesdefinition.ui:564
 #, kde-format
 msgid "Height:"
-msgstr "Altura:"
+msgstr "Altuera:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagh)
 #: ksirkspritesdefinition.ui:98
 #, kde-format
 msgid "Flag individual frame height"
-msgstr "Altura da imaxe individual da bandeira"
+msgstr "Banderaren banakako fotogramaren altuera"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagh)
 #: ksirkspritesdefinition.ui:103
@@ -1444,10 +1295,6 @@ msgid ""
 "The pool flag element will be rendered on a pixmap of height: (Height * "
 "Number of versions) and then split into individual frames."
 msgstr ""
-"Altura da imaxe individual da bandeira.\n"
-"\n"
-"O elemento bandeira do depósito amósase nun mapa de píxeles de altura: "
-"(Altura * Número de versións) e despois divídese en imaxes individuais."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_8)
@@ -1460,13 +1307,13 @@ msgstr ""
 #: ksirkspritesdefinition.ui:486 ksirkspritesdefinition.ui:581
 #, kde-format
 msgid "Nb frames:"
-msgstr "Número de imaxes:"
+msgstr "Fotograma kop.:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagf)
 #: ksirkspritesdefinition.ui:117
 #, kde-format
 msgid "Number of individual flag frames"
-msgstr "Número de imaxes de bandeira individuais"
+msgstr "Banderaren banakako fotograma kopurua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagf)
 #: ksirkspritesdefinition.ui:120
@@ -1476,9 +1323,6 @@ msgid ""
 "be rendered on a pixmap of width: (<i>Width</i> * <i>Number of frames</i>) "
 "and then split into individual frames.</p>"
 msgstr ""
-"<p>Número de imaxes de bandeira individuais.</p><p>O elemento <i>bandeira</"
-"i> do depósito amósase nun mapa de píxeles de anchura: (<i>Anchura</i> * "
-"<i>Número de imaxes</i>) e despois divídese en imaxes individuais.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, label_7)
@@ -1491,17 +1335,17 @@ msgstr ""
 #: ksirkspritesdefinition.ui:503 ksirkspritesdefinition.ui:598
 #, kde-format
 msgid "Nb versions:"
-msgstr "Número de versións:"
+msgstr "Bertsio kop.:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagv)
 #: ksirkspritesdefinition.ui:134
 #, kde-format
 msgid "Number of flag versions"
-msgstr "Número de versións da bandeira"
+msgstr "Banderaren bertsioen kopurua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagv)
 #: ksirkspritesdefinition.ui:141
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "Number of flag versions.\n"
 "\n"
@@ -1513,33 +1357,26 @@ msgid ""
 "the front and the last one from the back. However, not all sprites need all "
 "versions."
 msgstr ""
-"Número de versións da bandeira.\n"
+"Banderaren bertsioen kopurua.\n"
 "\n"
-"O elemento bandeira do depósito amósase nun mapa de píxeles de altura: "
-"(Altura * Número de versións) e despois divídese en imaxes individuais.\n"
-"\n"
-"Cada versión mostra a imaxe visíbel desde unha dirección: a primeira está "
-"dirixida cara á dereita, a segunda cara á esquerda, a terceira desde diante "
-"e a última desde atrás. Porén, non todas as imaxes precisan de todas as "
-"versións."
 
 #. i18n: ectx: property (toolTip), widget (QWidget, infantryTab)
 #: ksirkspritesdefinition.ui:164
 #, kde-format
 msgid "Data about the infantry sprite"
-msgstr "Datos sobre a imaxe da infantaría"
+msgstr "Infanteriako iratxoari buruzko datuak"
 
 #. i18n: ectx: attribute (title), widget (QWidget, infantryTab)
 #: ksirkspritesdefinition.ui:167
 #, kde-format
 msgid "Infantry"
-msgstr "Infantaría"
+msgstr "Infanteria"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryw)
 #: ksirkspritesdefinition.ui:180
 #, kde-format
 msgid "Infantry individual frame width"
-msgstr "Anchura da imaxe individual da infantaría"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryw)
 #: ksirkspritesdefinition.ui:183
@@ -1549,16 +1386,12 @@ msgid ""
 "will be rendered on a pixmap of width: <i>Width</i> * <i>number of frames</"
 "i> and then split into individual frames.</p>"
 msgstr ""
-"<p>Anchura da imaxe individual da infantaría.</p><p>O elemento "
-"<i>infantaría</i> do depósito debúxase sobre un mapa de píxeles de anchura: "
-"<i>Anchura</i> * N<i>número de imaxes</i> e despois divídese en imaxes "
-"individuais.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryh)
 #: ksirkspritesdefinition.ui:197
 #, kde-format
 msgid "Infantry individual frame height"
-msgstr "Altura da imaxe individual da infantaría"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryh)
 #: ksirkspritesdefinition.ui:200
@@ -1568,15 +1401,12 @@ msgid ""
 "will be rendered on a pixmap of height: <i>Height</i> * <i>Number of "
 "versions</i> and then split into individual frames.</p>"
 msgstr ""
-"<p>Altura da imaxe individual da infantaría.</p><p>O elemento <i>infantaría</"
-"i> do depósito amósase nun mapa de píxeles de altura: (<i>Altura</i> * "
-"<i>Número de versións</i>) e despois divídese en imaxes individuais.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryf)
 #: ksirkspritesdefinition.ui:214
 #, kde-format
 msgid "Number of individual infantry frames"
-msgstr "Número de imaxes de infantaría individuais"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryf)
 #: ksirkspritesdefinition.ui:217
@@ -1586,16 +1416,12 @@ msgid ""
 "element will be rendered on a pixmap of width: (<i>Width</i> * <i>Number of "
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>Número de imaxes de infantaría individuais.</p><p>O elemento "
-"<i>infantaría</i> do depósito amósase nun mapa de píxeles de anchura: "
-"(<i>Anchura</i> * <i>Número de imaxes</i>) e despois divídese en imaxes "
-"individuais.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryv)
 #: ksirkspritesdefinition.ui:231
 #, kde-format
 msgid "Number of infantry versions"
-msgstr "Número de versións da infantaría"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryv)
 #: ksirkspritesdefinition.ui:234
@@ -1608,31 +1434,24 @@ msgid ""
 "right, the second towards the left, the third one from front and the last "
 "one from the back. However, not all sprites need all versions.</p>"
 msgstr ""
-"<p>Número de versións da bandeira.</p><p>O elemento <i>infantaría</i> do "
-"depósito amósase nun mapa de píxeles de altura: (<i>Altura</i> *<i> Número "
-"de versións</i>) e despois divídese en imaxes individuais.</p><p>Cada "
-"versión mostra a imaxe visíbel desde unha dirección: a primeira está "
-"dirixida cara á dereita, a segunda cara á esquerda, a terceira desde diante "
-"e a última desde atrás. Porén, non todas as imaxes precisan de todas as "
-"versións.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, cavalryTab)
 #: ksirkspritesdefinition.ui:255
 #, kde-format
 msgid "Data about the cavalry sprite"
-msgstr "Datos sobre a imaxe da cabalaría"
+msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, cavalryTab)
 #: ksirkspritesdefinition.ui:258
 #, kde-format
 msgid "Cavalry"
-msgstr "Cabalaría"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryw)
 #: ksirkspritesdefinition.ui:271
 #, kde-format
 msgid "Individual cavalry frame width"
-msgstr "Anchura da imaxe individual da cabalaría"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryw)
 #: ksirkspritesdefinition.ui:274
@@ -1642,15 +1461,12 @@ msgid ""
 "will be rendered on a pixmap of width (<i>Width</i> * <i>Number of frames</"
 "i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>Anchura da imaxe individual da cabalaría.</p><p>O elemento <i>cabalaría</"
-"i> do depósito debúxase sobre un mapa de píxeles de anchura: <i>Anchura</i> "
-"* N<i>número de imaxes</i> e despois divídese en imaxes individuais.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryh)
 #: ksirkspritesdefinition.ui:288
 #, kde-format
 msgid "Individual cavalry frame height"
-msgstr "Altura da imaxe individual da cabalaría"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryh)
 #: ksirkspritesdefinition.ui:291
@@ -1660,15 +1476,12 @@ msgid ""
 "will be rendered on a pixmap of height (<i>Height</i> * <i>Number of "
 "versions</i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>Altura da imaxe individual da cabalaría.</p><p>O elemento <i>cabalaría</"
-"i> do depósito amósase nun mapa de píxeles de altura: (<i>Altura</i> * "
-"<i>Número de versións</i>) e despois divídese en imaxe individuais.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryf)
 #: ksirkspritesdefinition.ui:305
 #, kde-format
 msgid "Number of individual cavalry frames"
-msgstr "Número de imaxes de cabalaría individuais"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryf)
 #: ksirkspritesdefinition.ui:308
@@ -1678,15 +1491,12 @@ msgid ""
 "element will be rendered on a pixmap of width: (<i>Width</i> * <i>Number of "
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>Número de imaxes de cabalaría individuais.</p><p>O elemento <i>cabalaría</"
-"i> do depósito amósase nun mapa de píxeles de anchura: (<i>Anchura</i> * "
-"<i>Número de imaxes</i>) e despois divídese en imaxes individuais.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryv)
 #: ksirkspritesdefinition.ui:322
 #, kde-format
 msgid "Number of cavalry versions"
-msgstr "Número de versións da cabalaría"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryv)
 #: ksirkspritesdefinition.ui:325
@@ -1699,31 +1509,24 @@ msgid ""
 "second towards the left, the third one from front and the last one from the "
 "back. However, not all sprites need all versions.</p>"
 msgstr ""
-"<p>Número de versións da cabalaría.</p><p>O elemento <i>cabalaría</i> do "
-"depósito amósase nun mapa de píxeles de altura: (<i>Altura</i> *<i> Número "
-"de versións</i>) e despois divídese en imaxes individuais.</p><p>Cada "
-"versión mostra a imaxe visíbel desde unha dirección: a primeira está "
-"dirixida cara á dereita, a segunda cara á esquerda, a terceira desde diante "
-"e a última desde atrás. Porén, non todas as imaxes precisan de todas as "
-"versións.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, cannonTab)
 #: ksirkspritesdefinition.ui:346
 #, kde-format
 msgid "Data about the cannon sprite"
-msgstr "Datos sobre a imaxe do canón"
+msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, cannonTab)
 #: ksirkspritesdefinition.ui:349
 #, kde-format
 msgid "Cannon"
-msgstr "Canón"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonw)
 #: ksirkspritesdefinition.ui:364
 #, kde-format
 msgid "Cannon individual frame width"
-msgstr "Anchura da imaxe individual do canón"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonw)
 #: ksirkspritesdefinition.ui:367
@@ -1733,15 +1536,12 @@ msgid ""
 "be rendered on a pixmap of width (<i>Width</i> * <i>Number of frames</i>) "
 "and then split into individual frames.</p>"
 msgstr ""
-"<p>Anchura da imaxe individual do canón.</p><p>O elemento <i>canón</i> do "
-"depósito debúxase sobre un mapa de píxeles de anchura: <i>Anchura</i> * "
-"N<i>número de imaxes</i> e despois divídese en imaxes individuais.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonh)
 #: ksirkspritesdefinition.ui:381
 #, kde-format
 msgid "Individual cannon frame height"
-msgstr "Altura da imaxe individual do canón"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonh)
 #: ksirkspritesdefinition.ui:384
@@ -1751,15 +1551,12 @@ msgid ""
 "be rendered on a pixmap of height (<i>Height</i> * <i>Number of versions</"
 "i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>Altura da imaxe individual do canón.</p><p>O elemento <i>canón</i> do "
-"depósito amósase nun mapa de píxeles de altura: (<i>Altura</i> * <i>Número "
-"de versións</i>) e despois divídese en imaxes individuais.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonf)
 #: ksirkspritesdefinition.ui:398
 #, kde-format
 msgid "Number of individual cannon frames"
-msgstr "Número de imaxes de canón individuais"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonf)
 #: ksirkspritesdefinition.ui:401
@@ -1769,15 +1566,12 @@ msgid ""
 "will be rendered on a pixmap of width (<i>Width</i> * <i>Number of frames</"
 "i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>Número de imaxes de canón individuais.</p><p>O elemento <i>canón</i> do "
-"depósito amósase nun mapa de píxeles de anchura: (<i>Anchura</i> * <i>Número "
-"de imaxes</i>) e despois divídese en imaxes individuais.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonv)
 #: ksirkspritesdefinition.ui:415
 #, kde-format
 msgid "Number of cannon versions"
-msgstr "Número de versións do canón"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonv)
 #: ksirkspritesdefinition.ui:418
@@ -1790,30 +1584,24 @@ msgid ""
 "second towards the left, the third one from front and the last one from the "
 "back. However, not all sprites need all versions.</p>"
 msgstr ""
-"<p>Número de versións do canón.</p><p>O elemento <i>canón</i> do depósito "
-"amósase nun mapa de píxeles de altura: (<i>Altura</i> *<i> Número de "
-"versións</i>) e despois divídese en imaxes individuais.</p><p>Cada versión "
-"mostra a imaxe visíbel desde unha dirección: a primeira está dirixida cara á "
-"dereita, a segunda cara á esquerda, a terceira desde diante e a última desde "
-"atrás. Porén, non todas as imaxes precisan de todas as versións.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, firingTab)
 #: ksirkspritesdefinition.ui:441
 #, kde-format
 msgid "Data about the firing sprite"
-msgstr "Datos sobre a imaxe de disparo"
+msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, firingTab)
 #: ksirkspritesdefinition.ui:444
 #, kde-format
 msgid "Firing"
-msgstr "Disparo"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingw)
 #: ksirkspritesdefinition.ui:459
 #, kde-format
 msgid "Firing cannon individual frame width"
-msgstr "Anchura da imaxe individual do canón disparando"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, firingw)
 #: ksirkspritesdefinition.ui:462
@@ -1823,16 +1611,12 @@ msgid ""
 "element will be rendered on a pixmap of width (<i>Width</i> * <i>Number of "
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>Anchura da imaxe individual do canón disparando.</p><p>O elemento "
-"<i>canón disparando</i> do depósito debúxase sobre un mapa de píxeles de "
-"anchura: <i>Anchura</i> * N<i>número de imaxes</i> e despois divídese en "
-"imaxes individuais.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingh)
 #: ksirkspritesdefinition.ui:476
 #, kde-format
 msgid "Firing cannon individual frame height"
-msgstr "Altura da imaxe individual do canón disparando"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, firingh)
 #: ksirkspritesdefinition.ui:479
@@ -1842,16 +1626,12 @@ msgid ""
 "i> element will be rendered on a pixmap of height (<i>Height</i> * <i>Number "
 "of versions</i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>Altura da imaxe individual do canón disparando.</p><p>O elemento <i>canón "
-"disparando</i> do depósito amósase nun mapa de píxeles de altura: "
-"(<i>Altura</i> * <i>Número de versións</i>) e despois divídese en imaxes "
-"individuais.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingf)
 #: ksirkspritesdefinition.ui:493
 #, kde-format
 msgid "Number of individual firing cannon frames"
-msgstr "Número de imaxes de canón disparando individuais"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, firingf)
 #: ksirkspritesdefinition.ui:496
@@ -1861,16 +1641,12 @@ msgid ""
 "cannon</i> element will be rendered on a pixmap of width (<i>Width</i> * "
 "<i>Number of frames</i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>Número de imaxes de canón disparando individuais.</p><p>O elemento "
-"<i>canón disparando</i> do depósito amósase nun mapa de píxeles de anchura: "
-"(<i>Anchura</i> * <i>Número de imaxes</i>) e despois divídese en imaxes "
-"individuais.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingv)
 #: ksirkspritesdefinition.ui:510
 #, kde-format
 msgid "Number of firing cannon versions"
-msgstr "Número de versións do canón disparando"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, firingv)
 #: ksirkspritesdefinition.ui:513
@@ -1883,31 +1659,24 @@ msgid ""
 "towards the right, the second towards the left, the third one from front and "
 "the last one from the back. However, not all sprites need all versions.</p>"
 msgstr ""
-"<p>Número de versións do canón disparando.</p><p>O elemento <i>canón "
-"disparando</i> do depósito amósase nun mapa de píxeles de altura: "
-"(<i>Altura</i> *<i> Número de versións</i>) e despois divídese en imaxes "
-"individuais.</p><p>Cada versión mostra a imaxe visíbel desde unha dirección: "
-"a primeira está dirixida cara á dereita, a segunda cara á esquerda, a "
-"terceira desde diante e a última desde atrás. Porén, non todas as imaxes "
-"precisan de todas as versións.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, explodingTab)
 #: ksirkspritesdefinition.ui:536
 #, kde-format
 msgid "Data about the exploding sprite"
-msgstr "Datos sobre a imaxe do canón estourando"
+msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, explodingTab)
 #: ksirkspritesdefinition.ui:539
 #, kde-format
 msgid "Exploding"
-msgstr "Estourando"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingw)
 #: ksirkspritesdefinition.ui:554
 #, kde-format
 msgid "Exploding cannon individual frame width"
-msgstr "Anchura da imaxe individual do canón estourando"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingw)
 #: ksirkspritesdefinition.ui:557
@@ -1917,16 +1686,12 @@ msgid ""
 "element will be rendered on a pixmap of width (<i>Width</i> * <i>Number of "
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>Anchura da imaxe individual do canón estourando.</p><p>O elemento "
-"<i>canón estourando</i> do depósito debúxase sobre un mapa de píxeles de "
-"anchura: <i>Anchura</i> * N<i>número de imaxes</i> e despois divídese en "
-"imaxes individuais.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingh)
 #: ksirkspritesdefinition.ui:571
 #, kde-format
 msgid "Exploding cannon individual frame height"
-msgstr "Altura da imaxe individual do canón estourando"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingh)
 #: ksirkspritesdefinition.ui:574
@@ -1936,16 +1701,12 @@ msgid ""
 "element will be rendered on a pixmap of height (<i>Height</i> * <i>Number of "
 "versions</i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>Altura da imaxe individual do canón estourando.</p><p>O elemento <i>canón "
-"estourando</i> do depósito amósase nun mapa de píxeles de altura: "
-"(<i>Altura</i> * <i>Número de versións</i>) e despois divídese en imaxes "
-"individuais.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingf)
 #: ksirkspritesdefinition.ui:588
 #, kde-format
 msgid "Number of individual exploding cannon frames"
-msgstr "Número de imaxes de canón estourando individuais"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingf)
 #: ksirkspritesdefinition.ui:591
@@ -1955,16 +1716,12 @@ msgid ""
 "<i>exploding</i> element will be rendered on a pixmap of width (<i>Width</i> "
 "* <i>Number of frames</i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>Número de imaxes de canón estourando individuais.</p><p>O elemento "
-"<i>canón estourando</i> do depósito amósase nun mapa de píxeles de anchura: "
-"(<i>Anchura</i> * <i>Número de imaxes</i>) e despois divídese en imaxes "
-"individuais.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingv)
 #: ksirkspritesdefinition.ui:605
 #, kde-format
 msgid "Number of exploding cannon versions"
-msgstr "Número de versións do canón estourando"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingv)
 #: ksirkspritesdefinition.ui:608
@@ -1977,18 +1734,11 @@ msgid ""
 "towards the right, the second towards the left, the third one from front and "
 "the last one from the back. However, not all sprites need all versions.</p>"
 msgstr ""
-"<p>Número de versións do canón estourando.</p><p>O elemento <i>canón "
-"estourando</i> do depósito amósase nun mapa de píxeles de altura: "
-"(<i>Altura</i> *<i> Número de versións</i>) e despois divídese en imaxes "
-"individuais.</p><p>Cada versión mostra a imaxe visíbel desde unha dirección: "
-"a primeira está dirixida cara á dereita, a segunda cara á esquerda, a "
-"terceira desde diante e a última desde atrás. Porén, non todas as imaxes "
-"precisan de todas as versións.</p>"
 
 #: main.cpp:56
 #, kde-format
 msgid "(c) 2008, Gaël de Chalendar\n"
-msgstr "© 2008, Gaël de Chalendar\n"
+msgstr "(c) 2008, Gaël de Chalendar\n"
 
 #: main.cpp:57
 #, kde-format
@@ -1996,163 +1746,159 @@ msgid ""
 "For help and user manual, please see\n"
 "The KsirK Web site"
 msgstr ""
-"Para axuda e un manual do usuario, consulta\n"
-"O sitio web de KsirK"
 
 #: main.cpp:59
 #, kde-format
 msgid "Gaël de Chalendar aka Kleag"
-msgstr "Gaël de Chalendar, coñecido como Kleag"
+msgstr ""
 
 #: main.cpp:64
 #, kde-format
 msgid "file to open"
-msgstr "ficheiro para abrir"
+msgstr "ireki beharreko fitxategia"
 
 #: mainwindow.cpp:128 mainwindow.cpp:690 mainwindow.cpp:818 mainwindow.cpp:1205
 #, kde-format
 msgid "Cannot load anchor icon<br>Program cannot continue"
-msgstr "Non é posíbel abrir a icona da áncora<br>O programa non pode continuar"
+msgstr ""
 
 #: mainwindow.cpp:128 mainwindow.cpp:142 mainwindow.cpp:690 mainwindow.cpp:719
 #: mainwindow.cpp:818 mainwindow.cpp:835 mainwindow.cpp:1205 onu.cpp:79
 #: onu.cpp:112 onu.cpp:131
 #, kde-format
 msgid "Error"
-msgstr "Erro"
+msgstr "Errorea"
 
 #: mainwindow.cpp:142 mainwindow.cpp:719 mainwindow.cpp:835
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
-msgstr "Non é posíbel abrir a icona do centro<br>O programa non pode continuar"
+msgstr ""
 
 #: mainwindow.cpp:325
 #, kde-format
 msgid "Open a saved skin..."
-msgstr "Abrir unha aparencia gardada…"
+msgstr ""
 
 #: mainwindow.cpp:329
 #, kde-format
 msgid "Load &Recent"
-msgstr "Cargar &recente"
+msgstr ""
 
 #: mainwindow.cpp:330
 #, kde-format
 msgid "Open a recently saved skin..."
-msgstr "Abrir unha aparencia gardada recentemente…"
+msgstr ""
 
 #: mainwindow.cpp:338
 #, kde-format
 msgid "Save the current skin"
-msgstr "Gardar esta aparencia"
+msgstr ""
 
 #: mainwindow.cpp:367
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Root Folder of the Skin to Open"
-msgstr "Escolle o cartafol raíz da aparencia que queres abrir"
+msgstr ""
 
 #: mainwindow.cpp:530
 #, kde-format
 msgid "There are unsaved changes. What do you want to do?"
-msgstr "Hai cambios sen gardar. Que queres facer?"
+msgstr ""
 
 #: mainwindow.cpp:531
 #, kde-format
 msgid "Exit Anyway?"
-msgstr "Saír de calquera xeito?"
+msgstr ""
 
 #: mainwindow.cpp:532
 #, kde-format
 msgid "Quit without saving"
-msgstr "Saír sen gravar"
+msgstr ""
 
 #: mainwindow.cpp:533
 #, kde-format
 msgid "Save then quit"
-msgstr "Gardar e saír"
+msgstr ""
 
 #: mainwindow.cpp:534
 #, kde-format
 msgid "Do not quit"
-msgstr "Non saír"
+msgstr ""
 
 #: mainwindow.cpp:1317
 #, kde-format
 msgid "New country name"
-msgstr "Novo nome de país"
+msgstr ""
 
 #: mainwindow.cpp:1317
 #, kde-format
 msgid "Enter the name of the new country"
-msgstr "Insire o nome do novo país"
+msgstr ""
 
 #: mainwindow.cpp:1327
 #, kde-format
 msgid "Do you really want to delete country '%1'?"
-msgstr "Seguro que queres eliminar o país «%1»?"
+msgstr ""
 
 #: mainwindow.cpp:1327
 #, kde-format
 msgid "Really delete country?"
-msgstr "Eliminar realmente este país?"
+msgstr ""
 
 #: mainwindow.cpp:1346
 #, kde-format
 msgid "New continent name"
-msgstr "Novo nome de continente"
+msgstr ""
 
 #: mainwindow.cpp:1346
 #, kde-format
 msgid "Enter the name of the new continent"
-msgstr "Insire o nome do novo continente"
+msgstr ""
 
 #: mainwindow.cpp:1356
 #, kde-format
 msgid "Do you really want to delete continent '%1'?"
-msgstr "Seguro que queres eliminar o continente «%1»?"
+msgstr ""
 
 #: mainwindow.cpp:1356
 #, kde-format
 msgid "Really delete continent?"
-msgstr "Eliminar realmente este continente?"
+msgstr ""
 
 #: mainwindow.cpp:1905
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
-msgstr "Seguro que queres eliminar o obxectivo «%1»?"
+msgstr ""
 
 #: mainwindow.cpp:1905
 #, kde-format
 msgid "Really delete goal?"
-msgstr "Eliminar realmente este obxectivo?"
+msgstr ""
 
 #: mainwindow.cpp:1964
 #, kde-format
 msgid "New nationality name"
-msgstr "Novo nome de nacionalidade"
+msgstr ""
 
 #: mainwindow.cpp:1964
 #, kde-format
 msgid "Enter the name of the new nationality"
-msgstr "Insira o nome da nova nacionalidade"
+msgstr ""
 
 #: mainwindow.cpp:1974
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
-msgstr "Seguro que queres eliminar a nacionalidade «%1»?"
+msgstr ""
 
 #: mainwindow.cpp:1974
 #, kde-format
 msgid "Really delete nationality?"
-msgstr "Eliminar realmente esta nacionalidade?"
+msgstr ""
 
 #: onu.cpp:78
 #, kde-format
 msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
 msgstr ""
-"Erro - O formato de ficheiro de definición de aparencia é incorrecto. "
-"Agardábase %1 e obtívose %2"
 
 #: onu.cpp:111
 #, kde-format
@@ -2160,8 +1906,6 @@ msgid ""
 "Pool filename not found\n"
 "Program cannot continue"
 msgstr ""
-"Non é posíbel atopar o nome do depósito\n"
-"O programa non pode continuar"
 
 #: onu.cpp:130
 #, kde-format
@@ -2169,8 +1913,6 @@ msgid ""
 "Map mask image not found\n"
 "Program cannot continue"
 msgstr ""
-"Non é posíbel atopar o nome da imaxe da máscara do mapa\n"
-"O programa non pode continuar"
 
 #: onu.cpp:989
 #, kde-format
@@ -2178,32 +1920,29 @@ msgid ""
 "Cannot read file %1:\n"
 "%2."
 msgstr ""
-"Non é posíbel ler o ficheiro %1:\n"
-"%2."
 
-# well-spelled: CargadorDeFondo
 #: onu.cpp:990
 #, kde-format
 msgid "PoolLoader"
-msgstr "CargadorDeFondo"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, KsirkSkinEditorPreferencesWidget)
 #: preferences.ui:25
 #, kde-format
 msgid "KsirK Skin Editor Preferences"
-msgstr "Preferencias do editor de aparencias de KsirK"
+msgstr ""
 
 #: skinSpritesData.cpp:85
 #, kde-format
 msgid "Error - Unknown skin int data: "
-msgstr "Erro - Descoñécese o dato dun enteiro da aparencia: "
+msgstr ""
 
 #: skinSpritesData.cpp:86 skinSpritesData.cpp:102
 #, kde-format
 msgid "Fatal Error"
-msgstr "Erro fatal"
+msgstr ""
 
 #: skinSpritesData.cpp:101
 #, kde-format
 msgid "Error - Unknown skin string data: "
-msgstr "Erro - Descoñécese o dato dunha cadea da aparencia: "
+msgstr ""
