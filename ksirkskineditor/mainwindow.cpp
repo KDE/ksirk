@@ -189,8 +189,8 @@ MainWindow::MainWindow(QWidget* parent) :
   connect(m_goalDefWidget->countriestype,&QAbstractButton::clicked,this,&MainWindow::slotGoalTypeCountriesClicked);
   connect(m_goalDefWidget->continentstype,&QAbstractButton::clicked,this,&MainWindow::slotGoalTypeContinentsClicked);
   connect (m_goalDefWidget->description,&QTextEdit::textChanged, this, &MainWindow::slotGoalDescriptionEdited);
-  connect (m_goalDefWidget->nbcountries, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotGoalNbCountriesChanged);
-  connect (m_goalDefWidget->armiesbycountry, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotGoalNbArmiesByCountryChanged);
+  connect (m_goalDefWidget->nbcountries, &QSpinBox::valueChanged, this, &MainWindow::slotGoalNbCountriesChanged);
+  connect (m_goalDefWidget->armiesbycountry, &QSpinBox::valueChanged, this, &MainWindow::slotGoalNbArmiesByCountryChanged);
   connect (m_goalDefWidget->anycontinent,&QCheckBox::stateChanged, this, &MainWindow::slotGoalAnyContinentChanged);
   connect (m_goalDefWidget->selectcontinentsbutton, &QAbstractButton::clicked, this, &MainWindow::slotGoalContinents);
   connect(m_skinDefWidget->newGoalButton, &QAbstractButton::clicked, this, &MainWindow::slotNewGoal);
@@ -203,35 +203,35 @@ MainWindow::MainWindow(QWidget* parent) :
   m_spritesDefWidget = new KsirkSpritesDefinitionWidget(this);
   addDockWidget ( Qt::RightDockWidgetArea, m_spritesDefWidget);
   m_spritesDefWidget->hide();
-  connect(m_spritesDefWidget->flagw, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotFlagWidthChanged);
-  connect(m_spritesDefWidget->flagh, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotFlagHeightChanged);
-  connect(m_spritesDefWidget->flagf, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotFlagFramesChanged);
-  connect(m_spritesDefWidget->flagv, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotFlagVersionsChanged);
+  connect(m_spritesDefWidget->flagw, &QSpinBox::valueChanged, this, &MainWindow::slotFlagWidthChanged);
+  connect(m_spritesDefWidget->flagh, &QSpinBox::valueChanged, this, &MainWindow::slotFlagHeightChanged);
+  connect(m_spritesDefWidget->flagf, &QSpinBox::valueChanged, this, &MainWindow::slotFlagFramesChanged);
+  connect(m_spritesDefWidget->flagv, &QSpinBox::valueChanged, this, &MainWindow::slotFlagVersionsChanged);
 
-  connect(m_spritesDefWidget->infantryw, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotInfantryWidthChanged);
-  connect(m_spritesDefWidget->infantryh, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotInfantryHeightChanged);
-  connect(m_spritesDefWidget->infantryf, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotInfantryFramesChanged);
-  connect(m_spritesDefWidget->infantryv, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotInfantryVersionsChanged);
+  connect(m_spritesDefWidget->infantryw, &QSpinBox::valueChanged, this, &MainWindow::slotInfantryWidthChanged);
+  connect(m_spritesDefWidget->infantryh, &QSpinBox::valueChanged, this, &MainWindow::slotInfantryHeightChanged);
+  connect(m_spritesDefWidget->infantryf, &QSpinBox::valueChanged, this, &MainWindow::slotInfantryFramesChanged);
+  connect(m_spritesDefWidget->infantryv, &QSpinBox::valueChanged, this, &MainWindow::slotInfantryVersionsChanged);
   
-  connect(m_spritesDefWidget->cavalryw, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotCavalryWidthChanged);
-  connect(m_spritesDefWidget->cavalryh, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotCavalryHeightChanged);
-  connect(m_spritesDefWidget->cavalryf, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotCavalryFramesChanged);
-  connect(m_spritesDefWidget->cavalryv, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotCavalryVersionsChanged);
+  connect(m_spritesDefWidget->cavalryw, &QSpinBox::valueChanged, this, &MainWindow::slotCavalryWidthChanged);
+  connect(m_spritesDefWidget->cavalryh, &QSpinBox::valueChanged, this, &MainWindow::slotCavalryHeightChanged);
+  connect(m_spritesDefWidget->cavalryf, &QSpinBox::valueChanged, this, &MainWindow::slotCavalryFramesChanged);
+  connect(m_spritesDefWidget->cavalryv, &QSpinBox::valueChanged, this, &MainWindow::slotCavalryVersionsChanged);
   
-  connect(m_spritesDefWidget->cannonw, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotCannonWidthChanged);
-  connect(m_spritesDefWidget->cannonh, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotCannonHeightChanged);
-  connect(m_spritesDefWidget->cannonf, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotCannonFramesChanged);
-  connect(m_spritesDefWidget->cannonv, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotCannonVersionsChanged);
+  connect(m_spritesDefWidget->cannonw, &QSpinBox::valueChanged, this, &MainWindow::slotCannonWidthChanged);
+  connect(m_spritesDefWidget->cannonh, &QSpinBox::valueChanged, this, &MainWindow::slotCannonHeightChanged);
+  connect(m_spritesDefWidget->cannonf, &QSpinBox::valueChanged, this, &MainWindow::slotCannonFramesChanged);
+  connect(m_spritesDefWidget->cannonv, &QSpinBox::valueChanged, this, &MainWindow::slotCannonVersionsChanged);
   
-  connect(m_spritesDefWidget->firingw, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotFiringWidthChanged);
-  connect(m_spritesDefWidget->firingh, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotFiringHeightChanged);
-  connect(m_spritesDefWidget->firingf, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotFiringFramesChanged);
-  connect(m_spritesDefWidget->firingv, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotFiringVersionsChanged);
+  connect(m_spritesDefWidget->firingw, &QSpinBox::valueChanged, this, &MainWindow::slotFiringWidthChanged);
+  connect(m_spritesDefWidget->firingh, &QSpinBox::valueChanged, this, &MainWindow::slotFiringHeightChanged);
+  connect(m_spritesDefWidget->firingf, &QSpinBox::valueChanged, this, &MainWindow::slotFiringFramesChanged);
+  connect(m_spritesDefWidget->firingv, &QSpinBox::valueChanged, this, &MainWindow::slotFiringVersionsChanged);
   
-  connect(m_spritesDefWidget->explodingw, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotExplodingWidthChanged);
-  connect(m_spritesDefWidget->explodingh, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotExplodingHeightChanged);
-  connect(m_spritesDefWidget->explodingf, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotExplodingFramesChanged);
-  connect(m_spritesDefWidget->explodingv, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotExplodingVersionsChanged);
+  connect(m_spritesDefWidget->explodingw, &QSpinBox::valueChanged, this, &MainWindow::slotExplodingWidthChanged);
+  connect(m_spritesDefWidget->explodingh, &QSpinBox::valueChanged, this, &MainWindow::slotExplodingHeightChanged);
+  connect(m_spritesDefWidget->explodingf, &QSpinBox::valueChanged, this, &MainWindow::slotExplodingFramesChanged);
+  connect(m_spritesDefWidget->explodingv, &QSpinBox::valueChanged, this, &MainWindow::slotExplodingVersionsChanged);
   
   
   connect(m_skinDefWidget->qtabwidget, &QTabWidget::currentChanged, this, &MainWindow::slotSkinPartTabChanged);
@@ -243,24 +243,24 @@ MainWindow::MainWindow(QWidget* parent) :
   connect(m_skinDefWidget->goalslist, &QListWidget::itemClicked, this, &MainWindow::slotGoalSelected);
   
   connect (m_countryDefWidget->neighboursbutton, &QAbstractButton::clicked, this, &MainWindow::slotNeighbours);
-  connect(m_countryDefWidget->flagx, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotFLagxValueChanged);
-  connect(m_countryDefWidget->flagy, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotFLagyValueChanged);
-  connect(m_countryDefWidget->centerx, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotCenterxValueChanged);
-  connect(m_countryDefWidget->centery, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotCenteryValueChanged);
-  connect(m_countryDefWidget->anchorx, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotAnchorxValueChanged);
-  connect(m_countryDefWidget->anchory, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotAnchoryValueChanged);
-  connect(m_countryDefWidget->infantryx, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotInfantryxValueChanged);
-  connect(m_countryDefWidget->infantryy, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotInfantryyValueChanged);
-  connect(m_countryDefWidget->cavalryx, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotCavalryxValueChanged);
-  connect(m_countryDefWidget->cavalryy, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotCavalryyValueChanged);
-  connect(m_countryDefWidget->cannonx, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotCannonxValueChanged);
-  connect(m_countryDefWidget->cannony, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotCannonyValueChanged);
+  connect(m_countryDefWidget->flagx, &QSpinBox::valueChanged, this, &MainWindow::slotFLagxValueChanged);
+  connect(m_countryDefWidget->flagy, &QSpinBox::valueChanged, this, &MainWindow::slotFLagyValueChanged);
+  connect(m_countryDefWidget->centerx, &QSpinBox::valueChanged, this, &MainWindow::slotCenterxValueChanged);
+  connect(m_countryDefWidget->centery, &QSpinBox::valueChanged, this, &MainWindow::slotCenteryValueChanged);
+  connect(m_countryDefWidget->anchorx, &QSpinBox::valueChanged, this, &MainWindow::slotAnchorxValueChanged);
+  connect(m_countryDefWidget->anchory, &QSpinBox::valueChanged, this, &MainWindow::slotAnchoryValueChanged);
+  connect(m_countryDefWidget->infantryx, &QSpinBox::valueChanged, this, &MainWindow::slotInfantryxValueChanged);
+  connect(m_countryDefWidget->infantryy, &QSpinBox::valueChanged, this, &MainWindow::slotInfantryyValueChanged);
+  connect(m_countryDefWidget->cavalryx, &QSpinBox::valueChanged, this, &MainWindow::slotCavalryxValueChanged);
+  connect(m_countryDefWidget->cavalryy, &QSpinBox::valueChanged, this, &MainWindow::slotCavalryyValueChanged);
+  connect(m_countryDefWidget->cannonx, &QSpinBox::valueChanged, this, &MainWindow::slotCannonxValueChanged);
+  connect(m_countryDefWidget->cannony, &QSpinBox::valueChanged, this, &MainWindow::slotCannonyValueChanged);
   
 
   connect (m_skinDefWidget->skinNameLineEdit, &QLineEdit::editingFinished, this, &MainWindow::slotSkinNameEdited);
 
-  connect (m_skinDefWidget->widthLineEdit, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotSkinWidthEdited);
-  connect (m_skinDefWidget->heightLineEdit, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotSkinHeightEdited);
+  connect (m_skinDefWidget->widthLineEdit, &QSpinBox::valueChanged, this, &MainWindow::slotSkinWidthEdited);
+  connect (m_skinDefWidget->heightLineEdit, &QSpinBox::valueChanged, this, &MainWindow::slotSkinHeightEdited);
 
   connect (m_skinDefWidget->descriptionTextEdit,&QTextEdit::textChanged, this, &MainWindow::slotSkinDescriptionEdited);
 
@@ -275,7 +275,7 @@ MainWindow::MainWindow(QWidget* parent) :
 
   connect(m_nationalityDefWidget->name,&QLineEdit::editingFinished, this, &MainWindow::slotNationalityNameEdited);
   connect(m_nationalityDefWidget->leader,&QLineEdit::editingFinished, this, &MainWindow::slotNationalityLeaderNameEdited);
-  connect(m_nationalityDefWidget->flag, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &MainWindow::slotNationalityFlagEdited);
+  connect(m_nationalityDefWidget->flag, &KComboBox::currentIndexChanged, this, &MainWindow::slotNationalityFlagEdited);
   
   
   connect(m_skinDefWidget->newCountryButton, &QAbstractButton::clicked, this, &MainWindow::slotNewCountry);
@@ -289,7 +289,7 @@ MainWindow::MainWindow(QWidget* parent) :
   
   connect (m_continentDefWidget->selectcountriesbutton, &QAbstractButton::clicked, this, &MainWindow::slotContinentCountries);
   
-  connect(m_continentDefWidget->bonus, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::slotContinentBonusEdited);
+  connect(m_continentDefWidget->bonus, &QSpinBox::valueChanged, this, &MainWindow::slotContinentBonusEdited);
   
   qCDebug(KSIRKSKINEDITOR_LOG) << "Setting up GUI";
   setupGUI();

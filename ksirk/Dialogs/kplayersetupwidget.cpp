@@ -53,9 +53,9 @@ KPlayerSetupWidget::KPlayerSetupWidget(QWidget *parent) :
   qCDebug(KSIRK_LOG);
   setupUi(this);
 
-  connect(nationCombo, QOverload<int>::of(&QComboBox::activated), this, &KPlayerSetupWidget::slotNationChanged);
+  connect(nationCombo, &QComboBox::activated, this, &KPlayerSetupWidget::slotNationChanged);
   connect(nameLineEdit, &QLineEdit::textEdited, this, &KPlayerSetupWidget::slotNameEdited);
-  connect(nationCombo, QOverload<int>::of(&QComboBox::activated), this, &KPlayerSetupWidget::slotNationChanged);
+  connect(nationCombo, &QComboBox::activated, this, &KPlayerSetupWidget::slotNationChanged);
   connect(nextButton, &QAbstractButton::pressed,this,&KPlayerSetupWidget::slotNext);
   connect(previousButton, &QAbstractButton::pressed,this,&KPlayerSetupWidget::slotPrevious);
   connect(cancelButton, &QAbstractButton::pressed,this,&KPlayerSetupWidget::slotCancel);

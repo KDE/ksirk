@@ -48,9 +48,9 @@ NewGameWidget::NewGameWidget(NewGameSetup* newGameSetup, QWidget *parent) :
   
   QObject::connect(nextButton, &QAbstractButton::clicked, this, &NewGameWidget::slotOK );
   QObject::connect(cancelButton, &QAbstractButton::clicked, this, &NewGameWidget::slotCancel );
-  QObject::connect(skinCombo, QOverload<int>::of(&QComboBox::activated), this, &NewGameWidget::slotSkinChanged);
+  QObject::connect(skinCombo, &QComboBox::activated, this, &NewGameWidget::slotSkinChanged);
   QObject::connect(ghnsbutton, &KNSWidgets::Button::dialogFinished, this, &NewGameWidget::slotGHNS );
-  QObject::connect(tcpPortEntry, QOverload<int>::of(&QSpinBox::valueChanged), this, &NewGameWidget::slotTcpPortEdited);
+  QObject::connect(tcpPortEntry, &QSpinBox::valueChanged, this, &NewGameWidget::slotTcpPortEdited);
 }
 
 void NewGameWidget::init(const QString& skin, GameAutomaton::NetworkGameType netGameType)
