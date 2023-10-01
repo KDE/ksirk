@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-30 01:41+0000\n"
-"PO-Revision-Date: 2023-09-11 09:57+0200\n"
+"PO-Revision-Date: 2023-09-30 13:59+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -1237,7 +1237,7 @@ msgstr "Estat:"
 #: Dialogs/jabbergameui.ui:137
 #, kde-format
 msgid "Joining a KsirK Jabber Chatroom"
-msgstr "Estàs entrant a un grup de xat Jabber de KsirK"
+msgstr "Estàs entrant en un grup de xat Jabber de KsirK"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: Dialogs/jabbergameui.ui:146
@@ -1787,7 +1787,7 @@ msgid ""
 "What do you want to do?"
 msgstr ""
 "KsirK - S'ha perdut la connexió amb el servidor!\n"
-"Que voleu fer?"
+"Què voleu fer?"
 
 #: GameLogic/gameautomaton.cpp:1666
 #, kde-format
@@ -3447,7 +3447,7 @@ msgstr ""
 #: main.cpp:49
 #, kde-format
 msgid "Gaël de Chalendar aka Kleag"
-msgstr "Gaël de Chalendar conegut com Kleag"
+msgstr "Gaël de Chalendar conegut com a Kleag"
 
 #: main.cpp:50
 #, kde-format

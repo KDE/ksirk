@@ -1,24 +1,24 @@
 # Translation of ksirkskineditor.po to Catalan
-# Copyright (C) 2009-2022 This_file_is_part_of_KDE
+# Copyright (C) 2009-2023 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Manuel Tortosa <manutortosa@gmail.com>, 2009.
-# Josep M. Ferrer <txemaq@gmail.com>, 2009, 2010, 2014, 2015, 2017, 2020, 2021, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2009, 2010, 2014, 2015, 2017, 2020, 2021, 2022, 2023.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-30 01:41+0000\n"
-"PO-Revision-Date: 2022-10-23 21:00+0200\n"
+"PO-Revision-Date: 2023-09-30 13:52+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
@@ -918,20 +918,19 @@ msgstr ""
 #: ksirkskindefinition.ui:90
 #, kde-format
 msgid "Map Font"
-msgstr "Tipus de lletra del mapa"
+msgstr "Lletra del mapa"
 
 #. i18n: ectx: property (toolTip), widget (KFontRequester, fontrequester)
 #: ksirkskindefinition.ui:96
 #, kde-format
 msgid "Font used to draw country names"
-msgstr "Tipus de lletra usat per a dibuixar els noms dels països"
+msgstr "Lletra emprada per a dibuixar els noms dels països"
 
 #. i18n: ectx: property (whatsThis), widget (KFontRequester, fontrequester)
 #: ksirkskindefinition.ui:99
 #, kde-format
 msgid "This font will be used to draw the country names on the map"
-msgstr ""
-"Aquest tipus de lletra s'usarà per a dibuixar els noms dels països en el mapa"
+msgstr "Aquesta lletra s'usarà per a dibuixar els noms dels països en el mapa"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: ksirkskindefinition.ui:108

@@ -1,60 +1,62 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This file is copyright:
+# Translation for ksirkskineditor.po to Euskara/Basque (eu).
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the ksirk package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SPDX-FileCopyrightText: 2023 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
+# Translators:
+# SPDX-FileCopyrightText: 2023 Iñigo Salvador Azurmendi <xalba@ni.eus>
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-30 01:41+0000\n"
-"PO-Revision-Date: 2023-09-30 12:42+0200\n"
-"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
-"Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
-"Language: ka\n"
+"PO-Revision-Date: 2023-09-30 16:28+0200\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
+"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Temuri Doghonadze"
+msgstr "Iñigo Salvador Azurmendi"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "Temuri.doghonadze@gmail.com"
+msgstr "xalba@ni.eus"
 
 #: goal.cpp:100
 #, kde-format
 msgid "Error: no player to destroy"
-msgstr "გასანადგურებელი მოწყინააღმდეგის გარეშე"
+msgstr "Errorea: ez dago suntsitzeko jokalaririk"
 
 #: goal.cpp:213
 #, kde-format
 msgid "KsirK - Goal Display"
-msgstr "KsirK - სამიზნის ჩვენება"
+msgstr "KsirK - Helburua azaldu"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
 #: ksirkcontinentdefinition.ui:13
 #, kde-format
 msgid "Continent"
-msgstr "კონტინენტი"
+msgstr "Kontinentea"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkcontinentdefinition.ui:22
 #, kde-format
 msgid "Bonus:"
-msgstr "ბონუსი:"
+msgstr "Saria:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, bonus)
 #: ksirkcontinentdefinition.ui:29
 #, kde-format
 msgid "Number of bonus points when owning the full continent"
-msgstr "ბონუს-ქულები სრული კონტინენტის ფლობისას"
+msgstr "Kontinente osoaz jabetzean sari-puntu kopurua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, bonus)
 #: ksirkcontinentdefinition.ui:36
@@ -69,19 +71,12 @@ msgid ""
 "The bonus should be proportional to the continent's size and to the "
 "difficulty to conquer it or to keep it."
 msgstr ""
-"დამატებითი ქულების რაოდენობა, როცა სრულ კონტინენტს ფლობთ.\n"
-"\n"
-"ყოველი სვლის ბოლოს არმიების რაოდენობა ნაწილდება ყველა მოთამაშეზე. თუ ერთი "
-"მოთამაშე კონტინენტის ყველა ქვეყნის მფლობელია, ის ამ პრემიას მიიღებს.\n"
-"\n"
-"პრემია კონტინენტის ზომის და მისი დაპყრობისა თუ შენარჩუნების სირთულეზე უნდა "
-"იყოს დამოკიდებული."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:48
 #, kde-format
 msgid "Select the countries contained in this continent"
-msgstr "აირჩიეთ ამ კონტინენტზე მყოფი ქვეყნები"
+msgstr "Aukeratu kontinente horretan dauden herrialdeak"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:53
@@ -92,40 +87,36 @@ msgid ""
 "A list of all the world's countries will be shown and you will be able to "
 "select the countries using the mouse and the Ctrl and Shift keys."
 msgstr ""
-"დააწკაპუნეთ აქ, ამ, კონტინენტზე არსებული ყველა ქვეყნის მოსანიშნად.\n"
-"\n"
-"ნაჩვენები იქნება სამყაროს ყველა ქვეყნის სია და შეგეძლებათ, ქვეყნები თაგუნათი "
-"და Ctrl/Shift ღილაკებით მონიშნოთ."
 
 #. i18n: ectx: property (text), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:56
 #, kde-format
 msgid "Countries:"
-msgstr "ქვეყნები:"
+msgstr "Herrialdeak:"
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, countrieslist)
 #: ksirkcontinentdefinition.ui:63
 #, kde-format
 msgid "Continent's countries"
-msgstr "კონტინენტის ქვეყნები"
+msgstr "Kontinenteko herrialdeak"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, countrieslist)
 #: ksirkcontinentdefinition.ui:66
 #, kde-format
 msgid "This is the list of countries currently forming this continent."
-msgstr "ეს ქვეყნების სიაა, რომლებიც ამ კონტინენტზე მდებარეობენ."
+msgstr "Hori da, egun, kontinentea osatzen duten herrialdeak."
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkCountryDefinition)
 #: ksirkcountrydefinition.ui:13
 #, kde-format
 msgid "Country"
-msgstr "ქვეყანა"
+msgstr "Herrialdea"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkcountrydefinition.ui:22
 #, kde-format
 msgid "Flag:"
-msgstr "ალამი:"
+msgstr "Bandera:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
@@ -145,25 +136,25 @@ msgstr "x"
 #: ksirkcountrydefinition.ui:39
 #, kde-format
 msgid "Anchor:"
-msgstr "მიმაგრება:"
+msgstr "Aingura:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: ksirkcountrydefinition.ui:56
 #, kde-format
 msgid "Center:"
-msgstr "ცენტრი:"
+msgstr "Erdigunea:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: ksirkcountrydefinition.ui:73
 #, kde-format
 msgid "Infantry:"
-msgstr "ქვეითები:"
+msgstr "Infanteria:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryx)
 #: ksirkcountrydefinition.ui:80
 #, kde-format
 msgid "Infantry's sprite top left point x-coordinate"
-msgstr "ქვეითების სპრაიტის ზედა მარცხენა წერტილის X კოორდინატი"
+msgstr "Infanteriako iratxoaren goi-ezker puntuaren x koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryx)
 #: ksirkcountrydefinition.ui:87
@@ -176,18 +167,12 @@ msgid ""
 "\n"
 "This value will be automatically updated if you move the infantry."
 msgstr ""
-"ქვეითების სპრაიტის ზედა მარცხენა წერტილის X კოორდინატი.\n"
-"\n"
-"ეს რუკის ზედა მარცხენა კუთხესთან შედარებით მიეთითება, ზომა კი ის, რაც "
-"მთავარი სკინის აღწერის ვიჯეტშია მითითებული.\n"
-"\n"
-"ეს მნიშვნელობა ავტომატურად განახლდება, თუ ქვეითებს გადააადგილებთ."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryy)
 #: ksirkcountrydefinition.ui:107
 #, kde-format
 msgid "Infantry's sprite top left point y-coordinate"
-msgstr "ქვეითების სპრაიტის ზედა მარცხენა წერტილის Y კოორდინატი"
+msgstr "Infanteriako iratxoaren goi-ezker puntuaren y koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryy)
 #: ksirkcountrydefinition.ui:114
@@ -201,24 +186,18 @@ msgid ""
 "This value will be automatically updated if you move the infantry by drag "
 "and drop."
 msgstr ""
-"ქვეითების სპრაიტის ზედა მარცხენა წერტილის Y კოორდინატი.\n"
-"\n"
-"ეს რუკის ზედა მარცხენა კუთხესთან შედარებით მიეთითება, ზომა კი ის, რაც "
-"მთავარი სკინის აღწერის ვიჯეტშია მითითებული.\n"
-"\n"
-"ეს მნიშვნელობა ავტომატურად განახლდება, თუ ქვეითებს გადაათრევთ და დააგდებთ."
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: ksirkcountrydefinition.ui:124
 #, kde-format
 msgid "Cavalry:"
-msgstr "კავალერია:"
+msgstr "Zalditeria:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryx)
 #: ksirkcountrydefinition.ui:131
 #, kde-format
 msgid "Cavalry's sprite top left point x-coordinate"
-msgstr "კავალერიის სპრაიტის ზედა მარცხენა წერტილის X კოორდინატი"
+msgstr "Zalditeriako iratxoaren goi-ezker puntuaren x koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryx)
 #: ksirkcountrydefinition.ui:138
@@ -231,18 +210,12 @@ msgid ""
 "\n"
 "This value will be automatically updated if you move the cavalry."
 msgstr ""
-"კავალერიის სპრაიტის ზედა მარცხენა წერტილის X კოორდინატი.\n"
-"\n"
-"ეს რუკის ზედა მარცხენა კუთხესთან შედარებით მიეთითება, ზომა კი ის, რაც "
-"მთავარი სკინის აღწერის ვიჯეტშია მითითებული.\n"
-"\n"
-"ეს მნიშვნელობა ავტომატურად განახლდება, თუ კავალერიას გადააადგილებთ."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryy)
 #: ksirkcountrydefinition.ui:158
 #, kde-format
 msgid "Cavalry's sprite top left point y-coordinate"
-msgstr "კავალერიის სპრაიტის ზედა მარცხენა წერტილის Y კოორდინატი"
+msgstr "Zalditeriako iratxoaren goi-ezker puntuaren y koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryy)
 #: ksirkcountrydefinition.ui:165
@@ -256,24 +229,18 @@ msgid ""
 "This value will be automatically updated if you move the cavalry by drag and "
 "drop."
 msgstr ""
-"კავალერიის სპრაიტის ზედა მარცხენა წერტილის Y კოორდინატი.\n"
-"\n"
-"ეს რუკის ზედა მარცხენა კუთხესთან შედარებით მიეთითება, ზომა კი ის, რაც "
-"მთავარი სკინის აღწერის ვიჯეტშია მითითებული.\n"
-"\n"
-"ეს მნიშვნელობა ავტომატურად განახლდება, თუ კავალერიას გადაათრევთ და დააგდებთ."
 
 #. i18n: ectx: property (text), widget (QLabel, label_12)
 #: ksirkcountrydefinition.ui:175
 #, kde-format
 msgid "Cannon:"
-msgstr "ზარბაზანი:"
+msgstr "Kanoia:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannony)
 #: ksirkcountrydefinition.ui:192
 #, kde-format
 msgid "Cannon's sprite top left point y-coordinate"
-msgstr "ზარბაზნის სპრაიტის ზედა მარცხენა წერტილის Y კოორდინატი"
+msgstr "Kanoiaren iratxoaren goi-ezker puntuaren y koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannony)
 #: ksirkcountrydefinition.ui:199
@@ -287,18 +254,12 @@ msgid ""
 "This value will be automatically updated if you move the cannon by drag and "
 "drop."
 msgstr ""
-"ქვემეხის სპრაიტის ზედა მარცხენა წერტილის Y კოორდინატი.\n"
-"\n"
-"ეს რუკის ზედა მარცხენა კუთხესთან შედარებით მიეთითება, ზომა კი ის, რაც "
-"მთავარი სკინის აღწერის ვიჯეტშია მითითებული.\n"
-"\n"
-"ეს მნიშვნელობა ავტომატურად განახლდება, თუ ქვემეხს გადაათრევთ და დააგდებთ."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonx)
 #: ksirkcountrydefinition.ui:209
 #, kde-format
 msgid "Cannon's sprite top left point x-coordinate"
-msgstr "ზარბაზნის სპრაიტის ზედა მარცხენა წერტილის X კოორდინატი"
+msgstr "Kanoiaren iratxoaren goi-ezker puntuaren x koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonx)
 #: ksirkcountrydefinition.ui:216
@@ -311,18 +272,12 @@ msgid ""
 "\n"
 "This value will be automatically updated if you move the cannon."
 msgstr ""
-"ქვემეხის სპრაიტის ზედა მარცხენა წერტილის X კოორდინატი.\n"
-"\n"
-"ეს რუკის ზედა მარცხენა კუთხესთან შედარებით მიეთითება, ზომა კი ის, რაც "
-"მთავარი სკინის აღწერის ვიჯეტშია მითითებული.\n"
-"\n"
-"ეს მნიშვნელობა ავტომატურად განახლდება, თუ ქვემეხს გადააადგილებთ."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, centery)
 #: ksirkcountrydefinition.ui:226
 #, kde-format
 msgid "Point around which the country name is drawn y-coordinate"
-msgstr "იმ წერტილის Y კოორდინატი, რომელთანაც ქვეყნის სახელი დაიხატება"
+msgstr "Herrialdearen izena inguruan marrazten den puntuaren y koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, centery)
 #: ksirkcountrydefinition.ui:236
@@ -339,22 +294,12 @@ msgid ""
 "This value will be automatically updated if you move the country name by "
 "dragging and dropping its target icon.\n"
 msgstr ""
-"იმ წერტილის Y კოორდინატი, რომელთანაც ქვეყნის სახელი დაიხატება.\n"
-"\n"
-"დაიმახსოვრეთ, რომ წერილი რუკის ნიღაბზე ქვეყნის ფარგლებში უნდა იყოს "
-"მოთავსებული.\n"
-"\n"
-"ეს მიეთითება რუკის ზედა მარცხენა კუთხესთან შეფარდებით, ზომა კი მთავარი "
-"სკინის აღწერის ვიჯეტშია მითითებული\n"
-"\n"
-"ეს მნიშვნელობა ავტომატურად განახლდება, თუ ქვეყნის სახელს მისი ხატულით "
-"გადაათრევთ და დააგდებთ.\n"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, centerx)
 #: ksirkcountrydefinition.ui:246
 #, kde-format
 msgid "Point around which the country name is drawn x-coordinate"
-msgstr "იმ წერტილის X კოორდინატი, რომელთანაც ქვეყნის სახელი დაიხატება"
+msgstr "Herrialdearen izena inguruan marrazten den puntuaren x koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, centerx)
 #: ksirkcountrydefinition.ui:255
@@ -371,22 +316,12 @@ msgid ""
 "This value will be automatically updated if you move the country name by "
 "dragging and dropping its target icon."
 msgstr ""
-"იმ წერტილის X კოორდინატი, რომელთანაც ქვეყნის სახელი დაიხატება.\n"
-"\n"
-"დაიმახსოვრეთ, რომ წერილი რუკის ნიღაბზე ქვეყნის ფარგლებში უნდა იყოს "
-"მოთავსებული.\n"
-"\n"
-"ეს მიეთითება რუკის ზედა მარცხენა კუთხესთან შეფარდებით, ზომა კი მთავარი "
-"სკინის აღწერის ვიჯეტშია მითითებული\n"
-"\n"
-"ეს მნიშვნელობა ავტომატურად განახლდება, თუ ქვეყნის სახელს მისი ხატულით "
-"გადაათრევთ და დააგდებთ."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, anchory)
 #: ksirkcountrydefinition.ui:265
 #, kde-format
 msgid "Center of the highlighting y-coordinate"
-msgstr "გამოკვეთის Y კოორდინატის ცენტრი"
+msgstr "Nabarmentzearen erdiguneko y koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, anchory)
 #: ksirkcountrydefinition.ui:272
@@ -405,7 +340,7 @@ msgstr ""
 #: ksirkcountrydefinition.ui:282
 #, kde-format
 msgid "Center of the highlighting x-coordinate"
-msgstr "გამოკვეთის X კოორდინატის ცენტრი"
+msgstr "Nabarmentzearen erdiguneko x koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, anchorx)
 #: ksirkcountrydefinition.ui:289
@@ -424,7 +359,7 @@ msgstr ""
 #: ksirkcountrydefinition.ui:299
 #, kde-format
 msgid "Flag's sprite top left point y-coordinate"
-msgstr "ალმის სპრაიტის ზედა მარცხენა წერტილის Y კოორდინატი"
+msgstr "Banderaren iratxoaren goi-ezker puntuaren y koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagy)
 #: ksirkcountrydefinition.ui:306
@@ -438,18 +373,12 @@ msgid ""
 "This value will be automatically updated if you move the flag by drag and "
 "drop."
 msgstr ""
-"ალმის სპრაიტის ზედა მარცხენა წერტილის Y კოორდინატი.\n"
-"\n"
-"ეს რუკის ზედა მარცხენა კუთხესთან შედარებით მიეთითება, ზომა კი ის, რაც "
-"მთავარი სკინის აღწერის ვიჯეტშია მითითებული.\n"
-"\n"
-"ეს მნიშვნელობა ავტომატურად განახლდება, თუ ალამს გადაათრევთ და დააგდებთ."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagx)
 #: ksirkcountrydefinition.ui:316
 #, kde-format
 msgid "Flag's sprite top left point x-coordinate"
-msgstr "ალმის სპრაიტის ზედა მარცხენა წერტილის X კოორდინატი"
+msgstr "Banderaren iratxoaren goi-ezker puntuaren y koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagx)
 #: ksirkcountrydefinition.ui:323
@@ -463,18 +392,12 @@ msgid ""
 "This value will be automatically updated if you move the flag by drag and "
 "drop."
 msgstr ""
-"ალმის სპრაიტის ზედა მარცხენა წერტილის X კოორდინატი.\n"
-"\n"
-"ეს რუკის ზედა მარცხენა კუთხესთან შედარებით მიეთითება, ზომა კი ის, რაც "
-"მთავარი სკინის აღწერის ვიჯეტშია მითითებული.\n"
-"\n"
-"ეს მნიშვნელობა ავტომატურად განახლდება, თუ ალამს გადაათრევთ და დააგდებთ."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, neighboursbutton)
 #: ksirkcountrydefinition.ui:335
 #, kde-format
 msgid "Select this country's neighbors"
-msgstr "აირჩიეთ ქვეყნის მეზობლები"
+msgstr "Aukeratu herrialde horren mugakideak"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, neighboursbutton)
 #: ksirkcountrydefinition.ui:340
@@ -485,22 +408,22 @@ msgid ""
 "A list of all the world's countries will be shown and you will be able to "
 "select the countries using the mouse and the Ctrl and Shift keys."
 msgstr ""
-"დააწკაპუნეთ აქ, ამ ქვეყნის მეზობლების მოსანიშნად.\n"
+"Egin klik hemen herrialde horren mugakideak aukeratzeko.\n"
 "\n"
-"ნაჩვენები იქნება სამყაროს ყველა ქვეყნის სია და შეგეძლებათ, ქვეყნები თაგუნათი "
-"და Ctrl/Shift ღილაკებით მონიშნოთ."
+"Munduko herrialdeen zerrenda bat erakutsiko da eta herrialdeak sagua eta "
+"Ktrl eta Maius. teklak erabiliz aukeratu ahal izango dituzu."
 
 #. i18n: ectx: property (text), widget (QPushButton, neighboursbutton)
 #: ksirkcountrydefinition.ui:343
 #, kde-format
 msgid "Neighbors:"
-msgstr "მეზობლები:"
+msgstr "Mugakideak:"
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, neighbourslist)
 #: ksirkcountrydefinition.ui:350
 #, kde-format
 msgid "This country's neighbors"
-msgstr "ქვეყნის მეზობლები"
+msgstr "Herrialde horren mugakideak"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, neighbourslist)
 #: ksirkcountrydefinition.ui:353
@@ -508,38 +431,38 @@ msgstr "ქვეყნის მეზობლები"
 msgid ""
 "This is the list of countries currently considered as neighbors of this "
 "country."
-msgstr "ეს იმ ქვეყნების სიაა, რომლებიც ამჟამად ამ ქვეყნის მეზობლად ითვლება."
+msgstr "Hori da herrialde horren mugakide gisa harturiko herrialdeen zerrenda."
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkGoalDefinition)
 #: ksirkgoaldefinition.ui:13
 #, kde-format
 msgid "Goal"
-msgstr "მიზანი"
+msgstr "Helburua"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: ksirkgoaldefinition.ui:26
 #, kde-format
 msgid "Goal Type"
-msgstr "მიზნის ტიპი"
+msgstr "Helburu mota"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, worldtype)
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, worldtype)
 #: ksirkgoaldefinition.ui:41 ksirkgoaldefinition.ui:44
 #, kde-format
 msgid "Conquer all the world"
-msgstr "მთელი მსოფლიოს დაპყრობა"
+msgstr "Mundu osoa konkistatzea"
 
 #. i18n: ectx: property (text), widget (QRadioButton, worldtype)
 #: ksirkgoaldefinition.ui:47
 #, kde-format
 msgid "World conquest"
-msgstr "მსოფლიოს დაპყრობა"
+msgstr "Mundua konkistatzea"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, playertype)
 #: ksirkgoaldefinition.ui:54
 #, kde-format
 msgid "Eliminate a given player"
-msgstr "მითითებული მოთამაშის განაგურება"
+msgstr "Jokalari jakin bat kanporatzea"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, playertype)
 #: ksirkgoaldefinition.ui:57
@@ -548,18 +471,21 @@ msgid ""
 "<p>Eliminate a given player. If it is eliminated by another one, you will "
 "fall back to a <emphasis>Countries</emphasis> type of goal.</p>"
 msgstr ""
+"<p>Jokalari jakin bat kanporatzea. Beste jokalari batek kanporatzen badu, "
+"<emphasis>Herrialdeak</emphasis> motako erreserbako helburura itzuliko da.</"
+"p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, playertype)
 #: ksirkgoaldefinition.ui:60
 #, kde-format
 msgid "Player"
-msgstr "დამკვრელი"
+msgstr "Jokalaria"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, countriestype)
 #: ksirkgoaldefinition.ui:67
 #, kde-format
 msgid "Conquer a given number of countries"
-msgstr "დაიპყარით მითითებული რაოდენობის ქვეყანა"
+msgstr "Konkistatu herrialde kopuru jakin bat"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, countriestype)
 #: ksirkgoaldefinition.ui:72
@@ -570,19 +496,23 @@ msgid ""
 "You can also make the player to have to put a given number of armies on each "
 "country."
 msgstr ""
+"Konkistatu herrialde kopuru jakin bat.\n"
+"\n"
+"Jokalariak herrialde bakoitzean armada kopuru jakin bat jarri behar izatea "
+"ere egin dezakezu."
 
 #. i18n: ectx: property (text), widget (QRadioButton, countriestype)
 #. i18n: ectx: attribute (title), widget (QWidget, tabCountries)
 #: ksirkgoaldefinition.ui:75 ksirkskindefinition.ui:256
 #, kde-format
 msgid "Countries"
-msgstr "ქვეყნები"
+msgstr "Herrialdeak"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, continentstype)
 #: ksirkgoaldefinition.ui:82
 #, kde-format
 msgid "Conquer a given list of continents"
-msgstr "დაიპყარით კონტინენტების მოცემული სია"
+msgstr "Konkistatu kontinente zerrenda jakin bat"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, continentstype)
 #: ksirkgoaldefinition.ui:85
@@ -591,26 +521,28 @@ msgid ""
 "Conquer a given list of continents. You can also let the player choose one "
 "of their target continents."
 msgstr ""
+"Konkistatu kontinente zerrenda jakin bat. Jokalariari helburu "
+"kontinenteetako bat aukeratzen ere utz diezaiokezu."
 
 #. i18n: ectx: property (text), widget (QRadioButton, continentstype)
 #. i18n: ectx: attribute (title), widget (QWidget, tabContinents)
 #: ksirkgoaldefinition.ui:88 ksirkskindefinition.ui:318
 #, kde-format
 msgid "Continents"
-msgstr "კონტინენტები"
+msgstr "Kontinenteak"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: ksirkgoaldefinition.ui:99 ksirkskindefinition.ui:147
 #, kde-format
 msgid "Description:"
-msgstr "აღწერა:"
+msgstr "Deskribapena:"
 
 #. i18n: ectx: property (toolTip), widget (QTextEdit, description)
 #: ksirkgoaldefinition.ui:106
 #, kde-format
 msgid "Text describing the goal"
-msgstr "მიზნის აღწერის ტექსტი"
+msgstr "Helburua deskribatzen duen testua"
 
 #. i18n: ectx: property (whatsThis), widget (QTextEdit, description)
 #: ksirkgoaldefinition.ui:109
@@ -629,19 +561,19 @@ msgstr ""
 #: ksirkgoaldefinition.ui:125
 #, kde-format
 msgid "Countries nb:"
-msgstr "ქვეყნების რაოდენობა:"
+msgstr "Herrialde kop.:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: ksirkgoaldefinition.ui:132
 #, kde-format
 msgid "Armies by country:"
-msgstr "არმიები ქვეყნის მიხედვით:"
+msgstr "Armadak herrialdeko:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, nbcountries)
 #: ksirkgoaldefinition.ui:139
 #, kde-format
 msgid "Number of countries to conquer"
-msgstr "დასაპყრობი ქვეყნების რაოდენობა"
+msgstr "Konkistatu beharreko herrialde kopurua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, nbcountries)
 #: ksirkgoaldefinition.ui:142
@@ -650,12 +582,14 @@ msgid ""
 "<p>Number of countries to conquer in a <i>Countries</i> goal or as a "
 "fallback in a <i>Player</i> goal.</p>"
 msgstr ""
+"<p><i>Herrialdeak</i> helburu batean konkistatu beharreko herrialde kopurua "
+"edo <i>Jokalari</i> helburu bateko erreserbako helburu.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, armiesbycountry)
 #: ksirkgoaldefinition.ui:149
 #, kde-format
 msgid "Number of armies to put on each country"
-msgstr "თითოეულ ქვეყანაში გასათავსებელი არმიების რაოდენობა"
+msgstr "Herrialde bakoitzean ipini beharreko armada kopurua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, armiesbycountry)
 #: ksirkgoaldefinition.ui:152
@@ -663,12 +597,14 @@ msgstr "თითოეულ ქვეყანაში გასათავ�
 msgid ""
 "<p>Number of armies to put on each country in a <i>Countries</i> goal.</p>"
 msgstr ""
+"<p><i>Herrialdeak</i> helburu batean, herrialde bakoitzean ipini beharreko "
+"armada kopurua.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, selectcontinentsbutton)
 #: ksirkgoaldefinition.ui:170
 #, kde-format
 msgid "Select the continents to conquer"
-msgstr "აირჩიეთ დასაპყრობი კონტინენტები"
+msgstr "Aukeratu konkistatu beharreko kontinenteak"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, selectcontinentsbutton)
 #: ksirkgoaldefinition.ui:173
@@ -683,7 +619,7 @@ msgstr ""
 #: ksirkgoaldefinition.ui:176
 #, kde-format
 msgid "Select Continents"
-msgstr "აირჩიეთ კონტინენტები"
+msgstr "Aukeratu kontinenteak"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, anycontinent)
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, anycontinent)
@@ -691,19 +627,18 @@ msgstr "აირჩიეთ კონტინენტები"
 #, kde-format
 msgid "Check to let the player choose one of the continents to conquer"
 msgstr ""
-"ჩართეთ ეს მოთამაშისთვის დასაპყრობი კონტინენტის არჩევის უფლების მისაცემად"
 
 #. i18n: ectx: property (text), widget (QCheckBox, anycontinent)
 #: ksirkgoaldefinition.ui:189
 #, kde-format
 msgid "Any"
-msgstr "ნებისმიერი"
+msgstr "Edozein"
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, continentslist)
 #: ksirkgoaldefinition.ui:198
 #, kde-format
 msgid "List of the continents to conquer"
-msgstr "დასაპყრობი კონტინენტების სია"
+msgstr "Konkistatzeko herrialdeen zerrenda"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, continentslist)
 #: ksirkgoaldefinition.ui:201
@@ -718,19 +653,19 @@ msgstr ""
 #: ksirknationalitydefinition.ui:13
 #, kde-format
 msgid "Nationality"
-msgstr "ეროვნება"
+msgstr "Nazionalitatea"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirknationalitydefinition.ui:20
 #, kde-format
 msgid "Name:"
-msgstr "სახელი:"
+msgstr "Izena:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, name)
 #: ksirknationalitydefinition.ui:27
 #, kde-format
 msgid "Nationality name"
-msgstr "ეროვნების სახელი"
+msgstr "Nazionalitatearen izena"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, name)
 #: ksirknationalitydefinition.ui:30
@@ -745,13 +680,13 @@ msgstr ""
 #: ksirknationalitydefinition.ui:43
 #, kde-format
 msgid "Leader name:"
-msgstr "ლიდერის სახელი:"
+msgstr "Buruzagiaren izena:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leader)
 #: ksirknationalitydefinition.ui:50
 #, kde-format
 msgid "Leader name"
-msgstr "ლიდერის სახელი"
+msgstr "Buruzagiaren izena"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, leader)
 #: ksirknationalitydefinition.ui:53
@@ -765,37 +700,37 @@ msgstr ""
 #: ksirknationalitydefinition.ui:60
 #, kde-format
 msgid "Flag ID in pool:"
-msgstr "ალმის ID პულში:"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, flag)
 #: ksirknationalitydefinition.ui:67
 #, kde-format
 msgid "Flag sprite id in the pool SVG"
-msgstr "ალმის სპრაიტის ID პულის SVG-ში"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (KComboBox, flag)
 #: ksirknationalitydefinition.ui:70
 #, kde-format
 msgid "Flag sprite id in the pool SVG (pool.svg)."
-msgstr "ალმის სპრაიტის ID პულის SVG-ში (pool.svg)"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, skindefinition)
 #: ksirkskindefinition.ui:13
 #, kde-format
 msgid "Skin Definition"
-msgstr "სკინის აღწერა"
+msgstr "Azal definizioa"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: ksirkskindefinition.ui:22
 #, kde-format
 msgid "Skin name:"
-msgstr "სკინის სახელი:"
+msgstr "Azalaren izena:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, skinNameLineEdit)
 #: ksirkskindefinition.ui:29
 #, kde-format
 msgid "The skin's short name"
-msgstr "სკინის მოკლე სახელი"
+msgstr "Azalaren izen laburra"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, skinNameLineEdit)
 #: ksirkskindefinition.ui:35
@@ -803,19 +738,20 @@ msgstr "სკინის მოკლე სახელი"
 msgid ""
 "Type here the skin's short name. This should be an identifier-like string"
 msgstr ""
-"აკრიფეთ აქ სკინის მოკლე სახელი. ეს იდენტიფიკატორის მსგავსი სტრიქონი უნდა იყოს"
+"Tekleatu hemen azalaren izen laburra. Horrek identifikatzaile antzeko kate "
+"bat izan beharko luke."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkskindefinition.ui:46
 #, kde-format
 msgid "Width x height:"
-msgstr "სიგანე x სიმაღლე:"
+msgstr "Zabalera x altuera:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, widthLineEdit)
 #: ksirkskindefinition.ui:53
 #, kde-format
 msgid "Map's width"
-msgstr "რუკის სიგანე"
+msgstr "Maparen zabalera"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, widthLineEdit)
 #: ksirkskindefinition.ui:57
@@ -830,7 +766,7 @@ msgstr ""
 #: ksirkskindefinition.ui:71
 #, kde-format
 msgid "Map's height"
-msgstr "რუკის სიმაღლე"
+msgstr "Maparen altuera"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, heightLineEdit)
 #: ksirkskindefinition.ui:75
@@ -845,31 +781,31 @@ msgstr ""
 #: ksirkskindefinition.ui:90
 #, kde-format
 msgid "Map Font"
-msgstr "რუკის ფონტი"
+msgstr "Maparen letra-tipoa"
 
 #. i18n: ectx: property (toolTip), widget (KFontRequester, fontrequester)
 #: ksirkskindefinition.ui:96
 #, kde-format
 msgid "Font used to draw country names"
-msgstr "ქვეყნის სახელის ფონტი"
+msgstr "Herrialdeen izenak marrazteko erabilitako letra-tipoa"
 
 #. i18n: ectx: property (whatsThis), widget (KFontRequester, fontrequester)
 #: ksirkskindefinition.ui:99
 #, kde-format
 msgid "This font will be used to draw the country names on the map"
-msgstr "ეს ფონტი გამოყენებული იქნება რუკაზე ქვეყნის სახელების დასახატად"
+msgstr "Letra-tipo hori erabiliko da mapan herrialdeen izenak marrazteko"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: ksirkskindefinition.ui:108
 #, kde-format
 msgid "Fg:"
-msgstr "წ.პ.:"
+msgstr "Ap:"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, fgcolorbutton)
 #: ksirkskindefinition.ui:115
 #, kde-format
 msgid "Foreground color for country names"
-msgstr "ქვეყნის სახელის წინა პლანის ფერი"
+msgstr "Herrialdeen izenetarako aurreko planoko kolorea"
 
 #. i18n: ectx: property (whatsThis), widget (KColorButton, fgcolorbutton)
 #: ksirkskindefinition.ui:118
@@ -877,19 +813,20 @@ msgstr "ქვეყნის სახელის წინა პლანი
 msgid ""
 "This color will be used to draw the foreground of the country names on the "
 "map"
-msgstr "ეს ფერი გამოყენებული იქნება რუკაზე ქვეყნის სახელის წინა პლანისთვის"
+msgstr ""
+"Kolore hori erabiliko da mapan herrialdeen izenen aurreko planoa marrazteko"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: ksirkskindefinition.ui:125
 #, kde-format
 msgid "Bg:"
-msgstr "ფ:"
+msgstr "Hp:"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, bgcolorbutton)
 #: ksirkskindefinition.ui:132
 #, kde-format
 msgid "Background color for country names"
-msgstr "ქვეყნის სახელის ფონის ფერი"
+msgstr "Herrialdeen izenetako hondoko planoko kolorea"
 
 #. i18n: ectx: property (whatsThis), widget (KColorButton, bgcolorbutton)
 #: ksirkskindefinition.ui:135
@@ -897,13 +834,14 @@ msgstr "ქვეყნის სახელის ფონის ფერი
 msgid ""
 "This color will be used to draw the background of the country names on the "
 "map"
-msgstr "ეს ფერი გამოყენებული იქნება რუკაზე ქვეყნის სახელის ფონისთვის"
+msgstr ""
+"Kolore hori erabiliko da mapan herrialdeen izenen hondoko planoa marrazteko"
 
 #. i18n: ectx: property (toolTip), widget (QTextEdit, descriptionTextEdit)
 #: ksirkskindefinition.ui:160
 #, kde-format
 msgid "Human readable description of the skin"
-msgstr "სკინის ადამიანისთვის გასაგებია აღწერა"
+msgstr "Gizakientzat irakurgarria den azalaren deskribapena"
 
 #. i18n: ectx: property (whatsThis), widget (QTextEdit, descriptionTextEdit)
 #: ksirkskindefinition.ui:163
@@ -912,13 +850,15 @@ msgid ""
 "Describe here the skin, its style, its story, the intent of its author(s), "
 "etc."
 msgstr ""
+"Deskribatu hemen azala, bere estiloa, bere istorioa, bere egile(ar)en asmoa, "
+"etab."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabSprites)
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkSpritesDefinition)
 #: ksirkskindefinition.ui:177 ksirkspritesdefinition.ui:13
 #, kde-format
 msgid "Sprites"
-msgstr "სპრაიტები"
+msgstr "Iratxoak"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: ksirkskindefinition.ui:184
@@ -927,38 +867,39 @@ msgid ""
 "Edit the sprite definitions\n"
 "in the right dock."
 msgstr ""
-"ჩაასწორეთ სპრაიტის აღწერები\n"
-"მარჯვენა დოკში."
+"Editatu iratxoen definizioak\n"
+"kai zuzenean."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabNationalities)
 #: ksirkskindefinition.ui:192
 #, kde-format
 msgid "Nationalities"
-msgstr "ეროვნებები"
+msgstr "Nazionalitateak"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newNationalityButton)
 #: ksirkskindefinition.ui:200
 #, kde-format
 msgid "Creates a new Nationality"
-msgstr "ახალი ეროვნების შექმნა"
+msgstr "Nazionalitate berri bat sortzen du"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, newNationalityButton)
 #: ksirkskindefinition.ui:203
 #, kde-format
 msgid "Click here to add a new nationality. You will be prompted for its name."
-msgstr "დააწკაპუნეთ ახალი ეროვნების დასამატებლად. სახელს გკითხავთ."
+msgstr ""
+"Egin klik hemen nazionalitate berri bat sortzeko. Bere izena eskatuko zaizu."
 
 #. i18n: ectx: property (text), widget (QPushButton, newNationalityButton)
 #: ksirkskindefinition.ui:206
 #, kde-format
 msgid "New Nationality"
-msgstr "ახალი ეროვნება"
+msgstr "Nazionalitate berria"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, deleteNationalityButton)
 #: ksirkskindefinition.ui:226
 #, kde-format
 msgid "Removes the currently selected nationality"
-msgstr "ამჟამად არჩეული ნაციონალობის წაშლა"
+msgstr "Unean hautatutako nazionalitatea kentzen du"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, deleteNationalityButton)
 #: ksirkskindefinition.ui:229
@@ -967,7 +908,8 @@ msgid ""
 "Click here to remove the currently selected nationality. You will be asked "
 "for confirmation."
 msgstr ""
-"დააწკაპუნეთ აქ ამჟამად მონიშნული ეროვნების წასაშლელად. დადასტურებას გკითხავთ."
+"Egin klik hemen unean hautatutako nazionalitatea kentzeko. Berrestea "
+"eskatuko zaizu."
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteNationalityButton)
 #. i18n: ectx: property (text), widget (QPushButton, deleteCountryButton)
@@ -983,7 +925,7 @@ msgstr "X"
 #: ksirkskindefinition.ui:241
 #, kde-format
 msgid "Nationality list"
-msgstr "ეროვნებების სია"
+msgstr "Nazionalitate zerrenda"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, nationalitieslist)
 #: ksirkskindefinition.ui:248
@@ -1003,25 +945,26 @@ msgstr ""
 #: ksirkskindefinition.ui:264
 #, kde-format
 msgid "Creates a new country"
-msgstr "შექმნის ახალ ქვეყანას"
+msgstr "Herrialde berri bat sortzen du"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, newCountryButton)
 #: ksirkskindefinition.ui:267
 #, kde-format
 msgid "Click here to add a new country. You will be prompted for its name."
-msgstr "დააწკაპუნეთ ახალი ქვეყნის დასამატებლად. სახელს გკითხავთ."
+msgstr ""
+"Egin klik hemen herrialde berri bat gehitzeko. Bere izena eskatuko zaizu."
 
 #. i18n: ectx: property (text), widget (QPushButton, newCountryButton)
 #: ksirkskindefinition.ui:270
 #, kde-format
 msgid "New Country"
-msgstr "ახალი ქვეყანა"
+msgstr "Herrialde berria"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, deleteCountryButton)
 #: ksirkskindefinition.ui:290
 #, kde-format
 msgid "Removes the currently selected country"
-msgstr "ამჟამად არჩეული ქვეყნს წაშლა"
+msgstr "Unean hautatutako herrialdea kentzen du"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, deleteCountryButton)
 #: ksirkskindefinition.ui:293
@@ -1030,14 +973,15 @@ msgid ""
 "Click here to remove the currently selected country. You will be asked for "
 "confirmation."
 msgstr ""
-"დააწკაპუნეთ აქ ამჟამად მონიშნული ქვეყნის წასაშლელად. დადასტურებას გკითხავთ."
+"Egin klik hemen unean hautatutako herrialdea kentzeko. Berrestea eskatuko "
+"zaizu."
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, countrieslist)
 #. i18n: ectx: property (toolTip), widget (QListWidget, countriesList)
 #: ksirkskindefinition.ui:305 ksirkskineditorcountriesselectiondialog.ui:19
 #, kde-format
 msgid "Country list"
-msgstr "ქვეყნების სია"
+msgstr "Herrialdeen zerrenda"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, countrieslist)
 #: ksirkskindefinition.ui:310
@@ -1048,30 +992,35 @@ msgid ""
 "Each country name should be unique. Select a country and edit its details in "
 "the right dock."
 msgstr ""
+"Zerrenda horrek definitutako herrialdeak erakusten ditu.\n"
+"\n"
+"Herrialde-izen guztiak bakarrak izan beharko lirateke. Aukeratu herrialde "
+"bat eta editatu bere xehetasunak kai zuzenean."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newContinentButton)
 #: ksirkskindefinition.ui:326
 #, kde-format
 msgid "Creates a new continent"
-msgstr "ახალი კონტინენტის შექმნა"
+msgstr "Kontinente berri bat sortzen du"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, newContinentButton)
 #: ksirkskindefinition.ui:329
 #, kde-format
 msgid "Click here to add a new continent. You will be prompted for its name."
-msgstr "დააწკაპუნეთ ახალი კონტინენტის დასამატებლად. სახელს გკითხავთ."
+msgstr ""
+"Egin klik hemen kontinente berri bat gehitzeko. Bere izena eskatuko zaizu."
 
 #. i18n: ectx: property (text), widget (QPushButton, newContinentButton)
 #: ksirkskindefinition.ui:332
 #, kde-format
 msgid "New Continent"
-msgstr "ახალი კონტინენტი"
+msgstr "Kontinente berria"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, deleteContinentButton)
 #: ksirkskindefinition.ui:352
 #, kde-format
 msgid "Removes the currently selected continent"
-msgstr "ამჟამად არჩეული კონტინენტის წაშლა"
+msgstr "Unean hautatutako kontinentea kentzen du"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, deleteContinentButton)
 #: ksirkskindefinition.ui:355
@@ -1080,14 +1029,14 @@ msgid ""
 "Click here to remove the currently selected continent. You will be asked for "
 "confirmation."
 msgstr ""
-"დააწკაპუნეთ აქ ამჟამად მონიშნული კონტინენტის წასაშლელად. დადასტურებას "
-"გკითხავთ."
+"Egin klik hemen unean hautatutako kontinentea kentzeko. Berrestea eskatuko "
+"zaizu."
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, continentslist)
 #: ksirkskindefinition.ui:367
 #, kde-format
 msgid "Continent list"
-msgstr "კონტინენტების სია"
+msgstr "Kontinenteen zerrenda"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, continentslist)
 #: ksirkskindefinition.ui:372
@@ -1098,36 +1047,41 @@ msgid ""
 "Each continent name should be unique. Select a continent and edit its "
 "details in the right dock."
 msgstr ""
+"Zerrenda horrek definitutako kontinenteak erakusten ditu.\n"
+"\n"
+"Kontinente-izen guztiak bakarrak izan beharko lirateke. Aukeratu kontinente "
+"bat eta editatu bere xehetasunak kai zuzenean."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabGoals)
 #: ksirkskindefinition.ui:380
 #, kde-format
 msgid "Goals"
-msgstr "მიზნებ"
+msgstr "Helburuak"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newGoalButton)
 #: ksirkskindefinition.ui:388
 #, kde-format
 msgid "Creates a new goal"
-msgstr "ახალი მიზნის შექმნა"
+msgstr "Helburu berri bat sortzen du"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, newGoalButton)
 #: ksirkskindefinition.ui:391
 #, kde-format
 msgid "Click here to add a new goal. It will be named automatically."
-msgstr "დააწკაპუნეთ ახალი მიზნის დასამატებლად. სახელი ავტომატურად მიენიჭება."
+msgstr ""
+"Egin klik hemen helburu berri bat gehitzeko. Automatikoki izendatuko da."
 
 #. i18n: ectx: property (text), widget (QPushButton, newGoalButton)
 #: ksirkskindefinition.ui:394
 #, kde-format
 msgid "New Goal"
-msgstr "ახალი მიზანი"
+msgstr "Helburu berria"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, deleteGoalButton)
 #: ksirkskindefinition.ui:414
 #, kde-format
 msgid "Removes the currently selected goal"
-msgstr "ამჯამად არჩეული მიზნის წაშლა"
+msgstr "Unean hautatutako helburua kentzen du"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, deleteGoalButton)
 #: ksirkskindefinition.ui:417
@@ -1136,13 +1090,14 @@ msgid ""
 "Click here to remove the currently selected goal. You will be asked for "
 "confirmation."
 msgstr ""
-"დააწკაპუნეთ აქ ამჟამად მონიშნული მიზნის წასაშლელად. დადასტურებას გკითხავთ."
+"Egin klik hemen unean hautatutako helburua kentzeko. Berrestea eskatuko "
+"zaizu."
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, goalslist)
 #: ksirkskindefinition.ui:429
 #, kde-format
 msgid "Goal list"
-msgstr "მიზნების სია"
+msgstr "Helburuen zerrenda"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, goalslist)
 #: ksirkskindefinition.ui:434
@@ -1153,17 +1108,21 @@ msgid ""
 "Each goal name should be unique. Select a goal and edit its details in the "
 "right dock."
 msgstr ""
+"Zerrenda horrek definitutako helburuak erakusten ditu.\n"
+"\n"
+"Helburu-izen guztiak bakarrak izan beharko lirateke. Aukeratu helburu bat "
+"eta editatu bere xehetasunak kai zuzenean."
 
 #: ksirkSkinEditorConfigDialog.cpp:55
 #, kde-format
 msgid "Preferences"
-msgstr "მორგება"
+msgstr "Hobespenak"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CountriesSelectionDialog)
 #: ksirkskineditorcountriesselectiondialog.ui:13
 #, kde-format
 msgid "Country Selection Dialog"
-msgstr "ქვეყნის არჩევის ფანჯარა"
+msgstr "Herrialdea hautatzeko elkarrizketa-koadroa"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, countriesList)
 #: ksirkskineditorcountriesselectiondialog.ui:22
@@ -1178,37 +1137,37 @@ msgstr ""
 #: ksirkskineditorui.rc:10
 #, kde-format
 msgid "&Game"
-msgstr "&თამაში"
+msgstr "&Jokoa"
 
 #. i18n: ectx: Menu (settings)
 #: ksirkskineditorui.rc:18
 #, kde-format
 msgid "&Settings"
-msgstr "&მორგება"
+msgstr "E&zarpenak"
 
 #. i18n: ectx: Menu (help)
 #: ksirkskineditorui.rc:20
 #, kde-format
 msgid "&Help"
-msgstr "&დახმარება"
+msgstr "&Laguntza"
 
 #. i18n: ectx: ToolBar (mainToolBar)
 #: ksirkskineditorui.rc:24
 #, kde-format
 msgid "Main Toolbar"
-msgstr "ხელსაწყოთა მთავარი ზოლი"
+msgstr "Tresna-barra nagusia"
 
 #. i18n: ectx: property (windowTitle), widget (QFrame, skinEditor)
 #: ksirkskineditorwidget.ui:20 main.cpp:49 main.cpp:51
 #, kde-format
 msgid "KsirK Skin Editor"
-msgstr "KsirK -ის სკინის რედაქტორი"
+msgstr "KsirK azal editorea"
 
 #. i18n: ectx: property (toolTip), widget (QScrollArea, buttonsScrollArea)
 #: ksirkskineditorwidget.ui:46
 #, kde-format
 msgid "Sprite placement buttons"
-msgstr "სპრაიტის განლაგების ღილაკები"
+msgstr "Iratxoa kokatzeko botoiak"
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, buttonsScrollArea)
 #: ksirkskineditorwidget.ui:49
@@ -1223,7 +1182,7 @@ msgstr ""
 #: ksirkskineditorwidget.ui:69
 #, kde-format
 msgid "Map with sprites"
-msgstr "რუკა სპრაიტებით"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, mapScrollArea)
 #: ksirkskineditorwidget.ui:74
@@ -1243,14 +1202,12 @@ msgid ""
 "Width between fighter\n"
 "and flag:"
 msgstr ""
-"სიგანე მეომარსა და\n"
-"ალამს შორის:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, widthDiffLineEdit)
 #: ksirkspritesdefinition.ui:39
 #, kde-format
 msgid "Empty space size between fighting cannon and flag"
-msgstr "ცარიელი ადგილი საბრძოლო ქვემეხსა და ალამს შორის"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, widthDiffLineEdit)
 #: ksirkspritesdefinition.ui:44
@@ -1268,19 +1225,19 @@ msgstr ""
 #: ksirkspritesdefinition.ui:53
 #, kde-format
 msgid "Data about all sprites"
-msgstr "მონაცემები ყველა სპრაიტის შესახებ"
+msgstr "Iratxo guztiei buruzko datuak"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, flagTab)
 #: ksirkspritesdefinition.ui:63
 #, kde-format
 msgid "Data about the flag sprite"
-msgstr "მონაცემები ალმის სპრაიტის შესახებ"
+msgstr "Banderaren iratxoari buruzko datuak"
 
 #. i18n: ectx: attribute (title), widget (QWidget, flagTab)
 #: ksirkspritesdefinition.ui:66
 #, kde-format
 msgid "Flag"
-msgstr "ალამი"
+msgstr "Bandera"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_5)
@@ -1293,13 +1250,13 @@ msgstr "ალამი"
 #: ksirkspritesdefinition.ui:452 ksirkspritesdefinition.ui:547
 #, kde-format
 msgid "Width:"
-msgstr "სიგანე:"
+msgstr "Zabalera:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagw)
 #: ksirkspritesdefinition.ui:81
 #, kde-format
 msgid "Flag individual frame width"
-msgstr "ალმის ინდივიდუალური კადრის სიგანე"
+msgstr "Banderaren banakako fotogramaren zabalera"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagw)
 #: ksirkspritesdefinition.ui:84
@@ -1321,13 +1278,13 @@ msgstr ""
 #: ksirkspritesdefinition.ui:469 ksirkspritesdefinition.ui:564
 #, kde-format
 msgid "Height:"
-msgstr "სიმაღლე:"
+msgstr "Altuera:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagh)
 #: ksirkspritesdefinition.ui:98
 #, kde-format
 msgid "Flag individual frame height"
-msgstr "ალმის ინდივიდუალური კადრის სიმაღლე"
+msgstr "Banderaren banakako fotogramaren altuera"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagh)
 #: ksirkspritesdefinition.ui:103
@@ -1350,13 +1307,13 @@ msgstr ""
 #: ksirkspritesdefinition.ui:486 ksirkspritesdefinition.ui:581
 #, kde-format
 msgid "Nb frames:"
-msgstr "კადრების რაოდენობა:"
+msgstr "Fotograma kop.:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagf)
 #: ksirkspritesdefinition.ui:117
 #, kde-format
 msgid "Number of individual flag frames"
-msgstr "ინდივიდუალური ალმის კადრების რაოდენობა"
+msgstr "Banderaren banakako fotograma kopurua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagf)
 #: ksirkspritesdefinition.ui:120
@@ -1378,17 +1335,17 @@ msgstr ""
 #: ksirkspritesdefinition.ui:503 ksirkspritesdefinition.ui:598
 #, kde-format
 msgid "Nb versions:"
-msgstr "ვერსიების რაოდენობა:"
+msgstr "Bertsio kop.:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagv)
 #: ksirkspritesdefinition.ui:134
 #, kde-format
 msgid "Number of flag versions"
-msgstr "ალმის ვერსიების რაოდენობა"
+msgstr "Banderaren bertsioen kopurua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagv)
 #: ksirkspritesdefinition.ui:141
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "Number of flag versions.\n"
 "\n"
@@ -1400,24 +1357,26 @@ msgid ""
 "the front and the last one from the back. However, not all sprites need all "
 "versions."
 msgstr ""
+"Banderaren bertsioen kopurua.\n"
+"\n"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, infantryTab)
 #: ksirkspritesdefinition.ui:164
 #, kde-format
 msgid "Data about the infantry sprite"
-msgstr "მონაცემების ქვეითს სპრაიტის შესახებ"
+msgstr "Infanteriako iratxoari buruzko datuak"
 
 #. i18n: ectx: attribute (title), widget (QWidget, infantryTab)
 #: ksirkspritesdefinition.ui:167
 #, kde-format
 msgid "Infantry"
-msgstr "ქვეითები"
+msgstr "Infanteria"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryw)
 #: ksirkspritesdefinition.ui:180
 #, kde-format
 msgid "Infantry individual frame width"
-msgstr "ქვეითის ინდივიდუალური კადრის სიგანე"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryw)
 #: ksirkspritesdefinition.ui:183
@@ -1427,15 +1386,12 @@ msgid ""
 "will be rendered on a pixmap of width: <i>Width</i> * <i>number of frames</"
 "i> and then split into individual frames.</p>"
 msgstr ""
-"<p>ქვეითების ინდივიდუალური კადრის სიმაღლე.</p><p><i>ქვეითების</i> ელემენტის "
-"პულის რენდერი მოხდება პიქსელების რუკაზე სიგანით: <i>სიგანე</i> * <i>კადრების "
-"როდენობა</i> შემდეგ კი ცალ-ცალკე კადრებად დაიყოფა.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryh)
 #: ksirkspritesdefinition.ui:197
 #, kde-format
 msgid "Infantry individual frame height"
-msgstr "ქვეითის ინდივიდუალური კადრის სიმაღლე"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryh)
 #: ksirkspritesdefinition.ui:200
@@ -1445,15 +1401,12 @@ msgid ""
 "will be rendered on a pixmap of height: <i>Height</i> * <i>Number of "
 "versions</i> and then split into individual frames.</p>"
 msgstr ""
-"<p>ქვეითების ინდივიდუალური კადრის სიმაღლე.</p><p><i>ქვეითების</i> ელემენტის "
-"პულის რენდერი მოხდება პიქსელების რუკაზე სიმაღლით: <i>სიმაღლე</i> * "
-"<i>ვერსიების როდენობა</i> შემდეგ კი ცალ-ცალკე კადრებად დაიყოფა.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryf)
 #: ksirkspritesdefinition.ui:214
 #, kde-format
 msgid "Number of individual infantry frames"
-msgstr "ინდივიდუალური ქვეითის კადრების რაოდენობა"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryf)
 #: ksirkspritesdefinition.ui:217
@@ -1463,15 +1416,12 @@ msgid ""
 "element will be rendered on a pixmap of width: (<i>Width</i> * <i>Number of "
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>ქვეითების რაოდენობის ინდივიდუალური კადრის სიმაღლე.</p><p><i>ქვეითების</i> "
-"ელემენტის პულის რენდერი მოხდება პიქსელების რუკაზე სიგანით: <i>სიგანე</i> * "
-"<i>კადრების როდენობა</i> შემდეგ კი ცალ-ცალკე კადრებად დაიყოფა.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryv)
 #: ksirkspritesdefinition.ui:231
 #, kde-format
 msgid "Number of infantry versions"
-msgstr "ქვეითის ვერსიების რაოდენობა"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryv)
 #: ksirkspritesdefinition.ui:234
@@ -1489,19 +1439,19 @@ msgstr ""
 #: ksirkspritesdefinition.ui:255
 #, kde-format
 msgid "Data about the cavalry sprite"
-msgstr "კავალერიის სპრაიტის მონაცემები"
+msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, cavalryTab)
 #: ksirkspritesdefinition.ui:258
 #, kde-format
 msgid "Cavalry"
-msgstr "კავალერია"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryw)
 #: ksirkspritesdefinition.ui:271
 #, kde-format
 msgid "Individual cavalry frame width"
-msgstr "ინდივიდუალური კავალერიის კადრის სიგანე"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryw)
 #: ksirkspritesdefinition.ui:274
@@ -1511,15 +1461,12 @@ msgid ""
 "will be rendered on a pixmap of width (<i>Width</i> * <i>Number of frames</"
 "i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>ინდივიდუალური კავალერიის კადრების სიგანე.</p><p><i>კავალერიის</i> "
-"ელემენტის პულის რენდერი მოხდება პიქსელების რუკაზე სიგანით: <i>სიგანე</i> * "
-"<i>კადრების რაოდენობა</i> შემდეგ კი ცალ-ცალკე კადრებად დაიყოფა.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryh)
 #: ksirkspritesdefinition.ui:288
 #, kde-format
 msgid "Individual cavalry frame height"
-msgstr "ინდივიდუალური კავალერიის კადრის სიმაღლე"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryh)
 #: ksirkspritesdefinition.ui:291
@@ -1529,15 +1476,12 @@ msgid ""
 "will be rendered on a pixmap of height (<i>Height</i> * <i>Number of "
 "versions</i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>კავალერიის ინდივიდუალური კადრის სიმაღლე.</p><p><i>კავალერიის</i> "
-"ელემენტის პულის რენდერი მოხდება პიქსელების რუკაზე სიმაღლით: <i>სიმაღლე</i> * "
-"<i>ვერსიების რაოდენობა</i> შემდეგ კი ცალ-ცალკე კადრებად დაიყოფა.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryf)
 #: ksirkspritesdefinition.ui:305
 #, kde-format
 msgid "Number of individual cavalry frames"
-msgstr "ინდივიდუალური კავალერიის კადრების რაოდენობა"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryf)
 #: ksirkspritesdefinition.ui:308
@@ -1547,15 +1491,12 @@ msgid ""
 "element will be rendered on a pixmap of width: (<i>Width</i> * <i>Number of "
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>ინდივიდუალური კავალერიის კადრების რაოდენობა.</p><p><i>კავალერიის</i> "
-"ელემენტის პულის რენდერი მოხდება პიქსელების რუკაზე სიგანით: <i>სიგანე</i> * "
-"<i>კადრების რაოდენობა</i> შემდეგ კი ცალ-ცალკე კადრებად დაიყოფა.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryv)
 #: ksirkspritesdefinition.ui:322
 #, kde-format
 msgid "Number of cavalry versions"
-msgstr "კავალერიის ვერსიების რაოდენობა"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryv)
 #: ksirkspritesdefinition.ui:325
@@ -1573,19 +1514,19 @@ msgstr ""
 #: ksirkspritesdefinition.ui:346
 #, kde-format
 msgid "Data about the cannon sprite"
-msgstr "მონაცემები ქვემეხის სპრაიტის შესახებ"
+msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, cannonTab)
 #: ksirkspritesdefinition.ui:349
 #, kde-format
 msgid "Cannon"
-msgstr "ზარბაზანი"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonw)
 #: ksirkspritesdefinition.ui:364
 #, kde-format
 msgid "Cannon individual frame width"
-msgstr "ქვემეხის ინდივიდუალური კადრის სიგანე"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonw)
 #: ksirkspritesdefinition.ui:367
@@ -1595,15 +1536,12 @@ msgid ""
 "be rendered on a pixmap of width (<i>Width</i> * <i>Number of frames</i>) "
 "and then split into individual frames.</p>"
 msgstr ""
-"<p>ქვემეხის ინდივიდუალური კადრის სიგანე.</p><p><i>ქვემეხის</i> ელემენტის "
-"პულის რენდერი მოხდება პიქსელების რუკაზე სიგანით: <i>სიგანე</i> * <i>კადრების "
-"რაოდენობა</i> შემდეგ კი ცალ-ცალკე კადრებად დაიყოფა.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonh)
 #: ksirkspritesdefinition.ui:381
 #, kde-format
 msgid "Individual cannon frame height"
-msgstr "ქვემეხის ინდივიდუალური კადრის სიმაღლე"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonh)
 #: ksirkspritesdefinition.ui:384
@@ -1613,15 +1551,12 @@ msgid ""
 "be rendered on a pixmap of height (<i>Height</i> * <i>Number of versions</"
 "i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>ქვემეხის ინდივიდუალური კადრის სიმაღლე.</p><p><i>ქვემეხის</i> ელემენტის "
-"პულის რენდერი მოხდება პიქსელების რუკაზე სიმაღლით: <i>სიმაღლე</i> * "
-"<i>ვერსიების რაოდენობა</i> შემდეგ კი ცალ-ცალკე კადრებად დაიყოფა.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonf)
 #: ksirkspritesdefinition.ui:398
 #, kde-format
 msgid "Number of individual cannon frames"
-msgstr "ქვემეხის ინდივიდუალური კადრების რაოდენობა"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonf)
 #: ksirkspritesdefinition.ui:401
@@ -1631,15 +1566,12 @@ msgid ""
 "will be rendered on a pixmap of width (<i>Width</i> * <i>Number of frames</"
 "i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>ინდივიდუალური ქვემეხის კადრების რაოდენობა.</p><p><i>ქვემეხის</i> "
-"ელემენტის პულის რენდერი მოხდება პიქსელების რუკაზე სიგანით: <i>სიგანე</i> * "
-"<i>კადრების რაოდენობა</i> შემდეგ კი ცალ-ცალკე კადრებად დაიყოფა.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonv)
 #: ksirkspritesdefinition.ui:415
 #, kde-format
 msgid "Number of cannon versions"
-msgstr "ქვემეხის ვერსიების რაოდენობა"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonv)
 #: ksirkspritesdefinition.ui:418
@@ -1657,19 +1589,19 @@ msgstr ""
 #: ksirkspritesdefinition.ui:441
 #, kde-format
 msgid "Data about the firing sprite"
-msgstr "სროლის სპრაიტის მონაცემები"
+msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, firingTab)
 #: ksirkspritesdefinition.ui:444
 #, kde-format
 msgid "Firing"
-msgstr "სროლა"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingw)
 #: ksirkspritesdefinition.ui:459
 #, kde-format
 msgid "Firing cannon individual frame width"
-msgstr "მსროლელი ქვემეხის ინდივიდუალური კადრის სიგანე"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, firingw)
 #: ksirkspritesdefinition.ui:462
@@ -1684,7 +1616,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:476
 #, kde-format
 msgid "Firing cannon individual frame height"
-msgstr "მსროლელი ქვემეხის ინდივიდუალური კადრის სიმაღლე"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, firingh)
 #: ksirkspritesdefinition.ui:479
@@ -1699,7 +1631,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:493
 #, kde-format
 msgid "Number of individual firing cannon frames"
-msgstr "მსროლელი ქვემეხის ინდივიდუალური კადრების რაოდენობა"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, firingf)
 #: ksirkspritesdefinition.ui:496
@@ -1714,7 +1646,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:510
 #, kde-format
 msgid "Number of firing cannon versions"
-msgstr "მსროლელი ქვემეხის ვერსიების რაოდენობა"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, firingv)
 #: ksirkspritesdefinition.ui:513
@@ -1732,19 +1664,19 @@ msgstr ""
 #: ksirkspritesdefinition.ui:536
 #, kde-format
 msgid "Data about the exploding sprite"
-msgstr "აფეთქების სპრაიტის მონაცემები"
+msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, explodingTab)
 #: ksirkspritesdefinition.ui:539
 #, kde-format
 msgid "Exploding"
-msgstr "აფეთქება"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingw)
 #: ksirkspritesdefinition.ui:554
 #, kde-format
 msgid "Exploding cannon individual frame width"
-msgstr "ფეთქებადი ქვემეხის ინდივიდუალური კადრის სიგანე"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingw)
 #: ksirkspritesdefinition.ui:557
@@ -1759,7 +1691,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:571
 #, kde-format
 msgid "Exploding cannon individual frame height"
-msgstr "ფეთქებადი ქვემეხის ინდივიდუალური კადრის სიმაღლე"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingh)
 #: ksirkspritesdefinition.ui:574
@@ -1774,7 +1706,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:588
 #, kde-format
 msgid "Number of individual exploding cannon frames"
-msgstr "ფეთქებადი ქვემეხის ინდივიდუალური კადრებს რაოდენობა"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingf)
 #: ksirkspritesdefinition.ui:591
@@ -1789,7 +1721,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:605
 #, kde-format
 msgid "Number of exploding cannon versions"
-msgstr "ფეთქებადი ქვემეხის ვერსიების რაოდენობა"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingv)
 #: ksirkspritesdefinition.ui:608
@@ -1814,162 +1746,159 @@ msgid ""
 "For help and user manual, please see\n"
 "The KsirK Web site"
 msgstr ""
-"დახმარებისა და მომხმარებლის სახელმძღვანელოსთვის\n"
-"იხ. KsirK-ის ვებგვერდი"
 
 #: main.cpp:56
 #, kde-format
 msgid "Gaël de Chalendar aka Kleag"
-msgstr "Gaël de Chalendar aka Kleag"
+msgstr ""
 
 #: main.cpp:61
 #, kde-format
 msgid "file to open"
-msgstr "გასახსნელი ფაილი"
+msgstr "ireki beharreko fitxategia"
 
 #: mainwindow.cpp:126 mainwindow.cpp:676 mainwindow.cpp:804 mainwindow.cpp:1191
 #, kde-format
 msgid "Cannot load anchor icon<br>Program cannot continue"
-msgstr "მიმაგრების ხატულა ვერ ჩავტვირთე<br>პროგრამა ვერ გაგრძელდება"
+msgstr ""
 
 #: mainwindow.cpp:126 mainwindow.cpp:140 mainwindow.cpp:676 mainwindow.cpp:705
 #: mainwindow.cpp:804 mainwindow.cpp:821 mainwindow.cpp:1191 onu.cpp:79
 #: onu.cpp:112 onu.cpp:131
 #, kde-format
 msgid "Error"
-msgstr "შეცდომა"
+msgstr "Errorea"
 
 #: mainwindow.cpp:140 mainwindow.cpp:705 mainwindow.cpp:821
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
-msgstr "ცენტრის ხატულა ვერჩაიტვირთა<br>პროგრამა ვერ გაგრძელდება"
+msgstr ""
 
 #: mainwindow.cpp:323
 #, kde-format
 msgid "Open a saved skin..."
-msgstr "შენახული სკინის გახსნა..."
+msgstr ""
 
 #: mainwindow.cpp:327
 #, kde-format
 msgid "Load &Recent"
-msgstr "უახლესის &ჩატვირთვა"
+msgstr ""
 
 #: mainwindow.cpp:328
 #, kde-format
 msgid "Open a recently saved skin..."
-msgstr "ახლახანს შენახული სკინის გახსნა..."
+msgstr ""
 
 #: mainwindow.cpp:336
 #, kde-format
 msgid "Save the current skin"
-msgstr "მიმდინარე სკინის შენახვა"
+msgstr ""
 
 #: mainwindow.cpp:365
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Root Folder of the Skin to Open"
-msgstr "აირჩიეთ გასახსნელი სკინის ძირითადი საქაღლდე"
+msgstr ""
 
 #: mainwindow.cpp:524
 #, kde-format
 msgid "There are unsaved changes. What do you want to do?"
-msgstr "გაქვთ შეუნახავი ცვლილებები. რა გნებავთ, ქნათ?"
+msgstr ""
 
 #: mainwindow.cpp:525
 #, kde-format
 msgid "Exit Anyway?"
-msgstr "გავიდე მაინც?"
+msgstr ""
 
 #: mainwindow.cpp:526
 #, kde-format
 msgid "Quit without saving"
-msgstr "შენახვის გარეშე გასვლა"
+msgstr ""
 
 #: mainwindow.cpp:527
 #, kde-format
 msgid "Save then quit"
-msgstr "შენახვა და გასვლა"
+msgstr ""
 
 #: mainwindow.cpp:528
 #, kde-format
 msgid "Do not quit"
-msgstr "არ გახვიდე"
+msgstr ""
 
 #: mainwindow.cpp:1303
 #, kde-format
 msgid "New country name"
-msgstr "ახალი ქვეყნის სახელი"
+msgstr ""
 
 #: mainwindow.cpp:1303
 #, kde-format
 msgid "Enter the name of the new country"
-msgstr "შეიყვანთ ახალი ქვეყნის სახელი"
+msgstr ""
 
 #: mainwindow.cpp:1313
 #, kde-format
 msgid "Do you really want to delete country '%1'?"
-msgstr "მართლა გნებავთ, წაშალოთ ქვეყანა '%1'?"
+msgstr ""
 
 #: mainwindow.cpp:1313
 #, kde-format
 msgid "Really delete country?"
-msgstr "მართლა წავშალო ქვეყნა?"
+msgstr ""
 
 #: mainwindow.cpp:1332
 #, kde-format
 msgid "New continent name"
-msgstr "ახალი კონტინენტის სახელი"
+msgstr ""
 
 #: mainwindow.cpp:1332
 #, kde-format
 msgid "Enter the name of the new continent"
-msgstr "შეიყვანეთ ახალი კონტინენტის სახელი"
+msgstr ""
 
 #: mainwindow.cpp:1342
 #, kde-format
 msgid "Do you really want to delete continent '%1'?"
-msgstr "მართლა გნებავთ, წაშალოთ კონტინენტი '%1'?"
+msgstr ""
 
 #: mainwindow.cpp:1342
 #, kde-format
 msgid "Really delete continent?"
-msgstr "მართლა წავშალო კონტინენტი?"
+msgstr ""
 
 #: mainwindow.cpp:1891
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
-msgstr "მართლა გნებავთ, წაშალოთ მიზანი '%1'?"
+msgstr ""
 
 #: mainwindow.cpp:1891
 #, kde-format
 msgid "Really delete goal?"
-msgstr "მართლა წავშალო მიზანი?"
+msgstr ""
 
 #: mainwindow.cpp:1950
 #, kde-format
 msgid "New nationality name"
-msgstr "ახალი ეროვნების სახელი"
+msgstr ""
 
 #: mainwindow.cpp:1950
 #, kde-format
 msgid "Enter the name of the new nationality"
-msgstr "შეიყვანეთ ახალი ეროვნების სახელი"
+msgstr ""
 
 #: mainwindow.cpp:1960
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
-msgstr "მართლა გნებავთ, წაშალოთ ეროვნება '%1'?"
+msgstr ""
 
 #: mainwindow.cpp:1960
 #, kde-format
 msgid "Really delete nationality?"
-msgstr "მართლა წავშალო ეროვნება?"
+msgstr ""
 
 #: onu.cpp:78
 #, kde-format
 msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
 msgstr ""
-"შეცდომა - არასწორი სკინის აღწერის ფაილის ფორმატი. მოველოდი %1, მივიღე %2"
 
 #: onu.cpp:111
 #, kde-format
@@ -1977,8 +1906,6 @@ msgid ""
 "Pool filename not found\n"
 "Program cannot continue"
 msgstr ""
-"პულის ფაილის სახელი ვერ ვიპოვე\n"
-"პროგრამა მუშაობას ვერ გააგრძელებს"
 
 #: onu.cpp:130
 #, kde-format
@@ -1986,8 +1913,6 @@ msgid ""
 "Map mask image not found\n"
 "Program cannot continue"
 msgstr ""
-"რუკის ნიღბის გამოსახულება ვერ ვიპოვე\n"
-"პროგრამა მუშაობას ვერ გააგრძელებს"
 
 #: onu.cpp:989
 #, kde-format
@@ -1995,31 +1920,29 @@ msgid ""
 "Cannot read file %1:\n"
 "%2."
 msgstr ""
-"ფაილი %1 ვერ წავიკითხე:\n"
-"%2."
 
 #: onu.cpp:990
 #, kde-format
 msgid "PoolLoader"
-msgstr "PoolLoader"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, KsirkSkinEditorPreferencesWidget)
 #: preferences.ui:25
 #, kde-format
 msgid "KsirK Skin Editor Preferences"
-msgstr "KsirK-ის სკინების რედაქტორის მორგება"
+msgstr ""
 
 #: skinSpritesData.cpp:85
 #, kde-format
 msgid "Error - Unknown skin int data: "
-msgstr "შეცდომა - სკინის მთელი რიცხვები უცნობია: "
+msgstr ""
 
 #: skinSpritesData.cpp:86 skinSpritesData.cpp:102
 #, kde-format
 msgid "Fatal Error"
-msgstr "ფატალური შეცდომა"
+msgstr ""
 
 #: skinSpritesData.cpp:101
 #, kde-format
 msgid "Error - Unknown skin string data: "
-msgstr "შეცდომა - სკინის სტრიქონები უცნობია: "
+msgstr ""

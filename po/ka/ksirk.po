@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-30 01:41+0000\n"
-"PO-Revision-Date: 2023-02-14 05:47+0100\n"
+"PO-Revision-Date: 2023-09-30 12:40+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -925,7 +925,7 @@ msgstr "ზაირი"
 #, no-c-format, kde-format
 msgid ""
 "%1, you'll have to conquer %2 countries and place %3 armies in each one."
-msgstr ""
+msgstr "%1, თქვენ უნდა დაიპყროთ %2 ქვეყანა და თითოეულში %3 არმია განათავსოთ."
 
 #. i18n: file skins/default/Data/world.desktop line 510
 #. i18n: file skins/static/Data/world.desktop line 518
@@ -935,7 +935,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 518
 #, no-c-format, kde-format
 msgid "%1, you'll have to conquer %2 countries."
-msgstr ""
+msgstr "%1, თქვენ უნდა დაიპყროთ %2 ქვეყანა."
 
 #. i18n: file skins/default/Data/world.desktop line 517
 #. i18n: file skins/static/Data/world.desktop line 525
@@ -946,6 +946,7 @@ msgstr ""
 #, no-c-format, kde-format
 msgid "%1, you'll have to conquer %2, %3 and another continent at your choice."
 msgstr ""
+"%1, თქვენ უნდა დაიპყროთ %2, %3 და კიდევ ერთი კონტინენტი, რომელსაც აირჩევთ."
 
 #. i18n: file skins/default/Data/world.desktop line 522
 #. i18n: file skins/default/Data/world.desktop line 527
@@ -979,7 +980,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 550
 #, no-c-format, kde-format
 msgid "%1, you'll have to conquer %2 and %3."
-msgstr ""
+msgstr "%1, თქვენ უნდა დაიპყროთ %2 და %3."
 
 #. i18n: file skins/default/Data/world.desktop line 546
 #. i18n: file skins/static/Data/world.desktop line 554
@@ -992,6 +993,8 @@ msgid ""
 "%1, you'll have to eliminate %2. If it is eliminated by another player, "
 "you'll have to conquer %3 countries."
 msgstr ""
+"%1, თქვენ უნდა გაანადგუროთ %2. თუ მას სხვა მოთამაშე გაანადგურებს, თქვენ %3 "
+"ქვეყნის დაპყრობა მოგიწევთ."
 
 #. i18n: file skins/default/Data/world.desktop line 560
 #, no-c-format, kde-format
@@ -1000,6 +1003,8 @@ msgid ""
 "nationalities\n"
 "randomly chosen and proposes various interesting goals"
 msgstr ""
+"ეს სკინი აჩვენებს სამყაროს, რომელიც რეალურს წააგავს, რამდენიმე ეროვნებით,\n"
+"რომლებიც შემთხვევითაა არჩეული და საინტერესო მიზნებს ისახავს"
 
 #. i18n: file skins/default/Data/world.desktop line 566
 #, no-c-format, kde-format
@@ -1130,11 +1135,13 @@ msgid ""
 "You are invading <font color=\"blue\">%1</font> with <font color=\"red\">%2</"
 "font>!"
 msgstr ""
+"აპირებთ, შეიჭრათ ქვეყანაში <font color=\"blue\">%1</font> არმიით <font color="
+"\"red\">%2</font>!"
 
 #: Dialogs/InvasionSlider.cpp:99
 #, kde-format
 msgid "<br><i>Choose the number of invading armies.</i>"
-msgstr ""
+msgstr "<br><i>აირჩიეთ შემჭრელი არმიების რაოდენობა.</i>"
 
 #: Dialogs/InvasionSlider.cpp:103
 #, kde-format
@@ -1148,11 +1155,13 @@ msgid ""
 "You are moving armies from <font color=\"red\">%1</font> to <font color="
 "\"blue\">%2</font>!"
 msgstr ""
+"გადაგყავთ არმიები <font color=\"red\">%1</font>-დან <font color=\"blue\">%2</"
+"font>-ში!"
 
 #: Dialogs/InvasionSlider.cpp:105
 #, kde-format
 msgid "<br><i>Choose the number of armies to move.</i>"
-msgstr ""
+msgstr "<br><i>აირჩიეთ გადასაადგილებელი არმიების რაოდენობა.</i>"
 
 #: Dialogs/jabbergameui.cpp:76
 #, kde-format
@@ -1216,7 +1225,7 @@ msgstr "მდგომარეობა:"
 #: Dialogs/jabbergameui.ui:137
 #, kde-format
 msgid "Joining a KsirK Jabber Chatroom"
-msgstr ""
+msgstr "KsirK-ის Jabber ოთახში შესვლა"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: Dialogs/jabbergameui.ui:146
@@ -1288,7 +1297,7 @@ msgstr "გაუქმება"
 #: Dialogs/joingame.ui:13
 #, kde-format
 msgid "Join Network Game Configuration"
-msgstr ""
+msgstr "ქსელურ თამაშთან მიერთების მორგება"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: Dialogs/joingame.ui:19
@@ -1313,7 +1322,7 @@ msgstr "პორტი:"
 #: Dialogs/kplayersetupwidget.cpp:247
 #, kde-format
 msgid "Name already in use. Please choose another one."
-msgstr ""
+msgstr "სახელი უკვე გამოიყენება. სხვა აირჩიეთ."
 
 #: Dialogs/kplayersetupwidget.cpp:249
 #, kde-format
@@ -1323,7 +1332,7 @@ msgstr "ცარიელი სახელი. შეიყვანეთ �
 #: Dialogs/kplayersetupwidget.cpp:292
 #, kde-format
 msgid "Player Number %1, please type in your name and choose your nation:"
-msgstr ""
+msgstr "მოტამაშის ნომერი %1. შეიყვანეთ თქვენი სახელი და აირჩიეთ ნაციონალობა:"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, NewGameDialog)
 #: Dialogs/newGameDialog.ui:16
@@ -1341,13 +1350,13 @@ msgstr "მოთამაშეების სრული რაოდენ�
 #: Dialogs/newGameDialog.ui:39
 #, kde-format
 msgid "Spin this to choose the number of players."
-msgstr ""
+msgstr "დაატრიალეთ მოთამაშეების რაოდენობის ასარჩევად."
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, playersNumberEntry)
 #: Dialogs/newGameDialog.ui:42
 #, kde-format
 msgid "A spin box to choose the number of players"
-msgstr ""
+msgstr "დასატრიალებელი მოთამაშეების რაოდენობის ასარჩევად"
 
 #. i18n: ectx: property (text), widget (QLabel, localPlayersNumberLabel)
 #: Dialogs/newGameDialog.ui:53
@@ -1359,7 +1368,7 @@ msgstr "ლოკალური მოთამაშეების რაო�
 #: Dialogs/newGameDialog.ui:67
 #, kde-format
 msgid "TCP port on which to offer connections:"
-msgstr ""
+msgstr "TCP პორტი, რომელზეც მიერთებას დაველოდები:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
@@ -1372,13 +1381,13 @@ msgstr "გარეგნობა:"
 #: Dialogs/newGameDialog.ui:116
 #, kde-format
 msgid "Choose the skin (map, nationalities, etc.) to use for this game."
-msgstr ""
+msgstr "აირჩიეთ თამაშის სკინი (რუკა, ნაციები და ა.შ.)."
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, skinCombo)
 #: Dialogs/newGameDialog.ui:119
 #, kde-format
 msgid "A combo listing all the available skins."
-msgstr ""
+msgstr "ხელმისაწვდომი სკინების ჩამონათვალი."
 
 #. i18n: ectx: property (text), widget (KNSWidgets::Button, ghnsbutton)
 #: Dialogs/newGameDialog.ui:126
@@ -1390,7 +1399,7 @@ msgstr "ახალი სკინების გადმოწერა..."
 #: Dialogs/newGameDialog.ui:129
 #, kde-format
 msgid "ksirk.knsrc"
-msgstr ""
+msgstr "ksirk.knsrc"
 
 #. i18n: ectx: property (title), widget (QGroupBox, goalGroup)
 #: Dialogs/newGameDialog.ui:153
@@ -1403,12 +1412,13 @@ msgstr "მიზნის ტიპი"
 #, kde-format
 msgid "Choose this for players to have to conquer all the world to win."
 msgstr ""
+"აირჩიეთ ეს, რათა მოსაგებად მოთამაშეებს მთელი სამყაროს დაპყრობა მოუწიოთ."
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioWorld)
 #: Dialogs/newGameDialog.ui:162
 #, kde-format
 msgid "In this mode, a player will have to conquer all the world to win."
-msgstr ""
+msgstr "ამ რეჟიმში მოთამაშეებს მოსაგებად მთელი სამყაროს დაპყრობა მოუწევთ."
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioWorld)
 #: Dialogs/newGameDialog.ui:165
@@ -1420,7 +1430,7 @@ msgstr "მსოფლიოს &დაპყრობა"
 #: Dialogs/newGameDialog.ui:172
 #, kde-format
 msgid "Choose this to have a goal assigned to each player."
-msgstr ""
+msgstr "აირჩიეთ, რომ მიზანი თითოეულ მომხმარებებელს ჰქონდეს."
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioGoal)
 #: Dialogs/newGameDialog.ui:175
@@ -1449,6 +1459,8 @@ msgid ""
 "Skins directory not found - Verify your installation\n"
 "Program cannot continue"
 msgstr ""
+"სკინების საქაღალდე ვერ ვიპოვე - გადაამოწმეთ თქვენი ფაილები\n"
+"პროგრამა მუშაობას ვერ გააგრძელებს"
 
 #: Dialogs/newGameDialogImpl.cpp:133 newgamesetup.cpp:45
 #, kde-format
@@ -1554,7 +1566,7 @@ msgstr "მოთამაშის მორგება"
 #: Dialogs/qplayersetupdialog.ui:23
 #, no-c-format, kde-format
 msgid "Player number %1, please enter your name and choose your nation:"
-msgstr ""
+msgstr "მოთამაშე ნომრით %1, შეიყვანეთ თქვენი სახელი და აირჩიეთ ეროვნება:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, nationCombo)
 #. i18n: ectx: property (toolTip), widget (QComboBox, waitedPlayersCombo)
@@ -1571,6 +1583,8 @@ msgid ""
 "A combo box that lists currently available nations.\n"
 "Choose one of them. It will be your nation during the game"
 msgstr ""
+"ამჟამად ხელმისაწვდომი ეროვნებების ჩამოსაშლელი სია\n"
+"აირჩიეთ ერთ-ერთი და ის თამაშისას თქვენი ეროვნება იქნება"
 
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
 #: Dialogs/qplayersetupdialog.ui:79 Dialogs/qwaitedplayersetupdialog.ui:47
@@ -1588,13 +1602,13 @@ msgstr "&მოთამაშე კომპიუტერია"
 #: Dialogs/qwaitedplayersetupdialog.ui:14
 #, kde-format
 msgid "Saved Player Selection"
-msgstr ""
+msgstr "შენახული მოთამაშის არჩევანი"
 
 #. i18n: ectx: property (text), widget (QLabel, TextLabel1)
 #: Dialogs/qwaitedplayersetupdialog.ui:23
 #, kde-format
 msgid "Please select your saved player:"
-msgstr ""
+msgstr "აირჩიეთ თქვენი შენახული მოთამაშე:"
 
 #. i18n: ectx: property (text), widget (QPushButton, PushButton1)
 #: Dialogs/qwaitedplayersetupdialog.ui:67
@@ -1630,7 +1644,7 @@ msgstr "არაფერი"
 #: Dialogs/restartOrExitDialog.ui:43
 #, kde-format
 msgid "Do nothing. Game buttons will be available"
-msgstr ""
+msgstr "არაფერი ქნა. თამაშის ღილაკები ხელმისაწვდომი იქნება"
 
 #. i18n: ectx: property (text), widget (QPushButton, exitButton)
 #: Dialogs/restartOrExitDialog.ui:50 GameLogic/gameautomaton.cpp:1668
@@ -1648,7 +1662,7 @@ msgstr "KsirK-დან გასვლა"
 #: Dialogs/restartOrExitDialog.ui:89
 #, no-c-format, kde-format
 msgid "%1 won! Do you want to play again?"
-msgstr ""
+msgstr "%1-მა მოიგო! გნებავთ, კიდევ ითამაშოთ?"
 
 #. i18n: ectx: property (text), widget (QLineEdit, hostEdit)
 #: Dialogs/tcpconnectwidget.ui:74
@@ -1681,12 +1695,12 @@ msgstr "KsirK - ქსელის მორგება"
 #: GameLogic/gameautomaton.cpp:307
 #, kde-format
 msgid "Please type in the port number on which to offer connections:"
-msgstr ""
+msgstr "აკრიფეთ პორტის ნომერი, რომელზეც გნებავთ, შემოგიერთდნენ:"
 
 #: GameLogic/gameautomaton.cpp:1194 GameLogic/gameautomaton.cpp:1223
 #, kde-format
 msgid "Do you really want to end your current game and join another?"
-msgstr ""
+msgstr "მართლა გნებავთ, დაასრულოთ მიმდინარე თამაში და სხვას მიუერთდეთ?"
 
 #: GameLogic/gameautomaton.cpp:1194 GameLogic/gameautomaton.cpp:1223
 #: kgamewin.cpp:2646
@@ -1703,27 +1717,27 @@ msgstr "დაიწყეთ ახალი თამაში"
 #: GameLogic/gameautomaton.cpp:1404
 #, kde-format
 msgid "%1 (%2) joined game ; waiting for %3 players to connect"
-msgstr ""
+msgstr "%1 (%2) მოთამაშე აქაა. ველოდებით %3 მოთამაშის შემოერთებას"
 
 #: GameLogic/gameautomaton.cpp:1510
 #, kde-format
 msgid "Please choose another name"
-msgstr ""
+msgstr "აირჩიეთ სხვა სახელი"
 
 #: GameLogic/gameautomaton.cpp:1510
 #, kde-format
 msgid "KsirK - Name already used!"
-msgstr ""
+msgstr "KsirK - სახელი უკვე გამოიყენება!"
 
 #: GameLogic/gameautomaton.cpp:1516
 #, kde-format
 msgid "Player number %1, what's your name?"
-msgstr ""
+msgstr "მოთამაშე ნომრით %1. რა გქვიათ?"
 
 #: GameLogic/gameautomaton.cpp:1520
 #, kde-format
 msgid "Error - Player %1, you have to choose a name."
-msgstr ""
+msgstr "შეცდომა - მოთამაშე %1. სახელის არჩევა აუცილებელია."
 
 #: GameLogic/gameautomaton.cpp:1522
 #, kde-format
@@ -1734,12 +1748,12 @@ msgstr "მოთამაშე%1"
 #: GameLogic/gameautomaton.cpp:1573
 #, kde-format
 msgid "Please choose another nation"
-msgstr ""
+msgstr "აირჩიეთ სხვა ნაცია"
 
 #: GameLogic/gameautomaton.cpp:1573
 #, kde-format
 msgid "KsirK - Nation already used!"
-msgstr ""
+msgstr "KsirK - ნაცია უკვე გამოიყენება!"
 
 #: GameLogic/gameautomaton.cpp:1665
 #, kde-format
@@ -1747,11 +1761,13 @@ msgid ""
 "KsirK - Lost connection to server!\n"
 "What do you want to do?"
 msgstr ""
+"KsirK - სერვერთან მიერთება გაწყდა!\n"
+"რა გნებავთ, ქნათ?"
 
 #: GameLogic/gameautomaton.cpp:1666
 #, kde-format
 msgid "Starting a new game or exit."
-msgstr ""
+msgstr "ახალი თამაშის დაწყება ან გასვლა."
 
 #: GameLogic/gameautomaton.cpp:1669
 #, kde-format
@@ -1769,7 +1785,7 @@ msgstr ""
 #: GameLogic/gameautomaton.cpp:1692
 #, kde-format
 msgid "KsirK - Lost connection to client!"
-msgstr ""
+msgstr "KsirK - კლიენტთან მიერთება გაწყდა!"
 
 #: GameLogic/gameautomaton.cpp:1694
 #, kde-format
@@ -1780,7 +1796,7 @@ msgstr "გნებავთ, შეინახოთ თამაში?"
 #: kgamewin.cpp:2137 kgamewin.cpp:2232 kgamewin.cpp:2269
 #, kde-format
 msgid "%1: %2 armies to place"
-msgstr ""
+msgstr "%1: მოსათავსებელია %2 არმია"
 
 #: GameLogic/gameautomaton.cpp:1865 GameLogic/gameautomaton.cpp:2280
 #: kgamewinslots.cpp:813
@@ -1800,12 +1816,12 @@ msgstr ""
 #: GameLogic/gameautomaton.cpp:1944
 #, kde-format
 msgid "KsirK - Displaying Goal"
-msgstr ""
+msgstr "KsirK - სამიზნის ჩვენება"
 
 #: GameLogic/gameautomaton.cpp:2130
 #, kde-format
 msgid "%1 chooses its defense"
-msgstr ""
+msgstr "%1-მა თავდაცვა აირჩია"
 
 #: GameLogic/gameautomaton.cpp:2290
 #, kde-format
@@ -1815,7 +1831,7 @@ msgstr ""
 #: GameLogic/gameautomaton.cpp:2380
 #, kde-format
 msgid "Problem : no one destroyed"
-msgstr ""
+msgstr "პრობლემა: არავინ განადგურებულა"
 
 #: GameLogic/gameautomaton.cpp:2380 gestionSprites.cpp:928
 #: gestionSprites.cpp:948 gestionSprites.cpp:1049 gestionSprites.cpp:1086
@@ -1831,6 +1847,8 @@ msgid ""
 "You entered an invalid password.\n"
 "Please try again."
 msgstr ""
+"შეყვანილი პაროლი არასწორია.\n"
+"თავიდან სცადეთ."
 
 #: GameLogic/gameautomaton.cpp:2429
 #, kde-format
@@ -1879,16 +1897,16 @@ msgstr "<br>%1 ჯერ კიდევ ცოცხალია..."
 #, kde-format
 msgid "<br>%2, you still have 1 country to conquer..."
 msgid_plural "<br>%2, you still have %1 countries to conquer..."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "<br>%2, ჯერ კიდევ უნდა 1 ქვეყნა გაქვთ დასაპყრობი..."
+msgstr[1] "<br>%2, ჯერ კიდევ უნდა %1 ქვეყნა გაქვთ დასაპყრობი..."
 
 #: GameLogic/goal.cpp:242
 #, kde-format
 msgid "<br>Your goal is reached: %2 is dead and you possess %1 country."
 msgid_plural ""
 "<br>Your goal is reached: %2 is dead and you possess %1 countries."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "<br>თქვენი მიზანი მიღწეულია: %2 მკვდარია და გაქვთ %1 ქვეყანა."
+msgstr[1] "<br>თქვენი მიზანი მიღწეულია: %2 მკვდარია და გაქვთ %1 ქვეყანა."
 
 #: GameLogic/goal.cpp:264
 #, kde-format
@@ -1904,14 +1922,14 @@ msgstr[1] ""
 #: GameLogic/goal.cpp:269
 #, kde-format
 msgid "<br>%1, you still have to conquer "
-msgstr ""
+msgstr "<br>%1, ჯერ კიდევ უნდა დაიპყროთ "
 
 #: GameLogic/goal.cpp:275
 #, kde-format
 msgid "1 country in %2"
 msgid_plural "%1 countries in %2"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 ქვეყნა %2-ში"
+msgstr[1] "%1 ქვეყნა %2-ში"
 
 #: GameLogic/goal.cpp:285
 #, kde-format
@@ -1952,6 +1970,8 @@ msgid ""
 "Pool filename not found\n"
 "Program cannot continue"
 msgstr ""
+"პულის ფაილის სახელი ვერ ვიპოვე\n"
+"პროგრამა მუშაობას ვერ გააგრძელებს"
 
 #: GameLogic/onu.cpp:130 GameLogic/onu.cpp:147 gestionSprites.cpp:693
 #: gestionSprites.cpp:808 gestionSprites.cpp:853 gestionSprites.cpp:1409
@@ -1968,16 +1988,18 @@ msgid ""
 "Map mask image not found\n"
 "Program cannot continue"
 msgstr ""
+"რუკის ნიღბის გამოსახულება ვერ ვიპოვე\n"
+"პროგრამა მუშაობას ვერ გააგრძელებს"
 
 #: gestionSprites.cpp:73 gestionSprites.cpp:107 gestionSprites.cpp:158
 #, kde-format
 msgid "Cannot move %1 armies from %2 to %3"
-msgstr ""
+msgstr "%1 არმიის გადაყვანა %2-დან %3-ში შეუძლებელია"
 
 #: gestionSprites.cpp:80
 #, kde-format
 msgid "Moving %1 armies from %2 to %3"
-msgstr ""
+msgstr "%1 არმიის გადაყვანა %2-დან %3-ში"
 
 #: gestionSprites.cpp:693 gestionSprites.cpp:808 gestionSprites.cpp:1409
 #: gestionSprites.cpp:1486
@@ -1985,12 +2007,16 @@ msgstr ""
 msgid ""
 "Sound roule not found - Verify your installation<br>Program cannot continue"
 msgstr ""
+"ხმის ფაილები ვერ ვიპოვე - გადაამომეთ თქვენი ფაილები<br>პროგრამა მუშაობას ვერ "
+"გააგრძელებს"
 
 #: gestionSprites.cpp:853
 #, kde-format
 msgid ""
 "Sound cannon not found - Verify your installation<br>Program cannot continue"
 msgstr ""
+"ხმა ვერ ვიპოვე - გადაამომეთ თქვენი ფაილები<br>პროგრამა მუშაობას ვერ "
+"გააგრძელებს"
 
 #: gestionSprites.cpp:928 gestionSprites.cpp:948 gestionSprites.cpp:1049
 #: gestionSprites.cpp:1086 gestionSprites.cpp:1121 gestionSprites.cpp:1175
@@ -2000,6 +2026,8 @@ msgid ""
 "Sound crash not found - Verify your installation\n"
 "Program cannot continue"
 msgstr ""
+"ხმის ავარია ვერ ვიპოვე - გადაამომეთ თქვენი ფაილები\n"
+"პროგრამა მუშაობას ვერ გააგრძელებს"
 
 #: gestionSprites.cpp:1290
 #, kde-format
@@ -2027,6 +2055,8 @@ msgid ""
 "SSL support could not be initialized for account %1. This is most likely "
 "because the QCA TLS plugin is not installed on your system."
 msgstr ""
+"SSL-ის მხარდაჭერის ინიციალიზების შეცდომა ანგარიშისთვის %1. ეს, ყველაზე "
+"ხშირად მაშინ ხდება, როცა სისტემაში QCA TLS დამატება დაყენებული არაა."
 
 #: Jabber/jabberaccount.cpp:376
 #, kde-format
@@ -2051,7 +2081,7 @@ msgstr "სერტიფიკატის გარეშე."
 #: Jabber/jabberaccount.cpp:427
 #, kde-format
 msgid "The Certificate Authority rejected the certificate."
-msgstr ""
+msgstr "სერტიფიკატის ავტორიტეტმა სერტიფიკატი უარჰყო."
 
 #: Jabber/jabberaccount.cpp:431
 #, kde-format
@@ -2126,7 +2156,7 @@ msgstr "სერტიფიკატის შეცდომა Jabber-თა
 #, kde-format
 msgid ""
 "An encrypted connection with the Jabber server could not be established."
-msgstr ""
+msgstr "Jabber-ის სერვერთან დაშიფრული კავშირის დამყარება შეუძლებელია."
 
 #: Jabber/jabberaccount.cpp:531 kgamewinslots.cpp:1012
 #, kde-format
@@ -2136,12 +2166,12 @@ msgstr "Jabber-თან მიერთების პრობლემა"
 #: Jabber/jabberaccount.cpp:734
 #, kde-format
 msgid "Malformed packet received."
-msgstr ""
+msgstr "მიღებულია ჩამოუყალიბებელ პაკეტი."
 
 #: Jabber/jabberaccount.cpp:739
 #, kde-format
 msgid "There was an unrecoverable error in the protocol."
-msgstr ""
+msgstr "პროტოკოლში აღმოჩენილია აღუდგენელი შეცდომა."
 
 #: Jabber/jabberaccount.cpp:746
 #, kde-format
@@ -2151,7 +2181,7 @@ msgstr "ნაკადის ზოგადი შეცდომა."
 #: Jabber/jabberaccount.cpp:750
 #, kde-format
 msgid "There was a conflict in the information received."
-msgstr ""
+msgstr "მიღებული ინფორმაცია ურთიერთგამომრიცხავია."
 
 #: Jabber/jabberaccount.cpp:753
 #, kde-format
@@ -2166,17 +2196,17 @@ msgstr "სერვერის შიდა შეცდომა."
 #: Jabber/jabberaccount.cpp:759
 #, kde-format
 msgid "Stream packet received from an invalid address."
-msgstr ""
+msgstr "ნაკადის პაკეტი არასწორი მისამართიდან მივიღე."
 
 #: Jabber/jabberaccount.cpp:762
 #, kde-format
 msgid "Malformed stream packet received."
-msgstr ""
+msgstr "მიღებული ნაკადის პაკეტი არასწორია."
 
 #: Jabber/jabberaccount.cpp:766
 #, kde-format
 msgid "Policy violation in the protocol stream."
-msgstr ""
+msgstr "პოლიტიკის დარღვევა პროტოკოლის ნაკადში."
 
 #: Jabber/jabberaccount.cpp:770
 #, kde-format
@@ -2196,7 +2226,7 @@ msgstr "უცნობი მიზეზი."
 #: Jabber/jabberaccount.cpp:781
 #, kde-format
 msgid "There was an error in the protocol stream: %1"
-msgstr ""
+msgstr "შეცდომა პროტოკოლის ნაკადში: %1"
 
 #: Jabber/jabberaccount.cpp:789
 #, kde-format
@@ -2216,7 +2246,7 @@ msgstr "სოკეტის თავიდან შექმნა შეუ
 #: Jabber/jabberaccount.cpp:798
 #, kde-format
 msgid "Cannot bind the socket again."
-msgstr ""
+msgstr "სოკეტის კიდევ ერთხელ მიბმა შეუძლებელია."
 
 #: Jabber/jabberaccount.cpp:801
 #, kde-format
@@ -2231,12 +2261,12 @@ msgstr "სოკეტი დაკავშირებული არაა.
 #: Jabber/jabberaccount.cpp:807
 #, kde-format
 msgid "Socket is not bound."
-msgstr ""
+msgstr "სოკეტი მიერთებული არაა."
 
 #: Jabber/jabberaccount.cpp:810
 #, kde-format
 msgid "Socket has not been created."
-msgstr ""
+msgstr "სოკეტი არ შექმნილა."
 
 #: Jabber/jabberaccount.cpp:813
 #, kde-format
@@ -2258,7 +2288,7 @@ msgstr "კავშირის ვადა გავიდა."
 #: Jabber/jabberaccount.cpp:822
 #, kde-format
 msgid "Connection attempt already in progress."
-msgstr ""
+msgstr "დაკავშირების მცდელობა უკვე მიმდინარეობს."
 
 #: Jabber/jabberaccount.cpp:825
 #, kde-format
@@ -2278,7 +2308,7 @@ msgstr "სოკეტის მოლოდინის დრო ამოი
 #: Jabber/jabberaccount.cpp:839
 #, kde-format
 msgid "There was a connection error: %1"
-msgstr ""
+msgstr "მიერთების შეცდომა: %1"
 
 #: Jabber/jabberaccount.cpp:847
 #, kde-format
@@ -2288,7 +2318,7 @@ msgstr "უცნობი ჰოსტი."
 #: Jabber/jabberaccount.cpp:851
 #, kde-format
 msgid "Could not connect to a required remote resource."
-msgstr ""
+msgstr "აუცილებელ დაშორებულ რესურსთან მიერთება შეუძლებელია."
 
 #: Jabber/jabberaccount.cpp:854
 #, kde-format
@@ -2300,7 +2330,7 @@ msgstr ""
 #: Jabber/jabberaccount.cpp:857
 #, kde-format
 msgid "Unsupported protocol version."
-msgstr ""
+msgstr "მხარდაუჭერელი პროტოკოლის ვერსია."
 
 #: Jabber/jabberaccount.cpp:860 Jabber/jabberaccount.cpp:877
 #: Jabber/jabberaccount.cpp:921 Jabber/jabberaccount.cpp:938
@@ -2312,12 +2342,12 @@ msgstr "უცნობი შეცდომა."
 #: Jabber/jabberaccount.cpp:864
 #, kde-format
 msgid "There was a negotiation error: %1"
-msgstr ""
+msgstr "აღმოჩენილია მოლაპარაკების შეცდომა: %1"
 
 #: Jabber/jabberaccount.cpp:871
 #, kde-format
 msgid "Server rejected our request to start the TLS handshake."
-msgstr ""
+msgstr "სერვერმა უარჰყო ჩვენი მოთხოვნა, TLS მიმოცვლა დაეწყო."
 
 #: Jabber/jabberaccount.cpp:874
 #, kde-format
@@ -2327,32 +2357,32 @@ msgstr "დაცული მიერთების დამყარებ�
 #: Jabber/jabberaccount.cpp:881
 #, kde-format
 msgid "There was a Transport Layer Security (TLS) error: %1"
-msgstr ""
+msgstr "ტრანსპორტის ფენის უსაფრთხოების (TLS) შეცდომა: %1"
 
 #: Jabber/jabberaccount.cpp:888
 #, kde-format
 msgid "Login failed with unknown reason."
-msgstr ""
+msgstr "შესვლა ჩავარდა უცნობი მიზეზით."
 
 #: Jabber/jabberaccount.cpp:891
 #, kde-format
 msgid "No appropriate authentication mechanism available."
-msgstr ""
+msgstr "შესაბამისი ავთენტიკაციის მექანიზმი ხელმისაწვდომი არაა."
 
 #: Jabber/jabberaccount.cpp:894
 #, kde-format
 msgid "Bad SASL authentication protocol."
-msgstr ""
+msgstr "არასწორი SASL ავთენტიკაციის პროტოკოლი."
 
 #: Jabber/jabberaccount.cpp:897
 #, kde-format
 msgid "Server failed mutual authentication."
-msgstr ""
+msgstr "სერვერის ორმხრივი ავთენტიკაცია ჩავარდა."
 
 #: Jabber/jabberaccount.cpp:900
 #, kde-format
 msgid "Encryption is required but not present."
-msgstr ""
+msgstr "დაშიფვრა აუცილებელია, მაგრამ არ არსებობს."
 
 #: Jabber/jabberaccount.cpp:903
 #, kde-format
@@ -2378,36 +2408,38 @@ msgstr "მექანიზმი ძალიან სუსტია."
 #, kde-format
 msgid "Wrong credentials supplied. (check your user ID and password)"
 msgstr ""
+"მითითებული ავტორიზაციის დეტალები არასწორია. (შეამოწმეთ თქვენი მომხმარებლის "
+"ID და პაროლი)"
 
 #: Jabber/jabberaccount.cpp:918
 #, kde-format
 msgid "Temporary failure, please try again later."
-msgstr ""
+msgstr "დროებითი შეცდომა. მოგვიანებით სცადეთ."
 
 #: Jabber/jabberaccount.cpp:925
 #, kde-format
 msgid "There was an error authenticating with the server: %1"
-msgstr ""
+msgstr "შეცდომა ავთენტიკაციისას სერვერისთვის: %1"
 
 #: Jabber/jabberaccount.cpp:932
 #, kde-format
 msgid "Transport Layer Security (TLS) problem."
-msgstr ""
+msgstr "ტრანსპორტის ფენის უსაფრთხოების (TLS) პრობლემა."
 
 #: Jabber/jabberaccount.cpp:935
 #, kde-format
 msgid "Simple Authentication and Security Layer (SASL) problem."
-msgstr ""
+msgstr "მარტივი ავთენტიკაციისა და უსაფრთხოების ფენის (SASL) პრობლემა."
 
 #: Jabber/jabberaccount.cpp:942
 #, kde-format
 msgid "There was an error in the security layer: %1"
-msgstr ""
+msgstr "შეცდომა უსაფრთხოების ფენაში: %1"
 
 #: Jabber/jabberaccount.cpp:949
 #, kde-format
 msgid "No permission to bind the resource."
-msgstr ""
+msgstr "რესურსთან მიბმის წვდომა აკრძალულია."
 
 #: Jabber/jabberaccount.cpp:952
 #, kde-format
@@ -2417,12 +2449,12 @@ msgstr "რესურსი უკვე გამოიყენება."
 #: Jabber/jabberaccount.cpp:959
 #, kde-format
 msgid "Could not bind a resource: %1"
-msgstr ""
+msgstr "შეცდომა რესურსზე მიბმისას: %1"
 
 #: Jabber/jabberaccount.cpp:977 Jabber/jabberaccount.cpp:981
 #, kde-format
 msgid "Connection problem with Jabber server %1"
-msgstr ""
+msgstr "Jabber-ის სერვერთან (%1) მიერთების პრობლემა"
 
 #: Jabber/jabberaccount.cpp:1127
 #, kde-format
@@ -2445,29 +2477,29 @@ msgstr "დატოვება"
 #: Jabber/jabberaccount.cpp:1514 kgamewinslots.cpp:1101
 #, kde-format
 msgid "A password is required to join the room %1."
-msgstr ""
+msgstr "ოთახში %1 შესასვლელად პაროლი გჭირდებათ."
 
 #: Jabber/jabberaccount.cpp:1523 kgamewinslots.cpp:1110
 #, kde-format
 msgid "Error trying to join %1: nickname %2 is already in use"
-msgstr ""
+msgstr "%1-სთან მიერთების შეცდომა: მეტსახელი %2 უკვე გამოიყენება"
 
 #: Jabber/jabberaccount.cpp:1524 Jabber/jabberprotocol.cpp:433
 #: kgamewinslots.cpp:1110
 #, kde-format
 msgid "Provide your nickname"
-msgstr ""
+msgstr "შეიყვანეთ თქვენი მეტსახელი"
 
 #: Jabber/jabberaccount.cpp:1537
 #, kde-format
 msgid "You cannot join the room %1 because you have been banned"
-msgstr ""
+msgstr "ოთახში %1 შესვლა არ შეგიძლიათ, რადგან ბანი გადევთ"
 
 #: Jabber/jabberaccount.cpp:1538 Jabber/jabberaccount.cpp:1545
 #: Jabber/jabberaccount.cpp:1555
 #, kde-format
 msgid "Jabber Group Chat"
-msgstr ""
+msgstr "Jabber-ის ჯგუფური ჩატი"
 
 #: Jabber/jabberaccount.cpp:1544
 #, kde-format
@@ -2475,11 +2507,13 @@ msgid ""
 "You cannot join the room %1 because the maximum number of users has been "
 "reached"
 msgstr ""
+"ოთახში %1 შესვლა არ შეგიძლიათ, გადაჭარბებულია მომხმარებლების მაქსიმალური "
+"რაოდენობა"
 
 #: Jabber/jabberaccount.cpp:1550 kgamewinslots.cpp:1128
 #, kde-format
 msgid "No reason given by the server"
-msgstr ""
+msgstr "სერვერს მიზეზი არ მოუწოდებია"
 
 #: Jabber/jabberaccount.cpp:1554
 #, kde-format
@@ -2494,31 +2528,33 @@ msgid ""
 "An error occurred while trying to remove the account:\n"
 "%1"
 msgstr ""
+"შეცდომა ამ ანგარიშის წაშლის მცდელობისას:\n"
+"%1"
 
 #: Jabber/jabberaccount.cpp:1709
 #, kde-format
 msgid "Jabber Account Unregistration"
-msgstr ""
+msgstr "Jabber-ის ანგარიშის რეგისტრაციის გაუქმება"
 
 #: Jabber/jabberbasecontact.cpp:128
 #, kde-format
 msgid "You cannot see each others' status."
-msgstr ""
+msgstr "ერთმანეთის სტატუსებს ვერ ხედავთ."
 
 #: Jabber/jabberbasecontact.cpp:132
 #, kde-format
 msgid "You can see this contact's status, but he/she cannot see your status."
-msgstr ""
+msgstr "თქვენ შეგიძლიათ კონტაქტის სტატუსის დანახვა, მას თქვენის - არა."
 
 #: Jabber/jabberbasecontact.cpp:136
 #, kde-format
 msgid "This contact can see your status, but you cannot see his/her status."
-msgstr ""
+msgstr "ამ კონტაქტს შეუძლია, თქვენი სტატუსი დაინახოს, თქვენ მისას - ვერა."
 
 #: Jabber/jabberbasecontact.cpp:140
 #, kde-format
 msgid "You can see each others' status."
-msgstr ""
+msgstr "თქვენ შეგიძლიათ, ერთმანეთის სტატუსები დაინახოთ."
 
 #: Jabber/jabberbasecontact.cpp:250
 #, kde-format
@@ -2538,12 +2574,12 @@ msgstr "შეტყობინება"
 #: Jabber/jabberbasecontact.cpp:641
 #, kde-format
 msgid "Downloading of Jabber contact photo failed."
-msgstr ""
+msgstr "Jabber-ს კონტაქტის სურათის გადმოწერა ჩავარდა."
 
 #: Jabber/jabberbookmarks.cpp:135
 #, kde-format
 msgid "Groupchat bookmark"
-msgstr ""
+msgstr "ჯგუფური ჩატის სანიშნე"
 
 #: Jabber/jabbercontact.cpp:137
 #, kde-format
@@ -2553,17 +2589,17 @@ msgstr "ავტორიზაცია"
 #: Jabber/jabbercontact.cpp:143
 #, kde-format
 msgid "(Re)send Authorization To"
-msgstr ""
+msgstr "ავტორიზაციის გაგზავნა"
 
 #: Jabber/jabbercontact.cpp:150
 #, kde-format
 msgid "(Re)request Authorization From"
-msgstr ""
+msgstr "ავტორიზაციის გამოთხოვა"
 
 #: Jabber/jabbercontact.cpp:157
 #, kde-format
 msgid "Remove Authorization From"
-msgstr ""
+msgstr "ავტორიზაციის მოცილება მომხმარებლიდან"
 
 #: Jabber/jabbercontact.cpp:162
 #, kde-format
@@ -2588,7 +2624,7 @@ msgstr "გასული"
 #: Jabber/jabbercontact.cpp:174
 #, kde-format
 msgid "Extended Away"
-msgstr ""
+msgstr "გაფართოებული გასულობა"
 
 #: Jabber/jabbercontact.cpp:175
 #, kde-format
@@ -2608,7 +2644,7 @@ msgstr "აირჩიეთ რესურსი"
 #: Jabber/jabbercontact.cpp:197
 #, kde-format
 msgid "Automatic (best/default resource)"
-msgstr ""
+msgstr "ავტომატური (საუკეთესო/ნაგულისხმევი რესურსი)"
 
 #: Jabber/jabbercontact.cpp:250
 #, kde-format
@@ -2618,7 +2654,7 @@ msgstr "ხლოვანი ზარი"
 #: Jabber/jabbercontact.cpp:283
 #, kde-format
 msgid "The original message is: <i>\" %1 \"</i><br />"
-msgstr ""
+msgstr "საწყისის შეტყობინებაა: <i>\" %1 \"</i><br />"
 
 #: Jabber/jabbercontact.cpp:284
 #, kde-format
@@ -2631,7 +2667,7 @@ msgstr ""
 #: Jabber/jabbercontact.cpp:290
 #, kde-format
 msgid "Invited to a conference - Jabber Plugin"
-msgstr ""
+msgstr "მიგიწვიეს კონფერენციაზე - Jabber-დამატება"
 
 #: Jabber/jabbercontact.cpp:307
 #, kde-format
@@ -2651,13 +2687,13 @@ msgstr "შეტყობინება სერვერზე იქნა 
 #: Jabber/jabbercontact.cpp:319
 #, kde-format
 msgid "%1 has ended his/her participation in the chat session."
-msgstr ""
+msgstr "%1-მა დაასრულა თავისი მონაწილეობა საუბრის სესიაში."
 
 #: Jabber/jabbercontact.cpp:357 Jabber/jabbergroupcontact.cpp:171
 #: Jabber/jabbergroupmembercontact.cpp:122
 #, kde-format
 msgid "Your message could not be delivered: \"%1\", Reason: \"%2\""
-msgstr ""
+msgstr "შეტყობინების მიტანა შეუძლებელია: \"%1\". მიზეზი \"%2\""
 
 #: Jabber/jabbercontact.cpp:938
 #, kde-format
@@ -2668,7 +2704,7 @@ msgstr ""
 #: Jabber/jabbergroupmembercontact.cpp:159
 #, kde-format
 msgid "Kopete File Transfer"
-msgstr ""
+msgstr "Kopete-ის ფაილების გადაცემა"
 
 #: Jabber/jabbercontact.cpp:1110
 #, kde-format
@@ -2681,7 +2717,7 @@ msgstr ""
 #: Jabber/jabbercontact.cpp:1114
 #, kde-format
 msgid "Jabber Resource Selector"
-msgstr ""
+msgstr "Jabber-ის რესურსის ამრჩევი"
 
 #: Jabber/jabbergroupcontact.cpp:120
 #, kde-format
@@ -2691,7 +2727,7 @@ msgstr "მეტსახელის შეცვლა"
 #: Jabber/jabbergroupcontact.cpp:367
 #, kde-format
 msgid "Change nickname - Jabber Plugin"
-msgstr ""
+msgstr "შეცვალეთ მეტსახელი - Jabber-ის დამატება"
 
 #: Jabber/jabbergroupcontact.cpp:368
 #, kde-format
@@ -2706,12 +2742,12 @@ msgstr "აირჩიეთ ანგარიში"
 #: Jabber/jabberprotocol.cpp:343
 #, kde-format
 msgid "Choose an account to handle the URL %1"
-msgstr ""
+msgstr "აირჩიეთ ანგარიში URL %1-ის დასამუშავებლად"
 
 #: Jabber/jabberprotocol.cpp:392
 #, kde-format
 msgid "Do you want to add '%1' to your contact list?"
-msgstr ""
+msgstr "მართლა გნებავთ '%1' თქვენი კონტაქტების სიაში ჩაამატოთ?"
 
 #: Jabber/jabberprotocol.cpp:393
 #, kde-format
@@ -2726,7 +2762,7 @@ msgstr "არ დაამატოთ"
 #: Jabber/jabberprotocol.cpp:409
 #, kde-format
 msgid "Do you want to remove '%1' from your contact list?"
-msgstr ""
+msgstr "მართლა გნებავთ '%1'-ის წაშლა თქვენი კონტაქტების სიიდან?"
 
 #: Jabber/jabberprotocol.cpp:410
 #, kde-format
@@ -2741,32 +2777,33 @@ msgstr "არ წაშალო"
 #: Jabber/jabberprotocol.cpp:432
 #, kde-format
 msgid "Please enter your nickname for the room %1"
-msgstr ""
+msgstr "შეიყვანეთ თქვენი მეტსახელი ოთახისთვის %1"
 
 #: Jabber/jabberprotocol.cpp:455
 #, kde-format
 msgid "You have been invited to %1"
-msgstr ""
+msgstr "მოგიწვიეს: \"%1\"-ზე"
 
 #: kgamewin.cpp:149 kgamewin.cpp:740
 #, kde-format
 msgid "Cannot load icon<br>Program cannot continue"
-msgstr ""
+msgstr "ხატულის ჩატვირთვა შეუძლებელია<br>პროგრამა ვერ გაგრძელდება"
 
 #: kgamewin.cpp:383 kgamewin.cpp:400 kgamewin.cpp:417
 #, kde-format
 msgid "Cannot load button image %1<br>Program cannot continue"
 msgstr ""
+"ღილაკის გამოსახულების %1 ჩატვირთვა შეუძლებელია<br>პროგრამა ვერ გაგრძელდება"
 
 #: kgamewin.cpp:386
 #, kde-format
 msgid "Play over Jabber"
-msgstr ""
+msgstr "Jabber-ით თამაში"
 
 #: kgamewin.cpp:387
 #, kde-format
 msgid "Play KsirK over the Jabber Network"
-msgstr ""
+msgstr "ითამაშეთ KsirK Jabber-ის ქსელით"
 
 #: kgamewin.cpp:388
 #, kde-format
@@ -2784,7 +2821,7 @@ msgstr ""
 #: kgamewin.cpp:403 mainMenu.ui:104
 #, kde-format
 msgid "New Standard TCP/IP Network Game"
-msgstr ""
+msgstr "ახალი სტანდარტული TCP/IP ქსელური თამაში"
 
 #: kgamewin.cpp:404
 #, kde-format
@@ -2794,12 +2831,12 @@ msgstr "ახალი TCP/IP"
 #: kgamewin.cpp:406
 #, kde-format
 msgid "Create a new standard TCP/IP network game"
-msgstr ""
+msgstr "შექმენით ახალი სტანდარტული TCP/IP ქსელური თამაში"
 
 #: kgamewin.cpp:421
 #, kde-format
 msgid "Join a Standard TCP/IP Network Game"
-msgstr ""
+msgstr "სტანდარტულ TCP/IP ქსელურ თამაშთან მიერთება"
 
 #: kgamewin.cpp:422
 #, kde-format
@@ -2809,17 +2846,17 @@ msgstr "TCP/IP-ით მიერთება"
 #: kgamewin.cpp:424
 #, kde-format
 msgid "Join a standard TCP/IP network game"
-msgstr ""
+msgstr "სტანდარტულ TCP/IP ქსელურ თამაშთან მიერთება"
 
 #: kgamewin.cpp:430
 #, kde-format
 msgid "Display the Current Player's Goal"
-msgstr ""
+msgstr "მიმდინარე მოთამაშის მიზნის ჩვენება"
 
 #: kgamewin.cpp:433
 #, kde-format
 msgid "Display the current player's goal"
-msgstr ""
+msgstr "მიმდინარე მოთამაშის მიზნის ჩვენება"
 
 #: kgamewin.cpp:440
 #, kde-format
@@ -2829,7 +2866,7 @@ msgstr "კონტექსტური დახმარება"
 #: kgamewin.cpp:451
 #, kde-format
 msgid "Lets the next player play"
-msgstr ""
+msgstr "შემდეგი მოთამაშისთვის თამაშის უფლების მიცემა"
 
 #: kgamewin.cpp:456
 #, kde-format
@@ -2839,7 +2876,7 @@ msgstr "სვლების დასრულება"
 #: kgamewin.cpp:458
 #, kde-format
 msgid "Finish moving the current sprites"
-msgstr ""
+msgstr "მიმდინარე სპრაიტების გადაადგილების დასრულება"
 
 #: kgamewin.cpp:584
 #, kde-format
@@ -2851,17 +2888,17 @@ msgstr ""
 #: kgamewin.cpp:804
 #, kde-format
 msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
-msgstr ""
+msgstr "<font color=\"red\">%1-მა დაიპყრო %2 %3-დან</font>"
 
 #: kgamewin.cpp:828
 #, kde-format
 msgid "%1, you are defeated! Bye, bye..."
-msgstr ""
+msgstr "%1, თქვენ წააგეთ. ნახვამდის..."
 
 #: kgamewin.cpp:900
 #, kde-format
 msgid "%1: it is up to you again"
-msgstr ""
+msgstr "%1: ეს ისევ თქვენზეა დამოკიდებული"
 
 #: kgamewin.cpp:912
 #, kde-format
@@ -2871,7 +2908,7 @@ msgstr "%1-მა მოიგო!"
 #: kgamewin.cpp:915
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
-msgstr ""
+msgstr "<big><b>%1</b>, თქვენ გაიმარჯვეთ!</big>"
 
 #: kgamewin.cpp:919
 #, kde-format
@@ -2883,17 +2920,17 @@ msgstr ""
 #: kgamewin.cpp:925
 #, kde-format
 msgid "<br>You conquered all the world!"
-msgstr ""
+msgstr "<br>თქვენ მთელი სამყარო დაიპყარით!"
 
 #: kgamewin.cpp:929
 #, kde-format
 msgid "<br>He conquered all the world!"
-msgstr ""
+msgstr "<br>მან მთელი სამყარო დაიპყრო!"
 
 #: kgamewin.cpp:1046
 #, kde-format
 msgid "Do you want to quit the game?"
-msgstr ""
+msgstr "მართლა გნებავთ თამაშიდან გასვლა?"
 
 #: kgamewin.cpp:1048
 #, kde-format
@@ -2904,7 +2941,7 @@ msgstr "თამაშიდან გასვლა"
 #: kgamewin.cpp:1060
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
-msgstr ""
+msgstr "სანამ გახვალთ,, გნებავთ, თქვენი თამაში შეინახოთ?"
 
 #: kgamewin.cpp:1098
 #, kde-format
@@ -2915,7 +2952,7 @@ msgstr "KsirK - თამაშის ჩატვირთვა"
 #: kgamewin.cpp:1136
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
-msgstr ""
+msgstr "ველოდები %1 ქსელური მოთამაშის მიერთებას."
 
 #: kgamewin.cpp:1215
 #, kde-format
@@ -2941,50 +2978,50 @@ msgstr "დაცვა 2"
 #: kgamewin.cpp:1246
 #, kde-format
 msgid "Defend-Auto"
-msgstr ""
+msgstr "ავტომატური-დაცვა"
 
 #: kgamewin.cpp:1365
 #, kde-format
 msgid "Waiting for %1 players to connect"
-msgstr ""
+msgstr "ველოდები %1 მოთამაშის მიერთებას"
 
 #: kgamewin.cpp:1755 kgamewin.cpp:1795
 msgid "There is no country here!"
-msgstr ""
+msgstr "აქ ქვეყანა არაა!"
 
 #: kgamewin.cpp:1759 kgamewin.cpp:1800
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
-msgstr ""
+msgstr "პირველი ქვეყნის მფლობელი არ ბრძანდებით: %1!"
 
 #: kgamewin.cpp:1763
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
-msgstr ""
+msgstr "მეორე ქვეყნის მფლობელი არ ბრძანდებით: %1!"
 
 #: kgamewin.cpp:1767 kgamewin.cpp:1811
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
-msgstr ""
+msgstr "აპირებთ, არმიები %1-დან თავის თავში გადაიყვანოთ!"
 
 #: kgamewin.cpp:1772 kgamewin.cpp:1817
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
-msgstr ""
+msgstr "%1 %2-ის მეზობელი არაა!"
 
 #: kgamewin.cpp:1778
 #, kde-format
 msgid "Moving armies from %1 to %2."
-msgstr ""
+msgstr "არმიების გადატანა %1-დან %2-ში."
 
 #: kgamewin.cpp:1806
 #, kde-format
 msgid "You are the owner of the second country: %1!"
-msgstr ""
+msgstr "თქვენ ბრძანდებით მეორე ქვეყნის მფლობელი: %1!"
 
 #: kgamewin.cpp:1824
 msgid "Ready to fight!"
-msgstr ""
+msgstr "ბრძოლისთვის მზად ვარ!"
 
 #: kgamewin.cpp:1918
 msgid "<font color=\"orange\">No country here!</font>"
@@ -2998,16 +3035,16 @@ msgstr "<font color=\"orange\">%1-ის მფლობელი არ ბრ�
 #: kgamewin.cpp:1933
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
-msgstr ""
+msgstr "<font color=\"orange\">%2-ში მხოლოდ %1 არმიაა!</font>"
 
 #: kgamewin.cpp:2073
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
-msgstr ""
+msgstr "%1, დაიცავი ერთად-ერთი არმია, რომელიც %2-ში გყავს."
 
 #: kgamewin.cpp:2297
 msgid "Exchange armies again or continue?"
-msgstr ""
+msgstr "შევცვალო არმიები კიდევ, თუ გავაგრძელო?"
 
 #: kgamewin.cpp:2322
 #, kde-format
@@ -3015,6 +3052,8 @@ msgid ""
 "You must distribute\n"
 "all your armies"
 msgstr ""
+"თქვენი არმიები\n"
+"უნდა გაანაწილოთ"
 
 #: kgamewin.cpp:2322 main.cpp:41
 #, kde-format
@@ -3033,7 +3072,7 @@ msgstr "%1, თქვენ გადაწყვიტეთ."
 #: kgamewin.cpp:2646
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
-msgstr ""
+msgstr "მართლა გნებავთ ახალის დასაწყებად ამ თამაშის დასრულება?"
 
 #: kgamewin.cpp:2646
 #, kde-format
@@ -3043,7 +3082,7 @@ msgstr "ახალი თამაშის დაწყება"
 
 #: kgamewin.cpp:2902
 msgid "<b>KsirK quick Introduction</b>"
-msgstr ""
+msgstr "<b>KsirK-ის სწრაფი წარდგენა</b>"
 
 #: kgamewin.cpp:2906
 msgid ""
@@ -3064,19 +3103,19 @@ msgstr ""
 #: kgamewin.cpp:2921
 #, kde-format
 msgid "Don't show messages anymore"
-msgstr ""
+msgstr "შეტყობინებები აღარ მაჩვენო"
 
 #: kgamewinslots.cpp:112
 #, kde-format
 msgid "%2 belongs to %3. 1 army."
 msgid_plural "%2 belongs to %3. %1 armies."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%2 %3-ს ეკუთვნის. 1 არმია."
+msgstr[1] "%2 %3-ს ეკუთვნის. %1 არმია."
 
 #: kgamewinslots.cpp:454
 #, kde-format
 msgid "Cannot save when waiting for a defense."
-msgstr ""
+msgstr "თავდაცვის მოლოდინში შენახვა შეუძლებელია."
 
 #: kgamewinslots.cpp:461
 #, kde-format
@@ -3092,7 +3131,7 @@ msgstr "შენახვა  გაუქმებულია"
 #: kgamewinslots.cpp:476
 #, kde-format
 msgid "Game saved to %1"
-msgstr ""
+msgstr "თამაში შენახულია, როგორც %1"
 
 #: kgamewinslots.cpp:483
 #, kde-format
@@ -3109,17 +3148,17 @@ msgstr ""
 #: krightdialog.cpp:116
 #, kde-format
 msgid "<b>Nationality:</b>"
-msgstr ""
+msgstr "<b>ნაციონალობა:</b>"
 
 #: krightdialog.cpp:117
 #, kde-format
 msgid "<b>Continent:</b> %1"
-msgstr ""
+msgstr "<b>კონტინენტი:</b> %1"
 
 #: krightdialog.cpp:118
 #, kde-format
 msgid "<b>Country:</b> %1"
-msgstr ""
+msgstr "<b>ქვეყანა:</b> %1"
 
 #: krightdialog.cpp:122
 #, kde-format
@@ -3129,36 +3168,36 @@ msgstr "<b>Owner:</b> %1"
 #: krightdialog.cpp:123
 #, kde-format
 msgid "<b><u>Country details</u></b>"
-msgstr ""
+msgstr "<b><u>ქვეყნის დეტალები</u></b>"
 
 #: krightdialog.cpp:170
 #, kde-format
 msgid "<i>Fighting in progress...</i>"
-msgstr ""
+msgstr "<i>მიმდინარეობს ბრძოლა...</i>"
 
 #: krightdialog.cpp:222
 #, kde-format
 msgid "<font color=\"red\">Attack</font> with 1 army.<br>"
 msgid_plural "<font color=\"red\">Attack</font> with %1 armies.<br>"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "<font color=\"red\">შეტევა</font> 1 არმიით.<br>"
+msgstr[1] "<font color=\"red\">შეტევა</font> %1 არმიით.<br>"
 
 #: krightdialog.cpp:233
 #, kde-format
 msgid "<font color=\"blue\">Defend</font> with 1 army.<br>"
 msgid_plural "<font color=\"blue\">Defend</font> with %1 armies.<br>"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "<font color=\"blue\">თავდაცვა</font> 1 არმიით.<br>"
+msgstr[1] "<font color=\"blue\">თავდაცვა</font> %1 არმიით.<br>"
 
 #: krightdialog.cpp:265
 #, kde-format
 msgid "Stop Auto-Attack"
-msgstr ""
+msgstr "ავტომატური შეტევის გაჩერება"
 
 #: krightdialog.cpp:273
 #, kde-format
 msgid "Stop Auto-Defense"
-msgstr ""
+msgstr "ავტომატური თავდაცვის გაჩერება"
 
 #: krightdialog.cpp:298
 #, kde-format
@@ -3168,7 +3207,7 @@ msgstr "სწორი"
 #: krightdialog.cpp:299
 #, kde-format
 msgid "Recycle"
-msgstr ""
+msgstr "გადადება"
 
 #: krightdialog.cpp:300
 #, kde-format
@@ -3179,8 +3218,8 @@ msgstr "დასრულებულია"
 #, kde-format
 msgid "%1 army to place"
 msgid_plural "%1 armies to place"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "მოსათავსებელია %1 არმია"
+msgstr[1] "მოსათავსებელია %1 არმია"
 
 #: krightdialog.cpp:375
 #, kde-format
@@ -3191,13 +3230,13 @@ msgstr ""
 #, kde-format
 msgid "1 army to place"
 msgid_plural "%1 armies to place"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "მოსათავსებელია 1 არმია"
+msgstr[1] "მოსათავსებელია %1 არმია"
 
 #: krightdialog.cpp:392
 #, kde-format
 msgid "<b>Armies:</b> %1"
-msgstr ""
+msgstr "<b>არმიები:</b> %1"
 
 #: krightdialog.cpp:471
 #, kde-format
@@ -3218,25 +3257,25 @@ msgstr "მორგება"
 #: ksirksettings.kcfg:9
 #, kde-format
 msgid "The sprites speed: slow, normal, quick, immediate"
-msgstr ""
+msgstr "სპრაიტების სიჩქარე: ნელი, ნორმალური, სწრაფი, მყისიერი"
 
 #. i18n: ectx: label, entry (soundEnabled), group (General)
 #: ksirksettings.kcfg:13
 #, kde-format
 msgid "If true, sounds are played; they are not otherwise."
-msgstr ""
+msgstr "თუ ჩართულია, ხმა დაიკვრება. თუ არა - არა."
 
 #. i18n: ectx: label, entry (helpEnabled), group (General)
 #: ksirksettings.kcfg:17
 #, kde-format
 msgid "If true, help is displayed; they are not otherwise."
-msgstr ""
+msgstr "თუ ჩართულია, დახმარებას გაჩვენებთ. თუ არა - არა."
 
 #. i18n: ectx: label, entry (showArmiesNumbers), group (General)
 #: ksirksettings.kcfg:21
 #, kde-format
 msgid "If true, the number of armies is displayed on each country."
-msgstr ""
+msgstr "თუ ჩართულია, თითოეული ქვეყნის თავზე არმების რაოდენობა გამოჩნდება."
 
 #. i18n: ectx: label, entry (Theme), group (General)
 #: ksirksettings.kcfg:25
@@ -3248,31 +3287,31 @@ msgstr "გრაფიკული თემა."
 #: ksirksettings.kcfg:28
 #, kde-format
 msgid "The last used Jabber Id."
-msgstr ""
+msgstr "ბოლოს გამოყენებული Jabber-ის ID."
 
 #. i18n: ectx: label, entry (jabberPassword), group (General)
 #: ksirksettings.kcfg:31
 #, kde-format
 msgid "The password of the last used Jabber Id."
-msgstr ""
+msgstr "ბოლოს გამოყენებული Jabber-ის ID-ის პაროლი."
 
 #. i18n: ectx: label, entry (roomJid), group (General)
 #: ksirksettings.kcfg:34
 #, kde-format
 msgid "The last used Jabber groupchat room."
-msgstr ""
+msgstr "ბოლოს გამოყენებული Jabber-ის ჯგუფური საუბრის ოთახი."
 
 #. i18n: ectx: label, entry (roomPassword), group (General)
 #: ksirksettings.kcfg:37
 #, kde-format
 msgid "The password for last used Jabber groupchat room."
-msgstr ""
+msgstr "ბოლოს გამოყენებული Jabber-ის ჯგუფური საუბრის ოთახის პაროლი."
 
 #. i18n: ectx: label, entry (nickname), group (General)
 #: ksirksettings.kcfg:40
 #, kde-format
 msgid "The nickname used in the last used Jabber groupchat room."
-msgstr ""
+msgstr "ბოლოს გამოყენებული Jabber-ის ჯგუფური საუბრის ოთახის მეტსახელი."
 
 #. i18n: ectx: Menu (game)
 #: ksirkui.rc:10
@@ -3301,12 +3340,12 @@ msgstr "ხელსაწყოთა მთავარი ზოლი"
 #: main.cpp:43
 #, kde-format
 msgid "KsirK - World Domination Strategy Game"
-msgstr ""
+msgstr "KsirK - სტრატეგიული თამაში მსოფლიო დომინაციისთვის"
 
 #: main.cpp:45
 #, kde-format
 msgid "(c) 2002-2015, Gaël de Chalendar\n"
-msgstr ""
+msgstr "(c) 2002-2015, Gaël de Chalendar\n"
 
 #: main.cpp:46
 #, kde-format
@@ -3314,6 +3353,8 @@ msgid ""
 "For help and user manual, please see\n"
 "the KsirK web site."
 msgstr ""
+"დახმარებისა და მომხმარებლის სახელმძღვანელოსთვის\n"
+"იხ. KsirK-ის ვებგვერდი."
 
 #: main.cpp:49
 #, kde-format
@@ -3348,7 +3389,7 @@ msgstr "Michal Golunski (პოლონური თარგმანი)"
 #: main.cpp:54
 #, kde-format
 msgid "French students of the 'IUP ISI 2007-2008':"
-msgstr ""
+msgstr "'IUP ISI 2007-2008'-ის ფრანგი სტუდენტები:"
 
 #: main.cpp:55
 #, kde-format
@@ -3358,11 +3399,15 @@ msgid ""
 "Pelouas<br/>&nbsp;&nbsp;Joël Marco<br/>&nbsp;&nbsp;Laurent Dang<br/>&nbsp;"
 "&nbsp;Nicolas Linard<br/>&nbsp;&nbsp;Vincent Sac"
 msgstr ""
+"&nbsp;&nbsp;Anthony Rey<br/>&nbsp;&nbsp;Benjamin Lucas<br/>&nbsp;&nbsp;"
+"Benjamin Moreau<br/>&nbsp;&nbsp;Gaël Clouet<br/>&nbsp;&nbsp;Guillaume "
+"Pelouas<br/>&nbsp;&nbsp;Joël Marco<br/>&nbsp;&nbsp;Laurent Dang<br/>&nbsp;"
+"&nbsp;Nicolas Linard<br/>&nbsp;&nbsp;Vincent Sac"
 
 #: mainMenu.cpp:37
 #, kde-format
 msgid "Play KsirK over Jabber Network"
-msgstr ""
+msgstr "ითამაშეთ KsirK Jabber-ის ქსელით"
 
 #. i18n: ectx: property (text), widget (QLabel, lTitle)
 #: mainMenu.ui:38
@@ -3380,7 +3425,7 @@ msgstr "ახალი ლოკალური თამაში"
 #: mainMenu.ui:111
 #, kde-format
 msgid "Join Standard TCP/IP Network Game"
-msgstr ""
+msgstr "სტანდარტულ TCP/IP ქსელურ თამაშთან მიერთება"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbLoad)
 #: mainMenu.ui:118
@@ -3410,7 +3455,7 @@ msgstr "ხმები ჩართულია"
 #: preferences.ui:51
 #, kde-format
 msgid "Sprites speed (slow, normal, rapid, immediate):"
-msgstr ""
+msgstr "სპრაიტების სიჩქარე (ნელი, ნორმალური, სწრაფი, მყისიერი):"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_helpEnabled)
 #: preferences.ui:95
@@ -3422,12 +3467,12 @@ msgstr "დახმარების ჩვენება"
 #: preferences.ui:102
 #, kde-format
 msgid "Show number of armies on countries"
-msgstr ""
+msgstr "თითოეულ ქვეყანაში განთავსებული არმიების რაოდენობის ჩვენება"
 
 #: SaveLoad/ksirkgamexmlhandler.cpp:58
 #, kde-format
 msgid "Wrong save game format. Waited %1 and got %2!"
-msgstr ""
+msgstr "არასწორი შენახული თამაშის ფორმატი. მოველოდი %1-ს და მივიღე %2!"
 
 #: SaveLoad/ksirkgamexmlhandler.cpp:59
 #, kde-format
@@ -3452,22 +3497,22 @@ msgstr "KsirK - შეცდომა"
 #: Sprites/animsprite.cpp:511
 #, kde-format
 msgid "Cannot find Max X for sprite: no background!"
-msgstr ""
+msgstr "სპრაიტისთვის მაქს. X-ის პოვნა შეუძლებელია: ფონის გარეშე!"
 
 #: Sprites/animsprite.cpp:526
 #, kde-format
 msgid "Cannot find Max Y for sprite: no background!"
-msgstr ""
+msgstr "სპრაიტისთვის მაქს. Y-ის პოვნა შეუძლებელია: ფონის გარეშე!"
 
 #: Sprites/skinSpritesData.cpp:88
 #, kde-format
 msgid "Error - Unknown skin int data: "
-msgstr ""
+msgstr "შეცდომა - სკინის მთელი რიცხვები უცნობია: "
 
 #: Sprites/skinSpritesData.cpp:104
 #, kde-format
 msgid "Error - Unknown skin string data: "
-msgstr ""
+msgstr "შეცდომა - სკინის სტრიქონები უცნობია: "
 
 #~ msgid "Overwrite file?"
 #~ msgstr "ჩავანაცვლო ფაილი?"

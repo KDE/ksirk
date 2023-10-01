@@ -591,7 +591,7 @@ revision history. (see installation appendix comment) -->
           <row>
             <entry
 ><literal
->bonus</literal
+>bonificació</literal
 ></entry>
             <entry
 >El nombre de batallons obtinguts al final del torn pel jugador que posseeixi tots els països del continent.</entry>
@@ -637,7 +637,7 @@ revision history. (see installation appendix comment) -->
 >type</literal
 ></entry>
             <entry
->El tipus d'objectiu. Pot ser continents, països o jugador.</entry>
+>El tipus d'objectiu. Pot ser un continent, país o jugador.</entry>
           </row>
           <row>
             <entry

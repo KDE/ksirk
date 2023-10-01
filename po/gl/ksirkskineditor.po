@@ -2012,7 +2012,7 @@ msgstr "ficheiro para abrir"
 #: mainwindow.cpp:126 mainwindow.cpp:676 mainwindow.cpp:804 mainwindow.cpp:1191
 #, kde-format
 msgid "Cannot load anchor icon<br>Program cannot continue"
-msgstr "Non se pode abrir a icona da áncora<br>O programa non pode continuar"
+msgstr "Non é posíbel abrir a icona da áncora<br>O programa non pode continuar"
 
 #: mainwindow.cpp:126 mainwindow.cpp:140 mainwindow.cpp:676 mainwindow.cpp:705
 #: mainwindow.cpp:804 mainwindow.cpp:821 mainwindow.cpp:1191 onu.cpp:79
@@ -2024,7 +2024,7 @@ msgstr "Erro"
 #: mainwindow.cpp:140 mainwindow.cpp:705 mainwindow.cpp:821
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
-msgstr "Non se pode abrir a icona do centro<br>O programa non pode continuar"
+msgstr "Non é posíbel abrir a icona do centro<br>O programa non pode continuar"
 
 #: mainwindow.cpp:323
 #, kde-format
@@ -2160,7 +2160,7 @@ msgid ""
 "Pool filename not found\n"
 "Program cannot continue"
 msgstr ""
-"Non se pode atopar o nome do depósito\n"
+"Non é posíbel atopar o nome do depósito\n"
 "O programa non pode continuar"
 
 #: onu.cpp:130
@@ -2169,7 +2169,7 @@ msgid ""
 "Map mask image not found\n"
 "Program cannot continue"
 msgstr ""
-"Non se pode atopar o nome da imaxe da máscara do mapa\n"
+"Non é posíbel atopar o nome da imaxe da máscara do mapa\n"
 "O programa non pode continuar"
 
 #: onu.cpp:989
@@ -2178,7 +2178,7 @@ msgid ""
 "Cannot read file %1:\n"
 "%2."
 msgstr ""
-"Non se pode ler o ficheiro %1:\n"
+"Non é posíbel ler o ficheiro %1:\n"
 "%2."
 
 # well-spelled: CargadorDeFondo
