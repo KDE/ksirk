@@ -11,6 +11,7 @@
   <name xml:lang="en-GB">KsirK</name>
   <name xml:lang="eo">KsirK</name>
   <name xml:lang="es">KsirK</name>
+  <name xml:lang="eu">KsirK</name>
   <name xml:lang="fi">KsirK</name>
   <name xml:lang="fr">KsirK</name>
   <name xml:lang="gl">KsirK</name>
@@ -39,6 +40,7 @@
   <summary xml:lang="eo">Mondrega Strategiludo</summary>
   <summary xml:lang="es">Juego de estrategia de dominación del mundo</summary>
   <summary xml:lang="et">Maailma vallutamise strateegiamäng</summary>
+  <summary xml:lang="eu">Mundua menderatzeko estrategia jokoa</summary>
   <summary xml:lang="fi">Strateginen maailmanvalloituspeli</summary>
   <summary xml:lang="fr">Jeu de stratégie pour la conquête du monde</summary>
   <summary xml:lang="gl">Xogo de estratexia e dominación mundial</summary>
@@ -75,6 +77,7 @@
     <p xml:lang="eo">KsirK estas komputilizita versio de la konata strategia tabulludo Risk. La celo de la ludo estas simple konkeri la mondon atakante viajn najbarojn per viaj armeoj.</p>
     <p xml:lang="es">KsirK es una versión informatizada del conocido juego de estrategia Risk. El objetivo del juego es conquistar el mundo usando ejércitos para atacar a los vecinos.</p>
     <p xml:lang="et">KsirK  on tuntud strateegilise lauamängu Risk arvutisse üle kantud versioon. Mängu siht on lihtne: vallutada terve maailm, rünnates naabreid oma sõjaväega.</p>
+    <p xml:lang="eu">KsirkK, Risk mahai gaineko estrategia joko ezagunaren ordenagailurako bertsioa da. Jokoaren helburua, zure armadekin zure bizilagunei eraso eginez mundua konkistatzea besterik ez da.</p>
     <p xml:lang="fi">KSirK on tietokoneistettu versio tunnetusta Risk-strategialautapelistä. Tavoitteena on yksinkertaisesti vallata maailma hyökkäämällä armeijoinesi naapurien kimppuun.</p>
     <p xml:lang="fr">KsirK est une version informatisée du célèbre jeu de stratégie Risk. L'objectif du jeu est de conquérir le monde en attaquant vos voisins avec vos armées.</p>
     <p xml:lang="gl">KsirK é unha versión de computador do ben coñecido xogo estratéxico de taboleiro Risk. o obxectivo do xogo O obxectivo do xogo é simplemente conquistar o mundo atacando aos veciños cos teus exércitos.</p>
@@ -106,6 +109,7 @@
     <p xml:lang="eo">Trajto:</p>
     <p xml:lang="es">Funciones:</p>
     <p xml:lang="et">Omadused:</p>
+    <p xml:lang="eu">Ezaugarriak:</p>
     <p xml:lang="fi">Ominaisuudet:</p>
     <p xml:lang="fr">Fonctionnalités :</p>
     <p xml:lang="gl">Funcionalidades:</p>
@@ -140,6 +144,7 @@
       <li xml:lang="eo">Subteno por 1-6 homaj aŭ komputilaj (AI) ludantoj</li>
       <li xml:lang="es">Permite de 1 a 6 jugadores humanos o de la computadora (IA)</li>
       <li xml:lang="et">1-6 inimesest või arvutist mängija toetus</li>
+      <li xml:lang="eu">1-6 giza edo ordenagailu (AA) jokalari onartzen ditu</li>
       <li xml:lang="fi">1–6 ihmis- tai tietokonepelaajaa</li>
       <li xml:lang="fr">De 1 à 6 joueurs humains ou intelligences artificielles</li>
       <li xml:lang="gl">Permite entre 1 e 6 xogadores, humanos ou do computador (intelixencia artificial).</li>
@@ -171,6 +176,7 @@
       <li xml:lang="eo">Purludanta ludado tra reto</li>
       <li xml:lang="es">Juego multijugador a través de una red</li>
       <li xml:lang="et">Mitme mängijaga mängu võimalus üle võrgu</li>
+      <li xml:lang="eu">Jokalari anitzeko jokoak sare bidez</li>
       <li xml:lang="fi">Monen pelaajan verkkopelit</li>
       <li xml:lang="fr">Jeu multi-joueurs en réseau</li>
       <li xml:lang="gl">Permite a varias persoas xogar xuntas a través dunha rede.</li>
@@ -201,6 +207,7 @@
       <li xml:lang="eo">Vi povas facile krei novajn haŭtojn kun SVG-grafikoj kaj la etosredaktilo</li>
       <li xml:lang="es">Se pueden crear nuevas pieles fácilmente con gráficos SVG y el editor de pieles</li>
       <li xml:lang="et">Uute nahkade hõlpus loomine SVG-graafikast naharedaktoris</li>
+      <li xml:lang="eu">Azal berriak erraz sor ditzakezu SVG grafikoekin eta azal editorearekin</li>
       <li xml:lang="fi">Voit helposti luoda uusia teemoja SVG-grafiikalla ja teemamuokkaimella</li>
       <li xml:lang="fr">Vous pouvez créer facilement de nouveaux thèmes en utilisant des graphiques SVG et l'éditeur de thèmes</li>
       <li xml:lang="gl">Podes crear facilmente novos temas con gráficos SVG e o editor de temas.</li>
@@ -231,6 +238,7 @@
       <li xml:lang="eo">Subteno por 'Hot New Stuff'. Vi povas facile elŝuti kaj instali novajn haŭtojn</li>
       <li xml:lang="es">Se pueden descargar e instalar nuevas pieles con facilidad</li>
       <li xml:lang="et">Uue kuuma kraami toetus. Uute nahkade allalaadimine ja paigaldamine on imelihtne</li>
+      <li xml:lang="eu">Berrikuntzak eskuratzeko euskarria. Azal berriak erraz zama-jaitsi eta instala ditzakezu</li>
       <li xml:lang="fi">Teemojen verkkopäivitystuki. Voit helposti ladata ja asentaa uusia teemoja</li>
       <li xml:lang="fr">Obtenir les dernières nouveautés. Vous pouvez facilement télécharger et installer de nouveaux thèmes.</li>
       <li xml:lang="gl">Compatibilidade con Hot New Stuff. Podes descargar e instalar novos temas facilmente.</li>
