@@ -85,7 +85,7 @@ void KGameWindow::mouseMoveEvent ( QMouseEvent * event )
   {
     return;
   }
-  mousePosGlobal = event->globalPos();
+  mousePosGlobal = event->globalPosition().toPoint();
   mousePos = m_frame->mapFromGlobal(mousePosGlobal);
   mousePosition = m_frame->mapToScene(mousePos);
   mouseLocalisation = clickIn(mousePosition);
