@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-30 01:41+0000\n"
-"PO-Revision-Date: 2023-09-30 12:42+0200\n"
+"PO-Revision-Date: 2023-10-01 15:37+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -400,6 +400,13 @@ msgid ""
 "This value will be automatically updated if you move the highlighting by "
 "dragging and dropping its cross icon."
 msgstr ""
+"გამოკვეთის Y კოორდინატის ცენტრი\n"
+"\n"
+"ეს მოცემულია რუკის ზედა მარცხენა კუთხესთან შეარებით, ზომა კი, როგორც მთავარი "
+"სკინის აღწერის ვიჯეტშია მითითებული.\n"
+"\n"
+"ეს მნიშვნელობა ავტომატურად განახლდება, თუ გამოკვეთას გადააადგილებთ, მისი "
+"ჯვრის ხატულის გადათრევით და დაგდებით."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, anchorx)
 #: ksirkcountrydefinition.ui:282
@@ -419,6 +426,13 @@ msgid ""
 "This value will be automatically updated if you move the highlighting by "
 "dragging and dropping its cross icon."
 msgstr ""
+"გამოკვეთის X კოორდინატის ცენტრი\n"
+"\n"
+"ეს მოცემულია რუკის ზედა მარცხენა კუთხესთან შეარებით, ზომა კი, როგორც მთავარი "
+"სკინის აღწერის ვიჯეტშია მითითებული.\n"
+"\n"
+"ეს მნიშვნელობა ავტომატურად განახლდება, თუ გამოკვეთას გადააადგილებთ, მისი "
+"ჯვრის ხატულის გადათრევით და დაგდებით."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagy)
 #: ksirkcountrydefinition.ui:299
@@ -548,6 +562,8 @@ msgid ""
 "<p>Eliminate a given player. If it is eliminated by another one, you will "
 "fall back to a <emphasis>Countries</emphasis> type of goal.</p>"
 msgstr ""
+"<p>გაანადგურეთ მითითებული მოთამაშე. თუ მას სხვა გაანადგურებს, თქვენ "
+"<emphasis>ქვეყნების</emphasis> ტიპის მიზანზე გადაერთვებით.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, playertype)
 #: ksirkgoaldefinition.ui:60
@@ -570,6 +586,10 @@ msgid ""
 "You can also make the player to have to put a given number of armies on each "
 "country."
 msgstr ""
+"დაიპყარით მითითებული რაოდენობის ქვეყანა.\n"
+"\n"
+"ასევე დარწმუნდით, რომ მოთამაშემ თითოეულ ქვეყნაში, მითითებული რაოდენობის "
+"არმია განათავსოს."
 
 #. i18n: ectx: property (text), widget (QRadioButton, countriestype)
 #. i18n: ectx: attribute (title), widget (QWidget, tabCountries)
@@ -591,6 +611,8 @@ msgid ""
 "Conquer a given list of continents. You can also let the player choose one "
 "of their target continents."
 msgstr ""
+"დაიპყარით ჩამოთვლილი კონტინენტები. ასევე, შეგიძლიათ, მოთამაშეს მისცეთ "
+"სამიზნე კონტინენტების დაპყრობის უფლება."
 
 #. i18n: ectx: property (text), widget (QRadioButton, continentstype)
 #. i18n: ectx: attribute (title), widget (QWidget, tabContinents)

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-30 01:41+0000\n"
-"PO-Revision-Date: 2023-09-30 16:28+0200\n"
+"PO-Revision-Date: 2023-10-02 00:11+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -71,6 +71,14 @@ msgid ""
 "The bonus should be proportional to the continent's size and to the "
 "difficulty to conquer it or to keep it."
 msgstr ""
+"Kontinentearen jabe izatean jasotako sari-puntu kopurua.\n"
+"\n"
+"Txanda bakoitzaren amaieran, jokalari bakoitzari armada kopurua bat banatzen "
+"zaio. Jokalari batek kontinente horretako herrialde guztien jabea bada, sari "
+"hori berak irabaziko du.\n"
+"\n"
+"Saria, kontinentearen neurriarekiko eta hura konkistatzeko edo mantentzeko "
+"zailtasunarekiko proportzionala izan beharko litzateke."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:48
@@ -87,6 +95,10 @@ msgid ""
 "A list of all the world's countries will be shown and you will be able to "
 "select the countries using the mouse and the Ctrl and Shift keys."
 msgstr ""
+"Egin klik hemen, kontinente horrek dituen herrialdeak aukeratzeko.\n"
+"\n"
+"Munduko herrialde guztien zerrenda bat erakutsiko da eta herrialdeak sagua "
+"eta Ktrl eta Maius. teklak erabiliz aukeratu ahal izango dituzu."
 
 #. i18n: ectx: property (text), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:56
@@ -154,7 +166,7 @@ msgstr "Infanteria:"
 #: ksirkcountrydefinition.ui:80
 #, kde-format
 msgid "Infantry's sprite top left point x-coordinate"
-msgstr "Infanteriako iratxoaren goi-ezker puntuaren x koordenatua"
+msgstr "Infanteriako iratxoaren goiko ezkerreko puntuaren x koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryx)
 #: ksirkcountrydefinition.ui:87
@@ -167,6 +179,12 @@ msgid ""
 "\n"
 "This value will be automatically updated if you move the infantry."
 msgstr ""
+"Infanteriako iratxoaren goiko ezkerreko puntuaren x koordenatua.\n"
+"\n"
+"Hori, maparen goi ezkerrarekiko erlatiboa da, neurria, azal nagusiaren "
+"definizio trepetan definitutakoaren araberakoa.\n"
+"\n"
+"Balio hori automatikoki eguneratutako da infanteria mugitzen baduzu."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryy)
 #: ksirkcountrydefinition.ui:107
@@ -186,6 +204,12 @@ msgid ""
 "This value will be automatically updated if you move the infantry by drag "
 "and drop."
 msgstr ""
+"Infanteriako iratxoaren goiko ezkerreko puntuaren y koordenatua.\n"
+"\n"
+"Hori, maparen goi ezkerrarekiko erlatiboa da, neurria, azal nagusiaren "
+"definizio trepetan definitutakoaren araberakoa.\n"
+"\n"
+"Balio hori automatikoki eguneratutako da infanteria mugitzen baduzu."
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: ksirkcountrydefinition.ui:124
@@ -197,7 +221,7 @@ msgstr "Zalditeria:"
 #: ksirkcountrydefinition.ui:131
 #, kde-format
 msgid "Cavalry's sprite top left point x-coordinate"
-msgstr "Zalditeriako iratxoaren goi-ezker puntuaren x koordenatua"
+msgstr "Zalditeriako iratxoaren goiko ezkerreko puntuaren x koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryx)
 #: ksirkcountrydefinition.ui:138
@@ -210,6 +234,12 @@ msgid ""
 "\n"
 "This value will be automatically updated if you move the cavalry."
 msgstr ""
+"Zalditeriako iratxoaren goiko ezkerreko puntuaren x koordenatua.\n"
+"\n"
+"Hori, maparen goi ezkerrarekiko erlatiboa da, neurria, azal nagusiaren "
+"definizio trepetan definitutakoaren araberakoa.\n"
+"\n"
+"Balio hori automatikoki eguneratutako da infanteria mugitzen baduzu."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryy)
 #: ksirkcountrydefinition.ui:158
@@ -229,6 +259,12 @@ msgid ""
 "This value will be automatically updated if you move the cavalry by drag and "
 "drop."
 msgstr ""
+"Zalditeriako iratxoaren goiko ezkerreko puntuaren y koordenatua.\n"
+"\n"
+"Hori, maparen goi ezkerrarekiko erlatiboa da, neurria, azal nagusiaren "
+"definizio trepetan definitutakoaren araberakoa.\n"
+"\n"
+"Balio hori automatikoki eguneratutako da infanteria mugitzen baduzu."
 
 #. i18n: ectx: property (text), widget (QLabel, label_12)
 #: ksirkcountrydefinition.ui:175
@@ -254,12 +290,18 @@ msgid ""
 "This value will be automatically updated if you move the cannon by drag and "
 "drop."
 msgstr ""
+"Kanoiaren iratxoaren goiko ezkerreko puntuaren y koordenatua.\n"
+"\n"
+"Hori, maparen goi ezkerrarekiko erlatiboa da, neurria, azal nagusiaren "
+"definizio trepetan definitutakoaren araberakoa.\n"
+"\n"
+"Balio hori automatikoki eguneratutako da infanteria mugitzen baduzu."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonx)
 #: ksirkcountrydefinition.ui:209
 #, kde-format
 msgid "Cannon's sprite top left point x-coordinate"
-msgstr "Kanoiaren iratxoaren goi-ezker puntuaren x koordenatua"
+msgstr "Kanoiaren iratxoaren goiko ezkerreko puntuaren x koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonx)
 #: ksirkcountrydefinition.ui:216
@@ -272,6 +314,12 @@ msgid ""
 "\n"
 "This value will be automatically updated if you move the cannon."
 msgstr ""
+"Kanoiaren iratxoaren goiko ezkerreko puntuaren x koordenatua.\n"
+"\n"
+"Hori, maparen goi ezkerrarekiko erlatiboa da, neurria, azal nagusiaren "
+"definizio trepetan definitutakoaren araberakoa.\n"
+"\n"
+"Balio hori automatikoki eguneratutako da infanteria mugitzen baduzu."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, centery)
 #: ksirkcountrydefinition.ui:226
@@ -373,12 +421,18 @@ msgid ""
 "This value will be automatically updated if you move the flag by drag and "
 "drop."
 msgstr ""
+"Banderaren iratxoaren goiko ezkerreko puntuaren y koordenatua.\n"
+"\n"
+"Hori, maparen goi ezkerrarekiko erlatiboa da, neurria, azal nagusiaren "
+"definizio trepetan definitutakoaren araberakoa.\n"
+"\n"
+"Balio hori automatikoki eguneratutako da infanteria mugitzen baduzu."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagx)
 #: ksirkcountrydefinition.ui:316
 #, kde-format
 msgid "Flag's sprite top left point x-coordinate"
-msgstr "Banderaren iratxoaren goi-ezker puntuaren y koordenatua"
+msgstr "Banderaren iratxoaren goiko ezkerreko puntuaren x koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagx)
 #: ksirkcountrydefinition.ui:323
@@ -392,6 +446,12 @@ msgid ""
 "This value will be automatically updated if you move the flag by drag and "
 "drop."
 msgstr ""
+"Banderaren iratxoaren goiko ezkerreko puntuaren x koordenatua.\n"
+"\n"
+"Hori, maparen goi ezkerrarekiko erlatiboa da, neurria, azal nagusiaren "
+"definizio trepetan definitutakoaren araberakoa.\n"
+"\n"
+"Balio hori automatikoki eguneratutako da infanteria mugitzen baduzu."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, neighboursbutton)
 #: ksirkcountrydefinition.ui:335
@@ -410,8 +470,8 @@ msgid ""
 msgstr ""
 "Egin klik hemen herrialde horren mugakideak aukeratzeko.\n"
 "\n"
-"Munduko herrialdeen zerrenda bat erakutsiko da eta herrialdeak sagua eta "
-"Ktrl eta Maius. teklak erabiliz aukeratu ahal izango dituzu."
+"Munduko herrialde guztien zerrenda bat erakutsiko da eta herrialdeak sagua "
+"eta Ktrl eta Maius. teklak erabiliz aukeratu ahal izango dituzu."
 
 #. i18n: ectx: property (text), widget (QPushButton, neighboursbutton)
 #: ksirkcountrydefinition.ui:343
