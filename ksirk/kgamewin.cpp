@@ -353,14 +353,14 @@ void KGameWindow::initActions()
   QAction *action;
 
   // standard game actions
-  action = KStandardGameAction::gameNew(this, SLOT(slotNewGame()), this);
+  action = KStandardGameAction::gameNew(this, &KGameWindow::slotNewGame, this);
   actionCollection()->addAction(action->objectName(), action);
-  action = KStandardGameAction::load(this, SLOT(slotOpenGame()), this);
+  action = KStandardGameAction::load(this, &KGameWindow::slotOpenGame, this);
   actionCollection()->addAction(action->objectName(), action);
-  m_saveGameAction = KStandardGameAction::save(this, SLOT(slotSaveGame()), this);
+  m_saveGameAction = KStandardGameAction::save(this, &KGameWindow::slotSaveGame, this);
   m_saveGameAction->setEnabled(false);
   actionCollection()->addAction(m_saveGameAction->objectName(), m_saveGameAction);
-  action = KStandardGameAction::quit(this, SLOT(close()), this);
+  action = KStandardGameAction::quit(this, &KGameWindow::close, this);
   actionCollection()->addAction(action->objectName(), action);
 
   m_zoomInAction = KStandardAction::zoomIn(this, SLOT(slotZoomIn()), this);

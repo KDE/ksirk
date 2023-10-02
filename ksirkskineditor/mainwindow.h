@@ -133,7 +133,7 @@ private Q_SLOTS:
   void slotItemPressed(QGraphicsItem*, const QPointF&);
   void slotItemPlaced(QGraphicsItem*, const QPointF&);
   
-  void slotOpenSkin(const QString& dir = QString());
+  void slotOpenSkin();
   void slotSaveSkin();
 
   void slotURLSelected(const QUrl&);
@@ -228,6 +228,7 @@ private Q_SLOTS:
 private:
   void initSpritesButtonsWith(const Country* country);
     
+  void openSkin(const QString& skinDir);
   void initContinentWidgetWith(Continent* continent);
   void initGoalWidgetWith(Goal* continent);
   void initNationalityWidgetWith(Nationality* nationality);

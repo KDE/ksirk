@@ -56,7 +56,7 @@ DecoratedGameFrame::DecoratedGameFrame(QWidget* parent,
   updateGeometry(); 
   setMouseTracking(true);
 
-  QuitAction = KStandardGameAction::quit(m_automaton->game(), SLOT(close()), this);
+  QuitAction = KStandardGameAction::quit(m_automaton->game(), &KGameWindow::close, this);
   
   initMenu ();
   initAttackMenu();
@@ -87,11 +87,11 @@ void DecoratedGameFrame::initMenu ()
 {
   menu = new QMenu(this);
     
-  QAction* newAction = KStandardGameAction::gameNew(m_automaton->game(), SLOT(slotNewGame()), this);
+  QAction* newAction = KStandardGameAction::gameNew(m_automaton->game(), &KGameWindow::slotNewGame, this);
   
-  QAction* openAction = KStandardGameAction::load(m_automaton->game(), SLOT(slotOpenGame()), this);
+  QAction* openAction = KStandardGameAction::load(m_automaton->game(), &KGameWindow::slotOpenGame, this);
   
-  QAction* saveAction = KStandardGameAction::save(m_automaton->game(), SLOT(slotSaveGame()), this);
+  QAction* saveAction = KStandardGameAction::save(m_automaton->game(), &KGameWindow::slotSaveGame, this);
   
   QAction* zoomInAction = KStandardAction::zoomIn(m_automaton->game(), SLOT(slotZoomIn()), this);
   

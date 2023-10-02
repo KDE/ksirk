@@ -318,11 +318,11 @@ void MainWindow::initActions()
 {
   QAction *action;
   // standard game actions
-  action = KStandardGameAction::load(this, SLOT(slotOpenSkin()), this);
+  action = KStandardGameAction::load(this, &MainWindow::slotOpenSkin, this);
   actionCollection()->addAction(action->objectName(), action);
   action->setToolTip(i18n("Open a saved skin..."));
 
-  m_rfa = KStandardGameAction::loadRecent (this, SLOT(slotURLSelected(QUrl)), this);
+  m_rfa = KStandardGameAction::loadRecent (this, &MainWindow::slotURLSelected, this);
   actionCollection()->addAction(m_rfa->objectName(), m_rfa);
   m_rfa->setText(i18n("Load &Recent"));
   m_rfa->setToolTip(i18n("Open a recently saved skin..."));
@@ -331,14 +331,14 @@ void MainWindow::initActions()
   qCDebug(KSIRKSKINEDITOR_LOG) << "loading recent files";
   m_rfa->loadEntries(KSharedConfig::openConfig()->group("ksirkskineditor"));
   
-  m_saveGameAction = KStandardGameAction::save(this, SLOT(slotSaveSkin()), this);
+  m_saveGameAction = KStandardGameAction::save(this, &MainWindow::slotSaveSkin, this);
   actionCollection()->addAction(m_saveGameAction->objectName(), m_saveGameAction);
   m_saveGameAction->setToolTip(i18n("Save the current skin"));
 
-  action = KStandardGameAction::quit(this, SLOT(close()), this);
+  action = KStandardGameAction::quit(this, &MainWindow::close, this);
   actionCollection()->addAction(action->objectName(), action);
 
-//   action = KStandardGameAction::gameNew(this, SLOT(slotNewGame()), this);
+//   action = KStandardGameAction::gameNew(this, &MainWindow::slotNewGame, this);
 //   actionCollection()->addAction(action->objectName(), action);
 
 //   action = KStandardAction::zoomIn(this, SLOT(slotZoomIn()), this);
@@ -356,19 +356,20 @@ void MainWindow::initStatusBar()
   statusBar()-> setSizeGripEnabled(true);
 }
 
-void MainWindow::slotOpenSkin(const QString& dir)
+void MainWindow::slotOpenSkin()
 {
-  qCDebug(KSIRKSKINEDITOR_LOG) << dir;
-  QString skinDir = dir;
-  if (dir.isNull())
-  {
-    skinDir = QFileDialog::getExistingDirectory(this, i18nc("@title:window", "Choose the Root Folder of the Skin to Open"), QString());
-  }
+  const QString skinDir = QFileDialog::getExistingDirectory(this, i18nc("@title:window", "Choose the Root Folder of the Skin to Open"), QString());
   if (skinDir.isEmpty())
   {
     return;
   }
 
+  openSkin(skinDir);
+}
+
+void MainWindow::openSkin(const QString& skinDir)
+{
+  qCDebug(KSIRKSKINEDITOR_LOG) << skinDir;
   if (m_rfa != nullptr)
   {
     qCDebug(KSIRKSKINEDITOR_LOG) << "Adding" << skinDir << "to recent files";
@@ -1238,7 +1239,7 @@ void MainWindow::slotURLSelected(const QUrl &url)
   if ( url.isLocalFile() )
   {
     QString path = url.path();
-    slotOpenSkin(path);
+    openSkin(path);
   }
 }
 
