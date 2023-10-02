@@ -341,13 +341,13 @@ void MainWindow::initActions()
 //   action = KStandardGameAction::gameNew(this, &MainWindow::slotNewGame, this);
 //   actionCollection()->addAction(action->objectName(), action);
 
-//   action = KStandardAction::zoomIn(this, SLOT(slotZoomIn()), this);
+//   action = KStandardAction::zoomIn(this, &MainWindow::slotZoomIn, this);
 //   actionCollection()->addAction(action->objectName(), action);
 
-//   action = KStandardAction::zoomOut(this, SLOT(slotZoomOut()), this);
+//   action = KStandardAction::zoomOut(this, &MainWindow::slotZoomOut, this);
 //   actionCollection()->addAction(action->objectName(), action);
 
-  KStandardAction::preferences( this, SLOT(optionsConfigure()), actionCollection() );
+  KStandardAction::preferences( this, &MainWindow::optionsConfigure, actionCollection() );
 
 }
 

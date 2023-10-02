@@ -363,15 +363,15 @@ void KGameWindow::initActions()
   action = KStandardGameAction::quit(this, &KGameWindow::close, this);
   actionCollection()->addAction(action->objectName(), action);
 
-  m_zoomInAction = KStandardAction::zoomIn(this, SLOT(slotZoomIn()), this);
+  m_zoomInAction = KStandardAction::zoomIn(this, &KGameWindow::slotZoomIn, this);
   m_zoomInAction->setEnabled(false);
   actionCollection()->addAction(m_zoomInAction->objectName(), m_zoomInAction);
 
-  m_zoomOutAction = KStandardAction::zoomOut(this, SLOT(slotZoomOut()), this);
+  m_zoomOutAction = KStandardAction::zoomOut(this, &KGameWindow::slotZoomOut, this);
   m_zoomOutAction->setEnabled(false);
   actionCollection()->addAction(m_zoomOutAction->objectName(), m_zoomOutAction);
 
-  KStandardAction::preferences( this, SLOT(optionsConfigure()), actionCollection() );
+  KStandardAction::preferences( this, &KGameWindow::optionsConfigure, actionCollection() );
 
   QString imageFileName;
 #if HAVE_JABBER_SUPPORT

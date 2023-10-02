@@ -93,9 +93,9 @@ void DecoratedGameFrame::initMenu ()
   
   QAction* saveAction = KStandardGameAction::save(m_automaton->game(), &KGameWindow::slotSaveGame, this);
   
-  QAction* zoomInAction = KStandardAction::zoomIn(m_automaton->game(), SLOT(slotZoomIn()), this);
+  QAction* zoomInAction = KStandardAction::zoomIn(m_automaton->game(), &KGameWindow::slotZoomIn, this);
   
-  QAction* zoomOutAction = KStandardAction::zoomOut(m_automaton->game(), SLOT(slotZoomOut()), this);
+  QAction* zoomOutAction = KStandardAction::zoomOut(m_automaton->game(), &KGameWindow::slotZoomOut, this);
 
   nextPlayer =   new QAction(i18n("Next Player"), this);
   connect(nextPlayer, &QAction::triggered, m_automaton->game(), &KGameWindow::slotNextPlayer);
