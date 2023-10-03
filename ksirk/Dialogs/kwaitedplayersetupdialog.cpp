@@ -19,7 +19,7 @@
  *   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
  *   02110-1301, USA
  ***************************************************************************/
-#define KDE_NO_COMPAT
+
 #include "kwaitedplayersetupdialog.h"
 #include "GameLogic/gameautomaton.h"
 #include "kgamewin.h"

@@ -19,7 +19,6 @@
 
 /*  begin                : Wed Jul 18 2001 */
 
-#define KDE_NO_COMPAT
 #include "player.h"
 #include "Sprites/backgnd.h"
 #include "Sprites/skinSpritesData.h"

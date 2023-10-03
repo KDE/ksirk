@@ -17,8 +17,6 @@
    02110-1301, USA
 */
 
-#define KDE_NO_COMPAT
-
 #ifndef KSIRK_COUNTRY_H
 #define KSIRK_COUNTRY_H
 

@@ -19,7 +19,6 @@
 
 /* begin                : Wed Jul 18 2001 */
 
-#define KDE_NO_COMPAT
 #include "country.h"
 #include "player.h"
 #include "Sprites/backgnd.h"

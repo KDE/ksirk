@@ -23,7 +23,6 @@
 #include "Sprites/skinSpritesData.h"
 #include "goal.h"
 
-#define KDE_NO_COMPAT
 #include <QFile>
 #include <qdom.h>
 #include <QPainter>

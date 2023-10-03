@@ -20,7 +20,6 @@
  *   02110-1301, USA
  ***************************************************************************/
  
-#define KDE_NO_COMPAT
 #include "backgnd.h"
 #include "GameLogic/onu.h"
 

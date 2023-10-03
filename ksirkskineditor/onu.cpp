@@ -24,7 +24,6 @@
 #include "goal.h"
 #include "../ksirk/KsirkGlobalDefinitions.h"
 
-#define KDE_NO_COMPAT
 #include <QFile>
 // #include <QDom>
 #include <QPainter>

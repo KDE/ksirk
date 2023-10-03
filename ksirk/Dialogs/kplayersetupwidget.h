@@ -19,8 +19,6 @@
  *   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
  *   02110-1301, USA
  ***************************************************************************/
-#define KDE_NO_COMPAT
-
 
 #ifndef KPLAYERSETUPWIDGET_H
 #define KPLAYERSETUPWIDGET_H

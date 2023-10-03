@@ -18,7 +18,6 @@
 */
 
 /*  begin                : Wed Jul 18 2001 */
-#define KDE_NO_COMPAT
 
 #ifndef PLAYER_H
 #define PLAYER_H
