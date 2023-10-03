@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-30 01:41+0000\n"
+"POT-Creation-Date: 2023-10-03 01:38+0000\n"
 "PO-Revision-Date: 2010-04-24 13:57+0300\n"
 "Last-Translator: Einars Sprugis <einars8@gmail.com>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
@@ -2007,19 +2007,19 @@ msgstr "Gael de Chalendar aka Kleag"
 msgid "file to open"
 msgstr "atveramais fails"
 
-#: mainwindow.cpp:126 mainwindow.cpp:676 mainwindow.cpp:804 mainwindow.cpp:1191
+#: mainwindow.cpp:126 mainwindow.cpp:677 mainwindow.cpp:805 mainwindow.cpp:1192
 #, kde-format
 msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr "Neizdevās ielādēt enkura ikonu<br>Programma nevar turpināt"
 
-#: mainwindow.cpp:126 mainwindow.cpp:140 mainwindow.cpp:676 mainwindow.cpp:705
-#: mainwindow.cpp:804 mainwindow.cpp:821 mainwindow.cpp:1191 onu.cpp:79
+#: mainwindow.cpp:126 mainwindow.cpp:140 mainwindow.cpp:677 mainwindow.cpp:706
+#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:79
 #: onu.cpp:112 onu.cpp:131
 #, kde-format
 msgid "Error"
 msgstr "Kļūda"
 
-#: mainwindow.cpp:140 mainwindow.cpp:705 mainwindow.cpp:821
+#: mainwindow.cpp:140 mainwindow.cpp:706 mainwindow.cpp:822
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
 msgstr "Neizdevās ielādēt centra ikonu<br>Programma nevar turpināt"
@@ -2044,104 +2044,104 @@ msgstr "Atvērt nesen saglabātu apdari..."
 msgid "Save the current skin"
 msgstr "Saglabāt pašreizējo apdari"
 
-#: mainwindow.cpp:365
+#: mainwindow.cpp:361
 #, fuzzy, kde-format
 #| msgid "Choose the root folder of the skin to open"
 msgctxt "@title:window"
 msgid "Choose the Root Folder of the Skin to Open"
 msgstr "Izvēlēties atveramās apdares saknes mapi"
 
-#: mainwindow.cpp:524
+#: mainwindow.cpp:525
 #, kde-format
 msgid "There are unsaved changes. What do you want to do?"
 msgstr "Ir nesaglabātas izmaiņas. Ko vēlies darīt?"
 
-#: mainwindow.cpp:525
+#: mainwindow.cpp:526
 #, kde-format
 msgid "Exit Anyway?"
 msgstr "Vienalga iziet?"
 
-#: mainwindow.cpp:526
+#: mainwindow.cpp:527
 #, kde-format
 msgid "Quit without saving"
 msgstr "Iziet bez saglabāšanas"
 
-#: mainwindow.cpp:527
+#: mainwindow.cpp:528
 #, kde-format
 msgid "Save then quit"
 msgstr "Saglabāt un tad iziet"
 
-#: mainwindow.cpp:528
+#: mainwindow.cpp:529
 #, kde-format
 msgid "Do not quit"
 msgstr "Neiziet"
 
-#: mainwindow.cpp:1303
+#: mainwindow.cpp:1304
 #, kde-format
 msgid "New country name"
 msgstr "Jaunās valsts nosaukums"
 
-#: mainwindow.cpp:1303
+#: mainwindow.cpp:1304
 #, kde-format
 msgid "Enter the name of the new country"
 msgstr "Ievadi jaunās valsts nosaukumu"
 
-#: mainwindow.cpp:1313
+#: mainwindow.cpp:1314
 #, kde-format
 msgid "Do you really want to delete country '%1'?"
 msgstr "Vai tiešām vēlies izdzēst valsti '%1'?"
 
-#: mainwindow.cpp:1313
+#: mainwindow.cpp:1314
 #, kde-format
 msgid "Really delete country?"
 msgstr "Tiešām dzēst valsti?"
 
-#: mainwindow.cpp:1332
+#: mainwindow.cpp:1333
 #, kde-format
 msgid "New continent name"
 msgstr "Jaunā kontinenta nosaukums"
 
-#: mainwindow.cpp:1332
+#: mainwindow.cpp:1333
 #, kde-format
 msgid "Enter the name of the new continent"
 msgstr "Ievadi jaunā kontinenta nosaukumu"
 
-#: mainwindow.cpp:1342
+#: mainwindow.cpp:1343
 #, kde-format
 msgid "Do you really want to delete continent '%1'?"
 msgstr "Vai tiešām vēlies izdzēst kontinentu '%1'?"
 
-#: mainwindow.cpp:1342
+#: mainwindow.cpp:1343
 #, kde-format
 msgid "Really delete continent?"
 msgstr "Tiešām dzēst kontinentu?"
 
-#: mainwindow.cpp:1891
+#: mainwindow.cpp:1892
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "Vai tiešām vēlies izdzēst mērķi '%1'?"
 
-#: mainwindow.cpp:1891
+#: mainwindow.cpp:1892
 #, kde-format
 msgid "Really delete goal?"
 msgstr "Tiešām dzēst mērķi?"
 
-#: mainwindow.cpp:1950
+#: mainwindow.cpp:1951
 #, kde-format
 msgid "New nationality name"
 msgstr "Jaunās tautības nosaukums"
 
-#: mainwindow.cpp:1950
+#: mainwindow.cpp:1951
 #, kde-format
 msgid "Enter the name of the new nationality"
 msgstr "Ievadi jaunās tautības nosaukumu"
 
-#: mainwindow.cpp:1960
+#: mainwindow.cpp:1961
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "Vai tiešām vēlies izdzēst tautību '%1'?"
 
-#: mainwindow.cpp:1960
+#: mainwindow.cpp:1961
 #, kde-format
 msgid "Really delete nationality?"
 msgstr "Tiešām dzēst tautību?"

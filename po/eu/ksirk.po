@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-30 01:41+0000\n"
-"PO-Revision-Date: 2023-09-30 17:18+0200\n"
+"PO-Revision-Date: 2023-10-02 19:40+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -914,7 +914,7 @@ msgstr "AEBetako mendebaldea"
 #. i18n: file skins/static/Data/world.desktop line 567
 #. i18n: file skins/legacy/Data/world.desktop line 459
 #. i18n: file skins/legacy/Data/world.desktop line 567
-#, fuzzy, no-c-format, kde-format
+#, no-c-format, kde-format
 msgid "Zair"
 msgstr "Zaire"
 
@@ -996,6 +996,8 @@ msgid ""
 "%1, you'll have to eliminate %2. If it is eliminated by another player, "
 "you'll have to conquer %3 countries."
 msgstr ""
+"%1, %2 kanporatu beharko duzu. Beste jokalari batek kanporatzen badu, %3 "
+"herrialde konkistatu beharko dituzu."
 
 #. i18n: file skins/default/Data/world.desktop line 560
 #, no-c-format, kde-format
@@ -1004,6 +1006,9 @@ msgid ""
 "nationalities\n"
 "randomly chosen and proposes various interesting goals"
 msgstr ""
+"Azal horrek benetakoaren antza duen mundu bat erakusten du, ausaz\n"
+"hautatutako nazionalitate batzuekin, eta helburu interesgarri batzuk "
+"proposatzen ditu"
 
 #. i18n: file skins/default/Data/world.desktop line 566
 #, no-c-format, kde-format
@@ -1042,11 +1047,15 @@ msgid ""
 "randomly chosen and proposes various interesting goals.\n"
 "It features non-animated sprites"
 msgstr ""
+"Azal horrek benetakoaren antza duen mundu bat erakusten du, ausaz\n"
+"hautatutako nazionalitate batzuekin, eta helburu interesgarri batzuk "
+"proposatzen ditu.\n"
+"Animatu gabeko iratxoak erabiltzen ditu"
 
 #. i18n: file skins/static/Data/world.desktop line 574
 #, no-c-format, kde-format
 msgid "Less animated Earth-like"
-msgstr ""
+msgstr "Lurraren antzekoa, animazio gutxiagorekin"
 
 #. i18n: file skins/legacy/Data/world.desktop line 568
 #, no-c-format, kde-format
@@ -1055,11 +1064,15 @@ msgid ""
 "randomly chosen and proposes various interesting goals.\n"
 "It looks like KsirK before vector graphics."
 msgstr ""
+"Azal horrek benetakoaren antza duen mundu bat erakusten du, ausaz "
+"hautatutako nazionalitate batzuekin, eta helburu interesgarri batzuk "
+"proposatzen ditu.\n"
+"Bektore-grafikoen aurreko  «KsirK»en antza du."
 
 #. i18n: file skins/legacy/Data/world.desktop line 574
-#, fuzzy, no-c-format, kde-format
+#, no-c-format, kde-format
 msgid "Legacy"
-msgstr "Legacy"
+msgstr "Ondarea"
 
 #: decoratedgameframe.cpp:100 kgamewin.cpp:449
 #, kde-format
@@ -1134,6 +1147,8 @@ msgid ""
 "You are invading <font color=\"blue\">%1</font> with <font color=\"red\">%2</"
 "font>!"
 msgstr ""
+"<font color=\"red\">%2</font>(r)ekin <font color=\"blue\">%1</font> "
+"inbaditzen ari zara!"
 
 #: Dialogs/InvasionSlider.cpp:99
 #, kde-format
@@ -1152,6 +1167,8 @@ msgid ""
 "You are moving armies from <font color=\"red\">%1</font> to <font color="
 "\"blue\">%2</font>!"
 msgstr ""
+"<font color=\"red\">%1</font> (e)tik <font color=\"blue\">%2</font>(e)ra "
+"armadak mugitzen ari zara!"
 
 #: Dialogs/InvasionSlider.cpp:105
 #, kde-format
@@ -1278,6 +1295,9 @@ msgid ""
 "KsirK.<br/>Particularly, the distribution of armies at game beginning is "
 "very slow (expect something like one minute)."
 msgstr ""
+"<b>Oharra:</b>Jabber sarearen bidez jokatzea «KsirK»en ezaugarri "
+"esperimental bat da.<br/>Jokoaren hasieran armadak banatzea, bereziki, oso "
+"motela da (minutu baten antzeko zerbait espero ezazu)."
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
 #. i18n: ectx: property (text), widget (QPushButton, cancelbutton)
@@ -1292,7 +1312,7 @@ msgstr "Utzi"
 #: Dialogs/joingame.ui:13
 #, kde-format
 msgid "Join Network Game Configuration"
-msgstr ""
+msgstr "Sareko jokora batzea konfiguratzea"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: Dialogs/joingame.ui:19
@@ -1328,6 +1348,8 @@ msgstr "Izena hutsik. Mesedez aukeratu beste bat."
 #, kde-format
 msgid "Player Number %1, please type in your name and choose your nation:"
 msgstr ""
+"%1 zenbakidun jokalaria, mesedez, tekleatu zure izena eta aukeratu zure "
+"herrialdea:"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, NewGameDialog)
 #: Dialogs/newGameDialog.ui:16
@@ -1408,24 +1430,27 @@ msgstr "Helburu mota"
 #, kde-format
 msgid "Choose this for players to have to conquer all the world to win."
 msgstr ""
+"Aukeratu hori, jokalariek irabazteko mundu osoa konkistatu behar izan "
+"dezaten."
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioWorld)
 #: Dialogs/newGameDialog.ui:162
 #, kde-format
 msgid "In this mode, a player will have to conquer all the world to win."
 msgstr ""
+"Modu horretan, irabazteko, jokalari batek mundu osoa konkistatu beharko du."
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioWorld)
 #: Dialogs/newGameDialog.ui:165
-#, fuzzy, kde-format
+#, kde-format
 msgid "World con&quest"
-msgstr "Mundua konkistatzea"
+msgstr "Mundua &konkistatzea"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, radioGoal)
 #: Dialogs/newGameDialog.ui:172
 #, kde-format
 msgid "Choose this to have a goal assigned to each player."
-msgstr ""
+msgstr "Aukeratu hori jokalari bakoitzari helburu bat esleitzeko."
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioGoal)
 #: Dialogs/newGameDialog.ui:175
@@ -1434,12 +1459,14 @@ msgid ""
 "In this mode, a goal will be assigned to each player, which he will have to "
 "reach in order to win."
 msgstr ""
+"Modu horretan, jokalari bakoitzari helburu bat esleituko zaio, irabazteko "
+"lortubeharrekoa."
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioGoal)
 #: Dialogs/newGameDialog.ui:178
 #, kde-format
 msgid "Reach a goa&l"
-msgstr ""
+msgstr "He&lburu bat lortu"
 
 #. i18n: ectx: property (text), widget (QPushButton, nextButton)
 #: Dialogs/newGameDialog.ui:250 Dialogs/qplayersetupdialog.ui:153
@@ -1533,7 +1560,7 @@ msgstr "Hasi"
 #: Dialogs/newGameSummaryWidget.cpp:59
 #, kde-format
 msgid "Reach a goal"
-msgstr ""
+msgstr "Helburu bat lortu"
 
 #: Dialogs/newGameSummaryWidget.cpp:59
 #, kde-format
@@ -1555,13 +1582,15 @@ msgstr "Ez"
 #: Dialogs/qplayersetupdialog.ui:14 Dialogs/tcpconnectwidget.ui:14
 #, kde-format
 msgid "Player Setup"
-msgstr ""
+msgstr "Jokalariaren ezarpena"
 
 #. i18n: ectx: property (text), widget (QLabel, TextLabel1)
 #: Dialogs/qplayersetupdialog.ui:23
 #, no-c-format, kde-format
 msgid "Player number %1, please enter your name and choose your nation:"
 msgstr ""
+"%1 zenbakidun jokalaria, mesedez, sartu zure izena eta aukeratu zure "
+"herrialdea:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, nationCombo)
 #. i18n: ectx: property (toolTip), widget (QComboBox, waitedPlayersCombo)

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-30 01:41+0000\n"
+"POT-Creation-Date: 2023-10-03 01:38+0000\n"
 "PO-Revision-Date: 2013-09-15 06:30+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -1971,19 +1971,19 @@ msgstr "Gael de Chalendar aka Kleag"
 msgid "file to open"
 msgstr "ашатын файлы"
 
-#: mainwindow.cpp:126 mainwindow.cpp:676 mainwindow.cpp:804 mainwindow.cpp:1191
+#: mainwindow.cpp:126 mainwindow.cpp:677 mainwindow.cpp:805 mainwindow.cpp:1192
 #, kde-format
 msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr "Бекіткіш таңбашасы жүктелмеді<br>Бағдарлама доғарылады."
 
-#: mainwindow.cpp:126 mainwindow.cpp:140 mainwindow.cpp:676 mainwindow.cpp:705
-#: mainwindow.cpp:804 mainwindow.cpp:821 mainwindow.cpp:1191 onu.cpp:79
+#: mainwindow.cpp:126 mainwindow.cpp:140 mainwindow.cpp:677 mainwindow.cpp:706
+#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:79
 #: onu.cpp:112 onu.cpp:131
 #, kde-format
 msgid "Error"
 msgstr "Қате"
 
-#: mainwindow.cpp:140 mainwindow.cpp:705 mainwindow.cpp:821
+#: mainwindow.cpp:140 mainwindow.cpp:706 mainwindow.cpp:822
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
 msgstr "Центр таңбашасы жүктелмеді<br>Бағдарлама доғарылады."
@@ -2008,104 +2008,104 @@ msgstr "Жуырда сақталған тысын ашу..."
 msgid "Save the current skin"
 msgstr "Қазіргі тысын сақтау"
 
-#: mainwindow.cpp:365
+#: mainwindow.cpp:361
 #, fuzzy, kde-format
 #| msgid "Choose the root folder of the skin to open"
 msgctxt "@title:window"
 msgid "Choose the Root Folder of the Skin to Open"
 msgstr "Ашатын тысының түбір қапшығын таңдаңыз"
 
-#: mainwindow.cpp:524
+#: mainwindow.cpp:525
 #, kde-format
 msgid "There are unsaved changes. What do you want to do?"
 msgstr "Сақталмаған өзгерістер бар. Не істемексіз?"
 
-#: mainwindow.cpp:525
+#: mainwindow.cpp:526
 #, kde-format
 msgid "Exit Anyway?"
 msgstr "Сонда да шығу"
 
-#: mainwindow.cpp:526
+#: mainwindow.cpp:527
 #, kde-format
 msgid "Quit without saving"
 msgstr "Сақтамай шығу"
 
-#: mainwindow.cpp:527
+#: mainwindow.cpp:528
 #, kde-format
 msgid "Save then quit"
 msgstr "Сақтап шығу"
 
-#: mainwindow.cpp:528
+#: mainwindow.cpp:529
 #, kde-format
 msgid "Do not quit"
 msgstr "Шығпау"
 
-#: mainwindow.cpp:1303
+#: mainwindow.cpp:1304
 #, kde-format
 msgid "New country name"
 msgstr "Жаңа елдің атауы"
 
-#: mainwindow.cpp:1303
+#: mainwindow.cpp:1304
 #, kde-format
 msgid "Enter the name of the new country"
 msgstr "Жаңа елдің атауын келтіріңіз"
 
-#: mainwindow.cpp:1313
+#: mainwindow.cpp:1314
 #, kde-format
 msgid "Do you really want to delete country '%1'?"
 msgstr "Шынымен '%1' деген елді өшірмексіз бе?"
 
-#: mainwindow.cpp:1313
+#: mainwindow.cpp:1314
 #, kde-format
 msgid "Really delete country?"
 msgstr "Шын елді өшірмексіз бе?"
 
-#: mainwindow.cpp:1332
+#: mainwindow.cpp:1333
 #, kde-format
 msgid "New continent name"
 msgstr "Жаңа құрлықтың атауы"
 
-#: mainwindow.cpp:1332
+#: mainwindow.cpp:1333
 #, kde-format
 msgid "Enter the name of the new continent"
 msgstr "Жаңа құрлықтың атауын келтіріңіз"
 
-#: mainwindow.cpp:1342
+#: mainwindow.cpp:1343
 #, kde-format
 msgid "Do you really want to delete continent '%1'?"
 msgstr "Шынымен '%1' деген құрлықты өшірмексіз бе?"
 
-#: mainwindow.cpp:1342
+#: mainwindow.cpp:1343
 #, kde-format
 msgid "Really delete continent?"
 msgstr "Құрлықты өшірмексіз бе?"
 
-#: mainwindow.cpp:1891
+#: mainwindow.cpp:1892
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "Шынымен '%1' деген мақсатты өшірмексіз бе?"
 
-#: mainwindow.cpp:1891
+#: mainwindow.cpp:1892
 #, kde-format
 msgid "Really delete goal?"
 msgstr "Мақсатты өшірмексіз бе?"
 
-#: mainwindow.cpp:1950
+#: mainwindow.cpp:1951
 #, kde-format
 msgid "New nationality name"
 msgstr "Жаңа ұлттың атауы"
 
-#: mainwindow.cpp:1950
+#: mainwindow.cpp:1951
 #, kde-format
 msgid "Enter the name of the new nationality"
 msgstr "Жаңа ұлттың атауын келтіріңіз"
 
-#: mainwindow.cpp:1960
+#: mainwindow.cpp:1961
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "Шынымен '%1' деген ұлтты өшірмексіз бе?"
 
-#: mainwindow.cpp:1960
+#: mainwindow.cpp:1961
 #, kde-format
 msgid "Really delete nationality?"
 msgstr "Ұлтты өшірмексіз бе?"
