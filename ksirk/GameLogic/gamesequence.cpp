@@ -27,3 +27,5 @@ KPlayer *GameSequence::nextPlayer(KPlayer *last, bool exclusive)
 
 }
 }
+
+#include "moc_gamesequence.cpp"
