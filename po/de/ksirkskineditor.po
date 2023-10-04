@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-03 01:38+0000\n"
+"POT-Creation-Date: 2023-10-04 01:38+0000\n"
 "PO-Revision-Date: 2022-08-20 20:42+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -2090,8 +2090,8 @@ msgstr ""
 "Das Programm wird beendet."
 
 #: mainwindow.cpp:126 mainwindow.cpp:140 mainwindow.cpp:677 mainwindow.cpp:706
-#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:79
-#: onu.cpp:112 onu.cpp:131
+#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:78
+#: onu.cpp:111 onu.cpp:130
 #, kde-format
 msgid "Error"
 msgstr "Fehler"
@@ -2225,14 +2225,14 @@ msgstr "Soll die Nationalität „%1“ wirklich gelöscht werden?"
 msgid "Really delete nationality?"
 msgstr "Nationalität wirklich löschen?"
 
-#: onu.cpp:78
+#: onu.cpp:77
 #, kde-format
 msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
 msgstr ""
 "Fehler – Ungültiges Dateiformat für das Design. Version „%1“ wurde erwartet "
 "und Version „%2“ liegt vor."
 
-#: onu.cpp:111
+#: onu.cpp:110
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2241,7 +2241,7 @@ msgstr ""
 "Die zusammengefasste Datei (pool.svg) kann nicht gefunden werden.\n"
 "Das Programm wird beendet."
 
-#: onu.cpp:130
+#: onu.cpp:129
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2250,7 +2250,7 @@ msgstr ""
 "Die Datei „map-mask.png“ kann nicht gefunden werden.\n"
 "Das Programm wird beendet."
 
-#: onu.cpp:989
+#: onu.cpp:988
 #, kde-format
 msgid ""
 "Cannot read file %1:\n"
@@ -2259,7 +2259,7 @@ msgstr ""
 "Die Datei „%1“ kann nicht gelesen werden:\n"
 "%2."
 
-#: onu.cpp:990
+#: onu.cpp:989
 #, kde-format
 msgid "PoolLoader"
 msgstr "„pool.svg“-Ladeprogramm"

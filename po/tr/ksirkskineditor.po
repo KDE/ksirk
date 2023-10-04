@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-03 01:38+0000\n"
+"POT-Creation-Date: 2023-10-04 01:38+0000\n"
 "PO-Revision-Date: 2023-08-02 00:48+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1986,8 +1986,8 @@ msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr "Merkez simgesi yüklenemedi<br>Program sürdürülemiyor"
 
 #: mainwindow.cpp:126 mainwindow.cpp:140 mainwindow.cpp:677 mainwindow.cpp:706
-#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:79
-#: onu.cpp:112 onu.cpp:131
+#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:78
+#: onu.cpp:111 onu.cpp:130
 #, kde-format
 msgid "Error"
 msgstr "Hata"
@@ -2118,12 +2118,12 @@ msgstr "'%1' ulusunu gerçekten silmek istiyor musunuz?"
 msgid "Really delete nationality?"
 msgstr "Bu ulusu gerçekten silmek istiyor musunuz?"
 
-#: onu.cpp:78
+#: onu.cpp:77
 #, kde-format
 msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
 msgstr "Hata - Geçersiz tema dosyası. Olması gereken %1, alınan %2"
 
-#: onu.cpp:111
+#: onu.cpp:110
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2132,7 +2132,7 @@ msgstr ""
 "Oylama dosya adı bulunamadı\n"
 "Program sürdürülemiyor"
 
-#: onu.cpp:130
+#: onu.cpp:129
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2141,7 +2141,7 @@ msgstr ""
 "Harita maske görseli bulunamadı\n"
 "Program sürdürülemiyor"
 
-#: onu.cpp:989
+#: onu.cpp:988
 #, kde-format
 msgid ""
 "Cannot read file %1:\n"
@@ -2150,7 +2150,7 @@ msgstr ""
 "Dosya okunamadı %1:\n"
 "%2."
 
-#: onu.cpp:990
+#: onu.cpp:989
 #, kde-format
 msgid "PoolLoader"
 msgstr "HavuzYükleyici"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-03 01:38+0000\n"
+"POT-Creation-Date: 2023-10-04 01:38+0000\n"
 "PO-Revision-Date: 2022-08-12 19:21+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -2003,8 +2003,8 @@ msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr "Klarar ikkje lasta inn ankerikon.<br/> Kan ikkje halda fram."
 
 #: mainwindow.cpp:126 mainwindow.cpp:140 mainwindow.cpp:677 mainwindow.cpp:706
-#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:79
-#: onu.cpp:112 onu.cpp:131
+#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:78
+#: onu.cpp:111 onu.cpp:130
 #, kde-format
 msgid "Error"
 msgstr "Feil"
@@ -2135,12 +2135,12 @@ msgstr "Er du sikker på at du vil sletta nasjonaliteten «%1»?"
 msgid "Really delete nationality?"
 msgstr "Vil du sletta nasjonaliteten?"
 
-#: onu.cpp:78
+#: onu.cpp:77
 #, kde-format
 msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
 msgstr "Feil: Ugyldig format på temadefinisjonsfil. Venta %1, men fekk %2."
 
-#: onu.cpp:111
+#: onu.cpp:110
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2149,7 +2149,7 @@ msgstr ""
 "Fann ikkje «Pool»-filnamn.\n"
 "Kan ikkje halda fram."
 
-#: onu.cpp:130
+#: onu.cpp:129
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2158,7 +2158,7 @@ msgstr ""
 "Fann ikkje kartmaskebilete.\n"
 "Kan ikkje halda fram."
 
-#: onu.cpp:989
+#: onu.cpp:988
 #, kde-format
 msgid ""
 "Cannot read file %1:\n"
@@ -2167,7 +2167,7 @@ msgstr ""
 "Klarar ikkje lesa fila «%1»:\n"
 "%2."
 
-#: onu.cpp:990
+#: onu.cpp:989
 #, kde-format
 msgid "PoolLoader"
 msgstr "Pool-lastar"

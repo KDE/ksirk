@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-30 01:41+0000\n"
-"PO-Revision-Date: 2023-09-30 12:40+0200\n"
+"POT-Creation-Date: 2023-10-04 01:38+0000\n"
+"PO-Revision-Date: 2023-10-03 16:13+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1043,6 +1043,9 @@ msgid ""
 "randomly chosen and proposes various interesting goals.\n"
 "It features non-animated sprites"
 msgstr ""
+"ეს სკინი აჩვენებს სამყაროს, რომელიც რეალურს წააგავს, რამდენიმე ეროვნებით,\n"
+"რომლებიც შემთხვევითაა არჩეული და საინტერესო სამიზნეებს გისახავთ.\n"
+"მისი სპრაიტები ანიმირებული არაა"
 
 #. i18n: file skins/static/Data/world.desktop line 574
 #, no-c-format, kde-format
@@ -1056,6 +1059,9 @@ msgid ""
 "randomly chosen and proposes various interesting goals.\n"
 "It looks like KsirK before vector graphics."
 msgstr ""
+"ეს სკინი სამყაროს რეალურივით აჩვენებს, რამდენიმე შემთხვევით არჩეული "
+"ეროვნებით და რამდენიმე საინტერესო სამიზნეს გისახავთ.\n"
+"ჰგავს KsirK-ს, სანამ მას ვექტორული გრაფიკა ექნებოდა."
 
 #. i18n: file skins/legacy/Data/world.desktop line 574
 #, no-c-format, kde-format
@@ -1283,6 +1289,9 @@ msgid ""
 "KsirK.<br/>Particularly, the distribution of armies at game beginning is "
 "very slow (expect something like one minute)."
 msgstr ""
+"<b>შენიშვნა:</b> Jabber-ით თამაში KsirK-ის ექსპერიმენტული ფუნქციაა.<br/>უფრო "
+"ზუსტად, თამაშის დასაწყისში არმიების განაილება ძალიან ძნელია (ელოდეთ "
+"დაახლოებით წუთიან დაყოვნებას)."
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
 #. i18n: ectx: property (text), widget (QPushButton, cancelbutton)
@@ -1439,6 +1448,8 @@ msgid ""
 "In this mode, a goal will be assigned to each player, which he will have to "
 "reach in order to win."
 msgstr ""
+"ამ რეჟიმში, სამიზნე, თითოეულ მოთამაშეს დაესახება, რომელსაც, გამარჯვებისთვის, "
+"უნდა მიაღწიოს."
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioGoal)
 #: Dialogs/newGameDialog.ui:178
@@ -1964,7 +1975,7 @@ msgstr "შეტყობინების გარეშე..."
 msgid "<b>%1:</b> %2"
 msgstr "<b>%1:</b> %2"
 
-#: GameLogic/onu.cpp:129
+#: GameLogic/onu.cpp:128
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -1973,7 +1984,7 @@ msgstr ""
 "პულის ფაილის სახელი ვერ ვიპოვე\n"
 "პროგრამა მუშაობას ვერ გააგრძელებს"
 
-#: GameLogic/onu.cpp:130 GameLogic/onu.cpp:147 gestionSprites.cpp:693
+#: GameLogic/onu.cpp:129 GameLogic/onu.cpp:146 gestionSprites.cpp:693
 #: gestionSprites.cpp:808 gestionSprites.cpp:853 gestionSprites.cpp:1409
 #: gestionSprites.cpp:1486 kgamewin.cpp:149 kgamewin.cpp:383 kgamewin.cpp:400
 #: kgamewin.cpp:417 kgamewin.cpp:584 kgamewin.cpp:740
@@ -1982,7 +1993,7 @@ msgstr ""
 msgid "Error!"
 msgstr "შეცდომა!"
 
-#: GameLogic/onu.cpp:146
+#: GameLogic/onu.cpp:145
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2732,7 +2743,7 @@ msgstr "შეცვალეთ მეტსახელი - Jabber-ის დ
 #: Jabber/jabbergroupcontact.cpp:368
 #, kde-format
 msgid "Please enter the new nickname you want to have in the room <i>%1</i>"
-msgstr ""
+msgstr "შეიყვანეთ ახალი ფსევდონიმი, რომელიც გსურთ, ოთახში <i>%1</i> გქონდეთ"
 
 #: Jabber/jabberprotocol.cpp:337
 #, kde-format
@@ -3224,7 +3235,7 @@ msgstr[1] "მოსათავსებელია %1 არმია"
 #: krightdialog.cpp:375
 #, kde-format
 msgid "<u><b>Change some<br>placements?</b></u> "
-msgstr ""
+msgstr "<u><b>შეცვლით ზოგიერთ<br>მდებარეობას?</b></u> "
 
 #: krightdialog.cpp:390
 #, kde-format

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-03 01:38+0000\n"
+"POT-Creation-Date: 2023-10-04 01:38+0000\n"
 "PO-Revision-Date: 2021-10-28 18:23+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -2025,8 +2025,8 @@ msgstr ""
 "Não é possível carregar o ícone da âncora<br>O programa não pode continuar"
 
 #: mainwindow.cpp:126 mainwindow.cpp:140 mainwindow.cpp:677 mainwindow.cpp:706
-#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:79
-#: onu.cpp:112 onu.cpp:131
+#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:78
+#: onu.cpp:111 onu.cpp:130
 #, kde-format
 msgid "Error"
 msgstr "Erro"
@@ -2158,14 +2158,14 @@ msgstr "Deseja mesmo apagar a nacionalidade '%1'?"
 msgid "Really delete nationality?"
 msgstr "Deseja mesmo apagar a nacionalidade?"
 
-#: onu.cpp:78
+#: onu.cpp:77
 #, kde-format
 msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
 msgstr ""
 "Erro - O formato do ficheiro de definição do visual é inválido. Esperava-se "
 "%1 e obteve-se %2"
 
-#: onu.cpp:111
+#: onu.cpp:110
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2174,7 +2174,7 @@ msgstr ""
 "O ficheiro do local não foi encontrado\n"
 "O programa não pode prosseguir"
 
-#: onu.cpp:130
+#: onu.cpp:129
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2183,7 +2183,7 @@ msgstr ""
 "A imagem-máscara do mapa não foi encontrada\n"
 "O programa não pode prosseguir"
 
-#: onu.cpp:989
+#: onu.cpp:988
 #, kde-format
 msgid ""
 "Cannot read file %1:\n"
@@ -2192,7 +2192,7 @@ msgstr ""
 "Não é possível ler o ficheiro %1:\n"
 "%2."
 
-#: onu.cpp:990
+#: onu.cpp:989
 #, kde-format
 msgid "PoolLoader"
 msgstr "PoolLoader"

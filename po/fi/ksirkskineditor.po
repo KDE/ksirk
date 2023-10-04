@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-03 01:38+0000\n"
+"POT-Creation-Date: 2023-10-04 01:38+0000\n"
 "PO-Revision-Date: 2021-11-23 16:42+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1997,8 +1997,8 @@ msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr "Ankkurikuvaketta ei voi ladata<br>Ohjelma ei voi jatkaa"
 
 #: mainwindow.cpp:126 mainwindow.cpp:140 mainwindow.cpp:677 mainwindow.cpp:706
-#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:79
-#: onu.cpp:112 onu.cpp:131
+#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:78
+#: onu.cpp:111 onu.cpp:130
 #, kde-format
 msgid "Error"
 msgstr "Virhe"
@@ -2130,13 +2130,13 @@ msgstr "Haluatko varmasti poistaa kansan ”%1”?"
 msgid "Really delete nationality?"
 msgstr "Poistetaanko kansa varmasti?"
 
-#: onu.cpp:78
+#: onu.cpp:77
 #, kde-format
 msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
 msgstr ""
 "Virhe – teemamääritystiedoston muoto ei kelpaa. Odotettiin %1, saatiin %2"
 
-#: onu.cpp:111
+#: onu.cpp:110
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2145,7 +2145,7 @@ msgstr ""
 "Nipputiedostoa (pool.svg) ei löydy\n"
 "Ohjelma ei voi jatkaa"
 
-#: onu.cpp:130
+#: onu.cpp:129
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2154,7 +2154,7 @@ msgstr ""
 "Kartan maskikuvaa ei löytynyt\n"
 "Ohjelma ei voi jatkaa"
 
-#: onu.cpp:989
+#: onu.cpp:988
 #, kde-format
 msgid ""
 "Cannot read file %1:\n"
@@ -2163,7 +2163,7 @@ msgstr ""
 "Ei voida lukea tiedostoa %1:\n"
 "%2."
 
-#: onu.cpp:990
+#: onu.cpp:989
 #, kde-format
 msgid "PoolLoader"
 msgstr "PoolLoader"

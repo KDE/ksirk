@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-03 01:38+0000\n"
+"POT-Creation-Date: 2023-10-04 01:38+0000\n"
 "PO-Revision-Date: 2021-11-14 08:26+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -2004,8 +2004,8 @@ msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr "Nie można wczytać ikony kotwicy<br>Program nie może kontynuować"
 
 #: mainwindow.cpp:126 mainwindow.cpp:140 mainwindow.cpp:677 mainwindow.cpp:706
-#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:79
-#: onu.cpp:112 onu.cpp:131
+#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:78
+#: onu.cpp:111 onu.cpp:130
 #, kde-format
 msgid "Error"
 msgstr "Błąd"
@@ -2136,13 +2136,13 @@ msgstr "Czy na pewno chcesz usunąć narodowość \"%1\"?"
 msgid "Really delete nationality?"
 msgstr "Usunąć narodowość?"
 
-#: onu.cpp:78
+#: onu.cpp:77
 #, kde-format
 msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
 msgstr ""
 "Błąd - niepoprawny format pliku definicji skórki. Oczekiwano %1, otrzymano %2"
 
-#: onu.cpp:111
+#: onu.cpp:110
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2151,7 +2151,7 @@ msgstr ""
 "Nie znaleziono nazwy pliku w zbiorze\n"
 "Program nie może kontynuować"
 
-#: onu.cpp:130
+#: onu.cpp:129
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2160,7 +2160,7 @@ msgstr ""
 "Nie znaleziono obrazka maski\n"
 "Program nie może kontynuować"
 
-#: onu.cpp:989
+#: onu.cpp:988
 #, kde-format
 msgid ""
 "Cannot read file %1:\n"
@@ -2169,7 +2169,7 @@ msgstr ""
 "Nie można czytać pliku %1:\n"
 "%2."
 
-#: onu.cpp:990
+#: onu.cpp:989
 #, kde-format
 msgid "PoolLoader"
 msgstr "WczytywanieZbioru"

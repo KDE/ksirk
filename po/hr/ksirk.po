@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-30 01:41+0000\n"
+"POT-Creation-Date: 2023-10-04 01:38+0000\n"
 "PO-Revision-Date: 2010-01-24 17:10+0100\n"
 "Last-Translator: Andrej Dundovic <adundovi@gmail.com>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -1949,14 +1949,14 @@ msgstr ""
 msgid "<b>%1:</b> %2"
 msgstr ""
 
-#: GameLogic/onu.cpp:129
+#: GameLogic/onu.cpp:128
 #, kde-format
 msgid ""
 "Pool filename not found\n"
 "Program cannot continue"
 msgstr ""
 
-#: GameLogic/onu.cpp:130 GameLogic/onu.cpp:147 gestionSprites.cpp:693
+#: GameLogic/onu.cpp:129 GameLogic/onu.cpp:146 gestionSprites.cpp:693
 #: gestionSprites.cpp:808 gestionSprites.cpp:853 gestionSprites.cpp:1409
 #: gestionSprites.cpp:1486 kgamewin.cpp:149 kgamewin.cpp:383 kgamewin.cpp:400
 #: kgamewin.cpp:417 kgamewin.cpp:584 kgamewin.cpp:740
@@ -1965,7 +1965,7 @@ msgstr ""
 msgid "Error!"
 msgstr ""
 
-#: GameLogic/onu.cpp:146
+#: GameLogic/onu.cpp:145
 #, kde-format
 msgid ""
 "Map mask image not found\n"

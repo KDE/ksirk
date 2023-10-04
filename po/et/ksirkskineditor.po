@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-03 01:38+0000\n"
+"POT-Creation-Date: 2023-10-04 01:38+0000\n"
 "PO-Revision-Date: 2010-01-28 05:01+0200\n"
 "Last-Translator: Marek Laane <bald@smail.ee>\n"
 "Language-Team: Estonian <kde-et@linux.ee>\n"
@@ -1979,8 +1979,8 @@ msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr "Ankru ikooni laadimine nurjus<br>Programm lõpetab töö"
 
 #: mainwindow.cpp:126 mainwindow.cpp:140 mainwindow.cpp:677 mainwindow.cpp:706
-#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:79
-#: onu.cpp:112 onu.cpp:131
+#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:78
+#: onu.cpp:111 onu.cpp:130
 #, kde-format
 msgid "Error"
 msgstr "Viga"
@@ -2112,13 +2112,13 @@ msgstr "Kas tõesti kustutada rahvus '%1'?"
 msgid "Really delete nationality?"
 msgstr "Kas tõesti kustutada rahvus?"
 
-#: onu.cpp:78
+#: onu.cpp:77
 #, kde-format
 msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
 msgstr ""
 "Viga - vigane naha definitsiooni faili vorming. Oodati %1, aga saadi %2"
 
-#: onu.cpp:111
+#: onu.cpp:110
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2127,7 +2127,7 @@ msgstr ""
 "Puuli failinime ei leitud\n"
 "Programm ei saa tööd jätkata"
 
-#: onu.cpp:130
+#: onu.cpp:129
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2136,7 +2136,7 @@ msgstr ""
 "Kaardimaski pilti ei leitud\n"
 "Programm ei saa tööd jätkata"
 
-#: onu.cpp:989
+#: onu.cpp:988
 #, kde-format
 msgid ""
 "Cannot read file %1:\n"
@@ -2145,7 +2145,7 @@ msgstr ""
 "Faili %1 lugemine nurjus:\n"
 "%2."
 
-#: onu.cpp:990
+#: onu.cpp:989
 #, kde-format
 msgid "PoolLoader"
 msgstr "PoolLoader"

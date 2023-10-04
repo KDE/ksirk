@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-03 01:38+0000\n"
+"POT-Creation-Date: 2023-10-04 01:38+0000\n"
 "PO-Revision-Date: 2013-09-15 06:30+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -1977,8 +1977,8 @@ msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr "Бекіткіш таңбашасы жүктелмеді<br>Бағдарлама доғарылады."
 
 #: mainwindow.cpp:126 mainwindow.cpp:140 mainwindow.cpp:677 mainwindow.cpp:706
-#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:79
-#: onu.cpp:112 onu.cpp:131
+#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:78
+#: onu.cpp:111 onu.cpp:130
 #, kde-format
 msgid "Error"
 msgstr "Қате"
@@ -2110,12 +2110,12 @@ msgstr "Шынымен '%1' деген ұлтты өшірмексіз бе?"
 msgid "Really delete nationality?"
 msgstr "Ұлтты өшірмексіз бе?"
 
-#: onu.cpp:78
+#: onu.cpp:77
 #, kde-format
 msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
 msgstr "Қате - Жарамсыз тысын анықтау файл пішімі. %1 орнында %2 "
 
-#: onu.cpp:111
+#: onu.cpp:110
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2124,7 +2124,7 @@ msgstr ""
 "Жиынтық файлы (pool.svg) табылмады\n"
 "Бағдарлама доғарылады"
 
-#: onu.cpp:130
+#: onu.cpp:129
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2133,7 +2133,7 @@ msgstr ""
 "Карта қалқа кескіні табылмады\n"
 "Бағдарлама доғарылады"
 
-#: onu.cpp:989
+#: onu.cpp:988
 #, kde-format
 msgid ""
 "Cannot read file %1:\n"
@@ -2142,7 +2142,7 @@ msgstr ""
 "%1 файлы оқылмады:\n"
 "%2."
 
-#: onu.cpp:990
+#: onu.cpp:989
 #, kde-format
 msgid "PoolLoader"
 msgstr "Жиынтық жүктеуіші"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-03 01:38+0000\n"
+"POT-Creation-Date: 2023-10-04 01:38+0000\n"
 "PO-Revision-Date: 2023-10-01 15:37+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1855,8 +1855,8 @@ msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr "მიმაგრების ხატულა ვერ ჩავტვირთე<br>პროგრამა ვერ გაგრძელდება"
 
 #: mainwindow.cpp:126 mainwindow.cpp:140 mainwindow.cpp:677 mainwindow.cpp:706
-#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:79
-#: onu.cpp:112 onu.cpp:131
+#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:78
+#: onu.cpp:111 onu.cpp:130
 #, kde-format
 msgid "Error"
 msgstr "შეცდომა"
@@ -1987,13 +1987,13 @@ msgstr "მართლა გნებავთ, წაშალოთ ერ�
 msgid "Really delete nationality?"
 msgstr "მართლა წავშალო ეროვნება?"
 
-#: onu.cpp:78
+#: onu.cpp:77
 #, kde-format
 msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
 msgstr ""
 "შეცდომა - არასწორი სკინის აღწერის ფაილის ფორმატი. მოველოდი %1, მივიღე %2"
 
-#: onu.cpp:111
+#: onu.cpp:110
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2002,7 +2002,7 @@ msgstr ""
 "პულის ფაილის სახელი ვერ ვიპოვე\n"
 "პროგრამა მუშაობას ვერ გააგრძელებს"
 
-#: onu.cpp:130
+#: onu.cpp:129
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2011,7 +2011,7 @@ msgstr ""
 "რუკის ნიღბის გამოსახულება ვერ ვიპოვე\n"
 "პროგრამა მუშაობას ვერ გააგრძელებს"
 
-#: onu.cpp:989
+#: onu.cpp:988
 #, kde-format
 msgid ""
 "Cannot read file %1:\n"
@@ -2020,7 +2020,7 @@ msgstr ""
 "ფაილი %1 ვერ წავიკითხე:\n"
 "%2."
 
-#: onu.cpp:990
+#: onu.cpp:989
 #, kde-format
 msgid "PoolLoader"
 msgstr "PoolLoader"

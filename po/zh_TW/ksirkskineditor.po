@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-03 01:38+0000\n"
+"POT-Creation-Date: 2023-10-04 01:38+0000\n"
 "PO-Revision-Date: 2009-11-20 17:42+0800\n"
 "Last-Translator: Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv "
 "dot tw>\n"
@@ -1910,8 +1910,8 @@ msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr "無法載入錨點圖示<br/>程式無法繼續"
 
 #: mainwindow.cpp:126 mainwindow.cpp:140 mainwindow.cpp:677 mainwindow.cpp:706
-#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:79
-#: onu.cpp:112 onu.cpp:131
+#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:78
+#: onu.cpp:111 onu.cpp:130
 #, kde-format
 msgid "Error"
 msgstr "錯誤"
@@ -2043,12 +2043,12 @@ msgstr "您確定要刪除民族 %1 嗎？"
 msgid "Really delete nationality?"
 msgstr "確定要刪除民族？"
 
-#: onu.cpp:78
+#: onu.cpp:77
 #, kde-format
 msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
 msgstr "錯誤 ─ 外觀定義檔案格式不正確。應為 %1，但是看到 %2"
 
-#: onu.cpp:111
+#: onu.cpp:110
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2057,7 +2057,7 @@ msgstr ""
 "找不到 Pool 檔名。\n"
 "程式無法再繼續"
 
-#: onu.cpp:130
+#: onu.cpp:129
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2066,7 +2066,7 @@ msgstr ""
 "找不到地圖遮罩影像\n"
 "程式無法再繼續"
 
-#: onu.cpp:989
+#: onu.cpp:988
 #, kde-format
 msgid ""
 "Cannot read file %1:\n"
@@ -2075,7 +2075,7 @@ msgstr ""
 "無法讀取檔案 %1：\n"
 "%2"
 
-#: onu.cpp:990
+#: onu.cpp:989
 #, kde-format
 msgid "PoolLoader"
 msgstr "Pool 載入器"
