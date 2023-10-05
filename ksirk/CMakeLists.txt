@@ -135,7 +135,6 @@ target_link_libraries(ksirk
     KF6::KIOCore
     KF6::XmlGui
     KF6::NewStuffWidgets
-    KF6::Wallet
     Qt6::Multimedia
     Qt6::Xml
     Qt6::Svg
@@ -145,6 +144,7 @@ target_link_libraries(ksirk
 if(WITH_JABBER_SUPPORT)
     target_link_libraries(ksirk
         iris_ksirk
+        KF6::Wallet
     )
 endif()
 
