@@ -5,13 +5,13 @@
 # Serdar Dalgıç <serdar@pardus.org.tr>, 2010.
 # obsoleteman <tulliana@gmail.com>, 2008-2009.
 # Volkan Gezer <volkangezer@gmail.com>, 2013-2014.
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-04 01:38+0000\n"
-"PO-Revision-Date: 2023-09-11 14:10+0300\n"
+"PO-Revision-Date: 2023-10-05 12:52+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1718,7 +1718,8 @@ msgstr "Lütfen üzerinden bağlantı önerilebilecek kapı numaralarını girin
 #, kde-format
 msgid "Do you really want to end your current game and join another?"
 msgstr ""
-"Gerçekten mevcut oyunu sonlandırıp, yeni bir oyuna başlamak istiyor musunuz?"
+"Geçerli oyununuzu sonlandırıp başka bir tanesine katılmayı gerçekten istiyor "
+"musunuz?"
 
 #: GameLogic/gameautomaton.cpp:1194 GameLogic/gameautomaton.cpp:1223
 #: kgamewin.cpp:2646
@@ -2452,7 +2453,7 @@ msgstr ""
 #: Jabber/jabberaccount.cpp:918
 #, kde-format
 msgid "Temporary failure, please try again later."
-msgstr "Geçici olarak kullanılamıyor, lütfen sonra tekrar deneyin."
+msgstr "Geçici olarak kullanılamıyor, lütfen daha sonra yeniden deneyin."
 
 #: Jabber/jabberaccount.cpp:925
 #, kde-format
@@ -2863,8 +2864,8 @@ msgid ""
 "Allow to connect to a KsirK Jabber Multi User Gaming Room to create new "
 "games or to join present games"
 msgstr ""
-"Yeni oyunlar yaratmak ya da mevcut oyunlara katılmak için KsirK Jabber Çoklu "
-"Kullanıcı Oyun Odası'na bağlanmaya izin ver"
+"Yeni oyunlar oluşturmak veya var olan oyunlara katılmak için KsirK Jabber "
+"Çoklu Kullanıcı Oyun Odası'na bağlanmaya izin ver"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
 #: kgamewin.cpp:403 mainMenu.ui:104
@@ -2925,7 +2926,7 @@ msgstr "Hamleleri bitir"
 #: kgamewin.cpp:458
 #, kde-format
 msgid "Finish moving the current sprites"
-msgstr "Mevcut hareketli görüntülerin hamlelerini bitir"
+msgstr "Geçerli hareketli görüntülerin hamlelerini bitir"
 
 #: kgamewin.cpp:584
 #, kde-format
@@ -2949,7 +2950,7 @@ msgstr "%1, yenildin! Güle güle..."
 #: kgamewin.cpp:900
 #, kde-format
 msgid "%1: it is up to you again"
-msgstr "%1: sıra tekrar sende"
+msgstr "%1: sıra yeniden sende"
 
 #: kgamewin.cpp:912
 #, kde-format
@@ -2967,8 +2968,8 @@ msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
 "play again?"
 msgstr ""
-"<br>Kazananın hedefi şu şekilde açıklanmıştı:<br><i>%1</i><br><br>Tekrar "
-"oynamak istiyor musun?"
+"<br>Kazananın hedefi şu şekilde açıklanmıştı:<br><i>%1</i><br><br>Yeniden "
+"oynamak istiyor musunuz?"
 
 #: kgamewin.cpp:925
 #, kde-format
