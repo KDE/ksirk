@@ -83,6 +83,7 @@
     <p xml:lang="gl">KsirK é unha versión de computador do ben coñecido xogo estratéxico de taboleiro Risk. o obxectivo do xogo O obxectivo do xogo é simplemente conquistar o mundo atacando aos veciños cos teus exércitos.</p>
     <p xml:lang="id">KsirK adalah versi terkomputerisasi dari permainan papan strategis Risk yang terkenal. Tujuan permainan ini hanyalah untuk menaklukkan dunia dengan menyerang tetanggamu dengan pasukanmu.</p>
     <p xml:lang="it">KsirK è una versione per il computer del famoso gioco strategico da tavola Risk. L'obiettivo del gioco è semplicemente la conquista del mondo attaccando i vicini con le proprie armate.</p>
+    <p xml:lang="ka">KsirK კომპიუტერიზებული ვერსიაა ცნობილი სტრატეგიული სამაგიდო თამაშისთვის Risk. თამაშის აზრია, უბრალოდ მთელი მსოფლიო დაიპყროთ, მეზობლებზე თქვენი არმიების თავდასხმით.</p>
     <p xml:lang="ko">KsirK는 전략 보드 게임 Risk의 컴퓨터 버전입니다. 게임의 목표는 군사를 동원하여 상대방을 공격해서 세계를 정복하는 것입니다.</p>
     <p xml:lang="nl">KsirK is een gecomputeriseerde versie van het welbekende strategische bordspel Risk. Het doel van het spel is eenvoudig de wereld veroveren door uw buren aan te vallen met uw legers.</p>
     <p xml:lang="nn">KsirK er ein elektronisk variant av det kjende brettspelet Risk. Målet er å få verdsherredøme ved å angripa nabolanda dine med soldatar.</p>
@@ -150,6 +151,7 @@
       <li xml:lang="gl">Permite entre 1 e 6 xogadores, humanos ou do computador (intelixencia artificial).</li>
       <li xml:lang="id">Dukungan untuk 1-6 pemain manusia atau komputer (AI)</li>
       <li xml:lang="it">Supporto da 1 a 6 giocatori umani o computer (IA)</li>
+      <li xml:lang="ka">1-6 ადამიანის ან კომპიუტერის (AI) მხარდაჭერა</li>
       <li xml:lang="ko">컴퓨터 및 사람으로 1-6인 플레이 지원</li>
       <li xml:lang="nl">Ondersteuning voor 1-6 menselijke of computer(AI)spelers</li>
       <li xml:lang="nn">Frå 1 til 6 spelarar (menneske/datamotstandarar)</li>
@@ -213,6 +215,7 @@
       <li xml:lang="gl">Podes crear facilmente novos temas con gráficos SVG e o editor de temas.</li>
       <li xml:lang="id">Kamu bisa secara mudah menciptakan skin baru dengan grafik SVG dan pengedit skin</li>
       <li xml:lang="it">Puoi creare facilmente nuovi temi con immagini SVG e l'editore di temi</li>
+      <li xml:lang="ka">ახალი სკინების შექმნა SVG გრაფიკით და სკინების რედაქტორით შეგიძლიათ</li>
       <li xml:lang="ko">SVG 그래픽과 스킨 편집기로 새로운 스킨 만들기</li>
       <li xml:lang="nl">U kunt gemakkelijk nieuwe skins with maken met SVG graphics en de skin-editor</li>
       <li xml:lang="nn">Kan enkelt laga eigne grafikktema med SVG-bilete og innebygd temaredigeringsfunksjon</li>
