@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-04 01:38+0000\n"
-"PO-Revision-Date: 2023-10-04 12:28+0200\n"
+"PO-Revision-Date: 2023-10-06 08:56+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2864,6 +2864,8 @@ msgid ""
 "Allow to connect to a KsirK Jabber Multi User Gaming Room to create new "
 "games or to join present games"
 msgstr ""
+"KsirK Jabber მრავალმომხმრებლიან სათამაშო ოთახში შესვლა ახალი თამაშის "
+"შესაქმნელად ან არსებულ თამაშში ჩასართავად"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
 #: kgamewin.cpp:403 mainMenu.ui:104
@@ -3159,6 +3161,9 @@ msgid ""
 "buttons when hovering above them. You can disable bubble help in the options "
 "window."
 msgstr ""
+"და მიეცით საშუალება სისტემას, ყველაფერი აგიხსნათ, ღილაკებზე თაგუნას "
+"გადატარებისას გამოჩენილი შეტყობინებებითა და მინიშნებებით. ბუშტიანი დახმარება "
+"მორგების ფანჯარაში შეგიძლიათ, გამორთოთ."
 
 #: kgamewin.cpp:2921
 #, kde-format
@@ -3204,6 +3209,8 @@ msgid ""
 "Attack by drag & drop between countries<br>Move armies the same way (last "
 "action of a turn)."
 msgstr ""
+"შეტევა ქვეყნებს შორის გადათრევით და დაგდებით<br>არმიები იგივენაირად "
+"შეგიძლიათ, გადააადგლოთ (სვლის ბოლო ქმედება)."
 
 #: krightdialog.cpp:116
 #, kde-format
