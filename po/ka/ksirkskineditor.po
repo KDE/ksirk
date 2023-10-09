@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2023-10-04 18:58+0200\n"
+"PO-Revision-Date: 2023-10-08 06:53+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -646,6 +646,13 @@ msgid ""
 "country</li><li><i>Continents</i>: one for each continent to conquer</li></"
 "ul>"
 msgstr ""
+"<p>მიზნის აღწერის ტექსტი. უნდა შეიცავდეს რამდენიმე ადგილმჭერს სხვადასხვა "
+"მონაცემებისთვის, თქვენს მიზანზე დამოკიდებულებით:<p><ul><i>სამყაროს დაპყრობა</"
+"i>: არაფერი</li><li><i>მოთამაშე</i>: ერთი მოთამაშისთვის და ერთი გადასართველი "
+"ქვეყნების რიცხვი</li><li><i>ქვეყნები</i>: ერთი ქვეყნების რაოდენობისთვის და, "
+"შესაძლებელია, მეორე, თითოეულ ქვეყანაში განსათავსებელი არმიების რაოდენობა</"
+"li><li><i>კონტინენტები:</i>: ერთი თითოეული დასაპყრობი კონტინენტისთვის</"
+"li><ul>"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkgoaldefinition.ui:125
@@ -672,6 +679,8 @@ msgid ""
 "<p>Number of countries to conquer in a <i>Countries</i> goal or as a "
 "fallback in a <i>Player</i> goal.</p>"
 msgstr ""
+"<p>დასაპყრობი ქვეყნების რაოდენობა <i>ქვეყნების</i> სამიზნეში, ან როგორც "
+"გადასართველი <i>მოთამაშის</i> სამიზნეში.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, armiesbycountry)
 #: ksirkgoaldefinition.ui:149
@@ -685,6 +694,8 @@ msgstr "თითოეულ ქვეყანაში გასათავ�
 msgid ""
 "<p>Number of armies to put on each country in a <i>Countries</i> goal.</p>"
 msgstr ""
+"<p>თითოეულ ქვეყნაზე დასადები არმიების რაოდენობა <i>ქვეყნების</i> სამიზნეში.</"
+"p>"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, selectcontinentsbutton)
 #: ksirkgoaldefinition.ui:170
@@ -700,6 +711,10 @@ msgid ""
 "i> goal.</p><p>You will be prompted with a list of this world's continents. "
 "Select those to conquer with the mouse and the Ctrl and Shift keys.</p>"
 msgstr ""
+"<p>დააწკაპუნეთ ამ ღილაკზე, რათა აირჩიოთ დასაპყრობი კონტინენტები, როცა "
+"არჩეულია <i>კონტინენტების</i> სამიზნე.</p><p>გაჩვენებთ სამყაროს "
+"კონტინენტების სიას. ისინი, რომლების დაპყრობასაც აპირებთ, თაგუნათი და Ctrl/"
+"Shift ღილაკებით შეგიძლიათ, მონიშნოთ.</p>"
 
 #. i18n: ectx: property (text), widget (QPushButton, selectcontinentsbutton)
 #: ksirkgoaldefinition.ui:176
@@ -735,6 +750,8 @@ msgid ""
 "can change this list by clicking on the \"Select continents\" button above.</"
 "p>"
 msgstr ""
+"<p>დასაპყრობი კონტინენტების ჩამონათვალი, როცა სამიზნე <i>კონტინენტებია<i>.</"
+"p><p>ამ სიის შეცვლა ზემოთ \"კონტინენტების არჩევის\" ღილაკით შეგიძლიათ.</p>"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkNationalityDefinition)
 #: ksirknationalitydefinition.ui:13
@@ -762,6 +779,9 @@ msgid ""
 "existing country in case of a <i>realistic</i> world.</p><p>This string "
 "should be unique in the skin.</p>"
 msgstr ""
+"<p>ეროვნების სახელი. მოთამაშის ქვეყნის სახელი. შეიძლება, იყოს არსებული "
+"ქვეყნის სახელი, თუ სამყარო <i>რეალისტურია</i>.</p><p>ეს სტრიქონი სკინში "
+"უნიკალური უნდა იყოს.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: ksirknationalitydefinition.ui:43
@@ -782,6 +802,8 @@ msgid ""
 "<p>Name of this nationality leader. In the case of a <i>realistic</i> skin, "
 "this could be the name of a well known king, president, etc.</p>"
 msgstr ""
+"<p>ამ ერის ლიდერის სახელი. <i>რეალისტური</i> სკინის შემთხვევაში ეს ცნობილი "
+"პრეზიდენტის, მეფის და ა.შ. სახელია.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: ksirknationalitydefinition.ui:60
@@ -847,6 +869,9 @@ msgid ""
 "image of this width. All positions on the map are expressed relatively to "
 "this dimension.\n"
 msgstr ""
+"ეს რუკის სიგანეა. რუკის SVG ელემენტი, ნაგულისხმევად, ამ სიგანის მქონე "
+"გამოსახულებაზე დაიხატება. ყველა მდებარეობა რუკაზე ამ განზომილებასთან "
+"შედარებითაა გამოსახული.\n"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, heightLineEdit)
 #: ksirkskindefinition.ui:71
@@ -862,6 +887,9 @@ msgid ""
 "image of this height All positions on the map are expressed relatively to "
 "this dimension.\n"
 msgstr ""
+"ეს რუკის სიმაღლეა. რუკის SVG ელემენტი, ნაგულისხმევად, ამ სიმაღლის მქონე "
+"გამოსახულებაზე დაიხატება. ყველა მდებარეობა რუკაზე ამ განზომილებასთან "
+"შედარებითაა გამოსახული.\n"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: ksirkskindefinition.ui:90
@@ -933,7 +961,7 @@ msgstr "სკინის ადამიანისთვის გასა�
 msgid ""
 "Describe here the skin, its style, its story, the intent of its author(s), "
 "etc."
-msgstr ""
+msgstr "აღწერეთ აქ სკინი, მისი სტილი, ისტორია, ავტორების მიზანი და სხვ."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabSprites)
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkSpritesDefinition)
@@ -1020,6 +1048,13 @@ msgid ""
 "add at least as many nationalities as the maximum number of players for this "
 "skin."
 msgstr ""
+"ეს ჩამონათვალი აღწერილ ეროვნებებს აჩვენებს.\n"
+"\n"
+"თითოეულ ეროვნებას უნიკალური სახელი უნდა ჰქონდეს. აირჩიეთ ეროვნება და "
+"ჩაასწორეთ მისი დეტალები მარჯვენა პანელში.\n"
+"\n"
+"თამაშისას ეროვნება თითოეულმა მოთამაშემ უნდა აირჩიოს. ამიტომ, ყველაზე ცოტა, "
+"იმდენი ეროვნება უნდა აღწეროთ, რამდენიც სკინში მოთამაშეა."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newCountryButton)
 #: ksirkskindefinition.ui:264
@@ -1070,6 +1105,10 @@ msgid ""
 "Each country name should be unique. Select a country and edit its details in "
 "the right dock."
 msgstr ""
+"ეს ჩამონათვალი აღწერილ ქვეყნებს აჩვენებს.\n"
+"\n"
+"ქვეყნის სახელები უნიკალური უნდა იყოს. აირჩიეთ ქვეყანა და ჩაასწორეთ მისი "
+"დეტალები მარჯვენა პანელში."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newContinentButton)
 #: ksirkskindefinition.ui:326
@@ -1120,6 +1159,10 @@ msgid ""
 "Each continent name should be unique. Select a continent and edit its "
 "details in the right dock."
 msgstr ""
+"ეს ჩამონათვალი აღწერილ კონტინენტებს აჩვენებს.\n"
+"\n"
+"კონტინენტის სახელები უნიკალური უნდა იყოს. აირჩიეთ კონტინენტი და ჩაასწორეთ "
+"მისი დეტალები მარჯვენა პანელში."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabGoals)
 #: ksirkskindefinition.ui:380
@@ -1175,6 +1218,10 @@ msgid ""
 "Each goal name should be unique. Select a goal and edit its details in the "
 "right dock."
 msgstr ""
+"ეს ჩამონათვალი აღწერილ მიზნებს აჩვენებს.\n"
+"\n"
+"მიზნის სახელები უნიკალური უნდა იყოს. აირჩიეთ მიზანი და ჩაასწორეთ მისი "
+"დეტალები მარჯვენა პანელში."
 
 #: ksirkSkinEditorConfigDialog.cpp:55
 #, kde-format
@@ -1195,6 +1242,8 @@ msgid ""
 "are highlighted. You can modify the selection using the mouse and Ctrl and "
 "Shift keys."
 msgstr ""
+"სამყაროში აღწერილი ქვეყნების სია. ამჟამად მონიშნული ქვეყნები გამოკვეთილია. "
+"მონიშნულის შეცვლა თაგუნათი და Ctrl/Shift ღილაკების გამოყენებით შეგიძლიათ."
 
 #. i18n: ectx: Menu (game)
 #: ksirkskineditorui.rc:10
@@ -1240,6 +1289,9 @@ msgid ""
 "for the currently selected country. The buttons are available only if the "
 "sprite is not already placed. "
 msgstr ""
+"ამჟამად არჩეული ქვეყნის შესაბამისი სპრაიტის საწყისი მდებარეობის მისათითებლად "
+"გამოიყენეთ ეს ღილაკები. ღილაკები ხელმისაწვდომია, მხოლოდ, თუ სპრაიტი უკვე "
+"მოთავსებული არაა. "
 
 #. i18n: ectx: property (toolTip), widget (QScrollArea, mapScrollArea)
 #: ksirkskineditorwidget.ui:69
@@ -1257,6 +1309,11 @@ msgid ""
 "Drag and drop the sprites, the country names, and the highlighting anchors "
 "to change their place."
 msgstr ""
+"აჩვენებს სკინის რუკას უკვე განთავსებული პრაიტებით, ქვეყნის სახელებით და "
+"ღუზის გამოკვეთით.\n"
+"\n"
+"გადაათრიეთ სპრაიტები, ქვეყნის სახელები და გამოკვეთის ღუზები, რათა მათი "
+"მდებარეობა შეცვალოთ."
 
 #. i18n: ectx: property (text), widget (QLabel, label_26)
 #: ksirkspritesdefinition.ui:29
@@ -1285,6 +1342,13 @@ msgid ""
 "pixels between the flag and each cannon, measured relatively to the map base "
 "size as set in the main skin definition panel."
 msgstr ""
+"ცარიელი ადგილის ზომა საომარ ქვემეხსა და ალამს შორის.\n"
+"\n"
+"ბრძოლისას, თითოეული მოთამაშის მსროლელი და აფეთქებადი ქვემეხები მხარის, "
+"რომელიც თავს იცავს, ალმის ორივე მხარეს განთავსდება. ეს პარამეტრი "
+"წარმოდგენილია პიქსელების რაოდენობაში ალამსა და თითოეულ ქვემეხს შორის, "
+"იზომება რუკის საბაზისო ზომასთან შეფარდებით, როგორც ის მთავარი სკინის აღწერის "
+"პანელშია მითითებული."
 
 #. i18n: ectx: property (toolTip), widget (QTabWidget, ktabwidget)
 #: ksirkspritesdefinition.ui:53
@@ -1331,6 +1395,9 @@ msgid ""
 "rendered on a pixmap of width: <i>Width</i> * N<i>number of frames</i> and "
 "then split into individual frames.</p>"
 msgstr ""
+"<p>ალმის თითოეული კადრის სიგანე.</p><p>ელემენტის <i>ალამი</i> რენდერი "
+"მოხდება პიქსელების რუკაზე სიგანით: <i>სიგანე</i> * N<i>კადრების რაოდენობა</"
+"i>, შემდეგ კი ინდივიდუალურ კადრებად დაიშლება.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_6)
@@ -1360,6 +1427,10 @@ msgid ""
 "The pool flag element will be rendered on a pixmap of height: (Height * "
 "Number of versions) and then split into individual frames."
 msgstr ""
+"ალმის ინდივიდუალური კადრის სიმაღლე.\n"
+"\n"
+"ალმის ელემენტის რენდერი მოხდება პიქსელების რუკაზე, სიმაღლით: (სიმაღლე * "
+"ვერსიების რაოდენობა), შემდეგ კი ინდივიდუალურ კადრებად დაიშლება."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_8)
@@ -1388,6 +1459,9 @@ msgid ""
 "be rendered on a pixmap of width: (<i>Width</i> * <i>Number of frames</i>) "
 "and then split into individual frames.</p>"
 msgstr ""
+"<p>ინდივიდუალური ალმის კადრების რაოდენობა.</p><p>ელემენტის <i>ალამი</i> "
+"რენდერი მოხდება პიქსელების რუკაზე სიგანით: <i>სიგანე</i> * N<i>კადრების "
+"რაოდენობა</i>, შემდეგ კი ინდივიდუალურ კადრებად დაიშლება.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, label_7)
@@ -1422,6 +1496,14 @@ msgid ""
 "the front and the last one from the back. However, not all sprites need all "
 "versions."
 msgstr ""
+"ალმის ვერსიების რაოდენობა:\n"
+"\n"
+"პულის ალმის ელემენტის რენდერი მოხდება პიქსელების რუკაზე სიმაღლით: (სიმაღლე * "
+"ვერსიების რაოდენობა) და შემდეგ დაიყოფა ინდივიდუალურ კადრებად.\n"
+"\n"
+"თითოეული ვერსია აჩვენებს სპრაიტს, რომელიც ერთი მიმართულებიდან ჩანს: პირველი "
+"მარჯვნივ ყურება, მეორე მარცხნივ, მესამე წინ და ბოლო უკან. მაგრამ ყველა "
+"სპრაიტს ყველა ვერსია არ სჭირდება."
 
 #. i18n: ectx: property (toolTip), widget (QWidget, infantryTab)
 #: ksirkspritesdefinition.ui:164
@@ -1506,6 +1588,12 @@ msgid ""
 "right, the second towards the left, the third one from front and the last "
 "one from the back. However, not all sprites need all versions.</p>"
 msgstr ""
+"<p>ქვეითის ვერსიების რაოდენობა.</p><p> <i>ქვეითების</i> პულის ელემენტის "
+"რენდერი მოხდება პიქსელების რუკაზე სიმაღლით: (<i>სიმაღლე</i> * <i>ვერსიების "
+"რაოდენობა</i>), შემდეგ კი ინდივიდუალურ კადრებად დაიშლება.</p><p>თითოეული "
+"ვერსია აჩვენებს სპრაიტს, რომელიც, მხოლოდ, ერთი მხრიდან ჩანს. პირველი "
+"მარჯვნივ იყურება, მეორე მარცხნივ, მესამე წინ და ბოლო კი უკან. მაგრამ ყველა "
+"სპრაიტს ყველა ვერსია არ სჭირდება.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, cavalryTab)
 #: ksirkspritesdefinition.ui:255
@@ -1590,6 +1678,12 @@ msgid ""
 "second towards the left, the third one from front and the last one from the "
 "back. However, not all sprites need all versions.</p>"
 msgstr ""
+"<p>კავალერიის ვერსიების რაოდენობა.</p><p> <i>კავალერიის</i> პულის ელემენტის "
+"რენდერი მოხდება პიქსელების რუკაზე სიმაღლით: (<i>სიმაღლე</i> * <i>ვერსიების "
+"რაოდენობა</i>), შემდეგ კი ინდივიდუალურ კადრებად დაიშლება.</p><p>თითოეული "
+"ვერსია აჩვენებს სპრაიტს, რომელიც, მხოლოდ, ერთი მხრიდან ჩანს. პირველი "
+"მარჯვნივ იყურება, მეორე მარცხნივ, მესამე წინ და ბოლო კი უკან. მაგრამ ყველა "
+"სპრაიტს ყველა ვერსია არ სჭირდება.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, cannonTab)
 #: ksirkspritesdefinition.ui:346
@@ -1674,6 +1768,12 @@ msgid ""
 "second towards the left, the third one from front and the last one from the "
 "back. However, not all sprites need all versions.</p>"
 msgstr ""
+"<p>ქვემეხის ვერსიების რაოდენობა.</p><p> <i>ქვემეხის</i> პულის ელემენტის "
+"რენდერი მოხდება პიქსელების რუკაზე სიმაღლით: (<i>სიმაღლე</i> * <i>ვერსიების "
+"რაოდენობა</i>), შემდეგ კი ინდივიდუალურ კადრებად დაიშლება.</p><p>თითოეული "
+"ვერსია აჩვენებს სპრაიტს, რომელიც, მხოლოდ, ერთი მხრიდან ჩანს. პირველი "
+"მარჯვნივ იყურება, მეორე მარცხნივ, მესამე წინ და ბოლო კი უკან. მაგრამ ყველა "
+"სპრაიტს ყველა ვერსია არ სჭირდება.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, firingTab)
 #: ksirkspritesdefinition.ui:441
@@ -1701,6 +1801,10 @@ msgid ""
 "element will be rendered on a pixmap of width (<i>Width</i> * <i>Number of "
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>მსროლელი ქვემეხის ინდივიდუალური კადრის სიგანე.</p><p><i>მსროლელი "
+"ქვემეხის</i> ელემენტის პულის რენდერი მოხდება პიქსელების რუკაზე სიგანით: "
+"<i>სიგანე</i> * <i>კადრების რაოდენობა</i> შემდეგ კი ცალ-ცალკე კადრებად "
+"დაიყოფა.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingh)
 #: ksirkspritesdefinition.ui:476
@@ -1716,6 +1820,10 @@ msgid ""
 "i> element will be rendered on a pixmap of height (<i>Height</i> * <i>Number "
 "of versions</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>მსროლელი ქვემეხის ინდივიდუალური კადრის სიმაღლე.</p><p><i>მსროლელი "
+"ქვემეხის</i> ელემენტის პულის რენდერი მოხდება პიქსელების რუკაზე სიმაღლით: "
+"<i>სიმაღლე</i> * <i>ვერსიების რაოდენობა</i> შემდეგ კი ცალ-ცალკე კადრებად "
+"დაიყოფა.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingf)
 #: ksirkspritesdefinition.ui:493
@@ -1731,6 +1839,10 @@ msgid ""
 "cannon</i> element will be rendered on a pixmap of width (<i>Width</i> * "
 "<i>Number of frames</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>მსროლელი ქვემეხის ინდივიდუალური კადრების რაოდენობა.</p><p><i>მსროლელი "
+"ქვემეხის</i> ელემენტის პულის რენდერი მოხდება პიქსელების რუკაზე სიგანით: "
+"<i>სიგანე</i> * <i>კადრების რაოდენობა</i> შემდეგ კი ცალ-ცალკე კადრებად "
+"დაიყოფა.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingv)
 #: ksirkspritesdefinition.ui:510
@@ -1749,6 +1861,12 @@ msgid ""
 "towards the right, the second towards the left, the third one from front and "
 "the last one from the back. However, not all sprites need all versions.</p>"
 msgstr ""
+"<p>მსროლელი ქვემეხის ვერსიების რაოდენობა.</p><p> <i>მსროლელი ქვემეხის</i> "
+"პულის ელემენტის რენდერი მოხდება პიქსელების რუკაზე სიმაღლით: (<i>სიმაღლე</i> "
+"* <i>ვერსიების რაოდენობა</i>), შემდეგ კი ინდივიდუალურ კადრებად დაიშლება.</"
+"p><p>თითოეული ვერსია აჩვენებს სპრაიტს, რომელიც, მხოლოდ, ერთი მხრიდან ჩანს. "
+"პირველი მარჯვნივ იყურება, მეორე მარცხნივ, მესამე წინ და ბოლო კი უკან. მაგრამ "
+"ყველა სპრაიტს ყველა ვერსია არ სჭირდება.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, explodingTab)
 #: ksirkspritesdefinition.ui:536
@@ -1776,6 +1894,10 @@ msgid ""
 "element will be rendered on a pixmap of width (<i>Width</i> * <i>Number of "
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>ფეთქებადი ქვემეხის ინდივიდუალური კადრის სიგანე.</p><p><i>ფეთქებადი "
+"ქვემეხის</i> ელემენტის პულის რენდერი მოხდება პიქსელების რუკაზე სიგანით: "
+"<i>სიგანე</i> * <i>კადრების რაოდენობა</i> შემდეგ კი ცალ-ცალკე კადრებად "
+"დაიყოფა.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingh)
 #: ksirkspritesdefinition.ui:571
@@ -1791,6 +1913,10 @@ msgid ""
 "element will be rendered on a pixmap of height (<i>Height</i> * <i>Number of "
 "versions</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>ფეთქებადი ქვემეხის ინდივიდუალური კადრის სიმაღლე.</p><p><i>ფეთქებადი "
+"ქვემეხის</i> ელემენტის პულის რენდერი მოხდება პიქსელების რუკაზე სიმაღლით: "
+"<i>სიმაღლე</i> * <i>ვერსიების რაოდენობა</i> შემდეგ კი ცალ-ცალკე კადრებად "
+"დაიყოფა.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingf)
 #: ksirkspritesdefinition.ui:588
@@ -1806,6 +1932,10 @@ msgid ""
 "<i>exploding</i> element will be rendered on a pixmap of width (<i>Width</i> "
 "* <i>Number of frames</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>ფეთქებადი ქვემეხის ინდივიდუალური კადრების რაოდენობა.</p><p><i>ფეთქებადი "
+"ქვემეხის</i> ელემენტის პულის რენდერი მოხდება პიქსელების რუკაზე სიგანით: "
+"<i>სიგანე</i> * <i>კადრების რაოდენობა</i> შემდეგ კი ცალ-ცალკე კადრებად "
+"დაიყოფა.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingv)
 #: ksirkspritesdefinition.ui:605
@@ -1824,6 +1954,12 @@ msgid ""
 "towards the right, the second towards the left, the third one from front and "
 "the last one from the back. However, not all sprites need all versions.</p>"
 msgstr ""
+"<p>ფეთქებადი ქვემეხის ვერსიების რაოდენობა.</p><p> <i>ფეთქებადი ქვემეხის</i> "
+"პულის ელემენტის რენდერი მოხდება პიქსელების რუკაზე სიმაღლით: (<i>სიმაღლე</i> "
+"* <i>ვერსიების რაოდენობა</i>), შემდეგ კი ინდივიდუალურ კადრებად დაიშლება.</"
+"p><p>თითოეული ვერსია აჩვენებს სპრაიტს, რომელიც, მხოლოდ, ერთი მხრიდან ჩანს. "
+"პირველი მარჯვნივ იყურება, მეორე მარცხნივ, მესამე წინ და ბოლო კი უკან. მაგრამ "
+"ყველა სპრაიტს ყველა ვერსია არ სჭირდება.</p>"
 
 #: main.cpp:56
 #, kde-format
@@ -2023,7 +2159,7 @@ msgstr ""
 #: onu.cpp:990
 #, kde-format
 msgid "PoolLoader"
-msgstr ""
+msgstr "PoolLoader"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, KsirkSkinEditorPreferencesWidget)
 #: preferences.ui:25

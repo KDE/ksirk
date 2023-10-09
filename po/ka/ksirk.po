@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2023-10-04 18:59+0200\n"
+"PO-Revision-Date: 2023-10-08 06:54+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1732,7 +1732,7 @@ msgstr "%1 (%2) მოთამაშე აქაა. ველოდები�
 #: GameLogic/gameautomaton.cpp:1503
 #, kde-format
 msgid "Please choose another name"
-msgstr ""
+msgstr "აირჩიეთ სხვა სახელი"
 
 #: GameLogic/gameautomaton.cpp:1503
 #, kde-format
@@ -1833,7 +1833,7 @@ msgstr ""
 #: GameLogic/gameautomaton.cpp:1961
 #, kde-format
 msgid "KsirK - Displaying Goal"
-msgstr ""
+msgstr "KsirK - სამიზნის ჩვენება"
 
 #: GameLogic/gameautomaton.cpp:2147
 #, kde-format
@@ -1849,7 +1849,7 @@ msgstr ""
 #: GameLogic/gameautomaton.cpp:2397
 #, kde-format
 msgid "Problem : no one destroyed"
-msgstr ""
+msgstr "პრობლემა: არავინ განადგურებულა"
 
 #: GameLogic/gameautomaton.cpp:2397 gestionSprites.cpp:927
 #: gestionSprites.cpp:947 gestionSprites.cpp:1048 gestionSprites.cpp:1085
@@ -2444,7 +2444,7 @@ msgstr ""
 #: Jabber/jabberaccount.cpp:919
 #, kde-format
 msgid "Temporary failure, please try again later."
-msgstr ""
+msgstr "დროებითი შეცდომა. მოგვიანებით სცადეთ."
 
 #: Jabber/jabberaccount.cpp:926
 #, kde-format
@@ -2858,6 +2858,8 @@ msgid ""
 "Allow to connect to a KsirK Jabber Multi User Gaming Room to create new "
 "games or to join present games"
 msgstr ""
+"KsirK Jabber მრავალმომხმრებლიან სათამაშო ოთახში შესვლა ახალი თამაშის "
+"შესაქმნელად ან არსებულ თამაშში ჩასართავად"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
 #: kgamewin.cpp:398 mainMenu.ui:111
@@ -3127,7 +3129,7 @@ msgstr "%1, თქვენ გადაწყვიტეთ."
 #: kgamewin.cpp:2668
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
-msgstr ""
+msgstr "მართლა გნებავთ ახალის დასაწყებად ამ თამაშის დასრულება?"
 
 #: kgamewin.cpp:2668
 #, kde-format
@@ -3162,6 +3164,9 @@ msgid ""
 "buttons when hovering above them. You can disable bubble help in the options "
 "window."
 msgstr ""
+"და მიეცით საშუალება სისტემას, ყველაფერი აგიხსნათ, ღილაკებზე თაგუნას "
+"გადატარებისას გამოჩენილი შეტყობინებებითა და მინიშნებებით. ბუშტიანი დახმარება "
+"მორგების ფანჯარაში შეგიძლიათ, გამორთოთ."
 
 #: kgamewin.cpp:2943
 #, kde-format
@@ -3194,7 +3199,7 @@ msgstr "შენახვა  გაუქმებულია"
 #: kgamewinslots.cpp:470
 #, kde-format
 msgid "Game saved to %1"
-msgstr ""
+msgstr "თამაში შენახულია, როგორც %1"
 
 #: kgamewinslots.cpp:477
 #, kde-format
@@ -3207,6 +3212,8 @@ msgid ""
 "Attack by drag & drop between countries<br>Move armies the same way (last "
 "action of a turn)."
 msgstr ""
+"შეტევა ქვეყნებს შორის გადათრევით და დაგდებით<br>არმიები იგივენაირად "
+"შეგიძლიათ, გადააადგლოთ (სვლის ბოლო ქმედება)."
 
 #: krightdialog.cpp:116
 #, kde-format
@@ -3408,7 +3415,7 @@ msgstr "KsirK - სტრატეგიული თამაში მსო�
 #: main.cpp:46
 #, kde-format
 msgid "(c) 2002-2015, Gaël de Chalendar\n"
-msgstr ""
+msgstr "(c) 2002-2015, Gaël de Chalendar\n"
 
 #: main.cpp:47
 #, kde-format
@@ -3462,6 +3469,10 @@ msgid ""
 "Pelouas<br/>&nbsp;&nbsp;Joël Marco<br/>&nbsp;&nbsp;Laurent Dang<br/>&nbsp;"
 "&nbsp;Nicolas Linard<br/>&nbsp;&nbsp;Vincent Sac"
 msgstr ""
+"&nbsp;&nbsp;Anthony Rey<br/>&nbsp;&nbsp;Benjamin Lucas<br/>&nbsp;&nbsp;"
+"Benjamin Moreau<br/>&nbsp;&nbsp;Gaël Clouet<br/>&nbsp;&nbsp;Guillaume "
+"Pelouas<br/>&nbsp;&nbsp;Joël Marco<br/>&nbsp;&nbsp;Laurent Dang<br/>&nbsp;"
+"&nbsp;Nicolas Linard<br/>&nbsp;&nbsp;Vincent Sac"
 
 #. i18n: ectx: property (text), widget (QLabel, lTitle)
 #: mainMenu.ui:38
@@ -3479,13 +3490,13 @@ msgstr "ახალი ლოკალური თამაში"
 #: mainMenu.ui:104
 #, kde-format
 msgid "Play KsirK over Jabber Network"
-msgstr ""
+msgstr "ითამაშეთ KsirK Jabber-ის ქსელით"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbJoin)
 #: mainMenu.ui:118
 #, kde-format
 msgid "Join Standard TCP/IP Network Game"
-msgstr ""
+msgstr "სტანდარტულ TCP/IP ქსელურ თამაშთან მიერთება"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbLoad)
 #: mainMenu.ui:125
