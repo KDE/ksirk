@@ -27,7 +27,6 @@
 #include <qdom.h>
 #include <QPainter>
 #include <QPixmapCache>
-#include <QFileInfo>
 #include <QMenuBar>
 #include <KLocalizedString>
 #include "ksirk_debug.h"
@@ -56,16 +55,6 @@ ONU::ONU(GameAutomaton* automaton,
   m_zoomFactorFinal(1)
 {
   qCDebug(KSIRK_LOG) << "ONU constructor: " << m_configFileName;
-  QFileInfo qfi(m_configFileName);
-  qCDebug(KSIRK_LOG) << "skin written at :" << qfi.lastModified().toSecsSinceEpoch();
-  //qCDebug(KSIRK_LOG) << "cache created at:" << m_automaton->pixmapCache().timestamp();
-#pragma message("port to qt5")
-#if 0
-  if (m_automaton->pixmapCache().timestamp() < qfi.lastModified().toSecsSinceEpoch())
-  {
-    m_automaton->pixmapCache().discard();
-  }
-#endif
   m_font.family = "URW Chancery L";
   m_font.size = (int)(13*m_zoom);
   m_font.weight = QFont::Bold;
