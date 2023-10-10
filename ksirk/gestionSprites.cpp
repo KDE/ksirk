@@ -238,53 +238,7 @@ void KGameWindow::determinePointArrivee(
   qreal pointArriveeAttaquantX;
   qreal pointArriveeY;
   qreal pointArriveeDefenseurX;
-  qreal pointDepartAttaquantX;
-  qreal pointDepartDefenseurX;
-  qreal pointDepartAttaquantY;
-  qreal pointDepartDefenseurY;
   qreal leftRelativePos;
-
-  if (!attackingCountry->spritesInfantry().isEmpty())
-  {
-    // We must know
-    //  - attacker's departure point (pointInfantry)
-    pointDepartAttaquantX = attackingCountry-> pointInfantry().x()*m_theWorld->zoom();
-    pointDepartAttaquantY = attackingCountry-> pointInfantry().y()*m_theWorld->zoom();
-  }
-  else if (!attackingCountry->spritesCavalry().isEmpty())
-  {
-    // We must know
-    //  - attacker's departure point (pointCavalry)
-    pointDepartAttaquantX = attackingCountry-> pointCavalry().x()*m_theWorld->zoom();
-    pointDepartAttaquantY = attackingCountry-> pointCavalry().y()*m_theWorld->zoom();
-  }
-  else
-  {
-    // We must know
-    //  - attacker's departure point (pointCannon)
-      pointDepartAttaquantX = attackingCountry-> pointCannon().x()*m_theWorld->zoom();
-      pointDepartAttaquantY = attackingCountry-> pointCannon().y()*m_theWorld->zoom();
-  }
-
-  if (!defendingCountry->spritesInfantry().isEmpty())
-  {
-    //  - defender's departure point (pointInfantry)
-    pointDepartDefenseurX = defendingCountry-> pointInfantry().x()*m_theWorld->zoom();
-    pointDepartDefenseurY = defendingCountry-> pointInfantry().y()*m_theWorld->zoom();
-  
-  }
-  else if (!defendingCountry->spritesCavalry().isEmpty())
-  {
-    //  - defender's departure point (pointCavalry)
-    pointDepartDefenseurX = defendingCountry-> pointCavalry().x()* m_theWorld->zoom();
-    pointDepartDefenseurY = defendingCountry-> pointCavalry().y()* m_theWorld->zoom();
-  }
-  else
-  {
-    //  - defender's departure point (pointCannon)
-    pointDepartDefenseurX = defendingCountry-> pointCannon().x()*  m_theWorld->zoom();
-    pointDepartDefenseurY = defendingCountry-> pointCannon().y()*  m_theWorld->zoom();
-  }
 
   // vertical meet point
   int diff = Sprites::SkinSpritesData::single().intData("flag-height") - Sprites::SkinSpritesData::single().intData("cannon-height");
@@ -381,8 +335,6 @@ void KGameWindow::determinePointArriveeForArena(
   qreal pointArriveeAttaquantX;
   qreal pointArriveeY;
   qreal pointArriveeDefenseurX;
-  qreal pointDepartAttaquantX;
-  qreal pointDepartDefenseurX;
   qreal pointDepartAttaquantY;
   qreal pointDepartDefenseurY;
   qreal leftRelativePos;
@@ -403,7 +355,6 @@ void KGameWindow::determinePointArriveeForArena(
     //  - attacker's departure point (pointInfantry)
     QPointF dep = determinePointDepartArena(attackingCountry, relative);
     qCDebug(KSIRK_LOG) << "dep=" << dep;
-    pointDepartAttaquantX = dep.x();
     pointDepartAttaquantY = dep.y();
   }
   else if (!attackingCountry->spritesCavalry().isEmpty())
@@ -411,7 +362,6 @@ void KGameWindow::determinePointArriveeForArena(
     qCDebug(KSIRK_LOG) << "cavalry" << attackingCountry->pointCavalry();
     // We must know
     //  - attacker's departure point (pointCavalry)
-    pointDepartAttaquantX = attackingCountry-> pointCavalry().x()*m_theWorld->zoom();
     pointDepartAttaquantY = attackingCountry-> pointCavalry().y()*m_theWorld->zoom();
   }
   else
@@ -419,7 +369,6 @@ void KGameWindow::determinePointArriveeForArena(
     qCDebug(KSIRK_LOG) << "cannon" << attackingCountry->pointCannon();
     // We must know
     //  - attacker's departure point (pointCannon)
-      pointDepartAttaquantX = attackingCountry-> pointCannon().x()*m_theWorld->zoom();
       pointDepartAttaquantY = attackingCountry-> pointCannon().y()*m_theWorld->zoom();
   }
 
@@ -452,7 +401,6 @@ void KGameWindow::determinePointArriveeForArena(
     qCDebug(KSIRK_LOG) << "infantry" << defendingCountry->name() << relative;
     //  - defender's departure point (pointInfantry)
     QPointF dep = determinePointDepartArena(defendingCountry, relative);
-    pointDepartDefenseurX = dep.x();
     pointDepartDefenseurY = dep.y();
     qCDebug(KSIRK_LOG) << "dep=" << dep;
   }
@@ -460,14 +408,12 @@ void KGameWindow::determinePointArriveeForArena(
   {
     qCDebug(KSIRK_LOG) << "cavalry" << defendingCountry->pointCavalry();
     //  - defender's departure point (pointCavalry)
-    pointDepartDefenseurX = defendingCountry-> pointCavalry().x()*m_theWorld->zoom();
     pointDepartDefenseurY = defendingCountry-> pointCavalry().y()*m_theWorld->zoom();
   }
   else
   {
     qCDebug(KSIRK_LOG) << "cannon" << defendingCountry->pointCannon();
     //  - defender's departure point (pointCannon)
-    pointDepartDefenseurX = defendingCountry-> pointCannon().x()*m_theWorld->zoom();
     pointDepartDefenseurY = defendingCountry-> pointCannon().y()*m_theWorld->zoom();
   }
 
