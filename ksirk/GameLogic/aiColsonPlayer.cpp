@@ -485,9 +485,9 @@ const Continent* AIColsonPlayer::computeChoiceOfContinent(void)
   {
     QList<Continent*>::iterator contIt(m_world->getContinents().begin());
     QList<Continent*>::iterator contIt_end(m_world->getContinents().end());
-#ifdef __GNUC__
-#warning continent can not be 0 in this code path - everything in this for loop is dead code
-#endif
+
+    // FIXME: continent can not be 0 in this code path - everything in this for loop is dead code
+
     for (;(contIt!=contIt_end) && (continent==nullptr);contIt++)
     {
       const Continent* cont = *contIt;
