@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-04 01:38+0000\n"
-"PO-Revision-Date: 2023-10-02 17:33+0100\n"
+"PO-Revision-Date: 2023-10-10 07:12+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -659,7 +659,7 @@ msgstr ""
 "i>: neniu</li><li><i>Ludanto</i> : unu por la nomo de la ludanto kaj unu por "
 "la nombro da landoj-returniĝo</li><li><i>Landoj</i>: unu por la nombro da "
 "landoj kaj eble dua por la nombro da armeoj surmeti ĉiun. lando</"
-"li><i>Kontinentoj</i>: unu por ĉiu kontinento konkerenda</li></ul>"
+"li><li><i>Kontinentoj</i>: unu por ĉiu kontinento konkerenda</li></ul>"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkgoaldefinition.ui:125

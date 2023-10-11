@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-04 01:38+0000\n"
+"POT-Creation-Date: 2023-10-11 02:06+0000\n"
 "PO-Revision-Date: 2013-03-29 11:36+0100\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1646,43 +1646,43 @@ msgid "New Game or Exit"
 msgstr "Új játék vagy kilépés"
 
 #. i18n: ectx: property (text), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:27 GameLogic/gameautomaton.cpp:1667
+#: Dialogs/restartOrExitDialog.ui:24 GameLogic/gameautomaton.cpp:1667
 #, kde-format
 msgid "New Game"
 msgstr "Új játék"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:33
+#: Dialogs/restartOrExitDialog.ui:30
 #, kde-format
 msgid "Starts a new game"
 msgstr "Új játék kezdése"
 
 #. i18n: ectx: property (text), widget (QPushButton, doNothingButton)
-#: Dialogs/restartOrExitDialog.ui:40
+#: Dialogs/restartOrExitDialog.ui:37
 #, kde-format
 msgid "Do Nothing"
 msgstr "Semmit"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, doNothingButton)
-#: Dialogs/restartOrExitDialog.ui:43
+#: Dialogs/restartOrExitDialog.ui:40
 #, kde-format
 msgid "Do nothing. Game buttons will be available"
 msgstr "Nem kell semmit sem tenni. A gombok elérhetők maradnak."
 
 #. i18n: ectx: property (text), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:50 GameLogic/gameautomaton.cpp:1668
+#: Dialogs/restartOrExitDialog.ui:47 GameLogic/gameautomaton.cpp:1668
 #, kde-format
 msgid "Exit"
 msgstr "Kilépés"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:53
+#: Dialogs/restartOrExitDialog.ui:50
 #, kde-format
 msgid "Quit KsirK"
 msgstr "Kilépés a játékból"
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: Dialogs/restartOrExitDialog.ui:89
+#: Dialogs/restartOrExitDialog.ui:86
 #, no-c-format, kde-format
 msgid "%1 won! Do you want to play again?"
 msgstr "%1 győzött! Szeretne új játékot kezdeni?"
@@ -1870,10 +1870,10 @@ msgstr "%1 befejezte a ciklust, de %2 játékos még hátra van"
 msgid "Problem : no one destroyed"
 msgstr "Hiba történt: senki nem lett megsemmisítve"
 
-#: GameLogic/gameautomaton.cpp:2380 gestionSprites.cpp:928
-#: gestionSprites.cpp:948 gestionSprites.cpp:1049 gestionSprites.cpp:1086
-#: gestionSprites.cpp:1121 gestionSprites.cpp:1175 gestionSprites.cpp:1212
-#: gestionSprites.cpp:1246
+#: GameLogic/gameautomaton.cpp:2380 gestionSprites.cpp:874
+#: gestionSprites.cpp:894 gestionSprites.cpp:995 gestionSprites.cpp:1032
+#: gestionSprites.cpp:1067 gestionSprites.cpp:1121 gestionSprites.cpp:1158
+#: gestionSprites.cpp:1192
 #, kde-format
 msgid "KsirK - Error!"
 msgstr "KsirK-hiba"
@@ -2006,7 +2006,7 @@ msgstr "Nincs üzenet..."
 msgid "<b>%1:</b> %2"
 msgstr "<b>%1:</b> %2"
 
-#: GameLogic/onu.cpp:128
+#: GameLogic/onu.cpp:117
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2015,16 +2015,16 @@ msgstr ""
 "Nem található gyűjtőnév.\n"
 "A program befejeződik."
 
-#: GameLogic/onu.cpp:129 GameLogic/onu.cpp:146 gestionSprites.cpp:693
-#: gestionSprites.cpp:808 gestionSprites.cpp:853 gestionSprites.cpp:1409
-#: gestionSprites.cpp:1486 kgamewin.cpp:149 kgamewin.cpp:383 kgamewin.cpp:400
+#: GameLogic/onu.cpp:118 GameLogic/onu.cpp:135 gestionSprites.cpp:639
+#: gestionSprites.cpp:754 gestionSprites.cpp:799 gestionSprites.cpp:1355
+#: gestionSprites.cpp:1432 kgamewin.cpp:149 kgamewin.cpp:383 kgamewin.cpp:400
 #: kgamewin.cpp:417 kgamewin.cpp:584 kgamewin.cpp:740
 #: Sprites/animsprite.cpp:511 Sprites/animsprite.cpp:526
 #, kde-format
 msgid "Error!"
 msgstr "Hiba"
 
-#: GameLogic/onu.cpp:145
+#: GameLogic/onu.cpp:134
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2043,8 +2043,8 @@ msgstr "Nem lehet %1 hadsereget átmozgatni (innen: %2, ide: %3)"
 msgid "Moving %1 armies from %2 to %3"
 msgstr "%1 hadsereg átmozgatása innen: %2 ide: %3"
 
-#: gestionSprites.cpp:693 gestionSprites.cpp:808 gestionSprites.cpp:1409
-#: gestionSprites.cpp:1486
+#: gestionSprites.cpp:639 gestionSprites.cpp:754 gestionSprites.cpp:1355
+#: gestionSprites.cpp:1432
 #, kde-format
 msgid ""
 "Sound roule not found - Verify your installation<br>Program cannot continue"
@@ -2052,15 +2052,15 @@ msgstr ""
 "Nem található hangleíró, ellenőrizze, nem történt-e telepítési hiba.<br>A "
 "program befejeződik"
 
-#: gestionSprites.cpp:853
+#: gestionSprites.cpp:799
 #, kde-format
 msgid ""
 "Sound cannon not found - Verify your installation<br>Program cannot continue"
 msgstr "Nem található hang, ellenőrizze, nem történt-e telepítési hiba"
 
-#: gestionSprites.cpp:928 gestionSprites.cpp:948 gestionSprites.cpp:1049
-#: gestionSprites.cpp:1086 gestionSprites.cpp:1121 gestionSprites.cpp:1175
-#: gestionSprites.cpp:1212 gestionSprites.cpp:1246
+#: gestionSprites.cpp:874 gestionSprites.cpp:894 gestionSprites.cpp:995
+#: gestionSprites.cpp:1032 gestionSprites.cpp:1067 gestionSprites.cpp:1121
+#: gestionSprites.cpp:1158 gestionSprites.cpp:1192
 #, kde-format
 msgid ""
 "Sound crash not found - Verify your installation\n"
@@ -2069,12 +2069,12 @@ msgstr ""
 "Hangprobléma, ellenőrizze, nem történt-e telepítési hiba.\n"
 "A program befejeződik."
 
-#: gestionSprites.cpp:1290
+#: gestionSprites.cpp:1236
 #, kde-format
 msgid "Problem: no one destroyed"
 msgstr "Hiba történt: senki sem lett megsemmisítve"
 
-#: gestionSprites.cpp:1500
+#: gestionSprites.cpp:1446
 #, kde-format
 msgid "Bug: who should be 0, 1 or 2."
 msgstr "Hiba: ki legyen a 0, 1, 2."

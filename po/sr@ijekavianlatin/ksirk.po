@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-04 01:38+0000\n"
+"POT-Creation-Date: 2023-10-11 02:06+0000\n"
 "PO-Revision-Date: 2017-09-28 17:59+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -1652,43 +1652,43 @@ msgid "New Game or Exit"
 msgstr "Nova igra ili izlaz"
 
 #. i18n: ectx: property (text), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:27 GameLogic/gameautomaton.cpp:1667
+#: Dialogs/restartOrExitDialog.ui:24 GameLogic/gameautomaton.cpp:1667
 #, kde-format
 msgid "New Game"
 msgstr "Nova igra"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:33
+#: Dialogs/restartOrExitDialog.ui:30
 #, kde-format
 msgid "Starts a new game"
 msgstr "Pokreće novu igru."
 
 #. i18n: ectx: property (text), widget (QPushButton, doNothingButton)
-#: Dialogs/restartOrExitDialog.ui:40
+#: Dialogs/restartOrExitDialog.ui:37
 #, kde-format
 msgid "Do Nothing"
 msgstr "Ne radi ništa"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, doNothingButton)
-#: Dialogs/restartOrExitDialog.ui:43
+#: Dialogs/restartOrExitDialog.ui:40
 #, kde-format
 msgid "Do nothing. Game buttons will be available"
 msgstr "Ne radi ništa. Dugmad igre će biti dostupna."
 
 #. i18n: ectx: property (text), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:50 GameLogic/gameautomaton.cpp:1668
+#: Dialogs/restartOrExitDialog.ui:47 GameLogic/gameautomaton.cpp:1668
 #, kde-format
 msgid "Exit"
 msgstr "Napusti"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:53
+#: Dialogs/restartOrExitDialog.ui:50
 #, kde-format
 msgid "Quit KsirK"
 msgstr "Napusti KSirk"
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: Dialogs/restartOrExitDialog.ui:89
+#: Dialogs/restartOrExitDialog.ui:86
 #, no-c-format, kde-format
 msgid "%1 won! Do you want to play again?"
 msgstr "%1 pobijedi! Želite li da igrate ponovo?"
@@ -1897,10 +1897,10 @@ msgstr ""
 msgid "Problem : no one destroyed"
 msgstr "Problem: niko nije uništen"
 
-#: GameLogic/gameautomaton.cpp:2380 gestionSprites.cpp:928
-#: gestionSprites.cpp:948 gestionSprites.cpp:1049 gestionSprites.cpp:1086
-#: gestionSprites.cpp:1121 gestionSprites.cpp:1175 gestionSprites.cpp:1212
-#: gestionSprites.cpp:1246
+#: GameLogic/gameautomaton.cpp:2380 gestionSprites.cpp:874
+#: gestionSprites.cpp:894 gestionSprites.cpp:995 gestionSprites.cpp:1032
+#: gestionSprites.cpp:1067 gestionSprites.cpp:1121 gestionSprites.cpp:1158
+#: gestionSprites.cpp:1192
 #, kde-format
 msgid "KsirK - Error!"
 msgstr "Greška"
@@ -2055,7 +2055,7 @@ msgstr "Nema poruke..."
 msgid "<b>%1:</b> %2"
 msgstr "<b>%1:</b> %2"
 
-#: GameLogic/onu.cpp:128
+#: GameLogic/onu.cpp:117
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2064,16 +2064,16 @@ msgstr ""
 "Ime fajla pula nije nađeno.\n"
 "Program ne može da nastavi."
 
-#: GameLogic/onu.cpp:129 GameLogic/onu.cpp:146 gestionSprites.cpp:693
-#: gestionSprites.cpp:808 gestionSprites.cpp:853 gestionSprites.cpp:1409
-#: gestionSprites.cpp:1486 kgamewin.cpp:149 kgamewin.cpp:383 kgamewin.cpp:400
+#: GameLogic/onu.cpp:118 GameLogic/onu.cpp:135 gestionSprites.cpp:639
+#: gestionSprites.cpp:754 gestionSprites.cpp:799 gestionSprites.cpp:1355
+#: gestionSprites.cpp:1432 kgamewin.cpp:149 kgamewin.cpp:383 kgamewin.cpp:400
 #: kgamewin.cpp:417 kgamewin.cpp:584 kgamewin.cpp:740
 #: Sprites/animsprite.cpp:511 Sprites/animsprite.cpp:526
 #, kde-format
 msgid "Error!"
 msgstr "Greška"
 
-#: GameLogic/onu.cpp:145
+#: GameLogic/onu.cpp:134
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2098,8 +2098,8 @@ msgstr ""
 "Premiještam %1 armije iz %2 u %3.|/|Premiještam %1 $[množ ^1 armiju armije "
 "armija] iz $[gen %2] u $[aku %3]."
 
-#: gestionSprites.cpp:693 gestionSprites.cpp:808 gestionSprites.cpp:1409
-#: gestionSprites.cpp:1486
+#: gestionSprites.cpp:639 gestionSprites.cpp:754 gestionSprites.cpp:1355
+#: gestionSprites.cpp:1432
 #, kde-format
 msgid ""
 "Sound roule not found - Verify your installation<br>Program cannot continue"
@@ -2107,7 +2107,7 @@ msgstr ""
 "<html>Zvuk bacanja nije nađen — provjerite instalaciju.<br/>Program ne može "
 "da se nastavi.</html>"
 
-#: gestionSprites.cpp:853
+#: gestionSprites.cpp:799
 #, kde-format
 msgid ""
 "Sound cannon not found - Verify your installation<br>Program cannot continue"
@@ -2115,9 +2115,9 @@ msgstr ""
 "<html>Zvuk topa nije nađen — provjerite instalaciju.<br/>Program ne može da "
 "se nastavi.</html>"
 
-#: gestionSprites.cpp:928 gestionSprites.cpp:948 gestionSprites.cpp:1049
-#: gestionSprites.cpp:1086 gestionSprites.cpp:1121 gestionSprites.cpp:1175
-#: gestionSprites.cpp:1212 gestionSprites.cpp:1246
+#: gestionSprites.cpp:874 gestionSprites.cpp:894 gestionSprites.cpp:995
+#: gestionSprites.cpp:1032 gestionSprites.cpp:1067 gestionSprites.cpp:1121
+#: gestionSprites.cpp:1158 gestionSprites.cpp:1192
 #, kde-format
 msgid ""
 "Sound crash not found - Verify your installation\n"
@@ -2126,12 +2126,12 @@ msgstr ""
 "Zvuk pada nije nađen — provjerite instalaciju.\n"
 "Program ne može da se nastavi."
 
-#: gestionSprites.cpp:1290
+#: gestionSprites.cpp:1236
 #, kde-format
 msgid "Problem: no one destroyed"
 msgstr "Problem: niko nije uništen"
 
-#: gestionSprites.cpp:1500
+#: gestionSprites.cpp:1446
 #, kde-format
 msgid "Bug: who should be 0, 1 or 2."
 msgstr "Greška: ko treba da je 0, 1, ili 2."

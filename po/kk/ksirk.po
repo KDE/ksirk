@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-04 01:38+0000\n"
+"POT-Creation-Date: 2023-10-11 02:06+0000\n"
 "PO-Revision-Date: 2013-04-12 03:54+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -1636,43 +1636,43 @@ msgid "New Game or Exit"
 msgstr "Жаңадан не шығу"
 
 #. i18n: ectx: property (text), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:27 GameLogic/gameautomaton.cpp:1667
+#: Dialogs/restartOrExitDialog.ui:24 GameLogic/gameautomaton.cpp:1667
 #, kde-format
 msgid "New Game"
 msgstr "Жаңа ойын"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:33
+#: Dialogs/restartOrExitDialog.ui:30
 #, kde-format
 msgid "Starts a new game"
 msgstr "Жаңа ойынды бастау"
 
 #. i18n: ectx: property (text), widget (QPushButton, doNothingButton)
-#: Dialogs/restartOrExitDialog.ui:40
+#: Dialogs/restartOrExitDialog.ui:37
 #, kde-format
 msgid "Do Nothing"
 msgstr "Ештеңе істемеу"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, doNothingButton)
-#: Dialogs/restartOrExitDialog.ui:43
+#: Dialogs/restartOrExitDialog.ui:40
 #, kde-format
 msgid "Do nothing. Game buttons will be available"
 msgstr "Ештеңе істемеу. Ойын батырмалары істейтін болып қала береді."
 
 #. i18n: ectx: property (text), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:50 GameLogic/gameautomaton.cpp:1668
+#: Dialogs/restartOrExitDialog.ui:47 GameLogic/gameautomaton.cpp:1668
 #, kde-format
 msgid "Exit"
 msgstr "Шығу"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:53
+#: Dialogs/restartOrExitDialog.ui:50
 #, kde-format
 msgid "Quit KsirK"
 msgstr "KsirK-тен шығу"
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: Dialogs/restartOrExitDialog.ui:89
+#: Dialogs/restartOrExitDialog.ui:86
 #, no-c-format, kde-format
 msgid "%1 won! Do you want to play again?"
 msgstr "%1 жеңді! Жаңадан ойнайсыз ба?"
@@ -1853,10 +1853,10 @@ msgstr "%1 өңдеуін аяқтауды таңдады; енді %2 ойын�
 msgid "Problem : no one destroyed"
 msgstr "Мәселе: ештеңе жойылған жоқ"
 
-#: GameLogic/gameautomaton.cpp:2380 gestionSprites.cpp:928
-#: gestionSprites.cpp:948 gestionSprites.cpp:1049 gestionSprites.cpp:1086
-#: gestionSprites.cpp:1121 gestionSprites.cpp:1175 gestionSprites.cpp:1212
-#: gestionSprites.cpp:1246
+#: GameLogic/gameautomaton.cpp:2380 gestionSprites.cpp:874
+#: gestionSprites.cpp:894 gestionSprites.cpp:995 gestionSprites.cpp:1032
+#: gestionSprites.cpp:1067 gestionSprites.cpp:1121 gestionSprites.cpp:1158
+#: gestionSprites.cpp:1192
 #, kde-format
 msgid "KsirK - Error!"
 msgstr "Ksirk - Қате!"
@@ -1985,7 +1985,7 @@ msgstr "Хабарлама жоқ..."
 msgid "<b>%1:</b> %2"
 msgstr "<b>%1:</b> %2"
 
-#: GameLogic/onu.cpp:128
+#: GameLogic/onu.cpp:117
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -1994,16 +1994,16 @@ msgstr ""
 "Біріктірме файлы табылмады\n"
 "Бағдарлама доғарылады"
 
-#: GameLogic/onu.cpp:129 GameLogic/onu.cpp:146 gestionSprites.cpp:693
-#: gestionSprites.cpp:808 gestionSprites.cpp:853 gestionSprites.cpp:1409
-#: gestionSprites.cpp:1486 kgamewin.cpp:149 kgamewin.cpp:383 kgamewin.cpp:400
+#: GameLogic/onu.cpp:118 GameLogic/onu.cpp:135 gestionSprites.cpp:639
+#: gestionSprites.cpp:754 gestionSprites.cpp:799 gestionSprites.cpp:1355
+#: gestionSprites.cpp:1432 kgamewin.cpp:149 kgamewin.cpp:383 kgamewin.cpp:400
 #: kgamewin.cpp:417 kgamewin.cpp:584 kgamewin.cpp:740
 #: Sprites/animsprite.cpp:511 Sprites/animsprite.cpp:526
 #, kde-format
 msgid "Error!"
 msgstr "Қате!"
 
-#: GameLogic/onu.cpp:145
+#: GameLogic/onu.cpp:134
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2022,8 +2022,8 @@ msgstr "%2 дегеннен %3 дегенге %1 армияны аттандыр
 msgid "Moving %1 armies from %2 to %3"
 msgstr "%2 дегеннен %3 дегенге %1 армияны аттандыру"
 
-#: gestionSprites.cpp:693 gestionSprites.cpp:808 gestionSprites.cpp:1409
-#: gestionSprites.cpp:1486
+#: gestionSprites.cpp:639 gestionSprites.cpp:754 gestionSprites.cpp:1355
+#: gestionSprites.cpp:1432
 #, kde-format
 msgid ""
 "Sound roule not found - Verify your installation<br>Program cannot continue"
@@ -2031,7 +2031,7 @@ msgstr ""
 "Жорық дыбысы табылмады - Орнатылғанын тексеріңіз<br>Бағдарлама жалғаса "
 "алмайды"
 
-#: gestionSprites.cpp:853
+#: gestionSprites.cpp:799
 #, kde-format
 msgid ""
 "Sound cannon not found - Verify your installation<br>Program cannot continue"
@@ -2039,9 +2039,9 @@ msgstr ""
 "Зеңбірек дыбысы табылмады - Орнатылғанын тексеріңіз<br>Бағдарлама жалғаса "
 "алмайды"
 
-#: gestionSprites.cpp:928 gestionSprites.cpp:948 gestionSprites.cpp:1049
-#: gestionSprites.cpp:1086 gestionSprites.cpp:1121 gestionSprites.cpp:1175
-#: gestionSprites.cpp:1212 gestionSprites.cpp:1246
+#: gestionSprites.cpp:874 gestionSprites.cpp:894 gestionSprites.cpp:995
+#: gestionSprites.cpp:1032 gestionSprites.cpp:1067 gestionSprites.cpp:1121
+#: gestionSprites.cpp:1158 gestionSprites.cpp:1192
 #, kde-format
 msgid ""
 "Sound crash not found - Verify your installation\n"
@@ -2050,12 +2050,12 @@ msgstr ""
 "Қирау дыбысы табылмады - Орнатылғанын тексеріңіз\n"
 "Бағдарлама жалғаса алмайды"
 
-#: gestionSprites.cpp:1290
+#: gestionSprites.cpp:1236
 #, kde-format
 msgid "Problem: no one destroyed"
 msgstr "Мәселе: ештеңе жойылған жоқ"
 
-#: gestionSprites.cpp:1500
+#: gestionSprites.cpp:1446
 #, kde-format
 msgid "Bug: who should be 0, 1 or 2."
 msgstr "Қателік: кім 0, 1 не 2 болмақ."
