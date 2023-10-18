@@ -56,7 +56,7 @@
 #include <KMessageBox>
 #include <KLocalizedString>
 #include <KConfig>
-#include <KStandardGameAction>
+#include <KGameStandardAction>
 #include <KStandardAction>
 #include <KActionCollection>
 #include "ksirkskineditor_debug.h"
@@ -318,11 +318,11 @@ void MainWindow::initActions()
 {
   QAction *action;
   // standard game actions
-  action = KStandardGameAction::load(this, &MainWindow::slotOpenSkin, this);
+  action = KGameStandardAction::load(this, &MainWindow::slotOpenSkin, this);
   actionCollection()->addAction(action->objectName(), action);
   action->setToolTip(i18n("Open a saved skin..."));
 
-  m_rfa = KStandardGameAction::loadRecent (this, &MainWindow::slotURLSelected, this);
+  m_rfa = KGameStandardAction::loadRecent (this, &MainWindow::slotURLSelected, this);
   actionCollection()->addAction(m_rfa->objectName(), m_rfa);
   m_rfa->setText(i18n("Load &Recent"));
   m_rfa->setToolTip(i18n("Open a recently saved skin..."));
@@ -331,14 +331,14 @@ void MainWindow::initActions()
   qCDebug(KSIRKSKINEDITOR_LOG) << "loading recent files";
   m_rfa->loadEntries(KSharedConfig::openConfig()->group("ksirkskineditor"));
   
-  m_saveGameAction = KStandardGameAction::save(this, &MainWindow::slotSaveSkin, this);
+  m_saveGameAction = KGameStandardAction::save(this, &MainWindow::slotSaveSkin, this);
   actionCollection()->addAction(m_saveGameAction->objectName(), m_saveGameAction);
   m_saveGameAction->setToolTip(i18n("Save the current skin"));
 
-  action = KStandardGameAction::quit(this, &MainWindow::close, this);
+  action = KGameStandardAction::quit(this, &MainWindow::close, this);
   actionCollection()->addAction(action->objectName(), action);
 
-//   action = KStandardGameAction::gameNew(this, &MainWindow::slotNewGame, this);
+//   action = KGameStandardAction::gameNew(this, &MainWindow::slotNewGame, this);
 //   actionCollection()->addAction(action->objectName(), action);
 
 //   action = KStandardAction::zoomIn(this, &MainWindow::slotZoomIn, this);

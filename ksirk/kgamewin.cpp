@@ -70,7 +70,7 @@
 #include <KLazyLocalizedString>
 #include <KLocalizedString>
 #include <KConfig>
-#include <KStandardGameAction>
+#include <KGameStandardAction>
 #include <KStandardAction>
 #include <KActionCollection>
 #include "ksirk_debug.h"
@@ -353,14 +353,14 @@ void KGameWindow::initActions()
   QAction *action;
 
   // standard game actions
-  action = KStandardGameAction::gameNew(this, &KGameWindow::slotNewGame, this);
+  action = KGameStandardAction::gameNew(this, &KGameWindow::slotNewGame, this);
   actionCollection()->addAction(action->objectName(), action);
-  action = KStandardGameAction::load(this, &KGameWindow::slotOpenGame, this);
+  action = KGameStandardAction::load(this, &KGameWindow::slotOpenGame, this);
   actionCollection()->addAction(action->objectName(), action);
-  m_saveGameAction = KStandardGameAction::save(this, &KGameWindow::slotSaveGame, this);
+  m_saveGameAction = KGameStandardAction::save(this, &KGameWindow::slotSaveGame, this);
   m_saveGameAction->setEnabled(false);
   actionCollection()->addAction(m_saveGameAction->objectName(), m_saveGameAction);
-  action = KStandardGameAction::quit(this, &KGameWindow::close, this);
+  action = KGameStandardAction::quit(this, &KGameWindow::close, this);
   actionCollection()->addAction(action->objectName(), action);
 
   m_zoomInAction = KStandardAction::zoomIn(this, &KGameWindow::slotZoomIn, this);
