@@ -1194,7 +1194,7 @@ msgstr "Nombre de jugadors"
 #: Dialogs/jabbergameui.ui:30
 #, kde-format
 msgid "Connection to the Jabber Network"
-msgstr "Connexió a la xarxa Jabber"
+msgstr "Connexió amb la xarxa Jabber"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: Dialogs/jabbergameui.ui:39
