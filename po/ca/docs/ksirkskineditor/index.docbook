@@ -380,9 +380,7 @@ revision history. (see installation appendix comment) -->
 >La descripció dels grups de sprites</title>
 
     <para
->Cada tipus de sprite (bandera, infanteria, cavalleria, canó, canons que disparen i canons que exploten) es defineix per un grup. Només alguns sprites tenen una entrada d'amplada. Aquesta entrada s'utilitza per al posicionament relatiu durant les animacions: els canons, en disparar o explotar no s'han de <quote
->moure</quote
-> al voltant de la bandera del país durant la lluita.</para>
+>Cada tipus de sprite (bandera, infanteria, cavalleria, canó, canons que disparen i canons que exploten) es defineix per un grup. Només alguns sprites tenen una entrada d'amplada. Aquesta entrada s'utilitza per al posicionament relatiu durant les animacions: els canons, en disparar o explotar no s'han de «moure» al voltant de la bandera del país durant la lluita.</para>
 
     <table>
       <title
