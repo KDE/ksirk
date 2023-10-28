@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-11 02:06+0000\n"
-"PO-Revision-Date: 2023-09-14 15:37+0200\n"
+"PO-Revision-Date: 2023-10-26 11:41+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -29,7 +29,7 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 23.08.0\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2536,7 +2536,7 @@ msgstr "Problème de « Transport Layer Security (TLS) »."
 #: Jabber/jabberaccount.cpp:935
 #, kde-format
 msgid "Simple Authentication and Security Layer (SASL) problem."
-msgstr "Problème de « Simple Authentification and Security Layer (SASL) »."
+msgstr "Problème de « Simple Authentification & Security Layer (SASL) »."
 
 #: Jabber/jabberaccount.cpp:942
 #, kde-format
