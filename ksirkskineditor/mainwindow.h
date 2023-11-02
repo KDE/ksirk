@@ -27,7 +27,6 @@
 // include files for Qt
 
 #include <QPointF>
-#include <QPixmap>
 #include <QLabel>
 #include <QPushButton>
 #include <QStackedWidget>

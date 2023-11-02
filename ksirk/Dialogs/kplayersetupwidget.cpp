@@ -36,7 +36,6 @@
 #include <QCheckBox>
 #include <QComboBox>
 #include <QPixmap>
-#include <QPainter>
 
 #include <KLocalizedString>
 #include "ksirk_debug.h"

@@ -26,7 +26,6 @@
 
 #include <QLayout>
 #include <QApplication>
-#include <QPainter>
 #include <QColorDialog>
 #include <QInputDialog>
 namespace Ksirk

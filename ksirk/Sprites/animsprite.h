@@ -27,6 +27,7 @@
 #include "animspritespool.h"
 
 #include <QGraphicsItem>
+#include <QPixmap>
 #include <QTimer>
 
 #include <limits>

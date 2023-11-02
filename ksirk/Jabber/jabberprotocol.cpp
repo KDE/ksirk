@@ -24,7 +24,6 @@
 #include <KConfig>
 
 #include <QTimer>
-#include <QPixmap>
 #include <QStringList>
 #include <QList>
 

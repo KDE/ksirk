@@ -27,7 +27,6 @@
 #include <QListWidgetItem>
 #include <QPushButton>
 #include <QColor>
-#include <QPixmap>
 
 #define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
 #include <libkdegamesprivate/kchatbasemodel.h>

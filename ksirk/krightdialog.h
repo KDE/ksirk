@@ -35,6 +35,8 @@
 #include <QDockWidget>
 #include <QList>
 #include <QLabel>
+#include <QPixmap>
+
 #include <KConfig>
 #include <KConfigGroup>
 #include <QPushButton>

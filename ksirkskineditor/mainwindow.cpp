@@ -47,6 +47,7 @@
 #include <QGraphicsPixmapItem>
 #include <QGraphicsSvgItem>
 #include <QBitmap>
+#include <QPixmap>
 #include <QInputDialog>
 #include <QMenuBar>
 #include <QStatusBar>

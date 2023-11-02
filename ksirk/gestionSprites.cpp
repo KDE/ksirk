@@ -40,7 +40,6 @@
 // include files for QT
 #include <QMetaObject>
 #include <QDir>
-#include <QPainter>
 #include <QInputDialog>
 #include <QMediaPlayer>
 
