@@ -88,7 +88,8 @@ ONU::ONU(GameAutomaton* automaton,
   m_skin = onugroup.readEntry("skinpath");
 
   qCDebug(KSIRK_LOG) << "skin snapshot file: " << QStandardPaths::locate(QStandardPaths::AppDataLocation, m_skin + "/Images/snapshot.jpg");
-  if (!QPixmapCache::find(m_skin+"snapshot", &m_snapshot))
+  const QString snapshotCacheId = m_skin + QLatin1String("snapshot");
+  if (!QPixmapCache::find(snapshotCacheId, &m_snapshot))
   {
     // Pixmap isn't in the cache, create it and insert to cache
     m_snapshot = QPixmap(QStandardPaths::locate(QStandardPaths::AppDataLocation, m_skin + "/Images/snapshot.jpg"));
@@ -96,7 +97,7 @@ ONU::ONU(GameAutomaton* automaton,
     {
       qCCritical(KSIRK_LOG) << "Was not able to load the snapshot image: " << QStandardPaths::locate(QStandardPaths::AppDataLocation, m_skin + "/Images/snapshot.jpg");
     }
-    QPixmapCache::insert(m_skin+"snapshot", m_snapshot);
+    QPixmapCache::insert(snapshotCacheId, m_snapshot);
   }
   m_width  = onugroup.readEntry("width",0);
   m_height  = onugroup.readEntry("height",0);
@@ -137,7 +138,8 @@ ONU::ONU(GameAutomaton* automaton,
   }
   qCDebug(KSIRK_LOG) << "Loading map mask file: " << mapMaskFileName;
   QPixmap countriesMaskPix;
-  if (!QPixmapCache::find(m_skin+"mapmask", &countriesMaskPix))
+  const QString mapMaskCacheId = m_skin + QLatin1String("mapmask");
+  if (!QPixmapCache::find(mapMaskCacheId, &countriesMaskPix))
   {
     // Pixmap isn't in the cache, create it and insert to cache
     countriesMaskPix = QPixmap(mapMaskFileName);
@@ -145,7 +147,7 @@ ONU::ONU(GameAutomaton* automaton,
     {
       qCCritical(KSIRK_LOG) << "Was not able to load the map mask image: " << mapMaskFileName ;
     }
-    QPixmapCache::insert(m_skin+"mapmask", countriesMaskPix);
+    QPixmapCache::insert(mapMaskCacheId, countriesMaskPix);
   }
 //   countriesMask = QImage(mapMaskFileName);
   countriesMask = countriesMaskPix.toImage();
@@ -567,7 +569,8 @@ void ONU::buildMap()
 {
   qCDebug(KSIRK_LOG) << "with zoom="<< m_zoom;
   //QSize size((int)(m_automaton->rendererFor(m_skin).defaultSize().width()*m_zoom),(int)(m_automaton->rendererFor(m_skin).defaultSize().height()*m_zoom));
-  if (!QPixmapCache::find(m_skin+"map"+QString::number(m_width)+QString::number(m_height), &m_map))
+  const QString mapCacheId = m_skin + QLatin1String("map") + QString::number(m_width) + QLatin1Char('x') + QString::number(m_height);
+  if (!QPixmapCache::find(mapCacheId, &m_map))
   {
     // Pixmap isn't in the cache, create it and insert to cache
     QSize size((int)(m_width),(int)(m_height));
@@ -607,7 +610,7 @@ void ONU::buildMap()
         countryName);
     }
 
-    QPixmapCache::insert(m_skin+"map"+QString::number(m_width)+QString::number(m_height), m_map);
+    QPixmapCache::insert(mapCacheId, m_map);
   }
 }
 
