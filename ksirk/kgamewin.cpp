@@ -516,15 +516,15 @@ QPixmap KGameWindow::buildDice(const QString& id)
   qCDebug(KSIRK_LOG);
 
   QSize size(32,32);
-  QImage image(size, QImage::Format_ARGB32_Premultiplied);
-  image.fill(0);
-  QPainter p(&image);
+  QPixmap pixmap(size);
+  pixmap.fill(Qt::transparent);
+  QPainter p(&pixmap);
   if (m_theWorld != nullptr)
   {
     m_theWorld->renderer()->render(&p, id);
   }
 
-  return QPixmap::fromImage(image);
+  return pixmap;
 }
 
 QPixmap KGameWindow::getDice(DiceColor color, int num)

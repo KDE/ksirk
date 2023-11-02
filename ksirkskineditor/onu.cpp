@@ -685,15 +685,11 @@ void ONU::buildMap()
   qCDebug(KSIRKSKINEDITOR_LOG);
   //QSize size((int)(m_renderer.defaultSize().width()),(int)(m_renderer.defaultSize().height()));
   QSize size((int)(m_width),(int)(m_height));
-  QImage image(size, QImage::Format_ARGB32_Premultiplied);
-  image.fill(0);
-  QPainter p(&image);
-  m_renderer.render(&p, QStringLiteral("map"));
-  QPixmap mapPixmap = QPixmap::fromImage(image);
-
-  m_map = mapPixmap;
-
+  m_map = QPixmap(size);
+  m_map.fill(Qt::transparent);
   QPainter painter(&m_map);
+  m_renderer.render(&painter, QStringLiteral("map"));
+
   QFont foregroundFont(m_font.family, m_font.size, m_font.weight, m_font.italic);
   QFont backgroundFont(m_font.family, m_font.size, QFont::Normal, m_font.italic);
 
@@ -727,11 +723,10 @@ QPixmap ONU::pixmapForId(const QString& id, int width, int height)
   qCDebug(KSIRKSKINEDITOR_LOG) << id << width << height;
   //QSize size((int)(m_renderer.defaultSize().width()),(int)(m_renderer.defaultSize().height()));
   QSize size(width,height);
-  QImage image(size, QImage::Format_ARGB32_Premultiplied);
-  image.fill(0);
-  QPainter p(&image);
+  QPixmap pixmap(size);
+  pixmap.fill(Qt::transparent);
+  QPainter p(&pixmap);
   m_renderer.render(&p, id);
-  QPixmap pixmap = QPixmap::fromImage(image);
   return pixmap;
 }
 

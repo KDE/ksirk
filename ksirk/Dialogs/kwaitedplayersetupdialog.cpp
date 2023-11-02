@@ -85,13 +85,12 @@ void KWaitedPlayerSetupDialog::fillWaitedPlayersCombo()
 //     load image
     QPixmap flag;
     QSize size(flag.width()/Sprites::SkinSpritesData::single().intData("flag-frames"),flag.height());
-    QImage image(size, QImage::Format_ARGB32_Premultiplied);
-    image.fill(0);
-    QPainter p(&image);
+    QPixmap allpm(size);
+    allpm.fill(Qt::transparent);
+    QPainter p(&allpm);
     QSvgRenderer renderer;
     renderer.load(imgName);
     renderer.render(&p/*, svgid*/);
-    QPixmap allpm = QPixmap::fromImage(image);
     flag = allpm.copy(0, 0, size.width(), size.height());
 
 //     get name

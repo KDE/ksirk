@@ -571,14 +571,11 @@ void ONU::buildMap()
   {
     // Pixmap isn't in the cache, create it and insert to cache
     QSize size((int)(m_width),(int)(m_height));
-    QImage image(size, QImage::Format_ARGB32_Premultiplied);
-    image.fill(0);
-    QPainter p(&image);
-    m_automaton->rendererFor(m_skin).render(&p, "map");
-    m_map = QPixmap::fromImage(image);
-    
-    
+    m_map = QPixmap(size);
+    m_map.fill(Qt::transparent);
     QPainter painter(&m_map);
+    m_automaton->rendererFor(m_skin).render(&painter, "map");
+
     QFont foregroundFont(m_font.family, m_font.size, m_font.weight, m_font.italic);
     QFont backgroundFont(m_font.family, m_font.size, QFont::Normal, m_font.italic);
 

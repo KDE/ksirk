@@ -123,11 +123,10 @@ void AnimSprite::sequenceConstruction()
   {
     // Pixmap isn't in the cache, create it and insert to cache
     QSize size((int)(m_width*frames), (int)(m_height*nbVersions));
-    QImage image(size, QImage::Format_ARGB32_Premultiplied);
-    image.fill(0);
-    QPainter p(&image);
+    allpm = QPixmap(size);
+    allpm.fill(Qt::transparent);
+    QPainter p(&allpm);
     m_renderer->render(&p, m_svgid);
-    allpm = QPixmap::fromImage(image);
 
     QPixmapCache::insert(allpmCacheId, allpm);
   }
@@ -701,11 +700,10 @@ void AnimSprite::applyZoomFactor(qreal zoomFactor)
 void AnimSprite::addDecoration(const QString& svgid, const QRectF& geometry)
 {
   QSize size(geometry.size().toSize());
-  QImage image(size, QImage::Format_ARGB32_Premultiplied);
-  image.fill(0);
-  QPainter p(&image);
+  QPixmap pm(size);
+  pm.fill(Qt::transparent);
+  QPainter p(&pm);
   m_renderer->render(&p, svgid);
-  QPixmap pm = QPixmap::fromImage(image);
   QGraphicsPixmapItem* item = new QGraphicsPixmapItem(pm,this);
   item->setPos(geometry.topLeft());
   item->show();
