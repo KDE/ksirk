@@ -697,8 +697,6 @@ void ONU::buildMap()
   QFont foregroundFont(m_font.family, m_font.size, m_font.weight, m_font.italic);
   QFont backgroundFont(m_font.family, m_font.size, QFont::Normal, m_font.italic);
 
-  painter.drawPixmap(0,0,mapPixmap);
-  
   for (int i = 0; i < m_countries.size(); i++)
   {
     Country* country = m_countries[i];

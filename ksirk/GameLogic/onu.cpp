@@ -581,9 +581,7 @@ void ONU::buildMap()
     QPainter painter(&m_map);
     QFont foregroundFont(m_font.family, m_font.size, m_font.weight, m_font.italic);
     QFont backgroundFont(m_font.family, m_font.size, QFont::Normal, m_font.italic);
-    
-    painter.drawPixmap(0,0,m_map);
-    
+
     foreach (Country* country, countries)
     {
       const QString& countryName = i18n(country->name().toUtf8().data());
