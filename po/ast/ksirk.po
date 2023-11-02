@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-11 02:06+0000\n"
-"PO-Revision-Date: 2023-10-31 20:02+0100\n"
+"PO-Revision-Date: 2023-11-02 01:04+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
 "Language: ast\n"
@@ -55,7 +55,7 @@ msgstr "alministradores@softastur.org"
 #. i18n: file skins/legacy/Data/world.desktop line 566
 #, no-c-format, kde-format
 msgid "Africa"
-msgstr ""
+msgstr "África"
 
 #. i18n: file skins/default/Data/world.desktop line 6
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -71,7 +71,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Alaska"
-msgstr ""
+msgstr "Alaska"
 
 #. i18n: file skins/default/Data/world.desktop line 16
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -103,7 +103,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Algeria"
-msgstr ""
+msgstr "Arxelia"
 
 #. i18n: file skins/default/Data/world.desktop line 36
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -147,7 +147,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 566
 #, no-c-format, kde-format
 msgid "Asia"
-msgstr ""
+msgstr "Asia"
 
 #. i18n: file skins/default/Data/world.desktop line 51
 #. i18n: file skins/default/Data/world.desktop line 567
@@ -163,7 +163,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 575
 #, no-c-format, kde-format
 msgid "Belgium"
-msgstr ""
+msgstr "Bélxica"
 
 #. i18n: file skins/default/Data/world.desktop line 55
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -195,7 +195,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Brazil"
-msgstr ""
+msgstr "Brasil"
 
 #. i18n: file skins/default/Data/world.desktop line 75
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -211,7 +211,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Chile"
-msgstr ""
+msgstr "Chile"
 
 #. i18n: file skins/default/Data/world.desktop line 85
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -227,7 +227,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "China"
-msgstr ""
+msgstr "China"
 
 #. i18n: file skins/default/Data/world.desktop line 95
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -243,7 +243,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Colombia"
-msgstr ""
+msgstr "Colombia"
 
 #. i18n: file skins/default/Data/world.desktop line 105
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -275,7 +275,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Egypt"
-msgstr ""
+msgstr "Exiptu"
 
 #. i18n: file skins/default/Data/world.desktop line 125
 #. i18n: file skins/default/Data/world.desktop line 531
@@ -303,7 +303,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 566
 #, no-c-format, kde-format
 msgid "Europe"
-msgstr ""
+msgstr "Europa"
 
 #. i18n: file skins/default/Data/world.desktop line 130
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -325,7 +325,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 575
 #, no-c-format, kde-format
 msgid "France"
-msgstr ""
+msgstr "Francia"
 
 #. i18n: file skins/default/Data/world.desktop line 142
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -341,7 +341,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Gabon"
-msgstr ""
+msgstr "Gabón"
 
 #. i18n: file skins/default/Data/world.desktop line 152
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -373,7 +373,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "India"
-msgstr ""
+msgstr "India"
 
 #. i18n: file skins/default/Data/world.desktop line 172
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -389,7 +389,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Indonesia"
-msgstr ""
+msgstr "Indonesia"
 
 #. i18n: file skins/default/Data/world.desktop line 182
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -405,7 +405,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Iran"
-msgstr ""
+msgstr "Irán"
 
 #. i18n: file skins/default/Data/world.desktop line 192
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -437,7 +437,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 575
 #, no-c-format, kde-format
 msgid "Italy"
-msgstr ""
+msgstr "Italia"
 
 #. i18n: file skins/default/Data/world.desktop line 206
 #. i18n: file skins/default/Data/world.desktop line 559
