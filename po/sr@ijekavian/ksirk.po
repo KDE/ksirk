@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-11 02:06+0000\n"
+"POT-Creation-Date: 2023-11-03 01:39+0000\n"
 "PO-Revision-Date: 2017-09-28 17:59+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -1078,7 +1078,7 @@ msgstr ""
 msgid "Legacy"
 msgstr "Наслијеђе"
 
-#: decoratedgameframe.cpp:100 kgamewin.cpp:449
+#: decoratedgameframe.cpp:100 kgamewin.cpp:450
 #, kde-format
 msgid "Next Player"
 msgstr "Сљедећи играч"
@@ -1088,8 +1088,8 @@ msgstr "Сљедећи играч"
 msgid "Details"
 msgstr "Детаљи"
 
-#: decoratedgameframe.cpp:106 kgamewin.cpp:429 kgamewin.cpp:1313
-#: kgamewin.cpp:1325 kgamewin.cpp:2482
+#: decoratedgameframe.cpp:106 kgamewin.cpp:430 kgamewin.cpp:1316
+#: kgamewin.cpp:1328 kgamewin.cpp:2485
 #, kde-format
 msgid "Goal"
 msgstr "Циљ"
@@ -1139,14 +1139,14 @@ msgstr "Помјери 10"
 msgid "Disable Arena"
 msgstr "Искључи арену"
 
-#: Dialogs/InvasionSlider.cpp:97
+#: Dialogs/InvasionSlider.cpp:98
 #, fuzzy, kde-format
 #| msgid "Invasion"
 msgctxt "@title:window"
 msgid "Invasion"
 msgstr "Упад"
 
-#: Dialogs/InvasionSlider.cpp:98
+#: Dialogs/InvasionSlider.cpp:99
 #, kde-format
 msgid ""
 "You are invading <font color=\"blue\">%1</font> with <font color=\"red\">%2</"
@@ -1156,19 +1156,19 @@ msgstr ""
 "Упадате у <font color=\"blue\">$[аку %1]</font> са <font color=\"red\">$[инс "
 "%2]</font>."
 
-#: Dialogs/InvasionSlider.cpp:99
+#: Dialogs/InvasionSlider.cpp:100
 #, kde-format
 msgid "<br><i>Choose the number of invading armies.</i>"
 msgstr "<br/><i>Изаберите број армија за упад.</i>"
 
-#: Dialogs/InvasionSlider.cpp:103
+#: Dialogs/InvasionSlider.cpp:104
 #, fuzzy, kde-format
 #| msgid "Moving"
 msgctxt "@title:window"
 msgid "Moving"
 msgstr "Помијерање"
 
-#: Dialogs/InvasionSlider.cpp:104
+#: Dialogs/InvasionSlider.cpp:105
 #, kde-format
 msgid ""
 "You are moving armies from <font color=\"red\">%1</font> to <font color="
@@ -1178,7 +1178,7 @@ msgstr ""
 "%2</font>.|/|Помијерате армије из <font color=\"red\">$[ген %1]</font> у "
 "<font color=\"blue\">$[аку %2]</font>."
 
-#: Dialogs/InvasionSlider.cpp:105
+#: Dialogs/InvasionSlider.cpp:106
 #, kde-format
 msgid "<br><i>Choose the number of armies to move.</i>"
 msgstr "<br/><i>Изаберите број армија за помијерање.</i>"
@@ -1346,17 +1346,17 @@ msgstr "Домаћин:"
 msgid "Port:"
 msgstr "Порт:"
 
-#: Dialogs/kplayersetupwidget.cpp:247
+#: Dialogs/kplayersetupwidget.cpp:246
 #, kde-format
 msgid "Name already in use. Please choose another one."
 msgstr "Име се већ користи. Изаберите неко друго."
 
-#: Dialogs/kplayersetupwidget.cpp:249
+#: Dialogs/kplayersetupwidget.cpp:248
 #, kde-format
 msgid "Empty name. Please choose another one."
 msgstr "Празно име. Изаберите неко друго."
 
-#: Dialogs/kplayersetupwidget.cpp:292
+#: Dialogs/kplayersetupwidget.cpp:291
 #, kde-format
 msgid "Player Number %1, please type in your name and choose your nation:"
 msgstr "Играчу број %1, унесите своје име и изаберите нацију:"
@@ -1743,7 +1743,7 @@ msgid "Do you really want to end your current game and join another?"
 msgstr "Желите ли заиста да окончате текућу партију и прикључите се другој?"
 
 #: GameLogic/gameautomaton.cpp:1194 GameLogic/gameautomaton.cpp:1223
-#: kgamewin.cpp:2646
+#: kgamewin.cpp:2649
 #, kde-format
 msgid "New game confirmation"
 msgstr "Потврда нове партије"
@@ -1846,7 +1846,7 @@ msgstr "Желите ли да сачувате позицију?"
 
 # >! Plurals (code passing number as string over network).
 #: GameLogic/gameautomaton.cpp:1860 GameLogic/gameautomaton.cpp:2277
-#: kgamewin.cpp:2137 kgamewin.cpp:2232 kgamewin.cpp:2269
+#: kgamewin.cpp:2140 kgamewin.cpp:2235 kgamewin.cpp:2272
 #, kde-format
 msgid "%1: %2 armies to place"
 msgstr ""
@@ -1897,10 +1897,10 @@ msgstr ""
 msgid "Problem : no one destroyed"
 msgstr "Проблем: нико није уништен"
 
-#: GameLogic/gameautomaton.cpp:2380 gestionSprites.cpp:874
-#: gestionSprites.cpp:894 gestionSprites.cpp:995 gestionSprites.cpp:1032
-#: gestionSprites.cpp:1067 gestionSprites.cpp:1121 gestionSprites.cpp:1158
-#: gestionSprites.cpp:1192
+#: GameLogic/gameautomaton.cpp:2380 gestionSprites.cpp:873
+#: gestionSprites.cpp:893 gestionSprites.cpp:994 gestionSprites.cpp:1031
+#: gestionSprites.cpp:1066 gestionSprites.cpp:1120 gestionSprites.cpp:1157
+#: gestionSprites.cpp:1191
 #, kde-format
 msgid "KsirK - Error!"
 msgstr "Грешка"
@@ -2045,17 +2045,17 @@ msgstr "%1 у %2|/|%1 у $[лок %2]"
 msgid "KsirK - Goal Display"
 msgstr "Излагање циља"
 
-#: GameLogic/KsirkChatModel.cpp:72 kgamewin.cpp:180
+#: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:181
 #, kde-format
 msgid "No message..."
 msgstr "Нема поруке..."
 
-#: GameLogic/KsirkChatModel.cpp:74
+#: GameLogic/KsirkChatModel.cpp:73
 #, kde-format
 msgid "<b>%1:</b> %2"
 msgstr "<b>%1:</b> %2"
 
-#: GameLogic/onu.cpp:117
+#: GameLogic/onu.cpp:119
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2064,16 +2064,16 @@ msgstr ""
 "Име фајла пула није нађено.\n"
 "Програм не може да настави."
 
-#: GameLogic/onu.cpp:118 GameLogic/onu.cpp:135 gestionSprites.cpp:639
-#: gestionSprites.cpp:754 gestionSprites.cpp:799 gestionSprites.cpp:1355
-#: gestionSprites.cpp:1432 kgamewin.cpp:149 kgamewin.cpp:383 kgamewin.cpp:400
-#: kgamewin.cpp:417 kgamewin.cpp:584 kgamewin.cpp:740
-#: Sprites/animsprite.cpp:511 Sprites/animsprite.cpp:526
+#: GameLogic/onu.cpp:120 GameLogic/onu.cpp:137 gestionSprites.cpp:638
+#: gestionSprites.cpp:753 gestionSprites.cpp:798 gestionSprites.cpp:1354
+#: gestionSprites.cpp:1431 kgamewin.cpp:150 kgamewin.cpp:384 kgamewin.cpp:401
+#: kgamewin.cpp:418 kgamewin.cpp:587 kgamewin.cpp:743
+#: Sprites/animsprite.cpp:515 Sprites/animsprite.cpp:530
 #, kde-format
 msgid "Error!"
 msgstr "Грешка"
 
-#: GameLogic/onu.cpp:134
+#: GameLogic/onu.cpp:136
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2083,7 +2083,7 @@ msgstr ""
 "Програм не може да се настави."
 
 # >! Plurals (code passing number as string over network).
-#: gestionSprites.cpp:73 gestionSprites.cpp:107 gestionSprites.cpp:158
+#: gestionSprites.cpp:72 gestionSprites.cpp:106 gestionSprites.cpp:157
 #, kde-format
 msgid "Cannot move %1 armies from %2 to %3"
 msgstr ""
@@ -2091,15 +2091,15 @@ msgstr ""
 "армију армије армија] из $[ген %2] у $[аку %3]."
 
 # >! Plurals (code passing number as string over network).
-#: gestionSprites.cpp:80
+#: gestionSprites.cpp:79
 #, kde-format
 msgid "Moving %1 armies from %2 to %3"
 msgstr ""
 "Премијештам %1 армије из %2 у %3.|/|Премијештам %1 $[множ ^1 армију армије "
 "армија] из $[ген %2] у $[аку %3]."
 
-#: gestionSprites.cpp:639 gestionSprites.cpp:754 gestionSprites.cpp:1355
-#: gestionSprites.cpp:1432
+#: gestionSprites.cpp:638 gestionSprites.cpp:753 gestionSprites.cpp:1354
+#: gestionSprites.cpp:1431
 #, kde-format
 msgid ""
 "Sound roule not found - Verify your installation<br>Program cannot continue"
@@ -2107,7 +2107,7 @@ msgstr ""
 "<html>Звук бацања није нађен — провјерите инсталацију.<br/>Програм не може "
 "да се настави.</html>"
 
-#: gestionSprites.cpp:799
+#: gestionSprites.cpp:798
 #, kde-format
 msgid ""
 "Sound cannon not found - Verify your installation<br>Program cannot continue"
@@ -2115,9 +2115,9 @@ msgstr ""
 "<html>Звук топа није нађен — провјерите инсталацију.<br/>Програм не може да "
 "се настави.</html>"
 
-#: gestionSprites.cpp:874 gestionSprites.cpp:894 gestionSprites.cpp:995
-#: gestionSprites.cpp:1032 gestionSprites.cpp:1067 gestionSprites.cpp:1121
-#: gestionSprites.cpp:1158 gestionSprites.cpp:1192
+#: gestionSprites.cpp:873 gestionSprites.cpp:893 gestionSprites.cpp:994
+#: gestionSprites.cpp:1031 gestionSprites.cpp:1066 gestionSprites.cpp:1120
+#: gestionSprites.cpp:1157 gestionSprites.cpp:1191
 #, kde-format
 msgid ""
 "Sound crash not found - Verify your installation\n"
@@ -2126,12 +2126,12 @@ msgstr ""
 "Звук пада није нађен — провјерите инсталацију.\n"
 "Програм не може да се настави."
 
-#: gestionSprites.cpp:1236
+#: gestionSprites.cpp:1235
 #, kde-format
 msgid "Problem: no one destroyed"
 msgstr "Проблем: нико није уништен"
 
-#: gestionSprites.cpp:1446
+#: gestionSprites.cpp:1445
 #, kde-format
 msgid "Bug: who should be 0, 1 or 2."
 msgstr "Грешка: ко треба да је 0, 1, или 2."
@@ -2590,7 +2590,7 @@ msgstr "За придруживање соби %1 потребна је лози
 msgid "Error trying to join %1: nickname %2 is already in use"
 msgstr "Грешка при покушају уласка у %1: надимак %2 се већ користи."
 
-#: Jabber/jabberaccount.cpp:1524 Jabber/jabberprotocol.cpp:433
+#: Jabber/jabberaccount.cpp:1524 Jabber/jabberprotocol.cpp:432
 #: kgamewinslots.cpp:1110
 #, kde-format
 msgid "Provide your nickname"
@@ -2850,86 +2850,86 @@ msgid "Please enter the new nickname you want to have in the room <i>%1</i>"
 msgstr "Унесите нови надимак који желите имати у соби <i>%1</i>"
 
 # >> @title:window
-#: Jabber/jabberprotocol.cpp:337
+#: Jabber/jabberprotocol.cpp:336
 #, kde-format
 msgid "Choose Account"
 msgstr "Избор налога"
 
-#: Jabber/jabberprotocol.cpp:343
+#: Jabber/jabberprotocol.cpp:342
 #, kde-format
 msgid "Choose an account to handle the URL %1"
 msgstr "Изаберите налог да управља УРЛ‑ом %1"
 
-#: Jabber/jabberprotocol.cpp:392
+#: Jabber/jabberprotocol.cpp:391
 #, kde-format
 msgid "Do you want to add '%1' to your contact list?"
 msgstr "Желите ли да додате „%1“ у листу контаката?"
 
-#: Jabber/jabberprotocol.cpp:393
+#: Jabber/jabberprotocol.cpp:392
 #, kde-format
 msgid "Add"
 msgstr "Додај"
 
-#: Jabber/jabberprotocol.cpp:393
+#: Jabber/jabberprotocol.cpp:392
 #, kde-format
 msgid "Do Not Add"
 msgstr "Немој да додаш"
 
-#: Jabber/jabberprotocol.cpp:409
+#: Jabber/jabberprotocol.cpp:408
 #, kde-format
 msgid "Do you want to remove '%1' from your contact list?"
 msgstr "Желите ли да уклоните „%1“ из листе контаката?"
 
-#: Jabber/jabberprotocol.cpp:410
+#: Jabber/jabberprotocol.cpp:409
 #, kde-format
 msgid "Remove"
 msgstr "Уклони"
 
-#: Jabber/jabberprotocol.cpp:410
+#: Jabber/jabberprotocol.cpp:409
 #, kde-format
 msgid "Do Not Remove"
 msgstr "Не уклањај"
 
-#: Jabber/jabberprotocol.cpp:432
+#: Jabber/jabberprotocol.cpp:431
 #, kde-format
 msgid "Please enter your nickname for the room %1"
 msgstr "Унесите свој надимак за собу %1"
 
-#: Jabber/jabberprotocol.cpp:455
+#: Jabber/jabberprotocol.cpp:454
 #, kde-format
 msgid "You have been invited to %1"
 msgstr "Позвани сте у %1"
 
-#: kgamewin.cpp:149 kgamewin.cpp:740
+#: kgamewin.cpp:150 kgamewin.cpp:743
 #, kde-format
 msgid "Cannot load icon<br>Program cannot continue"
 msgstr ""
 "<html>Не могу да учитам иконицу.<br/>Програм не може да се настави.</html>"
 
-#: kgamewin.cpp:383 kgamewin.cpp:400 kgamewin.cpp:417
+#: kgamewin.cpp:384 kgamewin.cpp:401 kgamewin.cpp:418
 #, kde-format
 msgid "Cannot load button image %1<br>Program cannot continue"
 msgstr ""
 "<html>Не могу да учитам слику дугмета %1.<br/>Програм не може да се настави."
 "</html>"
 
-#: kgamewin.cpp:386
+#: kgamewin.cpp:387
 #, kde-format
 msgid "Play over Jabber"
 msgstr "Играј преко џабера"
 
 # rewrite-msgid: /Network//
-#: kgamewin.cpp:387
+#: kgamewin.cpp:388
 #, kde-format
 msgid "Play KsirK over the Jabber Network"
 msgstr "Играј К‑сирк преко џабера"
 
-#: kgamewin.cpp:388
+#: kgamewin.cpp:389
 #, kde-format
 msgid "Jabber"
 msgstr "џабер"
 
-#: kgamewin.cpp:390
+#: kgamewin.cpp:391
 #, kde-format
 msgid ""
 "Allow to connect to a KsirK Jabber Multi User Gaming Room to create new "
@@ -2940,73 +2940,73 @@ msgstr ""
 
 # rewrite-msgid: /Network//
 #. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
-#: kgamewin.cpp:403 mainMenu.ui:104
+#: kgamewin.cpp:404 mainMenu.ui:104
 #, kde-format
 msgid "New Standard TCP/IP Network Game"
 msgstr "Нова стандардна ТЦП/ИП игра"
 
-#: kgamewin.cpp:404
+#: kgamewin.cpp:405
 #, kde-format
 msgid "New TCP/IP"
 msgstr "Нова ТЦП/ИП"
 
 # >> @info:tooltip
-#: kgamewin.cpp:406
+#: kgamewin.cpp:407
 #, kde-format
 msgid "Create a new standard TCP/IP network game"
 msgstr "Започните нову стандардну ТЦП/ИП мрежну игру."
 
 # rewrite-msgid: /Network//
-#: kgamewin.cpp:421
+#: kgamewin.cpp:422
 #, kde-format
 msgid "Join a Standard TCP/IP Network Game"
 msgstr "Придружи се стандардној ТЦП/ИП игри"
 
-#: kgamewin.cpp:422
+#: kgamewin.cpp:423
 #, kde-format
 msgid "Join TCP/IP"
 msgstr "Придружи се ТЦП/ИП"
 
 # >> @info:tooltip
-#: kgamewin.cpp:424
+#: kgamewin.cpp:425
 #, kde-format
 msgid "Join a standard TCP/IP network game"
 msgstr "Придружите се стандардној ТЦП/ИП мрежној игри."
 
-#: kgamewin.cpp:430
+#: kgamewin.cpp:431
 #, kde-format
 msgid "Display the Current Player's Goal"
 msgstr "Циљ тренутног играча"
 
 # >> @info:tooltip
-#: kgamewin.cpp:433
+#: kgamewin.cpp:434
 #, kde-format
 msgid "Display the current player's goal"
 msgstr "Погледајте циљ тренутног играча."
 
-#: kgamewin.cpp:440
+#: kgamewin.cpp:441
 #, kde-format
 msgid "Contextual Help"
 msgstr "Контекстна помоћ"
 
 # >> @info:tooltip
-#: kgamewin.cpp:451
+#: kgamewin.cpp:452
 #, kde-format
 msgid "Lets the next player play"
 msgstr "Прелазак на сљедећег играча."
 
-#: kgamewin.cpp:456
+#: kgamewin.cpp:457
 #, kde-format
 msgid "Finish moves"
 msgstr "Крај помијерања"
 
 # >> @info:tooltip
-#: kgamewin.cpp:458
+#: kgamewin.cpp:459
 #, kde-format
 msgid "Finish moving the current sprites"
 msgstr "Окончајте помијерање текућих спрајтова."
 
-#: kgamewin.cpp:584
+#: kgamewin.cpp:587
 #, kde-format
 msgid ""
 "World definition file not found - Verify your installation<br>Program cannot "
@@ -3016,34 +3016,34 @@ msgstr ""
 ">Програм не може да се настави.</html>"
 
 # >> Player %1 has stepped from country %2 into country %3 and conquered it.
-#: kgamewin.cpp:804
+#: kgamewin.cpp:807
 #, kde-format
 msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
 msgstr ""
 "<font color=\"red\">%1 освоји %2 из %3.</font>|/|<font color=\"red\">%1 "
 "освоји $[аку %2] из $[ген %3].</font>"
 
-#: kgamewin.cpp:828
+#: kgamewin.cpp:831
 #, kde-format
 msgid "%1, you are defeated! Bye, bye..."
 msgstr "%1, поражени сте! Видимо се..."
 
-#: kgamewin.cpp:900
+#: kgamewin.cpp:903
 #, kde-format
 msgid "%1: it is up to you again"
 msgstr "%1: поново сте на потезу"
 
-#: kgamewin.cpp:912
+#: kgamewin.cpp:915
 #, kde-format
 msgid "%1 won!"
 msgstr "%1 побиједи!"
 
-#: kgamewin.cpp:915
+#: kgamewin.cpp:918
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
 msgstr "<big><b>%1</b>, побиједили сте!</big>"
 
-#: kgamewin.cpp:919
+#: kgamewin.cpp:922
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
@@ -3052,34 +3052,34 @@ msgstr ""
 "<br/>Циљ побједника био је задат овако:<br/><i>%1</i><br/><br/>Желите ли "
 "поново да играте?"
 
-#: kgamewin.cpp:925
+#: kgamewin.cpp:928
 #, kde-format
 msgid "<br>You conquered all the world!"
 msgstr "<html><br/>Покорили сте читав свијет!</html>"
 
-#: kgamewin.cpp:929
+#: kgamewin.cpp:932
 #, kde-format
 msgid "<br>He conquered all the world!"
 msgstr "<html><br/>Покорио је читав свијет!</html>"
 
-#: kgamewin.cpp:1046
+#: kgamewin.cpp:1049
 #, kde-format
 msgid "Do you want to quit the game?"
 msgstr "Желите ли да напустите игру?"
 
-#: kgamewin.cpp:1048
+#: kgamewin.cpp:1051
 #, fuzzy, kde-format
 #| msgid "Quit"
 msgctxt "@action:button"
 msgid "Quit Game"
 msgstr "Напусти"
 
-#: kgamewin.cpp:1060
+#: kgamewin.cpp:1063
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
 msgstr "Прије него што напустите, желите ли да сачувате позицију?"
 
-#: kgamewin.cpp:1098
+#: kgamewin.cpp:1101
 #, fuzzy, kde-format
 #| msgid "KsirK - Load Game"
 msgctxt "@title:window"
@@ -3087,7 +3087,7 @@ msgid "KsirK - Load Game"
 msgstr "Учитавање позиције"
 
 # >! Plurals (code passing number as string over network).
-#: kgamewin.cpp:1136
+#: kgamewin.cpp:1139
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
 msgstr ""
@@ -3095,7 +3095,7 @@ msgstr ""
 "'мрежног играча' 'мрежна играча' 'мрежних играча']."
 
 # >> %3 and %4 are countries.
-#: kgamewin.cpp:1215
+#: kgamewin.cpp:1218
 #, kde-format
 msgid ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
@@ -3128,74 +3128,74 @@ msgstr[3] ""
 "font> с једном армијом!<br/>Како желите да браните <font color=\"blue\">"
 "$[аку %4]</font>?"
 
-#: kgamewin.cpp:1244
+#: kgamewin.cpp:1247
 #, kde-format
 msgid "Defend 1"
 msgstr "Брани 1"
 
-#: kgamewin.cpp:1245
+#: kgamewin.cpp:1248
 #, kde-format
 msgid "Defend 2"
 msgstr "Брани 2"
 
-#: kgamewin.cpp:1246
+#: kgamewin.cpp:1249
 #, kde-format
 msgid "Defend-Auto"
 msgstr "Брани аутоматски"
 
-#: kgamewin.cpp:1365
+#: kgamewin.cpp:1368
 #, kde-format
 msgid "Waiting for %1 players to connect"
 msgstr ""
 "Чекам на повезивање %1 играча|/|Чекам на повезивање %1 $[множ ^1 играча "
 "играча играча]"
 
-#: kgamewin.cpp:1755 kgamewin.cpp:1795
+#: kgamewin.cpp:1758 kgamewin.cpp:1798
 msgid "There is no country here!"
 msgstr "Ту нема ниједне земље."
 
-#: kgamewin.cpp:1759 kgamewin.cpp:1800
+#: kgamewin.cpp:1762 kgamewin.cpp:1803
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
 msgstr "Нисте власник прве земље: %1."
 
-#: kgamewin.cpp:1763
+#: kgamewin.cpp:1766
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
 msgstr "Нисте власник друге земље: %1."
 
-#: kgamewin.cpp:1767 kgamewin.cpp:1811
+#: kgamewin.cpp:1770 kgamewin.cpp:1814
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr ""
 "Покушавате да помјерите армије из %1 на њих саме.|/|Покушавате да помјерите "
 "армије из $[ген %1] на њих саме."
 
-#: kgamewin.cpp:1772 kgamewin.cpp:1817
+#: kgamewin.cpp:1775 kgamewin.cpp:1820
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
 msgstr "%1 није сусјед %2.|/|$[ном %1] није сусед $[ген %2]."
 
-#: kgamewin.cpp:1778
+#: kgamewin.cpp:1781
 #, kde-format
 msgid "Moving armies from %1 to %2."
 msgstr ""
 "Премијештам армије из %1 у %2.|/|Премијештам армије из $[ген %1] у $[аку %2]."
 
-#: kgamewin.cpp:1806
+#: kgamewin.cpp:1809
 #, kde-format
 msgid "You are the owner of the second country: %1!"
 msgstr "Власник сте друге земље: %1."
 
-#: kgamewin.cpp:1824
+#: kgamewin.cpp:1827
 msgid "Ready to fight!"
 msgstr "Спремни за борбу!"
 
-#: kgamewin.cpp:1918
+#: kgamewin.cpp:1921
 msgid "<font color=\"orange\">No country here!</font>"
 msgstr "<font color=\"orange\">Овде нема земље.</font>"
 
-#: kgamewin.cpp:1926
+#: kgamewin.cpp:1929
 #, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr ""
@@ -3203,25 +3203,25 @@ msgstr ""
 "\">Нисте власник $[ген %1].</font>"
 
 # >! Plurals (code passing number as string over network).
-#: kgamewin.cpp:1933
+#: kgamewin.cpp:1936
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr ""
 "<font color=\"orange\">У %2 има само %1 армија.</font>|/|<font color=\"orange"
 "\">У $[лок %2] има само %1 $[множ ^1 армија армије армија].</font>"
 
-#: kgamewin.cpp:2073
+#: kgamewin.cpp:2076
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
 msgstr ""
 "%1, браните се једином армијом коју имате у %2.|/|%1, браните се једином "
 "армијом коју имате у $[лок %2]."
 
-#: kgamewin.cpp:2297
+#: kgamewin.cpp:2300
 msgid "Exchange armies again or continue?"
 msgstr "Поново размијенити армије или наставити?"
 
-#: kgamewin.cpp:2322
+#: kgamewin.cpp:2325
 #, kde-format
 msgid ""
 "You must distribute\n"
@@ -3230,49 +3230,49 @@ msgstr ""
 "Морате распоредити\n"
 "све своје армије"
 
-#: kgamewin.cpp:2322 main.cpp:41
+#: kgamewin.cpp:2325 main.cpp:41
 #, kde-format
 msgid "KsirK"
 msgstr "К‑сирк"
 
-#: kgamewin.cpp:2462
+#: kgamewin.cpp:2465
 msgid "Battle ongoing."
 msgstr "Битка у току."
 
-#: kgamewin.cpp:2583 kgamewin.cpp:2594 kgamewin.cpp:2617
+#: kgamewin.cpp:2586 kgamewin.cpp:2597 kgamewin.cpp:2620
 #, kde-format
 msgid "%1, it is up to you."
 msgstr "%1, на потезу сте."
 
-#: kgamewin.cpp:2646
+#: kgamewin.cpp:2649
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
 msgstr "Желите ли заиста да окончате тренутну партију и покренете нову?"
 
-#: kgamewin.cpp:2646
+#: kgamewin.cpp:2649
 #, fuzzy, kde-format
 #| msgid "Start a New Game"
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Започни нову партију"
 
-#: kgamewin.cpp:2902
+#: kgamewin.cpp:2905
 msgid "<b>KsirK quick Introduction</b>"
 msgstr "<b>Брзо упознавање К‑сирка</b>"
 
-#: kgamewin.cpp:2906
+#: kgamewin.cpp:2909
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr "Напада се и помијера превлачењем између сусједних земаља."
 
-#: kgamewin.cpp:2910
+#: kgamewin.cpp:2913
 msgid "Start a new game or join a network game with the menu or the toolbar..."
 msgstr ""
 "Покрените нову партију, или се прикључите мрежној, путем менија или траке "
 "алатки..."
 
 # rewrite-msgid: /options window/configuration dialog/
-#: kgamewin.cpp:2914
+#: kgamewin.cpp:2917
 msgid ""
 "and then let the system guide you through messages and tooltips appearing on "
 "buttons when hovering above them. You can disable bubble help in the options "
@@ -3282,7 +3282,7 @@ msgstr ""
 "јављају док лебдите над њима. Облачиће можете искључити у дијалогу за "
 "подешавање."
 
-#: kgamewin.cpp:2921
+#: kgamewin.cpp:2924
 #, kde-format
 msgid "Don't show messages anymore"
 msgstr "Не приказуј више поруке"
@@ -3696,12 +3696,12 @@ msgstr "Грешка рашчлањивања фајла маске"
 msgid "KsirK - Error"
 msgstr "Грешка"
 
-#: Sprites/animsprite.cpp:511
+#: Sprites/animsprite.cpp:515
 #, kde-format
 msgid "Cannot find Max X for sprite: no background!"
 msgstr "Не могу да нађем макс. X за спрајт: нема позадине."
 
-#: Sprites/animsprite.cpp:526
+#: Sprites/animsprite.cpp:530
 #, kde-format
 msgid "Cannot find Max Y for sprite: no background!"
 msgstr "Не могу да нађем макс. Y за спрајт: нема позадине."

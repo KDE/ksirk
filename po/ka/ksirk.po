@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-11 02:06+0000\n"
+"POT-Creation-Date: 2023-11-03 01:39+0000\n"
 "PO-Revision-Date: 2023-10-06 08:56+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1068,7 +1068,7 @@ msgstr ""
 msgid "Legacy"
 msgstr "ძველი"
 
-#: decoratedgameframe.cpp:100 kgamewin.cpp:449
+#: decoratedgameframe.cpp:100 kgamewin.cpp:450
 #, kde-format
 msgid "Next Player"
 msgstr "შემდეგი მოთამაშე"
@@ -1078,8 +1078,8 @@ msgstr "შემდეგი მოთამაშე"
 msgid "Details"
 msgstr "დეტალები"
 
-#: decoratedgameframe.cpp:106 kgamewin.cpp:429 kgamewin.cpp:1313
-#: kgamewin.cpp:1325 kgamewin.cpp:2482
+#: decoratedgameframe.cpp:106 kgamewin.cpp:430 kgamewin.cpp:1316
+#: kgamewin.cpp:1328 kgamewin.cpp:2485
 #, kde-format
 msgid "Goal"
 msgstr "მიზანი"
@@ -1129,13 +1129,13 @@ msgstr "სვლა 10"
 msgid "Disable Arena"
 msgstr "არნის გამორთვა"
 
-#: Dialogs/InvasionSlider.cpp:97
+#: Dialogs/InvasionSlider.cpp:98
 #, kde-format
 msgctxt "@title:window"
 msgid "Invasion"
 msgstr "თავდასხმა"
 
-#: Dialogs/InvasionSlider.cpp:98
+#: Dialogs/InvasionSlider.cpp:99
 #, kde-format
 msgid ""
 "You are invading <font color=\"blue\">%1</font> with <font color=\"red\">%2</"
@@ -1144,18 +1144,18 @@ msgstr ""
 "აპირებთ, შეიჭრათ ქვეყანაში <font color=\"blue\">%1</font> არმიით <font color="
 "\"red\">%2</font>!"
 
-#: Dialogs/InvasionSlider.cpp:99
+#: Dialogs/InvasionSlider.cpp:100
 #, kde-format
 msgid "<br><i>Choose the number of invading armies.</i>"
 msgstr "<br><i>აირჩიეთ შემჭრელი არმიების რაოდენობა.</i>"
 
-#: Dialogs/InvasionSlider.cpp:103
+#: Dialogs/InvasionSlider.cpp:104
 #, kde-format
 msgctxt "@title:window"
 msgid "Moving"
 msgstr "გადატანა"
 
-#: Dialogs/InvasionSlider.cpp:104
+#: Dialogs/InvasionSlider.cpp:105
 #, kde-format
 msgid ""
 "You are moving armies from <font color=\"red\">%1</font> to <font color="
@@ -1164,7 +1164,7 @@ msgstr ""
 "გადაგყავთ არმიები <font color=\"red\">%1</font>-დან <font color=\"blue\">%2</"
 "font>-ში!"
 
-#: Dialogs/InvasionSlider.cpp:105
+#: Dialogs/InvasionSlider.cpp:106
 #, kde-format
 msgid "<br><i>Choose the number of armies to move.</i>"
 msgstr "<br><i>აირჩიეთ გადასაადგილებელი არმიების რაოდენობა.</i>"
@@ -1328,17 +1328,17 @@ msgstr "ჰოსტი:"
 msgid "Port:"
 msgstr "პორტი:"
 
-#: Dialogs/kplayersetupwidget.cpp:247
+#: Dialogs/kplayersetupwidget.cpp:246
 #, kde-format
 msgid "Name already in use. Please choose another one."
 msgstr "სახელი უკვე გამოიყენება. სხვა აირჩიეთ."
 
-#: Dialogs/kplayersetupwidget.cpp:249
+#: Dialogs/kplayersetupwidget.cpp:248
 #, kde-format
 msgid "Empty name. Please choose another one."
 msgstr "ცარიელი სახელი. შეიყვანეთ სხვა სახელი."
 
-#: Dialogs/kplayersetupwidget.cpp:292
+#: Dialogs/kplayersetupwidget.cpp:291
 #, kde-format
 msgid "Player Number %1, please type in your name and choose your nation:"
 msgstr "მოტამაშის ნომერი %1. შეიყვანეთ თქვენი სახელი და აირჩიეთ ნაციონალობა:"
@@ -1719,7 +1719,7 @@ msgid "Do you really want to end your current game and join another?"
 msgstr "მართლა გნებავთ, დაასრულოთ მიმდინარე თამაში და სხვას მიუერთდეთ?"
 
 #: GameLogic/gameautomaton.cpp:1194 GameLogic/gameautomaton.cpp:1223
-#: kgamewin.cpp:2646
+#: kgamewin.cpp:2649
 #, kde-format
 msgid "New game confirmation"
 msgstr "ახალი თამაშის დადასტურება"
@@ -1812,7 +1812,7 @@ msgid "Do want to save your game?"
 msgstr "გნებავთ, შეინახოთ თამაში?"
 
 #: GameLogic/gameautomaton.cpp:1860 GameLogic/gameautomaton.cpp:2277
-#: kgamewin.cpp:2137 kgamewin.cpp:2232 kgamewin.cpp:2269
+#: kgamewin.cpp:2140 kgamewin.cpp:2235 kgamewin.cpp:2272
 #, kde-format
 msgid "%1: %2 armies to place"
 msgstr "%1: მოსათავსებელია %2 არმია"
@@ -1857,10 +1857,10 @@ msgstr ""
 msgid "Problem : no one destroyed"
 msgstr "პრობლემა: არავინ განადგურებულა"
 
-#: GameLogic/gameautomaton.cpp:2380 gestionSprites.cpp:874
-#: gestionSprites.cpp:894 gestionSprites.cpp:995 gestionSprites.cpp:1032
-#: gestionSprites.cpp:1067 gestionSprites.cpp:1121 gestionSprites.cpp:1158
-#: gestionSprites.cpp:1192
+#: GameLogic/gameautomaton.cpp:2380 gestionSprites.cpp:873
+#: gestionSprites.cpp:893 gestionSprites.cpp:994 gestionSprites.cpp:1031
+#: gestionSprites.cpp:1066 gestionSprites.cpp:1120 gestionSprites.cpp:1157
+#: gestionSprites.cpp:1191
 #, kde-format
 msgid "KsirK - Error!"
 msgstr "KsirK - შეცდომა!"
@@ -1984,17 +1984,17 @@ msgstr "%1-ი %2-ში"
 msgid "KsirK - Goal Display"
 msgstr "KsirK - სამიზნის ჩვენება"
 
-#: GameLogic/KsirkChatModel.cpp:72 kgamewin.cpp:180
+#: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:181
 #, kde-format
 msgid "No message..."
 msgstr "შეტყობინების გარეშე..."
 
-#: GameLogic/KsirkChatModel.cpp:74
+#: GameLogic/KsirkChatModel.cpp:73
 #, kde-format
 msgid "<b>%1:</b> %2"
 msgstr "<b>%1:</b> %2"
 
-#: GameLogic/onu.cpp:117
+#: GameLogic/onu.cpp:119
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2003,16 +2003,16 @@ msgstr ""
 "პულის ფაილის სახელი ვერ ვიპოვე\n"
 "პროგრამა მუშაობას ვერ გააგრძელებს"
 
-#: GameLogic/onu.cpp:118 GameLogic/onu.cpp:135 gestionSprites.cpp:639
-#: gestionSprites.cpp:754 gestionSprites.cpp:799 gestionSprites.cpp:1355
-#: gestionSprites.cpp:1432 kgamewin.cpp:149 kgamewin.cpp:383 kgamewin.cpp:400
-#: kgamewin.cpp:417 kgamewin.cpp:584 kgamewin.cpp:740
-#: Sprites/animsprite.cpp:511 Sprites/animsprite.cpp:526
+#: GameLogic/onu.cpp:120 GameLogic/onu.cpp:137 gestionSprites.cpp:638
+#: gestionSprites.cpp:753 gestionSprites.cpp:798 gestionSprites.cpp:1354
+#: gestionSprites.cpp:1431 kgamewin.cpp:150 kgamewin.cpp:384 kgamewin.cpp:401
+#: kgamewin.cpp:418 kgamewin.cpp:587 kgamewin.cpp:743
+#: Sprites/animsprite.cpp:515 Sprites/animsprite.cpp:530
 #, kde-format
 msgid "Error!"
 msgstr "შეცდომა!"
 
-#: GameLogic/onu.cpp:134
+#: GameLogic/onu.cpp:136
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2021,18 +2021,18 @@ msgstr ""
 "რუკის ნიღბის გამოსახულება ვერ ვიპოვე\n"
 "პროგრამა მუშაობას ვერ გააგრძელებს"
 
-#: gestionSprites.cpp:73 gestionSprites.cpp:107 gestionSprites.cpp:158
+#: gestionSprites.cpp:72 gestionSprites.cpp:106 gestionSprites.cpp:157
 #, kde-format
 msgid "Cannot move %1 armies from %2 to %3"
 msgstr "%1 არმიის გადაყვანა %2-დან %3-ში შეუძლებელია"
 
-#: gestionSprites.cpp:80
+#: gestionSprites.cpp:79
 #, kde-format
 msgid "Moving %1 armies from %2 to %3"
 msgstr "%1 არმიის გადაყვანა %2-დან %3-ში"
 
-#: gestionSprites.cpp:639 gestionSprites.cpp:754 gestionSprites.cpp:1355
-#: gestionSprites.cpp:1432
+#: gestionSprites.cpp:638 gestionSprites.cpp:753 gestionSprites.cpp:1354
+#: gestionSprites.cpp:1431
 #, kde-format
 msgid ""
 "Sound roule not found - Verify your installation<br>Program cannot continue"
@@ -2040,7 +2040,7 @@ msgstr ""
 "ხმის ფაილები ვერ ვიპოვე - გადაამომეთ თქვენი ფაილები<br>პროგრამა მუშაობას ვერ "
 "გააგრძელებს"
 
-#: gestionSprites.cpp:799
+#: gestionSprites.cpp:798
 #, kde-format
 msgid ""
 "Sound cannon not found - Verify your installation<br>Program cannot continue"
@@ -2048,9 +2048,9 @@ msgstr ""
 "ხმა ვერ ვიპოვე - გადაამომეთ თქვენი ფაილები<br>პროგრამა მუშაობას ვერ "
 "გააგრძელებს"
 
-#: gestionSprites.cpp:874 gestionSprites.cpp:894 gestionSprites.cpp:995
-#: gestionSprites.cpp:1032 gestionSprites.cpp:1067 gestionSprites.cpp:1121
-#: gestionSprites.cpp:1158 gestionSprites.cpp:1192
+#: gestionSprites.cpp:873 gestionSprites.cpp:893 gestionSprites.cpp:994
+#: gestionSprites.cpp:1031 gestionSprites.cpp:1066 gestionSprites.cpp:1120
+#: gestionSprites.cpp:1157 gestionSprites.cpp:1191
 #, kde-format
 msgid ""
 "Sound crash not found - Verify your installation\n"
@@ -2059,12 +2059,12 @@ msgstr ""
 "ხმის ავარია ვერ ვიპოვე - გადაამომეთ თქვენი ფაილები\n"
 "პროგრამა მუშაობას ვერ გააგრძელებს"
 
-#: gestionSprites.cpp:1236
+#: gestionSprites.cpp:1235
 #, kde-format
 msgid "Problem: no one destroyed"
 msgstr "პრობლემა: არავინ განადგურებულა"
 
-#: gestionSprites.cpp:1446
+#: gestionSprites.cpp:1445
 #, kde-format
 msgid "Bug: who should be 0, 1 or 2."
 msgstr "შეცდომა: ვინ უნდა იყოს 0, 1 და 2."
@@ -2522,7 +2522,7 @@ msgstr "ოთახში %1 შესასვლელად პაროლ�
 msgid "Error trying to join %1: nickname %2 is already in use"
 msgstr "%1-სთან მიერთების შეცდომა: მეტსახელი %2 უკვე გამოიყენება"
 
-#: Jabber/jabberaccount.cpp:1524 Jabber/jabberprotocol.cpp:433
+#: Jabber/jabberaccount.cpp:1524 Jabber/jabberprotocol.cpp:432
 #: kgamewinslots.cpp:1110
 #, kde-format
 msgid "Provide your nickname"
@@ -2782,83 +2782,83 @@ msgstr "შეცვალეთ მეტსახელი - Jabber-ის დ
 msgid "Please enter the new nickname you want to have in the room <i>%1</i>"
 msgstr "შეიყვანეთ ახალი ფსევდონიმი, რომელიც გსურთ, ოთახში <i>%1</i> გქონდეთ"
 
-#: Jabber/jabberprotocol.cpp:337
+#: Jabber/jabberprotocol.cpp:336
 #, kde-format
 msgid "Choose Account"
 msgstr "აირჩიეთ ანგარიში"
 
-#: Jabber/jabberprotocol.cpp:343
+#: Jabber/jabberprotocol.cpp:342
 #, kde-format
 msgid "Choose an account to handle the URL %1"
 msgstr "აირჩიეთ ანგარიში URL %1-ის დასამუშავებლად"
 
-#: Jabber/jabberprotocol.cpp:392
+#: Jabber/jabberprotocol.cpp:391
 #, kde-format
 msgid "Do you want to add '%1' to your contact list?"
 msgstr "მართლა გნებავთ '%1' თქვენი კონტაქტების სიაში ჩაამატოთ?"
 
-#: Jabber/jabberprotocol.cpp:393
+#: Jabber/jabberprotocol.cpp:392
 #, kde-format
 msgid "Add"
 msgstr "დამატება"
 
-#: Jabber/jabberprotocol.cpp:393
+#: Jabber/jabberprotocol.cpp:392
 #, kde-format
 msgid "Do Not Add"
 msgstr "არ დაამატოთ"
 
-#: Jabber/jabberprotocol.cpp:409
+#: Jabber/jabberprotocol.cpp:408
 #, kde-format
 msgid "Do you want to remove '%1' from your contact list?"
 msgstr "მართლა გნებავთ '%1'-ის წაშლა თქვენი კონტაქტების სიიდან?"
 
-#: Jabber/jabberprotocol.cpp:410
+#: Jabber/jabberprotocol.cpp:409
 #, kde-format
 msgid "Remove"
 msgstr "წაშლა"
 
-#: Jabber/jabberprotocol.cpp:410
+#: Jabber/jabberprotocol.cpp:409
 #, kde-format
 msgid "Do Not Remove"
 msgstr "არ წაშალო"
 
-#: Jabber/jabberprotocol.cpp:432
+#: Jabber/jabberprotocol.cpp:431
 #, kde-format
 msgid "Please enter your nickname for the room %1"
 msgstr "შეიყვანეთ თქვენი მეტსახელი ოთახისთვის %1"
 
-#: Jabber/jabberprotocol.cpp:455
+#: Jabber/jabberprotocol.cpp:454
 #, kde-format
 msgid "You have been invited to %1"
 msgstr "მოგიწვიეს: \"%1\"-ზე"
 
-#: kgamewin.cpp:149 kgamewin.cpp:740
+#: kgamewin.cpp:150 kgamewin.cpp:743
 #, kde-format
 msgid "Cannot load icon<br>Program cannot continue"
 msgstr "ხატულის ჩატვირთვა შეუძლებელია<br>პროგრამა ვერ გაგრძელდება"
 
-#: kgamewin.cpp:383 kgamewin.cpp:400 kgamewin.cpp:417
+#: kgamewin.cpp:384 kgamewin.cpp:401 kgamewin.cpp:418
 #, kde-format
 msgid "Cannot load button image %1<br>Program cannot continue"
 msgstr ""
 "ღილაკის გამოსახულების %1 ჩატვირთვა შეუძლებელია<br>პროგრამა ვერ გაგრძელდება"
 
-#: kgamewin.cpp:386
+#: kgamewin.cpp:387
 #, kde-format
 msgid "Play over Jabber"
 msgstr "Jabber-ით თამაში"
 
-#: kgamewin.cpp:387
+#: kgamewin.cpp:388
 #, kde-format
 msgid "Play KsirK over the Jabber Network"
 msgstr "ითამაშეთ KsirK Jabber-ის ქსელით"
 
-#: kgamewin.cpp:388
+#: kgamewin.cpp:389
 #, kde-format
 msgid "Jabber"
 msgstr "Jabber"
 
-#: kgamewin.cpp:390
+#: kgamewin.cpp:391
 #, kde-format
 msgid ""
 "Allow to connect to a KsirK Jabber Multi User Gaming Room to create new "
@@ -2868,67 +2868,67 @@ msgstr ""
 "შესაქმნელად ან არსებულ თამაშში ჩასართავად"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
-#: kgamewin.cpp:403 mainMenu.ui:104
+#: kgamewin.cpp:404 mainMenu.ui:104
 #, kde-format
 msgid "New Standard TCP/IP Network Game"
 msgstr "ახალი სტანდარტული TCP/IP ქსელური თამაში"
 
-#: kgamewin.cpp:404
+#: kgamewin.cpp:405
 #, kde-format
 msgid "New TCP/IP"
 msgstr "ახალი TCP/IP"
 
-#: kgamewin.cpp:406
+#: kgamewin.cpp:407
 #, kde-format
 msgid "Create a new standard TCP/IP network game"
 msgstr "შექმენით ახალი სტანდარტული TCP/IP ქსელური თამაში"
 
-#: kgamewin.cpp:421
+#: kgamewin.cpp:422
 #, kde-format
 msgid "Join a Standard TCP/IP Network Game"
 msgstr "სტანდარტულ TCP/IP ქსელურ თამაშთან მიერთება"
 
-#: kgamewin.cpp:422
+#: kgamewin.cpp:423
 #, kde-format
 msgid "Join TCP/IP"
 msgstr "TCP/IP-ით მიერთება"
 
-#: kgamewin.cpp:424
+#: kgamewin.cpp:425
 #, kde-format
 msgid "Join a standard TCP/IP network game"
 msgstr "სტანდარტულ TCP/IP ქსელურ თამაშთან მიერთება"
 
-#: kgamewin.cpp:430
+#: kgamewin.cpp:431
 #, kde-format
 msgid "Display the Current Player's Goal"
 msgstr "მიმდინარე მოთამაშის მიზნის ჩვენება"
 
-#: kgamewin.cpp:433
+#: kgamewin.cpp:434
 #, kde-format
 msgid "Display the current player's goal"
 msgstr "მიმდინარე მოთამაშის მიზნის ჩვენება"
 
-#: kgamewin.cpp:440
+#: kgamewin.cpp:441
 #, kde-format
 msgid "Contextual Help"
 msgstr "კონტექსტური დახმარება"
 
-#: kgamewin.cpp:451
+#: kgamewin.cpp:452
 #, kde-format
 msgid "Lets the next player play"
 msgstr "შემდეგი მოთამაშისთვის თამაშის უფლების მიცემა"
 
-#: kgamewin.cpp:456
+#: kgamewin.cpp:457
 #, kde-format
 msgid "Finish moves"
 msgstr "სვლების დასრულება"
 
-#: kgamewin.cpp:458
+#: kgamewin.cpp:459
 #, kde-format
 msgid "Finish moving the current sprites"
 msgstr "მიმდინარე სპრაიტების გადაადგილების დასრულება"
 
-#: kgamewin.cpp:584
+#: kgamewin.cpp:587
 #, kde-format
 msgid ""
 "World definition file not found - Verify your installation<br>Program cannot "
@@ -2937,32 +2937,32 @@ msgstr ""
 "სამყაროს აღწერის ფაილი ვერ ვიპოვე - გადაამოწმეთ თქვენი ფაილები<br>პროგრამა "
 "მუშაობას ვერ გააგრძელებს"
 
-#: kgamewin.cpp:804
+#: kgamewin.cpp:807
 #, kde-format
 msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
 msgstr "<font color=\"red\">%1-მა დაიპყრო %2 %3-დან</font>"
 
-#: kgamewin.cpp:828
+#: kgamewin.cpp:831
 #, kde-format
 msgid "%1, you are defeated! Bye, bye..."
 msgstr "%1, თქვენ წააგეთ. ნახვამდის..."
 
-#: kgamewin.cpp:900
+#: kgamewin.cpp:903
 #, kde-format
 msgid "%1: it is up to you again"
 msgstr "%1: ეს ისევ თქვენზეა დამოკიდებული"
 
-#: kgamewin.cpp:912
+#: kgamewin.cpp:915
 #, kde-format
 msgid "%1 won!"
 msgstr "%1-მა მოიგო!"
 
-#: kgamewin.cpp:915
+#: kgamewin.cpp:918
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
 msgstr "<big><b>%1</b>, თქვენ გაიმარჯვეთ!</big>"
 
-#: kgamewin.cpp:919
+#: kgamewin.cpp:922
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
@@ -2971,44 +2971,44 @@ msgstr ""
 "<br>გამარჯვებულის მიზანი გამოიყურებოდა ასე:<br><i>%1</i><br><br>გნებავთ, "
 "კიდევ ერთხელ ითამაშოთ?"
 
-#: kgamewin.cpp:925
+#: kgamewin.cpp:928
 #, kde-format
 msgid "<br>You conquered all the world!"
 msgstr "<br>თქვენ მთელი სამყარო დაიპყარით!"
 
-#: kgamewin.cpp:929
+#: kgamewin.cpp:932
 #, kde-format
 msgid "<br>He conquered all the world!"
 msgstr "<br>მან მთელი სამყარო დაიპყრო!"
 
-#: kgamewin.cpp:1046
+#: kgamewin.cpp:1049
 #, kde-format
 msgid "Do you want to quit the game?"
 msgstr "მართლა გნებავთ თამაშიდან გასვლა?"
 
-#: kgamewin.cpp:1048
+#: kgamewin.cpp:1051
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
 msgstr "თამაშიდან გასვლა"
 
-#: kgamewin.cpp:1060
+#: kgamewin.cpp:1063
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
 msgstr "სანამ გახვალთ,, გნებავთ, თქვენი თამაში შეინახოთ?"
 
-#: kgamewin.cpp:1098
+#: kgamewin.cpp:1101
 #, kde-format
 msgctxt "@title:window"
 msgid "KsirK - Load Game"
 msgstr "KsirK - თამაშის ჩატვირთვა"
 
-#: kgamewin.cpp:1136
+#: kgamewin.cpp:1139
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
 msgstr "ველოდები %1 ქსელური მოთამაშის მიერთებას."
 
-#: kgamewin.cpp:1215
+#: kgamewin.cpp:1218
 #, kde-format
 msgid ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
@@ -3023,88 +3023,88 @@ msgstr[1] ""
 "<font color=\"red\">%2</font> გიტევთ <font color=\"red\">%3</font> %1 არმიით!"
 "<br> როგორ გნებავთ, დაიცვათ <font color=\"blue\">%4</font>?"
 
-#: kgamewin.cpp:1244
+#: kgamewin.cpp:1247
 #, kde-format
 msgid "Defend 1"
 msgstr "დაცვა 1"
 
-#: kgamewin.cpp:1245
+#: kgamewin.cpp:1248
 #, kde-format
 msgid "Defend 2"
 msgstr "დაცვა 2"
 
-#: kgamewin.cpp:1246
+#: kgamewin.cpp:1249
 #, kde-format
 msgid "Defend-Auto"
 msgstr "ავტომატური-დაცვა"
 
-#: kgamewin.cpp:1365
+#: kgamewin.cpp:1368
 #, kde-format
 msgid "Waiting for %1 players to connect"
 msgstr "ველოდები %1 მოთამაშის მიერთებას"
 
-#: kgamewin.cpp:1755 kgamewin.cpp:1795
+#: kgamewin.cpp:1758 kgamewin.cpp:1798
 msgid "There is no country here!"
 msgstr "აქ ქვეყანა არაა!"
 
-#: kgamewin.cpp:1759 kgamewin.cpp:1800
+#: kgamewin.cpp:1762 kgamewin.cpp:1803
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
 msgstr "პირველი ქვეყნის მფლობელი არ ბრძანდებით: %1!"
 
-#: kgamewin.cpp:1763
+#: kgamewin.cpp:1766
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
 msgstr "მეორე ქვეყნის მფლობელი არ ბრძანდებით: %1!"
 
-#: kgamewin.cpp:1767 kgamewin.cpp:1811
+#: kgamewin.cpp:1770 kgamewin.cpp:1814
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr "აპირებთ, არმიები %1-დან თავის თავში გადაიყვანოთ!"
 
-#: kgamewin.cpp:1772 kgamewin.cpp:1817
+#: kgamewin.cpp:1775 kgamewin.cpp:1820
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
 msgstr "%1 %2-ის მეზობელი არაა!"
 
-#: kgamewin.cpp:1778
+#: kgamewin.cpp:1781
 #, kde-format
 msgid "Moving armies from %1 to %2."
 msgstr "არმიების გადატანა %1-დან %2-ში."
 
-#: kgamewin.cpp:1806
+#: kgamewin.cpp:1809
 #, kde-format
 msgid "You are the owner of the second country: %1!"
 msgstr "თქვენ ბრძანდებით მეორე ქვეყნის მფლობელი: %1!"
 
-#: kgamewin.cpp:1824
+#: kgamewin.cpp:1827
 msgid "Ready to fight!"
 msgstr "ბრძოლისთვის მზად ვარ!"
 
-#: kgamewin.cpp:1918
+#: kgamewin.cpp:1921
 msgid "<font color=\"orange\">No country here!</font>"
 msgstr "<font color=\"orange\">აქ ქვეყანა არაა!</font>"
 
-#: kgamewin.cpp:1926
+#: kgamewin.cpp:1929
 #, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr "<font color=\"orange\">%1-ის მფლობელი არ ბრძანდებით!</font>"
 
-#: kgamewin.cpp:1933
+#: kgamewin.cpp:1936
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr "<font color=\"orange\">%2-ში მხოლოდ %1 არმიაა!</font>"
 
-#: kgamewin.cpp:2073
+#: kgamewin.cpp:2076
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
 msgstr "%1, დაიცავი ერთად-ერთი არმია, რომელიც %2-ში გყავს."
 
-#: kgamewin.cpp:2297
+#: kgamewin.cpp:2300
 msgid "Exchange armies again or continue?"
 msgstr "შევცვალო არმიები კიდევ, თუ გავაგრძელო?"
 
-#: kgamewin.cpp:2322
+#: kgamewin.cpp:2325
 #, kde-format
 msgid ""
 "You must distribute\n"
@@ -3113,49 +3113,49 @@ msgstr ""
 "თქვენი არმიები\n"
 "უნდა გაანაწილოთ"
 
-#: kgamewin.cpp:2322 main.cpp:41
+#: kgamewin.cpp:2325 main.cpp:41
 #, kde-format
 msgid "KsirK"
 msgstr "KsirK"
 
-#: kgamewin.cpp:2462
+#: kgamewin.cpp:2465
 msgid "Battle ongoing."
 msgstr "მიმდინარე ბრძოლა."
 
-#: kgamewin.cpp:2583 kgamewin.cpp:2594 kgamewin.cpp:2617
+#: kgamewin.cpp:2586 kgamewin.cpp:2597 kgamewin.cpp:2620
 #, kde-format
 msgid "%1, it is up to you."
 msgstr "%1, თქვენ გადაწყვიტეთ."
 
-#: kgamewin.cpp:2646
+#: kgamewin.cpp:2649
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
 msgstr "მართლა გნებავთ ახალის დასაწყებად ამ თამაშის დასრულება?"
 
-#: kgamewin.cpp:2646
+#: kgamewin.cpp:2649
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "ახალი თამაშის დაწყება"
 
-#: kgamewin.cpp:2902
+#: kgamewin.cpp:2905
 msgid "<b>KsirK quick Introduction</b>"
 msgstr "<b>KsirK-ის სწრაფი წარდგენა</b>"
 
-#: kgamewin.cpp:2906
+#: kgamewin.cpp:2909
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr ""
 "შეტევებისა და გადაადგილებების მითითება მეზობელ ქვეყნებს შორის გადათრევით და "
 "დაგდებით ხდება."
 
-#: kgamewin.cpp:2910
+#: kgamewin.cpp:2913
 msgid "Start a new game or join a network game with the menu or the toolbar..."
 msgstr ""
 "დაიწყეთ ახალი თამაში ან შეუერთდით ქსელურ თამაშს მენიუდან ან ხელსაწყოების "
 "პანელიდან..."
 
-#: kgamewin.cpp:2914
+#: kgamewin.cpp:2917
 msgid ""
 "and then let the system guide you through messages and tooltips appearing on "
 "buttons when hovering above them. You can disable bubble help in the options "
@@ -3165,7 +3165,7 @@ msgstr ""
 "გადატარებისას გამოჩენილი შეტყობინებებითა და მინიშნებებით. ბუშტიანი დახმარება "
 "მორგების ფანჯარაში შეგიძლიათ, გამორთოთ."
 
-#: kgamewin.cpp:2921
+#: kgamewin.cpp:2924
 #, kde-format
 msgid "Don't show messages anymore"
 msgstr "შეტყობინებები აღარ მაჩვენო"
@@ -3561,12 +3561,12 @@ msgstr "სკინის ფაილის დამუშავების 
 msgid "KsirK - Error"
 msgstr "KsirK - შეცდომა"
 
-#: Sprites/animsprite.cpp:511
+#: Sprites/animsprite.cpp:515
 #, kde-format
 msgid "Cannot find Max X for sprite: no background!"
 msgstr "სპრაიტისთვის მაქს. X-ის პოვნა შეუძლებელია: ფონის გარეშე!"
 
-#: Sprites/animsprite.cpp:526
+#: Sprites/animsprite.cpp:530
 #, kde-format
 msgid "Cannot find Max Y for sprite: no background!"
 msgstr "სპრაიტისთვის მაქს. Y-ის პოვნა შეუძლებელია: ფონის გარეშე!"

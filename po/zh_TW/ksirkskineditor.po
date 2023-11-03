@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-04 01:38+0000\n"
+"POT-Creation-Date: 2023-11-03 01:39+0000\n"
 "PO-Revision-Date: 2009-11-20 17:42+0800\n"
 "Last-Translator: Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv "
 "dot tw>\n"
@@ -1904,151 +1904,151 @@ msgstr "Gael de Chalendar aka Kleag"
 msgid "file to open"
 msgstr "要開啟的檔案"
 
-#: mainwindow.cpp:126 mainwindow.cpp:677 mainwindow.cpp:805 mainwindow.cpp:1192
+#: mainwindow.cpp:127 mainwindow.cpp:678 mainwindow.cpp:806 mainwindow.cpp:1193
 #, kde-format
 msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr "無法載入錨點圖示<br/>程式無法繼續"
 
-#: mainwindow.cpp:126 mainwindow.cpp:140 mainwindow.cpp:677 mainwindow.cpp:706
-#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:78
-#: onu.cpp:111 onu.cpp:130
+#: mainwindow.cpp:127 mainwindow.cpp:141 mainwindow.cpp:678 mainwindow.cpp:707
+#: mainwindow.cpp:806 mainwindow.cpp:823 mainwindow.cpp:1193 onu.cpp:79
+#: onu.cpp:112 onu.cpp:131
 #, kde-format
 msgid "Error"
 msgstr "錯誤"
 
-#: mainwindow.cpp:140 mainwindow.cpp:706 mainwindow.cpp:822
+#: mainwindow.cpp:141 mainwindow.cpp:707 mainwindow.cpp:823
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
 msgstr "無法載入中央點圖示<br/>程式無法再繼續"
 
-#: mainwindow.cpp:323
+#: mainwindow.cpp:324
 #, kde-format
 msgid "Open a saved skin..."
 msgstr "開啟已儲存的外觀..."
 
-#: mainwindow.cpp:327
+#: mainwindow.cpp:328
 #, kde-format
 msgid "Load &Recent"
 msgstr "載入最近的(&R)"
 
-#: mainwindow.cpp:328
+#: mainwindow.cpp:329
 #, kde-format
 msgid "Open a recently saved skin..."
 msgstr "開啟最近儲存的外觀..."
 
-#: mainwindow.cpp:336
+#: mainwindow.cpp:337
 #, kde-format
 msgid "Save the current skin"
 msgstr "儲存目前的外觀"
 
-#: mainwindow.cpp:361
+#: mainwindow.cpp:362
 #, fuzzy, kde-format
 #| msgid "Choose the root folder of the skin to open"
 msgctxt "@title:window"
 msgid "Choose the Root Folder of the Skin to Open"
 msgstr "請選擇要開啟的外觀根資料夾"
 
-#: mainwindow.cpp:525
+#: mainwindow.cpp:526
 #, kde-format
 msgid "There are unsaved changes. What do you want to do?"
 msgstr "有未儲存的變更。您打算怎麼做？"
 
-#: mainwindow.cpp:526
+#: mainwindow.cpp:527
 #, kde-format
 msgid "Exit Anyway?"
 msgstr "還是要離開嗎？"
 
-#: mainwindow.cpp:527
+#: mainwindow.cpp:528
 #, kde-format
 msgid "Quit without saving"
 msgstr "離開但不儲存"
 
-#: mainwindow.cpp:528
+#: mainwindow.cpp:529
 #, kde-format
 msgid "Save then quit"
 msgstr "儲存然後離開"
 
-#: mainwindow.cpp:529
+#: mainwindow.cpp:530
 #, kde-format
 msgid "Do not quit"
 msgstr "不要離開"
 
-#: mainwindow.cpp:1304
+#: mainwindow.cpp:1305
 #, kde-format
 msgid "New country name"
 msgstr "新國家名稱"
 
-#: mainwindow.cpp:1304
+#: mainwindow.cpp:1305
 #, kde-format
 msgid "Enter the name of the new country"
 msgstr "請輸入新國家名稱"
 
-#: mainwindow.cpp:1314
+#: mainwindow.cpp:1315
 #, kde-format
 msgid "Do you really want to delete country '%1'?"
 msgstr "您確定要刪除國家 %1 嗎？"
 
-#: mainwindow.cpp:1314
+#: mainwindow.cpp:1315
 #, kde-format
 msgid "Really delete country?"
 msgstr "確定要刪除國家嗎？"
 
-#: mainwindow.cpp:1333
+#: mainwindow.cpp:1334
 #, kde-format
 msgid "New continent name"
 msgstr "新的大陸名稱"
 
-#: mainwindow.cpp:1333
+#: mainwindow.cpp:1334
 #, kde-format
 msgid "Enter the name of the new continent"
 msgstr "請輸入新大陸名稱"
 
-#: mainwindow.cpp:1343
+#: mainwindow.cpp:1344
 #, kde-format
 msgid "Do you really want to delete continent '%1'?"
 msgstr "您確定要刪除大陸 %1 嗎？"
 
-#: mainwindow.cpp:1343
+#: mainwindow.cpp:1344
 #, kde-format
 msgid "Really delete continent?"
 msgstr "確定要刪除大陸？"
 
-#: mainwindow.cpp:1892
+#: mainwindow.cpp:1893
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "您確定要刪除目標 %1 嗎？"
 
-#: mainwindow.cpp:1892
+#: mainwindow.cpp:1893
 #, kde-format
 msgid "Really delete goal?"
 msgstr "確定要刪除目標？"
 
-#: mainwindow.cpp:1951
+#: mainwindow.cpp:1952
 #, kde-format
 msgid "New nationality name"
 msgstr "新民族名稱"
 
-#: mainwindow.cpp:1951
+#: mainwindow.cpp:1952
 #, kde-format
 msgid "Enter the name of the new nationality"
 msgstr "請輸入新民族名稱"
 
-#: mainwindow.cpp:1961
+#: mainwindow.cpp:1962
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "您確定要刪除民族 %1 嗎？"
 
-#: mainwindow.cpp:1961
+#: mainwindow.cpp:1962
 #, kde-format
 msgid "Really delete nationality?"
 msgstr "確定要刪除民族？"
 
-#: onu.cpp:77
+#: onu.cpp:78
 #, kde-format
 msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
 msgstr "錯誤 ─ 外觀定義檔案格式不正確。應為 %1，但是看到 %2"
 
-#: onu.cpp:110
+#: onu.cpp:111
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2057,7 +2057,7 @@ msgstr ""
 "找不到 Pool 檔名。\n"
 "程式無法再繼續"
 
-#: onu.cpp:129
+#: onu.cpp:130
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2066,7 +2066,7 @@ msgstr ""
 "找不到地圖遮罩影像\n"
 "程式無法再繼續"
 
-#: onu.cpp:988
+#: onu.cpp:986
 #, kde-format
 msgid ""
 "Cannot read file %1:\n"
@@ -2075,7 +2075,7 @@ msgstr ""
 "無法讀取檔案 %1：\n"
 "%2"
 
-#: onu.cpp:989
+#: onu.cpp:987
 #, kde-format
 msgid "PoolLoader"
 msgstr "Pool 載入器"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-04 01:38+0000\n"
+"POT-Creation-Date: 2023-11-03 01:39+0000\n"
 "PO-Revision-Date: 2010-04-21 05:59+0200\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -2001,153 +2001,153 @@ msgstr "Gael de Chalendar aka »Kleag«"
 msgid "file to open"
 msgstr "Datei, de Du opmaken wullt"
 
-#: mainwindow.cpp:126 mainwindow.cpp:677 mainwindow.cpp:805 mainwindow.cpp:1192
+#: mainwindow.cpp:127 mainwindow.cpp:678 mainwindow.cpp:806 mainwindow.cpp:1193
 #, kde-format
 msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr "Anker-Lüttbild lett sik nich laden.<br>Programm kann nich wiederlopen."
 
-#: mainwindow.cpp:126 mainwindow.cpp:140 mainwindow.cpp:677 mainwindow.cpp:706
-#: mainwindow.cpp:805 mainwindow.cpp:822 mainwindow.cpp:1192 onu.cpp:78
-#: onu.cpp:111 onu.cpp:130
+#: mainwindow.cpp:127 mainwindow.cpp:141 mainwindow.cpp:678 mainwindow.cpp:707
+#: mainwindow.cpp:806 mainwindow.cpp:823 mainwindow.cpp:1193 onu.cpp:79
+#: onu.cpp:112 onu.cpp:131
 #, kde-format
 msgid "Error"
 msgstr "Fehler"
 
-#: mainwindow.cpp:140 mainwindow.cpp:706 mainwindow.cpp:822
+#: mainwindow.cpp:141 mainwindow.cpp:707 mainwindow.cpp:823
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
 msgstr "Merrn-Lüttbild lett sik nich laden.<br>Programm kann nich wiederlopen."
 
-#: mainwindow.cpp:323
+#: mainwindow.cpp:324
 #, kde-format
 msgid "Open a saved skin..."
 msgstr "En sekert Kledaasch opmaken..."
 
-#: mainwindow.cpp:327
+#: mainwindow.cpp:328
 #, kde-format
 msgid "Load &Recent"
 msgstr "&Verleden opmaken"
 
-#: mainwindow.cpp:328
+#: mainwindow.cpp:329
 #, kde-format
 msgid "Open a recently saved skin..."
 msgstr "En annerlest sekert Kledaasch opmaken..."
 
-#: mainwindow.cpp:336
+#: mainwindow.cpp:337
 #, kde-format
 msgid "Save the current skin"
 msgstr "Aktuell Kledaasch sekern"
 
-#: mainwindow.cpp:361
+#: mainwindow.cpp:362
 #, fuzzy, kde-format
 #| msgid "Choose the root folder of the skin to open"
 msgctxt "@title:window"
 msgid "Choose the Root Folder of the Skin to Open"
 msgstr "Den Kledaasch-Wörtelorner utsöken, de Du opmaken wullt"
 
-#: mainwindow.cpp:525
+#: mainwindow.cpp:526
 #, kde-format
 msgid "There are unsaved changes. What do you want to do?"
 msgstr "Dat gifft nich sekerte Ännern. Wat wullt Du doon?"
 
-#: mainwindow.cpp:526
+#: mainwindow.cpp:527
 #, kde-format
 msgid "Exit Anyway?"
 msgstr "Liekers utmaken?"
 
-#: mainwindow.cpp:527
+#: mainwindow.cpp:528
 #, kde-format
 msgid "Quit without saving"
 msgstr "Utmaken un nich sekern"
 
-#: mainwindow.cpp:528
+#: mainwindow.cpp:529
 #, kde-format
 msgid "Save then quit"
 msgstr "Sekern un utmaken"
 
-#: mainwindow.cpp:529
+#: mainwindow.cpp:530
 #, kde-format
 msgid "Do not quit"
 msgstr "Nich utmaken"
 
-#: mainwindow.cpp:1304
+#: mainwindow.cpp:1305
 #, kde-format
 msgid "New country name"
 msgstr "Naam för't niege Land"
 
-#: mainwindow.cpp:1304
+#: mainwindow.cpp:1305
 #, kde-format
 msgid "Enter the name of the new country"
 msgstr "Den Naam för dat niege Land ingeven"
 
-#: mainwindow.cpp:1314
+#: mainwindow.cpp:1315
 #, kde-format
 msgid "Do you really want to delete country '%1'?"
 msgstr "Wullt Du dat Land »%1« redig wegdoon?"
 
-#: mainwindow.cpp:1314
+#: mainwindow.cpp:1315
 #, kde-format
 msgid "Really delete country?"
 msgstr "Land redig wegdoon?"
 
-#: mainwindow.cpp:1333
+#: mainwindow.cpp:1334
 #, kde-format
 msgid "New continent name"
 msgstr "Naam för den niegen Eerddeel"
 
-#: mainwindow.cpp:1333
+#: mainwindow.cpp:1334
 #, kde-format
 msgid "Enter the name of the new continent"
 msgstr "Den Naam för den niegen Eerddeel ingeven"
 
-#: mainwindow.cpp:1343
+#: mainwindow.cpp:1344
 #, kde-format
 msgid "Do you really want to delete continent '%1'?"
 msgstr "Wullt Du den Eerddeel »%1« redig wegdoon?"
 
-#: mainwindow.cpp:1343
+#: mainwindow.cpp:1344
 #, kde-format
 msgid "Really delete continent?"
 msgstr "Eerddeel redig wegdoon?"
 
-#: mainwindow.cpp:1892
+#: mainwindow.cpp:1893
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "Wullt Du Opgaav »%1« redig wegdoon?"
 
-#: mainwindow.cpp:1892
+#: mainwindow.cpp:1893
 #, kde-format
 msgid "Really delete goal?"
 msgstr "Opgaav redig wegdoon?"
 
-#: mainwindow.cpp:1951
+#: mainwindow.cpp:1952
 #, kde-format
 msgid "New nationality name"
 msgstr "Naam för de niege Natschonaliteet"
 
-#: mainwindow.cpp:1951
+#: mainwindow.cpp:1952
 #, kde-format
 msgid "Enter the name of the new nationality"
 msgstr "Den Naam för de niege Natschonaliteet ingeven"
 
-#: mainwindow.cpp:1961
+#: mainwindow.cpp:1962
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "Wullt Du de Natschonaliteet »%1« redig wegdoon?"
 
-#: mainwindow.cpp:1961
+#: mainwindow.cpp:1962
 #, kde-format
 msgid "Really delete nationality?"
 msgstr "Natschonaliteet redig wegdoon?"
 
-#: onu.cpp:77
+#: onu.cpp:78
 #, kde-format
 msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
 msgstr ""
 "Fehler - Leeg Formaat vun de Kledaasch-Definitschoondatei. %1 verwacht, man "
 "%2 kregen."
 
-#: onu.cpp:110
+#: onu.cpp:111
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2156,7 +2156,7 @@ msgstr ""
 "Köördateinaam lett sik nich finnen.\n"
 "Programm kann nich wiederlopen."
 
-#: onu.cpp:129
+#: onu.cpp:130
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2165,7 +2165,7 @@ msgstr ""
 "Koortmask-Bild lett sik nich finnen.\n"
 "Programm kann nich wiederlopen."
 
-#: onu.cpp:988
+#: onu.cpp:986
 #, kde-format
 msgid ""
 "Cannot read file %1:\n"
@@ -2174,7 +2174,7 @@ msgstr ""
 "Datei »%1« lett sik nich lesen:\n"
 "%2."
 
-#: onu.cpp:989
+#: onu.cpp:987
 #, kde-format
 msgid "PoolLoader"
 msgstr "Köörladen"
