@@ -4398,6 +4398,13 @@
        id="exploding"
        transform="translate(1191.1777,276.47771)"
        inkscape:label="#g1927">
+      <rect
+         style="fill:none;stroke-width:0.1;stroke:none"
+         id="explodingrect"
+         width="128"
+         height="64"
+         x="0.87230003"
+         y="8.5722904" />
       <g
          id="g4478"
          style="fill:#00583f"
