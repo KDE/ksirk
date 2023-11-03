@@ -24,6 +24,7 @@
 #include "goal.h"
 #include "../ksirk/KsirkGlobalDefinitions.h"
 
+#include <QApplication>
 #include <QFile>
 // #include <QDom>
 #include <QPainter>
@@ -684,7 +685,8 @@ void ONU::buildMap()
 {
   qCDebug(KSIRKSKINEDITOR_LOG);
   //QSize size((int)(m_renderer.defaultSize().width()),(int)(m_renderer.defaultSize().height()));
-  QSize size((int)(m_width),(int)(m_height));
+  const qreal dpr = qApp->devicePixelRatio();
+  const QSize size((int)(m_width * dpr), (int)(m_height * dpr));
   m_map = QPixmap(size);
   m_map.fill(Qt::transparent);
   QPainter painter(&m_map);
@@ -693,6 +695,7 @@ void ONU::buildMap()
   QFont foregroundFont(m_font.family, m_font.size, m_font.weight, m_font.italic);
   QFont backgroundFont(m_font.family, m_font.size, QFont::Normal, m_font.italic);
 
+  painter.scale(dpr, dpr);
   for (int i = 0; i < m_countries.size(); i++)
   {
     Country* country = m_countries[i];
@@ -715,18 +718,20 @@ void ONU::buildMap()
     int((country->centralPoint().y()+countryNameRect.height()/2)),
         countryName);
   }
-
+  m_map.setDevicePixelRatio(dpr);
 }
 
 QPixmap ONU::pixmapForId(const QString& id, int width, int height)
 {
   qCDebug(KSIRKSKINEDITOR_LOG) << id << width << height;
   //QSize size((int)(m_renderer.defaultSize().width()),(int)(m_renderer.defaultSize().height()));
-  QSize size(width,height);
+  const qreal dpr = qApp->devicePixelRatio();
+  const QSize size(width * dpr, height * dpr);
   QPixmap pixmap(size);
   pixmap.fill(Qt::transparent);
   QPainter p(&pixmap);
   m_renderer.render(&p, id);
+  pixmap.setDevicePixelRatio(dpr);
   return pixmap;
 }
 

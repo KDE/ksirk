@@ -50,6 +50,7 @@
 
 //include files for QT
 #include <QAction>
+#include <QApplication>
 #include <QDialog>
 #include <QDockWidget>
 #include <QFileDialog>
@@ -516,13 +517,15 @@ QPixmap KGameWindow::buildDice(const QString& id)
   qCDebug(KSIRK_LOG);
 
   QSize size(32,32);
-  QPixmap pixmap(size);
+  const qreal dpr = qApp->devicePixelRatio();
+  QPixmap pixmap(size * dpr);
   pixmap.fill(Qt::transparent);
   QPainter p(&pixmap);
   if (m_theWorld != nullptr)
   {
     m_theWorld->renderer()->render(&p, id);
   }
+  pixmap.setDevicePixelRatio(dpr);
 
   return pixmap;
 }

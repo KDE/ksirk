@@ -71,7 +71,8 @@ InvasionSlider::InvasionSlider(KGameWindow* game, GameLogic::Country * attack, G
   //Infantery picture
   InfantrySprite *sprite = new InfantrySprite(1.0, game->backGnd());
   sprite-> setDestination(nullptr);             // Sprite immobile
-  QPixmap soldat = sprite->image(0).scaled(24,24,Qt::KeepAspectRatioByExpanding);
+  QPixmap soldat = sprite->image(0);
+  soldat = soldat.scaled(QSize(24, 24) * soldat.devicePixelRatio(), Qt::KeepAspectRatioByExpanding);
   delete sprite;
   
   QLabel * nb = new QLabel();

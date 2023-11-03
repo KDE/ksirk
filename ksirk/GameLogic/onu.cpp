@@ -23,6 +23,7 @@
 #include "Sprites/skinSpritesData.h"
 #include "goal.h"
 
+#include <QApplication>
 #include <QFile>
 #include <qdom.h>
 #include <QPainter>
@@ -569,12 +570,14 @@ void ONU::buildMap()
 {
   qCDebug(KSIRK_LOG) << "with zoom="<< m_zoom;
   //QSize size((int)(m_automaton->rendererFor(m_skin).defaultSize().width()*m_zoom),(int)(m_automaton->rendererFor(m_skin).defaultSize().height()*m_zoom));
-  const QString mapCacheId = m_skin + QLatin1String("map") + QString::number(m_width) + QLatin1Char('x') + QString::number(m_height);
+  const qreal dpr = qApp->devicePixelRatio();
+  const int mapDeviceWidth = m_width * dpr;
+  const int mapDeviceHeight = m_height * dpr;
+  const QString mapCacheId = m_skin + QLatin1String("map") + QString::number(mapDeviceWidth) + QLatin1Char('x') + QString::number(mapDeviceHeight);
   if (!QPixmapCache::find(mapCacheId, &m_map))
   {
     // Pixmap isn't in the cache, create it and insert to cache
-    QSize size((int)(m_width),(int)(m_height));
-    m_map = QPixmap(size);
+    m_map = QPixmap(mapDeviceWidth, mapDeviceHeight);
     m_map.fill(Qt::transparent);
     QPainter painter(&m_map);
     m_automaton->rendererFor(m_skin).render(&painter, "map");
@@ -582,6 +585,7 @@ void ONU::buildMap()
     QFont foregroundFont(m_font.family, m_font.size, m_font.weight, m_font.italic);
     QFont backgroundFont(m_font.family, m_font.size, QFont::Normal, m_font.italic);
 
+    painter.scale(dpr, dpr);
     foreach (Country* country, countries)
     {
       const QString& countryName = i18n(country->name().toUtf8().data());
@@ -609,6 +613,7 @@ void ONU::buildMap()
         int( (country->centralPoint().y()*m_zoom) + 4/*- (countryNameRect.height()/2)*/ ),
         countryName);
     }
+    m_map.setDevicePixelRatio(dpr);
 
     QPixmapCache::insert(mapCacheId, m_map);
   }

@@ -29,6 +29,7 @@
 #include "GameLogic/gameautomaton.h"
 #include "GameLogic/onu.h"
 
+#include <QApplication>
 #include <QPoint>
 #include <QPixmap>
 #include <QPixmapCache>
@@ -117,33 +118,37 @@ void AnimSprite::sequenceConstruction()
 {
   QList<QPixmap> list;
 
+  const qreal dpr = qApp->devicePixelRatio();
+  const QSize size((int)(m_width*frames*dpr), (int)(m_height*nbVersions*dpr));
+
   QPixmap allpm;
-  QString allpmCacheId = m_skin+m_svgid+QString::number(m_width*frames)+"x"+QString::number(m_height*nbVersions);
+  QString allpmCacheId = m_skin+m_svgid+QString::number(size.width())+"x"+QString::number(size.height());
   if (!QPixmapCache::find(allpmCacheId, &allpm))
   {
     // Pixmap isn't in the cache, create it and insert to cache
-    QSize size((int)(m_width*frames), (int)(m_height*nbVersions));
     allpm = QPixmap(size);
     allpm.fill(Qt::transparent);
     QPainter p(&allpm);
     m_renderer->render(&p, m_svgid);
+    allpm.setDevicePixelRatio(dpr);
 
     QPixmapCache::insert(allpmCacheId, allpm);
   }
   
+  const QSize frameSize((int)(m_width * dpr), (int)(m_height * dpr));
   for (unsigned int l = 0; l<nbVersions;l++)
   {
     for (unsigned int i = 0; i<frames;i++)
     {
 //       qCDebug(KSIRK_LOG)<< "constr s : "<<m_width<<" "<<m_height<<" "<<look-1;
       QPixmap pm;
-      QString pmCacheId = m_skin+m_svgid+QString::number(m_width*frames)+"x"+QString::number(m_height*nbVersions)+"-"+QString::number(i)+":"+QString::number(l);
+      QString pmCacheId = allpmCacheId + QLatin1Char('-') + QString::number(i) + QLatin1Char(':') + QString::number(l);
       if (!QPixmapCache::find(pmCacheId, &pm))
       {
         // Pixmap isn't in the cache, create it and insert to cache
-        pm = allpm.copy((int)(m_width*i), (int)(m_height*l),
-                   (int)(m_width), (int)(m_height));
-                   
+        pm = allpm.copy(frameSize.width() * i, frameSize.height() * l,
+                        frameSize.width(), frameSize.height());
+        pm.setDevicePixelRatio(dpr);
         QPixmapCache::insert(pmCacheId, pm);
       }
 
@@ -699,11 +704,13 @@ void AnimSprite::applyZoomFactor(qreal zoomFactor)
 
 void AnimSprite::addDecoration(const QString& svgid, const QRectF& geometry)
 {
-  QSize size(geometry.size().toSize());
+  const qreal dpr = qApp->devicePixelRatio();
+  QSize size(geometry.size().toSize() * dpr);
   QPixmap pm(size);
   pm.fill(Qt::transparent);
   QPainter p(&pm);
   m_renderer->render(&p, svgid);
+  pm.setDevicePixelRatio(dpr);
   QGraphicsPixmapItem* item = new QGraphicsPixmapItem(pm,this);
   item->setPos(geometry.topLeft());
   item->show();
