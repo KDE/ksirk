@@ -311,7 +311,7 @@ MainWindow::~MainWindow()
   if (m_rfa != nullptr)
   {
     qCDebug(KSIRKSKINEDITOR_LOG) << "saving recent files";
-    m_rfa->saveEntries(KSharedConfig::openConfig()->group("ksirkskineditor"));
+    m_rfa->saveEntries(KSharedConfig::openConfig()->group(QStringLiteral("ksirkskineditor")));
   }
 }
 
@@ -330,7 +330,7 @@ void MainWindow::initActions()
 
   KSharedConfig::Ptr config = KSharedConfig::openConfig();
   qCDebug(KSIRKSKINEDITOR_LOG) << "loading recent files";
-  m_rfa->loadEntries(KSharedConfig::openConfig()->group("ksirkskineditor"));
+  m_rfa->loadEntries(KSharedConfig::openConfig()->group(QStringLiteral("ksirkskineditor")));
   
   m_saveGameAction = KGameStandardAction::save(this, &MainWindow::slotSaveSkin, this);
   actionCollection()->addAction(m_saveGameAction->objectName(), m_saveGameAction);

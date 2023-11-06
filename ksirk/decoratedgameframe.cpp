@@ -243,7 +243,7 @@ void DecoratedGameFrame::contextMenuEvent( QContextMenuEvent * )
 void DecoratedGameFrame::setIcon()
 {
   KConfig config(m_automaton->game()->theWorld()->getConfigFileName());
-  KConfigGroup onugroup = config.group("onu");
+  KConfigGroup onugroup = config.group(QStringLiteral("onu"));
   QString skin = onugroup.readEntry("skinpath");
   
   QString imageFileName;

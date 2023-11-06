@@ -71,7 +71,7 @@ ONU::ONU(GameAutomaton* automaton,
 //   unsigned int continentId = 0;
   KConfig config(configFileName);
 
-  KConfigGroup onugroup = config.group("onu");
+  KConfigGroup onugroup = config.group(QStringLiteral("onu"));
 
   qCDebug(KSIRK_LOG) << "ONU XML format version: " << onugroup.readEntry("format-version");
   QString formatVersion = onugroup.readEntry("format-version");
@@ -155,60 +155,60 @@ ONU::ONU(GameAutomaton* automaton,
   
   Sprites::SkinSpritesData::changeable().intData("width-between-flag-and-fighter", onugroup.readEntry("width-between-flag-and-fighter",0));
 
-  Sprites::SkinSpritesData::changeable().intData("flag-width", config.group("flag").readEntry("width",0));
-  Sprites::SkinSpritesData::changeable().intData("flag-height", config.group("flag").readEntry("height",0));
-  Sprites::SkinSpritesData::changeable().intData("flag-frames", config.group("flag").readEntry("frames",0));
-  Sprites::SkinSpritesData::changeable().intData("flag-versions", config.group("flag").readEntry("versions",0));
+  Sprites::SkinSpritesData::changeable().intData("flag-width", config.group(QStringLiteral("flag")).readEntry("width",0));
+  Sprites::SkinSpritesData::changeable().intData("flag-height", config.group(QStringLiteral("flag")).readEntry("height",0));
+  Sprites::SkinSpritesData::changeable().intData("flag-frames", config.group(QStringLiteral("flag")).readEntry("frames",0));
+  Sprites::SkinSpritesData::changeable().intData("flag-versions", config.group(QStringLiteral("flag")).readEntry("versions",0));
 
-//   Sprites::SkinSpritesData::changeable().strData("infantry-id", config.group("infantry").readEntry("id"));
-  Sprites::SkinSpritesData::changeable().intData("infantry-width", config.group("infantry").readEntry("width",0));
-  Sprites::SkinSpritesData::changeable().intData("infantry-height", config.group("infantry").readEntry("height",0));
-  Sprites::SkinSpritesData::changeable().intData("infantry-frames", config.group("infantry").readEntry("frames",0));
-  Sprites::SkinSpritesData::changeable().intData("infantry-versions", config.group("infantry").readEntry("versions",0));
+//   Sprites::SkinSpritesData::changeable().strData("infantry-id", config.group(QStringLiteral("infantry")).readEntry("id"));
+  Sprites::SkinSpritesData::changeable().intData("infantry-width", config.group(QStringLiteral("infantry")).readEntry("width",0));
+  Sprites::SkinSpritesData::changeable().intData("infantry-height", config.group(QStringLiteral("infantry")).readEntry("height",0));
+  Sprites::SkinSpritesData::changeable().intData("infantry-frames", config.group(QStringLiteral("infantry")).readEntry("frames",0));
+  Sprites::SkinSpritesData::changeable().intData("infantry-versions", config.group(QStringLiteral("infantry")).readEntry("versions",0));
 
-//   Sprites::SkinSpritesData::changeable().strData("infantry1-id", config.group("infantry1").readEntry("id"));
-  Sprites::SkinSpritesData::changeable().intData("infantry1-width", config.group("infantry1").readEntry("width",0));
-  Sprites::SkinSpritesData::changeable().intData("infantry1-height", config.group("infantry1").readEntry("height",0));
-  Sprites::SkinSpritesData::changeable().intData("infantry1-frames", config.group("infantry1").readEntry("frames",0));
-  Sprites::SkinSpritesData::changeable().intData("infantry1-versions", config.group("infantry1").readEntry("versions",0));
+//   Sprites::SkinSpritesData::changeable().strData("infantry1-id", config.group(QStringLiteral("infantry1")).readEntry("id"));
+  Sprites::SkinSpritesData::changeable().intData("infantry1-width", config.group(QStringLiteral("infantry1")).readEntry("width",0));
+  Sprites::SkinSpritesData::changeable().intData("infantry1-height", config.group(QStringLiteral("infantry1")).readEntry("height",0));
+  Sprites::SkinSpritesData::changeable().intData("infantry1-frames", config.group(QStringLiteral("infantry1")).readEntry("frames",0));
+  Sprites::SkinSpritesData::changeable().intData("infantry1-versions", config.group(QStringLiteral("infantry1")).readEntry("versions",0));
 
-//   Sprites::SkinSpritesData::changeable().strData("infantry2-id", config.group("infantry2").readEntry("id"));
-  Sprites::SkinSpritesData::changeable().intData("infantry2-width", config.group("infantry2").readEntry("width",0));
-  Sprites::SkinSpritesData::changeable().intData("infantry2-height", config.group("infantry2").readEntry("height",0));
-  Sprites::SkinSpritesData::changeable().intData("infantry2-frames", config.group("infantry2").readEntry("frames",0));
-  Sprites::SkinSpritesData::changeable().intData("infantry2-versions", config.group("infantry2").readEntry("versions",0));
+//   Sprites::SkinSpritesData::changeable().strData("infantry2-id", config.group(QStringLiteral("infantry2")).readEntry("id"));
+  Sprites::SkinSpritesData::changeable().intData("infantry2-width", config.group(QStringLiteral("infantry2")).readEntry("width",0));
+  Sprites::SkinSpritesData::changeable().intData("infantry2-height", config.group(QStringLiteral("infantry2")).readEntry("height",0));
+  Sprites::SkinSpritesData::changeable().intData("infantry2-frames", config.group(QStringLiteral("infantry2")).readEntry("frames",0));
+  Sprites::SkinSpritesData::changeable().intData("infantry2-versions", config.group(QStringLiteral("infantry2")).readEntry("versions",0));
 
-//   Sprites::SkinSpritesData::changeable().strData("infantry3-id", config.group("infantry3").readEntry("id"));
-  Sprites::SkinSpritesData::changeable().intData("infantry3-width", config.group("infantry3").readEntry("width",0));
-  Sprites::SkinSpritesData::changeable().intData("infantry3-height", config.group("infantry3").readEntry("height",0));
-  Sprites::SkinSpritesData::changeable().intData("infantry3-frames", config.group("infantry3").readEntry("frames",0));
-  Sprites::SkinSpritesData::changeable().intData("infantry3-versions", config.group("infantry3").readEntry("versions",0));
+//   Sprites::SkinSpritesData::changeable().strData("infantry3-id", config.group(QStringLiteral("infantry3")).readEntry("id"));
+  Sprites::SkinSpritesData::changeable().intData("infantry3-width", config.group(QStringLiteral("infantry3")).readEntry("width",0));
+  Sprites::SkinSpritesData::changeable().intData("infantry3-height", config.group(QStringLiteral("infantry3")).readEntry("height",0));
+  Sprites::SkinSpritesData::changeable().intData("infantry3-frames", config.group(QStringLiteral("infantry3")).readEntry("frames",0));
+  Sprites::SkinSpritesData::changeable().intData("infantry3-versions", config.group(QStringLiteral("infantry3")).readEntry("versions",0));
 
-//   Sprites::SkinSpritesData::changeable().strData("cavalry-id", config.group("cavalry").readEntry("id"));
-  Sprites::SkinSpritesData::changeable().intData("cavalry-width", config.group("cavalry").readEntry("width",0));
-  Sprites::SkinSpritesData::changeable().intData("cavalry-height", config.group("cavalry").readEntry("height",0));
-  Sprites::SkinSpritesData::changeable().intData("cavalry-frames", config.group("cavalry").readEntry("frames",0));
-  Sprites::SkinSpritesData::changeable().intData("cavalry-versions", config.group("cavalry").readEntry("versions",0));
+//   Sprites::SkinSpritesData::changeable().strData("cavalry-id", config.group(QStringLiteral("cavalry")).readEntry("id"));
+  Sprites::SkinSpritesData::changeable().intData("cavalry-width", config.group(QStringLiteral("cavalry")).readEntry("width",0));
+  Sprites::SkinSpritesData::changeable().intData("cavalry-height", config.group(QStringLiteral("cavalry")).readEntry("height",0));
+  Sprites::SkinSpritesData::changeable().intData("cavalry-frames", config.group(QStringLiteral("cavalry")).readEntry("frames",0));
+  Sprites::SkinSpritesData::changeable().intData("cavalry-versions", config.group(QStringLiteral("cavalry")).readEntry("versions",0));
 
-//   Sprites::SkinSpritesData::changeable().strData("cannon-id", config.group("cannon").readEntry("id"));
-  Sprites::SkinSpritesData::changeable().intData("cannon-width", config.group("cannon").readEntry("width",0));
-  Sprites::SkinSpritesData::changeable().intData("cannon-height", config.group("cannon").readEntry("height",0));
-  Sprites::SkinSpritesData::changeable().intData("cannon-frames", config.group("cannon").readEntry("frames",0));
-  Sprites::SkinSpritesData::changeable().intData("cannon-versions", config.group("cannon").readEntry("versions",0));
+//   Sprites::SkinSpritesData::changeable().strData("cannon-id", config.group(QStringLiteral("cannon")).readEntry("id"));
+  Sprites::SkinSpritesData::changeable().intData("cannon-width", config.group(QStringLiteral("cannon")).readEntry("width",0));
+  Sprites::SkinSpritesData::changeable().intData("cannon-height", config.group(QStringLiteral("cannon")).readEntry("height",0));
+  Sprites::SkinSpritesData::changeable().intData("cannon-frames", config.group(QStringLiteral("cannon")).readEntry("frames",0));
+  Sprites::SkinSpritesData::changeable().intData("cannon-versions", config.group(QStringLiteral("cannon")).readEntry("versions",0));
 
-//   Sprites::SkinSpritesData::changeable().strData("firing-id", config.group("firing").readEntry("id"));
-  Sprites::SkinSpritesData::changeable().intData("firing-width", config.group("firing").readEntry("width",0));
-  Sprites::SkinSpritesData::changeable().intData("firing-height", config.group("firing").readEntry("height",0));
-  Sprites::SkinSpritesData::changeable().intData("firing-frames", config.group("firing").readEntry("frames",0));
-  Sprites::SkinSpritesData::changeable().intData("firing-versions", config.group("firing").readEntry("versions",0));
+//   Sprites::SkinSpritesData::changeable().strData("firing-id", config.group(QStringLiteral("firing")).readEntry("id"));
+  Sprites::SkinSpritesData::changeable().intData("firing-width", config.group(QStringLiteral("firing")).readEntry("width",0));
+  Sprites::SkinSpritesData::changeable().intData("firing-height", config.group(QStringLiteral("firing")).readEntry("height",0));
+  Sprites::SkinSpritesData::changeable().intData("firing-frames", config.group(QStringLiteral("firing")).readEntry("frames",0));
+  Sprites::SkinSpritesData::changeable().intData("firing-versions", config.group(QStringLiteral("firing")).readEntry("versions",0));
 
-//   Sprites::SkinSpritesData::changeable().strData("exploding-id", config.group("exploding").readEntry("id"));
-  Sprites::SkinSpritesData::changeable().intData("exploding-width", config.group("exploding").readEntry("width",0));
-  Sprites::SkinSpritesData::changeable().intData("exploding-height", config.group("cannon").readEntry("height",0));
-  Sprites::SkinSpritesData::changeable().intData("exploding-frames", config.group("exploding").readEntry("frames",0));
-  Sprites::SkinSpritesData::changeable().intData("exploding-versions", config.group("exploding").readEntry("versions",0));
+//   Sprites::SkinSpritesData::changeable().strData("exploding-id", config.group(QStringLiteral("exploding")).readEntry("id"));
+  Sprites::SkinSpritesData::changeable().intData("exploding-width", config.group(QStringLiteral("exploding")).readEntry("width",0));
+  Sprites::SkinSpritesData::changeable().intData("exploding-height", config.group(QStringLiteral("exploding")).readEntry("height",0));
+  Sprites::SkinSpritesData::changeable().intData("exploding-frames", config.group(QStringLiteral("exploding")).readEntry("frames",0));
+  Sprites::SkinSpritesData::changeable().intData("exploding-versions", config.group(QStringLiteral("exploding")).readEntry("versions",0));
 
-  KConfigGroup fontgroup = config.group("font");
+  KConfigGroup fontgroup = config.group(QStringLiteral("font"));
   m_font.family = fontgroup.readEntry("family","URW Chancery L");
   m_font.size = fontgroup.readEntry("size",(int)(13*m_zoom));
   QString w = fontgroup.readEntry("weight", "bold");;

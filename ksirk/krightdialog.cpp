@@ -57,7 +57,7 @@ KRightDialog::KRightDialog(QDockWidget * parent, ONU * world,KGameWindow* m_game
 
     // load the armie image
     KConfig config(world->getConfigFileName());
-    KConfigGroup onugroup = config.group("onu");
+    KConfigGroup onugroup = config.group(QStringLiteral("onu"));
     QString skin = onugroup.readEntry("skinpath");
 
     InfantrySprite *sprite = new InfantrySprite(1.0, m_game->backGnd());
@@ -173,7 +173,7 @@ void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int
   QLabel *l4 = new QLabel();
 
   KConfig config(world->getConfigFileName());
-  KConfigGroup onugroup = config.group("onu");
+  KConfigGroup onugroup = config.group(QStringLiteral("onu"));
   QString skin = onugroup.readEntry("skinpath");
   QString imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, skin + "/Images/loader.gif");
 
