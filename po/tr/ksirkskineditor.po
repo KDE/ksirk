@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-03 01:39+0000\n"
-"PO-Revision-Date: 2023-08-02 00:48+0300\n"
+"PO-Revision-Date: 2023-11-11 23:31+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -186,7 +186,7 @@ msgstr ""
 "Bu, nispeten ana görünüm tanım parçacığında tanımlandığı biçimde, haritanın "
 "sol üst köşesinde gösterilir.\n"
 "\n"
-"Bu değer, piyadeyi hareket ettirdiğinizde otomatik olarak güncellenecektir."
+"Bu değer, piyadeyi hareket ettirdiğinizde kendiliğinden güncellenecektir."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryy)
 #: ksirkcountrydefinition.ui:107
@@ -211,7 +211,7 @@ msgstr ""
 "Bu, nispeten ana görünüm tanım parçacığında tanımlandığı biçimde, haritanın "
 "sol üst köşesinde gösterilir.\n"
 "\n"
-"Bu değer, piyadeyi hareket ettirdiğinizde otomatik olarak güncellenecektir."
+"Bu değer, piyadeyi hareket ettirdiğinizde kendiliğinden güncellenecektir."
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: ksirkcountrydefinition.ui:124
@@ -241,7 +241,7 @@ msgstr ""
 "Bu, nispeten ana görünüm tanım parçacığında tanımlandığı biçimde, haritanın "
 "sol üst köşesinde gösterilir.\n"
 "\n"
-"Bu değer, süvariyi hareket ettirdiğinizde otomatik olarak güncellenecektir."
+"Bu değer, süvariyi hareket ettirdiğinizde kendiliğinden güncellenecektir."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryy)
 #: ksirkcountrydefinition.ui:158
@@ -266,7 +266,7 @@ msgstr ""
 "Bu, nispeten ana görünüm tanım parçacığında tanımlandığı biçimde, haritanın "
 "sol üst köşesinde gösterilir.\n"
 "\n"
-"Bu değer, süvariyi hareket ettirdiğinizde otomatik olarak güncellenecektir."
+"Bu değer, süvariyi hareket ettirdiğinizde kendiliğinden güncellenecektir."
 
 #. i18n: ectx: property (text), widget (QLabel, label_12)
 #: ksirkcountrydefinition.ui:175
@@ -297,7 +297,7 @@ msgstr ""
 "Bu, nispeten ana görünüm tanım parçacığında tanımlandığı biçimde, haritanın "
 "sol üst köşesinde gösterilir.\n"
 "\n"
-"Bu değer, topu hareket ettirdiğinizde otomatik olarak güncellenecektir."
+"Bu değer, topu hareket ettirdiğinizde kendiliğinden güncellenecektir."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonx)
 #: ksirkcountrydefinition.ui:209
@@ -321,7 +321,7 @@ msgstr ""
 "Bu, nispeten ana görünüm tanım parçacığında tanımlandığı biçimde, haritanın "
 "sol üst köşesinde gösterilir.\n"
 "\n"
-"Bu değer, topu hareket ettirdiğinizde otomatik olarak güncellenecektir."
+"Bu değer, topu hareket ettirdiğinizde kendiliğinden güncellenecektir."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, centery)
 #: ksirkcountrydefinition.ui:226
@@ -352,8 +352,7 @@ msgstr ""
 "Bu, nispeten ana görünüm tanım parçacığında tanımlandığı biçimde, haritanın "
 "sol üst köşesinde gösterilir.\n"
 "\n"
-"Bu değer, ülke adını hareket ettirdiğinizde otomatik olarak "
-"güncellenecektir.\n"
+"Bu değer, ülke adını hareket ettirdiğinizde kendiliğinden güncellenecektir.\n"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, centerx)
 #: ksirkcountrydefinition.ui:246
@@ -384,7 +383,7 @@ msgstr ""
 "Bu, nispeten ana görünüm tanım parçacığında tanımlandığı biçimde, haritanın "
 "sol üst köşesinde gösterilir.\n"
 "\n"
-"Bu değer, ülke adını hareket ettirdiğinizde otomatik olarak güncellenecektir."
+"Bu değer, ülke adını hareket ettirdiğinizde kendiliğinden güncellenecektir."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, anchory)
 #: ksirkcountrydefinition.ui:265
@@ -461,7 +460,7 @@ msgstr ""
 "Bu, nispeten ana görünüm tanım parçacığında tanımlandığı biçimde, haritanın "
 "sol üst köşesinde gösterilir.\n"
 "\n"
-"Bu değer, bayrağı sürükleyip bıraktığınızda otomatik olarak güncellenecektir."
+"Bu değer, bayrağı sürükleyip bıraktığınızda kendiliğinden güncellenecektir."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagx)
 #: ksirkcountrydefinition.ui:316
@@ -486,7 +485,7 @@ msgstr ""
 "Bu, nispeten ana görünüm tanım parçacığında tanımlandığı biçimde, haritanın "
 "sol üst köşesinde gösterilir.\n"
 "\n"
-"Bu değer, bayrağı sürükleyip bıraktığınızda otomatik olarak güncellenecektir."
+"Bu değer, bayrağı sürükleyip bıraktığınızda kendiliğinden güncellenecektir."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, neighboursbutton)
 #: ksirkcountrydefinition.ui:335
@@ -1180,7 +1179,7 @@ msgstr "Yeni hedef oluştur"
 #: ksirkskindefinition.ui:391
 #, kde-format
 msgid "Click here to add a new goal. It will be named automatically."
-msgstr "Yeni hedef oluşturmak için tıklayın. Otomatik olarak adlandırılacak."
+msgstr "Yeni hedef oluşturmak için tıklayın. Kendiliğinden adlandırılacak."
 
 #. i18n: ectx: property (text), widget (QPushButton, newGoalButton)
 #: ksirkskindefinition.ui:394
