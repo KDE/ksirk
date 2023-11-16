@@ -1421,7 +1421,7 @@ msgstr "Tipus d'objectiu"
 #, kde-format
 msgid "Choose this for players to have to conquer all the world to win."
 msgstr ""
-"Marqueu-la si voleu que els jugadors hagen de conquerir tot el món per a "
+"Seleccioneu-la si voleu que els jugadors hagen de conquerir tot el món per a "
 "guanyar."
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioWorld)
@@ -1440,7 +1440,7 @@ msgstr "Con&questa mundial"
 #: Dialogs/newGameDialog.ui:169
 #, kde-format
 msgid "Choose this to have a goal assigned to each player."
-msgstr "Marqueu-la per a assignar un objectiu a cada jugador."
+msgstr "Seleccioneu-la per a assignar un objectiu a cada jugador."
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioGoal)
 #: Dialogs/newGameDialog.ui:172
