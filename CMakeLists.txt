@@ -46,7 +46,6 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     Crash
     DocTools
     I18n
-    KIO
     NewStuff
     WidgetsAddons
     XmlGui
@@ -55,7 +54,9 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
 find_package(KDEGames6 6.0.0 REQUIRED)
 
 if(WITH_JABBER_SUPPORT)
-    find_package(KF6Wallet ${KF_MIN_VERSION} REQUIRED)
+    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
+        KIO
+        Wallet)
     find_package(Qca-qt6 2.1.0)
     set_package_properties(Qca-qt5 PROPERTIES
         DESCRIPTION "Support for encryption with Jabber"

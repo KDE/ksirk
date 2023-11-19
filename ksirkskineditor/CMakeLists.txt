@@ -48,7 +48,7 @@ target_link_libraries(ksirkskineditor
     KDEGames6Private
     KF6::I18n
     KF6::Completion
-    KF6::KIOCore
+    KF6::CoreAddons
     KF6::XmlGui
     Qt6::Xml
     Qt6::Svg

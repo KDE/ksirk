@@ -132,7 +132,6 @@ target_link_libraries(ksirk
     KDEGames6Private
     KF6::Crash
     KF6::I18n
-    KF6::KIOCore
     KF6::XmlGui
     KF6::NewStuffWidgets
     Qt6::Multimedia
@@ -144,6 +143,7 @@ target_link_libraries(ksirk
 if(WITH_JABBER_SUPPORT)
     target_link_libraries(ksirk
         iris_ksirk
+        KF6::KIOCore
         KF6::Wallet
     )
 endif()
