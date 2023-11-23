@@ -2233,7 +2233,7 @@ msgstr "S'ha produït un conflicte en la informació rebuda."
 #: Jabber/jabberaccount.cpp:753
 #, kde-format
 msgid "The stream timed out."
-msgstr "El flux ha excedit el temps límit."
+msgstr "El flux ha excedit el temps."
 
 #: Jabber/jabberaccount.cpp:756
 #, kde-format
@@ -2332,7 +2332,7 @@ msgstr "S'ha rebutjat la connexió."
 #: Jabber/jabberaccount.cpp:819
 #, kde-format
 msgid "Connection timed out."
-msgstr "La connexió ha excedit el temps límit."
+msgstr "La connexió ha excedit el temps."
 
 #: Jabber/jabberaccount.cpp:822
 #, kde-format
@@ -2352,7 +2352,7 @@ msgstr "L'operació no està permesa."
 #: Jabber/jabberaccount.cpp:831
 #, kde-format
 msgid "Socket timed out."
-msgstr "El sòcol ha excedit el temps límit."
+msgstr "El sòcol ha excedit el temps."
 
 #: Jabber/jabberaccount.cpp:839
 #, kde-format
