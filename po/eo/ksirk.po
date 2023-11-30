@@ -1962,11 +1962,7 @@ msgid ", "
 msgstr ", "
 
 #: GameLogic/goal.cpp:295
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info An element of the enumeration of the number of countries in the "
-#| "given ¦continent"
-#| msgid "%1 in %2"
+#, kde-format
 msgctxt ""
 "@info An element of the enumeration of the number of countries in the given "
 "continent"
