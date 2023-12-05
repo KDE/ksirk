@@ -1,20 +1,20 @@
 # translation of ksirk.po to Slovak
 # Richard Fric <Richard.Fric@kdemail.net>, 2007, 2009.
-# Roman Paholík <wizzardsk@gmail.com>, 2012, 2013, 2014, 2017, 2021.
+# SPDX-FileCopyrightText: 2012, 2013, 2014, 2017, 2021, 2023 Roman Paholík <wizzardsk@gmail.com>
 # Matej Mrenica <matejm98mthw@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2021-11-15 17:51+0100\n"
+"PO-Revision-Date: 2023-12-04 17:28+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.08.3\n"
+"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #, kde-format
@@ -1721,11 +1721,10 @@ msgid "New game confirmation"
 msgstr "Potvrdenie novej hry"
 
 #: GameLogic/gameautomaton.cpp:1189 GameLogic/gameautomaton.cpp:1217
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Join New Game"
-msgstr "Nová hra"
+msgstr "Pripojiť k novej hre"
 
 #: GameLogic/gameautomaton.cpp:1397
 #, kde-format
@@ -1891,8 +1890,7 @@ msgid "Really Next Player?"
 msgstr "Naozaj nasledujúci hráč?"
 
 #: GameLogic/gameautomaton.cpp:2658
-#, fuzzy, kde-format
-#| msgid "Next Player"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Player"
 msgstr "Ďalší hráč"
@@ -2985,11 +2983,10 @@ msgid "Do you want to quit the game?"
 msgstr "Chcete ukončiť hru?"
 
 #: kgamewin.cpp:1054
-#, fuzzy, kde-format
-#| msgid "Quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
-msgstr "Koniec"
+msgstr "Ukončiť hru"
 
 #: kgamewin.cpp:1074
 #, kde-format
@@ -3140,8 +3137,7 @@ msgid "Do you really want to end your current game and start a new one?"
 msgstr "Naozaj chcete ukončiť aktuálnu hru a spustiť novú?"
 
 #: kgamewin.cpp:2668
-#, fuzzy, kde-format
-#| msgid "Start a New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Spustiť novú hru"
