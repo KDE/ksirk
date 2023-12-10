@@ -2,16 +2,17 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# SPDX-FileCopyrightText: 2022, 2023 Emir SARI <emir_sari@icloud.com>
 # Serdar Dalgıç <serdar@pardus.org.tr>, 2010.
 # obsoleteman <tulliana@gmail.com>, 2008-2009.
 # Volkan Gezer <volkangezer@gmail.com>, 2013-2014.
-# SPDX-FileCopyrightText: 2022, 2023 Emir SARI <emir_sari@icloud.com>
+# Emir SARI <emir_sari@icloud.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2023-10-05 12:52+0300\n"
+"PO-Revision-Date: 2023-12-09 22:20+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 24.01.80\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1974,12 +1975,12 @@ msgctxt ""
 "@info An element of the enumeration of the number of countries in the given "
 "continent"
 msgid "%1 in %2"
-msgstr "%2 içerisinde %1"
+msgstr "%2 içinde %1"
 
 #: GameLogic/goal.cpp:317
 #, kde-format
 msgid "KsirK - Goal Display"
-msgstr "KsirK - Hedef Ekranı"
+msgstr "KsirK - Hedef Görüntüsü"
 
 #: GameLogic/KsirkChatModel.cpp:72 kgamewin.cpp:178
 #, kde-format
