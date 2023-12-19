@@ -16,6 +16,7 @@
   <name xml:lang="fi">KsirK</name>
   <name xml:lang="fr">KsirK</name>
   <name xml:lang="gl">KsirK</name>
+  <name xml:lang="ia">KsirK</name>
   <name xml:lang="id">KsirK</name>
   <name xml:lang="it">KsirK</name>
   <name xml:lang="ka">KsirK</name>
@@ -115,6 +116,7 @@
     <p xml:lang="fi">Ominaisuudet:</p>
     <p xml:lang="fr">Fonctionnalités :</p>
     <p xml:lang="gl">Funcionalidades:</p>
+    <p xml:lang="ia">Characteristicas:</p>
     <p xml:lang="id">Fitur:</p>
     <p xml:lang="it">Caratteristiche:</p>
     <p xml:lang="ka">თვისებები:</p>
