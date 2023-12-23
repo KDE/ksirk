@@ -9,9 +9,9 @@
 # Mickael Sibelle <kimael@gmail.com>, 2008.
 # Etienne Biardeaud <etienne@cyteen.net>, 2009, 2010.
 # Geoffray Levasseur <geoffray.levasseurbrandin@numericable.fr>, 2010, 2011, 2013.
-# SPDX-FileCopyrightText: 2012, 2021, 2022, 2023 xavier <xavier.besnard@neuf.fr>
+# SPDX-FileCopyrightText: 2012, 2021, 2022, 2023 Xavier Besnard <xavier.besnard@kde.org>
 # Simon Depiets <sdepiets@gmail.com>, 2017, 2018.
-# Xavier BESNARD <xavier.besnard@neuf.fr>, 2023.
+# Xavier Besnard <xavier.besnard@kde.org>, 2023.
 #
 msgid ""
 msgstr ""
