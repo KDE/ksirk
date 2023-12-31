@@ -2092,8 +2092,8 @@ msgid ""
 "because the QCA TLS plugin is not installed on your system."
 msgstr ""
 "No s'ha pogut iniciar el funcionament amb SSL per al compte %1. Açò és "
-"possiblement a causa que el connector QCA TLS no està instal·lat al vostre "
-"sistema."
+"possiblement a causa que el connector QCA TLS no està instal·lat en el "
+"vostre sistema."
 
 #: Jabber/jabberaccount.cpp:377
 #, kde-format
