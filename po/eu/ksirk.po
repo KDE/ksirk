@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-03 01:39+0000\n"
-"PO-Revision-Date: 2023-10-02 19:40+0200\n"
+"PO-Revision-Date: 2023-12-30 22:59+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1607,6 +1607,9 @@ msgid ""
 "A combo box that lists currently available nations.\n"
 "Choose one of them. It will be your nation during the game"
 msgstr ""
+"Une honetan erabilgarri dauden nazioak zerrendatzen dituen koadro-konbinatu "
+"bat.\n"
+"Aukeratu horietako bat. Jokoak iraun bitartean zure nazioa izango da"
 
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
 #: Dialogs/qplayersetupdialog.ui:79 Dialogs/qwaitedplayersetupdialog.ui:47
@@ -1789,7 +1792,7 @@ msgstr ""
 #: GameLogic/gameautomaton.cpp:1666
 #, kde-format
 msgid "Starting a new game or exit."
-msgstr ""
+msgstr "Hasi joko berri bat edo irten."
 
 #: GameLogic/gameautomaton.cpp:1669
 #, kde-format
@@ -1803,16 +1806,19 @@ msgid ""
 "For the moment, you can only save the game and start a new one or quit.\n"
 "This will be improved in a future version."
 msgstr ""
+"Bezero batekiko konexio galdu da.\n"
+"Oraingoz, jokoa gorde eta berria hasi edo irten besterik ezin duzu egin.\n"
+"Hori, etorkizuneko bertsio batean hobetuko da."
 
 #: GameLogic/gameautomaton.cpp:1692
 #, kde-format
 msgid "KsirK - Lost connection to client!"
-msgstr ""
+msgstr "KsirK - Bezeroarekiko konexioa galdu da!"
 
 #: GameLogic/gameautomaton.cpp:1694
 #, kde-format
 msgid "Do want to save your game?"
-msgstr ""
+msgstr "Zure jokoa gorde nahi duzu?"
 
 #: GameLogic/gameautomaton.cpp:1860 GameLogic/gameautomaton.cpp:2277
 #: kgamewin.cpp:2140 kgamewin.cpp:2235 kgamewin.cpp:2272
@@ -1838,12 +1844,12 @@ msgstr ""
 #: GameLogic/gameautomaton.cpp:1944
 #, kde-format
 msgid "KsirK - Displaying Goal"
-msgstr ""
+msgstr "KsirK - Helburua azaltzea"
 
 #: GameLogic/gameautomaton.cpp:2130
 #, kde-format
 msgid "%1 chooses its defense"
-msgstr ""
+msgstr "%1(e)k bere defentsa aukeratzen du"
 
 #: GameLogic/gameautomaton.cpp:2290
 #, kde-format
@@ -1853,7 +1859,7 @@ msgstr ""
 #: GameLogic/gameautomaton.cpp:2380
 #, kde-format
 msgid "Problem : no one destroyed"
-msgstr ""
+msgstr "Arazoa: ez da batere suntsitu"
 
 #: GameLogic/gameautomaton.cpp:2380 gestionSprites.cpp:873
 #: gestionSprites.cpp:893 gestionSprites.cpp:994 gestionSprites.cpp:1031
@@ -1861,7 +1867,7 @@ msgstr ""
 #: gestionSprites.cpp:1191
 #, kde-format
 msgid "KsirK - Error!"
-msgstr ""
+msgstr "KsirK - Errorea!"
 
 #: GameLogic/gameautomaton.cpp:2429
 #, kde-format
@@ -1869,11 +1875,13 @@ msgid ""
 "You entered an invalid password.\n"
 "Please try again."
 msgstr ""
+"Pasahitz baliogabe bat sartu duzu.\n"
+"Mesedez, saiatu berriz."
 
 #: GameLogic/gameautomaton.cpp:2429
 #, kde-format
 msgid "KsirK - Invalid password!"
-msgstr ""
+msgstr "KsirK - Pasahitz baliogabea!"
 
 #: GameLogic/gameautomaton.cpp:2637
 #, kde-format
@@ -1881,14 +1889,16 @@ msgid ""
 "%1, you have not played anything this turn.\n"
 "Do you really want to lose your turn?"
 msgstr ""
+"%1, txanda honetan ez duzu ezer jokatu.\n"
+"Benetan txanda galdu nahi duzu?"
 
 #: GameLogic/gameautomaton.cpp:2638
 #, kde-format
 msgid "Really Next Player?"
-msgstr ""
+msgstr "Benetan hurrengo jokalaria?"
 
 #: GameLogic/gameautomaton.cpp:2639
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Player"
 msgstr "Hurrengo jokalaria"
@@ -1896,37 +1906,38 @@ msgstr "Hurrengo jokalaria"
 #: GameLogic/goal.cpp:156
 #, kde-format
 msgid "You must conquer the World!"
-msgstr ""
+msgstr "Mundua menderatu behar duzu!"
 
 #: GameLogic/goal.cpp:184
 #, kde-format
 msgid "%1 (already dead)"
-msgstr ""
+msgstr "%1 (dagoneko hilda)"
 
 #: GameLogic/goal.cpp:195
-#, fuzzy, kde-format
+#, kde-format
 msgid "Error: no player to destroy"
-msgstr "Errorea: ez dago suntsitzeko jokalaririk"
+msgstr "Errorea: ez dago suntsitu beharreko jokalaririk"
 
 #: GameLogic/goal.cpp:231
 #, kde-format
 msgid "<br>%1 is still alive..."
-msgstr ""
+msgstr "<br>%1 oraindik bizirik dago..."
 
 #: GameLogic/goal.cpp:238 GameLogic/goal.cpp:252
 #, kde-format
 msgid "<br>%2, you still have 1 country to conquer..."
 msgid_plural "<br>%2, you still have %1 countries to conquer..."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "<br>%2, oraindik baduzu menderatzeko herrialde bat..."
+msgstr[1] "<br>%2, oraindik %1 herrialde dituzu menderatzeko..."
 
 #: GameLogic/goal.cpp:242
 #, kde-format
 msgid "<br>Your goal is reached: %2 is dead and you possess %1 country."
 msgid_plural ""
 "<br>Your goal is reached: %2 is dead and you possess %1 countries."
-msgstr[0] ""
+msgstr[0] "<br>Zure helburua lortu duzu: %2 hilda dago eta herrialde %1 duzu."
 msgstr[1] ""
+"<br>Zure helburua lortu duzu: %2 hilda dago eta %1 herrialde dituzu."
 
 #: GameLogic/goal.cpp:264
 #, kde-format
@@ -1937,52 +1948,56 @@ msgid_plural ""
 "<br>%2, you have enough countries but you still have to put more than %1 "
 "armies on %3 of them..."
 msgstr[0] ""
+"<br>%2, herrialde nahikoa duzu baina oraindik armada 1 baino gehiago ipini "
+"behar dituzu haietako %3(e)tan..."
 msgstr[1] ""
+"<br>%2, herrialde nahikoa duzu baina oraindik %1 armada baino gehiago ipini "
+"behar dituzu haietako %3(e)tan..."
 
 #: GameLogic/goal.cpp:269
 #, kde-format
 msgid "<br>%1, you still have to conquer "
-msgstr ""
+msgstr "<br>%1, oraindik menderatzeko duzu"
 
 #: GameLogic/goal.cpp:275
 #, kde-format
 msgid "1 country in %2"
 msgid_plural "%1 countries in %2"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%2(e)ko herrialde 1"
+msgstr[1] "%2(e)ko %1 herrialde"
 
 #: GameLogic/goal.cpp:285
-#, fuzzy, kde-format
+#, kde-format
 msgid " and "
 msgstr " eta "
 
 #: GameLogic/goal.cpp:289
 #, kde-format
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: GameLogic/goal.cpp:295
-#, fuzzy, kde-format
+#, kde-format
 msgctxt ""
 "@info An element of the enumeration of the number of countries in the given "
 "continent"
 msgid "%1 in %2"
-msgstr "Sartu"
+msgstr "%1 %2an"
 
 #: GameLogic/goal.cpp:317
-#, fuzzy, kde-format
+#, kde-format
 msgid "KsirK - Goal Display"
 msgstr "KsirK - Helburua azaldu"
 
 #: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:181
 #, kde-format
 msgid "No message..."
-msgstr ""
+msgstr "Mezurik ez..."
 
 #: GameLogic/KsirkChatModel.cpp:73
 #, kde-format
 msgid "<b>%1:</b> %2"
-msgstr ""
+msgstr "<b>%1:</b> %2"
 
 #: GameLogic/onu.cpp:119
 #, kde-format
@@ -1990,15 +2005,17 @@ msgid ""
 "Pool filename not found\n"
 "Program cannot continue"
 msgstr ""
+"«Pool» fitxategi-izena ez da aurkitu\n"
+"Programak ezin du jarraitu"
 
 #: GameLogic/onu.cpp:120 GameLogic/onu.cpp:137 gestionSprites.cpp:638
 #: gestionSprites.cpp:753 gestionSprites.cpp:798 gestionSprites.cpp:1354
 #: gestionSprites.cpp:1431 kgamewin.cpp:150 kgamewin.cpp:384 kgamewin.cpp:401
 #: kgamewin.cpp:418 kgamewin.cpp:587 kgamewin.cpp:743
 #: Sprites/animsprite.cpp:515 Sprites/animsprite.cpp:530
-#, fuzzy, kde-format
+#, kde-format
 msgid "Error!"
-msgstr "Errorea"
+msgstr "Errorea!"
 
 #: GameLogic/onu.cpp:136
 #, kde-format
@@ -2006,16 +2023,18 @@ msgid ""
 "Map mask image not found\n"
 "Program cannot continue"
 msgstr ""
+"Maskaren mapa-irudia ez da aurkitu\n"
+"Programak ezin du jarraitu"
 
 #: gestionSprites.cpp:72 gestionSprites.cpp:106 gestionSprites.cpp:157
 #, kde-format
 msgid "Cannot move %1 armies from %2 to %3"
-msgstr ""
+msgstr "Ezin dira mugitu %1 armada %2(e)tik %3(e)ra"
 
 #: gestionSprites.cpp:79
 #, kde-format
 msgid "Moving %1 armies from %2 to %3"
-msgstr ""
+msgstr "%1 armada %2tik %3ra mugitzea"
 
 #: gestionSprites.cpp:638 gestionSprites.cpp:753 gestionSprites.cpp:1354
 #: gestionSprites.cpp:1431
@@ -2023,12 +2042,16 @@ msgstr ""
 msgid ""
 "Sound roule not found - Verify your installation<br>Program cannot continue"
 msgstr ""
+"Soinu «roule» ez da aurkitu - Ikuskatu zure instalazioa<br>Programak ezin du "
+"jarraitu"
 
 #: gestionSprites.cpp:798
 #, kde-format
 msgid ""
 "Sound cannon not found - Verify your installation<br>Program cannot continue"
 msgstr ""
+"Kanoia soinua ez da aurkitu - Ikuskatu zure instalazioa<br>Programak ezin du "
+"jarraitu"
 
 #: gestionSprites.cpp:873 gestionSprites.cpp:893 gestionSprites.cpp:994
 #: gestionSprites.cpp:1031 gestionSprites.cpp:1066 gestionSprites.cpp:1120
@@ -2042,22 +2065,22 @@ msgstr ""
 #: gestionSprites.cpp:1235
 #, kde-format
 msgid "Problem: no one destroyed"
-msgstr ""
+msgstr "Arazoa: ez da inor suntsitu"
 
 #: gestionSprites.cpp:1445
 #, kde-format
 msgid "Bug: who should be 0, 1 or 2."
-msgstr ""
+msgstr "Akatsa: nor 0, 1 edo 2 izan behar da."
 
 #: Jabber/jabberaccount.cpp:211
-#, fuzzy, kde-format
+#, kde-format
 msgid "Please connect first."
-msgstr "Konektatu lehenengo."
+msgstr "Mesedez, aurrena konektatu."
 
 #: Jabber/jabberaccount.cpp:211
-#, fuzzy, kde-format
+#, kde-format
 msgid "Jabber Error"
-msgstr "Jabber errorea"
+msgstr "«Jabber» errorea"
 
 #: Jabber/jabberaccount.cpp:374
 #, fuzzy, kde-format
@@ -2069,49 +2092,49 @@ msgstr ""
 "sisteman instalatuta ez egotea."
 
 #: Jabber/jabberaccount.cpp:376
-#, fuzzy, kde-format
+#, kde-format
 msgid "Jabber SSL Error"
-msgstr "Jabber SSL errorea"
+msgstr "«Jabber» SSL errorea"
 
 #: Jabber/jabberaccount.cpp:409
-#, fuzzy, kde-format
+#, kde-format
 msgid "The host name does not match the one in the certificate."
 msgstr "Ostalari-izena ez dator bat ziurtagirikoarekin."
 
 #: Jabber/jabberaccount.cpp:413
-#, fuzzy, kde-format
+#, kde-format
 msgid "The certificate is invalid."
-msgstr "Ziurtagiria ez da baliozkoa."
+msgstr "Ziurtagiria baliogabea da."
 
 #: Jabber/jabberaccount.cpp:417
-#, fuzzy, kde-format
+#, kde-format
 msgid "No certificate was presented."
 msgstr "Ez da ziurtagiririk aurkeztu."
 
 #: Jabber/jabberaccount.cpp:427
-#, fuzzy, kde-format
+#, kde-format
 msgid "The Certificate Authority rejected the certificate."
-msgstr "Ziurtagiri-autoritateak ziurtagiria ukatu du."
+msgstr "Ziurtagiri-agintaritzak ziurtagiria errefusatu du."
 
 #: Jabber/jabberaccount.cpp:431
-#, fuzzy, kde-format
+#, kde-format
 msgid "The certificate is not trusted."
-msgstr "Ziurtagiria ez da fidagarria."
+msgstr "Ez da ziurtagiriarekin fidatzen."
 
 #: Jabber/jabberaccount.cpp:435
-#, fuzzy, kde-format
+#, kde-format
 msgid "The signature is invalid."
 msgstr "Sinadura baliogabea da."
 
 #: Jabber/jabberaccount.cpp:439
-#, fuzzy, kde-format
+#, kde-format
 msgid "The Certificate Authority is invalid."
-msgstr "Ziurtagiri-autoritatea ez da baliozkoa."
+msgstr "Ziurtagiri-agintaritza baliogabea da."
 
 #: Jabber/jabberaccount.cpp:443
-#, fuzzy, kde-format
+#, kde-format
 msgid "Invalid certificate purpose."
-msgstr "Ziurtagiriaren xedea ez da baliozkoa."
+msgstr "Ziurtagiriaren xede baliogabea."
 
 #: Jabber/jabberaccount.cpp:447
 #, fuzzy, kde-format
@@ -2119,29 +2142,29 @@ msgid "The certificate is self-signed."
 msgstr "Ziurtagiria auto-sinatua dago."
 
 #: Jabber/jabberaccount.cpp:451
-#, fuzzy, kde-format
+#, kde-format
 msgid "The certificate has been revoked."
-msgstr "Ziurtagiria errebokatua izan da."
+msgstr "Ziurtagiria indargabetu egin da."
 
 #: Jabber/jabberaccount.cpp:455
-#, fuzzy, kde-format
+#, kde-format
 msgid "Maximum certificate chain length was exceeded."
 msgstr "Ziurtagiri-katearen gehienezko luzera gainditu egin da."
 
 #: Jabber/jabberaccount.cpp:459
-#, fuzzy, kde-format
+#, kde-format
 msgid "The certificate has expired."
-msgstr "Ziurtagiria iraungita dago."
+msgstr "Ziurtagiria iraungi egin da."
 
 #: Jabber/jabberaccount.cpp:463
-#, fuzzy, kde-format
+#, kde-format
 msgid "The Certificate Authority has expired."
-msgstr "Ziurtagiri-autoritatea iraungi egin da."
+msgstr "Ziurtagiri-agintaritza iraungi egin da."
 
 #: Jabber/jabberaccount.cpp:467
-#, fuzzy, kde-format
+#, kde-format
 msgid "Validity is unknown."
-msgstr "Balidazioa ezezaguna da."
+msgstr "Baliozkotasuna ezezaguna da."
 
 #: Jabber/jabberaccount.cpp:478
 #, fuzzy, kde-format
@@ -2162,125 +2185,125 @@ msgstr ""
 "%3</p><p>Jarraitu nahi duzu?</p></qt>"
 
 #: Jabber/jabberaccount.cpp:496
-#, fuzzy, kde-format
+#, kde-format
 msgid "Jabber Connection Certificate Problem"
-msgstr "Arazoa Jabber konexio-ziurtagiriarekin"
+msgstr "«Jabber» konexio-ziurtagiri arazoa"
 
 #: Jabber/jabberaccount.cpp:530 kgamewinslots.cpp:1011
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "An encrypted connection with the Jabber server could not be established."
-msgstr "Ezin izan da Jabber zerbitzariarekin enkriptatutako konexiorik ezarri."
+msgstr "Ezin izan da «Jabber» zerbitzariarekin zifratutako konexiorik ezarri."
 
 #: Jabber/jabberaccount.cpp:531 kgamewinslots.cpp:1012
-#, fuzzy, kde-format
+#, kde-format
 msgid "Jabber Connection Error"
-msgstr "Jabber-en konexio errorea"
+msgstr "«Jabber» konexio errorea"
 
 #: Jabber/jabberaccount.cpp:734
-#, fuzzy, kde-format
+#, kde-format
 msgid "Malformed packet received."
-msgstr "Gaizki osatutako pakete bat jaso da."
+msgstr "Gaizki eratutako paketea jaso da."
 
 #: Jabber/jabberaccount.cpp:739
-#, fuzzy, kde-format
+#, kde-format
 msgid "There was an unrecoverable error in the protocol."
-msgstr "Errore konponezin bat gertatu da protokoloan."
+msgstr "Protokoloan errore berreskuraezina egon da."
 
 #: Jabber/jabberaccount.cpp:746
-#, fuzzy, kde-format
+#, kde-format
 msgid "Generic stream error."
-msgstr "Korronte orokorreko errorea."
+msgstr "Korronte errore generikoa."
 
 #: Jabber/jabberaccount.cpp:750
-#, fuzzy, kde-format
+#, kde-format
 msgid "There was a conflict in the information received."
-msgstr "Gatazka aurkitu da jasotako informazioan."
+msgstr "Jasotako informazioan gatazka bat egon da."
 
 #: Jabber/jabberaccount.cpp:753
-#, fuzzy, kde-format
+#, kde-format
 msgid "The stream timed out."
-msgstr "Konexioaren denbora-muga gainditu da."
+msgstr "Korronteak denbora-muga gainditu du."
 
 #: Jabber/jabberaccount.cpp:756
-#, fuzzy, kde-format
+#, kde-format
 msgid "Internal server error."
 msgstr "Zerbitzariaren barneko errorea."
 
 #: Jabber/jabberaccount.cpp:759
-#, fuzzy, kde-format
+#, kde-format
 msgid "Stream packet received from an invalid address."
-msgstr "Pakete bat jaso da helbide baliogabe batetik."
+msgstr "Korronte-pakete bat helbide baliogabe batetik jaso da."
 
 #: Jabber/jabberaccount.cpp:762
-#, fuzzy, kde-format
+#, kde-format
 msgid "Malformed stream packet received."
-msgstr "Gaizki osatutako pakete bat jaso da."
+msgstr "Gaizki eratutako korronte-pakete bat jaso da."
 
 #: Jabber/jabberaccount.cpp:766
-#, fuzzy, kde-format
+#, kde-format
 msgid "Policy violation in the protocol stream."
-msgstr "Politika-bortxaketa gertatu da protokolo-korrontean."
+msgstr "Protokolo-korrontean gidalerro-bortxatzea."
 
 #: Jabber/jabberaccount.cpp:770
-#, fuzzy, kde-format
+#, kde-format
 msgid "Resource constraint."
-msgstr "Baliabideen murriztapena."
+msgstr "Baliabide muga."
 
 #: Jabber/jabberaccount.cpp:774
-#, fuzzy, kde-format
+#, kde-format
 msgid "System shutdown."
-msgstr "Sistema itzali da."
+msgstr "Sistema itzaltzea."
 
 #: Jabber/jabberaccount.cpp:777
-#, fuzzy, kde-format
+#, kde-format
 msgid "Unknown reason."
 msgstr "Arrazoi ezezaguna."
 
 #: Jabber/jabberaccount.cpp:781
-#, fuzzy, kde-format
+#, kde-format
 msgid "There was an error in the protocol stream: %1"
-msgstr "Errore bat gertatu da protokolo-korrontean: %1"
+msgstr "Protokolo-korrontean errore bat egon da: %1"
 
 #: Jabber/jabberaccount.cpp:789
-#, fuzzy, kde-format
+#, kde-format
 msgid "Host not found."
 msgstr "Ostalaria ez da aurkitu."
 
 #: Jabber/jabberaccount.cpp:792
-#, fuzzy, kde-format
+#, kde-format
 msgid "Address is already in use."
-msgstr "Helbidea lehendik erabiltzen ari da."
+msgstr "Helbidea dagoeneko erabiltzen ari dira."
 
 #: Jabber/jabberaccount.cpp:795
 #, kde-format
 msgid "Cannot recreate the socket."
-msgstr ""
+msgstr "Ezin du hargunea berriz sortu."
 
 #: Jabber/jabberaccount.cpp:798
 #, kde-format
 msgid "Cannot bind the socket again."
-msgstr ""
+msgstr "Ezin du hargunea berriz lotu."
 
 #: Jabber/jabberaccount.cpp:801
 #, kde-format
 msgid "Socket is already connected."
-msgstr ""
+msgstr "Hargunea jada konektatuta dago."
 
 #: Jabber/jabberaccount.cpp:804
 #, kde-format
 msgid "Socket is not connected."
-msgstr ""
+msgstr "Hargunea ez dago konektatuta."
 
 #: Jabber/jabberaccount.cpp:807
 #, kde-format
 msgid "Socket is not bound."
-msgstr ""
+msgstr "Hargunea ez dago lotuta."
 
 #: Jabber/jabberaccount.cpp:810
 #, kde-format
 msgid "Socket has not been created."
-msgstr ""
+msgstr "Hargunea ez da sortu."
 
 #: Jabber/jabberaccount.cpp:813
 #, kde-format
@@ -2290,42 +2313,42 @@ msgid ""
 msgstr ""
 
 #: Jabber/jabberaccount.cpp:816
-#, fuzzy, kde-format
+#, kde-format
 msgid "Connection refused."
-msgstr "Konexioa ukatu da."
+msgstr "Konexioa errefusatu egin da."
 
 #: Jabber/jabberaccount.cpp:819
 #, kde-format
 msgid "Connection timed out."
-msgstr ""
+msgstr "Konexioak denbora-muga gainditu du."
 
 #: Jabber/jabberaccount.cpp:822
-#, fuzzy, kde-format
+#, kde-format
 msgid "Connection attempt already in progress."
-msgstr "Konexio bat badago martxan."
+msgstr "Konexio saiakera jada martxan da."
 
 #: Jabber/jabberaccount.cpp:825
-#, fuzzy, kde-format
+#, kde-format
 msgid "Network failure."
-msgstr "Sareak huts egin du."
+msgstr "Sarearen hutsegitea."
 
 #: Jabber/jabberaccount.cpp:828
 #, kde-format
 msgid "Operation is not supported."
-msgstr ""
+msgstr "Eragiketa ez da onartzen."
 
 #: Jabber/jabberaccount.cpp:831
-#, fuzzy, kde-format
+#, kde-format
 msgid "Socket timed out."
-msgstr "Socket-aren denbora-muga gainditu da."
+msgstr "Harguneak denbora-muga gainditu du."
 
 #: Jabber/jabberaccount.cpp:839
-#, fuzzy, kde-format
+#, kde-format
 msgid "There was a connection error: %1"
 msgstr "Konexio-errore bat gertatu da: %1"
 
 #: Jabber/jabberaccount.cpp:847
-#, fuzzy, kde-format
+#, kde-format
 msgid "Unknown host."
 msgstr "Ostalari ezezaguna."
 
@@ -2344,21 +2367,21 @@ msgstr ""
 "horri buruz."
 
 #: Jabber/jabberaccount.cpp:857
-#, fuzzy, kde-format
+#, kde-format
 msgid "Unsupported protocol version."
-msgstr "Onartu gabeko protokolo-bertsioa."
+msgstr "Euskarririk gabeko protokolo-bertsioa."
 
 #: Jabber/jabberaccount.cpp:860 Jabber/jabberaccount.cpp:877
 #: Jabber/jabberaccount.cpp:921 Jabber/jabberaccount.cpp:938
 #: Jabber/jabberaccount.cpp:955 Jabber/jabberaccount.cpp:963
-#, fuzzy, kde-format
+#, kde-format
 msgid "Unknown error."
-msgstr "Errore ezezaguna"
+msgstr "Errore ezezaguna."
 
 #: Jabber/jabberaccount.cpp:864
-#, fuzzy, kde-format
+#, kde-format
 msgid "There was a negotiation error: %1"
-msgstr "Negoziazioan errore bat gertatu da: %1"
+msgstr "Negoziazio errore bat egon da: %1"
 
 #: Jabber/jabberaccount.cpp:871
 #, fuzzy, kde-format
@@ -2366,81 +2389,81 @@ msgid "Server rejected our request to start the TLS handshake."
 msgstr "TLS diosala hasteko egin diogun eskaera ukatu egin du zerbitzariak."
 
 #: Jabber/jabberaccount.cpp:874
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to establish a secure connection."
-msgstr "Ezin izan da konexio segururik ezarri."
+msgstr "Konexio seguru bat ezartzea huts egin du."
 
 #: Jabber/jabberaccount.cpp:881
-#, fuzzy, kde-format
+#, kde-format
 msgid "There was a Transport Layer Security (TLS) error: %1"
-msgstr "Transport Layer Security (TLS) errore bat gertatu da: %1"
+msgstr "Garraio geruzaren segurtasun (TLS) errore bat gertatu da: %1"
 
 #: Jabber/jabberaccount.cpp:888
-#, fuzzy, kde-format
+#, kde-format
 msgid "Login failed with unknown reason."
-msgstr "Huts egin du saioa hastean. Arrazoi ezezaguna."
+msgstr "Saio-hastea arrazoi ezezagunagatik huts egin du."
 
 #: Jabber/jabberaccount.cpp:891
-#, fuzzy, kde-format
+#, kde-format
 msgid "No appropriate authentication mechanism available."
 msgstr "Ez dago autentifikazio-mekanismo egokirik erabilgarri."
 
 #: Jabber/jabberaccount.cpp:894
-#, fuzzy, kde-format
+#, kde-format
 msgid "Bad SASL authentication protocol."
 msgstr "SASL autentifikazio-protokolo okerra."
 
 #: Jabber/jabberaccount.cpp:897
-#, fuzzy, kde-format
+#, kde-format
 msgid "Server failed mutual authentication."
-msgstr "Zerbitzariak huts egin du elkarrekiko autentifikazioan."
+msgstr "Zerbitzariak elkarrekiko autentifikazioan huts egin du."
 
 #: Jabber/jabberaccount.cpp:900
-#, fuzzy, kde-format
+#, kde-format
 msgid "Encryption is required but not present."
-msgstr "Enkriptatzea beharrezkoa da, baina ez dago."
+msgstr "Zifratzea beharrezkoa da, baina ez dago."
 
 #: Jabber/jabberaccount.cpp:903
-#, fuzzy, kde-format
+#, kde-format
 msgid "Invalid user ID."
-msgstr "Erabiltzaile IDa ez da baliozkoa."
+msgstr "Erabiltzaile ID baliogabea."
 
 #: Jabber/jabberaccount.cpp:906
-#, fuzzy, kde-format
+#, kde-format
 msgid "Invalid mechanism."
-msgstr "Mekanismoa ez da baliozkoa."
+msgstr "Mekanismoa baliogabea."
 
 #: Jabber/jabberaccount.cpp:909
-#, fuzzy, kde-format
+#, kde-format
 msgid "Invalid realm."
-msgstr "Erreinua ez da baliozkoa."
+msgstr "Esparru baliogabea."
 
 #: Jabber/jabberaccount.cpp:912
-#, fuzzy, kde-format
+#, kde-format
 msgid "Mechanism too weak."
-msgstr "Mekanismoa ahulegia da."
+msgstr "Mekanismo ahulegia."
 
 #: Jabber/jabberaccount.cpp:915
-#, fuzzy, kde-format
+#, kde-format
 msgid "Wrong credentials supplied. (check your user ID and password)"
 msgstr ""
-"Okerreko kredentzialak eman dira (begiratu ondo dauden erabiltzaile IDa eta "
-"pasahitza)"
+"Egiaztagiri okerrak aurkeztu dira (egiaztatu zure erabiltzaile ID eta "
+"pasahitza)."
 
 #: Jabber/jabberaccount.cpp:918
-#, fuzzy, kde-format
+#, kde-format
 msgid "Temporary failure, please try again later."
-msgstr "Aldi baterako huts egin du, saiatu berriro geroago."
+msgstr "Aldi baterako hutsegitea, saiatu berriro geroago."
 
 #: Jabber/jabberaccount.cpp:925
-#, fuzzy, kde-format
+#, kde-format
 msgid "There was an error authenticating with the server: %1"
-msgstr "Errore bat gertatu da zerbitzariarekin autentifikatzean: %1"
+msgstr "Errore bat gertatu da zerbitzariarekin egiaztatzean: %1"
 
 #: Jabber/jabberaccount.cpp:932
-#, fuzzy, kde-format
+#, kde-format
 msgid "Transport Layer Security (TLS) problem."
-msgstr "Transport Layer Security (TLS) arazoa."
+msgstr "Garraio geruzaren segurtasun (TLS) arazoa."
 
 #: Jabber/jabberaccount.cpp:935
 #, fuzzy, kde-format
@@ -2458,14 +2481,14 @@ msgid "No permission to bind the resource."
 msgstr "Ez duzu baimenik baliabidea lotzeko."
 
 #: Jabber/jabberaccount.cpp:952
-#, fuzzy, kde-format
+#, kde-format
 msgid "The resource is already in use."
-msgstr "Baliabidea lehendik erabiltzen ari da."
+msgstr "Baliabidea lehendik erabiltzen ari dira."
 
 #: Jabber/jabberaccount.cpp:959
-#, fuzzy, kde-format
+#, kde-format
 msgid "Could not bind a resource: %1"
-msgstr "Ezin izan da baliabide bat lotu: %1"
+msgstr "Ezin izan du baliabide bat lotu: %1"
 
 #: Jabber/jabberaccount.cpp:977 Jabber/jabberaccount.cpp:981
 #, kde-format
@@ -2483,28 +2506,29 @@ msgstr ""
 "izango ditu haren lineako egoera ikusi. Kontaktua ezabatu nahi duzu?"
 
 #: Jabber/jabberaccount.cpp:1130 Jabber/jabbercontact.cpp:939
-#, fuzzy, kde-format
+#, kde-format
 msgid "Notification"
 msgstr "Jakinarazpena"
 
 #: Jabber/jabberaccount.cpp:1130 Jabber/jabbercontact.cpp:940
-#, fuzzy, kde-format
+#, kde-format
 msgid "Keep"
 msgstr "Mantendu"
 
 #: Jabber/jabberaccount.cpp:1514 kgamewinslots.cpp:1101
-#, fuzzy, kde-format
+#, kde-format
 msgid "A password is required to join the room %1."
-msgstr "Pasahitza behar da %1 gelan sartzeko."
+msgstr "%1 gelara batzeko pasahitz bat behar da."
 
 #: Jabber/jabberaccount.cpp:1523 kgamewinslots.cpp:1110
-#, fuzzy, kde-format
+#, kde-format
 msgid "Error trying to join %1: nickname %2 is already in use"
-msgstr "Errorea %1(e)ra sartzean: norbaitek badu %2 goitizena"
+msgstr ""
+"Errorea %1(e)ra batzen saiatzean: jada %2 goitizena erabiltzen ari dira"
 
 #: Jabber/jabberaccount.cpp:1524 Jabber/jabberprotocol.cpp:432
 #: kgamewinslots.cpp:1110
-#, fuzzy, kde-format
+#, kde-format
 msgid "Provide your nickname"
 msgstr "Eman zure goitizena"
 
@@ -2515,9 +2539,9 @@ msgstr "Ezin zara %1 gelan sartu, debekatuta zaudelako."
 
 #: Jabber/jabberaccount.cpp:1538 Jabber/jabberaccount.cpp:1545
 #: Jabber/jabberaccount.cpp:1555
-#, fuzzy, kde-format
+#, kde-format
 msgid "Jabber Group Chat"
-msgstr "Jabber berriketa-taldea"
+msgstr "«Jabber» talde berriketa"
 
 #: Jabber/jabberaccount.cpp:1544
 #, fuzzy, kde-format
@@ -2528,7 +2552,7 @@ msgstr ""
 "Ezin duzu %1 gelara sartu, gehienezko erabiltzaile kopurua gainditu delako"
 
 #: Jabber/jabberaccount.cpp:1550 kgamewinslots.cpp:1128
-#, fuzzy, kde-format
+#, kde-format
 msgid "No reason given by the server"
 msgstr "Zerbitzariak ez du arrazoirik eman"
 
@@ -2542,12 +2566,12 @@ msgstr ""
 "(arrazoia: %2, kodea: %3)"
 
 #: Jabber/jabberaccount.cpp:1708
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "An error occurred while trying to remove the account:\n"
 "%1"
 msgstr ""
-"Errorea gertatu da kontua ezabatzean:\n"
+"Kontua ezabatzen saiatzean errore bat gertatu da:\n"
 "%1"
 
 #: Jabber/jabberaccount.cpp:1709
@@ -2556,25 +2580,25 @@ msgid "Jabber Account Unregistration"
 msgstr "Jabber kontua erregistrotik ezabatzea"
 
 #: Jabber/jabberbasecontact.cpp:128
-#, fuzzy, kde-format
+#, kde-format
 msgid "You cannot see each others' status."
-msgstr "Ezin duzu besteen egoera ikusi."
+msgstr "Ezin duzu elkarren egoera ikusi."
 
 #: Jabber/jabberbasecontact.cpp:132
-#, fuzzy, kde-format
+#, kde-format
 msgid "You can see this contact's status, but he/she cannot see your status."
 msgstr ""
-"Kontaktu honen egoera ikus dezakezu, baina berak ezin du zure egoera ikusi."
+"Kontaktu horren egoera ikus dezakezu, baina berak ezin du zure egoera ikusi."
 
 #: Jabber/jabberbasecontact.cpp:136
-#, fuzzy, kde-format
+#, kde-format
 msgid "This contact can see your status, but you cannot see his/her status."
 msgstr ""
-"Kontaktu honek zure egoera ikus dezake, baina zuk ezin duzu bere egoera "
+"Kontaktu horrek zure egoera ikus dezake, baina zuk ezin duzu bere egoera "
 "ikusi."
 
 #: Jabber/jabberbasecontact.cpp:140
-#, fuzzy, kde-format
+#, kde-format
 msgid "You can see each others' status."
 msgstr "Elkarren egoera ikus dezakezue."
 
@@ -2596,32 +2620,32 @@ msgstr "Mezua"
 #: Jabber/jabberbasecontact.cpp:641
 #, kde-format
 msgid "Downloading of Jabber contact photo failed."
-msgstr ""
+msgstr "«Jabber» kontaktuaren argazkia zama-jaistea huts egin du."
 
 #: Jabber/jabberbookmarks.cpp:135
-#, fuzzy, kde-format
+#, kde-format
 msgid "Groupchat bookmark"
-msgstr "Berriketa-taldearen laster-marka"
+msgstr "Talde-berriketaren laster-marka"
 
 #: Jabber/jabbercontact.cpp:137
-#, fuzzy, kde-format
+#, kde-format
 msgid "Authorization"
 msgstr "Baimen-ematea"
 
 #: Jabber/jabbercontact.cpp:143
-#, fuzzy, kde-format
+#, kde-format
 msgid "(Re)send Authorization To"
-msgstr "(Bir)bidali baimena honi"
+msgstr "(Bir)bidali baimen-ematea honi"
 
 #: Jabber/jabbercontact.cpp:150
-#, fuzzy, kde-format
+#, kde-format
 msgid "(Re)request Authorization From"
-msgstr "(Berr)eskatu baimena honi"
+msgstr "(Berr)eskatu baimen-ematea honi"
 
 #: Jabber/jabbercontact.cpp:157
-#, fuzzy, kde-format
+#, kde-format
 msgid "Remove Authorization From"
-msgstr "Kendu honen baimena"
+msgstr "Kendu honen baimen-ematea"
 
 #: Jabber/jabbercontact.cpp:162
 #, fuzzy, kde-format
@@ -2729,9 +2753,9 @@ msgstr ""
 
 #: Jabber/jabbercontact.cpp:1039 Jabber/jabbergroupcontact.cpp:310
 #: Jabber/jabbergroupmembercontact.cpp:159
-#, fuzzy, kde-format
+#, kde-format
 msgid "Kopete File Transfer"
-msgstr "Kopete fitxategi-transferentzia"
+msgstr "«Kopete» fitxategi-transferentzia"
 
 #: Jabber/jabbercontact.cpp:1110
 #, fuzzy, kde-format
@@ -2748,7 +2772,7 @@ msgstr ""
 #: Jabber/jabbercontact.cpp:1114
 #, kde-format
 msgid "Jabber Resource Selector"
-msgstr "Jabber baliabideen hautatzailea"
+msgstr "«Jabber» baliabide hautatzailea"
 
 #: Jabber/jabbergroupcontact.cpp:120
 #, kde-format
@@ -2846,12 +2870,14 @@ msgid ""
 "Allow to connect to a KsirK Jabber Multi User Gaming Room to create new "
 "games or to join present games"
 msgstr ""
+"Baimendu, joko berri bat sortzeko edo dagoen batera batzeko, KsirK Jabber "
+"erabiltzaile anitzeko joko gela batera konektatzea"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
 #: kgamewin.cpp:404 mainMenu.ui:104
 #, kde-format
 msgid "New Standard TCP/IP Network Game"
-msgstr ""
+msgstr "TCP/IP sareko joko estandar berria"
 
 #: kgamewin.cpp:405
 #, kde-format
@@ -2861,32 +2887,32 @@ msgstr "TCP/IP berria"
 #: kgamewin.cpp:407
 #, kde-format
 msgid "Create a new standard TCP/IP network game"
-msgstr ""
+msgstr "Sortu TCP/IP sareko joko estandar berri bat"
 
 #: kgamewin.cpp:422
 #, kde-format
 msgid "Join a Standard TCP/IP Network Game"
-msgstr ""
+msgstr "Batu TCP/IP sareko joko estandar batera"
 
 #: kgamewin.cpp:423
 #, kde-format
 msgid "Join TCP/IP"
-msgstr ""
+msgstr "Batu TCP/IP"
 
 #: kgamewin.cpp:425
 #, kde-format
 msgid "Join a standard TCP/IP network game"
-msgstr ""
+msgstr "Batu TCP/IP sareko joko estandar batera"
 
 #: kgamewin.cpp:431
 #, kde-format
 msgid "Display the Current Player's Goal"
-msgstr ""
+msgstr "Azaldu jokalariaren uneko helburua"
 
 #: kgamewin.cpp:434
 #, kde-format
 msgid "Display the current player's goal"
-msgstr ""
+msgstr "Azaldu jokalariaren uneko helburua"
 
 #: kgamewin.cpp:441
 #, kde-format
@@ -2923,12 +2949,12 @@ msgstr ""
 #: kgamewin.cpp:831
 #, kde-format
 msgid "%1, you are defeated! Bye, bye..."
-msgstr ""
+msgstr "%1, garaitu zaituzte! Agur, agur..."
 
 #: kgamewin.cpp:903
 #, kde-format
 msgid "%1: it is up to you again"
-msgstr ""
+msgstr "%1: berriz ere zure esku dago"
 
 #: kgamewin.cpp:915
 #, kde-format
@@ -3097,12 +3123,12 @@ msgstr ""
 #: kgamewin.cpp:2586 kgamewin.cpp:2597 kgamewin.cpp:2620
 #, kde-format
 msgid "%1, it is up to you."
-msgstr ""
+msgstr "%1, zure esku dago."
 
 #: kgamewin.cpp:2649
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
-msgstr ""
+msgstr "Zure uneko jokoa amaitu eta berri bat hasi nahi duzu, benetan?"
 
 #: kgamewin.cpp:2649
 #, kde-format
@@ -3122,6 +3148,8 @@ msgstr ""
 #: kgamewin.cpp:2913
 msgid "Start a new game or join a network game with the menu or the toolbar..."
 msgstr ""
+"Hasi joko berri bat edo batu sareko joko batera menua edo tresna-barra "
+"erabiliz..."
 
 #: kgamewin.cpp:2917
 msgid ""
@@ -3133,7 +3161,7 @@ msgstr ""
 #: kgamewin.cpp:2924
 #, kde-format
 msgid "Don't show messages anymore"
-msgstr ""
+msgstr "Ez berriz mezurik erakutsi"
 
 #: kgamewinslots.cpp:112
 #, kde-format
@@ -3151,17 +3179,17 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "KsirK - Save Game"
-msgstr ""
+msgstr "KsirK - Gorde jokoa"
 
 #: kgamewinslots.cpp:465
 #, kde-format
 msgid "Saving canceled"
-msgstr ""
+msgstr "Gordetzea bertan behera utzi da"
 
 #: kgamewinslots.cpp:476
 #, kde-format
 msgid "Game saved to %1"
-msgstr ""
+msgstr "Jokoan %1(e)an gorde da"
 
 #: kgamewinslots.cpp:483
 #, kde-format
@@ -3216,8 +3244,8 @@ msgstr[1] "<font color=\"red\">Eraso</font> %1 armadekin.<br>"
 #, kde-format
 msgid "<font color=\"blue\">Defend</font> with 1 army.<br>"
 msgid_plural "<font color=\"blue\">Defend</font> with %1 armies.<br>"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "<font color=\"blue\">Defendatu</font> armada 1ekin.<br>"
+msgstr[1] "<font color=\"blue\">Defendatu</font> %1 armarekin.<br>"
 
 #: krightdialog.cpp:265
 #, kde-format
@@ -3230,17 +3258,17 @@ msgid "Stop Auto-Defense"
 msgstr ""
 
 #: krightdialog.cpp:298
-#, fuzzy, kde-format
+#, kde-format
 msgid "Valid"
 msgstr "Baliozkoa"
 
 #: krightdialog.cpp:299
 #, kde-format
 msgid "Recycle"
-msgstr ""
+msgstr "Birziklatu"
 
 #: krightdialog.cpp:300
-#, fuzzy, kde-format
+#, kde-format
 msgid "Done"
 msgstr "Eginda"
 
@@ -3248,38 +3276,38 @@ msgstr "Eginda"
 #, kde-format
 msgid "%1 army to place"
 msgid_plural "%1 armies to place"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "armada %1 kokatzeko"
+msgstr[1] "%1 armada kokatzeko"
 
 #: krightdialog.cpp:375
 #, kde-format
 msgid "<u><b>Change some<br>placements?</b></u> "
-msgstr ""
+msgstr "<u><b>Kokaleku batzuk<br>aldatu?</b></u> "
 
 #: krightdialog.cpp:390
 #, kde-format
 msgid "1 army to place"
 msgid_plural "%1 armies to place"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "armada 1 kokatzeko"
+msgstr[1] "%1 armada kokatzeko"
 
 #: krightdialog.cpp:392
 #, kde-format
 msgid "<b>Armies:</b> %1"
-msgstr ""
+msgstr "<b>Armadak:</b> %1"
 
 #: krightdialog.cpp:471
 #, kde-format
 msgid "<font color=\"red\">lost armies: %1</font>"
-msgstr ""
+msgstr "<font color=\"red\">galdutako armadak: %1</font>"
 
 #: krightdialog.cpp:476
 #, kde-format
 msgid "<font color=\"blue\">lost armies: %1</font>"
-msgstr ""
+msgstr "<font color=\"blue\">galdutako armadak: %1</font>"
 
 #: ksirkConfigDialog.cpp:37
-#, fuzzy, kde-format
+#, kde-format
 msgid "Preferences"
 msgstr "Hobespenak"
 
@@ -3287,29 +3315,29 @@ msgstr "Hobespenak"
 #: ksirksettings.kcfg:9
 #, kde-format
 msgid "The sprites speed: slow, normal, quick, immediate"
-msgstr ""
+msgstr "Iratxoaren abiadura: poliki, arrunta, azkarra, bat-batekoa"
 
 #. i18n: ectx: label, entry (soundEnabled), group (General)
 #: ksirksettings.kcfg:13
 #, kde-format
 msgid "If true, sounds are played; they are not otherwise."
-msgstr ""
+msgstr "Egia bada, soinuak jotzen dira; bestela ez dira jotzen."
 
 #. i18n: ectx: label, entry (helpEnabled), group (General)
 #: ksirksettings.kcfg:17
 #, kde-format
 msgid "If true, help is displayed; they are not otherwise."
-msgstr ""
+msgstr "Egia bada, laguntza azaltzen da; bestela ez."
 
 #. i18n: ectx: label, entry (showArmiesNumbers), group (General)
 #: ksirksettings.kcfg:21
 #, kde-format
 msgid "If true, the number of armies is displayed on each country."
-msgstr ""
+msgstr "Egia bada, herrialde bakoitzeko armada kopurua azaltzen da."
 
 #. i18n: ectx: label, entry (Theme), group (General)
 #: ksirksettings.kcfg:25
-#, fuzzy, kde-format
+#, kde-format
 msgid "The graphical theme to be used."
 msgstr "Erabili beharreko gai grafikoa."
 
@@ -3317,31 +3345,32 @@ msgstr "Erabili beharreko gai grafikoa."
 #: ksirksettings.kcfg:28
 #, kde-format
 msgid "The last used Jabber Id."
-msgstr ""
+msgstr "Erabilitako azken «Jabber» ID."
 
 #. i18n: ectx: label, entry (jabberPassword), group (General)
 #: ksirksettings.kcfg:31
 #, kde-format
 msgid "The password of the last used Jabber Id."
-msgstr ""
+msgstr "Erabilitako azken «Jabber» IDaren pasahitza."
 
 #. i18n: ectx: label, entry (roomJid), group (General)
 #: ksirksettings.kcfg:34
 #, kde-format
 msgid "The last used Jabber groupchat room."
-msgstr ""
+msgstr "Erabilitako azken «Jabber» berriketa-talde gela."
 
 #. i18n: ectx: label, entry (roomPassword), group (General)
 #: ksirksettings.kcfg:37
 #, kde-format
 msgid "The password for last used Jabber groupchat room."
-msgstr ""
+msgstr "Erabilitako azken «Jabber» berriketa-talde gelako pasahitza."
 
 #. i18n: ectx: label, entry (nickname), group (General)
 #: ksirksettings.kcfg:40
 #, kde-format
 msgid "The nickname used in the last used Jabber groupchat room."
 msgstr ""
+"Erabilitako azken «Jabber» berriketa-talde gelan erabilitako goitizena."
 
 #. i18n: ectx: Menu (game)
 #: ksirkui.rc:10
@@ -3455,7 +3484,7 @@ msgstr "Joko lokal berria"
 #: mainMenu.ui:111
 #, kde-format
 msgid "Join Standard TCP/IP Network Game"
-msgstr ""
+msgstr "Batu TCP/IP sareko joko estandarrera"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbLoad)
 #: mainMenu.ui:118
