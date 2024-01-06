@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-03 01:39+0000\n"
-"PO-Revision-Date: 2024-01-04 19:47+0100\n"
+"PO-Revision-Date: 2024-01-05 23:06+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -687,6 +687,8 @@ msgstr "Aukeratu kontinenteak"
 #, kde-format
 msgid "Check to let the player choose one of the continents to conquer"
 msgstr ""
+"Markatu, jokalariari menderatu beharreko kontinenteetako bat aukeratzen "
+"uzteko"
 
 #. i18n: ectx: property (text), widget (QCheckBox, anycontinent)
 #: ksirkgoaldefinition.ui:189
@@ -1242,7 +1244,7 @@ msgstr ""
 #: ksirkskineditorwidget.ui:69
 #, kde-format
 msgid "Map with sprites"
-msgstr ""
+msgstr "Mapa iratxoekin"
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, mapScrollArea)
 #: ksirkskineditorwidget.ui:74
@@ -1401,7 +1403,7 @@ msgstr "Bertsio kop.:"
 #: ksirkspritesdefinition.ui:134
 #, kde-format
 msgid "Number of flag versions"
-msgstr "Banderaren bertsioen kopurua"
+msgstr "Bandera bertsioen kopurua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagv)
 #: ksirkspritesdefinition.ui:141
@@ -1436,7 +1438,7 @@ msgstr "Infanteria"
 #: ksirkspritesdefinition.ui:180
 #, kde-format
 msgid "Infantry individual frame width"
-msgstr ""
+msgstr "Infanteriako banakako fotogramaren zabalera"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryw)
 #: ksirkspritesdefinition.ui:183
@@ -1451,7 +1453,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:197
 #, kde-format
 msgid "Infantry individual frame height"
-msgstr ""
+msgstr "Infanteriako banakako fotogramaren altuera"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryh)
 #: ksirkspritesdefinition.ui:200
@@ -1466,7 +1468,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:214
 #, kde-format
 msgid "Number of individual infantry frames"
-msgstr ""
+msgstr "Infanteriako banakako fotograma kopurua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryf)
 #: ksirkspritesdefinition.ui:217
@@ -1481,7 +1483,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:231
 #, kde-format
 msgid "Number of infantry versions"
-msgstr ""
+msgstr "Infanteria bertsioen kopurua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryv)
 #: ksirkspritesdefinition.ui:234
@@ -1499,19 +1501,19 @@ msgstr ""
 #: ksirkspritesdefinition.ui:255
 #, kde-format
 msgid "Data about the cavalry sprite"
-msgstr ""
+msgstr "Zalditeriako iratxoari buruzko datuak"
 
 #. i18n: ectx: attribute (title), widget (QWidget, cavalryTab)
 #: ksirkspritesdefinition.ui:258
 #, kde-format
 msgid "Cavalry"
-msgstr ""
+msgstr "Zalditeria"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryw)
 #: ksirkspritesdefinition.ui:271
 #, kde-format
 msgid "Individual cavalry frame width"
-msgstr ""
+msgstr "Zalditeriako banakako fotogramaren zabalera"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryw)
 #: ksirkspritesdefinition.ui:274
@@ -1526,7 +1528,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:288
 #, kde-format
 msgid "Individual cavalry frame height"
-msgstr ""
+msgstr "Zalditeriako banakako fotogramaren altuera"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryh)
 #: ksirkspritesdefinition.ui:291
@@ -1541,7 +1543,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:305
 #, kde-format
 msgid "Number of individual cavalry frames"
-msgstr ""
+msgstr "Zalditeriako banakako fotograma kopurua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryf)
 #: ksirkspritesdefinition.ui:308
@@ -1556,7 +1558,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:322
 #, kde-format
 msgid "Number of cavalry versions"
-msgstr ""
+msgstr "Zalditeria bertsioen kopurua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryv)
 #: ksirkspritesdefinition.ui:325
@@ -1574,19 +1576,19 @@ msgstr ""
 #: ksirkspritesdefinition.ui:346
 #, kde-format
 msgid "Data about the cannon sprite"
-msgstr ""
+msgstr "Kanoi iratxoari buruzko datuak"
 
 #. i18n: ectx: attribute (title), widget (QWidget, cannonTab)
 #: ksirkspritesdefinition.ui:349
 #, kde-format
 msgid "Cannon"
-msgstr ""
+msgstr "Kanoia"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonw)
 #: ksirkspritesdefinition.ui:364
 #, kde-format
 msgid "Cannon individual frame width"
-msgstr ""
+msgstr "Kanoien banakako fotogramaren zabalera"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonw)
 #: ksirkspritesdefinition.ui:367
@@ -1601,7 +1603,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:381
 #, kde-format
 msgid "Individual cannon frame height"
-msgstr ""
+msgstr "Kanoien banakako fotogramaren altuera"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonh)
 #: ksirkspritesdefinition.ui:384
@@ -1616,7 +1618,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:398
 #, kde-format
 msgid "Number of individual cannon frames"
-msgstr ""
+msgstr "Kanoien banakako fotograma kopurua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonf)
 #: ksirkspritesdefinition.ui:401
@@ -1631,7 +1633,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:415
 #, kde-format
 msgid "Number of cannon versions"
-msgstr ""
+msgstr "Kanoi bertsioen kopurua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonv)
 #: ksirkspritesdefinition.ui:418
@@ -1649,19 +1651,19 @@ msgstr ""
 #: ksirkspritesdefinition.ui:441
 #, kde-format
 msgid "Data about the firing sprite"
-msgstr ""
+msgstr "Tiro egiten ari den iratxoari buruzko datuak"
 
 #. i18n: ectx: attribute (title), widget (QWidget, firingTab)
 #: ksirkspritesdefinition.ui:444
 #, kde-format
 msgid "Firing"
-msgstr ""
+msgstr "Tiro egiten"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingw)
 #: ksirkspritesdefinition.ui:459
 #, kde-format
 msgid "Firing cannon individual frame width"
-msgstr ""
+msgstr "Tiro egiten ari den kanoiaren banakako fotogramaren zabalera"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, firingw)
 #: ksirkspritesdefinition.ui:462
@@ -1676,7 +1678,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:476
 #, kde-format
 msgid "Firing cannon individual frame height"
-msgstr ""
+msgstr "Tiro egiten ari den kanoiaren banakako fotogramaren altuera"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, firingh)
 #: ksirkspritesdefinition.ui:479
@@ -1691,7 +1693,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:493
 #, kde-format
 msgid "Number of individual firing cannon frames"
-msgstr ""
+msgstr "Tiro egiten ari den kanoiaren banakako fotograma kopurua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, firingf)
 #: ksirkspritesdefinition.ui:496
@@ -1706,7 +1708,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:510
 #, kde-format
 msgid "Number of firing cannon versions"
-msgstr ""
+msgstr "Tiro egiten ari den kanoiaren bertsioak"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, firingv)
 #: ksirkspritesdefinition.ui:513
@@ -1724,19 +1726,19 @@ msgstr ""
 #: ksirkspritesdefinition.ui:536
 #, kde-format
 msgid "Data about the exploding sprite"
-msgstr ""
+msgstr "Lehertzen ari den iratxoari buruzko datuak"
 
 #. i18n: ectx: attribute (title), widget (QWidget, explodingTab)
 #: ksirkspritesdefinition.ui:539
 #, kde-format
 msgid "Exploding"
-msgstr ""
+msgstr "Lehertzen"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingw)
 #: ksirkspritesdefinition.ui:554
 #, kde-format
 msgid "Exploding cannon individual frame width"
-msgstr ""
+msgstr "Lehertzen ari den kanoiaren banakako fotogramaren zabalera"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingw)
 #: ksirkspritesdefinition.ui:557
@@ -1751,7 +1753,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:571
 #, kde-format
 msgid "Exploding cannon individual frame height"
-msgstr ""
+msgstr "Lehertzen ari den kanoiaren banakako fotogramaren altuera"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingh)
 #: ksirkspritesdefinition.ui:574
@@ -1766,7 +1768,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:588
 #, kde-format
 msgid "Number of individual exploding cannon frames"
-msgstr ""
+msgstr "Lehertzen ari den kanoiaren banakako fotograma kopurua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingf)
 #: ksirkspritesdefinition.ui:591
@@ -1781,7 +1783,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:605
 #, kde-format
 msgid "Number of exploding cannon versions"
-msgstr ""
+msgstr "Lehertzen ari den kanoi bertsio kopurua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingv)
 #: ksirkspritesdefinition.ui:608
