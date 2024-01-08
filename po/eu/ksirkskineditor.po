@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-03 01:39+0000\n"
-"PO-Revision-Date: 2024-01-05 23:06+0100\n"
+"PO-Revision-Date: 2024-01-07 14:10+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -325,7 +325,8 @@ msgstr ""
 #: ksirkcountrydefinition.ui:226
 #, kde-format
 msgid "Point around which the country name is drawn y-coordinate"
-msgstr "Herrialdearen izena inguruan marrazten den puntuaren y koordenatua"
+msgstr ""
+"Haren inguruan herrialdearen izena marrazten den puntuaren y koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, centery)
 #: ksirkcountrydefinition.ui:236
@@ -342,12 +343,23 @@ msgid ""
 "This value will be automatically updated if you move the country name by "
 "dragging and dropping its target icon.\n"
 msgstr ""
+"Haren inguruan herrialdearen izena marrazten den puntuaren y koordenatua.\n"
+"\n"
+"Kontuan izan puntu hori, maparen maskaran, herrialdearen mugen barnean egon "
+"behar duela.\n"
+"\n"
+"Maparen goi-ezkerrarekiko erlatibo ematen da, neurria, azal nagusiaren "
+"definizio trepetan definitutakoaren araberakoa.\n"
+"\n"
+"Balio hori automatikoki eguneratuko da herrialdearen izena, helmugako ikonoa "
+"arrastatu eta jareginez mugitzen baduzu.\n"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, centerx)
 #: ksirkcountrydefinition.ui:246
 #, kde-format
 msgid "Point around which the country name is drawn x-coordinate"
-msgstr "Herrialdearen izena inguruan marrazten den puntuaren x koordenatua"
+msgstr ""
+"Haren inguruan herrialdearen izena marrazten den puntuaren x koordenatua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, centerx)
 #: ksirkcountrydefinition.ui:255
@@ -364,6 +376,16 @@ msgid ""
 "This value will be automatically updated if you move the country name by "
 "dragging and dropping its target icon."
 msgstr ""
+"Haren inguruan herrialdearen izena marrazten den puntuaren x koordenatua.\n"
+"\n"
+"Kontuan izan puntu hori, maparen maskaran, herrialdearen mugen barnean egon "
+"behar duela.\n"
+"\n"
+"Maparen goi-ezkerrarekiko erlatibo ematen da, neurria, azal nagusiaren "
+"definizio trepetan definitutakoaren araberakoa.\n"
+"\n"
+"Balio hori automatikoki eguneratuko da herrialdearen izena, helmugako ikonoa "
+"arrastatu eta jareginez mugitzen baduzu."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, anchory)
 #: ksirkcountrydefinition.ui:265
@@ -383,6 +405,13 @@ msgid ""
 "This value will be automatically updated if you move the highlighting by "
 "dragging and dropping its cross icon."
 msgstr ""
+"Nabarmentzearen erdiguneko y koordenatua.\n"
+"\n"
+"Maparen goi-ezkerrarekiko erlatibo ematen da, neurria, azal nagusiaren "
+"definizio trepetan definitutakoaren araberakoa.\n"
+"\n"
+"Balio hori automatikoki eguneratuko da nabarmendua, haren gurutze-ikonoa "
+"arrastatu eta jareginez mugitzen baduzu."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, anchorx)
 #: ksirkcountrydefinition.ui:282
@@ -402,6 +431,13 @@ msgid ""
 "This value will be automatically updated if you move the highlighting by "
 "dragging and dropping its cross icon."
 msgstr ""
+"Nabarmentzearen erdiguneko x koordenatua.\n"
+"\n"
+"Maparen goi-ezkerrarekiko erlatibo ematen da, neurria, azal nagusiaren "
+"definizio trepetan definitutakoaren araberakoa.\n"
+"\n"
+"Balio hori automatikoki eguneratuko da nabarmendua, haren gurutze-ikonoa "
+"arrastatu eta jareginez mugitzen baduzu."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagy)
 #: ksirkcountrydefinition.ui:299
@@ -616,6 +652,13 @@ msgid ""
 "country</li><li><i>Continents</i>: one for each continent to conquer</li></"
 "ul>"
 msgstr ""
+"<p>Helburua deskribatzen duen testua. Leku-marka batzuk izan beharko lituzke "
+"helburu motaren mendeko hainbat datuetarako:</p><ul><li><i>Mundua "
+"menderatzea</i>: batere ez</li><li><i>Jokalaria</i>: bat jokalari-izenerako "
+"eta bat erreserbako herrialde kopururako</li><li><i>Herrialdeak</i>: bat "
+"herrialde kopururako eta agian bigarren bat herrialde bakoitzean ipini "
+"beharreko armada kopururako</li><li><i>Kontinenteak</i>: bat menderatu "
+"beharreko kontinente bakoitzerako</li></ul>"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkgoaldefinition.ui:125
@@ -674,6 +717,10 @@ msgid ""
 "i> goal.</p><p>You will be prompted with a list of this world's continents. "
 "Select those to conquer with the mouse and the Ctrl and Shift keys.</p>"
 msgstr ""
+"<p>Egin klik botoi horri, <i>Kontinenteak</i> helburu batean, menderatu "
+"beharreko kontinenteak aukeratzeko.</p><p>Mundu horretako kontinenteen "
+"zerrenda bat aurkeztuko zaizu. Aukeratu menderatu beharrekoak sagua eta Ktrl "
+"eta Maius. teklak erabiliz.</p>"
 
 #. i18n: ectx: property (text), widget (QPushButton, selectcontinentsbutton)
 #: ksirkgoaldefinition.ui:176
@@ -700,7 +747,7 @@ msgstr "Edozein"
 #: ksirkgoaldefinition.ui:198
 #, kde-format
 msgid "List of the continents to conquer"
-msgstr "Konkistatzeko herrialdeen zerrenda"
+msgstr "Konkistatu beharreko herrialdeen zerrenda"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, continentslist)
 #: ksirkgoaldefinition.ui:201
@@ -710,6 +757,9 @@ msgid ""
 "can change this list by clicking on the \"Select continents\" button above.</"
 "p>"
 msgstr ""
+"<p><i>Kontinenteak</i> helburu batean, konkistatu beharreko herrialdeen "
+"zerrenda.</p><p>Zerrenda hori, goiko, \"Aukeratu kontinenteak\" botoiari "
+"klik eginez alda dezakezu.</p>"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkNationalityDefinition)
 #: ksirknationalitydefinition.ui:13
@@ -737,6 +787,9 @@ msgid ""
 "existing country in case of a <i>realistic</i> world.</p><p>This string "
 "should be unique in the skin.</p>"
 msgstr ""
+"<p>Nazionalitate-izena. Jokalariaren herrialdearen izena. Mundu "
+"<i>errealista</i> baten kasuan, existitzen den herrialde baten izena izan "
+"daiteke.</p><p>Kate hori, azalean, bakarra izan behar luke.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: ksirknationalitydefinition.ui:43
@@ -757,24 +810,26 @@ msgid ""
 "<p>Name of this nationality leader. In the case of a <i>realistic</i> skin, "
 "this could be the name of a well known king, president, etc.</p>"
 msgstr ""
+"<p>Nazionalitate horretako buruzagiaren izena. Azal <i>errealista</i> baten "
+"kasuan, errege, lehendakari, etab. ezagun baten izena izan daiteke.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: ksirknationalitydefinition.ui:60
 #, kde-format
 msgid "Flag ID in pool:"
-msgstr ""
+msgstr "Funtsean, banderaren ID:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, flag)
 #: ksirknationalitydefinition.ui:67
 #, kde-format
 msgid "Flag sprite id in the pool SVG"
-msgstr ""
+msgstr "SVG funtsean, bandera iratxoaren ID"
 
 #. i18n: ectx: property (whatsThis), widget (KComboBox, flag)
 #: ksirknationalitydefinition.ui:70
 #, kde-format
 msgid "Flag sprite id in the pool SVG (pool.svg)."
-msgstr ""
+msgstr "SVG funtsen (pool.svg), bandera iratxoaren ID."
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, skindefinition)
 #: ksirkskindefinition.ui:13
@@ -1407,7 +1462,7 @@ msgstr "Bandera bertsioen kopurua"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagv)
 #: ksirkspritesdefinition.ui:141
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Number of flag versions.\n"
 "\n"
@@ -1419,8 +1474,14 @@ msgid ""
 "the front and the last one from the back. However, not all sprites need all "
 "versions."
 msgstr ""
-"Banderaren bertsioen kopurua.\n"
+"Banderaren bertsio kopurua.\n"
 "\n"
+"Funtseko bandera elementua, (Altuera * Bertsio kopurua) altuerako pixel-mapa "
+"batean errendatu, eta ondoren banakako fotogrametan zatituko da.\n"
+"\n"
+"Bertsio bakoitzak iratxoa norabide batetik erakusten du: lehena "
+"eskuinerantz, bigarrena ezkerrerantz, hirugarrena aurrealdetik, eta azkena "
+"bizkarretik. Iratxo guztiek ez dituzte bertsio guztiak behar ordea."
 
 #. i18n: ectx: property (toolTip), widget (QWidget, infantryTab)
 #: ksirkspritesdefinition.ui:164
@@ -1996,7 +2057,7 @@ msgstr ""
 #: onu.cpp:987
 #, kde-format
 msgid "PoolLoader"
-msgstr ""
+msgstr "FuntsZamatzailea"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, KsirkSkinEditorPreferencesWidget)
 #: preferences.ui:25
