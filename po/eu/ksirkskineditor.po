@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2024-01-07 14:04+0100\n"
+"PO-Revision-Date: 2024-01-07 14:10+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -817,19 +817,19 @@ msgstr ""
 #: ksirknationalitydefinition.ui:60
 #, kde-format
 msgid "Flag ID in pool:"
-msgstr "Potoan, banderaren ID:"
+msgstr "Funtsean, banderaren ID:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, flag)
 #: ksirknationalitydefinition.ui:67
 #, kde-format
 msgid "Flag sprite id in the pool SVG"
-msgstr "SVG potoan, bandera iratxoaren ID"
+msgstr "SVG funtsean, bandera iratxoaren ID"
 
 #. i18n: ectx: property (whatsThis), widget (KComboBox, flag)
 #: ksirknationalitydefinition.ui:70
 #, kde-format
 msgid "Flag sprite id in the pool SVG (pool.svg)."
-msgstr "SVG potoan (pool.svg), bandera iratxoaren ID."
+msgstr "SVG funtsen (pool.svg), bandera iratxoaren ID."
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, skindefinition)
 #: ksirkskindefinition.ui:13
@@ -1476,7 +1476,7 @@ msgid ""
 msgstr ""
 "Banderaren bertsio kopurua.\n"
 "\n"
-"Potoko bandera elementua, (Altuera * Bertsio kopurua) altuerako pixel-mapa "
+"Funtseko bandera elementua, (Altuera * Bertsio kopurua) altuerako pixel-mapa "
 "batean errendatu, eta ondoren banakako fotogrametan zatituko da.\n"
 "\n"
 "Bertsio bakoitzak iratxoa norabide batetik erakusten du: lehena "
@@ -2057,7 +2057,7 @@ msgstr ""
 #: onu.cpp:990
 #, kde-format
 msgid "PoolLoader"
-msgstr "PotoZamatzailea"
+msgstr "FuntsZamatzailea"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, KsirkSkinEditorPreferencesWidget)
 #: preferences.ui:25
