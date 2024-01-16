@@ -43,7 +43,8 @@ int main(int argc, char *argv[])
   qCDebug(KSIRKSKINEDITOR_LOG) << "Hello World!";
 
   QApplication app(argc, argv);
-  KLocalizedString::setApplicationDomain("ksirkskineditor");
+  KLocalizedString::setApplicationDomain(QByteArrayLiteral("ksirkskineditor"));
+
   KAboutData aboutData(
     QStringLiteral("ksirkskineditor"),
     i18n("KsirK Skin Editor"),
