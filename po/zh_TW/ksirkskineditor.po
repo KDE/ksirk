@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-03 01:39+0000\n"
+"POT-Creation-Date: 2024-01-17 00:36+0000\n"
 "PO-Revision-Date: 2009-11-20 17:42+0800\n"
 "Last-Translator: Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv "
 "dot tw>\n"
@@ -1231,7 +1231,7 @@ msgid "Main Toolbar"
 msgstr "主工具列"
 
 #. i18n: ectx: property (windowTitle), widget (QFrame, skinEditor)
-#: ksirkskineditorwidget.ui:20 main.cpp:49 main.cpp:51
+#: ksirkskineditorwidget.ui:20 main.cpp:50 main.cpp:52
 #, kde-format
 msgid "KsirK Skin Editor"
 msgstr "KsirK 外觀編輯器"
@@ -1881,25 +1881,25 @@ msgstr ""
 "<p>每個版本都會顯示出一個方向：第一個面向右，第二個面向左，第三個面向前方，最"
 "後一個從背面。但不是每種元素都需要這麼多版本。</p>"
 
-#: main.cpp:53
+#: main.cpp:54
 #, kde-format
 msgid "(c) 2008, Gaël de Chalendar\n"
 msgstr "(c) 2008, Gaël de Chalendar\n"
 
-#: main.cpp:54
+#: main.cpp:55
 #, kde-format
 msgid ""
 "For help and user manual, please see\n"
 "The KsirK Web site"
 msgstr "要找說明與使用者手冊，請到 KsirK 網站"
 
-#: main.cpp:56
+#: main.cpp:57
 #, fuzzy, kde-format
 #| msgid "Gael de Chalendar aka Kleag"
 msgid "Gaël de Chalendar aka Kleag"
 msgstr "Gael de Chalendar aka Kleag"
 
-#: main.cpp:61
+#: main.cpp:62
 #, kde-format
 msgid "file to open"
 msgstr "要開啟的檔案"

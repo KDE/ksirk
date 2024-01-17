@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-03 01:39+0000\n"
+"POT-Creation-Date: 2024-01-17 00:36+0000\n"
 "PO-Revision-Date: 2013-03-05 15:24+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -1106,7 +1106,7 @@ msgid "Main Toolbar"
 msgstr "मुख्य साधनपट्टी"
 
 #. i18n: ectx: property (windowTitle), widget (QFrame, skinEditor)
-#: ksirkskineditorwidget.ui:20 main.cpp:49 main.cpp:51
+#: ksirkskineditorwidget.ui:20 main.cpp:50 main.cpp:52
 #, kde-format
 msgid "KsirK Skin Editor"
 msgstr ""
@@ -1681,24 +1681,24 @@ msgid ""
 "the last one from the back. However, not all sprites need all versions.</p>"
 msgstr ""
 
-#: main.cpp:53
+#: main.cpp:54
 #, kde-format
 msgid "(c) 2008, Gaël de Chalendar\n"
 msgstr ""
 
-#: main.cpp:54
+#: main.cpp:55
 #, kde-format
 msgid ""
 "For help and user manual, please see\n"
 "The KsirK Web site"
 msgstr ""
 
-#: main.cpp:56
+#: main.cpp:57
 #, kde-format
 msgid "Gaël de Chalendar aka Kleag"
 msgstr ""
 
-#: main.cpp:61
+#: main.cpp:62
 #, kde-format
 msgid "file to open"
 msgstr "उघडावयाची फाईल"

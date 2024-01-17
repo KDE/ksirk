@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-03 01:39+0000\n"
+"POT-Creation-Date: 2024-01-17 00:36+0000\n"
 "PO-Revision-Date: 2021-10-17 11:00+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1282,7 +1282,7 @@ msgid "Main Toolbar"
 msgstr "Huvudverktygsrad"
 
 #. i18n: ectx: property (windowTitle), widget (QFrame, skinEditor)
-#: ksirkskineditorwidget.ui:20 main.cpp:49 main.cpp:51
+#: ksirkskineditorwidget.ui:20 main.cpp:50 main.cpp:52
 #, kde-format
 msgid "KsirK Skin Editor"
 msgstr "Ksirk skaleditor"
@@ -1968,12 +1968,12 @@ msgstr ""
 "den andra åt vänster, den tredje framifrån och den sista bakifrån. Dock "
 "behöver inte alla figurer alla versioner.</p>"
 
-#: main.cpp:53
+#: main.cpp:54
 #, kde-format
 msgid "(c) 2008, Gaël de Chalendar\n"
 msgstr "© 2008, Gaël de Chalendar\n"
 
-#: main.cpp:54
+#: main.cpp:55
 #, kde-format
 msgid ""
 "For help and user manual, please see\n"
@@ -1982,12 +1982,12 @@ msgstr ""
 "För hjälp och användarhandbok, se\n"
 "Ksirks-webbplats"
 
-#: main.cpp:56
+#: main.cpp:57
 #, kde-format
 msgid "Gaël de Chalendar aka Kleag"
 msgstr "Gaël de Chalendar, alias Kleag"
 
-#: main.cpp:61
+#: main.cpp:62
 #, kde-format
 msgid "file to open"
 msgstr "fil att öppna"
