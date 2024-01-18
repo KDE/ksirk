@@ -26,9 +26,9 @@ This is the standard main function of a KDE application
 
 #include "mainwindow.h"
 
-
 #include <KAboutData>
 #include <KLocalizedString>
+
 #include "ksirkskineditor_debug.h"
 
 #include "../ksirk_version.h"
@@ -55,12 +55,12 @@ int main(int argc, char *argv[])
     i18n("For help and user manual, please see\nThe KsirK Web site"),
     QStringLiteral("https://apps.kde.org/ksirk"));
   aboutData.addAuthor(i18n("Gaël de Chalendar aka Kleag"),QString(), QStringLiteral("kleag@free.fr"));
-  QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-locale")));
+
+    KAboutData::setApplicationData(aboutData);
+    QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-locale")));
 
     QCommandLineParser parser;
-    KAboutData::setApplicationData(aboutData);
-    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[File]"), i18n("file to open")));
-
+    parser.addOption(QCommandLineOption({QStringLiteral("+[File]")}, i18n("file to open")));
     aboutData.setupCommandLine(&parser);
     parser.process(app);
     aboutData.processCommandLine(&parser);
