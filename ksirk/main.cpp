@@ -22,6 +22,7 @@ This is the standard main function of a KDE application simplified for KsirK
 #include "kgamewin.h"
 #include "GameLogic/gameautomaton.h"
 #include <KAboutData>
+#include <KDBusService>
 #include <KCrash>
 #include "ksirk_debug.h"
 #include <QApplication>
@@ -61,6 +62,8 @@ int main(int argc, char *argv[])
   aboutData.setupCommandLine(&parser);
   parser.process(app);
   aboutData.processCommandLine(&parser);
+
+  KDBusService service;
 
   if (app.isSessionRestored())
   {

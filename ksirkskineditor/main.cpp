@@ -27,6 +27,7 @@ This is the standard main function of a KDE application
 #include "mainwindow.h"
 
 #include <KAboutData>
+#include <KDBusService>
 #include <KLocalizedString>
 
 #include "ksirkskineditor_debug.h"
@@ -64,6 +65,8 @@ int main(int argc, char *argv[])
     aboutData.setupCommandLine(&parser);
     parser.process(app);
     aboutData.processCommandLine(&parser);
+
+    KDBusService service;
 
   if (app.isSessionRestored())
   {

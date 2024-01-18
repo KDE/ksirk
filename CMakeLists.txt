@@ -44,6 +44,7 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     ConfigWidgets
     CoreAddons
     Crash
+    DBusAddons
     DocTools
     I18n
     NewStuff

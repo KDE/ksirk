@@ -49,6 +49,7 @@ target_link_libraries(ksirkskineditor
     KF6::I18n
     KF6::Completion
     KF6::CoreAddons
+    KF6::DBusAddons
     KF6::XmlGui
     Qt6::Xml
     Qt6::Svg
