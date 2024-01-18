@@ -27,6 +27,7 @@ This is the standard main function of a KDE application
 #include "mainwindow.h"
 
 #include <KAboutData>
+#include <KCrash>
 #include <KDBusService>
 #include <KLocalizedString>
 
@@ -59,6 +60,8 @@ int main(int argc, char *argv[])
 
     KAboutData::setApplicationData(aboutData);
     QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-locale")));
+
+    KCrash::initialize();
 
     QCommandLineParser parser;
     parser.addOption(QCommandLineOption({QStringLiteral("+[File]")}, i18n("file to open")));
