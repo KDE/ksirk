@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 00:36+0000\n"
+"POT-Creation-Date: 2024-01-19 00:36+0000\n"
 "PO-Revision-Date: 2021-10-18 08:34+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1272,7 +1272,7 @@ msgid "Main Toolbar"
 msgstr "Glavna orodna vrstica"
 
 #. i18n: ectx: property (windowTitle), widget (QFrame, skinEditor)
-#: ksirkskineditorwidget.ui:20 main.cpp:50 main.cpp:52
+#: ksirkskineditorwidget.ui:20 main.cpp:52 main.cpp:54
 #, kde-format
 msgid "KsirK Skin Editor"
 msgstr "Urejevalnik preoblek za KsirK"
@@ -1952,12 +1952,12 @@ msgstr ""
 "proti levi, tretja od spredaj in zadnja od zadaj. Le določene sličice "
 "potrebujejo vse različice.</p>"
 
-#: main.cpp:54
+#: main.cpp:56
 #, kde-format
 msgid "(c) 2008, Gaël de Chalendar\n"
 msgstr "(c) 2008, Gaël de Chalendar\n"
 
-#: main.cpp:55
+#: main.cpp:57
 #, kde-format
 msgid ""
 "For help and user manual, please see\n"
@@ -1966,12 +1966,12 @@ msgstr ""
 "Za pomoč in uporabniški priročnik si oglejte\n"
 "spletno stran KsirK"
 
-#: main.cpp:57
+#: main.cpp:59
 #, kde-format
 msgid "Gaël de Chalendar aka Kleag"
 msgstr "Gaël de Chalendar znan kot Kleag"
 
-#: main.cpp:62
+#: main.cpp:67
 #, kde-format
 msgid "file to open"
 msgstr "datoteka za odprtje"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 00:36+0000\n"
+"POT-Creation-Date: 2024-01-19 00:36+0000\n"
 "PO-Revision-Date: 2023-10-07 07:31+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1270,7 +1270,7 @@ msgid "Main Toolbar"
 msgstr "ხელსაწყოთა მთავარი ზოლი"
 
 #. i18n: ectx: property (windowTitle), widget (QFrame, skinEditor)
-#: ksirkskineditorwidget.ui:20 main.cpp:50 main.cpp:52
+#: ksirkskineditorwidget.ui:20 main.cpp:52 main.cpp:54
 #, kde-format
 msgid "KsirK Skin Editor"
 msgstr "KsirK -ის სკინის რედაქტორი"
@@ -1961,12 +1961,12 @@ msgstr ""
 "პირველი მარჯვნივ იყურება, მეორე მარცხნივ, მესამე წინ და ბოლო კი უკან. მაგრამ "
 "ყველა სპრაიტს ყველა ვერსია არ სჭირდება.</p>"
 
-#: main.cpp:54
+#: main.cpp:56
 #, kde-format
 msgid "(c) 2008, Gaël de Chalendar\n"
 msgstr "(c) 2008, Gaël de Chalendar\n"
 
-#: main.cpp:55
+#: main.cpp:57
 #, kde-format
 msgid ""
 "For help and user manual, please see\n"
@@ -1975,12 +1975,12 @@ msgstr ""
 "დახმარებისა და მომხმარებლის სახელმძღვანელოსთვის\n"
 "იხ. KsirK-ის ვებგვერდი"
 
-#: main.cpp:57
+#: main.cpp:59
 #, kde-format
 msgid "Gaël de Chalendar aka Kleag"
 msgstr "Gaël de Chalendar aka Kleag"
 
-#: main.cpp:62
+#: main.cpp:67
 #, kde-format
 msgid "file to open"
 msgstr "გასახსნელი ფაილი"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-03 01:39+0000\n"
+"POT-Creation-Date: 2024-01-19 00:36+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -3124,7 +3124,7 @@ msgstr ""
 "आपके अपने सभी\n"
 "सेनाओं को वितरित करना होगा"
 
-#: kgamewin.cpp:2325 main.cpp:41
+#: kgamewin.cpp:2325 main.cpp:42
 #, kde-format
 msgid "KsirK"
 msgstr "केसिर्क"
@@ -3417,61 +3417,61 @@ msgstr ""
 msgid "Main Toolbar"
 msgstr "मुख्य औज़ार पट्टी"
 
-#: main.cpp:43
+#: main.cpp:44
 #, kde-format
 msgid "KsirK - World Domination Strategy Game"
 msgstr ""
 
-#: main.cpp:45
+#: main.cpp:46
 #, fuzzy, kde-format
 #| msgid "(c) 2002-2005, Gaël de Chalendar\n"
 msgid "(c) 2002-2015, Gaël de Chalendar\n"
 msgstr "(c) 2005-2005 गेल दे चालेंदर\n"
 
-#: main.cpp:46
+#: main.cpp:47
 #, kde-format
 msgid ""
 "For help and user manual, please see\n"
 "the KsirK web site."
 msgstr ""
 
-#: main.cpp:49
+#: main.cpp:50
 #, fuzzy, kde-format
 #| msgid "Gael de Chalendar aka Kleag"
 msgid "Gaël de Chalendar aka Kleag"
 msgstr "गेल दे चालेंदर उर्फ क्लीएग"
 
-#: main.cpp:50
+#: main.cpp:51
 #, kde-format
 msgid "Nemanja Hirsl"
 msgstr ""
 
-#: main.cpp:50
+#: main.cpp:51
 #, kde-format
 msgid "Current maintainer"
 msgstr ""
 
-#: main.cpp:51
+#: main.cpp:52
 #, kde-format
 msgid "Robin Doer"
 msgstr "रॉबिन दोएर"
 
-#: main.cpp:52
+#: main.cpp:53
 #, kde-format
 msgid "Albert Astals Cid"
 msgstr "अलबर्ट एस्टल्स सिड"
 
-#: main.cpp:53
+#: main.cpp:54
 #, kde-format
 msgid "Michal Golunski (Polish translation)"
 msgstr "माइकल गोलुंस्की (पोलिश अनुवाद)"
 
-#: main.cpp:54
+#: main.cpp:55
 #, kde-format
 msgid "French students of the 'IUP ISI 2007-2008':"
 msgstr ""
 
-#: main.cpp:55
+#: main.cpp:56
 #, kde-format
 msgid ""
 "&nbsp;&nbsp;Anthony Rey<br/>&nbsp;&nbsp;Benjamin Lucas<br/>&nbsp;&nbsp;"

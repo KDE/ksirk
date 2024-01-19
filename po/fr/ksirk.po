@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-03 01:39+0000\n"
+"POT-Creation-Date: 2024-01-19 00:36+0000\n"
 "PO-Revision-Date: 2023-10-26 11:41+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -3211,7 +3211,7 @@ msgstr ""
 "Vous devez répartir\n"
 "toutes vos armées"
 
-#: kgamewin.cpp:2325 main.cpp:41
+#: kgamewin.cpp:2325 main.cpp:42
 #, kde-format
 msgid "KsirK"
 msgstr "KsirK"
@@ -3519,17 +3519,17 @@ msgstr "&Aide"
 msgid "Main Toolbar"
 msgstr "Barre principale"
 
-#: main.cpp:43
+#: main.cpp:44
 #, kde-format
 msgid "KsirK - World Domination Strategy Game"
 msgstr "KsirK - Jeu de stratégie pour la conquête du monde"
 
-#: main.cpp:45
+#: main.cpp:46
 #, kde-format
 msgid "(c) 2002-2015, Gaël de Chalendar\n"
 msgstr "(c) 2002-2015, Gaël de Chalendar\n"
 
-#: main.cpp:46
+#: main.cpp:47
 #, kde-format
 msgid ""
 "For help and user manual, please see\n"
@@ -3538,43 +3538,43 @@ msgstr ""
 "Pour l'aide et le manuel de l'utilisateur, rendez-vous sur\n"
 "le site web de KsirK"
 
-#: main.cpp:49
+#: main.cpp:50
 #, kde-format
 msgid "Gaël de Chalendar aka Kleag"
 msgstr "Gaël de Chalendar ou Kleag"
 
-#: main.cpp:50
+#: main.cpp:51
 #, kde-format
 msgid "Nemanja Hirsl"
 msgstr "Nemanja Hirsl"
 
-#: main.cpp:50
+#: main.cpp:51
 #, kde-format
 msgid "Current maintainer"
 msgstr "Mainteneur actuel"
 
-#: main.cpp:51
+#: main.cpp:52
 #, kde-format
 msgid "Robin Doer"
 msgstr "Robin Doer"
 
-#: main.cpp:52
+#: main.cpp:53
 #, kde-format
 msgid "Albert Astals Cid"
 msgstr "Albert Astals Cid"
 
-#: main.cpp:53
+#: main.cpp:54
 #, kde-format
 msgid "Michal Golunski (Polish translation)"
 msgstr "Michal Golunski (Traduction polonaise)"
 
 # unreviewed-context
-#: main.cpp:54
+#: main.cpp:55
 #, kde-format
 msgid "French students of the 'IUP ISI 2007-2008':"
 msgstr "Étudiants français IUP ISI 2007-2008 :"
 
-#: main.cpp:55
+#: main.cpp:56
 #, kde-format
 msgid ""
 "&nbsp;&nbsp;Anthony Rey<br/>&nbsp;&nbsp;Benjamin Lucas<br/>&nbsp;&nbsp;"

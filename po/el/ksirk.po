@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-03 01:39+0000\n"
+"POT-Creation-Date: 2024-01-19 00:36+0000\n"
 "PO-Revision-Date: 2009-04-23 22:40+0300\n"
 "Last-Translator: Toussis Manolis <manolis@koppermind.homelinux.org>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -3178,7 +3178,7 @@ msgstr ""
 "Πρέπει να διανείμετε\n"
 "όλες τις στρατιές σας"
 
-#: kgamewin.cpp:2325 main.cpp:41
+#: kgamewin.cpp:2325 main.cpp:42
 #, kde-format
 msgid "KsirK"
 msgstr "KsirK"
@@ -3479,18 +3479,18 @@ msgstr "&Βοήθεια"
 msgid "Main Toolbar"
 msgstr "Κύρια γραμμή εργαλείων"
 
-#: main.cpp:43
+#: main.cpp:44
 #, kde-format
 msgid "KsirK - World Domination Strategy Game"
 msgstr ""
 
-#: main.cpp:45
+#: main.cpp:46
 #, fuzzy, kde-format
 #| msgid "(c) 2002-2005, Gaël de Chalendar\n"
 msgid "(c) 2002-2015, Gaël de Chalendar\n"
 msgstr "(c) 2002-2005, Gaël de Chalendar\n"
 
-#: main.cpp:46
+#: main.cpp:47
 #, kde-format
 msgid ""
 "For help and user manual, please see\n"
@@ -3499,43 +3499,43 @@ msgstr ""
 "Για βοήθεια και το εγχειρίδιο χρήστη, παρακαλώ δείτε \n"
 "την ιστοσελίδα του KsirK."
 
-#: main.cpp:49
+#: main.cpp:50
 #, fuzzy, kde-format
 #| msgid "Gael de Chalendar aka Kleag"
 msgid "Gaël de Chalendar aka Kleag"
 msgstr "Gael de Chalendar aka Kleag"
 
-#: main.cpp:50
+#: main.cpp:51
 #, kde-format
 msgid "Nemanja Hirsl"
 msgstr ""
 
-#: main.cpp:50
+#: main.cpp:51
 #, kde-format
 msgid "Current maintainer"
 msgstr ""
 
-#: main.cpp:51
+#: main.cpp:52
 #, kde-format
 msgid "Robin Doer"
 msgstr "Robin Doer"
 
-#: main.cpp:52
+#: main.cpp:53
 #, kde-format
 msgid "Albert Astals Cid"
 msgstr "Albert Astals Cid"
 
-#: main.cpp:53
+#: main.cpp:54
 #, kde-format
 msgid "Michal Golunski (Polish translation)"
 msgstr "Michal Golunski (Πολωνική μετάφραση)"
 
-#: main.cpp:54
+#: main.cpp:55
 #, kde-format
 msgid "French students of the 'IUP ISI 2007-2008':"
 msgstr "Γάλλοι φοιτητές του 'IUP ISI 2007-2008':"
 
-#: main.cpp:55
+#: main.cpp:56
 #, kde-format
 msgid ""
 "&nbsp;&nbsp;Anthony Rey<br/>&nbsp;&nbsp;Benjamin Lucas<br/>&nbsp;&nbsp;"
