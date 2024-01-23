@@ -3,20 +3,20 @@
 #
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2009.
 # Frank Weng (a.k.a. Franklin) <franklin@goodhorse.idv.tw>, 2009.
+# SPDX-FileCopyrightText: 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-03 01:39+0000\n"
-"PO-Revision-Date: 2009-11-20 17:42+0800\n"
-"Last-Translator: Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv "
-"dot tw>\n"
-"Language-Team: Chinese Traditional <zh-l10n@lists.linux.org.tw>\n"
+"PO-Revision-Date: 2024-01-22 17:26+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #, kde-format
@@ -821,8 +821,7 @@ msgstr "在此輸入外觀短名稱，用於識別"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkskindefinition.ui:46
-#, fuzzy, kde-format
-#| msgid "Width x Height"
+#, kde-format
 msgid "Width x height:"
 msgstr "寬 x 高"
 
@@ -941,14 +940,11 @@ msgstr "軍隊"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: ksirkskindefinition.ui:184
-#, fuzzy, kde-format
-#| msgid ""
-#| "Edit the sprite definitions\n"
-#| "in the right dock"
+#, kde-format
 msgid ""
 "Edit the sprite definitions\n"
 "in the right dock."
-msgstr "在右方嵌入視窗中編輯軍隊定義"
+msgstr "在右方嵌入視窗中編輯軍隊定義。"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabNationalities)
 #: ksirkskindefinition.ui:192
@@ -1389,8 +1385,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:110 ksirkspritesdefinition.ui:207
 #: ksirkspritesdefinition.ui:298 ksirkspritesdefinition.ui:391
 #: ksirkspritesdefinition.ui:486 ksirkspritesdefinition.ui:581
-#, fuzzy, kde-format
-#| msgid "Nb Frames:"
+#, kde-format
 msgid "Nb frames:"
 msgstr "張數："
 
@@ -1420,8 +1415,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:127 ksirkspritesdefinition.ui:224
 #: ksirkspritesdefinition.ui:315 ksirkspritesdefinition.ui:408
 #: ksirkspritesdefinition.ui:503 ksirkspritesdefinition.ui:598
-#, fuzzy, kde-format
-#| msgid "Nb Versions:"
+#, kde-format
 msgid "Nb versions:"
 msgstr "版本數量："
 
@@ -1894,10 +1888,9 @@ msgid ""
 msgstr "要找說明與使用者手冊，請到 KsirK 網站"
 
 #: main.cpp:56
-#, fuzzy, kde-format
-#| msgid "Gael de Chalendar aka Kleag"
+#, kde-format
 msgid "Gaël de Chalendar aka Kleag"
-msgstr "Gael de Chalendar aka Kleag"
+msgstr "Gaël de Chalendar aka Kleag"
 
 #: main.cpp:61
 #, kde-format
@@ -1942,8 +1935,7 @@ msgid "Save the current skin"
 msgstr "儲存目前的外觀"
 
 #: mainwindow.cpp:362
-#, fuzzy, kde-format
-#| msgid "Choose the root folder of the skin to open"
+#, kde-format
 msgctxt "@title:window"
 msgid "Choose the Root Folder of the Skin to Open"
 msgstr "請選擇要開啟的外觀根資料夾"
