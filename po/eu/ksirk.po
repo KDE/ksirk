@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2024-01-04 19:26+0100\n"
+"PO-Revision-Date: 2024-01-28 01:26+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -2130,9 +2130,9 @@ msgid "The certificate is not trusted."
 msgstr "Ez da ziurtagiriarekin fidatzen."
 
 #: Jabber/jabberaccount.cpp:436
-#, fuzzy, kde-format
+#, kde-format
 msgid "The signature is invalid."
-msgstr "Sinadura ez da baliozkoa."
+msgstr "Sinadura baliogabea da."
 
 #: Jabber/jabberaccount.cpp:440
 #, kde-format
@@ -2384,7 +2384,7 @@ msgstr "Euskarririk gabeko protokolo-bertsioa."
 #: Jabber/jabberaccount.cpp:861 Jabber/jabberaccount.cpp:878
 #: Jabber/jabberaccount.cpp:922 Jabber/jabberaccount.cpp:939
 #: Jabber/jabberaccount.cpp:956 Jabber/jabberaccount.cpp:964
-#, fuzzy, kde-format
+#, kde-format
 msgid "Unknown error."
 msgstr "Errore ezezaguna."
 

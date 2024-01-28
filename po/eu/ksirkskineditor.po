@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:44+0000\n"
-"PO-Revision-Date: 2024-01-07 14:10+0100\n"
+"PO-Revision-Date: 2024-01-28 01:20+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -878,6 +878,9 @@ msgid ""
 "image of this width. All positions on the map are expressed relatively to "
 "this dimension.\n"
 msgstr ""
+"Hori maparen zabalera da. Mapako SVG elementua, era lehenetsian, zabalera "
+"horretako irudi batean marraztuko da. Mapako kokapen guztiak dimentsio "
+"horrekiko erlatibo adierazten dira.\n"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, heightLineEdit)
 #: ksirkskindefinition.ui:71
@@ -893,6 +896,9 @@ msgid ""
 "image of this height All positions on the map are expressed relatively to "
 "this dimension.\n"
 msgstr ""
+"Hori maparen altuera da. Mapako SVG elementua, era lehenetsian, altuera "
+"horretako irudi batean marraztuko da. Mapako kokapen guztiak dimentsio "
+"horrekiko erlatibo adierazten dira.\n"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: ksirkskindefinition.ui:90
@@ -1057,6 +1063,14 @@ msgid ""
 "add at least as many nationalities as the maximum number of players for this "
 "skin."
 msgstr ""
+"Zerrenda horrek, definitutako nazionalitateak erakusten ditu.\n"
+"\n"
+"Nazionalitate izen bakoitza bakarra izan beharko litzateke. Aukeratu "
+"nazionalitate bat eta editatu haren xehetasunak eskuineko atrakagarrian.\n"
+"\n"
+"Jokoan zehar, jokalari bakoitzak nazionalitate bat aukeratu behar du. Hori "
+"dela eta, gutxienez, azal honetako gehienezko jokalari kopurua adina "
+"nazionalitate gehitu beharko zenituzke."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newCountryButton)
 #: ksirkskindefinition.ui:264
@@ -1249,6 +1263,9 @@ msgid ""
 "are highlighted. You can modify the selection using the mouse and Ctrl and "
 "Shift keys."
 msgstr ""
+"Munduan definitutako herrialde guztien zerrenda. Une honetan aukeratutako "
+"herrialdeak nabarmenduta daude. Hautapena sagua eta Ktrl eta Maius teklak "
+"erabiliz alda dezakezu."
 
 #. i18n: ectx: Menu (game)
 #: ksirkskineditorui.rc:10
@@ -1294,6 +1311,9 @@ msgid ""
 "for the currently selected country. The buttons are available only if the "
 "sprite is not already placed. "
 msgstr ""
+"Erabili horko botoiak, unean hautatutako herrialdean dagokion iratxoaren "
+"hasierako kokapena egiteko. Botoiak erabilgarri daude, iratxoa oraindik "
+"kokatu gabe dagoenean bakarrik."
 
 #. i18n: ectx: property (toolTip), widget (QScrollArea, mapScrollArea)
 #: ksirkskineditorwidget.ui:69
@@ -1311,6 +1331,11 @@ msgid ""
 "Drag and drop the sprites, the country names, and the highlighting anchors "
 "to change their place."
 msgstr ""
+"Azalaren mapa erakusten du, dagoneko kokatuta dauden iratxo, herrialde-izen, "
+"eta nabarmentzeko aingura guztiekin.\n"
+"\n"
+"Iratxoak, herrialde-izenak, eta nabarmentzeko aingurak arrastatu eta jaregin "
+"haien kokapena aldatzeko."
 
 #. i18n: ectx: property (text), widget (QLabel, label_26)
 #: ksirkspritesdefinition.ui:29
@@ -1319,12 +1344,14 @@ msgid ""
 "Width between fighter\n"
 "and flag:"
 msgstr ""
+"Borrokalari eta bandera\n"
+"arteko zabalera:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, widthDiffLineEdit)
 #: ksirkspritesdefinition.ui:39
 #, kde-format
 msgid "Empty space size between fighting cannon and flag"
-msgstr ""
+msgstr "Kanoi-borrokari eta banderaren arteko tarte hutsaren neurria"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, widthDiffLineEdit)
 #: ksirkspritesdefinition.ui:44
@@ -1337,6 +1364,13 @@ msgid ""
 "pixels between the flag and each cannon, measured relatively to the map base "
 "size as set in the main skin definition panel."
 msgstr ""
+"Kanoi-borrokari eta banderaren arteko tarte hutsaren neurria.\n"
+"\n"
+"Bataila batean zehar,  jokalari bakoitzaren su (eta eztanda) egiten "
+"dutenkanoiak, defendatzen den herrialdearen banderaren bi aldeetan kokatzen "
+"dira. Parametro hori, bandera eta kanoi bakoitzaren arteko pixel kopurua da, "
+"maparen neurri oinarriarekiko erlatibo neurtuta eta azal definizio "
+"nagusiaren panelean ezarria."
 
 #. i18n: ectx: property (toolTip), widget (QTabWidget, ktabwidget)
 #: ksirkspritesdefinition.ui:53
@@ -1383,6 +1417,10 @@ msgid ""
 "rendered on a pixmap of width: <i>Width</i> * N<i>number of frames</i> and "
 "then split into individual frames.</p>"
 msgstr ""
+"<p>Banderaren banakako fotogramen zabalera.</p><p>Funtseko <i>bandera</i> "
+"elementua, zabalera: (<i>Zabalera</i> * N <i>fotograma kopurua</i>) duen "
+"pixel-mapa batean errendatuko da, eta ondoren banakako fotogramatan zatituko "
+"da.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_6)
@@ -1412,6 +1450,10 @@ msgid ""
 "The pool flag element will be rendered on a pixmap of height: (Height * "
 "Number of versions) and then split into individual frames."
 msgstr ""
+"Banderaren banakako fotogramaren altuera.\n"
+"\n"
+"Funtseko bandera elementua altuera: (Altuera * Bertsio kopurua) duen pixel-"
+"mapa batean errendatuko da, eta ondoren banakako fotogramatan zatituko da."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_8)
@@ -1440,6 +1482,10 @@ msgid ""
 "be rendered on a pixmap of width: (<i>Width</i> * <i>Number of frames</i>) "
 "and then split into individual frames.</p>"
 msgstr ""
+"<p>Banderaren banakako fotograma kopurua.</p><p>Funtseko <i>bandera</i> "
+"elementua, zabalera: (<i>Zabalera</i> * <i>fotograma kopurua</i>) duen pixel-"
+"mapa batean errendatuko da, eta ondoren banakako fotogramatan zatituko da.</"
+"p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, label_7)
@@ -1476,8 +1522,8 @@ msgid ""
 msgstr ""
 "Banderaren bertsio kopurua.\n"
 "\n"
-"Funtseko bandera elementua, (Altuera * Bertsio kopurua) altuerako pixel-mapa "
-"batean errendatu, eta ondoren banakako fotogrametan zatituko da.\n"
+"Funtseko bandera elementua, altuera: (Altuera * Bertsio kopurua) duen pixel-"
+"mapa batean errendatu, eta ondoren banakako fotogrametan zatituko da.\n"
 "\n"
 "Bertsio bakoitzak iratxoa norabide batetik erakusten du: lehena "
 "eskuinerantz, bigarrena ezkerrerantz, hirugarrena aurrealdetik, eta azkena "
@@ -1509,6 +1555,10 @@ msgid ""
 "will be rendered on a pixmap of width: <i>Width</i> * <i>number of frames</"
 "i> and then split into individual frames.</p>"
 msgstr ""
+"<p>Infanteriaren banakako fotogramen zabalera.</p><p>Funtseko <i>infanteria</"
+"i> elementua, zabalera: (<i>Zabalera</i> * <i>fotograma kopurua</i>) duen "
+"pixel-mapa batean errendatuko da, eta ondoren banakako fotogramatan zatituko "
+"da.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryh)
 #: ksirkspritesdefinition.ui:197
@@ -1524,6 +1574,10 @@ msgid ""
 "will be rendered on a pixmap of height: <i>Height</i> * <i>Number of "
 "versions</i> and then split into individual frames.</p>"
 msgstr ""
+"<p>Infanteriaren banakako fotogramaren altuera.</p><p>Funtseko "
+"<i>infanteria</i> elementua, altuera: (<i>Altuera</i> * <i>Bertsio kopurua</"
+"i>) duen pixel-mapa batean errendatuko da, eta ondoren banakako fotogramatan "
+"zatituko da.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryf)
 #: ksirkspritesdefinition.ui:214
@@ -1539,6 +1593,10 @@ msgid ""
 "element will be rendered on a pixmap of width: (<i>Width</i> * <i>Number of "
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Infanteriaren banakako fotograma kopurua.</p><p>Funtseko <i>infanteria</"
+"i> elementua, zabalera: (<i>Zabalera</i> * <i>fotograma kopurua</i>) duen "
+"pixel-mapa batean errendatuko da, eta ondoren banakako fotogramatan zatituko "
+"da.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryv)
 #: ksirkspritesdefinition.ui:231
@@ -1557,6 +1615,12 @@ msgid ""
 "right, the second towards the left, the third one from front and the last "
 "one from the back. However, not all sprites need all versions.</p>"
 msgstr ""
+"<p>Infanteriaren bertsio kopurua.</p><p>Funtseko <i>infanteria</i> "
+"elementua, altuera: (<i>Altuera</i> * <i>Bertsio kopurua</i>) duen pixel-"
+"mapa batean errendatuko da, eta ondoren banakako fotogrametan zatituko da.</"
+"p><p>Bertsio bakoitzak iratxoa norabide batetik erakusten du: lehena "
+"eskuinerantz, bigarrena ezkerrerantz, hirugarrena aurrealdetik, eta azkena "
+"bizkarretik. Iratxo guztiek ez dituzte bertsio guztiak behar ordea.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, cavalryTab)
 #: ksirkspritesdefinition.ui:255
@@ -1584,6 +1648,10 @@ msgid ""
 "will be rendered on a pixmap of width (<i>Width</i> * <i>Number of frames</"
 "i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Zalditeriaren banakako fotogramen zabalera.</p><p>Funtseko <i>zalditeria</"
+"i> elementua, zabalera: (<i>Zabalera</i> * <i>fotograma kopurua</i>) duen "
+"pixel-mapa batean errendatuko da, eta ondoren banakako fotogramatan zatituko "
+"da.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryh)
 #: ksirkspritesdefinition.ui:288
@@ -1599,6 +1667,10 @@ msgid ""
 "will be rendered on a pixmap of height (<i>Height</i> * <i>Number of "
 "versions</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Zalditeriaren banakako fotogramaren altuera.</p><p>Funtseko "
+"<i>zalditeria</i> elementua, altuera: (<i>Altuera</i> * <i>Bertsio kopurua</"
+"i>) duen pixel-mapa batean errendatuko da, eta ondoren banakako fotogramatan "
+"zatituko da.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryf)
 #: ksirkspritesdefinition.ui:305
@@ -1614,6 +1686,10 @@ msgid ""
 "element will be rendered on a pixmap of width: (<i>Width</i> * <i>Number of "
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Zalditeriaren banakako fotograma kopurua.</p><p>Funtseko <i>zalditeria</"
+"i> elementua, zabalera: (<i>Zabalera</i> * <i>fotograma kopurua</i>) duen "
+"pixel-mapa batean errendatuko da, eta ondoren banakako fotogramatan zatituko "
+"da.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryv)
 #: ksirkspritesdefinition.ui:322
@@ -1632,6 +1708,12 @@ msgid ""
 "second towards the left, the third one from front and the last one from the "
 "back. However, not all sprites need all versions.</p>"
 msgstr ""
+"<p>Zalditeriaren bertsio kopurua.</p><p>Funtseko <i>zalditeria</i> "
+"elementua, altuera: (<i>Altuera</i> * <i>Bertsio kopurua</i>) duen pixel-"
+"mapa batean errendatuko da, eta ondoren banakako fotogrametan zatituko da.</"
+"p><p>Bertsio bakoitzak iratxoa norabide batetik erakusten du: lehena "
+"eskuinerantz, bigarrena ezkerrerantz, hirugarrena aurrealdetik, eta azkena "
+"bizkarretik. Iratxo guztiek ez dituzte bertsio guztiak behar ordea.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, cannonTab)
 #: ksirkspritesdefinition.ui:346
@@ -1659,6 +1741,10 @@ msgid ""
 "be rendered on a pixmap of width (<i>Width</i> * <i>Number of frames</i>) "
 "and then split into individual frames.</p>"
 msgstr ""
+"<p>Kanoiaren banakako fotogramen zabalera.</p><p>Funtseko <i>kanoi</i> "
+"elementua, zabalera: (<i>Zabalera</i> * <i>fotograma kopurua</i>) duen pixel-"
+"mapa batean errendatuko da, eta ondoren banakako fotogramatan zatituko da.</"
+"p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonh)
 #: ksirkspritesdefinition.ui:381
@@ -1674,6 +1760,10 @@ msgid ""
 "be rendered on a pixmap of height (<i>Height</i> * <i>Number of versions</"
 "i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Kanoiaren banakako fotogramaren altuera.</p><p>Funtseko <i>kanoia</i> "
+"elementua, altuera: (<i>Altuera</i> * <i>Bertsio kopurua</i>) duen pixel-"
+"mapa batean errendatuko da, eta ondoren banakako fotogramatan zatituko da.</"
+"p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonf)
 #: ksirkspritesdefinition.ui:398
@@ -1689,6 +1779,10 @@ msgid ""
 "will be rendered on a pixmap of width (<i>Width</i> * <i>Number of frames</"
 "i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Kanoiaren banakako fotograma kopurua.</p><p>Funtseko <i>kanoia</i> "
+"elementua, zabalera: (<i>Zabalera</i> * <i>fotograma kopurua</i>) duen pixel-"
+"mapa batean errendatuko da, eta ondoren banakako fotogramatan zatituko da.</"
+"p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonv)
 #: ksirkspritesdefinition.ui:415
@@ -1707,6 +1801,12 @@ msgid ""
 "second towards the left, the third one from front and the last one from the "
 "back. However, not all sprites need all versions.</p>"
 msgstr ""
+"<p>Kanoiaren bertsio kopurua.</p><p>Funtseko <i>kanoia</i> elementua, "
+"altuera: (<i>Altuera</i> * <i>Bertsio kopurua</i>) duen pixel-mapa batean "
+"errendatuko da, eta ondoren banakako fotogrametan zatituko da.</p><p>Bertsio "
+"bakoitzak iratxoa norabide batetik erakusten du: lehena eskuinerantz, "
+"bigarrena ezkerrerantz, hirugarrena aurrealdetik, eta azkena bizkarretik. "
+"Iratxo guztiek ez dituzte bertsio guztiak behar ordea.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, firingTab)
 #: ksirkspritesdefinition.ui:441
@@ -1734,6 +1834,10 @@ msgid ""
 "element will be rendered on a pixmap of width (<i>Width</i> * <i>Number of "
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Su egiten duen kanoiaren banakako fotogramen zabalera.</p><p>Funtseko "
+"<i>su egiten duen kanoia</i> elementua, zabalera: (<i>Zabalera</i> * "
+"<i>fotograma kopurua</i>) duen pixel-mapa batean errendatuko da, eta ondoren "
+"banakako fotogramatan zatituko da.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingh)
 #: ksirkspritesdefinition.ui:476
@@ -1749,6 +1853,10 @@ msgid ""
 "i> element will be rendered on a pixmap of height (<i>Height</i> * <i>Number "
 "of versions</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Su egiten duen kanoiaren banakako fotogramaren altuera.</p><p>Funtseko "
+"<i>su egiten duen kanoia</i> elementua, altuera: (<i>Altuera</i> * "
+"<i>Bertsio kopurua</i>) duen pixel-mapa batean errendatuko da, eta ondoren "
+"banakako fotogramatan zatituko da.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingf)
 #: ksirkspritesdefinition.ui:493
@@ -1764,6 +1872,10 @@ msgid ""
 "cannon</i> element will be rendered on a pixmap of width (<i>Width</i> * "
 "<i>Number of frames</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Su egiten duen kanoiaren banakako fotograma kopurua.</p><p>Funtseko <i>su "
+"egiten duen kanoia</i> elementua, zabalera: (<i>Zabalera</i> * <i>fotograma "
+"kopurua</i>) duen pixel-mapa batean errendatuko da, eta ondoren banakako "
+"fotogramatan zatituko da.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingv)
 #: ksirkspritesdefinition.ui:510
@@ -1782,6 +1894,13 @@ msgid ""
 "towards the right, the second towards the left, the third one from front and "
 "the last one from the back. However, not all sprites need all versions.</p>"
 msgstr ""
+"<p>Su egiten duen kanoiaren bertsio kopurua.</p><p>Funtseko <i>su egiten "
+"duen kanoia</i> elementua, altuera: (<i>Altuera</i> * <i>Bertsio kopurua</"
+"i>) duen pixel-mapa batean errendatuko da, eta ondoren banakako fotogrametan "
+"zatituko da.</p><p>Bertsio bakoitzak iratxoa norabide batetik erakusten du: "
+"lehena eskuinerantz, bigarrena ezkerrerantz, hirugarrena aurrealdetik, eta "
+"azkena bizkarretik. Iratxo guztiek ez dituzte bertsio guztiak behar ordea.</"
+"p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, explodingTab)
 #: ksirkspritesdefinition.ui:536
@@ -1809,6 +1928,10 @@ msgid ""
 "element will be rendered on a pixmap of width (<i>Width</i> * <i>Number of "
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Eztanda egiten duen kanoiaren banakako fotogramen zabalera.</"
+"p><p>Funtseko <i>eztanda egiten duen kanoia</i> elementua, zabalera: "
+"(<i>Zabalera</i> * <i>fotograma kopurua</i>) duen pixel-mapa batean "
+"errendatuko da, eta ondoren banakako fotogramatan zatituko da.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingh)
 #: ksirkspritesdefinition.ui:571
@@ -1824,6 +1947,10 @@ msgid ""
 "element will be rendered on a pixmap of height (<i>Height</i> * <i>Number of "
 "versions</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Eztanda egiten duen kanoiaren banakako fotogramaren altuera.</"
+"p><p>Funtseko <i>eztanda egiten duen kanoia</i> elementua, altuera: "
+"(<i>Altuera</i> * <i>Bertsio kopurua</i>) duen pixel-mapa batean errendatuko "
+"da, eta ondoren banakako fotogramatan zatituko da.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingf)
 #: ksirkspritesdefinition.ui:588
@@ -1839,6 +1966,10 @@ msgid ""
 "<i>exploding</i> element will be rendered on a pixmap of width (<i>Width</i> "
 "* <i>Number of frames</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Eztanda egiten duen kanoiaren banakako fotograma kopurua.</p><p>Funtseko "
+"<i>eztanda egiten duen kanoia</i> elementua, zabalera: (<i>Zabalera</i> * "
+"<i>fotograma kopurua</i>) duen pixel-mapa batean errendatuko da, eta ondoren "
+"banakako fotogramatan zatituko da.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingv)
 #: ksirkspritesdefinition.ui:605
@@ -1857,6 +1988,13 @@ msgid ""
 "towards the right, the second towards the left, the third one from front and "
 "the last one from the back. However, not all sprites need all versions.</p>"
 msgstr ""
+"<p>Eztanda egiten duen kanoiaren bertsio kopurua.</p><p>Funtseko <i>eztanda "
+"egiten duen kanoia</i> elementua, altuera: (<i>Altuera</i> * <i>Bertsio "
+"kopurua</i>) duen pixel-mapa batean errendatuko da, eta ondoren banakako "
+"fotogrametan zatituko da.</p><p>Bertsio bakoitzak iratxoa norabide batetik "
+"erakusten du: lehena eskuinerantz, bigarrena ezkerrerantz, hirugarrena "
+"aurrealdetik, eta azkena bizkarretik. Iratxo guztiek ez dituzte bertsio "
+"guztiak behar ordea.</p>"
 
 #: main.cpp:56
 #, kde-format
