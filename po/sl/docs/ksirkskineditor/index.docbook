@@ -1,0 +1,1312 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY ksirkskineditor '<application
+>KsirK Skin Editor</application
+>'>
+  <!ENTITY i18n-ksirkskineditor '<application
+>KsirK Skin Editor</application
+>'>
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Slovenian "INCLUDE">
+]>
+
+<book id="ksirkskineditor" lang="&language;">
+
+<bookinfo>
+<title
+>&i18n-ksirkskineditor; Priročnik</title>
+
+<authorgroup>
+  <author
+><firstname
+>Ga&euml;l</firstname
+> <othername
+>Kleag</othername
+> <surname
+>de Chalendar</surname
+> <affiliation
+><address
+><email
+>Kleag@free.fr</email
+></address
+></affiliation>
+  </author>
+  <!-- Translators: put here the copyright notice of the translation -->
+  <othercredit role="translator"
+><firstname
+>Matjaž</firstname
+><surname
+>Jeran</surname
+><affiliation
+><address
+><email
+>matjaz.jeran@amis.net</email
+></address
+></affiliation
+><contrib
+>Prevod</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+  <year
+>2009</year>
+  <holder
+>Ga&euml;l de Chalendar</holder>
+</copyright>
+<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
+     and in the FDL itself on how to use it. -->
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<!-- Date of the documentation
+Change date/releaseinfo only if
+   docbook is updated and verified to be valid for the current app version
+   or
+   docbook is proofread and verified to be valid for the current app version
+Don't forget to include this last date.
+Please respect the format of the date (YYYY-MM-DD),it is used by scripts.
+-->
+<date
+>14.10.2021</date>
+
+<!--version information of Frameworks/Plasma/Applications this documentation is valid for.
+Example:
+Frameworks xx.yy for docbooks in frameworks
+Plasma xx.yy for docbooks in plasma workspace
+Applications xx.yy for docbooks released as Applications
+xx.yy (Applications xx.yy) for docbooks with own version released as Applications
+$applicationname xx.yy for applications with independent release schedule (extragear/playground)
+-->
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+  <para
+>&ksirk; je računalniška različica znane strateške igre. Popolnoma jo je mogoče preobleči. Ta priročnik pojasnjuje, kako ustvariti nove preobleke iz nič z uporabo brskalnika datotek, &SVG; urejevalnika slik in &i18n-ksirkskineditor;.</para>
+</abstract>
+
+<!-- This is a set of Keywords for indexing by search engines.
+Please at least include KDE, the KDE package it is in, the name
+ of your application, and a few relevant keywords. -->
+
+<keywordset>
+  <keyword
+>KDE</keyword>
+  <keyword
+>editor</keyword>
+  <keyword
+>prosti</keyword>
+  <keyword
+>igra</keyword>
+  <keyword
+>GPL</keyword>
+  <keyword
+>tveganje</keyword>
+  <keyword
+>preobleka</keyword>
+  <keyword
+>strategija</keyword>
+</keywordset>
+
+</bookinfo>
+
+<!-- The contents of the documentation begin here.  Label
+each chapter so with the id attribute. This is necessary for two reasons: it
+allows you to easily reference the chapter from other chapters of your
+document, and if there is no ID, the name of the generated HTML files will vary
+from time to time making it hard to manage for maintainers and for the CVS
+system. Any chapter labeled (OPTIONAL) may be left out at the author's
+discretion. Other chapters should not be left out in order to maintain a
+consistent documentation style across all KDE apps. -->
+
+<chapter id="introduction">
+<title
+>Uvod</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+<para
+>&ksirk; je računalniška različica znane strateške igre. Popolnoma jo je mogoče preobleči. Ta priročnik pojasnjuje, kako ustvariti nove preobleke iz nič z uporabo brskalnika datotek, &SVG; urejevalnika slik in &i18n-ksirkskineditor;.</para>
+
+<screenshot>
+  <screeninfo
+>Tukaj je posnetek zaslona &i18n-ksirkskineditor;</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="main-snapshot.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Slika zaslona</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>Obstajajo trije glavni koraki za ustvarjanje nove preobleke: ustvarjanje hierarhije map; ustvarjanje grafike, vse združene znotraj &SVG; datoteke; in nato postavitev spritov in poimenovanje stvari z &i18n-ksirkskineditor;.</para>
+</chapter>
+
+<chapter id="using-kapp">
+<title
+>Ustvarjanje preobleke &ksirk;</title>
+
+<para
+>&ksirk; se da popolnoma preobleči. Za tiste, ki imajo grafične zmožnosti, je ustvarjanje nove preobleke preprosto kot kopiranje obstoječe, urejanje ali spreminjanje grafike in posodabljanje podatkov v konfiguracijski datoteki <literal role="extension"
+>.desktop</literal
+>, kar je opravljeno z uporabo &i18n-ksirkskineditor;. Zadnji korak je urejanje datoteke, ki opisuje, kaj namestiti.</para>
+
+<para
+>Vsi primeri (besedilo in slike) so vzeti iz privzete preobleke &ksirk;.</para>
+
+<sect1 id="sdf">
+<title
+>Struktura map in datotek</title>
+
+<itemizedlist>
+  <listitem
+><para
+><filename class="directory"
+>Podatki/</filename
+> : Podatki, ki jih program uporablja za obdelavo slik peobleke.</para>
+    <itemizedlist>
+      <listitem
+><para
+><filename
+>CMakeLists.txt</filename
+> : opisuje, kaj namestiti.</para
+></listitem>
+      <listitem
+><para
+><filename
+>onu.desktop</filename
+> : Glavna datoteka za opis preobleke. Glejte njen opis spodaj.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+><filename class="directory"
+>Images/</filename
+> : slike kože (zemljevid, sprite itd.)</para>
+    <itemizedlist>
+      <listitem
+><para
+><filename
+>CMakeLists.txt</filename
+> : opisuje, kaj namestiti.</para
+></listitem>
+      <listitem
+><para
+><filename
+>pool.svg</filename
+> : zemljevid in vsi spriti, uporabljeni v tej preobleki.</para
+></listitem>
+      <listitem
+><para
+><filename
+>map-mask.png</filename
+> : Slika, ki omogoča programu, da ugotovi, nad katero državo je miška med igro (glejte spodaj).</para
+></listitem>
+      <listitem
+><para
+><literal role="extension"
+>*.png</literal
+> : Druge slike tukaj so slike gumbov.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+><filename
+>CMakeLists.txt</filename
+> : opisuje, kaj namestiti.</para
+></listitem>
+  <listitem
+><para
+><filename class="directory"
+>Sounds/</filename
+> : zvočne datoteke preobleke.</para
+></listitem>
+</itemizedlist>
+
+  <sect2 id="tdd">
+  <title
+>Mapa Data</title>
+
+  <para
+>Ta mapa vsebuje samo eno datoteko, <filename
+>world.desktop</filename
+>. Ta datoteka je opis vsebine preobleke. Uporablja se za opis organizacije sveta in kako ga prikazati. Ni vam ga treba izpolniti ročno, saj ga bo obdelal &i18n-ksirkskineditor;. Toda zaradi popolnosti bomo zdaj opisali njegovo strukturo.</para>
+
+  <para
+>Skupina <literal
+>onu</literal
+> vsebuje številne vnose držav, številne vnose državljanstva in nazadnje številne vnose celin. Nato različne skupine vsebujejo opise različnih spritov, opise različnih držav, celin, narodnosti in ciljev.</para>
+
+  <para
+>Naslednji razdelki opisujejo vsebino vsake skupine.</para>
+
+    <sect3>
+    <title
+>Skupina <literal
+>onu</literal
+></title>
+
+    <table>
+      <title
+>Vnosi skupine <literal
+>onu</literal
+></title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Ime vnosa</entry>
+            <entry
+>Pomen</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>širina</literal
+></entry>
+            <entry
+>Širina zemljevida peobleke.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>višina</literal
+></entry>
+            <entry
+>Višina zemljevida preobleke.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>skinpath</literal
+></entry>
+            <entry
+>Pot preobleke relativno glede na pot podatkov aplikacije (&eg; <filename
+>skins/default</filename
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nb-države</literal
+></entry>
+            <entry
+>Število držav (42 v privzeti preobleki). Spodaj mora biti enako število skupin držav.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nb-državljanstva</literal
+></entry>
+            <entry
+>Število narodnosti (6 v privzeti preobleki). Spodaj mora biti enako število narodnostnih skupin.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nb-celine</literal
+></entry>
+            <entry
+>Število celin (6 v privzeti preobleki). Spodaj mora biti enako število skupin celin.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>pool</literal
+></entry>
+            <entry
+>Pot in ime datoteke poola glede na pot preobleke (&eg;. <filename
+>Images/pool.svg</filename
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>map-mask</literal
+></entry>
+            <entry
+>Pot in ime datoteke maske zemljevida relativno glede na pot preobleke (&eg;. <filename
+>Images/map-mask.png</filename
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>format-version</literal
+></entry>
+            <entry
+>Različica formata datoteke preobleke (2.0).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>ime</literal
+></entry>
+            <entry
+>Prikazno ime preobleke.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>opis</literal
+></entry>
+            <entry
+>Dolgi opis preobleke.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>fighters-flag-y-diff</literal
+></entry>
+            <entry
+>Višinska razlika med zastavami in spriti topov.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>width-between-flag-and-fighter</literal
+></entry>
+            <entry
+>Število slikovnih pik med skrajno levo slikovno piko zastave in skrajno desno slikovno piko preprostega topa (ko ne strelja ali eksplodira).</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Skupine opisov spritov</title>
+
+    <para
+>Vsaka vrsta sprita (zastava, pehota, konjenica, top, top, ki strelja in top, ki eksplodira) je definirana s skupino. Samo nekateri spriti imajo vnos širine. Ta vnos se uporablja za relativno pozicioniranje med animacijami: topovi, ki streljajo ali eksplodirajo, se med bitko ne smejo <quote
+>premikati</quote
+> okoli zastave države.</para>
+
+    <table>
+      <title
+>Vnosi skupine opisov sprite</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Ime vnosa</entry>
+            <entry
+>Pomen</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>širina</literal
+></entry>
+            <entry
+>Referenčna širina okvirjev sprita zastave.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>višina</literal
+></entry>
+            <entry
+>Referenčna višina okvirjev sprita zastave.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>okvirji</literal
+></entry>
+            <entry
+>Število okvirjev sprita.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>različice</literal
+></entry>
+            <entry
+>Število različic spritejev zastave.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Opisne skupine držav</title>
+
+    <para
+>Vsaka država, navedena v skupini <literal
+>onu</literal
+>, ima vnos držav svojo skupino, katere oznaka je ime države. V spodnji tabeli so navedeni vnosi teh skupin.</para>
+
+    <table>
+      <title
+>Vnosi držav</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Ime vnosa</entry>
+            <entry
+>Pomen</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>id</literal
+></entry>
+            <entry
+>Enolična celoštevilčna identifikacijska številka države se mora začeti z nič (0).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>ime</literal
+></entry>
+            <entry
+>Prikazano ime države.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>&lt;sprite&gt;-point</literal
+></entry>
+            <entry
+>Vsaka vrsta sprite (zastava, pehota &etc;) v državi je prikazana na določenem položaju, ki ga določa ta vnos, sestavljen iz dveh celih števil, ločenih z vejico.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>sosedje</literal
+></entry>
+            <entry
+>Seznam določilnikov sosedov trenutne države.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Opisne skupine držav</title>
+
+    <para
+>Vsako državljanstvo, navedeno v skupini <literal
+>onu</literal
+>, ima vnos v svojo skupino držav, katere oznaka je ime države. V spodnji tabeli so navedeni vnosi teh skupin.</para>
+
+    <table>
+      <title
+>Vnosi držav</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Ime vnosa</entry>
+            <entry
+>Pomen</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>ime</literal
+></entry>
+            <entry
+>Ime državljanstva (&eg; <literal
+>Japonska</literal
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>vodja</literal
+></entry>
+            <entry
+>Ime, ki bo predlagano igralcu, ki izbere to državljanstvo.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>zastava</literal
+></entry>
+            <entry
+>Ime elementa sprite zastave države v <literal
+>onu</literal
+> datoteka &SVG;.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Skupine opisov celin</title>
+
+    <para
+>Vsaka celina, navedena v skupini <literal
+>onu</literal
+>, ima vnos celine s svojo skupino, katere oznaka je ime celine. V spodnji tabeli so navedeni vnosi teh skupin.</para>
+
+    <table>
+      <title
+>Vnosi celin</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Ime vnosa</entry>
+            <entry
+>Pomen</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>ime</literal
+></entry>
+            <entry
+>Ime celine (&eg; <literal
+>Afrika</literal
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>id</literal
+></entry>
+            <entry
+>Enolična celoštevilčna identifikacijska številka celine.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>bonus</literal
+></entry>
+            <entry
+>Število vojsk, ki jih igralec, ki ima v lasti vse države na celini, pridobi na koncu poteze.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>celina-države</literal
+></entry>
+            <entry
+>Seznam določilnikov držav znotraj trenutne celine.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Skupine za opis ciljev</title>
+
+    <para
+>Vsak cilj, naveden v skupini <literal
+>onu</literal
+>, vnos ciljev ima svojo skupino, katere oznaka je ime cilja. V spodnji tabeli so navedeni vnosi teh skupin.</para>
+
+    <table>
+      <title
+>Vnosi ciljev</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Ime vnosa</entry>
+            <entry
+>Pomen</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>vrsta</literal
+></entry>
+            <entry
+>Vrsta cilja. Lahko so celine, države ali igralec.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nbArmiesByCountry</literal
+></entry>
+            <entry
+>Nastavite minimalno število vojsk, ki jih bo moral igralec postaviti v vsako državo.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nbCountries</literal
+></entry>
+            <entry
+>Nastavite število držav, ki jih mora imeti igralec.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nbCountriesFallback</literal
+></entry>
+            <entry
+>Za vrsto cilja igralca, če ciljnega igralca ubije drug, to nastavi število držav, ki jih bo moral igralec namesto tega osvojiti.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>opis</literal
+></entry>
+            <entry
+>Celoten besedilni opis cilja z ustreznimi ogradami (tu potrebujete več dokumentov).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>celine</literal
+></entry>
+            <entry
+>Seznam id celin, ki jih bo igralec moral osvojiti.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+  </sect2>
+
+  <sect2 id="tid">
+  <title
+>Mapa Slike</title>
+
+  <para
+>Ta mapa vsebuje gumbe, specifične za &ksirk; in pool &SVG; datoteko, ki vsebuje zemljevid in vse sprite.</para>
+
+    <sect3>
+    <title
+>Datoteka <filename
+>pool.svg</filename
+></title>
+
+    <para
+>Ta datoteka &SVG; vsebuje zemljevid in vse sprite igre. Vsak element je poimenovan tako, da lahko igra izbere in upodablja vsakega posebej.</para>
+
+    <para
+>V privzeti preobleki so spriti zastav, pehota, konjenica in topovi. Pehota predstavlja eno vojsko, pet za konjenico in deset za topove. Topovi se uporabljajo tudi za prikaz bojevanja vojsk. Zato obstajajo tri vrste topovskih spritov: običajni statični ali premikajoči se topovi, streljajoči in eksplodirajoči.</para>
+
+    <para
+>Vsaka sprite slika je veriženje različnih pogledov predmeta in za vsak pogled, njegovih okvirjev. Pogledi so organizirani navpično, okvirji pa vodoravno. Kam rezati sliko v posameznih okvirih, ugotovimo tako, da višino slike delimo s številom ogledov in širino s številom okvirjev. Ti podatki so v datoteki <filename
+>onu.desktop</filename
+>.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="cannon.png" format="PNG"/></imageobject>
+      <caption
+><para
+>Primer slike sprite: <filename
+>cannon.png</filename
+></para
+></caption>
+    </mediaobject>
+
+    <para
+>Za sprite vojsk obstajajo trije različni pogledi, od zgoraj navzdol:</para>
+
+    <itemizedlist>
+      <listitem
+><para
+>pogled z desne</para
+></listitem>
+      <listitem
+><para
+>pogled z leve in</para
+></listitem>
+      <listitem
+><para
+>v obraz</para
+></listitem>
+    </itemizedlist>
+
+    <para
+>Za zastave obstaja samo en pogled. Vsa ozadja spritov morajo biti nastavljena na prosojno.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="italy.png" format="PNG"/></imageobject>
+      <caption
+><para
+>Primer slike sprite zastave: <filename
+>italy.png</filename
+></para
+></caption>
+    </mediaobject>
+
+    <table>
+      <title
+>Elementi poola</title>
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry
+>Ime elementa</entry>
+            <entry
+>Vzorčna slika</entry>
+            <entry
+>Pomen</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>map</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="map.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Zemljevid sveta preoblek. Države imajo lahko poljubne oblike, vendar morajo biti razvrščene v celine, ki jih lahko prepoznate z očesom, samo po lokaciji ali po barvi.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>italy</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="italy.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Zastava italijanskega naroda. Za vsak narod obstaja en tak vnos.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>pehota</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="infantry.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Ikona, ki predstavlja eno vojsko.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>konjenica</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="cavalry.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Ikona, ki predstavlja pet vojsk.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>top</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="cannon.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Ikona, ki predstavlja deset vojsk.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>streljanje</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="firing.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Ikona, ki predstavlja vojske med bojem.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>eksplozija</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="exploding.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Ikona, ki predstavlja vojske, ko izgubijo bitko.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>alaska</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="alaska.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Oblika države Aljaske. To se uporablja za poudarjanje države. Za vsako državo obstaja ena taka oblika. Njena barva se ne uporablja. Kot taka je barva prosta.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>rdečice</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="reddices.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Rdeče kocke so uporabljale za prikaz rezultatov bitk.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>modrice</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="bluedices.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Modre kocke so uporabljale za prikaz rezultatov bitk.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>mark1</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="mark1.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Ta oznaka je dodana bojnim spritom, da prikaže število vojsk, ki jih predstavljajo, tukaj 1. Obstajata tudi elementa <literal
+>mark2</literal
+> in <literal
+>mark3</literal
+>.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Datoteka <filename
+>map-mask.png</filename
+></title>
+
+    <para
+>To je datoteka png, ki predstavlja tudi zemljevid sveta preoblek, vendar s kodiranimi barvami, ki omogočajo edinstveno identifikacijo vsake države. Države morajo imeti vsaj enake oblike kot ustrezne države v datoteki <filename
+>map.png</filename
+>, tako da lahko uporabniki kliknejo kjer koli v vidni državi in izberejo dobro. Države, kot so majhni otoki, kot je Indonezija, na privzetem zemljevidu so lahko večje od ekvivalenta v datoteki <filename
+>map.png</filename
+>, da je izbira države oljašana.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="map-mask.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Vzorec zemljevida-maske</phrase
+></textobject>
+    </mediaobject>
+
+    <para
+>Modra komponenta (v modelu RGB) barve države identificira državo: indeks 0 je država 0 v datoteki <filename
+>onu.xml</filename
+>, indeks 1 je država 1, itd. Bela (0xFFFFFF v RGB) označuje odsotnost države (vidi ali, zakaj ne, nikogaršnjega ozemlja).</para>
+    </sect3>
+
+    <sect3>
+    <title
+>Slike gumbov</title>
+
+    <para
+>Imena datotek so v kodi trdo kodirana, zato jih ne smete spreminjati. Spodnja tabela prikazuje vse gumbe, ki jih je treba zagotoviti.</para>
+
+    <table>
+      <title
+>Gumbi &GUI;</title>
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry
+>Slika</entry>
+            <entry
+>Ime datoteke</entry>
+            <entry
+>Pomen</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="newNetGame.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>novaNetGame.png</filename
+></entry>
+            <entry
+>Poskuša se pridružiti omrežni igri.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="recycling.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>recycling.png</filename
+></entry>
+            <entry
+>Ko vsi igralci postavijo svoje vojske, je možno spremeniti distribucijo (imenovano recikliranje). Ta gumb zahteva takšno prerazporeditev.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="recyclingFinished.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>recyclingFinished.png</filename
+></entry>
+            <entry
+>Odloči se, da ne bo prerazporedil. Vsa okna odjemalcev morajo imeti ta gumb kliknjen, da resnično končajo distribucijo.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="nextPlayer.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>nextPlayer.png</filename
+></entry>
+            <entry
+>Konča potezo trenutnega igralca in preklopi na naslednjo ali na naslednjo potezo, če je bil trenutni igralec zadnji.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackOne.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackOne.png</filename
+></entry>
+            <entry
+>Odloči se za začetek napada z eno vojsko.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackTwo.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackTwo.png</filename
+></entry>
+            <entry
+>Odloči se za začetek napada z dvema vojskama.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackThree.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackThree.png</filename
+></entry>
+            <entry
+>Odloči se za začetek napada s tremi vojskami.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="defendOne.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>defendOne.png</filename
+></entry>
+            <entry
+>Odloči se za obrambo napadene države z eno vojsko.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="defendTwo.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>defendTwo.png</filename
+></entry>
+            <entry
+>Odloči se za obrambo napadene države z dvema vojskama.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="moveArmies.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>moveArmies.png</filename
+></entry>
+            <entry
+>Odloči se za začetek premika vojsk med dvema državama (zadnje dejanje v potezi).</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+  </sect2>
+
+  <sect2 id="tsd">
+  <title
+>Mapa Zvoki</title>
+
+  <para
+>Ta mapa vsebuje tri zvočne datoteke:</para>
+
+  <itemizedlist>
+    <listitem
+><para
+><filename
+>roll.wav</filename
+> se predvaja, ko se vojske premikajo </para
+></listitem>
+    <listitem
+><para
+><filename
+>cannon.wav</filename
+> se predvaja ob streljanju in </para
+></listitem>
+    <listitem
+><para
+><filename
+>crash.wav</filename
+> se predvaja, ko top eksplodira</para
+></listitem>
+  </itemizedlist>
+  </sect2>
+</sect1>
+
+<sect1 id="using-kse">
+<title
+>Uporaba &i18n-ksirkskineditor;</title>
+
+<para
+>Ko ustvarite grafiko v desni mapi in &SVG; datoteko, morate samo ustvariti države, igralce &etc; in jih povežite s pravim &SVG; element v poolu. To lahko storite z &i18n-ksirkskineditor;. Upoštevajte, da je vsak del te aplikacije samodejno opisan z namigi orodij in kontekstualno pomočjo, ki je običajno dosegljiva prek bližnjice <keycombo action="simul"
+>&Ctrl;<keycap
+>F1</keycap
+></keycombo
+>.</para>
+
+<screenshot>
+  <screeninfo
+>Tukaj je posnetek zaslona &i18n-ksirkskineditor;</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="main-snapshot.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Slika zaslona</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Referenca ukazov</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>Glavno okno &i18n-ksirkskineditor;</title>
+
+  <sect2>
+  <title
+>Gumbi</title>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="document-open.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Naloži</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Naloži...</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Povzroči, da program naloži obstoječo preobleko.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="document-save.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Shrani</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Shrani</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Shrani trenutno urejano preobleko.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+  </sect2>
+</sect1>
+</chapter>
+
+<chapter id="developers">
+<title
+>Vodnik za razvijalce za &i18n-ksirkskineditor;</title>
+
+<para
+>Za dokumentacijo API-ja glejte <ulink url="https://api.kde.org/"
+>https://api.kde.org/</ulink
+>.</para>
+</chapter>
+
+<chapter id="faq">
+<title
+>Vprašanja in odgovori</title
+>&updating.documentation; </chapter>
+
+<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+<title
+>Zasluge in licence</title>
+
+<para
+>&ksirkskineditor;</para>
+
+<para
+>Program copyright 2009 Ga&euml;l de Chalendar <email
+>kleag@free.fr</email
+></para>
+
+<para
+>Dokumentacija copyright 2009 Ga&euml;l de Chalendar <email
+>kleag@free.fr</email
+></para>
+
+<para
+>Prevod: Matjaž Jeran<email
+>matjaz.jeran@amis.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->
