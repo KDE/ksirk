@@ -24,20 +24,5 @@
     <entry name="Theme" type="String" key="Theme">
       <label>The graphical theme to be used.</label>
     </entry>
-    <entry name="jabberId" type="String">
-    <label>The last used Jabber Id.</label>
-    </entry>
-    <entry name="jabberPassword" type="String">
-    <label>The password of the last used Jabber Id.</label>
-    </entry>
-    <entry name="roomJid" type="String">
-    <label>The last used Jabber groupchat room.</label>
-    </entry>
-    <entry name="roomPassword" type="String">
-    <label>The password for last used Jabber groupchat room.</label>
-    </entry>
-    <entry name="nickname" type="String">
-    <label>The nickname used in the last used Jabber groupchat room.</label>
-    </entry>
     </group>
 </kcfg>

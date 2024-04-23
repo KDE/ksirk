@@ -32,10 +32,6 @@
 #include "GameLogic/country.h"
 #include "Dialogs/InvasionSlider.h"
 #include "Sprites/animspriteslist.h"
-#if HAVE_JABBER_SUPPORT
-#include "Jabber/jabberclient.h"
-#include "qca.h"
-#endif
 
 
 // include files for Qt
@@ -56,7 +52,6 @@
 
 // #include <kdialogbase.h>
 
-class KsirkJabberGameWidget;
 class mainMenu;
 class NewGameSetup;
 
@@ -116,9 +111,6 @@ public:
   {
     MAINMENU_INDEX /*0*/,
     NEWGAME_INDEX /*1*/,
-#if HAVE_JABBER_SUPPORT
-    JABBERGAME_INDEX /*2*/,
-#endif
     NEWPLAYER_INDEX /*3*/,
     NEWGAMESUMMARY_INDEX /*4*/,
     TCPCONNECT_INDEX /*5*/,
@@ -618,31 +610,6 @@ public:
 
   bool finishSetupPlayers();
 
-#if HAVE_JABBER_SUPPORT
-  inline JabberClient* jabberClient() {return m_jabberClient;}
-  void askForJabberGames();
-  void sendGameInfoToJabber();
-
-  inline XMPP::Jid& serverJid() {return m_serverJid;}
-  inline void setServerJid(const XMPP::Jid& jid) {m_serverJid = jid;}
-
-  /**
-  * Sets our own presence. Updates our resource in the
-  * resource pool and sends a presence packet to the server.
-  */
-  void setPresence ( const XMPP::Status &status );
-
-  inline void setGroupchatHost(const QString& str) {m_groupchatHost = str;}
-  inline void setGroupchatRoom(const QString& str) {m_groupchatRoom = str;}
-  inline void setGroupchatNick(const QString& str) {m_groupchatNick = str;}
-  inline void setGroupchatPassword(const QString& str) {m_groupchatPassword = str;}
-  
-  const QString& groupchatHost() const {return m_groupchatHost;}
-  const QString& groupchatRoom() const {return m_groupchatRoom;}
-  const QString& groupchatNick() const {return m_groupchatNick;}
-  const QString& groupchatPassword() const {return m_groupchatPassword;}
-#endif
-
   void joinNetworkGame();
 
   void updateNewGameSummary();
@@ -698,11 +665,6 @@ protected:
   void reduceChat();
   void unreduceChat();
 
-#if HAVE_JABBER_SUPPORT
-Q_SIGNALS:
-  void newJabberGame(const QString&, int, const QString&);
-#endif
-
 public Q_SLOTS:
 
   void mouseMoveEvent ( QMouseEvent * event ) override;
@@ -711,10 +673,6 @@ public Q_SLOTS:
   /**
     * The slots associated to the buttons
     */
-#if HAVE_JABBER_SUPPORT
-  void slotJabberGame();
-  void slotNewJabberGame();
-#endif
   void slotNewGame();
   void slotNewSocketGame();
   void slotJoinNetworkGame();
@@ -794,10 +752,6 @@ public Q_SLOTS:
 //   void slotNewGameOK(unsigned int nbPlayers, const QString& skin, unsigned int nbNetworkPlayers, bool useGoals);
   void slotNewGameKO();
 
-#if HAVE_JABBER_SUPPORT
-  void slotJabberGameCanceled(int previousIndex);
-#endif
-
   void slotNewPlayerNext();
   void slotNewPlayerPrevious();
   void slotNewPlayerCancel();
@@ -828,82 +782,6 @@ private Q_SLOTS:
   /* Disconnects from the server. */
 //   void slotDisconnect ();
   
-#if HAVE_JABBER_SUPPORT
-  // handle a TLS warning
-  void slotHandleTLSWarning ( QCA::TLS::IdentityResult identityResult, QCA::Validity validityResult );
-  
-  // handle client errors
-  void slotClientError ( JabberClient::ErrorCode errorCode );
-  
-  // we are connected to the server
-  void slotConnected ();
-  
-  /* Called from Psi: tells us when we've been disconnected from the server. */
-  void slotCSDisconnected ();
-  
-  /* Called from Psi: alerts us to a protocol error. */
-  void slotCSError (int);
-  
-  /* Called from Psi: roster request finished */
-  void slotRosterRequestFinished ( bool success );
-  
-  /* Called from Psi: incoming file transfer */
-//   void slotIncomingFileTransfer ();
-  
-  /* Called from Psi: debug messages from the backend. */
-  void slotClientDebugMessage (const QString &msg);
-  
-  /* XMPP console dialog */
-//   void slotXMPPConsole ();
-  
-  /* Slots for handling groupchats. */
-//   void slotJoinNewChat ();
-  void slotGroupChatJoined ( const XMPP::Jid &jid );
-  void slotGroupChatLeft ( const XMPP::Jid &jid );
-  void slotGroupChatPresence ( const XMPP::Jid &jid, const XMPP::Status &status );
-  void slotGroupChatError ( const XMPP::Jid &jid, int error, const QString &reason );
-  
-  /* Incoming subscription request. */
-//   void slotSubscription ( const XMPP::Jid &jid, const QString &type );
-  
-  /* the dialog that asked to add the contact was closed   (that dialog is shown in slotSubscription) */
-//   void slotAddedInfoEventActionActivated ( uint actionId );
-  
-  /**
-  * A new item appeared in our roster, synch it with the
-  * contact list.
-  * (or the contact has been updated
-  */
-//   void slotContactUpdated ( const XMPP::RosterItem & );
-  
-  /**
-  * An item has been deleted from our roster,
-  * delete it from our contact pool.
-  */
-//   void slotContactDeleted ( const XMPP::RosterItem & );
-  
-  
-  /* Someone on our contact list had (another) resource come online. */
-//   void slotResourceAvailable ( const XMPP::Jid &, const XMPP::Resource & );
-  
-  /* Someone on our contact list had (another) resource go offline. */
-//   void slotResourceUnavailable ( const XMPP::Jid &, const XMPP::Resource & );
-  
-  /* Displays a new message. */
-  void slotReceivedMessage ( const XMPP::Message & );
-  
-  /* Gets the user's vCard from the server for editing. */
-//   void slotEditVCard ();
-  
-  /* Get the services list from the server for management. */
-//   void slotGetServices ();
-  
-  /* we received a voice invitation */
-//  void slotIncomingVoiceCall(const Jid&);
-
-/* the unregister task finished */
-//   void slotUnregisterFinished();
-#endif
   void slotExit();
 
   void slotConnectToServer();
@@ -1028,9 +906,6 @@ private: // Private members
     * in the status bar.
     */
   QAction * m_goalAction;
-#if HAVE_JABBER_SUPPORT
-  QAction* m_jabberAction;
-#endif
   QLabel* m_barFlag;
     
 //   KAccel m_accels;
@@ -1118,25 +993,6 @@ private: // Private members
   
   GameLogic::GameAutomaton::GameState m_stateBeforeNewGame;
   int m_stackWidgetBeforeNewGame;
-
-#if HAVE_JABBER_SUPPORT
-  JabberClient* m_jabberClient;
-  XMPP::Jid m_serverJid;
-  
-  /* Initial presence to set after connecting. */
-  XMPP::Status m_initialPresence;
-  
-  QString m_groupchatHost;
-  QString m_groupchatRoom;
-  QString m_groupchatNick;
-  QString m_groupchatPassword;
-  
-  QString m_advertizedHostName;
-  
-  KsirkJabberGameWidget* m_jabberGameWidget;
-  
-  QSet<QString> m_presents;
-#endif
 
   NewGameSetup* m_newGameSetup;
   NewGameSummaryWidget* m_newGameSummaryWidget;

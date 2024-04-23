@@ -52,11 +52,6 @@ public:
   ~mainMenu() override {}
 
   void init(Ksirk::GameLogic::ONU* theWorld);
-
-#if HAVE_JABBER_SUPPORT
-public:
-    QPushButton *pbJabberGame;
-#endif
 };
 
 

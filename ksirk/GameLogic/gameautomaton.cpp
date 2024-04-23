@@ -32,9 +32,6 @@
 #include "newgamesetup.h"
 #include "krightdialog.h"
 #include "Dialogs/joingame.h"
-#if HAVE_JABBER_SUPPORT
-#include "Jabber/kmessagejabber.h"
-#endif
 #include "newplayerdata.h"
 #include "gamesequence.h"
 
@@ -1216,45 +1213,6 @@ bool GameAutomaton::connectToServ()
           this,&GameAutomaton::slotConnectionToClientBroken);
   return status;
 }
-
-#if HAVE_JABBER_SUPPORT
-bool GameAutomaton::joinJabberGame(const QString& nick)
-{
-  if (stateName() == "INIT" || (KMessageBox::warningContinueCancel(m_game,i18n("Do you really want to end your current game and join another?"),i18n( "New game confirmation" ),KGuiItem(i18nc("@action:button", "Join New Game"))) == KMessageBox::Continue))
-  {
-    // stop game
-    setGameStatus(KGame::End);
-    state(INIT);
-    savedState(INVALID);
-    
-    if (messageServer() != nullptr)
-    {
-      QObject::disconnect(messageServer(),&KMessageServer::connectionLost,
-                           this,&GameAutomaton::slotConnectionToClientBroken);
-    }
-    
-    qCDebug(KSIRK_LOG) << "Before connectToServer";
-    m_game->setServerJid(nick);
-    KMessageJabber* messageIO = new KMessageJabber(m_game->serverJid().full(), m_game->jabberClient(), this);
-    bool status = connectToServer(messageIO);
-    //       bool status = connectToServer(host, port);
-    qCDebug(KSIRK_LOG) << "After connectToServer" << status;
-    if (status)
-    {
-      QByteArray msg("connect");
-      XMPP::Message message(m_game->serverJid().full());
-      message.setType("ksirkgame");
-      message.setId(QUuid::createUuid().toString().remove("{").remove("}").remove("-"));
-      message.setBody(msg);
-      m_game->jabberClient()->sendMessage(message);
-    }
-    //       connect(messageServer(),SIGNAL(connectionLost(KMessageIO*)),
-                                                           //          this,SLOT(slotConnectionToClientBroken(KMessageIO*)));
-                                                           return status;
-  }
-  return false;
-}
-#endif
 
 KPlayer * GameAutomaton::createPlayer(int rtti, 
                                     int /*io*/, 
@@ -2565,13 +2523,6 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   default: ;
   }
 }
-
-#if HAVE_JABBER_SUPPORT
-void GameAutomaton::askForJabberGames()
-{
-  m_game->askForJabberGames();
-}
-#endif
 
 QSvgRenderer& GameAutomaton::rendererFor(const QString& skinName)
 {

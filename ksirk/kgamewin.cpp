@@ -42,11 +42,6 @@
 #include "Dialogs/newGameDialogImpl.h"
 #include "Dialogs/newGameSummaryWidget.h"
 #include "Dialogs/tcpconnectwidget.h"
-#if HAVE_JABBER_SUPPORT
-#include "Dialogs/jabbergameui.h"
-#include "im.h"
-#include "xmpp_tasks.h"
-#endif
 
 //include files for QT
 #include <QAction>
@@ -130,12 +125,6 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_newPlayerWidget(nullptr),
   m_stateBeforeNewGame(GameAutomaton::INVALID),
   m_stackWidgetBeforeNewGame(-1),
-#if HAVE_JABBER_SUPPORT
-  m_jabberClient(new JabberClient()),
-  m_advertizedHostName(QHostInfo::localHostName()),
-  m_jabberGameWidget(nullptr),
-  m_presents(),
-#endif
   m_newGameSetup(new NewGameSetup(m_automaton))
   {
   qCDebug(KSIRK_LOG) << "KGameWindow constructor begin";
@@ -214,12 +203,6 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_mainMenu = new mainMenu(this, m_centralWidget);
   m_mainMenu->init(m_theWorld);
   
-#if HAVE_JABBER_SUPPORT
-  /// @FIXME Hides the "Play KsirK over Jabber Network" button while Jabber
-  /// connection does not work
-  m_mainMenu->pbJabberGame->hide();
-#endif
-  
   m_newGameDialog = new NewGameWidget(m_newGameSetup, m_centralWidget);
   connect(m_newGameDialog, &NewGameWidget::newGameOK, this, &KGameWindow::slotNewGameNext);
   connect(m_newGameDialog, &NewGameWidget::newGameKO, this, &KGameWindow::slotNewGameKO);
@@ -229,15 +212,8 @@ KGameWindow::KGameWindow(QWidget* parent) :
   connect(m_newPlayerWidget, &KPlayerSetupWidget::cancel, this, &KGameWindow::slotNewPlayerCancel);
   connect(m_newPlayerWidget, &KPlayerSetupWidget::previous, this, &KGameWindow::slotNewPlayerPrevious);
   connect(m_newPlayerWidget, &KPlayerSetupWidget::cancel, this, &KGameWindow::slotNewPlayerCancel);
-#if HAVE_JABBER_SUPPORT
-  qCDebug(KSIRK_LOG) << "create the Jabber widget if it doesn't exist";
-  m_jabberGameWidget = new KsirkJabberGameWidget(m_centralWidget);
-#endif
   m_centralWidget->addWidget(m_mainMenu); // MAINMENU_INDEX 0
   m_centralWidget->addWidget(m_newGameDialog); // NEWGAME_INDEX 1
-#if HAVE_JABBER_SUPPORT
-  m_centralWidget->addWidget(m_jabberGameWidget); // JABBERGAME_INDEX 2
-#endif
   m_centralWidget->addWidget(m_newPlayerWidget);  // NEWPLAYER_INDEX 3
   m_newGameSummaryWidget = new NewGameSummaryWidget(m_centralWidget);
   connect(m_newGameSummaryWidget->finishButton, &QAbstractButton::clicked, this, &KGameWindow::slotStartNewGame);
@@ -266,56 +242,6 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_timer.setSingleShot(true);
   connect(&m_timer, &QTimer::timeout, this, &KGameWindow::evenementTimer);
 
-#if HAVE_JABBER_SUPPORT
-  m_initialPresence = XMPP::Status ( "", "", 5, true );
-
-  qCDebug(KSIRK_LOG) << "Connecting Jabber signals";
-  connect(m_jabberClient, &JabberClient::csDisconnected, this, &KGameWindow::slotCSDisconnected);
-  connect(m_jabberClient, &JabberClient::csError, this, &KGameWindow::slotCSError);
-  connect(m_jabberClient, &JabberClient::tlsWarning, this, &KGameWindow::slotHandleTLSWarning);
-  connect(m_jabberClient, &JabberClient::connected, this, &KGameWindow::slotConnected);
-  connect(m_jabberClient, &JabberClient::error, this, &KGameWindow::slotClientError);
-  
-//   connect(m_jabberClient, &JabberClient::subscription, this, &KGameWindow::slotSubscription);
-  connect(m_jabberClient, &JabberClient::rosterRequestFinished, this, &KGameWindow::slotRosterRequestFinished);
-//   connect(m_jabberClient, &JabberClient::newContact(XMPP::RosterItem)), this, SLOT (slotContactUpdated(XMPP::RosterItem)) );
-//   connect(m_jabberClient, &JabberClient::contactUpdated, this, &KGameWindow::slotContactUpdated);
-//   connect(m_jabberClient, &JabberClient::contactDeleted, this, &KGameWindow::slotContactDeleted);
-//   connect(m_jabberClient, &JabberClient::resourceAvailable, this, &KGameWindow::slotResourceAvailable);
-//   connect(m_jabberClient, &JabberClient::resourceUnavailable, this, &KGameWindow::slotResourceUnavailable);
-  connect(m_jabberClient, &JabberClient::messageReceived, this, &KGameWindow::slotReceivedMessage);
-//   connect(m_jabberClient, &JabberClient::incomingFileTransfer, this, &KGameWindow::slotIncomingFileTransfer);
-  connect(m_jabberClient, &JabberClient::groupChatJoined, this, &KGameWindow::slotGroupChatJoined);
-  connect(m_jabberClient, &JabberClient::groupChatLeft, this, &KGameWindow::slotGroupChatLeft);
-  connect(m_jabberClient, &JabberClient::groupChatPresence, this, &KGameWindow::slotGroupChatPresence);
-  
-  connect(m_jabberClient, &JabberClient::groupChatError, this, &KGameWindow::slotGroupChatError);
-  connect(m_jabberClient, &JabberClient::debugMessage, this, &KGameWindow::slotClientDebugMessage);
-  
-  m_jabberClient->setUseXMPP09 ( true );
-//     m_jabberClient->setUseSSL ( true );
-  m_jabberClient->setAllowPlainTextPassword ( true );
-
-  struct utsname utsBuf;
-  uname (&utsBuf);
-  m_jabberClient->setClientName ("KsirK");
-  m_jabberClient->setClientVersion (KAboutData::applicationData().version());
-  m_jabberClient->setOSName (QString ("%1 %2").arg (utsBuf.sysname, 1).arg (utsBuf.release, 2));
-  
-  // Set caps node information
-  m_jabberClient->setCapsNode("http://ksirk.kde.org/jabber/caps");
-  m_jabberClient->setCapsVersion(KAboutData::applicationData().version());
-  
-  // Set Disco Identity information
-  DiscoItem::Identity identity;
-  identity.category = "client";
-  identity.type = "pc";
-  identity.name = "KsirK";
-  m_jabberClient->setDiscoIdentity(identity);
-
-  connect (this, &KGameWindow::newJabberGame, m_automaton, &GameAutomaton::newJabberGame);
-#endif
-
   m_automaton->skin("skins/default");
 }
 
@@ -323,13 +249,6 @@ KGameWindow::~KGameWindow()
 {
   qCDebug(KSIRK_LOG);
 
-#if HAVE_JABBER_SUPPORT
-  if (m_jabberClient != nullptr)
-  {
-    delete m_jabberClient;
-    m_jabberClient = nullptr;
-  }
-#endif
   if (m_automaton != nullptr)
   {
     m_automaton->setGameStatus( KGame::End );
@@ -375,24 +294,6 @@ void KGameWindow::initActions()
   KStandardAction::preferences( this, &KGameWindow::optionsConfigure, actionCollection() );
 
   QString imageFileName;
-#if HAVE_JABBER_SUPPORT
-  // specific ksirk action
-  imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, "jabber.png");
-  //   qCDebug(KSIRK_LOG) << "Trying to load button image file: " << imageFileName;
-  if (imageFileName.isNull())
-  {
-    KMessageBox::error(nullptr, i18n("Cannot load button image %1<br>Program cannot continue",QString("jabber.png")), i18n("Error!"));
-    exit(2);
-  }
-  m_jabberAction = new QAction(QIcon(QPixmap(imageFileName)), i18n("Play over Jabber"), this);
-  m_jabberAction-> setText(i18n("Play KsirK over the Jabber Network"));
-  m_jabberAction-> setIconText(i18n("Jabber"));
-  KActionCollection::setDefaultShortcut(m_jabberAction, Qt::CTRL | Qt::Key_J);
-  m_jabberAction->setStatusTip(i18n("Allow to connect to a KsirK Jabber Multi User Gaming Room to create new games or to join present games"));
-  connect(m_jabberAction, &QAction::triggered, this, &KGameWindow::slotJabberGame);
-  qCDebug(KSIRK_LOG) << "Adding action game_jabber";
-  actionCollection()->addAction("game_jabber", m_jabberAction);
-#endif
   // specific ksirk action
   imageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + '/' + CM_NEWNETGAME);
   //   qCDebug(KSIRK_LOG) << "Trying to load button image file: " << imageFileName;
@@ -3155,96 +3056,6 @@ bool KGameWindow::newGameDialog(const QString& skin, GameAutomaton::NetworkGameT
   m_centralWidget->setCurrentIndex(NEWGAME_INDEX);
   return false;
 }
-
-#if HAVE_JABBER_SUPPORT
-/* Set presence (usually called by dialog widget). */
-void KGameWindow::setPresence ( const XMPP::Status &status )
-{
-  qCDebug(KSIRK_LOG) << "Status: " << status.show () << ", Reason: " << status.status ();
-  
-  // fetch input status
-  XMPP::Status newStatus = status;
-  
-  // TODO: Check if Caps is enabled
-  // Send entity capabilities
-  if( m_jabberClient )
-  {
-    newStatus.setCapsNode( m_jabberClient->capsNode() );
-    newStatus.setCapsVersion( m_jabberClient->capsVersion() );
-    newStatus.setCapsExt( m_jabberClient->capsExt() );
-  }
-  
-  // make sure the status gets the correct priority
-  newStatus.setPriority ( 5 );
-  
-/*  XMPP::Jid jid ( this->contactId() );
-  XMPP::Resource newResource ( resource (), newStatus );
-  
-  // update our resource in the resource pool
-  resourcePool()->addResource ( jid, newResource );
-  
-  // make sure that we only consider our own resource locally
-  resourcePool()->lockToResource ( jid, newResource );*/
-  
-  /*
-  * Unless we are in the connecting status, send a presence packet to the server
-  */
-  if(status.show () != QString("connecting") )
-  {
-    /*
-    * Make sure we are actually connected before sending out a packet.
-    */
-    if (true/*isConnected()*/)
-    {
-      qCDebug(KSIRK_LOG) << "Sending new presence to the server.";
-      
-      XMPP::JT_Presence * task = new XMPP::JT_Presence ( m_jabberClient->rootTask ());
-      
-      task->pres ( newStatus );
-      task->go ( true );
-    }
-    else
-    {
-      qCDebug(KSIRK_LOG) << "We were not connected, presence update aborted.";
-    }
-  }
-  
-}
-
-void KGameWindow::askForJabberGames()
-{
-  if (m_jabberClient && m_jabberClient->isConnected())
-  {
-    XMPP::Message message(QString(m_groupchatRoom+'@'+m_groupchatHost));
-    message.setType("groupchat");
-    message.setId(QUuid::createUuid().toString().remove('{').remove('}').remove('-'));
-    QString body("Who propose online KsirK games here?");
-    message.setBody(body);
-    qCDebug(KSIRK_LOG) << "Sending message: <<" << body << ">> to" << (m_groupchatRoom+'@'+m_groupchatHost);
-    m_jabberClient->sendMessage(message);
-  }
-}
-
-void KGameWindow::sendGameInfoToJabber()
-{
-  qCDebug(KSIRK_LOG);
-  if (m_jabberClient
-    && m_jabberClient->isConnected()
-    && m_automaton->startingGame())
-  {
-    qCDebug(KSIRK_LOG) << "Sending 'I'm starting a game with ...'";
-    XMPP::Message message(QString(m_groupchatRoom+'@'+m_groupchatHost));
-    message.setType("groupchat");
-    message.setId(QUuid::createUuid().toString().remove('{').remove('}').remove('-'));
-    QString body;
-    QTextStream qts(&body);
-    qts <<"I'm starting a game with skin '" << m_automaton->skin() << "' and '" << m_automaton->nbPlayers() << "' players";
-    message.setBody(body);
-    qCDebug(KSIRK_LOG) << "Sending message: <<" << body << ">> to" << (m_groupchatRoom+'@'+m_groupchatHost);
-    m_jabberClient->sendMessage(message);
-  }
-}
-#endif
 
 void KGameWindow::joinNetworkGame()
 {

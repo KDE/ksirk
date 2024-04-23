@@ -26,10 +26,6 @@ include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
 include(FeatureSummary)
 
-# TODO: port libiris
-option(WITH_JABBER_SUPPORT "Build with support for network gaming using Jabber" OFF)
-add_feature_info(JABBER ${WITH_JABBER_SUPPORT} "Network gaming using Jabber")
-
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Core5Compat
     Multimedia
@@ -53,18 +49,6 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
 )
 
 find_package(KDEGames6 6.0.0 REQUIRED)
-
-if(WITH_JABBER_SUPPORT)
-    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
-        KIO
-        Wallet)
-    find_package(Qca-qt6 2.1.0)
-    set_package_properties(Qca-qt5 PROPERTIES
-        DESCRIPTION "Support for encryption with Jabber"
-        URL "https://download.kde.org/stable/qca-qt5"
-        TYPE REQUIRED
-    )
-endif()
 
 kde_enable_exceptions()
 

@@ -179,10 +179,7 @@ public:
 
   enum NetworkGameType {
     None,
-    Socket,
-#if HAVE_JABBER_SUPPORT
-    Jabber
-#endif
+    Socket
   };
   
   GameAutomaton();
@@ -395,20 +392,12 @@ public:
 
   inline int port() const {return m_port;}
 
-#if HAVE_JABBER_SUPPORT
-  void askForJabberGames();
-#endif
-
   bool startingGame() const;
 
   QSvgRenderer& rendererFor(const QString& skinName);
   KGameSvgDocument& svgDomFor(const QString& skinName);
 
   inline NetworkGameType networkGameType() {return m_netGameType;}
-
-#if HAVE_JABBER_SUPPORT
-  bool joinJabberGame(const QString& nick);
-#endif
 
   void removeAllPlayers();
   // Bug 308527.
@@ -419,11 +408,6 @@ public:
   bool connectToServ();
 
   void checkGoal(Player* player = nullptr);
-
-#if HAVE_JABBER_SUPPORT
-Q_SIGNALS:
-  void newJabberGame(const QString&, int, const QString&);
-#endif
 
 public Q_SLOTS:
   /** Reacts to the current state eventualy processing one queued event */

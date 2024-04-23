@@ -1,6 +1,4 @@
 #ifndef CONFIG_KSIRK_H
 #define CONFIG_KSIRK_H
 
-#cmakedefine01 HAVE_JABBER_SUPPORT
-
 #endif
