@@ -81,8 +81,9 @@ endif()
 ecm_qt_declare_logging_category(ksirk
     HEADER ksirk_debug.h
     IDENTIFIER KSIRK_LOG
-    CATEGORY_NAME org.kde.ksirk
-    DESCRIPTION "kdegames(ksirk)"
+    CATEGORY_NAME ksirk
+    OLD_CATEGORY_NAMES org.kde.ksirk
+    DESCRIPTION "KsirK game"
     EXPORT KSIRK
 )
 

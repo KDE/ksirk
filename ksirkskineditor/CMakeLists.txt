@@ -23,8 +23,9 @@ target_sources(ksirkskineditor PRIVATE
 ecm_qt_declare_logging_category(ksirkskineditor
     HEADER ksirkskineditor_debug.h
     IDENTIFIER KSIRKSKINEDITOR_LOG
-    CATEGORY_NAME org.kde.ksirk.skineditor
-    DESCRIPTION "kdegames (ksirk skineditor)"
+    CATEGORY_NAME ksirk.skineditor
+    OLD_CATEGORY_NAMES org.kde.ksirk.skineditor
+    DESCRIPTION "KsirK game (skineditor)"
     EXPORT KSIRK
 )
 
