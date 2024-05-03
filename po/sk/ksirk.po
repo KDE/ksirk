@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:36+0000\n"
+"POT-Creation-Date: 2024-05-03 00:37+0000\n"
 "PO-Revision-Date: 2023-12-05 17:24+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -1069,7 +1069,7 @@ msgstr ""
 msgid "Legacy"
 msgstr "Staršie aplikácie"
 
-#: decoratedgameframe.cpp:100 kgamewin.cpp:450
+#: decoratedgameframe.cpp:100 kgamewin.cpp:351
 #, kde-format
 msgid "Next Player"
 msgstr "Ďalší hráč"
@@ -1079,8 +1079,8 @@ msgstr "Ďalší hráč"
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: decoratedgameframe.cpp:106 kgamewin.cpp:430 kgamewin.cpp:1316
-#: kgamewin.cpp:1328 kgamewin.cpp:2485
+#: decoratedgameframe.cpp:106 kgamewin.cpp:331 kgamewin.cpp:1217
+#: kgamewin.cpp:1229 kgamewin.cpp:2386
 #, kde-format
 msgid "Goal"
 msgstr "Cieľ"
@@ -1168,139 +1168,6 @@ msgstr ""
 #, kde-format
 msgid "<br><i>Choose the number of armies to move.</i>"
 msgstr "<br><i>Zvoliť počet armád na sa pohybovať presun.</i>"
-
-#: Dialogs/jabbergameui.cpp:76
-#, kde-format
-msgid "Nickname"
-msgstr "Prezývka"
-
-#: Dialogs/jabbergameui.cpp:77
-#, kde-format
-msgid "Skin"
-msgstr "Téma"
-
-#: Dialogs/jabbergameui.cpp:78
-#, kde-format
-msgid "Nb players"
-msgstr "Počet hráčov"
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: Dialogs/jabbergameui.ui:30
-#, kde-format
-msgid "Connection to the Jabber Network"
-msgstr "Pripojenie k sieti Jabber"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: Dialogs/jabbergameui.ui:39
-#, kde-format
-msgid "Jabber ID:"
-msgstr "Jabber ID:"
-
-#. i18n: ectx: property (text), widget (KLineEdit, jabberid)
-#: Dialogs/jabbergameui.ui:46
-#, kde-format
-msgid "kleag@kdetalk.net"
-msgstr "kleag@kdetalk.net"
-
-#. i18n: ectx: property (text), widget (KLineEdit, password)
-#: Dialogs/jabbergameui.ui:53
-#, kde-format
-msgid "12345678"
-msgstr "12345678"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: Dialogs/jabbergameui.ui:63
-#, kde-format
-msgid "Password:"
-msgstr "Heslo:"
-
-#. i18n: ectx: property (text), widget (QPushButton, connectbutton)
-#: Dialogs/jabbergameui.ui:74
-#, kde-format
-msgid "Connect"
-msgstr "Pripojiť"
-
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#. i18n: ectx: property (text), widget (QLabel, label_10)
-#: Dialogs/jabbergameui.ui:96 Dialogs/jabbergameui.ui:189
-#, kde-format
-msgid "State:"
-msgstr "Štát:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_9)
-#: Dialogs/jabbergameui.ui:137
-#, kde-format
-msgid "Joining a KsirK Jabber Chatroom"
-msgstr "Pripojenie k KsirK Jabber Chatroom"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: Dialogs/jabbergameui.ui:146
-#, kde-format
-msgid "Room JID:"
-msgstr "JID miestnosti:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: Dialogs/jabbergameui.ui:156
-#, kde-format
-msgid "Nickname:"
-msgstr "Prezývka:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: Dialogs/jabbergameui.ui:166
-#, kde-format
-msgid "Room Password:"
-msgstr "Heslo miestnosti:"
-
-#. i18n: ectx: property (text), widget (QPushButton, joinroombutton)
-#: Dialogs/jabbergameui.ui:180
-#, kde-format
-msgid "Join Room"
-msgstr "Vstúpiť do miestnosti"
-
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: Dialogs/jabbergameui.ui:209
-#, kde-format
-msgid "Games in the Room"
-msgstr "Hry v miestnosti"
-
-#. i18n: ectx: property (text), widget (QPushButton, startnewgamebutton)
-#: Dialogs/jabbergameui.ui:245
-#, kde-format
-msgid "Start a New Game"
-msgstr "Spustiť novú hru"
-
-#. i18n: ectx: property (text), widget (QPushButton, joingamebutton)
-#: Dialogs/jabbergameui.ui:255
-#, kde-format
-msgid "Join Selected Game"
-msgstr "Pripojiť sa k vybranej hre"
-
-#. i18n: ectx: property (text), widget (QPushButton, loadsavedgamebutton)
-#: Dialogs/jabbergameui.ui:265
-#, kde-format
-msgid "Load a Saved Game..."
-msgstr "Načítať uloženú hru..."
-
-#. i18n: ectx: property (text), widget (QLabel, label_11)
-#: Dialogs/jabbergameui.ui:293
-#, kde-format
-msgid ""
-"<b>Note:</b> Playing over the Jabber network is an experimental feature in "
-"KsirK.<br/>Particularly, the distribution of armies at game beginning is "
-"very slow (expect something like one minute)."
-msgstr ""
-"<b>Poznámka:</b>Hranie po sieti Jabber je experimentálna funkcia v KsirK.<br/"
-">Zvlášť, rozdelenie armád na začiatku hry je veľmi pomalé (očakávať niečo "
-"okolo jednej minúty)."
-
-#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
-#. i18n: ectx: property (text), widget (QPushButton, cancelbutton)
-#: Dialogs/jabbergameui.ui:318 Dialogs/newGameDialog.ui:230
-#: Dialogs/newGameSummary.ui:206 Dialogs/qplayersetupdialog.ui:126
-#: Dialogs/tcpconnectwidget.ui:98
-#, kde-format
-msgid "Cancel"
-msgstr "Zrušiť"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, JoinGameDialog)
 #: Dialogs/joingame.ui:13
@@ -1456,6 +1323,13 @@ msgstr ""
 msgid "Reach a goa&l"
 msgstr "Dosiahnuť cieľ"
 
+#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
+#: Dialogs/newGameDialog.ui:230 Dialogs/newGameSummary.ui:206
+#: Dialogs/qplayersetupdialog.ui:126 Dialogs/tcpconnectwidget.ui:98
+#, kde-format
+msgid "Cancel"
+msgstr "Zrušiť"
+
 #. i18n: ectx: property (text), widget (QPushButton, nextButton)
 #: Dialogs/newGameDialog.ui:250 Dialogs/qplayersetupdialog.ui:153
 #: Dialogs/tcpconnectwidget.ui:125
@@ -1463,7 +1337,7 @@ msgstr "Dosiahnuť cieľ"
 msgid "Next >>"
 msgstr "Ďalej >>"
 
-#: Dialogs/newGameDialogImpl.cpp:132 newgamesetup.cpp:44
+#: Dialogs/newGameDialogImpl.cpp:125 newgamesetup.cpp:44
 #, kde-format
 msgid ""
 "Skins directory not found - Verify your installation\n"
@@ -1472,7 +1346,7 @@ msgstr ""
 "Adresár povrchov nebol nájdený - Overte si vašu inštaláciu\n"
 "Program nemôže pokračovať"
 
-#: Dialogs/newGameDialogImpl.cpp:133 newgamesetup.cpp:45
+#: Dialogs/newGameDialogImpl.cpp:126 newgamesetup.cpp:45
 #, kde-format
 msgid "Fatal Error!"
 msgstr "Fatálna chyba!"
@@ -1633,7 +1507,7 @@ msgid "New Game or Exit"
 msgstr "Nová hra alebo koniec"
 
 #. i18n: ectx: property (text), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:24 GameLogic/gameautomaton.cpp:1667
+#: Dialogs/restartOrExitDialog.ui:24 GameLogic/gameautomaton.cpp:1625
 #, kde-format
 msgid "New Game"
 msgstr "Nová hra"
@@ -1657,7 +1531,7 @@ msgid "Do nothing. Game buttons will be available"
 msgstr "Nerobiť nič. Tlačidlá hry budú k dispozícii"
 
 #. i18n: ectx: property (text), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:47 GameLogic/gameautomaton.cpp:1668
+#: Dialogs/restartOrExitDialog.ui:47 GameLogic/gameautomaton.cpp:1626
 #, kde-format
 msgid "Exit"
 msgstr "Ukončiť"
@@ -1705,75 +1579,74 @@ msgstr[2] ""
 msgid "Fatal Error"
 msgstr "Fatálna chyba"
 
-#: GameLogic/gameautomaton.cpp:306
+#: GameLogic/gameautomaton.cpp:303
 #, kde-format
 msgid "KsirK - Network configuration"
 msgstr "KsirK - Nastavenie siete"
 
-#: GameLogic/gameautomaton.cpp:307
+#: GameLogic/gameautomaton.cpp:304
 #, kde-format
 msgid "Please type in the port number on which to offer connections:"
 msgstr "Prosím, zadajte číslo portu, na ktorom chcete ponúknuť spojenie:"
 
-#: GameLogic/gameautomaton.cpp:1194 GameLogic/gameautomaton.cpp:1223
+#: GameLogic/gameautomaton.cpp:1191
 #, kde-format
 msgid "Do you really want to end your current game and join another?"
 msgstr "Naozaj chcete ukončiť aktuálnu hru a pripojiť sa k inej?"
 
-#: GameLogic/gameautomaton.cpp:1194 GameLogic/gameautomaton.cpp:1223
-#: kgamewin.cpp:2649
+#: GameLogic/gameautomaton.cpp:1191 kgamewin.cpp:2550
 #, kde-format
 msgid "New game confirmation"
 msgstr "Potvrdenie novej hry"
 
-#: GameLogic/gameautomaton.cpp:1194 GameLogic/gameautomaton.cpp:1223
+#: GameLogic/gameautomaton.cpp:1191
 #, kde-format
 msgctxt "@action:button"
 msgid "Join New Game"
 msgstr "Pripojiť k novej hre"
 
-#: GameLogic/gameautomaton.cpp:1404
+#: GameLogic/gameautomaton.cpp:1362
 #, kde-format
 msgid "%1 (%2) joined game ; waiting for %3 players to connect"
 msgstr "%1 (%2) pripojil hru; čakanie na %3 hráčov, ktorí sa pripoja"
 
-#: GameLogic/gameautomaton.cpp:1510
+#: GameLogic/gameautomaton.cpp:1468
 #, kde-format
 msgid "Please choose another name"
 msgstr "Prosím, zvoľte iný názov"
 
-#: GameLogic/gameautomaton.cpp:1510
+#: GameLogic/gameautomaton.cpp:1468
 #, kde-format
 msgid "KsirK - Name already used!"
 msgstr "KsirK - Meno je už použité!"
 
-#: GameLogic/gameautomaton.cpp:1516
+#: GameLogic/gameautomaton.cpp:1474
 #, kde-format
 msgid "Player number %1, what's your name?"
 msgstr "Hráč číslo %1, aké je vše meno?"
 
-#: GameLogic/gameautomaton.cpp:1520
+#: GameLogic/gameautomaton.cpp:1478
 #, kde-format
 msgid "Error - Player %1, you have to choose a name."
 msgstr "Chyba - Hráč %1, musíte si vybrať meno."
 
-#: GameLogic/gameautomaton.cpp:1522
+#: GameLogic/gameautomaton.cpp:1480
 #, kde-format
 msgctxt "@info Forged player name"
 msgid "Player%1"
 msgstr "Hráč%1"
 
-#: GameLogic/gameautomaton.cpp:1573
+#: GameLogic/gameautomaton.cpp:1531
 #, kde-format
 msgid "Please choose another nation"
 msgstr "Prosím, zvoľte si iný ​​národ"
 
-#: GameLogic/gameautomaton.cpp:1573
+#: GameLogic/gameautomaton.cpp:1531
 #, kde-format
 msgid "KsirK - Nation already used!"
 msgstr "KsirK - ​​Národ je už použitý!"
 
-#: GameLogic/gameautomaton.cpp:1665
+#: GameLogic/gameautomaton.cpp:1623
 #, kde-format
 msgid ""
 "KsirK - Lost connection to server!\n"
@@ -1782,17 +1655,17 @@ msgstr ""
 "KsirK - Stratené spojenie so serverom!\n"
 "Čo chcete urobiť?"
 
-#: GameLogic/gameautomaton.cpp:1666
+#: GameLogic/gameautomaton.cpp:1624
 #, kde-format
 msgid "Starting a new game or exit."
 msgstr "Spustenie novej hry alebo koniec."
 
-#: GameLogic/gameautomaton.cpp:1669
+#: GameLogic/gameautomaton.cpp:1627
 #, kde-format
 msgid "Do nothing"
 msgstr "Nerobiť nič"
 
-#: GameLogic/gameautomaton.cpp:1691
+#: GameLogic/gameautomaton.cpp:1649
 #, kde-format
 msgid ""
 "Lost connection to a client.\n"
@@ -1803,24 +1676,24 @@ msgstr ""
 "V túto chvíľu môžete iba uložiť hru a začať novú, alebo skončiť.\n"
 "Toto bude zlepšené v budúcej verzii."
 
-#: GameLogic/gameautomaton.cpp:1692
+#: GameLogic/gameautomaton.cpp:1650
 #, kde-format
 msgid "KsirK - Lost connection to client!"
 msgstr "KsirK - Stratené spojenie s klientom!"
 
-#: GameLogic/gameautomaton.cpp:1694
+#: GameLogic/gameautomaton.cpp:1652
 #, kde-format
 msgid "Do want to save your game?"
 msgstr "Chcete uložiť vašu hru?"
 
-#: GameLogic/gameautomaton.cpp:1860 GameLogic/gameautomaton.cpp:2277
-#: kgamewin.cpp:2140 kgamewin.cpp:2235 kgamewin.cpp:2272
+#: GameLogic/gameautomaton.cpp:1818 GameLogic/gameautomaton.cpp:2235
+#: kgamewin.cpp:2041 kgamewin.cpp:2136 kgamewin.cpp:2173
 #, kde-format
 msgid "%1: %2 armies to place"
 msgstr "%1: %2 armád na umiestnenie"
 
-#: GameLogic/gameautomaton.cpp:1865 GameLogic/gameautomaton.cpp:2280
-#: kgamewinslots.cpp:813
+#: GameLogic/gameautomaton.cpp:1823 GameLogic/gameautomaton.cpp:2238
+#: kgamewinslots.cpp:793
 #, kde-format
 msgid ""
 "Now, place your armies in your countries<br>by clicking in the target "
@@ -1829,7 +1702,7 @@ msgstr ""
 "Teraz, umiestnite svoje armády vo vašich krajinách<br>kliknutím v cieľových "
 "krajinách."
 
-#: GameLogic/gameautomaton.cpp:1942
+#: GameLogic/gameautomaton.cpp:1900
 #, kde-format
 msgid ""
 "%1, your goal will be displayed. Please<br>make sure that no other player "
@@ -1838,28 +1711,28 @@ msgstr ""
 "%1, váš cieľ sa zobrazí. Prosím,<br>uistite sa, že žiaden iný hráč ho nemôže "
 "vidieť!"
 
-#: GameLogic/gameautomaton.cpp:1944
+#: GameLogic/gameautomaton.cpp:1902
 #, kde-format
 msgid "KsirK - Displaying Goal"
 msgstr "KsirK - Zobrazenie cieľa"
 
-#: GameLogic/gameautomaton.cpp:2130
+#: GameLogic/gameautomaton.cpp:2088
 #, kde-format
 msgid "%1 chooses its defense"
 msgstr "%1 si vyberá svoju obranu"
 
-#: GameLogic/gameautomaton.cpp:2290
+#: GameLogic/gameautomaton.cpp:2248
 #, kde-format
 msgid "%1 choose to end recycling; there are now %2 players who want so"
 msgstr ""
 "%1 volí ukončenie opätovného použitia; teraz sú %2 hráči, ktorí tak chcú"
 
-#: GameLogic/gameautomaton.cpp:2380
+#: GameLogic/gameautomaton.cpp:2338
 #, kde-format
 msgid "Problem : no one destroyed"
 msgstr "Problém: nikto nie je zničený"
 
-#: GameLogic/gameautomaton.cpp:2380 gestionSprites.cpp:873
+#: GameLogic/gameautomaton.cpp:2338 gestionSprites.cpp:873
 #: gestionSprites.cpp:893 gestionSprites.cpp:994 gestionSprites.cpp:1031
 #: gestionSprites.cpp:1066 gestionSprites.cpp:1120 gestionSprites.cpp:1157
 #: gestionSprites.cpp:1191
@@ -1867,7 +1740,7 @@ msgstr "Problém: nikto nie je zničený"
 msgid "KsirK - Error!"
 msgstr "KsirK - Chyba!"
 
-#: GameLogic/gameautomaton.cpp:2429
+#: GameLogic/gameautomaton.cpp:2387
 #, kde-format
 msgid ""
 "You entered an invalid password.\n"
@@ -1876,12 +1749,12 @@ msgstr ""
 "Zadali ste neplatné heslo.\n"
 "Skúste prosím znova."
 
-#: GameLogic/gameautomaton.cpp:2429
+#: GameLogic/gameautomaton.cpp:2387
 #, kde-format
 msgid "KsirK - Invalid password!"
 msgstr "KsirK - Neplatné heslo!"
 
-#: GameLogic/gameautomaton.cpp:2637
+#: GameLogic/gameautomaton.cpp:2588
 #, kde-format
 msgid ""
 "%1, you have not played anything this turn.\n"
@@ -1890,12 +1763,12 @@ msgstr ""
 "%1, nehrali ste nič v tomto kole.\n"
 "Naozaj chcete chcete prísť o vaše kolo?"
 
-#: GameLogic/gameautomaton.cpp:2638
+#: GameLogic/gameautomaton.cpp:2589
 #, kde-format
 msgid "Really Next Player?"
 msgstr "Naozaj nasledujúci hráč?"
 
-#: GameLogic/gameautomaton.cpp:2639
+#: GameLogic/gameautomaton.cpp:2590
 #, kde-format
 msgctxt "@action:button"
 msgid "Next Player"
@@ -1992,7 +1865,7 @@ msgstr "%1 v %2"
 msgid "KsirK - Goal Display"
 msgstr "KsirK - Zobrazenie cieľa"
 
-#: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:181
+#: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:170
 #, kde-format
 msgid "No message..."
 msgstr "Žiadna správa..."
@@ -2013,9 +1886,9 @@ msgstr ""
 
 #: GameLogic/onu.cpp:120 GameLogic/onu.cpp:137 gestionSprites.cpp:638
 #: gestionSprites.cpp:753 gestionSprites.cpp:798 gestionSprites.cpp:1354
-#: gestionSprites.cpp:1431 kgamewin.cpp:150 kgamewin.cpp:384 kgamewin.cpp:401
-#: kgamewin.cpp:418 kgamewin.cpp:587 kgamewin.cpp:743
-#: Sprites/animsprite.cpp:515 Sprites/animsprite.cpp:530
+#: gestionSprites.cpp:1431 kgamewin.cpp:139 kgamewin.cpp:302 kgamewin.cpp:319
+#: kgamewin.cpp:488 kgamewin.cpp:644 Sprites/animsprite.cpp:515
+#: Sprites/animsprite.cpp:530
 #, kde-format
 msgid "Error!"
 msgstr "Chyba!"
@@ -2077,861 +1950,78 @@ msgstr "Problém: nikto nie je zničený"
 msgid "Bug: who should be 0, 1 or 2."
 msgstr "Chyba: kto má byť 0, 1 alebo 2."
 
-#: Jabber/jabberaccount.cpp:211
-#, kde-format
-msgid "Please connect first."
-msgstr "Prosím, najprv sa pripojte."
-
-#: Jabber/jabberaccount.cpp:211
-#, kde-format
-msgid "Jabber Error"
-msgstr "Chyba Jabber"
-
-#: Jabber/jabberaccount.cpp:374
-#, kde-format
-msgid ""
-"SSL support could not be initialized for account %1. This is most likely "
-"because the QCA TLS plugin is not installed on your system."
-msgstr ""
-"Pre účet %1 nie je možné inicializovať podporu SSL. Pravdepodobne preto, že "
-"na vašom systému nie je nainštalovaný QCA TLS plugin."
-
-#: Jabber/jabberaccount.cpp:376
-#, kde-format
-msgid "Jabber SSL Error"
-msgstr "Chyba SSL Jabber"
-
-#: Jabber/jabberaccount.cpp:409
-#, kde-format
-msgid "The host name does not match the one in the certificate."
-msgstr "Meno hostiteľa nezodpovedá názvu v certifikáte."
-
-#: Jabber/jabberaccount.cpp:413
-#, kde-format
-msgid "The certificate is invalid."
-msgstr "Certifikát nie je platný."
-
-#: Jabber/jabberaccount.cpp:417
-#, kde-format
-msgid "No certificate was presented."
-msgstr "Nezadaný žiadny certifikát."
-
-#: Jabber/jabberaccount.cpp:427
-#, kde-format
-msgid "The Certificate Authority rejected the certificate."
-msgstr "Certifikačná autorita odmietla certifikát."
-
-#: Jabber/jabberaccount.cpp:431
-#, kde-format
-msgid "The certificate is not trusted."
-msgstr "Certifikát je nedôveryhodný."
-
-#: Jabber/jabberaccount.cpp:435
-#, kde-format
-msgid "The signature is invalid."
-msgstr "Podpis nie je platný."
-
-#: Jabber/jabberaccount.cpp:439
-#, kde-format
-msgid "The Certificate Authority is invalid."
-msgstr "Certifikačná autorita je neplatná."
-
-#: Jabber/jabberaccount.cpp:443
-#, kde-format
-msgid "Invalid certificate purpose."
-msgstr "Neplatný účel certifikátu."
-
-#: Jabber/jabberaccount.cpp:447
-#, kde-format
-msgid "The certificate is self-signed."
-msgstr "Certifikát je podpísaný sám sebou."
-
-#: Jabber/jabberaccount.cpp:451
-#, kde-format
-msgid "The certificate has been revoked."
-msgstr "Platnosť certifikátu bola zrušená."
-
-#: Jabber/jabberaccount.cpp:455
-#, kde-format
-msgid "Maximum certificate chain length was exceeded."
-msgstr "Prekročená maximálna dĺžka reťazca certifikátov."
-
-#: Jabber/jabberaccount.cpp:459
-#, kde-format
-msgid "The certificate has expired."
-msgstr "Platnosť certifikátu vypršala."
-
-#: Jabber/jabberaccount.cpp:463
-#, kde-format
-msgid "The Certificate Authority has expired."
-msgstr "Certifikačná autorita je vypršala."
-
-#: Jabber/jabberaccount.cpp:467
-#, kde-format
-msgid "Validity is unknown."
-msgstr "Platnosť je neznáma."
-
-#: Jabber/jabberaccount.cpp:478
-#, kde-format
-msgid ""
-"<qt><p>The identity and the certificate of server %1 could not be validated "
-"for account %2:</p><p>%3</p><p>%4</p><p>Do you want to continue?</p></qt>"
-msgstr ""
-"<qt><p>Identita a certifikát servera %1 sa nedá overiť pre účet %2:</p> <p>"
-"%3</p><p>%4</p><p>Chcete pokračovať?</p></qt>"
-
-#: Jabber/jabberaccount.cpp:484 Jabber/jabberaccount.cpp:489
-#, kde-format
-msgid ""
-"<qt><p>The certificate of server %1 could not be validated for account %2: "
-"%3</p><p>Do you want to continue?</p></qt>"
-msgstr ""
-"<qt><p>Certifikát servera %1 sa nedá overiť pre účet %2: %3</p> <p>Chcete "
-"pokračovať?</p></qt>"
-
-#: Jabber/jabberaccount.cpp:496
-#, kde-format
-msgid "Jabber Connection Certificate Problem"
-msgstr "Problém s certifikátom pripojenia Jabber"
-
-#: Jabber/jabberaccount.cpp:530 kgamewinslots.cpp:1011
-#, kde-format
-msgid ""
-"An encrypted connection with the Jabber server could not be established."
-msgstr "Šifrované spojenie s Jabber serverom nebolo možné nadviazať."
-
-#: Jabber/jabberaccount.cpp:531 kgamewinslots.cpp:1012
-#, kde-format
-msgid "Jabber Connection Error"
-msgstr "Chyba pripojenia k Jabberu"
-
-#: Jabber/jabberaccount.cpp:734
-#, kde-format
-msgid "Malformed packet received."
-msgstr "Prijatý neplatný paket."
-
-#: Jabber/jabberaccount.cpp:739
-#, kde-format
-msgid "There was an unrecoverable error in the protocol."
-msgstr "V protokole sa vyskytla neopraviteľná chyba."
-
-#: Jabber/jabberaccount.cpp:746
-#, kde-format
-msgid "Generic stream error."
-msgstr "Všeobecná chyba prúdu."
-
-#: Jabber/jabberaccount.cpp:750
-#, kde-format
-msgid "There was a conflict in the information received."
-msgstr "Nastal konflikt v prijatej informácii."
-
-#: Jabber/jabberaccount.cpp:753
-#, kde-format
-msgid "The stream timed out."
-msgstr "Vypršala platnosť toku dát."
-
-#: Jabber/jabberaccount.cpp:756
-#, kde-format
-msgid "Internal server error."
-msgstr "Interná chyba serveru."
-
-#: Jabber/jabberaccount.cpp:759
-#, kde-format
-msgid "Stream packet received from an invalid address."
-msgstr "Prijatý paket z neplatnej adresy."
-
-#: Jabber/jabberaccount.cpp:762
-#, kde-format
-msgid "Malformed stream packet received."
-msgstr "Prijatý neplatný paket."
-
-#: Jabber/jabberaccount.cpp:766
-#, kde-format
-msgid "Policy violation in the protocol stream."
-msgstr "Porušenie politiky v protokole."
-
-#: Jabber/jabberaccount.cpp:770
-#, kde-format
-msgid "Resource constraint."
-msgstr "Obmedzenie zdrojov."
-
-#: Jabber/jabberaccount.cpp:774
-#, kde-format
-msgid "System shutdown."
-msgstr "Vypnutie systému."
-
-#: Jabber/jabberaccount.cpp:777
-#, kde-format
-msgid "Unknown reason."
-msgstr "Neznámy dôvod."
-
-#: Jabber/jabberaccount.cpp:781
-#, kde-format
-msgid "There was an error in the protocol stream: %1"
-msgstr "Nastala chyba v protokole: %1"
-
-#: Jabber/jabberaccount.cpp:789
-#, kde-format
-msgid "Host not found."
-msgstr "Hostiteľ nenájdený."
-
-#: Jabber/jabberaccount.cpp:792
-#, kde-format
-msgid "Address is already in use."
-msgstr "Adresa sa už používa."
-
-#: Jabber/jabberaccount.cpp:795
-#, kde-format
-msgid "Cannot recreate the socket."
-msgstr "Nie je možné znovu vytvoriť soket."
-
-#: Jabber/jabberaccount.cpp:798
-#, kde-format
-msgid "Cannot bind the socket again."
-msgstr "Nie je možné znovu pripojiť soket."
-
-#: Jabber/jabberaccount.cpp:801
-#, kde-format
-msgid "Socket is already connected."
-msgstr "Soket je už pripojený."
-
-#: Jabber/jabberaccount.cpp:804
-#, kde-format
-msgid "Socket is not connected."
-msgstr "Socket nie je pripojený."
-
-#: Jabber/jabberaccount.cpp:807
-#, kde-format
-msgid "Socket is not bound."
-msgstr "Soket nie je viazaný."
-
-#: Jabber/jabberaccount.cpp:810
-#, kde-format
-msgid "Socket has not been created."
-msgstr "Soket nebol vytvorený."
-
-#: Jabber/jabberaccount.cpp:813
-#, kde-format
-msgid ""
-"The socket operation would block. You should not see this error: please use "
-"\"Report Bug\" from the Help menu."
-msgstr ""
-"Prevádzka soketu by sa blokovala. Nemali by ste vidieť túto chybu: prosím, "
-"použite \"Nahlásiť chybu\" v ponuke Pomocník."
-
-#: Jabber/jabberaccount.cpp:816
-#, kde-format
-msgid "Connection refused."
-msgstr "Spojenie odmietnuté."
-
-#: Jabber/jabberaccount.cpp:819
-#, kde-format
-msgid "Connection timed out."
-msgstr "Pripojenie vypršalo."
-
-#: Jabber/jabberaccount.cpp:822
-#, kde-format
-msgid "Connection attempt already in progress."
-msgstr "Pokus o pripojenie už prebieha."
-
-#: Jabber/jabberaccount.cpp:825
-#, kde-format
-msgid "Network failure."
-msgstr "Chyba siete."
-
-#: Jabber/jabberaccount.cpp:828
-#, kde-format
-msgid "Operation is not supported."
-msgstr "Operácia nie je podporovaná."
-
-#: Jabber/jabberaccount.cpp:831
-#, kde-format
-msgid "Socket timed out."
-msgstr "Platnosť soketu vypršala."
-
-#: Jabber/jabberaccount.cpp:839
-#, kde-format
-msgid "There was a connection error: %1"
-msgstr "Nastala chyba spojenia: %1"
-
-#: Jabber/jabberaccount.cpp:847
-#, kde-format
-msgid "Unknown host."
-msgstr "Neznámy hostiteľ."
-
-#: Jabber/jabberaccount.cpp:851
-#, kde-format
-msgid "Could not connect to a required remote resource."
-msgstr "Nepodarilo sa pripojiť k požadovanému vzdialenému zdroju."
-
-#: Jabber/jabberaccount.cpp:854
-#, kde-format
-msgid ""
-"It appears we have been redirected to another server; I do not know how to "
-"handle this."
-msgstr ""
-"Zdá se, že sme boli presmerovaní na iný server. Neviem, ako sa zachovať."
-
-#: Jabber/jabberaccount.cpp:857
-#, kde-format
-msgid "Unsupported protocol version."
-msgstr "Nepodporovaná verzia protokolu."
-
-#: Jabber/jabberaccount.cpp:860 Jabber/jabberaccount.cpp:877
-#: Jabber/jabberaccount.cpp:921 Jabber/jabberaccount.cpp:938
-#: Jabber/jabberaccount.cpp:955 Jabber/jabberaccount.cpp:963
-#, kde-format
-msgid "Unknown error."
-msgstr "Neznáma chyba."
-
-#: Jabber/jabberaccount.cpp:864
-#, kde-format
-msgid "There was a negotiation error: %1"
-msgstr "Nastala chyba počas dohadovania podmienok: %1"
-
-#: Jabber/jabberaccount.cpp:871
-#, kde-format
-msgid "Server rejected our request to start the TLS handshake."
-msgstr "Server odmietol spustenie TLS."
-
-#: Jabber/jabberaccount.cpp:874
-#, kde-format
-msgid "Failed to establish a secure connection."
-msgstr "Nepodarilo sa vytvoriť zabezpečené spojenie."
-
-#: Jabber/jabberaccount.cpp:881
-#, kde-format
-msgid "There was a Transport Layer Security (TLS) error: %1"
-msgstr "Nastala chyba TLS: %1"
-
-#: Jabber/jabberaccount.cpp:888
-#, kde-format
-msgid "Login failed with unknown reason."
-msgstr "Prihlásenie zlyhalo z neznámeho dôvodu."
-
-#: Jabber/jabberaccount.cpp:891
-#, kde-format
-msgid "No appropriate authentication mechanism available."
-msgstr "Nie je dispozícii žiadny vhodný mechanizmus prihlásenia."
-
-#: Jabber/jabberaccount.cpp:894
-#, kde-format
-msgid "Bad SASL authentication protocol."
-msgstr "Neplatný protokol overenia SASL."
-
-#: Jabber/jabberaccount.cpp:897
-#, kde-format
-msgid "Server failed mutual authentication."
-msgstr "Server zlyhal pri vzájomnom overení."
-
-#: Jabber/jabberaccount.cpp:900
-#, kde-format
-msgid "Encryption is required but not present."
-msgstr "Nutné šifrovanie, ale nie je dostupné."
-
-#: Jabber/jabberaccount.cpp:903
-#, kde-format
-msgid "Invalid user ID."
-msgstr "Neplatné ID užívateľa."
-
-#: Jabber/jabberaccount.cpp:906
-#, kde-format
-msgid "Invalid mechanism."
-msgstr "Neplatný mechanizmus."
-
-#: Jabber/jabberaccount.cpp:909
-#, kde-format
-msgid "Invalid realm."
-msgstr "Neplatný realm."
-
-#: Jabber/jabberaccount.cpp:912
-#, kde-format
-msgid "Mechanism too weak."
-msgstr "Zabezpečenie je príliš slabé."
-
-#: Jabber/jabberaccount.cpp:915
-#, kde-format
-msgid "Wrong credentials supplied. (check your user ID and password)"
-msgstr "Zadané neplatné dáta pre prihlásenie (overte ID a heslo)"
-
-#: Jabber/jabberaccount.cpp:918
-#, kde-format
-msgid "Temporary failure, please try again later."
-msgstr "Dočasné zlyhanie, skúste to neskôr."
-
-#: Jabber/jabberaccount.cpp:925
-#, kde-format
-msgid "There was an error authenticating with the server: %1"
-msgstr "Nastala chyba pri prihlásení k serveru: %1"
-
-#: Jabber/jabberaccount.cpp:932
-#, kde-format
-msgid "Transport Layer Security (TLS) problem."
-msgstr "Problém TLS."
-
-#: Jabber/jabberaccount.cpp:935
-#, kde-format
-msgid "Simple Authentication and Security Layer (SASL) problem."
-msgstr "Problém vo vrstve SASL."
-
-#: Jabber/jabberaccount.cpp:942
-#, kde-format
-msgid "There was an error in the security layer: %1"
-msgstr "Nastala chyba v zabezpečovacej vrstve: %1"
-
-#: Jabber/jabberaccount.cpp:949
-#, kde-format
-msgid "No permission to bind the resource."
-msgstr "Pre pripojenie k zdroju nedostatočné práva."
-
-#: Jabber/jabberaccount.cpp:952
-#, kde-format
-msgid "The resource is already in use."
-msgstr "Zdroj sa už používa."
-
-#: Jabber/jabberaccount.cpp:959
-#, kde-format
-msgid "Could not bind a resource: %1"
-msgstr "Nepodarilo sa pripojiť k zdroju: %1"
-
-#: Jabber/jabberaccount.cpp:977 Jabber/jabberaccount.cpp:981
-#, kde-format
-msgid "Connection problem with Jabber server %1"
-msgstr "Problém pripojenia so serverom Jabber %1"
-
-#: Jabber/jabberaccount.cpp:1127
-#, kde-format
-msgid ""
-"The Jabber user %1 removed %2's subscription to him/her. This account will "
-"no longer be able to view his/her online/offline status. Do you want to "
-"delete the contact?"
-msgstr ""
-"Jabber používateľ %1 odstránil prihlásenia %2 k nim. Tento účet už nedokáže "
-"zobraziť ich stav pripojenia. Chcete odstrániť kontakt?"
-
-#: Jabber/jabberaccount.cpp:1130 Jabber/jabbercontact.cpp:939
-#, kde-format
-msgid "Notification"
-msgstr "Správa"
-
-#: Jabber/jabberaccount.cpp:1130 Jabber/jabbercontact.cpp:940
-#, kde-format
-msgid "Keep"
-msgstr "Ponechať"
-
-#: Jabber/jabberaccount.cpp:1514 kgamewinslots.cpp:1101
-#, kde-format
-msgid "A password is required to join the room %1."
-msgstr "Vyžaduje sa vloženie hesla pre vstup do miestnosti %1."
-
-#: Jabber/jabberaccount.cpp:1523 kgamewinslots.cpp:1110
-#, kde-format
-msgid "Error trying to join %1: nickname %2 is already in use"
-msgstr "Chyba pri pokuse o pripojenie %1: prezývka %2 sa už používa"
-
-#: Jabber/jabberaccount.cpp:1524 Jabber/jabberprotocol.cpp:432
-#: kgamewinslots.cpp:1110
-#, kde-format
-msgid "Provide your nickname"
-msgstr "Zadajte svoju prezývku"
-
-#: Jabber/jabberaccount.cpp:1537
-#, kde-format
-msgid "You cannot join the room %1 because you have been banned"
-msgstr "Nemôžete sa pripojiť do miestnosti %1, pretože ste boli vykázaný(á)"
-
-#: Jabber/jabberaccount.cpp:1538 Jabber/jabberaccount.cpp:1545
-#: Jabber/jabberaccount.cpp:1555
-#, kde-format
-msgid "Jabber Group Chat"
-msgstr "Skupinový rozhovor Jabber"
-
-#: Jabber/jabberaccount.cpp:1544
-#, kde-format
-msgid ""
-"You cannot join the room %1 because the maximum number of users has been "
-"reached"
-msgstr ""
-"Do miestnosti %1 sa nemôžete pripojiť, pretože miestnosť je momentálne plná"
-
-#: Jabber/jabberaccount.cpp:1550 kgamewinslots.cpp:1128
-#, kde-format
-msgid "No reason given by the server"
-msgstr "Server neudal žiadny dôvod"
-
-#: Jabber/jabberaccount.cpp:1554
-#, kde-format
-msgid ""
-"There was an error processing your request for groupchat %1. (Reason: %2, "
-"Code %3)"
-msgstr ""
-"Nastala chyba pri spracúvaní požiadavky na skupinový rozhovor %1. (Dôvod %2, "
-"kód %3)"
-
-#: Jabber/jabberaccount.cpp:1708
-#, kde-format
-msgid ""
-"An error occurred while trying to remove the account:\n"
-"%1"
-msgstr ""
-"Nastala chyba pri pokuse o odstránenie účtu:\n"
-"%1"
-
-#: Jabber/jabberaccount.cpp:1709
-#, kde-format
-msgid "Jabber Account Unregistration"
-msgstr "Odregistrovanie účtu Jabber"
-
-#: Jabber/jabberbasecontact.cpp:128
-#, kde-format
-msgid "You cannot see each others' status."
-msgstr "Nemôžete navzájom vidieť svoj stav."
-
-#: Jabber/jabberbasecontact.cpp:132
-#, kde-format
-msgid "You can see this contact's status, but he/she cannot see your status."
-msgstr "Tento kontakt nemôže vidieť váš stav, ale vy môžete vidieť jeho stav."
-
-#: Jabber/jabberbasecontact.cpp:136
-#, kde-format
-msgid "This contact can see your status, but you cannot see his/her status."
-msgstr "Tento kontakt môže vidieť váš stav, ale vy nemôžete vidieť jeho stav."
-
-#: Jabber/jabberbasecontact.cpp:140
-#, kde-format
-msgid "You can see each others' status."
-msgstr "Môžete vidieť stav ostatných."
-
-#: Jabber/jabberbasecontact.cpp:250
-#, kde-format
-msgid "Client"
-msgstr "Klient"
-
-#: Jabber/jabberbasecontact.cpp:275
-#, kde-format
-msgid "Timestamp"
-msgstr "Časové razítko"
-
-#: Jabber/jabberbasecontact.cpp:282
-#, kde-format
-msgid "Message"
-msgstr "Správa"
-
-#: Jabber/jabberbasecontact.cpp:641
-#, kde-format
-msgid "Downloading of Jabber contact photo failed."
-msgstr "Sťahovanie fotografie Jabber kontaktu zlyhalo."
-
-#: Jabber/jabberbookmarks.cpp:135
-#, kde-format
-msgid "Groupchat bookmark"
-msgstr "Záložka skupinového rozhovoru"
-
-#: Jabber/jabbercontact.cpp:137
-#, kde-format
-msgid "Authorization"
-msgstr "Prihlásenie"
-
-#: Jabber/jabbercontact.cpp:143
-#, kde-format
-msgid "(Re)send Authorization To"
-msgstr "Znovu poslať overenie pre"
-
-#: Jabber/jabbercontact.cpp:150
-#, kde-format
-msgid "(Re)request Authorization From"
-msgstr "Znovu vyžiadať overenie od"
-
-#: Jabber/jabbercontact.cpp:157
-#, kde-format
-msgid "Remove Authorization From"
-msgstr "Odstrániť overenie pre"
-
-#: Jabber/jabbercontact.cpp:162
-#, kde-format
-msgid "Set Availability"
-msgstr "Nastaviť dostupnosť"
-
-#: Jabber/jabbercontact.cpp:171
-#, kde-format
-msgid "Online"
-msgstr "Pripojený"
-
-#: Jabber/jabbercontact.cpp:172
-#, kde-format
-msgid "Free to Chat"
-msgstr "K dispozícii pre rozhovor"
-
-#: Jabber/jabbercontact.cpp:173
-#, kde-format
-msgid "Away"
-msgstr "Neprítomný"
-
-#: Jabber/jabbercontact.cpp:174
-#, kde-format
-msgid "Extended Away"
-msgstr "Rozšírená neprítomnosť"
-
-#: Jabber/jabbercontact.cpp:175
-#, kde-format
-msgid "Do Not Disturb"
-msgstr "Nevyrušovať"
-
-#: Jabber/jabbercontact.cpp:176
-#, kde-format
-msgid "Invisible"
-msgstr "Neviditeľný"
-
-#: Jabber/jabbercontact.cpp:180
-#, kde-format
-msgid "Select Resource"
-msgstr "Vyberte zdroj"
-
-#: Jabber/jabbercontact.cpp:197
-#, kde-format
-msgid "Automatic (best/default resource)"
-msgstr "Automaticky (najlepší/štandardný zdroj)"
-
-#: Jabber/jabbercontact.cpp:250
-#, kde-format
-msgid "Voice call"
-msgstr "Hlasový hovor"
-
-#: Jabber/jabbercontact.cpp:283
-#, kde-format
-msgid "The original message is: <i>\" %1 \"</i><br />"
-msgstr "Pôvodná správa je: <i>\" %1 \"</i><br />"
-
-#: Jabber/jabbercontact.cpp:284
-#, kde-format
-msgid ""
-"<qt><i>%1</i> has invited you to join the conference <b>%2</b><br />%3<br /"
-">If you want to accept and join, just <b>enter your nickname</b> and press "
-"ok<br />If you want to decline, press cancel</qt>"
-msgstr ""
-"<qt><i>%1</i> vás pozval/a do konferencie <b>%2</b><br />%3 <br />Ak chcete "
-"pozvanie prijať, zadajte svoju <b>prezývku</b> a stlačte OK. <br />Ak chcete "
-"odmietnuť, stlačte Zrušiť.</qt>"
-
-#: Jabber/jabbercontact.cpp:290
-#, kde-format
-msgid "Invited to a conference - Jabber Plugin"
-msgstr "Pozvanie do konferencie - Jabber modul"
-
-#: Jabber/jabbercontact.cpp:307
-#, kde-format
-msgid "Message has been displayed"
-msgstr "Správa bola zobrazená"
-
-#: Jabber/jabbercontact.cpp:309
-#, kde-format
-msgid "Message has been delivered"
-msgstr "Správa bola doručená"
-
-#: Jabber/jabbercontact.cpp:312
-#, kde-format
-msgid "Message stored on the server, contact offline"
-msgstr "Správa uložená na serveri, kontakt nie je pripojený"
-
-#: Jabber/jabbercontact.cpp:319
-#, kde-format
-msgid "%1 has ended his/her participation in the chat session."
-msgstr "%1 ukončil/a účasť v tejto konverzácii."
-
-#: Jabber/jabbercontact.cpp:357 Jabber/jabbergroupcontact.cpp:171
-#: Jabber/jabbergroupmembercontact.cpp:122
-#, kde-format
-msgid "Your message could not be delivered: \"%1\", Reason: \"%2\""
-msgstr "Vašu správu nebolo možné doručiť: \"%1\", Dôvod: \"%2\""
-
-#: Jabber/jabbercontact.cpp:938
-#, kde-format
-msgid "Do you also want to remove user %1's authorization to see your status?"
-msgstr "Chcete tiež odstrániť povolenie používateľa %1, aby videl váš stav?"
-
-#: Jabber/jabbercontact.cpp:1039 Jabber/jabbergroupcontact.cpp:310
-#: Jabber/jabbergroupmembercontact.cpp:159
-#, kde-format
-msgid "Kopete File Transfer"
-msgstr "Prenos súborov Kopete"
-
-#: Jabber/jabbercontact.cpp:1110
-#, kde-format
-msgid ""
-"You have preselected a resource for contact %1, but you still have open chat "
-"windows for this contact. The preselected resource will only apply to newly "
-"opened chat windows."
-msgstr ""
-"Prednastavili ste zdroj pre kontakt %1, ale máte s týmto kontaktom stále "
-"otvorené okná pokecu. Prednastavený zdroj sa použije iba pre novo otvorené "
-"okná."
-
-#: Jabber/jabbercontact.cpp:1114
-#, kde-format
-msgid "Jabber Resource Selector"
-msgstr "Výber zdroja Jabber"
-
-#: Jabber/jabbergroupcontact.cpp:120
-#, kde-format
-msgid "Change nickname"
-msgstr "Zmeniť prezývku"
-
-#: Jabber/jabbergroupcontact.cpp:367
-#, kde-format
-msgid "Change nickname - Jabber Plugin"
-msgstr "Zmeniť prezývku - plugin Jabber"
-
-#: Jabber/jabbergroupcontact.cpp:368
-#, kde-format
-msgid "Please enter the new nickname you want to have in the room <i>%1</i>"
-msgstr "Prosím zadajte prezývku, akú chcete používať v miestnosti <i>%1</i>"
-
-#: Jabber/jabberprotocol.cpp:336
-#, kde-format
-msgid "Choose Account"
-msgstr "Vybrať účet"
-
-#: Jabber/jabberprotocol.cpp:342
-#, kde-format
-msgid "Choose an account to handle the URL %1"
-msgstr "Zvoľte účet na spracovanie URL %1"
-
-#: Jabber/jabberprotocol.cpp:391
-#, kde-format
-msgid "Do you want to add '%1' to your contact list?"
-msgstr "Chcete pridať '%1' do vášho zoznamu kontaktov?"
-
-#: Jabber/jabberprotocol.cpp:392
-#, kde-format
-msgid "Add"
-msgstr "Pridať"
-
-#: Jabber/jabberprotocol.cpp:392
-#, kde-format
-msgid "Do Not Add"
-msgstr "Nepridať"
-
-#: Jabber/jabberprotocol.cpp:408
-#, kde-format
-msgid "Do you want to remove '%1' from your contact list?"
-msgstr "Chcete odstrániť '%1' z vášho zoznamu kontaktov?"
-
-#: Jabber/jabberprotocol.cpp:409
-#, kde-format
-msgid "Remove"
-msgstr "Odstrániť"
-
-#: Jabber/jabberprotocol.cpp:409
-#, kde-format
-msgid "Do Not Remove"
-msgstr "Neodstraňovať"
-
-#: Jabber/jabberprotocol.cpp:431
-#, kde-format
-msgid "Please enter your nickname for the room %1"
-msgstr "Prosím zadajte vašu prezývku pre miestnosť %1"
-
-#: Jabber/jabberprotocol.cpp:454
-#, kde-format
-msgid "You have been invited to %1"
-msgstr "Boli ste pozvaný do %1"
-
-#: kgamewin.cpp:150 kgamewin.cpp:743
+#: kgamewin.cpp:139 kgamewin.cpp:644
 #, kde-format
 msgid "Cannot load icon<br>Program cannot continue"
 msgstr "Nie je možné načítať ikonu<br>Program nemôže pokračovať"
 
-#: kgamewin.cpp:384 kgamewin.cpp:401 kgamewin.cpp:418
+#: kgamewin.cpp:302 kgamewin.cpp:319
 #, kde-format
 msgid "Cannot load button image %1<br>Program cannot continue"
 msgstr "Nie je možné načítať obrázok tlačidla %1<br>Program nemôže pokračovať"
 
-#: kgamewin.cpp:387
-#, kde-format
-msgid "Play over Jabber"
-msgstr "Hrať cez Jabber"
-
-#: kgamewin.cpp:388
-#, kde-format
-msgid "Play KsirK over the Jabber Network"
-msgstr "Hrať KsirK cez Jabber sieť"
-
-#: kgamewin.cpp:389
-#, kde-format
-msgid "Jabber"
-msgstr "Jabber"
-
-#: kgamewin.cpp:391
-#, kde-format
-msgid ""
-"Allow to connect to a KsirK Jabber Multi User Gaming Room to create new "
-"games or to join present games"
-msgstr ""
-"Umožniť pripojenie ku KsirK Jabber Multi User Gaming miestnosti pre "
-"vytvorenie nových hier alebo pripojenie k aktuálnym hrám"
-
 #. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
-#: kgamewin.cpp:404 mainMenu.ui:104
+#: kgamewin.cpp:305 mainMenu.ui:104
 #, kde-format
 msgid "New Standard TCP/IP Network Game"
 msgstr "Nová sieťová hra štandardu TCP/IP"
 
-#: kgamewin.cpp:405
+#: kgamewin.cpp:306
 #, kde-format
 msgid "New TCP/IP"
 msgstr "Nové TCP/IP"
 
-#: kgamewin.cpp:407
+#: kgamewin.cpp:308
 #, kde-format
 msgid "Create a new standard TCP/IP network game"
 msgstr "Vytvoriť novú sieťovú hra štandardu TCP/IP sieťovú hra"
 
-#: kgamewin.cpp:422
+#: kgamewin.cpp:323
 #, kde-format
 msgid "Join a Standard TCP/IP Network Game"
 msgstr "Pripojiť sa k sieťovej hre štandardu TCP/IP"
 
-#: kgamewin.cpp:423
+#: kgamewin.cpp:324
 #, kde-format
 msgid "Join TCP/IP"
 msgstr "Pripojiť TCP/IP"
 
-#: kgamewin.cpp:425
+#: kgamewin.cpp:326
 #, kde-format
 msgid "Join a standard TCP/IP network game"
 msgstr "Pripojiť sa k sieťovej hre štandardu TCP/IP"
 
-#: kgamewin.cpp:431
+#: kgamewin.cpp:332
 #, kde-format
 msgid "Display the Current Player's Goal"
 msgstr "Zobraziť aktuálny hráčov cieľ"
 
-#: kgamewin.cpp:434
+#: kgamewin.cpp:335
 #, kde-format
 msgid "Display the current player's goal"
 msgstr "Zobraziť aktuálny hráčov cieľ"
 
-#: kgamewin.cpp:441
+#: kgamewin.cpp:342
 #, kde-format
 msgid "Contextual Help"
 msgstr "Kontextová nápoveda"
 
-#: kgamewin.cpp:452
+#: kgamewin.cpp:353
 #, kde-format
 msgid "Lets the next player play"
 msgstr "Umožniť ďalšiemu hráčovi hrať"
 
-#: kgamewin.cpp:457
+#: kgamewin.cpp:358
 #, kde-format
 msgid "Finish moves"
 msgstr "Ukončiť ťahy"
 
-#: kgamewin.cpp:459
+#: kgamewin.cpp:360
 #, kde-format
 msgid "Finish moving the current sprites"
 msgstr "Dokončiť presúvanie aktuálnych obrázkových zástupcov"
 
-#: kgamewin.cpp:587
+#: kgamewin.cpp:488
 #, kde-format
 msgid ""
 "World definition file not found - Verify your installation<br>Program cannot "
@@ -2940,32 +2030,32 @@ msgstr ""
 "Definičný súbor sveta nebol nájdený - Overte si vašu inštaláciu<br>Program "
 "nemôže pokračovať"
 
-#: kgamewin.cpp:807
+#: kgamewin.cpp:708
 #, kde-format
 msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
 msgstr "<font color=\"red\">%1 dobyl %2 z %3</font>"
 
-#: kgamewin.cpp:831
+#: kgamewin.cpp:732
 #, kde-format
 msgid "%1, you are defeated! Bye, bye..."
 msgstr "%1, ste porazení! Majte sa..."
 
-#: kgamewin.cpp:903
+#: kgamewin.cpp:804
 #, kde-format
 msgid "%1: it is up to you again"
 msgstr "%1:  je to znovu len na vás"
 
-#: kgamewin.cpp:915
+#: kgamewin.cpp:816
 #, kde-format
 msgid "%1 won!"
 msgstr "%1 vyhral!"
 
-#: kgamewin.cpp:918
+#: kgamewin.cpp:819
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
 msgstr "<big><b>%1</b>, vyhrali ste!</big>"
 
-#: kgamewin.cpp:922
+#: kgamewin.cpp:823
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
@@ -2973,44 +2063,44 @@ msgid ""
 msgstr ""
 "<br>Víťazov cieľ  bol uvedený takto:<br><i>%1</i><br><br>Chcete hrať znovu?"
 
-#: kgamewin.cpp:928
+#: kgamewin.cpp:829
 #, kde-format
 msgid "<br>You conquered all the world!"
 msgstr "<br>Dobyli ste celý svet!"
 
-#: kgamewin.cpp:932
+#: kgamewin.cpp:833
 #, kde-format
 msgid "<br>He conquered all the world!"
 msgstr "<br>Dobyl celý svet!"
 
-#: kgamewin.cpp:1049
+#: kgamewin.cpp:950
 #, kde-format
 msgid "Do you want to quit the game?"
 msgstr "Chcete ukončiť hru?"
 
-#: kgamewin.cpp:1051
+#: kgamewin.cpp:952
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
 msgstr "Ukončiť hru"
 
-#: kgamewin.cpp:1063
+#: kgamewin.cpp:964
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
 msgstr "Chcete uložiť vašu hru pred ukončením?"
 
-#: kgamewin.cpp:1101
+#: kgamewin.cpp:1002
 #, kde-format
 msgctxt "@title:window"
 msgid "KsirK - Load Game"
 msgstr "KsirK - Načítať hru"
 
-#: kgamewin.cpp:1139
+#: kgamewin.cpp:1040
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
 msgstr "Čakanie na pripojenie %1 sieťových hráčov."
 
-#: kgamewin.cpp:1218
+#: kgamewin.cpp:1119
 #, kde-format
 msgid ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
@@ -3028,88 +2118,88 @@ msgstr[2] ""
 "<font color=\"red\">%2</font> na vás útočí z <font color=\"red\">%3</font> s "
 "%1 armádami!<br> Ako chcete brániť <font color=\"blue\">%4</font>?"
 
-#: kgamewin.cpp:1247
+#: kgamewin.cpp:1148
 #, kde-format
 msgid "Defend 1"
 msgstr "Bránenie sa 1"
 
-#: kgamewin.cpp:1248
+#: kgamewin.cpp:1149
 #, kde-format
 msgid "Defend 2"
 msgstr "Bránenie sa 2"
 
-#: kgamewin.cpp:1249
+#: kgamewin.cpp:1150
 #, kde-format
 msgid "Defend-Auto"
 msgstr "Automatické bránenie sa"
 
-#: kgamewin.cpp:1368
+#: kgamewin.cpp:1269
 #, kde-format
 msgid "Waiting for %1 players to connect"
 msgstr "Čakanie na pripojenie %1 hráčov..."
 
-#: kgamewin.cpp:1758 kgamewin.cpp:1798
+#: kgamewin.cpp:1659 kgamewin.cpp:1699
 msgid "There is no country here!"
 msgstr "Nie je tu žiadna krajina!"
 
-#: kgamewin.cpp:1762 kgamewin.cpp:1803
+#: kgamewin.cpp:1663 kgamewin.cpp:1704
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
 msgstr "Nie ste vlastníkom prvej krajiny: %1!"
 
-#: kgamewin.cpp:1766
+#: kgamewin.cpp:1667
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
 msgstr "Nie ste vlastníkom druhej krajiny: %1!"
 
-#: kgamewin.cpp:1770 kgamewin.cpp:1814
+#: kgamewin.cpp:1671 kgamewin.cpp:1715
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr "Pokúšate sa presunúť armády z %1 na seba!"
 
-#: kgamewin.cpp:1775 kgamewin.cpp:1820
+#: kgamewin.cpp:1676 kgamewin.cpp:1721
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
 msgstr "%1 nie je sused %2!"
 
-#: kgamewin.cpp:1781
+#: kgamewin.cpp:1682
 #, kde-format
 msgid "Moving armies from %1 to %2."
 msgstr "Presúvanie armád z %1 do %2"
 
-#: kgamewin.cpp:1809
+#: kgamewin.cpp:1710
 #, kde-format
 msgid "You are the owner of the second country: %1!"
 msgstr "Ste vlastníkom druhej krajiny: %1!"
 
-#: kgamewin.cpp:1827
+#: kgamewin.cpp:1728
 msgid "Ready to fight!"
 msgstr "Pripravený na boj!"
 
-#: kgamewin.cpp:1921
+#: kgamewin.cpp:1822
 msgid "<font color=\"orange\">No country here!</font>"
 msgstr "<font color=\"orange\">Tu nie je žiadna krajina!</font>"
 
-#: kgamewin.cpp:1929
+#: kgamewin.cpp:1830
 #, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr "<font color=\"orange\">Nie ste vlastníkom %1!</font>"
 
-#: kgamewin.cpp:1936
+#: kgamewin.cpp:1837
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr "<font color=\"orange\">Iba %1 armád je v %2!</font>"
 
-#: kgamewin.cpp:2076
+#: kgamewin.cpp:1977
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
 msgstr "%1, bránite sa iba s armádou, ktorú máte v %2."
 
-#: kgamewin.cpp:2300
+#: kgamewin.cpp:2201
 msgid "Exchange armies again or continue?"
 msgstr "Vymeniť armády znovu alebo pokračovať?"
 
-#: kgamewin.cpp:2325
+#: kgamewin.cpp:2226
 #, kde-format
 msgid ""
 "You must distribute\n"
@@ -3118,48 +2208,48 @@ msgstr ""
 "Musíte rozložiť\n"
 "všetky vaše armády"
 
-#: kgamewin.cpp:2325 main.cpp:42
+#: kgamewin.cpp:2226 main.cpp:42
 #, kde-format
 msgid "KsirK"
 msgstr "KsirK"
 
-#: kgamewin.cpp:2465
+#: kgamewin.cpp:2366
 msgid "Battle ongoing."
 msgstr "Bitka pokračuje."
 
-#: kgamewin.cpp:2586 kgamewin.cpp:2597 kgamewin.cpp:2620
+#: kgamewin.cpp:2487 kgamewin.cpp:2498 kgamewin.cpp:2521
 #, kde-format
 msgid "%1, it is up to you."
 msgstr "%1, je to na vás."
 
-#: kgamewin.cpp:2649
+#: kgamewin.cpp:2550
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
 msgstr "Naozaj chcete ukončiť aktuálnu hru a spustiť novú?"
 
-#: kgamewin.cpp:2649
+#: kgamewin.cpp:2550
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Spustiť novú hru"
 
-#: kgamewin.cpp:2905
+#: kgamewin.cpp:2806
 msgid "<b>KsirK quick Introduction</b>"
 msgstr "<b>Rýchly úvod KsirK</b>"
 
-#: kgamewin.cpp:2909
+#: kgamewin.cpp:2810
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr ""
 "Útoky a presuny sa vydávajú cez preťahovanie medzi susednými krajinami."
 
-#: kgamewin.cpp:2913
+#: kgamewin.cpp:2814
 msgid "Start a new game or join a network game with the menu or the toolbar..."
 msgstr ""
 "Začať novú hru alebo sa pripojiť k sieťovej hre s ponukou alebo panelom "
 "nástrojov..."
 
-#: kgamewin.cpp:2917
+#: kgamewin.cpp:2818
 msgid ""
 "and then let the system guide you through messages and tooltips appearing on "
 "buttons when hovering above them. You can disable bubble help in the options "
@@ -3168,12 +2258,12 @@ msgstr ""
 "a nechajte systém previesť vás cez správy a tipy, ktoré sa objavujú, keď "
 "prechádzate nad nimi. Môžete vypnúť bublinovú pomoc v okne Možnosti."
 
-#: kgamewin.cpp:2924
+#: kgamewin.cpp:2825
 #, kde-format
 msgid "Don't show messages anymore"
 msgstr "Neukazovať už správy"
 
-#: kgamewinslots.cpp:112
+#: kgamewinslots.cpp:108
 #, kde-format
 msgid "%2 belongs to %3. 1 army."
 msgid_plural "%2 belongs to %3. %1 armies."
@@ -3181,33 +2271,33 @@ msgstr[0] "%2 patrí %3. 1 armáda."
 msgstr[1] "%2 patrí %3.  %1 armády."
 msgstr[2] "%2 patrí %3.  %1 armád."
 
-#: kgamewinslots.cpp:454
+#: kgamewinslots.cpp:434
 #, kde-format
 msgid "Cannot save when waiting for a defense."
 msgstr "Nie je možné uložiť pri čakaní na obranu."
 
-#: kgamewinslots.cpp:461
+#: kgamewinslots.cpp:441
 #, kde-format
 msgctxt "@title:window"
 msgid "KsirK - Save Game"
 msgstr "KsirK - Uložiť hru"
 
-#: kgamewinslots.cpp:465
+#: kgamewinslots.cpp:445
 #, kde-format
 msgid "Saving canceled"
 msgstr "Ukladanie bolo zrušené"
 
-#: kgamewinslots.cpp:476
+#: kgamewinslots.cpp:456
 #, kde-format
 msgid "Game saved to %1"
 msgstr "Hra uložená do %1"
 
-#: kgamewinslots.cpp:483
+#: kgamewinslots.cpp:463
 #, kde-format
 msgid "Only game master can save the game in network playing."
 msgstr "Iba vedúci hry môže uložiť hru pri sieťovom hraní."
 
-#: kgamewinslots.cpp:809
+#: kgamewinslots.cpp:789
 #, kde-format
 msgid ""
 "Attack by drag & drop between countries<br>Move armies the same way (last "
@@ -3358,37 +2448,6 @@ msgstr "Ak je pravda, počet armád sa zobrazí na každej krajine."
 msgid "The graphical theme to be used."
 msgstr "Grafická téma, ktorá bude použitá."
 
-#. i18n: ectx: label, entry (jabberId), group (General)
-#: ksirksettings.kcfg:28
-#, kde-format
-msgid "The last used Jabber Id."
-msgstr "Naposledy použité Jabber ID."
-
-#. i18n: ectx: label, entry (jabberPassword), group (General)
-#: ksirksettings.kcfg:31
-#, kde-format
-msgid "The password of the last used Jabber Id."
-msgstr "Heslo naposledy použitého Jabber ID."
-
-#. i18n: ectx: label, entry (roomJid), group (General)
-#: ksirksettings.kcfg:34
-#, kde-format
-msgid "The last used Jabber groupchat room."
-msgstr "Naposledy použitá miestnosť skupinového chatu Jabber."
-
-#. i18n: ectx: label, entry (roomPassword), group (General)
-#: ksirksettings.kcfg:37
-#, kde-format
-msgid "The password for last used Jabber groupchat room."
-msgstr "Heslo pre naposledy použitú miestnosť skupinového chatu Jabber."
-
-#. i18n: ectx: label, entry (nickname), group (General)
-#: ksirksettings.kcfg:40
-#, kde-format
-msgid "The nickname used in the last used Jabber groupchat room."
-msgstr ""
-"Prezývka použitá v naposledy použitej miestnosti skupinového chatu Jabber."
-
 #. i18n: ectx: Menu (game)
 #: ksirkui.rc:10
 #, kde-format
@@ -3396,19 +2455,19 @@ msgid "&Game"
 msgstr "&Hra"
 
 #. i18n: ectx: Menu (settings)
-#: ksirkui.rc:24
+#: ksirkui.rc:23
 #, kde-format
 msgid "&Settings"
 msgstr "&Nastavenia"
 
 #. i18n: ectx: Menu (help)
-#: ksirkui.rc:26
+#: ksirkui.rc:25
 #, kde-format
 msgid "&Help"
 msgstr "&Pomocník"
 
 #. i18n: ectx: ToolBar (mainToolBar)
-#: ksirkui.rc:31
+#: ksirkui.rc:30
 #, kde-format
 msgid "Main Toolbar"
 msgstr "Hlavný panel nástrojov"
@@ -3479,11 +2538,6 @@ msgstr ""
 "Benjamin Moreau<br/>&nbsp;&nbsp;Gaël Clouet<br/>&nbsp;&nbsp;Guillaume "
 "Pelouas<br/>&nbsp;&nbsp;Joël Marco<br/>&nbsp;&nbsp;Laurent Dang<br/>&nbsp;"
 "&nbsp;Nicolas Linard<br/>&nbsp;&nbsp;Vincent Sac"
-
-#: mainMenu.cpp:37
-#, kde-format
-msgid "Play KsirK over Jabber Network"
-msgstr "Hrať KsirK cez Jabber sieť"
 
 #. i18n: ectx: property (text), widget (QLabel, lTitle)
 #: mainMenu.ui:38
@@ -3589,6 +2643,584 @@ msgstr "Chyba - Neznáme int údaje povrchu:"
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Chyba - Neznáme údaje reťazca povrchu:"
+
+#~ msgid "Nickname"
+#~ msgstr "Prezývka"
+
+#~ msgid "Skin"
+#~ msgstr "Téma"
+
+#~ msgid "Nb players"
+#~ msgstr "Počet hráčov"
+
+#~ msgid "Connection to the Jabber Network"
+#~ msgstr "Pripojenie k sieti Jabber"
+
+#~ msgid "Jabber ID:"
+#~ msgstr "Jabber ID:"
+
+#~ msgid "kleag@kdetalk.net"
+#~ msgstr "kleag@kdetalk.net"
+
+#~ msgid "12345678"
+#~ msgstr "12345678"
+
+#~ msgid "Password:"
+#~ msgstr "Heslo:"
+
+#~ msgid "Connect"
+#~ msgstr "Pripojiť"
+
+#~ msgid "State:"
+#~ msgstr "Štát:"
+
+#~ msgid "Joining a KsirK Jabber Chatroom"
+#~ msgstr "Pripojenie k KsirK Jabber Chatroom"
+
+#~ msgid "Room JID:"
+#~ msgstr "JID miestnosti:"
+
+#~ msgid "Nickname:"
+#~ msgstr "Prezývka:"
+
+#~ msgid "Room Password:"
+#~ msgstr "Heslo miestnosti:"
+
+#~ msgid "Join Room"
+#~ msgstr "Vstúpiť do miestnosti"
+
+#~ msgid "Games in the Room"
+#~ msgstr "Hry v miestnosti"
+
+#~ msgid "Start a New Game"
+#~ msgstr "Spustiť novú hru"
+
+#~ msgid "Join Selected Game"
+#~ msgstr "Pripojiť sa k vybranej hre"
+
+#~ msgid "Load a Saved Game..."
+#~ msgstr "Načítať uloženú hru..."
+
+#~ msgid ""
+#~ "<b>Note:</b> Playing over the Jabber network is an experimental feature "
+#~ "in KsirK.<br/>Particularly, the distribution of armies at game beginning "
+#~ "is very slow (expect something like one minute)."
+#~ msgstr ""
+#~ "<b>Poznámka:</b>Hranie po sieti Jabber je experimentálna funkcia v KsirK."
+#~ "<br/>Zvlášť, rozdelenie armád na začiatku hry je veľmi pomalé (očakávať "
+#~ "niečo okolo jednej minúty)."
+
+#~ msgid "Please connect first."
+#~ msgstr "Prosím, najprv sa pripojte."
+
+#~ msgid "Jabber Error"
+#~ msgstr "Chyba Jabber"
+
+#~ msgid ""
+#~ "SSL support could not be initialized for account %1. This is most likely "
+#~ "because the QCA TLS plugin is not installed on your system."
+#~ msgstr ""
+#~ "Pre účet %1 nie je možné inicializovať podporu SSL. Pravdepodobne preto, "
+#~ "že na vašom systému nie je nainštalovaný QCA TLS plugin."
+
+#~ msgid "Jabber SSL Error"
+#~ msgstr "Chyba SSL Jabber"
+
+#~ msgid "The host name does not match the one in the certificate."
+#~ msgstr "Meno hostiteľa nezodpovedá názvu v certifikáte."
+
+#~ msgid "The certificate is invalid."
+#~ msgstr "Certifikát nie je platný."
+
+#~ msgid "No certificate was presented."
+#~ msgstr "Nezadaný žiadny certifikát."
+
+#~ msgid "The Certificate Authority rejected the certificate."
+#~ msgstr "Certifikačná autorita odmietla certifikát."
+
+#~ msgid "The certificate is not trusted."
+#~ msgstr "Certifikát je nedôveryhodný."
+
+#~ msgid "The signature is invalid."
+#~ msgstr "Podpis nie je platný."
+
+#~ msgid "The Certificate Authority is invalid."
+#~ msgstr "Certifikačná autorita je neplatná."
+
+#~ msgid "Invalid certificate purpose."
+#~ msgstr "Neplatný účel certifikátu."
+
+#~ msgid "The certificate is self-signed."
+#~ msgstr "Certifikát je podpísaný sám sebou."
+
+#~ msgid "The certificate has been revoked."
+#~ msgstr "Platnosť certifikátu bola zrušená."
+
+#~ msgid "Maximum certificate chain length was exceeded."
+#~ msgstr "Prekročená maximálna dĺžka reťazca certifikátov."
+
+#~ msgid "The certificate has expired."
+#~ msgstr "Platnosť certifikátu vypršala."
+
+#~ msgid "The Certificate Authority has expired."
+#~ msgstr "Certifikačná autorita je vypršala."
+
+#~ msgid "Validity is unknown."
+#~ msgstr "Platnosť je neznáma."
+
+#~ msgid ""
+#~ "<qt><p>The identity and the certificate of server %1 could not be "
+#~ "validated for account %2:</p><p>%3</p><p>%4</p><p>Do you want to continue?"
+#~ "</p></qt>"
+#~ msgstr ""
+#~ "<qt><p>Identita a certifikát servera %1 sa nedá overiť pre účet %2:</p> "
+#~ "<p>%3</p><p>%4</p><p>Chcete pokračovať?</p></qt>"
+
+#~ msgid ""
+#~ "<qt><p>The certificate of server %1 could not be validated for account "
+#~ "%2: %3</p><p>Do you want to continue?</p></qt>"
+#~ msgstr ""
+#~ "<qt><p>Certifikát servera %1 sa nedá overiť pre účet %2: %3</p> <p>Chcete "
+#~ "pokračovať?</p></qt>"
+
+#~ msgid "Jabber Connection Certificate Problem"
+#~ msgstr "Problém s certifikátom pripojenia Jabber"
+
+#~ msgid ""
+#~ "An encrypted connection with the Jabber server could not be established."
+#~ msgstr "Šifrované spojenie s Jabber serverom nebolo možné nadviazať."
+
+#~ msgid "Jabber Connection Error"
+#~ msgstr "Chyba pripojenia k Jabberu"
+
+#~ msgid "Malformed packet received."
+#~ msgstr "Prijatý neplatný paket."
+
+#~ msgid "There was an unrecoverable error in the protocol."
+#~ msgstr "V protokole sa vyskytla neopraviteľná chyba."
+
+#~ msgid "Generic stream error."
+#~ msgstr "Všeobecná chyba prúdu."
+
+#~ msgid "There was a conflict in the information received."
+#~ msgstr "Nastal konflikt v prijatej informácii."
+
+#~ msgid "The stream timed out."
+#~ msgstr "Vypršala platnosť toku dát."
+
+#~ msgid "Internal server error."
+#~ msgstr "Interná chyba serveru."
+
+#~ msgid "Stream packet received from an invalid address."
+#~ msgstr "Prijatý paket z neplatnej adresy."
+
+#~ msgid "Malformed stream packet received."
+#~ msgstr "Prijatý neplatný paket."
+
+#~ msgid "Policy violation in the protocol stream."
+#~ msgstr "Porušenie politiky v protokole."
+
+#~ msgid "Resource constraint."
+#~ msgstr "Obmedzenie zdrojov."
+
+#~ msgid "System shutdown."
+#~ msgstr "Vypnutie systému."
+
+#~ msgid "Unknown reason."
+#~ msgstr "Neznámy dôvod."
+
+#~ msgid "There was an error in the protocol stream: %1"
+#~ msgstr "Nastala chyba v protokole: %1"
+
+#~ msgid "Host not found."
+#~ msgstr "Hostiteľ nenájdený."
+
+#~ msgid "Address is already in use."
+#~ msgstr "Adresa sa už používa."
+
+#~ msgid "Cannot recreate the socket."
+#~ msgstr "Nie je možné znovu vytvoriť soket."
+
+#~ msgid "Cannot bind the socket again."
+#~ msgstr "Nie je možné znovu pripojiť soket."
+
+#~ msgid "Socket is already connected."
+#~ msgstr "Soket je už pripojený."
+
+#~ msgid "Socket is not connected."
+#~ msgstr "Socket nie je pripojený."
+
+#~ msgid "Socket is not bound."
+#~ msgstr "Soket nie je viazaný."
+
+#~ msgid "Socket has not been created."
+#~ msgstr "Soket nebol vytvorený."
+
+#~ msgid ""
+#~ "The socket operation would block. You should not see this error: please "
+#~ "use \"Report Bug\" from the Help menu."
+#~ msgstr ""
+#~ "Prevádzka soketu by sa blokovala. Nemali by ste vidieť túto chybu: "
+#~ "prosím, použite \"Nahlásiť chybu\" v ponuke Pomocník."
+
+#~ msgid "Connection refused."
+#~ msgstr "Spojenie odmietnuté."
+
+#~ msgid "Connection timed out."
+#~ msgstr "Pripojenie vypršalo."
+
+#~ msgid "Connection attempt already in progress."
+#~ msgstr "Pokus o pripojenie už prebieha."
+
+#~ msgid "Network failure."
+#~ msgstr "Chyba siete."
+
+#~ msgid "Operation is not supported."
+#~ msgstr "Operácia nie je podporovaná."
+
+#~ msgid "Socket timed out."
+#~ msgstr "Platnosť soketu vypršala."
+
+#~ msgid "There was a connection error: %1"
+#~ msgstr "Nastala chyba spojenia: %1"
+
+#~ msgid "Unknown host."
+#~ msgstr "Neznámy hostiteľ."
+
+#~ msgid "Could not connect to a required remote resource."
+#~ msgstr "Nepodarilo sa pripojiť k požadovanému vzdialenému zdroju."
+
+#~ msgid ""
+#~ "It appears we have been redirected to another server; I do not know how "
+#~ "to handle this."
+#~ msgstr ""
+#~ "Zdá se, že sme boli presmerovaní na iný server. Neviem, ako sa zachovať."
+
+#~ msgid "Unsupported protocol version."
+#~ msgstr "Nepodporovaná verzia protokolu."
+
+#~ msgid "Unknown error."
+#~ msgstr "Neznáma chyba."
+
+#~ msgid "There was a negotiation error: %1"
+#~ msgstr "Nastala chyba počas dohadovania podmienok: %1"
+
+#~ msgid "Server rejected our request to start the TLS handshake."
+#~ msgstr "Server odmietol spustenie TLS."
+
+#~ msgid "Failed to establish a secure connection."
+#~ msgstr "Nepodarilo sa vytvoriť zabezpečené spojenie."
+
+#~ msgid "There was a Transport Layer Security (TLS) error: %1"
+#~ msgstr "Nastala chyba TLS: %1"
+
+#~ msgid "Login failed with unknown reason."
+#~ msgstr "Prihlásenie zlyhalo z neznámeho dôvodu."
+
+#~ msgid "No appropriate authentication mechanism available."
+#~ msgstr "Nie je dispozícii žiadny vhodný mechanizmus prihlásenia."
+
+#~ msgid "Bad SASL authentication protocol."
+#~ msgstr "Neplatný protokol overenia SASL."
+
+#~ msgid "Server failed mutual authentication."
+#~ msgstr "Server zlyhal pri vzájomnom overení."
+
+#~ msgid "Encryption is required but not present."
+#~ msgstr "Nutné šifrovanie, ale nie je dostupné."
+
+#~ msgid "Invalid user ID."
+#~ msgstr "Neplatné ID užívateľa."
+
+#~ msgid "Invalid mechanism."
+#~ msgstr "Neplatný mechanizmus."
+
+#~ msgid "Invalid realm."
+#~ msgstr "Neplatný realm."
+
+#~ msgid "Mechanism too weak."
+#~ msgstr "Zabezpečenie je príliš slabé."
+
+#~ msgid "Wrong credentials supplied. (check your user ID and password)"
+#~ msgstr "Zadané neplatné dáta pre prihlásenie (overte ID a heslo)"
+
+#~ msgid "Temporary failure, please try again later."
+#~ msgstr "Dočasné zlyhanie, skúste to neskôr."
+
+#~ msgid "There was an error authenticating with the server: %1"
+#~ msgstr "Nastala chyba pri prihlásení k serveru: %1"
+
+#~ msgid "Transport Layer Security (TLS) problem."
+#~ msgstr "Problém TLS."
+
+#~ msgid "Simple Authentication and Security Layer (SASL) problem."
+#~ msgstr "Problém vo vrstve SASL."
+
+#~ msgid "There was an error in the security layer: %1"
+#~ msgstr "Nastala chyba v zabezpečovacej vrstve: %1"
+
+#~ msgid "No permission to bind the resource."
+#~ msgstr "Pre pripojenie k zdroju nedostatočné práva."
+
+#~ msgid "The resource is already in use."
+#~ msgstr "Zdroj sa už používa."
+
+#~ msgid "Could not bind a resource: %1"
+#~ msgstr "Nepodarilo sa pripojiť k zdroju: %1"
+
+#~ msgid "Connection problem with Jabber server %1"
+#~ msgstr "Problém pripojenia so serverom Jabber %1"
+
+#~ msgid ""
+#~ "The Jabber user %1 removed %2's subscription to him/her. This account "
+#~ "will no longer be able to view his/her online/offline status. Do you want "
+#~ "to delete the contact?"
+#~ msgstr ""
+#~ "Jabber používateľ %1 odstránil prihlásenia %2 k nim. Tento účet už "
+#~ "nedokáže zobraziť ich stav pripojenia. Chcete odstrániť kontakt?"
+
+#~ msgid "Notification"
+#~ msgstr "Správa"
+
+#~ msgid "Keep"
+#~ msgstr "Ponechať"
+
+#~ msgid "A password is required to join the room %1."
+#~ msgstr "Vyžaduje sa vloženie hesla pre vstup do miestnosti %1."
+
+#~ msgid "Error trying to join %1: nickname %2 is already in use"
+#~ msgstr "Chyba pri pokuse o pripojenie %1: prezývka %2 sa už používa"
+
+#~ msgid "Provide your nickname"
+#~ msgstr "Zadajte svoju prezývku"
+
+#~ msgid "You cannot join the room %1 because you have been banned"
+#~ msgstr "Nemôžete sa pripojiť do miestnosti %1, pretože ste boli vykázaný(á)"
+
+#~ msgid "Jabber Group Chat"
+#~ msgstr "Skupinový rozhovor Jabber"
+
+#~ msgid ""
+#~ "You cannot join the room %1 because the maximum number of users has been "
+#~ "reached"
+#~ msgstr ""
+#~ "Do miestnosti %1 sa nemôžete pripojiť, pretože miestnosť je momentálne "
+#~ "plná"
+
+#~ msgid "No reason given by the server"
+#~ msgstr "Server neudal žiadny dôvod"
+
+#~ msgid ""
+#~ "There was an error processing your request for groupchat %1. (Reason: %2, "
+#~ "Code %3)"
+#~ msgstr ""
+#~ "Nastala chyba pri spracúvaní požiadavky na skupinový rozhovor %1. (Dôvod "
+#~ "%2, kód %3)"
+
+#~ msgid ""
+#~ "An error occurred while trying to remove the account:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Nastala chyba pri pokuse o odstránenie účtu:\n"
+#~ "%1"
+
+#~ msgid "Jabber Account Unregistration"
+#~ msgstr "Odregistrovanie účtu Jabber"
+
+#~ msgid "You cannot see each others' status."
+#~ msgstr "Nemôžete navzájom vidieť svoj stav."
+
+#~ msgid ""
+#~ "You can see this contact's status, but he/she cannot see your status."
+#~ msgstr ""
+#~ "Tento kontakt nemôže vidieť váš stav, ale vy môžete vidieť jeho stav."
+
+#~ msgid "This contact can see your status, but you cannot see his/her status."
+#~ msgstr ""
+#~ "Tento kontakt môže vidieť váš stav, ale vy nemôžete vidieť jeho stav."
+
+#~ msgid "You can see each others' status."
+#~ msgstr "Môžete vidieť stav ostatných."
+
+#~ msgid "Client"
+#~ msgstr "Klient"
+
+#~ msgid "Timestamp"
+#~ msgstr "Časové razítko"
+
+#~ msgid "Message"
+#~ msgstr "Správa"
+
+#~ msgid "Downloading of Jabber contact photo failed."
+#~ msgstr "Sťahovanie fotografie Jabber kontaktu zlyhalo."
+
+#~ msgid "Groupchat bookmark"
+#~ msgstr "Záložka skupinového rozhovoru"
+
+#~ msgid "Authorization"
+#~ msgstr "Prihlásenie"
+
+#~ msgid "(Re)send Authorization To"
+#~ msgstr "Znovu poslať overenie pre"
+
+#~ msgid "(Re)request Authorization From"
+#~ msgstr "Znovu vyžiadať overenie od"
+
+#~ msgid "Remove Authorization From"
+#~ msgstr "Odstrániť overenie pre"
+
+#~ msgid "Set Availability"
+#~ msgstr "Nastaviť dostupnosť"
+
+#~ msgid "Online"
+#~ msgstr "Pripojený"
+
+#~ msgid "Free to Chat"
+#~ msgstr "K dispozícii pre rozhovor"
+
+#~ msgid "Away"
+#~ msgstr "Neprítomný"
+
+#~ msgid "Extended Away"
+#~ msgstr "Rozšírená neprítomnosť"
+
+#~ msgid "Do Not Disturb"
+#~ msgstr "Nevyrušovať"
+
+#~ msgid "Invisible"
+#~ msgstr "Neviditeľný"
+
+#~ msgid "Select Resource"
+#~ msgstr "Vyberte zdroj"
+
+#~ msgid "Automatic (best/default resource)"
+#~ msgstr "Automaticky (najlepší/štandardný zdroj)"
+
+#~ msgid "Voice call"
+#~ msgstr "Hlasový hovor"
+
+#~ msgid "The original message is: <i>\" %1 \"</i><br />"
+#~ msgstr "Pôvodná správa je: <i>\" %1 \"</i><br />"
+
+#~ msgid ""
+#~ "<qt><i>%1</i> has invited you to join the conference <b>%2</b><br />"
+#~ "%3<br />If you want to accept and join, just <b>enter your nickname</b> "
+#~ "and press ok<br />If you want to decline, press cancel</qt>"
+#~ msgstr ""
+#~ "<qt><i>%1</i> vás pozval/a do konferencie <b>%2</b><br />%3 <br />Ak "
+#~ "chcete pozvanie prijať, zadajte svoju <b>prezývku</b> a stlačte OK. <br /"
+#~ ">Ak chcete odmietnuť, stlačte Zrušiť.</qt>"
+
+#~ msgid "Invited to a conference - Jabber Plugin"
+#~ msgstr "Pozvanie do konferencie - Jabber modul"
+
+#~ msgid "Message has been displayed"
+#~ msgstr "Správa bola zobrazená"
+
+#~ msgid "Message has been delivered"
+#~ msgstr "Správa bola doručená"
+
+#~ msgid "Message stored on the server, contact offline"
+#~ msgstr "Správa uložená na serveri, kontakt nie je pripojený"
+
+#~ msgid "%1 has ended his/her participation in the chat session."
+#~ msgstr "%1 ukončil/a účasť v tejto konverzácii."
+
+#~ msgid "Your message could not be delivered: \"%1\", Reason: \"%2\""
+#~ msgstr "Vašu správu nebolo možné doručiť: \"%1\", Dôvod: \"%2\""
+
+#~ msgid ""
+#~ "Do you also want to remove user %1's authorization to see your status?"
+#~ msgstr "Chcete tiež odstrániť povolenie používateľa %1, aby videl váš stav?"
+
+#~ msgid "Kopete File Transfer"
+#~ msgstr "Prenos súborov Kopete"
+
+#~ msgid ""
+#~ "You have preselected a resource for contact %1, but you still have open "
+#~ "chat windows for this contact. The preselected resource will only apply "
+#~ "to newly opened chat windows."
+#~ msgstr ""
+#~ "Prednastavili ste zdroj pre kontakt %1, ale máte s týmto kontaktom stále "
+#~ "otvorené okná pokecu. Prednastavený zdroj sa použije iba pre novo "
+#~ "otvorené okná."
+
+#~ msgid "Jabber Resource Selector"
+#~ msgstr "Výber zdroja Jabber"
+
+#~ msgid "Change nickname"
+#~ msgstr "Zmeniť prezývku"
+
+#~ msgid "Change nickname - Jabber Plugin"
+#~ msgstr "Zmeniť prezývku - plugin Jabber"
+
+#~ msgid "Please enter the new nickname you want to have in the room <i>%1</i>"
+#~ msgstr "Prosím zadajte prezývku, akú chcete používať v miestnosti <i>%1</i>"
+
+#~ msgid "Choose Account"
+#~ msgstr "Vybrať účet"
+
+#~ msgid "Choose an account to handle the URL %1"
+#~ msgstr "Zvoľte účet na spracovanie URL %1"
+
+#~ msgid "Do you want to add '%1' to your contact list?"
+#~ msgstr "Chcete pridať '%1' do vášho zoznamu kontaktov?"
+
+#~ msgid "Add"
+#~ msgstr "Pridať"
+
+#~ msgid "Do Not Add"
+#~ msgstr "Nepridať"
+
+#~ msgid "Do you want to remove '%1' from your contact list?"
+#~ msgstr "Chcete odstrániť '%1' z vášho zoznamu kontaktov?"
+
+#~ msgid "Remove"
+#~ msgstr "Odstrániť"
+
+#~ msgid "Do Not Remove"
+#~ msgstr "Neodstraňovať"
+
+#~ msgid "Please enter your nickname for the room %1"
+#~ msgstr "Prosím zadajte vašu prezývku pre miestnosť %1"
+
+#~ msgid "You have been invited to %1"
+#~ msgstr "Boli ste pozvaný do %1"
+
+#~ msgid "Play over Jabber"
+#~ msgstr "Hrať cez Jabber"
+
+#~ msgid "Play KsirK over the Jabber Network"
+#~ msgstr "Hrať KsirK cez Jabber sieť"
+
+#~ msgid "Jabber"
+#~ msgstr "Jabber"
+
+#~ msgid ""
+#~ "Allow to connect to a KsirK Jabber Multi User Gaming Room to create new "
+#~ "games or to join present games"
+#~ msgstr ""
+#~ "Umožniť pripojenie ku KsirK Jabber Multi User Gaming miestnosti pre "
+#~ "vytvorenie nových hier alebo pripojenie k aktuálnym hrám"
+
+#~ msgid "The last used Jabber Id."
+#~ msgstr "Naposledy použité Jabber ID."
+
+#~ msgid "The password of the last used Jabber Id."
+#~ msgstr "Heslo naposledy použitého Jabber ID."
+
+#~ msgid "The last used Jabber groupchat room."
+#~ msgstr "Naposledy použitá miestnosť skupinového chatu Jabber."
+
+#~ msgid "The password for last used Jabber groupchat room."
+#~ msgstr "Heslo pre naposledy použitú miestnosť skupinového chatu Jabber."
+
+#~ msgid "The nickname used in the last used Jabber groupchat room."
+#~ msgstr ""
+#~ "Prezývka použitá v naposledy použitej miestnosti skupinového chatu Jabber."
+
+#~ msgid "Play KsirK over Jabber Network"
+#~ msgstr "Hrať KsirK cez Jabber sieť"
 
 #~ msgid ""
 #~ "%1 exists.\n"

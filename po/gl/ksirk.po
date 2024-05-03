@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:36+0000\n"
+"POT-Creation-Date: 2024-05-03 00:37+0000\n"
 "PO-Revision-Date: 2023-09-17 16:25+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -1074,7 +1074,7 @@ msgstr ""
 msgid "Legacy"
 msgstr "Legado"
 
-#: decoratedgameframe.cpp:100 kgamewin.cpp:450
+#: decoratedgameframe.cpp:100 kgamewin.cpp:351
 #, kde-format
 msgid "Next Player"
 msgstr "Seguinte xogador"
@@ -1084,8 +1084,8 @@ msgstr "Seguinte xogador"
 msgid "Details"
 msgstr "Detalles"
 
-#: decoratedgameframe.cpp:106 kgamewin.cpp:430 kgamewin.cpp:1316
-#: kgamewin.cpp:1328 kgamewin.cpp:2485
+#: decoratedgameframe.cpp:106 kgamewin.cpp:331 kgamewin.cpp:1217
+#: kgamewin.cpp:1229 kgamewin.cpp:2386
 #, kde-format
 msgid "Goal"
 msgstr "Obxectivo"
@@ -1174,139 +1174,6 @@ msgstr ""
 #, kde-format
 msgid "<br><i>Choose the number of armies to move.</i>"
 msgstr "<br><i>Escolle o número de exércitos para mover.</i>"
-
-#: Dialogs/jabbergameui.cpp:76
-#, kde-format
-msgid "Nickname"
-msgstr "Alcume"
-
-#: Dialogs/jabbergameui.cpp:77
-#, kde-format
-msgid "Skin"
-msgstr "Tema visual"
-
-#: Dialogs/jabbergameui.cpp:78
-#, kde-format
-msgid "Nb players"
-msgstr "Número de xogadores"
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: Dialogs/jabbergameui.ui:30
-#, kde-format
-msgid "Connection to the Jabber Network"
-msgstr "Conexión á rede Jabber"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: Dialogs/jabbergameui.ui:39
-#, kde-format
-msgid "Jabber ID:"
-msgstr "ID de Jabber:"
-
-#. i18n: ectx: property (text), widget (KLineEdit, jabberid)
-#: Dialogs/jabbergameui.ui:46
-#, kde-format
-msgid "kleag@kdetalk.net"
-msgstr "kleag@kdetalk.net"
-
-#. i18n: ectx: property (text), widget (KLineEdit, password)
-#: Dialogs/jabbergameui.ui:53
-#, kde-format
-msgid "12345678"
-msgstr "12345678"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: Dialogs/jabbergameui.ui:63
-#, kde-format
-msgid "Password:"
-msgstr "Contrasinal:"
-
-#. i18n: ectx: property (text), widget (QPushButton, connectbutton)
-#: Dialogs/jabbergameui.ui:74
-#, kde-format
-msgid "Connect"
-msgstr "Conectar"
-
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#. i18n: ectx: property (text), widget (QLabel, label_10)
-#: Dialogs/jabbergameui.ui:96 Dialogs/jabbergameui.ui:189
-#, kde-format
-msgid "State:"
-msgstr "Estado:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_9)
-#: Dialogs/jabbergameui.ui:137
-#, kde-format
-msgid "Joining a KsirK Jabber Chatroom"
-msgstr "Entrando nunha sala de conversas Jabber de Ksirk"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: Dialogs/jabbergameui.ui:146
-#, kde-format
-msgid "Room JID:"
-msgstr "JID da sala:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: Dialogs/jabbergameui.ui:156
-#, kde-format
-msgid "Nickname:"
-msgstr "Alcume:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: Dialogs/jabbergameui.ui:166
-#, kde-format
-msgid "Room Password:"
-msgstr "Contrasinal da sala:"
-
-#. i18n: ectx: property (text), widget (QPushButton, joinroombutton)
-#: Dialogs/jabbergameui.ui:180
-#, kde-format
-msgid "Join Room"
-msgstr "Unirse á sala"
-
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: Dialogs/jabbergameui.ui:209
-#, kde-format
-msgid "Games in the Room"
-msgstr "Partidas na sala"
-
-#. i18n: ectx: property (text), widget (QPushButton, startnewgamebutton)
-#: Dialogs/jabbergameui.ui:245
-#, kde-format
-msgid "Start a New Game"
-msgstr "Comeza unha partida nova"
-
-#. i18n: ectx: property (text), widget (QPushButton, joingamebutton)
-#: Dialogs/jabbergameui.ui:255
-#, kde-format
-msgid "Join Selected Game"
-msgstr "Unirse á partida escollida"
-
-#. i18n: ectx: property (text), widget (QPushButton, loadsavedgamebutton)
-#: Dialogs/jabbergameui.ui:265
-#, kde-format
-msgid "Load a Saved Game..."
-msgstr "Cargar unha partida gardada…"
-
-#. i18n: ectx: property (text), widget (QLabel, label_11)
-#: Dialogs/jabbergameui.ui:293
-#, kde-format
-msgid ""
-"<b>Note:</b> Playing over the Jabber network is an experimental feature in "
-"KsirK.<br/>Particularly, the distribution of armies at game beginning is "
-"very slow (expect something like one minute)."
-msgstr ""
-"<b>Nota:</b> xogar a través da rede Jabber é unha funcionalidade "
-"experimental de KsirK.<br/> Concretamente, a distribución dos exércitos ao "
-"comezo da partida é moi lenta (arredor dun minuto)."
-
-#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
-#. i18n: ectx: property (text), widget (QPushButton, cancelbutton)
-#: Dialogs/jabbergameui.ui:318 Dialogs/newGameDialog.ui:230
-#: Dialogs/newGameSummary.ui:206 Dialogs/qplayersetupdialog.ui:126
-#: Dialogs/tcpconnectwidget.ui:98
-#, kde-format
-msgid "Cancel"
-msgstr "Cancelar"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, JoinGameDialog)
 #: Dialogs/joingame.ui:13
@@ -1464,6 +1331,13 @@ msgstr ""
 msgid "Reach a goa&l"
 msgstr "Acadar un ob&xectivo."
 
+#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
+#: Dialogs/newGameDialog.ui:230 Dialogs/newGameSummary.ui:206
+#: Dialogs/qplayersetupdialog.ui:126 Dialogs/tcpconnectwidget.ui:98
+#, kde-format
+msgid "Cancel"
+msgstr "Cancelar"
+
 #. i18n: ectx: property (text), widget (QPushButton, nextButton)
 #: Dialogs/newGameDialog.ui:250 Dialogs/qplayersetupdialog.ui:153
 #: Dialogs/tcpconnectwidget.ui:125
@@ -1471,7 +1345,7 @@ msgstr "Acadar un ob&xectivo."
 msgid "Next >>"
 msgstr "Seguinte >>"
 
-#: Dialogs/newGameDialogImpl.cpp:132 newgamesetup.cpp:44
+#: Dialogs/newGameDialogImpl.cpp:125 newgamesetup.cpp:44
 #, kde-format
 msgid ""
 "Skins directory not found - Verify your installation\n"
@@ -1480,7 +1354,7 @@ msgstr ""
 "Non se atopou o cartafol de temas visuais, verifica a instalación\n"
 "O programa non pode continuar"
 
-#: Dialogs/newGameDialogImpl.cpp:133 newgamesetup.cpp:45
+#: Dialogs/newGameDialogImpl.cpp:126 newgamesetup.cpp:45
 #, kde-format
 msgid "Fatal Error!"
 msgstr "Erro grave!"
@@ -1641,7 +1515,7 @@ msgid "New Game or Exit"
 msgstr "Nova partida ou saír"
 
 #. i18n: ectx: property (text), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:24 GameLogic/gameautomaton.cpp:1667
+#: Dialogs/restartOrExitDialog.ui:24 GameLogic/gameautomaton.cpp:1625
 #, kde-format
 msgid "New Game"
 msgstr "Nova partida"
@@ -1665,7 +1539,7 @@ msgid "Do nothing. Game buttons will be available"
 msgstr "Non facer nada. Os botóns do xogo estarán dispoñíbeis."
 
 #. i18n: ectx: property (text), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:47 GameLogic/gameautomaton.cpp:1668
+#: Dialogs/restartOrExitDialog.ui:47 GameLogic/gameautomaton.cpp:1626
 #, kde-format
 msgid "Exit"
 msgstr "Saír"
@@ -1711,76 +1585,75 @@ msgstr[1] ""
 msgid "Fatal Error"
 msgstr "Erro grave"
 
-#: GameLogic/gameautomaton.cpp:306
+#: GameLogic/gameautomaton.cpp:303
 #, kde-format
 msgid "KsirK - Network configuration"
 msgstr "KsirK — Configuración da rede"
 
-#: GameLogic/gameautomaton.cpp:307
+#: GameLogic/gameautomaton.cpp:304
 #, kde-format
 msgid "Please type in the port number on which to offer connections:"
 msgstr "Indique o número do porto no que ofrecer conexións:"
 
-#: GameLogic/gameautomaton.cpp:1194 GameLogic/gameautomaton.cpp:1223
+#: GameLogic/gameautomaton.cpp:1191
 #, kde-format
 msgid "Do you really want to end your current game and join another?"
 msgstr "Seguro que queres rematar a partida actual e unirte a outra?"
 
-#: GameLogic/gameautomaton.cpp:1194 GameLogic/gameautomaton.cpp:1223
-#: kgamewin.cpp:2649
+#: GameLogic/gameautomaton.cpp:1191 kgamewin.cpp:2550
 #, kde-format
 msgid "New game confirmation"
 msgstr "Confirmación de nova partida"
 
-#: GameLogic/gameautomaton.cpp:1194 GameLogic/gameautomaton.cpp:1223
+#: GameLogic/gameautomaton.cpp:1191
 #, kde-format
 msgctxt "@action:button"
 msgid "Join New Game"
 msgstr "Unirse a unha nova partida"
 
-#: GameLogic/gameautomaton.cpp:1404
+#: GameLogic/gameautomaton.cpp:1362
 #, kde-format
 msgid "%1 (%2) joined game ; waiting for %3 players to connect"
 msgstr ""
 "%1 (%2) uniuse á partida; agardando a que se conecten outros %3 xogadores"
 
-#: GameLogic/gameautomaton.cpp:1510
+#: GameLogic/gameautomaton.cpp:1468
 #, kde-format
 msgid "Please choose another name"
 msgstr "Escolla outro nome"
 
-#: GameLogic/gameautomaton.cpp:1510
+#: GameLogic/gameautomaton.cpp:1468
 #, kde-format
 msgid "KsirK - Name already used!"
 msgstr "KsirK — Ese nome xa se está a usar!"
 
-#: GameLogic/gameautomaton.cpp:1516
+#: GameLogic/gameautomaton.cpp:1474
 #, kde-format
 msgid "Player number %1, what's your name?"
 msgstr "Xogador número %1, como te chamas?"
 
-#: GameLogic/gameautomaton.cpp:1520
+#: GameLogic/gameautomaton.cpp:1478
 #, kde-format
 msgid "Error - Player %1, you have to choose a name."
 msgstr "Erro — Xogador número %1, tes que escoller un nome."
 
-#: GameLogic/gameautomaton.cpp:1522
+#: GameLogic/gameautomaton.cpp:1480
 #, kde-format
 msgctxt "@info Forged player name"
 msgid "Player%1"
 msgstr "Xogador%1"
 
-#: GameLogic/gameautomaton.cpp:1573
+#: GameLogic/gameautomaton.cpp:1531
 #, kde-format
 msgid "Please choose another nation"
 msgstr "Escolle outro país"
 
-#: GameLogic/gameautomaton.cpp:1573
+#: GameLogic/gameautomaton.cpp:1531
 #, kde-format
 msgid "KsirK - Nation already used!"
 msgstr "Ksirk — Xa se está a usar ese país!"
 
-#: GameLogic/gameautomaton.cpp:1665
+#: GameLogic/gameautomaton.cpp:1623
 #, kde-format
 msgid ""
 "KsirK - Lost connection to server!\n"
@@ -1789,17 +1662,17 @@ msgstr ""
 "KsirK — Perdeuse a conexión co servidor!\n"
 "Que queres facer?"
 
-#: GameLogic/gameautomaton.cpp:1666
+#: GameLogic/gameautomaton.cpp:1624
 #, kde-format
 msgid "Starting a new game or exit."
 msgstr "Comezar unha partida nova ou saír."
 
-#: GameLogic/gameautomaton.cpp:1669
+#: GameLogic/gameautomaton.cpp:1627
 #, kde-format
 msgid "Do nothing"
 msgstr "Non facer nada"
 
-#: GameLogic/gameautomaton.cpp:1691
+#: GameLogic/gameautomaton.cpp:1649
 #, kde-format
 msgid ""
 "Lost connection to a client.\n"
@@ -1810,31 +1683,31 @@ msgstr ""
 "Polo de agora, só podes gardar a partida e comezar unha nova ou saír.\n"
 "Isto mellorarase nunha versión futura."
 
-#: GameLogic/gameautomaton.cpp:1692
+#: GameLogic/gameautomaton.cpp:1650
 #, kde-format
 msgid "KsirK - Lost connection to client!"
 msgstr "KsirK — Perdeuse a conexión co cliente!"
 
-#: GameLogic/gameautomaton.cpp:1694
+#: GameLogic/gameautomaton.cpp:1652
 #, kde-format
 msgid "Do want to save your game?"
 msgstr "Queres gardar a partida?"
 
-#: GameLogic/gameautomaton.cpp:1860 GameLogic/gameautomaton.cpp:2277
-#: kgamewin.cpp:2140 kgamewin.cpp:2235 kgamewin.cpp:2272
+#: GameLogic/gameautomaton.cpp:1818 GameLogic/gameautomaton.cpp:2235
+#: kgamewin.cpp:2041 kgamewin.cpp:2136 kgamewin.cpp:2173
 #, kde-format
 msgid "%1: %2 armies to place"
 msgstr "%1: %2 exércitos para colocar"
 
-#: GameLogic/gameautomaton.cpp:1865 GameLogic/gameautomaton.cpp:2280
-#: kgamewinslots.cpp:813
+#: GameLogic/gameautomaton.cpp:1823 GameLogic/gameautomaton.cpp:2238
+#: kgamewinslots.cpp:793
 #, kde-format
 msgid ""
 "Now, place your armies in your countries<br>by clicking in the target "
 "countries."
 msgstr "Agora, distribúe as tropas polos teus territorios<br> preméndoos."
 
-#: GameLogic/gameautomaton.cpp:1942
+#: GameLogic/gameautomaton.cpp:1900
 #, kde-format
 msgid ""
 "%1, your goal will be displayed. Please<br>make sure that no other player "
@@ -1843,28 +1716,28 @@ msgstr ""
 "%1, amósase o teu obxectivo.<br>Asegúrate de que ningún outro xogador poida "
 "velo!"
 
-#: GameLogic/gameautomaton.cpp:1944
+#: GameLogic/gameautomaton.cpp:1902
 #, kde-format
 msgid "KsirK - Displaying Goal"
 msgstr "KsirK — Amosando o obxectivo"
 
-#: GameLogic/gameautomaton.cpp:2130
+#: GameLogic/gameautomaton.cpp:2088
 #, kde-format
 msgid "%1 chooses its defense"
 msgstr "%1 escolle a súa defensa"
 
-#: GameLogic/gameautomaton.cpp:2290
+#: GameLogic/gameautomaton.cpp:2248
 #, kde-format
 msgid "%1 choose to end recycling; there are now %2 players who want so"
 msgstr ""
 "%1 elixe rematar a reciclaxe; agora quedan %2 xogadores que queren facela"
 
-#: GameLogic/gameautomaton.cpp:2380
+#: GameLogic/gameautomaton.cpp:2338
 #, kde-format
 msgid "Problem : no one destroyed"
 msgstr "Houbo un problema: non se destruíu ninguén"
 
-#: GameLogic/gameautomaton.cpp:2380 gestionSprites.cpp:873
+#: GameLogic/gameautomaton.cpp:2338 gestionSprites.cpp:873
 #: gestionSprites.cpp:893 gestionSprites.cpp:994 gestionSprites.cpp:1031
 #: gestionSprites.cpp:1066 gestionSprites.cpp:1120 gestionSprites.cpp:1157
 #: gestionSprites.cpp:1191
@@ -1872,7 +1745,7 @@ msgstr "Houbo un problema: non se destruíu ninguén"
 msgid "KsirK - Error!"
 msgstr "KsirK — Erro!"
 
-#: GameLogic/gameautomaton.cpp:2429
+#: GameLogic/gameautomaton.cpp:2387
 #, kde-format
 msgid ""
 "You entered an invalid password.\n"
@@ -1881,12 +1754,12 @@ msgstr ""
 "O contrasinal que inseriches é incorrecto.\n"
 "Inténtao de novo."
 
-#: GameLogic/gameautomaton.cpp:2429
+#: GameLogic/gameautomaton.cpp:2387
 #, kde-format
 msgid "KsirK - Invalid password!"
 msgstr "KsirK — Contrasinal incorrecto!"
 
-#: GameLogic/gameautomaton.cpp:2637
+#: GameLogic/gameautomaton.cpp:2588
 #, kde-format
 msgid ""
 "%1, you have not played anything this turn.\n"
@@ -1895,12 +1768,12 @@ msgstr ""
 "%1, non fixeches nada nesta rolda.\n"
 "Seguro que queres deixar así as cousas?"
 
-#: GameLogic/gameautomaton.cpp:2638
+#: GameLogic/gameautomaton.cpp:2589
 #, kde-format
 msgid "Really Next Player?"
 msgstr "Rematar a rolda?"
 
-#: GameLogic/gameautomaton.cpp:2639
+#: GameLogic/gameautomaton.cpp:2590
 #, kde-format
 msgctxt "@action:button"
 msgid "Next Player"
@@ -1991,7 +1864,7 @@ msgstr "%1 en %2"
 msgid "KsirK - Goal Display"
 msgstr "KsirK — Amosar o obxectivo"
 
-#: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:181
+#: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:170
 #, kde-format
 msgid "No message..."
 msgstr "Sen mensaxes…"
@@ -2012,9 +1885,9 @@ msgstr ""
 
 #: GameLogic/onu.cpp:120 GameLogic/onu.cpp:137 gestionSprites.cpp:638
 #: gestionSprites.cpp:753 gestionSprites.cpp:798 gestionSprites.cpp:1354
-#: gestionSprites.cpp:1431 kgamewin.cpp:150 kgamewin.cpp:384 kgamewin.cpp:401
-#: kgamewin.cpp:418 kgamewin.cpp:587 kgamewin.cpp:743
-#: Sprites/animsprite.cpp:515 Sprites/animsprite.cpp:530
+#: gestionSprites.cpp:1431 kgamewin.cpp:139 kgamewin.cpp:302 kgamewin.cpp:319
+#: kgamewin.cpp:488 kgamewin.cpp:644 Sprites/animsprite.cpp:515
+#: Sprites/animsprite.cpp:530
 #, kde-format
 msgid "Error!"
 msgstr "Erro!"
@@ -2076,866 +1949,79 @@ msgstr "Houbo un problema: non se destruíu ningún"
 msgid "Bug: who should be 0, 1 or 2."
 msgstr "Fallo: quen debe ser 0, 1 ou 2."
 
-#: Jabber/jabberaccount.cpp:211
-#, kde-format
-msgid "Please connect first."
-msgstr "Antes conéctate."
-
-#: Jabber/jabberaccount.cpp:211
-#, kde-format
-msgid "Jabber Error"
-msgstr "Produciuse un erro con Jabber"
-
-#: Jabber/jabberaccount.cpp:374
-#, kde-format
-msgid ""
-"SSL support could not be initialized for account %1. This is most likely "
-"because the QCA TLS plugin is not installed on your system."
-msgstr ""
-"Non foi posíbel inicializar a compatibilidade con SSL para a conta %1. Isto "
-"débese probabelmente a que o complemento de QCA TLS non está instalado no "
-"sistema."
-
-#: Jabber/jabberaccount.cpp:376
-#, kde-format
-msgid "Jabber SSL Error"
-msgstr "Produciuse un erro co SSL de Jabber"
-
-#: Jabber/jabberaccount.cpp:409
-#, kde-format
-msgid "The host name does not match the one in the certificate."
-msgstr "O nome do servidor non coincide co do certificado."
-
-#: Jabber/jabberaccount.cpp:413
-#, kde-format
-msgid "The certificate is invalid."
-msgstr "O certificado é incorrecto."
-
-#: Jabber/jabberaccount.cpp:417
-#, kde-format
-msgid "No certificate was presented."
-msgstr "Non se presentou ningún certificado."
-
-#: Jabber/jabberaccount.cpp:427
-#, kde-format
-msgid "The Certificate Authority rejected the certificate."
-msgstr "A autoridade de certificación rexeitou o certificado."
-
-#: Jabber/jabberaccount.cpp:431
-#, kde-format
-msgid "The certificate is not trusted."
-msgstr "Non se verificou o certificado."
-
-#: Jabber/jabberaccount.cpp:435
-#, kde-format
-msgid "The signature is invalid."
-msgstr "A sinatura é incorrecta."
-
-#: Jabber/jabberaccount.cpp:439
-#, kde-format
-msgid "The Certificate Authority is invalid."
-msgstr "A autoridade de certificación é incorrecta."
-
-#: Jabber/jabberaccount.cpp:443
-#, kde-format
-msgid "Invalid certificate purpose."
-msgstr "O propósito do certificado é incorrecto."
-
-#: Jabber/jabberaccount.cpp:447
-#, kde-format
-msgid "The certificate is self-signed."
-msgstr "O certificado está auto-asinado."
-
-#: Jabber/jabberaccount.cpp:451
-#, kde-format
-msgid "The certificate has been revoked."
-msgstr "O certificado revogouse."
-
-#: Jabber/jabberaccount.cpp:455
-#, kde-format
-msgid "Maximum certificate chain length was exceeded."
-msgstr "Excedeuse a lonxitude máxima da cadea no certificado."
-
-#: Jabber/jabberaccount.cpp:459
-#, kde-format
-msgid "The certificate has expired."
-msgstr "O certificado caducou."
-
-#: Jabber/jabberaccount.cpp:463
-#, kde-format
-msgid "The Certificate Authority has expired."
-msgstr "A autoridade de certificación xa caducou."
-
-#: Jabber/jabberaccount.cpp:467
-#, kde-format
-msgid "Validity is unknown."
-msgstr "Descoñécese a validez."
-
-#: Jabber/jabberaccount.cpp:478
-#, kde-format
-msgid ""
-"<qt><p>The identity and the certificate of server %1 could not be validated "
-"for account %2:</p><p>%3</p><p>%4</p><p>Do you want to continue?</p></qt>"
-msgstr ""
-"<qt><p>Non foi posíbel validar a identidade e o certificado do servidor %1 "
-"para a conta %2:</p><p>%3</p><p>%4</p><p>Queres continuar?</p></qt>"
-
-#: Jabber/jabberaccount.cpp:484 Jabber/jabberaccount.cpp:489
-#, kde-format
-msgid ""
-"<qt><p>The certificate of server %1 could not be validated for account %2: "
-"%3</p><p>Do you want to continue?</p></qt>"
-msgstr ""
-"<qt><p>Non foi posíbel validar o certificado do servidor %1 para a conta %2: "
-"%3</p><p>Queres continuar?</p></qt>"
-
-#: Jabber/jabberaccount.cpp:496
-#, kde-format
-msgid "Jabber Connection Certificate Problem"
-msgstr "Produciuse un problema co certificado da conexión Jabber"
-
-#: Jabber/jabberaccount.cpp:530 kgamewinslots.cpp:1011
-#, kde-format
-msgid ""
-"An encrypted connection with the Jabber server could not be established."
-msgstr ""
-"Non foi posíbel estabelecer unha conexión cifrada co servidor de Jabber."
-
-#: Jabber/jabberaccount.cpp:531 kgamewinslots.cpp:1012
-#, kde-format
-msgid "Jabber Connection Error"
-msgstr "Produciuse un erro na conexión con Jabber"
-
-#: Jabber/jabberaccount.cpp:734
-#, kde-format
-msgid "Malformed packet received."
-msgstr "Recibiuse un paquete en mal estado."
-
-#: Jabber/jabberaccount.cpp:739
-#, kde-format
-msgid "There was an unrecoverable error in the protocol."
-msgstr "Produciuse un erro irrecuperábel no protocolo."
-
-#: Jabber/jabberaccount.cpp:746
-#, kde-format
-msgid "Generic stream error."
-msgstr "Produciuse un erro xenérico na retransmisión."
-
-#: Jabber/jabberaccount.cpp:750
-#, kde-format
-msgid "There was a conflict in the information received."
-msgstr "Produciuse un conflito na información recibida."
-
-#: Jabber/jabberaccount.cpp:753
-#, kde-format
-msgid "The stream timed out."
-msgstr "A transmisión esgotou o tempo límite."
-
-#: Jabber/jabberaccount.cpp:756
-#, kde-format
-msgid "Internal server error."
-msgstr "Produciuse un erro interno do servidor."
-
-#: Jabber/jabberaccount.cpp:759
-#, kde-format
-msgid "Stream packet received from an invalid address."
-msgstr "Recibiuse un paquete incorrecto dun enderezo incorrecto."
-
-#: Jabber/jabberaccount.cpp:762
-#, kde-format
-msgid "Malformed stream packet received."
-msgstr "Recibiuse un paquete da transmisión en mal estado."
-
-#: Jabber/jabberaccount.cpp:766
-#, kde-format
-msgid "Policy violation in the protocol stream."
-msgstr "Houbo unha violación da política na transmisión do protocolo."
-
-#: Jabber/jabberaccount.cpp:770
-#, kde-format
-msgid "Resource constraint."
-msgstr "Restrición do recurso."
-
-#: Jabber/jabberaccount.cpp:774
-#, kde-format
-msgid "System shutdown."
-msgstr "Apagado do sistema."
-
-#: Jabber/jabberaccount.cpp:777
-#, kde-format
-msgid "Unknown reason."
-msgstr "Razón descoñecida."
-
-#: Jabber/jabberaccount.cpp:781
-#, kde-format
-msgid "There was an error in the protocol stream: %1"
-msgstr "Produciuse un erro na transmisión do protocolo: %1"
-
-#: Jabber/jabberaccount.cpp:789
-#, kde-format
-msgid "Host not found."
-msgstr "Non se atopou o servidor."
-
-#: Jabber/jabberaccount.cpp:792
-#, kde-format
-msgid "Address is already in use."
-msgstr "Xa se está a usar o enderezo."
-
-#: Jabber/jabberaccount.cpp:795
-#, kde-format
-msgid "Cannot recreate the socket."
-msgstr "Non é posíbel crear de novo a toma."
-
-#: Jabber/jabberaccount.cpp:798
-#, kde-format
-msgid "Cannot bind the socket again."
-msgstr "Non é posíbel vincular á toma de novo."
-
-#: Jabber/jabberaccount.cpp:801
-#, kde-format
-msgid "Socket is already connected."
-msgstr "A toma xa está conectada."
-
-#: Jabber/jabberaccount.cpp:804
-#, kde-format
-msgid "Socket is not connected."
-msgstr "A toma non está conectada."
-
-#: Jabber/jabberaccount.cpp:807
-#, kde-format
-msgid "Socket is not bound."
-msgstr "A toma non está vinculada."
-
-#: Jabber/jabberaccount.cpp:810
-#, kde-format
-msgid "Socket has not been created."
-msgstr "Non se creou a toma."
-
-#: Jabber/jabberaccount.cpp:813
-#, kde-format
-msgid ""
-"The socket operation would block. You should not see this error: please use "
-"\"Report Bug\" from the Help menu."
-msgstr ""
-"Bloquearíase a operación da toma. Non debería ver este erro, use «Informar "
-"dun fallo» no menú de axuda."
-
-#: Jabber/jabberaccount.cpp:816
-#, kde-format
-msgid "Connection refused."
-msgstr "Rexeitouse a conexión."
-
-#: Jabber/jabberaccount.cpp:819
-#, kde-format
-msgid "Connection timed out."
-msgstr "A conexión esgotou o tempo límite."
-
-#: Jabber/jabberaccount.cpp:822
-#, kde-format
-msgid "Connection attempt already in progress."
-msgstr "Xa hai un intento de conexión en progreso."
-
-#: Jabber/jabberaccount.cpp:825
-#, kde-format
-msgid "Network failure."
-msgstr "Fallo da rede."
-
-#: Jabber/jabberaccount.cpp:828
-#, kde-format
-msgid "Operation is not supported."
-msgstr "A operación non se permite."
-
-#: Jabber/jabberaccount.cpp:831
-#, kde-format
-msgid "Socket timed out."
-msgstr "A toma esgotou o tempo límite."
-
-#: Jabber/jabberaccount.cpp:839
-#, kde-format
-msgid "There was a connection error: %1"
-msgstr "Produciuse un erro de conexión: %1"
-
-#: Jabber/jabberaccount.cpp:847
-#, kde-format
-msgid "Unknown host."
-msgstr "Servidor descoñecido."
-
-#: Jabber/jabberaccount.cpp:851
-#, kde-format
-msgid "Could not connect to a required remote resource."
-msgstr "Non foi posíbel conectar a un recurso remoto necesario."
-
-#: Jabber/jabberaccount.cpp:854
-#, kde-format
-msgid ""
-"It appears we have been redirected to another server; I do not know how to "
-"handle this."
-msgstr "Parece que fomos redirixidos a outro servidor; non sei manexar isto."
-
-#: Jabber/jabberaccount.cpp:857
-#, kde-format
-msgid "Unsupported protocol version."
-msgstr "Versión do protocolo non permitida."
-
-#: Jabber/jabberaccount.cpp:860 Jabber/jabberaccount.cpp:877
-#: Jabber/jabberaccount.cpp:921 Jabber/jabberaccount.cpp:938
-#: Jabber/jabberaccount.cpp:955 Jabber/jabberaccount.cpp:963
-#, kde-format
-msgid "Unknown error."
-msgstr "Erro descoñecido."
-
-#: Jabber/jabberaccount.cpp:864
-#, kde-format
-msgid "There was a negotiation error: %1"
-msgstr "Produciuse un erro de negociación: %1"
-
-#: Jabber/jabberaccount.cpp:871
-#, kde-format
-msgid "Server rejected our request to start the TLS handshake."
-msgstr "O servidor rexeitou a solicitude de comezar co protocolo TLS."
-
-#: Jabber/jabberaccount.cpp:874
-#, kde-format
-msgid "Failed to establish a secure connection."
-msgstr "Non foi posíbel estabelecer unha conexión segura."
-
-#: Jabber/jabberaccount.cpp:881
-#, kde-format
-msgid "There was a Transport Layer Security (TLS) error: %1"
-msgstr "Produciuse un erro na TLS: %1"
-
-#: Jabber/jabberaccount.cpp:888
-#, kde-format
-msgid "Login failed with unknown reason."
-msgstr "Fallou a identificación por unha razón descoñecida."
-
-#: Jabber/jabberaccount.cpp:891
-#, kde-format
-msgid "No appropriate authentication mechanism available."
-msgstr "Non se dispón dun mecanismo de autenticación axeitado."
-
-#: Jabber/jabberaccount.cpp:894
-#, kde-format
-msgid "Bad SASL authentication protocol."
-msgstr "O protocolo de autenticación SASL é incorrecto."
-
-#: Jabber/jabberaccount.cpp:897
-#, kde-format
-msgid "Server failed mutual authentication."
-msgstr "O servidor fallou a autenticación mutua."
-
-#: Jabber/jabberaccount.cpp:900
-#, kde-format
-msgid "Encryption is required but not present."
-msgstr "Requírese cifrado pero non hai tal."
-
-#: Jabber/jabberaccount.cpp:903
-#, kde-format
-msgid "Invalid user ID."
-msgstr "A identidade da usuaria é incorrecta."
-
-#: Jabber/jabberaccount.cpp:906
-#, kde-format
-msgid "Invalid mechanism."
-msgstr "O mecanismo é incorrecto."
-
-#: Jabber/jabberaccount.cpp:909
-#, kde-format
-msgid "Invalid realm."
-msgstr "A área de identificación compartida é incorrecta."
-
-#: Jabber/jabberaccount.cpp:912
-#, kde-format
-msgid "Mechanism too weak."
-msgstr "O mecanismo é demasiado feble."
-
-#: Jabber/jabberaccount.cpp:915
-#, kde-format
-msgid "Wrong credentials supplied. (check your user ID and password)"
-msgstr ""
-"As credenciais fornecidas eran incorrectas (comprobe a identidade da usuaria "
-"e o contrasinal)"
-
-#: Jabber/jabberaccount.cpp:918
-#, kde-format
-msgid "Temporary failure, please try again later."
-msgstr "Fallo temporal, inténteo de novo máis tarde."
-
-#: Jabber/jabberaccount.cpp:925
-#, kde-format
-msgid "There was an error authenticating with the server: %1"
-msgstr "Produciuse un erro ao autenticarse no servidor: %1"
-
-#: Jabber/jabberaccount.cpp:932
-#, kde-format
-msgid "Transport Layer Security (TLS) problem."
-msgstr "Houbo un problema coa TLS."
-
-#: Jabber/jabberaccount.cpp:935
-#, kde-format
-msgid "Simple Authentication and Security Layer (SASL) problem."
-msgstr "Houbo un problema coa SASL."
-
-#: Jabber/jabberaccount.cpp:942
-#, kde-format
-msgid "There was an error in the security layer: %1"
-msgstr "Produciuse un erro na capa de seguridade: %1"
-
-#: Jabber/jabberaccount.cpp:949
-#, kde-format
-msgid "No permission to bind the resource."
-msgstr "Non hai permiso para vincular o recurso."
-
-#: Jabber/jabberaccount.cpp:952
-#, kde-format
-msgid "The resource is already in use."
-msgstr "O recurso xa está en uso."
-
-#: Jabber/jabberaccount.cpp:959
-#, kde-format
-msgid "Could not bind a resource: %1"
-msgstr "Non foi posíbel vincular un recurso: %1"
-
-#: Jabber/jabberaccount.cpp:977 Jabber/jabberaccount.cpp:981
-#, kde-format
-msgid "Connection problem with Jabber server %1"
-msgstr "Houbo un problema na conexión co servidor de Jabber %1"
-
-#: Jabber/jabberaccount.cpp:1127
-#, kde-format
-msgid ""
-"The Jabber user %1 removed %2's subscription to him/her. This account will "
-"no longer be able to view his/her online/offline status. Do you want to "
-"delete the contact?"
-msgstr ""
-"A usuaria de Jabber %1 retirou a subscrición de %2 con ela. Esta conta non "
-"será quen de ver o seu estado en liña ou desconectado. Quere eliminar o "
-"contacto?"
-
-#: Jabber/jabberaccount.cpp:1130 Jabber/jabbercontact.cpp:939
-#, kde-format
-msgid "Notification"
-msgstr "Notificación"
-
-#: Jabber/jabberaccount.cpp:1130 Jabber/jabbercontact.cpp:940
-#, kde-format
-msgid "Keep"
-msgstr "Manter"
-
-#: Jabber/jabberaccount.cpp:1514 kgamewinslots.cpp:1101
-#, kde-format
-msgid "A password is required to join the room %1."
-msgstr "Necesítase un contrasinal para unirse á sala %1."
-
-#: Jabber/jabberaccount.cpp:1523 kgamewinslots.cpp:1110
-#, kde-format
-msgid "Error trying to join %1: nickname %2 is already in use"
-msgstr ""
-"Produciuse un erro ao intentar unirse a %1: alguén está a usar xa o alcume %2"
-
-#: Jabber/jabberaccount.cpp:1524 Jabber/jabberprotocol.cpp:432
-#: kgamewinslots.cpp:1110
-#, kde-format
-msgid "Provide your nickname"
-msgstr "Forneza o seu alcume"
-
-#: Jabber/jabberaccount.cpp:1537
-#, kde-format
-msgid "You cannot join the room %1 because you have been banned"
-msgstr "Non pode entrar na sala %1 porque se lle prohibiu a entrada"
-
-#: Jabber/jabberaccount.cpp:1538 Jabber/jabberaccount.cpp:1545
-#: Jabber/jabberaccount.cpp:1555
-#, kde-format
-msgid "Jabber Group Chat"
-msgstr "Conversa de grupo de Jabber"
-
-#: Jabber/jabberaccount.cpp:1544
-#, kde-format
-msgid ""
-"You cannot join the room %1 because the maximum number of users has been "
-"reached"
-msgstr "Non pode entrar na sala %1 porque se acadou o máximo de usuarias"
-
-#: Jabber/jabberaccount.cpp:1550 kgamewinslots.cpp:1128
-#, kde-format
-msgid "No reason given by the server"
-msgstr "O servidor non indicou o motivo"
-
-#: Jabber/jabberaccount.cpp:1554
-#, kde-format
-msgid ""
-"There was an error processing your request for groupchat %1. (Reason: %2, "
-"Code %3)"
-msgstr ""
-"Produciuse un erro ao procesar a solicitude para a sala %1. (Causa: %2, "
-"código %3)"
-
-#: Jabber/jabberaccount.cpp:1708
-#, kde-format
-msgid ""
-"An error occurred while trying to remove the account:\n"
-"%1"
-msgstr ""
-"Produciuse un erro ao intentar retirar a conta:\n"
-"%1"
-
-#: Jabber/jabberaccount.cpp:1709
-#, kde-format
-msgid "Jabber Account Unregistration"
-msgstr "Eliminación dunha conta de Jabber"
-
-#: Jabber/jabberbasecontact.cpp:128
-#, kde-format
-msgid "You cannot see each others' status."
-msgstr "Uns non poden ver o estado dos outros."
-
-#: Jabber/jabberbasecontact.cpp:132
-#, kde-format
-msgid "You can see this contact's status, but he/she cannot see your status."
-msgstr "Podes ver o estado deste contacto pero el ou ela non pode ver o teu."
-
-#: Jabber/jabberbasecontact.cpp:136
-#, kde-format
-msgid "This contact can see your status, but you cannot see his/her status."
-msgstr "Este contacto pode ver o teu estado, pero ti non podes ver o seu."
-
-#: Jabber/jabberbasecontact.cpp:140
-#, kde-format
-msgid "You can see each others' status."
-msgstr "Podedes ver os vosos estados."
-
-#: Jabber/jabberbasecontact.cpp:250
-#, kde-format
-msgid "Client"
-msgstr "Cliente"
-
-#: Jabber/jabberbasecontact.cpp:275
-#, kde-format
-msgid "Timestamp"
-msgstr "Marca de tempo"
-
-#: Jabber/jabberbasecontact.cpp:282
-#, kde-format
-msgid "Message"
-msgstr "Mensaxe"
-
-#: Jabber/jabberbasecontact.cpp:641
-#, kde-format
-msgid "Downloading of Jabber contact photo failed."
-msgstr "Produciuse un erro ao descargar a imaxe do contacto de Jabber."
-
-#: Jabber/jabberbookmarks.cpp:135
-#, kde-format
-msgid "Groupchat bookmark"
-msgstr "Marcador de conversa en grupo"
-
-#: Jabber/jabbercontact.cpp:137
-#, kde-format
-msgid "Authorization"
-msgstr "Autorización"
-
-#: Jabber/jabbercontact.cpp:143
-#, kde-format
-msgid "(Re)send Authorization To"
-msgstr "Enviar (de novo) a autorización a"
-
-#: Jabber/jabbercontact.cpp:150
-#, kde-format
-msgid "(Re)request Authorization From"
-msgstr "Solicitar (de novo) a autorización de"
-
-#: Jabber/jabbercontact.cpp:157
-#, kde-format
-msgid "Remove Authorization From"
-msgstr "Retirar a autorización de"
-
-#: Jabber/jabbercontact.cpp:162
-#, kde-format
-msgid "Set Availability"
-msgstr "Definir a dispoñibilidade"
-
-#: Jabber/jabbercontact.cpp:171
-#, kde-format
-msgid "Online"
-msgstr "En liña"
-
-#: Jabber/jabbercontact.cpp:172
-#, kde-format
-msgid "Free to Chat"
-msgstr "Dispoñíbel para conversar"
-
-#: Jabber/jabbercontact.cpp:173
-#, kde-format
-msgid "Away"
-msgstr "Ausente"
-
-#: Jabber/jabbercontact.cpp:174
-#, kde-format
-msgid "Extended Away"
-msgstr "Ausente por moito tempo"
-
-#: Jabber/jabbercontact.cpp:175
-#, kde-format
-msgid "Do Not Disturb"
-msgstr "Non molestar"
-
-#: Jabber/jabbercontact.cpp:176
-#, kde-format
-msgid "Invisible"
-msgstr "Invisíbel"
-
-#: Jabber/jabbercontact.cpp:180
-#, kde-format
-msgid "Select Resource"
-msgstr "Escoller un recurso"
-
-#: Jabber/jabbercontact.cpp:197
-#, kde-format
-msgid "Automatic (best/default resource)"
-msgstr "Automático (recurso mellor/predeterminado)"
-
-#: Jabber/jabbercontact.cpp:250
-#, kde-format
-msgid "Voice call"
-msgstr "Chamada de voz"
-
-#: Jabber/jabbercontact.cpp:283
-#, kde-format
-msgid "The original message is: <i>\" %1 \"</i><br />"
-msgstr "A mensaxe orixinal é: «<i>%1</i>»<br />"
-
-#: Jabber/jabbercontact.cpp:284
-#, kde-format
-msgid ""
-"<qt><i>%1</i> has invited you to join the conference <b>%2</b><br />%3<br /"
-">If you want to accept and join, just <b>enter your nickname</b> and press "
-"ok<br />If you want to decline, press cancel</qt>"
-msgstr ""
-"<qt><i>%1</i> convidouno a se unir á conferencia <b>%2</b><br /> %3<br /> Se "
-"quere aceptar e unirse, simplemente <b>insira o seu alcume </b> e prema "
-"aceptar<br /> Se non quere entrar na conferencia prema cancelar</qt>"
-
-#: Jabber/jabbercontact.cpp:290
-#, kde-format
-msgid "Invited to a conference - Jabber Plugin"
-msgstr "Invitación a unha conferencia — Complemento de Jabber"
-
-#: Jabber/jabbercontact.cpp:307
-#, kde-format
-msgid "Message has been displayed"
-msgstr "Amosouse a mensaxe"
-
-#: Jabber/jabbercontact.cpp:309
-#, kde-format
-msgid "Message has been delivered"
-msgstr "Entregouse a mensaxe"
-
-#: Jabber/jabbercontact.cpp:312
-#, kde-format
-msgid "Message stored on the server, contact offline"
-msgstr "A mensaxe gardouse no servidor, o contacto está desconectado"
-
-#: Jabber/jabbercontact.cpp:319
-#, kde-format
-msgid "%1 has ended his/her participation in the chat session."
-msgstr "%1 deixou a conversa."
-
-#: Jabber/jabbercontact.cpp:357 Jabber/jabbergroupcontact.cpp:171
-#: Jabber/jabbergroupmembercontact.cpp:122
-#, kde-format
-msgid "Your message could not be delivered: \"%1\", Reason: \"%2\""
-msgstr "Non foi posíbel entregar a mensaxe: «%1», causa: «%2»"
-
-#: Jabber/jabbercontact.cpp:938
-#, kde-format
-msgid "Do you also want to remove user %1's authorization to see your status?"
-msgstr "Queres retirarlle tamén a %1 a autorización para ver o teu estado?"
-
-#: Jabber/jabbercontact.cpp:1039 Jabber/jabbergroupcontact.cpp:310
-#: Jabber/jabbergroupmembercontact.cpp:159
-#, kde-format
-msgid "Kopete File Transfer"
-msgstr "Transferencia de ficheiros por Kopete"
-
-#: Jabber/jabbercontact.cpp:1110
-#, kde-format
-msgid ""
-"You have preselected a resource for contact %1, but you still have open chat "
-"windows for this contact. The preselected resource will only apply to newly "
-"opened chat windows."
-msgstr ""
-"Preseleccionaches un recurso para o contacto %1 pero aínda tes aberta unha "
-"xanela de conversa con el. A acción escollida só se aplicará ás novas "
-"xanelas de conversa."
-
-#: Jabber/jabbercontact.cpp:1114
-#, kde-format
-msgid "Jabber Resource Selector"
-msgstr "Selector de recursos de Jabber"
-
-#: Jabber/jabbergroupcontact.cpp:120
-#, kde-format
-msgid "Change nickname"
-msgstr "Cambiar o alcume"
-
-#: Jabber/jabbergroupcontact.cpp:367
-#, kde-format
-msgid "Change nickname - Jabber Plugin"
-msgstr "Cambiar o alcume — Complemento de Jabber"
-
-#: Jabber/jabbergroupcontact.cpp:368
-#, kde-format
-msgid "Please enter the new nickname you want to have in the room <i>%1</i>"
-msgstr "Insira o novo alcume que quere ter na sala <i>%1</i>"
-
-#: Jabber/jabberprotocol.cpp:336
-#, kde-format
-msgid "Choose Account"
-msgstr "Escolle unha conta"
-
-#: Jabber/jabberprotocol.cpp:342
-#, kde-format
-msgid "Choose an account to handle the URL %1"
-msgstr "Escolle unha conta para manexar o URL %1"
-
-#: Jabber/jabberprotocol.cpp:391
-#, kde-format
-msgid "Do you want to add '%1' to your contact list?"
-msgstr "Queres engadir o contacto %1 á lista de contactos?"
-
-#: Jabber/jabberprotocol.cpp:392
-#, kde-format
-msgid "Add"
-msgstr "Engadir"
-
-#: Jabber/jabberprotocol.cpp:392
-#, kde-format
-msgid "Do Not Add"
-msgstr "Non engadir"
-
-#: Jabber/jabberprotocol.cpp:408
-#, kde-format
-msgid "Do you want to remove '%1' from your contact list?"
-msgstr "Queres retirar a %1 da lista de contactos?"
-
-#: Jabber/jabberprotocol.cpp:409
-#, kde-format
-msgid "Remove"
-msgstr "Retirar"
-
-#: Jabber/jabberprotocol.cpp:409
-#, kde-format
-msgid "Do Not Remove"
-msgstr "Non retirar"
-
-#: Jabber/jabberprotocol.cpp:431
-#, kde-format
-msgid "Please enter your nickname for the room %1"
-msgstr "Insire o alcume que vas usar na sala %1"
-
-#: Jabber/jabberprotocol.cpp:454
-#, kde-format
-msgid "You have been invited to %1"
-msgstr "Convidáronche a %1"
-
-#: kgamewin.cpp:150 kgamewin.cpp:743
+#: kgamewin.cpp:139 kgamewin.cpp:644
 #, kde-format
 msgid "Cannot load icon<br>Program cannot continue"
 msgstr "Non é posíbel cargar a icona<br> O programa non pode continuar"
 
-#: kgamewin.cpp:384 kgamewin.cpp:401 kgamewin.cpp:418
+#: kgamewin.cpp:302 kgamewin.cpp:319
 #, kde-format
 msgid "Cannot load button image %1<br>Program cannot continue"
 msgstr ""
 "Non é posíbel cargar a imaxe do botón %1<br> O programa non pode continuar"
 
-#: kgamewin.cpp:387
-#, kde-format
-msgid "Play over Jabber"
-msgstr "Xogar a través de Jabber"
-
-#: kgamewin.cpp:388
-#, kde-format
-msgid "Play KsirK over the Jabber Network"
-msgstr "Xogar a KsirK a través da rede Jabber"
-
-#: kgamewin.cpp:389
-#, kde-format
-msgid "Jabber"
-msgstr "Jabber"
-
-#: kgamewin.cpp:391
-#, kde-format
-msgid ""
-"Allow to connect to a KsirK Jabber Multi User Gaming Room to create new "
-"games or to join present games"
-msgstr ""
-"Permite conectar a unha sala Jabber de xogo multiusuario para Ksirk onde "
-"crear novas partidas ou unirse a partidas en xogo"
-
 #. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
-#: kgamewin.cpp:404 mainMenu.ui:104
+#: kgamewin.cpp:305 mainMenu.ui:104
 #, kde-format
 msgid "New Standard TCP/IP Network Game"
 msgstr "Nova partida pola rede TCP/IP estándar"
 
-#: kgamewin.cpp:405
+#: kgamewin.cpp:306
 #, kde-format
 msgid "New TCP/IP"
 msgstr "Nova TCP/IP"
 
-#: kgamewin.cpp:407
+#: kgamewin.cpp:308
 #, kde-format
 msgid "Create a new standard TCP/IP network game"
 msgstr "Crea unha partida en rede pola TCP/IP estándar"
 
-#: kgamewin.cpp:422
+#: kgamewin.cpp:323
 #, kde-format
 msgid "Join a Standard TCP/IP Network Game"
 msgstr "Unirse a unha partida pola rede TCP/IP estándar"
 
-#: kgamewin.cpp:423
+#: kgamewin.cpp:324
 #, kde-format
 msgid "Join TCP/IP"
 msgstr "Unirse a unha TCP/IP"
 
-#: kgamewin.cpp:425
+#: kgamewin.cpp:326
 #, kde-format
 msgid "Join a standard TCP/IP network game"
 msgstr "Unirse a unha partida en rede TCP/IP estándar"
 
-#: kgamewin.cpp:431
+#: kgamewin.cpp:332
 #, kde-format
 msgid "Display the Current Player's Goal"
 msgstr "Amosar o obxectivo do xogador actual"
 
-#: kgamewin.cpp:434
+#: kgamewin.cpp:335
 #, kde-format
 msgid "Display the current player's goal"
 msgstr "Amosa o obxectivo da xogadora actual"
 
-#: kgamewin.cpp:441
+#: kgamewin.cpp:342
 #, kde-format
 msgid "Contextual Help"
 msgstr "Axuda contextual"
 
-#: kgamewin.cpp:452
+#: kgamewin.cpp:353
 #, kde-format
 msgid "Lets the next player play"
 msgstr "Rematar a rolda"
 
-#: kgamewin.cpp:457
+#: kgamewin.cpp:358
 #, kde-format
 msgid "Finish moves"
 msgstr "Rematar os movementos"
 
-#: kgamewin.cpp:459
+#: kgamewin.cpp:360
 #, kde-format
 msgid "Finish moving the current sprites"
 msgstr "Rematar de mover as figuras actuais"
 
-#: kgamewin.cpp:587
+#: kgamewin.cpp:488
 #, kde-format
 msgid ""
 "World definition file not found - Verify your installation<br>Program cannot "
@@ -2944,32 +2030,32 @@ msgstr ""
 "Non é posíbel atopar o ficheiro de definición do mundo, verifica a "
 "instalación<br> O programa non pode continuar"
 
-#: kgamewin.cpp:807
+#: kgamewin.cpp:708
 #, kde-format
 msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
 msgstr "<font color=\"red\">%1 conquistoulle %2 a %3</font>"
 
-#: kgamewin.cpp:831
+#: kgamewin.cpp:732
 #, kde-format
 msgid "%1, you are defeated! Bye, bye..."
 msgstr "Derrotáronte, %1! Adeus…"
 
-#: kgamewin.cpp:903
+#: kgamewin.cpp:804
 #, kde-format
 msgid "%1: it is up to you again"
 msgstr "%1: volve tocarche"
 
-#: kgamewin.cpp:915
+#: kgamewin.cpp:816
 #, kde-format
 msgid "%1 won!"
 msgstr "%1 gañou!"
 
-#: kgamewin.cpp:918
+#: kgamewin.cpp:819
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
 msgstr "<big>Gañaches, <b>%1</b>!</big>"
 
-#: kgamewin.cpp:922
+#: kgamewin.cpp:823
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
@@ -2978,44 +2064,44 @@ msgstr ""
 "<br>O obxectivo do gañador consistía no seguinte:<br> <i>%1</i><br> <br> "
 "Queres volver xogar?"
 
-#: kgamewin.cpp:928
+#: kgamewin.cpp:829
 #, kde-format
 msgid "<br>You conquered all the world!"
 msgstr "<br>Conquistaches todo o mundo!"
 
-#: kgamewin.cpp:932
+#: kgamewin.cpp:833
 #, kde-format
 msgid "<br>He conquered all the world!"
 msgstr "<br>Conquistou todo o mundo!"
 
-#: kgamewin.cpp:1049
+#: kgamewin.cpp:950
 #, kde-format
 msgid "Do you want to quit the game?"
 msgstr "Queres saír do xogo?"
 
-#: kgamewin.cpp:1051
+#: kgamewin.cpp:952
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
 msgstr "Saír do xogo"
 
-#: kgamewin.cpp:1063
+#: kgamewin.cpp:964
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
 msgstr "Queres gardar a partida antes de saír?"
 
-#: kgamewin.cpp:1101
+#: kgamewin.cpp:1002
 #, kde-format
 msgctxt "@title:window"
 msgid "KsirK - Load Game"
 msgstr "KsirK — Cargar unha partida"
 
-#: kgamewin.cpp:1139
+#: kgamewin.cpp:1040
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
 msgstr "Esperando a que se conecten %1 xogadores en rede."
 
-#: kgamewin.cpp:1218
+#: kgamewin.cpp:1119
 #, kde-format
 msgid ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
@@ -3030,88 +2116,88 @@ msgstr[1] ""
 "<font color=\"red\">%2</font> atácache desde <font color=\"red\">%3</font> "
 "con %1 exércitos!<br> Como queres defender <font color=\"blue\">%4</font>?"
 
-#: kgamewin.cpp:1247
+#: kgamewin.cpp:1148
 #, kde-format
 msgid "Defend 1"
 msgstr "Defensa 1"
 
-#: kgamewin.cpp:1248
+#: kgamewin.cpp:1149
 #, kde-format
 msgid "Defend 2"
 msgstr "Defensa 2"
 
-#: kgamewin.cpp:1249
+#: kgamewin.cpp:1150
 #, kde-format
 msgid "Defend-Auto"
 msgstr "Defensa automática"
 
-#: kgamewin.cpp:1368
+#: kgamewin.cpp:1269
 #, kde-format
 msgid "Waiting for %1 players to connect"
 msgstr "Esperando a que se conecten %1 xogadores"
 
-#: kgamewin.cpp:1758 kgamewin.cpp:1798
+#: kgamewin.cpp:1659 kgamewin.cpp:1699
 msgid "There is no country here!"
 msgstr "Non hai ningún territorio aquí!"
 
-#: kgamewin.cpp:1762 kgamewin.cpp:1803
+#: kgamewin.cpp:1663 kgamewin.cpp:1704
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
 msgstr "O primeiro territorio non che pertence: %1!"
 
-#: kgamewin.cpp:1766
+#: kgamewin.cpp:1667
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
 msgstr "O segundo territorio non che pertence: %1!"
 
-#: kgamewin.cpp:1770 kgamewin.cpp:1814
+#: kgamewin.cpp:1671 kgamewin.cpp:1715
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr "Estás intentando mover exércitos de %1 ao propio territorio!"
 
-#: kgamewin.cpp:1775 kgamewin.cpp:1820
+#: kgamewin.cpp:1676 kgamewin.cpp:1721
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
 msgstr "%1 non é limítrofe con %2!"
 
-#: kgamewin.cpp:1781
+#: kgamewin.cpp:1682
 #, kde-format
 msgid "Moving armies from %1 to %2."
 msgstr "Movendo tropas de %1 a %2."
 
-#: kgamewin.cpp:1809
+#: kgamewin.cpp:1710
 #, kde-format
 msgid "You are the owner of the second country: %1!"
 msgstr "O segundo territorio perténceche: %1!"
 
-#: kgamewin.cpp:1827
+#: kgamewin.cpp:1728
 msgid "Ready to fight!"
 msgstr "Preparados para a batalla!"
 
-#: kgamewin.cpp:1921
+#: kgamewin.cpp:1822
 msgid "<font color=\"orange\">No country here!</font>"
 msgstr "<font color=\"orange\">Aquí non hai territorio ningún!</font>"
 
-#: kgamewin.cpp:1929
+#: kgamewin.cpp:1830
 #, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr "<font color=\"orange\">Non es o dono de %1!</font>"
 
-#: kgamewin.cpp:1936
+#: kgamewin.cpp:1837
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr "<font color=\"orange\">Só tes %1 exércitos en %2!</font>"
 
-#: kgamewin.cpp:2076
+#: kgamewin.cpp:1977
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
 msgstr "%1, deféndeste co único exército que tes en %2."
 
-#: kgamewin.cpp:2300
+#: kgamewin.cpp:2201
 msgid "Exchange armies again or continue?"
 msgstr "Queres volver intercambiar os exércitos ou continuar?"
 
-#: kgamewin.cpp:2325
+#: kgamewin.cpp:2226
 #, kde-format
 msgid ""
 "You must distribute\n"
@@ -3120,49 +2206,49 @@ msgstr ""
 "Tes que distribuír\n"
 "todos os teus exércitos"
 
-#: kgamewin.cpp:2325 main.cpp:42
+#: kgamewin.cpp:2226 main.cpp:42
 #, kde-format
 msgid "KsirK"
 msgstr "KsirK"
 
-#: kgamewin.cpp:2465
+#: kgamewin.cpp:2366
 msgid "Battle ongoing."
 msgstr "En medio dunha batalla."
 
-#: kgamewin.cpp:2586 kgamewin.cpp:2597 kgamewin.cpp:2620
+#: kgamewin.cpp:2487 kgamewin.cpp:2498 kgamewin.cpp:2521
 #, kde-format
 msgid "%1, it is up to you."
 msgstr "%1, tócache."
 
-#: kgamewin.cpp:2649
+#: kgamewin.cpp:2550
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
 msgstr "Seguro que queres rematar a túa partida actual e comezar unha nova?"
 
-#: kgamewin.cpp:2649
+#: kgamewin.cpp:2550
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Comezar unha partida nova"
 
-#: kgamewin.cpp:2905
+#: kgamewin.cpp:2806
 msgid "<b>KsirK quick Introduction</b>"
 msgstr "<b>Introdución rápida a KsirK</b>"
 
-#: kgamewin.cpp:2909
+#: kgamewin.cpp:2810
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr ""
 "Os ataques e movementos ordénanse arrastrando e soltando entre territorios "
 "limítrofes."
 
-#: kgamewin.cpp:2913
+#: kgamewin.cpp:2814
 msgid "Start a new game or join a network game with the menu or the toolbar..."
 msgstr ""
 "Comeza unha partida nova ou únete a unha en rede co menú ou a barra de "
 "ferramentas…"
 
-#: kgamewin.cpp:2917
+#: kgamewin.cpp:2818
 msgid ""
 "and then let the system guide you through messages and tooltips appearing on "
 "buttons when hovering above them. You can disable bubble help in the options "
@@ -3172,45 +2258,45 @@ msgstr ""
 "aparecen nos botóns cando os cobres. Podes desactivar estas axudas na xanela "
 "de opcións."
 
-#: kgamewin.cpp:2924
+#: kgamewin.cpp:2825
 #, kde-format
 msgid "Don't show messages anymore"
 msgstr "Non volver amosar mensaxes"
 
-#: kgamewinslots.cpp:112
+#: kgamewinslots.cpp:108
 #, kde-format
 msgid "%2 belongs to %3. 1 army."
 msgid_plural "%2 belongs to %3. %1 armies."
 msgstr[0] "%2 perténcelle a %3. 1 exército."
 msgstr[1] "%2 perténcelle a %3. %1 exércitos."
 
-#: kgamewinslots.cpp:454
+#: kgamewinslots.cpp:434
 #, kde-format
 msgid "Cannot save when waiting for a defense."
 msgstr "Non é posíbel gardar cando se espera unha defensa."
 
-#: kgamewinslots.cpp:461
+#: kgamewinslots.cpp:441
 #, kde-format
 msgctxt "@title:window"
 msgid "KsirK - Save Game"
 msgstr "KsirK — Gardar a partida"
 
-#: kgamewinslots.cpp:465
+#: kgamewinslots.cpp:445
 #, kde-format
 msgid "Saving canceled"
 msgstr "Cancelouse a garda"
 
-#: kgamewinslots.cpp:476
+#: kgamewinslots.cpp:456
 #, kde-format
 msgid "Game saved to %1"
 msgstr "A partida gardouse en %1."
 
-#: kgamewinslots.cpp:483
+#: kgamewinslots.cpp:463
 #, kde-format
 msgid "Only game master can save the game in network playing."
 msgstr "Só o dono da partida pode gardala cando se xoga en rede."
 
-#: kgamewinslots.cpp:809
+#: kgamewinslots.cpp:789
 #, kde-format
 msgid ""
 "Attack by drag & drop between countries<br>Move armies the same way (last "
@@ -3358,36 +2444,6 @@ msgstr ""
 msgid "The graphical theme to be used."
 msgstr "O tema gráfico que se usará."
 
-#. i18n: ectx: label, entry (jabberId), group (General)
-#: ksirksettings.kcfg:28
-#, kde-format
-msgid "The last used Jabber Id."
-msgstr "A última identidade de Jabber usada."
-
-#. i18n: ectx: label, entry (jabberPassword), group (General)
-#: ksirksettings.kcfg:31
-#, kde-format
-msgid "The password of the last used Jabber Id."
-msgstr "O contrasinal da última identidade de Jabber usada."
-
-#. i18n: ectx: label, entry (roomJid), group (General)
-#: ksirksettings.kcfg:34
-#, kde-format
-msgid "The last used Jabber groupchat room."
-msgstr "A última sala de conversa de Jabber usada."
-
-#. i18n: ectx: label, entry (roomPassword), group (General)
-#: ksirksettings.kcfg:37
-#, kde-format
-msgid "The password for last used Jabber groupchat room."
-msgstr "O contrasinal usado na última sala de conversa de Jabber."
-
-#. i18n: ectx: label, entry (nickname), group (General)
-#: ksirksettings.kcfg:40
-#, kde-format
-msgid "The nickname used in the last used Jabber groupchat room."
-msgstr "O alcume usado na última sala de conversa de Jabber."
-
 #. i18n: ectx: Menu (game)
 #: ksirkui.rc:10
 #, kde-format
@@ -3395,19 +2451,19 @@ msgid "&Game"
 msgstr "&Xogo"
 
 #. i18n: ectx: Menu (settings)
-#: ksirkui.rc:24
+#: ksirkui.rc:23
 #, kde-format
 msgid "&Settings"
 msgstr "&Configuración"
 
 #. i18n: ectx: Menu (help)
-#: ksirkui.rc:26
+#: ksirkui.rc:25
 #, kde-format
 msgid "&Help"
 msgstr "&Axuda"
 
 #. i18n: ectx: ToolBar (mainToolBar)
-#: ksirkui.rc:31
+#: ksirkui.rc:30
 #, kde-format
 msgid "Main Toolbar"
 msgstr "Barra de ferramentas principal"
@@ -3478,11 +2534,6 @@ msgstr ""
 "Benjamin Moreau<br/>&nbsp;&nbsp;Gaël Clouet<br/>&nbsp;&nbsp;Guillaume "
 "Pelouas<br/>&nbsp;&nbsp;Joël Marco<br/>&nbsp;&nbsp;Laurent Dang<br/>&nbsp;"
 "&nbsp;Nicolas Linard<br/>&nbsp;&nbsp;Vincent Sac"
-
-#: mainMenu.cpp:37
-#, kde-format
-msgid "Play KsirK over Jabber Network"
-msgstr "Xoga a KsirK a través da rede Jabber"
 
 #. i18n: ectx: property (text), widget (QLabel, lTitle)
 #: mainMenu.ui:38
@@ -3588,6 +2639,587 @@ msgstr "Erro — Números enteiros do tema descoñecidos: "
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Erro — Cadeas do tema descoñecidas: "
+
+#~ msgid "Nickname"
+#~ msgstr "Alcume"
+
+#~ msgid "Skin"
+#~ msgstr "Tema visual"
+
+#~ msgid "Nb players"
+#~ msgstr "Número de xogadores"
+
+#~ msgid "Connection to the Jabber Network"
+#~ msgstr "Conexión á rede Jabber"
+
+#~ msgid "Jabber ID:"
+#~ msgstr "ID de Jabber:"
+
+#~ msgid "kleag@kdetalk.net"
+#~ msgstr "kleag@kdetalk.net"
+
+#~ msgid "12345678"
+#~ msgstr "12345678"
+
+#~ msgid "Password:"
+#~ msgstr "Contrasinal:"
+
+#~ msgid "Connect"
+#~ msgstr "Conectar"
+
+#~ msgid "State:"
+#~ msgstr "Estado:"
+
+#~ msgid "Joining a KsirK Jabber Chatroom"
+#~ msgstr "Entrando nunha sala de conversas Jabber de Ksirk"
+
+#~ msgid "Room JID:"
+#~ msgstr "JID da sala:"
+
+#~ msgid "Nickname:"
+#~ msgstr "Alcume:"
+
+#~ msgid "Room Password:"
+#~ msgstr "Contrasinal da sala:"
+
+#~ msgid "Join Room"
+#~ msgstr "Unirse á sala"
+
+#~ msgid "Games in the Room"
+#~ msgstr "Partidas na sala"
+
+#~ msgid "Start a New Game"
+#~ msgstr "Comeza unha partida nova"
+
+#~ msgid "Join Selected Game"
+#~ msgstr "Unirse á partida escollida"
+
+#~ msgid "Load a Saved Game..."
+#~ msgstr "Cargar unha partida gardada…"
+
+#~ msgid ""
+#~ "<b>Note:</b> Playing over the Jabber network is an experimental feature "
+#~ "in KsirK.<br/>Particularly, the distribution of armies at game beginning "
+#~ "is very slow (expect something like one minute)."
+#~ msgstr ""
+#~ "<b>Nota:</b> xogar a través da rede Jabber é unha funcionalidade "
+#~ "experimental de KsirK.<br/> Concretamente, a distribución dos exércitos "
+#~ "ao comezo da partida é moi lenta (arredor dun minuto)."
+
+#~ msgid "Please connect first."
+#~ msgstr "Antes conéctate."
+
+#~ msgid "Jabber Error"
+#~ msgstr "Produciuse un erro con Jabber"
+
+#~ msgid ""
+#~ "SSL support could not be initialized for account %1. This is most likely "
+#~ "because the QCA TLS plugin is not installed on your system."
+#~ msgstr ""
+#~ "Non foi posíbel inicializar a compatibilidade con SSL para a conta %1. "
+#~ "Isto débese probabelmente a que o complemento de QCA TLS non está "
+#~ "instalado no sistema."
+
+#~ msgid "Jabber SSL Error"
+#~ msgstr "Produciuse un erro co SSL de Jabber"
+
+#~ msgid "The host name does not match the one in the certificate."
+#~ msgstr "O nome do servidor non coincide co do certificado."
+
+#~ msgid "The certificate is invalid."
+#~ msgstr "O certificado é incorrecto."
+
+#~ msgid "No certificate was presented."
+#~ msgstr "Non se presentou ningún certificado."
+
+#~ msgid "The Certificate Authority rejected the certificate."
+#~ msgstr "A autoridade de certificación rexeitou o certificado."
+
+#~ msgid "The certificate is not trusted."
+#~ msgstr "Non se verificou o certificado."
+
+#~ msgid "The signature is invalid."
+#~ msgstr "A sinatura é incorrecta."
+
+#~ msgid "The Certificate Authority is invalid."
+#~ msgstr "A autoridade de certificación é incorrecta."
+
+#~ msgid "Invalid certificate purpose."
+#~ msgstr "O propósito do certificado é incorrecto."
+
+#~ msgid "The certificate is self-signed."
+#~ msgstr "O certificado está auto-asinado."
+
+#~ msgid "The certificate has been revoked."
+#~ msgstr "O certificado revogouse."
+
+#~ msgid "Maximum certificate chain length was exceeded."
+#~ msgstr "Excedeuse a lonxitude máxima da cadea no certificado."
+
+#~ msgid "The certificate has expired."
+#~ msgstr "O certificado caducou."
+
+#~ msgid "The Certificate Authority has expired."
+#~ msgstr "A autoridade de certificación xa caducou."
+
+#~ msgid "Validity is unknown."
+#~ msgstr "Descoñécese a validez."
+
+#~ msgid ""
+#~ "<qt><p>The identity and the certificate of server %1 could not be "
+#~ "validated for account %2:</p><p>%3</p><p>%4</p><p>Do you want to continue?"
+#~ "</p></qt>"
+#~ msgstr ""
+#~ "<qt><p>Non foi posíbel validar a identidade e o certificado do servidor "
+#~ "%1 para a conta %2:</p><p>%3</p><p>%4</p><p>Queres continuar?</p></qt>"
+
+#~ msgid ""
+#~ "<qt><p>The certificate of server %1 could not be validated for account "
+#~ "%2: %3</p><p>Do you want to continue?</p></qt>"
+#~ msgstr ""
+#~ "<qt><p>Non foi posíbel validar o certificado do servidor %1 para a conta "
+#~ "%2: %3</p><p>Queres continuar?</p></qt>"
+
+#~ msgid "Jabber Connection Certificate Problem"
+#~ msgstr "Produciuse un problema co certificado da conexión Jabber"
+
+#~ msgid ""
+#~ "An encrypted connection with the Jabber server could not be established."
+#~ msgstr ""
+#~ "Non foi posíbel estabelecer unha conexión cifrada co servidor de Jabber."
+
+#~ msgid "Jabber Connection Error"
+#~ msgstr "Produciuse un erro na conexión con Jabber"
+
+#~ msgid "Malformed packet received."
+#~ msgstr "Recibiuse un paquete en mal estado."
+
+#~ msgid "There was an unrecoverable error in the protocol."
+#~ msgstr "Produciuse un erro irrecuperábel no protocolo."
+
+#~ msgid "Generic stream error."
+#~ msgstr "Produciuse un erro xenérico na retransmisión."
+
+#~ msgid "There was a conflict in the information received."
+#~ msgstr "Produciuse un conflito na información recibida."
+
+#~ msgid "The stream timed out."
+#~ msgstr "A transmisión esgotou o tempo límite."
+
+#~ msgid "Internal server error."
+#~ msgstr "Produciuse un erro interno do servidor."
+
+#~ msgid "Stream packet received from an invalid address."
+#~ msgstr "Recibiuse un paquete incorrecto dun enderezo incorrecto."
+
+#~ msgid "Malformed stream packet received."
+#~ msgstr "Recibiuse un paquete da transmisión en mal estado."
+
+#~ msgid "Policy violation in the protocol stream."
+#~ msgstr "Houbo unha violación da política na transmisión do protocolo."
+
+#~ msgid "Resource constraint."
+#~ msgstr "Restrición do recurso."
+
+#~ msgid "System shutdown."
+#~ msgstr "Apagado do sistema."
+
+#~ msgid "Unknown reason."
+#~ msgstr "Razón descoñecida."
+
+#~ msgid "There was an error in the protocol stream: %1"
+#~ msgstr "Produciuse un erro na transmisión do protocolo: %1"
+
+#~ msgid "Host not found."
+#~ msgstr "Non se atopou o servidor."
+
+#~ msgid "Address is already in use."
+#~ msgstr "Xa se está a usar o enderezo."
+
+#~ msgid "Cannot recreate the socket."
+#~ msgstr "Non é posíbel crear de novo a toma."
+
+#~ msgid "Cannot bind the socket again."
+#~ msgstr "Non é posíbel vincular á toma de novo."
+
+#~ msgid "Socket is already connected."
+#~ msgstr "A toma xa está conectada."
+
+#~ msgid "Socket is not connected."
+#~ msgstr "A toma non está conectada."
+
+#~ msgid "Socket is not bound."
+#~ msgstr "A toma non está vinculada."
+
+#~ msgid "Socket has not been created."
+#~ msgstr "Non se creou a toma."
+
+#~ msgid ""
+#~ "The socket operation would block. You should not see this error: please "
+#~ "use \"Report Bug\" from the Help menu."
+#~ msgstr ""
+#~ "Bloquearíase a operación da toma. Non debería ver este erro, use "
+#~ "«Informar dun fallo» no menú de axuda."
+
+#~ msgid "Connection refused."
+#~ msgstr "Rexeitouse a conexión."
+
+#~ msgid "Connection timed out."
+#~ msgstr "A conexión esgotou o tempo límite."
+
+#~ msgid "Connection attempt already in progress."
+#~ msgstr "Xa hai un intento de conexión en progreso."
+
+#~ msgid "Network failure."
+#~ msgstr "Fallo da rede."
+
+#~ msgid "Operation is not supported."
+#~ msgstr "A operación non se permite."
+
+#~ msgid "Socket timed out."
+#~ msgstr "A toma esgotou o tempo límite."
+
+#~ msgid "There was a connection error: %1"
+#~ msgstr "Produciuse un erro de conexión: %1"
+
+#~ msgid "Unknown host."
+#~ msgstr "Servidor descoñecido."
+
+#~ msgid "Could not connect to a required remote resource."
+#~ msgstr "Non foi posíbel conectar a un recurso remoto necesario."
+
+#~ msgid ""
+#~ "It appears we have been redirected to another server; I do not know how "
+#~ "to handle this."
+#~ msgstr ""
+#~ "Parece que fomos redirixidos a outro servidor; non sei manexar isto."
+
+#~ msgid "Unsupported protocol version."
+#~ msgstr "Versión do protocolo non permitida."
+
+#~ msgid "Unknown error."
+#~ msgstr "Erro descoñecido."
+
+#~ msgid "There was a negotiation error: %1"
+#~ msgstr "Produciuse un erro de negociación: %1"
+
+#~ msgid "Server rejected our request to start the TLS handshake."
+#~ msgstr "O servidor rexeitou a solicitude de comezar co protocolo TLS."
+
+#~ msgid "Failed to establish a secure connection."
+#~ msgstr "Non foi posíbel estabelecer unha conexión segura."
+
+#~ msgid "There was a Transport Layer Security (TLS) error: %1"
+#~ msgstr "Produciuse un erro na TLS: %1"
+
+#~ msgid "Login failed with unknown reason."
+#~ msgstr "Fallou a identificación por unha razón descoñecida."
+
+#~ msgid "No appropriate authentication mechanism available."
+#~ msgstr "Non se dispón dun mecanismo de autenticación axeitado."
+
+#~ msgid "Bad SASL authentication protocol."
+#~ msgstr "O protocolo de autenticación SASL é incorrecto."
+
+#~ msgid "Server failed mutual authentication."
+#~ msgstr "O servidor fallou a autenticación mutua."
+
+#~ msgid "Encryption is required but not present."
+#~ msgstr "Requírese cifrado pero non hai tal."
+
+#~ msgid "Invalid user ID."
+#~ msgstr "A identidade da usuaria é incorrecta."
+
+#~ msgid "Invalid mechanism."
+#~ msgstr "O mecanismo é incorrecto."
+
+#~ msgid "Invalid realm."
+#~ msgstr "A área de identificación compartida é incorrecta."
+
+#~ msgid "Mechanism too weak."
+#~ msgstr "O mecanismo é demasiado feble."
+
+#~ msgid "Wrong credentials supplied. (check your user ID and password)"
+#~ msgstr ""
+#~ "As credenciais fornecidas eran incorrectas (comprobe a identidade da "
+#~ "usuaria e o contrasinal)"
+
+#~ msgid "Temporary failure, please try again later."
+#~ msgstr "Fallo temporal, inténteo de novo máis tarde."
+
+#~ msgid "There was an error authenticating with the server: %1"
+#~ msgstr "Produciuse un erro ao autenticarse no servidor: %1"
+
+#~ msgid "Transport Layer Security (TLS) problem."
+#~ msgstr "Houbo un problema coa TLS."
+
+#~ msgid "Simple Authentication and Security Layer (SASL) problem."
+#~ msgstr "Houbo un problema coa SASL."
+
+#~ msgid "There was an error in the security layer: %1"
+#~ msgstr "Produciuse un erro na capa de seguridade: %1"
+
+#~ msgid "No permission to bind the resource."
+#~ msgstr "Non hai permiso para vincular o recurso."
+
+#~ msgid "The resource is already in use."
+#~ msgstr "O recurso xa está en uso."
+
+#~ msgid "Could not bind a resource: %1"
+#~ msgstr "Non foi posíbel vincular un recurso: %1"
+
+#~ msgid "Connection problem with Jabber server %1"
+#~ msgstr "Houbo un problema na conexión co servidor de Jabber %1"
+
+#~ msgid ""
+#~ "The Jabber user %1 removed %2's subscription to him/her. This account "
+#~ "will no longer be able to view his/her online/offline status. Do you want "
+#~ "to delete the contact?"
+#~ msgstr ""
+#~ "A usuaria de Jabber %1 retirou a subscrición de %2 con ela. Esta conta "
+#~ "non será quen de ver o seu estado en liña ou desconectado. Quere eliminar "
+#~ "o contacto?"
+
+#~ msgid "Notification"
+#~ msgstr "Notificación"
+
+#~ msgid "Keep"
+#~ msgstr "Manter"
+
+#~ msgid "A password is required to join the room %1."
+#~ msgstr "Necesítase un contrasinal para unirse á sala %1."
+
+#~ msgid "Error trying to join %1: nickname %2 is already in use"
+#~ msgstr ""
+#~ "Produciuse un erro ao intentar unirse a %1: alguén está a usar xa o "
+#~ "alcume %2"
+
+#~ msgid "Provide your nickname"
+#~ msgstr "Forneza o seu alcume"
+
+#~ msgid "You cannot join the room %1 because you have been banned"
+#~ msgstr "Non pode entrar na sala %1 porque se lle prohibiu a entrada"
+
+#~ msgid "Jabber Group Chat"
+#~ msgstr "Conversa de grupo de Jabber"
+
+#~ msgid ""
+#~ "You cannot join the room %1 because the maximum number of users has been "
+#~ "reached"
+#~ msgstr "Non pode entrar na sala %1 porque se acadou o máximo de usuarias"
+
+#~ msgid "No reason given by the server"
+#~ msgstr "O servidor non indicou o motivo"
+
+#~ msgid ""
+#~ "There was an error processing your request for groupchat %1. (Reason: %2, "
+#~ "Code %3)"
+#~ msgstr ""
+#~ "Produciuse un erro ao procesar a solicitude para a sala %1. (Causa: %2, "
+#~ "código %3)"
+
+#~ msgid ""
+#~ "An error occurred while trying to remove the account:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Produciuse un erro ao intentar retirar a conta:\n"
+#~ "%1"
+
+#~ msgid "Jabber Account Unregistration"
+#~ msgstr "Eliminación dunha conta de Jabber"
+
+#~ msgid "You cannot see each others' status."
+#~ msgstr "Uns non poden ver o estado dos outros."
+
+#~ msgid ""
+#~ "You can see this contact's status, but he/she cannot see your status."
+#~ msgstr ""
+#~ "Podes ver o estado deste contacto pero el ou ela non pode ver o teu."
+
+#~ msgid "This contact can see your status, but you cannot see his/her status."
+#~ msgstr "Este contacto pode ver o teu estado, pero ti non podes ver o seu."
+
+#~ msgid "You can see each others' status."
+#~ msgstr "Podedes ver os vosos estados."
+
+#~ msgid "Client"
+#~ msgstr "Cliente"
+
+#~ msgid "Timestamp"
+#~ msgstr "Marca de tempo"
+
+#~ msgid "Message"
+#~ msgstr "Mensaxe"
+
+#~ msgid "Downloading of Jabber contact photo failed."
+#~ msgstr "Produciuse un erro ao descargar a imaxe do contacto de Jabber."
+
+#~ msgid "Groupchat bookmark"
+#~ msgstr "Marcador de conversa en grupo"
+
+#~ msgid "Authorization"
+#~ msgstr "Autorización"
+
+#~ msgid "(Re)send Authorization To"
+#~ msgstr "Enviar (de novo) a autorización a"
+
+#~ msgid "(Re)request Authorization From"
+#~ msgstr "Solicitar (de novo) a autorización de"
+
+#~ msgid "Remove Authorization From"
+#~ msgstr "Retirar a autorización de"
+
+#~ msgid "Set Availability"
+#~ msgstr "Definir a dispoñibilidade"
+
+#~ msgid "Online"
+#~ msgstr "En liña"
+
+#~ msgid "Free to Chat"
+#~ msgstr "Dispoñíbel para conversar"
+
+#~ msgid "Away"
+#~ msgstr "Ausente"
+
+#~ msgid "Extended Away"
+#~ msgstr "Ausente por moito tempo"
+
+#~ msgid "Do Not Disturb"
+#~ msgstr "Non molestar"
+
+#~ msgid "Invisible"
+#~ msgstr "Invisíbel"
+
+#~ msgid "Select Resource"
+#~ msgstr "Escoller un recurso"
+
+#~ msgid "Automatic (best/default resource)"
+#~ msgstr "Automático (recurso mellor/predeterminado)"
+
+#~ msgid "Voice call"
+#~ msgstr "Chamada de voz"
+
+#~ msgid "The original message is: <i>\" %1 \"</i><br />"
+#~ msgstr "A mensaxe orixinal é: «<i>%1</i>»<br />"
+
+#~ msgid ""
+#~ "<qt><i>%1</i> has invited you to join the conference <b>%2</b><br />"
+#~ "%3<br />If you want to accept and join, just <b>enter your nickname</b> "
+#~ "and press ok<br />If you want to decline, press cancel</qt>"
+#~ msgstr ""
+#~ "<qt><i>%1</i> convidouno a se unir á conferencia <b>%2</b><br /> %3<br /> "
+#~ "Se quere aceptar e unirse, simplemente <b>insira o seu alcume </b> e "
+#~ "prema aceptar<br /> Se non quere entrar na conferencia prema cancelar</qt>"
+
+#~ msgid "Invited to a conference - Jabber Plugin"
+#~ msgstr "Invitación a unha conferencia — Complemento de Jabber"
+
+#~ msgid "Message has been displayed"
+#~ msgstr "Amosouse a mensaxe"
+
+#~ msgid "Message has been delivered"
+#~ msgstr "Entregouse a mensaxe"
+
+#~ msgid "Message stored on the server, contact offline"
+#~ msgstr "A mensaxe gardouse no servidor, o contacto está desconectado"
+
+#~ msgid "%1 has ended his/her participation in the chat session."
+#~ msgstr "%1 deixou a conversa."
+
+#~ msgid "Your message could not be delivered: \"%1\", Reason: \"%2\""
+#~ msgstr "Non foi posíbel entregar a mensaxe: «%1», causa: «%2»"
+
+#~ msgid ""
+#~ "Do you also want to remove user %1's authorization to see your status?"
+#~ msgstr "Queres retirarlle tamén a %1 a autorización para ver o teu estado?"
+
+#~ msgid "Kopete File Transfer"
+#~ msgstr "Transferencia de ficheiros por Kopete"
+
+#~ msgid ""
+#~ "You have preselected a resource for contact %1, but you still have open "
+#~ "chat windows for this contact. The preselected resource will only apply "
+#~ "to newly opened chat windows."
+#~ msgstr ""
+#~ "Preseleccionaches un recurso para o contacto %1 pero aínda tes aberta "
+#~ "unha xanela de conversa con el. A acción escollida só se aplicará ás "
+#~ "novas xanelas de conversa."
+
+#~ msgid "Jabber Resource Selector"
+#~ msgstr "Selector de recursos de Jabber"
+
+#~ msgid "Change nickname"
+#~ msgstr "Cambiar o alcume"
+
+#~ msgid "Change nickname - Jabber Plugin"
+#~ msgstr "Cambiar o alcume — Complemento de Jabber"
+
+#~ msgid "Please enter the new nickname you want to have in the room <i>%1</i>"
+#~ msgstr "Insira o novo alcume que quere ter na sala <i>%1</i>"
+
+#~ msgid "Choose Account"
+#~ msgstr "Escolle unha conta"
+
+#~ msgid "Choose an account to handle the URL %1"
+#~ msgstr "Escolle unha conta para manexar o URL %1"
+
+#~ msgid "Do you want to add '%1' to your contact list?"
+#~ msgstr "Queres engadir o contacto %1 á lista de contactos?"
+
+#~ msgid "Add"
+#~ msgstr "Engadir"
+
+#~ msgid "Do Not Add"
+#~ msgstr "Non engadir"
+
+#~ msgid "Do you want to remove '%1' from your contact list?"
+#~ msgstr "Queres retirar a %1 da lista de contactos?"
+
+#~ msgid "Remove"
+#~ msgstr "Retirar"
+
+#~ msgid "Do Not Remove"
+#~ msgstr "Non retirar"
+
+#~ msgid "Please enter your nickname for the room %1"
+#~ msgstr "Insire o alcume que vas usar na sala %1"
+
+#~ msgid "You have been invited to %1"
+#~ msgstr "Convidáronche a %1"
+
+#~ msgid "Play over Jabber"
+#~ msgstr "Xogar a través de Jabber"
+
+#~ msgid "Play KsirK over the Jabber Network"
+#~ msgstr "Xogar a KsirK a través da rede Jabber"
+
+#~ msgid "Jabber"
+#~ msgstr "Jabber"
+
+#~ msgid ""
+#~ "Allow to connect to a KsirK Jabber Multi User Gaming Room to create new "
+#~ "games or to join present games"
+#~ msgstr ""
+#~ "Permite conectar a unha sala Jabber de xogo multiusuario para Ksirk onde "
+#~ "crear novas partidas ou unirse a partidas en xogo"
+
+#~ msgid "The last used Jabber Id."
+#~ msgstr "A última identidade de Jabber usada."
+
+#~ msgid "The password of the last used Jabber Id."
+#~ msgstr "O contrasinal da última identidade de Jabber usada."
+
+#~ msgid "The last used Jabber groupchat room."
+#~ msgstr "A última sala de conversa de Jabber usada."
+
+#~ msgid "The password for last used Jabber groupchat room."
+#~ msgstr "O contrasinal usado na última sala de conversa de Jabber."
+
+#~ msgid "The nickname used in the last used Jabber groupchat room."
+#~ msgstr "O alcume usado na última sala de conversa de Jabber."
+
+#~ msgid "Play KsirK over Jabber Network"
+#~ msgstr "Xoga a KsirK a través da rede Jabber"
 
 #~ msgid ""
 #~ "%1 exists.\n"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:36+0000\n"
+"POT-Creation-Date: 2024-05-03 00:37+0000\n"
 "PO-Revision-Date: 2024-01-22 17:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1066,7 +1066,7 @@ msgstr ""
 msgid "Legacy"
 msgstr "繼承"
 
-#: decoratedgameframe.cpp:100 kgamewin.cpp:450
+#: decoratedgameframe.cpp:100 kgamewin.cpp:351
 #, kde-format
 msgid "Next Player"
 msgstr "下一個玩家"
@@ -1076,8 +1076,8 @@ msgstr "下一個玩家"
 msgid "Details"
 msgstr "詳情"
 
-#: decoratedgameframe.cpp:106 kgamewin.cpp:430 kgamewin.cpp:1316
-#: kgamewin.cpp:1328 kgamewin.cpp:2485
+#: decoratedgameframe.cpp:106 kgamewin.cpp:331 kgamewin.cpp:1217
+#: kgamewin.cpp:1229 kgamewin.cpp:2386
 #, kde-format
 msgid "Goal"
 msgstr "目標"
@@ -1165,138 +1165,6 @@ msgstr ""
 #, kde-format
 msgid "<br><i>Choose the number of armies to move.</i>"
 msgstr "<br/><i>選擇要移動的軍隊數量。</i>"
-
-#: Dialogs/jabbergameui.cpp:76
-#, kde-format
-msgid "Nickname"
-msgstr "暱稱"
-
-#: Dialogs/jabbergameui.cpp:77
-#, kde-format
-msgid "Skin"
-msgstr "外觀"
-
-#: Dialogs/jabbergameui.cpp:78
-#, kde-format
-msgid "Nb players"
-msgstr "玩家數量"
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: Dialogs/jabbergameui.ui:30
-#, kde-format
-msgid "Connection to the Jabber Network"
-msgstr "連線到 Jabber 網路"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: Dialogs/jabbergameui.ui:39
-#, kde-format
-msgid "Jabber ID:"
-msgstr "Jabber 代號："
-
-#. i18n: ectx: property (text), widget (KLineEdit, jabberid)
-#: Dialogs/jabbergameui.ui:46
-#, kde-format
-msgid "kleag@kdetalk.net"
-msgstr "kleag@kdetalk.net"
-
-#. i18n: ectx: property (text), widget (KLineEdit, password)
-#: Dialogs/jabbergameui.ui:53
-#, kde-format
-msgid "12345678"
-msgstr "12345678"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: Dialogs/jabbergameui.ui:63
-#, kde-format
-msgid "Password:"
-msgstr "密碼："
-
-#. i18n: ectx: property (text), widget (QPushButton, connectbutton)
-#: Dialogs/jabbergameui.ui:74
-#, kde-format
-msgid "Connect"
-msgstr "連線"
-
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#. i18n: ectx: property (text), widget (QLabel, label_10)
-#: Dialogs/jabbergameui.ui:96 Dialogs/jabbergameui.ui:189
-#, kde-format
-msgid "State:"
-msgstr "狀態："
-
-#. i18n: ectx: property (text), widget (QLabel, label_9)
-#: Dialogs/jabbergameui.ui:137
-#, kde-format
-msgid "Joining a KsirK Jabber Chatroom"
-msgstr "加入 KsirK Jabber 聊天室"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: Dialogs/jabbergameui.ui:146
-#, kde-format
-msgid "Room JID:"
-msgstr "聊天室 Jabber 代號："
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: Dialogs/jabbergameui.ui:156
-#, kde-format
-msgid "Nickname:"
-msgstr "暱稱："
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: Dialogs/jabbergameui.ui:166
-#, kde-format
-msgid "Room Password:"
-msgstr "聊天室密碼："
-
-#. i18n: ectx: property (text), widget (QPushButton, joinroombutton)
-#: Dialogs/jabbergameui.ui:180
-#, kde-format
-msgid "Join Room"
-msgstr "加入聊天室"
-
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: Dialogs/jabbergameui.ui:209
-#, kde-format
-msgid "Games in the Room"
-msgstr "聊天室裡的遊戲"
-
-#. i18n: ectx: property (text), widget (QPushButton, startnewgamebutton)
-#: Dialogs/jabbergameui.ui:245
-#, kde-format
-msgid "Start a New Game"
-msgstr "開始新遊戲"
-
-#. i18n: ectx: property (text), widget (QPushButton, joingamebutton)
-#: Dialogs/jabbergameui.ui:255
-#, kde-format
-msgid "Join Selected Game"
-msgstr "加入選擇的遊戲"
-
-#. i18n: ectx: property (text), widget (QPushButton, loadsavedgamebutton)
-#: Dialogs/jabbergameui.ui:265
-#, kde-format
-msgid "Load a Saved Game..."
-msgstr "載入儲存的遊戲..."
-
-#. i18n: ectx: property (text), widget (QLabel, label_11)
-#: Dialogs/jabbergameui.ui:293
-#, kde-format
-msgid ""
-"<b>Note:</b> Playing over the Jabber network is an experimental feature in "
-"KsirK.<br/>Particularly, the distribution of armies at game beginning is "
-"very slow (expect something like one minute)."
-msgstr ""
-"<b>注意：</b>在 Jabber 網路上玩 KsirK 目前只是實驗階段。<br /> 特別是，在遊戲"
-"開始時安排軍隊的時候會非常慢。"
-
-#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
-#. i18n: ectx: property (text), widget (QPushButton, cancelbutton)
-#: Dialogs/jabbergameui.ui:318 Dialogs/newGameDialog.ui:230
-#: Dialogs/newGameSummary.ui:206 Dialogs/qplayersetupdialog.ui:126
-#: Dialogs/tcpconnectwidget.ui:98
-#, kde-format
-msgid "Cancel"
-msgstr "取消"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, JoinGameDialog)
 #: Dialogs/joingame.ui:13
@@ -1450,6 +1318,13 @@ msgstr "在此模式中，每個玩家會被指定一個目標，玩家必須達
 msgid "Reach a goa&l"
 msgstr "達到目標 (&L)"
 
+#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
+#: Dialogs/newGameDialog.ui:230 Dialogs/newGameSummary.ui:206
+#: Dialogs/qplayersetupdialog.ui:126 Dialogs/tcpconnectwidget.ui:98
+#, kde-format
+msgid "Cancel"
+msgstr "取消"
+
 #. i18n: ectx: property (text), widget (QPushButton, nextButton)
 #: Dialogs/newGameDialog.ui:250 Dialogs/qplayersetupdialog.ui:153
 #: Dialogs/tcpconnectwidget.ui:125
@@ -1457,7 +1332,7 @@ msgstr "達到目標 (&L)"
 msgid "Next >>"
 msgstr "下一個 >>"
 
-#: Dialogs/newGameDialogImpl.cpp:132 newgamesetup.cpp:44
+#: Dialogs/newGameDialogImpl.cpp:125 newgamesetup.cpp:44
 #, kde-format
 msgid ""
 "Skins directory not found - Verify your installation\n"
@@ -1466,7 +1341,7 @@ msgstr ""
 "找不到 Skins 目錄─請檢查您的安裝。\n"
 "程式無法再繼續。"
 
-#: Dialogs/newGameDialogImpl.cpp:133 newgamesetup.cpp:45
+#: Dialogs/newGameDialogImpl.cpp:126 newgamesetup.cpp:45
 #, kde-format
 msgid "Fatal Error!"
 msgstr "嚴重錯誤"
@@ -1627,7 +1502,7 @@ msgid "New Game or Exit"
 msgstr "開始新遊戲或離開"
 
 #. i18n: ectx: property (text), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:24 GameLogic/gameautomaton.cpp:1667
+#: Dialogs/restartOrExitDialog.ui:24 GameLogic/gameautomaton.cpp:1625
 #, kde-format
 msgid "New Game"
 msgstr "開始新遊戲"
@@ -1651,7 +1526,7 @@ msgid "Do nothing. Game buttons will be available"
 msgstr "不做任何事。遊戲按鍵可使用"
 
 #. i18n: ectx: property (text), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:47 GameLogic/gameautomaton.cpp:1668
+#: Dialogs/restartOrExitDialog.ui:47 GameLogic/gameautomaton.cpp:1626
 #, kde-format
 msgid "Exit"
 msgstr "離開"
@@ -1692,75 +1567,74 @@ msgstr[0] ""
 msgid "Fatal Error"
 msgstr "嚴重錯誤"
 
-#: GameLogic/gameautomaton.cpp:306
+#: GameLogic/gameautomaton.cpp:303
 #, kde-format
 msgid "KsirK - Network configuration"
 msgstr "KsirK─網路設定"
 
-#: GameLogic/gameautomaton.cpp:307
+#: GameLogic/gameautomaton.cpp:304
 #, kde-format
 msgid "Please type in the port number on which to offer connections:"
 msgstr "請輸入連接埠號碼："
 
-#: GameLogic/gameautomaton.cpp:1194 GameLogic/gameautomaton.cpp:1223
+#: GameLogic/gameautomaton.cpp:1191
 #, kde-format
 msgid "Do you really want to end your current game and join another?"
 msgstr "您確定要結束您目前的遊戲，加入另一個嗎？"
 
-#: GameLogic/gameautomaton.cpp:1194 GameLogic/gameautomaton.cpp:1223
-#: kgamewin.cpp:2649
+#: GameLogic/gameautomaton.cpp:1191 kgamewin.cpp:2550
 #, kde-format
 msgid "New game confirmation"
 msgstr "新遊戲確認"
 
-#: GameLogic/gameautomaton.cpp:1194 GameLogic/gameautomaton.cpp:1223
+#: GameLogic/gameautomaton.cpp:1191
 #, kde-format
 msgctxt "@action:button"
 msgid "Join New Game"
 msgstr "加入新遊戲"
 
-#: GameLogic/gameautomaton.cpp:1404
+#: GameLogic/gameautomaton.cpp:1362
 #, kde-format
 msgid "%1 (%2) joined game ; waiting for %3 players to connect"
 msgstr "%1（%2）已加入遊戲；等待其它 %3 個玩家..."
 
-#: GameLogic/gameautomaton.cpp:1510
+#: GameLogic/gameautomaton.cpp:1468
 #, kde-format
 msgid "Please choose another name"
 msgstr "請選擇其它名稱"
 
-#: GameLogic/gameautomaton.cpp:1510
+#: GameLogic/gameautomaton.cpp:1468
 #, kde-format
 msgid "KsirK - Name already used!"
 msgstr "KsirK─名稱已使用"
 
-#: GameLogic/gameautomaton.cpp:1516
+#: GameLogic/gameautomaton.cpp:1474
 #, kde-format
 msgid "Player number %1, what's your name?"
 msgstr "玩家編號 %1，您的名字是？"
 
-#: GameLogic/gameautomaton.cpp:1520
+#: GameLogic/gameautomaton.cpp:1478
 #, kde-format
 msgid "Error - Player %1, you have to choose a name."
 msgstr "錯誤─玩家 %1，您必須輸入名稱。"
 
-#: GameLogic/gameautomaton.cpp:1522
+#: GameLogic/gameautomaton.cpp:1480
 #, kde-format
 msgctxt "@info Forged player name"
 msgid "Player%1"
 msgstr "玩家 %1"
 
-#: GameLogic/gameautomaton.cpp:1573
+#: GameLogic/gameautomaton.cpp:1531
 #, kde-format
 msgid "Please choose another nation"
 msgstr "請選擇另一個國家"
 
-#: GameLogic/gameautomaton.cpp:1573
+#: GameLogic/gameautomaton.cpp:1531
 #, kde-format
 msgid "KsirK - Nation already used!"
 msgstr "KsirK─國家已使用"
 
-#: GameLogic/gameautomaton.cpp:1665
+#: GameLogic/gameautomaton.cpp:1623
 #, kde-format
 msgid ""
 "KsirK - Lost connection to server!\n"
@@ -1769,17 +1643,17 @@ msgstr ""
 "KsirK─遺失伺服器連線。\n"
 "您要怎麼做？"
 
-#: GameLogic/gameautomaton.cpp:1666
+#: GameLogic/gameautomaton.cpp:1624
 #, kde-format
 msgid "Starting a new game or exit."
 msgstr "開始新遊戲，或離開遊戲。"
 
-#: GameLogic/gameautomaton.cpp:1669
+#: GameLogic/gameautomaton.cpp:1627
 #, kde-format
 msgid "Do nothing"
 msgstr "不做任何事"
 
-#: GameLogic/gameautomaton.cpp:1691
+#: GameLogic/gameautomaton.cpp:1649
 #, kde-format
 msgid ""
 "Lost connection to a client.\n"
@@ -1790,58 +1664,58 @@ msgstr ""
 "目前，您只能儲存遊戲，並且重新開始新遊戲或離開遊戲。\n"
 "在未來的版本我們希望能改進這一點。"
 
-#: GameLogic/gameautomaton.cpp:1692
+#: GameLogic/gameautomaton.cpp:1650
 #, kde-format
 msgid "KsirK - Lost connection to client!"
 msgstr "KsirK─遺失與用戶端的連線"
 
-#: GameLogic/gameautomaton.cpp:1694
+#: GameLogic/gameautomaton.cpp:1652
 #, kde-format
 msgid "Do want to save your game?"
 msgstr "您要儲存遊戲嗎？"
 
-#: GameLogic/gameautomaton.cpp:1860 GameLogic/gameautomaton.cpp:2277
-#: kgamewin.cpp:2140 kgamewin.cpp:2235 kgamewin.cpp:2272
+#: GameLogic/gameautomaton.cpp:1818 GameLogic/gameautomaton.cpp:2235
+#: kgamewin.cpp:2041 kgamewin.cpp:2136 kgamewin.cpp:2173
 #, kde-format
 msgid "%1: %2 armies to place"
 msgstr "%1：要擺放 %2 支軍隊"
 
-#: GameLogic/gameautomaton.cpp:1865 GameLogic/gameautomaton.cpp:2280
-#: kgamewinslots.cpp:813
+#: GameLogic/gameautomaton.cpp:1823 GameLogic/gameautomaton.cpp:2238
+#: kgamewinslots.cpp:793
 #, kde-format
 msgid ""
 "Now, place your armies in your countries<br>by clicking in the target "
 "countries."
 msgstr "現在，點擊您的國家來擺放軍隊。"
 
-#: GameLogic/gameautomaton.cpp:1942
+#: GameLogic/gameautomaton.cpp:1900
 #, kde-format
 msgid ""
 "%1, your goal will be displayed. Please<br>make sure that no other player "
 "can see it!"
 msgstr "%1，您的目標會顯示出來。<br/>請確定其它玩家無法看到它。"
 
-#: GameLogic/gameautomaton.cpp:1944
+#: GameLogic/gameautomaton.cpp:1902
 #, kde-format
 msgid "KsirK - Displaying Goal"
 msgstr "KsirK─顯示目標"
 
-#: GameLogic/gameautomaton.cpp:2130
+#: GameLogic/gameautomaton.cpp:2088
 #, kde-format
 msgid "%1 chooses its defense"
 msgstr "%1 選擇它的防守"
 
-#: GameLogic/gameautomaton.cpp:2290
+#: GameLogic/gameautomaton.cpp:2248
 #, kde-format
 msgid "%1 choose to end recycling; there are now %2 players who want so"
 msgstr "%1 決定結束循環；現在有 %2 個玩家要這樣"
 
-#: GameLogic/gameautomaton.cpp:2380
+#: GameLogic/gameautomaton.cpp:2338
 #, kde-format
 msgid "Problem : no one destroyed"
 msgstr "發生問題：沒有一個被毀滅"
 
-#: GameLogic/gameautomaton.cpp:2380 gestionSprites.cpp:873
+#: GameLogic/gameautomaton.cpp:2338 gestionSprites.cpp:873
 #: gestionSprites.cpp:893 gestionSprites.cpp:994 gestionSprites.cpp:1031
 #: gestionSprites.cpp:1066 gestionSprites.cpp:1120 gestionSprites.cpp:1157
 #: gestionSprites.cpp:1191
@@ -1849,7 +1723,7 @@ msgstr "發生問題：沒有一個被毀滅"
 msgid "KsirK - Error!"
 msgstr "KsirK─錯誤！"
 
-#: GameLogic/gameautomaton.cpp:2429
+#: GameLogic/gameautomaton.cpp:2387
 #, kde-format
 msgid ""
 "You entered an invalid password.\n"
@@ -1858,12 +1732,12 @@ msgstr ""
 "您輸入了不合法的密碼。\n"
 "請再試一次。"
 
-#: GameLogic/gameautomaton.cpp:2429
+#: GameLogic/gameautomaton.cpp:2387
 #, kde-format
 msgid "KsirK - Invalid password!"
 msgstr "KsirK─不合法的密碼"
 
-#: GameLogic/gameautomaton.cpp:2637
+#: GameLogic/gameautomaton.cpp:2588
 #, kde-format
 msgid ""
 "%1, you have not played anything this turn.\n"
@@ -1872,12 +1746,12 @@ msgstr ""
 "%1，您在此輪還沒做動作。\n"
 "您確定不做動作嗎？"
 
-#: GameLogic/gameautomaton.cpp:2638
+#: GameLogic/gameautomaton.cpp:2589
 #, kde-format
 msgid "Really Next Player?"
 msgstr "要換到下一個玩家嗎？"
 
-#: GameLogic/gameautomaton.cpp:2639
+#: GameLogic/gameautomaton.cpp:2590
 #, kde-format
 msgctxt "@action:button"
 msgid "Next Player"
@@ -1961,7 +1835,7 @@ msgstr "%1 於 %2"
 msgid "KsirK - Goal Display"
 msgstr "KsirK─目標顯示"
 
-#: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:181
+#: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:170
 #, kde-format
 msgid "No message..."
 msgstr "沒有訊息..."
@@ -1982,9 +1856,9 @@ msgstr ""
 
 #: GameLogic/onu.cpp:120 GameLogic/onu.cpp:137 gestionSprites.cpp:638
 #: gestionSprites.cpp:753 gestionSprites.cpp:798 gestionSprites.cpp:1354
-#: gestionSprites.cpp:1431 kgamewin.cpp:150 kgamewin.cpp:384 kgamewin.cpp:401
-#: kgamewin.cpp:418 kgamewin.cpp:587 kgamewin.cpp:743
-#: Sprites/animsprite.cpp:515 Sprites/animsprite.cpp:530
+#: gestionSprites.cpp:1431 kgamewin.cpp:139 kgamewin.cpp:302 kgamewin.cpp:319
+#: kgamewin.cpp:488 kgamewin.cpp:644 Sprites/animsprite.cpp:515
+#: Sprites/animsprite.cpp:530
 #, kde-format
 msgid "Error!"
 msgstr "錯誤！"
@@ -2040,929 +1914,154 @@ msgstr "發生問題：沒有一個被毀滅"
 msgid "Bug: who should be 0, 1 or 2."
 msgstr "錯誤：who 應該為 0、1 或 2"
 
-#: Jabber/jabberaccount.cpp:211
-#, kde-format
-msgid "Please connect first."
-msgstr "請先連線。"
-
-#: Jabber/jabberaccount.cpp:211
-#, kde-format
-msgid "Jabber Error"
-msgstr "Jabber 錯誤"
-
-#: Jabber/jabberaccount.cpp:374
-#, kde-format
-msgid ""
-"SSL support could not be initialized for account %1. This is most likely "
-"because the QCA TLS plugin is not installed on your system."
-msgstr ""
-"無法初始化帳號 %1 的 SSL 支援。這最有可能是因為您的系統上沒裝 QCA TLS 外掛程"
-"式。"
-
-#: Jabber/jabberaccount.cpp:376
-#, kde-format
-msgid "Jabber SSL Error"
-msgstr "Jabber SSL 錯誤"
-
-#: Jabber/jabberaccount.cpp:409
-#, kde-format
-msgid "The host name does not match the one in the certificate."
-msgstr "此主機名稱與憑證中不符。"
-
-#: Jabber/jabberaccount.cpp:413
-#, kde-format
-msgid "The certificate is invalid."
-msgstr "憑證不正確。"
-
-#: Jabber/jabberaccount.cpp:417
-#, kde-format
-msgid "No certificate was presented."
-msgstr "沒有憑證。"
-
-#: Jabber/jabberaccount.cpp:427
-#, kde-format
-msgid "The Certificate Authority rejected the certificate."
-msgstr "憑證認證中心拒絕此憑證。"
-
-#: Jabber/jabberaccount.cpp:431
-#, kde-format
-msgid "The certificate is not trusted."
-msgstr "此憑證不受信任。"
-
-#: Jabber/jabberaccount.cpp:435
-#, kde-format
-msgid "The signature is invalid."
-msgstr "此簽章不正確。"
-
-#: Jabber/jabberaccount.cpp:439
-#, kde-format
-msgid "The Certificate Authority is invalid."
-msgstr "憑證認證中心不正確。"
-
-#: Jabber/jabberaccount.cpp:443
-#, kde-format
-msgid "Invalid certificate purpose."
-msgstr "不合法的憑證目的。"
-
-#: Jabber/jabberaccount.cpp:447
-#, kde-format
-msgid "The certificate is self-signed."
-msgstr "此憑證為自行簽署。"
-
-#: Jabber/jabberaccount.cpp:451
-#, kde-format
-msgid "The certificate has been revoked."
-msgstr "此憑證已被撤銷。"
-
-#: Jabber/jabberaccount.cpp:455
-#, kde-format
-msgid "Maximum certificate chain length was exceeded."
-msgstr "已超過最大憑證鍊長度。"
-
-#: Jabber/jabberaccount.cpp:459
-#, kde-format
-msgid "The certificate has expired."
-msgstr "憑證已過期。"
-
-#: Jabber/jabberaccount.cpp:463
-#, kde-format
-msgid "The Certificate Authority has expired."
-msgstr "憑證認證中心已逾時。"
-
-#: Jabber/jabberaccount.cpp:467
-#, kde-format
-msgid "Validity is unknown."
-msgstr "合法性未知。"
-
-#: Jabber/jabberaccount.cpp:478
-#, kde-format
-msgid ""
-"<qt><p>The identity and the certificate of server %1 could not be validated "
-"for account %2:</p><p>%3</p><p>%4</p><p>Do you want to continue?</p></qt>"
-msgstr ""
-"<qt><p>伺服器 %1 的身份與憑證無法被帳號 %2 確認：</p><p>%3</p><p>%4</p><p>您"
-"確定要繼續嗎？</p></qt>"
-
-#: Jabber/jabberaccount.cpp:484 Jabber/jabberaccount.cpp:489
-#, kde-format
-msgid ""
-"<qt><p>The certificate of server %1 could not be validated for account %2: "
-"%3</p><p>Do you want to continue?</p></qt>"
-msgstr ""
-"<qt><p>伺服器 %1 的憑證無法被帳號 %2 確認：%3。</p> <p>您確定要繼續嗎？</p></"
-"qt>"
-
-#: Jabber/jabberaccount.cpp:496
-#, kde-format
-msgid "Jabber Connection Certificate Problem"
-msgstr "Jabber 連線憑證發生問題"
-
-#: Jabber/jabberaccount.cpp:530 kgamewinslots.cpp:1011
-#, kde-format
-msgid ""
-"An encrypted connection with the Jabber server could not be established."
-msgstr "無法建立與 Jabber 伺服器的加密連線。"
-
-#: Jabber/jabberaccount.cpp:531 kgamewinslots.cpp:1012
-#, kde-format
-msgid "Jabber Connection Error"
-msgstr "Jabber 連線錯誤"
-
-#: Jabber/jabberaccount.cpp:734
-#, kde-format
-msgid "Malformed packet received."
-msgstr "接收到不正確的封包。"
-
-#: Jabber/jabberaccount.cpp:739
-#, kde-format
-msgid "There was an unrecoverable error in the protocol."
-msgstr "無法在協定中修復此錯誤。"
-
-#: Jabber/jabberaccount.cpp:746
-#, kde-format
-msgid "Generic stream error."
-msgstr "一般資料流錯誤。"
-
-#: Jabber/jabberaccount.cpp:750
-#, kde-format
-msgid "There was a conflict in the information received."
-msgstr "接收到的資訊有衝突。"
-
-#: Jabber/jabberaccount.cpp:753
-#, kde-format
-msgid "The stream timed out."
-msgstr "串流已逾時。"
-
-#: Jabber/jabberaccount.cpp:756
-#, kde-format
-msgid "Internal server error."
-msgstr "內部伺服器錯誤。"
-
-#: Jabber/jabberaccount.cpp:759
-#, kde-format
-msgid "Stream packet received from an invalid address."
-msgstr "由不正確的地址傳來的串流封包。"
-
-#: Jabber/jabberaccount.cpp:762
-#, kde-format
-msgid "Malformed stream packet received."
-msgstr "接收到不正確的串流封包。"
-
-#: Jabber/jabberaccount.cpp:766
-#, kde-format
-msgid "Policy violation in the protocol stream."
-msgstr "協定串流違反了政策。"
-
-#: Jabber/jabberaccount.cpp:770
-#, kde-format
-msgid "Resource constraint."
-msgstr "資源限制。"
-
-#: Jabber/jabberaccount.cpp:774
-#, kde-format
-msgid "System shutdown."
-msgstr "系統已關閉。"
-
-#: Jabber/jabberaccount.cpp:777
-#, kde-format
-msgid "Unknown reason."
-msgstr "未知的理由。"
-
-#: Jabber/jabberaccount.cpp:781
-#, kde-format
-msgid "There was an error in the protocol stream: %1"
-msgstr "協定串流中發生錯誤：%1"
-
-#: Jabber/jabberaccount.cpp:789
-#, kde-format
-msgid "Host not found."
-msgstr "找不到主機。"
-
-#: Jabber/jabberaccount.cpp:792
-#, kde-format
-msgid "Address is already in use."
-msgstr "地址已在使用中。"
-
-#: Jabber/jabberaccount.cpp:795
-#, kde-format
-msgid "Cannot recreate the socket."
-msgstr "無法重建 socket。"
-
-#: Jabber/jabberaccount.cpp:798
-#, kde-format
-msgid "Cannot bind the socket again."
-msgstr "無法重新結合 socket。"
-
-#: Jabber/jabberaccount.cpp:801
-#, kde-format
-msgid "Socket is already connected."
-msgstr "Socket 已連接。"
-
-#: Jabber/jabberaccount.cpp:804
-#, kde-format
-msgid "Socket is not connected."
-msgstr "Socket 未連接。"
-
-#: Jabber/jabberaccount.cpp:807
-#, kde-format
-msgid "Socket is not bound."
-msgstr "Socket 未結合。"
-
-#: Jabber/jabberaccount.cpp:810
-#, kde-format
-msgid "Socket has not been created."
-msgstr "Socket 未建立。"
-
-#: Jabber/jabberaccount.cpp:813
-#, kde-format
-msgid ""
-"The socket operation would block. You should not see this error: please use "
-"\"Report Bug\" from the Help menu."
-msgstr "Socket 運作為阻斷式。您不應看到此訊息，請回報錯誤。"
-
-#: Jabber/jabberaccount.cpp:816
-#, kde-format
-msgid "Connection refused."
-msgstr "連線被拒。"
-
-#: Jabber/jabberaccount.cpp:819
-#, kde-format
-msgid "Connection timed out."
-msgstr "連線逾時。"
-
-#: Jabber/jabberaccount.cpp:822
-#, kde-format
-msgid "Connection attempt already in progress."
-msgstr "已嘗試連線中。"
-
-#: Jabber/jabberaccount.cpp:825
-#, kde-format
-msgid "Network failure."
-msgstr "網路失敗。"
-
-#: Jabber/jabberaccount.cpp:828
-#, kde-format
-msgid "Operation is not supported."
-msgstr "未支援此動作。"
-
-#: Jabber/jabberaccount.cpp:831
-#, kde-format
-msgid "Socket timed out."
-msgstr "Socket 逾時。"
-
-#: Jabber/jabberaccount.cpp:839
-#, kde-format
-msgid "There was a connection error: %1"
-msgstr "連線錯誤：%1"
-
-#: Jabber/jabberaccount.cpp:847
-#, kde-format
-msgid "Unknown host."
-msgstr "未知的主機。"
-
-#: Jabber/jabberaccount.cpp:851
-#, kde-format
-msgid "Could not connect to a required remote resource."
-msgstr "無法連接到請求的遠端資源。"
-
-#: Jabber/jabberaccount.cpp:854
-#, kde-format
-msgid ""
-"It appears we have been redirected to another server; I do not know how to "
-"handle this."
-msgstr "我們似乎被導向到另一台伺服器。我不知道怎麼處理。"
-
-#: Jabber/jabberaccount.cpp:857
-#, kde-format
-msgid "Unsupported protocol version."
-msgstr "未支援的協定版本。"
-
-#: Jabber/jabberaccount.cpp:860 Jabber/jabberaccount.cpp:877
-#: Jabber/jabberaccount.cpp:921 Jabber/jabberaccount.cpp:938
-#: Jabber/jabberaccount.cpp:955 Jabber/jabberaccount.cpp:963
-#, kde-format
-msgid "Unknown error."
-msgstr "未知的錯誤。"
-
-#: Jabber/jabberaccount.cpp:864
-#, kde-format
-msgid "There was a negotiation error: %1"
-msgstr "交涉錯誤：%1"
-
-#: Jabber/jabberaccount.cpp:871
-#, kde-format
-msgid "Server rejected our request to start the TLS handshake."
-msgstr "伺服器拒絕我們開始 TLS 互動的請求。"
-
-#: Jabber/jabberaccount.cpp:874
-#, kde-format
-msgid "Failed to establish a secure connection."
-msgstr "建立秘密連線失敗。"
-
-#: Jabber/jabberaccount.cpp:881
-#, kde-format
-msgid "There was a Transport Layer Security (TLS) error: %1"
-msgstr "TLS 錯誤：%1"
-
-#: Jabber/jabberaccount.cpp:888
-#, kde-format
-msgid "Login failed with unknown reason."
-msgstr "登入失敗，理由未知。"
-
-#: Jabber/jabberaccount.cpp:891
-#, kde-format
-msgid "No appropriate authentication mechanism available."
-msgstr "沒有適當的認證機制。"
-
-#: Jabber/jabberaccount.cpp:894
-#, kde-format
-msgid "Bad SASL authentication protocol."
-msgstr "錯誤的 SASL 認證協定。"
-
-#: Jabber/jabberaccount.cpp:897
-#, kde-format
-msgid "Server failed mutual authentication."
-msgstr "伺服器相互認證失敗。"
-
-#: Jabber/jabberaccount.cpp:900
-#, kde-format
-msgid "Encryption is required but not present."
-msgstr "必須加密，但無法加密。"
-
-#: Jabber/jabberaccount.cpp:903
-#, kde-format
-msgid "Invalid user ID."
-msgstr "不合法的使用者代號。"
-
-#: Jabber/jabberaccount.cpp:906
-#, kde-format
-msgid "Invalid mechanism."
-msgstr "不合法的機制。"
-
-#: Jabber/jabberaccount.cpp:909
-#, kde-format
-msgid "Invalid realm."
-msgstr "不合法的領域。"
-
-#: Jabber/jabberaccount.cpp:912
-#, kde-format
-msgid "Mechanism too weak."
-msgstr "機制太薄弱。"
-
-#: Jabber/jabberaccount.cpp:915
-#, kde-format
-msgid "Wrong credentials supplied. (check your user ID and password)"
-msgstr "使用者代號或密碼錯誤"
-
-#: Jabber/jabberaccount.cpp:918
-#, kde-format
-msgid "Temporary failure, please try again later."
-msgstr "暫時失敗，請稍後再試。"
-
-#: Jabber/jabberaccount.cpp:925
-#, kde-format
-msgid "There was an error authenticating with the server: %1"
-msgstr "與伺服器認證時失敗：%1"
-
-#: Jabber/jabberaccount.cpp:932
-#, kde-format
-msgid "Transport Layer Security (TLS) problem."
-msgstr "TLS 的問題。"
-
-#: Jabber/jabberaccount.cpp:935
-#, kde-format
-msgid "Simple Authentication and Security Layer (SASL) problem."
-msgstr "SASL 的問題。"
-
-#: Jabber/jabberaccount.cpp:942
-#, kde-format
-msgid "There was an error in the security layer: %1"
-msgstr "安全性層級的錯誤：%1"
-
-#: Jabber/jabberaccount.cpp:949
-#, kde-format
-msgid "No permission to bind the resource."
-msgstr "不允許結合此資源。"
-
-#: Jabber/jabberaccount.cpp:952
-#, kde-format
-msgid "The resource is already in use."
-msgstr "此資源已在使用中。"
-
-#: Jabber/jabberaccount.cpp:959
-#, kde-format
-msgid "Could not bind a resource: %1"
-msgstr "無法結合資源：%1"
-
-#: Jabber/jabberaccount.cpp:977 Jabber/jabberaccount.cpp:981
-#, kde-format
-msgid "Connection problem with Jabber server %1"
-msgstr "連線到 Jabber 伺服器 %1 時發生問題"
-
-#: Jabber/jabberaccount.cpp:1127
-#, kde-format
-msgid ""
-"The Jabber user %1 removed %2's subscription to him/her. This account will "
-"no longer be able to view his/her online/offline status. Do you want to "
-"delete the contact?"
-msgstr ""
-"Jabber 使用者 %1 已移除 %2 的同意。此帳號將無法再看到他們的上線/離線狀態。您"
-"要刪除此聯絡人嗎？"
-
-#: Jabber/jabberaccount.cpp:1130 Jabber/jabbercontact.cpp:939
-#, kde-format
-msgid "Notification"
-msgstr "通知"
-
-#: Jabber/jabberaccount.cpp:1130 Jabber/jabbercontact.cpp:940
-#, kde-format
-msgid "Keep"
-msgstr "保留"
-
-#: Jabber/jabberaccount.cpp:1514 kgamewinslots.cpp:1101
-#, kde-format
-msgid "A password is required to join the room %1."
-msgstr "加入房間 %1 需要密碼。"
-
-#: Jabber/jabberaccount.cpp:1523 kgamewinslots.cpp:1110
-#, kde-format
-msgid "Error trying to join %1: nickname %2 is already in use"
-msgstr "試著加入 %1 時發生錯誤：暱稱 %2 已被人使用"
-
-#: Jabber/jabberaccount.cpp:1524 Jabber/jabberprotocol.cpp:432
-#: kgamewinslots.cpp:1110
-#, kde-format
-msgid "Provide your nickname"
-msgstr "請提供您的暱稱"
-
-#: Jabber/jabberaccount.cpp:1537
-#, kde-format
-msgid "You cannot join the room %1 because you have been banned"
-msgstr "您無法加入房間 %1 因為您已被列入黑名單中"
-
-#: Jabber/jabberaccount.cpp:1538 Jabber/jabberaccount.cpp:1545
-#: Jabber/jabberaccount.cpp:1555
-#, kde-format
-msgid "Jabber Group Chat"
-msgstr "Jabber 聊天群組"
-
-#: Jabber/jabberaccount.cpp:1544
-#, kde-format
-msgid ""
-"You cannot join the room %1 because the maximum number of users has been "
-"reached"
-msgstr "您無法加入房間 %1 因為已達到最大使用者數量"
-
-#: Jabber/jabberaccount.cpp:1550 kgamewinslots.cpp:1128
-#, kde-format
-msgid "No reason given by the server"
-msgstr "伺服器沒有傳回任何理由"
-
-#: Jabber/jabberaccount.cpp:1554
-#, kde-format
-msgid ""
-"There was an error processing your request for groupchat %1. (Reason: %2, "
-"Code %3)"
-msgstr "聊天群組 %1 處理您的要求時發生錯誤。（理由：%2，代碼 %3）"
-
-#: Jabber/jabberaccount.cpp:1708
-#, kde-format
-msgid ""
-"An error occurred while trying to remove the account:\n"
-"%1"
-msgstr ""
-"移除此帳號時發生錯誤：\n"
-"%1"
-
-#: Jabber/jabberaccount.cpp:1709
-#, kde-format
-msgid "Jabber Account Unregistration"
-msgstr "Jabber 帳號解除註冊"
-
-#: Jabber/jabberbasecontact.cpp:128
-#, kde-format
-msgid "You cannot see each others' status."
-msgstr "您們無法看到彼此的狀態。"
-
-#: Jabber/jabberbasecontact.cpp:132
-#, kde-format
-msgid "You can see this contact's status, but he/she cannot see your status."
-msgstr "您可以看到此聯絡人的狀態，但是他們看不到您的狀態。"
-
-#: Jabber/jabberbasecontact.cpp:136
-#, kde-format
-msgid "This contact can see your status, but you cannot see his/her status."
-msgstr "此聯絡人可以看到您的狀態，但您無法看到他的。"
-
-#: Jabber/jabberbasecontact.cpp:140
-#, kde-format
-msgid "You can see each others' status."
-msgstr "您們可以看到彼此的狀態。"
-
-#: Jabber/jabberbasecontact.cpp:250
-#, kde-format
-msgid "Client"
-msgstr "用戶端"
-
-#: Jabber/jabberbasecontact.cpp:275
-#, kde-format
-msgid "Timestamp"
-msgstr "時間"
-
-#: Jabber/jabberbasecontact.cpp:282
-#, kde-format
-msgid "Message"
-msgstr "訊息"
-
-#: Jabber/jabberbasecontact.cpp:641
-#, kde-format
-msgid "Downloading of Jabber contact photo failed."
-msgstr "下載 Jabber 聯絡人圖片時失敗。"
-
-#: Jabber/jabberbookmarks.cpp:135
-#, kde-format
-msgid "Groupchat bookmark"
-msgstr "群組聊天書籤"
-
-#: Jabber/jabbercontact.cpp:137
-#, kde-format
-msgid "Authorization"
-msgstr "認證"
-
-#: Jabber/jabbercontact.cpp:143
-#, kde-format
-msgid "(Re)send Authorization To"
-msgstr "（重新）傳送認證到"
-
-#: Jabber/jabbercontact.cpp:150
-#, kde-format
-msgid "(Re)request Authorization From"
-msgstr "（重新）要求認證於"
-
-#: Jabber/jabbercontact.cpp:157
-#, kde-format
-msgid "Remove Authorization From"
-msgstr "移除認證於"
-
-#: Jabber/jabbercontact.cpp:162
-#, kde-format
-msgid "Set Availability"
-msgstr "設定狀態"
-
-#: Jabber/jabbercontact.cpp:171
-#, kde-format
-msgid "Online"
-msgstr "上線"
-
-#: Jabber/jabbercontact.cpp:172
-#, kde-format
-msgid "Free to Chat"
-msgstr "可以聊天"
-
-#: Jabber/jabbercontact.cpp:173
-#, kde-format
-msgid "Away"
-msgstr "離開"
-
-#: Jabber/jabbercontact.cpp:174
-#, kde-format
-msgid "Extended Away"
-msgstr "延伸離開"
-
-#: Jabber/jabbercontact.cpp:175
-#, kde-format
-msgid "Do Not Disturb"
-msgstr "請勿打擾"
-
-#: Jabber/jabbercontact.cpp:176
-#, kde-format
-msgid "Invisible"
-msgstr "隱身"
-
-#: Jabber/jabbercontact.cpp:180
-#, kde-format
-msgid "Select Resource"
-msgstr "選擇資源"
-
-#: Jabber/jabbercontact.cpp:197
-#, kde-format
-msgid "Automatic (best/default resource)"
-msgstr "自動（最佳/預設資源）"
-
-#: Jabber/jabbercontact.cpp:250
-#, kde-format
-msgid "Voice call"
-msgstr "語音呼叫"
-
-#: Jabber/jabbercontact.cpp:283
-#, kde-format
-msgid "The original message is: <i>\" %1 \"</i><br />"
-msgstr "原始訊息為：<i>%1</i><br />"
-
-#: Jabber/jabbercontact.cpp:284
-#, kde-format
-msgid ""
-"<qt><i>%1</i> has invited you to join the conference <b>%2</b><br />%3<br /"
-">If you want to accept and join, just <b>enter your nickname</b> and press "
-"ok<br />If you want to decline, press cancel</qt>"
-msgstr ""
-"<qt><i>%1</i> 已妖請您加入戰局 <b>%2</b><br />%3<br /> 若您要接受並加入，請"
-"<b>輸入您的暱稱</b>並按下確定<br /> 若不想加入，則請按取消。</qt>"
-
-#: Jabber/jabbercontact.cpp:290
-#, kde-format
-msgid "Invited to a conference - Jabber Plugin"
-msgstr "邀請加入戰局─Jabber 外掛程式"
-
-#: Jabber/jabbercontact.cpp:307
-#, kde-format
-msgid "Message has been displayed"
-msgstr "訊息已顯示"
-
-#: Jabber/jabbercontact.cpp:309
-#, kde-format
-msgid "Message has been delivered"
-msgstr "訊息已傳達"
-
-#: Jabber/jabbercontact.cpp:312
-#, kde-format
-msgid "Message stored on the server, contact offline"
-msgstr "訊息已儲存於伺服器上，聯絡人未上線"
-
-#: Jabber/jabbercontact.cpp:319
-#, kde-format
-msgid "%1 has ended his/her participation in the chat session."
-msgstr "%1 已結束參與。"
-
-#: Jabber/jabbercontact.cpp:357 Jabber/jabbergroupcontact.cpp:171
-#: Jabber/jabbergroupmembercontact.cpp:122
-#, kde-format
-msgid "Your message could not be delivered: \"%1\", Reason: \"%2\""
-msgstr "您的訊息無法傳達：%1，理由：%2"
-
-#: Jabber/jabbercontact.cpp:938
-#, kde-format
-msgid "Do you also want to remove user %1's authorization to see your status?"
-msgstr "您是否不再讓使用者 %1 看到您的狀態？"
-
-#: Jabber/jabbercontact.cpp:1039 Jabber/jabbergroupcontact.cpp:310
-#: Jabber/jabbergroupmembercontact.cpp:159
-#, kde-format
-msgid "Kopete File Transfer"
-msgstr "Kopete 檔案傳輸"
-
-#: Jabber/jabbercontact.cpp:1110
-#, kde-format
-msgid ""
-"You have preselected a resource for contact %1, but you still have open chat "
-"windows for this contact. The preselected resource will only apply to newly "
-"opened chat windows."
-msgstr ""
-"您已預先選擇聯絡人 %1 的資源，但是您還有開啟的與 %1 的聊天視窗。預先選擇的資"
-"源將只會套用在新開啟的聊天視窗。"
-
-#: Jabber/jabbercontact.cpp:1114
-#, kde-format
-msgid "Jabber Resource Selector"
-msgstr "Jabber 資源選擇器"
-
-#: Jabber/jabbergroupcontact.cpp:120
-#, kde-format
-msgid "Change nickname"
-msgstr "改變暱稱"
-
-#: Jabber/jabbergroupcontact.cpp:367
-#, kde-format
-msgid "Change nickname - Jabber Plugin"
-msgstr "改變暱稱 - Jabber 外掛程式"
-
-#: Jabber/jabbergroupcontact.cpp:368
-#, kde-format
-msgid "Please enter the new nickname you want to have in the room <i>%1</i>"
-msgstr "請輸入您在聊天室 <i>%1</i> 中使用的新暱稱"
-
-#: Jabber/jabberprotocol.cpp:336
-#, kde-format
-msgid "Choose Account"
-msgstr "選擇帳號"
-
-#: Jabber/jabberprotocol.cpp:342
-#, kde-format
-msgid "Choose an account to handle the URL %1"
-msgstr "選擇帳號以處理網址 %1"
-
-#: Jabber/jabberprotocol.cpp:391
-#, kde-format
-msgid "Do you want to add '%1' to your contact list?"
-msgstr "您要新增 %1 到您的聯絡人清單嗎？"
-
-#: Jabber/jabberprotocol.cpp:392
-#, kde-format
-msgid "Add"
-msgstr "新增"
-
-#: Jabber/jabberprotocol.cpp:392
-#, kde-format
-msgid "Do Not Add"
-msgstr "不要新增"
-
-#: Jabber/jabberprotocol.cpp:408
-#, kde-format
-msgid "Do you want to remove '%1' from your contact list?"
-msgstr "您想要將「%1」從您的聯絡人清單中移除嗎？"
-
-#: Jabber/jabberprotocol.cpp:409
-#, kde-format
-msgid "Remove"
-msgstr "移除"
-
-#: Jabber/jabberprotocol.cpp:409
-#, kde-format
-msgid "Do Not Remove"
-msgstr "不要移除"
-
-#: Jabber/jabberprotocol.cpp:431
-#, kde-format
-msgid "Please enter your nickname for the room %1"
-msgstr "請輸入在此聊天室 %1 中要使用的暱稱"
-
-#: Jabber/jabberprotocol.cpp:454
-#, kde-format
-msgid "You have been invited to %1"
-msgstr "您已受邀至 %1"
-
-#: kgamewin.cpp:150 kgamewin.cpp:743
+#: kgamewin.cpp:139 kgamewin.cpp:644
 #, kde-format
 msgid "Cannot load icon<br>Program cannot continue"
 msgstr "無法載入圖示<br/>程式無法再繼續"
 
-#: kgamewin.cpp:384 kgamewin.cpp:401 kgamewin.cpp:418
+#: kgamewin.cpp:302 kgamewin.cpp:319
 #, kde-format
 msgid "Cannot load button image %1<br>Program cannot continue"
 msgstr "無法載入按鍵圖片 %1<br/>程式無法再繼續"
 
-#: kgamewin.cpp:387
-#, kde-format
-msgid "Play over Jabber"
-msgstr "在 Jabber 上玩"
-
-#: kgamewin.cpp:388
-#, kde-format
-msgid "Play KsirK over the Jabber Network"
-msgstr "在 Jabber 網路上玩 KsirK"
-
-#: kgamewin.cpp:389
-#, kde-format
-msgid "Jabber"
-msgstr "Jabber"
-
-#: kgamewin.cpp:391
-#, kde-format
-msgid ""
-"Allow to connect to a KsirK Jabber Multi User Gaming Room to create new "
-"games or to join present games"
-msgstr ""
-"允許連線到 KsirK Jabber 多使用者遊戲室，您可以在那裡建立新遊戲，或是加入現有"
-"的遊戲"
-
 #. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
-#: kgamewin.cpp:404 mainMenu.ui:104
+#: kgamewin.cpp:305 mainMenu.ui:104
 #, kde-format
 msgid "New Standard TCP/IP Network Game"
 msgstr "開始新的標準 TCP/IP 網路遊戲"
 
-#: kgamewin.cpp:405
+#: kgamewin.cpp:306
 #, kde-format
 msgid "New TCP/IP"
 msgstr "新增 TCP/IP 遊戲"
 
-#: kgamewin.cpp:407
+#: kgamewin.cpp:308
 #, kde-format
 msgid "Create a new standard TCP/IP network game"
 msgstr "建立新的標準 TCP/IP 網路遊戲"
 
-#: kgamewin.cpp:422
+#: kgamewin.cpp:323
 #, kde-format
 msgid "Join a Standard TCP/IP Network Game"
 msgstr "加入標準 TCP/IP 網路遊戲"
 
-#: kgamewin.cpp:423
+#: kgamewin.cpp:324
 #, kde-format
 msgid "Join TCP/IP"
 msgstr "加入 TCP/IP 遊戲"
 
-#: kgamewin.cpp:425
+#: kgamewin.cpp:326
 #, kde-format
 msgid "Join a standard TCP/IP network game"
 msgstr "加入標準 TCP/IP 網路遊戲"
 
-#: kgamewin.cpp:431
+#: kgamewin.cpp:332
 #, kde-format
 msgid "Display the Current Player's Goal"
 msgstr "顯示目前玩家的目標"
 
-#: kgamewin.cpp:434
+#: kgamewin.cpp:335
 #, kde-format
 msgid "Display the current player's goal"
 msgstr "顯示目前玩家的目標"
 
-#: kgamewin.cpp:441
+#: kgamewin.cpp:342
 #, kde-format
 msgid "Contextual Help"
 msgstr "文字說明"
 
-#: kgamewin.cpp:452
+#: kgamewin.cpp:353
 #, kde-format
 msgid "Lets the next player play"
 msgstr "讓下一個玩家玩"
 
-#: kgamewin.cpp:457
+#: kgamewin.cpp:358
 #, kde-format
 msgid "Finish moves"
 msgstr "完成移動"
 
-#: kgamewin.cpp:459
+#: kgamewin.cpp:360
 #, kde-format
 msgid "Finish moving the current sprites"
 msgstr "完成目前軍隊的移動"
 
-#: kgamewin.cpp:587
+#: kgamewin.cpp:488
 #, kde-format
 msgid ""
 "World definition file not found - Verify your installation<br>Program cannot "
 "continue"
 msgstr "找不到世界定義檔─請檢查您的安裝。<br/>程式無法再繼續"
 
-#: kgamewin.cpp:807
+#: kgamewin.cpp:708
 #, kde-format
 msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
 msgstr "<font color=\"red\">%1 從 %3 征服了 %2</font>"
 
-#: kgamewin.cpp:831
+#: kgamewin.cpp:732
 #, kde-format
 msgid "%1, you are defeated! Bye, bye..."
 msgstr "%1，您被擊垮了... "
 
-#: kgamewin.cpp:903
+#: kgamewin.cpp:804
 #, kde-format
 msgid "%1: it is up to you again"
 msgstr "%1：又輪到您了"
 
-#: kgamewin.cpp:915
+#: kgamewin.cpp:816
 #, kde-format
 msgid "%1 won!"
 msgstr "%1 贏了！"
 
-#: kgamewin.cpp:918
+#: kgamewin.cpp:819
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
 msgstr "<big><b>%1</b>，您贏了！</big>"
 
-#: kgamewin.cpp:922
+#: kgamewin.cpp:823
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
 "play again?"
 msgstr "<br/>贏家的目標為：<br/><i>%1</i><br/><br/>您要再玩一次嗎？"
 
-#: kgamewin.cpp:928
+#: kgamewin.cpp:829
 #, kde-format
 msgid "<br>You conquered all the world!"
 msgstr "<br/>您已征服了全世界！"
 
-#: kgamewin.cpp:932
+#: kgamewin.cpp:833
 #, kde-format
 msgid "<br>He conquered all the world!"
 msgstr "<br/>他征服了全世界..."
 
-#: kgamewin.cpp:1049
+#: kgamewin.cpp:950
 #, kde-format
 msgid "Do you want to quit the game?"
 msgstr "您要離開遊戲嗎？"
 
-#: kgamewin.cpp:1051
+#: kgamewin.cpp:952
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
 msgstr "離開遊戲"
 
-#: kgamewin.cpp:1063
+#: kgamewin.cpp:964
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
 msgstr "在您離開之前，您要儲存遊戲嗎？"
 
-#: kgamewin.cpp:1101
+#: kgamewin.cpp:1002
 #, kde-format
 msgctxt "@title:window"
 msgid "KsirK - Load Game"
 msgstr "KsirK─載入遊戲"
 
-#: kgamewin.cpp:1139
+#: kgamewin.cpp:1040
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
 msgstr "等待連接 %1 個網路玩家。"
 
-#: kgamewin.cpp:1218
+#: kgamewin.cpp:1119
 #, kde-format
 msgid ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
@@ -2974,88 +2073,88 @@ msgstr[0] ""
 "<font color=\"red\">%2</font> 從 <font color=\"red\">%3</font> 出動 %1 支軍隊"
 "攻擊您！<br/>您打算怎麼防禦 <font color=\"blue\">%4</font>﹖"
 
-#: kgamewin.cpp:1247
+#: kgamewin.cpp:1148
 #, kde-format
 msgid "Defend 1"
 msgstr "防守 1"
 
-#: kgamewin.cpp:1248
+#: kgamewin.cpp:1149
 #, kde-format
 msgid "Defend 2"
 msgstr "防守 2"
 
-#: kgamewin.cpp:1249
+#: kgamewin.cpp:1150
 #, kde-format
 msgid "Defend-Auto"
 msgstr "自動防守"
 
-#: kgamewin.cpp:1368
+#: kgamewin.cpp:1269
 #, kde-format
 msgid "Waiting for %1 players to connect"
 msgstr "等待 %1 個玩家連線中"
 
-#: kgamewin.cpp:1758 kgamewin.cpp:1798
+#: kgamewin.cpp:1659 kgamewin.cpp:1699
 msgid "There is no country here!"
 msgstr "這裡沒有國家！"
 
-#: kgamewin.cpp:1762 kgamewin.cpp:1803
+#: kgamewin.cpp:1663 kgamewin.cpp:1704
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
 msgstr "您不是第一個國家 %1 的擁有者。"
 
-#: kgamewin.cpp:1766
+#: kgamewin.cpp:1667
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
 msgstr "您不是第二個國家 %1 的擁有者。"
 
-#: kgamewin.cpp:1770 kgamewin.cpp:1814
+#: kgamewin.cpp:1671 kgamewin.cpp:1715
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr "您試圖將軍隊從 %1 移到它自己。"
 
-#: kgamewin.cpp:1775 kgamewin.cpp:1820
+#: kgamewin.cpp:1676 kgamewin.cpp:1721
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
 msgstr "%1 不在 %2 的隔壁。"
 
-#: kgamewin.cpp:1781
+#: kgamewin.cpp:1682
 #, kde-format
 msgid "Moving armies from %1 to %2."
 msgstr "移動軍隊從 %1 到 %2。"
 
-#: kgamewin.cpp:1809
+#: kgamewin.cpp:1710
 #, kde-format
 msgid "You are the owner of the second country: %1!"
 msgstr "您不是第二個國家 %1 的擁有者。"
 
-#: kgamewin.cpp:1827
+#: kgamewin.cpp:1728
 msgid "Ready to fight!"
 msgstr "準備戰鬥！"
 
-#: kgamewin.cpp:1921
+#: kgamewin.cpp:1822
 msgid "<font color=\"orange\">No country here!</font>"
 msgstr "<font color=\"orange\">這裡沒有國家！</font>"
 
-#: kgamewin.cpp:1929
+#: kgamewin.cpp:1830
 #, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr "<font color=\"orange\">您不是 %1 的擁有者。</font>"
 
-#: kgamewin.cpp:1936
+#: kgamewin.cpp:1837
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr "<font color=\"orange\">在 %2 裡只有 %1 支軍隊。</font>"
 
-#: kgamewin.cpp:2076
+#: kgamewin.cpp:1977
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
 msgstr "%1，您以在 %2 中唯一的軍隊防守。"
 
-#: kgamewin.cpp:2300
+#: kgamewin.cpp:2201
 msgid "Exchange armies again or continue?"
 msgstr "要再一次交換軍隊，還是要繼續？"
 
-#: kgamewin.cpp:2325
+#: kgamewin.cpp:2226
 #, kde-format
 msgid ""
 "You must distribute\n"
@@ -3064,89 +2163,89 @@ msgstr ""
 "您必須將您所有的軍隊\n"
 "分布好。"
 
-#: kgamewin.cpp:2325 main.cpp:42
+#: kgamewin.cpp:2226 main.cpp:42
 #, kde-format
 msgid "KsirK"
 msgstr "KsirK"
 
-#: kgamewin.cpp:2465
+#: kgamewin.cpp:2366
 msgid "Battle ongoing."
 msgstr "戰鬥進行中。"
 
-#: kgamewin.cpp:2586 kgamewin.cpp:2597 kgamewin.cpp:2620
+#: kgamewin.cpp:2487 kgamewin.cpp:2498 kgamewin.cpp:2521
 #, kde-format
 msgid "%1, it is up to you."
 msgstr "%1：又輪到您了"
 
-#: kgamewin.cpp:2649
+#: kgamewin.cpp:2550
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
 msgstr "您確定要結束現有的遊戲，並重新開始嗎？"
 
-#: kgamewin.cpp:2649
+#: kgamewin.cpp:2550
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "開始新遊戲"
 
-#: kgamewin.cpp:2905
+#: kgamewin.cpp:2806
 msgid "<b>KsirK quick Introduction</b>"
 msgstr "<b>Ksirk 快速介紹</b>"
 
-#: kgamewin.cpp:2909
+#: kgamewin.cpp:2810
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr "攻擊與移動是利用拖放到鄰近國家來完成。"
 
-#: kgamewin.cpp:2913
+#: kgamewin.cpp:2814
 msgid "Start a new game or join a network game with the menu or the toolbar..."
 msgstr "在選單或工具列來開始新遊戲，或是加入網路遊戲。"
 
-#: kgamewin.cpp:2917
+#: kgamewin.cpp:2818
 msgid ""
 "and then let the system guide you through messages and tooltips appearing on "
 "buttons when hovering above them. You can disable bubble help in the options "
 "window."
 msgstr "並讓系統透過訊息與工具提示導引您。您可以在選項視窗中關閉這些訊息。"
 
-#: kgamewin.cpp:2924
+#: kgamewin.cpp:2825
 #, kde-format
 msgid "Don't show messages anymore"
 msgstr "不要再顯示訊息"
 
-#: kgamewinslots.cpp:112
+#: kgamewinslots.cpp:108
 #, kde-format
 msgid "%2 belongs to %3. 1 army."
 msgid_plural "%2 belongs to %3. %1 armies."
 msgstr[0] "%2 屬於 %3。%1 支軍隊。"
 
-#: kgamewinslots.cpp:454
+#: kgamewinslots.cpp:434
 #, kde-format
 msgid "Cannot save when waiting for a defense."
 msgstr "等待防守時無法儲存。"
 
-#: kgamewinslots.cpp:461
+#: kgamewinslots.cpp:441
 #, kde-format
 msgctxt "@title:window"
 msgid "KsirK - Save Game"
 msgstr "KsirK─儲存遊戲"
 
-#: kgamewinslots.cpp:465
+#: kgamewinslots.cpp:445
 #, kde-format
 msgid "Saving canceled"
 msgstr "儲存已取消"
 
-#: kgamewinslots.cpp:476
+#: kgamewinslots.cpp:456
 #, kde-format
 msgid "Game saved to %1"
 msgstr "遊戲已儲存到 %1"
 
-#: kgamewinslots.cpp:483
+#: kgamewinslots.cpp:463
 #, kde-format
 msgid "Only game master can save the game in network playing."
 msgstr "只有遊戲主人可以在網路遊戲模式中儲存遊戲。"
 
-#: kgamewinslots.cpp:809
+#: kgamewinslots.cpp:789
 #, kde-format
 msgid ""
 "Attack by drag & drop between countries<br>Move armies the same way (last "
@@ -3287,36 +2386,6 @@ msgstr "若為真則會顯示每個國家的軍隊數量。"
 msgid "The graphical theme to be used."
 msgstr "使用的圖形主題"
 
-#. i18n: ectx: label, entry (jabberId), group (General)
-#: ksirksettings.kcfg:28
-#, kde-format
-msgid "The last used Jabber Id."
-msgstr "上次使用的 Jabber 代號。"
-
-#. i18n: ectx: label, entry (jabberPassword), group (General)
-#: ksirksettings.kcfg:31
-#, kde-format
-msgid "The password of the last used Jabber Id."
-msgstr "上次使用的 Jabber 代號的密碼。"
-
-#. i18n: ectx: label, entry (roomJid), group (General)
-#: ksirksettings.kcfg:34
-#, kde-format
-msgid "The last used Jabber groupchat room."
-msgstr "上次使用的 Jabber 群組聊天室。"
-
-#. i18n: ectx: label, entry (roomPassword), group (General)
-#: ksirksettings.kcfg:37
-#, kde-format
-msgid "The password for last used Jabber groupchat room."
-msgstr "上次使用的 Jabber 群組聊天室密碼。"
-
-#. i18n: ectx: label, entry (nickname), group (General)
-#: ksirksettings.kcfg:40
-#, kde-format
-msgid "The nickname used in the last used Jabber groupchat room."
-msgstr "上次在 Jabber 群組聊天室內使用的暱稱。"
-
 #. i18n: ectx: Menu (game)
 #: ksirkui.rc:10
 #, kde-format
@@ -3324,19 +2393,19 @@ msgid "&Game"
 msgstr "遊戲(&G)"
 
 #. i18n: ectx: Menu (settings)
-#: ksirkui.rc:24
+#: ksirkui.rc:23
 #, kde-format
 msgid "&Settings"
 msgstr "設定(&S)"
 
 #. i18n: ectx: Menu (help)
-#: ksirkui.rc:26
+#: ksirkui.rc:25
 #, kde-format
 msgid "&Help"
 msgstr "說明(&H)"
 
 #. i18n: ectx: ToolBar (mainToolBar)
-#: ksirkui.rc:31
+#: ksirkui.rc:30
 #, kde-format
 msgid "Main Toolbar"
 msgstr "主工具列"
@@ -3405,11 +2474,6 @@ msgstr ""
 "Benjamin Moreau<br/>&nbsp;&nbsp;Gaël Clouet<br/>&nbsp;&nbsp;Guillaume "
 "Pelouas<br/>&nbsp;&nbsp;Joël Marco<br/>&nbsp;&nbsp;Laurent Dang<br/>&nbsp;"
 "&nbsp;Nicolas Linard<br/>&nbsp;&nbsp;Vincent Sac"
-
-#: mainMenu.cpp:37
-#, kde-format
-msgid "Play KsirK over Jabber Network"
-msgstr "在 Jabber 網路上玩 KsirK"
 
 #. i18n: ectx: property (text), widget (QLabel, lTitle)
 #: mainMenu.ui:38
@@ -3515,6 +2579,571 @@ msgstr "錯誤─未知的外觀整數資料："
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "錯誤─未知的外觀字串資料："
+
+#~ msgid "Nickname"
+#~ msgstr "暱稱"
+
+#~ msgid "Skin"
+#~ msgstr "外觀"
+
+#~ msgid "Nb players"
+#~ msgstr "玩家數量"
+
+#~ msgid "Connection to the Jabber Network"
+#~ msgstr "連線到 Jabber 網路"
+
+#~ msgid "Jabber ID:"
+#~ msgstr "Jabber 代號："
+
+#~ msgid "kleag@kdetalk.net"
+#~ msgstr "kleag@kdetalk.net"
+
+#~ msgid "12345678"
+#~ msgstr "12345678"
+
+#~ msgid "Password:"
+#~ msgstr "密碼："
+
+#~ msgid "Connect"
+#~ msgstr "連線"
+
+#~ msgid "State:"
+#~ msgstr "狀態："
+
+#~ msgid "Joining a KsirK Jabber Chatroom"
+#~ msgstr "加入 KsirK Jabber 聊天室"
+
+#~ msgid "Room JID:"
+#~ msgstr "聊天室 Jabber 代號："
+
+#~ msgid "Nickname:"
+#~ msgstr "暱稱："
+
+#~ msgid "Room Password:"
+#~ msgstr "聊天室密碼："
+
+#~ msgid "Join Room"
+#~ msgstr "加入聊天室"
+
+#~ msgid "Games in the Room"
+#~ msgstr "聊天室裡的遊戲"
+
+#~ msgid "Start a New Game"
+#~ msgstr "開始新遊戲"
+
+#~ msgid "Join Selected Game"
+#~ msgstr "加入選擇的遊戲"
+
+#~ msgid "Load a Saved Game..."
+#~ msgstr "載入儲存的遊戲..."
+
+#~ msgid ""
+#~ "<b>Note:</b> Playing over the Jabber network is an experimental feature "
+#~ "in KsirK.<br/>Particularly, the distribution of armies at game beginning "
+#~ "is very slow (expect something like one minute)."
+#~ msgstr ""
+#~ "<b>注意：</b>在 Jabber 網路上玩 KsirK 目前只是實驗階段。<br /> 特別是，在"
+#~ "遊戲開始時安排軍隊的時候會非常慢。"
+
+#~ msgid "Please connect first."
+#~ msgstr "請先連線。"
+
+#~ msgid "Jabber Error"
+#~ msgstr "Jabber 錯誤"
+
+#~ msgid ""
+#~ "SSL support could not be initialized for account %1. This is most likely "
+#~ "because the QCA TLS plugin is not installed on your system."
+#~ msgstr ""
+#~ "無法初始化帳號 %1 的 SSL 支援。這最有可能是因為您的系統上沒裝 QCA TLS 外掛"
+#~ "程式。"
+
+#~ msgid "Jabber SSL Error"
+#~ msgstr "Jabber SSL 錯誤"
+
+#~ msgid "The host name does not match the one in the certificate."
+#~ msgstr "此主機名稱與憑證中不符。"
+
+#~ msgid "The certificate is invalid."
+#~ msgstr "憑證不正確。"
+
+#~ msgid "No certificate was presented."
+#~ msgstr "沒有憑證。"
+
+#~ msgid "The Certificate Authority rejected the certificate."
+#~ msgstr "憑證認證中心拒絕此憑證。"
+
+#~ msgid "The certificate is not trusted."
+#~ msgstr "此憑證不受信任。"
+
+#~ msgid "The signature is invalid."
+#~ msgstr "此簽章不正確。"
+
+#~ msgid "The Certificate Authority is invalid."
+#~ msgstr "憑證認證中心不正確。"
+
+#~ msgid "Invalid certificate purpose."
+#~ msgstr "不合法的憑證目的。"
+
+#~ msgid "The certificate is self-signed."
+#~ msgstr "此憑證為自行簽署。"
+
+#~ msgid "The certificate has been revoked."
+#~ msgstr "此憑證已被撤銷。"
+
+#~ msgid "Maximum certificate chain length was exceeded."
+#~ msgstr "已超過最大憑證鍊長度。"
+
+#~ msgid "The certificate has expired."
+#~ msgstr "憑證已過期。"
+
+#~ msgid "The Certificate Authority has expired."
+#~ msgstr "憑證認證中心已逾時。"
+
+#~ msgid "Validity is unknown."
+#~ msgstr "合法性未知。"
+
+#~ msgid ""
+#~ "<qt><p>The identity and the certificate of server %1 could not be "
+#~ "validated for account %2:</p><p>%3</p><p>%4</p><p>Do you want to continue?"
+#~ "</p></qt>"
+#~ msgstr ""
+#~ "<qt><p>伺服器 %1 的身份與憑證無法被帳號 %2 確認：</p><p>%3</p><p>%4</p><p>"
+#~ "您確定要繼續嗎？</p></qt>"
+
+#~ msgid ""
+#~ "<qt><p>The certificate of server %1 could not be validated for account "
+#~ "%2: %3</p><p>Do you want to continue?</p></qt>"
+#~ msgstr ""
+#~ "<qt><p>伺服器 %1 的憑證無法被帳號 %2 確認：%3。</p> <p>您確定要繼續嗎？</"
+#~ "p></qt>"
+
+#~ msgid "Jabber Connection Certificate Problem"
+#~ msgstr "Jabber 連線憑證發生問題"
+
+#~ msgid ""
+#~ "An encrypted connection with the Jabber server could not be established."
+#~ msgstr "無法建立與 Jabber 伺服器的加密連線。"
+
+#~ msgid "Jabber Connection Error"
+#~ msgstr "Jabber 連線錯誤"
+
+#~ msgid "Malformed packet received."
+#~ msgstr "接收到不正確的封包。"
+
+#~ msgid "There was an unrecoverable error in the protocol."
+#~ msgstr "無法在協定中修復此錯誤。"
+
+#~ msgid "Generic stream error."
+#~ msgstr "一般資料流錯誤。"
+
+#~ msgid "There was a conflict in the information received."
+#~ msgstr "接收到的資訊有衝突。"
+
+#~ msgid "The stream timed out."
+#~ msgstr "串流已逾時。"
+
+#~ msgid "Internal server error."
+#~ msgstr "內部伺服器錯誤。"
+
+#~ msgid "Stream packet received from an invalid address."
+#~ msgstr "由不正確的地址傳來的串流封包。"
+
+#~ msgid "Malformed stream packet received."
+#~ msgstr "接收到不正確的串流封包。"
+
+#~ msgid "Policy violation in the protocol stream."
+#~ msgstr "協定串流違反了政策。"
+
+#~ msgid "Resource constraint."
+#~ msgstr "資源限制。"
+
+#~ msgid "System shutdown."
+#~ msgstr "系統已關閉。"
+
+#~ msgid "Unknown reason."
+#~ msgstr "未知的理由。"
+
+#~ msgid "There was an error in the protocol stream: %1"
+#~ msgstr "協定串流中發生錯誤：%1"
+
+#~ msgid "Host not found."
+#~ msgstr "找不到主機。"
+
+#~ msgid "Address is already in use."
+#~ msgstr "地址已在使用中。"
+
+#~ msgid "Cannot recreate the socket."
+#~ msgstr "無法重建 socket。"
+
+#~ msgid "Cannot bind the socket again."
+#~ msgstr "無法重新結合 socket。"
+
+#~ msgid "Socket is already connected."
+#~ msgstr "Socket 已連接。"
+
+#~ msgid "Socket is not connected."
+#~ msgstr "Socket 未連接。"
+
+#~ msgid "Socket is not bound."
+#~ msgstr "Socket 未結合。"
+
+#~ msgid "Socket has not been created."
+#~ msgstr "Socket 未建立。"
+
+#~ msgid ""
+#~ "The socket operation would block. You should not see this error: please "
+#~ "use \"Report Bug\" from the Help menu."
+#~ msgstr "Socket 運作為阻斷式。您不應看到此訊息，請回報錯誤。"
+
+#~ msgid "Connection refused."
+#~ msgstr "連線被拒。"
+
+#~ msgid "Connection timed out."
+#~ msgstr "連線逾時。"
+
+#~ msgid "Connection attempt already in progress."
+#~ msgstr "已嘗試連線中。"
+
+#~ msgid "Network failure."
+#~ msgstr "網路失敗。"
+
+#~ msgid "Operation is not supported."
+#~ msgstr "未支援此動作。"
+
+#~ msgid "Socket timed out."
+#~ msgstr "Socket 逾時。"
+
+#~ msgid "There was a connection error: %1"
+#~ msgstr "連線錯誤：%1"
+
+#~ msgid "Unknown host."
+#~ msgstr "未知的主機。"
+
+#~ msgid "Could not connect to a required remote resource."
+#~ msgstr "無法連接到請求的遠端資源。"
+
+#~ msgid ""
+#~ "It appears we have been redirected to another server; I do not know how "
+#~ "to handle this."
+#~ msgstr "我們似乎被導向到另一台伺服器。我不知道怎麼處理。"
+
+#~ msgid "Unsupported protocol version."
+#~ msgstr "未支援的協定版本。"
+
+#~ msgid "Unknown error."
+#~ msgstr "未知的錯誤。"
+
+#~ msgid "There was a negotiation error: %1"
+#~ msgstr "交涉錯誤：%1"
+
+#~ msgid "Server rejected our request to start the TLS handshake."
+#~ msgstr "伺服器拒絕我們開始 TLS 互動的請求。"
+
+#~ msgid "Failed to establish a secure connection."
+#~ msgstr "建立秘密連線失敗。"
+
+#~ msgid "There was a Transport Layer Security (TLS) error: %1"
+#~ msgstr "TLS 錯誤：%1"
+
+#~ msgid "Login failed with unknown reason."
+#~ msgstr "登入失敗，理由未知。"
+
+#~ msgid "No appropriate authentication mechanism available."
+#~ msgstr "沒有適當的認證機制。"
+
+#~ msgid "Bad SASL authentication protocol."
+#~ msgstr "錯誤的 SASL 認證協定。"
+
+#~ msgid "Server failed mutual authentication."
+#~ msgstr "伺服器相互認證失敗。"
+
+#~ msgid "Encryption is required but not present."
+#~ msgstr "必須加密，但無法加密。"
+
+#~ msgid "Invalid user ID."
+#~ msgstr "不合法的使用者代號。"
+
+#~ msgid "Invalid mechanism."
+#~ msgstr "不合法的機制。"
+
+#~ msgid "Invalid realm."
+#~ msgstr "不合法的領域。"
+
+#~ msgid "Mechanism too weak."
+#~ msgstr "機制太薄弱。"
+
+#~ msgid "Wrong credentials supplied. (check your user ID and password)"
+#~ msgstr "使用者代號或密碼錯誤"
+
+#~ msgid "Temporary failure, please try again later."
+#~ msgstr "暫時失敗，請稍後再試。"
+
+#~ msgid "There was an error authenticating with the server: %1"
+#~ msgstr "與伺服器認證時失敗：%1"
+
+#~ msgid "Transport Layer Security (TLS) problem."
+#~ msgstr "TLS 的問題。"
+
+#~ msgid "Simple Authentication and Security Layer (SASL) problem."
+#~ msgstr "SASL 的問題。"
+
+#~ msgid "There was an error in the security layer: %1"
+#~ msgstr "安全性層級的錯誤：%1"
+
+#~ msgid "No permission to bind the resource."
+#~ msgstr "不允許結合此資源。"
+
+#~ msgid "The resource is already in use."
+#~ msgstr "此資源已在使用中。"
+
+#~ msgid "Could not bind a resource: %1"
+#~ msgstr "無法結合資源：%1"
+
+#~ msgid "Connection problem with Jabber server %1"
+#~ msgstr "連線到 Jabber 伺服器 %1 時發生問題"
+
+#~ msgid ""
+#~ "The Jabber user %1 removed %2's subscription to him/her. This account "
+#~ "will no longer be able to view his/her online/offline status. Do you want "
+#~ "to delete the contact?"
+#~ msgstr ""
+#~ "Jabber 使用者 %1 已移除 %2 的同意。此帳號將無法再看到他們的上線/離線狀態。"
+#~ "您要刪除此聯絡人嗎？"
+
+#~ msgid "Notification"
+#~ msgstr "通知"
+
+#~ msgid "Keep"
+#~ msgstr "保留"
+
+#~ msgid "A password is required to join the room %1."
+#~ msgstr "加入房間 %1 需要密碼。"
+
+#~ msgid "Error trying to join %1: nickname %2 is already in use"
+#~ msgstr "試著加入 %1 時發生錯誤：暱稱 %2 已被人使用"
+
+#~ msgid "Provide your nickname"
+#~ msgstr "請提供您的暱稱"
+
+#~ msgid "You cannot join the room %1 because you have been banned"
+#~ msgstr "您無法加入房間 %1 因為您已被列入黑名單中"
+
+#~ msgid "Jabber Group Chat"
+#~ msgstr "Jabber 聊天群組"
+
+#~ msgid ""
+#~ "You cannot join the room %1 because the maximum number of users has been "
+#~ "reached"
+#~ msgstr "您無法加入房間 %1 因為已達到最大使用者數量"
+
+#~ msgid "No reason given by the server"
+#~ msgstr "伺服器沒有傳回任何理由"
+
+#~ msgid ""
+#~ "There was an error processing your request for groupchat %1. (Reason: %2, "
+#~ "Code %3)"
+#~ msgstr "聊天群組 %1 處理您的要求時發生錯誤。（理由：%2，代碼 %3）"
+
+#~ msgid ""
+#~ "An error occurred while trying to remove the account:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "移除此帳號時發生錯誤：\n"
+#~ "%1"
+
+#~ msgid "Jabber Account Unregistration"
+#~ msgstr "Jabber 帳號解除註冊"
+
+#~ msgid "You cannot see each others' status."
+#~ msgstr "您們無法看到彼此的狀態。"
+
+#~ msgid ""
+#~ "You can see this contact's status, but he/she cannot see your status."
+#~ msgstr "您可以看到此聯絡人的狀態，但是他們看不到您的狀態。"
+
+#~ msgid "This contact can see your status, but you cannot see his/her status."
+#~ msgstr "此聯絡人可以看到您的狀態，但您無法看到他的。"
+
+#~ msgid "You can see each others' status."
+#~ msgstr "您們可以看到彼此的狀態。"
+
+#~ msgid "Client"
+#~ msgstr "用戶端"
+
+#~ msgid "Timestamp"
+#~ msgstr "時間"
+
+#~ msgid "Message"
+#~ msgstr "訊息"
+
+#~ msgid "Downloading of Jabber contact photo failed."
+#~ msgstr "下載 Jabber 聯絡人圖片時失敗。"
+
+#~ msgid "Groupchat bookmark"
+#~ msgstr "群組聊天書籤"
+
+#~ msgid "Authorization"
+#~ msgstr "認證"
+
+#~ msgid "(Re)send Authorization To"
+#~ msgstr "（重新）傳送認證到"
+
+#~ msgid "(Re)request Authorization From"
+#~ msgstr "（重新）要求認證於"
+
+#~ msgid "Remove Authorization From"
+#~ msgstr "移除認證於"
+
+#~ msgid "Set Availability"
+#~ msgstr "設定狀態"
+
+#~ msgid "Online"
+#~ msgstr "上線"
+
+#~ msgid "Free to Chat"
+#~ msgstr "可以聊天"
+
+#~ msgid "Away"
+#~ msgstr "離開"
+
+#~ msgid "Extended Away"
+#~ msgstr "延伸離開"
+
+#~ msgid "Do Not Disturb"
+#~ msgstr "請勿打擾"
+
+#~ msgid "Invisible"
+#~ msgstr "隱身"
+
+#~ msgid "Select Resource"
+#~ msgstr "選擇資源"
+
+#~ msgid "Automatic (best/default resource)"
+#~ msgstr "自動（最佳/預設資源）"
+
+#~ msgid "Voice call"
+#~ msgstr "語音呼叫"
+
+#~ msgid "The original message is: <i>\" %1 \"</i><br />"
+#~ msgstr "原始訊息為：<i>%1</i><br />"
+
+#~ msgid ""
+#~ "<qt><i>%1</i> has invited you to join the conference <b>%2</b><br />"
+#~ "%3<br />If you want to accept and join, just <b>enter your nickname</b> "
+#~ "and press ok<br />If you want to decline, press cancel</qt>"
+#~ msgstr ""
+#~ "<qt><i>%1</i> 已妖請您加入戰局 <b>%2</b><br />%3<br /> 若您要接受並加入，"
+#~ "請<b>輸入您的暱稱</b>並按下確定<br /> 若不想加入，則請按取消。</qt>"
+
+#~ msgid "Invited to a conference - Jabber Plugin"
+#~ msgstr "邀請加入戰局─Jabber 外掛程式"
+
+#~ msgid "Message has been displayed"
+#~ msgstr "訊息已顯示"
+
+#~ msgid "Message has been delivered"
+#~ msgstr "訊息已傳達"
+
+#~ msgid "Message stored on the server, contact offline"
+#~ msgstr "訊息已儲存於伺服器上，聯絡人未上線"
+
+#~ msgid "%1 has ended his/her participation in the chat session."
+#~ msgstr "%1 已結束參與。"
+
+#~ msgid "Your message could not be delivered: \"%1\", Reason: \"%2\""
+#~ msgstr "您的訊息無法傳達：%1，理由：%2"
+
+#~ msgid ""
+#~ "Do you also want to remove user %1's authorization to see your status?"
+#~ msgstr "您是否不再讓使用者 %1 看到您的狀態？"
+
+#~ msgid "Kopete File Transfer"
+#~ msgstr "Kopete 檔案傳輸"
+
+#~ msgid ""
+#~ "You have preselected a resource for contact %1, but you still have open "
+#~ "chat windows for this contact. The preselected resource will only apply "
+#~ "to newly opened chat windows."
+#~ msgstr ""
+#~ "您已預先選擇聯絡人 %1 的資源，但是您還有開啟的與 %1 的聊天視窗。預先選擇的"
+#~ "資源將只會套用在新開啟的聊天視窗。"
+
+#~ msgid "Jabber Resource Selector"
+#~ msgstr "Jabber 資源選擇器"
+
+#~ msgid "Change nickname"
+#~ msgstr "改變暱稱"
+
+#~ msgid "Change nickname - Jabber Plugin"
+#~ msgstr "改變暱稱 - Jabber 外掛程式"
+
+#~ msgid "Please enter the new nickname you want to have in the room <i>%1</i>"
+#~ msgstr "請輸入您在聊天室 <i>%1</i> 中使用的新暱稱"
+
+#~ msgid "Choose Account"
+#~ msgstr "選擇帳號"
+
+#~ msgid "Choose an account to handle the URL %1"
+#~ msgstr "選擇帳號以處理網址 %1"
+
+#~ msgid "Do you want to add '%1' to your contact list?"
+#~ msgstr "您要新增 %1 到您的聯絡人清單嗎？"
+
+#~ msgid "Add"
+#~ msgstr "新增"
+
+#~ msgid "Do Not Add"
+#~ msgstr "不要新增"
+
+#~ msgid "Do you want to remove '%1' from your contact list?"
+#~ msgstr "您想要將「%1」從您的聯絡人清單中移除嗎？"
+
+#~ msgid "Remove"
+#~ msgstr "移除"
+
+#~ msgid "Do Not Remove"
+#~ msgstr "不要移除"
+
+#~ msgid "Please enter your nickname for the room %1"
+#~ msgstr "請輸入在此聊天室 %1 中要使用的暱稱"
+
+#~ msgid "You have been invited to %1"
+#~ msgstr "您已受邀至 %1"
+
+#~ msgid "Play over Jabber"
+#~ msgstr "在 Jabber 上玩"
+
+#~ msgid "Play KsirK over the Jabber Network"
+#~ msgstr "在 Jabber 網路上玩 KsirK"
+
+#~ msgid "Jabber"
+#~ msgstr "Jabber"
+
+#~ msgid ""
+#~ "Allow to connect to a KsirK Jabber Multi User Gaming Room to create new "
+#~ "games or to join present games"
+#~ msgstr ""
+#~ "允許連線到 KsirK Jabber 多使用者遊戲室，您可以在那裡建立新遊戲，或是加入現"
+#~ "有的遊戲"
+
+#~ msgid "The last used Jabber Id."
+#~ msgstr "上次使用的 Jabber 代號。"
+
+#~ msgid "The password of the last used Jabber Id."
+#~ msgstr "上次使用的 Jabber 代號的密碼。"
+
+#~ msgid "The last used Jabber groupchat room."
+#~ msgstr "上次使用的 Jabber 群組聊天室。"
+
+#~ msgid "The password for last used Jabber groupchat room."
+#~ msgstr "上次使用的 Jabber 群組聊天室密碼。"
+
+#~ msgid "The nickname used in the last used Jabber groupchat room."
+#~ msgstr "上次在 Jabber 群組聊天室內使用的暱稱。"
+
+#~ msgid "Play KsirK over Jabber Network"
+#~ msgstr "在 Jabber 網路上玩 KsirK"
 
 #~ msgid ""
 #~ "%1 exists.\n"
