@@ -147,12 +147,12 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_bottomDock->setAllowedAreas(Qt::BottomDockWidgetArea|Qt::TopDockWidgetArea);
 
   QWidget* titleChatWidget = new QWidget(m_bottomDock);
-  QHBoxLayout* titleChatLayout = new QHBoxLayout(titleChatWidget);
+  auto * titleChatLayout = new QHBoxLayout();
   titleChatWidget->setLayout(titleChatLayout);
   titleChatWidget->setFixedHeight(35);
 
   QWidget* newMessageChat = new QWidget(titleChatWidget);
-  QHBoxLayout* newMessageChatLayout = new QHBoxLayout(newMessageChat);
+  auto * newMessageChatLayout = new QHBoxLayout();
   newMessageChat->setLayout(newMessageChatLayout);
 
   KsirkChatModel* chatModel = new KsirkChatModel(m_bottomDock,this);
@@ -1133,7 +1133,7 @@ void KGameWindow::createDefenseDialog()
   m_defenseDialog = new QDialog ();
 
   QWidget* widget = new QWidget(m_defenseDialog);
-  QGridLayout * mainLayout = new QGridLayout(widget);
+  auto * mainLayout = new QGridLayout();
 
   // Create the differents layout for buttons and label
   QGridLayout * bottomLayout = new QGridLayout();
