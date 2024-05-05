@@ -314,7 +314,7 @@ void Goal::show(int displayType)
   KMessageBox::information(
                             m_automaton->game(),
                             message(displayType), 
-                            i18n("KsirK - Goal Display"));
+                            i18nc("@title:window", "Goal Display"));
 }
 
 QDataStream& operator<<(QDataStream& stream, const Goal& goal)

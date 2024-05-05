@@ -732,7 +732,7 @@ bool KGameWindow::attackEnd()
       showMessage(i18n("%1, you are defeated! Bye, bye...",oldOwner->name()), 10, ForceShowing);
 /*      KMessageBox::information(this,
                                i18n("%1, you are defeated! Bye, bye...",oldOwner->name()),
-                               i18n("KsirK - Game Over!"));*/
+                               i18nc("@title:window", "Game Over"));*/
       if (m_automaton->isAdmin())
       {
         // Bug 315491.
@@ -999,7 +999,7 @@ bool KGameWindow::actionOpenGame()
 {
   qCDebug(KSIRK_LOG) << "KGameWindow::actionOpenGame";
 
-  QString fileName = QFileDialog::getOpenFileName(this, i18nc("@title:window", "KsirK - Load Game"), QString(), "*.xml");
+  QString fileName = QFileDialog::getOpenFileName(this, i18nc("@title:window", "Load Game"), QString(), "*.xml");
   if (!fileName.isEmpty())
   {
     m_fileName = fileName;

@@ -210,7 +210,7 @@ void Goal::show(int displayType)
   KMessageBox::information(
                             nullptr,
                             message(displayType), 
-                            i18n("KsirK - Goal Display"));
+                            i18nc("@title:window", "Goal Display"));
 }
 
 QDataStream& operator<<(QDataStream& stream, const Goal& goal)

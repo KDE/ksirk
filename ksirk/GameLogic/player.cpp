@@ -353,7 +353,7 @@ void Player::goal(const Goal& goal)
     KMessageBox::information(
       GameAutomaton::changeable().game(),
       i18n("%1, your goal will be displayed. Please make sure that no other player can see it !",name()),
-      i18n("KsirK - Displaying Goal"));
+      i18nc("@title:window", "Displaying Goal"));
     m_goal->show();
   }*/
 }

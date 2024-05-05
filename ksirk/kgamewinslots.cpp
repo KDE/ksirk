@@ -438,7 +438,7 @@ void KGameWindow::slotSaveGame()
     }
     if (m_fileName.isEmpty())
     {
-      QString fileName = QFileDialog::getSaveFileName (this, i18nc("@title:window", "KsirK - Save Game"), QString(), "*.xml");
+      QString fileName = QFileDialog::getSaveFileName (this, i18nc("@title:window", "Save Game"), QString(), "*.xml");
       if ( fileName.isEmpty())
       {
         m_message->setMessageTimeout(3000);

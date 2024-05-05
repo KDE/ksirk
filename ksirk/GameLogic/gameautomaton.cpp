@@ -300,7 +300,7 @@ GameAutomaton::GameState GameAutomaton::run()
       qCDebug(KSIRK_LOG) << "opened";
       bool ok;
       m_port = QInputDialog::getInt(m_game,
-              i18n("KsirK - Network configuration"), 
+              i18nc("@title:window", "Network Configuration"),
               i18n("Please type in the port number on which to offer connections:"), 
               m_port, 0, 32000, 1, &ok);
       offerConnections(m_port);
@@ -1465,7 +1465,7 @@ void GameAutomaton::changePlayerName(Player* player)
   QString nomEntre = player->name();
   
   bool found = true;
-  KMessageBox::information(m_game, i18n("Please choose another name"), i18n("KsirK - Name already used!"));
+  KMessageBox::information(m_game, i18n("Please choose another name"), i18nc("@title:window", "Name Already Used"));
   while(found)
   {
     bool emptyName = true;
@@ -1528,7 +1528,7 @@ void GameAutomaton::changePlayerNation(Player* player)
   QString nationName;
   
   QString nomEntre = player->name();
-  KMessageBox::information(m_game, i18n("Please choose another nation"), i18n("KsirK - Nation already used!"));
+  KMessageBox::information(m_game, i18n("Please choose another nation"), i18nc("@title:window", "Nation Already Used"));
   QString password;
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
@@ -1647,7 +1647,7 @@ void GameAutomaton::slotConnectionToClientBroken(KMessageIO *)
   {
     KMessageBox::information(m_game, 
                             i18n("Lost connection to a client.\nFor the moment, you can only save the game and start a new one or quit.\nThis will be improved in a future version."), 
-                            i18n("KsirK - Lost connection to client!"));
+                            i18nc("@title:window", "Lost Connection to Client"));
     switch ( KMessageBox::warningTwoActions( m_game,
                                         i18n("Do want to save your game?"),
                                         QString(),
@@ -1899,7 +1899,7 @@ void GameAutomaton::displayGoals()
           game(),
           i18n("%1, your goal will be displayed. Please<br>"
                "make sure that no other player can see it!",(*it)->name()),
-          i18n("KsirK - Displaying Goal"));
+          i18nc("@title:window", "Displaying Goal"));
       dynamic_cast<Player*>(*it)->goal().show();
     }
   }
@@ -2384,7 +2384,7 @@ void GameAutomaton::slotNetworkData(int msgid, const QByteArray &buffer, quint32
   case InvalidPassword:
     if (receiver == gameId())
     {
-      KMessageBox::information(m_game, i18n("You entered an invalid password.\nPlease try again."), i18n("KsirK - Invalid password!"));
+      KMessageBox::information(m_game, i18n("You entered an invalid password.\nPlease try again."), i18nc("@title:window", "Invalid Password"));
       m_game->setupOneWaitedPlayer();
     }
     break;
