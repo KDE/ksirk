@@ -87,7 +87,7 @@ InvasionSlider::InvasionSlider(KGameWindow* game, GameLogic::Country * attack, G
   m_invadeSlide->setTickPosition(QSlider::TicksBelow);
   m_currentSlideValue = m_invadeSlide->value();
 
-  QGridLayout * wSlideLayout = new QGridLayout(widget);
+  auto * wSlideLayout = new QGridLayout();
   QHBoxLayout * center = new QHBoxLayout(); // remove parameter to avoid message "which already has a layout"
   QVBoxLayout * left = new QVBoxLayout();
   QVBoxLayout * right = new QVBoxLayout();

@@ -38,7 +38,7 @@ namespace Ksirk
 
 KRightDialog::KRightDialog(QDockWidget * parent, ONU * world,KGameWindow* m_game)
   : QWidget(parent),
-  mainLayout(new QGridLayout(this)),
+  mainLayout(new QGridLayout()),
   m_parentWidget(parent),
   world(world),
   rightContents(),
@@ -153,8 +153,8 @@ void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int
 
   haut = new QWidget();
   bas = new QWidget();
-  QGridLayout * hautGrid = new QGridLayout(this);
-  QGridLayout * basGrid = new QGridLayout(this);
+  auto * hautGrid = new QGridLayout();
+  auto * basGrid = new QGridLayout();
 
   flag1 = new QLabel();
   flag2 = new QLabel();
