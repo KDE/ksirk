@@ -228,14 +228,14 @@ QString Goal::message(int displayType) const
     case Goal::GoalPlayer :
       if (m_automaton->playerNamed(*m_players.begin()) != nullptr)
       {
-        mes += i18n("<br>%1 is still alive...",*m_players.begin());
+        mes += i18n("<br>%1 is still alive…", *m_players.begin());
       }
       else
       {
         diff  = m_nbCountries-m_player->countries().size();
         if (diff > 0)
         {
-          mes += i18np("<br>%2, you still have 1 country to conquer...","<br>%2, you still have %1 countries to conquer...",diff,m_player->name());
+          mes += i18np("<br>%2, you still have 1 country to conquer…", "<br>%2, you still have %1 countries to conquer…", diff, m_player->name());
         }
         else
         {
@@ -249,7 +249,7 @@ QString Goal::message(int displayType) const
       diff  = m_nbCountries-m_player->countries().size();
       if (diff > 0)
       {
-        mes += i18np("<br>%2, you still have 1 country to conquer...","<br>%2, you still have %1 countries to conquer...",diff,m_player->name());
+        mes += i18np("<br>%2, you still have 1 country to conquer…", "<br>%2, you still have %1 countries to conquer…", diff, m_player->name());
       }
       else
       {
@@ -261,7 +261,7 @@ QString Goal::message(int displayType) const
             nbOk++;
           }
         }
-        mes += i18np("<br>%2, you have enough countries but you still have to put more than 1 army on %3 of them...","<br>%2, you have enough countries but you still have to put more than %1 armies on %3 of them...",m_nbArmiesByCountry,m_player->name(),m_nbCountries-nbOk);
+        mes += i18np("<br>%2, you have enough countries but you still have to put more than 1 army on %3 of them…", "<br>%2, you have enough countries but you still have to put more than %1 armies on %3 of them…", m_nbArmiesByCountry, m_player->name(), m_nbCountries-nbOk);
         
       }
       break;

@@ -167,7 +167,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   m_downChatFloatPix.load(QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Images/2DownArrow.png"));
   m_chatIsReduced = false;
 
-  m_titleChatMsg = new QLabel(i18n("No message..."));
+  m_titleChatMsg = new QLabel(i18n("No message…"));
   QPixmap downChatReducePix(QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Images/downArrow.png"));
   m_reduceChatButton = new QPushButton(downChatReducePix,"");
   m_floatChatButton = new QPushButton(m_upChatFloatPix,"");
@@ -729,9 +729,9 @@ bool KGameWindow::attackEnd()
     if (newOldOwnerNbCountries == 0)
     {
       QString oldOwnerId = oldOwner->name();
-      showMessage(i18n("%1, you are defeated! Bye, bye...",oldOwner->name()), 10, ForceShowing);
+      showMessage(i18n("%1, you are defeated! Bye, bye…", oldOwner->name()), 10, ForceShowing);
 /*      KMessageBox::information(this,
-                               i18n("%1, you are defeated! Bye, bye...",oldOwner->name()),
+                               i18n("%1, you are defeated! Bye, bye…", oldOwner->name()),
                                i18nc("@title:window", "Game Over"));*/
       if (m_automaton->isAdmin())
       {
@@ -2811,7 +2811,7 @@ void KGameWindow::explain()
   broadcastChangeItem(message1Parts, ID_NO_STATUS_MSG);
 
   KMessageParts message2Parts;
-  message2Parts << kli18n("Start a new game or join a network game with the menu or the toolbar...").untranslatedText();
+  message2Parts << kli18n("Start a new game or join a network game with the menu or the toolbar…").untranslatedText();
   broadcastChangeItem(message2Parts, ID_NO_STATUS_MSG);
 
   KMessageParts message5Parts;

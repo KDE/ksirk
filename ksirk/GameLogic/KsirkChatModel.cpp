@@ -68,12 +68,12 @@ void KsirkChatModel::addMessage(const KsirkChatItem& message)
 {
   QString msg;
   if ((QString(message.first)).length() == 0) {
-     msg = i18n("No message...");
+     msg = i18n("No message…");
   } else {
     msg = i18n("<b>%1:</b> %2", message.first, message.second);
      if (msg.length() > 77) {
         msg.resize(64);
-        msg += " ...";
+        msg += " …";
      }
   }
   m_game->titleChatMessage()->setText(msg);

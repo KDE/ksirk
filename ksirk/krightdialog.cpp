@@ -167,7 +167,7 @@ void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int
   QGridLayout * tp = new QGridLayout();
   infoProcess = new QLabel();
   infoProcess->setWordWrap(true);
-  infoProcess->setText(i18n("<i>Fighting in progress...</i>"));
+  infoProcess->setText(i18n("<i>Fighting in progress…</i>"));
   loadingLabel = new QLabel();
   QLabel *l3 = new QLabel();
   QLabel *l4 = new QLabel();

@@ -120,7 +120,7 @@
      <item>
       <widget class="KNSWidgets::Button" name="ghnsbutton">
        <property name="text">
-        <string>Download New Skins...</string>
+        <string>Download New Skins…</string>
        </property>
        <property name="configFile">
         <string>ksirk.knsrc</string>
