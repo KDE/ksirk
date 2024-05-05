@@ -912,10 +912,11 @@ bool KGameWindow::attackEnd()
 void KGameWindow::winner(const Player* player)
 {
   qCDebug(KSIRK_LOG) << player->name();
-  QString msg = i18n("%1 won!");
-  if (!player->isVirtual())
-  {
-    msg = i18n("<big><b>%1</b>, you won!</big>");
+  QString msg;
+  if (player->isVirtual()) {
+    msg = i18n("%1 won!", player->name());
+  } else {
+    msg = i18n("<big><b>%1</b>, you won!</big>", player->name());
   }
   if (m_automaton->useGoals())
   {
@@ -932,7 +933,7 @@ void KGameWindow::winner(const Player* player)
       msg += i18n("<br>He conquered all the world!");
     }
   }
-  RestartOrExitDialogImpl* restartDia = new RestartOrExitDialogImpl(i18n(msg.toUtf8().data(),player->name()));
+  auto * restartDia = new RestartOrExitDialogImpl(msg);
               
   connect(restartDia->newGameButton, &QAbstractButton::clicked, this, &KGameWindow::slotNewGame);
   connect(restartDia->exitButton, &QAbstractButton::clicked, this, &KGameWindow::slotExit);
