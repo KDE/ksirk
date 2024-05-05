@@ -802,7 +802,7 @@ void KGameWindow::slotDisableHelp(const QString & link)
   KsirkSettings::setHelpEnabled(false);
 }
 
-void KGameWindow::slotArmiesNumberChanged(int checked)
+void KGameWindow::slotArmiesNumberChanged(bool checked)
 {
   qCDebug(KSIRK_LOG) << checked;
   KsirkSettings::setShowArmiesNumbers(checked);

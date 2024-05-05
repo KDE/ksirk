@@ -192,7 +192,7 @@ MainWindow::MainWindow(QWidget* parent) :
   connect (m_goalDefWidget->description,&QTextEdit::textChanged, this, &MainWindow::slotGoalDescriptionEdited);
   connect (m_goalDefWidget->nbcountries, &QSpinBox::valueChanged, this, &MainWindow::slotGoalNbCountriesChanged);
   connect (m_goalDefWidget->armiesbycountry, &QSpinBox::valueChanged, this, &MainWindow::slotGoalNbArmiesByCountryChanged);
-  connect (m_goalDefWidget->anycontinent,&QCheckBox::stateChanged, this, &MainWindow::slotGoalAnyContinentChanged);
+  connect (m_goalDefWidget->anycontinent,&QCheckBox::toggled, this, &MainWindow::slotGoalAnyContinentChanged);
   connect (m_goalDefWidget->selectcontinentsbutton, &QAbstractButton::clicked, this, &MainWindow::slotGoalContinents);
   connect(m_skinDefWidget->newGoalButton, &QAbstractButton::clicked, this, &MainWindow::slotNewGoal);
   connect(m_skinDefWidget->deleteGoalButton, &QAbstractButton::clicked, this, &MainWindow::slotDeleteGoal);
@@ -1807,24 +1807,20 @@ void MainWindow::slotGoalNbArmiesByCountryChanged(int)
   goal->setNbArmiesByCountry(m_goalDefWidget->armiesbycountry->value());
 }
 
-void MainWindow::slotGoalAnyContinentChanged(int state)
+void MainWindow::slotGoalAnyContinentChanged(bool checked)
 {
   if (m_onu == nullptr || m_skinDefWidget->goalslist->currentItem() == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
   int row = m_skinDefWidget->goalslist->row(m_skinDefWidget->goalslist->currentItem());
   Goal* goal = m_onu->goals()[row];
-  switch (state)
-  {
-    case Qt::Unchecked:
+
+  if (!checked) {
       goal->continents().removeAll(QString());
-      break;
-    case Qt::Checked:
+  } else {
       if (!goal->continents().contains(QString()))
       {
         goal->continents().push_back(QString());
       }
-      break;
-    default:;
   }
   goal->setNbArmiesByCountry(m_goalDefWidget->armiesbycountry->value());
 }

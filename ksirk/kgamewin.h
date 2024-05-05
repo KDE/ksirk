@@ -774,7 +774,7 @@ private Q_SLOTS:
 
   void slotDisableHelp(const QString &);
 
-  void slotArmiesNumberChanged(int);
+  void slotArmiesNumberChanged(bool);
 
   /* Connects to the server. */
 //   void slotConnect ();

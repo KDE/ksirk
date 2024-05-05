@@ -47,7 +47,7 @@ public:
   ~KsirkConfigurationDialog () override;
 
 Q_SIGNALS:
-  void armiesNumberShowingChanged(int);
+  void armiesNumberShowingChanged(bool);
 
 protected Q_SLOTS:
   void updateSettings() override;

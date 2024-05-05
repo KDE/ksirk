@@ -194,7 +194,7 @@ private Q_SLOTS:
   void slotGoalDescriptionEdited();
   void slotGoalNbCountriesChanged(int);
   void slotGoalNbArmiesByCountryChanged(int);
-  void slotGoalAnyContinentChanged(int);
+  void slotGoalAnyContinentChanged(bool);
   void slotGoalContinents();
   void slotNewGoal();
   void slotDeleteGoal();
