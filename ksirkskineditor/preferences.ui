@@ -21,9 +21,6 @@
     <height>100</height>
    </size>
   </property>
-  <property name="windowTitle" >
-   <string>KsirK Skin Editor Preferences</string>
-  </property>
   <layout class="QGridLayout" name="gridLayout" />
  </widget>
  <resources/>

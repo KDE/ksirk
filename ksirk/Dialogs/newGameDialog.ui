@@ -12,9 +12,6 @@
     <height>417</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>KsirK - New game properties</string>
-  </property>
   <property name="sizeGripEnabled" stdset="0">
    <bool>true</bool>
   </property>

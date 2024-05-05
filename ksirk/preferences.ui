@@ -22,9 +22,6 @@
     <height>100</height>
    </size>
   </property>
-  <property name="windowTitle">
-   <string>KsirK Preferences</string>
-  </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <widget class="QCheckBox" name="kcfg_soundEnabled">

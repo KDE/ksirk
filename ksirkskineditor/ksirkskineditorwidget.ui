@@ -16,9 +16,6 @@
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
-  <property name="windowTitle" >
-   <string>KsirK Skin Editor</string>
-  </property>
   <property name="frameShape" >
    <enum>QFrame::StyledPanel</enum>
   </property>
