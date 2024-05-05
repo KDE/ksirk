@@ -870,7 +870,7 @@ void KGameWindow::animExplosion(int who)
         QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
         if (sndCrashPath.isNull())
         {
-          KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
+          KMessageBox::error(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"));
           exit(2);
         }
         if (KsirkSettings::soundEnabled())
@@ -890,7 +890,7 @@ void KGameWindow::animExplosion(int who)
         QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
         if (sndCrashPath.isNull())
         {
-          KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
+          KMessageBox::error(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"));
           exit(2);
         }
         if (KsirkSettings::soundEnabled())
@@ -930,7 +930,7 @@ void KGameWindow::animExplosion(int who)
   /*QString sndCrashPath = m_dirs-> findResource("appdata", m_automaton->skin() + "/Sounds/crash.wav");
   if (sndCrashPath.isNull())
   {
-    KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
+    KMessageBox::error(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"));
     exit(2);
   }
   if (KsirkSettings::soundEnabled())
@@ -991,7 +991,7 @@ void KGameWindow::animExplosionForArena()
           QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
-            KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
+            KMessageBox::error(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"));
             exit(2);
           }
           if (KsirkSettings::soundEnabled())
@@ -1028,7 +1028,7 @@ void KGameWindow::animExplosionForArena()
           QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
-            KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
+            KMessageBox::error(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"));
             exit(2);
           }
           if (KsirkSettings::soundEnabled())
@@ -1063,7 +1063,7 @@ void KGameWindow::animExplosionForArena()
           QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
-            KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
+            KMessageBox::error(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"));
             exit(2);
           }
           if (KsirkSettings::soundEnabled())
@@ -1117,7 +1117,7 @@ void KGameWindow::animExplosionForArena()
           QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
-            KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
+            KMessageBox::error(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"));
             exit(2);
           }
           if (KsirkSettings::soundEnabled())
@@ -1154,7 +1154,7 @@ void KGameWindow::animExplosionForArena()
           QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
-            KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
+            KMessageBox::error(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"));
             exit(2);
           }
           if (KsirkSettings::soundEnabled())
@@ -1188,7 +1188,7 @@ void KGameWindow::animExplosionForArena()
           QString sndCrashPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Sounds/crash.wav");
           if (sndCrashPath.isNull())
           {
-            KMessageBox::information(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"), i18n("KsirK - Error!"));
+            KMessageBox::error(this, i18n("Sound crash not found - Verify your installation\nProgram cannot continue"));
             exit(2);
           }
           if (KsirkSettings::soundEnabled())
