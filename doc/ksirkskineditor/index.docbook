@@ -629,7 +629,7 @@ revision history. (see installation appendix comment) -->
           <imageobject><imagedata fileref="document-open.png" format="PNG"/></imageobject>
           <textobject><phrase>Load</phrase></textobject>
         </inlinemediaobject>
-        <guibutton>Load...</guibutton>
+        <guibutton>Load…</guibutton>
       </term>
       <listitem><para><action>Causes the program to load an existing skin.</action></para></listitem>
     </varlistentry>

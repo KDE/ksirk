@@ -153,7 +153,7 @@ your application. -->
     </varlistentry>
 
     <varlistentry>
-      <term><guibutton>Load...</guibutton></term>
+      <term><guibutton>Load…</guibutton></term>
       <listitem><para><action>Use this to load a previously saved game.</action></para></listitem>
     </varlistentry>
 
@@ -163,7 +163,7 @@ your application. -->
     </varlistentry>
   </variablelist>
 
-  <para>If you hit <guibutton>New Local Game</guibutton> you will be presented with the <guilabel>New game properties</guilabel> dialog where you will be able to choose the number of players, the skin (or theme) to use, the game type (conquer the goal or have a specific goal) and finally if this game will be played with online players or if it is purely local. New skins can be downloaded using <guibutton>Download New Skins...</guibutton> button.</para>
+  <para>If you hit <guibutton>New Local Game</guibutton> you will be presented with the <guilabel>New game properties</guilabel> dialog where you will be able to choose the number of players, the skin (or theme) to use, the game type (conquer the goal or have a specific goal) and finally if this game will be played with online players or if it is purely local. New skins can be downloaded using <guibutton>Download New Skins…</guibutton> button.</para>
 
   <screenshot>
     <screeninfo>The New Game dialog</screeninfo>
@@ -412,7 +412,7 @@ your application. -->
     </tgroup>
   </table>
 
-  <para>When a player has finished distributing his armies, he clicks the <guibutton>Valid</guibutton> button to allow the next player to distribute his bonus armies. As for the initial distribution, when all player have placed their armies, they can start a new redistribution cycle or start a new turn...</para>
+  <para>When a player has finished distributing his armies, he clicks the <guibutton>Valid</guibutton> button to allow the next player to distribute his bonus armies. As for the initial distribution, when all player have placed their armies, they can start a new redistribution cycle or start a new turn…</para>
   </sect2>
 
 <!-- Does not work for current TCP/IP games
@@ -554,7 +554,7 @@ Michal Golunski (Polish translation).
 <sect1 id="configuration">
 <title>Configuration</title>
 
-<para>The <menuchoice><guimenu>Settings</guimenu> <guimenuitem>Configure &ksirk;...</guimenuitem></menuchoice> menu item opens a dialog that allows you to:</para>
+<para>The <menuchoice><guimenu>Settings</guimenu> <guimenuitem>Configure &ksirk;…</guimenuitem></menuchoice> menu item opens a dialog that allows you to:</para>
 
 <screenshot>
   <screeninfo>Preferences dialog</screeninfo>
