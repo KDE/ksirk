@@ -717,7 +717,7 @@ void MainWindow::slotCenterButtonClicked()
 
 void MainWindow::slotPosition(const QPointF& point)
 {
-  QString message(QLatin1String(""));
+  QString message;
   QTextStream ts( &message );
   ts << point.x() << " x " << point.y();
   statusBar()->showMessage(message);

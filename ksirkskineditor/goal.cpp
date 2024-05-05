@@ -28,7 +28,7 @@ namespace KsirkSkinEditor
 
 Goal::Goal() :
   m_type(NoGoal),
-  m_description(QLatin1String("")),
+  m_description(),
   m_nbCountries(0),
   m_nbArmiesByCountry(0),
   m_continents(),

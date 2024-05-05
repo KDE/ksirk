@@ -33,7 +33,7 @@ namespace GameLogic {
 Goal::Goal() :
   m_automaton(nullptr),
   m_type(NoGoal),
-  m_description(""),
+  m_description(),
   m_nbCountries(0),
   m_nbArmiesByCountry(0),
   m_continents(),
@@ -45,7 +45,7 @@ Goal::Goal() :
 Goal::Goal(GameAutomaton* automaton) :
 m_automaton(automaton),
 m_type(NoGoal),
-m_description(""),
+m_description(),
 m_nbCountries(0),
 m_nbArmiesByCountry(0),
 m_continents(),
