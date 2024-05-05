@@ -116,8 +116,7 @@ ONU::ONU(GameAutomaton* automaton,
   if (poolFileName.isEmpty())
   {
       KMessageBox::error(nullptr, 
-                         i18n("Pool filename not found\nProgram cannot continue"),
-                         i18n("Error!"));
+                         i18n("Pool filename not found\nProgram cannot continue"));
       exit(2);
   }
   m_map = QPixmap();
@@ -133,8 +132,7 @@ ONU::ONU(GameAutomaton* automaton,
   if (mapMaskFileName.isNull())
   {
       KMessageBox::error(nullptr, 
-                         i18n("Map mask image not found\nProgram cannot continue"),
-                         i18n("Error!"));
+                         i18n("Map mask image not found\nProgram cannot continue"));
       exit(2);
   }
   qCDebug(KSIRK_LOG) << "Loading map mask file: " << mapMaskFileName;

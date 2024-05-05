@@ -512,7 +512,7 @@ qreal AnimSprite::getMaxX() const
         return backGnd-> pixmap().width();
     else
     {
-        KMessageBox::error(nullptr, i18n("Cannot find Max X for sprite: no background!"), i18n("Error!"));
+        KMessageBox::error(nullptr, i18n("Cannot find Max X for sprite: no background!"));
         exit(2);
     }
 }
@@ -527,7 +527,7 @@ qreal AnimSprite::getMaxY() const
         return backGnd-> pixmap().height();
     else
     {
-        KMessageBox::error(nullptr, i18n("Cannot find Max Y for sprite: no background!"), i18n("Error!"));
+        KMessageBox::error(nullptr, i18n("Cannot find Max Y for sprite: no background!"));
         exit(2);
     }
 }

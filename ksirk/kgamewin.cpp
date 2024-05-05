@@ -136,7 +136,7 @@ KGameWindow::KGameWindow(QWidget* parent) :
   QString iconFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Images/soldierKneeling.png");
   if (iconFileName.isNull())
   {
-      KMessageBox::error(nullptr, i18n("Cannot load icon<br>Program cannot continue"), i18n("Error!"));
+      KMessageBox::error(nullptr, i18n("Cannot load icon<br>Program cannot continue"));
       exit(2);
   }
   QPixmap icon(iconFileName);
@@ -299,7 +299,7 @@ void KGameWindow::initActions()
   //   qCDebug(KSIRK_LOG) << "Trying to load button image file: " << imageFileName;
   if (imageFileName.isNull())
   {
-    KMessageBox::error(nullptr, i18n("Cannot load button image %1<br>Program cannot continue",QString(CM_NEWNETGAME)), i18n("Error!"));
+    KMessageBox::error(nullptr, i18n("Cannot load button image %1<br>Program cannot continue",QString(CM_NEWNETGAME)));
     exit(2);
   }
   QAction * newSocketAction = new QAction(QIcon(QPixmap(imageFileName)), i18n("New Standard TCP/IP Network Game"), this);
@@ -316,7 +316,7 @@ void KGameWindow::initActions()
   //   qCDebug(KSIRK_LOG) << "Trying to load button image file: " << imageFileName;
   if (imageFileName.isNull())
   {
-    KMessageBox::error(nullptr, i18n("Cannot load button image %1<br>Program cannot continue",QString(CM_NEWNETGAME)), i18n("Error!"));
+    KMessageBox::error(nullptr, i18n("Cannot load button image %1<br>Program cannot continue",QString(CM_NEWNETGAME)));
     exit(2);
   }
   QAction * joinAction = new QAction(QIcon(QPixmap(imageFileName)),
@@ -485,7 +485,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
   if (onuDefinitionFileName.isEmpty())
   {
       KMessageBox::error(nullptr,
-          i18n("World definition file not found - Verify your installation<br>Program cannot continue"), i18n("Error!"));
+          i18n("World definition file not found - Verify your installation<br>Program cannot continue"));
       exit(2);
   }
   // Bug 308527. Need to remove all goals on new game. Only goals for selected skin will be loaded.
@@ -641,7 +641,7 @@ void KGameWindow::initView()
   QString iconFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + "/Images/soldierKneeling.png");
   if (iconFileName.isNull())
   {
-      KMessageBox::error(nullptr, i18n("Cannot load icon<br>Program cannot continue"), i18n("Error!"));
+      KMessageBox::error(nullptr, i18n("Cannot load icon<br>Program cannot continue"));
       exit(2);
   }
 // to port : still necessary ?
@@ -2223,7 +2223,7 @@ bool KGameWindow::nextPlayerRecycling()
     qCDebug(KSIRK_LOG) << "You must distribute all your armies";
     if (!currentPlayer()->isVirtual() && !currentPlayer()->isAI())
     {
-      KMessageBox::error(nullptr, i18n("You must distribute\nall your armies"), i18n("KsirK"));
+      KMessageBox::error(nullptr, i18n("You must distribute\nall your armies"));
     }
     return false;
   }

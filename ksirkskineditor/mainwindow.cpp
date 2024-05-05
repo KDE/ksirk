@@ -124,7 +124,7 @@ MainWindow::MainWindow(QWidget* parent) :
   QString anchorFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("cross.png"));
   if (anchorFileName.isNull())
   {
-    KMessageBox::error(nullptr, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error"));
+    KMessageBox::error(nullptr, i18n("Cannot load anchor icon<br>Program cannot continue"));
     exit(2);
   }
   QPixmap anchorPix = QPixmap(anchorFileName);
@@ -138,7 +138,7 @@ MainWindow::MainWindow(QWidget* parent) :
   QString centerFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("target.png"));
   if (centerFileName.isNull())
   {
-    KMessageBox::error(nullptr, i18n("Cannot load center icon<br>Program cannot continue"), i18n("Error"));
+    KMessageBox::error(nullptr, i18n("Cannot load center icon<br>Program cannot continue"));
     exit(2);
   }
   QPixmap centerPix = QPixmap(centerFileName);
@@ -155,7 +155,7 @@ MainWindow::MainWindow(QWidget* parent) :
   QString iconFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("ksirkskineditor.png"));
 /*  if (iconFileName.isNull())
   {
-      KMessageBox::error(0, i18n("Cannot load icon<br>Program cannot continue"), i18n("Error"));
+      KMessageBox::error(0, i18n("Cannot load icon<br>Program cannot continue"));
       exit(2);
   }*/
   QPixmap icon(iconFileName);
@@ -675,7 +675,7 @@ void MainWindow::slotAnchorButtonClicked()
     QString anchorFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("cross.png"));
     if (anchorFileName.isNull())
     {
-      KMessageBox::error(nullptr, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error"));
+      KMessageBox::error(nullptr, i18n("Cannot load anchor icon<br>Program cannot continue"));
       exit(2);
     }
     QPixmap anchorPix = QPixmap(anchorFileName);
@@ -704,7 +704,7 @@ void MainWindow::slotCenterButtonClicked()
     QString centerFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("target.png"));
     if (centerFileName.isNull())
     {
-      KMessageBox::error(nullptr, i18n("Cannot load center icon<br>Program cannot continue"), i18n("Error"));
+      KMessageBox::error(nullptr, i18n("Cannot load center icon<br>Program cannot continue"));
       exit(2);
     }
     QPixmap centerPix = QPixmap(centerFileName);
@@ -803,7 +803,7 @@ void MainWindow::slotPressPosition(const QPointF& clickedPoint)
       fileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("cross.png"));
       if (fileName.isNull())
       {
-        KMessageBox::error(nullptr, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error"));
+        KMessageBox::error(nullptr, i18n("Cannot load anchor icon<br>Program cannot continue"));
         exit(2);
       }
       pix = QPixmap(fileName);
@@ -820,7 +820,7 @@ void MainWindow::slotPressPosition(const QPointF& clickedPoint)
       fileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("target.png"));
       if (fileName.isNull())
       {
-        KMessageBox::error(nullptr, i18n("Cannot load center icon<br>Program cannot continue"), i18n("Error"));
+        KMessageBox::error(nullptr, i18n("Cannot load center icon<br>Program cannot continue"));
         exit(2);
       }
       pix = QPixmap(fileName);
@@ -1190,7 +1190,7 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
       fileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("cross.png"));
       if (fileName.isNull())
       {
-        KMessageBox::error(nullptr, i18n("Cannot load anchor icon<br>Program cannot continue"), i18n("Error"));
+        KMessageBox::error(nullptr, i18n("Cannot load anchor icon<br>Program cannot continue"));
         exit(2);
       }
       pix = QPixmap(fileName);

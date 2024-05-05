@@ -75,8 +75,7 @@ ONU::ONU(const QString& configDir, QObject *parent)
   if (!formatVersion.isEmpty() && formatVersion != ONU_FILE_FORMAT_VERSION)
   {
     KMessageBox::error(nullptr,
-                        i18n("Error - Invalid skin definition file format. Expected %1 and got %2",QStringLiteral(ONU_FILE_FORMAT_VERSION),formatVersion) + "<br>" + m_configFileName,
-                        i18n("Error"));
+                        i18n("Error - Invalid skin definition file format. Expected %1 and got %2",QStringLiteral(ONU_FILE_FORMAT_VERSION),formatVersion) + "<br>" + m_configFileName);
 //     exit(1);
   }
 
@@ -108,8 +107,7 @@ ONU::ONU(const QString& configDir, QObject *parent)
   if (poolFileName.isEmpty())
   {
       KMessageBox::error(nullptr, 
-                         i18n("Pool filename not found\nProgram cannot continue"),
-                         i18n("Error"));
+                         i18n("Pool filename not found\nProgram cannot continue"));
       exit(2);
   }
   m_map = QPixmap();
@@ -127,8 +125,7 @@ ONU::ONU(const QString& configDir, QObject *parent)
   if (mapMaskFileName.isNull())
   {
       KMessageBox::error(nullptr, 
-                         i18n("Map mask image not found\nProgram cannot continue"),
-                         i18n("Error"));
+                         i18n("Map mask image not found\nProgram cannot continue"));
       exit(2);
   }
   qCDebug(KSIRKSKINEDITOR_LOG) << "Loading map mask file: " << mapMaskFileName;
