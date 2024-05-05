@@ -99,7 +99,7 @@ const QString& SkinSpritesData::strData(const QString& name) const
   {
     QString msg;
     QTextStream(&msg) << i18n("Error - Unknown skin string data: ") << name;
-    KMessageBox::error(nullptr, msg, i18n("Fatal Error"));
+    KMessageBox::error(nullptr, msg, i18nc("@title:window", "Fatal Error"));
     exit(1);    
   }
   else

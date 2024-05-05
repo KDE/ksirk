@@ -1188,7 +1188,7 @@ bool GameAutomaton::joinNetworkGame()
 {
   qCDebug(KSIRK_LOG);
    if (stateName() == "INIT"
-     || (KMessageBox::warningContinueCancel(m_game,i18n("Do you really want to end your current game and join another?"),i18n( "New game confirmation" ),KGuiItem(i18nc("@action:button", "Join New Game"))) == KMessageBox::Continue))
+     || (KMessageBox::warningContinueCancel(m_game,i18n("Do you really want to end your current game and join another?"), i18nc("@title:window", "New Game Confirmation"),KGuiItem(i18nc("@action:button", "Join New Game"))) == KMessageBox::Continue))
    {
       m_game->joinNetworkGame();
    }
@@ -1465,7 +1465,7 @@ void GameAutomaton::changePlayerName(Player* player)
   QString nomEntre = player->name();
   
   bool found = true;
-  KMessageBox::information(m_game, i18n("Please choose another name"), i18nc("@title:window", "Name Already Used"));
+  KMessageBox::information(m_game, i18n("Please choose another name."), i18nc("@title:window", "Name Already Used"));
   while(found)
   {
     bool emptyName = true;
@@ -1528,7 +1528,7 @@ void GameAutomaton::changePlayerNation(Player* player)
   QString nationName;
   
   QString nomEntre = player->name();
-  KMessageBox::information(m_game, i18n("Please choose another nation"), i18nc("@title:window", "Nation Already Used"));
+  KMessageBox::information(m_game, i18n("Please choose another nation."), i18nc("@title:window", "Nation Already Used"));
   QString password;
   QByteArray buffer;
   QDataStream stream(&buffer, QIODevice::WriteOnly);
@@ -1621,10 +1621,10 @@ void GameAutomaton::slotConnectionToServerBroken()
   {
     int answer = KMessageBox::questionTwoActionsCancel(m_game,
                                                   i18n("KsirK - Lost connection to server!\nWhat do you want to do?"),
-                                                  i18n("Starting a new game or exit."),
-                                                  KGuiItem(i18n("New Game")),
-                                                  KGuiItem(i18n("Exit")),
-                                                  KGuiItem(i18n("Do nothing")));
+                                                  i18nc("@title:window", "Starting a New Game or Exit."),
+                                                  KGuiItem(i18nc("@action:button", "New Game")),
+                                                  KGuiItem(i18nc("@action:button", "Exit")),
+                                                  KGuiItem(i18nc("@action:button", "Do Nothing")));
     if (answer == KMessageBox::PrimaryAction)
     {
       m_game->showMainMenu();
@@ -2586,7 +2586,7 @@ void GameAutomaton::actionNextPlayer()
     || m_currentPlayerPlayed
     || (KMessageBox::questionTwoActions (m_game,
                                     i18n("%1, you have not played anything this turn.\nDo you really want to lose your turn?",m_currentPlayer),
-                                    i18n("Really Next Player?"),
+                                    i18nc("@title:window", "Next Player Confirmation"),
                                     KGuiItem(i18nc("@action:button", "Next Player")),
                                     KStandardGuiItem::cancel())
        == KMessageBox::PrimaryAction) )

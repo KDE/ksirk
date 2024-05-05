@@ -503,7 +503,7 @@ void AIPlayer::placeArmiesAction()
     {
       QString msg = i18np("Error - No receiving country selected while computer player %2 had still 1 army to place. This is bug probably #2232 at www.gna.org.", "Error - No receiving country selected while computer player %2 had still %1 armies to place. This is bug probably #2232 at www.gna.org.", getNbAvailArmies(), Player::name());
       qCCritical(KSIRK_LOG) << msg;
-      KMessageBox::error(nullptr, msg, i18n("Fatal Error"));
+      KMessageBox::error(nullptr, msg, i18nc("@title:window", "Fatal Error"));
       m_thread.exit();
       m_thread.wait();
     }

@@ -321,12 +321,12 @@ void MainWindow::initActions()
   // standard game actions
   action = KGameStandardAction::load(this, &MainWindow::slotOpenSkin, this);
   actionCollection()->addAction(action->objectName(), action);
-  action->setToolTip(i18n("Open a saved skin..."));
+  action->setToolTip(i18nc("@info:tooltip", "Open a saved skin"));
 
   m_rfa = KGameStandardAction::loadRecent (this, &MainWindow::slotURLSelected, this);
   actionCollection()->addAction(m_rfa->objectName(), m_rfa);
-  m_rfa->setText(i18n("Load &Recent"));
-  m_rfa->setToolTip(i18n("Open a recently saved skin..."));
+  m_rfa->setText(i18nc("@action", "Load &Recent"));
+  m_rfa->setToolTip(i18nc("@info:tooltip", "Open a recently saved skin"));
 
   KSharedConfig::Ptr config = KSharedConfig::openConfig();
   qCDebug(KSIRKSKINEDITOR_LOG) << "loading recent files";
