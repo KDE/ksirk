@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-03 00:37+0000\n"
+"POT-Creation-Date: 2024-05-06 00:37+0000\n"
 "PO-Revision-Date: 2024-01-22 17:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1066,64 +1066,87 @@ msgstr ""
 msgid "Legacy"
 msgstr "繼承"
 
-#: decoratedgameframe.cpp:100 kgamewin.cpp:351
-#, kde-format
+#: decoratedgameframe.cpp:100
+#, fuzzy, kde-format
+#| msgid "Next Player"
+msgctxt "@action"
 msgid "Next Player"
 msgstr "下一個玩家"
 
 #: decoratedgameframe.cpp:103
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Details"
+msgctxt "@action"
 msgid "Details"
 msgstr "詳情"
 
-#: decoratedgameframe.cpp:106 kgamewin.cpp:331 kgamewin.cpp:1217
-#: kgamewin.cpp:1229 kgamewin.cpp:2386
-#, kde-format
+#: decoratedgameframe.cpp:106
+#, fuzzy, kde-format
+#| msgid "Goal"
+msgctxt "@action"
 msgid "Goal"
 msgstr "目標"
 
 #: decoratedgameframe.cpp:138 decoratedgameframe.cpp:394
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Enable Arena"
+msgctxt "@action"
 msgid "Enable Arena"
 msgstr "開啟競技場"
 
 #: decoratedgameframe.cpp:142
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attack 1"
+msgctxt "@action"
 msgid "Attack 1"
 msgstr "攻擊 1"
 
 #: decoratedgameframe.cpp:145
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attack 2"
+msgctxt "@action"
 msgid "Attack 2"
 msgstr "攻擊 2"
 
 #: decoratedgameframe.cpp:148
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attack 3"
+msgctxt "@action"
 msgid "Attack 3"
 msgstr "攻擊 3"
 
 #: decoratedgameframe.cpp:151
-#, kde-format
-msgid "Auto attack"
+#, fuzzy, kde-format
+#| msgid "Auto attack"
+msgctxt "@action"
+msgid "Auto Attack"
 msgstr "自動攻擊"
 
 #: decoratedgameframe.cpp:169
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move 1"
+msgctxt "@action"
 msgid "Move 1"
 msgstr "移動 1"
 
 #: decoratedgameframe.cpp:172
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move 5"
+msgctxt "@action"
 msgid "Move 5"
 msgstr "移動 5"
 
 #: decoratedgameframe.cpp:175
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move 10"
+msgctxt "@action"
 msgid "Move 10"
 msgstr "移動 10"
 
 #: decoratedgameframe.cpp:400
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Disable Arena"
+msgctxt "@action"
 msgid "Disable Arena"
 msgstr "關閉競技場"
 
@@ -1180,14 +1203,14 @@ msgstr "網路設定"
 
 #. i18n: ectx: property (text), widget (QLabel, hostLabel)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: Dialogs/joingame.ui:25 Dialogs/tcpconnectwidget.ui:28
+#: Dialogs/joingame.ui:25 Dialogs/tcpconnectwidget.ui:25
 #, kde-format
 msgid "Host:"
 msgstr "主機："
 
 #. i18n: ectx: property (text), widget (QLabel, portLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: Dialogs/joingame.ui:35 Dialogs/tcpconnectwidget.ui:41
+#: Dialogs/joingame.ui:35 Dialogs/tcpconnectwidget.ui:38
 #, kde-format
 msgid "Port:"
 msgstr "連接埠："
@@ -1207,105 +1230,100 @@ msgstr "空白的名稱。請選擇其它名稱。"
 msgid "Player Number %1, please type in your name and choose your nation:"
 msgstr "玩家編號 %1，請輸入您的姓名與選擇您的國家："
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, NewGameDialog)
-#: Dialogs/newGameDialog.ui:16
-#, kde-format
-msgid "KsirK - New game properties"
-msgstr "KsirK─新遊戲屬性"
-
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: Dialogs/newGameDialog.ui:29
+#: Dialogs/newGameDialog.ui:26
 #, kde-format
 msgid "Total number of players:"
 msgstr "玩家數量："
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, playersNumberEntry)
-#: Dialogs/newGameDialog.ui:39
+#: Dialogs/newGameDialog.ui:36
 #, kde-format
 msgid "Spin this to choose the number of players."
 msgstr "選擇玩家的數量。"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, playersNumberEntry)
-#: Dialogs/newGameDialog.ui:42
+#: Dialogs/newGameDialog.ui:39
 #, kde-format
 msgid "A spin box to choose the number of players"
 msgstr "選擇玩家數量的元件"
 
 #. i18n: ectx: property (text), widget (QLabel, localPlayersNumberLabel)
-#: Dialogs/newGameDialog.ui:53
+#: Dialogs/newGameDialog.ui:50
 #, kde-format
 msgid "Number of local players:"
 msgstr "本地玩家數量："
 
 #. i18n: ectx: property (text), widget (QLabel, tcpPortLabel)
-#: Dialogs/newGameDialog.ui:67
+#: Dialogs/newGameDialog.ui:64
 #, kde-format
 msgid "TCP port on which to offer connections:"
 msgstr "提供連線的 TCP 連接埠："
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: Dialogs/newGameDialog.ui:106 Dialogs/newGameSummary.ui:44
+#: Dialogs/newGameDialog.ui:103 Dialogs/newGameSummary.ui:41
 #, kde-format
 msgid "Skin:"
 msgstr "外觀："
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, skinCombo)
-#: Dialogs/newGameDialog.ui:116
+#: Dialogs/newGameDialog.ui:113
 #, kde-format
 msgid "Choose the skin (map, nationalities, etc.) to use for this game."
 msgstr "選擇此遊戲使用的外觀（地圖、國家等）"
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, skinCombo)
-#: Dialogs/newGameDialog.ui:119
+#: Dialogs/newGameDialog.ui:116
 #, kde-format
 msgid "A combo listing all the available skins."
 msgstr "列出所有可用外觀的下拉式選單。"
 
 #. i18n: ectx: property (text), widget (KNSWidgets::Button, ghnsbutton)
-#: Dialogs/newGameDialog.ui:126
-#, kde-format
-msgid "Download New Skins..."
+#: Dialogs/newGameDialog.ui:123
+#, fuzzy, kde-format
+#| msgid "Download New Skins..."
+msgid "Download New Skins…"
 msgstr "下載新的外觀..."
 
 #. i18n: ectx: property (configFile), widget (KNSWidgets::Button, ghnsbutton)
-#: Dialogs/newGameDialog.ui:129
+#: Dialogs/newGameDialog.ui:126
 #, kde-format
 msgid "ksirk.knsrc"
 msgstr "ksirk.knsrc"
 
 #. i18n: ectx: property (title), widget (QGroupBox, goalGroup)
-#: Dialogs/newGameDialog.ui:153
+#: Dialogs/newGameDialog.ui:150
 #, kde-format
 msgid "Goal Type"
 msgstr "目標型態"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, radioWorld)
-#: Dialogs/newGameDialog.ui:159
+#: Dialogs/newGameDialog.ui:156
 #, kde-format
 msgid "Choose this for players to have to conquer all the world to win."
 msgstr "此選項必須玩家征服全世界才算贏。"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioWorld)
-#: Dialogs/newGameDialog.ui:162
+#: Dialogs/newGameDialog.ui:159
 #, kde-format
 msgid "In this mode, a player will have to conquer all the world to win."
 msgstr "在此模式中，玩家必須征服全世界才算贏。"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioWorld)
-#: Dialogs/newGameDialog.ui:165
+#: Dialogs/newGameDialog.ui:162
 #, kde-format
 msgid "World con&quest"
 msgstr "征服世界 (&Q)"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, radioGoal)
-#: Dialogs/newGameDialog.ui:172
+#: Dialogs/newGameDialog.ui:169
 #, kde-format
 msgid "Choose this to have a goal assigned to each player."
 msgstr "選擇此選項，則每個玩家會被指定一個目標。"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioGoal)
-#: Dialogs/newGameDialog.ui:175
+#: Dialogs/newGameDialog.ui:172
 #, kde-format
 msgid ""
 "In this mode, a goal will be assigned to each player, which he will have to "
@@ -1313,21 +1331,21 @@ msgid ""
 msgstr "在此模式中，每個玩家會被指定一個目標，玩家必須達到目標才算贏。"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioGoal)
-#: Dialogs/newGameDialog.ui:178
+#: Dialogs/newGameDialog.ui:175
 #, kde-format
 msgid "Reach a goa&l"
 msgstr "達到目標 (&L)"
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
-#: Dialogs/newGameDialog.ui:230 Dialogs/newGameSummary.ui:206
-#: Dialogs/qplayersetupdialog.ui:126 Dialogs/tcpconnectwidget.ui:98
+#: Dialogs/newGameDialog.ui:227 Dialogs/newGameSummary.ui:203
+#: Dialogs/qplayersetupdialog.ui:123 Dialogs/tcpconnectwidget.ui:95
 #, kde-format
 msgid "Cancel"
 msgstr "取消"
 
 #. i18n: ectx: property (text), widget (QPushButton, nextButton)
-#: Dialogs/newGameDialog.ui:250 Dialogs/qplayersetupdialog.ui:153
-#: Dialogs/tcpconnectwidget.ui:125
+#: Dialogs/newGameDialog.ui:247 Dialogs/qplayersetupdialog.ui:150
+#: Dialogs/tcpconnectwidget.ui:122
 #, kde-format
 msgid "Next >>"
 msgstr "下一個 >>"
@@ -1341,75 +1359,77 @@ msgstr ""
 "找不到 Skins 目錄─請檢查您的安裝。\n"
 "程式無法再繼續。"
 
-#: Dialogs/newGameDialogImpl.cpp:126 newgamesetup.cpp:45
-#, kde-format
-msgid "Fatal Error!"
+#: Dialogs/newGameDialogImpl.cpp:126 GameLogic/aiplayer.cpp:506
+#: Sprites/skinSpritesData.cpp:89 Sprites/skinSpritesData.cpp:105
+#, fuzzy, kde-format
+#| msgid "Fatal Error"
+msgctxt "@title:window"
+msgid "Fatal Error"
 msgstr "嚴重錯誤"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, NewGameSummary)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: Dialogs/newGameSummary.ui:14 Dialogs/newGameSummary.ui:27
+#: Dialogs/newGameSummary.ui:24
 #, kde-format
 msgid "New Game Summary"
 msgstr "新遊戲摘要"
 
 #. i18n: ectx: property (text), widget (QLabel, skinNameLabel)
-#: Dialogs/newGameSummary.ui:51
+#: Dialogs/newGameSummary.ui:48
 #, kde-format
 msgid "skin name"
 msgstr "外觀名稱"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: Dialogs/newGameSummary.ui:102
+#: Dialogs/newGameSummary.ui:99
 #, kde-format
 msgid "Players"
 msgstr "玩家"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: Dialogs/newGameSummary.ui:128
+#: Dialogs/newGameSummary.ui:125
 #, kde-format
 msgid "Goal type:"
 msgstr "目標型態："
 
 #. i18n: ectx: property (text), widget (QLabel, goalTypeLabel)
-#: Dialogs/newGameSummary.ui:135
+#: Dialogs/newGameSummary.ui:132
 #, kde-format
 msgid "goal type"
 msgstr "目標型態"
 
 #. i18n: ectx: property (text), widget (QTableWidget, playersTable)
-#: Dialogs/newGameSummary.ui:157
+#: Dialogs/newGameSummary.ui:154
 #, kde-format
 msgid "Name"
 msgstr "名稱"
 
 #. i18n: ectx: property (text), widget (QTableWidget, playersTable)
-#: Dialogs/newGameSummary.ui:168
+#: Dialogs/newGameSummary.ui:165
 #, kde-format
 msgid "Nationality"
 msgstr "民族"
 
 #. i18n: ectx: property (text), widget (QTableWidget, playersTable)
-#: Dialogs/newGameSummary.ui:179
+#: Dialogs/newGameSummary.ui:176
 #, kde-format
 msgid "Computer"
 msgstr "電腦"
 
 #. i18n: ectx: property (text), widget (QTableWidget, playersTable)
-#: Dialogs/newGameSummary.ui:190
+#: Dialogs/newGameSummary.ui:187
 #, kde-format
 msgid "Network"
 msgstr "網路"
 
 #. i18n: ectx: property (text), widget (QPushButton, previousButton)
-#: Dialogs/newGameSummary.ui:226 Dialogs/qplayersetupdialog.ui:146
-#: Dialogs/tcpconnectwidget.ui:118
+#: Dialogs/newGameSummary.ui:223 Dialogs/qplayersetupdialog.ui:143
+#: Dialogs/tcpconnectwidget.ui:115
 #, kde-format
 msgid "<< Previous"
 msgstr "<< 前一個"
 
 #. i18n: ectx: property (text), widget (QPushButton, finishButton)
-#: Dialogs/newGameSummary.ui:233
+#: Dialogs/newGameSummary.ui:230
 #, kde-format
 msgid "Start"
 msgstr "開始"
@@ -1434,29 +1454,22 @@ msgstr "是"
 msgid "No"
 msgstr "否"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, QPlayerSetupWidget)
-#. i18n: ectx: property (windowTitle), widget (QWidget, TcpConnectWidget)
-#: Dialogs/qplayersetupdialog.ui:14 Dialogs/tcpconnectwidget.ui:14
-#, kde-format
-msgid "Player Setup"
-msgstr "玩家設定"
-
 #. i18n: ectx: property (text), widget (QLabel, TextLabel1)
-#: Dialogs/qplayersetupdialog.ui:23
+#: Dialogs/qplayersetupdialog.ui:20
 #, no-c-format, kde-format
 msgid "Player number %1, please enter your name and choose your nation:"
 msgstr "玩家編號 %1，請輸入您的名稱並選擇國家："
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, nationCombo)
 #. i18n: ectx: property (toolTip), widget (QComboBox, waitedPlayersCombo)
-#: Dialogs/qplayersetupdialog.ui:51 Dialogs/qwaitedplayersetupdialog.ui:33
+#: Dialogs/qplayersetupdialog.ui:48 Dialogs/qwaitedplayersetupdialog.ui:33
 #, kde-format
 msgid "Choose your nation"
 msgstr "選擇您的國家"
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, nationCombo)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, waitedPlayersCombo)
-#: Dialogs/qplayersetupdialog.ui:55 Dialogs/qwaitedplayersetupdialog.ui:37
+#: Dialogs/qplayersetupdialog.ui:52 Dialogs/qwaitedplayersetupdialog.ui:37
 #, kde-format
 msgid ""
 "A combo box that lists currently available nations.\n"
@@ -1466,13 +1479,13 @@ msgstr ""
 "請選擇一個做為您自己的國家"
 
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
-#: Dialogs/qplayersetupdialog.ui:79 Dialogs/qwaitedplayersetupdialog.ui:47
+#: Dialogs/qplayersetupdialog.ui:76 Dialogs/qwaitedplayersetupdialog.ui:47
 #, kde-format
 msgid "Enter your password:"
 msgstr "輸入您的密碼："
 
 #. i18n: ectx: property (text), widget (QCheckBox, isComputerCheckBox)
-#: Dialogs/qplayersetupdialog.ui:104
+#: Dialogs/qplayersetupdialog.ui:101
 #, kde-format
 msgid "Pla&yer is computer"
 msgstr "玩家為電腦(&Y)"
@@ -1502,7 +1515,7 @@ msgid "New Game or Exit"
 msgstr "開始新遊戲或離開"
 
 #. i18n: ectx: property (text), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:24 GameLogic/gameautomaton.cpp:1625
+#: Dialogs/restartOrExitDialog.ui:24
 #, kde-format
 msgid "New Game"
 msgstr "開始新遊戲"
@@ -1526,7 +1539,7 @@ msgid "Do nothing. Game buttons will be available"
 msgstr "不做任何事。遊戲按鍵可使用"
 
 #. i18n: ectx: property (text), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:47 GameLogic/gameautomaton.cpp:1626
+#: Dialogs/restartOrExitDialog.ui:47
 #, kde-format
 msgid "Exit"
 msgstr "離開"
@@ -1544,7 +1557,7 @@ msgid "%1 won! Do you want to play again?"
 msgstr "%1 贏了。您要再來一場嗎？"
 
 #. i18n: ectx: property (text), widget (QLineEdit, hostEdit)
-#: Dialogs/tcpconnectwidget.ui:74
+#: Dialogs/tcpconnectwidget.ui:71
 #, kde-format
 msgid "localhost"
 msgstr "localhost"
@@ -1561,16 +1574,12 @@ msgstr[0] ""
 "錯誤─電腦玩家 %2 還有 %1 支軍隊時，卻未收到選取的國家。這有可能是在 www.gna."
 "org 上的第 2232 號錯誤。"
 
-#: GameLogic/aiplayer.cpp:506 Sprites/skinSpritesData.cpp:89
-#: Sprites/skinSpritesData.cpp:105
-#, kde-format
-msgid "Fatal Error"
-msgstr "嚴重錯誤"
-
 #: GameLogic/gameautomaton.cpp:303
-#, kde-format
-msgid "KsirK - Network configuration"
-msgstr "KsirK─網路設定"
+#, fuzzy, kde-format
+#| msgid "Network Configuration"
+msgctxt "@title:window"
+msgid "Network Configuration"
+msgstr "網路設定"
 
 #: GameLogic/gameautomaton.cpp:304
 #, kde-format
@@ -1582,9 +1591,11 @@ msgstr "請輸入連接埠號碼："
 msgid "Do you really want to end your current game and join another?"
 msgstr "您確定要結束您目前的遊戲，加入另一個嗎？"
 
-#: GameLogic/gameautomaton.cpp:1191 kgamewin.cpp:2550
-#, kde-format
-msgid "New game confirmation"
+#: GameLogic/gameautomaton.cpp:1191
+#, fuzzy, kde-format
+#| msgid "New game confirmation"
+msgctxt "@title:window"
+msgid "New Game Confirmation"
 msgstr "新遊戲確認"
 
 #: GameLogic/gameautomaton.cpp:1191
@@ -1599,13 +1610,16 @@ msgid "%1 (%2) joined game ; waiting for %3 players to connect"
 msgstr "%1（%2）已加入遊戲；等待其它 %3 個玩家..."
 
 #: GameLogic/gameautomaton.cpp:1468
-#, kde-format
-msgid "Please choose another name"
+#, fuzzy, kde-format
+#| msgid "Please choose another name"
+msgid "Please choose another name."
 msgstr "請選擇其它名稱"
 
 #: GameLogic/gameautomaton.cpp:1468
-#, kde-format
-msgid "KsirK - Name already used!"
+#, fuzzy, kde-format
+#| msgid "KsirK - Name already used!"
+msgctxt "@title:window"
+msgid "Name Already Used"
 msgstr "KsirK─名稱已使用"
 
 #: GameLogic/gameautomaton.cpp:1474
@@ -1625,13 +1639,16 @@ msgid "Player%1"
 msgstr "玩家 %1"
 
 #: GameLogic/gameautomaton.cpp:1531
-#, kde-format
-msgid "Please choose another nation"
+#, fuzzy, kde-format
+#| msgid "Please choose another nation"
+msgid "Please choose another nation."
 msgstr "請選擇另一個國家"
 
 #: GameLogic/gameautomaton.cpp:1531
-#, kde-format
-msgid "KsirK - Nation already used!"
+#, fuzzy, kde-format
+#| msgid "KsirK - Nation already used!"
+msgctxt "@title:window"
+msgid "Nation Already Used"
 msgstr "KsirK─國家已使用"
 
 #: GameLogic/gameautomaton.cpp:1623
@@ -1644,13 +1661,31 @@ msgstr ""
 "您要怎麼做？"
 
 #: GameLogic/gameautomaton.cpp:1624
-#, kde-format
-msgid "Starting a new game or exit."
+#, fuzzy, kde-format
+#| msgid "Starting a new game or exit."
+msgctxt "@title:window"
+msgid "Starting a New Game or Exit."
 msgstr "開始新遊戲，或離開遊戲。"
 
+#: GameLogic/gameautomaton.cpp:1625
+#, fuzzy, kde-format
+#| msgid "New Game"
+msgctxt "@action:button"
+msgid "New Game"
+msgstr "開始新遊戲"
+
+#: GameLogic/gameautomaton.cpp:1626
+#, fuzzy, kde-format
+#| msgid "Exit"
+msgctxt "@action:button"
+msgid "Exit"
+msgstr "離開"
+
 #: GameLogic/gameautomaton.cpp:1627
-#, kde-format
-msgid "Do nothing"
+#, fuzzy, kde-format
+#| msgid "Do Nothing"
+msgctxt "@action:button"
+msgid "Do Nothing"
 msgstr "不做任何事"
 
 #: GameLogic/gameautomaton.cpp:1649
@@ -1665,8 +1700,10 @@ msgstr ""
 "在未來的版本我們希望能改進這一點。"
 
 #: GameLogic/gameautomaton.cpp:1650
-#, kde-format
-msgid "KsirK - Lost connection to client!"
+#, fuzzy, kde-format
+#| msgid "KsirK - Lost connection to client!"
+msgctxt "@title:window"
+msgid "Lost Connection to Client"
 msgstr "KsirK─遺失與用戶端的連線"
 
 #: GameLogic/gameautomaton.cpp:1652
@@ -1675,7 +1712,7 @@ msgid "Do want to save your game?"
 msgstr "您要儲存遊戲嗎？"
 
 #: GameLogic/gameautomaton.cpp:1818 GameLogic/gameautomaton.cpp:2235
-#: kgamewin.cpp:2041 kgamewin.cpp:2136 kgamewin.cpp:2173
+#: kgamewin.cpp:2042 kgamewin.cpp:2137 kgamewin.cpp:2174
 #, kde-format
 msgid "%1: %2 armies to place"
 msgstr "%1：要擺放 %2 支軍隊"
@@ -1696,8 +1733,10 @@ msgid ""
 msgstr "%1，您的目標會顯示出來。<br/>請確定其它玩家無法看到它。"
 
 #: GameLogic/gameautomaton.cpp:1902
-#, kde-format
-msgid "KsirK - Displaying Goal"
+#, fuzzy, kde-format
+#| msgid "KsirK - Displaying Goal"
+msgctxt "@title:window"
+msgid "Displaying Goal"
 msgstr "KsirK─顯示目標"
 
 #: GameLogic/gameautomaton.cpp:2088
@@ -1715,14 +1754,6 @@ msgstr "%1 決定結束循環；現在有 %2 個玩家要這樣"
 msgid "Problem : no one destroyed"
 msgstr "發生問題：沒有一個被毀滅"
 
-#: GameLogic/gameautomaton.cpp:2338 gestionSprites.cpp:873
-#: gestionSprites.cpp:893 gestionSprites.cpp:994 gestionSprites.cpp:1031
-#: gestionSprites.cpp:1066 gestionSprites.cpp:1120 gestionSprites.cpp:1157
-#: gestionSprites.cpp:1191
-#, kde-format
-msgid "KsirK - Error!"
-msgstr "KsirK─錯誤！"
-
 #: GameLogic/gameautomaton.cpp:2387
 #, kde-format
 msgid ""
@@ -1733,8 +1764,10 @@ msgstr ""
 "請再試一次。"
 
 #: GameLogic/gameautomaton.cpp:2387
-#, kde-format
-msgid "KsirK - Invalid password!"
+#, fuzzy, kde-format
+#| msgid "KsirK - Invalid password!"
+msgctxt "@title:window"
+msgid "Invalid Password"
 msgstr "KsirK─不合法的密碼"
 
 #: GameLogic/gameautomaton.cpp:2588
@@ -1747,9 +1780,11 @@ msgstr ""
 "您確定不做動作嗎？"
 
 #: GameLogic/gameautomaton.cpp:2589
-#, kde-format
-msgid "Really Next Player?"
-msgstr "要換到下一個玩家嗎？"
+#, fuzzy, kde-format
+#| msgid "New game confirmation"
+msgctxt "@title:window"
+msgid "Next Player Confirmation"
+msgstr "新遊戲確認"
 
 #: GameLogic/gameautomaton.cpp:2590
 #, kde-format
@@ -1773,14 +1808,17 @@ msgid "Error: no player to destroy"
 msgstr "錯誤：沒有玩家被毀滅"
 
 #: GameLogic/goal.cpp:231
-#, kde-format
-msgid "<br>%1 is still alive..."
+#, fuzzy, kde-format
+#| msgid "<br>%1 is still alive..."
+msgid "<br>%1 is still alive…"
 msgstr "<br/>%1 還活著..."
 
 #: GameLogic/goal.cpp:238 GameLogic/goal.cpp:252
-#, kde-format
-msgid "<br>%2, you still have 1 country to conquer..."
-msgid_plural "<br>%2, you still have %1 countries to conquer..."
+#, fuzzy, kde-format
+#| msgid "<br>%2, you still have 1 country to conquer..."
+#| msgid_plural "<br>%2, you still have %1 countries to conquer..."
+msgid "<br>%2, you still have 1 country to conquer…"
+msgid_plural "<br>%2, you still have %1 countries to conquer…"
 msgstr[0] "<br/>%2，您還得征服 %1 個國家..."
 
 #: GameLogic/goal.cpp:242
@@ -1791,13 +1829,19 @@ msgid_plural ""
 msgstr[0] "<br/>您已達到目標：%2 已死，並且您控制了 %1 個國家。"
 
 #: GameLogic/goal.cpp:264
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<br>%2, you have enough countries but you still have to put more than 1 "
+#| "army on %3 of them..."
+#| msgid_plural ""
+#| "<br>%2, you have enough countries but you still have to put more than %1 "
+#| "armies on %3 of them..."
 msgid ""
 "<br>%2, you have enough countries but you still have to put more than 1 army "
-"on %3 of them..."
+"on %3 of them…"
 msgid_plural ""
 "<br>%2, you have enough countries but you still have to put more than %1 "
-"armies on %3 of them..."
+"armies on %3 of them…"
 msgstr[0] ""
 "<br/>%2，您已有足夠的國家，但您還必須放超過 %1 支軍隊於這些國家中的 %3 個..."
 
@@ -1831,13 +1875,16 @@ msgid "%1 in %2"
 msgstr "%1 於 %2"
 
 #: GameLogic/goal.cpp:317
-#, kde-format
-msgid "KsirK - Goal Display"
+#, fuzzy, kde-format
+#| msgid "KsirK - Goal Display"
+msgctxt "@title:window"
+msgid "Goal Display"
 msgstr "KsirK─目標顯示"
 
 #: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:170
-#, kde-format
-msgid "No message..."
+#, fuzzy, kde-format
+#| msgid "No message..."
+msgid "No message…"
 msgstr "沒有訊息..."
 
 #: GameLogic/KsirkChatModel.cpp:73
@@ -1854,16 +1901,7 @@ msgstr ""
 "找不到 Pool 檔名。\n"
 "程式無法再繼續"
 
-#: GameLogic/onu.cpp:120 GameLogic/onu.cpp:137 gestionSprites.cpp:638
-#: gestionSprites.cpp:753 gestionSprites.cpp:798 gestionSprites.cpp:1354
-#: gestionSprites.cpp:1431 kgamewin.cpp:139 kgamewin.cpp:302 kgamewin.cpp:319
-#: kgamewin.cpp:488 kgamewin.cpp:644 Sprites/animsprite.cpp:515
-#: Sprites/animsprite.cpp:530
-#, kde-format
-msgid "Error!"
-msgstr "錯誤！"
-
-#: GameLogic/onu.cpp:136
+#: GameLogic/onu.cpp:135
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -1955,6 +1993,11 @@ msgstr "加入 TCP/IP 遊戲"
 msgid "Join a standard TCP/IP network game"
 msgstr "加入標準 TCP/IP 網路遊戲"
 
+#: kgamewin.cpp:331 kgamewin.cpp:1218 kgamewin.cpp:1230 kgamewin.cpp:2387
+#, kde-format
+msgid "Goal"
+msgstr "目標"
+
 #: kgamewin.cpp:332
 #, kde-format
 msgid "Display the Current Player's Goal"
@@ -1969,6 +2012,11 @@ msgstr "顯示目前玩家的目標"
 #, kde-format
 msgid "Contextual Help"
 msgstr "文字說明"
+
+#: kgamewin.cpp:351
+#, kde-format
+msgid "Next Player"
+msgstr "下一個玩家"
 
 #: kgamewin.cpp:353
 #, kde-format
@@ -1998,8 +2046,9 @@ msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
 msgstr "<font color=\"red\">%1 從 %3 征服了 %2</font>"
 
 #: kgamewin.cpp:732
-#, kde-format
-msgid "%1, you are defeated! Bye, bye..."
+#, fuzzy, kde-format
+#| msgid "%1, you are defeated! Bye, bye..."
+msgid "%1, you are defeated! Bye, bye…"
 msgstr "%1，您被擊垮了... "
 
 #: kgamewin.cpp:804
@@ -2007,61 +2056,62 @@ msgstr "%1，您被擊垮了... "
 msgid "%1: it is up to you again"
 msgstr "%1：又輪到您了"
 
-#: kgamewin.cpp:816
+#: kgamewin.cpp:818
 #, kde-format
 msgid "%1 won!"
 msgstr "%1 贏了！"
 
-#: kgamewin.cpp:819
+#: kgamewin.cpp:820
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
 msgstr "<big><b>%1</b>，您贏了！</big>"
 
-#: kgamewin.cpp:823
+#: kgamewin.cpp:824
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
 "play again?"
 msgstr "<br/>贏家的目標為：<br/><i>%1</i><br/><br/>您要再玩一次嗎？"
 
-#: kgamewin.cpp:829
+#: kgamewin.cpp:830
 #, kde-format
 msgid "<br>You conquered all the world!"
 msgstr "<br/>您已征服了全世界！"
 
-#: kgamewin.cpp:833
+#: kgamewin.cpp:834
 #, kde-format
 msgid "<br>He conquered all the world!"
 msgstr "<br/>他征服了全世界..."
 
-#: kgamewin.cpp:950
+#: kgamewin.cpp:951
 #, kde-format
 msgid "Do you want to quit the game?"
 msgstr "您要離開遊戲嗎？"
 
-#: kgamewin.cpp:952
+#: kgamewin.cpp:953
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
 msgstr "離開遊戲"
 
-#: kgamewin.cpp:964
+#: kgamewin.cpp:965
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
 msgstr "在您離開之前，您要儲存遊戲嗎？"
 
-#: kgamewin.cpp:1002
-#, kde-format
+#: kgamewin.cpp:1003
+#, fuzzy, kde-format
+#| msgid "New Local Game"
 msgctxt "@title:window"
-msgid "KsirK - Load Game"
-msgstr "KsirK─載入遊戲"
+msgid "Load Game"
+msgstr "開始新的本地遊戲"
 
-#: kgamewin.cpp:1040
+#: kgamewin.cpp:1041
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
 msgstr "等待連接 %1 個網路玩家。"
 
-#: kgamewin.cpp:1119
+#: kgamewin.cpp:1120
 #, kde-format
 msgid ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
@@ -2073,88 +2123,88 @@ msgstr[0] ""
 "<font color=\"red\">%2</font> 從 <font color=\"red\">%3</font> 出動 %1 支軍隊"
 "攻擊您！<br/>您打算怎麼防禦 <font color=\"blue\">%4</font>﹖"
 
-#: kgamewin.cpp:1148
+#: kgamewin.cpp:1149
 #, kde-format
 msgid "Defend 1"
 msgstr "防守 1"
 
-#: kgamewin.cpp:1149
+#: kgamewin.cpp:1150
 #, kde-format
 msgid "Defend 2"
 msgstr "防守 2"
 
-#: kgamewin.cpp:1150
+#: kgamewin.cpp:1151
 #, kde-format
 msgid "Defend-Auto"
 msgstr "自動防守"
 
-#: kgamewin.cpp:1269
+#: kgamewin.cpp:1270
 #, kde-format
 msgid "Waiting for %1 players to connect"
 msgstr "等待 %1 個玩家連線中"
 
-#: kgamewin.cpp:1659 kgamewin.cpp:1699
+#: kgamewin.cpp:1660 kgamewin.cpp:1700
 msgid "There is no country here!"
 msgstr "這裡沒有國家！"
 
-#: kgamewin.cpp:1663 kgamewin.cpp:1704
+#: kgamewin.cpp:1664 kgamewin.cpp:1705
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
 msgstr "您不是第一個國家 %1 的擁有者。"
 
-#: kgamewin.cpp:1667
+#: kgamewin.cpp:1668
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
 msgstr "您不是第二個國家 %1 的擁有者。"
 
-#: kgamewin.cpp:1671 kgamewin.cpp:1715
+#: kgamewin.cpp:1672 kgamewin.cpp:1716
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr "您試圖將軍隊從 %1 移到它自己。"
 
-#: kgamewin.cpp:1676 kgamewin.cpp:1721
+#: kgamewin.cpp:1677 kgamewin.cpp:1722
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
 msgstr "%1 不在 %2 的隔壁。"
 
-#: kgamewin.cpp:1682
+#: kgamewin.cpp:1683
 #, kde-format
 msgid "Moving armies from %1 to %2."
 msgstr "移動軍隊從 %1 到 %2。"
 
-#: kgamewin.cpp:1710
+#: kgamewin.cpp:1711
 #, kde-format
 msgid "You are the owner of the second country: %1!"
 msgstr "您不是第二個國家 %1 的擁有者。"
 
-#: kgamewin.cpp:1728
+#: kgamewin.cpp:1729
 msgid "Ready to fight!"
 msgstr "準備戰鬥！"
 
-#: kgamewin.cpp:1822
+#: kgamewin.cpp:1823
 msgid "<font color=\"orange\">No country here!</font>"
 msgstr "<font color=\"orange\">這裡沒有國家！</font>"
 
-#: kgamewin.cpp:1830
+#: kgamewin.cpp:1831
 #, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr "<font color=\"orange\">您不是 %1 的擁有者。</font>"
 
-#: kgamewin.cpp:1837
+#: kgamewin.cpp:1838
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr "<font color=\"orange\">在 %2 裡只有 %1 支軍隊。</font>"
 
-#: kgamewin.cpp:1977
+#: kgamewin.cpp:1978
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
 msgstr "%1，您以在 %2 中唯一的軍隊防守。"
 
-#: kgamewin.cpp:2201
+#: kgamewin.cpp:2202
 msgid "Exchange armies again or continue?"
 msgstr "要再一次交換軍隊，還是要繼續？"
 
-#: kgamewin.cpp:2226
+#: kgamewin.cpp:2227
 #, kde-format
 msgid ""
 "You must distribute\n"
@@ -2163,52 +2213,55 @@ msgstr ""
 "您必須將您所有的軍隊\n"
 "分布好。"
 
-#: kgamewin.cpp:2226 main.cpp:42
-#, kde-format
-msgid "KsirK"
-msgstr "KsirK"
-
-#: kgamewin.cpp:2366
+#: kgamewin.cpp:2367
 msgid "Battle ongoing."
 msgstr "戰鬥進行中。"
 
-#: kgamewin.cpp:2487 kgamewin.cpp:2498 kgamewin.cpp:2521
+#: kgamewin.cpp:2488 kgamewin.cpp:2499 kgamewin.cpp:2522
 #, kde-format
 msgid "%1, it is up to you."
 msgstr "%1：又輪到您了"
 
-#: kgamewin.cpp:2550
+#: kgamewin.cpp:2551
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
 msgstr "您確定要結束現有的遊戲，並重新開始嗎？"
 
-#: kgamewin.cpp:2550
+#: kgamewin.cpp:2551
+#, kde-format
+msgid "New game confirmation"
+msgstr "新遊戲確認"
+
+#: kgamewin.cpp:2551
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "開始新遊戲"
 
-#: kgamewin.cpp:2806
+#: kgamewin.cpp:2807
 msgid "<b>KsirK quick Introduction</b>"
 msgstr "<b>Ksirk 快速介紹</b>"
 
-#: kgamewin.cpp:2810
+#: kgamewin.cpp:2811
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr "攻擊與移動是利用拖放到鄰近國家來完成。"
 
-#: kgamewin.cpp:2814
-msgid "Start a new game or join a network game with the menu or the toolbar..."
+#: kgamewin.cpp:2815
+#, fuzzy
+#| msgid ""
+#| "Start a new game or join a network game with the menu or the toolbar..."
+msgid "Start a new game or join a network game with the menu or the toolbar…"
 msgstr "在選單或工具列來開始新遊戲，或是加入網路遊戲。"
 
-#: kgamewin.cpp:2818
+#: kgamewin.cpp:2819
 msgid ""
 "and then let the system guide you through messages and tooltips appearing on "
 "buttons when hovering above them. You can disable bubble help in the options "
 "window."
 msgstr "並讓系統透過訊息與工具提示導引您。您可以在選項視窗中關閉這些訊息。"
 
-#: kgamewin.cpp:2825
+#: kgamewin.cpp:2826
 #, kde-format
 msgid "Don't show messages anymore"
 msgstr "不要再顯示訊息"
@@ -2225,10 +2278,11 @@ msgid "Cannot save when waiting for a defense."
 msgstr "等待防守時無法儲存。"
 
 #: kgamewinslots.cpp:441
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "New Game"
 msgctxt "@title:window"
-msgid "KsirK - Save Game"
-msgstr "KsirK─儲存遊戲"
+msgid "Save Game"
+msgstr "開始新遊戲"
 
 #: kgamewinslots.cpp:445
 #, kde-format
@@ -2278,8 +2332,9 @@ msgid "<b><u>Country details</u></b>"
 msgstr "<b><u>國家詳情</u></b>"
 
 #: krightdialog.cpp:170
-#, kde-format
-msgid "<i>Fighting in progress...</i>"
+#, fuzzy, kde-format
+#| msgid "<i>Fighting in progress...</i>"
+msgid "<i>Fighting in progress…</i>"
 msgstr "<i>戰鬥進行中...</i>"
 
 #: krightdialog.cpp:222
@@ -2410,6 +2465,11 @@ msgstr "說明(&H)"
 msgid "Main Toolbar"
 msgstr "主工具列"
 
+#: main.cpp:42
+#, kde-format
+msgid "KsirK"
+msgstr "KsirK"
+
 #: main.cpp:44
 #, kde-format
 msgid "KsirK - World Domination Strategy Game"
@@ -2496,8 +2556,8 @@ msgstr "加入標準 TCP/IP 網路遊戲"
 #. i18n: ectx: property (text), widget (QPushButton, pbLoad)
 #: mainMenu.ui:118
 #, kde-format
-msgid "Load..."
-msgstr "載入..."
+msgid "Load…"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, pbQuit)
 #: mainMenu.ui:138
@@ -2505,32 +2565,31 @@ msgstr "載入..."
 msgid "Quit"
 msgstr "離開"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, KsirkPreferencesWidget)
-#: preferences.ui:26
+#: newgamesetup.cpp:45
 #, kde-format
-msgid "KsirK Preferences"
-msgstr "KsirK 喜好設定"
+msgid "Fatal Error!"
+msgstr "嚴重錯誤"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_soundEnabled)
-#: preferences.ui:38
+#: preferences.ui:35
 #, kde-format
 msgid "Sound enabled"
 msgstr "音效已開啟"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: preferences.ui:51
+#: preferences.ui:48
 #, kde-format
 msgid "Sprites speed (slow, normal, rapid, immediate):"
 msgstr "軍隊速度（慢，一般，快，立即）："
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_helpEnabled)
-#: preferences.ui:95
+#: preferences.ui:92
 #, kde-format
 msgid "Show help"
 msgstr "顯示說明"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_showArmiesNumbers)
-#: preferences.ui:102
+#: preferences.ui:99
 #, kde-format
 msgid "Show number of armies on countries"
 msgstr "顯示國家的軍隊數量"
@@ -2540,12 +2599,7 @@ msgstr "顯示國家的軍隊數量"
 msgid "Wrong save game format. Waited %1 and got %2!"
 msgstr "儲存遊戲格式錯誤。應為 %1，但是看到 %2"
 
-#: SaveLoad/ksirkgamexmlhandler.cpp:59
-#, kde-format
-msgid "KsirK - Cannot load!"
-msgstr "KsirK─無法載入"
-
-#: SaveLoad/ksirkgamexmlhandler.cpp:140
+#: SaveLoad/ksirkgamexmlhandler.cpp:139
 #, kde-format
 msgid "Current player is: %1"
 msgstr "目前的玩家為：%1"
@@ -2554,11 +2608,6 @@ msgstr "目前的玩家為：%1"
 #, kde-format
 msgid "Skin file parsing error"
 msgstr "外觀檔剖析錯誤"
-
-#: SaveLoad/ksirkgamexmlloader.cpp:47
-#, kde-format
-msgid "KsirK - Error"
-msgstr "KsirK─錯誤"
 
 #: Sprites/animsprite.cpp:515
 #, kde-format
@@ -2579,6 +2628,47 @@ msgstr "錯誤─未知的外觀整數資料："
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "錯誤─未知的外觀字串資料："
+
+#~ msgid "KsirK - New game properties"
+#~ msgstr "KsirK─新遊戲屬性"
+
+#~ msgid "Player Setup"
+#~ msgstr "玩家設定"
+
+#~ msgid "KsirK - Network configuration"
+#~ msgstr "KsirK─網路設定"
+
+#~ msgid "Do nothing"
+#~ msgstr "不做任何事"
+
+#~ msgid "KsirK - Error!"
+#~ msgstr "KsirK─錯誤！"
+
+#~ msgid "Really Next Player?"
+#~ msgstr "要換到下一個玩家嗎？"
+
+#~ msgid "Error!"
+#~ msgstr "錯誤！"
+
+#~ msgctxt "@title:window"
+#~ msgid "KsirK - Load Game"
+#~ msgstr "KsirK─載入遊戲"
+
+#~ msgctxt "@title:window"
+#~ msgid "KsirK - Save Game"
+#~ msgstr "KsirK─儲存遊戲"
+
+#~ msgid "Load..."
+#~ msgstr "載入..."
+
+#~ msgid "KsirK Preferences"
+#~ msgstr "KsirK 喜好設定"
+
+#~ msgid "KsirK - Cannot load!"
+#~ msgstr "KsirK─無法載入"
+
+#~ msgid "KsirK - Error"
+#~ msgstr "KsirK─錯誤"
 
 #~ msgid "Nickname"
 #~ msgstr "暱稱"

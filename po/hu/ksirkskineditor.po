@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:36+0000\n"
+"POT-Creation-Date: 2024-05-06 00:37+0000\n"
 "PO-Revision-Date: 2010-04-01 07:49+0200\n"
 "Last-Translator: Laszlo Papp <djszapi@archlinux.us>\n"
 "Language-Team: Hungarian <kde-i18n-hu@kde.org>\n"
@@ -34,8 +34,10 @@ msgid "Error: no player to destroy"
 msgstr "Hiba: nincs megsemmisíthető ellenfél"
 
 #: goal.cpp:213
-#, kde-format
-msgid "KsirK - Goal Display"
+#, fuzzy, kde-format
+#| msgid "KsirK - Goal Display"
+msgctxt "@title:window"
+msgid "Goal Display"
 msgstr "KsirK - Céljelző"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
@@ -1287,20 +1289,14 @@ msgstr "&Súgó"
 msgid "Main Toolbar"
 msgstr "Alap eszköztár"
 
-#. i18n: ectx: property (windowTitle), widget (QFrame, skinEditor)
-#: ksirkskineditorwidget.ui:20 main.cpp:52 main.cpp:54
-#, kde-format
-msgid "KsirK Skin Editor"
-msgstr "KsirK felületszerkesztő"
-
 #. i18n: ectx: property (toolTip), widget (QScrollArea, buttonsScrollArea)
-#: ksirkskineditorwidget.ui:46
+#: ksirkskineditorwidget.ui:43
 #, kde-format
 msgid "Sprite placement buttons"
 msgstr "Sprite-elhelyező gombok"
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, buttonsScrollArea)
-#: ksirkskineditorwidget.ui:49
+#: ksirkskineditorwidget.ui:46
 #, kde-format
 msgid ""
 "Use the buttons here to do the initial placement of the corresponding sprite "
@@ -1312,13 +1308,13 @@ msgstr ""
 "elhelyezve. "
 
 #. i18n: ectx: property (toolTip), widget (QScrollArea, mapScrollArea)
-#: ksirkskineditorwidget.ui:69
+#: ksirkskineditorwidget.ui:66
 #, kde-format
 msgid "Map with sprites"
 msgstr "Térkép sprite-okkal"
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, mapScrollArea)
-#: ksirkskineditorwidget.ui:74
+#: ksirkskineditorwidget.ui:71
 #, kde-format
 msgid ""
 "Shows the map of the skin with all already placed sprites, the country "
@@ -1974,6 +1970,11 @@ msgstr ""
 "balra néz, a harmadikon elölről, a negyediken hátulról látszik. De nem "
 "kötelező, hogy minden sprite-nál létezzen mindegyik nézet.</p>"
 
+#: main.cpp:52 main.cpp:54
+#, kde-format
+msgid "KsirK Skin Editor"
+msgstr "KsirK felületszerkesztő"
+
 #: main.cpp:56
 #, kde-format
 msgid "(c) 2008, Gaël de Chalendar\n"
@@ -2005,13 +2006,6 @@ msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr ""
 "Nem sikerült betölteni a horgonyikont.<br>A program nem tud tovább futni"
 
-#: mainwindow.cpp:127 mainwindow.cpp:141 mainwindow.cpp:678 mainwindow.cpp:707
-#: mainwindow.cpp:806 mainwindow.cpp:823 mainwindow.cpp:1193 onu.cpp:79
-#: onu.cpp:112 onu.cpp:131
-#, kde-format
-msgid "Error"
-msgstr "Hiba"
-
 #: mainwindow.cpp:141 mainwindow.cpp:707 mainwindow.cpp:823
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
@@ -2019,18 +2013,24 @@ msgstr ""
 "Nem sikerült betölteni a középső ikont<br>A program nem tud tovább futni"
 
 #: mainwindow.cpp:324
-#, kde-format
-msgid "Open a saved skin..."
+#, fuzzy, kde-format
+#| msgid "Open a saved skin..."
+msgctxt "@info:tooltip"
+msgid "Open a saved skin"
 msgstr "Felület betöltése..."
 
 #: mainwindow.cpp:328
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Load &Recent"
+msgctxt "@action"
 msgid "Load &Recent"
 msgstr "Nemrég &használt felület"
 
 #: mainwindow.cpp:329
-#, kde-format
-msgid "Open a recently saved skin..."
+#, fuzzy, kde-format
+#| msgid "Open a recently saved skin..."
+msgctxt "@info:tooltip"
+msgid "Open a recently saved skin"
 msgstr "Nemrég mentett felület megnyitása..."
 
 #: mainwindow.cpp:337
@@ -2110,32 +2110,32 @@ msgstr "Biztosan törölni szeretné ezt a földrészt: \"%1\"?"
 msgid "Really delete continent?"
 msgstr "Biztosan törölni szeretné ezt a földrészt?"
 
-#: mainwindow.cpp:1893
+#: mainwindow.cpp:1889
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "Biztosan törölni szeretné ezt a célt: \"%1\"?"
 
-#: mainwindow.cpp:1893
+#: mainwindow.cpp:1889
 #, kde-format
 msgid "Really delete goal?"
 msgstr "Biztosan törölni szeretné ezt a célt?"
 
-#: mainwindow.cpp:1952
+#: mainwindow.cpp:1948
 #, kde-format
 msgid "New nationality name"
 msgstr "Új népcsoportnév"
 
-#: mainwindow.cpp:1952
+#: mainwindow.cpp:1948
 #, kde-format
 msgid "Enter the name of the new nationality"
 msgstr "Adja meg az új népcsoport nevét"
 
-#: mainwindow.cpp:1962
+#: mainwindow.cpp:1958
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "Biztosan törölni szeretné ezt a népcsoportot: \"%1\"?"
 
-#: mainwindow.cpp:1962
+#: mainwindow.cpp:1958
 #, kde-format
 msgid "Really delete nationality?"
 msgstr "Biztosan törölni szeretné ezt a népcsoportot?"
@@ -2147,7 +2147,7 @@ msgstr ""
 "Hiba történt, érvénytelen formátumú a témaleíró. A várt érték: %1, a kapott: "
 "%2."
 
-#: onu.cpp:111
+#: onu.cpp:110
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2156,7 +2156,7 @@ msgstr ""
 "Nem található az adatfájl neve,\n"
 "ezért a program nem tud tovább futni."
 
-#: onu.cpp:130
+#: onu.cpp:128
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2165,7 +2165,7 @@ msgstr ""
 "A térképmaszk nem található,\n"
 "ezért a program befejeződik."
 
-#: onu.cpp:986
+#: onu.cpp:983
 #, kde-format
 msgid ""
 "Cannot read file %1:\n"
@@ -2174,23 +2174,17 @@ msgstr ""
 "Nem sikerült olvasni ebből ebből a fájlból: %1.\n"
 "%2."
 
-#: onu.cpp:987
+#: onu.cpp:984
 #, kde-format
 msgid "PoolLoader"
 msgstr "Betöltő"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, KsirkSkinEditorPreferencesWidget)
-#: preferences.ui:25
-#, kde-format
-msgid "KsirK Skin Editor Preferences"
-msgstr "A KsirK felületszerkesztő beállításai"
 
 #: skinSpritesData.cpp:85
 #, kde-format
 msgid "Error - Unknown skin int data: "
 msgstr "Hiba - ismeretlen egész adat a felületben: "
 
-#: skinSpritesData.cpp:86 skinSpritesData.cpp:102
+#: skinSpritesData.cpp:86
 #, kde-format
 msgid "Fatal Error"
 msgstr "Végzetes hiba"
@@ -2199,6 +2193,19 @@ msgstr "Végzetes hiba"
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Hiba - Ismeretlen sztring adat a felületben: "
+
+#: skinSpritesData.cpp:102
+#, fuzzy, kde-format
+#| msgid "Fatal Error"
+msgctxt "@title:window"
+msgid "Fatal Error"
+msgstr "Végzetes hiba"
+
+#~ msgid "Error"
+#~ msgstr "Hiba"
+
+#~ msgid "KsirK Skin Editor Preferences"
+#~ msgstr "A KsirK felületszerkesztő beállításai"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"

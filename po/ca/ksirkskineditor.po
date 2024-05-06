@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:36+0000\n"
+"POT-Creation-Date: 2024-05-06 00:37+0000\n"
 "PO-Revision-Date: 2023-09-30 13:52+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -38,8 +38,10 @@ msgid "Error: no player to destroy"
 msgstr "Error: no hi ha cap jugador a destruir"
 
 #: goal.cpp:213
-#, kde-format
-msgid "KsirK - Goal Display"
+#, fuzzy, kde-format
+#| msgid "KsirK - Goal Display"
+msgctxt "@title:window"
+msgid "Goal Display"
 msgstr "KsirK - Mostra objectiu"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
@@ -1305,20 +1307,14 @@ msgstr "&Ajuda"
 msgid "Main Toolbar"
 msgstr "Barra d'eines principal"
 
-#. i18n: ectx: property (windowTitle), widget (QFrame, skinEditor)
-#: ksirkskineditorwidget.ui:20 main.cpp:52 main.cpp:54
-#, kde-format
-msgid "KsirK Skin Editor"
-msgstr "Editor d'aparences per al KsirK"
-
 #. i18n: ectx: property (toolTip), widget (QScrollArea, buttonsScrollArea)
-#: ksirkskineditorwidget.ui:46
+#: ksirkskineditorwidget.ui:43
 #, kde-format
 msgid "Sprite placement buttons"
 msgstr "Botons d'emplaçament dels sprites"
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, buttonsScrollArea)
-#: ksirkskineditorwidget.ui:49
+#: ksirkskineditorwidget.ui:46
 #, kde-format
 msgid ""
 "Use the buttons here to do the initial placement of the corresponding sprite "
@@ -1330,13 +1326,13 @@ msgstr ""
 "disponibles si l'sprite no està col·locat. "
 
 #. i18n: ectx: property (toolTip), widget (QScrollArea, mapScrollArea)
-#: ksirkskineditorwidget.ui:69
+#: ksirkskineditorwidget.ui:66
 #, kde-format
 msgid "Map with sprites"
 msgstr "Mapa amb sprites"
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, mapScrollArea)
-#: ksirkskineditorwidget.ui:74
+#: ksirkskineditorwidget.ui:71
 #, kde-format
 msgid ""
 "Shows the map of the skin with all already placed sprites, the country "
@@ -2015,6 +2011,11 @@ msgstr ""
 "des del front i l'últim des de la part de darrere. No tots els sprites "
 "necessiten totes les versions.</p>"
 
+#: main.cpp:52 main.cpp:54
+#, kde-format
+msgid "KsirK Skin Editor"
+msgstr "Editor d'aparences per al KsirK"
+
 #: main.cpp:56
 #, kde-format
 msgid "(c) 2008, Gaël de Chalendar\n"
@@ -2045,31 +2046,30 @@ msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr ""
 "No es pot carregar la icona de l'àncora<br>El programa no pot continuar"
 
-#: mainwindow.cpp:127 mainwindow.cpp:141 mainwindow.cpp:678 mainwindow.cpp:707
-#: mainwindow.cpp:806 mainwindow.cpp:823 mainwindow.cpp:1193 onu.cpp:79
-#: onu.cpp:112 onu.cpp:131
-#, kde-format
-msgid "Error"
-msgstr "Error"
-
 #: mainwindow.cpp:141 mainwindow.cpp:707 mainwindow.cpp:823
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
 msgstr "No es pot carregar la icona del centre<br>El programa no pot continuar"
 
 #: mainwindow.cpp:324
-#, kde-format
-msgid "Open a saved skin..."
+#, fuzzy, kde-format
+#| msgid "Open a saved skin..."
+msgctxt "@info:tooltip"
+msgid "Open a saved skin"
 msgstr "Obre una aparença desada..."
 
 #: mainwindow.cpp:328
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Load &Recent"
+msgctxt "@action"
 msgid "Load &Recent"
 msgstr "Carrega'n una de &recent"
 
 #: mainwindow.cpp:329
-#, kde-format
-msgid "Open a recently saved skin..."
+#, fuzzy, kde-format
+#| msgid "Open a recently saved skin..."
+msgctxt "@info:tooltip"
+msgid "Open a recently saved skin"
 msgstr "Obre una aparença desada recentment..."
 
 #: mainwindow.cpp:337
@@ -2148,32 +2148,32 @@ msgstr "Voleu realment suprimir el continent «%1»?"
 msgid "Really delete continent?"
 msgstr "Voleu realment suprimir el continent?"
 
-#: mainwindow.cpp:1893
+#: mainwindow.cpp:1889
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "Voleu realment suprimir l'objectiu «%1»?"
 
-#: mainwindow.cpp:1893
+#: mainwindow.cpp:1889
 #, kde-format
 msgid "Really delete goal?"
 msgstr "Voleu realment suprimir l'objectiu?"
 
-#: mainwindow.cpp:1952
+#: mainwindow.cpp:1948
 #, kde-format
 msgid "New nationality name"
 msgstr "Nom nou de la nacionalitat"
 
-#: mainwindow.cpp:1952
+#: mainwindow.cpp:1948
 #, kde-format
 msgid "Enter the name of the new nationality"
 msgstr "Introduïu el nom de la nova nacionalitat"
 
-#: mainwindow.cpp:1962
+#: mainwindow.cpp:1958
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "Voleu realment suprimir la nacionalitat «%1»?"
 
-#: mainwindow.cpp:1962
+#: mainwindow.cpp:1958
 #, kde-format
 msgid "Really delete nationality?"
 msgstr "Voleu realment suprimir la nacionalitat?"
@@ -2185,7 +2185,7 @@ msgstr ""
 "Error - Format de la definició del fitxer d'aparença invàlid. S'esperava %1 "
 "i s'ha rebut %2"
 
-#: onu.cpp:111
+#: onu.cpp:110
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2194,7 +2194,7 @@ msgstr ""
 "No s'ha trobat el fitxer «Pool»\n"
 "El programa no pot continuar"
 
-#: onu.cpp:130
+#: onu.cpp:128
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2203,7 +2203,7 @@ msgstr ""
 "No s'ha trobat la Imatge de màscara del mapa\n"
 "El programa no pot continuar"
 
-#: onu.cpp:986
+#: onu.cpp:983
 #, kde-format
 msgid ""
 "Cannot read file %1:\n"
@@ -2212,23 +2212,17 @@ msgstr ""
 "No es pot llegir el fitxer %1:\n"
 "%2."
 
-#: onu.cpp:987
+#: onu.cpp:984
 #, kde-format
 msgid "PoolLoader"
 msgstr "CarregadorPool"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, KsirkSkinEditorPreferencesWidget)
-#: preferences.ui:25
-#, kde-format
-msgid "KsirK Skin Editor Preferences"
-msgstr "Preferències de l'editor d'aparences del KsirK"
 
 #: skinSpritesData.cpp:85
 #, kde-format
 msgid "Error - Unknown skin int data: "
 msgstr "Error - Dades desconegudes de tipus enter de l'aparença: "
 
-#: skinSpritesData.cpp:86 skinSpritesData.cpp:102
+#: skinSpritesData.cpp:86
 #, kde-format
 msgid "Fatal Error"
 msgstr "Error fatal"
@@ -2237,3 +2231,16 @@ msgstr "Error fatal"
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Error - Dades de tipus cadena de l'aparença desconegudes: "
+
+#: skinSpritesData.cpp:102
+#, fuzzy, kde-format
+#| msgid "Fatal Error"
+msgctxt "@title:window"
+msgid "Fatal Error"
+msgstr "Error fatal"
+
+#~ msgid "Error"
+#~ msgstr "Error"
+
+#~ msgid "KsirK Skin Editor Preferences"
+#~ msgstr "Preferències de l'editor d'aparences del KsirK"

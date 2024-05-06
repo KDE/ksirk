@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:36+0000\n"
+"POT-Creation-Date: 2024-05-06 00:37+0000\n"
 "PO-Revision-Date: 2021-10-17 11:00+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -34,8 +34,10 @@ msgid "Error: no player to destroy"
 msgstr "Fel: Ingen spelare att förstöra"
 
 #: goal.cpp:213
-#, kde-format
-msgid "KsirK - Goal Display"
+#, fuzzy, kde-format
+#| msgid "KsirK - Goal Display"
+msgctxt "@title:window"
+msgid "Goal Display"
 msgstr "Ksirk - Visa mål"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
@@ -1281,20 +1283,14 @@ msgstr "&Hjälp"
 msgid "Main Toolbar"
 msgstr "Huvudverktygsrad"
 
-#. i18n: ectx: property (windowTitle), widget (QFrame, skinEditor)
-#: ksirkskineditorwidget.ui:20 main.cpp:52 main.cpp:54
-#, kde-format
-msgid "KsirK Skin Editor"
-msgstr "Ksirk skaleditor"
-
 #. i18n: ectx: property (toolTip), widget (QScrollArea, buttonsScrollArea)
-#: ksirkskineditorwidget.ui:46
+#: ksirkskineditorwidget.ui:43
 #, kde-format
 msgid "Sprite placement buttons"
 msgstr "Knappar för placering av figurer"
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, buttonsScrollArea)
-#: ksirkskineditorwidget.ui:49
+#: ksirkskineditorwidget.ui:46
 #, kde-format
 msgid ""
 "Use the buttons here to do the initial placement of the corresponding sprite "
@@ -1306,13 +1302,13 @@ msgstr ""
 "bara tillgängliga om figuren inte redan är placerad. "
 
 #. i18n: ectx: property (toolTip), widget (QScrollArea, mapScrollArea)
-#: ksirkskineditorwidget.ui:69
+#: ksirkskineditorwidget.ui:66
 #, kde-format
 msgid "Map with sprites"
 msgstr "Karta med figurer"
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, mapScrollArea)
-#: ksirkskineditorwidget.ui:74
+#: ksirkskineditorwidget.ui:71
 #, kde-format
 msgid ""
 "Shows the map of the skin with all already placed sprites, the country "
@@ -1968,6 +1964,11 @@ msgstr ""
 "den andra åt vänster, den tredje framifrån och den sista bakifrån. Dock "
 "behöver inte alla figurer alla versioner.</p>"
 
+#: main.cpp:52 main.cpp:54
+#, kde-format
+msgid "KsirK Skin Editor"
+msgstr "Ksirk skaleditor"
+
 #: main.cpp:56
 #, kde-format
 msgid "(c) 2008, Gaël de Chalendar\n"
@@ -1997,31 +1998,30 @@ msgstr "fil att öppna"
 msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr "Kan inte läsa in ankarikon<br>Programmet kan inte fortsätta"
 
-#: mainwindow.cpp:127 mainwindow.cpp:141 mainwindow.cpp:678 mainwindow.cpp:707
-#: mainwindow.cpp:806 mainwindow.cpp:823 mainwindow.cpp:1193 onu.cpp:79
-#: onu.cpp:112 onu.cpp:131
-#, kde-format
-msgid "Error"
-msgstr "Fel"
-
 #: mainwindow.cpp:141 mainwindow.cpp:707 mainwindow.cpp:823
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
 msgstr "Kan inte läsa in centrumikon<br>Programmet kan inte fortsätta"
 
 #: mainwindow.cpp:324
-#, kde-format
-msgid "Open a saved skin..."
+#, fuzzy, kde-format
+#| msgid "Open a saved skin..."
+msgctxt "@info:tooltip"
+msgid "Open a saved skin"
 msgstr "Öppna ett sparat skal..."
 
 #: mainwindow.cpp:328
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Load &Recent"
+msgctxt "@action"
 msgid "Load &Recent"
 msgstr "Läs in s&enaste"
 
 #: mainwindow.cpp:329
-#, kde-format
-msgid "Open a recently saved skin..."
+#, fuzzy, kde-format
+#| msgid "Open a recently saved skin..."
+msgctxt "@info:tooltip"
+msgid "Open a recently saved skin"
 msgstr "Öppna senast sparade skal..."
 
 #: mainwindow.cpp:337
@@ -2100,32 +2100,32 @@ msgstr "Vill du verkligen ta bort kontinenten '%1'?"
 msgid "Really delete continent?"
 msgstr "Verkligen ta bort kontinent?"
 
-#: mainwindow.cpp:1893
+#: mainwindow.cpp:1889
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "Vill du verkligen ta bort målet '%1'?"
 
-#: mainwindow.cpp:1893
+#: mainwindow.cpp:1889
 #, kde-format
 msgid "Really delete goal?"
 msgstr "Verkligen ta bort mål?"
 
-#: mainwindow.cpp:1952
+#: mainwindow.cpp:1948
 #, kde-format
 msgid "New nationality name"
 msgstr "Nytt nationalitetsnamn"
 
-#: mainwindow.cpp:1952
+#: mainwindow.cpp:1948
 #, kde-format
 msgid "Enter the name of the new nationality"
 msgstr "Ange namnet på den nya nationaliteten."
 
-#: mainwindow.cpp:1962
+#: mainwindow.cpp:1958
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "Vill du verkligen ta bort nationaliteten '%1'?"
 
-#: mainwindow.cpp:1962
+#: mainwindow.cpp:1958
 #, kde-format
 msgid "Really delete nationality?"
 msgstr "Verkligen ta bort nationalitet?"
@@ -2136,7 +2136,7 @@ msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
 msgstr ""
 "Fel: Ogiltigt filformat för skaldefinition. Förväntade %1 men hittade %2"
 
-#: onu.cpp:111
+#: onu.cpp:110
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2145,7 +2145,7 @@ msgstr ""
 "Pool-filnamn hittades inte.\n"
 "Programmet kan inte fortsätta."
 
-#: onu.cpp:130
+#: onu.cpp:128
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2154,7 +2154,7 @@ msgstr ""
 "Maskbild för karta hittades inte.\n"
 "Programmet kan inte fortsätta."
 
-#: onu.cpp:986
+#: onu.cpp:983
 #, kde-format
 msgid ""
 "Cannot read file %1:\n"
@@ -2163,23 +2163,17 @@ msgstr ""
 "Kan inte läsa filen %1:\n"
 "%2."
 
-#: onu.cpp:987
+#: onu.cpp:984
 #, kde-format
 msgid "PoolLoader"
 msgstr "Pool-inläsning"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, KsirkSkinEditorPreferencesWidget)
-#: preferences.ui:25
-#, kde-format
-msgid "KsirK Skin Editor Preferences"
-msgstr "Inställningar av Ksirks skaleditor"
 
 #: skinSpritesData.cpp:85
 #, kde-format
 msgid "Error - Unknown skin int data: "
 msgstr "Fel: Okänd heltalsdata för skal: "
 
-#: skinSpritesData.cpp:86 skinSpritesData.cpp:102
+#: skinSpritesData.cpp:86
 #, kde-format
 msgid "Fatal Error"
 msgstr "Allvarligt fel"
@@ -2188,6 +2182,19 @@ msgstr "Allvarligt fel"
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Fel: Okänd strängdata för skal: "
+
+#: skinSpritesData.cpp:102
+#, fuzzy, kde-format
+#| msgid "Fatal Error"
+msgctxt "@title:window"
+msgid "Fatal Error"
+msgstr "Allvarligt fel"
+
+#~ msgid "Error"
+#~ msgstr "Fel"
+
+#~ msgid "KsirK Skin Editor Preferences"
+#~ msgstr "Inställningar av Ksirks skaleditor"
 
 #~| msgid ""
 #~| "Number of flag versions.\n"

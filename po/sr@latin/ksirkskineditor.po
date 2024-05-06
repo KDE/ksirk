@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:36+0000\n"
+"POT-Creation-Date: 2024-05-06 00:37+0000\n"
 "PO-Revision-Date: 2017-09-28 17:59+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -37,8 +37,10 @@ msgid "Error: no player to destroy"
 msgstr "Greška: nema igrača da se uništi."
 
 #: goal.cpp:213
-#, kde-format
-msgid "KsirK - Goal Display"
+#, fuzzy, kde-format
+#| msgid "KsirK - Goal Display"
+msgctxt "@title:window"
+msgid "Goal Display"
 msgstr "KSirk — izlaganje cilja"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
@@ -1273,20 +1275,14 @@ msgstr "P&omoć"
 msgid "Main Toolbar"
 msgstr "Glavna traka"
 
-#. i18n: ectx: property (windowTitle), widget (QFrame, skinEditor)
-#: ksirkskineditorwidget.ui:20 main.cpp:52 main.cpp:54
-#, kde-format
-msgid "KsirK Skin Editor"
-msgstr "Uređivač maski za KSirk"
-
 #. i18n: ectx: property (toolTip), widget (QScrollArea, buttonsScrollArea)
-#: ksirkskineditorwidget.ui:46
+#: ksirkskineditorwidget.ui:43
 #, kde-format
 msgid "Sprite placement buttons"
 msgstr "Dugmad za razmeštaj sprajtova."
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, buttonsScrollArea)
-#: ksirkskineditorwidget.ui:49
+#: ksirkskineditorwidget.ui:46
 #, kde-format
 msgid ""
 "Use the buttons here to do the initial placement of the corresponding sprite "
@@ -1298,13 +1294,13 @@ msgstr ""
 "razmešteni."
 
 #. i18n: ectx: property (toolTip), widget (QScrollArea, mapScrollArea)
-#: ksirkskineditorwidget.ui:69
+#: ksirkskineditorwidget.ui:66
 #, kde-format
 msgid "Map with sprites"
 msgstr "Karta sa sprajtovima"
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, mapScrollArea)
-#: ksirkskineditorwidget.ui:74
+#: ksirkskineditorwidget.ui:71
 #, kde-format
 msgid ""
 "Shows the map of the skin with all already placed sprites, the country "
@@ -1959,6 +1955,11 @@ msgstr ""
 "sleva, treći je gledano spreda, a četvrti otpozadi. Međutim, nisu svim "
 "sprajtovima potrebne sve verzije.</p>"
 
+#: main.cpp:52 main.cpp:54
+#, kde-format
+msgid "KsirK Skin Editor"
+msgstr "Uređivač maski za KSirk"
+
 #: main.cpp:56
 #, kde-format
 msgid "(c) 2008, Gaël de Chalendar\n"
@@ -1991,13 +1992,6 @@ msgstr ""
 "<html>Ne mogu da učitam ikonicu sidra.<br />Program ne može da nastavi.</"
 "html>"
 
-#: mainwindow.cpp:127 mainwindow.cpp:141 mainwindow.cpp:678 mainwindow.cpp:707
-#: mainwindow.cpp:806 mainwindow.cpp:823 mainwindow.cpp:1193 onu.cpp:79
-#: onu.cpp:112 onu.cpp:131
-#, kde-format
-msgid "Error"
-msgstr "Greška"
-
 #: mainwindow.cpp:141 mainwindow.cpp:707 mainwindow.cpp:823
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
@@ -2007,19 +2001,25 @@ msgstr ""
 
 # >> @info:tooltip
 #: mainwindow.cpp:324
-#, kde-format
-msgid "Open a saved skin..."
+#, fuzzy, kde-format
+#| msgid "Open a saved skin..."
+msgctxt "@info:tooltip"
+msgid "Open a saved skin"
 msgstr "Otvori sačuvanu masku"
 
 #: mainwindow.cpp:328
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Load &Recent"
+msgctxt "@action"
 msgid "Load &Recent"
 msgstr "Učitaj &nedavnu"
 
 # >> @info:tooltip
 #: mainwindow.cpp:329
-#, kde-format
-msgid "Open a recently saved skin..."
+#, fuzzy, kde-format
+#| msgid "Open a recently saved skin..."
+msgctxt "@info:tooltip"
+msgid "Open a recently saved skin"
 msgstr "Otvori nedavno sačuvanu masku"
 
 #: mainwindow.cpp:337
@@ -2100,32 +2100,32 @@ msgstr "Želite li zaista da obrišete kontinent „%1“?"
 msgid "Really delete continent?"
 msgstr "Zaista obrisati kontinent?"
 
-#: mainwindow.cpp:1893
+#: mainwindow.cpp:1889
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "Želite li zaista da obrišete cilj „%1“?"
 
-#: mainwindow.cpp:1893
+#: mainwindow.cpp:1889
 #, kde-format
 msgid "Really delete goal?"
 msgstr "Zaista obrisati cilj?"
 
-#: mainwindow.cpp:1952
+#: mainwindow.cpp:1948
 #, kde-format
 msgid "New nationality name"
 msgstr "Ime nove nacije"
 
-#: mainwindow.cpp:1952
+#: mainwindow.cpp:1948
 #, kde-format
 msgid "Enter the name of the new nationality"
 msgstr "Unesite ime nove nacije"
 
-#: mainwindow.cpp:1962
+#: mainwindow.cpp:1958
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "Želite li zaista da uklonite naciju „%1“?"
 
-#: mainwindow.cpp:1962
+#: mainwindow.cpp:1958
 #, kde-format
 msgid "Really delete nationality?"
 msgstr "Zaista obrisati naciju?"
@@ -2135,7 +2135,7 @@ msgstr "Zaista obrisati naciju?"
 msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
 msgstr "Greška — loš format fajla maske. Očekivano je %1 a dobijeno %2."
 
-#: onu.cpp:111
+#: onu.cpp:110
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2144,7 +2144,7 @@ msgstr ""
 "Ime fajla teme nije nađeno.\n"
 "Program ne može da nastavi."
 
-#: onu.cpp:130
+#: onu.cpp:128
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2153,7 +2153,7 @@ msgstr ""
 "Slika maske karte nije nađena.\n"
 "Program ne može da nastavi."
 
-#: onu.cpp:986
+#: onu.cpp:983
 #, kde-format
 msgid ""
 "Cannot read file %1:\n"
@@ -2162,23 +2162,17 @@ msgstr ""
 "Ne mogu da čitam fajl %1:\n"
 "%2."
 
-#: onu.cpp:987
+#: onu.cpp:984
 #, kde-format
 msgid "PoolLoader"
 msgstr "Učitavač pula"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, KsirkSkinEditorPreferencesWidget)
-#: preferences.ui:25
-#, kde-format
-msgid "KsirK Skin Editor Preferences"
-msgstr "Postavke uređivača maski za KSirk"
 
 #: skinSpritesData.cpp:85
 #, kde-format
 msgid "Error - Unknown skin int data: "
 msgstr "Greška — nepoznat ceo broj u maski: "
 
-#: skinSpritesData.cpp:86 skinSpritesData.cpp:102
+#: skinSpritesData.cpp:86
 #, kde-format
 msgid "Fatal Error"
 msgstr "Kobna greška"
@@ -2187,3 +2181,16 @@ msgstr "Kobna greška"
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Greška — nepoznata niska u maski: "
+
+#: skinSpritesData.cpp:102
+#, fuzzy, kde-format
+#| msgid "Fatal Error"
+msgctxt "@title:window"
+msgid "Fatal Error"
+msgstr "Kobna greška"
+
+#~ msgid "Error"
+#~ msgstr "Greška"
+
+#~ msgid "KsirK Skin Editor Preferences"
+#~ msgstr "Postavke uređivača maski za KSirk"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:36+0000\n"
+"POT-Creation-Date: 2024-05-06 00:37+0000\n"
 "PO-Revision-Date: 2021-10-17 08:35+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -36,8 +36,10 @@ msgid "Error: no player to destroy"
 msgstr "Помилка: гравець, якого слід знищити, відсутній"
 
 #: goal.cpp:213
-#, kde-format
-msgid "KsirK - Goal Display"
+#, fuzzy, kde-format
+#| msgid "KsirK - Goal Display"
+msgctxt "@title:window"
+msgid "Goal Display"
 msgstr "KsirK — Відображення мети"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
@@ -1285,20 +1287,14 @@ msgstr "&Довідка"
 msgid "Main Toolbar"
 msgstr "Головна панель"
 
-#. i18n: ectx: property (windowTitle), widget (QFrame, skinEditor)
-#: ksirkskineditorwidget.ui:20 main.cpp:52 main.cpp:54
-#, kde-format
-msgid "KsirK Skin Editor"
-msgstr "Редактор оболонок KsirK"
-
 #. i18n: ectx: property (toolTip), widget (QScrollArea, buttonsScrollArea)
-#: ksirkskineditorwidget.ui:46
+#: ksirkskineditorwidget.ui:43
 #, kde-format
 msgid "Sprite placement buttons"
 msgstr "Кнопки розташування спрайтів"
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, buttonsScrollArea)
-#: ksirkskineditorwidget.ui:49
+#: ksirkskineditorwidget.ui:46
 #, kde-format
 msgid ""
 "Use the buttons here to do the initial placement of the corresponding sprite "
@@ -1310,13 +1306,13 @@ msgstr ""
 "отримати лише у разі, якщо спрайт ще не було розташовано."
 
 #. i18n: ectx: property (toolTip), widget (QScrollArea, mapScrollArea)
-#: ksirkskineditorwidget.ui:69
+#: ksirkskineditorwidget.ui:66
 #, kde-format
 msgid "Map with sprites"
 msgstr "Карта зі спрайтами"
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, mapScrollArea)
-#: ksirkskineditorwidget.ui:74
+#: ksirkskineditorwidget.ui:71
 #, kde-format
 msgid ""
 "Shows the map of the skin with all already placed sprites, the country "
@@ -1972,6 +1968,11 @@ msgstr ""
 "друга — ліворуч, третя — спереду, остання — ззаду. Але вам не потрібно "
 "вказувати всі ці версії для кожного зі спрайтів.</p>"
 
+#: main.cpp:52 main.cpp:54
+#, kde-format
+msgid "KsirK Skin Editor"
+msgstr "Редактор оболонок KsirK"
+
 #: main.cpp:56
 #, kde-format
 msgid "(c) 2008, Gaël de Chalendar\n"
@@ -2003,13 +2004,6 @@ msgstr ""
 "Не вдалося завантажити піктограму фіксатора<br>Продовження виконання "
 "програми неможливе"
 
-#: mainwindow.cpp:127 mainwindow.cpp:141 mainwindow.cpp:678 mainwindow.cpp:707
-#: mainwindow.cpp:806 mainwindow.cpp:823 mainwindow.cpp:1193 onu.cpp:79
-#: onu.cpp:112 onu.cpp:131
-#, kde-format
-msgid "Error"
-msgstr "Помилка"
-
 #: mainwindow.cpp:141 mainwindow.cpp:707 mainwindow.cpp:823
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
@@ -2018,18 +2012,24 @@ msgstr ""
 "програми неможливе"
 
 #: mainwindow.cpp:324
-#, kde-format
-msgid "Open a saved skin..."
+#, fuzzy, kde-format
+#| msgid "Open a saved skin..."
+msgctxt "@info:tooltip"
+msgid "Open a saved skin"
 msgstr "Відкрити збережену шкірку..."
 
 #: mainwindow.cpp:328
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Load &Recent"
+msgctxt "@action"
 msgid "Load &Recent"
 msgstr "Завантажити &недавню"
 
 #: mainwindow.cpp:329
-#, kde-format
-msgid "Open a recently saved skin..."
+#, fuzzy, kde-format
+#| msgid "Open a recently saved skin..."
+msgctxt "@info:tooltip"
+msgid "Open a recently saved skin"
 msgstr "Відкрити нещодавно збережену шкірку..."
 
 #: mainwindow.cpp:337
@@ -2108,32 +2108,32 @@ msgstr "Ви дійсно хочете вилучити континент «%1�
 msgid "Really delete continent?"
 msgstr "Справді вилучити континент?"
 
-#: mainwindow.cpp:1893
+#: mainwindow.cpp:1889
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "Ви дійсно хочете вилучити мету «%1»?"
 
-#: mainwindow.cpp:1893
+#: mainwindow.cpp:1889
 #, kde-format
 msgid "Really delete goal?"
 msgstr "Справді вилучити мету?"
 
-#: mainwindow.cpp:1952
+#: mainwindow.cpp:1948
 #, kde-format
 msgid "New nationality name"
 msgstr "Назва нової нації"
 
-#: mainwindow.cpp:1952
+#: mainwindow.cpp:1948
 #, kde-format
 msgid "Enter the name of the new nationality"
 msgstr "Введіть назву нової нації"
 
-#: mainwindow.cpp:1962
+#: mainwindow.cpp:1958
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "Ви дійсно хочете вилучити націю «%1»?"
 
-#: mainwindow.cpp:1962
+#: mainwindow.cpp:1958
 #, kde-format
 msgid "Really delete nationality?"
 msgstr "Справді вилучити націю?"
@@ -2145,7 +2145,7 @@ msgstr ""
 "Помилка: некоректний формат файла визначення шкірки. Очікувалося %1, "
 "отримано %2"
 
-#: onu.cpp:111
+#: onu.cpp:110
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2154,7 +2154,7 @@ msgstr ""
 "Не знайдено назву файла об’єднання\n"
 "Продовження виконання програми неможливе"
 
-#: onu.cpp:130
+#: onu.cpp:128
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2163,7 +2163,7 @@ msgstr ""
 "Зображення маски карти не знайдено\n"
 "Продовження виконання програми неможливе"
 
-#: onu.cpp:986
+#: onu.cpp:983
 #, kde-format
 msgid ""
 "Cannot read file %1:\n"
@@ -2172,23 +2172,17 @@ msgstr ""
 "Не вдалося прочитати файл %1:\n"
 "%2."
 
-#: onu.cpp:987
+#: onu.cpp:984
 #, kde-format
 msgid "PoolLoader"
 msgstr "Завантажувач набору"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, KsirkSkinEditorPreferencesWidget)
-#: preferences.ui:25
-#, kde-format
-msgid "KsirK Skin Editor Preferences"
-msgstr "Налаштування редактора шкірок KsirK"
 
 #: skinSpritesData.cpp:85
 #, kde-format
 msgid "Error - Unknown skin int data: "
 msgstr "Помилка — Невідомі дані у шкірці: "
 
-#: skinSpritesData.cpp:86 skinSpritesData.cpp:102
+#: skinSpritesData.cpp:86
 #, kde-format
 msgid "Fatal Error"
 msgstr "Критична помилка"
@@ -2197,6 +2191,19 @@ msgstr "Критична помилка"
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Помилка — Невідомий рядок даних шкірки: "
+
+#: skinSpritesData.cpp:102
+#, fuzzy, kde-format
+#| msgid "Fatal Error"
+msgctxt "@title:window"
+msgid "Fatal Error"
+msgstr "Критична помилка"
+
+#~ msgid "Error"
+#~ msgstr "Помилка"
+
+#~ msgid "KsirK Skin Editor Preferences"
+#~ msgstr "Налаштування редактора шкірок KsirK"
 
 #~ msgid ""
 #~ "<i>Number of infantry versions.</p><p>The pool <i>infantry</i> element "

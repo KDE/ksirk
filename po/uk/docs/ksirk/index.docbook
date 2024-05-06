@@ -278,7 +278,7 @@ your application. -->
     <varlistentry>
       <term
 ><guibutton
->Завантажити…</guibutton
+>Load…</guibutton
 ></term>
       <listitem
 ><para
@@ -303,13 +303,13 @@ your application. -->
   </variablelist>
 
   <para
->Якщо ви натиснете кнопку <guibutton
->Нова локальна гра</guibutton
->, програма відкриє перед вами діалогове вікно <guilabel
->Властивості нової гри</guilabel
->, у якому ви зможете обрати кількість гравців, шкірку (або тему) гри, тип гри (підкорення мети або особлива мета) і нарешті, чи будуть у гру грати гравці з мережі, чи лише локальні гравці. Нові теми гри можна отримати за допомогою натискання кнопки <guibutton
->Отримати нові шкірки…</guibutton
->.</para>
+>If you hit <guibutton
+>New Local Game</guibutton
+> you will be presented with the <guilabel
+>New game properties</guilabel
+> dialog where you will be able to choose the number of players, the skin (or theme) to use, the game type (conquer the goal or have a specific goal) and finally if this game will be played with online players or if it is purely local. New skins can be downloaded using <guibutton
+>Download New Skins…</guibutton
+> button.</para>
 
   <screenshot>
     <screeninfo
@@ -749,9 +749,9 @@ your application. -->
   </table>
 
   <para
->Після завершення розподілу гравцем армій, йому слід натиснути кнопку <guibutton
->Підтвердити</guibutton
->, щоб право перерозподілу бонусних армій перейшло до наступного гравця. Так само, як і для початкового розподілу, після розташування армій усіма гравцями вони можуть почати новий цикл перерозподілу або почати новий хід...</para>
+>When a player has finished distributing his armies, he clicks the <guibutton
+>Valid</guibutton
+> button to allow the next player to distribute his bonus armies. As for the initial distribution, when all player have placed their armies, they can start a new redistribution cycle or start a new turn…</para>
   </sect2>
 
 <!-- Does not work for current TCP/IP games
@@ -922,13 +922,13 @@ distribution. -->
 >Налаштування</title>
 
 <para
->За допомогою пункту меню <menuchoice
+>The <menuchoice
 ><guimenu
->Параметри</guimenu
+>Settings</guimenu
 > <guimenuitem
->Налаштувати &ksirk;...</guimenuitem
+>Configure &ksirk;…</guimenuitem
 ></menuchoice
-> можна відкрити вікно, яке надасть вам змогу:</para>
+> menu item opens a dialog that allows you to:</para>
 
 <screenshot>
   <screeninfo

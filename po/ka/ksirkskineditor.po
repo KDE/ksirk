@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:36+0000\n"
+"POT-Creation-Date: 2024-05-06 00:37+0000\n"
 "PO-Revision-Date: 2023-10-07 07:31+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -34,8 +34,10 @@ msgid "Error: no player to destroy"
 msgstr "გასანადგურებელი მოწყინააღმდეგის გარეშე"
 
 #: goal.cpp:213
-#, kde-format
-msgid "KsirK - Goal Display"
+#, fuzzy, kde-format
+#| msgid "KsirK - Goal Display"
+msgctxt "@title:window"
+msgid "Goal Display"
 msgstr "KsirK - სამიზნის ჩვენება"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
@@ -1269,20 +1271,14 @@ msgstr "&დახმარება"
 msgid "Main Toolbar"
 msgstr "ხელსაწყოთა მთავარი ზოლი"
 
-#. i18n: ectx: property (windowTitle), widget (QFrame, skinEditor)
-#: ksirkskineditorwidget.ui:20 main.cpp:52 main.cpp:54
-#, kde-format
-msgid "KsirK Skin Editor"
-msgstr "KsirK -ის სკინის რედაქტორი"
-
 #. i18n: ectx: property (toolTip), widget (QScrollArea, buttonsScrollArea)
-#: ksirkskineditorwidget.ui:46
+#: ksirkskineditorwidget.ui:43
 #, kde-format
 msgid "Sprite placement buttons"
 msgstr "სპრაიტის განლაგების ღილაკები"
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, buttonsScrollArea)
-#: ksirkskineditorwidget.ui:49
+#: ksirkskineditorwidget.ui:46
 #, kde-format
 msgid ""
 "Use the buttons here to do the initial placement of the corresponding sprite "
@@ -1294,13 +1290,13 @@ msgstr ""
 "მოთავსებული არაა. "
 
 #. i18n: ectx: property (toolTip), widget (QScrollArea, mapScrollArea)
-#: ksirkskineditorwidget.ui:69
+#: ksirkskineditorwidget.ui:66
 #, kde-format
 msgid "Map with sprites"
 msgstr "რუკა სპრაიტებით"
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, mapScrollArea)
-#: ksirkskineditorwidget.ui:74
+#: ksirkskineditorwidget.ui:71
 #, kde-format
 msgid ""
 "Shows the map of the skin with all already placed sprites, the country "
@@ -1961,6 +1957,11 @@ msgstr ""
 "პირველი მარჯვნივ იყურება, მეორე მარცხნივ, მესამე წინ და ბოლო კი უკან. მაგრამ "
 "ყველა სპრაიტს ყველა ვერსია არ სჭირდება.</p>"
 
+#: main.cpp:52 main.cpp:54
+#, kde-format
+msgid "KsirK Skin Editor"
+msgstr "KsirK -ის სკინის რედაქტორი"
+
 #: main.cpp:56
 #, kde-format
 msgid "(c) 2008, Gaël de Chalendar\n"
@@ -1990,31 +1991,30 @@ msgstr "გასახსნელი ფაილი"
 msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr "მიმაგრების ხატულა ვერ ჩავტვირთე<br>პროგრამა ვერ გაგრძელდება"
 
-#: mainwindow.cpp:127 mainwindow.cpp:141 mainwindow.cpp:678 mainwindow.cpp:707
-#: mainwindow.cpp:806 mainwindow.cpp:823 mainwindow.cpp:1193 onu.cpp:79
-#: onu.cpp:112 onu.cpp:131
-#, kde-format
-msgid "Error"
-msgstr "შეცდომა"
-
 #: mainwindow.cpp:141 mainwindow.cpp:707 mainwindow.cpp:823
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
 msgstr "ცენტრის ხატულა ვერჩაიტვირთა<br>პროგრამა ვერ გაგრძელდება"
 
 #: mainwindow.cpp:324
-#, kde-format
-msgid "Open a saved skin..."
+#, fuzzy, kde-format
+#| msgid "Open a saved skin..."
+msgctxt "@info:tooltip"
+msgid "Open a saved skin"
 msgstr "შენახული სკინის გახსნა..."
 
 #: mainwindow.cpp:328
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Load &Recent"
+msgctxt "@action"
 msgid "Load &Recent"
 msgstr "უახლესის &ჩატვირთვა"
 
 #: mainwindow.cpp:329
-#, kde-format
-msgid "Open a recently saved skin..."
+#, fuzzy, kde-format
+#| msgid "Open a recently saved skin..."
+msgctxt "@info:tooltip"
+msgid "Open a recently saved skin"
 msgstr "ახლახანს შენახული სკინის გახსნა..."
 
 #: mainwindow.cpp:337
@@ -2093,32 +2093,32 @@ msgstr "მართლა გნებავთ, წაშალოთ კო�
 msgid "Really delete continent?"
 msgstr "მართლა წავშალო კონტინენტი?"
 
-#: mainwindow.cpp:1893
+#: mainwindow.cpp:1889
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "მართლა გნებავთ, წაშალოთ მიზანი '%1'?"
 
-#: mainwindow.cpp:1893
+#: mainwindow.cpp:1889
 #, kde-format
 msgid "Really delete goal?"
 msgstr "მართლა წავშალო მიზანი?"
 
-#: mainwindow.cpp:1952
+#: mainwindow.cpp:1948
 #, kde-format
 msgid "New nationality name"
 msgstr "ახალი ეროვნების სახელი"
 
-#: mainwindow.cpp:1952
+#: mainwindow.cpp:1948
 #, kde-format
 msgid "Enter the name of the new nationality"
 msgstr "შეიყვანეთ ახალი ეროვნების სახელი"
 
-#: mainwindow.cpp:1962
+#: mainwindow.cpp:1958
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "მართლა გნებავთ, წაშალოთ ეროვნება '%1'?"
 
-#: mainwindow.cpp:1962
+#: mainwindow.cpp:1958
 #, kde-format
 msgid "Really delete nationality?"
 msgstr "მართლა წავშალო ეროვნება?"
@@ -2129,7 +2129,7 @@ msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
 msgstr ""
 "შეცდომა - არასწორი სკინის აღწერის ფაილის ფორმატი. მოველოდი %1, მივიღე %2"
 
-#: onu.cpp:111
+#: onu.cpp:110
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2138,7 +2138,7 @@ msgstr ""
 "პულის ფაილის სახელი ვერ ვიპოვე\n"
 "პროგრამა მუშაობას ვერ გააგრძელებს"
 
-#: onu.cpp:130
+#: onu.cpp:128
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2147,7 +2147,7 @@ msgstr ""
 "რუკის ნიღბის გამოსახულება ვერ ვიპოვე\n"
 "პროგრამა მუშაობას ვერ გააგრძელებს"
 
-#: onu.cpp:986
+#: onu.cpp:983
 #, kde-format
 msgid ""
 "Cannot read file %1:\n"
@@ -2156,23 +2156,17 @@ msgstr ""
 "ფაილი %1 ვერ წავიკითხე:\n"
 "%2."
 
-#: onu.cpp:987
+#: onu.cpp:984
 #, kde-format
 msgid "PoolLoader"
 msgstr "PoolLoader"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, KsirkSkinEditorPreferencesWidget)
-#: preferences.ui:25
-#, kde-format
-msgid "KsirK Skin Editor Preferences"
-msgstr "KsirK-ის სკინების რედაქტორის მორგება"
 
 #: skinSpritesData.cpp:85
 #, kde-format
 msgid "Error - Unknown skin int data: "
 msgstr "შეცდომა - სკინის მთელი რიცხვები უცნობია: "
 
-#: skinSpritesData.cpp:86 skinSpritesData.cpp:102
+#: skinSpritesData.cpp:86
 #, kde-format
 msgid "Fatal Error"
 msgstr "ფატალური შეცდომა"
@@ -2181,3 +2175,16 @@ msgstr "ფატალური შეცდომა"
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "შეცდომა - სკინის სტრიქონები უცნობია: "
+
+#: skinSpritesData.cpp:102
+#, fuzzy, kde-format
+#| msgid "Fatal Error"
+msgctxt "@title:window"
+msgid "Fatal Error"
+msgstr "ფატალური შეცდომა"
+
+#~ msgid "Error"
+#~ msgstr "შეცდომა"
+
+#~ msgid "KsirK Skin Editor Preferences"
+#~ msgstr "KsirK-ის სკინების რედაქტორის მორგება"

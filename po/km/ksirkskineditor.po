@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:36+0000\n"
+"POT-Creation-Date: 2024-05-06 00:37+0000\n"
 "PO-Revision-Date: 2010-06-08 15:55+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -35,8 +35,10 @@ msgid "Error: no player to destroy"
 msgstr "កំហុស​ ៖ គ្មាន​អ្នក​លេង​ណា​ម្នាក់​ត្រូវ​បាន​កម្ទេច​ទេ​"
 
 #: goal.cpp:213
-#, kde-format
-msgid "KsirK - Goal Display"
+#, fuzzy, kde-format
+#| msgid "KsirK - Goal Display"
+msgctxt "@title:window"
+msgid "Goal Display"
 msgstr "KsirK - ការ​បង្ហាញ​គោល​ដៅ"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
@@ -1254,20 +1256,14 @@ msgstr "ជំនួយ"
 msgid "Main Toolbar"
 msgstr "របារ​ឧបករណ៍​មេ"
 
-#. i18n: ectx: property (windowTitle), widget (QFrame, skinEditor)
-#: ksirkskineditorwidget.ui:20 main.cpp:52 main.cpp:54
-#, kde-format
-msgid "KsirK Skin Editor"
-msgstr "កម្ម​វិធី​កែ​សម្រួល​ស្បែក​​ KsirK "
-
 #. i18n: ectx: property (toolTip), widget (QScrollArea, buttonsScrollArea)
-#: ksirkskineditorwidget.ui:46
+#: ksirkskineditorwidget.ui:43
 #, kde-format
 msgid "Sprite placement buttons"
 msgstr "ប៊ូតុង​ដាក់​ Sprite "
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, buttonsScrollArea)
-#: ksirkskineditorwidget.ui:49
+#: ksirkskineditorwidget.ui:46
 #, kde-format
 msgid ""
 "Use the buttons here to do the initial placement of the corresponding sprite "
@@ -1278,13 +1274,13 @@ msgstr ""
 "អាច​ប្រើ​បាន​ លុះ​ត្រា​តែ​ sprite មិន​ទាន់​ត្រូវ​បាន​ដាក់​រួច​ហើយ​ ។"
 
 #. i18n: ectx: property (toolTip), widget (QScrollArea, mapScrollArea)
-#: ksirkskineditorwidget.ui:69
+#: ksirkskineditorwidget.ui:66
 #, kde-format
 msgid "Map with sprites"
 msgstr "ផែន​ទី​ដែល​មាន​ sprites"
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, mapScrollArea)
-#: ksirkskineditorwidget.ui:74
+#: ksirkskineditorwidget.ui:71
 #, kde-format
 msgid ""
 "Shows the map of the skin with all already placed sprites, the country "
@@ -1912,6 +1908,11 @@ msgstr ""
 "បង្ហាញ​ sprite ដែល​អាច​មើល​ឃើញ​ពី​ទិស​តែ​មួយ​ ៖ ទី​មួយ​ត្រូវ​បាន​ដាក់​ទិស​ទៅ​ ខាង​ស្ដាំ​ ទី​ពីរ​ទៅ​ខាង​ឆ្វេង​ ទីបី​ពី​"
 "ខាង​មុខ​ និង​ ចុង​ក្រោយ​ពី​ខាង​ក្រោយ​  ។ ទោះ​បី​យ៉ាង​ណា​ មិន​មែន​គ្រប់​ sprites ត្រូវ​ការ​កំណែ​ទាំង​អស់​ទេ​ ។</p>"
 
+#: main.cpp:52 main.cpp:54
+#, kde-format
+msgid "KsirK Skin Editor"
+msgstr "កម្ម​វិធី​កែ​សម្រួល​ស្បែក​​ KsirK "
+
 #: main.cpp:56
 #, kde-format
 msgid "(c) 2008, Gaël de Chalendar\n"
@@ -1942,31 +1943,30 @@ msgstr "ឯក​សារ​ត្រូវ​បើក"
 msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr "មិន​អាច​ផ្ទុក​រូប​តំណាង​យុថ្កា​បាន​ទេ​<br>កម្ម​វិធី​មិន​អាច​បន្ត​បាន​ទេ"
 
-#: mainwindow.cpp:127 mainwindow.cpp:141 mainwindow.cpp:678 mainwindow.cpp:707
-#: mainwindow.cpp:806 mainwindow.cpp:823 mainwindow.cpp:1193 onu.cpp:79
-#: onu.cpp:112 onu.cpp:131
-#, kde-format
-msgid "Error"
-msgstr "កំហុស"
-
 #: mainwindow.cpp:141 mainwindow.cpp:707 mainwindow.cpp:823
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
 msgstr "មិន​អាច​ផ្ទុក​រូប​តំណាង​មជ្ឈ​មណ្ឌល​បាន​ទេ​<br>កម្ម​វិធី​មិន​អាច​បន្ត​បាន​ទេ​"
 
 #: mainwindow.cpp:324
-#, kde-format
-msgid "Open a saved skin..."
+#, fuzzy, kde-format
+#| msgid "Open a saved skin..."
+msgctxt "@info:tooltip"
+msgid "Open a saved skin"
 msgstr "បើក​ស្បែក​ដែល​បាន​រក្សា​ទុក​..."
 
 #: mainwindow.cpp:328
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Load &Recent"
+msgctxt "@action"
 msgid "Load &Recent"
 msgstr "ផ្ទុក​ស្បែក​បច្ចុប្បន្ន​"
 
 #: mainwindow.cpp:329
-#, kde-format
-msgid "Open a recently saved skin..."
+#, fuzzy, kde-format
+#| msgid "Open a recently saved skin..."
+msgctxt "@info:tooltip"
+msgid "Open a recently saved skin"
 msgstr "បើក​ស្បែក​ដែល​បាន​រក្សា​ទុក​បច្ចុប្បន្ន​..."
 
 #: mainwindow.cpp:337
@@ -2046,32 +2046,32 @@ msgstr "តើ​​អ្នក​ពិត​ជា​ចង់​លុប​
 msgid "Really delete continent?"
 msgstr "ពិត​ជា​ចង់​លុប​ទ្វីប​ឬ​ ?"
 
-#: mainwindow.cpp:1893
+#: mainwindow.cpp:1889
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "តើ​អ្នក​ពិត​ជា​ចង់​លុប​គោល​ដៅ​ '%1' ឬ ?"
 
-#: mainwindow.cpp:1893
+#: mainwindow.cpp:1889
 #, kde-format
 msgid "Really delete goal?"
 msgstr "ពិត​ជា​ចង់​លុប​គោល​ដៅ​ឬ​ ?"
 
-#: mainwindow.cpp:1952
+#: mainwindow.cpp:1948
 #, kde-format
 msgid "New nationality name"
 msgstr "ឈ្មោះ​សញ្ជាតិ​ថ្មី​"
 
-#: mainwindow.cpp:1952
+#: mainwindow.cpp:1948
 #, kde-format
 msgid "Enter the name of the new nationality"
 msgstr "បញ្ចូល​ឈ្មោះ​របស់​សញ្ជាតិ​ថ្មី​ "
 
-#: mainwindow.cpp:1962
+#: mainwindow.cpp:1958
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "តើ​អ្នក​ពិត​ជា​ចង់​លុប​សញ្ជាតិ​ '%1' ឬ​ ?"
 
-#: mainwindow.cpp:1962
+#: mainwindow.cpp:1958
 #, kde-format
 msgid "Really delete nationality?"
 msgstr "ពិត​ជា​ចង់​លុប​សញ្ជាតិ​ឬ​ ?"
@@ -2081,7 +2081,7 @@ msgstr "ពិត​ជា​ចង់​លុប​សញ្ជាតិ​ឬ
 msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
 msgstr "កំហុស​ - ទ្រង់​ទ្រាយ​ឯក​សារ​កំណត់​​ស្បែក​មិន​ត្រឹម​ត្រូវ​ ។ រំពឹង​ %1 និង​ទទួល​បាន​ %2"
 
-#: onu.cpp:111
+#: onu.cpp:110
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2090,7 +2090,7 @@ msgstr ""
 "រក​មិន​ឃើញ​ឈ្មោះ​ឯកសារ​អាង​ទេ​\n"
 "កម្មវិធី​មិន​អាច​បន្ត​បាន​ទេ"
 
-#: onu.cpp:130
+#: onu.cpp:128
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2099,7 +2099,7 @@ msgstr ""
 "រក​មិន​ឃើញ​រូប​ភាព​របាំង​ផែន​ទី​ទេ​\n"
 "កម្មវិធី​មិន​អាច​បន្ត​បាន​ទេ"
 
-#: onu.cpp:986
+#: onu.cpp:983
 #, kde-format
 msgid ""
 "Cannot read file %1:\n"
@@ -2108,23 +2108,17 @@ msgstr ""
 "មិន​អាច​អាន​ឯកសារ​ %1 ទេ​ ៖\n"
 "%2 ។"
 
-#: onu.cpp:987
+#: onu.cpp:984
 #, kde-format
 msgid "PoolLoader"
 msgstr "កម្មវិធី​ទាញ​យក​អាង"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, KsirkSkinEditorPreferencesWidget)
-#: preferences.ui:25
-#, kde-format
-msgid "KsirK Skin Editor Preferences"
-msgstr "​ចំណូល​ចិត្ត​ចំពោះ​កម្ម​វិធី​កែ​សម្រួល​ស្បែក​ របស់​ KsirK "
 
 #: skinSpritesData.cpp:85
 #, kde-format
 msgid "Error - Unknown skin int data: "
 msgstr "កំហុស​ - មិន​ស្គាល់​ទិន្នន័យ​​ខាង​ក្នុង​ស្បែក​ ៖ "
 
-#: skinSpritesData.cpp:86 skinSpritesData.cpp:102
+#: skinSpritesData.cpp:86
 #, kde-format
 msgid "Fatal Error"
 msgstr "កំហុស​ធ្ងន់ធ្ងរ"
@@ -2133,3 +2127,16 @@ msgstr "កំហុស​ធ្ងន់ធ្ងរ"
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "កំហុស​ - មិន​ស្គាល់​ទិន្នន័យ​​ខ្សែ​អក្សរ​ស្បែក​ ៖"
+
+#: skinSpritesData.cpp:102
+#, fuzzy, kde-format
+#| msgid "Fatal Error"
+msgctxt "@title:window"
+msgid "Fatal Error"
+msgstr "កំហុស​ធ្ងន់ធ្ងរ"
+
+#~ msgid "Error"
+#~ msgstr "កំហុស"
+
+#~ msgid "KsirK Skin Editor Preferences"
+#~ msgstr "​ចំណូល​ចិត្ត​ចំពោះ​កម្ម​វិធី​កែ​សម្រួល​ស្បែក​ របស់​ KsirK "

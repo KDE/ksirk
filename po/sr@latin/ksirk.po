@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-03 00:37+0000\n"
+"POT-Creation-Date: 2024-05-06 00:37+0000\n"
 "PO-Revision-Date: 2017-09-28 17:59+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -1078,64 +1078,87 @@ msgstr ""
 msgid "Legacy"
 msgstr "Nasleđe"
 
-#: decoratedgameframe.cpp:100 kgamewin.cpp:351
-#, kde-format
+#: decoratedgameframe.cpp:100
+#, fuzzy, kde-format
+#| msgid "Next Player"
+msgctxt "@action"
 msgid "Next Player"
 msgstr "Sledeći igrač"
 
 #: decoratedgameframe.cpp:103
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Details"
+msgctxt "@action"
 msgid "Details"
 msgstr "Detalji"
 
-#: decoratedgameframe.cpp:106 kgamewin.cpp:331 kgamewin.cpp:1217
-#: kgamewin.cpp:1229 kgamewin.cpp:2386
-#, kde-format
+#: decoratedgameframe.cpp:106
+#, fuzzy, kde-format
+#| msgid "Goal"
+msgctxt "@action"
 msgid "Goal"
 msgstr "Cilj"
 
 #: decoratedgameframe.cpp:138 decoratedgameframe.cpp:394
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Enable Arena"
+msgctxt "@action"
 msgid "Enable Arena"
 msgstr "Uključi arenu"
 
 #: decoratedgameframe.cpp:142
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attack 1"
+msgctxt "@action"
 msgid "Attack 1"
 msgstr "Napadni sa 1"
 
 #: decoratedgameframe.cpp:145
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attack 2"
+msgctxt "@action"
 msgid "Attack 2"
 msgstr "Napadni sa 2"
 
 #: decoratedgameframe.cpp:148
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attack 3"
+msgctxt "@action"
 msgid "Attack 3"
 msgstr "Napadni sa 3"
 
 #: decoratedgameframe.cpp:151
-#, kde-format
-msgid "Auto attack"
+#, fuzzy, kde-format
+#| msgid "Auto attack"
+msgctxt "@action"
+msgid "Auto Attack"
 msgstr "Automatski napad"
 
 #: decoratedgameframe.cpp:169
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move 1"
+msgctxt "@action"
 msgid "Move 1"
 msgstr "Pomeri 1"
 
 #: decoratedgameframe.cpp:172
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move 5"
+msgctxt "@action"
 msgid "Move 5"
 msgstr "Pomeri 5"
 
 #: decoratedgameframe.cpp:175
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move 10"
+msgctxt "@action"
 msgid "Move 10"
 msgstr "Pomeri 10"
 
 #: decoratedgameframe.cpp:400
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Disable Arena"
+msgctxt "@action"
 msgid "Disable Arena"
 msgstr "Isključi arenu"
 
@@ -1197,14 +1220,14 @@ msgstr "Podešavanje mreže"
 
 #. i18n: ectx: property (text), widget (QLabel, hostLabel)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: Dialogs/joingame.ui:25 Dialogs/tcpconnectwidget.ui:28
+#: Dialogs/joingame.ui:25 Dialogs/tcpconnectwidget.ui:25
 #, kde-format
 msgid "Host:"
 msgstr "Domaćin:"
 
 #. i18n: ectx: property (text), widget (QLabel, portLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: Dialogs/joingame.ui:35 Dialogs/tcpconnectwidget.ui:41
+#: Dialogs/joingame.ui:35 Dialogs/tcpconnectwidget.ui:38
 #, kde-format
 msgid "Port:"
 msgstr "Port:"
@@ -1224,107 +1247,100 @@ msgstr "Prazno ime. Izaberite neko drugo."
 msgid "Player Number %1, please type in your name and choose your nation:"
 msgstr "Igraču broj %1, unesite svoje ime i izaberite naciju:"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, NewGameDialog)
-#: Dialogs/newGameDialog.ui:16
-#, fuzzy, kde-format
-#| msgid "Ksirk - New game properties"
-msgid "KsirK - New game properties"
-msgstr "Svojstva nove igre"
-
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: Dialogs/newGameDialog.ui:29
+#: Dialogs/newGameDialog.ui:26
 #, kde-format
 msgid "Total number of players:"
 msgstr "Ukupan broj igrača:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, playersNumberEntry)
-#: Dialogs/newGameDialog.ui:39
+#: Dialogs/newGameDialog.ui:36
 #, kde-format
 msgid "Spin this to choose the number of players."
 msgstr "Zavrtite ovo za izbor broja igrača."
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, playersNumberEntry)
-#: Dialogs/newGameDialog.ui:42
+#: Dialogs/newGameDialog.ui:39
 #, kde-format
 msgid "A spin box to choose the number of players"
 msgstr "Brojčanik za izbor broja igrača."
 
 #. i18n: ectx: property (text), widget (QLabel, localPlayersNumberLabel)
-#: Dialogs/newGameDialog.ui:53
+#: Dialogs/newGameDialog.ui:50
 #, kde-format
 msgid "Number of local players:"
 msgstr "Broj lokalnih igrača:"
 
 #. i18n: ectx: property (text), widget (QLabel, tcpPortLabel)
-#: Dialogs/newGameDialog.ui:67
+#: Dialogs/newGameDialog.ui:64
 #, kde-format
 msgid "TCP port on which to offer connections:"
 msgstr "TCP port na kojem se nudi povezivanje:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: Dialogs/newGameDialog.ui:106 Dialogs/newGameSummary.ui:44
+#: Dialogs/newGameDialog.ui:103 Dialogs/newGameSummary.ui:41
 #, kde-format
 msgid "Skin:"
 msgstr "Maska:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, skinCombo)
-#: Dialogs/newGameDialog.ui:116
+#: Dialogs/newGameDialog.ui:113
 #, kde-format
 msgid "Choose the skin (map, nationalities, etc.) to use for this game."
 msgstr "Izaberite masku (karta, države, itd.) za ovu igru."
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, skinCombo)
-#: Dialogs/newGameDialog.ui:119
+#: Dialogs/newGameDialog.ui:116
 #, kde-format
 msgid "A combo listing all the available skins."
 msgstr "Spisak svih dostupnih maski."
 
 #. i18n: ectx: property (text), widget (KNSWidgets::Button, ghnsbutton)
-#: Dialogs/newGameDialog.ui:126
+#: Dialogs/newGameDialog.ui:123
 #, fuzzy, kde-format
 #| msgid "Download New Skins"
-msgid "Download New Skins..."
+msgid "Download New Skins…"
 msgstr "Preuzmi nove maske"
 
 #. i18n: ectx: property (configFile), widget (KNSWidgets::Button, ghnsbutton)
-#: Dialogs/newGameDialog.ui:129
+#: Dialogs/newGameDialog.ui:126
 #, kde-format
 msgid "ksirk.knsrc"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, goalGroup)
-#: Dialogs/newGameDialog.ui:153
+#: Dialogs/newGameDialog.ui:150
 #, kde-format
 msgid "Goal Type"
 msgstr "Vrsta cilja"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, radioWorld)
-#: Dialogs/newGameDialog.ui:159
+#: Dialogs/newGameDialog.ui:156
 #, kde-format
 msgid "Choose this for players to have to conquer all the world to win."
 msgstr "Izaberite da bi igrači za pobedu morali da osvoje ceo svet."
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioWorld)
-#: Dialogs/newGameDialog.ui:162
+#: Dialogs/newGameDialog.ui:159
 #, kde-format
 msgid "In this mode, a player will have to conquer all the world to win."
 msgstr "U ovom režimu, igrač mora da osvoji ceo svet da bi pobedio."
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioWorld)
-#: Dialogs/newGameDialog.ui:165
+#: Dialogs/newGameDialog.ui:162
 #, kde-format
 msgid "World con&quest"
 msgstr "Svetski &pohod"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, radioGoal)
-#: Dialogs/newGameDialog.ui:172
+#: Dialogs/newGameDialog.ui:169
 #, kde-format
 msgid "Choose this to have a goal assigned to each player."
 msgstr "Izaberite ovo da bi svaki igrač imao svoj cilj."
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioGoal)
-#: Dialogs/newGameDialog.ui:175
+#: Dialogs/newGameDialog.ui:172
 #, kde-format
 msgid ""
 "In this mode, a goal will be assigned to each player, which he will have to "
@@ -1333,21 +1349,21 @@ msgstr ""
 "U ovom režimu, svakom igraču će biti dodeljen cilj koji treba da ostvari."
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioGoal)
-#: Dialogs/newGameDialog.ui:178
+#: Dialogs/newGameDialog.ui:175
 #, kde-format
 msgid "Reach a goa&l"
 msgstr "Ostvarenje &cilja"
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
-#: Dialogs/newGameDialog.ui:230 Dialogs/newGameSummary.ui:206
-#: Dialogs/qplayersetupdialog.ui:126 Dialogs/tcpconnectwidget.ui:98
+#: Dialogs/newGameDialog.ui:227 Dialogs/newGameSummary.ui:203
+#: Dialogs/qplayersetupdialog.ui:123 Dialogs/tcpconnectwidget.ui:95
 #, kde-format
 msgid "Cancel"
 msgstr "Odustani"
 
 #. i18n: ectx: property (text), widget (QPushButton, nextButton)
-#: Dialogs/newGameDialog.ui:250 Dialogs/qplayersetupdialog.ui:153
-#: Dialogs/tcpconnectwidget.ui:125
+#: Dialogs/newGameDialog.ui:247 Dialogs/qplayersetupdialog.ui:150
+#: Dialogs/tcpconnectwidget.ui:122
 #, kde-format
 msgid "Next >>"
 msgstr "Sledeće >>"
@@ -1361,75 +1377,77 @@ msgstr ""
 "Fascikla sa maskama nije nađena — proverite instalaciju.\n"
 "Program ne može da nastavi."
 
-#: Dialogs/newGameDialogImpl.cpp:126 newgamesetup.cpp:45
-#, kde-format
-msgid "Fatal Error!"
-msgstr "Kobna greška."
+#: Dialogs/newGameDialogImpl.cpp:126 GameLogic/aiplayer.cpp:506
+#: Sprites/skinSpritesData.cpp:89 Sprites/skinSpritesData.cpp:105
+#, fuzzy, kde-format
+#| msgid "Fatal Error"
+msgctxt "@title:window"
+msgid "Fatal Error"
+msgstr "Kobna greška"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, NewGameSummary)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: Dialogs/newGameSummary.ui:14 Dialogs/newGameSummary.ui:27
+#: Dialogs/newGameSummary.ui:24
 #, kde-format
 msgid "New Game Summary"
 msgstr "Sažetak nove partije"
 
 #. i18n: ectx: property (text), widget (QLabel, skinNameLabel)
-#: Dialogs/newGameSummary.ui:51
+#: Dialogs/newGameSummary.ui:48
 #, kde-format
 msgid "skin name"
 msgstr "ime maske"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: Dialogs/newGameSummary.ui:102
+#: Dialogs/newGameSummary.ui:99
 #, kde-format
 msgid "Players"
 msgstr "Igrači"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: Dialogs/newGameSummary.ui:128
+#: Dialogs/newGameSummary.ui:125
 #, kde-format
 msgid "Goal type:"
 msgstr "Vrsta cilja:"
 
 #. i18n: ectx: property (text), widget (QLabel, goalTypeLabel)
-#: Dialogs/newGameSummary.ui:135
+#: Dialogs/newGameSummary.ui:132
 #, kde-format
 msgid "goal type"
 msgstr "vrsta cilja"
 
 #. i18n: ectx: property (text), widget (QTableWidget, playersTable)
-#: Dialogs/newGameSummary.ui:157
+#: Dialogs/newGameSummary.ui:154
 #, kde-format
 msgid "Name"
 msgstr "ime"
 
 #. i18n: ectx: property (text), widget (QTableWidget, playersTable)
-#: Dialogs/newGameSummary.ui:168
+#: Dialogs/newGameSummary.ui:165
 #, kde-format
 msgid "Nationality"
 msgstr "nacionalnost"
 
 #. i18n: ectx: property (text), widget (QTableWidget, playersTable)
-#: Dialogs/newGameSummary.ui:179
+#: Dialogs/newGameSummary.ui:176
 #, kde-format
 msgid "Computer"
 msgstr "računar"
 
 #. i18n: ectx: property (text), widget (QTableWidget, playersTable)
-#: Dialogs/newGameSummary.ui:190
+#: Dialogs/newGameSummary.ui:187
 #, kde-format
 msgid "Network"
 msgstr "mreža"
 
 #. i18n: ectx: property (text), widget (QPushButton, previousButton)
-#: Dialogs/newGameSummary.ui:226 Dialogs/qplayersetupdialog.ui:146
-#: Dialogs/tcpconnectwidget.ui:118
+#: Dialogs/newGameSummary.ui:223 Dialogs/qplayersetupdialog.ui:143
+#: Dialogs/tcpconnectwidget.ui:115
 #, kde-format
 msgid "<< Previous"
 msgstr "<< Prethodno"
 
 #. i18n: ectx: property (text), widget (QPushButton, finishButton)
-#: Dialogs/newGameSummary.ui:233
+#: Dialogs/newGameSummary.ui:230
 #, kde-format
 msgid "Start"
 msgstr "Počni"
@@ -1454,29 +1472,22 @@ msgstr "Da"
 msgid "No"
 msgstr "Ne"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, QPlayerSetupWidget)
-#. i18n: ectx: property (windowTitle), widget (QWidget, TcpConnectWidget)
-#: Dialogs/qplayersetupdialog.ui:14 Dialogs/tcpconnectwidget.ui:14
-#, kde-format
-msgid "Player Setup"
-msgstr "Postavke igrača"
-
 #. i18n: ectx: property (text), widget (QLabel, TextLabel1)
-#: Dialogs/qplayersetupdialog.ui:23
+#: Dialogs/qplayersetupdialog.ui:20
 #, no-c-format, kde-format
 msgid "Player number %1, please enter your name and choose your nation:"
 msgstr "Igraču broj %1, unesite svoje ime i izaberite naciju:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, nationCombo)
 #. i18n: ectx: property (toolTip), widget (QComboBox, waitedPlayersCombo)
-#: Dialogs/qplayersetupdialog.ui:51 Dialogs/qwaitedplayersetupdialog.ui:33
+#: Dialogs/qplayersetupdialog.ui:48 Dialogs/qwaitedplayersetupdialog.ui:33
 #, kde-format
 msgid "Choose your nation"
 msgstr "Izaberite naciju."
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, nationCombo)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, waitedPlayersCombo)
-#: Dialogs/qplayersetupdialog.ui:55 Dialogs/qwaitedplayersetupdialog.ui:37
+#: Dialogs/qplayersetupdialog.ui:52 Dialogs/qwaitedplayersetupdialog.ui:37
 #, kde-format
 msgid ""
 "A combo box that lists currently available nations.\n"
@@ -1486,13 +1497,13 @@ msgstr ""
 "Izaberite onu koja želite da bude vaš tokom igre."
 
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
-#: Dialogs/qplayersetupdialog.ui:79 Dialogs/qwaitedplayersetupdialog.ui:47
+#: Dialogs/qplayersetupdialog.ui:76 Dialogs/qwaitedplayersetupdialog.ui:47
 #, kde-format
 msgid "Enter your password:"
 msgstr "Unesite lozinku:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, isComputerCheckBox)
-#: Dialogs/qplayersetupdialog.ui:104
+#: Dialogs/qplayersetupdialog.ui:101
 #, kde-format
 msgid "Pla&yer is computer"
 msgstr "Igrač je &računar"
@@ -1522,7 +1533,7 @@ msgid "New Game or Exit"
 msgstr "Nova igra ili izlaz"
 
 #. i18n: ectx: property (text), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:24 GameLogic/gameautomaton.cpp:1625
+#: Dialogs/restartOrExitDialog.ui:24
 #, kde-format
 msgid "New Game"
 msgstr "Nova igra"
@@ -1546,7 +1557,7 @@ msgid "Do nothing. Game buttons will be available"
 msgstr "Ne radi ništa. Dugmad igre će biti dostupna."
 
 #. i18n: ectx: property (text), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:47 GameLogic/gameautomaton.cpp:1626
+#: Dialogs/restartOrExitDialog.ui:47
 #, kde-format
 msgid "Exit"
 msgstr "Napusti"
@@ -1565,7 +1576,7 @@ msgstr "%1 pobedi! Želite li da igrate ponovo?"
 
 # literal-segment: localhost
 #. i18n: ectx: property (text), widget (QLineEdit, hostEdit)
-#: Dialogs/tcpconnectwidget.ui:74
+#: Dialogs/tcpconnectwidget.ui:71
 #, kde-format
 msgid "localhost"
 msgstr "localhost"
@@ -1591,15 +1602,11 @@ msgstr[3] ""
 "Greška: Nije izabrana prijemna zemlja a računarski igrač %2 još uvek ima "
 "jednu armiju za razmeštanje; verovatno greška #2232 sa www.gna.org."
 
-#: GameLogic/aiplayer.cpp:506 Sprites/skinSpritesData.cpp:89
-#: Sprites/skinSpritesData.cpp:105
-#, kde-format
-msgid "Fatal Error"
-msgstr "Kobna greška"
-
 #: GameLogic/gameautomaton.cpp:303
-#, kde-format
-msgid "KsirK - Network configuration"
+#, fuzzy, kde-format
+#| msgid "Network Configuration"
+msgctxt "@title:window"
+msgid "Network Configuration"
 msgstr "Podešavanje mreže"
 
 #: GameLogic/gameautomaton.cpp:304
@@ -1612,9 +1619,11 @@ msgstr "Unesite broj porta na kojem nudite povezivanje:"
 msgid "Do you really want to end your current game and join another?"
 msgstr "Želite li zaista da okončate tekuću partiju i priključite se drugoj?"
 
-#: GameLogic/gameautomaton.cpp:1191 kgamewin.cpp:2550
-#, kde-format
-msgid "New game confirmation"
+#: GameLogic/gameautomaton.cpp:1191
+#, fuzzy, kde-format
+#| msgid "New game confirmation"
+msgctxt "@title:window"
+msgid "New Game Confirmation"
 msgstr "Potvrda nove partije"
 
 #: GameLogic/gameautomaton.cpp:1191
@@ -1633,14 +1642,17 @@ msgstr ""
 "čekam da se poveže %3 $[množ ^3 igrač igrača igrača]."
 
 #: GameLogic/gameautomaton.cpp:1468
-#, kde-format
-msgid "Please choose another name"
+#, fuzzy, kde-format
+#| msgid "Please choose another name"
+msgid "Please choose another name."
 msgstr "Izaberite drugo ime"
 
 # >> @title:window
 #: GameLogic/gameautomaton.cpp:1468
-#, kde-format
-msgid "KsirK - Name already used!"
+#, fuzzy, kde-format
+#| msgid "KsirK - Name already used!"
+msgctxt "@title:window"
+msgid "Name Already Used"
 msgstr "Ime je već u upotrebi"
 
 #: GameLogic/gameautomaton.cpp:1474
@@ -1660,14 +1672,17 @@ msgid "Player%1"
 msgstr "Igrač-%1"
 
 #: GameLogic/gameautomaton.cpp:1531
-#, kde-format
-msgid "Please choose another nation"
+#, fuzzy, kde-format
+#| msgid "Please choose another nation"
+msgid "Please choose another nation."
 msgstr "Izaberite drugu naciju"
 
 # >> @title:window
 #: GameLogic/gameautomaton.cpp:1531
-#, kde-format
-msgid "KsirK - Nation already used!"
+#, fuzzy, kde-format
+#| msgid "KsirK - Nation already used!"
+msgctxt "@title:window"
+msgid "Nation Already Used"
 msgstr "Nacija je već u upotrebi"
 
 #: GameLogic/gameautomaton.cpp:1623
@@ -1681,13 +1696,31 @@ msgstr ""
 
 # >> @title:window
 #: GameLogic/gameautomaton.cpp:1624
-#, kde-format
-msgid "Starting a new game or exit."
+#, fuzzy, kde-format
+#| msgid "Starting a new game or exit."
+msgctxt "@title:window"
+msgid "Starting a New Game or Exit."
 msgstr "Pokretanje nove igre ili napuštanje"
 
+#: GameLogic/gameautomaton.cpp:1625
+#, fuzzy, kde-format
+#| msgid "New Game"
+msgctxt "@action:button"
+msgid "New Game"
+msgstr "Nova igra"
+
+#: GameLogic/gameautomaton.cpp:1626
+#, fuzzy, kde-format
+#| msgid "Exit"
+msgctxt "@action:button"
+msgid "Exit"
+msgstr "Napusti"
+
 #: GameLogic/gameautomaton.cpp:1627
-#, kde-format
-msgid "Do nothing"
+#, fuzzy, kde-format
+#| msgid "Do Nothing"
+msgctxt "@action:button"
+msgid "Do Nothing"
 msgstr "Ne radi ništa"
 
 #: GameLogic/gameautomaton.cpp:1649
@@ -1704,8 +1737,10 @@ msgstr ""
 
 # >> @title:window
 #: GameLogic/gameautomaton.cpp:1650
-#, kde-format
-msgid "KsirK - Lost connection to client!"
+#, fuzzy, kde-format
+#| msgid "KsirK - Lost connection to client!"
+msgctxt "@title:window"
+msgid "Lost Connection to Client"
 msgstr "Izgubljena veza sa klijentom"
 
 #: GameLogic/gameautomaton.cpp:1652
@@ -1715,7 +1750,7 @@ msgstr "Želite li da sačuvate poziciju?"
 
 # >! Plurals (code passing number as string over network).
 #: GameLogic/gameautomaton.cpp:1818 GameLogic/gameautomaton.cpp:2235
-#: kgamewin.cpp:2041 kgamewin.cpp:2136 kgamewin.cpp:2173
+#: kgamewin.cpp:2042 kgamewin.cpp:2137 kgamewin.cpp:2174
 #, kde-format
 msgid "%1: %2 armies to place"
 msgstr ""
@@ -1743,8 +1778,10 @@ msgstr ""
 
 # >> @title:window
 #: GameLogic/gameautomaton.cpp:1902
-#, kde-format
-msgid "KsirK - Displaying Goal"
+#, fuzzy, kde-format
+#| msgid "KsirK - Displaying Goal"
+msgctxt "@title:window"
+msgid "Displaying Goal"
 msgstr "Izlaganje cilja"
 
 #: GameLogic/gameautomaton.cpp:2088
@@ -1766,14 +1803,6 @@ msgstr ""
 msgid "Problem : no one destroyed"
 msgstr "Problem: niko nije uništen"
 
-#: GameLogic/gameautomaton.cpp:2338 gestionSprites.cpp:873
-#: gestionSprites.cpp:893 gestionSprites.cpp:994 gestionSprites.cpp:1031
-#: gestionSprites.cpp:1066 gestionSprites.cpp:1120 gestionSprites.cpp:1157
-#: gestionSprites.cpp:1191
-#, kde-format
-msgid "KsirK - Error!"
-msgstr "Greška"
-
 # rewrite-msgid: /invalid/incorrect/
 #: GameLogic/gameautomaton.cpp:2387
 #, kde-format
@@ -1787,8 +1816,10 @@ msgstr ""
 # >> @title:window
 # rewrite-msgid: /invalid/incorrect/
 #: GameLogic/gameautomaton.cpp:2387
-#, kde-format
-msgid "KsirK - Invalid password!"
+#, fuzzy, kde-format
+#| msgid "KsirK - Invalid password!"
+msgctxt "@title:window"
+msgid "Invalid Password"
 msgstr "Neispravna lozinka"
 
 #: GameLogic/gameautomaton.cpp:2588
@@ -1801,9 +1832,11 @@ msgstr ""
 "Želite li zaista da propustite ovaj potez?"
 
 #: GameLogic/gameautomaton.cpp:2589
-#, kde-format
-msgid "Really Next Player?"
-msgstr "Na sledećeg igrača?"
+#, fuzzy, kde-format
+#| msgid "New game confirmation"
+msgctxt "@title:window"
+msgid "Next Player Confirmation"
+msgstr "Potvrda nove partije"
 
 #: GameLogic/gameautomaton.cpp:2590
 #, fuzzy, kde-format
@@ -1828,14 +1861,17 @@ msgid "Error: no player to destroy"
 msgstr "Greška: nema igrača za uništenje"
 
 #: GameLogic/goal.cpp:231
-#, kde-format
-msgid "<br>%1 is still alive..."
+#, fuzzy, kde-format
+#| msgid "<br>%1 is still alive..."
+msgid "<br>%1 is still alive…"
 msgstr "<html><br/>%1 još uvek postoji...</html>"
 
 #: GameLogic/goal.cpp:238 GameLogic/goal.cpp:252
-#, kde-format
-msgid "<br>%2, you still have 1 country to conquer..."
-msgid_plural "<br>%2, you still have %1 countries to conquer..."
+#, fuzzy, kde-format
+#| msgid "<br>%2, you still have 1 country to conquer..."
+#| msgid_plural "<br>%2, you still have %1 countries to conquer..."
+msgid "<br>%2, you still have 1 country to conquer…"
+msgid_plural "<br>%2, you still have %1 countries to conquer…"
 msgstr[0] "<html><br/>%1, treba da osvojite još %2 zemlju...</html>"
 msgstr[1] "<html><br/>%1, treba da osvojite još %2 zemlje...</html>"
 msgstr[2] "<html><br/>%1, treba da osvojite još %2 zemalja...</html>"
@@ -1856,13 +1892,19 @@ msgstr[3] ""
 "<html><br/>Dostigli ste cilj: %2 je mrtav i posedujete %1 zemlju.</html>"
 
 #: GameLogic/goal.cpp:264
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<br>%2, you have enough countries but you still have to put more than 1 "
+#| "army on %3 of them..."
+#| msgid_plural ""
+#| "<br>%2, you have enough countries but you still have to put more than %1 "
+#| "armies on %3 of them..."
 msgid ""
 "<br>%2, you have enough countries but you still have to put more than 1 army "
-"on %3 of them..."
+"on %3 of them…"
 msgid_plural ""
 "<br>%2, you have enough countries but you still have to put more than %1 "
-"armies on %3 of them..."
+"armies on %3 of them…"
 msgstr[0] ""
 "<html><br/>%2, imate dovoljno zemalja ali još uvek treba da razmestite više "
 "od %1 armije na %3 od njih...</html>"
@@ -1910,13 +1952,16 @@ msgstr "%1 u %2|/|%1 u $[lok %2]"
 
 # >> @title:window
 #: GameLogic/goal.cpp:317
-#, kde-format
-msgid "KsirK - Goal Display"
+#, fuzzy, kde-format
+#| msgid "KsirK - Goal Display"
+msgctxt "@title:window"
+msgid "Goal Display"
 msgstr "Izlaganje cilja"
 
 #: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:170
-#, kde-format
-msgid "No message..."
+#, fuzzy, kde-format
+#| msgid "No message..."
+msgid "No message…"
 msgstr "Nema poruke..."
 
 #: GameLogic/KsirkChatModel.cpp:73
@@ -1933,16 +1978,7 @@ msgstr ""
 "Ime fajla pula nije nađeno.\n"
 "Program ne može da nastavi."
 
-#: GameLogic/onu.cpp:120 GameLogic/onu.cpp:137 gestionSprites.cpp:638
-#: gestionSprites.cpp:753 gestionSprites.cpp:798 gestionSprites.cpp:1354
-#: gestionSprites.cpp:1431 kgamewin.cpp:139 kgamewin.cpp:302 kgamewin.cpp:319
-#: kgamewin.cpp:488 kgamewin.cpp:644 Sprites/animsprite.cpp:515
-#: Sprites/animsprite.cpp:530
-#, kde-format
-msgid "Error!"
-msgstr "Greška"
-
-#: GameLogic/onu.cpp:136
+#: GameLogic/onu.cpp:135
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2053,6 +2089,11 @@ msgstr "Pridruži se TCP/IP"
 msgid "Join a standard TCP/IP network game"
 msgstr "Pridružite se standardnoj TCP/IP mrežnoj igri."
 
+#: kgamewin.cpp:331 kgamewin.cpp:1218 kgamewin.cpp:1230 kgamewin.cpp:2387
+#, kde-format
+msgid "Goal"
+msgstr "Cilj"
+
 #: kgamewin.cpp:332
 #, kde-format
 msgid "Display the Current Player's Goal"
@@ -2068,6 +2109,11 @@ msgstr "Pogledajte cilj trenutnog igrača."
 #, kde-format
 msgid "Contextual Help"
 msgstr "Kontekstna pomoć"
+
+#: kgamewin.cpp:351
+#, kde-format
+msgid "Next Player"
+msgstr "Sledeći igrač"
 
 # >> @info:tooltip
 #: kgamewin.cpp:353
@@ -2104,8 +2150,9 @@ msgstr ""
 "osvoji $[aku %2] iz $[gen %3].</font>"
 
 #: kgamewin.cpp:732
-#, kde-format
-msgid "%1, you are defeated! Bye, bye..."
+#, fuzzy, kde-format
+#| msgid "%1, you are defeated! Bye, bye..."
+msgid "%1, you are defeated! Bye, bye…"
 msgstr "%1, poraženi ste! Vidimo se..."
 
 #: kgamewin.cpp:804
@@ -2113,17 +2160,17 @@ msgstr "%1, poraženi ste! Vidimo se..."
 msgid "%1: it is up to you again"
 msgstr "%1: ponovo ste na potezu"
 
-#: kgamewin.cpp:816
+#: kgamewin.cpp:818
 #, kde-format
 msgid "%1 won!"
 msgstr "%1 pobedi!"
 
-#: kgamewin.cpp:819
+#: kgamewin.cpp:820
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
 msgstr "<big><b>%1</b>, pobedili ste!</big>"
 
-#: kgamewin.cpp:823
+#: kgamewin.cpp:824
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
@@ -2132,42 +2179,42 @@ msgstr ""
 "<br/>Cilj pobednika bio je zadat ovako:<br/><i>%1</i><br/><br/>Želite li "
 "ponovo da igrate?"
 
-#: kgamewin.cpp:829
+#: kgamewin.cpp:830
 #, kde-format
 msgid "<br>You conquered all the world!"
 msgstr "<html><br/>Pokorili ste čitav svet!</html>"
 
-#: kgamewin.cpp:833
+#: kgamewin.cpp:834
 #, kde-format
 msgid "<br>He conquered all the world!"
 msgstr "<html><br/>Pokorio je čitav svet!</html>"
 
-#: kgamewin.cpp:950
+#: kgamewin.cpp:951
 #, kde-format
 msgid "Do you want to quit the game?"
 msgstr "Želite li da napustite igru?"
 
-#: kgamewin.cpp:952
+#: kgamewin.cpp:953
 #, fuzzy, kde-format
 #| msgid "Quit"
 msgctxt "@action:button"
 msgid "Quit Game"
 msgstr "Napusti"
 
-#: kgamewin.cpp:964
+#: kgamewin.cpp:965
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
 msgstr "Pre nego što napustite, želite li da sačuvate poziciju?"
 
-#: kgamewin.cpp:1002
+#: kgamewin.cpp:1003
 #, fuzzy, kde-format
-#| msgid "KsirK - Load Game"
+#| msgid "New Local Game"
 msgctxt "@title:window"
-msgid "KsirK - Load Game"
-msgstr "Učitavanje pozicije"
+msgid "Load Game"
+msgstr "Nova lokalna igra"
 
 # >! Plurals (code passing number as string over network).
-#: kgamewin.cpp:1040
+#: kgamewin.cpp:1041
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
 msgstr ""
@@ -2175,7 +2222,7 @@ msgstr ""
 "'mrežnog igrača' 'mrežna igrača' 'mrežnih igrača']."
 
 # >> %3 and %4 are countries.
-#: kgamewin.cpp:1119
+#: kgamewin.cpp:1120
 #, kde-format
 msgid ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
@@ -2208,74 +2255,74 @@ msgstr[3] ""
 "font> s jednom armijom!<br/>Kako želite da branite <font color=\"blue\">"
 "$[aku %4]</font>?"
 
-#: kgamewin.cpp:1148
+#: kgamewin.cpp:1149
 #, kde-format
 msgid "Defend 1"
 msgstr "Brani 1"
 
-#: kgamewin.cpp:1149
+#: kgamewin.cpp:1150
 #, kde-format
 msgid "Defend 2"
 msgstr "Brani 2"
 
-#: kgamewin.cpp:1150
+#: kgamewin.cpp:1151
 #, kde-format
 msgid "Defend-Auto"
 msgstr "Brani automatski"
 
-#: kgamewin.cpp:1269
+#: kgamewin.cpp:1270
 #, kde-format
 msgid "Waiting for %1 players to connect"
 msgstr ""
 "Čekam na povezivanje %1 igrača|/|Čekam na povezivanje %1 $[množ ^1 igrača "
 "igrača igrača]"
 
-#: kgamewin.cpp:1659 kgamewin.cpp:1699
+#: kgamewin.cpp:1660 kgamewin.cpp:1700
 msgid "There is no country here!"
 msgstr "Tu nema nijedne zemlje."
 
-#: kgamewin.cpp:1663 kgamewin.cpp:1704
+#: kgamewin.cpp:1664 kgamewin.cpp:1705
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
 msgstr "Niste vlasnik prve zemlje: %1."
 
-#: kgamewin.cpp:1667
+#: kgamewin.cpp:1668
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
 msgstr "Niste vlasnik druge zemlje: %1."
 
-#: kgamewin.cpp:1671 kgamewin.cpp:1715
+#: kgamewin.cpp:1672 kgamewin.cpp:1716
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr ""
 "Pokušavate da pomerite armije iz %1 na njih same.|/|Pokušavate da pomerite "
 "armije iz $[gen %1] na njih same."
 
-#: kgamewin.cpp:1676 kgamewin.cpp:1721
+#: kgamewin.cpp:1677 kgamewin.cpp:1722
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
 msgstr "%1 nije sused %2.|/|$[nom %1] nije sused $[gen %2]."
 
-#: kgamewin.cpp:1682
+#: kgamewin.cpp:1683
 #, kde-format
 msgid "Moving armies from %1 to %2."
 msgstr ""
 "Premeštam armije iz %1 u %2.|/|Premeštam armije iz $[gen %1] u $[aku %2]."
 
-#: kgamewin.cpp:1710
+#: kgamewin.cpp:1711
 #, kde-format
 msgid "You are the owner of the second country: %1!"
 msgstr "Vlasnik ste druge zemlje: %1."
 
-#: kgamewin.cpp:1728
+#: kgamewin.cpp:1729
 msgid "Ready to fight!"
 msgstr "Spremni za borbu!"
 
-#: kgamewin.cpp:1822
+#: kgamewin.cpp:1823
 msgid "<font color=\"orange\">No country here!</font>"
 msgstr "<font color=\"orange\">Ovde nema zemlje.</font>"
 
-#: kgamewin.cpp:1830
+#: kgamewin.cpp:1831
 #, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr ""
@@ -2283,25 +2330,25 @@ msgstr ""
 "\">Niste vlasnik $[gen %1].</font>"
 
 # >! Plurals (code passing number as string over network).
-#: kgamewin.cpp:1837
+#: kgamewin.cpp:1838
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr ""
 "<font color=\"orange\">U %2 ima samo %1 armija.</font>|/|<font color=\"orange"
 "\">U $[lok %2] ima samo %1 $[množ ^1 armija armije armija].</font>"
 
-#: kgamewin.cpp:1977
+#: kgamewin.cpp:1978
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
 msgstr ""
 "%1, branite se jedinom armijom koju imate u %2.|/|%1, branite se jedinom "
 "armijom koju imate u $[lok %2]."
 
-#: kgamewin.cpp:2201
+#: kgamewin.cpp:2202
 msgid "Exchange armies again or continue?"
 msgstr "Ponovo razmeniti armije ili nastaviti?"
 
-#: kgamewin.cpp:2226
+#: kgamewin.cpp:2227
 #, kde-format
 msgid ""
 "You must distribute\n"
@@ -2310,49 +2357,52 @@ msgstr ""
 "Morate rasporediti\n"
 "sve svoje armije"
 
-#: kgamewin.cpp:2226 main.cpp:42
-#, kde-format
-msgid "KsirK"
-msgstr "KSirk"
-
-#: kgamewin.cpp:2366
+#: kgamewin.cpp:2367
 msgid "Battle ongoing."
 msgstr "Bitka u toku."
 
-#: kgamewin.cpp:2487 kgamewin.cpp:2498 kgamewin.cpp:2521
+#: kgamewin.cpp:2488 kgamewin.cpp:2499 kgamewin.cpp:2522
 #, kde-format
 msgid "%1, it is up to you."
 msgstr "%1, na potezu ste."
 
-#: kgamewin.cpp:2550
+#: kgamewin.cpp:2551
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
 msgstr "Želite li zaista da okončate trenutnu partiju i pokrenete novu?"
 
-#: kgamewin.cpp:2550
+#: kgamewin.cpp:2551
+#, kde-format
+msgid "New game confirmation"
+msgstr "Potvrda nove partije"
+
+#: kgamewin.cpp:2551
 #, fuzzy, kde-format
 #| msgid "Start a New Game"
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Započni novu partiju"
 
-#: kgamewin.cpp:2806
+#: kgamewin.cpp:2807
 msgid "<b>KsirK quick Introduction</b>"
 msgstr "<b>Brzo upoznavanje KSirka</b>"
 
-#: kgamewin.cpp:2810
+#: kgamewin.cpp:2811
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr "Napada se i pomera prevlačenjem između susednih zemalja."
 
-#: kgamewin.cpp:2814
-msgid "Start a new game or join a network game with the menu or the toolbar..."
+#: kgamewin.cpp:2815
+#, fuzzy
+#| msgid ""
+#| "Start a new game or join a network game with the menu or the toolbar..."
+msgid "Start a new game or join a network game with the menu or the toolbar…"
 msgstr ""
 "Pokrenite novu partiju, ili se priključite mrežnoj, putem menija ili trake "
 "alatki..."
 
 # rewrite-msgid: /options window/configuration dialog/
-#: kgamewin.cpp:2818
+#: kgamewin.cpp:2819
 msgid ""
 "and then let the system guide you through messages and tooltips appearing on "
 "buttons when hovering above them. You can disable bubble help in the options "
@@ -2362,7 +2412,7 @@ msgstr ""
 "javljaju dok lebdite nad njima. Oblačiće možete isključiti u dijalogu za "
 "podešavanje."
 
-#: kgamewin.cpp:2825
+#: kgamewin.cpp:2826
 #, kde-format
 msgid "Don't show messages anymore"
 msgstr "Ne prikazuj više poruke"
@@ -2383,10 +2433,10 @@ msgstr "Ne možete sačuvati kada čekate na odbranu."
 
 #: kgamewinslots.cpp:441
 #, fuzzy, kde-format
-#| msgid "KsirK - Save Game"
+#| msgid "New Game"
 msgctxt "@title:window"
-msgid "KsirK - Save Game"
-msgstr "Upisivanje pozicije"
+msgid "Save Game"
+msgstr "Nova igra"
 
 #: kgamewinslots.cpp:445
 #, kde-format
@@ -2438,8 +2488,9 @@ msgid "<b><u>Country details</u></b>"
 msgstr "<b><u>Detalji o zemlji</u></b>"
 
 #: krightdialog.cpp:170
-#, kde-format
-msgid "<i>Fighting in progress...</i>"
+#, fuzzy, kde-format
+#| msgid "<i>Fighting in progress...</i>"
+msgid "<i>Fighting in progress…</i>"
 msgstr "<i>Borba je u toku...</i>"
 
 #: krightdialog.cpp:222
@@ -2582,6 +2633,11 @@ msgstr "P&omoć"
 msgid "Main Toolbar"
 msgstr "Glavna traka"
 
+#: main.cpp:42
+#, kde-format
+msgid "KsirK"
+msgstr "KSirk"
+
 #: main.cpp:44
 #, kde-format
 msgid "KsirK - World Domination Strategy Game"
@@ -2672,10 +2728,9 @@ msgstr "Pridruži se standardnoj TCP/IP igri"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbLoad)
 #: mainMenu.ui:118
-#, fuzzy, kde-format
-#| msgid "Load"
-msgid "Load..."
-msgstr "Učitaj"
+#, kde-format
+msgid "Load…"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, pbQuit)
 #: mainMenu.ui:138
@@ -2683,33 +2738,32 @@ msgstr "Učitaj"
 msgid "Quit"
 msgstr "Napusti"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, KsirkPreferencesWidget)
-#: preferences.ui:26
+#: newgamesetup.cpp:45
 #, kde-format
-msgid "KsirK Preferences"
-msgstr "Postavke KSirka"
+msgid "Fatal Error!"
+msgstr "Kobna greška."
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_soundEnabled)
-#: preferences.ui:38
+#: preferences.ui:35
 #, kde-format
 msgid "Sound enabled"
 msgstr "Zvuk uključen"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: preferences.ui:51
+#: preferences.ui:48
 #, fuzzy, kde-format
 #| msgid "Sprites speed (slow, normal, rapid, immediate)"
 msgid "Sprites speed (slow, normal, rapid, immediate):"
 msgstr "Brzina sprajtova (sporo, uobičajeno, brzo, trenutno)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_helpEnabled)
-#: preferences.ui:95
+#: preferences.ui:92
 #, kde-format
 msgid "Show help"
 msgstr "Prikazuj pomoć"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_showArmiesNumbers)
-#: preferences.ui:102
+#: preferences.ui:99
 #, kde-format
 msgid "Show number of armies on countries"
 msgstr "Prikazuj broj armija na zemljama"
@@ -2720,12 +2774,7 @@ msgstr "Prikazuj broj armija na zemljama"
 msgid "Wrong save game format. Waited %1 and got %2!"
 msgstr "Pogrešan format pozicije. Očekivano %1, dobijeno %2."
 
-#: SaveLoad/ksirkgamexmlhandler.cpp:59
-#, kde-format
-msgid "KsirK - Cannot load!"
-msgstr "Učitavanje nemoguće"
-
-#: SaveLoad/ksirkgamexmlhandler.cpp:140
+#: SaveLoad/ksirkgamexmlhandler.cpp:139
 #, kde-format
 msgid "Current player is: %1"
 msgstr "Trenutni igrač: %1"
@@ -2734,11 +2783,6 @@ msgstr "Trenutni igrač: %1"
 #, kde-format
 msgid "Skin file parsing error"
 msgstr "Greška raščlanjivanja fajla maske"
-
-#: SaveLoad/ksirkgamexmlloader.cpp:47
-#, kde-format
-msgid "KsirK - Error"
-msgstr "Greška"
 
 #: Sprites/animsprite.cpp:515
 #, kde-format
@@ -2759,6 +2803,55 @@ msgstr "Greška — nepoznat ceo broj u maski: "
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Greška — nepoznata niska u maski: "
+
+#, fuzzy
+#~| msgid "Ksirk - New game properties"
+#~ msgid "KsirK - New game properties"
+#~ msgstr "Svojstva nove igre"
+
+#~ msgid "Player Setup"
+#~ msgstr "Postavke igrača"
+
+#~ msgid "KsirK - Network configuration"
+#~ msgstr "Podešavanje mreže"
+
+#~ msgid "Do nothing"
+#~ msgstr "Ne radi ništa"
+
+#~ msgid "KsirK - Error!"
+#~ msgstr "Greška"
+
+#~ msgid "Really Next Player?"
+#~ msgstr "Na sledećeg igrača?"
+
+#~ msgid "Error!"
+#~ msgstr "Greška"
+
+#, fuzzy
+#~| msgid "KsirK - Load Game"
+#~ msgctxt "@title:window"
+#~ msgid "KsirK - Load Game"
+#~ msgstr "Učitavanje pozicije"
+
+#, fuzzy
+#~| msgid "KsirK - Save Game"
+#~ msgctxt "@title:window"
+#~ msgid "KsirK - Save Game"
+#~ msgstr "Upisivanje pozicije"
+
+#, fuzzy
+#~| msgid "Load"
+#~ msgid "Load..."
+#~ msgstr "Učitaj"
+
+#~ msgid "KsirK Preferences"
+#~ msgstr "Postavke KSirka"
+
+#~ msgid "KsirK - Cannot load!"
+#~ msgstr "Učitavanje nemoguće"
+
+#~ msgid "KsirK - Error"
+#~ msgstr "Greška"
 
 # >> @title:column
 #~ msgid "Nickname"

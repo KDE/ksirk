@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-03 00:37+0000\n"
+"POT-Creation-Date: 2024-05-06 00:37+0000\n"
 "PO-Revision-Date: 2009-02-26 12:48+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -1058,64 +1058,87 @@ msgstr ""
 msgid "Legacy"
 msgstr ""
 
-#: decoratedgameframe.cpp:100 kgamewin.cpp:351
-#, kde-format
+#: decoratedgameframe.cpp:100
+#, fuzzy, kde-format
+#| msgid "Next Player"
+msgctxt "@action"
 msgid "Next Player"
 msgstr "अगला खिलाड़ी"
 
 #: decoratedgameframe.cpp:103
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Details"
+msgctxt "@action"
 msgid "Details"
 msgstr "विवरन"
 
-#: decoratedgameframe.cpp:106 kgamewin.cpp:331 kgamewin.cpp:1217
-#: kgamewin.cpp:1229 kgamewin.cpp:2386
-#, kde-format
+#: decoratedgameframe.cpp:106
+#, fuzzy, kde-format
+#| msgid "Goal"
+msgctxt "@action"
 msgid "Goal"
 msgstr "गोल"
 
 #: decoratedgameframe.cpp:138 decoratedgameframe.cpp:394
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Enable Arena"
+msgctxt "@action"
 msgid "Enable Arena"
 msgstr "अरीना सक्छम करव"
 
 #: decoratedgameframe.cpp:142
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attack 1"
+msgctxt "@action"
 msgid "Attack 1"
 msgstr "हमला१"
 
 #: decoratedgameframe.cpp:145
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attack 2"
+msgctxt "@action"
 msgid "Attack 2"
 msgstr "हमला२"
 
 #: decoratedgameframe.cpp:148
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attack 3"
+msgctxt "@action"
 msgid "Attack 3"
 msgstr "हमला३"
 
 #: decoratedgameframe.cpp:151
-#, kde-format
-msgid "Auto attack"
+#, fuzzy, kde-format
+#| msgid "Auto attack"
+msgctxt "@action"
+msgid "Auto Attack"
 msgstr "अपने अपन हमला"
 
 #: decoratedgameframe.cpp:169
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move 1"
+msgctxt "@action"
 msgid "Move 1"
 msgstr "चाल१"
 
 #: decoratedgameframe.cpp:172
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move 5"
+msgctxt "@action"
 msgid "Move 5"
 msgstr "चाल५"
 
 #: decoratedgameframe.cpp:175
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move 10"
+msgctxt "@action"
 msgid "Move 10"
 msgstr "चाल१०"
 
 #: decoratedgameframe.cpp:400
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Disable Arena"
+msgctxt "@action"
 msgid "Disable Arena"
 msgstr "अरीना अक्छम करव"
 
@@ -1172,14 +1195,14 @@ msgstr "नेटवर्क कान्फिगरेसन"
 
 #. i18n: ectx: property (text), widget (QLabel, hostLabel)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: Dialogs/joingame.ui:25 Dialogs/tcpconnectwidget.ui:28
+#: Dialogs/joingame.ui:25 Dialogs/tcpconnectwidget.ui:25
 #, kde-format
 msgid "Host:"
 msgstr "होस्टः"
 
 #. i18n: ectx: property (text), widget (QLabel, portLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: Dialogs/joingame.ui:35 Dialogs/tcpconnectwidget.ui:41
+#: Dialogs/joingame.ui:35 Dialogs/tcpconnectwidget.ui:38
 #, kde-format
 msgid "Port:"
 msgstr "पोर्टः"
@@ -1201,110 +1224,103 @@ msgstr "किरपा करके, कोनो अउ दूसरा ना
 msgid "Player Number %1, please type in your name and choose your nation:"
 msgstr "खिलाड़ी नं %1, किरपा करके अपन नाम टाइप करव अउ अपन देस चुनव:"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, NewGameDialog)
-#: Dialogs/newGameDialog.ui:16
-#, fuzzy, kde-format
-#| msgid "Ksirk - New game properties"
-msgid "KsirK - New game properties"
-msgstr "केसिर्क - नवा खेल गुन"
-
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: Dialogs/newGameDialog.ui:29
+#: Dialogs/newGameDialog.ui:26
 #, kde-format
 msgid "Total number of players:"
 msgstr "कुल खिलाड़ी के संख्या:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, playersNumberEntry)
-#: Dialogs/newGameDialog.ui:39
+#: Dialogs/newGameDialog.ui:36
 #, fuzzy, kde-format
 #| msgid "Total number of players:"
 msgid "Spin this to choose the number of players."
 msgstr "कुल खिलाड़ी के संख्या:"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, playersNumberEntry)
-#: Dialogs/newGameDialog.ui:42
+#: Dialogs/newGameDialog.ui:39
 #, fuzzy, kde-format
 #| msgid "Total number of players:"
 msgid "A spin box to choose the number of players"
 msgstr "कुल खिलाड़ी के संख्या:"
 
 #. i18n: ectx: property (text), widget (QLabel, localPlayersNumberLabel)
-#: Dialogs/newGameDialog.ui:53
+#: Dialogs/newGameDialog.ui:50
 #, kde-format
 msgid "Number of local players:"
 msgstr "लोकल खिलाड़ी के संख्या:"
 
 #. i18n: ectx: property (text), widget (QLabel, tcpPortLabel)
-#: Dialogs/newGameDialog.ui:67
+#: Dialogs/newGameDialog.ui:64
 #, kde-format
 msgid "TCP port on which to offer connections:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: Dialogs/newGameDialog.ui:106 Dialogs/newGameSummary.ui:44
+#: Dialogs/newGameDialog.ui:103 Dialogs/newGameSummary.ui:41
 #, kde-format
 msgid "Skin:"
 msgstr "स्किन:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, skinCombo)
-#: Dialogs/newGameDialog.ui:116
+#: Dialogs/newGameDialog.ui:113
 #, kde-format
 msgid "Choose the skin (map, nationalities, etc.) to use for this game."
 msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, skinCombo)
-#: Dialogs/newGameDialog.ui:119
+#: Dialogs/newGameDialog.ui:116
 #, kde-format
 msgid "A combo listing all the available skins."
 msgstr ""
 
 #. i18n: ectx: property (text), widget (KNSWidgets::Button, ghnsbutton)
-#: Dialogs/newGameDialog.ui:126
+#: Dialogs/newGameDialog.ui:123
 #, fuzzy, kde-format
 #| msgid "Download new skins"
-msgid "Download New Skins..."
+msgid "Download New Skins…"
 msgstr "नवा स्किन डाउनलोड करव"
 
 #. i18n: ectx: property (configFile), widget (KNSWidgets::Button, ghnsbutton)
-#: Dialogs/newGameDialog.ui:129
+#: Dialogs/newGameDialog.ui:126
 #, kde-format
 msgid "ksirk.knsrc"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, goalGroup)
-#: Dialogs/newGameDialog.ui:153
+#: Dialogs/newGameDialog.ui:150
 #, kde-format
 msgid "Goal Type"
 msgstr "गोल किसिम"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, radioWorld)
-#: Dialogs/newGameDialog.ui:159
+#: Dialogs/newGameDialog.ui:156
 #, kde-format
 msgid "Choose this for players to have to conquer all the world to win."
 msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioWorld)
-#: Dialogs/newGameDialog.ui:162
+#: Dialogs/newGameDialog.ui:159
 #, kde-format
 msgid "In this mode, a player will have to conquer all the world to win."
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioWorld)
-#: Dialogs/newGameDialog.ui:165
+#: Dialogs/newGameDialog.ui:162
 #, fuzzy, kde-format
 #| msgid "Wor&ld conquest"
 msgid "World con&quest"
 msgstr "विस्व कानक्वेस्ट (&l)"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, radioGoal)
-#: Dialogs/newGameDialog.ui:172
+#: Dialogs/newGameDialog.ui:169
 #, kde-format
 msgid "Choose this to have a goal assigned to each player."
 msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioGoal)
-#: Dialogs/newGameDialog.ui:175
+#: Dialogs/newGameDialog.ui:172
 #, kde-format
 msgid ""
 "In this mode, a goal will be assigned to each player, which he will have to "
@@ -1312,22 +1328,22 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioGoal)
-#: Dialogs/newGameDialog.ui:178
+#: Dialogs/newGameDialog.ui:175
 #, fuzzy, kde-format
 #| msgid "Reach a goal"
 msgid "Reach a goa&l"
 msgstr "गोल मं पहुंचें"
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
-#: Dialogs/newGameDialog.ui:230 Dialogs/newGameSummary.ui:206
-#: Dialogs/qplayersetupdialog.ui:126 Dialogs/tcpconnectwidget.ui:98
+#: Dialogs/newGameDialog.ui:227 Dialogs/newGameSummary.ui:203
+#: Dialogs/qplayersetupdialog.ui:123 Dialogs/tcpconnectwidget.ui:95
 #, kde-format
 msgid "Cancel"
 msgstr " खारिज करव"
 
 #. i18n: ectx: property (text), widget (QPushButton, nextButton)
-#: Dialogs/newGameDialog.ui:250 Dialogs/qplayersetupdialog.ui:153
-#: Dialogs/tcpconnectwidget.ui:125
+#: Dialogs/newGameDialog.ui:247 Dialogs/qplayersetupdialog.ui:150
+#: Dialogs/tcpconnectwidget.ui:122
 #, kde-format
 msgid "Next >>"
 msgstr ""
@@ -1339,27 +1355,29 @@ msgid ""
 "Program cannot continue"
 msgstr ""
 
-#: Dialogs/newGameDialogImpl.cpp:126 newgamesetup.cpp:45
-#, kde-format
-msgid "Fatal Error!"
-msgstr "गंभीर गलती!"
+#: Dialogs/newGameDialogImpl.cpp:126 GameLogic/aiplayer.cpp:506
+#: Sprites/skinSpritesData.cpp:89 Sprites/skinSpritesData.cpp:105
+#, fuzzy, kde-format
+#| msgid "Fatal Error"
+msgctxt "@title:window"
+msgid "Fatal Error"
+msgstr "गंभीर गलती"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, NewGameSummary)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: Dialogs/newGameSummary.ui:14 Dialogs/newGameSummary.ui:27
+#: Dialogs/newGameSummary.ui:24
 #, fuzzy, kde-format
 #| msgid "New Game"
 msgid "New Game Summary"
 msgstr "नवा खेल"
 
 #. i18n: ectx: property (text), widget (QLabel, skinNameLabel)
-#: Dialogs/newGameSummary.ui:51
+#: Dialogs/newGameSummary.ui:48
 #, kde-format
 msgid "skin name"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: Dialogs/newGameSummary.ui:102
+#: Dialogs/newGameSummary.ui:99
 #, fuzzy, kde-format
 #| msgctxt "@info Forged player name"
 #| msgid "Player%1"
@@ -1367,55 +1385,55 @@ msgid "Players"
 msgstr "खिलाड़ी %1"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: Dialogs/newGameSummary.ui:128
+#: Dialogs/newGameSummary.ui:125
 #, fuzzy, kde-format
 #| msgid "Goal Type"
 msgid "Goal type:"
 msgstr "गोल किसिम"
 
 #. i18n: ectx: property (text), widget (QLabel, goalTypeLabel)
-#: Dialogs/newGameSummary.ui:135
+#: Dialogs/newGameSummary.ui:132
 #, fuzzy, kde-format
 #| msgid "Goal Type"
 msgid "goal type"
 msgstr "गोल किसिम"
 
 #. i18n: ectx: property (text), widget (QTableWidget, playersTable)
-#: Dialogs/newGameSummary.ui:157
+#: Dialogs/newGameSummary.ui:154
 #, fuzzy, kde-format
 #| msgid "Nickname"
 msgid "Name"
 msgstr "उपनाम"
 
 #. i18n: ectx: property (text), widget (QTableWidget, playersTable)
-#: Dialogs/newGameSummary.ui:168
+#: Dialogs/newGameSummary.ui:165
 #, fuzzy, kde-format
 #| msgid "<b>Nationality:</b>"
 msgid "Nationality"
 msgstr "<b>रास्ट्रीयता:</b>"
 
 #. i18n: ectx: property (text), widget (QTableWidget, playersTable)
-#: Dialogs/newGameSummary.ui:179
+#: Dialogs/newGameSummary.ui:176
 #, kde-format
 msgid "Computer"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QTableWidget, playersTable)
-#: Dialogs/newGameSummary.ui:190
+#: Dialogs/newGameSummary.ui:187
 #, fuzzy, kde-format
 #| msgid "Network failure."
 msgid "Network"
 msgstr "नेटवर्क असफल."
 
 #. i18n: ectx: property (text), widget (QPushButton, previousButton)
-#: Dialogs/newGameSummary.ui:226 Dialogs/qplayersetupdialog.ui:146
-#: Dialogs/tcpconnectwidget.ui:118
+#: Dialogs/newGameSummary.ui:223 Dialogs/qplayersetupdialog.ui:143
+#: Dialogs/tcpconnectwidget.ui:115
 #, kde-format
 msgid "<< Previous"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, finishButton)
-#: Dialogs/newGameSummary.ui:233
+#: Dialogs/newGameSummary.ui:230
 #, fuzzy, kde-format
 #| msgid "State:"
 msgid "Start"
@@ -1443,30 +1461,22 @@ msgstr ""
 msgid "No"
 msgstr "कुछ नइ"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, QPlayerSetupWidget)
-#. i18n: ectx: property (windowTitle), widget (QWidget, TcpConnectWidget)
-#: Dialogs/qplayersetupdialog.ui:14 Dialogs/tcpconnectwidget.ui:14
-#, fuzzy, kde-format
-#| msgid "Player setup"
-msgid "Player Setup"
-msgstr "खिलाड़ी सेटअप"
-
 #. i18n: ectx: property (text), widget (QLabel, TextLabel1)
-#: Dialogs/qplayersetupdialog.ui:23
+#: Dialogs/qplayersetupdialog.ui:20
 #, fuzzy, no-c-format, kde-format
 msgid "Player number %1, please enter your name and choose your nation:"
 msgstr "खिलाड़ी नं %1, किरपा करके अपन नाम टाइप करव अउ अपन देस चुनव:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, nationCombo)
 #. i18n: ectx: property (toolTip), widget (QComboBox, waitedPlayersCombo)
-#: Dialogs/qplayersetupdialog.ui:51 Dialogs/qwaitedplayersetupdialog.ui:33
+#: Dialogs/qplayersetupdialog.ui:48 Dialogs/qwaitedplayersetupdialog.ui:33
 #, kde-format
 msgid "Choose your nation"
 msgstr "अपन देस चुनव"
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, nationCombo)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, waitedPlayersCombo)
-#: Dialogs/qplayersetupdialog.ui:55 Dialogs/qwaitedplayersetupdialog.ui:37
+#: Dialogs/qplayersetupdialog.ui:52 Dialogs/qwaitedplayersetupdialog.ui:37
 #, kde-format
 msgid ""
 "A combo box that lists currently available nations.\n"
@@ -1474,13 +1484,13 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
-#: Dialogs/qplayersetupdialog.ui:79 Dialogs/qwaitedplayersetupdialog.ui:47
+#: Dialogs/qplayersetupdialog.ui:76 Dialogs/qwaitedplayersetupdialog.ui:47
 #, fuzzy, kde-format
 msgid "Enter your password:"
 msgstr "अपन पासवर्ड भरव :"
 
 #. i18n: ectx: property (text), widget (QCheckBox, isComputerCheckBox)
-#: Dialogs/qplayersetupdialog.ui:104
+#: Dialogs/qplayersetupdialog.ui:101
 #, kde-format
 msgid "Pla&yer is computer"
 msgstr "कम्प्यूटर खिलाड़ी हे (&y)"
@@ -1511,7 +1521,7 @@ msgid "New Game or Exit"
 msgstr "नवा खेल या बाहिर"
 
 #. i18n: ectx: property (text), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:24 GameLogic/gameautomaton.cpp:1625
+#: Dialogs/restartOrExitDialog.ui:24
 #, kde-format
 msgid "New Game"
 msgstr "नवा खेल"
@@ -1535,7 +1545,7 @@ msgid "Do nothing. Game buttons will be available"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:47 GameLogic/gameautomaton.cpp:1626
+#: Dialogs/restartOrExitDialog.ui:47
 #, kde-format
 msgid "Exit"
 msgstr "बाहिर"
@@ -1553,7 +1563,7 @@ msgid "%1 won! Do you want to play again?"
 msgstr "%1 जीत गिस ! का आप मन फिर से खेलना चाहथो ?"
 
 #. i18n: ectx: property (text), widget (QLineEdit, hostEdit)
-#: Dialogs/tcpconnectwidget.ui:74
+#: Dialogs/tcpconnectwidget.ui:71
 #, kde-format
 msgid "localhost"
 msgstr ""
@@ -1569,16 +1579,12 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: GameLogic/aiplayer.cpp:506 Sprites/skinSpritesData.cpp:89
-#: Sprites/skinSpritesData.cpp:105
-#, kde-format
-msgid "Fatal Error"
-msgstr "गंभीर गलती"
-
 #: GameLogic/gameautomaton.cpp:303
-#, kde-format
-msgid "KsirK - Network configuration"
-msgstr "केसिर्क - नेटवर्क कान्फिगरेसन"
+#, fuzzy, kde-format
+#| msgid "Network configuration"
+msgctxt "@title:window"
+msgid "Network Configuration"
+msgstr "नेटवर्क कान्फिगरेसन"
 
 #: GameLogic/gameautomaton.cpp:304
 #, kde-format
@@ -1590,9 +1596,11 @@ msgstr ""
 msgid "Do you really want to end your current game and join another?"
 msgstr "नवा खेल चालू करे बर का आप मन सचमुच ए खेल ल बन्द करना चाहथो ?"
 
-#: GameLogic/gameautomaton.cpp:1191 kgamewin.cpp:2550
-#, kde-format
-msgid "New game confirmation"
+#: GameLogic/gameautomaton.cpp:1191
+#, fuzzy, kde-format
+#| msgid "New game confirmation"
+msgctxt "@title:window"
+msgid "New Game Confirmation"
 msgstr "नवा खेल के पुस्टि"
 
 #: GameLogic/gameautomaton.cpp:1191
@@ -1608,13 +1616,15 @@ msgid "%1 (%2) joined game ; waiting for %3 players to connect"
 msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1468
-#, kde-format
-msgid "Please choose another name"
+#, fuzzy, kde-format
+#| msgid "Please choose another name"
+msgid "Please choose another name."
 msgstr "किरपा करके, कोनो अउ दूसरा नाम चुनव"
 
 #: GameLogic/gameautomaton.cpp:1468
 #, fuzzy, kde-format
-msgid "KsirK - Name already used!"
+msgctxt "@title:window"
+msgid "Name Already Used"
 msgstr "केसिर्क - नाम पहिली से ही उपयोग मं हे!"
 
 #: GameLogic/gameautomaton.cpp:1474
@@ -1634,13 +1644,15 @@ msgid "Player%1"
 msgstr "खिलाड़ी %1"
 
 #: GameLogic/gameautomaton.cpp:1531
-#, kde-format
-msgid "Please choose another nation"
+#, fuzzy, kde-format
+#| msgid "Please choose another nation"
+msgid "Please choose another nation."
 msgstr "किरपा करके, कोनो अउ देस चुनव"
 
 #: GameLogic/gameautomaton.cpp:1531
 #, fuzzy, kde-format
-msgid "KsirK - Nation already used!"
+msgctxt "@title:window"
+msgid "Nation Already Used"
 msgstr "केसिर्क - देस पहिली से ही उपयोग मं हे!"
 
 #: GameLogic/gameautomaton.cpp:1623
@@ -1651,13 +1663,31 @@ msgid ""
 msgstr "केसिर्क - क्लायंट से कनेक्सन गंवा गिस!"
 
 #: GameLogic/gameautomaton.cpp:1624
-#, kde-format
-msgid "Starting a new game or exit."
+#, fuzzy, kde-format
+#| msgid "Starting a new game or exit."
+msgctxt "@title:window"
+msgid "Starting a New Game or Exit."
 msgstr "नवा खेल चालू करव या बाहिर जाव."
 
+#: GameLogic/gameautomaton.cpp:1625
+#, fuzzy, kde-format
+#| msgid "New Game"
+msgctxt "@action:button"
+msgid "New Game"
+msgstr "नवा खेल"
+
+#: GameLogic/gameautomaton.cpp:1626
+#, fuzzy, kde-format
+#| msgid "Exit"
+msgctxt "@action:button"
+msgid "Exit"
+msgstr "बाहिर"
+
 #: GameLogic/gameautomaton.cpp:1627
-#, kde-format
-msgid "Do nothing"
+#, fuzzy, kde-format
+#| msgid "Do Nothing"
+msgctxt "@action:button"
+msgid "Do Nothing"
 msgstr "कुछ नइ करव"
 
 #: GameLogic/gameautomaton.cpp:1649
@@ -1670,7 +1700,8 @@ msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1650
 #, fuzzy, kde-format
-msgid "KsirK - Lost connection to client!"
+msgctxt "@title:window"
+msgid "Lost Connection to Client"
 msgstr "केसिर्क - क्लायंट से कनेक्सन गंवा गिस!"
 
 #: GameLogic/gameautomaton.cpp:1652
@@ -1679,7 +1710,7 @@ msgid "Do want to save your game?"
 msgstr "का आप मन एखर खेल ल सहेजना चाहू?"
 
 #: GameLogic/gameautomaton.cpp:1818 GameLogic/gameautomaton.cpp:2235
-#: kgamewin.cpp:2041 kgamewin.cpp:2136 kgamewin.cpp:2173
+#: kgamewin.cpp:2042 kgamewin.cpp:2137 kgamewin.cpp:2174
 #, fuzzy, kde-format
 msgid "%1: %2 armies to place"
 msgstr "%1 : %2 रखे बर सेना"
@@ -1700,8 +1731,10 @@ msgid ""
 msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1902
-#, kde-format
-msgid "KsirK - Displaying Goal"
+#, fuzzy, kde-format
+#| msgid "KsirK - Displaying Goal"
+msgctxt "@title:window"
+msgid "Displaying Goal"
 msgstr "केसिर्क - गोल प्रदर्सन"
 
 #: GameLogic/gameautomaton.cpp:2088
@@ -1719,14 +1752,6 @@ msgstr ""
 msgid "Problem : no one destroyed"
 msgstr "समस्या : कोनो खतम नइ होइस"
 
-#: GameLogic/gameautomaton.cpp:2338 gestionSprites.cpp:873
-#: gestionSprites.cpp:893 gestionSprites.cpp:994 gestionSprites.cpp:1031
-#: gestionSprites.cpp:1066 gestionSprites.cpp:1120 gestionSprites.cpp:1157
-#: gestionSprites.cpp:1191
-#, fuzzy, kde-format
-msgid "KsirK - Error!"
-msgstr "केसिर्क - गलती!"
-
 #: GameLogic/gameautomaton.cpp:2387
 #, kde-format
 msgid ""
@@ -1738,7 +1763,8 @@ msgstr ""
 
 #: GameLogic/gameautomaton.cpp:2387
 #, fuzzy, kde-format
-msgid "KsirK - Invalid password!"
+msgctxt "@title:window"
+msgid "Invalid Password"
 msgstr "केसिर्क - अवैध पासवर्ड!"
 
 #: GameLogic/gameautomaton.cpp:2588
@@ -1750,8 +1776,10 @@ msgstr ""
 
 #: GameLogic/gameautomaton.cpp:2589
 #, fuzzy, kde-format
-msgid "Really Next Player?"
-msgstr "सही मं अगला खिलाड़ी?"
+#| msgid "New game confirmation"
+msgctxt "@title:window"
+msgid "Next Player Confirmation"
+msgstr "नवा खेल के पुस्टि"
 
 #: GameLogic/gameautomaton.cpp:2590
 #, fuzzy, kde-format
@@ -1776,14 +1804,15 @@ msgid "Error: no player to destroy"
 msgstr "गलती : खतम करे बर कोनो खिलाड़ी नइ"
 
 #: GameLogic/goal.cpp:231
-#, kde-format
-msgid "<br>%1 is still alive..."
+#, fuzzy, kde-format
+#| msgid "<br>%1 is still alive..."
+msgid "<br>%1 is still alive…"
 msgstr "<br/>%1 अभी जिंदा हे..."
 
 #: GameLogic/goal.cpp:238 GameLogic/goal.cpp:252
 #, fuzzy, kde-format
-msgid "<br>%2, you still have 1 country to conquer..."
-msgid_plural "<br>%2, you still have %1 countries to conquer..."
+msgid "<br>%2, you still have 1 country to conquer…"
+msgid_plural "<br>%2, you still have %1 countries to conquer…"
 msgstr[0] "<br/>आप मन के %1 मं कब्जा करना बचे हे"
 msgstr[1] "<br/>आप मन के %1 मं कब्जा करना बचे हे"
 
@@ -1799,10 +1828,10 @@ msgstr[1] ""
 #, kde-format
 msgid ""
 "<br>%2, you have enough countries but you still have to put more than 1 army "
-"on %3 of them..."
+"on %3 of them…"
 msgid_plural ""
 "<br>%2, you have enough countries but you still have to put more than %1 "
-"armies on %3 of them..."
+"armies on %3 of them…"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -1837,13 +1866,16 @@ msgid "%1 in %2"
 msgstr "%1 मं %2"
 
 #: GameLogic/goal.cpp:317
-#, kde-format
-msgid "KsirK - Goal Display"
+#, fuzzy, kde-format
+#| msgid "KsirK - Goal Display"
+msgctxt "@title:window"
+msgid "Goal Display"
 msgstr "केसिर्क - गोल प्रदर्सन"
 
 #: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:170
-#, kde-format
-msgid "No message..."
+#, fuzzy, kde-format
+#| msgid "No message..."
+msgid "No message…"
 msgstr "कोई संदेस नइ..."
 
 #: GameLogic/KsirkChatModel.cpp:73
@@ -1858,16 +1890,7 @@ msgid ""
 "Program cannot continue"
 msgstr ""
 
-#: GameLogic/onu.cpp:120 GameLogic/onu.cpp:137 gestionSprites.cpp:638
-#: gestionSprites.cpp:753 gestionSprites.cpp:798 gestionSprites.cpp:1354
-#: gestionSprites.cpp:1431 kgamewin.cpp:139 kgamewin.cpp:302 kgamewin.cpp:319
-#: kgamewin.cpp:488 kgamewin.cpp:644 Sprites/animsprite.cpp:515
-#: Sprites/animsprite.cpp:530
-#, fuzzy, kde-format
-msgid "Error!"
-msgstr "गलती !"
-
-#: GameLogic/onu.cpp:136
+#: GameLogic/onu.cpp:135
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -1957,6 +1980,11 @@ msgstr ""
 msgid "Join a standard TCP/IP network game"
 msgstr "मानक टीसीपी/आईपी नेटवर्क खेल मं सामिल हों"
 
+#: kgamewin.cpp:331 kgamewin.cpp:1218 kgamewin.cpp:1230 kgamewin.cpp:2387
+#, kde-format
+msgid "Goal"
+msgstr "गोल"
+
 #: kgamewin.cpp:332
 #, kde-format
 msgid "Display the Current Player's Goal"
@@ -1971,6 +1999,11 @@ msgstr "अभी हाल के खिलाड़ी गोल दिखा�
 #, kde-format
 msgid "Contextual Help"
 msgstr "कान्टेक्स्चुअल मदद"
+
+#: kgamewin.cpp:351
+#, kde-format
+msgid "Next Player"
+msgstr "अगला खिलाड़ी"
 
 #: kgamewin.cpp:353
 #, kde-format
@@ -2000,8 +2033,9 @@ msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
 msgstr ""
 
 #: kgamewin.cpp:732
-#, kde-format
-msgid "%1, you are defeated! Bye, bye..."
+#, fuzzy, kde-format
+#| msgid "%1, you are defeated! Bye, bye..."
+msgid "%1, you are defeated! Bye, bye…"
 msgstr "%1, आप मन हार गेव! राम राम..."
 
 #: kgamewin.cpp:804
@@ -2009,63 +2043,63 @@ msgstr "%1, आप मन हार गेव! राम राम..."
 msgid "%1: it is up to you again"
 msgstr "%1 : अब आप मन के बारी हे"
 
-#: kgamewin.cpp:816
+#: kgamewin.cpp:818
 #, kde-format
 msgid "%1 won!"
 msgstr ""
 
-#: kgamewin.cpp:819
+#: kgamewin.cpp:820
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
 msgstr ""
 
-#: kgamewin.cpp:823
+#: kgamewin.cpp:824
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
 "play again?"
 msgstr ""
 
-#: kgamewin.cpp:829
+#: kgamewin.cpp:830
 #, fuzzy, kde-format
 msgid "<br>You conquered all the world!"
 msgstr "आप मन ल पूरा दुनिया मं कब्जा करना होही!"
 
-#: kgamewin.cpp:833
+#: kgamewin.cpp:834
 #, fuzzy, kde-format
 msgid "<br>He conquered all the world!"
 msgstr "आप मन ल पूरा दुनिया मं कब्जा करना होही!"
 
-#: kgamewin.cpp:950
+#: kgamewin.cpp:951
 #, fuzzy, kde-format
 msgid "Do you want to quit the game?"
 msgstr "का आप मन ए खेल से बाहिर जाना चाहथो?"
 
-#: kgamewin.cpp:952
+#: kgamewin.cpp:953
 #, fuzzy, kde-format
 #| msgid "Quit"
 msgctxt "@action:button"
 msgid "Quit Game"
 msgstr "बाहिर जाव"
 
-#: kgamewin.cpp:964
+#: kgamewin.cpp:965
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
 msgstr "बाहिर जाय से पहिली, का आप मन ए खेल ल सहेजना चाहू?"
 
-#: kgamewin.cpp:1002
+#: kgamewin.cpp:1003
 #, fuzzy, kde-format
-#| msgid "KsirK - Load Game"
+#| msgid "New Local Game"
 msgctxt "@title:window"
-msgid "KsirK - Load Game"
-msgstr "केसिर्क - खेल लोड करव"
+msgid "Load Game"
+msgstr "नवा लोकल खेल"
 
-#: kgamewin.cpp:1040
+#: kgamewin.cpp:1041
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
 msgstr ""
 
-#: kgamewin.cpp:1119
+#: kgamewin.cpp:1120
 #, kde-format
 msgid ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
@@ -2076,91 +2110,91 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: kgamewin.cpp:1148
+#: kgamewin.cpp:1149
 #, kde-format
 msgid "Defend 1"
 msgstr "बचाव १"
 
-#: kgamewin.cpp:1149
+#: kgamewin.cpp:1150
 #, kde-format
 msgid "Defend 2"
 msgstr "बचाव २"
 
-#: kgamewin.cpp:1150
+#: kgamewin.cpp:1151
 #, kde-format
 msgid "Defend-Auto"
 msgstr "अपने अपन बचाव"
 
-#: kgamewin.cpp:1269
+#: kgamewin.cpp:1270
 #, kde-format
 msgid "Waiting for %1 players to connect"
 msgstr ""
 
-#: kgamewin.cpp:1659 kgamewin.cpp:1699
+#: kgamewin.cpp:1660 kgamewin.cpp:1700
 msgid "There is no country here!"
 msgstr "वहां कोनो देस नइ हे!"
 
-#: kgamewin.cpp:1663 kgamewin.cpp:1704
+#: kgamewin.cpp:1664 kgamewin.cpp:1705
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
 msgstr ""
 
-#: kgamewin.cpp:1667
+#: kgamewin.cpp:1668
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
 msgstr ""
 
-#: kgamewin.cpp:1671 kgamewin.cpp:1715
+#: kgamewin.cpp:1672 kgamewin.cpp:1716
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr ""
 
-#: kgamewin.cpp:1676 kgamewin.cpp:1721
+#: kgamewin.cpp:1677 kgamewin.cpp:1722
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
 msgstr ""
 
-#: kgamewin.cpp:1682
+#: kgamewin.cpp:1683
 #, kde-format
 msgid "Moving armies from %1 to %2."
 msgstr ""
 
-#: kgamewin.cpp:1710
+#: kgamewin.cpp:1711
 #, kde-format
 msgid "You are the owner of the second country: %1!"
 msgstr ""
 
-#: kgamewin.cpp:1728
+#: kgamewin.cpp:1729
 #, fuzzy
 msgid "Ready to fight!"
 msgstr "लड़ाई बर तैयार!"
 
-#: kgamewin.cpp:1822
+#: kgamewin.cpp:1823
 #, fuzzy
 msgid "<font color=\"orange\">No country here!</font>"
 msgstr "<font color=\"orange\">इहां कोनो देस नइ हे !</font>"
 
-#: kgamewin.cpp:1830
+#: kgamewin.cpp:1831
 #, fuzzy, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr "<font color=\"orange\"> आप मन %1 के मालिक नइ हे!</font>"
 
-#: kgamewin.cpp:1837
+#: kgamewin.cpp:1838
 #, fuzzy, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr "<font color=\"orange\">इहां कोनो देस नइ हे !</font>"
 
-#: kgamewin.cpp:1977
+#: kgamewin.cpp:1978
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
 msgstr ""
 
-#: kgamewin.cpp:2201
+#: kgamewin.cpp:2202
 #, fuzzy
 msgid "Exchange armies again or continue?"
 msgstr "सेनाओं के अदलाबदली फिर से करव या जारी रखव?"
 
-#: kgamewin.cpp:2226
+#: kgamewin.cpp:2227
 #, kde-format
 msgid ""
 "You must distribute\n"
@@ -2169,53 +2203,53 @@ msgstr ""
 "आप मन के अपन सब्बो\n"
 "सेनाओं ल वितरित करना होही"
 
-#: kgamewin.cpp:2226 main.cpp:42
-#, kde-format
-msgid "KsirK"
-msgstr "केसिर्क"
-
-#: kgamewin.cpp:2366
+#: kgamewin.cpp:2367
 msgid "Battle ongoing."
 msgstr "लड़ाई जारी हे."
 
-#: kgamewin.cpp:2487 kgamewin.cpp:2498 kgamewin.cpp:2521
+#: kgamewin.cpp:2488 kgamewin.cpp:2499 kgamewin.cpp:2522
 #, kde-format
 msgid "%1, it is up to you."
 msgstr "%1, ए अब आप मन के ऊपर हे."
 
-#: kgamewin.cpp:2550
+#: kgamewin.cpp:2551
 #, fuzzy, kde-format
 msgid "Do you really want to end your current game and start a new one?"
 msgstr "नवा खेल चालू करे बर का आप मन सचमुच ए खेल ल बन्द करना चाहथो ?"
 
-#: kgamewin.cpp:2550
+#: kgamewin.cpp:2551
+#, kde-format
+msgid "New game confirmation"
+msgstr "नवा खेल के पुस्टि"
+
+#: kgamewin.cpp:2551
 #, fuzzy, kde-format
 #| msgid "Start a New Game"
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "नवा खेल चालू करव"
 
-#: kgamewin.cpp:2806
+#: kgamewin.cpp:2807
 msgid "<b>KsirK quick Introduction</b>"
 msgstr "<b>केसिर्क परिचय</b>"
 
-#: kgamewin.cpp:2810
+#: kgamewin.cpp:2811
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr ""
 
-#: kgamewin.cpp:2814
-msgid "Start a new game or join a network game with the menu or the toolbar..."
+#: kgamewin.cpp:2815
+msgid "Start a new game or join a network game with the menu or the toolbar…"
 msgstr ""
 
-#: kgamewin.cpp:2818
+#: kgamewin.cpp:2819
 msgid ""
 "and then let the system guide you through messages and tooltips appearing on "
 "buttons when hovering above them. You can disable bubble help in the options "
 "window."
 msgstr ""
 
-#: kgamewin.cpp:2825
+#: kgamewin.cpp:2826
 #, kde-format
 msgid "Don't show messages anymore"
 msgstr "संदेस अब नइ देखाव"
@@ -2234,10 +2268,10 @@ msgstr ""
 
 #: kgamewinslots.cpp:441
 #, fuzzy, kde-format
-#| msgid "KsirK - Save Game"
+#| msgid "New Game"
 msgctxt "@title:window"
-msgid "KsirK - Save Game"
-msgstr "केसिर्क - खेल सहेजव"
+msgid "Save Game"
+msgstr "नवा खेल"
 
 #: kgamewinslots.cpp:445
 #, kde-format
@@ -2287,8 +2321,9 @@ msgid "<b><u>Country details</u></b>"
 msgstr "<b><u>देस विवरन</u></b>"
 
 #: krightdialog.cpp:170
-#, kde-format
-msgid "<i>Fighting in progress...</i>"
+#, fuzzy, kde-format
+#| msgid "<i>Fighting in progress...</i>"
+msgid "<i>Fighting in progress…</i>"
 msgstr "<i>लड़ाई मं प्रगति जारी हे...</i>"
 
 #: krightdialog.cpp:222
@@ -2423,6 +2458,11 @@ msgstr "मदद (&H)"
 msgid "Main Toolbar"
 msgstr "मुख्य औजार पट्टी"
 
+#: main.cpp:42
+#, kde-format
+msgid "KsirK"
+msgstr "केसिर्क"
+
 #: main.cpp:44
 #, kde-format
 msgid "KsirK - World Domination Strategy Game"
@@ -2507,10 +2547,9 @@ msgstr "मानक टीसीपी/आईपी नेटवर्क ख�
 
 #. i18n: ectx: property (text), widget (QPushButton, pbLoad)
 #: mainMenu.ui:118
-#, fuzzy, kde-format
-#| msgid "Load"
-msgid "Load..."
-msgstr "लोड"
+#, kde-format
+msgid "Load…"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, pbQuit)
 #: mainMenu.ui:138
@@ -2518,32 +2557,31 @@ msgstr "लोड"
 msgid "Quit"
 msgstr "बाहिर जाव"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, KsirkPreferencesWidget)
-#: preferences.ui:26
+#: newgamesetup.cpp:45
 #, kde-format
-msgid "KsirK Preferences"
-msgstr "केसिर्क प्राथमिकता"
+msgid "Fatal Error!"
+msgstr "गंभीर गलती!"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_soundEnabled)
-#: preferences.ui:38
+#: preferences.ui:35
 #, kde-format
 msgid "Sound enabled"
 msgstr "अवाज सक्छम हे"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: preferences.ui:51
+#: preferences.ui:48
 #, kde-format
 msgid "Sprites speed (slow, normal, rapid, immediate):"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_helpEnabled)
-#: preferences.ui:95
+#: preferences.ui:92
 #, kde-format
 msgid "Show help"
 msgstr "मदद देखाव"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_showArmiesNumbers)
-#: preferences.ui:102
+#: preferences.ui:99
 #, kde-format
 msgid "Show number of armies on countries"
 msgstr ""
@@ -2553,12 +2591,7 @@ msgstr ""
 msgid "Wrong save game format. Waited %1 and got %2!"
 msgstr ""
 
-#: SaveLoad/ksirkgamexmlhandler.cpp:59
-#, fuzzy, kde-format
-msgid "KsirK - Cannot load!"
-msgstr "केसिर्क - लोड नइ कर सकिस!"
-
-#: SaveLoad/ksirkgamexmlhandler.cpp:140
+#: SaveLoad/ksirkgamexmlhandler.cpp:139
 #, kde-format
 msgid "Current player is: %1"
 msgstr "अभी हाल के खिलाड़ी हे: %1"
@@ -2567,11 +2600,6 @@ msgstr "अभी हाल के खिलाड़ी हे: %1"
 #, kde-format
 msgid "Skin file parsing error"
 msgstr "स्किन फाइल पारसिंग गलती"
-
-#: SaveLoad/ksirkgamexmlloader.cpp:47
-#, kde-format
-msgid "KsirK - Error"
-msgstr "केसिर्क - गलती"
 
 #: Sprites/animsprite.cpp:515
 #, kde-format
@@ -2592,6 +2620,61 @@ msgstr "गलती - अग्यात स्किन इंट डाटा
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "गलती - अग्यात स्किन स्ट्रिंग डाटा:"
+
+#, fuzzy
+#~| msgid "Ksirk - New game properties"
+#~ msgid "KsirK - New game properties"
+#~ msgstr "केसिर्क - नवा खेल गुन"
+
+#, fuzzy
+#~| msgid "Player setup"
+#~ msgid "Player Setup"
+#~ msgstr "खिलाड़ी सेटअप"
+
+#~ msgid "KsirK - Network configuration"
+#~ msgstr "केसिर्क - नेटवर्क कान्फिगरेसन"
+
+#~ msgid "Do nothing"
+#~ msgstr "कुछ नइ करव"
+
+#, fuzzy
+#~ msgid "KsirK - Error!"
+#~ msgstr "केसिर्क - गलती!"
+
+#, fuzzy
+#~ msgid "Really Next Player?"
+#~ msgstr "सही मं अगला खिलाड़ी?"
+
+#, fuzzy
+#~ msgid "Error!"
+#~ msgstr "गलती !"
+
+#, fuzzy
+#~| msgid "KsirK - Load Game"
+#~ msgctxt "@title:window"
+#~ msgid "KsirK - Load Game"
+#~ msgstr "केसिर्क - खेल लोड करव"
+
+#, fuzzy
+#~| msgid "KsirK - Save Game"
+#~ msgctxt "@title:window"
+#~ msgid "KsirK - Save Game"
+#~ msgstr "केसिर्क - खेल सहेजव"
+
+#, fuzzy
+#~| msgid "Load"
+#~ msgid "Load..."
+#~ msgstr "लोड"
+
+#~ msgid "KsirK Preferences"
+#~ msgstr "केसिर्क प्राथमिकता"
+
+#, fuzzy
+#~ msgid "KsirK - Cannot load!"
+#~ msgstr "केसिर्क - लोड नइ कर सकिस!"
+
+#~ msgid "KsirK - Error"
+#~ msgstr "केसिर्क - गलती"
 
 #~ msgid "Nickname"
 #~ msgstr "उपनाम"

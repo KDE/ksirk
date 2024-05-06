@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:36+0000\n"
+"POT-Creation-Date: 2024-05-06 00:37+0000\n"
 "PO-Revision-Date: 2010-01-28 05:01+0200\n"
 "Last-Translator: Marek Laane <bald@smail.ee>\n"
 "Language-Team: Estonian <kde-et@linux.ee>\n"
@@ -34,8 +34,10 @@ msgid "Error: no player to destroy"
 msgstr "Viga: pole ühtegi mängijat hävitada"
 
 #: goal.cpp:213
-#, kde-format
-msgid "KsirK - Goal Display"
+#, fuzzy, kde-format
+#| msgid "KsirK - Goal Display"
+msgctxt "@title:window"
+msgid "Goal Display"
 msgstr "KsirK - eesmärgi näitamine"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
@@ -1268,20 +1270,14 @@ msgstr "&Abi"
 msgid "Main Toolbar"
 msgstr "Peamine tööriistariba"
 
-#. i18n: ectx: property (windowTitle), widget (QFrame, skinEditor)
-#: ksirkskineditorwidget.ui:20 main.cpp:52 main.cpp:54
-#, kde-format
-msgid "KsirK Skin Editor"
-msgstr "KsirKi naharedaktor"
-
 #. i18n: ectx: property (toolTip), widget (QScrollArea, buttonsScrollArea)
-#: ksirkskineditorwidget.ui:46
+#: ksirkskineditorwidget.ui:43
 #, kde-format
 msgid "Sprite placement buttons"
 msgstr "Spraitide asetamise nupud"
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, buttonsScrollArea)
-#: ksirkskineditorwidget.ui:49
+#: ksirkskineditorwidget.ui:46
 #, kde-format
 msgid ""
 "Use the buttons here to do the initial placement of the corresponding sprite "
@@ -1292,13 +1288,13 @@ msgstr ""
 "saab kasutada ainult siis, kui sprait ei ole veel asetatud. "
 
 #. i18n: ectx: property (toolTip), widget (QScrollArea, mapScrollArea)
-#: ksirkskineditorwidget.ui:69
+#: ksirkskineditorwidget.ui:66
 #, kde-format
 msgid "Map with sprites"
 msgstr "Kaart spraitidega"
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, mapScrollArea)
-#: ksirkskineditorwidget.ui:74
+#: ksirkskineditorwidget.ui:71
 #, kde-format
 msgid ""
 "Shows the map of the skin with all already placed sprites, the country "
@@ -1948,6 +1944,11 @@ msgstr ""
 "ühest suunast: esimene paremalt, teine vasakult, kolmas eest ja neljas "
 "tagant. Kuid kõik spraidid ei vaja kõiki versioone.</p>"
 
+#: main.cpp:52 main.cpp:54
+#, kde-format
+msgid "KsirK Skin Editor"
+msgstr "KsirKi naharedaktor"
+
 #: main.cpp:56
 #, kde-format
 msgid "(c) 2008, Gaël de Chalendar\n"
@@ -1978,31 +1979,30 @@ msgstr "avatav fail"
 msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr "Ankru ikooni laadimine nurjus<br>Programm lõpetab töö"
 
-#: mainwindow.cpp:127 mainwindow.cpp:141 mainwindow.cpp:678 mainwindow.cpp:707
-#: mainwindow.cpp:806 mainwindow.cpp:823 mainwindow.cpp:1193 onu.cpp:79
-#: onu.cpp:112 onu.cpp:131
-#, kde-format
-msgid "Error"
-msgstr "Viga"
-
 #: mainwindow.cpp:141 mainwindow.cpp:707 mainwindow.cpp:823
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
 msgstr "Tsentri ikooni laadimine nurjus<br>Programm lõpetab töö"
 
 #: mainwindow.cpp:324
-#, kde-format
-msgid "Open a saved skin..."
+#, fuzzy, kde-format
+#| msgid "Open a saved skin..."
+msgctxt "@info:tooltip"
+msgid "Open a saved skin"
 msgstr "Salvestatud naha avamine..."
 
 #: mainwindow.cpp:328
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Load &Recent"
+msgctxt "@action"
 msgid "Load &Recent"
 msgstr "Laadi &viimati kasutatud"
 
 #: mainwindow.cpp:329
-#, kde-format
-msgid "Open a recently saved skin..."
+#, fuzzy, kde-format
+#| msgid "Open a recently saved skin..."
+msgctxt "@info:tooltip"
+msgid "Open a recently saved skin"
 msgstr "Viimati salvestatud naha avamine..."
 
 #: mainwindow.cpp:337
@@ -2082,32 +2082,32 @@ msgstr "Kas tõesti kustutada manner '%1'?"
 msgid "Really delete continent?"
 msgstr "Kas tõesti kustutada manner?"
 
-#: mainwindow.cpp:1893
+#: mainwindow.cpp:1889
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "Kas tõesti kustutada eesmärk '%1'?"
 
-#: mainwindow.cpp:1893
+#: mainwindow.cpp:1889
 #, kde-format
 msgid "Really delete goal?"
 msgstr "Kas tõesti kustutada eesmärk?"
 
-#: mainwindow.cpp:1952
+#: mainwindow.cpp:1948
 #, kde-format
 msgid "New nationality name"
 msgstr "Uue rahvuse nimi"
 
-#: mainwindow.cpp:1952
+#: mainwindow.cpp:1948
 #, kde-format
 msgid "Enter the name of the new nationality"
 msgstr "Sisesta uue rahvuse nimi"
 
-#: mainwindow.cpp:1962
+#: mainwindow.cpp:1958
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "Kas tõesti kustutada rahvus '%1'?"
 
-#: mainwindow.cpp:1962
+#: mainwindow.cpp:1958
 #, kde-format
 msgid "Really delete nationality?"
 msgstr "Kas tõesti kustutada rahvus?"
@@ -2118,7 +2118,7 @@ msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
 msgstr ""
 "Viga - vigane naha definitsiooni faili vorming. Oodati %1, aga saadi %2"
 
-#: onu.cpp:111
+#: onu.cpp:110
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2127,7 +2127,7 @@ msgstr ""
 "Puuli failinime ei leitud\n"
 "Programm ei saa tööd jätkata"
 
-#: onu.cpp:130
+#: onu.cpp:128
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2136,7 +2136,7 @@ msgstr ""
 "Kaardimaski pilti ei leitud\n"
 "Programm ei saa tööd jätkata"
 
-#: onu.cpp:986
+#: onu.cpp:983
 #, kde-format
 msgid ""
 "Cannot read file %1:\n"
@@ -2145,23 +2145,17 @@ msgstr ""
 "Faili %1 lugemine nurjus:\n"
 "%2."
 
-#: onu.cpp:987
+#: onu.cpp:984
 #, kde-format
 msgid "PoolLoader"
 msgstr "PoolLoader"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, KsirkSkinEditorPreferencesWidget)
-#: preferences.ui:25
-#, kde-format
-msgid "KsirK Skin Editor Preferences"
-msgstr "KsirKi naharedaktori seadistused"
 
 #: skinSpritesData.cpp:85
 #, kde-format
 msgid "Error - Unknown skin int data: "
 msgstr "Viga - tundmatud naha täisarvandmed: "
 
-#: skinSpritesData.cpp:86 skinSpritesData.cpp:102
+#: skinSpritesData.cpp:86
 #, kde-format
 msgid "Fatal Error"
 msgstr "Parandamatu viga"
@@ -2170,6 +2164,19 @@ msgstr "Parandamatu viga"
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Viga - tundmatud naha stringiandmed: "
+
+#: skinSpritesData.cpp:102
+#, fuzzy, kde-format
+#| msgid "Fatal Error"
+msgctxt "@title:window"
+msgid "Fatal Error"
+msgstr "Parandamatu viga"
+
+#~ msgid "Error"
+#~ msgstr "Viga"
+
+#~ msgid "KsirK Skin Editor Preferences"
+#~ msgstr "KsirKi naharedaktori seadistused"
 
 #, fuzzy
 #~| msgid ""

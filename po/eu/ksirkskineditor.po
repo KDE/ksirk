@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:36+0000\n"
+"POT-Creation-Date: 2024-05-06 00:37+0000\n"
 "PO-Revision-Date: 2024-01-28 01:20+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -36,8 +36,10 @@ msgid "Error: no player to destroy"
 msgstr "Errorea: ez dago suntsitzeko jokalaririk"
 
 #: goal.cpp:213
-#, kde-format
-msgid "KsirK - Goal Display"
+#, fuzzy, kde-format
+#| msgid "KsirK - Goal Display"
+msgctxt "@title:window"
+msgid "Goal Display"
 msgstr "KsirK - Helburua azaldu"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
@@ -1291,20 +1293,14 @@ msgstr "&Laguntza"
 msgid "Main Toolbar"
 msgstr "Tresna-barra nagusia"
 
-#. i18n: ectx: property (windowTitle), widget (QFrame, skinEditor)
-#: ksirkskineditorwidget.ui:20 main.cpp:52 main.cpp:54
-#, kde-format
-msgid "KsirK Skin Editor"
-msgstr "KsirK azal editorea"
-
 #. i18n: ectx: property (toolTip), widget (QScrollArea, buttonsScrollArea)
-#: ksirkskineditorwidget.ui:46
+#: ksirkskineditorwidget.ui:43
 #, kde-format
 msgid "Sprite placement buttons"
 msgstr "Iratxoa kokatzeko botoiak"
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, buttonsScrollArea)
-#: ksirkskineditorwidget.ui:49
+#: ksirkskineditorwidget.ui:46
 #, kde-format
 msgid ""
 "Use the buttons here to do the initial placement of the corresponding sprite "
@@ -1316,13 +1312,13 @@ msgstr ""
 "kokatu gabe dagoenean bakarrik."
 
 #. i18n: ectx: property (toolTip), widget (QScrollArea, mapScrollArea)
-#: ksirkskineditorwidget.ui:69
+#: ksirkskineditorwidget.ui:66
 #, kde-format
 msgid "Map with sprites"
 msgstr "Mapa iratxoekin"
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, mapScrollArea)
-#: ksirkskineditorwidget.ui:74
+#: ksirkskineditorwidget.ui:71
 #, kde-format
 msgid ""
 "Shows the map of the skin with all already placed sprites, the country "
@@ -1996,6 +1992,11 @@ msgstr ""
 "aurrealdetik, eta azkena bizkarretik. Iratxo guztiek ez dituzte bertsio "
 "guztiak behar ordea.</p>"
 
+#: main.cpp:52 main.cpp:54
+#, kde-format
+msgid "KsirK Skin Editor"
+msgstr "KsirK azal editorea"
+
 #: main.cpp:56
 #, kde-format
 msgid "(c) 2008, Gaël de Chalendar\n"
@@ -2025,31 +2026,30 @@ msgstr "ireki beharreko fitxategia"
 msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr "Ezin da aingura ikonoa zamatu<br>Programak ezin du jarraitu"
 
-#: mainwindow.cpp:127 mainwindow.cpp:141 mainwindow.cpp:678 mainwindow.cpp:707
-#: mainwindow.cpp:806 mainwindow.cpp:823 mainwindow.cpp:1193 onu.cpp:79
-#: onu.cpp:112 onu.cpp:131
-#, kde-format
-msgid "Error"
-msgstr "Errorea"
-
 #: mainwindow.cpp:141 mainwindow.cpp:707 mainwindow.cpp:823
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
 msgstr "Ezin da erdigune ikonoa zamatu<br>Programak ezin du jarraitu"
 
 #: mainwindow.cpp:324
-#, kde-format
-msgid "Open a saved skin..."
+#, fuzzy, kde-format
+#| msgid "Open a saved skin..."
+msgctxt "@info:tooltip"
+msgid "Open a saved skin"
 msgstr "Ireki gordetako azal bat..."
 
 #: mainwindow.cpp:328
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Load &Recent"
+msgctxt "@action"
 msgid "Load &Recent"
 msgstr "Zamatu o&raintsukoa"
 
 #: mainwindow.cpp:329
-#, kde-format
-msgid "Open a recently saved skin..."
+#, fuzzy, kde-format
+#| msgid "Open a recently saved skin..."
+msgctxt "@info:tooltip"
+msgid "Open a recently saved skin"
 msgstr "Ireki berriki gordetako azal bat..."
 
 #: mainwindow.cpp:337
@@ -2128,32 +2128,32 @@ msgstr "'%1' kontinentea benetan ezabatu nahi duzu?"
 msgid "Really delete continent?"
 msgstr "Kontinentea benetan ezabatu?"
 
-#: mainwindow.cpp:1893
+#: mainwindow.cpp:1889
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "'%1' helburua benetan ezabatu nahi duzu?"
 
-#: mainwindow.cpp:1893
+#: mainwindow.cpp:1889
 #, kde-format
 msgid "Really delete goal?"
 msgstr "Helburua benetan ezabatu?"
 
-#: mainwindow.cpp:1952
+#: mainwindow.cpp:1948
 #, kde-format
 msgid "New nationality name"
 msgstr "Nazionalitate berriaren izena"
 
-#: mainwindow.cpp:1952
+#: mainwindow.cpp:1948
 #, kde-format
 msgid "Enter the name of the new nationality"
 msgstr "Sartu nazionalitate berriaren izena"
 
-#: mainwindow.cpp:1962
+#: mainwindow.cpp:1958
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "Benetan ezabatu nahi duzu '%1' nazionalitatea?"
 
-#: mainwindow.cpp:1962
+#: mainwindow.cpp:1958
 #, kde-format
 msgid "Really delete nationality?"
 msgstr "Nazionalitatea benetan ezabatu?"
@@ -2165,7 +2165,7 @@ msgstr ""
 "Errorea - Azal-definizio fitxategi-formatu baliogabea. %1 espero zen eta %2 "
 "jaso da"
 
-#: onu.cpp:111
+#: onu.cpp:110
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2174,7 +2174,7 @@ msgstr ""
 "Ez da aurkitu «Pool» fitxategi-izena\n"
 "Programak ezin du jarraitu"
 
-#: onu.cpp:130
+#: onu.cpp:128
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2183,7 +2183,7 @@ msgstr ""
 "Ez du aurkitu maparen maskara irudia\n"
 "Programak ezin du jarraitu"
 
-#: onu.cpp:986
+#: onu.cpp:983
 #, kde-format
 msgid ""
 "Cannot read file %1:\n"
@@ -2192,23 +2192,17 @@ msgstr ""
 "Ezin du %1 fitxategia irakurri:\n"
 "%2."
 
-#: onu.cpp:987
+#: onu.cpp:984
 #, kde-format
 msgid "PoolLoader"
 msgstr "FuntsZamatzailea"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, KsirkSkinEditorPreferencesWidget)
-#: preferences.ui:25
-#, kde-format
-msgid "KsirK Skin Editor Preferences"
-msgstr "KsirK Azal editorearen hobespenak"
 
 #: skinSpritesData.cpp:85
 #, kde-format
 msgid "Error - Unknown skin int data: "
 msgstr "Errorea - mota osoko azal-datu ezezagunak:"
 
-#: skinSpritesData.cpp:86 skinSpritesData.cpp:102
+#: skinSpritesData.cpp:86
 #, kde-format
 msgid "Fatal Error"
 msgstr "Errore larria"
@@ -2217,3 +2211,16 @@ msgstr "Errore larria"
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Errorea - azal-kate datu ezezagunak:"
+
+#: skinSpritesData.cpp:102
+#, fuzzy, kde-format
+#| msgid "Fatal Error"
+msgctxt "@title:window"
+msgid "Fatal Error"
+msgstr "Errore larria"
+
+#~ msgid "Error"
+#~ msgstr "Errorea"
+
+#~ msgid "KsirK Skin Editor Preferences"
+#~ msgstr "KsirK Azal editorearen hobespenak"

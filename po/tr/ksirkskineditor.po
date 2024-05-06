@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:36+0000\n"
+"POT-Creation-Date: 2024-05-06 00:37+0000\n"
 "PO-Revision-Date: 2023-11-11 23:31+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -38,8 +38,10 @@ msgid "Error: no player to destroy"
 msgstr "Hata: Yok edilecek oyuncu yok"
 
 #: goal.cpp:213
-#, kde-format
-msgid "KsirK - Goal Display"
+#, fuzzy, kde-format
+#| msgid "KsirK - Goal Display"
+msgctxt "@title:window"
+msgid "Goal Display"
 msgstr "KsirK - Hedef Gösterimi"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
@@ -1268,20 +1270,14 @@ msgstr "&Yardım"
 msgid "Main Toolbar"
 msgstr "Ana Araç Çubuğu"
 
-#. i18n: ectx: property (windowTitle), widget (QFrame, skinEditor)
-#: ksirkskineditorwidget.ui:20 main.cpp:52 main.cpp:54
-#, kde-format
-msgid "KsirK Skin Editor"
-msgstr "KsirK Deri Düzenleyicisi"
-
 #. i18n: ectx: property (toolTip), widget (QScrollArea, buttonsScrollArea)
-#: ksirkskineditorwidget.ui:46
+#: ksirkskineditorwidget.ui:43
 #, kde-format
 msgid "Sprite placement buttons"
 msgstr "Görsel yerleştirme düğmeleri"
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, buttonsScrollArea)
-#: ksirkskineditorwidget.ui:49
+#: ksirkskineditorwidget.ui:46
 #, kde-format
 msgid ""
 "Use the buttons here to do the initial placement of the corresponding sprite "
@@ -1293,13 +1289,13 @@ msgstr ""
 "kullanılabilir. "
 
 #. i18n: ectx: property (toolTip), widget (QScrollArea, mapScrollArea)
-#: ksirkskineditorwidget.ui:69
+#: ksirkskineditorwidget.ui:66
 #, kde-format
 msgid "Map with sprites"
 msgstr "Görsellerle Harita"
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, mapScrollArea)
-#: ksirkskineditorwidget.ui:74
+#: ksirkskineditorwidget.ui:71
 #, kde-format
 msgid ""
 "Shows the map of the skin with all already placed sprites, the country "
@@ -1955,6 +1951,11 @@ msgstr ""
 "doğru, üçüncüsü önden ve sonuncusu da arkadan. Ancak, her görselin her "
 "yönden sürümüne gerek olmayabilir.</p>"
 
+#: main.cpp:52 main.cpp:54
+#, kde-format
+msgid "KsirK Skin Editor"
+msgstr "KsirK Deri Düzenleyicisi"
+
 #: main.cpp:56
 #, kde-format
 msgid "(c) 2008, Gaël de Chalendar\n"
@@ -1984,31 +1985,30 @@ msgstr "açılacak dosya"
 msgid "Cannot load anchor icon<br>Program cannot continue"
 msgstr "Merkez simgesi yüklenemedi<br>Program sürdürülemiyor"
 
-#: mainwindow.cpp:127 mainwindow.cpp:141 mainwindow.cpp:678 mainwindow.cpp:707
-#: mainwindow.cpp:806 mainwindow.cpp:823 mainwindow.cpp:1193 onu.cpp:79
-#: onu.cpp:112 onu.cpp:131
-#, kde-format
-msgid "Error"
-msgstr "Hata"
-
 #: mainwindow.cpp:141 mainwindow.cpp:707 mainwindow.cpp:823
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
 msgstr "Merkez simgesi yüklenemedi<br>Program sürdürülemiyon"
 
 #: mainwindow.cpp:324
-#, kde-format
-msgid "Open a saved skin..."
+#, fuzzy, kde-format
+#| msgid "Open a saved skin..."
+msgctxt "@info:tooltip"
+msgid "Open a saved skin"
 msgstr "Kaydedilmiş bir tema aç..."
 
 #: mainwindow.cpp:328
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Load &Recent"
+msgctxt "@action"
 msgid "Load &Recent"
 msgstr "&Son Kullanılanlardan Yükle"
 
 #: mainwindow.cpp:329
-#, kde-format
-msgid "Open a recently saved skin..."
+#, fuzzy, kde-format
+#| msgid "Open a recently saved skin..."
+msgctxt "@info:tooltip"
+msgid "Open a recently saved skin"
 msgstr "Son kaydedilen temalardan birini aç..."
 
 #: mainwindow.cpp:337
@@ -2087,32 +2087,32 @@ msgstr "'%1' kıtasını gerçekten silmek istiyor musunuz?"
 msgid "Really delete continent?"
 msgstr "Kıtayı gerçekten silmek istiyor musunuz?"
 
-#: mainwindow.cpp:1893
+#: mainwindow.cpp:1889
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "'%1' hedefini gerçekten silmek istiyor musunuz?"
 
-#: mainwindow.cpp:1893
+#: mainwindow.cpp:1889
 #, kde-format
 msgid "Really delete goal?"
 msgstr "Hedefi gerçekten silmek istiyor musunuz?"
 
-#: mainwindow.cpp:1952
+#: mainwindow.cpp:1948
 #, kde-format
 msgid "New nationality name"
 msgstr "Yeni ulus adı"
 
-#: mainwindow.cpp:1952
+#: mainwindow.cpp:1948
 #, kde-format
 msgid "Enter the name of the new nationality"
 msgstr "Yeni ulusun adını girin"
 
-#: mainwindow.cpp:1962
+#: mainwindow.cpp:1958
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "'%1' ulusunu gerçekten silmek istiyor musunuz?"
 
-#: mainwindow.cpp:1962
+#: mainwindow.cpp:1958
 #, kde-format
 msgid "Really delete nationality?"
 msgstr "Bu ulusu gerçekten silmek istiyor musunuz?"
@@ -2122,7 +2122,7 @@ msgstr "Bu ulusu gerçekten silmek istiyor musunuz?"
 msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
 msgstr "Hata - Geçersiz tema dosyası. Olması gereken %1, alınan %2"
 
-#: onu.cpp:111
+#: onu.cpp:110
 #, kde-format
 msgid ""
 "Pool filename not found\n"
@@ -2131,7 +2131,7 @@ msgstr ""
 "Oylama dosya adı bulunamadı\n"
 "Program sürdürülemiyor"
 
-#: onu.cpp:130
+#: onu.cpp:128
 #, kde-format
 msgid ""
 "Map mask image not found\n"
@@ -2140,7 +2140,7 @@ msgstr ""
 "Harita maske görseli bulunamadı\n"
 "Program sürdürülemiyor"
 
-#: onu.cpp:986
+#: onu.cpp:983
 #, kde-format
 msgid ""
 "Cannot read file %1:\n"
@@ -2149,23 +2149,17 @@ msgstr ""
 "Dosya okunamadı %1:\n"
 "%2."
 
-#: onu.cpp:987
+#: onu.cpp:984
 #, kde-format
 msgid "PoolLoader"
 msgstr "HavuzYükleyici"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, KsirkSkinEditorPreferencesWidget)
-#: preferences.ui:25
-#, kde-format
-msgid "KsirK Skin Editor Preferences"
-msgstr "KsirK Deri Düzenleyicisi Özellikleri"
 
 #: skinSpritesData.cpp:85
 #, kde-format
 msgid "Error - Unknown skin int data: "
 msgstr "Hata - Bilinmeyen tema tamsayı verisi: "
 
-#: skinSpritesData.cpp:86 skinSpritesData.cpp:102
+#: skinSpritesData.cpp:86
 #, kde-format
 msgid "Fatal Error"
 msgstr "Onulmaz Hata"
@@ -2174,3 +2168,16 @@ msgstr "Onulmaz Hata"
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Hata - Bilinmeyen tema dizi verisi: "
+
+#: skinSpritesData.cpp:102
+#, fuzzy, kde-format
+#| msgid "Fatal Error"
+msgctxt "@title:window"
+msgid "Fatal Error"
+msgstr "Onulmaz Hata"
+
+#~ msgid "Error"
+#~ msgstr "Hata"
+
+#~ msgid "KsirK Skin Editor Preferences"
+#~ msgstr "KsirK Deri Düzenleyicisi Özellikleri"
