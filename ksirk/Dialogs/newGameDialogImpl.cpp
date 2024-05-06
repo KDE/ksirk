@@ -46,6 +46,9 @@ NewGameWidget::NewGameWidget(NewGameSetup* newGameSetup, QWidget *parent) :
   qCDebug(KSIRK_LOG);
   setupUi(this);
   
+  const QString nextIcon = isRightToLeft() ? QStringLiteral("go-previous") : QStringLiteral("go-next");
+  nextButton->setIcon(QIcon::fromTheme(nextIcon));
+
   QObject::connect(nextButton, &QAbstractButton::clicked, this, &NewGameWidget::slotOK );
   QObject::connect(cancelButton, &QAbstractButton::clicked, this, &NewGameWidget::slotCancel );
   QObject::connect(skinCombo, &QComboBox::activated, this, &NewGameWidget::slotSkinChanged);

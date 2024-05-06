@@ -38,6 +38,9 @@ NewGameSummaryWidget::NewGameSummaryWidget(QWidget *parent) :
 {
   qCDebug(KSIRK_LOG);
   setupUi(this);
+  const QString previousIcon = isRightToLeft() ? QStringLiteral("go-next") : QStringLiteral("go-previous");
+  previousButton->setIcon(QIcon::fromTheme(previousIcon));
+
   connect(previousButton,&QAbstractButton::clicked,this,&NewGameSummaryWidget::previous);
   connect(cancelButton,&QAbstractButton::clicked,this,&NewGameSummaryWidget::cancel);
   playersTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);

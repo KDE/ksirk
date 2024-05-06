@@ -34,6 +34,10 @@ TcpConnectWidget::TcpConnectWidget(QWidget *parent) : QWidget(parent), Ui::TcpCo
 {
   qCDebug(KSIRK_LOG) << "";
   setupUi(this);
+  const QString nextIcon = isRightToLeft() ? QStringLiteral("go-previous") : QStringLiteral("go-next");
+  nextButton->setIcon(QIcon::fromTheme(nextIcon));
+  const QString previousIcon = isRightToLeft() ? QStringLiteral("go-next") : QStringLiteral("go-previous");
+  previousButton->setIcon(QIcon::fromTheme(previousIcon));
   QRegularExpression rx(QStringLiteral("^.+$"));
   auto *v = new QRegularExpressionValidator(rx, this);
   hostEdit->setValidator(v);

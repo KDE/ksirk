@@ -51,6 +51,10 @@ KPlayerSetupWidget::KPlayerSetupWidget(QWidget *parent) :
 {
   qCDebug(KSIRK_LOG);
   setupUi(this);
+  const QString nextIcon = isRightToLeft() ? QStringLiteral("go-previous") : QStringLiteral("go-next");
+  nextButton->setIcon(QIcon::fromTheme(nextIcon));
+  const QString previousIcon = isRightToLeft() ? QStringLiteral("go-next") : QStringLiteral("go-previous");
+  previousButton->setIcon(QIcon::fromTheme(previousIcon));
 
   connect(nationCombo, &QComboBox::activated, this, &KPlayerSetupWidget::slotNationChanged);
   connect(nameLineEdit, &QLineEdit::textEdited, this, &KPlayerSetupWidget::slotNameEdited);

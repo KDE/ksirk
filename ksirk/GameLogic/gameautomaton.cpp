@@ -1622,8 +1622,8 @@ void GameAutomaton::slotConnectionToServerBroken()
     int answer = KMessageBox::questionTwoActionsCancel(m_game,
                                                   i18n("KsirK - Lost connection to server!\nWhat do you want to do?"),
                                                   i18nc("@title:window", "Starting a New Game or Exit."),
-                                                  KGuiItem(i18nc("@action:button", "New Game")),
-                                                  KGuiItem(i18nc("@action:button", "Exit")),
+                                                  KGuiItem(i18nc("@action:button", "New Game"), QStringLiteral("document-new")),
+                                                  KGuiItem(i18nc("@action:button", "Exit"), QStringLiteral("application-exit")),
                                                   KGuiItem(i18nc("@action:button", "Do Nothing")));
     if (answer == KMessageBox::PrimaryAction)
     {

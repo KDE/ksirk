@@ -20,6 +20,9 @@
           </property>
           <item>
             <widget class="QPushButton" name="newGameButton" >
+              <property name="icon">
+               <iconset theme="document-new"/>
+              </property>
               <property name="text" >
                 <string>New Game</string>
               </property>
@@ -43,6 +46,9 @@
           </item>
           <item>
             <widget class="QPushButton" name="exitButton" >
+              <property name="icon">
+               <iconset theme="application-exit"/>
+              </property>
               <property name="text" >
                 <string>Exit</string>
               </property>

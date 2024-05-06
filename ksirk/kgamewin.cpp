@@ -337,7 +337,7 @@ void KGameWindow::initActions()
   qCDebug(KSIRK_LOG) << "Adding action game_goal";
   actionCollection()->addAction("game_goal", m_goalAction);
   
-  m_contextualHelpAction = new QAction(i18nc("@action", "Contextual Help"), this);
+  m_contextualHelpAction = new QAction(QIcon::fromTheme(QStringLiteral("help-contextual")), i18nc("@action", "Contextual Help"), this);
   m_contextualHelpAction->setEnabled(false);
   KActionCollection::setDefaultShortcut(m_contextualHelpAction, Qt::CTRL | Qt::Key_F1);
   connect(m_contextualHelpAction, &QAction::triggered, this, &KGameWindow::slotContextualHelp);
@@ -946,7 +946,7 @@ bool KGameWindow::queryClose()
     switch ( KMessageBox::warningTwoActions( this,
                                         i18n("Do you want to quit the game?"),
                                         QString(),
-                                        KGuiItem(i18nc("@action:button", "Quit Game")),
+                                        KGuiItem(i18nc("@action:button", "Quit Game"), QStringLiteral("application-exit")),
                                         KStandardGuiItem::cancel()) )
     {
     case KMessageBox::PrimaryAction :
@@ -2544,7 +2544,7 @@ bool KGameWindow::actionNewGame(GameAutomaton::NetworkGameType socket)
   qCDebug(KSIRK_LOG);
   if  ( ( m_automaton->playerList()->count() == 0 ) ||
   ( isMyState(GameLogic::GameAutomaton::GAME_OVER)  ) ||
-        (KMessageBox::warningContinueCancel(this,i18n("Do you really want to end your current game and start a new one?"),i18n("New game confirmation"),KGuiItem(i18nc("@action:button", "Start New Game"))) == KMessageBox::Continue ) )
+        (KMessageBox::warningContinueCancel(this,i18n("Do you really want to end your current game and start a new one?"),i18n("New game confirmation"),KGuiItem(i18nc("@action:button", "Start New Game"), QStringLiteral("document-new"))) == KMessageBox::Continue ) )
 
   {
     qCDebug(KSIRK_LOG) << "valid";

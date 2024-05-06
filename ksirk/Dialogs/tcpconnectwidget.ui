@@ -91,6 +91,9 @@
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
       <widget class="QPushButton" name="cancelButton">
+       <property name="icon">
+        <iconset theme="dialog-cancel"/>
+       </property>
        <property name="text">
         <string>Cancel</string>
        </property>
@@ -112,14 +115,14 @@
      <item>
       <widget class="QPushButton" name="previousButton">
        <property name="text">
-        <string>&lt;&lt; Previous</string>
+        <string>Previous</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="nextButton">
        <property name="text">
-        <string>Next &gt;&gt;</string>
+        <string>Next</string>
        </property>
       </widget>
      </item>

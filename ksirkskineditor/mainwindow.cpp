@@ -525,8 +525,8 @@ bool MainWindow::queryClose()
     switch (KMessageBox::warningTwoActionsCancel(this,
                                              i18n("There are unsaved changes. What do you want to do?"),
                                              i18nc("@title:window", "Unsaved Changes"),
-                                             KGuiItem(i18nc("@action:button", "Quit Without Saving")),
-                                             KGuiItem(i18nc("@action:button", "Save and Quit")),
+                                             KGuiItem(i18nc("@action:button", "Quit Without Saving"), QStringLiteral("application-exit")),
+                                             KGuiItem(i18nc("@action:button", "Save and Quit"), QStringLiteral("document-save")),
                                              KStandardGuiItem::cancel()))
     {
       case KMessageBox::PrimaryAction:
