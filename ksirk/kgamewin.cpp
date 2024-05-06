@@ -305,7 +305,7 @@ void KGameWindow::initActions()
   QAction * newSocketAction = new QAction(QIcon(QPixmap(imageFileName)), i18n("New Standard TCP/IP Network Game"), this);
   newSocketAction->setIconText(i18n("New TCP/IP"));
   KActionCollection::setDefaultShortcut(newSocketAction, Qt::CTRL | Qt::Key_T);
-  newSocketAction->setStatusTip(i18n("Create a new standard TCP/IP network game"));
+  newSocketAction->setToolTip(i18nc("@info:tooltip", "Create a new standard TCP/IP network game"));
   connect(newSocketAction, &QAction::triggered, this, &KGameWindow::slotNewSocketGame);
   qCDebug(KSIRK_LOG) << "Adding action game_new_socket";
   actionCollection()->addAction("game_new_socket", newSocketAction);
@@ -323,7 +323,7 @@ void KGameWindow::initActions()
         i18n("Join a Standard TCP/IP Network Game"), this);
   joinAction->setIconText(i18n("Join TCP/IP"));
   KActionCollection::setDefaultShortcut(joinAction, Qt::CTRL | Qt::SHIFT | Qt::Key_J);
-  joinAction->setStatusTip(i18n("Join a standard TCP/IP network game"));
+  joinAction->setToolTip(i18nc("@info:tooltip", "Join a standard TCP/IP network game"));
   connect(joinAction, &QAction::triggered, this, &KGameWindow::slotJoinNetworkGame);
    qCDebug(KSIRK_LOG) << "Adding action game_join_socket";
   actionCollection()->addAction("game_join_socket", joinAction);
@@ -332,7 +332,7 @@ void KGameWindow::initActions()
   m_goalAction-> setText(i18n("Display the Current Player's Goal"));
   m_goalAction-> setIconText("  ");
   KActionCollection::setDefaultShortcut(m_goalAction, Qt::CTRL | Qt::Key_G);
-  m_goalAction->setStatusTip(i18n("Display the current player's goal"));
+  m_goalAction->setToolTip(i18nc("@info:tooltip", "Display the current player's goal"));
   connect(m_goalAction, &QAction::triggered, this, &KGameWindow::slotShowGoal);
   m_goalAction->setVisible(false);
   qCDebug(KSIRK_LOG) << "Adding action game_goal";
@@ -350,14 +350,14 @@ void KGameWindow::initActions()
   m_nextPlayerAction =  new QAction(QIcon(nextPlayerActionImageFileName),
         i18n("Next Player"), this);
   connect(m_nextPlayerAction, &QAction::triggered, this, &KGameWindow::slotNextPlayer);
-  m_contextualHelpAction->setStatusTip(i18n("Lets the next player play"));
+  m_contextualHelpAction->setToolTip(i18nc("@info:tooltip", "Let the next player play"));
   m_nextPlayerAction->setEnabled(false);
   actionCollection()->addAction("game_nextplayer", m_nextPlayerAction);
 
   QAction * finishMovesAction = new QAction(
         i18n("Finish moves"), this);
   KActionCollection::setDefaultShortcut(finishMovesAction, Qt::Key_Space);
-  finishMovesAction->setStatusTip(i18n("Finish moving the current sprites"));
+  finishMovesAction->setToolTip(i18nc("@info:tooltip", "Finish moving the current sprites"));
   connect(finishMovesAction, &QAction::triggered, this, &KGameWindow::slotFinishMoves);
   actionCollection()->addAction("game_finish_moves", finishMovesAction);
 
