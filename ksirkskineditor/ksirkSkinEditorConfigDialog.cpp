@@ -52,7 +52,7 @@ KsirkSkinEditorConfigurationDialog::KsirkSkinEditorConfigurationDialog (
   m_widget->setupUi(w);
 
  
-  addPage( w, i18n("Preferences"), QStringLiteral("games-config-options")/*, i18n("Preferences"), false*/);
+  addPage( w, i18nc("@title:tab", "Preferences"), QStringLiteral("games-config-options")/*, i18n("Preferences"), false*/);
   // below, connection to activate the apply button
 //   connect(m_widget->reloadOnChangeMode, SIGNAL(clicked(int)), this, SLOT(settingChanged(int)));
 }

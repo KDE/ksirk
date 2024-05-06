@@ -262,7 +262,7 @@ void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int
     && !game->automaton()->currentPlayer()->isAI()
       && !game->automaton()->currentPlayer()->isVirtual())
   {
-      buttonStopAttack = new QPushButton(stopAttackAuto,i18n("Stop Auto-Attack"));
+      buttonStopAttack = new QPushButton(stopAttackAuto,i18nc("@action:button", "Stop Auto-Attack"));
       mainLayout->addWidget(buttonStopAttack,3,0);
       connect(buttonStopAttack, &QAbstractButton::clicked, this, &KRightDialog::slotStopAttackAuto);
   }
@@ -270,7 +270,7 @@ void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int
     && !game->automaton()->currentPlayer()->isAI()
     && !game->automaton()->currentPlayer()->isVirtual())
   {
-    buttonStopDefense = new QPushButton(stopAttackAuto,i18n("Stop Auto-Defense"));
+    buttonStopDefense = new QPushButton(stopAttackAuto,i18nc("@action:button", "Stop Auto-Defense"));
     mainLayout->addWidget(buttonStopDefense,4,0);
     connect(buttonStopDefense, &QAbstractButton::clicked, this, &KRightDialog::slotStopDefenseAuto);
   }
@@ -295,9 +295,9 @@ void KRightDialog::displayFightDetails(Country * attaker, Country * defender,int
     QGridLayout* btRecycleLayout = new QGridLayout();
     QGridLayout* btValidLayout = new QGridLayout();
 
-    QPushButton* buttonValid = new QPushButton(recycleNextPlayer, i18n("Valid"), this);
-    QPushButton* buttonRecycle = new QPushButton(recycleContinue, i18n("Recycle"), this);
-    QPushButton* buttonRecycleDone = new QPushButton(recycleDone, i18n("Done"), this);
+    auto * buttonValid = new QPushButton(recycleNextPlayer, i18nc("@action:button", "Valid"), this);
+    auto * buttonRecycle = new QPushButton(recycleContinue, i18nc("@action:button", "Recycle"), this);
+    auto * buttonRecycleDone = new QPushButton(recycleDone, i18nc("@action:button", "Done"), this);
 
     connect(buttonValid, &QAbstractButton::clicked, game, &KGameWindow::slotNextPlayer);
     connect(buttonRecycle, &QAbstractButton::clicked, game, &KGameWindow::slotRecycling);

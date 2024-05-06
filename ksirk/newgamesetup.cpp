@@ -42,7 +42,7 @@ m_automaton(automaton), m_skin(""), m_worlds(), m_players(),
     {
       KMessageBox::error(nullptr,
                          i18n("Skins directory not found - Verify your installation\nProgram cannot continue"),
-                         i18n("Fatal Error!"));
+                         i18nc("@title:window", "Fatal Error"));
                          exit(2);
     }
     qCDebug(KSIRK_LOG) << "Got skins dir name: " << skinsDirName;

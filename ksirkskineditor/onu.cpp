@@ -75,7 +75,7 @@ ONU::ONU(const QString& configDir, QObject *parent)
   if (!formatVersion.isEmpty() && formatVersion != ONU_FILE_FORMAT_VERSION)
   {
     KMessageBox::error(nullptr,
-                        i18n("Error - Invalid skin definition file format. Expected %1 and got %2",QStringLiteral(ONU_FILE_FORMAT_VERSION),formatVersion) + "<br>" + m_configFileName);
+                        i18n("Invalid skin definition file format. Expected %1 and got %2",QStringLiteral(ONU_FILE_FORMAT_VERSION),formatVersion) + "<br>" + m_configFileName);
 //     exit(1);
   }
 
@@ -981,7 +981,7 @@ void ONU::loadPoolIds(const QString& fileName)
   {
     KMessageBox::error(nullptr,
                         i18n("Cannot read file %1:\n%2.",fileName,file.errorString()),
-                        i18n("PoolLoader"));
+                        i18nc("@title:window", "PoolLoader"));
                         return;
   }
   

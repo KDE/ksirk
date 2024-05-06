@@ -334,7 +334,7 @@ void MainWindow::initActions()
   
   m_saveGameAction = KGameStandardAction::save(this, &MainWindow::slotSaveSkin, this);
   actionCollection()->addAction(m_saveGameAction->objectName(), m_saveGameAction);
-  m_saveGameAction->setToolTip(i18n("Save the current skin"));
+  m_saveGameAction->setToolTip(i18nc("@info:tooltip", "Save the current skin"));
 
   action = KGameStandardAction::quit(this, &MainWindow::close, this);
   actionCollection()->addAction(action->objectName(), action);
@@ -524,10 +524,10 @@ bool MainWindow::queryClose()
   {
     switch (KMessageBox::warningTwoActionsCancel(this,
                                              i18n("There are unsaved changes. What do you want to do?"),
-                                             i18n("Exit Anyway?"),
-                                             KGuiItem(i18n("Quit without saving")),
-                                             KGuiItem(i18n("Save then quit")),
-                                             KGuiItem(i18n("Do not quit"))))
+                                             i18nc("@title:window", "Unsaved Changes"),
+                                             KGuiItem(i18nc("@action:button", "Quit Without Saving")),
+                                             KGuiItem(i18nc("@action:button", "Save and Quit")),
+                                             KStandardGuiItem::cancel()))
     {
       case KMessageBox::PrimaryAction:
         return true;
@@ -1302,7 +1302,7 @@ void MainWindow::slotNewCountry()
 {
   if (m_onu == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
-  QString newCountryName = QInputDialog::getText(this, i18n("New country name"), i18n("Enter the name of the new country"));
+  QString newCountryName = QInputDialog::getText(this, i18nc("@title:window", "New Country Name"), i18nc("@label:textbox", "Enter the name of the new country:"));
   m_onu->createCountry(newCountryName);
   m_skinDefWidget->countrieslist->addItem(newCountryName);
 }
@@ -1312,7 +1312,7 @@ void MainWindow::slotDeleteCountry()
   if (m_onu == nullptr) return;
   if (!m_skinDefWidget->countrieslist->currentItem()) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
-  int answer = KMessageBox::warningContinueCancel(this, i18n("Do you really want to delete country '%1'?", m_skinDefWidget->countrieslist->currentItem()->text()), i18n("Really delete country?"));
+  int answer = KMessageBox::warningContinueCancel(this, i18n("Do you really want to delete country '%1'?", m_skinDefWidget->countrieslist->currentItem()->text()), i18nc("@title:window", "Delete Country Confirmation"));
   if (answer == KMessageBox::Cancel)
   {
     return;
@@ -1331,7 +1331,7 @@ void MainWindow::slotNewContinent()
 {
   if (m_onu == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
-  QString newContinentName = QInputDialog::getText(this, i18n("New continent name"), i18n("Enter the name of the new continent"));
+  QString newContinentName = QInputDialog::getText(this, i18nc("@title:window", "New Continent Name"), i18nc("@label:textbox", "Enter the name of the new continent:"));
   m_onu->createContinent(newContinentName);
   m_skinDefWidget->continentslist->addItem(newContinentName);
 }
@@ -1341,7 +1341,7 @@ void MainWindow::slotDeleteContinent()
   if (m_onu == nullptr) return;
   if (!m_skinDefWidget->continentslist->currentItem()) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
-  int answer = KMessageBox::warningContinueCancel(this, i18n("Do you really want to delete continent '%1'?", m_skinDefWidget->continentslist->currentItem()->text()), i18n("Really delete continent?"));
+  int answer = KMessageBox::warningContinueCancel(this, i18n("Do you really want to delete continent '%1'?", m_skinDefWidget->continentslist->currentItem()->text()), i18nc("@title:window", "Delete Continent Confirmation"));
   if (answer == KMessageBox::Cancel)
   {
     return;
@@ -1886,7 +1886,7 @@ void MainWindow::slotDeleteGoal()
   if (m_onu == nullptr) return;
   if (!m_skinDefWidget->goalslist->currentItem()) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
-  int answer = KMessageBox::warningContinueCancel(this, i18n("Do you really want to delete goal '%1'?", m_skinDefWidget->goalslist->currentItem()->text()), i18n("Really delete goal?"));
+  int answer = KMessageBox::warningContinueCancel(this, i18n("Do you really want to delete goal '%1'?", m_skinDefWidget->goalslist->currentItem()->text()), i18nc("@title:window", "Delete Goal Confirmation"));
   if (answer == KMessageBox::Cancel)
   {
     return;
@@ -1945,7 +1945,7 @@ void MainWindow::slotNewNationality()
 {
   if (m_onu == nullptr) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
-  QString newNationalityName = QInputDialog::getText(this, i18n("New nationality name"), i18n("Enter the name of the new nationality"));
+  QString newNationalityName = QInputDialog::getText(this, i18nc("@title:window", "New Nationality Name"), i18nc("@label:textbox", "Enter the name of the new nationality:"));
   m_onu->createNationality(newNationalityName);
   m_skinDefWidget->nationalitieslist->addItem(newNationalityName);
 }
@@ -1955,7 +1955,7 @@ void MainWindow::slotDeleteNationality()
   if (m_onu == nullptr) return;
   if (!m_skinDefWidget->nationalitieslist->currentItem()) return;
   qCDebug(KSIRKSKINEDITOR_LOG);
-  int answer = KMessageBox::warningContinueCancel(this, i18n("Do you really want to delete nationality '%1'?", m_skinDefWidget->nationalitieslist->currentItem()->text()), i18n("Really delete nationality?"));
+  int answer = KMessageBox::warningContinueCancel(this, i18n("Do you really want to delete nationality '%1'?", m_skinDefWidget->nationalitieslist->currentItem()->text()), i18nc("@title:window", "Delete Nationality Confirmation"));
   if (answer == KMessageBox::Cancel)
   {
     return;

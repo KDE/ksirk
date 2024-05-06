@@ -282,11 +282,11 @@ QString Goal::message(int displayType) const
         QString joint;
         if (it_next==it_end)
         {
-          joint = i18n(" and ");
+          joint = i18nc("@item:intext country list separator of last item", " and ");
         }
         else
         {
-          joint = i18n(", ");
+          joint = i18nc("@item:intext country list separator of non-last item", ", ");
         }
         if (*it != nullptr)
         {

@@ -302,8 +302,8 @@ void KGameWindow::initActions()
     KMessageBox::error(nullptr, i18n("Cannot load button image %1<br>Program cannot continue",QString(CM_NEWNETGAME)));
     exit(2);
   }
-  QAction * newSocketAction = new QAction(QIcon(QPixmap(imageFileName)), i18n("New Standard TCP/IP Network Game"), this);
-  newSocketAction->setIconText(i18n("New TCP/IP"));
+  auto * newSocketAction = new QAction(QIcon(QPixmap(imageFileName)), i18nc("@action", "New Standard TCP/IP Network Game"), this);
+  newSocketAction->setIconText(i18nc("@action", "New TCP/IP"));
   KActionCollection::setDefaultShortcut(newSocketAction, Qt::CTRL | Qt::Key_T);
   newSocketAction->setToolTip(i18nc("@info:tooltip", "Create a new standard TCP/IP network game"));
   connect(newSocketAction, &QAction::triggered, this, &KGameWindow::slotNewSocketGame);
@@ -320,17 +320,16 @@ void KGameWindow::initActions()
     exit(2);
   }
   QAction * joinAction = new QAction(QIcon(QPixmap(imageFileName)),
-        i18n("Join a Standard TCP/IP Network Game"), this);
-  joinAction->setIconText(i18n("Join TCP/IP"));
+        i18nc("@action", "Join a Standard TCP/IP Network Game"), this);
+  joinAction->setIconText(i18nc("@action", "Join TCP/IP"));
   KActionCollection::setDefaultShortcut(joinAction, Qt::CTRL | Qt::SHIFT | Qt::Key_J);
   joinAction->setToolTip(i18nc("@info:tooltip", "Join a standard TCP/IP network game"));
   connect(joinAction, &QAction::triggered, this, &KGameWindow::slotJoinNetworkGame);
    qCDebug(KSIRK_LOG) << "Adding action game_join_socket";
   actionCollection()->addAction("game_join_socket", joinAction);
 
-  m_goalAction = new QAction(i18n("Goal"), this);
-  m_goalAction-> setText(i18n("Display the Current Player's Goal"));
-  m_goalAction-> setIconText("  ");
+  m_goalAction = new QAction(i18nc("@action", "Display the Current Player's Goal"), this);
+  m_goalAction-> setIconText(i18nc("@action", "Goal"));
   KActionCollection::setDefaultShortcut(m_goalAction, Qt::CTRL | Qt::Key_G);
   m_goalAction->setToolTip(i18nc("@info:tooltip", "Display the current player's goal"));
   connect(m_goalAction, &QAction::triggered, this, &KGameWindow::slotShowGoal);
@@ -338,8 +337,7 @@ void KGameWindow::initActions()
   qCDebug(KSIRK_LOG) << "Adding action game_goal";
   actionCollection()->addAction("game_goal", m_goalAction);
   
-  m_contextualHelpAction = new QAction(
-        i18n("Contextual Help"), this);
+  m_contextualHelpAction = new QAction(i18nc("@action", "Contextual Help"), this);
   m_contextualHelpAction->setEnabled(false);
   KActionCollection::setDefaultShortcut(m_contextualHelpAction, Qt::CTRL | Qt::Key_F1);
   connect(m_contextualHelpAction, &QAction::triggered, this, &KGameWindow::slotContextualHelp);
@@ -348,14 +346,13 @@ void KGameWindow::initActions()
 
   QString nextPlayerActionImageFileName = QStandardPaths::locate(QStandardPaths::AppDataLocation, m_automaton->skin() + '/' + CM_NEXTPLAYER);
   m_nextPlayerAction =  new QAction(QIcon(nextPlayerActionImageFileName),
-        i18n("Next Player"), this);
+        i18nc("@action", "Next Player"), this);
   connect(m_nextPlayerAction, &QAction::triggered, this, &KGameWindow::slotNextPlayer);
   m_contextualHelpAction->setToolTip(i18nc("@info:tooltip", "Let the next player play"));
   m_nextPlayerAction->setEnabled(false);
   actionCollection()->addAction("game_nextplayer", m_nextPlayerAction);
 
-  QAction * finishMovesAction = new QAction(
-        i18n("Finish moves"), this);
+  auto * finishMovesAction = new QAction(i18nc("@action", "Finish Moves"), this);
   KActionCollection::setDefaultShortcut(finishMovesAction, Qt::Key_Space);
   finishMovesAction->setToolTip(i18nc("@info:tooltip", "Finish moving the current sprites"));
   connect(finishMovesAction, &QAction::triggered, this, &KGameWindow::slotFinishMoves);
@@ -1145,9 +1142,9 @@ void KGameWindow::createDefenseDialog()
   mainLayout->addLayout(topLayout, 0, 0, Qt::AlignCenter);
   
   // Creat buttons and label of defense
-  QPushButton * def1 = new QPushButton (i18n("Defend 1"));
-  QPushButton * def2 = new QPushButton (i18n("Defend 2"));
-  QPushButton * defAuto = new QPushButton (i18n("Defend-Auto"));
+  auto * def1 = new QPushButton (i18nc("@action:button", "Defend 1"));
+  auto * def2 = new QPushButton (i18nc("@action:button", "Defend 2"));
+  auto * defAuto = new QPushButton (i18nc("@action:button", "Defend-Auto"));
 
   m_labDef = new QLabel ();
   m_labDef->setText(defenseLabel());
@@ -1214,7 +1211,7 @@ void KGameWindow::setBarFlagButton(const Player* player)
       if (!m_goalAction->isVisible())
         m_goalAction->setVisible(true);
       m_goalAction-> setIcon(QIcon(currentPlayer()->getFlag()-> image(0)));
-      m_goalAction-> setIconText(i18n("Goal"));
+      m_goalAction-> setIconText(i18nc("@action", "Goal"));
       m_barFlag-> setPixmap(currentPlayer()->getFlag()-> image(0));
       m_barFlag->show();
     }
@@ -1226,7 +1223,7 @@ void KGameWindow::setBarFlagButton(const Player* player)
       if (!m_goalAction->isVisible())
         m_goalAction->setVisible(true);
       m_goalAction-> setIcon(QIcon(player-> getFlag()-> image(0)));
-      m_goalAction-> setIconText(i18n("Goal"));
+      m_goalAction-> setIconText(i18nc("@action", "Goal"));
       m_barFlag-> setPixmap(player->getFlag()-> image(0));
       m_barFlag->show();
     }
@@ -2383,7 +2380,7 @@ void KGameWindow::defense(unsigned int nb)
     if (!m_goalAction->isVisible())
       m_goalAction->setVisible(true);
     m_goalAction-> setIcon(QIcon(m_firstCountry-> owner()->getFlag()-> image(0)));
-    m_goalAction-> setIconText(i18n("Goal"));
+    m_goalAction-> setIconText(i18nc("@action", "Goal"));
     m_barFlag-> setPixmap(m_firstCountry-> owner()->getFlag()-> image(0));
   }
   if (m_automaton->isAdmin())
