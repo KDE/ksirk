@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
   KAboutData aboutData(QStringLiteral("ksirk"),
                        i18n("KsirK"),
                        QStringLiteral(KSIRK_VERSION_STRING),
-                       i18n("KsirK - World Domination Strategy Game"),
+                       i18n("World Domination Strategy Game"),
                        KAboutLicense::GPL,
                        i18n("(c) 2002-2015, Gaël de Chalendar\n"),
                        i18n("For help and user manual, please see\nthe KsirK web site."),
