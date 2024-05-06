@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:36+0000\n"
+"POT-Creation-Date: 2024-05-06 02:46+0000\n"
 "PO-Revision-Date: 2013-04-12 03:54+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -1076,8 +1076,8 @@ msgstr "Келесі ойыншы"
 msgid "Details"
 msgstr "Егжей-тегжейі"
 
-#: decoratedgameframe.cpp:106 kgamewin.cpp:430 kgamewin.cpp:1316
-#: kgamewin.cpp:1328 kgamewin.cpp:2485
+#: decoratedgameframe.cpp:106 kgamewin.cpp:430 kgamewin.cpp:1317
+#: kgamewin.cpp:1329 kgamewin.cpp:2486
 #, kde-format
 msgid "Goal"
 msgstr "Мақсат"
@@ -1718,7 +1718,7 @@ msgid "Do you really want to end your current game and join another?"
 msgstr "Ойнап жатқанды доғарып басқасына қосылмақсыз ба?"
 
 #: GameLogic/gameautomaton.cpp:1194 GameLogic/gameautomaton.cpp:1223
-#: kgamewin.cpp:2649
+#: kgamewin.cpp:2650
 #, kde-format
 msgid "New game confirmation"
 msgstr "Жаңа ойын бастауын құптау"
@@ -1812,7 +1812,7 @@ msgid "Do want to save your game?"
 msgstr "Ойын күйін сақтауды қалайсыз ба?"
 
 #: GameLogic/gameautomaton.cpp:1860 GameLogic/gameautomaton.cpp:2277
-#: kgamewin.cpp:2140 kgamewin.cpp:2235 kgamewin.cpp:2272
+#: kgamewin.cpp:2141 kgamewin.cpp:2236 kgamewin.cpp:2273
 #, kde-format
 msgid "%1: %2 armies to place"
 msgstr "%1: %2 орналасатын армиялар"
@@ -2937,63 +2937,63 @@ msgstr "%1, Сіз жеңілдіңіз! Қош-сау..."
 msgid "%1: it is up to you again"
 msgstr "%1: бұл қайта Сіздің құзырыңызда"
 
-#: kgamewin.cpp:915
+#: kgamewin.cpp:917
 #, kde-format
 msgid "%1 won!"
 msgstr "%1 жеңді!"
 
-#: kgamewin.cpp:918
+#: kgamewin.cpp:919
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
 msgstr "<big><b>%1</b>, Сіз жеңдіңіз!</big>"
 
-#: kgamewin.cpp:922
+#: kgamewin.cpp:923
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
 "play again?"
 msgstr "<br>Жеңімпаздың көздегені:<br><i>%1</i><br><br>Жаңадан ойнайсыз ба?"
 
-#: kgamewin.cpp:928
+#: kgamewin.cpp:929
 #, kde-format
 msgid "<br>You conquered all the world!"
 msgstr "<br>Әлемді жаулап алдыңыз!"
 
-#: kgamewin.cpp:932
+#: kgamewin.cpp:933
 #, kde-format
 msgid "<br>He conquered all the world!"
 msgstr "<br>Ол әлемді жаулап алды!"
 
-#: kgamewin.cpp:1049
+#: kgamewin.cpp:1050
 #, kde-format
 msgid "Do you want to quit the game?"
 msgstr "Ойыннан шықпақсыз ба?"
 
-#: kgamewin.cpp:1051
+#: kgamewin.cpp:1052
 #, fuzzy, kde-format
 #| msgid "Quit"
 msgctxt "@action:button"
 msgid "Quit Game"
 msgstr "Шығу"
 
-#: kgamewin.cpp:1063
+#: kgamewin.cpp:1064
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
 msgstr "Шығу алдында, ойын күйін сақтауды қалайсыз ба?"
 
-#: kgamewin.cpp:1101
+#: kgamewin.cpp:1102
 #, fuzzy, kde-format
 #| msgid "KsirK - Load Game"
 msgctxt "@title:window"
 msgid "KsirK - Load Game"
 msgstr "KsirK - Ойынды жүктеу"
 
-#: kgamewin.cpp:1139
+#: kgamewin.cpp:1140
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
 msgstr "%1 ойыншылардың қосылымын күту."
 
-#: kgamewin.cpp:1218
+#: kgamewin.cpp:1219
 #, kde-format
 msgid ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
@@ -3006,88 +3006,88 @@ msgstr[0] ""
 "font> дегеннен Сізге шабуыл жасады!<br><font color=\"blue\">%4</font> "
 "дегенді қалай қорғамақсыз?"
 
-#: kgamewin.cpp:1247
+#: kgamewin.cpp:1248
 #, kde-format
 msgid "Defend 1"
 msgstr "1-қорғаныс"
 
-#: kgamewin.cpp:1248
+#: kgamewin.cpp:1249
 #, kde-format
 msgid "Defend 2"
 msgstr "2-қорғаныс"
 
-#: kgamewin.cpp:1249
+#: kgamewin.cpp:1250
 #, kde-format
 msgid "Defend-Auto"
 msgstr "Авто қорғаныс"
 
-#: kgamewin.cpp:1368
+#: kgamewin.cpp:1369
 #, kde-format
 msgid "Waiting for %1 players to connect"
 msgstr "%1 ойыншының қосылуын күту"
 
-#: kgamewin.cpp:1758 kgamewin.cpp:1798
+#: kgamewin.cpp:1759 kgamewin.cpp:1799
 msgid "There is no country here!"
 msgstr "Мұнда ел жоқ қой!"
 
-#: kgamewin.cpp:1762 kgamewin.cpp:1803
+#: kgamewin.cpp:1763 kgamewin.cpp:1804
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
 msgstr "Бірінші елдің иесі емессіз: %1"
 
-#: kgamewin.cpp:1766
+#: kgamewin.cpp:1767
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
 msgstr "Екінші елдің иесі емессіз: %1"
 
-#: kgamewin.cpp:1770 kgamewin.cpp:1814
+#: kgamewin.cpp:1771 kgamewin.cpp:1815
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr "Армияларды %1 дегеннен өз-өзіне аттандырмақсыз!"
 
-#: kgamewin.cpp:1775 kgamewin.cpp:1820
+#: kgamewin.cpp:1776 kgamewin.cpp:1821
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
 msgstr "%1 және %2  шекаралас емес ғой!"
 
-#: kgamewin.cpp:1781
+#: kgamewin.cpp:1782
 #, kde-format
 msgid "Moving armies from %1 to %2."
 msgstr "Армияларды %1 дегеннен %2 дегенге аттандыру."
 
-#: kgamewin.cpp:1809
+#: kgamewin.cpp:1810
 #, kde-format
 msgid "You are the owner of the second country: %1!"
 msgstr "Екінші елдің иесі Сізсіз: %1!"
 
-#: kgamewin.cpp:1827
+#: kgamewin.cpp:1828
 msgid "Ready to fight!"
 msgstr "Шайқасқа әзір!"
 
-#: kgamewin.cpp:1921
+#: kgamewin.cpp:1922
 msgid "<font color=\"orange\">No country here!</font>"
 msgstr "<font color=\"orange\">Мұнда ел жоқ!</font>"
 
-#: kgamewin.cpp:1929
+#: kgamewin.cpp:1930
 #, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr "<font color=\"orange\">%1 дегеннің иесі емессіз!</font>"
 
-#: kgamewin.cpp:1936
+#: kgamewin.cpp:1937
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr "<font color=\"orange\">%2 дегенде тек %1 армия бар!</font>"
 
-#: kgamewin.cpp:2076
+#: kgamewin.cpp:2077
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
 msgstr "%1, Сіз %2 дегендегі жалғыз армиямен қорғанасыз."
 
-#: kgamewin.cpp:2300
+#: kgamewin.cpp:2301
 msgid "Exchange armies again or continue?"
 msgstr "Армияларды қайта айырбастайық па, әлде жалғастырмақсыз ба?"
 
-#: kgamewin.cpp:2325
+#: kgamewin.cpp:2326
 #, kde-format
 msgid ""
 "You must distribute\n"
@@ -3096,47 +3096,47 @@ msgstr ""
 "Бүкіл армияларыңызды\n"
 "үлестіру керек"
 
-#: kgamewin.cpp:2325 main.cpp:42
+#: kgamewin.cpp:2326 main.cpp:42
 #, kde-format
 msgid "KsirK"
 msgstr "KsirK"
 
-#: kgamewin.cpp:2465
+#: kgamewin.cpp:2466
 msgid "Battle ongoing."
 msgstr "Шайқас жалғасуда."
 
-#: kgamewin.cpp:2586 kgamewin.cpp:2597 kgamewin.cpp:2620
+#: kgamewin.cpp:2587 kgamewin.cpp:2598 kgamewin.cpp:2621
 #, kde-format
 msgid "%1, it is up to you."
 msgstr "%1, бұл Сіздің құзырыңызда."
 
-#: kgamewin.cpp:2649
+#: kgamewin.cpp:2650
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
 msgstr "Ойнап жатқанды доғарып жаңасын бастамақсыз ба?"
 
-#: kgamewin.cpp:2649
+#: kgamewin.cpp:2650
 #, fuzzy, kde-format
 #| msgid "Start a New Game"
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Жаңа ойынды бастау"
 
-#: kgamewin.cpp:2905
+#: kgamewin.cpp:2906
 msgid "<b>KsirK quick Introduction</b>"
 msgstr "<b>KsirK қысқа кіріспесі</b>"
 
-#: kgamewin.cpp:2909
+#: kgamewin.cpp:2910
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr "Шабуыл не аттану армияларды көрші елдер арасында сүйреп атқарылады."
 
-#: kgamewin.cpp:2913
+#: kgamewin.cpp:2914
 msgid "Start a new game or join a network game with the menu or the toolbar..."
 msgstr ""
 "Жаңасын бастау не желілік ойынға қосылу мәзір не құралдар панелі арқылы..."
 
-#: kgamewin.cpp:2917
+#: kgamewin.cpp:2918
 msgid ""
 "and then let the system guide you through messages and tooltips appearing on "
 "buttons when hovering above them. You can disable bubble help in the options "
@@ -3145,7 +3145,7 @@ msgstr ""
 "және меңзері батырмалардың үстінен өткенде нұсқау хабарламалар мен ишаралар "
 "қалқып шығады. Қаламасаңыз - оларды көрсетпеуге болады."
 
-#: kgamewin.cpp:2924
+#: kgamewin.cpp:2925
 #, kde-format
 msgid "Don't show messages anymore"
 msgstr "Хабарламалар ендігәрі көрсетілмесін"

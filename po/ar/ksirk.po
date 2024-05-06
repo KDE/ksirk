@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:36+0000\n"
+"POT-Creation-Date: 2024-05-06 02:46+0000\n"
 "PO-Revision-Date: 2022-01-11 13:26+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1068,8 +1068,8 @@ msgstr "التالي اللاعب"
 msgid "Details"
 msgstr "التفاصيل"
 
-#: decoratedgameframe.cpp:106 kgamewin.cpp:430 kgamewin.cpp:1316
-#: kgamewin.cpp:1328 kgamewin.cpp:2485
+#: decoratedgameframe.cpp:106 kgamewin.cpp:430 kgamewin.cpp:1317
+#: kgamewin.cpp:1329 kgamewin.cpp:2486
 #, kde-format
 msgid "Goal"
 msgstr "الهدف"
@@ -1694,7 +1694,7 @@ msgid "Do you really want to end your current game and join another?"
 msgstr "تنفيذ إلى end الحالي لعبة و تشغيل a جديد?"
 
 #: GameLogic/gameautomaton.cpp:1194 GameLogic/gameautomaton.cpp:1223
-#: kgamewin.cpp:2649
+#: kgamewin.cpp:2650
 #, fuzzy, kde-format
 msgid "New game confirmation"
 msgstr "جديد لعبة تأكيد"
@@ -1783,7 +1783,7 @@ msgid "Do want to save your game?"
 msgstr "تنفيذ إلى حفظ لعبة?"
 
 #: GameLogic/gameautomaton.cpp:1860 GameLogic/gameautomaton.cpp:2277
-#: kgamewin.cpp:2140 kgamewin.cpp:2235 kgamewin.cpp:2272
+#: kgamewin.cpp:2141 kgamewin.cpp:2236 kgamewin.cpp:2273
 #, fuzzy, kde-format
 msgid "%1: %2 armies to place"
 msgstr "إلى"
@@ -2899,62 +2899,62 @@ msgstr "مع السلامةوقفة التّأهّب."
 msgid "%1: it is up to you again"
 msgstr "الإيطالية هو أعلى إلى"
 
-#: kgamewin.cpp:915
+#: kgamewin.cpp:917
 #, kde-format
 msgid "%1 won!"
 msgstr "%1 فاز!"
 
-#: kgamewin.cpp:918
+#: kgamewin.cpp:919
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
 msgstr ""
 
-#: kgamewin.cpp:922
+#: kgamewin.cpp:923
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
 "play again?"
 msgstr ""
 
-#: kgamewin.cpp:928
+#: kgamewin.cpp:929
 #, kde-format
 msgid "<br>You conquered all the world!"
 msgstr ""
 
-#: kgamewin.cpp:932
+#: kgamewin.cpp:933
 #, kde-format
 msgid "<br>He conquered all the world!"
 msgstr ""
 
-#: kgamewin.cpp:1049
+#: kgamewin.cpp:1050
 #, fuzzy, kde-format
 msgid "Do you want to quit the game?"
 msgstr "تنفيذ إلى حفظ لعبة?"
 
-#: kgamewin.cpp:1051
+#: kgamewin.cpp:1052
 #, fuzzy, kde-format
 #| msgid "Quit"
 msgctxt "@action:button"
 msgid "Quit Game"
 msgstr "أنهِ"
 
-#: kgamewin.cpp:1063
+#: kgamewin.cpp:1064
 #, fuzzy, kde-format
 msgid "Before you quit, do you want to save your game?"
 msgstr "قبل اخرج إلى حفظ لعبة?"
 
-#: kgamewin.cpp:1101
+#: kgamewin.cpp:1102
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "KsirK - Load Game"
 msgstr "تحميل لعبة"
 
-#: kgamewin.cpp:1139
+#: kgamewin.cpp:1140
 #, fuzzy, kde-format
 msgid "Waiting for the connection of %1 network players."
 msgstr "منتظر لـ اتصال من شبكة."
 
-#: kgamewin.cpp:1218
+#: kgamewin.cpp:1219
 #, fuzzy, kde-format
 msgid ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
@@ -2969,137 +2969,137 @@ msgstr[3] "أداء<font color=\"red\"></font> مع<font color=\"blue\"></font>?
 msgstr[4] "أداء<font color=\"red\"></font> مع<font color=\"blue\"></font>?"
 msgstr[5] "أداء<font color=\"red\"></font> مع<font color=\"blue\"></font>?"
 
-#: kgamewin.cpp:1247
+#: kgamewin.cpp:1248
 #, kde-format
 msgid "Defend 1"
 msgstr ""
 
-#: kgamewin.cpp:1248
+#: kgamewin.cpp:1249
 #, kde-format
 msgid "Defend 2"
 msgstr ""
 
-#: kgamewin.cpp:1249
+#: kgamewin.cpp:1250
 #, kde-format
 msgid "Defend-Auto"
 msgstr ""
 
-#: kgamewin.cpp:1368
+#: kgamewin.cpp:1369
 #, fuzzy, kde-format
 msgid "Waiting for %1 players to connect"
 msgstr "منتظر لـ إلى اتصال"
 
-#: kgamewin.cpp:1758 kgamewin.cpp:1798
+#: kgamewin.cpp:1759 kgamewin.cpp:1799
 #, fuzzy
 msgid "There is no country here!"
 msgstr "هناك هو لا!"
 
-#: kgamewin.cpp:1762 kgamewin.cpp:1803
+#: kgamewin.cpp:1763 kgamewin.cpp:1804
 #, fuzzy, kde-format
 msgid "You are not the owner of the first country: %1!"
 msgstr "أنت ليس مالك من الأوّل!"
 
-#: kgamewin.cpp:1766
+#: kgamewin.cpp:1767
 #, fuzzy, kde-format
 msgid "You are not the owner of the second country: %1!"
 msgstr "أنت ليس مالك من ثانية!"
 
-#: kgamewin.cpp:1770 kgamewin.cpp:1814
+#: kgamewin.cpp:1771 kgamewin.cpp:1815
 #, fuzzy, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr "أنت إلى انقل من إلى نفسها!"
 
-#: kgamewin.cpp:1775 kgamewin.cpp:1820
+#: kgamewin.cpp:1776 kgamewin.cpp:1821
 #, fuzzy, kde-format
 msgid "%1 is not a neighbour of %2!"
 msgstr "هو ليس a من!"
 
-#: kgamewin.cpp:1781
+#: kgamewin.cpp:1782
 #, fuzzy, kde-format
 msgid "Moving armies from %1 to %2."
 msgstr "جاري النقل من إلى."
 
-#: kgamewin.cpp:1809
+#: kgamewin.cpp:1810
 #, fuzzy, kde-format
 msgid "You are the owner of the second country: %1!"
 msgstr "أنت ليس مالك من ثانية!"
 
-#: kgamewin.cpp:1827
+#: kgamewin.cpp:1828
 msgid "Ready to fight!"
 msgstr ""
 
-#: kgamewin.cpp:1921
+#: kgamewin.cpp:1922
 #, fuzzy
 msgid "<font color=\"orange\">No country here!</font>"
 msgstr "<font color=\"orange\"> لا</font>"
 
-#: kgamewin.cpp:1929
+#: kgamewin.cpp:1930
 #, fuzzy, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr "<font color=\"orange\"> أنت ليس مالك من</font>"
 
-#: kgamewin.cpp:1936
+#: kgamewin.cpp:1937
 #, fuzzy, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr "<font color=\"orange\"> هناك هو بوصة</font>"
 
-#: kgamewin.cpp:2076
+#: kgamewin.cpp:2077
 #, fuzzy, kde-format
 msgid "%1, you defend with the only army you have in %2."
 msgstr "مع فريد."
 
-#: kgamewin.cpp:2300
+#: kgamewin.cpp:2301
 #, fuzzy
 msgid "Exchange armies again or continue?"
 msgstr "التبادل أو متابعة?"
 
-#: kgamewin.cpp:2325
+#: kgamewin.cpp:2326
 #, fuzzy, kde-format
 msgid ""
 "You must distribute\n"
 "all your armies"
 msgstr "أنت وزّع"
 
-#: kgamewin.cpp:2325 main.cpp:42
+#: kgamewin.cpp:2326 main.cpp:42
 #, kde-format
 msgid "KsirK"
 msgstr ""
 
-#: kgamewin.cpp:2465
+#: kgamewin.cpp:2466
 msgid "Battle ongoing."
 msgstr ""
 
-#: kgamewin.cpp:2586 kgamewin.cpp:2597 kgamewin.cpp:2620
+#: kgamewin.cpp:2587 kgamewin.cpp:2598 kgamewin.cpp:2621
 #, fuzzy, kde-format
 msgid "%1, it is up to you."
 msgstr "الإيطالية هو أعلى إلى."
 
-#: kgamewin.cpp:2649
+#: kgamewin.cpp:2650
 #, fuzzy, kde-format
 msgid "Do you really want to end your current game and start a new one?"
 msgstr "تنفيذ إلى end الحالي لعبة و تشغيل a جديد?"
 
-#: kgamewin.cpp:2649
+#: kgamewin.cpp:2650
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "ابدأ لعبة جديدة"
 
-#: kgamewin.cpp:2905
+#: kgamewin.cpp:2906
 msgid "<b>KsirK quick Introduction</b>"
 msgstr ""
 
-#: kgamewin.cpp:2909
+#: kgamewin.cpp:2910
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr ""
 
-#: kgamewin.cpp:2913
+#: kgamewin.cpp:2914
 #, fuzzy
 msgid "Start a new game or join a network game with the menu or the toolbar..."
 msgstr "ابدأ a جديد لعبة أو انضمام a شبكة لعبة مع قائمة أو شريط الأدوات."
 
-#: kgamewin.cpp:2917
+#: kgamewin.cpp:2918
 #, fuzzy
 msgid ""
 "and then let the system guide you through messages and tooltips appearing on "
@@ -3107,7 +3107,7 @@ msgid ""
 "window."
 msgstr "و نظام رسائل و يعمل أعلى."
 
-#: kgamewin.cpp:2924
+#: kgamewin.cpp:2925
 #, kde-format
 msgid "Don't show messages anymore"
 msgstr ""

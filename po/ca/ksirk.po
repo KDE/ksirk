@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:36+0000\n"
+"POT-Creation-Date: 2024-05-06 02:46+0000\n"
 "PO-Revision-Date: 2023-09-30 13:59+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1085,8 +1085,8 @@ msgstr "Jugador següent"
 msgid "Details"
 msgstr "Detalls"
 
-#: decoratedgameframe.cpp:106 kgamewin.cpp:430 kgamewin.cpp:1316
-#: kgamewin.cpp:1328 kgamewin.cpp:2485
+#: decoratedgameframe.cpp:106 kgamewin.cpp:430 kgamewin.cpp:1317
+#: kgamewin.cpp:1329 kgamewin.cpp:2486
 #, kde-format
 msgid "Goal"
 msgstr "Objectiu"
@@ -1730,7 +1730,7 @@ msgid "Do you really want to end your current game and join another?"
 msgstr "Esteu segur que voleu acabar la partida i entrar en una altra?"
 
 #: GameLogic/gameautomaton.cpp:1194 GameLogic/gameautomaton.cpp:1223
-#: kgamewin.cpp:2649
+#: kgamewin.cpp:2650
 #, kde-format
 msgid "New game confirmation"
 msgstr "Confirmació de la partida nova"
@@ -1824,7 +1824,7 @@ msgid "Do want to save your game?"
 msgstr "Voleu desar la partida?"
 
 #: GameLogic/gameautomaton.cpp:1860 GameLogic/gameautomaton.cpp:2277
-#: kgamewin.cpp:2140 kgamewin.cpp:2235 kgamewin.cpp:2272
+#: kgamewin.cpp:2141 kgamewin.cpp:2236 kgamewin.cpp:2273
 #, kde-format
 msgid "%1: %2 armies to place"
 msgstr "%1:%2 batallons a situar"
@@ -2974,17 +2974,17 @@ msgstr "%1, has estat derrotat! Passi-ho bé..."
 msgid "%1: it is up to you again"
 msgstr "%1: depèn de tu de nou"
 
-#: kgamewin.cpp:915
+#: kgamewin.cpp:917
 #, kde-format
 msgid "%1 won!"
 msgstr "%1 ha guanyat!"
 
-#: kgamewin.cpp:918
+#: kgamewin.cpp:919
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
 msgstr "<big><b>%1</b>, has guanyat!</big>"
 
-#: kgamewin.cpp:922
+#: kgamewin.cpp:923
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
@@ -2993,44 +2993,44 @@ msgstr ""
 "<br>L'objectiu del guanyador s'ha declarat així:<br><i>%1</i><br><br>Vols "
 "tornar a jugar?"
 
-#: kgamewin.cpp:928
+#: kgamewin.cpp:929
 #, kde-format
 msgid "<br>You conquered all the world!"
 msgstr "<br>Has conquerit tot el món!"
 
-#: kgamewin.cpp:932
+#: kgamewin.cpp:933
 #, kde-format
 msgid "<br>He conquered all the world!"
 msgstr "<br>Ha conquerit tot el món!"
 
-#: kgamewin.cpp:1049
+#: kgamewin.cpp:1050
 #, kde-format
 msgid "Do you want to quit the game?"
 msgstr "Vols sortir de la partida?"
 
-#: kgamewin.cpp:1051
+#: kgamewin.cpp:1052
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
 msgstr "Surt de la partida"
 
-#: kgamewin.cpp:1063
+#: kgamewin.cpp:1064
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
 msgstr "Vols desar la partida abans de sortir?"
 
-#: kgamewin.cpp:1101
+#: kgamewin.cpp:1102
 #, kde-format
 msgctxt "@title:window"
 msgid "KsirK - Load Game"
 msgstr "KsirK - Carrega una partida"
 
-#: kgamewin.cpp:1139
+#: kgamewin.cpp:1140
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
 msgstr "S'està esperant que es connectin %1 jugadors en xarxa."
 
-#: kgamewin.cpp:1218
+#: kgamewin.cpp:1219
 #, kde-format
 msgid ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
@@ -3045,88 +3045,88 @@ msgstr[1] ""
 "<font color=\"red\">%2</font> t'ataca des de <font color=\"red\">%3</font> "
 "amb %1 batallons!<br> Com vols defensar <font color=\"blue\">%4</font>?"
 
-#: kgamewin.cpp:1247
+#: kgamewin.cpp:1248
 #, kde-format
 msgid "Defend 1"
 msgstr "Defensa amb 1"
 
-#: kgamewin.cpp:1248
+#: kgamewin.cpp:1249
 #, kde-format
 msgid "Defend 2"
 msgstr "Defensa amb 2"
 
-#: kgamewin.cpp:1249
+#: kgamewin.cpp:1250
 #, kde-format
 msgid "Defend-Auto"
 msgstr "Defensa automàticament"
 
-#: kgamewin.cpp:1368
+#: kgamewin.cpp:1369
 #, kde-format
 msgid "Waiting for %1 players to connect"
 msgstr "S'està esperant que %1 jugadors es connectin"
 
-#: kgamewin.cpp:1758 kgamewin.cpp:1798
+#: kgamewin.cpp:1759 kgamewin.cpp:1799
 msgid "There is no country here!"
 msgstr "Aquí no hi ha cap país!"
 
-#: kgamewin.cpp:1762 kgamewin.cpp:1803
+#: kgamewin.cpp:1763 kgamewin.cpp:1804
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
 msgstr "No ets el propietari d'aquest país: %1!"
 
-#: kgamewin.cpp:1766
+#: kgamewin.cpp:1767
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
 msgstr "No ets el propietari del segon país: %1!"
 
-#: kgamewin.cpp:1770 kgamewin.cpp:1814
+#: kgamewin.cpp:1771 kgamewin.cpp:1815
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr "Estàs intentant moure batallons des de %1 cap al mateix lloc!"
 
-#: kgamewin.cpp:1775 kgamewin.cpp:1820
+#: kgamewin.cpp:1776 kgamewin.cpp:1821
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
 msgstr "%1 no és veí de %2!"
 
-#: kgamewin.cpp:1781
+#: kgamewin.cpp:1782
 #, kde-format
 msgid "Moving armies from %1 to %2."
 msgstr "S'estan movent batallons des de %1 a %2."
 
-#: kgamewin.cpp:1809
+#: kgamewin.cpp:1810
 #, kde-format
 msgid "You are the owner of the second country: %1!"
 msgstr "Ets el propietari del segon país: %1!"
 
-#: kgamewin.cpp:1827
+#: kgamewin.cpp:1828
 msgid "Ready to fight!"
 msgstr "Preparat per a lluitar!"
 
-#: kgamewin.cpp:1921
+#: kgamewin.cpp:1922
 msgid "<font color=\"orange\">No country here!</font>"
 msgstr "<font color=\"orange\">Aquí no hi ha cap país!</font>"
 
-#: kgamewin.cpp:1929
+#: kgamewin.cpp:1930
 #, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr "<font color=\"orange\">No ets el propietari de %1!</font>"
 
-#: kgamewin.cpp:1936
+#: kgamewin.cpp:1937
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr "<font color=\"orange\">Només hi ha %1 batallons a %2!</font>"
 
-#: kgamewin.cpp:2076
+#: kgamewin.cpp:2077
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
 msgstr "%1, defenses amb l'únic batalló que tens a %2."
 
-#: kgamewin.cpp:2300
+#: kgamewin.cpp:2301
 msgid "Exchange armies again or continue?"
 msgstr "Vols tornar a canviar els batallons o continuar?"
 
-#: kgamewin.cpp:2325
+#: kgamewin.cpp:2326
 #, kde-format
 msgid ""
 "You must distribute\n"
@@ -3135,49 +3135,49 @@ msgstr ""
 "Has de distribuir\n"
 "tots els teus batallons"
 
-#: kgamewin.cpp:2325 main.cpp:42
+#: kgamewin.cpp:2326 main.cpp:42
 #, kde-format
 msgid "KsirK"
 msgstr "KsirK"
 
-#: kgamewin.cpp:2465
+#: kgamewin.cpp:2466
 msgid "Battle ongoing."
 msgstr "Batalla en curs."
 
-#: kgamewin.cpp:2586 kgamewin.cpp:2597 kgamewin.cpp:2620
+#: kgamewin.cpp:2587 kgamewin.cpp:2598 kgamewin.cpp:2621
 #, kde-format
 msgid "%1, it is up to you."
 msgstr "%1, depèn de tu."
 
-#: kgamewin.cpp:2649
+#: kgamewin.cpp:2650
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
 msgstr "Segur que vols acabar la partida actual i començar-ne una de nova?"
 
-#: kgamewin.cpp:2649
+#: kgamewin.cpp:2650
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Comença una partida nova"
 
-#: kgamewin.cpp:2905
+#: kgamewin.cpp:2906
 msgid "<b>KsirK quick Introduction</b>"
 msgstr "<b>Introducció ràpida al KsirK</b>"
 
-#: kgamewin.cpp:2909
+#: kgamewin.cpp:2910
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr ""
 "Els atacs i els moviments es transmeten arrossegant i deixant anar entre "
 "països veïns."
 
-#: kgamewin.cpp:2913
+#: kgamewin.cpp:2914
 msgid "Start a new game or join a network game with the menu or the toolbar..."
 msgstr ""
 "Comença una partida nova o uneix-te a una partida en xarxa amb el menú o la "
 "barra d'eines..."
 
-#: kgamewin.cpp:2917
+#: kgamewin.cpp:2918
 msgid ""
 "and then let the system guide you through messages and tooltips appearing on "
 "buttons when hovering above them. You can disable bubble help in the options "
@@ -3187,7 +3187,7 @@ msgstr ""
 "apareixeran als botons quan es passa el ratolí per damunt. Pots desactivar "
 "la bombolla d'ajuda a la finestra d'opcions."
 
-#: kgamewin.cpp:2924
+#: kgamewin.cpp:2925
 #, kde-format
 msgid "Don't show messages anymore"
 msgstr "No tornis a mostrar missatges"

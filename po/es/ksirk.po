@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:36+0000\n"
+"POT-Creation-Date: 2024-05-06 02:46+0000\n"
 "PO-Revision-Date: 2023-10-02 21:48+0100\n"
 "Last-Translator: Sofía Priego <spriego@darksylvania.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -1088,8 +1088,8 @@ msgstr "Siguiente jugador"
 msgid "Details"
 msgstr "Detalles"
 
-#: decoratedgameframe.cpp:106 kgamewin.cpp:430 kgamewin.cpp:1316
-#: kgamewin.cpp:1328 kgamewin.cpp:2485
+#: decoratedgameframe.cpp:106 kgamewin.cpp:430 kgamewin.cpp:1317
+#: kgamewin.cpp:1329 kgamewin.cpp:2486
 #, kde-format
 msgid "Goal"
 msgstr "Objetivo"
@@ -1731,7 +1731,7 @@ msgid "Do you really want to end your current game and join another?"
 msgstr "¿Realmente desea terminar la partida actual y unirse a otra?"
 
 #: GameLogic/gameautomaton.cpp:1194 GameLogic/gameautomaton.cpp:1223
-#: kgamewin.cpp:2649
+#: kgamewin.cpp:2650
 #, kde-format
 msgid "New game confirmation"
 msgstr "Confirmación de nueva partida"
@@ -1826,7 +1826,7 @@ msgid "Do want to save your game?"
 msgstr "¿Desea guardar su partida?"
 
 #: GameLogic/gameautomaton.cpp:1860 GameLogic/gameautomaton.cpp:2277
-#: kgamewin.cpp:2140 kgamewin.cpp:2235 kgamewin.cpp:2272
+#: kgamewin.cpp:2141 kgamewin.cpp:2236 kgamewin.cpp:2273
 #, kde-format
 msgid "%1: %2 armies to place"
 msgstr "%1: %2 ejércitos para situar"
@@ -2967,17 +2967,17 @@ msgstr "%1, ¡ha sido derrotado! Adiós..."
 msgid "%1: it is up to you again"
 msgstr "%1: Depende de usted de nuevo"
 
-#: kgamewin.cpp:915
+#: kgamewin.cpp:917
 #, kde-format
 msgid "%1 won!"
 msgstr "¡Ha ganado %1!"
 
-#: kgamewin.cpp:918
+#: kgamewin.cpp:919
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
 msgstr "<big>¡<b>%1</b>, ha ganado!</big>"
 
-#: kgamewin.cpp:922
+#: kgamewin.cpp:923
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
@@ -2986,44 +2986,44 @@ msgstr ""
 "<br>El objetivo del ganador se ha establecido así:<br><i>%1</i><br><br> "
 "¿Desea jugar de nuevo?"
 
-#: kgamewin.cpp:928
+#: kgamewin.cpp:929
 #, kde-format
 msgid "<br>You conquered all the world!"
 msgstr "<br>¡Usted ha conquistado el mundo!"
 
-#: kgamewin.cpp:932
+#: kgamewin.cpp:933
 #, kde-format
 msgid "<br>He conquered all the world!"
 msgstr "<br>¡Ha conquistado el mundo!"
 
-#: kgamewin.cpp:1049
+#: kgamewin.cpp:1050
 #, kde-format
 msgid "Do you want to quit the game?"
 msgstr "¿Desea salir de la partida?"
 
-#: kgamewin.cpp:1051
+#: kgamewin.cpp:1052
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
 msgstr "Salir del juego"
 
-#: kgamewin.cpp:1063
+#: kgamewin.cpp:1064
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
 msgstr "Antes de salir ¿desea guardar la partida?"
 
-#: kgamewin.cpp:1101
+#: kgamewin.cpp:1102
 #, kde-format
 msgctxt "@title:window"
 msgid "KsirK - Load Game"
 msgstr "KsirK - Cargar partida"
 
-#: kgamewin.cpp:1139
+#: kgamewin.cpp:1140
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
 msgstr "Esperando la conexión de %1 jugadores en red."
 
-#: kgamewin.cpp:1218
+#: kgamewin.cpp:1219
 #, kde-format
 msgid ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
@@ -3038,88 +3038,88 @@ msgstr[1] ""
 "¡<font color=\"red\">%2</font> le ataca desde <font color=\"red\">%3</font> "
 "con %1 ejércitos!<br> ¿Cómo quiere defender <font color=\"blue\">%4</font>?"
 
-#: kgamewin.cpp:1247
+#: kgamewin.cpp:1248
 #, kde-format
 msgid "Defend 1"
 msgstr "Defender 1"
 
-#: kgamewin.cpp:1248
+#: kgamewin.cpp:1249
 #, kde-format
 msgid "Defend 2"
 msgstr "Defender 2"
 
-#: kgamewin.cpp:1249
+#: kgamewin.cpp:1250
 #, kde-format
 msgid "Defend-Auto"
 msgstr "Defensa automática"
 
-#: kgamewin.cpp:1368
+#: kgamewin.cpp:1369
 #, kde-format
 msgid "Waiting for %1 players to connect"
 msgstr "Esperando a que se conecten %1 jugadores"
 
-#: kgamewin.cpp:1758 kgamewin.cpp:1798
+#: kgamewin.cpp:1759 kgamewin.cpp:1799
 msgid "There is no country here!"
 msgstr "¡No hay países aquí!"
 
-#: kgamewin.cpp:1762 kgamewin.cpp:1803
+#: kgamewin.cpp:1763 kgamewin.cpp:1804
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
 msgstr "¡No es el propietario del primer país: %1!"
 
-#: kgamewin.cpp:1766
+#: kgamewin.cpp:1767
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
 msgstr "¡No es el propietario del segundo país: %1!"
 
-#: kgamewin.cpp:1770 kgamewin.cpp:1814
+#: kgamewin.cpp:1771 kgamewin.cpp:1815
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr "¡Está intentando mover ejércitos desde %1 a sí mismo!"
 
-#: kgamewin.cpp:1775 kgamewin.cpp:1820
+#: kgamewin.cpp:1776 kgamewin.cpp:1821
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
 msgstr "¡%1 no es vecino de %2!"
 
-#: kgamewin.cpp:1781
+#: kgamewin.cpp:1782
 #, kde-format
 msgid "Moving armies from %1 to %2."
 msgstr "Moviendo ejércitos desde %1 a %2."
 
-#: kgamewin.cpp:1809
+#: kgamewin.cpp:1810
 #, kde-format
 msgid "You are the owner of the second country: %1!"
 msgstr "¡Usted es el propietario del segundo país: %1!"
 
-#: kgamewin.cpp:1827
+#: kgamewin.cpp:1828
 msgid "Ready to fight!"
 msgstr "¡Listo para luchar!"
 
-#: kgamewin.cpp:1921
+#: kgamewin.cpp:1922
 msgid "<font color=\"orange\">No country here!</font>"
 msgstr "<font color=\"orange\">¡Aquí no hay ningún país!</font>"
 
-#: kgamewin.cpp:1929
+#: kgamewin.cpp:1930
 #, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr "<font color=\"orange\">¡No es el propietario de %1!</font>"
 
-#: kgamewin.cpp:1936
+#: kgamewin.cpp:1937
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr "<font color=\"orange\">¡Solo tiene %1 ejércitos en %2!</font>"
 
-#: kgamewin.cpp:2076
+#: kgamewin.cpp:2077
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
 msgstr "%1, defiende con el único ejército que tiene en %2."
 
-#: kgamewin.cpp:2300
+#: kgamewin.cpp:2301
 msgid "Exchange armies again or continue?"
 msgstr "¿Intercambiar ejércitos de nuevo o continuar?"
 
-#: kgamewin.cpp:2325
+#: kgamewin.cpp:2326
 #, kde-format
 msgid ""
 "You must distribute\n"
@@ -3128,49 +3128,49 @@ msgstr ""
 "Debe volver a distribuir\n"
 "todos sus ejércitos"
 
-#: kgamewin.cpp:2325 main.cpp:42
+#: kgamewin.cpp:2326 main.cpp:42
 #, kde-format
 msgid "KsirK"
 msgstr "KsirK"
 
-#: kgamewin.cpp:2465
+#: kgamewin.cpp:2466
 msgid "Battle ongoing."
 msgstr "Batalla en curso."
 
-#: kgamewin.cpp:2586 kgamewin.cpp:2597 kgamewin.cpp:2620
+#: kgamewin.cpp:2587 kgamewin.cpp:2598 kgamewin.cpp:2621
 #, kde-format
 msgid "%1, it is up to you."
 msgstr "%1, depende de usted."
 
-#: kgamewin.cpp:2649
+#: kgamewin.cpp:2650
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
 msgstr "¿De verdad desea finalizar su partida actual e iniciar una nueva?"
 
-#: kgamewin.cpp:2649
+#: kgamewin.cpp:2650
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Iniciar nueva partida"
 
-#: kgamewin.cpp:2905
+#: kgamewin.cpp:2906
 msgid "<b>KsirK quick Introduction</b>"
 msgstr "<b>Introducción rápida a KsirK</b>"
 
-#: kgamewin.cpp:2909
+#: kgamewin.cpp:2910
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr ""
 "Los ataques y demás movimientos se llevan a cabo arrastrando y soltando "
 "entre países vecinos."
 
-#: kgamewin.cpp:2913
+#: kgamewin.cpp:2914
 msgid "Start a new game or join a network game with the menu or the toolbar..."
 msgstr ""
 "Iniciar una nueva partida o unirse a una partida de red con el menú o la "
 "barra de herramientas..."
 
-#: kgamewin.cpp:2917
+#: kgamewin.cpp:2918
 msgid ""
 "and then let the system guide you through messages and tooltips appearing on "
 "buttons when hovering above them. You can disable bubble help in the options "
@@ -3180,7 +3180,7 @@ msgstr ""
 "que aparecen sobre los botones cuando se sitúa sobre ellos. Puede desactivar "
 "la burbuja de ayuda en la ventana de las opciones."
 
-#: kgamewin.cpp:2924
+#: kgamewin.cpp:2925
 #, kde-format
 msgid "Don't show messages anymore"
 msgstr "No mostrar ningún mensaje"
