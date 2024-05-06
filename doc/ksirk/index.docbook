@@ -136,12 +136,6 @@ your application. -->
       <term><guibutton>New Local Game</guibutton></term>
       <listitem><para><action>Starts a new game.</action></para></listitem>
     </varlistentry>
-<!--
-    <varlistentry>
-      <term><guibutton>Play &ksirk; over Jabber Network</guibutton></term>
-      <listitem><para><action>Play &ksirk; over <ulink url="https://en.wikipedia.org/wiki/XMPP">Jabber</ulink>. You need to register Jabber account first.</action></para></listitem>
-    </varlistentry>
--->
     <varlistentry>
       <term><guibutton>New Standard TCP/IP Network Game</guibutton></term>
       <listitem><para><action>Start a new game using <ulink url="https://en.wikipedia.org/wiki/Internet_protocol_suite">Internet protocol suite</ulink>.</action></para></listitem>
