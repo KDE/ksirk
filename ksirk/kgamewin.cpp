@@ -649,7 +649,6 @@ void KGameWindow::initView()
 
   disconnectMouse();
   reconnectMouse();
-  setCaption("KsirK",false);
   m_scene_world-> update();
   m_frame->setScene(m_scene_world);
   
