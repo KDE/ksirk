@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 02:46+0000\n"
+"POT-Creation-Date: 2024-05-07 02:26+0000\n"
 "PO-Revision-Date: 2023-11-30 15:26+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1341,8 +1341,8 @@ msgstr "Seuraava pelaaja"
 msgid "Details"
 msgstr "Yksityiskohdat"
 
-#: decoratedgameframe.cpp:106 kgamewin.cpp:430 kgamewin.cpp:1317
-#: kgamewin.cpp:1329 kgamewin.cpp:2486
+#: decoratedgameframe.cpp:106 kgamewin.cpp:430 kgamewin.cpp:1316
+#: kgamewin.cpp:1328 kgamewin.cpp:2485
 #, kde-format
 msgid "Goal"
 msgstr "Tavoite"
@@ -1995,7 +1995,7 @@ msgid "Do you really want to end your current game and join another?"
 msgstr "Haluatko varmasti lopettaa nykyisen pelisi ja liittyä toiseen?"
 
 #: GameLogic/gameautomaton.cpp:1194 GameLogic/gameautomaton.cpp:1223
-#: kgamewin.cpp:2650
+#: kgamewin.cpp:2649
 #, kde-format
 msgid "New game confirmation"
 msgstr "Vahvistus uudesta pelistä"
@@ -2088,7 +2088,7 @@ msgid "Do want to save your game?"
 msgstr "Haluatko tallentaa pelisi?"
 
 #: GameLogic/gameautomaton.cpp:1860 GameLogic/gameautomaton.cpp:2277
-#: kgamewin.cpp:2141 kgamewin.cpp:2236 kgamewin.cpp:2273
+#: kgamewin.cpp:2140 kgamewin.cpp:2235 kgamewin.cpp:2272
 #, kde-format
 msgid "%1: %2 armies to place"
 msgstr "%1: vielä %2 sijoitettavaa armeijaa"
@@ -3212,34 +3212,34 @@ msgstr ""
 "Maailman määritystiedostoa ei löytynyt – tarkista asennuksesi<br>Ohjelma ei "
 "voi jatkaa"
 
-#: kgamewin.cpp:807
+#: kgamewin.cpp:806
 #, kde-format
 msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
 msgstr ""
 "<font color=\"red\">%1 valloitti maan %2 pelaajalta %3</font>|/|<font color="
 "\"red\">%1 valloitti $[gen %2] pelaajalta %3</font>"
 
-#: kgamewin.cpp:831
+#: kgamewin.cpp:830
 #, kde-format
 msgid "%1, you are defeated! Bye, bye..."
 msgstr "%1, sinut on kukistettu! Tervemenoa."
 
-#: kgamewin.cpp:903
+#: kgamewin.cpp:902
 #, kde-format
 msgid "%1: it is up to you again"
 msgstr "%1: valinta on taas sinun"
 
-#: kgamewin.cpp:917
+#: kgamewin.cpp:916
 #, kde-format
 msgid "%1 won!"
 msgstr "%1 voitti!"
 
-#: kgamewin.cpp:919
+#: kgamewin.cpp:918
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
 msgstr "<big><b>%1</b>, sinä voitit!</big>"
 
-#: kgamewin.cpp:923
+#: kgamewin.cpp:922
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
@@ -3248,45 +3248,45 @@ msgstr ""
 "<br>Pelaajan tavoite muotoiltiin näin:<br><i>%1</i><br><br>Haluatko pelata "
 "uudestaan?"
 
-#: kgamewin.cpp:929
+#: kgamewin.cpp:928
 #, kde-format
 msgid "<br>You conquered all the world!"
 msgstr "<br>Valloitit koko maailman!"
 
-#: kgamewin.cpp:933
+#: kgamewin.cpp:932
 #, kde-format
 msgid "<br>He conquered all the world!"
 msgstr "<br>Hän valloitti koko maailman!"
 
-#: kgamewin.cpp:1050
+#: kgamewin.cpp:1049
 #, kde-format
 msgid "Do you want to quit the game?"
 msgstr "Haluatko lopettaa pelin?"
 
-#: kgamewin.cpp:1052
+#: kgamewin.cpp:1051
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
 msgstr "Lopeta peli"
 
-#: kgamewin.cpp:1064
+#: kgamewin.cpp:1063
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
 msgstr "Haluatko tallentaa pelisi ennen kuin lopetat?"
 
-#: kgamewin.cpp:1102
+#: kgamewin.cpp:1101
 #, kde-format
 msgctxt "@title:window"
 msgid "KsirK - Load Game"
 msgstr "KsirK – Lataa peli"
 
-#: kgamewin.cpp:1140
+#: kgamewin.cpp:1139
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
 msgstr "Odotetaan %1 verkkopelaajan yhdistävän."
 
 # KONTEKSTI: %1 = number of armies, %2 = name of attacking player, %3 = name of attacking country, %4 = name of country to defend
-#: kgamewin.cpp:1219
+#: kgamewin.cpp:1218
 #, kde-format
 msgid ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
@@ -3308,75 +3308,75 @@ msgstr[1] ""
 "$[part %4]</font>?"
 
 # KONTEKSTI: Defend with 1 army
-#: kgamewin.cpp:1248
+#: kgamewin.cpp:1247
 #, kde-format
 msgid "Defend 1"
 msgstr "Puolusta yhdellä"
 
 # KONTEKSTI: Defend with 2 armies
-#: kgamewin.cpp:1249
+#: kgamewin.cpp:1248
 #, kde-format
 msgid "Defend 2"
 msgstr "Puolusta kahdella"
 
 # Samassa muodossa kuin viestien ”Defend 1” ja ”Defend 2” suomennokset
-#: kgamewin.cpp:1250
+#: kgamewin.cpp:1249
 #, kde-format
 msgid "Defend-Auto"
 msgstr "Puolusta automaattisesti"
 
-#: kgamewin.cpp:1369
+#: kgamewin.cpp:1368
 #, kde-format
 msgid "Waiting for %1 players to connect"
 msgstr "Odotetaan %1 pelaajan yhdistävän"
 
-#: kgamewin.cpp:1759 kgamewin.cpp:1799
+#: kgamewin.cpp:1758 kgamewin.cpp:1798
 msgid "There is no country here!"
 msgstr "Siellä ei ole maata!"
 
-#: kgamewin.cpp:1763 kgamewin.cpp:1804
+#: kgamewin.cpp:1762 kgamewin.cpp:1803
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
 msgstr "Et ole ensimmäisen maan omistaja: %1!"
 
-#: kgamewin.cpp:1767
+#: kgamewin.cpp:1766
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
 msgstr "Et ole toisen maan omistaja: %1!"
 
-#: kgamewin.cpp:1771 kgamewin.cpp:1815
+#: kgamewin.cpp:1770 kgamewin.cpp:1814
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr ""
 "Yrität siirtää armeijoita maasta %1 itseensä!|/|Yrität siirtää armeijoita "
 "$[elat %1] itseensä!"
 
-#: kgamewin.cpp:1776 kgamewin.cpp:1821
+#: kgamewin.cpp:1775 kgamewin.cpp:1820
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
 msgstr "%1 ja %2 eivät ole naapureita!"
 
-#: kgamewin.cpp:1782
+#: kgamewin.cpp:1781
 #, kde-format
 msgid "Moving armies from %1 to %2."
 msgstr ""
 "Siirretään armeijoita maasta %1 maahan %2.|/|Siirretään armeijoita $[elat "
 "%1] $[illat %2]."
 
-#: kgamewin.cpp:1810
+#: kgamewin.cpp:1809
 #, kde-format
 msgid "You are the owner of the second country: %1!"
 msgstr "Et ole toisen maista (%1) omistaja!"
 
-#: kgamewin.cpp:1828
+#: kgamewin.cpp:1827
 msgid "Ready to fight!"
 msgstr "Valmiina taisteluun!"
 
-#: kgamewin.cpp:1922
+#: kgamewin.cpp:1921
 msgid "<font color=\"orange\">No country here!</font>"
 msgstr "<font color=\"orange\">Täällä ei ole maata!</font>"
 
-#: kgamewin.cpp:1930
+#: kgamewin.cpp:1929
 #, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr ""
@@ -3384,7 +3384,7 @@ msgstr ""
 "\">Et ole $[gen %1] omistaja!</font>"
 
 # %2 on maa.
-#: kgamewin.cpp:1937
+#: kgamewin.cpp:1936
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr ""
@@ -3392,18 +3392,18 @@ msgstr ""
 "\"orange\">Vain %1 armeijaa $[iness %2]!</font>"
 
 # %2 on maa.
-#: kgamewin.cpp:2077
+#: kgamewin.cpp:2076
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
 msgstr ""
 "%1, puolustat ainoalla armeijallasi maassa %2.|/|%1, puolustat ainoalla "
 "armeijallasi $[iness %2]."
 
-#: kgamewin.cpp:2301
+#: kgamewin.cpp:2300
 msgid "Exchange armies again or continue?"
 msgstr "Vaihdetaanko armeijoita vielä vai jatketaanko?"
 
-#: kgamewin.cpp:2326
+#: kgamewin.cpp:2325
 #, kde-format
 msgid ""
 "You must distribute\n"
@@ -3414,47 +3414,47 @@ msgstr ""
 
 # pmap: =:gen=KsirKin:
 # pmap: =:elat=KsirKistä:
-#: kgamewin.cpp:2326 main.cpp:42
+#: kgamewin.cpp:2325 main.cpp:42
 #, kde-format
 msgid "KsirK"
 msgstr "KsirK"
 
-#: kgamewin.cpp:2466
+#: kgamewin.cpp:2465
 msgid "Battle ongoing."
 msgstr "Taistelu käynnissä."
 
-#: kgamewin.cpp:2587 kgamewin.cpp:2598 kgamewin.cpp:2621
+#: kgamewin.cpp:2586 kgamewin.cpp:2597 kgamewin.cpp:2620
 #, kde-format
 msgid "%1, it is up to you."
 msgstr "%1, valinta on sinun."
 
-#: kgamewin.cpp:2650
+#: kgamewin.cpp:2649
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
 msgstr "Haluatko varmasti lopettaa nykyisen pelisi ja aloittaa toisen?"
 
-#: kgamewin.cpp:2650
+#: kgamewin.cpp:2649
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Aloita uusi peli"
 
-#: kgamewin.cpp:2906
+#: kgamewin.cpp:2905
 msgid "<b>KsirK quick Introduction</b>"
 msgstr "<b>KsirKin pikaesittely</b>"
 
-#: kgamewin.cpp:2910
+#: kgamewin.cpp:2909
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr ""
 "Hyökkäykset ja siirrot tehdään vetämällä ja pudottamalla maasta armeijoita "
 "sen naapuriin."
 
-#: kgamewin.cpp:2914
+#: kgamewin.cpp:2913
 msgid "Start a new game or join a network game with the menu or the toolbar..."
 msgstr "Aloita uusi peli tai liity verkkopeliin valikosta tai työkaluriviltä…"
 
-#: kgamewin.cpp:2918
+#: kgamewin.cpp:2917
 msgid ""
 "and then let the system guide you through messages and tooltips appearing on "
 "buttons when hovering above them. You can disable bubble help in the options "
@@ -3464,7 +3464,7 @@ msgstr ""
 "ilmestyvät painikkeisiin pitäessäsi hiirtä niiden yllä). Puhekuplaohjeet "
 "voit poistaa käytöstä asetuksista."
 
-#: kgamewin.cpp:2925
+#: kgamewin.cpp:2924
 #, kde-format
 msgid "Don't show messages anymore"
 msgstr "Älä näytä enää viestejä"

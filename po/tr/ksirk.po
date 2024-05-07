@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 02:46+0000\n"
-"PO-Revision-Date: 2024-03-18 19:41+0300\n"
+"POT-Creation-Date: 2024-05-07 02:26+0000\n"
+"PO-Revision-Date: 2024-05-06 13:56+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.02.0\n"
+"X-Generator: Lokalize 24.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1012,7 +1012,7 @@ msgstr ""
 #. i18n: file skins/default/Data/world.desktop line 566
 #, no-c-format, kde-format
 msgid "Earth-like"
-msgstr "Dünya-benzeri"
+msgstr "Dünya benzeri"
 
 #. i18n: file skins/static/Data/world.desktop line 125
 #. i18n: file skins/static/Data/world.desktop line 575
@@ -1053,7 +1053,7 @@ msgstr ""
 #. i18n: file skins/static/Data/world.desktop line 574
 #, no-c-format, kde-format
 msgid "Less animated Earth-like"
-msgstr "Az animasyonlu Dünya-benzeri"
+msgstr "Az canlandırmalı Dünya benzeri"
 
 #. i18n: file skins/legacy/Data/world.desktop line 568
 #, no-c-format, kde-format
@@ -1064,7 +1064,7 @@ msgid ""
 msgstr ""
 "Bu tema, rastgele seçilmiş bazı uluslarla gerçek dünyanın bir benzerini "
 "gösterip çeşitli ilginç hedefleri sunmaktadır.\n"
-"Vektör grafik öncesi KsirK'e benzemektedir."
+"Vektör grafik öncesi KsirK’e benzemektedir."
 
 #. i18n: file skins/legacy/Data/world.desktop line 574
 #, no-c-format, kde-format
@@ -1081,8 +1081,8 @@ msgstr "Sonraki Oyuncu"
 msgid "Details"
 msgstr "Ayrıntılar"
 
-#: decoratedgameframe.cpp:106 kgamewin.cpp:430 kgamewin.cpp:1317
-#: kgamewin.cpp:1329 kgamewin.cpp:2486
+#: decoratedgameframe.cpp:106 kgamewin.cpp:430 kgamewin.cpp:1316
+#: kgamewin.cpp:1328 kgamewin.cpp:2485
 #, kde-format
 msgid "Goal"
 msgstr "Hedef"
@@ -1144,8 +1144,8 @@ msgid ""
 "You are invading <font color=\"blue\">%1</font> with <font color=\"red\">%2</"
 "font>!"
 msgstr ""
-"<font color=\"red\">%2</font> ile <font color=\"blue\">%1</font> 'i istila "
-"ediyorsunuz!"
+"<font color=\"red\">%2</font> ile <font color=\"blue\">%1</font> ülkesini "
+"istila ediyorsunuz!"
 
 #: Dialogs/InvasionSlider.cpp:100
 #, kde-format
@@ -1164,8 +1164,8 @@ msgid ""
 "You are moving armies from <font color=\"red\">%1</font> to <font color="
 "\"blue\">%2</font>!"
 msgstr ""
-"<font color=\"blue\">%2</font> 'den <font color=\"red\">%1</font> 'e "
-"ordularınızı taşıyorsunuz !"
+"<font color=\"blue\">%2</font> ülkesinden <font color=\"red\">%1</font> "
+"ülkesine ordularınızı taşıyorsunuz!"
 
 #: Dialogs/InvasionSlider.cpp:106
 #, kde-format
@@ -1329,7 +1329,7 @@ msgstr "Makine:"
 #: Dialogs/joingame.ui:35 Dialogs/tcpconnectwidget.ui:41
 #, kde-format
 msgid "Port:"
-msgstr "Port:"
+msgstr "Kapı:"
 
 #: Dialogs/kplayersetupwidget.cpp:246
 #, kde-format
@@ -1473,7 +1473,7 @@ msgid ""
 "Skins directory not found - Verify your installation\n"
 "Program cannot continue"
 msgstr ""
-"Tema dizini bulunamadı - Kurulumunuzu doğrulayın\n"
+"Tema dizini bulunamadı — Kurulumunuzu doğrulayın\n"
 "Program sürdürülemiyor"
 
 #: Dialogs/newGameDialogImpl.cpp:133 newgamesetup.cpp:45
@@ -1693,10 +1693,10 @@ msgid_plural ""
 "Error - No receiving country selected while computer player %2 had still %1 "
 "armies to place. This is bug probably #2232 at www.gna.org."
 msgstr[0] ""
-"Hata - Oyuncu %2 hâlâ yerleştirilecek %1 orduya sahipken hiçbir alıcı ülke "
+"Hata — Oyuncu %2 hâlâ yerleştirilecek %1 orduya sahipken hiçbir alıcı ülke "
 "seçilmedi. Muhtemelen bu durum www.gna.org adresindeki hata #2232."
 msgstr[1] ""
-"Hata - Oyuncu %2 hâlâ yerleştirilecek %1 orduya sahipken hiçbir alıcı ülke "
+"Hata — Oyuncu %2 hâlâ yerleştirilecek %1 orduya sahipken hiçbir alıcı ülke "
 "seçilmedi. Muhtemelen bu durum www.gna.org adresindeki hata #2232."
 
 #: GameLogic/aiplayer.cpp:506 Sprites/skinSpritesData.cpp:89
@@ -1723,7 +1723,7 @@ msgstr ""
 "musunuz?"
 
 #: GameLogic/gameautomaton.cpp:1194 GameLogic/gameautomaton.cpp:1223
-#: kgamewin.cpp:2650
+#: kgamewin.cpp:2649
 #, kde-format
 msgid "New game confirmation"
 msgstr "Yeni oyun teyidi"
@@ -1781,7 +1781,7 @@ msgid ""
 "KsirK - Lost connection to server!\n"
 "What do you want to do?"
 msgstr ""
-"KsirK - Sunucuya bağlantı kesildi!\n"
+"KsirK — Sunucuya bağlantı kesildi!\n"
 "Ne yapmak istiyorsunuz?"
 
 #: GameLogic/gameautomaton.cpp:1666
@@ -1817,7 +1817,7 @@ msgid "Do want to save your game?"
 msgstr "Oyunu kaydetmek istiyor muzunuz?"
 
 #: GameLogic/gameautomaton.cpp:1860 GameLogic/gameautomaton.cpp:2277
-#: kgamewin.cpp:2141 kgamewin.cpp:2236 kgamewin.cpp:2273
+#: kgamewin.cpp:2140 kgamewin.cpp:2235 kgamewin.cpp:2272
 #, kde-format
 msgid "%1: %2 armies to place"
 msgstr "%1: yerleştirilecek %2 ordu"
@@ -2041,14 +2041,14 @@ msgstr "%2 ögesinden %3 ögesine %1 ordu taşınıyor"
 msgid ""
 "Sound roule not found - Verify your installation<br>Program cannot continue"
 msgstr ""
-"Roule sesi bulunamadı - Kurulumunuzu doğrulayın<br> Program sürdürülemiyor"
+"Roule sesi bulunamadı — Kurulumunuzu doğrulayın<br> Program sürdürülemiyor"
 
 #: gestionSprites.cpp:798
 #, kde-format
 msgid ""
 "Sound cannon not found - Verify your installation<br>Program cannot continue"
 msgstr ""
-"Cannon sesi bulunamadı - Kurulumunuzu doğrulayın<br> Program sürdürülemiyor"
+"Cannon sesi bulunamadı — Kurulumunuzu doğrulayın<br> Program sürdürülemiyor"
 
 #: gestionSprites.cpp:873 gestionSprites.cpp:893 gestionSprites.cpp:994
 #: gestionSprites.cpp:1031 gestionSprites.cpp:1066 gestionSprites.cpp:1120
@@ -2058,7 +2058,7 @@ msgid ""
 "Sound crash not found - Verify your installation\n"
 "Program cannot continue"
 msgstr ""
-"Crash sesi bulunamadı - Kurulumunuzu doğrulayın\n"
+"Crash sesi bulunamadı — Kurulumunuzu doğrulayın\n"
 "Program sürdürülemiyor"
 
 #: gestionSprites.cpp:1235
@@ -2892,7 +2892,7 @@ msgstr "Bir Standart TCP/IP ağ oyununa katıl"
 #: kgamewin.cpp:423
 #, kde-format
 msgid "Join TCP/IP"
-msgstr "TCP/IP'ye katıl"
+msgstr "TCP/IP’ye katıl"
 
 #: kgamewin.cpp:425
 #, kde-format
@@ -2902,12 +2902,12 @@ msgstr "Bir standart TCP/IP ağ oyununa katıl"
 #: kgamewin.cpp:431
 #, kde-format
 msgid "Display the Current Player's Goal"
-msgstr "Şimdiki Oyuncu'nun Hedefini Göster"
+msgstr "Geçerli Oyuncu’nun Hedefini Göster"
 
 #: kgamewin.cpp:434
 #, kde-format
 msgid "Display the current player's goal"
-msgstr "Şimdiki oyuncu'nun hedefini göster"
+msgstr "Geçerlii oyuncu'nun hedefini göster"
 
 #: kgamewin.cpp:441
 #, kde-format
@@ -2935,35 +2935,35 @@ msgid ""
 "World definition file not found - Verify your installation<br>Program cannot "
 "continue"
 msgstr ""
-"Dünya tanımlama dosyası bulunamadı - Kurulumunuzu doğrulayın<br> Program "
+"Dünya tanımlama dosyası bulunamadı — Kurulumunuzu doğrulayın<br> Program "
 "sürdürülemiyor"
 
-#: kgamewin.cpp:807
+#: kgamewin.cpp:806
 #, kde-format
 msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
 msgstr "<font color=\"red\">%1, %3 ögesinden %2 ögesini fethetti</font>"
 
-#: kgamewin.cpp:831
+#: kgamewin.cpp:830
 #, kde-format
 msgid "%1, you are defeated! Bye, bye..."
 msgstr "%1, yenildin! Güle güle..."
 
-#: kgamewin.cpp:903
+#: kgamewin.cpp:902
 #, kde-format
 msgid "%1: it is up to you again"
 msgstr "%1: sıra yeniden sende"
 
-#: kgamewin.cpp:917
+#: kgamewin.cpp:916
 #, kde-format
 msgid "%1 won!"
 msgstr "%1 kazandı!"
 
-#: kgamewin.cpp:919
+#: kgamewin.cpp:918
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
 msgstr "<big><b>%1</b>, kazandın!</big>"
 
-#: kgamewin.cpp:923
+#: kgamewin.cpp:922
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
@@ -2972,44 +2972,44 @@ msgstr ""
 "<br>Kazananın hedefi şu şekilde açıklanmıştı:<br><i>%1</i><br><br>Yeniden "
 "oynamak istiyor musunuz?"
 
-#: kgamewin.cpp:929
+#: kgamewin.cpp:928
 #, kde-format
 msgid "<br>You conquered all the world!"
 msgstr "<br>Bütün dünyayı fethettin!"
 
-#: kgamewin.cpp:933
+#: kgamewin.cpp:932
 #, kde-format
 msgid "<br>He conquered all the world!"
 msgstr "<br>Bütün dünyayı fethetti!"
 
-#: kgamewin.cpp:1050
+#: kgamewin.cpp:1049
 #, kde-format
 msgid "Do you want to quit the game?"
 msgstr "Oyundan çıkmak istiyor musunuz?"
 
-#: kgamewin.cpp:1052
+#: kgamewin.cpp:1051
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
 msgstr "Oyundan Çık"
 
-#: kgamewin.cpp:1064
+#: kgamewin.cpp:1063
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
 msgstr "Çıkmadan önce oyunu kaydetmek istiyor musunuz?"
 
-#: kgamewin.cpp:1102
+#: kgamewin.cpp:1101
 #, kde-format
 msgctxt "@title:window"
 msgid "KsirK - Load Game"
 msgstr "Ksirk - Oyunu Yükle"
 
-#: kgamewin.cpp:1140
+#: kgamewin.cpp:1139
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
 msgstr "%1 ağ oyuncusunun bağlanması bekleniyor."
 
-#: kgamewin.cpp:1219
+#: kgamewin.cpp:1218
 #, kde-format
 msgid ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
@@ -3019,95 +3019,95 @@ msgid_plural ""
 "with %1 armies!<br> How do you want to defend <font color=\"blue\">%4</font>?"
 msgstr[0] ""
 "<font color=\"red\">%2</font> <font color=\"red\">%3</font> ögesinden size "
-"%1 orduyla saldırıyor!<br> Nasıl savunmak istiyorsunuz <font color=\"blue\">"
-"%4</font> ögesini?"
+"%1 orduyla saldırıyor!<br><font color=\"blue\">%4</font> ögesini nasıl "
+"savunmak istiyorsunuz?"
 msgstr[1] ""
 "<font color=\"red\">%2</font> <font color=\"red\">%3</font> ögesinden size "
-"%1 orduyla saldırıyor!<br> Nasıl savunmak istiyorsunuz <font color=\"blue\">"
-"%4</font> ögesini?"
+"%1 orduyla saldırıyor!<br><font color=\"blue\">%4</font> ögesini nasıl "
+"savunmak istiyorsunuz?"
 
-#: kgamewin.cpp:1248
+#: kgamewin.cpp:1247
 #, kde-format
 msgid "Defend 1"
 msgstr "Savunma 1"
 
-#: kgamewin.cpp:1249
+#: kgamewin.cpp:1248
 #, kde-format
 msgid "Defend 2"
 msgstr "Savunma 2"
 
-#: kgamewin.cpp:1250
+#: kgamewin.cpp:1249
 #, kde-format
 msgid "Defend-Auto"
 msgstr "Otomatik Savunma"
 
-#: kgamewin.cpp:1369
+#: kgamewin.cpp:1368
 #, kde-format
 msgid "Waiting for %1 players to connect"
 msgstr "%1 oyuncunun bağlanması bekleniyor"
 
-#: kgamewin.cpp:1759 kgamewin.cpp:1799
+#: kgamewin.cpp:1758 kgamewin.cpp:1798
 msgid "There is no country here!"
 msgstr "Burada bir ülke yok!"
 
-#: kgamewin.cpp:1763 kgamewin.cpp:1804
+#: kgamewin.cpp:1762 kgamewin.cpp:1803
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
 msgstr "İlk ülkenin sahibi siz değilsiniz: %1!"
 
-#: kgamewin.cpp:1767
+#: kgamewin.cpp:1766
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
 msgstr "İkinci ülkenin sahibi siz değilsiniz: %1!"
 
-#: kgamewin.cpp:1771 kgamewin.cpp:1815
+#: kgamewin.cpp:1770 kgamewin.cpp:1814
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr "%1 ögesinden orduları kendisine taşımaya çalışıyorsunuz!"
 
-#: kgamewin.cpp:1776 kgamewin.cpp:1821
+#: kgamewin.cpp:1775 kgamewin.cpp:1820
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
 msgstr "%1, %2 ögesinin komşusu değil!"
 
-#: kgamewin.cpp:1782
+#: kgamewin.cpp:1781
 #, kde-format
 msgid "Moving armies from %1 to %2."
 msgstr "%1 ögesinden %2 ögesine orduları taşıyın."
 
-#: kgamewin.cpp:1810
+#: kgamewin.cpp:1809
 #, kde-format
 msgid "You are the owner of the second country: %1!"
 msgstr "İkinci ülkenin sahibisiniz: %1!"
 
-#: kgamewin.cpp:1828
+#: kgamewin.cpp:1827
 msgid "Ready to fight!"
 msgstr "Savaşa hazır!"
 
-#: kgamewin.cpp:1922
+#: kgamewin.cpp:1921
 msgid "<font color=\"orange\">No country here!</font>"
 msgstr "<font color=\"orange\">Burada ülke yok!</font>"
 
-#: kgamewin.cpp:1930
+#: kgamewin.cpp:1929
 #, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr "<font color=\"orange\">%1 ögesinin sahibi değilsiniz!</font>"
 
-#: kgamewin.cpp:1937
+#: kgamewin.cpp:1936
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr "<font color=\"orange\">%2 içerisinde yalnızca %1 ordu var!</font>"
 
-#: kgamewin.cpp:2077
+#: kgamewin.cpp:2076
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
 msgstr "%1, %2 ögesindeki tek ordunuzla savunma yapıyorsunuz."
 
-#: kgamewin.cpp:2301
+#: kgamewin.cpp:2300
 msgid "Exchange armies again or continue?"
 msgstr "Orduları takas et veya sürdür?"
 
-#: kgamewin.cpp:2326
+#: kgamewin.cpp:2325
 #, kde-format
 msgid ""
 "You must distribute\n"
@@ -3116,50 +3116,50 @@ msgstr ""
 "Ordularınızın\n"
 "hepsini dağıtmalısınız"
 
-#: kgamewin.cpp:2326 main.cpp:42
+#: kgamewin.cpp:2325 main.cpp:42
 #, kde-format
 msgid "KsirK"
 msgstr "KsirK"
 
-#: kgamewin.cpp:2466
+#: kgamewin.cpp:2465
 msgid "Battle ongoing."
 msgstr "Savaş sürüyor."
 
-#: kgamewin.cpp:2587 kgamewin.cpp:2598 kgamewin.cpp:2621
+#: kgamewin.cpp:2586 kgamewin.cpp:2597 kgamewin.cpp:2620
 #, kde-format
 msgid "%1, it is up to you."
 msgstr "%1, size kalmış."
 
-#: kgamewin.cpp:2650
+#: kgamewin.cpp:2649
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
 msgstr ""
 "Geçerli oyunu bitirip yeni bir oyun başlatmayı gerçekten istiyor musunuz?"
 
-#: kgamewin.cpp:2650
+#: kgamewin.cpp:2649
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Yeni bir Oyun Başlat"
 
-#: kgamewin.cpp:2906
+#: kgamewin.cpp:2905
 msgid "<b>KsirK quick Introduction</b>"
 msgstr "<b>KsirK Tez Tanıtım</b>"
 
-#: kgamewin.cpp:2910
+#: kgamewin.cpp:2909
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr ""
 "Saldırılar ve taşımalar komşu ülkeler arasında sürükle & bırak ile "
 "sağlanmaktadır."
 
-#: kgamewin.cpp:2914
+#: kgamewin.cpp:2913
 msgid "Start a new game or join a network game with the menu or the toolbar..."
 msgstr ""
 "Menü ya da araç çubuğunu kullanarak yeni bir oyun başlat ya da bir ağ "
 "oyununa katılın..."
 
-#: kgamewin.cpp:2918
+#: kgamewin.cpp:2917
 msgid ""
 "and then let the system guide you through messages and tooltips appearing on "
 "buttons when hovering above them. You can disable bubble help in the options "
@@ -3169,7 +3169,7 @@ msgstr ""
 "balonlarıyla sizi yönlendirmesini sağlayın. Seçenekler penceresi üzerindeki "
 "yardım baloncuklarını isterseniz kapatabilirsiniz."
 
-#: kgamewin.cpp:2925
+#: kgamewin.cpp:2924
 #, kde-format
 msgid "Don't show messages anymore"
 msgstr "Artık ileti gösterme"
@@ -3312,12 +3312,12 @@ msgstr "<b>Ordular:</b> %1"
 #: krightdialog.cpp:471
 #, kde-format
 msgid "<font color=\"red\">lost armies: %1</font>"
-msgstr "<font color=\"red\">kayıp ordular: %1</font>"
+msgstr "<font color=\"red\">Kaybedilen ordular: %1</font>"
 
 #: krightdialog.cpp:476
 #, kde-format
 msgid "<font color=\"blue\">lost armies: %1</font>"
-msgstr "<font color=\"blue\">kayıp ordular: %1</font>"
+msgstr "<font color=\"blue\">Kaybedilen ordular: %1</font>"
 
 #: ksirkConfigDialog.cpp:37
 #, kde-format
@@ -3411,12 +3411,12 @@ msgstr "Ana Araç Çubuğu"
 #: main.cpp:44
 #, kde-format
 msgid "KsirK - World Domination Strategy Game"
-msgstr "KsirK - Dünya Hakimiyeti Strateji Oyunu"
+msgstr "KsirK — Dünya Hakimiyeti Strateji Oyunu"
 
 #: main.cpp:46
 #, kde-format
 msgid "(c) 2002-2015, Gaël de Chalendar\n"
-msgstr "(c) 2002-2015, Gaël de Chalendar\n"
+msgstr "(c) 2002–2015, Gaël de Chalendar\n"
 
 #: main.cpp:47
 #, kde-format
@@ -3460,7 +3460,7 @@ msgstr "Michal Golunski (Polish translation)"
 #: main.cpp:55
 #, kde-format
 msgid "French students of the 'IUP ISI 2007-2008':"
-msgstr "'IUP ISI 2007-2008' bünyesindeki Fransız öğrenciler:"
+msgstr "“IUP ISI 2007–2008” bünyesindeki Fransız öğrenciler:"
 
 #: main.cpp:56
 #, kde-format
@@ -3578,9 +3578,9 @@ msgstr "Hareketli grafik için Maximum Y bulunamadı: Arka plan yok!"
 #: Sprites/skinSpritesData.cpp:88
 #, kde-format
 msgid "Error - Unknown skin int data: "
-msgstr "Hata - Bilinmeyen tema tamsayı verisi: "
+msgstr "Hata — Bilinmeyen tema tamsayı verisi: "
 
 #: Sprites/skinSpritesData.cpp:104
 #, kde-format
 msgid "Error - Unknown skin string data: "
-msgstr "Hata - Bilinmeyen tema dizi verisi: "
+msgstr "Hata — Bilinmeyen tema dizisi verisi: "

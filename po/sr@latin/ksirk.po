@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 02:46+0000\n"
+"POT-Creation-Date: 2024-05-07 02:26+0000\n"
 "PO-Revision-Date: 2017-09-28 17:59+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -1088,8 +1088,8 @@ msgstr "Sledeći igrač"
 msgid "Details"
 msgstr "Detalji"
 
-#: decoratedgameframe.cpp:106 kgamewin.cpp:430 kgamewin.cpp:1317
-#: kgamewin.cpp:1329 kgamewin.cpp:2486
+#: decoratedgameframe.cpp:106 kgamewin.cpp:430 kgamewin.cpp:1316
+#: kgamewin.cpp:1328 kgamewin.cpp:2485
 #, kde-format
 msgid "Goal"
 msgstr "Cilj"
@@ -1743,7 +1743,7 @@ msgid "Do you really want to end your current game and join another?"
 msgstr "Želite li zaista da okončate tekuću partiju i priključite se drugoj?"
 
 #: GameLogic/gameautomaton.cpp:1194 GameLogic/gameautomaton.cpp:1223
-#: kgamewin.cpp:2650
+#: kgamewin.cpp:2649
 #, kde-format
 msgid "New game confirmation"
 msgstr "Potvrda nove partije"
@@ -1846,7 +1846,7 @@ msgstr "Želite li da sačuvate poziciju?"
 
 # >! Plurals (code passing number as string over network).
 #: GameLogic/gameautomaton.cpp:1860 GameLogic/gameautomaton.cpp:2277
-#: kgamewin.cpp:2141 kgamewin.cpp:2236 kgamewin.cpp:2273
+#: kgamewin.cpp:2140 kgamewin.cpp:2235 kgamewin.cpp:2272
 #, kde-format
 msgid "%1: %2 armies to place"
 msgstr ""
@@ -3018,34 +3018,34 @@ msgstr ""
 "ne može da se nastavi.</html>"
 
 # >> Player %1 has stepped from country %2 into country %3 and conquered it.
-#: kgamewin.cpp:807
+#: kgamewin.cpp:806
 #, kde-format
 msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
 msgstr ""
 "<font color=\"red\">%1 osvoji %2 iz %3.</font>|/|<font color=\"red\">%1 "
 "osvoji $[aku %2] iz $[gen %3].</font>"
 
-#: kgamewin.cpp:831
+#: kgamewin.cpp:830
 #, kde-format
 msgid "%1, you are defeated! Bye, bye..."
 msgstr "%1, poraženi ste! Vidimo se..."
 
-#: kgamewin.cpp:903
+#: kgamewin.cpp:902
 #, kde-format
 msgid "%1: it is up to you again"
 msgstr "%1: ponovo ste na potezu"
 
-#: kgamewin.cpp:917
+#: kgamewin.cpp:916
 #, kde-format
 msgid "%1 won!"
 msgstr "%1 pobedi!"
 
-#: kgamewin.cpp:919
+#: kgamewin.cpp:918
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
 msgstr "<big><b>%1</b>, pobedili ste!</big>"
 
-#: kgamewin.cpp:923
+#: kgamewin.cpp:922
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
@@ -3054,34 +3054,34 @@ msgstr ""
 "<br/>Cilj pobednika bio je zadat ovako:<br/><i>%1</i><br/><br/>Želite li "
 "ponovo da igrate?"
 
-#: kgamewin.cpp:929
+#: kgamewin.cpp:928
 #, kde-format
 msgid "<br>You conquered all the world!"
 msgstr "<html><br/>Pokorili ste čitav svet!</html>"
 
-#: kgamewin.cpp:933
+#: kgamewin.cpp:932
 #, kde-format
 msgid "<br>He conquered all the world!"
 msgstr "<html><br/>Pokorio je čitav svet!</html>"
 
-#: kgamewin.cpp:1050
+#: kgamewin.cpp:1049
 #, kde-format
 msgid "Do you want to quit the game?"
 msgstr "Želite li da napustite igru?"
 
-#: kgamewin.cpp:1052
+#: kgamewin.cpp:1051
 #, fuzzy, kde-format
 #| msgid "Quit"
 msgctxt "@action:button"
 msgid "Quit Game"
 msgstr "Napusti"
 
-#: kgamewin.cpp:1064
+#: kgamewin.cpp:1063
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
 msgstr "Pre nego što napustite, želite li da sačuvate poziciju?"
 
-#: kgamewin.cpp:1102
+#: kgamewin.cpp:1101
 #, fuzzy, kde-format
 #| msgid "KsirK - Load Game"
 msgctxt "@title:window"
@@ -3089,7 +3089,7 @@ msgid "KsirK - Load Game"
 msgstr "Učitavanje pozicije"
 
 # >! Plurals (code passing number as string over network).
-#: kgamewin.cpp:1140
+#: kgamewin.cpp:1139
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
 msgstr ""
@@ -3097,7 +3097,7 @@ msgstr ""
 "'mrežnog igrača' 'mrežna igrača' 'mrežnih igrača']."
 
 # >> %3 and %4 are countries.
-#: kgamewin.cpp:1219
+#: kgamewin.cpp:1218
 #, kde-format
 msgid ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
@@ -3130,74 +3130,74 @@ msgstr[3] ""
 "font> s jednom armijom!<br/>Kako želite da branite <font color=\"blue\">"
 "$[aku %4]</font>?"
 
-#: kgamewin.cpp:1248
+#: kgamewin.cpp:1247
 #, kde-format
 msgid "Defend 1"
 msgstr "Brani 1"
 
-#: kgamewin.cpp:1249
+#: kgamewin.cpp:1248
 #, kde-format
 msgid "Defend 2"
 msgstr "Brani 2"
 
-#: kgamewin.cpp:1250
+#: kgamewin.cpp:1249
 #, kde-format
 msgid "Defend-Auto"
 msgstr "Brani automatski"
 
-#: kgamewin.cpp:1369
+#: kgamewin.cpp:1368
 #, kde-format
 msgid "Waiting for %1 players to connect"
 msgstr ""
 "Čekam na povezivanje %1 igrača|/|Čekam na povezivanje %1 $[množ ^1 igrača "
 "igrača igrača]"
 
-#: kgamewin.cpp:1759 kgamewin.cpp:1799
+#: kgamewin.cpp:1758 kgamewin.cpp:1798
 msgid "There is no country here!"
 msgstr "Tu nema nijedne zemlje."
 
-#: kgamewin.cpp:1763 kgamewin.cpp:1804
+#: kgamewin.cpp:1762 kgamewin.cpp:1803
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
 msgstr "Niste vlasnik prve zemlje: %1."
 
-#: kgamewin.cpp:1767
+#: kgamewin.cpp:1766
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
 msgstr "Niste vlasnik druge zemlje: %1."
 
-#: kgamewin.cpp:1771 kgamewin.cpp:1815
+#: kgamewin.cpp:1770 kgamewin.cpp:1814
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr ""
 "Pokušavate da pomerite armije iz %1 na njih same.|/|Pokušavate da pomerite "
 "armije iz $[gen %1] na njih same."
 
-#: kgamewin.cpp:1776 kgamewin.cpp:1821
+#: kgamewin.cpp:1775 kgamewin.cpp:1820
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
 msgstr "%1 nije sused %2.|/|$[nom %1] nije sused $[gen %2]."
 
-#: kgamewin.cpp:1782
+#: kgamewin.cpp:1781
 #, kde-format
 msgid "Moving armies from %1 to %2."
 msgstr ""
 "Premeštam armije iz %1 u %2.|/|Premeštam armije iz $[gen %1] u $[aku %2]."
 
-#: kgamewin.cpp:1810
+#: kgamewin.cpp:1809
 #, kde-format
 msgid "You are the owner of the second country: %1!"
 msgstr "Vlasnik ste druge zemlje: %1."
 
-#: kgamewin.cpp:1828
+#: kgamewin.cpp:1827
 msgid "Ready to fight!"
 msgstr "Spremni za borbu!"
 
-#: kgamewin.cpp:1922
+#: kgamewin.cpp:1921
 msgid "<font color=\"orange\">No country here!</font>"
 msgstr "<font color=\"orange\">Ovde nema zemlje.</font>"
 
-#: kgamewin.cpp:1930
+#: kgamewin.cpp:1929
 #, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr ""
@@ -3205,25 +3205,25 @@ msgstr ""
 "\">Niste vlasnik $[gen %1].</font>"
 
 # >! Plurals (code passing number as string over network).
-#: kgamewin.cpp:1937
+#: kgamewin.cpp:1936
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr ""
 "<font color=\"orange\">U %2 ima samo %1 armija.</font>|/|<font color=\"orange"
 "\">U $[lok %2] ima samo %1 $[množ ^1 armija armije armija].</font>"
 
-#: kgamewin.cpp:2077
+#: kgamewin.cpp:2076
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
 msgstr ""
 "%1, branite se jedinom armijom koju imate u %2.|/|%1, branite se jedinom "
 "armijom koju imate u $[lok %2]."
 
-#: kgamewin.cpp:2301
+#: kgamewin.cpp:2300
 msgid "Exchange armies again or continue?"
 msgstr "Ponovo razmeniti armije ili nastaviti?"
 
-#: kgamewin.cpp:2326
+#: kgamewin.cpp:2325
 #, kde-format
 msgid ""
 "You must distribute\n"
@@ -3232,49 +3232,49 @@ msgstr ""
 "Morate rasporediti\n"
 "sve svoje armije"
 
-#: kgamewin.cpp:2326 main.cpp:42
+#: kgamewin.cpp:2325 main.cpp:42
 #, kde-format
 msgid "KsirK"
 msgstr "KSirk"
 
-#: kgamewin.cpp:2466
+#: kgamewin.cpp:2465
 msgid "Battle ongoing."
 msgstr "Bitka u toku."
 
-#: kgamewin.cpp:2587 kgamewin.cpp:2598 kgamewin.cpp:2621
+#: kgamewin.cpp:2586 kgamewin.cpp:2597 kgamewin.cpp:2620
 #, kde-format
 msgid "%1, it is up to you."
 msgstr "%1, na potezu ste."
 
-#: kgamewin.cpp:2650
+#: kgamewin.cpp:2649
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
 msgstr "Želite li zaista da okončate trenutnu partiju i pokrenete novu?"
 
-#: kgamewin.cpp:2650
+#: kgamewin.cpp:2649
 #, fuzzy, kde-format
 #| msgid "Start a New Game"
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Započni novu partiju"
 
-#: kgamewin.cpp:2906
+#: kgamewin.cpp:2905
 msgid "<b>KsirK quick Introduction</b>"
 msgstr "<b>Brzo upoznavanje KSirka</b>"
 
-#: kgamewin.cpp:2910
+#: kgamewin.cpp:2909
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr "Napada se i pomera prevlačenjem između susednih zemalja."
 
-#: kgamewin.cpp:2914
+#: kgamewin.cpp:2913
 msgid "Start a new game or join a network game with the menu or the toolbar..."
 msgstr ""
 "Pokrenite novu partiju, ili se priključite mrežnoj, putem menija ili trake "
 "alatki..."
 
 # rewrite-msgid: /options window/configuration dialog/
-#: kgamewin.cpp:2918
+#: kgamewin.cpp:2917
 msgid ""
 "and then let the system guide you through messages and tooltips appearing on "
 "buttons when hovering above them. You can disable bubble help in the options "
@@ -3284,7 +3284,7 @@ msgstr ""
 "javljaju dok lebdite nad njima. Oblačiće možete isključiti u dijalogu za "
 "podešavanje."
 
-#: kgamewin.cpp:2925
+#: kgamewin.cpp:2924
 #, kde-format
 msgid "Don't show messages anymore"
 msgstr "Ne prikazuj više poruke"
