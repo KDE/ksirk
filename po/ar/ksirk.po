@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:37+0000\n"
+"POT-Creation-Date: 2024-05-07 00:37+0000\n"
 "PO-Revision-Date: 2022-01-11 13:26+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1058,7 +1058,7 @@ msgstr "هذا a العالم مثل حقيقي مع بعض و"
 msgid "Legacy"
 msgstr "عتيق"
 
-#: decoratedgameframe.cpp:100
+#: decoratedgameframe.cpp:100 kgamewin.cpp:349
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Next Player"
@@ -1071,7 +1071,8 @@ msgctxt "@action"
 msgid "Details"
 msgstr "التفاصيل"
 
-#: decoratedgameframe.cpp:106
+#: decoratedgameframe.cpp:106 kgamewin.cpp:332 kgamewin.cpp:1214
+#: kgamewin.cpp:1226 kgamewin.cpp:2383
 #, fuzzy, kde-format
 #| msgid "Goal"
 msgctxt "@action"
@@ -1197,17 +1198,17 @@ msgstr "المضيف:"
 msgid "Port:"
 msgstr "المنفذ:"
 
-#: Dialogs/kplayersetupwidget.cpp:246
+#: Dialogs/kplayersetupwidget.cpp:250
 #, fuzzy, kde-format
 msgid "Name already in use. Please choose another one."
 msgstr "رجاء اختيار الاسم"
 
-#: Dialogs/kplayersetupwidget.cpp:248
+#: Dialogs/kplayersetupwidget.cpp:252
 #, fuzzy, kde-format
 msgid "Empty name. Please choose another one."
 msgstr "رجاء اختيار الاسم"
 
-#: Dialogs/kplayersetupwidget.cpp:291
+#: Dialogs/kplayersetupwidget.cpp:295
 #, fuzzy, kde-format
 msgid "Player Number %1, please type in your name and choose your nation:"
 msgstr "اللاعب الرقم نوع بوصة الاسم<br /> و اختيار:"
@@ -1318,28 +1319,30 @@ msgid "Reach a goa&l"
 msgstr "الوصول a"
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
-#: Dialogs/newGameDialog.ui:227 Dialogs/newGameSummary.ui:203
-#: Dialogs/qplayersetupdialog.ui:123 Dialogs/tcpconnectwidget.ui:95
+#: Dialogs/newGameDialog.ui:230 Dialogs/newGameSummary.ui:206
+#: Dialogs/qplayersetupdialog.ui:126 Dialogs/tcpconnectwidget.ui:98
 #, kde-format
 msgid "Cancel"
 msgstr "ألغِ"
 
 #. i18n: ectx: property (text), widget (QPushButton, nextButton)
-#: Dialogs/newGameDialog.ui:247 Dialogs/qplayersetupdialog.ui:150
-#: Dialogs/tcpconnectwidget.ui:122
-#, kde-format
-msgid "Next >>"
+#: Dialogs/newGameDialog.ui:250 Dialogs/qplayersetupdialog.ui:153
+#: Dialogs/tcpconnectwidget.ui:125
+#, fuzzy, kde-format
+#| msgid "Next >>"
+msgid "Next"
 msgstr "التالي >>"
 
-#: Dialogs/newGameDialogImpl.cpp:125 newgamesetup.cpp:44
+#: Dialogs/newGameDialogImpl.cpp:128 newgamesetup.cpp:44
 #, fuzzy, kde-format
 msgid ""
 "Skins directory not found - Verify your installation\n"
 "Program cannot continue"
 msgstr "الجلود دليل ليس موجود تحقّق تثبيت متابعة"
 
-#: Dialogs/newGameDialogImpl.cpp:126 GameLogic/aiplayer.cpp:506
-#: Sprites/skinSpritesData.cpp:89 Sprites/skinSpritesData.cpp:105
+#: Dialogs/newGameDialogImpl.cpp:129 GameLogic/aiplayer.cpp:506
+#: newgamesetup.cpp:45 Sprites/skinSpritesData.cpp:89
+#: Sprites/skinSpritesData.cpp:105
 #, fuzzy, kde-format
 #| msgid "Fatal Error"
 msgctxt "@title:window"
@@ -1401,34 +1404,35 @@ msgid "Network"
 msgstr "الشبكة"
 
 #. i18n: ectx: property (text), widget (QPushButton, previousButton)
-#: Dialogs/newGameSummary.ui:223 Dialogs/qplayersetupdialog.ui:143
-#: Dialogs/tcpconnectwidget.ui:115
-#, kde-format
-msgid "<< Previous"
+#: Dialogs/newGameSummary.ui:226 Dialogs/qplayersetupdialog.ui:146
+#: Dialogs/tcpconnectwidget.ui:118
+#, fuzzy, kde-format
+#| msgid "<< Previous"
+msgid "Previous"
 msgstr "<< السابق"
 
 #. i18n: ectx: property (text), widget (QPushButton, finishButton)
-#: Dialogs/newGameSummary.ui:230
+#: Dialogs/newGameSummary.ui:236
 #, fuzzy, kde-format
 msgid "Start"
 msgstr "ابدأ"
 
-#: Dialogs/newGameSummaryWidget.cpp:59
+#: Dialogs/newGameSummaryWidget.cpp:62
 #, fuzzy, kde-format
 msgid "Reach a goal"
 msgstr "الوصول a"
 
-#: Dialogs/newGameSummaryWidget.cpp:59
+#: Dialogs/newGameSummaryWidget.cpp:62
 #, fuzzy, kde-format
 msgid "World conquest"
 msgstr "العالم"
 
-#: Dialogs/newGameSummaryWidget.cpp:74 Dialogs/newGameSummaryWidget.cpp:76
+#: Dialogs/newGameSummaryWidget.cpp:77 Dialogs/newGameSummaryWidget.cpp:79
 #, kde-format
 msgid "Yes"
 msgstr "نعم"
 
-#: Dialogs/newGameSummaryWidget.cpp:74 Dialogs/newGameSummaryWidget.cpp:76
+#: Dialogs/newGameSummaryWidget.cpp:77 Dialogs/newGameSummaryWidget.cpp:79
 #, kde-format
 msgid "No"
 msgstr "لا"
@@ -1480,7 +1484,7 @@ msgid "Please select your saved player:"
 msgstr "رجاء تحديد:"
 
 #. i18n: ectx: property (text), widget (QPushButton, PushButton1)
-#: Dialogs/qwaitedplayersetupdialog.ui:67
+#: Dialogs/qwaitedplayersetupdialog.ui:70
 #, kde-format
 msgid "OK"
 msgstr "حسنًا"
@@ -1492,43 +1496,43 @@ msgid "New Game or Exit"
 msgstr "جديد لعبة أو خروج"
 
 #. i18n: ectx: property (text), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:24
+#: Dialogs/restartOrExitDialog.ui:27
 #, kde-format
 msgid "New Game"
 msgstr "لعبة جديدة"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:30
+#: Dialogs/restartOrExitDialog.ui:33
 #, fuzzy, kde-format
 msgid "Starts a new game"
 msgstr "يبدء a جديد لعبة"
 
 #. i18n: ectx: property (text), widget (QPushButton, doNothingButton)
-#: Dialogs/restartOrExitDialog.ui:37
+#: Dialogs/restartOrExitDialog.ui:40
 #, kde-format
 msgid "Do Nothing"
 msgstr "لا تفعل شيئًا"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, doNothingButton)
-#: Dialogs/restartOrExitDialog.ui:40
+#: Dialogs/restartOrExitDialog.ui:43
 #, fuzzy, kde-format
 msgid "Do nothing. Game buttons will be available"
 msgstr "تنفيذ لا شئ لعبة متوفّر"
 
 #. i18n: ectx: property (text), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:47
+#: Dialogs/restartOrExitDialog.ui:53
 #, kde-format
 msgid "Exit"
 msgstr "اخرج"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:50
+#: Dialogs/restartOrExitDialog.ui:56
 #, fuzzy, kde-format
 msgid "Quit KsirK"
 msgstr "اخرج"
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: Dialogs/restartOrExitDialog.ui:86
+#: Dialogs/restartOrExitDialog.ui:92
 #, fuzzy, no-c-format, kde-format
 msgid "%1 won! Do you want to play again?"
 msgstr "تنفيذ إلى تشغيل?"
@@ -1681,7 +1685,7 @@ msgid "Do want to save your game?"
 msgstr "تنفيذ إلى حفظ لعبة?"
 
 #: GameLogic/gameautomaton.cpp:1818 GameLogic/gameautomaton.cpp:2235
-#: kgamewin.cpp:2042 kgamewin.cpp:2137 kgamewin.cpp:2174
+#: kgamewin.cpp:2038 kgamewin.cpp:2133 kgamewin.cpp:2170
 #, fuzzy, kde-format
 msgid "%1: %2 armies to place"
 msgstr "إلى"
@@ -1829,12 +1833,15 @@ msgstr[4] "بوصة 2"
 msgstr[5] "بوصة 2"
 
 #: GameLogic/goal.cpp:285
-#, kde-format
+#, fuzzy, kde-format
+#| msgid " and "
+msgctxt "@item:intext country list separator of last item"
 msgid " and "
 msgstr " و "
 
 #: GameLogic/goal.cpp:289
 #, fuzzy, kde-format
+msgctxt "@item:intext country list separator of non-last item"
 msgid ", "
 msgstr "، "
 
@@ -1919,7 +1926,7 @@ msgstr "المشكلة لا"
 msgid "Bug: who should be 0, 1 or 2."
 msgstr "علّة أو."
 
-#: kgamewin.cpp:139 kgamewin.cpp:644
+#: kgamewin.cpp:139 kgamewin.cpp:641
 #, fuzzy, kde-format
 msgid "Cannot load icon<br>Program cannot continue"
 msgstr "لا يستطيع التحميل أيقونة<br/> البرنامج متابعة"
@@ -1929,155 +1936,156 @@ msgstr "لا يستطيع التحميل أيقونة<br/> البرنامج مت
 msgid "Cannot load button image %1<br>Program cannot continue"
 msgstr "لا يستطيع التحميل زر صورة<br/> البرنامج متابعة"
 
-#. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
-#: kgamewin.cpp:305 mainMenu.ui:104
-#, kde-format
+#: kgamewin.cpp:305
+#, fuzzy, kde-format
+msgctxt "@action"
 msgid "New Standard TCP/IP Network Game"
-msgstr ""
+msgstr "انضم شبكة لعبة"
 
 #: kgamewin.cpp:306
 #, kde-format
+msgctxt "@action"
 msgid "New TCP/IP"
 msgstr ""
 
 #: kgamewin.cpp:308
-#, kde-format
+#, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Create a new standard TCP/IP network game"
-msgstr ""
+msgstr "انضم شبكة لعبة"
 
 #: kgamewin.cpp:323
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Join a Standard TCP/IP Network Game"
 msgstr "انضم شبكة لعبة"
 
 #: kgamewin.cpp:324
 #, kde-format
+msgctxt "@action"
 msgid "Join TCP/IP"
 msgstr ""
 
 #: kgamewin.cpp:326
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Join a standard TCP/IP network game"
 msgstr "انضم شبكة لعبة"
 
-#: kgamewin.cpp:331 kgamewin.cpp:1218 kgamewin.cpp:1230 kgamewin.cpp:2387
-#, kde-format
-msgid "Goal"
-msgstr "الهدف"
-
-#: kgamewin.cpp:332
+#: kgamewin.cpp:331
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Display the Current Player's Goal"
 msgstr "العرض الحالي"
 
-#: kgamewin.cpp:335
+#: kgamewin.cpp:334
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Display the current player's goal"
 msgstr "العرض الحالي"
 
-#: kgamewin.cpp:342
+#: kgamewin.cpp:340
 #, kde-format
+msgctxt "@action"
 msgid "Contextual Help"
 msgstr ""
 
 #: kgamewin.cpp:351
 #, fuzzy, kde-format
-msgid "Next Player"
-msgstr "التالي اللاعب"
-
-#: kgamewin.cpp:353
-#, fuzzy, kde-format
-msgid "Lets the next player play"
+msgctxt "@info:tooltip"
+msgid "Let the next player play"
 msgstr "العرض الحالي"
 
-#: kgamewin.cpp:358
+#: kgamewin.cpp:355
 #, kde-format
-msgid "Finish moves"
+msgctxt "@action"
+msgid "Finish Moves"
 msgstr ""
 
-#: kgamewin.cpp:360
+#: kgamewin.cpp:357
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Finish moving the current sprites"
 msgstr ""
 
-#: kgamewin.cpp:488
+#: kgamewin.cpp:485
 #, fuzzy, kde-format
 msgid ""
 "World definition file not found - Verify your installation<br>Program cannot "
 "continue"
 msgstr "تعريف XML ملفّ ليس موجود تحقّق تثبيت<br/> البرنامج متابعة"
 
-#: kgamewin.cpp:708
+#: kgamewin.cpp:704
 #, fuzzy, kde-format
 msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
 msgstr "<font color=\"red\"> من</font>"
 
-#: kgamewin.cpp:732
+#: kgamewin.cpp:728
 #, fuzzy, kde-format
 msgid "%1, you are defeated! Bye, bye…"
 msgstr "مع السلامةوقفة التّأهّب."
 
-#: kgamewin.cpp:804
+#: kgamewin.cpp:800
 #, fuzzy, kde-format
 msgid "%1: it is up to you again"
 msgstr "الإيطالية هو أعلى إلى"
 
-#: kgamewin.cpp:818
+#: kgamewin.cpp:814
 #, kde-format
 msgid "%1 won!"
 msgstr "%1 فاز!"
 
-#: kgamewin.cpp:820
+#: kgamewin.cpp:816
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
 msgstr ""
 
-#: kgamewin.cpp:824
+#: kgamewin.cpp:820
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
 "play again?"
 msgstr ""
 
-#: kgamewin.cpp:830
+#: kgamewin.cpp:826
 #, kde-format
 msgid "<br>You conquered all the world!"
 msgstr ""
 
-#: kgamewin.cpp:834
+#: kgamewin.cpp:830
 #, kde-format
 msgid "<br>He conquered all the world!"
 msgstr ""
 
-#: kgamewin.cpp:951
+#: kgamewin.cpp:947
 #, fuzzy, kde-format
 msgid "Do you want to quit the game?"
 msgstr "تنفيذ إلى حفظ لعبة?"
 
-#: kgamewin.cpp:953
+#: kgamewin.cpp:949
 #, fuzzy, kde-format
 #| msgid "Quit"
 msgctxt "@action:button"
 msgid "Quit Game"
 msgstr "أنهِ"
 
-#: kgamewin.cpp:965
+#: kgamewin.cpp:961
 #, fuzzy, kde-format
 msgid "Before you quit, do you want to save your game?"
 msgstr "قبل اخرج إلى حفظ لعبة?"
 
-#: kgamewin.cpp:1003
+#: kgamewin.cpp:999
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Load Game"
 msgstr "لعبة جديدة"
 
-#: kgamewin.cpp:1041
+#: kgamewin.cpp:1037
 #, fuzzy, kde-format
 msgid "Waiting for the connection of %1 network players."
 msgstr "منتظر لـ اتصال من شبكة."
 
-#: kgamewin.cpp:1120
+#: kgamewin.cpp:1116
 #, fuzzy, kde-format
 msgid ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
@@ -2092,137 +2100,140 @@ msgstr[3] "أداء<font color=\"red\"></font> مع<font color=\"blue\"></font>?
 msgstr[4] "أداء<font color=\"red\"></font> مع<font color=\"blue\"></font>?"
 msgstr[5] "أداء<font color=\"red\"></font> مع<font color=\"blue\"></font>?"
 
-#: kgamewin.cpp:1149
+#: kgamewin.cpp:1145
 #, kde-format
+msgctxt "@action:button"
 msgid "Defend 1"
 msgstr ""
 
-#: kgamewin.cpp:1150
+#: kgamewin.cpp:1146
 #, kde-format
+msgctxt "@action:button"
 msgid "Defend 2"
 msgstr ""
 
-#: kgamewin.cpp:1151
+#: kgamewin.cpp:1147
 #, kde-format
+msgctxt "@action:button"
 msgid "Defend-Auto"
 msgstr ""
 
-#: kgamewin.cpp:1270
+#: kgamewin.cpp:1266
 #, fuzzy, kde-format
 msgid "Waiting for %1 players to connect"
 msgstr "منتظر لـ إلى اتصال"
 
-#: kgamewin.cpp:1660 kgamewin.cpp:1700
+#: kgamewin.cpp:1656 kgamewin.cpp:1696
 #, fuzzy
 msgid "There is no country here!"
 msgstr "هناك هو لا!"
 
-#: kgamewin.cpp:1664 kgamewin.cpp:1705
+#: kgamewin.cpp:1660 kgamewin.cpp:1701
 #, fuzzy, kde-format
 msgid "You are not the owner of the first country: %1!"
 msgstr "أنت ليس مالك من الأوّل!"
 
-#: kgamewin.cpp:1668
+#: kgamewin.cpp:1664
 #, fuzzy, kde-format
 msgid "You are not the owner of the second country: %1!"
 msgstr "أنت ليس مالك من ثانية!"
 
-#: kgamewin.cpp:1672 kgamewin.cpp:1716
+#: kgamewin.cpp:1668 kgamewin.cpp:1712
 #, fuzzy, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr "أنت إلى انقل من إلى نفسها!"
 
-#: kgamewin.cpp:1677 kgamewin.cpp:1722
+#: kgamewin.cpp:1673 kgamewin.cpp:1718
 #, fuzzy, kde-format
 msgid "%1 is not a neighbour of %2!"
 msgstr "هو ليس a من!"
 
-#: kgamewin.cpp:1683
+#: kgamewin.cpp:1679
 #, fuzzy, kde-format
 msgid "Moving armies from %1 to %2."
 msgstr "جاري النقل من إلى."
 
-#: kgamewin.cpp:1711
+#: kgamewin.cpp:1707
 #, fuzzy, kde-format
 msgid "You are the owner of the second country: %1!"
 msgstr "أنت ليس مالك من ثانية!"
 
-#: kgamewin.cpp:1729
+#: kgamewin.cpp:1725
 msgid "Ready to fight!"
 msgstr ""
 
-#: kgamewin.cpp:1823
+#: kgamewin.cpp:1819
 #, fuzzy
 msgid "<font color=\"orange\">No country here!</font>"
 msgstr "<font color=\"orange\"> لا</font>"
 
-#: kgamewin.cpp:1831
+#: kgamewin.cpp:1827
 #, fuzzy, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr "<font color=\"orange\"> أنت ليس مالك من</font>"
 
-#: kgamewin.cpp:1838
+#: kgamewin.cpp:1834
 #, fuzzy, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr "<font color=\"orange\"> هناك هو بوصة</font>"
 
-#: kgamewin.cpp:1978
+#: kgamewin.cpp:1974
 #, fuzzy, kde-format
 msgid "%1, you defend with the only army you have in %2."
 msgstr "مع فريد."
 
-#: kgamewin.cpp:2202
+#: kgamewin.cpp:2198
 #, fuzzy
 msgid "Exchange armies again or continue?"
 msgstr "التبادل أو متابعة?"
 
-#: kgamewin.cpp:2227
+#: kgamewin.cpp:2223
 #, fuzzy, kde-format
 msgid ""
 "You must distribute\n"
 "all your armies"
 msgstr "أنت وزّع"
 
-#: kgamewin.cpp:2367
+#: kgamewin.cpp:2363
 msgid "Battle ongoing."
 msgstr ""
 
-#: kgamewin.cpp:2488 kgamewin.cpp:2499 kgamewin.cpp:2522
+#: kgamewin.cpp:2484 kgamewin.cpp:2495 kgamewin.cpp:2518
 #, fuzzy, kde-format
 msgid "%1, it is up to you."
 msgstr "الإيطالية هو أعلى إلى."
 
-#: kgamewin.cpp:2551
+#: kgamewin.cpp:2547
 #, fuzzy, kde-format
 msgid "Do you really want to end your current game and start a new one?"
 msgstr "تنفيذ إلى end الحالي لعبة و تشغيل a جديد?"
 
-#: kgamewin.cpp:2551
+#: kgamewin.cpp:2547
 #, fuzzy, kde-format
 msgid "New game confirmation"
 msgstr "جديد لعبة تأكيد"
 
-#: kgamewin.cpp:2551
+#: kgamewin.cpp:2547
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "ابدأ لعبة جديدة"
 
-#: kgamewin.cpp:2807
+#: kgamewin.cpp:2803
 msgid "<b>KsirK quick Introduction</b>"
 msgstr ""
 
-#: kgamewin.cpp:2811
+#: kgamewin.cpp:2807
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr ""
 
-#: kgamewin.cpp:2815
+#: kgamewin.cpp:2811
 #, fuzzy
 msgid "Start a new game or join a network game with the menu or the toolbar…"
 msgstr "ابدأ a جديد لعبة أو انضمام a شبكة لعبة مع قائمة أو شريط الأدوات."
 
-#: kgamewin.cpp:2819
+#: kgamewin.cpp:2815
 #, fuzzy
 msgid ""
 "and then let the system guide you through messages and tooltips appearing on "
@@ -2230,7 +2241,7 @@ msgid ""
 "window."
 msgstr "و نظام رسائل و يعمل أعلى."
 
-#: kgamewin.cpp:2826
+#: kgamewin.cpp:2822
 #, kde-format
 msgid "Don't show messages anymore"
 msgstr ""
@@ -2334,26 +2345,33 @@ msgstr[5] "الـ<font color=\"blue\"></font>"
 
 #: krightdialog.cpp:265
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Stop Auto-Attack"
 msgstr "لا شيء إلى!"
 
 #: krightdialog.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Stop Auto-Defense"
-msgstr ""
+msgstr "لا شيء إلى!"
 
 #: krightdialog.cpp:298
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Valid"
+msgctxt "@action:button"
 msgid "Valid"
 msgstr "صالح"
 
 #: krightdialog.cpp:299
 #, kde-format
+msgctxt "@action:button"
 msgid "Recycle"
 msgstr ""
 
 #: krightdialog.cpp:300
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Done"
+msgctxt "@action:button"
 msgid "Done"
 msgstr "تمّت"
 
@@ -2400,7 +2418,9 @@ msgid "<font color=\"blue\">lost armies: %1</font>"
 msgstr "الـ<font color=\"blue\"></font>"
 
 #: ksirkConfigDialog.cpp:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Preferences"
+msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "التفضيلات"
 
@@ -2465,7 +2485,7 @@ msgstr ""
 
 #: main.cpp:44
 #, kde-format
-msgid "KsirK - World Domination Strategy Game"
+msgid "World Domination Strategy Game"
 msgstr ""
 
 #: main.cpp:46
@@ -2536,6 +2556,12 @@ msgstr ""
 msgid "New Local Game"
 msgstr "لعبة جديدة"
 
+#. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
+#: mainMenu.ui:104
+#, kde-format
+msgid "New Standard TCP/IP Network Game"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QPushButton, pbJoin)
 #: mainMenu.ui:111
 #, fuzzy, kde-format
@@ -2553,11 +2579,6 @@ msgstr ""
 #, kde-format
 msgid "Quit"
 msgstr "أنهِ"
-
-#: newgamesetup.cpp:45
-#, kde-format
-msgid "Fatal Error!"
-msgstr "خطأ فادح!"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_soundEnabled)
 #: preferences.ui:35
@@ -2617,6 +2638,16 @@ msgstr "خطأ مجهول int البيانات "
 #, fuzzy, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "خطأ مجهول سلسلة نص البيانات "
+
+#~ msgid "Goal"
+#~ msgstr "الهدف"
+
+#, fuzzy
+#~ msgid "Next Player"
+#~ msgstr "التالي اللاعب"
+
+#~ msgid "Fatal Error!"
+#~ msgstr "خطأ فادح!"
 
 #, fuzzy
 #~ msgid "KsirK - New game properties"

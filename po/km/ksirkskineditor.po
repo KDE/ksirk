@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:37+0000\n"
+"POT-Creation-Date: 2024-05-07 00:37+0000\n"
 "PO-Revision-Date: 2010-06-08 15:55+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -1211,7 +1211,9 @@ msgstr ""
 "ឈ្មោះ​គោល​ដៅ​នីមួយៗ​គួរ​តែ​មាន​តែ​មួយ​ ។ ជ្រើស​គោល​ដៅ​ និង​កែ​សម្រួល​សេចក្ដី​លម្អិត​របស់​វា​នៅ​ក្នុង​ ផែ​ត្រឹម​ត្រូវ​ ។"
 
 #: ksirkSkinEditorConfigDialog.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Preferences"
+msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "ចំណូល​ចិត្ត"
 
@@ -1970,7 +1972,9 @@ msgid "Open a recently saved skin"
 msgstr "បើក​ស្បែក​ដែល​បាន​រក្សា​ទុក​បច្ចុប្បន្ន​..."
 
 #: mainwindow.cpp:337
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save the current skin"
+msgctxt "@info:tooltip"
 msgid "Save the current skin"
 msgstr "រក្សា​ទុក​ស្បែក​បច្ចុប្បន្ន​"
 
@@ -1988,32 +1992,36 @@ msgstr "មាន​ការ​ផ្លាស់​ប្ដូរ​ដែល
 
 #: mainwindow.cpp:527
 #, kde-format
-msgid "Exit Anyway?"
-msgstr "យ៉ាង​ណា​ក៏​ដោយ​ ចាក​ចេញ​ឬ​ ?"
+msgctxt "@title:window"
+msgid "Unsaved Changes"
+msgstr ""
 
 #: mainwindow.cpp:528
-#, kde-format
-msgid "Quit without saving"
+#, fuzzy, kde-format
+#| msgid "Quit without saving"
+msgctxt "@action:button"
+msgid "Quit Without Saving"
 msgstr "ចាក​ចេញ​ដោយ​មិន​​រក្សា​ទុក​"
 
 #: mainwindow.cpp:529
-#, kde-format
-msgid "Save then quit"
+#, fuzzy, kde-format
+#| msgid "Save then quit"
+msgctxt "@action:button"
+msgid "Save and Quit"
 msgstr "រក្សា​ទុក​ រួច​ចាក​ចេញ"
 
-#: mainwindow.cpp:530
-#, kde-format
-msgid "Do not quit"
-msgstr "កុំ​ចាក​ចេញ"
-
 #: mainwindow.cpp:1305
-#, kde-format
-msgid "New country name"
+#, fuzzy, kde-format
+#| msgid "New country name"
+msgctxt "@title:window"
+msgid "New Country Name"
 msgstr "ឈ្មោះ​ប្រទេស​ថ្មី"
 
 #: mainwindow.cpp:1305
-#, kde-format
-msgid "Enter the name of the new country"
+#, fuzzy, kde-format
+#| msgid "Enter the name of the new country"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new country:"
 msgstr "វាយ​បញ្ចូល​ឈ្មោះ​​​ប្រទេស​ថ្មី"
 
 #: mainwindow.cpp:1315
@@ -2023,17 +2031,22 @@ msgstr "តើ​អ្នក​ពិត​ជា​ចង់​លុប​ប
 
 #: mainwindow.cpp:1315
 #, kde-format
-msgid "Really delete country?"
-msgstr "ពិត​ជា​ចង់​លុប​ប្រទេស​ឬ​ ?"
+msgctxt "@title:window"
+msgid "Delete Country Confirmation"
+msgstr ""
 
 #: mainwindow.cpp:1334
-#, kde-format
-msgid "New continent name"
+#, fuzzy, kde-format
+#| msgid "New continent name"
+msgctxt "@title:window"
+msgid "New Continent Name"
 msgstr "ឈ្មោះ​ទ្វីប​ថ្មី"
 
 #: mainwindow.cpp:1334
-#, kde-format
-msgid "Enter the name of the new continent"
+#, fuzzy, kde-format
+#| msgid "Enter the name of the new continent"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new continent:"
 msgstr "វាយ​បញ្ចូល​ឈ្មោះ​របស់​ទ្វីប​ថ្មី"
 
 #: mainwindow.cpp:1344
@@ -2042,9 +2055,11 @@ msgid "Do you really want to delete continent '%1'?"
 msgstr "តើ​​អ្នក​ពិត​ជា​ចង់​លុប​ទ្វីប​ '%1' ឬ​ ?"
 
 #: mainwindow.cpp:1344
-#, kde-format
-msgid "Really delete continent?"
-msgstr "ពិត​ជា​ចង់​លុប​ទ្វីប​ឬ​ ?"
+#, fuzzy, kde-format
+#| msgid "Select Continents"
+msgctxt "@title:window"
+msgid "Delete Continent Confirmation"
+msgstr "ជ្រើស​ទ្វីប"
 
 #: mainwindow.cpp:1889
 #, kde-format
@@ -2053,17 +2068,22 @@ msgstr "តើ​អ្នក​ពិត​ជា​ចង់​លុប​គ
 
 #: mainwindow.cpp:1889
 #, kde-format
-msgid "Really delete goal?"
-msgstr "ពិត​ជា​ចង់​លុប​គោល​ដៅ​ឬ​ ?"
+msgctxt "@title:window"
+msgid "Delete Goal Confirmation"
+msgstr ""
 
 #: mainwindow.cpp:1948
-#, kde-format
-msgid "New nationality name"
+#, fuzzy, kde-format
+#| msgid "New nationality name"
+msgctxt "@title:window"
+msgid "New Nationality Name"
 msgstr "ឈ្មោះ​សញ្ជាតិ​ថ្មី​"
 
 #: mainwindow.cpp:1948
-#, kde-format
-msgid "Enter the name of the new nationality"
+#, fuzzy, kde-format
+#| msgid "Enter the name of the new nationality"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new nationality:"
 msgstr "បញ្ចូល​ឈ្មោះ​របស់​សញ្ជាតិ​ថ្មី​ "
 
 #: mainwindow.cpp:1958
@@ -2073,12 +2093,14 @@ msgstr "តើ​អ្នក​ពិត​ជា​ចង់​លុប​ស
 
 #: mainwindow.cpp:1958
 #, kde-format
-msgid "Really delete nationality?"
-msgstr "ពិត​ជា​ចង់​លុប​សញ្ជាតិ​ឬ​ ?"
+msgctxt "@title:window"
+msgid "Delete Nationality Confirmation"
+msgstr ""
 
 #: onu.cpp:78
-#, kde-format
-msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+#, fuzzy, kde-format
+#| msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+msgid "Invalid skin definition file format. Expected %1 and got %2"
 msgstr "កំហុស​ - ទ្រង់​ទ្រាយ​ឯក​សារ​កំណត់​​ស្បែក​មិន​ត្រឹម​ត្រូវ​ ។ រំពឹង​ %1 និង​ទទួល​បាន​ %2"
 
 #: onu.cpp:110
@@ -2109,7 +2131,9 @@ msgstr ""
 "%2 ។"
 
 #: onu.cpp:984
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "PoolLoader"
+msgctxt "@title:window"
 msgid "PoolLoader"
 msgstr "កម្មវិធី​ទាញ​យក​អាង"
 
@@ -2134,6 +2158,24 @@ msgstr "កំហុស​ - មិន​ស្គាល់​ទិន្នន
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "កំហុស​ធ្ងន់ធ្ងរ"
+
+#~ msgid "Exit Anyway?"
+#~ msgstr "យ៉ាង​ណា​ក៏​ដោយ​ ចាក​ចេញ​ឬ​ ?"
+
+#~ msgid "Do not quit"
+#~ msgstr "កុំ​ចាក​ចេញ"
+
+#~ msgid "Really delete country?"
+#~ msgstr "ពិត​ជា​ចង់​លុប​ប្រទេស​ឬ​ ?"
+
+#~ msgid "Really delete continent?"
+#~ msgstr "ពិត​ជា​ចង់​លុប​ទ្វីប​ឬ​ ?"
+
+#~ msgid "Really delete goal?"
+#~ msgstr "ពិត​ជា​ចង់​លុប​គោល​ដៅ​ឬ​ ?"
+
+#~ msgid "Really delete nationality?"
+#~ msgstr "ពិត​ជា​ចង់​លុប​សញ្ជាតិ​ឬ​ ?"
 
 #~ msgid "Error"
 #~ msgstr "កំហុស"

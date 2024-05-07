@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:37+0000\n"
+"POT-Creation-Date: 2024-05-07 00:37+0000\n"
 "PO-Revision-Date: 2013-09-15 06:30+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -1216,7 +1216,9 @@ msgstr ""
 "егжей-тегжейін өзгертуге болады."
 
 #: ksirkSkinEditorConfigDialog.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Preferences"
+msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "Баптаулары"
 
@@ -2004,7 +2006,9 @@ msgid "Open a recently saved skin"
 msgstr "Жуырда сақталған тысын ашу..."
 
 #: mainwindow.cpp:337
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save the current skin"
+msgctxt "@info:tooltip"
 msgid "Save the current skin"
 msgstr "Қазіргі тысын сақтау"
 
@@ -2022,32 +2026,36 @@ msgstr "Сақталмаған өзгерістер бар. Не істемек�
 
 #: mainwindow.cpp:527
 #, kde-format
-msgid "Exit Anyway?"
-msgstr "Сонда да шығу"
+msgctxt "@title:window"
+msgid "Unsaved Changes"
+msgstr ""
 
 #: mainwindow.cpp:528
-#, kde-format
-msgid "Quit without saving"
+#, fuzzy, kde-format
+#| msgid "Quit without saving"
+msgctxt "@action:button"
+msgid "Quit Without Saving"
 msgstr "Сақтамай шығу"
 
 #: mainwindow.cpp:529
-#, kde-format
-msgid "Save then quit"
+#, fuzzy, kde-format
+#| msgid "Save then quit"
+msgctxt "@action:button"
+msgid "Save and Quit"
 msgstr "Сақтап шығу"
 
-#: mainwindow.cpp:530
-#, kde-format
-msgid "Do not quit"
-msgstr "Шығпау"
-
 #: mainwindow.cpp:1305
-#, kde-format
-msgid "New country name"
+#, fuzzy, kde-format
+#| msgid "New country name"
+msgctxt "@title:window"
+msgid "New Country Name"
 msgstr "Жаңа елдің атауы"
 
 #: mainwindow.cpp:1305
-#, kde-format
-msgid "Enter the name of the new country"
+#, fuzzy, kde-format
+#| msgid "Enter the name of the new country"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new country:"
 msgstr "Жаңа елдің атауын келтіріңіз"
 
 #: mainwindow.cpp:1315
@@ -2057,17 +2065,22 @@ msgstr "Шынымен '%1' деген елді өшірмексіз бе?"
 
 #: mainwindow.cpp:1315
 #, kde-format
-msgid "Really delete country?"
-msgstr "Шын елді өшірмексіз бе?"
+msgctxt "@title:window"
+msgid "Delete Country Confirmation"
+msgstr ""
 
 #: mainwindow.cpp:1334
-#, kde-format
-msgid "New continent name"
+#, fuzzy, kde-format
+#| msgid "New continent name"
+msgctxt "@title:window"
+msgid "New Continent Name"
 msgstr "Жаңа құрлықтың атауы"
 
 #: mainwindow.cpp:1334
-#, kde-format
-msgid "Enter the name of the new continent"
+#, fuzzy, kde-format
+#| msgid "Enter the name of the new continent"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new continent:"
 msgstr "Жаңа құрлықтың атауын келтіріңіз"
 
 #: mainwindow.cpp:1344
@@ -2076,9 +2089,11 @@ msgid "Do you really want to delete continent '%1'?"
 msgstr "Шынымен '%1' деген құрлықты өшірмексіз бе?"
 
 #: mainwindow.cpp:1344
-#, kde-format
-msgid "Really delete continent?"
-msgstr "Құрлықты өшірмексіз бе?"
+#, fuzzy, kde-format
+#| msgid "Select Continents"
+msgctxt "@title:window"
+msgid "Delete Continent Confirmation"
+msgstr "Құрлықтарды таңдау"
 
 #: mainwindow.cpp:1889
 #, kde-format
@@ -2087,17 +2102,22 @@ msgstr "Шынымен '%1' деген мақсатты өшірмексіз б�
 
 #: mainwindow.cpp:1889
 #, kde-format
-msgid "Really delete goal?"
-msgstr "Мақсатты өшірмексіз бе?"
+msgctxt "@title:window"
+msgid "Delete Goal Confirmation"
+msgstr ""
 
 #: mainwindow.cpp:1948
-#, kde-format
-msgid "New nationality name"
+#, fuzzy, kde-format
+#| msgid "New nationality name"
+msgctxt "@title:window"
+msgid "New Nationality Name"
 msgstr "Жаңа ұлттың атауы"
 
 #: mainwindow.cpp:1948
-#, kde-format
-msgid "Enter the name of the new nationality"
+#, fuzzy, kde-format
+#| msgid "Enter the name of the new nationality"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new nationality:"
 msgstr "Жаңа ұлттың атауын келтіріңіз"
 
 #: mainwindow.cpp:1958
@@ -2107,12 +2127,14 @@ msgstr "Шынымен '%1' деген ұлтты өшірмексіз бе?"
 
 #: mainwindow.cpp:1958
 #, kde-format
-msgid "Really delete nationality?"
-msgstr "Ұлтты өшірмексіз бе?"
+msgctxt "@title:window"
+msgid "Delete Nationality Confirmation"
+msgstr ""
 
 #: onu.cpp:78
-#, kde-format
-msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+#, fuzzy, kde-format
+#| msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+msgid "Invalid skin definition file format. Expected %1 and got %2"
 msgstr "Қате - Жарамсыз тысын анықтау файл пішімі. %1 орнында %2 "
 
 #: onu.cpp:110
@@ -2143,7 +2165,9 @@ msgstr ""
 "%2."
 
 #: onu.cpp:984
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "PoolLoader"
+msgctxt "@title:window"
 msgid "PoolLoader"
 msgstr "Жиынтық жүктеуіші"
 
@@ -2168,6 +2192,24 @@ msgstr "Қате - майданның мәліметінде беймәлім м
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "Түзелмейтін қате"
+
+#~ msgid "Exit Anyway?"
+#~ msgstr "Сонда да шығу"
+
+#~ msgid "Do not quit"
+#~ msgstr "Шығпау"
+
+#~ msgid "Really delete country?"
+#~ msgstr "Шын елді өшірмексіз бе?"
+
+#~ msgid "Really delete continent?"
+#~ msgstr "Құрлықты өшірмексіз бе?"
+
+#~ msgid "Really delete goal?"
+#~ msgstr "Мақсатты өшірмексіз бе?"
+
+#~ msgid "Really delete nationality?"
+#~ msgstr "Ұлтты өшірмексіз бе?"
 
 #~ msgid "Error"
 #~ msgstr "Қате"

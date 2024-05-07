@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:37+0000\n"
+"POT-Creation-Date: 2024-05-07 00:37+0000\n"
 "PO-Revision-Date: 2009-04-23 22:40+0300\n"
 "Last-Translator: Toussis Manolis <manolis@koppermind.homelinux.org>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1075,7 +1075,7 @@ msgstr ""
 msgid "Legacy"
 msgstr "Πεπαλαιωμένο"
 
-#: decoratedgameframe.cpp:100
+#: decoratedgameframe.cpp:100 kgamewin.cpp:349
 #, fuzzy, kde-format
 #| msgid "Next Player"
 msgctxt "@action"
@@ -1089,7 +1089,8 @@ msgctxt "@action"
 msgid "Details"
 msgstr "Λεπτομέρειες"
 
-#: decoratedgameframe.cpp:106
+#: decoratedgameframe.cpp:106 kgamewin.cpp:332 kgamewin.cpp:1214
+#: kgamewin.cpp:1226 kgamewin.cpp:2383
 #, fuzzy, kde-format
 #| msgid "Goal"
 msgctxt "@action"
@@ -1228,19 +1229,19 @@ msgstr "Υπολογιστής:"
 msgid "Port:"
 msgstr "Θύρα:"
 
-#: Dialogs/kplayersetupwidget.cpp:246
+#: Dialogs/kplayersetupwidget.cpp:250
 #, fuzzy, kde-format
 #| msgid "Please choose another name"
 msgid "Name already in use. Please choose another one."
 msgstr "Παρακαλώ επιλέξτε άλλο όνομα"
 
-#: Dialogs/kplayersetupwidget.cpp:248
+#: Dialogs/kplayersetupwidget.cpp:252
 #, fuzzy, kde-format
 #| msgid "Please choose another name"
 msgid "Empty name. Please choose another one."
 msgstr "Παρακαλώ επιλέξτε άλλο όνομα"
 
-#: Dialogs/kplayersetupwidget.cpp:291
+#: Dialogs/kplayersetupwidget.cpp:295
 #, kde-format
 msgid "Player Number %1, please type in your name and choose your nation:"
 msgstr ""
@@ -1363,20 +1364,20 @@ msgid "Reach a goa&l"
 msgstr "Κατάκτηση ενός στόχου"
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
-#: Dialogs/newGameDialog.ui:227 Dialogs/newGameSummary.ui:203
-#: Dialogs/qplayersetupdialog.ui:123 Dialogs/tcpconnectwidget.ui:95
+#: Dialogs/newGameDialog.ui:230 Dialogs/newGameSummary.ui:206
+#: Dialogs/qplayersetupdialog.ui:126 Dialogs/tcpconnectwidget.ui:98
 #, kde-format
 msgid "Cancel"
 msgstr "Ακύρωση"
 
 #. i18n: ectx: property (text), widget (QPushButton, nextButton)
-#: Dialogs/newGameDialog.ui:247 Dialogs/qplayersetupdialog.ui:150
-#: Dialogs/tcpconnectwidget.ui:122
+#: Dialogs/newGameDialog.ui:250 Dialogs/qplayersetupdialog.ui:153
+#: Dialogs/tcpconnectwidget.ui:125
 #, kde-format
-msgid "Next >>"
+msgid "Next"
 msgstr ""
 
-#: Dialogs/newGameDialogImpl.cpp:125 newgamesetup.cpp:44
+#: Dialogs/newGameDialogImpl.cpp:128 newgamesetup.cpp:44
 #, kde-format
 msgid ""
 "Skins directory not found - Verify your installation\n"
@@ -1385,8 +1386,9 @@ msgstr ""
 "Δε βρέθηκε ο κατάλογος - Επαληθεύστε την εγκατάστασή σας\n"
 "Το πρόγραμμα αδυνατεί να συνεχίσει"
 
-#: Dialogs/newGameDialogImpl.cpp:126 GameLogic/aiplayer.cpp:506
-#: Sprites/skinSpritesData.cpp:89 Sprites/skinSpritesData.cpp:105
+#: Dialogs/newGameDialogImpl.cpp:129 GameLogic/aiplayer.cpp:506
+#: newgamesetup.cpp:45 Sprites/skinSpritesData.cpp:89
+#: Sprites/skinSpritesData.cpp:105
 #, fuzzy, kde-format
 #| msgid "Fatal Error"
 msgctxt "@title:window"
@@ -1456,36 +1458,36 @@ msgid "Network"
 msgstr "Αποτυχία δικτύου."
 
 #. i18n: ectx: property (text), widget (QPushButton, previousButton)
-#: Dialogs/newGameSummary.ui:223 Dialogs/qplayersetupdialog.ui:143
-#: Dialogs/tcpconnectwidget.ui:115
+#: Dialogs/newGameSummary.ui:226 Dialogs/qplayersetupdialog.ui:146
+#: Dialogs/tcpconnectwidget.ui:118
 #, kde-format
-msgid "<< Previous"
+msgid "Previous"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, finishButton)
-#: Dialogs/newGameSummary.ui:230
+#: Dialogs/newGameSummary.ui:236
 #, fuzzy, kde-format
 #| msgid "State:"
 msgid "Start"
 msgstr "Κατάσταση:"
 
-#: Dialogs/newGameSummaryWidget.cpp:59
+#: Dialogs/newGameSummaryWidget.cpp:62
 #, kde-format
 msgid "Reach a goal"
 msgstr "Κατάκτηση ενός στόχου"
 
-#: Dialogs/newGameSummaryWidget.cpp:59
+#: Dialogs/newGameSummaryWidget.cpp:62
 #, fuzzy, kde-format
 #| msgid "Wor&ld conquest"
 msgid "World conquest"
 msgstr "Κατάκτηση &κόσμου"
 
-#: Dialogs/newGameSummaryWidget.cpp:74 Dialogs/newGameSummaryWidget.cpp:76
+#: Dialogs/newGameSummaryWidget.cpp:77 Dialogs/newGameSummaryWidget.cpp:79
 #, kde-format
 msgid "Yes"
 msgstr ""
 
-#: Dialogs/newGameSummaryWidget.cpp:74 Dialogs/newGameSummaryWidget.cpp:76
+#: Dialogs/newGameSummaryWidget.cpp:77 Dialogs/newGameSummaryWidget.cpp:79
 #, fuzzy, kde-format
 #| msgid "None"
 msgid "No"
@@ -1543,7 +1545,7 @@ msgid "Please select your saved player:"
 msgstr "Παρακαλώ επιλέξτε τον αποθηκευμένο παίκτη σας:"
 
 #. i18n: ectx: property (text), widget (QPushButton, PushButton1)
-#: Dialogs/qwaitedplayersetupdialog.ui:67
+#: Dialogs/qwaitedplayersetupdialog.ui:70
 #, kde-format
 msgid "OK"
 msgstr "Εντάξει"
@@ -1555,43 +1557,43 @@ msgid "New Game or Exit"
 msgstr "Νέο παιχνίδι ή έξοδος"
 
 #. i18n: ectx: property (text), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:24
+#: Dialogs/restartOrExitDialog.ui:27
 #, kde-format
 msgid "New Game"
 msgstr "Νέο παιχνίδι"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:30
+#: Dialogs/restartOrExitDialog.ui:33
 #, kde-format
 msgid "Starts a new game"
 msgstr "Έναρξη ενός νέου παιχνιδιού"
 
 #. i18n: ectx: property (text), widget (QPushButton, doNothingButton)
-#: Dialogs/restartOrExitDialog.ui:37
+#: Dialogs/restartOrExitDialog.ui:40
 #, kde-format
 msgid "Do Nothing"
 msgstr "Καμία ενέργεια"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, doNothingButton)
-#: Dialogs/restartOrExitDialog.ui:40
+#: Dialogs/restartOrExitDialog.ui:43
 #, kde-format
 msgid "Do nothing. Game buttons will be available"
 msgstr "Καμία ενέργεια. Τα κουμπιά του παιχνιδιού θα είναι διαθέσιμα"
 
 #. i18n: ectx: property (text), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:47
+#: Dialogs/restartOrExitDialog.ui:53
 #, kde-format
 msgid "Exit"
 msgstr "Έξοδος"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:50
+#: Dialogs/restartOrExitDialog.ui:56
 #, kde-format
 msgid "Quit KsirK"
 msgstr "Έξοδος από το KsirK"
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: Dialogs/restartOrExitDialog.ui:86
+#: Dialogs/restartOrExitDialog.ui:92
 #, no-c-format, kde-format
 msgid "%1 won! Do you want to play again?"
 msgstr "%1 κέρδισε! Επιθυμείτε να παίξετε ξανά;"
@@ -1763,7 +1765,7 @@ msgid "Do want to save your game?"
 msgstr "Επιθυμείτε την αποθήκευση του παιχνιδιού;"
 
 #: GameLogic/gameautomaton.cpp:1818 GameLogic/gameautomaton.cpp:2235
-#: kgamewin.cpp:2042 kgamewin.cpp:2137 kgamewin.cpp:2174
+#: kgamewin.cpp:2038 kgamewin.cpp:2133 kgamewin.cpp:2170
 #, kde-format
 msgid "%1: %2 armies to place"
 msgstr "%1: %2 στρατιές για τοποθέτηση"
@@ -1922,12 +1924,16 @@ msgstr[0] "1 χώρα στο %2"
 msgstr[1] "%1 χώρες στο %2"
 
 #: GameLogic/goal.cpp:285
-#, kde-format
+#, fuzzy, kde-format
+#| msgid " and "
+msgctxt "@item:intext country list separator of last item"
 msgid " and "
 msgstr " και "
 
 #: GameLogic/goal.cpp:289
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ", "
+msgctxt "@item:intext country list separator of non-last item"
 msgid ", "
 msgstr ", "
 
@@ -2023,7 +2029,7 @@ msgstr "Πρόβλημα: δεν καταστράφηκε κανένας"
 msgid "Bug: who should be 0, 1 or 2."
 msgstr "Σφάλμα:ο οποίος θα πρέπει να είναι 0, 1 ή 2."
 
-#: kgamewin.cpp:139 kgamewin.cpp:644
+#: kgamewin.cpp:139 kgamewin.cpp:641
 #, kde-format
 msgid "Cannot load icon<br>Program cannot continue"
 msgstr "Αδυναμία φόρτωσης εικονιδίου<br>Το πρόγραμμα αδυνατεί να συνεχίσει"
@@ -2034,78 +2040,91 @@ msgid "Cannot load button image %1<br>Program cannot continue"
 msgstr ""
 "Αδυναμία φόρτωσης εικόνας %1 button<br>Το πρόγραμμα αδυνατεί να συνεχίσει"
 
-#. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
-#: kgamewin.cpp:305 mainMenu.ui:104
-#, kde-format
+#: kgamewin.cpp:305
+#, fuzzy, kde-format
+#| msgid "New Standard TCP/IP Network Game"
+msgctxt "@action"
 msgid "New Standard TCP/IP Network Game"
 msgstr "Νέο τυπικό TCP/IP δικτυακό παιχνίδι"
 
 #: kgamewin.cpp:306
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "New TCP/IP"
+msgctxt "@action"
 msgid "New TCP/IP"
 msgstr "Νέο TCP/IP"
 
 #: kgamewin.cpp:308
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create a new standard TCP/IP network game"
+msgctxt "@info:tooltip"
 msgid "Create a new standard TCP/IP network game"
 msgstr "Δημιουργία ενός νέου τυπικού TCP/IP δικτυακού παιχνιδιού"
 
 #: kgamewin.cpp:323
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Join a Standard TCP/IP Network Game"
+msgctxt "@action"
 msgid "Join a Standard TCP/IP Network Game"
 msgstr "Συμμετοχή σε τυπικό TCP/IP δικτυακό παιχνίδι"
 
 #: kgamewin.cpp:324
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Join TCP/IP"
+msgctxt "@action"
 msgid "Join TCP/IP"
 msgstr "Συμμετοχή σε TCP/IP"
 
 #: kgamewin.cpp:326
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Join a standard TCP/IP network game"
+msgctxt "@info:tooltip"
 msgid "Join a standard TCP/IP network game"
 msgstr "Συμμετοχή σε ένα τυπικό TCP/IP δικτυακό παιχνίδι"
 
-#: kgamewin.cpp:331 kgamewin.cpp:1218 kgamewin.cpp:1230 kgamewin.cpp:2387
-#, kde-format
-msgid "Goal"
-msgstr "Στόχος"
-
-#: kgamewin.cpp:332
-#, kde-format
+#: kgamewin.cpp:331
+#, fuzzy, kde-format
+#| msgid "Display the Current Player's Goal"
+msgctxt "@action"
 msgid "Display the Current Player's Goal"
 msgstr "Εμφάνιση στόχου του τρέχοντος παίκτη"
 
-#: kgamewin.cpp:335
-#, kde-format
+#: kgamewin.cpp:334
+#, fuzzy, kde-format
+#| msgid "Display the current player's goal"
+msgctxt "@info:tooltip"
 msgid "Display the current player's goal"
 msgstr "Εμφάνιση στόχου του τρέχοντος παίκτη"
 
-#: kgamewin.cpp:342
-#, kde-format
+#: kgamewin.cpp:340
+#, fuzzy, kde-format
+#| msgid "Contextual Help"
+msgctxt "@action"
 msgid "Contextual Help"
 msgstr "Σχετική βοήθεια"
 
 #: kgamewin.cpp:351
-#, kde-format
-msgid "Next Player"
-msgstr "Επόμενος παίκτης"
-
-#: kgamewin.cpp:353
-#, kde-format
-msgid "Lets the next player play"
+#, fuzzy, kde-format
+#| msgid "Lets the next player play"
+msgctxt "@info:tooltip"
+msgid "Let the next player play"
 msgstr "Επιτρέπει στον επόμενη παίκτη να παίξει"
 
-#: kgamewin.cpp:358
-#, kde-format
-msgid "Finish moves"
+#: kgamewin.cpp:355
+#, fuzzy, kde-format
+#| msgid "Finish moves"
+msgctxt "@action"
+msgid "Finish Moves"
 msgstr "Τερματισμός κινήσεων"
 
-#: kgamewin.cpp:360
-#, kde-format
+#: kgamewin.cpp:357
+#, fuzzy, kde-format
+#| msgid "Finish moving the current sprites"
+msgctxt "@info:tooltip"
 msgid "Finish moving the current sprites"
 msgstr "Τερματισμός γραφικών εφέ κινήσεων"
 
-#: kgamewin.cpp:488
+#: kgamewin.cpp:485
 #, kde-format
 msgid ""
 "World definition file not found - Verify your installation<br>Program cannot "
@@ -2114,81 +2133,81 @@ msgstr ""
 "Το αρχείο ορισμού του κόσμου δε βρέθηκε - Επαληθεύστε την εγκατάστασή "
 "σας<br>Το πρόγραμμα αδυνατεί να συνεχίσει"
 
-#: kgamewin.cpp:708
+#: kgamewin.cpp:704
 #, kde-format
 msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
 msgstr "<font color=\"red\">Ο %1 κατέκτησε το %2 από %3</font>"
 
-#: kgamewin.cpp:732
+#: kgamewin.cpp:728
 #, fuzzy, kde-format
 #| msgid "%1, you are defeated! Bye, bye..."
 msgid "%1, you are defeated! Bye, bye…"
 msgstr "%1, νικηθήκατε! Σας χαιρετούμε..."
 
-#: kgamewin.cpp:804
+#: kgamewin.cpp:800
 #, kde-format
 msgid "%1: it is up to you again"
 msgstr "%1: εξαρτάται από σας και πάλι"
 
-#: kgamewin.cpp:818
+#: kgamewin.cpp:814
 #, kde-format
 msgid "%1 won!"
 msgstr ""
 
-#: kgamewin.cpp:820
+#: kgamewin.cpp:816
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
 msgstr ""
 
-#: kgamewin.cpp:824
+#: kgamewin.cpp:820
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
 "play again?"
 msgstr ""
 
-#: kgamewin.cpp:830
+#: kgamewin.cpp:826
 #, fuzzy, kde-format
 #| msgid "You must conquer the World!"
 msgid "<br>You conquered all the world!"
 msgstr "Πρέπει να κατακτήσετε τον Κόσμο!"
 
-#: kgamewin.cpp:834
+#: kgamewin.cpp:830
 #, fuzzy, kde-format
 #| msgid "You must conquer the World!"
 msgid "<br>He conquered all the world!"
 msgstr "Πρέπει να κατακτήσετε τον Κόσμο!"
 
-#: kgamewin.cpp:951
+#: kgamewin.cpp:947
 #, kde-format
 msgid "Do you want to quit the game?"
 msgstr "Επιθυμείτε την έξοδο από το παιχνίδι;"
 
-#: kgamewin.cpp:953
+#: kgamewin.cpp:949
 #, fuzzy, kde-format
 #| msgid "Quit"
 msgctxt "@action:button"
 msgid "Quit Game"
 msgstr "Τερματισμός"
 
-#: kgamewin.cpp:965
+#: kgamewin.cpp:961
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
 msgstr "Πριν την έξοδο, επιθυμείτε την αποθήκευση του παιχνιδιού;"
 
-#: kgamewin.cpp:1003
+#: kgamewin.cpp:999
 #, fuzzy, kde-format
 #| msgid "New Local Game"
 msgctxt "@title:window"
 msgid "Load Game"
 msgstr "Νέο τοπικό παιχνίδι"
 
-#: kgamewin.cpp:1041
+#: kgamewin.cpp:1037
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
 msgstr "Αναμονή σύνδεσης %1 δικτυακών παικτών."
 
-#: kgamewin.cpp:1120
+#: kgamewin.cpp:1116
 #, kde-format
 msgid ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
@@ -2205,88 +2224,94 @@ msgstr[1] ""
 "font> με %1 στρατιές!<br> Πώς επιθυμείτε να αμυνθείτε <font color=\"blue\">"
 "%4</font>;"
 
-#: kgamewin.cpp:1149
-#, kde-format
+#: kgamewin.cpp:1145
+#, fuzzy, kde-format
+#| msgid "Defend 1"
+msgctxt "@action:button"
 msgid "Defend 1"
 msgstr "Άμυνα 1"
 
-#: kgamewin.cpp:1150
-#, kde-format
+#: kgamewin.cpp:1146
+#, fuzzy, kde-format
+#| msgid "Defend 2"
+msgctxt "@action:button"
 msgid "Defend 2"
 msgstr "Άμυνα 2"
 
-#: kgamewin.cpp:1151
-#, kde-format
+#: kgamewin.cpp:1147
+#, fuzzy, kde-format
+#| msgid "Defend-Auto"
+msgctxt "@action:button"
 msgid "Defend-Auto"
 msgstr "Αυτόματη άμυνα"
 
-#: kgamewin.cpp:1270
+#: kgamewin.cpp:1266
 #, kde-format
 msgid "Waiting for %1 players to connect"
 msgstr "Αναμονή σύνδεσης %1 παικτών"
 
-#: kgamewin.cpp:1660 kgamewin.cpp:1700
+#: kgamewin.cpp:1656 kgamewin.cpp:1696
 msgid "There is no country here!"
 msgstr "Δεν υπάρχει χώρα στο σημείο αυτό!"
 
-#: kgamewin.cpp:1664 kgamewin.cpp:1705
+#: kgamewin.cpp:1660 kgamewin.cpp:1701
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
 msgstr "Δεν είστε ο ιδιοκτήτης της πρώτης χώρας: %1!"
 
-#: kgamewin.cpp:1668
+#: kgamewin.cpp:1664
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
 msgstr "Δεν είστε ο ιδιοκτήτης της δεύτερης χώρας: %1!"
 
-#: kgamewin.cpp:1672 kgamewin.cpp:1716
+#: kgamewin.cpp:1668 kgamewin.cpp:1712
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr "Προσπαθείτε να μετακινήσετε στρατιές από %1 στην ίδια χώρα!"
 
-#: kgamewin.cpp:1677 kgamewin.cpp:1722
+#: kgamewin.cpp:1673 kgamewin.cpp:1718
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
 msgstr "Το %1 δεν είναι γειτονικό του %2!"
 
-#: kgamewin.cpp:1683
+#: kgamewin.cpp:1679
 #, kde-format
 msgid "Moving armies from %1 to %2."
 msgstr "Μετακίνηση στρατιών από %1 στο %2."
 
-#: kgamewin.cpp:1711
+#: kgamewin.cpp:1707
 #, kde-format
 msgid "You are the owner of the second country: %1!"
 msgstr "Είστε ο ιδιοκτήτης της δεύτερης χώρας: %1!"
 
-#: kgamewin.cpp:1729
+#: kgamewin.cpp:1725
 msgid "Ready to fight!"
 msgstr "Έτοιμοι για πόλεμο! "
 
-#: kgamewin.cpp:1823
+#: kgamewin.cpp:1819
 msgid "<font color=\"orange\">No country here!</font>"
 msgstr "<font color=\"orange\">Δεν υπάρχει χώρα εδώ!</font>"
 
-#: kgamewin.cpp:1831
+#: kgamewin.cpp:1827
 #, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr "<font color=\"orange\">Δεν είστε ιδιοκτήτης του %1!</font>"
 
-#: kgamewin.cpp:1838
+#: kgamewin.cpp:1834
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr "<font color=\"orange\">Υπάρχουν μόνο %1 στρατιές στο %2!</font>"
 
-#: kgamewin.cpp:1978
+#: kgamewin.cpp:1974
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
 msgstr "%1, υπερασπίζετε τη χώρα %2 με τη μοναδική στρατιά της."
 
-#: kgamewin.cpp:2202
+#: kgamewin.cpp:2198
 msgid "Exchange armies again or continue?"
 msgstr "Ανταλλαγή στρατιών ξανά ή συνέχεια;"
 
-#: kgamewin.cpp:2227
+#: kgamewin.cpp:2223
 #, kde-format
 msgid ""
 "You must distribute\n"
@@ -2295,46 +2320,46 @@ msgstr ""
 "Πρέπει να διανείμετε\n"
 "όλες τις στρατιές σας"
 
-#: kgamewin.cpp:2367
+#: kgamewin.cpp:2363
 msgid "Battle ongoing."
 msgstr "Μάχη σε εξέλιξη."
 
-#: kgamewin.cpp:2488 kgamewin.cpp:2499 kgamewin.cpp:2522
+#: kgamewin.cpp:2484 kgamewin.cpp:2495 kgamewin.cpp:2518
 #, kde-format
 msgid "%1, it is up to you."
 msgstr "%1, σε σας βρίσκεται το παιχνίδι."
 
-#: kgamewin.cpp:2551
+#: kgamewin.cpp:2547
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
 msgstr ""
 "Επιθυμείτε πραγματικά τον τερματισμό του τρέχοντος παιχνιδιού και την έναρξη "
 "νέου;"
 
-#: kgamewin.cpp:2551
+#: kgamewin.cpp:2547
 #, kde-format
 msgid "New game confirmation"
 msgstr "Επιβεβαίωση νέου παιχνιδιού"
 
-#: kgamewin.cpp:2551
+#: kgamewin.cpp:2547
 #, fuzzy, kde-format
 #| msgid "Start a New Game"
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Έναρξη ενός νέου παιχνιδιού"
 
-#: kgamewin.cpp:2807
+#: kgamewin.cpp:2803
 msgid "<b>KsirK quick Introduction</b>"
 msgstr "<b>Γρήγορη εισαγωγή στο KsirK</b>"
 
-#: kgamewin.cpp:2811
+#: kgamewin.cpp:2807
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr ""
 "Οι επιθέσεις και οι μετακινήσεις γίνονται με σύρσιμο και απόθεση μεταξύ των "
 "γειτονικών χωρών."
 
-#: kgamewin.cpp:2815
+#: kgamewin.cpp:2811
 #, fuzzy
 #| msgid ""
 #| "Start a new game or join a network game with the menu or the toolbar..."
@@ -2343,7 +2368,7 @@ msgstr ""
 "Ξεκινήστε ένα νέο παιχνίδι ή συμμετέχετε σε δικτυακό παιχνίδι μέσω του μενού "
 "ή της γραμμής εργαλείων..."
 
-#: kgamewin.cpp:2819
+#: kgamewin.cpp:2815
 msgid ""
 "and then let the system guide you through messages and tooltips appearing on "
 "buttons when hovering above them. You can disable bubble help in the options "
@@ -2353,7 +2378,7 @@ msgstr ""
 "που εμφανίζονται στα κουμπιά όταν βρίσκεστε πάνω τους. Μπορείτε να "
 "απενεργοποιήσετε την αναδυόμενη βοήθεια στο παράθυρο επιλογών."
 
-#: kgamewin.cpp:2826
+#: kgamewin.cpp:2822
 #, kde-format
 msgid "Don't show messages anymore"
 msgstr "Μη εμφάνιση μηνυμάτων"
@@ -2449,27 +2474,37 @@ msgstr[0] "<font color=\"blue\">Άμυνα</font> με 1 στρατιά.<br>"
 msgstr[1] "<font color=\"blue\">Άμυνα</font> με %1 στρατιές.<br>"
 
 #: krightdialog.cpp:265
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Stop Auto-Attack"
+msgctxt "@action:button"
 msgid "Stop Auto-Attack"
 msgstr "Σταμάτημα αυτόματης επίθεσης"
 
 #: krightdialog.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Stop Auto-Defense"
+msgctxt "@action:button"
 msgid "Stop Auto-Defense"
 msgstr "Σταμάτημα αυτόματης άμυνας"
 
 #: krightdialog.cpp:298
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Valid"
+msgctxt "@action:button"
 msgid "Valid"
 msgstr "Έγκυρο"
 
 #: krightdialog.cpp:299
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Recycle"
+msgctxt "@action:button"
 msgid "Recycle"
 msgstr "Ανακύκλωση"
 
 #: krightdialog.cpp:300
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Done"
+msgctxt "@action:button"
 msgid "Done"
 msgstr "Έτοιμο"
 
@@ -2508,7 +2543,9 @@ msgid "<font color=\"blue\">lost armies: %1</font>"
 msgstr "<font color=\"blue\">απώλεια στρατιών: %1</font>"
 
 #: ksirkConfigDialog.cpp:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Preferences"
+msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "Προτιμήσεις"
 
@@ -2573,7 +2610,7 @@ msgstr "KsirK"
 
 #: main.cpp:44
 #, kde-format
-msgid "KsirK - World Domination Strategy Game"
+msgid "World Domination Strategy Game"
 msgstr ""
 
 #: main.cpp:46
@@ -2652,6 +2689,12 @@ msgstr "<h1>KsirK</h1>"
 msgid "New Local Game"
 msgstr "Νέο τοπικό παιχνίδι"
 
+#. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
+#: mainMenu.ui:104
+#, kde-format
+msgid "New Standard TCP/IP Network Game"
+msgstr "Νέο τυπικό TCP/IP δικτυακό παιχνίδι"
+
 #. i18n: ectx: property (text), widget (QPushButton, pbJoin)
 #: mainMenu.ui:111
 #, fuzzy, kde-format
@@ -2670,11 +2713,6 @@ msgstr ""
 #, kde-format
 msgid "Quit"
 msgstr "Τερματισμός"
-
-#: newgamesetup.cpp:45
-#, kde-format
-msgid "Fatal Error!"
-msgstr "Σφάλμα κατάρρευσης!"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_soundEnabled)
 #: preferences.ui:35
@@ -2736,6 +2774,15 @@ msgstr "Σφάλμα - Άγνωστα δεδομένα int του θέματος
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Σφάλμα - Άγνωστα δεδομένα string του θέματος: "
+
+#~ msgid "Goal"
+#~ msgstr "Στόχος"
+
+#~ msgid "Next Player"
+#~ msgstr "Επόμενος παίκτης"
+
+#~ msgid "Fatal Error!"
+#~ msgstr "Σφάλμα κατάρρευσης!"
 
 #, fuzzy
 #~| msgid "Ksirk - New game properties"

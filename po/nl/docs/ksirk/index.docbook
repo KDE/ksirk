@@ -264,7 +264,7 @@ your application. -->
     <varlistentry>
       <term
 ><guibutton
->Laden...</guibutton
+>Laden…</guibutton
 ></term>
       <listitem
 ><para
@@ -294,7 +294,7 @@ your application. -->
 > drukt dan krijgt u het dialoog <guilabel
 >Nieuw spel eigenschappen</guilabel
 > te zien waar u het aantal spelers, het te gebruiken skin (of thema), het speltype (het doel veroveren of een speciaal doel bereiken ) kunt instellen en tenslotte of u het spel met online spelers of puur lokaal wilt spelen. Via de knop <guibutton
->Nieuwe skins downloaden...</guibutton
+>Nieuwe skins downloaden…</guibutton
 > kunt u nieuwe skins downloaden.</para>
 
   <screenshot>
@@ -737,7 +737,7 @@ your application. -->
   <para
 >Als een speler klaar is met het verdelen van zijn legers, dan klikt hij op de knop <guibutton
 >Geldig</guibutton
-> zodat de volgende speler zijn bonus-legers kan verdelen. Na de eerste distributie, als alle spelers hun legers hebben geplaatst, kunnen ze een nieuwe herverdeling-ronde of een nieuwe speelronde starten...</para>
+> zodat de volgende speler zijn bonus-legers kan verdelen. Na de eerste distributie, als alle spelers hun legers hebben geplaatst, kunnen ze een nieuwe herverdeling-ronde of een nieuwe speelronde starten…</para>
   </sect2>
 
 <!-- Does not work for current TCP/IP games
@@ -908,7 +908,7 @@ distribution. -->
 ><guimenu
 >Instellingen</guimenu
 > <guimenuitem
->&ksirk; configureren...</guimenuitem
+>&ksirk; configureren…</guimenuitem
 ></menuchoice
 > opent een dialoog die u biedt:</para>
 

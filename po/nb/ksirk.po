@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:37+0000\n"
+"POT-Creation-Date: 2024-05-07 00:37+0000\n"
 "PO-Revision-Date: 2013-04-09 17:24+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -1070,7 +1070,7 @@ msgstr ""
 msgid "Legacy"
 msgstr "Fra gammelt av"
 
-#: decoratedgameframe.cpp:100
+#: decoratedgameframe.cpp:100 kgamewin.cpp:349
 #, fuzzy, kde-format
 #| msgid "Next Player"
 msgctxt "@action"
@@ -1084,7 +1084,8 @@ msgctxt "@action"
 msgid "Details"
 msgstr "Detaljer"
 
-#: decoratedgameframe.cpp:106
+#: decoratedgameframe.cpp:106 kgamewin.cpp:332 kgamewin.cpp:1214
+#: kgamewin.cpp:1226 kgamewin.cpp:2383
 #, fuzzy, kde-format
 #| msgid "Goal"
 msgctxt "@action"
@@ -1220,17 +1221,17 @@ msgstr "Vert:"
 msgid "Port:"
 msgstr "Port:"
 
-#: Dialogs/kplayersetupwidget.cpp:246
+#: Dialogs/kplayersetupwidget.cpp:250
 #, kde-format
 msgid "Name already in use. Please choose another one."
 msgstr "Navnet er i bruk fra før. Velg et annet."
 
-#: Dialogs/kplayersetupwidget.cpp:248
+#: Dialogs/kplayersetupwidget.cpp:252
 #, kde-format
 msgid "Empty name. Please choose another one."
 msgstr "Tomt navn. Velg et annet."
 
-#: Dialogs/kplayersetupwidget.cpp:291
+#: Dialogs/kplayersetupwidget.cpp:295
 #, kde-format
 msgid "Player Number %1, please type in your name and choose your nation:"
 msgstr "Spiller %1, skriv inn navnet ditt og velg hvilken nasjon du vil styre:"
@@ -1341,20 +1342,21 @@ msgid "Reach a goa&l"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
-#: Dialogs/newGameDialog.ui:227 Dialogs/newGameSummary.ui:203
-#: Dialogs/qplayersetupdialog.ui:123 Dialogs/tcpconnectwidget.ui:95
+#: Dialogs/newGameDialog.ui:230 Dialogs/newGameSummary.ui:206
+#: Dialogs/qplayersetupdialog.ui:126 Dialogs/tcpconnectwidget.ui:98
 #, kde-format
 msgid "Cancel"
 msgstr "Avbryt"
 
 #. i18n: ectx: property (text), widget (QPushButton, nextButton)
-#: Dialogs/newGameDialog.ui:247 Dialogs/qplayersetupdialog.ui:150
-#: Dialogs/tcpconnectwidget.ui:122
-#, kde-format
-msgid "Next >>"
+#: Dialogs/newGameDialog.ui:250 Dialogs/qplayersetupdialog.ui:153
+#: Dialogs/tcpconnectwidget.ui:125
+#, fuzzy, kde-format
+#| msgid "Next >>"
+msgid "Next"
 msgstr "Neste >>"
 
-#: Dialogs/newGameDialogImpl.cpp:125 newgamesetup.cpp:44
+#: Dialogs/newGameDialogImpl.cpp:128 newgamesetup.cpp:44
 #, kde-format
 msgid ""
 "Skins directory not found - Verify your installation\n"
@@ -1363,8 +1365,9 @@ msgstr ""
 "Fant ikke temamappa. Kontroller installasjonen.\n"
 "Kan ikke fortsette."
 
-#: Dialogs/newGameDialogImpl.cpp:126 GameLogic/aiplayer.cpp:506
-#: Sprites/skinSpritesData.cpp:89 Sprites/skinSpritesData.cpp:105
+#: Dialogs/newGameDialogImpl.cpp:129 GameLogic/aiplayer.cpp:506
+#: newgamesetup.cpp:45 Sprites/skinSpritesData.cpp:89
+#: Sprites/skinSpritesData.cpp:105
 #, fuzzy, kde-format
 #| msgid "Fatal Error"
 msgctxt "@title:window"
@@ -1426,34 +1429,35 @@ msgid "Network"
 msgstr "Nettverk"
 
 #. i18n: ectx: property (text), widget (QPushButton, previousButton)
-#: Dialogs/newGameSummary.ui:223 Dialogs/qplayersetupdialog.ui:143
-#: Dialogs/tcpconnectwidget.ui:115
-#, kde-format
-msgid "<< Previous"
+#: Dialogs/newGameSummary.ui:226 Dialogs/qplayersetupdialog.ui:146
+#: Dialogs/tcpconnectwidget.ui:118
+#, fuzzy, kde-format
+#| msgid "<< Previous"
+msgid "Previous"
 msgstr "<< Forrige"
 
 #. i18n: ectx: property (text), widget (QPushButton, finishButton)
-#: Dialogs/newGameSummary.ui:230
+#: Dialogs/newGameSummary.ui:236
 #, kde-format
 msgid "Start"
 msgstr "Start"
 
-#: Dialogs/newGameSummaryWidget.cpp:59
+#: Dialogs/newGameSummaryWidget.cpp:62
 #, kde-format
 msgid "Reach a goal"
 msgstr "Nå et mål"
 
-#: Dialogs/newGameSummaryWidget.cpp:59
+#: Dialogs/newGameSummaryWidget.cpp:62
 #, kde-format
 msgid "World conquest"
 msgstr "Erobre hele verden"
 
-#: Dialogs/newGameSummaryWidget.cpp:74 Dialogs/newGameSummaryWidget.cpp:76
+#: Dialogs/newGameSummaryWidget.cpp:77 Dialogs/newGameSummaryWidget.cpp:79
 #, kde-format
 msgid "Yes"
 msgstr "Ja"
 
-#: Dialogs/newGameSummaryWidget.cpp:74 Dialogs/newGameSummaryWidget.cpp:76
+#: Dialogs/newGameSummaryWidget.cpp:77 Dialogs/newGameSummaryWidget.cpp:79
 #, kde-format
 msgid "No"
 msgstr "Nei"
@@ -1507,7 +1511,7 @@ msgid "Please select your saved player:"
 msgstr "Velg en lagret spiller:"
 
 #. i18n: ectx: property (text), widget (QPushButton, PushButton1)
-#: Dialogs/qwaitedplayersetupdialog.ui:67
+#: Dialogs/qwaitedplayersetupdialog.ui:70
 #, kde-format
 msgid "OK"
 msgstr "OK"
@@ -1519,43 +1523,43 @@ msgid "New Game or Exit"
 msgstr "Nytt spill eller avslutt"
 
 #. i18n: ectx: property (text), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:24
+#: Dialogs/restartOrExitDialog.ui:27
 #, kde-format
 msgid "New Game"
 msgstr "Nytt spill"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:30
+#: Dialogs/restartOrExitDialog.ui:33
 #, kde-format
 msgid "Starts a new game"
 msgstr "Starter et nytt spill"
 
 #. i18n: ectx: property (text), widget (QPushButton, doNothingButton)
-#: Dialogs/restartOrExitDialog.ui:37
+#: Dialogs/restartOrExitDialog.ui:40
 #, kde-format
 msgid "Do Nothing"
 msgstr "Ikke gjør noe"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, doNothingButton)
-#: Dialogs/restartOrExitDialog.ui:40
+#: Dialogs/restartOrExitDialog.ui:43
 #, kde-format
 msgid "Do nothing. Game buttons will be available"
 msgstr "Ikke gjør noe. Spilleknappene blir tilgjengelige"
 
 #. i18n: ectx: property (text), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:47
+#: Dialogs/restartOrExitDialog.ui:53
 #, kde-format
 msgid "Exit"
 msgstr "Avslutt"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:50
+#: Dialogs/restartOrExitDialog.ui:56
 #, kde-format
 msgid "Quit KsirK"
 msgstr "Avslutt KsirK"
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: Dialogs/restartOrExitDialog.ui:86
+#: Dialogs/restartOrExitDialog.ui:92
 #, no-c-format, kde-format
 msgid "%1 won! Do you want to play again?"
 msgstr "%1 vant! Vil du spille en gang til?"
@@ -1721,7 +1725,7 @@ msgid "Do want to save your game?"
 msgstr "Vil du lagre spillet?"
 
 #: GameLogic/gameautomaton.cpp:1818 GameLogic/gameautomaton.cpp:2235
-#: kgamewin.cpp:2042 kgamewin.cpp:2137 kgamewin.cpp:2174
+#: kgamewin.cpp:2038 kgamewin.cpp:2133 kgamewin.cpp:2170
 #, kde-format
 msgid "%1: %2 armies to place"
 msgstr "%1: %2 styrker å sette ut"
@@ -1876,12 +1880,16 @@ msgstr[0] "1 land i %2"
 msgstr[1] "%1 land i %2"
 
 #: GameLogic/goal.cpp:285
-#, kde-format
+#, fuzzy, kde-format
+#| msgid " and "
+msgctxt "@item:intext country list separator of last item"
 msgid " and "
 msgstr " og "
 
 #: GameLogic/goal.cpp:289
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ", "
+msgctxt "@item:intext country list separator of non-last item"
 msgid ", "
 msgstr ", "
 
@@ -1974,7 +1982,7 @@ msgstr "Problem: Ingen ble ødelagt"
 msgid "Bug: who should be 0, 1 or 2."
 msgstr "Feil: «who» må være 0, 1 eller 2."
 
-#: kgamewin.cpp:139 kgamewin.cpp:644
+#: kgamewin.cpp:139 kgamewin.cpp:641
 #, kde-format
 msgid "Cannot load icon<br>Program cannot continue"
 msgstr "Kan ikke laste inn ikon<br /> Kan ikke fortsette."
@@ -1984,78 +1992,91 @@ msgstr "Kan ikke laste inn ikon<br /> Kan ikke fortsette."
 msgid "Cannot load button image %1<br>Program cannot continue"
 msgstr "Klarer ikke å laste inn knappebildet %1<br /> Kan ikke fortsette"
 
-#. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
-#: kgamewin.cpp:305 mainMenu.ui:104
-#, kde-format
+#: kgamewin.cpp:305
+#, fuzzy, kde-format
+#| msgid "New Standard TCP/IP Network Game"
+msgctxt "@action"
 msgid "New Standard TCP/IP Network Game"
 msgstr "Nytt standard TCP/IP-nettverksspill"
 
 #: kgamewin.cpp:306
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "New TCP/IP"
+msgctxt "@action"
 msgid "New TCP/IP"
 msgstr "Nytt TCP/IP"
 
 #: kgamewin.cpp:308
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create a new standard TCP/IP network game"
+msgctxt "@info:tooltip"
 msgid "Create a new standard TCP/IP network game"
 msgstr "Opprett et nytt standard TCP/IP-nettverksspill"
 
 #: kgamewin.cpp:323
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Join a Standard TCP/IP Network Game"
+msgctxt "@action"
 msgid "Join a Standard TCP/IP Network Game"
 msgstr "Bli med i et standard TCP/IP-nettverksspill"
 
 #: kgamewin.cpp:324
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Join TCP/IP"
+msgctxt "@action"
 msgid "Join TCP/IP"
 msgstr "Bli med i TCP/IP"
 
 #: kgamewin.cpp:326
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Join a standard TCP/IP network game"
+msgctxt "@info:tooltip"
 msgid "Join a standard TCP/IP network game"
 msgstr "Bli med i et standard TCP/IP-nettverksspill"
 
-#: kgamewin.cpp:331 kgamewin.cpp:1218 kgamewin.cpp:1230 kgamewin.cpp:2387
-#, kde-format
-msgid "Goal"
-msgstr "Mål"
-
-#: kgamewin.cpp:332
-#, kde-format
+#: kgamewin.cpp:331
+#, fuzzy, kde-format
+#| msgid "Display the Current Player's Goal"
+msgctxt "@action"
 msgid "Display the Current Player's Goal"
 msgstr "Vis den gjeldende spillerens mål"
 
-#: kgamewin.cpp:335
-#, kde-format
+#: kgamewin.cpp:334
+#, fuzzy, kde-format
+#| msgid "Display the current player's goal"
+msgctxt "@info:tooltip"
 msgid "Display the current player's goal"
 msgstr "Vis den gjeldende spillerens mål"
 
-#: kgamewin.cpp:342
-#, kde-format
+#: kgamewin.cpp:340
+#, fuzzy, kde-format
+#| msgid "Contextual Help"
+msgctxt "@action"
 msgid "Contextual Help"
 msgstr "Emnehjelp"
 
 #: kgamewin.cpp:351
-#, kde-format
-msgid "Next Player"
-msgstr "Neste spiller"
-
-#: kgamewin.cpp:353
-#, kde-format
-msgid "Lets the next player play"
+#, fuzzy, kde-format
+#| msgid "Lets the next player play"
+msgctxt "@info:tooltip"
+msgid "Let the next player play"
 msgstr "La neste spiller gjøre sitt trekk"
 
-#: kgamewin.cpp:358
-#, kde-format
-msgid "Finish moves"
+#: kgamewin.cpp:355
+#, fuzzy, kde-format
+#| msgid "Finish moves"
+msgctxt "@action"
+msgid "Finish Moves"
 msgstr "Fullfør flytting"
 
-#: kgamewin.cpp:360
-#, kde-format
+#: kgamewin.cpp:357
+#, fuzzy, kde-format
+#| msgid "Finish moving the current sprites"
+msgctxt "@info:tooltip"
 msgid "Finish moving the current sprites"
 msgstr "Fullfør flytting av de gjeldende figurene"
 
-#: kgamewin.cpp:488
+#: kgamewin.cpp:485
 #, kde-format
 msgid ""
 "World definition file not found - Verify your installation<br>Program cannot "
@@ -2064,33 +2085,33 @@ msgstr ""
 "Fant ikke verdensdefinisjonsfila. Kontroller installasjonen<br/>Kan ikke "
 "fortsette"
 
-#: kgamewin.cpp:708
+#: kgamewin.cpp:704
 #, kde-format
 msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
 msgstr "<font color=\"red\">%1 erobret %2 fra %3</font>"
 
-#: kgamewin.cpp:732
+#: kgamewin.cpp:728
 #, fuzzy, kde-format
 #| msgid "%1, you are defeated! Bye, bye..."
 msgid "%1, you are defeated! Bye, bye…"
 msgstr "Du er slått ut, %1. Farvel, farvel …"
 
-#: kgamewin.cpp:804
+#: kgamewin.cpp:800
 #, kde-format
 msgid "%1: it is up to you again"
 msgstr "Nå er det din tur igjen, %1."
 
-#: kgamewin.cpp:818
+#: kgamewin.cpp:814
 #, kde-format
 msgid "%1 won!"
 msgstr "%1 vant!"
 
-#: kgamewin.cpp:820
+#: kgamewin.cpp:816
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
 msgstr "<big><b>%1</b>, du vant!</big>"
 
-#: kgamewin.cpp:824
+#: kgamewin.cpp:820
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
@@ -2098,45 +2119,45 @@ msgid ""
 msgstr ""
 "<br>Vinnerens mål var:<br /><i>%1</i><br /><br />Vil du spille en gang til??"
 
-#: kgamewin.cpp:830
+#: kgamewin.cpp:826
 #, kde-format
 msgid "<br>You conquered all the world!"
 msgstr "<br>Du erobret hele verden!"
 
-#: kgamewin.cpp:834
+#: kgamewin.cpp:830
 #, kde-format
 msgid "<br>He conquered all the world!"
 msgstr "<br>Han erobret hele verden!"
 
-#: kgamewin.cpp:951
+#: kgamewin.cpp:947
 #, kde-format
 msgid "Do you want to quit the game?"
 msgstr "Vil du avslutte spillet?"
 
-#: kgamewin.cpp:953
+#: kgamewin.cpp:949
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
 msgstr ""
 
-#: kgamewin.cpp:965
+#: kgamewin.cpp:961
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
 msgstr "Vil du lagre spillet før du avslutter?"
 
-#: kgamewin.cpp:1003
+#: kgamewin.cpp:999
 #, fuzzy, kde-format
 #| msgid "New Local Game"
 msgctxt "@title:window"
 msgid "Load Game"
 msgstr "Nytt lokalt spill"
 
-#: kgamewin.cpp:1041
+#: kgamewin.cpp:1037
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
 msgstr "Venter på at %1 nettverksspillere skal koble til"
 
-#: kgamewin.cpp:1120
+#: kgamewin.cpp:1116
 #, kde-format
 msgid ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
@@ -2153,88 +2174,94 @@ msgstr[1] ""
 "%3</font> med %1 styrker.<br> Hvordan vil du forsvare <font color=\"blue\">"
 "%4</font>?"
 
-#: kgamewin.cpp:1149
-#, kde-format
+#: kgamewin.cpp:1145
+#, fuzzy, kde-format
+#| msgid "Defend 1"
+msgctxt "@action:button"
 msgid "Defend 1"
 msgstr "Forsvar 1"
 
-#: kgamewin.cpp:1150
-#, kde-format
+#: kgamewin.cpp:1146
+#, fuzzy, kde-format
+#| msgid "Defend 2"
+msgctxt "@action:button"
 msgid "Defend 2"
 msgstr "Forsvar 2"
 
-#: kgamewin.cpp:1151
-#, kde-format
+#: kgamewin.cpp:1147
+#, fuzzy, kde-format
+#| msgid "Defend-Auto"
+msgctxt "@action:button"
 msgid "Defend-Auto"
 msgstr "Autoforsvar"
 
-#: kgamewin.cpp:1270
+#: kgamewin.cpp:1266
 #, kde-format
 msgid "Waiting for %1 players to connect"
 msgstr "Venter på at %1 spillere skal koble til"
 
-#: kgamewin.cpp:1660 kgamewin.cpp:1700
+#: kgamewin.cpp:1656 kgamewin.cpp:1696
 msgid "There is no country here!"
 msgstr "Det er ikke noe land her!"
 
-#: kgamewin.cpp:1664 kgamewin.cpp:1705
+#: kgamewin.cpp:1660 kgamewin.cpp:1701
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
 msgstr "Det er ikke du som eier det første landet: %1."
 
-#: kgamewin.cpp:1668
+#: kgamewin.cpp:1664
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
 msgstr "Det er ikke du som eier det andre landet: %1."
 
-#: kgamewin.cpp:1672 kgamewin.cpp:1716
+#: kgamewin.cpp:1668 kgamewin.cpp:1712
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr "Kan ikke flytte styrker fra %1 til seg selv."
 
-#: kgamewin.cpp:1677 kgamewin.cpp:1722
+#: kgamewin.cpp:1673 kgamewin.cpp:1718
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
 msgstr "%1 grenser ikke til %2."
 
-#: kgamewin.cpp:1683
+#: kgamewin.cpp:1679
 #, kde-format
 msgid "Moving armies from %1 to %2."
 msgstr "Flytter styrker fra %1 til %2."
 
-#: kgamewin.cpp:1711
+#: kgamewin.cpp:1707
 #, kde-format
 msgid "You are the owner of the second country: %1!"
 msgstr "Det er du som eier det andre landet: %1."
 
-#: kgamewin.cpp:1729
+#: kgamewin.cpp:1725
 msgid "Ready to fight!"
 msgstr "Klar til kamp!"
 
-#: kgamewin.cpp:1823
+#: kgamewin.cpp:1819
 msgid "<font color=\"orange\">No country here!</font>"
 msgstr "<font color=\"orange\">Det er ikke noe land her.</font>"
 
-#: kgamewin.cpp:1831
+#: kgamewin.cpp:1827
 #, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr "<font color=\"orange\">Det er ikke du som eier %1.</font>"
 
-#: kgamewin.cpp:1838
+#: kgamewin.cpp:1834
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr "<font color=\"orange\">Det er bare %1 styrker i %2.</font>"
 
-#: kgamewin.cpp:1978
+#: kgamewin.cpp:1974
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
 msgstr "%1, du forsvarer med den eneste styrken du har i %2."
 
-#: kgamewin.cpp:2202
+#: kgamewin.cpp:2198
 msgid "Exchange armies again or continue?"
 msgstr "Vil du omfordele styrker igjen, eller fortsette?"
 
-#: kgamewin.cpp:2227
+#: kgamewin.cpp:2223
 #, kde-format
 msgid ""
 "You must distribute\n"
@@ -2243,43 +2270,43 @@ msgstr ""
 "Du må fordele\n"
 "alle styrkene dine"
 
-#: kgamewin.cpp:2367
+#: kgamewin.cpp:2363
 msgid "Battle ongoing."
 msgstr "En kamp pågår."
 
-#: kgamewin.cpp:2488 kgamewin.cpp:2499 kgamewin.cpp:2522
+#: kgamewin.cpp:2484 kgamewin.cpp:2495 kgamewin.cpp:2518
 #, kde-format
 msgid "%1, it is up to you."
 msgstr "%1, det er opp til deg"
 
-#: kgamewin.cpp:2551
+#: kgamewin.cpp:2547
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
 msgstr "Er du sikker på at du vil avslutte dette spillet og starte et nytt?"
 
-#: kgamewin.cpp:2551
+#: kgamewin.cpp:2547
 #, kde-format
 msgid "New game confirmation"
 msgstr "Bekreft nytt spill"
 
-#: kgamewin.cpp:2551
+#: kgamewin.cpp:2547
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr ""
 
-#: kgamewin.cpp:2807
+#: kgamewin.cpp:2803
 msgid "<b>KsirK quick Introduction</b>"
 msgstr "<b>Rask innføring i KsirK</b>"
 
-#: kgamewin.cpp:2811
+#: kgamewin.cpp:2807
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr ""
 "Du angriper og flytter styrker ved å dra og slippe mellom land som grenser "
 "til hverandre."
 
-#: kgamewin.cpp:2815
+#: kgamewin.cpp:2811
 #, fuzzy
 #| msgid ""
 #| "Start a new game or join a network game with the menu or the toolbar..."
@@ -2288,7 +2315,7 @@ msgstr ""
 "Start et nytt spill eller bli med i et nettverksspill ved å bruke nenyen "
 "eller vermtøylinja …"
 
-#: kgamewin.cpp:2819
+#: kgamewin.cpp:2815
 msgid ""
 "and then let the system guide you through messages and tooltips appearing on "
 "buttons when hovering above them. You can disable bubble help in the options "
@@ -2298,7 +2325,7 @@ msgstr ""
 "knapper når musepekeren svever over dem. Du kan slå av denne hjelen i "
 "innstillingene."
 
-#: kgamewin.cpp:2826
+#: kgamewin.cpp:2822
 #, kde-format
 msgid "Don't show messages anymore"
 msgstr "Ikke vis flere meldinger"
@@ -2392,27 +2419,37 @@ msgstr[0] "<font color=\"blue\">Forsvar</font> med 1 styrke.<br>"
 msgstr[1] "<font color=\"blue\">Forsvar</font> med %1 styrker.<br>"
 
 #: krightdialog.cpp:265
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Stop Auto-Attack"
+msgctxt "@action:button"
 msgid "Stop Auto-Attack"
 msgstr "Stopp autoangrep"
 
 #: krightdialog.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Stop Auto-Defense"
+msgctxt "@action:button"
 msgid "Stop Auto-Defense"
 msgstr "Stopp autoforsvar"
 
 #: krightdialog.cpp:298
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Valid"
+msgctxt "@action:button"
 msgid "Valid"
 msgstr "Gyldig"
 
 #: krightdialog.cpp:299
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Recycle"
+msgctxt "@action:button"
 msgid "Recycle"
 msgstr "Omfordel"
 
 #: krightdialog.cpp:300
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Done"
+msgctxt "@action:button"
 msgid "Done"
 msgstr "Ferdig"
 
@@ -2451,7 +2488,9 @@ msgid "<font color=\"blue\">lost armies: %1</font>"
 msgstr "<font color=\"blue\">Tapte styrker: %1</font>"
 
 #: ksirkConfigDialog.cpp:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Preferences"
+msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "Innstillinger"
 
@@ -2516,7 +2555,7 @@ msgstr "KSirK"
 
 #: main.cpp:44
 #, kde-format
-msgid "KsirK - World Domination Strategy Game"
+msgid "World Domination Strategy Game"
 msgstr ""
 
 #: main.cpp:46
@@ -2593,6 +2632,12 @@ msgstr "<h1>KsirK</h1>1>"
 msgid "New Local Game"
 msgstr "Nytt lokalt spill"
 
+#. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
+#: mainMenu.ui:104
+#, kde-format
+msgid "New Standard TCP/IP Network Game"
+msgstr "Nytt standard TCP/IP-nettverksspill"
+
 #. i18n: ectx: property (text), widget (QPushButton, pbJoin)
 #: mainMenu.ui:111
 #, kde-format
@@ -2610,11 +2655,6 @@ msgstr ""
 #, kde-format
 msgid "Quit"
 msgstr "Avslutt"
-
-#: newgamesetup.cpp:45
-#, kde-format
-msgid "Fatal Error!"
-msgstr "Kritisk feil!"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_soundEnabled)
 #: preferences.ui:35
@@ -2676,6 +2716,15 @@ msgstr "Feil: Ukjente heltalsdata i tema: "
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Feil: Ukjente strengdata i tema: "
+
+#~ msgid "Goal"
+#~ msgstr "Mål"
+
+#~ msgid "Next Player"
+#~ msgstr "Neste spiller"
+
+#~ msgid "Fatal Error!"
+#~ msgstr "Kritisk feil!"
 
 #~ msgid "Player Setup"
 #~ msgstr "Spilleroppsett"

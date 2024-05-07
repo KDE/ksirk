@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:37+0000\n"
+"POT-Creation-Date: 2024-05-07 00:37+0000\n"
 "PO-Revision-Date: 2021-11-23 16:42+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1235,7 +1235,9 @@ msgstr ""
 "muokkaa sen yksityiskohtia oikeanpuoleisessa telakassa."
 
 #: ksirkSkinEditorConfigDialog.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Preferences"
+msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "Asetukset"
 
@@ -2025,7 +2027,9 @@ msgid "Open a recently saved skin"
 msgstr "Avaa hiljattain tallennettu teema…"
 
 #: mainwindow.cpp:337
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save the current skin"
+msgctxt "@info:tooltip"
 msgid "Save the current skin"
 msgstr "Tallenna nykyinen teema"
 
@@ -2042,32 +2046,36 @@ msgstr "Muutoksia on tallentamatta. Mitä haluat tehdä?"
 
 #: mainwindow.cpp:527
 #, kde-format
-msgid "Exit Anyway?"
-msgstr "Lopetetaanko silti?"
+msgctxt "@title:window"
+msgid "Unsaved Changes"
+msgstr ""
 
 #: mainwindow.cpp:528
-#, kde-format
-msgid "Quit without saving"
+#, fuzzy, kde-format
+#| msgid "Quit without saving"
+msgctxt "@action:button"
+msgid "Quit Without Saving"
 msgstr "Lopeta tallentamatta"
 
 #: mainwindow.cpp:529
-#, kde-format
-msgid "Save then quit"
+#, fuzzy, kde-format
+#| msgid "Save then quit"
+msgctxt "@action:button"
+msgid "Save and Quit"
 msgstr "Tallenna, sitten lopeta"
 
-#: mainwindow.cpp:530
-#, kde-format
-msgid "Do not quit"
-msgstr "Älä lopeta"
-
 #: mainwindow.cpp:1305
-#, kde-format
-msgid "New country name"
+#, fuzzy, kde-format
+#| msgid "New country name"
+msgctxt "@title:window"
+msgid "New Country Name"
 msgstr "Uuden maan nimi"
 
 #: mainwindow.cpp:1305
-#, kde-format
-msgid "Enter the name of the new country"
+#, fuzzy, kde-format
+#| msgid "Enter the name of the new country"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new country:"
 msgstr "Anna uudelle maalle nimi"
 
 #: mainwindow.cpp:1315
@@ -2077,17 +2085,22 @@ msgstr "Haluatko varmasti poistaa maan ”%1”?"
 
 #: mainwindow.cpp:1315
 #, kde-format
-msgid "Really delete country?"
-msgstr "Poistetaanko maa varmasti?"
+msgctxt "@title:window"
+msgid "Delete Country Confirmation"
+msgstr ""
 
 #: mainwindow.cpp:1334
-#, kde-format
-msgid "New continent name"
+#, fuzzy, kde-format
+#| msgid "New continent name"
+msgctxt "@title:window"
+msgid "New Continent Name"
 msgstr "Uuden maanosan nimi"
 
 #: mainwindow.cpp:1334
-#, kde-format
-msgid "Enter the name of the new continent"
+#, fuzzy, kde-format
+#| msgid "Enter the name of the new continent"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new continent:"
 msgstr "Anna uudelle maanosalle nimi"
 
 #: mainwindow.cpp:1344
@@ -2096,9 +2109,11 @@ msgid "Do you really want to delete continent '%1'?"
 msgstr "Haluatko varmasti poistaa maanosan ”%1”?"
 
 #: mainwindow.cpp:1344
-#, kde-format
-msgid "Really delete continent?"
-msgstr "Poistetaanko maanosa varmasti?"
+#, fuzzy, kde-format
+#| msgid "Select Continents"
+msgctxt "@title:window"
+msgid "Delete Continent Confirmation"
+msgstr "Valitse maanosat"
 
 #: mainwindow.cpp:1889
 #, kde-format
@@ -2107,17 +2122,22 @@ msgstr "Haluatko varmasti poistaa tavoitteen ”%1”?"
 
 #: mainwindow.cpp:1889
 #, kde-format
-msgid "Really delete goal?"
-msgstr "Poistetaanko tavoite varmasti?"
+msgctxt "@title:window"
+msgid "Delete Goal Confirmation"
+msgstr ""
 
 #: mainwindow.cpp:1948
-#, kde-format
-msgid "New nationality name"
+#, fuzzy, kde-format
+#| msgid "New nationality name"
+msgctxt "@title:window"
+msgid "New Nationality Name"
 msgstr "Uuden kansan nimi"
 
 #: mainwindow.cpp:1948
-#, kde-format
-msgid "Enter the name of the new nationality"
+#, fuzzy, kde-format
+#| msgid "Enter the name of the new nationality"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new nationality:"
 msgstr "Anna uudelle kansalle nimi"
 
 #: mainwindow.cpp:1958
@@ -2127,12 +2147,14 @@ msgstr "Haluatko varmasti poistaa kansan ”%1”?"
 
 #: mainwindow.cpp:1958
 #, kde-format
-msgid "Really delete nationality?"
-msgstr "Poistetaanko kansa varmasti?"
+msgctxt "@title:window"
+msgid "Delete Nationality Confirmation"
+msgstr ""
 
 #: onu.cpp:78
-#, kde-format
-msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+#, fuzzy, kde-format
+#| msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+msgid "Invalid skin definition file format. Expected %1 and got %2"
 msgstr ""
 "Virhe – teemamääritystiedoston muoto ei kelpaa. Odotettiin %1, saatiin %2"
 
@@ -2164,7 +2186,9 @@ msgstr ""
 "%2."
 
 #: onu.cpp:984
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "PoolLoader"
+msgctxt "@title:window"
 msgid "PoolLoader"
 msgstr "PoolLoader"
 
@@ -2189,6 +2213,24 @@ msgstr "Virhe – Tuntematon teeman merkkijonotieto: "
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "Vakava virhe"
+
+#~ msgid "Exit Anyway?"
+#~ msgstr "Lopetetaanko silti?"
+
+#~ msgid "Do not quit"
+#~ msgstr "Älä lopeta"
+
+#~ msgid "Really delete country?"
+#~ msgstr "Poistetaanko maa varmasti?"
+
+#~ msgid "Really delete continent?"
+#~ msgstr "Poistetaanko maanosa varmasti?"
+
+#~ msgid "Really delete goal?"
+#~ msgstr "Poistetaanko tavoite varmasti?"
+
+#~ msgid "Really delete nationality?"
+#~ msgstr "Poistetaanko kansa varmasti?"
 
 #~ msgid "Error"
 #~ msgstr "Virhe"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:37+0000\n"
+"POT-Creation-Date: 2024-05-07 00:37+0000\n"
 "PO-Revision-Date: 2010-04-21 05:59+0200\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -1245,7 +1245,9 @@ msgstr ""
 "tohören Enkelheiten in't Dock rechts."
 
 #: ksirkSkinEditorConfigDialog.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Preferences"
+msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "Instellen"
 
@@ -2034,7 +2036,9 @@ msgid "Open a recently saved skin"
 msgstr "En annerlest sekert Kledaasch opmaken..."
 
 #: mainwindow.cpp:337
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save the current skin"
+msgctxt "@info:tooltip"
 msgid "Save the current skin"
 msgstr "Aktuell Kledaasch sekern"
 
@@ -2052,32 +2056,36 @@ msgstr "Dat gifft nich sekerte Ännern. Wat wullt Du doon?"
 
 #: mainwindow.cpp:527
 #, kde-format
-msgid "Exit Anyway?"
-msgstr "Liekers utmaken?"
+msgctxt "@title:window"
+msgid "Unsaved Changes"
+msgstr ""
 
 #: mainwindow.cpp:528
-#, kde-format
-msgid "Quit without saving"
+#, fuzzy, kde-format
+#| msgid "Quit without saving"
+msgctxt "@action:button"
+msgid "Quit Without Saving"
 msgstr "Utmaken un nich sekern"
 
 #: mainwindow.cpp:529
-#, kde-format
-msgid "Save then quit"
+#, fuzzy, kde-format
+#| msgid "Save then quit"
+msgctxt "@action:button"
+msgid "Save and Quit"
 msgstr "Sekern un utmaken"
 
-#: mainwindow.cpp:530
-#, kde-format
-msgid "Do not quit"
-msgstr "Nich utmaken"
-
 #: mainwindow.cpp:1305
-#, kde-format
-msgid "New country name"
+#, fuzzy, kde-format
+#| msgid "New country name"
+msgctxt "@title:window"
+msgid "New Country Name"
 msgstr "Naam för't niege Land"
 
 #: mainwindow.cpp:1305
-#, kde-format
-msgid "Enter the name of the new country"
+#, fuzzy, kde-format
+#| msgid "Enter the name of the new country"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new country:"
 msgstr "Den Naam för dat niege Land ingeven"
 
 #: mainwindow.cpp:1315
@@ -2087,17 +2095,22 @@ msgstr "Wullt Du dat Land »%1« redig wegdoon?"
 
 #: mainwindow.cpp:1315
 #, kde-format
-msgid "Really delete country?"
-msgstr "Land redig wegdoon?"
+msgctxt "@title:window"
+msgid "Delete Country Confirmation"
+msgstr ""
 
 #: mainwindow.cpp:1334
-#, kde-format
-msgid "New continent name"
+#, fuzzy, kde-format
+#| msgid "New continent name"
+msgctxt "@title:window"
+msgid "New Continent Name"
 msgstr "Naam för den niegen Eerddeel"
 
 #: mainwindow.cpp:1334
-#, kde-format
-msgid "Enter the name of the new continent"
+#, fuzzy, kde-format
+#| msgid "Enter the name of the new continent"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new continent:"
 msgstr "Den Naam för den niegen Eerddeel ingeven"
 
 #: mainwindow.cpp:1344
@@ -2106,9 +2119,11 @@ msgid "Do you really want to delete continent '%1'?"
 msgstr "Wullt Du den Eerddeel »%1« redig wegdoon?"
 
 #: mainwindow.cpp:1344
-#, kde-format
-msgid "Really delete continent?"
-msgstr "Eerddeel redig wegdoon?"
+#, fuzzy, kde-format
+#| msgid "Select Continents"
+msgctxt "@title:window"
+msgid "Delete Continent Confirmation"
+msgstr "Eerddelen utsöken"
 
 #: mainwindow.cpp:1889
 #, kde-format
@@ -2117,17 +2132,22 @@ msgstr "Wullt Du Opgaav »%1« redig wegdoon?"
 
 #: mainwindow.cpp:1889
 #, kde-format
-msgid "Really delete goal?"
-msgstr "Opgaav redig wegdoon?"
+msgctxt "@title:window"
+msgid "Delete Goal Confirmation"
+msgstr ""
 
 #: mainwindow.cpp:1948
-#, kde-format
-msgid "New nationality name"
+#, fuzzy, kde-format
+#| msgid "New nationality name"
+msgctxt "@title:window"
+msgid "New Nationality Name"
 msgstr "Naam för de niege Natschonaliteet"
 
 #: mainwindow.cpp:1948
-#, kde-format
-msgid "Enter the name of the new nationality"
+#, fuzzy, kde-format
+#| msgid "Enter the name of the new nationality"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new nationality:"
 msgstr "Den Naam för de niege Natschonaliteet ingeven"
 
 #: mainwindow.cpp:1958
@@ -2137,12 +2157,14 @@ msgstr "Wullt Du de Natschonaliteet »%1« redig wegdoon?"
 
 #: mainwindow.cpp:1958
 #, kde-format
-msgid "Really delete nationality?"
-msgstr "Natschonaliteet redig wegdoon?"
+msgctxt "@title:window"
+msgid "Delete Nationality Confirmation"
+msgstr ""
 
 #: onu.cpp:78
-#, kde-format
-msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+#, fuzzy, kde-format
+#| msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+msgid "Invalid skin definition file format. Expected %1 and got %2"
 msgstr ""
 "Fehler - Leeg Formaat vun de Kledaasch-Definitschoondatei. %1 verwacht, man "
 "%2 kregen."
@@ -2175,7 +2197,9 @@ msgstr ""
 "%2."
 
 #: onu.cpp:984
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "PoolLoader"
+msgctxt "@title:window"
 msgid "PoolLoader"
 msgstr "Köörladen"
 
@@ -2200,6 +2224,24 @@ msgstr "Fehler - Nich begäng Daten för Kledaasch-Tekenkeed: "
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "Swoor Fehler"
+
+#~ msgid "Exit Anyway?"
+#~ msgstr "Liekers utmaken?"
+
+#~ msgid "Do not quit"
+#~ msgstr "Nich utmaken"
+
+#~ msgid "Really delete country?"
+#~ msgstr "Land redig wegdoon?"
+
+#~ msgid "Really delete continent?"
+#~ msgstr "Eerddeel redig wegdoon?"
+
+#~ msgid "Really delete goal?"
+#~ msgstr "Opgaav redig wegdoon?"
+
+#~ msgid "Really delete nationality?"
+#~ msgstr "Natschonaliteet redig wegdoon?"
 
 #~ msgid "Error"
 #~ msgstr "Fehler"

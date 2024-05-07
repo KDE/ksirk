@@ -264,7 +264,7 @@ your application. -->
     <varlistentry>
       <term
 ><guibutton
->Carrega...</guibutton
+>Carrega…</guibutton
 ></term>
       <listitem
 ><para
@@ -294,7 +294,7 @@ your application. -->
 >, apareixerà el diàleg <guilabel
 >Propietats de la partida nova</guilabel
 >, on podreu triar el nombre de jugadors, l'aparença (o el tema) a utilitzar, el tipus de partida (conquerir un objectiu o tenir un objectiu específic) i, finalment, si es jugarà amb jugadors en línia o si serà purament local. Es poden descarregar aparences noves emprant el botó <guibutton
->Descarrega aparences noves...</guibutton
+>Descarrega aparences noves…</guibutton
 >.</para>
 
   <screenshot>
@@ -739,7 +739,7 @@ your application. -->
   <para
 >Quan un jugador hagi acabat de distribuir els seus batallons, premerà el botó <guibutton
 >Valida</guibutton
-> per a permetre que el jugador següent distribueixi els seus batallons de bonificació. Pel que fa a la distribució inicial, quan tots els jugadors hagin col·locat els seus batallons, podran començar un cicle nou de redistribució o començar un torn nou...</para>
+> per a permetre que el jugador següent distribueixi els seus batallons de bonificació. Pel que fa a la distribució inicial, quan tots els jugadors hagin col·locat els seus batallons, podran començar un cicle nou de redistribució o començar un torn nou…</para>
   </sect2>
 
 <!-- Does not work for current TCP/IP games
@@ -844,7 +844,7 @@ If you play a local game and want to communicate with the other players, well, l
 >Borland C++</application
 > i <application
 >WinG</application
->. El vaig adaptar a &Java; abans de convertir-lo de nou a C++ i al &kde;. Al començament, vaig fer servir el francès o una barreja de francès i anglès per a anomenar els identificadors (noms de classe, mètodes, membres, &etc;). També vaig fer servir el francès per als comentaris. Quan vaig decidir distribuir-lo, ho vaig convertir tot a l'anglès... però clarament no soc un parlant natiu d'anglès: podeu fer consells, crear i enviar correccions, als comentaris en el codi o a aquesta documentació.</para>
+>. El vaig adaptar a &Java; abans de convertir-lo de nou a C++ i al &kde;. Al començament, vaig fer servir el francès o una barreja de francès i anglès per a anomenar els identificadors (noms de classe, mètodes, membres, &etc;). També vaig fer servir el francès per als comentaris. Quan vaig decidir distribuir-lo, ho vaig convertir tot a l'anglès… però clarament no soc un parlant natiu d'anglès: podeu fer consells, crear i enviar correccions, als comentaris en el codi o a aquesta documentació.</para>
 
 </chapter>
 
@@ -912,7 +912,7 @@ distribution. -->
 ><guimenu
 >Arranjament</guimenu
 > <guimenuitem
->Configura el &ksirk;...</guimenuitem
+>Configura el &ksirk;…</guimenuitem
 ></menuchoice
 > obrirà un diàleg que us permetrà:</para>
 

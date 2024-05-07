@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:37+0000\n"
+"POT-Creation-Date: 2024-05-07 00:37+0000\n"
 "PO-Revision-Date: 2024-01-22 17:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1183,7 +1183,9 @@ msgstr ""
 "每個目標名稱都不能重複。選取目標並在右方嵌入視窗中編輯詳情。"
 
 #: ksirkSkinEditorConfigDialog.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Preferences"
+msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "喜好設定"
 
@@ -1930,7 +1932,9 @@ msgid "Open a recently saved skin"
 msgstr "開啟最近儲存的外觀..."
 
 #: mainwindow.cpp:337
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save the current skin"
+msgctxt "@info:tooltip"
 msgid "Save the current skin"
 msgstr "儲存目前的外觀"
 
@@ -1947,32 +1951,36 @@ msgstr "有未儲存的變更。您打算怎麼做？"
 
 #: mainwindow.cpp:527
 #, kde-format
-msgid "Exit Anyway?"
-msgstr "還是要離開嗎？"
+msgctxt "@title:window"
+msgid "Unsaved Changes"
+msgstr ""
 
 #: mainwindow.cpp:528
-#, kde-format
-msgid "Quit without saving"
+#, fuzzy, kde-format
+#| msgid "Quit without saving"
+msgctxt "@action:button"
+msgid "Quit Without Saving"
 msgstr "離開但不儲存"
 
 #: mainwindow.cpp:529
-#, kde-format
-msgid "Save then quit"
+#, fuzzy, kde-format
+#| msgid "Save then quit"
+msgctxt "@action:button"
+msgid "Save and Quit"
 msgstr "儲存然後離開"
 
-#: mainwindow.cpp:530
-#, kde-format
-msgid "Do not quit"
-msgstr "不要離開"
-
 #: mainwindow.cpp:1305
-#, kde-format
-msgid "New country name"
+#, fuzzy, kde-format
+#| msgid "New country name"
+msgctxt "@title:window"
+msgid "New Country Name"
 msgstr "新國家名稱"
 
 #: mainwindow.cpp:1305
-#, kde-format
-msgid "Enter the name of the new country"
+#, fuzzy, kde-format
+#| msgid "Enter the name of the new country"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new country:"
 msgstr "請輸入新國家名稱"
 
 #: mainwindow.cpp:1315
@@ -1982,17 +1990,22 @@ msgstr "您確定要刪除國家 %1 嗎？"
 
 #: mainwindow.cpp:1315
 #, kde-format
-msgid "Really delete country?"
-msgstr "確定要刪除國家嗎？"
+msgctxt "@title:window"
+msgid "Delete Country Confirmation"
+msgstr ""
 
 #: mainwindow.cpp:1334
-#, kde-format
-msgid "New continent name"
+#, fuzzy, kde-format
+#| msgid "New continent name"
+msgctxt "@title:window"
+msgid "New Continent Name"
 msgstr "新的大陸名稱"
 
 #: mainwindow.cpp:1334
-#, kde-format
-msgid "Enter the name of the new continent"
+#, fuzzy, kde-format
+#| msgid "Enter the name of the new continent"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new continent:"
 msgstr "請輸入新大陸名稱"
 
 #: mainwindow.cpp:1344
@@ -2001,9 +2014,11 @@ msgid "Do you really want to delete continent '%1'?"
 msgstr "您確定要刪除大陸 %1 嗎？"
 
 #: mainwindow.cpp:1344
-#, kde-format
-msgid "Really delete continent?"
-msgstr "確定要刪除大陸？"
+#, fuzzy, kde-format
+#| msgid "Select Continents"
+msgctxt "@title:window"
+msgid "Delete Continent Confirmation"
+msgstr "選擇大陸"
 
 #: mainwindow.cpp:1889
 #, kde-format
@@ -2012,17 +2027,22 @@ msgstr "您確定要刪除目標 %1 嗎？"
 
 #: mainwindow.cpp:1889
 #, kde-format
-msgid "Really delete goal?"
-msgstr "確定要刪除目標？"
+msgctxt "@title:window"
+msgid "Delete Goal Confirmation"
+msgstr ""
 
 #: mainwindow.cpp:1948
-#, kde-format
-msgid "New nationality name"
+#, fuzzy, kde-format
+#| msgid "New nationality name"
+msgctxt "@title:window"
+msgid "New Nationality Name"
 msgstr "新民族名稱"
 
 #: mainwindow.cpp:1948
-#, kde-format
-msgid "Enter the name of the new nationality"
+#, fuzzy, kde-format
+#| msgid "Enter the name of the new nationality"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new nationality:"
 msgstr "請輸入新民族名稱"
 
 #: mainwindow.cpp:1958
@@ -2032,12 +2052,14 @@ msgstr "您確定要刪除民族 %1 嗎？"
 
 #: mainwindow.cpp:1958
 #, kde-format
-msgid "Really delete nationality?"
-msgstr "確定要刪除民族？"
+msgctxt "@title:window"
+msgid "Delete Nationality Confirmation"
+msgstr ""
 
 #: onu.cpp:78
-#, kde-format
-msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+#, fuzzy, kde-format
+#| msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+msgid "Invalid skin definition file format. Expected %1 and got %2"
 msgstr "錯誤 ─ 外觀定義檔案格式不正確。應為 %1，但是看到 %2"
 
 #: onu.cpp:110
@@ -2068,7 +2090,9 @@ msgstr ""
 "%2"
 
 #: onu.cpp:984
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "PoolLoader"
+msgctxt "@title:window"
 msgid "PoolLoader"
 msgstr "Pool 載入器"
 
@@ -2093,6 +2117,24 @@ msgstr "錯誤─未知的外觀字串資料："
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "嚴重錯誤"
+
+#~ msgid "Exit Anyway?"
+#~ msgstr "還是要離開嗎？"
+
+#~ msgid "Do not quit"
+#~ msgstr "不要離開"
+
+#~ msgid "Really delete country?"
+#~ msgstr "確定要刪除國家嗎？"
+
+#~ msgid "Really delete continent?"
+#~ msgstr "確定要刪除大陸？"
+
+#~ msgid "Really delete goal?"
+#~ msgstr "確定要刪除目標？"
+
+#~ msgid "Really delete nationality?"
+#~ msgstr "確定要刪除民族？"
 
 #~ msgid "Error"
 #~ msgstr "錯誤"

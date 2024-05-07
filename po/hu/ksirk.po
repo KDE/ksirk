@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:37+0000\n"
+"POT-Creation-Date: 2024-05-07 00:37+0000\n"
 "PO-Revision-Date: 2013-03-29 11:36+0100\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1071,7 +1071,7 @@ msgstr ""
 msgid "Legacy"
 msgstr "Klasszikus"
 
-#: decoratedgameframe.cpp:100
+#: decoratedgameframe.cpp:100 kgamewin.cpp:349
 #, fuzzy, kde-format
 #| msgid "Next Player"
 msgctxt "@action"
@@ -1085,7 +1085,8 @@ msgctxt "@action"
 msgid "Details"
 msgstr "Részletek"
 
-#: decoratedgameframe.cpp:106
+#: decoratedgameframe.cpp:106 kgamewin.cpp:332 kgamewin.cpp:1214
+#: kgamewin.cpp:1226 kgamewin.cpp:2383
 #, fuzzy, kde-format
 #| msgid "Goal"
 msgctxt "@action"
@@ -1223,17 +1224,17 @@ msgstr "Gépnév:"
 msgid "Port:"
 msgstr "Port:"
 
-#: Dialogs/kplayersetupwidget.cpp:246
+#: Dialogs/kplayersetupwidget.cpp:250
 #, kde-format
 msgid "Name already in use. Please choose another one."
 msgstr "A név már használva van. Kérem válasszon másikat."
 
-#: Dialogs/kplayersetupwidget.cpp:248
+#: Dialogs/kplayersetupwidget.cpp:252
 #, kde-format
 msgid "Empty name. Please choose another one."
 msgstr "Üres név. Kérem válasszon másikat."
 
-#: Dialogs/kplayersetupwidget.cpp:291
+#: Dialogs/kplayersetupwidget.cpp:295
 #, kde-format
 msgid "Player Number %1, please type in your name and choose your nation:"
 msgstr "%1. játékos, írja be a nevét és az országát:"
@@ -1351,20 +1352,21 @@ msgid "Reach a goa&l"
 msgstr "Cél elérése"
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
-#: Dialogs/newGameDialog.ui:227 Dialogs/newGameSummary.ui:203
-#: Dialogs/qplayersetupdialog.ui:123 Dialogs/tcpconnectwidget.ui:95
+#: Dialogs/newGameDialog.ui:230 Dialogs/newGameSummary.ui:206
+#: Dialogs/qplayersetupdialog.ui:126 Dialogs/tcpconnectwidget.ui:98
 #, kde-format
 msgid "Cancel"
 msgstr "Mégsem"
 
 #. i18n: ectx: property (text), widget (QPushButton, nextButton)
-#: Dialogs/newGameDialog.ui:247 Dialogs/qplayersetupdialog.ui:150
-#: Dialogs/tcpconnectwidget.ui:122
-#, kde-format
-msgid "Next >>"
+#: Dialogs/newGameDialog.ui:250 Dialogs/qplayersetupdialog.ui:153
+#: Dialogs/tcpconnectwidget.ui:125
+#, fuzzy, kde-format
+#| msgid "Next >>"
+msgid "Next"
 msgstr "Következő >>"
 
-#: Dialogs/newGameDialogImpl.cpp:125 newgamesetup.cpp:44
+#: Dialogs/newGameDialogImpl.cpp:128 newgamesetup.cpp:44
 #, kde-format
 msgid ""
 "Skins directory not found - Verify your installation\n"
@@ -1374,8 +1376,9 @@ msgstr ""
 "telepítési hiba.\n"
 "A program befejeződik."
 
-#: Dialogs/newGameDialogImpl.cpp:126 GameLogic/aiplayer.cpp:506
-#: Sprites/skinSpritesData.cpp:89 Sprites/skinSpritesData.cpp:105
+#: Dialogs/newGameDialogImpl.cpp:129 GameLogic/aiplayer.cpp:506
+#: newgamesetup.cpp:45 Sprites/skinSpritesData.cpp:89
+#: Sprites/skinSpritesData.cpp:105
 #, fuzzy, kde-format
 #| msgid "Fatal Error"
 msgctxt "@title:window"
@@ -1437,34 +1440,35 @@ msgid "Network"
 msgstr "Hálózat"
 
 #. i18n: ectx: property (text), widget (QPushButton, previousButton)
-#: Dialogs/newGameSummary.ui:223 Dialogs/qplayersetupdialog.ui:143
-#: Dialogs/tcpconnectwidget.ui:115
-#, kde-format
-msgid "<< Previous"
+#: Dialogs/newGameSummary.ui:226 Dialogs/qplayersetupdialog.ui:146
+#: Dialogs/tcpconnectwidget.ui:118
+#, fuzzy, kde-format
+#| msgid "<< Previous"
+msgid "Previous"
 msgstr "<< Előző"
 
 #. i18n: ectx: property (text), widget (QPushButton, finishButton)
-#: Dialogs/newGameSummary.ui:230
+#: Dialogs/newGameSummary.ui:236
 #, kde-format
 msgid "Start"
 msgstr "Elindítás"
 
-#: Dialogs/newGameSummaryWidget.cpp:59
+#: Dialogs/newGameSummaryWidget.cpp:62
 #, kde-format
 msgid "Reach a goal"
 msgstr "Cél elérése"
 
-#: Dialogs/newGameSummaryWidget.cpp:59
+#: Dialogs/newGameSummaryWidget.cpp:62
 #, kde-format
 msgid "World conquest"
 msgstr "Világ hódítás"
 
-#: Dialogs/newGameSummaryWidget.cpp:74 Dialogs/newGameSummaryWidget.cpp:76
+#: Dialogs/newGameSummaryWidget.cpp:77 Dialogs/newGameSummaryWidget.cpp:79
 #, kde-format
 msgid "Yes"
 msgstr "Igen"
 
-#: Dialogs/newGameSummaryWidget.cpp:74 Dialogs/newGameSummaryWidget.cpp:76
+#: Dialogs/newGameSummaryWidget.cpp:77 Dialogs/newGameSummaryWidget.cpp:79
 #, kde-format
 msgid "No"
 msgstr "Nem"
@@ -1518,7 +1522,7 @@ msgid "Please select your saved player:"
 msgstr "Válasszon ki egy elmentett játékost:"
 
 #. i18n: ectx: property (text), widget (QPushButton, PushButton1)
-#: Dialogs/qwaitedplayersetupdialog.ui:67
+#: Dialogs/qwaitedplayersetupdialog.ui:70
 #, kde-format
 msgid "OK"
 msgstr "OK"
@@ -1530,43 +1534,43 @@ msgid "New Game or Exit"
 msgstr "Új játék vagy kilépés"
 
 #. i18n: ectx: property (text), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:24
+#: Dialogs/restartOrExitDialog.ui:27
 #, kde-format
 msgid "New Game"
 msgstr "Új játék"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:30
+#: Dialogs/restartOrExitDialog.ui:33
 #, kde-format
 msgid "Starts a new game"
 msgstr "Új játék kezdése"
 
 #. i18n: ectx: property (text), widget (QPushButton, doNothingButton)
-#: Dialogs/restartOrExitDialog.ui:37
+#: Dialogs/restartOrExitDialog.ui:40
 #, kde-format
 msgid "Do Nothing"
 msgstr "Semmit"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, doNothingButton)
-#: Dialogs/restartOrExitDialog.ui:40
+#: Dialogs/restartOrExitDialog.ui:43
 #, kde-format
 msgid "Do nothing. Game buttons will be available"
 msgstr "Nem kell semmit sem tenni. A gombok elérhetők maradnak."
 
 #. i18n: ectx: property (text), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:47
+#: Dialogs/restartOrExitDialog.ui:53
 #, kde-format
 msgid "Exit"
 msgstr "Kilépés"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:50
+#: Dialogs/restartOrExitDialog.ui:56
 #, kde-format
 msgid "Quit KsirK"
 msgstr "Kilépés a játékból"
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: Dialogs/restartOrExitDialog.ui:86
+#: Dialogs/restartOrExitDialog.ui:92
 #, no-c-format, kde-format
 msgid "%1 won! Do you want to play again?"
 msgstr "%1 győzött! Szeretne új játékot kezdeni?"
@@ -1733,7 +1737,7 @@ msgid "Do want to save your game?"
 msgstr "El szeretné menteni az állást?"
 
 #: GameLogic/gameautomaton.cpp:1818 GameLogic/gameautomaton.cpp:2235
-#: kgamewin.cpp:2042 kgamewin.cpp:2137 kgamewin.cpp:2174
+#: kgamewin.cpp:2038 kgamewin.cpp:2133 kgamewin.cpp:2170
 #, kde-format
 msgid "%1: %2 armies to place"
 msgstr "%1: %2 hadsereg helyezhető el"
@@ -1888,12 +1892,16 @@ msgstr[0] "Egy ország van itt: %2"
 msgstr[1] "%1 ország van itt: %2"
 
 #: GameLogic/goal.cpp:285
-#, kde-format
+#, fuzzy, kde-format
+#| msgid " and "
+msgctxt "@item:intext country list separator of last item"
 msgid " and "
 msgstr " és "
 
 #: GameLogic/goal.cpp:289
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ", "
+msgctxt "@item:intext country list separator of non-last item"
 msgid ", "
 msgstr ", "
 
@@ -1987,7 +1995,7 @@ msgstr "Hiba történt: senki sem lett megsemmisítve"
 msgid "Bug: who should be 0, 1 or 2."
 msgstr "Hiba: ki legyen a 0, 1, 2."
 
-#: kgamewin.cpp:139 kgamewin.cpp:644
+#: kgamewin.cpp:139 kgamewin.cpp:641
 #, kde-format
 msgid "Cannot load icon<br>Program cannot continue"
 msgstr "Nem sikerült betölteni egy ikont<br>A program nem folytatódhat"
@@ -1997,78 +2005,91 @@ msgstr "Nem sikerült betölteni egy ikont<br>A program nem folytatódhat"
 msgid "Cannot load button image %1<br>Program cannot continue"
 msgstr "Nem sikerült betölteni gombképet: %1<br>A program nem folytatódhat"
 
-#. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
-#: kgamewin.cpp:305 mainMenu.ui:104
-#, kde-format
+#: kgamewin.cpp:305
+#, fuzzy, kde-format
+#| msgid "New Standard TCP/IP Network Game"
+msgctxt "@action"
 msgid "New Standard TCP/IP Network Game"
 msgstr "Új hálózati játék"
 
 #: kgamewin.cpp:306
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "New TCP/IP"
+msgctxt "@action"
 msgid "New TCP/IP"
 msgstr "Új hálózati játék"
 
 #: kgamewin.cpp:308
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create a new standard TCP/IP network game"
+msgctxt "@info:tooltip"
 msgid "Create a new standard TCP/IP network game"
 msgstr "Elindít egy új hálózati játékot"
 
 #: kgamewin.cpp:323
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Join a Standard TCP/IP Network Game"
+msgctxt "@action"
 msgid "Join a Standard TCP/IP Network Game"
 msgstr "Csatlakozás hálózati játékhoz"
 
 #: kgamewin.cpp:324
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Join TCP/IP"
+msgctxt "@action"
 msgid "Join TCP/IP"
 msgstr "Csatlakozás hálózati játékhoz"
 
 #: kgamewin.cpp:326
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Join a standard TCP/IP network game"
+msgctxt "@info:tooltip"
 msgid "Join a standard TCP/IP network game"
 msgstr "Csatlakozás hálózati játékhoz"
 
-#: kgamewin.cpp:331 kgamewin.cpp:1218 kgamewin.cpp:1230 kgamewin.cpp:2387
-#, kde-format
-msgid "Goal"
-msgstr "Cél"
-
-#: kgamewin.cpp:332
-#, kde-format
+#: kgamewin.cpp:331
+#, fuzzy, kde-format
+#| msgid "Display the Current Player's Goal"
+msgctxt "@action"
 msgid "Display the Current Player's Goal"
 msgstr "Kiírja a jelenlegi játékos célját"
 
-#: kgamewin.cpp:335
-#, kde-format
+#: kgamewin.cpp:334
+#, fuzzy, kde-format
+#| msgid "Display the current player's goal"
+msgctxt "@info:tooltip"
 msgid "Display the current player's goal"
 msgstr "Megmutatja a jelenlegi játékos célját"
 
-#: kgamewin.cpp:342
-#, kde-format
+#: kgamewin.cpp:340
+#, fuzzy, kde-format
+#| msgid "Contextual Help"
+msgctxt "@action"
 msgid "Contextual Help"
 msgstr "Kontextusérzékeny súgó"
 
 #: kgamewin.cpp:351
-#, kde-format
-msgid "Next Player"
-msgstr "Következő játékos"
-
-#: kgamewin.cpp:353
-#, kde-format
-msgid "Lets the next player play"
+#, fuzzy, kde-format
+#| msgid "Lets the next player play"
+msgctxt "@info:tooltip"
+msgid "Let the next player play"
 msgstr "A következő játékos lép"
 
-#: kgamewin.cpp:358
-#, kde-format
-msgid "Finish moves"
+#: kgamewin.cpp:355
+#, fuzzy, kde-format
+#| msgid "Finish moves"
+msgctxt "@action"
+msgid "Finish Moves"
 msgstr "Befejező lépések"
 
-#: kgamewin.cpp:360
-#, kde-format
+#: kgamewin.cpp:357
+#, fuzzy, kde-format
+#| msgid "Finish moving the current sprites"
+msgctxt "@info:tooltip"
 msgid "Finish moving the current sprites"
 msgstr "A sprite-mozgás befejezése"
 
-#: kgamewin.cpp:488
+#: kgamewin.cpp:485
 #, kde-format
 msgid ""
 "World definition file not found - Verify your installation<br>Program cannot "
@@ -2077,33 +2098,33 @@ msgstr ""
 "Nem található a világleíró fájl, ellenőrizze, nem történt-e telepítési hiba."
 "<br>A program nem tud folytatódni"
 
-#: kgamewin.cpp:708
+#: kgamewin.cpp:704
 #, kde-format
 msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
 msgstr "<font color=\"red\">%1 legyőzte %2 játékost innen: %3</font>"
 
-#: kgamewin.cpp:732
+#: kgamewin.cpp:728
 #, fuzzy, kde-format
 #| msgid "%1, you are defeated! Bye, bye..."
 msgid "%1, you are defeated! Bye, bye…"
 msgstr "Kedves %1, sajnos veszett! Minden jót!"
 
-#: kgamewin.cpp:804
+#: kgamewin.cpp:800
 #, kde-format
 msgid "%1: it is up to you again"
 msgstr "%1: Ön következik"
 
-#: kgamewin.cpp:818
+#: kgamewin.cpp:814
 #, kde-format
 msgid "%1 won!"
 msgstr "%1 győzött!"
 
-#: kgamewin.cpp:820
+#: kgamewin.cpp:816
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
 msgstr "<big><b>%1</b>, sikerült győznie!</big>"
 
-#: kgamewin.cpp:824
+#: kgamewin.cpp:820
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
@@ -2112,46 +2133,46 @@ msgstr ""
 "<br>A győztes feladata a következő volt:<br><i>%1</i><br><br>Szeretne új "
 "játékot kezdeni?"
 
-#: kgamewin.cpp:830
+#: kgamewin.cpp:826
 #, kde-format
 msgid "<br>You conquered all the world!"
 msgstr "<br>Sikerült legyőzni az egész világot!"
 
-#: kgamewin.cpp:834
+#: kgamewin.cpp:830
 #, kde-format
 msgid "<br>He conquered all the world!"
 msgstr "<br>Legyőzte az egész világot!"
 
-#: kgamewin.cpp:951
+#: kgamewin.cpp:947
 #, kde-format
 msgid "Do you want to quit the game?"
 msgstr "Ki szeretne lépni a játékból?"
 
-#: kgamewin.cpp:953
+#: kgamewin.cpp:949
 #, fuzzy, kde-format
 #| msgid "Quit"
 msgctxt "@action:button"
 msgid "Quit Game"
 msgstr "Kilépés"
 
-#: kgamewin.cpp:965
+#: kgamewin.cpp:961
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
 msgstr "Kilépés előtt el szeretné menteni az állást?"
 
-#: kgamewin.cpp:1003
+#: kgamewin.cpp:999
 #, fuzzy, kde-format
 #| msgid "New Local Game"
 msgctxt "@title:window"
 msgid "Load Game"
 msgstr "Új helyi játék"
 
-#: kgamewin.cpp:1041
+#: kgamewin.cpp:1037
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
 msgstr "Várakozás %1 hálózati játékosra."
 
-#: kgamewin.cpp:1120
+#: kgamewin.cpp:1116
 #, kde-format
 msgid ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
@@ -2168,88 +2189,94 @@ msgstr[1] ""
 "font>) %1 hadsereggel!<br> Hogyan szeretné megvédeni az országot (<font "
 "color=\"blue\">%4</font>)?"
 
-#: kgamewin.cpp:1149
-#, kde-format
+#: kgamewin.cpp:1145
+#, fuzzy, kde-format
+#| msgid "Defend 1"
+msgctxt "@action:button"
 msgid "Defend 1"
 msgstr "Védekezés (1)"
 
-#: kgamewin.cpp:1150
-#, kde-format
+#: kgamewin.cpp:1146
+#, fuzzy, kde-format
+#| msgid "Defend 2"
+msgctxt "@action:button"
 msgid "Defend 2"
 msgstr "Védekezés (2)"
 
-#: kgamewin.cpp:1151
-#, kde-format
+#: kgamewin.cpp:1147
+#, fuzzy, kde-format
+#| msgid "Defend-Auto"
+msgctxt "@action:button"
 msgid "Defend-Auto"
 msgstr "Védekezés (automatikus)"
 
-#: kgamewin.cpp:1270
+#: kgamewin.cpp:1266
 #, kde-format
 msgid "Waiting for %1 players to connect"
 msgstr "Várakozás %1 játékos csatlakozására"
 
-#: kgamewin.cpp:1660 kgamewin.cpp:1700
+#: kgamewin.cpp:1656 kgamewin.cpp:1696
 msgid "There is no country here!"
 msgstr "Itt nem található ország."
 
-#: kgamewin.cpp:1664 kgamewin.cpp:1705
+#: kgamewin.cpp:1660 kgamewin.cpp:1701
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
 msgstr "Nem az Öné az első ország, %1."
 
-#: kgamewin.cpp:1668
+#: kgamewin.cpp:1664
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
 msgstr "Nem az Öné a második ország, %1."
 
-#: kgamewin.cpp:1672 kgamewin.cpp:1716
+#: kgamewin.cpp:1668 kgamewin.cpp:1712
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr "Nem mozgatható hadsereg a saját országába (%1)."
 
-#: kgamewin.cpp:1677 kgamewin.cpp:1722
+#: kgamewin.cpp:1673 kgamewin.cpp:1718
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
 msgstr "%1 és %2 nem szomszédos országok."
 
-#: kgamewin.cpp:1683
+#: kgamewin.cpp:1679
 #, kde-format
 msgid "Moving armies from %1 to %2."
 msgstr "Hadsereg átmozgatása innen: %1 ide: %2."
 
-#: kgamewin.cpp:1711
+#: kgamewin.cpp:1707
 #, kde-format
 msgid "You are the owner of the second country: %1!"
 msgstr "Öné a második ország: %1."
 
-#: kgamewin.cpp:1729
+#: kgamewin.cpp:1725
 msgid "Ready to fight!"
 msgstr "Kezdődhet a harc!"
 
-#: kgamewin.cpp:1823
+#: kgamewin.cpp:1819
 msgid "<font color=\"orange\">No country here!</font>"
 msgstr "<font color=\"orange\">Itt nem található ország.</font>"
 
-#: kgamewin.cpp:1831
+#: kgamewin.cpp:1827
 #, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr "<font color=\"orange\">Más birtokolja ezt: %1.</font>"
 
-#: kgamewin.cpp:1838
+#: kgamewin.cpp:1834
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr "<font color=\"orange\">Csak %1 hadsereg található itt: %2.</font>"
 
-#: kgamewin.cpp:1978
+#: kgamewin.cpp:1974
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
 msgstr "%1, a megmaradt egyetlen hadsereggel védekezik itt: %2."
 
-#: kgamewin.cpp:2202
+#: kgamewin.cpp:2198
 msgid "Exchange armies again or continue?"
 msgstr "Cserél hadsereget most vagy tovább szeretne lépni?"
 
-#: kgamewin.cpp:2227
+#: kgamewin.cpp:2223
 #, kde-format
 msgid ""
 "You must distribute\n"
@@ -2258,44 +2285,44 @@ msgstr ""
 "El kell helyezni a\n"
 "hadseregeket"
 
-#: kgamewin.cpp:2367
+#: kgamewin.cpp:2363
 msgid "Battle ongoing."
 msgstr "Folyik egy csata."
 
-#: kgamewin.cpp:2488 kgamewin.cpp:2499 kgamewin.cpp:2522
+#: kgamewin.cpp:2484 kgamewin.cpp:2495 kgamewin.cpp:2518
 #, kde-format
 msgid "%1, it is up to you."
 msgstr "%1 következik."
 
-#: kgamewin.cpp:2551
+#: kgamewin.cpp:2547
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
 msgstr "Be szeretné fejezni a jelenlegi játékot, hogy újat kezdhessen?"
 
-#: kgamewin.cpp:2551
+#: kgamewin.cpp:2547
 #, kde-format
 msgid "New game confirmation"
 msgstr "Megerősítés - Új játék"
 
-#: kgamewin.cpp:2551
+#: kgamewin.cpp:2547
 #, fuzzy, kde-format
 #| msgid "Start a New Game"
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Új játék"
 
-#: kgamewin.cpp:2807
+#: kgamewin.cpp:2803
 msgid "<b>KsirK quick Introduction</b>"
 msgstr "<b>Rövid bevezetés a KsirK kezelésébe</b>"
 
-#: kgamewin.cpp:2811
+#: kgamewin.cpp:2807
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr ""
 "A szomszédos országok közötti húzással és ejtéssel lehet támadni vagy "
 "mozogni."
 
-#: kgamewin.cpp:2815
+#: kgamewin.cpp:2811
 #, fuzzy
 #| msgid ""
 #| "Start a new game or join a network game with the menu or the toolbar..."
@@ -2304,7 +2331,7 @@ msgstr ""
 "Kezdjen el egy új játékot vagy csatlakozzon egy hálózati játékhoz a menüvel "
 "vagy az eszköztárral..."
 
-#: kgamewin.cpp:2819
+#: kgamewin.cpp:2815
 msgid ""
 "and then let the system guide you through messages and tooltips appearing on "
 "buttons when hovering above them. You can disable bubble help in the options "
@@ -2313,7 +2340,7 @@ msgstr ""
 "majd olvassa el a program üzeneteit és a nyomógombok felett megjelenő "
 "tippeket. A beállításoknál letilthatók a tippek, ha nincs rájuk szüksége."
 
-#: kgamewin.cpp:2826
+#: kgamewin.cpp:2822
 #, kde-format
 msgid "Don't show messages anymore"
 msgstr "Ne jelenjen meg több üzenet"
@@ -2407,27 +2434,37 @@ msgstr[0] "<font color=\"blue\">Védekezés</font> egy hadsereggel.<br>"
 msgstr[1] "<font color=\"blue\">Védekezés</font> %1 hadsereggel.<br>"
 
 #: krightdialog.cpp:265
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Stop Auto-Attack"
+msgctxt "@action:button"
 msgid "Stop Auto-Attack"
 msgstr "Automatikus támadás ki"
 
 #: krightdialog.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Stop Auto-Defense"
+msgctxt "@action:button"
 msgid "Stop Auto-Defense"
 msgstr "Automatikus védekezés ki"
 
 #: krightdialog.cpp:298
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Valid"
+msgctxt "@action:button"
 msgid "Valid"
 msgstr "Érvényes"
 
 #: krightdialog.cpp:299
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Recycle"
+msgctxt "@action:button"
 msgid "Recycle"
 msgstr "Újrafelhasználás"
 
 #: krightdialog.cpp:300
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Done"
+msgctxt "@action:button"
 msgid "Done"
 msgstr "Kész"
 
@@ -2466,7 +2503,9 @@ msgid "<font color=\"blue\">lost armies: %1</font>"
 msgstr "<font color=\"blue\">elveszett hadsereg: %1</font>"
 
 #: ksirkConfigDialog.cpp:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Preferences"
+msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "Beállítások"
 
@@ -2532,7 +2571,7 @@ msgstr "KsirK"
 
 #: main.cpp:44
 #, kde-format
-msgid "KsirK - World Domination Strategy Game"
+msgid "World Domination Strategy Game"
 msgstr ""
 
 #: main.cpp:46
@@ -2611,6 +2650,12 @@ msgstr "<h1>KsirK</h1>"
 msgid "New Local Game"
 msgstr "Új helyi játék"
 
+#. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
+#: mainMenu.ui:104
+#, kde-format
+msgid "New Standard TCP/IP Network Game"
+msgstr "Új hálózati játék"
+
 #. i18n: ectx: property (text), widget (QPushButton, pbJoin)
 #: mainMenu.ui:111
 #, kde-format
@@ -2628,11 +2673,6 @@ msgstr ""
 #, kde-format
 msgid "Quit"
 msgstr "Kilépés"
-
-#: newgamesetup.cpp:45
-#, kde-format
-msgid "Fatal Error!"
-msgstr "Végzetes hiba"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_soundEnabled)
 #: preferences.ui:35
@@ -2693,6 +2733,15 @@ msgstr "Hiba - Ismeretlen egész szám egy megjelenési fájlban: "
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Hiba - Ismeretlen sztring egy megjelenési fájlban: "
+
+#~ msgid "Goal"
+#~ msgstr "Cél"
+
+#~ msgid "Next Player"
+#~ msgstr "Következő játékos"
+
+#~ msgid "Fatal Error!"
+#~ msgstr "Végzetes hiba"
 
 #, fuzzy
 #~| msgid "Ksirk - New game properties"

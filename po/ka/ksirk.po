@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:37+0000\n"
-"PO-Revision-Date: 2023-10-06 08:56+0200\n"
+"POT-Creation-Date: 2024-05-07 00:37+0000\n"
+"PO-Revision-Date: 2024-05-06 05:44+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1068,89 +1068,78 @@ msgstr ""
 msgid "Legacy"
 msgstr "ძველი"
 
-#: decoratedgameframe.cpp:100
-#, fuzzy, kde-format
-#| msgid "Next Player"
+#: decoratedgameframe.cpp:100 kgamewin.cpp:349
+#, kde-format
 msgctxt "@action"
 msgid "Next Player"
 msgstr "შემდეგი მოთამაშე"
 
 #: decoratedgameframe.cpp:103
-#, fuzzy, kde-format
-#| msgid "Details"
+#, kde-format
 msgctxt "@action"
 msgid "Details"
 msgstr "დეტალები"
 
-#: decoratedgameframe.cpp:106
-#, fuzzy, kde-format
-#| msgid "Goal"
+#: decoratedgameframe.cpp:106 kgamewin.cpp:332 kgamewin.cpp:1214
+#: kgamewin.cpp:1226 kgamewin.cpp:2383
+#, kde-format
 msgctxt "@action"
 msgid "Goal"
 msgstr "მიზანი"
 
 #: decoratedgameframe.cpp:138 decoratedgameframe.cpp:394
-#, fuzzy, kde-format
-#| msgid "Enable Arena"
+#, kde-format
 msgctxt "@action"
 msgid "Enable Arena"
 msgstr "არენის ჩართვა"
 
 #: decoratedgameframe.cpp:142
-#, fuzzy, kde-format
-#| msgid "Attack 1"
+#, kde-format
 msgctxt "@action"
 msgid "Attack 1"
 msgstr "შეტევა 1"
 
 #: decoratedgameframe.cpp:145
-#, fuzzy, kde-format
-#| msgid "Attack 2"
+#, kde-format
 msgctxt "@action"
 msgid "Attack 2"
 msgstr "შეტევა 2"
 
 #: decoratedgameframe.cpp:148
-#, fuzzy, kde-format
-#| msgid "Attack 3"
+#, kde-format
 msgctxt "@action"
 msgid "Attack 3"
 msgstr "შეტევა 3"
 
 #: decoratedgameframe.cpp:151
-#, fuzzy, kde-format
-#| msgid "Auto attack"
+#, kde-format
 msgctxt "@action"
 msgid "Auto Attack"
 msgstr "ავტომატური შეტევა"
 
 #: decoratedgameframe.cpp:169
-#, fuzzy, kde-format
-#| msgid "Move 1"
+#, kde-format
 msgctxt "@action"
 msgid "Move 1"
 msgstr "სვლა 1"
 
 #: decoratedgameframe.cpp:172
-#, fuzzy, kde-format
-#| msgid "Move 5"
+#, kde-format
 msgctxt "@action"
 msgid "Move 5"
 msgstr "სვლა 5"
 
 #: decoratedgameframe.cpp:175
-#, fuzzy, kde-format
-#| msgid "Move 10"
+#, kde-format
 msgctxt "@action"
 msgid "Move 10"
 msgstr "სვლა 10"
 
 #: decoratedgameframe.cpp:400
-#, fuzzy, kde-format
-#| msgid "Disable Arena"
+#, kde-format
 msgctxt "@action"
 msgid "Disable Arena"
-msgstr "არნის გამორთვა"
+msgstr "არენის გამორთვა"
 
 #: Dialogs/InvasionSlider.cpp:98
 #, kde-format
@@ -1218,17 +1207,17 @@ msgstr "ჰოსტი:"
 msgid "Port:"
 msgstr "პორტი:"
 
-#: Dialogs/kplayersetupwidget.cpp:246
+#: Dialogs/kplayersetupwidget.cpp:250
 #, kde-format
 msgid "Name already in use. Please choose another one."
 msgstr "სახელი უკვე გამოიყენება. სხვა აირჩიეთ."
 
-#: Dialogs/kplayersetupwidget.cpp:248
+#: Dialogs/kplayersetupwidget.cpp:252
 #, kde-format
 msgid "Empty name. Please choose another one."
 msgstr "ცარიელი სახელი. შეიყვანეთ სხვა სახელი."
 
-#: Dialogs/kplayersetupwidget.cpp:291
+#: Dialogs/kplayersetupwidget.cpp:295
 #, kde-format
 msgid "Player Number %1, please type in your name and choose your nation:"
 msgstr "მოტამაშის ნომერი %1. შეიყვანეთ თქვენი სახელი და აირჩიეთ ნაციონალობა:"
@@ -1284,10 +1273,9 @@ msgstr "ხელმისაწვდომი სკინების ჩა�
 
 #. i18n: ectx: property (text), widget (KNSWidgets::Button, ghnsbutton)
 #: Dialogs/newGameDialog.ui:123
-#, fuzzy, kde-format
-#| msgid "Download New Skins..."
+#, kde-format
 msgid "Download New Skins…"
-msgstr "ახალი სკინების გადმოწერა..."
+msgstr "ახალი სკინების გადმოწერა…"
 
 #. i18n: ectx: property (configFile), widget (KNSWidgets::Button, ghnsbutton)
 #: Dialogs/newGameDialog.ui:126
@@ -1343,20 +1331,21 @@ msgid "Reach a goa&l"
 msgstr "მიაღწიეთ &მიზანს"
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
-#: Dialogs/newGameDialog.ui:227 Dialogs/newGameSummary.ui:203
-#: Dialogs/qplayersetupdialog.ui:123 Dialogs/tcpconnectwidget.ui:95
+#: Dialogs/newGameDialog.ui:230 Dialogs/newGameSummary.ui:206
+#: Dialogs/qplayersetupdialog.ui:126 Dialogs/tcpconnectwidget.ui:98
 #, kde-format
 msgid "Cancel"
 msgstr "გაუქმება"
 
 #. i18n: ectx: property (text), widget (QPushButton, nextButton)
-#: Dialogs/newGameDialog.ui:247 Dialogs/qplayersetupdialog.ui:150
-#: Dialogs/tcpconnectwidget.ui:122
-#, kde-format
-msgid "Next >>"
+#: Dialogs/newGameDialog.ui:250 Dialogs/qplayersetupdialog.ui:153
+#: Dialogs/tcpconnectwidget.ui:125
+#, fuzzy, kde-format
+#| msgid "Next >>"
+msgid "Next"
 msgstr "შემდეგი >>"
 
-#: Dialogs/newGameDialogImpl.cpp:125 newgamesetup.cpp:44
+#: Dialogs/newGameDialogImpl.cpp:128 newgamesetup.cpp:44
 #, kde-format
 msgid ""
 "Skins directory not found - Verify your installation\n"
@@ -1365,10 +1354,10 @@ msgstr ""
 "სკინების საქაღალდე ვერ ვიპოვე - გადაამოწმეთ თქვენი ფაილები\n"
 "პროგრამა მუშაობას ვერ გააგრძელებს"
 
-#: Dialogs/newGameDialogImpl.cpp:126 GameLogic/aiplayer.cpp:506
-#: Sprites/skinSpritesData.cpp:89 Sprites/skinSpritesData.cpp:105
-#, fuzzy, kde-format
-#| msgid "Fatal Error"
+#: Dialogs/newGameDialogImpl.cpp:129 GameLogic/aiplayer.cpp:506
+#: newgamesetup.cpp:45 Sprites/skinSpritesData.cpp:89
+#: Sprites/skinSpritesData.cpp:105
+#, kde-format
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "ფატალური შეცდომა"
@@ -1428,34 +1417,35 @@ msgid "Network"
 msgstr "ქსელი"
 
 #. i18n: ectx: property (text), widget (QPushButton, previousButton)
-#: Dialogs/newGameSummary.ui:223 Dialogs/qplayersetupdialog.ui:143
-#: Dialogs/tcpconnectwidget.ui:115
-#, kde-format
-msgid "<< Previous"
+#: Dialogs/newGameSummary.ui:226 Dialogs/qplayersetupdialog.ui:146
+#: Dialogs/tcpconnectwidget.ui:118
+#, fuzzy, kde-format
+#| msgid "<< Previous"
+msgid "Previous"
 msgstr "<< წინა"
 
 #. i18n: ectx: property (text), widget (QPushButton, finishButton)
-#: Dialogs/newGameSummary.ui:230
+#: Dialogs/newGameSummary.ui:236
 #, kde-format
 msgid "Start"
 msgstr "გაშვება"
 
-#: Dialogs/newGameSummaryWidget.cpp:59
+#: Dialogs/newGameSummaryWidget.cpp:62
 #, kde-format
 msgid "Reach a goal"
 msgstr "მიზნის მიღწევა"
 
-#: Dialogs/newGameSummaryWidget.cpp:59
+#: Dialogs/newGameSummaryWidget.cpp:62
 #, kde-format
 msgid "World conquest"
 msgstr "მსოფლიოს დაპყრობა"
 
-#: Dialogs/newGameSummaryWidget.cpp:74 Dialogs/newGameSummaryWidget.cpp:76
+#: Dialogs/newGameSummaryWidget.cpp:77 Dialogs/newGameSummaryWidget.cpp:79
 #, kde-format
 msgid "Yes"
 msgstr "კი"
 
-#: Dialogs/newGameSummaryWidget.cpp:74 Dialogs/newGameSummaryWidget.cpp:76
+#: Dialogs/newGameSummaryWidget.cpp:77 Dialogs/newGameSummaryWidget.cpp:79
 #, kde-format
 msgid "No"
 msgstr "არა"
@@ -1509,7 +1499,7 @@ msgid "Please select your saved player:"
 msgstr "აირჩიეთ თქვენი შენახული მოთამაშე:"
 
 #. i18n: ectx: property (text), widget (QPushButton, PushButton1)
-#: Dialogs/qwaitedplayersetupdialog.ui:67
+#: Dialogs/qwaitedplayersetupdialog.ui:70
 #, kde-format
 msgid "OK"
 msgstr "დიახ"
@@ -1521,43 +1511,43 @@ msgid "New Game or Exit"
 msgstr "ახალი თამაში ან გასვლა"
 
 #. i18n: ectx: property (text), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:24
+#: Dialogs/restartOrExitDialog.ui:27
 #, kde-format
 msgid "New Game"
 msgstr "დაიწყეთ ახალი თამაში"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newGameButton)
-#: Dialogs/restartOrExitDialog.ui:30
+#: Dialogs/restartOrExitDialog.ui:33
 #, kde-format
 msgid "Starts a new game"
 msgstr "ახალი თამაშის დაწყება"
 
 #. i18n: ectx: property (text), widget (QPushButton, doNothingButton)
-#: Dialogs/restartOrExitDialog.ui:37
+#: Dialogs/restartOrExitDialog.ui:40
 #, kde-format
 msgid "Do Nothing"
 msgstr "არაფერი"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, doNothingButton)
-#: Dialogs/restartOrExitDialog.ui:40
+#: Dialogs/restartOrExitDialog.ui:43
 #, kde-format
 msgid "Do nothing. Game buttons will be available"
 msgstr "არაფერი ქნა. თამაშის ღილაკები ხელმისაწვდომი იქნება"
 
 #. i18n: ectx: property (text), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:47
+#: Dialogs/restartOrExitDialog.ui:53
 #, kde-format
 msgid "Exit"
 msgstr "გასვლა"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, exitButton)
-#: Dialogs/restartOrExitDialog.ui:50
+#: Dialogs/restartOrExitDialog.ui:56
 #, kde-format
 msgid "Quit KsirK"
 msgstr "KsirK-დან გასვლა"
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: Dialogs/restartOrExitDialog.ui:86
+#: Dialogs/restartOrExitDialog.ui:92
 #, no-c-format, kde-format
 msgid "%1 won! Do you want to play again?"
 msgstr "%1-მა მოიგო! გნებავთ, კიდევ ითამაშოთ?"
@@ -1585,8 +1575,7 @@ msgstr[1] ""
 "ზე."
 
 #: GameLogic/gameautomaton.cpp:303
-#, fuzzy, kde-format
-#| msgid "Network Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Network Configuration"
 msgstr "ქსელის მორგება"
@@ -1602,8 +1591,7 @@ msgid "Do you really want to end your current game and join another?"
 msgstr "მართლა გნებავთ, დაასრულოთ მიმდინარე თამაში და სხვას მიუერთდეთ?"
 
 #: GameLogic/gameautomaton.cpp:1191
-#, fuzzy, kde-format
-#| msgid "New game confirmation"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Game Confirmation"
 msgstr "ახალი თამაშის დადასტურება"
@@ -1620,17 +1608,15 @@ msgid "%1 (%2) joined game ; waiting for %3 players to connect"
 msgstr "%1 (%2) მოთამაშე აქაა. ველოდებით %3 მოთამაშის შემოერთებას"
 
 #: GameLogic/gameautomaton.cpp:1468
-#, fuzzy, kde-format
-#| msgid "Please choose another name"
+#, kde-format
 msgid "Please choose another name."
-msgstr "აირჩიეთ სხვა სახელი"
+msgstr "აირჩიეთ სხვა სახელი."
 
 #: GameLogic/gameautomaton.cpp:1468
-#, fuzzy, kde-format
-#| msgid "KsirK - Name already used!"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Already Used"
-msgstr "KsirK - სახელი უკვე გამოიყენება!"
+msgstr "სახელი უკვე გამოიყენება"
 
 #: GameLogic/gameautomaton.cpp:1474
 #, kde-format
@@ -1649,17 +1635,15 @@ msgid "Player%1"
 msgstr "მოთამაშე%1"
 
 #: GameLogic/gameautomaton.cpp:1531
-#, fuzzy, kde-format
-#| msgid "Please choose another nation"
+#, kde-format
 msgid "Please choose another nation."
-msgstr "აირჩიეთ სხვა ნაცია"
+msgstr "აირჩიეთ სხვა ეროვნება."
 
 #: GameLogic/gameautomaton.cpp:1531
-#, fuzzy, kde-format
-#| msgid "KsirK - Nation already used!"
+#, kde-format
 msgctxt "@title:window"
 msgid "Nation Already Used"
-msgstr "KsirK - ნაცია უკვე გამოიყენება!"
+msgstr "ეროვნება უკვე გამოიყენება"
 
 #: GameLogic/gameautomaton.cpp:1623
 #, kde-format
@@ -1671,32 +1655,28 @@ msgstr ""
 "რა გნებავთ, ქნათ?"
 
 #: GameLogic/gameautomaton.cpp:1624
-#, fuzzy, kde-format
-#| msgid "Starting a new game or exit."
+#, kde-format
 msgctxt "@title:window"
 msgid "Starting a New Game or Exit."
 msgstr "ახალი თამაშის დაწყება ან გასვლა."
 
 #: GameLogic/gameautomaton.cpp:1625
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Game"
-msgstr "დაიწყეთ ახალი თამაში"
+msgstr "ახალი თამაში"
 
 #: GameLogic/gameautomaton.cpp:1626
-#, fuzzy, kde-format
-#| msgid "Exit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Exit"
 msgstr "გასვლა"
 
 #: GameLogic/gameautomaton.cpp:1627
-#, fuzzy, kde-format
-#| msgid "Do Nothing"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Nothing"
-msgstr "არაფერი"
+msgstr "არაფრის კეთება"
 
 #: GameLogic/gameautomaton.cpp:1649
 #, kde-format
@@ -1710,11 +1690,10 @@ msgstr ""
 "ამას გავაუმჯობესებთ მომავალ ვერსიაში."
 
 #: GameLogic/gameautomaton.cpp:1650
-#, fuzzy, kde-format
-#| msgid "KsirK - Lost connection to client!"
+#, kde-format
 msgctxt "@title:window"
 msgid "Lost Connection to Client"
-msgstr "KsirK - კლიენტთან მიერთება გაწყდა!"
+msgstr "კლიენტთან მიერთება გაწყდა"
 
 #: GameLogic/gameautomaton.cpp:1652
 #, kde-format
@@ -1722,7 +1701,7 @@ msgid "Do want to save your game?"
 msgstr "გნებავთ, შეინახოთ თამაში?"
 
 #: GameLogic/gameautomaton.cpp:1818 GameLogic/gameautomaton.cpp:2235
-#: kgamewin.cpp:2042 kgamewin.cpp:2137 kgamewin.cpp:2174
+#: kgamewin.cpp:2038 kgamewin.cpp:2133 kgamewin.cpp:2170
 #, kde-format
 msgid "%1: %2 armies to place"
 msgstr "%1: მოსათავსებელია %2 არმია"
@@ -1747,11 +1726,10 @@ msgstr ""
 "ვერ დაინახავენ!"
 
 #: GameLogic/gameautomaton.cpp:1902
-#, fuzzy, kde-format
-#| msgid "KsirK - Displaying Goal"
+#, kde-format
 msgctxt "@title:window"
 msgid "Displaying Goal"
-msgstr "KsirK - სამიზნის ჩვენება"
+msgstr "სამიზნის ჩვენება"
 
 #: GameLogic/gameautomaton.cpp:2088
 #, kde-format
@@ -1779,11 +1757,10 @@ msgstr ""
 "თავიდან სცადეთ."
 
 #: GameLogic/gameautomaton.cpp:2387
-#, fuzzy, kde-format
-#| msgid "KsirK - Invalid password!"
+#, kde-format
 msgctxt "@title:window"
 msgid "Invalid Password"
-msgstr "KsirK - არასწორი პაროლი!"
+msgstr "არასწორი პაროლი"
 
 #: GameLogic/gameautomaton.cpp:2588
 #, kde-format
@@ -1795,11 +1772,10 @@ msgstr ""
 "მართლა გნებავთ, თქვენი სვლა დაკარგოთ?"
 
 #: GameLogic/gameautomaton.cpp:2589
-#, fuzzy, kde-format
-#| msgid "New game confirmation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Next Player Confirmation"
-msgstr "ახალი თამაშის დადასტურება"
+msgstr "ახალი მოთამაშის დადასტურება"
 
 #: GameLogic/gameautomaton.cpp:2590
 #, kde-format
@@ -1823,19 +1799,16 @@ msgid "Error: no player to destroy"
 msgstr "გასანადგურებელი მოწყინააღმდეგის გარეშე"
 
 #: GameLogic/goal.cpp:231
-#, fuzzy, kde-format
-#| msgid "<br>%1 is still alive..."
+#, kde-format
 msgid "<br>%1 is still alive…"
-msgstr "<br>%1 ჯერ კიდევ ცოცხალია..."
+msgstr "<br>%1 ჯერ კიდევ ცოცხალია…"
 
 #: GameLogic/goal.cpp:238 GameLogic/goal.cpp:252
-#, fuzzy, kde-format
-#| msgid "<br>%2, you still have 1 country to conquer..."
-#| msgid_plural "<br>%2, you still have %1 countries to conquer..."
+#, kde-format
 msgid "<br>%2, you still have 1 country to conquer…"
 msgid_plural "<br>%2, you still have %1 countries to conquer…"
-msgstr[0] "<br>%2, ჯერ კიდევ უნდა 1 ქვეყნა გაქვთ დასაპყრობი..."
-msgstr[1] "<br>%2, ჯერ კიდევ უნდა %1 ქვეყნა გაქვთ დასაპყრობი..."
+msgstr[0] "<br>%2, ჯერ კიდევ უნდა 1 ქვეყნა გაქვთ დასაპყრობი…"
+msgstr[1] "<br>%2, ჯერ კიდევ უნდა %1 ქვეყნა გაქვთ დასაპყრობი…"
 
 #: GameLogic/goal.cpp:242
 #, kde-format
@@ -1846,13 +1819,7 @@ msgstr[0] "<br>თქვენი მიზანი მიღწეულია
 msgstr[1] "<br>თქვენი მიზანი მიღწეულია: %2 მკვდარია და გაქვთ %1 ქვეყანა."
 
 #: GameLogic/goal.cpp:264
-#, fuzzy, kde-format
-#| msgid ""
-#| "<br>%2, you have enough countries but you still have to put more than 1 "
-#| "army on %3 of them..."
-#| msgid_plural ""
-#| "<br>%2, you have enough countries but you still have to put more than %1 "
-#| "armies on %3 of them..."
+#, kde-format
 msgid ""
 "<br>%2, you have enough countries but you still have to put more than 1 army "
 "on %3 of them…"
@@ -1861,10 +1828,10 @@ msgid_plural ""
 "armies on %3 of them…"
 msgstr[0] ""
 "<br>%2, თქვენ საკმარისი ქვეყანა გაქვთ, მაგრამ ჯერ კიდევ უნდა განალაგოთ 1-ზე "
-"მეტი არმია %3 ქვეყანაში..."
+"მეტი არმია %3 ქვეყანაში…"
 msgstr[1] ""
 "<br>%2, თქვენ საკმარისი ქვეყანა გაქვთ, მაგრამ ჯერ კიდევ უნდა განალაგოთ %1-ზე "
-"მეტი არმია %3 ქვეყანაში..."
+"მეტი არმია %3 ქვეყანაში…"
 
 #: GameLogic/goal.cpp:269
 #, kde-format
@@ -1879,12 +1846,16 @@ msgstr[0] "1 ქვეყნა %2-ში"
 msgstr[1] "%1 ქვეყნა %2-ში"
 
 #: GameLogic/goal.cpp:285
-#, kde-format
+#, fuzzy, kde-format
+#| msgid " and "
+msgctxt "@item:intext country list separator of last item"
 msgid " and "
 msgstr " და "
 
 #: GameLogic/goal.cpp:289
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ", "
+msgctxt "@item:intext country list separator of non-last item"
 msgid ", "
 msgstr ", "
 
@@ -1897,17 +1868,15 @@ msgid "%1 in %2"
 msgstr "%1-ი %2-ში"
 
 #: GameLogic/goal.cpp:317
-#, fuzzy, kde-format
-#| msgid "KsirK - Goal Display"
+#, kde-format
 msgctxt "@title:window"
 msgid "Goal Display"
-msgstr "KsirK - სამიზნის ჩვენება"
+msgstr "სამიზნის ჩვენება"
 
 #: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:170
-#, fuzzy, kde-format
-#| msgid "No message..."
+#, kde-format
 msgid "No message…"
-msgstr "შეტყობინების გარეშე..."
+msgstr "შეტყობინების გარეშე…"
 
 #: GameLogic/KsirkChatModel.cpp:73
 #, kde-format
@@ -1980,7 +1949,7 @@ msgstr "პრობლემა: არავინ განადგურე
 msgid "Bug: who should be 0, 1 or 2."
 msgstr "შეცდომა: ვინ უნდა იყოს 0, 1 და 2."
 
-#: kgamewin.cpp:139 kgamewin.cpp:644
+#: kgamewin.cpp:139 kgamewin.cpp:641
 #, kde-format
 msgid "Cannot load icon<br>Program cannot continue"
 msgstr "ხატულის ჩატვირთვა შეუძლებელია<br>პროგრამა ვერ გაგრძელდება"
@@ -1991,78 +1960,91 @@ msgid "Cannot load button image %1<br>Program cannot continue"
 msgstr ""
 "ღილაკის გამოსახულების %1 ჩატვირთვა შეუძლებელია<br>პროგრამა ვერ გაგრძელდება"
 
-#. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
-#: kgamewin.cpp:305 mainMenu.ui:104
-#, kde-format
+#: kgamewin.cpp:305
+#, fuzzy, kde-format
+#| msgid "New Standard TCP/IP Network Game"
+msgctxt "@action"
 msgid "New Standard TCP/IP Network Game"
 msgstr "ახალი სტანდარტული TCP/IP ქსელური თამაში"
 
 #: kgamewin.cpp:306
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "New TCP/IP"
+msgctxt "@action"
 msgid "New TCP/IP"
 msgstr "ახალი TCP/IP"
 
 #: kgamewin.cpp:308
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create a new standard TCP/IP network game"
+msgctxt "@info:tooltip"
 msgid "Create a new standard TCP/IP network game"
 msgstr "შექმენით ახალი სტანდარტული TCP/IP ქსელური თამაში"
 
 #: kgamewin.cpp:323
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Join a Standard TCP/IP Network Game"
+msgctxt "@action"
 msgid "Join a Standard TCP/IP Network Game"
 msgstr "სტანდარტულ TCP/IP ქსელურ თამაშთან მიერთება"
 
 #: kgamewin.cpp:324
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Join TCP/IP"
+msgctxt "@action"
 msgid "Join TCP/IP"
 msgstr "TCP/IP-ით მიერთება"
 
 #: kgamewin.cpp:326
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Join a standard TCP/IP network game"
+msgctxt "@info:tooltip"
 msgid "Join a standard TCP/IP network game"
 msgstr "სტანდარტულ TCP/IP ქსელურ თამაშთან მიერთება"
 
-#: kgamewin.cpp:331 kgamewin.cpp:1218 kgamewin.cpp:1230 kgamewin.cpp:2387
-#, kde-format
-msgid "Goal"
-msgstr "მიზანი"
-
-#: kgamewin.cpp:332
-#, kde-format
+#: kgamewin.cpp:331
+#, fuzzy, kde-format
+#| msgid "Display the Current Player's Goal"
+msgctxt "@action"
 msgid "Display the Current Player's Goal"
 msgstr "მიმდინარე მოთამაშის მიზნის ჩვენება"
 
-#: kgamewin.cpp:335
-#, kde-format
+#: kgamewin.cpp:334
+#, fuzzy, kde-format
+#| msgid "Display the current player's goal"
+msgctxt "@info:tooltip"
 msgid "Display the current player's goal"
 msgstr "მიმდინარე მოთამაშის მიზნის ჩვენება"
 
-#: kgamewin.cpp:342
-#, kde-format
+#: kgamewin.cpp:340
+#, fuzzy, kde-format
+#| msgid "Contextual Help"
+msgctxt "@action"
 msgid "Contextual Help"
 msgstr "კონტექსტური დახმარება"
 
 #: kgamewin.cpp:351
-#, kde-format
-msgid "Next Player"
-msgstr "შემდეგი მოთამაშე"
-
-#: kgamewin.cpp:353
-#, kde-format
-msgid "Lets the next player play"
+#, fuzzy, kde-format
+#| msgid "Lets the next player play"
+msgctxt "@info:tooltip"
+msgid "Let the next player play"
 msgstr "შემდეგი მოთამაშისთვის თამაშის უფლების მიცემა"
 
-#: kgamewin.cpp:358
-#, kde-format
-msgid "Finish moves"
+#: kgamewin.cpp:355
+#, fuzzy, kde-format
+#| msgid "Finish moves"
+msgctxt "@action"
+msgid "Finish Moves"
 msgstr "სვლების დასრულება"
 
-#: kgamewin.cpp:360
-#, kde-format
+#: kgamewin.cpp:357
+#, fuzzy, kde-format
+#| msgid "Finish moving the current sprites"
+msgctxt "@info:tooltip"
 msgid "Finish moving the current sprites"
 msgstr "მიმდინარე სპრაიტების გადაადგილების დასრულება"
 
-#: kgamewin.cpp:488
+#: kgamewin.cpp:485
 #, kde-format
 msgid ""
 "World definition file not found - Verify your installation<br>Program cannot "
@@ -2071,33 +2053,32 @@ msgstr ""
 "სამყაროს აღწერის ფაილი ვერ ვიპოვე - გადაამოწმეთ თქვენი ფაილები<br>პროგრამა "
 "მუშაობას ვერ გააგრძელებს"
 
-#: kgamewin.cpp:708
+#: kgamewin.cpp:704
 #, kde-format
 msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
 msgstr "<font color=\"red\">%1-მა დაიპყრო %2 %3-დან</font>"
 
-#: kgamewin.cpp:732
-#, fuzzy, kde-format
-#| msgid "%1, you are defeated! Bye, bye..."
+#: kgamewin.cpp:728
+#, kde-format
 msgid "%1, you are defeated! Bye, bye…"
-msgstr "%1, თქვენ წააგეთ. ნახვამდის..."
+msgstr "%1, თქვენ წააგეთ. ნახვამდის…"
 
-#: kgamewin.cpp:804
+#: kgamewin.cpp:800
 #, kde-format
 msgid "%1: it is up to you again"
 msgstr "%1: ეს ისევ თქვენზეა დამოკიდებული"
 
-#: kgamewin.cpp:818
+#: kgamewin.cpp:814
 #, kde-format
 msgid "%1 won!"
 msgstr "%1-მა მოიგო!"
 
-#: kgamewin.cpp:820
+#: kgamewin.cpp:816
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
 msgstr "<big><b>%1</b>, თქვენ გაიმარჯვეთ!</big>"
 
-#: kgamewin.cpp:824
+#: kgamewin.cpp:820
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
@@ -2106,45 +2087,44 @@ msgstr ""
 "<br>გამარჯვებულის მიზანი გამოიყურებოდა ასე:<br><i>%1</i><br><br>გნებავთ, "
 "კიდევ ერთხელ ითამაშოთ?"
 
-#: kgamewin.cpp:830
+#: kgamewin.cpp:826
 #, kde-format
 msgid "<br>You conquered all the world!"
 msgstr "<br>თქვენ მთელი სამყარო დაიპყარით!"
 
-#: kgamewin.cpp:834
+#: kgamewin.cpp:830
 #, kde-format
 msgid "<br>He conquered all the world!"
 msgstr "<br>მან მთელი სამყარო დაიპყრო!"
 
-#: kgamewin.cpp:951
+#: kgamewin.cpp:947
 #, kde-format
 msgid "Do you want to quit the game?"
 msgstr "მართლა გნებავთ თამაშიდან გასვლა?"
 
-#: kgamewin.cpp:953
+#: kgamewin.cpp:949
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
 msgstr "თამაშიდან გასვლა"
 
-#: kgamewin.cpp:965
+#: kgamewin.cpp:961
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
 msgstr "სანამ გახვალთ,, გნებავთ, თქვენი თამაში შეინახოთ?"
 
-#: kgamewin.cpp:1003
-#, fuzzy, kde-format
-#| msgid "New Local Game"
+#: kgamewin.cpp:999
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Game"
-msgstr "ახალი ლოკალური თამაში"
+msgstr "თამაშის ჩატვირთვა"
 
-#: kgamewin.cpp:1041
+#: kgamewin.cpp:1037
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
 msgstr "ველოდები %1 ქსელური მოთამაშის მიერთებას."
 
-#: kgamewin.cpp:1120
+#: kgamewin.cpp:1116
 #, kde-format
 msgid ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
@@ -2159,88 +2139,94 @@ msgstr[1] ""
 "<font color=\"red\">%2</font> გიტევთ <font color=\"red\">%3</font> %1 არმიით!"
 "<br> როგორ გნებავთ, დაიცვათ <font color=\"blue\">%4</font>?"
 
-#: kgamewin.cpp:1149
-#, kde-format
+#: kgamewin.cpp:1145
+#, fuzzy, kde-format
+#| msgid "Defend 1"
+msgctxt "@action:button"
 msgid "Defend 1"
 msgstr "დაცვა 1"
 
-#: kgamewin.cpp:1150
-#, kde-format
+#: kgamewin.cpp:1146
+#, fuzzy, kde-format
+#| msgid "Defend 2"
+msgctxt "@action:button"
 msgid "Defend 2"
 msgstr "დაცვა 2"
 
-#: kgamewin.cpp:1151
-#, kde-format
+#: kgamewin.cpp:1147
+#, fuzzy, kde-format
+#| msgid "Defend-Auto"
+msgctxt "@action:button"
 msgid "Defend-Auto"
 msgstr "ავტომატური-დაცვა"
 
-#: kgamewin.cpp:1270
+#: kgamewin.cpp:1266
 #, kde-format
 msgid "Waiting for %1 players to connect"
 msgstr "ველოდები %1 მოთამაშის მიერთებას"
 
-#: kgamewin.cpp:1660 kgamewin.cpp:1700
+#: kgamewin.cpp:1656 kgamewin.cpp:1696
 msgid "There is no country here!"
 msgstr "აქ ქვეყანა არაა!"
 
-#: kgamewin.cpp:1664 kgamewin.cpp:1705
+#: kgamewin.cpp:1660 kgamewin.cpp:1701
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
 msgstr "პირველი ქვეყნის მფლობელი არ ბრძანდებით: %1!"
 
-#: kgamewin.cpp:1668
+#: kgamewin.cpp:1664
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
 msgstr "მეორე ქვეყნის მფლობელი არ ბრძანდებით: %1!"
 
-#: kgamewin.cpp:1672 kgamewin.cpp:1716
+#: kgamewin.cpp:1668 kgamewin.cpp:1712
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr "აპირებთ, არმიები %1-დან თავის თავში გადაიყვანოთ!"
 
-#: kgamewin.cpp:1677 kgamewin.cpp:1722
+#: kgamewin.cpp:1673 kgamewin.cpp:1718
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
 msgstr "%1 %2-ის მეზობელი არაა!"
 
-#: kgamewin.cpp:1683
+#: kgamewin.cpp:1679
 #, kde-format
 msgid "Moving armies from %1 to %2."
 msgstr "არმიების გადატანა %1-დან %2-ში."
 
-#: kgamewin.cpp:1711
+#: kgamewin.cpp:1707
 #, kde-format
 msgid "You are the owner of the second country: %1!"
 msgstr "თქვენ ბრძანდებით მეორე ქვეყნის მფლობელი: %1!"
 
-#: kgamewin.cpp:1729
+#: kgamewin.cpp:1725
 msgid "Ready to fight!"
 msgstr "ბრძოლისთვის მზად ვარ!"
 
-#: kgamewin.cpp:1823
+#: kgamewin.cpp:1819
 msgid "<font color=\"orange\">No country here!</font>"
 msgstr "<font color=\"orange\">აქ ქვეყანა არაა!</font>"
 
-#: kgamewin.cpp:1831
+#: kgamewin.cpp:1827
 #, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr "<font color=\"orange\">%1-ის მფლობელი არ ბრძანდებით!</font>"
 
-#: kgamewin.cpp:1838
+#: kgamewin.cpp:1834
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr "<font color=\"orange\">%2-ში მხოლოდ %1 არმიაა!</font>"
 
-#: kgamewin.cpp:1978
+#: kgamewin.cpp:1974
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
 msgstr "%1, დაიცავი ერთად-ერთი არმია, რომელიც %2-ში გყავს."
 
-#: kgamewin.cpp:2202
+#: kgamewin.cpp:2198
 msgid "Exchange armies again or continue?"
 msgstr "შევცვალო არმიები კიდევ, თუ გავაგრძელო?"
 
-#: kgamewin.cpp:2227
+#: kgamewin.cpp:2223
 #, kde-format
 msgid ""
 "You must distribute\n"
@@ -2249,52 +2235,49 @@ msgstr ""
 "თქვენი არმიები\n"
 "უნდა გაანაწილოთ"
 
-#: kgamewin.cpp:2367
+#: kgamewin.cpp:2363
 msgid "Battle ongoing."
 msgstr "მიმდინარე ბრძოლა."
 
-#: kgamewin.cpp:2488 kgamewin.cpp:2499 kgamewin.cpp:2522
+#: kgamewin.cpp:2484 kgamewin.cpp:2495 kgamewin.cpp:2518
 #, kde-format
 msgid "%1, it is up to you."
 msgstr "%1, თქვენ გადაწყვიტეთ."
 
-#: kgamewin.cpp:2551
+#: kgamewin.cpp:2547
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
 msgstr "მართლა გნებავთ ახალის დასაწყებად ამ თამაშის დასრულება?"
 
-#: kgamewin.cpp:2551
+#: kgamewin.cpp:2547
 #, kde-format
 msgid "New game confirmation"
 msgstr "ახალი თამაშის დადასტურება"
 
-#: kgamewin.cpp:2551
+#: kgamewin.cpp:2547
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "ახალი თამაშის დაწყება"
 
-#: kgamewin.cpp:2807
+#: kgamewin.cpp:2803
 msgid "<b>KsirK quick Introduction</b>"
 msgstr "<b>KsirK-ის სწრაფი წარდგენა</b>"
 
-#: kgamewin.cpp:2811
+#: kgamewin.cpp:2807
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr ""
 "შეტევებისა და გადაადგილებების მითითება მეზობელ ქვეყნებს შორის გადათრევით და "
 "დაგდებით ხდება."
 
-#: kgamewin.cpp:2815
-#, fuzzy
-#| msgid ""
-#| "Start a new game or join a network game with the menu or the toolbar..."
+#: kgamewin.cpp:2811
 msgid "Start a new game or join a network game with the menu or the toolbar…"
 msgstr ""
 "დაიწყეთ ახალი თამაში ან შეუერთდით ქსელურ თამაშს მენიუდან ან ხელსაწყოების "
-"პანელიდან..."
+"პანელიდან…"
 
-#: kgamewin.cpp:2819
+#: kgamewin.cpp:2815
 msgid ""
 "and then let the system guide you through messages and tooltips appearing on "
 "buttons when hovering above them. You can disable bubble help in the options "
@@ -2304,7 +2287,7 @@ msgstr ""
 "გადატარებისას გამოჩენილი შეტყობინებებითა და მინიშნებებით. ბუშტიანი დახმარება "
 "მორგების ფანჯარაში შეგიძლიათ, გამორთოთ."
 
-#: kgamewin.cpp:2826
+#: kgamewin.cpp:2822
 #, kde-format
 msgid "Don't show messages anymore"
 msgstr "შეტყობინებები აღარ მაჩვენო"
@@ -2322,11 +2305,10 @@ msgid "Cannot save when waiting for a defense."
 msgstr "თავდაცვის მოლოდინში შენახვა შეუძლებელია."
 
 #: kgamewinslots.cpp:441
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Game"
-msgstr "დაიწყეთ ახალი თამაში"
+msgstr "თამაშის შენახვა"
 
 #: kgamewinslots.cpp:445
 #, kde-format
@@ -2378,10 +2360,9 @@ msgid "<b><u>Country details</u></b>"
 msgstr "<b><u>ქვეყნის დეტალები</u></b>"
 
 #: krightdialog.cpp:170
-#, fuzzy, kde-format
-#| msgid "<i>Fighting in progress...</i>"
+#, kde-format
 msgid "<i>Fighting in progress…</i>"
-msgstr "<i>მიმდინარეობს ბრძოლა...</i>"
+msgstr "<i>მიმდინარეობს ბრძოლა…</i>"
 
 #: krightdialog.cpp:222
 #, kde-format
@@ -2398,27 +2379,37 @@ msgstr[0] "<font color=\"blue\">თავდაცვა</font> 1 არმი�
 msgstr[1] "<font color=\"blue\">თავდაცვა</font> %1 არმიით.<br>"
 
 #: krightdialog.cpp:265
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Stop Auto-Attack"
+msgctxt "@action:button"
 msgid "Stop Auto-Attack"
 msgstr "ავტომატური შეტევის გაჩერება"
 
 #: krightdialog.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Stop Auto-Defense"
+msgctxt "@action:button"
 msgid "Stop Auto-Defense"
 msgstr "ავტომატური თავდაცვის გაჩერება"
 
 #: krightdialog.cpp:298
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Valid"
+msgctxt "@action:button"
 msgid "Valid"
 msgstr "სწორი"
 
 #: krightdialog.cpp:299
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Recycle"
+msgctxt "@action:button"
 msgid "Recycle"
 msgstr "გადადება"
 
 #: krightdialog.cpp:300
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Done"
+msgctxt "@action:button"
 msgid "Done"
 msgstr "დასრულებულია"
 
@@ -2457,7 +2448,9 @@ msgid "<font color=\"blue\">lost armies: %1</font>"
 msgstr "<font color=\"blue\">დაკარგული არმიები: %1</font>"
 
 #: ksirkConfigDialog.cpp:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Preferences"
+msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "მორგება"
 
@@ -2521,8 +2514,9 @@ msgid "KsirK"
 msgstr "KsirK"
 
 #: main.cpp:44
-#, kde-format
-msgid "KsirK - World Domination Strategy Game"
+#, fuzzy, kde-format
+#| msgid "KsirK - World Domination Strategy Game"
+msgid "World Domination Strategy Game"
 msgstr "KsirK - სტრატეგიული თამაში მსოფლიო დომინაციისთვის"
 
 #: main.cpp:46
@@ -2599,6 +2593,12 @@ msgstr "<h1>KsirK</h1>"
 msgid "New Local Game"
 msgstr "ახალი ლოკალური თამაში"
 
+#. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
+#: mainMenu.ui:104
+#, kde-format
+msgid "New Standard TCP/IP Network Game"
+msgstr "ახალი სტანდარტული TCP/IP ქსელური თამაში"
+
 #. i18n: ectx: property (text), widget (QPushButton, pbJoin)
 #: mainMenu.ui:111
 #, kde-format
@@ -2609,18 +2609,13 @@ msgstr "სტანდარტულ TCP/IP ქსელურ თამაშ
 #: mainMenu.ui:118
 #, kde-format
 msgid "Load…"
-msgstr ""
+msgstr "ჩატვირთვა…"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbQuit)
 #: mainMenu.ui:138
 #, kde-format
 msgid "Quit"
 msgstr "დატოვება"
-
-#: newgamesetup.cpp:45
-#, kde-format
-msgid "Fatal Error!"
-msgstr "ფატალური შეცდომა!"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_soundEnabled)
 #: preferences.ui:35
@@ -2680,6 +2675,15 @@ msgstr "შეცდომა - სკინის მთელი რიცხ�
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "შეცდომა - სკინის სტრიქონები უცნობია: "
+
+#~ msgid "Goal"
+#~ msgstr "მიზანი"
+
+#~ msgid "Next Player"
+#~ msgstr "შემდეგი მოთამაშე"
+
+#~ msgid "Fatal Error!"
+#~ msgstr "ფატალური შეცდომა!"
 
 #~ msgid "KsirK - New game properties"
 #~ msgstr "KsirK - ახალი თამაშის თვისებები"

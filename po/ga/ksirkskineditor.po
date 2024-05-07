@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:37+0000\n"
+"POT-Creation-Date: 2024-05-07 00:37+0000\n"
 "PO-Revision-Date: 2009-12-24 06:59-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -1081,7 +1081,9 @@ msgid ""
 msgstr ""
 
 #: ksirkSkinEditorConfigDialog.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Preferences"
+msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "Sainroghanna"
 
@@ -1753,6 +1755,7 @@ msgstr ""
 
 #: mainwindow.cpp:337
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Save the current skin"
 msgstr ""
 
@@ -1769,32 +1772,33 @@ msgstr ""
 
 #: mainwindow.cpp:527
 #, kde-format
-msgid "Exit Anyway?"
+msgctxt "@title:window"
+msgid "Unsaved Changes"
 msgstr ""
 
 #: mainwindow.cpp:528
 #, kde-format
-msgid "Quit without saving"
+msgctxt "@action:button"
+msgid "Quit Without Saving"
 msgstr ""
 
 #: mainwindow.cpp:529
 #, kde-format
-msgid "Save then quit"
-msgstr ""
-
-#: mainwindow.cpp:530
-#, kde-format
-msgid "Do not quit"
+msgctxt "@action:button"
+msgid "Save and Quit"
 msgstr ""
 
 #: mainwindow.cpp:1305
-#, kde-format
-msgid "New country name"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Country"
+msgctxt "@title:window"
+msgid "New Country Name"
+msgstr "Tír"
 
 #: mainwindow.cpp:1305
 #, kde-format
-msgid "Enter the name of the new country"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new country:"
 msgstr ""
 
 #: mainwindow.cpp:1315
@@ -1804,17 +1808,21 @@ msgstr ""
 
 #: mainwindow.cpp:1315
 #, kde-format
-msgid "Really delete country?"
+msgctxt "@title:window"
+msgid "Delete Country Confirmation"
 msgstr ""
 
 #: mainwindow.cpp:1334
-#, kde-format
-msgid "New continent name"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Continent"
+msgctxt "@title:window"
+msgid "New Continent Name"
+msgstr "Mór-Roinn"
 
 #: mainwindow.cpp:1334
 #, kde-format
-msgid "Enter the name of the new continent"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new continent:"
 msgstr ""
 
 #: mainwindow.cpp:1344
@@ -1823,9 +1831,11 @@ msgid "Do you really want to delete continent '%1'?"
 msgstr ""
 
 #: mainwindow.cpp:1344
-#, kde-format
-msgid "Really delete continent?"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Continent"
+msgctxt "@title:window"
+msgid "Delete Continent Confirmation"
+msgstr "Mór-Roinn"
 
 #: mainwindow.cpp:1889
 #, kde-format
@@ -1834,18 +1844,23 @@ msgstr ""
 
 #: mainwindow.cpp:1889
 #, kde-format
-msgid "Really delete goal?"
+msgctxt "@title:window"
+msgid "Delete Goal Confirmation"
 msgstr ""
 
 #: mainwindow.cpp:1948
-#, kde-format
-msgid "New nationality name"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Nationality"
+msgctxt "@title:window"
+msgid "New Nationality Name"
+msgstr "Náisiúntacht"
 
 #: mainwindow.cpp:1948
-#, kde-format
-msgid "Enter the name of the new nationality"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Nationality"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new nationality:"
+msgstr "Náisiúntacht"
 
 #: mainwindow.cpp:1958
 #, kde-format
@@ -1854,12 +1869,13 @@ msgstr ""
 
 #: mainwindow.cpp:1958
 #, kde-format
-msgid "Really delete nationality?"
+msgctxt "@title:window"
+msgid "Delete Nationality Confirmation"
 msgstr ""
 
 #: onu.cpp:78
 #, kde-format
-msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+msgid "Invalid skin definition file format. Expected %1 and got %2"
 msgstr ""
 
 #: onu.cpp:110
@@ -1885,6 +1901,7 @@ msgstr ""
 
 #: onu.cpp:984
 #, kde-format
+msgctxt "@title:window"
 msgid "PoolLoader"
 msgstr ""
 

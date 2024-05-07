@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:37+0000\n"
+"POT-Creation-Date: 2024-05-07 00:37+0000\n"
 "PO-Revision-Date: 2023-10-10 07:12+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -1240,7 +1240,9 @@ msgstr ""
 "dekstra doko."
 
 #: ksirkSkinEditorConfigDialog.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Preferences"
+msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "Preferaĵoj"
 
@@ -2025,7 +2027,9 @@ msgid "Open a recently saved skin"
 msgstr "Malfermi lastatempe konservitan haŭton..."
 
 #: mainwindow.cpp:337
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save the current skin"
+msgctxt "@info:tooltip"
 msgid "Save the current skin"
 msgstr "Konservi la nunan haŭton"
 
@@ -2042,32 +2046,36 @@ msgstr "Estas nekonservitaj ŝanĝoj. Kion vi volas fari?"
 
 #: mainwindow.cpp:527
 #, kde-format
-msgid "Exit Anyway?"
-msgstr "Eliri Ĉiukaze?"
+msgctxt "@title:window"
+msgid "Unsaved Changes"
+msgstr ""
 
 #: mainwindow.cpp:528
-#, kde-format
-msgid "Quit without saving"
+#, fuzzy, kde-format
+#| msgid "Quit without saving"
+msgctxt "@action:button"
+msgid "Quit Without Saving"
 msgstr "Forlasi sen konservi"
 
 #: mainwindow.cpp:529
-#, kde-format
-msgid "Save then quit"
+#, fuzzy, kde-format
+#| msgid "Save then quit"
+msgctxt "@action:button"
+msgid "Save and Quit"
 msgstr "Konservi tiam ĉesi"
 
-#: mainwindow.cpp:530
-#, kde-format
-msgid "Do not quit"
-msgstr "Ne forlasi"
-
 #: mainwindow.cpp:1305
-#, kde-format
-msgid "New country name"
+#, fuzzy, kde-format
+#| msgid "New country name"
+msgctxt "@title:window"
+msgid "New Country Name"
 msgstr "Nova landonomo"
 
 #: mainwindow.cpp:1305
-#, kde-format
-msgid "Enter the name of the new country"
+#, fuzzy, kde-format
+#| msgid "Enter the name of the new country"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new country:"
 msgstr "Enigu la nomon de la nova lando"
 
 #: mainwindow.cpp:1315
@@ -2077,17 +2085,22 @@ msgstr "Ĉu vi vere volas forigi landon '%1'?"
 
 #: mainwindow.cpp:1315
 #, kde-format
-msgid "Really delete country?"
-msgstr "Ĉu vere forigi landon?"
+msgctxt "@title:window"
+msgid "Delete Country Confirmation"
+msgstr ""
 
 #: mainwindow.cpp:1334
-#, kde-format
-msgid "New continent name"
+#, fuzzy, kde-format
+#| msgid "New continent name"
+msgctxt "@title:window"
+msgid "New Continent Name"
 msgstr "Nova kontinenta nomo"
 
 #: mainwindow.cpp:1334
-#, kde-format
-msgid "Enter the name of the new continent"
+#, fuzzy, kde-format
+#| msgid "Enter the name of the new continent"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new continent:"
 msgstr "Enigu la nomon de la nova kontinento"
 
 #: mainwindow.cpp:1344
@@ -2096,9 +2109,11 @@ msgid "Do you really want to delete continent '%1'?"
 msgstr "Ĉu vi vere volas forigi la kontinenton '%1'?"
 
 #: mainwindow.cpp:1344
-#, kde-format
-msgid "Really delete continent?"
-msgstr "Ĉu vere forigi kontinenton?"
+#, fuzzy, kde-format
+#| msgid "Select Continents"
+msgctxt "@title:window"
+msgid "Delete Continent Confirmation"
+msgstr "Elekti Kontinentojn"
 
 #: mainwindow.cpp:1889
 #, kde-format
@@ -2107,17 +2122,22 @@ msgstr "Ĉu vi vere volas forigi celon '%1'?"
 
 #: mainwindow.cpp:1889
 #, kde-format
-msgid "Really delete goal?"
-msgstr "Ĉu vere forigi celon?"
+msgctxt "@title:window"
+msgid "Delete Goal Confirmation"
+msgstr ""
 
 #: mainwindow.cpp:1948
-#, kde-format
-msgid "New nationality name"
+#, fuzzy, kde-format
+#| msgid "New nationality name"
+msgctxt "@title:window"
+msgid "New Nationality Name"
 msgstr "Nova nomo de nacieco"
 
 #: mainwindow.cpp:1948
-#, kde-format
-msgid "Enter the name of the new nationality"
+#, fuzzy, kde-format
+#| msgid "Enter the name of the new nationality"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new nationality:"
 msgstr "Enigu la nomon de la nova nacieco"
 
 #: mainwindow.cpp:1958
@@ -2127,12 +2147,14 @@ msgstr "Ĉu vi vere volas forigi naciecon '%1'?"
 
 #: mainwindow.cpp:1958
 #, kde-format
-msgid "Really delete nationality?"
-msgstr "Ĉu vere forigi naciecon?"
+msgctxt "@title:window"
+msgid "Delete Nationality Confirmation"
+msgstr ""
 
 #: onu.cpp:78
-#, kde-format
-msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+#, fuzzy, kde-format
+#| msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+msgid "Invalid skin definition file format. Expected %1 and got %2"
 msgstr "Eraro - Nevalida haŭtdifina dosierformato. Atendis %1 kaj ricevis %2"
 
 #: onu.cpp:110
@@ -2163,7 +2185,9 @@ msgstr ""
 "%2."
 
 #: onu.cpp:984
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "PoolLoader"
+msgctxt "@title:window"
 msgid "PoolLoader"
 msgstr "PoolLoader"
 
@@ -2188,6 +2212,24 @@ msgstr "Eraro - Nekonataj haŭtaj ĉendatenoj:"
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "Grava eraro"
+
+#~ msgid "Exit Anyway?"
+#~ msgstr "Eliri Ĉiukaze?"
+
+#~ msgid "Do not quit"
+#~ msgstr "Ne forlasi"
+
+#~ msgid "Really delete country?"
+#~ msgstr "Ĉu vere forigi landon?"
+
+#~ msgid "Really delete continent?"
+#~ msgstr "Ĉu vere forigi kontinenton?"
+
+#~ msgid "Really delete goal?"
+#~ msgstr "Ĉu vere forigi celon?"
+
+#~ msgid "Really delete nationality?"
+#~ msgstr "Ĉu vere forigi naciecon?"
 
 #~ msgid "Error"
 #~ msgstr "Eraro"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:37+0000\n"
+"POT-Creation-Date: 2024-05-07 00:37+0000\n"
 "PO-Revision-Date: 2017-09-28 17:59+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -1228,7 +1228,9 @@ msgstr ""
 "детаље у пољу десно."
 
 #: ksirkSkinEditorConfigDialog.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Preferences"
+msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "Поставке"
 
@@ -2021,7 +2023,9 @@ msgid "Open a recently saved skin"
 msgstr "Отвори недавно сачувану маску"
 
 #: mainwindow.cpp:337
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save the current skin"
+msgctxt "@info:tooltip"
 msgid "Save the current skin"
 msgstr "Сачувај текућу маску"
 
@@ -2040,32 +2044,36 @@ msgstr "Има несачуваних измена. Шта желите да у�
 
 #: mainwindow.cpp:527
 #, kde-format
-msgid "Exit Anyway?"
-msgstr "Свеједно напустити?"
+msgctxt "@title:window"
+msgid "Unsaved Changes"
+msgstr ""
 
 #: mainwindow.cpp:528
-#, kde-format
-msgid "Quit without saving"
+#, fuzzy, kde-format
+#| msgid "Quit without saving"
+msgctxt "@action:button"
+msgid "Quit Without Saving"
 msgstr "Напусти без уписивања"
 
 #: mainwindow.cpp:529
-#, kde-format
-msgid "Save then quit"
+#, fuzzy, kde-format
+#| msgid "Save then quit"
+msgctxt "@action:button"
+msgid "Save and Quit"
 msgstr "Сачувај па напусти"
 
-#: mainwindow.cpp:530
-#, kde-format
-msgid "Do not quit"
-msgstr "Не напуштај"
-
 #: mainwindow.cpp:1305
-#, kde-format
-msgid "New country name"
+#, fuzzy, kde-format
+#| msgid "New country name"
+msgctxt "@title:window"
+msgid "New Country Name"
 msgstr "Име нове земље"
 
 #: mainwindow.cpp:1305
-#, kde-format
-msgid "Enter the name of the new country"
+#, fuzzy, kde-format
+#| msgid "Enter the name of the new country"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new country:"
 msgstr "Унесите име нове земље"
 
 #: mainwindow.cpp:1315
@@ -2075,17 +2083,22 @@ msgstr "Желите ли заиста да обришете земљу „%1“
 
 #: mainwindow.cpp:1315
 #, kde-format
-msgid "Really delete country?"
-msgstr "Заиста обрисати земљу?"
+msgctxt "@title:window"
+msgid "Delete Country Confirmation"
+msgstr ""
 
 #: mainwindow.cpp:1334
-#, kde-format
-msgid "New continent name"
+#, fuzzy, kde-format
+#| msgid "New continent name"
+msgctxt "@title:window"
+msgid "New Continent Name"
 msgstr "Име новог континента"
 
 #: mainwindow.cpp:1334
-#, kde-format
-msgid "Enter the name of the new continent"
+#, fuzzy, kde-format
+#| msgid "Enter the name of the new continent"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new continent:"
 msgstr "Унесите име новог континента"
 
 #: mainwindow.cpp:1344
@@ -2094,9 +2107,11 @@ msgid "Do you really want to delete continent '%1'?"
 msgstr "Желите ли заиста да обришете континент „%1“?"
 
 #: mainwindow.cpp:1344
-#, kde-format
-msgid "Really delete continent?"
-msgstr "Заиста обрисати континент?"
+#, fuzzy, kde-format
+#| msgid "Select Continents"
+msgctxt "@title:window"
+msgid "Delete Continent Confirmation"
+msgstr "Изабери континенте"
 
 #: mainwindow.cpp:1889
 #, kde-format
@@ -2105,17 +2120,22 @@ msgstr "Желите ли заиста да обришете циљ „%1“?"
 
 #: mainwindow.cpp:1889
 #, kde-format
-msgid "Really delete goal?"
-msgstr "Заиста обрисати циљ?"
+msgctxt "@title:window"
+msgid "Delete Goal Confirmation"
+msgstr ""
 
 #: mainwindow.cpp:1948
-#, kde-format
-msgid "New nationality name"
+#, fuzzy, kde-format
+#| msgid "New nationality name"
+msgctxt "@title:window"
+msgid "New Nationality Name"
 msgstr "Име нове нације"
 
 #: mainwindow.cpp:1948
-#, kde-format
-msgid "Enter the name of the new nationality"
+#, fuzzy, kde-format
+#| msgid "Enter the name of the new nationality"
+msgctxt "@label:textbox"
+msgid "Enter the name of the new nationality:"
 msgstr "Унесите име нове нације"
 
 #: mainwindow.cpp:1958
@@ -2125,12 +2145,14 @@ msgstr "Желите ли заиста да уклоните нацију „%1�
 
 #: mainwindow.cpp:1958
 #, kde-format
-msgid "Really delete nationality?"
-msgstr "Заиста обрисати нацију?"
+msgctxt "@title:window"
+msgid "Delete Nationality Confirmation"
+msgstr ""
 
 #: onu.cpp:78
-#, kde-format
-msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+#, fuzzy, kde-format
+#| msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+msgid "Invalid skin definition file format. Expected %1 and got %2"
 msgstr "Грешка — лош формат фајла маске. Очекивано је %1 а добијено %2."
 
 #: onu.cpp:110
@@ -2161,7 +2183,9 @@ msgstr ""
 "%2."
 
 #: onu.cpp:984
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "PoolLoader"
+msgctxt "@title:window"
 msgid "PoolLoader"
 msgstr "Учитавач пула"
 
@@ -2186,6 +2210,24 @@ msgstr "Грешка — непозната ниска у маски: "
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "Кобна грешка"
+
+#~ msgid "Exit Anyway?"
+#~ msgstr "Свеједно напустити?"
+
+#~ msgid "Do not quit"
+#~ msgstr "Не напуштај"
+
+#~ msgid "Really delete country?"
+#~ msgstr "Заиста обрисати земљу?"
+
+#~ msgid "Really delete continent?"
+#~ msgstr "Заиста обрисати континент?"
+
+#~ msgid "Really delete goal?"
+#~ msgstr "Заиста обрисати циљ?"
+
+#~ msgid "Really delete nationality?"
+#~ msgstr "Заиста обрисати нацију?"
 
 #~ msgid "Error"
 #~ msgstr "Грешка"
