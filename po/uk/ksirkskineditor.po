@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-07 00:37+0000\n"
-"PO-Revision-Date: 2024-05-06 07:37+0300\n"
+"PO-Revision-Date: 2024-05-07 09:06+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -1240,11 +1240,10 @@ msgstr ""
 "параметри за допомогою правої панелі."
 
 #: ksirkSkinEditorConfigDialog.cpp:55
-#, fuzzy, kde-format
-#| msgid "Preferences"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Preferences"
-msgstr "Параметри"
+msgstr "Налаштування"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CountriesSelectionDialog)
 #: ksirkskineditorcountriesselectiondialog.ui:13
@@ -2031,8 +2030,7 @@ msgid "Open a recently saved skin"
 msgstr "Відкрити нещодавно збережену шкірку"
 
 #: mainwindow.cpp:337
-#, fuzzy, kde-format
-#| msgid "Save the current skin"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current skin"
 msgstr "Зберегти поточну шкірку"
@@ -2052,35 +2050,31 @@ msgstr "Частину змін не збережено. Що робити?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
-msgstr ""
+msgstr "Незбережені зміни"
 
 #: mainwindow.cpp:528
-#, fuzzy, kde-format
-#| msgid "Quit without saving"
+#, kde-format
 msgctxt "@action:button"
 msgid "Quit Without Saving"
 msgstr "Вийти без збереження"
 
 #: mainwindow.cpp:529
-#, fuzzy, kde-format
-#| msgid "Save then quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save and Quit"
 msgstr "Зберегти, а потім вийти"
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "New country name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Country Name"
 msgstr "Назва нової країни"
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new country"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new country:"
-msgstr "Введіть назву нової країни"
+msgstr "Введіть назву нової країни:"
 
 #: mainwindow.cpp:1315
 #, kde-format
@@ -2091,21 +2085,19 @@ msgstr "Ви дійсно хочете вилучити країну «%1»?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Country Confirmation"
-msgstr ""
+msgstr "Підтвердження вилучення країни"
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "New continent name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Continent Name"
 msgstr "Назва нового континенту"
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new continent"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new continent:"
-msgstr "Введіть назву нового континенту"
+msgstr "Введіть назву нового континенту:"
 
 #: mainwindow.cpp:1344
 #, kde-format
@@ -2113,11 +2105,10 @@ msgid "Do you really want to delete continent '%1'?"
 msgstr "Ви дійсно хочете вилучити континент «%1»?"
 
 #: mainwindow.cpp:1344
-#, fuzzy, kde-format
-#| msgid "Select Continents"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Continent Confirmation"
-msgstr "Вибрати континенти"
+msgstr "Підтвердження вилучення континенту"
 
 #: mainwindow.cpp:1889
 #, kde-format
@@ -2128,21 +2119,19 @@ msgstr "Ви дійсно хочете вилучити мету «%1»?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Goal Confirmation"
-msgstr ""
+msgstr "Підтвердження вилучення цілі"
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "New nationality name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Nationality Name"
 msgstr "Назва нової нації"
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new nationality"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new nationality:"
-msgstr "Введіть назву нової нації"
+msgstr "Введіть назву нової нації:"
 
 #: mainwindow.cpp:1958
 #, kde-format
@@ -2153,15 +2142,13 @@ msgstr "Ви дійсно хочете вилучити націю «%1»?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Nationality Confirmation"
-msgstr ""
+msgstr "Підтвердження вилучення нації"
 
 #: onu.cpp:78
-#, fuzzy, kde-format
-#| msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+#, kde-format
 msgid "Invalid skin definition file format. Expected %1 and got %2"
 msgstr ""
-"Помилка: некоректний формат файла визначення шкірки. Очікувалося %1, "
-"отримано %2"
+"Некоректний формат файла визначення шкірки. Очікувалося %1, отримано %2"
 
 #: onu.cpp:110
 #, kde-format
@@ -2191,8 +2178,7 @@ msgstr ""
 "%2."
 
 #: onu.cpp:984
-#, fuzzy, kde-format
-#| msgid "PoolLoader"
+#, kde-format
 msgctxt "@title:window"
 msgid "PoolLoader"
 msgstr "Завантажувач набору"

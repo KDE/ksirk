@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-07 00:37+0000\n"
-"PO-Revision-Date: 2024-05-06 10:09+0200\n"
+"PO-Revision-Date: 2024-05-07 12:31+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1260,8 +1260,7 @@ msgstr ""
 "seus detalls a l'acoblable de la dreta."
 
 #: ksirkSkinEditorConfigDialog.cpp:55
-#, fuzzy, kde-format
-#| msgid "Preferences"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "Preferències"
@@ -2071,8 +2070,7 @@ msgid "Open a recently saved skin"
 msgstr "Obre una aparença desada recentment"
 
 #: mainwindow.cpp:337
-#, fuzzy, kde-format
-#| msgid "Save the current skin"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current skin"
 msgstr "Desa l'aparença actual"
@@ -2092,35 +2090,31 @@ msgstr "Hi ha canvis sense desar. Què és el que voleu fer?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
-msgstr ""
+msgstr "Canvis sense desar"
 
 #: mainwindow.cpp:528
-#, fuzzy, kde-format
-#| msgid "Quit without saving"
+#, kde-format
 msgctxt "@action:button"
 msgid "Quit Without Saving"
 msgstr "Surt sense desar"
 
 #: mainwindow.cpp:529
-#, fuzzy, kde-format
-#| msgid "Save then quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save and Quit"
 msgstr "Desa i surt"
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "New country name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Country Name"
 msgstr "Nom nou de país"
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new country"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new country:"
-msgstr "Introduïu el nom del nou país"
+msgstr "Introduïu el nom del país nou:"
 
 #: mainwindow.cpp:1315
 #, kde-format
@@ -2131,21 +2125,19 @@ msgstr "Voleu realment suprimir el país «%1»?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Country Confirmation"
-msgstr ""
+msgstr "Confirmació de la supressió de país"
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "New continent name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Continent Name"
 msgstr "Nom nou de continent"
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new continent"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new continent:"
-msgstr "Introduïu el nom del nou continent"
+msgstr "Introduïu el nom del continent nou:"
 
 #: mainwindow.cpp:1344
 #, kde-format
@@ -2153,11 +2145,10 @@ msgid "Do you really want to delete continent '%1'?"
 msgstr "Voleu realment suprimir el continent «%1»?"
 
 #: mainwindow.cpp:1344
-#, fuzzy, kde-format
-#| msgid "Select Continents"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Continent Confirmation"
-msgstr "Selecció de continents"
+msgstr "Confirmació de la supressió de continent"
 
 #: mainwindow.cpp:1889
 #, kde-format
@@ -2168,21 +2159,19 @@ msgstr "Voleu realment suprimir l'objectiu «%1»?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Goal Confirmation"
-msgstr ""
+msgstr "Confirmació de la supressió d'objectiu"
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "New nationality name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Nationality Name"
 msgstr "Nom nou de la nacionalitat"
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new nationality"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new nationality:"
-msgstr "Introduïu el nom de la nova nacionalitat"
+msgstr "Introduïu el nom de la nacionalitat nova:"
 
 #: mainwindow.cpp:1958
 #, kde-format
@@ -2193,15 +2182,14 @@ msgstr "Voleu realment suprimir la nacionalitat «%1»?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Nationality Confirmation"
-msgstr ""
+msgstr "Confirmació de la supressió de nacionalitat"
 
 #: onu.cpp:78
-#, fuzzy, kde-format
-#| msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+#, kde-format
 msgid "Invalid skin definition file format. Expected %1 and got %2"
 msgstr ""
-"Error - Format de la definició del fitxer d'aparença invàlid. S'esperava %1 "
-"i s'ha rebut %2"
+"Format de la definició del fitxer d'aparença invàlid. S'esperava %1 i s'ha "
+"rebut %2"
 
 #: onu.cpp:110
 #, kde-format
@@ -2231,11 +2219,10 @@ msgstr ""
 "%2."
 
 #: onu.cpp:984
-#, fuzzy, kde-format
-#| msgid "PoolLoader"
+#, kde-format
 msgctxt "@title:window"
 msgid "PoolLoader"
-msgstr "CarregadorPool"
+msgstr "PoolLoader"
 
 #: skinSpritesData.cpp:85
 #, kde-format

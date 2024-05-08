@@ -33,11 +33,10 @@ msgid "Error: no player to destroy"
 msgstr ""
 
 #: goal.cpp:213
-#, fuzzy, kde-format
-#| msgid "KsirK - Goal Display"
+#, kde-format
 msgctxt "@title:window"
 msgid "Goal Display"
-msgstr "KsirK - Zobrazení cíle"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
 #: ksirkcontinentdefinition.ui:13
@@ -1064,11 +1063,10 @@ msgid ""
 msgstr ""
 
 #: ksirkSkinEditorConfigDialog.cpp:55
-#, fuzzy, kde-format
-#| msgid "Preferences"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Preferences"
-msgstr "Předvolby"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CountriesSelectionDialog)
 #: ksirkskineditorcountriesselectiondialog.ui:13
@@ -1717,32 +1715,28 @@ msgid "Cannot load center icon<br>Program cannot continue"
 msgstr ""
 
 #: mainwindow.cpp:324
-#, fuzzy, kde-format
-#| msgid "Open a saved skin..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a saved skin"
-msgstr "Otevřít uložený motiv..."
+msgstr ""
 
 #: mainwindow.cpp:328
-#, fuzzy, kde-format
-#| msgid "Load &Recent"
+#, kde-format
 msgctxt "@action"
 msgid "Load &Recent"
-msgstr "Nah&rát nedávnou"
+msgstr ""
 
 #: mainwindow.cpp:329
-#, fuzzy, kde-format
-#| msgid "Open a saved skin..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a recently saved skin"
-msgstr "Otevřít uložený motiv..."
+msgstr ""
 
 #: mainwindow.cpp:337
-#, fuzzy, kde-format
-#| msgid "Save the current skin"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current skin"
-msgstr "Uložit současnou složku"
+msgstr ""
 
 #: mainwindow.cpp:362
 #, kde-format
@@ -1759,35 +1753,31 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
-msgstr ""
+msgstr "Neuložené změny"
 
 #: mainwindow.cpp:528
-#, fuzzy, kde-format
-#| msgid "Quit without saving"
+#, kde-format
 msgctxt "@action:button"
 msgid "Quit Without Saving"
-msgstr "Ukončit bez uložení"
+msgstr ""
 
 #: mainwindow.cpp:529
-#, fuzzy, kde-format
-#| msgid "Save then quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save and Quit"
-msgstr "Uložit a ukončit"
+msgstr ""
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "New country name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Country Name"
-msgstr "Nový název země"
+msgstr ""
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "Creates a new country"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new country:"
-msgstr "Vytvoří novou zem"
+msgstr ""
 
 #: mainwindow.cpp:1315
 #, kde-format
@@ -1801,11 +1791,10 @@ msgid "Delete Country Confirmation"
 msgstr ""
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "New continent name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Continent Name"
-msgstr "Název nového kontinentu"
+msgstr ""
 
 #: mainwindow.cpp:1334
 #, kde-format
@@ -1819,11 +1808,10 @@ msgid "Do you really want to delete continent '%1'?"
 msgstr ""
 
 #: mainwindow.cpp:1344
-#, fuzzy, kde-format
-#| msgid "Select Continents"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Continent Confirmation"
-msgstr "Vybrat kontinenty"
+msgstr ""
 
 #: mainwindow.cpp:1889
 #, kde-format
@@ -1837,11 +1825,10 @@ msgid "Delete Goal Confirmation"
 msgstr ""
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "New Nationality"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Nationality Name"
-msgstr "Nová národnost"
+msgstr ""
 
 #: mainwindow.cpp:1948
 #, kde-format
@@ -1910,20 +1897,7 @@ msgid "Error - Unknown skin string data: "
 msgstr ""
 
 #: skinSpritesData.cpp:102
-#, fuzzy, kde-format
-#| msgid "Fatal Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "Kritická chyba"
-
-#~ msgid "Exit Anyway?"
-#~ msgstr "I tak ukončit?"
-
-#~ msgid "Do not quit"
-#~ msgstr "Neukončovat"
-
-#~ msgid "Really delete goal?"
-#~ msgstr "Opravdu cíl smazat?"
-
-#~ msgid "Error"
-#~ msgstr "Chyba"

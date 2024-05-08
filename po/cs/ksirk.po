@@ -1058,89 +1058,77 @@ msgid "Legacy"
 msgstr "Zastaralé"
 
 #: decoratedgameframe.cpp:100 kgamewin.cpp:349
-#, fuzzy, kde-format
-#| msgid "Next Player"
+#, kde-format
 msgctxt "@action"
 msgid "Next Player"
-msgstr "Následující hráč"
+msgstr ""
 
 #: decoratedgameframe.cpp:103
-#, fuzzy, kde-format
-#| msgid "Details"
+#, kde-format
 msgctxt "@action"
 msgid "Details"
-msgstr "Podrobnosti"
+msgstr ""
 
 #: decoratedgameframe.cpp:106 kgamewin.cpp:332 kgamewin.cpp:1214
 #: kgamewin.cpp:1226 kgamewin.cpp:2383
-#, fuzzy, kde-format
-#| msgid "Goal"
+#, kde-format
 msgctxt "@action"
 msgid "Goal"
-msgstr "Cíl"
+msgstr ""
 
 #: decoratedgameframe.cpp:138 decoratedgameframe.cpp:394
-#, fuzzy, kde-format
-#| msgid "Enable Arena"
+#, kde-format
 msgctxt "@action"
 msgid "Enable Arena"
-msgstr "Povolit arénu"
+msgstr ""
 
 #: decoratedgameframe.cpp:142
-#, fuzzy, kde-format
-#| msgid "Attack 1"
+#, kde-format
 msgctxt "@action"
 msgid "Attack 1"
-msgstr "Útok 1"
+msgstr ""
 
 #: decoratedgameframe.cpp:145
-#, fuzzy, kde-format
-#| msgid "Attack 2"
+#, kde-format
 msgctxt "@action"
 msgid "Attack 2"
-msgstr "Útok 2"
+msgstr ""
 
 #: decoratedgameframe.cpp:148
-#, fuzzy, kde-format
-#| msgid "Attack 3"
+#, kde-format
 msgctxt "@action"
 msgid "Attack 3"
-msgstr "Útok 3"
+msgstr ""
 
 #: decoratedgameframe.cpp:151
-#, fuzzy, kde-format
-#| msgid "Auto attack"
+#, kde-format
 msgctxt "@action"
 msgid "Auto Attack"
-msgstr "Automatický útok"
+msgstr ""
 
 #: decoratedgameframe.cpp:169
-#, fuzzy, kde-format
-#| msgid "Move 1"
+#, kde-format
 msgctxt "@action"
 msgid "Move 1"
-msgstr "Přesunout 1"
+msgstr ""
 
 #: decoratedgameframe.cpp:172
-#, fuzzy, kde-format
-#| msgid "Move 5"
+#, kde-format
 msgctxt "@action"
 msgid "Move 5"
-msgstr "Přesunout 5"
+msgstr ""
 
 #: decoratedgameframe.cpp:175
-#, fuzzy, kde-format
-#| msgid "Move 10"
+#, kde-format
 msgctxt "@action"
 msgid "Move 10"
-msgstr "Přesunout 10"
+msgstr ""
 
 #: decoratedgameframe.cpp:400
-#, fuzzy, kde-format
-#| msgid "Enable Arena"
+#, kde-format
 msgctxt "@action"
 msgid "Disable Arena"
-msgstr "Povolit arénu"
+msgstr ""
 
 #: Dialogs/InvasionSlider.cpp:98
 #, kde-format
@@ -1270,10 +1258,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (KNSWidgets::Button, ghnsbutton)
 #: Dialogs/newGameDialog.ui:123
-#, fuzzy, kde-format
-#| msgid "Download New Skins..."
+#, kde-format
 msgid "Download New Skins…"
-msgstr "Stáhnout nové motivy..."
+msgstr ""
 
 #. i18n: ectx: property (configFile), widget (KNSWidgets::Button, ghnsbutton)
 #: Dialogs/newGameDialog.ui:126
@@ -1335,10 +1322,9 @@ msgstr "Zrušit"
 #. i18n: ectx: property (text), widget (QPushButton, nextButton)
 #: Dialogs/newGameDialog.ui:250 Dialogs/qplayersetupdialog.ui:153
 #: Dialogs/tcpconnectwidget.ui:125
-#, fuzzy, kde-format
-#| msgid "Next >>"
+#, kde-format
 msgid "Next"
-msgstr "Následující >>"
+msgstr "Následující"
 
 #: Dialogs/newGameDialogImpl.cpp:128 newgamesetup.cpp:44
 #, kde-format
@@ -1350,8 +1336,7 @@ msgstr ""
 #: Dialogs/newGameDialogImpl.cpp:129 GameLogic/aiplayer.cpp:506
 #: newgamesetup.cpp:45 Sprites/skinSpritesData.cpp:89
 #: Sprites/skinSpritesData.cpp:105
-#, fuzzy, kde-format
-#| msgid "Fatal Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "Kritická chyba"
@@ -1413,10 +1398,9 @@ msgstr "Síť"
 #. i18n: ectx: property (text), widget (QPushButton, previousButton)
 #: Dialogs/newGameSummary.ui:226 Dialogs/qplayersetupdialog.ui:146
 #: Dialogs/tcpconnectwidget.ui:118
-#, fuzzy, kde-format
-#| msgid "<< Previous"
+#, kde-format
 msgid "Previous"
-msgstr "<< Předešlý"
+msgstr "Předchozí"
 
 #. i18n: ectx: property (text), widget (QPushButton, finishButton)
 #: Dialogs/newGameSummary.ui:236
@@ -1563,11 +1547,10 @@ msgstr[1] ""
 msgstr[2] ""
 
 #: GameLogic/gameautomaton.cpp:303
-#, fuzzy, kde-format
-#| msgid "Network Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Network Configuration"
-msgstr "Nastavení sítě"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:304
 #, kde-format
@@ -1580,11 +1563,10 @@ msgid "Do you really want to end your current game and join another?"
 msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1191
-#, fuzzy, kde-format
-#| msgid "Network Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Game Confirmation"
-msgstr "Nastavení sítě"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1191
 #, kde-format
@@ -1643,32 +1625,28 @@ msgid ""
 msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1624
-#, fuzzy, kde-format
-#| msgid "Start a New Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Starting a New Game or Exit."
-msgstr "Začít novou hru"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1625
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Game"
-msgstr "Nová hra"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1626
-#, fuzzy, kde-format
-#| msgid "Exit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Exit"
-msgstr "Ukončit"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1627
-#, fuzzy, kde-format
-#| msgid "Do Nothing"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Nothing"
-msgstr "Nedělat nic"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1649
 #, kde-format
@@ -1679,11 +1657,10 @@ msgid ""
 msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1650
-#, fuzzy, kde-format
-#| msgid "Connection timed out."
+#, kde-format
 msgctxt "@title:window"
 msgid "Lost Connection to Client"
-msgstr "Spojení vypršelo."
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1652
 #, kde-format
@@ -1740,11 +1717,10 @@ msgid ""
 msgstr ""
 
 #: GameLogic/gameautomaton.cpp:2387
-#, fuzzy, kde-format
-#| msgid "KsirK - Invalid password!"
+#, kde-format
 msgctxt "@title:window"
 msgid "Invalid Password"
-msgstr "KsirK - Neplatné heslo!"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:2588
 #, kde-format
@@ -1754,11 +1730,10 @@ msgid ""
 msgstr ""
 
 #: GameLogic/gameautomaton.cpp:2589
-#, fuzzy, kde-format
-#| msgid "Network Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Next Player Confirmation"
-msgstr "Nastavení sítě"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:2590
 #, kde-format
@@ -1829,18 +1804,16 @@ msgstr[1] "%1 země v %2"
 msgstr[2] "%1 zemí v %2"
 
 #: GameLogic/goal.cpp:285
-#, fuzzy, kde-format
-#| msgid " and "
+#, kde-format
 msgctxt "@item:intext country list separator of last item"
 msgid " and "
-msgstr " a "
+msgstr ""
 
 #: GameLogic/goal.cpp:289
-#, fuzzy, kde-format
-#| msgid ", "
+#, kde-format
 msgctxt "@item:intext country list separator of non-last item"
 msgid ", "
-msgstr ", "
+msgstr ""
 
 #: GameLogic/goal.cpp:295
 #, kde-format
@@ -1851,17 +1824,15 @@ msgid "%1 in %2"
 msgstr "%1 v %2"
 
 #: GameLogic/goal.cpp:317
-#, fuzzy, kde-format
-#| msgid "KsirK - Goal Display"
+#, kde-format
 msgctxt "@title:window"
 msgid "Goal Display"
-msgstr "KsirK - Zobrazení cíle"
+msgstr ""
 
 #: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:170
-#, fuzzy, kde-format
-#| msgid "Message"
+#, kde-format
 msgid "No message…"
-msgstr "Zpráva"
+msgstr ""
 
 #: GameLogic/KsirkChatModel.cpp:73
 #, kde-format
@@ -2072,11 +2043,10 @@ msgid "Before you quit, do you want to save your game?"
 msgstr ""
 
 #: kgamewin.cpp:999
-#, fuzzy, kde-format
-#| msgid "New Local Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Game"
-msgstr "Nová místní hra"
+msgstr "Načíst hru"
 
 #: kgamewin.cpp:1037
 #, kde-format
@@ -2250,11 +2220,10 @@ msgid "Cannot save when waiting for a defense."
 msgstr "Nelze uložit při čekání na obranu."
 
 #: kgamewinslots.cpp:441
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Game"
-msgstr "Nová hra"
+msgstr "Uložit hru"
 
 #: kgamewinslots.cpp:445
 #, kde-format
@@ -2325,11 +2294,10 @@ msgstr[1] ""
 msgstr[2] ""
 
 #: krightdialog.cpp:265
-#, fuzzy, kde-format
-#| msgid "Auto attack"
+#, kde-format
 msgctxt "@action:button"
 msgid "Stop Auto-Attack"
-msgstr "Automatický útok"
+msgstr ""
 
 #: krightdialog.cpp:273
 #, kde-format
@@ -2338,11 +2306,10 @@ msgid "Stop Auto-Defense"
 msgstr ""
 
 #: krightdialog.cpp:298
-#, fuzzy, kde-format
-#| msgid "Valid"
+#, kde-format
 msgctxt "@action:button"
 msgid "Valid"
-msgstr "Platný"
+msgstr ""
 
 #: krightdialog.cpp:299
 #, kde-format
@@ -2351,8 +2318,7 @@ msgid "Recycle"
 msgstr ""
 
 #: krightdialog.cpp:300
-#, fuzzy, kde-format
-#| msgid "Done"
+#, kde-format
 msgctxt "@action:button"
 msgid "Done"
 msgstr "Hotovo"
@@ -2394,11 +2360,10 @@ msgid "<font color=\"blue\">lost armies: %1</font>"
 msgstr ""
 
 #: ksirkConfigDialog.cpp:37
-#, fuzzy, kde-format
-#| msgid "Preferences"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Preferences"
-msgstr "Předvolby"
+msgstr ""
 
 #. i18n: ectx: label, entry (spritesSpeed), group (General)
 #: ksirksettings.kcfg:9
@@ -2460,10 +2425,9 @@ msgid "KsirK"
 msgstr "KsirK"
 
 #: main.cpp:44
-#, fuzzy, kde-format
-#| msgid "KsirK - World Domination Strategy Game"
+#, kde-format
 msgid "World Domination Strategy Game"
-msgstr "KsirK - Strategická hra o světovou nadvládu"
+msgstr "Strategická hra o světovou nadvládu"
 
 #: main.cpp:46
 #, kde-format
@@ -2619,555 +2583,3 @@ msgstr ""
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr ""
-
-#~ msgid "Goal"
-#~ msgstr "Cíl"
-
-#~ msgid "Next Player"
-#~ msgstr "Následující hráč"
-
-#~ msgid "Fatal Error!"
-#~ msgstr "Kritická chyba!"
-
-#~ msgid "KsirK - New game properties"
-#~ msgstr "KsirK - Vlastnosti nové vrstvy"
-
-#~ msgid "Do nothing"
-#~ msgstr "Nedělat nic"
-
-#~ msgid "KsirK - Error!"
-#~ msgstr "Ksirk - Chyba!"
-
-#~ msgid "Really Next Player?"
-#~ msgstr "Opravdu následující hráč?"
-
-#~ msgid "Error!"
-#~ msgstr "Chyba!"
-
-#~ msgctxt "@title:window"
-#~ msgid "KsirK - Load Game"
-#~ msgstr "KsirK - Načíst hru"
-
-#~ msgctxt "@title:window"
-#~ msgid "KsirK - Save Game"
-#~ msgstr "KsirK - Uložit hru"
-
-#~ msgid "Load..."
-#~ msgstr "Načíst..."
-
-#~ msgid "KsirK Preferences"
-#~ msgstr "Předvolby KSirk"
-
-#~ msgid "KsirK - Error"
-#~ msgstr "Ksirk - Chyba"
-
-#~ msgid "Nickname"
-#~ msgstr "Přezdívka"
-
-#~ msgid "Skin"
-#~ msgstr "Motiv"
-
-#~ msgid "Connection to the Jabber Network"
-#~ msgstr "Připojování k síti Jabber"
-
-#~ msgid "Jabber ID:"
-#~ msgstr "Jabber ID:"
-
-#~ msgid "kleag@kdetalk.net"
-#~ msgstr "kleag@kdetalk.net"
-
-#~ msgid "12345678"
-#~ msgstr "12345678"
-
-#~ msgid "Password:"
-#~ msgstr "Heslo:"
-
-#~ msgid "Connect"
-#~ msgstr "Připojit"
-
-#~ msgid "State:"
-#~ msgstr "Stav:"
-
-#~ msgid "Nickname:"
-#~ msgstr "Přezdívka:"
-
-#~ msgid "Load a Saved Game..."
-#~ msgstr "Načíst uloženou hru..."
-
-#~ msgid "Please connect first."
-#~ msgstr "Napřed se prosím připojte."
-
-#~ msgid "Jabber Error"
-#~ msgstr "Jabber chyba"
-
-#~ msgid ""
-#~ "SSL support could not be initialized for account %1. This is most likely "
-#~ "because the QCA TLS plugin is not installed on your system."
-#~ msgstr ""
-#~ "Pro účet %1 nelze inicializovat podporu SSL. Pravděpodobně proto, že na "
-#~ "vašem systému není nainstalován modul QCA TLS."
-
-#~ msgid "Jabber SSL Error"
-#~ msgstr "Jabber SSL chyba"
-
-#~ msgid "The host name does not match the one in the certificate."
-#~ msgstr "Adresa počítače neodpovídá adrese na certifikátu."
-
-#~ msgid "The certificate is invalid."
-#~ msgstr "Certifikační autorita je neplatná."
-
-#~ msgid "No certificate was presented."
-#~ msgstr "Nebyl poskytnut žádný certifikát."
-
-#~ msgid "The Certificate Authority rejected the certificate."
-#~ msgstr "Certifikační autorita odmítla certifikát."
-
-#~ msgid "The certificate is not trusted."
-#~ msgstr "Certifikát není důvěryhodný."
-
-#~ msgid "The signature is invalid."
-#~ msgstr "Podpis není platný."
-
-#~ msgid "The Certificate Authority is invalid."
-#~ msgstr "Certifikační autorita je neplatná."
-
-#~ msgid "Invalid certificate purpose."
-#~ msgstr "Neplatný účel certifikátu."
-
-#~ msgid "The certificate is self-signed."
-#~ msgstr "Certifikát je podepsán sám sebou."
-
-#~ msgid "The certificate has been revoked."
-#~ msgstr "Certifikát byl odvolán."
-
-#~ msgid "Maximum certificate chain length was exceeded."
-#~ msgstr "Překročena maximální délka řetězu certifikátů."
-
-#~ msgid "The certificate has expired."
-#~ msgstr "Certifikát vypršel."
-
-#~ msgid "The Certificate Authority has expired."
-#~ msgstr "Certifikační autorita vypršela."
-
-#~ msgid "Validity is unknown."
-#~ msgstr "Platnost není známá."
-
-#~ msgid ""
-#~ "<qt><p>The identity and the certificate of server %1 could not be "
-#~ "validated for account %2:</p><p>%3</p><p>%4</p><p>Do you want to continue?"
-#~ "</p></qt>"
-#~ msgstr ""
-#~ "<qt><p>Identita a certifikát serveru %1 nebylo možné ověřit pro účet %2:</"
-#~ "p><p>%3</p><p>%4</p><p>Přejete si pokračovat?</p></qt>"
-
-#~ msgid ""
-#~ "<qt><p>The certificate of server %1 could not be validated for account "
-#~ "%2: %3</p><p>Do you want to continue?</p></qt>"
-#~ msgstr ""
-#~ "<qt><p>Certifikát serveru %1 nebylo možné ověřit pro účet %2: %3</"
-#~ "p><p>Přejete si pokračovat?</p></qt>"
-
-#~ msgid "Jabber Connection Certificate Problem"
-#~ msgstr "Problém s Jabber certifikátem připojení"
-
-#~ msgid ""
-#~ "An encrypted connection with the Jabber server could not be established."
-#~ msgstr "Šifrované spojení s Jabber serverem nebylo možné navázat."
-
-#~ msgid "Jabber Connection Error"
-#~ msgstr "Chyba Jabber spojení"
-
-#~ msgid "Malformed packet received."
-#~ msgstr "Obdržen chybný packet."
-
-#~ msgid "There was an unrecoverable error in the protocol."
-#~ msgstr "Nastala neobnovitelná chyba v protokolu."
-
-#~ msgid "Generic stream error."
-#~ msgstr "Obecná chyba proudu."
-
-#~ msgid "There was a conflict in the information received."
-#~ msgstr "Přijatá informace obsahovala konflikt."
-
-#~ msgid "The stream timed out."
-#~ msgstr "Proud vypršel."
-
-#~ msgid "Internal server error."
-#~ msgstr "Interní chyba serveru."
-
-#~ msgid "Stream packet received from an invalid address."
-#~ msgstr "Paket proudu přijat z nesprávné adresy."
-
-#~ msgid "Malformed stream packet received."
-#~ msgstr "Přijat poškozený paket proudu."
-
-#~ msgid "Policy violation in the protocol stream."
-#~ msgstr "Porušení zásad v proudu protokolu."
-
-#~ msgid "Resource constraint."
-#~ msgstr "Omezení zdroje."
-
-#~ msgid "System shutdown."
-#~ msgstr "Vypnutí systému."
-
-#~ msgid "Unknown reason."
-#~ msgstr "Neznámý důvod."
-
-#~ msgid "There was an error in the protocol stream: %1"
-#~ msgstr "Nastala chyba v protokolovém proudu: %1"
-
-#~ msgid "Host not found."
-#~ msgstr "Hostitel nenalezen."
-
-#~ msgid "Address is already in use."
-#~ msgstr "Adresa je již používána."
-
-#~ msgid "Cannot recreate the socket."
-#~ msgstr "Nelze znovu vytvořit socket."
-
-#~ msgid "Cannot bind the socket again."
-#~ msgstr "Nelze znovu propojit socket."
-
-#~ msgid "Socket is already connected."
-#~ msgstr "Socket je již připojen."
-
-#~ msgid "Socket is not connected."
-#~ msgstr "Socket není připojen."
-
-#~ msgid "Socket is not bound."
-#~ msgstr "Socket není propojen."
-
-#~ msgid "Socket has not been created."
-#~ msgstr "Socket nebyl vytvořen."
-
-#~ msgid ""
-#~ "The socket operation would block. You should not see this error: please "
-#~ "use \"Report Bug\" from the Help menu."
-#~ msgstr ""
-#~ "Problém se soketem. Tato chyba by neměla nastat. Prosím použijte "
-#~ "\"Nahlásit chybu\" z nabídky Nápověda."
-
-#~ msgid "Connection refused."
-#~ msgstr "Spojení bylo odmítnuto."
-
-#~ msgid "Connection attempt already in progress."
-#~ msgstr "Pokus o spojení již probíhá."
-
-#~ msgid "Network failure."
-#~ msgstr "Selhání sítě."
-
-#~ msgid "Operation is not supported."
-#~ msgstr "Operace není podporována."
-
-#~ msgid "Socket timed out."
-#~ msgstr "Socket vypršel."
-
-#~ msgid "There was a connection error: %1"
-#~ msgstr "Nastala chyba ve spojení: %1"
-
-#~ msgid "Unknown host."
-#~ msgstr "Neznámý hostitel."
-
-#~ msgid "Could not connect to a required remote resource."
-#~ msgstr "Nelze se připojit k požadovanému vzdálenému zdroji."
-
-#~ msgid ""
-#~ "It appears we have been redirected to another server; I do not know how "
-#~ "to handle this."
-#~ msgstr ""
-#~ "Zdá se, že jsme byli přesměrováni na jiný server. Nevím, jak se zachovat."
-
-#~ msgid "Unsupported protocol version."
-#~ msgstr "Nepodporovaná verze protokolu."
-
-#~ msgid "Unknown error."
-#~ msgstr "Neznámá chyba."
-
-#~ msgid "There was a negotiation error: %1"
-#~ msgstr "Nastala chyba při vyjednávání: %1"
-
-#~ msgid "Server rejected our request to start the TLS handshake."
-#~ msgstr "Server odmítl požadavek na zahájení TLS handshake."
-
-#~ msgid "Failed to establish a secure connection."
-#~ msgstr "Navázání bezpečného spojení selhalo."
-
-#~ msgid "There was a Transport Layer Security (TLS) error: %1"
-#~ msgstr "Nastala chyba v TLS: %1"
-
-#~ msgid "Login failed with unknown reason."
-#~ msgstr "Přihlášení z neznámého důvodu selhalo."
-
-#~ msgid "No appropriate authentication mechanism available."
-#~ msgstr "Není dostupný vhodný ověřovací mechanismus."
-
-#~ msgid "Bad SASL authentication protocol."
-#~ msgstr "Špatný ověřovací protokol SASL."
-
-#~ msgid "Server failed mutual authentication."
-#~ msgstr "Server nezvládl vzájemné ověření."
-
-#~ msgid "Encryption is required but not present."
-#~ msgstr "Je vyžadováno šifrování, ale není dostupné."
-
-#~ msgid "Invalid user ID."
-#~ msgstr "Neplatné ID uživatele."
-
-#~ msgid "Invalid mechanism."
-#~ msgstr "Neplatný mechanismus."
-
-#~ msgid "Invalid realm."
-#~ msgstr "Neplatná doména."
-
-#~ msgid "Mechanism too weak."
-#~ msgstr "Mechanismus je příliš slabý."
-
-#~ msgid "Wrong credentials supplied. (check your user ID and password)"
-#~ msgstr ""
-#~ "Zadané špatné přihlašovací údaje (zkontrolujte vaše uživatelské ID a "
-#~ "heslo)"
-
-#~ msgid "Temporary failure, please try again later."
-#~ msgstr "Dočasné selhání; prosím zkuste to znovu později."
-
-#~ msgid "There was an error authenticating with the server: %1"
-#~ msgstr "Nastala chyba v ověření na serveru: %1"
-
-#~ msgid "Transport Layer Security (TLS) problem."
-#~ msgstr "Problém s TLS (Transport Layer Security)."
-
-#~ msgid "Simple Authentication and Security Layer (SASL) problem."
-#~ msgstr "Problém se SASL (Simple Authentication and Security Layer)."
-
-#~ msgid "There was an error in the security layer: %1"
-#~ msgstr "Nastala chyba v bezpečnostní vrstvě: %1"
-
-#~ msgid "No permission to bind the resource."
-#~ msgstr "Není povoleno připojit zdroj."
-
-#~ msgid "The resource is already in use."
-#~ msgstr "Zdroj je již používán."
-
-#~ msgid "Could not bind a resource: %1"
-#~ msgstr "Nelze se připojit ke zdroji: %1"
-
-#~ msgid "Connection problem with Jabber server %1"
-#~ msgstr "Chyba při připojování k Jabber serveru %1"
-
-#~ msgid ""
-#~ "The Jabber user %1 removed %2's subscription to him/her. This account "
-#~ "will no longer be able to view his/her online/offline status. Do you want "
-#~ "to delete the contact?"
-#~ msgstr ""
-#~ "Uživatel Jabberu %1 odebral uživateli %2 oprávnění. Tento účet již nebude "
-#~ "schopen vidět jeho online stav. Přejete si tento kontakt smazat?"
-
-#~ msgid "Notification"
-#~ msgstr "Upozornění"
-
-#~ msgid "Keep"
-#~ msgstr "Ponechat"
-
-#~ msgid "A password is required to join the room %1."
-#~ msgstr "Ke vstupu do místnosti %1 je požadováno heslo."
-
-#~ msgid "Error trying to join %1: nickname %2 is already in use"
-#~ msgstr "Chyba při pokusu k připojení k %1: přezdívka %2 je již používána"
-
-#~ msgid "Provide your nickname"
-#~ msgstr "Zadejte přezdívku"
-
-#~ msgid "You cannot join the room %1 because you have been banned"
-#~ msgstr "Nemůžete se připojit do místnosti %1, protože jste byl vykázán(a)"
-
-#~ msgid "Jabber Group Chat"
-#~ msgstr "Skupinový rozhovor Jabber"
-
-#~ msgid ""
-#~ "You cannot join the room %1 because the maximum number of users has been "
-#~ "reached"
-#~ msgstr ""
-#~ "Nemůžete se připojit do místnosti %1, protože již byl dosažen maximální "
-#~ "počet účastníků"
-
-#~ msgid "No reason given by the server"
-#~ msgstr "Server neudal důvod"
-
-#~ msgid ""
-#~ "There was an error processing your request for groupchat %1. (Reason: %2, "
-#~ "Code %3)"
-#~ msgstr ""
-#~ "Nastala chyba při zpracovávání požadavku na skupinový rozhovor %1. (Důvod "
-#~ "%2, kód %3)"
-
-#~ msgid ""
-#~ "An error occurred while trying to remove the account:\n"
-#~ "%1"
-#~ msgstr ""
-#~ "Při pokusu o odstranění účtu nastala chyba:\n"
-#~ "%1"
-
-#~ msgid "Jabber Account Unregistration"
-#~ msgstr "Odregistrování Jabber účtu"
-
-#~ msgid "You cannot see each others' status."
-#~ msgstr "Nemůžete vidět stav tohoto kontaktu, ani on nemůže vidět váš stav."
-
-#~ msgid ""
-#~ "You can see this contact's status, but he/she cannot see your status."
-#~ msgstr "Můžete vidět stav tohoto kontaktu, ale on nemůže vidět váš stav."
-
-#~ msgid "This contact can see your status, but you cannot see his/her status."
-#~ msgstr "Tento kontakt může vidět váš stav, ale vy nemůžete vidět jeho stav."
-
-#~ msgid "You can see each others' status."
-#~ msgstr "Můžete vidět stav tohoto kontaktu i on může vidět váš stav."
-
-#~ msgid "Client"
-#~ msgstr "Klient"
-
-#~ msgid "Timestamp"
-#~ msgstr "Časové razítko"
-
-#~ msgid "Downloading of Jabber contact photo failed."
-#~ msgstr "Selhalo stahování fotky Jabber kontaktu."
-
-#~ msgid "Groupchat bookmark"
-#~ msgstr "Záložka skupinového rozhovoru"
-
-#~ msgid "Authorization"
-#~ msgstr "Autorizace"
-
-#~ msgid "(Re)send Authorization To"
-#~ msgstr "(Pře)poslat požadavek na autorizaci pro "
-
-#~ msgid "(Re)request Authorization From"
-#~ msgstr "(Pře)poslat požadavek na autorizaci od"
-
-#~ msgid "Remove Authorization From"
-#~ msgstr "Odebrat oprávnění od"
-
-#~ msgid "Set Availability"
-#~ msgstr "Nastavit dostupnost"
-
-#~ msgid "Online"
-#~ msgstr "Připojen."
-
-#~ msgid "Free to Chat"
-#~ msgstr "Volný k rozhovoru"
-
-#~ msgid "Away"
-#~ msgstr "Pryč"
-
-#~ msgid "Extended Away"
-#~ msgstr "Rozšířené \"pryč\""
-
-#~ msgid "Do Not Disturb"
-#~ msgstr "Nerušit"
-
-#~ msgid "Invisible"
-#~ msgstr "Neviditelný"
-
-#~ msgid "Select Resource"
-#~ msgstr "Vybrat zdroj"
-
-#~ msgid "Automatic (best/default resource)"
-#~ msgstr "Automatický (nejlepší/výchozí zdroj)"
-
-#~ msgid "Voice call"
-#~ msgstr "Hlasový rozhovor"
-
-#~ msgid "The original message is: <i>\" %1 \"</i><br />"
-#~ msgstr "Původní zpráva je: <i>\" %1 \"</i><br />"
-
-#~ msgid ""
-#~ "<qt><i>%1</i> has invited you to join the conference <b>%2</b><br />"
-#~ "%3<br />If you want to accept and join, just <b>enter your nickname</b> "
-#~ "and press ok<br />If you want to decline, press cancel</qt>"
-#~ msgstr ""
-#~ "<qt><i>%1</i> vás pozval/a do konference <b>%2</b><br />%3 <br />Pokud si "
-#~ "přejete pozvání přijmout, zadejte svou <b>přezdívku</b> a stiskněte OK. "
-#~ "<br />Pokud si přejete odmítnout, stiskněte Zrušit</qt>"
-
-#~ msgid "Invited to a conference - Jabber Plugin"
-#~ msgstr "Pozvání do konference - Jabber modul"
-
-#~ msgid "Message has been displayed"
-#~ msgstr "Zpráva byla zobrazena"
-
-#~ msgid "Message has been delivered"
-#~ msgstr "Zpráva byla doručena"
-
-#~ msgid "Message stored on the server, contact offline"
-#~ msgstr "Zpráva uložena na serveru, kontakt je offline"
-
-#~ msgid "%1 has ended his/her participation in the chat session."
-#~ msgstr "%1 ukončil/a účast v tomto rozhovoru."
-
-#~ msgid "Your message could not be delivered: \"%1\", Reason: \"%2\""
-#~ msgstr "Vaše zpráva nemohla být doručena: \"%1\", důvod: \"%2\""
-
-#~ msgid ""
-#~ "Do you also want to remove user %1's authorization to see your status?"
-#~ msgstr ""
-#~ "Přejete si též odstranit autorizaci uživatele %1 pro zjištění vašeho "
-#~ "stavu?"
-
-#~ msgid "Kopete File Transfer"
-#~ msgstr "Přenos souborů Kopete"
-
-#~ msgid ""
-#~ "You have preselected a resource for contact %1, but you still have open "
-#~ "chat windows for this contact. The preselected resource will only apply "
-#~ "to newly opened chat windows."
-#~ msgstr ""
-#~ "Přednastavili jste zdroj pro kontakt %1, ale máte s tímto kontaktem stále "
-#~ "otevřená okna rozhovoru. Přednastavený zdroj se použije pouze pro nově "
-#~ "otevřená okna."
-
-#~ msgid "Jabber Resource Selector"
-#~ msgstr "Výběr Jabber služeb"
-
-#~ msgid "Change nickname"
-#~ msgstr "Změnit přezdívku"
-
-#~ msgid "Change nickname - Jabber Plugin"
-#~ msgstr "Změnit přezdívku - Jabber modul"
-
-#~ msgid "Please enter the new nickname you want to have in the room <i>%1</i>"
-#~ msgstr ""
-#~ "Prosím, zadejte novou přezdívku, kterou si přejete používat v místnosti "
-#~ "<i>%1</i>"
-
-#~ msgid "Choose Account"
-#~ msgstr "Zvolit účet"
-
-#~ msgid "Choose an account to handle the URL %1"
-#~ msgstr "Zvolte účet pro obsluhu URL %1"
-
-#~ msgid "Do you want to add '%1' to your contact list?"
-#~ msgstr "Přejete si přidat '%1' do svého seznamu kontaktů?"
-
-#~ msgid "Add"
-#~ msgstr "Přidat"
-
-#~ msgid "Do Not Add"
-#~ msgstr "Nepřidávat"
-
-#~ msgid "Do you want to remove '%1' from your contact list?"
-#~ msgstr "Přejete si odebrat '%1' ze svého seznamu kontaktů?"
-
-#~ msgid "Remove"
-#~ msgstr "Odstranit"
-
-#~ msgid "Do Not Remove"
-#~ msgstr "Neodstraňovat"
-
-#~ msgid "Please enter your nickname for the room %1"
-#~ msgstr "Prosím, zadejte jméno pro místnost %1"
-
-#~ msgid "You have been invited to %1"
-#~ msgstr "Byli jste odpojeni do %1"
-
-#~ msgid "Jabber"
-#~ msgstr "Jabber"

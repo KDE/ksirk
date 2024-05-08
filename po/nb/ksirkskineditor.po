@@ -2209,27 +2209,3 @@ msgstr "Feil: Ukjente strengdata i tema: "
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "Kritisk feil"
-
-#~ msgid "Exit Anyway?"
-#~ msgstr "Vil du avslutte likevel?"
-
-#~ msgid "Do not quit"
-#~ msgstr "Ikke avslutt"
-
-#~ msgid "Really delete country?"
-#~ msgstr "Vil du slette landet?"
-
-#~ msgid "Really delete continent?"
-#~ msgstr "Vil du slette verdensdelen?"
-
-#~ msgid "Really delete goal?"
-#~ msgstr "Vil du slette målet?"
-
-#~ msgid "Really delete nationality?"
-#~ msgstr "Vil du slette nasjonaliteten?"
-
-#~ msgid "Error"
-#~ msgstr "Feil"
-
-#~ msgid "KsirK Skin Editor Preferences"
-#~ msgstr "Innstillinger for KsirK-temaredigering"

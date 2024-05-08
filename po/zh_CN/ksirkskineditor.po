@@ -33,11 +33,10 @@ msgid "Error: no player to destroy"
 msgstr "错误: 没有玩家可被消灭"
 
 #: goal.cpp:213
-#, fuzzy, kde-format
-#| msgid "KsirK - Goal Display"
+#, kde-format
 msgctxt "@title:window"
 msgid "Goal Display"
-msgstr "KsirK - 目标显示"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
 #: ksirkcontinentdefinition.ui:13
@@ -1151,8 +1150,7 @@ msgid ""
 msgstr ""
 
 #: ksirkSkinEditorConfigDialog.cpp:55
-#, fuzzy, kde-format
-#| msgid "Preferences"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "首选项"
@@ -1810,8 +1808,7 @@ msgid "Open a saved skin"
 msgstr ""
 
 #: mainwindow.cpp:328
-#, fuzzy, kde-format
-#| msgid "Load &Recent"
+#, kde-format
 msgctxt "@action"
 msgid "Load &Recent"
 msgstr "加载最近(&R)"
@@ -1858,18 +1855,16 @@ msgid "Save and Quit"
 msgstr ""
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "New Country"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Country Name"
-msgstr "新建国家"
+msgstr ""
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new nationality"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new country:"
-msgstr "输入新国家的名称"
+msgstr ""
 
 #: mainwindow.cpp:1315
 #, kde-format
@@ -1883,18 +1878,16 @@ msgid "Delete Country Confirmation"
 msgstr ""
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "New Continent"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Continent Name"
-msgstr "新建大陆"
+msgstr ""
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new nationality"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new continent:"
-msgstr "输入新国家的名称"
+msgstr ""
 
 #: mainwindow.cpp:1344
 #, kde-format
@@ -1902,11 +1895,10 @@ msgid "Do you really want to delete continent '%1'?"
 msgstr ""
 
 #: mainwindow.cpp:1344
-#, fuzzy, kde-format
-#| msgid "Select Continents"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Continent Confirmation"
-msgstr "选择大陆"
+msgstr ""
 
 #: mainwindow.cpp:1889
 #, kde-format
@@ -1920,18 +1912,16 @@ msgid "Delete Goal Confirmation"
 msgstr ""
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "New nationality name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Nationality Name"
-msgstr "新国家名称"
+msgstr ""
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new nationality"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new nationality:"
-msgstr "输入新国家的名称"
+msgstr ""
 
 #: mainwindow.cpp:1958
 #, kde-format
@@ -1996,14 +1986,7 @@ msgid "Error - Unknown skin string data: "
 msgstr "错误 - 未知的皮肤字符串数据： "
 
 #: skinSpritesData.cpp:102
-#, fuzzy, kde-format
-#| msgid "Fatal Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "严重错误"
-
-#~ msgid "Really delete nationality?"
-#~ msgstr "真要删除该国家吗？"
-
-#~ msgid "Error"
-#~ msgstr "错误"

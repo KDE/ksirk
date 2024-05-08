@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-07 00:37+0000\n"
-"PO-Revision-Date: 2024-05-06 05:45+0200\n"
+"PO-Revision-Date: 2024-05-07 04:57+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1225,8 +1225,7 @@ msgstr ""
 "დეტალები მარჯვენა პანელში."
 
 #: ksirkSkinEditorConfigDialog.cpp:55
-#, fuzzy, kde-format
-#| msgid "Preferences"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "მორგება"
@@ -2016,8 +2015,7 @@ msgid "Open a recently saved skin"
 msgstr "ახლახანს შენახული სკინის გახსნა"
 
 #: mainwindow.cpp:337
-#, fuzzy, kde-format
-#| msgid "Save the current skin"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current skin"
 msgstr "მიმდინარე სკინის შენახვა"
@@ -2037,35 +2035,31 @@ msgstr "გაქვთ შეუნახავი ცვლილებებ�
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
-msgstr ""
+msgstr "შეუნახავი ცვლილებები"
 
 #: mainwindow.cpp:528
-#, fuzzy, kde-format
-#| msgid "Quit without saving"
+#, kde-format
 msgctxt "@action:button"
 msgid "Quit Without Saving"
 msgstr "შენახვის გარეშე გასვლა"
 
 #: mainwindow.cpp:529
-#, fuzzy, kde-format
-#| msgid "Save then quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save and Quit"
 msgstr "შენახვა და გასვლა"
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "New country name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Country Name"
 msgstr "ახალი ქვეყნის სახელი"
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new country"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new country:"
-msgstr "შეიყვანთ ახალი ქვეყნის სახელი"
+msgstr "შეიყვანთ ახალი ქვეყნის სახელი:"
 
 #: mainwindow.cpp:1315
 #, kde-format
@@ -2076,21 +2070,19 @@ msgstr "მართლა გნებავთ, წაშალოთ ქვ�
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Country Confirmation"
-msgstr ""
+msgstr "ქვეყნის წაშლის დადასტურება"
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "New continent name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Continent Name"
 msgstr "ახალი კონტინენტის სახელი"
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new continent"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new continent:"
-msgstr "შეიყვანეთ ახალი კონტინენტის სახელი"
+msgstr "შეიყვანეთ ახალი კონტინენტის სახელი:"
 
 #: mainwindow.cpp:1344
 #, kde-format
@@ -2098,11 +2090,10 @@ msgid "Do you really want to delete continent '%1'?"
 msgstr "მართლა გნებავთ, წაშალოთ კონტინენტი '%1'?"
 
 #: mainwindow.cpp:1344
-#, fuzzy, kde-format
-#| msgid "Select Continents"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Continent Confirmation"
-msgstr "აირჩიეთ კონტინენტები"
+msgstr "კონტინენტის წაშლის დადასტურება"
 
 #: mainwindow.cpp:1889
 #, kde-format
@@ -2113,21 +2104,19 @@ msgstr "მართლა გნებავთ, წაშალოთ მი�
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Goal Confirmation"
-msgstr ""
+msgstr "მიზნის წაშლის დადასტურება"
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "New nationality name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Nationality Name"
 msgstr "ახალი ეროვნების სახელი"
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new nationality"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new nationality:"
-msgstr "შეიყვანეთ ახალი ეროვნების სახელი"
+msgstr "შეიყვანეთ ახალი ეროვნების სახელი:"
 
 #: mainwindow.cpp:1958
 #, kde-format
@@ -2138,11 +2127,10 @@ msgstr "მართლა გნებავთ, წაშალოთ ერ�
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Nationality Confirmation"
-msgstr ""
+msgstr "ეროვნების წაშლის დადასტურება"
 
 #: onu.cpp:78
-#, fuzzy, kde-format
-#| msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+#, kde-format
 msgid "Invalid skin definition file format. Expected %1 and got %2"
 msgstr ""
 "შეცდომა - არასწორი სკინის აღწერის ფაილის ფორმატი. მოველოდი %1, მივიღე %2"
@@ -2175,8 +2163,7 @@ msgstr ""
 "%2."
 
 #: onu.cpp:984
-#, fuzzy, kde-format
-#| msgid "PoolLoader"
+#, kde-format
 msgctxt "@title:window"
 msgid "PoolLoader"
 msgstr "PoolLoader"
