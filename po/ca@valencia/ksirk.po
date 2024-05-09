@@ -1,9 +1,9 @@
 # Translation of ksirk.po to Catalan (Valencian)
-# Copyright (C) 2008-2023 This_file_is_part_of_KDE
+# Copyright (C) 2008-2024 This_file_is_part_of_KDE
 #
 # Albert Astals Cid <aacid@kde.org>, 2008.
 # Joan Juvanteny <jjuvan@grn.cat>, 2008.
-# Josep M. Ferrer <txemaq@gmail.com>, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2017, 2018, 2020, 2021, 2022, 2023.
+# Josep M. Ferrer <txemaq@gmail.com>, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2017, 2018, 2020, 2021, 2022, 2023, 2024.
 # Manuel Tortosa <manutortosa@chakra-project.org>, 2009, 2010.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2014, 2017, 2020, 2021.
 msgid ""
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-07 00:37+0000\n"
-"PO-Revision-Date: 2023-09-30 13:59+0200\n"
+"PO-Revision-Date: 2024-05-07 11:55+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -1075,86 +1075,74 @@ msgid "Legacy"
 msgstr "Herència"
 
 #: decoratedgameframe.cpp:100 kgamewin.cpp:349
-#, fuzzy, kde-format
-#| msgid "Next Player"
+#, kde-format
 msgctxt "@action"
 msgid "Next Player"
 msgstr "Jugador següent"
 
 #: decoratedgameframe.cpp:103
-#, fuzzy, kde-format
-#| msgid "Details"
+#, kde-format
 msgctxt "@action"
 msgid "Details"
 msgstr "Detalls"
 
 #: decoratedgameframe.cpp:106 kgamewin.cpp:332 kgamewin.cpp:1214
 #: kgamewin.cpp:1226 kgamewin.cpp:2383
-#, fuzzy, kde-format
-#| msgid "Goal"
+#, kde-format
 msgctxt "@action"
 msgid "Goal"
 msgstr "Objectiu"
 
 #: decoratedgameframe.cpp:138 decoratedgameframe.cpp:394
-#, fuzzy, kde-format
-#| msgid "Enable Arena"
+#, kde-format
 msgctxt "@action"
 msgid "Enable Arena"
 msgstr "Activa el camp de batalla"
 
 #: decoratedgameframe.cpp:142
-#, fuzzy, kde-format
-#| msgid "Attack 1"
+#, kde-format
 msgctxt "@action"
 msgid "Attack 1"
 msgstr "Ataca amb 1"
 
 #: decoratedgameframe.cpp:145
-#, fuzzy, kde-format
-#| msgid "Attack 2"
+#, kde-format
 msgctxt "@action"
 msgid "Attack 2"
 msgstr "Ataca amb 2"
 
 #: decoratedgameframe.cpp:148
-#, fuzzy, kde-format
-#| msgid "Attack 3"
+#, kde-format
 msgctxt "@action"
 msgid "Attack 3"
 msgstr "Ataca amb 3"
 
 #: decoratedgameframe.cpp:151
-#, fuzzy, kde-format
-#| msgid "Auto attack"
+#, kde-format
 msgctxt "@action"
 msgid "Auto Attack"
 msgstr "Ataca automàticament"
 
 #: decoratedgameframe.cpp:169
-#, fuzzy, kde-format
-#| msgid "Move 1"
+#, kde-format
 msgctxt "@action"
 msgid "Move 1"
 msgstr "Moviment 1"
 
 #: decoratedgameframe.cpp:172
-#, fuzzy, kde-format
-#| msgid "Move 5"
+#, kde-format
 msgctxt "@action"
 msgid "Move 5"
 msgstr "Moviment 5"
 
 #: decoratedgameframe.cpp:175
-#, fuzzy, kde-format
-#| msgid "Move 10"
+#, kde-format
 msgctxt "@action"
 msgid "Move 10"
 msgstr "Moviment 10"
 
 #: decoratedgameframe.cpp:400
-#, fuzzy, kde-format
-#| msgid "Disable Arena"
+#, kde-format
 msgctxt "@action"
 msgid "Disable Arena"
 msgstr "Desactiva el camp de batalla"
@@ -1228,17 +1216,17 @@ msgstr "Port:"
 #: Dialogs/kplayersetupwidget.cpp:250
 #, kde-format
 msgid "Name already in use. Please choose another one."
-msgstr "El nom ja es troba en ús. Per favor, tria'n un altre."
+msgstr "El nom ja es troba en ús. Tria'n un altre."
 
 #: Dialogs/kplayersetupwidget.cpp:252
 #, kde-format
 msgid "Empty name. Please choose another one."
-msgstr "El nom està buit. Per favor, tria'n un altre."
+msgstr "El nom està buit. Tria'n un altre."
 
 #: Dialogs/kplayersetupwidget.cpp:295
 #, kde-format
 msgid "Player Number %1, please type in your name and choose your nation:"
-msgstr "Jugador número %1. Per favor, escriu el teu nom i tria la teua nació:"
+msgstr "Jugador número %1. Escriu el teu nom i tria la teua nació:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: Dialogs/newGameDialog.ui:26
@@ -1291,10 +1279,9 @@ msgstr "Una llista desplegable que mostra totes les aparences disponibles."
 
 #. i18n: ectx: property (text), widget (KNSWidgets::Button, ghnsbutton)
 #: Dialogs/newGameDialog.ui:123
-#, fuzzy, kde-format
-#| msgid "Download New Skins..."
+#, kde-format
 msgid "Download New Skins…"
-msgstr "Baixa aparences noves..."
+msgstr "Baixa aparences noves…"
 
 #. i18n: ectx: property (configFile), widget (KNSWidgets::Button, ghnsbutton)
 #: Dialogs/newGameDialog.ui:126
@@ -1313,7 +1300,7 @@ msgstr "Tipus d'objectiu"
 #, kde-format
 msgid "Choose this for players to have to conquer all the world to win."
 msgstr ""
-"Seleccioneu-la si voleu que els jugadors hagen de conquerir tot el món per a "
+"Marqueu-la si voleu que els jugadors hagen de conquerir tot el món per a "
 "guanyar."
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioWorld)
@@ -1332,7 +1319,7 @@ msgstr "Con&questa mundial"
 #: Dialogs/newGameDialog.ui:169
 #, kde-format
 msgid "Choose this to have a goal assigned to each player."
-msgstr "Seleccioneu-la per a assignar un objectiu a cada jugador."
+msgstr "Marqueu-la per a assignar un objectiu a cada jugador."
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioGoal)
 #: Dialogs/newGameDialog.ui:172
@@ -1360,10 +1347,9 @@ msgstr "Cancel·la"
 #. i18n: ectx: property (text), widget (QPushButton, nextButton)
 #: Dialogs/newGameDialog.ui:250 Dialogs/qplayersetupdialog.ui:153
 #: Dialogs/tcpconnectwidget.ui:125
-#, fuzzy, kde-format
-#| msgid "Next >>"
+#, kde-format
 msgid "Next"
-msgstr "Següent >>"
+msgstr "Següent"
 
 #: Dialogs/newGameDialogImpl.cpp:128 newgamesetup.cpp:44
 #, kde-format
@@ -1377,8 +1363,7 @@ msgstr ""
 #: Dialogs/newGameDialogImpl.cpp:129 GameLogic/aiplayer.cpp:506
 #: newgamesetup.cpp:45 Sprites/skinSpritesData.cpp:89
 #: Sprites/skinSpritesData.cpp:105
-#, fuzzy, kde-format
-#| msgid "Fatal Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "Error fatal"
@@ -1440,10 +1425,9 @@ msgstr "Xarxa"
 #. i18n: ectx: property (text), widget (QPushButton, previousButton)
 #: Dialogs/newGameSummary.ui:226 Dialogs/qplayersetupdialog.ui:146
 #: Dialogs/tcpconnectwidget.ui:118
-#, fuzzy, kde-format
-#| msgid "<< Previous"
+#, kde-format
 msgid "Previous"
-msgstr "<< Anterior"
+msgstr "Anterior"
 
 #. i18n: ectx: property (text), widget (QPushButton, finishButton)
 #: Dialogs/newGameSummary.ui:236
@@ -1597,8 +1581,7 @@ msgstr[1] ""
 "este siga l'error núm. 2232 a www.gna.org."
 
 #: GameLogic/gameautomaton.cpp:303
-#, fuzzy, kde-format
-#| msgid "Network Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Network Configuration"
 msgstr "Configuració de xarxa"
@@ -1614,11 +1597,10 @@ msgid "Do you really want to end your current game and join another?"
 msgstr "Segur que voleu acabar la partida i entrar en una altra?"
 
 #: GameLogic/gameautomaton.cpp:1191
-#, fuzzy, kde-format
-#| msgid "New game confirmation"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Game Confirmation"
-msgstr "Confirmació de la partida nova"
+msgstr "Confirmeu de partida nova"
 
 #: GameLogic/gameautomaton.cpp:1191
 #, kde-format
@@ -1633,17 +1615,15 @@ msgstr ""
 "%1 (%2) s'ha unit a la partida. S'està esperant que es connecten %3 jugadors"
 
 #: GameLogic/gameautomaton.cpp:1468
-#, fuzzy, kde-format
-#| msgid "Please choose another name"
+#, kde-format
 msgid "Please choose another name."
-msgstr "Seleccioneu un altre nom"
+msgstr "Seleccioneu un altre nom."
 
 #: GameLogic/gameautomaton.cpp:1468
-#, fuzzy, kde-format
-#| msgid "KsirK - Name already used!"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Already Used"
-msgstr "KsirK - El nom ja es troba en ús!"
+msgstr "El nom ja es troba en ús"
 
 #: GameLogic/gameautomaton.cpp:1474
 #, kde-format
@@ -1662,17 +1642,15 @@ msgid "Player%1"
 msgstr "Jugador%1"
 
 #: GameLogic/gameautomaton.cpp:1531
-#, fuzzy, kde-format
-#| msgid "Please choose another nation"
+#, kde-format
 msgid "Please choose another nation."
-msgstr "Seleccioneu una altra nació"
+msgstr "Seleccioneu una altra nació."
 
 #: GameLogic/gameautomaton.cpp:1531
-#, fuzzy, kde-format
-#| msgid "KsirK - Nation already used!"
+#, kde-format
 msgctxt "@title:window"
 msgid "Nation Already Used"
-msgstr "KsirK - Esta nació ja s'utilitza!"
+msgstr "La nació ja s'utilitza"
 
 #: GameLogic/gameautomaton.cpp:1623
 #, kde-format
@@ -1684,29 +1662,25 @@ msgstr ""
 "Què voleu fer?"
 
 #: GameLogic/gameautomaton.cpp:1624
-#, fuzzy, kde-format
-#| msgid "Starting a new game or exit."
+#, kde-format
 msgctxt "@title:window"
 msgid "Starting a New Game or Exit."
 msgstr "Comença una partida nova o ix."
 
 #: GameLogic/gameautomaton.cpp:1625
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Game"
 msgstr "Partida nova"
 
 #: GameLogic/gameautomaton.cpp:1626
-#, fuzzy, kde-format
-#| msgid "Exit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Exit"
 msgstr "Ix"
 
 #: GameLogic/gameautomaton.cpp:1627
-#, fuzzy, kde-format
-#| msgid "Do Nothing"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Nothing"
 msgstr "No faces res"
@@ -1723,11 +1697,10 @@ msgstr ""
 "En un futur, açò es millorarà."
 
 #: GameLogic/gameautomaton.cpp:1650
-#, fuzzy, kde-format
-#| msgid "KsirK - Lost connection to client!"
+#, kde-format
 msgctxt "@title:window"
 msgid "Lost Connection to Client"
-msgstr "KsirK - S'ha perdut la connexió amb el client!"
+msgstr "S'ha perdut la connexió amb el client"
 
 #: GameLogic/gameautomaton.cpp:1652
 #, kde-format
@@ -1760,11 +1733,10 @@ msgstr ""
 "jugador ho puga veure!"
 
 #: GameLogic/gameautomaton.cpp:1902
-#, fuzzy, kde-format
-#| msgid "KsirK - Displaying Goal"
+#, kde-format
 msgctxt "@title:window"
 msgid "Displaying Goal"
-msgstr "KsirK - Mostra l'objectiu"
+msgstr "Mostra l'objectiu"
 
 #: GameLogic/gameautomaton.cpp:2088
 #, kde-format
@@ -1793,11 +1765,10 @@ msgstr ""
 "Torneu-ho a provar."
 
 #: GameLogic/gameautomaton.cpp:2387
-#, fuzzy, kde-format
-#| msgid "KsirK - Invalid password!"
+#, kde-format
 msgctxt "@title:window"
 msgid "Invalid Password"
-msgstr "KsirK - Contrasenya no vàlida!"
+msgstr "Contrasenya no vàlida"
 
 #: GameLogic/gameautomaton.cpp:2588
 #, kde-format
@@ -1809,11 +1780,10 @@ msgstr ""
 "Segur que voleu perdre el torn?"
 
 #: GameLogic/gameautomaton.cpp:2589
-#, fuzzy, kde-format
-#| msgid "New game confirmation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Next Player Confirmation"
-msgstr "Confirmació de la partida nova"
+msgstr "Confirmeu de jugador següent"
 
 #: GameLogic/gameautomaton.cpp:2590
 #, kde-format
@@ -1837,19 +1807,16 @@ msgid "Error: no player to destroy"
 msgstr "S'ha produït un error: no hi ha cap jugador que s'haja de destruir"
 
 #: GameLogic/goal.cpp:231
-#, fuzzy, kde-format
-#| msgid "<br>%1 is still alive..."
+#, kde-format
 msgid "<br>%1 is still alive…"
-msgstr "<br>%1 encara està viu..."
+msgstr "<br>%1 encara està viu…"
 
 #: GameLogic/goal.cpp:238 GameLogic/goal.cpp:252
-#, fuzzy, kde-format
-#| msgid "<br>%2, you still have 1 country to conquer..."
-#| msgid_plural "<br>%2, you still have %1 countries to conquer..."
+#, kde-format
 msgid "<br>%2, you still have 1 country to conquer…"
 msgid_plural "<br>%2, you still have %1 countries to conquer…"
-msgstr[0] "<br>%2, encara has de conquerir 1 país..."
-msgstr[1] "<br>%2, encara has de conquerir %1 països..."
+msgstr[0] "<br>%2, encara has de conquerir 1 país…"
+msgstr[1] "<br>%2, encara has de conquerir %1 països…"
 
 #: GameLogic/goal.cpp:242
 #, kde-format
@@ -1862,13 +1829,7 @@ msgstr[1] ""
 "<br>Has assolit l'objectiu: %2 està mort i t'has apropiat de %1 països."
 
 #: GameLogic/goal.cpp:264
-#, fuzzy, kde-format
-#| msgid ""
-#| "<br>%2, you have enough countries but you still have to put more than 1 "
-#| "army on %3 of them..."
-#| msgid_plural ""
-#| "<br>%2, you have enough countries but you still have to put more than %1 "
-#| "armies on %3 of them..."
+#, kde-format
 msgid ""
 "<br>%2, you have enough countries but you still have to put more than 1 army "
 "on %3 of them…"
@@ -1877,10 +1838,10 @@ msgid_plural ""
 "armies on %3 of them…"
 msgstr[0] ""
 "<br>%2, té suficients països, però encara hi has de posar més d'1 batalló a "
-"%3 d'ells..."
+"%3 d'ells…"
 msgstr[1] ""
 "<br>%2, té suficients països, però encara hi has de posar més de %1 "
-"batallons a %3 d'ells..."
+"batallons a %3 d'ells…"
 
 #: GameLogic/goal.cpp:269
 #, kde-format
@@ -1895,15 +1856,13 @@ msgstr[0] "1 país en %2"
 msgstr[1] "%1 països en %2"
 
 #: GameLogic/goal.cpp:285
-#, fuzzy, kde-format
-#| msgid " and "
+#, kde-format
 msgctxt "@item:intext country list separator of last item"
 msgid " and "
 msgstr " i "
 
 #: GameLogic/goal.cpp:289
-#, fuzzy, kde-format
-#| msgid ", "
+#, kde-format
 msgctxt "@item:intext country list separator of non-last item"
 msgid ", "
 msgstr ", "
@@ -1917,17 +1876,15 @@ msgid "%1 in %2"
 msgstr "%1 de %2"
 
 #: GameLogic/goal.cpp:317
-#, fuzzy, kde-format
-#| msgid "KsirK - Goal Display"
+#, kde-format
 msgctxt "@title:window"
 msgid "Goal Display"
-msgstr "KsirK - Mostra l'objectiu"
+msgstr "Mostra l'objectiu"
 
 #: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:170
-#, fuzzy, kde-format
-#| msgid "No message..."
+#, kde-format
 msgid "No message…"
-msgstr "Sense missatges..."
+msgstr "Sense missatges…"
 
 #: GameLogic/KsirkChatModel.cpp:73
 #, kde-format
@@ -2012,85 +1969,73 @@ msgstr ""
 "No es pot carregar la imatge del botó %1<br>El programa no pot continuar"
 
 #: kgamewin.cpp:305
-#, fuzzy, kde-format
-#| msgid "New Standard TCP/IP Network Game"
+#, kde-format
 msgctxt "@action"
 msgid "New Standard TCP/IP Network Game"
 msgstr "Partida nova en xarxa TCP/IP estàndard"
 
 #: kgamewin.cpp:306
-#, fuzzy, kde-format
-#| msgid "New TCP/IP"
+#, kde-format
 msgctxt "@action"
 msgid "New TCP/IP"
 msgstr "TCP/IP nou"
 
 #: kgamewin.cpp:308
-#, fuzzy, kde-format
-#| msgid "Create a new standard TCP/IP network game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new standard TCP/IP network game"
 msgstr "Crea una partida nova en xarxa TCP/IP estàndard"
 
 #: kgamewin.cpp:323
-#, fuzzy, kde-format
-#| msgid "Join a Standard TCP/IP Network Game"
+#, kde-format
 msgctxt "@action"
 msgid "Join a Standard TCP/IP Network Game"
 msgstr "Unix-te a una partida en xarxa TCP/IP estàndard"
 
 #: kgamewin.cpp:324
-#, fuzzy, kde-format
-#| msgid "Join TCP/IP"
+#, kde-format
 msgctxt "@action"
 msgid "Join TCP/IP"
-msgstr "Unix-te per TCP/IP"
+msgstr "Unix-te a TCP/IP"
 
 #: kgamewin.cpp:326
-#, fuzzy, kde-format
-#| msgid "Join a standard TCP/IP network game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Join a standard TCP/IP network game"
 msgstr "Unix-te a una partida en xarxa TCP/IP estàndard"
 
 #: kgamewin.cpp:331
-#, fuzzy, kde-format
-#| msgid "Display the Current Player's Goal"
+#, kde-format
 msgctxt "@action"
 msgid "Display the Current Player's Goal"
 msgstr "Mostra l'objectiu del jugador actual"
 
 #: kgamewin.cpp:334
-#, fuzzy, kde-format
-#| msgid "Display the current player's goal"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Display the current player's goal"
 msgstr "Mostra l'objectiu del jugador actual"
 
 #: kgamewin.cpp:340
-#, fuzzy, kde-format
-#| msgid "Contextual Help"
+#, kde-format
 msgctxt "@action"
 msgid "Contextual Help"
 msgstr "Ajuda contextual"
 
 #: kgamewin.cpp:351
-#, fuzzy, kde-format
-#| msgid "Lets the next player play"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Let the next player play"
 msgstr "Passa el torn al jugador següent"
 
 #: kgamewin.cpp:355
-#, fuzzy, kde-format
-#| msgid "Finish moves"
+#, kde-format
 msgctxt "@action"
 msgid "Finish Moves"
 msgstr "Finalitza els moviments"
 
 #: kgamewin.cpp:357
-#, fuzzy, kde-format
-#| msgid "Finish moving the current sprites"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Finish moving the current sprites"
 msgstr "Finalitza els moviments dels sprites actuals"
@@ -2110,10 +2055,9 @@ msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
 msgstr "<font color=\"red\">%1 ha conquerit %2 des de %3</font>"
 
 #: kgamewin.cpp:728
-#, fuzzy, kde-format
-#| msgid "%1, you are defeated! Bye, bye..."
+#, kde-format
 msgid "%1, you are defeated! Bye, bye…"
-msgstr "%1, has estat derrotat! Passe-ho bé..."
+msgstr "%1, has estat derrotat! Passe-ho bé…"
 
 #: kgamewin.cpp:800
 #, kde-format
@@ -2166,11 +2110,10 @@ msgid "Before you quit, do you want to save your game?"
 msgstr "Vols guardar la partida abans d'eixir?"
 
 #: kgamewin.cpp:999
-#, fuzzy, kde-format
-#| msgid "New Local Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Game"
-msgstr "Partida local nova"
+msgstr "Carrega una partida"
 
 #: kgamewin.cpp:1037
 #, kde-format
@@ -2193,22 +2136,19 @@ msgstr[1] ""
 "amb %1 batallons!<br> Com vols defensar <font color=\"blue\">%4</font>?"
 
 #: kgamewin.cpp:1145
-#, fuzzy, kde-format
-#| msgid "Defend 1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Defend 1"
 msgstr "Defensa amb 1"
 
 #: kgamewin.cpp:1146
-#, fuzzy, kde-format
-#| msgid "Defend 2"
+#, kde-format
 msgctxt "@action:button"
 msgid "Defend 2"
 msgstr "Defensa amb 2"
 
 #: kgamewin.cpp:1147
-#, fuzzy, kde-format
-#| msgid "Defend-Auto"
+#, kde-format
 msgctxt "@action:button"
 msgid "Defend-Auto"
 msgstr "Defensa automàticament"
@@ -2305,7 +2245,7 @@ msgstr "Segur que vols acabar la partida actual i començar-ne una de nova?"
 #: kgamewin.cpp:2547
 #, kde-format
 msgid "New game confirmation"
-msgstr "Confirmació de la partida nova"
+msgstr "Confirmeu la partida nova"
 
 #: kgamewin.cpp:2547
 #, kde-format
@@ -2325,13 +2265,10 @@ msgstr ""
 "països veïns."
 
 #: kgamewin.cpp:2811
-#, fuzzy
-#| msgid ""
-#| "Start a new game or join a network game with the menu or the toolbar..."
 msgid "Start a new game or join a network game with the menu or the toolbar…"
 msgstr ""
 "Comença una partida nova o unix-te a una partida en xarxa amb el menú o la "
-"barra d'eines..."
+"barra d'eines…"
 
 #: kgamewin.cpp:2815
 msgid ""
@@ -2361,11 +2298,10 @@ msgid "Cannot save when waiting for a defense."
 msgstr "No es pot guardar quan s'està esperant per a defensar-se."
 
 #: kgamewinslots.cpp:441
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Game"
-msgstr "Partida nova"
+msgstr "Guardeu la partida"
 
 #: kgamewinslots.cpp:445
 #, kde-format
@@ -2417,10 +2353,9 @@ msgid "<b><u>Country details</u></b>"
 msgstr "<b><u>Detalls del país</u></b>"
 
 #: krightdialog.cpp:170
-#, fuzzy, kde-format
-#| msgid "<i>Fighting in progress...</i>"
+#, kde-format
 msgid "<i>Fighting in progress…</i>"
-msgstr "<i>Combat en curs...</i>"
+msgstr "<i>Combat en curs…</i>"
 
 #: krightdialog.cpp:222
 #, kde-format
@@ -2437,37 +2372,32 @@ msgstr[0] "<font color=\"blue\">Defensa</font> amb 1 batalló.<br>"
 msgstr[1] "<font color=\"blue\">Defensa</font> amb %1 batallons.<br>"
 
 #: krightdialog.cpp:265
-#, fuzzy, kde-format
-#| msgid "Stop Auto-Attack"
+#, kde-format
 msgctxt "@action:button"
 msgid "Stop Auto-Attack"
 msgstr "Para l'atac automàtic"
 
 #: krightdialog.cpp:273
-#, fuzzy, kde-format
-#| msgid "Stop Auto-Defense"
+#, kde-format
 msgctxt "@action:button"
 msgid "Stop Auto-Defense"
 msgstr "Para la defensa automàtica"
 
 # Botó per validar
 #: krightdialog.cpp:298
-#, fuzzy, kde-format
-#| msgid "Valid"
+#, kde-format
 msgctxt "@action:button"
 msgid "Valid"
 msgstr "Valida"
 
 #: krightdialog.cpp:299
-#, fuzzy, kde-format
-#| msgid "Recycle"
+#, kde-format
 msgctxt "@action:button"
 msgid "Recycle"
 msgstr "Reposiciona"
 
 #: krightdialog.cpp:300
-#, fuzzy, kde-format
-#| msgid "Done"
+#, kde-format
 msgctxt "@action:button"
 msgid "Done"
 msgstr "Fet"
@@ -2507,8 +2437,7 @@ msgid "<font color=\"blue\">lost armies: %1</font>"
 msgstr "<font color=\"blue\">batallons perduts: %1</font>"
 
 #: ksirkConfigDialog.cpp:37
-#, fuzzy, kde-format
-#| msgid "Preferences"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "Preferències"
@@ -2573,10 +2502,9 @@ msgid "KsirK"
 msgstr "KsirK"
 
 #: main.cpp:44
-#, fuzzy, kde-format
-#| msgid "KsirK - World Domination Strategy Game"
+#, kde-format
 msgid "World Domination Strategy Game"
-msgstr "KsirK - Joc d'estratègia de dominació mundial"
+msgstr "Joc d'estratègia de dominació mundial"
 
 #: main.cpp:46
 #, kde-format
@@ -2590,7 +2518,7 @@ msgid ""
 "the KsirK web site."
 msgstr ""
 "Si necessites ajuda o el manual d'usuari,\n"
-"per favor, mira la pàgina web de KsirK."
+"mira la pàgina web de KsirK."
 
 #: main.cpp:50
 #, kde-format
@@ -2668,7 +2596,7 @@ msgstr "Unix-te a una partida en xarxa TCP/IP estàndard"
 #: mainMenu.ui:118
 #, kde-format
 msgid "Load…"
-msgstr ""
+msgstr "Carrega…"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbQuit)
 #: mainMenu.ui:138
@@ -2736,643 +2664,3 @@ msgstr "Error - Dades desconegudes de tipus enter de l'aparença: "
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Error - Dades de tipus cadena de l'aparença desconegudes: "
-
-#~ msgid "Goal"
-#~ msgstr "Objectiu"
-
-#~ msgid "Next Player"
-#~ msgstr "Jugador següent"
-
-#~ msgid "Fatal Error!"
-#~ msgstr "Error fatal!"
-
-#~ msgid "KsirK - New game properties"
-#~ msgstr "KsirK - Propietats de la partida nova"
-
-#~ msgid "Player Setup"
-#~ msgstr "Configureu el jugador"
-
-#~ msgid "KsirK - Network configuration"
-#~ msgstr "KsirK - Configuració de xarxa"
-
-#~ msgid "Do nothing"
-#~ msgstr "No faces res"
-
-#~ msgid "KsirK - Error!"
-#~ msgstr "KsirK - Error!"
-
-#~ msgid "Really Next Player?"
-#~ msgstr "Segur el jugador següent?"
-
-#~ msgid "Error!"
-#~ msgstr "Error!"
-
-#~ msgctxt "@title:window"
-#~ msgid "KsirK - Load Game"
-#~ msgstr "KsirK - Carrega una partida"
-
-#~ msgctxt "@title:window"
-#~ msgid "KsirK - Save Game"
-#~ msgstr "KsirK - Guarda la partida"
-
-#~ msgid "Load..."
-#~ msgstr "Carrega..."
-
-#~ msgid "KsirK Preferences"
-#~ msgstr "Preferències de KsirK"
-
-#~ msgid "KsirK - Cannot load!"
-#~ msgstr "KsirK - No s'ha pogut carregar!"
-
-#~ msgid "KsirK - Error"
-#~ msgstr "KsirK - Error"
-
-#~ msgid "Nickname"
-#~ msgstr "Sobrenom"
-
-#~ msgid "Skin"
-#~ msgstr "Aparença"
-
-#~ msgid "Nb players"
-#~ msgstr "Nombre de jugadors"
-
-#~ msgid "Connection to the Jabber Network"
-#~ msgstr "Connexió amb la xarxa Jabber"
-
-#~ msgid "Jabber ID:"
-#~ msgstr "ID del Jabber:"
-
-#~ msgid "kleag@kdetalk.net"
-#~ msgstr "kleag@kdetalk.net"
-
-#~ msgid "12345678"
-#~ msgstr "12345678"
-
-#~ msgid "Password:"
-#~ msgstr "Contrasenya:"
-
-#~ msgid "Connect"
-#~ msgstr "Connecta"
-
-#~ msgid "State:"
-#~ msgstr "Estat:"
-
-#~ msgid "Joining a KsirK Jabber Chatroom"
-#~ msgstr "Estàs entrant en un grup de xat Jabber de KsirK"
-
-#~ msgid "Room JID:"
-#~ msgstr "JID del grup:"
-
-#~ msgid "Nickname:"
-#~ msgstr "Sobrenom:"
-
-#~ msgid "Room Password:"
-#~ msgstr "Contrasenya del grup:"
-
-#~ msgid "Join Room"
-#~ msgstr "Unix-te al grup"
-
-#~ msgid "Games in the Room"
-#~ msgstr "Partides en el grup"
-
-#~ msgid "Start a New Game"
-#~ msgstr "Inicia una partida nova"
-
-#~ msgid "Join Selected Game"
-#~ msgstr "Unix-te a la partida seleccionada"
-
-#~ msgid "Load a Saved Game..."
-#~ msgstr "Carrega una partida guardada..."
-
-#~ msgid ""
-#~ "<b>Note:</b> Playing over the Jabber network is an experimental feature "
-#~ "in KsirK.<br/>Particularly, the distribution of armies at game beginning "
-#~ "is very slow (expect something like one minute)."
-#~ msgstr ""
-#~ "<b>Nota:</b> Jugar a través de la xarxa Jabber és una característica "
-#~ "experimental de KsirK.<br/>En concret, la distribució dels batallons al "
-#~ "començament de la partida és molt lenta (podeu esperar prop d'un minut)."
-
-#~ msgid "Please connect first."
-#~ msgstr "Primer connecteu-vos."
-
-#~ msgid "Jabber Error"
-#~ msgstr "S'ha produït un error de Jabber"
-
-#~ msgid ""
-#~ "SSL support could not be initialized for account %1. This is most likely "
-#~ "because the QCA TLS plugin is not installed on your system."
-#~ msgstr ""
-#~ "No s'ha pogut iniciar el funcionament amb SSL per al compte %1. Açò és "
-#~ "possiblement a causa que el connector QCA TLS no està instal·lat en el "
-#~ "vostre sistema."
-
-#~ msgid "Jabber SSL Error"
-#~ msgstr "S'ha produït un error de SSL a Jabber"
-
-#~ msgid "The host name does not match the one in the certificate."
-#~ msgstr "El nom de màquina no coincidix amb el nom en el certificat."
-
-#~ msgid "The certificate is invalid."
-#~ msgstr "El certificat no és vàlid."
-
-#~ msgid "No certificate was presented."
-#~ msgstr "No s'ha presentat cap certificat."
-
-#~ msgid "The Certificate Authority rejected the certificate."
-#~ msgstr "L'autoritat certificadora ha rebutjat el certificat."
-
-#~ msgid "The certificate is not trusted."
-#~ msgstr "El certificat no és de confiança."
-
-#~ msgid "The signature is invalid."
-#~ msgstr "La signatura no és vàlida."
-
-#~ msgid "The Certificate Authority is invalid."
-#~ msgstr "L'autoritat certificadora no és vàlida."
-
-#~ msgid "Invalid certificate purpose."
-#~ msgstr "Finalitat no vàlida del certificat."
-
-#~ msgid "The certificate is self-signed."
-#~ msgstr "El certificat està autosignat."
-
-#~ msgid "The certificate has been revoked."
-#~ msgstr "El certificat ha sigut revocat."
-
-#~ msgid "Maximum certificate chain length was exceeded."
-#~ msgstr "S'ha ultrapassat la llargària màxima de cadena del certificat."
-
-#~ msgid "The certificate has expired."
-#~ msgstr "El certificat ha vençut."
-
-#~ msgid "The Certificate Authority has expired."
-#~ msgstr "L'autoritat certificadora ha vençut."
-
-#~ msgid "Validity is unknown."
-#~ msgstr "La validesa és desconeguda."
-
-#~ msgid ""
-#~ "<qt><p>The identity and the certificate of server %1 could not be "
-#~ "validated for account %2:</p><p>%3</p><p>%4</p><p>Do you want to continue?"
-#~ "</p></qt>"
-#~ msgstr ""
-#~ "<qt><p>La identitat i el certificat del servidor %1 no s'han pogut "
-#~ "validar per al compte %2:</p><p>%3</p><p>%4</p><p>Voleu continuar?</p></"
-#~ "qt>"
-
-#~ msgid ""
-#~ "<qt><p>The certificate of server %1 could not be validated for account "
-#~ "%2: %3</p><p>Do you want to continue?</p></qt>"
-#~ msgstr ""
-#~ "<qt><p>El certificat del servidor %1 no s'ha pogut validar per al compte "
-#~ "%2: %3</p><p>Voleu continuar?</p></qt>"
-
-#~ msgid "Jabber Connection Certificate Problem"
-#~ msgstr "Problema de certificació en la connexió de Jabber"
-
-#~ msgid ""
-#~ "An encrypted connection with the Jabber server could not be established."
-#~ msgstr ""
-#~ "No s'ha pogut establir cap connexió encriptada amb el servidor Jabber."
-
-#~ msgid "Jabber Connection Error"
-#~ msgstr "S'ha produït un error de connexió de Jabber"
-
-#~ msgid "Malformed packet received."
-#~ msgstr "S'ha rebut un paquet mal format."
-
-#~ msgid "There was an unrecoverable error in the protocol."
-#~ msgstr "S'ha produït un error no recuperable en el protocol."
-
-#~ msgid "Generic stream error."
-#~ msgstr "Error genèric de flux."
-
-#~ msgid "There was a conflict in the information received."
-#~ msgstr "S'ha produït un conflicte en la informació rebuda."
-
-#~ msgid "The stream timed out."
-#~ msgstr "El flux ha excedit el temps."
-
-#~ msgid "Internal server error."
-#~ msgstr "S'ha produït un error intern en el servidor."
-
-#~ msgid "Stream packet received from an invalid address."
-#~ msgstr "S'ha rebut un paquet del flux des d'una adreça no vàlida."
-
-#~ msgid "Malformed stream packet received."
-#~ msgstr "S'ha rebut un paquet del flux mal format."
-
-#~ msgid "Policy violation in the protocol stream."
-#~ msgstr "S'ha produït una violació de la política en el flux del protocol."
-
-#~ msgid "Resource constraint."
-#~ msgstr "Restricció de recurs."
-
-#~ msgid "System shutdown."
-#~ msgstr "Apagada del sistema."
-
-#~ msgid "Unknown reason."
-#~ msgstr "Motiu desconegut."
-
-#~ msgid "There was an error in the protocol stream: %1"
-#~ msgstr "S'ha produït un error en el flux del protocol: %1"
-
-#~ msgid "Host not found."
-#~ msgstr "No s'ha trobat el servidor."
-
-#~ msgid "Address is already in use."
-#~ msgstr "L'adreça ja es troba en ús."
-
-#~ msgid "Cannot recreate the socket."
-#~ msgstr "No s'ha pogut tornar a crear el sòcol."
-
-#~ msgid "Cannot bind the socket again."
-#~ msgstr "No es pot tornar a vincular el sòcol."
-
-#~ msgid "Socket is already connected."
-#~ msgstr "El sòcol ja està connectat."
-
-#~ msgid "Socket is not connected."
-#~ msgstr "El sòcol no està connectat."
-
-#~ msgid "Socket is not bound."
-#~ msgstr "El sòcol no està vinculat."
-
-#~ msgid "Socket has not been created."
-#~ msgstr "El sòcol no s'ha creat."
-
-#~ msgid ""
-#~ "The socket operation would block. You should not see this error: please "
-#~ "use \"Report Bug\" from the Help menu."
-#~ msgstr ""
-#~ "L'operació del sòcol es blocaria. No hauríeu de veure este error: "
-#~ "utilitzeu «Informeu d'un error» des del menú Ajuda."
-
-#~ msgid "Connection refused."
-#~ msgstr "S'ha rebutjat la connexió."
-
-#~ msgid "Connection timed out."
-#~ msgstr "La connexió ha excedit el temps."
-
-#~ msgid "Connection attempt already in progress."
-#~ msgstr "L'intent de connexió ja es troba en progrés."
-
-#~ msgid "Network failure."
-#~ msgstr "S'ha produït un error de la xarxa."
-
-#~ msgid "Operation is not supported."
-#~ msgstr "L'operació no està permesa."
-
-#~ msgid "Socket timed out."
-#~ msgstr "El sòcol ha excedit el temps."
-
-#~ msgid "There was a connection error: %1"
-#~ msgstr "S'ha produït un error de connexió: %1"
-
-#~ msgid "Unknown host."
-#~ msgstr "Màquina desconeguda."
-
-#~ msgid "Could not connect to a required remote resource."
-#~ msgstr "No s'ha pogut connectar amb un recurs remot requerit."
-
-#~ msgid ""
-#~ "It appears we have been redirected to another server; I do not know how "
-#~ "to handle this."
-#~ msgstr ""
-#~ "Pareix que ens han redirigit a un altre servidor, no sé com gestionar açò."
-
-#~ msgid "Unsupported protocol version."
-#~ msgstr "Versió del protocol no acceptada."
-
-#~ msgid "Unknown error."
-#~ msgstr "S'ha produït un error desconegut."
-
-#~ msgid "There was a negotiation error: %1"
-#~ msgstr "S'ha produït un error de negociació: %1"
-
-#~ msgid "Server rejected our request to start the TLS handshake."
-#~ msgstr ""
-#~ "El servidor ha rebutjat la nostra petició d'iniciar la conformitat de "
-#~ "connexió TLS."
-
-#~ msgid "Failed to establish a secure connection."
-#~ msgstr "No s'ha pogut establir una connexió segura."
-
-#~ msgid "There was a Transport Layer Security (TLS) error: %1"
-#~ msgstr "S'ha produït un error a Transport Layer Security (TLS): %1"
-
-#~ msgid "Login failed with unknown reason."
-#~ msgstr "No s'ha pogut fer l'inici de la sessió sense cap raó coneguda."
-
-#~ msgid "No appropriate authentication mechanism available."
-#~ msgstr "No hi ha cap mecanisme d'autenticació adient."
-
-#~ msgid "Bad SASL authentication protocol."
-#~ msgstr "Protocol d'autenticació SASL roín."
-
-#~ msgid "Server failed mutual authentication."
-#~ msgstr "El servidor ha fallat l'autenticació mútua."
-
-#~ msgid "Encryption is required but not present."
-#~ msgstr "Cal encriptació, però no està present."
-
-#~ msgid "Invalid user ID."
-#~ msgstr "ID d'usuari no vàlid."
-
-#~ msgid "Invalid mechanism."
-#~ msgstr "Mecanisme no vàlid."
-
-#~ msgid "Invalid realm."
-#~ msgstr "Domini no vàlid."
-
-#~ msgid "Mechanism too weak."
-#~ msgstr "Mecanisme massa dèbil."
-
-#~ msgid "Wrong credentials supplied. (check your user ID and password)"
-#~ msgstr ""
-#~ "S'han subministrat credencials equivocades (comproveu el vostre usuari i "
-#~ "contrasenya)"
-
-#~ msgid "Temporary failure, please try again later."
-#~ msgstr "Fallada temporal, torneu-ho a provar més tard."
-
-#~ msgid "There was an error authenticating with the server: %1"
-#~ msgstr "S'ha produït un error en autenticar-se amb el servidor: %1"
-
-#~ msgid "Transport Layer Security (TLS) problem."
-#~ msgstr "Problema de Transport Layer Security (TLS)."
-
-#~ msgid "Simple Authentication and Security Layer (SASL) problem."
-#~ msgstr "Problema al Simple Authentication and Security Layer (SASL)."
-
-#~ msgid "There was an error in the security layer: %1"
-#~ msgstr "S'ha produït un error en la capa de seguretat: %1"
-
-#~ msgid "No permission to bind the resource."
-#~ msgstr "No hi ha permís per a vincular el recurs."
-
-#~ msgid "The resource is already in use."
-#~ msgstr "El recurs ja es troba en ús."
-
-#~ msgid "Could not bind a resource: %1"
-#~ msgstr "No s'ha pogut vincular un recurs: %1"
-
-#~ msgid "Connection problem with Jabber server %1"
-#~ msgstr "Problema de connexió amb el servidor Jabber %1"
-
-#~ msgid ""
-#~ "The Jabber user %1 removed %2's subscription to him/her. This account "
-#~ "will no longer be able to view his/her online/offline status. Do you want "
-#~ "to delete the contact?"
-#~ msgstr ""
-#~ "L'usuari %1 de Jabber ha eliminat la subscripció de %2. En este compte ja "
-#~ "no es podrà visualitzar l'estat de connectat/desconnectat. Voleu eliminar "
-#~ "el contacte?"
-
-#~ msgid "Notification"
-#~ msgstr "Notificació"
-
-#~ msgid "Keep"
-#~ msgstr "Conserva"
-
-#~ msgid "A password is required to join the room %1."
-#~ msgstr "Es requerix una contrasenya per a accedir a la sala %1."
-
-#~ msgid "Error trying to join %1: nickname %2 is already in use"
-#~ msgstr ""
-#~ "S'ha produït un error en intentar accedir a %1: el sobrenom %2 ja es "
-#~ "troba en ús"
-
-#~ msgid "Provide your nickname"
-#~ msgstr "Indiqueu el vostre sobrenom"
-
-#~ msgid "You cannot join the room %1 because you have been banned"
-#~ msgstr "No podeu accedir a la sala %1 perquè hi heu estat vetat"
-
-#~ msgid "Jabber Group Chat"
-#~ msgstr "Xat de grup de Jabber"
-
-#~ msgid ""
-#~ "You cannot join the room %1 because the maximum number of users has been "
-#~ "reached"
-#~ msgstr ""
-#~ "No podeu accedir a la sala %1 perquè s'ha arribat al nombre màxim "
-#~ "d'usuaris"
-
-#~ msgid "No reason given by the server"
-#~ msgstr "El servidor no ha donat cap motiu"
-
-#~ msgid ""
-#~ "There was an error processing your request for groupchat %1. (Reason: %2, "
-#~ "Code %3)"
-#~ msgstr ""
-#~ "S'ha produït un error en processar la petició del xat de grup %1. (Motiu: "
-#~ "%2, codi %3)"
-
-#~ msgid ""
-#~ "An error occurred while trying to remove the account:\n"
-#~ "%1"
-#~ msgstr ""
-#~ "S'ha produït un error quan s'intentava eliminar el compte:\n"
-#~ "%1"
-
-#~ msgid "Jabber Account Unregistration"
-#~ msgstr "Baixa del registre d'un compte Jabber"
-
-#~ msgid "You cannot see each others' status."
-#~ msgstr "No podeu veure l'estat dels altres."
-
-#~ msgid ""
-#~ "You can see this contact's status, but he/she cannot see your status."
-#~ msgstr ""
-#~ "Podeu veure l'estat d'este contacte, però ell/ella no pot veure el vostre."
-
-#~ msgid "This contact can see your status, but you cannot see his/her status."
-#~ msgstr ""
-#~ "Este contacte pot veure el vostre estat, però no podeu veure el seu."
-
-#~ msgid "You can see each others' status."
-#~ msgstr "Podeu veure l'estat dels altres."
-
-#~ msgid "Client"
-#~ msgstr "Client"
-
-#~ msgid "Timestamp"
-#~ msgstr "Marca de temps"
-
-#~ msgid "Message"
-#~ msgstr "Missatge"
-
-#~ msgid "Downloading of Jabber contact photo failed."
-#~ msgstr "Ha fallat la baixada de la foto del contacte Jabber."
-
-#~ msgid "Groupchat bookmark"
-#~ msgstr "Adreces d'interés de grups de xat"
-
-#~ msgid "Authorization"
-#~ msgstr "Autorització"
-
-#~ msgid "(Re)send Authorization To"
-#~ msgstr "Re/envia l'autorització a"
-
-#~ msgid "(Re)request Authorization From"
-#~ msgstr "Re/demana l'autorització des de"
-
-#~ msgid "Remove Authorization From"
-#~ msgstr "Elimina l'autorització des de"
-
-#~ msgid "Set Availability"
-#~ msgstr "Establix la disponibilitat"
-
-#~ msgid "Online"
-#~ msgstr "Connectat"
-
-#~ msgid "Free to Chat"
-#~ msgstr "Lliure per a xat"
-
-#~ msgid "Away"
-#~ msgstr "Absent"
-
-#~ msgid "Extended Away"
-#~ msgstr "Absent durant una bona estona"
-
-#~ msgid "Do Not Disturb"
-#~ msgstr "No destorbar"
-
-#~ msgid "Invisible"
-#~ msgstr "Invisible"
-
-#~ msgid "Select Resource"
-#~ msgstr "Selecciona un recurs"
-
-#~ msgid "Automatic (best/default resource)"
-#~ msgstr "Automàtic (el recurs millor/predeterminat)"
-
-#~ msgid "Voice call"
-#~ msgstr "Tocada de veu"
-
-#~ msgid "The original message is: <i>\" %1 \"</i><br />"
-#~ msgstr "El missatge original és: <i>«%1»</i><br />"
-
-#~ msgid ""
-#~ "<qt><i>%1</i> has invited you to join the conference <b>%2</b><br />"
-#~ "%3<br />If you want to accept and join, just <b>enter your nickname</b> "
-#~ "and press ok<br />If you want to decline, press cancel</qt>"
-#~ msgstr ""
-#~ "<qt><i>%1</i> vos ha convidat a accedir a la conferència <b>%2</b><br />"
-#~ "%3<br />Si voleu acceptar i accedir-hi, només <b>introduïu el vostre "
-#~ "sobrenom</b> i premeu «D'acord»<br />Si voleu declinar, premeu "
-#~ "«Cancel·la».</qt>"
-
-#~ msgid "Invited to a conference - Jabber Plugin"
-#~ msgstr "Convidat a una conferència - Connector Jabber"
-
-#~ msgid "Message has been displayed"
-#~ msgstr "S'ha visualitzat el missatge"
-
-#~ msgid "Message has been delivered"
-#~ msgstr "S'ha lliurat el missatge"
-
-#~ msgid "Message stored on the server, contact offline"
-#~ msgstr "El missatge s'ha guardat al servidor, el contacte està desconnectat"
-
-#~ msgid "%1 has ended his/her participation in the chat session."
-#~ msgstr "%1 ha finalitzat la seua participació en la sessió de xat."
-
-#~ msgid "Your message could not be delivered: \"%1\", Reason: \"%2\""
-#~ msgstr "No s'ha pogut trametre el vostre missatge: «%1». Motiu: «%2»"
-
-#~ msgid ""
-#~ "Do you also want to remove user %1's authorization to see your status?"
-#~ msgstr ""
-#~ "Segur que voleu eliminar l'autorització de l'usuari %1 per a veure el "
-#~ "vostre estat?"
-
-#~ msgid "Kopete File Transfer"
-#~ msgstr "Transferència de fitxers de Kopete"
-
-#~ msgid ""
-#~ "You have preselected a resource for contact %1, but you still have open "
-#~ "chat windows for this contact. The preselected resource will only apply "
-#~ "to newly opened chat windows."
-#~ msgstr ""
-#~ "Heu preseleccionat un recurs per al contacte %1, però encara teniu "
-#~ "finestres de xat obertes per a este contacte. El recurs preseleccionat "
-#~ "només s'aplicarà a les finestres de xat obertes de nou."
-
-#~ msgid "Jabber Resource Selector"
-#~ msgstr "Selector de recursos Jabber"
-
-#~ msgid "Change nickname"
-#~ msgstr "Canvia el sobrenom"
-
-#~ msgid "Change nickname - Jabber Plugin"
-#~ msgstr "Canvi de sobrenom - Connector Jabber"
-
-#~ msgid "Please enter the new nickname you want to have in the room <i>%1</i>"
-#~ msgstr "Introduïu el sobrenom nou que voleu tindre en la sala <i>%1</i>"
-
-#~ msgid "Choose Account"
-#~ msgstr "Seleccioneu un compte"
-
-#~ msgid "Choose an account to handle the URL %1"
-#~ msgstr "Escolliu un compte per a gestionar l'URL %1"
-
-#~ msgid "Do you want to add '%1' to your contact list?"
-#~ msgstr "Voleu afegir a «%1» a la vostra llista de contactes?"
-
-#~ msgid "Add"
-#~ msgstr "Afig-lo"
-
-#~ msgid "Do Not Add"
-#~ msgstr "No l'afiges"
-
-#~ msgid "Do you want to remove '%1' from your contact list?"
-#~ msgstr "Voleu eliminar «%1» de la vostra llista de contactes?"
-
-#~ msgid "Remove"
-#~ msgstr "Elimina"
-
-#~ msgid "Do Not Remove"
-#~ msgstr "No l'elimines"
-
-#~ msgid "Please enter your nickname for the room %1"
-#~ msgstr "Introduïu el vostre sobrenom per a la sala %1"
-
-#~ msgid "You have been invited to %1"
-#~ msgstr "Heu estat convidat a %1"
-
-#~ msgid "Play over Jabber"
-#~ msgstr "Juga a través de Jabber"
-
-#~ msgid "Play KsirK over the Jabber Network"
-#~ msgstr "Juga a KsirK a la xarxa Jabber"
-
-#~ msgid "Jabber"
-#~ msgstr "Jabber"
-
-#~ msgid ""
-#~ "Allow to connect to a KsirK Jabber Multi User Gaming Room to create new "
-#~ "games or to join present games"
-#~ msgstr ""
-#~ "Permet connectar-se a un grup de jocs multiusuari Jabber de KsirK per a "
-#~ "crear partides noves o unir-se a les existents"
-
-#~ msgid "The last used Jabber Id."
-#~ msgstr "L'últim identificador de Jabber utilitzat."
-
-#~ msgid "The password of the last used Jabber Id."
-#~ msgstr "La contrasenya de l'últim identificador de Jabber utilitzat."
-
-#~ msgid "The last used Jabber groupchat room."
-#~ msgstr "L'últim grup de xat de Jabber utilitzat."
-
-#~ msgid "The password for last used Jabber groupchat room."
-#~ msgstr "La contrasenya per a l'últim grup de xat de Jabber utilitzat."
-
-#~ msgid "The nickname used in the last used Jabber groupchat room."
-#~ msgstr "El sobrenom utilitzat en l'últim grup de xat de Jabber utilitzat."
-
-#~ msgid "Play KsirK over Jabber Network"
-#~ msgstr "Juga a KsirK a la xarxa Jabber"
