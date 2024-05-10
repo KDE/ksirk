@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-07 00:37+0000\n"
-"PO-Revision-Date: 2024-05-06 12:57+0200\n"
+"PO-Revision-Date: 2024-05-09 11:26+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -724,7 +724,7 @@ msgstr ""
 #: ksirkskindefinition.ui:46
 #, kde-format
 msgid "Width x height:"
-msgstr ""
+msgstr "Largessa x altessa:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, widthLineEdit)
 #: ksirkskindefinition.ui:53
@@ -778,7 +778,7 @@ msgstr ""
 #: ksirkskindefinition.ui:108
 #, kde-format
 msgid "Fg:"
-msgstr ""
+msgstr "Fg:"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, fgcolorbutton)
 #: ksirkskindefinition.ui:115
@@ -1063,8 +1063,7 @@ msgid ""
 msgstr ""
 
 #: ksirkSkinEditorConfigDialog.cpp:55
-#, fuzzy, kde-format
-#| msgid "Preferences"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "Preferentias"
@@ -1754,7 +1753,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
-msgstr ""
+msgstr "Modificationes non salveguardate"
 
 #: mainwindow.cpp:528
 #, kde-format
@@ -1769,11 +1768,10 @@ msgid "Save and Quit"
 msgstr ""
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Country Name"
-msgstr "Pais"
+msgstr "Nove Nomine de Pais"
 
 #: mainwindow.cpp:1305
 #, kde-format
@@ -1793,11 +1791,10 @@ msgid "Delete Country Confirmation"
 msgstr ""
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "Continents"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Continent Name"
-msgstr "Continentes"
+msgstr "Nove Nomine de Continente"
 
 #: mainwindow.cpp:1334
 #, kde-format
@@ -1828,11 +1825,10 @@ msgid "Delete Goal Confirmation"
 msgstr ""
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "Nationality"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Nationality Name"
-msgstr "Nationalitate"
+msgstr "Nove Nomine de Nationalitate"
 
 #: mainwindow.cpp:1948
 #, kde-format

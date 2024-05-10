@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-07 00:37+0000\n"
-"PO-Revision-Date: 2024-05-06 13:48+0300\n"
+"PO-Revision-Date: 2024-05-09 19:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1222,11 +1222,10 @@ msgstr ""
 "rıhtımdan düzenleyin."
 
 #: ksirkSkinEditorConfigDialog.cpp:55
-#, fuzzy, kde-format
-#| msgid "Preferences"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Preferences"
-msgstr "Seçenekler"
+msgstr "Tercihlen"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CountriesSelectionDialog)
 #: ksirkskineditorcountriesselectiondialog.ui:13
@@ -2009,8 +2008,7 @@ msgid "Open a recently saved skin"
 msgstr "Son kaydedilen temalardan birini aç"
 
 #: mainwindow.cpp:337
-#, fuzzy, kde-format
-#| msgid "Save the current skin"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current skin"
 msgstr "Geçerli temayı kaydet"
@@ -2030,35 +2028,31 @@ msgstr "Kaydedilmemiş değişiklikler var. Ne yapmak istersiniz?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
-msgstr ""
+msgstr "Kaydedilmemiş Değişiklikler"
 
 #: mainwindow.cpp:528
-#, fuzzy, kde-format
-#| msgid "Quit without saving"
+#, kde-format
 msgctxt "@action:button"
 msgid "Quit Without Saving"
-msgstr "Kaydetmeden çık"
+msgstr "Kaydetmeden Çık"
 
 #: mainwindow.cpp:529
-#, fuzzy, kde-format
-#| msgid "Save then quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save and Quit"
-msgstr "Kaydet ve çık"
+msgstr "Kaydet ve Çık"
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "New country name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Country Name"
-msgstr "Yeni ülke adı"
+msgstr "Yeni Ülke Adı"
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new country"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new country:"
-msgstr "Yeni ülkenin adını girin"
+msgstr "Yeni ülkenin adını gir:"
 
 #: mainwindow.cpp:1315
 #, kde-format
@@ -2069,21 +2063,19 @@ msgstr "“%1” ülkesini silmeyi gerçekten istiyor musunuz?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Country Confirmation"
-msgstr ""
+msgstr "Ülke Silme Onayın"
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "New continent name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Continent Name"
-msgstr "Yeni kıta adı"
+msgstr "Yeni Kıta Adı"
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new continent"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new continent:"
-msgstr "Yeni kıtanın adını girin"
+msgstr "Yeni kıtanın adını gir:"
 
 #: mainwindow.cpp:1344
 #, kde-format
@@ -2091,11 +2083,10 @@ msgid "Do you really want to delete continent '%1'?"
 msgstr "“%1” kıtasını silmeyi gerçekten istiyor musunuz?"
 
 #: mainwindow.cpp:1344
-#, fuzzy, kde-format
-#| msgid "Select Continents"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Continent Confirmation"
-msgstr "Kıtaları Seç"
+msgstr "Kıta Silme Onayı"
 
 #: mainwindow.cpp:1889
 #, kde-format
@@ -2106,21 +2097,19 @@ msgstr "“%1” hedefini silmeyi gerçekten istiyor musunuz?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Goal Confirmation"
-msgstr ""
+msgstr "Hedef Silme Onayı"
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "New nationality name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Nationality Name"
-msgstr "Yeni ulus adı"
+msgstr "Yeni Ulus Adı"
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new nationality"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new nationality:"
-msgstr "Yeni ulusun adını girin"
+msgstr "Yeni ulusun adını gir:"
 
 #: mainwindow.cpp:1958
 #, kde-format
@@ -2131,13 +2120,12 @@ msgstr "“%1” ulusunu silmeyi gerçekten istiyor musunuz?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Nationality Confirmation"
-msgstr ""
+msgstr "Ulus Silme Onayı"
 
 #: onu.cpp:78
-#, fuzzy, kde-format
-#| msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+#, kde-format
 msgid "Invalid skin definition file format. Expected %1 and got %2"
-msgstr "Hata — Geçersiz tema dosyası. Olması gereken %1, alınan %2"
+msgstr "Geçersiz tema tanımı dosyası. Olması gereken %1, alınan %2"
 
 #: onu.cpp:110
 #, kde-format
@@ -2167,11 +2155,10 @@ msgstr ""
 "%2."
 
 #: onu.cpp:984
-#, fuzzy, kde-format
-#| msgid "PoolLoader"
+#, kde-format
 msgctxt "@title:window"
 msgid "PoolLoader"
-msgstr "HavuzYükleyici"
+msgstr "Havuz Yükleyicisi"
 
 #: skinSpritesData.cpp:85
 #, kde-format
