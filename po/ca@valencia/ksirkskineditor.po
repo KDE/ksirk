@@ -2060,7 +2060,7 @@ msgstr "No es pot carregar la icona del centre<br>El programa no pot continuar"
 #: mainwindow.cpp:324
 #, kde-format
 msgid "Open a saved skin..."
-msgstr "Obri una aparença guardada..."
+msgstr "Obri una aparença guardada…"
 
 #: mainwindow.cpp:328
 #, kde-format
@@ -2070,7 +2070,7 @@ msgstr "Carrega'n una de &recent"
 #: mainwindow.cpp:329
 #, kde-format
 msgid "Open a recently saved skin..."
-msgstr "Obri una aparença guardada recentment..."
+msgstr "Obri una aparença guardada recentment…"
 
 #: mainwindow.cpp:337
 #, kde-format

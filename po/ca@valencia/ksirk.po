@@ -1285,7 +1285,7 @@ msgstr "Unix-te a la partida seleccionada"
 #: Dialogs/jabbergameui.ui:265
 #, kde-format
 msgid "Load a Saved Game..."
-msgstr "Carrega una partida guardada..."
+msgstr "Carrega una partida guardada…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: Dialogs/jabbergameui.ui:293
@@ -1408,7 +1408,7 @@ msgstr "Una llista desplegable que mostra totes les aparences disponibles."
 #: Dialogs/newGameDialog.ui:126
 #, kde-format
 msgid "Download New Skins..."
-msgstr "Baixa aparences noves..."
+msgstr "Baixa aparences noves…"
 
 #. i18n: ectx: property (configFile), widget (KNSWidgets::Button, ghnsbutton)
 #: Dialogs/newGameDialog.ui:129
@@ -1427,7 +1427,7 @@ msgstr "Tipus d'objectiu"
 #, kde-format
 msgid "Choose this for players to have to conquer all the world to win."
 msgstr ""
-"Seleccioneu-la si voleu que els jugadors hagen de conquerir tot el món per a "
+"Marqueu-la si voleu que els jugadors hagen de conquerir tot el món per a "
 "guanyar."
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioWorld)
@@ -1446,7 +1446,7 @@ msgstr "Con&questa mundial"
 #: Dialogs/newGameDialog.ui:172
 #, kde-format
 msgid "Choose this to have a goal assigned to each player."
-msgstr "Seleccioneu-la per a assignar un objectiu a cada jugador."
+msgstr "Marqueu-la per a assignar un objectiu a cada jugador."
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioGoal)
 #: Dialogs/newGameDialog.ui:175
@@ -1730,7 +1730,7 @@ msgstr "Segur que voleu acabar la partida i entrar en una altra?"
 #: kgamewin.cpp:2649
 #, kde-format
 msgid "New game confirmation"
-msgstr "Confirmació de la partida nova"
+msgstr "Confirmeu la partida nova"
 
 #: GameLogic/gameautomaton.cpp:1194 GameLogic/gameautomaton.cpp:1223
 #, kde-format
@@ -1927,14 +1927,14 @@ msgstr "S'ha produït un error: no hi ha cap jugador que s'haja de destruir"
 #: GameLogic/goal.cpp:231
 #, kde-format
 msgid "<br>%1 is still alive..."
-msgstr "<br>%1 encara està viu..."
+msgstr "<br>%1 encara està viu…"
 
 #: GameLogic/goal.cpp:238 GameLogic/goal.cpp:252
 #, kde-format
 msgid "<br>%2, you still have 1 country to conquer..."
 msgid_plural "<br>%2, you still have %1 countries to conquer..."
-msgstr[0] "<br>%2, encara has de conquerir 1 país..."
-msgstr[1] "<br>%2, encara has de conquerir %1 països..."
+msgstr[0] "<br>%2, encara has de conquerir 1 país…"
+msgstr[1] "<br>%2, encara has de conquerir %1 països…"
 
 #: GameLogic/goal.cpp:242
 #, kde-format
@@ -1956,10 +1956,10 @@ msgid_plural ""
 "armies on %3 of them..."
 msgstr[0] ""
 "<br>%2, té suficients països, però encara hi has de posar més d'1 batalló a "
-"%3 d'ells..."
+"%3 d'ells…"
 msgstr[1] ""
 "<br>%2, té suficients països, però encara hi has de posar més de %1 "
-"batallons a %3 d'ells..."
+"batallons a %3 d'ells…"
 
 #: GameLogic/goal.cpp:269
 #, kde-format
@@ -1999,7 +1999,7 @@ msgstr "KsirK - Mostra l'objectiu"
 #: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:181
 #, kde-format
 msgid "No message..."
-msgstr "Sense missatges..."
+msgstr "Sense missatges…"
 
 #: GameLogic/KsirkChatModel.cpp:73
 #, kde-format
@@ -2965,7 +2965,7 @@ msgstr "<font color=\"red\">%1 ha conquerit %2 des de %3</font>"
 #: kgamewin.cpp:830
 #, kde-format
 msgid "%1, you are defeated! Bye, bye..."
-msgstr "%1, has estat derrotat! Passe-ho bé..."
+msgstr "%1, has estat derrotat! Passe-ho bé…"
 
 #: kgamewin.cpp:902
 #, kde-format
@@ -3173,7 +3173,7 @@ msgstr ""
 msgid "Start a new game or join a network game with the menu or the toolbar..."
 msgstr ""
 "Comença una partida nova o unix-te a una partida en xarxa amb el menú o la "
-"barra d'eines..."
+"barra d'eines…"
 
 #: kgamewin.cpp:2917
 msgid ""
@@ -3260,7 +3260,7 @@ msgstr "<b><u>Detalls del país</u></b>"
 #: krightdialog.cpp:170
 #, kde-format
 msgid "<i>Fighting in progress...</i>"
-msgstr "<i>Combat en curs...</i>"
+msgstr "<i>Combat en curs…</i>"
 
 #: krightdialog.cpp:222
 #, kde-format
@@ -3519,7 +3519,7 @@ msgstr "Unix-te a una partida en xarxa TCP/IP estàndard"
 #: mainMenu.ui:118
 #, kde-format
 msgid "Load..."
-msgstr "Carrega..."
+msgstr "Carrega…"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbQuit)
 #: mainMenu.ui:138
