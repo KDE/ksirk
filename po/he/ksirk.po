@@ -1,0 +1,2604 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the ksirk package.
+#
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: ksirk\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-05-07 00:37+0000\n"
+"PO-Revision-Date: 2024-05-14 20:43+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "צוות התרגום של KDE ישראל"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-l10n-he@kde.org"
+
+#. i18n: file skins/default/Data/world.desktop line 1
+#. i18n: file skins/default/Data/world.desktop line 516
+#. i18n: file skins/default/Data/world.desktop line 531
+#. i18n: file skins/default/Data/world.desktop line 536
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 1
+#. i18n: file skins/static/Data/world.desktop line 529
+#. i18n: file skins/static/Data/world.desktop line 544
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 1
+#. i18n: file skins/legacy/Data/world.desktop line 529
+#. i18n: file skins/legacy/Data/world.desktop line 544
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#. i18n: file skins/default/Data/world.desktop line 1
+#. i18n: file skins/default/Data/world.desktop line 516
+#. i18n: file skins/default/Data/world.desktop line 531
+#. i18n: file skins/default/Data/world.desktop line 536
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 1
+#. i18n: file skins/static/Data/world.desktop line 529
+#. i18n: file skins/static/Data/world.desktop line 544
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 1
+#. i18n: file skins/legacy/Data/world.desktop line 529
+#. i18n: file skins/legacy/Data/world.desktop line 544
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#, no-c-format, kde-format
+msgid "Africa"
+msgstr "אפריקה"
+
+#. i18n: file skins/default/Data/world.desktop line 6
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 6
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 6
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 6
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 6
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 6
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Alaska"
+msgstr "אלסקה"
+
+#. i18n: file skins/default/Data/world.desktop line 16
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 16
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 16
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 16
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 16
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 16
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Alberta"
+msgstr "אלברטה"
+
+#. i18n: file skins/default/Data/world.desktop line 26
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 26
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 26
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 26
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 26
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 26
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Algeria"
+msgstr "אלג׳יריה"
+
+#. i18n: file skins/default/Data/world.desktop line 36
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 36
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 36
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 36
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 36
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 36
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Arabia"
+msgstr "ערב"
+
+#. i18n: file skins/default/Data/world.desktop line 46
+#. i18n: file skins/default/Data/world.desktop line 521
+#. i18n: file skins/default/Data/world.desktop line 526
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 46
+#. i18n: file skins/static/Data/world.desktop line 544
+#. i18n: file skins/static/Data/world.desktop line 549
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 46
+#. i18n: file skins/legacy/Data/world.desktop line 544
+#. i18n: file skins/legacy/Data/world.desktop line 549
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#. i18n: file skins/default/Data/world.desktop line 46
+#. i18n: file skins/default/Data/world.desktop line 521
+#. i18n: file skins/default/Data/world.desktop line 526
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 46
+#. i18n: file skins/static/Data/world.desktop line 544
+#. i18n: file skins/static/Data/world.desktop line 549
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 46
+#. i18n: file skins/legacy/Data/world.desktop line 544
+#. i18n: file skins/legacy/Data/world.desktop line 549
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#, no-c-format, kde-format
+msgid "Asia"
+msgstr "אסיה"
+
+#. i18n: file skins/default/Data/world.desktop line 51
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 51
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 51
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#. i18n: file skins/default/Data/world.desktop line 51
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 51
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 51
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#, no-c-format, kde-format
+msgid "Belgium"
+msgstr "בלגיה"
+
+#. i18n: file skins/default/Data/world.desktop line 55
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 55
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 55
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 55
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 55
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 55
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Benelux"
+msgstr "בנלוקס"
+
+#. i18n: file skins/default/Data/world.desktop line 65
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 65
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 65
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 65
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 65
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 65
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Brazil"
+msgstr "ברזיל"
+
+#. i18n: file skins/default/Data/world.desktop line 75
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 75
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 75
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 75
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 75
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 75
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Chile"
+msgstr "צ׳ילה"
+
+#. i18n: file skins/default/Data/world.desktop line 85
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 85
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 85
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 85
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 85
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 85
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "China"
+msgstr "סין"
+
+#. i18n: file skins/default/Data/world.desktop line 95
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 95
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 95
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 95
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 95
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 95
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Colombia"
+msgstr "קולומביה"
+
+#. i18n: file skins/default/Data/world.desktop line 105
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 105
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 105
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 105
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 105
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 105
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Eastern US"
+msgstr "מזרח ארה״ב"
+
+#. i18n: file skins/default/Data/world.desktop line 115
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 115
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 115
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 115
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 115
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 115
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Egypt"
+msgstr "מצרים"
+
+#. i18n: file skins/default/Data/world.desktop line 125
+#. i18n: file skins/default/Data/world.desktop line 531
+#. i18n: file skins/default/Data/world.desktop line 541
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 129
+#. i18n: file skins/static/Data/world.desktop line 524
+#. i18n: file skins/static/Data/world.desktop line 534
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 129
+#. i18n: file skins/legacy/Data/world.desktop line 524
+#. i18n: file skins/legacy/Data/world.desktop line 534
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#. i18n: file skins/default/Data/world.desktop line 125
+#. i18n: file skins/default/Data/world.desktop line 531
+#. i18n: file skins/default/Data/world.desktop line 541
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 129
+#. i18n: file skins/static/Data/world.desktop line 524
+#. i18n: file skins/static/Data/world.desktop line 534
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 129
+#. i18n: file skins/legacy/Data/world.desktop line 524
+#. i18n: file skins/legacy/Data/world.desktop line 534
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#, no-c-format, kde-format
+msgid "Europe"
+msgstr "אירופה"
+
+#. i18n: file skins/default/Data/world.desktop line 130
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 134
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 134
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#. i18n: file skins/default/Data/world.desktop line 130
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 134
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 134
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#, no-c-format, kde-format
+msgid "France"
+msgstr "צרפת"
+
+#. i18n: file skins/default/Data/world.desktop line 142
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 145
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 145
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 142
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 145
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 145
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Gabon"
+msgstr "‫גבון‬"
+
+#. i18n: file skins/default/Data/world.desktop line 152
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 155
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 155
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 152
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 155
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 155
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Groenland"
+msgstr "גרינלנד"
+
+#. i18n: file skins/default/Data/world.desktop line 162
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 165
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 165
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 162
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 165
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 165
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "India"
+msgstr "הודו"
+
+#. i18n: file skins/default/Data/world.desktop line 172
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 175
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 175
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 172
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 175
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 175
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Indonesia"
+msgstr "אינדונזיה"
+
+#. i18n: file skins/default/Data/world.desktop line 182
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 185
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 185
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 182
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 185
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 185
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Iran"
+msgstr "איראן"
+
+#. i18n: file skins/default/Data/world.desktop line 192
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 195
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 195
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 192
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 195
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 195
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Island"
+msgstr "אי"
+
+#. i18n: file skins/default/Data/world.desktop line 202
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 205
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 205
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#. i18n: file skins/default/Data/world.desktop line 202
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 205
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 205
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#, no-c-format, kde-format
+msgid "Italy"
+msgstr "איטליה"
+
+#. i18n: file skins/default/Data/world.desktop line 206
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 209
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 209
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#. i18n: file skins/default/Data/world.desktop line 206
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 209
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 209
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#, no-c-format, kde-format
+msgid "Japan"
+msgstr "יפן"
+
+#. i18n: file skins/default/Data/world.desktop line 218
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 220
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 220
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 218
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 220
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 220
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Kazakstan"
+msgstr "קזחסטן"
+
+#. i18n: file skins/default/Data/world.desktop line 228
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 230
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 230
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 228
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 230
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 230
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Madagascar"
+msgstr "מדגסקר"
+
+#. i18n: file skins/default/Data/world.desktop line 238
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 240
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 240
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 238
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 240
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 240
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Mexico"
+msgstr "מקסיקו"
+
+#. i18n: file skins/default/Data/world.desktop line 248
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 260
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 260
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 248
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 260
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 260
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Mongolia"
+msgstr "מונגוליה"
+
+#. i18n: file skins/default/Data/world.desktop line 258
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 270
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 270
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 258
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 270
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 270
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "New South Wales"
+msgstr "ניו סאות׳ ויילס"
+
+#. i18n: file skins/default/Data/world.desktop line 268
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 280
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 280
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 268
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 280
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 280
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "New Zealand"
+msgstr "ניו זילנד"
+
+#. i18n: file skins/default/Data/world.desktop line 278
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 290
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 290
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 278
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 290
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 290
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Niger"
+msgstr "ניז׳ר"
+
+#. i18n: file skins/default/Data/world.desktop line 288
+#. i18n: file skins/default/Data/world.desktop line 516
+#. i18n: file skins/default/Data/world.desktop line 521
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 300
+#. i18n: file skins/static/Data/world.desktop line 529
+#. i18n: file skins/static/Data/world.desktop line 539
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 300
+#. i18n: file skins/legacy/Data/world.desktop line 529
+#. i18n: file skins/legacy/Data/world.desktop line 539
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#. i18n: file skins/default/Data/world.desktop line 288
+#. i18n: file skins/default/Data/world.desktop line 516
+#. i18n: file skins/default/Data/world.desktop line 521
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 300
+#. i18n: file skins/static/Data/world.desktop line 529
+#. i18n: file skins/static/Data/world.desktop line 539
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 300
+#. i18n: file skins/legacy/Data/world.desktop line 529
+#. i18n: file skins/legacy/Data/world.desktop line 539
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#, no-c-format, kde-format
+msgid "North America"
+msgstr "צפון אמריקה"
+
+#. i18n: file skins/default/Data/world.desktop line 293
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 305
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 305
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 293
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 305
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 305
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Occidental Australia"
+msgstr "אוסטרליה המערבית"
+
+#. i18n: file skins/default/Data/world.desktop line 303
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 315
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 315
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 303
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 315
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 315
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Ontario"
+msgstr "אונטריו"
+
+#. i18n: file skins/default/Data/world.desktop line 313
+#. i18n: file skins/default/Data/world.desktop line 536
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 325
+#. i18n: file skins/static/Data/world.desktop line 524
+#. i18n: file skins/static/Data/world.desktop line 539
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 325
+#. i18n: file skins/legacy/Data/world.desktop line 524
+#. i18n: file skins/legacy/Data/world.desktop line 539
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#. i18n: file skins/default/Data/world.desktop line 313
+#. i18n: file skins/default/Data/world.desktop line 536
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 325
+#. i18n: file skins/static/Data/world.desktop line 524
+#. i18n: file skins/static/Data/world.desktop line 539
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 325
+#. i18n: file skins/legacy/Data/world.desktop line 524
+#. i18n: file skins/legacy/Data/world.desktop line 539
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#, no-c-format, kde-format
+msgid "Pacific"
+msgstr "האוקיינוס השקט"
+
+#. i18n: file skins/default/Data/world.desktop line 318
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 330
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 330
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 318
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 330
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 330
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Pakistan"
+msgstr "פקיסטן"
+
+#. i18n: file skins/default/Data/world.desktop line 328
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 340
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 340
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 328
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 340
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 340
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Papouasie"
+msgstr "פפואה"
+
+#. i18n: file skins/default/Data/world.desktop line 338
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 350
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 350
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 338
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 350
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 350
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Paraguay"
+msgstr "פרגוואי"
+
+#. i18n: file skins/default/Data/world.desktop line 348
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 360
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 360
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 348
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 360
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 360
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Prussia"
+msgstr "פרוסיה"
+
+#. i18n: file skins/default/Data/world.desktop line 358
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 370
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 370
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 358
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 370
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 370
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Quebec"
+msgstr "קוויבק"
+
+#. i18n: file skins/default/Data/world.desktop line 368
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 380
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 380
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 368
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 380
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 380
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Russia"
+msgstr "רוסיה"
+
+#. i18n: file skins/default/Data/world.desktop line 378
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 390
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 390
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 378
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 390
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 390
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Scandinavia"
+msgstr "סקנדינביה"
+
+#. i18n: file skins/default/Data/world.desktop line 388
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 400
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 400
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 388
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 400
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 400
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Siberia"
+msgstr "סיביר"
+
+#. i18n: file skins/default/Data/world.desktop line 398
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 410
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 410
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 398
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 410
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 410
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "South Africa"
+msgstr "דרום אפריקה"
+
+#. i18n: file skins/default/Data/world.desktop line 408
+#. i18n: file skins/default/Data/world.desktop line 526
+#. i18n: file skins/default/Data/world.desktop line 541
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 420
+#. i18n: file skins/static/Data/world.desktop line 534
+#. i18n: file skins/static/Data/world.desktop line 549
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 420
+#. i18n: file skins/legacy/Data/world.desktop line 534
+#. i18n: file skins/legacy/Data/world.desktop line 549
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#. i18n: file skins/default/Data/world.desktop line 408
+#. i18n: file skins/default/Data/world.desktop line 526
+#. i18n: file skins/default/Data/world.desktop line 541
+#. i18n: file skins/default/Data/world.desktop line 558
+#. i18n: file skins/static/Data/world.desktop line 420
+#. i18n: file skins/static/Data/world.desktop line 534
+#. i18n: file skins/static/Data/world.desktop line 549
+#. i18n: file skins/static/Data/world.desktop line 566
+#. i18n: file skins/legacy/Data/world.desktop line 420
+#. i18n: file skins/legacy/Data/world.desktop line 534
+#. i18n: file skins/legacy/Data/world.desktop line 549
+#. i18n: file skins/legacy/Data/world.desktop line 566
+#, no-c-format, kde-format
+msgid "South America"
+msgstr "דרום אמריקה"
+
+#. i18n: file skins/default/Data/world.desktop line 413
+#. i18n: file skins/default/Data/world.desktop line 417
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 425
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 425
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 413
+#. i18n: file skins/default/Data/world.desktop line 417
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 425
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 425
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "United Kingdom"
+msgstr "בריטניה"
+
+#. i18n: file skins/default/Data/world.desktop line 427
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 435
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 435
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#. i18n: file skins/default/Data/world.desktop line 427
+#. i18n: file skins/default/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 435
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 435
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#, no-c-format, kde-format
+msgid "United States"
+msgstr "ארצות הברית"
+
+#. i18n: file skins/default/Data/world.desktop line 431
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 439
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 439
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 431
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 439
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 439
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Vietnam"
+msgstr "וייטנאם"
+
+#. i18n: file skins/default/Data/world.desktop line 441
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 449
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 449
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 441
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 449
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 449
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Western US"
+msgstr "מערב ארה״ב"
+
+#. i18n: file skins/default/Data/world.desktop line 451
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 459
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 459
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/default/Data/world.desktop line 451
+#. i18n: file skins/default/Data/world.desktop line 559
+#. i18n: file skins/static/Data/world.desktop line 459
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 459
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Zair"
+msgstr "זאיר"
+
+#. i18n: file skins/default/Data/world.desktop line 504
+#. i18n: file skins/static/Data/world.desktop line 512
+#. i18n: file skins/legacy/Data/world.desktop line 512
+#. i18n: file skins/default/Data/world.desktop line 504
+#. i18n: file skins/static/Data/world.desktop line 512
+#. i18n: file skins/legacy/Data/world.desktop line 512
+#, no-c-format, kde-format
+msgid ""
+"%1, you'll have to conquer %2 countries and place %3 armies in each one."
+msgstr "%1, עליך לכבוש %2 מדינות ולהציב %3 צבאות בכל אחת מהן."
+
+#. i18n: file skins/default/Data/world.desktop line 510
+#. i18n: file skins/static/Data/world.desktop line 518
+#. i18n: file skins/legacy/Data/world.desktop line 518
+#. i18n: file skins/default/Data/world.desktop line 510
+#. i18n: file skins/static/Data/world.desktop line 518
+#. i18n: file skins/legacy/Data/world.desktop line 518
+#, no-c-format, kde-format
+msgid "%1, you'll have to conquer %2 countries."
+msgstr "%1, עליך לכבוש %2 מדינות."
+
+#. i18n: file skins/default/Data/world.desktop line 517
+#. i18n: file skins/static/Data/world.desktop line 525
+#. i18n: file skins/legacy/Data/world.desktop line 525
+#. i18n: file skins/default/Data/world.desktop line 517
+#. i18n: file skins/static/Data/world.desktop line 525
+#. i18n: file skins/legacy/Data/world.desktop line 525
+#, no-c-format, kde-format
+msgid "%1, you'll have to conquer %2, %3 and another continent at your choice."
+msgstr "%1, עליך לכבוש את %2, %3 ויבשת נוספת לבחירתך."
+
+#. i18n: file skins/default/Data/world.desktop line 522
+#. i18n: file skins/default/Data/world.desktop line 527
+#. i18n: file skins/default/Data/world.desktop line 532
+#. i18n: file skins/default/Data/world.desktop line 537
+#. i18n: file skins/default/Data/world.desktop line 542
+#. i18n: file skins/static/Data/world.desktop line 530
+#. i18n: file skins/static/Data/world.desktop line 535
+#. i18n: file skins/static/Data/world.desktop line 540
+#. i18n: file skins/static/Data/world.desktop line 545
+#. i18n: file skins/static/Data/world.desktop line 550
+#. i18n: file skins/legacy/Data/world.desktop line 530
+#. i18n: file skins/legacy/Data/world.desktop line 535
+#. i18n: file skins/legacy/Data/world.desktop line 540
+#. i18n: file skins/legacy/Data/world.desktop line 545
+#. i18n: file skins/legacy/Data/world.desktop line 550
+#. i18n: file skins/default/Data/world.desktop line 522
+#. i18n: file skins/default/Data/world.desktop line 527
+#. i18n: file skins/default/Data/world.desktop line 532
+#. i18n: file skins/default/Data/world.desktop line 537
+#. i18n: file skins/default/Data/world.desktop line 542
+#. i18n: file skins/static/Data/world.desktop line 530
+#. i18n: file skins/static/Data/world.desktop line 535
+#. i18n: file skins/static/Data/world.desktop line 540
+#. i18n: file skins/static/Data/world.desktop line 545
+#. i18n: file skins/static/Data/world.desktop line 550
+#. i18n: file skins/legacy/Data/world.desktop line 530
+#. i18n: file skins/legacy/Data/world.desktop line 535
+#. i18n: file skins/legacy/Data/world.desktop line 540
+#. i18n: file skins/legacy/Data/world.desktop line 545
+#. i18n: file skins/legacy/Data/world.desktop line 550
+#, no-c-format, kde-format
+msgid "%1, you'll have to conquer %2 and %3."
+msgstr "%1, עליך לכבוש את %2 ואת %3."
+
+#. i18n: file skins/default/Data/world.desktop line 546
+#. i18n: file skins/static/Data/world.desktop line 554
+#. i18n: file skins/legacy/Data/world.desktop line 554
+#. i18n: file skins/default/Data/world.desktop line 546
+#. i18n: file skins/static/Data/world.desktop line 554
+#. i18n: file skins/legacy/Data/world.desktop line 554
+#, no-c-format, kde-format
+msgid ""
+"%1, you'll have to eliminate %2. If it is eliminated by another player, "
+"you'll have to conquer %3 countries."
+msgstr ""
+"%1, עליך לחסל את %2. אם הוא יחוסל על ידי שחקן אחר, עליך לכבוש %3 מדינות."
+
+#. i18n: file skins/default/Data/world.desktop line 560
+#, no-c-format, kde-format
+msgid ""
+"This skin shows a world that looks like the real one with some "
+"nationalities\n"
+"randomly chosen and proposes various interesting goals"
+msgstr ""
+"המעטפת הזאת מציגה עולם שנראה כמו העולם האמיתי עם מספר לאומים\n"
+"שנבחרו באקראי ומציע מגוון מטרות מעניינות"
+
+#. i18n: file skins/default/Data/world.desktop line 566
+#, no-c-format, kde-format
+msgid "Earth-like"
+msgstr "דמוי כדור הארץ"
+
+#. i18n: file skins/static/Data/world.desktop line 125
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 125
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#. i18n: file skins/static/Data/world.desktop line 125
+#. i18n: file skins/static/Data/world.desktop line 575
+#. i18n: file skins/legacy/Data/world.desktop line 125
+#. i18n: file skins/legacy/Data/world.desktop line 575
+#, no-c-format, kde-format
+msgid "England"
+msgstr "אנגליה"
+
+#. i18n: file skins/static/Data/world.desktop line 250
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 250
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#. i18n: file skins/static/Data/world.desktop line 250
+#. i18n: file skins/static/Data/world.desktop line 567
+#. i18n: file skins/legacy/Data/world.desktop line 250
+#. i18n: file skins/legacy/Data/world.desktop line 567
+#, no-c-format, kde-format
+msgid "Middle East"
+msgstr "המזרח התיכון"
+
+#. i18n: file skins/static/Data/world.desktop line 568
+#, no-c-format, kde-format
+msgid ""
+"This skin shows a world that looks like the real one with some "
+"nationalities\n"
+"randomly chosen and proposes various interesting goals.\n"
+"It features non-animated sprites"
+msgstr ""
+"המעטפת הזאת מציגה עולם שנראה כמו העולם האמיתי עם מספר לאומים\n"
+"שנבחרו באקראי ומציע מגוון מטרות מעניינות.\n"
+"יש בו דמויות לא מונפשות"
+
+#. i18n: file skins/static/Data/world.desktop line 574
+#, no-c-format, kde-format
+msgid "Less animated Earth-like"
+msgstr "דמוי כדור הארץ עם פחות הנפשה"
+
+#. i18n: file skins/legacy/Data/world.desktop line 568
+#, no-c-format, kde-format
+msgid ""
+"This skin shows a world that looks like the real one with some nationalities "
+"randomly chosen and proposes various interesting goals.\n"
+"It looks like KsirK before vector graphics."
+msgstr ""
+"המעטפת הזאת מציגה עולם שנראה כמו העולם האמיתי עם מספר לאומים\n"
+"שנבחרו באקראי ומציע מגוון מטרות מעניינות.\n"
+"הוא נראה כמו KsirK לפני גרפיקת הווקטורים."
+
+#. i18n: file skins/legacy/Data/world.desktop line 574
+#, no-c-format, kde-format
+msgid "Legacy"
+msgstr "מיושן"
+
+#: decoratedgameframe.cpp:100 kgamewin.cpp:349
+#, kde-format
+msgctxt "@action"
+msgid "Next Player"
+msgstr "השחקן הבא"
+
+#: decoratedgameframe.cpp:103
+#, kde-format
+msgctxt "@action"
+msgid "Details"
+msgstr "פרטים"
+
+#: decoratedgameframe.cpp:106 kgamewin.cpp:332 kgamewin.cpp:1214
+#: kgamewin.cpp:1226 kgamewin.cpp:2383
+#, kde-format
+msgctxt "@action"
+msgid "Goal"
+msgstr "מטרה"
+
+#: decoratedgameframe.cpp:138 decoratedgameframe.cpp:394
+#, kde-format
+msgctxt "@action"
+msgid "Enable Arena"
+msgstr "הפעלת זירה"
+
+#: decoratedgameframe.cpp:142
+#, kde-format
+msgctxt "@action"
+msgid "Attack 1"
+msgstr "תקיפה 1"
+
+#: decoratedgameframe.cpp:145
+#, kde-format
+msgctxt "@action"
+msgid "Attack 2"
+msgstr "תקיפה 2"
+
+#: decoratedgameframe.cpp:148
+#, kde-format
+msgctxt "@action"
+msgid "Attack 3"
+msgstr "תקיפה 3"
+
+#: decoratedgameframe.cpp:151
+#, kde-format
+msgctxt "@action"
+msgid "Auto Attack"
+msgstr "תקיפה אוטומטית"
+
+#: decoratedgameframe.cpp:169
+#, kde-format
+msgctxt "@action"
+msgid "Move 1"
+msgstr "מעבר 1"
+
+#: decoratedgameframe.cpp:172
+#, kde-format
+msgctxt "@action"
+msgid "Move 5"
+msgstr "מעבר 5"
+
+#: decoratedgameframe.cpp:175
+#, kde-format
+msgctxt "@action"
+msgid "Move 10"
+msgstr "מעבר 10"
+
+#: decoratedgameframe.cpp:400
+#, kde-format
+msgctxt "@action"
+msgid "Disable Arena"
+msgstr "השבתת זירה"
+
+#: Dialogs/InvasionSlider.cpp:98
+#, kde-format
+msgctxt "@title:window"
+msgid "Invasion"
+msgstr "פלישה"
+
+#: Dialogs/InvasionSlider.cpp:99
+#, kde-format
+msgid ""
+"You are invading <font color=\"blue\">%1</font> with <font color=\"red\">%2</"
+"font>!"
+msgstr ""
+"פלישה אל <font color=\"blue\">%1</font> עם <font color=\"red\">%2</font>!"
+
+#: Dialogs/InvasionSlider.cpp:100
+#, kde-format
+msgid "<br><i>Choose the number of invading armies.</i>"
+msgstr ""
+
+#: Dialogs/InvasionSlider.cpp:104
+#, kde-format
+msgctxt "@title:window"
+msgid "Moving"
+msgstr ""
+
+#: Dialogs/InvasionSlider.cpp:105
+#, kde-format
+msgid ""
+"You are moving armies from <font color=\"red\">%1</font> to <font color="
+"\"blue\">%2</font>!"
+msgstr ""
+
+#: Dialogs/InvasionSlider.cpp:106
+#, kde-format
+msgid "<br><i>Choose the number of armies to move.</i>"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, JoinGameDialog)
+#: Dialogs/joingame.ui:13
+#, kde-format
+msgid "Join Network Game Configuration"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: Dialogs/joingame.ui:19
+#, kde-format
+msgid "Network Configuration"
+msgstr "הגדרות רשת"
+
+#. i18n: ectx: property (text), widget (QLabel, hostLabel)
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: Dialogs/joingame.ui:25 Dialogs/tcpconnectwidget.ui:25
+#, kde-format
+msgid "Host:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, portLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: Dialogs/joingame.ui:35 Dialogs/tcpconnectwidget.ui:38
+#, kde-format
+msgid "Port:"
+msgstr ""
+
+#: Dialogs/kplayersetupwidget.cpp:250
+#, kde-format
+msgid "Name already in use. Please choose another one."
+msgstr ""
+
+#: Dialogs/kplayersetupwidget.cpp:252
+#, kde-format
+msgid "Empty name. Please choose another one."
+msgstr ""
+
+#: Dialogs/kplayersetupwidget.cpp:295
+#, kde-format
+msgid "Player Number %1, please type in your name and choose your nation:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: Dialogs/newGameDialog.ui:26
+#, kde-format
+msgid "Total number of players:"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, playersNumberEntry)
+#: Dialogs/newGameDialog.ui:36
+#, kde-format
+msgid "Spin this to choose the number of players."
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, playersNumberEntry)
+#: Dialogs/newGameDialog.ui:39
+#, kde-format
+msgid "A spin box to choose the number of players"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, localPlayersNumberLabel)
+#: Dialogs/newGameDialog.ui:50
+#, kde-format
+msgid "Number of local players:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, tcpPortLabel)
+#: Dialogs/newGameDialog.ui:64
+#, kde-format
+msgid "TCP port on which to offer connections:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: Dialogs/newGameDialog.ui:103 Dialogs/newGameSummary.ui:41
+#, kde-format
+msgid "Skin:"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, skinCombo)
+#: Dialogs/newGameDialog.ui:113
+#, kde-format
+msgid "Choose the skin (map, nationalities, etc.) to use for this game."
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QComboBox, skinCombo)
+#: Dialogs/newGameDialog.ui:116
+#, kde-format
+msgid "A combo listing all the available skins."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (KNSWidgets::Button, ghnsbutton)
+#: Dialogs/newGameDialog.ui:123
+#, kde-format
+msgid "Download New Skins…"
+msgstr ""
+
+#. i18n: ectx: property (configFile), widget (KNSWidgets::Button, ghnsbutton)
+#: Dialogs/newGameDialog.ui:126
+#, kde-format
+msgid "ksirk.knsrc"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, goalGroup)
+#: Dialogs/newGameDialog.ui:150
+#, kde-format
+msgid "Goal Type"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, radioWorld)
+#: Dialogs/newGameDialog.ui:156
+#, kde-format
+msgid "Choose this for players to have to conquer all the world to win."
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, radioWorld)
+#: Dialogs/newGameDialog.ui:159
+#, kde-format
+msgid "In this mode, a player will have to conquer all the world to win."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioWorld)
+#: Dialogs/newGameDialog.ui:162
+#, kde-format
+msgid "World con&quest"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, radioGoal)
+#: Dialogs/newGameDialog.ui:169
+#, kde-format
+msgid "Choose this to have a goal assigned to each player."
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, radioGoal)
+#: Dialogs/newGameDialog.ui:172
+#, kde-format
+msgid ""
+"In this mode, a goal will be assigned to each player, which he will have to "
+"reach in order to win."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioGoal)
+#: Dialogs/newGameDialog.ui:175
+#, kde-format
+msgid "Reach a goa&l"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
+#: Dialogs/newGameDialog.ui:230 Dialogs/newGameSummary.ui:206
+#: Dialogs/qplayersetupdialog.ui:126 Dialogs/tcpconnectwidget.ui:98
+#, kde-format
+msgid "Cancel"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, nextButton)
+#: Dialogs/newGameDialog.ui:250 Dialogs/qplayersetupdialog.ui:153
+#: Dialogs/tcpconnectwidget.ui:125
+#, kde-format
+msgid "Next"
+msgstr ""
+
+#: Dialogs/newGameDialogImpl.cpp:128 newgamesetup.cpp:44
+#, kde-format
+msgid ""
+"Skins directory not found - Verify your installation\n"
+"Program cannot continue"
+msgstr ""
+
+#: Dialogs/newGameDialogImpl.cpp:129 GameLogic/aiplayer.cpp:506
+#: newgamesetup.cpp:45 Sprites/skinSpritesData.cpp:89
+#: Sprites/skinSpritesData.cpp:105
+#, kde-format
+msgctxt "@title:window"
+msgid "Fatal Error"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: Dialogs/newGameSummary.ui:24
+#, kde-format
+msgid "New Game Summary"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, skinNameLabel)
+#: Dialogs/newGameSummary.ui:48
+#, kde-format
+msgid "skin name"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: Dialogs/newGameSummary.ui:99
+#, kde-format
+msgid "Players"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: Dialogs/newGameSummary.ui:125
+#, kde-format
+msgid "Goal type:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, goalTypeLabel)
+#: Dialogs/newGameSummary.ui:132
+#, kde-format
+msgid "goal type"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTableWidget, playersTable)
+#: Dialogs/newGameSummary.ui:154
+#, kde-format
+msgid "Name"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTableWidget, playersTable)
+#: Dialogs/newGameSummary.ui:165
+#, kde-format
+msgid "Nationality"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTableWidget, playersTable)
+#: Dialogs/newGameSummary.ui:176
+#, kde-format
+msgid "Computer"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTableWidget, playersTable)
+#: Dialogs/newGameSummary.ui:187
+#, kde-format
+msgid "Network"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, previousButton)
+#: Dialogs/newGameSummary.ui:226 Dialogs/qplayersetupdialog.ui:146
+#: Dialogs/tcpconnectwidget.ui:118
+#, kde-format
+msgid "Previous"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, finishButton)
+#: Dialogs/newGameSummary.ui:236
+#, kde-format
+msgid "Start"
+msgstr ""
+
+#: Dialogs/newGameSummaryWidget.cpp:62
+#, kde-format
+msgid "Reach a goal"
+msgstr ""
+
+#: Dialogs/newGameSummaryWidget.cpp:62
+#, kde-format
+msgid "World conquest"
+msgstr ""
+
+#: Dialogs/newGameSummaryWidget.cpp:77 Dialogs/newGameSummaryWidget.cpp:79
+#, kde-format
+msgid "Yes"
+msgstr ""
+
+#: Dialogs/newGameSummaryWidget.cpp:77 Dialogs/newGameSummaryWidget.cpp:79
+#, kde-format
+msgid "No"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, TextLabel1)
+#: Dialogs/qplayersetupdialog.ui:20
+#, no-c-format, kde-format
+msgid "Player number %1, please enter your name and choose your nation:"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, nationCombo)
+#. i18n: ectx: property (toolTip), widget (QComboBox, waitedPlayersCombo)
+#: Dialogs/qplayersetupdialog.ui:48 Dialogs/qwaitedplayersetupdialog.ui:33
+#, kde-format
+msgid "Choose your nation"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QComboBox, nationCombo)
+#. i18n: ectx: property (whatsThis), widget (QComboBox, waitedPlayersCombo)
+#: Dialogs/qplayersetupdialog.ui:52 Dialogs/qwaitedplayersetupdialog.ui:37
+#, kde-format
+msgid ""
+"A combo box that lists currently available nations.\n"
+"Choose one of them. It will be your nation during the game"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, passwordLabel)
+#: Dialogs/qplayersetupdialog.ui:76 Dialogs/qwaitedplayersetupdialog.ui:47
+#, kde-format
+msgid "Enter your password:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, isComputerCheckBox)
+#: Dialogs/qplayersetupdialog.ui:101
+#, kde-format
+msgid "Pla&yer is computer"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, QWaitedPlayerSetupDialog)
+#: Dialogs/qwaitedplayersetupdialog.ui:14
+#, kde-format
+msgid "Saved Player Selection"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, TextLabel1)
+#: Dialogs/qwaitedplayersetupdialog.ui:23
+#, kde-format
+msgid "Please select your saved player:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, PushButton1)
+#: Dialogs/qwaitedplayersetupdialog.ui:70
+#, kde-format
+msgid "OK"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, RestartOrExitDialog)
+#: Dialogs/restartOrExitDialog.ui:13
+#, kde-format
+msgid "New Game or Exit"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, newGameButton)
+#: Dialogs/restartOrExitDialog.ui:27
+#, kde-format
+msgid "New Game"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, newGameButton)
+#: Dialogs/restartOrExitDialog.ui:33
+#, kde-format
+msgid "Starts a new game"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, doNothingButton)
+#: Dialogs/restartOrExitDialog.ui:40
+#, kde-format
+msgid "Do Nothing"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, doNothingButton)
+#: Dialogs/restartOrExitDialog.ui:43
+#, kde-format
+msgid "Do nothing. Game buttons will be available"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, exitButton)
+#: Dialogs/restartOrExitDialog.ui:53
+#, kde-format
+msgid "Exit"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, exitButton)
+#: Dialogs/restartOrExitDialog.ui:56
+#, kde-format
+msgid "Quit KsirK"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, messageLabel)
+#: Dialogs/restartOrExitDialog.ui:92
+#, no-c-format, kde-format
+msgid "%1 won! Do you want to play again?"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLineEdit, hostEdit)
+#: Dialogs/tcpconnectwidget.ui:71
+#, kde-format
+msgid "localhost"
+msgstr ""
+
+#: GameLogic/aiplayer.cpp:504
+#, kde-format
+msgid ""
+"Error - No receiving country selected while computer player %2 had still 1 "
+"army to place. This is bug probably #2232 at www.gna.org."
+msgid_plural ""
+"Error - No receiving country selected while computer player %2 had still %1 "
+"armies to place. This is bug probably #2232 at www.gna.org."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: GameLogic/gameautomaton.cpp:303
+#, kde-format
+msgctxt "@title:window"
+msgid "Network Configuration"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:304
+#, kde-format
+msgid "Please type in the port number on which to offer connections:"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:1191
+#, kde-format
+msgid "Do you really want to end your current game and join another?"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:1191
+#, kde-format
+msgctxt "@title:window"
+msgid "New Game Confirmation"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:1191
+#, kde-format
+msgctxt "@action:button"
+msgid "Join New Game"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:1362
+#, kde-format
+msgid "%1 (%2) joined game ; waiting for %3 players to connect"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:1468
+#, kde-format
+msgid "Please choose another name."
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:1468
+#, kde-format
+msgctxt "@title:window"
+msgid "Name Already Used"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:1474
+#, kde-format
+msgid "Player number %1, what's your name?"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:1478
+#, kde-format
+msgid "Error - Player %1, you have to choose a name."
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:1480
+#, kde-format
+msgctxt "@info Forged player name"
+msgid "Player%1"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:1531
+#, kde-format
+msgid "Please choose another nation."
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:1531
+#, kde-format
+msgctxt "@title:window"
+msgid "Nation Already Used"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:1623
+#, kde-format
+msgid ""
+"KsirK - Lost connection to server!\n"
+"What do you want to do?"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:1624
+#, kde-format
+msgctxt "@title:window"
+msgid "Starting a New Game or Exit."
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:1625
+#, kde-format
+msgctxt "@action:button"
+msgid "New Game"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:1626
+#, kde-format
+msgctxt "@action:button"
+msgid "Exit"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:1627
+#, kde-format
+msgctxt "@action:button"
+msgid "Do Nothing"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:1649
+#, kde-format
+msgid ""
+"Lost connection to a client.\n"
+"For the moment, you can only save the game and start a new one or quit.\n"
+"This will be improved in a future version."
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:1650
+#, kde-format
+msgctxt "@title:window"
+msgid "Lost Connection to Client"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:1652
+#, kde-format
+msgid "Do want to save your game?"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:1818 GameLogic/gameautomaton.cpp:2235
+#: kgamewin.cpp:2038 kgamewin.cpp:2133 kgamewin.cpp:2170
+#, kde-format
+msgid "%1: %2 armies to place"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:1823 GameLogic/gameautomaton.cpp:2238
+#: kgamewinslots.cpp:793
+#, kde-format
+msgid ""
+"Now, place your armies in your countries<br>by clicking in the target "
+"countries."
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:1900
+#, kde-format
+msgid ""
+"%1, your goal will be displayed. Please<br>make sure that no other player "
+"can see it!"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:1902
+#, kde-format
+msgctxt "@title:window"
+msgid "Displaying Goal"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:2088
+#, kde-format
+msgid "%1 chooses its defense"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:2248
+#, kde-format
+msgid "%1 choose to end recycling; there are now %2 players who want so"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:2338
+#, kde-format
+msgid "Problem : no one destroyed"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:2387
+#, kde-format
+msgid ""
+"You entered an invalid password.\n"
+"Please try again."
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:2387
+#, kde-format
+msgctxt "@title:window"
+msgid "Invalid Password"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:2588
+#, kde-format
+msgid ""
+"%1, you have not played anything this turn.\n"
+"Do you really want to lose your turn?"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:2589
+#, kde-format
+msgctxt "@title:window"
+msgid "Next Player Confirmation"
+msgstr ""
+
+#: GameLogic/gameautomaton.cpp:2590
+#, kde-format
+msgctxt "@action:button"
+msgid "Next Player"
+msgstr ""
+
+#: GameLogic/goal.cpp:156
+#, kde-format
+msgid "You must conquer the World!"
+msgstr ""
+
+#: GameLogic/goal.cpp:184
+#, kde-format
+msgid "%1 (already dead)"
+msgstr ""
+
+#: GameLogic/goal.cpp:195
+#, kde-format
+msgid "Error: no player to destroy"
+msgstr ""
+
+#: GameLogic/goal.cpp:231
+#, kde-format
+msgid "<br>%1 is still alive…"
+msgstr ""
+
+#: GameLogic/goal.cpp:238 GameLogic/goal.cpp:252
+#, kde-format
+msgid "<br>%2, you still have 1 country to conquer…"
+msgid_plural "<br>%2, you still have %1 countries to conquer…"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: GameLogic/goal.cpp:242
+#, kde-format
+msgid "<br>Your goal is reached: %2 is dead and you possess %1 country."
+msgid_plural ""
+"<br>Your goal is reached: %2 is dead and you possess %1 countries."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: GameLogic/goal.cpp:264
+#, kde-format
+msgid ""
+"<br>%2, you have enough countries but you still have to put more than 1 army "
+"on %3 of them…"
+msgid_plural ""
+"<br>%2, you have enough countries but you still have to put more than %1 "
+"armies on %3 of them…"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: GameLogic/goal.cpp:269
+#, kde-format
+msgid "<br>%1, you still have to conquer "
+msgstr ""
+
+#: GameLogic/goal.cpp:275
+#, kde-format
+msgid "1 country in %2"
+msgid_plural "%1 countries in %2"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: GameLogic/goal.cpp:285
+#, kde-format
+msgctxt "@item:intext country list separator of last item"
+msgid " and "
+msgstr ""
+
+#: GameLogic/goal.cpp:289
+#, kde-format
+msgctxt "@item:intext country list separator of non-last item"
+msgid ", "
+msgstr ""
+
+#: GameLogic/goal.cpp:295
+#, kde-format
+msgctxt ""
+"@info An element of the enumeration of the number of countries in the given "
+"continent"
+msgid "%1 in %2"
+msgstr ""
+
+#: GameLogic/goal.cpp:317
+#, kde-format
+msgctxt "@title:window"
+msgid "Goal Display"
+msgstr ""
+
+#: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:170
+#, kde-format
+msgid "No message…"
+msgstr ""
+
+#: GameLogic/KsirkChatModel.cpp:73
+#, kde-format
+msgid "<b>%1:</b> %2"
+msgstr ""
+
+#: GameLogic/onu.cpp:119
+#, kde-format
+msgid ""
+"Pool filename not found\n"
+"Program cannot continue"
+msgstr ""
+
+#: GameLogic/onu.cpp:135
+#, kde-format
+msgid ""
+"Map mask image not found\n"
+"Program cannot continue"
+msgstr ""
+
+#: gestionSprites.cpp:72 gestionSprites.cpp:106 gestionSprites.cpp:157
+#, kde-format
+msgid "Cannot move %1 armies from %2 to %3"
+msgstr ""
+
+#: gestionSprites.cpp:79
+#, kde-format
+msgid "Moving %1 armies from %2 to %3"
+msgstr ""
+
+#: gestionSprites.cpp:638 gestionSprites.cpp:753 gestionSprites.cpp:1354
+#: gestionSprites.cpp:1431
+#, kde-format
+msgid ""
+"Sound roule not found - Verify your installation<br>Program cannot continue"
+msgstr ""
+
+#: gestionSprites.cpp:798
+#, kde-format
+msgid ""
+"Sound cannon not found - Verify your installation<br>Program cannot continue"
+msgstr ""
+
+#: gestionSprites.cpp:873 gestionSprites.cpp:893 gestionSprites.cpp:994
+#: gestionSprites.cpp:1031 gestionSprites.cpp:1066 gestionSprites.cpp:1120
+#: gestionSprites.cpp:1157 gestionSprites.cpp:1191
+#, kde-format
+msgid ""
+"Sound crash not found - Verify your installation\n"
+"Program cannot continue"
+msgstr ""
+
+#: gestionSprites.cpp:1235
+#, kde-format
+msgid "Problem: no one destroyed"
+msgstr ""
+
+#: gestionSprites.cpp:1445
+#, kde-format
+msgid "Bug: who should be 0, 1 or 2."
+msgstr ""
+
+#: kgamewin.cpp:139 kgamewin.cpp:641
+#, kde-format
+msgid "Cannot load icon<br>Program cannot continue"
+msgstr ""
+
+#: kgamewin.cpp:302 kgamewin.cpp:319
+#, kde-format
+msgid "Cannot load button image %1<br>Program cannot continue"
+msgstr ""
+
+#: kgamewin.cpp:305
+#, kde-format
+msgctxt "@action"
+msgid "New Standard TCP/IP Network Game"
+msgstr ""
+
+#: kgamewin.cpp:306
+#, kde-format
+msgctxt "@action"
+msgid "New TCP/IP"
+msgstr "TCP/IP חדש"
+
+#: kgamewin.cpp:308
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create a new standard TCP/IP network game"
+msgstr ""
+
+#: kgamewin.cpp:323
+#, kde-format
+msgctxt "@action"
+msgid "Join a Standard TCP/IP Network Game"
+msgstr ""
+
+#: kgamewin.cpp:324
+#, kde-format
+msgctxt "@action"
+msgid "Join TCP/IP"
+msgstr "הצטרפות ל־TCP/IP"
+
+#: kgamewin.cpp:326
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Join a standard TCP/IP network game"
+msgstr ""
+
+#: kgamewin.cpp:331
+#, kde-format
+msgctxt "@action"
+msgid "Display the Current Player's Goal"
+msgstr "הצגת היעד הנוכחי של השחקן"
+
+#: kgamewin.cpp:334
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Display the current player's goal"
+msgstr "הצגת היעד הנוכחי של השחקן"
+
+#: kgamewin.cpp:340
+#, kde-format
+msgctxt "@action"
+msgid "Contextual Help"
+msgstr "עזרה לפי הקשר"
+
+#: kgamewin.cpp:351
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Let the next player play"
+msgstr ""
+
+#: kgamewin.cpp:355
+#, kde-format
+msgctxt "@action"
+msgid "Finish Moves"
+msgstr ""
+
+#: kgamewin.cpp:357
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Finish moving the current sprites"
+msgstr ""
+
+#: kgamewin.cpp:485
+#, kde-format
+msgid ""
+"World definition file not found - Verify your installation<br>Program cannot "
+"continue"
+msgstr ""
+
+#: kgamewin.cpp:704
+#, kde-format
+msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
+msgstr ""
+
+#: kgamewin.cpp:728
+#, kde-format
+msgid "%1, you are defeated! Bye, bye…"
+msgstr ""
+
+#: kgamewin.cpp:800
+#, kde-format
+msgid "%1: it is up to you again"
+msgstr ""
+
+#: kgamewin.cpp:814
+#, kde-format
+msgid "%1 won!"
+msgstr ""
+
+#: kgamewin.cpp:816
+#, kde-format
+msgid "<big><b>%1</b>, you won!</big>"
+msgstr ""
+
+#: kgamewin.cpp:820
+#, kde-format
+msgid ""
+"<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
+"play again?"
+msgstr ""
+
+#: kgamewin.cpp:826
+#, kde-format
+msgid "<br>You conquered all the world!"
+msgstr ""
+
+#: kgamewin.cpp:830
+#, kde-format
+msgid "<br>He conquered all the world!"
+msgstr ""
+
+#: kgamewin.cpp:947
+#, kde-format
+msgid "Do you want to quit the game?"
+msgstr ""
+
+#: kgamewin.cpp:949
+#, kde-format
+msgctxt "@action:button"
+msgid "Quit Game"
+msgstr ""
+
+#: kgamewin.cpp:961
+#, kde-format
+msgid "Before you quit, do you want to save your game?"
+msgstr ""
+
+#: kgamewin.cpp:999
+#, kde-format
+msgctxt "@title:window"
+msgid "Load Game"
+msgstr ""
+
+#: kgamewin.cpp:1037
+#, kde-format
+msgid "Waiting for the connection of %1 network players."
+msgstr ""
+
+#: kgamewin.cpp:1116
+#, kde-format
+msgid ""
+"<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
+"with 1 army!<br> How do you want to defend <font color=\"blue\">%4</font>?"
+msgid_plural ""
+"<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
+"with %1 armies!<br> How do you want to defend <font color=\"blue\">%4</font>?"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: kgamewin.cpp:1145
+#, kde-format
+msgctxt "@action:button"
+msgid "Defend 1"
+msgstr ""
+
+#: kgamewin.cpp:1146
+#, kde-format
+msgctxt "@action:button"
+msgid "Defend 2"
+msgstr ""
+
+#: kgamewin.cpp:1147
+#, kde-format
+msgctxt "@action:button"
+msgid "Defend-Auto"
+msgstr ""
+
+#: kgamewin.cpp:1266
+#, kde-format
+msgid "Waiting for %1 players to connect"
+msgstr ""
+
+#: kgamewin.cpp:1656 kgamewin.cpp:1696
+msgid "There is no country here!"
+msgstr ""
+
+#: kgamewin.cpp:1660 kgamewin.cpp:1701
+#, kde-format
+msgid "You are not the owner of the first country: %1!"
+msgstr ""
+
+#: kgamewin.cpp:1664
+#, kde-format
+msgid "You are not the owner of the second country: %1!"
+msgstr ""
+
+#: kgamewin.cpp:1668 kgamewin.cpp:1712
+#, kde-format
+msgid "You are trying to move armies from %1 to itself!"
+msgstr ""
+
+#: kgamewin.cpp:1673 kgamewin.cpp:1718
+#, kde-format
+msgid "%1 is not a neighbour of %2!"
+msgstr ""
+
+#: kgamewin.cpp:1679
+#, kde-format
+msgid "Moving armies from %1 to %2."
+msgstr ""
+
+#: kgamewin.cpp:1707
+#, kde-format
+msgid "You are the owner of the second country: %1!"
+msgstr ""
+
+#: kgamewin.cpp:1725
+msgid "Ready to fight!"
+msgstr ""
+
+#: kgamewin.cpp:1819
+msgid "<font color=\"orange\">No country here!</font>"
+msgstr ""
+
+#: kgamewin.cpp:1827
+#, kde-format
+msgid "<font color=\"orange\">You are not the owner of %1!</font>"
+msgstr ""
+
+#: kgamewin.cpp:1834
+#, kde-format
+msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
+msgstr ""
+
+#: kgamewin.cpp:1974
+#, kde-format
+msgid "%1, you defend with the only army you have in %2."
+msgstr ""
+
+#: kgamewin.cpp:2198
+msgid "Exchange armies again or continue?"
+msgstr ""
+
+#: kgamewin.cpp:2223
+#, kde-format
+msgid ""
+"You must distribute\n"
+"all your armies"
+msgstr ""
+
+#: kgamewin.cpp:2363
+msgid "Battle ongoing."
+msgstr ""
+
+#: kgamewin.cpp:2484 kgamewin.cpp:2495 kgamewin.cpp:2518
+#, kde-format
+msgid "%1, it is up to you."
+msgstr ""
+
+#: kgamewin.cpp:2547
+#, kde-format
+msgid "Do you really want to end your current game and start a new one?"
+msgstr ""
+
+#: kgamewin.cpp:2547
+#, kde-format
+msgid "New game confirmation"
+msgstr ""
+
+#: kgamewin.cpp:2547
+#, kde-format
+msgctxt "@action:button"
+msgid "Start New Game"
+msgstr ""
+
+#: kgamewin.cpp:2803
+msgid "<b>KsirK quick Introduction</b>"
+msgstr ""
+
+#: kgamewin.cpp:2807
+msgid ""
+"Attacks and moves are issued through drag & drop between neighbour countries."
+msgstr ""
+
+#: kgamewin.cpp:2811
+msgid "Start a new game or join a network game with the menu or the toolbar…"
+msgstr ""
+
+#: kgamewin.cpp:2815
+msgid ""
+"and then let the system guide you through messages and tooltips appearing on "
+"buttons when hovering above them. You can disable bubble help in the options "
+"window."
+msgstr ""
+
+#: kgamewin.cpp:2822
+#, kde-format
+msgid "Don't show messages anymore"
+msgstr ""
+
+#: kgamewinslots.cpp:108
+#, kde-format
+msgid "%2 belongs to %3. 1 army."
+msgid_plural "%2 belongs to %3. %1 armies."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: kgamewinslots.cpp:434
+#, kde-format
+msgid "Cannot save when waiting for a defense."
+msgstr ""
+
+#: kgamewinslots.cpp:441
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Game"
+msgstr ""
+
+#: kgamewinslots.cpp:445
+#, kde-format
+msgid "Saving canceled"
+msgstr ""
+
+#: kgamewinslots.cpp:456
+#, kde-format
+msgid "Game saved to %1"
+msgstr ""
+
+#: kgamewinslots.cpp:463
+#, kde-format
+msgid "Only game master can save the game in network playing."
+msgstr ""
+
+#: kgamewinslots.cpp:789
+#, kde-format
+msgid ""
+"Attack by drag & drop between countries<br>Move armies the same way (last "
+"action of a turn)."
+msgstr ""
+
+#: krightdialog.cpp:116
+#, kde-format
+msgid "<b>Nationality:</b>"
+msgstr "<b>לאום:</b>"
+
+#: krightdialog.cpp:117
+#, kde-format
+msgid "<b>Continent:</b> %1"
+msgstr "<b>יבשת:</b> %1"
+
+#: krightdialog.cpp:118
+#, kde-format
+msgid "<b>Country:</b> %1"
+msgstr "<b>מדינה:</b> %1"
+
+#: krightdialog.cpp:122
+#, kde-format
+msgid "<b>Owner:</b> %1"
+msgstr "<b>בעלות:</b> %1"
+
+#: krightdialog.cpp:123
+#, kde-format
+msgid "<b><u>Country details</u></b>"
+msgstr "<b><u>פרטי המדינה</u></b>"
+
+#: krightdialog.cpp:170
+#, kde-format
+msgid "<i>Fighting in progress…</i>"
+msgstr "<i>בעיצומו של קרב…</i>"
+
+#: krightdialog.cpp:222
+#, kde-format
+msgid "<font color=\"red\">Attack</font> with 1 army.<br>"
+msgid_plural "<font color=\"red\">Attack</font> with %1 armies.<br>"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: krightdialog.cpp:233
+#, kde-format
+msgid "<font color=\"blue\">Defend</font> with 1 army.<br>"
+msgid_plural "<font color=\"blue\">Defend</font> with %1 armies.<br>"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: krightdialog.cpp:265
+#, kde-format
+msgctxt "@action:button"
+msgid "Stop Auto-Attack"
+msgstr "עצירת תקיפה אוטומטית"
+
+#: krightdialog.cpp:273
+#, kde-format
+msgctxt "@action:button"
+msgid "Stop Auto-Defense"
+msgstr "עצירת הגנה אוטומטית"
+
+#: krightdialog.cpp:298
+#, kde-format
+msgctxt "@action:button"
+msgid "Valid"
+msgstr ""
+
+#: krightdialog.cpp:299
+#, kde-format
+msgctxt "@action:button"
+msgid "Recycle"
+msgstr ""
+
+#: krightdialog.cpp:300
+#, kde-format
+msgctxt "@action:button"
+msgid "Done"
+msgstr ""
+
+#: krightdialog.cpp:327
+#, kde-format
+msgid "%1 army to place"
+msgid_plural "%1 armies to place"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: krightdialog.cpp:375
+#, kde-format
+msgid "<u><b>Change some<br>placements?</b></u> "
+msgstr ""
+
+#: krightdialog.cpp:390
+#, kde-format
+msgid "1 army to place"
+msgid_plural "%1 armies to place"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: krightdialog.cpp:392
+#, kde-format
+msgid "<b>Armies:</b> %1"
+msgstr "<b>צבאות:</b> %1"
+
+#: krightdialog.cpp:471
+#, kde-format
+msgid "<font color=\"red\">lost armies: %1</font>"
+msgstr ""
+
+#: krightdialog.cpp:476
+#, kde-format
+msgid "<font color=\"blue\">lost armies: %1</font>"
+msgstr ""
+
+#: ksirkConfigDialog.cpp:37
+#, kde-format
+msgctxt "@title:tab"
+msgid "Preferences"
+msgstr "העדפות"
+
+#. i18n: ectx: label, entry (spritesSpeed), group (General)
+#: ksirksettings.kcfg:9
+#, kde-format
+msgid "The sprites speed: slow, normal, quick, immediate"
+msgstr ""
+
+#. i18n: ectx: label, entry (soundEnabled), group (General)
+#: ksirksettings.kcfg:13
+#, kde-format
+msgid "If true, sounds are played; they are not otherwise."
+msgstr ""
+
+#. i18n: ectx: label, entry (helpEnabled), group (General)
+#: ksirksettings.kcfg:17
+#, kde-format
+msgid "If true, help is displayed; they are not otherwise."
+msgstr ""
+
+#. i18n: ectx: label, entry (showArmiesNumbers), group (General)
+#: ksirksettings.kcfg:21
+#, kde-format
+msgid "If true, the number of armies is displayed on each country."
+msgstr ""
+
+#. i18n: ectx: label, entry (Theme), group (General)
+#: ksirksettings.kcfg:25
+#, kde-format
+msgid "The graphical theme to be used."
+msgstr ""
+
+#. i18n: ectx: Menu (game)
+#: ksirkui.rc:10
+#, kde-format
+msgid "&Game"
+msgstr "מ&שחק"
+
+#. i18n: ectx: Menu (settings)
+#: ksirkui.rc:23
+#, kde-format
+msgid "&Settings"
+msgstr "ה&גדרות"
+
+#. i18n: ectx: Menu (help)
+#: ksirkui.rc:25
+#, kde-format
+msgid "&Help"
+msgstr "ע&זרה"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: ksirkui.rc:30
+#, kde-format
+msgid "Main Toolbar"
+msgstr "סרגל כלים ראשי"
+
+#: main.cpp:42
+#, kde-format
+msgid "KsirK"
+msgstr "KsirK"
+
+#: main.cpp:44
+#, kde-format
+msgid "World Domination Strategy Game"
+msgstr "משחק אסטרטגיה להשתלטות על העולם"
+
+#: main.cpp:46
+#, kde-format
+msgid "(c) 2002-2015, Gaël de Chalendar\n"
+msgstr "(c) 2002‏-2015, גאל דה שלנדה\n"
+
+#: main.cpp:47
+#, kde-format
+msgid ""
+"For help and user manual, please see\n"
+"the KsirK web site."
+msgstr ""
+"לעזרה ולהדרכה למשתמשים, נא\n"
+"לגשת לאתר של KsirK."
+
+#: main.cpp:50
+#, kde-format
+msgid "Gaël de Chalendar aka Kleag"
+msgstr "גאל דה שלנדה ידוע גם בתור Kleag"
+
+#: main.cpp:51
+#, kde-format
+msgid "Nemanja Hirsl"
+msgstr ""
+
+#: main.cpp:51
+#, kde-format
+msgid "Current maintainer"
+msgstr ""
+
+#: main.cpp:52
+#, kde-format
+msgid "Robin Doer"
+msgstr ""
+
+#: main.cpp:53
+#, kde-format
+msgid "Albert Astals Cid"
+msgstr ""
+
+#: main.cpp:54
+#, kde-format
+msgid "Michal Golunski (Polish translation)"
+msgstr "מיכל גולונסקי (תרגום לפולנית)"
+
+#: main.cpp:55
+#, kde-format
+msgid "French students of the 'IUP ISI 2007-2008':"
+msgstr ""
+
+#: main.cpp:56
+#, kde-format
+msgid ""
+"&nbsp;&nbsp;Anthony Rey<br/>&nbsp;&nbsp;Benjamin Lucas<br/>&nbsp;&nbsp;"
+"Benjamin Moreau<br/>&nbsp;&nbsp;Gaël Clouet<br/>&nbsp;&nbsp;Guillaume "
+"Pelouas<br/>&nbsp;&nbsp;Joël Marco<br/>&nbsp;&nbsp;Laurent Dang<br/>&nbsp;"
+"&nbsp;Nicolas Linard<br/>&nbsp;&nbsp;Vincent Sac"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, lTitle)
+#: mainMenu.ui:38
+#, kde-format
+msgid "<h1>KsirK</h1>"
+msgstr "<h1>KsirK</h1>"
+
+#. i18n: ectx: property (text), widget (QPushButton, pbNewGame)
+#: mainMenu.ui:97
+#, kde-format
+msgid "New Local Game"
+msgstr "משחק מקומי חדש"
+
+#. i18n: ectx: property (text), widget (QPushButton, pbNewSocketGame)
+#: mainMenu.ui:104
+#, kde-format
+msgid "New Standard TCP/IP Network Game"
+msgstr "משחק רשת TCP/IP תקני חדש"
+
+#. i18n: ectx: property (text), widget (QPushButton, pbJoin)
+#: mainMenu.ui:111
+#, kde-format
+msgid "Join Standard TCP/IP Network Game"
+msgstr "הצטרפות למשחק רשת TCP/IP תקני"
+
+#. i18n: ectx: property (text), widget (QPushButton, pbLoad)
+#: mainMenu.ui:118
+#, kde-format
+msgid "Load…"
+msgstr "טעינה…"
+
+#. i18n: ectx: property (text), widget (QPushButton, pbQuit)
+#: mainMenu.ui:138
+#, kde-format
+msgid "Quit"
+msgstr "יציאה"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_soundEnabled)
+#: preferences.ui:35
+#, kde-format
+msgid "Sound enabled"
+msgstr "שמע מופעל"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: preferences.ui:48
+#, kde-format
+msgid "Sprites speed (slow, normal, rapid, immediate):"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_helpEnabled)
+#: preferences.ui:92
+#, kde-format
+msgid "Show help"
+msgstr "הצגת עזרה"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_showArmiesNumbers)
+#: preferences.ui:99
+#, kde-format
+msgid "Show number of armies on countries"
+msgstr "הצגת מספר הצבאות למדינה"
+
+#: SaveLoad/ksirkgamexmlhandler.cpp:58
+#, kde-format
+msgid "Wrong save game format. Waited %1 and got %2!"
+msgstr ""
+
+#: SaveLoad/ksirkgamexmlhandler.cpp:139
+#, kde-format
+msgid "Current player is: %1"
+msgstr "השחקן הנוכחי הוא: %1"
+
+#: SaveLoad/ksirkgamexmlloader.cpp:46
+#, kde-format
+msgid "Skin file parsing error"
+msgstr "שגיאת פענוח קובץ מעטפת"
+
+#: Sprites/animsprite.cpp:515
+#, kde-format
+msgid "Cannot find Max X for sprite: no background!"
+msgstr ""
+
+#: Sprites/animsprite.cpp:530
+#, kde-format
+msgid "Cannot find Max Y for sprite: no background!"
+msgstr ""
+
+#: Sprites/skinSpritesData.cpp:88
+#, kde-format
+msgid "Error - Unknown skin int data: "
+msgstr ""
+
+#: Sprites/skinSpritesData.cpp:104
+#, kde-format
+msgid "Error - Unknown skin string data: "
+msgstr ""

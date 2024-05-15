@@ -273,22 +273,6 @@ your application. -->
 ></para
 ></listitem>
     </varlistentry>
-<!--
-    <varlistentry>
-      <term
-><guibutton
->Play &ksirk; over Jabber Network</guibutton
-></term>
-      <listitem
-><para
-><action
->Play &ksirk; over <ulink url="https://en.wikipedia.org/wiki/XMPP"
->Jabber</ulink
->. You need to register Jabber account first.</action
-></para
-></listitem>
-    </varlistentry>
--->
     <varlistentry>
       <term
 ><guibutton
@@ -322,7 +306,7 @@ your application. -->
     <varlistentry>
       <term
 ><guibutton
->Carica...</guibutton
+>Carica…</guibutton
 ></term>
       <listitem
 ><para
@@ -352,7 +336,7 @@ your application. -->
 >, si aprirà la finestra <guilabel
 >Proprietà della nuova partita</guilabel
 > dove potrai scegliere il numero di giocatori, il tema da usare, il tipo di partita (conquista o per obiettivi) e infine se giocare la partita in rete o localmente. I nuovi temi si possono scaricare con il pulsante <guibutton
->Scarica nuovi temi...</guibutton
+>Scarica nuovi temi…</guibutton
 >.</para>
 
   <screenshot>
@@ -795,7 +779,7 @@ your application. -->
   <para
 >Quando un giocatore termina di distribuire le proprie armate, fa clic su <guibutton
 >Convalida</guibutton
-> per permettere al giocatore seguente di distribuire le sue armate bonus. Come per la distribuzione iniziale, quando tutti i giocatori hanno disposto tutte le loro armate, possono iniziare un ulteriore giro di ridistribuzione o iniziare una nuova mano...</para>
+> per permettere al giocatore seguente di distribuire le sue armate bonus. Come per la distribuzione iniziale, quando tutti i giocatori hanno disposto tutte le loro armate, possono iniziare un ulteriore giro di ridistribuzione o iniziare una nuova mano…</para>
   </sect2>
 
 <!-- Does not work for current TCP/IP games
@@ -978,7 +962,7 @@ distribution. -->
 ><guimenu
 >Impostazioni</guimenu
 > <guimenuitem
->Configura &ksirk;...</guimenuitem
+>Configura &ksirk;…</guimenuitem
 ></menuchoice
 > apre una finestra che permette di:</para>
 
