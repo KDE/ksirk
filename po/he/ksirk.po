@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-07 00:37+0000\n"
-"PO-Revision-Date: 2024-05-14 20:43+0300\n"
+"PO-Revision-Date: 2024-05-16 22:55+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1156,13 +1156,13 @@ msgstr ""
 #: Dialogs/InvasionSlider.cpp:100
 #, kde-format
 msgid "<br><i>Choose the number of invading armies.</i>"
-msgstr ""
+msgstr "<br><i>נא לבחור את מספר הצבאות הפולשים.</i>"
 
 #: Dialogs/InvasionSlider.cpp:104
 #, kde-format
 msgctxt "@title:window"
 msgid "Moving"
-msgstr ""
+msgstr "העברה"
 
 #: Dialogs/InvasionSlider.cpp:105
 #, kde-format
@@ -1170,17 +1170,19 @@ msgid ""
 "You are moving armies from <font color=\"red\">%1</font> to <font color="
 "\"blue\">%2</font>!"
 msgstr ""
+"בחרת להעביר צבאות מ<font color=\"red\">%1</font> ל<font color=\"blue\">%2</"
+"font>!"
 
 #: Dialogs/InvasionSlider.cpp:106
 #, kde-format
 msgid "<br><i>Choose the number of armies to move.</i>"
-msgstr ""
+msgstr "<br><i>נא לבחור את מספר הצבאות להעברה.</i>"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, JoinGameDialog)
 #: Dialogs/joingame.ui:13
 #, kde-format
 msgid "Join Network Game Configuration"
-msgstr ""
+msgstr "הגדרות הצטרפות למשחק רשת"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: Dialogs/joingame.ui:19
@@ -1193,35 +1195,35 @@ msgstr "הגדרות רשת"
 #: Dialogs/joingame.ui:25 Dialogs/tcpconnectwidget.ui:25
 #, kde-format
 msgid "Host:"
-msgstr ""
+msgstr "מארח:"
 
 #. i18n: ectx: property (text), widget (QLabel, portLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: Dialogs/joingame.ui:35 Dialogs/tcpconnectwidget.ui:38
 #, kde-format
 msgid "Port:"
-msgstr ""
+msgstr "פתחה:"
 
 #: Dialogs/kplayersetupwidget.cpp:250
 #, kde-format
 msgid "Name already in use. Please choose another one."
-msgstr ""
+msgstr "השם כבר בשימוש. נא לבחור בשם אחר."
 
 #: Dialogs/kplayersetupwidget.cpp:252
 #, kde-format
 msgid "Empty name. Please choose another one."
-msgstr ""
+msgstr "שם ריק. נא לבחור בשם אחר."
 
 #: Dialogs/kplayersetupwidget.cpp:295
 #, kde-format
 msgid "Player Number %1, please type in your name and choose your nation:"
-msgstr ""
+msgstr "שחקן מספר %1, נא להקליד את השם ולבחור את הלאום שלך:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: Dialogs/newGameDialog.ui:26
 #, kde-format
 msgid "Total number of players:"
-msgstr ""
+msgstr "מספר השחקנים הכולל:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, playersNumberEntry)
 #: Dialogs/newGameDialog.ui:36
@@ -1239,7 +1241,7 @@ msgstr ""
 #: Dialogs/newGameDialog.ui:50
 #, kde-format
 msgid "Number of local players:"
-msgstr ""
+msgstr "מספר השחקנים המקומיים:"
 
 #. i18n: ectx: property (text), widget (QLabel, tcpPortLabel)
 #: Dialogs/newGameDialog.ui:64
@@ -1252,7 +1254,7 @@ msgstr ""
 #: Dialogs/newGameDialog.ui:103 Dialogs/newGameSummary.ui:41
 #, kde-format
 msgid "Skin:"
-msgstr ""
+msgstr "מעטפת:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, skinCombo)
 #: Dialogs/newGameDialog.ui:113
@@ -1270,19 +1272,19 @@ msgstr ""
 #: Dialogs/newGameDialog.ui:123
 #, kde-format
 msgid "Download New Skins…"
-msgstr ""
+msgstr "הורדות מעטפות חדשות…"
 
 #. i18n: ectx: property (configFile), widget (KNSWidgets::Button, ghnsbutton)
 #: Dialogs/newGameDialog.ui:126
 #, kde-format
 msgid "ksirk.knsrc"
-msgstr ""
+msgstr "ksirk.knsrc"
 
 #. i18n: ectx: property (title), widget (QGroupBox, goalGroup)
 #: Dialogs/newGameDialog.ui:150
 #, kde-format
 msgid "Goal Type"
-msgstr ""
+msgstr "סוג יעד"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, radioWorld)
 #: Dialogs/newGameDialog.ui:156
@@ -1294,13 +1296,13 @@ msgstr ""
 #: Dialogs/newGameDialog.ui:159
 #, kde-format
 msgid "In this mode, a player will have to conquer all the world to win."
-msgstr ""
+msgstr "במצב הזה, על שחקן יהיה לכבוש את כל העולם כדי לנצח."
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioWorld)
 #: Dialogs/newGameDialog.ui:162
 #, kde-format
 msgid "World con&quest"
-msgstr ""
+msgstr "&כיבוש העולם"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, radioGoal)
 #: Dialogs/newGameDialog.ui:169
@@ -1320,21 +1322,21 @@ msgstr ""
 #: Dialogs/newGameDialog.ui:175
 #, kde-format
 msgid "Reach a goa&l"
-msgstr ""
+msgstr "ה&געה ליעד"
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
 #: Dialogs/newGameDialog.ui:230 Dialogs/newGameSummary.ui:206
 #: Dialogs/qplayersetupdialog.ui:126 Dialogs/tcpconnectwidget.ui:98
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "ביטול"
 
 #. i18n: ectx: property (text), widget (QPushButton, nextButton)
 #: Dialogs/newGameDialog.ui:250 Dialogs/qplayersetupdialog.ui:153
 #: Dialogs/tcpconnectwidget.ui:125
 #, kde-format
 msgid "Next"
-msgstr ""
+msgstr "הבא"
 
 #: Dialogs/newGameDialogImpl.cpp:128 newgamesetup.cpp:44
 #, kde-format
@@ -1342,6 +1344,8 @@ msgid ""
 "Skins directory not found - Verify your installation\n"
 "Program cannot continue"
 msgstr ""
+"תיקיית המעטפות לא נמצאה - נא לוודא שההתקנה שלך תקינה\n"
+"התוכנית לא יכולה להמשיך"
 
 #: Dialogs/newGameDialogImpl.cpp:129 GameLogic/aiplayer.cpp:506
 #: newgamesetup.cpp:45 Sprites/skinSpritesData.cpp:89
@@ -1349,94 +1353,94 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Fatal Error"
-msgstr ""
+msgstr "שגיאה חמורה"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: Dialogs/newGameSummary.ui:24
 #, kde-format
 msgid "New Game Summary"
-msgstr ""
+msgstr "תקציר משחק חדש"
 
 #. i18n: ectx: property (text), widget (QLabel, skinNameLabel)
 #: Dialogs/newGameSummary.ui:48
 #, kde-format
 msgid "skin name"
-msgstr ""
+msgstr "שם המעטפת"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: Dialogs/newGameSummary.ui:99
 #, kde-format
 msgid "Players"
-msgstr ""
+msgstr "שחקנים"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: Dialogs/newGameSummary.ui:125
 #, kde-format
 msgid "Goal type:"
-msgstr ""
+msgstr "סוג יעד:"
 
 #. i18n: ectx: property (text), widget (QLabel, goalTypeLabel)
 #: Dialogs/newGameSummary.ui:132
 #, kde-format
 msgid "goal type"
-msgstr ""
+msgstr "סוג יעד"
 
 #. i18n: ectx: property (text), widget (QTableWidget, playersTable)
 #: Dialogs/newGameSummary.ui:154
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "שם"
 
 #. i18n: ectx: property (text), widget (QTableWidget, playersTable)
 #: Dialogs/newGameSummary.ui:165
 #, kde-format
 msgid "Nationality"
-msgstr ""
+msgstr "לאום"
 
 #. i18n: ectx: property (text), widget (QTableWidget, playersTable)
 #: Dialogs/newGameSummary.ui:176
 #, kde-format
 msgid "Computer"
-msgstr ""
+msgstr "מחשב"
 
 #. i18n: ectx: property (text), widget (QTableWidget, playersTable)
 #: Dialogs/newGameSummary.ui:187
 #, kde-format
 msgid "Network"
-msgstr ""
+msgstr "רשת"
 
 #. i18n: ectx: property (text), widget (QPushButton, previousButton)
 #: Dialogs/newGameSummary.ui:226 Dialogs/qplayersetupdialog.ui:146
 #: Dialogs/tcpconnectwidget.ui:118
 #, kde-format
 msgid "Previous"
-msgstr ""
+msgstr "הקודם"
 
 #. i18n: ectx: property (text), widget (QPushButton, finishButton)
 #: Dialogs/newGameSummary.ui:236
 #, kde-format
 msgid "Start"
-msgstr ""
+msgstr "התחלה"
 
 #: Dialogs/newGameSummaryWidget.cpp:62
 #, kde-format
 msgid "Reach a goal"
-msgstr ""
+msgstr "הגעה ליעד"
 
 #: Dialogs/newGameSummaryWidget.cpp:62
 #, kde-format
 msgid "World conquest"
-msgstr ""
+msgstr "כיבוש העולם"
 
 #: Dialogs/newGameSummaryWidget.cpp:77 Dialogs/newGameSummaryWidget.cpp:79
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "כן"
 
 #: Dialogs/newGameSummaryWidget.cpp:77 Dialogs/newGameSummaryWidget.cpp:79
 #, kde-format
 msgid "No"
-msgstr ""
+msgstr "לא"
 
 #. i18n: ectx: property (text), widget (QLabel, TextLabel1)
 #: Dialogs/qplayersetupdialog.ui:20
@@ -1500,37 +1504,37 @@ msgstr ""
 #: Dialogs/restartOrExitDialog.ui:27
 #, kde-format
 msgid "New Game"
-msgstr ""
+msgstr "משחק חדש"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newGameButton)
 #: Dialogs/restartOrExitDialog.ui:33
 #, kde-format
 msgid "Starts a new game"
-msgstr ""
+msgstr "התחלת משחק חדש"
 
 #. i18n: ectx: property (text), widget (QPushButton, doNothingButton)
 #: Dialogs/restartOrExitDialog.ui:40
 #, kde-format
 msgid "Do Nothing"
-msgstr ""
+msgstr "לא לעשות כלום"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, doNothingButton)
 #: Dialogs/restartOrExitDialog.ui:43
 #, kde-format
 msgid "Do nothing. Game buttons will be available"
-msgstr ""
+msgstr "לא לעשות כלום. כפתורי המשחק יהיו זמינים"
 
 #. i18n: ectx: property (text), widget (QPushButton, exitButton)
 #: Dialogs/restartOrExitDialog.ui:53
 #, kde-format
 msgid "Exit"
-msgstr ""
+msgstr "יציאה"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, exitButton)
 #: Dialogs/restartOrExitDialog.ui:56
 #, kde-format
 msgid "Quit KsirK"
-msgstr ""
+msgstr "יציאה מ־KsirK"
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
 #: Dialogs/restartOrExitDialog.ui:92
@@ -1542,7 +1546,7 @@ msgstr ""
 #: Dialogs/tcpconnectwidget.ui:71
 #, kde-format
 msgid "localhost"
-msgstr ""
+msgstr "localhost"
 
 #: GameLogic/aiplayer.cpp:504
 #, kde-format
@@ -1561,29 +1565,29 @@ msgstr[3] ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Configuration"
-msgstr ""
+msgstr "הגדרות רשת"
 
 #: GameLogic/gameautomaton.cpp:304
 #, kde-format
 msgid "Please type in the port number on which to offer connections:"
-msgstr ""
+msgstr "נא למלא את מספר הפתחה בה להציע את החיבורים:"
 
 #: GameLogic/gameautomaton.cpp:1191
 #, kde-format
 msgid "Do you really want to end your current game and join another?"
-msgstr ""
+msgstr "לסיים את המשחק הנוכחי ולהצטרף לאחד אחר?"
 
 #: GameLogic/gameautomaton.cpp:1191
 #, kde-format
 msgctxt "@title:window"
 msgid "New Game Confirmation"
-msgstr ""
+msgstr "אישור משחק חדש"
 
 #: GameLogic/gameautomaton.cpp:1191
 #, kde-format
 msgctxt "@action:button"
 msgid "Join New Game"
-msgstr ""
+msgstr "הצטרפות למשחק חדש"
 
 #: GameLogic/gameautomaton.cpp:1362
 #, kde-format
@@ -1593,40 +1597,40 @@ msgstr ""
 #: GameLogic/gameautomaton.cpp:1468
 #, kde-format
 msgid "Please choose another name."
-msgstr ""
+msgstr "נא לבחור שם אחר."
 
 #: GameLogic/gameautomaton.cpp:1468
 #, kde-format
 msgctxt "@title:window"
 msgid "Name Already Used"
-msgstr ""
+msgstr "השם כבר בשימוש"
 
 #: GameLogic/gameautomaton.cpp:1474
 #, kde-format
 msgid "Player number %1, what's your name?"
-msgstr ""
+msgstr "שחקן מספר %1, איך קוראים לך?"
 
 #: GameLogic/gameautomaton.cpp:1478
 #, kde-format
 msgid "Error - Player %1, you have to choose a name."
-msgstr ""
+msgstr "שגיאה - שחקן %1, יש לבחור שם."
 
 #: GameLogic/gameautomaton.cpp:1480
 #, kde-format
 msgctxt "@info Forged player name"
 msgid "Player%1"
-msgstr ""
+msgstr "שחקן%1"
 
 #: GameLogic/gameautomaton.cpp:1531
 #, kde-format
 msgid "Please choose another nation."
-msgstr ""
+msgstr "נא לבחור לאום אחר."
 
 #: GameLogic/gameautomaton.cpp:1531
 #, kde-format
 msgctxt "@title:window"
 msgid "Nation Already Used"
-msgstr ""
+msgstr "הלאום כבר בשימוש"
 
 #: GameLogic/gameautomaton.cpp:1623
 #, kde-format
@@ -1634,30 +1638,32 @@ msgid ""
 "KsirK - Lost connection to server!\n"
 "What do you want to do?"
 msgstr ""
+"KsirK - החיבור לשרת אבד!\n"
+"מה לעשות?"
 
 #: GameLogic/gameautomaton.cpp:1624
 #, kde-format
 msgctxt "@title:window"
 msgid "Starting a New Game or Exit."
-msgstr ""
+msgstr "התחלת משחק חדש או יציאה."
 
 #: GameLogic/gameautomaton.cpp:1625
 #, kde-format
 msgctxt "@action:button"
 msgid "New Game"
-msgstr ""
+msgstr "משחק חדש"
 
 #: GameLogic/gameautomaton.cpp:1626
 #, kde-format
 msgctxt "@action:button"
 msgid "Exit"
-msgstr ""
+msgstr "יציאה"
 
 #: GameLogic/gameautomaton.cpp:1627
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Nothing"
-msgstr ""
+msgstr "לא לעשות כלום"
 
 #: GameLogic/gameautomaton.cpp:1649
 #, kde-format
@@ -1671,7 +1677,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Lost Connection to Client"
-msgstr ""
+msgstr "החיבור ללקוח אבד"
 
 #: GameLogic/gameautomaton.cpp:1652
 #, kde-format
@@ -1682,7 +1688,7 @@ msgstr ""
 #: kgamewin.cpp:2038 kgamewin.cpp:2133 kgamewin.cpp:2170
 #, kde-format
 msgid "%1: %2 armies to place"
-msgstr ""
+msgstr "%1: %2 צבאות להצבה"
 
 #: GameLogic/gameautomaton.cpp:1823 GameLogic/gameautomaton.cpp:2238
 #: kgamewinslots.cpp:793
@@ -1731,7 +1737,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Invalid Password"
-msgstr ""
+msgstr "סיסמה שגויה"
 
 #: GameLogic/gameautomaton.cpp:2588
 #, kde-format
@@ -1744,33 +1750,33 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Next Player Confirmation"
-msgstr ""
+msgstr "אישור השחקן הבא"
 
 #: GameLogic/gameautomaton.cpp:2590
 #, kde-format
 msgctxt "@action:button"
 msgid "Next Player"
-msgstr ""
+msgstr "השחקן הבא"
 
 #: GameLogic/goal.cpp:156
 #, kde-format
 msgid "You must conquer the World!"
-msgstr ""
+msgstr "צריך לכבוש את העולם!"
 
 #: GameLogic/goal.cpp:184
 #, kde-format
 msgid "%1 (already dead)"
-msgstr ""
+msgstr "%1 (כבר מת)"
 
 #: GameLogic/goal.cpp:195
 #, kde-format
 msgid "Error: no player to destroy"
-msgstr ""
+msgstr "שגיאה: אין שחקן להשמיד"
 
 #: GameLogic/goal.cpp:231
 #, kde-format
 msgid "<br>%1 is still alive…"
-msgstr ""
+msgstr "<br>%1 עדיין חי…"
 
 #: GameLogic/goal.cpp:238 GameLogic/goal.cpp:252
 #, kde-format
@@ -1822,13 +1828,13 @@ msgstr[3] ""
 #, kde-format
 msgctxt "@item:intext country list separator of last item"
 msgid " and "
-msgstr ""
+msgstr " וגם "
 
 #: GameLogic/goal.cpp:289
 #, kde-format
 msgctxt "@item:intext country list separator of non-last item"
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: GameLogic/goal.cpp:295
 #, kde-format
@@ -1836,23 +1842,23 @@ msgctxt ""
 "@info An element of the enumeration of the number of countries in the given "
 "continent"
 msgid "%1 in %2"
-msgstr ""
+msgstr "%1 ב%2"
 
 #: GameLogic/goal.cpp:317
 #, kde-format
 msgctxt "@title:window"
 msgid "Goal Display"
-msgstr ""
+msgstr "תצוגת יעד"
 
 #: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:170
 #, kde-format
 msgid "No message…"
-msgstr ""
+msgstr "אין הודעה…"
 
 #: GameLogic/KsirkChatModel.cpp:73
 #, kde-format
 msgid "<b>%1:</b> %2"
-msgstr ""
+msgstr "<b>%1:</b> %2"
 
 #: GameLogic/onu.cpp:119
 #, kde-format
@@ -1860,6 +1866,8 @@ msgid ""
 "Pool filename not found\n"
 "Program cannot continue"
 msgstr ""
+"שם קובץ המאגר לא נמצא\n"
+"התוכנית לא יכולה להמשיך"
 
 #: GameLogic/onu.cpp:135
 #, kde-format
@@ -1867,11 +1875,13 @@ msgid ""
 "Map mask image not found\n"
 "Program cannot continue"
 msgstr ""
+"מסכת המפה לא נמצאה\n"
+"התוכנית לא יכולה להמשיך"
 
 #: gestionSprites.cpp:72 gestionSprites.cpp:106 gestionSprites.cpp:157
 #, kde-format
 msgid "Cannot move %1 armies from %2 to %3"
-msgstr ""
+msgstr "לא ניתן להעביר %1 צבאות מ%2 ל%3"
 
 #: gestionSprites.cpp:79
 #, kde-format
@@ -2044,29 +2054,29 @@ msgstr ""
 #: kgamewin.cpp:947
 #, kde-format
 msgid "Do you want to quit the game?"
-msgstr ""
+msgstr "לצאת מהמשחק?"
 
 #: kgamewin.cpp:949
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
-msgstr ""
+msgstr "יציאה מהמשחק"
 
 #: kgamewin.cpp:961
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
-msgstr ""
+msgstr "בטרם היציאה, לשמור את המשחק שלך?"
 
 #: kgamewin.cpp:999
 #, kde-format
 msgctxt "@title:window"
 msgid "Load Game"
-msgstr ""
+msgstr "טעינת משחק"
 
 #: kgamewin.cpp:1037
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
-msgstr ""
+msgstr "בהמתנה לחיבור של %1 שחקני רשת."
 
 #: kgamewin.cpp:1116
 #, kde-format
@@ -2085,28 +2095,28 @@ msgstr[3] ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Defend 1"
-msgstr ""
+msgstr "הגנה 1"
 
 #: kgamewin.cpp:1146
 #, kde-format
 msgctxt "@action:button"
 msgid "Defend 2"
-msgstr ""
+msgstr "הגנה 2"
 
 #: kgamewin.cpp:1147
 #, kde-format
 msgctxt "@action:button"
 msgid "Defend-Auto"
-msgstr ""
+msgstr "הגנה-אוטומטית"
 
 #: kgamewin.cpp:1266
 #, kde-format
 msgid "Waiting for %1 players to connect"
-msgstr ""
+msgstr "בהמתנה לחיבור של %1 שחקנים"
 
 #: kgamewin.cpp:1656 kgamewin.cpp:1696
 msgid "There is no country here!"
-msgstr ""
+msgstr "אין כאן מדינה!"
 
 #: kgamewin.cpp:1660 kgamewin.cpp:1701
 #, kde-format
@@ -2126,7 +2136,7 @@ msgstr ""
 #: kgamewin.cpp:1673 kgamewin.cpp:1718
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
-msgstr ""
+msgstr "%1 אינה שכנה של %2!"
 
 #: kgamewin.cpp:1679
 #, kde-format
@@ -2136,7 +2146,7 @@ msgstr ""
 #: kgamewin.cpp:1707
 #, kde-format
 msgid "You are the owner of the second country: %1!"
-msgstr ""
+msgstr "ביססת בעלות על המדינה השנייה: %1!"
 
 #: kgamewin.cpp:1725
 msgid "Ready to fight!"
@@ -2144,17 +2154,17 @@ msgstr ""
 
 #: kgamewin.cpp:1819
 msgid "<font color=\"orange\">No country here!</font>"
-msgstr ""
+msgstr "<font color=\"orange\">אין כאן מדינה!</font>"
 
 #: kgamewin.cpp:1827
 #, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
-msgstr ""
+msgstr "<font color=\"orange\">אין לך בעלות על %1!</font>"
 
 #: kgamewin.cpp:1834
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
-msgstr ""
+msgstr "<font color=\"orange\">יש רק %1 צבאות ב%2!</font>"
 
 #: kgamewin.cpp:1974
 #, kde-format
@@ -2163,7 +2173,7 @@ msgstr ""
 
 #: kgamewin.cpp:2198
 msgid "Exchange armies again or continue?"
-msgstr ""
+msgstr "להחליף צבאות שוב או להמשיך?"
 
 #: kgamewin.cpp:2223
 #, kde-format
@@ -2174,7 +2184,7 @@ msgstr ""
 
 #: kgamewin.cpp:2363
 msgid "Battle ongoing."
-msgstr ""
+msgstr "בעיצומו של קרב."
 
 #: kgamewin.cpp:2484 kgamewin.cpp:2495 kgamewin.cpp:2518
 #, kde-format
@@ -2189,17 +2199,17 @@ msgstr ""
 #: kgamewin.cpp:2547
 #, kde-format
 msgid "New game confirmation"
-msgstr ""
+msgstr "אישור משחק חדש"
 
 #: kgamewin.cpp:2547
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
-msgstr ""
+msgstr "התחלת משחק חדש"
 
 #: kgamewin.cpp:2803
 msgid "<b>KsirK quick Introduction</b>"
-msgstr ""
+msgstr "<b>היכרות זריזה עם KsirK</b>"
 
 #: kgamewin.cpp:2807
 msgid ""
@@ -2220,7 +2230,7 @@ msgstr ""
 #: kgamewin.cpp:2822
 #, kde-format
 msgid "Don't show messages anymore"
-msgstr ""
+msgstr "לא להציג עוד הודעות"
 
 #: kgamewinslots.cpp:108
 #, kde-format
@@ -2234,28 +2244,28 @@ msgstr[3] ""
 #: kgamewinslots.cpp:434
 #, kde-format
 msgid "Cannot save when waiting for a defense."
-msgstr ""
+msgstr "לא ניתן לשמור בעת המתנה להגנה."
 
 #: kgamewinslots.cpp:441
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Game"
-msgstr ""
+msgstr "שמירת המשחק"
 
 #: kgamewinslots.cpp:445
 #, kde-format
 msgid "Saving canceled"
-msgstr ""
+msgstr "השמירה בוטלה"
 
 #: kgamewinslots.cpp:456
 #, kde-format
 msgid "Game saved to %1"
-msgstr ""
+msgstr "המשחק נשמר אל %1"
 
 #: kgamewinslots.cpp:463
 #, kde-format
 msgid "Only game master can save the game in network playing."
-msgstr ""
+msgstr "רק שליט המשחק יכול לשמור את המשחק במשחק רשת."
 
 #: kgamewinslots.cpp:789
 #, kde-format
@@ -2263,6 +2273,8 @@ msgid ""
 "Attack by drag & drop between countries<br>Move armies the same way (last "
 "action of a turn)."
 msgstr ""
+"אפשר לתקוף בגרירה בין מדינות<br>אפשר להעביר צבאות באותו האופן (הפעולה "
+"האחרונה בתור)."
 
 #: krightdialog.cpp:116
 #, kde-format
