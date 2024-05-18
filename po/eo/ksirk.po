@@ -2,15 +2,15 @@
 # Copyright (C) 2009 Free Software Foundation, Inc.
 # This file is distributed under the same license as the ksirk package.
 # Axel Rousseau <axel@esperanto-jeunes.org>, 2009.
-# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+# Oliver Kellogg <olivermkellogg@gmail.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-07 02:26+0000\n"
-"PO-Revision-Date: 2023-10-02 17:33+0100\n"
-"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"PO-Revision-Date: 2024-05-07 23:27+0100\n"
+"Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgstr "Axel Rousseau,Oliver Kellogg"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "axel@esperanto-jeunes.org,okellogg@users.sourceforge.net"
+msgstr "axel@esperanto-jeunes.org,olivermkellogg@gmail.com"
 
 #. i18n: file skins/default/Data/world.desktop line 1
 #. i18n: file skins/default/Data/world.desktop line 516
@@ -1647,7 +1647,7 @@ msgstr "Komencas novan ludon"
 #: Dialogs/restartOrExitDialog.ui:37
 #, kde-format
 msgid "Do Nothing"
-msgstr "Nenion fari"
+msgstr "Nenion Fari"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, doNothingButton)
 #: Dialogs/restartOrExitDialog.ui:40
@@ -1698,7 +1698,7 @@ msgstr[1] ""
 #: Sprites/skinSpritesData.cpp:105
 #, kde-format
 msgid "Fatal Error"
-msgstr "Grava eraro"
+msgstr "Grava Eraro"
 
 #: GameLogic/gameautomaton.cpp:306
 #, kde-format
@@ -3034,7 +3034,7 @@ msgstr "Defendi 2"
 #: kgamewin.cpp:1249
 #, kde-format
 msgid "Defend-Auto"
-msgstr "Defend-Auto"
+msgstr "Defend-Aŭtomato"
 
 #: kgamewin.cpp:1368
 #, kde-format
