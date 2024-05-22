@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-07 02:26+0000\n"
+"POT-Creation-Date: 2024-05-22 02:31+0000\n"
 "PO-Revision-Date: 2022-01-11 13:26+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1551,12 +1551,6 @@ msgstr "لا"
 msgid "Player Setup"
 msgstr "اللاعب تثبيت"
 
-#. i18n: ectx: property (text), widget (QLabel, TextLabel1)
-#: Dialogs/qplayersetupdialog.ui:23
-#, fuzzy, no-c-format, kde-format
-msgid "Player number %1, please enter your name and choose your nation:"
-msgstr "اللاعب رقم d أدخل الاسم و اختيار:"
-
 #. i18n: ectx: property (toolTip), widget (QComboBox, nationCombo)
 #. i18n: ectx: property (toolTip), widget (QComboBox, waitedPlayersCombo)
 #: Dialogs/qplayersetupdialog.ui:51 Dialogs/qwaitedplayersetupdialog.ui:33
@@ -1644,12 +1638,6 @@ msgstr "اخرج"
 #, fuzzy, kde-format
 msgid "Quit KsirK"
 msgstr "اخرج"
-
-#. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: Dialogs/restartOrExitDialog.ui:86
-#, fuzzy, no-c-format, kde-format
-msgid "%1 won! Do you want to play again?"
-msgstr "تنفيذ إلى تشغيل?"
 
 #. i18n: ectx: property (text), widget (QLineEdit, hostEdit)
 #: Dialogs/tcpconnectwidget.ui:74
@@ -3534,6 +3522,14 @@ msgstr "خطأ مجهول int البيانات "
 #, fuzzy, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "خطأ مجهول سلسلة نص البيانات "
+
+#, fuzzy
+#~ msgid "Player number %1, please enter your name and choose your nation:"
+#~ msgstr "اللاعب رقم d أدخل الاسم و اختيار:"
+
+#, fuzzy
+#~ msgid "%1 won! Do you want to play again?"
+#~ msgstr "تنفيذ إلى تشغيل?"
 
 #~ msgid "Overwrite file?"
 #~ msgstr "أأكتب فوق الملفّ؟"

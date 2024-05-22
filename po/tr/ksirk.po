@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-07 02:26+0000\n"
+"POT-Creation-Date: 2024-05-22 02:31+0000\n"
 "PO-Revision-Date: 2024-05-06 13:56+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1576,12 +1576,6 @@ msgstr "Hayır"
 msgid "Player Setup"
 msgstr "Oyuncu Ayarları"
 
-#. i18n: ectx: property (text), widget (QLabel, TextLabel1)
-#: Dialogs/qplayersetupdialog.ui:23
-#, no-c-format, kde-format
-msgid "Player number %1, please enter your name and choose your nation:"
-msgstr "%1 numaralı oyuncu, lütfen adınızı girin ve ulusunuzu seçin:"
-
 #. i18n: ectx: property (toolTip), widget (QComboBox, nationCombo)
 #. i18n: ectx: property (toolTip), widget (QComboBox, waitedPlayersCombo)
 #: Dialogs/qplayersetupdialog.ui:51 Dialogs/qwaitedplayersetupdialog.ui:33
@@ -1671,12 +1665,6 @@ msgstr "Çık"
 #, kde-format
 msgid "Quit KsirK"
 msgstr "KsirK Oyunundan Çık"
-
-#. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: Dialogs/restartOrExitDialog.ui:86
-#, no-c-format, kde-format
-msgid "%1 won! Do you want to play again?"
-msgstr "%1 Kazandı! Yeniden oynamak istiyor musunuz?"
 
 #. i18n: ectx: property (text), widget (QLineEdit, hostEdit)
 #: Dialogs/tcpconnectwidget.ui:74
@@ -3584,3 +3572,9 @@ msgstr "Hata — Bilinmeyen tema tamsayı verisi: "
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Hata — Bilinmeyen tema dizisi verisi: "
+
+#~ msgid "Player number %1, please enter your name and choose your nation:"
+#~ msgstr "%1 numaralı oyuncu, lütfen adınızı girin ve ulusunuzu seçin:"
+
+#~ msgid "%1 won! Do you want to play again?"
+#~ msgstr "%1 Kazandı! Yeniden oynamak istiyor musunuz?"

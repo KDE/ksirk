@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-07 02:26+0000\n"
+"POT-Creation-Date: 2024-05-22 02:31+0000\n"
 "PO-Revision-Date: 2024-04-23 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1563,12 +1563,6 @@ msgstr "否"
 msgid "Player Setup"
 msgstr "玩家设置"
 
-#. i18n: ectx: property (text), widget (QLabel, TextLabel1)
-#: Dialogs/qplayersetupdialog.ui:23
-#, no-c-format, kde-format
-msgid "Player number %1, please enter your name and choose your nation:"
-msgstr "玩家 %1，请输入您的名字，并选择一个国家："
-
 #. i18n: ectx: property (toolTip), widget (QComboBox, nationCombo)
 #. i18n: ectx: property (toolTip), widget (QComboBox, waitedPlayersCombo)
 #: Dialogs/qplayersetupdialog.ui:51 Dialogs/qwaitedplayersetupdialog.ui:33
@@ -1658,12 +1652,6 @@ msgstr "退出"
 #, kde-format
 msgid "Quit KsirK"
 msgstr "退出 KsirK"
-
-#. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: Dialogs/restartOrExitDialog.ui:86
-#, no-c-format, kde-format
-msgid "%1 won! Do you want to play again?"
-msgstr "%1 赢了！您想要再玩一次吗？"
 
 #. i18n: ectx: property (text), widget (QLineEdit, hostEdit)
 #: Dialogs/tcpconnectwidget.ui:74
@@ -3520,3 +3508,9 @@ msgstr "错误 - 未知的皮肤整数数据： "
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "错误 - 未知的皮肤字符串数据： "
+
+#~ msgid "Player number %1, please enter your name and choose your nation:"
+#~ msgstr "玩家 %1，请输入您的名字，并选择一个国家："
+
+#~ msgid "%1 won! Do you want to play again?"
+#~ msgstr "%1 赢了！您想要再玩一次吗？"

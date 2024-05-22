@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-07 02:26+0000\n"
+"POT-Creation-Date: 2024-05-22 02:31+0000\n"
 "PO-Revision-Date: 2013-03-29 11:36+0100\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1585,12 +1585,6 @@ msgstr "Nem"
 msgid "Player Setup"
 msgstr "Játékosbeállítás"
 
-#. i18n: ectx: property (text), widget (QLabel, TextLabel1)
-#: Dialogs/qplayersetupdialog.ui:23
-#, no-c-format, kde-format
-msgid "Player number %1, please enter your name and choose your nation:"
-msgstr "%1. játékos, adja meg nevét és országát:"
-
 #. i18n: ectx: property (toolTip), widget (QComboBox, nationCombo)
 #. i18n: ectx: property (toolTip), widget (QComboBox, waitedPlayersCombo)
 #: Dialogs/qplayersetupdialog.ui:51 Dialogs/qwaitedplayersetupdialog.ui:33
@@ -1680,12 +1674,6 @@ msgstr "Kilépés"
 #, kde-format
 msgid "Quit KsirK"
 msgstr "Kilépés a játékból"
-
-#. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: Dialogs/restartOrExitDialog.ui:86
-#, no-c-format, kde-format
-msgid "%1 won! Do you want to play again?"
-msgstr "%1 győzött! Szeretne új játékot kezdeni?"
 
 #. i18n: ectx: property (text), widget (QLineEdit, hostEdit)
 #: Dialogs/tcpconnectwidget.ui:74
@@ -3601,6 +3589,12 @@ msgstr "Hiba - Ismeretlen egész szám egy megjelenési fájlban: "
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Hiba - Ismeretlen sztring egy megjelenési fájlban: "
+
+#~ msgid "Player number %1, please enter your name and choose your nation:"
+#~ msgstr "%1. játékos, adja meg nevét és országát:"
+
+#~ msgid "%1 won! Do you want to play again?"
+#~ msgstr "%1 győzött! Szeretne új játékot kezdeni?"
 
 #~ msgid ""
 #~ "%1 exists.\n"

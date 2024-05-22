@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-07 02:26+0000\n"
+"POT-Creation-Date: 2024-05-22 02:31+0000\n"
 "PO-Revision-Date: 2013-04-12 03:54+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -1575,12 +1575,6 @@ msgstr "Жоқ"
 msgid "Player Setup"
 msgstr "Ойыншыны баптау"
 
-#. i18n: ectx: property (text), widget (QLabel, TextLabel1)
-#: Dialogs/qplayersetupdialog.ui:23
-#, no-c-format, kde-format
-msgid "Player number %1, please enter your name and choose your nation:"
-msgstr "Ойыншы №%1, атыңызды келтіріп қай ұлт болатыңызды таңдаңыз:"
-
 #. i18n: ectx: property (toolTip), widget (QComboBox, nationCombo)
 #. i18n: ectx: property (toolTip), widget (QComboBox, waitedPlayersCombo)
 #: Dialogs/qplayersetupdialog.ui:51 Dialogs/qwaitedplayersetupdialog.ui:33
@@ -1670,12 +1664,6 @@ msgstr "Шығу"
 #, kde-format
 msgid "Quit KsirK"
 msgstr "KsirK-тен шығу"
-
-#. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: Dialogs/restartOrExitDialog.ui:86
-#, no-c-format, kde-format
-msgid "%1 won! Do you want to play again?"
-msgstr "%1 жеңді! Жаңадан ойнайсыз ба?"
 
 #. i18n: ectx: property (text), widget (QLineEdit, hostEdit)
 #: Dialogs/tcpconnectwidget.ui:74
@@ -3560,6 +3548,12 @@ msgstr "Қате - Майданның мәліметінде беймәлім б
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Қате - майданның мәліметінде беймәлім мәтін жолы:"
+
+#~ msgid "Player number %1, please enter your name and choose your nation:"
+#~ msgstr "Ойыншы №%1, атыңызды келтіріп қай ұлт болатыңызды таңдаңыз:"
+
+#~ msgid "%1 won! Do you want to play again?"
+#~ msgstr "%1 жеңді! Жаңадан ойнайсыз ба?"
 
 #~ msgid ""
 #~ "%1 exists.\n"
