@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-07 00:37+0000\n"
+"POT-Creation-Date: 2024-05-22 00:37+0000\n"
 "PO-Revision-Date: 2009-04-23 22:40+0300\n"
 "Last-Translator: Toussis Manolis <manolis@koppermind.homelinux.org>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1493,14 +1493,6 @@ msgstr ""
 msgid "No"
 msgstr "Κανένα"
 
-#. i18n: ectx: property (text), widget (QLabel, TextLabel1)
-#: Dialogs/qplayersetupdialog.ui:20
-#, no-c-format, kde-format
-msgid "Player number %1, please enter your name and choose your nation:"
-msgstr ""
-"Παίκτη με αριθμό %1, παρακαλώ εισάγετε το όνομά σας και επιλέξτε το έθνος "
-"σας:"
-
 #. i18n: ectx: property (toolTip), widget (QComboBox, nationCombo)
 #. i18n: ectx: property (toolTip), widget (QComboBox, waitedPlayersCombo)
 #: Dialogs/qplayersetupdialog.ui:48 Dialogs/qwaitedplayersetupdialog.ui:33
@@ -1591,12 +1583,6 @@ msgstr "Έξοδος"
 #, kde-format
 msgid "Quit KsirK"
 msgstr "Έξοδος από το KsirK"
-
-#. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: Dialogs/restartOrExitDialog.ui:92
-#, no-c-format, kde-format
-msgid "%1 won! Do you want to play again?"
-msgstr "%1 κέρδισε! Επιθυμείτε να παίξετε ξανά;"
 
 #. i18n: ectx: property (text), widget (QLineEdit, hostEdit)
 #: Dialogs/tcpconnectwidget.ui:71
@@ -2774,6 +2760,14 @@ msgstr "Σφάλμα - Άγνωστα δεδομένα int του θέματος
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Σφάλμα - Άγνωστα δεδομένα string του θέματος: "
+
+#~ msgid "Player number %1, please enter your name and choose your nation:"
+#~ msgstr ""
+#~ "Παίκτη με αριθμό %1, παρακαλώ εισάγετε το όνομά σας και επιλέξτε το έθνος "
+#~ "σας:"
+
+#~ msgid "%1 won! Do you want to play again?"
+#~ msgstr "%1 κέρδισε! Επιθυμείτε να παίξετε ξανά;"
 
 #~ msgid "Goal"
 #~ msgstr "Στόχος"

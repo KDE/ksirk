@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-07 00:37+0000\n"
+"POT-Creation-Date: 2024-05-22 00:37+0000\n"
 "PO-Revision-Date: 2022-10-30 10:07+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -1463,12 +1463,6 @@ msgstr "Ja"
 msgid "No"
 msgstr "Nei"
 
-#. i18n: ectx: property (text), widget (QLabel, TextLabel1)
-#: Dialogs/qplayersetupdialog.ui:20
-#, no-c-format, kde-format
-msgid "Player number %1, please enter your name and choose your nation:"
-msgstr "Skriv inn namnet ditt, og vel kva nasjon du vil styra, spelar %1:"
-
 #. i18n: ectx: property (toolTip), widget (QComboBox, nationCombo)
 #. i18n: ectx: property (toolTip), widget (QComboBox, waitedPlayersCombo)
 #: Dialogs/qplayersetupdialog.ui:48 Dialogs/qwaitedplayersetupdialog.ui:33
@@ -1558,12 +1552,6 @@ msgstr "Avslutta"
 #, kde-format
 msgid "Quit KsirK"
 msgstr "Avslutt KsirK"
-
-#. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: Dialogs/restartOrExitDialog.ui:92
-#, no-c-format, kde-format
-msgid "%1 won! Do you want to play again?"
-msgstr "%1 vann! Vil du spela ein gong til?"
 
 #. i18n: ectx: property (text), widget (QLineEdit, hostEdit)
 #: Dialogs/tcpconnectwidget.ui:71
@@ -2721,3 +2709,9 @@ msgstr "Feil: Ukjende heiltalsdata i tema: "
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Feil: Ukjende strengdata i tema: "
+
+#~ msgid "Player number %1, please enter your name and choose your nation:"
+#~ msgstr "Skriv inn namnet ditt, og vel kva nasjon du vil styra, spelar %1:"
+
+#~ msgid "%1 won! Do you want to play again?"
+#~ msgstr "%1 vann! Vil du spela ein gong til?"

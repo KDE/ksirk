@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-07 00:37+0000\n"
+"POT-Creation-Date: 2024-05-22 00:37+0000\n"
 "PO-Revision-Date: 2024-04-27 20:49+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1475,14 +1475,6 @@ msgstr "Bai"
 msgid "No"
 msgstr "Ez"
 
-#. i18n: ectx: property (text), widget (QLabel, TextLabel1)
-#: Dialogs/qplayersetupdialog.ui:20
-#, no-c-format, kde-format
-msgid "Player number %1, please enter your name and choose your nation:"
-msgstr ""
-"%1 zenbakidun jokalaria, mesedez, sartu zure izena eta aukeratu zure "
-"herrialdea:"
-
 #. i18n: ectx: property (toolTip), widget (QComboBox, nationCombo)
 #. i18n: ectx: property (toolTip), widget (QComboBox, waitedPlayersCombo)
 #: Dialogs/qplayersetupdialog.ui:48 Dialogs/qwaitedplayersetupdialog.ui:33
@@ -1573,12 +1565,6 @@ msgstr "Irten"
 #, kde-format
 msgid "Quit KsirK"
 msgstr "Irten «KsirK»etik"
-
-#. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: Dialogs/restartOrExitDialog.ui:92
-#, no-c-format, kde-format
-msgid "%1 won! Do you want to play again?"
-msgstr "%1(e) irabazi du! Berriz jokatu nahi duzu?"
 
 #. i18n: ectx: property (text), widget (QLineEdit, hostEdit)
 #: Dialogs/tcpconnectwidget.ui:71
@@ -2739,6 +2725,14 @@ msgstr "Errorea - Azalean zenbaki oso datu ezezagunak:"
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Errorea - Azalean kate datu ezezagunak:"
+
+#~ msgid "Player number %1, please enter your name and choose your nation:"
+#~ msgstr ""
+#~ "%1 zenbakidun jokalaria, mesedez, sartu zure izena eta aukeratu zure "
+#~ "herrialdea:"
+
+#~ msgid "%1 won! Do you want to play again?"
+#~ msgstr "%1(e) irabazi du! Berriz jokatu nahi duzu?"
 
 #~ msgid "Goal"
 #~ msgstr "Helburua"

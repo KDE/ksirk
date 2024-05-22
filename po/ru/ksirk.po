@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-07 00:37+0000\n"
+"POT-Creation-Date: 2024-05-22 00:37+0000\n"
 "PO-Revision-Date: 2023-12-27 10:10+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -1476,12 +1476,6 @@ msgstr "Да"
 msgid "No"
 msgstr "Нет"
 
-#. i18n: ectx: property (text), widget (QLabel, TextLabel1)
-#: Dialogs/qplayersetupdialog.ui:20
-#, no-c-format, kde-format
-msgid "Player number %1, please enter your name and choose your nation:"
-msgstr "Игрок № %1, введите своё имя и выберите нацию:"
-
 #. i18n: ectx: property (toolTip), widget (QComboBox, nationCombo)
 #. i18n: ectx: property (toolTip), widget (QComboBox, waitedPlayersCombo)
 #: Dialogs/qplayersetupdialog.ui:48 Dialogs/qwaitedplayersetupdialog.ui:33
@@ -1569,12 +1563,6 @@ msgstr "Выход"
 #, kde-format
 msgid "Quit KsirK"
 msgstr "Покинуть KsirK"
-
-#. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: Dialogs/restartOrExitDialog.ui:92
-#, no-c-format, kde-format
-msgid "%1 won! Do you want to play again?"
-msgstr "%1 победил! Начнём снова?"
 
 #. i18n: ectx: property (text), widget (QLineEdit, hostEdit)
 #: Dialogs/tcpconnectwidget.ui:71
@@ -2757,6 +2745,12 @@ msgstr "Ошибка: недопустимые целочисленные дан
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Ошибка: недопустимые строковые данные: "
+
+#~ msgid "Player number %1, please enter your name and choose your nation:"
+#~ msgstr "Игрок № %1, введите своё имя и выберите нацию:"
+
+#~ msgid "%1 won! Do you want to play again?"
+#~ msgstr "%1 победил! Начнём снова?"
 
 #~ msgid "Goal"
 #~ msgstr "Цель"

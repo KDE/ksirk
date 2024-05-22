@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-07 00:37+0000\n"
+"POT-Creation-Date: 2024-05-22 00:37+0000\n"
 "PO-Revision-Date: 2009-02-26 12:48+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -1463,12 +1463,6 @@ msgstr ""
 msgid "No"
 msgstr "कुछ नइ"
 
-#. i18n: ectx: property (text), widget (QLabel, TextLabel1)
-#: Dialogs/qplayersetupdialog.ui:20
-#, fuzzy, no-c-format, kde-format
-msgid "Player number %1, please enter your name and choose your nation:"
-msgstr "खिलाड़ी नं %1, किरपा करके अपन नाम टाइप करव अउ अपन देस चुनव:"
-
 #. i18n: ectx: property (toolTip), widget (QComboBox, nationCombo)
 #. i18n: ectx: property (toolTip), widget (QComboBox, waitedPlayersCombo)
 #: Dialogs/qplayersetupdialog.ui:48 Dialogs/qwaitedplayersetupdialog.ui:33
@@ -1557,12 +1551,6 @@ msgstr "बाहिर"
 #, kde-format
 msgid "Quit KsirK"
 msgstr "केसिर्क से बाहिर जाव "
-
-#. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: Dialogs/restartOrExitDialog.ui:92
-#, fuzzy, no-c-format, kde-format
-msgid "%1 won! Do you want to play again?"
-msgstr "%1 जीत गिस ! का आप मन फिर से खेलना चाहथो ?"
 
 #. i18n: ectx: property (text), widget (QLineEdit, hostEdit)
 #: Dialogs/tcpconnectwidget.ui:71
@@ -2655,6 +2643,14 @@ msgstr "गलती - अग्यात स्किन इंट डाटा
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "गलती - अग्यात स्किन स्ट्रिंग डाटा:"
+
+#, fuzzy
+#~ msgid "Player number %1, please enter your name and choose your nation:"
+#~ msgstr "खिलाड़ी नं %1, किरपा करके अपन नाम टाइप करव अउ अपन देस चुनव:"
+
+#, fuzzy
+#~ msgid "%1 won! Do you want to play again?"
+#~ msgstr "%1 जीत गिस ! का आप मन फिर से खेलना चाहथो ?"
 
 #~ msgid "Goal"
 #~ msgstr "गोल"

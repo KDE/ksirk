@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-07 00:37+0000\n"
-"PO-Revision-Date: 2024-05-16 22:55+0300\n"
+"POT-Creation-Date: 2024-05-22 00:37+0000\n"
+"PO-Revision-Date: 2024-05-21 09:14+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1442,12 +1442,6 @@ msgstr "כן"
 msgid "No"
 msgstr "לא"
 
-#. i18n: ectx: property (text), widget (QLabel, TextLabel1)
-#: Dialogs/qplayersetupdialog.ui:20
-#, no-c-format, kde-format
-msgid "Player number %1, please enter your name and choose your nation:"
-msgstr ""
-
 #. i18n: ectx: property (toolTip), widget (QComboBox, nationCombo)
 #. i18n: ectx: property (toolTip), widget (QComboBox, waitedPlayersCombo)
 #: Dialogs/qplayersetupdialog.ui:48 Dialogs/qwaitedplayersetupdialog.ui:33
@@ -1535,12 +1529,6 @@ msgstr "יציאה"
 #, kde-format
 msgid "Quit KsirK"
 msgstr "יציאה מ־KsirK"
-
-#. i18n: ectx: property (text), widget (QLabel, messageLabel)
-#: Dialogs/restartOrExitDialog.ui:92
-#, no-c-format, kde-format
-msgid "%1 won! Do you want to play again?"
-msgstr ""
 
 #. i18n: ectx: property (text), widget (QLineEdit, hostEdit)
 #: Dialogs/tcpconnectwidget.ui:71
@@ -2489,7 +2477,7 @@ msgstr ""
 #: main.cpp:51
 #, kde-format
 msgid "Current maintainer"
-msgstr ""
+msgstr "מתחזק נוכחי"
 
 #: main.cpp:52
 #, kde-format
@@ -2499,7 +2487,7 @@ msgstr ""
 #: main.cpp:53
 #, kde-format
 msgid "Albert Astals Cid"
-msgstr ""
+msgstr "אלברט אסטלס סיד"
 
 #: main.cpp:54
 #, kde-format
@@ -2583,7 +2571,7 @@ msgstr "הצגת מספר הצבאות למדינה"
 #: SaveLoad/ksirkgamexmlhandler.cpp:58
 #, kde-format
 msgid "Wrong save game format. Waited %1 and got %2!"
-msgstr ""
+msgstr "תבנית משחק שמור שגויה. המתנו %1 וקיבלנו %2!"
 
 #: SaveLoad/ksirkgamexmlhandler.cpp:139
 #, kde-format
