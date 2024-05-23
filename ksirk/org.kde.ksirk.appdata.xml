@@ -20,6 +20,7 @@
   <name xml:lang="fr">KsirK</name>
   <name xml:lang="gl">KsirK</name>
   <name xml:lang="he">KsirK</name>
+  <name xml:lang="hu">KsirK</name>
   <name xml:lang="ia">KsirK</name>
   <name xml:lang="id">KsirK</name>
   <name xml:lang="it">KsirK</name>
@@ -52,6 +53,7 @@
   <summary xml:lang="fr">Jeu de stratégie pour la conquête du monde</summary>
   <summary xml:lang="gl">Xogo de estratexia e dominación mundial</summary>
   <summary xml:lang="he">משחק אסטרטגיה להשתלטות על העולם</summary>
+  <summary xml:lang="hu">Világuralmi stratégiai játék</summary>
   <summary xml:lang="id">Permainan Strategi Menguasai Dunia</summary>
   <summary xml:lang="it">Gioco di strategia per la dominazione del mondo</summary>
   <summary xml:lang="ka">სტრატეგიული თამაში სამყაროს დომინაციისთვის</summary>
@@ -91,6 +93,7 @@
     <p xml:lang="fr">KsirK est une version informatisée du célèbre jeu de stratégie Risk. L'objectif du jeu est de conquérir le monde en attaquant vos voisins avec vos armées.</p>
     <p xml:lang="gl">KsirK é unha versión de computador do ben coñecido xogo estratéxico de taboleiro Risk. o obxectivo do xogo O obxectivo do xogo é simplemente conquistar o mundo atacando aos veciños cos teus exércitos.</p>
     <p xml:lang="he">KsirK היא גרסה ממוחשבת של משחק האסטרטגיה הנודע סיכון/ריסק. יעד המשחק הוא פשוט לכבוש את העולם על ידי תקיפת השכנים שלך באמצעות הצבאות שלך.</p>
+    <p xml:lang="hu">A KsirK a jól ismert stratégiai társasjáték, a Risk számítógépes változata. A játék célja egyszerűen a világ meghódítása azáltal, hogy seregeivel megtámadja a szomszédait.</p>
     <p xml:lang="id">KsirK adalah versi terkomputerisasi dari permainan papan strategis Risk yang terkenal. Tujuan permainan ini hanyalah untuk menaklukkan dunia dengan menyerang tetanggamu dengan pasukanmu.</p>
     <p xml:lang="it">KsirK è una versione per il computer del famoso gioco strategico da tavola Risk. L'obiettivo del gioco è semplicemente la conquista del mondo attaccando i vicini con le proprie armate.</p>
     <p xml:lang="ka">KsirK კომპიუტერიზებული ვერსიაა ცნობილი სტრატეგიული სამაგიდო თამაშისთვის Risk. თამაშის აზრია, უბრალოდ მთელი მსოფლიო დაიპყროთ, მეზობლებზე თქვენი არმიების თავდასხმით.</p>
@@ -126,6 +129,7 @@
     <p xml:lang="fr">Fonctionnalités :</p>
     <p xml:lang="gl">Funcionalidades:</p>
     <p xml:lang="he">יכולות:</p>
+    <p xml:lang="hu">Jellemzők:</p>
     <p xml:lang="ia">Characteristicas:</p>
     <p xml:lang="id">Fitur:</p>
     <p xml:lang="it">Caratteristiche:</p>
@@ -163,6 +167,7 @@
       <li xml:lang="fr">De 1 à 6 joueurs humains ou intelligences artificielles</li>
       <li xml:lang="gl">Permite entre 1 e 6 xogadores, humanos ou do computador (intelixencia artificial).</li>
       <li xml:lang="he">תמיכה ב־1‏-6 שחקנים אנושיים או ממוחשבים (בינה מלאכותית)</li>
+      <li xml:lang="hu">1-6 emberi vagy számítógépes (AI) játékos támogatása</li>
       <li xml:lang="id">Dukungan untuk 1-6 pemain manusia atau komputer (AI)</li>
       <li xml:lang="it">Supporto da 1 a 6 giocatori umani o computer (IA)</li>
       <li xml:lang="ka">1-6 ადამიანის ან კომპიუტერის (AI) მხარდაჭერა</li>
@@ -197,6 +202,7 @@
       <li xml:lang="fr">Jeu multi-joueurs en réseau</li>
       <li xml:lang="gl">Permite a varias persoas xogar xuntas a través dunha rede.</li>
       <li xml:lang="he">משחק רב משתתפים דרך הרשת</li>
+      <li xml:lang="hu">Többjátékos mód hálózaton keresztül</li>
       <li xml:lang="id">Multi-pemain memainkan lintas jaringan</li>
       <li xml:lang="it">Gioco multi-giocatore tramite la rete</li>
       <li xml:lang="ka">მრავალმოთამაშიან ქსელთან მიერთება</li>
@@ -231,6 +237,7 @@
       <li xml:lang="fr">Vous pouvez créer facilement de nouveaux thèmes en utilisant des graphiques SVG et l'éditeur de thèmes</li>
       <li xml:lang="gl">Podes crear facilmente novos temas con gráficos SVG e o editor de temas.</li>
       <li xml:lang="he">אפשר ליצור מעטפות חדשות בקלות עם גרפיקת SVG בעורך המעטפות</li>
+      <li xml:lang="hu">Új felületek létrehozása SVG-grafikával egyszerűen a felületszerkesztővel</li>
       <li xml:lang="id">Kamu bisa secara mudah menciptakan skin baru dengan grafik SVG dan pengedit skin</li>
       <li xml:lang="it">Puoi creare facilmente nuovi temi con immagini SVG e l'editore di temi</li>
       <li xml:lang="ka">ახალი სკინების შექმნა SVG გრაფიკით და სკინების რედაქტორით შეგიძლიათ</li>
@@ -265,6 +272,7 @@
       <li xml:lang="fr">Obtenir les dernières nouveautés. Vous pouvez facilement télécharger et installer de nouveaux thèmes.</li>
       <li xml:lang="gl">Compatibilidade con Hot New Stuff. Podes descargar e instalar novos temas facilmente.</li>
       <li xml:lang="he">תמיכה ב־Hot New Stuff. אפשר להוריד ולהתקין מעטפות בקלות</li>
+      <li xml:lang="hu">Új felületek egyszerű letöltése és telepítése</li>
       <li xml:lang="id">Dukungan Hot New Stuff. Kamu bisa secara mudah mengunduh dan menginstal skin-skin baru</li>
       <li xml:lang="it">Supporto per le Novità. Puoi scaricare e installare facilmente nuovi temi</li>
       <li xml:lang="ka">სიახლეების მხარდაჭერა. ახალი სკინების გადმოწერა და დაყენება ადვილად შეგიძლიათ</li>
