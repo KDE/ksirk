@@ -3568,9 +3568,3 @@ msgstr "Feil: Ukjende heiltalsdata i tema: "
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Feil: Ukjende strengdata i tema: "
-
-#~ msgid "Player number %1, please enter your name and choose your nation:"
-#~ msgstr "Skriv inn namnet ditt, og vel kva nasjon du vil styra, spelar %1:"
-
-#~ msgid "%1 won! Do you want to play again?"
-#~ msgstr "%1 vann! Vil du spela ein gong til?"
