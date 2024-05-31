@@ -60,6 +60,20 @@
 ><contrib
 >Traductora</contrib
 ></othercredit
+> <othercredit role="translator"
+><firstname
+>Eloy</firstname
+> <surname
+>Cuadra</surname
+> <affiliation
+><address
+><email
+>ecuadra@eloihr.net</email
+></address
+></affiliation
+> <contrib
+>Corrección de la traducción</contrib
+></othercredit
 > 
 </authorgroup>
 
@@ -100,7 +114,7 @@ $applicationname xx.yy for applications with independent release schedule (extra
 
 <abstract>
   <para
->&ksirk; es una versión informatizada del conocido juego de estrategia. Es completamente personalizable. Este manual explica cómo crear nuevos temas desde el principio usando un navegador de archivos, un editor de imágenes &SVG; y &i18n-ksirkskineditor;.</para>
+>&ksirk; es una versión digital de un conocido juego de estrategia. Es completamente personalizable. Este manual explica cómo crear nuevos temas desde el principio usando un navegador de archivos, un editor de imágenes &SVG; y &i18n-ksirkskineditor;.</para>
 </abstract>
 
 <!-- This is a set of Keywords for indexing by search engines.
@@ -146,11 +160,11 @@ application that explains what it does and where to report
 problems. Basically a long version of the abstract.  Don't include a
 revision history. (see installation appendix comment) -->
 <para
->&ksirk; es una versión informatizada del conocido juego de estrategia. Es completamente personalizable. Este manual explica cómo crear nuevos temas desde el principio usando un navegador de archivos, un editor de imágenes &SVG; y &i18n-ksirkskineditor;.</para>
+>&ksirk; es una versión digital de un conocido juego de estrategia. Es completamente personalizable. Este manual explica cómo crear nuevos temas desde el principio usando un navegador de archivos, un editor de imágenes &SVG; y &i18n-ksirkskineditor;.</para>
 
 <screenshot>
   <screeninfo
->Aquí tiene una captura de pantalla de &i18n-ksirkskineditor;</screeninfo>
+>Captura de pantalla de &i18n-ksirkskineditor;</screeninfo>
   <mediaobject>
     <imageobject
 ><imagedata fileref="main-snapshot.png" format="PNG"/></imageobject>
@@ -162,17 +176,17 @@ revision history. (see installation appendix comment) -->
 </screenshot>
 
 <para
->Hay tres pasos principales para crear un tema nuevo: crear la jerarquía de directorios, crear los gráficos, todos almacenados en un archivo &SVG;, y colocar las imágenes y nombrar las cosas usando &i18n-ksirkskineditor;.</para>
+>Hay tres pasos principales para crear un tema nuevo: crear la jerarquía de directorios, crear los gráficos, todos almacenados en un archivo &SVG;, y colocar las imágenes y dar nombre a las cosas usando &i18n-ksirkskineditor;.</para>
 </chapter>
 
 <chapter id="using-kapp">
 <title
->Creando un tema para &ksirk;</title>
+>Creación de un tema para &ksirk;</title>
 
 <para
 >&ksirk; es totalmente personalizable. Para los que tengan habilidad con los gráficos, crear un nuevo tema es tan fácil como copiar uno ya existente, editar o cambiar los gráficos y actualizar los datos en un archivo de configuración <literal role="extension"
 >.desktop</literal
->, lo que se hace utilizando &i18n-ksirkskineditor;. el último paso es editar el archivo describiendo qué instalar.</para>
+>, lo que se hace usando &i18n-ksirkskineditor;. El último paso es editar el archivo que describe lo que se debe instalar.</para>
 
 <para
 >Todos los ejemplos (texto e imágenes) están tomados del tema predeterminado de &ksirk;.</para>
@@ -192,13 +206,13 @@ revision history. (see installation appendix comment) -->
 ><para
 ><filename
 >CMakeLists.txt/</filename
->: Describe qué instalar.</para
+>: Describe lo que se debe instalar.</para
 ></listitem>
       <listitem
 ><para
 ><filename
 >onu.desktop</filename
->: Archivo principal para la descripción del tema. Vea su descripción más adelante.</para
+>: Archivo principal para la descripción del tema. Consulta su descripción más adelante.</para
 ></listitem>
     </itemizedlist>
   </listitem>
@@ -207,25 +221,25 @@ revision history. (see installation appendix comment) -->
 ><para
 ><filename class="directory"
 >Images/</filename
->: Imágenes del tema (mapas, iconos, etc.)</para>
+>: Imágenes del tema (mapas, iconos, etc.).</para>
     <itemizedlist>
       <listitem
 ><para
 ><filename
 >CMakeLists.txt/</filename
->: Describe qué instalar.</para
+>: Describe lo que se debe instalar.</para
 ></listitem>
       <listitem
 ><para
 ><filename
 >pool.svg</filename
->: El mapa y todas las imágenes utilizadas en el tema.</para
+>: El mapa y todas las imágenes que usa el tema.</para
 ></listitem>
       <listitem
 ><para
 ><filename
 >map-mask.png</filename
->: La imagen que permite al programa encontrar sobre qué país está el ratón durante el juego (ver abajo).</para
+>: La imagen que permite al programa encontrar sobre qué país está el ratón durante el juego (consulta más abajo).</para
 ></listitem>
       <listitem
 ><para
@@ -240,7 +254,7 @@ revision history. (see installation appendix comment) -->
 ><para
 ><filename
 >CMakeLists.txt/</filename
->: Describe qué instalar.</para
+>: Describe lo que se debe instalar.</para
 ></listitem>
   <listitem
 ><para
@@ -257,7 +271,7 @@ revision history. (see installation appendix comment) -->
   <para
 >Esta carpeta contiene solo un archivo, <filename
 >world.desktop</filename
->. Este archivo es una descripción del contenido del tema. Se usa para describir la organización del mundo y cómo representarla. No tiene que rellenarlo manualmente, ya que de eso se encarga &i18n-ksirkskineditor;. Pero, por dar una información completa, describiremos su estructura.</para>
+>. Este archivo es una descripción del contenido del tema. Se usa para describir la organización del mundo y cómo representarla. No tienes que rellenarlo manualmente, ya que de eso se encarga &i18n-ksirkskineditor;. Pero, por dar una información completa, describiremos su estructura.</para>
 
   <para
 >Un grupo <literal
@@ -496,7 +510,7 @@ revision history. (see installation appendix comment) -->
 >name</literal
 ></entry>
             <entry
->Nombre mostrado del país.</entry>
+>Nombre visible del país.</entry>
           </row>
           <row>
             <entry
@@ -725,10 +739,10 @@ revision history. (see installation appendix comment) -->
 ></title>
 
     <para
->Este archivo &SVG; contiene el mapa y todas las imágenes del juego. Cada elemento es nombrado de tal forma que el juego puede seleccionar y renderizar cada uno por separado.</para>
+>Este archivo &SVG; contiene el mapa y todas las imágenes del juego. Cada elemento se nombra de tal forma que el juego puede seleccionar y renderizar cada uno por separado.</para>
 
     <para
->En el tema por defecto, las imágenes son banderas, infantería, caballería y cañones. La infantería representa un ejército, cinco para la caballería y diez para los cañones. Los cañones también se utilizan para representar a ejércitos en lucha. Por eso es por lo que hay tres clases de imágenes para los cañones: normal estático o moviéndose, disparando y explotando.</para>
+>En el tema predeterminado, las imágenes son banderas, infantería, caballería y cañones. La infantería representa un ejército, cinco para la caballería y diez para los cañones. Los cañones también se utilizan para representar a ejércitos en lucha. Por eso es por lo que hay tres clases de imágenes para los cañones: normal estático o moviéndose, disparando y explotando.</para>
 
     <para
 >Cada imagen es la concatenación de varias vistas del objeto y, para cada vista, sus marcos. Las vistas se organizan verticalmente y los marcos horizontalmente. Dónde cortar la imagen en marcos individuales se obtiene dividiendo la altura de la imagen por el número de vistas y la anchura por el número de marcos. Estos datos se encuentran en el archivo <filename
@@ -741,7 +755,7 @@ revision history. (see installation appendix comment) -->
       <caption
 ><para
 >Ejemplo de una imagen: <filename
->cañon.png</filename
+>cannon.png</filename
 ></para
 ></caption>
     </mediaobject>
@@ -756,16 +770,16 @@ revision history. (see installation appendix comment) -->
 ></listitem>
       <listitem
 ><para
->mirando a la izquierda y </para
+>mirando a la izquierda y</para
 ></listitem>
       <listitem
 ><para
->encarando</para
+>de frente</para
 ></listitem>
     </itemizedlist>
 
     <para
->Para las banderas, solo hay una vista. Todos los fondos de imagen deberían hacerse transparentes.</para>
+>Para las banderas solo hay una vista. Todos los fondos de imagen deberían hacerse transparentes.</para>
 
     <mediaobject>
       <imageobject
@@ -773,7 +787,7 @@ revision history. (see installation appendix comment) -->
       <caption
 ><para
 >Ejemplo de imagen de una bandera: <filename
->italia.png</filename
+>italy.png</filename
 ></para
 ></caption>
     </mediaobject>
@@ -810,7 +824,7 @@ revision history. (see installation appendix comment) -->
           <row>
             <entry
 ><literal
->italia</literal
+>italy</literal
 ></entry>
             <entry
 ><mediaobject
@@ -866,7 +880,7 @@ revision history. (see installation appendix comment) -->
           <row>
             <entry
 ><literal
->disparando</literal
+>firing</literal
 ></entry>
             <entry
 ><mediaobject
@@ -880,7 +894,7 @@ revision history. (see installation appendix comment) -->
           <row>
             <entry
 ><literal
->explotando</literal
+>exploding</literal
 ></entry>
             <entry
 ><mediaobject
@@ -908,7 +922,7 @@ revision history. (see installation appendix comment) -->
           <row>
             <entry
 ><literal
->dadosrojos</literal
+>reddices</literal
 ></entry>
             <entry
 ><mediaobject
@@ -917,12 +931,12 @@ revision history. (see installation appendix comment) -->
 ></mediaobject
 ></entry>
             <entry
->Dados rojos utilizados para mostrar los resultados de las batallas.</entry>
+>Dados rojos que se usan para mostrar el resultado de las batallas.</entry>
           </row>
           <row>
             <entry
 ><literal
->dadosazules</literal
+>bluedices</literal
 ></entry>
             <entry
 ><mediaobject
@@ -931,12 +945,12 @@ revision history. (see installation appendix comment) -->
 ></mediaobject
 ></entry>
             <entry
->Dados azules utilizados para mostrar los resultados de las batallas.</entry>
+>Dados azules que se usan para mostrar el resultado de las batallas.</entry>
           </row>
           <row>
             <entry
 ><literal
->marca1</literal
+>mark1</literal
 ></entry>
             <entry
 ><mediaobject
@@ -946,9 +960,9 @@ revision history. (see installation appendix comment) -->
 ></entry>
             <entry
 >Esta marca se añade a imágenes de lucha para mostrar el número de ejércitos que representan, aquí 1. También hay unos elementos de <literal
->marca2</literal
+>mark2</literal
 > y <literal
->marca3</literal
+>mark3</literal
 >.</entry>
           </row>
         </tbody>
@@ -959,14 +973,14 @@ revision history. (see installation appendix comment) -->
     <sect3>
     <title
 >El archivo <filename
->mascara-mapa.png</filename
+>map-mask.png</filename
 ></title>
 
     <para
->Este es n archivo png que también representa el mapa del mundo del tema, pero con un código de colores que permite identificar de manera única a cada país. Los países deben tener al menos las mismas formas que los correspondientes países sobre el archivo <filename
->mapa.png</filename
->, de forma que los usuarios puedan hacer click en cualquier parte de un país visible y seleccionen el bueno. Los países que son islas pequeñas como Indonesia en el mapa predeterminado pueden ser más grandes que el equivalente en el archivo <filename
->mapa.png</filename
+>Este es un archivo png que también representa el mapa del mundo del tema, pero con un código de colores que permite identificar de manera única a cada país. Los países deben tener al menos las mismas formas que los correspondientes países sobre el archivo <filename
+>map.png</filename
+>, de forma que los usuarios puedan hacer clic en cualquier parte de un país visible y seleccionen el bueno. Los países que son islas pequeñas, como Indonesia en el mapa predeterminado, pueden ser más grandes que el equivalente en el archivo <filename
+>map.png</filename
 > para facilitar la selección del país.</para>
 
     <mediaobject>
@@ -989,11 +1003,11 @@ revision history. (see installation appendix comment) -->
 >Las imágenes de los botones</title>
 
     <para
->Los nombres de archivo están incluidos en el código, así que no deberían modificarse. La tabla de abajo muestra todos los botones que deben incluirse.</para>
+>Los nombres de archivo están incluidos en el código, por lo que no deberían modificarse. La tabla inferior muestra todos los botones que deben incluirse.</para>
 
     <table>
       <title
->Botones de la &GUI;</title>
+>Botones de la interfaz gráfica</title>
       <tgroup cols="3">
         <thead>
           <row>
@@ -1032,7 +1046,7 @@ revision history. (see installation appendix comment) -->
 >recycling.png</filename
 ></entry>
             <entry
->Después de que todos los jugadores han situado sus ejércitos, es posible modificar la distribución (lo que se llama «reciclaje»). Este botón pide hacer esa redistribución.</entry>
+>Después de que todos los jugadores hayan situado sus ejércitos, es posible modificar la distribución (lo que se llama «reciclaje»). Este botón solicita hacer esa redistribución.</entry>
           </row>
           <row>
             <entry
@@ -1170,7 +1184,7 @@ revision history. (see installation appendix comment) -->
 ><para
 ><filename
 >cannon.wav</filename
->, que suena cuando se dispara, y  </para
+>, que suena cuando se dispara, y </para
 ></listitem>
     <listitem
 ><para
@@ -1187,7 +1201,7 @@ revision history. (see installation appendix comment) -->
 >Uso de &i18n-ksirkskineditor;</title>
 
 <para
->Después de crear los gráficos en la carpeta apropiada y el archivo &SVG;, debe crear países, jugadores, etc., y asociarlos con el elemento &SVG; correcto del almacén. Esto se puede hacer con &i18n-ksirkskineditor;. Tenga en cuenta que cada parte de esta aplicación se describe automáticamente mediante ayudas emergentes y de contexto a las que puede acceder de la forma habitual mediante el atajo de teclado <keycombo action="simul"
+>Después de crear los gráficos en la carpeta apropiada y el archivo &SVG;, debes crear países, jugadores, etc., y asociarlos con el elemento &SVG; correcto del almacén. Esto se puede hacer con &i18n-ksirkskineditor;. Ten en cuenta que cada parte de esta aplicación se describe automáticamente mediante ayudas emergentes y de contexto a las que puedes acceder de la forma habitual mediante el atajo de teclado <keycombo action="simul"
 >&Ctrl;<keycap
 >F1</keycap
 ></keycombo
@@ -1195,7 +1209,7 @@ revision history. (see installation appendix comment) -->
 
 <screenshot>
   <screeninfo
->Aquí tiene una captura de pantalla de &i18n-ksirkskineditor;</screeninfo>
+>Captura de pantalla de &i18n-ksirkskineditor;</screeninfo>
   <mediaobject>
     <imageobject
 ><imagedata fileref="main-snapshot.png" format="PNG"/></imageobject>
@@ -1210,7 +1224,7 @@ revision history. (see installation appendix comment) -->
 
 <chapter id="commands">
 <title
->Referencia de comandos</title>
+>Referencia de órdenes</title>
 
 <sect1 id="kapp-mainwindow">
 <title
@@ -1237,7 +1251,7 @@ revision history. (see installation appendix comment) -->
       <listitem
 ><para
 ><action
->Hace que el programa cargue un tema existente</action
+>Hace que el programa cargue un tema existente.</action
 ></para
 ></listitem>
     </varlistentry>
@@ -1272,7 +1286,7 @@ revision history. (see installation appendix comment) -->
 >Guía del desarrollador para &i18n-ksirkskineditor;</title>
 
 <para
->Consulte <ulink url="https://api.kde.org/"
+>Consulta <ulink url="https://api.kde.org/"
 >https://api.kde.org/</ulink
 > para la documentación de la API.</para>
 </chapter>
@@ -1306,10 +1320,14 @@ distribution. -->
 ></para>
 
 <para
->Traducido por Rocío Gallego <email
+>Documentación traducida por Rocío Gallego <email
 >traducciones@rociogallego.com</email
 > y Kira J. Fernández <email
 >kirajfdez@gmail.com</email
+>.</para
+><para
+>Corregida por Eloy Cuadra <email
+>ecuadra@eloihr.net</email
 >.</para
 > &underFDL; &underGPL; </chapter>
 
