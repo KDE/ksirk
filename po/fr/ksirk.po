@@ -9,7 +9,7 @@
 # Mickael Sibelle <kimael@gmail.com>, 2008.
 # Etienne Biardeaud <etienne@cyteen.net>, 2009, 2010.
 # Geoffray Levasseur <geoffray.levasseurbrandin@numericable.fr>, 2010, 2011, 2013.
-# SPDX-FileCopyrightText: 2012, 2021, 2022, 2023 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2012, 2021, 2022, 2023, 2024 Xavier Besnard <xavier.besnard@kde.org>
 # Simon Depiets <sdepiets@gmail.com>, 2017, 2018.
 # Xavier Besnard <xavier.besnard@kde.org>, 2023.
 #
@@ -18,9 +18,9 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-22 00:37+0000\n"
-"PO-Revision-Date: 2023-10-26 11:41+0200\n"
+"PO-Revision-Date: 2024-06-05 13:39+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,7 +29,7 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1086,89 +1086,77 @@ msgid "Legacy"
 msgstr "Ancien"
 
 #: decoratedgameframe.cpp:100 kgamewin.cpp:349
-#, fuzzy, kde-format
-#| msgid "Next Player"
+#, kde-format
 msgctxt "@action"
 msgid "Next Player"
 msgstr "Joueur suivant"
 
 #: decoratedgameframe.cpp:103
-#, fuzzy, kde-format
-#| msgid "Details"
+#, kde-format
 msgctxt "@action"
 msgid "Details"
 msgstr "Détails"
 
 #: decoratedgameframe.cpp:106 kgamewin.cpp:332 kgamewin.cpp:1214
 #: kgamewin.cpp:1226 kgamewin.cpp:2383
-#, fuzzy, kde-format
-#| msgid "Goal"
+#, kde-format
 msgctxt "@action"
 msgid "Goal"
 msgstr "Objectif"
 
 #: decoratedgameframe.cpp:138 decoratedgameframe.cpp:394
-#, fuzzy, kde-format
-#| msgid "Enable Arena"
+#, kde-format
 msgctxt "@action"
 msgid "Enable Arena"
-msgstr "Activer l'arène"
+msgstr "Activer une arène"
 
 #: decoratedgameframe.cpp:142
-#, fuzzy, kde-format
-#| msgid "Attack 1"
+#, kde-format
 msgctxt "@action"
 msgid "Attack 1"
 msgstr "Attaque 1"
 
 #: decoratedgameframe.cpp:145
-#, fuzzy, kde-format
-#| msgid "Attack 2"
+#, kde-format
 msgctxt "@action"
 msgid "Attack 2"
 msgstr "Attaque 2"
 
 #: decoratedgameframe.cpp:148
-#, fuzzy, kde-format
-#| msgid "Attack 3"
+#, kde-format
 msgctxt "@action"
 msgid "Attack 3"
 msgstr "Attaque 3"
 
 #: decoratedgameframe.cpp:151
-#, fuzzy, kde-format
-#| msgid "Auto attack"
+#, kde-format
 msgctxt "@action"
 msgid "Auto Attack"
 msgstr "Attaque automatique"
 
 #: decoratedgameframe.cpp:169
-#, fuzzy, kde-format
-#| msgid "Move 1"
+#, kde-format
 msgctxt "@action"
 msgid "Move 1"
 msgstr "Déplacement 1"
 
 #: decoratedgameframe.cpp:172
-#, fuzzy, kde-format
-#| msgid "Move 5"
+#, kde-format
 msgctxt "@action"
 msgid "Move 5"
 msgstr "Déplacement 5"
 
 #: decoratedgameframe.cpp:175
-#, fuzzy, kde-format
-#| msgid "Move 10"
+#, kde-format
 msgctxt "@action"
 msgid "Move 10"
 msgstr "Déplacement 10"
 
 #: decoratedgameframe.cpp:400
-#, fuzzy, kde-format
-#| msgid "Disable Arena"
+#, kde-format
 msgctxt "@action"
 msgid "Disable Arena"
-msgstr "Désactiver l'arène"
+msgstr "Désactiver une arène"
 
 #: Dialogs/InvasionSlider.cpp:98
 #, kde-format
@@ -1311,8 +1299,7 @@ msgstr "Une liste déroulante listant toutes les thèmes disponibles"
 
 #. i18n: ectx: property (text), widget (KNSWidgets::Button, ghnsbutton)
 #: Dialogs/newGameDialog.ui:123
-#, fuzzy, kde-format
-#| msgid "Download New Skins..."
+#, kde-format
 msgid "Download New Skins…"
 msgstr "Télécharger de nouveaux thèmes..."
 
@@ -1381,10 +1368,9 @@ msgstr "Annuler"
 #. i18n: ectx: property (text), widget (QPushButton, nextButton)
 #: Dialogs/newGameDialog.ui:250 Dialogs/qplayersetupdialog.ui:153
 #: Dialogs/tcpconnectwidget.ui:125
-#, fuzzy, kde-format
-#| msgid "Next >>"
+#, kde-format
 msgid "Next"
-msgstr "Suivant >>"
+msgstr "Suivant"
 
 #: Dialogs/newGameDialogImpl.cpp:128 newgamesetup.cpp:44
 #, kde-format
@@ -1398,8 +1384,7 @@ msgstr ""
 #: Dialogs/newGameDialogImpl.cpp:129 GameLogic/aiplayer.cpp:506
 #: newgamesetup.cpp:45 Sprites/skinSpritesData.cpp:89
 #: Sprites/skinSpritesData.cpp:105
-#, fuzzy, kde-format
-#| msgid "Fatal Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "Erreur fatale"
@@ -1462,10 +1447,9 @@ msgstr "Réseau"
 #. i18n: ectx: property (text), widget (QPushButton, previousButton)
 #: Dialogs/newGameSummary.ui:226 Dialogs/qplayersetupdialog.ui:146
 #: Dialogs/tcpconnectwidget.ui:118
-#, fuzzy, kde-format
-#| msgid "<< Previous"
+#, kde-format
 msgid "Previous"
-msgstr "<< Précédent"
+msgstr "Précédent"
 
 #. i18n: ectx: property (text), widget (QPushButton, finishButton)
 #: Dialogs/newGameSummary.ui:236
@@ -1607,11 +1591,10 @@ msgstr[1] ""
 "%1 armées à placer. Ce bug est probablement le #2232 sur www.gna.org."
 
 #: GameLogic/gameautomaton.cpp:303
-#, fuzzy, kde-format
-#| msgid "Network Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Network Configuration"
-msgstr "Configuration réseau"
+msgstr "Configuration du réseau"
 
 # unreviewed-context
 #: GameLogic/gameautomaton.cpp:304
@@ -1627,11 +1610,10 @@ msgstr ""
 "Voulez-vous vraiment terminer le jeu actuel et en rejoindre un nouveau ?"
 
 #: GameLogic/gameautomaton.cpp:1191
-#, fuzzy, kde-format
-#| msgid "New game confirmation"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Game Confirmation"
-msgstr "Confirmation du nouveau jeu"
+msgstr "Confirmation d'une nouvelle partie"
 
 #: GameLogic/gameautomaton.cpp:1191
 #, kde-format
@@ -1646,18 +1628,16 @@ msgid "%1 (%2) joined game ; waiting for %3 players to connect"
 msgstr "%1 (%2) a rejoint le jeu ; en attente de %3 joueurs"
 
 #: GameLogic/gameautomaton.cpp:1468
-#, fuzzy, kde-format
-#| msgid "Please choose another name"
+#, kde-format
 msgid "Please choose another name."
-msgstr "Veuillez choisir un autre nom"
+msgstr "Veuillez sélectionner un autre nom."
 
 # unreviewed-context
 #: GameLogic/gameautomaton.cpp:1468
-#, fuzzy, kde-format
-#| msgid "KsirK - Name already used!"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Already Used"
-msgstr "KsirK - Nom déjà utilisé !"
+msgstr "Nom déjà utilisé"
 
 # unreviewed-context
 #: GameLogic/gameautomaton.cpp:1474
@@ -1677,18 +1657,16 @@ msgid "Player%1"
 msgstr "Joueur %1"
 
 #: GameLogic/gameautomaton.cpp:1531
-#, fuzzy, kde-format
-#| msgid "Please choose another nation"
+#, kde-format
 msgid "Please choose another nation."
-msgstr "Veuillez choisir une autre nation"
+msgstr "Veuillez sélectionner une autre nation."
 
 # unreviewed-context
 #: GameLogic/gameautomaton.cpp:1531
-#, fuzzy, kde-format
-#| msgid "KsirK - Nation already used!"
+#, kde-format
 msgctxt "@title:window"
 msgid "Nation Already Used"
-msgstr "KsirK - Nation déjà utilisée !"
+msgstr "Nation déjà utilisée"
 
 # unreviewed-context
 #: GameLogic/gameautomaton.cpp:1623
@@ -1701,29 +1679,25 @@ msgstr ""
 "Que voulez-vous faire ?"
 
 #: GameLogic/gameautomaton.cpp:1624
-#, fuzzy, kde-format
-#| msgid "Starting a new game or exit."
+#, kde-format
 msgctxt "@title:window"
 msgid "Starting a New Game or Exit."
-msgstr "Démarrer un nouveau jeu ou quitter."
+msgstr "Démarrage d'une nouvelle partie ou fermeture."
 
 #: GameLogic/gameautomaton.cpp:1625
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Game"
-msgstr "Nouveau jeu"
+msgstr "Nouvelle partie"
 
 #: GameLogic/gameautomaton.cpp:1626
-#, fuzzy, kde-format
-#| msgid "Exit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Exit"
 msgstr "Quitter"
 
 #: GameLogic/gameautomaton.cpp:1627
-#, fuzzy, kde-format
-#| msgid "Do Nothing"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Nothing"
 msgstr "Ne rien faire"
@@ -1742,11 +1716,10 @@ msgstr ""
 
 # unreviewed-context
 #: GameLogic/gameautomaton.cpp:1650
-#, fuzzy, kde-format
-#| msgid "KsirK - Lost connection to client!"
+#, kde-format
 msgctxt "@title:window"
 msgid "Lost Connection to Client"
-msgstr "KsirK - Connexion au client perdue !"
+msgstr "Perte de la connexion avec le client"
 
 # unreviewed-context
 #: GameLogic/gameautomaton.cpp:1652
@@ -1782,11 +1755,10 @@ msgstr ""
 "puisse le voir ! "
 
 #: GameLogic/gameautomaton.cpp:1902
-#, fuzzy, kde-format
-#| msgid "KsirK - Displaying Goal"
+#, kde-format
 msgctxt "@title:window"
 msgid "Displaying Goal"
-msgstr "KsirK - Affichage de l'objectif"
+msgstr "Affichage des objectifs"
 
 #: GameLogic/gameautomaton.cpp:2088
 #, kde-format
@@ -1818,11 +1790,10 @@ msgstr ""
 
 # unreviewed-context
 #: GameLogic/gameautomaton.cpp:2387
-#, fuzzy, kde-format
-#| msgid "KsirK - Invalid password!"
+#, kde-format
 msgctxt "@title:window"
 msgid "Invalid Password"
-msgstr "KsirK - Mot de passe incorrect !"
+msgstr "Mot de passe incorrect"
 
 # unreviewed-context
 #: GameLogic/gameautomaton.cpp:2588
@@ -1835,11 +1806,10 @@ msgstr ""
 "Voulez-vous vraiment passer votre tour ? "
 
 #: GameLogic/gameautomaton.cpp:2589
-#, fuzzy, kde-format
-#| msgid "New game confirmation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Next Player Confirmation"
-msgstr "Confirmation du nouveau jeu"
+msgstr "Confirmation d'un nouveau joueur"
 
 #: GameLogic/gameautomaton.cpp:2590
 #, kde-format
@@ -1864,18 +1834,15 @@ msgid "Error: no player to destroy"
 msgstr "Erreur : aucun joueur à détruire"
 
 #: GameLogic/goal.cpp:231
-#, fuzzy, kde-format
-#| msgid "<br>%1 is still alive..."
+#, kde-format
 msgid "<br>%1 is still alive…"
 msgstr "<br/>%1 est toujours en vie..."
 
 #: GameLogic/goal.cpp:238 GameLogic/goal.cpp:252
-#, fuzzy, kde-format
-#| msgid "<br>%2, you still have 1 country to conquer..."
-#| msgid_plural "<br>%2, you still have %1 countries to conquer..."
+#, kde-format
 msgid "<br>%2, you still have 1 country to conquer…"
 msgid_plural "<br>%2, you still have %1 countries to conquer…"
-msgstr[0] "<br/>%2, vous avez toujours 1 pays à conquérir..."
+msgstr[0] "<br/>%2, vous avez toujours un pays à conquérir..."
 msgstr[1] "<br/>%2, vous avez toujours %1 pays à conquérir..."
 
 #: GameLogic/goal.cpp:242
@@ -1889,13 +1856,7 @@ msgstr[1] ""
 "<br>Votre objectif est atteint : %2 est mort et vous possédez %1 pays."
 
 #: GameLogic/goal.cpp:264
-#, fuzzy, kde-format
-#| msgid ""
-#| "<br>%2, you have enough countries but you still have to put more than 1 "
-#| "army on %3 of them..."
-#| msgid_plural ""
-#| "<br>%2, you have enough countries but you still have to put more than %1 "
-#| "armies on %3 of them..."
+#, kde-format
 msgid ""
 "<br>%2, you have enough countries but you still have to put more than 1 army "
 "on %3 of them…"
@@ -1904,7 +1865,7 @@ msgid_plural ""
 "armies on %3 of them…"
 msgstr[0] ""
 "<br/>%2, vous avez suffisamment de pays, mais vous devez toujours mettre "
-"plus de 1 armée sur %3 d'entre eux..."
+"plus de une armée sur %3 d'entre eux..."
 msgstr[1] ""
 "<br/>%2, vous avez suffisamment de pays, mais vous devez toujours mettre "
 "plus de %1 armées sur %3 d'entre eux..."
@@ -1922,15 +1883,13 @@ msgstr[0] "1 pays dans %2"
 msgstr[1] "%1 pays dans %2"
 
 #: GameLogic/goal.cpp:285
-#, fuzzy, kde-format
-#| msgid " and "
+#, kde-format
 msgctxt "@item:intext country list separator of last item"
 msgid " and "
-msgstr "et"
+msgstr " et "
 
 #: GameLogic/goal.cpp:289
-#, fuzzy, kde-format
-#| msgid ", "
+#, kde-format
 msgctxt "@item:intext country list separator of non-last item"
 msgid ", "
 msgstr ", "
@@ -1944,15 +1903,13 @@ msgid "%1 in %2"
 msgstr "%1 dans %2"
 
 #: GameLogic/goal.cpp:317
-#, fuzzy, kde-format
-#| msgid "KsirK - Goal Display"
+#, kde-format
 msgctxt "@title:window"
 msgid "Goal Display"
-msgstr "KsirK - Affichage des objectifs"
+msgstr "Affichage des objectifs"
 
 #: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:170
-#, fuzzy, kde-format
-#| msgid "No message..."
+#, kde-format
 msgid "No message…"
 msgstr "Aucun message..."
 
@@ -2048,89 +2005,77 @@ msgstr ""
 "continuer"
 
 #: kgamewin.cpp:305
-#, fuzzy, kde-format
-#| msgid "New Standard TCP/IP Network Game"
+#, kde-format
 msgctxt "@action"
 msgid "New Standard TCP/IP Network Game"
-msgstr "Nouvelle partie en réseau (TCP/IP standard)"
+msgstr "Nouvelle partie en réseau avec TCP / IP standard"
 
 #: kgamewin.cpp:306
-#, fuzzy, kde-format
-#| msgid "New TCP/IP"
+#, kde-format
 msgctxt "@action"
 msgid "New TCP/IP"
-msgstr "Nouveau TCP/IP"
+msgstr "Nouveau TCP / IP"
 
 #: kgamewin.cpp:308
-#, fuzzy, kde-format
-#| msgid "Create a new standard TCP/IP network game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new standard TCP/IP network game"
-msgstr "Créer une nouvelle partie réseau (TCP/IP standard)"
+msgstr "Créer une nouvelle partie en réseau avec TCP / IP standard"
 
 #: kgamewin.cpp:323
-#, fuzzy, kde-format
-#| msgid "Join a Standard TCP/IP Network Game"
+#, kde-format
 msgctxt "@action"
 msgid "Join a Standard TCP/IP Network Game"
-msgstr "Rejoindre une partie en réseau (TCP/IP standard)"
+msgstr "Rejoindre une partie en réseau avec TCP / IP standard"
 
 #: kgamewin.cpp:324
-#, fuzzy, kde-format
-#| msgid "Join TCP/IP"
+#, kde-format
 msgctxt "@action"
 msgid "Join TCP/IP"
-msgstr "Rejoindre TCP/IP"
+msgstr "Rejoindre TCP / IP"
 
 #: kgamewin.cpp:326
-#, fuzzy, kde-format
-#| msgid "Join a standard TCP/IP network game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Join a standard TCP/IP network game"
-msgstr "Rejoindre une partie réseau (TCP/IP standard)"
+msgstr "Rejoindre une partie en réseau avec TCP / IP standard"
 
 #: kgamewin.cpp:331
-#, fuzzy, kde-format
-#| msgid "Display the Current Player's Goal"
+#, kde-format
 msgctxt "@action"
 msgid "Display the Current Player's Goal"
-msgstr "Affiche l'objectif du joueur courant"
+msgstr "Afficher l'objectif du joueur courant"
 
 #: kgamewin.cpp:334
-#, fuzzy, kde-format
-#| msgid "Display the current player's goal"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Display the current player's goal"
-msgstr "Affiche l'objectif du joueur courant"
+msgstr "Afficher l'objectif du joueur courant"
 
 #: kgamewin.cpp:340
-#, fuzzy, kde-format
-#| msgid "Contextual Help"
+#, kde-format
 msgctxt "@action"
 msgid "Contextual Help"
 msgstr "Aide contextuelle"
 
 #: kgamewin.cpp:351
-#, fuzzy, kde-format
-#| msgid "Lets the next player play"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Let the next player play"
-msgstr "Laisse le joueur suivant jouer"
+msgstr "Laisser le joueur suivant jouer"
 
 #: kgamewin.cpp:355
-#, fuzzy, kde-format
-#| msgid "Finish moves"
+#, kde-format
 msgctxt "@action"
 msgid "Finish Moves"
 msgstr "Terminer les déplacements"
 
 # unreviewed-context
 #: kgamewin.cpp:357
-#, fuzzy, kde-format
-#| msgid "Finish moving the current sprites"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Finish moving the current sprites"
-msgstr "Terminer les déplacements des images animées actuelles"
+msgstr "Terminer les déplacements des images animées courantes"
 
 #: kgamewin.cpp:485
 #, kde-format
@@ -2148,8 +2093,7 @@ msgstr "<font color=\"red\">%1 a conquis %2 depuis %3</font>"
 
 # unreviewed-context
 #: kgamewin.cpp:728
-#, fuzzy, kde-format
-#| msgid "%1, you are defeated! Bye, bye..."
+#, kde-format
 msgid "%1, you are defeated! Bye, bye…"
 msgstr "%1, vous avez été vaincu ! Au revoir..."
 
@@ -2207,11 +2151,10 @@ msgid "Before you quit, do you want to save your game?"
 msgstr "Avant de quitter le jeu, voulez-vous l'enregistrer ?"
 
 #: kgamewin.cpp:999
-#, fuzzy, kde-format
-#| msgid "New Local Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Game"
-msgstr "Nouvelle partie local"
+msgstr "Charger une partie"
 
 #: kgamewin.cpp:1037
 #, kde-format
@@ -2238,22 +2181,19 @@ msgstr[1] ""
 "<font color=\"blue\">%4</font> ?"
 
 #: kgamewin.cpp:1145
-#, fuzzy, kde-format
-#| msgid "Defend 1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Defend 1"
-msgstr "Défendre 1"
+msgstr "Défenseur 1"
 
 #: kgamewin.cpp:1146
-#, fuzzy, kde-format
-#| msgid "Defend 2"
+#, kde-format
 msgctxt "@action:button"
 msgid "Defend 2"
-msgstr "Défendre 2"
+msgstr "Défenseur 2"
 
 #: kgamewin.cpp:1147
-#, fuzzy, kde-format
-#| msgid "Defend-Auto"
+#, kde-format
 msgctxt "@action:button"
 msgid "Defend-Auto"
 msgstr "Défense automatique"
@@ -2384,13 +2324,10 @@ msgstr ""
 "pays voisins."
 
 #: kgamewin.cpp:2811
-#, fuzzy
-#| msgid ""
-#| "Start a new game or join a network game with the menu or the toolbar..."
 msgid "Start a new game or join a network game with the menu or the toolbar…"
 msgstr ""
-"Démarrer un nouveau jeu ou rejoindre une partie en réseau à l'aide du menu "
-"ou de la barre d'outils..."
+"Démarrer une nouvelle partie ou rejoindre une partie en réseau à l'aide du "
+"menu ou de la barre d'outils..."
 
 #: kgamewin.cpp:2815
 msgid ""
@@ -2420,11 +2357,10 @@ msgid "Cannot save when waiting for a defense."
 msgstr "Impossible d'enregistrer pendant l'attente de défense."
 
 #: kgamewinslots.cpp:441
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Game"
-msgstr "Nouveau jeu"
+msgstr "Enregistrer une partie"
 
 #: kgamewinslots.cpp:445
 #, kde-format
@@ -2480,8 +2416,7 @@ msgid "<b><u>Country details</u></b>"
 msgstr "<b><u>Information sur le pays</u></b>"
 
 #: krightdialog.cpp:170
-#, fuzzy, kde-format
-#| msgid "<i>Fighting in progress...</i>"
+#, kde-format
 msgid "<i>Fighting in progress…</i>"
 msgstr "<i>Combat en cours...</i>"
 
@@ -2500,39 +2435,34 @@ msgstr[0] "<font color=\"blue\">Défendre</font> avec 1 armée.<br/>"
 msgstr[1] "<font color=\"blue\">Défendre</font> avec %1 armées.<br/>"
 
 #: krightdialog.cpp:265
-#, fuzzy, kde-format
-#| msgid "Stop Auto-Attack"
+#, kde-format
 msgctxt "@action:button"
 msgid "Stop Auto-Attack"
 msgstr "Arrêter l'attaque automatique"
 
 #: krightdialog.cpp:273
-#, fuzzy, kde-format
-#| msgid "Stop Auto-Defense"
+#, kde-format
 msgctxt "@action:button"
 msgid "Stop Auto-Defense"
 msgstr "Arrêter la défense automatique"
 
 #: krightdialog.cpp:298
-#, fuzzy, kde-format
-#| msgid "Valid"
+#, kde-format
 msgctxt "@action:button"
 msgid "Valid"
 msgstr "Valable"
 
 #: krightdialog.cpp:299
-#, fuzzy, kde-format
-#| msgid "Recycle"
+#, kde-format
 msgctxt "@action:button"
 msgid "Recycle"
-msgstr "Modifier"
+msgstr "Recycler"
 
 #: krightdialog.cpp:300
-#, fuzzy, kde-format
-#| msgid "Done"
+#, kde-format
 msgctxt "@action:button"
 msgid "Done"
-msgstr "Ok"
+msgstr "Terminé"
 
 #: krightdialog.cpp:327
 #, kde-format
@@ -2573,8 +2503,7 @@ msgid "<font color=\"blue\">lost armies: %1</font>"
 msgstr "<font color=\"blue\">perte d'armées : %1</font>"
 
 #: ksirkConfigDialog.cpp:37
-#, fuzzy, kde-format
-#| msgid "Preferences"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "Préférences"
@@ -2645,10 +2574,9 @@ msgid "KsirK"
 msgstr "KsirK"
 
 #: main.cpp:44
-#, fuzzy, kde-format
-#| msgid "KsirK - World Domination Strategy Game"
+#, kde-format
 msgid "World Domination Strategy Game"
-msgstr "KsirK - Jeu de stratégie pour la conquête du monde"
+msgstr "Jeu de stratégie pour la conquête du monde"
 
 #: main.cpp:46
 #, kde-format
@@ -2741,7 +2669,7 @@ msgstr "Rejoindre une partie en réseau (TCP/IP standard)"
 #: mainMenu.ui:118
 #, kde-format
 msgid "Load…"
-msgstr ""
+msgstr "Charger..."
 
 #. i18n: ectx: property (text), widget (QPushButton, pbQuit)
 #: mainMenu.ui:138
