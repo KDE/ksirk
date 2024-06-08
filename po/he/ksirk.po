@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-22 00:37+0000\n"
-"PO-Revision-Date: 2024-05-21 09:14+0300\n"
+"PO-Revision-Date: 2024-06-07 09:52+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1247,7 +1247,7 @@ msgstr "מספר השחקנים המקומיים:"
 #: Dialogs/newGameDialog.ui:64
 #, kde-format
 msgid "TCP port on which to offer connections:"
-msgstr ""
+msgstr "פתחת TCP דרכה להציע חיבורים:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
@@ -1260,13 +1260,13 @@ msgstr "מעטפת:"
 #: Dialogs/newGameDialog.ui:113
 #, kde-format
 msgid "Choose the skin (map, nationalities, etc.) to use for this game."
-msgstr ""
+msgstr "בחירת המעטפת (מפה, לאומים וכו׳) לשימוש למשחק הזה."
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, skinCombo)
 #: Dialogs/newGameDialog.ui:116
 #, kde-format
 msgid "A combo listing all the available skins."
-msgstr ""
+msgstr "רשימה משולבת שמציגה את כל המעטפות הזמינות."
 
 #. i18n: ectx: property (text), widget (KNSWidgets::Button, ghnsbutton)
 #: Dialogs/newGameDialog.ui:123
@@ -1462,37 +1462,37 @@ msgstr ""
 #: Dialogs/qplayersetupdialog.ui:76 Dialogs/qwaitedplayersetupdialog.ui:47
 #, kde-format
 msgid "Enter your password:"
-msgstr ""
+msgstr "נא למלא את הסיסמה שלך:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, isComputerCheckBox)
 #: Dialogs/qplayersetupdialog.ui:101
 #, kde-format
 msgid "Pla&yer is computer"
-msgstr ""
+msgstr "השחקן הוא מ&חשב"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, QWaitedPlayerSetupDialog)
 #: Dialogs/qwaitedplayersetupdialog.ui:14
 #, kde-format
 msgid "Saved Player Selection"
-msgstr ""
+msgstr "בחירת שחקן נשמרה"
 
 #. i18n: ectx: property (text), widget (QLabel, TextLabel1)
 #: Dialogs/qwaitedplayersetupdialog.ui:23
 #, kde-format
 msgid "Please select your saved player:"
-msgstr ""
+msgstr "נא לבחור את השחקן השמור שלך:"
 
 #. i18n: ectx: property (text), widget (QPushButton, PushButton1)
 #: Dialogs/qwaitedplayersetupdialog.ui:70
 #, kde-format
 msgid "OK"
-msgstr ""
+msgstr "אישור"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, RestartOrExitDialog)
 #: Dialogs/restartOrExitDialog.ui:13
 #, kde-format
 msgid "New Game or Exit"
-msgstr ""
+msgstr "משחק חדש או יציאה"
 
 #. i18n: ectx: property (text), widget (QPushButton, newGameButton)
 #: Dialogs/restartOrExitDialog.ui:27
