@@ -1,21 +1,22 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Vít Pelčák <vit@pelcak.org>, 2011, 2014, 2017, 2019, 2023.
+# SPDX-FileCopyrightText: 2024 Vit Pelcak <vpelcak@suse.cz>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-07 00:37+0000\n"
-"PO-Revision-Date: 2023-02-03 14:06+0100\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2024-06-12 15:08+0200\n"
+"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -36,7 +37,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Goal Display"
-msgstr ""
+msgstr "Zobrazení cíle"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
 #: ksirkcontinentdefinition.ui:13
@@ -1066,7 +1067,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preferences"
-msgstr ""
+msgstr "Předvolby"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CountriesSelectionDialog)
 #: ksirkskineditorcountriesselectiondialog.ui:13
@@ -1718,13 +1719,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a saved skin"
-msgstr ""
+msgstr "Otevřít uložený motiv"
 
 #: mainwindow.cpp:328
 #, kde-format
 msgctxt "@action"
 msgid "Load &Recent"
-msgstr ""
+msgstr "Nah&rát nedávnou"
 
 #: mainwindow.cpp:329
 #, kde-format
@@ -1736,7 +1737,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current skin"
-msgstr ""
+msgstr "Uložit současnou složku"
 
 #: mainwindow.cpp:362
 #, kde-format
@@ -1759,7 +1760,7 @@ msgstr "Neuložené změny"
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Without Saving"
-msgstr ""
+msgstr "Ukončit bez uložení"
 
 #: mainwindow.cpp:529
 #, kde-format
@@ -1771,7 +1772,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "New Country Name"
-msgstr ""
+msgstr "Nový název země"
 
 #: mainwindow.cpp:1305
 #, kde-format
@@ -1794,7 +1795,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "New Continent Name"
-msgstr ""
+msgstr "Název nového kontinentu"
 
 #: mainwindow.cpp:1334
 #, kde-format
