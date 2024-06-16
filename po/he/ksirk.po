@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-22 00:37+0000\n"
-"PO-Revision-Date: 2024-06-07 09:52+0300\n"
+"PO-Revision-Date: 2024-06-15 08:16+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -2138,7 +2138,7 @@ msgstr "ביססת בעלות על המדינה השנייה: %1!"
 
 #: kgamewin.cpp:1725
 msgid "Ready to fight!"
-msgstr ""
+msgstr "להתכונן ללחימה!"
 
 #: kgamewin.cpp:1819
 msgid "<font color=\"orange\">No country here!</font>"
@@ -2177,7 +2177,7 @@ msgstr "בעיצומו של קרב."
 #: kgamewin.cpp:2484 kgamewin.cpp:2495 kgamewin.cpp:2518
 #, kde-format
 msgid "%1, it is up to you."
-msgstr ""
+msgstr "%1, זה תלוי בך."
 
 #: kgamewin.cpp:2547
 #, kde-format
