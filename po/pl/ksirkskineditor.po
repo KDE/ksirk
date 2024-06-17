@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-07 00:37+0000\n"
-"PO-Revision-Date: 2024-06-01 09:07+0200\n"
+"PO-Revision-Date: 2024-06-16 10:11+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -2022,11 +2022,10 @@ msgid "Load &Recent"
 msgstr "Wczytaj &ostatnią"
 
 #: mainwindow.cpp:329
-#, fuzzy, kde-format
-#| msgid "Open a recently saved skin..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a recently saved skin"
-msgstr "Otwórz ostatnio zapisaną skórkę..."
+msgstr "Otwórz ostatnio zapisaną skórkę"
 
 #: mainwindow.cpp:337
 #, kde-format
@@ -2058,25 +2057,22 @@ msgid "Quit Without Saving"
 msgstr "Zakończ bez zapisywania"
 
 #: mainwindow.cpp:529
-#, fuzzy, kde-format
-#| msgid "Save then quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save and Quit"
-msgstr "Zapisz, później zakończ"
+msgstr "Zapisz i zakończ"
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "New country name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Country Name"
 msgstr "Nazwa nowego kraju"
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new country"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new country:"
-msgstr "Podaj nazwę nowego kraju"
+msgstr "Wpisz nazwę nowego kraju:"
 
 #: mainwindow.cpp:1315
 #, kde-format
@@ -2087,21 +2083,19 @@ msgstr "Czy na pewno chcesz usunąć kraj \"%1\"?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Country Confirmation"
-msgstr ""
+msgstr "Potwierdzenie usunięcia kraju"
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "New continent name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Continent Name"
 msgstr "Nazwa nowego kontynentu"
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new continent"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new continent:"
-msgstr "Podaj nazwę nowego kontynentu"
+msgstr "Wpisz nazwę nowego kontynentu:"
 
 #: mainwindow.cpp:1344
 #, kde-format
@@ -2109,11 +2103,10 @@ msgid "Do you really want to delete continent '%1'?"
 msgstr "Czy na pewno chcesz usunąć kontynent \"%1\"?"
 
 #: mainwindow.cpp:1344
-#, fuzzy, kde-format
-#| msgid "Select Continents"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Continent Confirmation"
-msgstr "Wybierz kontynenty"
+msgstr "Potwierdzenie usunięcia kontynentu"
 
 #: mainwindow.cpp:1889
 #, kde-format
@@ -2124,21 +2117,19 @@ msgstr "Czy na pewno chcesz usunąć cel \"%1\"?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Goal Confirmation"
-msgstr ""
+msgstr "Potwierdzenie usunięcia celu"
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "New nationality name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Nationality Name"
 msgstr "Nazwa nowej narodowości"
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new nationality"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new nationality:"
-msgstr "Podaj nazwę nowej narodowości"
+msgstr "Wpisz nazwę nowej narodowości:"
 
 #: mainwindow.cpp:1958
 #, kde-format
@@ -2149,14 +2140,13 @@ msgstr "Czy na pewno chcesz usunąć narodowość \"%1\"?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Nationality Confirmation"
-msgstr ""
+msgstr "Potwierdzenie usunięcia narodowości"
 
 #: onu.cpp:78
-#, fuzzy, kde-format
-#| msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+#, kde-format
 msgid "Invalid skin definition file format. Expected %1 and got %2"
 msgstr ""
-"Błąd - niepoprawny format pliku definicji skórki. Oczekiwano %1, otrzymano %2"
+"Nieprawidłowy format pliku definicji skórki. Oczekiwano %1, otrzymano %2"
 
 #: onu.cpp:110
 #, kde-format
@@ -2207,8 +2197,7 @@ msgid "Error - Unknown skin string data: "
 msgstr "Błąd - nieznane dane skórki: "
 
 #: skinSpritesData.cpp:102
-#, fuzzy, kde-format
-#| msgid "Fatal Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "Błąd krytyczny"
