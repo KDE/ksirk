@@ -6,6 +6,7 @@
   <developer id="org.kde">
     <name translate="no">KDE</name>
   </developer>
+  <launchable type="desktop-id">org.kde.ksirk.desktop</launchable>
   <name>KsirK</name>
   <name xml:lang="ast">KsirK</name>
   <name xml:lang="ca">KsirK</name>
