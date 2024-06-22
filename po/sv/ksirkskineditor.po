@@ -2,20 +2,20 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Stefan Asserhäll <stefan.asserhall@gmail.com>, 2009, 2021.
+# SPDX-FileCopyrightText: 2009, 2021, 2024 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-07 00:37+0000\n"
-"PO-Revision-Date: 2021-10-17 11:00+0200\n"
+"PO-Revision-Date: 2024-06-21 10:46+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -34,11 +34,10 @@ msgid "Error: no player to destroy"
 msgstr "Fel: Ingen spelare att förstöra"
 
 #: goal.cpp:213
-#, fuzzy, kde-format
-#| msgid "KsirK - Goal Display"
+#, kde-format
 msgctxt "@title:window"
 msgid "Goal Display"
-msgstr "Ksirk - Visa mål"
+msgstr "Visa mål"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
 #: ksirkcontinentdefinition.ui:13
@@ -1237,8 +1236,7 @@ msgstr ""
 "den högra dockade panelen."
 
 #: ksirkSkinEditorConfigDialog.cpp:55
-#, fuzzy, kde-format
-#| msgid "Preferences"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "Inställningar"
@@ -2006,29 +2004,25 @@ msgid "Cannot load center icon<br>Program cannot continue"
 msgstr "Kan inte läsa in centrumikon<br>Programmet kan inte fortsätta"
 
 #: mainwindow.cpp:324
-#, fuzzy, kde-format
-#| msgid "Open a saved skin..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a saved skin"
-msgstr "Öppna ett sparat skal..."
+msgstr "Öppna ett sparat skal"
 
 #: mainwindow.cpp:328
-#, fuzzy, kde-format
-#| msgid "Load &Recent"
+#, kde-format
 msgctxt "@action"
 msgid "Load &Recent"
 msgstr "Läs in s&enaste"
 
 #: mainwindow.cpp:329
-#, fuzzy, kde-format
-#| msgid "Open a recently saved skin..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a recently saved skin"
-msgstr "Öppna senast sparade skal..."
+msgstr "Öppna senast sparade skal"
 
 #: mainwindow.cpp:337
-#, fuzzy, kde-format
-#| msgid "Save the current skin"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current skin"
 msgstr "Spara nuvarande skal"
@@ -2048,35 +2042,31 @@ msgstr "Det finns osparade ändringar. Vad vill du göra?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
-msgstr ""
+msgstr "Osparade ändringar"
 
 #: mainwindow.cpp:528
-#, fuzzy, kde-format
-#| msgid "Quit without saving"
+#, kde-format
 msgctxt "@action:button"
 msgid "Quit Without Saving"
 msgstr "Avsluta utan att spara"
 
 #: mainwindow.cpp:529
-#, fuzzy, kde-format
-#| msgid "Save then quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save and Quit"
-msgstr "Spara och avsluta därefter"
+msgstr "Spara och avsluta"
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "New country name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Country Name"
 msgstr "Nytt landsnamn"
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new country"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new country:"
-msgstr "Ange namn på det nya landet"
+msgstr "Ange namn på det nya landet:"
 
 #: mainwindow.cpp:1315
 #, kde-format
@@ -2087,21 +2077,19 @@ msgstr "Vill du verkligen ta bort landet '%1'?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Country Confirmation"
-msgstr ""
+msgstr "Bekräftelse om borttagning av land"
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "New continent name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Continent Name"
 msgstr "Nytt kontinentnamn"
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new continent"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new continent:"
-msgstr "Ange namnet på den nya kontinenten"
+msgstr "Ange namnet på den nya kontinenten:"
 
 #: mainwindow.cpp:1344
 #, kde-format
@@ -2109,11 +2097,10 @@ msgid "Do you really want to delete continent '%1'?"
 msgstr "Vill du verkligen ta bort kontinenten '%1'?"
 
 #: mainwindow.cpp:1344
-#, fuzzy, kde-format
-#| msgid "Select Continents"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Continent Confirmation"
-msgstr "Välj kontinenter"
+msgstr "Bekräftelse om borttagning av kontinent"
 
 #: mainwindow.cpp:1889
 #, kde-format
@@ -2124,21 +2111,19 @@ msgstr "Vill du verkligen ta bort målet '%1'?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Goal Confirmation"
-msgstr ""
+msgstr "Bekräftelse om borttagning av mål"
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "New nationality name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Nationality Name"
 msgstr "Nytt nationalitetsnamn"
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new nationality"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new nationality:"
-msgstr "Ange namnet på den nya nationaliteten."
+msgstr "Ange namnet på den nya nationaliteten:"
 
 #: mainwindow.cpp:1958
 #, kde-format
@@ -2149,14 +2134,12 @@ msgstr "Vill du verkligen ta bort nationaliteten '%1'?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Nationality Confirmation"
-msgstr ""
+msgstr "Bekräftelse om borttagning av nationalitet"
 
 #: onu.cpp:78
-#, fuzzy, kde-format
-#| msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+#, kde-format
 msgid "Invalid skin definition file format. Expected %1 and got %2"
-msgstr ""
-"Fel: Ogiltigt filformat för skaldefinition. Förväntade %1 men hittade %2"
+msgstr "Ogiltigt filformat för skaldefinition. Förväntade %1 men hittade %2"
 
 #: onu.cpp:110
 #, kde-format
@@ -2186,8 +2169,7 @@ msgstr ""
 "%2."
 
 #: onu.cpp:984
-#, fuzzy, kde-format
-#| msgid "PoolLoader"
+#, kde-format
 msgctxt "@title:window"
 msgid "PoolLoader"
 msgstr "Pool-inläsning"
@@ -2208,8 +2190,7 @@ msgid "Error - Unknown skin string data: "
 msgstr "Fel: Okänd strängdata för skal: "
 
 #: skinSpritesData.cpp:102
-#, fuzzy, kde-format
-#| msgid "Fatal Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "Allvarligt fel"
