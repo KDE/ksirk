@@ -2652,9 +2652,3 @@ msgstr "Error - Dades desconegudes de tipus enter de l'aparença: "
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Error - Dades de tipus cadena de l'aparença desconegudes: "
-
-#~ msgid "Player number %1, please enter your name and choose your nation:"
-#~ msgstr "Jugador número %1. Introduïu el vostre nom i trieu una nació:"
-
-#~ msgid "%1 won! Do you want to play again?"
-#~ msgstr "%1 ha guanyat! Vols tornar a jugar?"
