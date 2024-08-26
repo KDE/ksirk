@@ -37,7 +37,6 @@ msgstr "Feil: Ingen spelar å øydeleggja"
 
 #: goal.cpp:213
 #, fuzzy, kde-format
-#| msgid "KsirK - Goal Display"
 msgctxt "@title:window"
 msgid "Goal Display"
 msgstr "KsirK – målvising"
@@ -1244,7 +1243,6 @@ msgstr ""
 
 #: ksirkSkinEditorConfigDialog.cpp:55
 #, fuzzy, kde-format
-#| msgid "Preferences"
 msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "Innstillingar"
@@ -2012,28 +2010,24 @@ msgstr "Klarar ikkje lasta inn midtikon.<br/> Kan ikkje halda fram."
 
 #: mainwindow.cpp:324
 #, fuzzy, kde-format
-#| msgid "Open a saved skin..."
 msgctxt "@info:tooltip"
 msgid "Open a saved skin"
 msgstr "Opna eit lagra tema …"
 
 #: mainwindow.cpp:328
 #, fuzzy, kde-format
-#| msgid "Load &Recent"
 msgctxt "@action"
 msgid "Load &Recent"
 msgstr "Opna &nyleg brukt"
 
 #: mainwindow.cpp:329
 #, fuzzy, kde-format
-#| msgid "Open a recently saved skin..."
 msgctxt "@info:tooltip"
 msgid "Open a recently saved skin"
 msgstr "Opna eit nyleg brukt tema …"
 
 #: mainwindow.cpp:337
 #, fuzzy, kde-format
-#| msgid "Save the current skin"
 msgctxt "@info:tooltip"
 msgid "Save the current skin"
 msgstr "Lagra det gjeldande temaet"
@@ -2057,28 +2051,24 @@ msgstr ""
 
 #: mainwindow.cpp:528
 #, fuzzy, kde-format
-#| msgid "Quit without saving"
 msgctxt "@action:button"
 msgid "Quit Without Saving"
 msgstr "Avslutt utan å lagra"
 
 #: mainwindow.cpp:529
 #, fuzzy, kde-format
-#| msgid "Save then quit"
 msgctxt "@action:button"
 msgid "Save and Quit"
 msgstr "Lagra og avslutt"
 
 #: mainwindow.cpp:1305
 #, fuzzy, kde-format
-#| msgid "New country name"
 msgctxt "@title:window"
 msgid "New Country Name"
 msgstr "Nytt landnamn"
 
 #: mainwindow.cpp:1305
 #, fuzzy, kde-format
-#| msgid "Enter the name of the new country"
 msgctxt "@label:textbox"
 msgid "Enter the name of the new country:"
 msgstr "Skriv inn namnet på det nye landet"
@@ -2096,14 +2086,12 @@ msgstr ""
 
 #: mainwindow.cpp:1334
 #, fuzzy, kde-format
-#| msgid "New continent name"
 msgctxt "@title:window"
 msgid "New Continent Name"
 msgstr "Nytt verdsdelsnamn"
 
 #: mainwindow.cpp:1334
 #, fuzzy, kde-format
-#| msgid "Enter the name of the new continent"
 msgctxt "@label:textbox"
 msgid "Enter the name of the new continent:"
 msgstr "Skriv inn namnet på den nye verdsdelen"
@@ -2115,7 +2103,6 @@ msgstr "Er du sikker på at du vil sletta verdsdelen «%1»?"
 
 #: mainwindow.cpp:1344
 #, fuzzy, kde-format
-#| msgid "Select Continents"
 msgctxt "@title:window"
 msgid "Delete Continent Confirmation"
 msgstr "Vel verdsdelar"
@@ -2133,14 +2120,12 @@ msgstr ""
 
 #: mainwindow.cpp:1948
 #, fuzzy, kde-format
-#| msgid "New nationality name"
 msgctxt "@title:window"
 msgid "New Nationality Name"
 msgstr "Nytt nasjonalitetsnamn"
 
 #: mainwindow.cpp:1948
 #, fuzzy, kde-format
-#| msgid "Enter the name of the new nationality"
 msgctxt "@label:textbox"
 msgid "Enter the name of the new nationality:"
 msgstr "Skriv inn namnet på den nye nasjonaliteten"
@@ -2158,7 +2143,6 @@ msgstr ""
 
 #: onu.cpp:78
 #, fuzzy, kde-format
-#| msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
 msgid "Invalid skin definition file format. Expected %1 and got %2"
 msgstr "Feil: Ugyldig format på temadefinisjonsfil. Venta %1, men fekk %2."
 
@@ -2191,7 +2175,6 @@ msgstr ""
 
 #: onu.cpp:984
 #, fuzzy, kde-format
-#| msgid "PoolLoader"
 msgctxt "@title:window"
 msgid "PoolLoader"
 msgstr "Pool-lastar"
@@ -2213,7 +2196,6 @@ msgstr "Feil: Ukjende strengdata i tema: "
 
 #: skinSpritesData.cpp:102
 #, fuzzy, kde-format
-#| msgid "Fatal Error"
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "Kritisk feil"
