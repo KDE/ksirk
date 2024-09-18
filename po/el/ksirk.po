@@ -2377,10 +2377,9 @@ msgid "<b><u>Country details</u></b>"
 msgstr "<b><u>Λεπτομέρειες χώρας</u></b>"
 
 #: krightdialog.cpp:170
-#, fuzzy, kde-format
-#| msgid "<i>Fighting in progress...</i>"
+#, kde-format
 msgid "<i>Fighting in progress…</i>"
-msgstr "<i>Μάχη σε εξέλιξη...</i>"
+msgstr "<i>Μάχη σε εξέλιξη…</i>"
 
 #: krightdialog.cpp:222
 #, kde-format
