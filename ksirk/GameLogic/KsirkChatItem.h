@@ -39,8 +39,6 @@
   */
 class KsirkChatItem : public KChatBaseMessage
 {
-//  Q_OBJECT
-
 public:
   /** The kind of elements displayable. */
   enum ElemType {Text,Pixmap,BaseMessage};
