@@ -1,6 +1,6 @@
 # Copyright © 2012 This_file_is_part_of_KDE
 # This file is distributed under the same license as the ksirk package.
-# Tommi Nieminen <translator@legisign.org>, 2012, 2014, 2021.
+# SPDX-FileCopyrightText: 2012, 2014, 2021, 2024 Tommi Nieminen <translator@legisign.org>
 # Lasse Liehu <lasse.liehu@gmail.com>, 2012, 2013, 2014.
 #
 # KDE Finnish translation sprint participants:
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-07 00:37+0000\n"
-"PO-Revision-Date: 2021-11-23 16:42+0200\n"
+"PO-Revision-Date: 2024-10-28 21:24+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -19,8 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-POT-Import-Date: 2012-12-01 22:24:06+0000\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -38,11 +37,10 @@ msgid "Error: no player to destroy"
 msgstr "Virhe: ei tuhottavia pelaajia"
 
 #: goal.cpp:213
-#, fuzzy, kde-format
-#| msgid "KsirK - Goal Display"
+#, kde-format
 msgctxt "@title:window"
 msgid "Goal Display"
-msgstr "KsirK – Tavoitenäkymä"
+msgstr "Tavoitenäkymä"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
 #: ksirkcontinentdefinition.ui:13
@@ -1235,8 +1233,7 @@ msgstr ""
 "muokkaa sen yksityiskohtia oikeanpuoleisessa telakassa."
 
 #: ksirkSkinEditorConfigDialog.cpp:55
-#, fuzzy, kde-format
-#| msgid "Preferences"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "Asetukset"
@@ -2006,29 +2003,25 @@ msgid "Cannot load center icon<br>Program cannot continue"
 msgstr "Keskuskuvaketta ei voi ladata<br>Ohjelma ei voi jatkaa"
 
 #: mainwindow.cpp:324
-#, fuzzy, kde-format
-#| msgid "Open a saved skin..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a saved skin"
-msgstr "Avaa tallennettu teema…"
+msgstr "Avaa tallennettu teema"
 
 #: mainwindow.cpp:328
-#, fuzzy, kde-format
-#| msgid "Load &Recent"
+#, kde-format
 msgctxt "@action"
 msgid "Load &Recent"
 msgstr "Lataa &viimeaikainen"
 
 #: mainwindow.cpp:329
-#, fuzzy, kde-format
-#| msgid "Open a recently saved skin..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a recently saved skin"
-msgstr "Avaa hiljattain tallennettu teema…"
+msgstr "Avaa hiljattain tallennettu teema"
 
 #: mainwindow.cpp:337
-#, fuzzy, kde-format
-#| msgid "Save the current skin"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current skin"
 msgstr "Tallenna nykyinen teema"
@@ -2048,35 +2041,31 @@ msgstr "Muutoksia on tallentamatta. Mitä haluat tehdä?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
-msgstr ""
+msgstr "Tallentamattomia muutoksia"
 
 #: mainwindow.cpp:528
-#, fuzzy, kde-format
-#| msgid "Quit without saving"
+#, kde-format
 msgctxt "@action:button"
 msgid "Quit Without Saving"
 msgstr "Lopeta tallentamatta"
 
 #: mainwindow.cpp:529
-#, fuzzy, kde-format
-#| msgid "Save then quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save and Quit"
-msgstr "Tallenna, sitten lopeta"
+msgstr "Tallenna ja lopeta"
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "New country name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Country Name"
 msgstr "Uuden maan nimi"
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new country"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new country:"
-msgstr "Anna uudelle maalle nimi"
+msgstr "Anna uuden maan nimi:"
 
 #: mainwindow.cpp:1315
 #, kde-format
@@ -2087,21 +2076,19 @@ msgstr "Haluatko varmasti poistaa maan ”%1”?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Country Confirmation"
-msgstr ""
+msgstr "Vahvista maan poistaminen"
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "New continent name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Continent Name"
 msgstr "Uuden maanosan nimi"
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new continent"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new continent:"
-msgstr "Anna uudelle maanosalle nimi"
+msgstr "Anna uuden maanosan nimi:"
 
 #: mainwindow.cpp:1344
 #, kde-format
@@ -2109,11 +2096,10 @@ msgid "Do you really want to delete continent '%1'?"
 msgstr "Haluatko varmasti poistaa maanosan ”%1”?"
 
 #: mainwindow.cpp:1344
-#, fuzzy, kde-format
-#| msgid "Select Continents"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Continent Confirmation"
-msgstr "Valitse maanosat"
+msgstr "Vahvista maanosan poistaminen"
 
 #: mainwindow.cpp:1889
 #, kde-format
@@ -2124,21 +2110,19 @@ msgstr "Haluatko varmasti poistaa tavoitteen ”%1”?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Goal Confirmation"
-msgstr ""
+msgstr "Vahvista tavoitteen poistaminen"
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "New nationality name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Nationality Name"
 msgstr "Uuden kansan nimi"
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new nationality"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new nationality:"
-msgstr "Anna uudelle kansalle nimi"
+msgstr "Anna uuden kansan nimi:"
 
 #: mainwindow.cpp:1958
 #, kde-format
@@ -2149,14 +2133,13 @@ msgstr "Haluatko varmasti poistaa kansan ”%1”?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Nationality Confirmation"
-msgstr ""
+msgstr "Vahvista kansan poistaminen"
 
 #: onu.cpp:78
-#, fuzzy, kde-format
-#| msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+#, kde-format
 msgid "Invalid skin definition file format. Expected %1 and got %2"
 msgstr ""
-"Virhe – teemamääritystiedoston muoto ei kelpaa. Odotettiin %1, saatiin %2"
+"Teemamääritystiedoston muoto on virheellinen. Odotettiin %1, saatiin %2"
 
 #: onu.cpp:110
 #, kde-format
@@ -2186,8 +2169,7 @@ msgstr ""
 "%2."
 
 #: onu.cpp:984
-#, fuzzy, kde-format
-#| msgid "PoolLoader"
+#, kde-format
 msgctxt "@title:window"
 msgid "PoolLoader"
 msgstr "PoolLoader"
@@ -2208,8 +2190,7 @@ msgid "Error - Unknown skin string data: "
 msgstr "Virhe – Tuntematon teeman merkkijonotieto: "
 
 #: skinSpritesData.cpp:102
-#, fuzzy, kde-format
-#| msgid "Fatal Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "Vakava virhe"
