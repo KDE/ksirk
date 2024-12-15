@@ -19,12 +19,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "भवतः नामानि"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "भवतः ईमेलपत्राणि"
 
 #: goal.cpp:100
 #, kde-format
@@ -35,7 +35,7 @@ msgstr "त्रुटिः : नाशयितुं कोऽपि खि�
 #, kde-format
 msgctxt "@title:window"
 msgid "Goal Display"
-msgstr ""
+msgstr "लक्ष्यप्रदर्शनम्"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
 #: ksirkcontinentdefinition.ui:13
@@ -1213,7 +1213,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preferences"
-msgstr ""
+msgstr "प्राधान्यानि"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CountriesSelectionDialog)
 #: ksirkskineditorcountriesselectiondialog.ui:13
@@ -1970,31 +1970,31 @@ msgstr "केन्द्रचिह्नं लोड् कर्तुं 
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a saved skin"
-msgstr ""
+msgstr "रक्षितं त्वचां उद्घाटयन्तु"
 
 #: mainwindow.cpp:328
 #, kde-format
 msgctxt "@action"
 msgid "Load &Recent"
-msgstr ""
+msgstr "लोड &Recent"
 
 #: mainwindow.cpp:329
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a recently saved skin"
-msgstr ""
+msgstr "सद्यः एव रक्षितां त्वचां उद्घाटयन्तु"
 
 #: mainwindow.cpp:337
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current skin"
-msgstr ""
+msgstr "वर्तमान त्वचां रक्षन्तु"
 
 #: mainwindow.cpp:362
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Root Folder of the Skin to Open"
-msgstr ""
+msgstr "उद्घाटयितुं Skin इत्यस्य Root Folder इति चिनोतु"
 
 #: mainwindow.cpp:526
 #, kde-format
@@ -2005,31 +2005,31 @@ msgstr "अरक्षिताः परिवर्तनाः सन्त�
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
-msgstr ""
+msgstr "असरक्षितपरिवर्तनानि"
 
 #: mainwindow.cpp:528
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Without Saving"
-msgstr ""
+msgstr "रक्षणं विना त्यजतु"
 
 #: mainwindow.cpp:529
 #, kde-format
 msgctxt "@action:button"
 msgid "Save and Quit"
-msgstr ""
+msgstr "Save and Quit इति"
 
 #: mainwindow.cpp:1305
 #, kde-format
 msgctxt "@title:window"
 msgid "New Country Name"
-msgstr ""
+msgstr "नव देशस्य नाम"
 
 #: mainwindow.cpp:1305
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new country:"
-msgstr ""
+msgstr "नूतनदेशस्य नाम प्रविशतु : १."
 
 #: mainwindow.cpp:1315
 #, kde-format
@@ -2040,19 +2040,19 @@ msgstr "किं भवान् वास्तवमेव देशं '%1' 
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Country Confirmation"
-msgstr ""
+msgstr "देशस्य पुष्टिः विलोपयतु"
 
 #: mainwindow.cpp:1334
 #, kde-format
 msgctxt "@title:window"
 msgid "New Continent Name"
-msgstr ""
+msgstr "नव महाद्वीप नाम"
 
 #: mainwindow.cpp:1334
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new continent:"
-msgstr ""
+msgstr "नूतनमहाद्वीपस्य नाम प्रविशतु :"
 
 #: mainwindow.cpp:1344
 #, kde-format
@@ -2063,7 +2063,7 @@ msgstr "किं भवान् वास्तवमेव '%1' महाद�
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Continent Confirmation"
-msgstr ""
+msgstr "महाद्वीपस्य पुष्टिः विलोपयन्तु"
 
 #: mainwindow.cpp:1889
 #, kde-format
@@ -2074,19 +2074,19 @@ msgstr "किं भवान् वास्तवमेव लक्ष्य
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Goal Confirmation"
-msgstr ""
+msgstr "लक्ष्य पुष्टिकरणं विलोपयन्तु"
 
 #: mainwindow.cpp:1948
 #, kde-format
 msgctxt "@title:window"
 msgid "New Nationality Name"
-msgstr ""
+msgstr "नवीन राष्ट्रीयता नाम"
 
 #: mainwindow.cpp:1948
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new nationality:"
-msgstr ""
+msgstr "नूतनराष्ट्रीयतायाः नाम प्रविशतु : १."
 
 #: mainwindow.cpp:1958
 #, kde-format
@@ -2097,7 +2097,7 @@ msgstr "किं भवान् वास्तवमेव '%1' राष्�
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Nationality Confirmation"
-msgstr ""
+msgstr "राष्ट्रीयता पुष्टिकरणं विलोपयतु"
 
 #: onu.cpp:78
 #, kde-format
@@ -2135,7 +2135,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "PoolLoader"
-msgstr ""
+msgstr "पूललोडर"
 
 #: skinSpritesData.cpp:85
 #, kde-format

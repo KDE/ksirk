@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-22 00:37+0000\n"
-"PO-Revision-Date: 2024-12-13 20:22+0530\n"
+"PO-Revision-Date: 2024-12-14 01:42+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
@@ -22,12 +22,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "भवतः नामानि"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "भवतः ईमेलपत्राणि"
 
 #. i18n: file skins/default/Data/world.desktop line 1
 #. i18n: file skins/default/Data/world.desktop line 516
@@ -1072,80 +1072,80 @@ msgstr "संप्रत्ति"
 #, kde-format
 msgctxt "@action"
 msgid "Next Player"
-msgstr ""
+msgstr "अग्रिमः खिलाडी"
 
 #: decoratedgameframe.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Details"
-msgstr ""
+msgstr "वर्णन"
 
 #: decoratedgameframe.cpp:106 kgamewin.cpp:332 kgamewin.cpp:1214
 #: kgamewin.cpp:1226 kgamewin.cpp:2383
 #, kde-format
 msgctxt "@action"
 msgid "Goal"
-msgstr ""
+msgstr "ध्येय"
 
 #: decoratedgameframe.cpp:138 decoratedgameframe.cpp:394
 #, kde-format
 msgctxt "@action"
 msgid "Enable Arena"
-msgstr ""
+msgstr "अखाड़ा सक्षमं कुर्वन्तु"
 
 #: decoratedgameframe.cpp:142
 #, kde-format
 msgctxt "@action"
 msgid "Attack 1"
-msgstr ""
+msgstr "आक्रमणम् १"
 
 #: decoratedgameframe.cpp:145
 #, kde-format
 msgctxt "@action"
 msgid "Attack 2"
-msgstr ""
+msgstr "आक्रमणम् २"
 
 #: decoratedgameframe.cpp:148
 #, kde-format
 msgctxt "@action"
 msgid "Attack 3"
-msgstr ""
+msgstr "आक्रमणम् ३"
 
 #: decoratedgameframe.cpp:151
 #, kde-format
 msgctxt "@action"
 msgid "Auto Attack"
-msgstr ""
+msgstr "स्वतः आक्रमणम्"
 
 #: decoratedgameframe.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Move 1"
-msgstr ""
+msgstr "चालः १"
 
 #: decoratedgameframe.cpp:172
 #, kde-format
 msgctxt "@action"
 msgid "Move 5"
-msgstr ""
+msgstr "चालनम् ५"
 
 #: decoratedgameframe.cpp:175
 #, kde-format
 msgctxt "@action"
 msgid "Move 10"
-msgstr ""
+msgstr "चालः १०"
 
 #: decoratedgameframe.cpp:400
 #, kde-format
 msgctxt "@action"
 msgid "Disable Arena"
-msgstr ""
+msgstr "अखाड़ा अक्षम करें"
 
 #: Dialogs/InvasionSlider.cpp:98
 #, kde-format
 msgctxt "@title:window"
 msgid "Invasion"
-msgstr ""
+msgstr "आक्रमणम्"
 
 #: Dialogs/InvasionSlider.cpp:99
 #, kde-format
@@ -1165,7 +1165,7 @@ msgstr "<br><i>आक्रमणकारीणां सेनानां स
 #, kde-format
 msgctxt "@title:window"
 msgid "Moving"
-msgstr ""
+msgstr "चलन्"
 
 #: Dialogs/InvasionSlider.cpp:105
 #, kde-format
@@ -1357,7 +1357,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Fatal Error"
-msgstr ""
+msgstr "घातक त्रुटिः"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: Dialogs/newGameSummary.ui:24
@@ -1551,7 +1551,11 @@ msgid_plural ""
 "Error - No receiving country selected while computer player %2 had still %1 "
 "armies to place. This is bug probably #2232 at www.gna.org."
 msgstr[0] ""
+"त्रुटिः - सङ्गणकप्लेयर %2 इत्यस्य स्थापनार्थं अद्यापि १ सेना आसीत् चेत् कोऽपि ग्राहकदेशः न "
+"चयनितः । इदं www.gna.org इत्यत्र सम्भवतः #2232 इति बग् अस्ति ।"
 msgstr[1] ""
+"त्रुटिः - सङ्गणकप्लेयर %2 इत्यस्य %1 सेनाः स्थापनीयाः आसन् तदा कोऽपि ग्राहकदेशः न चयनितः "
+"। इदं www.gna.org इत्यत्र सम्भवतः #2232 इति दोषः अस्ति ।"
 
 #: GameLogic/gameautomaton.cpp:303
 #, kde-format
@@ -1573,13 +1577,13 @@ msgstr "किं भवन्तः वास्तवमेव स्वस्
 #, kde-format
 msgctxt "@title:window"
 msgid "New Game Confirmation"
-msgstr ""
+msgstr "नवीनं क्रीडापुष्टिः"
 
 #: GameLogic/gameautomaton.cpp:1191
 #, kde-format
 msgctxt "@action:button"
 msgid "Join New Game"
-msgstr ""
+msgstr "New Game इत्यत्र सम्मिलिताः भवन्तु"
 
 #: GameLogic/gameautomaton.cpp:1362
 #, kde-format
@@ -1595,7 +1599,7 @@ msgstr "कृपया अन्यत् नाम चिनुत।"
 #, kde-format
 msgctxt "@title:window"
 msgid "Name Already Used"
-msgstr ""
+msgstr "नाम पूर्वमेव प्रयुक्तम्"
 
 #: GameLogic/gameautomaton.cpp:1474
 #, kde-format
@@ -1611,7 +1615,7 @@ msgstr "त्रुटिः - खिलाडी %1, भवता नाम �
 #, kde-format
 msgctxt "@info Forged player name"
 msgid "Player%1"
-msgstr ""
+msgstr "खिलाडी%1"
 
 #: GameLogic/gameautomaton.cpp:1531
 #, kde-format
@@ -1622,7 +1626,7 @@ msgstr "कृपया अन्यं राष्ट्रं चिनुत
 #, kde-format
 msgctxt "@title:window"
 msgid "Nation Already Used"
-msgstr ""
+msgstr "राष्ट्रं पूर्वमेव प्रयुक्तम्"
 
 #: GameLogic/gameautomaton.cpp:1623
 #, kde-format
@@ -1637,7 +1641,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Starting a New Game or Exit."
-msgstr ""
+msgstr "नूतनं क्रीडां आरभ्य निर्गमनं वा।"
 
 #: GameLogic/gameautomaton.cpp:1625
 #, kde-format
@@ -1672,7 +1676,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Lost Connection to Client"
-msgstr ""
+msgstr "क्लायन्ट् प्रति सम्पर्कः नष्टः"
 
 #: GameLogic/gameautomaton.cpp:1652
 #, kde-format
@@ -1706,7 +1710,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Displaying Goal"
-msgstr ""
+msgstr "लक्ष्यं प्रदर्शयन्"
 
 #: GameLogic/gameautomaton.cpp:2088
 #, kde-format
@@ -1736,7 +1740,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Invalid Password"
-msgstr ""
+msgstr "अमान्य गुप्तशब्दः"
 
 #: GameLogic/gameautomaton.cpp:2588
 #, kde-format
@@ -1751,13 +1755,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Next Player Confirmation"
-msgstr ""
+msgstr "अग्रिमः खिलाडी पुष्टिः"
 
 #: GameLogic/gameautomaton.cpp:2590
 #, kde-format
 msgctxt "@action:button"
 msgid "Next Player"
-msgstr ""
+msgstr "अग्रिमः खिलाडी"
 
 #: GameLogic/goal.cpp:156
 #, kde-format
@@ -1783,16 +1787,16 @@ msgstr "<br>%1 अद्यापि जीवति..."
 #, kde-format
 msgid "<br>%2, you still have 1 country to conquer…"
 msgid_plural "<br>%2, you still have %1 countries to conquer…"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "<br>%2, भवतः अद्यापि १ देशः जितुम् अस्ति..."
+msgstr[1] "<br>%2, भवतः अद्यापि %1 देशाः जितुम् अस्ति..."
 
 #: GameLogic/goal.cpp:242
 #, kde-format
 msgid "<br>Your goal is reached: %2 is dead and you possess %1 country."
 msgid_plural ""
 "<br>Your goal is reached: %2 is dead and you possess %1 countries."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "<br>भवतः लक्ष्यं प्राप्तम् : %2 मृतः भवतः %1 देशः अस्ति ।"
+msgstr[1] "<br>भवतः लक्ष्यं प्राप्तम् : %2 मृतः अस्ति तथा च भवतः %1 देशाः सन्ति ।"
 
 #: GameLogic/goal.cpp:264
 #, kde-format
@@ -1803,7 +1807,11 @@ msgid_plural ""
 "<br>%2, you have enough countries but you still have to put more than %1 "
 "armies on %3 of them…"
 msgstr[0] ""
+"<br>%2, भवतः पर्याप्ताः देशाः सन्ति किन्तु तेषु %3 इत्यत्र अपि भवतः 1 अधिकं सेना "
+"स्थापनीयम्..."
 msgstr[1] ""
+"<br>%2, भवतः पर्याप्ताः देशाः सन्ति किन्तु तेषु %3 मध्ये %1 तः अधिकानि सेनाः "
+"स्थापनीयानि..."
 
 #: GameLogic/goal.cpp:269
 #, kde-format
@@ -1814,20 +1822,20 @@ msgstr "<br>%1, भवता अद्यापि विजयः कर्त�
 #, kde-format
 msgid "1 country in %2"
 msgid_plural "%1 countries in %2"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "१ देशे %2"
+msgstr[1] "%1 देशेषु %2"
 
 #: GameLogic/goal.cpp:285
 #, kde-format
 msgctxt "@item:intext country list separator of last item"
 msgid " and "
-msgstr ""
+msgstr " तथा "
 
 #: GameLogic/goal.cpp:289
 #, kde-format
 msgctxt "@item:intext country list separator of non-last item"
 msgid ", "
-msgstr ""
+msgstr ", ९. "
 
 #: GameLogic/goal.cpp:295
 #, kde-format
@@ -1835,13 +1843,13 @@ msgctxt ""
 "@info An element of the enumeration of the number of countries in the given "
 "continent"
 msgid "%1 in %2"
-msgstr ""
+msgstr "%2 मध्ये %1"
 
 #: GameLogic/goal.cpp:317
 #, kde-format
 msgctxt "@title:window"
 msgid "Goal Display"
-msgstr ""
+msgstr "लक्ष्यप्रदर्शनम्"
 
 #: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:170
 #, kde-format
@@ -1937,67 +1945,67 @@ msgstr "नवीन मानक TCP/IP संजालक्रीडा"
 #, kde-format
 msgctxt "@action"
 msgid "New TCP/IP"
-msgstr ""
+msgstr "नवीनं TCP/IP"
 
 #: kgamewin.cpp:308
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new standard TCP/IP network game"
-msgstr ""
+msgstr "एकं नूतनं मानकं TCP/IP संजालक्रीडां रचयन्तु"
 
 #: kgamewin.cpp:323
 #, kde-format
 msgctxt "@action"
 msgid "Join a Standard TCP/IP Network Game"
-msgstr ""
+msgstr "एकस्मिन् मानक TCP/IP संजालक्रीडायां सम्मिलितं भवन्तु"
 
 #: kgamewin.cpp:324
 #, kde-format
 msgctxt "@action"
 msgid "Join TCP/IP"
-msgstr ""
+msgstr "TCP/IP इत्यत्र सम्मिलितं कुर्वन्तु"
 
 #: kgamewin.cpp:326
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Join a standard TCP/IP network game"
-msgstr ""
+msgstr "मानक TCP/IP संजालक्रीडायां सम्मिलितं भवन्तु"
 
 #: kgamewin.cpp:331
 #, kde-format
 msgctxt "@action"
 msgid "Display the Current Player's Goal"
-msgstr ""
+msgstr "वर्तमानक्रीडकस्य लक्ष्यं प्रदर्शयन्तु"
 
 #: kgamewin.cpp:334
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Display the current player's goal"
-msgstr ""
+msgstr "वर्तमानक्रीडकस्य लक्ष्यं प्रदर्शयन्तु"
 
 #: kgamewin.cpp:340
 #, kde-format
 msgctxt "@action"
 msgid "Contextual Help"
-msgstr ""
+msgstr "सन्दर्भ सहायता"
 
 #: kgamewin.cpp:351
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Let the next player play"
-msgstr ""
+msgstr "अग्रिमः क्रीडकः क्रीडतु"
 
 #: kgamewin.cpp:355
 #, kde-format
 msgctxt "@action"
 msgid "Finish Moves"
-msgstr ""
+msgstr "समाप्तं चालयति"
 
 #: kgamewin.cpp:357
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Finish moving the current sprites"
-msgstr ""
+msgstr "वर्तमानस्प्राइट्स् चालनं समाप्तं कुर्वन्तु"
 
 #: kgamewin.cpp:485
 #, kde-format
@@ -2061,7 +2069,7 @@ msgstr "किं त्वं क्रीडां त्यक्तुम्
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
-msgstr ""
+msgstr "क्रीडां त्यजतु"
 
 #: kgamewin.cpp:961
 #, kde-format
@@ -2072,7 +2080,7 @@ msgstr "भवन्तः त्यक्तुं पूर्वं स्व
 #, kde-format
 msgctxt "@title:window"
 msgid "Load Game"
-msgstr ""
+msgstr "लोड गेम"
 
 #: kgamewin.cpp:1037
 #, kde-format
@@ -2088,25 +2096,30 @@ msgid_plural ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
 "with %1 armies!<br> How do you want to defend <font color=\"blue\">%4</font>?"
 msgstr[0] ""
+"<font color=\"red\">%2</font> भवन्तं <font color=\"red\">%3</font> तः 1 सेनायाः "
+"सह आक्रमणं करोति!<br> <font color=\"blue\">%4 इत्यस्य</font> रक्षणं कथं कर्तुम् इच्छति ?"
 msgstr[1] ""
+"<font color=\"red\">%2</font> भवन्तं <font color=\"red\">%3</font> तः %1 "
+"सेनाभिः सह आक्रमणं करोति!<br> भवन्तः <font color=\"blue\">%4 इत्यस्य</font> रक्षणं "
+"कथं कर्तुम् इच्छन्ति ?"
 
 #: kgamewin.cpp:1145
 #, kde-format
 msgctxt "@action:button"
 msgid "Defend 1"
-msgstr ""
+msgstr "रक्षणम् 1"
 
 #: kgamewin.cpp:1146
 #, kde-format
 msgctxt "@action:button"
 msgid "Defend 2"
-msgstr ""
+msgstr "रक्षणम् २"
 
 #: kgamewin.cpp:1147
 #, kde-format
 msgctxt "@action:button"
 msgid "Defend-Auto"
-msgstr ""
+msgstr "रक्षा-स्वतः"
 
 #: kgamewin.cpp:1266
 #, kde-format
@@ -2206,7 +2219,7 @@ msgstr "नवीनं क्रीडायाः पुष्टिः"
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
-msgstr ""
+msgstr "नूतनं क्रीडां आरभत"
 
 #: kgamewin.cpp:2803
 msgid "<b>KsirK quick Introduction</b>"
@@ -2239,8 +2252,8 @@ msgstr "इतः परं सन्देशान् मा दर्शय�
 #, kde-format
 msgid "%2 belongs to %3. 1 army."
 msgid_plural "%2 belongs to %3. %1 armies."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%2 %3 इत्यस्य अस्ति । १ सेना ।"
+msgstr[1] "%2 %3 इत्यस्य अस्ति । %1 सेनाः ।"
 
 #: kgamewinslots.cpp:434
 #, kde-format
@@ -2251,7 +2264,7 @@ msgstr "रक्षां प्रतीक्षमाणः रक्षि�
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Game"
-msgstr ""
+msgstr "गेम रक्षतु"
 
 #: kgamewinslots.cpp:445
 #, kde-format
@@ -2311,52 +2324,52 @@ msgstr "<i>युद्धं प्रचलति...</i>"
 #, kde-format
 msgid "<font color=\"red\">Attack</font> with 1 army.<br>"
 msgid_plural "<font color=\"red\">Attack</font> with %1 armies.<br>"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "१ सेनायाः <font color=\"red\">आक्रमणम्</font> ।<br>"
+msgstr[1] "%1 सेनाभिः सह <font color=\"red\">आक्रमणं कुर्वन्तु</font> ।<br>"
 
 #: krightdialog.cpp:233
 #, kde-format
 msgid "<font color=\"blue\">Defend</font> with 1 army.<br>"
 msgid_plural "<font color=\"blue\">Defend</font> with %1 armies.<br>"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "१ सेनायाः सह <font color=\"blue\">रक्षणं कुर्वन्तु</font> ।<br>"
+msgstr[1] "%1 सेनाभिः सह <font color=\"blue\">रक्षणं कुर्वन्तु</font> ।<br>"
 
 #: krightdialog.cpp:265
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Auto-Attack"
-msgstr ""
+msgstr "स्वतः आक्रमणं स्थगयन्तु"
 
 #: krightdialog.cpp:273
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Auto-Defense"
-msgstr ""
+msgstr "स्वतः रक्षां स्थगयन्तु"
 
 #: krightdialog.cpp:298
 #, kde-format
 msgctxt "@action:button"
 msgid "Valid"
-msgstr ""
+msgstr "मान्य"
 
 #: krightdialog.cpp:299
 #, kde-format
 msgctxt "@action:button"
 msgid "Recycle"
-msgstr ""
+msgstr "पुनः प्रयोगं कुर्वन्तु"
 
 #: krightdialog.cpp:300
 #, kde-format
 msgctxt "@action:button"
 msgid "Done"
-msgstr ""
+msgstr "कृतम्‌"
 
 #: krightdialog.cpp:327
 #, kde-format
 msgid "%1 army to place"
 msgid_plural "%1 armies to place"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 सेना स्थानं प्रति"
+msgstr[1] "%1 सेनाः स्थापयितुं"
 
 #: krightdialog.cpp:375
 #, kde-format
@@ -2367,8 +2380,8 @@ msgstr "<u><b>केचन परिवर्तयन्तु<br> नियु
 #, kde-format
 msgid "1 army to place"
 msgid_plural "%1 armies to place"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "१ सेनास्थानम्"
+msgstr[1] "%1 सेनाः स्थापयितुं"
 
 #: krightdialog.cpp:392
 #, kde-format
@@ -2389,7 +2402,7 @@ msgstr "<font color=\"blue\">नष्टसेना: %1</font>"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preferences"
-msgstr ""
+msgstr "प्राधान्यानि"
 
 #. i18n: ectx: label, entry (spritesSpeed), group (General)
 #: ksirksettings.kcfg:9
