@@ -1,4 +1,4 @@
-# Sanskrit translations for ksirk package.
+# Hindi translations for ksirk package.
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ksirk package.
 # Kali <EMAIL@ADDRESS>, 2024.
@@ -8,53 +8,52 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-07 00:37+0000\n"
-"PO-Revision-Date: 2024-12-13 19:09+0530\n"
+"PO-Revision-Date: 2024-12-15 15:57+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
-"Language: sa\n"
+"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n>2);\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "भवतः नामानि"
+msgstr ""
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "भवतः ईमेलपत्राणि"
+msgstr ""
 
 #: goal.cpp:100
 #, kde-format
 msgid "Error: no player to destroy"
-msgstr "त्रुटिः : नाशयितुं कोऽपि खिलाडी नास्ति"
+msgstr ""
 
 #: goal.cpp:213
 #, kde-format
 msgctxt "@title:window"
 msgid "Goal Display"
-msgstr "लक्ष्यप्रदर्शनम्"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
 #: ksirkcontinentdefinition.ui:13
 #, kde-format
 msgid "Continent"
-msgstr "महाद्वीप"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkcontinentdefinition.ui:22
 #, kde-format
 msgid "Bonus:"
-msgstr "बोनसः : १."
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, bonus)
 #: ksirkcontinentdefinition.ui:29
 #, kde-format
 msgid "Number of bonus points when owning the full continent"
-msgstr "पूर्णमहाद्वीपस्य स्वामित्वे बोनसबिन्दुसङ्ख्या"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, bonus)
 #: ksirkcontinentdefinition.ui:36
@@ -69,20 +68,12 @@ msgid ""
 "The bonus should be proportional to the continent's size and to the "
 "difficulty to conquer it or to keep it."
 msgstr ""
-"पूर्णमहाद्वीपस्य स्वामित्वे बोनसबिन्दुसङ्ख्या।\n"
-"\n"
-"प्रत्येकं वारस्य अन्ते प्रत्येकं क्रीडकस्य कृते कतिपयानि सेनाः वितरितानि भवन्ति । यदि एकस्य "
-"क्रीडकस्य अस्य महाद्वीपस्य सर्वेषां देशानाम् स्वामित्वं भवति तर्हि सः/सा एतत् बोनस् प्राप्नोति "
-"।\n"
-"\n"
-"बोनसः महाद्वीपस्य परिमाणस्य आनुपातिकः भवेत्, तस्य विजयस्य वा स्थापनस्य वा कठिनतायाः "
-"आनुपातिकः भवेत् ।"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:48
 #, kde-format
 msgid "Select the countries contained in this continent"
-msgstr "अस्मिन् महाद्वीपे विद्यमानाः देशाः चिनुत"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:53
@@ -93,40 +84,36 @@ msgid ""
 "A list of all the world's countries will be shown and you will be able to "
 "select the countries using the mouse and the Ctrl and Shift keys."
 msgstr ""
-"अस्मिन् महाद्वीपे विद्यमानानाम् देशानाम् चयनार्थम् अत्र क्लिक् कुर्वन्तु ।\n"
-"\n"
-"विश्वस्य सर्वेषां देशानाम् सूची दर्शिता भविष्यति तथा च भवान् माउस् तथा Ctrl तथा Shift "
-"कीलयोः उपयोगेन देशान् चयनं कर्तुं शक्नोति।"
 
 #. i18n: ectx: property (text), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:56
 #, kde-format
 msgid "Countries:"
-msgstr "देशाः : १."
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, countrieslist)
 #: ksirkcontinentdefinition.ui:63
 #, kde-format
 msgid "Continent's countries"
-msgstr "महाद्वीपस्य देशाः"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, countrieslist)
 #: ksirkcontinentdefinition.ui:66
 #, kde-format
 msgid "This is the list of countries currently forming this continent."
-msgstr "एषा सम्प्रति अस्य महाद्वीपस्य निर्माणं कुर्वतां देशानाम् सूची अस्ति ।"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkCountryDefinition)
 #: ksirkcountrydefinition.ui:13
 #, kde-format
 msgid "Country"
-msgstr "देशः"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkcountrydefinition.ui:22
 #, kde-format
 msgid "Flag:"
-msgstr "ध्वजा:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
@@ -140,31 +127,31 @@ msgstr "ध्वजा:"
 #: ksirkskindefinition.ui:64
 #, kde-format
 msgid "x"
-msgstr "x"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: ksirkcountrydefinition.ui:39
 #, kde-format
 msgid "Anchor:"
-msgstr "लाङ्गल:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: ksirkcountrydefinition.ui:56
 #, kde-format
 msgid "Center:"
-msgstr "केंद्र:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: ksirkcountrydefinition.ui:73
 #, kde-format
 msgid "Infantry:"
-msgstr "पदाति सेना : १."
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryx)
 #: ksirkcountrydefinition.ui:80
 #, kde-format
 msgid "Infantry's sprite top left point x-coordinate"
-msgstr "पदातिसेनायाः स्प्राइट् उपरि वामबिन्दुः x-निर्देशाङ्कः"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryx)
 #: ksirkcountrydefinition.ui:87
@@ -177,18 +164,12 @@ msgid ""
 "\n"
 "This value will be automatically updated if you move the infantry."
 msgstr ""
-"पदातिसेनायाः स्प्राइट् उपरि वामबिन्दुः x-निर्देशाङ्कः ।\n"
-"\n"
-"इदं नक्शे उपरि वामभागे सापेक्षतया दत्तं भवति, मुख्यत्वक् परिभाषाविजेट् मध्ये परिभाषितस्य "
-"आकारस्य ।\n"
-"\n"
-"यदि भवान् पदातिसैनिकं चालयति तर्हि एतत् मूल्यं स्वयमेव अद्यतनं भविष्यति ।"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryy)
 #: ksirkcountrydefinition.ui:107
 #, kde-format
 msgid "Infantry's sprite top left point y-coordinate"
-msgstr "पदातिसेनायाः स्प्राइट् उपरि वामबिन्दुः y-निर्देशाङ्कः"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryy)
 #: ksirkcountrydefinition.ui:114
@@ -202,25 +183,18 @@ msgid ""
 "This value will be automatically updated if you move the infantry by drag "
 "and drop."
 msgstr ""
-"पदातिसेनायाः स्प्राइट् उपरि वामबिन्दुः y-निर्देशाङ्कः ।\n"
-"\n"
-"इदं नक्शे उपरि वामभागे सापेक्षतया दत्तं भवति, मुख्यत्वक् परिभाषाविजेट् मध्ये परिभाषितस्य "
-"आकारस्य ।\n"
-"\n"
-"यदि भवान् पदातिसैनिकं drag and drop इत्यनेन चालयति तर्हि एतत् मूल्यं स्वयमेव अद्यतनं "
-"भविष्यति ।"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: ksirkcountrydefinition.ui:124
 #, kde-format
 msgid "Cavalry:"
-msgstr "अश्वसेना : १."
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryx)
 #: ksirkcountrydefinition.ui:131
 #, kde-format
 msgid "Cavalry's sprite top left point x-coordinate"
-msgstr "अश्वसेनायाः स्प्राइट् उपरि वामबिन्दुः x-निर्देशाङ्कः"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryx)
 #: ksirkcountrydefinition.ui:138
@@ -233,18 +207,12 @@ msgid ""
 "\n"
 "This value will be automatically updated if you move the cavalry."
 msgstr ""
-"अश्वसेनायाः स्प्राइट् उपरि वामबिन्दुः x-निर्देशाङ्कः ।\n"
-"\n"
-"इदं नक्शे उपरि वामभागे सापेक्षतया दत्तं भवति, मुख्यत्वक् परिभाषाविजेट् मध्ये परिभाषितस्य "
-"आकारस्य ।\n"
-"\n"
-"यदि भवान् अश्वसेनायाः चालनं करोति तर्हि एतत् मूल्यं स्वयमेव अद्यतनं भविष्यति ।"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryy)
 #: ksirkcountrydefinition.ui:158
 #, kde-format
 msgid "Cavalry's sprite top left point y-coordinate"
-msgstr "अश्वसेनायाः स्प्राइट् उपरि वामबिन्दुः y-निर्देशाङ्कः"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryy)
 #: ksirkcountrydefinition.ui:165
@@ -258,25 +226,18 @@ msgid ""
 "This value will be automatically updated if you move the cavalry by drag and "
 "drop."
 msgstr ""
-"अश्वसेनायाः स्प्राइट् उपरि वामबिन्दुः y-निर्देशाङ्कः।\n"
-"\n"
-"इदं नक्शे उपरि वामभागे सापेक्षतया दत्तं भवति, मुख्यत्वक् परिभाषाविजेट् मध्ये परिभाषितस्य "
-"आकारस्य ।\n"
-"\n"
-"यदि भवान् अश्वसेनायाः drag and drop इत्यनेन चालयति तर्हि एतत् मूल्यं स्वयमेव अद्यतनं "
-"भविष्यति ।"
 
 #. i18n: ectx: property (text), widget (QLabel, label_12)
 #: ksirkcountrydefinition.ui:175
 #, kde-format
 msgid "Cannon:"
-msgstr "तोपः : १."
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannony)
 #: ksirkcountrydefinition.ui:192
 #, kde-format
 msgid "Cannon's sprite top left point y-coordinate"
-msgstr "तोपस्य स्प्राइट् उपरि वामबिन्दुः y-निर्देशाङ्कः"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannony)
 #: ksirkcountrydefinition.ui:199
@@ -290,18 +251,12 @@ msgid ""
 "This value will be automatically updated if you move the cannon by drag and "
 "drop."
 msgstr ""
-"तोपस्य स्प्राइट् उपरि वामबिन्दुः y-निर्देशाङ्कः ।\n"
-"\n"
-"इदं नक्शे उपरि वामभागे सापेक्षतया दत्तं भवति, मुख्यत्वक् परिभाषाविजेट् मध्ये परिभाषितस्य "
-"आकारस्य ।\n"
-"\n"
-"यदि भवान् तोपं drag and drop इत्यनेन चालयति तर्हि एतत् मूल्यं स्वयमेव अद्यतनं भविष्यति ।"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonx)
 #: ksirkcountrydefinition.ui:209
 #, kde-format
 msgid "Cannon's sprite top left point x-coordinate"
-msgstr "तोपस्य स्प्राइट् उपरि वामबिन्दुः x-निर्देशाङ्कः"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonx)
 #: ksirkcountrydefinition.ui:216
@@ -314,18 +269,12 @@ msgid ""
 "\n"
 "This value will be automatically updated if you move the cannon."
 msgstr ""
-"तोपस्य स्प्राइट् उपरि वामबिन्दुः x-निर्देशाङ्कः ।\n"
-"\n"
-"इदं नक्शे उपरि वामभागे सापेक्षतया दत्तं भवति, मुख्यत्वक् परिभाषाविजेट् मध्ये परिभाषितस्य "
-"आकारस्य ।\n"
-"\n"
-"यदि भवान् तोपं चालयति तर्हि एतत् मूल्यं स्वयमेव अद्यतनं भविष्यति ।"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, centery)
 #: ksirkcountrydefinition.ui:226
 #, kde-format
 msgid "Point around which the country name is drawn y-coordinate"
-msgstr "यस्य बिन्दुस्य परितः देशस्य नाम y-निर्देशाङ्कः आकृष्यते"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, centery)
 #: ksirkcountrydefinition.ui:236
@@ -342,21 +291,12 @@ msgid ""
 "This value will be automatically updated if you move the country name by "
 "dragging and dropping its target icon.\n"
 msgstr ""
-"यस्य बिन्दुस्य परितः देशस्य नाम y-निर्देशाङ्कः आकृष्यते ।\n"
-"\n"
-"ध्यानं कुर्वन्तु यत् एषः बिन्दुः नक्शामास्कस्य देशस्य सीमायाः अन्तः एव भवितव्यः ।\n"
-"\n"
-"इदं नक्शे उपरि वामभागे सापेक्षतया दत्तं भवति, मुख्यत्वक् परिभाषाविजेट् मध्ये परिभाषितस्य "
-"आकारस्य ।\n"
-"\n"
-"यदि भवान् देशनाम तस्य लक्ष्यचिह्नं कर्षयित्वा पातयित्वा च चालयति तर्हि एतत् मूल्यं स्वयमेव "
-"अद्यतनं भविष्यति ।\n"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, centerx)
 #: ksirkcountrydefinition.ui:246
 #, kde-format
 msgid "Point around which the country name is drawn x-coordinate"
-msgstr "यस्य बिन्दुस्य परितः देशस्य नाम x-निर्देशाङ्कः आकृष्यते"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, centerx)
 #: ksirkcountrydefinition.ui:255
@@ -373,21 +313,12 @@ msgid ""
 "This value will be automatically updated if you move the country name by "
 "dragging and dropping its target icon."
 msgstr ""
-"यस्य बिन्दुस्य परितः देशस्य नाम x-निर्देशाङ्कः आकृष्यते ।\n"
-"\n"
-"ध्यानं कुर्वन्तु यत् एषः बिन्दुः नक्शामास्कस्य देशस्य सीमायाः अन्तः एव भवितव्यः ।\n"
-"\n"
-"इदं नक्शे उपरि वामभागे सापेक्षतया दत्तं भवति, मुख्यत्वक् परिभाषाविजेट् मध्ये परिभाषितस्य "
-"आकारस्य ।\n"
-"\n"
-"यदि भवान् देशनाम तस्य लक्ष्यचिह्नं कर्षयित्वा पातयित्वा च चालयति तर्हि एतत् मूल्यं स्वयमेव "
-"अद्यतनं भविष्यति ।"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, anchory)
 #: ksirkcountrydefinition.ui:265
 #, kde-format
 msgid "Center of the highlighting y-coordinate"
-msgstr "हाइलाइटिंग y-निर्देशाङ्कस्य केन्द्रम्"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, anchory)
 #: ksirkcountrydefinition.ui:272
@@ -401,19 +332,12 @@ msgid ""
 "This value will be automatically updated if you move the highlighting by "
 "dragging and dropping its cross icon."
 msgstr ""
-"हाइलाइटिंग y-निर्देशाङ्कस्य केन्द्रम्।\n"
-"\n"
-"इदं नक्शे उपरि वामभागे सापेक्षतया दत्तं भवति, मुख्यत्वक्परिभाषाविजेट् मध्ये परिभाषितस्य "
-"आकारस्य ।\n"
-"\n"
-"यदि भवान् तस्य क्रॉस् चिह्नं कर्षयित्वा पातयित्वा हाइलाइटिङ्ग् चालयति तर्हि एतत् मूल्यं "
-"स्वयमेव अद्यतनं भविष्यति ।"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, anchorx)
 #: ksirkcountrydefinition.ui:282
 #, kde-format
 msgid "Center of the highlighting x-coordinate"
-msgstr "हाइलाइटिंग् x-निर्देशाङ्कस्य केन्द्रम्"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, anchorx)
 #: ksirkcountrydefinition.ui:289
@@ -427,18 +351,12 @@ msgid ""
 "This value will be automatically updated if you move the highlighting by "
 "dragging and dropping its cross icon."
 msgstr ""
-"हाइलाइटिंग् x-निर्देशाङ्कस्य केन्द्रम् ।\n"
-"\n"
-"इदं नक्शे उपरि वामभागे सापेक्षतया दत्तं, मुख्यत्वक्परिभाषाविजेट् मध्ये परिभाषितस्य आकारस्य ।\n"
-"\n"
-"यदि भवान् तस्य क्रॉस् चिह्नं कर्षयित्वा पातयित्वा हाइलाइटिङ्ग् चालयति तर्हि एतत् मूल्यं "
-"स्वयमेव अद्यतनं भविष्यति ।"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagy)
 #: ksirkcountrydefinition.ui:299
 #, kde-format
 msgid "Flag's sprite top left point y-coordinate"
-msgstr "ध्वजस्य स्प्राइट् उपरि वामबिन्दुः y-निर्देशाङ्कः"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagy)
 #: ksirkcountrydefinition.ui:306
@@ -452,18 +370,12 @@ msgid ""
 "This value will be automatically updated if you move the flag by drag and "
 "drop."
 msgstr ""
-"ध्वजस्य स्प्राइट् उपरि वामबिन्दुः y-निर्देशाङ्कः ।\n"
-"\n"
-"इदं नक्शे उपरि वामभागे सापेक्षतया दत्तं भवति, मुख्यत्वक् परिभाषाविजेट् मध्ये परिभाषितस्य "
-"आकारस्य ।\n"
-"\n"
-"यदि भवान् ध्वजं drag and drop इत्यनेन चालयति तर्हि एतत् मूल्यं स्वयमेव अद्यतनं भविष्यति ।"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagx)
 #: ksirkcountrydefinition.ui:316
 #, kde-format
 msgid "Flag's sprite top left point x-coordinate"
-msgstr "ध्वजस्य स्प्राइट् उपरि वामबिन्दुः x-निर्देशाङ्कः"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagx)
 #: ksirkcountrydefinition.ui:323
@@ -477,18 +389,12 @@ msgid ""
 "This value will be automatically updated if you move the flag by drag and "
 "drop."
 msgstr ""
-"ध्वजस्य स्प्राइट् उपरि वामबिन्दुः x-निर्देशाङ्कः ।\n"
-"\n"
-"इदं नक्शे उपरि वामभागे सापेक्षतया दत्तं भवति, मुख्यत्वक् परिभाषाविजेट् मध्ये परिभाषितस्य "
-"आकारस्य ।\n"
-"\n"
-"यदि भवान् ध्वजं drag and drop इत्यनेन चालयति तर्हि एतत् मूल्यं स्वयमेव अद्यतनं भविष्यति ।"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, neighboursbutton)
 #: ksirkcountrydefinition.ui:335
 #, kde-format
 msgid "Select this country's neighbors"
-msgstr "अस्य देशस्य प्रतिवेशिनः चिनुत"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, neighboursbutton)
 #: ksirkcountrydefinition.ui:340
@@ -499,22 +405,18 @@ msgid ""
 "A list of all the world's countries will be shown and you will be able to "
 "select the countries using the mouse and the Ctrl and Shift keys."
 msgstr ""
-"अस्य देशस्य प्रतिवेशिनः चयनार्थं अत्र क्लिक् कुर्वन्तु ।\n"
-"\n"
-"विश्वस्य सर्वेषां देशानाम् सूची दर्शिता भविष्यति तथा च भवान् माउस् तथा Ctrl तथा Shift "
-"कीलयोः उपयोगेन देशान् चयनं कर्तुं शक्नोति।"
 
 #. i18n: ectx: property (text), widget (QPushButton, neighboursbutton)
 #: ksirkcountrydefinition.ui:343
 #, kde-format
 msgid "Neighbors:"
-msgstr "प्रतिवेशिनः : १."
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, neighbourslist)
 #: ksirkcountrydefinition.ui:350
 #, kde-format
 msgid "This country's neighbors"
-msgstr "अस्य देशस्य प्रतिवेशिनः"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, neighbourslist)
 #: ksirkcountrydefinition.ui:353
@@ -522,38 +424,38 @@ msgstr "अस्य देशस्य प्रतिवेशिनः"
 msgid ""
 "This is the list of countries currently considered as neighbors of this "
 "country."
-msgstr "एषा वर्तमानकाले अस्य देशस्य प्रतिवेशिनः इति मन्यमाणानां देशानाम् सूची अस्ति ।"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkGoalDefinition)
 #: ksirkgoaldefinition.ui:13
 #, kde-format
 msgid "Goal"
-msgstr "ध्येय"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: ksirkgoaldefinition.ui:26
 #, kde-format
 msgid "Goal Type"
-msgstr "लक्ष्यप्रकारः"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, worldtype)
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, worldtype)
 #: ksirkgoaldefinition.ui:41 ksirkgoaldefinition.ui:44
 #, kde-format
 msgid "Conquer all the world"
-msgstr "सर्वं जगत् जितु"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, worldtype)
 #: ksirkgoaldefinition.ui:47
 #, kde-format
 msgid "World conquest"
-msgstr "विश्वविजय"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, playertype)
 #: ksirkgoaldefinition.ui:54
 #, kde-format
 msgid "Eliminate a given player"
-msgstr "दत्तं क्रीडकं समाप्तं कुर्वन्तु"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, playertype)
 #: ksirkgoaldefinition.ui:57
@@ -562,20 +464,18 @@ msgid ""
 "<p>Eliminate a given player. If it is eliminated by another one, you will "
 "fall back to a <emphasis>Countries</emphasis> type of goal.</p>"
 msgstr ""
-"<p>दत्तं क्रीडकं समाप्तं कुर्वन्तु। यदि अन्येन निराकृतं भवति तर्हि भवन्तः पुनः क<emphasis> "
-"देशाः</emphasis> लक्ष्यस्य प्रकारः ।</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, playertype)
 #: ksirkgoaldefinition.ui:60
 #, kde-format
 msgid "Player"
-msgstr "खिलाडी"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, countriestype)
 #: ksirkgoaldefinition.ui:67
 #, kde-format
 msgid "Conquer a given number of countries"
-msgstr "दत्तसङ्ख्यां देशं जित्वा"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, countriestype)
 #: ksirkgoaldefinition.ui:72
@@ -586,22 +486,19 @@ msgid ""
 "You can also make the player to have to put a given number of armies on each "
 "country."
 msgstr ""
-"दत्तसङ्ख्यां देशं जित्वा ।\n"
-"\n"
-"भवन्तः अपि क्रीडकं प्रत्येकं देशे दत्तां संख्यां सेनाः स्थापयितुं अर्हन्ति इति कर्तुं शक्नुवन्ति ।"
 
 #. i18n: ectx: property (text), widget (QRadioButton, countriestype)
 #. i18n: ectx: attribute (title), widget (QWidget, tabCountries)
 #: ksirkgoaldefinition.ui:75 ksirkskindefinition.ui:256
 #, kde-format
 msgid "Countries"
-msgstr "देशाः"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, continentstype)
 #: ksirkgoaldefinition.ui:82
 #, kde-format
 msgid "Conquer a given list of continents"
-msgstr "महाद्वीपानां दत्तां सूचीं जितुम्"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, continentstype)
 #: ksirkgoaldefinition.ui:85
@@ -610,28 +507,26 @@ msgid ""
 "Conquer a given list of continents. You can also let the player choose one "
 "of their target continents."
 msgstr ""
-"महाद्वीपानां दत्तां सूचीं जितुम्। भवन्तः क्रीडकं स्वस्य लक्ष्यमहाद्वीपेषु एकं चिन्वितुं अपि "
-"शक्नुवन्ति ।"
 
 #. i18n: ectx: property (text), widget (QRadioButton, continentstype)
 #. i18n: ectx: attribute (title), widget (QWidget, tabContinents)
 #: ksirkgoaldefinition.ui:88 ksirkskindefinition.ui:318
 #, kde-format
 msgid "Continents"
-msgstr "महाद्वीपाः"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: ksirkgoaldefinition.ui:99 ksirkskindefinition.ui:147
 #, kde-format
 msgid "Description:"
-msgstr "वर्णनम्‌:"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QTextEdit, description)
 #: ksirkgoaldefinition.ui:106
 #, kde-format
 msgid "Text describing the goal"
-msgstr "लक्ष्यवर्णनात्मकः पाठः"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QTextEdit, description)
 #: ksirkgoaldefinition.ui:109
@@ -645,30 +540,24 @@ msgid ""
 "country</li><li><i>Continents</i>: one for each continent to conquer</li></"
 "ul>"
 msgstr ""
-"<p>लक्ष्यवर्णनात्मकः पाठः । अस्मिन् लक्ष्यप्रकारस्य आधारेण विविधदत्तांशस्य कृते अनेकाः "
-"स्थानधारकाः समाविष्टाः भवेयुः:</p><ul><li> <i>विश्वविजय</i> : कोऽपि नास्ति</"
-"li><li> <i>खिलाडी</i> : एकः खिलाडीनामस्य कृते एकः च देशानाम् संख्यायाः कृते fallback</"
-"li><li> <i>देशाः</i> : एकः देशसङ्ख्यायाः कृते, सम्भवतः द्वितीयः प्रत्येकं देशे स्थापयितुं "
-"सेनासङ्ख्यायाः कृते</li><li> <i>महाद्वीपाः</i> : प्रत्येकं महाद्वीपस्य कृते एकं जितुम्</li></"
-"ul>"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkgoaldefinition.ui:125
 #, kde-format
 msgid "Countries nb:"
-msgstr "देशाः nb:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: ksirkgoaldefinition.ui:132
 #, kde-format
 msgid "Armies by country:"
-msgstr "देशानुसारं सेनाः : १."
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, nbcountries)
 #: ksirkgoaldefinition.ui:139
 #, kde-format
 msgid "Number of countries to conquer"
-msgstr "जितुम् देशानाम् संख्या"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, nbcountries)
 #: ksirkgoaldefinition.ui:142
@@ -677,27 +566,25 @@ msgid ""
 "<p>Number of countries to conquer in a <i>Countries</i> goal or as a "
 "fallback in a <i>Player</i> goal.</p>"
 msgstr ""
-"<p><i>Countries</i> लक्ष्ये अथवा <i>Player</i> लक्ष्ये fallbackरूपेण विजयं कर्तुं देशानाम् "
-"संख्या।</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, armiesbycountry)
 #: ksirkgoaldefinition.ui:149
 #, kde-format
 msgid "Number of armies to put on each country"
-msgstr "प्रत्येकं देशे स्थापयितुं सेनानां संख्या"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, armiesbycountry)
 #: ksirkgoaldefinition.ui:152
 #, kde-format
 msgid ""
 "<p>Number of armies to put on each country in a <i>Countries</i> goal.</p>"
-msgstr "<p><i>देशानाम्</i> लक्ष्ये प्रत्येकं देशे स्थापयितुं सेनानां संख्या।</p>"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, selectcontinentsbutton)
 #: ksirkgoaldefinition.ui:170
 #, kde-format
 msgid "Select the continents to conquer"
-msgstr "विजयाय महाद्वीपान् चिनुत"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, selectcontinentsbutton)
 #: ksirkgoaldefinition.ui:173
@@ -707,34 +594,31 @@ msgid ""
 "i> goal.</p><p>You will be prompted with a list of this world's continents. "
 "Select those to conquer with the mouse and the Ctrl and Shift keys.</p>"
 msgstr ""
-"<p><i>Continents</i> लक्ष्ये विजयं प्राप्तुं महाद्वीपान् चयनं कर्तुं एतत् बटन् नुदन्तु ।</p><p> "
-"अस्य जगतः महाद्वीपानां सूचीं भवन्तः प्रेरिताः भविष्यन्ति। मूषकेन Ctrl तथा Shift कीलयोः "
-"सह जितुम् ये चिन्वन्तु ।</p>"
 
 #. i18n: ectx: property (text), widget (QPushButton, selectcontinentsbutton)
 #: ksirkgoaldefinition.ui:176
 #, kde-format
 msgid "Select Continents"
-msgstr "महाद्वीपान् चिनोतु"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, anycontinent)
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, anycontinent)
 #: ksirkgoaldefinition.ui:183 ksirkgoaldefinition.ui:186
 #, kde-format
 msgid "Check to let the player choose one of the continents to conquer"
-msgstr "खिलाडी विजयाय महाद्वीपेषु एकं चिन्वतु इति पश्यन्तु"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, anycontinent)
 #: ksirkgoaldefinition.ui:189
 #, kde-format
 msgid "Any"
-msgstr "कश्चित्‌"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, continentslist)
 #: ksirkgoaldefinition.ui:198
 #, kde-format
 msgid "List of the continents to conquer"
-msgstr "विजयी महाद्वीपानां सूची"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, continentslist)
 #: ksirkgoaldefinition.ui:201
@@ -744,26 +628,24 @@ msgid ""
 "can change this list by clicking on the \"Select continents\" button above.</"
 "p>"
 msgstr ""
-"<p><i>महाद्वीपानां</i> लक्ष्ये विजयीभवितानां महाद्वीपानां सूची।</p><p> उपरि &quot;"
-"Select continents&quot; इति बटन् नुत्वा भवान् एतां सूचीं परिवर्तयितुं शक्नोति ।</p>"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkNationalityDefinition)
 #: ksirknationalitydefinition.ui:13
 #, kde-format
 msgid "Nationality"
-msgstr "राष्ट्रीय"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirknationalitydefinition.ui:20
 #, kde-format
 msgid "Name:"
-msgstr "नामः:"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, name)
 #: ksirknationalitydefinition.ui:27
 #, kde-format
 msgid "Nationality name"
-msgstr "राष्ट्रीयता नाम"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, name)
 #: ksirknationalitydefinition.ui:30
@@ -773,20 +655,18 @@ msgid ""
 "existing country in case of a <i>realistic</i> world.</p><p>This string "
 "should be unique in the skin.</p>"
 msgstr ""
-"<p>राष्ट्रीयता नाम। क्रीडकदेशस्य नाम । <i>यथार्थजगत्</i> सन्दर्भे विद्यमानस्य देशस्य नाम "
-"भवितुम् अर्हति।</p><p> एषा तारः त्वचायां अद्वितीयः भवेत् ।</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: ksirknationalitydefinition.ui:43
 #, kde-format
 msgid "Leader name:"
-msgstr "नेता नाम : १."
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leader)
 #: ksirknationalitydefinition.ui:50
 #, kde-format
 msgid "Leader name"
-msgstr "नेता नाम"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, leader)
 #: ksirknationalitydefinition.ui:53
@@ -795,63 +675,61 @@ msgid ""
 "<p>Name of this nationality leader. In the case of a <i>realistic</i> skin, "
 "this could be the name of a well known king, president, etc.</p>"
 msgstr ""
-"<p>अस्य राष्ट्रियतानायकस्य नाम। <i>यथार्थत्वक्</i> इत्यस्य सन्दर्भे एतत् प्रसिद्धस्य राज्ञः, "
-"अध्यक्षस्य इत्यादीनां नाम भवितुम् अर्हति ।</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: ksirknationalitydefinition.ui:60
 #, kde-format
 msgid "Flag ID in pool:"
-msgstr "पूले ध्वजस्य ID:"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, flag)
 #: ksirknationalitydefinition.ui:67
 #, kde-format
 msgid "Flag sprite id in the pool SVG"
-msgstr "पूल SVG मध्ये sprite id ध्वजयन्तु"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (KComboBox, flag)
 #: ksirknationalitydefinition.ui:70
 #, kde-format
 msgid "Flag sprite id in the pool SVG (pool.svg)."
-msgstr "पूल SVG (pool.svg) मध्ये sprite id ध्वजयन्तु ।"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, skindefinition)
 #: ksirkskindefinition.ui:13
 #, kde-format
 msgid "Skin Definition"
-msgstr "त्वचा परिभाषा"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: ksirkskindefinition.ui:22
 #, kde-format
 msgid "Skin name:"
-msgstr "त्वचा नाम : १."
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, skinNameLineEdit)
 #: ksirkskindefinition.ui:29
 #, kde-format
 msgid "The skin's short name"
-msgstr "त्वचायाः लघुनाम"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, skinNameLineEdit)
 #: ksirkskindefinition.ui:35
 #, kde-format
 msgid ""
 "Type here the skin's short name. This should be an identifier-like string"
-msgstr "अत्र त्वचायाः लघुनाम टङ्कयन्तु । एतत् परिचय-सदृशं तारं भवेत्"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkskindefinition.ui:46
 #, kde-format
 msgid "Width x height:"
-msgstr "चौड़ाई x ऊर्ध्वता : १."
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, widthLineEdit)
 #: ksirkskindefinition.ui:53
 #, kde-format
 msgid "Map's width"
-msgstr "मानचित्रस्य विस्तारः"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, widthLineEdit)
 #: ksirkskindefinition.ui:57
@@ -861,14 +739,12 @@ msgid ""
 "image of this width. All positions on the map are expressed relatively to "
 "this dimension.\n"
 msgstr ""
-"एतत् मानचित्रस्य विस्तारः अस्ति । नक्शा SVG तत्त्वं पूर्वनिर्धारितरूपेण अस्य विस्तारस्य चित्रे "
-"आकृष्टं भविष्यति । नक्शे सर्वाणि स्थानानि अस्य आयामस्य सापेक्षतया व्यक्तानि सन्ति ।\n"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, heightLineEdit)
 #: ksirkskindefinition.ui:71
 #, kde-format
 msgid "Map's height"
-msgstr "मानचित्रस्य ऊर्ध्वता"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, heightLineEdit)
 #: ksirkskindefinition.ui:75
@@ -878,38 +754,36 @@ msgid ""
 "image of this height All positions on the map are expressed relatively to "
 "this dimension.\n"
 msgstr ""
-"एषा मानचित्रस्य ऊर्ध्वता अस्ति। नक्शा SVG तत्त्वं पूर्वनिर्धारितरूपेण अस्याः ऊर्ध्वतायाः चित्रे "
-"आकृष्टं भविष्यति नक्शे सर्वाणि स्थानानि अस्य आयामस्य सापेक्षतया व्यक्तानि सन्ति ।\n"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: ksirkskindefinition.ui:90
 #, kde-format
 msgid "Map Font"
-msgstr "नक्शा फॉन्ट"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (KFontRequester, fontrequester)
 #: ksirkskindefinition.ui:96
 #, kde-format
 msgid "Font used to draw country names"
-msgstr "देशनामानि आकर्षयितुं प्रयुक्तः फन्ट्"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (KFontRequester, fontrequester)
 #: ksirkskindefinition.ui:99
 #, kde-format
 msgid "This font will be used to draw the country names on the map"
-msgstr "एतत् फ़ॉन्ट् नक्शायां देशनामानि आकर्षयितुं उपयुज्यते"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: ksirkskindefinition.ui:108
 #, kde-format
 msgid "Fg:"
-msgstr "चित्रम् : १."
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, fgcolorbutton)
 #: ksirkskindefinition.ui:115
 #, kde-format
 msgid "Foreground color for country names"
-msgstr "देशनामानां कृते अग्रभूमिवर्णः"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (KColorButton, fgcolorbutton)
 #: ksirkskindefinition.ui:118
@@ -917,19 +791,19 @@ msgstr "देशनामानां कृते अग्रभूमिव�
 msgid ""
 "This color will be used to draw the foreground of the country names on the "
 "map"
-msgstr "एतत् वर्णं मानचित्रे देशनामानां अग्रभूमिं आकर्षयितुं उपयुज्यते"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: ksirkskindefinition.ui:125
 #, kde-format
 msgid "Bg:"
-msgstr "बग् : १."
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, bgcolorbutton)
 #: ksirkskindefinition.ui:132
 #, kde-format
 msgid "Background color for country names"
-msgstr "देशनामानां कृते पृष्ठभूमिवर्णः"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (KColorButton, bgcolorbutton)
 #: ksirkskindefinition.ui:135
@@ -937,13 +811,13 @@ msgstr "देशनामानां कृते पृष्ठभूमि�
 msgid ""
 "This color will be used to draw the background of the country names on the "
 "map"
-msgstr "एतत् वर्णं मानचित्रे देशनामानां पृष्ठभूमिं आकर्षयितुं उपयुज्यते"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QTextEdit, descriptionTextEdit)
 #: ksirkskindefinition.ui:160
 #, kde-format
 msgid "Human readable description of the skin"
-msgstr "त्वचायाः मानवीयपठनीयं वर्णनम्"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QTextEdit, descriptionTextEdit)
 #: ksirkskindefinition.ui:163
@@ -952,14 +826,13 @@ msgid ""
 "Describe here the skin, its style, its story, the intent of its author(s), "
 "etc."
 msgstr ""
-"अत्र त्वक्, तस्याः शैली, तस्याः कथा, तस्य लेखकस्य (लेखकानां) अभिप्रायः इत्यादयः वर्णयतु।"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabSprites)
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkSpritesDefinition)
 #: ksirkskindefinition.ui:177 ksirkspritesdefinition.ui:13
 #, kde-format
 msgid "Sprites"
-msgstr "स्प्राइट्स्"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: ksirkskindefinition.ui:184
@@ -968,38 +841,36 @@ msgid ""
 "Edit the sprite definitions\n"
 "in the right dock."
 msgstr ""
-"स्प्राइट् परिभाषाः सम्पादयन्तु\n"
-"दक्षिणगोदीयां ।"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabNationalities)
 #: ksirkskindefinition.ui:192
 #, kde-format
 msgid "Nationalities"
-msgstr "राष्ट्रीयता"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newNationalityButton)
 #: ksirkskindefinition.ui:200
 #, kde-format
 msgid "Creates a new Nationality"
-msgstr "नूतनं राष्ट्रियतां निर्माति"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, newNationalityButton)
 #: ksirkskindefinition.ui:203
 #, kde-format
 msgid "Click here to add a new nationality. You will be prompted for its name."
-msgstr "नूतनं राष्ट्रियतां योजयितुं अत्र क्लिक् कुर्वन्तु। भवन्तः तस्य नाम प्रार्थयिष्यन्ति।"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, newNationalityButton)
 #: ksirkskindefinition.ui:206
 #, kde-format
 msgid "New Nationality"
-msgstr "नवीन राष्ट्रीयता"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, deleteNationalityButton)
 #: ksirkskindefinition.ui:226
 #, kde-format
 msgid "Removes the currently selected nationality"
-msgstr "वर्तमान चयनितं राष्ट्रियतां निष्कासयति"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, deleteNationalityButton)
 #: ksirkskindefinition.ui:229
@@ -1008,7 +879,6 @@ msgid ""
 "Click here to remove the currently selected nationality. You will be asked "
 "for confirmation."
 msgstr ""
-"सम्प्रति चयनितं राष्ट्रियतां दूरीकर्तुं अत्र क्लिक् कुर्वन्तु । भवतः पुष्टिः याचिता भविष्यति।"
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteNationalityButton)
 #. i18n: ectx: property (text), widget (QPushButton, deleteCountryButton)
@@ -1018,13 +888,13 @@ msgstr ""
 #: ksirkskindefinition.ui:358 ksirkskindefinition.ui:420
 #, kde-format
 msgid "X"
-msgstr "X"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, nationalitieslist)
 #: ksirkskindefinition.ui:241
 #, kde-format
 msgid "Nationality list"
-msgstr "राष्ट्रीयता सूची"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, nationalitieslist)
 #: ksirkskindefinition.ui:248
@@ -1039,37 +909,30 @@ msgid ""
 "add at least as many nationalities as the maximum number of players for this "
 "skin."
 msgstr ""
-"अस्मिन् सूचौ परिभाषिताः राष्ट्रियताः दर्शिताः सन्ति ।\n"
-"\n"
-"प्रत्येकं राष्ट्रियतानाम अद्वितीयं भवेत्। एकं राष्ट्रियतां चित्वा तस्य विवरणं सम्यक् गोदीयां "
-"सम्पादयन्तु ।\n"
-"\n"
-"क्रीडायाः समये प्रत्येकं क्रीडकं राष्ट्रियतां अवश्यं चिनुत । तथा च, अस्य त्वचायाः कृते "
-"न्यूनातिन्यूनं यावन्तः राष्ट्रियताः अधिकतमाः क्रीडकाः सन्ति तावन्तः एव योजयितव्याः ।"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newCountryButton)
 #: ksirkskindefinition.ui:264
 #, kde-format
 msgid "Creates a new country"
-msgstr "नूतनं देशं निर्माति"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, newCountryButton)
 #: ksirkskindefinition.ui:267
 #, kde-format
 msgid "Click here to add a new country. You will be prompted for its name."
-msgstr "नूतनदेशं योजयितुं अत्र क्लिक् कुर्वन्तु। भवन्तः तस्य नाम प्रार्थयिष्यन्ति।"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, newCountryButton)
 #: ksirkskindefinition.ui:270
 #, kde-format
 msgid "New Country"
-msgstr "नव देश"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, deleteCountryButton)
 #: ksirkskindefinition.ui:290
 #, kde-format
 msgid "Removes the currently selected country"
-msgstr "सम्प्रति चयनितं देशं निष्कासयति"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, deleteCountryButton)
 #: ksirkskindefinition.ui:293
@@ -1077,14 +940,14 @@ msgstr "सम्प्रति चयनितं देशं निष्क
 msgid ""
 "Click here to remove the currently selected country. You will be asked for "
 "confirmation."
-msgstr "सम्प्रति चयनितं देशं निष्कासयितुं अत्र क्लिक् कुर्वन्तु । भवतः पुष्टिः याचिता भविष्यति।"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, countrieslist)
 #. i18n: ectx: property (toolTip), widget (QListWidget, countriesList)
 #: ksirkskindefinition.ui:305 ksirkskineditorcountriesselectiondialog.ui:19
 #, kde-format
 msgid "Country list"
-msgstr "देशसूची"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, countrieslist)
 #: ksirkskindefinition.ui:310
@@ -1095,33 +958,30 @@ msgid ""
 "Each country name should be unique. Select a country and edit its details in "
 "the right dock."
 msgstr ""
-"एषा सूची परिभाषितदेशान् दर्शयति ।\n"
-"\n"
-"प्रत्येकं देशस्य नाम अद्वितीयं भवेत्। देशं चित्वा तस्य विवरणं सम्यक् डॉक् मध्ये सम्पादयन्तु ।"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newContinentButton)
 #: ksirkskindefinition.ui:326
 #, kde-format
 msgid "Creates a new continent"
-msgstr "नूतनं महाद्वीपं निर्माति"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, newContinentButton)
 #: ksirkskindefinition.ui:329
 #, kde-format
 msgid "Click here to add a new continent. You will be prompted for its name."
-msgstr "नूतनं महाद्वीपं योजयितुं अत्र क्लिक् कुर्वन्तु । तस्य नाम भवन्तः प्रार्थयिष्यन्ति।"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, newContinentButton)
 #: ksirkskindefinition.ui:332
 #, kde-format
 msgid "New Continent"
-msgstr "नव महाद्वीप"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, deleteContinentButton)
 #: ksirkskindefinition.ui:352
 #, kde-format
 msgid "Removes the currently selected continent"
-msgstr "सम्प्रति चयनितं महाद्वीपं निष्कासयति"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, deleteContinentButton)
 #: ksirkskindefinition.ui:355
@@ -1130,13 +990,12 @@ msgid ""
 "Click here to remove the currently selected continent. You will be asked for "
 "confirmation."
 msgstr ""
-"सम्प्रति चयनितं महाद्वीपं निष्कासयितुं अत्र क्लिक् कुर्वन्तु । भवतः पुष्टिः याचिता भविष्यति।"
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, continentslist)
 #: ksirkskindefinition.ui:367
 #, kde-format
 msgid "Continent list"
-msgstr "महाद्वीपसूची"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, continentslist)
 #: ksirkskindefinition.ui:372
@@ -1147,40 +1006,36 @@ msgid ""
 "Each continent name should be unique. Select a continent and edit its "
 "details in the right dock."
 msgstr ""
-"एषा सूची परिभाषितमहाद्वीपान् दर्शयति ।\n"
-"\n"
-"प्रत्येकं महाद्वीपनाम अद्वितीयं भवेत्। एकं महाद्वीपं चित्वा तस्य विवरणं सम्यक् डॉक् मध्ये "
-"सम्पादयन्तु ।"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabGoals)
 #: ksirkskindefinition.ui:380
 #, kde-format
 msgid "Goals"
-msgstr "लक्षानि"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newGoalButton)
 #: ksirkskindefinition.ui:388
 #, kde-format
 msgid "Creates a new goal"
-msgstr "नूतनं लक्ष्यं निर्माति"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, newGoalButton)
 #: ksirkskindefinition.ui:391
 #, kde-format
 msgid "Click here to add a new goal. It will be named automatically."
-msgstr "नूतनं लक्ष्यं योजयितुं अत्र क्लिक् कुर्वन्तु। स्वयमेव नामकरणं भविष्यति।"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, newGoalButton)
 #: ksirkskindefinition.ui:394
 #, kde-format
 msgid "New Goal"
-msgstr "नवीन लक्ष्य"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, deleteGoalButton)
 #: ksirkskindefinition.ui:414
 #, kde-format
 msgid "Removes the currently selected goal"
-msgstr "वर्तमान चयनितं लक्ष्यं निष्कासयति"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, deleteGoalButton)
 #: ksirkskindefinition.ui:417
@@ -1189,13 +1044,12 @@ msgid ""
 "Click here to remove the currently selected goal. You will be asked for "
 "confirmation."
 msgstr ""
-"सम्प्रति चयनितं लक्ष्यं निष्कासयितुं अत्र क्लिक् कुर्वन्तु । भवतः पुष्टिः याचिता भविष्यति।"
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, goalslist)
 #: ksirkskindefinition.ui:429
 #, kde-format
 msgid "Goal list"
-msgstr "लक्ष्यसूची"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, goalslist)
 #: ksirkskindefinition.ui:434
@@ -1206,21 +1060,18 @@ msgid ""
 "Each goal name should be unique. Select a goal and edit its details in the "
 "right dock."
 msgstr ""
-"एषा सूची परिभाषितलक्ष्याणि दर्शयति ।\n"
-"\n"
-"प्रत्येकं लक्ष्यनाम अद्वितीयं भवेत्। लक्ष्यं चित्वा तस्य विवरणं सम्यक् डॉक् मध्ये सम्पादयन्तु ।"
 
 #: ksirkSkinEditorConfigDialog.cpp:55
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preferences"
-msgstr "प्राधान्यानि"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CountriesSelectionDialog)
 #: ksirkskineditorcountriesselectiondialog.ui:13
 #, kde-format
 msgid "Country Selection Dialog"
-msgstr "देशचयनसंवादः"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, countriesList)
 #: ksirkskineditorcountriesselectiondialog.ui:22
@@ -1230,38 +1081,36 @@ msgid ""
 "are highlighted. You can modify the selection using the mouse and Ctrl and "
 "Shift keys."
 msgstr ""
-"विश्वे परिभाषितानां सर्वेषां देशानाम् सूची । सम्प्रति चयनितदेशाः प्रकाशिताः सन्ति । मूषकस्य "
-"Ctrl तथा Shift कीलयोः उपयोगेन चयनं परिवर्तयितुं शक्नुवन्ति ।"
 
 #. i18n: ectx: Menu (game)
 #: ksirkskineditorui.rc:10
 #, kde-format
 msgid "&Game"
-msgstr "&क्रीडा"
+msgstr ""
 
 #. i18n: ectx: Menu (settings)
 #: ksirkskineditorui.rc:18
 #, kde-format
 msgid "&Settings"
-msgstr "&सेटिंग्स"
+msgstr ""
 
 #. i18n: ectx: Menu (help)
 #: ksirkskineditorui.rc:20
 #, kde-format
 msgid "&Help"
-msgstr "&साहाय्यम्‌"
+msgstr ""
 
 #. i18n: ectx: ToolBar (mainToolBar)
 #: ksirkskineditorui.rc:24
 #, kde-format
 msgid "Main Toolbar"
-msgstr "मुख्य साधनपट्टी"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QScrollArea, buttonsScrollArea)
 #: ksirkskineditorwidget.ui:43
 #, kde-format
 msgid "Sprite placement buttons"
-msgstr "स्प्राइट प्लेसमेण्ट् बटन्स्"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, buttonsScrollArea)
 #: ksirkskineditorwidget.ui:46
@@ -1271,14 +1120,12 @@ msgid ""
 "for the currently selected country. The buttons are available only if the "
 "sprite is not already placed. "
 msgstr ""
-"वर्तमानचयनितदेशस्य कृते तत्सम्बद्धस्य स्प्राइट् इत्यस्य प्रारम्भिकस्थापनं कर्तुं अत्र बटन्-उपयोगं "
-"कुर्वन्तु । बटन् केवलं तदा एव उपलभ्यते यदा स्प्राइट् पूर्वमेव न स्थापितः अस्ति । "
 
 #. i18n: ectx: property (toolTip), widget (QScrollArea, mapScrollArea)
 #: ksirkskineditorwidget.ui:66
 #, kde-format
 msgid "Map with sprites"
-msgstr "स्प्राइट्स् सह नक्शा"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, mapScrollArea)
 #: ksirkskineditorwidget.ui:71
@@ -1290,10 +1137,6 @@ msgid ""
 "Drag and drop the sprites, the country names, and the highlighting anchors "
 "to change their place."
 msgstr ""
-"पूर्वमेव स्थापितैः सर्वैः स्प्राइट्-सहितं त्वचायाः मानचित्रं, देशस्य नामानि, हाइलाइटिङ्ग्-एङ्कर् "
-"च दर्शयति ।\n"
-"\n"
-"स्प्राइट्, देशस्य नाम, हाइलाइटिंग् एङ्कर् च स्वस्थानं परिवर्तयितुं कर्षयन्तु, पातयन्तु च ।"
 
 #. i18n: ectx: property (text), widget (QLabel, label_26)
 #: ksirkspritesdefinition.ui:29
@@ -1302,14 +1145,12 @@ msgid ""
 "Width between fighter\n"
 "and flag:"
 msgstr ""
-"योद्धानां मध्ये विस्तारः\n"
-"तथा ध्वजः : १."
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, widthDiffLineEdit)
 #: ksirkspritesdefinition.ui:39
 #, kde-format
 msgid "Empty space size between fighting cannon and flag"
-msgstr "युद्धतोपस्य ध्वजस्य च मध्ये रिक्तस्थानस्य आकारः"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, widthDiffLineEdit)
 #: ksirkspritesdefinition.ui:44
@@ -1322,29 +1163,24 @@ msgid ""
 "pixels between the flag and each cannon, measured relatively to the map base "
 "size as set in the main skin definition panel."
 msgstr ""
-"युद्धतोपस्य ध्वजस्य च मध्ये रिक्तस्थानस्य आकारः।\n"
-"\n"
-"युद्धकाले प्रत्येकस्य क्रीडकस्य गोलीकाण्ड (अन्तविस्फोट) तोपाः रक्षकदेशध्वजस्य उभयतः स्थापिताः "
-"भवन्ति । इदं मापदण्डं ध्वजस्य प्रत्येकस्य तोपस्य च मध्ये पिक्सेलस्य संख्या अस्ति, यत् मुख्यत्वक् "
-"परिभाषाफलके निर्धारितरूपेण नक्शाधाराकारस्य सापेक्षतया मापितं भवति"
 
 #. i18n: ectx: property (toolTip), widget (QTabWidget, ktabwidget)
 #: ksirkspritesdefinition.ui:53
 #, kde-format
 msgid "Data about all sprites"
-msgstr "सर्वेषां स्प्राइट्स् विषये आँकडा"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QWidget, flagTab)
 #: ksirkspritesdefinition.ui:63
 #, kde-format
 msgid "Data about the flag sprite"
-msgstr "ध्वजस्प्राइट् विषये आँकडा"
+msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, flagTab)
 #: ksirkspritesdefinition.ui:66
 #, kde-format
 msgid "Flag"
-msgstr "ध्वजा"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_5)
@@ -1357,13 +1193,13 @@ msgstr "ध्वजा"
 #: ksirkspritesdefinition.ui:452 ksirkspritesdefinition.ui:547
 #, kde-format
 msgid "Width:"
-msgstr "विस्तार:"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagw)
 #: ksirkspritesdefinition.ui:81
 #, kde-format
 msgid "Flag individual frame width"
-msgstr "व्यक्तिगत फ्रेम चौड़ाई ध्वज"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagw)
 #: ksirkspritesdefinition.ui:84
@@ -1373,9 +1209,6 @@ msgid ""
 "rendered on a pixmap of width: <i>Width</i> * N<i>number of frames</i> and "
 "then split into individual frames.</p>"
 msgstr ""
-"<p>व्यक्तिगत फ्रेम चौड़ाई ध्वज।</p><p> पूल- <i>ध्वज</i> -तत्त्वं विस्तारस्य पिक्समैप्-इत्यत्र "
-"रेण्डर् भविष्यति: <i>चौड़ाई</i> * N <i>फ्रेम-सङ्ख्या</i> ततः व्यक्तिगत-फ्रेम्-मध्ये विभक्तं "
-"भविष्यति ।</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_6)
@@ -1388,13 +1221,13 @@ msgstr ""
 #: ksirkspritesdefinition.ui:469 ksirkspritesdefinition.ui:564
 #, kde-format
 msgid "Height:"
-msgstr "औनत्यम्‌:"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagh)
 #: ksirkspritesdefinition.ui:98
 #, kde-format
 msgid "Flag individual frame height"
-msgstr "व्यक्तिगत फ्रेम ऊंचाई ध्वज"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagh)
 #: ksirkspritesdefinition.ui:103
@@ -1405,10 +1238,6 @@ msgid ""
 "The pool flag element will be rendered on a pixmap of height: (Height * "
 "Number of versions) and then split into individual frames."
 msgstr ""
-"व्यक्तिगत फ्रेम ऊंचाई ध्वज।\n"
-"\n"
-"पूल-ध्वज-तत्त्वं ऊर्ध्वतायाः: (उच्चता * संस्करणानाम् संख्या) इत्यस्य पिक्समैप्-इत्यत्र रेण्डर् "
-"भविष्यति ततः व्यक्तिगत-चतुष्कोणेषु विभक्तं भविष्यति ।"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_8)
@@ -1421,13 +1250,13 @@ msgstr ""
 #: ksirkspritesdefinition.ui:486 ksirkspritesdefinition.ui:581
 #, kde-format
 msgid "Nb frames:"
-msgstr "Nb फ्रेम्स : १."
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagf)
 #: ksirkspritesdefinition.ui:117
 #, kde-format
 msgid "Number of individual flag frames"
-msgstr "व्यक्तिगत ध्वजचतुष्कोणानां संख्या"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagf)
 #: ksirkspritesdefinition.ui:120
@@ -1437,9 +1266,6 @@ msgid ""
 "be rendered on a pixmap of width: (<i>Width</i> * <i>Number of frames</i>) "
 "and then split into individual frames.</p>"
 msgstr ""
-"<p>व्यक्तिगत ध्वजचतुष्कोणानां संख्या ।</p><p> पूल- <i>ध्वज-</i> तत्त्वं चौड़ाई: "
-"( <i>Width</i> * <i>Number of frames</i> ) इत्यस्य pixmap इत्यत्र रेण्डर् भविष्यति "
-"ततः व्यक्तिगत-फ्रेम्-मध्ये विभक्तं भविष्यति ।</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, label_7)
@@ -1452,13 +1278,13 @@ msgstr ""
 #: ksirkspritesdefinition.ui:503 ksirkspritesdefinition.ui:598
 #, kde-format
 msgid "Nb versions:"
-msgstr "Nb संस्करणाः : १."
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagv)
 #: ksirkspritesdefinition.ui:134
 #, kde-format
 msgid "Number of flag versions"
-msgstr "ध्वजसंस्करणानाम् संख्या"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagv)
 #: ksirkspritesdefinition.ui:141
@@ -1474,32 +1300,24 @@ msgid ""
 "the front and the last one from the back. However, not all sprites need all "
 "versions."
 msgstr ""
-"ध्वजसंस्करणानाम् संख्या ।\n"
-"\n"
-"पूल-ध्वज-तत्त्वं ऊर्ध्वतायाः: (Height * Number of versions) इत्यस्य pixmap इत्यत्र रेण्डर् "
-"भविष्यति ततः व्यक्तिगत-फ्रेम्-मध्ये विभक्तं भविष्यति ।\n"
-"\n"
-"प्रत्येकं संस्करणं एकस्मात् दिशि दृश्यमानं स्प्राइट् दर्शयति : प्रथमं दक्षिणं प्रति, द्वितीयं वामं "
-"प्रति, तृतीयं अग्रे, अन्तिमं पृष्ठतः च निर्देशितं भवति तथापि सर्वेषां स्प्राइट्-समूहानां सर्वेषां "
-"संस्करणानाम् आवश्यकता नास्ति ।"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, infantryTab)
 #: ksirkspritesdefinition.ui:164
 #, kde-format
 msgid "Data about the infantry sprite"
-msgstr "पदाति-स्प्राइट् विषये आँकडा"
+msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, infantryTab)
 #: ksirkspritesdefinition.ui:167
 #, kde-format
 msgid "Infantry"
-msgstr "पदाति सेना"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryw)
 #: ksirkspritesdefinition.ui:180
 #, kde-format
 msgid "Infantry individual frame width"
-msgstr "पदाति सेना व्यक्तिगत फ्रेम चौड़ाई"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryw)
 #: ksirkspritesdefinition.ui:183
@@ -1509,15 +1327,12 @@ msgid ""
 "will be rendered on a pixmap of width: <i>Width</i> * <i>number of frames</"
 "i> and then split into individual frames.</p>"
 msgstr ""
-"<p>पदाति सेना व्यक्तिगत फ्रेम चौड़ाई।</p><p> पूल <i>इन्फैन्ट्री</i> एलिमेण्ट् विड्थ् इत्यस्य "
-"पिक्समैप् इत्यत्र रेण्डर् भविष्यति: <i>विड्थ्</i> * <i>फ्रेम्स् इत्यस्य संख्या</i> ततः व्यक्तिगत "
-"फ्रेम्स् इत्यत्र विभक्तं भविष्यति ।</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryh)
 #: ksirkspritesdefinition.ui:197
 #, kde-format
 msgid "Infantry individual frame height"
-msgstr "पदाति सेना व्यक्तिगत फ्रेम ऊंचाई"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryh)
 #: ksirkspritesdefinition.ui:200
@@ -1527,15 +1342,12 @@ msgid ""
 "will be rendered on a pixmap of height: <i>Height</i> * <i>Number of "
 "versions</i> and then split into individual frames.</p>"
 msgstr ""
-"<p>पदाति सेना व्यक्तिगत फ्रेम ऊंचाई।</p><p> पूल <i>इन्फैन्ट्री</i> तत्वं ऊर्ध्वतायाः पिक्समैप् "
-"इत्यत्र रेण्डर् भविष्यति: <i>ऊर्ध्वता</i> * <i>संस्करणानाम् संख्या</i> ततः व्यक्तिगतचतुष्कोणेषु "
-"विभक्तं भविष्यति ।</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryf)
 #: ksirkspritesdefinition.ui:214
 #, kde-format
 msgid "Number of individual infantry frames"
-msgstr "व्यक्तिगत पदाति-चतुष्कोणानां संख्या"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryf)
 #: ksirkspritesdefinition.ui:217
@@ -1545,15 +1357,12 @@ msgid ""
 "element will be rendered on a pixmap of width: (<i>Width</i> * <i>Number of "
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>व्यक्तिगत फ्रेम्स की पदाति सेना संख्या।</p><p> पूल <i>इन्फैन्ट्री</i> एलिमेण्ट् विड्थ् "
-"इत्यस्य पिक्समैप् इत्यत्र रेण्डर् भविष्यति: ( <i>Width</i> * <i>Number of frames</i> ) "
-"ततः व्यक्तिगत फ्रेम्स इत्यत्र विभक्तं भविष्यति ।</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryv)
 #: ksirkspritesdefinition.ui:231
 #, kde-format
 msgid "Number of infantry versions"
-msgstr "पदाति-संस्करणानाम् संख्या"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryv)
 #: ksirkspritesdefinition.ui:234
@@ -1566,29 +1375,24 @@ msgid ""
 "right, the second towards the left, the third one from front and the last "
 "one from the back. However, not all sprites need all versions.</p>"
 msgstr ""
-"<p>पदाति-संस्करणानाम् संख्या ।</p><p> पूल <i>इन्फैन्ट्री</i> एलिमेण्ट् ऊर्ध्वतायाः पिक्समैप् "
-"इत्यत्र रेण्डर् भविष्यति: ( <i>Height</i> * <i>Number of versions</i> ) ततः "
-"व्यक्तिगत-फ्रेम-मध्ये विभक्तं भविष्यति ।</p><p> प्रत्येकं संस्करणं एकस्मात् दिशि दृश्यमानं स्प्राइट् "
-"दर्शयति : प्रथमं दक्षिणं प्रति, द्वितीयं वामं प्रति, तृतीयं अग्रे, अन्तिमं पृष्ठतः च निर्देशितं "
-"भवति तथापि सर्वेषां स्प्राइट्-समूहानां सर्वेषां संस्करणानाम् आवश्यकता नास्ति ।</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, cavalryTab)
 #: ksirkspritesdefinition.ui:255
 #, kde-format
 msgid "Data about the cavalry sprite"
-msgstr "अश्वसेनास्प्राइट् विषये आँकडा"
+msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, cavalryTab)
 #: ksirkspritesdefinition.ui:258
 #, kde-format
 msgid "Cavalry"
-msgstr "अश्वसेना"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryw)
 #: ksirkspritesdefinition.ui:271
 #, kde-format
 msgid "Individual cavalry frame width"
-msgstr "व्यक्तिगत अश्वसेना फ्रेम चौड़ाई"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryw)
 #: ksirkspritesdefinition.ui:274
@@ -1598,15 +1402,12 @@ msgid ""
 "will be rendered on a pixmap of width (<i>Width</i> * <i>Number of frames</"
 "i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>व्यक्तिगत अश्वसेना फ्रेम चौड़ाई।</p><p> पूल- <i>अश्वसेना-</i> तत्त्वं विस्तारस्य "
-"( <i>Width</i> * <i>Number of frames</i> ) पिक्समैप्-इत्यत्र रेण्डर् भविष्यति ततः "
-"व्यक्तिगत-फ्रेम्-मध्ये विभक्तं भविष्यति ।</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryh)
 #: ksirkspritesdefinition.ui:288
 #, kde-format
 msgid "Individual cavalry frame height"
-msgstr "व्यक्तिगत अश्वसेना फ्रेम ऊंचाई"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryh)
 #: ksirkspritesdefinition.ui:291
@@ -1616,15 +1417,12 @@ msgid ""
 "will be rendered on a pixmap of height (<i>Height</i> * <i>Number of "
 "versions</i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>व्यक्तिगत अश्वसेना फ्रेम ऊंचाई।</p><p> पूल <i>अश्वसेनातत्त्वं</i> ऊर्ध्वतायाः पिक्समैप् "
-"( <i>Height</i> * <i>Number of versions</i> ) इत्यत्र रेण्डर् भविष्यति ततः "
-"व्यक्तिगतचतुष्कोणेषु विभक्तं भविष्यति ।</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryf)
 #: ksirkspritesdefinition.ui:305
 #, kde-format
 msgid "Number of individual cavalry frames"
-msgstr "व्यक्तिगत अश्वसेनाचतुष्कोणानां संख्या"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryf)
 #: ksirkspritesdefinition.ui:308
@@ -1634,15 +1432,12 @@ msgid ""
 "element will be rendered on a pixmap of width: (<i>Width</i> * <i>Number of "
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>व्यक्तिगत अश्वसेनाचतुष्कोणानां संख्या।</p><p> पूल- <i>अश्वसेना-</i> तत्त्वं चौड़ाई: "
-"( <i>Width</i> * <i>Number of frames</i> ) इत्यस्य pixmap इत्यत्र रेण्डर् भविष्यति "
-"ततः व्यक्तिगत-फ्रेम-मध्ये विभक्तं भविष्यति ।</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryv)
 #: ksirkspritesdefinition.ui:322
 #, kde-format
 msgid "Number of cavalry versions"
-msgstr "अश्वसेनासंस्करणानाम् संख्या"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryv)
 #: ksirkspritesdefinition.ui:325
@@ -1655,29 +1450,24 @@ msgid ""
 "second towards the left, the third one from front and the last one from the "
 "back. However, not all sprites need all versions.</p>"
 msgstr ""
-"<p>अश्वसेनासंस्करणानाम् संख्या ।</p><p> पूल <i>अश्वसेनातत्त्वं</i> ऊर्ध्वतायाः पिक्समैप् "
-"( <i>Height</i> * <i>Number of versions</i> ) इत्यत्र रेण्डर् भविष्यति ततः "
-"व्यक्तिगतचतुष्कोणेषु विभक्तं भविष्यति ।</p><p> प्रत्येकं संस्करणं एकस्मात् दिशि दृश्यमानं स्प्राइट् "
-"दर्शयति : प्रथमं दक्षिणं प्रति, द्वितीयं वामं प्रति, तृतीयं अग्रे, अन्तिमं पृष्ठतः च निर्देशितं "
-"भवति तथापि सर्वेषां स्प्राइट्-समूहानां सर्वेषां संस्करणानाम् आवश्यकता नास्ति ।</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, cannonTab)
 #: ksirkspritesdefinition.ui:346
 #, kde-format
 msgid "Data about the cannon sprite"
-msgstr "तोपस्प्राइट् विषये आँकडा"
+msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, cannonTab)
 #: ksirkspritesdefinition.ui:349
 #, kde-format
 msgid "Cannon"
-msgstr "तोपः"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonw)
 #: ksirkspritesdefinition.ui:364
 #, kde-format
 msgid "Cannon individual frame width"
-msgstr "तोप व्यक्तिगत फ्रेम चौड़ाई"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonw)
 #: ksirkspritesdefinition.ui:367
@@ -1687,15 +1477,12 @@ msgid ""
 "be rendered on a pixmap of width (<i>Width</i> * <i>Number of frames</i>) "
 "and then split into individual frames.</p>"
 msgstr ""
-"<p>तोप व्यक्तिगत फ्रेम चौड़ाई।</p><p> पूल <i>तोपतत्त्वं</i> विस्तारस्य ( <i>Width</i> * "
-"<i>Number of frames</i> ) पिक्समैप् इत्यत्र रेण्डर् भविष्यति ततः व्यक्तिगतफ्रेमेषु विभक्तं "
-"भविष्यति ।</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonh)
 #: ksirkspritesdefinition.ui:381
 #, kde-format
 msgid "Individual cannon frame height"
-msgstr "व्यक्तिगत तोपचतुष्कोण ऊर्ध्वता"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonh)
 #: ksirkspritesdefinition.ui:384
@@ -1705,15 +1492,12 @@ msgid ""
 "be rendered on a pixmap of height (<i>Height</i> * <i>Number of versions</"
 "i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>व्यक्तिगत तोपचतुष्कोण ऊर्ध्वता।</p><p> पूल <i>तोपतत्त्वं <i>ऊर्ध्वतायाः पिक्समैप् "
-"( <i>Height</i> * <i>Number of versions</i> ) इत्यत्र रेण्डर् भविष्यति ततः "
-"व्यक्तिगतचतुष्कोणेषु विभक्तं भविष्यति ।</i></i>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonf)
 #: ksirkspritesdefinition.ui:398
 #, kde-format
 msgid "Number of individual cannon frames"
-msgstr "व्यक्तिगत तोपचतुष्कोणानां संख्या"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonf)
 #: ksirkspritesdefinition.ui:401
@@ -1723,15 +1507,12 @@ msgid ""
 "will be rendered on a pixmap of width (<i>Width</i> * <i>Number of frames</"
 "i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>व्यक्तिगत तोपचतुष्कोणानां संख्या।</p><p> पूल <i>तोपतत्त्वं</i> विस्तारस्य ( <i>Width</"
-"i> * <i>Number of frames</i> ) पिक्समैप् इत्यत्र रेण्डर् भविष्यति ततः व्यक्तिगतफ्रेमेषु "
-"विभक्तं भविष्यति ।</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonv)
 #: ksirkspritesdefinition.ui:415
 #, kde-format
 msgid "Number of cannon versions"
-msgstr "तोपसंस्करणानाम् संख्या"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonv)
 #: ksirkspritesdefinition.ui:418
@@ -1744,29 +1525,24 @@ msgid ""
 "second towards the left, the third one from front and the last one from the "
 "back. However, not all sprites need all versions.</p>"
 msgstr ""
-"<p>तोपसंस्करणानाम् संख्या ।</p><p> पूल <i>तोपतत्त्वं</i> ऊर्ध्वतायाः पिक्समैप् "
-"( <i>Height</i> * <i>Number of versions</i> ) इत्यत्र रेण्डर् भविष्यति ततः "
-"व्यक्तिगतचतुष्कोणेषु विभक्तं भविष्यति ।</p><p> प्रत्येकं संस्करणं एकस्मात् दिशि दृश्यमानं स्प्राइट् "
-"दर्शयति : प्रथमं दक्षिणं प्रति, द्वितीयं वामं प्रति, तृतीयं अग्रे, अन्तिमं पृष्ठतः च निर्देशितं "
-"भवति तथापि सर्वेषां स्प्राइट्-समूहानां सर्वेषां संस्करणानाम् आवश्यकता नास्ति ।</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, firingTab)
 #: ksirkspritesdefinition.ui:441
 #, kde-format
 msgid "Data about the firing sprite"
-msgstr "फायरिंग स्प्राइट् विषये आँकडा"
+msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, firingTab)
 #: ksirkspritesdefinition.ui:444
 #, kde-format
 msgid "Firing"
-msgstr "गोलीकाण्डम्"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingw)
 #: ksirkspritesdefinition.ui:459
 #, kde-format
 msgid "Firing cannon individual frame width"
-msgstr "फायरिंग तोप व्यक्तिगत फ्रेम चौड़ाई"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, firingw)
 #: ksirkspritesdefinition.ui:462
@@ -1776,15 +1552,12 @@ msgid ""
 "element will be rendered on a pixmap of width (<i>Width</i> * <i>Number of "
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>फायरिंग तोप व्यक्तिगत फ्रेम चौड़ाई।</p><p> पूल <i>फायरिंग</i> तोपतत्त्वं चौड़ाई "
-"( <i>Width</i> * <i>Number of frames</i> ) इत्यस्य pixmap इत्यत्र रेण्डर् भविष्यति "
-"ततः व्यक्तिगतफ्रेम् इत्यत्र विभक्तं भविष्यति ।</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingh)
 #: ksirkspritesdefinition.ui:476
 #, kde-format
 msgid "Firing cannon individual frame height"
-msgstr "फायरिंग तोप व्यक्तिगत फ्रेम ऊंचाई"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, firingh)
 #: ksirkspritesdefinition.ui:479
@@ -1794,15 +1567,12 @@ msgid ""
 "i> element will be rendered on a pixmap of height (<i>Height</i> * <i>Number "
 "of versions</i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>फायरिंग तोप व्यक्तिगत फ्रेम ऊंचाई।</p><p> पूल <i>फायरिंग तोपतत्त्वं</i> ऊर्ध्वतायाः "
-"पिक्समैप् ( <i>Height</i> * <i>Number of versions</i> ) इत्यत्र रेण्डर् भविष्यति ततः "
-"व्यक्तिगतचतुष्कोणेषु विभक्तं भविष्यति ।</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingf)
 #: ksirkspritesdefinition.ui:493
 #, kde-format
 msgid "Number of individual firing cannon frames"
-msgstr "व्यक्तिगत फायरिंग तोपचतुष्कोणानां संख्या"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, firingf)
 #: ksirkspritesdefinition.ui:496
@@ -1812,15 +1582,12 @@ msgid ""
 "cannon</i> element will be rendered on a pixmap of width (<i>Width</i> * "
 "<i>Number of frames</i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>व्यक्तिगत फायरिंग तोपचतुष्कोणानां संख्या।</p><p> पूल <i>फायरिंग</i> तोपतत्त्वं चौड़ाई "
-"( <i>Width</i> * <i>Number of frames</i> ) इत्यस्य pixmap इत्यत्र रेण्डर् भविष्यति "
-"ततः व्यक्तिगतफ्रेम् इत्यत्र विभक्तं भविष्यति ।</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingv)
 #: ksirkspritesdefinition.ui:510
 #, kde-format
 msgid "Number of firing cannon versions"
-msgstr "गोलीकाण्डस्य तोपसंस्करणानाम् संख्या"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, firingv)
 #: ksirkspritesdefinition.ui:513
@@ -1833,29 +1600,24 @@ msgid ""
 "towards the right, the second towards the left, the third one from front and "
 "the last one from the back. However, not all sprites need all versions.</p>"
 msgstr ""
-"<p>गोलीकाण्डस्य तोपसंस्करणानाम् संख्या ।</p><p> पूल <i>फायरिंग तोपतत्त्वं</i> ऊर्ध्वतायाः "
-"पिक्समैप् ( <i>Height</i> * <i>Number of versions</i> ) इत्यत्र रेण्डर् भविष्यति ततः "
-"व्यक्तिगतचतुष्कोणेषु विभक्तं भविष्यति ।</p><p> प्रत्येकं संस्करणं एकस्मात् दिशि दृश्यमानं स्प्राइट् "
-"दर्शयति : प्रथमं दक्षिणं प्रति, द्वितीयं वामं प्रति, तृतीयं अग्रे, अन्तिमं पृष्ठतः च निर्देशितं "
-"भवति तथापि सर्वेषां स्प्राइट्-समूहानां सर्वेषां संस्करणानाम् आवश्यकता नास्ति ।</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, explodingTab)
 #: ksirkspritesdefinition.ui:536
 #, kde-format
 msgid "Data about the exploding sprite"
-msgstr "विस्फोटकस्प्राइट् विषये आँकडा"
+msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, explodingTab)
 #: ksirkspritesdefinition.ui:539
 #, kde-format
 msgid "Exploding"
-msgstr "विस्फोटयन्"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingw)
 #: ksirkspritesdefinition.ui:554
 #, kde-format
 msgid "Exploding cannon individual frame width"
-msgstr "विस्फोट तोप व्यक्तिगत फ्रेम चौड़ाई"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingw)
 #: ksirkspritesdefinition.ui:557
@@ -1865,15 +1627,12 @@ msgid ""
 "element will be rendered on a pixmap of width (<i>Width</i> * <i>Number of "
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>विस्फोट तोप व्यक्तिगत फ्रेम चौड़ाई।</p><p> पूल <i>विस्फोटकतत्त्वं</i> विस्तारस्य "
-"पिक्समैप् ( <i>Width</i> * <i>Number of frames</i> ) इत्यत्र रेण्डर् भविष्यति ततः "
-"व्यक्तिगतफ्रेमेषु विभक्तं भविष्यति ।</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingh)
 #: ksirkspritesdefinition.ui:571
 #, kde-format
 msgid "Exploding cannon individual frame height"
-msgstr "विस्फोट तोप व्यक्तिगत फ्रेम ऊंचाई"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingh)
 #: ksirkspritesdefinition.ui:574
@@ -1883,15 +1642,12 @@ msgid ""
 "element will be rendered on a pixmap of height (<i>Height</i> * <i>Number of "
 "versions</i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>विस्फोट तोप व्यक्तिगत फ्रेम ऊंचाई।</p><p> पूल <i>विस्फोटकतत्त्वं</i> ऊर्ध्वतायाः "
-"पिक्समैप् ( <i>Height</i> * <i>Number of versions</i> ) इत्यत्र रेण्डर् भविष्यति ततः "
-"व्यक्तिगतचतुष्कोणेषु विभक्तं भविष्यति ।</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingf)
 #: ksirkspritesdefinition.ui:588
 #, kde-format
 msgid "Number of individual exploding cannon frames"
-msgstr "व्यक्तिगत विस्फोटक तोपचतुष्कोणानां संख्या"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingf)
 #: ksirkspritesdefinition.ui:591
@@ -1901,15 +1657,12 @@ msgid ""
 "<i>exploding</i> element will be rendered on a pixmap of width (<i>Width</i> "
 "* <i>Number of frames</i>) and then split into individual frames.</p>"
 msgstr ""
-"<p>व्यक्तिगत विस्फोटक तोपचतुष्कोणानां संख्या।</p><p> पूल <i>विस्फोटकतत्त्वं</i> विस्तारस्य "
-"पिक्समैप् ( <i>Width</i> * <i>Number of frames</i> ) इत्यत्र रेण्डर् भविष्यति ततः "
-"व्यक्तिगतफ्रेमेषु विभक्तं भविष्यति ।</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingv)
 #: ksirkspritesdefinition.ui:605
 #, kde-format
 msgid "Number of exploding cannon versions"
-msgstr "विस्फोटिततोपसंस्करणानाम् संख्या"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingv)
 #: ksirkspritesdefinition.ui:608
@@ -1922,21 +1675,16 @@ msgid ""
 "towards the right, the second towards the left, the third one from front and "
 "the last one from the back. However, not all sprites need all versions.</p>"
 msgstr ""
-"<p>विस्फोटिततोपसंस्करणानाम् संख्या ।</p><p> पूल <i>विस्फोटकतत्त्वं</i> ऊर्ध्वतायाः "
-"( <i>Height</i> * <i>Number of versions</i> ) पिक्समैप् इत्यत्र रेण्डर् भविष्यति ततः "
-"व्यक्तिगतफ्रेम्स् इत्यत्र विभक्तं भविष्यति ।</p><p> प्रत्येकं संस्करणं एकस्मात् दिशि दृश्यमानं "
-"स्प्राइट् दर्शयति : प्रथमं दक्षिणं प्रति, द्वितीयं वामं प्रति, तृतीयं अग्रे, अन्तिमं पृष्ठतः च "
-"निर्देशितं भवति तथापि सर्वेषां स्प्राइट्-समूहानां सर्वेषां संस्करणानाम् आवश्यकता नास्ति ।</p>"
 
 #: main.cpp:52 main.cpp:54
 #, kde-format
 msgid "KsirK Skin Editor"
-msgstr "क्षिरक त्वचा सम्पादक"
+msgstr ""
 
 #: main.cpp:56
 #, kde-format
 msgid "(c) 2008, Gaël de Chalendar\n"
-msgstr "(ग) 2008, गेल डी चालेण्डर\n"
+msgstr ""
 
 #: main.cpp:57
 #, kde-format
@@ -1944,166 +1692,164 @@ msgid ""
 "For help and user manual, please see\n"
 "The KsirK Web site"
 msgstr ""
-"साहाय्यार्थं उपयोक्तृपुस्तिकायाः च कृते कृपया पश्यन्तु\n"
-"क्षिर्क जालस्थलम्"
 
 #: main.cpp:59
 #, kde-format
 msgid "Gaël de Chalendar aka Kleag"
-msgstr "पञ्चाङ्ग Gael उर्फ Kleag"
+msgstr ""
 
 #: main.cpp:67
 #, kde-format
 msgid "file to open"
-msgstr "सञ्चिकां उद्घाटयितुं"
+msgstr ""
 
 #: mainwindow.cpp:127 mainwindow.cpp:678 mainwindow.cpp:806 mainwindow.cpp:1193
 #, kde-format
 msgid "Cannot load anchor icon<br>Program cannot continue"
-msgstr "लंगर-चिह्नं लोड् कर्तुं न शक्यते<br> कार्यक्रमः निरन्तरं कर्तुं न शक्नोति"
+msgstr ""
 
 #: mainwindow.cpp:141 mainwindow.cpp:707 mainwindow.cpp:823
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
-msgstr "केन्द्रचिह्नं लोड् कर्तुं न शक्यते<br> कार्यक्रमः निरन्तरं कर्तुं न शक्नोति"
+msgstr ""
 
 #: mainwindow.cpp:324
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a saved skin"
-msgstr "रक्षितं त्वचां उद्घाटयन्तु"
+msgstr ""
 
 #: mainwindow.cpp:328
 #, kde-format
 msgctxt "@action"
 msgid "Load &Recent"
-msgstr "लोड &Recent"
+msgstr ""
 
 #: mainwindow.cpp:329
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a recently saved skin"
-msgstr "सद्यः एव रक्षितां त्वचां उद्घाटयन्तु"
+msgstr ""
 
 #: mainwindow.cpp:337
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current skin"
-msgstr "वर्तमान त्वचां रक्षन्तु"
+msgstr ""
 
 #: mainwindow.cpp:362
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Root Folder of the Skin to Open"
-msgstr "उद्घाटयितुं Skin इत्यस्य Root Folder इति चिनोतु"
+msgstr ""
 
 #: mainwindow.cpp:526
 #, kde-format
 msgid "There are unsaved changes. What do you want to do?"
-msgstr "अरक्षिताः परिवर्तनाः सन्ति। किं कर्तुम् इच्छसि ?"
+msgstr ""
 
 #: mainwindow.cpp:527
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
-msgstr "असरक्षितपरिवर्तनानि"
+msgstr ""
 
 #: mainwindow.cpp:528
 #, kde-format
 msgctxt "@action:button"
 msgid "Quit Without Saving"
-msgstr "रक्षणं विना त्यजतु"
+msgstr ""
 
 #: mainwindow.cpp:529
 #, kde-format
 msgctxt "@action:button"
 msgid "Save and Quit"
-msgstr "Save and Quit इति"
+msgstr ""
 
 #: mainwindow.cpp:1305
 #, kde-format
 msgctxt "@title:window"
 msgid "New Country Name"
-msgstr "नव देशस्य नाम"
+msgstr ""
 
 #: mainwindow.cpp:1305
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new country:"
-msgstr "नूतनदेशस्य नाम प्रविशतु : १."
+msgstr ""
 
 #: mainwindow.cpp:1315
 #, kde-format
 msgid "Do you really want to delete country '%1'?"
-msgstr "किं भवान् वास्तवमेव देशं '%1' विलोपयितुम् इच्छति?"
+msgstr ""
 
 #: mainwindow.cpp:1315
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Country Confirmation"
-msgstr "देशस्य पुष्टिः विलोपयतु"
+msgstr ""
 
 #: mainwindow.cpp:1334
 #, kde-format
 msgctxt "@title:window"
 msgid "New Continent Name"
-msgstr "नव महाद्वीप नाम"
+msgstr ""
 
 #: mainwindow.cpp:1334
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new continent:"
-msgstr "नूतनमहाद्वीपस्य नाम प्रविशतु :"
+msgstr ""
 
 #: mainwindow.cpp:1344
 #, kde-format
 msgid "Do you really want to delete continent '%1'?"
-msgstr "किं भवान् वास्तवमेव '%1' महाद्वीपं विलोपयितुम् इच्छति?"
+msgstr ""
 
 #: mainwindow.cpp:1344
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Continent Confirmation"
-msgstr "महाद्वीपस्य पुष्टिः विलोपयन्तु"
+msgstr ""
 
 #: mainwindow.cpp:1889
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
-msgstr "किं भवान् वास्तवमेव लक्ष्यं '%1' विलोपयितुम् इच्छति?"
+msgstr ""
 
 #: mainwindow.cpp:1889
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Goal Confirmation"
-msgstr "लक्ष्य पुष्टिकरणं विलोपयन्तु"
+msgstr ""
 
 #: mainwindow.cpp:1948
 #, kde-format
 msgctxt "@title:window"
 msgid "New Nationality Name"
-msgstr "नवीन राष्ट्रीयता नाम"
+msgstr ""
 
 #: mainwindow.cpp:1948
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new nationality:"
-msgstr "नूतनराष्ट्रीयतायाः नाम प्रविशतु : १."
+msgstr ""
 
 #: mainwindow.cpp:1958
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
-msgstr "किं भवान् वास्तवमेव '%1' राष्ट्रियतां विलोपयितुम् इच्छति?"
+msgstr ""
 
 #: mainwindow.cpp:1958
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Nationality Confirmation"
-msgstr "राष्ट्रीयता पुष्टिकरणं विलोपयतु"
+msgstr ""
 
 #: onu.cpp:78
 #, kde-format
 msgid "Invalid skin definition file format. Expected %1 and got %2"
-msgstr "अमान्य त्वचा परिभाषा सञ्चिकास्वरूपम्। %1 अपेक्षितवान् %2 च प्राप्तवान्"
+msgstr ""
 
 #: onu.cpp:110
 #, kde-format
@@ -2111,8 +1857,6 @@ msgid ""
 "Pool filename not found\n"
 "Program cannot continue"
 msgstr ""
-"पूलसञ्चिकानाम न प्राप्तम्\n"
-"कार्यक्रमः निरन्तरं कर्तुं न शक्नोति"
 
 #: onu.cpp:128
 #, kde-format
@@ -2120,8 +1864,6 @@ msgid ""
 "Map mask image not found\n"
 "Program cannot continue"
 msgstr ""
-"नक्शामास्कप्रतिमा न प्राप्तम्\n"
-"कार्यक्रमः निरन्तरं कर्तुं न शक्नोति"
 
 #: onu.cpp:983
 #, kde-format
@@ -2129,32 +1871,30 @@ msgid ""
 "Cannot read file %1:\n"
 "%2."
 msgstr ""
-"%1 सञ्चिकां पठितुं न शक्यते:\n"
-"%2."
 
 #: onu.cpp:984
 #, kde-format
 msgctxt "@title:window"
 msgid "PoolLoader"
-msgstr "पूललोडर"
+msgstr ""
 
 #: skinSpritesData.cpp:85
 #, kde-format
 msgid "Error - Unknown skin int data: "
-msgstr "त्रुटिः - अज्ञात skin int data: "
+msgstr ""
 
 #: skinSpritesData.cpp:86
 #, kde-format
 msgid "Fatal Error"
-msgstr "घातक त्रुटिः"
+msgstr ""
 
 #: skinSpritesData.cpp:101
 #, kde-format
 msgid "Error - Unknown skin string data: "
-msgstr "त्रुटिः - अज्ञात त्वचा स्ट्रिंग् दत्तांशः: "
+msgstr ""
 
 #: skinSpritesData.cpp:102
 #, kde-format
 msgctxt "@title:window"
 msgid "Fatal Error"
-msgstr "घातक त्रुटिः"
+msgstr ""
