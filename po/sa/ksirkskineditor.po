@@ -3,19 +3,21 @@
 # This file is distributed under the same license as the ksirk package.
 # Kali <EMAIL@ADDRESS>, 2024.
 #
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-07 00:37+0000\n"
-"PO-Revision-Date: 2024-12-13 19:09+0530\n"
-"Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
+"PO-Revision-Date: 2024-12-20 21:52+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -48,7 +50,7 @@ msgstr "महाद्वीप"
 #: ksirkcontinentdefinition.ui:22
 #, kde-format
 msgid "Bonus:"
-msgstr "बोनसः : १."
+msgstr "बोनसः :"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, bonus)
 #: ksirkcontinentdefinition.ui:29
@@ -102,7 +104,7 @@ msgstr ""
 #: ksirkcontinentdefinition.ui:56
 #, kde-format
 msgid "Countries:"
-msgstr "देशाः : १."
+msgstr "देशाः :"
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, countrieslist)
 #: ksirkcontinentdefinition.ui:63
@@ -158,7 +160,7 @@ msgstr "केंद्र:"
 #: ksirkcountrydefinition.ui:73
 #, kde-format
 msgid "Infantry:"
-msgstr "पदाति सेना : १."
+msgstr "पदाति सेना :"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryx)
 #: ksirkcountrydefinition.ui:80
@@ -214,7 +216,7 @@ msgstr ""
 #: ksirkcountrydefinition.ui:124
 #, kde-format
 msgid "Cavalry:"
-msgstr "अश्वसेना : १."
+msgstr "अश्वसेना :"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryx)
 #: ksirkcountrydefinition.ui:131
@@ -270,7 +272,7 @@ msgstr ""
 #: ksirkcountrydefinition.ui:175
 #, kde-format
 msgid "Cannon:"
-msgstr "तोपः : १."
+msgstr "तोपः :"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannony)
 #: ksirkcountrydefinition.ui:192
@@ -508,7 +510,7 @@ msgstr ""
 #: ksirkcountrydefinition.ui:343
 #, kde-format
 msgid "Neighbors:"
-msgstr "प्रतिवेशिनः : १."
+msgstr "प्रतिवेशिनः :"
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, neighbourslist)
 #: ksirkcountrydefinition.ui:350
@@ -662,7 +664,7 @@ msgstr "देशाः nb:"
 #: ksirkgoaldefinition.ui:132
 #, kde-format
 msgid "Armies by country:"
-msgstr "देशानुसारं सेनाः : १."
+msgstr "देशानुसारं सेनाः :"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, nbcountries)
 #: ksirkgoaldefinition.ui:139
@@ -780,7 +782,7 @@ msgstr ""
 #: ksirknationalitydefinition.ui:43
 #, kde-format
 msgid "Leader name:"
-msgstr "नेता नाम : १."
+msgstr "नेता नाम :"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leader)
 #: ksirknationalitydefinition.ui:50
@@ -826,7 +828,7 @@ msgstr "त्वचा परिभाषा"
 #: ksirkskindefinition.ui:22
 #, kde-format
 msgid "Skin name:"
-msgstr "त्वचा नाम : १."
+msgstr "त्वचा नाम :"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, skinNameLineEdit)
 #: ksirkskindefinition.ui:29
@@ -845,7 +847,7 @@ msgstr "अत्र त्वचायाः लघुनाम टङ्कय
 #: ksirkskindefinition.ui:46
 #, kde-format
 msgid "Width x height:"
-msgstr "चौड़ाई x ऊर्ध्वता : १."
+msgstr "चौड़ाई x ऊर्ध्वता :"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, widthLineEdit)
 #: ksirkskindefinition.ui:53
@@ -903,7 +905,7 @@ msgstr "एतत् फ़ॉन्ट् नक्शायां देशन
 #: ksirkskindefinition.ui:108
 #, kde-format
 msgid "Fg:"
-msgstr "चित्रम् : १."
+msgstr "चित्रम् :"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, fgcolorbutton)
 #: ksirkskindefinition.ui:115
@@ -923,7 +925,7 @@ msgstr "एतत् वर्णं मानचित्रे देशना
 #: ksirkskindefinition.ui:125
 #, kde-format
 msgid "Bg:"
-msgstr "बग् : १."
+msgstr "बग् :"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, bgcolorbutton)
 #: ksirkskindefinition.ui:132
@@ -1303,7 +1305,7 @@ msgid ""
 "and flag:"
 msgstr ""
 "योद्धानां मध्ये विस्तारः\n"
-"तथा ध्वजः : १."
+"तथा ध्वजः :"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, widthDiffLineEdit)
 #: ksirkspritesdefinition.ui:39
@@ -1421,7 +1423,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:486 ksirkspritesdefinition.ui:581
 #, kde-format
 msgid "Nb frames:"
-msgstr "Nb फ्रेम्स : १."
+msgstr "Nb फ्रेम्स :"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagf)
 #: ksirkspritesdefinition.ui:117
@@ -1452,7 +1454,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:503 ksirkspritesdefinition.ui:598
 #, kde-format
 msgid "Nb versions:"
-msgstr "Nb संस्करणाः : १."
+msgstr "Nb संस्करणाः :"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagv)
 #: ksirkspritesdefinition.ui:134
@@ -2030,7 +2032,7 @@ msgstr "नव देशस्य नाम"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new country:"
-msgstr "नूतनदेशस्य नाम प्रविशतु : १."
+msgstr "नूतनदेशस्य नाम प्रविशतु :"
 
 #: mainwindow.cpp:1315
 #, kde-format
@@ -2087,7 +2089,7 @@ msgstr "नवीन राष्ट्रीयता नाम"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new nationality:"
-msgstr "नूतनराष्ट्रीयतायाः नाम प्रविशतु : १."
+msgstr "नूतनराष्ट्रीयतायाः नाम प्रविशतु :"
 
 #: mainwindow.cpp:1958
 #, kde-format
