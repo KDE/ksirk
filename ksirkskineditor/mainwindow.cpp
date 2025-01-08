@@ -426,7 +426,7 @@ void MainWindow::openSkin(const QString& skinDir)
   m_spritesDefWidget->explodingv->setValue(SkinSpritesData::changeable().intData(QStringLiteral("exploding-versions")));
 
   m_nationalityDefWidget->flag->clear();
-  foreach(const QString& key, m_onu->poolIds())
+  for(const QString& key: m_onu->poolIds())
   {
     int flagWidth = SkinSpritesData::changeable().intData(QStringLiteral("flag-width"));
     int flagHeight = SkinSpritesData::changeable().intData(QStringLiteral("flag-height"));
@@ -453,14 +453,14 @@ void MainWindow::openSkin(const QString& skinDir)
   //   m_cannonButton->setIconSize(QSize(cannonWidth,cannonHeight));
   
   qCDebug(KSIRKSKINEDITOR_LOG) << "Adding nationalities items";
-  foreach (Nationality* nationality, m_onu->nationalities())
+  for (Nationality* nationality: m_onu->nationalities())
   {
     qCDebug(KSIRKSKINEDITOR_LOG) << "Adding "<<nationality->name()<<" items";
     m_skinDefWidget->nationalitieslist->addItem(nationality->name());
   }
   
   qCDebug(KSIRKSKINEDITOR_LOG) << "Adding countries items";
-  foreach (Country* country, m_onu->countries())
+  for (Country* country: m_onu->countries())
   {
     qCDebug(KSIRKSKINEDITOR_LOG) << "Adding "<<country->name()<<" items";
     m_skinDefWidget->countrieslist->addItem(country->name());
@@ -492,7 +492,7 @@ void MainWindow::openSkin(const QString& skinDir)
   }
 
   qCDebug(KSIRKSKINEDITOR_LOG) << "Adding continents items";
-  foreach (Continent* continent, m_onu->continents())
+  for (Continent* continent: m_onu->continents())
   {
     qCDebug(KSIRKSKINEDITOR_LOG) << "Adding "<<continent<<" items";
     qCDebug(KSIRKSKINEDITOR_LOG) << "Adding "<<continent->name()<<" items";
@@ -910,7 +910,7 @@ void MainWindow::initContinentWidgetWith(Continent* continent)
   m_continentDefWidget->bonus->setValue(continent->bonus());
 
   m_continentDefWidget->countrieslist->clear();
-  foreach(Country* country, continent->members())
+  for(Country* country: continent->members())
   {
     m_continentDefWidget->countrieslist->addItem(country->name());
   }
@@ -963,14 +963,14 @@ void MainWindow::initGoalWidgetWith(Goal* goal)
   m_goalDefWidget->armiesbycountry->setValue(goal->nbArmiesByCountry());
   m_goalDefWidget->anycontinent->setChecked(false);
   m_goalDefWidget->continentslist->clear();
-  foreach(const QString& id, goal->continents())
+  for(const QString& id: goal->continents())
   {
     qCDebug(KSIRKSKINEDITOR_LOG) << "continent" << id;
     if (id.isNull())
     {
       m_goalDefWidget->anycontinent->setChecked(true);
     }
-    foreach(Continent* continent, m_onu->continents())
+    for(Continent* continent: m_onu->continents())
     {
       if (continent->name() == id)
       {
@@ -1368,17 +1368,17 @@ void MainWindow::slotNeighbours()
   KsirkSkinEditorCountriesSelectionDialog* dialog = new KsirkSkinEditorCountriesSelectionDialog(this);
   dialog->countriesList->setSortingEnabled(true);
   dialog->countriesList->setSelectionMode(QAbstractItemView::ExtendedSelection);
-  foreach (Country* country, m_onu->countries())
+  for (Country* country: m_onu->countries())
   {
     if (country->name() != m_skinDefWidget->countrieslist->currentItem()->text())
     {
       dialog->countriesList->addItem(country->name());
     }
   }
-  foreach (Country* country, m_onu->countryNamed(m_skinDefWidget->countrieslist->currentItem()->text())->neighbours())
+  for (Country* country: m_onu->countryNamed(m_skinDefWidget->countrieslist->currentItem()->text())->neighbours())
   {
     QList<QListWidgetItem *> list = dialog->countriesList->findItems(country->name(),Qt::MatchExactly);
-    foreach (QListWidgetItem* item, list)
+    for (QListWidgetItem* item: list)
     {
       dialog->countriesList->setCurrentItem(item,QItemSelectionModel::Select);
     }
@@ -1389,7 +1389,7 @@ void MainWindow::slotNeighbours()
     Country* country =  m_onu->countryNamed(m_skinDefWidget->countrieslist->currentItem()->text());
     QList<Country*> newNeighbours;
     m_countryDefWidget->neighbourslist->clear();
-    foreach (QListWidgetItem* item, list)
+    for (QListWidgetItem* item: list)
     {
       Country* neighbour = m_onu->countryNamed(item->text());
       newNeighbours.push_back(neighbour);
@@ -1462,14 +1462,14 @@ void MainWindow::slotContinentCountries()
   KsirkSkinEditorCountriesSelectionDialog* dialog = new KsirkSkinEditorCountriesSelectionDialog(this);
   dialog->countriesList->setSortingEnabled(true);
   dialog->countriesList->setSelectionMode(QAbstractItemView::ExtendedSelection);
-  foreach (Country* country, m_onu->countries())
+  for (Country* country: m_onu->countries())
   {
     dialog->countriesList->addItem(country->name());
   }
-  foreach (Country* country, m_onu->continentNamed(m_skinDefWidget->continentslist->currentItem()->text())->members())
+  for (Country* country: m_onu->continentNamed(m_skinDefWidget->continentslist->currentItem()->text())->members())
   {
     QList<QListWidgetItem*> list = dialog->countriesList->findItems(country->name(),Qt::MatchExactly);
-    foreach (QListWidgetItem* item, list)
+    for (QListWidgetItem* item: list)
     {
       dialog->countriesList->setCurrentItem(item,QItemSelectionModel::Select);
     }
@@ -1483,7 +1483,7 @@ void MainWindow::slotContinentCountries()
     qCDebug(KSIRKSKINEDITOR_LOG) << continent->name();
     QList<Country*> newCountries;
     m_continentDefWidget->countrieslist->clear();
-    foreach (QListWidgetItem* item, list)
+    for (QListWidgetItem* item: list)
     {
       Country* country = m_onu->countryNamed(item->text());
       qCDebug(KSIRKSKINEDITOR_LOG) << (void*)country;
@@ -1694,7 +1694,7 @@ void MainWindow::updateSprites(SpriteType type)
       break;
     default: ;
   }
-  foreach (Country* country, m_onu->countries())
+  for (Country* country: m_onu->countries())
   {
     QGraphicsItem* item = m_onu->itemFor(country, type);
     if (item == nullptr)
@@ -1840,14 +1840,14 @@ void MainWindow::slotGoalContinents()
   KsirkSkinEditorCountriesSelectionDialog* dialog = new KsirkSkinEditorCountriesSelectionDialog(this);
   dialog->countriesList->setSortingEnabled(true);
   dialog->countriesList->setSelectionMode(QAbstractItemView::ExtendedSelection);
-  foreach (Continent* continent, m_onu->continents())
+  for (Continent* continent: m_onu->continents())
   {
     dialog->countriesList->addItem(continent->name());
   }
-  foreach (const QString& continentName, goal->continents())
+  for (const QString& continentName: goal->continents())
   {
     QList<QListWidgetItem*> list = dialog->countriesList->findItems(continentName,Qt::MatchExactly);
-    foreach (QListWidgetItem* item, list)
+    for (QListWidgetItem* item: list)
     {
       dialog->countriesList->setCurrentItem(item,QItemSelectionModel::Select);
     }
@@ -1858,7 +1858,7 @@ void MainWindow::slotGoalContinents()
     qCDebug(KSIRKSKINEDITOR_LOG) << list.size();
     QList<QString> newContinents;
     m_goalDefWidget->continentslist->clear();
-    foreach (QListWidgetItem* item, list)
+    for (QListWidgetItem* item: list)
     {
       Continent* continent = m_onu->continentNamed(item->text());
       qCDebug(KSIRKSKINEDITOR_LOG) << (void*)continent;

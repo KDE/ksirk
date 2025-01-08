@@ -36,7 +36,7 @@ m_automaton(automaton), m_skin(""), m_worlds(), m_players(),
 {
   QStringList skinsDirs = QStandardPaths::locateAll(QStandardPaths::AppDataLocation, "skins", QStandardPaths::LocateDirectory);
   qCDebug(KSIRK_LOG) << skinsDirs;
-  foreach (const QString &skinsDirName, skinsDirs)
+  for (const QString &skinsDirName: skinsDirs)
   {
     if (skinsDirName.isEmpty())
     {
@@ -49,7 +49,7 @@ m_automaton(automaton), m_skin(""), m_worlds(), m_players(),
     QDir skinsDir(skinsDirName);
     QStringList skinsDirsNames = skinsDir.entryList(QStringList("[a-zA-Z]*"), QDir::Dirs);
     
-    foreach (const QString& name, skinsDirsNames)
+    for (const QString& name: skinsDirsNames)
     {
       qCDebug(KSIRK_LOG) << "Got skin dir name: " << name;
       QDir skinDir(skinsDirName + '/' + name);
@@ -73,7 +73,7 @@ m_automaton(automaton), m_skin(""), m_worlds(), m_players(),
 int NewGameSetup::nbLocalPlayers() const
 {
   int n = 0;
-  foreach (Ksirk::NewPlayerData* player, m_players)
+  for (Ksirk::NewPlayerData* player: m_players)
   {
     if (!player->network())
     {
@@ -87,7 +87,7 @@ bool NewGameSetup::addPlayer(NewPlayerData* player)
 {
   qCDebug(KSIRK_LOG) << player->name();
   bool found = false;
-  foreach (Ksirk::NewPlayerData* p, m_players)
+  for (Ksirk::NewPlayerData* p: m_players)
   {
     if (p->name() == player->name())
     {
@@ -114,7 +114,7 @@ QDataStream& operator<<(QDataStream& stream, const NewGameSetup& ngs)
   stream << ngs.skin();
 
   stream << (quint32)ngs.players().size();
-  foreach (Ksirk::NewPlayerData* newPlayer, ngs.players())
+  for (Ksirk::NewPlayerData* newPlayer: ngs.players())
   {
     stream << newPlayer->name();
     stream << newPlayer->nation();

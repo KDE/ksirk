@@ -53,7 +53,8 @@ find_package(KDEGames6 6.0.0 REQUIRED)
 kde_enable_exceptions()
 
 add_definitions(
-    -DQT_USE_FAST_OPERATOR_PLUS
+    -DQT_USE_STRINGBUILDER
+    -DQT_NO_KEYWORDS
     -DQT_NO_URL_CAST_FROM_STRING
 )
 

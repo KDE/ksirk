@@ -370,7 +370,7 @@ QList<Country*> Player::countries() const
 {
 //   qCDebug(KSIRK_LOG) << name() << ": Player::countries()";
   QList<Country*> list;
-  foreach (Country* c, m_automaton->game()->theWorld()->getCountries())
+  for (Country* c: m_automaton->game()->theWorld()->getCountries())
   {
     if (c-> owner() == static_cast< const Player * >(this))
     {
@@ -404,7 +404,7 @@ QDataStream& operator<<(QDataStream& stream, PlayerMatrix& p)
 {
   stream << p.name << quint32(p.nbAttack) << quint32(p.nbCountries) << quint32(p.nbAvailArmies)
     << quint32(p.nbDefense) << p.nation << quint32(p.isAI) << quint32(p.countries.size());
-  foreach (const QString& s, p.countries)
+  for (const QString& s: p.countries)
   {
     stream << s;
   }

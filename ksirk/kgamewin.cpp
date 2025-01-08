@@ -441,7 +441,7 @@ void KGameWindow::newSkin(const QString& onuFileName)
   clear();
 
   m_animFighters->clear();
-  foreach(AnimSpritesGroup* sprites, m_animSpritesGroups)
+  for(AnimSpritesGroup* sprites: m_animSpritesGroups)
   {
     sprites->clear();
     delete sprites;
@@ -756,7 +756,7 @@ bool KGameWindow::attackEnd()
       }
       else if (m_automaton->isAdmin())
       {
-        foreach (KPlayer* player, *m_automaton->playerList())
+        for (KPlayer* player: *m_automaton->playerList())
         {
           m_automaton->checkGoal((Player*)player);
         }

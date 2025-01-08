@@ -228,7 +228,7 @@ ONU::ONU(const QString& configDir, QObject *parent)
   {
     m_countries.push_back(0);
   }*/
-  foreach (const QString &country, countriesList)
+  for (const QString &country: countriesList)
   { 
     qCDebug(KSIRKSKINEDITOR_LOG) << "Loading"<<country<<"data";
     KConfigGroup countryGroup = config.group(country);
@@ -251,7 +251,7 @@ ONU::ONU(const QString& configDir, QObject *parent)
   {
     m_nationalities.push_back(0);
   }*/
-  foreach (const QString &nationality, nationalitiesList)
+  for (const QString &nationality: nationalitiesList)
   {
     qCDebug(KSIRKSKINEDITOR_LOG) << "Creating nationality " << nationality;
     KConfigGroup nationalityGroup = config.group(nationality);
@@ -269,7 +269,7 @@ ONU::ONU(const QString& configDir, QObject *parent)
   {
     m_continents.push_back(0);
   }*/
-  foreach (const QString &continent, continentsList)
+  for (const QString &continent: continentsList)
   {
     qCDebug(KSIRKSKINEDITOR_LOG) << "Loading"<<continent<<"data";
     KConfigGroup continentGroup = config.group(continent);
@@ -279,7 +279,7 @@ ONU::ONU(const QString& configDir, QObject *parent)
     QList<QString> countryIdList = continentGroup.readEntry("continent-countries",QList<QString>());
 //     int countryId;
     QList<Country*> continentList;
-    foreach(const QString& countryId, countryIdList)
+    for(const QString& countryId: countryIdList)
     {
       continentList.push_back(countryNamed(countryId));
     }
@@ -289,7 +289,7 @@ ONU::ONU(const QString& configDir, QObject *parent)
 
   qCDebug(KSIRKSKINEDITOR_LOG) << "Loading goals data";
   QStringList goalsList = onugroup.readEntry("goals", QStringList());
-  foreach (const QString &_goal, goalsList)
+  for (const QString &_goal: goalsList)
   {
     qCDebug(KSIRKSKINEDITOR_LOG) << "init goal " << _goal;
     KConfigGroup goalGroup = config.group(_goal);
@@ -309,7 +309,7 @@ ONU::ONU(const QString& configDir, QObject *parent)
     {
       goal->setType(Goal::Continents);
       QList<QString> continentsList = goalGroup.readEntry("continents",QList<QString>());
-      foreach(const QString& continentId, continentsList)
+      for(const QString& continentId: continentsList)
         goal->continents().push_back(continentId);
     }
     else if (goalType == QLatin1String("player") )
@@ -321,14 +321,14 @@ ONU::ONU(const QString& configDir, QObject *parent)
     m_goals.push_back(goal);
   }
 
-  foreach (const QString &country, countriesList)
+  for (const QString &country: countriesList)
   {
     qCDebug(KSIRKSKINEDITOR_LOG) << "building neighbours list of " << country;
     QList< Country* > theNeighbours;
     KConfigGroup countryGroup = config.group(country);
     QList<QString> theNeighboursIds = countryGroup.readEntry("neighbours",QList<QString>());
 //     int neighbourId;
-    foreach(const QString& neighbourId, theNeighboursIds)
+    for(const QString& neighbourId: theNeighboursIds)
     {
 
       theNeighbours.push_back(countryNamed(neighbourId));
@@ -483,13 +483,13 @@ void ONU::saveConfig(const QString& configFileName)
 
   qCDebug(KSIRKSKINEDITOR_LOG) << "Saving countries data";
   QStringList countriesList;
-  foreach (Country* country, m_countries)
+  for (Country* country: m_countries)
   {
     countriesList.push_back(country->name());
   }
   onugroup.writeEntry("countries", countriesList);
   unsigned int countryNum = 0;
-  foreach (Country* country, m_countries)
+  for (Country* country: m_countries)
   {
     qCDebug(KSIRKSKINEDITOR_LOG) << "Saving"<<country->name()<<"data" << countryNum;
     KConfigGroup countryGroup = config.group(country->name());
@@ -505,12 +505,12 @@ void ONU::saveConfig(const QString& configFileName)
 
   qCDebug(KSIRKSKINEDITOR_LOG) << "Saving nationalities data";
   QStringList nationalitiesList;
-  foreach (Nationality* nationality, m_nationalities)
+  for (Nationality* nationality: m_nationalities)
   {
     nationalitiesList.push_back(nationality->name());
   }
   onugroup.writeEntry("nationalities", nationalitiesList);
-  foreach (Nationality* nationality, m_nationalities)
+  for (Nationality* nationality: m_nationalities)
   {
     qCDebug(KSIRKSKINEDITOR_LOG) << "Saving nationality " << nationality->name();
     KConfigGroup nationalityGroup = config.group(nationality->name());
@@ -521,13 +521,13 @@ void ONU::saveConfig(const QString& configFileName)
 
   qCDebug(KSIRKSKINEDITOR_LOG) << "Saving continents data";
   QStringList continentsList;
-  foreach (Continent* continent, m_continents)
+  for (Continent* continent: m_continents)
   {
     continentsList.push_back(continent->name());
   }
   onugroup.writeEntry("continents", continentsList);
 //   unsigned int continentNum = 0;
-  foreach (Continent* continent, m_continents)
+  for (Continent* continent: m_continents)
   {
     qCDebug(KSIRKSKINEDITOR_LOG) << "Saving"<<continent->name()<<"data";
     KConfigGroup continentGroup = config.group(continent->name());
@@ -536,7 +536,7 @@ void ONU::saveConfig(const QString& configFileName)
     continentGroup.writeEntry("bonus",continent->bonus());
 
     QList<QString> countryIdList;
-    foreach(Country* country, continent->members())
+    for(Country* country: continent->members())
     {
       countryIdList.push_back(country->name());
     }
@@ -546,7 +546,7 @@ void ONU::saveConfig(const QString& configFileName)
   qCDebug(KSIRKSKINEDITOR_LOG) << "Saving goals data";
   QStringList goalsList;
   int goalNum = 0;
-  foreach (Goal* goal, m_goals)
+  for (Goal* goal: m_goals)
   {
     QString name = QStringLiteral("goal") + QString::number(++goalNum);
     KConfigGroup goalGroup = config.group(name);
@@ -562,7 +562,7 @@ void ONU::saveConfig(const QString& configFileName)
         break;
       case Goal::Continents:
         goalGroup.writeEntry("type","continents");
-        foreach(const QString& continent, goal->continents())
+        for(const QString& continent: goal->continents())
         {
           continentsList.push_back(continent);
         }
@@ -579,11 +579,11 @@ void ONU::saveConfig(const QString& configFileName)
   }
   onugroup.writeEntry("goals", goalsList);
   
-  foreach (Country* country, m_countries)
+  for (Country* country: m_countries)
   {
     QList<QString> theNeighboursIds;
     KConfigGroup countryGroup = config.group(country->name());
-    foreach(Country* theNeighbour, country->neighbours())
+    for(Country* theNeighbour: country->neighbours())
     {
       theNeighboursIds.push_back(theNeighbour->name());
     }
@@ -614,7 +614,7 @@ Country* ONU::countryAt(const QPointF& point)
 void ONU::reset()
 {
   qCDebug(KSIRKSKINEDITOR_LOG);
-  foreach (Country* country, m_countries)
+  for (Country* country: m_countries)
   {
     country->reset();
   }
@@ -629,7 +629,7 @@ Country* ONU::countryNamed(const QString& name)
   {
     return nullptr;
   }
-  foreach (Country *c, m_countries)
+  for (Country *c: m_countries)
   {
     if (c-> name() == name)
       return c;
@@ -646,7 +646,7 @@ unsigned int ONU::getNbCountries() const
 /** Returns the nation named "name" ; 0 in case there is no such nation */
 Nationality* ONU::nationNamed(const QString& name)
 {
-  foreach (Nationality *n, m_nationalities)
+  for (Nationality *n: m_nationalities)
   {
     if (n->name() == name)
     {
@@ -658,7 +658,7 @@ Nationality* ONU::nationNamed(const QString& name)
 
 // const Continent* ONU::continentWithId(const unsigned int id) const
 // {
-//   foreach (const Continent* c, m_continents)
+//   for (const Continent* c: m_continents)
 //   {
 //     if (c->id() == id)
 //     {
@@ -670,7 +670,7 @@ Nationality* ONU::nationNamed(const QString& name)
 
 Continent* ONU::continentNamed(const QString& name)
 {
-  foreach (Continent *c, m_continents)
+  for (Continent *c: m_continents)
   {
     if (c-> name() == name)
       return c;
@@ -745,7 +745,7 @@ KGameSvgDocument* ONU::svgDom()
 QGraphicsItem* ONU::itemFor(const Country* country, SpriteType spriteType)
 {
   if (country==nullptr || spriteType == None) return nullptr;
-  foreach (QGraphicsItem* item, m_itemsMap.keys())
+  for (QGraphicsItem* item: m_itemsMap.keys())
   {
     if (m_itemsMap[item].first == country && m_itemsMap[item].second == spriteType)
     {
@@ -812,14 +812,14 @@ void ONU::deleteCountry(Country* country)
 {
   qCDebug(KSIRKSKINEDITOR_LOG) << country->name();
   QList<QGraphicsItem*> itemsToRemove;
-  foreach (QGraphicsItem* item, m_itemsMap.keys())
+  for (QGraphicsItem* item: m_itemsMap.keys())
   {
     if (m_itemsMap[item].first == country)
     {
       itemsToRemove.push_back(item);
     }
   }
-  foreach (QGraphicsItem* item, itemsToRemove)
+  for (QGraphicsItem* item: itemsToRemove)
   {
     qCDebug(KSIRKSKINEDITOR_LOG) << "remove an item";
     item->hide();
@@ -943,7 +943,7 @@ void ONU::deleteGoal(int g)
 
 Nationality* ONU::nationalityNamed(const QString& name)
 {
-  foreach (Nationality* nationality, m_nationalities)
+  for (Nationality* nationality: m_nationalities)
   {
     if (nationality->name() == name)
     {

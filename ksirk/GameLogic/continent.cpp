@@ -34,7 +34,7 @@ namespace GameLogic
 Continent::Continent (const QString &myName, const QList<Country*>& myCountries, const int myBonus) :
   m_members(myCountries), m_name(myName), bonus(myBonus)
 {
-  foreach (Country* c, myCountries)
+    for (Country* c: myCountries)
   {
     if (c)
     {
@@ -117,7 +117,7 @@ void Continent::saveXml(QTextStream& xmlStream)
 QList<Country*> Continent::countriesOwnedBy(const Player* player)
 {
   QList<Country*> res;
-  foreach (Country*c, m_members)
+  for (Country*c: m_members)
   {    
     if ( c->owner() == player )
     {

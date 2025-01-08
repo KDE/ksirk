@@ -261,10 +261,10 @@ public:
 
   void addDecoration(const QString& svgid, const QRectF& geometry);
   
-public slots:
+public Q_SLOTS:
   void animate();
 
-signals:
+Q_SIGNALS:
 
   /**
     * emitted when the coordinates of the sprite become equal to those of its

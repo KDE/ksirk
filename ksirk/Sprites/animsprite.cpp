@@ -205,7 +205,7 @@ void AnimSprite::nextFrame()
       setStatic();
       m_numberOfShots = std::numeric_limits<unsigned int>::max();
       qCDebug(KSIRK_LOG) << "Emiting animationFinished";
-      emit animationFinished(this);
+      Q_EMIT animationFinished(this);
     }
     else if (m_numberOfShots != std::numeric_limits<unsigned int>::max())
     {
@@ -245,7 +245,7 @@ void AnimSprite::moveIt()
     case 3:
       setPos(destinationPoint);
       destinationPoint = QPointF();
-      emit atDestination(this);
+      Q_EMIT atDestination(this);
       return;
       break;
     default:
@@ -351,7 +351,7 @@ void AnimSprite::moveIt()
   {
     setStatic();
     destinationPoint = QPointF();
-    emit atDestination(this);
+    Q_EMIT atDestination(this);
   }
 }
 

@@ -45,21 +45,21 @@ Scene::~Scene()
 void Scene::mouseMoveEvent(QGraphicsSceneMouseEvent* mouseEvent)
 {
 //   qCDebug(KSIRKSKINEDITOR_LOG) << mouseEvent->scenePos();
-  emit position(mouseEvent->scenePos());
+  Q_EMIT position(mouseEvent->scenePos());
   QGraphicsScene::mouseMoveEvent( mouseEvent );
 }
 
 void Scene::mousePressEvent(QGraphicsSceneMouseEvent* mouseEvent)
 {
 //   qCDebug(KSIRKSKINEDITOR_LOG) << mouseEvent->scenePos();
-  emit pressPosition(mouseEvent->scenePos());
+  Q_EMIT pressPosition(mouseEvent->scenePos());
   QGraphicsScene::mousePressEvent( mouseEvent );
 }
 
 void Scene::mouseReleaseEvent(QGraphicsSceneMouseEvent* mouseEvent)
 {
 //   qCDebug(KSIRKSKINEDITOR_LOG) << mouseEvent->scenePos();
-  emit releasePosition(mouseEvent->scenePos());
+  Q_EMIT releasePosition(mouseEvent->scenePos());
   QGraphicsScene::mouseReleaseEvent( mouseEvent );
 }
 

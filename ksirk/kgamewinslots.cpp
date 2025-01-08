@@ -807,7 +807,7 @@ void KGameWindow::slotArmiesNumberChanged(bool checked)
   qCDebug(KSIRK_LOG) << checked;
   KsirkSettings::setShowArmiesNumbers(checked);
 
-  foreach (Country* country, m_theWorld->getCountries())
+  for (Country* country: m_theWorld->getCountries())
   {
     country->createArmiesSprites();
   }
@@ -912,7 +912,7 @@ void KGameWindow::slotStartNewGame()
 
   // delete remainings animations from previous game
   m_animFighters->clear();
-  foreach(AnimSpritesGroup* sprites, m_animSpritesGroups)
+  for(AnimSpritesGroup* sprites: m_animSpritesGroups)
   {
     sprites->clear();
     delete sprites;
@@ -934,7 +934,7 @@ void KGameWindow::slotStartNewGame()
   m_reinitializingGame = false;
 
   unsigned int nbAvailArmies = (unsigned int)(m_theWorld->getNbCountries() * 2.5 / m_newGameSetup->players().size());
-  foreach (const NewPlayerData* player, m_newGameSetup->players())
+  for (const NewPlayerData* player: m_newGameSetup->players())
   {
     if (!player->network())
     {

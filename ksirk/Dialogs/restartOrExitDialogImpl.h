@@ -44,7 +44,7 @@ public:
 
 private:
     
-public slots:
+public Q_SLOTS:
     virtual void slotNewGame();
     virtual void slotDoNothing();
     virtual void slotExit();

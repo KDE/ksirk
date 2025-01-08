@@ -155,7 +155,7 @@ namespace GameLogic
       QPushButton* buttonStopAttack;
       QPushButton* buttonStopDefense;
       
-      private slots:
+      private Q_SLOTS:
       
       void slotStopAttackAuto();
       void slotStopDefenseAuto();

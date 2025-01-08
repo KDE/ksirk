@@ -189,7 +189,7 @@ void AnimSpritesList< SpriteType >::moveAllToDestinationNow(bool clear)
 template < typename SpriteType >
 void AnimSpritesList< SpriteType >::saveXmlAll(QTextStream& xmlStream)
 {
-  foreach (SpriteType* sp, *this)
+  for (SpriteType* sp: *this)
   {
     sp->saveXml(xmlStream);
   }

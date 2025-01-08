@@ -42,14 +42,14 @@ void PixmapItem::mousePressEvent(QGraphicsSceneMouseEvent* event)
 {
   qCDebug(KSIRKSKINEDITOR_LOG) << event->scenePos();
   QGraphicsItem::mousePressEvent(event);
-  emit pressed(this,event->scenePos());
+  Q_EMIT pressed(this,event->scenePos());
 }
 
 void PixmapItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 {
   qCDebug(KSIRKSKINEDITOR_LOG) << event->scenePos();
   QGraphicsItem::mouseReleaseEvent(event);
-  emit placed(this, event->scenePos());
+  Q_EMIT placed(this, event->scenePos());
 }
 
 } // closing namespace

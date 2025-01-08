@@ -240,7 +240,7 @@ bool Country::communicateWith(const Country* otherCountry) const
 
 //    qCDebug(KSIRK_LOG) << "Country::communicateWith (" << name() << ", " << otherCountry-> name() << ")" << endl << flush;
 //   unsigned int nbNeighbours = neighbours().size();
-  foreach (Country* neighbour, neighbours())
+  for (Country* neighbour: neighbours())
   {
     if (neighbour == otherCountry)
     {

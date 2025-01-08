@@ -100,13 +100,13 @@ void NewGameWidget::slotOK()
   m_newGameSetup->setNbPlayers(playersNumberEntry->value());
   m_newGameSetup->setNbNetworkPlayers(m_newGameSetup->automaton()->networkGameType() == GameAutomaton::None?0:playersNumberEntry->value()-localPlayersNumberEntry->value());
   m_newGameSetup->setUseGoals(radioGoal->isChecked());
-  emit newGameOK();
+  Q_EMIT newGameOK();
 }
 
 void NewGameWidget::slotCancel()
 {
   qCDebug(KSIRK_LOG);
-  emit newGameKO();
+  Q_EMIT newGameKO();
 }
 
 void NewGameWidget::fillSkinsCombo()
@@ -120,7 +120,7 @@ void NewGameWidget::fillSkinsCombo()
   qCDebug(KSIRK_LOG) << skinsDirs;
   uint skinNum = 0;
   uint currentSkinNum = 0;
-  foreach (const QString &skinsDirName, skinsDirs)
+  for (const QString &skinsDirName: skinsDirs)
   {
     if (skinsDirName.isEmpty())
     {
@@ -133,7 +133,7 @@ void NewGameWidget::fillSkinsCombo()
     QDir skinsDir(skinsDirName);
     QStringList skinsDirsNames = skinsDir.entryList(QStringList("[a-zA-Z]*"), QDir::Dirs);
 
-    foreach (const QString& name, skinsDirsNames)
+    for (const QString& name: skinsDirsNames)
     {
       qCDebug(KSIRK_LOG) << "Got skin dir name: " << name;
       QDir skinDir(skinsDirName + '/' + name);

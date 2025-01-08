@@ -118,7 +118,7 @@ bool GameXmlHandler::startElement( const QString & namespaceURI, const QString &
       pm.nation = nationName;
       pm.password = password;
       pm.isAI = isAi;
-      foreach (const QString& k, m_ownersMap.keys())
+      for (const QString& k: m_ownersMap.keys())
       {
         if ( m_ownersMap[k] == name )
         {
@@ -206,7 +206,7 @@ bool GameXmlHandler::endElement(const QString& namespaceURI, const QString& loca
 //   qCDebug(KSIRK_LOG) << "endElement " << localName << " / " << qName ;
   if (localName == "game")
   {
-    foreach (const QString& k, m_ownersMap.keys())
+    for (const QString& k: m_ownersMap.keys())
     {
 //       qCDebug(KSIRK_LOG) << "Setting owner of " << k << " to " << m_ownersMap[k];
       Country* country = m_game.theWorld()->countryNamed(k);

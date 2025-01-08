@@ -124,7 +124,7 @@ void KPlayerSetupWidget::slotNext()
     isComputerCheckBox->setCheckState(Qt::Unchecked);
 //     init(m_automaton,m_onu,m_newGameSetup->players().size()+1,"",false,"",false,m_nations,"", m_newGameSetup);
     setLabelText();
-    emit next();
+    Q_EMIT next();
   }
   
 }
@@ -134,7 +134,7 @@ void KPlayerSetupWidget::slotPrevious()
   qCDebug(KSIRK_LOG);
   if (m_newGameSetup->players().empty())
   {
-    emit previous();
+    Q_EMIT previous();
   }
   else
   {
@@ -153,7 +153,7 @@ void KPlayerSetupWidget::slotPrevious()
 void KPlayerSetupWidget::slotCancel()
 {
   qCDebug(KSIRK_LOG);
-  emit cancel();
+  Q_EMIT cancel();
 }
 
 
@@ -165,7 +165,7 @@ void KPlayerSetupWidget::fillNationsCombo()
   GameLogic::Nationality* nation = m_onu->nationNamed(*m_nations.keys().begin());
   nameLineEdit-> setText(nation->leaderName());
 
-  foreach (const QString& k,m_nations.keys())
+  for (const QString& k: m_nations.keys())
   {
     if (!isAvailable(k))
     {
@@ -223,7 +223,7 @@ void KPlayerSetupWidget::slotNationChanged()
 
 bool KPlayerSetupWidget::isAvailable(QString nationName)
 {
-  foreach (NewPlayerData* player, m_newGameSetup->players())
+  for (NewPlayerData* player: m_newGameSetup->players())
   {
     if (player->nation() == nationName)
     {
@@ -237,7 +237,7 @@ void KPlayerSetupWidget::slotNameEdited(const QString& text)
 {
   qCDebug(KSIRK_LOG) << text.trimmed();
   bool found = false;
-  foreach (NewPlayerData* player, m_newGameSetup->players())
+  for (NewPlayerData* player: m_newGameSetup->players())
   {
     if (player->name() == text.trimmed())
     {

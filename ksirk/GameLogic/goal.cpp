@@ -100,7 +100,7 @@ bool Goal::checkCountriesFor(const GameLogic::Player* player) const
   if (player->getNbCountries() >= m_nbCountries)
   {
     uint nbCountriesOk = 0;
-    foreach (Country* country, player->countries())
+    for (Country* country: player->countries())
     {
       if (country->nbArmies() >= m_nbArmiesByCountry)
       {
@@ -118,7 +118,7 @@ bool Goal::checkCountriesFor(const GameLogic::Player* player) const
 bool Goal::checkContinentsFor(const GameLogic::Player* player) const
 {
   qCDebug(KSIRK_LOG) << "Goal::checkContinentsFor " << player->name();
-  foreach (const QString& continent, m_continents)
+  for (const QString& continent: m_continents)
   {
     qCDebug(KSIRK_LOG) << "Should be owned continent id: " << continent;
     if ( m_automaton->game()->theWorld()->continentNamed(continent) == nullptr
@@ -133,7 +133,7 @@ bool Goal::checkContinentsFor(const GameLogic::Player* player) const
   }
   bool otherFound = false;
   QList<Continent*>& continents = m_automaton->game()->theWorld()->getContinents();
-  foreach (Continent* continent, continents)
+  for (Continent* continent: continents)
   {
     if ( ( !m_continents.contains(continent->name()) )
           && ( continent->owner() == player) )
@@ -205,7 +205,7 @@ QString Goal::message(int displayType) const
         }
         break;
       case Goal::Continents:
-        foreach (const QString& continent, m_continents)
+        for (const QString& continent: m_continents)
         {
           if (!continent.isEmpty())
           {

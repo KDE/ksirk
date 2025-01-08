@@ -53,7 +53,7 @@ NewGameSummaryWidget::~NewGameSummaryWidget()
 void NewGameSummaryWidget::show(KGameWindow* game)
 {
   qCDebug(KSIRK_LOG) << game->newGameSetup()->worlds().keys();
-  foreach (GameLogic::ONU* world, game->newGameSetup()->worlds())
+  for (GameLogic::ONU* world: game->newGameSetup()->worlds())
   {
     if (world->skin() == game->newGameSetup()->skin())
     {
@@ -65,7 +65,7 @@ void NewGameSummaryWidget::show(KGameWindow* game)
   qCDebug(KSIRK_LOG) << game->automaton()->networkGameType() << game->newGameSetup()->players().size() << game->newGameSetup()->nbPlayers() << game->newGameSetup()->nbLocalPlayers() << game->newGameSetup()->nbNetworkPlayers();
   playersTable->setRowCount(game->newGameSetup()->players().size());
   int row = 0;
-  foreach (NewPlayerData* player, game->newGameSetup()->players())
+  for (NewPlayerData* player: game->newGameSetup()->players())
   {
     qCDebug(KSIRK_LOG) << "player" << player->name();
     QTableWidgetItem *nameItem = new QTableWidgetItem(player->name());

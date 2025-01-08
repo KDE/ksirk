@@ -235,7 +235,7 @@ ONU::ONU(GameAutomaton* automaton,
   m_font.backgroundColor = fontgroup.readEntry("background-color", "white");
 
   QStringList countriesList = onugroup.readEntry("countries", QStringList());
-  foreach (const QString &country, countriesList)
+  for (const QString &country: countriesList)
   { 
     KConfigGroup countryGroup = config.group(country);
 //     unsigned int id = countryGroup.readEntry("id",0);
@@ -257,7 +257,7 @@ ONU::ONU(GameAutomaton* automaton,
         flagPoint, cannonPoint, cavalryPoint, infantryPoint));
   }
   QStringList nationalitiesList = onugroup.readEntry("nationalities", QStringList());
-  foreach (const QString &nationality, nationalitiesList)
+  for (const QString &nationality: nationalitiesList)
   {
 //     qCDebug(KSIRK_LOG) << "Creating nationality " << nationality;
     KConfigGroup nationalityGroup = config.group(nationality);
@@ -270,7 +270,7 @@ ONU::ONU(GameAutomaton* automaton,
 
 
   QStringList continentsList = onugroup.readEntry("continents", QStringList());
-  foreach (const QString &continent, continentsList)
+  for (const QString &continent: continentsList)
   {
     KConfigGroup continentGroup = config.group(continent);
 
@@ -279,7 +279,7 @@ ONU::ONU(GameAutomaton* automaton,
     QList<QString> countryIdList = continentGroup.readEntry("continent-countries",QList<QString>());
 //     int countryId;
     QList<Country*> continentList;
-    foreach(const QString& countryId, countryIdList)
+    for(const QString& countryId: countryIdList)
     {
 //       qCDebug(KSIRK_LOG) << "Adding" << countryId << "to" << continent << "list";
       Country *c = countryNamed(countryId);
@@ -293,7 +293,7 @@ ONU::ONU(GameAutomaton* automaton,
   }
 
   QStringList goalsList = onugroup.readEntry("goals", QStringList());
-  foreach (const QString &_goal, goalsList)
+  for (const QString &_goal: goalsList)
   {
 //     qCDebug(KSIRK_LOG) << "init goal " << _goal;
     KConfigGroup goalGroup = config.group(_goal);
@@ -313,7 +313,7 @@ ONU::ONU(GameAutomaton* automaton,
     {
       goal->type(Goal::Continents);
       QList<QString> contList = goalGroup.readEntry("continents",QList<QString>());
-      foreach(const QString& continentId, contList)
+      for(const QString& continentId: contList)
       {
         // Bug 308527. Use only known continents.
         if (continentsList.contains(continentId))
@@ -333,7 +333,7 @@ ONU::ONU(GameAutomaton* automaton,
     automaton->goals().push_back(goal);
   }
 
-  foreach (const QString &countryName, countriesList)
+  for (const QString &countryName: countriesList)
   {
     Country *country = countryNamed(countryName);
 
@@ -347,7 +347,7 @@ ONU::ONU(GameAutomaton* automaton,
     KConfigGroup countryGroup = config.group(countryName);
     QList<QString> theNeighboursIds = countryGroup.readEntry("neighbours",QList<QString>());
 //     int neighbourId;
-    foreach(const QString& neighbourId, theNeighboursIds)
+    for(const QString& neighbourId: theNeighboursIds)
     {
       Country *c = countryNamed(neighbourId);
       if (c)
@@ -411,7 +411,7 @@ Country* ONU::countryAt(const QPointF& point)
 void ONU::reset()
 {
   qCDebug(KSIRK_LOG);
-  foreach (Country* country, countries)
+  for (Country* country: countries)
   {
     country-> reset();
   }
@@ -446,7 +446,7 @@ QList<Continent*>& ONU::getContinents()
 QList<Country*> ONU::neighboursBelongingTo(const Country& country, const Player* player)
 {
   QList<Country*> list;
-  foreach (Country *c,  country.neighbours())
+  for (Country *c: country.neighbours())
   {
     if ((country.communicateWith(c)) && (c-> owner() == player))
       {list.push_back(c);}
@@ -461,7 +461,7 @@ QList<Country*> ONU::neighboursBelongingTo(const Country& country, const Player*
 QList<Country*> ONU::neighboursNotBelongingTo(const Country& country, const Player* player)
 {
   QList<Country*> list;
-  foreach (Country *c,  country.neighbours())
+  for (Country *c: country.neighbours())
   {
     if ((country.communicateWith(c)) && (c-> owner() != player))
       {list.push_back(c);}
@@ -480,7 +480,7 @@ Country* ONU::countryNamed(const QString& name)
     return nullptr;
   }
 
-  foreach (Country *c, countries)
+  for (Country *c: countries)
   {
     if (c-> name() == name)
       return c;
@@ -501,7 +501,7 @@ void ONU::saveXml(QTextStream& xmlStream)
   xmlStream << "<ONU file=\"" << m_configFileName << "\" >";
 
   xmlStream << "<countries>";
-  foreach (Country *c, countries)
+  for (Country *c: countries)
   {
       c->saveXml(xmlStream);
   }
@@ -522,7 +522,7 @@ unsigned int ONU::height() const
 /** Returns the nation named "name" ; 0 in case there is no such nation */
 Nationality* ONU::nationNamed(const QString& name)
 {
-  foreach (Nationality *n, nationalities)
+  for (Nationality *n: nationalities)
   {
     if (n->name() == name)
     {
@@ -535,7 +535,7 @@ Nationality* ONU::nationNamed(const QString& name)
 void ONU::sendCountries(QDataStream& stream)
 {
   stream << quint32(countries.size());
-  foreach (Country* country, countries)
+  for (Country* country: countries)
   {
 //     qCDebug(KSIRK_LOG) << "Sending country " << country->name();
     country->send(stream);
@@ -556,7 +556,7 @@ void ONU::sendCountries(QDataStream& stream)
 */
 Continent* ONU::continentNamed(const QString& name)
 {
-  foreach (Continent *c, m_continents)
+  for (Continent *c: m_continents)
   {
     if (c-> name() == name)
       return c;
@@ -584,7 +584,7 @@ void ONU::buildMap()
     QFont backgroundFont(m_font.family, m_font.size, QFont::Normal, m_font.italic);
 
     painter.scale(dpr, dpr);
-    foreach (Country* country, countries)
+    for (Country* country: countries)
     {
       const QString& countryName = i18n(country->name().toUtf8().data());
       if (m_font.backgroundColor != "none")
@@ -632,7 +632,7 @@ void ONU::applyZoomFactor(qreal zoomFactor)
 
   buildMap();
 
-  foreach (Country* country, countries)
+  for (Country* country: countries)
   {
     country->createArmiesSprites();
   }

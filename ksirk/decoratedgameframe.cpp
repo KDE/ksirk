@@ -73,7 +73,7 @@ DecoratedGameFrame::~DecoratedGameFrame()
 void DecoratedGameFrame::mouseMoveEvent ( QMouseEvent * event )
 {
 //   qCDebug(KSIRK_LOG);
-  emit (mouseMoveEventReceived(event));
+  Q_EMIT (mouseMoveEventReceived(event));
 //   event->ignore();
 }
 
@@ -127,7 +127,7 @@ void DecoratedGameFrame::setArenaOptionEnabled(bool option)
   m_arenaAction->setEnabled(option);
   if (option == false)
   {
-    emit(arenaStateSignal(false));
+    Q_EMIT(arenaStateSignal(false));
   }
 }
 
@@ -393,13 +393,13 @@ void DecoratedGameFrame::arenaState()
   {
     m_arenaAction->setText(i18nc("@action", "Enable Arena"));
     m_arenaAction->setArenaEnabled(false);
-    emit(arenaStateSignal(false));
+    Q_EMIT(arenaStateSignal(false));
   }
   else
   {
     m_arenaAction->setText(i18nc("@action", "Disable Arena"));
     m_arenaAction->setArenaEnabled(true);
-    emit(arenaStateSignal(true));
+    Q_EMIT(arenaStateSignal(true));
   }
 
   attackMenu->exec(menuPoint);

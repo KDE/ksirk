@@ -60,7 +60,7 @@ private:
 /** Fills the waited players combo with players names, nations names and flag images */
   void fillWaitedPlayersCombo();
     
-public slots:
+public Q_SLOTS:
     virtual void slotOK();
 };
 

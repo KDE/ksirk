@@ -2570,7 +2570,7 @@ void GameAutomaton::setDefenseAuto(bool activated)
 
 void GameAutomaton::resetPlayersDistributionData()
 {
-  foreach (KPlayer* p, *playerList())
+  for (KPlayer* p: *playerList())
   {
     if ( !p->isVirtual() )
     {

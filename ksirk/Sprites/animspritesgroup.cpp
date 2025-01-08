@@ -82,7 +82,7 @@ void AnimSpritesGroup::oneArrived(AnimSprite* sprite)
   }
   if (m_numberArrived == (unsigned int)AnimSpritesList<AnimSprite>::size())
   {
-    emit arrived(this);
+    Q_EMIT arrived(this);
     m_numberArrived = 0;
   }
 }

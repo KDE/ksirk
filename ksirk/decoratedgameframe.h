@@ -114,7 +114,7 @@ public:
 
   void setArenaOptionEnabled(bool option);
 
-public slots:
+public Q_SLOTS:
   /** 
     * Slot connected in the game/document object to catch and
     * process mouse events. This is a KGame function which
@@ -134,7 +134,7 @@ public slots:
 
   void attackAuto();
 
-signals:
+Q_SIGNALS:
   /**
     * Signal that redirect the mouse event to the kmainwindows in
     * order to process the event.

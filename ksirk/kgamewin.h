@@ -286,7 +286,7 @@ public:
    * 
    * When encountering a serie of strings, the first one is the pattern and 
    * those following are the fillers. The end of the collection or a pixmap
-   * signals that all fillers have been given.
+   * Q_SIGNALS that all fillers have been given.
    * @note No check is made (e.g. on the number of fillers)
    *
    * @param strings @b IN/OUT <I>KsirK::GameLogic::KMessageParts&</I> 
@@ -309,13 +309,13 @@ public:
                             int id = ID_NO_STATUS_MSG, bool log = true );
   
   /**
-    * @brief Reconnect the mouse events signals to their slots to allow human players
+    * @brief Reconnect the mouse events Q_SIGNALS to their Q_SLOTS to allow human players
     * to play
     */
   void reconnectMouse();
 
   /**
-    * Disconnects the mouse events signals from their slots to avoid human
+    * Disconnects the mouse events Q_SIGNALS from their Q_SLOTS to avoid human
     * player actions when it is the turn of the AI
     */
   void disconnectMouse();
@@ -671,7 +671,7 @@ public Q_SLOTS:
 
   //@{
   /**
-    * The slots associated to the buttons
+    * The Q_SLOTS associated to the buttons
     */
   void slotNewGame();
   void slotNewSocketGame();
@@ -712,7 +712,7 @@ public Q_SLOTS:
 
   //@{
   /**
-    * Connected to the frame mouse buttons signals, they manages the reaction
+    * Connected to the frame mouse buttons Q_SIGNALS, they manages the reaction
     * of the game to user interaction inside its main widget in function of
     * the state of the game.
     *
@@ -731,7 +731,7 @@ public Q_SLOTS:
   void slotShowGoal();
   
   /** 
-    * Connected to the chat signals.
+    * Connected to the chat Q_SIGNALS.
     */
   void slotChatMessage();
   void slotChatReduceButton();

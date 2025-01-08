@@ -42,14 +42,14 @@ void TextItem::mousePressEvent(QGraphicsSceneMouseEvent* event)
 {
   qCDebug(KSIRKSKINEDITOR_LOG);
 //   setPosition(event->scenePos().x()-width()/2,event->scenePos().y()-height()/2)
-  emit pressed(this, event->scenePos());
+  Q_EMIT pressed(this, event->scenePos());
   QGraphicsItem::mousePressEvent(event);
 }
 
 void TextItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 {
   qCDebug(KSIRKSKINEDITOR_LOG) << event->scenePos();
-  emit placed(this, event->scenePos());
+  Q_EMIT placed(this, event->scenePos());
   QGraphicsItem::mouseReleaseEvent(event);
 }
 

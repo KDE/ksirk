@@ -44,10 +44,10 @@ public:
 
   void clear();
 
-public slots:
+public Q_SLOTS:
   void oneArrived(AnimSprite* sprite);
 
-signals:
+Q_SIGNALS:
   void arrived(AnimSpritesGroup*);
 
 private:

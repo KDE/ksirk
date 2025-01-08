@@ -45,7 +45,7 @@ public:
   /** static method to retrive the singleton as variable */
   static AnimSpritePool& changeable();
 
-private slots:
+private Q_SLOTS:
   void update();
 
 private:

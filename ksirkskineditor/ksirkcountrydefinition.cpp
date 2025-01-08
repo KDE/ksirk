@@ -54,7 +54,7 @@ void KsirkCountryDefinitionWidget::initWith(const Country* country)
   centery->setValue(country->centralPoint().y());
   
   neighbourslist->clear();
-  foreach(Country* neighbour, country->neighbours())
+  for(Country* neighbour: country->neighbours())
   {
     neighbourslist->addItem(neighbour->name());
   }
