@@ -2,13 +2,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2021, 2022.
+# SPDX-FileCopyrightText: 2021, 2022, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-22 00:37+0000\n"
-"PO-Revision-Date: 2022-01-11 13:26+0400\n"
+"PO-Revision-Date: 2025-01-18 17:11+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -690,7 +691,7 @@ msgstr "باكستان"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Papouasie"
-msgstr ""
+msgstr "بابوا"
 
 #. i18n: file skins/default/Data/world.desktop line 338
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -1064,19 +1065,17 @@ msgid "Next Player"
 msgstr "التالي اللاعب"
 
 #: decoratedgameframe.cpp:103
-#, fuzzy, kde-format
-#| msgid "Details"
+#, kde-format
 msgctxt "@action"
 msgid "Details"
 msgstr "التفاصيل"
 
 #: decoratedgameframe.cpp:106 kgamewin.cpp:332 kgamewin.cpp:1214
 #: kgamewin.cpp:1226 kgamewin.cpp:2383
-#, fuzzy, kde-format
-#| msgid "Goal"
+#, kde-format
 msgctxt "@action"
 msgid "Goal"
-msgstr "الهدف"
+msgstr "هدف"
 
 #: decoratedgameframe.cpp:138 decoratedgameframe.cpp:394
 #, kde-format
@@ -1109,25 +1108,22 @@ msgid "Auto Attack"
 msgstr "لا شيء إلى!"
 
 #: decoratedgameframe.cpp:169
-#, fuzzy, kde-format
-#| msgid "Move 1"
+#, kde-format
 msgctxt "@action"
 msgid "Move 1"
-msgstr "حرك 1"
+msgstr "انقل 1"
 
 #: decoratedgameframe.cpp:172
-#, fuzzy, kde-format
-#| msgid "Move 5"
+#, kde-format
 msgctxt "@action"
 msgid "Move 5"
-msgstr "حرك 5"
+msgstr "انقل 5"
 
 #: decoratedgameframe.cpp:175
-#, fuzzy, kde-format
-#| msgid "Move 10"
+#, kde-format
 msgctxt "@action"
 msgid "Move 10"
-msgstr "حرك 10"
+msgstr "انقل 10"
 
 #: decoratedgameframe.cpp:400
 #, kde-format
@@ -1245,9 +1241,9 @@ msgstr "رجاء نوع بوصة منفذ رقم يعمل إلى:"
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: Dialogs/newGameDialog.ui:103 Dialogs/newGameSummary.ui:41
-#, fuzzy, kde-format
+#, kde-format
 msgid "Skin:"
-msgstr "السّمة"
+msgstr "السطح:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, skinCombo)
 #: Dialogs/newGameDialog.ui:113
@@ -1275,9 +1271,9 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, goalGroup)
 #: Dialogs/newGameDialog.ui:150
-#, fuzzy, kde-format
+#, kde-format
 msgid "Goal Type"
-msgstr "الهدف النوع"
+msgstr "نوع الهدف"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, radioWorld)
 #: Dialogs/newGameDialog.ui:156
@@ -1327,10 +1323,9 @@ msgstr "ألغِ"
 #. i18n: ectx: property (text), widget (QPushButton, nextButton)
 #: Dialogs/newGameDialog.ui:250 Dialogs/qplayersetupdialog.ui:153
 #: Dialogs/tcpconnectwidget.ui:125
-#, fuzzy, kde-format
-#| msgid "Next >>"
+#, kde-format
 msgid "Next"
-msgstr "التالي >>"
+msgstr "التالي"
 
 #: Dialogs/newGameDialogImpl.cpp:128 newgamesetup.cpp:44
 #, fuzzy, kde-format
@@ -1342,8 +1337,7 @@ msgstr "الجلود دليل ليس موجود تحقّق تثبيت متابع
 #: Dialogs/newGameDialogImpl.cpp:129 GameLogic/aiplayer.cpp:506
 #: newgamesetup.cpp:45 Sprites/skinSpritesData.cpp:89
 #: Sprites/skinSpritesData.cpp:105
-#, fuzzy, kde-format
-#| msgid "Fatal Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "خطأ فادح"
@@ -1405,14 +1399,13 @@ msgstr "الشبكة"
 #. i18n: ectx: property (text), widget (QPushButton, previousButton)
 #: Dialogs/newGameSummary.ui:226 Dialogs/qplayersetupdialog.ui:146
 #: Dialogs/tcpconnectwidget.ui:118
-#, fuzzy, kde-format
-#| msgid "<< Previous"
+#, kde-format
 msgid "Previous"
-msgstr "<< السابق"
+msgstr "السابق"
 
 #. i18n: ectx: property (text), widget (QPushButton, finishButton)
 #: Dialogs/newGameSummary.ui:236
-#, fuzzy, kde-format
+#, kde-format
 msgid "Start"
 msgstr "ابدأ"
 
@@ -1528,7 +1521,7 @@ msgstr "اخرج"
 #: Dialogs/tcpconnectwidget.ui:71
 #, kde-format
 msgid "localhost"
-msgstr ""
+msgstr "المضيف المحلي"
 
 #: GameLogic/aiplayer.cpp:504
 #, fuzzy, kde-format
@@ -1546,8 +1539,7 @@ msgstr[4] "خطأ لا مُنتقى بينما حاسوب إلى هذا هو خ�
 msgstr[5] "خطأ لا مُنتقى بينما حاسوب إلى هذا هو خلل عند."
 
 #: GameLogic/gameautomaton.cpp:303
-#, fuzzy, kde-format
-#| msgid "Network Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Network Configuration"
 msgstr "ضبط الشبكة"
@@ -1581,9 +1573,9 @@ msgid "%1 (%2) joined game ; waiting for %3 players to connect"
 msgstr "لعبة يجري الإنتظار... لـ إلى اتصال"
 
 #: GameLogic/gameautomaton.cpp:1468
-#, fuzzy, kde-format
+#, kde-format
 msgid "Please choose another name."
-msgstr "رجاء اختيار الاسم"
+msgstr "فضلًا اختر اسمًا آخرًا."
 
 #: GameLogic/gameautomaton.cpp:1468
 #, fuzzy, kde-format
@@ -1632,22 +1624,19 @@ msgid "Starting a New Game or Exit."
 msgstr "جاري التشغيل a جديد لعبة أو خروج."
 
 #: GameLogic/gameautomaton.cpp:1625
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Game"
 msgstr "لعبة جديدة"
 
 #: GameLogic/gameautomaton.cpp:1626
-#, fuzzy, kde-format
-#| msgid "Exit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Exit"
 msgstr "اخرج"
 
 #: GameLogic/gameautomaton.cpp:1627
-#, fuzzy, kde-format
-#| msgid "Do Nothing"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Nothing"
 msgstr "لا تفعل شيئًا"
@@ -1721,10 +1710,10 @@ msgid ""
 msgstr "أنت غير صالح كلمة مرور."
 
 #: GameLogic/gameautomaton.cpp:2387
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Invalid Password"
-msgstr "غير صحيح كلمة مرور!"
+msgstr "كلمة سر غير صحيحة"
 
 #: GameLogic/gameautomaton.cpp:2588
 #, fuzzy, kde-format
@@ -1820,8 +1809,7 @@ msgstr[4] "بوصة 2"
 msgstr[5] "بوصة 2"
 
 #: GameLogic/goal.cpp:285
-#, fuzzy, kde-format
-#| msgid " and "
+#, kde-format
 msgctxt "@item:intext country list separator of last item"
 msgid " and "
 msgstr " و "
@@ -1975,7 +1963,7 @@ msgstr "العرض الحالي"
 #, kde-format
 msgctxt "@action"
 msgid "Contextual Help"
-msgstr ""
+msgstr "المساعدة السياقية"
 
 #: kgamewin.cpp:351
 #, fuzzy, kde-format
@@ -2062,10 +2050,10 @@ msgid "Before you quit, do you want to save your game?"
 msgstr "قبل اخرج إلى حفظ لعبة?"
 
 #: kgamewin.cpp:999
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Game"
-msgstr "لعبة جديدة"
+msgstr "حمَل لعبة"
 
 #: kgamewin.cpp:1037
 #, fuzzy, kde-format
@@ -2201,10 +2189,10 @@ msgid "New game confirmation"
 msgstr "جديد لعبة تأكيد"
 
 #: kgamewin.cpp:2547
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
-msgstr "ابدأ لعبة جديدة"
+msgstr "ابدأ اللعبة جديدة"
 
 #: kgamewin.cpp:2803
 msgid "<b>KsirK quick Introduction</b>"
@@ -2250,11 +2238,10 @@ msgid "Cannot save when waiting for a defense."
 msgstr ""
 
 #: kgamewinslots.cpp:441
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Game"
-msgstr "لعبة جديدة"
+msgstr "احفظ لعبة"
 
 #: kgamewinslots.cpp:445
 #, kde-format
@@ -2343,8 +2330,7 @@ msgid "Stop Auto-Defense"
 msgstr "لا شيء إلى!"
 
 #: krightdialog.cpp:298
-#, fuzzy, kde-format
-#| msgid "Valid"
+#, kde-format
 msgctxt "@action:button"
 msgid "Valid"
 msgstr "صالح"
@@ -2353,14 +2339,13 @@ msgstr "صالح"
 #, kde-format
 msgctxt "@action:button"
 msgid "Recycle"
-msgstr ""
+msgstr "إعادة تدوير"
 
 #: krightdialog.cpp:300
-#, fuzzy, kde-format
-#| msgid "Done"
+#, kde-format
 msgctxt "@action:button"
 msgid "Done"
-msgstr "تمّت"
+msgstr "تمّ"
 
 #: krightdialog.cpp:327
 #, fuzzy, kde-format
@@ -2405,11 +2390,10 @@ msgid "<font color=\"blue\">lost armies: %1</font>"
 msgstr "الـ<font color=\"blue\"></font>"
 
 #: ksirkConfigDialog.cpp:37
-#, fuzzy, kde-format
-#| msgid "Preferences"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Preferences"
-msgstr "التفضيلات"
+msgstr "تفضيلات"
 
 #. i18n: ectx: label, entry (spritesSpeed), group (General)
 #: ksirksettings.kcfg:9
@@ -2437,7 +2421,7 @@ msgstr ""
 
 #. i18n: ectx: label, entry (Theme), group (General)
 #: ksirksettings.kcfg:25
-#, fuzzy, kde-format
+#, kde-format
 msgid "The graphical theme to be used."
 msgstr "السمة الرسومية المستخدمة."
 
@@ -2498,9 +2482,9 @@ msgid "Nemanja Hirsl"
 msgstr ""
 
 #: main.cpp:51
-#, fuzzy, kde-format
+#, kde-format
 msgid "Current maintainer"
-msgstr "المشرف الحالي"
+msgstr "الصائن الحاليّ"
 
 #: main.cpp:52
 #, fuzzy, kde-format
@@ -2559,7 +2543,7 @@ msgstr "انضم شبكة لعبة"
 #: mainMenu.ui:118
 #, kde-format
 msgid "Load…"
-msgstr ""
+msgstr "حمّل..."
 
 #. i18n: ectx: property (text), widget (QPushButton, pbQuit)
 #: mainMenu.ui:138
