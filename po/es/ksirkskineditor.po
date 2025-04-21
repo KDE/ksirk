@@ -1,19 +1,18 @@
-# translation of ksirkskineditor.po to Spanish
-# Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
+# Spanish translations for ksirkskineditor.po package.
+# Copyright (C) 2025 This_file_is_part_of_KDE
+# This file is distributed under the same license as the ksirk package.
 #
-# Sofía Priego <spriego@darksylvania.net>, %Y.
-# SPDX-FileCopyrightText: 2009, 2021, 2024 Eloy Cuadra <ecuadra@eloihr.net>
-# Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2009.
-# Huever, 2009.
-# Kira J. Fernandez <kirajfdez@gmail.com>, 2010.
+# SPDX-FileCopyrightText: 2009, 2021, 2025 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2009 Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
+# SPDX-FileCopyrightText: 2010 Kira J. Fernandez <kirajfdez@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Sofía Priego <spriego@darksylvania.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-07 00:37+0000\n"
-"PO-Revision-Date: 2024-05-12 02:38+0100\n"
-"Last-Translator: Sofía Priego <spriego@darksylvania.net>\n"
+"PO-Revision-Date: 2025-04-20 12:34+0100\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -2238,27 +2237,3 @@ msgstr "Error - Datos de texto del tema desconocidos: "
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "Error fatal"
-
-#~ msgid "Exit Anyway?"
-#~ msgstr "¿Salir igualmente?"
-
-#~ msgid "Do not quit"
-#~ msgstr "No salir"
-
-#~ msgid "Really delete country?"
-#~ msgstr "¿Borrar país?"
-
-#~ msgid "Really delete continent?"
-#~ msgstr "¿Borrar continente?"
-
-#~ msgid "Really delete goal?"
-#~ msgstr "¿Borrar objetivo?"
-
-#~ msgid "Really delete nationality?"
-#~ msgstr "¿Borrar nacionalidad?"
-
-#~ msgid "Error"
-#~ msgstr "Error"
-
-#~ msgid "KsirK Skin Editor Preferences"
-#~ msgstr "Preferencias del editor de temas para KsirK"

@@ -1,23 +1,20 @@
-# translation of ksirk.po to Spanish
-# Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
+# Spanish translations for ksirk.po package.
+# Copyright (C) 2008-2025 This_file_is_part_of_KDE
+# This file is distributed under the same license as the ksirk package.
 #
-# Jaime Robles <jaime@kde.org>, 2008, 2009.
-# Santi <santi@kde-es.org>, 2008.
-# SPDX-FileCopyrightText: 2008, 2009, 2017, 2021, 2022, 2024 Eloy Cuadra <ecuadra@eloihr.net>
-# SPDX-FileCopyrightText: 2023, 2024, Sofía Priego <spriego@darksylvania.net>
-# santi <santi@kde-es.org>, 2009.
-# Huever, 2009.
-# Kira J. Fernandez <kirajfdez@gmail.com>, 2010, 2011.
-# Rocio Gallego <traducciones@rociogallego.com>, 2013.
-# Sofía Priego <spriego@darksylvania.net>, %Y.
+# SPDX-FileCopyrightText: 2008, 2009 Jaime Robles <jaime@kde.org>
+# SPDX-FileCopyrightText: 2008, 2009 Santiago Fernández Sancho <santi@kde-es.org>
+# SPDX-FileCopyrightText: 2008, 2009, 2017, 2021, 2022, 2025 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2010, 2011 Kira J. Fernandez <kirajfdez@gmail.com>
+# SPDX-FileCopyrightText: 2013 Rocio Gallego <traducciones@rociogallego.com>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Sofía Priego <spriego@darksylvania.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-22 00:37+0000\n"
-"PO-Revision-Date: 2024-05-12 01:52+0100\n"
-"Last-Translator: Sofía Priego <spriego@darksylvania.net>\n"
+"PO-Revision-Date: 2025-04-20 12:34+0100\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -1285,7 +1282,7 @@ msgstr "Una lista desplegable con todos los temas disponibles."
 #: Dialogs/newGameDialog.ui:123
 #, kde-format
 msgid "Download New Skins…"
-msgstr "Descargar nuevos temas..."
+msgstr "Descargar nuevos temas…"
 
 #. i18n: ectx: property (configFile), widget (KNSWidgets::Button, ghnsbutton)
 #: Dialogs/newGameDialog.ui:126
@@ -1799,14 +1796,14 @@ msgstr "Error: no hay jugadores a los que destruir"
 #: GameLogic/goal.cpp:231
 #, kde-format
 msgid "<br>%1 is still alive…"
-msgstr "<br>%1 todavía vive..."
+msgstr "<br>%1 todavía vive…"
 
 #: GameLogic/goal.cpp:238 GameLogic/goal.cpp:252
 #, kde-format
 msgid "<br>%2, you still have 1 country to conquer…"
 msgid_plural "<br>%2, you still have %1 countries to conquer…"
-msgstr[0] "<br>%2, todavía tienes que conquistar 1 país..."
-msgstr[1] "<br>%2, todavía tienes que conquistar %1 países..."
+msgstr[0] "<br>%2, todavía tienes que conquistar 1 país…"
+msgstr[1] "<br>%2, todavía tienes que conquistar %1 países…"
 
 #: GameLogic/goal.cpp:242
 #, kde-format
@@ -1826,10 +1823,10 @@ msgid_plural ""
 "armies on %3 of them…"
 msgstr[0] ""
 "<br>%2, tienes suficientes países, pero todavía debes situar más de 1 "
-"ejército en %3 de ellos..."
+"ejército en %3 de ellos…"
 msgstr[1] ""
 "<br>%2, tienes suficientes países, pero todavía debes situar más de %1 "
-"ejércitos en %3 de ellos..."
+"ejércitos en %3 de ellos…"
 
 #: GameLogic/goal.cpp:269
 #, kde-format
@@ -1872,7 +1869,7 @@ msgstr "Mostrar objetivo"
 #: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:170
 #, kde-format
 msgid "No message…"
-msgstr "Ningún mensaje..."
+msgstr "Ningún mensaje…"
 
 #: GameLogic/KsirkChatModel.cpp:73
 #, kde-format
@@ -2045,7 +2042,7 @@ msgstr "<font color=\"red\">%1 ha conquistado %2 de %3</font>"
 #: kgamewin.cpp:728
 #, kde-format
 msgid "%1, you are defeated! Bye, bye…"
-msgstr "%1, ¡has sido derrotado! Adiós..."
+msgstr "%1, ¡has sido derrotado! Adiós…"
 
 #: kgamewin.cpp:800
 #, kde-format
@@ -2256,7 +2253,7 @@ msgstr ""
 msgid "Start a new game or join a network game with the menu or the toolbar…"
 msgstr ""
 "Empieza una nueva partida o únete a una partida de red con el menú o la "
-"barra de herramientas..."
+"barra de herramientas…"
 
 #: kgamewin.cpp:2815
 msgid ""
@@ -2343,7 +2340,7 @@ msgstr "<b><u>Detalles del país</u></b>"
 #: krightdialog.cpp:170
 #, kde-format
 msgid "<i>Fighting in progress…</i>"
-msgstr "<i>Lucha en curso...</i>"
+msgstr "<i>Lucha en curso…</i>"
 
 #: krightdialog.cpp:222
 #, kde-format
@@ -2585,7 +2582,7 @@ msgstr "Unirse a una partida en red TCP/IP estándar"
 #: mainMenu.ui:118
 #, kde-format
 msgid "Load…"
-msgstr "Cargar..."
+msgstr "Cargar…"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbQuit)
 #: mainMenu.ui:138
@@ -2652,675 +2649,3 @@ msgstr "Error - Datos de tipo entero para el tema desconocidos: "
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Error - Datos de tipo cadena para el tema desconocidos: "
-
-#~ msgid "Player number %1, please enter your name and choose your nation:"
-#~ msgstr "Jugador número %1, introduce tu nombre y elige tu país:"
-
-#~ msgid "%1 won! Do you want to play again?"
-#~ msgstr "¡%1 ha ganado! ¿Quieres jugar otra vez?"
-
-#~ msgid "Goal"
-#~ msgstr "Objetivo"
-
-#~ msgid "Next Player"
-#~ msgstr "Siguiente jugador"
-
-#~ msgid "Fatal Error!"
-#~ msgstr "Error fatal"
-
-#~ msgid "KsirK - New game properties"
-#~ msgstr "KsirK: propiedades de la nueva partida"
-
-#~ msgid "Player Setup"
-#~ msgstr "Configuración del jugador"
-
-#~ msgid "KsirK - Network configuration"
-#~ msgstr "KsirK - Configuración de red"
-
-#~ msgid "Do nothing"
-#~ msgstr "No hacer nada"
-
-#~ msgid "KsirK - Error!"
-#~ msgstr "Ksirk - Error"
-
-#~ msgid "Really Next Player?"
-#~ msgstr "¿Realmente desea que continúe el siguiente jugador?"
-
-#~ msgid "Error!"
-#~ msgstr "Error"
-
-#~ msgctxt "@title:window"
-#~ msgid "KsirK - Load Game"
-#~ msgstr "KsirK - Cargar partida"
-
-#~ msgctxt "@title:window"
-#~ msgid "KsirK - Save Game"
-#~ msgstr "KsirK - Guardar partida"
-
-#~ msgid "Load..."
-#~ msgstr "Cargar..."
-
-#~ msgid "KsirK Preferences"
-#~ msgstr "Preferencias de KsirK"
-
-#~ msgid "KsirK - Cannot load!"
-#~ msgstr "KsirK - ¡No se ha podido cargar!"
-
-#~ msgid "KsirK - Error"
-#~ msgstr "KsirK - Error"
-
-#~ msgid "Nickname"
-#~ msgstr "Apodo"
-
-#~ msgid "Skin"
-#~ msgstr "Apariencia"
-
-#~ msgid "Nb players"
-#~ msgstr "Nº jugadores:"
-
-#~ msgid "Connection to the Jabber Network"
-#~ msgstr "Conexión a la red Jabber"
-
-#~ msgid "Jabber ID:"
-#~ msgstr "ID de Jabber:"
-
-#~ msgid "kleag@kdetalk.net"
-#~ msgstr "kleag@kdetalk.net"
-
-#~ msgid "12345678"
-#~ msgstr "12345678"
-
-#~ msgid "Password:"
-#~ msgstr "Contraseña:"
-
-#~ msgid "Connect"
-#~ msgstr "Conectar"
-
-#~ msgid "State:"
-#~ msgstr "Estado:"
-
-#~ msgid "Joining a KsirK Jabber Chatroom"
-#~ msgstr "Unirse a la charla Jabber de KsirK"
-
-#~ msgid "Room JID:"
-#~ msgstr "JID de la sala:"
-
-#~ msgid "Nickname:"
-#~ msgstr "Apodo:"
-
-#~ msgid "Room Password:"
-#~ msgstr "Contraseña de la sala:"
-
-#~ msgid "Join Room"
-#~ msgstr "Unirse a la sala"
-
-#~ msgid "Games in the Room"
-#~ msgstr "Partidas en la sala"
-
-#~ msgid "Start a New Game"
-#~ msgstr "Iniciar una nueva partida"
-
-#~ msgid "Join Selected Game"
-#~ msgstr "Unirse a la partida seleccionada"
-
-#~ msgid "Load a Saved Game..."
-#~ msgstr "Cargar una partida guardada..."
-
-#~ msgid ""
-#~ "<b>Note:</b> Playing over the Jabber network is an experimental feature "
-#~ "in KsirK.<br/>Particularly, the distribution of armies at game beginning "
-#~ "is very slow (expect something like one minute)."
-#~ msgstr ""
-#~ "<b>Nota:</b> Jugar sobre la red Jabber es una funcionalidad experimental "
-#~ "en KsirK.<br/>En particular, la distribución de ejércitos al inicio de la "
-#~ "partida es muy lenta (puede llevar alrededor de un minuto)."
-
-#~ msgid "Please connect first."
-#~ msgstr "Primero conéctese."
-
-#~ msgid "Jabber Error"
-#~ msgstr "Error de Jabber"
-
-#~ msgid ""
-#~ "SSL support could not be initialized for account %1. This is most likely "
-#~ "because the QCA TLS plugin is not installed on your system."
-#~ msgstr ""
-#~ "No se puede iniciar el soporte SSL en la cuenta %1, posiblemente porque "
-#~ "el complemento QCA TLS no está instalado en su sistema."
-
-#~ msgid "Jabber SSL Error"
-#~ msgstr "Error SSL de Jabber"
-
-#~ msgid "The host name does not match the one in the certificate."
-#~ msgstr "El nombre de servidor no coincide con el del certificado."
-
-#~ msgid "The certificate is invalid."
-#~ msgstr "El certificado no es válido."
-
-#~ msgid "No certificate was presented."
-#~ msgstr "No se presentó ningún certificado."
-
-#~ msgid "The Certificate Authority rejected the certificate."
-#~ msgstr "La autoridad certificadora rechazó el certificado."
-
-#~ msgid "The certificate is not trusted."
-#~ msgstr "El certificado no es de confianza"
-
-#~ msgid "The signature is invalid."
-#~ msgstr "La firma es inválida."
-
-#~ msgid "The Certificate Authority is invalid."
-#~ msgstr "La autoridad de certificación es inválida."
-
-#~ msgid "Invalid certificate purpose."
-#~ msgstr "Propósito del certificado no válido."
-
-#~ msgid "The certificate is self-signed."
-#~ msgstr "El certificado está firmado por sí mismo."
-
-#~ msgid "The certificate has been revoked."
-#~ msgstr "El certificado ha sido revocado."
-
-#~ msgid "Maximum certificate chain length was exceeded."
-#~ msgstr "El tamaño máximo de la cadena del certificado se ha excedido."
-
-#~ msgid "The certificate has expired."
-#~ msgstr "El certificado ha expirado."
-
-#~ msgid "The Certificate Authority has expired."
-#~ msgstr "La autorización de la certificación ha expirado."
-
-#~ msgid "Validity is unknown."
-#~ msgstr "Validez desconocida."
-
-#~ msgid ""
-#~ "<qt><p>The identity and the certificate of server %1 could not be "
-#~ "validated for account %2:</p><p>%3</p><p>%4</p><p>Do you want to continue?"
-#~ "</p></qt>"
-#~ msgstr ""
-#~ "<qt><p>La identidad y el certificado del servidor %1 no deberían "
-#~ "validarse para la cuenta %2:</p><p>%3</p><p>%4</p><p>¿Desea continuar?</"
-#~ "p></qt>"
-
-#~ msgid ""
-#~ "<qt><p>The certificate of server %1 could not be validated for account "
-#~ "%2: %3</p><p>Do you want to continue?</p></qt>"
-#~ msgstr ""
-#~ "<qt><p>El certificado del servidor %1 no se puede validar en la cuenta "
-#~ "%2: %3</p> <p>¿Desea continuar?</p></qt>"
-
-#~ msgid "Jabber Connection Certificate Problem"
-#~ msgstr "Problema con el certificado de conexión de Jabber"
-
-#~ msgid ""
-#~ "An encrypted connection with the Jabber server could not be established."
-#~ msgstr "No se pudo establecer una conexión cifrada con el servidor Jabber."
-
-#~ msgid "Jabber Connection Error"
-#~ msgstr "Error de conexión Jabber"
-
-#~ msgid "Malformed packet received."
-#~ msgstr "Recibido paquete defectuoso."
-
-#~ msgid "There was an unrecoverable error in the protocol."
-#~ msgstr "Ha habido un error irrecuperable en el protocolo."
-
-#~ msgid "Generic stream error."
-#~ msgstr "Error de cadena genérica."
-
-#~ msgid "There was a conflict in the information received."
-#~ msgstr "Ha habido un conflicto en la información recibida."
-
-#~ msgid "The stream timed out."
-#~ msgstr "Tiempo de espera agotado en la secuencia."
-
-#~ msgid "Internal server error."
-#~ msgstr "Error interno del servidor."
-
-#~ msgid "Stream packet received from an invalid address."
-#~ msgstr "Recibida secuencia de paquetes de una dirección inválida."
-
-#~ msgid "Malformed stream packet received."
-#~ msgstr "Recibida una secuencia de paquetes defectuosos."
-
-#~ msgid "Policy violation in the protocol stream."
-#~ msgstr "Violación de la política del protocolo de secuencia."
-
-#~ msgid "Resource constraint."
-#~ msgstr "Recurso restringido."
-
-#~ msgid "System shutdown."
-#~ msgstr "Apagado del equipo."
-
-#~ msgid "Unknown reason."
-#~ msgstr "Motivo desconocido."
-
-#~ msgid "There was an error in the protocol stream: %1"
-#~ msgstr "Ocurrió un error en el protocolo de secuencia: %1"
-
-#~ msgid "Host not found."
-#~ msgstr "Máquina no encontrada."
-
-#~ msgid "Address is already in use."
-#~ msgstr "La dirección ya está en uso."
-
-#~ msgid "Cannot recreate the socket."
-#~ msgstr "No se puede volver a crear el socket."
-
-#~ msgid "Cannot bind the socket again."
-#~ msgstr "No se puede enlazar el socket de nuevo."
-
-#~ msgid "Socket is already connected."
-#~ msgstr "El socket ya está conectado."
-
-#~ msgid "Socket is not connected."
-#~ msgstr "El socket no está conectado."
-
-#~ msgid "Socket is not bound."
-#~ msgstr "El socket no está enlazado."
-
-#~ msgid "Socket has not been created."
-#~ msgstr "El socket no ha sido creado."
-
-#~ msgid ""
-#~ "The socket operation would block. You should not see this error: please "
-#~ "use \"Report Bug\" from the Help menu."
-#~ msgstr ""
-#~ "La operación de conexión se bloquearía. No debería ver este error: "
-#~ "utilice «informe de fallo» del menú Ayuda."
-
-#~ msgid "Connection refused."
-#~ msgstr "Conexión rechazada."
-
-#~ msgid "Connection timed out."
-#~ msgstr "La conexión ha expirado."
-
-#~ msgid "Connection attempt already in progress."
-#~ msgstr "Intento de conexión ya en progreso."
-
-#~ msgid "Network failure."
-#~ msgstr "Fallo de la red."
-
-#~ msgid "Operation is not supported."
-#~ msgstr "La operación no está reconocida."
-
-#~ msgid "Socket timed out."
-#~ msgstr "Conexión caducada."
-
-#~ msgid "There was a connection error: %1"
-#~ msgstr "Ocurrió un error de conexión: %1"
-
-#~ msgid "Unknown host."
-#~ msgstr "Servidor desconocido."
-
-#~ msgid "Could not connect to a required remote resource."
-#~ msgstr "No se pudo conectar con la fuente remota requerida."
-
-#~ msgid ""
-#~ "It appears we have been redirected to another server; I do not know how "
-#~ "to handle this."
-#~ msgstr ""
-#~ "Parece que hemos sido redireccionados a otro servidor, no sé como manejar "
-#~ "esta situación."
-
-#~ msgid "Unsupported protocol version."
-#~ msgstr "Versión no permitida del protocolo."
-
-#~ msgid "Unknown error."
-#~ msgstr "Error desconocido."
-
-#~ msgid "There was a negotiation error: %1"
-#~ msgstr "Ocurrió un error de negociación: %1"
-
-#~ msgid "Server rejected our request to start the TLS handshake."
-#~ msgstr "El servidor rechazó nuestra solicitud de iniciar el protocolo TLS."
-
-#~ msgid "Failed to establish a secure connection."
-#~ msgstr "No se pudo establecer una conexión segura."
-
-#~ msgid "There was a Transport Layer Security (TLS) error: %1"
-#~ msgstr "Ocurrió un error con la capa de transporte seguro (TSL) : %1"
-
-#~ msgid "Login failed with unknown reason."
-#~ msgstr "Falló el acceso por un motivo desconocido."
-
-#~ msgid "No appropriate authentication mechanism available."
-#~ msgstr "No está disponible un mecanismo adecuado de autenticación."
-
-#~ msgid "Bad SASL authentication protocol."
-#~ msgstr "Protocolo de autenticación SASL erróneo."
-
-#~ msgid "Server failed mutual authentication."
-#~ msgstr "El servidor no pudo realizar la autenticación mutua."
-
-#~ msgid "Encryption is required but not present."
-#~ msgstr "Se necesita codificación pero no está presente."
-
-#~ msgid "Invalid user ID."
-#~ msgstr "Identificación de usuario no válida."
-
-#~ msgid "Invalid mechanism."
-#~ msgstr "Mecanismo inválido."
-
-#~ msgid "Invalid realm."
-#~ msgstr "Dominio no válido."
-
-#~ msgid "Mechanism too weak."
-#~ msgstr "Mecanismo demasiado débil."
-
-#~ msgid "Wrong credentials supplied. (check your user ID and password)"
-#~ msgstr ""
-#~ "Se dieron credenciales erróneas (compruebe su identificación de usuario y "
-#~ "contraseña)."
-
-#~ msgid "Temporary failure, please try again later."
-#~ msgstr "Fallo temporal, inténtelo más tarde."
-
-#~ msgid "There was an error authenticating with the server: %1"
-#~ msgstr "Ocurrió un error de autenticación con el servidor: %1"
-
-#~ msgid "Transport Layer Security (TLS) problem."
-#~ msgstr "Problema con la capa de transporte seguro (TLS)."
-
-#~ msgid "Simple Authentication and Security Layer (SASL) problem."
-#~ msgstr "Problema con la autenticación sencilla y la capa segura (SASL)."
-
-#~ msgid "There was an error in the security layer: %1"
-#~ msgstr "Ocurrió un error en la capa de seguridad: %1"
-
-#~ msgid "No permission to bind the resource."
-#~ msgstr "Sin permiso de enlace con el recurso."
-
-#~ msgid "The resource is already in use."
-#~ msgstr "El recurso ya está en uso."
-
-#~ msgid "Could not bind a resource: %1"
-#~ msgstr "No se puede enlazar con el recurso: %1"
-
-#~ msgid "Connection problem with Jabber server %1"
-#~ msgstr "Problema al conectarse al servidor Jabber: %1"
-
-#~ msgid ""
-#~ "The Jabber user %1 removed %2's subscription to him/her. This account "
-#~ "will no longer be able to view his/her online/offline status. Do you want "
-#~ "to delete the contact?"
-#~ msgstr ""
-#~ "El usuario Jabber %1 eliminó su suscripción de %2. Esta cuenta ya no "
-#~ "estará disponible para ver su estado de conexión ¿Desea borrar el "
-#~ "contacto?"
-
-#~ msgid "Notification"
-#~ msgstr "Notificación"
-
-#~ msgid "Keep"
-#~ msgstr "Mantener"
-
-#~ msgid "A password is required to join the room %1."
-#~ msgstr "Se requiere contraseña para unirse a la habitación %1."
-
-#~ msgid "Error trying to join %1: nickname %2 is already in use"
-#~ msgstr "Error intentando unirse a %1: el apodo %2 ya está en uso"
-
-#~ msgid "Provide your nickname"
-#~ msgstr "Indique su apodo"
-
-#~ msgid "You cannot join the room %1 because you have been banned"
-#~ msgstr ""
-#~ "No puede unirse a la habitación %1 porque se le ha prohibido el acceso"
-
-#~ msgid "Jabber Group Chat"
-#~ msgstr "Charla en grupo de Jabber"
-
-#~ msgid ""
-#~ "You cannot join the room %1 because the maximum number of users has been "
-#~ "reached"
-#~ msgstr ""
-#~ "No puede unirse a la habitación %1 porque se ha alcanzado el número "
-#~ "máximo de jugadores"
-
-#~ msgid "No reason given by the server"
-#~ msgstr "El servidor no ha proporcionado ninguna razón"
-
-#~ msgid ""
-#~ "There was an error processing your request for groupchat %1. (Reason: %2, "
-#~ "Code %3)"
-#~ msgstr ""
-#~ "Se produjo un error al procesar su petición para el grupo de charla %1 "
-#~ "(razón: %2, código %3)."
-
-#~ msgid ""
-#~ "An error occurred while trying to remove the account:\n"
-#~ "%1"
-#~ msgstr ""
-#~ "Se produjo un error mientras intentaba eliminar la cuenta:\n"
-#~ "%1"
-
-#~ msgid "Jabber Account Unregistration"
-#~ msgstr "Eliminación del registro de la cuenta Jabber"
-
-#~ msgid "You cannot see each others' status."
-#~ msgstr "No puede ver el estado de los demás."
-
-#~ msgid ""
-#~ "You can see this contact's status, but he/she cannot see your status."
-#~ msgstr "Puede ver el estado de este contacto, pero él no puede ver el suyo."
-
-#~ msgid "This contact can see your status, but you cannot see his/her status."
-#~ msgstr "Este contacto puede ver su estado, pero usted no puede ver el suyo."
-
-#~ msgid "You can see each others' status."
-#~ msgstr "Puede ver el estado de los demás."
-
-#~ msgid "Client"
-#~ msgstr "Cliente"
-
-#~ msgid "Timestamp"
-#~ msgstr "Marca de tiempo"
-
-#~ msgid "Message"
-#~ msgstr "Mensaje"
-
-#~ msgid "Downloading of Jabber contact photo failed."
-#~ msgstr "Ha fallado la descarga de la imagen de contacto Jabber."
-
-#~ msgid "Groupchat bookmark"
-#~ msgstr "Marcador de grupo de charla"
-
-#~ msgid "Authorization"
-#~ msgstr "Autorización"
-
-#~ msgid "(Re)send Authorization To"
-#~ msgstr "(Re)enviar autorización a"
-
-#~ msgid "(Re)request Authorization From"
-#~ msgstr "(Re)solicitar autorización de"
-
-#~ msgid "Remove Authorization From"
-#~ msgstr "Eliminar autorización de"
-
-#~ msgid "Set Availability"
-#~ msgstr "Establecer disponibilidad"
-
-#~ msgid "Online"
-#~ msgstr "Conectado"
-
-#~ msgid "Free to Chat"
-#~ msgstr "Libre para charlar"
-
-#~ msgid "Away"
-#~ msgstr "Ausente"
-
-#~ msgid "Extended Away"
-#~ msgstr "Ausente extendido"
-
-#~ msgid "Do Not Disturb"
-#~ msgstr "No molestar"
-
-#~ msgid "Invisible"
-#~ msgstr "Invisible"
-
-#~ msgid "Select Resource"
-#~ msgstr "Seleccionar recurso"
-
-#~ msgid "Automatic (best/default resource)"
-#~ msgstr "Automático (mejor/recurso predefinido)"
-
-#~ msgid "Voice call"
-#~ msgstr "Llamada de voz"
-
-#~ msgid "The original message is: <i>\" %1 \"</i><br />"
-#~ msgstr "El mensaje original es: <i>«%1»</i><br />"
-
-#~ msgid ""
-#~ "<qt><i>%1</i> has invited you to join the conference <b>%2</b><br />"
-#~ "%3<br />If you want to accept and join, just <b>enter your nickname</b> "
-#~ "and press ok<br />If you want to decline, press cancel</qt>"
-#~ msgstr ""
-#~ "<qt><i>%1</i> le ha invitado a unirse a la conferencia <b>%2</b><br />"
-#~ "%3<br />Si desea aceptar y unirse, <b>introduzca su apodo</b> y pulse "
-#~ "aceptar<br />Si desea declinar la invitación, pulse cancelar</qt>"
-
-#~ msgid "Invited to a conference - Jabber Plugin"
-#~ msgstr "Invitado a conferencia - Complemento Jabber"
-
-#~ msgid "Message has been displayed"
-#~ msgstr "El mensaje ha sido mostrado"
-
-#~ msgid "Message has been delivered"
-#~ msgstr "El mensaje ha sido entregado"
-
-#~ msgid "Message stored on the server, contact offline"
-#~ msgstr "Mensaje almacenado en el servidor, contacto desconectado"
-
-#~ msgid "%1 has ended his/her participation in the chat session."
-#~ msgstr "%1 ha finalizado su participación en la sesión de charla."
-
-#~ msgid "Your message could not be delivered: \"%1\", Reason: \"%2\""
-#~ msgstr "Su mensaje no pudo ser enviado: «%1», Motivo: «%2»"
-
-#~ msgid ""
-#~ "Do you also want to remove user %1's authorization to see your status?"
-#~ msgstr ""
-#~ "¿Desea eliminar la autorización para que el usuario %1 vea su estado?"
-
-#~ msgid "Kopete File Transfer"
-#~ msgstr "Transferencia de archivos de Kopete"
-
-#~ msgid ""
-#~ "You have preselected a resource for contact %1, but you still have open "
-#~ "chat windows for this contact. The preselected resource will only apply "
-#~ "to newly opened chat windows."
-#~ msgstr ""
-#~ "Ha preseleccionado un recurso para contactar con %1, pero aún tiene "
-#~ "abiertas ventanas de charla con este contacto. El recurso preseleccionado "
-#~ "solo se aplicará a las nuevas ventanas de charla abiertas."
-
-#~ msgid "Jabber Resource Selector"
-#~ msgstr "Selector de recursos de Jabber"
-
-#~ msgid "Change nickname"
-#~ msgstr "Cambiar apodo"
-
-#~ msgid "Change nickname - Jabber Plugin"
-#~ msgstr "Cambiar apodo - complemento Jabber"
-
-#~ msgid "Please enter the new nickname you want to have in the room <i>%1</i>"
-#~ msgstr ""
-#~ "Introduzca el apodo nuevo que desee utilizar en la habitación <i>%1</i>"
-
-#~ msgid "Choose Account"
-#~ msgstr "Seleccionar cuenta"
-
-#~ msgid "Choose an account to handle the URL %1"
-#~ msgstr "Elija una cuenta para manejar el URL %1"
-
-#~ msgid "Do you want to add '%1' to your contact list?"
-#~ msgstr "¿Desea añadir a %1 a su lista de contactos?"
-
-#~ msgid "Add"
-#~ msgstr "Añadir"
-
-#~ msgid "Do Not Add"
-#~ msgstr "No añadir"
-
-#~ msgid "Do you want to remove '%1' from your contact list?"
-#~ msgstr "¿Desea eliminar a «%1» de su lista de contactos?"
-
-#~ msgid "Remove"
-#~ msgstr "Eliminar"
-
-#~ msgid "Do Not Remove"
-#~ msgstr "No eliminar"
-
-#~ msgid "Please enter your nickname for the room %1"
-#~ msgstr "Introduzca su apodo para la habitación %1"
-
-#~ msgid "You have been invited to %1"
-#~ msgstr "Ha sido invitado a %1"
-
-#~ msgid "Play over Jabber"
-#~ msgstr "Jugar sobre Jabber"
-
-#~ msgid "Play KsirK over the Jabber Network"
-#~ msgstr "Jugar a KsirK sobre la red Jabber"
-
-#~ msgid "Jabber"
-#~ msgstr "Jabber"
-
-#~ msgid ""
-#~ "Allow to connect to a KsirK Jabber Multi User Gaming Room to create new "
-#~ "games or to join present games"
-#~ msgstr ""
-#~ "Permitir conectarse a la habitación de juegos multiusuario Jabber de "
-#~ "KsirK para crear una partida nueva o unirse a las partidas existentes"
-
-#~ msgid "The last used Jabber Id."
-#~ msgstr "El último Id de Jabber utilizado."
-
-#~ msgid "The password of the last used Jabber Id."
-#~ msgstr "La contraseña del último id de Jabber utilizado."
-
-#~ msgid "The last used Jabber groupchat room."
-#~ msgstr "La última habitación de charla de Jabber utilizada."
-
-#~ msgid "The password for last used Jabber groupchat room."
-#~ msgstr ""
-#~ "La contraseña para la última habitación de charla de Jabber utilizada."
-
-#~ msgid "The nickname used in the last used Jabber groupchat room."
-#~ msgstr ""
-#~ "El apodo utilizado en la última habitación de charla de Jabber utilizada."
-
-#~ msgid "Play KsirK over Jabber Network"
-#~ msgstr "Jugar a KsirK sobre la red Jabber"
-
-#~ msgid ""
-#~ "%1 exists.\n"
-#~ "Do you really want to overwrite it?"
-#~ msgstr ""
-#~ "%1 existe.\n"
-#~ "¿Realmente desea sobrescribirlo?"
-
-#~ msgid "Overwrite file?"
-#~ msgstr "¿Sobrescribir archivo?"
-
-#~ msgid "Error"
-#~ msgstr "Error"
-
-#~ msgid "skinDescLabel"
-#~ msgstr "skinDescLabel"
-
-#~ msgid "Ksirk - Error!"
-#~ msgstr "Ksirk - ¡Error!"
-
-#~ msgid "LeftImg"
-#~ msgstr "ImgIzq"
-
-#~ msgid "RightImg"
-#~ msgstr "ImgDcha"
-
-#~ msgid "file to open"
-#~ msgstr "archivo a abrir"
-
-#~ msgid "Wor&ld conquest"
-#~ msgstr "Conquista de&l mundo"
