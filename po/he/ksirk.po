@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ksirk package.
 #
-# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-22 00:37+0000\n"
-"PO-Revision-Date: 2024-10-11 16:21+0300\n"
+"PO-Revision-Date: 2025-04-30 11:07+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1229,13 +1229,13 @@ msgstr "מספר השחקנים הכולל:"
 #: Dialogs/newGameDialog.ui:36
 #, kde-format
 msgid "Spin this to choose the number of players."
-msgstr ""
+msgstr "שינוי של זה יאפשר לבחור את מספר השחקנים."
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, playersNumberEntry)
 #: Dialogs/newGameDialog.ui:39
 #, kde-format
 msgid "A spin box to choose the number of players"
-msgstr ""
+msgstr "תיבת טווח לבחירת מספר השחקנים"
 
 #. i18n: ectx: property (text), widget (QLabel, localPlayersNumberLabel)
 #: Dialogs/newGameDialog.ui:50
@@ -1290,7 +1290,7 @@ msgstr "סוג יעד"
 #: Dialogs/newGameDialog.ui:156
 #, kde-format
 msgid "Choose this for players to have to conquer all the world to win."
-msgstr ""
+msgstr "יש לבחור את זה כדי ששחקנים יצטרכו לכבוש את כל העולם כדי לנצח."
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioWorld)
 #: Dialogs/newGameDialog.ui:159
@@ -1308,7 +1308,7 @@ msgstr "&כיבוש העולם"
 #: Dialogs/newGameDialog.ui:169
 #, kde-format
 msgid "Choose this to have a goal assigned to each player."
-msgstr ""
+msgstr "יש לבחור את זה כדי להקצות יעד לכל שחקן."
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioGoal)
 #: Dialogs/newGameDialog.ui:172
@@ -1316,7 +1316,7 @@ msgstr ""
 msgid ""
 "In this mode, a goal will be assigned to each player, which he will have to "
 "reach in order to win."
-msgstr ""
+msgstr "במצב הזה, מוגדר יעד לכל שחקן שאותו יהיה עליו להשיג כדי לנצח."
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioGoal)
 #: Dialogs/newGameDialog.ui:175
@@ -1447,7 +1447,7 @@ msgstr "לא"
 #: Dialogs/qplayersetupdialog.ui:48 Dialogs/qwaitedplayersetupdialog.ui:33
 #, kde-format
 msgid "Choose your nation"
-msgstr ""
+msgstr "נא לבחור את האומה שלך"
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, nationCombo)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, waitedPlayersCombo)
@@ -1457,6 +1457,8 @@ msgid ""
 "A combo box that lists currently available nations.\n"
 "Choose one of them. It will be your nation during the game"
 msgstr ""
+"תיבה משולבת של האומות שזמינות כרגע.\n"
+"נא לבחור אחת מהן. זאת תהיה האומה שלך במהלך המשחק"
 
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
 #: Dialogs/qplayersetupdialog.ui:76 Dialogs/qwaitedplayersetupdialog.ui:47
@@ -1660,6 +1662,9 @@ msgid ""
 "For the moment, you can only save the game and start a new one or quit.\n"
 "This will be improved in a future version."
 msgstr ""
+"אבד חיבור ללקוח.\n"
+"לבינתיים אפשר רק לשמור את המשחק ולהתחיל אחד חדש או לצאת.\n"
+"בגרסאות העתידיות זה ישתפר."
 
 #: GameLogic/gameautomaton.cpp:1650
 #, kde-format
@@ -1670,7 +1675,7 @@ msgstr "החיבור ללקוח אבד"
 #: GameLogic/gameautomaton.cpp:1652
 #, kde-format
 msgid "Do want to save your game?"
-msgstr ""
+msgstr "לשמור את המשחק שלך?"
 
 #: GameLogic/gameautomaton.cpp:1818 GameLogic/gameautomaton.cpp:2235
 #: kgamewin.cpp:2038 kgamewin.cpp:2133 kgamewin.cpp:2170
