@@ -81,7 +81,7 @@ msgstr ""
 "esta bonificació.\n"
 "\n"
 "La bonificació ha de ser proporcional a la mida del continent i a la "
-"dificultat per a conquerir-lo o mantindre-lo."
+"dificultat per a conquerir-lo o mantindre'l."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:48
@@ -101,7 +101,7 @@ msgstr ""
 "Cliqueu ací per a seleccionar els països que conté este continent.\n"
 "\n"
 "Es mostrarà una llista de tots els països del món i podreu seleccionar-los "
-"utilitzant en ratolí i les tecles «Ctrl» i «Maj»."
+"utilitzant en ratolí i les tecles «Ctrl» i «Majús»."
 
 #. i18n: ectx: property (text), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:56
@@ -523,7 +523,7 @@ msgstr ""
 "Cliqueu ací per a seleccionar els veïns d'este país.\n"
 "\n"
 "Es mostrarà una llista de tots els països del món i podreu seleccionar els "
-"països utilitzant el ratolí i les tecles «Ctrl» i «Maj»."
+"països utilitzant el ratolí i les tecles «Ctrl» i «Majús»."
 
 #. i18n: ectx: property (text), widget (QPushButton, neighboursbutton)
 #: ksirkcountrydefinition.ui:343
@@ -732,10 +732,10 @@ msgid ""
 "i> goal.</p><p>You will be prompted with a list of this world's continents. "
 "Select those to conquer with the mouse and the Ctrl and Shift keys.</p>"
 msgstr ""
-"<p>Cliqueu este botó per a seleccionar els continents a conquerir en un "
-"objectiu <i>Continents</i>.</p><p>Sereu preguntat amb una llista dels "
+"<p>Cliqueu damunt d'este botó per a seleccionar els continents a conquerir "
+"en un objectiu <i>Continents</i>.</p><p>Sereu preguntat amb una llista dels "
 "continents del món. Seleccioneu els que s'ha de conquerir amb el ratolí i "
-"les tecles «Ctrl» i «Maj»,</p>"
+"les tecles «Ctrl» i «Majús»,</p>"
 
 #. i18n: ectx: property (text), widget (QPushButton, selectcontinentsbutton)
 #: ksirkgoaldefinition.ui:176
@@ -773,7 +773,7 @@ msgid ""
 "p>"
 msgstr ""
 "<p>Llista dels continents que es conqueriran en un objectiu <i>Continents</"
-"i>.</p><p>Podeu canviar esta llista clicant en el botó «Seleccioneu els "
+"i>.</p><p>Podeu canviar esta llista clicant damunt del botó «Seleccioneu els "
 "continents» de dalt.</p>"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkNationalityDefinition)
@@ -1282,7 +1282,7 @@ msgid ""
 msgstr ""
 "Llista de tots els països definits en el món. Els països seleccionats "
 "actualment estan destacats. Podeu modificar la selecció amb el ratolí i les "
-"tecles «Ctrl» i «Maj»."
+"tecles «Ctrl» i «Majús»."
 
 #. i18n: ectx: Menu (game)
 #: ksirkskineditorui.rc:10

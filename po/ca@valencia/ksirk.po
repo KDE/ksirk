@@ -1165,7 +1165,7 @@ msgstr ""
 #: Dialogs/InvasionSlider.cpp:100
 #, kde-format
 msgid "<br><i>Choose the number of invading armies.</i>"
-msgstr "<br><i>Trieu el nombre de batallons invasors.</i>"
+msgstr "<br><i>Tria el nombre de batallons invasors.</i>"
 
 #: Dialogs/InvasionSlider.cpp:104
 #, kde-format
@@ -1185,7 +1185,7 @@ msgstr ""
 #: Dialogs/InvasionSlider.cpp:106
 #, kde-format
 msgid "<br><i>Choose the number of armies to move.</i>"
-msgstr "<br><i>Trieu el nombre de batallons que es mouran.</i>"
+msgstr "<br><i>Tria el nombre de batallons que es mouran.</i>"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, JoinGameDialog)
 #: Dialogs/joingame.ui:13
@@ -1460,7 +1460,7 @@ msgstr "No"
 #: Dialogs/qplayersetupdialog.ui:48 Dialogs/qwaitedplayersetupdialog.ui:33
 #, kde-format
 msgid "Choose your nation"
-msgstr "Escolliu la vostra nació"
+msgstr "Trieu la vostra nació"
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, nationCombo)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, waitedPlayersCombo)
@@ -1708,8 +1708,8 @@ msgid ""
 "Now, place your armies in your countries<br>by clicking in the target "
 "countries."
 msgstr ""
-"Ara, situeu els batallons en els vostres països<br>clicant en els països de "
-"destinació."
+"Ara, situeu els batallons en els vostres països<br>clicant damunt dels "
+"països de destinació."
 
 #: GameLogic/gameautomaton.cpp:1900
 #, kde-format
@@ -1954,7 +1954,7 @@ msgstr "No es pot carregar una icona<br>El programa no pot continuar"
 #, kde-format
 msgid "Cannot load button image %1<br>Program cannot continue"
 msgstr ""
-"No es pot carregar la imatge del botó %1<br>El programa no pot continuar"
+"No es pot carregar la imatge del botó «%1»<br>El programa no pot continuar"
 
 #: kgamewin.cpp:305
 #, kde-format
@@ -2045,7 +2045,7 @@ msgstr "<font color=\"red\">%1 ha conquerit %2 des de %3</font>"
 #: kgamewin.cpp:728
 #, kde-format
 msgid "%1, you are defeated! Bye, bye…"
-msgstr "%1, has estat derrotat! Passe-ho bé…"
+msgstr "%1, has sigut derrotat! Passe-ho bé…"
 
 #: kgamewin.cpp:800
 #, kde-format
