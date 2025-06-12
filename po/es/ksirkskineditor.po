@@ -1,5 +1,5 @@
 # Spanish translations for ksirkskineditor.po package.
-# Copyright (C) 2009-2025 This_file_is_part_of_KDE
+# Copyright (C) 2009-2025 This file is copyright:
 # This file is distributed under the same license as the ksirk package.
 #
 # SPDX-FileCopyrightText: 2009 Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-07 00:37+0000\n"
-"PO-Revision-Date: 2025-04-20 11:13+0100\n"
+"PO-Revision-Date: 2025-06-12 00:43+0100\n"
 "Last-Translator: Sofía Priego <spriego@darksylvania.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
