@@ -2,31 +2,32 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Einars Sprugis <einars8@gmail.com>, 2010.
+# SPDX-FileCopyrightText: 2025 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-07 00:37+0000\n"
-"PO-Revision-Date: 2010-04-24 13:57+0300\n"
-"Last-Translator: Einars Sprugis <einars8@gmail.com>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"PO-Revision-Date: 2025-06-18 16:33+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 25.04.2\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Viesturs Zariņš, Einārs Sprūģis"
+msgstr "Viesturs Zariņš, Einārs Sprūģis, Toms Trasūns"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "viesturs.zarins@mii.lu.lv, einars8@gmail.com"
+msgstr "viesturs.zarins@mii.lu.lv, einars8@gmail.com, toms.trasuns@posteo.net"
 
 #: goal.cpp:100
 #, kde-format
@@ -34,11 +35,10 @@ msgid "Error: no player to destroy"
 msgstr "Kļūda: nav spēlētāja, ko iznīcināt"
 
 #: goal.cpp:213
-#, fuzzy, kde-format
-#| msgid "KsirK - Goal Display"
+#, kde-format
 msgctxt "@title:window"
 msgid "Goal Display"
-msgstr "KsirK - mērķa parādīšana"
+msgstr "Mērķa parādīšana"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
 #: ksirkcontinentdefinition.ui:13
@@ -73,18 +73,18 @@ msgid ""
 msgstr ""
 "Bonusa punktu skaits, kad iegūts viss kontinents.\n"
 "\n"
-"Katra gājiena beigās armiju skaits tiek sadalīts katram spēlētājam. Ja viens "
-"no spēlētājiem iegūst visas sava kontinenta valstis, viņš/viņa saņem šo "
-"bonusu.\n"
+"Katra gājiena beigās starp spēlētājiem tiek sadalīts noteikts armiju skaits. "
+"Ja viens no spēlētājiem iegūst visas sava kontinenta valstis, viņš/viņa "
+"saņem šo bonusu.\n"
 "\n"
-"Bonusam būtu jābūt proporcionālam kontinenta izmēram un grūtībai to iekarot "
-"vai paturēt."
+"Bonusam jābūt proporcionālam kontinenta izmēram un grūtībai to iekarot vai "
+"noturēt."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:48
 #, kde-format
 msgid "Select the countries contained in this continent"
-msgstr "Izvēlies valstis, kuras saturēs šis kontinents"
+msgstr "Izvēlies valstis, kas atradīsies uz šī kontinenta."
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:53
@@ -95,10 +95,10 @@ msgid ""
 "A list of all the world's countries will be shown and you will be able to "
 "select the countries using the mouse and the Ctrl and Shift keys."
 msgstr ""
-"Noklikšķini šeit, lai izvēlētos valstis, kuras saturēs šis kontinents.\n"
+"Klikšķini šeit, lai izvēlētos valstis, kas atradīsies uz šī kontinenta.\n"
 "\n"
-"Tiks parādīts visu pasaules valstu saraksts, un tu varēsi izvēlēties "
-"valstis, izmantojot peli un 'Ctrl' un 'Shift' taustiņus."
+"Parādīsies visu pasaules valstu saraksts, bet tu varēsi izvēlēties valstis, "
+"izmantojot peli un „Ctrl“ un „Shift“ taustiņus."
 
 #. i18n: ectx: property (text), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:56
@@ -508,7 +508,7 @@ msgstr ""
 "Noklikšķini šeit, lai izvēlētos šīs valsts kaimiņus.\n"
 "\n"
 "Tiks parādīts visu pasaules valstu saraksts, un tu varēsi izvēlēties "
-"valstis, izmantojot peli un 'Ctrl' un 'Shift' taustiņus."
+"valstis, izmantojot peli un „Ctrl“ un „Shift“ taustiņus."
 
 #. i18n: ectx: property (text), widget (QPushButton, neighboursbutton)
 #: ksirkcountrydefinition.ui:343
@@ -561,7 +561,7 @@ msgstr "Pasaules iekarošana"
 #: ksirkgoaldefinition.ui:54
 #, kde-format
 msgid "Eliminate a given player"
-msgstr "Likvidēt doto spēlētāju"
+msgstr "Likvidēt norādīto spēlētāju"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, playertype)
 #: ksirkgoaldefinition.ui:57
@@ -570,7 +570,7 @@ msgid ""
 "<p>Eliminate a given player. If it is eliminated by another one, you will "
 "fall back to a <emphasis>Countries</emphasis> type of goal.</p>"
 msgstr ""
-"<p>Likvidē doto spēlētāju. Ja to ir likvidējis kāds cits, tu atkritīsi "
+"<p>Likvidē norādīto spēlētāju. Ja to ir likvidējis kāds cits, tu atkritīsi "
 "atpakaļ uz mērķa tipu <emphasis>Valstis</emphasis>.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, playertype)
@@ -755,13 +755,13 @@ msgid ""
 "p>"
 msgstr ""
 "<p>Iekarojamo kontinentu saraksts mērķī <i>Kontinenti</i>.</p><p>Vari "
-"izmainīt šo sarakstu, noklikšķinot uz pogas \"Izvēlēties kontinentus\".</p>"
+"izmainīt šo sarakstu, noklikšķinot uz pogas „Izvēlēties kontinentus“.</p>"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkNationalityDefinition)
 #: ksirknationalitydefinition.ui:13
 #, kde-format
 msgid "Nationality"
-msgstr "Tautība"
+msgstr "Valsts"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirknationalitydefinition.ui:20
@@ -773,7 +773,7 @@ msgstr "Nosaukums:"
 #: ksirknationalitydefinition.ui:27
 #, kde-format
 msgid "Nationality name"
-msgstr "Tautības nosaukums"
+msgstr "Valsts nosaukums"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, name)
 #: ksirknationalitydefinition.ui:30
@@ -783,21 +783,21 @@ msgid ""
 "existing country in case of a <i>realistic</i> world.</p><p>This string "
 "should be unique in the skin.</p>"
 msgstr ""
-"<p>Tautības nosaukums. Spēlētāja valsts nosaukums. <i>Reālistiskas</i> "
-"pasaules gadījumā var būt arī esošas valsts nosaukums.</p><p>Šajai virknei "
-"apdarē būtu jābūt unikālai.</p>"
+"<p>Valsts nosaukums. Spēlētāja valsts nosaukums. <i>Reālistiskas</i> "
+"pasaules gadījumā var būt arī esošas valsts nosaukums.</p><p>Šai virknei "
+"apdarē jābūt unikālai.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: ksirknationalitydefinition.ui:43
 #, kde-format
 msgid "Leader name:"
-msgstr "Vadītāja vārds:"
+msgstr "Līdera vārds:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leader)
 #: ksirknationalitydefinition.ui:50
 #, kde-format
 msgid "Leader name"
-msgstr "Vadītāja vārds"
+msgstr "Līdera vārds"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, leader)
 #: ksirknationalitydefinition.ui:53
@@ -806,7 +806,7 @@ msgid ""
 "<p>Name of this nationality leader. In the case of a <i>realistic</i> skin, "
 "this could be the name of a well known king, president, etc.</p>"
 msgstr ""
-"<p>Šīs nācijas līdera vārds. <i>Reālistiskas</i> apdares gadījumā šis varētu "
+"<p>Šīs valsts līdera vārds. <i>Reālistiskas</i> apdares gadījumā šis varētu "
 "būt vārds pazīstamam karalim, prezidentam, u.t.t.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
@@ -851,15 +851,14 @@ msgstr "Apdares īsais nosaukums"
 msgid ""
 "Type here the skin's short name. This should be an identifier-like string"
 msgstr ""
-"Šeit ievadi apdares īso nosaukumu. Šajai virknei būtu jaizskatās apmēram kā "
+"Šeit ievadi apdares īso nosaukumu. Šai virknei jāizskatās līdzīgai "
 "identifikatoram"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkskindefinition.ui:46
-#, fuzzy, kde-format
-#| msgid "Width x Height"
+#, kde-format
 msgid "Width x height:"
-msgstr "Platums x Augstums"
+msgstr "Platums x augstums:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, widthLineEdit)
 #: ksirkskindefinition.ui:53
@@ -939,7 +938,7 @@ msgstr "Šī krāsa tiks izmantota, lai zīmētu valstu nosaukumu priekšplānu 
 #: ksirkskindefinition.ui:125
 #, kde-format
 msgid "Bg:"
-msgstr "Fons:"
+msgstr "Fn:"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, bgcolorbutton)
 #: ksirkskindefinition.ui:132
@@ -978,48 +977,45 @@ msgstr "Figūras"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: ksirkskindefinition.ui:184
-#, fuzzy, kde-format
-#| msgid ""
-#| "Edit the sprite definitions\n"
-#| "in the right dock"
+#, kde-format
 msgid ""
 "Edit the sprite definitions\n"
 "in the right dock."
 msgstr ""
-"Rediģē figūru definīcijas\n"
+"Rediģēt figūru definīcijas\n"
 "labajā dokā"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabNationalities)
 #: ksirkskindefinition.ui:192
 #, kde-format
 msgid "Nationalities"
-msgstr "Nācijas"
+msgstr "Valstis"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newNationalityButton)
 #: ksirkskindefinition.ui:200
 #, kde-format
 msgid "Creates a new Nationality"
-msgstr "Izveido jaunu nāciju"
+msgstr "Izveido jaunu valsti"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, newNationalityButton)
 #: ksirkskindefinition.ui:203
 #, kde-format
 msgid "Click here to add a new nationality. You will be prompted for its name."
 msgstr ""
-"Noklikšķini šeit, lai pievienotu jaunu tautību. Tev tiks prasīts tās "
+"Noklikšķini šeit, lai pievienotu jaunu valsti. Tev tiks prasīts tās "
 "nosaukums."
 
 #. i18n: ectx: property (text), widget (QPushButton, newNationalityButton)
 #: ksirkskindefinition.ui:206
 #, kde-format
 msgid "New Nationality"
-msgstr "Jauna tautība"
+msgstr "Jauna valsts"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, deleteNationalityButton)
 #: ksirkskindefinition.ui:226
 #, kde-format
 msgid "Removes the currently selected nationality"
-msgstr "Izņem pašreiz izvēlēto tautību"
+msgstr "Izņem pašreiz izvēlēto valsti"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, deleteNationalityButton)
 #: ksirkskindefinition.ui:229
@@ -1028,7 +1024,7 @@ msgid ""
 "Click here to remove the currently selected nationality. You will be asked "
 "for confirmation."
 msgstr ""
-"Noklikšķini šeit, lai izņemtu pašreiz izvēlēto tautību. Tev tiks pieprasīts "
+"Noklikšķini šeit, lai izņemtu pašreiz izvēlēto valsti. Tev tiks pieprasīts "
 "apstiprinājums."
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteNationalityButton)
@@ -1045,7 +1041,7 @@ msgstr "X"
 #: ksirkskindefinition.ui:241
 #, kde-format
 msgid "Nationality list"
-msgstr "Tautību saraksts"
+msgstr "Valstu saraksts"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, nationalitieslist)
 #: ksirkskindefinition.ui:248
@@ -1060,14 +1056,14 @@ msgid ""
 "add at least as many nationalities as the maximum number of players for this "
 "skin."
 msgstr ""
-"Šis saraksts rāda definētās tautības.\n"
+"Šis saraksts rāda definētās valstis.\n"
 "\n"
-"Katras tautības nosaukumam vajadzētu būt unikālam. Izvēlies tautību un "
-"rediģē tās detaļas labajā dokā.\n"
+"Katras valsts nosaukumam vajadzētu būt unikālam. Izvēlies valsti un rediģē "
+"tās informāciju labajā dokā.\n"
 "\n"
-"Spēles laikā katram spēlētājam ir jāizvēlas tautība. Tādējādi tev vajadzētu "
-"pievienot vismaz tik daudz tautību, cik liels būs maksimālais spēlētāju "
-"skaits šajai apdarei."
+"Sākot spēli, katram spēlētājam ir jāizvēlas valsts, tāpēc vajadzētu "
+"pievienot vismaz tik daudz valstu, cik liels būs maksimālais spēlētāju "
+"skaits šai apdarei."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newCountryButton)
 #: ksirkskindefinition.ui:264
@@ -1093,7 +1089,7 @@ msgstr "Jaunā valsts"
 #: ksirkskindefinition.ui:290
 #, kde-format
 msgid "Removes the currently selected country"
-msgstr "Izņem pašreiz izvēlēto valsti"
+msgstr "Izņem pašreiz atlasīto valsti"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, deleteCountryButton)
 #: ksirkskindefinition.ui:293
@@ -1102,7 +1098,7 @@ msgid ""
 "Click here to remove the currently selected country. You will be asked for "
 "confirmation."
 msgstr ""
-"Noklikšķini šeit, lai izņemtu pašreiz izvēlēto valsti. Tev tiks pieprasīts "
+"Noklikšķini šeit, lai izņemtu pašreiz atlasīto valsti. Tev tiks pieprasīts "
 "apstiprinājums."
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, countrieslist)
@@ -1245,8 +1241,7 @@ msgstr ""
 "rediģē tā detaļas."
 
 #: ksirkSkinEditorConfigDialog.cpp:55
-#, fuzzy, kde-format
-#| msgid "Preferences"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "Iestatījumi"
@@ -1255,7 +1250,7 @@ msgstr "Iestatījumi"
 #: ksirkskineditorcountriesselectiondialog.ui:13
 #, kde-format
 msgid "Country Selection Dialog"
-msgstr "Valsts izvēles dialogs"
+msgstr "Valsts atlases lodziņš"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, countriesList)
 #: ksirkskineditorcountriesselectiondialog.ui:22
@@ -1265,9 +1260,8 @@ msgid ""
 "are highlighted. You can modify the selection using the mouse and Ctrl and "
 "Shift keys."
 msgstr ""
-"Saraksts ar visām pasaulē definētajām valstīm. Pašreiz izvēlētās valstis ir "
-"izceltas. Vari rediģēt izvēli, izmantojot peli un 'Ctrl' un 'Shift' "
-"taustiņus."
+"Saraksts ar visām pasaulē definētajām valstīm. Izceltas ir pašreiz atlasītās "
+"valstis. Izvēli vari rediģēt, izmantojot peli un „Ctrl“ un „Shift“ taustiņus."
 
 #. i18n: ectx: Menu (game)
 #: ksirkskineditorui.rc:10
@@ -1458,10 +1452,9 @@ msgstr ""
 #: ksirkspritesdefinition.ui:110 ksirkspritesdefinition.ui:207
 #: ksirkspritesdefinition.ui:298 ksirkspritesdefinition.ui:391
 #: ksirkspritesdefinition.ui:486 ksirkspritesdefinition.ui:581
-#, fuzzy, kde-format
-#| msgid "Nb Frames:"
+#, kde-format
 msgid "Nb frames:"
-msgstr "Kadru skaits:"
+msgstr "Nb kadri:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagf)
 #: ksirkspritesdefinition.ui:117
@@ -1490,10 +1483,9 @@ msgstr ""
 #: ksirkspritesdefinition.ui:127 ksirkspritesdefinition.ui:224
 #: ksirkspritesdefinition.ui:315 ksirkspritesdefinition.ui:408
 #: ksirkspritesdefinition.ui:503 ksirkspritesdefinition.ui:598
-#, fuzzy, kde-format
-#| msgid "Nb Versions:"
+#, kde-format
 msgid "Nb versions:"
-msgstr "Versiju skaits:"
+msgstr "Nb versijas:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagv)
 #: ksirkspritesdefinition.ui:134
@@ -1518,10 +1510,10 @@ msgstr ""
 "Karoga versiju skaits.\n"
 "\n"
 "Kopfonda karoga elements tiks renderēts uz pikseļu kartes ar augstumu "
-"'augstums * versiju skaits' un tad sadalīts individuālos kadros.\n"
+"„augstums * versiju skaits“ un tad sadalīts individuālos kadros.\n"
 "\n"
 "Katra versija rāda figūru, kas redzama no viena virziena: pirmā redzama no "
-"labās puses, otrā - no kreisās, trešā - no priekšas un pēdējā - no "
+"labās puses, otrā — no kreisās, trešā — no priekšas, bet pēdējā — no "
 "aizmugures. Tomēr ne visām figūrām ir vajadzīgas visas versijas."
 
 #. i18n: ectx: property (toolTip), widget (QWidget, infantryTab)
@@ -1551,8 +1543,8 @@ msgid ""
 "i> and then split into individual frames.</p>"
 msgstr ""
 "<p>Individuālo kājnieku kadru platums.</p><p>Kopfonda <i>kājnieku</i> "
-"elements tiks renderēts uz pikseļu kartes ar platumu '<i>platums</i> * "
-"<i>kadru skaits</i>' un tad sadalīts individuālos kadros.</p>"
+"elements tiks renderēts uz pikseļu kartes ar platumu „<i>platums</i> * "
+"<i>kadru skaits</i>“ un tad sadalīts individuālos kadros.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryh)
 #: ksirkspritesdefinition.ui:197
@@ -1569,8 +1561,8 @@ msgid ""
 "versions</i> and then split into individual frames.</p>"
 msgstr ""
 "<p>Kājnieku individuālā kadra augstums.</p><p>Kopfonda <i>kājnieku</i> "
-"elements tiks renderēts uz pikseļu kartes ar augstumu '<i>augstums</i> * "
-"<i>versiju skaits</i>' un tad sadalīts individuālos kadros.</p>"
+"elements tiks renderēts uz pikseļu kartes ar augstumu „<i>augstums</i> * "
+"<i>versiju skaits</i>“ un tad sadalīts individuālos kadros.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryf)
 #: ksirkspritesdefinition.ui:214
@@ -1587,8 +1579,8 @@ msgid ""
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
 "<p>Kājnieku individuālo kadru skaits.</p><p>Kopfonda <i>kājnieku</i> "
-"elements tiks renderēts uz pikseļu kartes ar platumu '<i>platums</i> * "
-"<i>kadru skaits</i>' un tad sadalīts individuālos kadros.</p>"
+"elements tiks renderēts uz pikseļu kartes ar platumu „<i>platums</i> * "
+"<i>kadru skaits</i>“ un tad sadalīts individuālos kadros.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryv)
 #: ksirkspritesdefinition.ui:231
@@ -1608,10 +1600,10 @@ msgid ""
 "one from the back. However, not all sprites need all versions.</p>"
 msgstr ""
 "<p>Kājnieku versiju skaits.</p><p>Kopfonda <i>kājnieku</i> elements tiks "
-"renderēts uz pikseļu kartes ar augstumu '<i>augstums</i> * <i>versiju "
-"skaits</i>' un tad sadalīts individuālos kadros.</p><p>Katra versija rāda "
-"figūru, kas redzama no viena virziena: pirmā redzama no labās puses, otrā - "
-"no kreisās, trešā - no priekšas un pēdējā - no aizmugures. Tomēr ne visām "
+"renderēts uz pikseļu kartes ar augstumu „<i>augstums</i> * <i>versiju "
+"skaits</i>“ un tad sadalīts individuālos kadros.</p><p>Katra versija rāda "
+"figūru, kas redzama no viena virziena: pirmā redzama no labās puses, otrā — "
+"no kreisās, trešā — no priekšas, bet pēdējā — no aizmugures. Tomēr ne visām "
 "figūrām ir vajadzīgas visas versijas.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, cavalryTab)
@@ -1641,8 +1633,8 @@ msgid ""
 "i>) and then split into individual frames.</p>"
 msgstr ""
 "<p>Individuālo kavalērijas kadru platums.</p><p>Kopfonda <i>kavalērijas</i> "
-"elements tiks renderēts uz pikseļu kartes ar platumu '<i>platums</i> * "
-"<i>kadru skaits</i>' un tad sadalīts individuālos kadros.</p>"
+"elements tiks renderēts uz pikseļu kartes ar platumu „<i>platums</i> * "
+"<i>kadru skaits</i>“ un tad sadalīts individuālos kadros.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryh)
 #: ksirkspritesdefinition.ui:288
@@ -1659,8 +1651,8 @@ msgid ""
 "versions</i>) and then split into individual frames.</p>"
 msgstr ""
 "<p>Karoga individuālā kadra augstums.</p><p>Kopfonda <i>kavalērijas</i> "
-"elements tiks renderēts uz pikseļu kartes ar augstumu '<i>augstums</i> * "
-"<i>versiju skaits</i>' un tad sadalīts individuālos kadros.</p>"
+"elements tiks renderēts uz pikseļu kartes ar augstumu „<i>augstums</i> * "
+"<i>versiju skaits</i>“ un tad sadalīts individuālos kadros.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryf)
 #: ksirkspritesdefinition.ui:305
@@ -1677,8 +1669,8 @@ msgid ""
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
 "<p>Individuālo kavalērijas kadru skaits.</p><p>Kopfonda <i>kavalērijas</i> "
-"elements tiks renderēts uz pikseļu kartes ar platumu '<i>platums</i> * "
-"<i>kadru skaits</i>' un tad sadalīts individuālos kadros.</p>"
+"elements tiks renderēts uz pikseļu kartes ar platumu „<i>platums</i> * "
+"<i>kadru skaits</i>“ un tad sadalīts individuālos kadros.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryv)
 #: ksirkspritesdefinition.ui:322
@@ -1698,10 +1690,10 @@ msgid ""
 "back. However, not all sprites need all versions.</p>"
 msgstr ""
 "<p>Kavalērijas versiju skaits.</p><p>Kopfonda <i>kavalērijas</i> elements "
-"tiks renderēts uz pikseļu kartes ar augstumu '<i>augstums</i> * <i>versiju "
-"skaits</i>' un tad sadalīts individuālos kadros.</p><p>Katra versija rāda "
-"figūru, kas redzama no viena virziena: pirmā redzama no labās puses, otrā - "
-"no kreisās, trešā - no priekšas un pēdējā - no aizmugures. Tomēr ne visām "
+"tiks renderēts uz pikseļu kartes ar augstumu „<i>augstums</i> * <i>versiju "
+"skaits</i>“ un tad sadalīts individuālos kadros.</p><p>Katra versija rāda "
+"figūru, kas redzama no viena virziena: pirmā redzama no labās puses, otrā — "
+"no kreisās, trešā — no priekšas, bet pēdējā — no aizmugures. Tomēr ne visām "
 "figūrām ir vajadzīgas visas versijas.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, cannonTab)
@@ -1731,8 +1723,8 @@ msgid ""
 "and then split into individual frames.</p>"
 msgstr ""
 "<p>Individuālo lielgabala kadru platums.</p><p>Kopfonda <i>lielgabala</i> "
-"elements tiks renderēts uz pikseļu kartes ar platumu '<i>platums</i> * "
-"<i>kadru skaits</i>' un tad sadalīts individuālos kadros.</p>"
+"elements tiks renderēts uz pikseļu kartes ar platumu „<i>platums</i> * "
+"<i>kadru skaits</i>“ un tad sadalīts individuālos kadros.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonh)
 #: ksirkspritesdefinition.ui:381
@@ -1749,8 +1741,8 @@ msgid ""
 "i>) and then split into individual frames.</p>"
 msgstr ""
 "<p>Lielgabala individuālā kadra augstums.</p><p>Kopfonda <i>lielgabala</i> "
-"elements tiks renderēts uz pikseļu kartes ar augstumu '<i>augstums</i> * "
-"<i>versiju skaits</i>' un tad sadalīts individuālos kadros.</p>"
+"elements tiks renderēts uz pikseļu kartes ar augstumu „<i>augstums</i> * "
+"<i>versiju skaits</i>“ un tad sadalīts individuālos kadros.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonf)
 #: ksirkspritesdefinition.ui:398
@@ -1767,8 +1759,8 @@ msgid ""
 "i>) and then split into individual frames.</p>"
 msgstr ""
 "<p>Individuālo lielgabala kadru skaits.</p><p>Kopfonda <i>lielgabala</i> "
-"elements tiks renderēts uz pikseļu kartes ar platumu '<i>platums</i> * "
-"<i>kadru skaits</i>' un tad sadalīts individuālos kadros.</p>"
+"elements tiks renderēts uz pikseļu kartes ar platumu „<i>platums</i> * "
+"<i>kadru skaits</i>“ un tad sadalīts individuālos kadros.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonv)
 #: ksirkspritesdefinition.ui:415
@@ -1788,10 +1780,10 @@ msgid ""
 "back. However, not all sprites need all versions.</p>"
 msgstr ""
 "<p>Lielgabala versiju skaits.</p><p>Kopfonda <i>lielgabala</i> elements tiks "
-"renderēts uz pikseļu kartes ar augstumu '<i>augstums</i> * <i>versiju "
-"skaits</i>' un tad sadalīts individuālos kadros.</p><p>Katra versija rāda "
-"figūru, kas redzama no viena virziena: pirmā redzama no labās puses, otrā - "
-"no kreisās, trešā - no priekšas un pēdējā - no aizmugures. Tomēr ne visām "
+"renderēts uz pikseļu kartes ar augstumu „<i>augstums</i> * <i>versiju "
+"skaits</i>“ un tad sadalīts individuālos kadros.</p><p>Katra versija rāda "
+"figūru, kas redzama no viena virziena: pirmā redzama no labās puses, otrā — "
+"no kreisās, trešā — no priekšas, bet pēdējā — no aizmugures. Tomēr ne visām "
 "figūrām ir vajadzīgas visas versijas.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, firingTab)
@@ -1822,7 +1814,7 @@ msgid ""
 msgstr ""
 "<p>Individuālo šaujošā lielgabala kadru platums.</p><p>Kopfonda <i>šaujošā "
 "lielgabala</i> elements tiks renderēts uz pikseļu kartes ar platumu "
-"'<i>platums</i> * <i>kadru skaits</i>' un tad sadalīts individuālos kadros.</"
+"„<i>platums</i> * <i>kadru skaits</i>“ un tad sadalīts individuālos kadros.</"
 "p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingh)
@@ -1841,7 +1833,7 @@ msgid ""
 msgstr ""
 "<p>Šaujošā lielgabala individuālā kadra augstums.</p><p>Kopfonda <i>šaujošā "
 "lielgabala</i> elements tiks renderēts uz pikseļu kartes ar augstumu "
-"'<i>augstums</i> * <i>versiju skaits</i>' un tad sadalīts individuālos "
+"„<i>augstums</i> * <i>versiju skaits</i>“ un tad sadalīts individuālos "
 "kadros.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingf)
@@ -1860,7 +1852,7 @@ msgid ""
 msgstr ""
 "<p>Individuālo šaujošā lielgabala kadru skaits.</p><p>Kopfonda <i>šaujošā "
 "lielgabala</i> elements tiks renderēts uz pikseļu kartes ar platumu "
-"'<i>platums</i> * <i>kadru skaits</i>' un tad sadalīts individuālos kadros.</"
+"„<i>platums</i> * <i>kadru skaits</i>“ un tad sadalīts individuālos kadros.</"
 "p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingv)
@@ -1881,10 +1873,10 @@ msgid ""
 "the last one from the back. However, not all sprites need all versions.</p>"
 msgstr ""
 "<p>Šaujošā lielgabala versiju skaits.</p><p>Kopfonda <i>šaujošā lielgabala</"
-"i> elements tiks renderēts uz pikseļu kartes ar augstumu '<i>augstums</i> * "
-"<i>versiju skaits</i>' un tad sadalīts individuālos kadros.</p><p>Katra "
+"i> elements tiks renderēts uz pikseļu kartes ar augstumu „<i>augstums</i> * "
+"<i>versiju skaits</i>“ un tad sadalīts individuālos kadros.</p><p>Katra "
 "versija rāda figūru, kas redzama no viena virziena: pirmā redzama no labās "
-"puses, otrā - no kreisās, trešā - no priekšas un pēdējā - no aizmugures. "
+"puses, otrā — no kreisās, trešā — no priekšas, bet pēdējā — no aizmugures. "
 "Tomēr ne visām figūrām ir vajadzīgas visas versijas.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, explodingTab)
@@ -1915,7 +1907,7 @@ msgid ""
 msgstr ""
 "<p>Individuālo sprāgstošā lielgabala kadru platums.</p><p>Kopfonda "
 "<i>sprāgstošā lielgabala</i> elements tiks renderēts uz pikseļu kartes ar "
-"platumu '<i>platums</i> * <i>kadru skaits</i>' un tad sadalīts individuālos "
+"platumu „<i>platums</i> * <i>kadru skaits</i>“ un tad sadalīts individuālos "
 "kadros.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingh)
@@ -1934,7 +1926,7 @@ msgid ""
 msgstr ""
 "<p>Sprāgstošā lielgabala individuālā kadra augstums.</p><p>Kopfonda "
 "<i>sprāgstošais</i> elements tiks renderēts uz pikseļu kartes ar augstumu "
-"'<i>augstums</i> * <i>versiju skaits</i>' un tad sadalīts individuālos "
+"„<i>augstums</i> * <i>versiju skaits</i>“ un tad sadalīts individuālos "
 "kadros.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingf)
@@ -1953,8 +1945,7 @@ msgid ""
 msgstr ""
 "<p>Individuālo sprāgstošā lielgabala kadru skaits.</p><p>Kopfonda "
 "<i>sprāgstošais</i> elements tiks renderēts uz pikseļu kartes ar platumu "
-"'<i>platums</i> * <i>kadru skaits</i>' un tad sadalīts individuālos kadros.</"
-"p>"
+"<i>platums</i> * <i>kadru skaits</i> un tad sadalīts individuālos kadros.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingv)
 #: ksirkspritesdefinition.ui:605
@@ -1974,21 +1965,21 @@ msgid ""
 "the last one from the back. However, not all sprites need all versions.</p>"
 msgstr ""
 "<p>Sprāgstošā lielgabala versiju skaits.</p><p>Kopfonda <i>sprāgstošā</i> "
-"elements tiks renderēts uz pikseļu kartes ar augstumu '<i>augstums</i> * "
-"<i>versiju skaits</i>' un tad sadalīts individuālos kadros.</p><p>Katra "
+"elements tiks renderēts uz pikseļu kartes ar augstumu <i>augstums</i> * "
+"<i>versiju skaits</i> un tad sadalīts individuālos kadros.</p><p>Katra "
 "versija rāda figūru, kas redzama no viena virziena: pirmā redzama no labās "
-"puses, otrā - no kreisās, trešā - no priekšas un pēdējā - no aizmugures. "
+"puses, otrā — no kreisās, trešā — no priekšas, bet pēdējā — no aizmugures. "
 "Tomēr ne visām figūrām ir vajadzīgas visas versijas.</p>"
 
 #: main.cpp:52 main.cpp:54
 #, kde-format
 msgid "KsirK Skin Editor"
-msgstr "KsirK apdaru redaktors"
+msgstr "„KsirK“ apdaru redaktors"
 
 #: main.cpp:56
 #, kde-format
 msgid "(c) 2008, Gaël de Chalendar\n"
-msgstr "(c) 2002-2005, Gaël de Chalendar\n"
+msgstr "(c) 2008, Gaël de Chalendar\n"
 
 #: main.cpp:57
 #, kde-format
@@ -1997,18 +1988,17 @@ msgid ""
 "The KsirK Web site"
 msgstr ""
 "Lai saņemtu palīdzību un lietotāja rokasgrāmatu,\n"
-"lūdzu, apciemo KsirK tīmekļa vietni."
+"apmeklē „KsirK“ tīmekļa vietni."
 
 #: main.cpp:59
-#, fuzzy, kde-format
-#| msgid "Gael de Chalendar aka Kleag"
+#, kde-format
 msgid "Gaël de Chalendar aka Kleag"
-msgstr "Gael de Chalendar aka Kleag"
+msgstr "Gaël de Chalendar aka Kleag"
 
 #: main.cpp:67
 #, kde-format
 msgid "file to open"
-msgstr "atveramais fails"
+msgstr "atveramā datne"
 
 #: mainwindow.cpp:127 mainwindow.cpp:678 mainwindow.cpp:806 mainwindow.cpp:1193
 #, kde-format
@@ -2021,36 +2011,31 @@ msgid "Cannot load center icon<br>Program cannot continue"
 msgstr "Neizdevās ielādēt centra ikonu<br>Programma nevar turpināt"
 
 #: mainwindow.cpp:324
-#, fuzzy, kde-format
-#| msgid "Open a saved skin..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a saved skin"
-msgstr "Atvērt saglabāto apdari..."
+msgstr "Atvērt saglabātu apdari"
 
 #: mainwindow.cpp:328
-#, fuzzy, kde-format
-#| msgid "Load &Recent"
+#, kde-format
 msgctxt "@action"
 msgid "Load &Recent"
 msgstr "Ielādēt &neseno"
 
 #: mainwindow.cpp:329
-#, fuzzy, kde-format
-#| msgid "Open a recently saved skin..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a recently saved skin"
-msgstr "Atvērt nesen saglabātu apdari..."
+msgstr "Atvērt nesen saglabātu apdari"
 
 #: mainwindow.cpp:337
-#, fuzzy, kde-format
-#| msgid "Save the current skin"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current skin"
 msgstr "Saglabāt pašreizējo apdari"
 
 #: mainwindow.cpp:362
-#, fuzzy, kde-format
-#| msgid "Choose the root folder of the skin to open"
+#, kde-format
 msgctxt "@title:window"
 msgid "Choose the Root Folder of the Skin to Open"
 msgstr "Izvēlēties atveramās apdares saknes mapi"
@@ -2064,114 +2049,105 @@ msgstr "Ir nesaglabātas izmaiņas. Ko vēlies darīt?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
-msgstr ""
+msgstr "Nesaglabātas izmaiņas"
 
 #: mainwindow.cpp:528
-#, fuzzy, kde-format
-#| msgid "Quit without saving"
+#, kde-format
 msgctxt "@action:button"
 msgid "Quit Without Saving"
 msgstr "Iziet bez saglabāšanas"
 
 #: mainwindow.cpp:529
-#, fuzzy, kde-format
-#| msgid "Save then quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save and Quit"
-msgstr "Saglabāt un tad iziet"
+msgstr "Saglabāt un iziet"
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "New country name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Country Name"
 msgstr "Jaunās valsts nosaukums"
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new country"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new country:"
-msgstr "Ievadi jaunās valsts nosaukumu"
+msgstr "Ieraksti jaunās valsts nosaukumu:"
 
 #: mainwindow.cpp:1315
 #, kde-format
 msgid "Do you really want to delete country '%1'?"
-msgstr "Vai tiešām vēlies izdzēst valsti '%1'?"
+msgstr "Vai tiešām vēlies izdzēst valsti — %1?"
 
 #: mainwindow.cpp:1315
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Country Confirmation"
-msgstr ""
+msgstr "Valsts izdzēšanas apstiprinājums"
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "New continent name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Continent Name"
 msgstr "Jaunā kontinenta nosaukums"
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new continent"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new continent:"
-msgstr "Ievadi jaunā kontinenta nosaukumu"
+msgstr "Ieraksti jaunā kontinenta nosaukumu:"
 
 #: mainwindow.cpp:1344
 #, kde-format
 msgid "Do you really want to delete continent '%1'?"
-msgstr "Vai tiešām vēlies izdzēst kontinentu '%1'?"
+msgstr "Vai tiešām vēlies izdzēst kontinentu — %1?"
 
 #: mainwindow.cpp:1344
-#, fuzzy, kde-format
-#| msgid "Select Continents"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Continent Confirmation"
-msgstr "Izvēlies kontinentus"
+msgstr "Kontinenta dzēšanas apstiprinājums"
 
 #: mainwindow.cpp:1889
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
-msgstr "Vai tiešām vēlies izdzēst mērķi '%1'?"
+msgstr "Vai tiešām vēlies izdzēst mērķi — %1?"
 
 #: mainwindow.cpp:1889
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Goal Confirmation"
-msgstr ""
+msgstr "Mērķa izdzēšanas apstiprinājums"
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "New nationality name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Nationality Name"
-msgstr "Jaunās tautības nosaukums"
+msgstr "Jaunas valsts nosaukums"
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new nationality"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new nationality:"
-msgstr "Ievadi jaunās tautības nosaukumu"
+msgstr "Ierakstiet jaunās valsts nosaukumu:"
 
 #: mainwindow.cpp:1958
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
-msgstr "Vai tiešām vēlies izdzēst tautību '%1'?"
+msgstr "Vai tiešām vēlies izdzēst valsti — %1?"
 
 #: mainwindow.cpp:1958
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Nationality Confirmation"
-msgstr ""
+msgstr "Valsts dzēšanas apstiprinājums"
 
 #: onu.cpp:78
-#, fuzzy, kde-format
-#| msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+#, kde-format
 msgid "Invalid skin definition file format. Expected %1 and got %2"
-msgstr "Kļūda - nederīgs apdares definīcijas formāts. Gaidīts %1, saņemts %2"
+msgstr ""
+"Nederīgs apdares definīcijas datnes formāts. Gaidīts %1, bet saņemts %2"
 
 #: onu.cpp:110
 #, kde-format
@@ -2179,7 +2155,7 @@ msgid ""
 "Pool filename not found\n"
 "Program cannot continue"
 msgstr ""
-"Kopfonda faila nosaukums nav atrasts\n"
+"Kopfonda datnes nosaukums nav atrasts\n"
 "Programma nevar turpināt"
 
 #: onu.cpp:128
@@ -2197,12 +2173,11 @@ msgid ""
 "Cannot read file %1:\n"
 "%2."
 msgstr ""
-"Nevar nolasīt failu %1:\n"
+"Nevar nolasīt datni „%1“:\n"
 "%2."
 
 #: onu.cpp:984
-#, fuzzy, kde-format
-#| msgid "PoolLoader"
+#, kde-format
 msgctxt "@title:window"
 msgid "PoolLoader"
 msgstr "PoolLoader"
@@ -2210,7 +2185,7 @@ msgstr "PoolLoader"
 #: skinSpritesData.cpp:85
 #, kde-format
 msgid "Error - Unknown skin int data: "
-msgstr "Kļūda - nezināmi skin int dati: "
+msgstr "Kļūda — nezināmi „skin int“ dati: "
 
 #: skinSpritesData.cpp:86
 #, kde-format
@@ -2220,11 +2195,10 @@ msgstr "Fatāla kļūda"
 #: skinSpritesData.cpp:101
 #, kde-format
 msgid "Error - Unknown skin string data: "
-msgstr "Kļūda - nezināmi skin string dati: "
+msgstr "Kļūda — nezināmi „skin string“ dati: "
 
 #: skinSpritesData.cpp:102
-#, fuzzy, kde-format
-#| msgid "Fatal Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "Fatāla kļūda"
