@@ -1,7 +1,7 @@
 # Translation for ksirk.po to Euskarar/Basque (eu).
 # Copyright (C) 2023-2024 This file is copyright:
 # This file is distributed under the same license as the ksirk package.
-# SPDX-FileCopyrightText: 2023, 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
 # SPDX-FileCopyrightText: 2023, 2024 Iñigo Salvador Azurmendi <xalba@ni.eus>
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-22 00:37+0000\n"
-"PO-Revision-Date: 2024-05-26 20:33+0200\n"
+"PO-Revision-Date: 2025-07-23 14:07+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1284,7 +1284,7 @@ msgstr "Azal erabilgarri guztiak zerrendatzen dituen lauki-konbinatu bat."
 #: Dialogs/newGameDialog.ui:123
 #, kde-format
 msgid "Download New Skins…"
-msgstr "Azal berriak zama-jaitsi..."
+msgstr "Azal berriak zama-jaitsi…"
 
 #. i18n: ectx: property (configFile), widget (KNSWidgets::Button, ghnsbutton)
 #: Dialogs/newGameDialog.ui:126
@@ -1801,14 +1801,14 @@ msgstr "Errorea: ez dago suntsitu beharreko jokalaririk"
 #: GameLogic/goal.cpp:231
 #, kde-format
 msgid "<br>%1 is still alive…"
-msgstr "<br>%1 oraindik bizirik dago..."
+msgstr "<br>%1 oraindik bizirik dago…"
 
 #: GameLogic/goal.cpp:238 GameLogic/goal.cpp:252
 #, kde-format
 msgid "<br>%2, you still have 1 country to conquer…"
 msgid_plural "<br>%2, you still have %1 countries to conquer…"
-msgstr[0] "<br>%2, oraindik baduzu herrialde bat menderatzeko..."
-msgstr[1] "<br>%2, oraindik %1 herrialde dituzu menderatzeko..."
+msgstr[0] "<br>%2, oraindik baduzu herrialde bat menderatzeko…"
+msgstr[1] "<br>%2, oraindik %1 herrialde dituzu menderatzeko…"
 
 #: GameLogic/goal.cpp:242
 #, kde-format
@@ -1829,10 +1829,10 @@ msgid_plural ""
 "armies on %3 of them…"
 msgstr[0] ""
 "<br>%2, herrialde nahikoa duzu baina oraindik armada 1 baino gehiago ipini "
-"behar dituzu haietako %3(e)tan..."
+"behar dituzu haietako %3(e)tan…"
 msgstr[1] ""
 "<br>%2, herrialde nahikoa duzu baina oraindik %1 armada baino gehiago ipini "
-"behar dituzu haietako %3(e)tan..."
+"behar dituzu haietako %3(e)tan…"
 
 #: GameLogic/goal.cpp:269
 #, kde-format
@@ -1875,7 +1875,7 @@ msgstr "Helburua azaldu"
 #: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:170
 #, kde-format
 msgid "No message…"
-msgstr "Mezurik ez..."
+msgstr "Mezurik ez…"
 
 #: GameLogic/KsirkChatModel.cpp:73
 #, kde-format
@@ -2047,7 +2047,7 @@ msgstr "<font color=\"red\">%1(e)k %3(e)tik %2 menderatu du</font>"
 #: kgamewin.cpp:728
 #, kde-format
 msgid "%1, you are defeated! Bye, bye…"
-msgstr "%1, garaitu zaituzte! Aio, aio..."
+msgstr "%1, garaitu zaituzte! Aio, aio…"
 
 #: kgamewin.cpp:800
 #, kde-format
@@ -2260,7 +2260,7 @@ msgstr ""
 msgid "Start a new game or join a network game with the menu or the toolbar…"
 msgstr ""
 "Hasi joko berri bat edo batu sareko joko batera menua edo tresna-barra "
-"erabiliz..."
+"erabiliz…"
 
 #: kgamewin.cpp:2815
 msgid ""
@@ -2347,7 +2347,7 @@ msgstr "<b><u>Herrialdearen xehetasunak</u></b>"
 #: krightdialog.cpp:170
 #, kde-format
 msgid "<i>Fighting in progress…</i>"
-msgstr "<i>Borroka martxan...</i>"
+msgstr "<i>Borroka martxan…</i>"
 
 #: krightdialog.cpp:222
 #, kde-format
