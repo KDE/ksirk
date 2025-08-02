@@ -36,12 +36,6 @@
             ]
         },
         {
-            "config-opts": [ "-DENABLE_TESTING=OFF", "-DBUILD_WITH_QT6=ON" ],
-            "name": "qca",
-            "buildsystem": "cmake-ninja",
-            "sources": [ { "type": "git", "url": "https://invent.kde.org/kde/qca.git" } ]
-        },
-        {
             "name": "ksirk",
             "buildsystem": "cmake-ninja",
             "sources": [
