@@ -8,6 +8,7 @@
   </developer>
   <launchable type="desktop-id">org.kde.ksirk.desktop</launchable>
   <name>KsirK</name>
+  <name xml:lang="ar">حرب العروش</name>
   <name xml:lang="ast">KsirK</name>
   <name xml:lang="ca">KsirK</name>
   <name xml:lang="ca-valencia">KsirK</name>
@@ -43,6 +44,7 @@
   <name xml:lang="x-test">xxKsirKxx</name>
   <name xml:lang="zh-TW">KsirK</name>
   <summary>World Domination Strategy Game</summary>
+  <summary xml:lang="ar">لعبة استراتيجية للسيطرة على العالم</summary>
   <summary xml:lang="ca">Joc d'estratègia de dominació mundial</summary>
   <summary xml:lang="ca-valencia">Joc d'estratègia de dominació mundial</summary>
   <summary xml:lang="cs">Strategická hra o světovou nadvládu</summary>
@@ -86,6 +88,7 @@
       KsirK is a computerized version of the well known strategic board game Risk.
       The goal of the game is simply to conquer the world by attacking your neighbors with your armies.
     </p>
+    <p xml:lang="ar">حرب العروش هي نسخة محوسبة من لعبة Risk الاستراتيجية الشهيرة. الهدف من اللعبة هو ببساطة غزو العالم من خلال مهاجمة جيرانك بجيوشك.</p>
     <p xml:lang="ca">El KsirK és una versió per a ordinador del famós joc d'estratègia de tauler Risk. L'objectiu del joc és senzillament conquerir el món atacant els veïns amb els batallons.</p>
     <p xml:lang="ca-valencia">KsirK és una versió per a ordinador del famós joc d'estratègia de tauler Risk. L'objectiu del joc és senzillament conquerir el món atacant els veïns amb els batallons.</p>
     <p xml:lang="de">KsirK ist eine computergestützte Version des bekannten Strategiespiels Risiko. Das Spielziel ist es, die Weltherrschaft zu erlangen. Dies geschieht durch das Angreifen der Gegner in den Nachbarländern mit den eigenen Armeen.</p>
@@ -123,6 +126,7 @@
     <p xml:lang="x-test">xxKsirK is a computerized version of the well known strategic board game Risk. The goal of the game is simply to conquer the world by attacking your neighbors with your armies.xx</p>
     <p xml:lang="zh-TW">KsirK 是知名的棋盤策略遊戲 Risk 的電腦版。遊戲目標是用您的軍隊攻擊鄰居來征服世界。</p>
     <p>Features:</p>
+    <p xml:lang="ar">الميزات:</p>
     <p xml:lang="ca">Característiques:</p>
     <p xml:lang="ca-valencia">Característiques:</p>
     <p xml:lang="cs">Vlastnosti:</p>
@@ -164,6 +168,7 @@
     <p xml:lang="zh-TW">功能：</p>
     <ul>
       <li>Support for 1-6 human or computer (AI) players</li>
+      <li xml:lang="ar">إمكانية دعم 1-6 لاعبين من البشر أو الحاسوب (الذكاء الاصطناعي)</li>
       <li xml:lang="ca">Permet entre 1 i 6 jugadors humans o ordinadors (IA)</li>
       <li xml:lang="ca-valencia">Permet entre 1 i 6 jugadors humans o ordinadors (IA)</li>
       <li xml:lang="de">Unterstützung für 1-6 menschliche oder Rechnerspieler (KI)</li>
@@ -201,6 +206,7 @@
       <li xml:lang="x-test">xxSupport for 1-6 human or computer (AI) playersxx</li>
       <li xml:lang="zh-TW">支援 1-6 個人或電腦 (AI) 玩家</li>
       <li>Multi-player gaming over a network</li>
+      <li xml:lang="ar">الألعاب متعددة اللاعبين عبر شبكة</li>
       <li xml:lang="ca">Partides multijugador en xarxa</li>
       <li xml:lang="ca-valencia">Partides multijugador en xarxa</li>
       <li xml:lang="de">Spiele mit mehreren Teilnehmern im Netzwerk</li>
@@ -238,6 +244,7 @@
       <li xml:lang="x-test">xxMulti-player gaming over a networkxx</li>
       <li xml:lang="zh-TW">透過網路的多人遊戲</li>
       <li>You can easily create new skins with SVG graphics and the skin editor</li>
+      <li xml:lang="ar">يمكنك بسهولة إنشاء أشكال جديدة باستخدام رسومات SVG ومحرر الأشكال.</li>
       <li xml:lang="ca">Es poden crear amb facilitat aparences noves amb gràfics SVG i l'editor d'aparences</li>
       <li xml:lang="ca-valencia">Es poden crear amb facilitat aparences noves amb gràfics SVG i l'editor d'aparences</li>
       <li xml:lang="de">Sie können neue Designs mit SVG-Grafik und dem Designeditor erstellen</li>
@@ -275,6 +282,7 @@
       <li xml:lang="x-test">xxYou can easily create new skins with SVG graphics and the skin editorxx</li>
       <li xml:lang="zh-TW">可以用 SVN 圖形和外觀編輯器簡單地建立新的外觀</li>
       <li>Hot New Stuff support. You can easily download and install new skins</li>
+      <li xml:lang="ar">خدمة تثبيت Hot New Stuff. يمكنك بسهولة تنزيل وتثبيت أشكال جديدة</li>
       <li xml:lang="ca">Permet obtenir novetats candents. Es poden descarregar i instal·lar amb facilitat aparences noves</li>
       <li xml:lang="ca-valencia">Permet obtindre novetats candents. Es poden descarregar i instal·lar amb facilitat aparences noves</li>
       <li xml:lang="de">Sie können neue Designs herunterladen und installieren</li>
