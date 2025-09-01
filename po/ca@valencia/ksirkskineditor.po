@@ -87,7 +87,7 @@ msgstr ""
 #: ksirkcontinentdefinition.ui:48
 #, kde-format
 msgid "Select the countries contained in this continent"
-msgstr "Seleccioneu els països que conté este continent"
+msgstr "Trieu els països que conté este continent"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:53
@@ -509,7 +509,7 @@ msgstr ""
 #: ksirkcountrydefinition.ui:335
 #, kde-format
 msgid "Select this country's neighbors"
-msgstr "Seleccioneu els veïns d'este país"
+msgstr "Trieu els veïns d'este país"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, neighboursbutton)
 #: ksirkcountrydefinition.ui:340
@@ -722,7 +722,7 @@ msgstr ""
 #: ksirkgoaldefinition.ui:170
 #, kde-format
 msgid "Select the continents to conquer"
-msgstr "Seleccioneu els continents que s'han de conquerir"
+msgstr "Trieu els continents que s'han de conquerir"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, selectcontinentsbutton)
 #: ksirkgoaldefinition.ui:173
@@ -734,14 +734,14 @@ msgid ""
 msgstr ""
 "<p>Cliqueu damunt d'este botó per a seleccionar els continents a conquerir "
 "en un objectiu <i>Continents</i>.</p><p>Sereu preguntat amb una llista dels "
-"continents del món. Seleccioneu els que s'ha de conquerir amb el ratolí i "
-"les tecles «Ctrl» i «Majús»,</p>"
+"continents del món. Trieu els que s'ha de conquerir amb el ratolí i les "
+"tecles «Ctrl» i «Majús»,</p>"
 
 #. i18n: ectx: property (text), widget (QPushButton, selectcontinentsbutton)
 #: ksirkgoaldefinition.ui:176
 #, kde-format
 msgid "Select Continents"
-msgstr "Seleccioneu els continents"
+msgstr "Trieu els continents"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, anycontinent)
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, anycontinent)
@@ -773,7 +773,7 @@ msgid ""
 "p>"
 msgstr ""
 "<p>Llista dels continents que es conqueriran en un objectiu <i>Continents</"
-"i>.</p><p>Podeu canviar esta llista clicant damunt del botó «Seleccioneu els "
+"i>.</p><p>Podeu canviar esta llista clicant damunt del botó «Trieu els "
 "continents» de dalt.</p>"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkNationalityDefinition)
@@ -1084,8 +1084,8 @@ msgid ""
 msgstr ""
 "Esta llista mostra les nacionalitats definides.\n"
 "\n"
-"Cada nom de nacionalitat ha de ser únic. Seleccioneu una nacionalitat i "
-"editeu els detalls en l'acoblable de la dreta.\n"
+"Cada nom de nacionalitat ha de ser únic. Trieu una nacionalitat i editeu els "
+"detalls en l'acoblable de la dreta.\n"
 "\n"
 "Durant el joc, cada jugador ha d'escollir una nacionalitat. Per tant, cal "
 "afegir almenys tantes nacionalitats com el màxim nombre de jugadors per a "
@@ -1142,8 +1142,8 @@ msgid ""
 msgstr ""
 "Esta llista mostra els països definits.\n"
 "\n"
-"Cada nom de país ha de ser únic. Seleccioneu un país i editeu els seus "
-"detalls en l'acoblable de la dreta."
+"Cada nom de país ha de ser únic. Trieu un país i editeu els seus detalls en "
+"l'acoblable de la dreta."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newContinentButton)
 #: ksirkskindefinition.ui:326
@@ -1197,8 +1197,8 @@ msgid ""
 msgstr ""
 "Esta llista mostra els continents definits.\n"
 "\n"
-"Cada nom de continent ha de ser únic. Seleccioneu un continent i editeu els "
-"seus detalls en l'acoblable de la dreta."
+"Cada nom de continent ha de ser únic. Trieu un continent i editeu els seus "
+"detalls en l'acoblable de la dreta."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabGoals)
 #: ksirkskindefinition.ui:380
@@ -1257,8 +1257,8 @@ msgid ""
 msgstr ""
 "Esta llista mostra els objectius definits.\n"
 "\n"
-"Cada nom d'objectiu ha de ser únic. Seleccioneu un objectiu i editeu els "
-"seus detalls en l'acoblable de la dreta."
+"Cada nom d'objectiu ha de ser únic. Trieu un objectiu i editeu els seus "
+"detalls en l'acoblable de la dreta."
 
 #: ksirkSkinEditorConfigDialog.cpp:55
 #, kde-format
@@ -2079,7 +2079,7 @@ msgstr "Guarda l'aparença actual"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Root Folder of the Skin to Open"
-msgstr "Seleccioneu la carpeta arrel de l'aparença per a obrir-la"
+msgstr "Trieu la carpeta arrel de l'aparença per a obrir-la"
 
 #: mainwindow.cpp:526
 #, kde-format
