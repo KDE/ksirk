@@ -41,7 +41,6 @@
   <name xml:lang="sv">Ksirk</name>
   <name xml:lang="tr">KsirK</name>
   <name xml:lang="uk">KsirK</name>
-  <name xml:lang="x-test">xxKsirKxx</name>
   <name xml:lang="zh-TW">KsirK</name>
   <summary>World Domination Strategy Game</summary>
   <summary xml:lang="ar">لعبة استراتيجية للسيطرة على العالم</summary>
@@ -80,7 +79,6 @@
   <summary xml:lang="sv">Strategispel för världsdominans</summary>
   <summary xml:lang="tr">Dünya Hakimiyeti Strateji Oyunu</summary>
   <summary xml:lang="uk">Стратегічна гра у світове панування</summary>
-  <summary xml:lang="x-test">xxWorld Domination Strategy Gamexx</summary>
   <summary xml:lang="zh-CN">世界支配战略游戏</summary>
   <summary xml:lang="zh-TW">征服世界戰略遊戲</summary>
   <description>
@@ -123,7 +121,6 @@
     <p xml:lang="sv">Ksirk är en datoriserad version av det välkända strategiska brädspelet Risk. Spelets mål är helt enkelt att erövra världen genom att anfalla grannländer med dina arméer.</p>
     <p xml:lang="tr">KsirK, dünyaca ünlü strateji oyunu Risk’in bilgisayara uyarlanmış halidir. Oyunun ereği, ordularınızla komşularınıza saldırarak dünyanın hakimi olmaktır.</p>
     <p xml:lang="uk">KsirK — комп’ютеризована версія добре відомої стратегічної гри Risk. Метою гри є звичайне завоювання світу. Ця мета досягається нападом на ваших сусідів за допомогою ваших армій.</p>
-    <p xml:lang="x-test">xxKsirK is a computerized version of the well known strategic board game Risk. The goal of the game is simply to conquer the world by attacking your neighbors with your armies.xx</p>
     <p xml:lang="zh-TW">KsirK 是知名的棋盤策略遊戲 Risk 的電腦版。遊戲目標是用您的軍隊攻擊鄰居來征服世界。</p>
     <p>Features:</p>
     <p xml:lang="ar">الميزات:</p>
@@ -163,7 +160,6 @@
     <p xml:lang="sv">Funktioner:</p>
     <p xml:lang="tr">Özellikler:</p>
     <p xml:lang="uk">Можливості:</p>
-    <p xml:lang="x-test">xxFeatures:xx</p>
     <p xml:lang="zh-CN">功能：</p>
     <p xml:lang="zh-TW">功能：</p>
     <ul>
@@ -203,7 +199,6 @@
       <li xml:lang="sv">Stöd för 1 - 6 personer eller datorspelare (artificiella intelligenser)</li>
       <li xml:lang="tr">1-6 insan veya bilgisayar (yapay zeka) oyuncu desteği</li>
       <li xml:lang="uk">Підтримка від одного до шести гравців (людей або комп’ютерних гравців)</li>
-      <li xml:lang="x-test">xxSupport for 1-6 human or computer (AI) playersxx</li>
       <li xml:lang="zh-TW">支援 1-6 個人或電腦 (AI) 玩家</li>
       <li>Multi-player gaming over a network</li>
       <li xml:lang="ar">الألعاب متعددة اللاعبين عبر شبكة</li>
@@ -241,7 +236,6 @@
       <li xml:lang="sv">Flera spelare kan spela via ett nätverk</li>
       <li xml:lang="tr">Ağ üzerinden çok oyuncu kipi</li>
       <li xml:lang="uk">Гра з декількома учасниками мережею</li>
-      <li xml:lang="x-test">xxMulti-player gaming over a networkxx</li>
       <li xml:lang="zh-TW">透過網路的多人遊戲</li>
       <li>You can easily create new skins with SVG graphics and the skin editor</li>
       <li xml:lang="ar">يمكنك بسهولة إنشاء أشكال جديدة باستخدام رسومات SVG ومحرر الأشكال.</li>
@@ -279,7 +273,6 @@
       <li xml:lang="sv">Det går lätt att skapa nya skal med SVG-grafik och skaleditorn</li>
       <li xml:lang="tr">SVG grafikleri ve arayüz düzenleyici ile kolaylıkla yeni temalar oluşturabilirsiniz</li>
       <li xml:lang="uk">Можливість простого створення нових обгорток із графікою SVG та редактор обгорток</li>
-      <li xml:lang="x-test">xxYou can easily create new skins with SVG graphics and the skin editorxx</li>
       <li xml:lang="zh-TW">可以用 SVN 圖形和外觀編輯器簡單地建立新的外觀</li>
       <li>Hot New Stuff support. You can easily download and install new skins</li>
       <li xml:lang="ar">خدمة تثبيت Hot New Stuff. يمكنك بسهولة تنزيل وتثبيت أشكال جديدة</li>
@@ -317,7 +310,6 @@
       <li xml:lang="sv">Stöd för heta nyheter. Det går lätt att ladda ner och installera nya skal.</li>
       <li xml:lang="tr">Kolaylıkla yeni temalar indirip kurabilirsiniz</li>
       <li xml:lang="uk">Підтримка отримання нових карт зі сховища у мережі. Отримати нові обгортки і встановити їх дуже просто.</li>
-      <li xml:lang="x-test">xxHot New Stuff support. You can easily download and install new skinsxx</li>
       <li xml:lang="zh-TW">支援「取得新玩意」。您可以簡單的下載並安裝新外觀</li>
     </ul>
   </description>
