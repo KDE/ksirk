@@ -205,7 +205,7 @@ revision history. (see installation appendix comment) -->
 >Esta documentación proporciona la información más importante para empezar a jugar. Lee las ayudas emergentes y los mensajes de la barra de estado para completar la información.</para>
 
 <para
->El objetivo de este juego es tan simple como... ¡conquistar el mundo! Puedes conseguirlo atacando a tus enemigos con tus ejércitos. Es pacífico, ¿no? :-)</para>
+>El objetivo de este juego es tan simple como… ¡conquistar el mundo! Puedes conseguirlo atacando a tus enemigos con tus ejércitos. Es pacífico, ¿no? :-)</para>
 </chapter>
 
 <chapter id="using-kapp">
@@ -304,7 +304,7 @@ your application. -->
     <varlistentry>
       <term
 ><guibutton
->Cargar...</guibutton
+>Cargar…</guibutton
 ></term>
       <listitem
 ><para
@@ -334,7 +334,7 @@ your application. -->
 >, se mostrará el diálogo <guilabel
 >Propiedades de la nueva partida</guilabel
 >, donde podrás elegir el número de jugadores, la piel (o tema), el tipo de juego (conquistar el objetivo o un objetivo específico) y, finalmente, si esta partida se jugará con jugadores en línea o si será local. Se pueden descargar nuevos temas pulsando el botón <guibutton
->Descargar nuevos temas...</guibutton
+>Descargar nuevos temas…</guibutton
 >.</para>
 
   <screenshot>
@@ -777,7 +777,7 @@ your application. -->
   <para
 >Cuando un jugador haya terminado de distribuir sus ejércitos, pulsará el botón <guibutton
 >Validar</guibutton
-> para que el siguiente jugador pueda distribuir sus bonificaciones. Como en el caso de la distribución inicial, cuando todos los jugadores hayan situado sus ejércitos, pueden volver a distribuirlos de forma cíclica o iniciar un turno nuevo...</para>
+> para que el siguiente jugador pueda distribuir sus bonificaciones. Como en el caso de la distribución inicial, cuando todos los jugadores hayan situado sus ejércitos, pueden volver a distribuirlos de forma cíclica o iniciar un turno nuevo…</para>
   </sect2>
 
 <!-- Does not work for current TCP/IP games
@@ -960,7 +960,7 @@ distribution. -->
 ><guimenu
 >Preferencias</guimenu
 > <guimenuitem
->Configurar &ksirk;...</guimenuitem
+>Configurar &ksirk;…</guimenuitem
 ></menuchoice
 > abre un diálogo que permite:</para>
 
