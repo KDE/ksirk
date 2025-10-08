@@ -229,22 +229,6 @@ your application. -->
 ></para
 ></listitem>
     </varlistentry>
-<!--
-    <varlistentry>
-      <term
-><guibutton
->Play &ksirk; over Jabber Network</guibutton
-></term>
-      <listitem
-><para
-><action
->Play &ksirk; over <ulink url="https://en.wikipedia.org/wiki/XMPP"
->Jabber</ulink
->. You need to register Jabber account first.</action
-></para
-></listitem>
-    </varlistentry>
--->
     <varlistentry>
       <term
 ><guibutton
