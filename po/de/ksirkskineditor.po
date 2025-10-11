@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2009, 2024 Johannes Obermayr <johannesobermayr@gmx.de>
-# Burkhard Lück <lueck@hube-lueck.de>, 2009, 2021.
-# Panagiotis Papadopoulos <pano_90@gmx.net>, 2009, 2010.
-# Frederik Schwarzer <schwarzer@kde.org>, 2010, 2011, 2022.
+# SPDX-FileCopyrightText: 2009, 2021 Burkhard Lück <lueck@hube-lueck.de>
+# SPDX-FileCopyrightText: 2009, 2010 Panagiotis Papadopoulos <pano_90@gmx.net>
+# SPDX-FileCopyrightText: 2010, 2011, 2022 Frederik Schwarzer <schwarzer@kde.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
