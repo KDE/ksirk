@@ -1,11 +1,11 @@
 # Translation of ksirk.po to Catalan (Valencian)
 # Copyright (C) 2008-2024 This_file_is_part_of_KDE
 #
-# Albert Astals Cid <aacid@kde.org>, 2008.
-# Joan Juvanteny <jjuvan@grn.cat>, 2008.
+# SPDX-FileCopyrightText: 2008 Albert Astals Cid <aacid@kde.org>
+# SPDX-FileCopyrightText: 2008 Joan Juvanteny <jjuvan@grn.cat>
 # SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2017, 2018, 2020, 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
-# Manuel Tortosa <manutortosa@chakra-project.org>, 2009, 2010.
-# Antoni Bella Pérez <antonibella5@yahoo.com>, 2014, 2017, 2020, 2021.
+# SPDX-FileCopyrightText: 2009, 2010 Manuel Tortosa <manutortosa@chakra-project.org>
+# SPDX-FileCopyrightText: 2014, 2017, 2020, 2021 Antoni Bella Pérez <antonibella5@yahoo.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
@@ -1471,7 +1471,7 @@ msgid ""
 "Choose one of them. It will be your nation during the game"
 msgstr ""
 "Un quadro combinat que mostra les nacions disponibles.\n"
-"Seleccioneu-ne una. Serà la vostra nació durant la partida"
+"Trieu-ne una. Serà la vostra nació durant la partida"
 
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
 #: Dialogs/qplayersetupdialog.ui:76 Dialogs/qwaitedplayersetupdialog.ui:47
@@ -1495,7 +1495,7 @@ msgstr "S'ha guardat la selecció del jugador"
 #: Dialogs/qwaitedplayersetupdialog.ui:23
 #, kde-format
 msgid "Please select your saved player:"
-msgstr "Seleccioneu el jugador guardat:"
+msgstr "Trieu el jugador guardat:"
 
 #. i18n: ectx: property (text), widget (QPushButton, PushButton1)
 #: Dialogs/qwaitedplayersetupdialog.ui:70
@@ -1605,7 +1605,7 @@ msgstr ""
 #: GameLogic/gameautomaton.cpp:1468
 #, kde-format
 msgid "Please choose another name."
-msgstr "Seleccioneu un altre nom."
+msgstr "Trieu un altre nom."
 
 #: GameLogic/gameautomaton.cpp:1468
 #, kde-format
@@ -1632,7 +1632,7 @@ msgstr "Jugador%1"
 #: GameLogic/gameautomaton.cpp:1531
 #, kde-format
 msgid "Please choose another nation."
-msgstr "Seleccioneu una altra nació."
+msgstr "Trieu una altra nació."
 
 #: GameLogic/gameautomaton.cpp:1531
 #, kde-format
