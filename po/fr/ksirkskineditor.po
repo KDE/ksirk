@@ -807,7 +807,7 @@ msgid ""
 "should be unique in the skin.</p>"
 msgstr ""
 "<p>Nom de nationalité. Le nom du pays du joueur. Il peut être le nom d'un "
-"pays existant dans le cas d'un monde <i>réaliste</i>.</p><p>Cette chaîne de "
+"pays existant dans le cas d'un monde <i>réaliste</i>.</p><p>Cette chaine de "
 "caractère doit être unique dans le thème.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -876,7 +876,7 @@ msgstr "Le nom court du thème"
 msgid ""
 "Type here the skin's short name. This should be an identifier-like string"
 msgstr ""
-"Saisissez ici le nom court du thème. Il devrait ressembler à une chaîne de "
+"Saisissez ici le nom court du thème. Il devrait ressembler à une chaine de "
 "type identifiant"
 
 #. i18n: ectx: property (text), widget (QLabel, label)

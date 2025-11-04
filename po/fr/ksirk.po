@@ -1260,7 +1260,7 @@ msgstr "Cliquez sur les flèches pour choisir le nombre de joueurs."
 #: Dialogs/newGameDialog.ui:39
 #, kde-format
 msgid "A spin box to choose the number of players"
-msgstr "Une boîte fléchée pour choisir le nombre de joueurs"
+msgstr "Une boite fléchée pour choisir le nombre de joueurs"
 
 # unreviewed-context
 #. i18n: ectx: property (text), widget (QLabel, localPlayersNumberLabel)
