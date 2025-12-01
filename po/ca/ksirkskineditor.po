@@ -2244,27 +2244,3 @@ msgstr "Error - Dades de tipus cadena de l'aparença desconegudes: "
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "Error fatal"
-
-#~ msgid "Exit Anyway?"
-#~ msgstr "Surto igualment?"
-
-#~ msgid "Do not quit"
-#~ msgstr "No surtis"
-
-#~ msgid "Really delete country?"
-#~ msgstr "Voleu realment suprimir el país?"
-
-#~ msgid "Really delete continent?"
-#~ msgstr "Voleu realment suprimir el continent?"
-
-#~ msgid "Really delete goal?"
-#~ msgstr "Voleu realment suprimir l'objectiu?"
-
-#~ msgid "Really delete nationality?"
-#~ msgstr "Voleu realment suprimir la nacionalitat?"
-
-#~ msgid "Error"
-#~ msgstr "Error"
-
-#~ msgid "KsirK Skin Editor Preferences"
-#~ msgstr "Preferències de l'editor d'aparences del KsirK"
