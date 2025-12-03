@@ -2631,7 +2631,7 @@ msgstr "Jugador actual: %1"
 #: SaveLoad/ksirkgamexmlloader.cpp:46
 #, kde-format
 msgid "Skin file parsing error"
-msgstr "S'ha produït un error en l'anàlisi del fitxer d'aparença"
+msgstr "S'ha produït un error durant l'anàlisi del fitxer d'aparença"
 
 #: Sprites/animsprite.cpp:515
 #, kde-format
