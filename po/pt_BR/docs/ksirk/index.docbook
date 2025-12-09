@@ -1,11 +1,8 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
-  <!ENTITY ksirk '<application
->KsirK</application
+  <!ENTITY i18n-ksirkskineditor '<application
+>Editor de Skin KsirK</application
 >'>
-  <!ENTITY kappname "&ksirk;"
-><!-- replace ksirk here -->
-  <!ENTITY package "kdegames">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % Brazilian-Portuguese "INCLUDE">
 ]>
@@ -17,21 +14,21 @@
 >Manual do &ksirk;</title>
 
 <authorgroup>
-<author
+  <author
 ><firstname
->Gael</firstname
+>Ga&euml;l</firstname
 > <othername
 >Kleag</othername
 > <surname
 >de Chalendar</surname
 > <affiliation
-> <address
+><address
 ><email
->Kleag@free.fr</email
-></address>
-</affiliation>
-</author>
-<author
+>kleag@free.fr</email
+></address
+></affiliation>
+  </author>
+  <author
 ><firstname
 >Nemanja</firstname
 > <othername
@@ -39,13 +36,14 @@
 > <surname
 >Hirsl</surname
 > <affiliation
-> <address
+><address
 ><email
 >nemhirsl@gmail.com</email
-></address>
-</affiliation>
-</author>
-<othercredit role="translator"
+></address
+></affiliation>
+  </author>
+  <!-- Translators: put here the copyright notice of the translation -->
+  <othercredit role="translator"
 ><firstname
 >Marcus</firstname
 ><surname
@@ -62,20 +60,18 @@
 > 
 </authorgroup>
 
-
 <copyright>
-<year
+  <year
 >2002-2012</year>
-<holder
->Gael de Chalendar</holder>
+  <holder
+>Ga&euml;l de Chalendar</holder>
 </copyright>
 <copyright>
-<year
+  <year
 >2013</year>
-<holder
+  <holder
 >Nemanja Hirsl</holder>
 </copyright>
-<!-- Translators: put here the copyright notice of the translation -->
 <!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
      and in the FDL itself on how to use it. -->
 <legalnotice
@@ -87,50 +83,40 @@ need them for translation coordination !
 Please respect the format of the date (DD/MM/YYYY) and of the version
 (V.MM.LL), it could be used by automation scripts.
 Do NOT change these in the translation. -->
-
 <date
->17/02/2013</date>
+>14/10/2021</date>
 <releaseinfo
->4.10.0</releaseinfo>
+>KDE Gear 21.08</releaseinfo>
 
 <!-- Abstract about this handbook -->
-
 <abstract>
-<para
->O &ksirk; é uma versão computorizada de um conhecido jogo de estratégia. Existe uma versão comercial, bem como outro clone em GPL, mas o autor criou este jogo como um exercício de aprendizagem de C++, sendo o responsável pelo seu desenvolvimento até agora (veja o arquivo README para mais detalhes). </para>
-<para
->Na versão atual, o &ksirk; é um jogo multi-jogador com suporte para rede, tendo uma IA básica. (veja o arquivo TODO para mais detalhes) </para>
-<para
->Esta documentação fornece as principais informações que você precisa para começar a jogar. Leia por favor as dicas e as mensagens da barra de estado para completar a sua informação. Existe um capítulo que explica como criar novos visuais para o &ksirk; </para>
-<para
->O objetivo do jogo é simplesmente conquistar o Mundo... Para tal, é preciso atacar os seus vizinhos com os seus exércitos. Pacífico, não é :-) </para>
+  <para
+>O &ksirk; é uma versão computadorizada de um jogo de estratégia bastante conhecido.</para>
 </abstract>
 
 <!-- This is a set of Keywords for indexing by search engines.
 Please at least include KDE, the KDE package it is in, the name
  of your application, and a few relevant keywords. -->
-
 <keywordset>
-<keyword
+  <keyword
 >KDE</keyword>
-<keyword
->kdegames</keyword>
-<keyword
->jogo</keyword>
-<keyword
->estratégia</keyword>
-<keyword
->Risco</keyword>
-<keyword
->livre</keyword>
-<keyword
->GPL</keyword>
-<keyword
->Rede</keyword>
-<keyword
+  <keyword
 >IA</keyword>
+  <keyword
+>livre</keyword>
+  <keyword
+>jogo</keyword>
+  <keyword
+>GPL</keyword>
+  <keyword
+>KsirK</keyword>
+  <keyword
+>rede</keyword>
+  <keyword
+>risco</keyword>
+  <keyword
+>estratégia</keyword>
 </keywordset>
-
 </bookinfo>
 
 <!-- The contents of the documentation begin here.  Label
@@ -151,28 +137,33 @@ application that explains what it does and where to report
 problems. Basically a long version of the abstract.  Don't include a
 revision history. (see installation appendix comment) -->
 <para
->O &ksirk; é uma versão computorizada de um conhecido jogo de estratégia. Existe uma versão comercial, bem como outro clone em GPL, mas o autor criou este jogo como um exercício de aprendizagem de C++, sendo o responsável pelo seu desenvolvimento até agora (veja o arquivo README para mais detalhes). </para>
-<para>
+>O &ksirk; é uma versão computorizada de um conhecido jogo de estratégia. Existe uma versão comercial, bem como outro clone em GPL, mas o autor criou este jogo como um exercício de aprendizagem de C++, sendo o responsável pelo seu desenvolvimento até agora (veja o arquivo <filename
+>README</filename
+> para mais detalhes).</para>
+
 <screenshot>
   <screeninfo
 >Aqui está uma imagem do &ksirk;</screeninfo>
   <mediaobject>
-    <imageobject>
-      <imagedata fileref="firing-screenshot.png" format="PNG"/>
-    </imageobject>
-    <textobject>
-      <phrase
->Imagem</phrase>
-    </textobject>
+    <imageobject
+><imagedata fileref="firing-screenshot.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Imagem</phrase
+></textobject>
   </mediaobject>
 </screenshot>
-</para>
+
 <para
->Na versão atual, o &ksirk; é um jogo multi-jogador com suporte para rede, tendo uma IA básica. (veja o arquivo TODO para mais detalhes) </para>
+>Na versão atual, o &ksirk; é um jogo multi-jogador com suporte para rede, tendo uma IA básica. (veja o arquivo <filename
+>TODO</filename
+> para mais detalhes)</para>
+
 <para
->Esta documentação fornece apenas as informações básicas que você precisa para começar a jogar. Leia por favor as dicas e as mensagens da barra de estado para complementar essas informações. </para>
+>Esta documentação fornece apenas as informações básicas que você precisa para começar a jogar. Leia por favor as dicas e as mensagens da barra de estado para complementar essas informações.</para>
+
 <para
->O objetivo do jogo é simplesmente conquistar o Mundo... Para isso, é preciso atacar os seus vizinhos com os seus exércitos. Pacífico, não é ? :-) </para>
+>O objetivo do jogo é simplesmente conquistar o Mundo... Para isso, é preciso atacar os seus vizinhos com os seus exércitos. Pacífico, não é ? :-)</para>
 </chapter>
 
 <chapter id="using-kapp">
@@ -180,569 +171,573 @@ revision history. (see installation appendix comment) -->
 >Usando o &ksirk;</title>
 
 <!-- This chapter should tell the user how to use your app. You should use as
-many sections (Chapter, Sect1, Sect3, etc...) as is necessary to fully document
+many sections (Chapter, Sect1, Sect3, &etc;) as is necessary to fully document
 your application. -->
-
-
 
 <sect1 id="playing-ksirk">
 <title
 >Jogando o &ksirk;</title>
+
 <para
 >Nota preliminar : o mapa poderá ser deslocado através de três métodos:</para>
-<itemizedlist
-><listitem
+
+  <itemizedlist>
+    <listitem
 ><para
 >Você poderá colocar o sue cursor perto de uma borda da janela, para que o mapa se desloque nessa direção</para
 ></listitem>
-<listitem
+    <listitem
 ><para
 >Você poderá usar a roda do seu mouse: sem modificadores, deslocar-se-á na vertical; se pressionar a tecla &Alt;, deslocar-se-á na horizontal</para
 ></listitem>
-<listitem
+    <listitem
 ><para
 >Você poderá usar as teclas de cursores</para
-></listitem
-></itemizedlist>
-<sect2 id="mainmenu">
-<title
->Iniciando um jogo</title>
-<para
->Quando o &ksirk; é iniciado aparece um menu principal. <screenshot>
-  <screeninfo
->Abre o menu principal do &ksirk;</screeninfo>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="introscreen.png" format="PNG"/>
-    </imageobject>
-    <textobject>
-      <phrase
->Menu principal</phrase>
-    </textobject>
-  </mediaobject>
-</screenshot>
+></listitem>
+  </itemizedlist>
 
-<variablelist>
-<varlistentry>
-<term>
-  <menuchoice>
-    <guimenu
->Novo jogo local</guimenu>
-  </menuchoice>
-</term>
-<listitem>
-  <para>
-  <action
->Inicia um novo jogo</action>
-  </para>
-</listitem>
-</varlistentry>
-<varlistentry>
-<term>
-  <menuchoice>
-    <guimenu
->Jogar &ksirk; usando a rede Jabber</guimenu>
-  </menuchoice>
-</term>
-<listitem>
-  <para>
-    <action
->Jogue o &ksirk; pelo <ulink url="http://pt.wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol"
->Jabber</ulink
->. Você precisa primeiro registrar uma conta Jabber.</action>
-  </para>
-</listitem>
-</varlistentry>
-<varlistentry>
-<term>
-  <menuchoice>
-    <guimenu
->Novo jogo usando a rede TCP/IP</guimenu>
-  </menuchoice>
-</term>
-<listitem>
-  <para>
-    <action
->Inicia um novo jogo usando o <ulink url="http://en.wikipedia.org/wiki/Internet_protocol_suite"
+  <sect2 id="mainmenu">
+  <title
+>Iniciando um jogo</title>
+
+  <para
+>Quando o &ksirk; é iniciado aparece um menu principal.</para>
+
+  <screenshot>
+    <screeninfo
+>Abre o menu principal do &ksirk;</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="introscreen.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Menu principal</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <variablelist>
+    <varlistentry>
+      <term
+><guibutton
+>Novo jogo local</guibutton
+></term>
+      <listitem
+><para
+><action
+>Inicia um novo jogo.</action
+></para
+></listitem>
+    </varlistentry>
+    <varlistentry>
+      <term
+><guibutton
+>Novo jogo usando a rede TCP/IP</guibutton
+></term>
+      <listitem
+><para
+><action
+>Inicia um novo jogo usando o <ulink url="https://en.wikipedia.org/wiki/Internet_protocol_suite"
 >conjunto de protocolos da Internet</ulink
->.</action>
-  </para>
-</listitem>
-</varlistentry>
-<varlistentry>
-<term>
-  <menuchoice>
-    <guimenu
->Entrar em jogo em rede TCP/IP</guimenu>
-  </menuchoice>
-</term>
-<listitem>
-  <para>
-    <action
->Entrar em um jogo criado por outro usuário usando o <ulink url="http://en.wikipedia.org/wiki/Internet_protocol_suite"
+>.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term
+><guibutton
+>Entrar em jogo em rede TCP/IP</guibutton
+></term>
+      <listitem
+><para
+><action
+>Entrar em um jogo criado por outro usuário usando o <ulink url="https://en.wikipedia.org/wiki/Internet_protocol_suite"
 >conjunto de protocolos da Internet</ulink
->.</action>
-  </para>
-</listitem>
-</varlistentry>
-<varlistentry>
-  <term>
-    <menuchoice>
-      <guimenu
->Carregar</guimenu>
-    </menuchoice>
-  </term>
-  <listitem>
-    <para>
-      <action
->Use isto para carregar um jogo salvo anteriormente</action>
-    </para>
-  </listitem>
-</varlistentry>
-<varlistentry>
-  <term>
-    <menuchoice>
-      <guimenu
->Sair</guimenu>
-    </menuchoice>
-  </term>
-  <listitem>
-    <para>
-      <action
->Talvez você finalmente não queira mais jogar?</action>
-    </para>
-  </listitem>
-</varlistentry>
-</variablelist>
-</para>
-<para
+>.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term
+><guibutton
+>Carregar…</guibutton
+></term>
+      <listitem
+><para
+><action
+>Use isto para carregar um jogo salvo anteriormente.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term
+><guibutton
+>Sair</guibutton
+></term>
+      <listitem
+><para
+><action
+>Talvez você finalmente não queira mais jogar?</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+
+  <para
 >Se você selecionar o <guibutton
 >Novo jogo local</guibutton
 >, aparecerá a janela de <guilabel
 >Propriedades do novo jogo</guilabel
 >, onde poderá escolher o número de jogadores, o tema a usar, o tipo de jogo (atingir o objetivo conquistado ou específico) e, finalmente, se este jogo será jogado em rede ou se será completamente local. Novos visuais para o jogo podem ser obtidos usando o botão <guibutton
->Baixar novos visuais</guibutton
->. <screenshot>
-  <screeninfo
+>Baixar novos visuais...</guibutton
+>.</para>
+
+  <screenshot>
+    <screeninfo
 >A janela de Novo Jogo</screeninfo>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="newgamedialog.png" format="PNG"/>
-    </imageobject>
-    <textobject>
-      <phrase
->A janela de Novo Jogo</phrase>
-    </textobject>
-  </mediaobject>
-</screenshot>
-</para>
-<para
+    <mediaobject>
+      <imageobject
+><imagedata fileref="newgamedialog.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>A janela de Novo Jogo</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
 >Para iniciar um jogo em rede por TCP/IP, escolha a opção <guilabel
 >Novo jogo usando a rede TCP/IP</guilabel
-> na tela de introdução. Depois de clicar neste botão, você poderá escolher as opções de rede: número de jogadores locais e a porta TCP onde esperar por conexões. <screenshot>
-  <screeninfo
+> na tela de introdução. Depois de pressionar este botão, você poderá escolher as opções de rede: número de jogadores locais e a porta TCP onde esperar por conexões.</para>
+
+  <screenshot>
+    <screeninfo
 >Janela de parâmetros do Jogo em Rede</screeninfo>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="numnetplayersdialog.png" format="PNG"/>
-    </imageobject>
-    <textobject>
-      <phrase
->Janela de parâmetros do Jogo em Rede</phrase>
-    </textobject>
-  </mediaobject>
-</screenshot>
-</para>
-<para
+    <mediaobject>
+      <imageobject
+><imagedata fileref="numnetplayersdialog.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Janela de parâmetros do Jogo em Rede</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
 >Depois, os jogadores em rede poderão conectar-se, escolhendo a opção <guilabel
 >Entrar em um jogo usando a rede TCP/IP</guilabel
-> na janela inicial e indicando o IP ou o nome da máquina e número da porta que tiver definido. <screenshot>
-  <screeninfo
+> na janela inicial e indicando o IP ou o nome da máquina e número da porta que tiver definido.</para>
+
+  <screenshot>
+    <screeninfo
 >Janela de conexão a um jogo em rede</screeninfo>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="joinnetgame.png" format="PNG"/>
-    </imageobject>
-    <textobject>
-      <phrase
->Janela de conexão a um jogo em rede</phrase>
-    </textobject>
-  </mediaobject>
-</screenshot>
-</para>
-<para
+    <mediaobject>
+      <imageobject
+><imagedata fileref="joinnetgame.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Janela de conexão a um jogo em rede</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
 >Cada conexão é indicada por uma nova linha da tabela <guilabel
 >Jogadores</guilabel
->, abaixo da miniatura do mapa. <screenshot>
-  <screeninfo
->Linha de novo jogador</screeninfo>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="justjoined.png" format="PNG"/>
-    </imageobject>
-    <textobject>
-      <phrase
->Linha de novo jogador</phrase>
-    </textobject>
-  </mediaobject>
-</screenshot>
+>, abaixo da miniatura do mapa.</para>
 
-</para>
-<para
+  <screenshot>
+    <screeninfo
+>Linha de novo jogador</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="justjoined.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Linha de novo jogador</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
 >Vamos supor que você deseja manter a configuração atual e pressionar <guibutton
 >Próximo</guibutton
->. Você irá então configurar dois jogadores, um após o outro. Para cada um, irá escolher o seu nome, a sua nacionalidade e, se preferir, definir uma senha para que mais ninguém possa reutilizar este jogador ao carregar este jogo. Por último, você poderá definir aqui se este jogador é o computador ou uma pessoa. <screenshot>
-  <screeninfo
+>. Você irá então configurar dois jogadores, um após o outro. Para cada um, irá escolher o seu nome, a sua nacionalidade e, se preferir, definir uma senha para que mais ninguém possa reutilizar este jogador ao carregar este jogo. Por último, você poderá definir aqui se este jogador é o computador ou uma pessoa.</para>
+
+  <screenshot>
+    <screeninfo
 >A janela de Configuração do Jogador</screeninfo>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="playersetupdialog.png" format="PNG"/>
-    </imageobject>
-    <textobject>
-      <phrase
->A janela de Configuração do Jogador</phrase>
-    </textobject>
-  </mediaobject>
-</screenshot>
-</para>
-<para
->Depois, após clicar em <guibutton
+    <mediaobject>
+      <imageobject
+><imagedata fileref="playersetupdialog.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>A janela de Configuração do Jogador</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Depois, após pressionar <guibutton
 >Iniciar</guibutton
->, se optar jogar por objetivos, aparecerá o objetivo de cada jogador local seguido de um aviso para os jogadores adversários que possam ver a mensagem no mesmo computador. <screenshot>
-  <screeninfo
+>, se optar jogar por objetivos, aparecerá o objetivo de cada jogador local seguido de um aviso para os jogadores adversários que possam ver a mensagem no mesmo computador.</para>
+
+  <screenshot>
+    <screeninfo
 >A mensagem de aviso da Apresentação do Objetivo</screeninfo>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="displaygoalwarningmessage.png" format="PNG"/>
-    </imageobject>
-    <textobject>
-      <phrase
->A mensagem de aviso da Apresentação do Objetivo</phrase>
-    </textobject>
-  </mediaobject>
-</screenshot>
-<screenshot>
-  <screeninfo
+    <mediaobject>
+      <imageobject
+><imagedata fileref="displaygoalwarningmessage.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>A mensagem de aviso da Apresentação do Objetivo</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <screenshot>
+    <screeninfo
 >A janela de Apresentação do Objetivo</screeninfo>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="displaygoalmessage.png" format="PNG"/>
-    </imageobject>
-    <textobject>
-      <phrase
->A janela de Apresentação do Objetivo</phrase>
-    </textobject>
-  </mediaobject>
-</screenshot>
-</para>
-</sect2>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="displaygoalmessage.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>A janela de Apresentação do Objetivo</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+  </sect2>
 
-<sect2 id="distribution">
-<title
+  <sect2 id="distribution">
+  <title
 >Distribuição</title>
-<para
->No início do jogo, os países são distribuídos por todos os jogadores. Cada país contém um exército (representado por um soldado de infantaria) neste momento. Cada jogador ainda possui alguns exércitos para distribuir nos seus países, quando chegar a sua vez (indicado pela presença do seu nome e bandeira na barra de estado). Repare que cinco exércitos são representados por um soldado de cavalaria e 10 por um canhão. </para>
-<para
->Para colocar um exército num dos seus países, clique nele com o botão esquerdo do mouse. Para remover um exército, clique com o botão direito. Repare, como regra geral, que nunca será capaz de remover mais exércitos do que os que lá estiverem postos. <screenshot>
-  <screeninfo
->Colocação de exércitos</screeninfo>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="placingarmies.png" format="PNG"/>
-    </imageobject>
-    <textobject>
-      <phrase
->Colocação de exércitos</phrase>
-    </textobject>
-  </mediaobject>
-</screenshot>
 
-</para>
-<para
->Quando um jogador já tiver distribuído todos os seus exércitos, o jogador seguinte fica automaticamente selecionado para fazer a mesma coisa. Quando todos os jogadores tiverem terminado de distribuir os seus exércitos, existem duas possibilidades que poderão ser escolhidas com dois botões no painel direito: <variablelist>
-<varlistentry>
-<term>
-      <inlinemediaobject>
-        <imageobject>
-          <imagedata fileref="recycling.png" format="PNG"/>
-        </imageobject>
-        <textobject>
-          <phrase
->Redistribuição</phrase>
-        </textobject>
-      </inlinemediaobject>
-    <guibutton
+  <para
+>No início do jogo, os países são distribuídos por todos os jogadores. Cada país contém um exército (representado por um soldado de infantaria) neste momento. Cada jogador ainda possui alguns exércitos para distribuir nos seus países, quando chegar a sua vez (indicado pela presença do seu nome e bandeira na barra de estado). Repare que cinco exércitos são representados por um soldado de cavalaria e 10 por um canhão.</para>
+
+  <para
+>Para colocar um exército num dos seus países, clique nele com o &LMB;. Para remover um exército, clique com o &RMB;. Repare, como regra geral, que nunca será capaz de remover mais exércitos do que os que lá estiverem postos.</para>
+
+  <screenshot>
+    <screeninfo
+>Colocação de exércitos</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="placingarmies.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Colocação de exércitos</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>Quando um jogador já tiver distribuído todos os seus exércitos, o jogador seguinte fica automaticamente selecionado para fazer a mesma coisa. Quando todos os jogadores tiverem terminado de distribuir os seus exércitos, existem duas possibilidades que poderão ser escolhidas com dois botões no painel direito:</para>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="recycling.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Redistribuição</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
 >Reciclar</guibutton>
-</term>
-<listitem>
-  <para>
-  <action
->Um jogador poderá querer alterar alguma das suas escolhas. O primeiro jogador poderá então remover um exército que tenha colocado num país com o botão direito do mouse e colocá-lo noutro com o botão esquerdo. Quando terminar, passa o controle ao jogador seguinte com o botão <guibutton
->Válido</guibutton
->. Quando todos tiverem terminado, aparecem os dois botões novamente. </action>
-  </para>
-</listitem>
-</varlistentry>
-<varlistentry>
-<term>
-      <inlinemediaobject>
-        <imageobject>
-          <imagedata fileref="recyclingFinished.png" format="PNG"/>
-        </imageobject>
-        <textobject>
-          <phrase
->Fim da redistribuição</phrase>
-        </textobject>
-      </inlinemediaobject>
-    <guibutton
->Pronto</guibutton>
-</term>
-<listitem
+      </term>
+      <listitem
 ><para
 ><action
->A redistribuição está terminada e o jogo pode prosseguir. </action
+>Um jogador poderá querer alterar alguma das suas escolhas. O primeiro jogador poderá então remover um exército que tenha colocado num país com o &RMB; e colocá-lo noutro com o &LMB;. Quando terminar, passa o controle ao jogador seguinte com o botão <guibutton
+>Válido</guibutton
+>. Quando todos tiverem terminado, aparecem os dois botões novamente.</action
 ></para
 ></listitem>
-</varlistentry>
-</variablelist>
+    </varlistentry>
 
-</para>
-</sect2>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="recyclingFinished.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Fim da redistribuição</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Pronto</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>A redistribuição está terminada e o jogo pode prosseguir.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+  </sect2>
 
-<sect2 id="fight">
-<title
+  <sect2 id="fight">
+  <title
 >Combate</title>
-<para
->Depois da distribuição inicia uma jogada. Cada jogador joga na sua vez. Aí, terá a opção de: <variablelist>
-  <varlistentry>
-    <term>
-          <inlinemediaobject>
-            <imageobject>
-              <imagedata fileref="joueurSuivant.png" format="PNG"/>
-            </imageobject>
-            <textobject>
-              <phrase
->Próximo jogador</phrase>
-            </textobject>
-          </inlinemediaobject>
+
+  <para
+>Depois da distribuição inicia uma jogada. Cada jogador joga na sua vez. Aí, terá a opção de:</para>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="joueurSuivant.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Próximo jogador</phrase
+></textobject>
+        </inlinemediaobject>
         <guibutton
 >Próximo Jogador</guibutton>
-    </term>
-    <listitem>
-      <para>
-        <action
->A vez do jogador atual termina e passa a ser a vez para o jogador seguinte. </action>
-      </para>
-    </listitem>
-  </varlistentry>
-  <varlistentry>
-    <term>
-          <inlinemediaobject>
-            <imageobject>
-              <imagedata fileref="attackOne.png" format="PNG"/>
-            </imageobject>
-            <textobject>
-              <phrase
->Ataque 1</phrase>
-            </textobject>
-          </inlinemediaobject
->&nbsp;<inlinemediaobject
+      </term>
+      <listitem
+><para
+><action
+>A vez do jogador atual termina e passa a ser a vez para o jogador seguinte.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="attackOne.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Ataque 1</phrase
+></textobject>
+        </inlinemediaobject
+>&nbsp; <inlinemediaobject
 > <imageobject
-> <imagedata fileref="attackTwo.png" format="PNG"/> </imageobject
+><imagedata fileref="attackTwo.png" format="PNG"/></imageobject
 > <textobject
-> <phrase
+><phrase
 >Ataque 2</phrase
-> </textobject
+></textobject
 > </inlinemediaobject
-> &nbsp;<inlinemediaobject
+>&nbsp; <inlinemediaobject
 > <imageobject
-> <imagedata fileref="attackThree.png" format="PNG"/> </imageobject
+><imagedata fileref="attackThree.png" format="PNG"/></imageobject
 > <textobject
-> <phrase
+><phrase
 >Ataque 3</phrase
-> </textobject
+></textobject
 > </inlinemediaobject
-><guibutton
+> <guibutton
 >Atacar com um, dois ou três exércitos</guibutton
-> &nbsp;<inlinemediaobject
+>&nbsp; <inlinemediaobject
 > <imageobject
-> <imagedata fileref="autoattack.png" format="PNG"/> </imageobject
+><imagedata fileref="autoattack.png" format="PNG"/></imageobject
 > <textobject
-> <phrase
+><phrase
 >Ataque automático</phrase
-> </textobject
+></textobject
 > </inlinemediaobject
 > <guibutton
 >Ataque automático</guibutton
 > </term>
-    <listitem>
-      <para
->Para atacar, arraste com o mouse do país de origem e solte-o no país a atacar. Aparecerá então um menu de contexto que apresenta as opções acima. <screenshot
-> <screeninfo
->Menu de ataque</screeninfo
-><mediaobject
-> <imageobject
-> <imagedata fileref="attackmenu.png" format="PNG"/> </imageobject
-> <textobject
-> <phrase
+
+      <listitem
+><para
+>Para atacar, arraste com o mouse do país atacante até o país atacado. Você verá então um menu de contexto mostrando as opções acima.</para>
+
+        <screenshot>
+          <screeninfo
+>Menu de ataque</screeninfo>
+          <mediaobject>
+            <imageobject
+><imagedata fileref="attackmenu.png" format="PNG"/></imageobject>
+            <textobject
+><phrase
 >Menu de ataque</phrase
-> </textobject
-> </mediaobject
-> </screenshot
-> Para um país X atacar um país Y com Z exércitos, deverá cumprir 2 condições:</para>
-          <itemizedlist
-><listitem
+></textobject>
+          </mediaobject>
+        </screenshot>
+
+        <para
+>Para que um país X ataque um país Y com x exércitos, duas condições devem ser satisfatórias:</para>
+
+        <itemizedlist>
+          <listitem
 ><para
 >os dois países deverão ser vizinhos;</para
 ></listitem>
           <listitem
 ><para
 >o país X deverá ter pelo menos (Z + 1) exércitos antes do ataque.</para
-></listitem
-></itemizedlist>
+></listitem>
+        </itemizedlist>
+
         <para
->Se o ataque for válido, aparece uma janela - caso seja necessária - para o adversário saber se quer defender-se com um ou dois exércitos ou se deixa o computador decidir. </para>
-      <para
->Depois da defesa terminar, o combate irá acontecer e ser resolvido. Isto será descrito abaixo. <screenshot>
-            <screeninfo
+>Se o ataque for válido, aparece uma janela - caso seja necessária - para o adversário saber se quer defender-se com um ou dois exércitos ou se deixa o computador decidir.</para>
+
+        <para
+>Depois da defesa terminar, o combate irá acontecer e ser resolvido. Isto será descrito abaixo.</para>
+
+        <screenshot>
+          <screeninfo
 >Janela de Defesa</screeninfo>
-            <mediaobject>
-              <imageobject>
-                <imagedata fileref="defensedialog.png" format="PNG"/>
-              </imageobject>
-              <textobject>
-                <phrase
->Janela de Defesa</phrase>
-              </textobject>
-            </mediaobject>
-          </screenshot>
-      </para>
-    </listitem>
-  </varlistentry>
-  <varlistentry>
-    <term>
-          <inlinemediaobject>
-            <imageobject>
-              <imagedata fileref="moveArmies.png" format="PNG"/>
-            </imageobject>
-            <textobject>
-              <phrase
->Mover os exércitos</phrase>
-            </textobject>
-          </inlinemediaobject>
-          <guibutton
+          <mediaobject>
+            <imageobject
+><imagedata fileref="defensedialog.png" format="PNG"/></imageobject>
+            <textobject
+><phrase
+>Janela de Defesa</phrase
+></textobject>
+          </mediaobject>
+        </screenshot>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="moveArmies.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Mover os exércitos</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
 >Mover os exércitos de um país para outro</guibutton>
-    </term>
-    <listitem>
-      <para>
-        <action
->Esta é a última ação da rodada de um jogador. Fornece a possibilidade de mover alguns exércitos de um dos seus países para outro vizinho deste. Para escolher os dois países, arraste e solte, como faria num ataque. Quando tiver escolhido ambos os países, o grupo de botões para "Mover os exércitos" irá aparecer uma barra onde poderá escolher o número de exércitos em cada país. </action>
-      </para>
-    </listitem>
-  </varlistentry>
-</variablelist>
-</para>
-</sect2>
-<sect2  id="fight-solution">
+      </term>
+
+      <listitem
+><para
+><action
+>Esta é a última ação da rodada de um jogador. Fornece a possibilidade de mover alguns exércitos de um dos seus países para outro vizinho deste. Para escolher os dois países, arraste e solte, como faria num ataque. Quando tiver escolhido ambos os países, o grupo de botões para "Mover os exércitos" irá aparecer uma barra onde poderá escolher o número de exércitos em cada país.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+  </sect2>
+
+  <sect2  id="fight-outcome">
   <title
->Resolução do combate</title>
+>Resultado do combate</title>
+
   <para
->Para cada exército na batalha, existe um lançamento de dados correspondente. O jogador que obtiver um número maior nos dados, quer no ataque quer na defesa, ganha do outro, ganhando (ou, no caso inverso, perdendo) exércitos de acordo com o número dos dados lançados. <screenshot>
-            <screeninfo
+>Para cada exército na batalha, existe um lançamento de dados correspondente. O jogador que obtiver um número maior nos dados, quer no ataque quer na defesa, ganha do outro, ganhando (ou, no caso inverso, perdendo) exércitos de acordo com o número dos dados lançados.</para>
+
+  <screenshot>
+    <screeninfo
 >Resultado do ataque apresentado</screeninfo>
-            <mediaobject>
-              <imageobject>
-                <imagedata fileref="shownumberofarmies.png" format="PNG"/>
-              </imageobject>
-              <textobject>
-                <phrase
->Resultado do ataque apresentado</phrase>
-              </textobject>
-            </mediaobject>
-          </screenshot>
-  </para>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="shownumberofarmies.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Resultado do ataque apresentado</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
   <para
->Se o número de exércitos da defesa ficar igual a 0, a propriedade desse país muda para o atacante: é colocada a sua bandeira e instala-se um dos seus exércitos atacantes no seu novo país. Os botões para "Mover os exércitos" ficam disponíveis na barra de ferramentas, de modo a permitir ao atacante mover outros exércitos do país de origem para o país adquirido. <screenshot>
-            <screeninfo
+>Se o número de exércitos da defesa ficar igual a 0, a propriedade desse país muda para o atacante: é colocada a sua bandeira e instala-se um dos seus exércitos atacantes no seu novo país. Os botões para "Mover os exércitos" ficam disponíveis na barra de ferramentas, de modo a permitir ao atacante mover outros exércitos do país de origem para o país adquirido.</para>
+
+  <screenshot>
+    <screeninfo
 >Barra de invasão</screeninfo>
-            <mediaobject>
-              <imageobject>
-                <imagedata fileref="invasionslider.png" format="PNG"/>
-              </imageobject>
-              <textobject>
-                <phrase
->Barra de invasão</phrase>
-              </textobject>
-            </mediaobject>
-          </screenshot>
-  </para>
-</sect2>
-<sect2  id="end_of_turn">
+    <mediaobject>
+      <imageobject
+><imagedata fileref="invasionslider.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Barra de invasão</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+  </sect2>
+
+  <sect2  id="end_of_turn">
   <title
 >Fim da jogada</title>
+
   <para
 >Para terminar a sua jogada atual, se você não deseja mover exércitos, poderá clicar o botão de <guibutton
 >Próximo Jogador</guibutton
-> da barra de ferramentas. </para>
+> da barra de ferramentas.</para>
+
   <para
->Quando todos tiverem jogado, terminou a jogada. São distribuídos alguns exércitos pelos jogadores, em função dos países que possuem: 1 por cada grupo de três países, com um mínimo de 3. Existe também um bônus para os jogadores que possuam um continente inteiro, que é diferente para cada um. Este bônus é igual a (no visual padrão): <table>
-      <title
+>Quando todos tiverem jogado, terminou a jogada. São distribuídos alguns exércitos pelos jogadores, em função dos países que possuem: 1 por cada grupo de três países, com um mínimo de 3. Existe também um bônus para os jogadores que possuam um continente inteiro, que é diferente para cada um. Este bônus é igual a (no visual padrão):</para>
+
+  <table>
+    <title
 >Bônus pelos continentes</title>
-      <tgroup cols="2">
-        <thead>
-          <row
-><entry
->Continente</entry
-><entry
->Bônus</entry
-></row>
-        </thead>
-        <tbody>
-          <row
+    <tgroup cols="2">
+      <thead>
+        <row>
+          <entry
+>Continente</entry>
+          <entry
+>Bônus</entry>
+        </row>
+      </thead>
+      <tbody>
+        <row
 ><entry
 >América do Norte</entry
 ><entry
 >5</entry
 ></row>
-          <row
+        <row
 ><entry
 >América do Sul</entry
 ><entry
 >2</entry
 ></row>
-          <row
+        <row
 ><entry
 >Europa</entry
 ><entry
 >5</entry
 ></row>
-          <row
+        <row
 ><entry
 >África</entry
 ><entry
 >3</entry
 ></row>
-          <row
+        <row
 ><entry
 >Ásia</entry
 ><entry
 >7</entry
 ></row>
-          <row
+        <row
 ><entry
 >Área do Pacífico</entry
 ><entry
 >2</entry
 ></row>
-        </tbody>
-      </tgroup>
-    </table>
-  </para>
+      </tbody>
+    </tgroup>
+  </table>
+
   <para
 >Quando um jogador terminar a distribuição dos seus exércitos, ele pode clicar no botão <guibutton
 >Válido</guibutton
->, de modo a permitir ao jogador seguinte a distribuição dos seus exércitos de bônus. Como na distribuição inicial, quando todos tiverem terminado, poderão iniciar um novo ciclo de redistribuição ou uma nova jogada... </para>
-</sect2>
+>, de modo a permitir ao jogador seguinte a distribuição dos seus exércitos de bônus. Como na distribuição inicial, quando todos tiverem terminado, poderão iniciar um novo ciclo de redistribuição ou uma nova jogada…</para>
+  </sect2>
+
 <!-- Does not work for current TCP/IP games
 <sect2 id="sending-messages">
 <title
@@ -776,81 +771,88 @@ If you play a local game and want to communicate with the other players, well, l
 <sect1 id="kapp-mainwindow">
 <title
 >Janela principal do &ksirk;</title>
-<sect2>
-<title
->Os botões</title>
-<para>
-<variablelist>
-<varlistentry>
-<term>
-      <inlinemediaobject>
-        <imageobject>
-          <imagedata fileref="quit.png" format="PNG"/>
-        </imageobject>
-        <textobject>
-          <phrase
->Sair do Jogo</phrase>
-        </textobject>
-      </inlinemediaobject>
-    <guibutton
->Sair</guibutton>
-</term>
-<listitem
-><para
-><action
->Faz com que o programa saia. </action
-></para
-></listitem>
-</varlistentry>
-<varlistentry>
-<term>
-      <inlinemediaobject>
-        <imageobject>
-          <imagedata fileref="newGame.png" format="PNG"/>
-        </imageobject>
-        <textobject>
-          <phrase
->Novo Jogo</phrase>
-        </textobject>
-      </inlinemediaobject>
-    <guibutton
->Novo Jogo</guibutton>
-</term>
-<listitem
-><para
-><action
->Inicia um jogo novo. Faz com que apareça uma janela perguntando o número de jogadores. Depois disso, cada jogador terá que preencher o seu nome noutra janela. </action
-></para
-></listitem>
-</varlistentry>
-</variablelist>
-</para>
 
+  <sect2>
+  <title
+>Os botões</title>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="application-exit.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Sair do jogo</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Sair</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Faz com que o programa saia.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="document-new.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Novo Jogo</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Novo Jogo</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Inicia um jogo novo. Faz com que apareça uma janela perguntando o número de jogadores. Depois disso, cada jogador terá que preencher o seu nome noutra janela.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
 </sect2>
 
 </sect1>
 </chapter>
 
 <chapter id="developers">
-  <title
+<title
 >Guia de Programação do &ksirk;</title>
-  
-  <para
->Por favor, veja a documentação da API em <ulink url="http://api.kde.org/"
->http://api.kde.org/</ulink
->. Está bastante completa, mas está atualmente um pouco desatualizada. Praticamente não existem comentários nos arquivos de implementação em <filename
->.cpp</filename
->. </para>
-  <para
->O autor desenvolveu originalmente este jogo no Windows, com o Borland C++ e WinG. Foi convertido para &Java; antes de o converter para C++ e &kde;. No início, foi usado o Francês ou uma mistura de Francês e Inglês para nomear os identificadores (nomes de classes, métodos, membros, &etc;). Foi também usado o Francês nos comentários. Quando optou por distribuir este jogo, foi tudo convertido para Inglês... contudo, o autor não fala Inglês nativamente: sugira quaisquer alterações ou envie-as, seja para os comentários ou para esta documentação </para>
-  
+
+<para
+>Por favor, veja a documentação da API em <ulink url="https://api.kde.org/"
+>https://api.kde.org/</ulink
+>. Está bastante completa, mas está atualmente um pouco desatualizada. Praticamente não existem comentários nos arquivos de implementação em <literal role="extension"
+>.cpp</literal
+>.</para>
+
+<para
+>O autor desenvolveu originalmente este jogo no &Windows;, com o <application
+>Borland C++</application
+> e <application
+>WinG</application
+>. Foi convertido para &Java; antes de o converter para C++ e &kde;. No início, foi usado o Francês ou uma mistura de Francês e Inglês para nomear os identificadores (nomes de classes, métodos, membros, &etc;). Foi também usado o Francês nos comentários. Quando optou por distribuir este jogo, foi tudo convertido para Inglês... contudo, o autor não fala Inglês nativamente: sugira quaisquer alterações ou envie-as, seja para os comentários ou para esta documentação</para>
+
 </chapter>
 
 <chapter id="skins">
-  <title
+<title
 >Criar novos visuais</title>
-  <para
->O &ksirk; vem com um editor de visuais, chamado ksirkskineditor(!), que lhe permite editar todos os dados do visual, assim como a parte gráfica (imagens, mapa, &etc;), que estão disponíveis em um arquivo SVG. Veja o manual do ksirkskineditor para mais detalhes. </para>
+
+<para
+>O &ksirk; vem com um editor de visuais, chamado <command
+>ksirkskineditor</command
+>, que lhe permite editar todos os dados do visual, assim como a parte gráfica (imagens, mapa, &etc;), que estão disponíveis em um arquivo &SVG;. Veja o manual do &i18n-ksirkskineditor; para mais detalhes.</para>
+
 </chapter>
 
 <chapter id="faq">
@@ -869,22 +871,25 @@ distribution. -->
 >Créditos e licença</title>
 
 <para
->&ksirk; </para>
+>&ksirk;</para>
+
 <para
->Direitos autorais do programa 2002-2012 Gael de Chalendar <email
+>Direitos autorais do programa 2002-2012 Ga&euml;l de Chalendar <email
 >kleag@free.fr</email
-> </para>
+></para>
+
 <para
 >Direitos autorais do programa 2013 Nemanja Hirsl <email
 >nemhirsl@gmail.com</email
-> </para>
-<para
->Contribuidores: Robin Doer, Albert Astals Cid, Michal Golunski (Polish translation). </para>
+></para>
 
 <para
->Direitos autorais da documentação 2002-2008 Gael de Chalendar <email
+>Contribuidores: Robin Doer, &Albert.Astals.Cid;, Michal Golunski (Polish translation). </para>
+
+<para
+>Direitos autorais da documentação 2002-2008 Ga&euml;l de Chalendar <email
 >kleag@free.fr</email
-> </para>
+></para>
 
 <para
 >Tradução de Marcus Gama <email
@@ -896,68 +901,63 @@ distribution. -->
 <title
 >Instalação</title>
 
-<sect1 id="getting-ksirk">
-<title
->Como obter o &ksirk;</title
->&install.intro.documentation; </sect1>
-
-<sect1 id="compilation">
-<title
->Compilação e instalação</title
->&install.compile.documentation; </sect1>
-
 <sect1 id="configuration">
 <title
 >Configuração</title>
 
 <para
->O item do menu de configuração abre uma janela que lhe permite&nbsp;: <screenshot>
-            <screeninfo
+>O item de menu <menuchoice
+><guimenu
+>Configurações</guimenu
+> <guimenuitem
+>Configurar &ksirk;…</guimenuitem
+></menuchoice
+> abre uma caixa de diálogo que permite:</para>
+
+<screenshot>
+  <screeninfo
 >Janela de preferências</screeninfo>
-            <mediaobject>
-              <imageobject>
-                <imagedata fileref="preferences.png" format="PNG"/>
-              </imageobject>
-              <textobject>
-                <phrase
->Janela de preferências</phrase>
-              </textobject>
-            </mediaobject>
-          </screenshot>
-</para>
-      <itemizedlist>
-        <listitem>
-          <para
->ativar ou desativar os sons&nbsp;; </para>
-        </listitem>
-        <listitem>
-          <para
->definir a velocidade das imagens (de lento para imediato)&nbsp;; </para>
-        </listitem>
-        <listitem>
-          <para
->ativar ou desativar as ajudas de contexto que aparecem nos menus&nbsp;; </para>
-        </listitem>
-        <listitem>
-          <para
->mostrar ou ocultar o número de exércitos em cada país. A imagem seguinte apresenta o mapa, quando for apresentado o número de exércitos. <screenshot>
-              <screeninfo
+  <mediaobject>
+    <imageobject
+><imagedata fileref="preferences.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Janela de preferências</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+
+<itemizedlist>
+  <listitem
+><para
+>ativar ou desativar os sons&nbsp;;</para
+></listitem>
+  <listitem
+><para
+>definir a velocidade das imagens (de lento para imediato)&nbsp;;</para
+></listitem>
+  <listitem
+><para
+>ativar ou desativar as ajudas de contexto que aparecem nos menus&nbsp;;</para
+></listitem>
+  <listitem
+><para
+>mostrar ou ocultar o número de exércitos em cada país. A imagem seguinte apresenta o mapa, quando for apresentado o número de exércitos.</para>
+
+    <screenshot>
+      <screeninfo
 >Apresentação do número de exércitos</screeninfo>
-              <mediaobject>
-                <imageobject>
-                  <imagedata fileref="shownumberofarmies.png" format="PNG"/>
-                </imageobject>
-                <textobject>
-                  <phrase
->Apresentação do número de exércitos</phrase>
-                </textobject>
-              </mediaobject>
-            </screenshot>
-
-          </para>
-        </listitem>
-      </itemizedlist>
-
+      <mediaobject>
+        <imageobject
+><imagedata fileref="shownumberofarmies.png" format="PNG"/></imageobject>
+        <textobject
+><phrase
+>Apresentação do número de exércitos</phrase
+></textobject>
+        </mediaobject>
+    </screenshot>
+  </listitem>
+</itemizedlist>
 </sect1>
 
 </appendix>
@@ -973,16 +973,3 @@ sgml-indent-step:0
 sgml-indent-data:nil
 End:
 -->
-
-
-
-
-
-
-
-
-
-
-
-
-
