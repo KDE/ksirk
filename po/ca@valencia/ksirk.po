@@ -1204,7 +1204,7 @@ msgstr "Configuració de xarxa"
 #: Dialogs/joingame.ui:25 Dialogs/tcpconnectwidget.ui:25
 #, kde-format
 msgid "Host:"
-msgstr "Màquina:"
+msgstr "Amfitrió:"
 
 #. i18n: ectx: property (text), widget (QLabel, portLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
