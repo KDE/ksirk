@@ -1204,7 +1204,7 @@ msgstr "Configuració de xarxa"
 #: Dialogs/joingame.ui:25 Dialogs/tcpconnectwidget.ui:25
 #, kde-format
 msgid "Host:"
-msgstr "Màquina:"
+msgstr "Amfitrió:"
 
 #. i18n: ectx: property (text), widget (QLabel, portLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -2631,7 +2631,7 @@ msgstr "Jugador actual: %1"
 #: SaveLoad/ksirkgamexmlloader.cpp:46
 #, kde-format
 msgid "Skin file parsing error"
-msgstr "S'ha produït un error en l'anàlisi del fitxer d'aparença"
+msgstr "S'ha produït un error durant l'anàlisi del fitxer d'aparença"
 
 #: Sprites/animsprite.cpp:515
 #, kde-format
