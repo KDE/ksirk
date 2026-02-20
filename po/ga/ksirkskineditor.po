@@ -88,17 +88,15 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:56
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgid "Countries:"
-msgstr "Tír"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, countrieslist)
 #: ksirkcontinentdefinition.ui:63
-#, fuzzy, kde-format
-#| msgid "Continent"
+#, kde-format
 msgid "Continent's countries"
-msgstr "Mór-Roinn"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, countrieslist)
 #: ksirkcontinentdefinition.ui:66
@@ -189,10 +187,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: ksirkcountrydefinition.ui:124
-#, fuzzy, kde-format
-#| msgid "Cavalry"
+#, kde-format
 msgid "Cavalry:"
-msgstr "Marcra"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryx)
 #: ksirkcountrydefinition.ui:131
@@ -233,10 +230,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_12)
 #: ksirkcountrydefinition.ui:175
-#, fuzzy, kde-format
-#| msgid "Cannon"
+#, kde-format
 msgid "Cannon:"
-msgstr "Gunna Mór"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannony)
 #: ksirkcountrydefinition.ui:192
@@ -495,10 +491,9 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QRadioButton, countriestype)
 #. i18n: ectx: attribute (title), widget (QWidget, tabCountries)
 #: ksirkgoaldefinition.ui:75 ksirkskindefinition.ui:256
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgid "Countries"
-msgstr "Tír"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, continentstype)
 #: ksirkgoaldefinition.ui:82
@@ -517,10 +512,9 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QRadioButton, continentstype)
 #. i18n: ectx: attribute (title), widget (QWidget, tabContinents)
 #: ksirkgoaldefinition.ui:88 ksirkskindefinition.ui:318
-#, fuzzy, kde-format
-#| msgid "Continent"
+#, kde-format
 msgid "Continents"
-msgstr "Mór-Roinn"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
@@ -550,10 +544,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkgoaldefinition.ui:125
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgid "Countries nb:"
-msgstr "Tír"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: ksirkgoaldefinition.ui:132
@@ -605,10 +598,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, selectcontinentsbutton)
 #: ksirkgoaldefinition.ui:176
-#, fuzzy, kde-format
-#| msgid "Continent"
+#, kde-format
 msgid "Select Continents"
-msgstr "Mór-Roinn"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, anycontinent)
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, anycontinent)
@@ -652,10 +644,9 @@ msgstr "Ainm:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, name)
 #: ksirknationalitydefinition.ui:27
-#, fuzzy, kde-format
-#| msgid "Nationality"
+#, kde-format
 msgid "Nationality name"
-msgstr "Náisiúntacht"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, name)
 #: ksirknationalitydefinition.ui:30
@@ -785,10 +776,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: ksirkskindefinition.ui:108
-#, fuzzy, kde-format
-#| msgid "Flag:"
+#, kde-format
 msgid "Fg:"
-msgstr "Bratach:"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, fgcolorbutton)
 #: ksirkskindefinition.ui:115
@@ -855,17 +845,15 @@ msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabNationalities)
 #: ksirkskindefinition.ui:192
-#, fuzzy, kde-format
-#| msgid "Nationality"
+#, kde-format
 msgid "Nationalities"
-msgstr "Náisiúntacht"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newNationalityButton)
 #: ksirkskindefinition.ui:200
-#, fuzzy, kde-format
-#| msgid "Nationality"
+#, kde-format
 msgid "Creates a new Nationality"
-msgstr "Náisiúntacht"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, newNationalityButton)
 #: ksirkskindefinition.ui:203
@@ -875,10 +863,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, newNationalityButton)
 #: ksirkskindefinition.ui:206
-#, fuzzy, kde-format
-#| msgid "Nationality"
+#, kde-format
 msgid "New Nationality"
-msgstr "Náisiúntacht"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, deleteNationalityButton)
 #: ksirkskindefinition.ui:226
@@ -906,10 +893,9 @@ msgstr "X"
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, nationalitieslist)
 #: ksirkskindefinition.ui:241
-#, fuzzy, kde-format
-#| msgid "Nationality"
+#, kde-format
 msgid "Nationality list"
-msgstr "Náisiúntacht"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, nationalitieslist)
 #: ksirkskindefinition.ui:248
@@ -939,10 +925,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, newCountryButton)
 #: ksirkskindefinition.ui:270
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgid "New Country"
-msgstr "Tír"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, deleteCountryButton)
 #: ksirkskindefinition.ui:290
@@ -961,10 +946,9 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (QListWidget, countrieslist)
 #. i18n: ectx: property (toolTip), widget (QListWidget, countriesList)
 #: ksirkskindefinition.ui:305 ksirkskineditorcountriesselectiondialog.ui:19
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgid "Country list"
-msgstr "Tír"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, countrieslist)
 #: ksirkskindefinition.ui:310
@@ -990,10 +974,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, newContinentButton)
 #: ksirkskindefinition.ui:332
-#, fuzzy, kde-format
-#| msgid "Continent"
+#, kde-format
 msgid "New Continent"
-msgstr "Mór-Roinn"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, deleteContinentButton)
 #: ksirkskindefinition.ui:352
@@ -1011,10 +994,9 @@ msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, continentslist)
 #: ksirkskindefinition.ui:367
-#, fuzzy, kde-format
-#| msgid "Continent"
+#, kde-format
 msgid "Continent list"
-msgstr "Mór-Roinn"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, continentslist)
 #: ksirkskindefinition.ui:372
@@ -1081,11 +1063,10 @@ msgid ""
 msgstr ""
 
 #: ksirkSkinEditorConfigDialog.cpp:55
-#, fuzzy, kde-format
-#| msgid "Preferences"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Preferences"
-msgstr "Sainroghanna"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CountriesSelectionDialog)
 #: ksirkskineditorcountriesselectiondialog.ui:13
@@ -1714,10 +1695,9 @@ msgid ""
 msgstr ""
 
 #: main.cpp:59
-#, fuzzy, kde-format
-#| msgid "Gael de Chalendar aka Kleag"
+#, kde-format
 msgid "Gaël de Chalendar aka Kleag"
-msgstr "Gael de Chalendar aka Kleag"
+msgstr ""
 
 #: main.cpp:67
 #, kde-format
@@ -1741,11 +1721,10 @@ msgid "Open a saved skin"
 msgstr ""
 
 #: mainwindow.cpp:328
-#, fuzzy, kde-format
-#| msgid "Load &Recent"
+#, kde-format
 msgctxt "@action"
 msgid "Load &Recent"
-msgstr "Luchtaigh Cluiche Le &Déanaí"
+msgstr ""
 
 #: mainwindow.cpp:329
 #, kde-format
@@ -1789,11 +1768,10 @@ msgid "Save and Quit"
 msgstr ""
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Country Name"
-msgstr "Tír"
+msgstr ""
 
 #: mainwindow.cpp:1305
 #, kde-format
@@ -1813,11 +1791,10 @@ msgid "Delete Country Confirmation"
 msgstr ""
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "Continent"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Continent Name"
-msgstr "Mór-Roinn"
+msgstr ""
 
 #: mainwindow.cpp:1334
 #, kde-format
@@ -1831,11 +1808,10 @@ msgid "Do you really want to delete continent '%1'?"
 msgstr ""
 
 #: mainwindow.cpp:1344
-#, fuzzy, kde-format
-#| msgid "Continent"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Continent Confirmation"
-msgstr "Mór-Roinn"
+msgstr ""
 
 #: mainwindow.cpp:1889
 #, kde-format
@@ -1849,18 +1825,16 @@ msgid "Delete Goal Confirmation"
 msgstr ""
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "Nationality"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Nationality Name"
-msgstr "Náisiúntacht"
+msgstr ""
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "Nationality"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new nationality:"
-msgstr "Náisiúntacht"
+msgstr ""
 
 #: mainwindow.cpp:1958
 #, kde-format
@@ -1921,11 +1895,7 @@ msgid "Error - Unknown skin string data: "
 msgstr ""
 
 #: skinSpritesData.cpp:102
-#, fuzzy, kde-format
-#| msgid "Fatal Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Fatal Error"
-msgstr "Earráid Mharfach"
-
-#~ msgid "Error"
-#~ msgstr "Earráid"
+msgstr ""

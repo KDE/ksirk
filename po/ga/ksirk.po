@@ -1058,18 +1058,16 @@ msgid "Legacy"
 msgstr ""
 
 #: decoratedgameframe.cpp:100 kgamewin.cpp:349
-#, fuzzy, kde-format
-#| msgid "Next Player"
+#, kde-format
 msgctxt "@action"
 msgid "Next Player"
-msgstr "An Chéad Imreoir Eile"
+msgstr ""
 
 #: decoratedgameframe.cpp:103
-#, fuzzy, kde-format
-#| msgid "Details"
+#, kde-format
 msgctxt "@action"
 msgid "Details"
-msgstr "Mionsonraí"
+msgstr ""
 
 #: decoratedgameframe.cpp:106 kgamewin.cpp:332 kgamewin.cpp:1214
 #: kgamewin.cpp:1226 kgamewin.cpp:2383
@@ -1109,25 +1107,22 @@ msgid "Auto Attack"
 msgstr ""
 
 #: decoratedgameframe.cpp:169
-#, fuzzy, kde-format
-#| msgid "Move 1"
+#, kde-format
 msgctxt "@action"
 msgid "Move 1"
-msgstr "Beart 1"
+msgstr ""
 
 #: decoratedgameframe.cpp:172
-#, fuzzy, kde-format
-#| msgid "Move 5"
+#, kde-format
 msgctxt "@action"
 msgid "Move 5"
-msgstr "Beart 5"
+msgstr ""
 
 #: decoratedgameframe.cpp:175
-#, fuzzy, kde-format
-#| msgid "Move 10"
+#, kde-format
 msgctxt "@action"
 msgid "Move 10"
-msgstr "Beart 10"
+msgstr ""
 
 #: decoratedgameframe.cpp:400
 #, kde-format
@@ -1263,10 +1258,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (KNSWidgets::Button, ghnsbutton)
 #: Dialogs/newGameDialog.ui:123
-#, fuzzy, kde-format
-#| msgid "Download New Skins"
+#, kde-format
 msgid "Download New Skins…"
-msgstr "Íosluchtaigh Craicne Nua"
+msgstr ""
 
 #. i18n: ectx: property (configFile), widget (KNSWidgets::Button, ghnsbutton)
 #: Dialogs/newGameDialog.ui:126
@@ -1328,10 +1322,9 @@ msgstr "Cealaigh"
 #. i18n: ectx: property (text), widget (QPushButton, nextButton)
 #: Dialogs/newGameDialog.ui:250 Dialogs/qplayersetupdialog.ui:153
 #: Dialogs/tcpconnectwidget.ui:125
-#, fuzzy, kde-format
-#| msgid "Next >>"
+#, kde-format
 msgid "Next"
-msgstr "Ar Aghaidh >>"
+msgstr ""
 
 #: Dialogs/newGameDialogImpl.cpp:128 newgamesetup.cpp:44
 #, kde-format
@@ -1343,18 +1336,16 @@ msgstr ""
 #: Dialogs/newGameDialogImpl.cpp:129 GameLogic/aiplayer.cpp:506
 #: newgamesetup.cpp:45 Sprites/skinSpritesData.cpp:89
 #: Sprites/skinSpritesData.cpp:105
-#, fuzzy, kde-format
-#| msgid "Fatal Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Fatal Error"
-msgstr "Earráid Mharfach"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: Dialogs/newGameSummary.ui:24
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgid "New Game Summary"
-msgstr "Cluiche Nua"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, skinNameLabel)
 #: Dialogs/newGameSummary.ui:48
@@ -1541,16 +1532,12 @@ msgid_plural ""
 "armies to place. This is bug probably #2232 at www.gna.org."
 msgstr[0] ""
 msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
 
 #: GameLogic/gameautomaton.cpp:303
-#, fuzzy, kde-format
-#| msgid "Network Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Network Configuration"
-msgstr "Cumraíocht Líonra"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:304
 #, kde-format
@@ -1563,18 +1550,16 @@ msgid "Do you really want to end your current game and join another?"
 msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1191
-#, fuzzy, kde-format
-#| msgid "Join Network Game Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Game Confirmation"
-msgstr "Cumraíocht Cluichí Líonra"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1191
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Join New Game"
-msgstr "Cluiche Nua"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1362
 #, kde-format
@@ -1582,17 +1567,15 @@ msgid "%1 (%2) joined game ; waiting for %3 players to connect"
 msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1468
-#, fuzzy, kde-format
-#| msgid "Please choose another name"
+#, kde-format
 msgid "Please choose another name."
-msgstr "Roghnaigh ainm eile"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1468
-#, fuzzy, kde-format
-#| msgid "KsirK - Name already used!"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Already Used"
-msgstr "KsirK - Ainm in úsáid cheana!"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1474
 #, kde-format
@@ -1611,17 +1594,15 @@ msgid "Player%1"
 msgstr "Imreoir%1"
 
 #: GameLogic/gameautomaton.cpp:1531
-#, fuzzy, kde-format
-#| msgid "Please choose another nation"
+#, kde-format
 msgid "Please choose another nation."
-msgstr "Roghnaigh náisiún eile"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1531
-#, fuzzy, kde-format
-#| msgid "KsirK - Nation already used!"
+#, kde-format
 msgctxt "@title:window"
 msgid "Nation Already Used"
-msgstr "KsirK - Náisiún in úsáid cheana!"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1623
 #, kde-format
@@ -1631,32 +1612,28 @@ msgid ""
 msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1624
-#, fuzzy, kde-format
-#| msgid "New Game or Exit"
+#, kde-format
 msgctxt "@title:window"
 msgid "Starting a New Game or Exit."
-msgstr "Cluiche Nua nó Scoir"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1625
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Game"
-msgstr "Cluiche Nua"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1626
-#, fuzzy, kde-format
-#| msgid "Exit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Exit"
-msgstr "Scoir"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1627
-#, fuzzy, kde-format
-#| msgid "Do Nothing"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Nothing"
-msgstr "Ná Déan Faic"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1649
 #, kde-format
@@ -1667,11 +1644,10 @@ msgid ""
 msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1650
-#, fuzzy, kde-format
-#| msgid "Connection timed out."
+#, kde-format
 msgctxt "@title:window"
 msgid "Lost Connection to Client"
-msgstr "Ceangal imithe thar am."
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1652
 #, kde-format
@@ -1728,11 +1704,10 @@ msgid ""
 msgstr ""
 
 #: GameLogic/gameautomaton.cpp:2387
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Invalid Password"
-msgstr "Focal Faire:"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:2588
 #, kde-format
@@ -1742,18 +1717,16 @@ msgid ""
 msgstr ""
 
 #: GameLogic/gameautomaton.cpp:2589
-#, fuzzy, kde-format
-#| msgid "Network Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Next Player Confirmation"
-msgstr "Cumraíocht Líonra"
+msgstr ""
 
 #: GameLogic/gameautomaton.cpp:2590
-#, fuzzy, kde-format
-#| msgid "Next Player"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Player"
-msgstr "An Chéad Imreoir Eile"
+msgstr ""
 
 #: GameLogic/goal.cpp:156
 #, kde-format
@@ -1771,22 +1744,16 @@ msgid "Error: no player to destroy"
 msgstr "Earráid: níl imreoir le díothú"
 
 #: GameLogic/goal.cpp:231
-#, fuzzy, kde-format
-#| msgid "<br>%1 is still alive..."
+#, kde-format
 msgid "<br>%1 is still alive…"
-msgstr "<br>tá %1 ina bheo fós..."
+msgstr ""
 
 #: GameLogic/goal.cpp:238 GameLogic/goal.cpp:252
-#, fuzzy, kde-format
-#| msgid "<br>%2, you still have 1 country to conquer..."
-#| msgid_plural "<br>%2, you still have %1 countries to conquer..."
+#, kde-format
 msgid "<br>%2, you still have 1 country to conquer…"
 msgid_plural "<br>%2, you still have %1 countries to conquer…"
-msgstr[0] "<br>A %2, tá 1 tír le cloí agat fós..."
-msgstr[1] "<br>A %2, tá %1 tír le cloí agat fós..."
-msgstr[2] "<br>A %2, tá %1 tír le cloí agat fós..."
-msgstr[3] "<br>A %2, tá %1 tír le cloí agat fós..."
-msgstr[4] "<br>A %2, tá %1 tír le cloí agat fós..."
+msgstr[0] ""
+msgstr[1] ""
 
 #: GameLogic/goal.cpp:242
 #, kde-format
@@ -1795,18 +1762,9 @@ msgid_plural ""
 "<br>Your goal is reached: %2 is dead and you possess %1 countries."
 msgstr[0] ""
 msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
 
 #: GameLogic/goal.cpp:264
-#, fuzzy, kde-format
-#| msgid ""
-#| "<br>%2, you have enough countries but you still have to put more than 1 "
-#| "army on %3 of them..."
-#| msgid_plural ""
-#| "<br>%2, you have enough countries but you still have to put more than %1 "
-#| "armies on %3 of them..."
+#, kde-format
 msgid ""
 "<br>%2, you have enough countries but you still have to put more than 1 army "
 "on %3 of them…"
@@ -1814,20 +1772,7 @@ msgid_plural ""
 "<br>%2, you have enough countries but you still have to put more than %1 "
 "armies on %3 of them…"
 msgstr[0] ""
-"<br>A %2, tá do dhóthain tíortha agat ach caithfidh tú níos mó ná arm amháin "
-"a chur ar %3 ceann acu..."
 msgstr[1] ""
-"<br>A %2, tá do dhóthain tíortha agat ach caithfidh tú níos mó ná %1 arm a "
-"chur ar %3 ceann acu..."
-msgstr[2] ""
-"<br>A %2, tá do dhóthain tíortha agat ach caithfidh tú níos mó ná %1 arm a "
-"chur ar %3 ceann acu..."
-msgstr[3] ""
-"<br>A %2, tá do dhóthain tíortha agat ach caithfidh tú níos mó ná %1 arm a "
-"chur ar %3 ceann acu..."
-msgstr[4] ""
-"<br>A %2, tá do dhóthain tíortha agat ach caithfidh tú níos mó ná %1 arm a "
-"chur ar %3 ceann acu..."
 
 #: GameLogic/goal.cpp:269
 #, kde-format
@@ -1845,18 +1790,16 @@ msgstr[3] "%1 dtír i %2"
 msgstr[4] "%1 tír i %2"
 
 #: GameLogic/goal.cpp:285
-#, fuzzy, kde-format
-#| msgid " and "
+#, kde-format
 msgctxt "@item:intext country list separator of last item"
 msgid " and "
-msgstr " agus "
+msgstr ""
 
 #: GameLogic/goal.cpp:289
-#, fuzzy, kde-format
-#| msgid ", "
+#, kde-format
 msgctxt "@item:intext country list separator of non-last item"
 msgid ", "
-msgstr ", "
+msgstr ""
 
 #: GameLogic/goal.cpp:295
 #, kde-format
@@ -1873,10 +1816,9 @@ msgid "Goal Display"
 msgstr ""
 
 #: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:170
-#, fuzzy, kde-format
-#| msgid "Message"
+#, kde-format
 msgid "No message…"
-msgstr "Teachtaireacht"
+msgstr ""
 
 #: GameLogic/KsirkChatModel.cpp:73
 #, kde-format
@@ -1950,46 +1892,40 @@ msgid "Cannot load button image %1<br>Program cannot continue"
 msgstr ""
 
 #: kgamewin.cpp:305
-#, fuzzy, kde-format
-#| msgid "New Standard TCP/IP Network Game"
+#, kde-format
 msgctxt "@action"
 msgid "New Standard TCP/IP Network Game"
-msgstr "Cluiche Nua Caighdeánach TCP/IP"
+msgstr ""
 
 #: kgamewin.cpp:306
-#, fuzzy, kde-format
-#| msgid "New TCP/IP"
+#, kde-format
 msgctxt "@action"
 msgid "New TCP/IP"
-msgstr "Cluiche Nua TCP/IP"
+msgstr ""
 
 #: kgamewin.cpp:308
-#, fuzzy, kde-format
-#| msgid "Create a new standard TCP/IP network game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new standard TCP/IP network game"
-msgstr "Cruthaigh cluiche nua caighdeánach TCP/IP"
+msgstr ""
 
 #: kgamewin.cpp:323
-#, fuzzy, kde-format
-#| msgid "Join Standard TCP/IP Network Game"
+#, kde-format
 msgctxt "@action"
 msgid "Join a Standard TCP/IP Network Game"
-msgstr "Glac Páirt i gCluiche Caighdeánach TCP/IP"
+msgstr ""
 
 #: kgamewin.cpp:324
-#, fuzzy, kde-format
-#| msgid "New TCP/IP"
+#, kde-format
 msgctxt "@action"
 msgid "Join TCP/IP"
-msgstr "Cluiche Nua TCP/IP"
+msgstr ""
 
 #: kgamewin.cpp:326
-#, fuzzy, kde-format
-#| msgid "Join Standard TCP/IP Network Game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Join a standard TCP/IP network game"
-msgstr "Glac Páirt i gCluiche Caighdeánach TCP/IP"
+msgstr ""
 
 #: kgamewin.cpp:331
 #, kde-format
@@ -2082,11 +2018,10 @@ msgid "Do you want to quit the game?"
 msgstr "An bhfuil fonn ort éirí as an gcluiche?"
 
 #: kgamewin.cpp:949
-#, fuzzy, kde-format
-#| msgid "Quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
-msgstr "Scoir"
+msgstr ""
 
 #: kgamewin.cpp:961
 #, kde-format
@@ -2094,11 +2029,10 @@ msgid "Before you quit, do you want to save your game?"
 msgstr "Sula scoireann tú, an bhfuil fonn ort do chluiche a shábháil?"
 
 #: kgamewin.cpp:999
-#, fuzzy, kde-format
-#| msgid "New Local Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Game"
-msgstr "Cluiche Nua Logánta"
+msgstr ""
 
 #: kgamewin.cpp:1037
 #, kde-format
@@ -2115,9 +2049,6 @@ msgid_plural ""
 "with %1 armies!<br> How do you want to defend <font color=\"blue\">%4</font>?"
 msgstr[0] ""
 msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
 
 #: kgamewin.cpp:1145
 #, kde-format
@@ -2230,11 +2161,10 @@ msgid "New game confirmation"
 msgstr ""
 
 #: kgamewin.cpp:2547
-#, fuzzy, kde-format
-#| msgid "Start a New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
-msgstr "Tosaigh Cluiche Nua"
+msgstr ""
 
 #: kgamewin.cpp:2803
 msgid "<b>KsirK quick Introduction</b>"
@@ -2277,11 +2207,10 @@ msgid "Cannot save when waiting for a defense."
 msgstr ""
 
 #: kgamewinslots.cpp:441
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Game"
-msgstr "Cluiche Nua"
+msgstr ""
 
 #: kgamewinslots.cpp:445
 #, kde-format
@@ -2368,11 +2297,10 @@ msgid "Stop Auto-Defense"
 msgstr ""
 
 #: krightdialog.cpp:298
-#, fuzzy, kde-format
-#| msgid "Valid"
+#, kde-format
 msgctxt "@action:button"
 msgid "Valid"
-msgstr "Bailí"
+msgstr ""
 
 #: krightdialog.cpp:299
 #, kde-format
@@ -2381,11 +2309,10 @@ msgid "Recycle"
 msgstr ""
 
 #: krightdialog.cpp:300
-#, fuzzy, kde-format
-#| msgid "Done"
+#, kde-format
 msgctxt "@action:button"
 msgid "Done"
-msgstr "Críochnaithe"
+msgstr ""
 
 #: krightdialog.cpp:327
 #, kde-format
@@ -2428,11 +2355,10 @@ msgid "<font color=\"blue\">lost armies: %1</font>"
 msgstr ""
 
 #: ksirkConfigDialog.cpp:37
-#, fuzzy, kde-format
-#| msgid "Preferences"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Preferences"
-msgstr "Sainroghanna"
+msgstr ""
 
 #. i18n: ectx: label, entry (spritesSpeed), group (General)
 #: ksirksettings.kcfg:9
@@ -2454,10 +2380,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry (showArmiesNumbers), group (General)
 #: ksirksettings.kcfg:21
-#, fuzzy, kde-format
-#| msgid "Show number of armies on countries"
+#, kde-format
 msgid "If true, the number of armies is displayed on each country."
-msgstr "Taispeáin líon na n-arm i ngach tír"
+msgstr ""
 
 #. i18n: ectx: label, entry (Theme), group (General)
 #: ksirksettings.kcfg:25
@@ -2500,10 +2425,9 @@ msgid "World Domination Strategy Game"
 msgstr ""
 
 #: main.cpp:46
-#, fuzzy, kde-format
-#| msgid "(c) 2002-2005, Gaël de Chalendar\n"
+#, kde-format
 msgid "(c) 2002-2015, Gaël de Chalendar\n"
-msgstr "© 2002-2005, Gaël de Chalendar\n"
+msgstr ""
 
 #: main.cpp:47
 #, kde-format
@@ -2513,10 +2437,9 @@ msgid ""
 msgstr ""
 
 #: main.cpp:50
-#, fuzzy, kde-format
-#| msgid "Gael de Chalendar aka Kleag"
+#, kde-format
 msgid "Gaël de Chalendar aka Kleag"
-msgstr "Gael de Chalendar aka Kleag"
+msgstr ""
 
 #: main.cpp:51
 #, kde-format
@@ -2651,447 +2574,3 @@ msgstr ""
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr ""
-
-#~ msgid "Player number %1, please enter your name and choose your nation:"
-#~ msgstr "A imreoir %1, iontráil d'ainm agus roghnaigh do náisiún:"
-
-#~ msgid "%1 won! Do you want to play again?"
-#~ msgstr "Bhí an bua ag %1!  An bhfuil fonn ort imirt arís?"
-
-#~ msgid "Next Player"
-#~ msgstr "An Chéad Imreoir Eile"
-
-#~ msgid "Fatal Error!"
-#~ msgstr "Earráid Mharfach!"
-
-#, fuzzy
-#~| msgid "Ksirk - New game properties"
-#~ msgid "KsirK - New game properties"
-#~ msgstr "Ksirk - Airíonna cluiche nua"
-
-#~ msgid "Player Setup"
-#~ msgstr "Socrú Imreora"
-
-#~ msgid "KsirK - Network configuration"
-#~ msgstr "KsirK - Cumraíocht líonra"
-
-#~ msgid "Do nothing"
-#~ msgstr "Ná déan faic"
-
-#~ msgid "KsirK - Error!"
-#~ msgstr "KsirK - Earráid!"
-
-#~ msgid "Really Next Player?"
-#~ msgstr "An Chéad Imreoir Eile, i nDáiríre?"
-
-#~ msgid "Error!"
-#~ msgstr "Earráid!"
-
-#, fuzzy
-#~| msgid "KsirK - Load Game"
-#~ msgctxt "@title:window"
-#~ msgid "KsirK - Load Game"
-#~ msgstr "KsirK - Luchtaigh Cluiche"
-
-#, fuzzy
-#~| msgid "KsirK - Save Game"
-#~ msgctxt "@title:window"
-#~ msgid "KsirK - Save Game"
-#~ msgstr "KsirK - Sábháil Cluiche"
-
-#, fuzzy
-#~| msgid "Load"
-#~ msgid "Load..."
-#~ msgstr "Luchtaigh"
-
-#~ msgid "KsirK Preferences"
-#~ msgstr "Sainroghanna KsirK"
-
-#~ msgid "KsirK - Cannot load!"
-#~ msgstr "KsirK - Ní féidir luchtú!"
-
-#~ msgid "KsirK - Error"
-#~ msgstr "KsirK - Earráid"
-
-#~ msgid "Nickname"
-#~ msgstr "Leasainm"
-
-#~ msgid "Skin"
-#~ msgstr "Craiceann"
-
-#~ msgid "Nb players"
-#~ msgstr "Líon na n-imreoirí"
-
-#, fuzzy
-#~| msgid "Play KsirK over the Jabber Network"
-#~ msgid "Connection to the Jabber Network"
-#~ msgstr "Imir KsirK ar Líonra Jabber"
-
-#~ msgid "Jabber ID:"
-#~ msgstr "Aitheantas Jabber:"
-
-#~ msgid "kleag@kdetalk.net"
-#~ msgstr "kleag@kdetalk.net"
-
-#~ msgid "12345678"
-#~ msgstr "12345678"
-
-#~ msgid "Connect"
-#~ msgstr "Ceangail"
-
-#~ msgid "State:"
-#~ msgstr "Staid:"
-
-#~ msgid "Room JID:"
-#~ msgstr "Aitheantas Jabber an tSeomra:"
-
-#~ msgid "Nickname:"
-#~ msgstr "Leasainm:"
-
-#~ msgid "Room Password:"
-#~ msgstr "Focal Faire an tSeomra"
-
-#~ msgid "Join Room"
-#~ msgstr "Téigh sa Seomra"
-
-#~ msgid "Games in the Room"
-#~ msgstr "Cluiche sa Seomra seo"
-
-#~ msgid "Start a New Game"
-#~ msgstr "Tosaigh Cluiche Nua"
-
-#~ msgid "Join Selected Game"
-#~ msgstr "Glac Páirt sa Chluiche Roghnaithe"
-
-#, fuzzy
-#~| msgid "Load a Saved Game"
-#~ msgid "Load a Saved Game..."
-#~ msgstr "Luchtaigh Cluiche Sábháilte"
-
-#~ msgid "Jabber Error"
-#~ msgstr "Earráid Jabber"
-
-#~ msgid "Jabber SSL Error"
-#~ msgstr "Earráid SSL Jabber"
-
-#~ msgid "The certificate is invalid."
-#~ msgstr "Tá an teastas neamhbhailí."
-
-#~ msgid "Jabber Connection Error"
-#~ msgstr "Earráid Naisc Jabber"
-
-#~ msgid "The stream timed out."
-#~ msgstr "Sruth imithe thar am."
-
-#~ msgid "Internal server error."
-#~ msgstr "Earráid inmheánach leis an bhfreastalaí."
-
-#~ msgid "Unknown reason."
-#~ msgstr "Ní fios cén fáth."
-
-#~ msgid "Host not found."
-#~ msgstr "Ní bhfuarthas an t-óstríomhaire."
-
-#~ msgid "Connection refused."
-#~ msgstr "Ceangal diúltaithe."
-
-#~ msgid "Operation is not supported."
-#~ msgstr "Ní thacaítear leis an oibríocht seo."
-
-#~ msgid "Socket timed out."
-#~ msgstr "Soicéad imithe thar am."
-
-#~ msgid "There was a connection error: %1"
-#~ msgstr "Tharla earráid cheangail: %1"
-
-#~ msgid "Unknown host."
-#~ msgstr "Óstríomhaire anaithnid."
-
-#~ msgid "Unsupported protocol version."
-#~ msgstr "Leagan prótacail gan tacaíocht."
-
-#~ msgid "Unknown error."
-#~ msgstr "Earráid anaithnid."
-
-#~ msgid "Notification"
-#~ msgstr "Fógairt"
-
-#~ msgid "Keep"
-#~ msgstr "Coimeád"
-
-#~ msgid "Provide your nickname"
-#~ msgstr "Tabhair do leasainm:"
-
-#~ msgid ""
-#~ "An error occurred while trying to remove the account:\n"
-#~ "%1"
-#~ msgstr ""
-#~ "Tharla earráid agus an cuntas á bhaint:\n"
-#~ "%1"
-
-#~ msgid "Client"
-#~ msgstr "Cliant"
-
-#~ msgid "Timestamp"
-#~ msgstr "Stampa Ama"
-
-#~ msgid "Authorization"
-#~ msgstr "Údarú"
-
-#~ msgid "(Re)send Authorization To"
-#~ msgstr "(Ath)sheol Údarú Go"
-
-#~ msgid "Remove Authorization From"
-#~ msgstr "Bain Údarú Ó"
-
-#~ msgid "Online"
-#~ msgstr "Ar Líne"
-
-#~ msgid "Away"
-#~ msgstr "Amuigh"
-
-#~ msgid "Do Not Disturb"
-#~ msgstr "Ná Cuir Isteach Orm"
-
-#~ msgid "Invisible"
-#~ msgstr "Dofheicthe"
-
-#~ msgid "Select Resource"
-#~ msgstr "Roghnaigh Acmhainn"
-
-#~ msgid "Message has been delivered"
-#~ msgstr "Seoladh an teachtaireacht"
-
-#~ msgid "Kopete File Transfer"
-#~ msgstr "Aistriú Comhad Kopete"
-
-#~ msgid "Change nickname"
-#~ msgstr "Athraigh leasainm"
-
-#~ msgid "Change nickname - Jabber Plugin"
-#~ msgstr "Athraigh leasainm - Breiseán Jabber"
-
-#~ msgid "Please enter the new nickname you want to have in the room <i>%1</i>"
-#~ msgstr "Iontráil do leasainm nua le haghaidh seomra <i>%1</i>"
-
-#~ msgid "Choose Account"
-#~ msgstr "Roghnaigh Cuntas"
-
-#~ msgid "Add"
-#~ msgstr "Cuir Leis"
-
-#~ msgid "Do Not Add"
-#~ msgstr "Ná Cuir Leis"
-
-#~ msgid "Do you want to remove '%1' from your contact list?"
-#~ msgstr ""
-#~ "An bhfuil tú cinnte go dteastaíonn uait '%1' a bhaint ó do liosta "
-#~ "teagmhála?"
-
-#~ msgid "Remove"
-#~ msgstr "Bain"
-
-#~ msgid "Do Not Remove"
-#~ msgstr "Ná Bain"
-
-#~ msgid "Please enter your nickname for the room %1"
-#~ msgstr "Iontráil do leasainm le haghaidh seomra %1"
-
-#~ msgid "Play over Jabber"
-#~ msgstr "Imir ar Jabber"
-
-#~ msgid "Play KsirK over the Jabber Network"
-#~ msgstr "Imir KsirK ar Líonra Jabber"
-
-#~ msgid "Jabber"
-#~ msgstr "Jabber"
-
-#~ msgid "Play KsirK over Jabber Network"
-#~ msgstr "Imir KsirK ar Líonra Jabber"
-
-#~ msgid "Overwrite file?"
-#~ msgstr "Forscríobh an comhad?"
-
-#~ msgid "Error"
-#~ msgstr "Earráid"
-
-#~ msgid "Ksirk - Error!"
-#~ msgstr "Ksirk - Earráid!"
-
-#~ msgid "file to open"
-#~ msgstr "comhad le hoscailt"
-
-#~ msgid "0"
-#~ msgstr "0"
-
-#~ msgid "Server"
-#~ msgstr "Freastalaí"
-
-#~ msgid "SSL"
-#~ msgstr "SSL"
-
-#~ msgid "None"
-#~ msgstr "Neamhní"
-
-#~ msgid "Proxy:"
-#~ msgstr "Seachfhreastalaí:"
-
-#~ msgid "Proxy Settings"
-#~ msgstr "Socruithe an tSeachfhreastalaí"
-
-#~ msgid "/"
-#~ msgstr "/"
-
-#~ msgid "Security Settings"
-#~ msgstr "Socruithe Slándála"
-
-#~ msgid "&Connect"
-#~ msgstr "&Ceangail"
-
-#~ msgid "&About"
-#~ msgstr "&Eolas"
-
-#~ msgid "To:"
-#~ msgstr "Go:"
-
-#~ msgid "&Message"
-#~ msgstr "&Teachtaireacht"
-
-#~ msgid "&Send"
-#~ msgstr "&Seol"
-
-#~ msgid "<br>You now have to conquer %1"
-#~ msgstr "<br>Ní mór duit bua a fháil ar %1 anois"
-
-#~ msgid "Player %1, you have to choose a name!"
-#~ msgstr "A imreoir %1, a chara, caithfidh tú ainm a roghnú!"
-
-#~ msgid "Help currently unavailable."
-#~ msgstr "Níl cabhair ar fáil faoi láthair."
-
-#~ msgid "KsirK - No help!"
-#~ msgstr "KsirK - Gan chabhair!"
-
-#~ msgid "%1 armies to place"
-#~ msgstr "%1 arm le cur"
-
-#~ msgid "Fatal Error !"
-#~ msgstr "Earráid Mharfach!"
-
-#~ msgctxt "@info Report the wrong number of nations given"
-#~ msgid "Error - 2 nations minimum. Got %1."
-#~ msgstr "Earráid - 2 thír ar a laghad.  Fuarthas %1."
-
-#~ msgid "Open game"
-#~ msgstr "Oscail cluiche"
-
-#~ msgid "Move armies"
-#~ msgstr "Bog airm"
-
-#~ msgid "Number of network players"
-#~ msgstr "Líon na n-imreoirí líonra"
-
-#~ msgid "Check this to create a network game"
-#~ msgstr "Ticeáil é seo chun cluiche líonra a chruthú"
-
-#~ msgid "A network game will be created if checked"
-#~ msgstr "Cruthófar cluiche líonra más ticeáilte"
-
-#~ msgid "<i>("
-#~ msgstr "<i>("
-
-#~ msgid "<u><b>"
-#~ msgstr "<u><b>"
-
-#~ msgid "<b>"
-#~ msgstr "<b>"
-
-#~ msgid "Real Politiks"
-#~ msgstr "Real Politiks"
-
-#~ msgid "Western-United-States"
-#~ msgstr "Iarthar na Stát Aontaithe"
-
-#~ msgid "Central-America"
-#~ msgstr "Meiriceá Láir"
-
-#~ msgid "Eastern-United-States"
-#~ msgstr "Oirthear na Stát Aontaithe"
-
-#~ msgid "Venezuela"
-#~ msgstr "Veiniséala"
-
-#~ msgid "Peru"
-#~ msgstr "Peiriú"
-
-#~ msgid "Argentina"
-#~ msgstr "An Airgintín"
-
-#~ msgid "Iceland"
-#~ msgstr "An Íoslainn"
-
-#~ msgid "Ukraine"
-#~ msgstr "An Úcráin"
-
-#~ msgid "Great-Britain"
-#~ msgstr "An Bhreatain Mhór"
-
-#~ msgid "Northern-Europe"
-#~ msgstr "Tuaisceart na hEorpa"
-
-#~ msgid "Western-Europe"
-#~ msgstr "Iarthar na hEorpa"
-
-#~ msgid "Southern-Europe"
-#~ msgstr "Deisceart na hEorpa"
-
-#~ msgid "North-Africa"
-#~ msgstr "Tuaisceart na hAfraice"
-
-#~ msgid "Congo"
-#~ msgstr "Congó"
-
-#~ msgid "East-Africa"
-#~ msgstr "Oirthear na hAfraice"
-
-#~ msgid "South-Africa"
-#~ msgstr "Deisceart na hAfraice"
-
-#~ msgid "Ural"
-#~ msgstr "An Úrail"
-
-#~ msgid "Afghanistan"
-#~ msgstr "An Afganastáin"
-
-#~ msgid "Middle-East"
-#~ msgstr "An Meánoirthear"
-
-#~ msgid "Siam"
-#~ msgstr "Siam"
-
-#~ msgid "Yakutsk"
-#~ msgstr "Iacútsc"
-
-#~ msgid "Irkutsk"
-#~ msgstr "Irkutsk"
-
-#~ msgid "Kamchatka"
-#~ msgstr "Kamchatka"
-
-#~ msgid "New-Guinea"
-#~ msgstr "An Nua-Ghuine"
-
-#~ msgid "North-America"
-#~ msgstr "Meiriceá Thuaidh"
-
-#~ msgid "South-America"
-#~ msgstr "Meiriceá Theas"
-
-#~ msgid "Australia"
-#~ msgstr "An Astráil"
-
-#~ msgid "Brasil"
-#~ msgstr "An Bhrasaíl"
-
-#~ msgid "KsirK - Cannot save !"
-#~ msgstr "KsirK - Ní féidir sábháil!"
