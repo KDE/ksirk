@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ksirk package.
 #
-# SPDX-FileCopyrightText: 2024, 2025 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025, 2026 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:50+0000\n"
-"PO-Revision-Date: 2025-04-30 11:07+0300\n"
+"PO-Revision-Date: 2026-02-27 14:58+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1927,7 +1927,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "New Standard TCP/IP Network Game"
-msgstr ""
+msgstr "משחק רשת TCP/IP תקני חדש"
 
 #: kgamewin.cpp:306
 #, kde-format
@@ -1939,13 +1939,13 @@ msgstr "TCP/IP חדש"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new standard TCP/IP network game"
-msgstr ""
+msgstr "יצירת משחק רשת TCP/IP תקני חדש"
 
 #: kgamewin.cpp:323
 #, kde-format
 msgctxt "@action"
 msgid "Join a Standard TCP/IP Network Game"
-msgstr ""
+msgstr "הצטרפות למשחק רשת TCP/IP תקני"
 
 #: kgamewin.cpp:324
 #, kde-format
@@ -1957,7 +1957,7 @@ msgstr "הצטרפות ל־TCP/IP"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Join a standard TCP/IP network game"
-msgstr ""
+msgstr "הצטרפות למשחק רשת TCP/IP תקני"
 
 #: kgamewin.cpp:331
 #, kde-format
@@ -1987,7 +1987,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Finish Moves"
-msgstr ""
+msgstr "סיום המהלכים"
 
 #: kgamewin.cpp:357
 #, kde-format
@@ -2010,7 +2010,7 @@ msgstr ""
 #: kgamewin.cpp:728
 #, kde-format
 msgid "%1, you are defeated! Bye, bye…"
-msgstr ""
+msgstr "%1, הובסת! ביי ביי…"
 
 #: kgamewin.cpp:800
 #, kde-format
@@ -2020,7 +2020,7 @@ msgstr ""
 #: kgamewin.cpp:814
 #, kde-format
 msgid "%1 won!"
-msgstr ""
+msgstr "הניצחון לטובת %1!"
 
 #: kgamewin.cpp:816
 #, kde-format
@@ -2037,7 +2037,7 @@ msgstr ""
 #: kgamewin.cpp:826
 #, kde-format
 msgid "<br>You conquered all the world!"
-msgstr ""
+msgstr "<br>כבשת את כל העולם!"
 
 #: kgamewin.cpp:830
 #, kde-format
@@ -2114,7 +2114,7 @@ msgstr "אין כאן מדינה!"
 #: kgamewin.cpp:1660 kgamewin.cpp:1701
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
-msgstr ""
+msgstr "אין לך בעלות על המדינה הראשונה: %1!"
 
 #: kgamewin.cpp:1664
 #, kde-format
@@ -2187,7 +2187,7 @@ msgstr "%1, זה תלוי בך."
 #: kgamewin.cpp:2547
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
-msgstr ""
+msgstr "לסיים את המשחק הנוכחי ולהתחיל חדש?"
 
 #: kgamewin.cpp:2547
 #, kde-format
