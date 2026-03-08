@@ -608,7 +608,7 @@ msgstr "描述："
 #: ksirkgoaldefinition.ui:106
 #, kde-format
 msgid "Text describing the goal"
-msgstr "描述目标的文字"
+msgstr "描述目标的文本"
 
 #. i18n: ectx: property (whatsThis), widget (QTextEdit, description)
 #: ksirkgoaldefinition.ui:109
