@@ -70,11 +70,11 @@ msgid ""
 msgstr ""
 "Počet bonusových bodov pri vlastnení celého kontinentu.\n"
 "\n"
-"Na konci každého ťahu počet armád je distribuovaný každému hráčovi. Ak jeden "
-"hráč vlastní všetky krajiny tohto kontinentu, on/ona získa tento bonus.\n"
+"Na konci každého ťahu je každému hráčovi rozdelený počet armád. Ak jeden "
+"hráč vlastní všetky krajiny tohto kontinentu, získa tento bonus.\n"
 "\n"
-"Bonus by mal byť úmerný veľkosti kontinentu a náročnosti pri jeho dobytí "
-"alebo pri jeho udržaní."
+"Bonus by mal byť úmerný veľkosti kontinentu a náročnosti jeho dobytia alebo "
+"udržania."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:48
@@ -649,10 +649,10 @@ msgid ""
 "country</li><li><i>Continents</i>: one for each continent to conquer</li></"
 "ul>"
 msgstr ""
-"<p>Text popisujúci cieľ. To by malo zahŕňať niekoľko zástupných znakov pre "
-"rôzne údaje v závislosti na type cieľa:</p><ul><li><i>Dobytie sveta</i>: "
-"žiadny</li><li><i>Hráč</i>: jeden pre meno hráča a jeden pre počet v zálohe "
-"krajín</li><li><i>Krajiny</i>: jeden pre počet krajín a druhý možno pre "
+"<p>Text popisujúci cieľ. Mal by obsahovať niekoľko zástupných znakov pre "
+"rôzne údaje v závislosti od typu cieľa:</p><ul><li><i>Dobytie sveta</i>: "
+"žiadny</li><li><i>Hráč</i>: jeden pre meno hráča a jeden pre náhradný počet "
+"krajín</li><li><i>Krajiny</i>: jeden pre počet krajín a prípadne druhý pre "
 "počet armád poslaných na každú krajinu</li><li><i>Kontinenty</i>: jeden pre "
 "každý kontinent, ktorý sa má dobyť</li></ul>"
 
@@ -783,7 +783,7 @@ msgid ""
 msgstr ""
 "<p>Názov národnosti. Názov krajiny hráča. Môže to byť názov existujúcej "
 "krajiny v prípade <i>realistického</i> sveta.</p><p>Tento reťazec by mal byť "
-"jedinečný na povrchu.</p>"
+"jedinečný v rámci motívu.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: ksirknationalitydefinition.ui:43
@@ -804,8 +804,8 @@ msgid ""
 "<p>Name of this nationality leader. In the case of a <i>realistic</i> skin, "
 "this could be the name of a well known king, president, etc.</p>"
 msgstr ""
-"<p>Meno vodcu tejto národnosti. V prípade <i>realistického</i> povrchu, by "
-"to mohlo byť meno známeho kráľa, prezidenta, atď.</p>"
+"<p>Meno vodcu tejto národnosti. V prípade <i>realistického</i> motívu by to "
+"mohlo byť meno známeho kráľa, prezidenta, atď.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: ksirknationalitydefinition.ui:60
@@ -849,7 +849,7 @@ msgstr "Krátky názov povrchu"
 msgid ""
 "Type here the skin's short name. This should be an identifier-like string"
 msgstr ""
-"Sem vpísať krátky názov povrchu. Mal by to byť identifikátor, ako je reťazec"
+"Sem zadajte krátky názov motívu. Mal by to byť reťazec podobný identifikátoru"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkskindefinition.ui:46
@@ -1053,13 +1053,13 @@ msgid ""
 "add at least as many nationalities as the maximum number of players for this "
 "skin."
 msgstr ""
-"Tento zoznam ukazuje definované národnosti.\n"
+"Tento zoznam zobrazuje definované národnosti.\n"
 "\n"
 "Každý názov národnosti by mal byť jedinečný. Vyberte si národnosť a upravte "
-"jej podrobnosti v pravom dokovacom poli.\n"
+"jej podrobnosti v pravom dokovacom paneli.\n"
 "\n"
-"Počas hry, si každý hráč musí zvoliť národnosť. Ako taký, by ste mali pridať "
-"aspoň toľko národností, ako maximálny počet hráčov pre tento povrch."
+"Počas hry si každý hráč musí zvoliť národnosť. Preto by ste mali pridať "
+"aspoň toľko národností, koľko je maximálny počet hráčov pre tento motív."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newCountryButton)
 #: ksirkskindefinition.ui:264
