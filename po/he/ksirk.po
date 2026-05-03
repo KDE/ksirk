@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ksirk package.
 #
-# SPDX-FileCopyrightText: 2024, 2025, 2026 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024-2026 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:50+0000\n"
-"PO-Revision-Date: 2026-04-21 14:10+0300\n"
+"PO-Revision-Date: 2026-05-02 08:34+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1547,9 +1547,17 @@ msgid_plural ""
 "Error - No receiving country selected while computer player %2 had still %1 "
 "armies to place. This is bug probably #2232 at www.gna.org."
 msgstr[0] ""
+"שגיאה - לא נבחרה מדינה מקבלת בזמן שלשחקן מחשב %2 היה עוד צבא להציב. זאת "
+"כנראה תקלה מס׳ 2232 ב־www.gna.org."
 msgstr[1] ""
+"שגיאה - לא נבחרה מדינה מקבלת בזמן שלשחקן מחשב %2 היו עוד שני צבאות להציב. "
+"זאת כנראה תקלה מס׳ 2232 ב־www.gna.org."
 msgstr[2] ""
+"שגיאה - לא נבחרה מדינה מקבלת בזמן שלשחקן מחשב %2 היו עוד %1 צבאות להציב. זאת "
+"כנראה תקלה מס׳ 2232 ב־www.gna.org."
 msgstr[3] ""
+"שגיאה - לא נבחרה מדינה מקבלת בזמן שלשחקן מחשב %2 היו עוד %1 צבאות להציב. זאת "
+"כנראה תקלה מס׳ 2232 ב־www.gna.org."
 
 #: GameLogic/gameautomaton.cpp:303
 #, kde-format
@@ -1582,7 +1590,7 @@ msgstr "הצטרפות למשחק חדש"
 #: GameLogic/gameautomaton.cpp:1362
 #, kde-format
 msgid "%1 (%2) joined game ; waiting for %3 players to connect"
-msgstr ""
+msgstr "%1 (%2) הצטרף/ה למשחק, ממתינים להתחברות של עוד %3 שחקנים או שחקניות"
 
 #: GameLogic/gameautomaton.cpp:1468
 #, kde-format
@@ -1690,34 +1698,35 @@ msgid ""
 "Now, place your armies in your countries<br>by clicking in the target "
 "countries."
 msgstr ""
+"עכשיו, יש להציב את הצבאות שלך במדינות שלך<br>על ידי לחיצה במדינות היעד."
 
 #: GameLogic/gameautomaton.cpp:1900
 #, kde-format
 msgid ""
 "%1, your goal will be displayed. Please<br>make sure that no other player "
 "can see it!"
-msgstr ""
+msgstr "%1, היעד שלך יוצג. נא<br>נא לוודא ששחקנים אחרים לא יכולים לראות אותו!"
 
 #: GameLogic/gameautomaton.cpp:1902
 #, kde-format
 msgctxt "@title:window"
 msgid "Displaying Goal"
-msgstr ""
+msgstr "יעד מוצג"
 
 #: GameLogic/gameautomaton.cpp:2088
 #, kde-format
 msgid "%1 chooses its defense"
-msgstr ""
+msgstr "%1 בוחר/ת את ההגנה שלהם"
 
 #: GameLogic/gameautomaton.cpp:2248
 #, kde-format
 msgid "%1 choose to end recycling; there are now %2 players who want so"
-msgstr ""
+msgstr "%1 בחר/ה לסיים מיחזור, עכשיו יש %2 שחקנים שרוצים לעשות זאת"
 
 #: GameLogic/gameautomaton.cpp:2338
 #, kde-format
 msgid "Problem : no one destroyed"
-msgstr ""
+msgstr "בעיה: אין מושמדים"
 
 #: GameLogic/gameautomaton.cpp:2387
 #, kde-format
@@ -1725,6 +1734,8 @@ msgid ""
 "You entered an invalid password.\n"
 "Please try again."
 msgstr ""
+"מילאת סיסמה שגויה.\n"
+"נא לנסות שוב."
 
 #: GameLogic/gameautomaton.cpp:2387
 #, kde-format
@@ -1738,6 +1749,8 @@ msgid ""
 "%1, you have not played anything this turn.\n"
 "Do you really want to lose your turn?"
 msgstr ""
+"%1, לא שיחקת בכלל בתור הזה.\n"
+"אין לך כלל בעיה לאבד את התור?"
 
 #: GameLogic/gameautomaton.cpp:2589
 #, kde-format
@@ -1775,20 +1788,20 @@ msgstr "<br>%1 עדיין חי…"
 #, kde-format
 msgid "<br>%2, you still have 1 country to conquer…"
 msgid_plural "<br>%2, you still have %1 countries to conquer…"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "<br>%2, נותרה לך מדינה אחת לכבוש…"
+msgstr[1] "<br>%2, נותרו לך שתי מדינות לכבוש…"
+msgstr[2] "<br>%2, נותרו לך %1 מדינות לכבוש…"
+msgstr[3] "<br>%2, נותרו לך %1 מדינות לכבוש…"
 
 #: GameLogic/goal.cpp:242
 #, kde-format
 msgid "<br>Your goal is reached: %2 is dead and you possess %1 country."
 msgid_plural ""
 "<br>Your goal is reached: %2 is dead and you possess %1 countries."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "<br>השגת את היעד שלך: %2 מת/ה ובבעלותך מדינה."
+msgstr[1] "<br>השגת את היעד שלך: %2 מת/ה ובבעלותך שתי מדינות."
+msgstr[2] "<br>השגת את היעד שלך: %2 מת/ה ובבעלותך %1 מדינות."
+msgstr[3] "<br>השגת את היעד שלך: %2 מת/ה ובבעלותך %1 מדינות."
 
 #: GameLogic/goal.cpp:264
 #, kde-format
@@ -1798,24 +1811,24 @@ msgid ""
 msgid_plural ""
 "<br>%2, you have enough countries but you still have to put more than %1 "
 "armies on %3 of them…"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "<br>%2, יש לך מספיק מדינות אבל עדיין צריך להציב צבא אחד ב־%3 מהן…"
+msgstr[1] "<br>%2, יש לך מספיק מדינות אבל עדיין צריך להציב שני צבאות ב־%3 מהן…"
+msgstr[2] "<br>%2, יש לך מספיק מדינות אבל עדיין צריך להציב %1 צבאות ב־%3 מהן…"
+msgstr[3] "<br>%2, יש לך מספיק מדינות אבל עדיין צריך להציב %1 צבאות ב־%3 מהן…"
 
 #: GameLogic/goal.cpp:269
 #, kde-format
 msgid "<br>%1, you still have to conquer "
-msgstr ""
+msgstr "<br>%1, עדיין צריך לכבוש "
 
 #: GameLogic/goal.cpp:275
 #, kde-format
 msgid "1 country in %2"
 msgid_plural "%1 countries in %2"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "מדינה אחת ב%1"
+msgstr[1] "שתי מדינות ב%2"
+msgstr[2] "%1 מדינות ב%2"
+msgstr[3] "%1 מדינות ב%2"
 
 #: GameLogic/goal.cpp:285
 #, kde-format
@@ -1879,7 +1892,7 @@ msgstr "לא ניתן להעביר %1 צבאות מ%2 ל%3"
 #: gestionSprites.cpp:79
 #, kde-format
 msgid "Moving %1 armies from %2 to %3"
-msgstr ""
+msgstr "%1 צבאות מועברים מ%2 ל%3"
 
 #: gestionSprites.cpp:638 gestionSprites.cpp:753 gestionSprites.cpp:1354
 #: gestionSprites.cpp:1431
@@ -1887,12 +1900,14 @@ msgstr ""
 msgid ""
 "Sound roule not found - Verify your installation<br>Program cannot continue"
 msgstr ""
+"צליל נסועה לא נמצא - נא לוודא שההתקנה שלך תקינה<br>התוכנית לא יכולה להמשיך"
 
 #: gestionSprites.cpp:798
 #, kde-format
 msgid ""
 "Sound cannon not found - Verify your installation<br>Program cannot continue"
 msgstr ""
+"צליל תותח לא נמצא - נא לוודא שההתקנה שלך תקינה<br>התוכנית לא יכולה להמשיך"
 
 #: gestionSprites.cpp:873 gestionSprites.cpp:893 gestionSprites.cpp:994
 #: gestionSprites.cpp:1031 gestionSprites.cpp:1066 gestionSprites.cpp:1120
@@ -1902,26 +1917,28 @@ msgid ""
 "Sound crash not found - Verify your installation\n"
 "Program cannot continue"
 msgstr ""
+"צליל קריסה לא נמצא - נא לוודא שההתקנה שלך תקינה\n"
+"התוכנית לא יכולה להמשיך"
 
 #: gestionSprites.cpp:1235
 #, kde-format
 msgid "Problem: no one destroyed"
-msgstr ""
+msgstr "בעיה: אין מושמדים"
 
 #: gestionSprites.cpp:1445
 #, kde-format
 msgid "Bug: who should be 0, 1 or 2."
-msgstr ""
+msgstr "תקלה: מי אמורים להיות 0, 1 או 2."
 
 #: kgamewin.cpp:139 kgamewin.cpp:641
 #, kde-format
 msgid "Cannot load icon<br>Program cannot continue"
-msgstr ""
+msgstr "לא ניתן לטעון את הסמל<br>התוכנית לא יכולה להמשיך"
 
 #: kgamewin.cpp:302 kgamewin.cpp:319
 #, kde-format
 msgid "Cannot load button image %1<br>Program cannot continue"
-msgstr ""
+msgstr "לא ניתן לטעון את תמונת הכפתור %1<br>התוכנית לא יכולה להמשיך"
 
 #: kgamewin.cpp:305
 #, kde-format
@@ -1981,7 +1998,7 @@ msgstr "עזרה לפי הקשר"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Let the next player play"
-msgstr ""
+msgstr "לאפשר לשחקן או לשחקנים השניים לשחק"
 
 #: kgamewin.cpp:355
 #, kde-format
@@ -1993,7 +2010,7 @@ msgstr "סיום המהלכים"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Finish moving the current sprites"
-msgstr ""
+msgstr "סיום העברת כלי המשחק הנוכחיים"
 
 #: kgamewin.cpp:485
 #, kde-format
@@ -2001,11 +2018,13 @@ msgid ""
 "World definition file not found - Verify your installation<br>Program cannot "
 "continue"
 msgstr ""
+"קובץ הגדרת עולם לא נמצא - נא לוודא שההגדרה שלך תקינה<br>התוכנית לא יכולה "
+"להמשיך"
 
 #: kgamewin.cpp:704
 #, kde-format
 msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
-msgstr ""
+msgstr "<font color=\"red\">%1 כבש את %2 מידי %3</font>"
 
 #: kgamewin.cpp:728
 #, kde-format
@@ -2015,7 +2034,7 @@ msgstr "%1, הובסת! ביי ביי…"
 #: kgamewin.cpp:800
 #, kde-format
 msgid "%1: it is up to you again"
-msgstr ""
+msgstr "%1: שוב זה תלוי בך"
 
 #: kgamewin.cpp:814
 #, kde-format
@@ -2025,14 +2044,14 @@ msgstr "הניצחון לטובת %1!"
 #: kgamewin.cpp:816
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
-msgstr ""
+msgstr "<big><b>%1</b>, ניצחת!</big>"
 
 #: kgamewin.cpp:820
 #, kde-format
 msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
 "play again?"
-msgstr ""
+msgstr "<br>כך נוסח יעד המנצח/ת:<br><i>%1</i><br><br>לשחק שוב?"
 
 #: kgamewin.cpp:826
 #, kde-format
@@ -2042,7 +2061,7 @@ msgstr "<br>כבשת את כל העולם!"
 #: kgamewin.cpp:830
 #, kde-format
 msgid "<br>He conquered all the world!"
-msgstr ""
+msgstr "<br>הוא או היא כבשו אתעל כל העולם!"
 
 #: kgamewin.cpp:947
 #, kde-format
@@ -2080,9 +2099,17 @@ msgid_plural ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
 "with %1 armies!<br> How do you want to defend <font color=\"blue\">%4</font>?"
 msgstr[0] ""
+"<font color=\"red\">%2</font> תוקף/ת אותך מ<font color=\"red\">%3</font> עם "
+"צבא אחד!<br> איך להגן <font color=\"blue\">%4</font>?"
 msgstr[1] ""
+"<font color=\"red\">%2</font> תוקף/ת אותך מ<font color=\"red\">%3</font> עם "
+"שני צבאות!<br> איך להגן <font color=\"blue\">%4</font>?"
 msgstr[2] ""
+"<font color=\"red\">%2</font> תוקף/ת אותך מ<font color=\"red\">%3</font> עם "
+"%1 צבאות!<br> איך להגן <font color=\"blue\">%4</font>?"
 msgstr[3] ""
+"<font color=\"red\">%2</font> תוקף/ת אותך מ<font color=\"red\">%3</font> עם "
+"%1 צבאות!<br> איך להגן <font color=\"blue\">%4</font>?"
 
 #: kgamewin.cpp:1145
 #, kde-format
@@ -2119,12 +2146,12 @@ msgstr "אין לך בעלות על המדינה הראשונה: %1!"
 #: kgamewin.cpp:1664
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
-msgstr ""
+msgstr "אין לך בעלות על המדינה השנייה: %1!"
 
 #: kgamewin.cpp:1668 kgamewin.cpp:1712
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
-msgstr ""
+msgstr "ניסית להעביר צבאות מ%1 לעצמו!"
 
 #: kgamewin.cpp:1673 kgamewin.cpp:1718
 #, kde-format
@@ -2134,7 +2161,7 @@ msgstr "%1 אינה שכנה של %2!"
 #: kgamewin.cpp:1679
 #, kde-format
 msgid "Moving armies from %1 to %2."
-msgstr ""
+msgstr "צבאות מועברים מ%1 ל%2."
 
 #: kgamewin.cpp:1707
 #, kde-format
@@ -2162,7 +2189,7 @@ msgstr "<font color=\"orange\">יש רק %1 צבאות ב%2!</font>"
 #: kgamewin.cpp:1974
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
-msgstr ""
+msgstr "%1, בחרת להגן עם הצבא היחידי שיש לך ב%2."
 
 #: kgamewin.cpp:2198
 msgid "Exchange armies again or continue?"
@@ -2174,6 +2201,8 @@ msgid ""
 "You must distribute\n"
 "all your armies"
 msgstr ""
+"חובה לפזר את\n"
+"כל הצבאות שלך"
 
 #: kgamewin.cpp:2363
 msgid "Battle ongoing."
@@ -2207,11 +2236,11 @@ msgstr "<b>היכרות זריזה עם KsirK</b>"
 #: kgamewin.cpp:2807
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
-msgstr ""
+msgstr "מתקפות ומהלכים מתרחשים באמצעות גרירה ושחרור בין מדינות שכנות."
 
 #: kgamewin.cpp:2811
 msgid "Start a new game or join a network game with the menu or the toolbar…"
-msgstr ""
+msgstr "אפשר לפתוח במשחק חדש או להצטרף למשחק רשת דרך התפריט או סרגל הכלים…"
 
 #: kgamewin.cpp:2815
 msgid ""
@@ -2219,6 +2248,8 @@ msgid ""
 "buttons when hovering above them. You can disable bubble help in the options "
 "window."
 msgstr ""
+"ואז לאפשר למערכת להנחות אותך באמצעות הודעות וחלוניות עצה שמופיעות על כפתורים "
+"כשעוברים מעליהם עם העכבר. אפשר להשבית את בועת העזרה בחלון האפשרויות."
 
 #: kgamewin.cpp:2822
 #, kde-format
@@ -2229,10 +2260,10 @@ msgstr "לא להציג עוד הודעות"
 #, kde-format
 msgid "%2 belongs to %3. 1 army."
 msgid_plural "%2 belongs to %3. %1 armies."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%2 שייך ל%3. צבא אחד."
+msgstr[1] "%2 שייך ל%3. שני צבאות."
+msgstr[2] "%2 שייך ל%3. %1 צבאות."
+msgstr[3] "%2 שייך ל%3. %1 צבאות."
 
 #: kgamewinslots.cpp:434
 #, kde-format
@@ -2303,19 +2334,19 @@ msgstr "<i>בעיצומו של קרב…</i>"
 #, kde-format
 msgid "<font color=\"red\">Attack</font> with 1 army.<br>"
 msgid_plural "<font color=\"red\">Attack</font> with %1 armies.<br>"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "<font color=\"red\">תקיפה</font> עם צבא אחד.<br>"
+msgstr[1] "<font color=\"red\">תקיפה</font> עם שני צבאות.<br>"
+msgstr[2] "<font color=\"red\">תקיפה</font> עם %1 צבאות.<br>"
+msgstr[3] "<font color=\"red\">תקיפה</font> עם %1 צבאות.<br>"
 
 #: krightdialog.cpp:233
 #, kde-format
 msgid "<font color=\"blue\">Defend</font> with 1 army.<br>"
 msgid_plural "<font color=\"blue\">Defend</font> with %1 armies.<br>"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "<font color=\"blue\">הגנה</font> עם צבא אחד.<br>"
+msgstr[1] "<font color=\"blue\">הגנה</font>עם שני צבאות.<br>"
+msgstr[2] "<font color=\"blue\">הגנה</font>עם %1 צבאות.<br>"
+msgstr[3] "<font color=\"blue\">הגנה</font>עם %1 צבאות.<br>"
 
 #: krightdialog.cpp:265
 #, kde-format
@@ -2333,42 +2364,42 @@ msgstr "עצירת הגנה אוטומטית"
 #, kde-format
 msgctxt "@action:button"
 msgid "Valid"
-msgstr ""
+msgstr "תקף"
 
 #: krightdialog.cpp:299
 #, kde-format
 msgctxt "@action:button"
 msgid "Recycle"
-msgstr ""
+msgstr "מיחזור"
 
 #: krightdialog.cpp:300
 #, kde-format
 msgctxt "@action:button"
 msgid "Done"
-msgstr ""
+msgstr "בוצע"
 
 #: krightdialog.cpp:327
 #, kde-format
 msgid "%1 army to place"
 msgid_plural "%1 armies to place"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "צבא אחד להצבה"
+msgstr[1] "שני צבאות להצבה"
+msgstr[2] "%1 צבאות להצבה"
+msgstr[3] "%1 צבאות להצבה"
 
 #: krightdialog.cpp:375
 #, kde-format
 msgid "<u><b>Change some<br>placements?</b></u> "
-msgstr ""
+msgstr "<u><b>להחליף חלק מה<br>הצבות?</b></u> "
 
 #: krightdialog.cpp:390
 #, kde-format
 msgid "1 army to place"
 msgid_plural "%1 armies to place"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "צבא אחד להצבה"
+msgstr[1] "שני צבאות להצבה"
+msgstr[2] "%1 צבאות להצבה"
+msgstr[3] "%1 צבאות להצבה"
 
 #: krightdialog.cpp:392
 #, kde-format
@@ -2378,12 +2409,12 @@ msgstr "<b>צבאות:</b> %1"
 #: krightdialog.cpp:471
 #, kde-format
 msgid "<font color=\"red\">lost armies: %1</font>"
-msgstr ""
+msgstr "<font color=\"red\">צבאות שהפסידו: %1</font>"
 
 #: krightdialog.cpp:476
 #, kde-format
 msgid "<font color=\"blue\">lost armies: %1</font>"
-msgstr ""
+msgstr "<font color=\"blue\">צבאות שהפסידו: %1</font>"
 
 #: ksirkConfigDialog.cpp:37
 #, kde-format
@@ -2395,25 +2426,25 @@ msgstr "העדפות"
 #: ksirksettings.kcfg:9
 #, kde-format
 msgid "The sprites speed: slow, normal, quick, immediate"
-msgstr ""
+msgstr "מהירות כלי המשחק: איטית, רגילה, זריזה, מיידית"
 
 #. i18n: ectx: label, entry (soundEnabled), group (General)
 #: ksirksettings.kcfg:13
 #, kde-format
 msgid "If true, sounds are played; they are not otherwise."
-msgstr ""
+msgstr "אם חיובי, הצלילים מושמעים, אחרת לא."
 
 #. i18n: ectx: label, entry (helpEnabled), group (General)
 #: ksirksettings.kcfg:17
 #, kde-format
 msgid "If true, help is displayed; they are not otherwise."
-msgstr ""
+msgstr "אם חיובי, מוצגת עזרה, אחרת לא."
 
 #. i18n: ectx: label, entry (showArmiesNumbers), group (General)
 #: ksirksettings.kcfg:21
 #, kde-format
 msgid "If true, the number of armies is displayed on each country."
-msgstr ""
+msgstr "אם חיובי, מספר הצבאות מופיע בכל מדינה."
 
 #. i18n: ectx: label, entry (Theme), group (General)
 #: ksirksettings.kcfg:25
@@ -2477,7 +2508,7 @@ msgstr "גאל דה שלנדה ידוע גם בתור Kleag"
 #: main.cpp:51
 #, kde-format
 msgid "Nemanja Hirsl"
-msgstr ""
+msgstr "נמניה הירשל"
 
 #: main.cpp:51
 #, kde-format
@@ -2487,7 +2518,7 @@ msgstr "מתחזק נוכחי"
 #: main.cpp:52
 #, kde-format
 msgid "Robin Doer"
-msgstr ""
+msgstr "רובין דואר"
 
 #: main.cpp:53
 #, kde-format
@@ -2512,6 +2543,10 @@ msgid ""
 "Pelouas<br/>&nbsp;&nbsp;Joël Marco<br/>&nbsp;&nbsp;Laurent Dang<br/>&nbsp;"
 "&nbsp;Nicolas Linard<br/>&nbsp;&nbsp;Vincent Sac"
 msgstr ""
+"&nbsp;&nbsp;אנתוני ריי<br/>&nbsp;&nbsp;בנג׳מין לוקאס<br/>&nbsp;&nbsp;בנג׳מין "
+"מוראו<br/>&nbsp;&nbsp;גאל קלואה<br/>&nbsp;&nbsp;גיום פלואה<br/>&nbsp;&nbsp;"
+"יואל מרקו<br/>&nbsp;&nbsp;לורנט דאנג<br/>&nbsp;&nbsp;ניקולס לינרד<br/>&nbsp;"
+"&nbsp;וינסנט סק"
 
 #. i18n: ectx: property (text), widget (QLabel, lTitle)
 #: mainMenu.ui:38
@@ -2559,7 +2594,7 @@ msgstr "שמע מופעל"
 #: preferences.ui:48
 #, kde-format
 msgid "Sprites speed (slow, normal, rapid, immediate):"
-msgstr ""
+msgstr "מהירות כלי המשחק (איטית, רגילה, מהירה, מיידית):"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_helpEnabled)
 #: preferences.ui:92
@@ -2591,19 +2626,19 @@ msgstr "שגיאת פיענוח קובץ מעטפת"
 #: Sprites/animsprite.cpp:515
 #, kde-format
 msgid "Cannot find Max X for sprite: no background!"
-msgstr ""
+msgstr "לא ניתן למצוא את ה־X המרבי לכלי משחק: אין רקע!"
 
 #: Sprites/animsprite.cpp:530
 #, kde-format
 msgid "Cannot find Max Y for sprite: no background!"
-msgstr ""
+msgstr "לא ניתן למצוא את ה־Y המרבי לכלי משחק: אין רקע!"
 
 #: Sprites/skinSpritesData.cpp:88
 #, kde-format
 msgid "Error - Unknown skin int data: "
-msgstr ""
+msgstr "שגיאה - נתונים מספריים לא ידועים למעטפת: "
 
 #: Sprites/skinSpritesData.cpp:104
 #, kde-format
 msgid "Error - Unknown skin string data: "
-msgstr ""
+msgstr "שגיאה - נתוני מחרוזת לא ידועים למעטפת: "
