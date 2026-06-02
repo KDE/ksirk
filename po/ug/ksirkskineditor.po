@@ -8,24 +8,25 @@ msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:50+0000\n"
-"PO-Revision-Date: 2013-09-08 07:05+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2026-05-31 19:43-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "ئابدۇقادىر ئابلىز, غەيرەت كەنجى"
+msgstr "ئابدۇقادىر ئابلىز، غەيرەت كەنجى"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "sahran.ug@gmail.com,  gheyret@gmail.com"
+msgstr "sahranbay@gmail.com, gheyret@gmail.com"
 
 #: goal.cpp:100
 #, kde-format
@@ -33,11 +34,10 @@ msgid "Error: no player to destroy"
 msgstr "خاتالىق: يوق قىلىدىغان قويغۇچ يوق"
 
 #: goal.cpp:213
-#, fuzzy, kde-format
-#| msgid "KsirK - Goal Display"
+#, kde-format
 msgctxt "@title:window"
 msgid "Goal Display"
-msgstr "KsirK - مەنزىل كۆرسىتىش"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
 #: ksirkcontinentdefinition.ui:13
@@ -494,7 +494,7 @@ msgstr ""
 #: ksirkgoaldefinition.ui:75 ksirkskindefinition.ui:256
 #, kde-format
 msgid "Countries"
-msgstr "دۆلەتلەر"
+msgstr "دۆلەت"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, continentstype)
 #: ksirkgoaldefinition.ui:82
@@ -723,10 +723,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkskindefinition.ui:46
-#, fuzzy, kde-format
-#| msgid "Width x Height"
+#, kde-format
 msgid "Width x height:"
-msgstr "كەڭلىك x ئېگىزلىك"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, widthLineEdit)
 #: ksirkskindefinition.ui:53
@@ -891,7 +890,7 @@ msgstr ""
 #: ksirkskindefinition.ui:358 ksirkskindefinition.ui:420
 #, kde-format
 msgid "X"
-msgstr "X"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, nationalitieslist)
 #: ksirkskindefinition.ui:241
@@ -1065,8 +1064,7 @@ msgid ""
 msgstr ""
 
 #: ksirkSkinEditorConfigDialog.cpp:55
-#, fuzzy, kde-format
-#| msgid "Preferences"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "مايىللىق"
@@ -1724,8 +1722,7 @@ msgid "Open a saved skin"
 msgstr ""
 
 #: mainwindow.cpp:328
-#, fuzzy, kde-format
-#| msgid "Load &Recent"
+#, kde-format
 msgctxt "@action"
 msgid "Load &Recent"
 msgstr "يېقىنقىنى ئوقۇ(&R)"
@@ -1757,7 +1754,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
-msgstr ""
+msgstr "ساقلانمىغان ئۆزگەرتىش"
 
 #: mainwindow.cpp:528
 #, kde-format
@@ -1772,11 +1769,10 @@ msgid "Save and Quit"
 msgstr ""
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Country Name"
-msgstr "دۆلەت"
+msgstr ""
 
 #: mainwindow.cpp:1305
 #, kde-format
@@ -1796,11 +1792,10 @@ msgid "Delete Country Confirmation"
 msgstr ""
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "Continent"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Continent Name"
-msgstr "قىتئە"
+msgstr ""
 
 #: mainwindow.cpp:1334
 #, kde-format
@@ -1831,11 +1826,10 @@ msgid "Delete Goal Confirmation"
 msgstr ""
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "Nationality"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Nationality Name"
-msgstr "دۆلەت تەۋەلىكى"
+msgstr ""
 
 #: mainwindow.cpp:1948
 #, kde-format
@@ -1866,7 +1860,7 @@ msgid ""
 "Program cannot continue"
 msgstr ""
 "Pool ھۆججەت ئاتىنى تاپقىلى بولمىدى\n"
-"پروگراممىنى داۋاملاشتۇرغىلى بولمايدۇ"
+"پىروگراممىنى داۋاملاشتۇرغىلى بولمايدۇ"
 
 #: onu.cpp:128
 #, kde-format
@@ -1904,8 +1898,7 @@ msgid "Error - Unknown skin string data: "
 msgstr ""
 
 #: skinSpritesData.cpp:102
-#, fuzzy, kde-format
-#| msgid "Fatal Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "ئېغىر خاتالىق"
