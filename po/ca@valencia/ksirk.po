@@ -1621,7 +1621,7 @@ msgstr "Jugador %1, com vos dieu?"
 #: GameLogic/gameautomaton.cpp:1478
 #, kde-format
 msgid "Error - Player %1, you have to choose a name."
-msgstr "Error - Jugador %1, hauríeu de triar un nom."
+msgstr "Error – Jugador %1, hauríeu de triar un nom."
 
 #: GameLogic/gameautomaton.cpp:1480
 #, kde-format
@@ -1646,7 +1646,7 @@ msgid ""
 "KsirK - Lost connection to server!\n"
 "What do you want to do?"
 msgstr ""
-"KsirK - S'ha perdut la connexió amb el servidor!\n"
+"KsirK – S'ha perdut la connexió amb el servidor!\n"
 "Què voleu fer?"
 
 #: GameLogic/gameautomaton.cpp:1624
@@ -2264,9 +2264,9 @@ msgid ""
 "buttons when hovering above them. You can disable bubble help in the options "
 "window."
 msgstr ""
-"i després deixa que el sistema et guie a través de missatges i consells que "
-"apareixeran als botons quan es passa el ratolí per damunt. Pots desactivar "
-"la bambolla d'ajuda en la finestra d'opcions."
+"i després deixa que el sistema et guie a través de missatges i consells "
+"d'eina que apareixeran als botons quan es passa el ratolí per damunt. Pots "
+"desactivar la bambolla d'ajuda en la finestra d'opcions."
 
 #: kgamewin.cpp:2822
 #, kde-format
@@ -2646,9 +2646,9 @@ msgstr "No es pot trobar la «Y» màxima per a l'sprite: no hi ha fons!"
 #: Sprites/skinSpritesData.cpp:88
 #, kde-format
 msgid "Error - Unknown skin int data: "
-msgstr "Error - Dades desconegudes de tipus enter de l'aparença: "
+msgstr "Error – Dades desconegudes de tipus enter de l'aparença: "
 
 #: Sprites/skinSpritesData.cpp:104
 #, kde-format
 msgid "Error - Unknown skin string data: "
-msgstr "Error - Dades de tipus cadena de l'aparença desconegudes: "
+msgstr "Error – Dades de tipus cadena de l'aparença desconegudes: "
