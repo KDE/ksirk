@@ -2227,7 +2227,7 @@ msgstr "PoolLoader"
 #: skinSpritesData.cpp:85
 #, kde-format
 msgid "Error - Unknown skin int data: "
-msgstr "Error - Dades desconegudes de tipus enter de l'aparença: "
+msgstr "Error – Dades desconegudes de tipus enter de l'aparença: "
 
 #: skinSpritesData.cpp:86
 #, kde-format
@@ -2237,7 +2237,7 @@ msgstr "Error fatal"
 #: skinSpritesData.cpp:101
 #, kde-format
 msgid "Error - Unknown skin string data: "
-msgstr "Error - Dades de tipus cadena de l'aparença desconegudes: "
+msgstr "Error – Dades de tipus cadena de l'aparença desconegudes: "
 
 #: skinSpritesData.cpp:102
 #, kde-format
