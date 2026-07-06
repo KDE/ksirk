@@ -1,20 +1,19 @@
 # Translation of ksirk to Norwegian Nynorsk
 #
-# Karl Ove Hufthammer <karl@huftis.org>, 2007, 2008, 2009, 2010, 2012, 2016, 2017, 2019, 2022.
 # Eirik U. Birkeland <eirbir@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:50+0000\n"
-"PO-Revision-Date: 2022-10-30 10:07+0100\n"
+"PO-Revision-Date: 2026-07-05 16:37+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
 "Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 26.04.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
@@ -2207,7 +2206,7 @@ msgstr ""
 
 #: kgamewin.cpp:2363
 msgid "Battle ongoing."
-msgstr "Ein kamp pågår."
+msgstr "Ein kamp er i gang."
 
 #: kgamewin.cpp:2484 kgamewin.cpp:2495 kgamewin.cpp:2518
 #, kde-format
@@ -2511,6 +2510,7 @@ msgstr "Nemanja Hirsl"
 msgid "Current maintainer"
 msgstr "Noverande vedlikehaldar"
 
+# skip-rule: bokmålsord
 #: main.cpp:52
 #, kde-format
 msgid "Robin Doer"
@@ -2531,6 +2531,7 @@ msgstr "Michal Golunski (omsetjing til polsk)"
 msgid "French students of the 'IUP ISI 2007-2008':"
 msgstr "Franske studentar i IUP ISI 2007-2008:"
 
+# skip-rule: bokmålsord
 #: main.cpp:56
 #, kde-format
 msgid ""
