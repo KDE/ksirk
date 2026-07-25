@@ -70,7 +70,7 @@ public:
     */
   bool isAI() const override;
 
-    /** set stopMe to true in order for the run method to return */
+    /** request the run method to return at the next loop iteration */
   void stop();
     
   /**
@@ -138,10 +138,7 @@ protected: // Private attributes
     
   public:
     explicit MyThread(AIPlayer& p) : me(p) {}
-    void setStopMe ( bool value ) { stopMe = value; }
   private:
-    /** indicates to the thread if the run method should return */
-    bool stopMe;
     AIPlayer& me;
   };
 
