@@ -74,15 +74,20 @@ AIPlayer :: AIPlayer(
   m_actionWaitingStart(false),
   m_thread(*this)
 {
-  m_thread.setStopMe(true);
 //   qCDebug(KSIRK_LOG) << "AIPlayer constructor";
 }
 
 AIPlayer::~AIPlayer()
 {
   qCDebug(KSIRK_LOG) << name();
-  m_thread.terminate();
-  m_thread.wait();
+  /* Bug 475941. Stop the thread and wait for it; terminate() only as a last resort. */
+  stop();
+  if (!m_thread.wait(5000))
+  {
+    qCWarning(KSIRK_LOG) << name() << "AI thread did not stop in time; terminating it";
+    m_thread.terminate();
+    m_thread.wait();
+  }
 }
 
 /**
@@ -353,8 +358,8 @@ bool AIPlayer::isAI() const
 void AIPlayer::MyThread::run()
 {
   qCDebug(KSIRK_LOG) << me.name();
-  stopMe = false;
-  while ( ! stopMe )
+  /* Bug 475941. start() clears the interruption request. */
+  while ( ! isInterruptionRequested() )
   {
     me.actionChoice(me.m_game->state());
     msleep( 500 );
@@ -362,10 +367,10 @@ void AIPlayer::MyThread::run()
   qCDebug(KSIRK_LOG) << "OUT";
 }
 
-/** set stopMe to true in order for the run method to return */
+/** request the run method to return at the next loop iteration */
 void AIPlayer::stop()
 {
-  m_thread.setStopMe(true);
+  m_thread.requestInterruption();
 }
 
 /**

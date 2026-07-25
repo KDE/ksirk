@@ -65,6 +65,9 @@ AIColsonPlayer::AIColsonPlayer(
 
 AIColsonPlayer::~AIColsonPlayer() 
 {
+  /* Bug 475941. Stop the AI thread before deleting the data it uses. */
+  stop();
+  m_thread.wait(5000);
   delete m_placeData;
 }
 
