@@ -1,5 +1,6 @@
 # Translation of ksirk to Norwegian Nynorsk
 #
+# Karl Ove Hufthammer <karl@huftis.org>, 2007, 2008, 2009, 2010, 2012, 2016, 2017, 2019, 2022, 2026.
 # Eirik U. Birkeland <eirbir@gmail.com>, 2009.
 msgid ""
 msgstr ""
