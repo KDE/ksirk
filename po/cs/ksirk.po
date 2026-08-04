@@ -3,31 +3,32 @@
 # Vít Pelčák <vit@pelcak.org>, 2010, 2011, 2013, 2014, 2015, 2016, 2017, 2019, 2023.
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012, 2013.
 # SPDX-FileCopyrightText: 2024 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:50+0000\n"
-"PO-Revision-Date: 2024-06-12 15:07+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-08-03 22:36+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Vít Pelčák"
+msgstr "Vít Pelčák,Libor Filípek"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "vit@pelcak.org"
+msgstr "vit@pelcak.org,libor.filipek@gmail.com"
 
 #. i18n: file skins/default/Data/world.desktop line 1
 #. i18n: file skins/default/Data/world.desktop line 516
@@ -359,7 +360,7 @@ msgstr "Gabon"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Groenland"
-msgstr ""
+msgstr "Grónsko"
 
 #. i18n: file skins/default/Data/world.desktop line 162
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -617,7 +618,7 @@ msgstr "Severní Amerika"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Occidental Australia"
-msgstr ""
+msgstr "Západní Austrálie"
 
 #. i18n: file skins/default/Data/world.desktop line 303
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -691,7 +692,7 @@ msgstr "Pákistán"
 #. i18n: file skins/legacy/Data/world.desktop line 567
 #, no-c-format, kde-format
 msgid "Papouasie"
-msgstr ""
+msgstr "Papua"
 
 #. i18n: file skins/default/Data/world.desktop line 338
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -926,7 +927,7 @@ msgstr "Zair"
 #, no-c-format, kde-format
 msgid ""
 "%1, you'll have to conquer %2 countries and place %3 armies in each one."
-msgstr ""
+msgstr "%1, budete muset dobýt %2 zemí a v každé z nich rozmístit %3 armád."
 
 #. i18n: file skins/default/Data/world.desktop line 510
 #. i18n: file skins/static/Data/world.desktop line 518
@@ -936,7 +937,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 518
 #, no-c-format, kde-format
 msgid "%1, you'll have to conquer %2 countries."
-msgstr ""
+msgstr "%1, budete muset dobýt %2 zemí."
 
 #. i18n: file skins/default/Data/world.desktop line 517
 #. i18n: file skins/static/Data/world.desktop line 525
@@ -947,6 +948,7 @@ msgstr ""
 #, no-c-format, kde-format
 msgid "%1, you'll have to conquer %2, %3 and another continent at your choice."
 msgstr ""
+"%1, budete muset dobýt %2, %3 a další kontinent podle vlastního výběru."
 
 #. i18n: file skins/default/Data/world.desktop line 522
 #. i18n: file skins/default/Data/world.desktop line 527
@@ -980,7 +982,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 550
 #, no-c-format, kde-format
 msgid "%1, you'll have to conquer %2 and %3."
-msgstr ""
+msgstr "%1, budete muset dobýt %2 a %3."
 
 #. i18n: file skins/default/Data/world.desktop line 546
 #. i18n: file skins/static/Data/world.desktop line 554
@@ -993,6 +995,8 @@ msgid ""
 "%1, you'll have to eliminate %2. If it is eliminated by another player, "
 "you'll have to conquer %3 countries."
 msgstr ""
+"%1, budete muset eliminovat %2. Pokud jej eliminuje jiný hráč, budete muset "
+"dobýt %3 zemí."
 
 #. i18n: file skins/default/Data/world.desktop line 560
 #, no-c-format, kde-format
@@ -1001,11 +1005,14 @@ msgid ""
 "nationalities\n"
 "randomly chosen and proposes various interesting goals"
 msgstr ""
+"Tento motiv představuje svět, který vypadá jako ten skutečný, s některými "
+"národnostmi\n"
+"vybranými náhodně, a nabízí různé zajímavé cíle"
 
 #. i18n: file skins/default/Data/world.desktop line 566
 #, no-c-format, kde-format
 msgid "Earth-like"
-msgstr ""
+msgstr "Podobné Zemi"
 
 #. i18n: file skins/static/Data/world.desktop line 125
 #. i18n: file skins/static/Data/world.desktop line 575
@@ -1039,11 +1046,15 @@ msgid ""
 "randomly chosen and proposes various interesting goals.\n"
 "It features non-animated sprites"
 msgstr ""
+"Tento motiv představuje svět, který vypadá jako ten skutečný, s některými "
+"národnostmi\n"
+"vybranými náhodně, a nabízí různé zajímavé cíle.\n"
+"Obsahuje neanimované sprity"
 
 #. i18n: file skins/static/Data/world.desktop line 574
 #, no-c-format, kde-format
 msgid "Less animated Earth-like"
-msgstr ""
+msgstr "Méně animované, podobné Zemi"
 
 #. i18n: file skins/legacy/Data/world.desktop line 568
 #, no-c-format, kde-format
@@ -1052,6 +1063,9 @@ msgid ""
 "randomly chosen and proposes various interesting goals.\n"
 "It looks like KsirK before vector graphics."
 msgstr ""
+"Tento motiv představuje svět, který vypadá jako ten skutečný, s náhodně "
+"vybranými národnostmi, a nabízí různé zajímavé cíle.\n"
+"Vypadá to jako KsirK před zavedením vektorové grafiky."
 
 #. i18n: file skins/legacy/Data/world.desktop line 574
 #, no-c-format, kde-format
@@ -1143,11 +1157,12 @@ msgid ""
 "You are invading <font color=\"blue\">%1</font> with <font color=\"red\">%2</"
 "font>!"
 msgstr ""
+"Napadáte <font color=\"blue\">%1</font> s <font color=\"red\">%2</font>!"
 
 #: Dialogs/InvasionSlider.cpp:100
 #, kde-format
 msgid "<br><i>Choose the number of invading armies.</i>"
-msgstr ""
+msgstr "<br><i>Zvolte počet útočících armád.</i>"
 
 #: Dialogs/InvasionSlider.cpp:104
 #, kde-format
@@ -1161,17 +1176,19 @@ msgid ""
 "You are moving armies from <font color=\"red\">%1</font> to <font color="
 "\"blue\">%2</font>!"
 msgstr ""
+"Přesouváte armády z <font color=\"red\">%1</font> do <font color=\"blue\">"
+"%2</font>!"
 
 #: Dialogs/InvasionSlider.cpp:106
 #, kde-format
 msgid "<br><i>Choose the number of armies to move.</i>"
-msgstr ""
+msgstr "<br><i>Zvolte počet armád, které chcete přesunout.</i>"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, JoinGameDialog)
 #: Dialogs/joingame.ui:13
 #, kde-format
 msgid "Join Network Game Configuration"
-msgstr ""
+msgstr "Nastavení připojeni hry k síti"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: Dialogs/joingame.ui:19
@@ -1196,47 +1213,47 @@ msgstr "Port:"
 #: Dialogs/kplayersetupwidget.cpp:250
 #, kde-format
 msgid "Name already in use. Please choose another one."
-msgstr ""
+msgstr "Tento jméno je již obsazeno. Zvolte prosím jiné."
 
 #: Dialogs/kplayersetupwidget.cpp:252
 #, kde-format
 msgid "Empty name. Please choose another one."
-msgstr ""
+msgstr "Prázdné jméno. Vyberte prosím jiné."
 
 #: Dialogs/kplayersetupwidget.cpp:295
 #, kde-format
 msgid "Player Number %1, please type in your name and choose your nation:"
-msgstr ""
+msgstr "Hráč číslo %1, zadejte prosím své jméno a vyberte svou zemi:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: Dialogs/newGameDialog.ui:26
 #, kde-format
 msgid "Total number of players:"
-msgstr ""
+msgstr "Celkový počet hráčů:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, playersNumberEntry)
 #: Dialogs/newGameDialog.ui:36
 #, kde-format
 msgid "Spin this to choose the number of players."
-msgstr ""
+msgstr "Otočte tímto, abyste vybrali počet hráčů."
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, playersNumberEntry)
 #: Dialogs/newGameDialog.ui:39
 #, kde-format
 msgid "A spin box to choose the number of players"
-msgstr ""
+msgstr "Vyberte počet hráčů"
 
 #. i18n: ectx: property (text), widget (QLabel, localPlayersNumberLabel)
 #: Dialogs/newGameDialog.ui:50
 #, kde-format
 msgid "Number of local players:"
-msgstr ""
+msgstr "Počet místních hráčů:"
 
 #. i18n: ectx: property (text), widget (QLabel, tcpPortLabel)
 #: Dialogs/newGameDialog.ui:64
 #, kde-format
 msgid "TCP port on which to offer connections:"
-msgstr ""
+msgstr "TCP port, na kterém bude nabízeno připojení:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
@@ -1249,13 +1266,13 @@ msgstr "Motiv:"
 #: Dialogs/newGameDialog.ui:113
 #, kde-format
 msgid "Choose the skin (map, nationalities, etc.) to use for this game."
-msgstr ""
+msgstr "Vyberte motiv (mapu, národnosti atd.), který chcete v této hře použít."
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, skinCombo)
 #: Dialogs/newGameDialog.ui:116
 #, kde-format
 msgid "A combo listing all the available skins."
-msgstr ""
+msgstr "Seznam obsahující všechny dostupné motivy."
 
 #. i18n: ectx: property (text), widget (KNSWidgets::Button, ghnsbutton)
 #: Dialogs/newGameDialog.ui:123
@@ -1267,7 +1284,7 @@ msgstr "Stáhnout nové motivy…"
 #: Dialogs/newGameDialog.ui:126
 #, kde-format
 msgid "ksirk.knsrc"
-msgstr ""
+msgstr "ksirk.knsrc"
 
 #. i18n: ectx: property (title), widget (QGroupBox, goalGroup)
 #: Dialogs/newGameDialog.ui:150
@@ -1280,12 +1297,14 @@ msgstr "Typ cíle"
 #, kde-format
 msgid "Choose this for players to have to conquer all the world to win."
 msgstr ""
+"Zvolte tuto možnost, pokud chcete, aby hráči museli dobýt celý svět, aby "
+"vyhráli."
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioWorld)
 #: Dialogs/newGameDialog.ui:159
 #, kde-format
 msgid "In this mode, a player will have to conquer all the world to win."
-msgstr ""
+msgstr "V tomto režimu musí hráč dobýt celý svět, aby vyhrál."
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioWorld)
 #: Dialogs/newGameDialog.ui:162
@@ -1297,7 +1316,7 @@ msgstr "Dob&ytí světa"
 #: Dialogs/newGameDialog.ui:169
 #, kde-format
 msgid "Choose this to have a goal assigned to each player."
-msgstr ""
+msgstr "Tuto možnost vyberte, chcete-li každému hráči přiřadit cíl."
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioGoal)
 #: Dialogs/newGameDialog.ui:172
@@ -1306,12 +1325,14 @@ msgid ""
 "In this mode, a goal will be assigned to each player, which he will have to "
 "reach in order to win."
 msgstr ""
+"V tomto režimu bude každému hráči přidělen cíl, kterého musí dosáhnout, aby "
+"vyhrál."
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioGoal)
 #: Dialogs/newGameDialog.ui:175
 #, kde-format
 msgid "Reach a goa&l"
-msgstr ""
+msgstr "Dosáhnout cí&le"
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
 #: Dialogs/newGameDialog.ui:230 Dialogs/newGameSummary.ui:206
@@ -1333,6 +1354,8 @@ msgid ""
 "Skins directory not found - Verify your installation\n"
 "Program cannot continue"
 msgstr ""
+"Adresář motivů nebyl nalezen – zkontrolujte instalaci\n"
+"Program nemůže pokračovat"
 
 #: Dialogs/newGameDialogImpl.cpp:129 GameLogic/aiplayer.cpp:506
 #: newgamesetup.cpp:45 Sprites/skinSpritesData.cpp:89
@@ -1412,7 +1435,7 @@ msgstr "Spustit"
 #: Dialogs/newGameSummaryWidget.cpp:62
 #, kde-format
 msgid "Reach a goal"
-msgstr ""
+msgstr "Dosáhnout cíle"
 
 #: Dialogs/newGameSummaryWidget.cpp:62
 #, kde-format
@@ -1434,7 +1457,7 @@ msgstr "Ne"
 #: Dialogs/qplayersetupdialog.ui:48 Dialogs/qwaitedplayersetupdialog.ui:33
 #, kde-format
 msgid "Choose your nation"
-msgstr ""
+msgstr "Vyberte si svůj národ"
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, nationCombo)
 #. i18n: ectx: property (whatsThis), widget (QComboBox, waitedPlayersCombo)
@@ -1444,6 +1467,8 @@ msgid ""
 "A combo box that lists currently available nations.\n"
 "Choose one of them. It will be your nation during the game"
 msgstr ""
+"Rozbalovací seznam, ve kterém jsou uvedeny aktuálně dostupné národy.\n"
+"Vyberte si jeden z nich. Bude to váš národ během hry"
 
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
 #: Dialogs/qplayersetupdialog.ui:76 Dialogs/qwaitedplayersetupdialog.ui:47
@@ -1455,19 +1480,19 @@ msgstr "Zadejte své heslo:"
 #: Dialogs/qplayersetupdialog.ui:101
 #, kde-format
 msgid "Pla&yer is computer"
-msgstr ""
+msgstr "H&ráč je počítač"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, QWaitedPlayerSetupDialog)
 #: Dialogs/qwaitedplayersetupdialog.ui:14
 #, kde-format
 msgid "Saved Player Selection"
-msgstr ""
+msgstr "Uložený výběr hráče"
 
 #. i18n: ectx: property (text), widget (QLabel, TextLabel1)
 #: Dialogs/qwaitedplayersetupdialog.ui:23
 #, kde-format
 msgid "Please select your saved player:"
-msgstr ""
+msgstr "Vyberte prosím uloženého hráče:"
 
 #. i18n: ectx: property (text), widget (QPushButton, PushButton1)
 #: Dialogs/qwaitedplayersetupdialog.ui:70
@@ -1479,7 +1504,7 @@ msgstr "OK"
 #: Dialogs/restartOrExitDialog.ui:13
 #, kde-format
 msgid "New Game or Exit"
-msgstr ""
+msgstr "Nová hra nebo ukončit"
 
 #. i18n: ectx: property (text), widget (QPushButton, newGameButton)
 #: Dialogs/restartOrExitDialog.ui:27
@@ -1503,7 +1528,7 @@ msgstr "Nedělat nic"
 #: Dialogs/restartOrExitDialog.ui:43
 #, kde-format
 msgid "Do nothing. Game buttons will be available"
-msgstr ""
+msgstr "Nedělejte nic. Tlačítka ve hře budou k dispozici"
 
 #. i18n: ectx: property (text), widget (QPushButton, exitButton)
 #: Dialogs/restartOrExitDialog.ui:53
@@ -1515,7 +1540,7 @@ msgstr "Ukončit"
 #: Dialogs/restartOrExitDialog.ui:56
 #, kde-format
 msgid "Quit KsirK"
-msgstr ""
+msgstr "Ukončit KsirK"
 
 #. i18n: ectx: property (text), widget (QLineEdit, hostEdit)
 #: Dialogs/tcpconnectwidget.ui:71
@@ -1532,8 +1557,17 @@ msgid_plural ""
 "Error - No receiving country selected while computer player %2 had still %1 "
 "armies to place. This is bug probably #2232 at www.gna.org."
 msgstr[0] ""
+"Chyba – Nebyla vybrána přijímající země, zatímco počítačový hráč %2 měl "
+"ještě 1 armádu k umístění. Jedná se pravděpodobně o chybu č. 2232 na stránce "
+"www.gna.org."
 msgstr[1] ""
+"Chyba – Nebyla vybrána přijímající země, zatímco počítačový hráč %2 měl "
+"ještě %1 armády k umístění. Jedná se pravděpodobně o chybu č. 2232 na "
+"stránce www.gna.org."
 msgstr[2] ""
+"Chyba – Nebyla vybrána přijímající země, zatímco počítačový hráč %2 měl "
+"ještě %1 armád k umístění. Jedná se pravděpodobně o chybu č. 2232 na stránce "
+"www.gna.org."
 
 #: GameLogic/gameautomaton.cpp:303
 #, kde-format
@@ -1544,18 +1578,18 @@ msgstr "Nastavení sítě"
 #: GameLogic/gameautomaton.cpp:304
 #, kde-format
 msgid "Please type in the port number on which to offer connections:"
-msgstr ""
+msgstr "Zadejte prosím číslo portu, na kterém bude nabízeno připojení:"
 
 #: GameLogic/gameautomaton.cpp:1191
 #, kde-format
 msgid "Do you really want to end your current game and join another?"
-msgstr ""
+msgstr "Opravdu chcete ukončit aktuální hru a připojit se k jiné?"
 
 #: GameLogic/gameautomaton.cpp:1191
 #, kde-format
 msgctxt "@title:window"
 msgid "New Game Confirmation"
-msgstr ""
+msgstr "Potvrzení nové hry"
 
 #: GameLogic/gameautomaton.cpp:1191
 #, kde-format
@@ -1566,28 +1600,28 @@ msgstr "Připojit se k nové hře"
 #: GameLogic/gameautomaton.cpp:1362
 #, kde-format
 msgid "%1 (%2) joined game ; waiting for %3 players to connect"
-msgstr ""
+msgstr "%1 (%2) se připojil(a) ke hře; čeká se, až se připojí %3 hráčů"
 
 #: GameLogic/gameautomaton.cpp:1468
 #, kde-format
 msgid "Please choose another name."
-msgstr ""
+msgstr "Prosím, vyberte jiný název."
 
 #: GameLogic/gameautomaton.cpp:1468
 #, kde-format
 msgctxt "@title:window"
 msgid "Name Already Used"
-msgstr ""
+msgstr "Název je již používán"
 
 #: GameLogic/gameautomaton.cpp:1474
 #, kde-format
 msgid "Player number %1, what's your name?"
-msgstr ""
+msgstr "Hráči číslo %1, jak se jmenujete?"
 
 #: GameLogic/gameautomaton.cpp:1478
 #, kde-format
 msgid "Error - Player %1, you have to choose a name."
-msgstr ""
+msgstr "Chyba – Hráči %1, musíte si vybrat jméno."
 
 #: GameLogic/gameautomaton.cpp:1480
 #, kde-format
@@ -1598,13 +1632,13 @@ msgstr "Hráč%1"
 #: GameLogic/gameautomaton.cpp:1531
 #, kde-format
 msgid "Please choose another nation."
-msgstr ""
+msgstr "Vyberte prosím jiný národ."
 
 #: GameLogic/gameautomaton.cpp:1531
 #, kde-format
 msgctxt "@title:window"
 msgid "Nation Already Used"
-msgstr ""
+msgstr "Národ se již používá"
 
 #: GameLogic/gameautomaton.cpp:1623
 #, kde-format
@@ -1612,12 +1646,14 @@ msgid ""
 "KsirK - Lost connection to server!\n"
 "What do you want to do?"
 msgstr ""
+"KsirK – Došlo ke ztrátě spojení se serverem!\n"
+"Co chcete udělat?"
 
 #: GameLogic/gameautomaton.cpp:1624
 #, kde-format
 msgctxt "@title:window"
 msgid "Starting a New Game or Exit."
-msgstr ""
+msgstr "Spustit novou hru nebo ukončit."
 
 #: GameLogic/gameautomaton.cpp:1625
 #, kde-format
@@ -1644,23 +1680,26 @@ msgid ""
 "For the moment, you can only save the game and start a new one or quit.\n"
 "This will be improved in a future version."
 msgstr ""
+"Došlo ke ztrátě spojení s klientem.\n"
+"V tuto chvíli můžete hru pouze uložit a začít novou hru, nebo hru ukončit.\n"
+"Tato funkce bude v budoucí verzi vylepšena."
 
 #: GameLogic/gameautomaton.cpp:1650
 #, kde-format
 msgctxt "@title:window"
 msgid "Lost Connection to Client"
-msgstr ""
+msgstr "Ztráta spojení s klientem"
 
 #: GameLogic/gameautomaton.cpp:1652
 #, kde-format
 msgid "Do want to save your game?"
-msgstr ""
+msgstr "Chcete hru uložit?"
 
 #: GameLogic/gameautomaton.cpp:1818 GameLogic/gameautomaton.cpp:2235
 #: kgamewin.cpp:2038 kgamewin.cpp:2133 kgamewin.cpp:2170
 #, kde-format
 msgid "%1: %2 armies to place"
-msgstr ""
+msgstr "%1: %2 armád k rozmístění"
 
 #: GameLogic/gameautomaton.cpp:1823 GameLogic/gameautomaton.cpp:2238
 #: kgamewinslots.cpp:793
@@ -1669,6 +1708,7 @@ msgid ""
 "Now, place your armies in your countries<br>by clicking in the target "
 "countries."
 msgstr ""
+"Nyní rozmístěte své armády ve svých zemích<br>kliknutím na cílové země."
 
 #: GameLogic/gameautomaton.cpp:1900
 #, kde-format
@@ -1676,27 +1716,29 @@ msgid ""
 "%1, your goal will be displayed. Please<br>make sure that no other player "
 "can see it!"
 msgstr ""
+"%1, zobrazí se vám váš cíl. Prosím<br>ujistěte se, že ho žádný jiný hráč "
+"neuvidí!"
 
 #: GameLogic/gameautomaton.cpp:1902
 #, kde-format
 msgctxt "@title:window"
 msgid "Displaying Goal"
-msgstr ""
+msgstr "Zobrazení cíle"
 
 #: GameLogic/gameautomaton.cpp:2088
 #, kde-format
 msgid "%1 chooses its defense"
-msgstr "%1 chystá obranu"
+msgstr "%1 si vybírá obranu"
 
 #: GameLogic/gameautomaton.cpp:2248
 #, kde-format
 msgid "%1 choose to end recycling; there are now %2 players who want so"
-msgstr ""
+msgstr "%1 se rozhodl(a) ukončit recyklaci; nyní je %2 hráčů, kteří to chtějí"
 
 #: GameLogic/gameautomaton.cpp:2338
 #, kde-format
 msgid "Problem : no one destroyed"
-msgstr ""
+msgstr "Problém: nikdo nic nezničil"
 
 #: GameLogic/gameautomaton.cpp:2387
 #, kde-format
@@ -1704,6 +1746,8 @@ msgid ""
 "You entered an invalid password.\n"
 "Please try again."
 msgstr ""
+"Zadali jste nesprávné heslo.\n"
+"Zkuste to prosím znovu."
 
 #: GameLogic/gameautomaton.cpp:2387
 #, kde-format
@@ -1717,12 +1761,14 @@ msgid ""
 "%1, you have not played anything this turn.\n"
 "Do you really want to lose your turn?"
 msgstr ""
+"%1, v tomto kole jste neprovedli žádný tah.\n"
+"Opravdu chcete o svůj tah přijít?"
 
 #: GameLogic/gameautomaton.cpp:2589
 #, kde-format
 msgctxt "@title:window"
 msgid "Next Player Confirmation"
-msgstr ""
+msgstr "Potvrzení dalšího hráče"
 
 #: GameLogic/gameautomaton.cpp:2590
 #, kde-format
@@ -1733,39 +1779,39 @@ msgstr "Následující hráč"
 #: GameLogic/goal.cpp:156
 #, kde-format
 msgid "You must conquer the World!"
-msgstr ""
+msgstr "Musíte dobýt svět!"
 
 #: GameLogic/goal.cpp:184
 #, kde-format
 msgid "%1 (already dead)"
-msgstr ""
+msgstr "%1 (již je mrtvý)"
 
 #: GameLogic/goal.cpp:195
 #, kde-format
 msgid "Error: no player to destroy"
-msgstr ""
+msgstr "Chyba: není žádný hráč, kterého by bylo možné zničit"
 
 #: GameLogic/goal.cpp:231
 #, kde-format
 msgid "<br>%1 is still alive…"
-msgstr ""
+msgstr "<br>%1 je stále naživu…"
 
 #: GameLogic/goal.cpp:238 GameLogic/goal.cpp:252
 #, kde-format
 msgid "<br>%2, you still have 1 country to conquer…"
 msgid_plural "<br>%2, you still have %1 countries to conquer…"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "<br>%2, ještě vám zbývá dobýt 1 zemi…"
+msgstr[1] "<br>%2, ještě vám zbývá dobýt %1 země…"
+msgstr[2] "<br>%2, ještě vám zbývá dobýt %1 zemí…"
 
 #: GameLogic/goal.cpp:242
 #, kde-format
 msgid "<br>Your goal is reached: %2 is dead and you possess %1 country."
 msgid_plural ""
 "<br>Your goal is reached: %2 is dead and you possess %1 countries."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "<br>Váš cíl byl splněn: %2 je mrtvý a ovládáte %1 zemi."
+msgstr[1] "<br>Váš cíl byl splněn: %2 je mrtvý a ovládáte %1 země."
+msgstr[2] "<br>Váš cíl byl splněn: %2 je mrtvý a ovládáte %1 zemí."
 
 #: GameLogic/goal.cpp:264
 #, kde-format
@@ -1776,13 +1822,19 @@ msgid_plural ""
 "<br>%2, you have enough countries but you still have to put more than %1 "
 "armies on %3 of them…"
 msgstr[0] ""
+"<br>%2, máte dostatek zemí, ale do %3 z nich musíte i tak nasadit více než "
+"jednu armádu…"
 msgstr[1] ""
+"<br>%2, máte dostatek zemí, ale do %3 z nich musíte i tak nasadit více než "
+"%1 armády…"
 msgstr[2] ""
+"<br>%2, máte dostatek zemí, ale do %3 z nich musíte i tak nasadit více než "
+"%1 armád…"
 
 #: GameLogic/goal.cpp:269
 #, kde-format
 msgid "<br>%1, you still have to conquer "
-msgstr ""
+msgstr "<br>%1, ještě ji musíte dobýt "
 
 #: GameLogic/goal.cpp:275
 #, kde-format
@@ -1834,6 +1886,8 @@ msgid ""
 "Pool filename not found\n"
 "Program cannot continue"
 msgstr ""
+"Název souboru v adresáři nebyl nalezen\n"
+"Program nemůže pokračovat"
 
 #: GameLogic/onu.cpp:135
 #, kde-format
@@ -1841,6 +1895,8 @@ msgid ""
 "Map mask image not found\n"
 "Program cannot continue"
 msgstr ""
+"Obraz masky mapy nebyl nalezen\n"
+"Program nemůže pokračovat"
 
 #: gestionSprites.cpp:72 gestionSprites.cpp:106 gestionSprites.cpp:157
 #, kde-format
@@ -1850,7 +1906,7 @@ msgstr "Nelze přesunout armády %1 z %2 do %3"
 #: gestionSprites.cpp:79
 #, kde-format
 msgid "Moving %1 armies from %2 to %3"
-msgstr ""
+msgstr "Přesun %1 armád z %2 do %3"
 
 #: gestionSprites.cpp:638 gestionSprites.cpp:753 gestionSprites.cpp:1354
 #: gestionSprites.cpp:1431
@@ -1858,12 +1914,14 @@ msgstr ""
 msgid ""
 "Sound roule not found - Verify your installation<br>Program cannot continue"
 msgstr ""
+"Zvuk role nebyl nalezen – Zkontrolujte instalaci<br>Program nemůže pokračovat"
 
 #: gestionSprites.cpp:798
 #, kde-format
 msgid ""
 "Sound cannon not found - Verify your installation<br>Program cannot continue"
 msgstr ""
+"Zvuk děla nebyl nalezen – Zkontrolujte instalaci<br>Program nemůže pokračovat"
 
 #: gestionSprites.cpp:873 gestionSprites.cpp:893 gestionSprites.cpp:994
 #: gestionSprites.cpp:1031 gestionSprites.cpp:1066 gestionSprites.cpp:1120
@@ -1873,74 +1931,76 @@ msgid ""
 "Sound crash not found - Verify your installation\n"
 "Program cannot continue"
 msgstr ""
+"Zvuk srážky nebyl nalezen – Zkontrolujte instalaci\n"
+"Program nemůže pokračovat"
 
 #: gestionSprites.cpp:1235
 #, kde-format
 msgid "Problem: no one destroyed"
-msgstr ""
+msgstr "Problém: nikdo nic nezničil"
 
 #: gestionSprites.cpp:1445
 #, kde-format
 msgid "Bug: who should be 0, 1 or 2."
-msgstr ""
+msgstr "Chyba: hodnota by měla být 0, 1 nebo 2."
 
 #: kgamewin.cpp:139 kgamewin.cpp:641
 #, kde-format
 msgid "Cannot load icon<br>Program cannot continue"
-msgstr ""
+msgstr "Nelze načíst ikonu <br>Program nemůže pokračovat"
 
 #: kgamewin.cpp:302 kgamewin.cpp:319
 #, kde-format
 msgid "Cannot load button image %1<br>Program cannot continue"
-msgstr ""
+msgstr "Nelze načíst obrázek tlačítka %1<br>Program nemůže pokračovat"
 
 #: kgamewin.cpp:305
 #, kde-format
 msgctxt "@action"
 msgid "New Standard TCP/IP Network Game"
-msgstr ""
+msgstr "Nová standardní síťová hra přes TCP/IP"
 
 #: kgamewin.cpp:306
 #, kde-format
 msgctxt "@action"
 msgid "New TCP/IP"
-msgstr ""
+msgstr "Nová přes TCP/IP"
 
 #: kgamewin.cpp:308
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new standard TCP/IP network game"
-msgstr ""
+msgstr "Vytvořit novou standardní síťovou hru přes TCP/IP"
 
 #: kgamewin.cpp:323
 #, kde-format
 msgctxt "@action"
 msgid "Join a Standard TCP/IP Network Game"
-msgstr ""
+msgstr "Připojit se ke standardní síťové hře přes TCP/IP"
 
 #: kgamewin.cpp:324
 #, kde-format
 msgctxt "@action"
 msgid "Join TCP/IP"
-msgstr ""
+msgstr "Připojte se přes TCP/IP"
 
 #: kgamewin.cpp:326
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Join a standard TCP/IP network game"
-msgstr ""
+msgstr "Připojit se ke standardní síťové hře přes TCP/IP"
 
 #: kgamewin.cpp:331
 #, kde-format
 msgctxt "@action"
 msgid "Display the Current Player's Goal"
-msgstr ""
+msgstr "Zobrazit cíl aktuálního hráče"
 
 #: kgamewin.cpp:334
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Display the current player's goal"
-msgstr ""
+msgstr "Zobrazit cíl aktuálního hráče"
 
 #: kgamewin.cpp:340
 #, kde-format
@@ -1952,19 +2012,19 @@ msgstr "Kontextová nápověda"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Let the next player play"
-msgstr ""
+msgstr "Ať hraje další hráč"
 
 #: kgamewin.cpp:355
 #, kde-format
 msgctxt "@action"
 msgid "Finish Moves"
-msgstr ""
+msgstr "Dokončit tahy"
 
 #: kgamewin.cpp:357
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Finish moving the current sprites"
-msgstr ""
+msgstr "Dokončit přesun aktuálních spritů"
 
 #: kgamewin.cpp:485
 #, kde-format
@@ -1972,31 +2032,33 @@ msgid ""
 "World definition file not found - Verify your installation<br>Program cannot "
 "continue"
 msgstr ""
+"Nebyl nalezen globální definiční soubor – Zkontrolujte instalaci<br>Program "
+"nemůže pokračovat"
 
 #: kgamewin.cpp:704
 #, kde-format
 msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
-msgstr ""
+msgstr "<font color=\"red\">%1 dobyl(a) %2 z %3</font>"
 
 #: kgamewin.cpp:728
 #, kde-format
 msgid "%1, you are defeated! Bye, bye…"
-msgstr ""
+msgstr "%1, jste poraženi! Sbohem…"
 
 #: kgamewin.cpp:800
 #, kde-format
 msgid "%1: it is up to you again"
-msgstr ""
+msgstr "%1: Je to zase na vás"
 
 #: kgamewin.cpp:814
 #, kde-format
 msgid "%1 won!"
-msgstr "%1 vyhrál!"
+msgstr "%1 vyhrál(a)!"
 
 #: kgamewin.cpp:816
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
-msgstr ""
+msgstr "<big><b>%1</b>, vyhrál(a) jste!</big>"
 
 #: kgamewin.cpp:820
 #, kde-format
@@ -2004,21 +2066,22 @@ msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
 "play again?"
 msgstr ""
+"<br>Cíl vítěze byl formulován takto:<br><i>%1</i><br><br>Chcete hrát znovu?"
 
 #: kgamewin.cpp:826
 #, kde-format
 msgid "<br>You conquered all the world!"
-msgstr ""
+msgstr "<br>Vládnete celému světu!"
 
 #: kgamewin.cpp:830
 #, kde-format
 msgid "<br>He conquered all the world!"
-msgstr ""
+msgstr "<br>Vládne celému světu!"
 
 #: kgamewin.cpp:947
 #, kde-format
 msgid "Do you want to quit the game?"
-msgstr ""
+msgstr "Chceš hru ukončit?"
 
 #: kgamewin.cpp:949
 #, kde-format
@@ -2029,7 +2092,7 @@ msgstr "Ukončit hru"
 #: kgamewin.cpp:961
 #, kde-format
 msgid "Before you quit, do you want to save your game?"
-msgstr ""
+msgstr "Než hru ukončíte, chcete ji uložit?"
 
 #: kgamewin.cpp:999
 #, kde-format
@@ -2040,7 +2103,7 @@ msgstr "Načíst hru"
 #: kgamewin.cpp:1037
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
-msgstr ""
+msgstr "Čeká se na připojení %1 hráčů v síti."
 
 #: kgamewin.cpp:1116
 #, kde-format
@@ -2051,92 +2114,98 @@ msgid_plural ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
 "with %1 armies!<br> How do you want to defend <font color=\"blue\">%4</font>?"
 msgstr[0] ""
+"<font color=\"red\">%2</font> na vás útočí z <font color=\"red\">%3</font> s "
+"1 armádou!<br> Jak chcete bránit <font color=\"blue\">%4</font>?"
 msgstr[1] ""
+"<font color=\"red\">%2</font> na vás útočí z <font color=\"red\">%3</font> "
+"se %1 armádami!<br> Jak chcete bránit <font color=\"blue\">%4</font>?"
 msgstr[2] ""
+"<font color=\"red\">%2</font> na vás útočí z <font color=\"red\">%3</font> s "
+"%1 armádami!<br> Jak chcete bránit <font color=\"blue\">%4</font>?"
 
 #: kgamewin.cpp:1145
 #, kde-format
 msgctxt "@action:button"
 msgid "Defend 1"
-msgstr ""
+msgstr "Obrana 1"
 
 #: kgamewin.cpp:1146
 #, kde-format
 msgctxt "@action:button"
 msgid "Defend 2"
-msgstr ""
+msgstr "Obrana 2"
 
 #: kgamewin.cpp:1147
 #, kde-format
 msgctxt "@action:button"
 msgid "Defend-Auto"
-msgstr ""
+msgstr "Automatická obrana"
 
 #: kgamewin.cpp:1266
 #, kde-format
 msgid "Waiting for %1 players to connect"
-msgstr ""
+msgstr "Čekání na připojení %1 hráčů"
 
 #: kgamewin.cpp:1656 kgamewin.cpp:1696
 msgid "There is no country here!"
-msgstr ""
+msgstr "Tady žádná země není!"
 
 #: kgamewin.cpp:1660 kgamewin.cpp:1701
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
-msgstr ""
+msgstr "Nejste majitelem první země: %1!"
 
 #: kgamewin.cpp:1664
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
-msgstr ""
+msgstr "Nejste majitelem druhé země: %1!"
 
 #: kgamewin.cpp:1668 kgamewin.cpp:1712
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
-msgstr ""
+msgstr "Snažíte se přesunout armády z %1 na stejné místo!"
 
 #: kgamewin.cpp:1673 kgamewin.cpp:1718
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
-msgstr ""
+msgstr "%1 není sousedem %2!"
 
 #: kgamewin.cpp:1679
 #, kde-format
 msgid "Moving armies from %1 to %2."
-msgstr ""
+msgstr "Přesun armád z %1 do %2."
 
 #: kgamewin.cpp:1707
 #, kde-format
 msgid "You are the owner of the second country: %1!"
-msgstr ""
+msgstr "Jste majitelem druhé země: %1!"
 
 #: kgamewin.cpp:1725
 msgid "Ready to fight!"
-msgstr ""
+msgstr "Připraven(a) bojovat!"
 
 #: kgamewin.cpp:1819
 msgid "<font color=\"orange\">No country here!</font>"
-msgstr ""
+msgstr "<font color=\"orange\">Tady žádná země není!</font>"
 
 #: kgamewin.cpp:1827
 #, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
-msgstr ""
+msgstr "<font color=\"orange\">Nejste majitelem %1!</font>"
 
 #: kgamewin.cpp:1834
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
-msgstr ""
+msgstr "<font color=\"orange\">V %2 je pouze %1 armád!</font>"
 
 #: kgamewin.cpp:1974
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
-msgstr ""
+msgstr "%1, bráníte se jedinou armádou, kterou máte v %2."
 
 #: kgamewin.cpp:2198
 msgid "Exchange armies again or continue?"
-msgstr ""
+msgstr "Znovu vyměnit armády, nebo pokračovat?"
 
 #: kgamewin.cpp:2223
 #, kde-format
@@ -2144,25 +2213,27 @@ msgid ""
 "You must distribute\n"
 "all your armies"
 msgstr ""
+"Musíte rozmístit\n"
+"všechny své armády"
 
 #: kgamewin.cpp:2363
 msgid "Battle ongoing."
-msgstr ""
+msgstr "Bitva stále probíhá."
 
 #: kgamewin.cpp:2484 kgamewin.cpp:2495 kgamewin.cpp:2518
 #, kde-format
 msgid "%1, it is up to you."
-msgstr ""
+msgstr "%1, je to na vás."
 
 #: kgamewin.cpp:2547
 #, kde-format
 msgid "Do you really want to end your current game and start a new one?"
-msgstr ""
+msgstr "Opravdu chcete ukončit aktuální hru a začít novou?"
 
 #: kgamewin.cpp:2547
 #, kde-format
 msgid "New game confirmation"
-msgstr ""
+msgstr "Potvrzení nové hry"
 
 #: kgamewin.cpp:2547
 #, kde-format
@@ -2172,16 +2243,19 @@ msgstr "Spustit novou hru"
 
 #: kgamewin.cpp:2803
 msgid "<b>KsirK quick Introduction</b>"
-msgstr ""
+msgstr "<b>Stručné představení KsirK</b>"
 
 #: kgamewin.cpp:2807
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr ""
+"Útoky a tahy se provádějí pomocí funkce přetahování mezi sousedními zeměmi."
 
 #: kgamewin.cpp:2811
 msgid "Start a new game or join a network game with the menu or the toolbar…"
 msgstr ""
+"Spusťte novou hru nebo se připojte k síťové hře pomocí nabídky nebo panelu "
+"nástrojů…"
 
 #: kgamewin.cpp:2815
 msgid ""
@@ -2189,11 +2263,14 @@ msgid ""
 "buttons when hovering above them. You can disable bubble help in the options "
 "window."
 msgstr ""
+"a poté se nechte systémem provést zprávami a popisky, které se zobrazují u "
+"tlačítek při najetí myší. Nápovědu v bublinách můžete deaktivovat v okně "
+"nastavení."
 
 #: kgamewin.cpp:2822
 #, kde-format
 msgid "Don't show messages anymore"
-msgstr ""
+msgstr "Zprávy již nezobrazovat"
 
 #: kgamewinslots.cpp:108
 #, kde-format
@@ -2227,7 +2304,7 @@ msgstr "Hra uložena do %1"
 #: kgamewinslots.cpp:463
 #, kde-format
 msgid "Only game master can save the game in network playing."
-msgstr ""
+msgstr "Při síťovém hraní může hru uložit pouze hostitel hry."
 
 #: kgamewinslots.cpp:789
 #, kde-format
@@ -2235,6 +2312,8 @@ msgid ""
 "Attack by drag & drop between countries<br>Move armies the same way (last "
 "action of a turn)."
 msgstr ""
+"Útok metodou přetažením mezi zeměmi<br>Armády přesouvejte stejným způsobem "
+"(poslední akce kola) ."
 
 #: krightdialog.cpp:116
 #, kde-format
@@ -2254,45 +2333,45 @@ msgstr "<b>Země:</b> %1"
 #: krightdialog.cpp:122
 #, kde-format
 msgid "<b>Owner:</b> %1"
-msgstr "<b>Vlastník:</b> %1"
+msgstr "<b>Majitel:</b> %1"
 
 #: krightdialog.cpp:123
 #, kde-format
 msgid "<b><u>Country details</u></b>"
-msgstr ""
+msgstr "<b><u>Informace o zemi</u></b>"
 
 #: krightdialog.cpp:170
 #, kde-format
 msgid "<i>Fighting in progress…</i>"
-msgstr ""
+msgstr "<i>Probíhají boje…</i>"
 
 #: krightdialog.cpp:222
 #, kde-format
 msgid "<font color=\"red\">Attack</font> with 1 army.<br>"
 msgid_plural "<font color=\"red\">Attack</font> with %1 armies.<br>"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "<font color=\"red\">Útok</font> s 1 armádou.<br>"
+msgstr[1] "<font color=\"red\">Útok</font> se %1 armádami.<br>"
+msgstr[2] "<font color=\"red\">Útok</font> s %1 armádami.<br>"
 
 #: krightdialog.cpp:233
 #, kde-format
 msgid "<font color=\"blue\">Defend</font> with 1 army.<br>"
 msgid_plural "<font color=\"blue\">Defend</font> with %1 armies.<br>"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "<font color=\"blue\">Obrana</font> s 1 armádou.<br>"
+msgstr[1] "<font color=\"blue\">Obrana</font> se %1 armádami.<br>"
+msgstr[2] "<font color=\"blue\">Obrana</font> s %1 armádami.<br>"
 
 #: krightdialog.cpp:265
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Auto-Attack"
-msgstr ""
+msgstr "Zastavit automatický útok"
 
 #: krightdialog.cpp:273
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Auto-Defense"
-msgstr ""
+msgstr "Zastavit automatickou obranu"
 
 #: krightdialog.cpp:298
 #, kde-format
@@ -2304,7 +2383,7 @@ msgstr "Platný"
 #, kde-format
 msgctxt "@action:button"
 msgid "Recycle"
-msgstr ""
+msgstr "Recyklovat"
 
 #: krightdialog.cpp:300
 #, kde-format
@@ -2316,37 +2395,37 @@ msgstr "Hotovo"
 #, kde-format
 msgid "%1 army to place"
 msgid_plural "%1 armies to place"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%1 armáda k umístění"
+msgstr[1] "%1 armády k umístění"
+msgstr[2] "%1 armád k umístění"
 
 #: krightdialog.cpp:375
 #, kde-format
 msgid "<u><b>Change some<br>placements?</b></u> "
-msgstr ""
+msgstr "<u><b>Změnit některá<br>umístění?</b></u> "
 
 #: krightdialog.cpp:390
 #, kde-format
 msgid "1 army to place"
 msgid_plural "%1 armies to place"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "1 armáda k umístění"
+msgstr[1] "%1 armády k umístění"
+msgstr[2] "%1 armád k umístění"
 
 #: krightdialog.cpp:392
 #, kde-format
 msgid "<b>Armies:</b> %1"
-msgstr ""
+msgstr "<b>Armády:</b> %1"
 
 #: krightdialog.cpp:471
 #, kde-format
 msgid "<font color=\"red\">lost armies: %1</font>"
-msgstr ""
+msgstr "<font color=\"red\">ztracené armády: %1</font>"
 
 #: krightdialog.cpp:476
 #, kde-format
 msgid "<font color=\"blue\">lost armies: %1</font>"
-msgstr ""
+msgstr "<font color=\"blue\">ztracené armády: %1</font>"
 
 #: ksirkConfigDialog.cpp:37
 #, kde-format
@@ -2358,25 +2437,25 @@ msgstr "Předvolby"
 #: ksirksettings.kcfg:9
 #, kde-format
 msgid "The sprites speed: slow, normal, quick, immediate"
-msgstr ""
+msgstr "Rychlost spritů: pomalá, normální, rychlá, okamžitá"
 
 #. i18n: ectx: label, entry (soundEnabled), group (General)
 #: ksirksettings.kcfg:13
 #, kde-format
 msgid "If true, sounds are played; they are not otherwise."
-msgstr ""
+msgstr "Je-li zapnuto, přehrávají se zvuky; v opačném případě se nepřehrávají."
 
 #. i18n: ectx: label, entry (helpEnabled), group (General)
 #: ksirksettings.kcfg:17
 #, kde-format
 msgid "If true, help is displayed; they are not otherwise."
-msgstr ""
+msgstr "Je-li zapnuto, zobrazí se nápověda; v opačném případě se nezobrazí."
 
 #. i18n: ectx: label, entry (showArmiesNumbers), group (General)
 #: ksirksettings.kcfg:21
 #, kde-format
 msgid "If true, the number of armies is displayed on each country."
-msgstr ""
+msgstr "Je-li zapnuto, u každé země se zobrazí počet armád."
 
 #. i18n: ectx: label, entry (Theme), group (General)
 #: ksirksettings.kcfg:25
@@ -2429,6 +2508,8 @@ msgid ""
 "For help and user manual, please see\n"
 "the KsirK web site."
 msgstr ""
+"Nápovědu a uživatelskou příručku najdete\n"
+"na webových stránkách KsirK."
 
 #: main.cpp:50
 #, kde-format
@@ -2438,7 +2519,7 @@ msgstr "Gaël de Chalendar aka Kleag"
 #: main.cpp:51
 #, kde-format
 msgid "Nemanja Hirsl"
-msgstr ""
+msgstr "Nemanja Hirsl"
 
 #: main.cpp:51
 #, kde-format
@@ -2463,7 +2544,7 @@ msgstr "Michal Golunski (Polish translation)"
 #: main.cpp:55
 #, kde-format
 msgid "French students of the 'IUP ISI 2007-2008':"
-msgstr ""
+msgstr "Francouzští studenti programu 'IUP ISI 2007–2008':"
 
 #: main.cpp:56
 #, kde-format
@@ -2494,13 +2575,13 @@ msgstr "Nová místní hra"
 #: mainMenu.ui:104
 #, kde-format
 msgid "New Standard TCP/IP Network Game"
-msgstr ""
+msgstr "Nová standardní síťová hra přes TCP/IP"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbJoin)
 #: mainMenu.ui:111
 #, kde-format
 msgid "Join Standard TCP/IP Network Game"
-msgstr ""
+msgstr "Připojit se ke standardní síťové hře přes TCP/IP"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbLoad)
 #: mainMenu.ui:118
@@ -2524,7 +2605,7 @@ msgstr "Zvuk povolen"
 #: preferences.ui:48
 #, kde-format
 msgid "Sprites speed (slow, normal, rapid, immediate):"
-msgstr ""
+msgstr "Rychlost spritů: pomalá, normální, rychlá, okamžitá):"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_helpEnabled)
 #: preferences.ui:92
@@ -2536,39 +2617,39 @@ msgstr "Zobrazit nápovědu"
 #: preferences.ui:99
 #, kde-format
 msgid "Show number of armies on countries"
-msgstr ""
+msgstr "Zobrazit počet armád v jednotlivých zemích"
 
 #: SaveLoad/ksirkgamexmlhandler.cpp:58
 #, kde-format
 msgid "Wrong save game format. Waited %1 and got %2!"
-msgstr ""
+msgstr "Nesprávný formát uložené hry. Očekáváno %1 a obdrženo %2!"
 
 #: SaveLoad/ksirkgamexmlhandler.cpp:139
 #, kde-format
 msgid "Current player is: %1"
-msgstr ""
+msgstr "Aktuální hráč je: %1"
 
 #: SaveLoad/ksirkgamexmlloader.cpp:46
 #, kde-format
 msgid "Skin file parsing error"
-msgstr ""
+msgstr "Chyba při analýze souboru motivu"
 
 #: Sprites/animsprite.cpp:515
 #, kde-format
 msgid "Cannot find Max X for sprite: no background!"
-msgstr ""
+msgstr "Nelze najít Max X pro sprite: žádné pozadí!"
 
 #: Sprites/animsprite.cpp:530
 #, kde-format
 msgid "Cannot find Max Y for sprite: no background!"
-msgstr ""
+msgstr "Nelze najít Max Y pro sprite: žádné pozadí!"
 
 #: Sprites/skinSpritesData.cpp:88
 #, kde-format
 msgid "Error - Unknown skin int data: "
-msgstr ""
+msgstr "Chyba – Neznámá hodnota v int datech motivu: "
 
 #: Sprites/skinSpritesData.cpp:104
 #, kde-format
 msgid "Error - Unknown skin string data: "
-msgstr ""
+msgstr "Chyba – Neznámá hodnota řetězce motivu: "

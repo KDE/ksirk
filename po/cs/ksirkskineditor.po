@@ -2,13 +2,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Vít Pelčák <vit@pelcak.org>, 2011, 2014, 2017, 2019, 2023.
 # SPDX-FileCopyrightText: 2024 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:50+0000\n"
-"PO-Revision-Date: 2026-08-02 11:13+0200\n"
+"PO-Revision-Date: 2026-08-03 22:40+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -21,17 +22,17 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Vít Pelčák"
+msgstr "Vít Pelčák,Libor Filípek"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "vit@pelcak.org"
+msgstr "vit@pelcak.org,libor.filipek@gmail.com"
 
 #: goal.cpp:100
 #, kde-format
 msgid "Error: no player to destroy"
-msgstr ""
+msgstr "Chyba: není žádný hráč, kterého by bylo možné zničit"
 
 #: goal.cpp:213
 #, kde-format
@@ -55,7 +56,7 @@ msgstr "Bonus:"
 #: ksirkcontinentdefinition.ui:29
 #, kde-format
 msgid "Number of bonus points when owning the full continent"
-msgstr ""
+msgstr "Počet bonusových bodů za ovládnutí celého kontinentu"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, bonus)
 #: ksirkcontinentdefinition.ui:36
@@ -70,12 +71,19 @@ msgid ""
 "The bonus should be proportional to the continent's size and to the "
 "difficulty to conquer it or to keep it."
 msgstr ""
+"Počet bonusových bodů za ovládnutí celého kontinentu.\n"
+"\n"
+"Na konci každého kola je každému hráči přidělen určitý počet armád. Pokud "
+"jeden hráč ovládá všechny země tohoto kontinentu, získá tento bonus.\n"
+"\n"
+"Bonus by měl být úměrný velikosti kontinentu a obtížnosti jeho dobytí či "
+"udržení."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:48
 #, kde-format
 msgid "Select the countries contained in this continent"
-msgstr ""
+msgstr "Vyberte země, které se nacházejí na tomto kontinentu"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:53
@@ -86,6 +94,10 @@ msgid ""
 "A list of all the world's countries will be shown and you will be able to "
 "select the countries using the mouse and the Ctrl and Shift keys."
 msgstr ""
+"Klikněte sem a vyberte země patřící k tomuto kontinentu.\n"
+"\n"
+"Zobrazí se seznam všech zemí světa a budete moci země vybírat pomocí myši a "
+"kláves Ctrl a Shift."
 
 #. i18n: ectx: property (text), widget (QPushButton, selectcountriesbutton)
 #: ksirkcontinentdefinition.ui:56
@@ -1694,6 +1706,8 @@ msgid ""
 "For help and user manual, please see\n"
 "The KsirK Web site"
 msgstr ""
+"Nápovědu a uživatelskou příručku najdete na\n"
+"webových stránkách KsirK"
 
 #: main.cpp:59
 #, kde-format
@@ -1859,6 +1873,8 @@ msgid ""
 "Pool filename not found\n"
 "Program cannot continue"
 msgstr ""
+"Název souboru v adresáři nebyl nalezen\n"
+"Program nemůže pokračovat"
 
 #: onu.cpp:128
 #, kde-format
@@ -1866,6 +1882,8 @@ msgid ""
 "Map mask image not found\n"
 "Program cannot continue"
 msgstr ""
+"Obraz masky mapy nebyl nalezen\n"
+"Program nemůže pokračovat"
 
 #: onu.cpp:983
 #, kde-format
@@ -1885,7 +1903,7 @@ msgstr ""
 #: skinSpritesData.cpp:85
 #, kde-format
 msgid "Error - Unknown skin int data: "
-msgstr ""
+msgstr "Chyba – Neznámá hodnota v int datech motivu: "
 
 #: skinSpritesData.cpp:86
 #, kde-format
@@ -1895,7 +1913,7 @@ msgstr "Kritická chyba"
 #: skinSpritesData.cpp:101
 #, kde-format
 msgid "Error - Unknown skin string data: "
-msgstr ""
+msgstr "Chyba – Neznámá hodnota řetězce motivu: "
 
 #: skinSpritesData.cpp:102
 #, kde-format
