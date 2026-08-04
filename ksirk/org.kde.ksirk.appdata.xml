@@ -90,6 +90,7 @@
     <p xml:lang="ar">حرب العروش هي نسخة محوسبة من لعبة Risk الاستراتيجية الشهيرة. الهدف من اللعبة هو ببساطة غزو العالم من خلال مهاجمة جيرانك بجيوشك.</p>
     <p xml:lang="ca">El KsirK és una versió per a ordinador del famós joc d'estratègia de tauler Risk. L'objectiu del joc és senzillament conquerir el món atacant els veïns amb els batallons.</p>
     <p xml:lang="ca-valencia">KsirK és una versió per a ordinador del famós joc d'estratègia de tauler Risk. L'objectiu del joc és senzillament conquerir el món atacant els veïns amb els batallons.</p>
+    <p xml:lang="cs">KsirK je počítačová verze známé strategické deskové hry Risk. Cílem hry je jednoduše dobýt svět tím, že budete útočit na své sousedy pomocí svých armád.</p>
     <p xml:lang="de">KsirK ist eine computergestützte Version des bekannten Strategiespiels Risiko. Das Spielziel ist es, die Weltherrschaft zu erlangen. Dies geschieht durch das Angreifen der Gegner in den Nachbarländern mit den eigenen Armeen.</p>
     <p xml:lang="en-GB">KsirK is a computerised version of the well known strategic board game Risk. The goal of the game is simply to conquer the world by attacking your neighbours with your armies.</p>
     <p xml:lang="eo">KsirK estas komputilizita versio de la konata strategia tabulludo Risk. La celo de la ludo estas simple konkeri la mondon atakante viajn najbarojn per viaj armeoj.</p>
@@ -169,6 +170,7 @@
       <li xml:lang="ar">إمكانية دعم 1-6 لاعبين من البشر أو الحاسوب (الذكاء الاصطناعي)</li>
       <li xml:lang="ca">Permet entre 1 i 6 jugadors humans o ordinadors (IA)</li>
       <li xml:lang="ca-valencia">Permet entre 1 i 6 jugadors humans o ordinadors (IA)</li>
+      <li xml:lang="cs">Podpora pro 1–6 hráčů (lidských nebo počítačových – AI)</li>
       <li xml:lang="de">Unterstützung für 1-6 menschliche oder Rechnerspieler (KI)</li>
       <li xml:lang="en-GB">Support for 1-6 human or computer (AI) players</li>
       <li xml:lang="eo">Subteno por 1-6 homaj aŭ komputilaj (AI) ludantoj</li>
@@ -206,6 +208,7 @@
       <li xml:lang="ar">الألعاب متعددة اللاعبين عبر شبكة</li>
       <li xml:lang="ca">Partides multijugador en xarxa</li>
       <li xml:lang="ca-valencia">Partides multijugador en xarxa</li>
+      <li xml:lang="cs">Hraní her pro více hráčů přes síť</li>
       <li xml:lang="de">Spiele mit mehreren Teilnehmern im Netzwerk</li>
       <li xml:lang="en-GB">Multi-player gaming over a network</li>
       <li xml:lang="eo">Purludanta ludado tra reto</li>
@@ -243,6 +246,7 @@
       <li xml:lang="ar">يمكنك بسهولة إنشاء أشكال جديدة باستخدام رسومات SVG ومحرر الأشكال.</li>
       <li xml:lang="ca">Es poden crear amb facilitat aparences noves amb gràfics SVG i l'editor d'aparences</li>
       <li xml:lang="ca-valencia">Es poden crear amb facilitat aparences noves amb gràfics SVG i l'editor d'aparences</li>
+      <li xml:lang="cs">Pomocí SVG grafiky a editoru vzhledů můžete snadno vytvářet nové vzhledy</li>
       <li xml:lang="de">Sie können neue Designs mit SVG-Grafik und dem Designeditor erstellen</li>
       <li xml:lang="en-GB">You can easily create new skins with SVG graphics and the skin editor</li>
       <li xml:lang="eo">Vi povas facile krei novajn haŭtojn kun SVG-grafikoj kaj la etosredaktilo</li>
@@ -280,6 +284,7 @@
       <li xml:lang="ar">خدمة تثبيت Hot New Stuff. يمكنك بسهولة تنزيل وتثبيت أشكال جديدة</li>
       <li xml:lang="ca">Permet obtenir novetats candents. Es poden descarregar i instal·lar amb facilitat aparences noves</li>
       <li xml:lang="ca-valencia">Permet obtindre novetats candents. Es poden descarregar i instal·lar amb facilitat aparences noves</li>
+      <li xml:lang="cs">Podpora nových funkcí. Nové vzhledy si můžete snadno stáhnout a nainstalovat</li>
       <li xml:lang="de">Sie können neue Designs herunterladen und installieren</li>
       <li xml:lang="en-GB">Hot New Stuff support. You can easily download and install new skins</li>
       <li xml:lang="eo">Subteno por 'Hot New Stuff'. Vi povas facile elŝuti kaj instali novajn haŭtojn</li>
