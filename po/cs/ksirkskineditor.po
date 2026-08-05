@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:50+0000\n"
-"PO-Revision-Date: 2026-08-03 22:40+0200\n"
+"PO-Revision-Date: 2026-08-04 19:47+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -109,13 +109,13 @@ msgstr "Země:"
 #: ksirkcontinentdefinition.ui:63
 #, kde-format
 msgid "Continent's countries"
-msgstr ""
+msgstr "Země daného kontinentu"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, countrieslist)
 #: ksirkcontinentdefinition.ui:66
 #, kde-format
 msgid "This is the list of countries currently forming this continent."
-msgstr ""
+msgstr "Toto je seznam zemí, které v současné době tvoří tento kontinent."
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkCountryDefinition)
 #: ksirkcountrydefinition.ui:13
@@ -165,7 +165,7 @@ msgstr "Pěchota:"
 #: ksirkcountrydefinition.ui:80
 #, kde-format
 msgid "Infantry's sprite top left point x-coordinate"
-msgstr ""
+msgstr "Souřadnice osy x vrcholu levého horního rohu spritu pěchoty"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryx)
 #: ksirkcountrydefinition.ui:87
@@ -178,12 +178,18 @@ msgid ""
 "\n"
 "This value will be automatically updated if you move the infantry."
 msgstr ""
+"Souřadnice osy x vrcholu levého horního rohu spritu pěchoty.\n"
+"\n"
+"Tato hodnota je udávána relativně k levému hornímu rohu mapy, její velikost "
+"je definována v hlavním widgetu pro definici vzhledu.\n"
+"\n"
+"Tato hodnota se automaticky aktualizuje, pokud pěchotu přesunete."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryy)
 #: ksirkcountrydefinition.ui:107
 #, kde-format
 msgid "Infantry's sprite top left point y-coordinate"
-msgstr ""
+msgstr "Souřadnice osy y vrcholu levého horního rohu spritu pěchoty"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryy)
 #: ksirkcountrydefinition.ui:114
@@ -197,6 +203,12 @@ msgid ""
 "This value will be automatically updated if you move the infantry by drag "
 "and drop."
 msgstr ""
+"Souřadnice osy y vrcholu levého horního rohu spritu pěchoty.\n"
+"\n"
+"Tato hodnota je udávána relativně k levému hornímu rohu mapy, její velikost "
+"je definována v hlavním widgetu pro definici vzhledu.\n"
+"\n"
+"Tato hodnota se automaticky aktualizuje, pokud pěchotu přesunete."
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: ksirkcountrydefinition.ui:124
@@ -208,7 +220,7 @@ msgstr "Jezdectvo:"
 #: ksirkcountrydefinition.ui:131
 #, kde-format
 msgid "Cavalry's sprite top left point x-coordinate"
-msgstr ""
+msgstr "Souřadnice osy x vrcholu levého horního rohu spritu jezdectva"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryx)
 #: ksirkcountrydefinition.ui:138
@@ -221,12 +233,18 @@ msgid ""
 "\n"
 "This value will be automatically updated if you move the cavalry."
 msgstr ""
+"Souřadnice osy x vrcholu levého horního rohu spritu jezdectva.\n"
+"\n"
+"Tato hodnota je udávána relativně k levému hornímu rohu mapy, její velikost "
+"je definována v hlavním widgetu pro definici vzhledu.\n"
+"\n"
+"Tato hodnota se automaticky aktualizuje, pokud pěchotu přesunete."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryy)
 #: ksirkcountrydefinition.ui:158
 #, kde-format
 msgid "Cavalry's sprite top left point y-coordinate"
-msgstr ""
+msgstr "Souřadnice osy y vrcholu levého horního rohu spritu jezdectva"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryy)
 #: ksirkcountrydefinition.ui:165
@@ -240,6 +258,12 @@ msgid ""
 "This value will be automatically updated if you move the cavalry by drag and "
 "drop."
 msgstr ""
+"Souřadnice osy y vrcholu levého horního rohu spritu jezdectva.\n"
+"\n"
+"Tato hodnota je udávána relativně k levému hornímu rohu mapy, její velikost "
+"je definována v hlavním widgetu pro definici vzhledu.\n"
+"\n"
+"Tato hodnota se automaticky aktualizuje, pokud pěchotu přesunete."
 
 #. i18n: ectx: property (text), widget (QLabel, label_12)
 #: ksirkcountrydefinition.ui:175
@@ -251,7 +275,7 @@ msgstr "Dělostřelectvo:"
 #: ksirkcountrydefinition.ui:192
 #, kde-format
 msgid "Cannon's sprite top left point y-coordinate"
-msgstr ""
+msgstr "Souřadnice osy y vrcholu levého horního rohu spritu dělostřelectva"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannony)
 #: ksirkcountrydefinition.ui:199
@@ -265,12 +289,18 @@ msgid ""
 "This value will be automatically updated if you move the cannon by drag and "
 "drop."
 msgstr ""
+"Souřadnice osy y vrcholu levého horního rohu spritu dělostřelectva.\n"
+"\n"
+"Tato hodnota je udávána relativně k levému hornímu rohu mapy, její velikost "
+"je definována v hlavním widgetu pro definici vzhledu.\n"
+"\n"
+"Tato hodnota se automaticky aktualizuje, pokud pěchotu přesunete."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonx)
 #: ksirkcountrydefinition.ui:209
 #, kde-format
 msgid "Cannon's sprite top left point x-coordinate"
-msgstr ""
+msgstr "Souřadnice osy x vrcholu levého horního rohu spritu dělostřelectva"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonx)
 #: ksirkcountrydefinition.ui:216
@@ -283,12 +313,18 @@ msgid ""
 "\n"
 "This value will be automatically updated if you move the cannon."
 msgstr ""
+"Souřadnice osy x vrcholu levého horního rohu spritu dělostřelectva.\n"
+"\n"
+"Tato hodnota je udávána relativně k levému hornímu rohu mapy, její velikost "
+"je definována v hlavním widgetu pro definici vzhledu.\n"
+"\n"
+"Tato hodnota se automaticky aktualizuje, pokud pěchotu přesunete."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, centery)
 #: ksirkcountrydefinition.ui:226
 #, kde-format
 msgid "Point around which the country name is drawn y-coordinate"
-msgstr ""
+msgstr "Souřadnice osy y bodu, kolem kterého je nakreslen název země"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, centery)
 #: ksirkcountrydefinition.ui:236
@@ -305,12 +341,22 @@ msgid ""
 "This value will be automatically updated if you move the country name by "
 "dragging and dropping its target icon.\n"
 msgstr ""
+"Souřadnice osy y bodu, kolem kterého je nakreslen název země.\n"
+"\n"
+"Upozorňujeme, že tento bod by měl ležet uvnitř hranic dané země na mapové "
+"masce.\n"
+"\n"
+"Tato souřadnice je uvedena relativně vůči levému hornímu rohu mapy, jejíž "
+"velikost je definována v hlavním widgetu pro definici vzhledu.\n"
+"\n"
+"Tato hodnota se automaticky aktualizuje, pokud přesunete název země "
+"přetažením jeho cílové ikony.\n"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, centerx)
 #: ksirkcountrydefinition.ui:246
 #, kde-format
 msgid "Point around which the country name is drawn x-coordinate"
-msgstr ""
+msgstr "Souřadnice osy x bodu, kolem kterého je nakreslen název země"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, centerx)
 #: ksirkcountrydefinition.ui:255
@@ -327,12 +373,22 @@ msgid ""
 "This value will be automatically updated if you move the country name by "
 "dragging and dropping its target icon."
 msgstr ""
+"Souřadnice osy x bodu, kolem kterého je nakreslen název země.\n"
+"\n"
+"Upozorňujeme, že tento bod by měl ležet uvnitř hranic dané země na mapové "
+"masce.\n"
+"\n"
+"Tato souřadnice je uvedena relativně vůči levému hornímu rohu mapy, jejíž "
+"velikost je definována v hlavním widgetu pro definici vzhledu.\n"
+"\n"
+"Tato hodnota se automaticky aktualizuje, pokud přesunete název země "
+"přetažením jeho cílové ikony."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, anchory)
 #: ksirkcountrydefinition.ui:265
 #, kde-format
 msgid "Center of the highlighting y-coordinate"
-msgstr ""
+msgstr "Střed zvýraznění souřadnice osy y"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, anchory)
 #: ksirkcountrydefinition.ui:272
@@ -346,12 +402,19 @@ msgid ""
 "This value will be automatically updated if you move the highlighting by "
 "dragging and dropping its cross icon."
 msgstr ""
+"Střed zvýraznění souřadnice osy y.\n"
+"\n"
+"Tato hodnota je udávána relativně k levému hornímu rohu mapy a její velikost "
+"je dána nastavením v hlavním ovládacím prvku pro definici vzhledu.\n"
+"\n"
+"Tato hodnota se automaticky aktualizuje, pokud přesunete zvýraznění "
+"přetažením jeho ikony ve tvaru křížku."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, anchorx)
 #: ksirkcountrydefinition.ui:282
 #, kde-format
 msgid "Center of the highlighting x-coordinate"
-msgstr ""
+msgstr "Střed zvýraznění souřadnice osy x"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, anchorx)
 #: ksirkcountrydefinition.ui:289
@@ -365,12 +428,19 @@ msgid ""
 "This value will be automatically updated if you move the highlighting by "
 "dragging and dropping its cross icon."
 msgstr ""
+"Střed zvýraznění souřadnice osy x.\n"
+"\n"
+"Tato hodnota je udávána relativně k levému hornímu rohu mapy a její velikost "
+"je dána nastavením v hlavním ovládacím prvku pro definici vzhledu.\n"
+"\n"
+"Tato hodnota se automaticky aktualizuje, pokud přesunete zvýraznění "
+"přetažením jeho ikony ve tvaru křížku."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagy)
 #: ksirkcountrydefinition.ui:299
 #, kde-format
 msgid "Flag's sprite top left point y-coordinate"
-msgstr ""
+msgstr "Souřadnice osy y vrchního levého bodu spritu vlajky"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagy)
 #: ksirkcountrydefinition.ui:306
@@ -384,12 +454,18 @@ msgid ""
 "This value will be automatically updated if you move the flag by drag and "
 "drop."
 msgstr ""
+"Souřadnice osy y vrchního levého bodu spritu vlajky.\n"
+"\n"
+"Tato hodnota je udávána relativně k levému hornímu rohu mapy, její velikost "
+"je definována v hlavním widgetu pro definici vzhledu.\n"
+"\n"
+"Tato hodnota se automaticky aktualizuje, pokud vlajku přesunete tažením myší."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagx)
 #: ksirkcountrydefinition.ui:316
 #, kde-format
 msgid "Flag's sprite top left point x-coordinate"
-msgstr ""
+msgstr "Souřadnice osy x vrchního levého bodu spritu vlajky"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagx)
 #: ksirkcountrydefinition.ui:323
@@ -403,12 +479,18 @@ msgid ""
 "This value will be automatically updated if you move the flag by drag and "
 "drop."
 msgstr ""
+"Souřadnice osy x vrchního levého bodu spritu vlajky.\n"
+"\n"
+"Tato hodnota je udávána relativně k levému hornímu rohu mapy, její velikost "
+"je definována v hlavním widgetu pro definici vzhledu.\n"
+"\n"
+"Tato hodnota se automaticky aktualizuje, pokud vlajku přesunete tažením myší."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, neighboursbutton)
 #: ksirkcountrydefinition.ui:335
 #, kde-format
 msgid "Select this country's neighbors"
-msgstr ""
+msgstr "Vyberte sousedy této země"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, neighboursbutton)
 #: ksirkcountrydefinition.ui:340
@@ -419,6 +501,10 @@ msgid ""
 "A list of all the world's countries will be shown and you will be able to "
 "select the countries using the mouse and the Ctrl and Shift keys."
 msgstr ""
+"Klikněte sem a vyberte sousedy této země.\n"
+"\n"
+"Zobrazí se seznam všech zemí světa a budete moci země vybírat pomocí myši a "
+"kláves Ctrl a Shift."
 
 #. i18n: ectx: property (text), widget (QPushButton, neighboursbutton)
 #: ksirkcountrydefinition.ui:343
@@ -430,7 +516,7 @@ msgstr "Sousedé:"
 #: ksirkcountrydefinition.ui:350
 #, kde-format
 msgid "This country's neighbors"
-msgstr ""
+msgstr "Sousedé této země"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, neighbourslist)
 #: ksirkcountrydefinition.ui:353
@@ -439,6 +525,8 @@ msgid ""
 "This is the list of countries currently considered as neighbors of this "
 "country."
 msgstr ""
+"Toto je seznam zemí, které jsou v současné době považovány za sousedy této "
+"země."
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkGoalDefinition)
 #: ksirkgoaldefinition.ui:13
@@ -457,7 +545,7 @@ msgstr "Typ cíle"
 #: ksirkgoaldefinition.ui:41 ksirkgoaldefinition.ui:44
 #, kde-format
 msgid "Conquer all the world"
-msgstr ""
+msgstr "Podmaňte si celý svět"
 
 #. i18n: ectx: property (text), widget (QRadioButton, worldtype)
 #: ksirkgoaldefinition.ui:47
@@ -478,6 +566,8 @@ msgid ""
 "<p>Eliminate a given player. If it is eliminated by another one, you will "
 "fall back to a <emphasis>Countries</emphasis> type of goal.</p>"
 msgstr ""
+"<p>Eliminujte daného hráče. Pokud ho eliminuje někdo jiný, přejdete k cíli "
+"typu <emphasis>Země</emphasis>.</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, playertype)
 #: ksirkgoaldefinition.ui:60
@@ -489,7 +579,7 @@ msgstr "Hráč"
 #: ksirkgoaldefinition.ui:67
 #, kde-format
 msgid "Conquer a given number of countries"
-msgstr ""
+msgstr "Dobýt stanovený počet zemí"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, countriestype)
 #: ksirkgoaldefinition.ui:72
@@ -500,6 +590,9 @@ msgid ""
 "You can also make the player to have to put a given number of armies on each "
 "country."
 msgstr ""
+"Dobýt daný počet zemí.\n"
+"\n"
+"Můžete také nastavit, aby hráč musel do každé země nasadit daný počet armád."
 
 #. i18n: ectx: property (text), widget (QRadioButton, countriestype)
 #. i18n: ectx: attribute (title), widget (QWidget, tabCountries)
@@ -512,7 +605,7 @@ msgstr "Země"
 #: ksirkgoaldefinition.ui:82
 #, kde-format
 msgid "Conquer a given list of continents"
-msgstr ""
+msgstr "Dobýt stanovený seznam kontinentů"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, continentstype)
 #: ksirkgoaldefinition.ui:85
@@ -521,6 +614,8 @@ msgid ""
 "Conquer a given list of continents. You can also let the player choose one "
 "of their target continents."
 msgstr ""
+"Dobýt stanovený seznam kontinentů. Můžete také hráči umožnit, aby si vybral "
+"jeden z cílových kontinentů."
 
 #. i18n: ectx: property (text), widget (QRadioButton, continentstype)
 #. i18n: ectx: attribute (title), widget (QWidget, tabContinents)
@@ -540,7 +635,7 @@ msgstr "Popis:"
 #: ksirkgoaldefinition.ui:106
 #, kde-format
 msgid "Text describing the goal"
-msgstr ""
+msgstr "Text popisující cíl"
 
 #. i18n: ectx: property (whatsThis), widget (QTextEdit, description)
 #: ksirkgoaldefinition.ui:109
@@ -554,24 +649,30 @@ msgid ""
 "country</li><li><i>Continents</i>: one for each continent to conquer</li></"
 "ul>"
 msgstr ""
+"<p>Text popisující cíl. Měl by obsahovat několik zástupných symbolů pro "
+"různá data v závislosti na typu cíle:</p><ul><li><i>Dobytí světa</i>: žádné</"
+"li><li><i>Hráč</i>: jeden pro jméno hráče a jeden pro počet zemí (náhradní "
+"hodnota)</li><li><i>Země</i>: jeden pro počet zemí a případně druhý pro "
+"počet armád, které mají být nasazeny v každé zemi</li><li><i>Kontinenty</i>: "
+"jeden pro každý kontinent, který má být dobyt</li></ul>"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkgoaldefinition.ui:125
 #, kde-format
 msgid "Countries nb:"
-msgstr ""
+msgstr "Počet zemí:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: ksirkgoaldefinition.ui:132
 #, kde-format
 msgid "Armies by country:"
-msgstr ""
+msgstr "Armády podle zemí:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, nbcountries)
 #: ksirkgoaldefinition.ui:139
 #, kde-format
 msgid "Number of countries to conquer"
-msgstr ""
+msgstr "Počet zemí, které je třeba dobýt"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, nbcountries)
 #: ksirkgoaldefinition.ui:142
@@ -580,12 +681,14 @@ msgid ""
 "<p>Number of countries to conquer in a <i>Countries</i> goal or as a "
 "fallback in a <i>Player</i> goal.</p>"
 msgstr ""
+"<p>Počet zemí, které je třeba dobýt v rámci cíle <i>Země</i> nebo jako "
+"náhradní varianta v rámci cíle <i>Hráč</i>.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, armiesbycountry)
 #: ksirkgoaldefinition.ui:149
 #, kde-format
 msgid "Number of armies to put on each country"
-msgstr ""
+msgstr "Počet armád, které je třeba nasadit do jednotlivých zemí"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, armiesbycountry)
 #: ksirkgoaldefinition.ui:152
@@ -593,12 +696,14 @@ msgstr ""
 msgid ""
 "<p>Number of armies to put on each country in a <i>Countries</i> goal.</p>"
 msgstr ""
+"<p>Počet armád, které je třeba nasadit do jednotlivých zemí v rámci cíle "
+"<i>Země</i>.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, selectcontinentsbutton)
 #: ksirkgoaldefinition.ui:170
 #, kde-format
 msgid "Select the continents to conquer"
-msgstr ""
+msgstr "Vyberte kontinenty, které chcete dobýt"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, selectcontinentsbutton)
 #: ksirkgoaldefinition.ui:173
@@ -608,6 +713,9 @@ msgid ""
 "i> goal.</p><p>You will be prompted with a list of this world's continents. "
 "Select those to conquer with the mouse and the Ctrl and Shift keys.</p>"
 msgstr ""
+"<p>Kliknutím na toto tlačítko vyberete kontinenty, které chcete dobýt v "
+"rámci cíle <i>Kontinenty</i>.</p><p>Zobrazí se vám seznam kontinentů tohoto "
+"světa. Ty, které chcete dobýt, vyberte pomocí myši a kláves Ctrl a Shift.</p>"
 
 #. i18n: ectx: property (text), widget (QPushButton, selectcontinentsbutton)
 #: ksirkgoaldefinition.ui:176
@@ -621,6 +729,8 @@ msgstr "Vybrat kontinenty"
 #, kde-format
 msgid "Check to let the player choose one of the continents to conquer"
 msgstr ""
+"Zaškrtněte toto políčko, aby si hráč mohl vybrat jeden z kontinentů, který "
+"chce dobýt"
 
 #. i18n: ectx: property (text), widget (QCheckBox, anycontinent)
 #: ksirkgoaldefinition.ui:189
@@ -632,7 +742,7 @@ msgstr "Libovolné"
 #: ksirkgoaldefinition.ui:198
 #, kde-format
 msgid "List of the continents to conquer"
-msgstr ""
+msgstr "Seznam kontinentů, které je třeba dobýt"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, continentslist)
 #: ksirkgoaldefinition.ui:201
@@ -642,6 +752,9 @@ msgid ""
 "can change this list by clicking on the \"Select continents\" button above.</"
 "p>"
 msgstr ""
+"<p>Seznam kontinentů, které je třeba dobýt v rámci cíle <i>Kontinenty</i>.</"
+"p><p>Tento seznam můžete změnit kliknutím na tlačítko \"Vybrat kontinenty\" "
+"výše.</p>"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkNationalityDefinition)
 #: ksirknationalitydefinition.ui:13
@@ -669,6 +782,9 @@ msgid ""
 "existing country in case of a <i>realistic</i> world.</p><p>This string "
 "should be unique in the skin.</p>"
 msgstr ""
+"<p>Jméno národnosti. Název země, za kterou hráč hraje. V případě "
+"<i>realistického</i> světa může jít o název existující země.</p><p>Tento "
+"řetězec by měl být v daném skinu jedinečný.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: ksirknationalitydefinition.ui:43
@@ -689,42 +805,44 @@ msgid ""
 "<p>Name of this nationality leader. In the case of a <i>realistic</i> skin, "
 "this could be the name of a well known king, president, etc.</p>"
 msgstr ""
+"<p>Jméno vůdce této národnosti. V případě <i>realistického</i> vzhledu by se "
+"mohlo jednat o jméno nějakého známého krále, prezidenta atd.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: ksirknationalitydefinition.ui:60
 #, kde-format
 msgid "Flag ID in pool:"
-msgstr ""
+msgstr "ID vlajky ve skupině:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, flag)
 #: ksirknationalitydefinition.ui:67
 #, kde-format
 msgid "Flag sprite id in the pool SVG"
-msgstr ""
+msgstr "ID spritu vlajky v souboru SVG"
 
 #. i18n: ectx: property (whatsThis), widget (KComboBox, flag)
 #: ksirknationalitydefinition.ui:70
 #, kde-format
 msgid "Flag sprite id in the pool SVG (pool.svg)."
-msgstr ""
+msgstr "ID spritu vlajky v souboru SVG (pool.svg)"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, skindefinition)
 #: ksirkskindefinition.ui:13
 #, kde-format
 msgid "Skin Definition"
-msgstr ""
+msgstr "Definice motivu"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: ksirkskindefinition.ui:22
 #, kde-format
 msgid "Skin name:"
-msgstr "Jméno motivu:"
+msgstr "Název motivu:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, skinNameLineEdit)
 #: ksirkskindefinition.ui:29
 #, kde-format
 msgid "The skin's short name"
-msgstr ""
+msgstr "Zkrácený název motivu"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, skinNameLineEdit)
 #: ksirkskindefinition.ui:35
@@ -732,6 +850,8 @@ msgstr ""
 msgid ""
 "Type here the skin's short name. This should be an identifier-like string"
 msgstr ""
+"Zadejte sem zkrácený název motivu. Měl by to být řetězec podobný "
+"identifikátoru"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkskindefinition.ui:46
@@ -753,6 +873,9 @@ msgid ""
 "image of this width. All positions on the map are expressed relatively to "
 "this dimension.\n"
 msgstr ""
+"Toto je šířka mapy. Prvek SVG mapy bude ve výchozím nastavení vykreslen na "
+"obrázku této šířky. Všechny polohy na mapě jsou vyjádřeny relativně k tomuto "
+"rozměru.\n"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, heightLineEdit)
 #: ksirkskindefinition.ui:71
@@ -768,6 +891,9 @@ msgid ""
 "image of this height All positions on the map are expressed relatively to "
 "this dimension.\n"
 msgstr ""
+"Toto je výška mapy. Prvek SVG mapy bude ve výchozím nastavení vykreslen na "
+"obrázku této šířky. Všechny polohy na mapě jsou vyjádřeny relativně k tomuto "
+"rozměru.\n"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: ksirkskindefinition.ui:90
@@ -779,13 +905,13 @@ msgstr "Písmo mapy"
 #: ksirkskindefinition.ui:96
 #, kde-format
 msgid "Font used to draw country names"
-msgstr ""
+msgstr "Písmo použité pro zobrazení názvů zemí"
 
 #. i18n: ectx: property (whatsThis), widget (KFontRequester, fontrequester)
 #: ksirkskindefinition.ui:99
 #, kde-format
 msgid "This font will be used to draw the country names on the map"
-msgstr ""
+msgstr "Toto písmo se použije k vykreslení názvů zemí na mapě"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: ksirkskindefinition.ui:108
@@ -797,7 +923,7 @@ msgstr "Fg:"
 #: ksirkskindefinition.ui:115
 #, kde-format
 msgid "Foreground color for country names"
-msgstr ""
+msgstr "Barva popředí pro názvy zemí"
 
 #. i18n: ectx: property (whatsThis), widget (KColorButton, fgcolorbutton)
 #: ksirkskindefinition.ui:118
@@ -805,19 +931,19 @@ msgstr ""
 msgid ""
 "This color will be used to draw the foreground of the country names on the "
 "map"
-msgstr ""
+msgstr "Tato barva se použije k vykreslení popředí názvů zemí na mapě"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: ksirkskindefinition.ui:125
 #, kde-format
 msgid "Bg:"
-msgstr ""
+msgstr "Bg:"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, bgcolorbutton)
 #: ksirkskindefinition.ui:132
 #, kde-format
 msgid "Background color for country names"
-msgstr ""
+msgstr "Barva pozadí pro názvy zemí"
 
 #. i18n: ectx: property (whatsThis), widget (KColorButton, bgcolorbutton)
 #: ksirkskindefinition.ui:135
@@ -825,13 +951,13 @@ msgstr ""
 msgid ""
 "This color will be used to draw the background of the country names on the "
 "map"
-msgstr ""
+msgstr "Tato barva se použije k vykreslení pozadí názvů zemí na mapě"
 
 #. i18n: ectx: property (toolTip), widget (QTextEdit, descriptionTextEdit)
 #: ksirkskindefinition.ui:160
 #, kde-format
 msgid "Human readable description of the skin"
-msgstr ""
+msgstr "Lidsky srozumitelný popis motivu"
 
 #. i18n: ectx: property (whatsThis), widget (QTextEdit, descriptionTextEdit)
 #: ksirkskindefinition.ui:163
@@ -839,14 +965,14 @@ msgstr ""
 msgid ""
 "Describe here the skin, its style, its story, the intent of its author(s), "
 "etc."
-msgstr ""
+msgstr "Popište zde motiv, jeho styl, jeho příběh, záměr autora (autorů) atd."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabSprites)
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkSpritesDefinition)
 #: ksirkskindefinition.ui:177 ksirkspritesdefinition.ui:13
 #, kde-format
 msgid "Sprites"
-msgstr ""
+msgstr "Sprity"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: ksirkskindefinition.ui:184
@@ -855,6 +981,8 @@ msgid ""
 "Edit the sprite definitions\n"
 "in the right dock."
 msgstr ""
+"Upravte definice spritů\n"
+"v pravém panelu."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabNationalities)
 #: ksirkskindefinition.ui:192
@@ -866,13 +994,15 @@ msgstr "Národnosti"
 #: ksirkskindefinition.ui:200
 #, kde-format
 msgid "Creates a new Nationality"
-msgstr ""
+msgstr "Vytvoří novou národnost"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, newNationalityButton)
 #: ksirkskindefinition.ui:203
 #, kde-format
 msgid "Click here to add a new nationality. You will be prompted for its name."
 msgstr ""
+"Klikněte sem a přidejte novou národnost. Budete vyzváni k zadání jejího "
+"názvu."
 
 #. i18n: ectx: property (text), widget (QPushButton, newNationalityButton)
 #: ksirkskindefinition.ui:206
@@ -884,7 +1014,7 @@ msgstr "Nová národnost"
 #: ksirkskindefinition.ui:226
 #, kde-format
 msgid "Removes the currently selected nationality"
-msgstr ""
+msgstr "Odstraní aktuálně vybranou národnost"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, deleteNationalityButton)
 #: ksirkskindefinition.ui:229
@@ -893,6 +1023,8 @@ msgid ""
 "Click here to remove the currently selected nationality. You will be asked "
 "for confirmation."
 msgstr ""
+"Klikněte sem, chcete-li odstranit aktuálně vybranou národnost. Budete "
+"požádáni o potvrzení."
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteNationalityButton)
 #. i18n: ectx: property (text), widget (QPushButton, deleteCountryButton)
@@ -923,6 +1055,13 @@ msgid ""
 "add at least as many nationalities as the maximum number of players for this "
 "skin."
 msgstr ""
+"V tomto seznamu jsou uvedeny definované národnosti.\n"
+"\n"
+"Název každé národnosti by měl být jedinečný. Vyberte národnost a upravte "
+"její údaje v pravém panelu.\n"
+"\n"
+"Během hry si každý hráč musí vybrat národnost. Proto byste měli přidat "
+"alespoň tolik národností, kolik je maximální počet hráčů pro tento motiv."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newCountryButton)
 #: ksirkskindefinition.ui:264
@@ -935,6 +1074,7 @@ msgstr "Vytvoří novou zem"
 #, kde-format
 msgid "Click here to add a new country. You will be prompted for its name."
 msgstr ""
+"Kliknutím sem přidáte novou zemi. Budete vyzváni k zadání jejího názvu."
 
 #. i18n: ectx: property (text), widget (QPushButton, newCountryButton)
 #: ksirkskindefinition.ui:270
@@ -946,7 +1086,7 @@ msgstr "Nová země"
 #: ksirkskindefinition.ui:290
 #, kde-format
 msgid "Removes the currently selected country"
-msgstr ""
+msgstr "Odstraní aktuálně vybranou zemi"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, deleteCountryButton)
 #: ksirkskindefinition.ui:293
@@ -955,6 +1095,7 @@ msgid ""
 "Click here to remove the currently selected country. You will be asked for "
 "confirmation."
 msgstr ""
+"Kliknutím sem odstraníte aktuálně vybranou zemi. Budete požádáni o potvrzení."
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, countrieslist)
 #. i18n: ectx: property (toolTip), widget (QListWidget, countriesList)
@@ -972,18 +1113,23 @@ msgid ""
 "Each country name should be unique. Select a country and edit its details in "
 "the right dock."
 msgstr ""
+"V tomto seznamu jsou uvedeny definované země.\n"
+"\n"
+"Každý název země by měl být jedinečný. Vyberte zemi a upravte její údaje v "
+"pravém panelu."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newContinentButton)
 #: ksirkskindefinition.ui:326
 #, kde-format
 msgid "Creates a new continent"
-msgstr ""
+msgstr "Vytvoří nový kontinent"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, newContinentButton)
 #: ksirkskindefinition.ui:329
 #, kde-format
 msgid "Click here to add a new continent. You will be prompted for its name."
 msgstr ""
+"Kliknutím sem přidáte nový kontinent. Budete vyzváni k zadání jeho názvu."
 
 #. i18n: ectx: property (text), widget (QPushButton, newContinentButton)
 #: ksirkskindefinition.ui:332
@@ -995,7 +1141,7 @@ msgstr "Nový kontinent"
 #: ksirkskindefinition.ui:352
 #, kde-format
 msgid "Removes the currently selected continent"
-msgstr ""
+msgstr "Odstraní aktuálně vybraný kontinent"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, deleteContinentButton)
 #: ksirkskindefinition.ui:355
@@ -1004,6 +1150,8 @@ msgid ""
 "Click here to remove the currently selected continent. You will be asked for "
 "confirmation."
 msgstr ""
+"Kliknutím sem odstraníte aktuálně vybraný kontinent. Budete požádáni o "
+"potvrzení."
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, continentslist)
 #: ksirkskindefinition.ui:367
@@ -1020,6 +1168,10 @@ msgid ""
 "Each continent name should be unique. Select a continent and edit its "
 "details in the right dock."
 msgstr ""
+"Tento seznam zobrazuje definované kontinenty.\n"
+"\n"
+"Název každého kontinentu by měl být jedinečný. Vyberte kontinent a upravte "
+"jeho údaje v pravém panelu."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabGoals)
 #: ksirkskindefinition.ui:380
@@ -1037,7 +1189,7 @@ msgstr "Vytvoří nový cíl"
 #: ksirkskindefinition.ui:391
 #, kde-format
 msgid "Click here to add a new goal. It will be named automatically."
-msgstr ""
+msgstr "Kliknutím sem přidáte nový cíl. Bude automaticky pojmenován."
 
 #. i18n: ectx: property (text), widget (QPushButton, newGoalButton)
 #: ksirkskindefinition.ui:394
@@ -1058,6 +1210,7 @@ msgid ""
 "Click here to remove the currently selected goal. You will be asked for "
 "confirmation."
 msgstr ""
+"Kliknutím sem odstraníte aktuálně vybraný cíl. Budete požádáni o potvrzení."
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, goalslist)
 #: ksirkskindefinition.ui:429
@@ -1074,6 +1227,10 @@ msgid ""
 "Each goal name should be unique. Select a goal and edit its details in the "
 "right dock."
 msgstr ""
+"V tomto seznamu jsou uvedeny definované cíle.\n"
+"\n"
+"Každý název cíle by měl být jedinečný. Vyberte cíl a upravte jeho "
+"podrobnosti v pravém panelu."
 
 #: ksirkSkinEditorConfigDialog.cpp:55
 #, kde-format
@@ -1085,7 +1242,7 @@ msgstr "Předvolby"
 #: ksirkskineditorcountriesselectiondialog.ui:13
 #, kde-format
 msgid "Country Selection Dialog"
-msgstr ""
+msgstr "Dialogové okno pro výběr země"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, countriesList)
 #: ksirkskineditorcountriesselectiondialog.ui:22
@@ -1095,6 +1252,8 @@ msgid ""
 "are highlighted. You can modify the selection using the mouse and Ctrl and "
 "Shift keys."
 msgstr ""
+"Seznam všech definovaných zemí světa. Aktuálně vybrané země jsou zvýrazněny. "
+"Výběr můžete upravit pomocí myši a kláves Ctrl a Shift."
 
 #. i18n: ectx: Menu (game)
 #: ksirkskineditorui.rc:10
@@ -1124,7 +1283,7 @@ msgstr "Hlavní panel nástrojů"
 #: ksirkskineditorwidget.ui:43
 #, kde-format
 msgid "Sprite placement buttons"
-msgstr ""
+msgstr "Tlačítka pro umístění spritu"
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, buttonsScrollArea)
 #: ksirkskineditorwidget.ui:46
@@ -1134,12 +1293,15 @@ msgid ""
 "for the currently selected country. The buttons are available only if the "
 "sprite is not already placed. "
 msgstr ""
+"Pomocí tlačítek zde můžete provést počáteční umístění příslušného spritu pro "
+"aktuálně vybranou zemi. Tlačítka jsou k dispozici pouze v případě, že sprit "
+"ještě není umístěn. "
 
 #. i18n: ectx: property (toolTip), widget (QScrollArea, mapScrollArea)
 #: ksirkskineditorwidget.ui:66
 #, kde-format
 msgid "Map with sprites"
-msgstr ""
+msgstr "Mapa se sprity"
 
 #. i18n: ectx: property (whatsThis), widget (QScrollArea, mapScrollArea)
 #: ksirkskineditorwidget.ui:71
@@ -1151,6 +1313,10 @@ msgid ""
 "Drag and drop the sprites, the country names, and the highlighting anchors "
 "to change their place."
 msgstr ""
+"Zobrazí mapu motivu se všemi již umístěnými sprity, názvy zemí a "
+"zvýrazňujícími kotvami.\n"
+"\n"
+"Přetažením spritu, názvu zemí a zvýrazňovací kotvy změníte jejich umístění."
 
 #. i18n: ectx: property (text), widget (QLabel, label_26)
 #: ksirkspritesdefinition.ui:29
@@ -1159,12 +1325,14 @@ msgid ""
 "Width between fighter\n"
 "and flag:"
 msgstr ""
+"Vzdálenost mezi jednotkou\n"
+"a vlajkou:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, widthDiffLineEdit)
 #: ksirkspritesdefinition.ui:39
 #, kde-format
 msgid "Empty space size between fighting cannon and flag"
-msgstr ""
+msgstr "Velikost volného prostoru mezi jednotkou dělostřelectva a vlajkou"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, widthDiffLineEdit)
 #: ksirkspritesdefinition.ui:44
@@ -1177,18 +1345,25 @@ msgid ""
 "pixels between the flag and each cannon, measured relatively to the map base "
 "size as set in the main skin definition panel."
 msgstr ""
+"Velikost volného prostoru mezi jednotkou dělostřelectva a vlajkou.\n"
+"\n"
+"Během bitvy jsou střílející (a explodující) jednotky dělostřelectva každého "
+"hráče umístěny po obou stranách vlajky bránící země. Tento parametr udává "
+"počet pixelů mezi vlajkou a každou jednotkou dělostřelectva, měřený "
+"relativně k základní velikosti mapy, jak je nastavena v hlavním panelu "
+"definice motivu."
 
 #. i18n: ectx: property (toolTip), widget (QTabWidget, ktabwidget)
 #: ksirkspritesdefinition.ui:53
 #, kde-format
 msgid "Data about all sprites"
-msgstr ""
+msgstr "Údaje o všech spritech"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, flagTab)
 #: ksirkspritesdefinition.ui:63
 #, kde-format
 msgid "Data about the flag sprite"
-msgstr ""
+msgstr "Údaje o spritu vlajky"
 
 #. i18n: ectx: attribute (title), widget (QWidget, flagTab)
 #: ksirkspritesdefinition.ui:66
@@ -1213,7 +1388,7 @@ msgstr "Šířka:"
 #: ksirkspritesdefinition.ui:81
 #, kde-format
 msgid "Flag individual frame width"
-msgstr ""
+msgstr "Šířka snímku jednotlivých vlajek"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagw)
 #: ksirkspritesdefinition.ui:84
@@ -1223,6 +1398,9 @@ msgid ""
 "rendered on a pixmap of width: <i>Width</i> * N<i>number of frames</i> and "
 "then split into individual frames.</p>"
 msgstr ""
+"<p>Šířka snímku jednotlivých vlajek.</p><p>Prvek <i>vlajky</i> bude "
+"vykreslen na pixelové mapě o šířce: <i>Šířka</i> * N<i>počet snímků</i> a "
+"poté rozdělen na jednotlivé snímky.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_6)
@@ -1241,7 +1419,7 @@ msgstr "Výška:"
 #: ksirkspritesdefinition.ui:98
 #, kde-format
 msgid "Flag individual frame height"
-msgstr ""
+msgstr "Výška snímku jednotlivých vlajek"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagh)
 #: ksirkspritesdefinition.ui:103
@@ -1252,6 +1430,10 @@ msgid ""
 "The pool flag element will be rendered on a pixmap of height: (Height * "
 "Number of versions) and then split into individual frames."
 msgstr ""
+"Výška snímku jednotlivých vlajek.\n"
+"\n"
+"Prvek vlajky bude vykreslen na pixelové mapě o výšce: (Výška * Počet snímků) "
+"a poté rozdělen na jednotlivé snímky."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_8)
@@ -1264,13 +1446,13 @@ msgstr ""
 #: ksirkspritesdefinition.ui:486 ksirkspritesdefinition.ui:581
 #, kde-format
 msgid "Nb frames:"
-msgstr ""
+msgstr "Počet snímků:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagf)
 #: ksirkspritesdefinition.ui:117
 #, kde-format
 msgid "Number of individual flag frames"
-msgstr ""
+msgstr "Počet jednotlivých snímků vlajky"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagf)
 #: ksirkspritesdefinition.ui:120
@@ -1280,6 +1462,9 @@ msgid ""
 "be rendered on a pixmap of width: (<i>Width</i> * <i>Number of frames</i>) "
 "and then split into individual frames.</p>"
 msgstr ""
+"<p>Počet jednotlivých snímků vlajky.</p><p>Prvek <i>vlajky</i> bude "
+"vykreslen na pixelové mapě o šířce: (<i>Šířka</i> * <i>Počet snímků</i>) a "
+"poté rozdělen na jednotlivé snímky.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, label_7)
@@ -1292,13 +1477,13 @@ msgstr ""
 #: ksirkspritesdefinition.ui:503 ksirkspritesdefinition.ui:598
 #, kde-format
 msgid "Nb versions:"
-msgstr ""
+msgstr "Počet verzí:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, flagv)
 #: ksirkspritesdefinition.ui:134
 #, kde-format
 msgid "Number of flag versions"
-msgstr ""
+msgstr "Počet verzí vlajky"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, flagv)
 #: ksirkspritesdefinition.ui:141
@@ -1314,12 +1499,20 @@ msgid ""
 "the front and the last one from the back. However, not all sprites need all "
 "versions."
 msgstr ""
+"Počet verzí vlajky.\n"
+"\n"
+"Prvek vlajky bude vykreslen na pixelové mapě o výšce: (Výška * Počet verzí) "
+"a poté rozdělen na jednotlivé snímky.\n"
+"\n"
+"Každá verze zobrazuje sprit viditelný z jednoho směru: první směřuje "
+"doprava, druhá doleva, třetí dopředu a poslední dozadu. Ne všechny sprity "
+"však potřebují všechny verze."
 
 #. i18n: ectx: property (toolTip), widget (QWidget, infantryTab)
 #: ksirkspritesdefinition.ui:164
 #, kde-format
 msgid "Data about the infantry sprite"
-msgstr ""
+msgstr "Údaje o spritu pěchoty"
 
 #. i18n: ectx: attribute (title), widget (QWidget, infantryTab)
 #: ksirkspritesdefinition.ui:167
@@ -1331,7 +1524,7 @@ msgstr "Pěchota"
 #: ksirkspritesdefinition.ui:180
 #, kde-format
 msgid "Infantry individual frame width"
-msgstr ""
+msgstr "Šířka jednotlivých snímků pěchoty"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryw)
 #: ksirkspritesdefinition.ui:183
@@ -1341,12 +1534,15 @@ msgid ""
 "will be rendered on a pixmap of width: <i>Width</i> * <i>number of frames</"
 "i> and then split into individual frames.</p>"
 msgstr ""
+"<p>Šířka jednotlivých snímků pěchoty.</p><p>Prvek <i>pěchota</i> bude "
+"vykreslen na pixelové mapě o šířce: <i>Šířka</i> * <i>počet snímků</i> a "
+"poté rozdělen na jednotlivé snímky.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryh)
 #: ksirkspritesdefinition.ui:197
 #, kde-format
 msgid "Infantry individual frame height"
-msgstr ""
+msgstr "Výška jednotlivých snímků pěchoty"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryh)
 #: ksirkspritesdefinition.ui:200
@@ -1356,12 +1552,15 @@ msgid ""
 "will be rendered on a pixmap of height: <i>Height</i> * <i>Number of "
 "versions</i> and then split into individual frames.</p>"
 msgstr ""
+"<p>Výška jednotlivých snímků pěchoty.</p><p>Prvek <i>pěchota</i> bude "
+"vykreslen na pixelové mapě o výšce: <i>Výška</i> * <i>Počet verzí</i> a poté "
+"rozdělen na jednotlivé snímky.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryf)
 #: ksirkspritesdefinition.ui:214
 #, kde-format
 msgid "Number of individual infantry frames"
-msgstr ""
+msgstr "Počet jednotlivých snímků pěchoty"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryf)
 #: ksirkspritesdefinition.ui:217
@@ -1371,12 +1570,15 @@ msgid ""
 "element will be rendered on a pixmap of width: (<i>Width</i> * <i>Number of "
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Počet jednotlivých snímků pěchoty.</p><p>Prvek <i>pěchota</i> bude "
+"vykreslen na pixelové mapě o šířce: (<i>Šířka</i> * <i>Počet snímků</i>) a "
+"poté rozdělen na jednotlivé snímky.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, infantryv)
 #: ksirkspritesdefinition.ui:231
 #, kde-format
 msgid "Number of infantry versions"
-msgstr ""
+msgstr "Počet verzí pěchoty"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, infantryv)
 #: ksirkspritesdefinition.ui:234
@@ -1389,12 +1591,17 @@ msgid ""
 "right, the second towards the left, the third one from front and the last "
 "one from the back. However, not all sprites need all versions.</p>"
 msgstr ""
+"<p>Počet verzí pěchoty.</p><p>Prvek <i>pěchota</i> bude vykreslen na "
+"pixelové mapě o výšce: (<i>Výška</i> * <i>Počet verzí</i>) a poté rozdělen "
+"na jednotlivé snímky.</p><p>Každá verze zobrazuje sprit viditelný z jednoho "
+"směru: první směřuje doprava, druhá doleva, třetí dopředu a poslední dozadu. "
+"Ne všechny sprity však potřebují všechny verze.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, cavalryTab)
 #: ksirkspritesdefinition.ui:255
 #, kde-format
 msgid "Data about the cavalry sprite"
-msgstr ""
+msgstr "Údaje o spritu jezdectva"
 
 #. i18n: ectx: attribute (title), widget (QWidget, cavalryTab)
 #: ksirkspritesdefinition.ui:258
@@ -1406,7 +1613,7 @@ msgstr "Jezdectvo"
 #: ksirkspritesdefinition.ui:271
 #, kde-format
 msgid "Individual cavalry frame width"
-msgstr ""
+msgstr "Šířka jednotlivých snímků jezdectva"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryw)
 #: ksirkspritesdefinition.ui:274
@@ -1416,12 +1623,15 @@ msgid ""
 "will be rendered on a pixmap of width (<i>Width</i> * <i>Number of frames</"
 "i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Šířka jednotlivých snímků jezdectva. </p><p>Prvek <i>jezdectvo</i> bude "
+"vykreslen na pixelové mapě o šířce (<i>Šířka</i> * <i>Počet snímků</i>) a "
+"poté rozdělen na jednotlivé snímky. </p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryh)
 #: ksirkspritesdefinition.ui:288
 #, kde-format
 msgid "Individual cavalry frame height"
-msgstr ""
+msgstr "Výška jednotlivých snímků jezdectva"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryh)
 #: ksirkspritesdefinition.ui:291
@@ -1431,12 +1641,15 @@ msgid ""
 "will be rendered on a pixmap of height (<i>Height</i> * <i>Number of "
 "versions</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Výška jednotlivých snímků jezdectva. </p><p>Prvek <i>jezdectvo</i> bude "
+"vykreslen na pixelové mapě o výšce (<i>Výška</i> * <i>Počet verzí</i>) a "
+"poté rozdělen na jednotlivé snímky. </p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryf)
 #: ksirkspritesdefinition.ui:305
 #, kde-format
 msgid "Number of individual cavalry frames"
-msgstr ""
+msgstr "Počet jednotlivých snímků jezdectva"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryf)
 #: ksirkspritesdefinition.ui:308
@@ -1446,12 +1659,15 @@ msgid ""
 "element will be rendered on a pixmap of width: (<i>Width</i> * <i>Number of "
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Počet jednotlivých snímků jezdectva.</p><p>Prvek <i>jezdectvo</i> bude "
+"vykreslen na pixelové mapě o šířce: (<i>Šířka</i> * <i>Počet snímků</i>) a "
+"poté rozdělen na jednotlivé snímky.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cavalryv)
 #: ksirkspritesdefinition.ui:322
 #, kde-format
 msgid "Number of cavalry versions"
-msgstr ""
+msgstr "Počet verzí jezdectva"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cavalryv)
 #: ksirkspritesdefinition.ui:325
@@ -1464,12 +1680,17 @@ msgid ""
 "second towards the left, the third one from front and the last one from the "
 "back. However, not all sprites need all versions.</p>"
 msgstr ""
+"<p>Počet verzí jezdectva.</p><p>Prvek <i>jezdectvo</i> bude vykreslen na "
+"pixelové mapě o výšce (<i>Výška</i> * <i>Počet verzí</i>) a poté rozdělen na "
+"jednotlivé snímky.</p><p>Každá verze zobrazuje sprit viditelný z jednoho "
+"směru: první směřuje doprava, druhá doleva, třetí dopředu a poslední dozadu. "
+"Ne všechny sprity však potřebují všechny verze.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, cannonTab)
 #: ksirkspritesdefinition.ui:346
 #, kde-format
 msgid "Data about the cannon sprite"
-msgstr ""
+msgstr "Údaje o spritu dělostřelectva"
 
 #. i18n: ectx: attribute (title), widget (QWidget, cannonTab)
 #: ksirkspritesdefinition.ui:349
@@ -1481,7 +1702,7 @@ msgstr "Dělostřelectvo"
 #: ksirkspritesdefinition.ui:364
 #, kde-format
 msgid "Cannon individual frame width"
-msgstr ""
+msgstr "Šířka jednotlivých snímků dělostřelectva"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonw)
 #: ksirkspritesdefinition.ui:367
@@ -1491,12 +1712,15 @@ msgid ""
 "be rendered on a pixmap of width (<i>Width</i> * <i>Number of frames</i>) "
 "and then split into individual frames.</p>"
 msgstr ""
+"<p>Šířka jednotlivých snímků dělostřelectva</p><p>Prvek <i>dělostřelectvo</"
+"i> bude vykreslen na pixelové mapě o šířce (<i>Šířka</i> * <i>Počet snímků</"
+"i>) a poté rozdělen na jednotlivé snímky.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonh)
 #: ksirkspritesdefinition.ui:381
 #, kde-format
 msgid "Individual cannon frame height"
-msgstr ""
+msgstr "Výška jednotlivých snímků dělostřelectva"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonh)
 #: ksirkspritesdefinition.ui:384
@@ -1506,12 +1730,15 @@ msgid ""
 "be rendered on a pixmap of height (<i>Height</i> * <i>Number of versions</"
 "i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Výška jednotlivých snímků dělostřelectva.</p><p>Prvek "
+"<i>dělostřelectvo<i> bude vykreslen na pixelové mapě o výšce (<i>Výška</i> * "
+"<i>Počet verzí</i>) a poté rozdělen na jednotlivé snímky.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonf)
 #: ksirkspritesdefinition.ui:398
 #, kde-format
 msgid "Number of individual cannon frames"
-msgstr ""
+msgstr "Počet jednotlivých snímků dělostřelectva"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonf)
 #: ksirkspritesdefinition.ui:401
@@ -1521,12 +1748,15 @@ msgid ""
 "will be rendered on a pixmap of width (<i>Width</i> * <i>Number of frames</"
 "i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Počet jednotlivých snímků dělostřelectva.</p><p>Prvek <i>dělostřelectvo</"
+"i> bude vykreslen na pixelové mapě o šířce (<i>Šířka</i> * <i>Počet snímků</"
+"i>) a poté rozdělen na jednotlivé snímky.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cannonv)
 #: ksirkspritesdefinition.ui:415
 #, kde-format
 msgid "Number of cannon versions"
-msgstr ""
+msgstr "Počet verzí dělostřelectva"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, cannonv)
 #: ksirkspritesdefinition.ui:418
@@ -1539,24 +1769,30 @@ msgid ""
 "second towards the left, the third one from front and the last one from the "
 "back. However, not all sprites need all versions.</p>"
 msgstr ""
+"<p>Počet verzí dělostřelectva.</p><p>Prvek <i>dělostřelectvo</i> bude "
+"vykreslen na pixelové mapě o výšce (<i>Výška</i> * <i>Počet verzí</i>) a "
+"poté rozdělen na jednotlivé snímky.</p><p>Každá verze zobrazuje sprit "
+"viditelný z jednoho směru: první směřuje doprava, druhá doleva, třetí "
+"dopředu a poslední dozadu. Ne všechny sprity však potřebují všechny verze.</"
+"p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, firingTab)
 #: ksirkspritesdefinition.ui:441
 #, kde-format
 msgid "Data about the firing sprite"
-msgstr ""
+msgstr "Údaje o spritu střelby"
 
 #. i18n: ectx: attribute (title), widget (QWidget, firingTab)
 #: ksirkspritesdefinition.ui:444
 #, kde-format
 msgid "Firing"
-msgstr ""
+msgstr "Střelba"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingw)
 #: ksirkspritesdefinition.ui:459
 #, kde-format
 msgid "Firing cannon individual frame width"
-msgstr ""
+msgstr "Šířka jednotlivých snímků dělostřelby"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, firingw)
 #: ksirkspritesdefinition.ui:462
@@ -1566,12 +1802,15 @@ msgid ""
 "element will be rendered on a pixmap of width (<i>Width</i> * <i>Number of "
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Šířka jednotlivých snímků dělostřelby.</p><p>Prvek <i>dělostřelba</i> "
+"bude vykreslen na pixelové mapě o šířce (<i>Šířka</i> * <i>Počet snímků</i>) "
+"a poté rozdělen na jednotlivé snímky.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingh)
 #: ksirkspritesdefinition.ui:476
 #, kde-format
 msgid "Firing cannon individual frame height"
-msgstr ""
+msgstr "Výška jednotlivých snímků dělostřelby"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, firingh)
 #: ksirkspritesdefinition.ui:479
@@ -1581,12 +1820,15 @@ msgid ""
 "i> element will be rendered on a pixmap of height (<i>Height</i> * <i>Number "
 "of versions</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Výška jednotlivých snímků dělostřelby.</p><p>Prvek <i>dělostřelba</i> "
+"bude vykreslen na pixelové mapě o výšce (<i>Výška</i> * <i>Počet verzí</i>) "
+"a poté rozdělen na jednotlivé snímky.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingf)
 #: ksirkspritesdefinition.ui:493
 #, kde-format
 msgid "Number of individual firing cannon frames"
-msgstr ""
+msgstr "Počet jednotlivých snímků dělostřelby"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, firingf)
 #: ksirkspritesdefinition.ui:496
@@ -1596,12 +1838,15 @@ msgid ""
 "cannon</i> element will be rendered on a pixmap of width (<i>Width</i> * "
 "<i>Number of frames</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Počet jednotlivých snímků dělostřelby.</p><p>Prvek <i>dělostřelba</i> "
+"bude vykreslen na pixelové mapě o šířce (<i>Šířka</i> * <i>Počet snímků</i>) "
+"a poté rozdělen na jednotlivé snímky.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, firingv)
 #: ksirkspritesdefinition.ui:510
 #, kde-format
 msgid "Number of firing cannon versions"
-msgstr ""
+msgstr "Počet verzí dělostřelby"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, firingv)
 #: ksirkspritesdefinition.ui:513
@@ -1614,24 +1859,29 @@ msgid ""
 "towards the right, the second towards the left, the third one from front and "
 "the last one from the back. However, not all sprites need all versions.</p>"
 msgstr ""
+"<p>Počet verzí dělostřelby.</p><p>Prvek <i>dělostřelba</i> bude vykreslen na "
+"pixelové mapě o výšce (<i>Výška</i> * <i>Počet verzí</i>) a poté rozdělen na "
+"jednotlivé snímky.</p><p>Každá verze zobrazuje sprit viditelný z jednoho "
+"směru: první směřuje doprava, druhá doleva, třetí dopředu a poslední dozadu. "
+"Ne všechny sprity však potřebují všechny verze.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, explodingTab)
 #: ksirkspritesdefinition.ui:536
 #, kde-format
 msgid "Data about the exploding sprite"
-msgstr ""
+msgstr "Ůdaje o spritu explozí"
 
 #. i18n: ectx: attribute (title), widget (QWidget, explodingTab)
 #: ksirkspritesdefinition.ui:539
 #, kde-format
 msgid "Exploding"
-msgstr ""
+msgstr "Exploze"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingw)
 #: ksirkspritesdefinition.ui:554
 #, kde-format
 msgid "Exploding cannon individual frame width"
-msgstr ""
+msgstr "Šířka jednotlivých snímků explodujícího dělostřelectva"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingw)
 #: ksirkspritesdefinition.ui:557
@@ -1641,12 +1891,15 @@ msgid ""
 "element will be rendered on a pixmap of width (<i>Width</i> * <i>Number of "
 "frames</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Šířka jednotlivých snímků explodujícího dělostřelectva.</p><p>Prvek "
+"<i>explozí</i> bude vykreslen na pixelové mapě o šířce (<i>Šířka</i> * "
+"<i>Počet snímků</i>) a poté rozdělen na jednotlivé snímky.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingh)
 #: ksirkspritesdefinition.ui:571
 #, kde-format
 msgid "Exploding cannon individual frame height"
-msgstr ""
+msgstr "Výška jednotlivých snímků explodujícího dělostřelectva"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingh)
 #: ksirkspritesdefinition.ui:574
@@ -1656,12 +1909,15 @@ msgid ""
 "element will be rendered on a pixmap of height (<i>Height</i> * <i>Number of "
 "versions</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Výška jednotlivých snímků explodujícího dělostřelectva.</p><p>Prvek "
+"<i>explozí</i> bude vykreslen na pixelové mapě o výšce (<i>Výška</i> * "
+"<i>Počet snímků</i>) a poté rozdělen na jednotlivé snímky.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingf)
 #: ksirkspritesdefinition.ui:588
 #, kde-format
 msgid "Number of individual exploding cannon frames"
-msgstr ""
+msgstr "Počet jednotlivých snímků explodujícího dělostřelectva"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingf)
 #: ksirkspritesdefinition.ui:591
@@ -1671,12 +1927,15 @@ msgid ""
 "<i>exploding</i> element will be rendered on a pixmap of width (<i>Width</i> "
 "* <i>Number of frames</i>) and then split into individual frames.</p>"
 msgstr ""
+"<p>Počet jednotlivých snímků explodujícího dělostřelectva.</p><p>Prvek "
+"<i>explozí</i> bude vykreslen na pixelové mapě o šířce (<i>Šířka</i> * "
+"<i>Počet snímků</i>) a poté rozdělen na jednotlivé snímky.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, explodingv)
 #: ksirkspritesdefinition.ui:605
 #, kde-format
 msgid "Number of exploding cannon versions"
-msgstr ""
+msgstr "Počet verzí explodujícího dělostřelectva"
 
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, explodingv)
 #: ksirkspritesdefinition.ui:608
@@ -1689,6 +1948,12 @@ msgid ""
 "towards the right, the second towards the left, the third one from front and "
 "the last one from the back. However, not all sprites need all versions.</p>"
 msgstr ""
+"<p>Počet verzí explodujícího dělostřelectva.</p><p>Prvek <i>explozí</i> bude "
+"vykreslen na pixelové mapě o výšce (<i>Výška</i> * <i>Počet verzí</i>) a "
+"poté rozdělen na jednotlivé snímky.</p><p>Každá verze zobrazuje sprit "
+"viditelný z jednoho směru: první směřuje doprava, druhá doleva, třetí "
+"dopředu a poslední dozadu. Ne všechny sprity však potřebují všechny verze.</"
+"p>"
 
 #: main.cpp:52 main.cpp:54
 #, kde-format
@@ -1722,12 +1987,12 @@ msgstr "soubor k otevření"
 #: mainwindow.cpp:127 mainwindow.cpp:678 mainwindow.cpp:806 mainwindow.cpp:1193
 #, kde-format
 msgid "Cannot load anchor icon<br>Program cannot continue"
-msgstr ""
+msgstr "Nelze načíst ikonu kotvy<br>Program nemůže pokračovat"
 
 #: mainwindow.cpp:141 mainwindow.cpp:707 mainwindow.cpp:823
 #, kde-format
 msgid "Cannot load center icon<br>Program cannot continue"
-msgstr ""
+msgstr "Nelze načíst ikonu středu<br>Program nemůže pokračovat"
 
 #: mainwindow.cpp:324
 #, kde-format
@@ -1745,7 +2010,7 @@ msgstr "Nah&rát nedávnou"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a recently saved skin"
-msgstr ""
+msgstr "Otevřít naposledy uložený motiv"
 
 #: mainwindow.cpp:337
 #, kde-format
@@ -1762,7 +2027,7 @@ msgstr "Vyberte kořenovou složku motivu pro otevření"
 #: mainwindow.cpp:526
 #, kde-format
 msgid "There are unsaved changes. What do you want to do?"
-msgstr ""
+msgstr "Jsou zde neuložené změny. Co chcete udělat?"
 
 #: mainwindow.cpp:527
 #, kde-format
@@ -1780,7 +2045,7 @@ msgstr "Ukončit bez uložení"
 #, kde-format
 msgctxt "@action:button"
 msgid "Save and Quit"
-msgstr ""
+msgstr "Uložit a ukončit"
 
 #: mainwindow.cpp:1305
 #, kde-format
@@ -1792,18 +2057,18 @@ msgstr "Nový název země"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new country:"
-msgstr ""
+msgstr "Zadejte název nové země:"
 
 #: mainwindow.cpp:1315
 #, kde-format
 msgid "Do you really want to delete country '%1'?"
-msgstr ""
+msgstr "Opravdu chcete smazat zemi '%1'?"
 
 #: mainwindow.cpp:1315
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Country Confirmation"
-msgstr ""
+msgstr "Potvrzení smazání země"
 
 #: mainwindow.cpp:1334
 #, kde-format
@@ -1815,57 +2080,57 @@ msgstr "Název nového kontinentu"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new continent:"
-msgstr ""
+msgstr "Zadejte název nového kontinentu:"
 
 #: mainwindow.cpp:1344
 #, kde-format
 msgid "Do you really want to delete continent '%1'?"
-msgstr ""
+msgstr "Opravdu chcete smazat kontinent '%1'?"
 
 #: mainwindow.cpp:1344
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Continent Confirmation"
-msgstr ""
+msgstr "Potvrzení smazání kontinentu"
 
 #: mainwindow.cpp:1889
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
-msgstr ""
+msgstr "Opravdu chcete smazat cíl '%1'?"
 
 #: mainwindow.cpp:1889
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Goal Confirmation"
-msgstr ""
+msgstr "Potvrzení smazání cíle"
 
 #: mainwindow.cpp:1948
 #, kde-format
 msgctxt "@title:window"
 msgid "New Nationality Name"
-msgstr ""
+msgstr "Název nové národnosti"
 
 #: mainwindow.cpp:1948
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new nationality:"
-msgstr ""
+msgstr "Zadejte název nové národnosti:"
 
 #: mainwindow.cpp:1958
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
-msgstr ""
+msgstr "Opravdu chcete odstranit národnost '%1'?"
 
 #: mainwindow.cpp:1958
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Nationality Confirmation"
-msgstr ""
+msgstr "Potvrzení smazání národnosti"
 
 #: onu.cpp:78
 #, kde-format
 msgid "Invalid skin definition file format. Expected %1 and got %2"
-msgstr ""
+msgstr "Neplatný formát souboru s definicemi motivu. Očekáváno %1, získáno %2"
 
 #: onu.cpp:110
 #, kde-format
@@ -1894,11 +2159,12 @@ msgstr ""
 "Nelze přečíst soubor %1:\n"
 "%2."
 
+# info box title
 #: onu.cpp:984
 #, kde-format
 msgctxt "@title:window"
 msgid "PoolLoader"
-msgstr ""
+msgstr "PoolLoader"
 
 #: skinSpritesData.cpp:85
 #, kde-format
