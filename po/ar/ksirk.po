@@ -1002,7 +1002,7 @@ msgid ""
 "nationalities\n"
 "randomly chosen and proposes various interesting goals"
 msgstr ""
-"هذه الواجهة تُظهر عالماً يشبه الواقع، مع جنسياتٍ مختارةٍ عشوائيًا، وتُقدّم أهدافًا "
+"هذه الواجهة تُظهر عالمًا يشبه الواقع، مع جنسياتٍ مختارةٍ عشوائيًا، وتُقدّم أهدافًا "
 "متنوعةً ومثيرةً للاهتمام."
 
 #. i18n: file skins/default/Data/world.desktop line 566
@@ -1042,7 +1042,7 @@ msgid ""
 "randomly chosen and proposes various interesting goals.\n"
 "It features non-animated sprites"
 msgstr ""
-"هذه الواجهة تُظهر عالماً يشبه الواقع، مع جنسياتٍ مختارةٍ عشوائيًا، وتُقدّم أهدافًا "
+"هذه الواجهة تُظهر عالمًا يشبه الواقع، مع جنسياتٍ مختارةٍ عشوائيًا، وتُقدّم أهدافًا "
 "متنوعةً ومثيرةً للاهتمام.\n"
 "تضمّ هذه الواجهة رسومًا غير متحركة."
 
@@ -1058,8 +1058,8 @@ msgid ""
 "randomly chosen and proposes various interesting goals.\n"
 "It looks like KsirK before vector graphics."
 msgstr ""
-"تُظهر هذه الواجهة عالماً يشبه العالم الحقيقي، مع جنسياتٍ مختارةٍ عشوائيًا، وتقترح "
-"أهدافاً مثيرةً للاهتمام.\n"
+"تُظهر هذه الواجهة عالمًا يشبه العالم الحقيقي، مع جنسياتٍ مختارةٍ عشوائيًا، وتقترح "
+"أهدافًا مثيرةً للاهتمام.\n"
 "تبدو هذه الواجهة مثل واجهة حرب العروش قبل استخدام رسوميات المتجه."
 
 #. i18n: file skins/legacy/Data/world.desktop line 574
