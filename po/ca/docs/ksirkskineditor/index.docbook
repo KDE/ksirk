@@ -274,7 +274,7 @@ revision history. (see installation appendix comment) -->
 >height</literal
 ></entry>
             <entry
->L'alçada del mapa de l'aparença.</entry>
+>L'altura del mapa de l'aparença.</entry>
           </row>
           <row>
             <entry
@@ -360,7 +360,7 @@ revision history. (see installation appendix comment) -->
 >fighters-flag-y-diff</literal
 ></entry>
             <entry
->La diferència d'alçada entre els sprites de banderes i canons.</entry>
+>La diferència d'altura entre els sprites de banderes i canons.</entry>
           </row>
           <row>
             <entry
@@ -409,7 +409,7 @@ revision history. (see installation appendix comment) -->
 >height</literal
 ></entry>
             <entry
->L'alçada de referència dels fotogrames de l'sprite de bandera.</entry>
+>L'altura de referència dels fotogrames de l'sprite de bandera.</entry>
           </row>
           <row>
             <entry
@@ -703,7 +703,7 @@ revision history. (see installation appendix comment) -->
 >A l'aparença predeterminada, els sprites són banderes, infanteria, cavalleria i canó. La infanteria representa un batalló, cinc la cavalleria i deu els canons. Els canons també s'utilitzen per a mostrar els exèrcits en lluita. És per això que hi ha tres tipus de sprites de canó: estàtic o movent-se normal, disparant i explotant.</para>
 
     <para
->Cada imatge de sprite és la concatenació de les diferents vistes de l'objecte i per a cada vista, els seus fotogrames. Les vistes s'organitzen verticalment i els fotogrames horitzontalment. On retallar la imatge en fotogrames individuals es troba dividint l'alçada de la imatge pel nombre de vistes i l'amplada pel nombre de fotogrames. Aquestes dades es troben en el fitxer <filename
+>Cada imatge de sprite és la concatenació de les diferents vistes de l'objecte i per a cada vista, els seus fotogrames. Les vistes s'organitzen verticalment i els fotogrames horitzontalment. On retallar la imatge en fotogrames individuals es troba dividint l'altura de la imatge pel nombre de vistes i l'amplada pel nombre de fotogrames. Aquestes dades es troben en el fitxer <filename
 >onu.desktop</filename
 >.</para>
 
