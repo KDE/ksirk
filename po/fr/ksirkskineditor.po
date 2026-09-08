@@ -1278,7 +1278,7 @@ msgstr "Préférences"
 #: ksirkskineditorcountriesselectiondialog.ui:13
 #, kde-format
 msgid "Country Selection Dialog"
-msgstr "Boîte de dialogue de sélection du pays"
+msgstr "Boite de dialogue de sélection du pays"
 
 #. i18n: ectx: property (whatsThis), widget (QListWidget, countriesList)
 #: ksirkskineditorcountriesselectiondialog.ui:22
