@@ -1,24 +1,24 @@
 # Translation of ksirkskineditor.po to Catalan (Valencian)
-# Copyright (C) 2009-2024 This_file_is_part_of_KDE
+# Copyright (C) 2009-2026 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # SPDX-FileCopyrightText: 2009 Manuel Tortosa <manutortosa@gmail.com>
-# SPDX-FileCopyrightText: 2009-2010, 2014-2015, 2017, 2020-2024 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2009-2010, 2014-2015, 2017, 2020-2024, 2026 Josep M. Ferrer <txemaq@gmail.com>
 # SPDX-FileCopyrightText: 2020-2021 Antoni Bella Pérez <antonibella5@yahoo.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:50+0000\n"
-"PO-Revision-Date: 2024-10-26 19:26+0200\n"
+"PO-Revision-Date: 2026-09-06 17:31+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 25.04.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
@@ -1464,7 +1464,7 @@ msgstr ""
 "Alçària del fotograma individual de la bandera.\n"
 "\n"
 "L'element de la bandera de «pool» serà renderitzat en un mapa de píxels "
-"d'alçària: (alçària * nombre de versions) i a continuació, dividit en "
+"d'alçària: (altura * nombre de versions) i a continuació, dividit en "
 "fotogrames individuals."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
@@ -1535,7 +1535,7 @@ msgstr ""
 "Nombre de versions de la bandera\n"
 "\n"
 "L'element bandera de «pool» serà renderitzat en un mapa de píxels d'alçària: "
-"(alçària * nombre de versions) i a continuació, dividit en fotogrames "
+"(altura * nombre de versions) i a continuació, dividit en fotogrames "
 "individuals.\n"
 "\n"
 "Cada versió mostra l'sprite visible des d'una direcció: el primer es dirigix "
