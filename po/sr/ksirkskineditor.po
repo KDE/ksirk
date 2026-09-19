@@ -2,13 +2,14 @@
 # Slobodan Simic <slsimic@gmail.com>, 2010.
 # Dalibor Djuric <daliborddjuric@gmail.com>, 2010.
 # Chusslove Illich <caslav.ilic@gmx.net>, 2010, 2011, 2012, 2016, 2017.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:50+0000\n"
-"PO-Revision-Date: 2017-09-28 17:59+0200\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-09-18 12:00+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
@@ -24,12 +25,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Слободан Симић"
+msgstr "Слободан Симић,Немања Хиршл"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "slsimic@gmail.com"
+msgstr "slsimic@gmail.com,nemhirsl@gmail.com"
 
 #: goal.cpp:100
 #, kde-format
@@ -37,11 +38,10 @@ msgid "Error: no player to destroy"
 msgstr "Грешка: нема играча да се уништи."
 
 #: goal.cpp:213
-#, fuzzy, kde-format
-#| msgid "KsirK - Goal Display"
+#, kde-format
 msgctxt "@title:window"
 msgid "Goal Display"
-msgstr "К‑сирк — излагање циља"
+msgstr "Излагање циља"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, KsirkContinentDefinition)
 #: ksirkcontinentdefinition.ui:13
@@ -852,10 +852,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ksirkskindefinition.ui:46
-#, fuzzy, kde-format
-#| msgid "Width x Height"
+#, kde-format
 msgid "Width x height:"
-msgstr "Ширина × висина"
+msgstr "Ширина × висина:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, widthLineEdit)
 #: ksirkskindefinition.ui:53
@@ -972,10 +971,7 @@ msgstr "Спрајтови"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: ksirkskindefinition.ui:184
-#, fuzzy, kde-format
-#| msgid ""
-#| "Edit the sprite definitions\n"
-#| "in the right dock"
+#, kde-format
 msgid ""
 "Edit the sprite definitions\n"
 "in the right dock."
@@ -1228,8 +1224,7 @@ msgstr ""
 "детаље у пољу десно."
 
 #: ksirkSkinEditorConfigDialog.cpp:55
-#, fuzzy, kde-format
-#| msgid "Preferences"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "Поставке"
@@ -1291,7 +1286,7 @@ msgid ""
 msgstr ""
 "Користите ову дугмад за почетно размештање одговарајућих спрајтова за "
 "тренутно изабрану земљу. Дугмад су доступна само ако спрајтови нису већ "
-"размештени."
+"размештени. "
 
 #. i18n: ectx: property (toolTip), widget (QScrollArea, mapScrollArea)
 #: ksirkskineditorwidget.ui:66
@@ -1439,8 +1434,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:110 ksirkspritesdefinition.ui:207
 #: ksirkspritesdefinition.ui:298 ksirkspritesdefinition.ui:391
 #: ksirkspritesdefinition.ui:486 ksirkspritesdefinition.ui:581
-#, fuzzy, kde-format
-#| msgid "Nb Frames:"
+#, kde-format
 msgid "Nb frames:"
 msgstr "Број кадрова:"
 
@@ -1471,8 +1465,7 @@ msgstr ""
 #: ksirkspritesdefinition.ui:127 ksirkspritesdefinition.ui:224
 #: ksirkspritesdefinition.ui:315 ksirkspritesdefinition.ui:408
 #: ksirkspritesdefinition.ui:503 ksirkspritesdefinition.ui:598
-#, fuzzy, kde-format
-#| msgid "Nb Versions:"
+#, kde-format
 msgid "Nb versions:"
 msgstr "Број верзија:"
 
@@ -1975,8 +1968,7 @@ msgstr ""
 "на веб сајту К‑сирка."
 
 #: main.cpp:59
-#, fuzzy, kde-format
-#| msgid "Gael de Chalendar aka Kleag"
+#, kde-format
 msgid "Gaël de Chalendar aka Kleag"
 msgstr "Гаел де Шалендар (Kleag)"
 
@@ -2001,41 +1993,36 @@ msgstr ""
 
 # >> @info:tooltip
 #: mainwindow.cpp:324
-#, fuzzy, kde-format
-#| msgid "Open a saved skin..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a saved skin"
 msgstr "Отвори сачувану маску"
 
 #: mainwindow.cpp:328
-#, fuzzy, kde-format
-#| msgid "Load &Recent"
+#, kde-format
 msgctxt "@action"
 msgid "Load &Recent"
 msgstr "Учитај &недавну"
 
 # >> @info:tooltip
 #: mainwindow.cpp:329
-#, fuzzy, kde-format
-#| msgid "Open a recently saved skin..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a recently saved skin"
 msgstr "Отвори недавно сачувану маску"
 
 #: mainwindow.cpp:337
-#, fuzzy, kde-format
-#| msgid "Save the current skin"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current skin"
 msgstr "Сачувај текућу маску"
 
 # >> @title:window
 #: mainwindow.cpp:362
-#, fuzzy, kde-format
-#| msgid "Choose the root folder of the skin to open"
+#, kde-format
 msgctxt "@title:window"
 msgid "Choose the Root Folder of the Skin to Open"
-msgstr "Избор корене фасцикла маске за отварање"
+msgstr "Избор корене фасцикле маске за отварање"
 
 #: mainwindow.cpp:526
 #, kde-format
@@ -2046,35 +2033,31 @@ msgstr "Има несачуваних измена. Шта желите да у�
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
-msgstr ""
+msgstr "Несачуване измене"
 
 #: mainwindow.cpp:528
-#, fuzzy, kde-format
-#| msgid "Quit without saving"
+#, kde-format
 msgctxt "@action:button"
 msgid "Quit Without Saving"
 msgstr "Напусти без уписивања"
 
 #: mainwindow.cpp:529
-#, fuzzy, kde-format
-#| msgid "Save then quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save and Quit"
-msgstr "Сачувај па напусти"
+msgstr "Сачувај и напусти"
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "New country name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Country Name"
 msgstr "Име нове земље"
 
 #: mainwindow.cpp:1305
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new country"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new country:"
-msgstr "Унесите име нове земље"
+msgstr "Унесите име нове земље:"
 
 #: mainwindow.cpp:1315
 #, kde-format
@@ -2085,21 +2068,19 @@ msgstr "Желите ли заиста да обришете земљу „%1“
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Country Confirmation"
-msgstr ""
+msgstr "Потврда брисања земље"
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "New continent name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Continent Name"
 msgstr "Име новог континента"
 
 #: mainwindow.cpp:1334
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new continent"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new continent:"
-msgstr "Унесите име новог континента"
+msgstr "Унесите име новог континента:"
 
 #: mainwindow.cpp:1344
 #, kde-format
@@ -2107,11 +2088,10 @@ msgid "Do you really want to delete continent '%1'?"
 msgstr "Желите ли заиста да обришете континент „%1“?"
 
 #: mainwindow.cpp:1344
-#, fuzzy, kde-format
-#| msgid "Select Continents"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Continent Confirmation"
-msgstr "Изабери континенте"
+msgstr "Потврда брисања континента"
 
 #: mainwindow.cpp:1889
 #, kde-format
@@ -2122,21 +2102,19 @@ msgstr "Желите ли заиста да обришете циљ „%1“?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Goal Confirmation"
-msgstr ""
+msgstr "Потврда брисања циља"
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "New nationality name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Nationality Name"
 msgstr "Име нове нације"
 
 #: mainwindow.cpp:1948
-#, fuzzy, kde-format
-#| msgid "Enter the name of the new nationality"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new nationality:"
-msgstr "Унесите име нове нације"
+msgstr "Унесите име нове нације:"
 
 #: mainwindow.cpp:1958
 #, kde-format
@@ -2147,13 +2125,12 @@ msgstr "Желите ли заиста да уклоните нацију „%1�
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Nationality Confirmation"
-msgstr ""
+msgstr "Потврда брисања нације"
 
 #: onu.cpp:78
-#, fuzzy, kde-format
-#| msgid "Error - Invalid skin definition file format. Expected %1 and got %2"
+#, kde-format
 msgid "Invalid skin definition file format. Expected %1 and got %2"
-msgstr "Грешка — лош формат фајла маске. Очекивано је %1 а добијено %2."
+msgstr "Лош формат фајла маске. Очекивано је %1 а добијено %2."
 
 #: onu.cpp:110
 #, kde-format
@@ -2183,8 +2160,7 @@ msgstr ""
 "%2."
 
 #: onu.cpp:984
-#, fuzzy, kde-format
-#| msgid "PoolLoader"
+#, kde-format
 msgctxt "@title:window"
 msgid "PoolLoader"
 msgstr "Учитавач пула"
@@ -2205,32 +2181,7 @@ msgid "Error - Unknown skin string data: "
 msgstr "Грешка — непозната ниска у маски: "
 
 #: skinSpritesData.cpp:102
-#, fuzzy, kde-format
-#| msgid "Fatal Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "Кобна грешка"
-
-#~ msgid "Exit Anyway?"
-#~ msgstr "Свеједно напустити?"
-
-#~ msgid "Do not quit"
-#~ msgstr "Не напуштај"
-
-#~ msgid "Really delete country?"
-#~ msgstr "Заиста обрисати земљу?"
-
-#~ msgid "Really delete continent?"
-#~ msgstr "Заиста обрисати континент?"
-
-#~ msgid "Really delete goal?"
-#~ msgstr "Заиста обрисати циљ?"
-
-#~ msgid "Really delete nationality?"
-#~ msgstr "Заиста обрисати нацију?"
-
-#~ msgid "Error"
-#~ msgstr "Грешка"
-
-#~ msgid "KsirK Skin Editor Preferences"
-#~ msgstr "Поставке уређивача маски за К‑сирк"
