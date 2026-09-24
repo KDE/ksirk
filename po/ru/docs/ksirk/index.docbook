@@ -229,22 +229,6 @@ your application. -->
 ></para
 ></listitem>
     </varlistentry>
-<!--
-    <varlistentry>
-      <term
-><guibutton
->Play &ksirk; over Jabber Network</guibutton
-></term>
-      <listitem
-><para
-><action
->Play &ksirk; over <ulink url="https://en.wikipedia.org/wiki/XMPP"
->Jabber</ulink
->. You need to register Jabber account first.</action
-></para
-></listitem>
-    </varlistentry>
--->
     <varlistentry>
       <term
 ><guibutton
@@ -278,7 +262,7 @@ your application. -->
     <varlistentry>
       <term
 ><guibutton
->Загрузить...</guibutton
+>Загрузить…</guibutton
 ></term>
       <listitem
 ><para
@@ -305,11 +289,11 @@ your application. -->
   <para
 >При нажатии кнопки <guibutton
 >Новая локальная игра</guibutton
-> отобразится диалог <guilabel
+> будет показан диалог <guilabel
 >Свойства новой игры</guilabel
->, позволяющий выбрать количество игроков, используемое игровое поле, тип игры (с целью захватить другие страны или с другой целью) и режим игры — онлайн или по локальной сети. Кнопка <guibutton
->Загрузить новые игровые поля...</guibutton
-> позволит загрузить новые игровые поля.</para>
+>, позволяющий выбрать количество игроков, игровое поле (тему), тип игры (захват мира или достижение конкретной цели) и режим игры — с игроками по сети или только локально. Кнопка <guibutton
+>Загрузить новые игровые поля…</guibutton
+> позволяет загрузить новые игровые поля.</para>
 
   <screenshot>
     <screeninfo
@@ -325,7 +309,7 @@ your application. -->
   </screenshot>
 
   <para
->Чтобы начать игру через сеть TCP/IP, воспользуйтесь пунктом меню  <guilabel
+>Чтобы начать игру через сеть TCP/IP, воспользуйтесь пунктом меню <guilabel
 >Новая стандартная игра через сеть TCP/IP</guilabel
 > на изначальном экране. После нажатия на эту кнопку появится возможность выбирать параметры сети: количество локальных игроков и TCP-порт, на котором будет производиться ожидание соединения.</para>
 
@@ -749,9 +733,9 @@ your application. -->
   </table>
 
   <para
->После того, как игрок завершит распределение своих армий, он должен нажать кнопку <guibutton
+>Завершив распределение своих армий, игрок нажимает кнопку <guibutton
 >Подтвердить</guibutton
->, чтобы позволить другому игроку распределить свои дополнительные армии. После того, как все игроки первоначально распределят свои армии, они могут либо начать новый цикл перераспределения, либо начать новый ход.</para>
+>, и следующий игрок распределяет свои дополнительные армии. Как и при первоначальном распределении, когда все игроки расставят армии, можно начать новый цикл перераспределения или новый ход…</para>
   </sect2>
 
 <!-- Does not work for current TCP/IP games
@@ -892,12 +876,12 @@ distribution. -->
 <para
 >Авторские права на программу: Ga&euml;l de Chalendar <email
 >kleag@free.fr</email
->, 2002-2012  гг.</para>
+>, 2002-2012 гг.</para>
 
 <para
 >Авторские права на программу: Nemanja Hirsl <email
 >nemhirsl@gmail.com</email
->,  2013 г.</para>
+>, 2013 г.</para>
 
 <para
 >Участники: Robin Doer, &Albert.Astals.Cid;, Michal Golunski (перевод на польский). </para>
@@ -926,7 +910,7 @@ distribution. -->
 ><guimenu
 >Настройка</guimenu
 > <guimenuitem
->Настроить &ksirk;...</guimenuitem
+>Настроить &ksirk;…</guimenuitem
 ></menuchoice
 > открывает диалог, позволяющий:</para>
 

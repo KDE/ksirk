@@ -136,7 +136,7 @@ revision history. (see installation appendix comment) -->
 
 <screenshot>
   <screeninfo
->Ниже представлен снимок экрана  &i18n-ksirkskineditor;</screeninfo>
+>Ниже представлен снимок экрана &i18n-ksirkskineditor;</screeninfo>
   <mediaobject>
     <imageobject
 ><imagedata fileref="main-snapshot.png" format="PNG"/></imageobject>
@@ -148,7 +148,7 @@ revision history. (see installation appendix comment) -->
 </screenshot>
 
 <para
->Чтобы создать новое игровое поле, необходимо пройти через три этапа: создание графики, встраивание её в  &SVG;-файл и размещение спрайтов, присваивая им названия с помощью &i18n-ksirkskineditor;.</para>
+>Чтобы создать новое игровое поле, необходимо пройти через три этапа: создание графики, встраивание её в &SVG;-файл и размещение спрайтов, присваивая им названия с помощью &i18n-ksirkskineditor;.</para>
 </chapter>
 
 <chapter id="using-kapp">
@@ -1183,7 +1183,7 @@ revision history. (see installation appendix comment) -->
 
 <screenshot>
   <screeninfo
->Ниже представлен снимок экрана  &i18n-ksirkskineditor;</screeninfo>
+>Ниже представлен снимок экрана &i18n-ksirkskineditor;</screeninfo>
   <mediaobject>
     <imageobject
 ><imagedata fileref="main-snapshot.png" format="PNG"/></imageobject>
@@ -1220,7 +1220,7 @@ revision history. (see installation appendix comment) -->
 ></textobject>
         </inlinemediaobject>
         <guibutton
->Загрузить...</guibutton>
+>Загрузить…</guibutton>
       </term>
       <listitem
 ><para

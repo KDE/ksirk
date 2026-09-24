@@ -2,13 +2,14 @@
 # Slobodan Simic <slsimic@gmail.com>, 2009.
 # Chusslove Illich <caslav.ilic@gmx.net>, 2009, 2010, 2011, 2013, 2015, 2016, 2017.
 # Dalibor Djuric <daliborddjuric@gmail.com>, 2010, 2011.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:50+0000\n"
-"PO-Revision-Date: 2017-09-28 17:59+0200\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-09-18 12:00+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@ijekavian\n"
 "MIME-Version: 1.0\n"
@@ -23,12 +24,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Слободан Симић"
+msgstr "Слободан Симић,Немања Хиршл"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "slsimic@gmail.com"
+msgstr "slsimic@gmail.com,nemhirsl@gmail.com"
 
 #. i18n: file skins/default/Data/world.desktop line 1
 #. i18n: file skins/default/Data/world.desktop line 516
@@ -1079,93 +1080,80 @@ msgid "Legacy"
 msgstr "Наслијеђе"
 
 #: decoratedgameframe.cpp:100 kgamewin.cpp:349
-#, fuzzy, kde-format
-#| msgid "Next Player"
+#, kde-format
 msgctxt "@action"
 msgid "Next Player"
 msgstr "Сљедећи играч"
 
 #: decoratedgameframe.cpp:103
-#, fuzzy, kde-format
-#| msgid "Details"
+#, kde-format
 msgctxt "@action"
 msgid "Details"
 msgstr "Детаљи"
 
 #: decoratedgameframe.cpp:106 kgamewin.cpp:332 kgamewin.cpp:1214
 #: kgamewin.cpp:1226 kgamewin.cpp:2383
-#, fuzzy, kde-format
-#| msgid "Goal"
+#, kde-format
 msgctxt "@action"
 msgid "Goal"
 msgstr "Циљ"
 
 #: decoratedgameframe.cpp:138 decoratedgameframe.cpp:394
-#, fuzzy, kde-format
-#| msgid "Enable Arena"
+#, kde-format
 msgctxt "@action"
 msgid "Enable Arena"
 msgstr "Укључи арену"
 
 #: decoratedgameframe.cpp:142
-#, fuzzy, kde-format
-#| msgid "Attack 1"
+#, kde-format
 msgctxt "@action"
 msgid "Attack 1"
 msgstr "Нападни са 1"
 
 #: decoratedgameframe.cpp:145
-#, fuzzy, kde-format
-#| msgid "Attack 2"
+#, kde-format
 msgctxt "@action"
 msgid "Attack 2"
 msgstr "Нападни са 2"
 
 #: decoratedgameframe.cpp:148
-#, fuzzy, kde-format
-#| msgid "Attack 3"
+#, kde-format
 msgctxt "@action"
 msgid "Attack 3"
 msgstr "Нападни са 3"
 
 #: decoratedgameframe.cpp:151
-#, fuzzy, kde-format
-#| msgid "Auto attack"
+#, kde-format
 msgctxt "@action"
 msgid "Auto Attack"
 msgstr "Аутоматски напад"
 
 #: decoratedgameframe.cpp:169
-#, fuzzy, kde-format
-#| msgid "Move 1"
+#, kde-format
 msgctxt "@action"
 msgid "Move 1"
 msgstr "Помјери 1"
 
 #: decoratedgameframe.cpp:172
-#, fuzzy, kde-format
-#| msgid "Move 5"
+#, kde-format
 msgctxt "@action"
 msgid "Move 5"
 msgstr "Помјери 5"
 
 #: decoratedgameframe.cpp:175
-#, fuzzy, kde-format
-#| msgid "Move 10"
+#, kde-format
 msgctxt "@action"
 msgid "Move 10"
 msgstr "Помјери 10"
 
 #: decoratedgameframe.cpp:400
-#, fuzzy, kde-format
-#| msgid "Disable Arena"
+#, kde-format
 msgctxt "@action"
 msgid "Disable Arena"
 msgstr "Искључи арену"
 
 #: Dialogs/InvasionSlider.cpp:98
-#, fuzzy, kde-format
-#| msgid "Invasion"
+#, kde-format
 msgctxt "@title:window"
 msgid "Invasion"
 msgstr "Упад"
@@ -1186,8 +1174,7 @@ msgid "<br><i>Choose the number of invading armies.</i>"
 msgstr "<br/><i>Изаберите број армија за упад.</i>"
 
 #: Dialogs/InvasionSlider.cpp:104
-#, fuzzy, kde-format
-#| msgid "Moving"
+#, kde-format
 msgctxt "@title:window"
 msgid "Moving"
 msgstr "Помијерање"
@@ -1299,16 +1286,15 @@ msgstr "Списак свих доступних маски."
 
 #. i18n: ectx: property (text), widget (KNSWidgets::Button, ghnsbutton)
 #: Dialogs/newGameDialog.ui:123
-#, fuzzy, kde-format
-#| msgid "Download New Skins"
+#, kde-format
 msgid "Download New Skins…"
-msgstr "Преузми нове маске"
+msgstr "Преузми нове маске…"
 
 #. i18n: ectx: property (configFile), widget (KNSWidgets::Button, ghnsbutton)
 #: Dialogs/newGameDialog.ui:126
 #, kde-format
 msgid "ksirk.knsrc"
-msgstr ""
+msgstr "ksirk.knsrc"
 
 #. i18n: ectx: property (title), widget (QGroupBox, goalGroup)
 #: Dialogs/newGameDialog.ui:150
@@ -1365,10 +1351,9 @@ msgstr "Одустани"
 #. i18n: ectx: property (text), widget (QPushButton, nextButton)
 #: Dialogs/newGameDialog.ui:250 Dialogs/qplayersetupdialog.ui:153
 #: Dialogs/tcpconnectwidget.ui:125
-#, fuzzy, kde-format
-#| msgid "Next >>"
+#, kde-format
 msgid "Next"
-msgstr "Сљедеће >>"
+msgstr "Сљедеће"
 
 #: Dialogs/newGameDialogImpl.cpp:128 newgamesetup.cpp:44
 #, kde-format
@@ -1382,8 +1367,7 @@ msgstr ""
 #: Dialogs/newGameDialogImpl.cpp:129 GameLogic/aiplayer.cpp:506
 #: newgamesetup.cpp:45 Sprites/skinSpritesData.cpp:89
 #: Sprites/skinSpritesData.cpp:105
-#, fuzzy, kde-format
-#| msgid "Fatal Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Fatal Error"
 msgstr "Кобна грешка"
@@ -1445,10 +1429,9 @@ msgstr "мрежа"
 #. i18n: ectx: property (text), widget (QPushButton, previousButton)
 #: Dialogs/newGameSummary.ui:226 Dialogs/qplayersetupdialog.ui:146
 #: Dialogs/tcpconnectwidget.ui:118
-#, fuzzy, kde-format
-#| msgid "<< Previous"
+#, kde-format
 msgid "Previous"
-msgstr "<< Претходно"
+msgstr "Претходно"
 
 #. i18n: ectx: property (text), widget (QPushButton, finishButton)
 #: Dialogs/newGameSummary.ui:236
@@ -1595,8 +1578,7 @@ msgstr[3] ""
 "једну армију за размијештање; вјероватно грешка #2232 са www.gna.org."
 
 #: GameLogic/gameautomaton.cpp:303
-#, fuzzy, kde-format
-#| msgid "Network Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Network Configuration"
 msgstr "Подешавање мреже"
@@ -1612,18 +1594,16 @@ msgid "Do you really want to end your current game and join another?"
 msgstr "Желите ли заиста да окончате текућу партију и прикључите се другој?"
 
 #: GameLogic/gameautomaton.cpp:1191
-#, fuzzy, kde-format
-#| msgid "New game confirmation"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Game Confirmation"
 msgstr "Потврда нове партије"
 
 #: GameLogic/gameautomaton.cpp:1191
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Join New Game"
-msgstr "Нова игра"
+msgstr "Придружи се новој партији"
 
 # >! Plurals.
 #: GameLogic/gameautomaton.cpp:1362
@@ -1634,18 +1614,16 @@ msgstr ""
 "чекам да се повеже %3 $[множ ^3 играч играча играча]."
 
 #: GameLogic/gameautomaton.cpp:1468
-#, fuzzy, kde-format
-#| msgid "Please choose another name"
+#, kde-format
 msgid "Please choose another name."
-msgstr "Изаберите друго име"
+msgstr "Изаберите друго име."
 
 # >> @title:window
 #: GameLogic/gameautomaton.cpp:1468
-#, fuzzy, kde-format
-#| msgid "KsirK - Name already used!"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Already Used"
-msgstr "Име је већ у употреби"
+msgstr "Име је већ у употријеби"
 
 #: GameLogic/gameautomaton.cpp:1474
 #, kde-format
@@ -1664,18 +1642,16 @@ msgid "Player%1"
 msgstr "Играч-%1"
 
 #: GameLogic/gameautomaton.cpp:1531
-#, fuzzy, kde-format
-#| msgid "Please choose another nation"
+#, kde-format
 msgid "Please choose another nation."
-msgstr "Изаберите другу нацију"
+msgstr "Изаберите другу нацију."
 
 # >> @title:window
 #: GameLogic/gameautomaton.cpp:1531
-#, fuzzy, kde-format
-#| msgid "KsirK - Nation already used!"
+#, kde-format
 msgctxt "@title:window"
 msgid "Nation Already Used"
-msgstr "Нација је већ у употреби"
+msgstr "Нација је већ у употријеби"
 
 #: GameLogic/gameautomaton.cpp:1623
 #, kde-format
@@ -1688,29 +1664,25 @@ msgstr ""
 
 # >> @title:window
 #: GameLogic/gameautomaton.cpp:1624
-#, fuzzy, kde-format
-#| msgid "Starting a new game or exit."
+#, kde-format
 msgctxt "@title:window"
 msgid "Starting a New Game or Exit."
 msgstr "Покретање нове игре или напуштање"
 
 #: GameLogic/gameautomaton.cpp:1625
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Game"
 msgstr "Нова игра"
 
 #: GameLogic/gameautomaton.cpp:1626
-#, fuzzy, kde-format
-#| msgid "Exit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Exit"
 msgstr "Напусти"
 
 #: GameLogic/gameautomaton.cpp:1627
-#, fuzzy, kde-format
-#| msgid "Do Nothing"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Nothing"
 msgstr "Не ради ништа"
@@ -1729,8 +1701,7 @@ msgstr ""
 
 # >> @title:window
 #: GameLogic/gameautomaton.cpp:1650
-#, fuzzy, kde-format
-#| msgid "KsirK - Lost connection to client!"
+#, kde-format
 msgctxt "@title:window"
 msgid "Lost Connection to Client"
 msgstr "Изгубљена веза са клијентом"
@@ -1770,8 +1741,7 @@ msgstr ""
 
 # >> @title:window
 #: GameLogic/gameautomaton.cpp:1902
-#, fuzzy, kde-format
-#| msgid "KsirK - Displaying Goal"
+#, kde-format
 msgctxt "@title:window"
 msgid "Displaying Goal"
 msgstr "Излагање циља"
@@ -1808,8 +1778,7 @@ msgstr ""
 # >> @title:window
 # rewrite-msgid: /invalid/incorrect/
 #: GameLogic/gameautomaton.cpp:2387
-#, fuzzy, kde-format
-#| msgid "KsirK - Invalid password!"
+#, kde-format
 msgctxt "@title:window"
 msgid "Invalid Password"
 msgstr "Неисправна лозинка"
@@ -1824,15 +1793,13 @@ msgstr ""
 "Желите ли заиста да пропустите овај потез?"
 
 #: GameLogic/gameautomaton.cpp:2589
-#, fuzzy, kde-format
-#| msgid "New game confirmation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Next Player Confirmation"
-msgstr "Потврда нове партије"
+msgstr "Потврда сљедећег играча"
 
 #: GameLogic/gameautomaton.cpp:2590
-#, fuzzy, kde-format
-#| msgid "Next Player"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Player"
 msgstr "Сљедећи играч"
@@ -1853,21 +1820,18 @@ msgid "Error: no player to destroy"
 msgstr "Грешка: нема играча за уништење"
 
 #: GameLogic/goal.cpp:231
-#, fuzzy, kde-format
-#| msgid "<br>%1 is still alive..."
+#, kde-format
 msgid "<br>%1 is still alive…"
-msgstr "<html><br/>%1 још увијек постоји...</html>"
+msgstr "<html><br/>%1 још увијек постоји…</html>"
 
 #: GameLogic/goal.cpp:238 GameLogic/goal.cpp:252
-#, fuzzy, kde-format
-#| msgid "<br>%2, you still have 1 country to conquer..."
-#| msgid_plural "<br>%2, you still have %1 countries to conquer..."
+#, kde-format
 msgid "<br>%2, you still have 1 country to conquer…"
 msgid_plural "<br>%2, you still have %1 countries to conquer…"
-msgstr[0] "<html><br/>%1, треба да освојите још %2 земљу...</html>"
-msgstr[1] "<html><br/>%1, треба да освојите још %2 земље...</html>"
-msgstr[2] "<html><br/>%1, треба да освојите још %2 земаља...</html>"
-msgstr[3] "<html><br/>%1, треба да освојите још једну земљу...</html>"
+msgstr[0] "<html><br/>%2, треба да освојите још %1 земљу…</html>"
+msgstr[1] "<html><br/>%2, треба да освојите још %1 земље…</html>"
+msgstr[2] "<html><br/>%2, треба да освојите још %1 земаља…</html>"
+msgstr[3] "<html><br/>%2, треба да освојите још једну земљу…</html>"
 
 #: GameLogic/goal.cpp:242
 #, kde-format
@@ -1884,13 +1848,7 @@ msgstr[3] ""
 "<html><br/>Достигли сте циљ: %2 је мртав и посједујете %1 земљу.</html>"
 
 #: GameLogic/goal.cpp:264
-#, fuzzy, kde-format
-#| msgid ""
-#| "<br>%2, you have enough countries but you still have to put more than 1 "
-#| "army on %3 of them..."
-#| msgid_plural ""
-#| "<br>%2, you have enough countries but you still have to put more than %1 "
-#| "armies on %3 of them..."
+#, kde-format
 msgid ""
 "<br>%2, you have enough countries but you still have to put more than 1 army "
 "on %3 of them…"
@@ -1899,16 +1857,16 @@ msgid_plural ""
 "armies on %3 of them…"
 msgstr[0] ""
 "<html><br/>%2, имате довољно земаља али још увијек треба да размјестите више "
-"од %1 армије на %3 од њих...</html>"
+"од %1 армије на %3 од њих…</html>"
 msgstr[1] ""
 "<html><br/>%2, имате довољно земаља али још увијек треба да размјестите више "
-"од %1 армије на %3 од њих...</html>"
+"од %1 армије на %3 од њих…</html>"
 msgstr[2] ""
 "<html><br/>%2, имате довољно земаља али још увијек треба да размјестите више "
-"од %1 армија на %3 од њих...</html>"
+"од %1 армија на %3 од њих…</html>"
 msgstr[3] ""
 "<html><br/>%2, имате довољно земаља али још увијек треба да размјестите више "
-"од %1 армије на %3 од њих...</html>"
+"од %1 армије на %3 од њих…</html>"
 
 #: GameLogic/goal.cpp:269
 #, kde-format
@@ -1925,15 +1883,13 @@ msgstr[2] "%1 земаља у %2|/|%1 земаља у $[лок %2]"
 msgstr[3] "једну земљу у %2|/|једну земљу у $[лок %2]"
 
 #: GameLogic/goal.cpp:285
-#, fuzzy, kde-format
-#| msgid " and "
+#, kde-format
 msgctxt "@item:intext country list separator of last item"
 msgid " and "
 msgstr " и "
 
 #: GameLogic/goal.cpp:289
-#, fuzzy, kde-format
-#| msgid ", "
+#, kde-format
 msgctxt "@item:intext country list separator of non-last item"
 msgid ", "
 msgstr ", "
@@ -1948,17 +1904,15 @@ msgstr "%1 у %2|/|%1 у $[лок %2]"
 
 # >> @title:window
 #: GameLogic/goal.cpp:317
-#, fuzzy, kde-format
-#| msgid "KsirK - Goal Display"
+#, kde-format
 msgctxt "@title:window"
 msgid "Goal Display"
 msgstr "Излагање циља"
 
 #: GameLogic/KsirkChatModel.cpp:71 kgamewin.cpp:170
-#, fuzzy, kde-format
-#| msgid "No message..."
+#, kde-format
 msgid "No message…"
-msgstr "Нема поруке..."
+msgstr "Нема поруке…"
 
 #: GameLogic/KsirkChatModel.cpp:73
 #, kde-format
@@ -2052,91 +2006,79 @@ msgstr ""
 
 # rewrite-msgid: /Network//
 #: kgamewin.cpp:305
-#, fuzzy, kde-format
-#| msgid "New Standard TCP/IP Network Game"
+#, kde-format
 msgctxt "@action"
 msgid "New Standard TCP/IP Network Game"
 msgstr "Нова стандардна ТЦП/ИП игра"
 
 #: kgamewin.cpp:306
-#, fuzzy, kde-format
-#| msgid "New TCP/IP"
+#, kde-format
 msgctxt "@action"
 msgid "New TCP/IP"
 msgstr "Нова ТЦП/ИП"
 
 # >> @info:tooltip
 #: kgamewin.cpp:308
-#, fuzzy, kde-format
-#| msgid "Create a new standard TCP/IP network game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new standard TCP/IP network game"
 msgstr "Започните нову стандардну ТЦП/ИП мрежну игру."
 
 # rewrite-msgid: /Network//
 #: kgamewin.cpp:323
-#, fuzzy, kde-format
-#| msgid "Join a Standard TCP/IP Network Game"
+#, kde-format
 msgctxt "@action"
 msgid "Join a Standard TCP/IP Network Game"
 msgstr "Придружи се стандардној ТЦП/ИП игри"
 
 #: kgamewin.cpp:324
-#, fuzzy, kde-format
-#| msgid "Join TCP/IP"
+#, kde-format
 msgctxt "@action"
 msgid "Join TCP/IP"
 msgstr "Придружи се ТЦП/ИП"
 
 # >> @info:tooltip
 #: kgamewin.cpp:326
-#, fuzzy, kde-format
-#| msgid "Join a standard TCP/IP network game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Join a standard TCP/IP network game"
 msgstr "Придружите се стандардној ТЦП/ИП мрежној игри."
 
 #: kgamewin.cpp:331
-#, fuzzy, kde-format
-#| msgid "Display the Current Player's Goal"
+#, kde-format
 msgctxt "@action"
 msgid "Display the Current Player's Goal"
 msgstr "Циљ тренутног играча"
 
 # >> @info:tooltip
 #: kgamewin.cpp:334
-#, fuzzy, kde-format
-#| msgid "Display the current player's goal"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Display the current player's goal"
 msgstr "Погледајте циљ тренутног играча."
 
 #: kgamewin.cpp:340
-#, fuzzy, kde-format
-#| msgid "Contextual Help"
+#, kde-format
 msgctxt "@action"
 msgid "Contextual Help"
 msgstr "Контекстна помоћ"
 
 # >> @info:tooltip
 #: kgamewin.cpp:351
-#, fuzzy, kde-format
-#| msgid "Lets the next player play"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Let the next player play"
 msgstr "Прелазак на сљедећег играча."
 
 #: kgamewin.cpp:355
-#, fuzzy, kde-format
-#| msgid "Finish moves"
+#, kde-format
 msgctxt "@action"
 msgid "Finish Moves"
 msgstr "Крај помијерања"
 
 # >> @info:tooltip
 #: kgamewin.cpp:357
-#, fuzzy, kde-format
-#| msgid "Finish moving the current sprites"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Finish moving the current sprites"
 msgstr "Окончајте помијерање текућих спрајтова."
@@ -2159,10 +2101,9 @@ msgstr ""
 "освоји $[аку %2] из $[ген %3].</font>"
 
 #: kgamewin.cpp:728
-#, fuzzy, kde-format
-#| msgid "%1, you are defeated! Bye, bye..."
+#, kde-format
 msgid "%1, you are defeated! Bye, bye…"
-msgstr "%1, поражени сте! Видимо се..."
+msgstr "%1, поражени сте! Видимо се…"
 
 #: kgamewin.cpp:800
 #, kde-format
@@ -2204,11 +2145,10 @@ msgid "Do you want to quit the game?"
 msgstr "Желите ли да напустите игру?"
 
 #: kgamewin.cpp:949
-#, fuzzy, kde-format
-#| msgid "Quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Quit Game"
-msgstr "Напусти"
+msgstr "Напусти партију"
 
 #: kgamewin.cpp:961
 #, kde-format
@@ -2216,11 +2156,10 @@ msgid "Before you quit, do you want to save your game?"
 msgstr "Прије него што напустите, желите ли да сачувате позицију?"
 
 #: kgamewin.cpp:999
-#, fuzzy, kde-format
-#| msgid "New Local Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Game"
-msgstr "Нова локална игра"
+msgstr "Учитавање позиције"
 
 # >! Plurals (code passing number as string over network).
 #: kgamewin.cpp:1037
@@ -2265,22 +2204,19 @@ msgstr[3] ""
 "$[аку %4]</font>?"
 
 #: kgamewin.cpp:1145
-#, fuzzy, kde-format
-#| msgid "Defend 1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Defend 1"
 msgstr "Брани 1"
 
 #: kgamewin.cpp:1146
-#, fuzzy, kde-format
-#| msgid "Defend 2"
+#, kde-format
 msgctxt "@action:button"
 msgid "Defend 2"
 msgstr "Брани 2"
 
 #: kgamewin.cpp:1147
-#, fuzzy, kde-format
-#| msgid "Defend-Auto"
+#, kde-format
 msgctxt "@action:button"
 msgid "Defend-Auto"
 msgstr "Брани аутоматски"
@@ -2392,8 +2328,7 @@ msgid "New game confirmation"
 msgstr "Потврда нове партије"
 
 #: kgamewin.cpp:2547
-#, fuzzy, kde-format
-#| msgid "Start a New Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Започни нову партију"
@@ -2408,13 +2343,10 @@ msgid ""
 msgstr "Напада се и помијера превлачењем између сусједних земаља."
 
 #: kgamewin.cpp:2811
-#, fuzzy
-#| msgid ""
-#| "Start a new game or join a network game with the menu or the toolbar..."
 msgid "Start a new game or join a network game with the menu or the toolbar…"
 msgstr ""
 "Покрените нову партију, или се прикључите мрежној, путем менија или траке "
-"алатки..."
+"алатки…"
 
 # rewrite-msgid: /options window/configuration dialog/
 #: kgamewin.cpp:2815
@@ -2447,11 +2379,10 @@ msgid "Cannot save when waiting for a defense."
 msgstr "Не можете сачувати када чекате на одбрану."
 
 #: kgamewinslots.cpp:441
-#, fuzzy, kde-format
-#| msgid "New Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Game"
-msgstr "Нова игра"
+msgstr "Уписивање позиције"
 
 #: kgamewinslots.cpp:445
 #, kde-format
@@ -2503,10 +2434,9 @@ msgid "<b><u>Country details</u></b>"
 msgstr "<b><u>Детаљи о земљи</u></b>"
 
 #: krightdialog.cpp:170
-#, fuzzy, kde-format
-#| msgid "<i>Fighting in progress...</i>"
+#, kde-format
 msgid "<i>Fighting in progress…</i>"
-msgstr "<i>Борба је у току...</i>"
+msgstr "<i>Борба је у току…</i>"
 
 #: krightdialog.cpp:222
 #, kde-format
@@ -2527,36 +2457,31 @@ msgstr[2] "<font color=\"blue\">Брани</font> са %1 армија.<br/>"
 msgstr[3] "<font color=\"blue\">Брани</font> са %1 армијом.<br/>"
 
 #: krightdialog.cpp:265
-#, fuzzy, kde-format
-#| msgid "Stop Auto-Attack"
+#, kde-format
 msgctxt "@action:button"
 msgid "Stop Auto-Attack"
 msgstr "Заустави аутоматски напад"
 
 #: krightdialog.cpp:273
-#, fuzzy, kde-format
-#| msgid "Stop Auto-Defense"
+#, kde-format
 msgctxt "@action:button"
 msgid "Stop Auto-Defense"
 msgstr "Заустави аутоматску одбрану"
 
 #: krightdialog.cpp:298
-#, fuzzy, kde-format
-#| msgid "Valid"
+#, kde-format
 msgctxt "@action:button"
 msgid "Valid"
 msgstr "Добро"
 
 #: krightdialog.cpp:299
-#, fuzzy, kde-format
-#| msgid "Recycle"
+#, kde-format
 msgctxt "@action:button"
 msgid "Recycle"
-msgstr "Рецилкирај"
+msgstr "Рециклирај"
 
 #: krightdialog.cpp:300
-#, fuzzy, kde-format
-#| msgid "Done"
+#, kde-format
 msgctxt "@action:button"
 msgid "Done"
 msgstr "Готово"
@@ -2600,8 +2525,7 @@ msgid "<font color=\"blue\">lost armies: %1</font>"
 msgstr "<font color=\"blue\">изгубљених армија: %1</font>"
 
 #: ksirkConfigDialog.cpp:37
-#, fuzzy, kde-format
-#| msgid "Preferences"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Preferences"
 msgstr "Поставке"
@@ -2666,10 +2590,9 @@ msgid "KsirK"
 msgstr "К‑сирк"
 
 #: main.cpp:44
-#, fuzzy, kde-format
-#| msgid "KsirK - World Domination Strategy Game"
+#, kde-format
 msgid "World Domination Strategy Game"
-msgstr "К‑сирк — стратешка игра свјетске доминације"
+msgstr "Стратешка игра свјетске доминације"
 
 #: main.cpp:46
 #, kde-format
@@ -2686,10 +2609,9 @@ msgstr ""
 "на веб сајту К‑сирка."
 
 #: main.cpp:50
-#, fuzzy, kde-format
-#| msgid "Gael de Chalendar aka Kleag"
+#, kde-format
 msgid "Gaël de Chalendar aka Kleag"
-msgstr "Гаел де Шалендар — Kleag)"
+msgstr "Гаел де Шалендар (Kleag)"
 
 #: main.cpp:51
 #, kde-format
@@ -2765,7 +2687,7 @@ msgstr "Придружи се стандардној ТЦП/ИП игри"
 #: mainMenu.ui:118
 #, kde-format
 msgid "Load…"
-msgstr ""
+msgstr "Учитај…"
 
 #. i18n: ectx: property (text), widget (QPushButton, pbQuit)
 #: mainMenu.ui:138
@@ -2781,10 +2703,9 @@ msgstr "Звук укључен"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: preferences.ui:48
-#, fuzzy, kde-format
-#| msgid "Sprites speed (slow, normal, rapid, immediate)"
+#, kde-format
 msgid "Sprites speed (slow, normal, rapid, immediate):"
-msgstr "Брзина спрајтова (споро, уобичајено, брзо, тренутно)"
+msgstr "Брзина спрајтова (споро, уобичајено, брзо, тренутно):"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_helpEnabled)
 #: preferences.ui:92
@@ -2833,685 +2754,3 @@ msgstr "Грешка — непознат цио број у маски: "
 #, kde-format
 msgid "Error - Unknown skin string data: "
 msgstr "Грешка — непозната ниска у маски: "
-
-#~ msgid "Player number %1, please enter your name and choose your nation:"
-#~ msgstr "Играчу број %1, унесите своје име и изаберите нацију:"
-
-#~ msgid "%1 won! Do you want to play again?"
-#~ msgstr "%1 побиједи! Желите ли да играте поново?"
-
-#~ msgid "Goal"
-#~ msgstr "Циљ"
-
-#~ msgid "Next Player"
-#~ msgstr "Сљедећи играч"
-
-#~ msgid "Fatal Error!"
-#~ msgstr "Кобна грешка."
-
-#, fuzzy
-#~| msgid "Ksirk - New game properties"
-#~ msgid "KsirK - New game properties"
-#~ msgstr "Својства нове игре"
-
-#~ msgid "Player Setup"
-#~ msgstr "Поставке играча"
-
-#~ msgid "KsirK - Network configuration"
-#~ msgstr "Подешавање мреже"
-
-#~ msgid "Do nothing"
-#~ msgstr "Не ради ништа"
-
-#~ msgid "KsirK - Error!"
-#~ msgstr "Грешка"
-
-#~ msgid "Really Next Player?"
-#~ msgstr "На сљедећег играча?"
-
-#~ msgid "Error!"
-#~ msgstr "Грешка"
-
-#, fuzzy
-#~| msgid "KsirK - Load Game"
-#~ msgctxt "@title:window"
-#~ msgid "KsirK - Load Game"
-#~ msgstr "Учитавање позиције"
-
-#, fuzzy
-#~| msgid "KsirK - Save Game"
-#~ msgctxt "@title:window"
-#~ msgid "KsirK - Save Game"
-#~ msgstr "Уписивање позиције"
-
-#, fuzzy
-#~| msgid "Load"
-#~ msgid "Load..."
-#~ msgstr "Учитај"
-
-#~ msgid "KsirK Preferences"
-#~ msgstr "Поставке К‑сирка"
-
-#~ msgid "KsirK - Cannot load!"
-#~ msgstr "Учитавање немогуће"
-
-#~ msgid "KsirK - Error"
-#~ msgstr "Грешка"
-
-# >> @title:column
-#~ msgid "Nickname"
-#~ msgstr "надимак"
-
-# >> @title:column
-#~ msgid "Skin"
-#~ msgstr "маска"
-
-# >> @title:column
-#~ msgid "Nb players"
-#~ msgstr "бр. играча"
-
-#~ msgid "Connection to the Jabber Network"
-#~ msgstr "Веза са џабер мрежом"
-
-#~ msgid "Jabber ID:"
-#~ msgstr "Џабер ИД:"
-
-#~ msgid "kleag@kdetalk.net"
-#~ msgstr "kleag@kdetalk.net"
-
-#~ msgid "12345678"
-#~ msgstr "12345678"
-
-#~ msgid "Password:"
-#~ msgstr "Лозинка:"
-
-#~ msgid "Connect"
-#~ msgstr "Повежи се"
-
-#~ msgid "State:"
-#~ msgstr "Држава:"
-
-#~ msgid "Joining a KsirK Jabber Chatroom"
-#~ msgstr "Придружујем се џабер соби за ћаскање К‑сирка"
-
-#~ msgid "Room JID:"
-#~ msgstr "ЈИД собе:"
-
-#~ msgid "Nickname:"
-#~ msgstr "Надимак:"
-
-#~ msgid "Room Password:"
-#~ msgstr "Лозинка собе:"
-
-#~ msgid "Join Room"
-#~ msgstr "Ући у собу"
-
-#~ msgid "Games in the Room"
-#~ msgstr "Партије у соби"
-
-#~ msgid "Start a New Game"
-#~ msgstr "Започни нову партију"
-
-#~ msgid "Join Selected Game"
-#~ msgstr "Прикључи се изабраној партији"
-
-#, fuzzy
-#~| msgid "Load a Saved Game"
-#~ msgid "Load a Saved Game..."
-#~ msgstr "Учитај сачувану партију"
-
-#~ msgid ""
-#~ "<b>Note:</b> Playing over the Jabber network is an experimental feature "
-#~ "in KsirK.<br/>Particularly, the distribution of armies at game beginning "
-#~ "is very slow (expect something like one minute)."
-#~ msgstr ""
-#~ "<b>Напомена:</b> Играње преко џабер мреже је експериментална могућност "
-#~ "К‑сирка.<br/>У принципу, распоређивање армија на почетку је веома споро "
-#~ "(очекујте отприлике око минута)."
-
-#~ msgid "Please connect first."
-#~ msgstr "Прво се повежите."
-
-#~ msgid "Jabber Error"
-#~ msgstr "Грешка џабера"
-
-#~ msgid ""
-#~ "SSL support could not be initialized for account %1. This is most likely "
-#~ "because the QCA TLS plugin is not installed on your system."
-#~ msgstr ""
-#~ "ССЛ подршка не може да се припреми за налог %1. Највјероватније зато што "
-#~ "ТЛС прикључак за КуЦА није инсталиран на систему."
-
-#~ msgid "Jabber SSL Error"
-#~ msgstr "ССЛ грешка џабера"
-
-#~ msgid "The host name does not match the one in the certificate."
-#~ msgstr "Име домаћина не поклапа се са оним у сертификату."
-
-#~ msgid "The certificate is invalid."
-#~ msgstr "Сертификат није ваљан."
-
-#~ msgid "No certificate was presented."
-#~ msgstr "Сертификат није представљен."
-
-#~ msgid "The Certificate Authority rejected the certificate."
-#~ msgstr "Ауторитет за сертификате је одбио сертификат."
-
-#~ msgid "The certificate is not trusted."
-#~ msgstr "Сертификат није поуздан."
-
-#~ msgid "The signature is invalid."
-#~ msgstr "Потпис није ваљан."
-
-#~ msgid "The Certificate Authority is invalid."
-#~ msgstr "Ауторитет за сертификате није ваљан."
-
-# skip-rule: t-invalid2
-#~ msgid "Invalid certificate purpose."
-#~ msgstr "Лоша сврха сертификата."
-
-#~ msgid "The certificate is self-signed."
-#~ msgstr "Сертификат је самопотписан."
-
-#~ msgid "The certificate has been revoked."
-#~ msgstr "Сертификат је опозван."
-
-#~ msgid "Maximum certificate chain length was exceeded."
-#~ msgstr "Прекорачена је максимална дужина ланца сертификата."
-
-#~ msgid "The certificate has expired."
-#~ msgstr "Сертификат је истекао."
-
-#~ msgid "The Certificate Authority has expired."
-#~ msgstr "Ауторитет за сертификате је истекао."
-
-#~ msgid "Validity is unknown."
-#~ msgstr "Ваљаност је непозната."
-
-#~ msgid ""
-#~ "<qt><p>The identity and the certificate of server %1 could not be "
-#~ "validated for account %2:</p><p>%3</p><p>%4</p><p>Do you want to continue?"
-#~ "</p></qt>"
-#~ msgstr ""
-#~ "<qt><p>Идентитет и сертификат сервера %1 не могу бити потврђени за налог "
-#~ "%2:</p><p>%3</p><p>%4</p><p>Желите ли да наставите?</p></qt>"
-
-#~ msgid ""
-#~ "<qt><p>The certificate of server %1 could not be validated for account "
-#~ "%2: %3</p><p>Do you want to continue?</p></qt>"
-#~ msgstr ""
-#~ "<qt><p>Сертификат сервера %1 не може бити потврђен за налог %2: %3</"
-#~ "p><p>Желите ли да наставите?</p></qt>"
-
-#~ msgid "Jabber Connection Certificate Problem"
-#~ msgstr "Проблем са сертификатом за џабер везу"
-
-#~ msgid ""
-#~ "An encrypted connection with the Jabber server could not be established."
-#~ msgstr "Шифрована веза са џабер сервером не може се успоставити."
-
-#~ msgid "Jabber Connection Error"
-#~ msgstr "Грешка џабер везе"
-
-#~ msgid "Malformed packet received."
-#~ msgstr "Примљен је лоше образован пакет."
-
-#~ msgid "There was an unrecoverable error in the protocol."
-#~ msgstr "Неповратна грешка у протоколу."
-
-#~ msgid "Generic stream error."
-#~ msgstr "Општа грешка тока."
-
-#~ msgid "There was a conflict in the information received."
-#~ msgstr "Сукоб у примљеним подацима."
-
-#~ msgid "The stream timed out."
-#~ msgstr "Истекло је вријеме за ток."
-
-#~ msgid "Internal server error."
-#~ msgstr "Унутрашња грешка сервера."
-
-#~ msgid "Stream packet received from an invalid address."
-#~ msgstr "Пакет тока је примљен са лоше адресе."
-
-#~ msgid "Malformed stream packet received."
-#~ msgstr "Примљен је лоше образован пакет тока."
-
-#~ msgid "Policy violation in the protocol stream."
-#~ msgstr "Прекршај смјерница у протоколском току."
-
-#~ msgid "Resource constraint."
-#~ msgstr "Ограничење ресурса."
-
-#~ msgid "System shutdown."
-#~ msgstr "Гашење система."
-
-#~ msgid "Unknown reason."
-#~ msgstr "Непознат разлог."
-
-#~ msgid "There was an error in the protocol stream: %1"
-#~ msgstr "Грешка у протоколском току: %1"
-
-#~ msgid "Host not found."
-#~ msgstr "Домаћин није нађен."
-
-#~ msgid "Address is already in use."
-#~ msgstr "Адреса је већ у употреби."
-
-#~ msgid "Cannot recreate the socket."
-#~ msgstr "Не могу поново да направим сокет."
-
-#~ msgid "Cannot bind the socket again."
-#~ msgstr "Не могу поново да повежем сокет."
-
-#~ msgid "Socket is already connected."
-#~ msgstr "Сокет је већ повезан."
-
-#~ msgid "Socket is not connected."
-#~ msgstr "Сокет није повезан."
-
-#~ msgid "Socket is not bound."
-#~ msgstr "Сокет није свезан."
-
-#~ msgid "Socket has not been created."
-#~ msgstr "Сокет није направљен."
-
-#~ msgid ""
-#~ "The socket operation would block. You should not see this error: please "
-#~ "use \"Report Bug\" from the Help menu."
-#~ msgstr ""
-#~ "Поступак сокета би да блокира. Не би требало да видите ову грешку; "
-#~ "поднесите извјештај о грешци кроз мени „Помоћ“."
-
-#~ msgid "Connection refused."
-#~ msgstr "Веза је одбијена."
-
-#~ msgid "Connection timed out."
-#~ msgstr "Истекло је вријеме за повезивање."
-
-#~ msgid "Connection attempt already in progress."
-#~ msgstr "Покушај повезивања је већ у току."
-
-#~ msgid "Network failure."
-#~ msgstr "Крах мреже."
-
-#~ msgid "Operation is not supported."
-#~ msgstr "Поступак није подржан."
-
-#~ msgid "Socket timed out."
-#~ msgstr "Истекло је вријеме за сокет."
-
-#~ msgid "There was a connection error: %1"
-#~ msgstr "Грешка са везом: %1"
-
-#~ msgid "Unknown host."
-#~ msgstr "Непознат домаћин."
-
-#~ msgid "Could not connect to a required remote resource."
-#~ msgstr "Не могу да се повежем на захтијевани удаљени ресурс."
-
-#~ msgid ""
-#~ "It appears we have been redirected to another server; I do not know how "
-#~ "to handle this."
-#~ msgstr ""
-#~ "Изгледа да смо преусмјерени на други сервер; не знам како да обрадим ово."
-
-#~ msgid "Unsupported protocol version."
-#~ msgstr "Неподржана верзија протокола."
-
-#~ msgid "Unknown error."
-#~ msgstr "Непозната грешка."
-
-#~ msgid "There was a negotiation error: %1"
-#~ msgstr "Грешка у преговору: %1"
-
-#~ msgid "Server rejected our request to start the TLS handshake."
-#~ msgstr "Сервер је одбио наш захтјев за покретање ТЛС руковања."
-
-#~ msgid "Failed to establish a secure connection."
-#~ msgstr "Не могу да успоставим безбједну везу."
-
-#~ msgid "There was a Transport Layer Security (TLS) error: %1"
-#~ msgstr "Грешке у „безбједности преносног слоја“ (ТЛС‑у): %1"
-
-#~ msgid "Login failed with unknown reason."
-#~ msgstr "Пријава није успела због непознатог разлога."
-
-#~ msgid "No appropriate authentication mechanism available."
-#~ msgstr "Није доступан ниједан одговарајући механизам аутентификације."
-
-#~ msgid "Bad SASL authentication protocol."
-#~ msgstr "Лош протокол САСЛ аутентификације."
-
-#~ msgid "Server failed mutual authentication."
-#~ msgstr "Сервер није прошао узајамну аутентификацију."
-
-#~ msgid "Encryption is required but not present."
-#~ msgstr "Шифровање је захтијевано али није присутно."
-
-#~ msgid "Invalid user ID."
-#~ msgstr "Лош кориснички ИД."
-
-#~ msgid "Invalid mechanism."
-#~ msgstr "Лош механизам."
-
-#~ msgid "Invalid realm."
-#~ msgstr "Лоше царство."
-
-#~ msgid "Mechanism too weak."
-#~ msgstr "Механизам је преслаб."
-
-#~ msgid "Wrong credentials supplied. (check your user ID and password)"
-#~ msgstr ""
-#~ "Дати су погрешни акредитиви (провјерите свој кориснички ИД и лозинку)"
-
-#~ msgid "Temporary failure, please try again later."
-#~ msgstr "Привремени крах, покушајте поново касније."
-
-#~ msgid "There was an error authenticating with the server: %1"
-#~ msgstr "Грешка при аутентификовању са сервером: %1"
-
-#~ msgid "Transport Layer Security (TLS) problem."
-#~ msgstr "Проблем „безбједности транспортног слоја“ (ТЛС)."
-
-#~ msgid "Simple Authentication and Security Layer (SASL) problem."
-#~ msgstr ""
-#~ "Проблем „једноставног слоја за аутентификацију и безбједност“ (САСЛ)."
-
-#~ msgid "There was an error in the security layer: %1"
-#~ msgstr "Грешка у безбједносном слоју: %1"
-
-#~ msgid "No permission to bind the resource."
-#~ msgstr "Нема дозволе за везивање ресурса."
-
-#~ msgid "The resource is already in use."
-#~ msgstr "Ресурс је већ у употреби."
-
-#~ msgid "Could not bind a resource: %1"
-#~ msgstr "Не могу да вежем ресурс: %1"
-
-#~ msgid "Connection problem with Jabber server %1"
-#~ msgstr "Проблем са везом са џабер сервером %1"
-
-#~ msgid ""
-#~ "The Jabber user %1 removed %2's subscription to him/her. This account "
-#~ "will no longer be able to view his/her online/offline status. Do you want "
-#~ "to delete the contact?"
-#~ msgstr ""
-#~ "Џабер корисник %1 је уклонио претплату %2 на њега/њу. Овај налог више "
-#~ "неће бити у могућности да види његово/њено стање на вези/ван везе. Желите "
-#~ "ли да обришете контакт?"
-
-#~ msgid "Notification"
-#~ msgstr "Обавјештење"
-
-#~ msgid "Keep"
-#~ msgstr "Задржи"
-
-#~ msgid "A password is required to join the room %1."
-#~ msgstr "За придруживање соби %1 потребна је лозинка."
-
-#~ msgid "Error trying to join %1: nickname %2 is already in use"
-#~ msgstr "Грешка при покушају уласка у %1: надимак %2 се већ користи."
-
-#~ msgid "Provide your nickname"
-#~ msgstr "Дајте свој надимак"
-
-#~ msgid "You cannot join the room %1 because you have been banned"
-#~ msgstr "Не можете се прикључити соби %1 зато што вам је забрањено"
-
-#~ msgid "Jabber Group Chat"
-#~ msgstr "Групно џабер ћаскање"
-
-#~ msgid ""
-#~ "You cannot join the room %1 because the maximum number of users has been "
-#~ "reached"
-#~ msgstr ""
-#~ "Не можете се прикључити соби %1 зато што је достигнут максималан број "
-#~ "корисника"
-
-#~ msgid "No reason given by the server"
-#~ msgstr "Сервер није дао никакав разлог"
-
-#~ msgid ""
-#~ "There was an error processing your request for groupchat %1. (Reason: %2, "
-#~ "Code %3)"
-#~ msgstr ""
-#~ "Грешка при обради захтјева за групно ћаскање %1 (разлог: %2, кôд %3)."
-
-#~ msgid ""
-#~ "An error occurred while trying to remove the account:\n"
-#~ "%1"
-#~ msgstr ""
-#~ "Грешка при покушају уклањања налога:\n"
-#~ "%1"
-
-#~ msgid "Jabber Account Unregistration"
-#~ msgstr "Одрегистровање џабер налога"
-
-#~ msgid "You cannot see each others' status."
-#~ msgstr "Не можете међусобно да видите стање."
-
-#~ msgid ""
-#~ "You can see this contact's status, but he/she cannot see your status."
-#~ msgstr ""
-#~ "Можете да видите стање овог контакта, али он/она не могу да виде ваше."
-
-#~ msgid "This contact can see your status, but you cannot see his/her status."
-#~ msgstr ""
-#~ "Овај контакт може да види ваше стање али ви не можете да видите његово/"
-#~ "њено."
-
-#~ msgid "You can see each others' status."
-#~ msgstr "Можете међусобно видјети стање."
-
-#~ msgid "Client"
-#~ msgstr "Клијент"
-
-#~ msgid "Timestamp"
-#~ msgstr "Временска ознака"
-
-#~ msgid "Message"
-#~ msgstr "Порука"
-
-#~ msgid "Downloading of Jabber contact photo failed."
-#~ msgstr "Преузимање слике џабер контакта није успјело."
-
-#~ msgid "Groupchat bookmark"
-#~ msgstr "Обиљеживач групног ћаскања"
-
-#~ msgid "Authorization"
-#~ msgstr "Овлашћење"
-
-#~ msgid "(Re)send Authorization To"
-#~ msgstr "(Поново) пошаљи овлашћење за"
-
-#~ msgid "(Re)request Authorization From"
-#~ msgstr "(Поново) захтијевај овлашћење од"
-
-#~ msgid "Remove Authorization From"
-#~ msgstr "Уклони овлашћење са"
-
-#~ msgid "Set Availability"
-#~ msgstr "Постави доступност"
-
-#~ msgid "Online"
-#~ msgstr "на вези"
-
-#~ msgid "Free to Chat"
-#~ msgstr "слободан за ћаскање"
-
-#~ msgid "Away"
-#~ msgstr "одсутан"
-
-#~ msgid "Extended Away"
-#~ msgstr "дуже одсутан"
-
-#~ msgid "Do Not Disturb"
-#~ msgstr "без узнемиравања"
-
-#~ msgid "Invisible"
-#~ msgstr "невидљив"
-
-#~ msgid "Select Resource"
-#~ msgstr "Избор ресурса"
-
-#~ msgid "Automatic (best/default resource)"
-#~ msgstr "Аутоматски (најбољи/подразумијевани ресурс)"
-
-#~ msgid "Voice call"
-#~ msgstr "Гласовни позив"
-
-#~ msgid "The original message is: <i>\" %1 \"</i><br />"
-#~ msgstr "Оригинална порука је: <i>%1</i><br/>"
-
-#~ msgid ""
-#~ "<qt><i>%1</i> has invited you to join the conference <b>%2</b><br />"
-#~ "%3<br />If you want to accept and join, just <b>enter your nickname</b> "
-#~ "and press ok<br />If you want to decline, press cancel</qt>"
-#~ msgstr ""
-#~ "<qt><i>%1</i> вас позва да се придружите конференцији <b>%2</b><br />"
-#~ "%3<br />Ако желите да се придружите, само <b>унесите свој надимак</b> и "
-#~ "притисните <i>У реду</i>.<br />Ако желите да одустанете, притисните "
-#~ "<i>Одустани</i>.</qt>"
-
-#~ msgid "Invited to a conference - Jabber Plugin"
-#~ msgstr "Позвани у конференцију — прикључак за џабер"
-
-#~ msgid "Message has been displayed"
-#~ msgstr "Порука је приказана"
-
-#~ msgid "Message has been delivered"
-#~ msgstr "Порука је испоручена"
-
-#~ msgid "Message stored on the server, contact offline"
-#~ msgstr "Порука је остала на серверу, контакт ван везе"
-
-#~ msgid "%1 has ended his/her participation in the chat session."
-#~ msgstr "%1 оконча учешће у сесији ћаскања."
-
-#~ msgid "Your message could not be delivered: \"%1\", Reason: \"%2\""
-#~ msgstr "Ваша порука није могла да се испоручи: „%1“, разлог „%2“"
-
-#~ msgid ""
-#~ "Do you also want to remove user %1's authorization to see your status?"
-#~ msgstr ""
-#~ "Желите ли кориснику „%1“ такође да уклоните овлашћење да види ваше стање?"
-
-#~ msgid "Kopete File Transfer"
-#~ msgstr "Копетеов пренос фајлова"
-
-#~ msgid ""
-#~ "You have preselected a resource for contact %1, but you still have open "
-#~ "chat windows for this contact. The preselected resource will only apply "
-#~ "to newly opened chat windows."
-#~ msgstr ""
-#~ "Претходно сте изабрали ресурс за контакт %1, али и даље имате отворен "
-#~ "прозор за ћаскање са овим контактом. Предизабрани ресурс ће бити "
-#~ "примијењен само на новоотворене прозоре ћаскања."
-
-#~ msgid "Jabber Resource Selector"
-#~ msgstr "Бирач џабер ресурса"
-
-#~ msgid "Change nickname"
-#~ msgstr "Промијени надимак"
-
-#~ msgid "Change nickname - Jabber Plugin"
-#~ msgstr "Промјена надимка — прикључак за џабер"
-
-#~ msgid "Please enter the new nickname you want to have in the room <i>%1</i>"
-#~ msgstr "Унесите нови надимак који желите имати у соби <i>%1</i>"
-
-# >> @title:window
-#~ msgid "Choose Account"
-#~ msgstr "Избор налога"
-
-#~ msgid "Choose an account to handle the URL %1"
-#~ msgstr "Изаберите налог да управља УРЛ‑ом %1"
-
-#~ msgid "Do you want to add '%1' to your contact list?"
-#~ msgstr "Желите ли да додате „%1“ у листу контаката?"
-
-#~ msgid "Add"
-#~ msgstr "Додај"
-
-#~ msgid "Do Not Add"
-#~ msgstr "Немој да додаш"
-
-#~ msgid "Do you want to remove '%1' from your contact list?"
-#~ msgstr "Желите ли да уклоните „%1“ из листе контаката?"
-
-#~ msgid "Remove"
-#~ msgstr "Уклони"
-
-#~ msgid "Do Not Remove"
-#~ msgstr "Не уклањај"
-
-#~ msgid "Please enter your nickname for the room %1"
-#~ msgstr "Унесите свој надимак за собу %1"
-
-#~ msgid "You have been invited to %1"
-#~ msgstr "Позвани сте у %1"
-
-#~ msgid "Play over Jabber"
-#~ msgstr "Играј преко џабера"
-
-# rewrite-msgid: /Network//
-#~ msgid "Play KsirK over the Jabber Network"
-#~ msgstr "Играј К‑сирк преко џабера"
-
-#~ msgid "Jabber"
-#~ msgstr "џабер"
-
-#~ msgid ""
-#~ "Allow to connect to a KsirK Jabber Multi User Gaming Room to create new "
-#~ "games or to join present games"
-#~ msgstr ""
-#~ "Повезивање на К‑сиркову вишеиграчку џабер собу, ради започињања нових "
-#~ "партија или прикључивања постојећим."
-
-#~ msgid "The last used Jabber Id."
-#~ msgstr "Посљедње коришћени џабер ИД"
-
-#~ msgid "The password of the last used Jabber Id."
-#~ msgstr "Лозинка за посљедње коришћени џабер ИД"
-
-#~ msgid "The last used Jabber groupchat room."
-#~ msgstr "Посљедња соба групног ћаскања преко џабера."
-
-#~ msgid "The password for last used Jabber groupchat room."
-#~ msgstr "Лозинка за посљедњу собу групног ћаскања преко џабера."
-
-#~ msgid "The nickname used in the last used Jabber groupchat room."
-#~ msgstr "Надимак у посљедњој соби групног ћаскања преко џабера."
-
-# rewrite-msgid: /Network//
-#~ msgid "Play KsirK over Jabber Network"
-#~ msgstr "Играј К‑сирк преко џабера"
-
-# literal-segment: skinDescLabel
-#~ msgid "skinDescLabel"
-#~ msgstr "skinDescLabel"
-
-#~ msgid "Error"
-#~ msgstr "Грешка"
-
-# >> @title:window
-#~ msgid "Ksirk - Error!"
-#~ msgstr "Грешка"
-
-#~ msgid ""
-#~ "%1 exists.\n"
-#~ "Do you really want to overwrite it?"
-#~ msgstr ""
-#~ "%1 постоји.\n"
-#~ "Желите ли заиста да пребришете?"
-
-#~ msgid "Overwrite file?"
-#~ msgstr "Пребрисати фајл?"
-
-#~ msgid "LeftImg"
-#~ msgstr "LeftImg"
-
-#~ msgid "RightImg"
-#~ msgstr "RightImg"
