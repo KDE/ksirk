@@ -513,7 +513,7 @@ nbCountries=24
 type=countries
 
 [goal3]
-continents=Africa,North America
+continents=Africa,North America,*
 desc=%1, you'll have to conquer %2, %3 and another continent at your choice.
 type=continents
 

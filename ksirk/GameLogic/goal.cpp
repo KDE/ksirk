@@ -120,6 +120,11 @@ bool Goal::checkContinentsFor(const GameLogic::Player* player) const
   qCDebug(KSIRK_LOG) << "Goal::checkContinentsFor " << player->name();
   for (const QString& continent: m_continents)
   {
+    // Bug 526300. AnyContinent is not a continent: it is checked below.
+    if (continent == AnyContinent)
+    {
+      continue;
+    }
     qCDebug(KSIRK_LOG) << "Should be owned continent id: " << continent;
     if ( m_automaton->game()->theWorld()->continentNamed(continent) == nullptr
        || m_automaton->game()->theWorld()->continentNamed(continent)->owner() != player)
@@ -127,7 +132,7 @@ bool Goal::checkContinentsFor(const GameLogic::Player* player) const
       return false;
     }
   }
-  if (!m_continents.contains(QString()))
+  if (!m_continents.contains(AnyContinent))
   {
     return true;
   }
@@ -207,7 +212,7 @@ QString Goal::message(int displayType) const
       case Goal::Continents:
         for (const QString& continent: m_continents)
         {
-          if (!continent.isEmpty())
+          if (continent != AnyContinent)
           {
             qCDebug(KSIRK_LOG) << "  arg = '" << continent << "'";
             res=res.subs(i18n(continent.toUtf8().data()));
@@ -268,7 +273,7 @@ QString Goal::message(int displayType) const
     case Goal::Continents:
       mes += i18n("<br>%1, you still have to conquer ",m_player->name());
       it = m_continents.begin(); it_end = m_continents.end();
-      if (*it != nullptr)
+      if (*it != AnyContinent)
       {
         Continent* continent = const_cast<Continent*>(m_automaton->game()->theWorld()->continentNamed(*it));
         int nb = continent->getMembers().size() - continent->countriesOwnedBy(m_player).size();
@@ -280,7 +285,7 @@ QString Goal::message(int displayType) const
         it_next = it;
         it_next++;
         QString joint;
-        if (it_next==it_end)
+        if (it_next==it_end || *it_next == AnyContinent)
         {
           joint = i18nc("@item:intext country list separator of last item", " and ");
         }
@@ -288,7 +293,7 @@ QString Goal::message(int displayType) const
         {
           joint = i18nc("@item:intext country list separator of non-last item", ", ");
         }
-        if (*it != nullptr)
+        if (*it != AnyContinent)
         {
           Continent* continent = const_cast<Continent*>(m_automaton->game()->theWorld()->continentNamed(*it));
           int nb = continent->getMembers().size() - continent->countriesOwnedBy(m_player).size();

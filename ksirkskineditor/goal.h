@@ -97,6 +97,8 @@ public:
   /** Accessors for the list of continents to conquier to reach this goal */
   inline QList<QString>& continents() {return m_continents;}
   inline const QList<QString>& continents() const {return m_continents;}
+  /** Entry of the continents list standing for a continent of the player's choice */
+  static inline const QString AnyContinent = QStringLiteral("*");
   //@}
 
   //@{

@@ -966,7 +966,7 @@ void MainWindow::initGoalWidgetWith(Goal* goal)
   for(const QString& id: goal->continents())
   {
     qCDebug(KSIRKSKINEDITOR_LOG) << "continent" << id;
-    if (id.isNull())
+    if (id == Goal::AnyContinent)
     {
       m_goalDefWidget->anycontinent->setChecked(true);
     }
@@ -1815,11 +1815,11 @@ void MainWindow::slotGoalAnyContinentChanged(bool checked)
   Goal* goal = m_onu->goals()[row];
 
   if (!checked) {
-      goal->continents().removeAll(QString());
+      goal->continents().removeAll(Goal::AnyContinent);
   } else {
-      if (!goal->continents().contains(QString()))
+      if (!goal->continents().contains(Goal::AnyContinent))
       {
-        goal->continents().push_back(QString());
+        goal->continents().push_back(Goal::AnyContinent);
       }
   }
   goal->setNbArmiesByCountry(m_goalDefWidget->armiesbycountry->value());
@@ -1865,6 +1865,10 @@ void MainWindow::slotGoalContinents()
       qCDebug(KSIRKSKINEDITOR_LOG) << continent->name();
       newContinents.push_back(continent->name());
       m_goalDefWidget->continentslist->addItem(continent->name());
+    }
+    if (m_goalDefWidget->anycontinent->isChecked())
+    {
+      newContinents.push_back(Goal::AnyContinent);
     }
     qCDebug(KSIRKSKINEDITOR_LOG) << "set members";
     goal->continents() = newContinents;

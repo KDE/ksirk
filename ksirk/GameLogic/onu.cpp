@@ -316,7 +316,8 @@ ONU::ONU(GameAutomaton* automaton,
       for(const QString& continentId: contList)
       {
         // Bug 308527. Use only known continents.
-        if (continentsList.contains(continentId))
+        // Bug 526300. Keep the continent of the player's choice.
+        if (continentId == Goal::AnyContinent || continentsList.contains(continentId))
           goal->continents().push_back(continentId);
         else
         {
