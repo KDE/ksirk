@@ -521,7 +521,7 @@ nbCountries=24
 type=countries
 
 [goal3]
-continents=Europe,Pacific
+continents=Europe,Pacific,*
 desc=%1, you'll have to conquer %2, %3 and another continent at your choice.
 type=continents
 
