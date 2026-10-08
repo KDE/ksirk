@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:50+0000\n"
-"PO-Revision-Date: 2026-09-18 12:00+0200\n"
+"PO-Revision-Date: 2026-10-07 15:30+0200\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@ijekavian\n"
@@ -1020,7 +1020,7 @@ msgstr ""
 #. i18n: file skins/default/Data/world.desktop line 566
 #, no-c-format, kde-format
 msgid "Earth-like"
-msgstr "Као Земља"
+msgstr "Земљолика"
 
 #. i18n: file skins/static/Data/world.desktop line 125
 #. i18n: file skins/static/Data/world.desktop line 575
@@ -1077,7 +1077,7 @@ msgstr ""
 #. i18n: file skins/legacy/Data/world.desktop line 574
 #, no-c-format, kde-format
 msgid "Legacy"
-msgstr "Наслијеђе"
+msgstr "Стара"
 
 #: decoratedgameframe.cpp:100 kgamewin.cpp:349
 #, kde-format
@@ -1186,8 +1186,8 @@ msgid ""
 "\"blue\">%2</font>!"
 msgstr ""
 "Помијерате армије из <font color=\"red\">%1</font> у <font color=\"blue\">"
-"%2</font>.|/|Помијерате армије из <font color=\"red\">$[ген %1]</font> у "
-"<font color=\"blue\">$[аку %2]</font>."
+"%2</font>!|/|Помијерате армије из <font color=\"red\">$[ген %1]</font> у "
+"<font color=\"blue\">$[аку %2]</font>!"
 
 #: Dialogs/InvasionSlider.cpp:106
 #, kde-format
@@ -1475,7 +1475,7 @@ msgid ""
 "Choose one of them. It will be your nation during the game"
 msgstr ""
 "Списак са тренутно доступним нацијама.\n"
-"Изаберите ону која желите да буде ваш током игре."
+"Изаберите ону која ће бити ваша током игре."
 
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
 #: Dialogs/qplayersetupdialog.ui:76 Dialogs/qwaitedplayersetupdialog.ui:47
@@ -1623,7 +1623,7 @@ msgstr "Изаберите друго име."
 #, kde-format
 msgctxt "@title:window"
 msgid "Name Already Used"
-msgstr "Име је већ у употријеби"
+msgstr "Име је већ у употреби"
 
 #: GameLogic/gameautomaton.cpp:1474
 #, kde-format
@@ -1651,7 +1651,7 @@ msgstr "Изаберите другу нацију."
 #, kde-format
 msgctxt "@title:window"
 msgid "Nation Already Used"
-msgstr "Нација је већ у употријеби"
+msgstr "Нација је већ у употреби"
 
 #: GameLogic/gameautomaton.cpp:1623
 #, kde-format
@@ -1667,7 +1667,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Starting a New Game or Exit."
-msgstr "Покретање нове игре или напуштање"
+msgstr "Покретање нове игре или напуштање."
 
 #: GameLogic/gameautomaton.cpp:1625
 #, kde-format
@@ -1756,9 +1756,9 @@ msgstr "%1 бира своју одбрану"
 #, kde-format
 msgid "%1 choose to end recycling; there are now %2 players who want so"
 msgstr ""
-"%1 изабра да заврши рециклирање; сада има %2 играча који то желе|/|%1 изабра "
-"да заврши рециклирање; сада има %2 $[множ ^2 играч играча играча] који то "
-"$[множ ^2 жели желе желе]."
+"%1 изабра да заврши поновно размијештање; сада има %2 играча који то желе|/|"
+"%1 изабра да заврши поновно размијештање; сада има %2 $[множ ^2 играч играча "
+"играча] који то $[множ ^2 жели желе желе]."
 
 #: GameLogic/gameautomaton.cpp:2338
 #, kde-format
@@ -1807,7 +1807,7 @@ msgstr "Сљедећи играч"
 #: GameLogic/goal.cpp:156
 #, kde-format
 msgid "You must conquer the World!"
-msgstr "Морате освојити свет!"
+msgstr "Морате освојити свијет!"
 
 #: GameLogic/goal.cpp:184
 #, kde-format
@@ -1856,17 +1856,17 @@ msgid_plural ""
 "<br>%2, you have enough countries but you still have to put more than %1 "
 "armies on %3 of them…"
 msgstr[0] ""
-"<html><br/>%2, имате довољно земаља али још увијек треба да размјестите више "
-"од %1 армије на %3 од њих…</html>"
+"<html><br/>%2, имате довољно земаља, али још увијек треба да размјестите "
+"више од %1 армије на %3 од њих…</html>"
 msgstr[1] ""
-"<html><br/>%2, имате довољно земаља али још увијек треба да размјестите више "
-"од %1 армије на %3 од њих…</html>"
+"<html><br/>%2, имате довољно земаља, али још увијек треба да размјестите "
+"више од %1 армије на %3 од њих…</html>"
 msgstr[2] ""
-"<html><br/>%2, имате довољно земаља али још увијек треба да размјестите више "
-"од %1 армија на %3 од њих…</html>"
+"<html><br/>%2, имате довољно земаља, али још увијек треба да размјестите "
+"више од %1 армија на %3 од њих…</html>"
 msgstr[3] ""
-"<html><br/>%2, имате довољно земаља али још увијек треба да размјестите више "
-"од %1 армије на %3 од њих…</html>"
+"<html><br/>%2, имате довољно земаља, али још увијек треба да размјестите "
+"више од %1 армије на %3 од њих…</html>"
 
 #: GameLogic/goal.cpp:269
 #, kde-format
@@ -2022,7 +2022,7 @@ msgstr "Нова ТЦП/ИП"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new standard TCP/IP network game"
-msgstr "Започните нову стандардну ТЦП/ИП мрежну игру."
+msgstr "Започни нову стандардну ТЦП/ИП мрежну игру"
 
 # rewrite-msgid: /Network//
 #: kgamewin.cpp:323
@@ -2042,20 +2042,20 @@ msgstr "Придружи се ТЦП/ИП"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Join a standard TCP/IP network game"
-msgstr "Придружите се стандардној ТЦП/ИП мрежној игри."
+msgstr "Придружи се стандардној ТЦП/ИП мрежној игри"
 
 #: kgamewin.cpp:331
 #, kde-format
 msgctxt "@action"
 msgid "Display the Current Player's Goal"
-msgstr "Циљ тренутног играча"
+msgstr "Прикажи циљ тренутног играча"
 
 # >> @info:tooltip
 #: kgamewin.cpp:334
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Display the current player's goal"
-msgstr "Погледајте циљ тренутног играча."
+msgstr "Прикажи циљ тренутног играча"
 
 #: kgamewin.cpp:340
 #, kde-format
@@ -2068,20 +2068,20 @@ msgstr "Контекстна помоћ"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Let the next player play"
-msgstr "Прелазак на сљедећег играча."
+msgstr "Предај потез сљедећем играчу"
 
 #: kgamewin.cpp:355
 #, kde-format
 msgctxt "@action"
 msgid "Finish Moves"
-msgstr "Крај помијерања"
+msgstr "Заврши помијерање"
 
 # >> @info:tooltip
 #: kgamewin.cpp:357
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Finish moving the current sprites"
-msgstr "Окончајте помијерање текућих спрајтова."
+msgstr "Заврши помијерање текућих спрајтова"
 
 #: kgamewin.cpp:485
 #, kde-format
@@ -2230,29 +2230,29 @@ msgstr ""
 
 #: kgamewin.cpp:1656 kgamewin.cpp:1696
 msgid "There is no country here!"
-msgstr "Ту нема ниједне земље."
+msgstr "Ту нема ниједне земље!"
 
 #: kgamewin.cpp:1660 kgamewin.cpp:1701
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
-msgstr "Нисте власник прве земље: %1."
+msgstr "Нисте власник прве земље: %1!"
 
 #: kgamewin.cpp:1664
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
-msgstr "Нисте власник друге земље: %1."
+msgstr "Нисте власник друге земље: %1!"
 
 #: kgamewin.cpp:1668 kgamewin.cpp:1712
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
 msgstr ""
-"Покушавате да помјерите армије из %1 на њих саме.|/|Покушавате да помјерите "
-"армије из $[ген %1] на њих саме."
+"Покушавате да помјерите армије из %1 у исту земљу!|/|Покушавате да помјерите "
+"армије из $[ген %1] у исту земљу!"
 
 #: kgamewin.cpp:1673 kgamewin.cpp:1718
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
-msgstr "%1 није сусјед %2.|/|$[ном %1] није сусед $[ген %2]."
+msgstr "%1 није сусјед %2!|/|$[ном %1] није сусјед $[ген %2]!"
 
 #: kgamewin.cpp:1679
 #, kde-format
@@ -2263,7 +2263,7 @@ msgstr ""
 #: kgamewin.cpp:1707
 #, kde-format
 msgid "You are the owner of the second country: %1!"
-msgstr "Власник сте друге земље: %1."
+msgstr "Власник сте друге земље: %1!"
 
 #: kgamewin.cpp:1725
 msgid "Ready to fight!"
@@ -2271,22 +2271,22 @@ msgstr "Спремни за борбу!"
 
 #: kgamewin.cpp:1819
 msgid "<font color=\"orange\">No country here!</font>"
-msgstr "<font color=\"orange\">Овде нема земље.</font>"
+msgstr "<font color=\"orange\">Овдје нема земље!</font>"
 
 #: kgamewin.cpp:1827
 #, kde-format
 msgid "<font color=\"orange\">You are not the owner of %1!</font>"
 msgstr ""
-"<font color=\"orange\">Нисте власник %1.</font>|/|<font color=\"orange"
-"\">Нисте власник $[ген %1].</font>"
+"<font color=\"orange\">Нисте власник %1!</font>|/|<font color=\"orange"
+"\">Нисте власник $[ген %1]!</font>"
 
 # >! Plurals (code passing number as string over network).
 #: kgamewin.cpp:1834
 #, kde-format
 msgid "<font color=\"orange\">There is only %1 armies in %2!</font>"
 msgstr ""
-"<font color=\"orange\">У %2 има само %1 армија.</font>|/|<font color=\"orange"
-"\">У $[лок %2] има само %1 $[множ ^1 армија армије армија].</font>"
+"<font color=\"orange\">У %2 има само %1 армија!</font>|/|<font color=\"orange"
+"\">У $[лок %2] има само %1 $[множ ^1 армија армије армија]!</font>"
 
 #: kgamewin.cpp:1974
 #, kde-format
@@ -2345,7 +2345,7 @@ msgstr "Напада се и помијера превлачењем измеђ�
 #: kgamewin.cpp:2811
 msgid "Start a new game or join a network game with the menu or the toolbar…"
 msgstr ""
-"Покрените нову партију, или се прикључите мрежној, путем менија или траке "
+"Покрените нову партију, или се придружите мрежној, путем менија или траке "
 "алатки…"
 
 # rewrite-msgid: /options window/configuration dialog/
@@ -2472,13 +2472,13 @@ msgstr "Заустави аутоматску одбрану"
 #, kde-format
 msgctxt "@action:button"
 msgid "Valid"
-msgstr "Добро"
+msgstr "Потврди"
 
 #: krightdialog.cpp:299
 #, kde-format
 msgctxt "@action:button"
 msgid "Recycle"
-msgstr "Рециклирај"
+msgstr "Размјести поново"
 
 #: krightdialog.cpp:300
 #, kde-format
@@ -2592,7 +2592,7 @@ msgstr "К‑сирк"
 #: main.cpp:44
 #, kde-format
 msgid "World Domination Strategy Game"
-msgstr "Стратешка игра свјетске доминације"
+msgstr "Стратешка игра свјетске превласти"
 
 #: main.cpp:46
 #, kde-format
@@ -2723,7 +2723,7 @@ msgstr "Приказуј број армија на земљама"
 #: SaveLoad/ksirkgamexmlhandler.cpp:58
 #, kde-format
 msgid "Wrong save game format. Waited %1 and got %2!"
-msgstr "Погрешан формат позиције. Очекивано %1, добијено %2."
+msgstr "Погрешан формат позиције. Очекивано %1, добијено %2!"
 
 #: SaveLoad/ksirkgamexmlhandler.cpp:139
 #, kde-format
@@ -2738,12 +2738,12 @@ msgstr "Грешка рашчлањивања фајла маске"
 #: Sprites/animsprite.cpp:515
 #, kde-format
 msgid "Cannot find Max X for sprite: no background!"
-msgstr "Не могу да нађем макс. X за спрајт: нема позадине."
+msgstr "Не могу да нађем макс. X за спрајт: нема позадине!"
 
 #: Sprites/animsprite.cpp:530
 #, kde-format
 msgid "Cannot find Max Y for sprite: no background!"
-msgstr "Не могу да нађем макс. Y за спрајт: нема позадине."
+msgstr "Не могу да нађем макс. Y за спрајт: нема позадине!"
 
 #: Sprites/skinSpritesData.cpp:88
 #, kde-format
