@@ -38,6 +38,10 @@
   <name xml:lang="sa">क्षिरK</name>
   <name xml:lang="sk">KsirK</name>
   <name xml:lang="sl">KsirK</name>
+  <name xml:lang="sr">К‑сирк</name>
+  <name xml:lang="sr-Latn">KSirk</name>
+  <name xml:lang="sr-ijekavian">К‑сирк</name>
+  <name xml:lang="sr-ijekavianlatin">KSirk</name>
   <name xml:lang="sv">Ksirk</name>
   <name xml:lang="tr">KsirK</name>
   <name xml:lang="uk">KsirK</name>
@@ -74,8 +78,8 @@
   <summary xml:lang="sl">Strateška igra svetovne nadvlade</summary>
   <summary xml:lang="sr">Стратешка игра светске доминације</summary>
   <summary xml:lang="sr-Latn">Strateška igra svetske dominacije</summary>
-  <summary xml:lang="sr-ijekavian">Стратешка игра светске доминације</summary>
-  <summary xml:lang="sr-ijekavianlatin">Strateška igra svetske dominacije</summary>
+  <summary xml:lang="sr-ijekavian">Стратешка игра свјетске доминације</summary>
+  <summary xml:lang="sr-ijekavianlatin">Strateška igra svjetske dominacije</summary>
   <summary xml:lang="sv">Strategispel för världsdominans</summary>
   <summary xml:lang="tr">Dünya Hakimiyeti Strateji Oyunu</summary>
   <summary xml:lang="ug">دۇنيا ھۆكۈمرانلىقى ئىستراتېگىيە ئويۇنى</summary>
@@ -118,8 +122,8 @@
     <p xml:lang="sl">KsirK je računalniška različica znane strateške namizne igre imenovane Risk. Cilj igre je osvojiti svet z napadanjem sosedov z vašimi armadami.</p>
     <p xml:lang="sr">К‑сирк је рачунарска верзија добро познате стратешке игре на табли ризико. Циљ партије је просто освојити цео свет, нападајући суседе својим војскама.</p>
     <p xml:lang="sr-Latn">KSirk je računarska verzija dobro poznate strateške igre na tabli riziko. Cilj partije je prosto osvojiti ceo svet, napadajući susede svojim vojskama.</p>
-    <p xml:lang="sr-ijekavian">К‑сирк је рачунарска верзија добро познате стратешке игре на табли ризико. Циљ партије је просто освојити цео свет, нападајући суседе својим војскама.</p>
-    <p xml:lang="sr-ijekavianlatin">KSirk je računarska verzija dobro poznate strateške igre na tabli riziko. Cilj partije je prosto osvojiti ceo svet, napadajući susede svojim vojskama.</p>
+    <p xml:lang="sr-ijekavian">К‑сирк је рачунарска верзија добро познате стратешке игре на табли ризико. Циљ партије је просто освојити цио свијет, нападајући сусједе својим војскама.</p>
+    <p xml:lang="sr-ijekavianlatin">KSirk je računarska verzija dobro poznate strateške igre na tabli riziko. Cilj partije je prosto osvojiti cio svijet, napadajući susjede svojim vojskama.</p>
     <p xml:lang="sv">Ksirk är en datoriserad version av det välkända strategiska brädspelet Risk. Spelets mål är helt enkelt att erövra världen genom att anfalla grannländer med dina arméer.</p>
     <p xml:lang="tr">KsirK, dünyaca ünlü strateji oyunu Risk’in bilgisayara uyarlanmış halidir. Oyunun ereği, ordularınızla komşularınıza saldırarak dünyanın hakimi olmaktır.</p>
     <p xml:lang="uk">KsirK — комп’ютеризована версія добре відомої стратегічної гри Risk. Метою гри є звичайне завоювання світу. Ця мета досягається нападом на ваших сусідів за допомогою ваших армій.</p>
@@ -272,10 +276,10 @@
       <li xml:lang="sa">SVG ग्राफिक्स् इत्यनेन सह स्किन एडिटर् इत्यनेन च सहजतया नूतनानि स्किन्स् निर्मातुम् अर्हन्ति</li>
       <li xml:lang="sk">Ľahko môžete vytvoriť nové skiny pomocou SVG grafiky a editora skinov</li>
       <li xml:lang="sl">Z urejevalnikom preoblek in datotekami SVG lahko enostavno ustvarite nove preobleke</li>
-      <li xml:lang="sr">Једноствано стварање нових масака кроз СВГ графику и уређивач масака.</li>
-      <li xml:lang="sr-Latn">Jednostvano stvaranje novih masaka kroz SVG grafiku i uređivač masaka.</li>
-      <li xml:lang="sr-ijekavian">Једноствано стварање нових масака кроз СВГ графику и уређивач масака.</li>
-      <li xml:lang="sr-ijekavianlatin">Jednostvano stvaranje novih masaka kroz SVG grafiku i uređivač masaka.</li>
+      <li xml:lang="sr">Једноставно стварање нових масака кроз СВГ графику и уређивач масака</li>
+      <li xml:lang="sr-Latn">Jednostavno stvaranje novih masaka kroz SVG grafiku i uređivač masaka</li>
+      <li xml:lang="sr-ijekavian">Једноставно стварање нових масака кроз СВГ графику и уређивач масака</li>
+      <li xml:lang="sr-ijekavianlatin">Jednostavno stvaranje novih masaka kroz SVG grafiku i uređivač masaka</li>
       <li xml:lang="sv">Det går lätt att skapa nya skal med SVG-grafik och skaleditorn</li>
       <li xml:lang="tr">SVG grafikleri ve arayüz düzenleyici ile kolaylıkla yeni temalar oluşturabilirsiniz</li>
       <li xml:lang="uk">Можливість простого створення нових обгорток із графікою SVG та редактор обгорток</li>
