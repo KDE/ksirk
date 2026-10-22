@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:50+0000\n"
+"POT-Creation-Date: 2026-10-22 00:47+0000\n"
 "PO-Revision-Date: 2014-05-13 19:16+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -939,6 +939,16 @@ msgstr "%1, Du muttst %2 Länner innehmen un in elkeen dorvun %3 Armeen setten."
 msgid "%1, you'll have to conquer %2 countries."
 msgstr "%1, Du muttst %2 Länner innehmen."
 
+#. i18n: file skins/default/Data/world.desktop line 516
+#. i18n: file skins/static/Data/world.desktop line 524
+#. i18n: file skins/legacy/Data/world.desktop line 524
+#. i18n: file skins/default/Data/world.desktop line 516
+#. i18n: file skins/static/Data/world.desktop line 524
+#. i18n: file skins/legacy/Data/world.desktop line 524
+#, no-c-format, kde-format
+msgid "*"
+msgstr ""
+
 #. i18n: file skins/default/Data/world.desktop line 517
 #. i18n: file skins/static/Data/world.desktop line 525
 #. i18n: file skins/legacy/Data/world.desktop line 525
@@ -1369,7 +1379,7 @@ msgstr ""
 "Kledaasch-Orner lett sik nich finnen. - Prööv Dien Installatschoon.\n"
 "Programm kann nich wiederlopen."
 
-#: Dialogs/newGameDialogImpl.cpp:129 GameLogic/aiplayer.cpp:506
+#: Dialogs/newGameDialogImpl.cpp:129 GameLogic/aiplayer.cpp:511
 #: newgamesetup.cpp:45 Sprites/skinSpritesData.cpp:89
 #: Sprites/skinSpritesData.cpp:105
 #, fuzzy, kde-format
@@ -1562,7 +1572,7 @@ msgstr "KsirK utmaken"
 msgid "localhost"
 msgstr "localhost"
 
-#: GameLogic/aiplayer.cpp:504
+#: GameLogic/aiplayer.cpp:509
 #, kde-format
 msgid ""
 "Error - No receiving country selected while computer player %2 had still 1 "
@@ -1799,28 +1809,28 @@ msgctxt "@action:button"
 msgid "Next Player"
 msgstr "Nakamen Speler"
 
-#: GameLogic/goal.cpp:156
+#: GameLogic/goal.cpp:161
 #, kde-format
 msgid "You must conquer the World!"
 msgstr "Du muttst de hele Welt innehmen!"
 
-#: GameLogic/goal.cpp:184
+#: GameLogic/goal.cpp:189
 #, kde-format
 msgid "%1 (already dead)"
 msgstr "%1 (al dootbleven)"
 
-#: GameLogic/goal.cpp:195
+#: GameLogic/goal.cpp:200
 #, kde-format
 msgid "Error: no player to destroy"
 msgstr "Fehler: Keen Gegensmann"
 
-#: GameLogic/goal.cpp:231
+#: GameLogic/goal.cpp:236
 #, fuzzy, kde-format
 #| msgid "<br>%1 is still alive..."
 msgid "<br>%1 is still alive…"
 msgstr "<br>%1 leevt noch..."
 
-#: GameLogic/goal.cpp:238 GameLogic/goal.cpp:252
+#: GameLogic/goal.cpp:243 GameLogic/goal.cpp:257
 #, fuzzy, kde-format
 #| msgid "<br>%2, you still have 1 country to conquer..."
 #| msgid_plural "<br>%2, you still have %1 countries to conquer..."
@@ -1829,7 +1839,7 @@ msgid_plural "<br>%2, you still have %1 countries to conquer…"
 msgstr[0] "<br>%2, Du muttst noch een Land innehmen..."
 msgstr[1] "<br>%2, Du muttst noch %1 Länner innehmen..."
 
-#: GameLogic/goal.cpp:242
+#: GameLogic/goal.cpp:247
 #, kde-format
 msgid "<br>Your goal is reached: %2 is dead and you possess %1 country."
 msgid_plural ""
@@ -1839,7 +1849,7 @@ msgstr[0] ""
 msgstr[1] ""
 "<br>Du hest Dien Opgaav lööst: %2 is dootbleven un Du hest %1 Länner erovert."
 
-#: GameLogic/goal.cpp:264
+#: GameLogic/goal.cpp:269
 #, fuzzy, kde-format
 #| msgid ""
 #| "<br>%2, you have enough countries but you still have to put more than 1 "
@@ -1860,33 +1870,33 @@ msgstr[1] ""
 "<br>%2, Du hest noog Länner, man Du muttst noch mehr as %1 Armeen op %3 "
 "dorvun setten..."
 
-#: GameLogic/goal.cpp:269
+#: GameLogic/goal.cpp:274
 #, kde-format
 msgid "<br>%1, you still have to conquer "
 msgstr "<br>%1, Du muttst noch wat innehmen: "
 
-#: GameLogic/goal.cpp:275
+#: GameLogic/goal.cpp:280
 #, kde-format
 msgid "1 country in %2"
 msgid_plural "%1 countries in %2"
 msgstr[0] "Een Land in %2"
 msgstr[1] "%1 Länner in %2"
 
-#: GameLogic/goal.cpp:285
+#: GameLogic/goal.cpp:290
 #, fuzzy, kde-format
 #| msgid " and "
 msgctxt "@item:intext country list separator of last item"
 msgid " and "
 msgstr " un "
 
-#: GameLogic/goal.cpp:289
+#: GameLogic/goal.cpp:294
 #, fuzzy, kde-format
 #| msgid ", "
 msgctxt "@item:intext country list separator of non-last item"
 msgid ", "
 msgstr ", "
 
-#: GameLogic/goal.cpp:295
+#: GameLogic/goal.cpp:300
 #, kde-format
 msgctxt ""
 "@info An element of the enumeration of the number of countries in the given "
@@ -1894,7 +1904,7 @@ msgctxt ""
 msgid "%1 in %2"
 msgstr "%1 binnen %2"
 
-#: GameLogic/goal.cpp:317
+#: GameLogic/goal.cpp:322
 #, fuzzy, kde-format
 #| msgid "KsirK - Goal Display"
 msgctxt "@title:window"

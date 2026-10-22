@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:50+0000\n"
+"POT-Creation-Date: 2026-10-22 00:47+0000\n"
 "PO-Revision-Date: 2009-02-26 12:48+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -938,6 +938,16 @@ msgstr ""
 msgid "%1, you'll have to conquer %2 countries."
 msgstr ""
 
+#. i18n: file skins/default/Data/world.desktop line 516
+#. i18n: file skins/static/Data/world.desktop line 524
+#. i18n: file skins/legacy/Data/world.desktop line 524
+#. i18n: file skins/default/Data/world.desktop line 516
+#. i18n: file skins/static/Data/world.desktop line 524
+#. i18n: file skins/legacy/Data/world.desktop line 524
+#, no-c-format, kde-format
+msgid "*"
+msgstr ""
+
 #. i18n: file skins/default/Data/world.desktop line 517
 #. i18n: file skins/static/Data/world.desktop line 525
 #. i18n: file skins/legacy/Data/world.desktop line 525
@@ -1356,7 +1366,7 @@ msgid ""
 "Program cannot continue"
 msgstr ""
 
-#: Dialogs/newGameDialogImpl.cpp:129 GameLogic/aiplayer.cpp:506
+#: Dialogs/newGameDialogImpl.cpp:129 GameLogic/aiplayer.cpp:511
 #: newgamesetup.cpp:45 Sprites/skinSpritesData.cpp:89
 #: Sprites/skinSpritesData.cpp:105
 #, fuzzy, kde-format
@@ -1558,7 +1568,7 @@ msgstr "केसिर्क से बाहिर जाव "
 msgid "localhost"
 msgstr ""
 
-#: GameLogic/aiplayer.cpp:504
+#: GameLogic/aiplayer.cpp:509
 #, kde-format
 msgid ""
 "Error - No receiving country selected while computer player %2 had still 1 "
@@ -1778,35 +1788,35 @@ msgctxt "@action:button"
 msgid "Next Player"
 msgstr "अगला खिलाड़ी"
 
-#: GameLogic/goal.cpp:156
+#: GameLogic/goal.cpp:161
 #, fuzzy, kde-format
 msgid "You must conquer the World!"
 msgstr "आप मन ल पूरा दुनिया मं कब्जा करना होही!"
 
-#: GameLogic/goal.cpp:184
+#: GameLogic/goal.cpp:189
 #, kde-format
 msgid "%1 (already dead)"
 msgstr ""
 
-#: GameLogic/goal.cpp:195
+#: GameLogic/goal.cpp:200
 #, fuzzy, kde-format
 msgid "Error: no player to destroy"
 msgstr "गलती : खतम करे बर कोनो खिलाड़ी नइ"
 
-#: GameLogic/goal.cpp:231
+#: GameLogic/goal.cpp:236
 #, fuzzy, kde-format
 #| msgid "<br>%1 is still alive..."
 msgid "<br>%1 is still alive…"
 msgstr "<br/>%1 अभी जिंदा हे..."
 
-#: GameLogic/goal.cpp:238 GameLogic/goal.cpp:252
+#: GameLogic/goal.cpp:243 GameLogic/goal.cpp:257
 #, fuzzy, kde-format
 msgid "<br>%2, you still have 1 country to conquer…"
 msgid_plural "<br>%2, you still have %1 countries to conquer…"
 msgstr[0] "<br/>आप मन के %1 मं कब्जा करना बचे हे"
 msgstr[1] "<br/>आप मन के %1 मं कब्जा करना बचे हे"
 
-#: GameLogic/goal.cpp:242
+#: GameLogic/goal.cpp:247
 #, kde-format
 msgid "<br>Your goal is reached: %2 is dead and you possess %1 country."
 msgid_plural ""
@@ -1814,7 +1824,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: GameLogic/goal.cpp:264
+#: GameLogic/goal.cpp:269
 #, kde-format
 msgid ""
 "<br>%2, you have enough countries but you still have to put more than 1 army "
@@ -1825,33 +1835,33 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: GameLogic/goal.cpp:269
+#: GameLogic/goal.cpp:274
 #, kde-format
 msgid "<br>%1, you still have to conquer "
 msgstr "<br/>आप मन के %1 मं कब्जा करना बचे हे"
 
-#: GameLogic/goal.cpp:275
+#: GameLogic/goal.cpp:280
 #, fuzzy, kde-format
 msgid "1 country in %2"
 msgid_plural "%1 countries in %2"
 msgstr[0] "%1 रास्ट्र %2 मं"
 msgstr[1] "%1 रास्ट्र %2 मं"
 
-#: GameLogic/goal.cpp:285
+#: GameLogic/goal.cpp:290
 #, fuzzy, kde-format
 #| msgid " and "
 msgctxt "@item:intext country list separator of last item"
 msgid " and "
 msgstr "और"
 
-#: GameLogic/goal.cpp:289
+#: GameLogic/goal.cpp:294
 #, fuzzy, kde-format
 #| msgid ", "
 msgctxt "@item:intext country list separator of non-last item"
 msgid ", "
 msgstr ","
 
-#: GameLogic/goal.cpp:295
+#: GameLogic/goal.cpp:300
 #, kde-format
 msgctxt ""
 "@info An element of the enumeration of the number of countries in the given "
@@ -1859,7 +1869,7 @@ msgctxt ""
 msgid "%1 in %2"
 msgstr "%1 मं %2"
 
-#: GameLogic/goal.cpp:317
+#: GameLogic/goal.cpp:322
 #, fuzzy, kde-format
 #| msgid "KsirK - Goal Display"
 msgctxt "@title:window"

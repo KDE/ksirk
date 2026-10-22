@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:50+0000\n"
+"POT-Creation-Date: 2026-10-22 00:47+0000\n"
 "PO-Revision-Date: 2024-12-25 19:35+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -938,6 +938,16 @@ msgstr "%1, भवद्भिः %2 देशाः जित्वा प्�
 msgid "%1, you'll have to conquer %2 countries."
 msgstr "%1, भवता %2 देशाः जितुम् अर्हन्ति ।"
 
+#. i18n: file skins/default/Data/world.desktop line 516
+#. i18n: file skins/static/Data/world.desktop line 524
+#. i18n: file skins/legacy/Data/world.desktop line 524
+#. i18n: file skins/default/Data/world.desktop line 516
+#. i18n: file skins/static/Data/world.desktop line 524
+#. i18n: file skins/legacy/Data/world.desktop line 524
+#, no-c-format, kde-format
+msgid "*"
+msgstr ""
+
 #. i18n: file skins/default/Data/world.desktop line 517
 #. i18n: file skins/static/Data/world.desktop line 525
 #. i18n: file skins/legacy/Data/world.desktop line 525
@@ -1351,7 +1361,7 @@ msgstr ""
 "Skins निर्देशिका न प्राप्ता - स्वस्य संस्थापनस्य सत्यापनम्\n"
 "कार्यक्रमः निरन्तरं कर्तुं न शक्नोति"
 
-#: Dialogs/newGameDialogImpl.cpp:129 GameLogic/aiplayer.cpp:506
+#: Dialogs/newGameDialogImpl.cpp:129 GameLogic/aiplayer.cpp:511
 #: newgamesetup.cpp:45 Sprites/skinSpritesData.cpp:89
 #: Sprites/skinSpritesData.cpp:105
 #, kde-format
@@ -1542,7 +1552,7 @@ msgstr "क्षिरK त्यजतु"
 msgid "localhost"
 msgstr "localhost इति"
 
-#: GameLogic/aiplayer.cpp:504
+#: GameLogic/aiplayer.cpp:509
 #, kde-format
 msgid ""
 "Error - No receiving country selected while computer player %2 had still 1 "
@@ -1763,34 +1773,34 @@ msgctxt "@action:button"
 msgid "Next Player"
 msgstr "अग्रिमः खिलाडी"
 
-#: GameLogic/goal.cpp:156
+#: GameLogic/goal.cpp:161
 #, kde-format
 msgid "You must conquer the World!"
 msgstr "भवता विश्वं जितुम् अवश्यं!"
 
-#: GameLogic/goal.cpp:184
+#: GameLogic/goal.cpp:189
 #, kde-format
 msgid "%1 (already dead)"
 msgstr "%1 (पूर्वमेव मृतम्)"
 
-#: GameLogic/goal.cpp:195
+#: GameLogic/goal.cpp:200
 #, kde-format
 msgid "Error: no player to destroy"
 msgstr "त्रुटिः : नाशयितुं कोऽपि खिलाडी नास्ति"
 
-#: GameLogic/goal.cpp:231
+#: GameLogic/goal.cpp:236
 #, kde-format
 msgid "<br>%1 is still alive…"
 msgstr "<br>%1 अद्यापि जीवति..."
 
-#: GameLogic/goal.cpp:238 GameLogic/goal.cpp:252
+#: GameLogic/goal.cpp:243 GameLogic/goal.cpp:257
 #, kde-format
 msgid "<br>%2, you still have 1 country to conquer…"
 msgid_plural "<br>%2, you still have %1 countries to conquer…"
 msgstr[0] "<br>%2, भवतः अद्यापि १ देशः जितुम् अस्ति..."
 msgstr[1] "<br>%2, भवतः अद्यापि %1 देशाः जितुम् अस्ति..."
 
-#: GameLogic/goal.cpp:242
+#: GameLogic/goal.cpp:247
 #, kde-format
 msgid "<br>Your goal is reached: %2 is dead and you possess %1 country."
 msgid_plural ""
@@ -1798,7 +1808,7 @@ msgid_plural ""
 msgstr[0] "<br>भवतः लक्ष्यं प्राप्तम् : %2 मृतः भवतः %1 देशः अस्ति ।"
 msgstr[1] "<br>भवतः लक्ष्यं प्राप्तम् : %2 मृतः अस्ति तथा च भवतः %1 देशाः सन्ति ।"
 
-#: GameLogic/goal.cpp:264
+#: GameLogic/goal.cpp:269
 #, kde-format
 msgid ""
 "<br>%2, you have enough countries but you still have to put more than 1 army "
@@ -1813,31 +1823,31 @@ msgstr[1] ""
 "<br>%2, भवतः पर्याप्ताः देशाः सन्ति किन्तु तेषु %3 मध्ये %1 तः अधिकानि सेनाः "
 "स्थापनीयानि..."
 
-#: GameLogic/goal.cpp:269
+#: GameLogic/goal.cpp:274
 #, kde-format
 msgid "<br>%1, you still have to conquer "
 msgstr "<br>%1, भवता अद्यापि विजयः कर्तव्यः "
 
-#: GameLogic/goal.cpp:275
+#: GameLogic/goal.cpp:280
 #, kde-format
 msgid "1 country in %2"
 msgid_plural "%1 countries in %2"
 msgstr[0] "१ देशे %2"
 msgstr[1] "%1 देशेषु %2"
 
-#: GameLogic/goal.cpp:285
+#: GameLogic/goal.cpp:290
 #, kde-format
 msgctxt "@item:intext country list separator of last item"
 msgid " and "
 msgstr " तथा "
 
-#: GameLogic/goal.cpp:289
+#: GameLogic/goal.cpp:294
 #, kde-format
 msgctxt "@item:intext country list separator of non-last item"
 msgid ", "
 msgstr ", ९. "
 
-#: GameLogic/goal.cpp:295
+#: GameLogic/goal.cpp:300
 #, kde-format
 msgctxt ""
 "@info An element of the enumeration of the number of countries in the given "
@@ -1845,7 +1855,7 @@ msgctxt ""
 msgid "%1 in %2"
 msgstr "%2 मध्ये %1"
 
-#: GameLogic/goal.cpp:317
+#: GameLogic/goal.cpp:322
 #, kde-format
 msgctxt "@title:window"
 msgid "Goal Display"

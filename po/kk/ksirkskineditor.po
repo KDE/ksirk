@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:50+0000\n"
+"POT-Creation-Date: 2026-10-22 00:47+0000\n"
 "PO-Revision-Date: 2013-09-15 06:30+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -2095,37 +2095,37 @@ msgctxt "@title:window"
 msgid "Delete Continent Confirmation"
 msgstr "Құрлықтарды таңдау"
 
-#: mainwindow.cpp:1889
+#: mainwindow.cpp:1893
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "Шынымен '%1' деген мақсатты өшірмексіз бе?"
 
-#: mainwindow.cpp:1889
+#: mainwindow.cpp:1893
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Goal Confirmation"
 msgstr ""
 
-#: mainwindow.cpp:1948
+#: mainwindow.cpp:1952
 #, fuzzy, kde-format
 #| msgid "New nationality name"
 msgctxt "@title:window"
 msgid "New Nationality Name"
 msgstr "Жаңа ұлттың атауы"
 
-#: mainwindow.cpp:1948
+#: mainwindow.cpp:1952
 #, fuzzy, kde-format
 #| msgid "Enter the name of the new nationality"
 msgctxt "@label:textbox"
 msgid "Enter the name of the new nationality:"
 msgstr "Жаңа ұлттың атауын келтіріңіз"
 
-#: mainwindow.cpp:1958
+#: mainwindow.cpp:1962
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "Шынымен '%1' деген ұлтты өшірмексіз бе?"
 
-#: mainwindow.cpp:1958
+#: mainwindow.cpp:1962
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Nationality Confirmation"

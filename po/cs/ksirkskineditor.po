@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:50+0000\n"
+"POT-Creation-Date: 2026-10-22 00:47+0000\n"
 "PO-Revision-Date: 2026-08-04 19:47+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2093,35 +2093,35 @@ msgctxt "@title:window"
 msgid "Delete Continent Confirmation"
 msgstr "Potvrzení smazání kontinentu"
 
-#: mainwindow.cpp:1889
+#: mainwindow.cpp:1893
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "Opravdu chcete smazat cíl '%1'?"
 
-#: mainwindow.cpp:1889
+#: mainwindow.cpp:1893
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Goal Confirmation"
 msgstr "Potvrzení smazání cíle"
 
-#: mainwindow.cpp:1948
+#: mainwindow.cpp:1952
 #, kde-format
 msgctxt "@title:window"
 msgid "New Nationality Name"
 msgstr "Název nové národnosti"
 
-#: mainwindow.cpp:1948
+#: mainwindow.cpp:1952
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new nationality:"
 msgstr "Zadejte název nové národnosti:"
 
-#: mainwindow.cpp:1958
+#: mainwindow.cpp:1962
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "Opravdu chcete odstranit národnost '%1'?"
 
-#: mainwindow.cpp:1958
+#: mainwindow.cpp:1962
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Nationality Confirmation"

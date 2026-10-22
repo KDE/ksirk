@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirkskineditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:50+0000\n"
+"POT-Creation-Date: 2026-10-22 00:47+0000\n"
 "PO-Revision-Date: 2010-04-21 05:59+0200\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -2125,37 +2125,37 @@ msgctxt "@title:window"
 msgid "Delete Continent Confirmation"
 msgstr "Eerddelen utsöken"
 
-#: mainwindow.cpp:1889
+#: mainwindow.cpp:1893
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "Wullt Du Opgaav »%1« redig wegdoon?"
 
-#: mainwindow.cpp:1889
+#: mainwindow.cpp:1893
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Goal Confirmation"
 msgstr ""
 
-#: mainwindow.cpp:1948
+#: mainwindow.cpp:1952
 #, fuzzy, kde-format
 #| msgid "New nationality name"
 msgctxt "@title:window"
 msgid "New Nationality Name"
 msgstr "Naam för de niege Natschonaliteet"
 
-#: mainwindow.cpp:1948
+#: mainwindow.cpp:1952
 #, fuzzy, kde-format
 #| msgid "Enter the name of the new nationality"
 msgctxt "@label:textbox"
 msgid "Enter the name of the new nationality:"
 msgstr "Den Naam för de niege Natschonaliteet ingeven"
 
-#: mainwindow.cpp:1958
+#: mainwindow.cpp:1962
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "Wullt Du de Natschonaliteet »%1« redig wegdoon?"
 
-#: mainwindow.cpp:1958
+#: mainwindow.cpp:1962
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Nationality Confirmation"

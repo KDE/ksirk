@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:50+0000\n"
+"POT-Creation-Date: 2026-10-22 00:47+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -2068,35 +2068,35 @@ msgctxt "@title:window"
 msgid "Delete Continent Confirmation"
 msgstr "महाद्वीपस्य पुष्टिः विलोपयन्तु"
 
-#: mainwindow.cpp:1889
+#: mainwindow.cpp:1893
 #, kde-format
 msgid "Do you really want to delete goal '%1'?"
 msgstr "किं भवान् वास्तवमेव लक्ष्यं '%1' विलोपयितुम् इच्छति?"
 
-#: mainwindow.cpp:1889
+#: mainwindow.cpp:1893
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Goal Confirmation"
 msgstr "लक्ष्य पुष्टिकरणं विलोपयन्तु"
 
-#: mainwindow.cpp:1948
+#: mainwindow.cpp:1952
 #, kde-format
 msgctxt "@title:window"
 msgid "New Nationality Name"
 msgstr "नवीन राष्ट्रीयता नाम"
 
-#: mainwindow.cpp:1948
+#: mainwindow.cpp:1952
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Enter the name of the new nationality:"
 msgstr "नूतनराष्ट्रीयतायाः नाम प्रविशतु :"
 
-#: mainwindow.cpp:1958
+#: mainwindow.cpp:1962
 #, kde-format
 msgid "Do you really want to delete nationality '%1'?"
 msgstr "किं भवान् वास्तवमेव '%1' राष्ट्रियतां विलोपयितुम् इच्छति?"
 
-#: mainwindow.cpp:1958
+#: mainwindow.cpp:1962
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Nationality Confirmation"

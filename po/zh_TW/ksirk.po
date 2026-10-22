@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:50+0000\n"
+"POT-Creation-Date: 2026-10-22 00:47+0000\n"
 "PO-Revision-Date: 2024-05-07 18:59+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -940,6 +940,16 @@ msgstr "%1，您必須征服 %2 個國家，並在每個國家中擺放 %3 支�
 msgid "%1, you'll have to conquer %2 countries."
 msgstr "%1，您必須征服 %2 個國家。"
 
+#. i18n: file skins/default/Data/world.desktop line 516
+#. i18n: file skins/static/Data/world.desktop line 524
+#. i18n: file skins/legacy/Data/world.desktop line 524
+#. i18n: file skins/default/Data/world.desktop line 516
+#. i18n: file skins/static/Data/world.desktop line 524
+#. i18n: file skins/legacy/Data/world.desktop line 524
+#, no-c-format, kde-format
+msgid "*"
+msgstr ""
+
 #. i18n: file skins/default/Data/world.desktop line 517
 #. i18n: file skins/static/Data/world.desktop line 525
 #. i18n: file skins/legacy/Data/world.desktop line 525
@@ -1347,7 +1357,7 @@ msgstr ""
 "找不到 Skins 目錄─請檢查您的安裝。\n"
 "程式無法再繼續。"
 
-#: Dialogs/newGameDialogImpl.cpp:129 GameLogic/aiplayer.cpp:506
+#: Dialogs/newGameDialogImpl.cpp:129 GameLogic/aiplayer.cpp:511
 #: newgamesetup.cpp:45 Sprites/skinSpritesData.cpp:89
 #: Sprites/skinSpritesData.cpp:105
 #, kde-format
@@ -1538,7 +1548,7 @@ msgstr "離開 KsirK"
 msgid "localhost"
 msgstr "localhost"
 
-#: GameLogic/aiplayer.cpp:504
+#: GameLogic/aiplayer.cpp:509
 #, kde-format
 msgid ""
 "Error - No receiving country selected while computer player %2 had still 1 "
@@ -1754,40 +1764,40 @@ msgctxt "@action:button"
 msgid "Next Player"
 msgstr "下一個玩家"
 
-#: GameLogic/goal.cpp:156
+#: GameLogic/goal.cpp:161
 #, kde-format
 msgid "You must conquer the World!"
 msgstr "您必須征服世界！"
 
-#: GameLogic/goal.cpp:184
+#: GameLogic/goal.cpp:189
 #, kde-format
 msgid "%1 (already dead)"
 msgstr "%1（已死）"
 
-#: GameLogic/goal.cpp:195
+#: GameLogic/goal.cpp:200
 #, kde-format
 msgid "Error: no player to destroy"
 msgstr "錯誤：沒有玩家被毀滅"
 
-#: GameLogic/goal.cpp:231
+#: GameLogic/goal.cpp:236
 #, kde-format
 msgid "<br>%1 is still alive…"
 msgstr "<br/>%1 還活著…"
 
-#: GameLogic/goal.cpp:238 GameLogic/goal.cpp:252
+#: GameLogic/goal.cpp:243 GameLogic/goal.cpp:257
 #, kde-format
 msgid "<br>%2, you still have 1 country to conquer…"
 msgid_plural "<br>%2, you still have %1 countries to conquer…"
 msgstr[0] "<br/>%2，您還得征服 %1 個國家…"
 
-#: GameLogic/goal.cpp:242
+#: GameLogic/goal.cpp:247
 #, kde-format
 msgid "<br>Your goal is reached: %2 is dead and you possess %1 country."
 msgid_plural ""
 "<br>Your goal is reached: %2 is dead and you possess %1 countries."
 msgstr[0] "<br/>您已達到目標：%2 已死，並且您控制了 %1 個國家。"
 
-#: GameLogic/goal.cpp:264
+#: GameLogic/goal.cpp:269
 #, kde-format
 msgid ""
 "<br>%2, you have enough countries but you still have to put more than 1 army "
@@ -1798,30 +1808,30 @@ msgid_plural ""
 msgstr[0] ""
 "<br/>%2，您已有足夠的國家，但您還必須放超過 %1 支軍隊於這些國家中的 %3 個…"
 
-#: GameLogic/goal.cpp:269
+#: GameLogic/goal.cpp:274
 #, kde-format
 msgid "<br>%1, you still have to conquer "
 msgstr "<br/>%1，您仍然要征服"
 
-#: GameLogic/goal.cpp:275
+#: GameLogic/goal.cpp:280
 #, kde-format
 msgid "1 country in %2"
 msgid_plural "%1 countries in %2"
 msgstr[0] "%1 個國家，於 %2 內"
 
-#: GameLogic/goal.cpp:285
+#: GameLogic/goal.cpp:290
 #, kde-format
 msgctxt "@item:intext country list separator of last item"
 msgid " and "
 msgstr "以及"
 
-#: GameLogic/goal.cpp:289
+#: GameLogic/goal.cpp:294
 #, kde-format
 msgctxt "@item:intext country list separator of non-last item"
 msgid ", "
 msgstr "，"
 
-#: GameLogic/goal.cpp:295
+#: GameLogic/goal.cpp:300
 #, kde-format
 msgctxt ""
 "@info An element of the enumeration of the number of countries in the given "
@@ -1829,7 +1839,7 @@ msgctxt ""
 msgid "%1 in %2"
 msgstr "%1 於 %2"
 
-#: GameLogic/goal.cpp:317
+#: GameLogic/goal.cpp:322
 #, kde-format
 msgctxt "@title:window"
 msgid "Goal Display"
