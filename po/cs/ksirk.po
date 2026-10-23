@@ -947,7 +947,7 @@ msgstr "%1, budete muset dobýt %2 zemí."
 #. i18n: file skins/legacy/Data/world.desktop line 524
 #, no-c-format, kde-format
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #. i18n: file skins/default/Data/world.desktop line 517
 #. i18n: file skins/static/Data/world.desktop line 525

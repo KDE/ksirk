@@ -1,9 +1,9 @@
 # Translation of ksirk.po to Catalan
-# Copyright (C) 2008-2024 This_file_is_part_of_KDE
+# Copyright (C) 2008-2026 This_file_is_part_of_KDE
 #
 # SPDX-FileCopyrightText: 2008 Albert Astals Cid <aacid@kde.org>
 # SPDX-FileCopyrightText: 2008 Joan Juvanteny <jjuvan@grn.cat>
-# SPDX-FileCopyrightText: 2009-2015, 2017-2018, 2020-2024 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2009-2015, 2017-2018, 2020-2024, 2026 Josep M. Ferrer <txemaq@gmail.com>
 # SPDX-FileCopyrightText: 2009-2010 Manuel Tortosa <manutortosa@chakra-project.org>
 # SPDX-FileCopyrightText: 2014, 2017, 2020-2021 Antoni Bella Pérez <antonibella5@yahoo.com>
 msgid ""
@@ -11,14 +11,14 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-22 00:47+0000\n"
-"PO-Revision-Date: 2024-10-26 19:23+0200\n"
+"PO-Revision-Date: 2026-10-22 09:04+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 25.04.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
@@ -949,7 +949,7 @@ msgstr "%1, haureu de conquerir %2 països."
 #. i18n: file skins/legacy/Data/world.desktop line 524
 #, no-c-format, kde-format
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #. i18n: file skins/default/Data/world.desktop line 517
 #. i18n: file skins/static/Data/world.desktop line 525
