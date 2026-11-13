@@ -1,0 +1,975 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY i18n-ksirkskineditor '<application
+>محرّر واجهة حرب العروش</application
+>'>
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Arabic "INCLUDE">
+]>
+
+<book id="ksirk" lang="&language;">
+
+<bookinfo>
+<title
+>دليل حرب العروش</title>
+
+<authorgroup>
+  <author
+><firstname
+>Ga&euml;l</firstname
+> <othername
+>Kleag</othername
+> <surname
+>de Chalendar</surname
+> <affiliation
+><address
+><email
+>kleag@free.fr</email
+></address
+></affiliation>
+  </author>
+  <author
+><firstname
+>Nemanja</firstname
+> <othername
+></othername
+> <surname
+>Hirsl</surname
+> <affiliation
+><address
+><email
+>nemhirsl@gmail.com</email
+></address
+></affiliation>
+  </author>
+  <!-- Translators: put here the copyright notice of the translation -->
+  <othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+  <year
+>2002-2012</year>
+  <holder
+>Ga&euml;l de Chalendar</holder>
+</copyright>
+<copyright>
+  <year
+>2013</year>
+  <holder
+>Nemanja Hirsl</holder>
+</copyright>
+<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
+     and in the FDL itself on how to use it. -->
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<!-- Date and version information of the documentation
+Don't forget to include this last date and this last revision number, we
+need them for translation coordination !
+Please respect the format of the date (DD/MM/YYYY) and of the version
+(V.MM.LL), it could be used by automation scripts.
+Do NOT change these in the translation. -->
+<date
+>2021-10-14</date>
+<releaseinfo
+>ترس كيدي 21.08</releaseinfo>
+
+<!-- Abstract about this handbook -->
+<abstract>
+  <para
+>حرب العروش نسخة حاسوبية من لعبة استراتيجية معروفة.</para>
+</abstract>
+
+<!-- This is a set of Keywords for indexing by search engines.
+Please at least include KDE, the KDE package it is in, the name
+ of your application, and a few relevant keywords. -->
+<keywordset>
+  <keyword
+>كيدي</keyword>
+  <keyword
+>الذكاء الاصطناعي</keyword>
+  <keyword
+>حر</keyword>
+  <keyword
+>لعبة</keyword>
+  <keyword
+>رخصة جنو العمومية</keyword>
+  <keyword
+>حرب العروش</keyword>
+  <keyword
+>شبكة</keyword>
+  <keyword
+>مخاطرة</keyword>
+  <keyword
+>استراتيجية</keyword>
+</keywordset>
+</bookinfo>
+
+<!-- The contents of the documentation begin here.  Label
+each chapter so with the id attribute. This is necessary for two reasons: it
+allows you to easily reference the chapter from other chapters of your
+document, and if there is no ID, the name of the generated HTML files will vary
+from time to time making it hard to manage for maintainers and for the CVS
+system. Any chapter labeled (OPTIONAL) may be left out at the author's
+discretion. Other chapters should not be left out in order to maintain a
+consistent documentation style across all KDE apps. -->
+
+<chapter id="introduction">
+<title
+>مقدمة</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+<para
+>حرب العروش نسخة حاسوبية من لعبة استراتيجية معروفة. توجد نسخ تجارية ونسخ برمجيات حرة أخرى لكنني (Gaël de Chalendar) أنشأت هذه اللعبة مبدئيًا كتمرين لتعلم لغة C++، لذا طوّرتها حتى وصلت إلى هذه النقطة (راجع ملف <filename
+>README</filename
+> للتفاصيل).</para>
+
+<screenshot>
+  <screeninfo
+>هذه لقطة شاشة للعبة حرب العروش</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="firing-screenshot.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>لقطة شاشة</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>في الإصدارة الحالية، تعد حرب العروش لعبة متعددة اللاعبين تدعم الشبكة ومزودة بذكاء اصطناعي. (راجع ملف <filename
+>TODO</filename
+> للتفاصيل)</para>
+
+<para
+>يوفر هذا الدليل المعلومات الأساسية التي تحتاجها لبدء اللعب فقط. يرجى قراءة تلميحات الأدوات ورسائل شريط الحالة لاستكمال معلوماتك.</para>
+
+<para
+>هدف اللعبة ببساطة هو غزو العالم... ويُنفذ ذلك بمهاجمة جيرانك بجيوشك. أليس هذا سلميًا؟ :-)</para>
+</chapter>
+
+<chapter id="using-kapp">
+<title
+>استخدام حرب العروش</title>
+
+<!-- This chapter should tell the user how to use your app. You should use as
+many sections (Chapter, Sect1, Sect3, &etc;) as is necessary to fully document
+your application. -->
+
+<sect1 id="playing-ksirk">
+<title
+>لعب حرب العروش</title>
+
+<para
+>ملاحظة تمهيدية: يمكن تمرير الخريطة بثلاث طرق:</para>
+
+  <itemizedlist>
+    <listitem
+><para
+>يمكنك وضع الفأرة بالقرب من حدود النافذة وستُمرر الخريطة في ذلك الاتجاه</para
+></listitem>
+    <listitem
+><para
+>يمكنك استخدام عجلة الفأرة: بدون مفتاح تعديل، ستُمرر عموديًا؛ وعند الضغط على مفتاح &Alt;، ستُمرر أفقيًا</para
+></listitem>
+    <listitem
+><para
+>يمكنك استخدام أسهم لوحة المفاتيح</para
+></listitem>
+  </itemizedlist>
+
+  <sect2 id="mainmenu">
+  <title
+>بدء لعبة</title>
+
+  <para
+>عند بدء حرب العروش، تُعرض لك القائمة الرئيسة.</para>
+
+  <screenshot>
+    <screeninfo
+>القائمة الرئيسة لحرب العروش</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="introscreen.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>القائمة الرئيسة</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <variablelist>
+    <varlistentry>
+      <term
+><guibutton
+>لعبة محلية جديدة</guibutton
+></term>
+      <listitem
+><para
+><action
+>يبدأ لعبة جديدة.</action
+></para
+></listitem>
+    </varlistentry>
+    <varlistentry>
+      <term
+><guibutton
+>لعبة شبكة TCP/IP قياسية جديدة</guibutton
+></term>
+      <listitem
+><para
+><action
+>بدء لعبة جديدة باستخدام <ulink url="https://en.wikipedia.org/wiki/Internet_protocol_suite"
+>حزمة بروتوكولات الإنترنت</ulink
+>.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term
+><guibutton
+>انضم إلى لعبة شبكة TCP/IP قياسية</guibutton
+></term>
+      <listitem
+><para
+><action
+>انضمام إلى لعبة أنشأها مستخدم آخر باستخدام <ulink url="https://en.wikipedia.org/wiki/Internet_protocol_suite"
+>حزمة بروتوكولات الإنترنت</ulink
+>.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term
+><guibutton
+>حمّل...</guibutton
+></term>
+      <listitem
+><para
+><action
+>استخدم هذا لتحميل لعبة حُفظت مسبقًا.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term
+><guibutton
+>أنهِ</guibutton
+></term>
+      <listitem
+><para
+><action
+>ربما لا ترغب في اللعب أخيرًا؟</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+
+  <para
+>إذا ضغطت على <guibutton
+>لعبة محلية جديدة</guibutton
+> فسيُعرض لك حواري <guilabel
+>خصائص اللعبة الجديدة</guilabel
+> حيث ستتمكن من اختيار عدد اللاعبين، والواجهة (أو السمة) المستخدمة، ونوع اللعبة (غزو الهدف أو امتلاك هدف محدد) وأخيرًا ما إذا كانت هذه اللعبة ستُلعب مع لاعبين عبر الإنترنت أو إذا كانت محلية بحتة. يمكن تنزيل واجهات جديدة باستخدام زر <guibutton
+>نزّل واجهات جديدة…</guibutton
+>.</para>
+
+  <screenshot>
+    <screeninfo
+>حواري لعبة جديدة</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="newgamedialog.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>حواري لعبة جديدة</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>لبدء لعبة شبكة TCP/IP، اختر خيار <guilabel
+>لعبة شبكة TCP/IP قياسية جديدة</guilabel
+> في شاشة المقدمة. بعد الضغط على هذا الزر ستتمكن من اختيار معاملات الشبكة: عدد اللاعبين المحليين ومنفذ TCP الذي يُنتظر عليه الاتصالات.</para>
+
+  <screenshot>
+    <screeninfo
+>حواري معاملات لعبة الشبكة</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="numnetplayersdialog.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>حواري معاملات لعبة الشبكة</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>بعد ذلك، سيتمكن لاعبو الشبكة من الاتصال باختيار <guilabel
+>انضم إلى لعبة شبكة TCP/IP قياسية</guilabel
+> في شاشة المقدمة وعبر تحديد عنوان IP أو اسم المضيف للمضيف ورقم المنفذ الذي ضبطته للتو.</para>
+
+  <screenshot>
+    <screeninfo
+>حواري الانضمام إلى لعبة شبكة</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="joinnetgame.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>حواري الانضمام إلى لعبة شبكة</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>يُشار إلى كل اتصال بصف جديد في جدول <guilabel
+>اللاعبون</guilabel
+> أسفل مصغرة الخريطة.</para>
+
+  <screenshot>
+    <screeninfo
+>صف لاعب جديد</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="justjoined.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>صف لاعب جديد</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>لنفترض أنك أبقيت على جميع الإعدادات المبدئية وضغطت على <guibutton
+>التالي</guibutton
+>. ستقوم حينها بإعداد لاعبين اثنين، واحدًا تلو الآخر. لكل منهما، ستختار اسمًا وجنسية، وإذا أردت، اضبط كلمة مرور بحيث لا يمكن لأي شخص آخر غيرك إعادة استخدام هذا اللاعب عند إعادة تحميل هذه اللعبة المحفوظة. وأخيرًا، ستحدد هنا ما إذا كان هذا اللاعب يلعبه الحاسوب أو إنسان.</para>
+
+  <screenshot>
+    <screeninfo
+>حواري إعداد اللاعب</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="playersetupdialog.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>حواري إعداد اللاعب</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>بعد ذلك، بعد الضغط على <guibutton
+>ابدأ</guibutton
+>، إذا اخترت اللعب بهدف، سيُعرض هدف كل لاعب محلي مسبوقًا بتحذير بحيث يمكن للاعبين الآخرين الذين ينظرون إلى نفس الحاسوب الابتعاد بتكتم أثناء عرض الهدف.</para>
+
+  <screenshot>
+    <screeninfo
+>رسالة تحذير عرض الهدف</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="displaygoalwarningmessage.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>رسالة تحذير عرض الهدف</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <screenshot>
+    <screeninfo
+>حواري عرض الهدف</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="displaygoalmessage.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>حواري عرض الهدف</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+  </sect2>
+
+  <sect2 id="distribution">
+  <title
+>التوزيع</title>
+
+  <para
+>في بداية اللعبة، تُوزع البلدان على جميع اللاعبين. يحتوي كل بلد على جيش واحد (يمثله جندي مشاة) في البداية. يمتلك كل لاعب بعض الجيوش لتوزيعها على بلدانه في دوره (يُشار إليه بوجود اسمه وعلمه في شريط الحالة). لاحظ أن خمسة جيوش يمثلها فارس مشاة و10 يمثلها مدفع.</para>
+
+  <para
+>لوضع جيش في أحد بلدانك، انقر عليه بـ &LMB;. ولإزالة جيش، انقر بـ &RMB;. لاحظ، كقاعدة عامة، أنك لن تتمكن أبدًا من إزالة جيوش أكثر من العدد الذي وضعته.</para>
+
+  <screenshot>
+    <screeninfo
+>وضع الجيوش</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="placingarmies.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>وضع الجيوش</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>عندما يوزع لاعب جميع جيوشه، يُختار اللاعب التالي آليًا للقيام بالمهمة نفسها. وعندما ينتهي جميع اللاعبين من توزيع جيوشهم، هناك احتمالان يمكن اختيارهما بواسطة زرين ظاهريين في اللوحة اليمنى:</para>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="recycling.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>إعادة توزيع</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>أعد التدوير</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>يريد أحد اللاعبين تغيير بعض خياراته. يمكن للاعب الأول حينها إزالة جيش وضعه للتو في بلد بـ &RMB; ووضعه في بلد آخر بـ &LMB;. وعندما ينتهي، يمنح التحكم للاعب التالي باستخدام زر <guibutton
+>تحقق</guibutton
+>. وعندما ينتهي جميع اللاعبين من إعادة توزيعهم، يُعرض الزران مرة أخرى.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="recyclingFinished.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>نهاية إعادة التوزيع</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>تمّ</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>أُنهيت إعادة التوزيع ويمكن للعبة أن تستمر.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+  </sect2>
+
+  <sect2 id="fight">
+  <title
+>قتال</title>
+
+  <para
+>بعد إعادة التوزيع، يبدأ الدور. يلعب كل لاعب في دوره. وله الخيار في:</para>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="joueurSuivant.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>اللاعب التالي</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>اللاعب التالي</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>ينتهي دور اللاعب الحالي ويأتي دور اللاعب التالي.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="attackOne.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>هجوم 1</phrase
+></textobject>
+        </inlinemediaobject
+>&nbsp; <inlinemediaobject
+> <imageobject
+><imagedata fileref="attackTwo.png" format="PNG"/></imageobject
+> <textobject
+><phrase
+>هجوم 2</phrase
+></textobject
+> </inlinemediaobject
+>&nbsp; <inlinemediaobject
+> <imageobject
+><imagedata fileref="attackThree.png" format="PNG"/></imageobject
+> <textobject
+><phrase
+>هجوم 3</phrase
+></textobject
+> </inlinemediaobject
+> <guibutton
+>هاجم بجيش واحد أو اثنين أو ثلاثة</guibutton
+>&nbsp; <inlinemediaobject
+> <imageobject
+><imagedata fileref="autoattack.png" format="PNG"/></imageobject
+> <textobject
+><phrase
+>هجوم آلي</phrase
+></textobject
+> </inlinemediaobject
+> <guibutton
+>هجوم آلي</guibutton
+> </term>
+
+      <listitem
+><para
+>للهجوم، اسحب بالفأرة من البلد المهاجم وأفلته في البلد المهاجَم. ستُعرض لك حينها قائمة سياقية تعرض المدخلات المذكورة أعلاه.</para>
+
+        <screenshot>
+          <screeninfo
+>قائمة الهجوم</screeninfo>
+          <mediaobject>
+            <imageobject
+><imagedata fileref="attackmenu.png" format="PNG"/></imageobject>
+            <textobject
+><phrase
+>قائمة الهجوم</phrase
+></textobject>
+          </mediaobject>
+        </screenshot>
+
+        <para
+>لكي يهاجم البلد س البلد ص بـ س جيوش، يجب استيفاء شرطين:</para>
+
+        <itemizedlist>
+          <listitem
+><para
+>يجب أن يكون البلدان متجاورين؛</para
+></listitem>
+          <listitem
+><para
+>يجب أن يمتلك البلد س على الأقل س+1 من الجيوش قبل الهجوم.</para
+></listitem>
+        </itemizedlist>
+
+        <para
+>إذا كان الهجوم صالحًا، يُعرض حواري إذا لزم الأمر للمدافع ليختار ما إذا كان يريد الدفاع بجيش واحد أو جيشين أو يترك الحاسوب يقرر.</para>
+
+        <para
+>عندما يُنفذ اختيار المدافع، سيحدث القتال ويُستكمل. سيُشرح هذا أدناه.</para>
+
+        <screenshot>
+          <screeninfo
+>حواري الدفاع</screeninfo>
+          <mediaobject>
+            <imageobject
+><imagedata fileref="defensedialog.png" format="PNG"/></imageobject>
+            <textobject
+><phrase
+>حواري الدفاع</phrase
+></textobject>
+          </mediaobject>
+        </screenshot>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="moveArmies.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>حرك الجيوش</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>تحريك الجيوش من بلد إلى آخر</guibutton>
+      </term>
+
+      <listitem
+><para
+><action
+>هذا هو الإجراء الأخير في دور اللاعب. يمنح إمكانية تحريك بعض الجيوش من أحد بلدانه إلى بلد آخر مجاور للأول. لاختيار البلدين، يرجى السحب والإفلات كما تفعل أثناء الهجوم. عند تحديد كلا البلدين، يُعرض منزلق يمكنك من خلاله اختيار عدد الجيوش التي ستكون في كل بلد بعد ذلك.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+  </sect2>
+
+  <sect2  id="fight-outcome">
+  <title
+>نتيجة القتال</title>
+
+  <para
+>لكل جيش في القتال هناك رمية نرد مقابلة. اللاعب الذي يسجل رقمًا أعلى في النرد، سواء كان مهاجمًا أو مدافعًا، يفوز والذي يسجل رقمًا أصغر يفقد جيوشًا وفقًا لعدد النرد المرمي.</para>
+
+  <screenshot>
+    <screeninfo
+>عُرضت نتيجة الهجوم</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="shownumberofarmies.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>عُرضت نتيجة الهجوم</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+
+  <para
+>إذا وصل عدد الجيوش في بلد المدافع إلى 0، تتغير ملكية هذا البلد إلى المهاجم: يُرفع علمه ويُنصب أحد جيوشه المهاجمة في بلده الجديد. يُعرض منزلق "تحريك الجيوش" كما هو الحال في تحركات نهاية الدور.</para>
+
+  <screenshot>
+    <screeninfo
+>منزلق الغزو</screeninfo>
+    <mediaobject>
+      <imageobject
+><imagedata fileref="invasionslider.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>منزلق الغزو</phrase
+></textobject>
+    </mediaobject>
+  </screenshot>
+  </sect2>
+
+  <sect2  id="end_of_turn">
+  <title
+>نهاية الدور</title>
+
+  <para
+>لإنهاء دورك الحالي، إذا كنت لا تريد تحريك الجيوش، يمكنك الضغط على زر <guibutton
+>اللاعب التالي</guibutton
+> في شريط الأدوات.</para>
+
+  <para
+>عندما يلعب الجميع، ينتهي الدور. تُوزع بعض الجيوش على اللاعبين، بناءً على البلدان التي يمتلكونها: 1 لكل مجموعة من ثلاثة بلدان، بحد أدنى 3. هناك أيضًا مكافأة للاعبين الذين يمتلكون قارة كاملة، وتختلف لكل قارة. قيم المكافآت للواجهة المبدئية هي:</para>
+
+  <table>
+    <title
+>المكافأة الناتجة عن القارات</title>
+    <tgroup cols="2">
+      <thead>
+        <row>
+          <entry
+>قارة</entry>
+          <entry
+>مكافأة</entry>
+        </row>
+      </thead>
+      <tbody>
+        <row
+><entry
+>أمريكا الشمالية</entry
+><entry
+>5</entry
+></row>
+        <row
+><entry
+>أمريكا الجنوبية</entry
+><entry
+>2</entry
+></row>
+        <row
+><entry
+>أوروبا</entry
+><entry
+>5</entry
+></row>
+        <row
+><entry
+>أفريقيا</entry
+><entry
+>3</entry
+></row>
+        <row
+><entry
+>آسيا</entry
+><entry
+>7</entry
+></row>
+        <row
+><entry
+>منطقة المحيط الهادئ</entry
+><entry
+>2</entry
+></row>
+      </tbody>
+    </tgroup>
+  </table>
+
+  <para
+>عندما ينتهي لاعب من توزيع جيوشه، ينقر على زر <guibutton
+>تحقق</guibutton
+> للسماح للاعب التالي بتوزيع جيوش المكافأة الخاصة به. وكما هو الحال في التوزيع المبدئي، عندما يضع جميع اللاعبين جيوشهم، يمكنهم بدء دورة إعادة توزيع جديدة أو بدء دور جديد…</para>
+  </sect2>
+
+<!-- Does not work for current TCP/IP games
+<sect2 id="sending-messages">
+<title
+>Sending messages to other players</title>
+<para>
+If you play a local game and want to communicate with the other players, well, let's speak (supposing you have no accessibility problems)... But if you are playing a network game, you can use the chat frame at the bottom of the window (it can be hidden or showed using the arrows). Just type in your message and hit &Enter;.
+          <screenshot>
+            <screeninfo
+>Sending messages</screeninfo>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="messagesent.png" format="PNG"/>
+              </imageobject>
+              <textobject>
+                <phrase
+>Sending messages</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+
+</para>
+</sect2>
+-->
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>مرجع الأوامر</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>نافذة حرب العروش الرئيسة</title>
+
+  <sect2>
+  <title
+>الأزرار</title>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="application-exit.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>أنهِ اللعبة</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>أنهِ</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>يؤدي إلى إنهاء البرنامج.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="document-new.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>لعبة جديدة</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>لعبة جديدة</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>بدء لعبة جديدة. سيؤدي ذلك إلى عرض حواري يطلب عدد اللاعبين. بعد ذلك، سيُطلب من كل لاعب اسمه في حواري آخر.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+</sect2>
+
+</sect1>
+</chapter>
+
+<chapter id="developers">
+<title
+>دليل المطور لحرب العروش</title>
+
+<para
+>يرجى الرجوع إلى <ulink url="https://api.kde.org/"
+>https://api.kde.org/</ulink
+> لتوثيق واجهة برمجة التطبيقات (API). كان كاملًا تمامًا ولكنه قديم قليلًا حاليًا. لا توجد تعليقات في ملفات التنفيذ بامتداد <literal role="extension"
+>.cpp</literal
+>.</para>
+
+<para
+>لاحظ أنني طورت هذه اللعبة في الأصل تحت نظام &Windows; باستخدام <application
+>Borland C++</application
+> و <application
+>WinG</application
+>. ثم نقلتها إلى &Java; قبل تحويلها مرة أخرى إلى C++ وكيدي. في البداية استخدمت اللغة الفرنسية أو مزيجًا من الفرنسية والإنجليزية لتسمية المعرفات (أسماء الأصناف، والطرق، والأعضاء، إلخ). كما استخدمت الفرنسية في التعليقات. عندما قررت توزيع هذه اللعبة، قررت تحويل كل شيء إلى الإنجليزية... ولكنني بالتأكيد لست متحدثًا أصليًا للإنجليزية: يرجى اقتراح أو إجراء وإرسال تصحيحات، سواء لتعليقات الكود أو لهذا التوثيق.</para>
+
+</chapter>
+
+<chapter id="skins">
+<title
+>إنشاء واجهات جديدة</title>
+
+<para
+>تأتي حرب العروش مع محرر واجهات، يسمى <command
+>ksirkskineditor</command
+>، يسمح بتحرير جميع بيانات الواجهة، بمجرد توفر الرسوميات (الخريطة، والعناصر الرسومية، إلخ) في ملف &SVG;. يرجى مراجعة دليل محرّر واجهة حرب العروش لمزيد من التفاصيل.</para>
+
+</chapter>
+
+<chapter id="faq">
+<title
+>أسئلة وأجوبة</title
+>&reporting.bugs; &updating.documentation; </chapter>
+
+<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+<title
+>الحقوق والترخيص</title>
+
+<para
+>حرب العروش</para>
+
+<para
+>حقوق نشر البرنامج 2002-2012 Ga&euml;l de Chalendar <email
+>kleag@free.fr</email
+></para>
+
+<para
+>حقوق نشر البرنامج 2013 Nemanja Hirsl <email
+>nemhirsl@gmail.com</email
+></para>
+
+<para
+>المساهمون: Robin Doer، و &Albert.Astals.Cid;، و Michal Golunski (الترجمة البولندية). </para>
+
+<para
+>حقوق نشر التوثيق 2002-2008 Ga&euml;l de Chalendar <email
+>kleag@free.fr</email
+></para>
+
+<para
+>الترجمة: زايد السعيدي <email
+>zayed.alsaidi@gmail.com</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>التثبيت</title>
+
+<sect1 id="configuration">
+<title
+>الضبط</title>
+
+<para
+>يفتح بند القائمة <menuchoice
+><guimenu
+>الإعدادات</guimenu
+> <guimenuitem
+>اضبط حرب العروش…</guimenuitem
+></menuchoice
+> حواريًا يسمح لك بـ:</para>
+
+<screenshot>
+  <screeninfo
+>حواري التفضيلات</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="preferences.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>حواري التفضيلات</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+
+<itemizedlist>
+  <listitem
+><para
+>تمكين الأصوات أو تعطيلها&nbsp;؛</para
+></listitem>
+  <listitem
+><para
+>ضبط سرعة العناصر الرسومية (من بطيئة إلى فورية)&nbsp;؛</para
+></listitem>
+  <listitem
+><para
+>تمكين المساعدات السياقية المعروضة في المنبثقات أو تعطيلها&nbsp;؛</para
+></listitem>
+  <listitem
+><para
+>إظهار عدد الجيوش في كل بلد أو إخفاؤه. تعرض اللقطة التالية الخريطة عند عرض عدد الجيوش.</para>
+
+    <screenshot>
+      <screeninfo
+>عرض عدد الجيوش</screeninfo>
+      <mediaobject>
+        <imageobject
+><imagedata fileref="shownumberofarmies.png" format="PNG"/></imageobject>
+        <textobject
+><phrase
+>عرض عدد الجيوش</phrase
+></textobject>
+        </mediaobject>
+    </screenshot>
+  </listitem>
+</itemizedlist>
+</sect1>
+
+</appendix>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->
