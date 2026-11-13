@@ -1,0 +1,1312 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY ksirkskineditor '<application
+>KsirK Skin Editor</application
+>'>
+  <!ENTITY i18n-ksirkskineditor '<application
+>محرّر واجهة حرب العروش</application
+>'>
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Arabic "INCLUDE">
+]>
+
+<book id="ksirkskineditor" lang="&language;">
+
+<bookinfo>
+<title
+>دليل محرّر واجهة حرب العروش</title>
+
+<authorgroup>
+  <author
+><firstname
+>Ga&euml;l</firstname
+> <othername
+>Kleag</othername
+> <surname
+>de Chalendar</surname
+> <affiliation
+><address
+><email
+>Kleag@free.fr</email
+></address
+></affiliation>
+  </author>
+  <!-- Translators: put here the copyright notice of the translation -->
+  <othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+  <year
+>2009</year>
+  <holder
+>Ga&euml;l de Chalendar</holder>
+</copyright>
+<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
+     and in the FDL itself on how to use it. -->
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<!-- Date of the documentation
+Change date/releaseinfo only if
+   docbook is updated and verified to be valid for the current app version
+   or
+   docbook is proofread and verified to be valid for the current app version
+Don't forget to include this last date.
+Please respect the format of the date (YYYY-MM-DD),it is used by scripts.
+-->
+<date
+>2021-10-14</date>
+
+<!--version information of Frameworks/Plasma/Applications this documentation is valid for.
+Example:
+Frameworks xx.yy for docbooks in frameworks
+Plasma xx.yy for docbooks in plasma workspace
+Applications xx.yy for docbooks released as Applications
+xx.yy (Applications xx.yy) for docbooks with own version released as Applications
+$applicationname xx.yy for applications with independent release schedule (extragear/playground)
+-->
+<releaseinfo
+>ترس كيدي 21.08</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+  <para
+>&ksirk; هي نسخة حاسوبية من لعبة استراتيجية معروفة. يمكن تغيير واجهتها بالكامل. يشرح هذا الدليل كيفية إنشاء واجهات جديدة من الصفر، باستخدام متصفح ملفات، ومحرّر صور &SVG; و &i18n-ksirkskineditor;.</para>
+</abstract>
+
+<!-- This is a set of Keywords for indexing by search engines.
+Please at least include KDE, the KDE package it is in, the name
+ of your application, and a few relevant keywords. -->
+
+<keywordset>
+  <keyword
+>كيدي</keyword>
+  <keyword
+>المحرّر</keyword>
+  <keyword
+>حر</keyword>
+  <keyword
+>لعبة</keyword>
+  <keyword
+>رخصة جنو العمومية</keyword>
+  <keyword
+>مخاطرة</keyword>
+  <keyword
+>واجهة</keyword>
+  <keyword
+>استراتيجية</keyword>
+</keywordset>
+
+</bookinfo>
+
+<!-- The contents of the documentation begin here.  Label
+each chapter so with the id attribute. This is necessary for two reasons: it
+allows you to easily reference the chapter from other chapters of your
+document, and if there is no ID, the name of the generated HTML files will vary
+from time to time making it hard to manage for maintainers and for the CVS
+system. Any chapter labeled (OPTIONAL) may be left out at the author's
+discretion. Other chapters should not be left out in order to maintain a
+consistent documentation style across all KDE apps. -->
+
+<chapter id="introduction">
+<title
+>مقدمة</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+<para
+>&ksirk; هي نسخة حاسوبية من لعبة استراتيجية معروفة. يمكن تغيير واجهتها بالكامل. يشرح هذا الدليل كيفية إنشاء واجهات جديدة من الصفر، باستخدام متصفح ملفات، ومحرّر صور &SVG; و &i18n-ksirkskineditor;.</para>
+
+<screenshot>
+  <screeninfo
+>إليك لقطة شاشة لـ &i18n-ksirkskineditor;</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="main-snapshot.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>لقطة شاشة</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>توجد ثلاث خطوات رئيسة لإنشاء واجهة جديدة: إنشاء هرمية المجلدات؛ إنشاء الرسوميات المجمّعة داخل ملف &SVG;؛ ثم وضع العينات الرسومية وتسمية العناصر باستخدام &i18n-ksirkskineditor;.</para>
+</chapter>
+
+<chapter id="using-kapp">
+<title
+>إنشاء واجهة &ksirk;</title>
+
+<para
+>لعبة &ksirk; قابلة لتغيير الواجهة بالكامل. لمن لديهم قدرات رسومية، فإن إنشاء واجهة جديدة بسيط ببساطة نسخ واجهة موجودة، وتحرير الرسوميات أو تغييرها وتحديث البيانات في ملف ضبط بامتداد <literal role="extension"
+>.desktop</literal
+>، ويُنفذ ذلك باستخدام &i18n-ksirkskineditor;. الخطوة الأخيرة هي تحرير الملف الذي يصف ما سيُثبّت.</para>
+
+<para
+>أُخذت جميع الأمثلة (النصوص والصور) من الواجهة المبدئية للعبة &ksirk;.</para>
+
+<sect1 id="sdf">
+<title
+>هيكلية المجلدات والملفات</title>
+
+<itemizedlist>
+  <listitem
+><para
+><filename class="directory"
+>Data/</filename
+> : البيانات التي يستخدمها البرنامج للتعامل مع صور الواجهة.</para>
+    <itemizedlist>
+      <listitem
+><para
+><filename
+>CMakeLists.txt</filename
+> : يصف ما سيُثبّت.</para
+></listitem>
+      <listitem
+><para
+><filename
+>onu.desktop</filename
+> : الملف الرئيسي لوصف الواجهة. انظر وصفه أدناه.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+><filename class="directory"
+>Images/</filename
+> : صور الواجهة (الخريطة، العينات الرسومية، إلخ.)</para>
+    <itemizedlist>
+      <listitem
+><para
+><filename
+>CMakeLists.txt</filename
+> : يصف ما سيُثبّت.</para
+></listitem>
+      <listitem
+><para
+><filename
+>pool.svg</filename
+> : الخريطة وجميع العينات الرسومية المستخدمة في هذه الواجهة.</para
+></listitem>
+      <listitem
+><para
+><filename
+>map-mask.png</filename
+> : الصورة التي تسمح للبرنامج بمعرفة الدولة التي يوجد فوقها الفأرة أثناء اللعبة (انظر أدناه).</para
+></listitem>
+      <listitem
+><para
+><literal role="extension"
+>*.png</literal
+> : الصور الأخرى هنا هي صور الأزرار.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+><filename
+>CMakeLists.txt</filename
+> : يصف ما سيُثبّت.</para
+></listitem>
+  <listitem
+><para
+><filename class="directory"
+>Sounds/</filename
+> : ملفات الصوت للواجهة.</para
+></listitem>
+</itemizedlist>
+
+  <sect2 id="tdd">
+  <title
+>مجلد البيانات Data</title>
+
+  <para
+>يحتوي هذا المجلد على ملف واحد فقط، <filename
+>world.desktop</filename
+>. هذا الملف هو وصف لمحتوى الواجهة. يُستخدم لوصف تنظيم العالم وكيفية عرضه. لست مضطرًا لملئه يدويًا حيث سيتولى &i18n-ksirkskineditor; ذلك. ولكن من أجل الاكتمال، سنصف هيكليته الآن.</para>
+
+  <para
+>تحتوي مجموعة <literal
+>onu</literal
+> على عدد من مدخلات الدول، وعدد من مدخلات الجنسيات وأخيرًا عدد من مدخلات القارات. ثم تحتوي مجموعات مختلفة على وصف العينات الرسومية المختلفة، ووصف مختلف الدول والقارات والجنسيات والأهداف.</para>
+
+  <para
+>تصف الأقسام التالية محتوى كل مجموعة.</para>
+
+    <sect3>
+    <title
+>مجموعة <literal
+>onu</literal
+></title>
+
+    <table>
+      <title
+>مدخلات مجموعة <literal
+>onu</literal
+></title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>اسم المدخلة</entry>
+            <entry
+>المعنى</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>العرض</literal
+></entry>
+            <entry
+>عرض خريطة الواجهة.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>الارتفاع</literal
+></entry>
+            <entry
+>ارتفاع خريطة الواجهة.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>مسار الواجهة</literal
+></entry>
+            <entry
+>مسار الواجهة بالنسبة لمسار بيانات التطبيق (مثلًا <filename
+>skins/default</filename
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>عدد الدول</literal
+></entry>
+            <entry
+>عدد الدول (42 في الواجهة المبدئية). يجب أن يكون هناك نفس العدد من مجموعات الدول أدناه.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>عدد الجنسيات</literal
+></entry>
+            <entry
+>عدد الجنسيات (6 في الواجهة المبدئية). يجب أن يكون هناك نفس العدد من مجموعات الجنسيات أدناه.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>عدد القارات</literal
+></entry>
+            <entry
+>عدد القارات (6 في الواجهة المبدئية). يجب أن يكون هناك نفس العدد من مجموعات القارات أدناه.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>الحوض</literal
+></entry>
+            <entry
+>مسار واسم ملف الحوض بالنسبة لمسار الواجهة (مثلًا <filename
+>Images/pool.svg</filename
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>قناع الخريطة</literal
+></entry>
+            <entry
+>مسار واسم ملف قناع الخريطة بالنسبة لمسار الواجهة (مثلًا <filename
+>Images/map-mask.png</filename
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>إصدار التنسيق</literal
+></entry>
+            <entry
+>إصدار تنسيق ملف الواجهة (2.0).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>الاسم</literal
+></entry>
+            <entry
+>اسم عرض الواجهة.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>الوصف</literal
+></entry>
+            <entry
+>الوصف الطويل للواجهة.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>فرق-Y-بين-المقاتلين-والعلم</literal
+></entry>
+            <entry
+>فرق الارتفاع بين الأعلام وعينات المدافع.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>العرض-بين-العلم-والمقاتل</literal
+></entry>
+            <entry
+>عدد البكسلات بين البكسل في أقصى اليسار للعلم والبكسل في أقصى اليمين للمدفع البسيط (عندما لا يطلق النار ولا ينفجر).</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>مجموعات وصف العينات الرسومية</title>
+
+    <para
+>تُعرَّف كل فئة من العينات الرسومية (العلم، المشاة، الفرسان، المدفع، مدفع يطلق النار، ومدفع ينفجر) بواسطة مجموعة. تمتلك بعض العينات فقط مدخلة للعرض. تُستخدم هذه المدخلة لتحديد الموضع النسبي أثناء التحريك: لا ينبغي للمدافع، سواء كانت تطلق النار أو تنفجر، أن <quote
+>تتحرك</quote
+> حول علم الدولة أثناء القتال.</para>
+
+    <table>
+      <title
+>مدخلات مجموعة وصف العينة الرسومية</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>اسم المدخلة</entry>
+            <entry
+>المعنى</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>العرض</literal
+></entry>
+            <entry
+>العرض المرجعي لإطارات عينة العلم.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>الارتفاع</literal
+></entry>
+            <entry
+>الارتفاع المرجعي لإطارات عينة العلم.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>إطارات</literal
+></entry>
+            <entry
+>عدد إطارات العينة الرسومية.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>الإصدارات</literal
+></entry>
+            <entry
+>عدد إصدارات عينات الأعلام.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>مجموعات وصف الدول</title>
+
+    <para
+>تمتلك كل دولة مُدرجة في مدخلة الدول ضمن مجموعة <literal
+>onu</literal
+>، مجموعتها الخاصة التي تحمل اسم الدولة كلصيقة لها. يسرد الجدول أدناه مدخلات هذه المجموعات.</para>
+
+    <table>
+      <title
+>مدخلات الدولة</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>اسم المدخلة</entry>
+            <entry
+>المعنى</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>المعرّف</literal
+></entry>
+            <entry
+>رقم الاستعراف الفريد (عدد صحيح) للدولة، ويجب أن يبدأ من الصفر (0).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>الاسم</literal
+></entry>
+            <entry
+>اسم الدولة المعروض.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>نقطة-&lt;العينة&gt;</literal
+></entry>
+            <entry
+>تُعرض كل فئة من العينات الرسومية (علم، مشاة، إلخ.) في الدولة في موضع محدد تُعرّفه هذه المدخلة المكونة من عددين صحيحين تفصل بينهما فاصلة.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>الجيران</literal
+></entry>
+            <entry
+>قائمة بمعرّفات جيران الدولة الحالية.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>مجموعات وصف الجنسيات</title>
+
+    <para
+>تمتلك كل جنسية مُدرجة في مدخلة الجنسيات ضمن مجموعة <literal
+>onu</literal
+>، مجموعتها الخاصة التي تحمل اسم الجنسية كلصيقة لها. يسرد الجدول أدناه مدخلات هذه المجموعات.</para>
+
+    <table>
+      <title
+>مدخلات الجنسية</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>اسم المدخلة</entry>
+            <entry
+>المعنى</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>الاسم</literal
+></entry>
+            <entry
+>اسم الجنسية (مثلًا <literal
+>اليابان</literal
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>القائد</literal
+></entry>
+            <entry
+>الاسم الذي سيُقتَرح على اللاعب عند اختياره لهذه الجنسية.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>العلم</literal
+></entry>
+            <entry
+>اسم عنصر عينة علم الدولة في ملف &SVG; الخاص بـ <literal
+>onu</literal
+>.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>مجموعات وصف القارات</title>
+
+    <para
+>تمتلك كل قارة مُدرجة في مدخلة القارات ضمن مجموعة <literal
+>onu</literal
+>، مجموعتها الخاصة التي تحمل اسم القارة كلصيقة لها. يسرد الجدول أدناه مدخلات هذه المجموعات.</para>
+
+    <table>
+      <title
+>مدخلات القارة</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>اسم المدخلة</entry>
+            <entry
+>المعنى</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>الاسم</literal
+></entry>
+            <entry
+>اسم القارة (مثلًا <literal
+>أفريقيا</literal
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>المعرّف</literal
+></entry>
+            <entry
+>رقم الاستعراف الفريد (عدد صحيح) للقارة.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>مكافأة</literal
+></entry>
+            <entry
+>عدد الجيوش التي يحصل عليها اللاعب في نهاية الدور عند امتلاكه لجميع دول القارة.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>دول-القارة</literal
+></entry>
+            <entry
+>قائمة بمعرّفات الدول الموجودة داخل القارة الحالية.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>مجموعات وصف الأهداف</title>
+
+    <para
+>تمتلك كل هدف مُدرج في مدخلة الأهداف ضمن مجموعة <literal
+>onu</literal
+>، مجموعته الخاصة التي تحمل اسم الهدف كلصيقة لها. يسرد الجدول أدناه مدخلات هذه المجموعات.</para>
+
+    <table>
+      <title
+>مدخلات الهدف</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>اسم المدخلة</entry>
+            <entry
+>المعنى</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>النوع</literal
+></entry>
+            <entry
+>نوع الهدف. يمكن أن يكون قارات، أو دولًا، أو لاعبًا.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>عدد-الجيوش-لكل-دولة</literal
+></entry>
+            <entry
+>ضبط الحد الأدنى لعدد الجيوش التي سيتعين على اللاعب وضعها في كل دولة.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>عدد-الدول</literal
+></entry>
+            <entry
+>ضبط عدد الدول التي يجب على اللاعب امتلاكها.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>بديل-عدد-الدول</literal
+></entry>
+            <entry
+>بالنسبة لنوع هدف اللاعب، إذا قُتل اللاعب المستهدف بواسطة لاعب آخر، فإن هذا يحدد عدد الدول التي سيتعين على اللاعب غزوها بدلًا من ذلك.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>الوصف</literal
+></entry>
+            <entry
+>وصف نصي كامل للهدف مع نائبات مناسبة (يحتاج إلى المزيد من التوثيق هنا).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>القارات</literal
+></entry>
+            <entry
+>قائمة بمعرّفات القارات التي سيتعين على اللاعب غزوها.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+  </sect2>
+
+  <sect2 id="tid">
+  <title
+>مجلد الصور Images</title>
+
+  <para
+>يحتوي هذا المجلد على الأزرار الخاصة بـ &ksirk; وملف الحوض بتنسيق &SVG; الذي يحتوي على الخريطة وجميع العينات الرسومية.</para>
+
+    <sect3>
+    <title
+>ملف <filename
+>pool.svg</filename
+></title>
+
+    <para
+>يحتوي ملف &SVG; هذا على الخريطة وجميع عينات اللعبة الرسومية. سُمي كل عنصر بطريقة تسمح للعبة بتحديد وتصيير كل منها بشكل منفصل.</para>
+
+    <para
+>في الواجهة المبدئية، العينات الرسومية هي الأعلام، والمشاة، والفرسان، والمدفع. يمثل المشاة جيشًا واحدًا، والفرسان خمسة، والمدافع عشرة. تُستخدم المدافع أيضًا لعرض الجيوش المتقاتلة. لهذا السبب توجد ثلاثة أنواع من عينات المدافع: مدفع ثابت أو متحرك عادي، ومدفع يطلق النار، ومدفع ينفجر.</para>
+
+    <para
+>كل صورة عينة هي دمج للمشاهد المختلفة للكائن، ولكل مشهد إطاراته الخاصة. تُنظم المشاهد عموديًا والإطارات أفقيًا. يُحدد مكان قطع الصورة إلى إطارات فردية بقسمة ارتفاع الصورة على عدد المشاهد وعرضها على عدد الإطارات. توجد هذه البيانات في ملف <filename
+>onu.desktop</filename
+>.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="cannon.png" format="PNG"/></imageobject>
+      <caption
+><para
+>مثال على صورة عينة رسومية: <filename
+>cannon.png</filename
+></para
+></caption>
+    </mediaobject>
+
+    <para
+>بالنسبة لعينات الجيوش، توجد ثلاثة مشاهد مختلفة، من الأعلى إلى الأسفل:</para>
+
+    <itemizedlist>
+      <listitem
+><para
+>ينظر لليمين</para
+></listitem>
+      <listitem
+><para
+>ينظر لليسار و</para
+></listitem>
+      <listitem
+><para
+>ينظر للأمام</para
+></listitem>
+    </itemizedlist>
+
+    <para
+>بالنسبة للأعلام، يوجد مشهد واحد فقط. يجب ضبط جميع خلفيات العينات الرسومية لتكون شفافة.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="italy.png" format="PNG"/></imageobject>
+      <caption
+><para
+>مثال على صورة عينة علم: <filename
+>italy.png</filename
+></para
+></caption>
+    </mediaobject>
+
+    <table>
+      <title
+>عناصر الحوض</title>
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry
+>اسم العنصر</entry>
+            <entry
+>صورة عينة</entry>
+            <entry
+>المعنى</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>الخريطة</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="map.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>خريطة عالم الواجهة. يمكن أن تتخذ الدول أشكالًا عشوائية، ولكن يجب تجميعها في قارات يمكن تمييزها بالعين، إما عن طريق الموقع فقط أو اللون.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>إيطاليا</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="italy.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>علم دولة إيطاليا. توجد مدخلة مماثلة لكل دولة.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>المشاة</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="infantry.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>أيقونة تمثل جيشًا واحدًا.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>الفرسان</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="cavalry.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>أيقونة تمثل خمسة جيوش.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>المدفع</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="cannon.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>أيقونة تمثل عشرة جيوش.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>إطلاق نار</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="firing.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>أيقونة تمثل الجيوش أثناء القتال.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>ينفجر</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="exploding.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>أيقونة تمثل الجيوش عند خسارة قتال.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>ألاسكا</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="alaska.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>شكل دولة ألاسكا. يُستخدم هذا لإبراز الدولة. يوجد شكل مماثل لكل دولة. لا يُستخدم لونه، لذا فاللون اختياري.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>نرد أحمر</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="reddices.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>النرد الأحمر المستخدم لإظهار نتائج المعارك.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>نرد أزرق</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="bluedices.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>النرد الأزرق المستخدم لإظهار نتائج المعارك.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>علامة1</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="mark1.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>تُضاف هذه العلامة إلى عينات القتال الرسومية لإظهار عدد الجيوش التي تمثلها، وهي هنا 1. توجد أيضًا عناصر <literal
+>علامة2</literal
+> و <literal
+>علامة3</literal
+>.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>ملف <filename
+>map-mask.png</filename
+></title>
+
+    <para
+>هذا ملف بتنسيق png يمثل أيضًا خريطة عالم الواجهة، ولكن بألوان مرمزة تتيح استعراف كل دولة بشكل فريد. يجب أن تمتلك الدول على الأقل نفس الأشكال الموجودة في الدول المقابلة في ملف <filename
+>map.png</filename
+> ليتمكن المستخدمون من النقر في أي مكان في دولة ظاهرة واختيار الدولة الصحيحة. يمكن أن تكون الدول، مثل الجزر الصغيرة كإندونيسيا في الخريطة المبدئية، أكبر من مثيلاتها في ملف <filename
+>map.png</filename
+> لتسهيل اختيار الدولة.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="map-mask.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>عينة لقناع خريطة</phrase
+></textobject>
+    </mediaobject>
+
+    <para
+>تُستعرَف الدولة من خلال المكون الأزرق (في نموذج RGB) للون الدولة: الفهرس 0 هو الدولة 0 في ملف <filename
+>onu.xml</filename
+>، والفهرس 1 هو الدولة 1، وهكذا. يحدد اللون الأبيض (0xFFFFFF في RGB) غياب الدولة (البحار أو الأراضي غير المأهولة).</para>
+    </sect3>
+
+    <sect3>
+    <title
+>صور الأزرار</title>
+
+    <para
+>أسماء الملفات مكتوبة بشكل جامد في الكود، لذا لا ينبغي تعديلها. يوضح الجدول أدناه جميع الأزرار التي يجب توفيرها.</para>
+
+    <table>
+      <title
+>أزرار واجهة المستخدم الرسومية</title>
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry
+>صورة</entry>
+            <entry
+>اسم الملف</entry>
+            <entry
+>المعنى</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="newNetGame.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>newNetGame.png</filename
+></entry>
+            <entry
+>يحاول الانضمام إلى لعبة شبكية.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="recycling.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>recycling.png</filename
+></entry>
+            <entry
+>بعد قيام جميع اللاعبين بوضع جيوشهم، يمكن تعديل التوزيعات (يسمى ذلك بإعادة التدوير). يطلب هذا الزر إجراء مثل هذا التوزيع مجددًا.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="recyclingFinished.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>recyclingFinished.png</filename
+></entry>
+            <entry
+>يختار عدم إعادة التوزيع. يجب النقر على هذا الزر في جميع نوافذ العملاء لإنهاء التوزيع فعليًا.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="nextPlayer.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>nextPlayer.png</filename
+></entry>
+            <entry
+>ينهي دور اللاعب الحالي وينتقل إلى اللاعب التالي أو إلى الدور التالي إذا كان اللاعب الحالي هو الأخير.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackOne.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackOne.png</filename
+></entry>
+            <entry
+>يختار بدء هجوم بجيش واحد.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackTwo.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackTwo.png</filename
+></entry>
+            <entry
+>يختار بدء هجوم بجيشين.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackThree.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackThree.png</filename
+></entry>
+            <entry
+>يختار بدء هجوم بثلاثة جيوش.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="defendOne.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>defendOne.png</filename
+></entry>
+            <entry
+>يختار الدفاع عن دولة تتعرض للهجوم بجيش واحد.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="defendTwo.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>defendTwo.png</filename
+></entry>
+            <entry
+>يختار الدفاع عن دولة تتعرض للهجوم بجيشين.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="moveArmies.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>moveArmies.png</filename
+></entry>
+            <entry
+>يختار بدء نقل الجيوش بين دولتين (آخر إجراء في الدور).</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+  </sect2>
+
+  <sect2 id="tsd">
+  <title
+>مجلد الأصوات Sounds</title>
+
+  <para
+>يحتوي هذا المجلد على ثلاثة ملفات صوتية:</para>
+
+  <itemizedlist>
+    <listitem
+><para
+>يُشغَّل <filename
+>roll.wav</filename
+> عند تحرك الجيوش </para
+></listitem>
+    <listitem
+><para
+>يُشغَّل <filename
+>cannon.wav</filename
+> عند إطلاق النار و </para
+></listitem>
+    <listitem
+><para
+>يُشغَّل <filename
+>crash.wav</filename
+> عند انفجار مدفع</para
+></listitem>
+  </itemizedlist>
+  </sect2>
+</sect1>
+
+<sect1 id="using-kse">
+<title
+>استخدام &i18n-ksirkskineditor;</title>
+
+<para
+>بعد إنشاء الرسوميات في المجلد الصحيح وملف &SVG;، سيتعين عليك فقط إنشاء الدول واللاعبين، إلخ، وربطهم بعنصر &SVG; الصحيح في الحوض. يمكن تنفيذ ذلك باستخدام &i18n-ksirkskineditor;. لاحظ أن كل جزء في هذا التطبيق يوصف آليًا بواسطة تلميحات ومساعدة سياقية يمكن الوصول إليها عادةً عبر اختصار <keycombo action="simul"
+>&Ctrl;<keycap
+>F1</keycap
+></keycombo
+>.</para>
+
+<screenshot>
+  <screeninfo
+>إليك لقطة شاشة لـ &i18n-ksirkskineditor;</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="main-snapshot.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>لقطة شاشة</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>مرجع الأوامر</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>نافذة &i18n-ksirkskineditor; الرئيسة</title>
+
+  <sect2>
+  <title
+>الأزرار</title>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="document-open.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>حمّل</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>حمّل...</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>يجعل البرنامج يحمّل واجهة موجودة.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="document-save.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>احفظ</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>احفظ</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>يحفظ الواجهة التي تُحرَّر حاليًا.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+  </sect2>
+</sect1>
+</chapter>
+
+<chapter id="developers">
+<title
+>دليل المطور لـ &i18n-ksirkskineditor;</title>
+
+<para
+>يرجى الرجوع إلى <ulink url="https://api.kde.org/"
+>https://api.kde.org/</ulink
+> للحصول على توثيق واجهة برمجة التطبيقات (API).</para>
+</chapter>
+
+<chapter id="faq">
+<title
+>أسئلة وأجوبة</title
+>&updating.documentation; </chapter>
+
+<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+<title
+>الحقوق والترخيص</title>
+
+<para
+>&ksirkskineditor;</para>
+
+<para
+>حقوق ملكية البرنامج لعام 2009 لـ Ga&euml;l de Chalendar <email
+>kleag@free.fr</email
+></para>
+
+<para
+>حقوق ملكية التوثيق لعام 2009 لـ Ga&euml;l de Chalendar <email
+>kleag@free.fr</email
+></para>
+
+<para
+>الترجمة: زايد السعيدي <email
+>zayed.alsaidi@gmail.com</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->
