@@ -22,8 +22,9 @@
 
 #include<qstring.h>
 #include<qpoint.h>
-#include<qpair.h>
 #include <QList>
+#include <utility>
+
 namespace Ksirk {
 
 namespace GameLogic {
@@ -33,8 +34,8 @@ namespace GameLogic {
   * @author Gaël de Chalendar
   * 
   */
-// class EventsListProperty : public KGamePropertyList< QPair< QString, QPoint > >
-class EventsListProperty : public QList< QPair< QString, QPointF > >
+// class EventsListProperty : public KGamePropertyList< std::pair< QString, QPoint > >
+class EventsListProperty : public QList< std::pair< QString, QPointF > >
 {
 public:
   EventsListProperty();
@@ -63,7 +64,7 @@ public:
   
   void pop_front();
   
-  void push_back(const QPair<QString, QPointF>& pair);
+  void push_back(const std::pair<QString, QPointF>& pair);
 
 private:
 //   QByteArray buffer;

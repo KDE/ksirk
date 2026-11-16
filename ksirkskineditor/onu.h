@@ -37,6 +37,8 @@
 #define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
 #include <libkdegamesprivate/kgamesvgdocument.h>
 
+#include <utility>
+
 class QGraphicsItem;
 
 namespace KsirkSkinEditor
@@ -167,7 +169,7 @@ public:
 
   KGameSvgDocument* svgDom();
 
-  inline QMap<QGraphicsItem*, QPair<Country*, SpriteType> >& itemsMap() {return m_itemsMap;}
+  inline QMap<QGraphicsItem*, std::pair<Country*, SpriteType> >& itemsMap() {return m_itemsMap;}
 
   QGraphicsItem* itemFor(const Country* country, SpriteType spriteType);
 
@@ -304,7 +306,7 @@ public:
 
   KGameSvgDocument m_svgDom;
   
-  QMap<QGraphicsItem*, QPair<Country*, SpriteType> > m_itemsMap;
+  QMap<QGraphicsItem*, std::pair<Country*, SpriteType> > m_itemsMap;
 
   QPixmap m_flagIcon;
   QPixmap m_infantryIcon;

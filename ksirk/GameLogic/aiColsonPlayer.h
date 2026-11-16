@@ -68,7 +68,7 @@ public:
     * Returns a pair of countries where the attacker have enough armies to 
     * attack and the defender is a ennemy neighbour of the attacker.
     */
-  QPair< const Country*, const Country* > chooseBelligerant() override;
+  std::pair< const Country*, const Country* > chooseBelligerant() override;
 
   /**
     * Chooses the next action. In the current basic setting, chooses at random

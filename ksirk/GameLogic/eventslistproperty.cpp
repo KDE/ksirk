@@ -22,8 +22,8 @@ namespace Ksirk {
 
 namespace GameLogic {
 
-// EventsListProperty::EventsListProperty() : KGamePropertyList< QPair< QString, QPoint > >()
-EventsListProperty::EventsListProperty() : QList< QPair< QString, QPointF > >()
+// EventsListProperty::EventsListProperty() : KGamePropertyList< std::pair< QString, QPoint > >()
+EventsListProperty::EventsListProperty() : QList< std::pair< QString, QPointF > >()
 {
 }
 
@@ -34,12 +34,12 @@ EventsListProperty::~EventsListProperty()
 
 // void EventsListProperty::load(QDataStream& s)
 // {
-//   QValueList< QPair< QString, QPoint> > list;
+//   QValueList< std::pair< QString, QPoint> > list;
 //   while (!s.atEnd())
 //   {
 //     QString str; QPoint p;
 //     s >> str >> p;
-//     list.push_back(qMakePair(str,p));
+//     list.push_back(std::make_pair(str,p));
 //   }
 // //   setValue(list);
 // }
@@ -49,7 +49,7 @@ EventsListProperty::~EventsListProperty()
     **/
 // void EventsListProperty::save(QDataStream& s)
 // {
-//   QValueList< QPair< QString, QPoint> >::const_iterator it, it_end;
+//   QValueList< std::pair< QString, QPoint> >::const_iterator it, it_end;
 //   it = value().begin(); it_end = value().end();
 //   for (; it != it_end; it++)
 //   {
@@ -73,7 +73,7 @@ EventsListProperty::~EventsListProperty()
 //   qCDebug(KSIRK_LOG) << "    command name is " << commandName ;
 //   if (commandName == "pop_front")
 //   {
-//     QValueList< QPair< QString, QPoint> > list = value();
+//     QValueList< std::pair< QString, QPoint> > list = value();
 //     list.pop_front();
 //     setValue(list);
 //   }
@@ -81,8 +81,8 @@ EventsListProperty::~EventsListProperty()
 //   {
 //     QString str; QPoint point;
 //     stream >> str >> point;
-//     QValueList< QPair< QString, QPoint> > list = value();
-//     list.push_back(qMakePair(str,point));
+//     QValueList< std::pair< QString, QPoint> > list = value();
+//     list.push_back(std::make_pair(str,point));
 //     setValue(list);
 //   }
 // }
@@ -90,7 +90,7 @@ EventsListProperty::~EventsListProperty()
 void EventsListProperty::pop_front()
 {
 //   qCDebug(KSIRK_LOG) << "EventsListProperty::pop_front ";
-QList< QPair< QString, QPointF > >::pop_front();
+QList< std::pair< QString, QPointF > >::pop_front();
 /*  if (!isEmpty())
   {
     EventsListProperty::iterator it = begin();
@@ -102,10 +102,10 @@ QList< QPair< QString, QPointF > >::pop_front();
   command(stream, 1,true);*/
 }
 
-void EventsListProperty::push_back(const QPair<QString, QPointF>& pair)
+void EventsListProperty::push_back(const std::pair<QString, QPointF>& pair)
 {
 //   qCDebug(KSIRK_LOG) << "EventsListProperty::push_back " << pair.first << " / " << pair.second ;
-QList< QPair< QString, QPointF > >::push_back(pair);
+QList< std::pair< QString, QPointF > >::push_back(pair);
 //   append(pair);
 //   QByteArray buffer;
 /*  QDataStream stream(buffer, QIODevice::ReadWrite);

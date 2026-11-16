@@ -771,7 +771,7 @@ void MainWindow::slotPressPosition(const QPointF& clickedPoint)
       m_countryDefWidget->flagx->setValue(point.x());
       m_countryDefWidget->flagy->setValue(point.y());
       currentCountry()->pointFlag(point);
-      m_onu->itemsMap().insert(item,qMakePair(currentCountry(),Flag));
+      m_onu->itemsMap().insert(item,std::make_pair(currentCountry(),Flag));
       break;
     case Infantry:
       pix = m_onu->infantryIcon();
@@ -779,7 +779,7 @@ void MainWindow::slotPressPosition(const QPointF& clickedPoint)
       m_countryDefWidget->infantryx->setValue(point.x());
       m_countryDefWidget->infantryy->setValue(point.y());
       currentCountry()->pointInfantry(point);
-      m_onu->itemsMap().insert(item,qMakePair(currentCountry(),Infantry));
+      m_onu->itemsMap().insert(item,std::make_pair(currentCountry(),Infantry));
       break;
     case Cavalry:
       pix = m_onu->cavalryIcon();
@@ -787,7 +787,7 @@ void MainWindow::slotPressPosition(const QPointF& clickedPoint)
       m_countryDefWidget->cavalryx->setValue(point.x());
       m_countryDefWidget->cavalryy->setValue(point.y());
       currentCountry()->pointCavalry(point);
-      m_onu->itemsMap().insert(item,qMakePair(currentCountry(),Cavalry));
+      m_onu->itemsMap().insert(item,std::make_pair(currentCountry(),Cavalry));
       break;
     case Cannon:
       qCDebug(KSIRKSKINEDITOR_LOG) << "Adding cannon";
@@ -796,7 +796,7 @@ void MainWindow::slotPressPosition(const QPointF& clickedPoint)
       m_countryDefWidget->cannonx->setValue(point.x());
       m_countryDefWidget->cannony->setValue(point.y());
       currentCountry()->pointCannon(point);
-      m_onu->itemsMap().insert(item,qMakePair(currentCountry(),Cannon));
+      m_onu->itemsMap().insert(item,std::make_pair(currentCountry(),Cannon));
       break;
     case Anchor:
       qCDebug(KSIRKSKINEDITOR_LOG) << "Adding anchor";
@@ -812,7 +812,7 @@ void MainWindow::slotPressPosition(const QPointF& clickedPoint)
       m_countryDefWidget->anchorx->setValue(point.x());
       m_countryDefWidget->anchory->setValue(point.y());
       currentCountry()->anchorPoint(point);
-      m_onu->itemsMap().insert(item,qMakePair(currentCountry(),Anchor));
+      m_onu->itemsMap().insert(item,std::make_pair(currentCountry(),Anchor));
       m_updateHighlightPosition = true;
       break;
     case Center:
@@ -829,7 +829,7 @@ void MainWindow::slotPressPosition(const QPointF& clickedPoint)
       m_countryDefWidget->centerx->setValue(point.x());
       m_countryDefWidget->centery->setValue(point.y());
       currentCountry()->centralPoint(point);
-      m_onu->itemsMap().insert(item,qMakePair(currentCountry(),Center));
+      m_onu->itemsMap().insert(item,std::make_pair(currentCountry(),Center));
       break;
     default: ;
   }
@@ -1147,7 +1147,7 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
       point = country->pointFlag();
       m_countryDefWidget->flagx->setValue(point.x());
       m_countryDefWidget->flagy->setValue(point.y());
-      m_onu->itemsMap().insert(item,qMakePair(country,Flag));
+      m_onu->itemsMap().insert(item,std::make_pair(country,Flag));
       break;
     case Infantry:
       item = new PixmapItem();
@@ -1158,7 +1158,7 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
       //       pix = pix.scaled(23,32);
       m_countryDefWidget->infantryx->setValue(point.x());
       m_countryDefWidget->infantryy->setValue(point.y());
-      m_onu->itemsMap().insert(item,qMakePair(country,Infantry));
+      m_onu->itemsMap().insert(item,std::make_pair(country,Infantry));
       break;
     case Cavalry:
       item = new PixmapItem();
@@ -1169,7 +1169,7 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
       //       pix = pix.scaled(32,32);
       m_countryDefWidget->cavalryx->setValue(point.x());
       m_countryDefWidget->cavalryy->setValue(point.y());
-      m_onu->itemsMap().insert(item,qMakePair(country,Cavalry));
+      m_onu->itemsMap().insert(item,std::make_pair(country,Cavalry));
       break;
     case Cannon:
       item = new PixmapItem();
@@ -1181,7 +1181,7 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
       //       pix = pix.scaled(32,32);
       m_countryDefWidget->cannonx->setValue(point.x());
       m_countryDefWidget->cannony->setValue(point.y());
-      m_onu->itemsMap().insert(item,qMakePair(country,Cannon));
+      m_onu->itemsMap().insert(item,std::make_pair(country,Cannon));
       break;
     case Anchor:
       item = new PixmapItem();
@@ -1199,7 +1199,7 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
       point = country->anchorPoint() - QPointF(item->boundingRect().width()/2, item->boundingRect().height()/2);
       m_countryDefWidget->anchorx->setValue(point.x());
       m_countryDefWidget->anchory->setValue(point.y());
-      m_onu->itemsMap().insert(item,qMakePair(country,Anchor));
+      m_onu->itemsMap().insert(item,std::make_pair(country,Anchor));
       break;
     case Center:
       qCDebug(KSIRKSKINEDITOR_LOG) << "Adding center";
@@ -1211,7 +1211,7 @@ void MainWindow::createPixmapFor(Country* country, SpriteType type)
       qCDebug(KSIRKSKINEDITOR_LOG) << "Adding center" << country->centralPoint() << point;
       m_countryDefWidget->centerx->setValue(point.x());
       m_countryDefWidget->centery->setValue(point.y());
-      m_onu->itemsMap().insert(item,qMakePair(country,Center));
+      m_onu->itemsMap().insert(item,std::make_pair(country,Center));
       break;
     default: ;
   }

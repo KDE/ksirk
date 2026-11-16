@@ -254,7 +254,7 @@ void AIPlayer::chooseAttackMoveArmiesOrNextPlayer()
   * Returns a pair of countries where the attacker have enough armies to attack
   * and the defender is a ennemy neighbour of the attacker
   */
-QPair<const Country*, const Country*> AIPlayer::chooseBelligerant()
+std::pair<const Country*, const Country*> AIPlayer::chooseBelligerant()
 {
   QMultiMap<const Country*, const Country*> candidates;
 
@@ -295,7 +295,7 @@ QPair<const Country*, const Country*> AIPlayer::chooseBelligerant()
     if ( candidates.size() == 0 )
     {
 //            qCDebug(KSIRK_LOG) << name() << " OUT AIPlayer::chooseBelligerant() ; map size = 0 ; it isn't possible to attack.";
-      return (qMakePair<const Country*, const Country*>(static_cast< Country*>(nullptr), static_cast< Country*>(nullptr)));
+      return (std::make_pair<const Country*, const Country*>(static_cast< Country*>(nullptr), static_cast< Country*>(nullptr)));
     }
     uint which = Dice::roll(candidates.size()) - 1;
 //        qCDebug(KSIRK_LOG) << "Which = " << which;
@@ -306,12 +306,12 @@ QPair<const Country*, const Country*> AIPlayer::chooseBelligerant()
       if (which == i )
       {
 //                qCDebug(KSIRK_LOG) << "OUT AIPlayer::chooseBelligerant() : " << endl ;
-         return qMakePair(it.key(),it.value());
+         return std::make_pair(it.key(),it.value());
       }
     }
   }
 //    qCDebug(KSIRK_LOG) << "OUT AIPlayer::chooseBelligerant() : do I own no country ???";
-  return (qMakePair<const Country*, const Country*>(static_cast< Country*>(nullptr), static_cast< Country*>(nullptr)));
+  return (std::make_pair<const Country*, const Country*>(static_cast< Country*>(nullptr), static_cast< Country*>(nullptr)));
 }
 
 /**
@@ -379,7 +379,7 @@ void AIPlayer::stop()
 bool AIPlayer::attackAction() 
 {
 //   qCDebug(KSIRK_LOG) << "AIPlayer::attackAction";
-  QPair<const Country* , const Country* > srcDest = chooseBelligerant();
+  std::pair<const Country* , const Country* > srcDest = chooseBelligerant();
   if ( (srcDest.first == nullptr) || (srcDest.second == nullptr) )
   {
 //     qCDebug(KSIRK_LOG) << "AIPlayer::attackAction: no attack available";

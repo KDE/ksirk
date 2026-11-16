@@ -26,6 +26,8 @@
 
 #include <QThread>
 
+#include <utility>
+
 namespace Ksirk
 {
 
@@ -94,7 +96,7 @@ protected:
 
   /** Returns a pair of countries where the attacker have enough armies to 
     * attack and the defender is a ennemy neighbour of the attacker */
-  virtual QPair< const Country*, const Country* > chooseBelligerant();
+  virtual std::pair< const Country*, const Country* > chooseBelligerant();
 
   /**
     * Chooses the next action. In the current basic setting, chooses at random

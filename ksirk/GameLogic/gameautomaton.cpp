@@ -256,7 +256,7 @@ GameAutomaton::GameState GameAutomaton::run()
   QPointF point;
   if (!m_events.empty())
   {
-    QPair< QString, QPointF > pair = m_events.front();
+    std::pair< QString, QPointF > pair = m_events.front();
     event = pair.first;
     point = pair.second;
     m_events.pop_front();
@@ -899,7 +899,7 @@ void GameAutomaton::activateNeededAIPlayers()
 
 void GameAutomaton::gameEvent(const QString& event, const QPointF& point)
 {
-  m_events.push_back(qMakePair(event, point));
+  m_events.push_back(std::make_pair(event, point));
 }
 
 
