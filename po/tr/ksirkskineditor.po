@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-22 00:47+0000\n"
-"PO-Revision-Date: 2026-10-16 20:02+0300\n"
+"PO-Revision-Date: 2026-11-15 20:16+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -896,19 +896,19 @@ msgstr ""
 #: ksirkskindefinition.ui:90
 #, kde-format
 msgid "Map Font"
-msgstr "Harita Yazıtipi"
+msgstr "Harita Yazı Tipi"
 
 #. i18n: ectx: property (toolTip), widget (KFontRequester, fontrequester)
 #: ksirkskindefinition.ui:96
 #, kde-format
 msgid "Font used to draw country names"
-msgstr "Ülke adlarını göstermek için kullanılacak yazıtipi"
+msgstr "Ülke adlarını göstermek için kullanılacak yazı tipi"
 
 #. i18n: ectx: property (whatsThis), widget (KFontRequester, fontrequester)
 #: ksirkskindefinition.ui:99
 #, kde-format
 msgid "This font will be used to draw the country names on the map"
-msgstr "Bu yazıtipi, harita üzerindeki ülke adlarını göstermede kullanılacak"
+msgstr "Bu yazı tipi, harita üzerindeki ülke adlarını göstermede kullanılacak"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: ksirkskindefinition.ui:108
