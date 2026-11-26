@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 00:11+0000\n"
-"PO-Revision-Date: 2026-10-22 09:04+0200\n"
+"PO-Revision-Date: 2026-11-20 18:50+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -1598,7 +1598,7 @@ msgstr "Segur que voleu acabar la partida i entrar en una altra?"
 #, kde-format
 msgctxt "@title:window"
 msgid "New Game Confirmation"
-msgstr "Confirmeu de partida nova"
+msgstr "Confirmeu la partida nova"
 
 #: GameLogic/gameautomaton.cpp:1191
 #, kde-format
@@ -1781,7 +1781,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Next Player Confirmation"
-msgstr "Confirmeu de jugador següent"
+msgstr "Confirmeu el jugador següent"
 
 #: GameLogic/gameautomaton.cpp:2590
 #, kde-format
@@ -1835,11 +1835,11 @@ msgid_plural ""
 "<br>%2, you have enough countries but you still have to put more than %1 "
 "armies on %3 of them…"
 msgstr[0] ""
-"<br>%2, té suficients països, però encara hi has de posar més d'1 batalló a "
-"%3 d'ells…"
+"<br>%2, tens prou països, però encara hi has de posar més d'1 batalló a %3 "
+"d'ells…"
 msgstr[1] ""
-"<br>%2, té suficients països, però encara hi has de posar més de %1 "
-"batallons a %3 d'ells…"
+"<br>%2, tens prou països, però encara hi has de posar més de %1 batallons a "
+"%3 d'ells…"
 
 #: GameLogic/goal.cpp:274
 #, kde-format
